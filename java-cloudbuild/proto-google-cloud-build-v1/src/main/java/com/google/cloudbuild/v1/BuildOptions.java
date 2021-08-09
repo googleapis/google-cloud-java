@@ -187,6 +187,22 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
               dynamicSubstitutions_ = input.readBool();
               break;
             }
+          case 154:
+            {
+              com.google.cloudbuild.v1.BuildOptions.PoolOption.Builder subBuilder = null;
+              if (pool_ != null) {
+                subBuilder = pool_.toBuilder();
+              }
+              pool_ =
+                  input.readMessage(
+                      com.google.cloudbuild.v1.BuildOptions.PoolOption.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(pool_);
+                pool_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -1103,6 +1119,691 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(enum_scope:google.devtools.cloudbuild.v1.BuildOptions.LoggingMode)
   }
 
+  public interface PoolOptionOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.devtools.cloudbuild.v1.BuildOptions.PoolOption)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * The `WorkerPool` resource to execute the build on.
+     * You must have `cloudbuild.workerpools.use` on the project hosting the
+     * WorkerPool.
+     * Format projects/{project}/locations/{location}/workerPools/{workerPoolId}
+     * </pre>
+     *
+     * <code>string name = 1 [(.google.api.resource_reference) = { ... }</code>
+     *
+     * @return The name.
+     */
+    java.lang.String getName();
+    /**
+     *
+     *
+     * <pre>
+     * The `WorkerPool` resource to execute the build on.
+     * You must have `cloudbuild.workerpools.use` on the project hosting the
+     * WorkerPool.
+     * Format projects/{project}/locations/{location}/workerPools/{workerPoolId}
+     * </pre>
+     *
+     * <code>string name = 1 [(.google.api.resource_reference) = { ... }</code>
+     *
+     * @return The bytes for name.
+     */
+    com.google.protobuf.ByteString getNameBytes();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Details about how a build should be executed on a `WorkerPool`.
+   * See [running builds in a private
+   * pool](https://cloud.google.com/build/docs/private-pools/run-builds-in-private-pool)
+   * for more information.
+   * </pre>
+   *
+   * Protobuf type {@code google.devtools.cloudbuild.v1.BuildOptions.PoolOption}
+   */
+  public static final class PoolOption extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.devtools.cloudbuild.v1.BuildOptions.PoolOption)
+      PoolOptionOrBuilder {
+    private static final long serialVersionUID = 0L;
+    // Use PoolOption.newBuilder() to construct.
+    private PoolOption(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private PoolOption() {
+      name_ = "";
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new PoolOption();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+      return this.unknownFields;
+    }
+
+    private PoolOption(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+
+                name_ = s;
+                break;
+              }
+            default:
+              {
+                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
+                  done = true;
+                }
+                break;
+              }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloudbuild.v1.Cloudbuild
+          .internal_static_google_devtools_cloudbuild_v1_BuildOptions_PoolOption_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.cloudbuild.v1.Cloudbuild
+          .internal_static_google_devtools_cloudbuild_v1_BuildOptions_PoolOption_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloudbuild.v1.BuildOptions.PoolOption.class,
+              com.google.cloudbuild.v1.BuildOptions.PoolOption.Builder.class);
+    }
+
+    public static final int NAME_FIELD_NUMBER = 1;
+    private volatile java.lang.Object name_;
+    /**
+     *
+     *
+     * <pre>
+     * The `WorkerPool` resource to execute the build on.
+     * You must have `cloudbuild.workerpools.use` on the project hosting the
+     * WorkerPool.
+     * Format projects/{project}/locations/{location}/workerPools/{workerPoolId}
+     * </pre>
+     *
+     * <code>string name = 1 [(.google.api.resource_reference) = { ... }</code>
+     *
+     * @return The name.
+     */
+    @java.lang.Override
+    public java.lang.String getName() {
+      java.lang.Object ref = name_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        name_ = s;
+        return s;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The `WorkerPool` resource to execute the build on.
+     * You must have `cloudbuild.workerpools.use` on the project hosting the
+     * WorkerPool.
+     * Format projects/{project}/locations/{location}/workerPools/{workerPoolId}
+     * </pre>
+     *
+     * <code>string name = 1 [(.google.api.resource_reference) = { ... }</code>
+     *
+     * @return The bytes for name.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getNameBytes() {
+      java.lang.Object ref = name_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        name_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (!getNameBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!getNameBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, name_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.cloudbuild.v1.BuildOptions.PoolOption)) {
+        return super.equals(obj);
+      }
+      com.google.cloudbuild.v1.BuildOptions.PoolOption other =
+          (com.google.cloudbuild.v1.BuildOptions.PoolOption) obj;
+
+      if (!getName().equals(other.getName())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + NAME_FIELD_NUMBER;
+      hash = (53 * hash) + getName().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.cloudbuild.v1.BuildOptions.PoolOption parseFrom(
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloudbuild.v1.BuildOptions.PoolOption parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloudbuild.v1.BuildOptions.PoolOption parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloudbuild.v1.BuildOptions.PoolOption parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloudbuild.v1.BuildOptions.PoolOption parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloudbuild.v1.BuildOptions.PoolOption parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloudbuild.v1.BuildOptions.PoolOption parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloudbuild.v1.BuildOptions.PoolOption parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloudbuild.v1.BuildOptions.PoolOption parseDelimitedFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloudbuild.v1.BuildOptions.PoolOption parseDelimitedFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloudbuild.v1.BuildOptions.PoolOption parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloudbuild.v1.BuildOptions.PoolOption parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(com.google.cloudbuild.v1.BuildOptions.PoolOption prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Details about how a build should be executed on a `WorkerPool`.
+     * See [running builds in a private
+     * pool](https://cloud.google.com/build/docs/private-pools/run-builds-in-private-pool)
+     * for more information.
+     * </pre>
+     *
+     * Protobuf type {@code google.devtools.cloudbuild.v1.BuildOptions.PoolOption}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.devtools.cloudbuild.v1.BuildOptions.PoolOption)
+        com.google.cloudbuild.v1.BuildOptions.PoolOptionOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloudbuild.v1.Cloudbuild
+            .internal_static_google_devtools_cloudbuild_v1_BuildOptions_PoolOption_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloudbuild.v1.Cloudbuild
+            .internal_static_google_devtools_cloudbuild_v1_BuildOptions_PoolOption_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloudbuild.v1.BuildOptions.PoolOption.class,
+                com.google.cloudbuild.v1.BuildOptions.PoolOption.Builder.class);
+      }
+
+      // Construct using com.google.cloudbuild.v1.BuildOptions.PoolOption.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        name_ = "";
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloudbuild.v1.Cloudbuild
+            .internal_static_google_devtools_cloudbuild_v1_BuildOptions_PoolOption_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.cloudbuild.v1.BuildOptions.PoolOption getDefaultInstanceForType() {
+        return com.google.cloudbuild.v1.BuildOptions.PoolOption.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.cloudbuild.v1.BuildOptions.PoolOption build() {
+        com.google.cloudbuild.v1.BuildOptions.PoolOption result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.cloudbuild.v1.BuildOptions.PoolOption buildPartial() {
+        com.google.cloudbuild.v1.BuildOptions.PoolOption result =
+            new com.google.cloudbuild.v1.BuildOptions.PoolOption(this);
+        result.name_ = name_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.google.cloudbuild.v1.BuildOptions.PoolOption) {
+          return mergeFrom((com.google.cloudbuild.v1.BuildOptions.PoolOption) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.google.cloudbuild.v1.BuildOptions.PoolOption other) {
+        if (other == com.google.cloudbuild.v1.BuildOptions.PoolOption.getDefaultInstance())
+          return this;
+        if (!other.getName().isEmpty()) {
+          name_ = other.name_;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.google.cloudbuild.v1.BuildOptions.PoolOption parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage =
+              (com.google.cloudbuild.v1.BuildOptions.PoolOption) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private java.lang.Object name_ = "";
+      /**
+       *
+       *
+       * <pre>
+       * The `WorkerPool` resource to execute the build on.
+       * You must have `cloudbuild.workerpools.use` on the project hosting the
+       * WorkerPool.
+       * Format projects/{project}/locations/{location}/workerPools/{workerPoolId}
+       * </pre>
+       *
+       * <code>string name = 1 [(.google.api.resource_reference) = { ... }</code>
+       *
+       * @return The name.
+       */
+      public java.lang.String getName() {
+        java.lang.Object ref = name_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          name_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The `WorkerPool` resource to execute the build on.
+       * You must have `cloudbuild.workerpools.use` on the project hosting the
+       * WorkerPool.
+       * Format projects/{project}/locations/{location}/workerPools/{workerPoolId}
+       * </pre>
+       *
+       * <code>string name = 1 [(.google.api.resource_reference) = { ... }</code>
+       *
+       * @return The bytes for name.
+       */
+      public com.google.protobuf.ByteString getNameBytes() {
+        java.lang.Object ref = name_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          name_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The `WorkerPool` resource to execute the build on.
+       * You must have `cloudbuild.workerpools.use` on the project hosting the
+       * WorkerPool.
+       * Format projects/{project}/locations/{location}/workerPools/{workerPoolId}
+       * </pre>
+       *
+       * <code>string name = 1 [(.google.api.resource_reference) = { ... }</code>
+       *
+       * @param value The name to set.
+       * @return This builder for chaining.
+       */
+      public Builder setName(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+
+        name_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The `WorkerPool` resource to execute the build on.
+       * You must have `cloudbuild.workerpools.use` on the project hosting the
+       * WorkerPool.
+       * Format projects/{project}/locations/{location}/workerPools/{workerPoolId}
+       * </pre>
+       *
+       * <code>string name = 1 [(.google.api.resource_reference) = { ... }</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearName() {
+
+        name_ = getDefaultInstance().getName();
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The `WorkerPool` resource to execute the build on.
+       * You must have `cloudbuild.workerpools.use` on the project hosting the
+       * WorkerPool.
+       * Format projects/{project}/locations/{location}/workerPools/{workerPoolId}
+       * </pre>
+       *
+       * <code>string name = 1 [(.google.api.resource_reference) = { ... }</code>
+       *
+       * @param value The bytes for name to set.
+       * @return This builder for chaining.
+       */
+      public Builder setNameBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+
+        name_ = value;
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.devtools.cloudbuild.v1.BuildOptions.PoolOption)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.devtools.cloudbuild.v1.BuildOptions.PoolOption)
+    private static final com.google.cloudbuild.v1.BuildOptions.PoolOption DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new com.google.cloudbuild.v1.BuildOptions.PoolOption();
+    }
+
+    public static com.google.cloudbuild.v1.BuildOptions.PoolOption getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<PoolOption> PARSER =
+        new com.google.protobuf.AbstractParser<PoolOption>() {
+          @java.lang.Override
+          public PoolOption parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            return new PoolOption(input, extensionRegistry);
+          }
+        };
+
+    public static com.google.protobuf.Parser<PoolOption> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<PoolOption> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.cloudbuild.v1.BuildOptions.PoolOption getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
   public static final int SOURCE_PROVENANCE_HASH_FIELD_NUMBER = 1;
   private java.util.List<java.lang.Integer> sourceProvenanceHash_;
   private static final com.google.protobuf.Internal.ListAdapter.Converter<
@@ -1413,16 +2114,15 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Option to specify a `WorkerPool` for the build.
-   * Format: projects/{project}/locations/{location}/workerPools/{workerPool}
-   * This field is in beta and is available only to restricted users.
+   * This field deprecated; please use `pool.name` instead.
    * </pre>
    *
-   * <code>string worker_pool = 7;</code>
+   * <code>string worker_pool = 7 [deprecated = true];</code>
    *
    * @return The workerPool.
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public java.lang.String getWorkerPool() {
     java.lang.Object ref = workerPool_;
     if (ref instanceof java.lang.String) {
@@ -1438,16 +2138,15 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Option to specify a `WorkerPool` for the build.
-   * Format: projects/{project}/locations/{location}/workerPools/{workerPool}
-   * This field is in beta and is available only to restricted users.
+   * This field deprecated; please use `pool.name` instead.
    * </pre>
    *
-   * <code>string worker_pool = 7;</code>
+   * <code>string worker_pool = 7 [deprecated = true];</code>
    *
    * @return The bytes for workerPool.
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public com.google.protobuf.ByteString getWorkerPoolBytes() {
     java.lang.Object ref = workerPool_;
     if (ref instanceof java.lang.String) {
@@ -1458,6 +2157,69 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
     } else {
       return (com.google.protobuf.ByteString) ref;
     }
+  }
+
+  public static final int POOL_FIELD_NUMBER = 19;
+  private com.google.cloudbuild.v1.BuildOptions.PoolOption pool_;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Specification for execution on a `WorkerPool`.
+   * See [running builds in a private
+   * pool](https://cloud.google.com/build/docs/private-pools/run-builds-in-private-pool)
+   * for more information.
+   * </pre>
+   *
+   * <code>
+   * .google.devtools.cloudbuild.v1.BuildOptions.PoolOption pool = 19 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the pool field is set.
+   */
+  @java.lang.Override
+  public boolean hasPool() {
+    return pool_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Specification for execution on a `WorkerPool`.
+   * See [running builds in a private
+   * pool](https://cloud.google.com/build/docs/private-pools/run-builds-in-private-pool)
+   * for more information.
+   * </pre>
+   *
+   * <code>
+   * .google.devtools.cloudbuild.v1.BuildOptions.PoolOption pool = 19 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The pool.
+   */
+  @java.lang.Override
+  public com.google.cloudbuild.v1.BuildOptions.PoolOption getPool() {
+    return pool_ == null
+        ? com.google.cloudbuild.v1.BuildOptions.PoolOption.getDefaultInstance()
+        : pool_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Specification for execution on a `WorkerPool`.
+   * See [running builds in a private
+   * pool](https://cloud.google.com/build/docs/private-pools/run-builds-in-private-pool)
+   * for more information.
+   * </pre>
+   *
+   * <code>
+   * .google.devtools.cloudbuild.v1.BuildOptions.PoolOption pool = 19 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloudbuild.v1.BuildOptions.PoolOptionOrBuilder getPoolOrBuilder() {
+    return getPool();
   }
 
   public static final int LOGGING_FIELD_NUMBER = 11;
@@ -1806,6 +2568,9 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
     if (dynamicSubstitutions_ != false) {
       output.writeBool(17, dynamicSubstitutions_);
     }
+    if (pool_ != null) {
+      output.writeMessage(19, getPool());
+    }
     unknownFields.writeTo(output);
   }
 
@@ -1876,6 +2641,9 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
     if (dynamicSubstitutions_ != false) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(17, dynamicSubstitutions_);
     }
+    if (pool_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(19, getPool());
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1899,6 +2667,10 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
     if (getDynamicSubstitutions() != other.getDynamicSubstitutions()) return false;
     if (logStreamingOption_ != other.logStreamingOption_) return false;
     if (!getWorkerPool().equals(other.getWorkerPool())) return false;
+    if (hasPool() != other.hasPool()) return false;
+    if (hasPool()) {
+      if (!getPool().equals(other.getPool())) return false;
+    }
     if (logging_ != other.logging_) return false;
     if (!getEnvList().equals(other.getEnvList())) return false;
     if (!getSecretEnvList().equals(other.getSecretEnvList())) return false;
@@ -1932,6 +2704,10 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
     hash = (53 * hash) + logStreamingOption_;
     hash = (37 * hash) + WORKER_POOL_FIELD_NUMBER;
     hash = (53 * hash) + getWorkerPool().hashCode();
+    if (hasPool()) {
+      hash = (37 * hash) + POOL_FIELD_NUMBER;
+      hash = (53 * hash) + getPool().hashCode();
+    }
     hash = (37 * hash) + LOGGING_FIELD_NUMBER;
     hash = (53 * hash) + logging_;
     if (getEnvCount() > 0) {
@@ -2108,6 +2884,12 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
 
       workerPool_ = "";
 
+      if (poolBuilder_ == null) {
+        pool_ = null;
+      } else {
+        pool_ = null;
+        poolBuilder_ = null;
+      }
       logging_ = 0;
 
       env_ = com.google.protobuf.LazyStringArrayList.EMPTY;
@@ -2160,6 +2942,11 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
       result.dynamicSubstitutions_ = dynamicSubstitutions_;
       result.logStreamingOption_ = logStreamingOption_;
       result.workerPool_ = workerPool_;
+      if (poolBuilder_ == null) {
+        result.pool_ = pool_;
+      } else {
+        result.pool_ = poolBuilder_.build();
+      }
       result.logging_ = logging_;
       if (((bitField0_ & 0x00000002) != 0)) {
         env_ = env_.getUnmodifiableView();
@@ -2260,6 +3047,9 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
       if (!other.getWorkerPool().isEmpty()) {
         workerPool_ = other.workerPool_;
         onChanged();
+      }
+      if (other.hasPool()) {
+        mergePool(other.getPool());
       }
       if (other.logging_ != 0) {
         setLoggingValue(other.getLoggingValue());
@@ -3125,15 +3915,14 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Option to specify a `WorkerPool` for the build.
-     * Format: projects/{project}/locations/{location}/workerPools/{workerPool}
-     * This field is in beta and is available only to restricted users.
+     * This field deprecated; please use `pool.name` instead.
      * </pre>
      *
-     * <code>string worker_pool = 7;</code>
+     * <code>string worker_pool = 7 [deprecated = true];</code>
      *
      * @return The workerPool.
      */
+    @java.lang.Deprecated
     public java.lang.String getWorkerPool() {
       java.lang.Object ref = workerPool_;
       if (!(ref instanceof java.lang.String)) {
@@ -3149,15 +3938,14 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Option to specify a `WorkerPool` for the build.
-     * Format: projects/{project}/locations/{location}/workerPools/{workerPool}
-     * This field is in beta and is available only to restricted users.
+     * This field deprecated; please use `pool.name` instead.
      * </pre>
      *
-     * <code>string worker_pool = 7;</code>
+     * <code>string worker_pool = 7 [deprecated = true];</code>
      *
      * @return The bytes for workerPool.
      */
+    @java.lang.Deprecated
     public com.google.protobuf.ByteString getWorkerPoolBytes() {
       java.lang.Object ref = workerPool_;
       if (ref instanceof String) {
@@ -3173,16 +3961,15 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Option to specify a `WorkerPool` for the build.
-     * Format: projects/{project}/locations/{location}/workerPools/{workerPool}
-     * This field is in beta and is available only to restricted users.
+     * This field deprecated; please use `pool.name` instead.
      * </pre>
      *
-     * <code>string worker_pool = 7;</code>
+     * <code>string worker_pool = 7 [deprecated = true];</code>
      *
      * @param value The workerPool to set.
      * @return This builder for chaining.
      */
+    @java.lang.Deprecated
     public Builder setWorkerPool(java.lang.String value) {
       if (value == null) {
         throw new NullPointerException();
@@ -3196,15 +3983,14 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Option to specify a `WorkerPool` for the build.
-     * Format: projects/{project}/locations/{location}/workerPools/{workerPool}
-     * This field is in beta and is available only to restricted users.
+     * This field deprecated; please use `pool.name` instead.
      * </pre>
      *
-     * <code>string worker_pool = 7;</code>
+     * <code>string worker_pool = 7 [deprecated = true];</code>
      *
      * @return This builder for chaining.
      */
+    @java.lang.Deprecated
     public Builder clearWorkerPool() {
 
       workerPool_ = getDefaultInstance().getWorkerPool();
@@ -3215,16 +4001,15 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Option to specify a `WorkerPool` for the build.
-     * Format: projects/{project}/locations/{location}/workerPools/{workerPool}
-     * This field is in beta and is available only to restricted users.
+     * This field deprecated; please use `pool.name` instead.
      * </pre>
      *
-     * <code>string worker_pool = 7;</code>
+     * <code>string worker_pool = 7 [deprecated = true];</code>
      *
      * @param value The bytes for workerPool to set.
      * @return This builder for chaining.
      */
+    @java.lang.Deprecated
     public Builder setWorkerPoolBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
         throw new NullPointerException();
@@ -3234,6 +4019,237 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
       workerPool_ = value;
       onChanged();
       return this;
+    }
+
+    private com.google.cloudbuild.v1.BuildOptions.PoolOption pool_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloudbuild.v1.BuildOptions.PoolOption,
+            com.google.cloudbuild.v1.BuildOptions.PoolOption.Builder,
+            com.google.cloudbuild.v1.BuildOptions.PoolOptionOrBuilder>
+        poolBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specification for execution on a `WorkerPool`.
+     * See [running builds in a private
+     * pool](https://cloud.google.com/build/docs/private-pools/run-builds-in-private-pool)
+     * for more information.
+     * </pre>
+     *
+     * <code>
+     * .google.devtools.cloudbuild.v1.BuildOptions.PoolOption pool = 19 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the pool field is set.
+     */
+    public boolean hasPool() {
+      return poolBuilder_ != null || pool_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specification for execution on a `WorkerPool`.
+     * See [running builds in a private
+     * pool](https://cloud.google.com/build/docs/private-pools/run-builds-in-private-pool)
+     * for more information.
+     * </pre>
+     *
+     * <code>
+     * .google.devtools.cloudbuild.v1.BuildOptions.PoolOption pool = 19 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The pool.
+     */
+    public com.google.cloudbuild.v1.BuildOptions.PoolOption getPool() {
+      if (poolBuilder_ == null) {
+        return pool_ == null
+            ? com.google.cloudbuild.v1.BuildOptions.PoolOption.getDefaultInstance()
+            : pool_;
+      } else {
+        return poolBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specification for execution on a `WorkerPool`.
+     * See [running builds in a private
+     * pool](https://cloud.google.com/build/docs/private-pools/run-builds-in-private-pool)
+     * for more information.
+     * </pre>
+     *
+     * <code>
+     * .google.devtools.cloudbuild.v1.BuildOptions.PoolOption pool = 19 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setPool(com.google.cloudbuild.v1.BuildOptions.PoolOption value) {
+      if (poolBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        pool_ = value;
+        onChanged();
+      } else {
+        poolBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specification for execution on a `WorkerPool`.
+     * See [running builds in a private
+     * pool](https://cloud.google.com/build/docs/private-pools/run-builds-in-private-pool)
+     * for more information.
+     * </pre>
+     *
+     * <code>
+     * .google.devtools.cloudbuild.v1.BuildOptions.PoolOption pool = 19 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setPool(
+        com.google.cloudbuild.v1.BuildOptions.PoolOption.Builder builderForValue) {
+      if (poolBuilder_ == null) {
+        pool_ = builderForValue.build();
+        onChanged();
+      } else {
+        poolBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specification for execution on a `WorkerPool`.
+     * See [running builds in a private
+     * pool](https://cloud.google.com/build/docs/private-pools/run-builds-in-private-pool)
+     * for more information.
+     * </pre>
+     *
+     * <code>
+     * .google.devtools.cloudbuild.v1.BuildOptions.PoolOption pool = 19 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergePool(com.google.cloudbuild.v1.BuildOptions.PoolOption value) {
+      if (poolBuilder_ == null) {
+        if (pool_ != null) {
+          pool_ =
+              com.google.cloudbuild.v1.BuildOptions.PoolOption.newBuilder(pool_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          pool_ = value;
+        }
+        onChanged();
+      } else {
+        poolBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specification for execution on a `WorkerPool`.
+     * See [running builds in a private
+     * pool](https://cloud.google.com/build/docs/private-pools/run-builds-in-private-pool)
+     * for more information.
+     * </pre>
+     *
+     * <code>
+     * .google.devtools.cloudbuild.v1.BuildOptions.PoolOption pool = 19 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearPool() {
+      if (poolBuilder_ == null) {
+        pool_ = null;
+        onChanged();
+      } else {
+        pool_ = null;
+        poolBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specification for execution on a `WorkerPool`.
+     * See [running builds in a private
+     * pool](https://cloud.google.com/build/docs/private-pools/run-builds-in-private-pool)
+     * for more information.
+     * </pre>
+     *
+     * <code>
+     * .google.devtools.cloudbuild.v1.BuildOptions.PoolOption pool = 19 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloudbuild.v1.BuildOptions.PoolOption.Builder getPoolBuilder() {
+
+      onChanged();
+      return getPoolFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specification for execution on a `WorkerPool`.
+     * See [running builds in a private
+     * pool](https://cloud.google.com/build/docs/private-pools/run-builds-in-private-pool)
+     * for more information.
+     * </pre>
+     *
+     * <code>
+     * .google.devtools.cloudbuild.v1.BuildOptions.PoolOption pool = 19 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloudbuild.v1.BuildOptions.PoolOptionOrBuilder getPoolOrBuilder() {
+      if (poolBuilder_ != null) {
+        return poolBuilder_.getMessageOrBuilder();
+      } else {
+        return pool_ == null
+            ? com.google.cloudbuild.v1.BuildOptions.PoolOption.getDefaultInstance()
+            : pool_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specification for execution on a `WorkerPool`.
+     * See [running builds in a private
+     * pool](https://cloud.google.com/build/docs/private-pools/run-builds-in-private-pool)
+     * for more information.
+     * </pre>
+     *
+     * <code>
+     * .google.devtools.cloudbuild.v1.BuildOptions.PoolOption pool = 19 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloudbuild.v1.BuildOptions.PoolOption,
+            com.google.cloudbuild.v1.BuildOptions.PoolOption.Builder,
+            com.google.cloudbuild.v1.BuildOptions.PoolOptionOrBuilder>
+        getPoolFieldBuilder() {
+      if (poolBuilder_ == null) {
+        poolBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloudbuild.v1.BuildOptions.PoolOption,
+                com.google.cloudbuild.v1.BuildOptions.PoolOption.Builder,
+                com.google.cloudbuild.v1.BuildOptions.PoolOptionOrBuilder>(
+                getPool(), getParentForChildren(), isClean());
+        pool_ = null;
+      }
+      return poolBuilder_;
     }
 
     private int logging_ = 0;

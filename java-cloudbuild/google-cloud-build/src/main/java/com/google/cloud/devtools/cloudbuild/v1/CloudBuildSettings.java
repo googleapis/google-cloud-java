@@ -18,6 +18,7 @@ package com.google.cloud.devtools.cloudbuild.v1;
 
 import static com.google.cloud.devtools.cloudbuild.v1.CloudBuildClient.ListBuildTriggersPagedResponse;
 import static com.google.cloud.devtools.cloudbuild.v1.CloudBuildClient.ListBuildsPagedResponse;
+import static com.google.cloud.devtools.cloudbuild.v1.CloudBuildClient.ListWorkerPoolsPagedResponse;
 
 import com.google.api.core.ApiFunction;
 import com.google.api.core.BetaApi;
@@ -38,8 +39,10 @@ import com.google.cloudbuild.v1.BuildTrigger;
 import com.google.cloudbuild.v1.CancelBuildRequest;
 import com.google.cloudbuild.v1.CreateBuildRequest;
 import com.google.cloudbuild.v1.CreateBuildTriggerRequest;
+import com.google.cloudbuild.v1.CreateWorkerPoolOperationMetadata;
 import com.google.cloudbuild.v1.CreateWorkerPoolRequest;
 import com.google.cloudbuild.v1.DeleteBuildTriggerRequest;
+import com.google.cloudbuild.v1.DeleteWorkerPoolOperationMetadata;
 import com.google.cloudbuild.v1.DeleteWorkerPoolRequest;
 import com.google.cloudbuild.v1.GetBuildRequest;
 import com.google.cloudbuild.v1.GetBuildTriggerRequest;
@@ -55,6 +58,7 @@ import com.google.cloudbuild.v1.ReceiveTriggerWebhookResponse;
 import com.google.cloudbuild.v1.RetryBuildRequest;
 import com.google.cloudbuild.v1.RunBuildTriggerRequest;
 import com.google.cloudbuild.v1.UpdateBuildTriggerRequest;
+import com.google.cloudbuild.v1.UpdateWorkerPoolOperationMetadata;
 import com.google.cloudbuild.v1.UpdateWorkerPoolRequest;
 import com.google.cloudbuild.v1.WorkerPool;
 import com.google.longrunning.Operation;
@@ -180,8 +184,15 @@ public class CloudBuildSettings extends ClientSettings<CloudBuildSettings> {
   }
 
   /** Returns the object with the settings used for calls to createWorkerPool. */
-  public UnaryCallSettings<CreateWorkerPoolRequest, WorkerPool> createWorkerPoolSettings() {
+  public UnaryCallSettings<CreateWorkerPoolRequest, Operation> createWorkerPoolSettings() {
     return ((CloudBuildStubSettings) getStubSettings()).createWorkerPoolSettings();
+  }
+
+  /** Returns the object with the settings used for calls to createWorkerPool. */
+  public OperationCallSettings<
+          CreateWorkerPoolRequest, WorkerPool, CreateWorkerPoolOperationMetadata>
+      createWorkerPoolOperationSettings() {
+    return ((CloudBuildStubSettings) getStubSettings()).createWorkerPoolOperationSettings();
   }
 
   /** Returns the object with the settings used for calls to getWorkerPool. */
@@ -190,17 +201,31 @@ public class CloudBuildSettings extends ClientSettings<CloudBuildSettings> {
   }
 
   /** Returns the object with the settings used for calls to deleteWorkerPool. */
-  public UnaryCallSettings<DeleteWorkerPoolRequest, Empty> deleteWorkerPoolSettings() {
+  public UnaryCallSettings<DeleteWorkerPoolRequest, Operation> deleteWorkerPoolSettings() {
     return ((CloudBuildStubSettings) getStubSettings()).deleteWorkerPoolSettings();
   }
 
+  /** Returns the object with the settings used for calls to deleteWorkerPool. */
+  public OperationCallSettings<DeleteWorkerPoolRequest, Empty, DeleteWorkerPoolOperationMetadata>
+      deleteWorkerPoolOperationSettings() {
+    return ((CloudBuildStubSettings) getStubSettings()).deleteWorkerPoolOperationSettings();
+  }
+
   /** Returns the object with the settings used for calls to updateWorkerPool. */
-  public UnaryCallSettings<UpdateWorkerPoolRequest, WorkerPool> updateWorkerPoolSettings() {
+  public UnaryCallSettings<UpdateWorkerPoolRequest, Operation> updateWorkerPoolSettings() {
     return ((CloudBuildStubSettings) getStubSettings()).updateWorkerPoolSettings();
   }
 
+  /** Returns the object with the settings used for calls to updateWorkerPool. */
+  public OperationCallSettings<
+          UpdateWorkerPoolRequest, WorkerPool, UpdateWorkerPoolOperationMetadata>
+      updateWorkerPoolOperationSettings() {
+    return ((CloudBuildStubSettings) getStubSettings()).updateWorkerPoolOperationSettings();
+  }
+
   /** Returns the object with the settings used for calls to listWorkerPools. */
-  public UnaryCallSettings<ListWorkerPoolsRequest, ListWorkerPoolsResponse>
+  public PagedCallSettings<
+          ListWorkerPoolsRequest, ListWorkerPoolsResponse, ListWorkerPoolsPagedResponse>
       listWorkerPoolsSettings() {
     return ((CloudBuildStubSettings) getStubSettings()).listWorkerPoolsSettings();
   }
@@ -289,14 +314,13 @@ public class CloudBuildSettings extends ClientSettings<CloudBuildSettings> {
       return ((CloudBuildStubSettings.Builder) getStubSettings());
     }
 
-    // NEXT_MAJOR_VER: remove 'throws Exception'.
     /**
      * Applies the given settings updater function to all of the unary API methods in this service.
      *
      * <p>Note: This method does not support applying settings to streaming methods.
      */
     public Builder applyToAllUnaryMethods(
-        ApiFunction<UnaryCallSettings.Builder<?, ?>, Void> settingsUpdater) throws Exception {
+        ApiFunction<UnaryCallSettings.Builder<?, ?>, Void> settingsUpdater) {
       super.applyToAllUnaryMethods(
           getStubSettingsBuilder().unaryMethodSettingsBuilders(), settingsUpdater);
       return this;
@@ -389,9 +413,16 @@ public class CloudBuildSettings extends ClientSettings<CloudBuildSettings> {
     }
 
     /** Returns the builder for the settings used for calls to createWorkerPool. */
-    public UnaryCallSettings.Builder<CreateWorkerPoolRequest, WorkerPool>
+    public UnaryCallSettings.Builder<CreateWorkerPoolRequest, Operation>
         createWorkerPoolSettings() {
       return getStubSettingsBuilder().createWorkerPoolSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to createWorkerPool. */
+    public OperationCallSettings.Builder<
+            CreateWorkerPoolRequest, WorkerPool, CreateWorkerPoolOperationMetadata>
+        createWorkerPoolOperationSettings() {
+      return getStubSettingsBuilder().createWorkerPoolOperationSettings();
     }
 
     /** Returns the builder for the settings used for calls to getWorkerPool. */
@@ -400,18 +431,34 @@ public class CloudBuildSettings extends ClientSettings<CloudBuildSettings> {
     }
 
     /** Returns the builder for the settings used for calls to deleteWorkerPool. */
-    public UnaryCallSettings.Builder<DeleteWorkerPoolRequest, Empty> deleteWorkerPoolSettings() {
+    public UnaryCallSettings.Builder<DeleteWorkerPoolRequest, Operation>
+        deleteWorkerPoolSettings() {
       return getStubSettingsBuilder().deleteWorkerPoolSettings();
     }
 
+    /** Returns the builder for the settings used for calls to deleteWorkerPool. */
+    public OperationCallSettings.Builder<
+            DeleteWorkerPoolRequest, Empty, DeleteWorkerPoolOperationMetadata>
+        deleteWorkerPoolOperationSettings() {
+      return getStubSettingsBuilder().deleteWorkerPoolOperationSettings();
+    }
+
     /** Returns the builder for the settings used for calls to updateWorkerPool. */
-    public UnaryCallSettings.Builder<UpdateWorkerPoolRequest, WorkerPool>
+    public UnaryCallSettings.Builder<UpdateWorkerPoolRequest, Operation>
         updateWorkerPoolSettings() {
       return getStubSettingsBuilder().updateWorkerPoolSettings();
     }
 
+    /** Returns the builder for the settings used for calls to updateWorkerPool. */
+    public OperationCallSettings.Builder<
+            UpdateWorkerPoolRequest, WorkerPool, UpdateWorkerPoolOperationMetadata>
+        updateWorkerPoolOperationSettings() {
+      return getStubSettingsBuilder().updateWorkerPoolOperationSettings();
+    }
+
     /** Returns the builder for the settings used for calls to listWorkerPools. */
-    public UnaryCallSettings.Builder<ListWorkerPoolsRequest, ListWorkerPoolsResponse>
+    public PagedCallSettings.Builder<
+            ListWorkerPoolsRequest, ListWorkerPoolsResponse, ListWorkerPoolsPagedResponse>
         listWorkerPoolsSettings() {
       return getStubSettingsBuilder().listWorkerPoolsSettings();
     }

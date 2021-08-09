@@ -27,10 +27,13 @@ public interface CreateWorkerPoolRequestOrBuilder
    *
    *
    * <pre>
-   * ID of the parent project.
+   * Required. The parent resource where this worker pool will be created.
+   * Format: `projects/{project}/locations/{location}`.
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The parent.
    */
@@ -39,10 +42,13 @@ public interface CreateWorkerPoolRequestOrBuilder
    *
    *
    * <pre>
-   * ID of the parent project.
+   * Required. The parent resource where this worker pool will be created.
+   * Format: `projects/{project}/locations/{location}`.
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The bytes for parent.
    */
@@ -52,10 +58,12 @@ public interface CreateWorkerPoolRequestOrBuilder
    *
    *
    * <pre>
-   * `WorkerPool` resource to create.
+   * Required. `WorkerPool` resource to create.
    * </pre>
    *
-   * <code>.google.devtools.cloudbuild.v1.WorkerPool worker_pool = 2;</code>
+   * <code>
+   * .google.devtools.cloudbuild.v1.WorkerPool worker_pool = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return Whether the workerPool field is set.
    */
@@ -64,10 +72,12 @@ public interface CreateWorkerPoolRequestOrBuilder
    *
    *
    * <pre>
-   * `WorkerPool` resource to create.
+   * Required. `WorkerPool` resource to create.
    * </pre>
    *
-   * <code>.google.devtools.cloudbuild.v1.WorkerPool worker_pool = 2;</code>
+   * <code>
+   * .google.devtools.cloudbuild.v1.WorkerPool worker_pool = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return The workerPool.
    */
@@ -76,10 +86,61 @@ public interface CreateWorkerPoolRequestOrBuilder
    *
    *
    * <pre>
-   * `WorkerPool` resource to create.
+   * Required. `WorkerPool` resource to create.
    * </pre>
    *
-   * <code>.google.devtools.cloudbuild.v1.WorkerPool worker_pool = 2;</code>
+   * <code>
+   * .google.devtools.cloudbuild.v1.WorkerPool worker_pool = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   com.google.cloudbuild.v1.WorkerPoolOrBuilder getWorkerPoolOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Required. Immutable. The ID to use for the `WorkerPool`, which will become
+   * the final component of the resource name.
+   * This value should be 1-63 characters, and valid characters
+   * are /[a-z][0-9]-/.
+   * </pre>
+   *
+   * <code>
+   * string worker_pool_id = 3 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = REQUIRED];
+   * </code>
+   *
+   * @return The workerPoolId.
+   */
+  java.lang.String getWorkerPoolId();
+  /**
+   *
+   *
+   * <pre>
+   * Required. Immutable. The ID to use for the `WorkerPool`, which will become
+   * the final component of the resource name.
+   * This value should be 1-63 characters, and valid characters
+   * are /[a-z][0-9]-/.
+   * </pre>
+   *
+   * <code>
+   * string worker_pool_id = 3 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = REQUIRED];
+   * </code>
+   *
+   * @return The bytes for workerPoolId.
+   */
+  com.google.protobuf.ByteString getWorkerPoolIdBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * If set, validate the request and preview the response, but do not actually
+   * post it.
+   * </pre>
+   *
+   * <code>bool validate_only = 4;</code>
+   *
+   * @return The validateOnly.
+   */
+  boolean getValidateOnly();
 }

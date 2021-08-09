@@ -18,6 +18,7 @@ package com.google.cloud.devtools.cloudbuild.v1.stub;
 
 import static com.google.cloud.devtools.cloudbuild.v1.CloudBuildClient.ListBuildTriggersPagedResponse;
 import static com.google.cloud.devtools.cloudbuild.v1.CloudBuildClient.ListBuildsPagedResponse;
+import static com.google.cloud.devtools.cloudbuild.v1.CloudBuildClient.ListWorkerPoolsPagedResponse;
 
 import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
@@ -51,8 +52,10 @@ import com.google.cloudbuild.v1.BuildTrigger;
 import com.google.cloudbuild.v1.CancelBuildRequest;
 import com.google.cloudbuild.v1.CreateBuildRequest;
 import com.google.cloudbuild.v1.CreateBuildTriggerRequest;
+import com.google.cloudbuild.v1.CreateWorkerPoolOperationMetadata;
 import com.google.cloudbuild.v1.CreateWorkerPoolRequest;
 import com.google.cloudbuild.v1.DeleteBuildTriggerRequest;
+import com.google.cloudbuild.v1.DeleteWorkerPoolOperationMetadata;
 import com.google.cloudbuild.v1.DeleteWorkerPoolRequest;
 import com.google.cloudbuild.v1.GetBuildRequest;
 import com.google.cloudbuild.v1.GetBuildTriggerRequest;
@@ -68,6 +71,7 @@ import com.google.cloudbuild.v1.ReceiveTriggerWebhookResponse;
 import com.google.cloudbuild.v1.RetryBuildRequest;
 import com.google.cloudbuild.v1.RunBuildTriggerRequest;
 import com.google.cloudbuild.v1.UpdateBuildTriggerRequest;
+import com.google.cloudbuild.v1.UpdateWorkerPoolOperationMetadata;
 import com.google.cloudbuild.v1.UpdateWorkerPoolRequest;
 import com.google.cloudbuild.v1.WorkerPool;
 import com.google.common.collect.ImmutableList;
@@ -142,11 +146,21 @@ public class CloudBuildStubSettings extends StubSettings<CloudBuildStubSettings>
       runBuildTriggerOperationSettings;
   private final UnaryCallSettings<ReceiveTriggerWebhookRequest, ReceiveTriggerWebhookResponse>
       receiveTriggerWebhookSettings;
-  private final UnaryCallSettings<CreateWorkerPoolRequest, WorkerPool> createWorkerPoolSettings;
+  private final UnaryCallSettings<CreateWorkerPoolRequest, Operation> createWorkerPoolSettings;
+  private final OperationCallSettings<
+          CreateWorkerPoolRequest, WorkerPool, CreateWorkerPoolOperationMetadata>
+      createWorkerPoolOperationSettings;
   private final UnaryCallSettings<GetWorkerPoolRequest, WorkerPool> getWorkerPoolSettings;
-  private final UnaryCallSettings<DeleteWorkerPoolRequest, Empty> deleteWorkerPoolSettings;
-  private final UnaryCallSettings<UpdateWorkerPoolRequest, WorkerPool> updateWorkerPoolSettings;
-  private final UnaryCallSettings<ListWorkerPoolsRequest, ListWorkerPoolsResponse>
+  private final UnaryCallSettings<DeleteWorkerPoolRequest, Operation> deleteWorkerPoolSettings;
+  private final OperationCallSettings<
+          DeleteWorkerPoolRequest, Empty, DeleteWorkerPoolOperationMetadata>
+      deleteWorkerPoolOperationSettings;
+  private final UnaryCallSettings<UpdateWorkerPoolRequest, Operation> updateWorkerPoolSettings;
+  private final OperationCallSettings<
+          UpdateWorkerPoolRequest, WorkerPool, UpdateWorkerPoolOperationMetadata>
+      updateWorkerPoolOperationSettings;
+  private final PagedCallSettings<
+          ListWorkerPoolsRequest, ListWorkerPoolsResponse, ListWorkerPoolsPagedResponse>
       listWorkerPoolsSettings;
 
   private static final PagedListDescriptor<ListBuildsRequest, ListBuildsResponse, Build>
@@ -225,6 +239,45 @@ public class CloudBuildStubSettings extends StubSettings<CloudBuildStubSettings>
             }
           };
 
+  private static final PagedListDescriptor<
+          ListWorkerPoolsRequest, ListWorkerPoolsResponse, WorkerPool>
+      LIST_WORKER_POOLS_PAGE_STR_DESC =
+          new PagedListDescriptor<ListWorkerPoolsRequest, ListWorkerPoolsResponse, WorkerPool>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListWorkerPoolsRequest injectToken(
+                ListWorkerPoolsRequest payload, String token) {
+              return ListWorkerPoolsRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListWorkerPoolsRequest injectPageSize(
+                ListWorkerPoolsRequest payload, int pageSize) {
+              return ListWorkerPoolsRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListWorkerPoolsRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListWorkerPoolsResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<WorkerPool> extractResources(ListWorkerPoolsResponse payload) {
+              return payload.getWorkerPoolsList() == null
+                  ? ImmutableList.<WorkerPool>of()
+                  : payload.getWorkerPoolsList();
+            }
+          };
+
   private static final PagedListResponseFactory<
           ListBuildsRequest, ListBuildsResponse, ListBuildsPagedResponse>
       LIST_BUILDS_PAGE_STR_FACT =
@@ -260,6 +313,23 @@ public class CloudBuildStubSettings extends StubSettings<CloudBuildStubSettings>
                       PageContext.create(
                           callable, LIST_BUILD_TRIGGERS_PAGE_STR_DESC, request, context);
               return ListBuildTriggersPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListWorkerPoolsRequest, ListWorkerPoolsResponse, ListWorkerPoolsPagedResponse>
+      LIST_WORKER_POOLS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListWorkerPoolsRequest, ListWorkerPoolsResponse, ListWorkerPoolsPagedResponse>() {
+            @Override
+            public ApiFuture<ListWorkerPoolsPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListWorkerPoolsRequest, ListWorkerPoolsResponse> callable,
+                ListWorkerPoolsRequest request,
+                ApiCallContext context,
+                ApiFuture<ListWorkerPoolsResponse> futureResponse) {
+              PageContext<ListWorkerPoolsRequest, ListWorkerPoolsResponse, WorkerPool> pageContext =
+                  PageContext.create(callable, LIST_WORKER_POOLS_PAGE_STR_DESC, request, context);
+              return ListWorkerPoolsPagedResponse.createAsync(pageContext, futureResponse);
             }
           };
 
@@ -346,8 +416,15 @@ public class CloudBuildStubSettings extends StubSettings<CloudBuildStubSettings>
   }
 
   /** Returns the object with the settings used for calls to createWorkerPool. */
-  public UnaryCallSettings<CreateWorkerPoolRequest, WorkerPool> createWorkerPoolSettings() {
+  public UnaryCallSettings<CreateWorkerPoolRequest, Operation> createWorkerPoolSettings() {
     return createWorkerPoolSettings;
+  }
+
+  /** Returns the object with the settings used for calls to createWorkerPool. */
+  public OperationCallSettings<
+          CreateWorkerPoolRequest, WorkerPool, CreateWorkerPoolOperationMetadata>
+      createWorkerPoolOperationSettings() {
+    return createWorkerPoolOperationSettings;
   }
 
   /** Returns the object with the settings used for calls to getWorkerPool. */
@@ -356,17 +433,31 @@ public class CloudBuildStubSettings extends StubSettings<CloudBuildStubSettings>
   }
 
   /** Returns the object with the settings used for calls to deleteWorkerPool. */
-  public UnaryCallSettings<DeleteWorkerPoolRequest, Empty> deleteWorkerPoolSettings() {
+  public UnaryCallSettings<DeleteWorkerPoolRequest, Operation> deleteWorkerPoolSettings() {
     return deleteWorkerPoolSettings;
   }
 
+  /** Returns the object with the settings used for calls to deleteWorkerPool. */
+  public OperationCallSettings<DeleteWorkerPoolRequest, Empty, DeleteWorkerPoolOperationMetadata>
+      deleteWorkerPoolOperationSettings() {
+    return deleteWorkerPoolOperationSettings;
+  }
+
   /** Returns the object with the settings used for calls to updateWorkerPool. */
-  public UnaryCallSettings<UpdateWorkerPoolRequest, WorkerPool> updateWorkerPoolSettings() {
+  public UnaryCallSettings<UpdateWorkerPoolRequest, Operation> updateWorkerPoolSettings() {
     return updateWorkerPoolSettings;
   }
 
+  /** Returns the object with the settings used for calls to updateWorkerPool. */
+  public OperationCallSettings<
+          UpdateWorkerPoolRequest, WorkerPool, UpdateWorkerPoolOperationMetadata>
+      updateWorkerPoolOperationSettings() {
+    return updateWorkerPoolOperationSettings;
+  }
+
   /** Returns the object with the settings used for calls to listWorkerPools. */
-  public UnaryCallSettings<ListWorkerPoolsRequest, ListWorkerPoolsResponse>
+  public PagedCallSettings<
+          ListWorkerPoolsRequest, ListWorkerPoolsResponse, ListWorkerPoolsPagedResponse>
       listWorkerPoolsSettings() {
     return listWorkerPoolsSettings;
   }
@@ -461,9 +552,12 @@ public class CloudBuildStubSettings extends StubSettings<CloudBuildStubSettings>
     runBuildTriggerOperationSettings = settingsBuilder.runBuildTriggerOperationSettings().build();
     receiveTriggerWebhookSettings = settingsBuilder.receiveTriggerWebhookSettings().build();
     createWorkerPoolSettings = settingsBuilder.createWorkerPoolSettings().build();
+    createWorkerPoolOperationSettings = settingsBuilder.createWorkerPoolOperationSettings().build();
     getWorkerPoolSettings = settingsBuilder.getWorkerPoolSettings().build();
     deleteWorkerPoolSettings = settingsBuilder.deleteWorkerPoolSettings().build();
+    deleteWorkerPoolOperationSettings = settingsBuilder.deleteWorkerPoolOperationSettings().build();
     updateWorkerPoolSettings = settingsBuilder.updateWorkerPoolSettings().build();
+    updateWorkerPoolOperationSettings = settingsBuilder.updateWorkerPoolOperationSettings().build();
     listWorkerPoolsSettings = settingsBuilder.listWorkerPoolsSettings().build();
   }
 
@@ -500,14 +594,24 @@ public class CloudBuildStubSettings extends StubSettings<CloudBuildStubSettings>
     private final UnaryCallSettings.Builder<
             ReceiveTriggerWebhookRequest, ReceiveTriggerWebhookResponse>
         receiveTriggerWebhookSettings;
-    private final UnaryCallSettings.Builder<CreateWorkerPoolRequest, WorkerPool>
+    private final UnaryCallSettings.Builder<CreateWorkerPoolRequest, Operation>
         createWorkerPoolSettings;
+    private final OperationCallSettings.Builder<
+            CreateWorkerPoolRequest, WorkerPool, CreateWorkerPoolOperationMetadata>
+        createWorkerPoolOperationSettings;
     private final UnaryCallSettings.Builder<GetWorkerPoolRequest, WorkerPool> getWorkerPoolSettings;
-    private final UnaryCallSettings.Builder<DeleteWorkerPoolRequest, Empty>
+    private final UnaryCallSettings.Builder<DeleteWorkerPoolRequest, Operation>
         deleteWorkerPoolSettings;
-    private final UnaryCallSettings.Builder<UpdateWorkerPoolRequest, WorkerPool>
+    private final OperationCallSettings.Builder<
+            DeleteWorkerPoolRequest, Empty, DeleteWorkerPoolOperationMetadata>
+        deleteWorkerPoolOperationSettings;
+    private final UnaryCallSettings.Builder<UpdateWorkerPoolRequest, Operation>
         updateWorkerPoolSettings;
-    private final UnaryCallSettings.Builder<ListWorkerPoolsRequest, ListWorkerPoolsResponse>
+    private final OperationCallSettings.Builder<
+            UpdateWorkerPoolRequest, WorkerPool, UpdateWorkerPoolOperationMetadata>
+        updateWorkerPoolOperationSettings;
+    private final PagedCallSettings.Builder<
+            ListWorkerPoolsRequest, ListWorkerPoolsResponse, ListWorkerPoolsPagedResponse>
         listWorkerPoolsSettings;
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
@@ -578,10 +682,13 @@ public class CloudBuildStubSettings extends StubSettings<CloudBuildStubSettings>
       runBuildTriggerOperationSettings = OperationCallSettings.newBuilder();
       receiveTriggerWebhookSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       createWorkerPoolSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      createWorkerPoolOperationSettings = OperationCallSettings.newBuilder();
       getWorkerPoolSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       deleteWorkerPoolSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      deleteWorkerPoolOperationSettings = OperationCallSettings.newBuilder();
       updateWorkerPoolSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-      listWorkerPoolsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      updateWorkerPoolOperationSettings = OperationCallSettings.newBuilder();
+      listWorkerPoolsSettings = PagedCallSettings.newBuilder(LIST_WORKER_POOLS_PAGE_STR_FACT);
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -624,9 +731,12 @@ public class CloudBuildStubSettings extends StubSettings<CloudBuildStubSettings>
       runBuildTriggerOperationSettings = settings.runBuildTriggerOperationSettings.toBuilder();
       receiveTriggerWebhookSettings = settings.receiveTriggerWebhookSettings.toBuilder();
       createWorkerPoolSettings = settings.createWorkerPoolSettings.toBuilder();
+      createWorkerPoolOperationSettings = settings.createWorkerPoolOperationSettings.toBuilder();
       getWorkerPoolSettings = settings.getWorkerPoolSettings.toBuilder();
       deleteWorkerPoolSettings = settings.deleteWorkerPoolSettings.toBuilder();
+      deleteWorkerPoolOperationSettings = settings.deleteWorkerPoolOperationSettings.toBuilder();
       updateWorkerPoolSettings = settings.updateWorkerPoolSettings.toBuilder();
+      updateWorkerPoolOperationSettings = settings.updateWorkerPoolOperationSettings.toBuilder();
       listWorkerPoolsSettings = settings.listWorkerPoolsSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
@@ -819,17 +929,91 @@ public class CloudBuildStubSettings extends StubSettings<CloudBuildStubSettings>
                       .setTotalTimeout(Duration.ofMillis(300000L))
                       .build()));
 
+      builder
+          .createWorkerPoolOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<CreateWorkerPoolRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(WorkerPool.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(
+                  CreateWorkerPoolOperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
+                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .deleteWorkerPoolOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<DeleteWorkerPoolRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Empty.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(
+                  DeleteWorkerPoolOperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
+                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .updateWorkerPoolOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<UpdateWorkerPoolRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(WorkerPool.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(
+                  UpdateWorkerPoolOperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
+                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .build()));
+
       return builder;
     }
 
-    // NEXT_MAJOR_VER: remove 'throws Exception'.
     /**
      * Applies the given settings updater function to all of the unary API methods in this service.
      *
      * <p>Note: This method does not support applying settings to streaming methods.
      */
     public Builder applyToAllUnaryMethods(
-        ApiFunction<UnaryCallSettings.Builder<?, ?>, Void> settingsUpdater) throws Exception {
+        ApiFunction<UnaryCallSettings.Builder<?, ?>, Void> settingsUpdater) {
       super.applyToAllUnaryMethods(unaryMethodSettingsBuilders, settingsUpdater);
       return this;
     }
@@ -931,9 +1115,18 @@ public class CloudBuildStubSettings extends StubSettings<CloudBuildStubSettings>
     }
 
     /** Returns the builder for the settings used for calls to createWorkerPool. */
-    public UnaryCallSettings.Builder<CreateWorkerPoolRequest, WorkerPool>
+    public UnaryCallSettings.Builder<CreateWorkerPoolRequest, Operation>
         createWorkerPoolSettings() {
       return createWorkerPoolSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to createWorkerPool. */
+    @BetaApi(
+        "The surface for use by generated code is not stable yet and may change in the future.")
+    public OperationCallSettings.Builder<
+            CreateWorkerPoolRequest, WorkerPool, CreateWorkerPoolOperationMetadata>
+        createWorkerPoolOperationSettings() {
+      return createWorkerPoolOperationSettings;
     }
 
     /** Returns the builder for the settings used for calls to getWorkerPool. */
@@ -942,18 +1135,38 @@ public class CloudBuildStubSettings extends StubSettings<CloudBuildStubSettings>
     }
 
     /** Returns the builder for the settings used for calls to deleteWorkerPool. */
-    public UnaryCallSettings.Builder<DeleteWorkerPoolRequest, Empty> deleteWorkerPoolSettings() {
+    public UnaryCallSettings.Builder<DeleteWorkerPoolRequest, Operation>
+        deleteWorkerPoolSettings() {
       return deleteWorkerPoolSettings;
     }
 
+    /** Returns the builder for the settings used for calls to deleteWorkerPool. */
+    @BetaApi(
+        "The surface for use by generated code is not stable yet and may change in the future.")
+    public OperationCallSettings.Builder<
+            DeleteWorkerPoolRequest, Empty, DeleteWorkerPoolOperationMetadata>
+        deleteWorkerPoolOperationSettings() {
+      return deleteWorkerPoolOperationSettings;
+    }
+
     /** Returns the builder for the settings used for calls to updateWorkerPool. */
-    public UnaryCallSettings.Builder<UpdateWorkerPoolRequest, WorkerPool>
+    public UnaryCallSettings.Builder<UpdateWorkerPoolRequest, Operation>
         updateWorkerPoolSettings() {
       return updateWorkerPoolSettings;
     }
 
+    /** Returns the builder for the settings used for calls to updateWorkerPool. */
+    @BetaApi(
+        "The surface for use by generated code is not stable yet and may change in the future.")
+    public OperationCallSettings.Builder<
+            UpdateWorkerPoolRequest, WorkerPool, UpdateWorkerPoolOperationMetadata>
+        updateWorkerPoolOperationSettings() {
+      return updateWorkerPoolOperationSettings;
+    }
+
     /** Returns the builder for the settings used for calls to listWorkerPools. */
-    public UnaryCallSettings.Builder<ListWorkerPoolsRequest, ListWorkerPoolsResponse>
+    public PagedCallSettings.Builder<
+            ListWorkerPoolsRequest, ListWorkerPoolsResponse, ListWorkerPoolsPagedResponse>
         listWorkerPoolsSettings() {
       return listWorkerPoolsSettings;
     }

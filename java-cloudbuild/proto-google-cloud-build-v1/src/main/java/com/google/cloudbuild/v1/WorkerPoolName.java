@@ -28,38 +28,38 @@ import javax.annotation.Generated;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 @Generated("by gapic-generator-java")
-public class SecretVersionName implements ResourceName {
-  private static final PathTemplate PROJECT_SECRET_VERSION =
+public class WorkerPoolName implements ResourceName {
+  private static final PathTemplate PROJECT_LOCATION_WORKER_POOL =
       PathTemplate.createWithoutUrlEncoding(
-          "projects/{project}/secrets/{secret}/versions/{version}");
+          "projects/{project}/locations/{location}/workerPools/{worker_pool}");
   private volatile Map<String, String> fieldValuesMap;
   private final String project;
-  private final String secret;
-  private final String version;
+  private final String location;
+  private final String workerPool;
 
   @Deprecated
-  protected SecretVersionName() {
+  protected WorkerPoolName() {
     project = null;
-    secret = null;
-    version = null;
+    location = null;
+    workerPool = null;
   }
 
-  private SecretVersionName(Builder builder) {
+  private WorkerPoolName(Builder builder) {
     project = Preconditions.checkNotNull(builder.getProject());
-    secret = Preconditions.checkNotNull(builder.getSecret());
-    version = Preconditions.checkNotNull(builder.getVersion());
+    location = Preconditions.checkNotNull(builder.getLocation());
+    workerPool = Preconditions.checkNotNull(builder.getWorkerPool());
   }
 
   public String getProject() {
     return project;
   }
 
-  public String getSecret() {
-    return secret;
+  public String getLocation() {
+    return location;
   }
 
-  public String getVersion() {
-    return version;
+  public String getWorkerPool() {
+    return workerPool;
   }
 
   public static Builder newBuilder() {
@@ -70,40 +70,40 @@ public class SecretVersionName implements ResourceName {
     return new Builder(this);
   }
 
-  public static SecretVersionName of(String project, String secret, String version) {
-    return newBuilder().setProject(project).setSecret(secret).setVersion(version).build();
+  public static WorkerPoolName of(String project, String location, String workerPool) {
+    return newBuilder().setProject(project).setLocation(location).setWorkerPool(workerPool).build();
   }
 
-  public static String format(String project, String secret, String version) {
+  public static String format(String project, String location, String workerPool) {
     return newBuilder()
         .setProject(project)
-        .setSecret(secret)
-        .setVersion(version)
+        .setLocation(location)
+        .setWorkerPool(workerPool)
         .build()
         .toString();
   }
 
-  public static SecretVersionName parse(String formattedString) {
+  public static WorkerPoolName parse(String formattedString) {
     if (formattedString.isEmpty()) {
       return null;
     }
     Map<String, String> matchMap =
-        PROJECT_SECRET_VERSION.validatedMatch(
-            formattedString, "SecretVersionName.parse: formattedString not in valid format");
-    return of(matchMap.get("project"), matchMap.get("secret"), matchMap.get("version"));
+        PROJECT_LOCATION_WORKER_POOL.validatedMatch(
+            formattedString, "WorkerPoolName.parse: formattedString not in valid format");
+    return of(matchMap.get("project"), matchMap.get("location"), matchMap.get("worker_pool"));
   }
 
-  public static List<SecretVersionName> parseList(List<String> formattedStrings) {
-    List<SecretVersionName> list = new ArrayList<>(formattedStrings.size());
+  public static List<WorkerPoolName> parseList(List<String> formattedStrings) {
+    List<WorkerPoolName> list = new ArrayList<>(formattedStrings.size());
     for (String formattedString : formattedStrings) {
       list.add(parse(formattedString));
     }
     return list;
   }
 
-  public static List<String> toStringList(List<SecretVersionName> values) {
+  public static List<String> toStringList(List<WorkerPoolName> values) {
     List<String> list = new ArrayList<>(values.size());
-    for (SecretVersionName value : values) {
+    for (WorkerPoolName value : values) {
       if (value == null) {
         list.add("");
       } else {
@@ -114,7 +114,7 @@ public class SecretVersionName implements ResourceName {
   }
 
   public static boolean isParsableFrom(String formattedString) {
-    return PROJECT_SECRET_VERSION.matches(formattedString);
+    return PROJECT_LOCATION_WORKER_POOL.matches(formattedString);
   }
 
   @Override
@@ -126,11 +126,11 @@ public class SecretVersionName implements ResourceName {
           if (project != null) {
             fieldMapBuilder.put("project", project);
           }
-          if (secret != null) {
-            fieldMapBuilder.put("secret", secret);
+          if (location != null) {
+            fieldMapBuilder.put("location", location);
           }
-          if (version != null) {
-            fieldMapBuilder.put("version", version);
+          if (workerPool != null) {
+            fieldMapBuilder.put("worker_pool", workerPool);
           }
           fieldValuesMap = fieldMapBuilder.build();
         }
@@ -145,8 +145,8 @@ public class SecretVersionName implements ResourceName {
 
   @Override
   public String toString() {
-    return PROJECT_SECRET_VERSION.instantiate(
-        "project", project, "secret", secret, "version", version);
+    return PROJECT_LOCATION_WORKER_POOL.instantiate(
+        "project", project, "location", location, "worker_pool", workerPool);
   }
 
   @Override
@@ -155,10 +155,10 @@ public class SecretVersionName implements ResourceName {
       return true;
     }
     if (o != null || getClass() == o.getClass()) {
-      SecretVersionName that = ((SecretVersionName) o);
+      WorkerPoolName that = ((WorkerPoolName) o);
       return Objects.equals(this.project, that.project)
-          && Objects.equals(this.secret, that.secret)
-          && Objects.equals(this.version, that.version);
+          && Objects.equals(this.location, that.location)
+          && Objects.equals(this.workerPool, that.workerPool);
     }
     return false;
   }
@@ -169,17 +169,17 @@ public class SecretVersionName implements ResourceName {
     h *= 1000003;
     h ^= Objects.hashCode(project);
     h *= 1000003;
-    h ^= Objects.hashCode(secret);
+    h ^= Objects.hashCode(location);
     h *= 1000003;
-    h ^= Objects.hashCode(version);
+    h ^= Objects.hashCode(workerPool);
     return h;
   }
 
-  /** Builder for projects/{project}/secrets/{secret}/versions/{version}. */
+  /** Builder for projects/{project}/locations/{location}/workerPools/{worker_pool}. */
   public static class Builder {
     private String project;
-    private String secret;
-    private String version;
+    private String location;
+    private String workerPool;
 
     protected Builder() {}
 
@@ -187,12 +187,12 @@ public class SecretVersionName implements ResourceName {
       return project;
     }
 
-    public String getSecret() {
-      return secret;
+    public String getLocation() {
+      return location;
     }
 
-    public String getVersion() {
-      return version;
+    public String getWorkerPool() {
+      return workerPool;
     }
 
     public Builder setProject(String project) {
@@ -200,24 +200,24 @@ public class SecretVersionName implements ResourceName {
       return this;
     }
 
-    public Builder setSecret(String secret) {
-      this.secret = secret;
+    public Builder setLocation(String location) {
+      this.location = location;
       return this;
     }
 
-    public Builder setVersion(String version) {
-      this.version = version;
+    public Builder setWorkerPool(String workerPool) {
+      this.workerPool = workerPool;
       return this;
     }
 
-    private Builder(SecretVersionName secretVersionName) {
-      this.project = secretVersionName.project;
-      this.secret = secretVersionName.secret;
-      this.version = secretVersionName.version;
+    private Builder(WorkerPoolName workerPoolName) {
+      this.project = workerPoolName.project;
+      this.location = workerPoolName.location;
+      this.workerPool = workerPoolName.workerPool;
     }
 
-    public SecretVersionName build() {
-      return new SecretVersionName(this);
+    public WorkerPoolName build() {
+      return new WorkerPoolName(this);
     }
   }
 }

@@ -37,9 +37,7 @@ public final class UpdateWorkerPoolRequest extends com.google.protobuf.Generated
     super(builder);
   }
 
-  private UpdateWorkerPoolRequest() {
-    name_ = "";
-  }
+  private UpdateWorkerPoolRequest() {}
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
@@ -70,14 +68,7 @@ public final class UpdateWorkerPoolRequest extends com.google.protobuf.Generated
           case 0:
             done = true;
             break;
-          case 18:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              name_ = s;
-              break;
-            }
-          case 26:
+          case 10:
             {
               com.google.cloudbuild.v1.WorkerPool.Builder subBuilder = null;
               if (workerPool_ != null) {
@@ -91,6 +82,26 @@ public final class UpdateWorkerPoolRequest extends com.google.protobuf.Generated
                 workerPool_ = subBuilder.buildPartial();
               }
 
+              break;
+            }
+          case 18:
+            {
+              com.google.protobuf.FieldMask.Builder subBuilder = null;
+              if (updateMask_ != null) {
+                subBuilder = updateMask_.toBuilder();
+              }
+              updateMask_ =
+                  input.readMessage(com.google.protobuf.FieldMask.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(updateMask_);
+                updateMask_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+          case 32:
+            {
+              validateOnly_ = input.readBool();
               break;
             }
           default:
@@ -127,67 +138,20 @@ public final class UpdateWorkerPoolRequest extends com.google.protobuf.Generated
             com.google.cloudbuild.v1.UpdateWorkerPoolRequest.Builder.class);
   }
 
-  public static final int NAME_FIELD_NUMBER = 2;
-  private volatile java.lang.Object name_;
-  /**
-   *
-   *
-   * <pre>
-   * The field will contain name of the resource requested, for example:
-   * "projects/project-1/workerPools/workerpool-name"
-   * </pre>
-   *
-   * <code>string name = 2;</code>
-   *
-   * @return The name.
-   */
-  @java.lang.Override
-  public java.lang.String getName() {
-    java.lang.Object ref = name_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      name_ = s;
-      return s;
-    }
-  }
-  /**
-   *
-   *
-   * <pre>
-   * The field will contain name of the resource requested, for example:
-   * "projects/project-1/workerPools/workerpool-name"
-   * </pre>
-   *
-   * <code>string name = 2;</code>
-   *
-   * @return The bytes for name.
-   */
-  @java.lang.Override
-  public com.google.protobuf.ByteString getNameBytes() {
-    java.lang.Object ref = name_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b =
-          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
-      name_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
-  }
-
-  public static final int WORKER_POOL_FIELD_NUMBER = 3;
+  public static final int WORKER_POOL_FIELD_NUMBER = 1;
   private com.google.cloudbuild.v1.WorkerPool workerPool_;
   /**
    *
    *
    * <pre>
-   * `WorkerPool` resource to update.
+   * Required. The `WorkerPool` to update.
+   * The `name` field is used to identify the `WorkerPool` to update.
+   * Format: `projects/{project}/locations/{location}/workerPools/{workerPool}`.
    * </pre>
    *
-   * <code>.google.devtools.cloudbuild.v1.WorkerPool worker_pool = 3;</code>
+   * <code>
+   * .google.devtools.cloudbuild.v1.WorkerPool worker_pool = 1 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return Whether the workerPool field is set.
    */
@@ -199,10 +163,14 @@ public final class UpdateWorkerPoolRequest extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * `WorkerPool` resource to update.
+   * Required. The `WorkerPool` to update.
+   * The `name` field is used to identify the `WorkerPool` to update.
+   * Format: `projects/{project}/locations/{location}/workerPools/{workerPool}`.
    * </pre>
    *
-   * <code>.google.devtools.cloudbuild.v1.WorkerPool worker_pool = 3;</code>
+   * <code>
+   * .google.devtools.cloudbuild.v1.WorkerPool worker_pool = 1 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return The workerPool.
    */
@@ -216,14 +184,83 @@ public final class UpdateWorkerPoolRequest extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * `WorkerPool` resource to update.
+   * Required. The `WorkerPool` to update.
+   * The `name` field is used to identify the `WorkerPool` to update.
+   * Format: `projects/{project}/locations/{location}/workerPools/{workerPool}`.
    * </pre>
    *
-   * <code>.google.devtools.cloudbuild.v1.WorkerPool worker_pool = 3;</code>
+   * <code>
+   * .google.devtools.cloudbuild.v1.WorkerPool worker_pool = 1 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   @java.lang.Override
   public com.google.cloudbuild.v1.WorkerPoolOrBuilder getWorkerPoolOrBuilder() {
     return getWorkerPool();
+  }
+
+  public static final int UPDATE_MASK_FIELD_NUMBER = 2;
+  private com.google.protobuf.FieldMask updateMask_;
+  /**
+   *
+   *
+   * <pre>
+   * A mask specifying which fields in `worker_pool` to update.
+   * </pre>
+   *
+   * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+   *
+   * @return Whether the updateMask field is set.
+   */
+  @java.lang.Override
+  public boolean hasUpdateMask() {
+    return updateMask_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * A mask specifying which fields in `worker_pool` to update.
+   * </pre>
+   *
+   * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+   *
+   * @return The updateMask.
+   */
+  @java.lang.Override
+  public com.google.protobuf.FieldMask getUpdateMask() {
+    return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * A mask specifying which fields in `worker_pool` to update.
+   * </pre>
+   *
+   * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+   */
+  @java.lang.Override
+  public com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder() {
+    return getUpdateMask();
+  }
+
+  public static final int VALIDATE_ONLY_FIELD_NUMBER = 4;
+  private boolean validateOnly_;
+  /**
+   *
+   *
+   * <pre>
+   * If set, validate the request and preview the response, but do not actually
+   * post it.
+   * </pre>
+   *
+   * <code>bool validate_only = 4;</code>
+   *
+   * @return The validateOnly.
+   */
+  @java.lang.Override
+  public boolean getValidateOnly() {
+    return validateOnly_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -240,11 +277,14 @@ public final class UpdateWorkerPoolRequest extends com.google.protobuf.Generated
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getNameBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, name_);
-    }
     if (workerPool_ != null) {
-      output.writeMessage(3, getWorkerPool());
+      output.writeMessage(1, getWorkerPool());
+    }
+    if (updateMask_ != null) {
+      output.writeMessage(2, getUpdateMask());
+    }
+    if (validateOnly_ != false) {
+      output.writeBool(4, validateOnly_);
     }
     unknownFields.writeTo(output);
   }
@@ -255,11 +295,14 @@ public final class UpdateWorkerPoolRequest extends com.google.protobuf.Generated
     if (size != -1) return size;
 
     size = 0;
-    if (!getNameBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, name_);
-    }
     if (workerPool_ != null) {
-      size += com.google.protobuf.CodedOutputStream.computeMessageSize(3, getWorkerPool());
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, getWorkerPool());
+    }
+    if (updateMask_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, getUpdateMask());
+    }
+    if (validateOnly_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(4, validateOnly_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -277,11 +320,15 @@ public final class UpdateWorkerPoolRequest extends com.google.protobuf.Generated
     com.google.cloudbuild.v1.UpdateWorkerPoolRequest other =
         (com.google.cloudbuild.v1.UpdateWorkerPoolRequest) obj;
 
-    if (!getName().equals(other.getName())) return false;
     if (hasWorkerPool() != other.hasWorkerPool()) return false;
     if (hasWorkerPool()) {
       if (!getWorkerPool().equals(other.getWorkerPool())) return false;
     }
+    if (hasUpdateMask() != other.hasUpdateMask()) return false;
+    if (hasUpdateMask()) {
+      if (!getUpdateMask().equals(other.getUpdateMask())) return false;
+    }
+    if (getValidateOnly() != other.getValidateOnly()) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -293,12 +340,16 @@ public final class UpdateWorkerPoolRequest extends com.google.protobuf.Generated
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + NAME_FIELD_NUMBER;
-    hash = (53 * hash) + getName().hashCode();
     if (hasWorkerPool()) {
       hash = (37 * hash) + WORKER_POOL_FIELD_NUMBER;
       hash = (53 * hash) + getWorkerPool().hashCode();
     }
+    if (hasUpdateMask()) {
+      hash = (37 * hash) + UPDATE_MASK_FIELD_NUMBER;
+      hash = (53 * hash) + getUpdateMask().hashCode();
+    }
+    hash = (37 * hash) + VALIDATE_ONLY_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getValidateOnly());
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -444,14 +495,20 @@ public final class UpdateWorkerPoolRequest extends com.google.protobuf.Generated
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      name_ = "";
-
       if (workerPoolBuilder_ == null) {
         workerPool_ = null;
       } else {
         workerPool_ = null;
         workerPoolBuilder_ = null;
       }
+      if (updateMaskBuilder_ == null) {
+        updateMask_ = null;
+      } else {
+        updateMask_ = null;
+        updateMaskBuilder_ = null;
+      }
+      validateOnly_ = false;
+
       return this;
     }
 
@@ -479,12 +536,17 @@ public final class UpdateWorkerPoolRequest extends com.google.protobuf.Generated
     public com.google.cloudbuild.v1.UpdateWorkerPoolRequest buildPartial() {
       com.google.cloudbuild.v1.UpdateWorkerPoolRequest result =
           new com.google.cloudbuild.v1.UpdateWorkerPoolRequest(this);
-      result.name_ = name_;
       if (workerPoolBuilder_ == null) {
         result.workerPool_ = workerPool_;
       } else {
         result.workerPool_ = workerPoolBuilder_.build();
       }
+      if (updateMaskBuilder_ == null) {
+        result.updateMask_ = updateMask_;
+      } else {
+        result.updateMask_ = updateMaskBuilder_.build();
+      }
+      result.validateOnly_ = validateOnly_;
       onBuilt();
       return result;
     }
@@ -535,12 +597,14 @@ public final class UpdateWorkerPoolRequest extends com.google.protobuf.Generated
     public Builder mergeFrom(com.google.cloudbuild.v1.UpdateWorkerPoolRequest other) {
       if (other == com.google.cloudbuild.v1.UpdateWorkerPoolRequest.getDefaultInstance())
         return this;
-      if (!other.getName().isEmpty()) {
-        name_ = other.name_;
-        onChanged();
-      }
       if (other.hasWorkerPool()) {
         mergeWorkerPool(other.getWorkerPool());
+      }
+      if (other.hasUpdateMask()) {
+        mergeUpdateMask(other.getUpdateMask());
+      }
+      if (other.getValidateOnly() != false) {
+        setValidateOnly(other.getValidateOnly());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -571,117 +635,6 @@ public final class UpdateWorkerPoolRequest extends com.google.protobuf.Generated
       return this;
     }
 
-    private java.lang.Object name_ = "";
-    /**
-     *
-     *
-     * <pre>
-     * The field will contain name of the resource requested, for example:
-     * "projects/project-1/workerPools/workerpool-name"
-     * </pre>
-     *
-     * <code>string name = 2;</code>
-     *
-     * @return The name.
-     */
-    public java.lang.String getName() {
-      java.lang.Object ref = name_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        name_ = s;
-        return s;
-      } else {
-        return (java.lang.String) ref;
-      }
-    }
-    /**
-     *
-     *
-     * <pre>
-     * The field will contain name of the resource requested, for example:
-     * "projects/project-1/workerPools/workerpool-name"
-     * </pre>
-     *
-     * <code>string name = 2;</code>
-     *
-     * @return The bytes for name.
-     */
-    public com.google.protobuf.ByteString getNameBytes() {
-      java.lang.Object ref = name_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b =
-            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
-        name_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    /**
-     *
-     *
-     * <pre>
-     * The field will contain name of the resource requested, for example:
-     * "projects/project-1/workerPools/workerpool-name"
-     * </pre>
-     *
-     * <code>string name = 2;</code>
-     *
-     * @param value The name to set.
-     * @return This builder for chaining.
-     */
-    public Builder setName(java.lang.String value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-
-      name_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * The field will contain name of the resource requested, for example:
-     * "projects/project-1/workerPools/workerpool-name"
-     * </pre>
-     *
-     * <code>string name = 2;</code>
-     *
-     * @return This builder for chaining.
-     */
-    public Builder clearName() {
-
-      name_ = getDefaultInstance().getName();
-      onChanged();
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * The field will contain name of the resource requested, for example:
-     * "projects/project-1/workerPools/workerpool-name"
-     * </pre>
-     *
-     * <code>string name = 2;</code>
-     *
-     * @param value The bytes for name to set.
-     * @return This builder for chaining.
-     */
-    public Builder setNameBytes(com.google.protobuf.ByteString value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      checkByteStringIsUtf8(value);
-
-      name_ = value;
-      onChanged();
-      return this;
-    }
-
     private com.google.cloudbuild.v1.WorkerPool workerPool_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloudbuild.v1.WorkerPool,
@@ -692,10 +645,14 @@ public final class UpdateWorkerPoolRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * `WorkerPool` resource to update.
+     * Required. The `WorkerPool` to update.
+     * The `name` field is used to identify the `WorkerPool` to update.
+     * Format: `projects/{project}/locations/{location}/workerPools/{workerPool}`.
      * </pre>
      *
-     * <code>.google.devtools.cloudbuild.v1.WorkerPool worker_pool = 3;</code>
+     * <code>
+     * .google.devtools.cloudbuild.v1.WorkerPool worker_pool = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      *
      * @return Whether the workerPool field is set.
      */
@@ -706,10 +663,14 @@ public final class UpdateWorkerPoolRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * `WorkerPool` resource to update.
+     * Required. The `WorkerPool` to update.
+     * The `name` field is used to identify the `WorkerPool` to update.
+     * Format: `projects/{project}/locations/{location}/workerPools/{workerPool}`.
      * </pre>
      *
-     * <code>.google.devtools.cloudbuild.v1.WorkerPool worker_pool = 3;</code>
+     * <code>
+     * .google.devtools.cloudbuild.v1.WorkerPool worker_pool = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      *
      * @return The workerPool.
      */
@@ -726,10 +687,14 @@ public final class UpdateWorkerPoolRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * `WorkerPool` resource to update.
+     * Required. The `WorkerPool` to update.
+     * The `name` field is used to identify the `WorkerPool` to update.
+     * Format: `projects/{project}/locations/{location}/workerPools/{workerPool}`.
      * </pre>
      *
-     * <code>.google.devtools.cloudbuild.v1.WorkerPool worker_pool = 3;</code>
+     * <code>
+     * .google.devtools.cloudbuild.v1.WorkerPool worker_pool = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setWorkerPool(com.google.cloudbuild.v1.WorkerPool value) {
       if (workerPoolBuilder_ == null) {
@@ -748,10 +713,14 @@ public final class UpdateWorkerPoolRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * `WorkerPool` resource to update.
+     * Required. The `WorkerPool` to update.
+     * The `name` field is used to identify the `WorkerPool` to update.
+     * Format: `projects/{project}/locations/{location}/workerPools/{workerPool}`.
      * </pre>
      *
-     * <code>.google.devtools.cloudbuild.v1.WorkerPool worker_pool = 3;</code>
+     * <code>
+     * .google.devtools.cloudbuild.v1.WorkerPool worker_pool = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setWorkerPool(com.google.cloudbuild.v1.WorkerPool.Builder builderForValue) {
       if (workerPoolBuilder_ == null) {
@@ -767,10 +736,14 @@ public final class UpdateWorkerPoolRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * `WorkerPool` resource to update.
+     * Required. The `WorkerPool` to update.
+     * The `name` field is used to identify the `WorkerPool` to update.
+     * Format: `projects/{project}/locations/{location}/workerPools/{workerPool}`.
      * </pre>
      *
-     * <code>.google.devtools.cloudbuild.v1.WorkerPool worker_pool = 3;</code>
+     * <code>
+     * .google.devtools.cloudbuild.v1.WorkerPool worker_pool = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder mergeWorkerPool(com.google.cloudbuild.v1.WorkerPool value) {
       if (workerPoolBuilder_ == null) {
@@ -793,10 +766,14 @@ public final class UpdateWorkerPoolRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * `WorkerPool` resource to update.
+     * Required. The `WorkerPool` to update.
+     * The `name` field is used to identify the `WorkerPool` to update.
+     * Format: `projects/{project}/locations/{location}/workerPools/{workerPool}`.
      * </pre>
      *
-     * <code>.google.devtools.cloudbuild.v1.WorkerPool worker_pool = 3;</code>
+     * <code>
+     * .google.devtools.cloudbuild.v1.WorkerPool worker_pool = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder clearWorkerPool() {
       if (workerPoolBuilder_ == null) {
@@ -813,10 +790,14 @@ public final class UpdateWorkerPoolRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * `WorkerPool` resource to update.
+     * Required. The `WorkerPool` to update.
+     * The `name` field is used to identify the `WorkerPool` to update.
+     * Format: `projects/{project}/locations/{location}/workerPools/{workerPool}`.
      * </pre>
      *
-     * <code>.google.devtools.cloudbuild.v1.WorkerPool worker_pool = 3;</code>
+     * <code>
+     * .google.devtools.cloudbuild.v1.WorkerPool worker_pool = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.cloudbuild.v1.WorkerPool.Builder getWorkerPoolBuilder() {
 
@@ -827,10 +808,14 @@ public final class UpdateWorkerPoolRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * `WorkerPool` resource to update.
+     * Required. The `WorkerPool` to update.
+     * The `name` field is used to identify the `WorkerPool` to update.
+     * Format: `projects/{project}/locations/{location}/workerPools/{workerPool}`.
      * </pre>
      *
-     * <code>.google.devtools.cloudbuild.v1.WorkerPool worker_pool = 3;</code>
+     * <code>
+     * .google.devtools.cloudbuild.v1.WorkerPool worker_pool = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.cloudbuild.v1.WorkerPoolOrBuilder getWorkerPoolOrBuilder() {
       if (workerPoolBuilder_ != null) {
@@ -845,10 +830,14 @@ public final class UpdateWorkerPoolRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * `WorkerPool` resource to update.
+     * Required. The `WorkerPool` to update.
+     * The `name` field is used to identify the `WorkerPool` to update.
+     * Format: `projects/{project}/locations/{location}/workerPools/{workerPool}`.
      * </pre>
      *
-     * <code>.google.devtools.cloudbuild.v1.WorkerPool worker_pool = 3;</code>
+     * <code>
+     * .google.devtools.cloudbuild.v1.WorkerPool worker_pool = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloudbuild.v1.WorkerPool,
@@ -865,6 +854,244 @@ public final class UpdateWorkerPoolRequest extends com.google.protobuf.Generated
         workerPool_ = null;
       }
       return workerPoolBuilder_;
+    }
+
+    private com.google.protobuf.FieldMask updateMask_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.FieldMask,
+            com.google.protobuf.FieldMask.Builder,
+            com.google.protobuf.FieldMaskOrBuilder>
+        updateMaskBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * A mask specifying which fields in `worker_pool` to update.
+     * </pre>
+     *
+     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     *
+     * @return Whether the updateMask field is set.
+     */
+    public boolean hasUpdateMask() {
+      return updateMaskBuilder_ != null || updateMask_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A mask specifying which fields in `worker_pool` to update.
+     * </pre>
+     *
+     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     *
+     * @return The updateMask.
+     */
+    public com.google.protobuf.FieldMask getUpdateMask() {
+      if (updateMaskBuilder_ == null) {
+        return updateMask_ == null
+            ? com.google.protobuf.FieldMask.getDefaultInstance()
+            : updateMask_;
+      } else {
+        return updateMaskBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A mask specifying which fields in `worker_pool` to update.
+     * </pre>
+     *
+     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     */
+    public Builder setUpdateMask(com.google.protobuf.FieldMask value) {
+      if (updateMaskBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        updateMask_ = value;
+        onChanged();
+      } else {
+        updateMaskBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A mask specifying which fields in `worker_pool` to update.
+     * </pre>
+     *
+     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     */
+    public Builder setUpdateMask(com.google.protobuf.FieldMask.Builder builderForValue) {
+      if (updateMaskBuilder_ == null) {
+        updateMask_ = builderForValue.build();
+        onChanged();
+      } else {
+        updateMaskBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A mask specifying which fields in `worker_pool` to update.
+     * </pre>
+     *
+     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     */
+    public Builder mergeUpdateMask(com.google.protobuf.FieldMask value) {
+      if (updateMaskBuilder_ == null) {
+        if (updateMask_ != null) {
+          updateMask_ =
+              com.google.protobuf.FieldMask.newBuilder(updateMask_).mergeFrom(value).buildPartial();
+        } else {
+          updateMask_ = value;
+        }
+        onChanged();
+      } else {
+        updateMaskBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A mask specifying which fields in `worker_pool` to update.
+     * </pre>
+     *
+     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     */
+    public Builder clearUpdateMask() {
+      if (updateMaskBuilder_ == null) {
+        updateMask_ = null;
+        onChanged();
+      } else {
+        updateMask_ = null;
+        updateMaskBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A mask specifying which fields in `worker_pool` to update.
+     * </pre>
+     *
+     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     */
+    public com.google.protobuf.FieldMask.Builder getUpdateMaskBuilder() {
+
+      onChanged();
+      return getUpdateMaskFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A mask specifying which fields in `worker_pool` to update.
+     * </pre>
+     *
+     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     */
+    public com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder() {
+      if (updateMaskBuilder_ != null) {
+        return updateMaskBuilder_.getMessageOrBuilder();
+      } else {
+        return updateMask_ == null
+            ? com.google.protobuf.FieldMask.getDefaultInstance()
+            : updateMask_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A mask specifying which fields in `worker_pool` to update.
+     * </pre>
+     *
+     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.FieldMask,
+            com.google.protobuf.FieldMask.Builder,
+            com.google.protobuf.FieldMaskOrBuilder>
+        getUpdateMaskFieldBuilder() {
+      if (updateMaskBuilder_ == null) {
+        updateMaskBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.protobuf.FieldMask,
+                com.google.protobuf.FieldMask.Builder,
+                com.google.protobuf.FieldMaskOrBuilder>(
+                getUpdateMask(), getParentForChildren(), isClean());
+        updateMask_ = null;
+      }
+      return updateMaskBuilder_;
+    }
+
+    private boolean validateOnly_;
+    /**
+     *
+     *
+     * <pre>
+     * If set, validate the request and preview the response, but do not actually
+     * post it.
+     * </pre>
+     *
+     * <code>bool validate_only = 4;</code>
+     *
+     * @return The validateOnly.
+     */
+    @java.lang.Override
+    public boolean getValidateOnly() {
+      return validateOnly_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If set, validate the request and preview the response, but do not actually
+     * post it.
+     * </pre>
+     *
+     * <code>bool validate_only = 4;</code>
+     *
+     * @param value The validateOnly to set.
+     * @return This builder for chaining.
+     */
+    public Builder setValidateOnly(boolean value) {
+
+      validateOnly_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If set, validate the request and preview the response, but do not actually
+     * post it.
+     * </pre>
+     *
+     * <code>bool validate_only = 4;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearValidateOnly() {
+
+      validateOnly_ = false;
+      onChanged();
+      return this;
     }
 
     @java.lang.Override

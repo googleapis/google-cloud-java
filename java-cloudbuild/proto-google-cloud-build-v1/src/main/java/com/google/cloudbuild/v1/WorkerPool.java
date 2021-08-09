@@ -22,12 +22,17 @@ package com.google.cloudbuild.v1;
  *
  *
  * <pre>
- * Configuration for a WorkerPool to run the builds.
- * Workers are machines that Cloud Build uses to run your builds. By default,
- * all workers run in a project owned by Cloud Build. To have full control over
- * the workers that execute your builds -- such as enabling them to access
- * private resources on your private network -- you can request Cloud Build to
- * run the workers in your own project by creating a custom workers pool.
+ * Configuration for a `WorkerPool`.
+ * Cloud Build owns and maintains a pool of workers for general use and have no
+ * access to a project's private network. By default, builds submitted to
+ * Cloud Build will use a worker from this pool.
+ * If your build needs access to resources on a private network,
+ * create and use a `WorkerPool` to run your builds. Private `WorkerPool`s give
+ * your builds access to any single VPC network that you
+ * administer, including any on-prem resources connected to that VPC
+ * network. For an overview of private pools, see
+ * [Private pools
+ * overview](https://cloud.google.com/build/docs/private-pools/private-pools-overview).
  * </pre>
  *
  * Protobuf type {@code google.devtools.cloudbuild.v1.WorkerPool}
@@ -44,10 +49,10 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessageV3
 
   private WorkerPool() {
     name_ = "";
-    projectId_ = "";
-    serviceAccountEmail_ = "";
-    regions_ = java.util.Collections.emptyList();
-    status_ = 0;
+    displayName_ = "";
+    uid_ = "";
+    state_ = 0;
+    etag_ = "";
   }
 
   @java.lang.Override
@@ -80,51 +85,43 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessageV3
           case 0:
             done = true;
             break;
+          case 10:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              name_ = s;
+              break;
+            }
           case 18:
             {
               java.lang.String s = input.readStringRequireUtf8();
 
-              projectId_ = s;
+              displayName_ = s;
               break;
             }
           case 26:
             {
               java.lang.String s = input.readStringRequireUtf8();
 
-              serviceAccountEmail_ = s;
+              uid_ = s;
               break;
             }
-          case 32:
+          case 34:
             {
-              workerCount_ = input.readInt64();
-              break;
-            }
-          case 72:
-            {
-              int rawValue = input.readEnum();
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                regions_ = new java.util.ArrayList<java.lang.Integer>();
+                annotations_ =
+                    com.google.protobuf.MapField.newMapField(
+                        AnnotationsDefaultEntryHolder.defaultEntry);
                 mutable_bitField0_ |= 0x00000001;
               }
-              regions_.add(rawValue);
+              com.google.protobuf.MapEntry<java.lang.String, java.lang.String> annotations__ =
+                  input.readMessage(
+                      AnnotationsDefaultEntryHolder.defaultEntry.getParserForType(),
+                      extensionRegistry);
+              annotations_.getMutableMap().put(annotations__.getKey(), annotations__.getValue());
               break;
             }
-          case 74:
-            {
-              int length = input.readRawVarint32();
-              int oldLimit = input.pushLimit(length);
-              while (input.getBytesUntilLimit() > 0) {
-                int rawValue = input.readEnum();
-                if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                  regions_ = new java.util.ArrayList<java.lang.Integer>();
-                  mutable_bitField0_ |= 0x00000001;
-                }
-                regions_.add(rawValue);
-              }
-              input.popLimit(oldLimit);
-              break;
-            }
-          case 90:
+          case 42:
             {
               com.google.protobuf.Timestamp.Builder subBuilder = null;
               if (createTime_ != null) {
@@ -139,7 +136,22 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessageV3
 
               break;
             }
-          case 98:
+          case 50:
+            {
+              com.google.protobuf.Timestamp.Builder subBuilder = null;
+              if (updateTime_ != null) {
+                subBuilder = updateTime_.toBuilder();
+              }
+              updateTime_ =
+                  input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(updateTime_);
+                updateTime_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+          case 58:
             {
               com.google.protobuf.Timestamp.Builder subBuilder = null;
               if (deleteTime_ != null) {
@@ -154,49 +166,34 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessageV3
 
               break;
             }
-          case 104:
+          case 64:
             {
               int rawValue = input.readEnum();
 
-              status_ = rawValue;
+              state_ = rawValue;
               break;
             }
-          case 114:
+          case 90:
             {
               java.lang.String s = input.readStringRequireUtf8();
 
-              name_ = s;
+              etag_ = s;
               break;
             }
-          case 130:
+          case 98:
             {
-              com.google.cloudbuild.v1.WorkerConfig.Builder subBuilder = null;
-              if (workerConfig_ != null) {
-                subBuilder = workerConfig_.toBuilder();
+              com.google.cloudbuild.v1.PrivatePoolV1Config.Builder subBuilder = null;
+              if (configCase_ == 12) {
+                subBuilder = ((com.google.cloudbuild.v1.PrivatePoolV1Config) config_).toBuilder();
               }
-              workerConfig_ =
+              config_ =
                   input.readMessage(
-                      com.google.cloudbuild.v1.WorkerConfig.parser(), extensionRegistry);
+                      com.google.cloudbuild.v1.PrivatePoolV1Config.parser(), extensionRegistry);
               if (subBuilder != null) {
-                subBuilder.mergeFrom(workerConfig_);
-                workerConfig_ = subBuilder.buildPartial();
+                subBuilder.mergeFrom((com.google.cloudbuild.v1.PrivatePoolV1Config) config_);
+                config_ = subBuilder.buildPartial();
               }
-
-              break;
-            }
-          case 138:
-            {
-              com.google.protobuf.Timestamp.Builder subBuilder = null;
-              if (updateTime_ != null) {
-                subBuilder = updateTime_.toBuilder();
-              }
-              updateTime_ =
-                  input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(updateTime_);
-                updateTime_ = subBuilder.buildPartial();
-              }
-
+              configCase_ = 12;
               break;
             }
           default:
@@ -213,9 +210,6 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessageV3
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000001) != 0)) {
-        regions_ = java.util.Collections.unmodifiableList(regions_);
-      }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
     }
@@ -224,6 +218,17 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessageV3
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloudbuild.v1.Cloudbuild
         .internal_static_google_devtools_cloudbuild_v1_WorkerPool_descriptor;
+  }
+
+  @SuppressWarnings({"rawtypes"})
+  @java.lang.Override
+  protected com.google.protobuf.MapField internalGetMapField(int number) {
+    switch (number) {
+      case 4:
+        return internalGetAnnotations();
+      default:
+        throw new RuntimeException("Invalid map field number: " + number);
+    }
   }
 
   @java.lang.Override
@@ -240,223 +245,22 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Supported GCP regions to create the `WorkerPool`.
+   * State of the `WorkerPool`.
    * </pre>
    *
-   * Protobuf enum {@code google.devtools.cloudbuild.v1.WorkerPool.Region}
+   * Protobuf enum {@code google.devtools.cloudbuild.v1.WorkerPool.State}
    */
-  public enum Region implements com.google.protobuf.ProtocolMessageEnum {
+  public enum State implements com.google.protobuf.ProtocolMessageEnum {
     /**
      *
      *
      * <pre>
-     * no region
+     * State of the `WorkerPool` is unknown.
      * </pre>
      *
-     * <code>REGION_UNSPECIFIED = 0;</code>
+     * <code>STATE_UNSPECIFIED = 0;</code>
      */
-    REGION_UNSPECIFIED(0),
-    /**
-     *
-     *
-     * <pre>
-     * us-central1 region
-     * </pre>
-     *
-     * <code>US_CENTRAL1 = 1;</code>
-     */
-    US_CENTRAL1(1),
-    /**
-     *
-     *
-     * <pre>
-     * us-west1 region
-     * </pre>
-     *
-     * <code>US_WEST1 = 2;</code>
-     */
-    US_WEST1(2),
-    /**
-     *
-     *
-     * <pre>
-     * us-east1 region
-     * </pre>
-     *
-     * <code>US_EAST1 = 3;</code>
-     */
-    US_EAST1(3),
-    /**
-     *
-     *
-     * <pre>
-     * us-east4 region
-     * </pre>
-     *
-     * <code>US_EAST4 = 4;</code>
-     */
-    US_EAST4(4),
-    UNRECOGNIZED(-1),
-    ;
-
-    /**
-     *
-     *
-     * <pre>
-     * no region
-     * </pre>
-     *
-     * <code>REGION_UNSPECIFIED = 0;</code>
-     */
-    public static final int REGION_UNSPECIFIED_VALUE = 0;
-    /**
-     *
-     *
-     * <pre>
-     * us-central1 region
-     * </pre>
-     *
-     * <code>US_CENTRAL1 = 1;</code>
-     */
-    public static final int US_CENTRAL1_VALUE = 1;
-    /**
-     *
-     *
-     * <pre>
-     * us-west1 region
-     * </pre>
-     *
-     * <code>US_WEST1 = 2;</code>
-     */
-    public static final int US_WEST1_VALUE = 2;
-    /**
-     *
-     *
-     * <pre>
-     * us-east1 region
-     * </pre>
-     *
-     * <code>US_EAST1 = 3;</code>
-     */
-    public static final int US_EAST1_VALUE = 3;
-    /**
-     *
-     *
-     * <pre>
-     * us-east4 region
-     * </pre>
-     *
-     * <code>US_EAST4 = 4;</code>
-     */
-    public static final int US_EAST4_VALUE = 4;
-
-    public final int getNumber() {
-      if (this == UNRECOGNIZED) {
-        throw new java.lang.IllegalArgumentException(
-            "Can't get the number of an unknown enum value.");
-      }
-      return value;
-    }
-
-    /**
-     * @param value The numeric wire value of the corresponding enum entry.
-     * @return The enum associated with the given numeric wire value.
-     * @deprecated Use {@link #forNumber(int)} instead.
-     */
-    @java.lang.Deprecated
-    public static Region valueOf(int value) {
-      return forNumber(value);
-    }
-
-    /**
-     * @param value The numeric wire value of the corresponding enum entry.
-     * @return The enum associated with the given numeric wire value.
-     */
-    public static Region forNumber(int value) {
-      switch (value) {
-        case 0:
-          return REGION_UNSPECIFIED;
-        case 1:
-          return US_CENTRAL1;
-        case 2:
-          return US_WEST1;
-        case 3:
-          return US_EAST1;
-        case 4:
-          return US_EAST4;
-        default:
-          return null;
-      }
-    }
-
-    public static com.google.protobuf.Internal.EnumLiteMap<Region> internalGetValueMap() {
-      return internalValueMap;
-    }
-
-    private static final com.google.protobuf.Internal.EnumLiteMap<Region> internalValueMap =
-        new com.google.protobuf.Internal.EnumLiteMap<Region>() {
-          public Region findValueByNumber(int number) {
-            return Region.forNumber(number);
-          }
-        };
-
-    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
-      if (this == UNRECOGNIZED) {
-        throw new java.lang.IllegalStateException(
-            "Can't get the descriptor of an unrecognized enum value.");
-      }
-      return getDescriptor().getValues().get(ordinal());
-    }
-
-    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
-      return getDescriptor();
-    }
-
-    public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
-      return com.google.cloudbuild.v1.WorkerPool.getDescriptor().getEnumTypes().get(0);
-    }
-
-    private static final Region[] VALUES = values();
-
-    public static Region valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
-      if (desc.getType() != getDescriptor()) {
-        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
-      }
-      if (desc.getIndex() == -1) {
-        return UNRECOGNIZED;
-      }
-      return VALUES[desc.getIndex()];
-    }
-
-    private final int value;
-
-    private Region(int value) {
-      this.value = value;
-    }
-
-    // @@protoc_insertion_point(enum_scope:google.devtools.cloudbuild.v1.WorkerPool.Region)
-  }
-
-  /**
-   *
-   *
-   * <pre>
-   * `WorkerPool` status
-   * </pre>
-   *
-   * Protobuf enum {@code google.devtools.cloudbuild.v1.WorkerPool.Status}
-   */
-  public enum Status implements com.google.protobuf.ProtocolMessageEnum {
-    /**
-     *
-     *
-     * <pre>
-     * Status of the `WorkerPool` is unknown.
-     * </pre>
-     *
-     * <code>STATUS_UNSPECIFIED = 0;</code>
-     */
-    STATUS_UNSPECIFIED(0),
+    STATE_UNSPECIFIED(0),
     /**
      *
      *
@@ -504,12 +308,12 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Status of the `WorkerPool` is unknown.
+     * State of the `WorkerPool` is unknown.
      * </pre>
      *
-     * <code>STATUS_UNSPECIFIED = 0;</code>
+     * <code>STATE_UNSPECIFIED = 0;</code>
      */
-    public static final int STATUS_UNSPECIFIED_VALUE = 0;
+    public static final int STATE_UNSPECIFIED_VALUE = 0;
     /**
      *
      *
@@ -565,7 +369,7 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessageV3
      * @deprecated Use {@link #forNumber(int)} instead.
      */
     @java.lang.Deprecated
-    public static Status valueOf(int value) {
+    public static State valueOf(int value) {
       return forNumber(value);
     }
 
@@ -573,10 +377,10 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessageV3
      * @param value The numeric wire value of the corresponding enum entry.
      * @return The enum associated with the given numeric wire value.
      */
-    public static Status forNumber(int value) {
+    public static State forNumber(int value) {
       switch (value) {
         case 0:
-          return STATUS_UNSPECIFIED;
+          return STATE_UNSPECIFIED;
         case 1:
           return CREATING;
         case 2:
@@ -590,14 +394,14 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessageV3
       }
     }
 
-    public static com.google.protobuf.Internal.EnumLiteMap<Status> internalGetValueMap() {
+    public static com.google.protobuf.Internal.EnumLiteMap<State> internalGetValueMap() {
       return internalValueMap;
     }
 
-    private static final com.google.protobuf.Internal.EnumLiteMap<Status> internalValueMap =
-        new com.google.protobuf.Internal.EnumLiteMap<Status>() {
-          public Status findValueByNumber(int number) {
-            return Status.forNumber(number);
+    private static final com.google.protobuf.Internal.EnumLiteMap<State> internalValueMap =
+        new com.google.protobuf.Internal.EnumLiteMap<State>() {
+          public State findValueByNumber(int number) {
+            return State.forNumber(number);
           }
         };
 
@@ -614,12 +418,12 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
-      return com.google.cloudbuild.v1.WorkerPool.getDescriptor().getEnumTypes().get(1);
+      return com.google.cloudbuild.v1.WorkerPool.getDescriptor().getEnumTypes().get(0);
     }
 
-    private static final Status[] VALUES = values();
+    private static final State[] VALUES = values();
 
-    public static Status valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+    public static State valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
       if (desc.getType() != getDescriptor()) {
         throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
       }
@@ -631,23 +435,71 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessageV3
 
     private final int value;
 
-    private Status(int value) {
+    private State(int value) {
       this.value = value;
     }
 
-    // @@protoc_insertion_point(enum_scope:google.devtools.cloudbuild.v1.WorkerPool.Status)
+    // @@protoc_insertion_point(enum_scope:google.devtools.cloudbuild.v1.WorkerPool.State)
   }
 
-  public static final int NAME_FIELD_NUMBER = 14;
+  private int configCase_ = 0;
+  private java.lang.Object config_;
+
+  public enum ConfigCase
+      implements
+          com.google.protobuf.Internal.EnumLite,
+          com.google.protobuf.AbstractMessage.InternalOneOfEnum {
+    PRIVATE_POOL_V1_CONFIG(12),
+    CONFIG_NOT_SET(0);
+    private final int value;
+
+    private ConfigCase(int value) {
+      this.value = value;
+    }
+    /**
+     * @param value The number of the enum to look for.
+     * @return The enum associated with the given number.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static ConfigCase valueOf(int value) {
+      return forNumber(value);
+    }
+
+    public static ConfigCase forNumber(int value) {
+      switch (value) {
+        case 12:
+          return PRIVATE_POOL_V1_CONFIG;
+        case 0:
+          return CONFIG_NOT_SET;
+        default:
+          return null;
+      }
+    }
+
+    public int getNumber() {
+      return this.value;
+    }
+  };
+
+  public ConfigCase getConfigCase() {
+    return ConfigCase.forNumber(configCase_);
+  }
+
+  public static final int NAME_FIELD_NUMBER = 1;
   private volatile java.lang.Object name_;
   /**
    *
    *
    * <pre>
-   * User-defined name of the `WorkerPool`.
+   * Output only. The resource name of the `WorkerPool`, with format
+   * `projects/{project}/locations/{location}/workerPools/{worker_pool}`.
+   * The value of `{worker_pool}` is provided by `worker_pool_id` in
+   * `CreateWorkerPool` request and the value of `{location}` is determined by
+   * the endpoint accessed.
    * </pre>
    *
-   * <code>string name = 14;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return The name.
    */
@@ -667,10 +519,14 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * User-defined name of the `WorkerPool`.
+   * Output only. The resource name of the `WorkerPool`, with format
+   * `projects/{project}/locations/{location}/workerPools/{worker_pool}`.
+   * The value of `{worker_pool}` is provided by `worker_pool_id` in
+   * `CreateWorkerPool` request and the value of `{location}` is determined by
+   * the endpoint accessed.
    * </pre>
    *
-   * <code>string name = 14;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return The bytes for name.
    */
@@ -687,28 +543,29 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
-  public static final int PROJECT_ID_FIELD_NUMBER = 2;
-  private volatile java.lang.Object projectId_;
+  public static final int DISPLAY_NAME_FIELD_NUMBER = 2;
+  private volatile java.lang.Object displayName_;
   /**
    *
    *
    * <pre>
-   * The project ID of the GCP project for which the `WorkerPool` is created.
+   * A user-specified, human-readable name for the `WorkerPool`. If provided,
+   * this value must be 1-63 characters.
    * </pre>
    *
-   * <code>string project_id = 2;</code>
+   * <code>string display_name = 2;</code>
    *
-   * @return The projectId.
+   * @return The displayName.
    */
   @java.lang.Override
-  public java.lang.String getProjectId() {
-    java.lang.Object ref = projectId_;
+  public java.lang.String getDisplayName() {
+    java.lang.Object ref = displayName_;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
       com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      projectId_ = s;
+      displayName_ = s;
       return s;
     }
   }
@@ -716,50 +573,49 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The project ID of the GCP project for which the `WorkerPool` is created.
+   * A user-specified, human-readable name for the `WorkerPool`. If provided,
+   * this value must be 1-63 characters.
    * </pre>
    *
-   * <code>string project_id = 2;</code>
+   * <code>string display_name = 2;</code>
    *
-   * @return The bytes for projectId.
+   * @return The bytes for displayName.
    */
   @java.lang.Override
-  public com.google.protobuf.ByteString getProjectIdBytes() {
-    java.lang.Object ref = projectId_;
+  public com.google.protobuf.ByteString getDisplayNameBytes() {
+    java.lang.Object ref = displayName_;
     if (ref instanceof java.lang.String) {
       com.google.protobuf.ByteString b =
           com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
-      projectId_ = b;
+      displayName_ = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
     }
   }
 
-  public static final int SERVICE_ACCOUNT_EMAIL_FIELD_NUMBER = 3;
-  private volatile java.lang.Object serviceAccountEmail_;
+  public static final int UID_FIELD_NUMBER = 3;
+  private volatile java.lang.Object uid_;
   /**
    *
    *
    * <pre>
-   * Output only. The service account used to manage the `WorkerPool`. The
-   * service account must have the Compute Instance Admin (Beta) permission at
-   * the project level.
+   * Output only. A unique identifier for the `WorkerPool`.
    * </pre>
    *
-   * <code>string service_account_email = 3;</code>
+   * <code>string uid = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
-   * @return The serviceAccountEmail.
+   * @return The uid.
    */
   @java.lang.Override
-  public java.lang.String getServiceAccountEmail() {
-    java.lang.Object ref = serviceAccountEmail_;
+  public java.lang.String getUid() {
+    java.lang.Object ref = uid_;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
       com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      serviceAccountEmail_ = s;
+      uid_ = s;
       return s;
     }
   }
@@ -767,213 +623,131 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. The service account used to manage the `WorkerPool`. The
-   * service account must have the Compute Instance Admin (Beta) permission at
-   * the project level.
+   * Output only. A unique identifier for the `WorkerPool`.
    * </pre>
    *
-   * <code>string service_account_email = 3;</code>
+   * <code>string uid = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
-   * @return The bytes for serviceAccountEmail.
+   * @return The bytes for uid.
    */
   @java.lang.Override
-  public com.google.protobuf.ByteString getServiceAccountEmailBytes() {
-    java.lang.Object ref = serviceAccountEmail_;
+  public com.google.protobuf.ByteString getUidBytes() {
+    java.lang.Object ref = uid_;
     if (ref instanceof java.lang.String) {
       com.google.protobuf.ByteString b =
           com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
-      serviceAccountEmail_ = b;
+      uid_ = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
     }
   }
 
-  public static final int WORKER_COUNT_FIELD_NUMBER = 4;
-  private long workerCount_;
-  /**
-   *
-   *
-   * <pre>
-   * Total number of workers to be created across all requested regions.
-   * </pre>
-   *
-   * <code>int64 worker_count = 4;</code>
-   *
-   * @return The workerCount.
-   */
-  @java.lang.Override
-  public long getWorkerCount() {
-    return workerCount_;
+  public static final int ANNOTATIONS_FIELD_NUMBER = 4;
+
+  private static final class AnnotationsDefaultEntryHolder {
+    static final com.google.protobuf.MapEntry<java.lang.String, java.lang.String> defaultEntry =
+        com.google.protobuf.MapEntry.<java.lang.String, java.lang.String>newDefaultInstance(
+            com.google.cloudbuild.v1.Cloudbuild
+                .internal_static_google_devtools_cloudbuild_v1_WorkerPool_AnnotationsEntry_descriptor,
+            com.google.protobuf.WireFormat.FieldType.STRING,
+            "",
+            com.google.protobuf.WireFormat.FieldType.STRING,
+            "");
   }
 
-  public static final int WORKER_CONFIG_FIELD_NUMBER = 16;
-  private com.google.cloudbuild.v1.WorkerConfig workerConfig_;
-  /**
-   *
-   *
-   * <pre>
-   * Configuration to be used for a creating workers in the `WorkerPool`.
-   * </pre>
-   *
-   * <code>.google.devtools.cloudbuild.v1.WorkerConfig worker_config = 16;</code>
-   *
-   * @return Whether the workerConfig field is set.
-   */
-  @java.lang.Override
-  public boolean hasWorkerConfig() {
-    return workerConfig_ != null;
-  }
-  /**
-   *
-   *
-   * <pre>
-   * Configuration to be used for a creating workers in the `WorkerPool`.
-   * </pre>
-   *
-   * <code>.google.devtools.cloudbuild.v1.WorkerConfig worker_config = 16;</code>
-   *
-   * @return The workerConfig.
-   */
-  @java.lang.Override
-  public com.google.cloudbuild.v1.WorkerConfig getWorkerConfig() {
-    return workerConfig_ == null
-        ? com.google.cloudbuild.v1.WorkerConfig.getDefaultInstance()
-        : workerConfig_;
-  }
-  /**
-   *
-   *
-   * <pre>
-   * Configuration to be used for a creating workers in the `WorkerPool`.
-   * </pre>
-   *
-   * <code>.google.devtools.cloudbuild.v1.WorkerConfig worker_config = 16;</code>
-   */
-  @java.lang.Override
-  public com.google.cloudbuild.v1.WorkerConfigOrBuilder getWorkerConfigOrBuilder() {
-    return getWorkerConfig();
+  private com.google.protobuf.MapField<java.lang.String, java.lang.String> annotations_;
+
+  private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+      internalGetAnnotations() {
+    if (annotations_ == null) {
+      return com.google.protobuf.MapField.emptyMapField(AnnotationsDefaultEntryHolder.defaultEntry);
+    }
+    return annotations_;
   }
 
-  public static final int REGIONS_FIELD_NUMBER = 9;
-  private java.util.List<java.lang.Integer> regions_;
-  private static final com.google.protobuf.Internal.ListAdapter.Converter<
-          java.lang.Integer, com.google.cloudbuild.v1.WorkerPool.Region>
-      regions_converter_ =
-          new com.google.protobuf.Internal.ListAdapter.Converter<
-              java.lang.Integer, com.google.cloudbuild.v1.WorkerPool.Region>() {
-            public com.google.cloudbuild.v1.WorkerPool.Region convert(java.lang.Integer from) {
-              @SuppressWarnings("deprecation")
-              com.google.cloudbuild.v1.WorkerPool.Region result =
-                  com.google.cloudbuild.v1.WorkerPool.Region.valueOf(from);
-              return result == null
-                  ? com.google.cloudbuild.v1.WorkerPool.Region.UNRECOGNIZED
-                  : result;
-            }
-          };
-  /**
-   *
-   *
-   * <pre>
-   * List of regions to create the `WorkerPool`. Regions can't be empty.
-   * If Cloud Build adds a new GCP region in the future, the existing
-   * `WorkerPool` will not be enabled in the new region automatically;
-   * you must add the new region to the `regions` field to enable the
-   * `WorkerPool` in that region.
-   * </pre>
-   *
-   * <code>repeated .google.devtools.cloudbuild.v1.WorkerPool.Region regions = 9;</code>
-   *
-   * @return A list containing the regions.
-   */
-  @java.lang.Override
-  public java.util.List<com.google.cloudbuild.v1.WorkerPool.Region> getRegionsList() {
-    return new com.google.protobuf.Internal.ListAdapter<
-        java.lang.Integer, com.google.cloudbuild.v1.WorkerPool.Region>(
-        regions_, regions_converter_);
+  public int getAnnotationsCount() {
+    return internalGetAnnotations().getMap().size();
   }
   /**
    *
    *
    * <pre>
-   * List of regions to create the `WorkerPool`. Regions can't be empty.
-   * If Cloud Build adds a new GCP region in the future, the existing
-   * `WorkerPool` will not be enabled in the new region automatically;
-   * you must add the new region to the `regions` field to enable the
-   * `WorkerPool` in that region.
+   * User specified annotations. See https://google.aip.dev/128#annotations
+   * for more details such as format and size limitations.
    * </pre>
    *
-   * <code>repeated .google.devtools.cloudbuild.v1.WorkerPool.Region regions = 9;</code>
-   *
-   * @return The count of regions.
+   * <code>map&lt;string, string&gt; annotations = 4;</code>
    */
   @java.lang.Override
-  public int getRegionsCount() {
-    return regions_.size();
+  public boolean containsAnnotations(java.lang.String key) {
+    if (key == null) {
+      throw new java.lang.NullPointerException();
+    }
+    return internalGetAnnotations().getMap().containsKey(key);
+  }
+  /** Use {@link #getAnnotationsMap()} instead. */
+  @java.lang.Override
+  @java.lang.Deprecated
+  public java.util.Map<java.lang.String, java.lang.String> getAnnotations() {
+    return getAnnotationsMap();
   }
   /**
    *
    *
    * <pre>
-   * List of regions to create the `WorkerPool`. Regions can't be empty.
-   * If Cloud Build adds a new GCP region in the future, the existing
-   * `WorkerPool` will not be enabled in the new region automatically;
-   * you must add the new region to the `regions` field to enable the
-   * `WorkerPool` in that region.
+   * User specified annotations. See https://google.aip.dev/128#annotations
+   * for more details such as format and size limitations.
    * </pre>
    *
-   * <code>repeated .google.devtools.cloudbuild.v1.WorkerPool.Region regions = 9;</code>
-   *
-   * @param index The index of the element to return.
-   * @return The regions at the given index.
+   * <code>map&lt;string, string&gt; annotations = 4;</code>
    */
   @java.lang.Override
-  public com.google.cloudbuild.v1.WorkerPool.Region getRegions(int index) {
-    return regions_converter_.convert(regions_.get(index));
+  public java.util.Map<java.lang.String, java.lang.String> getAnnotationsMap() {
+    return internalGetAnnotations().getMap();
   }
   /**
    *
    *
    * <pre>
-   * List of regions to create the `WorkerPool`. Regions can't be empty.
-   * If Cloud Build adds a new GCP region in the future, the existing
-   * `WorkerPool` will not be enabled in the new region automatically;
-   * you must add the new region to the `regions` field to enable the
-   * `WorkerPool` in that region.
+   * User specified annotations. See https://google.aip.dev/128#annotations
+   * for more details such as format and size limitations.
    * </pre>
    *
-   * <code>repeated .google.devtools.cloudbuild.v1.WorkerPool.Region regions = 9;</code>
-   *
-   * @return A list containing the enum numeric values on the wire for regions.
+   * <code>map&lt;string, string&gt; annotations = 4;</code>
    */
   @java.lang.Override
-  public java.util.List<java.lang.Integer> getRegionsValueList() {
-    return regions_;
+  public java.lang.String getAnnotationsOrDefault(
+      java.lang.String key, java.lang.String defaultValue) {
+    if (key == null) {
+      throw new java.lang.NullPointerException();
+    }
+    java.util.Map<java.lang.String, java.lang.String> map = internalGetAnnotations().getMap();
+    return map.containsKey(key) ? map.get(key) : defaultValue;
   }
   /**
    *
    *
    * <pre>
-   * List of regions to create the `WorkerPool`. Regions can't be empty.
-   * If Cloud Build adds a new GCP region in the future, the existing
-   * `WorkerPool` will not be enabled in the new region automatically;
-   * you must add the new region to the `regions` field to enable the
-   * `WorkerPool` in that region.
+   * User specified annotations. See https://google.aip.dev/128#annotations
+   * for more details such as format and size limitations.
    * </pre>
    *
-   * <code>repeated .google.devtools.cloudbuild.v1.WorkerPool.Region regions = 9;</code>
-   *
-   * @param index The index of the value to return.
-   * @return The enum numeric value on the wire of regions at the given index.
+   * <code>map&lt;string, string&gt; annotations = 4;</code>
    */
   @java.lang.Override
-  public int getRegionsValue(int index) {
-    return regions_.get(index);
+  public java.lang.String getAnnotationsOrThrow(java.lang.String key) {
+    if (key == null) {
+      throw new java.lang.NullPointerException();
+    }
+    java.util.Map<java.lang.String, java.lang.String> map = internalGetAnnotations().getMap();
+    if (!map.containsKey(key)) {
+      throw new java.lang.IllegalArgumentException();
+    }
+    return map.get(key);
   }
 
-  private int regionsMemoizedSerializedSize;
-
-  public static final int CREATE_TIME_FIELD_NUMBER = 11;
+  public static final int CREATE_TIME_FIELD_NUMBER = 5;
   private com.google.protobuf.Timestamp createTime_;
   /**
    *
@@ -983,7 +757,8 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessageV3
    * received.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp create_time = 11;</code>
+   * <code>.google.protobuf.Timestamp create_time = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
    * @return Whether the createTime field is set.
    */
@@ -999,7 +774,8 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessageV3
    * received.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp create_time = 11;</code>
+   * <code>.google.protobuf.Timestamp create_time = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
    * @return The createTime.
    */
@@ -1015,14 +791,15 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessageV3
    * received.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp create_time = 11;</code>
+   * <code>.google.protobuf.Timestamp create_time = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder() {
     return getCreateTime();
   }
 
-  public static final int UPDATE_TIME_FIELD_NUMBER = 17;
+  public static final int UPDATE_TIME_FIELD_NUMBER = 6;
   private com.google.protobuf.Timestamp updateTime_;
   /**
    *
@@ -1032,7 +809,8 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessageV3
    * received.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp update_time = 17;</code>
+   * <code>.google.protobuf.Timestamp update_time = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
    * @return Whether the updateTime field is set.
    */
@@ -1048,7 +826,8 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessageV3
    * received.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp update_time = 17;</code>
+   * <code>.google.protobuf.Timestamp update_time = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
    * @return The updateTime.
    */
@@ -1064,14 +843,15 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessageV3
    * received.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp update_time = 17;</code>
+   * <code>.google.protobuf.Timestamp update_time = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getUpdateTimeOrBuilder() {
     return getUpdateTime();
   }
 
-  public static final int DELETE_TIME_FIELD_NUMBER = 12;
+  public static final int DELETE_TIME_FIELD_NUMBER = 7;
   private com.google.protobuf.Timestamp deleteTime_;
   /**
    *
@@ -1081,7 +861,8 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessageV3
    * received.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp delete_time = 12;</code>
+   * <code>.google.protobuf.Timestamp delete_time = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
    * @return Whether the deleteTime field is set.
    */
@@ -1097,7 +878,8 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessageV3
    * received.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp delete_time = 12;</code>
+   * <code>.google.protobuf.Timestamp delete_time = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
    * @return The deleteTime.
    */
@@ -1113,47 +895,156 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessageV3
    * received.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp delete_time = 12;</code>
+   * <code>.google.protobuf.Timestamp delete_time = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getDeleteTimeOrBuilder() {
     return getDeleteTime();
   }
 
-  public static final int STATUS_FIELD_NUMBER = 13;
-  private int status_;
+  public static final int STATE_FIELD_NUMBER = 8;
+  private int state_;
   /**
    *
    *
    * <pre>
-   * Output only. WorkerPool Status.
+   * Output only. `WorkerPool` state.
    * </pre>
    *
-   * <code>.google.devtools.cloudbuild.v1.WorkerPool.Status status = 13;</code>
+   * <code>
+   * .google.devtools.cloudbuild.v1.WorkerPool.State state = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
-   * @return The enum numeric value on the wire for status.
+   * @return The enum numeric value on the wire for state.
    */
   @java.lang.Override
-  public int getStatusValue() {
-    return status_;
+  public int getStateValue() {
+    return state_;
   }
   /**
    *
    *
    * <pre>
-   * Output only. WorkerPool Status.
+   * Output only. `WorkerPool` state.
    * </pre>
    *
-   * <code>.google.devtools.cloudbuild.v1.WorkerPool.Status status = 13;</code>
+   * <code>
+   * .google.devtools.cloudbuild.v1.WorkerPool.State state = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
-   * @return The status.
+   * @return The state.
    */
   @java.lang.Override
-  public com.google.cloudbuild.v1.WorkerPool.Status getStatus() {
+  public com.google.cloudbuild.v1.WorkerPool.State getState() {
     @SuppressWarnings("deprecation")
-    com.google.cloudbuild.v1.WorkerPool.Status result =
-        com.google.cloudbuild.v1.WorkerPool.Status.valueOf(status_);
-    return result == null ? com.google.cloudbuild.v1.WorkerPool.Status.UNRECOGNIZED : result;
+    com.google.cloudbuild.v1.WorkerPool.State result =
+        com.google.cloudbuild.v1.WorkerPool.State.valueOf(state_);
+    return result == null ? com.google.cloudbuild.v1.WorkerPool.State.UNRECOGNIZED : result;
+  }
+
+  public static final int PRIVATE_POOL_V1_CONFIG_FIELD_NUMBER = 12;
+  /**
+   *
+   *
+   * <pre>
+   * Private Pool using a v1 configuration.
+   * </pre>
+   *
+   * <code>.google.devtools.cloudbuild.v1.PrivatePoolV1Config private_pool_v1_config = 12;</code>
+   *
+   * @return Whether the privatePoolV1Config field is set.
+   */
+  @java.lang.Override
+  public boolean hasPrivatePoolV1Config() {
+    return configCase_ == 12;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Private Pool using a v1 configuration.
+   * </pre>
+   *
+   * <code>.google.devtools.cloudbuild.v1.PrivatePoolV1Config private_pool_v1_config = 12;</code>
+   *
+   * @return The privatePoolV1Config.
+   */
+  @java.lang.Override
+  public com.google.cloudbuild.v1.PrivatePoolV1Config getPrivatePoolV1Config() {
+    if (configCase_ == 12) {
+      return (com.google.cloudbuild.v1.PrivatePoolV1Config) config_;
+    }
+    return com.google.cloudbuild.v1.PrivatePoolV1Config.getDefaultInstance();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Private Pool using a v1 configuration.
+   * </pre>
+   *
+   * <code>.google.devtools.cloudbuild.v1.PrivatePoolV1Config private_pool_v1_config = 12;</code>
+   */
+  @java.lang.Override
+  public com.google.cloudbuild.v1.PrivatePoolV1ConfigOrBuilder getPrivatePoolV1ConfigOrBuilder() {
+    if (configCase_ == 12) {
+      return (com.google.cloudbuild.v1.PrivatePoolV1Config) config_;
+    }
+    return com.google.cloudbuild.v1.PrivatePoolV1Config.getDefaultInstance();
+  }
+
+  public static final int ETAG_FIELD_NUMBER = 11;
+  private volatile java.lang.Object etag_;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Checksum computed by the server. May be sent on update and
+   * delete requests to ensure that the client has an up-to-date value before
+   * proceeding.
+   * </pre>
+   *
+   * <code>string etag = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The etag.
+   */
+  @java.lang.Override
+  public java.lang.String getEtag() {
+    java.lang.Object ref = etag_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      etag_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Checksum computed by the server. May be sent on update and
+   * delete requests to ensure that the client has an up-to-date value before
+   * proceeding.
+   * </pre>
+   *
+   * <code>string etag = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The bytes for etag.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getEtagBytes() {
+    java.lang.Object ref = etag_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      etag_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   private byte memoizedIsInitialized = -1;
@@ -1170,40 +1061,34 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessageV3
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    getSerializedSize();
-    if (!getProjectIdBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, projectId_);
-    }
-    if (!getServiceAccountEmailBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, serviceAccountEmail_);
-    }
-    if (workerCount_ != 0L) {
-      output.writeInt64(4, workerCount_);
-    }
-    if (getRegionsList().size() > 0) {
-      output.writeUInt32NoTag(74);
-      output.writeUInt32NoTag(regionsMemoizedSerializedSize);
-    }
-    for (int i = 0; i < regions_.size(); i++) {
-      output.writeEnumNoTag(regions_.get(i));
-    }
-    if (createTime_ != null) {
-      output.writeMessage(11, getCreateTime());
-    }
-    if (deleteTime_ != null) {
-      output.writeMessage(12, getDeleteTime());
-    }
-    if (status_ != com.google.cloudbuild.v1.WorkerPool.Status.STATUS_UNSPECIFIED.getNumber()) {
-      output.writeEnum(13, status_);
-    }
     if (!getNameBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 14, name_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name_);
     }
-    if (workerConfig_ != null) {
-      output.writeMessage(16, getWorkerConfig());
+    if (!getDisplayNameBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, displayName_);
+    }
+    if (!getUidBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, uid_);
+    }
+    com.google.protobuf.GeneratedMessageV3.serializeStringMapTo(
+        output, internalGetAnnotations(), AnnotationsDefaultEntryHolder.defaultEntry, 4);
+    if (createTime_ != null) {
+      output.writeMessage(5, getCreateTime());
     }
     if (updateTime_ != null) {
-      output.writeMessage(17, getUpdateTime());
+      output.writeMessage(6, getUpdateTime());
+    }
+    if (deleteTime_ != null) {
+      output.writeMessage(7, getDeleteTime());
+    }
+    if (state_ != com.google.cloudbuild.v1.WorkerPool.State.STATE_UNSPECIFIED.getNumber()) {
+      output.writeEnum(8, state_);
+    }
+    if (!getEtagBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 11, etag_);
+    }
+    if (configCase_ == 12) {
+      output.writeMessage(12, (com.google.cloudbuild.v1.PrivatePoolV1Config) config_);
     }
     unknownFields.writeTo(output);
   }
@@ -1214,44 +1099,44 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessageV3
     if (size != -1) return size;
 
     size = 0;
-    if (!getProjectIdBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, projectId_);
+    if (!getNameBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, name_);
     }
-    if (!getServiceAccountEmailBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, serviceAccountEmail_);
+    if (!getDisplayNameBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, displayName_);
     }
-    if (workerCount_ != 0L) {
-      size += com.google.protobuf.CodedOutputStream.computeInt64Size(4, workerCount_);
+    if (!getUidBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, uid_);
     }
-    {
-      int dataSize = 0;
-      for (int i = 0; i < regions_.size(); i++) {
-        dataSize += com.google.protobuf.CodedOutputStream.computeEnumSizeNoTag(regions_.get(i));
-      }
-      size += dataSize;
-      if (!getRegionsList().isEmpty()) {
-        size += 1;
-        size += com.google.protobuf.CodedOutputStream.computeUInt32SizeNoTag(dataSize);
-      }
-      regionsMemoizedSerializedSize = dataSize;
+    for (java.util.Map.Entry<java.lang.String, java.lang.String> entry :
+        internalGetAnnotations().getMap().entrySet()) {
+      com.google.protobuf.MapEntry<java.lang.String, java.lang.String> annotations__ =
+          AnnotationsDefaultEntryHolder.defaultEntry
+              .newBuilderForType()
+              .setKey(entry.getKey())
+              .setValue(entry.getValue())
+              .build();
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(4, annotations__);
     }
     if (createTime_ != null) {
-      size += com.google.protobuf.CodedOutputStream.computeMessageSize(11, getCreateTime());
-    }
-    if (deleteTime_ != null) {
-      size += com.google.protobuf.CodedOutputStream.computeMessageSize(12, getDeleteTime());
-    }
-    if (status_ != com.google.cloudbuild.v1.WorkerPool.Status.STATUS_UNSPECIFIED.getNumber()) {
-      size += com.google.protobuf.CodedOutputStream.computeEnumSize(13, status_);
-    }
-    if (!getNameBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(14, name_);
-    }
-    if (workerConfig_ != null) {
-      size += com.google.protobuf.CodedOutputStream.computeMessageSize(16, getWorkerConfig());
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(5, getCreateTime());
     }
     if (updateTime_ != null) {
-      size += com.google.protobuf.CodedOutputStream.computeMessageSize(17, getUpdateTime());
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(6, getUpdateTime());
+    }
+    if (deleteTime_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(7, getDeleteTime());
+    }
+    if (state_ != com.google.cloudbuild.v1.WorkerPool.State.STATE_UNSPECIFIED.getNumber()) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(8, state_);
+    }
+    if (!getEtagBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(11, etag_);
+    }
+    if (configCase_ == 12) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              12, (com.google.cloudbuild.v1.PrivatePoolV1Config) config_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -1269,14 +1154,9 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessageV3
     com.google.cloudbuild.v1.WorkerPool other = (com.google.cloudbuild.v1.WorkerPool) obj;
 
     if (!getName().equals(other.getName())) return false;
-    if (!getProjectId().equals(other.getProjectId())) return false;
-    if (!getServiceAccountEmail().equals(other.getServiceAccountEmail())) return false;
-    if (getWorkerCount() != other.getWorkerCount()) return false;
-    if (hasWorkerConfig() != other.hasWorkerConfig()) return false;
-    if (hasWorkerConfig()) {
-      if (!getWorkerConfig().equals(other.getWorkerConfig())) return false;
-    }
-    if (!regions_.equals(other.regions_)) return false;
+    if (!getDisplayName().equals(other.getDisplayName())) return false;
+    if (!getUid().equals(other.getUid())) return false;
+    if (!internalGetAnnotations().equals(other.internalGetAnnotations())) return false;
     if (hasCreateTime() != other.hasCreateTime()) return false;
     if (hasCreateTime()) {
       if (!getCreateTime().equals(other.getCreateTime())) return false;
@@ -1289,7 +1169,16 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessageV3
     if (hasDeleteTime()) {
       if (!getDeleteTime().equals(other.getDeleteTime())) return false;
     }
-    if (status_ != other.status_) return false;
+    if (state_ != other.state_) return false;
+    if (!getEtag().equals(other.getEtag())) return false;
+    if (!getConfigCase().equals(other.getConfigCase())) return false;
+    switch (configCase_) {
+      case 12:
+        if (!getPrivatePoolV1Config().equals(other.getPrivatePoolV1Config())) return false;
+        break;
+      case 0:
+      default:
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -1303,19 +1192,13 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessageV3
     hash = (19 * hash) + getDescriptor().hashCode();
     hash = (37 * hash) + NAME_FIELD_NUMBER;
     hash = (53 * hash) + getName().hashCode();
-    hash = (37 * hash) + PROJECT_ID_FIELD_NUMBER;
-    hash = (53 * hash) + getProjectId().hashCode();
-    hash = (37 * hash) + SERVICE_ACCOUNT_EMAIL_FIELD_NUMBER;
-    hash = (53 * hash) + getServiceAccountEmail().hashCode();
-    hash = (37 * hash) + WORKER_COUNT_FIELD_NUMBER;
-    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getWorkerCount());
-    if (hasWorkerConfig()) {
-      hash = (37 * hash) + WORKER_CONFIG_FIELD_NUMBER;
-      hash = (53 * hash) + getWorkerConfig().hashCode();
-    }
-    if (getRegionsCount() > 0) {
-      hash = (37 * hash) + REGIONS_FIELD_NUMBER;
-      hash = (53 * hash) + regions_.hashCode();
+    hash = (37 * hash) + DISPLAY_NAME_FIELD_NUMBER;
+    hash = (53 * hash) + getDisplayName().hashCode();
+    hash = (37 * hash) + UID_FIELD_NUMBER;
+    hash = (53 * hash) + getUid().hashCode();
+    if (!internalGetAnnotations().getMap().isEmpty()) {
+      hash = (37 * hash) + ANNOTATIONS_FIELD_NUMBER;
+      hash = (53 * hash) + internalGetAnnotations().hashCode();
     }
     if (hasCreateTime()) {
       hash = (37 * hash) + CREATE_TIME_FIELD_NUMBER;
@@ -1329,8 +1212,18 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessageV3
       hash = (37 * hash) + DELETE_TIME_FIELD_NUMBER;
       hash = (53 * hash) + getDeleteTime().hashCode();
     }
-    hash = (37 * hash) + STATUS_FIELD_NUMBER;
-    hash = (53 * hash) + status_;
+    hash = (37 * hash) + STATE_FIELD_NUMBER;
+    hash = (53 * hash) + state_;
+    hash = (37 * hash) + ETAG_FIELD_NUMBER;
+    hash = (53 * hash) + getEtag().hashCode();
+    switch (configCase_) {
+      case 12:
+        hash = (37 * hash) + PRIVATE_POOL_V1_CONFIG_FIELD_NUMBER;
+        hash = (53 * hash) + getPrivatePoolV1Config().hashCode();
+        break;
+      case 0:
+      default:
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -1434,12 +1327,17 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Configuration for a WorkerPool to run the builds.
-   * Workers are machines that Cloud Build uses to run your builds. By default,
-   * all workers run in a project owned by Cloud Build. To have full control over
-   * the workers that execute your builds -- such as enabling them to access
-   * private resources on your private network -- you can request Cloud Build to
-   * run the workers in your own project by creating a custom workers pool.
+   * Configuration for a `WorkerPool`.
+   * Cloud Build owns and maintains a pool of workers for general use and have no
+   * access to a project's private network. By default, builds submitted to
+   * Cloud Build will use a worker from this pool.
+   * If your build needs access to resources on a private network,
+   * create and use a `WorkerPool` to run your builds. Private `WorkerPool`s give
+   * your builds access to any single VPC network that you
+   * administer, including any on-prem resources connected to that VPC
+   * network. For an overview of private pools, see
+   * [Private pools
+   * overview](https://cloud.google.com/build/docs/private-pools/private-pools-overview).
    * </pre>
    *
    * Protobuf type {@code google.devtools.cloudbuild.v1.WorkerPool}
@@ -1451,6 +1349,26 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessageV3
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.cloudbuild.v1.Cloudbuild
           .internal_static_google_devtools_cloudbuild_v1_WorkerPool_descriptor;
+    }
+
+    @SuppressWarnings({"rawtypes"})
+    protected com.google.protobuf.MapField internalGetMapField(int number) {
+      switch (number) {
+        case 4:
+          return internalGetAnnotations();
+        default:
+          throw new RuntimeException("Invalid map field number: " + number);
+      }
+    }
+
+    @SuppressWarnings({"rawtypes"})
+    protected com.google.protobuf.MapField internalGetMutableMapField(int number) {
+      switch (number) {
+        case 4:
+          return internalGetMutableAnnotations();
+        default:
+          throw new RuntimeException("Invalid map field number: " + number);
+      }
     }
 
     @java.lang.Override
@@ -1482,20 +1400,11 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessageV3
       super.clear();
       name_ = "";
 
-      projectId_ = "";
+      displayName_ = "";
 
-      serviceAccountEmail_ = "";
+      uid_ = "";
 
-      workerCount_ = 0L;
-
-      if (workerConfigBuilder_ == null) {
-        workerConfig_ = null;
-      } else {
-        workerConfig_ = null;
-        workerConfigBuilder_ = null;
-      }
-      regions_ = java.util.Collections.emptyList();
-      bitField0_ = (bitField0_ & ~0x00000001);
+      internalGetMutableAnnotations().clear();
       if (createTimeBuilder_ == null) {
         createTime_ = null;
       } else {
@@ -1514,8 +1423,12 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessageV3
         deleteTime_ = null;
         deleteTimeBuilder_ = null;
       }
-      status_ = 0;
+      state_ = 0;
 
+      etag_ = "";
+
+      configCase_ = 0;
+      config_ = null;
       return this;
     }
 
@@ -1544,19 +1457,10 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessageV3
       com.google.cloudbuild.v1.WorkerPool result = new com.google.cloudbuild.v1.WorkerPool(this);
       int from_bitField0_ = bitField0_;
       result.name_ = name_;
-      result.projectId_ = projectId_;
-      result.serviceAccountEmail_ = serviceAccountEmail_;
-      result.workerCount_ = workerCount_;
-      if (workerConfigBuilder_ == null) {
-        result.workerConfig_ = workerConfig_;
-      } else {
-        result.workerConfig_ = workerConfigBuilder_.build();
-      }
-      if (((bitField0_ & 0x00000001) != 0)) {
-        regions_ = java.util.Collections.unmodifiableList(regions_);
-        bitField0_ = (bitField0_ & ~0x00000001);
-      }
-      result.regions_ = regions_;
+      result.displayName_ = displayName_;
+      result.uid_ = uid_;
+      result.annotations_ = internalGetAnnotations();
+      result.annotations_.makeImmutable();
       if (createTimeBuilder_ == null) {
         result.createTime_ = createTime_;
       } else {
@@ -1572,7 +1476,16 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessageV3
       } else {
         result.deleteTime_ = deleteTimeBuilder_.build();
       }
-      result.status_ = status_;
+      result.state_ = state_;
+      if (configCase_ == 12) {
+        if (privatePoolV1ConfigBuilder_ == null) {
+          result.config_ = config_;
+        } else {
+          result.config_ = privatePoolV1ConfigBuilder_.build();
+        }
+      }
+      result.etag_ = etag_;
+      result.configCase_ = configCase_;
       onBuilt();
       return result;
     }
@@ -1626,30 +1539,15 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessageV3
         name_ = other.name_;
         onChanged();
       }
-      if (!other.getProjectId().isEmpty()) {
-        projectId_ = other.projectId_;
+      if (!other.getDisplayName().isEmpty()) {
+        displayName_ = other.displayName_;
         onChanged();
       }
-      if (!other.getServiceAccountEmail().isEmpty()) {
-        serviceAccountEmail_ = other.serviceAccountEmail_;
+      if (!other.getUid().isEmpty()) {
+        uid_ = other.uid_;
         onChanged();
       }
-      if (other.getWorkerCount() != 0L) {
-        setWorkerCount(other.getWorkerCount());
-      }
-      if (other.hasWorkerConfig()) {
-        mergeWorkerConfig(other.getWorkerConfig());
-      }
-      if (!other.regions_.isEmpty()) {
-        if (regions_.isEmpty()) {
-          regions_ = other.regions_;
-          bitField0_ = (bitField0_ & ~0x00000001);
-        } else {
-          ensureRegionsIsMutable();
-          regions_.addAll(other.regions_);
-        }
-        onChanged();
-      }
+      internalGetMutableAnnotations().mergeFrom(other.internalGetAnnotations());
       if (other.hasCreateTime()) {
         mergeCreateTime(other.getCreateTime());
       }
@@ -1659,8 +1557,23 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessageV3
       if (other.hasDeleteTime()) {
         mergeDeleteTime(other.getDeleteTime());
       }
-      if (other.status_ != 0) {
-        setStatusValue(other.getStatusValue());
+      if (other.state_ != 0) {
+        setStateValue(other.getStateValue());
+      }
+      if (!other.getEtag().isEmpty()) {
+        etag_ = other.etag_;
+        onChanged();
+      }
+      switch (other.getConfigCase()) {
+        case PRIVATE_POOL_V1_CONFIG:
+          {
+            mergePrivatePoolV1Config(other.getPrivatePoolV1Config());
+            break;
+          }
+        case CONFIG_NOT_SET:
+          {
+            break;
+          }
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -1691,6 +1604,20 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
+    private int configCase_ = 0;
+    private java.lang.Object config_;
+
+    public ConfigCase getConfigCase() {
+      return ConfigCase.forNumber(configCase_);
+    }
+
+    public Builder clearConfig() {
+      configCase_ = 0;
+      config_ = null;
+      onChanged();
+      return this;
+    }
+
     private int bitField0_;
 
     private java.lang.Object name_ = "";
@@ -1698,10 +1625,14 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * User-defined name of the `WorkerPool`.
+     * Output only. The resource name of the `WorkerPool`, with format
+     * `projects/{project}/locations/{location}/workerPools/{worker_pool}`.
+     * The value of `{worker_pool}` is provided by `worker_pool_id` in
+     * `CreateWorkerPool` request and the value of `{location}` is determined by
+     * the endpoint accessed.
      * </pre>
      *
-     * <code>string name = 14;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @return The name.
      */
@@ -1720,10 +1651,14 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * User-defined name of the `WorkerPool`.
+     * Output only. The resource name of the `WorkerPool`, with format
+     * `projects/{project}/locations/{location}/workerPools/{worker_pool}`.
+     * The value of `{worker_pool}` is provided by `worker_pool_id` in
+     * `CreateWorkerPool` request and the value of `{location}` is determined by
+     * the endpoint accessed.
      * </pre>
      *
-     * <code>string name = 14;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @return The bytes for name.
      */
@@ -1742,10 +1677,14 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * User-defined name of the `WorkerPool`.
+     * Output only. The resource name of the `WorkerPool`, with format
+     * `projects/{project}/locations/{location}/workerPools/{worker_pool}`.
+     * The value of `{worker_pool}` is provided by `worker_pool_id` in
+     * `CreateWorkerPool` request and the value of `{location}` is determined by
+     * the endpoint accessed.
      * </pre>
      *
-     * <code>string name = 14;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @param value The name to set.
      * @return This builder for chaining.
@@ -1763,10 +1702,14 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * User-defined name of the `WorkerPool`.
+     * Output only. The resource name of the `WorkerPool`, with format
+     * `projects/{project}/locations/{location}/workerPools/{worker_pool}`.
+     * The value of `{worker_pool}` is provided by `worker_pool_id` in
+     * `CreateWorkerPool` request and the value of `{location}` is determined by
+     * the endpoint accessed.
      * </pre>
      *
-     * <code>string name = 14;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @return This builder for chaining.
      */
@@ -1780,10 +1723,14 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * User-defined name of the `WorkerPool`.
+     * Output only. The resource name of the `WorkerPool`, with format
+     * `projects/{project}/locations/{location}/workerPools/{worker_pool}`.
+     * The value of `{worker_pool}` is provided by `worker_pool_id` in
+     * `CreateWorkerPool` request and the value of `{location}` is determined by
+     * the endpoint accessed.
      * </pre>
      *
-     * <code>string name = 14;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @param value The bytes for name to set.
      * @return This builder for chaining.
@@ -1799,24 +1746,25 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
-    private java.lang.Object projectId_ = "";
+    private java.lang.Object displayName_ = "";
     /**
      *
      *
      * <pre>
-     * The project ID of the GCP project for which the `WorkerPool` is created.
+     * A user-specified, human-readable name for the `WorkerPool`. If provided,
+     * this value must be 1-63 characters.
      * </pre>
      *
-     * <code>string project_id = 2;</code>
+     * <code>string display_name = 2;</code>
      *
-     * @return The projectId.
+     * @return The displayName.
      */
-    public java.lang.String getProjectId() {
-      java.lang.Object ref = projectId_;
+    public java.lang.String getDisplayName() {
+      java.lang.Object ref = displayName_;
       if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        projectId_ = s;
+        displayName_ = s;
         return s;
       } else {
         return (java.lang.String) ref;
@@ -1826,19 +1774,20 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The project ID of the GCP project for which the `WorkerPool` is created.
+     * A user-specified, human-readable name for the `WorkerPool`. If provided,
+     * this value must be 1-63 characters.
      * </pre>
      *
-     * <code>string project_id = 2;</code>
+     * <code>string display_name = 2;</code>
      *
-     * @return The bytes for projectId.
+     * @return The bytes for displayName.
      */
-    public com.google.protobuf.ByteString getProjectIdBytes() {
-      java.lang.Object ref = projectId_;
+    public com.google.protobuf.ByteString getDisplayNameBytes() {
+      java.lang.Object ref = displayName_;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b =
             com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
-        projectId_ = b;
+        displayName_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -1848,20 +1797,21 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The project ID of the GCP project for which the `WorkerPool` is created.
+     * A user-specified, human-readable name for the `WorkerPool`. If provided,
+     * this value must be 1-63 characters.
      * </pre>
      *
-     * <code>string project_id = 2;</code>
+     * <code>string display_name = 2;</code>
      *
-     * @param value The projectId to set.
+     * @param value The displayName to set.
      * @return This builder for chaining.
      */
-    public Builder setProjectId(java.lang.String value) {
+    public Builder setDisplayName(java.lang.String value) {
       if (value == null) {
         throw new NullPointerException();
       }
 
-      projectId_ = value;
+      displayName_ = value;
       onChanged();
       return this;
     }
@@ -1869,16 +1819,17 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The project ID of the GCP project for which the `WorkerPool` is created.
+     * A user-specified, human-readable name for the `WorkerPool`. If provided,
+     * this value must be 1-63 characters.
      * </pre>
      *
-     * <code>string project_id = 2;</code>
+     * <code>string display_name = 2;</code>
      *
      * @return This builder for chaining.
      */
-    public Builder clearProjectId() {
+    public Builder clearDisplayName() {
 
-      projectId_ = getDefaultInstance().getProjectId();
+      displayName_ = getDefaultInstance().getDisplayName();
       onChanged();
       return this;
     }
@@ -1886,45 +1837,44 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The project ID of the GCP project for which the `WorkerPool` is created.
+     * A user-specified, human-readable name for the `WorkerPool`. If provided,
+     * this value must be 1-63 characters.
      * </pre>
      *
-     * <code>string project_id = 2;</code>
+     * <code>string display_name = 2;</code>
      *
-     * @param value The bytes for projectId to set.
+     * @param value The bytes for displayName to set.
      * @return This builder for chaining.
      */
-    public Builder setProjectIdBytes(com.google.protobuf.ByteString value) {
+    public Builder setDisplayNameBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
 
-      projectId_ = value;
+      displayName_ = value;
       onChanged();
       return this;
     }
 
-    private java.lang.Object serviceAccountEmail_ = "";
+    private java.lang.Object uid_ = "";
     /**
      *
      *
      * <pre>
-     * Output only. The service account used to manage the `WorkerPool`. The
-     * service account must have the Compute Instance Admin (Beta) permission at
-     * the project level.
+     * Output only. A unique identifier for the `WorkerPool`.
      * </pre>
      *
-     * <code>string service_account_email = 3;</code>
+     * <code>string uid = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
-     * @return The serviceAccountEmail.
+     * @return The uid.
      */
-    public java.lang.String getServiceAccountEmail() {
-      java.lang.Object ref = serviceAccountEmail_;
+    public java.lang.String getUid() {
+      java.lang.Object ref = uid_;
       if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        serviceAccountEmail_ = s;
+        uid_ = s;
         return s;
       } else {
         return (java.lang.String) ref;
@@ -1934,21 +1884,19 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The service account used to manage the `WorkerPool`. The
-     * service account must have the Compute Instance Admin (Beta) permission at
-     * the project level.
+     * Output only. A unique identifier for the `WorkerPool`.
      * </pre>
      *
-     * <code>string service_account_email = 3;</code>
+     * <code>string uid = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
-     * @return The bytes for serviceAccountEmail.
+     * @return The bytes for uid.
      */
-    public com.google.protobuf.ByteString getServiceAccountEmailBytes() {
-      java.lang.Object ref = serviceAccountEmail_;
+    public com.google.protobuf.ByteString getUidBytes() {
+      java.lang.Object ref = uid_;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b =
             com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
-        serviceAccountEmail_ = b;
+        uid_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -1958,22 +1906,20 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The service account used to manage the `WorkerPool`. The
-     * service account must have the Compute Instance Admin (Beta) permission at
-     * the project level.
+     * Output only. A unique identifier for the `WorkerPool`.
      * </pre>
      *
-     * <code>string service_account_email = 3;</code>
+     * <code>string uid = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
-     * @param value The serviceAccountEmail to set.
+     * @param value The uid to set.
      * @return This builder for chaining.
      */
-    public Builder setServiceAccountEmail(java.lang.String value) {
+    public Builder setUid(java.lang.String value) {
       if (value == null) {
         throw new NullPointerException();
       }
 
-      serviceAccountEmail_ = value;
+      uid_ = value;
       onChanged();
       return this;
     }
@@ -1981,18 +1927,16 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The service account used to manage the `WorkerPool`. The
-     * service account must have the Compute Instance Admin (Beta) permission at
-     * the project level.
+     * Output only. A unique identifier for the `WorkerPool`.
      * </pre>
      *
-     * <code>string service_account_email = 3;</code>
+     * <code>string uid = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @return This builder for chaining.
      */
-    public Builder clearServiceAccountEmail() {
+    public Builder clearUid() {
 
-      serviceAccountEmail_ = getDefaultInstance().getServiceAccountEmail();
+      uid_ = getDefaultInstance().getUid();
       onChanged();
       return this;
     }
@@ -2000,530 +1944,189 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The service account used to manage the `WorkerPool`. The
-     * service account must have the Compute Instance Admin (Beta) permission at
-     * the project level.
+     * Output only. A unique identifier for the `WorkerPool`.
      * </pre>
      *
-     * <code>string service_account_email = 3;</code>
+     * <code>string uid = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
-     * @param value The bytes for serviceAccountEmail to set.
+     * @param value The bytes for uid to set.
      * @return This builder for chaining.
      */
-    public Builder setServiceAccountEmailBytes(com.google.protobuf.ByteString value) {
+    public Builder setUidBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
 
-      serviceAccountEmail_ = value;
+      uid_ = value;
       onChanged();
       return this;
     }
 
-    private long workerCount_;
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String> annotations_;
+
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+        internalGetAnnotations() {
+      if (annotations_ == null) {
+        return com.google.protobuf.MapField.emptyMapField(
+            AnnotationsDefaultEntryHolder.defaultEntry);
+      }
+      return annotations_;
+    }
+
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+        internalGetMutableAnnotations() {
+      onChanged();
+      ;
+      if (annotations_ == null) {
+        annotations_ =
+            com.google.protobuf.MapField.newMapField(AnnotationsDefaultEntryHolder.defaultEntry);
+      }
+      if (!annotations_.isMutable()) {
+        annotations_ = annotations_.copy();
+      }
+      return annotations_;
+    }
+
+    public int getAnnotationsCount() {
+      return internalGetAnnotations().getMap().size();
+    }
     /**
      *
      *
      * <pre>
-     * Total number of workers to be created across all requested regions.
+     * User specified annotations. See https://google.aip.dev/128#annotations
+     * for more details such as format and size limitations.
      * </pre>
      *
-     * <code>int64 worker_count = 4;</code>
-     *
-     * @return The workerCount.
+     * <code>map&lt;string, string&gt; annotations = 4;</code>
      */
     @java.lang.Override
-    public long getWorkerCount() {
-      return workerCount_;
+    public boolean containsAnnotations(java.lang.String key) {
+      if (key == null) {
+        throw new java.lang.NullPointerException();
+      }
+      return internalGetAnnotations().getMap().containsKey(key);
+    }
+    /** Use {@link #getAnnotationsMap()} instead. */
+    @java.lang.Override
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, java.lang.String> getAnnotations() {
+      return getAnnotationsMap();
     }
     /**
      *
      *
      * <pre>
-     * Total number of workers to be created across all requested regions.
+     * User specified annotations. See https://google.aip.dev/128#annotations
+     * for more details such as format and size limitations.
      * </pre>
      *
-     * <code>int64 worker_count = 4;</code>
-     *
-     * @param value The workerCount to set.
-     * @return This builder for chaining.
+     * <code>map&lt;string, string&gt; annotations = 4;</code>
      */
-    public Builder setWorkerCount(long value) {
+    @java.lang.Override
+    public java.util.Map<java.lang.String, java.lang.String> getAnnotationsMap() {
+      return internalGetAnnotations().getMap();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * User specified annotations. See https://google.aip.dev/128#annotations
+     * for more details such as format and size limitations.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; annotations = 4;</code>
+     */
+    @java.lang.Override
+    public java.lang.String getAnnotationsOrDefault(
+        java.lang.String key, java.lang.String defaultValue) {
+      if (key == null) {
+        throw new java.lang.NullPointerException();
+      }
+      java.util.Map<java.lang.String, java.lang.String> map = internalGetAnnotations().getMap();
+      return map.containsKey(key) ? map.get(key) : defaultValue;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * User specified annotations. See https://google.aip.dev/128#annotations
+     * for more details such as format and size limitations.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; annotations = 4;</code>
+     */
+    @java.lang.Override
+    public java.lang.String getAnnotationsOrThrow(java.lang.String key) {
+      if (key == null) {
+        throw new java.lang.NullPointerException();
+      }
+      java.util.Map<java.lang.String, java.lang.String> map = internalGetAnnotations().getMap();
+      if (!map.containsKey(key)) {
+        throw new java.lang.IllegalArgumentException();
+      }
+      return map.get(key);
+    }
 
-      workerCount_ = value;
-      onChanged();
+    public Builder clearAnnotations() {
+      internalGetMutableAnnotations().getMutableMap().clear();
       return this;
     }
     /**
      *
      *
      * <pre>
-     * Total number of workers to be created across all requested regions.
+     * User specified annotations. See https://google.aip.dev/128#annotations
+     * for more details such as format and size limitations.
      * </pre>
      *
-     * <code>int64 worker_count = 4;</code>
-     *
-     * @return This builder for chaining.
+     * <code>map&lt;string, string&gt; annotations = 4;</code>
      */
-    public Builder clearWorkerCount() {
-
-      workerCount_ = 0L;
-      onChanged();
+    public Builder removeAnnotations(java.lang.String key) {
+      if (key == null) {
+        throw new java.lang.NullPointerException();
+      }
+      internalGetMutableAnnotations().getMutableMap().remove(key);
       return this;
     }
-
-    private com.google.cloudbuild.v1.WorkerConfig workerConfig_;
-    private com.google.protobuf.SingleFieldBuilderV3<
-            com.google.cloudbuild.v1.WorkerConfig,
-            com.google.cloudbuild.v1.WorkerConfig.Builder,
-            com.google.cloudbuild.v1.WorkerConfigOrBuilder>
-        workerConfigBuilder_;
-    /**
-     *
-     *
-     * <pre>
-     * Configuration to be used for a creating workers in the `WorkerPool`.
-     * </pre>
-     *
-     * <code>.google.devtools.cloudbuild.v1.WorkerConfig worker_config = 16;</code>
-     *
-     * @return Whether the workerConfig field is set.
-     */
-    public boolean hasWorkerConfig() {
-      return workerConfigBuilder_ != null || workerConfig_ != null;
+    /** Use alternate mutation accessors instead. */
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, java.lang.String> getMutableAnnotations() {
+      return internalGetMutableAnnotations().getMutableMap();
     }
     /**
      *
      *
      * <pre>
-     * Configuration to be used for a creating workers in the `WorkerPool`.
+     * User specified annotations. See https://google.aip.dev/128#annotations
+     * for more details such as format and size limitations.
      * </pre>
      *
-     * <code>.google.devtools.cloudbuild.v1.WorkerConfig worker_config = 16;</code>
-     *
-     * @return The workerConfig.
+     * <code>map&lt;string, string&gt; annotations = 4;</code>
      */
-    public com.google.cloudbuild.v1.WorkerConfig getWorkerConfig() {
-      if (workerConfigBuilder_ == null) {
-        return workerConfig_ == null
-            ? com.google.cloudbuild.v1.WorkerConfig.getDefaultInstance()
-            : workerConfig_;
-      } else {
-        return workerConfigBuilder_.getMessage();
+    public Builder putAnnotations(java.lang.String key, java.lang.String value) {
+      if (key == null) {
+        throw new java.lang.NullPointerException();
       }
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Configuration to be used for a creating workers in the `WorkerPool`.
-     * </pre>
-     *
-     * <code>.google.devtools.cloudbuild.v1.WorkerConfig worker_config = 16;</code>
-     */
-    public Builder setWorkerConfig(com.google.cloudbuild.v1.WorkerConfig value) {
-      if (workerConfigBuilder_ == null) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        workerConfig_ = value;
-        onChanged();
-      } else {
-        workerConfigBuilder_.setMessage(value);
-      }
-
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Configuration to be used for a creating workers in the `WorkerPool`.
-     * </pre>
-     *
-     * <code>.google.devtools.cloudbuild.v1.WorkerConfig worker_config = 16;</code>
-     */
-    public Builder setWorkerConfig(com.google.cloudbuild.v1.WorkerConfig.Builder builderForValue) {
-      if (workerConfigBuilder_ == null) {
-        workerConfig_ = builderForValue.build();
-        onChanged();
-      } else {
-        workerConfigBuilder_.setMessage(builderForValue.build());
-      }
-
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Configuration to be used for a creating workers in the `WorkerPool`.
-     * </pre>
-     *
-     * <code>.google.devtools.cloudbuild.v1.WorkerConfig worker_config = 16;</code>
-     */
-    public Builder mergeWorkerConfig(com.google.cloudbuild.v1.WorkerConfig value) {
-      if (workerConfigBuilder_ == null) {
-        if (workerConfig_ != null) {
-          workerConfig_ =
-              com.google.cloudbuild.v1.WorkerConfig.newBuilder(workerConfig_)
-                  .mergeFrom(value)
-                  .buildPartial();
-        } else {
-          workerConfig_ = value;
-        }
-        onChanged();
-      } else {
-        workerConfigBuilder_.mergeFrom(value);
-      }
-
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Configuration to be used for a creating workers in the `WorkerPool`.
-     * </pre>
-     *
-     * <code>.google.devtools.cloudbuild.v1.WorkerConfig worker_config = 16;</code>
-     */
-    public Builder clearWorkerConfig() {
-      if (workerConfigBuilder_ == null) {
-        workerConfig_ = null;
-        onChanged();
-      } else {
-        workerConfig_ = null;
-        workerConfigBuilder_ = null;
-      }
-
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Configuration to be used for a creating workers in the `WorkerPool`.
-     * </pre>
-     *
-     * <code>.google.devtools.cloudbuild.v1.WorkerConfig worker_config = 16;</code>
-     */
-    public com.google.cloudbuild.v1.WorkerConfig.Builder getWorkerConfigBuilder() {
-
-      onChanged();
-      return getWorkerConfigFieldBuilder().getBuilder();
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Configuration to be used for a creating workers in the `WorkerPool`.
-     * </pre>
-     *
-     * <code>.google.devtools.cloudbuild.v1.WorkerConfig worker_config = 16;</code>
-     */
-    public com.google.cloudbuild.v1.WorkerConfigOrBuilder getWorkerConfigOrBuilder() {
-      if (workerConfigBuilder_ != null) {
-        return workerConfigBuilder_.getMessageOrBuilder();
-      } else {
-        return workerConfig_ == null
-            ? com.google.cloudbuild.v1.WorkerConfig.getDefaultInstance()
-            : workerConfig_;
-      }
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Configuration to be used for a creating workers in the `WorkerPool`.
-     * </pre>
-     *
-     * <code>.google.devtools.cloudbuild.v1.WorkerConfig worker_config = 16;</code>
-     */
-    private com.google.protobuf.SingleFieldBuilderV3<
-            com.google.cloudbuild.v1.WorkerConfig,
-            com.google.cloudbuild.v1.WorkerConfig.Builder,
-            com.google.cloudbuild.v1.WorkerConfigOrBuilder>
-        getWorkerConfigFieldBuilder() {
-      if (workerConfigBuilder_ == null) {
-        workerConfigBuilder_ =
-            new com.google.protobuf.SingleFieldBuilderV3<
-                com.google.cloudbuild.v1.WorkerConfig,
-                com.google.cloudbuild.v1.WorkerConfig.Builder,
-                com.google.cloudbuild.v1.WorkerConfigOrBuilder>(
-                getWorkerConfig(), getParentForChildren(), isClean());
-        workerConfig_ = null;
-      }
-      return workerConfigBuilder_;
-    }
-
-    private java.util.List<java.lang.Integer> regions_ = java.util.Collections.emptyList();
-
-    private void ensureRegionsIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
-        regions_ = new java.util.ArrayList<java.lang.Integer>(regions_);
-        bitField0_ |= 0x00000001;
-      }
-    }
-    /**
-     *
-     *
-     * <pre>
-     * List of regions to create the `WorkerPool`. Regions can't be empty.
-     * If Cloud Build adds a new GCP region in the future, the existing
-     * `WorkerPool` will not be enabled in the new region automatically;
-     * you must add the new region to the `regions` field to enable the
-     * `WorkerPool` in that region.
-     * </pre>
-     *
-     * <code>repeated .google.devtools.cloudbuild.v1.WorkerPool.Region regions = 9;</code>
-     *
-     * @return A list containing the regions.
-     */
-    public java.util.List<com.google.cloudbuild.v1.WorkerPool.Region> getRegionsList() {
-      return new com.google.protobuf.Internal.ListAdapter<
-          java.lang.Integer, com.google.cloudbuild.v1.WorkerPool.Region>(
-          regions_, regions_converter_);
-    }
-    /**
-     *
-     *
-     * <pre>
-     * List of regions to create the `WorkerPool`. Regions can't be empty.
-     * If Cloud Build adds a new GCP region in the future, the existing
-     * `WorkerPool` will not be enabled in the new region automatically;
-     * you must add the new region to the `regions` field to enable the
-     * `WorkerPool` in that region.
-     * </pre>
-     *
-     * <code>repeated .google.devtools.cloudbuild.v1.WorkerPool.Region regions = 9;</code>
-     *
-     * @return The count of regions.
-     */
-    public int getRegionsCount() {
-      return regions_.size();
-    }
-    /**
-     *
-     *
-     * <pre>
-     * List of regions to create the `WorkerPool`. Regions can't be empty.
-     * If Cloud Build adds a new GCP region in the future, the existing
-     * `WorkerPool` will not be enabled in the new region automatically;
-     * you must add the new region to the `regions` field to enable the
-     * `WorkerPool` in that region.
-     * </pre>
-     *
-     * <code>repeated .google.devtools.cloudbuild.v1.WorkerPool.Region regions = 9;</code>
-     *
-     * @param index The index of the element to return.
-     * @return The regions at the given index.
-     */
-    public com.google.cloudbuild.v1.WorkerPool.Region getRegions(int index) {
-      return regions_converter_.convert(regions_.get(index));
-    }
-    /**
-     *
-     *
-     * <pre>
-     * List of regions to create the `WorkerPool`. Regions can't be empty.
-     * If Cloud Build adds a new GCP region in the future, the existing
-     * `WorkerPool` will not be enabled in the new region automatically;
-     * you must add the new region to the `regions` field to enable the
-     * `WorkerPool` in that region.
-     * </pre>
-     *
-     * <code>repeated .google.devtools.cloudbuild.v1.WorkerPool.Region regions = 9;</code>
-     *
-     * @param index The index to set the value at.
-     * @param value The regions to set.
-     * @return This builder for chaining.
-     */
-    public Builder setRegions(int index, com.google.cloudbuild.v1.WorkerPool.Region value) {
       if (value == null) {
-        throw new NullPointerException();
+        throw new java.lang.NullPointerException();
       }
-      ensureRegionsIsMutable();
-      regions_.set(index, value.getNumber());
-      onChanged();
+      internalGetMutableAnnotations().getMutableMap().put(key, value);
       return this;
     }
     /**
      *
      *
      * <pre>
-     * List of regions to create the `WorkerPool`. Regions can't be empty.
-     * If Cloud Build adds a new GCP region in the future, the existing
-     * `WorkerPool` will not be enabled in the new region automatically;
-     * you must add the new region to the `regions` field to enable the
-     * `WorkerPool` in that region.
+     * User specified annotations. See https://google.aip.dev/128#annotations
+     * for more details such as format and size limitations.
      * </pre>
      *
-     * <code>repeated .google.devtools.cloudbuild.v1.WorkerPool.Region regions = 9;</code>
-     *
-     * @param value The regions to add.
-     * @return This builder for chaining.
+     * <code>map&lt;string, string&gt; annotations = 4;</code>
      */
-    public Builder addRegions(com.google.cloudbuild.v1.WorkerPool.Region value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      ensureRegionsIsMutable();
-      regions_.add(value.getNumber());
-      onChanged();
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * List of regions to create the `WorkerPool`. Regions can't be empty.
-     * If Cloud Build adds a new GCP region in the future, the existing
-     * `WorkerPool` will not be enabled in the new region automatically;
-     * you must add the new region to the `regions` field to enable the
-     * `WorkerPool` in that region.
-     * </pre>
-     *
-     * <code>repeated .google.devtools.cloudbuild.v1.WorkerPool.Region regions = 9;</code>
-     *
-     * @param values The regions to add.
-     * @return This builder for chaining.
-     */
-    public Builder addAllRegions(
-        java.lang.Iterable<? extends com.google.cloudbuild.v1.WorkerPool.Region> values) {
-      ensureRegionsIsMutable();
-      for (com.google.cloudbuild.v1.WorkerPool.Region value : values) {
-        regions_.add(value.getNumber());
-      }
-      onChanged();
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * List of regions to create the `WorkerPool`. Regions can't be empty.
-     * If Cloud Build adds a new GCP region in the future, the existing
-     * `WorkerPool` will not be enabled in the new region automatically;
-     * you must add the new region to the `regions` field to enable the
-     * `WorkerPool` in that region.
-     * </pre>
-     *
-     * <code>repeated .google.devtools.cloudbuild.v1.WorkerPool.Region regions = 9;</code>
-     *
-     * @return This builder for chaining.
-     */
-    public Builder clearRegions() {
-      regions_ = java.util.Collections.emptyList();
-      bitField0_ = (bitField0_ & ~0x00000001);
-      onChanged();
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * List of regions to create the `WorkerPool`. Regions can't be empty.
-     * If Cloud Build adds a new GCP region in the future, the existing
-     * `WorkerPool` will not be enabled in the new region automatically;
-     * you must add the new region to the `regions` field to enable the
-     * `WorkerPool` in that region.
-     * </pre>
-     *
-     * <code>repeated .google.devtools.cloudbuild.v1.WorkerPool.Region regions = 9;</code>
-     *
-     * @return A list containing the enum numeric values on the wire for regions.
-     */
-    public java.util.List<java.lang.Integer> getRegionsValueList() {
-      return java.util.Collections.unmodifiableList(regions_);
-    }
-    /**
-     *
-     *
-     * <pre>
-     * List of regions to create the `WorkerPool`. Regions can't be empty.
-     * If Cloud Build adds a new GCP region in the future, the existing
-     * `WorkerPool` will not be enabled in the new region automatically;
-     * you must add the new region to the `regions` field to enable the
-     * `WorkerPool` in that region.
-     * </pre>
-     *
-     * <code>repeated .google.devtools.cloudbuild.v1.WorkerPool.Region regions = 9;</code>
-     *
-     * @param index The index of the value to return.
-     * @return The enum numeric value on the wire of regions at the given index.
-     */
-    public int getRegionsValue(int index) {
-      return regions_.get(index);
-    }
-    /**
-     *
-     *
-     * <pre>
-     * List of regions to create the `WorkerPool`. Regions can't be empty.
-     * If Cloud Build adds a new GCP region in the future, the existing
-     * `WorkerPool` will not be enabled in the new region automatically;
-     * you must add the new region to the `regions` field to enable the
-     * `WorkerPool` in that region.
-     * </pre>
-     *
-     * <code>repeated .google.devtools.cloudbuild.v1.WorkerPool.Region regions = 9;</code>
-     *
-     * @param index The index of the value to return.
-     * @return The enum numeric value on the wire of regions at the given index.
-     * @return This builder for chaining.
-     */
-    public Builder setRegionsValue(int index, int value) {
-      ensureRegionsIsMutable();
-      regions_.set(index, value);
-      onChanged();
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * List of regions to create the `WorkerPool`. Regions can't be empty.
-     * If Cloud Build adds a new GCP region in the future, the existing
-     * `WorkerPool` will not be enabled in the new region automatically;
-     * you must add the new region to the `regions` field to enable the
-     * `WorkerPool` in that region.
-     * </pre>
-     *
-     * <code>repeated .google.devtools.cloudbuild.v1.WorkerPool.Region regions = 9;</code>
-     *
-     * @param value The enum numeric value on the wire for regions to add.
-     * @return This builder for chaining.
-     */
-    public Builder addRegionsValue(int value) {
-      ensureRegionsIsMutable();
-      regions_.add(value);
-      onChanged();
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * List of regions to create the `WorkerPool`. Regions can't be empty.
-     * If Cloud Build adds a new GCP region in the future, the existing
-     * `WorkerPool` will not be enabled in the new region automatically;
-     * you must add the new region to the `regions` field to enable the
-     * `WorkerPool` in that region.
-     * </pre>
-     *
-     * <code>repeated .google.devtools.cloudbuild.v1.WorkerPool.Region regions = 9;</code>
-     *
-     * @param values The enum numeric values on the wire for regions to add.
-     * @return This builder for chaining.
-     */
-    public Builder addAllRegionsValue(java.lang.Iterable<java.lang.Integer> values) {
-      ensureRegionsIsMutable();
-      for (int value : values) {
-        regions_.add(value);
-      }
-      onChanged();
+    public Builder putAllAnnotations(java.util.Map<java.lang.String, java.lang.String> values) {
+      internalGetMutableAnnotations().getMutableMap().putAll(values);
       return this;
     }
 
@@ -2541,7 +2144,9 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessageV3
      * received.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp create_time = 11;</code>
+     * <code>
+     * .google.protobuf.Timestamp create_time = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      *
      * @return Whether the createTime field is set.
      */
@@ -2556,7 +2161,9 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessageV3
      * received.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp create_time = 11;</code>
+     * <code>
+     * .google.protobuf.Timestamp create_time = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      *
      * @return The createTime.
      */
@@ -2577,7 +2184,9 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessageV3
      * received.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp create_time = 11;</code>
+     * <code>
+     * .google.protobuf.Timestamp create_time = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder setCreateTime(com.google.protobuf.Timestamp value) {
       if (createTimeBuilder_ == null) {
@@ -2600,7 +2209,9 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessageV3
      * received.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp create_time = 11;</code>
+     * <code>
+     * .google.protobuf.Timestamp create_time = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder setCreateTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (createTimeBuilder_ == null) {
@@ -2620,7 +2231,9 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessageV3
      * received.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp create_time = 11;</code>
+     * <code>
+     * .google.protobuf.Timestamp create_time = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder mergeCreateTime(com.google.protobuf.Timestamp value) {
       if (createTimeBuilder_ == null) {
@@ -2645,7 +2258,9 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessageV3
      * received.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp create_time = 11;</code>
+     * <code>
+     * .google.protobuf.Timestamp create_time = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder clearCreateTime() {
       if (createTimeBuilder_ == null) {
@@ -2666,7 +2281,9 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessageV3
      * received.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp create_time = 11;</code>
+     * <code>
+     * .google.protobuf.Timestamp create_time = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public com.google.protobuf.Timestamp.Builder getCreateTimeBuilder() {
 
@@ -2681,7 +2298,9 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessageV3
      * received.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp create_time = 11;</code>
+     * <code>
+     * .google.protobuf.Timestamp create_time = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder() {
       if (createTimeBuilder_ != null) {
@@ -2700,7 +2319,9 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessageV3
      * received.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp create_time = 11;</code>
+     * <code>
+     * .google.protobuf.Timestamp create_time = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.protobuf.Timestamp,
@@ -2733,7 +2354,9 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessageV3
      * received.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp update_time = 17;</code>
+     * <code>
+     * .google.protobuf.Timestamp update_time = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      *
      * @return Whether the updateTime field is set.
      */
@@ -2748,7 +2371,9 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessageV3
      * received.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp update_time = 17;</code>
+     * <code>
+     * .google.protobuf.Timestamp update_time = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      *
      * @return The updateTime.
      */
@@ -2769,7 +2394,9 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessageV3
      * received.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp update_time = 17;</code>
+     * <code>
+     * .google.protobuf.Timestamp update_time = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder setUpdateTime(com.google.protobuf.Timestamp value) {
       if (updateTimeBuilder_ == null) {
@@ -2792,7 +2419,9 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessageV3
      * received.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp update_time = 17;</code>
+     * <code>
+     * .google.protobuf.Timestamp update_time = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder setUpdateTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (updateTimeBuilder_ == null) {
@@ -2812,7 +2441,9 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessageV3
      * received.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp update_time = 17;</code>
+     * <code>
+     * .google.protobuf.Timestamp update_time = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder mergeUpdateTime(com.google.protobuf.Timestamp value) {
       if (updateTimeBuilder_ == null) {
@@ -2837,7 +2468,9 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessageV3
      * received.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp update_time = 17;</code>
+     * <code>
+     * .google.protobuf.Timestamp update_time = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder clearUpdateTime() {
       if (updateTimeBuilder_ == null) {
@@ -2858,7 +2491,9 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessageV3
      * received.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp update_time = 17;</code>
+     * <code>
+     * .google.protobuf.Timestamp update_time = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public com.google.protobuf.Timestamp.Builder getUpdateTimeBuilder() {
 
@@ -2873,7 +2508,9 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessageV3
      * received.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp update_time = 17;</code>
+     * <code>
+     * .google.protobuf.Timestamp update_time = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public com.google.protobuf.TimestampOrBuilder getUpdateTimeOrBuilder() {
       if (updateTimeBuilder_ != null) {
@@ -2892,7 +2529,9 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessageV3
      * received.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp update_time = 17;</code>
+     * <code>
+     * .google.protobuf.Timestamp update_time = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.protobuf.Timestamp,
@@ -2925,7 +2564,9 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessageV3
      * received.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp delete_time = 12;</code>
+     * <code>
+     * .google.protobuf.Timestamp delete_time = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      *
      * @return Whether the deleteTime field is set.
      */
@@ -2940,7 +2581,9 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessageV3
      * received.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp delete_time = 12;</code>
+     * <code>
+     * .google.protobuf.Timestamp delete_time = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      *
      * @return The deleteTime.
      */
@@ -2961,7 +2604,9 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessageV3
      * received.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp delete_time = 12;</code>
+     * <code>
+     * .google.protobuf.Timestamp delete_time = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder setDeleteTime(com.google.protobuf.Timestamp value) {
       if (deleteTimeBuilder_ == null) {
@@ -2984,7 +2629,9 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessageV3
      * received.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp delete_time = 12;</code>
+     * <code>
+     * .google.protobuf.Timestamp delete_time = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder setDeleteTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (deleteTimeBuilder_ == null) {
@@ -3004,7 +2651,9 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessageV3
      * received.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp delete_time = 12;</code>
+     * <code>
+     * .google.protobuf.Timestamp delete_time = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder mergeDeleteTime(com.google.protobuf.Timestamp value) {
       if (deleteTimeBuilder_ == null) {
@@ -3029,7 +2678,9 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessageV3
      * received.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp delete_time = 12;</code>
+     * <code>
+     * .google.protobuf.Timestamp delete_time = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder clearDeleteTime() {
       if (deleteTimeBuilder_ == null) {
@@ -3050,7 +2701,9 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessageV3
      * received.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp delete_time = 12;</code>
+     * <code>
+     * .google.protobuf.Timestamp delete_time = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public com.google.protobuf.Timestamp.Builder getDeleteTimeBuilder() {
 
@@ -3065,7 +2718,9 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessageV3
      * received.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp delete_time = 12;</code>
+     * <code>
+     * .google.protobuf.Timestamp delete_time = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public com.google.protobuf.TimestampOrBuilder getDeleteTimeOrBuilder() {
       if (deleteTimeBuilder_ != null) {
@@ -3084,7 +2739,9 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessageV3
      * received.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp delete_time = 12;</code>
+     * <code>
+     * .google.protobuf.Timestamp delete_time = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.protobuf.Timestamp,
@@ -3103,37 +2760,41 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessageV3
       return deleteTimeBuilder_;
     }
 
-    private int status_ = 0;
+    private int state_ = 0;
     /**
      *
      *
      * <pre>
-     * Output only. WorkerPool Status.
+     * Output only. `WorkerPool` state.
      * </pre>
      *
-     * <code>.google.devtools.cloudbuild.v1.WorkerPool.Status status = 13;</code>
+     * <code>
+     * .google.devtools.cloudbuild.v1.WorkerPool.State state = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      *
-     * @return The enum numeric value on the wire for status.
+     * @return The enum numeric value on the wire for state.
      */
     @java.lang.Override
-    public int getStatusValue() {
-      return status_;
+    public int getStateValue() {
+      return state_;
     }
     /**
      *
      *
      * <pre>
-     * Output only. WorkerPool Status.
+     * Output only. `WorkerPool` state.
      * </pre>
      *
-     * <code>.google.devtools.cloudbuild.v1.WorkerPool.Status status = 13;</code>
+     * <code>
+     * .google.devtools.cloudbuild.v1.WorkerPool.State state = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      *
-     * @param value The enum numeric value on the wire for status to set.
+     * @param value The enum numeric value on the wire for state to set.
      * @return This builder for chaining.
      */
-    public Builder setStatusValue(int value) {
+    public Builder setStateValue(int value) {
 
-      status_ = value;
+      state_ = value;
       onChanged();
       return this;
     }
@@ -3141,38 +2802,42 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. WorkerPool Status.
+     * Output only. `WorkerPool` state.
      * </pre>
      *
-     * <code>.google.devtools.cloudbuild.v1.WorkerPool.Status status = 13;</code>
+     * <code>
+     * .google.devtools.cloudbuild.v1.WorkerPool.State state = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      *
-     * @return The status.
+     * @return The state.
      */
     @java.lang.Override
-    public com.google.cloudbuild.v1.WorkerPool.Status getStatus() {
+    public com.google.cloudbuild.v1.WorkerPool.State getState() {
       @SuppressWarnings("deprecation")
-      com.google.cloudbuild.v1.WorkerPool.Status result =
-          com.google.cloudbuild.v1.WorkerPool.Status.valueOf(status_);
-      return result == null ? com.google.cloudbuild.v1.WorkerPool.Status.UNRECOGNIZED : result;
+      com.google.cloudbuild.v1.WorkerPool.State result =
+          com.google.cloudbuild.v1.WorkerPool.State.valueOf(state_);
+      return result == null ? com.google.cloudbuild.v1.WorkerPool.State.UNRECOGNIZED : result;
     }
     /**
      *
      *
      * <pre>
-     * Output only. WorkerPool Status.
+     * Output only. `WorkerPool` state.
      * </pre>
      *
-     * <code>.google.devtools.cloudbuild.v1.WorkerPool.Status status = 13;</code>
+     * <code>
+     * .google.devtools.cloudbuild.v1.WorkerPool.State state = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      *
-     * @param value The status to set.
+     * @param value The state to set.
      * @return This builder for chaining.
      */
-    public Builder setStatus(com.google.cloudbuild.v1.WorkerPool.Status value) {
+    public Builder setState(com.google.cloudbuild.v1.WorkerPool.State value) {
       if (value == null) {
         throw new NullPointerException();
       }
 
-      status_ = value.getNumber();
+      state_ = value.getNumber();
       onChanged();
       return this;
     }
@@ -3180,16 +2845,343 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. WorkerPool Status.
+     * Output only. `WorkerPool` state.
      * </pre>
      *
-     * <code>.google.devtools.cloudbuild.v1.WorkerPool.Status status = 13;</code>
+     * <code>
+     * .google.devtools.cloudbuild.v1.WorkerPool.State state = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      *
      * @return This builder for chaining.
      */
-    public Builder clearStatus() {
+    public Builder clearState() {
 
-      status_ = 0;
+      state_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloudbuild.v1.PrivatePoolV1Config,
+            com.google.cloudbuild.v1.PrivatePoolV1Config.Builder,
+            com.google.cloudbuild.v1.PrivatePoolV1ConfigOrBuilder>
+        privatePoolV1ConfigBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Private Pool using a v1 configuration.
+     * </pre>
+     *
+     * <code>.google.devtools.cloudbuild.v1.PrivatePoolV1Config private_pool_v1_config = 12;</code>
+     *
+     * @return Whether the privatePoolV1Config field is set.
+     */
+    @java.lang.Override
+    public boolean hasPrivatePoolV1Config() {
+      return configCase_ == 12;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Private Pool using a v1 configuration.
+     * </pre>
+     *
+     * <code>.google.devtools.cloudbuild.v1.PrivatePoolV1Config private_pool_v1_config = 12;</code>
+     *
+     * @return The privatePoolV1Config.
+     */
+    @java.lang.Override
+    public com.google.cloudbuild.v1.PrivatePoolV1Config getPrivatePoolV1Config() {
+      if (privatePoolV1ConfigBuilder_ == null) {
+        if (configCase_ == 12) {
+          return (com.google.cloudbuild.v1.PrivatePoolV1Config) config_;
+        }
+        return com.google.cloudbuild.v1.PrivatePoolV1Config.getDefaultInstance();
+      } else {
+        if (configCase_ == 12) {
+          return privatePoolV1ConfigBuilder_.getMessage();
+        }
+        return com.google.cloudbuild.v1.PrivatePoolV1Config.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Private Pool using a v1 configuration.
+     * </pre>
+     *
+     * <code>.google.devtools.cloudbuild.v1.PrivatePoolV1Config private_pool_v1_config = 12;</code>
+     */
+    public Builder setPrivatePoolV1Config(com.google.cloudbuild.v1.PrivatePoolV1Config value) {
+      if (privatePoolV1ConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        config_ = value;
+        onChanged();
+      } else {
+        privatePoolV1ConfigBuilder_.setMessage(value);
+      }
+      configCase_ = 12;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Private Pool using a v1 configuration.
+     * </pre>
+     *
+     * <code>.google.devtools.cloudbuild.v1.PrivatePoolV1Config private_pool_v1_config = 12;</code>
+     */
+    public Builder setPrivatePoolV1Config(
+        com.google.cloudbuild.v1.PrivatePoolV1Config.Builder builderForValue) {
+      if (privatePoolV1ConfigBuilder_ == null) {
+        config_ = builderForValue.build();
+        onChanged();
+      } else {
+        privatePoolV1ConfigBuilder_.setMessage(builderForValue.build());
+      }
+      configCase_ = 12;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Private Pool using a v1 configuration.
+     * </pre>
+     *
+     * <code>.google.devtools.cloudbuild.v1.PrivatePoolV1Config private_pool_v1_config = 12;</code>
+     */
+    public Builder mergePrivatePoolV1Config(com.google.cloudbuild.v1.PrivatePoolV1Config value) {
+      if (privatePoolV1ConfigBuilder_ == null) {
+        if (configCase_ == 12
+            && config_ != com.google.cloudbuild.v1.PrivatePoolV1Config.getDefaultInstance()) {
+          config_ =
+              com.google.cloudbuild.v1.PrivatePoolV1Config.newBuilder(
+                      (com.google.cloudbuild.v1.PrivatePoolV1Config) config_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          config_ = value;
+        }
+        onChanged();
+      } else {
+        if (configCase_ == 12) {
+          privatePoolV1ConfigBuilder_.mergeFrom(value);
+        }
+        privatePoolV1ConfigBuilder_.setMessage(value);
+      }
+      configCase_ = 12;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Private Pool using a v1 configuration.
+     * </pre>
+     *
+     * <code>.google.devtools.cloudbuild.v1.PrivatePoolV1Config private_pool_v1_config = 12;</code>
+     */
+    public Builder clearPrivatePoolV1Config() {
+      if (privatePoolV1ConfigBuilder_ == null) {
+        if (configCase_ == 12) {
+          configCase_ = 0;
+          config_ = null;
+          onChanged();
+        }
+      } else {
+        if (configCase_ == 12) {
+          configCase_ = 0;
+          config_ = null;
+        }
+        privatePoolV1ConfigBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Private Pool using a v1 configuration.
+     * </pre>
+     *
+     * <code>.google.devtools.cloudbuild.v1.PrivatePoolV1Config private_pool_v1_config = 12;</code>
+     */
+    public com.google.cloudbuild.v1.PrivatePoolV1Config.Builder getPrivatePoolV1ConfigBuilder() {
+      return getPrivatePoolV1ConfigFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Private Pool using a v1 configuration.
+     * </pre>
+     *
+     * <code>.google.devtools.cloudbuild.v1.PrivatePoolV1Config private_pool_v1_config = 12;</code>
+     */
+    @java.lang.Override
+    public com.google.cloudbuild.v1.PrivatePoolV1ConfigOrBuilder getPrivatePoolV1ConfigOrBuilder() {
+      if ((configCase_ == 12) && (privatePoolV1ConfigBuilder_ != null)) {
+        return privatePoolV1ConfigBuilder_.getMessageOrBuilder();
+      } else {
+        if (configCase_ == 12) {
+          return (com.google.cloudbuild.v1.PrivatePoolV1Config) config_;
+        }
+        return com.google.cloudbuild.v1.PrivatePoolV1Config.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Private Pool using a v1 configuration.
+     * </pre>
+     *
+     * <code>.google.devtools.cloudbuild.v1.PrivatePoolV1Config private_pool_v1_config = 12;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloudbuild.v1.PrivatePoolV1Config,
+            com.google.cloudbuild.v1.PrivatePoolV1Config.Builder,
+            com.google.cloudbuild.v1.PrivatePoolV1ConfigOrBuilder>
+        getPrivatePoolV1ConfigFieldBuilder() {
+      if (privatePoolV1ConfigBuilder_ == null) {
+        if (!(configCase_ == 12)) {
+          config_ = com.google.cloudbuild.v1.PrivatePoolV1Config.getDefaultInstance();
+        }
+        privatePoolV1ConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloudbuild.v1.PrivatePoolV1Config,
+                com.google.cloudbuild.v1.PrivatePoolV1Config.Builder,
+                com.google.cloudbuild.v1.PrivatePoolV1ConfigOrBuilder>(
+                (com.google.cloudbuild.v1.PrivatePoolV1Config) config_,
+                getParentForChildren(),
+                isClean());
+        config_ = null;
+      }
+      configCase_ = 12;
+      onChanged();
+      ;
+      return privatePoolV1ConfigBuilder_;
+    }
+
+    private java.lang.Object etag_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Checksum computed by the server. May be sent on update and
+     * delete requests to ensure that the client has an up-to-date value before
+     * proceeding.
+     * </pre>
+     *
+     * <code>string etag = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The etag.
+     */
+    public java.lang.String getEtag() {
+      java.lang.Object ref = etag_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        etag_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Checksum computed by the server. May be sent on update and
+     * delete requests to ensure that the client has an up-to-date value before
+     * proceeding.
+     * </pre>
+     *
+     * <code>string etag = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The bytes for etag.
+     */
+    public com.google.protobuf.ByteString getEtagBytes() {
+      java.lang.Object ref = etag_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        etag_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Checksum computed by the server. May be sent on update and
+     * delete requests to ensure that the client has an up-to-date value before
+     * proceeding.
+     * </pre>
+     *
+     * <code>string etag = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The etag to set.
+     * @return This builder for chaining.
+     */
+    public Builder setEtag(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+
+      etag_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Checksum computed by the server. May be sent on update and
+     * delete requests to ensure that the client has an up-to-date value before
+     * proceeding.
+     * </pre>
+     *
+     * <code>string etag = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearEtag() {
+
+      etag_ = getDefaultInstance().getEtag();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Checksum computed by the server. May be sent on update and
+     * delete requests to ensure that the client has an up-to-date value before
+     * proceeding.
+     * </pre>
+     *
+     * <code>string etag = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The bytes for etag to set.
+     * @return This builder for chaining.
+     */
+    public Builder setEtagBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
+      etag_ = value;
       onChanged();
       return this;
     }

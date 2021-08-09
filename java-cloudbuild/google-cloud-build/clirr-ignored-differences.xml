@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- see http://www.mojohaus.org/clirr-maven-plugin/examples/ignored-differences.html -->
+<differences>
+ 
+  <difference>
+    <differenceType>7002</differenceType>
+    <className>com/google/cloud/devtools/cloudbuild/v1/CloudBuildClient</className>
+    <method>*WorkerPool*(*)</method>
+  </difference>
+   <difference>
+    <differenceType>7006</differenceType>
+    <className>com/google/cloud/devtools/cloudbuild/v1/*CloudBuild*</className>
+    <method>*listWorkerPools*(*)</method>
+    <to>*</to>
+  </difference>
+  <difference>
+    <differenceType>7006</differenceType>
+    <className>com/google/cloud/devtools/cloudbuild/v1/stub/*CloudBuild*</className>
+    <method>*listWorkerPools*(*)</method>
+    <to>*</to>
+  </difference>
+   
+</differences>

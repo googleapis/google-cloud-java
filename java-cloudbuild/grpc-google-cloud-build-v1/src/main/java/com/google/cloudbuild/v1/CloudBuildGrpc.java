@@ -554,19 +554,19 @@ public final class CloudBuildGrpc {
   }
 
   private static volatile io.grpc.MethodDescriptor<
-          com.google.cloudbuild.v1.CreateWorkerPoolRequest, com.google.cloudbuild.v1.WorkerPool>
+          com.google.cloudbuild.v1.CreateWorkerPoolRequest, com.google.longrunning.Operation>
       getCreateWorkerPoolMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
       fullMethodName = SERVICE_NAME + '/' + "CreateWorkerPool",
       requestType = com.google.cloudbuild.v1.CreateWorkerPoolRequest.class,
-      responseType = com.google.cloudbuild.v1.WorkerPool.class,
+      responseType = com.google.longrunning.Operation.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<
-          com.google.cloudbuild.v1.CreateWorkerPoolRequest, com.google.cloudbuild.v1.WorkerPool>
+          com.google.cloudbuild.v1.CreateWorkerPoolRequest, com.google.longrunning.Operation>
       getCreateWorkerPoolMethod() {
     io.grpc.MethodDescriptor<
-            com.google.cloudbuild.v1.CreateWorkerPoolRequest, com.google.cloudbuild.v1.WorkerPool>
+            com.google.cloudbuild.v1.CreateWorkerPoolRequest, com.google.longrunning.Operation>
         getCreateWorkerPoolMethod;
     if ((getCreateWorkerPoolMethod = CloudBuildGrpc.getCreateWorkerPoolMethod) == null) {
       synchronized (CloudBuildGrpc.class) {
@@ -575,7 +575,7 @@ public final class CloudBuildGrpc {
               getCreateWorkerPoolMethod =
                   io.grpc.MethodDescriptor
                       .<com.google.cloudbuild.v1.CreateWorkerPoolRequest,
-                          com.google.cloudbuild.v1.WorkerPool>
+                          com.google.longrunning.Operation>
                           newBuilder()
                       .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
                       .setFullMethodName(generateFullMethodName(SERVICE_NAME, "CreateWorkerPool"))
@@ -586,7 +586,7 @@ public final class CloudBuildGrpc {
                                   .getDefaultInstance()))
                       .setResponseMarshaller(
                           io.grpc.protobuf.ProtoUtils.marshaller(
-                              com.google.cloudbuild.v1.WorkerPool.getDefaultInstance()))
+                              com.google.longrunning.Operation.getDefaultInstance()))
                       .setSchemaDescriptor(
                           new CloudBuildMethodDescriptorSupplier("CreateWorkerPool"))
                       .build();
@@ -638,19 +638,19 @@ public final class CloudBuildGrpc {
   }
 
   private static volatile io.grpc.MethodDescriptor<
-          com.google.cloudbuild.v1.DeleteWorkerPoolRequest, com.google.protobuf.Empty>
+          com.google.cloudbuild.v1.DeleteWorkerPoolRequest, com.google.longrunning.Operation>
       getDeleteWorkerPoolMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
       fullMethodName = SERVICE_NAME + '/' + "DeleteWorkerPool",
       requestType = com.google.cloudbuild.v1.DeleteWorkerPoolRequest.class,
-      responseType = com.google.protobuf.Empty.class,
+      responseType = com.google.longrunning.Operation.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<
-          com.google.cloudbuild.v1.DeleteWorkerPoolRequest, com.google.protobuf.Empty>
+          com.google.cloudbuild.v1.DeleteWorkerPoolRequest, com.google.longrunning.Operation>
       getDeleteWorkerPoolMethod() {
     io.grpc.MethodDescriptor<
-            com.google.cloudbuild.v1.DeleteWorkerPoolRequest, com.google.protobuf.Empty>
+            com.google.cloudbuild.v1.DeleteWorkerPoolRequest, com.google.longrunning.Operation>
         getDeleteWorkerPoolMethod;
     if ((getDeleteWorkerPoolMethod = CloudBuildGrpc.getDeleteWorkerPoolMethod) == null) {
       synchronized (CloudBuildGrpc.class) {
@@ -658,7 +658,8 @@ public final class CloudBuildGrpc {
           CloudBuildGrpc.getDeleteWorkerPoolMethod =
               getDeleteWorkerPoolMethod =
                   io.grpc.MethodDescriptor
-                      .<com.google.cloudbuild.v1.DeleteWorkerPoolRequest, com.google.protobuf.Empty>
+                      .<com.google.cloudbuild.v1.DeleteWorkerPoolRequest,
+                          com.google.longrunning.Operation>
                           newBuilder()
                       .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
                       .setFullMethodName(generateFullMethodName(SERVICE_NAME, "DeleteWorkerPool"))
@@ -669,7 +670,7 @@ public final class CloudBuildGrpc {
                                   .getDefaultInstance()))
                       .setResponseMarshaller(
                           io.grpc.protobuf.ProtoUtils.marshaller(
-                              com.google.protobuf.Empty.getDefaultInstance()))
+                              com.google.longrunning.Operation.getDefaultInstance()))
                       .setSchemaDescriptor(
                           new CloudBuildMethodDescriptorSupplier("DeleteWorkerPool"))
                       .build();
@@ -680,19 +681,19 @@ public final class CloudBuildGrpc {
   }
 
   private static volatile io.grpc.MethodDescriptor<
-          com.google.cloudbuild.v1.UpdateWorkerPoolRequest, com.google.cloudbuild.v1.WorkerPool>
+          com.google.cloudbuild.v1.UpdateWorkerPoolRequest, com.google.longrunning.Operation>
       getUpdateWorkerPoolMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
       fullMethodName = SERVICE_NAME + '/' + "UpdateWorkerPool",
       requestType = com.google.cloudbuild.v1.UpdateWorkerPoolRequest.class,
-      responseType = com.google.cloudbuild.v1.WorkerPool.class,
+      responseType = com.google.longrunning.Operation.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<
-          com.google.cloudbuild.v1.UpdateWorkerPoolRequest, com.google.cloudbuild.v1.WorkerPool>
+          com.google.cloudbuild.v1.UpdateWorkerPoolRequest, com.google.longrunning.Operation>
       getUpdateWorkerPoolMethod() {
     io.grpc.MethodDescriptor<
-            com.google.cloudbuild.v1.UpdateWorkerPoolRequest, com.google.cloudbuild.v1.WorkerPool>
+            com.google.cloudbuild.v1.UpdateWorkerPoolRequest, com.google.longrunning.Operation>
         getUpdateWorkerPoolMethod;
     if ((getUpdateWorkerPoolMethod = CloudBuildGrpc.getUpdateWorkerPoolMethod) == null) {
       synchronized (CloudBuildGrpc.class) {
@@ -701,7 +702,7 @@ public final class CloudBuildGrpc {
               getUpdateWorkerPoolMethod =
                   io.grpc.MethodDescriptor
                       .<com.google.cloudbuild.v1.UpdateWorkerPoolRequest,
-                          com.google.cloudbuild.v1.WorkerPool>
+                          com.google.longrunning.Operation>
                           newBuilder()
                       .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
                       .setFullMethodName(generateFullMethodName(SERVICE_NAME, "UpdateWorkerPool"))
@@ -712,7 +713,7 @@ public final class CloudBuildGrpc {
                                   .getDefaultInstance()))
                       .setResponseMarshaller(
                           io.grpc.protobuf.ProtoUtils.marshaller(
-                              com.google.cloudbuild.v1.WorkerPool.getDefaultInstance()))
+                              com.google.longrunning.Operation.getDefaultInstance()))
                       .setSchemaDescriptor(
                           new CloudBuildMethodDescriptorSupplier("UpdateWorkerPool"))
                       .build();
@@ -1025,13 +1026,12 @@ public final class CloudBuildGrpc {
      *
      *
      * <pre>
-     * Creates a `WorkerPool` to run the builds, and returns the new worker pool.
-     * This API is experimental.
+     * Creates a `WorkerPool`.
      * </pre>
      */
     public void createWorkerPool(
         com.google.cloudbuild.v1.CreateWorkerPoolRequest request,
-        io.grpc.stub.StreamObserver<com.google.cloudbuild.v1.WorkerPool> responseObserver) {
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getCreateWorkerPoolMethod(), responseObserver);
     }
@@ -1040,8 +1040,7 @@ public final class CloudBuildGrpc {
      *
      *
      * <pre>
-     * Returns information about a `WorkerPool`.
-     * This API is experimental.
+     * Returns details of a `WorkerPool`.
      * </pre>
      */
     public void getWorkerPool(
@@ -1055,13 +1054,12 @@ public final class CloudBuildGrpc {
      *
      *
      * <pre>
-     * Deletes a `WorkerPool` by its project ID and WorkerPool name.
-     * This API is experimental.
+     * Deletes a `WorkerPool`.
      * </pre>
      */
     public void deleteWorkerPool(
         com.google.cloudbuild.v1.DeleteWorkerPoolRequest request,
-        io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getDeleteWorkerPoolMethod(), responseObserver);
     }
@@ -1070,13 +1068,12 @@ public final class CloudBuildGrpc {
      *
      *
      * <pre>
-     * Update a `WorkerPool`.
-     * This API is experimental.
+     * Updates a `WorkerPool`.
      * </pre>
      */
     public void updateWorkerPool(
         com.google.cloudbuild.v1.UpdateWorkerPoolRequest request,
-        io.grpc.stub.StreamObserver<com.google.cloudbuild.v1.WorkerPool> responseObserver) {
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getUpdateWorkerPoolMethod(), responseObserver);
     }
@@ -1085,8 +1082,7 @@ public final class CloudBuildGrpc {
      *
      *
      * <pre>
-     * List project's `WorkerPools`.
-     * This API is experimental.
+     * Lists `WorkerPool`s.
      * </pre>
      */
     public void listWorkerPools(
@@ -1179,7 +1175,7 @@ public final class CloudBuildGrpc {
               io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloudbuild.v1.CreateWorkerPoolRequest,
-                      com.google.cloudbuild.v1.WorkerPool>(this, METHODID_CREATE_WORKER_POOL)))
+                      com.google.longrunning.Operation>(this, METHODID_CREATE_WORKER_POOL)))
           .addMethod(
               getGetWorkerPoolMethod(),
               io.grpc.stub.ServerCalls.asyncUnaryCall(
@@ -1190,14 +1186,14 @@ public final class CloudBuildGrpc {
               getDeleteWorkerPoolMethod(),
               io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
-                      com.google.cloudbuild.v1.DeleteWorkerPoolRequest, com.google.protobuf.Empty>(
-                      this, METHODID_DELETE_WORKER_POOL)))
+                      com.google.cloudbuild.v1.DeleteWorkerPoolRequest,
+                      com.google.longrunning.Operation>(this, METHODID_DELETE_WORKER_POOL)))
           .addMethod(
               getUpdateWorkerPoolMethod(),
               io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloudbuild.v1.UpdateWorkerPoolRequest,
-                      com.google.cloudbuild.v1.WorkerPool>(this, METHODID_UPDATE_WORKER_POOL)))
+                      com.google.longrunning.Operation>(this, METHODID_UPDATE_WORKER_POOL)))
           .addMethod(
               getListWorkerPoolsMethod(),
               io.grpc.stub.ServerCalls.asyncUnaryCall(
@@ -1455,13 +1451,12 @@ public final class CloudBuildGrpc {
      *
      *
      * <pre>
-     * Creates a `WorkerPool` to run the builds, and returns the new worker pool.
-     * This API is experimental.
+     * Creates a `WorkerPool`.
      * </pre>
      */
     public void createWorkerPool(
         com.google.cloudbuild.v1.CreateWorkerPoolRequest request,
-        io.grpc.stub.StreamObserver<com.google.cloudbuild.v1.WorkerPool> responseObserver) {
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getCreateWorkerPoolMethod(), getCallOptions()),
           request,
@@ -1472,8 +1467,7 @@ public final class CloudBuildGrpc {
      *
      *
      * <pre>
-     * Returns information about a `WorkerPool`.
-     * This API is experimental.
+     * Returns details of a `WorkerPool`.
      * </pre>
      */
     public void getWorkerPool(
@@ -1489,13 +1483,12 @@ public final class CloudBuildGrpc {
      *
      *
      * <pre>
-     * Deletes a `WorkerPool` by its project ID and WorkerPool name.
-     * This API is experimental.
+     * Deletes a `WorkerPool`.
      * </pre>
      */
     public void deleteWorkerPool(
         com.google.cloudbuild.v1.DeleteWorkerPoolRequest request,
-        io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getDeleteWorkerPoolMethod(), getCallOptions()),
           request,
@@ -1506,13 +1499,12 @@ public final class CloudBuildGrpc {
      *
      *
      * <pre>
-     * Update a `WorkerPool`.
-     * This API is experimental.
+     * Updates a `WorkerPool`.
      * </pre>
      */
     public void updateWorkerPool(
         com.google.cloudbuild.v1.UpdateWorkerPoolRequest request,
-        io.grpc.stub.StreamObserver<com.google.cloudbuild.v1.WorkerPool> responseObserver) {
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getUpdateWorkerPoolMethod(), getCallOptions()),
           request,
@@ -1523,8 +1515,7 @@ public final class CloudBuildGrpc {
      *
      *
      * <pre>
-     * List project's `WorkerPools`.
-     * This API is experimental.
+     * Lists `WorkerPool`s.
      * </pre>
      */
     public void listWorkerPools(
@@ -1754,11 +1745,10 @@ public final class CloudBuildGrpc {
      *
      *
      * <pre>
-     * Creates a `WorkerPool` to run the builds, and returns the new worker pool.
-     * This API is experimental.
+     * Creates a `WorkerPool`.
      * </pre>
      */
-    public com.google.cloudbuild.v1.WorkerPool createWorkerPool(
+    public com.google.longrunning.Operation createWorkerPool(
         com.google.cloudbuild.v1.CreateWorkerPoolRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getCreateWorkerPoolMethod(), getCallOptions(), request);
@@ -1768,8 +1758,7 @@ public final class CloudBuildGrpc {
      *
      *
      * <pre>
-     * Returns information about a `WorkerPool`.
-     * This API is experimental.
+     * Returns details of a `WorkerPool`.
      * </pre>
      */
     public com.google.cloudbuild.v1.WorkerPool getWorkerPool(
@@ -1782,11 +1771,10 @@ public final class CloudBuildGrpc {
      *
      *
      * <pre>
-     * Deletes a `WorkerPool` by its project ID and WorkerPool name.
-     * This API is experimental.
+     * Deletes a `WorkerPool`.
      * </pre>
      */
-    public com.google.protobuf.Empty deleteWorkerPool(
+    public com.google.longrunning.Operation deleteWorkerPool(
         com.google.cloudbuild.v1.DeleteWorkerPoolRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getDeleteWorkerPoolMethod(), getCallOptions(), request);
@@ -1796,11 +1784,10 @@ public final class CloudBuildGrpc {
      *
      *
      * <pre>
-     * Update a `WorkerPool`.
-     * This API is experimental.
+     * Updates a `WorkerPool`.
      * </pre>
      */
-    public com.google.cloudbuild.v1.WorkerPool updateWorkerPool(
+    public com.google.longrunning.Operation updateWorkerPool(
         com.google.cloudbuild.v1.UpdateWorkerPoolRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getUpdateWorkerPoolMethod(), getCallOptions(), request);
@@ -1810,8 +1797,7 @@ public final class CloudBuildGrpc {
      *
      *
      * <pre>
-     * List project's `WorkerPools`.
-     * This API is experimental.
+     * Lists `WorkerPool`s.
      * </pre>
      */
     public com.google.cloudbuild.v1.ListWorkerPoolsResponse listWorkerPools(
@@ -2039,11 +2025,10 @@ public final class CloudBuildGrpc {
      *
      *
      * <pre>
-     * Creates a `WorkerPool` to run the builds, and returns the new worker pool.
-     * This API is experimental.
+     * Creates a `WorkerPool`.
      * </pre>
      */
-    public com.google.common.util.concurrent.ListenableFuture<com.google.cloudbuild.v1.WorkerPool>
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
         createWorkerPool(com.google.cloudbuild.v1.CreateWorkerPoolRequest request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getCreateWorkerPoolMethod(), getCallOptions()), request);
@@ -2053,8 +2038,7 @@ public final class CloudBuildGrpc {
      *
      *
      * <pre>
-     * Returns information about a `WorkerPool`.
-     * This API is experimental.
+     * Returns details of a `WorkerPool`.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.cloudbuild.v1.WorkerPool>
@@ -2067,11 +2051,10 @@ public final class CloudBuildGrpc {
      *
      *
      * <pre>
-     * Deletes a `WorkerPool` by its project ID and WorkerPool name.
-     * This API is experimental.
+     * Deletes a `WorkerPool`.
      * </pre>
      */
-    public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty>
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
         deleteWorkerPool(com.google.cloudbuild.v1.DeleteWorkerPoolRequest request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getDeleteWorkerPoolMethod(), getCallOptions()), request);
@@ -2081,11 +2064,10 @@ public final class CloudBuildGrpc {
      *
      *
      * <pre>
-     * Update a `WorkerPool`.
-     * This API is experimental.
+     * Updates a `WorkerPool`.
      * </pre>
      */
-    public com.google.common.util.concurrent.ListenableFuture<com.google.cloudbuild.v1.WorkerPool>
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
         updateWorkerPool(com.google.cloudbuild.v1.UpdateWorkerPoolRequest request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getUpdateWorkerPoolMethod(), getCallOptions()), request);
@@ -2095,8 +2077,7 @@ public final class CloudBuildGrpc {
      *
      *
      * <pre>
-     * List project's `WorkerPools`.
-     * This API is experimental.
+     * Lists `WorkerPool`s.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -2211,7 +2192,7 @@ public final class CloudBuildGrpc {
         case METHODID_CREATE_WORKER_POOL:
           serviceImpl.createWorkerPool(
               (com.google.cloudbuild.v1.CreateWorkerPoolRequest) request,
-              (io.grpc.stub.StreamObserver<com.google.cloudbuild.v1.WorkerPool>) responseObserver);
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
           break;
         case METHODID_GET_WORKER_POOL:
           serviceImpl.getWorkerPool(
@@ -2221,12 +2202,12 @@ public final class CloudBuildGrpc {
         case METHODID_DELETE_WORKER_POOL:
           serviceImpl.deleteWorkerPool(
               (com.google.cloudbuild.v1.DeleteWorkerPoolRequest) request,
-              (io.grpc.stub.StreamObserver<com.google.protobuf.Empty>) responseObserver);
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
           break;
         case METHODID_UPDATE_WORKER_POOL:
           serviceImpl.updateWorkerPool(
               (com.google.cloudbuild.v1.UpdateWorkerPoolRequest) request,
-              (io.grpc.stub.StreamObserver<com.google.cloudbuild.v1.WorkerPool>) responseObserver);
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
           break;
         case METHODID_LIST_WORKER_POOLS:
           serviceImpl.listWorkerPools(

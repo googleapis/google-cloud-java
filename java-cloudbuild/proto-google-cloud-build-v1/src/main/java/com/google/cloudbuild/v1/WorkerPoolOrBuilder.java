@@ -27,10 +27,14 @@ public interface WorkerPoolOrBuilder
    *
    *
    * <pre>
-   * User-defined name of the `WorkerPool`.
+   * Output only. The resource name of the `WorkerPool`, with format
+   * `projects/{project}/locations/{location}/workerPools/{worker_pool}`.
+   * The value of `{worker_pool}` is provided by `worker_pool_id` in
+   * `CreateWorkerPool` request and the value of `{location}` is determined by
+   * the endpoint accessed.
    * </pre>
    *
-   * <code>string name = 14;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return The name.
    */
@@ -39,10 +43,14 @@ public interface WorkerPoolOrBuilder
    *
    *
    * <pre>
-   * User-defined name of the `WorkerPool`.
+   * Output only. The resource name of the `WorkerPool`, with format
+   * `projects/{project}/locations/{location}/workerPools/{worker_pool}`.
+   * The value of `{worker_pool}` is provided by `worker_pool_id` in
+   * `CreateWorkerPool` request and the value of `{location}` is determined by
+   * the endpoint accessed.
    * </pre>
    *
-   * <code>string name = 14;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return The bytes for name.
    */
@@ -52,186 +60,112 @@ public interface WorkerPoolOrBuilder
    *
    *
    * <pre>
-   * The project ID of the GCP project for which the `WorkerPool` is created.
+   * A user-specified, human-readable name for the `WorkerPool`. If provided,
+   * this value must be 1-63 characters.
    * </pre>
    *
-   * <code>string project_id = 2;</code>
+   * <code>string display_name = 2;</code>
    *
-   * @return The projectId.
+   * @return The displayName.
    */
-  java.lang.String getProjectId();
+  java.lang.String getDisplayName();
   /**
    *
    *
    * <pre>
-   * The project ID of the GCP project for which the `WorkerPool` is created.
+   * A user-specified, human-readable name for the `WorkerPool`. If provided,
+   * this value must be 1-63 characters.
    * </pre>
    *
-   * <code>string project_id = 2;</code>
+   * <code>string display_name = 2;</code>
    *
-   * @return The bytes for projectId.
+   * @return The bytes for displayName.
    */
-  com.google.protobuf.ByteString getProjectIdBytes();
+  com.google.protobuf.ByteString getDisplayNameBytes();
 
   /**
    *
    *
    * <pre>
-   * Output only. The service account used to manage the `WorkerPool`. The
-   * service account must have the Compute Instance Admin (Beta) permission at
-   * the project level.
+   * Output only. A unique identifier for the `WorkerPool`.
    * </pre>
    *
-   * <code>string service_account_email = 3;</code>
+   * <code>string uid = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
-   * @return The serviceAccountEmail.
+   * @return The uid.
    */
-  java.lang.String getServiceAccountEmail();
+  java.lang.String getUid();
   /**
    *
    *
    * <pre>
-   * Output only. The service account used to manage the `WorkerPool`. The
-   * service account must have the Compute Instance Admin (Beta) permission at
-   * the project level.
+   * Output only. A unique identifier for the `WorkerPool`.
    * </pre>
    *
-   * <code>string service_account_email = 3;</code>
+   * <code>string uid = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
-   * @return The bytes for serviceAccountEmail.
+   * @return The bytes for uid.
    */
-  com.google.protobuf.ByteString getServiceAccountEmailBytes();
+  com.google.protobuf.ByteString getUidBytes();
 
   /**
    *
    *
    * <pre>
-   * Total number of workers to be created across all requested regions.
+   * User specified annotations. See https://google.aip.dev/128#annotations
+   * for more details such as format and size limitations.
    * </pre>
    *
-   * <code>int64 worker_count = 4;</code>
-   *
-   * @return The workerCount.
+   * <code>map&lt;string, string&gt; annotations = 4;</code>
    */
-  long getWorkerCount();
-
+  int getAnnotationsCount();
   /**
    *
    *
    * <pre>
-   * Configuration to be used for a creating workers in the `WorkerPool`.
+   * User specified annotations. See https://google.aip.dev/128#annotations
+   * for more details such as format and size limitations.
    * </pre>
    *
-   * <code>.google.devtools.cloudbuild.v1.WorkerConfig worker_config = 16;</code>
-   *
-   * @return Whether the workerConfig field is set.
+   * <code>map&lt;string, string&gt; annotations = 4;</code>
    */
-  boolean hasWorkerConfig();
+  boolean containsAnnotations(java.lang.String key);
+  /** Use {@link #getAnnotationsMap()} instead. */
+  @java.lang.Deprecated
+  java.util.Map<java.lang.String, java.lang.String> getAnnotations();
   /**
    *
    *
    * <pre>
-   * Configuration to be used for a creating workers in the `WorkerPool`.
+   * User specified annotations. See https://google.aip.dev/128#annotations
+   * for more details such as format and size limitations.
    * </pre>
    *
-   * <code>.google.devtools.cloudbuild.v1.WorkerConfig worker_config = 16;</code>
-   *
-   * @return The workerConfig.
+   * <code>map&lt;string, string&gt; annotations = 4;</code>
    */
-  com.google.cloudbuild.v1.WorkerConfig getWorkerConfig();
+  java.util.Map<java.lang.String, java.lang.String> getAnnotationsMap();
   /**
    *
    *
    * <pre>
-   * Configuration to be used for a creating workers in the `WorkerPool`.
+   * User specified annotations. See https://google.aip.dev/128#annotations
+   * for more details such as format and size limitations.
    * </pre>
    *
-   * <code>.google.devtools.cloudbuild.v1.WorkerConfig worker_config = 16;</code>
+   * <code>map&lt;string, string&gt; annotations = 4;</code>
    */
-  com.google.cloudbuild.v1.WorkerConfigOrBuilder getWorkerConfigOrBuilder();
-
+  java.lang.String getAnnotationsOrDefault(java.lang.String key, java.lang.String defaultValue);
   /**
    *
    *
    * <pre>
-   * List of regions to create the `WorkerPool`. Regions can't be empty.
-   * If Cloud Build adds a new GCP region in the future, the existing
-   * `WorkerPool` will not be enabled in the new region automatically;
-   * you must add the new region to the `regions` field to enable the
-   * `WorkerPool` in that region.
+   * User specified annotations. See https://google.aip.dev/128#annotations
+   * for more details such as format and size limitations.
    * </pre>
    *
-   * <code>repeated .google.devtools.cloudbuild.v1.WorkerPool.Region regions = 9;</code>
-   *
-   * @return A list containing the regions.
+   * <code>map&lt;string, string&gt; annotations = 4;</code>
    */
-  java.util.List<com.google.cloudbuild.v1.WorkerPool.Region> getRegionsList();
-  /**
-   *
-   *
-   * <pre>
-   * List of regions to create the `WorkerPool`. Regions can't be empty.
-   * If Cloud Build adds a new GCP region in the future, the existing
-   * `WorkerPool` will not be enabled in the new region automatically;
-   * you must add the new region to the `regions` field to enable the
-   * `WorkerPool` in that region.
-   * </pre>
-   *
-   * <code>repeated .google.devtools.cloudbuild.v1.WorkerPool.Region regions = 9;</code>
-   *
-   * @return The count of regions.
-   */
-  int getRegionsCount();
-  /**
-   *
-   *
-   * <pre>
-   * List of regions to create the `WorkerPool`. Regions can't be empty.
-   * If Cloud Build adds a new GCP region in the future, the existing
-   * `WorkerPool` will not be enabled in the new region automatically;
-   * you must add the new region to the `regions` field to enable the
-   * `WorkerPool` in that region.
-   * </pre>
-   *
-   * <code>repeated .google.devtools.cloudbuild.v1.WorkerPool.Region regions = 9;</code>
-   *
-   * @param index The index of the element to return.
-   * @return The regions at the given index.
-   */
-  com.google.cloudbuild.v1.WorkerPool.Region getRegions(int index);
-  /**
-   *
-   *
-   * <pre>
-   * List of regions to create the `WorkerPool`. Regions can't be empty.
-   * If Cloud Build adds a new GCP region in the future, the existing
-   * `WorkerPool` will not be enabled in the new region automatically;
-   * you must add the new region to the `regions` field to enable the
-   * `WorkerPool` in that region.
-   * </pre>
-   *
-   * <code>repeated .google.devtools.cloudbuild.v1.WorkerPool.Region regions = 9;</code>
-   *
-   * @return A list containing the enum numeric values on the wire for regions.
-   */
-  java.util.List<java.lang.Integer> getRegionsValueList();
-  /**
-   *
-   *
-   * <pre>
-   * List of regions to create the `WorkerPool`. Regions can't be empty.
-   * If Cloud Build adds a new GCP region in the future, the existing
-   * `WorkerPool` will not be enabled in the new region automatically;
-   * you must add the new region to the `regions` field to enable the
-   * `WorkerPool` in that region.
-   * </pre>
-   *
-   * <code>repeated .google.devtools.cloudbuild.v1.WorkerPool.Region regions = 9;</code>
-   *
-   * @param index The index of the value to return.
-   * @return The enum numeric value on the wire of regions at the given index.
-   */
-  int getRegionsValue(int index);
+  java.lang.String getAnnotationsOrThrow(java.lang.String key);
 
   /**
    *
@@ -241,7 +175,8 @@ public interface WorkerPoolOrBuilder
    * received.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp create_time = 11;</code>
+   * <code>.google.protobuf.Timestamp create_time = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
    * @return Whether the createTime field is set.
    */
@@ -254,7 +189,8 @@ public interface WorkerPoolOrBuilder
    * received.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp create_time = 11;</code>
+   * <code>.google.protobuf.Timestamp create_time = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
    * @return The createTime.
    */
@@ -267,7 +203,8 @@ public interface WorkerPoolOrBuilder
    * received.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp create_time = 11;</code>
+   * <code>.google.protobuf.Timestamp create_time = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder();
 
@@ -279,7 +216,8 @@ public interface WorkerPoolOrBuilder
    * received.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp update_time = 17;</code>
+   * <code>.google.protobuf.Timestamp update_time = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
    * @return Whether the updateTime field is set.
    */
@@ -292,7 +230,8 @@ public interface WorkerPoolOrBuilder
    * received.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp update_time = 17;</code>
+   * <code>.google.protobuf.Timestamp update_time = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
    * @return The updateTime.
    */
@@ -305,7 +244,8 @@ public interface WorkerPoolOrBuilder
    * received.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp update_time = 17;</code>
+   * <code>.google.protobuf.Timestamp update_time = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   com.google.protobuf.TimestampOrBuilder getUpdateTimeOrBuilder();
 
@@ -317,7 +257,8 @@ public interface WorkerPoolOrBuilder
    * received.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp delete_time = 12;</code>
+   * <code>.google.protobuf.Timestamp delete_time = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
    * @return Whether the deleteTime field is set.
    */
@@ -330,7 +271,8 @@ public interface WorkerPoolOrBuilder
    * received.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp delete_time = 12;</code>
+   * <code>.google.protobuf.Timestamp delete_time = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
    * @return The deleteTime.
    */
@@ -343,7 +285,8 @@ public interface WorkerPoolOrBuilder
    * received.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp delete_time = 12;</code>
+   * <code>.google.protobuf.Timestamp delete_time = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   com.google.protobuf.TimestampOrBuilder getDeleteTimeOrBuilder();
 
@@ -351,24 +294,94 @@ public interface WorkerPoolOrBuilder
    *
    *
    * <pre>
-   * Output only. WorkerPool Status.
+   * Output only. `WorkerPool` state.
    * </pre>
    *
-   * <code>.google.devtools.cloudbuild.v1.WorkerPool.Status status = 13;</code>
+   * <code>
+   * .google.devtools.cloudbuild.v1.WorkerPool.State state = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
-   * @return The enum numeric value on the wire for status.
+   * @return The enum numeric value on the wire for state.
    */
-  int getStatusValue();
+  int getStateValue();
   /**
    *
    *
    * <pre>
-   * Output only. WorkerPool Status.
+   * Output only. `WorkerPool` state.
    * </pre>
    *
-   * <code>.google.devtools.cloudbuild.v1.WorkerPool.Status status = 13;</code>
+   * <code>
+   * .google.devtools.cloudbuild.v1.WorkerPool.State state = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
-   * @return The status.
+   * @return The state.
    */
-  com.google.cloudbuild.v1.WorkerPool.Status getStatus();
+  com.google.cloudbuild.v1.WorkerPool.State getState();
+
+  /**
+   *
+   *
+   * <pre>
+   * Private Pool using a v1 configuration.
+   * </pre>
+   *
+   * <code>.google.devtools.cloudbuild.v1.PrivatePoolV1Config private_pool_v1_config = 12;</code>
+   *
+   * @return Whether the privatePoolV1Config field is set.
+   */
+  boolean hasPrivatePoolV1Config();
+  /**
+   *
+   *
+   * <pre>
+   * Private Pool using a v1 configuration.
+   * </pre>
+   *
+   * <code>.google.devtools.cloudbuild.v1.PrivatePoolV1Config private_pool_v1_config = 12;</code>
+   *
+   * @return The privatePoolV1Config.
+   */
+  com.google.cloudbuild.v1.PrivatePoolV1Config getPrivatePoolV1Config();
+  /**
+   *
+   *
+   * <pre>
+   * Private Pool using a v1 configuration.
+   * </pre>
+   *
+   * <code>.google.devtools.cloudbuild.v1.PrivatePoolV1Config private_pool_v1_config = 12;</code>
+   */
+  com.google.cloudbuild.v1.PrivatePoolV1ConfigOrBuilder getPrivatePoolV1ConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Checksum computed by the server. May be sent on update and
+   * delete requests to ensure that the client has an up-to-date value before
+   * proceeding.
+   * </pre>
+   *
+   * <code>string etag = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The etag.
+   */
+  java.lang.String getEtag();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Checksum computed by the server. May be sent on update and
+   * delete requests to ensure that the client has an up-to-date value before
+   * proceeding.
+   * </pre>
+   *
+   * <code>string etag = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The bytes for etag.
+   */
+  com.google.protobuf.ByteString getEtagBytes();
+
+  public com.google.cloudbuild.v1.WorkerPool.ConfigCase getConfigCase();
 }

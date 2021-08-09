@@ -336,11 +336,11 @@ public class MockCloudBuildImpl extends CloudBuildImplBase {
 
   @Override
   public void createWorkerPool(
-      CreateWorkerPoolRequest request, StreamObserver<WorkerPool> responseObserver) {
+      CreateWorkerPoolRequest request, StreamObserver<Operation> responseObserver) {
     Object response = responses.poll();
-    if (response instanceof WorkerPool) {
+    if (response instanceof Operation) {
       requests.add(request);
-      responseObserver.onNext(((WorkerPool) response));
+      responseObserver.onNext(((Operation) response));
       responseObserver.onCompleted();
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
@@ -350,7 +350,7 @@ public class MockCloudBuildImpl extends CloudBuildImplBase {
               String.format(
                   "Unrecognized response type %s for method CreateWorkerPool, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
-                  WorkerPool.class.getName(),
+                  Operation.class.getName(),
                   Exception.class.getName())));
     }
   }
@@ -378,11 +378,11 @@ public class MockCloudBuildImpl extends CloudBuildImplBase {
 
   @Override
   public void deleteWorkerPool(
-      DeleteWorkerPoolRequest request, StreamObserver<Empty> responseObserver) {
+      DeleteWorkerPoolRequest request, StreamObserver<Operation> responseObserver) {
     Object response = responses.poll();
-    if (response instanceof Empty) {
+    if (response instanceof Operation) {
       requests.add(request);
-      responseObserver.onNext(((Empty) response));
+      responseObserver.onNext(((Operation) response));
       responseObserver.onCompleted();
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
@@ -392,18 +392,18 @@ public class MockCloudBuildImpl extends CloudBuildImplBase {
               String.format(
                   "Unrecognized response type %s for method DeleteWorkerPool, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
-                  Empty.class.getName(),
+                  Operation.class.getName(),
                   Exception.class.getName())));
     }
   }
 
   @Override
   public void updateWorkerPool(
-      UpdateWorkerPoolRequest request, StreamObserver<WorkerPool> responseObserver) {
+      UpdateWorkerPoolRequest request, StreamObserver<Operation> responseObserver) {
     Object response = responses.poll();
-    if (response instanceof WorkerPool) {
+    if (response instanceof Operation) {
       requests.add(request);
-      responseObserver.onNext(((WorkerPool) response));
+      responseObserver.onNext(((Operation) response));
       responseObserver.onCompleted();
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
@@ -413,7 +413,7 @@ public class MockCloudBuildImpl extends CloudBuildImplBase {
               String.format(
                   "Unrecognized response type %s for method UpdateWorkerPool, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
-                  WorkerPool.class.getName(),
+                  Operation.class.getName(),
                   Exception.class.getName())));
     }
   }

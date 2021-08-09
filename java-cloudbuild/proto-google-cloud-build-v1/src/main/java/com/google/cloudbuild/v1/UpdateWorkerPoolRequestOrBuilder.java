@@ -27,37 +27,14 @@ public interface UpdateWorkerPoolRequestOrBuilder
    *
    *
    * <pre>
-   * The field will contain name of the resource requested, for example:
-   * "projects/project-1/workerPools/workerpool-name"
+   * Required. The `WorkerPool` to update.
+   * The `name` field is used to identify the `WorkerPool` to update.
+   * Format: `projects/{project}/locations/{location}/workerPools/{workerPool}`.
    * </pre>
    *
-   * <code>string name = 2;</code>
-   *
-   * @return The name.
-   */
-  java.lang.String getName();
-  /**
-   *
-   *
-   * <pre>
-   * The field will contain name of the resource requested, for example:
-   * "projects/project-1/workerPools/workerpool-name"
-   * </pre>
-   *
-   * <code>string name = 2;</code>
-   *
-   * @return The bytes for name.
-   */
-  com.google.protobuf.ByteString getNameBytes();
-
-  /**
-   *
-   *
-   * <pre>
-   * `WorkerPool` resource to update.
-   * </pre>
-   *
-   * <code>.google.devtools.cloudbuild.v1.WorkerPool worker_pool = 3;</code>
+   * <code>
+   * .google.devtools.cloudbuild.v1.WorkerPool worker_pool = 1 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return Whether the workerPool field is set.
    */
@@ -66,10 +43,14 @@ public interface UpdateWorkerPoolRequestOrBuilder
    *
    *
    * <pre>
-   * `WorkerPool` resource to update.
+   * Required. The `WorkerPool` to update.
+   * The `name` field is used to identify the `WorkerPool` to update.
+   * Format: `projects/{project}/locations/{location}/workerPools/{workerPool}`.
    * </pre>
    *
-   * <code>.google.devtools.cloudbuild.v1.WorkerPool worker_pool = 3;</code>
+   * <code>
+   * .google.devtools.cloudbuild.v1.WorkerPool worker_pool = 1 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return The workerPool.
    */
@@ -78,10 +59,63 @@ public interface UpdateWorkerPoolRequestOrBuilder
    *
    *
    * <pre>
-   * `WorkerPool` resource to update.
+   * Required. The `WorkerPool` to update.
+   * The `name` field is used to identify the `WorkerPool` to update.
+   * Format: `projects/{project}/locations/{location}/workerPools/{workerPool}`.
    * </pre>
    *
-   * <code>.google.devtools.cloudbuild.v1.WorkerPool worker_pool = 3;</code>
+   * <code>
+   * .google.devtools.cloudbuild.v1.WorkerPool worker_pool = 1 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   com.google.cloudbuild.v1.WorkerPoolOrBuilder getWorkerPoolOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * A mask specifying which fields in `worker_pool` to update.
+   * </pre>
+   *
+   * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+   *
+   * @return Whether the updateMask field is set.
+   */
+  boolean hasUpdateMask();
+  /**
+   *
+   *
+   * <pre>
+   * A mask specifying which fields in `worker_pool` to update.
+   * </pre>
+   *
+   * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+   *
+   * @return The updateMask.
+   */
+  com.google.protobuf.FieldMask getUpdateMask();
+  /**
+   *
+   *
+   * <pre>
+   * A mask specifying which fields in `worker_pool` to update.
+   * </pre>
+   *
+   * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+   */
+  com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * If set, validate the request and preview the response, but do not actually
+   * post it.
+   * </pre>
+   *
+   * <code>bool validate_only = 4;</code>
+   *
+   * @return The validateOnly.
+   */
+  boolean getValidateOnly();
 }

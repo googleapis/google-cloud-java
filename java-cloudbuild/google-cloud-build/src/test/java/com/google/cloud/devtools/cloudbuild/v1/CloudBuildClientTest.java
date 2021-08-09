@@ -18,6 +18,7 @@ package com.google.cloud.devtools.cloudbuild.v1;
 
 import static com.google.cloud.devtools.cloudbuild.v1.CloudBuildClient.ListBuildTriggersPagedResponse;
 import static com.google.cloud.devtools.cloudbuild.v1.CloudBuildClient.ListBuildsPagedResponse;
+import static com.google.cloud.devtools.cloudbuild.v1.CloudBuildClient.ListWorkerPoolsPagedResponse;
 
 import com.google.api.HttpBody;
 import com.google.api.gax.core.NoCredentialsProvider;
@@ -51,6 +52,7 @@ import com.google.cloudbuild.v1.ListBuildsRequest;
 import com.google.cloudbuild.v1.ListBuildsResponse;
 import com.google.cloudbuild.v1.ListWorkerPoolsRequest;
 import com.google.cloudbuild.v1.ListWorkerPoolsResponse;
+import com.google.cloudbuild.v1.LocationName;
 import com.google.cloudbuild.v1.PubsubConfig;
 import com.google.cloudbuild.v1.ReceiveTriggerWebhookRequest;
 import com.google.cloudbuild.v1.ReceiveTriggerWebhookResponse;
@@ -60,21 +62,21 @@ import com.google.cloudbuild.v1.RetryBuildRequest;
 import com.google.cloudbuild.v1.RunBuildTriggerRequest;
 import com.google.cloudbuild.v1.Secret;
 import com.google.cloudbuild.v1.Secrets;
-import com.google.cloudbuild.v1.ServiceAccountName;
 import com.google.cloudbuild.v1.Source;
 import com.google.cloudbuild.v1.SourceProvenance;
 import com.google.cloudbuild.v1.TimeSpan;
 import com.google.cloudbuild.v1.UpdateBuildTriggerRequest;
 import com.google.cloudbuild.v1.UpdateWorkerPoolRequest;
 import com.google.cloudbuild.v1.WebhookConfig;
-import com.google.cloudbuild.v1.WorkerConfig;
 import com.google.cloudbuild.v1.WorkerPool;
+import com.google.cloudbuild.v1.WorkerPoolName;
 import com.google.common.collect.Lists;
 import com.google.longrunning.Operation;
 import com.google.protobuf.AbstractMessage;
 import com.google.protobuf.Any;
 import com.google.protobuf.Duration;
 import com.google.protobuf.Empty;
+import com.google.protobuf.FieldMask;
 import com.google.protobuf.Timestamp;
 import io.grpc.StatusRuntimeException;
 import java.io.IOException;
@@ -157,9 +159,10 @@ public class CloudBuildClientTest {
             .addAllTags(new ArrayList<String>())
             .addAllSecrets(new ArrayList<Secret>())
             .putAllTiming(new HashMap<String, TimeSpan>())
-            .setServiceAccount(ServiceAccountName.of("[PROJECT]", "[SERVICE_ACCOUNT]").toString())
+            .setServiceAccount("serviceAccount1079137720")
             .setAvailableSecrets(Secrets.newBuilder().build())
             .addAllWarnings(new ArrayList<Build.Warning>())
+            .setFailureInfo(Build.FailureInfo.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -231,9 +234,10 @@ public class CloudBuildClientTest {
             .addAllTags(new ArrayList<String>())
             .addAllSecrets(new ArrayList<Secret>())
             .putAllTiming(new HashMap<String, TimeSpan>())
-            .setServiceAccount(ServiceAccountName.of("[PROJECT]", "[SERVICE_ACCOUNT]").toString())
+            .setServiceAccount("serviceAccount1079137720")
             .setAvailableSecrets(Secrets.newBuilder().build())
             .addAllWarnings(new ArrayList<Build.Warning>())
+            .setFailureInfo(Build.FailureInfo.newBuilder().build())
             .build();
     mockCloudBuild.addResponse(expectedResponse);
 
@@ -344,9 +348,10 @@ public class CloudBuildClientTest {
             .addAllTags(new ArrayList<String>())
             .addAllSecrets(new ArrayList<Secret>())
             .putAllTiming(new HashMap<String, TimeSpan>())
-            .setServiceAccount(ServiceAccountName.of("[PROJECT]", "[SERVICE_ACCOUNT]").toString())
+            .setServiceAccount("serviceAccount1079137720")
             .setAvailableSecrets(Secrets.newBuilder().build())
             .addAllWarnings(new ArrayList<Build.Warning>())
+            .setFailureInfo(Build.FailureInfo.newBuilder().build())
             .build();
     mockCloudBuild.addResponse(expectedResponse);
 
@@ -410,9 +415,10 @@ public class CloudBuildClientTest {
             .addAllTags(new ArrayList<String>())
             .addAllSecrets(new ArrayList<Secret>())
             .putAllTiming(new HashMap<String, TimeSpan>())
-            .setServiceAccount(ServiceAccountName.of("[PROJECT]", "[SERVICE_ACCOUNT]").toString())
+            .setServiceAccount("serviceAccount1079137720")
             .setAvailableSecrets(Secrets.newBuilder().build())
             .addAllWarnings(new ArrayList<Build.Warning>())
+            .setFailureInfo(Build.FailureInfo.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -733,9 +739,10 @@ public class CloudBuildClientTest {
             .addAllTags(new ArrayList<String>())
             .addAllSecrets(new ArrayList<Secret>())
             .putAllTiming(new HashMap<String, TimeSpan>())
-            .setServiceAccount(ServiceAccountName.of("[PROJECT]", "[SERVICE_ACCOUNT]").toString())
+            .setServiceAccount("serviceAccount1079137720")
             .setAvailableSecrets(Secrets.newBuilder().build())
             .addAllWarnings(new ArrayList<Build.Warning>())
+            .setFailureInfo(Build.FailureInfo.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -842,33 +849,38 @@ public class CloudBuildClientTest {
   public void createWorkerPoolTest() throws Exception {
     WorkerPool expectedResponse =
         WorkerPool.newBuilder()
-            .setName("name3373707")
-            .setProjectId("projectId-894832108")
-            .setServiceAccountEmail("serviceAccountEmail1825953988")
-            .setWorkerCount(372044046)
-            .setWorkerConfig(WorkerConfig.newBuilder().build())
-            .addAllRegions(new ArrayList<WorkerPool.Region>())
+            .setName(WorkerPoolName.of("[PROJECT]", "[LOCATION]", "[WORKER_POOL]").toString())
+            .setDisplayName("displayName1714148973")
+            .setUid("uid115792")
+            .putAllAnnotations(new HashMap<String, String>())
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .setDeleteTime(Timestamp.newBuilder().build())
+            .setEtag("etag3123477")
             .build();
-    mockCloudBuild.addResponse(expectedResponse);
-
-    CreateWorkerPoolRequest request =
-        CreateWorkerPoolRequest.newBuilder()
-            .setParent("parent-995424086")
-            .setWorkerPool(WorkerPool.newBuilder().build())
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("createWorkerPoolTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
             .build();
+    mockCloudBuild.addResponse(resultOperation);
 
-    WorkerPool actualResponse = client.createWorkerPool(request);
+    LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+    WorkerPool workerPool = WorkerPool.newBuilder().build();
+    String workerPoolId = "workerPoolId-46320779";
+
+    WorkerPool actualResponse =
+        client.createWorkerPoolAsync(parent, workerPool, workerPoolId).get();
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<AbstractMessage> actualRequests = mockCloudBuild.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     CreateWorkerPoolRequest actualRequest = ((CreateWorkerPoolRequest) actualRequests.get(0));
 
-    Assert.assertEquals(request.getParent(), actualRequest.getParent());
-    Assert.assertEquals(request.getWorkerPool(), actualRequest.getWorkerPool());
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertEquals(workerPool, actualRequest.getWorkerPool());
+    Assert.assertEquals(workerPoolId, actualRequest.getWorkerPoolId());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -881,15 +893,75 @@ public class CloudBuildClientTest {
     mockCloudBuild.addException(exception);
 
     try {
-      CreateWorkerPoolRequest request =
-          CreateWorkerPoolRequest.newBuilder()
-              .setParent("parent-995424086")
-              .setWorkerPool(WorkerPool.newBuilder().build())
-              .build();
-      client.createWorkerPool(request);
+      LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+      WorkerPool workerPool = WorkerPool.newBuilder().build();
+      String workerPoolId = "workerPoolId-46320779";
+      client.createWorkerPoolAsync(parent, workerPool, workerPoolId).get();
       Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception.
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void createWorkerPoolTest2() throws Exception {
+    WorkerPool expectedResponse =
+        WorkerPool.newBuilder()
+            .setName(WorkerPoolName.of("[PROJECT]", "[LOCATION]", "[WORKER_POOL]").toString())
+            .setDisplayName("displayName1714148973")
+            .setUid("uid115792")
+            .putAllAnnotations(new HashMap<String, String>())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setDeleteTime(Timestamp.newBuilder().build())
+            .setEtag("etag3123477")
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("createWorkerPoolTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockCloudBuild.addResponse(resultOperation);
+
+    String parent = "parent-995424086";
+    WorkerPool workerPool = WorkerPool.newBuilder().build();
+    String workerPoolId = "workerPoolId-46320779";
+
+    WorkerPool actualResponse =
+        client.createWorkerPoolAsync(parent, workerPool, workerPoolId).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockCloudBuild.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    CreateWorkerPoolRequest actualRequest = ((CreateWorkerPoolRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertEquals(workerPool, actualRequest.getWorkerPool());
+    Assert.assertEquals(workerPoolId, actualRequest.getWorkerPoolId());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void createWorkerPoolExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockCloudBuild.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      WorkerPool workerPool = WorkerPool.newBuilder().build();
+      String workerPoolId = "workerPoolId-46320779";
+      client.createWorkerPoolAsync(parent, workerPool, workerPoolId).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
     }
   }
 
@@ -897,28 +969,27 @@ public class CloudBuildClientTest {
   public void getWorkerPoolTest() throws Exception {
     WorkerPool expectedResponse =
         WorkerPool.newBuilder()
-            .setName("name3373707")
-            .setProjectId("projectId-894832108")
-            .setServiceAccountEmail("serviceAccountEmail1825953988")
-            .setWorkerCount(372044046)
-            .setWorkerConfig(WorkerConfig.newBuilder().build())
-            .addAllRegions(new ArrayList<WorkerPool.Region>())
+            .setName(WorkerPoolName.of("[PROJECT]", "[LOCATION]", "[WORKER_POOL]").toString())
+            .setDisplayName("displayName1714148973")
+            .setUid("uid115792")
+            .putAllAnnotations(new HashMap<String, String>())
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .setDeleteTime(Timestamp.newBuilder().build())
+            .setEtag("etag3123477")
             .build();
     mockCloudBuild.addResponse(expectedResponse);
 
-    GetWorkerPoolRequest request = GetWorkerPoolRequest.newBuilder().setName("name3373707").build();
+    WorkerPoolName name = WorkerPoolName.of("[PROJECT]", "[LOCATION]", "[WORKER_POOL]");
 
-    WorkerPool actualResponse = client.getWorkerPool(request);
+    WorkerPool actualResponse = client.getWorkerPool(name);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<AbstractMessage> actualRequests = mockCloudBuild.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     GetWorkerPoolRequest actualRequest = ((GetWorkerPoolRequest) actualRequests.get(0));
 
-    Assert.assertEquals(request.getName(), actualRequest.getName());
+    Assert.assertEquals(name.toString(), actualRequest.getName());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -931,9 +1002,53 @@ public class CloudBuildClientTest {
     mockCloudBuild.addException(exception);
 
     try {
-      GetWorkerPoolRequest request =
-          GetWorkerPoolRequest.newBuilder().setName("name3373707").build();
-      client.getWorkerPool(request);
+      WorkerPoolName name = WorkerPoolName.of("[PROJECT]", "[LOCATION]", "[WORKER_POOL]");
+      client.getWorkerPool(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getWorkerPoolTest2() throws Exception {
+    WorkerPool expectedResponse =
+        WorkerPool.newBuilder()
+            .setName(WorkerPoolName.of("[PROJECT]", "[LOCATION]", "[WORKER_POOL]").toString())
+            .setDisplayName("displayName1714148973")
+            .setUid("uid115792")
+            .putAllAnnotations(new HashMap<String, String>())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setDeleteTime(Timestamp.newBuilder().build())
+            .setEtag("etag3123477")
+            .build();
+    mockCloudBuild.addResponse(expectedResponse);
+
+    String name = "name3373707";
+
+    WorkerPool actualResponse = client.getWorkerPool(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockCloudBuild.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetWorkerPoolRequest actualRequest = ((GetWorkerPoolRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getWorkerPoolExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockCloudBuild.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.getWorkerPool(name);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.
@@ -943,18 +1058,23 @@ public class CloudBuildClientTest {
   @Test
   public void deleteWorkerPoolTest() throws Exception {
     Empty expectedResponse = Empty.newBuilder().build();
-    mockCloudBuild.addResponse(expectedResponse);
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("deleteWorkerPoolTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockCloudBuild.addResponse(resultOperation);
 
-    DeleteWorkerPoolRequest request =
-        DeleteWorkerPoolRequest.newBuilder().setName("name3373707").build();
+    WorkerPoolName name = WorkerPoolName.of("[PROJECT]", "[LOCATION]", "[WORKER_POOL]");
 
-    client.deleteWorkerPool(request);
+    client.deleteWorkerPoolAsync(name).get();
 
     List<AbstractMessage> actualRequests = mockCloudBuild.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     DeleteWorkerPoolRequest actualRequest = ((DeleteWorkerPoolRequest) actualRequests.get(0));
 
-    Assert.assertEquals(request.getName(), actualRequest.getName());
+    Assert.assertEquals(name.toString(), actualRequest.getName());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -967,12 +1087,55 @@ public class CloudBuildClientTest {
     mockCloudBuild.addException(exception);
 
     try {
-      DeleteWorkerPoolRequest request =
-          DeleteWorkerPoolRequest.newBuilder().setName("name3373707").build();
-      client.deleteWorkerPool(request);
+      WorkerPoolName name = WorkerPoolName.of("[PROJECT]", "[LOCATION]", "[WORKER_POOL]");
+      client.deleteWorkerPoolAsync(name).get();
       Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception.
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void deleteWorkerPoolTest2() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("deleteWorkerPoolTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockCloudBuild.addResponse(resultOperation);
+
+    String name = "name3373707";
+
+    client.deleteWorkerPoolAsync(name).get();
+
+    List<AbstractMessage> actualRequests = mockCloudBuild.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DeleteWorkerPoolRequest actualRequest = ((DeleteWorkerPoolRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void deleteWorkerPoolExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockCloudBuild.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.deleteWorkerPoolAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
     }
   }
 
@@ -980,33 +1143,35 @@ public class CloudBuildClientTest {
   public void updateWorkerPoolTest() throws Exception {
     WorkerPool expectedResponse =
         WorkerPool.newBuilder()
-            .setName("name3373707")
-            .setProjectId("projectId-894832108")
-            .setServiceAccountEmail("serviceAccountEmail1825953988")
-            .setWorkerCount(372044046)
-            .setWorkerConfig(WorkerConfig.newBuilder().build())
-            .addAllRegions(new ArrayList<WorkerPool.Region>())
+            .setName(WorkerPoolName.of("[PROJECT]", "[LOCATION]", "[WORKER_POOL]").toString())
+            .setDisplayName("displayName1714148973")
+            .setUid("uid115792")
+            .putAllAnnotations(new HashMap<String, String>())
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .setDeleteTime(Timestamp.newBuilder().build())
+            .setEtag("etag3123477")
             .build();
-    mockCloudBuild.addResponse(expectedResponse);
-
-    UpdateWorkerPoolRequest request =
-        UpdateWorkerPoolRequest.newBuilder()
-            .setName("name3373707")
-            .setWorkerPool(WorkerPool.newBuilder().build())
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("updateWorkerPoolTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
             .build();
+    mockCloudBuild.addResponse(resultOperation);
 
-    WorkerPool actualResponse = client.updateWorkerPool(request);
+    WorkerPool workerPool = WorkerPool.newBuilder().build();
+    FieldMask updateMask = FieldMask.newBuilder().build();
+
+    WorkerPool actualResponse = client.updateWorkerPoolAsync(workerPool, updateMask).get();
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<AbstractMessage> actualRequests = mockCloudBuild.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     UpdateWorkerPoolRequest actualRequest = ((UpdateWorkerPoolRequest) actualRequests.get(0));
 
-    Assert.assertEquals(request.getName(), actualRequest.getName());
-    Assert.assertEquals(request.getWorkerPool(), actualRequest.getWorkerPool());
+    Assert.assertEquals(workerPool, actualRequest.getWorkerPool());
+    Assert.assertEquals(updateMask, actualRequest.getUpdateMask());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -1019,35 +1184,41 @@ public class CloudBuildClientTest {
     mockCloudBuild.addException(exception);
 
     try {
-      UpdateWorkerPoolRequest request =
-          UpdateWorkerPoolRequest.newBuilder()
-              .setName("name3373707")
-              .setWorkerPool(WorkerPool.newBuilder().build())
-              .build();
-      client.updateWorkerPool(request);
+      WorkerPool workerPool = WorkerPool.newBuilder().build();
+      FieldMask updateMask = FieldMask.newBuilder().build();
+      client.updateWorkerPoolAsync(workerPool, updateMask).get();
       Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception.
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
     }
   }
 
   @Test
   public void listWorkerPoolsTest() throws Exception {
+    WorkerPool responsesElement = WorkerPool.newBuilder().build();
     ListWorkerPoolsResponse expectedResponse =
-        ListWorkerPoolsResponse.newBuilder().addAllWorkerPools(new ArrayList<WorkerPool>()).build();
+        ListWorkerPoolsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllWorkerPools(Arrays.asList(responsesElement))
+            .build();
     mockCloudBuild.addResponse(expectedResponse);
 
-    ListWorkerPoolsRequest request =
-        ListWorkerPoolsRequest.newBuilder().setParent("parent-995424086").build();
+    LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
 
-    ListWorkerPoolsResponse actualResponse = client.listWorkerPools(request);
-    Assert.assertEquals(expectedResponse, actualResponse);
+    ListWorkerPoolsPagedResponse pagedListResponse = client.listWorkerPools(parent);
+
+    List<WorkerPool> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getWorkerPoolsList().get(0), resources.get(0));
 
     List<AbstractMessage> actualRequests = mockCloudBuild.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     ListWorkerPoolsRequest actualRequest = ((ListWorkerPoolsRequest) actualRequests.get(0));
 
-    Assert.assertEquals(request.getParent(), actualRequest.getParent());
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -1060,9 +1231,52 @@ public class CloudBuildClientTest {
     mockCloudBuild.addException(exception);
 
     try {
-      ListWorkerPoolsRequest request =
-          ListWorkerPoolsRequest.newBuilder().setParent("parent-995424086").build();
-      client.listWorkerPools(request);
+      LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+      client.listWorkerPools(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listWorkerPoolsTest2() throws Exception {
+    WorkerPool responsesElement = WorkerPool.newBuilder().build();
+    ListWorkerPoolsResponse expectedResponse =
+        ListWorkerPoolsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllWorkerPools(Arrays.asList(responsesElement))
+            .build();
+    mockCloudBuild.addResponse(expectedResponse);
+
+    String parent = "parent-995424086";
+
+    ListWorkerPoolsPagedResponse pagedListResponse = client.listWorkerPools(parent);
+
+    List<WorkerPool> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getWorkerPoolsList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockCloudBuild.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListWorkerPoolsRequest actualRequest = ((ListWorkerPoolsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listWorkerPoolsExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockCloudBuild.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      client.listWorkerPools(parent);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.

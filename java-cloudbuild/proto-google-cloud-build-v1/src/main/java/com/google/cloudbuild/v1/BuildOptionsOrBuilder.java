@@ -238,30 +238,78 @@ public interface BuildOptionsOrBuilder
    *
    *
    * <pre>
-   * Option to specify a `WorkerPool` for the build.
-   * Format: projects/{project}/locations/{location}/workerPools/{workerPool}
-   * This field is in beta and is available only to restricted users.
+   * This field deprecated; please use `pool.name` instead.
    * </pre>
    *
-   * <code>string worker_pool = 7;</code>
+   * <code>string worker_pool = 7 [deprecated = true];</code>
    *
    * @return The workerPool.
    */
+  @java.lang.Deprecated
   java.lang.String getWorkerPool();
   /**
    *
    *
    * <pre>
-   * Option to specify a `WorkerPool` for the build.
-   * Format: projects/{project}/locations/{location}/workerPools/{workerPool}
-   * This field is in beta and is available only to restricted users.
+   * This field deprecated; please use `pool.name` instead.
    * </pre>
    *
-   * <code>string worker_pool = 7;</code>
+   * <code>string worker_pool = 7 [deprecated = true];</code>
    *
    * @return The bytes for workerPool.
    */
+  @java.lang.Deprecated
   com.google.protobuf.ByteString getWorkerPoolBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Specification for execution on a `WorkerPool`.
+   * See [running builds in a private
+   * pool](https://cloud.google.com/build/docs/private-pools/run-builds-in-private-pool)
+   * for more information.
+   * </pre>
+   *
+   * <code>
+   * .google.devtools.cloudbuild.v1.BuildOptions.PoolOption pool = 19 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the pool field is set.
+   */
+  boolean hasPool();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Specification for execution on a `WorkerPool`.
+   * See [running builds in a private
+   * pool](https://cloud.google.com/build/docs/private-pools/run-builds-in-private-pool)
+   * for more information.
+   * </pre>
+   *
+   * <code>
+   * .google.devtools.cloudbuild.v1.BuildOptions.PoolOption pool = 19 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The pool.
+   */
+  com.google.cloudbuild.v1.BuildOptions.PoolOption getPool();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Specification for execution on a `WorkerPool`.
+   * See [running builds in a private
+   * pool](https://cloud.google.com/build/docs/private-pools/run-builds-in-private-pool)
+   * for more information.
+   * </pre>
+   *
+   * <code>
+   * .google.devtools.cloudbuild.v1.BuildOptions.PoolOption pool = 19 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloudbuild.v1.BuildOptions.PoolOptionOrBuilder getPoolOrBuilder();
 
   /**
    *

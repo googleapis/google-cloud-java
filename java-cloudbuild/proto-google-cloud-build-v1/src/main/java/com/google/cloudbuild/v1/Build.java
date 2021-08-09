@@ -412,6 +412,22 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
                       com.google.cloudbuild.v1.Build.Warning.parser(), extensionRegistry));
               break;
             }
+          case 410:
+            {
+              com.google.cloudbuild.v1.Build.FailureInfo.Builder subBuilder = null;
+              if (failureInfo_ != null) {
+                subBuilder = failureInfo_.toBuilder();
+              }
+              failureInfo_ =
+                  input.readMessage(
+                      com.google.cloudbuild.v1.Build.FailureInfo.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(failureInfo_);
+                failureInfo_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -1769,6 +1785,1085 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
+  public interface FailureInfoOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.devtools.cloudbuild.v1.Build.FailureInfo)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * The name of the failure.
+     * </pre>
+     *
+     * <code>.google.devtools.cloudbuild.v1.Build.FailureInfo.FailureType type = 1;</code>
+     *
+     * @return The enum numeric value on the wire for type.
+     */
+    int getTypeValue();
+    /**
+     *
+     *
+     * <pre>
+     * The name of the failure.
+     * </pre>
+     *
+     * <code>.google.devtools.cloudbuild.v1.Build.FailureInfo.FailureType type = 1;</code>
+     *
+     * @return The type.
+     */
+    com.google.cloudbuild.v1.Build.FailureInfo.FailureType getType();
+
+    /**
+     *
+     *
+     * <pre>
+     * Explains the failure issue in more detail using hard-coded text.
+     * </pre>
+     *
+     * <code>string detail = 2;</code>
+     *
+     * @return The detail.
+     */
+    java.lang.String getDetail();
+    /**
+     *
+     *
+     * <pre>
+     * Explains the failure issue in more detail using hard-coded text.
+     * </pre>
+     *
+     * <code>string detail = 2;</code>
+     *
+     * @return The bytes for detail.
+     */
+    com.google.protobuf.ByteString getDetailBytes();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * A fatal problem encountered during the execution of the build.
+   * </pre>
+   *
+   * Protobuf type {@code google.devtools.cloudbuild.v1.Build.FailureInfo}
+   */
+  public static final class FailureInfo extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.devtools.cloudbuild.v1.Build.FailureInfo)
+      FailureInfoOrBuilder {
+    private static final long serialVersionUID = 0L;
+    // Use FailureInfo.newBuilder() to construct.
+    private FailureInfo(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private FailureInfo() {
+      type_ = 0;
+      detail_ = "";
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new FailureInfo();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+      return this.unknownFields;
+    }
+
+    private FailureInfo(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 8:
+              {
+                int rawValue = input.readEnum();
+
+                type_ = rawValue;
+                break;
+              }
+            case 18:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+
+                detail_ = s;
+                break;
+              }
+            default:
+              {
+                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
+                  done = true;
+                }
+                break;
+              }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloudbuild.v1.Cloudbuild
+          .internal_static_google_devtools_cloudbuild_v1_Build_FailureInfo_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.cloudbuild.v1.Cloudbuild
+          .internal_static_google_devtools_cloudbuild_v1_Build_FailureInfo_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloudbuild.v1.Build.FailureInfo.class,
+              com.google.cloudbuild.v1.Build.FailureInfo.Builder.class);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The name of a fatal problem encountered during the execution of the
+     * build.
+     * </pre>
+     *
+     * Protobuf enum {@code google.devtools.cloudbuild.v1.Build.FailureInfo.FailureType}
+     */
+    public enum FailureType implements com.google.protobuf.ProtocolMessageEnum {
+      /**
+       *
+       *
+       * <pre>
+       * Type unspecified
+       * </pre>
+       *
+       * <code>FAILURE_TYPE_UNSPECIFIED = 0;</code>
+       */
+      FAILURE_TYPE_UNSPECIFIED(0),
+      /**
+       *
+       *
+       * <pre>
+       * Unable to push the image to the repository.
+       * </pre>
+       *
+       * <code>PUSH_FAILED = 1;</code>
+       */
+      PUSH_FAILED(1),
+      /**
+       *
+       *
+       * <pre>
+       * Final image not found.
+       * </pre>
+       *
+       * <code>PUSH_IMAGE_NOT_FOUND = 2;</code>
+       */
+      PUSH_IMAGE_NOT_FOUND(2),
+      /**
+       *
+       *
+       * <pre>
+       * Unauthorized push of the final image.
+       * </pre>
+       *
+       * <code>PUSH_NOT_AUTHORIZED = 3;</code>
+       */
+      PUSH_NOT_AUTHORIZED(3),
+      /**
+       *
+       *
+       * <pre>
+       * Backend logging failures. Should retry.
+       * </pre>
+       *
+       * <code>LOGGING_FAILURE = 4;</code>
+       */
+      LOGGING_FAILURE(4),
+      /**
+       *
+       *
+       * <pre>
+       * A build step has failed.
+       * </pre>
+       *
+       * <code>USER_BUILD_STEP = 5;</code>
+       */
+      USER_BUILD_STEP(5),
+      /**
+       *
+       *
+       * <pre>
+       * The source fetching has failed.
+       * </pre>
+       *
+       * <code>FETCH_SOURCE_FAILED = 6;</code>
+       */
+      FETCH_SOURCE_FAILED(6),
+      UNRECOGNIZED(-1),
+      ;
+
+      /**
+       *
+       *
+       * <pre>
+       * Type unspecified
+       * </pre>
+       *
+       * <code>FAILURE_TYPE_UNSPECIFIED = 0;</code>
+       */
+      public static final int FAILURE_TYPE_UNSPECIFIED_VALUE = 0;
+      /**
+       *
+       *
+       * <pre>
+       * Unable to push the image to the repository.
+       * </pre>
+       *
+       * <code>PUSH_FAILED = 1;</code>
+       */
+      public static final int PUSH_FAILED_VALUE = 1;
+      /**
+       *
+       *
+       * <pre>
+       * Final image not found.
+       * </pre>
+       *
+       * <code>PUSH_IMAGE_NOT_FOUND = 2;</code>
+       */
+      public static final int PUSH_IMAGE_NOT_FOUND_VALUE = 2;
+      /**
+       *
+       *
+       * <pre>
+       * Unauthorized push of the final image.
+       * </pre>
+       *
+       * <code>PUSH_NOT_AUTHORIZED = 3;</code>
+       */
+      public static final int PUSH_NOT_AUTHORIZED_VALUE = 3;
+      /**
+       *
+       *
+       * <pre>
+       * Backend logging failures. Should retry.
+       * </pre>
+       *
+       * <code>LOGGING_FAILURE = 4;</code>
+       */
+      public static final int LOGGING_FAILURE_VALUE = 4;
+      /**
+       *
+       *
+       * <pre>
+       * A build step has failed.
+       * </pre>
+       *
+       * <code>USER_BUILD_STEP = 5;</code>
+       */
+      public static final int USER_BUILD_STEP_VALUE = 5;
+      /**
+       *
+       *
+       * <pre>
+       * The source fetching has failed.
+       * </pre>
+       *
+       * <code>FETCH_SOURCE_FAILED = 6;</code>
+       */
+      public static final int FETCH_SOURCE_FAILED_VALUE = 6;
+
+      public final int getNumber() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalArgumentException(
+              "Can't get the number of an unknown enum value.");
+        }
+        return value;
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
+      @java.lang.Deprecated
+      public static FailureType valueOf(int value) {
+        return forNumber(value);
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       */
+      public static FailureType forNumber(int value) {
+        switch (value) {
+          case 0:
+            return FAILURE_TYPE_UNSPECIFIED;
+          case 1:
+            return PUSH_FAILED;
+          case 2:
+            return PUSH_IMAGE_NOT_FOUND;
+          case 3:
+            return PUSH_NOT_AUTHORIZED;
+          case 4:
+            return LOGGING_FAILURE;
+          case 5:
+            return USER_BUILD_STEP;
+          case 6:
+            return FETCH_SOURCE_FAILED;
+          default:
+            return null;
+        }
+      }
+
+      public static com.google.protobuf.Internal.EnumLiteMap<FailureType> internalGetValueMap() {
+        return internalValueMap;
+      }
+
+      private static final com.google.protobuf.Internal.EnumLiteMap<FailureType> internalValueMap =
+          new com.google.protobuf.Internal.EnumLiteMap<FailureType>() {
+            public FailureType findValueByNumber(int number) {
+              return FailureType.forNumber(number);
+            }
+          };
+
+      public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalStateException(
+              "Can't get the descriptor of an unrecognized enum value.");
+        }
+        return getDescriptor().getValues().get(ordinal());
+      }
+
+      public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+        return getDescriptor();
+      }
+
+      public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+        return com.google.cloudbuild.v1.Build.FailureInfo.getDescriptor().getEnumTypes().get(0);
+      }
+
+      private static final FailureType[] VALUES = values();
+
+      public static FailureType valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+        if (desc.getType() != getDescriptor()) {
+          throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+        }
+        if (desc.getIndex() == -1) {
+          return UNRECOGNIZED;
+        }
+        return VALUES[desc.getIndex()];
+      }
+
+      private final int value;
+
+      private FailureType(int value) {
+        this.value = value;
+      }
+
+      // @@protoc_insertion_point(enum_scope:google.devtools.cloudbuild.v1.Build.FailureInfo.FailureType)
+    }
+
+    public static final int TYPE_FIELD_NUMBER = 1;
+    private int type_;
+    /**
+     *
+     *
+     * <pre>
+     * The name of the failure.
+     * </pre>
+     *
+     * <code>.google.devtools.cloudbuild.v1.Build.FailureInfo.FailureType type = 1;</code>
+     *
+     * @return The enum numeric value on the wire for type.
+     */
+    @java.lang.Override
+    public int getTypeValue() {
+      return type_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The name of the failure.
+     * </pre>
+     *
+     * <code>.google.devtools.cloudbuild.v1.Build.FailureInfo.FailureType type = 1;</code>
+     *
+     * @return The type.
+     */
+    @java.lang.Override
+    public com.google.cloudbuild.v1.Build.FailureInfo.FailureType getType() {
+      @SuppressWarnings("deprecation")
+      com.google.cloudbuild.v1.Build.FailureInfo.FailureType result =
+          com.google.cloudbuild.v1.Build.FailureInfo.FailureType.valueOf(type_);
+      return result == null
+          ? com.google.cloudbuild.v1.Build.FailureInfo.FailureType.UNRECOGNIZED
+          : result;
+    }
+
+    public static final int DETAIL_FIELD_NUMBER = 2;
+    private volatile java.lang.Object detail_;
+    /**
+     *
+     *
+     * <pre>
+     * Explains the failure issue in more detail using hard-coded text.
+     * </pre>
+     *
+     * <code>string detail = 2;</code>
+     *
+     * @return The detail.
+     */
+    @java.lang.Override
+    public java.lang.String getDetail() {
+      java.lang.Object ref = detail_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        detail_ = s;
+        return s;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Explains the failure issue in more detail using hard-coded text.
+     * </pre>
+     *
+     * <code>string detail = 2;</code>
+     *
+     * @return The bytes for detail.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getDetailBytes() {
+      java.lang.Object ref = detail_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        detail_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (type_
+          != com.google.cloudbuild.v1.Build.FailureInfo.FailureType.FAILURE_TYPE_UNSPECIFIED
+              .getNumber()) {
+        output.writeEnum(1, type_);
+      }
+      if (!getDetailBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, detail_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (type_
+          != com.google.cloudbuild.v1.Build.FailureInfo.FailureType.FAILURE_TYPE_UNSPECIFIED
+              .getNumber()) {
+        size += com.google.protobuf.CodedOutputStream.computeEnumSize(1, type_);
+      }
+      if (!getDetailBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, detail_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.cloudbuild.v1.Build.FailureInfo)) {
+        return super.equals(obj);
+      }
+      com.google.cloudbuild.v1.Build.FailureInfo other =
+          (com.google.cloudbuild.v1.Build.FailureInfo) obj;
+
+      if (type_ != other.type_) return false;
+      if (!getDetail().equals(other.getDetail())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + TYPE_FIELD_NUMBER;
+      hash = (53 * hash) + type_;
+      hash = (37 * hash) + DETAIL_FIELD_NUMBER;
+      hash = (53 * hash) + getDetail().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.cloudbuild.v1.Build.FailureInfo parseFrom(java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloudbuild.v1.Build.FailureInfo parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloudbuild.v1.Build.FailureInfo parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloudbuild.v1.Build.FailureInfo parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloudbuild.v1.Build.FailureInfo parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloudbuild.v1.Build.FailureInfo parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloudbuild.v1.Build.FailureInfo parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloudbuild.v1.Build.FailureInfo parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloudbuild.v1.Build.FailureInfo parseDelimitedFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloudbuild.v1.Build.FailureInfo parseDelimitedFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloudbuild.v1.Build.FailureInfo parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloudbuild.v1.Build.FailureInfo parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(com.google.cloudbuild.v1.Build.FailureInfo prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A fatal problem encountered during the execution of the build.
+     * </pre>
+     *
+     * Protobuf type {@code google.devtools.cloudbuild.v1.Build.FailureInfo}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.devtools.cloudbuild.v1.Build.FailureInfo)
+        com.google.cloudbuild.v1.Build.FailureInfoOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloudbuild.v1.Cloudbuild
+            .internal_static_google_devtools_cloudbuild_v1_Build_FailureInfo_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloudbuild.v1.Cloudbuild
+            .internal_static_google_devtools_cloudbuild_v1_Build_FailureInfo_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloudbuild.v1.Build.FailureInfo.class,
+                com.google.cloudbuild.v1.Build.FailureInfo.Builder.class);
+      }
+
+      // Construct using com.google.cloudbuild.v1.Build.FailureInfo.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        type_ = 0;
+
+        detail_ = "";
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloudbuild.v1.Cloudbuild
+            .internal_static_google_devtools_cloudbuild_v1_Build_FailureInfo_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.cloudbuild.v1.Build.FailureInfo getDefaultInstanceForType() {
+        return com.google.cloudbuild.v1.Build.FailureInfo.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.cloudbuild.v1.Build.FailureInfo build() {
+        com.google.cloudbuild.v1.Build.FailureInfo result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.cloudbuild.v1.Build.FailureInfo buildPartial() {
+        com.google.cloudbuild.v1.Build.FailureInfo result =
+            new com.google.cloudbuild.v1.Build.FailureInfo(this);
+        result.type_ = type_;
+        result.detail_ = detail_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.google.cloudbuild.v1.Build.FailureInfo) {
+          return mergeFrom((com.google.cloudbuild.v1.Build.FailureInfo) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.google.cloudbuild.v1.Build.FailureInfo other) {
+        if (other == com.google.cloudbuild.v1.Build.FailureInfo.getDefaultInstance()) return this;
+        if (other.type_ != 0) {
+          setTypeValue(other.getTypeValue());
+        }
+        if (!other.getDetail().isEmpty()) {
+          detail_ = other.detail_;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.google.cloudbuild.v1.Build.FailureInfo parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (com.google.cloudbuild.v1.Build.FailureInfo) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private int type_ = 0;
+      /**
+       *
+       *
+       * <pre>
+       * The name of the failure.
+       * </pre>
+       *
+       * <code>.google.devtools.cloudbuild.v1.Build.FailureInfo.FailureType type = 1;</code>
+       *
+       * @return The enum numeric value on the wire for type.
+       */
+      @java.lang.Override
+      public int getTypeValue() {
+        return type_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The name of the failure.
+       * </pre>
+       *
+       * <code>.google.devtools.cloudbuild.v1.Build.FailureInfo.FailureType type = 1;</code>
+       *
+       * @param value The enum numeric value on the wire for type to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTypeValue(int value) {
+
+        type_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The name of the failure.
+       * </pre>
+       *
+       * <code>.google.devtools.cloudbuild.v1.Build.FailureInfo.FailureType type = 1;</code>
+       *
+       * @return The type.
+       */
+      @java.lang.Override
+      public com.google.cloudbuild.v1.Build.FailureInfo.FailureType getType() {
+        @SuppressWarnings("deprecation")
+        com.google.cloudbuild.v1.Build.FailureInfo.FailureType result =
+            com.google.cloudbuild.v1.Build.FailureInfo.FailureType.valueOf(type_);
+        return result == null
+            ? com.google.cloudbuild.v1.Build.FailureInfo.FailureType.UNRECOGNIZED
+            : result;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The name of the failure.
+       * </pre>
+       *
+       * <code>.google.devtools.cloudbuild.v1.Build.FailureInfo.FailureType type = 1;</code>
+       *
+       * @param value The type to set.
+       * @return This builder for chaining.
+       */
+      public Builder setType(com.google.cloudbuild.v1.Build.FailureInfo.FailureType value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+
+        type_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The name of the failure.
+       * </pre>
+       *
+       * <code>.google.devtools.cloudbuild.v1.Build.FailureInfo.FailureType type = 1;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearType() {
+
+        type_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object detail_ = "";
+      /**
+       *
+       *
+       * <pre>
+       * Explains the failure issue in more detail using hard-coded text.
+       * </pre>
+       *
+       * <code>string detail = 2;</code>
+       *
+       * @return The detail.
+       */
+      public java.lang.String getDetail() {
+        java.lang.Object ref = detail_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          detail_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Explains the failure issue in more detail using hard-coded text.
+       * </pre>
+       *
+       * <code>string detail = 2;</code>
+       *
+       * @return The bytes for detail.
+       */
+      public com.google.protobuf.ByteString getDetailBytes() {
+        java.lang.Object ref = detail_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          detail_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Explains the failure issue in more detail using hard-coded text.
+       * </pre>
+       *
+       * <code>string detail = 2;</code>
+       *
+       * @param value The detail to set.
+       * @return This builder for chaining.
+       */
+      public Builder setDetail(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+
+        detail_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Explains the failure issue in more detail using hard-coded text.
+       * </pre>
+       *
+       * <code>string detail = 2;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearDetail() {
+
+        detail_ = getDefaultInstance().getDetail();
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Explains the failure issue in more detail using hard-coded text.
+       * </pre>
+       *
+       * <code>string detail = 2;</code>
+       *
+       * @param value The bytes for detail to set.
+       * @return This builder for chaining.
+       */
+      public Builder setDetailBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+
+        detail_ = value;
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.devtools.cloudbuild.v1.Build.FailureInfo)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.devtools.cloudbuild.v1.Build.FailureInfo)
+    private static final com.google.cloudbuild.v1.Build.FailureInfo DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new com.google.cloudbuild.v1.Build.FailureInfo();
+    }
+
+    public static com.google.cloudbuild.v1.Build.FailureInfo getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<FailureInfo> PARSER =
+        new com.google.protobuf.AbstractParser<FailureInfo>() {
+          @java.lang.Override
+          public FailureInfo parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            return new FailureInfo(input, extensionRegistry);
+          }
+        };
+
+    public static com.google.protobuf.Parser<FailureInfo> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<FailureInfo> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.cloudbuild.v1.Build.FailureInfo getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
   public static final int NAME_FIELD_NUMBER = 45;
   private volatile java.lang.Object name_;
   /**
@@ -3118,9 +4213,10 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Output only. Stores timing information for phases of the build. Valid keys
    * are:
-   * * BUILD: time to execute all build steps
+   * * BUILD: time to execute all build steps.
    * * PUSH: time to push all specified images.
    * * FETCHSOURCE: time to fetch source.
+   * * SETUPBUILD: time to set up build.
    * If the build does not specify source or images,
    * these keys will not be included.
    * </pre>
@@ -3148,9 +4244,10 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Output only. Stores timing information for phases of the build. Valid keys
    * are:
-   * * BUILD: time to execute all build steps
+   * * BUILD: time to execute all build steps.
    * * PUSH: time to push all specified images.
    * * FETCHSOURCE: time to fetch source.
+   * * SETUPBUILD: time to set up build.
    * If the build does not specify source or images,
    * these keys will not be included.
    * </pre>
@@ -3169,9 +4266,10 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Output only. Stores timing information for phases of the build. Valid keys
    * are:
-   * * BUILD: time to execute all build steps
+   * * BUILD: time to execute all build steps.
    * * PUSH: time to push all specified images.
    * * FETCHSOURCE: time to fetch source.
+   * * SETUPBUILD: time to set up build.
    * If the build does not specify source or images,
    * these keys will not be included.
    * </pre>
@@ -3196,9 +4294,10 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Output only. Stores timing information for phases of the build. Valid keys
    * are:
-   * * BUILD: time to execute all build steps
+   * * BUILD: time to execute all build steps.
    * * PUSH: time to push all specified images.
    * * FETCHSOURCE: time to fetch source.
+   * * SETUPBUILD: time to set up build.
    * If the build does not specify source or images,
    * these keys will not be included.
    * </pre>
@@ -3405,6 +4504,60 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
     return warnings_.get(index);
   }
 
+  public static final int FAILURE_INFO_FIELD_NUMBER = 51;
+  private com.google.cloudbuild.v1.Build.FailureInfo failureInfo_;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Contains information about the build when status=FAILURE.
+   * </pre>
+   *
+   * <code>
+   * .google.devtools.cloudbuild.v1.Build.FailureInfo failure_info = 51 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the failureInfo field is set.
+   */
+  @java.lang.Override
+  public boolean hasFailureInfo() {
+    return failureInfo_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Contains information about the build when status=FAILURE.
+   * </pre>
+   *
+   * <code>
+   * .google.devtools.cloudbuild.v1.Build.FailureInfo failure_info = 51 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The failureInfo.
+   */
+  @java.lang.Override
+  public com.google.cloudbuild.v1.Build.FailureInfo getFailureInfo() {
+    return failureInfo_ == null
+        ? com.google.cloudbuild.v1.Build.FailureInfo.getDefaultInstance()
+        : failureInfo_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Contains information about the build when status=FAILURE.
+   * </pre>
+   *
+   * <code>
+   * .google.devtools.cloudbuild.v1.Build.FailureInfo failure_info = 51 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloudbuild.v1.Build.FailureInfoOrBuilder getFailureInfoOrBuilder() {
+    return getFailureInfo();
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -3497,6 +4650,9 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
     }
     for (int i = 0; i < warnings_.size(); i++) {
       output.writeMessage(49, warnings_.get(i));
+    }
+    if (failureInfo_ != null) {
+      output.writeMessage(51, getFailureInfo());
     }
     unknownFields.writeTo(output);
   }
@@ -3612,6 +4768,9 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
     for (int i = 0; i < warnings_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(49, warnings_.get(i));
     }
+    if (failureInfo_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(51, getFailureInfo());
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -3687,6 +4846,10 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
       if (!getAvailableSecrets().equals(other.getAvailableSecrets())) return false;
     }
     if (!getWarningsList().equals(other.getWarningsList())) return false;
+    if (hasFailureInfo() != other.hasFailureInfo()) return false;
+    if (hasFailureInfo()) {
+      if (!getFailureInfo().equals(other.getFailureInfo())) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -3787,6 +4950,10 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
     if (getWarningsCount() > 0) {
       hash = (37 * hash) + WARNINGS_FIELD_NUMBER;
       hash = (53 * hash) + getWarningsList().hashCode();
+    }
+    if (hasFailureInfo()) {
+      hash = (37 * hash) + FAILURE_INFO_FIELD_NUMBER;
+      hash = (53 * hash) + getFailureInfo().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -4081,6 +5248,12 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
       } else {
         warningsBuilder_.clear();
       }
+      if (failureInfoBuilder_ == null) {
+        failureInfo_ = null;
+      } else {
+        failureInfo_ = null;
+        failureInfoBuilder_ = null;
+      }
       return this;
     }
 
@@ -4212,6 +5385,11 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
         result.warnings_ = warnings_;
       } else {
         result.warnings_ = warningsBuilder_.build();
+      }
+      if (failureInfoBuilder_ == null) {
+        result.failureInfo_ = failureInfo_;
+      } else {
+        result.failureInfo_ = failureInfoBuilder_.build();
       }
       onBuilt();
       return result;
@@ -4432,6 +5610,9 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
             warningsBuilder_.addAllMessages(other.warnings_);
           }
         }
+      }
+      if (other.hasFailureInfo()) {
+        mergeFailureInfo(other.getFailureInfo());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -8672,9 +9853,10 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Output only. Stores timing information for phases of the build. Valid keys
      * are:
-     * * BUILD: time to execute all build steps
+     * * BUILD: time to execute all build steps.
      * * PUSH: time to push all specified images.
      * * FETCHSOURCE: time to fetch source.
+     * * SETUPBUILD: time to set up build.
      * If the build does not specify source or images,
      * these keys will not be included.
      * </pre>
@@ -8702,9 +9884,10 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Output only. Stores timing information for phases of the build. Valid keys
      * are:
-     * * BUILD: time to execute all build steps
+     * * BUILD: time to execute all build steps.
      * * PUSH: time to push all specified images.
      * * FETCHSOURCE: time to fetch source.
+     * * SETUPBUILD: time to set up build.
      * If the build does not specify source or images,
      * these keys will not be included.
      * </pre>
@@ -8723,9 +9906,10 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Output only. Stores timing information for phases of the build. Valid keys
      * are:
-     * * BUILD: time to execute all build steps
+     * * BUILD: time to execute all build steps.
      * * PUSH: time to push all specified images.
      * * FETCHSOURCE: time to fetch source.
+     * * SETUPBUILD: time to set up build.
      * If the build does not specify source or images,
      * these keys will not be included.
      * </pre>
@@ -8750,9 +9934,10 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Output only. Stores timing information for phases of the build. Valid keys
      * are:
-     * * BUILD: time to execute all build steps
+     * * BUILD: time to execute all build steps.
      * * PUSH: time to push all specified images.
      * * FETCHSOURCE: time to fetch source.
+     * * SETUPBUILD: time to set up build.
      * If the build does not specify source or images,
      * these keys will not be included.
      * </pre>
@@ -8784,9 +9969,10 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Output only. Stores timing information for phases of the build. Valid keys
      * are:
-     * * BUILD: time to execute all build steps
+     * * BUILD: time to execute all build steps.
      * * PUSH: time to push all specified images.
      * * FETCHSOURCE: time to fetch source.
+     * * SETUPBUILD: time to set up build.
      * If the build does not specify source or images,
      * these keys will not be included.
      * </pre>
@@ -8813,9 +9999,10 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Output only. Stores timing information for phases of the build. Valid keys
      * are:
-     * * BUILD: time to execute all build steps
+     * * BUILD: time to execute all build steps.
      * * PUSH: time to push all specified images.
      * * FETCHSOURCE: time to fetch source.
+     * * SETUPBUILD: time to set up build.
      * If the build does not specify source or images,
      * these keys will not be included.
      * </pre>
@@ -8840,9 +10027,10 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Output only. Stores timing information for phases of the build. Valid keys
      * are:
-     * * BUILD: time to execute all build steps
+     * * BUILD: time to execute all build steps.
      * * PUSH: time to push all specified images.
      * * FETCHSOURCE: time to fetch source.
+     * * SETUPBUILD: time to set up build.
      * If the build does not specify source or images,
      * these keys will not be included.
      * </pre>
@@ -9558,6 +10746,210 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
         warnings_ = null;
       }
       return warningsBuilder_;
+    }
+
+    private com.google.cloudbuild.v1.Build.FailureInfo failureInfo_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloudbuild.v1.Build.FailureInfo,
+            com.google.cloudbuild.v1.Build.FailureInfo.Builder,
+            com.google.cloudbuild.v1.Build.FailureInfoOrBuilder>
+        failureInfoBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Contains information about the build when status=FAILURE.
+     * </pre>
+     *
+     * <code>
+     * .google.devtools.cloudbuild.v1.Build.FailureInfo failure_info = 51 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the failureInfo field is set.
+     */
+    public boolean hasFailureInfo() {
+      return failureInfoBuilder_ != null || failureInfo_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Contains information about the build when status=FAILURE.
+     * </pre>
+     *
+     * <code>
+     * .google.devtools.cloudbuild.v1.Build.FailureInfo failure_info = 51 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The failureInfo.
+     */
+    public com.google.cloudbuild.v1.Build.FailureInfo getFailureInfo() {
+      if (failureInfoBuilder_ == null) {
+        return failureInfo_ == null
+            ? com.google.cloudbuild.v1.Build.FailureInfo.getDefaultInstance()
+            : failureInfo_;
+      } else {
+        return failureInfoBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Contains information about the build when status=FAILURE.
+     * </pre>
+     *
+     * <code>
+     * .google.devtools.cloudbuild.v1.Build.FailureInfo failure_info = 51 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setFailureInfo(com.google.cloudbuild.v1.Build.FailureInfo value) {
+      if (failureInfoBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        failureInfo_ = value;
+        onChanged();
+      } else {
+        failureInfoBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Contains information about the build when status=FAILURE.
+     * </pre>
+     *
+     * <code>
+     * .google.devtools.cloudbuild.v1.Build.FailureInfo failure_info = 51 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setFailureInfo(
+        com.google.cloudbuild.v1.Build.FailureInfo.Builder builderForValue) {
+      if (failureInfoBuilder_ == null) {
+        failureInfo_ = builderForValue.build();
+        onChanged();
+      } else {
+        failureInfoBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Contains information about the build when status=FAILURE.
+     * </pre>
+     *
+     * <code>
+     * .google.devtools.cloudbuild.v1.Build.FailureInfo failure_info = 51 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder mergeFailureInfo(com.google.cloudbuild.v1.Build.FailureInfo value) {
+      if (failureInfoBuilder_ == null) {
+        if (failureInfo_ != null) {
+          failureInfo_ =
+              com.google.cloudbuild.v1.Build.FailureInfo.newBuilder(failureInfo_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          failureInfo_ = value;
+        }
+        onChanged();
+      } else {
+        failureInfoBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Contains information about the build when status=FAILURE.
+     * </pre>
+     *
+     * <code>
+     * .google.devtools.cloudbuild.v1.Build.FailureInfo failure_info = 51 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder clearFailureInfo() {
+      if (failureInfoBuilder_ == null) {
+        failureInfo_ = null;
+        onChanged();
+      } else {
+        failureInfo_ = null;
+        failureInfoBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Contains information about the build when status=FAILURE.
+     * </pre>
+     *
+     * <code>
+     * .google.devtools.cloudbuild.v1.Build.FailureInfo failure_info = 51 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloudbuild.v1.Build.FailureInfo.Builder getFailureInfoBuilder() {
+
+      onChanged();
+      return getFailureInfoFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Contains information about the build when status=FAILURE.
+     * </pre>
+     *
+     * <code>
+     * .google.devtools.cloudbuild.v1.Build.FailureInfo failure_info = 51 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloudbuild.v1.Build.FailureInfoOrBuilder getFailureInfoOrBuilder() {
+      if (failureInfoBuilder_ != null) {
+        return failureInfoBuilder_.getMessageOrBuilder();
+      } else {
+        return failureInfo_ == null
+            ? com.google.cloudbuild.v1.Build.FailureInfo.getDefaultInstance()
+            : failureInfo_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Contains information about the build when status=FAILURE.
+     * </pre>
+     *
+     * <code>
+     * .google.devtools.cloudbuild.v1.Build.FailureInfo failure_info = 51 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloudbuild.v1.Build.FailureInfo,
+            com.google.cloudbuild.v1.Build.FailureInfo.Builder,
+            com.google.cloudbuild.v1.Build.FailureInfoOrBuilder>
+        getFailureInfoFieldBuilder() {
+      if (failureInfoBuilder_ == null) {
+        failureInfoBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloudbuild.v1.Build.FailureInfo,
+                com.google.cloudbuild.v1.Build.FailureInfo.Builder,
+                com.google.cloudbuild.v1.Build.FailureInfoOrBuilder>(
+                getFailureInfo(), getParentForChildren(), isClean());
+        failureInfo_ = null;
+      }
+      return failureInfoBuilder_;
     }
 
     @java.lang.Override

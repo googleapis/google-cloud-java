@@ -20,13 +20,13 @@
               "methods": ["createBuildTrigger", "createBuildTrigger", "createBuildTriggerCallable"]
             },
             "CreateWorkerPool": {
-              "methods": ["createWorkerPool", "createWorkerPoolCallable"]
+              "methods": ["createWorkerPoolAsync", "createWorkerPoolAsync", "createWorkerPoolAsync", "createWorkerPoolOperationCallable", "createWorkerPoolCallable"]
             },
             "DeleteBuildTrigger": {
               "methods": ["deleteBuildTrigger", "deleteBuildTrigger", "deleteBuildTriggerCallable"]
             },
             "DeleteWorkerPool": {
-              "methods": ["deleteWorkerPool", "deleteWorkerPoolCallable"]
+              "methods": ["deleteWorkerPoolAsync", "deleteWorkerPoolAsync", "deleteWorkerPoolAsync", "deleteWorkerPoolOperationCallable", "deleteWorkerPoolCallable"]
             },
             "GetBuild": {
               "methods": ["getBuild", "getBuild", "getBuildCallable"]
@@ -35,7 +35,7 @@
               "methods": ["getBuildTrigger", "getBuildTrigger", "getBuildTriggerCallable"]
             },
             "GetWorkerPool": {
-              "methods": ["getWorkerPool", "getWorkerPoolCallable"]
+              "methods": ["getWorkerPool", "getWorkerPool", "getWorkerPool", "getWorkerPoolCallable"]
             },
             "ListBuildTriggers": {
               "methods": ["listBuildTriggers", "listBuildTriggers", "listBuildTriggersPagedCallable", "listBuildTriggersCallable"]
@@ -44,7 +44,7 @@
               "methods": ["listBuilds", "listBuilds", "listBuildsPagedCallable", "listBuildsCallable"]
             },
             "ListWorkerPools": {
-              "methods": ["listWorkerPools", "listWorkerPoolsCallable"]
+              "methods": ["listWorkerPools", "listWorkerPools", "listWorkerPools", "listWorkerPoolsPagedCallable", "listWorkerPoolsCallable"]
             },
             "ReceiveTriggerWebhook": {
               "methods": ["receiveTriggerWebhook", "receiveTriggerWebhookCallable"]
@@ -59,7 +59,7 @@
               "methods": ["updateBuildTrigger", "updateBuildTrigger", "updateBuildTriggerCallable"]
             },
             "UpdateWorkerPool": {
-              "methods": ["updateWorkerPool", "updateWorkerPoolCallable"]
+              "methods": ["updateWorkerPoolAsync", "updateWorkerPoolAsync", "updateWorkerPoolOperationCallable", "updateWorkerPoolCallable"]
             }
           }
         }

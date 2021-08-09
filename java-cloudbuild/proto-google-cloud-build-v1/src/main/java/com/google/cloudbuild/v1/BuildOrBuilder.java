@@ -948,9 +948,10 @@ public interface BuildOrBuilder
    * <pre>
    * Output only. Stores timing information for phases of the build. Valid keys
    * are:
-   * * BUILD: time to execute all build steps
+   * * BUILD: time to execute all build steps.
    * * PUSH: time to push all specified images.
    * * FETCHSOURCE: time to fetch source.
+   * * SETUPBUILD: time to set up build.
    * If the build does not specify source or images,
    * these keys will not be included.
    * </pre>
@@ -966,9 +967,10 @@ public interface BuildOrBuilder
    * <pre>
    * Output only. Stores timing information for phases of the build. Valid keys
    * are:
-   * * BUILD: time to execute all build steps
+   * * BUILD: time to execute all build steps.
    * * PUSH: time to push all specified images.
    * * FETCHSOURCE: time to fetch source.
+   * * SETUPBUILD: time to set up build.
    * If the build does not specify source or images,
    * these keys will not be included.
    * </pre>
@@ -987,9 +989,10 @@ public interface BuildOrBuilder
    * <pre>
    * Output only. Stores timing information for phases of the build. Valid keys
    * are:
-   * * BUILD: time to execute all build steps
+   * * BUILD: time to execute all build steps.
    * * PUSH: time to push all specified images.
    * * FETCHSOURCE: time to fetch source.
+   * * SETUPBUILD: time to set up build.
    * If the build does not specify source or images,
    * these keys will not be included.
    * </pre>
@@ -1005,9 +1008,10 @@ public interface BuildOrBuilder
    * <pre>
    * Output only. Stores timing information for phases of the build. Valid keys
    * are:
-   * * BUILD: time to execute all build steps
+   * * BUILD: time to execute all build steps.
    * * PUSH: time to push all specified images.
    * * FETCHSOURCE: time to fetch source.
+   * * SETUPBUILD: time to set up build.
    * If the build does not specify source or images,
    * these keys will not be included.
    * </pre>
@@ -1024,9 +1028,10 @@ public interface BuildOrBuilder
    * <pre>
    * Output only. Stores timing information for phases of the build. Valid keys
    * are:
-   * * BUILD: time to execute all build steps
+   * * BUILD: time to execute all build steps.
    * * PUSH: time to push all specified images.
    * * FETCHSOURCE: time to fetch source.
+   * * SETUPBUILD: time to set up build.
    * If the build does not specify source or images,
    * these keys will not be included.
    * </pre>
@@ -1167,4 +1172,45 @@ public interface BuildOrBuilder
    * </code>
    */
   com.google.cloudbuild.v1.Build.WarningOrBuilder getWarningsOrBuilder(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Contains information about the build when status=FAILURE.
+   * </pre>
+   *
+   * <code>
+   * .google.devtools.cloudbuild.v1.Build.FailureInfo failure_info = 51 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the failureInfo field is set.
+   */
+  boolean hasFailureInfo();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Contains information about the build when status=FAILURE.
+   * </pre>
+   *
+   * <code>
+   * .google.devtools.cloudbuild.v1.Build.FailureInfo failure_info = 51 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The failureInfo.
+   */
+  com.google.cloudbuild.v1.Build.FailureInfo getFailureInfo();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Contains information about the build when status=FAILURE.
+   * </pre>
+   *
+   * <code>
+   * .google.devtools.cloudbuild.v1.Build.FailureInfo failure_info = 51 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.cloudbuild.v1.Build.FailureInfoOrBuilder getFailureInfoOrBuilder();
 }

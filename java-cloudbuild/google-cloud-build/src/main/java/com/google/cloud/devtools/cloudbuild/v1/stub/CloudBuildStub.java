@@ -18,6 +18,7 @@ package com.google.cloud.devtools.cloudbuild.v1.stub;
 
 import static com.google.cloud.devtools.cloudbuild.v1.CloudBuildClient.ListBuildTriggersPagedResponse;
 import static com.google.cloud.devtools.cloudbuild.v1.CloudBuildClient.ListBuildsPagedResponse;
+import static com.google.cloud.devtools.cloudbuild.v1.CloudBuildClient.ListWorkerPoolsPagedResponse;
 
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.rpc.OperationCallable;
@@ -28,8 +29,10 @@ import com.google.cloudbuild.v1.BuildTrigger;
 import com.google.cloudbuild.v1.CancelBuildRequest;
 import com.google.cloudbuild.v1.CreateBuildRequest;
 import com.google.cloudbuild.v1.CreateBuildTriggerRequest;
+import com.google.cloudbuild.v1.CreateWorkerPoolOperationMetadata;
 import com.google.cloudbuild.v1.CreateWorkerPoolRequest;
 import com.google.cloudbuild.v1.DeleteBuildTriggerRequest;
+import com.google.cloudbuild.v1.DeleteWorkerPoolOperationMetadata;
 import com.google.cloudbuild.v1.DeleteWorkerPoolRequest;
 import com.google.cloudbuild.v1.GetBuildRequest;
 import com.google.cloudbuild.v1.GetBuildTriggerRequest;
@@ -45,6 +48,7 @@ import com.google.cloudbuild.v1.ReceiveTriggerWebhookResponse;
 import com.google.cloudbuild.v1.RetryBuildRequest;
 import com.google.cloudbuild.v1.RunBuildTriggerRequest;
 import com.google.cloudbuild.v1.UpdateBuildTriggerRequest;
+import com.google.cloudbuild.v1.UpdateWorkerPoolOperationMetadata;
 import com.google.cloudbuild.v1.UpdateWorkerPoolRequest;
 import com.google.cloudbuild.v1.WorkerPool;
 import com.google.longrunning.Operation;
@@ -139,7 +143,12 @@ public abstract class CloudBuildStub implements BackgroundResource {
     throw new UnsupportedOperationException("Not implemented: receiveTriggerWebhookCallable()");
   }
 
-  public UnaryCallable<CreateWorkerPoolRequest, WorkerPool> createWorkerPoolCallable() {
+  public OperationCallable<CreateWorkerPoolRequest, WorkerPool, CreateWorkerPoolOperationMetadata>
+      createWorkerPoolOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: createWorkerPoolOperationCallable()");
+  }
+
+  public UnaryCallable<CreateWorkerPoolRequest, Operation> createWorkerPoolCallable() {
     throw new UnsupportedOperationException("Not implemented: createWorkerPoolCallable()");
   }
 
@@ -147,12 +156,27 @@ public abstract class CloudBuildStub implements BackgroundResource {
     throw new UnsupportedOperationException("Not implemented: getWorkerPoolCallable()");
   }
 
-  public UnaryCallable<DeleteWorkerPoolRequest, Empty> deleteWorkerPoolCallable() {
+  public OperationCallable<DeleteWorkerPoolRequest, Empty, DeleteWorkerPoolOperationMetadata>
+      deleteWorkerPoolOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: deleteWorkerPoolOperationCallable()");
+  }
+
+  public UnaryCallable<DeleteWorkerPoolRequest, Operation> deleteWorkerPoolCallable() {
     throw new UnsupportedOperationException("Not implemented: deleteWorkerPoolCallable()");
   }
 
-  public UnaryCallable<UpdateWorkerPoolRequest, WorkerPool> updateWorkerPoolCallable() {
+  public OperationCallable<UpdateWorkerPoolRequest, WorkerPool, UpdateWorkerPoolOperationMetadata>
+      updateWorkerPoolOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: updateWorkerPoolOperationCallable()");
+  }
+
+  public UnaryCallable<UpdateWorkerPoolRequest, Operation> updateWorkerPoolCallable() {
     throw new UnsupportedOperationException("Not implemented: updateWorkerPoolCallable()");
+  }
+
+  public UnaryCallable<ListWorkerPoolsRequest, ListWorkerPoolsPagedResponse>
+      listWorkerPoolsPagedCallable() {
+    throw new UnsupportedOperationException("Not implemented: listWorkerPoolsPagedCallable()");
   }
 
   public UnaryCallable<ListWorkerPoolsRequest, ListWorkerPoolsResponse> listWorkerPoolsCallable() {

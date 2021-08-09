@@ -27,11 +27,13 @@ public interface GetWorkerPoolRequestOrBuilder
    *
    *
    * <pre>
-   * The field will contain name of the resource requested, for example:
-   * "projects/project-1/workerPools/workerpool-name"
+   * Required. The name of the `WorkerPool` to retrieve.
+   * Format: `projects/{project}/locations/{location}/workerPools/{workerPool}`.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>
+   * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The name.
    */
@@ -40,11 +42,13 @@ public interface GetWorkerPoolRequestOrBuilder
    *
    *
    * <pre>
-   * The field will contain name of the resource requested, for example:
-   * "projects/project-1/workerPools/workerpool-name"
+   * Required. The name of the `WorkerPool` to retrieve.
+   * Format: `projects/{project}/locations/{location}/workerPools/{workerPool}`.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>
+   * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The bytes for name.
    */

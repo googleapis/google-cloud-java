@@ -18,6 +18,7 @@ package com.google.cloud.devtools.cloudbuild.v1.stub;
 
 import static com.google.cloud.devtools.cloudbuild.v1.CloudBuildClient.ListBuildTriggersPagedResponse;
 import static com.google.cloud.devtools.cloudbuild.v1.CloudBuildClient.ListBuildsPagedResponse;
+import static com.google.cloud.devtools.cloudbuild.v1.CloudBuildClient.ListWorkerPoolsPagedResponse;
 
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
@@ -25,7 +26,6 @@ import com.google.api.gax.grpc.GrpcCallSettings;
 import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
-import com.google.api.gax.rpc.RequestParamsExtractor;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloudbuild.v1.Build;
 import com.google.cloudbuild.v1.BuildOperationMetadata;
@@ -33,8 +33,10 @@ import com.google.cloudbuild.v1.BuildTrigger;
 import com.google.cloudbuild.v1.CancelBuildRequest;
 import com.google.cloudbuild.v1.CreateBuildRequest;
 import com.google.cloudbuild.v1.CreateBuildTriggerRequest;
+import com.google.cloudbuild.v1.CreateWorkerPoolOperationMetadata;
 import com.google.cloudbuild.v1.CreateWorkerPoolRequest;
 import com.google.cloudbuild.v1.DeleteBuildTriggerRequest;
+import com.google.cloudbuild.v1.DeleteWorkerPoolOperationMetadata;
 import com.google.cloudbuild.v1.DeleteWorkerPoolRequest;
 import com.google.cloudbuild.v1.GetBuildRequest;
 import com.google.cloudbuild.v1.GetBuildTriggerRequest;
@@ -50,6 +52,7 @@ import com.google.cloudbuild.v1.ReceiveTriggerWebhookResponse;
 import com.google.cloudbuild.v1.RetryBuildRequest;
 import com.google.cloudbuild.v1.RunBuildTriggerRequest;
 import com.google.cloudbuild.v1.UpdateBuildTriggerRequest;
+import com.google.cloudbuild.v1.UpdateWorkerPoolOperationMetadata;
 import com.google.cloudbuild.v1.UpdateWorkerPoolRequest;
 import com.google.cloudbuild.v1.WorkerPool;
 import com.google.common.collect.ImmutableMap;
@@ -59,7 +62,6 @@ import com.google.protobuf.Empty;
 import io.grpc.MethodDescriptor;
 import io.grpc.protobuf.ProtoUtils;
 import java.io.IOException;
-import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
@@ -184,14 +186,14 @@ public class GrpcCloudBuildStub extends CloudBuildStub {
                   ProtoUtils.marshaller(ReceiveTriggerWebhookResponse.getDefaultInstance()))
               .build();
 
-  private static final MethodDescriptor<CreateWorkerPoolRequest, WorkerPool>
+  private static final MethodDescriptor<CreateWorkerPoolRequest, Operation>
       createWorkerPoolMethodDescriptor =
-          MethodDescriptor.<CreateWorkerPoolRequest, WorkerPool>newBuilder()
+          MethodDescriptor.<CreateWorkerPoolRequest, Operation>newBuilder()
               .setType(MethodDescriptor.MethodType.UNARY)
               .setFullMethodName("google.devtools.cloudbuild.v1.CloudBuild/CreateWorkerPool")
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateWorkerPoolRequest.getDefaultInstance()))
-              .setResponseMarshaller(ProtoUtils.marshaller(WorkerPool.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
               .build();
 
   private static final MethodDescriptor<GetWorkerPoolRequest, WorkerPool>
@@ -204,24 +206,24 @@ public class GrpcCloudBuildStub extends CloudBuildStub {
               .setResponseMarshaller(ProtoUtils.marshaller(WorkerPool.getDefaultInstance()))
               .build();
 
-  private static final MethodDescriptor<DeleteWorkerPoolRequest, Empty>
+  private static final MethodDescriptor<DeleteWorkerPoolRequest, Operation>
       deleteWorkerPoolMethodDescriptor =
-          MethodDescriptor.<DeleteWorkerPoolRequest, Empty>newBuilder()
+          MethodDescriptor.<DeleteWorkerPoolRequest, Operation>newBuilder()
               .setType(MethodDescriptor.MethodType.UNARY)
               .setFullMethodName("google.devtools.cloudbuild.v1.CloudBuild/DeleteWorkerPool")
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteWorkerPoolRequest.getDefaultInstance()))
-              .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
               .build();
 
-  private static final MethodDescriptor<UpdateWorkerPoolRequest, WorkerPool>
+  private static final MethodDescriptor<UpdateWorkerPoolRequest, Operation>
       updateWorkerPoolMethodDescriptor =
-          MethodDescriptor.<UpdateWorkerPoolRequest, WorkerPool>newBuilder()
+          MethodDescriptor.<UpdateWorkerPoolRequest, Operation>newBuilder()
               .setType(MethodDescriptor.MethodType.UNARY)
               .setFullMethodName("google.devtools.cloudbuild.v1.CloudBuild/UpdateWorkerPool")
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateWorkerPoolRequest.getDefaultInstance()))
-              .setResponseMarshaller(ProtoUtils.marshaller(WorkerPool.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
               .build();
 
   private static final MethodDescriptor<ListWorkerPoolsRequest, ListWorkerPoolsResponse>
@@ -258,12 +260,22 @@ public class GrpcCloudBuildStub extends CloudBuildStub {
       runBuildTriggerOperationCallable;
   private final UnaryCallable<ReceiveTriggerWebhookRequest, ReceiveTriggerWebhookResponse>
       receiveTriggerWebhookCallable;
-  private final UnaryCallable<CreateWorkerPoolRequest, WorkerPool> createWorkerPoolCallable;
+  private final UnaryCallable<CreateWorkerPoolRequest, Operation> createWorkerPoolCallable;
+  private final OperationCallable<
+          CreateWorkerPoolRequest, WorkerPool, CreateWorkerPoolOperationMetadata>
+      createWorkerPoolOperationCallable;
   private final UnaryCallable<GetWorkerPoolRequest, WorkerPool> getWorkerPoolCallable;
-  private final UnaryCallable<DeleteWorkerPoolRequest, Empty> deleteWorkerPoolCallable;
-  private final UnaryCallable<UpdateWorkerPoolRequest, WorkerPool> updateWorkerPoolCallable;
+  private final UnaryCallable<DeleteWorkerPoolRequest, Operation> deleteWorkerPoolCallable;
+  private final OperationCallable<DeleteWorkerPoolRequest, Empty, DeleteWorkerPoolOperationMetadata>
+      deleteWorkerPoolOperationCallable;
+  private final UnaryCallable<UpdateWorkerPoolRequest, Operation> updateWorkerPoolCallable;
+  private final OperationCallable<
+          UpdateWorkerPoolRequest, WorkerPool, UpdateWorkerPoolOperationMetadata>
+      updateWorkerPoolOperationCallable;
   private final UnaryCallable<ListWorkerPoolsRequest, ListWorkerPoolsResponse>
       listWorkerPoolsCallable;
+  private final UnaryCallable<ListWorkerPoolsRequest, ListWorkerPoolsPagedResponse>
+      listWorkerPoolsPagedCallable;
 
   private final BackgroundResource backgroundResources;
   private final GrpcOperationsStub operationsStub;
@@ -311,102 +323,81 @@ public class GrpcCloudBuildStub extends CloudBuildStub {
         GrpcCallSettings.<CreateBuildRequest, Operation>newBuilder()
             .setMethodDescriptor(createBuildMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<CreateBuildRequest>() {
-                  @Override
-                  public Map<String, String> extract(CreateBuildRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("parent", String.valueOf(request.getParent()));
-                    params.put("project_id", String.valueOf(request.getProjectId()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("parent", String.valueOf(request.getParent()));
+                  params.put("project_id", String.valueOf(request.getProjectId()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<GetBuildRequest, Build> getBuildTransportSettings =
         GrpcCallSettings.<GetBuildRequest, Build>newBuilder()
             .setMethodDescriptor(getBuildMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<GetBuildRequest>() {
-                  @Override
-                  public Map<String, String> extract(GetBuildRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("id", String.valueOf(request.getId()));
-                    params.put("name", String.valueOf(request.getName()));
-                    params.put("project_id", String.valueOf(request.getProjectId()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("id", String.valueOf(request.getId()));
+                  params.put("name", String.valueOf(request.getName()));
+                  params.put("project_id", String.valueOf(request.getProjectId()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<ListBuildsRequest, ListBuildsResponse> listBuildsTransportSettings =
         GrpcCallSettings.<ListBuildsRequest, ListBuildsResponse>newBuilder()
             .setMethodDescriptor(listBuildsMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<ListBuildsRequest>() {
-                  @Override
-                  public Map<String, String> extract(ListBuildsRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("parent", String.valueOf(request.getParent()));
-                    params.put("project_id", String.valueOf(request.getProjectId()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("parent", String.valueOf(request.getParent()));
+                  params.put("project_id", String.valueOf(request.getProjectId()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<CancelBuildRequest, Build> cancelBuildTransportSettings =
         GrpcCallSettings.<CancelBuildRequest, Build>newBuilder()
             .setMethodDescriptor(cancelBuildMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<CancelBuildRequest>() {
-                  @Override
-                  public Map<String, String> extract(CancelBuildRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("id", String.valueOf(request.getId()));
-                    params.put("name", String.valueOf(request.getName()));
-                    params.put("project_id", String.valueOf(request.getProjectId()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("id", String.valueOf(request.getId()));
+                  params.put("name", String.valueOf(request.getName()));
+                  params.put("project_id", String.valueOf(request.getProjectId()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<RetryBuildRequest, Operation> retryBuildTransportSettings =
         GrpcCallSettings.<RetryBuildRequest, Operation>newBuilder()
             .setMethodDescriptor(retryBuildMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<RetryBuildRequest>() {
-                  @Override
-                  public Map<String, String> extract(RetryBuildRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("id", String.valueOf(request.getId()));
-                    params.put("name", String.valueOf(request.getName()));
-                    params.put("project_id", String.valueOf(request.getProjectId()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("id", String.valueOf(request.getId()));
+                  params.put("name", String.valueOf(request.getName()));
+                  params.put("project_id", String.valueOf(request.getProjectId()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<CreateBuildTriggerRequest, BuildTrigger> createBuildTriggerTransportSettings =
         GrpcCallSettings.<CreateBuildTriggerRequest, BuildTrigger>newBuilder()
             .setMethodDescriptor(createBuildTriggerMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<CreateBuildTriggerRequest>() {
-                  @Override
-                  public Map<String, String> extract(CreateBuildTriggerRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("parent", String.valueOf(request.getParent()));
-                    params.put("project_id", String.valueOf(request.getProjectId()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("parent", String.valueOf(request.getParent()));
+                  params.put("project_id", String.valueOf(request.getProjectId()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<GetBuildTriggerRequest, BuildTrigger> getBuildTriggerTransportSettings =
         GrpcCallSettings.<GetBuildTriggerRequest, BuildTrigger>newBuilder()
             .setMethodDescriptor(getBuildTriggerMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<GetBuildTriggerRequest>() {
-                  @Override
-                  public Map<String, String> extract(GetBuildTriggerRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("name", String.valueOf(request.getName()));
-                    params.put("project_id", String.valueOf(request.getProjectId()));
-                    params.put("trigger_id", String.valueOf(request.getTriggerId()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  params.put("project_id", String.valueOf(request.getProjectId()));
+                  params.put("trigger_id", String.valueOf(request.getTriggerId()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<ListBuildTriggersRequest, ListBuildTriggersResponse>
@@ -414,61 +405,49 @@ public class GrpcCloudBuildStub extends CloudBuildStub {
             GrpcCallSettings.<ListBuildTriggersRequest, ListBuildTriggersResponse>newBuilder()
                 .setMethodDescriptor(listBuildTriggersMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<ListBuildTriggersRequest>() {
-                      @Override
-                      public Map<String, String> extract(ListBuildTriggersRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("parent", String.valueOf(request.getParent()));
-                        params.put("project_id", String.valueOf(request.getProjectId()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("parent", String.valueOf(request.getParent()));
+                      params.put("project_id", String.valueOf(request.getProjectId()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<DeleteBuildTriggerRequest, Empty> deleteBuildTriggerTransportSettings =
         GrpcCallSettings.<DeleteBuildTriggerRequest, Empty>newBuilder()
             .setMethodDescriptor(deleteBuildTriggerMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<DeleteBuildTriggerRequest>() {
-                  @Override
-                  public Map<String, String> extract(DeleteBuildTriggerRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("name", String.valueOf(request.getName()));
-                    params.put("project_id", String.valueOf(request.getProjectId()));
-                    params.put("trigger_id", String.valueOf(request.getTriggerId()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  params.put("project_id", String.valueOf(request.getProjectId()));
+                  params.put("trigger_id", String.valueOf(request.getTriggerId()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<UpdateBuildTriggerRequest, BuildTrigger> updateBuildTriggerTransportSettings =
         GrpcCallSettings.<UpdateBuildTriggerRequest, BuildTrigger>newBuilder()
             .setMethodDescriptor(updateBuildTriggerMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<UpdateBuildTriggerRequest>() {
-                  @Override
-                  public Map<String, String> extract(UpdateBuildTriggerRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("project_id", String.valueOf(request.getProjectId()));
-                    params.put(
-                        "trigger.resource_name",
-                        String.valueOf(request.getTrigger().getResourceName()));
-                    params.put("trigger_id", String.valueOf(request.getTriggerId()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("project_id", String.valueOf(request.getProjectId()));
+                  params.put(
+                      "trigger.resource_name",
+                      String.valueOf(request.getTrigger().getResourceName()));
+                  params.put("trigger_id", String.valueOf(request.getTriggerId()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<RunBuildTriggerRequest, Operation> runBuildTriggerTransportSettings =
         GrpcCallSettings.<RunBuildTriggerRequest, Operation>newBuilder()
             .setMethodDescriptor(runBuildTriggerMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<RunBuildTriggerRequest>() {
-                  @Override
-                  public Map<String, String> extract(RunBuildTriggerRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("name", String.valueOf(request.getName()));
-                    params.put("project_id", String.valueOf(request.getProjectId()));
-                    params.put("trigger_id", String.valueOf(request.getTriggerId()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  params.put("project_id", String.valueOf(request.getProjectId()));
+                  params.put("trigger_id", String.valueOf(request.getTriggerId()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<ReceiveTriggerWebhookRequest, ReceiveTriggerWebhookResponse>
@@ -477,37 +456,64 @@ public class GrpcCloudBuildStub extends CloudBuildStub {
                 .<ReceiveTriggerWebhookRequest, ReceiveTriggerWebhookResponse>newBuilder()
                 .setMethodDescriptor(receiveTriggerWebhookMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<ReceiveTriggerWebhookRequest>() {
-                      @Override
-                      public Map<String, String> extract(ReceiveTriggerWebhookRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("name", String.valueOf(request.getName()));
-                        params.put("project_id", String.valueOf(request.getProjectId()));
-                        params.put("trigger", String.valueOf(request.getTrigger()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("name", String.valueOf(request.getName()));
+                      params.put("project_id", String.valueOf(request.getProjectId()));
+                      params.put("trigger", String.valueOf(request.getTrigger()));
+                      return params.build();
                     })
                 .build();
-    GrpcCallSettings<CreateWorkerPoolRequest, WorkerPool> createWorkerPoolTransportSettings =
-        GrpcCallSettings.<CreateWorkerPoolRequest, WorkerPool>newBuilder()
+    GrpcCallSettings<CreateWorkerPoolRequest, Operation> createWorkerPoolTransportSettings =
+        GrpcCallSettings.<CreateWorkerPoolRequest, Operation>newBuilder()
             .setMethodDescriptor(createWorkerPoolMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("parent", String.valueOf(request.getParent()));
+                  return params.build();
+                })
             .build();
     GrpcCallSettings<GetWorkerPoolRequest, WorkerPool> getWorkerPoolTransportSettings =
         GrpcCallSettings.<GetWorkerPoolRequest, WorkerPool>newBuilder()
             .setMethodDescriptor(getWorkerPoolMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  return params.build();
+                })
             .build();
-    GrpcCallSettings<DeleteWorkerPoolRequest, Empty> deleteWorkerPoolTransportSettings =
-        GrpcCallSettings.<DeleteWorkerPoolRequest, Empty>newBuilder()
+    GrpcCallSettings<DeleteWorkerPoolRequest, Operation> deleteWorkerPoolTransportSettings =
+        GrpcCallSettings.<DeleteWorkerPoolRequest, Operation>newBuilder()
             .setMethodDescriptor(deleteWorkerPoolMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  return params.build();
+                })
             .build();
-    GrpcCallSettings<UpdateWorkerPoolRequest, WorkerPool> updateWorkerPoolTransportSettings =
-        GrpcCallSettings.<UpdateWorkerPoolRequest, WorkerPool>newBuilder()
+    GrpcCallSettings<UpdateWorkerPoolRequest, Operation> updateWorkerPoolTransportSettings =
+        GrpcCallSettings.<UpdateWorkerPoolRequest, Operation>newBuilder()
             .setMethodDescriptor(updateWorkerPoolMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("worker_pool.name", String.valueOf(request.getWorkerPool().getName()));
+                  return params.build();
+                })
             .build();
     GrpcCallSettings<ListWorkerPoolsRequest, ListWorkerPoolsResponse>
         listWorkerPoolsTransportSettings =
             GrpcCallSettings.<ListWorkerPoolsRequest, ListWorkerPoolsResponse>newBuilder()
                 .setMethodDescriptor(listWorkerPoolsMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("parent", String.valueOf(request.getParent()));
+                      return params.build();
+                    })
                 .build();
 
     this.createBuildCallable =
@@ -585,17 +591,38 @@ public class GrpcCloudBuildStub extends CloudBuildStub {
     this.createWorkerPoolCallable =
         callableFactory.createUnaryCallable(
             createWorkerPoolTransportSettings, settings.createWorkerPoolSettings(), clientContext);
+    this.createWorkerPoolOperationCallable =
+        callableFactory.createOperationCallable(
+            createWorkerPoolTransportSettings,
+            settings.createWorkerPoolOperationSettings(),
+            clientContext,
+            operationsStub);
     this.getWorkerPoolCallable =
         callableFactory.createUnaryCallable(
             getWorkerPoolTransportSettings, settings.getWorkerPoolSettings(), clientContext);
     this.deleteWorkerPoolCallable =
         callableFactory.createUnaryCallable(
             deleteWorkerPoolTransportSettings, settings.deleteWorkerPoolSettings(), clientContext);
+    this.deleteWorkerPoolOperationCallable =
+        callableFactory.createOperationCallable(
+            deleteWorkerPoolTransportSettings,
+            settings.deleteWorkerPoolOperationSettings(),
+            clientContext,
+            operationsStub);
     this.updateWorkerPoolCallable =
         callableFactory.createUnaryCallable(
             updateWorkerPoolTransportSettings, settings.updateWorkerPoolSettings(), clientContext);
+    this.updateWorkerPoolOperationCallable =
+        callableFactory.createOperationCallable(
+            updateWorkerPoolTransportSettings,
+            settings.updateWorkerPoolOperationSettings(),
+            clientContext,
+            operationsStub);
     this.listWorkerPoolsCallable =
         callableFactory.createUnaryCallable(
+            listWorkerPoolsTransportSettings, settings.listWorkerPoolsSettings(), clientContext);
+    this.listWorkerPoolsPagedCallable =
+        callableFactory.createPagedCallable(
             listWorkerPoolsTransportSettings, settings.listWorkerPoolsSettings(), clientContext);
 
     this.backgroundResources =
@@ -698,8 +725,14 @@ public class GrpcCloudBuildStub extends CloudBuildStub {
   }
 
   @Override
-  public UnaryCallable<CreateWorkerPoolRequest, WorkerPool> createWorkerPoolCallable() {
+  public UnaryCallable<CreateWorkerPoolRequest, Operation> createWorkerPoolCallable() {
     return createWorkerPoolCallable;
+  }
+
+  @Override
+  public OperationCallable<CreateWorkerPoolRequest, WorkerPool, CreateWorkerPoolOperationMetadata>
+      createWorkerPoolOperationCallable() {
+    return createWorkerPoolOperationCallable;
   }
 
   @Override
@@ -708,13 +741,25 @@ public class GrpcCloudBuildStub extends CloudBuildStub {
   }
 
   @Override
-  public UnaryCallable<DeleteWorkerPoolRequest, Empty> deleteWorkerPoolCallable() {
+  public UnaryCallable<DeleteWorkerPoolRequest, Operation> deleteWorkerPoolCallable() {
     return deleteWorkerPoolCallable;
   }
 
   @Override
-  public UnaryCallable<UpdateWorkerPoolRequest, WorkerPool> updateWorkerPoolCallable() {
+  public OperationCallable<DeleteWorkerPoolRequest, Empty, DeleteWorkerPoolOperationMetadata>
+      deleteWorkerPoolOperationCallable() {
+    return deleteWorkerPoolOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<UpdateWorkerPoolRequest, Operation> updateWorkerPoolCallable() {
     return updateWorkerPoolCallable;
+  }
+
+  @Override
+  public OperationCallable<UpdateWorkerPoolRequest, WorkerPool, UpdateWorkerPoolOperationMetadata>
+      updateWorkerPoolOperationCallable() {
+    return updateWorkerPoolOperationCallable;
   }
 
   @Override
@@ -723,8 +768,20 @@ public class GrpcCloudBuildStub extends CloudBuildStub {
   }
 
   @Override
+  public UnaryCallable<ListWorkerPoolsRequest, ListWorkerPoolsPagedResponse>
+      listWorkerPoolsPagedCallable() {
+    return listWorkerPoolsPagedCallable;
+  }
+
+  @Override
   public final void close() {
-    shutdown();
+    try {
+      backgroundResources.close();
+    } catch (RuntimeException e) {
+      throw e;
+    } catch (Exception e) {
+      throw new IllegalStateException("Failed to close resource", e);
+    }
   }
 
   @Override
