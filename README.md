@@ -42,7 +42,7 @@ If you are using Maven without BOM, add this to your dependencies:
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-logging</artifactId>
-  <version>2.3.2</version>
+  <version>3.0.0</version>
 </dependency>
 
 ```
@@ -57,13 +57,13 @@ compile 'com.google.cloud:google-cloud-logging'
 If you are using Gradle without BOM, add this to your dependencies
 
 ```Groovy
-compile 'com.google.cloud:google-cloud-logging:2.3.2'
+compile 'com.google.cloud:google-cloud-logging:3.0.0'
 ```
 
 If you are using SBT, add this to your dependencies
 
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-logging" % "2.3.2"
+libraryDependencies += "com.google.cloud" % "google-cloud-logging" % "3.0.0"
 ```
 
 ## Authentication
