@@ -16,4 +16,12 @@
     <className>com/google/devtools/artifactregistry/v1beta2/*OrBuilder</className>
     <method>boolean has*(*)</method>
   </difference>
+  <difference>
+    <differenceType>8001</differenceType>
+    <className>com/google/devtools/artifactregistry/v1beta2/FileName*</className>
+  </difference>
+  <difference>
+    <differenceType>8001</differenceType>
+    <className>com/google/devtools/artifactregistry/v1beta2/RepositoryName*</className>
+  </difference>
 </differences>

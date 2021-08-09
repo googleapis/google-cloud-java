@@ -147,7 +147,7 @@ public class ArtifactRegistryClientTest {
   public void getRepositoryTest() throws Exception {
     Repository expectedResponse =
         Repository.newBuilder()
-            .setName(RepositoryName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]").toString())
+            .setName("name3373707")
             .setDescription("description-1724546052")
             .putAllLabels(new HashMap<String, String>())
             .setCreateTime(Timestamp.newBuilder().build())
@@ -190,7 +190,7 @@ public class ArtifactRegistryClientTest {
   public void createRepositoryTest() throws Exception {
     Repository expectedResponse =
         Repository.newBuilder()
-            .setName(RepositoryName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]").toString())
+            .setName("name3373707")
             .setDescription("description-1724546052")
             .putAllLabels(new HashMap<String, String>())
             .setCreateTime(Timestamp.newBuilder().build())
@@ -248,7 +248,7 @@ public class ArtifactRegistryClientTest {
   public void updateRepositoryTest() throws Exception {
     Repository expectedResponse =
         Repository.newBuilder()
-            .setName(RepositoryName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]").toString())
+            .setName("name3373707")
             .setDescription("description-1724546052")
             .putAllLabels(new HashMap<String, String>())
             .setCreateTime(Timestamp.newBuilder().build())
@@ -635,7 +635,7 @@ public class ArtifactRegistryClientTest {
   public void getFileTest() throws Exception {
     File expectedResponse =
         File.newBuilder()
-            .setName(FileName.of("[PROJECT]", "[LOCATION]", "[REPO]", "[FILE]").toString())
+            .setName("name3373707")
             .setSizeBytes(-1796325715)
             .addAllHashes(new ArrayList<Hash>())
             .setCreateTime(Timestamp.newBuilder().build())
@@ -881,7 +881,7 @@ public class ArtifactRegistryClientTest {
 
     SetIamPolicyRequest request =
         SetIamPolicyRequest.newBuilder()
-            .setResource(RepositoryName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]").toString())
+            .setResource("SetIamPolicyRequest1223629066".toString())
             .setPolicy(Policy.newBuilder().build())
             .build();
 
@@ -908,7 +908,7 @@ public class ArtifactRegistryClientTest {
     try {
       SetIamPolicyRequest request =
           SetIamPolicyRequest.newBuilder()
-              .setResource(RepositoryName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]").toString())
+              .setResource("SetIamPolicyRequest1223629066".toString())
               .setPolicy(Policy.newBuilder().build())
               .build();
       client.setIamPolicy(request);
@@ -930,7 +930,7 @@ public class ArtifactRegistryClientTest {
 
     GetIamPolicyRequest request =
         GetIamPolicyRequest.newBuilder()
-            .setResource(RepositoryName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]").toString())
+            .setResource("GetIamPolicyRequest-1527610370".toString())
             .setOptions(GetPolicyOptions.newBuilder().build())
             .build();
 
@@ -957,7 +957,7 @@ public class ArtifactRegistryClientTest {
     try {
       GetIamPolicyRequest request =
           GetIamPolicyRequest.newBuilder()
-              .setResource(RepositoryName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]").toString())
+              .setResource("GetIamPolicyRequest-1527610370".toString())
               .setOptions(GetPolicyOptions.newBuilder().build())
               .build();
       client.getIamPolicy(request);
@@ -975,7 +975,7 @@ public class ArtifactRegistryClientTest {
 
     TestIamPermissionsRequest request =
         TestIamPermissionsRequest.newBuilder()
-            .setResource(RepositoryName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]").toString())
+            .setResource("TestIamPermissionsRequest942398222".toString())
             .addAllPermissions(new ArrayList<String>())
             .build();
 
@@ -1002,7 +1002,7 @@ public class ArtifactRegistryClientTest {
     try {
       TestIamPermissionsRequest request =
           TestIamPermissionsRequest.newBuilder()
-              .setResource(RepositoryName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]").toString())
+              .setResource("TestIamPermissionsRequest942398222".toString())
               .addAllPermissions(new ArrayList<String>())
               .build();
       client.testIamPermissions(request);

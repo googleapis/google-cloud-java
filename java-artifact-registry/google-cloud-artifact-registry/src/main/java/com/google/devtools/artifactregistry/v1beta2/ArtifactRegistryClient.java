@@ -16,7 +16,6 @@
 
 package com.google.devtools.artifactregistry.v1beta2;
 
-import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
 import com.google.api.core.BetaApi;
@@ -1740,7 +1739,7 @@ public class ArtifactRegistryClient implements BackgroundResource {
    * try (ArtifactRegistryClient artifactRegistryClient = ArtifactRegistryClient.create()) {
    *   SetIamPolicyRequest request =
    *       SetIamPolicyRequest.newBuilder()
-   *           .setResource(RepositoryName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]").toString())
+   *           .setResource("SetIamPolicyRequest1223629066".toString())
    *           .setPolicy(Policy.newBuilder().build())
    *           .build();
    *   Policy response = artifactRegistryClient.setIamPolicy(request);
@@ -1764,7 +1763,7 @@ public class ArtifactRegistryClient implements BackgroundResource {
    * try (ArtifactRegistryClient artifactRegistryClient = ArtifactRegistryClient.create()) {
    *   SetIamPolicyRequest request =
    *       SetIamPolicyRequest.newBuilder()
-   *           .setResource(RepositoryName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]").toString())
+   *           .setResource("SetIamPolicyRequest1223629066".toString())
    *           .setPolicy(Policy.newBuilder().build())
    *           .build();
    *   ApiFuture<Policy> future = artifactRegistryClient.setIamPolicyCallable().futureCall(request);
@@ -1787,7 +1786,7 @@ public class ArtifactRegistryClient implements BackgroundResource {
    * try (ArtifactRegistryClient artifactRegistryClient = ArtifactRegistryClient.create()) {
    *   GetIamPolicyRequest request =
    *       GetIamPolicyRequest.newBuilder()
-   *           .setResource(RepositoryName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]").toString())
+   *           .setResource("GetIamPolicyRequest-1527610370".toString())
    *           .setOptions(GetPolicyOptions.newBuilder().build())
    *           .build();
    *   Policy response = artifactRegistryClient.getIamPolicy(request);
@@ -1811,7 +1810,7 @@ public class ArtifactRegistryClient implements BackgroundResource {
    * try (ArtifactRegistryClient artifactRegistryClient = ArtifactRegistryClient.create()) {
    *   GetIamPolicyRequest request =
    *       GetIamPolicyRequest.newBuilder()
-   *           .setResource(RepositoryName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]").toString())
+   *           .setResource("GetIamPolicyRequest-1527610370".toString())
    *           .setOptions(GetPolicyOptions.newBuilder().build())
    *           .build();
    *   ApiFuture<Policy> future = artifactRegistryClient.getIamPolicyCallable().futureCall(request);
@@ -1834,7 +1833,7 @@ public class ArtifactRegistryClient implements BackgroundResource {
    * try (ArtifactRegistryClient artifactRegistryClient = ArtifactRegistryClient.create()) {
    *   TestIamPermissionsRequest request =
    *       TestIamPermissionsRequest.newBuilder()
-   *           .setResource(RepositoryName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]").toString())
+   *           .setResource("TestIamPermissionsRequest942398222".toString())
    *           .addAllPermissions(new ArrayList<String>())
    *           .build();
    *   TestIamPermissionsResponse response = artifactRegistryClient.testIamPermissions(request);
@@ -1858,7 +1857,7 @@ public class ArtifactRegistryClient implements BackgroundResource {
    * try (ArtifactRegistryClient artifactRegistryClient = ArtifactRegistryClient.create()) {
    *   TestIamPermissionsRequest request =
    *       TestIamPermissionsRequest.newBuilder()
-   *           .setResource(RepositoryName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]").toString())
+   *           .setResource("TestIamPermissionsRequest942398222".toString())
    *           .addAllPermissions(new ArrayList<String>())
    *           .build();
    *   ApiFuture<TestIamPermissionsResponse> future =
@@ -1918,12 +1917,7 @@ public class ArtifactRegistryClient implements BackgroundResource {
           ListRepositoriesPage.createEmptyPage().createPageAsync(context, futureResponse);
       return ApiFutures.transform(
           futurePage,
-          new ApiFunction<ListRepositoriesPage, ListRepositoriesPagedResponse>() {
-            @Override
-            public ListRepositoriesPagedResponse apply(ListRepositoriesPage input) {
-              return new ListRepositoriesPagedResponse(input);
-            }
-          },
+          input -> new ListRepositoriesPagedResponse(input),
           MoreExecutors.directExecutor());
     }
 
@@ -2000,12 +1994,7 @@ public class ArtifactRegistryClient implements BackgroundResource {
           ListPackagesPage.createEmptyPage().createPageAsync(context, futureResponse);
       return ApiFutures.transform(
           futurePage,
-          new ApiFunction<ListPackagesPage, ListPackagesPagedResponse>() {
-            @Override
-            public ListPackagesPagedResponse apply(ListPackagesPage input) {
-              return new ListPackagesPagedResponse(input);
-            }
-          },
+          input -> new ListPackagesPagedResponse(input),
           MoreExecutors.directExecutor());
     }
 
@@ -2080,12 +2069,7 @@ public class ArtifactRegistryClient implements BackgroundResource {
           ListVersionsPage.createEmptyPage().createPageAsync(context, futureResponse);
       return ApiFutures.transform(
           futurePage,
-          new ApiFunction<ListVersionsPage, ListVersionsPagedResponse>() {
-            @Override
-            public ListVersionsPagedResponse apply(ListVersionsPage input) {
-              return new ListVersionsPagedResponse(input);
-            }
-          },
+          input -> new ListVersionsPagedResponse(input),
           MoreExecutors.directExecutor());
     }
 
@@ -2155,14 +2139,7 @@ public class ArtifactRegistryClient implements BackgroundResource {
       ApiFuture<ListFilesPage> futurePage =
           ListFilesPage.createEmptyPage().createPageAsync(context, futureResponse);
       return ApiFutures.transform(
-          futurePage,
-          new ApiFunction<ListFilesPage, ListFilesPagedResponse>() {
-            @Override
-            public ListFilesPagedResponse apply(ListFilesPage input) {
-              return new ListFilesPagedResponse(input);
-            }
-          },
-          MoreExecutors.directExecutor());
+          futurePage, input -> new ListFilesPagedResponse(input), MoreExecutors.directExecutor());
     }
 
     private ListFilesPagedResponse(ListFilesPage page) {
@@ -2227,14 +2204,7 @@ public class ArtifactRegistryClient implements BackgroundResource {
       ApiFuture<ListTagsPage> futurePage =
           ListTagsPage.createEmptyPage().createPageAsync(context, futureResponse);
       return ApiFutures.transform(
-          futurePage,
-          new ApiFunction<ListTagsPage, ListTagsPagedResponse>() {
-            @Override
-            public ListTagsPagedResponse apply(ListTagsPage input) {
-              return new ListTagsPagedResponse(input);
-            }
-          },
-          MoreExecutors.directExecutor());
+          futurePage, input -> new ListTagsPagedResponse(input), MoreExecutors.directExecutor());
     }
 
     private ListTagsPagedResponse(ListTagsPage page) {
