@@ -21,7 +21,6 @@ import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.grpc.GrpcCallSettings;
 import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
-import com.google.api.gax.rpc.RequestParamsExtractor;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.common.collect.ImmutableMap;
 import com.google.devtools.clouddebugger.v2.DeleteBreakpointRequest;
@@ -38,7 +37,6 @@ import com.google.protobuf.Empty;
 import io.grpc.MethodDescriptor;
 import io.grpc.protobuf.ProtoUtils;
 import java.io.IOException;
-import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
@@ -156,41 +154,32 @@ public class GrpcDebugger2Stub extends Debugger2Stub {
         GrpcCallSettings.<SetBreakpointRequest, SetBreakpointResponse>newBuilder()
             .setMethodDescriptor(setBreakpointMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<SetBreakpointRequest>() {
-                  @Override
-                  public Map<String, String> extract(SetBreakpointRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("debuggee_id", String.valueOf(request.getDebuggeeId()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("debuggee_id", String.valueOf(request.getDebuggeeId()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<GetBreakpointRequest, GetBreakpointResponse> getBreakpointTransportSettings =
         GrpcCallSettings.<GetBreakpointRequest, GetBreakpointResponse>newBuilder()
             .setMethodDescriptor(getBreakpointMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<GetBreakpointRequest>() {
-                  @Override
-                  public Map<String, String> extract(GetBreakpointRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("breakpoint_id", String.valueOf(request.getBreakpointId()));
-                    params.put("debuggee_id", String.valueOf(request.getDebuggeeId()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("breakpoint_id", String.valueOf(request.getBreakpointId()));
+                  params.put("debuggee_id", String.valueOf(request.getDebuggeeId()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<DeleteBreakpointRequest, Empty> deleteBreakpointTransportSettings =
         GrpcCallSettings.<DeleteBreakpointRequest, Empty>newBuilder()
             .setMethodDescriptor(deleteBreakpointMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<DeleteBreakpointRequest>() {
-                  @Override
-                  public Map<String, String> extract(DeleteBreakpointRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("breakpoint_id", String.valueOf(request.getBreakpointId()));
-                    params.put("debuggee_id", String.valueOf(request.getDebuggeeId()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("breakpoint_id", String.valueOf(request.getBreakpointId()));
+                  params.put("debuggee_id", String.valueOf(request.getDebuggeeId()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<ListBreakpointsRequest, ListBreakpointsResponse>
@@ -198,13 +187,10 @@ public class GrpcDebugger2Stub extends Debugger2Stub {
             GrpcCallSettings.<ListBreakpointsRequest, ListBreakpointsResponse>newBuilder()
                 .setMethodDescriptor(listBreakpointsMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<ListBreakpointsRequest>() {
-                      @Override
-                      public Map<String, String> extract(ListBreakpointsRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("debuggee_id", String.valueOf(request.getDebuggeeId()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("debuggee_id", String.valueOf(request.getDebuggeeId()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<ListDebuggeesRequest, ListDebuggeesResponse> listDebuggeesTransportSettings =
@@ -263,7 +249,13 @@ public class GrpcDebugger2Stub extends Debugger2Stub {
 
   @Override
   public final void close() {
-    shutdown();
+    try {
+      backgroundResources.close();
+    } catch (RuntimeException e) {
+      throw e;
+    } catch (Exception e) {
+      throw new IllegalStateException("Failed to close resource", e);
+    }
   }
 
   @Override
