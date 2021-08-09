@@ -490,7 +490,7 @@ public final class ValidationError extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * The detailed error messsage.
+   * The detailed error message.
    * </pre>
    *
    * <code>string error_message = 4;</code>
@@ -513,7 +513,7 @@ public final class ValidationError extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * The detailed error messsage.
+   * The detailed error message.
    * </pre>
    *
    * <code>string error_message = 4;</code>
@@ -1280,7 +1280,7 @@ public final class ValidationError extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The detailed error messsage.
+     * The detailed error message.
      * </pre>
      *
      * <code>string error_message = 4;</code>
@@ -1302,7 +1302,7 @@ public final class ValidationError extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The detailed error messsage.
+     * The detailed error message.
      * </pre>
      *
      * <code>string error_message = 4;</code>
@@ -1324,7 +1324,7 @@ public final class ValidationError extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The detailed error messsage.
+     * The detailed error message.
      * </pre>
      *
      * <code>string error_message = 4;</code>
@@ -1345,7 +1345,7 @@ public final class ValidationError extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The detailed error messsage.
+     * The detailed error message.
      * </pre>
      *
      * <code>string error_message = 4;</code>
@@ -1362,7 +1362,7 @@ public final class ValidationError extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The detailed error messsage.
+     * The detailed error message.
      * </pre>
      *
      * <code>string error_message = 4;</code>
