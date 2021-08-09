@@ -244,10 +244,10 @@ public class BackupName implements ResourceName {
     }
 
     private Builder(BackupName backupName) {
-      project = backupName.project;
-      instance = backupName.instance;
-      cluster = backupName.cluster;
-      backup = backupName.backup;
+      this.project = backupName.project;
+      this.instance = backupName.instance;
+      this.cluster = backupName.cluster;
+      this.backup = backupName.backup;
     }
 
     public BackupName build() {

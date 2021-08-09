@@ -311,14 +311,13 @@ public class BaseBigtableTableAdminSettings extends ClientSettings<BaseBigtableT
       return ((BigtableTableAdminStubSettings.Builder) getStubSettings());
     }
 
-    // NEXT_MAJOR_VER: remove 'throws Exception'.
     /**
      * Applies the given settings updater function to all of the unary API methods in this service.
      *
      * <p>Note: This method does not support applying settings to streaming methods.
      */
     public Builder applyToAllUnaryMethods(
-        ApiFunction<UnaryCallSettings.Builder<?, ?>, Void> settingsUpdater) throws Exception {
+        ApiFunction<UnaryCallSettings.Builder<?, ?>, Void> settingsUpdater) {
       super.applyToAllUnaryMethods(
           getStubSettingsBuilder().unaryMethodSettingsBuilders(), settingsUpdater);
       return this;

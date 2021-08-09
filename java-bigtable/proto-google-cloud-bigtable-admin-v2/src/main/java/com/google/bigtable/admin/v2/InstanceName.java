@@ -181,8 +181,8 @@ public class InstanceName implements ResourceName {
     }
 
     private Builder(InstanceName instanceName) {
-      project = instanceName.project;
-      instance = instanceName.instance;
+      this.project = instanceName.project;
+      this.instance = instanceName.instance;
     }
 
     public InstanceName build() {

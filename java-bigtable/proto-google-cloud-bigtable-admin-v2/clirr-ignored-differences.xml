@@ -21,4 +21,14 @@
         <className>com/google/bigtable/admin/v2/*OrBuilder</className>
         <method>boolean has*(*)</method>
     </difference>
+    <!-- TODO: remove after 2.0.0 release-->
+    <difference>
+        <differenceType>8001</differenceType>
+        <className>com/google/bigtable/admin/v2/CryptoKeyName*</className>
+    </difference>
+    <!-- TODO: remove after 2.0.0 release-->
+    <difference>
+        <differenceType>8001</differenceType>
+        <className>com/google/bigtable/admin/v2/CryptoKeyVersionName*</className>
+    </difference>
 </differences>

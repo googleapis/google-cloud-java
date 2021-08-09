@@ -246,10 +246,10 @@ public class SnapshotName implements ResourceName {
     }
 
     private Builder(SnapshotName snapshotName) {
-      project = snapshotName.project;
-      instance = snapshotName.instance;
-      cluster = snapshotName.cluster;
-      snapshot = snapshotName.snapshot;
+      this.project = snapshotName.project;
+      this.instance = snapshotName.instance;
+      this.cluster = snapshotName.cluster;
+      this.snapshot = snapshotName.snapshot;
     }
 
     public SnapshotName build() {

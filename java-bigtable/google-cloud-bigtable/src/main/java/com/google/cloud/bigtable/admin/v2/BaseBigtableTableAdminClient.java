@@ -16,7 +16,6 @@
 
 package com.google.cloud.bigtable.admin.v2;
 
-import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
 import com.google.api.core.BetaApi;
@@ -3087,14 +3086,7 @@ public class BaseBigtableTableAdminClient implements BackgroundResource {
       ApiFuture<ListTablesPage> futurePage =
           ListTablesPage.createEmptyPage().createPageAsync(context, futureResponse);
       return ApiFutures.transform(
-          futurePage,
-          new ApiFunction<ListTablesPage, ListTablesPagedResponse>() {
-            @Override
-            public ListTablesPagedResponse apply(ListTablesPage input) {
-              return new ListTablesPagedResponse(input);
-            }
-          },
-          MoreExecutors.directExecutor());
+          futurePage, input -> new ListTablesPagedResponse(input), MoreExecutors.directExecutor());
     }
 
     private ListTablesPagedResponse(ListTablesPage page) {
@@ -3168,12 +3160,7 @@ public class BaseBigtableTableAdminClient implements BackgroundResource {
           ListSnapshotsPage.createEmptyPage().createPageAsync(context, futureResponse);
       return ApiFutures.transform(
           futurePage,
-          new ApiFunction<ListSnapshotsPage, ListSnapshotsPagedResponse>() {
-            @Override
-            public ListSnapshotsPagedResponse apply(ListSnapshotsPage input) {
-              return new ListSnapshotsPagedResponse(input);
-            }
-          },
+          input -> new ListSnapshotsPagedResponse(input),
           MoreExecutors.directExecutor());
     }
 
@@ -3248,14 +3235,7 @@ public class BaseBigtableTableAdminClient implements BackgroundResource {
       ApiFuture<ListBackupsPage> futurePage =
           ListBackupsPage.createEmptyPage().createPageAsync(context, futureResponse);
       return ApiFutures.transform(
-          futurePage,
-          new ApiFunction<ListBackupsPage, ListBackupsPagedResponse>() {
-            @Override
-            public ListBackupsPagedResponse apply(ListBackupsPage input) {
-              return new ListBackupsPagedResponse(input);
-            }
-          },
-          MoreExecutors.directExecutor());
+          futurePage, input -> new ListBackupsPagedResponse(input), MoreExecutors.directExecutor());
     }
 
     private ListBackupsPagedResponse(ListBackupsPage page) {

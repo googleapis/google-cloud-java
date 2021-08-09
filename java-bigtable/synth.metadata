@@ -4,15 +4,15 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/java-bigtable.git",
-        "sha": "1afeb4274bae0c5f754720155cb84adbfda74c93"
+        "sha": "3ec05d4dff8ee3799dd799ecf659610de031564a"
       }
     },
     {
       "git": {
         "name": "googleapis",
         "remote": "https://github.com/googleapis/googleapis.git",
-        "sha": "08c4eeb531c01ad031134dca94b18e3f7dd35902",
-        "internalRef": "378718217"
+        "sha": "d9eaf41de44d953458b18712a3f240bb4c564e48",
+        "internalRef": "388535346"
       }
     },
     {
@@ -175,8 +175,6 @@
     "proto-google-cloud-bigtable-admin-v2/src/main/java/com/google/bigtable/admin/v2/CreateTableFromSnapshotRequestOrBuilder.java",
     "proto-google-cloud-bigtable-admin-v2/src/main/java/com/google/bigtable/admin/v2/CreateTableRequest.java",
     "proto-google-cloud-bigtable-admin-v2/src/main/java/com/google/bigtable/admin/v2/CreateTableRequestOrBuilder.java",
-    "proto-google-cloud-bigtable-admin-v2/src/main/java/com/google/bigtable/admin/v2/CryptoKeyName.java",
-    "proto-google-cloud-bigtable-admin-v2/src/main/java/com/google/bigtable/admin/v2/CryptoKeyVersionName.java",
     "proto-google-cloud-bigtable-admin-v2/src/main/java/com/google/bigtable/admin/v2/DeleteAppProfileRequest.java",
     "proto-google-cloud-bigtable-admin-v2/src/main/java/com/google/bigtable/admin/v2/DeleteAppProfileRequestOrBuilder.java",
     "proto-google-cloud-bigtable-admin-v2/src/main/java/com/google/bigtable/admin/v2/DeleteBackupRequest.java",

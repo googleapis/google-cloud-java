@@ -158,7 +158,7 @@ public class ProjectName implements ResourceName {
     }
 
     private Builder(ProjectName projectName) {
-      project = projectName.project;
+      this.project = projectName.project;
     }
 
     public ProjectName build() {

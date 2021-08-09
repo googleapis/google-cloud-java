@@ -211,9 +211,9 @@ public class TableName implements ResourceName {
     }
 
     private Builder(TableName tableName) {
-      project = tableName.project;
-      instance = tableName.instance;
-      table = tableName.table;
+      this.project = tableName.project;
+      this.instance = tableName.instance;
+      this.table = tableName.table;
     }
 
     public TableName build() {

@@ -211,9 +211,9 @@ public class ClusterName implements ResourceName {
     }
 
     private Builder(ClusterName clusterName) {
-      project = clusterName.project;
-      instance = clusterName.instance;
-      cluster = clusterName.cluster;
+      this.project = clusterName.project;
+      this.instance = clusterName.instance;
+      this.cluster = clusterName.cluster;
     }
 
     public ClusterName build() {

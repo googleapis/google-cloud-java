@@ -203,12 +203,6 @@ public class BigtableTableAdminClientTest {
   }
 
   @Test
-  public void close() {
-    adminClient.close();
-    Mockito.verify(mockStub).close();
-  }
-
-  @Test
   public void testCreateTable() {
     // Setup
     com.google.bigtable.admin.v2.CreateTableRequest expectedRequest =

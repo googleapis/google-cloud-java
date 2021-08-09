@@ -211,9 +211,9 @@ public class AppProfileName implements ResourceName {
     }
 
     private Builder(AppProfileName appProfileName) {
-      project = appProfileName.project;
-      instance = appProfileName.instance;
-      appProfile = appProfileName.appProfile;
+      this.project = appProfileName.project;
+      this.instance = appProfileName.instance;
+      this.appProfile = appProfileName.appProfile;
     }
 
     public AppProfileName build() {

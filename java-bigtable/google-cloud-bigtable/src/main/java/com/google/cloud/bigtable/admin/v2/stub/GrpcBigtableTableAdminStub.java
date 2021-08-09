@@ -27,7 +27,6 @@ import com.google.api.gax.grpc.GrpcCallSettings;
 import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
-import com.google.api.gax.rpc.RequestParamsExtractor;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.bigtable.admin.v2.Backup;
 import com.google.bigtable.admin.v2.CheckConsistencyRequest;
@@ -72,7 +71,6 @@ import com.google.protobuf.Empty;
 import io.grpc.MethodDescriptor;
 import io.grpc.protobuf.ProtoUtils;
 import java.io.IOException;
-import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
@@ -375,13 +373,10 @@ public class GrpcBigtableTableAdminStub extends BigtableTableAdminStub {
         GrpcCallSettings.<CreateTableRequest, Table>newBuilder()
             .setMethodDescriptor(createTableMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<CreateTableRequest>() {
-                  @Override
-                  public Map<String, String> extract(CreateTableRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("parent", String.valueOf(request.getParent()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("parent", String.valueOf(request.getParent()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<CreateTableFromSnapshotRequest, Operation>
@@ -389,78 +384,60 @@ public class GrpcBigtableTableAdminStub extends BigtableTableAdminStub {
             GrpcCallSettings.<CreateTableFromSnapshotRequest, Operation>newBuilder()
                 .setMethodDescriptor(createTableFromSnapshotMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<CreateTableFromSnapshotRequest>() {
-                      @Override
-                      public Map<String, String> extract(CreateTableFromSnapshotRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("parent", String.valueOf(request.getParent()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("parent", String.valueOf(request.getParent()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<ListTablesRequest, ListTablesResponse> listTablesTransportSettings =
         GrpcCallSettings.<ListTablesRequest, ListTablesResponse>newBuilder()
             .setMethodDescriptor(listTablesMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<ListTablesRequest>() {
-                  @Override
-                  public Map<String, String> extract(ListTablesRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("parent", String.valueOf(request.getParent()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("parent", String.valueOf(request.getParent()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<GetTableRequest, Table> getTableTransportSettings =
         GrpcCallSettings.<GetTableRequest, Table>newBuilder()
             .setMethodDescriptor(getTableMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<GetTableRequest>() {
-                  @Override
-                  public Map<String, String> extract(GetTableRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("name", String.valueOf(request.getName()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<DeleteTableRequest, Empty> deleteTableTransportSettings =
         GrpcCallSettings.<DeleteTableRequest, Empty>newBuilder()
             .setMethodDescriptor(deleteTableMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<DeleteTableRequest>() {
-                  @Override
-                  public Map<String, String> extract(DeleteTableRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("name", String.valueOf(request.getName()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<ModifyColumnFamiliesRequest, Table> modifyColumnFamiliesTransportSettings =
         GrpcCallSettings.<ModifyColumnFamiliesRequest, Table>newBuilder()
             .setMethodDescriptor(modifyColumnFamiliesMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<ModifyColumnFamiliesRequest>() {
-                  @Override
-                  public Map<String, String> extract(ModifyColumnFamiliesRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("name", String.valueOf(request.getName()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<DropRowRangeRequest, Empty> dropRowRangeTransportSettings =
         GrpcCallSettings.<DropRowRangeRequest, Empty>newBuilder()
             .setMethodDescriptor(dropRowRangeMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<DropRowRangeRequest>() {
-                  @Override
-                  public Map<String, String> extract(DropRowRangeRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("name", String.valueOf(request.getName()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<GenerateConsistencyTokenRequest, GenerateConsistencyTokenResponse>
@@ -469,13 +446,10 @@ public class GrpcBigtableTableAdminStub extends BigtableTableAdminStub {
                 .<GenerateConsistencyTokenRequest, GenerateConsistencyTokenResponse>newBuilder()
                 .setMethodDescriptor(generateConsistencyTokenMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<GenerateConsistencyTokenRequest>() {
-                      @Override
-                      public Map<String, String> extract(GenerateConsistencyTokenRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("name", String.valueOf(request.getName()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("name", String.valueOf(request.getName()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<CheckConsistencyRequest, CheckConsistencyResponse>
@@ -483,169 +457,130 @@ public class GrpcBigtableTableAdminStub extends BigtableTableAdminStub {
             GrpcCallSettings.<CheckConsistencyRequest, CheckConsistencyResponse>newBuilder()
                 .setMethodDescriptor(checkConsistencyMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<CheckConsistencyRequest>() {
-                      @Override
-                      public Map<String, String> extract(CheckConsistencyRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("name", String.valueOf(request.getName()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("name", String.valueOf(request.getName()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<SnapshotTableRequest, Operation> snapshotTableTransportSettings =
         GrpcCallSettings.<SnapshotTableRequest, Operation>newBuilder()
             .setMethodDescriptor(snapshotTableMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<SnapshotTableRequest>() {
-                  @Override
-                  public Map<String, String> extract(SnapshotTableRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("name", String.valueOf(request.getName()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<GetSnapshotRequest, Snapshot> getSnapshotTransportSettings =
         GrpcCallSettings.<GetSnapshotRequest, Snapshot>newBuilder()
             .setMethodDescriptor(getSnapshotMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<GetSnapshotRequest>() {
-                  @Override
-                  public Map<String, String> extract(GetSnapshotRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("name", String.valueOf(request.getName()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<ListSnapshotsRequest, ListSnapshotsResponse> listSnapshotsTransportSettings =
         GrpcCallSettings.<ListSnapshotsRequest, ListSnapshotsResponse>newBuilder()
             .setMethodDescriptor(listSnapshotsMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<ListSnapshotsRequest>() {
-                  @Override
-                  public Map<String, String> extract(ListSnapshotsRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("parent", String.valueOf(request.getParent()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("parent", String.valueOf(request.getParent()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<DeleteSnapshotRequest, Empty> deleteSnapshotTransportSettings =
         GrpcCallSettings.<DeleteSnapshotRequest, Empty>newBuilder()
             .setMethodDescriptor(deleteSnapshotMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<DeleteSnapshotRequest>() {
-                  @Override
-                  public Map<String, String> extract(DeleteSnapshotRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("name", String.valueOf(request.getName()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<CreateBackupRequest, Operation> createBackupTransportSettings =
         GrpcCallSettings.<CreateBackupRequest, Operation>newBuilder()
             .setMethodDescriptor(createBackupMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<CreateBackupRequest>() {
-                  @Override
-                  public Map<String, String> extract(CreateBackupRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("parent", String.valueOf(request.getParent()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("parent", String.valueOf(request.getParent()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<GetBackupRequest, Backup> getBackupTransportSettings =
         GrpcCallSettings.<GetBackupRequest, Backup>newBuilder()
             .setMethodDescriptor(getBackupMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<GetBackupRequest>() {
-                  @Override
-                  public Map<String, String> extract(GetBackupRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("name", String.valueOf(request.getName()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<UpdateBackupRequest, Backup> updateBackupTransportSettings =
         GrpcCallSettings.<UpdateBackupRequest, Backup>newBuilder()
             .setMethodDescriptor(updateBackupMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<UpdateBackupRequest>() {
-                  @Override
-                  public Map<String, String> extract(UpdateBackupRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("backup.name", String.valueOf(request.getBackup().getName()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("backup.name", String.valueOf(request.getBackup().getName()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<DeleteBackupRequest, Empty> deleteBackupTransportSettings =
         GrpcCallSettings.<DeleteBackupRequest, Empty>newBuilder()
             .setMethodDescriptor(deleteBackupMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<DeleteBackupRequest>() {
-                  @Override
-                  public Map<String, String> extract(DeleteBackupRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("name", String.valueOf(request.getName()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<ListBackupsRequest, ListBackupsResponse> listBackupsTransportSettings =
         GrpcCallSettings.<ListBackupsRequest, ListBackupsResponse>newBuilder()
             .setMethodDescriptor(listBackupsMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<ListBackupsRequest>() {
-                  @Override
-                  public Map<String, String> extract(ListBackupsRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("parent", String.valueOf(request.getParent()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("parent", String.valueOf(request.getParent()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<RestoreTableRequest, Operation> restoreTableTransportSettings =
         GrpcCallSettings.<RestoreTableRequest, Operation>newBuilder()
             .setMethodDescriptor(restoreTableMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<RestoreTableRequest>() {
-                  @Override
-                  public Map<String, String> extract(RestoreTableRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("parent", String.valueOf(request.getParent()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("parent", String.valueOf(request.getParent()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<GetIamPolicyRequest, Policy> getIamPolicyTransportSettings =
         GrpcCallSettings.<GetIamPolicyRequest, Policy>newBuilder()
             .setMethodDescriptor(getIamPolicyMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<GetIamPolicyRequest>() {
-                  @Override
-                  public Map<String, String> extract(GetIamPolicyRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("resource", String.valueOf(request.getResource()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("resource", String.valueOf(request.getResource()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<SetIamPolicyRequest, Policy> setIamPolicyTransportSettings =
         GrpcCallSettings.<SetIamPolicyRequest, Policy>newBuilder()
             .setMethodDescriptor(setIamPolicyMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<SetIamPolicyRequest>() {
-                  @Override
-                  public Map<String, String> extract(SetIamPolicyRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("resource", String.valueOf(request.getResource()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("resource", String.valueOf(request.getResource()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
@@ -653,13 +588,10 @@ public class GrpcBigtableTableAdminStub extends BigtableTableAdminStub {
             GrpcCallSettings.<TestIamPermissionsRequest, TestIamPermissionsResponse>newBuilder()
                 .setMethodDescriptor(testIamPermissionsMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<TestIamPermissionsRequest>() {
-                      @Override
-                      public Map<String, String> extract(TestIamPermissionsRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("resource", String.valueOf(request.getResource()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("resource", String.valueOf(request.getResource()));
+                      return params.build();
                     })
                 .build();
 
@@ -935,7 +867,13 @@ public class GrpcBigtableTableAdminStub extends BigtableTableAdminStub {
 
   @Override
   public final void close() {
-    shutdown();
+    try {
+      backgroundResources.close();
+    } catch (RuntimeException e) {
+      throw e;
+    } catch (Exception e) {
+      throw new IllegalStateException("Failed to close resource", e);
+    }
   }
 
   @Override

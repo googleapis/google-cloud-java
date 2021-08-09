@@ -16,7 +16,6 @@
 
 package com.google.cloud.bigtable.admin.v2;
 
-import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
 import com.google.api.core.BetaApi;
@@ -2266,12 +2265,7 @@ public class BaseBigtableInstanceAdminClient implements BackgroundResource {
           ListAppProfilesPage.createEmptyPage().createPageAsync(context, futureResponse);
       return ApiFutures.transform(
           futurePage,
-          new ApiFunction<ListAppProfilesPage, ListAppProfilesPagedResponse>() {
-            @Override
-            public ListAppProfilesPagedResponse apply(ListAppProfilesPage input) {
-              return new ListAppProfilesPagedResponse(input);
-            }
-          },
+          input -> new ListAppProfilesPagedResponse(input),
           MoreExecutors.directExecutor());
     }
 
