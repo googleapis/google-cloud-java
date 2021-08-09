@@ -1,5 +1,16 @@
 # Changelog
 
+## [2.0.0](https://www.github.com/googleapis/java-dataproc/compare/v1.5.4...v2.0.0) (2021-08-09)
+
+
+### ⚠ BREAKING CHANGES
+
+* release gapic-generator-java v2.0.0
+
+### Features
+
+* release gapic-generator-java v2.0.0 ([ff1784f](https://www.github.com/googleapis/java-dataproc/commit/ff1784fd5e2997fcf3cbbb69fcfd49cc29bcbd44))
+
 ### [1.5.4](https://www.github.com/googleapis/java-dataproc/compare/v1.5.3...v1.5.4) (2021-08-09)
 
 
