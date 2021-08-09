@@ -1,5 +1,22 @@
 # Changelog
 
+## [0.9.0](https://www.github.com/googleapis/java-analytics-data/compare/v0.8.0...v0.9.0) (2021-08-06)
+
+
+### ⚠ BREAKING CHANGES
+
+* release gapic-generator-java v2.0.0 (#300)
+
+### Features
+
+* add `minute_ranges` field to `RunRealtimeReportRequest` object which can be used to specify the time range (in minutes) for realtime report queries ([#233](https://www.github.com/googleapis/java-analytics-data/issues/233)) ([f99488a](https://www.github.com/googleapis/java-analytics-data/commit/f99488a8630de5cd201ea524027d3cacf0b4b08f))
+* release gapic-generator-java v2.0.0 ([#300](https://www.github.com/googleapis/java-analytics-data/issues/300)) ([3f26958](https://www.github.com/googleapis/java-analytics-data/commit/3f269581a86dece46234a47075c74d8883ebaef3))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2 ([#301](https://www.github.com/googleapis/java-analytics-data/issues/301)) ([4172163](https://www.github.com/googleapis/java-analytics-data/commit/4172163883152f300fc69609f0c67b9dc66edae6))
+
 ## [0.8.0](https://www.github.com/googleapis/java-analytics-data/compare/v0.7.1...v0.8.0) (2021-07-15)
 
 
