@@ -16,7 +16,6 @@
 
 package com.google.cloud.dataproc.v1beta2;
 
-import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
 import com.google.api.core.BetaApi;
@@ -646,9 +645,7 @@ public class JobControllerClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Starts a job cancellation request. To access the job resource after cancellation, call
-   * [regions/{region}/jobs.list](https://cloud.google.com/dataproc/docs/reference/rest/v1beta2/projects.regions.jobs/list)
-   * or
-   * [regions/{region}/jobs.get](https://cloud.google.com/dataproc/docs/reference/rest/v1beta2/projects.regions.jobs/get).
+   * regions/{region}/jobs.list or regions/{region}/jobs.get.
    *
    * <p>Sample code:
    *
@@ -679,9 +676,7 @@ public class JobControllerClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Starts a job cancellation request. To access the job resource after cancellation, call
-   * [regions/{region}/jobs.list](https://cloud.google.com/dataproc/docs/reference/rest/v1beta2/projects.regions.jobs/list)
-   * or
-   * [regions/{region}/jobs.get](https://cloud.google.com/dataproc/docs/reference/rest/v1beta2/projects.regions.jobs/get).
+   * regions/{region}/jobs.list or regions/{region}/jobs.get.
    *
    * <p>Sample code:
    *
@@ -707,9 +702,7 @@ public class JobControllerClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Starts a job cancellation request. To access the job resource after cancellation, call
-   * [regions/{region}/jobs.list](https://cloud.google.com/dataproc/docs/reference/rest/v1beta2/projects.regions.jobs/list)
-   * or
-   * [regions/{region}/jobs.get](https://cloud.google.com/dataproc/docs/reference/rest/v1beta2/projects.regions.jobs/get).
+   * regions/{region}/jobs.list or regions/{region}/jobs.get.
    *
    * <p>Sample code:
    *
@@ -853,14 +846,7 @@ public class JobControllerClient implements BackgroundResource {
       ApiFuture<ListJobsPage> futurePage =
           ListJobsPage.createEmptyPage().createPageAsync(context, futureResponse);
       return ApiFutures.transform(
-          futurePage,
-          new ApiFunction<ListJobsPage, ListJobsPagedResponse>() {
-            @Override
-            public ListJobsPagedResponse apply(ListJobsPage input) {
-              return new ListJobsPagedResponse(input);
-            }
-          },
-          MoreExecutors.directExecutor());
+          futurePage, input -> new ListJobsPagedResponse(input), MoreExecutors.directExecutor());
     }
 
     private ListJobsPagedResponse(ListJobsPage page) {

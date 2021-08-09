@@ -16,7 +16,6 @@
 
 package com.google.cloud.dataproc.v1;
 
-import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
 import com.google.api.core.BetaApi;
@@ -1679,12 +1678,7 @@ public class WorkflowTemplateServiceClient implements BackgroundResource {
           ListWorkflowTemplatesPage.createEmptyPage().createPageAsync(context, futureResponse);
       return ApiFutures.transform(
           futurePage,
-          new ApiFunction<ListWorkflowTemplatesPage, ListWorkflowTemplatesPagedResponse>() {
-            @Override
-            public ListWorkflowTemplatesPagedResponse apply(ListWorkflowTemplatesPage input) {
-              return new ListWorkflowTemplatesPagedResponse(input);
-            }
-          },
+          input -> new ListWorkflowTemplatesPagedResponse(input),
           MoreExecutors.directExecutor());
     }
 

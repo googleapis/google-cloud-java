@@ -24,7 +24,6 @@ import com.google.api.gax.grpc.GrpcCallSettings;
 import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
-import com.google.api.gax.rpc.RequestParamsExtractor;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.dataproc.v1.CreateWorkflowTemplateRequest;
 import com.google.cloud.dataproc.v1.DeleteWorkflowTemplateRequest;
@@ -43,7 +42,6 @@ import com.google.protobuf.Empty;
 import io.grpc.MethodDescriptor;
 import io.grpc.protobuf.ProtoUtils;
 import java.io.IOException;
-import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
@@ -204,13 +202,10 @@ public class GrpcWorkflowTemplateServiceStub extends WorkflowTemplateServiceStub
             GrpcCallSettings.<CreateWorkflowTemplateRequest, WorkflowTemplate>newBuilder()
                 .setMethodDescriptor(createWorkflowTemplateMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<CreateWorkflowTemplateRequest>() {
-                      @Override
-                      public Map<String, String> extract(CreateWorkflowTemplateRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("parent", String.valueOf(request.getParent()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("parent", String.valueOf(request.getParent()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<GetWorkflowTemplateRequest, WorkflowTemplate>
@@ -218,13 +213,10 @@ public class GrpcWorkflowTemplateServiceStub extends WorkflowTemplateServiceStub
             GrpcCallSettings.<GetWorkflowTemplateRequest, WorkflowTemplate>newBuilder()
                 .setMethodDescriptor(getWorkflowTemplateMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<GetWorkflowTemplateRequest>() {
-                      @Override
-                      public Map<String, String> extract(GetWorkflowTemplateRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("name", String.valueOf(request.getName()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("name", String.valueOf(request.getName()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<InstantiateWorkflowTemplateRequest, Operation>
@@ -232,14 +224,10 @@ public class GrpcWorkflowTemplateServiceStub extends WorkflowTemplateServiceStub
             GrpcCallSettings.<InstantiateWorkflowTemplateRequest, Operation>newBuilder()
                 .setMethodDescriptor(instantiateWorkflowTemplateMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<InstantiateWorkflowTemplateRequest>() {
-                      @Override
-                      public Map<String, String> extract(
-                          InstantiateWorkflowTemplateRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("name", String.valueOf(request.getName()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("name", String.valueOf(request.getName()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<InstantiateInlineWorkflowTemplateRequest, Operation>
@@ -247,14 +235,10 @@ public class GrpcWorkflowTemplateServiceStub extends WorkflowTemplateServiceStub
             GrpcCallSettings.<InstantiateInlineWorkflowTemplateRequest, Operation>newBuilder()
                 .setMethodDescriptor(instantiateInlineWorkflowTemplateMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<InstantiateInlineWorkflowTemplateRequest>() {
-                      @Override
-                      public Map<String, String> extract(
-                          InstantiateInlineWorkflowTemplateRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("parent", String.valueOf(request.getParent()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("parent", String.valueOf(request.getParent()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<UpdateWorkflowTemplateRequest, WorkflowTemplate>
@@ -262,14 +246,10 @@ public class GrpcWorkflowTemplateServiceStub extends WorkflowTemplateServiceStub
             GrpcCallSettings.<UpdateWorkflowTemplateRequest, WorkflowTemplate>newBuilder()
                 .setMethodDescriptor(updateWorkflowTemplateMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<UpdateWorkflowTemplateRequest>() {
-                      @Override
-                      public Map<String, String> extract(UpdateWorkflowTemplateRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put(
-                            "template.name", String.valueOf(request.getTemplate().getName()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("template.name", String.valueOf(request.getTemplate().getName()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<ListWorkflowTemplatesRequest, ListWorkflowTemplatesResponse>
@@ -278,26 +258,20 @@ public class GrpcWorkflowTemplateServiceStub extends WorkflowTemplateServiceStub
                 .<ListWorkflowTemplatesRequest, ListWorkflowTemplatesResponse>newBuilder()
                 .setMethodDescriptor(listWorkflowTemplatesMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<ListWorkflowTemplatesRequest>() {
-                      @Override
-                      public Map<String, String> extract(ListWorkflowTemplatesRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("parent", String.valueOf(request.getParent()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("parent", String.valueOf(request.getParent()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<DeleteWorkflowTemplateRequest, Empty> deleteWorkflowTemplateTransportSettings =
         GrpcCallSettings.<DeleteWorkflowTemplateRequest, Empty>newBuilder()
             .setMethodDescriptor(deleteWorkflowTemplateMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<DeleteWorkflowTemplateRequest>() {
-                  @Override
-                  public Map<String, String> extract(DeleteWorkflowTemplateRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("name", String.valueOf(request.getName()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  return params.build();
                 })
             .build();
 

@@ -16,7 +16,6 @@
 
 package com.google.cloud.dataproc.v1;
 
-import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
 import com.google.api.core.BetaApi;
@@ -1163,12 +1162,7 @@ public class ClusterControllerClient implements BackgroundResource {
           ListClustersPage.createEmptyPage().createPageAsync(context, futureResponse);
       return ApiFutures.transform(
           futurePage,
-          new ApiFunction<ListClustersPage, ListClustersPagedResponse>() {
-            @Override
-            public ListClustersPagedResponse apply(ListClustersPage input) {
-              return new ListClustersPagedResponse(input);
-            }
-          },
+          input -> new ListClustersPagedResponse(input),
           MoreExecutors.directExecutor());
     }
 
