@@ -1,5 +1,34 @@
 # Changelog
 
+## [2.0.0](https://www.github.com/googleapis/java-security-private-ca/compare/v1.1.0...v2.0.0) (2021-08-10)
+
+
+### ⚠ BREAKING CHANGES
+
+* mark some bools as optional, correct response type of DeleteCaPool (#216)
+* release gapic-generator-java v2.0.0 (#236)
+
+### Features
+
+* release gapic-generator-java v2.0.0 ([#236](https://www.github.com/googleapis/java-security-private-ca/issues/236)) ([7659402](https://www.github.com/googleapis/java-security-private-ca/commit/76594028500490a7c7bf538cdbd41f0a2fe6c2c0))
+
+
+### Bug Fixes
+
+* changed the crypto public key provider to Bouncy Castle ([#223](https://www.github.com/googleapis/java-security-private-ca/issues/223)) ([ad386a7](https://www.github.com/googleapis/java-security-private-ca/commit/ad386a7288f34e8048783b270866168cd631df5a))
+* mark some bools as optional, correct response type of DeleteCaPool ([#216](https://www.github.com/googleapis/java-security-private-ca/issues/216)) ([5f8af42](https://www.github.com/googleapis/java-security-private-ca/commit/5f8af425dfba0ce0b99cba6d046fe474aee9ef96))
+
+
+### Documentation
+
+* client sample docs update ([#219](https://www.github.com/googleapis/java-security-private-ca/issues/219)) ([5dd4b80](https://www.github.com/googleapis/java-security-private-ca/commit/5dd4b8028ce1b48c6a8f2a470a406d4881f9036d))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2 ([#237](https://www.github.com/googleapis/java-security-private-ca/issues/237)) ([ee1efcf](https://www.github.com/googleapis/java-security-private-ca/commit/ee1efcf546be13334e9eafe0711794cbe35a6f40))
+* update dependency org.bouncycastle:bcpkix-jdk15on to v1.69 ([#234](https://www.github.com/googleapis/java-security-private-ca/issues/234)) ([a6d0213](https://www.github.com/googleapis/java-security-private-ca/commit/a6d02135ee8eb1df5252b3027a45318e96771d44))
+
 ## [1.1.0](https://www.github.com/googleapis/java-security-private-ca/compare/v1.0.0...v1.1.0) (2021-07-01)
 
 
