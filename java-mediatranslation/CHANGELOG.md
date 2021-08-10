@@ -1,5 +1,26 @@
 # Changelog
 
+## [0.6.0](https://www.github.com/googleapis/java-mediatranslation/compare/v0.5.2...v0.6.0) (2021-08-06)
+
+
+### ⚠ BREAKING CHANGES
+
+* release gapic-generator-java v2.0.0 (#504)
+
+### Features
+
+* release gapic-generator-java v2.0.0 ([#504](https://www.github.com/googleapis/java-mediatranslation/issues/504)) ([368e7ff](https://www.github.com/googleapis/java-mediatranslation/commit/368e7ff1602c8c14979d9a8e9dff6af6aab14c7a))
+
+
+### Bug Fixes
+
+* owlbot post-processor should generate README ([#1154](https://www.github.com/googleapis/java-mediatranslation/issues/1154)) ([#326](https://www.github.com/googleapis/java-mediatranslation/issues/326)) ([85c9c91](https://www.github.com/googleapis/java-mediatranslation/commit/85c9c91d8d58d821ae2087cb299327e6aaa94414)), closes [#1146](https://www.github.com/googleapis/java-mediatranslation/issues/1146) [#1147](https://www.github.com/googleapis/java-mediatranslation/issues/1147)
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2 ([#505](https://www.github.com/googleapis/java-mediatranslation/issues/505)) ([16b922a](https://www.github.com/googleapis/java-mediatranslation/commit/16b922a62ae01dfad8144f43a67b7b0f87470ddc))
+
 ### [0.5.2](https://www.github.com/googleapis/java-mediatranslation/compare/v0.5.1...v0.5.2) (2021-07-01)
 
 
