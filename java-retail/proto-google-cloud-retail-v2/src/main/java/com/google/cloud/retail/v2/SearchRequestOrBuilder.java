@@ -265,8 +265,7 @@ public interface SearchRequestOrBuilder
    * <pre>
    * The filter syntax consists of an expression language for constructing a
    * predicate from one or more fields of the products being filtered. Filter
-   * expression is case-sensitive. See more details at this [user
-   * guide](/retail/private/docs/filter-and-order#filter).
+   * expression is case-sensitive.
    * If this field is unrecognizable, an INVALID_ARGUMENT is returned.
    * </pre>
    *
@@ -281,8 +280,7 @@ public interface SearchRequestOrBuilder
    * <pre>
    * The filter syntax consists of an expression language for constructing a
    * predicate from one or more fields of the products being filtered. Filter
-   * expression is case-sensitive. See more details at this [user
-   * guide](/retail/private/docs/filter-and-order#filter).
+   * expression is case-sensitive.
    * If this field is unrecognizable, an INVALID_ARGUMENT is returned.
    * </pre>
    *
@@ -337,9 +335,7 @@ public interface SearchRequestOrBuilder
    * <pre>
    * The order in which products are returned. Products can be ordered by
    * a field in an [Product][google.cloud.retail.v2.Product] object. Leave it
-   * unset if ordered by relevance. OrderBy expression is case-sensitive. See
-   * more details at this [user
-   * guide](/retail/private/docs/filter-and-order#order).
+   * unset if ordered by relevance. OrderBy expression is case-sensitive.
    * If this field is unrecognizable, an INVALID_ARGUMENT is returned.
    * </pre>
    *
@@ -354,9 +350,7 @@ public interface SearchRequestOrBuilder
    * <pre>
    * The order in which products are returned. Products can be ordered by
    * a field in an [Product][google.cloud.retail.v2.Product] object. Leave it
-   * unset if ordered by relevance. OrderBy expression is case-sensitive. See
-   * more details at this [user
-   * guide](/retail/private/docs/filter-and-order#order).
+   * unset if ordered by relevance. OrderBy expression is case-sensitive.
    * If this field is unrecognizable, an INVALID_ARGUMENT is returned.
    * </pre>
    *
@@ -479,8 +473,7 @@ public interface SearchRequestOrBuilder
    *
    *
    * <pre>
-   * Boost specification to boost certain products. See more details at this
-   * [user guide](/retail/private/docs/boosting).
+   * Boost specification to boost certain products.
    * </pre>
    *
    * <code>.google.cloud.retail.v2.SearchRequest.BoostSpec boost_spec = 13;</code>
@@ -492,8 +485,7 @@ public interface SearchRequestOrBuilder
    *
    *
    * <pre>
-   * Boost specification to boost certain products. See more details at this
-   * [user guide](/retail/private/docs/boosting).
+   * Boost specification to boost certain products.
    * </pre>
    *
    * <code>.google.cloud.retail.v2.SearchRequest.BoostSpec boost_spec = 13;</code>
@@ -505,8 +497,7 @@ public interface SearchRequestOrBuilder
    *
    *
    * <pre>
-   * Boost specification to boost certain products. See more details at this
-   * [user guide](/retail/private/docs/boosting).
+   * Boost specification to boost certain products.
    * </pre>
    *
    * <code>.google.cloud.retail.v2.SearchRequest.BoostSpec boost_spec = 13;</code>
@@ -518,8 +509,7 @@ public interface SearchRequestOrBuilder
    *
    * <pre>
    * The query expansion specification that specifies the conditions under which
-   * query expansion will occur. See more details at this [user
-   * guide](/retail/private/docs/result-size#query_expansion).
+   * query expansion will occur.
    * </pre>
    *
    * <code>.google.cloud.retail.v2.SearchRequest.QueryExpansionSpec query_expansion_spec = 14;
@@ -533,8 +523,7 @@ public interface SearchRequestOrBuilder
    *
    * <pre>
    * The query expansion specification that specifies the conditions under which
-   * query expansion will occur. See more details at this [user
-   * guide](/retail/private/docs/result-size#query_expansion).
+   * query expansion will occur.
    * </pre>
    *
    * <code>.google.cloud.retail.v2.SearchRequest.QueryExpansionSpec query_expansion_spec = 14;
@@ -548,8 +537,7 @@ public interface SearchRequestOrBuilder
    *
    * <pre>
    * The query expansion specification that specifies the conditions under which
-   * query expansion will occur. See more details at this [user
-   * guide](/retail/private/docs/result-size#query_expansion).
+   * query expansion will occur.
    * </pre>
    *
    * <code>.google.cloud.retail.v2.SearchRequest.QueryExpansionSpec query_expansion_spec = 14;
