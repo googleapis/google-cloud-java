@@ -1,5 +1,17 @@
 # Changelog
 
+### [1.2.1](https://www.github.com/googleapis/java-retail/compare/v1.2.0...v1.2.1) (2021-08-10)
+
+
+### Documentation
+
+* remove remaining private links ([#159](https://www.github.com/googleapis/java-retail/issues/159)) ([ec44deb](https://www.github.com/googleapis/java-retail/commit/ec44deba3072f4c7043e051690c4fb37bb535864))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2 ([#161](https://www.github.com/googleapis/java-retail/issues/161)) ([0004c12](https://www.github.com/googleapis/java-retail/commit/0004c12c593e0d40f9b72abff6dc4d0a54d9d9c7))
+
 ## [1.2.0](https://www.github.com/googleapis/java-retail/compare/v1.1.2...v1.2.0) (2021-07-30)
 
 
