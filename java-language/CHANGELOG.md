@@ -1,5 +1,26 @@
 # Changelog
 
+## [2.0.0](https://www.github.com/googleapis/java-language/compare/v1.103.2...v2.0.0) (2021-08-06)
+
+
+### ⚠ BREAKING CHANGES
+
+* release gapic-generator-java v2.0.0 (#677)
+
+### Features
+
+* release gapic-generator-java v2.0.0 ([#677](https://www.github.com/googleapis/java-language/issues/677)) ([ec809de](https://www.github.com/googleapis/java-language/commit/ec809dedb6f7d1f51962377dad62f5a7e308853d))
+
+
+### Bug Fixes
+
+* owlbot post-processor should generate README ([#1154](https://www.github.com/googleapis/java-language/issues/1154)) ([#504](https://www.github.com/googleapis/java-language/issues/504)) ([e8e6d53](https://www.github.com/googleapis/java-language/commit/e8e6d5324196c75ac7e287798bca54e57184fbf4)), closes [#1146](https://www.github.com/googleapis/java-language/issues/1146) [#1147](https://www.github.com/googleapis/java-language/issues/1147)
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2 ([#678](https://www.github.com/googleapis/java-language/issues/678)) ([62fe547](https://www.github.com/googleapis/java-language/commit/62fe547537c72cad19a2e79611d97c320ca32258))
+
 ### [1.103.2](https://www.github.com/googleapis/java-language/compare/v1.103.1...v1.103.2) (2021-07-01)
 
 
