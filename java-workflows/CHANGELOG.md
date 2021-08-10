@@ -1,5 +1,21 @@
 # Changelog
 
+## [2.0.0](https://www.github.com/googleapis/java-workflows/compare/v1.0.2...v2.0.0) (2021-08-06)
+
+
+### ⚠ BREAKING CHANGES
+
+* release gapic-generator-java v2.0.0 (#308)
+
+### Features
+
+* release gapic-generator-java v2.0.0 ([#308](https://www.github.com/googleapis/java-workflows/issues/308)) ([4b2b88e](https://www.github.com/googleapis/java-workflows/commit/4b2b88e57de4fd2068a02bccd5e052a6e74f765c))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2 ([#309](https://www.github.com/googleapis/java-workflows/issues/309)) ([ad95ebd](https://www.github.com/googleapis/java-workflows/commit/ad95ebdeafffd92b8aaecf71cca9eaee87eba5db))
+
 ### [1.0.2](https://www.github.com/googleapis/java-workflows/compare/v1.0.1...v1.0.2) (2021-07-01)
 
 
