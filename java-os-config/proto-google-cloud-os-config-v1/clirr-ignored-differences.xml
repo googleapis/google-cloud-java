@@ -16,4 +16,12 @@
     <className>com/google/cloud/osconfig/v1/*OrBuilder</className>
     <method>boolean has*(*)</method>
   </difference>
+  <difference>
+    <differenceType>8001</differenceType>
+    <className>com/google/cloud/osconfig/v1/InstanceName</className>
+  </difference>
+  <difference>
+    <differenceType>8001</differenceType>
+    <className>com/google/cloud/osconfig/v1/InstanceName$Builder</className>
+  </difference>
 </differences>

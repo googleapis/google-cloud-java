@@ -16,7 +16,6 @@
 
 package com.google.cloud.osconfig.v1beta;
 
-import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
 import com.google.api.core.BetaApi;
@@ -1400,12 +1399,7 @@ public class OsConfigServiceClient implements BackgroundResource {
           ListPatchJobsPage.createEmptyPage().createPageAsync(context, futureResponse);
       return ApiFutures.transform(
           futurePage,
-          new ApiFunction<ListPatchJobsPage, ListPatchJobsPagedResponse>() {
-            @Override
-            public ListPatchJobsPagedResponse apply(ListPatchJobsPage input) {
-              return new ListPatchJobsPagedResponse(input);
-            }
-          },
+          input -> new ListPatchJobsPagedResponse(input),
           MoreExecutors.directExecutor());
     }
 
@@ -1495,14 +1489,7 @@ public class OsConfigServiceClient implements BackgroundResource {
               .createPageAsync(context, futureResponse);
       return ApiFutures.transform(
           futurePage,
-          new ApiFunction<
-              ListPatchJobInstanceDetailsPage, ListPatchJobInstanceDetailsPagedResponse>() {
-            @Override
-            public ListPatchJobInstanceDetailsPagedResponse apply(
-                ListPatchJobInstanceDetailsPage input) {
-              return new ListPatchJobInstanceDetailsPagedResponse(input);
-            }
-          },
+          input -> new ListPatchJobInstanceDetailsPagedResponse(input),
           MoreExecutors.directExecutor());
     }
 
@@ -1598,12 +1585,7 @@ public class OsConfigServiceClient implements BackgroundResource {
           ListPatchDeploymentsPage.createEmptyPage().createPageAsync(context, futureResponse);
       return ApiFutures.transform(
           futurePage,
-          new ApiFunction<ListPatchDeploymentsPage, ListPatchDeploymentsPagedResponse>() {
-            @Override
-            public ListPatchDeploymentsPagedResponse apply(ListPatchDeploymentsPage input) {
-              return new ListPatchDeploymentsPagedResponse(input);
-            }
-          },
+          input -> new ListPatchDeploymentsPagedResponse(input),
           MoreExecutors.directExecutor());
     }
 
@@ -1699,12 +1681,7 @@ public class OsConfigServiceClient implements BackgroundResource {
           ListGuestPoliciesPage.createEmptyPage().createPageAsync(context, futureResponse);
       return ApiFutures.transform(
           futurePage,
-          new ApiFunction<ListGuestPoliciesPage, ListGuestPoliciesPagedResponse>() {
-            @Override
-            public ListGuestPoliciesPagedResponse apply(ListGuestPoliciesPage input) {
-              return new ListGuestPoliciesPagedResponse(input);
-            }
-          },
+          input -> new ListGuestPoliciesPagedResponse(input),
           MoreExecutors.directExecutor());
     }
 
