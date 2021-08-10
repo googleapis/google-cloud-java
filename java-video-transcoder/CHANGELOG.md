@@ -1,5 +1,22 @@
 # Changelog
 
+## [0.3.0](https://www.github.com/googleapis/java-video-transcoder/compare/v0.2.0...v0.3.0) (2021-08-10)
+
+
+### ⚠ BREAKING CHANGES
+
+* release gapic-generator-java v2.0.0 (#199)
+
+### Features
+
+* Add video cropping feature ([#205](https://www.github.com/googleapis/java-video-transcoder/issues/205)) ([667278c](https://www.github.com/googleapis/java-video-transcoder/commit/667278c93ff8d44ae4fa429dac61a4f9f6fc9ccc))
+* release gapic-generator-java v2.0.0 ([#199](https://www.github.com/googleapis/java-video-transcoder/issues/199)) ([6300e88](https://www.github.com/googleapis/java-video-transcoder/commit/6300e88f8c85ed6093a75f1c59e4140d2099ce59))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2 ([#200](https://www.github.com/googleapis/java-video-transcoder/issues/200)) ([d926c90](https://www.github.com/googleapis/java-video-transcoder/commit/d926c9046c05e7cc232802c2e44b51d8b55ac802))
+
 ## [0.2.0](https://www.github.com/googleapis/java-video-transcoder/compare/v0.1.9...v0.2.0) (2021-07-12)
 
 
