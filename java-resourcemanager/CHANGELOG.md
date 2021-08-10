@@ -1,5 +1,24 @@
 # Changelog
 
+## [1.0.0](https://www.github.com/googleapis/java-resourcemanager/compare/v0.119.9...v1.0.0) (2021-08-10)
+
+
+### ⚠ BREAKING CHANGES
+
+* release gapic-generator-java v2.0.0 (#581)
+
+### Features
+
+* promote to 1.0.0 ([#586](https://www.github.com/googleapis/java-resourcemanager/issues/586)) ([67a4677](https://www.github.com/googleapis/java-resourcemanager/commit/67a4677ab7d4eb469440acca9153d17d7d853ca8))
+* release gapic-generator-java v2.0.0 ([#581](https://www.github.com/googleapis/java-resourcemanager/issues/581)) ([33401b0](https://www.github.com/googleapis/java-resourcemanager/commit/33401b0454a9f6bd87ed34c83d805b6e72f9e116))
+
+
+### Dependencies
+
+* update dependency com.google.apis:google-api-services-cloudresourcemanager to v1-rev20210801-1.32.1 ([#580](https://www.github.com/googleapis/java-resourcemanager/issues/580)) ([e7e682e](https://www.github.com/googleapis/java-resourcemanager/commit/e7e682e9ef8de30c27b0a0ffa70f054b33d38574))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2 ([#582](https://www.github.com/googleapis/java-resourcemanager/issues/582)) ([185c64a](https://www.github.com/googleapis/java-resourcemanager/commit/185c64a3b377c64eeafdb7750b7cba7c9cba82cb))
+* update dependency com.google.errorprone:error_prone_annotations to v2.8.1 ([#579](https://www.github.com/googleapis/java-resourcemanager/issues/579)) ([bfc65c0](https://www.github.com/googleapis/java-resourcemanager/commit/bfc65c0bc0b674a72d6762519bf033b1fa4f0823))
+
 ### [0.119.9](https://www.github.com/googleapis/java-resourcemanager/compare/v0.119.8...v0.119.9) (2021-07-28)
 
 
