@@ -26,7 +26,6 @@ import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.grpc.GrpcCallSettings;
 import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
-import com.google.api.gax.rpc.RequestParamsExtractor;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.privatecatalog.v1beta1.SearchCatalogsRequest;
 import com.google.cloud.privatecatalog.v1beta1.SearchCatalogsResponse;
@@ -39,7 +38,6 @@ import com.google.longrunning.stub.GrpcOperationsStub;
 import io.grpc.MethodDescriptor;
 import io.grpc.protobuf.ProtoUtils;
 import java.io.IOException;
-import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
@@ -147,13 +145,10 @@ public class GrpcPrivateCatalogStub extends PrivateCatalogStub {
             GrpcCallSettings.<SearchCatalogsRequest, SearchCatalogsResponse>newBuilder()
                 .setMethodDescriptor(searchCatalogsMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<SearchCatalogsRequest>() {
-                      @Override
-                      public Map<String, String> extract(SearchCatalogsRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("resource", String.valueOf(request.getResource()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("resource", String.valueOf(request.getResource()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<SearchProductsRequest, SearchProductsResponse>
@@ -161,13 +156,10 @@ public class GrpcPrivateCatalogStub extends PrivateCatalogStub {
             GrpcCallSettings.<SearchProductsRequest, SearchProductsResponse>newBuilder()
                 .setMethodDescriptor(searchProductsMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<SearchProductsRequest>() {
-                      @Override
-                      public Map<String, String> extract(SearchProductsRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("resource", String.valueOf(request.getResource()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("resource", String.valueOf(request.getResource()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<SearchVersionsRequest, SearchVersionsResponse>
@@ -175,13 +167,10 @@ public class GrpcPrivateCatalogStub extends PrivateCatalogStub {
             GrpcCallSettings.<SearchVersionsRequest, SearchVersionsResponse>newBuilder()
                 .setMethodDescriptor(searchVersionsMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<SearchVersionsRequest>() {
-                      @Override
-                      public Map<String, String> extract(SearchVersionsRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("resource", String.valueOf(request.getResource()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("resource", String.valueOf(request.getResource()));
+                      return params.build();
                     })
                 .build();
 
