@@ -1,5 +1,21 @@
 # Changelog
 
+## [2.0.0](https://www.github.com/googleapis/java-redis/compare/v1.2.2...v2.0.0) (2021-08-06)
+
+
+### ⚠ BREAKING CHANGES
+
+* release gapic-generator-java v2.0.0 (#470)
+
+### Features
+
+* release gapic-generator-java v2.0.0 ([#470](https://www.github.com/googleapis/java-redis/issues/470)) ([e2ef9e2](https://www.github.com/googleapis/java-redis/commit/e2ef9e261a8bc98c937d4a2f13c4a6af2f860ae6))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2 ([#471](https://www.github.com/googleapis/java-redis/issues/471)) ([21eebad](https://www.github.com/googleapis/java-redis/commit/21eebadc7560b64832753b5eec412c32ec8c6625))
+
 ### [1.2.2](https://www.github.com/googleapis/java-redis/compare/v1.2.1...v1.2.2) (2021-07-05)
 
 
