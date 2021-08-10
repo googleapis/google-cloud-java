@@ -58,4 +58,8 @@
     <className>com/google/cloud/gkehub/v1beta/*OrBuilder</className>
     <method>boolean has*(*)</method>
   </difference>
+  <difference>
+    <differenceType>8001</differenceType>
+    <className>com/google/cloud/gkehub/v1beta/FeatureName*</className>
+  </difference>
 </differences>

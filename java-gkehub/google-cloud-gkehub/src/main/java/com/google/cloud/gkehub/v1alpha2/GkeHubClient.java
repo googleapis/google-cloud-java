@@ -16,7 +16,6 @@
 
 package com.google.cloud.gkehub.v1alpha2;
 
-import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
 import com.google.api.core.BetaApi;
@@ -937,12 +936,7 @@ public class GkeHubClient implements BackgroundResource {
           ListMembershipsPage.createEmptyPage().createPageAsync(context, futureResponse);
       return ApiFutures.transform(
           futurePage,
-          new ApiFunction<ListMembershipsPage, ListMembershipsPagedResponse>() {
-            @Override
-            public ListMembershipsPagedResponse apply(ListMembershipsPage input) {
-              return new ListMembershipsPagedResponse(input);
-            }
-          },
+          input -> new ListMembershipsPagedResponse(input),
           MoreExecutors.directExecutor());
     }
 

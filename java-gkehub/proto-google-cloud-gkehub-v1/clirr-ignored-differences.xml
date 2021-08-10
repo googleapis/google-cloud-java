@@ -44,4 +44,8 @@
     <className>com/google/cloud/gkehub/v1/*OrBuilder</className>
     <method>boolean has*(*)</method>
   </difference>
+  <difference>
+    <differenceType>8001</differenceType>
+    <className>com/google/cloud/gkehub/v1/FeatureName*</className>
+  </difference>
 </differences>

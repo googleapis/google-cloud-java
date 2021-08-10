@@ -134,7 +134,7 @@ public class GkeHubClientTest {
   public void getFeatureTest() throws Exception {
     Feature expectedResponse =
         Feature.newBuilder()
-            .setName(FeatureName.of("[PROJECT]", "[LOCATION]", "[FEATURE]").toString())
+            .setName("name3373707")
             .putAllLabels(new HashMap<String, String>())
             .setResourceState(FeatureResourceState.newBuilder().build())
             .setSpec(CommonFeatureSpec.newBuilder().build())
@@ -181,7 +181,7 @@ public class GkeHubClientTest {
   public void createFeatureTest() throws Exception {
     Feature expectedResponse =
         Feature.newBuilder()
-            .setName(FeatureName.of("[PROJECT]", "[LOCATION]", "[FEATURE]").toString())
+            .setName("name3373707")
             .putAllLabels(new HashMap<String, String>())
             .setResourceState(FeatureResourceState.newBuilder().build())
             .setSpec(CommonFeatureSpec.newBuilder().build())
@@ -284,7 +284,7 @@ public class GkeHubClientTest {
   public void updateFeatureTest() throws Exception {
     Feature expectedResponse =
         Feature.newBuilder()
-            .setName(FeatureName.of("[PROJECT]", "[LOCATION]", "[FEATURE]").toString())
+            .setName("name3373707")
             .putAllLabels(new HashMap<String, String>())
             .setResourceState(FeatureResourceState.newBuilder().build())
             .setSpec(CommonFeatureSpec.newBuilder().build())

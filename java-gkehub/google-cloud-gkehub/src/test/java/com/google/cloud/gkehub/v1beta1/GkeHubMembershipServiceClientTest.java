@@ -138,7 +138,7 @@ public class GkeHubMembershipServiceClientTest {
   public void getMembershipTest() throws Exception {
     Membership expectedResponse =
         Membership.newBuilder()
-            .setName(MembershipName.of("[PROJECT]", "[LOCATION]", "[MEMBERSHIP]").toString())
+            .setName("name3373707")
             .putAllLabels(new HashMap<String, String>())
             .setDescription("description-1724546052")
             .setState(MembershipState.newBuilder().build())
@@ -186,7 +186,7 @@ public class GkeHubMembershipServiceClientTest {
   public void createMembershipTest() throws Exception {
     Membership expectedResponse =
         Membership.newBuilder()
-            .setName(MembershipName.of("[PROJECT]", "[LOCATION]", "[MEMBERSHIP]").toString())
+            .setName("name3373707")
             .putAllLabels(new HashMap<String, String>())
             .setDescription("description-1724546052")
             .setState(MembershipState.newBuilder().build())
@@ -290,7 +290,7 @@ public class GkeHubMembershipServiceClientTest {
   public void updateMembershipTest() throws Exception {
     Membership expectedResponse =
         Membership.newBuilder()
-            .setName(MembershipName.of("[PROJECT]", "[LOCATION]", "[MEMBERSHIP]").toString())
+            .setName("name3373707")
             .putAllLabels(new HashMap<String, String>())
             .setDescription("description-1724546052")
             .setState(MembershipState.newBuilder().build())

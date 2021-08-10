@@ -25,7 +25,6 @@ import com.google.api.gax.grpc.GrpcCallSettings;
 import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
-import com.google.api.gax.rpc.RequestParamsExtractor;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.gkehub.v1alpha2.CreateMembershipRequest;
 import com.google.cloud.gkehub.v1alpha2.DeleteMembershipRequest;
@@ -46,7 +45,6 @@ import com.google.protobuf.Empty;
 import io.grpc.MethodDescriptor;
 import io.grpc.protobuf.ProtoUtils;
 import java.io.IOException;
-import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
@@ -196,65 +194,50 @@ public class GrpcGkeHubStub extends GkeHubStub {
             GrpcCallSettings.<ListMembershipsRequest, ListMembershipsResponse>newBuilder()
                 .setMethodDescriptor(listMembershipsMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<ListMembershipsRequest>() {
-                      @Override
-                      public Map<String, String> extract(ListMembershipsRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("parent", String.valueOf(request.getParent()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("parent", String.valueOf(request.getParent()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<GetMembershipRequest, Membership> getMembershipTransportSettings =
         GrpcCallSettings.<GetMembershipRequest, Membership>newBuilder()
             .setMethodDescriptor(getMembershipMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<GetMembershipRequest>() {
-                  @Override
-                  public Map<String, String> extract(GetMembershipRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("name", String.valueOf(request.getName()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<CreateMembershipRequest, Operation> createMembershipTransportSettings =
         GrpcCallSettings.<CreateMembershipRequest, Operation>newBuilder()
             .setMethodDescriptor(createMembershipMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<CreateMembershipRequest>() {
-                  @Override
-                  public Map<String, String> extract(CreateMembershipRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("parent", String.valueOf(request.getParent()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("parent", String.valueOf(request.getParent()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<DeleteMembershipRequest, Operation> deleteMembershipTransportSettings =
         GrpcCallSettings.<DeleteMembershipRequest, Operation>newBuilder()
             .setMethodDescriptor(deleteMembershipMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<DeleteMembershipRequest>() {
-                  @Override
-                  public Map<String, String> extract(DeleteMembershipRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("name", String.valueOf(request.getName()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<UpdateMembershipRequest, Operation> updateMembershipTransportSettings =
         GrpcCallSettings.<UpdateMembershipRequest, Operation>newBuilder()
             .setMethodDescriptor(updateMembershipMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<UpdateMembershipRequest>() {
-                  @Override
-                  public Map<String, String> extract(UpdateMembershipRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("name", String.valueOf(request.getName()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<GenerateConnectManifestRequest, GenerateConnectManifestResponse>
@@ -263,26 +246,20 @@ public class GrpcGkeHubStub extends GkeHubStub {
                 .<GenerateConnectManifestRequest, GenerateConnectManifestResponse>newBuilder()
                 .setMethodDescriptor(generateConnectManifestMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<GenerateConnectManifestRequest>() {
-                      @Override
-                      public Map<String, String> extract(GenerateConnectManifestRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("name", String.valueOf(request.getName()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("name", String.valueOf(request.getName()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<InitializeHubRequest, InitializeHubResponse> initializeHubTransportSettings =
         GrpcCallSettings.<InitializeHubRequest, InitializeHubResponse>newBuilder()
             .setMethodDescriptor(initializeHubMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<InitializeHubRequest>() {
-                  @Override
-                  public Map<String, String> extract(InitializeHubRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("project", String.valueOf(request.getProject()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("project", String.valueOf(request.getProject()));
+                  return params.build();
                 })
             .build();
 
