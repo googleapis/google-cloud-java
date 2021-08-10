@@ -1,5 +1,42 @@
 # Changelog
 
+## [4.0.0](https://www.github.com/googleapis/java-dialogflow/compare/v3.3.0...v4.0.0) (2021-08-10)
+
+
+### ⚠ BREAKING CHANGES
+
+* release gapic-generator-java v2.0.0 (#644)
+
+### Features
+
+* add language code to streaming recognition result ([11e9d09](https://www.github.com/googleapis/java-dialogflow/commit/11e9d096de4e8772b0067605a927b048a664bd1e))
+* add language code to streaming recognition result ([11e9d09](https://www.github.com/googleapis/java-dialogflow/commit/11e9d096de4e8772b0067605a927b048a664bd1e))
+* add time zone and security settings to conversation profile ([11e9d09](https://www.github.com/googleapis/java-dialogflow/commit/11e9d096de4e8772b0067605a927b048a664bd1e))
+* deprecate ofProjectLocationAgentName and ofProjectAgentName ([#622](https://www.github.com/googleapis/java-dialogflow/issues/622)) ([3d85b8a](https://www.github.com/googleapis/java-dialogflow/commit/3d85b8a00e36f1cd7616eecb9004c8e7da78621a))
+* Expose Locations service to get/list avaliable locations of Dialogflow products ([11e9d09](https://www.github.com/googleapis/java-dialogflow/commit/11e9d096de4e8772b0067605a927b048a664bd1e))
+* release gapic-generator-java v2.0.0 ([#644](https://www.github.com/googleapis/java-dialogflow/issues/644)) ([11e9d09](https://www.github.com/googleapis/java-dialogflow/commit/11e9d096de4e8772b0067605a927b048a664bd1e))
+
+
+### Bug Fixes
+
+* fix validation result docs ([11e9d09](https://www.github.com/googleapis/java-dialogflow/commit/11e9d096de4e8772b0067605a927b048a664bd1e))
+* fix validation result docs ([11e9d09](https://www.github.com/googleapis/java-dialogflow/commit/11e9d096de4e8772b0067605a927b048a664bd1e))
+
+
+### Documentation
+
+* fix typos ([#633](https://www.github.com/googleapis/java-dialogflow/issues/633)) ([36cb748](https://www.github.com/googleapis/java-dialogflow/commit/36cb7486db88a5fb998c40c8323ecb927a1459f3))
+* reorder some fields ([11e9d09](https://www.github.com/googleapis/java-dialogflow/commit/11e9d096de4e8772b0067605a927b048a664bd1e))
+* update agent docs docs: update entity type docs ([11e9d09](https://www.github.com/googleapis/java-dialogflow/commit/11e9d096de4e8772b0067605a927b048a664bd1e))
+* update environment docs ([11e9d09](https://www.github.com/googleapis/java-dialogflow/commit/11e9d096de4e8772b0067605a927b048a664bd1e))
+* update intent docs ([11e9d09](https://www.github.com/googleapis/java-dialogflow/commit/11e9d096de4e8772b0067605a927b048a664bd1e))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-core to v2 ([#634](https://www.github.com/googleapis/java-dialogflow/issues/634)) ([fb4aee6](https://www.github.com/googleapis/java-dialogflow/commit/fb4aee648caf11d49f77f7871c1ded6341aae752))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2 ([#637](https://www.github.com/googleapis/java-dialogflow/issues/637)) ([6f7ef02](https://www.github.com/googleapis/java-dialogflow/commit/6f7ef0211284dff4b39919ecd1d438cf0031d318))
+
 ## [3.3.0](https://www.github.com/googleapis/java-dialogflow/compare/v3.2.1...v3.3.0) (2021-07-05)
 
 
