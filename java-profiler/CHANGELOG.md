@@ -1,5 +1,21 @@
 # Changelog
 
+## [2.0.0](https://www.github.com/googleapis/java-profiler/compare/v1.1.2...v2.0.0) (2021-08-10)
+
+
+### ⚠ BREAKING CHANGES
+
+* release gapic-generator-java v2.0.0 (#118)
+
+### Features
+
+* release gapic-generator-java v2.0.0 ([#118](https://www.github.com/googleapis/java-profiler/issues/118)) ([6a650bf](https://www.github.com/googleapis/java-profiler/commit/6a650bfdfb2906e666e18692e4f27283268f88d3))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2 ([#119](https://www.github.com/googleapis/java-profiler/issues/119)) ([37a6c72](https://www.github.com/googleapis/java-profiler/commit/37a6c7207cf964c7b956973dd1663753cb4e6c98))
+
 ### [1.1.2](https://www.github.com/googleapis/java-profiler/compare/v1.1.1...v1.1.2) (2021-07-01)
 
 
