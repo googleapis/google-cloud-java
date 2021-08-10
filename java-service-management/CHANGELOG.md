@@ -1,5 +1,21 @@
 # Changelog
 
+## [2.0.0](https://www.github.com/googleapis/java-service-management/compare/v1.1.2...v2.0.0) (2021-08-06)
+
+
+### ⚠ BREAKING CHANGES
+
+* release gapic-generator-java v2.0.0 (#95)
+
+### Features
+
+* release gapic-generator-java v2.0.0 ([#95](https://www.github.com/googleapis/java-service-management/issues/95)) ([028ceb3](https://www.github.com/googleapis/java-service-management/commit/028ceb3c038c893680add35805d1768361e3850d))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2 ([#96](https://www.github.com/googleapis/java-service-management/issues/96)) ([3c6d02a](https://www.github.com/googleapis/java-service-management/commit/3c6d02a27ae26624003732feb28cf7c2f6f7f33f))
+
 ### [1.1.2](https://www.github.com/googleapis/java-service-management/compare/v1.1.1...v1.1.2) (2021-07-02)
 
 
