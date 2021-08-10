@@ -1,5 +1,21 @@
 # Changelog
 
+## [2.0.0](https://www.github.com/googleapis/java-iamcredentials/compare/v1.3.2...v2.0.0) (2021-08-10)
+
+
+### ⚠ BREAKING CHANGES
+
+* release gapic-generator-java v2.0.0 (#498)
+
+### Features
+
+* release gapic-generator-java v2.0.0 ([#498](https://www.github.com/googleapis/java-iamcredentials/issues/498)) ([9715de3](https://www.github.com/googleapis/java-iamcredentials/commit/9715de33f345743d129c0c1d35aaed179e5ffc89))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2 ([#499](https://www.github.com/googleapis/java-iamcredentials/issues/499)) ([89553c5](https://www.github.com/googleapis/java-iamcredentials/commit/89553c5954dc1c09ba33f8ffcb427dc7707be3df))
+
 ### [1.3.2](https://www.github.com/googleapis/java-iamcredentials/compare/v1.3.1...v1.3.2) (2021-07-01)
 
 
