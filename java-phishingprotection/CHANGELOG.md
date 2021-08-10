@@ -1,5 +1,21 @@
 # Changelog
 
+## [0.31.0](https://www.github.com/googleapis/java-phishingprotection/compare/v0.30.2...v0.31.0) (2021-08-10)
+
+
+### ⚠ BREAKING CHANGES
+
+* release gapic-generator-java v2.0.0 (#508)
+
+### Features
+
+* release gapic-generator-java v2.0.0 ([#508](https://www.github.com/googleapis/java-phishingprotection/issues/508)) ([3e47bc5](https://www.github.com/googleapis/java-phishingprotection/commit/3e47bc54e0ba52be2a98a88ce8b3be18ba6abd93))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2 ([#509](https://www.github.com/googleapis/java-phishingprotection/issues/509)) ([6525839](https://www.github.com/googleapis/java-phishingprotection/commit/6525839b406399de69797de4df52d579d9e869ce))
+
 ### [0.30.2](https://www.github.com/googleapis/java-phishingprotection/compare/v0.30.1...v0.30.2) (2021-07-01)
 
 
