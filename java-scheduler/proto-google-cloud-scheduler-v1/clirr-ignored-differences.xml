@@ -16,4 +16,12 @@
     <className>com/google/cloud/scheduler/v1/*OrBuilder</className>
     <method>boolean has*(*)</method>
   </difference>
+  <difference>
+    <differenceType>8001</differenceType>
+    <className>com/google/cloud/scheduler/v1/TopicName</className>
+  </difference>
+  <difference>
+    <differenceType>8001</differenceType>
+    <className>com/google/cloud/scheduler/v1/TopicName$Builder</className>
+  </difference>
 </differences>

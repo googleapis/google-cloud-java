@@ -16,7 +16,6 @@
 
 package com.google.cloud.scheduler.v1;
 
-import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
 import com.google.api.core.BetaApi;
@@ -1040,14 +1039,7 @@ public class CloudSchedulerClient implements BackgroundResource {
       ApiFuture<ListJobsPage> futurePage =
           ListJobsPage.createEmptyPage().createPageAsync(context, futureResponse);
       return ApiFutures.transform(
-          futurePage,
-          new ApiFunction<ListJobsPage, ListJobsPagedResponse>() {
-            @Override
-            public ListJobsPagedResponse apply(ListJobsPage input) {
-              return new ListJobsPagedResponse(input);
-            }
-          },
-          MoreExecutors.directExecutor());
+          futurePage, input -> new ListJobsPagedResponse(input), MoreExecutors.directExecutor());
     }
 
     private ListJobsPagedResponse(ListJobsPage page) {
