@@ -1,5 +1,28 @@
 # Changelog
 
+## [0.3.0](https://www.github.com/googleapis/java-managed-identities/compare/v0.2.1...v0.3.0) (2021-08-06)
+
+
+### ⚠ BREAKING CHANGES
+
+* release gapic-generator-java v2.0.0 (#81)
+
+### Features
+
+* release gapic-generator-java v2.0.0 ([#81](https://www.github.com/googleapis/java-managed-identities/issues/81)) ([a86a136](https://www.github.com/googleapis/java-managed-identities/commit/a86a136a0f0514d025b6c55acca2dde1d662ec62))
+
+
+### Bug Fixes
+
+* Add `shopt -s nullglob` to dependencies script ([#65](https://www.github.com/googleapis/java-managed-identities/issues/65)) ([f6f1f37](https://www.github.com/googleapis/java-managed-identities/commit/f6f1f37255b19a979504f2652a05d3813c66f5e8))
+* Update dependencies.sh to not break on mac ([#61](https://www.github.com/googleapis/java-managed-identities/issues/61)) ([8b76f28](https://www.github.com/googleapis/java-managed-identities/commit/8b76f2804fd3130e039992cf4e358fc7c431cb64))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v1.4.0 ([#66](https://www.github.com/googleapis/java-managed-identities/issues/66)) ([1211641](https://www.github.com/googleapis/java-managed-identities/commit/1211641aa7b0d84ef2338e2f62dfc87b13402810))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2 ([#82](https://www.github.com/googleapis/java-managed-identities/issues/82)) ([6fe595e](https://www.github.com/googleapis/java-managed-identities/commit/6fe595e7e5261db630a6acf97bfc39182a9d7fdc))
+
 ### [0.2.1](https://www.github.com/googleapis/java-managed-identities/compare/v0.2.0...v0.2.1) (2021-06-09)
 
 
