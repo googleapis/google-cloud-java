@@ -1,5 +1,16 @@
 # Changelog
 
+## [2.0.0](https://www.github.com/googleapis/java-servicedirectory/compare/v1.3.1...v2.0.0) (2021-08-10)
+
+
+### ⚠ BREAKING CHANGES
+
+* release gapic-generator-java v2.0.0 (#481)
+
+### Features
+
+* release gapic-generator-java v2.0.0 ([#481](https://www.github.com/googleapis/java-servicedirectory/issues/481)) ([1873e8c](https://www.github.com/googleapis/java-servicedirectory/commit/1873e8ce220874aa3252cacaf053d29b93a84667))
+
 ### [1.3.1](https://www.github.com/googleapis/java-servicedirectory/compare/v1.3.0...v1.3.1) (2021-08-06)
 
 
