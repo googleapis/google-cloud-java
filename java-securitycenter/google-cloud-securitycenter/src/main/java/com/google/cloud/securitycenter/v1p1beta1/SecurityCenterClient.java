@@ -16,7 +16,6 @@
 
 package com.google.cloud.securitycenter.v1p1beta1;
 
-import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
 import com.google.api.core.BetaApi;
@@ -3180,14 +3179,7 @@ public class SecurityCenterClient implements BackgroundResource {
       ApiFuture<GroupAssetsPage> futurePage =
           GroupAssetsPage.createEmptyPage().createPageAsync(context, futureResponse);
       return ApiFutures.transform(
-          futurePage,
-          new ApiFunction<GroupAssetsPage, GroupAssetsPagedResponse>() {
-            @Override
-            public GroupAssetsPagedResponse apply(GroupAssetsPage input) {
-              return new GroupAssetsPagedResponse(input);
-            }
-          },
-          MoreExecutors.directExecutor());
+          futurePage, input -> new GroupAssetsPagedResponse(input), MoreExecutors.directExecutor());
     }
 
     private GroupAssetsPagedResponse(GroupAssetsPage page) {
@@ -3261,12 +3253,7 @@ public class SecurityCenterClient implements BackgroundResource {
           GroupFindingsPage.createEmptyPage().createPageAsync(context, futureResponse);
       return ApiFutures.transform(
           futurePage,
-          new ApiFunction<GroupFindingsPage, GroupFindingsPagedResponse>() {
-            @Override
-            public GroupFindingsPagedResponse apply(GroupFindingsPage input) {
-              return new GroupFindingsPagedResponse(input);
-            }
-          },
+          input -> new GroupFindingsPagedResponse(input),
           MoreExecutors.directExecutor());
     }
 
@@ -3342,14 +3329,7 @@ public class SecurityCenterClient implements BackgroundResource {
       ApiFuture<ListAssetsPage> futurePage =
           ListAssetsPage.createEmptyPage().createPageAsync(context, futureResponse);
       return ApiFutures.transform(
-          futurePage,
-          new ApiFunction<ListAssetsPage, ListAssetsPagedResponse>() {
-            @Override
-            public ListAssetsPagedResponse apply(ListAssetsPage input) {
-              return new ListAssetsPagedResponse(input);
-            }
-          },
-          MoreExecutors.directExecutor());
+          futurePage, input -> new ListAssetsPagedResponse(input), MoreExecutors.directExecutor());
     }
 
     private ListAssetsPagedResponse(ListAssetsPage page) {
@@ -3432,12 +3412,7 @@ public class SecurityCenterClient implements BackgroundResource {
           ListFindingsPage.createEmptyPage().createPageAsync(context, futureResponse);
       return ApiFutures.transform(
           futurePage,
-          new ApiFunction<ListFindingsPage, ListFindingsPagedResponse>() {
-            @Override
-            public ListFindingsPagedResponse apply(ListFindingsPage input) {
-              return new ListFindingsPagedResponse(input);
-            }
-          },
+          input -> new ListFindingsPagedResponse(input),
           MoreExecutors.directExecutor());
     }
 
@@ -3524,12 +3499,7 @@ public class SecurityCenterClient implements BackgroundResource {
           ListNotificationConfigsPage.createEmptyPage().createPageAsync(context, futureResponse);
       return ApiFutures.transform(
           futurePage,
-          new ApiFunction<ListNotificationConfigsPage, ListNotificationConfigsPagedResponse>() {
-            @Override
-            public ListNotificationConfigsPagedResponse apply(ListNotificationConfigsPage input) {
-              return new ListNotificationConfigsPagedResponse(input);
-            }
-          },
+          input -> new ListNotificationConfigsPagedResponse(input),
           MoreExecutors.directExecutor());
     }
 
@@ -3614,14 +3584,7 @@ public class SecurityCenterClient implements BackgroundResource {
       ApiFuture<ListSourcesPage> futurePage =
           ListSourcesPage.createEmptyPage().createPageAsync(context, futureResponse);
       return ApiFutures.transform(
-          futurePage,
-          new ApiFunction<ListSourcesPage, ListSourcesPagedResponse>() {
-            @Override
-            public ListSourcesPagedResponse apply(ListSourcesPage input) {
-              return new ListSourcesPagedResponse(input);
-            }
-          },
-          MoreExecutors.directExecutor());
+          futurePage, input -> new ListSourcesPagedResponse(input), MoreExecutors.directExecutor());
     }
 
     private ListSourcesPagedResponse(ListSourcesPage page) {

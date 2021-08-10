@@ -30,7 +30,6 @@ import com.google.api.gax.grpc.GrpcCallSettings;
 import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
-import com.google.api.gax.rpc.RequestParamsExtractor;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.securitycenter.v1p1beta1.CreateFindingRequest;
 import com.google.cloud.securitycenter.v1p1beta1.CreateNotificationConfigRequest;
@@ -76,7 +75,6 @@ import com.google.protobuf.Empty;
 import io.grpc.MethodDescriptor;
 import io.grpc.protobuf.ProtoUtils;
 import java.io.IOException;
-import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
@@ -424,26 +422,20 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
         GrpcCallSettings.<CreateSourceRequest, Source>newBuilder()
             .setMethodDescriptor(createSourceMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<CreateSourceRequest>() {
-                  @Override
-                  public Map<String, String> extract(CreateSourceRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("parent", String.valueOf(request.getParent()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("parent", String.valueOf(request.getParent()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<CreateFindingRequest, Finding> createFindingTransportSettings =
         GrpcCallSettings.<CreateFindingRequest, Finding>newBuilder()
             .setMethodDescriptor(createFindingMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<CreateFindingRequest>() {
-                  @Override
-                  public Map<String, String> extract(CreateFindingRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("parent", String.valueOf(request.getParent()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("parent", String.valueOf(request.getParent()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<CreateNotificationConfigRequest, NotificationConfig>
@@ -451,13 +443,10 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
             GrpcCallSettings.<CreateNotificationConfigRequest, NotificationConfig>newBuilder()
                 .setMethodDescriptor(createNotificationConfigMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<CreateNotificationConfigRequest>() {
-                      @Override
-                      public Map<String, String> extract(CreateNotificationConfigRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("parent", String.valueOf(request.getParent()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("parent", String.valueOf(request.getParent()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<DeleteNotificationConfigRequest, Empty>
@@ -465,26 +454,20 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
             GrpcCallSettings.<DeleteNotificationConfigRequest, Empty>newBuilder()
                 .setMethodDescriptor(deleteNotificationConfigMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<DeleteNotificationConfigRequest>() {
-                      @Override
-                      public Map<String, String> extract(DeleteNotificationConfigRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("name", String.valueOf(request.getName()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("name", String.valueOf(request.getName()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<GetIamPolicyRequest, Policy> getIamPolicyTransportSettings =
         GrpcCallSettings.<GetIamPolicyRequest, Policy>newBuilder()
             .setMethodDescriptor(getIamPolicyMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<GetIamPolicyRequest>() {
-                  @Override
-                  public Map<String, String> extract(GetIamPolicyRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("resource", String.valueOf(request.getResource()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("resource", String.valueOf(request.getResource()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<GetNotificationConfigRequest, NotificationConfig>
@@ -492,13 +475,10 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
             GrpcCallSettings.<GetNotificationConfigRequest, NotificationConfig>newBuilder()
                 .setMethodDescriptor(getNotificationConfigMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<GetNotificationConfigRequest>() {
-                      @Override
-                      public Map<String, String> extract(GetNotificationConfigRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("name", String.valueOf(request.getName()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("name", String.valueOf(request.getName()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<GetOrganizationSettingsRequest, OrganizationSettings>
@@ -506,78 +486,60 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
             GrpcCallSettings.<GetOrganizationSettingsRequest, OrganizationSettings>newBuilder()
                 .setMethodDescriptor(getOrganizationSettingsMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<GetOrganizationSettingsRequest>() {
-                      @Override
-                      public Map<String, String> extract(GetOrganizationSettingsRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("name", String.valueOf(request.getName()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("name", String.valueOf(request.getName()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<GetSourceRequest, Source> getSourceTransportSettings =
         GrpcCallSettings.<GetSourceRequest, Source>newBuilder()
             .setMethodDescriptor(getSourceMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<GetSourceRequest>() {
-                  @Override
-                  public Map<String, String> extract(GetSourceRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("name", String.valueOf(request.getName()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<GroupAssetsRequest, GroupAssetsResponse> groupAssetsTransportSettings =
         GrpcCallSettings.<GroupAssetsRequest, GroupAssetsResponse>newBuilder()
             .setMethodDescriptor(groupAssetsMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<GroupAssetsRequest>() {
-                  @Override
-                  public Map<String, String> extract(GroupAssetsRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("parent", String.valueOf(request.getParent()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("parent", String.valueOf(request.getParent()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<GroupFindingsRequest, GroupFindingsResponse> groupFindingsTransportSettings =
         GrpcCallSettings.<GroupFindingsRequest, GroupFindingsResponse>newBuilder()
             .setMethodDescriptor(groupFindingsMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<GroupFindingsRequest>() {
-                  @Override
-                  public Map<String, String> extract(GroupFindingsRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("parent", String.valueOf(request.getParent()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("parent", String.valueOf(request.getParent()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<ListAssetsRequest, ListAssetsResponse> listAssetsTransportSettings =
         GrpcCallSettings.<ListAssetsRequest, ListAssetsResponse>newBuilder()
             .setMethodDescriptor(listAssetsMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<ListAssetsRequest>() {
-                  @Override
-                  public Map<String, String> extract(ListAssetsRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("parent", String.valueOf(request.getParent()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("parent", String.valueOf(request.getParent()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<ListFindingsRequest, ListFindingsResponse> listFindingsTransportSettings =
         GrpcCallSettings.<ListFindingsRequest, ListFindingsResponse>newBuilder()
             .setMethodDescriptor(listFindingsMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<ListFindingsRequest>() {
-                  @Override
-                  public Map<String, String> extract(ListFindingsRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("parent", String.valueOf(request.getParent()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("parent", String.valueOf(request.getParent()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<ListNotificationConfigsRequest, ListNotificationConfigsResponse>
@@ -586,65 +548,50 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
                 .<ListNotificationConfigsRequest, ListNotificationConfigsResponse>newBuilder()
                 .setMethodDescriptor(listNotificationConfigsMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<ListNotificationConfigsRequest>() {
-                      @Override
-                      public Map<String, String> extract(ListNotificationConfigsRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("parent", String.valueOf(request.getParent()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("parent", String.valueOf(request.getParent()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<ListSourcesRequest, ListSourcesResponse> listSourcesTransportSettings =
         GrpcCallSettings.<ListSourcesRequest, ListSourcesResponse>newBuilder()
             .setMethodDescriptor(listSourcesMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<ListSourcesRequest>() {
-                  @Override
-                  public Map<String, String> extract(ListSourcesRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("parent", String.valueOf(request.getParent()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("parent", String.valueOf(request.getParent()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<RunAssetDiscoveryRequest, Operation> runAssetDiscoveryTransportSettings =
         GrpcCallSettings.<RunAssetDiscoveryRequest, Operation>newBuilder()
             .setMethodDescriptor(runAssetDiscoveryMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<RunAssetDiscoveryRequest>() {
-                  @Override
-                  public Map<String, String> extract(RunAssetDiscoveryRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("parent", String.valueOf(request.getParent()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("parent", String.valueOf(request.getParent()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<SetFindingStateRequest, Finding> setFindingStateTransportSettings =
         GrpcCallSettings.<SetFindingStateRequest, Finding>newBuilder()
             .setMethodDescriptor(setFindingStateMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<SetFindingStateRequest>() {
-                  @Override
-                  public Map<String, String> extract(SetFindingStateRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("name", String.valueOf(request.getName()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<SetIamPolicyRequest, Policy> setIamPolicyTransportSettings =
         GrpcCallSettings.<SetIamPolicyRequest, Policy>newBuilder()
             .setMethodDescriptor(setIamPolicyMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<SetIamPolicyRequest>() {
-                  @Override
-                  public Map<String, String> extract(SetIamPolicyRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("resource", String.valueOf(request.getResource()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("resource", String.valueOf(request.getResource()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
@@ -652,26 +599,20 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
             GrpcCallSettings.<TestIamPermissionsRequest, TestIamPermissionsResponse>newBuilder()
                 .setMethodDescriptor(testIamPermissionsMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<TestIamPermissionsRequest>() {
-                      @Override
-                      public Map<String, String> extract(TestIamPermissionsRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("resource", String.valueOf(request.getResource()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("resource", String.valueOf(request.getResource()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<UpdateFindingRequest, Finding> updateFindingTransportSettings =
         GrpcCallSettings.<UpdateFindingRequest, Finding>newBuilder()
             .setMethodDescriptor(updateFindingMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<UpdateFindingRequest>() {
-                  @Override
-                  public Map<String, String> extract(UpdateFindingRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("finding.name", String.valueOf(request.getFinding().getName()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("finding.name", String.valueOf(request.getFinding().getName()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<UpdateNotificationConfigRequest, NotificationConfig>
@@ -679,15 +620,12 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
             GrpcCallSettings.<UpdateNotificationConfigRequest, NotificationConfig>newBuilder()
                 .setMethodDescriptor(updateNotificationConfigMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<UpdateNotificationConfigRequest>() {
-                      @Override
-                      public Map<String, String> extract(UpdateNotificationConfigRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put(
-                            "notification_config.name",
-                            String.valueOf(request.getNotificationConfig().getName()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put(
+                          "notification_config.name",
+                          String.valueOf(request.getNotificationConfig().getName()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<UpdateOrganizationSettingsRequest, OrganizationSettings>
@@ -695,29 +633,22 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
             GrpcCallSettings.<UpdateOrganizationSettingsRequest, OrganizationSettings>newBuilder()
                 .setMethodDescriptor(updateOrganizationSettingsMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<UpdateOrganizationSettingsRequest>() {
-                      @Override
-                      public Map<String, String> extract(
-                          UpdateOrganizationSettingsRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put(
-                            "organization_settings.name",
-                            String.valueOf(request.getOrganizationSettings().getName()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put(
+                          "organization_settings.name",
+                          String.valueOf(request.getOrganizationSettings().getName()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<UpdateSourceRequest, Source> updateSourceTransportSettings =
         GrpcCallSettings.<UpdateSourceRequest, Source>newBuilder()
             .setMethodDescriptor(updateSourceMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<UpdateSourceRequest>() {
-                  @Override
-                  public Map<String, String> extract(UpdateSourceRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("source.name", String.valueOf(request.getSource().getName()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("source.name", String.valueOf(request.getSource().getName()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<UpdateSecurityMarksRequest, SecurityMarks>
@@ -725,15 +656,12 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
             GrpcCallSettings.<UpdateSecurityMarksRequest, SecurityMarks>newBuilder()
                 .setMethodDescriptor(updateSecurityMarksMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<UpdateSecurityMarksRequest>() {
-                      @Override
-                      public Map<String, String> extract(UpdateSecurityMarksRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put(
-                            "security_marks.name",
-                            String.valueOf(request.getSecurityMarks().getName()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put(
+                          "security_marks.name",
+                          String.valueOf(request.getSecurityMarks().getName()));
+                      return params.build();
                     })
                 .build();
 

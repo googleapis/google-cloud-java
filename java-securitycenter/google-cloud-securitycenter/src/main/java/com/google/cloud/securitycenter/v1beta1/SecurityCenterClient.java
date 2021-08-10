@@ -16,7 +16,6 @@
 
 package com.google.cloud.securitycenter.v1beta1;
 
-import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
 import com.google.api.core.BetaApi;
@@ -399,7 +398,7 @@ public class SecurityCenterClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
-   *   ResourceName resource = AssetName.of("[ORGANIZATION]", "[ASSET]");
+   *   ResourceName resource = SourceName.of("[ORGANIZATION]", "[SOURCE]");
    *   Policy response = securityCenterClient.getIamPolicy(resource);
    * }
    * }</pre>
@@ -424,7 +423,7 @@ public class SecurityCenterClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
-   *   String resource = AssetName.of("[ORGANIZATION]", "[ASSET]").toString();
+   *   String resource = SourceName.of("[ORGANIZATION]", "[SOURCE]").toString();
    *   Policy response = securityCenterClient.getIamPolicy(resource);
    * }
    * }</pre>
@@ -448,7 +447,7 @@ public class SecurityCenterClient implements BackgroundResource {
    * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
    *   GetIamPolicyRequest request =
    *       GetIamPolicyRequest.newBuilder()
-   *           .setResource(AssetName.of("[ORGANIZATION]", "[ASSET]").toString())
+   *           .setResource(SourceName.of("[ORGANIZATION]", "[SOURCE]").toString())
    *           .setOptions(GetPolicyOptions.newBuilder().build())
    *           .build();
    *   Policy response = securityCenterClient.getIamPolicy(request);
@@ -472,7 +471,7 @@ public class SecurityCenterClient implements BackgroundResource {
    * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
    *   GetIamPolicyRequest request =
    *       GetIamPolicyRequest.newBuilder()
-   *           .setResource(AssetName.of("[ORGANIZATION]", "[ASSET]").toString())
+   *           .setResource(SourceName.of("[ORGANIZATION]", "[SOURCE]").toString())
    *           .setOptions(GetPolicyOptions.newBuilder().build())
    *           .build();
    *   ApiFuture<Policy> future = securityCenterClient.getIamPolicyCallable().futureCall(request);
@@ -1567,7 +1566,7 @@ public class SecurityCenterClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
-   *   ResourceName resource = AssetName.of("[ORGANIZATION]", "[ASSET]");
+   *   ResourceName resource = SourceName.of("[ORGANIZATION]", "[SOURCE]");
    *   Policy policy = Policy.newBuilder().build();
    *   Policy response = securityCenterClient.setIamPolicy(resource, policy);
    * }
@@ -1597,7 +1596,7 @@ public class SecurityCenterClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
-   *   String resource = AssetName.of("[ORGANIZATION]", "[ASSET]").toString();
+   *   String resource = SourceName.of("[ORGANIZATION]", "[SOURCE]").toString();
    *   Policy policy = Policy.newBuilder().build();
    *   Policy response = securityCenterClient.setIamPolicy(resource, policy);
    * }
@@ -1626,7 +1625,7 @@ public class SecurityCenterClient implements BackgroundResource {
    * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
    *   SetIamPolicyRequest request =
    *       SetIamPolicyRequest.newBuilder()
-   *           .setResource(AssetName.of("[ORGANIZATION]", "[ASSET]").toString())
+   *           .setResource(SourceName.of("[ORGANIZATION]", "[SOURCE]").toString())
    *           .setPolicy(Policy.newBuilder().build())
    *           .build();
    *   Policy response = securityCenterClient.setIamPolicy(request);
@@ -1650,7 +1649,7 @@ public class SecurityCenterClient implements BackgroundResource {
    * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
    *   SetIamPolicyRequest request =
    *       SetIamPolicyRequest.newBuilder()
-   *           .setResource(AssetName.of("[ORGANIZATION]", "[ASSET]").toString())
+   *           .setResource(SourceName.of("[ORGANIZATION]", "[SOURCE]").toString())
    *           .setPolicy(Policy.newBuilder().build())
    *           .build();
    *   ApiFuture<Policy> future = securityCenterClient.setIamPolicyCallable().futureCall(request);
@@ -1671,7 +1670,7 @@ public class SecurityCenterClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
-   *   ResourceName resource = AssetName.of("[ORGANIZATION]", "[ASSET]");
+   *   ResourceName resource = SourceName.of("[ORGANIZATION]", "[SOURCE]");
    *   List<String> permissions = new ArrayList<>();
    *   TestIamPermissionsResponse response =
    *       securityCenterClient.testIamPermissions(resource, permissions);
@@ -1703,7 +1702,7 @@ public class SecurityCenterClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
-   *   String resource = AssetName.of("[ORGANIZATION]", "[ASSET]").toString();
+   *   String resource = SourceName.of("[ORGANIZATION]", "[SOURCE]").toString();
    *   List<String> permissions = new ArrayList<>();
    *   TestIamPermissionsResponse response =
    *       securityCenterClient.testIamPermissions(resource, permissions);
@@ -1737,7 +1736,7 @@ public class SecurityCenterClient implements BackgroundResource {
    * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
    *   TestIamPermissionsRequest request =
    *       TestIamPermissionsRequest.newBuilder()
-   *           .setResource(AssetName.of("[ORGANIZATION]", "[ASSET]").toString())
+   *           .setResource(SourceName.of("[ORGANIZATION]", "[SOURCE]").toString())
    *           .addAllPermissions(new ArrayList<String>())
    *           .build();
    *   TestIamPermissionsResponse response = securityCenterClient.testIamPermissions(request);
@@ -1761,7 +1760,7 @@ public class SecurityCenterClient implements BackgroundResource {
    * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
    *   TestIamPermissionsRequest request =
    *       TestIamPermissionsRequest.newBuilder()
-   *           .setResource(AssetName.of("[ORGANIZATION]", "[ASSET]").toString())
+   *           .setResource(SourceName.of("[ORGANIZATION]", "[SOURCE]").toString())
    *           .addAllPermissions(new ArrayList<String>())
    *           .build();
    *   ApiFuture<TestIamPermissionsResponse> future =
@@ -2111,14 +2110,7 @@ public class SecurityCenterClient implements BackgroundResource {
       ApiFuture<GroupAssetsPage> futurePage =
           GroupAssetsPage.createEmptyPage().createPageAsync(context, futureResponse);
       return ApiFutures.transform(
-          futurePage,
-          new ApiFunction<GroupAssetsPage, GroupAssetsPagedResponse>() {
-            @Override
-            public GroupAssetsPagedResponse apply(GroupAssetsPage input) {
-              return new GroupAssetsPagedResponse(input);
-            }
-          },
-          MoreExecutors.directExecutor());
+          futurePage, input -> new GroupAssetsPagedResponse(input), MoreExecutors.directExecutor());
     }
 
     private GroupAssetsPagedResponse(GroupAssetsPage page) {
@@ -2192,12 +2184,7 @@ public class SecurityCenterClient implements BackgroundResource {
           GroupFindingsPage.createEmptyPage().createPageAsync(context, futureResponse);
       return ApiFutures.transform(
           futurePage,
-          new ApiFunction<GroupFindingsPage, GroupFindingsPagedResponse>() {
-            @Override
-            public GroupFindingsPagedResponse apply(GroupFindingsPage input) {
-              return new GroupFindingsPagedResponse(input);
-            }
-          },
+          input -> new GroupFindingsPagedResponse(input),
           MoreExecutors.directExecutor());
     }
 
@@ -2273,14 +2260,7 @@ public class SecurityCenterClient implements BackgroundResource {
       ApiFuture<ListAssetsPage> futurePage =
           ListAssetsPage.createEmptyPage().createPageAsync(context, futureResponse);
       return ApiFutures.transform(
-          futurePage,
-          new ApiFunction<ListAssetsPage, ListAssetsPagedResponse>() {
-            @Override
-            public ListAssetsPagedResponse apply(ListAssetsPage input) {
-              return new ListAssetsPagedResponse(input);
-            }
-          },
-          MoreExecutors.directExecutor());
+          futurePage, input -> new ListAssetsPagedResponse(input), MoreExecutors.directExecutor());
     }
 
     private ListAssetsPagedResponse(ListAssetsPage page) {
@@ -2361,12 +2341,7 @@ public class SecurityCenterClient implements BackgroundResource {
           ListFindingsPage.createEmptyPage().createPageAsync(context, futureResponse);
       return ApiFutures.transform(
           futurePage,
-          new ApiFunction<ListFindingsPage, ListFindingsPagedResponse>() {
-            @Override
-            public ListFindingsPagedResponse apply(ListFindingsPage input) {
-              return new ListFindingsPagedResponse(input);
-            }
-          },
+          input -> new ListFindingsPagedResponse(input),
           MoreExecutors.directExecutor());
     }
 
@@ -2440,14 +2415,7 @@ public class SecurityCenterClient implements BackgroundResource {
       ApiFuture<ListSourcesPage> futurePage =
           ListSourcesPage.createEmptyPage().createPageAsync(context, futureResponse);
       return ApiFutures.transform(
-          futurePage,
-          new ApiFunction<ListSourcesPage, ListSourcesPagedResponse>() {
-            @Override
-            public ListSourcesPagedResponse apply(ListSourcesPage input) {
-              return new ListSourcesPagedResponse(input);
-            }
-          },
-          MoreExecutors.directExecutor());
+          futurePage, input -> new ListSourcesPagedResponse(input), MoreExecutors.directExecutor());
     }
 
     private ListSourcesPagedResponse(ListSourcesPage page) {

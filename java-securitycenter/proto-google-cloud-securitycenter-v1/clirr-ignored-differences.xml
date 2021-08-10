@@ -68,4 +68,40 @@
     <differenceType>8001</differenceType>
     <className>com/google/cloud/securitycenter/v1/UntypedSecurityMarksName</className>
   </difference>
+  <difference>
+    <differenceType>8001</differenceType>
+    <className>com/google/cloud/securitycenter/v1/SecurityMarksName</className>
+  </difference>
+  <difference>
+    <differenceType>8001</differenceType>
+    <className>com/google/cloud/securitycenter/v1/SecurityMarksName$Builder</className>
+  </difference>
+  <difference>
+    <differenceType>8001</differenceType>
+    <className>com/google/cloud/securitycenter/v1/SecurityMarksName$FolderAssetBuilder</className>
+  </difference>
+  <difference>
+    <differenceType>8001</differenceType>
+    <className>com/google/cloud/securitycenter/v1/SecurityMarksName$FolderSourceFindingBuilder</className>
+  </difference>
+  <difference>
+    <differenceType>8001</differenceType>
+    <className>com/google/cloud/securitycenter/v1/SecurityMarksName$OrganizationSourceFindingSecurityMarksBuilder</className>
+  </difference>
+  <difference>
+    <differenceType>8001</differenceType>
+    <className>com/google/cloud/securitycenter/v1/SecurityMarksName$ProjectAssetBuilder</className>
+  </difference>
+  <difference>
+    <differenceType>8001</differenceType>
+    <className>com/google/cloud/securitycenter/v1/SecurityMarksName$ProjectSourceFindingBuilder</className>
+  </difference>
+  <difference>
+    <differenceType>8001</differenceType>
+    <className>com/google/cloud/securitycenter/v1/TopicName</className>
+  </difference>
+  <difference>
+    <differenceType>8001</differenceType>
+    <className>com/google/cloud/securitycenter/v1/TopicName$Builder</className>
+  </difference>
 </differences>
