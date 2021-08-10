@@ -1,5 +1,27 @@
 # Changelog
 
+## [2.0.0](https://www.github.com/googleapis/java-websecurityscanner/compare/v1.2.2...v2.0.0) (2021-08-10)
+
+
+### ⚠ BREAKING CHANGES
+
+* release gapic-generator-java v2.0.0 (#509)
+
+### Features
+
+* release gapic-generator-java v2.0.0 ([#509](https://www.github.com/googleapis/java-websecurityscanner/issues/509)) ([cd8382f](https://www.github.com/googleapis/java-websecurityscanner/commit/cd8382f48f35385030d98f07bea51cce4979b593))
+
+
+### Bug Fixes
+
+* Add shopt -s nullglob to dependencies script ([#491](https://www.github.com/googleapis/java-websecurityscanner/issues/491)) ([2aa4c15](https://www.github.com/googleapis/java-websecurityscanner/commit/2aa4c15293126fb501fdcb4c1e646003a7797fcb))
+* Update dependencies.sh to not break on mac ([#480](https://www.github.com/googleapis/java-websecurityscanner/issues/480)) ([2cfa1f1](https://www.github.com/googleapis/java-websecurityscanner/commit/2cfa1f10a600081095b493ce6d3b1c584c5e20d2))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2 ([#510](https://www.github.com/googleapis/java-websecurityscanner/issues/510)) ([55de604](https://www.github.com/googleapis/java-websecurityscanner/commit/55de604d1daa41d07796c0880d73b59c59b8bc6b))
+
 ### [1.2.2](https://www.github.com/googleapis/java-websecurityscanner/compare/v1.2.1...v1.2.2) (2021-07-01)
 
 
