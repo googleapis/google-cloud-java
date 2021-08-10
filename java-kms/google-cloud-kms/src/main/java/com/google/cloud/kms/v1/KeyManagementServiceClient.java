@@ -2134,6 +2134,459 @@ public class KeyManagementServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
+   * Update the version of a [CryptoKey][google.cloud.kms.v1.CryptoKey] that will be used in
+   * [Encrypt][google.cloud.kms.v1.KeyManagementService.Encrypt].
+   *
+   * <p>Returns an error if called on a key whose purpose is not
+   * [ENCRYPT_DECRYPT][google.cloud.kms.v1.CryptoKey.CryptoKeyPurpose.ENCRYPT_DECRYPT].
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (KeyManagementServiceClient keyManagementServiceClient =
+   *     KeyManagementServiceClient.create()) {
+   *   CryptoKeyName name =
+   *       CryptoKeyName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]", "[CRYPTO_KEY]");
+   *   String cryptoKeyVersionId = "cryptoKeyVersionId987674581";
+   *   CryptoKey response =
+   *       keyManagementServiceClient.updateCryptoKeyPrimaryVersion(name, cryptoKeyVersionId);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The resource name of the [CryptoKey][google.cloud.kms.v1.CryptoKey] to
+   *     update.
+   * @param cryptoKeyVersionId Required. The id of the child
+   *     [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] to use as primary.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final CryptoKey updateCryptoKeyPrimaryVersion(
+      CryptoKeyName name, String cryptoKeyVersionId) {
+    UpdateCryptoKeyPrimaryVersionRequest request =
+        UpdateCryptoKeyPrimaryVersionRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .setCryptoKeyVersionId(cryptoKeyVersionId)
+            .build();
+    return updateCryptoKeyPrimaryVersion(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Update the version of a [CryptoKey][google.cloud.kms.v1.CryptoKey] that will be used in
+   * [Encrypt][google.cloud.kms.v1.KeyManagementService.Encrypt].
+   *
+   * <p>Returns an error if called on a key whose purpose is not
+   * [ENCRYPT_DECRYPT][google.cloud.kms.v1.CryptoKey.CryptoKeyPurpose.ENCRYPT_DECRYPT].
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (KeyManagementServiceClient keyManagementServiceClient =
+   *     KeyManagementServiceClient.create()) {
+   *   String name =
+   *       CryptoKeyName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]", "[CRYPTO_KEY]").toString();
+   *   String cryptoKeyVersionId = "cryptoKeyVersionId987674581";
+   *   CryptoKey response =
+   *       keyManagementServiceClient.updateCryptoKeyPrimaryVersion(name, cryptoKeyVersionId);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The resource name of the [CryptoKey][google.cloud.kms.v1.CryptoKey] to
+   *     update.
+   * @param cryptoKeyVersionId Required. The id of the child
+   *     [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] to use as primary.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final CryptoKey updateCryptoKeyPrimaryVersion(String name, String cryptoKeyVersionId) {
+    UpdateCryptoKeyPrimaryVersionRequest request =
+        UpdateCryptoKeyPrimaryVersionRequest.newBuilder()
+            .setName(name)
+            .setCryptoKeyVersionId(cryptoKeyVersionId)
+            .build();
+    return updateCryptoKeyPrimaryVersion(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Update the version of a [CryptoKey][google.cloud.kms.v1.CryptoKey] that will be used in
+   * [Encrypt][google.cloud.kms.v1.KeyManagementService.Encrypt].
+   *
+   * <p>Returns an error if called on a key whose purpose is not
+   * [ENCRYPT_DECRYPT][google.cloud.kms.v1.CryptoKey.CryptoKeyPurpose.ENCRYPT_DECRYPT].
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (KeyManagementServiceClient keyManagementServiceClient =
+   *     KeyManagementServiceClient.create()) {
+   *   UpdateCryptoKeyPrimaryVersionRequest request =
+   *       UpdateCryptoKeyPrimaryVersionRequest.newBuilder()
+   *           .setName(
+   *               CryptoKeyName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]", "[CRYPTO_KEY]")
+   *                   .toString())
+   *           .setCryptoKeyVersionId("cryptoKeyVersionId987674581")
+   *           .build();
+   *   CryptoKey response = keyManagementServiceClient.updateCryptoKeyPrimaryVersion(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final CryptoKey updateCryptoKeyPrimaryVersion(
+      UpdateCryptoKeyPrimaryVersionRequest request) {
+    return updateCryptoKeyPrimaryVersionCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Update the version of a [CryptoKey][google.cloud.kms.v1.CryptoKey] that will be used in
+   * [Encrypt][google.cloud.kms.v1.KeyManagementService.Encrypt].
+   *
+   * <p>Returns an error if called on a key whose purpose is not
+   * [ENCRYPT_DECRYPT][google.cloud.kms.v1.CryptoKey.CryptoKeyPurpose.ENCRYPT_DECRYPT].
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (KeyManagementServiceClient keyManagementServiceClient =
+   *     KeyManagementServiceClient.create()) {
+   *   UpdateCryptoKeyPrimaryVersionRequest request =
+   *       UpdateCryptoKeyPrimaryVersionRequest.newBuilder()
+   *           .setName(
+   *               CryptoKeyName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]", "[CRYPTO_KEY]")
+   *                   .toString())
+   *           .setCryptoKeyVersionId("cryptoKeyVersionId987674581")
+   *           .build();
+   *   ApiFuture<CryptoKey> future =
+   *       keyManagementServiceClient.updateCryptoKeyPrimaryVersionCallable().futureCall(request);
+   *   // Do something.
+   *   CryptoKey response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<UpdateCryptoKeyPrimaryVersionRequest, CryptoKey>
+      updateCryptoKeyPrimaryVersionCallable() {
+    return stub.updateCryptoKeyPrimaryVersionCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Schedule a [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] for destruction.
+   *
+   * <p>Upon calling this method,
+   * [CryptoKeyVersion.state][google.cloud.kms.v1.CryptoKeyVersion.state] will be set to
+   * [DESTROY_SCHEDULED][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionState.DESTROY_SCHEDULED]
+   * and [destroy_time][google.cloud.kms.v1.CryptoKeyVersion.destroy_time] will be set to a time 24
+   * hours in the future, at which point the [state][google.cloud.kms.v1.CryptoKeyVersion.state]
+   * will be changed to
+   * [DESTROYED][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionState.DESTROYED], and the key
+   * material will be irrevocably destroyed.
+   *
+   * <p>Before the [destroy_time][google.cloud.kms.v1.CryptoKeyVersion.destroy_time] is reached,
+   * [RestoreCryptoKeyVersion][google.cloud.kms.v1.KeyManagementService.RestoreCryptoKeyVersion] may
+   * be called to reverse the process.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (KeyManagementServiceClient keyManagementServiceClient =
+   *     KeyManagementServiceClient.create()) {
+   *   CryptoKeyVersionName name =
+   *       CryptoKeyVersionName.of(
+   *           "[PROJECT]", "[LOCATION]", "[KEY_RING]", "[CRYPTO_KEY]", "[CRYPTO_KEY_VERSION]");
+   *   CryptoKeyVersion response = keyManagementServiceClient.destroyCryptoKeyVersion(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The resource name of the
+   *     [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] to destroy.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final CryptoKeyVersion destroyCryptoKeyVersion(CryptoKeyVersionName name) {
+    DestroyCryptoKeyVersionRequest request =
+        DestroyCryptoKeyVersionRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .build();
+    return destroyCryptoKeyVersion(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Schedule a [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] for destruction.
+   *
+   * <p>Upon calling this method,
+   * [CryptoKeyVersion.state][google.cloud.kms.v1.CryptoKeyVersion.state] will be set to
+   * [DESTROY_SCHEDULED][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionState.DESTROY_SCHEDULED]
+   * and [destroy_time][google.cloud.kms.v1.CryptoKeyVersion.destroy_time] will be set to a time 24
+   * hours in the future, at which point the [state][google.cloud.kms.v1.CryptoKeyVersion.state]
+   * will be changed to
+   * [DESTROYED][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionState.DESTROYED], and the key
+   * material will be irrevocably destroyed.
+   *
+   * <p>Before the [destroy_time][google.cloud.kms.v1.CryptoKeyVersion.destroy_time] is reached,
+   * [RestoreCryptoKeyVersion][google.cloud.kms.v1.KeyManagementService.RestoreCryptoKeyVersion] may
+   * be called to reverse the process.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (KeyManagementServiceClient keyManagementServiceClient =
+   *     KeyManagementServiceClient.create()) {
+   *   String name =
+   *       CryptoKeyVersionName.of(
+   *               "[PROJECT]", "[LOCATION]", "[KEY_RING]", "[CRYPTO_KEY]", "[CRYPTO_KEY_VERSION]")
+   *           .toString();
+   *   CryptoKeyVersion response = keyManagementServiceClient.destroyCryptoKeyVersion(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The resource name of the
+   *     [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] to destroy.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final CryptoKeyVersion destroyCryptoKeyVersion(String name) {
+    DestroyCryptoKeyVersionRequest request =
+        DestroyCryptoKeyVersionRequest.newBuilder().setName(name).build();
+    return destroyCryptoKeyVersion(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Schedule a [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] for destruction.
+   *
+   * <p>Upon calling this method,
+   * [CryptoKeyVersion.state][google.cloud.kms.v1.CryptoKeyVersion.state] will be set to
+   * [DESTROY_SCHEDULED][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionState.DESTROY_SCHEDULED]
+   * and [destroy_time][google.cloud.kms.v1.CryptoKeyVersion.destroy_time] will be set to a time 24
+   * hours in the future, at which point the [state][google.cloud.kms.v1.CryptoKeyVersion.state]
+   * will be changed to
+   * [DESTROYED][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionState.DESTROYED], and the key
+   * material will be irrevocably destroyed.
+   *
+   * <p>Before the [destroy_time][google.cloud.kms.v1.CryptoKeyVersion.destroy_time] is reached,
+   * [RestoreCryptoKeyVersion][google.cloud.kms.v1.KeyManagementService.RestoreCryptoKeyVersion] may
+   * be called to reverse the process.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (KeyManagementServiceClient keyManagementServiceClient =
+   *     KeyManagementServiceClient.create()) {
+   *   DestroyCryptoKeyVersionRequest request =
+   *       DestroyCryptoKeyVersionRequest.newBuilder()
+   *           .setName(
+   *               CryptoKeyVersionName.of(
+   *                       "[PROJECT]",
+   *                       "[LOCATION]",
+   *                       "[KEY_RING]",
+   *                       "[CRYPTO_KEY]",
+   *                       "[CRYPTO_KEY_VERSION]")
+   *                   .toString())
+   *           .build();
+   *   CryptoKeyVersion response = keyManagementServiceClient.destroyCryptoKeyVersion(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final CryptoKeyVersion destroyCryptoKeyVersion(DestroyCryptoKeyVersionRequest request) {
+    return destroyCryptoKeyVersionCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Schedule a [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] for destruction.
+   *
+   * <p>Upon calling this method,
+   * [CryptoKeyVersion.state][google.cloud.kms.v1.CryptoKeyVersion.state] will be set to
+   * [DESTROY_SCHEDULED][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionState.DESTROY_SCHEDULED]
+   * and [destroy_time][google.cloud.kms.v1.CryptoKeyVersion.destroy_time] will be set to a time 24
+   * hours in the future, at which point the [state][google.cloud.kms.v1.CryptoKeyVersion.state]
+   * will be changed to
+   * [DESTROYED][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionState.DESTROYED], and the key
+   * material will be irrevocably destroyed.
+   *
+   * <p>Before the [destroy_time][google.cloud.kms.v1.CryptoKeyVersion.destroy_time] is reached,
+   * [RestoreCryptoKeyVersion][google.cloud.kms.v1.KeyManagementService.RestoreCryptoKeyVersion] may
+   * be called to reverse the process.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (KeyManagementServiceClient keyManagementServiceClient =
+   *     KeyManagementServiceClient.create()) {
+   *   DestroyCryptoKeyVersionRequest request =
+   *       DestroyCryptoKeyVersionRequest.newBuilder()
+   *           .setName(
+   *               CryptoKeyVersionName.of(
+   *                       "[PROJECT]",
+   *                       "[LOCATION]",
+   *                       "[KEY_RING]",
+   *                       "[CRYPTO_KEY]",
+   *                       "[CRYPTO_KEY_VERSION]")
+   *                   .toString())
+   *           .build();
+   *   ApiFuture<CryptoKeyVersion> future =
+   *       keyManagementServiceClient.destroyCryptoKeyVersionCallable().futureCall(request);
+   *   // Do something.
+   *   CryptoKeyVersion response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<DestroyCryptoKeyVersionRequest, CryptoKeyVersion>
+      destroyCryptoKeyVersionCallable() {
+    return stub.destroyCryptoKeyVersionCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Restore a [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] in the
+   * [DESTROY_SCHEDULED][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionState.DESTROY_SCHEDULED]
+   * state.
+   *
+   * <p>Upon restoration of the CryptoKeyVersion,
+   * [state][google.cloud.kms.v1.CryptoKeyVersion.state] will be set to
+   * [DISABLED][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionState.DISABLED], and
+   * [destroy_time][google.cloud.kms.v1.CryptoKeyVersion.destroy_time] will be cleared.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (KeyManagementServiceClient keyManagementServiceClient =
+   *     KeyManagementServiceClient.create()) {
+   *   CryptoKeyVersionName name =
+   *       CryptoKeyVersionName.of(
+   *           "[PROJECT]", "[LOCATION]", "[KEY_RING]", "[CRYPTO_KEY]", "[CRYPTO_KEY_VERSION]");
+   *   CryptoKeyVersion response = keyManagementServiceClient.restoreCryptoKeyVersion(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The resource name of the
+   *     [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] to restore.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final CryptoKeyVersion restoreCryptoKeyVersion(CryptoKeyVersionName name) {
+    RestoreCryptoKeyVersionRequest request =
+        RestoreCryptoKeyVersionRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .build();
+    return restoreCryptoKeyVersion(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Restore a [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] in the
+   * [DESTROY_SCHEDULED][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionState.DESTROY_SCHEDULED]
+   * state.
+   *
+   * <p>Upon restoration of the CryptoKeyVersion,
+   * [state][google.cloud.kms.v1.CryptoKeyVersion.state] will be set to
+   * [DISABLED][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionState.DISABLED], and
+   * [destroy_time][google.cloud.kms.v1.CryptoKeyVersion.destroy_time] will be cleared.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (KeyManagementServiceClient keyManagementServiceClient =
+   *     KeyManagementServiceClient.create()) {
+   *   String name =
+   *       CryptoKeyVersionName.of(
+   *               "[PROJECT]", "[LOCATION]", "[KEY_RING]", "[CRYPTO_KEY]", "[CRYPTO_KEY_VERSION]")
+   *           .toString();
+   *   CryptoKeyVersion response = keyManagementServiceClient.restoreCryptoKeyVersion(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The resource name of the
+   *     [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] to restore.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final CryptoKeyVersion restoreCryptoKeyVersion(String name) {
+    RestoreCryptoKeyVersionRequest request =
+        RestoreCryptoKeyVersionRequest.newBuilder().setName(name).build();
+    return restoreCryptoKeyVersion(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Restore a [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] in the
+   * [DESTROY_SCHEDULED][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionState.DESTROY_SCHEDULED]
+   * state.
+   *
+   * <p>Upon restoration of the CryptoKeyVersion,
+   * [state][google.cloud.kms.v1.CryptoKeyVersion.state] will be set to
+   * [DISABLED][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionState.DISABLED], and
+   * [destroy_time][google.cloud.kms.v1.CryptoKeyVersion.destroy_time] will be cleared.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (KeyManagementServiceClient keyManagementServiceClient =
+   *     KeyManagementServiceClient.create()) {
+   *   RestoreCryptoKeyVersionRequest request =
+   *       RestoreCryptoKeyVersionRequest.newBuilder()
+   *           .setName(
+   *               CryptoKeyVersionName.of(
+   *                       "[PROJECT]",
+   *                       "[LOCATION]",
+   *                       "[KEY_RING]",
+   *                       "[CRYPTO_KEY]",
+   *                       "[CRYPTO_KEY_VERSION]")
+   *                   .toString())
+   *           .build();
+   *   CryptoKeyVersion response = keyManagementServiceClient.restoreCryptoKeyVersion(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final CryptoKeyVersion restoreCryptoKeyVersion(RestoreCryptoKeyVersionRequest request) {
+    return restoreCryptoKeyVersionCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Restore a [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] in the
+   * [DESTROY_SCHEDULED][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionState.DESTROY_SCHEDULED]
+   * state.
+   *
+   * <p>Upon restoration of the CryptoKeyVersion,
+   * [state][google.cloud.kms.v1.CryptoKeyVersion.state] will be set to
+   * [DISABLED][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionState.DISABLED], and
+   * [destroy_time][google.cloud.kms.v1.CryptoKeyVersion.destroy_time] will be cleared.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (KeyManagementServiceClient keyManagementServiceClient =
+   *     KeyManagementServiceClient.create()) {
+   *   RestoreCryptoKeyVersionRequest request =
+   *       RestoreCryptoKeyVersionRequest.newBuilder()
+   *           .setName(
+   *               CryptoKeyVersionName.of(
+   *                       "[PROJECT]",
+   *                       "[LOCATION]",
+   *                       "[KEY_RING]",
+   *                       "[CRYPTO_KEY]",
+   *                       "[CRYPTO_KEY_VERSION]")
+   *                   .toString())
+   *           .build();
+   *   ApiFuture<CryptoKeyVersion> future =
+   *       keyManagementServiceClient.restoreCryptoKeyVersionCallable().futureCall(request);
+   *   // Do something.
+   *   CryptoKeyVersion response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<RestoreCryptoKeyVersionRequest, CryptoKeyVersion>
+      restoreCryptoKeyVersionCallable() {
+    return stub.restoreCryptoKeyVersionCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
    * Encrypts data, so that it can only be recovered by a call to
    * [Decrypt][google.cloud.kms.v1.KeyManagementService.Decrypt]. The
    * [CryptoKey.purpose][google.cloud.kms.v1.CryptoKey.purpose] must be
@@ -2730,157 +3183,9 @@ public class KeyManagementServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Update the version of a [CryptoKey][google.cloud.kms.v1.CryptoKey] that will be used in
-   * [Encrypt][google.cloud.kms.v1.KeyManagementService.Encrypt].
-   *
-   * <p>Returns an error if called on a key whose purpose is not
-   * [ENCRYPT_DECRYPT][google.cloud.kms.v1.CryptoKey.CryptoKeyPurpose.ENCRYPT_DECRYPT].
-   *
-   * <p>Sample code:
-   *
-   * <pre>{@code
-   * try (KeyManagementServiceClient keyManagementServiceClient =
-   *     KeyManagementServiceClient.create()) {
-   *   CryptoKeyName name =
-   *       CryptoKeyName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]", "[CRYPTO_KEY]");
-   *   String cryptoKeyVersionId = "cryptoKeyVersionId987674581";
-   *   CryptoKey response =
-   *       keyManagementServiceClient.updateCryptoKeyPrimaryVersion(name, cryptoKeyVersionId);
-   * }
-   * }</pre>
-   *
-   * @param name Required. The resource name of the [CryptoKey][google.cloud.kms.v1.CryptoKey] to
-   *     update.
-   * @param cryptoKeyVersionId Required. The id of the child
-   *     [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] to use as primary.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final CryptoKey updateCryptoKeyPrimaryVersion(
-      CryptoKeyName name, String cryptoKeyVersionId) {
-    UpdateCryptoKeyPrimaryVersionRequest request =
-        UpdateCryptoKeyPrimaryVersionRequest.newBuilder()
-            .setName(name == null ? null : name.toString())
-            .setCryptoKeyVersionId(cryptoKeyVersionId)
-            .build();
-    return updateCryptoKeyPrimaryVersion(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD.
-  /**
-   * Update the version of a [CryptoKey][google.cloud.kms.v1.CryptoKey] that will be used in
-   * [Encrypt][google.cloud.kms.v1.KeyManagementService.Encrypt].
-   *
-   * <p>Returns an error if called on a key whose purpose is not
-   * [ENCRYPT_DECRYPT][google.cloud.kms.v1.CryptoKey.CryptoKeyPurpose.ENCRYPT_DECRYPT].
-   *
-   * <p>Sample code:
-   *
-   * <pre>{@code
-   * try (KeyManagementServiceClient keyManagementServiceClient =
-   *     KeyManagementServiceClient.create()) {
-   *   String name =
-   *       CryptoKeyName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]", "[CRYPTO_KEY]").toString();
-   *   String cryptoKeyVersionId = "cryptoKeyVersionId987674581";
-   *   CryptoKey response =
-   *       keyManagementServiceClient.updateCryptoKeyPrimaryVersion(name, cryptoKeyVersionId);
-   * }
-   * }</pre>
-   *
-   * @param name Required. The resource name of the [CryptoKey][google.cloud.kms.v1.CryptoKey] to
-   *     update.
-   * @param cryptoKeyVersionId Required. The id of the child
-   *     [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] to use as primary.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final CryptoKey updateCryptoKeyPrimaryVersion(String name, String cryptoKeyVersionId) {
-    UpdateCryptoKeyPrimaryVersionRequest request =
-        UpdateCryptoKeyPrimaryVersionRequest.newBuilder()
-            .setName(name)
-            .setCryptoKeyVersionId(cryptoKeyVersionId)
-            .build();
-    return updateCryptoKeyPrimaryVersion(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD.
-  /**
-   * Update the version of a [CryptoKey][google.cloud.kms.v1.CryptoKey] that will be used in
-   * [Encrypt][google.cloud.kms.v1.KeyManagementService.Encrypt].
-   *
-   * <p>Returns an error if called on a key whose purpose is not
-   * [ENCRYPT_DECRYPT][google.cloud.kms.v1.CryptoKey.CryptoKeyPurpose.ENCRYPT_DECRYPT].
-   *
-   * <p>Sample code:
-   *
-   * <pre>{@code
-   * try (KeyManagementServiceClient keyManagementServiceClient =
-   *     KeyManagementServiceClient.create()) {
-   *   UpdateCryptoKeyPrimaryVersionRequest request =
-   *       UpdateCryptoKeyPrimaryVersionRequest.newBuilder()
-   *           .setName(
-   *               CryptoKeyName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]", "[CRYPTO_KEY]")
-   *                   .toString())
-   *           .setCryptoKeyVersionId("cryptoKeyVersionId987674581")
-   *           .build();
-   *   CryptoKey response = keyManagementServiceClient.updateCryptoKeyPrimaryVersion(request);
-   * }
-   * }</pre>
-   *
-   * @param request The request object containing all of the parameters for the API call.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final CryptoKey updateCryptoKeyPrimaryVersion(
-      UpdateCryptoKeyPrimaryVersionRequest request) {
-    return updateCryptoKeyPrimaryVersionCallable().call(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD.
-  /**
-   * Update the version of a [CryptoKey][google.cloud.kms.v1.CryptoKey] that will be used in
-   * [Encrypt][google.cloud.kms.v1.KeyManagementService.Encrypt].
-   *
-   * <p>Returns an error if called on a key whose purpose is not
-   * [ENCRYPT_DECRYPT][google.cloud.kms.v1.CryptoKey.CryptoKeyPurpose.ENCRYPT_DECRYPT].
-   *
-   * <p>Sample code:
-   *
-   * <pre>{@code
-   * try (KeyManagementServiceClient keyManagementServiceClient =
-   *     KeyManagementServiceClient.create()) {
-   *   UpdateCryptoKeyPrimaryVersionRequest request =
-   *       UpdateCryptoKeyPrimaryVersionRequest.newBuilder()
-   *           .setName(
-   *               CryptoKeyName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]", "[CRYPTO_KEY]")
-   *                   .toString())
-   *           .setCryptoKeyVersionId("cryptoKeyVersionId987674581")
-   *           .build();
-   *   ApiFuture<CryptoKey> future =
-   *       keyManagementServiceClient.updateCryptoKeyPrimaryVersionCallable().futureCall(request);
-   *   // Do something.
-   *   CryptoKey response = future.get();
-   * }
-   * }</pre>
-   */
-  public final UnaryCallable<UpdateCryptoKeyPrimaryVersionRequest, CryptoKey>
-      updateCryptoKeyPrimaryVersionCallable() {
-    return stub.updateCryptoKeyPrimaryVersionCallable();
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD.
-  /**
-   * Schedule a [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] for destruction.
-   *
-   * <p>Upon calling this method,
-   * [CryptoKeyVersion.state][google.cloud.kms.v1.CryptoKeyVersion.state] will be set to
-   * [DESTROY_SCHEDULED][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionState.DESTROY_SCHEDULED]
-   * and [destroy_time][google.cloud.kms.v1.CryptoKeyVersion.destroy_time] will be set to a time 24
-   * hours in the future, at which point the [state][google.cloud.kms.v1.CryptoKeyVersion.state]
-   * will be changed to
-   * [DESTROYED][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionState.DESTROYED], and the key
-   * material will be irrevocably destroyed.
-   *
-   * <p>Before the [destroy_time][google.cloud.kms.v1.CryptoKeyVersion.destroy_time] is reached,
-   * [RestoreCryptoKeyVersion][google.cloud.kms.v1.KeyManagementService.RestoreCryptoKeyVersion] may
-   * be called to reverse the process.
+   * Signs data using a [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] with
+   * [CryptoKey.purpose][google.cloud.kms.v1.CryptoKey.purpose] MAC, producing a tag that can be
+   * verified by another source with the same key.
    *
    * <p>Sample code:
    *
@@ -2890,38 +3195,31 @@ public class KeyManagementServiceClient implements BackgroundResource {
    *   CryptoKeyVersionName name =
    *       CryptoKeyVersionName.of(
    *           "[PROJECT]", "[LOCATION]", "[KEY_RING]", "[CRYPTO_KEY]", "[CRYPTO_KEY_VERSION]");
-   *   CryptoKeyVersion response = keyManagementServiceClient.destroyCryptoKeyVersion(name);
+   *   ByteString data = ByteString.EMPTY;
+   *   MacSignResponse response = keyManagementServiceClient.macSign(name, data);
    * }
    * }</pre>
    *
    * @param name Required. The resource name of the
-   *     [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] to destroy.
+   *     [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] to use for signing.
+   * @param data Required. The data to sign. The MAC tag is computed over this data field based on
+   *     the specific algorithm.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final CryptoKeyVersion destroyCryptoKeyVersion(CryptoKeyVersionName name) {
-    DestroyCryptoKeyVersionRequest request =
-        DestroyCryptoKeyVersionRequest.newBuilder()
+  public final MacSignResponse macSign(CryptoKeyVersionName name, ByteString data) {
+    MacSignRequest request =
+        MacSignRequest.newBuilder()
             .setName(name == null ? null : name.toString())
+            .setData(data)
             .build();
-    return destroyCryptoKeyVersion(request);
+    return macSign(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Schedule a [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] for destruction.
-   *
-   * <p>Upon calling this method,
-   * [CryptoKeyVersion.state][google.cloud.kms.v1.CryptoKeyVersion.state] will be set to
-   * [DESTROY_SCHEDULED][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionState.DESTROY_SCHEDULED]
-   * and [destroy_time][google.cloud.kms.v1.CryptoKeyVersion.destroy_time] will be set to a time 24
-   * hours in the future, at which point the [state][google.cloud.kms.v1.CryptoKeyVersion.state]
-   * will be changed to
-   * [DESTROYED][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionState.DESTROYED], and the key
-   * material will be irrevocably destroyed.
-   *
-   * <p>Before the [destroy_time][google.cloud.kms.v1.CryptoKeyVersion.destroy_time] is reached,
-   * [RestoreCryptoKeyVersion][google.cloud.kms.v1.KeyManagementService.RestoreCryptoKeyVersion] may
-   * be called to reverse the process.
+   * Signs data using a [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] with
+   * [CryptoKey.purpose][google.cloud.kms.v1.CryptoKey.purpose] MAC, producing a tag that can be
+   * verified by another source with the same key.
    *
    * <p>Sample code:
    *
@@ -2932,44 +3230,35 @@ public class KeyManagementServiceClient implements BackgroundResource {
    *       CryptoKeyVersionName.of(
    *               "[PROJECT]", "[LOCATION]", "[KEY_RING]", "[CRYPTO_KEY]", "[CRYPTO_KEY_VERSION]")
    *           .toString();
-   *   CryptoKeyVersion response = keyManagementServiceClient.destroyCryptoKeyVersion(name);
+   *   ByteString data = ByteString.EMPTY;
+   *   MacSignResponse response = keyManagementServiceClient.macSign(name, data);
    * }
    * }</pre>
    *
    * @param name Required. The resource name of the
-   *     [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] to destroy.
+   *     [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] to use for signing.
+   * @param data Required. The data to sign. The MAC tag is computed over this data field based on
+   *     the specific algorithm.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final CryptoKeyVersion destroyCryptoKeyVersion(String name) {
-    DestroyCryptoKeyVersionRequest request =
-        DestroyCryptoKeyVersionRequest.newBuilder().setName(name).build();
-    return destroyCryptoKeyVersion(request);
+  public final MacSignResponse macSign(String name, ByteString data) {
+    MacSignRequest request = MacSignRequest.newBuilder().setName(name).setData(data).build();
+    return macSign(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Schedule a [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] for destruction.
-   *
-   * <p>Upon calling this method,
-   * [CryptoKeyVersion.state][google.cloud.kms.v1.CryptoKeyVersion.state] will be set to
-   * [DESTROY_SCHEDULED][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionState.DESTROY_SCHEDULED]
-   * and [destroy_time][google.cloud.kms.v1.CryptoKeyVersion.destroy_time] will be set to a time 24
-   * hours in the future, at which point the [state][google.cloud.kms.v1.CryptoKeyVersion.state]
-   * will be changed to
-   * [DESTROYED][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionState.DESTROYED], and the key
-   * material will be irrevocably destroyed.
-   *
-   * <p>Before the [destroy_time][google.cloud.kms.v1.CryptoKeyVersion.destroy_time] is reached,
-   * [RestoreCryptoKeyVersion][google.cloud.kms.v1.KeyManagementService.RestoreCryptoKeyVersion] may
-   * be called to reverse the process.
+   * Signs data using a [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] with
+   * [CryptoKey.purpose][google.cloud.kms.v1.CryptoKey.purpose] MAC, producing a tag that can be
+   * verified by another source with the same key.
    *
    * <p>Sample code:
    *
    * <pre>{@code
    * try (KeyManagementServiceClient keyManagementServiceClient =
    *     KeyManagementServiceClient.create()) {
-   *   DestroyCryptoKeyVersionRequest request =
-   *       DestroyCryptoKeyVersionRequest.newBuilder()
+   *   MacSignRequest request =
+   *       MacSignRequest.newBuilder()
    *           .setName(
    *               CryptoKeyVersionName.of(
    *                       "[PROJECT]",
@@ -2978,42 +3267,33 @@ public class KeyManagementServiceClient implements BackgroundResource {
    *                       "[CRYPTO_KEY]",
    *                       "[CRYPTO_KEY_VERSION]")
    *                   .toString())
+   *           .setData(ByteString.EMPTY)
+   *           .setDataCrc32C(Int64Value.newBuilder().build())
    *           .build();
-   *   CryptoKeyVersion response = keyManagementServiceClient.destroyCryptoKeyVersion(request);
+   *   MacSignResponse response = keyManagementServiceClient.macSign(request);
    * }
    * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final CryptoKeyVersion destroyCryptoKeyVersion(DestroyCryptoKeyVersionRequest request) {
-    return destroyCryptoKeyVersionCallable().call(request);
+  public final MacSignResponse macSign(MacSignRequest request) {
+    return macSignCallable().call(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Schedule a [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] for destruction.
-   *
-   * <p>Upon calling this method,
-   * [CryptoKeyVersion.state][google.cloud.kms.v1.CryptoKeyVersion.state] will be set to
-   * [DESTROY_SCHEDULED][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionState.DESTROY_SCHEDULED]
-   * and [destroy_time][google.cloud.kms.v1.CryptoKeyVersion.destroy_time] will be set to a time 24
-   * hours in the future, at which point the [state][google.cloud.kms.v1.CryptoKeyVersion.state]
-   * will be changed to
-   * [DESTROYED][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionState.DESTROYED], and the key
-   * material will be irrevocably destroyed.
-   *
-   * <p>Before the [destroy_time][google.cloud.kms.v1.CryptoKeyVersion.destroy_time] is reached,
-   * [RestoreCryptoKeyVersion][google.cloud.kms.v1.KeyManagementService.RestoreCryptoKeyVersion] may
-   * be called to reverse the process.
+   * Signs data using a [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] with
+   * [CryptoKey.purpose][google.cloud.kms.v1.CryptoKey.purpose] MAC, producing a tag that can be
+   * verified by another source with the same key.
    *
    * <p>Sample code:
    *
    * <pre>{@code
    * try (KeyManagementServiceClient keyManagementServiceClient =
    *     KeyManagementServiceClient.create()) {
-   *   DestroyCryptoKeyVersionRequest request =
-   *       DestroyCryptoKeyVersionRequest.newBuilder()
+   *   MacSignRequest request =
+   *       MacSignRequest.newBuilder()
    *           .setName(
    *               CryptoKeyVersionName.of(
    *                       "[PROJECT]",
@@ -3022,29 +3302,25 @@ public class KeyManagementServiceClient implements BackgroundResource {
    *                       "[CRYPTO_KEY]",
    *                       "[CRYPTO_KEY_VERSION]")
    *                   .toString())
+   *           .setData(ByteString.EMPTY)
+   *           .setDataCrc32C(Int64Value.newBuilder().build())
    *           .build();
-   *   ApiFuture<CryptoKeyVersion> future =
-   *       keyManagementServiceClient.destroyCryptoKeyVersionCallable().futureCall(request);
+   *   ApiFuture<MacSignResponse> future =
+   *       keyManagementServiceClient.macSignCallable().futureCall(request);
    *   // Do something.
-   *   CryptoKeyVersion response = future.get();
+   *   MacSignResponse response = future.get();
    * }
    * }</pre>
    */
-  public final UnaryCallable<DestroyCryptoKeyVersionRequest, CryptoKeyVersion>
-      destroyCryptoKeyVersionCallable() {
-    return stub.destroyCryptoKeyVersionCallable();
+  public final UnaryCallable<MacSignRequest, MacSignResponse> macSignCallable() {
+    return stub.macSignCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Restore a [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] in the
-   * [DESTROY_SCHEDULED][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionState.DESTROY_SCHEDULED]
-   * state.
-   *
-   * <p>Upon restoration of the CryptoKeyVersion,
-   * [state][google.cloud.kms.v1.CryptoKeyVersion.state] will be set to
-   * [DISABLED][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionState.DISABLED], and
-   * [destroy_time][google.cloud.kms.v1.CryptoKeyVersion.destroy_time] will be cleared.
+   * Verifies MAC tag using a [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] with
+   * [CryptoKey.purpose][google.cloud.kms.v1.CryptoKey.purpose] MAC, and returns a response that
+   * indicates whether or not the verification was successful.
    *
    * <p>Sample code:
    *
@@ -3054,32 +3330,35 @@ public class KeyManagementServiceClient implements BackgroundResource {
    *   CryptoKeyVersionName name =
    *       CryptoKeyVersionName.of(
    *           "[PROJECT]", "[LOCATION]", "[KEY_RING]", "[CRYPTO_KEY]", "[CRYPTO_KEY_VERSION]");
-   *   CryptoKeyVersion response = keyManagementServiceClient.restoreCryptoKeyVersion(name);
+   *   ByteString data = ByteString.EMPTY;
+   *   ByteString mac = ByteString.EMPTY;
+   *   MacVerifyResponse response = keyManagementServiceClient.macVerify(name, data, mac);
    * }
    * }</pre>
    *
    * @param name Required. The resource name of the
-   *     [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] to restore.
+   *     [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] to use for verification.
+   * @param data Required. The data used previously as a
+   *     [MacSignRequest.data][google.cloud.kms.v1.MacSignRequest.data] to generate the MAC tag.
+   * @param mac Required. The signature to verify.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final CryptoKeyVersion restoreCryptoKeyVersion(CryptoKeyVersionName name) {
-    RestoreCryptoKeyVersionRequest request =
-        RestoreCryptoKeyVersionRequest.newBuilder()
+  public final MacVerifyResponse macVerify(
+      CryptoKeyVersionName name, ByteString data, ByteString mac) {
+    MacVerifyRequest request =
+        MacVerifyRequest.newBuilder()
             .setName(name == null ? null : name.toString())
+            .setData(data)
+            .setMac(mac)
             .build();
-    return restoreCryptoKeyVersion(request);
+    return macVerify(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Restore a [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] in the
-   * [DESTROY_SCHEDULED][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionState.DESTROY_SCHEDULED]
-   * state.
-   *
-   * <p>Upon restoration of the CryptoKeyVersion,
-   * [state][google.cloud.kms.v1.CryptoKeyVersion.state] will be set to
-   * [DISABLED][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionState.DISABLED], and
-   * [destroy_time][google.cloud.kms.v1.CryptoKeyVersion.destroy_time] will be cleared.
+   * Verifies MAC tag using a [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] with
+   * [CryptoKey.purpose][google.cloud.kms.v1.CryptoKey.purpose] MAC, and returns a response that
+   * indicates whether or not the verification was successful.
    *
    * <p>Sample code:
    *
@@ -3090,38 +3369,38 @@ public class KeyManagementServiceClient implements BackgroundResource {
    *       CryptoKeyVersionName.of(
    *               "[PROJECT]", "[LOCATION]", "[KEY_RING]", "[CRYPTO_KEY]", "[CRYPTO_KEY_VERSION]")
    *           .toString();
-   *   CryptoKeyVersion response = keyManagementServiceClient.restoreCryptoKeyVersion(name);
+   *   ByteString data = ByteString.EMPTY;
+   *   ByteString mac = ByteString.EMPTY;
+   *   MacVerifyResponse response = keyManagementServiceClient.macVerify(name, data, mac);
    * }
    * }</pre>
    *
    * @param name Required. The resource name of the
-   *     [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] to restore.
+   *     [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] to use for verification.
+   * @param data Required. The data used previously as a
+   *     [MacSignRequest.data][google.cloud.kms.v1.MacSignRequest.data] to generate the MAC tag.
+   * @param mac Required. The signature to verify.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final CryptoKeyVersion restoreCryptoKeyVersion(String name) {
-    RestoreCryptoKeyVersionRequest request =
-        RestoreCryptoKeyVersionRequest.newBuilder().setName(name).build();
-    return restoreCryptoKeyVersion(request);
+  public final MacVerifyResponse macVerify(String name, ByteString data, ByteString mac) {
+    MacVerifyRequest request =
+        MacVerifyRequest.newBuilder().setName(name).setData(data).setMac(mac).build();
+    return macVerify(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Restore a [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] in the
-   * [DESTROY_SCHEDULED][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionState.DESTROY_SCHEDULED]
-   * state.
-   *
-   * <p>Upon restoration of the CryptoKeyVersion,
-   * [state][google.cloud.kms.v1.CryptoKeyVersion.state] will be set to
-   * [DISABLED][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionState.DISABLED], and
-   * [destroy_time][google.cloud.kms.v1.CryptoKeyVersion.destroy_time] will be cleared.
+   * Verifies MAC tag using a [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] with
+   * [CryptoKey.purpose][google.cloud.kms.v1.CryptoKey.purpose] MAC, and returns a response that
+   * indicates whether or not the verification was successful.
    *
    * <p>Sample code:
    *
    * <pre>{@code
    * try (KeyManagementServiceClient keyManagementServiceClient =
    *     KeyManagementServiceClient.create()) {
-   *   RestoreCryptoKeyVersionRequest request =
-   *       RestoreCryptoKeyVersionRequest.newBuilder()
+   *   MacVerifyRequest request =
+   *       MacVerifyRequest.newBuilder()
    *           .setName(
    *               CryptoKeyVersionName.of(
    *                       "[PROJECT]",
@@ -3130,36 +3409,35 @@ public class KeyManagementServiceClient implements BackgroundResource {
    *                       "[CRYPTO_KEY]",
    *                       "[CRYPTO_KEY_VERSION]")
    *                   .toString())
+   *           .setData(ByteString.EMPTY)
+   *           .setDataCrc32C(Int64Value.newBuilder().build())
+   *           .setMac(ByteString.EMPTY)
+   *           .setMacCrc32C(Int64Value.newBuilder().build())
    *           .build();
-   *   CryptoKeyVersion response = keyManagementServiceClient.restoreCryptoKeyVersion(request);
+   *   MacVerifyResponse response = keyManagementServiceClient.macVerify(request);
    * }
    * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final CryptoKeyVersion restoreCryptoKeyVersion(RestoreCryptoKeyVersionRequest request) {
-    return restoreCryptoKeyVersionCallable().call(request);
+  public final MacVerifyResponse macVerify(MacVerifyRequest request) {
+    return macVerifyCallable().call(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Restore a [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] in the
-   * [DESTROY_SCHEDULED][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionState.DESTROY_SCHEDULED]
-   * state.
-   *
-   * <p>Upon restoration of the CryptoKeyVersion,
-   * [state][google.cloud.kms.v1.CryptoKeyVersion.state] will be set to
-   * [DISABLED][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionState.DISABLED], and
-   * [destroy_time][google.cloud.kms.v1.CryptoKeyVersion.destroy_time] will be cleared.
+   * Verifies MAC tag using a [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] with
+   * [CryptoKey.purpose][google.cloud.kms.v1.CryptoKey.purpose] MAC, and returns a response that
+   * indicates whether or not the verification was successful.
    *
    * <p>Sample code:
    *
    * <pre>{@code
    * try (KeyManagementServiceClient keyManagementServiceClient =
    *     KeyManagementServiceClient.create()) {
-   *   RestoreCryptoKeyVersionRequest request =
-   *       RestoreCryptoKeyVersionRequest.newBuilder()
+   *   MacVerifyRequest request =
+   *       MacVerifyRequest.newBuilder()
    *           .setName(
    *               CryptoKeyVersionName.of(
    *                       "[PROJECT]",
@@ -3168,17 +3446,111 @@ public class KeyManagementServiceClient implements BackgroundResource {
    *                       "[CRYPTO_KEY]",
    *                       "[CRYPTO_KEY_VERSION]")
    *                   .toString())
+   *           .setData(ByteString.EMPTY)
+   *           .setDataCrc32C(Int64Value.newBuilder().build())
+   *           .setMac(ByteString.EMPTY)
+   *           .setMacCrc32C(Int64Value.newBuilder().build())
    *           .build();
-   *   ApiFuture<CryptoKeyVersion> future =
-   *       keyManagementServiceClient.restoreCryptoKeyVersionCallable().futureCall(request);
+   *   ApiFuture<MacVerifyResponse> future =
+   *       keyManagementServiceClient.macVerifyCallable().futureCall(request);
    *   // Do something.
-   *   CryptoKeyVersion response = future.get();
+   *   MacVerifyResponse response = future.get();
    * }
    * }</pre>
    */
-  public final UnaryCallable<RestoreCryptoKeyVersionRequest, CryptoKeyVersion>
-      restoreCryptoKeyVersionCallable() {
-    return stub.restoreCryptoKeyVersionCallable();
+  public final UnaryCallable<MacVerifyRequest, MacVerifyResponse> macVerifyCallable() {
+    return stub.macVerifyCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Generate random bytes using the Cloud KMS randomness source in the provided location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (KeyManagementServiceClient keyManagementServiceClient =
+   *     KeyManagementServiceClient.create()) {
+   *   String location = "location1901043637";
+   *   int lengthBytes = -745661998;
+   *   ProtectionLevel protectionLevel = ProtectionLevel.forNumber(0);
+   *   GenerateRandomBytesResponse response =
+   *       keyManagementServiceClient.generateRandomBytes(location, lengthBytes, protectionLevel);
+   * }
+   * }</pre>
+   *
+   * @param location The project-specific location in which to generate random bytes. For example,
+   *     "projects/my-project/locations/us-central1".
+   * @param lengthBytes The length in bytes of the amount of randomness to retrieve. Minimum 8
+   *     bytes, maximum 1024 bytes.
+   * @param protectionLevel The [ProtectionLevel][google.cloud.kms.v1.ProtectionLevel] to use when
+   *     generating the random data. Defaults to
+   *     [SOFTWARE][google.cloud.kms.v1.ProtectionLevel.SOFTWARE].
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final GenerateRandomBytesResponse generateRandomBytes(
+      String location, int lengthBytes, ProtectionLevel protectionLevel) {
+    GenerateRandomBytesRequest request =
+        GenerateRandomBytesRequest.newBuilder()
+            .setLocation(location)
+            .setLengthBytes(lengthBytes)
+            .setProtectionLevel(protectionLevel)
+            .build();
+    return generateRandomBytes(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Generate random bytes using the Cloud KMS randomness source in the provided location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (KeyManagementServiceClient keyManagementServiceClient =
+   *     KeyManagementServiceClient.create()) {
+   *   GenerateRandomBytesRequest request =
+   *       GenerateRandomBytesRequest.newBuilder()
+   *           .setLocation("location1901043637")
+   *           .setLengthBytes(-745661998)
+   *           .setProtectionLevel(ProtectionLevel.forNumber(0))
+   *           .build();
+   *   GenerateRandomBytesResponse response =
+   *       keyManagementServiceClient.generateRandomBytes(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final GenerateRandomBytesResponse generateRandomBytes(GenerateRandomBytesRequest request) {
+    return generateRandomBytesCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Generate random bytes using the Cloud KMS randomness source in the provided location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (KeyManagementServiceClient keyManagementServiceClient =
+   *     KeyManagementServiceClient.create()) {
+   *   GenerateRandomBytesRequest request =
+   *       GenerateRandomBytesRequest.newBuilder()
+   *           .setLocation("location1901043637")
+   *           .setLengthBytes(-745661998)
+   *           .setProtectionLevel(ProtectionLevel.forNumber(0))
+   *           .build();
+   *   ApiFuture<GenerateRandomBytesResponse> future =
+   *       keyManagementServiceClient.generateRandomBytesCallable().futureCall(request);
+   *   // Do something.
+   *   GenerateRandomBytesResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<GenerateRandomBytesRequest, GenerateRandomBytesResponse>
+      generateRandomBytesCallable() {
+    return stub.generateRandomBytesCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.

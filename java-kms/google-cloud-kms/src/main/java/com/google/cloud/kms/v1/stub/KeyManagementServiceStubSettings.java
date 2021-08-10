@@ -58,6 +58,8 @@ import com.google.cloud.kms.v1.DecryptResponse;
 import com.google.cloud.kms.v1.DestroyCryptoKeyVersionRequest;
 import com.google.cloud.kms.v1.EncryptRequest;
 import com.google.cloud.kms.v1.EncryptResponse;
+import com.google.cloud.kms.v1.GenerateRandomBytesRequest;
+import com.google.cloud.kms.v1.GenerateRandomBytesResponse;
 import com.google.cloud.kms.v1.GetCryptoKeyRequest;
 import com.google.cloud.kms.v1.GetCryptoKeyVersionRequest;
 import com.google.cloud.kms.v1.GetImportJobRequest;
@@ -74,6 +76,10 @@ import com.google.cloud.kms.v1.ListImportJobsRequest;
 import com.google.cloud.kms.v1.ListImportJobsResponse;
 import com.google.cloud.kms.v1.ListKeyRingsRequest;
 import com.google.cloud.kms.v1.ListKeyRingsResponse;
+import com.google.cloud.kms.v1.MacSignRequest;
+import com.google.cloud.kms.v1.MacSignResponse;
+import com.google.cloud.kms.v1.MacVerifyRequest;
+import com.google.cloud.kms.v1.MacVerifyResponse;
 import com.google.cloud.kms.v1.PublicKey;
 import com.google.cloud.kms.v1.RestoreCryptoKeyVersionRequest;
 import com.google.cloud.kms.v1.UpdateCryptoKeyPrimaryVersionRequest;
@@ -166,18 +172,22 @@ public class KeyManagementServiceStubSettings
   private final UnaryCallSettings<UpdateCryptoKeyRequest, CryptoKey> updateCryptoKeySettings;
   private final UnaryCallSettings<UpdateCryptoKeyVersionRequest, CryptoKeyVersion>
       updateCryptoKeyVersionSettings;
-  private final UnaryCallSettings<EncryptRequest, EncryptResponse> encryptSettings;
-  private final UnaryCallSettings<DecryptRequest, DecryptResponse> decryptSettings;
-  private final UnaryCallSettings<AsymmetricSignRequest, AsymmetricSignResponse>
-      asymmetricSignSettings;
-  private final UnaryCallSettings<AsymmetricDecryptRequest, AsymmetricDecryptResponse>
-      asymmetricDecryptSettings;
   private final UnaryCallSettings<UpdateCryptoKeyPrimaryVersionRequest, CryptoKey>
       updateCryptoKeyPrimaryVersionSettings;
   private final UnaryCallSettings<DestroyCryptoKeyVersionRequest, CryptoKeyVersion>
       destroyCryptoKeyVersionSettings;
   private final UnaryCallSettings<RestoreCryptoKeyVersionRequest, CryptoKeyVersion>
       restoreCryptoKeyVersionSettings;
+  private final UnaryCallSettings<EncryptRequest, EncryptResponse> encryptSettings;
+  private final UnaryCallSettings<DecryptRequest, DecryptResponse> decryptSettings;
+  private final UnaryCallSettings<AsymmetricSignRequest, AsymmetricSignResponse>
+      asymmetricSignSettings;
+  private final UnaryCallSettings<AsymmetricDecryptRequest, AsymmetricDecryptResponse>
+      asymmetricDecryptSettings;
+  private final UnaryCallSettings<MacSignRequest, MacSignResponse> macSignSettings;
+  private final UnaryCallSettings<MacVerifyRequest, MacVerifyResponse> macVerifySettings;
+  private final UnaryCallSettings<GenerateRandomBytesRequest, GenerateRandomBytesResponse>
+      generateRandomBytesSettings;
   private final UnaryCallSettings<SetIamPolicyRequest, Policy> setIamPolicySettings;
   private final UnaryCallSettings<GetIamPolicyRequest, Policy> getIamPolicySettings;
   private final UnaryCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
@@ -502,6 +512,24 @@ public class KeyManagementServiceStubSettings
     return updateCryptoKeyVersionSettings;
   }
 
+  /** Returns the object with the settings used for calls to updateCryptoKeyPrimaryVersion. */
+  public UnaryCallSettings<UpdateCryptoKeyPrimaryVersionRequest, CryptoKey>
+      updateCryptoKeyPrimaryVersionSettings() {
+    return updateCryptoKeyPrimaryVersionSettings;
+  }
+
+  /** Returns the object with the settings used for calls to destroyCryptoKeyVersion. */
+  public UnaryCallSettings<DestroyCryptoKeyVersionRequest, CryptoKeyVersion>
+      destroyCryptoKeyVersionSettings() {
+    return destroyCryptoKeyVersionSettings;
+  }
+
+  /** Returns the object with the settings used for calls to restoreCryptoKeyVersion. */
+  public UnaryCallSettings<RestoreCryptoKeyVersionRequest, CryptoKeyVersion>
+      restoreCryptoKeyVersionSettings() {
+    return restoreCryptoKeyVersionSettings;
+  }
+
   /** Returns the object with the settings used for calls to encrypt. */
   public UnaryCallSettings<EncryptRequest, EncryptResponse> encryptSettings() {
     return encryptSettings;
@@ -523,22 +551,20 @@ public class KeyManagementServiceStubSettings
     return asymmetricDecryptSettings;
   }
 
-  /** Returns the object with the settings used for calls to updateCryptoKeyPrimaryVersion. */
-  public UnaryCallSettings<UpdateCryptoKeyPrimaryVersionRequest, CryptoKey>
-      updateCryptoKeyPrimaryVersionSettings() {
-    return updateCryptoKeyPrimaryVersionSettings;
+  /** Returns the object with the settings used for calls to macSign. */
+  public UnaryCallSettings<MacSignRequest, MacSignResponse> macSignSettings() {
+    return macSignSettings;
   }
 
-  /** Returns the object with the settings used for calls to destroyCryptoKeyVersion. */
-  public UnaryCallSettings<DestroyCryptoKeyVersionRequest, CryptoKeyVersion>
-      destroyCryptoKeyVersionSettings() {
-    return destroyCryptoKeyVersionSettings;
+  /** Returns the object with the settings used for calls to macVerify. */
+  public UnaryCallSettings<MacVerifyRequest, MacVerifyResponse> macVerifySettings() {
+    return macVerifySettings;
   }
 
-  /** Returns the object with the settings used for calls to restoreCryptoKeyVersion. */
-  public UnaryCallSettings<RestoreCryptoKeyVersionRequest, CryptoKeyVersion>
-      restoreCryptoKeyVersionSettings() {
-    return restoreCryptoKeyVersionSettings;
+  /** Returns the object with the settings used for calls to generateRandomBytes. */
+  public UnaryCallSettings<GenerateRandomBytesRequest, GenerateRandomBytesResponse>
+      generateRandomBytesSettings() {
+    return generateRandomBytesSettings;
   }
 
   /** Returns the object with the settings used for calls to setIamPolicy. */
@@ -647,14 +673,17 @@ public class KeyManagementServiceStubSettings
     createImportJobSettings = settingsBuilder.createImportJobSettings().build();
     updateCryptoKeySettings = settingsBuilder.updateCryptoKeySettings().build();
     updateCryptoKeyVersionSettings = settingsBuilder.updateCryptoKeyVersionSettings().build();
-    encryptSettings = settingsBuilder.encryptSettings().build();
-    decryptSettings = settingsBuilder.decryptSettings().build();
-    asymmetricSignSettings = settingsBuilder.asymmetricSignSettings().build();
-    asymmetricDecryptSettings = settingsBuilder.asymmetricDecryptSettings().build();
     updateCryptoKeyPrimaryVersionSettings =
         settingsBuilder.updateCryptoKeyPrimaryVersionSettings().build();
     destroyCryptoKeyVersionSettings = settingsBuilder.destroyCryptoKeyVersionSettings().build();
     restoreCryptoKeyVersionSettings = settingsBuilder.restoreCryptoKeyVersionSettings().build();
+    encryptSettings = settingsBuilder.encryptSettings().build();
+    decryptSettings = settingsBuilder.decryptSettings().build();
+    asymmetricSignSettings = settingsBuilder.asymmetricSignSettings().build();
+    asymmetricDecryptSettings = settingsBuilder.asymmetricDecryptSettings().build();
+    macSignSettings = settingsBuilder.macSignSettings().build();
+    macVerifySettings = settingsBuilder.macVerifySettings().build();
+    generateRandomBytesSettings = settingsBuilder.generateRandomBytesSettings().build();
     setIamPolicySettings = settingsBuilder.setIamPolicySettings().build();
     getIamPolicySettings = settingsBuilder.getIamPolicySettings().build();
     testIamPermissionsSettings = settingsBuilder.testIamPermissionsSettings().build();
@@ -697,18 +726,22 @@ public class KeyManagementServiceStubSettings
         updateCryptoKeySettings;
     private final UnaryCallSettings.Builder<UpdateCryptoKeyVersionRequest, CryptoKeyVersion>
         updateCryptoKeyVersionSettings;
-    private final UnaryCallSettings.Builder<EncryptRequest, EncryptResponse> encryptSettings;
-    private final UnaryCallSettings.Builder<DecryptRequest, DecryptResponse> decryptSettings;
-    private final UnaryCallSettings.Builder<AsymmetricSignRequest, AsymmetricSignResponse>
-        asymmetricSignSettings;
-    private final UnaryCallSettings.Builder<AsymmetricDecryptRequest, AsymmetricDecryptResponse>
-        asymmetricDecryptSettings;
     private final UnaryCallSettings.Builder<UpdateCryptoKeyPrimaryVersionRequest, CryptoKey>
         updateCryptoKeyPrimaryVersionSettings;
     private final UnaryCallSettings.Builder<DestroyCryptoKeyVersionRequest, CryptoKeyVersion>
         destroyCryptoKeyVersionSettings;
     private final UnaryCallSettings.Builder<RestoreCryptoKeyVersionRequest, CryptoKeyVersion>
         restoreCryptoKeyVersionSettings;
+    private final UnaryCallSettings.Builder<EncryptRequest, EncryptResponse> encryptSettings;
+    private final UnaryCallSettings.Builder<DecryptRequest, DecryptResponse> decryptSettings;
+    private final UnaryCallSettings.Builder<AsymmetricSignRequest, AsymmetricSignResponse>
+        asymmetricSignSettings;
+    private final UnaryCallSettings.Builder<AsymmetricDecryptRequest, AsymmetricDecryptResponse>
+        asymmetricDecryptSettings;
+    private final UnaryCallSettings.Builder<MacSignRequest, MacSignResponse> macSignSettings;
+    private final UnaryCallSettings.Builder<MacVerifyRequest, MacVerifyResponse> macVerifySettings;
+    private final UnaryCallSettings.Builder<GenerateRandomBytesRequest, GenerateRandomBytesResponse>
+        generateRandomBytesSettings;
     private final UnaryCallSettings.Builder<SetIamPolicyRequest, Policy> setIamPolicySettings;
     private final UnaryCallSettings.Builder<GetIamPolicyRequest, Policy> getIamPolicySettings;
     private final UnaryCallSettings.Builder<TestIamPermissionsRequest, TestIamPermissionsResponse>
@@ -726,6 +759,7 @@ public class KeyManagementServiceStubSettings
                   StatusCode.Code.UNAVAILABLE, StatusCode.Code.DEADLINE_EXCEEDED)));
       definitions.put(
           "no_retry_0_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
+      definitions.put("no_retry_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
       RETRYABLE_CODE_DEFINITIONS = definitions.build();
     }
 
@@ -753,6 +787,8 @@ public class KeyManagementServiceStubSettings
               .setTotalTimeout(Duration.ofMillis(60000L))
               .build();
       definitions.put("no_retry_0_params", settings);
+      settings = RetrySettings.newBuilder().setRpcTimeoutMultiplier(1.0).build();
+      definitions.put("no_retry_params", settings);
       RETRY_PARAM_DEFINITIONS = definitions.build();
     }
 
@@ -780,13 +816,16 @@ public class KeyManagementServiceStubSettings
       createImportJobSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       updateCryptoKeySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       updateCryptoKeyVersionSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      updateCryptoKeyPrimaryVersionSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      destroyCryptoKeyVersionSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      restoreCryptoKeyVersionSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       encryptSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       decryptSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       asymmetricSignSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       asymmetricDecryptSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-      updateCryptoKeyPrimaryVersionSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-      destroyCryptoKeyVersionSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-      restoreCryptoKeyVersionSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      macSignSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      macVerifySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      generateRandomBytesSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       setIamPolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       getIamPolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       testIamPermissionsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
@@ -809,13 +848,16 @@ public class KeyManagementServiceStubSettings
               createImportJobSettings,
               updateCryptoKeySettings,
               updateCryptoKeyVersionSettings,
+              updateCryptoKeyPrimaryVersionSettings,
+              destroyCryptoKeyVersionSettings,
+              restoreCryptoKeyVersionSettings,
               encryptSettings,
               decryptSettings,
               asymmetricSignSettings,
               asymmetricDecryptSettings,
-              updateCryptoKeyPrimaryVersionSettings,
-              destroyCryptoKeyVersionSettings,
-              restoreCryptoKeyVersionSettings,
+              macSignSettings,
+              macVerifySettings,
+              generateRandomBytesSettings,
               setIamPolicySettings,
               getIamPolicySettings,
               testIamPermissionsSettings);
@@ -841,14 +883,17 @@ public class KeyManagementServiceStubSettings
       createImportJobSettings = settings.createImportJobSettings.toBuilder();
       updateCryptoKeySettings = settings.updateCryptoKeySettings.toBuilder();
       updateCryptoKeyVersionSettings = settings.updateCryptoKeyVersionSettings.toBuilder();
-      encryptSettings = settings.encryptSettings.toBuilder();
-      decryptSettings = settings.decryptSettings.toBuilder();
-      asymmetricSignSettings = settings.asymmetricSignSettings.toBuilder();
-      asymmetricDecryptSettings = settings.asymmetricDecryptSettings.toBuilder();
       updateCryptoKeyPrimaryVersionSettings =
           settings.updateCryptoKeyPrimaryVersionSettings.toBuilder();
       destroyCryptoKeyVersionSettings = settings.destroyCryptoKeyVersionSettings.toBuilder();
       restoreCryptoKeyVersionSettings = settings.restoreCryptoKeyVersionSettings.toBuilder();
+      encryptSettings = settings.encryptSettings.toBuilder();
+      decryptSettings = settings.decryptSettings.toBuilder();
+      asymmetricSignSettings = settings.asymmetricSignSettings.toBuilder();
+      asymmetricDecryptSettings = settings.asymmetricDecryptSettings.toBuilder();
+      macSignSettings = settings.macSignSettings.toBuilder();
+      macVerifySettings = settings.macVerifySettings.toBuilder();
+      generateRandomBytesSettings = settings.generateRandomBytesSettings.toBuilder();
       setIamPolicySettings = settings.setIamPolicySettings.toBuilder();
       getIamPolicySettings = settings.getIamPolicySettings.toBuilder();
       testIamPermissionsSettings = settings.testIamPermissionsSettings.toBuilder();
@@ -871,13 +916,16 @@ public class KeyManagementServiceStubSettings
               createImportJobSettings,
               updateCryptoKeySettings,
               updateCryptoKeyVersionSettings,
+              updateCryptoKeyPrimaryVersionSettings,
+              destroyCryptoKeyVersionSettings,
+              restoreCryptoKeyVersionSettings,
               encryptSettings,
               decryptSettings,
               asymmetricSignSettings,
               asymmetricDecryptSettings,
-              updateCryptoKeyPrimaryVersionSettings,
-              destroyCryptoKeyVersionSettings,
-              restoreCryptoKeyVersionSettings,
+              macSignSettings,
+              macVerifySettings,
+              generateRandomBytesSettings,
               setIamPolicySettings,
               getIamPolicySettings,
               testIamPermissionsSettings);
@@ -978,6 +1026,21 @@ public class KeyManagementServiceStubSettings
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
 
       builder
+          .updateCryptoKeyPrimaryVersionSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
+
+      builder
+          .destroyCryptoKeyVersionSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
+
+      builder
+          .restoreCryptoKeyVersionSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
+
+      builder
           .encryptSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
@@ -998,19 +1061,19 @@ public class KeyManagementServiceStubSettings
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
 
       builder
-          .updateCryptoKeyPrimaryVersionSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
+          .macSignSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
 
       builder
-          .destroyCryptoKeyVersionSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
+          .macVerifySettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
 
       builder
-          .restoreCryptoKeyVersionSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
+          .generateRandomBytesSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
 
       builder
           .setIamPolicySettings()
@@ -1139,6 +1202,24 @@ public class KeyManagementServiceStubSettings
       return updateCryptoKeyVersionSettings;
     }
 
+    /** Returns the builder for the settings used for calls to updateCryptoKeyPrimaryVersion. */
+    public UnaryCallSettings.Builder<UpdateCryptoKeyPrimaryVersionRequest, CryptoKey>
+        updateCryptoKeyPrimaryVersionSettings() {
+      return updateCryptoKeyPrimaryVersionSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to destroyCryptoKeyVersion. */
+    public UnaryCallSettings.Builder<DestroyCryptoKeyVersionRequest, CryptoKeyVersion>
+        destroyCryptoKeyVersionSettings() {
+      return destroyCryptoKeyVersionSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to restoreCryptoKeyVersion. */
+    public UnaryCallSettings.Builder<RestoreCryptoKeyVersionRequest, CryptoKeyVersion>
+        restoreCryptoKeyVersionSettings() {
+      return restoreCryptoKeyVersionSettings;
+    }
+
     /** Returns the builder for the settings used for calls to encrypt. */
     public UnaryCallSettings.Builder<EncryptRequest, EncryptResponse> encryptSettings() {
       return encryptSettings;
@@ -1161,22 +1242,20 @@ public class KeyManagementServiceStubSettings
       return asymmetricDecryptSettings;
     }
 
-    /** Returns the builder for the settings used for calls to updateCryptoKeyPrimaryVersion. */
-    public UnaryCallSettings.Builder<UpdateCryptoKeyPrimaryVersionRequest, CryptoKey>
-        updateCryptoKeyPrimaryVersionSettings() {
-      return updateCryptoKeyPrimaryVersionSettings;
+    /** Returns the builder for the settings used for calls to macSign. */
+    public UnaryCallSettings.Builder<MacSignRequest, MacSignResponse> macSignSettings() {
+      return macSignSettings;
     }
 
-    /** Returns the builder for the settings used for calls to destroyCryptoKeyVersion. */
-    public UnaryCallSettings.Builder<DestroyCryptoKeyVersionRequest, CryptoKeyVersion>
-        destroyCryptoKeyVersionSettings() {
-      return destroyCryptoKeyVersionSettings;
+    /** Returns the builder for the settings used for calls to macVerify. */
+    public UnaryCallSettings.Builder<MacVerifyRequest, MacVerifyResponse> macVerifySettings() {
+      return macVerifySettings;
     }
 
-    /** Returns the builder for the settings used for calls to restoreCryptoKeyVersion. */
-    public UnaryCallSettings.Builder<RestoreCryptoKeyVersionRequest, CryptoKeyVersion>
-        restoreCryptoKeyVersionSettings() {
-      return restoreCryptoKeyVersionSettings;
+    /** Returns the builder for the settings used for calls to generateRandomBytes. */
+    public UnaryCallSettings.Builder<GenerateRandomBytesRequest, GenerateRandomBytesResponse>
+        generateRandomBytesSettings() {
+      return generateRandomBytesSettings;
     }
 
     /** Returns the builder for the settings used for calls to setIamPolicy. */

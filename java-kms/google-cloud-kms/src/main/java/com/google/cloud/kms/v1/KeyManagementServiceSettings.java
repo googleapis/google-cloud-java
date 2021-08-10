@@ -171,6 +171,25 @@ public class KeyManagementServiceSettings extends ClientSettings<KeyManagementSe
     return ((KeyManagementServiceStubSettings) getStubSettings()).updateCryptoKeyVersionSettings();
   }
 
+  /** Returns the object with the settings used for calls to updateCryptoKeyPrimaryVersion. */
+  public UnaryCallSettings<UpdateCryptoKeyPrimaryVersionRequest, CryptoKey>
+      updateCryptoKeyPrimaryVersionSettings() {
+    return ((KeyManagementServiceStubSettings) getStubSettings())
+        .updateCryptoKeyPrimaryVersionSettings();
+  }
+
+  /** Returns the object with the settings used for calls to destroyCryptoKeyVersion. */
+  public UnaryCallSettings<DestroyCryptoKeyVersionRequest, CryptoKeyVersion>
+      destroyCryptoKeyVersionSettings() {
+    return ((KeyManagementServiceStubSettings) getStubSettings()).destroyCryptoKeyVersionSettings();
+  }
+
+  /** Returns the object with the settings used for calls to restoreCryptoKeyVersion. */
+  public UnaryCallSettings<RestoreCryptoKeyVersionRequest, CryptoKeyVersion>
+      restoreCryptoKeyVersionSettings() {
+    return ((KeyManagementServiceStubSettings) getStubSettings()).restoreCryptoKeyVersionSettings();
+  }
+
   /** Returns the object with the settings used for calls to encrypt. */
   public UnaryCallSettings<EncryptRequest, EncryptResponse> encryptSettings() {
     return ((KeyManagementServiceStubSettings) getStubSettings()).encryptSettings();
@@ -192,23 +211,20 @@ public class KeyManagementServiceSettings extends ClientSettings<KeyManagementSe
     return ((KeyManagementServiceStubSettings) getStubSettings()).asymmetricDecryptSettings();
   }
 
-  /** Returns the object with the settings used for calls to updateCryptoKeyPrimaryVersion. */
-  public UnaryCallSettings<UpdateCryptoKeyPrimaryVersionRequest, CryptoKey>
-      updateCryptoKeyPrimaryVersionSettings() {
-    return ((KeyManagementServiceStubSettings) getStubSettings())
-        .updateCryptoKeyPrimaryVersionSettings();
+  /** Returns the object with the settings used for calls to macSign. */
+  public UnaryCallSettings<MacSignRequest, MacSignResponse> macSignSettings() {
+    return ((KeyManagementServiceStubSettings) getStubSettings()).macSignSettings();
   }
 
-  /** Returns the object with the settings used for calls to destroyCryptoKeyVersion. */
-  public UnaryCallSettings<DestroyCryptoKeyVersionRequest, CryptoKeyVersion>
-      destroyCryptoKeyVersionSettings() {
-    return ((KeyManagementServiceStubSettings) getStubSettings()).destroyCryptoKeyVersionSettings();
+  /** Returns the object with the settings used for calls to macVerify. */
+  public UnaryCallSettings<MacVerifyRequest, MacVerifyResponse> macVerifySettings() {
+    return ((KeyManagementServiceStubSettings) getStubSettings()).macVerifySettings();
   }
 
-  /** Returns the object with the settings used for calls to restoreCryptoKeyVersion. */
-  public UnaryCallSettings<RestoreCryptoKeyVersionRequest, CryptoKeyVersion>
-      restoreCryptoKeyVersionSettings() {
-    return ((KeyManagementServiceStubSettings) getStubSettings()).restoreCryptoKeyVersionSettings();
+  /** Returns the object with the settings used for calls to generateRandomBytes. */
+  public UnaryCallSettings<GenerateRandomBytesRequest, GenerateRandomBytesResponse>
+      generateRandomBytesSettings() {
+    return ((KeyManagementServiceStubSettings) getStubSettings()).generateRandomBytesSettings();
   }
 
   /** Returns the object with the settings used for calls to setIamPolicy. */
@@ -419,6 +435,24 @@ public class KeyManagementServiceSettings extends ClientSettings<KeyManagementSe
       return getStubSettingsBuilder().updateCryptoKeyVersionSettings();
     }
 
+    /** Returns the builder for the settings used for calls to updateCryptoKeyPrimaryVersion. */
+    public UnaryCallSettings.Builder<UpdateCryptoKeyPrimaryVersionRequest, CryptoKey>
+        updateCryptoKeyPrimaryVersionSettings() {
+      return getStubSettingsBuilder().updateCryptoKeyPrimaryVersionSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to destroyCryptoKeyVersion. */
+    public UnaryCallSettings.Builder<DestroyCryptoKeyVersionRequest, CryptoKeyVersion>
+        destroyCryptoKeyVersionSettings() {
+      return getStubSettingsBuilder().destroyCryptoKeyVersionSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to restoreCryptoKeyVersion. */
+    public UnaryCallSettings.Builder<RestoreCryptoKeyVersionRequest, CryptoKeyVersion>
+        restoreCryptoKeyVersionSettings() {
+      return getStubSettingsBuilder().restoreCryptoKeyVersionSettings();
+    }
+
     /** Returns the builder for the settings used for calls to encrypt. */
     public UnaryCallSettings.Builder<EncryptRequest, EncryptResponse> encryptSettings() {
       return getStubSettingsBuilder().encryptSettings();
@@ -441,22 +475,20 @@ public class KeyManagementServiceSettings extends ClientSettings<KeyManagementSe
       return getStubSettingsBuilder().asymmetricDecryptSettings();
     }
 
-    /** Returns the builder for the settings used for calls to updateCryptoKeyPrimaryVersion. */
-    public UnaryCallSettings.Builder<UpdateCryptoKeyPrimaryVersionRequest, CryptoKey>
-        updateCryptoKeyPrimaryVersionSettings() {
-      return getStubSettingsBuilder().updateCryptoKeyPrimaryVersionSettings();
+    /** Returns the builder for the settings used for calls to macSign. */
+    public UnaryCallSettings.Builder<MacSignRequest, MacSignResponse> macSignSettings() {
+      return getStubSettingsBuilder().macSignSettings();
     }
 
-    /** Returns the builder for the settings used for calls to destroyCryptoKeyVersion. */
-    public UnaryCallSettings.Builder<DestroyCryptoKeyVersionRequest, CryptoKeyVersion>
-        destroyCryptoKeyVersionSettings() {
-      return getStubSettingsBuilder().destroyCryptoKeyVersionSettings();
+    /** Returns the builder for the settings used for calls to macVerify. */
+    public UnaryCallSettings.Builder<MacVerifyRequest, MacVerifyResponse> macVerifySettings() {
+      return getStubSettingsBuilder().macVerifySettings();
     }
 
-    /** Returns the builder for the settings used for calls to restoreCryptoKeyVersion. */
-    public UnaryCallSettings.Builder<RestoreCryptoKeyVersionRequest, CryptoKeyVersion>
-        restoreCryptoKeyVersionSettings() {
-      return getStubSettingsBuilder().restoreCryptoKeyVersionSettings();
+    /** Returns the builder for the settings used for calls to generateRandomBytes. */
+    public UnaryCallSettings.Builder<GenerateRandomBytesRequest, GenerateRandomBytesResponse>
+        generateRandomBytesSettings() {
+      return getStubSettingsBuilder().generateRandomBytesSettings();
     }
 
     /** Returns the builder for the settings used for calls to setIamPolicy. */

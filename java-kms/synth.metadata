@@ -4,15 +4,15 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/java-kms.git",
-        "sha": "66710e15a83172e3758f36722411a209f360fd18"
+        "sha": "49661d3d2601a7a628ad56a1ae136a23a60994a9"
       }
     },
     {
       "git": {
         "name": "googleapis",
         "remote": "https://github.com/googleapis/googleapis.git",
-        "sha": "d9eaf41de44d953458b18712a3f240bb4c564e48",
-        "internalRef": "388535346"
+        "sha": "2efb6951f151116fb7b5766fb4e377db465d49e9",
+        "internalRef": "389008671"
       }
     },
     {
@@ -157,6 +157,10 @@
     "proto-google-cloud-kms-v1/src/main/java/com/google/cloud/kms/v1/EncryptResponseOrBuilder.java",
     "proto-google-cloud-kms-v1/src/main/java/com/google/cloud/kms/v1/ExternalProtectionLevelOptions.java",
     "proto-google-cloud-kms-v1/src/main/java/com/google/cloud/kms/v1/ExternalProtectionLevelOptionsOrBuilder.java",
+    "proto-google-cloud-kms-v1/src/main/java/com/google/cloud/kms/v1/GenerateRandomBytesRequest.java",
+    "proto-google-cloud-kms-v1/src/main/java/com/google/cloud/kms/v1/GenerateRandomBytesRequestOrBuilder.java",
+    "proto-google-cloud-kms-v1/src/main/java/com/google/cloud/kms/v1/GenerateRandomBytesResponse.java",
+    "proto-google-cloud-kms-v1/src/main/java/com/google/cloud/kms/v1/GenerateRandomBytesResponseOrBuilder.java",
     "proto-google-cloud-kms-v1/src/main/java/com/google/cloud/kms/v1/GetCryptoKeyRequest.java",
     "proto-google-cloud-kms-v1/src/main/java/com/google/cloud/kms/v1/GetCryptoKeyRequestOrBuilder.java",
     "proto-google-cloud-kms-v1/src/main/java/com/google/cloud/kms/v1/GetCryptoKeyVersionRequest.java",
@@ -198,6 +202,14 @@
     "proto-google-cloud-kms-v1/src/main/java/com/google/cloud/kms/v1/LocationMetadata.java",
     "proto-google-cloud-kms-v1/src/main/java/com/google/cloud/kms/v1/LocationMetadataOrBuilder.java",
     "proto-google-cloud-kms-v1/src/main/java/com/google/cloud/kms/v1/LocationName.java",
+    "proto-google-cloud-kms-v1/src/main/java/com/google/cloud/kms/v1/MacSignRequest.java",
+    "proto-google-cloud-kms-v1/src/main/java/com/google/cloud/kms/v1/MacSignRequestOrBuilder.java",
+    "proto-google-cloud-kms-v1/src/main/java/com/google/cloud/kms/v1/MacSignResponse.java",
+    "proto-google-cloud-kms-v1/src/main/java/com/google/cloud/kms/v1/MacSignResponseOrBuilder.java",
+    "proto-google-cloud-kms-v1/src/main/java/com/google/cloud/kms/v1/MacVerifyRequest.java",
+    "proto-google-cloud-kms-v1/src/main/java/com/google/cloud/kms/v1/MacVerifyRequestOrBuilder.java",
+    "proto-google-cloud-kms-v1/src/main/java/com/google/cloud/kms/v1/MacVerifyResponse.java",
+    "proto-google-cloud-kms-v1/src/main/java/com/google/cloud/kms/v1/MacVerifyResponseOrBuilder.java",
     "proto-google-cloud-kms-v1/src/main/java/com/google/cloud/kms/v1/ProtectionLevel.java",
     "proto-google-cloud-kms-v1/src/main/java/com/google/cloud/kms/v1/PublicKey.java",
     "proto-google-cloud-kms-v1/src/main/java/com/google/cloud/kms/v1/PublicKeyOrBuilder.java",

@@ -179,4 +179,29 @@ public interface PublicKeyOrBuilder
    * @return The bytes for name.
    */
   com.google.protobuf.ByteString getNameBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * The [ProtectionLevel][google.cloud.kms.v1.ProtectionLevel] of the [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] public key.
+   * </pre>
+   *
+   * <code>.google.cloud.kms.v1.ProtectionLevel protection_level = 5;</code>
+   *
+   * @return The enum numeric value on the wire for protectionLevel.
+   */
+  int getProtectionLevelValue();
+  /**
+   *
+   *
+   * <pre>
+   * The [ProtectionLevel][google.cloud.kms.v1.ProtectionLevel] of the [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] public key.
+   * </pre>
+   *
+   * <code>.google.cloud.kms.v1.ProtectionLevel protection_level = 5;</code>
+   *
+   * @return The protectionLevel.
+   */
+  com.google.cloud.kms.v1.ProtectionLevel getProtectionLevel();
 }

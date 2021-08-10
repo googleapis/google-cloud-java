@@ -37,6 +37,9 @@
             "Encrypt": {
               "methods": ["encrypt", "encrypt", "encrypt", "encryptCallable"]
             },
+            "GenerateRandomBytes": {
+              "methods": ["generateRandomBytes", "generateRandomBytes", "generateRandomBytesCallable"]
+            },
             "GetCryptoKey": {
               "methods": ["getCryptoKey", "getCryptoKey", "getCryptoKey", "getCryptoKeyCallable"]
             },
@@ -69,6 +72,12 @@
             },
             "ListKeyRings": {
               "methods": ["listKeyRings", "listKeyRings", "listKeyRings", "listKeyRingsPagedCallable", "listKeyRingsCallable"]
+            },
+            "MacSign": {
+              "methods": ["macSign", "macSign", "macSign", "macSignCallable"]
+            },
+            "MacVerify": {
+              "methods": ["macVerify", "macVerify", "macVerify", "macVerifyCallable"]
             },
             "RestoreCryptoKeyVersion": {
               "methods": ["restoreCryptoKeyVersion", "restoreCryptoKeyVersion", "restoreCryptoKeyVersion", "restoreCryptoKeyVersionCallable"]

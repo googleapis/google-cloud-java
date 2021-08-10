@@ -51,7 +51,6 @@ public interface AsymmetricDecryptResponseOrBuilder
    * different languages. However, it is a non-negative integer, which will
    * never exceed 2^32-1, and can be safely downconverted to uint32 in languages
    * that support this type.
-   * NOTE: This field is in Beta.
    * </pre>
    *
    * <code>.google.protobuf.Int64Value plaintext_crc32c = 2;</code>
@@ -74,7 +73,6 @@ public interface AsymmetricDecryptResponseOrBuilder
    * different languages. However, it is a non-negative integer, which will
    * never exceed 2^32-1, and can be safely downconverted to uint32 in languages
    * that support this type.
-   * NOTE: This field is in Beta.
    * </pre>
    *
    * <code>.google.protobuf.Int64Value plaintext_crc32c = 2;</code>
@@ -97,7 +95,6 @@ public interface AsymmetricDecryptResponseOrBuilder
    * different languages. However, it is a non-negative integer, which will
    * never exceed 2^32-1, and can be safely downconverted to uint32 in languages
    * that support this type.
-   * NOTE: This field is in Beta.
    * </pre>
    *
    * <code>.google.protobuf.Int64Value plaintext_crc32c = 2;</code>
@@ -116,7 +113,6 @@ public interface AsymmetricDecryptResponseOrBuilder
    * was left unset or that it was not delivered to [KeyManagementService][google.cloud.kms.v1.KeyManagementService]. If
    * you've set [AsymmetricDecryptRequest.ciphertext_crc32c][google.cloud.kms.v1.AsymmetricDecryptRequest.ciphertext_crc32c] but this field is
    * still false, discard the response and perform a limited number of retries.
-   * NOTE: This field is in Beta.
    * </pre>
    *
    * <code>bool verified_ciphertext_crc32c = 3;</code>
@@ -124,4 +120,29 @@ public interface AsymmetricDecryptResponseOrBuilder
    * @return The verifiedCiphertextCrc32c.
    */
   boolean getVerifiedCiphertextCrc32C();
+
+  /**
+   *
+   *
+   * <pre>
+   * The [ProtectionLevel][google.cloud.kms.v1.ProtectionLevel] of the [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] used in decryption.
+   * </pre>
+   *
+   * <code>.google.cloud.kms.v1.ProtectionLevel protection_level = 4;</code>
+   *
+   * @return The enum numeric value on the wire for protectionLevel.
+   */
+  int getProtectionLevelValue();
+  /**
+   *
+   *
+   * <pre>
+   * The [ProtectionLevel][google.cloud.kms.v1.ProtectionLevel] of the [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] used in decryption.
+   * </pre>
+   *
+   * <code>.google.cloud.kms.v1.ProtectionLevel protection_level = 4;</code>
+   *
+   * @return The protectionLevel.
+   */
+  com.google.cloud.kms.v1.ProtectionLevel getProtectionLevel();
 }

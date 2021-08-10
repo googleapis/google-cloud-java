@@ -767,6 +767,162 @@ public final class KeyManagementServiceGrpc {
   }
 
   private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.kms.v1.UpdateCryptoKeyPrimaryVersionRequest,
+          com.google.cloud.kms.v1.CryptoKey>
+      getUpdateCryptoKeyPrimaryVersionMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "UpdateCryptoKeyPrimaryVersion",
+      requestType = com.google.cloud.kms.v1.UpdateCryptoKeyPrimaryVersionRequest.class,
+      responseType = com.google.cloud.kms.v1.CryptoKey.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.kms.v1.UpdateCryptoKeyPrimaryVersionRequest,
+          com.google.cloud.kms.v1.CryptoKey>
+      getUpdateCryptoKeyPrimaryVersionMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.kms.v1.UpdateCryptoKeyPrimaryVersionRequest,
+            com.google.cloud.kms.v1.CryptoKey>
+        getUpdateCryptoKeyPrimaryVersionMethod;
+    if ((getUpdateCryptoKeyPrimaryVersionMethod =
+            KeyManagementServiceGrpc.getUpdateCryptoKeyPrimaryVersionMethod)
+        == null) {
+      synchronized (KeyManagementServiceGrpc.class) {
+        if ((getUpdateCryptoKeyPrimaryVersionMethod =
+                KeyManagementServiceGrpc.getUpdateCryptoKeyPrimaryVersionMethod)
+            == null) {
+          KeyManagementServiceGrpc.getUpdateCryptoKeyPrimaryVersionMethod =
+              getUpdateCryptoKeyPrimaryVersionMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.kms.v1.UpdateCryptoKeyPrimaryVersionRequest,
+                          com.google.cloud.kms.v1.CryptoKey>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "UpdateCryptoKeyPrimaryVersion"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.kms.v1.UpdateCryptoKeyPrimaryVersionRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.kms.v1.CryptoKey.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new KeyManagementServiceMethodDescriptorSupplier(
+                              "UpdateCryptoKeyPrimaryVersion"))
+                      .build();
+        }
+      }
+    }
+    return getUpdateCryptoKeyPrimaryVersionMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.kms.v1.DestroyCryptoKeyVersionRequest,
+          com.google.cloud.kms.v1.CryptoKeyVersion>
+      getDestroyCryptoKeyVersionMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "DestroyCryptoKeyVersion",
+      requestType = com.google.cloud.kms.v1.DestroyCryptoKeyVersionRequest.class,
+      responseType = com.google.cloud.kms.v1.CryptoKeyVersion.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.kms.v1.DestroyCryptoKeyVersionRequest,
+          com.google.cloud.kms.v1.CryptoKeyVersion>
+      getDestroyCryptoKeyVersionMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.kms.v1.DestroyCryptoKeyVersionRequest,
+            com.google.cloud.kms.v1.CryptoKeyVersion>
+        getDestroyCryptoKeyVersionMethod;
+    if ((getDestroyCryptoKeyVersionMethod =
+            KeyManagementServiceGrpc.getDestroyCryptoKeyVersionMethod)
+        == null) {
+      synchronized (KeyManagementServiceGrpc.class) {
+        if ((getDestroyCryptoKeyVersionMethod =
+                KeyManagementServiceGrpc.getDestroyCryptoKeyVersionMethod)
+            == null) {
+          KeyManagementServiceGrpc.getDestroyCryptoKeyVersionMethod =
+              getDestroyCryptoKeyVersionMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.kms.v1.DestroyCryptoKeyVersionRequest,
+                          com.google.cloud.kms.v1.CryptoKeyVersion>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "DestroyCryptoKeyVersion"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.kms.v1.DestroyCryptoKeyVersionRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.kms.v1.CryptoKeyVersion.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new KeyManagementServiceMethodDescriptorSupplier(
+                              "DestroyCryptoKeyVersion"))
+                      .build();
+        }
+      }
+    }
+    return getDestroyCryptoKeyVersionMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.kms.v1.RestoreCryptoKeyVersionRequest,
+          com.google.cloud.kms.v1.CryptoKeyVersion>
+      getRestoreCryptoKeyVersionMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "RestoreCryptoKeyVersion",
+      requestType = com.google.cloud.kms.v1.RestoreCryptoKeyVersionRequest.class,
+      responseType = com.google.cloud.kms.v1.CryptoKeyVersion.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.kms.v1.RestoreCryptoKeyVersionRequest,
+          com.google.cloud.kms.v1.CryptoKeyVersion>
+      getRestoreCryptoKeyVersionMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.kms.v1.RestoreCryptoKeyVersionRequest,
+            com.google.cloud.kms.v1.CryptoKeyVersion>
+        getRestoreCryptoKeyVersionMethod;
+    if ((getRestoreCryptoKeyVersionMethod =
+            KeyManagementServiceGrpc.getRestoreCryptoKeyVersionMethod)
+        == null) {
+      synchronized (KeyManagementServiceGrpc.class) {
+        if ((getRestoreCryptoKeyVersionMethod =
+                KeyManagementServiceGrpc.getRestoreCryptoKeyVersionMethod)
+            == null) {
+          KeyManagementServiceGrpc.getRestoreCryptoKeyVersionMethod =
+              getRestoreCryptoKeyVersionMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.kms.v1.RestoreCryptoKeyVersionRequest,
+                          com.google.cloud.kms.v1.CryptoKeyVersion>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "RestoreCryptoKeyVersion"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.kms.v1.RestoreCryptoKeyVersionRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.kms.v1.CryptoKeyVersion.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new KeyManagementServiceMethodDescriptorSupplier(
+                              "RestoreCryptoKeyVersion"))
+                      .build();
+        }
+      }
+    }
+    return getRestoreCryptoKeyVersionMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.kms.v1.EncryptRequest, com.google.cloud.kms.v1.EncryptResponse>
       getEncryptMethod;
 
@@ -945,159 +1101,137 @@ public final class KeyManagementServiceGrpc {
   }
 
   private static volatile io.grpc.MethodDescriptor<
-          com.google.cloud.kms.v1.UpdateCryptoKeyPrimaryVersionRequest,
-          com.google.cloud.kms.v1.CryptoKey>
-      getUpdateCryptoKeyPrimaryVersionMethod;
+          com.google.cloud.kms.v1.MacSignRequest, com.google.cloud.kms.v1.MacSignResponse>
+      getMacSignMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "UpdateCryptoKeyPrimaryVersion",
-      requestType = com.google.cloud.kms.v1.UpdateCryptoKeyPrimaryVersionRequest.class,
-      responseType = com.google.cloud.kms.v1.CryptoKey.class,
+      fullMethodName = SERVICE_NAME + '/' + "MacSign",
+      requestType = com.google.cloud.kms.v1.MacSignRequest.class,
+      responseType = com.google.cloud.kms.v1.MacSignResponse.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<
-          com.google.cloud.kms.v1.UpdateCryptoKeyPrimaryVersionRequest,
-          com.google.cloud.kms.v1.CryptoKey>
-      getUpdateCryptoKeyPrimaryVersionMethod() {
+          com.google.cloud.kms.v1.MacSignRequest, com.google.cloud.kms.v1.MacSignResponse>
+      getMacSignMethod() {
     io.grpc.MethodDescriptor<
-            com.google.cloud.kms.v1.UpdateCryptoKeyPrimaryVersionRequest,
-            com.google.cloud.kms.v1.CryptoKey>
-        getUpdateCryptoKeyPrimaryVersionMethod;
-    if ((getUpdateCryptoKeyPrimaryVersionMethod =
-            KeyManagementServiceGrpc.getUpdateCryptoKeyPrimaryVersionMethod)
-        == null) {
+            com.google.cloud.kms.v1.MacSignRequest, com.google.cloud.kms.v1.MacSignResponse>
+        getMacSignMethod;
+    if ((getMacSignMethod = KeyManagementServiceGrpc.getMacSignMethod) == null) {
       synchronized (KeyManagementServiceGrpc.class) {
-        if ((getUpdateCryptoKeyPrimaryVersionMethod =
-                KeyManagementServiceGrpc.getUpdateCryptoKeyPrimaryVersionMethod)
-            == null) {
-          KeyManagementServiceGrpc.getUpdateCryptoKeyPrimaryVersionMethod =
-              getUpdateCryptoKeyPrimaryVersionMethod =
+        if ((getMacSignMethod = KeyManagementServiceGrpc.getMacSignMethod) == null) {
+          KeyManagementServiceGrpc.getMacSignMethod =
+              getMacSignMethod =
                   io.grpc.MethodDescriptor
-                      .<com.google.cloud.kms.v1.UpdateCryptoKeyPrimaryVersionRequest,
-                          com.google.cloud.kms.v1.CryptoKey>
+                      .<com.google.cloud.kms.v1.MacSignRequest,
+                          com.google.cloud.kms.v1.MacSignResponse>
                           newBuilder()
                       .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-                      .setFullMethodName(
-                          generateFullMethodName(SERVICE_NAME, "UpdateCryptoKeyPrimaryVersion"))
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "MacSign"))
                       .setSampledToLocalTracing(true)
                       .setRequestMarshaller(
                           io.grpc.protobuf.ProtoUtils.marshaller(
-                              com.google.cloud.kms.v1.UpdateCryptoKeyPrimaryVersionRequest
-                                  .getDefaultInstance()))
+                              com.google.cloud.kms.v1.MacSignRequest.getDefaultInstance()))
                       .setResponseMarshaller(
                           io.grpc.protobuf.ProtoUtils.marshaller(
-                              com.google.cloud.kms.v1.CryptoKey.getDefaultInstance()))
+                              com.google.cloud.kms.v1.MacSignResponse.getDefaultInstance()))
                       .setSchemaDescriptor(
-                          new KeyManagementServiceMethodDescriptorSupplier(
-                              "UpdateCryptoKeyPrimaryVersion"))
+                          new KeyManagementServiceMethodDescriptorSupplier("MacSign"))
                       .build();
         }
       }
     }
-    return getUpdateCryptoKeyPrimaryVersionMethod;
+    return getMacSignMethod;
   }
 
   private static volatile io.grpc.MethodDescriptor<
-          com.google.cloud.kms.v1.DestroyCryptoKeyVersionRequest,
-          com.google.cloud.kms.v1.CryptoKeyVersion>
-      getDestroyCryptoKeyVersionMethod;
+          com.google.cloud.kms.v1.MacVerifyRequest, com.google.cloud.kms.v1.MacVerifyResponse>
+      getMacVerifyMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "DestroyCryptoKeyVersion",
-      requestType = com.google.cloud.kms.v1.DestroyCryptoKeyVersionRequest.class,
-      responseType = com.google.cloud.kms.v1.CryptoKeyVersion.class,
+      fullMethodName = SERVICE_NAME + '/' + "MacVerify",
+      requestType = com.google.cloud.kms.v1.MacVerifyRequest.class,
+      responseType = com.google.cloud.kms.v1.MacVerifyResponse.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<
-          com.google.cloud.kms.v1.DestroyCryptoKeyVersionRequest,
-          com.google.cloud.kms.v1.CryptoKeyVersion>
-      getDestroyCryptoKeyVersionMethod() {
+          com.google.cloud.kms.v1.MacVerifyRequest, com.google.cloud.kms.v1.MacVerifyResponse>
+      getMacVerifyMethod() {
     io.grpc.MethodDescriptor<
-            com.google.cloud.kms.v1.DestroyCryptoKeyVersionRequest,
-            com.google.cloud.kms.v1.CryptoKeyVersion>
-        getDestroyCryptoKeyVersionMethod;
-    if ((getDestroyCryptoKeyVersionMethod =
-            KeyManagementServiceGrpc.getDestroyCryptoKeyVersionMethod)
-        == null) {
+            com.google.cloud.kms.v1.MacVerifyRequest, com.google.cloud.kms.v1.MacVerifyResponse>
+        getMacVerifyMethod;
+    if ((getMacVerifyMethod = KeyManagementServiceGrpc.getMacVerifyMethod) == null) {
       synchronized (KeyManagementServiceGrpc.class) {
-        if ((getDestroyCryptoKeyVersionMethod =
-                KeyManagementServiceGrpc.getDestroyCryptoKeyVersionMethod)
-            == null) {
-          KeyManagementServiceGrpc.getDestroyCryptoKeyVersionMethod =
-              getDestroyCryptoKeyVersionMethod =
+        if ((getMacVerifyMethod = KeyManagementServiceGrpc.getMacVerifyMethod) == null) {
+          KeyManagementServiceGrpc.getMacVerifyMethod =
+              getMacVerifyMethod =
                   io.grpc.MethodDescriptor
-                      .<com.google.cloud.kms.v1.DestroyCryptoKeyVersionRequest,
-                          com.google.cloud.kms.v1.CryptoKeyVersion>
+                      .<com.google.cloud.kms.v1.MacVerifyRequest,
+                          com.google.cloud.kms.v1.MacVerifyResponse>
                           newBuilder()
                       .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-                      .setFullMethodName(
-                          generateFullMethodName(SERVICE_NAME, "DestroyCryptoKeyVersion"))
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "MacVerify"))
                       .setSampledToLocalTracing(true)
                       .setRequestMarshaller(
                           io.grpc.protobuf.ProtoUtils.marshaller(
-                              com.google.cloud.kms.v1.DestroyCryptoKeyVersionRequest
-                                  .getDefaultInstance()))
+                              com.google.cloud.kms.v1.MacVerifyRequest.getDefaultInstance()))
                       .setResponseMarshaller(
                           io.grpc.protobuf.ProtoUtils.marshaller(
-                              com.google.cloud.kms.v1.CryptoKeyVersion.getDefaultInstance()))
+                              com.google.cloud.kms.v1.MacVerifyResponse.getDefaultInstance()))
                       .setSchemaDescriptor(
-                          new KeyManagementServiceMethodDescriptorSupplier(
-                              "DestroyCryptoKeyVersion"))
+                          new KeyManagementServiceMethodDescriptorSupplier("MacVerify"))
                       .build();
         }
       }
     }
-    return getDestroyCryptoKeyVersionMethod;
+    return getMacVerifyMethod;
   }
 
   private static volatile io.grpc.MethodDescriptor<
-          com.google.cloud.kms.v1.RestoreCryptoKeyVersionRequest,
-          com.google.cloud.kms.v1.CryptoKeyVersion>
-      getRestoreCryptoKeyVersionMethod;
+          com.google.cloud.kms.v1.GenerateRandomBytesRequest,
+          com.google.cloud.kms.v1.GenerateRandomBytesResponse>
+      getGenerateRandomBytesMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "RestoreCryptoKeyVersion",
-      requestType = com.google.cloud.kms.v1.RestoreCryptoKeyVersionRequest.class,
-      responseType = com.google.cloud.kms.v1.CryptoKeyVersion.class,
+      fullMethodName = SERVICE_NAME + '/' + "GenerateRandomBytes",
+      requestType = com.google.cloud.kms.v1.GenerateRandomBytesRequest.class,
+      responseType = com.google.cloud.kms.v1.GenerateRandomBytesResponse.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<
-          com.google.cloud.kms.v1.RestoreCryptoKeyVersionRequest,
-          com.google.cloud.kms.v1.CryptoKeyVersion>
-      getRestoreCryptoKeyVersionMethod() {
+          com.google.cloud.kms.v1.GenerateRandomBytesRequest,
+          com.google.cloud.kms.v1.GenerateRandomBytesResponse>
+      getGenerateRandomBytesMethod() {
     io.grpc.MethodDescriptor<
-            com.google.cloud.kms.v1.RestoreCryptoKeyVersionRequest,
-            com.google.cloud.kms.v1.CryptoKeyVersion>
-        getRestoreCryptoKeyVersionMethod;
-    if ((getRestoreCryptoKeyVersionMethod =
-            KeyManagementServiceGrpc.getRestoreCryptoKeyVersionMethod)
+            com.google.cloud.kms.v1.GenerateRandomBytesRequest,
+            com.google.cloud.kms.v1.GenerateRandomBytesResponse>
+        getGenerateRandomBytesMethod;
+    if ((getGenerateRandomBytesMethod = KeyManagementServiceGrpc.getGenerateRandomBytesMethod)
         == null) {
       synchronized (KeyManagementServiceGrpc.class) {
-        if ((getRestoreCryptoKeyVersionMethod =
-                KeyManagementServiceGrpc.getRestoreCryptoKeyVersionMethod)
+        if ((getGenerateRandomBytesMethod = KeyManagementServiceGrpc.getGenerateRandomBytesMethod)
             == null) {
-          KeyManagementServiceGrpc.getRestoreCryptoKeyVersionMethod =
-              getRestoreCryptoKeyVersionMethod =
+          KeyManagementServiceGrpc.getGenerateRandomBytesMethod =
+              getGenerateRandomBytesMethod =
                   io.grpc.MethodDescriptor
-                      .<com.google.cloud.kms.v1.RestoreCryptoKeyVersionRequest,
-                          com.google.cloud.kms.v1.CryptoKeyVersion>
+                      .<com.google.cloud.kms.v1.GenerateRandomBytesRequest,
+                          com.google.cloud.kms.v1.GenerateRandomBytesResponse>
                           newBuilder()
                       .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
                       .setFullMethodName(
-                          generateFullMethodName(SERVICE_NAME, "RestoreCryptoKeyVersion"))
+                          generateFullMethodName(SERVICE_NAME, "GenerateRandomBytes"))
                       .setSampledToLocalTracing(true)
                       .setRequestMarshaller(
                           io.grpc.protobuf.ProtoUtils.marshaller(
-                              com.google.cloud.kms.v1.RestoreCryptoKeyVersionRequest
+                              com.google.cloud.kms.v1.GenerateRandomBytesRequest
                                   .getDefaultInstance()))
                       .setResponseMarshaller(
                           io.grpc.protobuf.ProtoUtils.marshaller(
-                              com.google.cloud.kms.v1.CryptoKeyVersion.getDefaultInstance()))
+                              com.google.cloud.kms.v1.GenerateRandomBytesResponse
+                                  .getDefaultInstance()))
                       .setSchemaDescriptor(
-                          new KeyManagementServiceMethodDescriptorSupplier(
-                              "RestoreCryptoKeyVersion"))
+                          new KeyManagementServiceMethodDescriptorSupplier("GenerateRandomBytes"))
                       .build();
         }
       }
     }
-    return getRestoreCryptoKeyVersionMethod;
+    return getGenerateRandomBytesMethod;
   }
 
   /** Creates a new async stub that supports all call types for the service */
@@ -1408,6 +1542,64 @@ public final class KeyManagementServiceGrpc {
      *
      *
      * <pre>
+     * Update the version of a [CryptoKey][google.cloud.kms.v1.CryptoKey] that will be used in [Encrypt][google.cloud.kms.v1.KeyManagementService.Encrypt].
+     * Returns an error if called on a key whose purpose is not
+     * [ENCRYPT_DECRYPT][google.cloud.kms.v1.CryptoKey.CryptoKeyPurpose.ENCRYPT_DECRYPT].
+     * </pre>
+     */
+    public void updateCryptoKeyPrimaryVersion(
+        com.google.cloud.kms.v1.UpdateCryptoKeyPrimaryVersionRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.kms.v1.CryptoKey> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getUpdateCryptoKeyPrimaryVersionMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Schedule a [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] for destruction.
+     * Upon calling this method, [CryptoKeyVersion.state][google.cloud.kms.v1.CryptoKeyVersion.state] will be set to
+     * [DESTROY_SCHEDULED][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionState.DESTROY_SCHEDULED]
+     * and [destroy_time][google.cloud.kms.v1.CryptoKeyVersion.destroy_time] will be set to a time 24
+     * hours in the future, at which point the [state][google.cloud.kms.v1.CryptoKeyVersion.state]
+     * will be changed to
+     * [DESTROYED][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionState.DESTROYED], and the key
+     * material will be irrevocably destroyed.
+     * Before the [destroy_time][google.cloud.kms.v1.CryptoKeyVersion.destroy_time] is reached,
+     * [RestoreCryptoKeyVersion][google.cloud.kms.v1.KeyManagementService.RestoreCryptoKeyVersion] may be called to reverse the process.
+     * </pre>
+     */
+    public void destroyCryptoKeyVersion(
+        com.google.cloud.kms.v1.DestroyCryptoKeyVersionRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.kms.v1.CryptoKeyVersion> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getDestroyCryptoKeyVersionMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Restore a [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] in the
+     * [DESTROY_SCHEDULED][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionState.DESTROY_SCHEDULED]
+     * state.
+     * Upon restoration of the CryptoKeyVersion, [state][google.cloud.kms.v1.CryptoKeyVersion.state]
+     * will be set to [DISABLED][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionState.DISABLED],
+     * and [destroy_time][google.cloud.kms.v1.CryptoKeyVersion.destroy_time] will be cleared.
+     * </pre>
+     */
+    public void restoreCryptoKeyVersion(
+        com.google.cloud.kms.v1.RestoreCryptoKeyVersionRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.kms.v1.CryptoKeyVersion> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getRestoreCryptoKeyVersionMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Encrypts data, so that it can only be recovered by a call to [Decrypt][google.cloud.kms.v1.KeyManagementService.Decrypt].
      * The [CryptoKey.purpose][google.cloud.kms.v1.CryptoKey.purpose] must be
      * [ENCRYPT_DECRYPT][google.cloud.kms.v1.CryptoKey.CryptoKeyPurpose.ENCRYPT_DECRYPT].
@@ -1471,58 +1663,46 @@ public final class KeyManagementServiceGrpc {
      *
      *
      * <pre>
-     * Update the version of a [CryptoKey][google.cloud.kms.v1.CryptoKey] that will be used in [Encrypt][google.cloud.kms.v1.KeyManagementService.Encrypt].
-     * Returns an error if called on a key whose purpose is not
-     * [ENCRYPT_DECRYPT][google.cloud.kms.v1.CryptoKey.CryptoKeyPurpose.ENCRYPT_DECRYPT].
+     * Signs data using a [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] with [CryptoKey.purpose][google.cloud.kms.v1.CryptoKey.purpose]
+     * MAC, producing a tag that can be verified by another source with the
+     * same key.
      * </pre>
      */
-    public void updateCryptoKeyPrimaryVersion(
-        com.google.cloud.kms.v1.UpdateCryptoKeyPrimaryVersionRequest request,
-        io.grpc.stub.StreamObserver<com.google.cloud.kms.v1.CryptoKey> responseObserver) {
-      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
-          getUpdateCryptoKeyPrimaryVersionMethod(), responseObserver);
+    public void macSign(
+        com.google.cloud.kms.v1.MacSignRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.kms.v1.MacSignResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getMacSignMethod(), responseObserver);
     }
 
     /**
      *
      *
      * <pre>
-     * Schedule a [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] for destruction.
-     * Upon calling this method, [CryptoKeyVersion.state][google.cloud.kms.v1.CryptoKeyVersion.state] will be set to
-     * [DESTROY_SCHEDULED][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionState.DESTROY_SCHEDULED]
-     * and [destroy_time][google.cloud.kms.v1.CryptoKeyVersion.destroy_time] will be set to a time 24
-     * hours in the future, at which point the [state][google.cloud.kms.v1.CryptoKeyVersion.state]
-     * will be changed to
-     * [DESTROYED][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionState.DESTROYED], and the key
-     * material will be irrevocably destroyed.
-     * Before the [destroy_time][google.cloud.kms.v1.CryptoKeyVersion.destroy_time] is reached,
-     * [RestoreCryptoKeyVersion][google.cloud.kms.v1.KeyManagementService.RestoreCryptoKeyVersion] may be called to reverse the process.
+     * Verifies MAC tag using a [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] with [CryptoKey.purpose][google.cloud.kms.v1.CryptoKey.purpose]
+     * MAC, and returns a response that indicates whether or not the verification
+     * was successful.
      * </pre>
      */
-    public void destroyCryptoKeyVersion(
-        com.google.cloud.kms.v1.DestroyCryptoKeyVersionRequest request,
-        io.grpc.stub.StreamObserver<com.google.cloud.kms.v1.CryptoKeyVersion> responseObserver) {
-      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
-          getDestroyCryptoKeyVersionMethod(), responseObserver);
+    public void macVerify(
+        com.google.cloud.kms.v1.MacVerifyRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.kms.v1.MacVerifyResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getMacVerifyMethod(), responseObserver);
     }
 
     /**
      *
      *
      * <pre>
-     * Restore a [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] in the
-     * [DESTROY_SCHEDULED][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionState.DESTROY_SCHEDULED]
-     * state.
-     * Upon restoration of the CryptoKeyVersion, [state][google.cloud.kms.v1.CryptoKeyVersion.state]
-     * will be set to [DISABLED][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionState.DISABLED],
-     * and [destroy_time][google.cloud.kms.v1.CryptoKeyVersion.destroy_time] will be cleared.
+     * Generate random bytes using the Cloud KMS randomness source in the provided
+     * location.
      * </pre>
      */
-    public void restoreCryptoKeyVersion(
-        com.google.cloud.kms.v1.RestoreCryptoKeyVersionRequest request,
-        io.grpc.stub.StreamObserver<com.google.cloud.kms.v1.CryptoKeyVersion> responseObserver) {
+    public void generateRandomBytes(
+        com.google.cloud.kms.v1.GenerateRandomBytesRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.kms.v1.GenerateRandomBytesResponse>
+            responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
-          getRestoreCryptoKeyVersionMethod(), responseObserver);
+          getGenerateRandomBytesMethod(), responseObserver);
     }
 
     @java.lang.Override
@@ -1632,6 +1812,27 @@ public final class KeyManagementServiceGrpc {
                       com.google.cloud.kms.v1.CryptoKeyVersion>(
                       this, METHODID_UPDATE_CRYPTO_KEY_VERSION)))
           .addMethod(
+              getUpdateCryptoKeyPrimaryVersionMethod(),
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.cloud.kms.v1.UpdateCryptoKeyPrimaryVersionRequest,
+                      com.google.cloud.kms.v1.CryptoKey>(
+                      this, METHODID_UPDATE_CRYPTO_KEY_PRIMARY_VERSION)))
+          .addMethod(
+              getDestroyCryptoKeyVersionMethod(),
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.cloud.kms.v1.DestroyCryptoKeyVersionRequest,
+                      com.google.cloud.kms.v1.CryptoKeyVersion>(
+                      this, METHODID_DESTROY_CRYPTO_KEY_VERSION)))
+          .addMethod(
+              getRestoreCryptoKeyVersionMethod(),
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.cloud.kms.v1.RestoreCryptoKeyVersionRequest,
+                      com.google.cloud.kms.v1.CryptoKeyVersion>(
+                      this, METHODID_RESTORE_CRYPTO_KEY_VERSION)))
+          .addMethod(
               getEncryptMethod(),
               io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
@@ -1658,26 +1859,24 @@ public final class KeyManagementServiceGrpc {
                       com.google.cloud.kms.v1.AsymmetricDecryptResponse>(
                       this, METHODID_ASYMMETRIC_DECRYPT)))
           .addMethod(
-              getUpdateCryptoKeyPrimaryVersionMethod(),
+              getMacSignMethod(),
               io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
-                      com.google.cloud.kms.v1.UpdateCryptoKeyPrimaryVersionRequest,
-                      com.google.cloud.kms.v1.CryptoKey>(
-                      this, METHODID_UPDATE_CRYPTO_KEY_PRIMARY_VERSION)))
+                      com.google.cloud.kms.v1.MacSignRequest,
+                      com.google.cloud.kms.v1.MacSignResponse>(this, METHODID_MAC_SIGN)))
           .addMethod(
-              getDestroyCryptoKeyVersionMethod(),
+              getMacVerifyMethod(),
               io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
-                      com.google.cloud.kms.v1.DestroyCryptoKeyVersionRequest,
-                      com.google.cloud.kms.v1.CryptoKeyVersion>(
-                      this, METHODID_DESTROY_CRYPTO_KEY_VERSION)))
+                      com.google.cloud.kms.v1.MacVerifyRequest,
+                      com.google.cloud.kms.v1.MacVerifyResponse>(this, METHODID_MAC_VERIFY)))
           .addMethod(
-              getRestoreCryptoKeyVersionMethod(),
+              getGenerateRandomBytesMethod(),
               io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
-                      com.google.cloud.kms.v1.RestoreCryptoKeyVersionRequest,
-                      com.google.cloud.kms.v1.CryptoKeyVersion>(
-                      this, METHODID_RESTORE_CRYPTO_KEY_VERSION)))
+                      com.google.cloud.kms.v1.GenerateRandomBytesRequest,
+                      com.google.cloud.kms.v1.GenerateRandomBytesResponse>(
+                      this, METHODID_GENERATE_RANDOM_BYTES)))
           .build();
     }
   }
@@ -1990,6 +2189,70 @@ public final class KeyManagementServiceGrpc {
      *
      *
      * <pre>
+     * Update the version of a [CryptoKey][google.cloud.kms.v1.CryptoKey] that will be used in [Encrypt][google.cloud.kms.v1.KeyManagementService.Encrypt].
+     * Returns an error if called on a key whose purpose is not
+     * [ENCRYPT_DECRYPT][google.cloud.kms.v1.CryptoKey.CryptoKeyPurpose.ENCRYPT_DECRYPT].
+     * </pre>
+     */
+    public void updateCryptoKeyPrimaryVersion(
+        com.google.cloud.kms.v1.UpdateCryptoKeyPrimaryVersionRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.kms.v1.CryptoKey> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getUpdateCryptoKeyPrimaryVersionMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Schedule a [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] for destruction.
+     * Upon calling this method, [CryptoKeyVersion.state][google.cloud.kms.v1.CryptoKeyVersion.state] will be set to
+     * [DESTROY_SCHEDULED][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionState.DESTROY_SCHEDULED]
+     * and [destroy_time][google.cloud.kms.v1.CryptoKeyVersion.destroy_time] will be set to a time 24
+     * hours in the future, at which point the [state][google.cloud.kms.v1.CryptoKeyVersion.state]
+     * will be changed to
+     * [DESTROYED][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionState.DESTROYED], and the key
+     * material will be irrevocably destroyed.
+     * Before the [destroy_time][google.cloud.kms.v1.CryptoKeyVersion.destroy_time] is reached,
+     * [RestoreCryptoKeyVersion][google.cloud.kms.v1.KeyManagementService.RestoreCryptoKeyVersion] may be called to reverse the process.
+     * </pre>
+     */
+    public void destroyCryptoKeyVersion(
+        com.google.cloud.kms.v1.DestroyCryptoKeyVersionRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.kms.v1.CryptoKeyVersion> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getDestroyCryptoKeyVersionMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Restore a [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] in the
+     * [DESTROY_SCHEDULED][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionState.DESTROY_SCHEDULED]
+     * state.
+     * Upon restoration of the CryptoKeyVersion, [state][google.cloud.kms.v1.CryptoKeyVersion.state]
+     * will be set to [DISABLED][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionState.DISABLED],
+     * and [destroy_time][google.cloud.kms.v1.CryptoKeyVersion.destroy_time] will be cleared.
+     * </pre>
+     */
+    public void restoreCryptoKeyVersion(
+        com.google.cloud.kms.v1.RestoreCryptoKeyVersionRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.kms.v1.CryptoKeyVersion> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getRestoreCryptoKeyVersionMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Encrypts data, so that it can only be recovered by a call to [Decrypt][google.cloud.kms.v1.KeyManagementService.Decrypt].
      * The [CryptoKey.purpose][google.cloud.kms.v1.CryptoKey.purpose] must be
      * [ENCRYPT_DECRYPT][google.cloud.kms.v1.CryptoKey.CryptoKeyPurpose.ENCRYPT_DECRYPT].
@@ -2059,62 +2322,48 @@ public final class KeyManagementServiceGrpc {
      *
      *
      * <pre>
-     * Update the version of a [CryptoKey][google.cloud.kms.v1.CryptoKey] that will be used in [Encrypt][google.cloud.kms.v1.KeyManagementService.Encrypt].
-     * Returns an error if called on a key whose purpose is not
-     * [ENCRYPT_DECRYPT][google.cloud.kms.v1.CryptoKey.CryptoKeyPurpose.ENCRYPT_DECRYPT].
+     * Signs data using a [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] with [CryptoKey.purpose][google.cloud.kms.v1.CryptoKey.purpose]
+     * MAC, producing a tag that can be verified by another source with the
+     * same key.
      * </pre>
      */
-    public void updateCryptoKeyPrimaryVersion(
-        com.google.cloud.kms.v1.UpdateCryptoKeyPrimaryVersionRequest request,
-        io.grpc.stub.StreamObserver<com.google.cloud.kms.v1.CryptoKey> responseObserver) {
+    public void macSign(
+        com.google.cloud.kms.v1.MacSignRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.kms.v1.MacSignResponse> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
-          getChannel().newCall(getUpdateCryptoKeyPrimaryVersionMethod(), getCallOptions()),
-          request,
-          responseObserver);
+          getChannel().newCall(getMacSignMethod(), getCallOptions()), request, responseObserver);
     }
 
     /**
      *
      *
      * <pre>
-     * Schedule a [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] for destruction.
-     * Upon calling this method, [CryptoKeyVersion.state][google.cloud.kms.v1.CryptoKeyVersion.state] will be set to
-     * [DESTROY_SCHEDULED][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionState.DESTROY_SCHEDULED]
-     * and [destroy_time][google.cloud.kms.v1.CryptoKeyVersion.destroy_time] will be set to a time 24
-     * hours in the future, at which point the [state][google.cloud.kms.v1.CryptoKeyVersion.state]
-     * will be changed to
-     * [DESTROYED][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionState.DESTROYED], and the key
-     * material will be irrevocably destroyed.
-     * Before the [destroy_time][google.cloud.kms.v1.CryptoKeyVersion.destroy_time] is reached,
-     * [RestoreCryptoKeyVersion][google.cloud.kms.v1.KeyManagementService.RestoreCryptoKeyVersion] may be called to reverse the process.
+     * Verifies MAC tag using a [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] with [CryptoKey.purpose][google.cloud.kms.v1.CryptoKey.purpose]
+     * MAC, and returns a response that indicates whether or not the verification
+     * was successful.
      * </pre>
      */
-    public void destroyCryptoKeyVersion(
-        com.google.cloud.kms.v1.DestroyCryptoKeyVersionRequest request,
-        io.grpc.stub.StreamObserver<com.google.cloud.kms.v1.CryptoKeyVersion> responseObserver) {
+    public void macVerify(
+        com.google.cloud.kms.v1.MacVerifyRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.kms.v1.MacVerifyResponse> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
-          getChannel().newCall(getDestroyCryptoKeyVersionMethod(), getCallOptions()),
-          request,
-          responseObserver);
+          getChannel().newCall(getMacVerifyMethod(), getCallOptions()), request, responseObserver);
     }
 
     /**
      *
      *
      * <pre>
-     * Restore a [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] in the
-     * [DESTROY_SCHEDULED][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionState.DESTROY_SCHEDULED]
-     * state.
-     * Upon restoration of the CryptoKeyVersion, [state][google.cloud.kms.v1.CryptoKeyVersion.state]
-     * will be set to [DISABLED][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionState.DISABLED],
-     * and [destroy_time][google.cloud.kms.v1.CryptoKeyVersion.destroy_time] will be cleared.
+     * Generate random bytes using the Cloud KMS randomness source in the provided
+     * location.
      * </pre>
      */
-    public void restoreCryptoKeyVersion(
-        com.google.cloud.kms.v1.RestoreCryptoKeyVersionRequest request,
-        io.grpc.stub.StreamObserver<com.google.cloud.kms.v1.CryptoKeyVersion> responseObserver) {
+    public void generateRandomBytes(
+        com.google.cloud.kms.v1.GenerateRandomBytesRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.kms.v1.GenerateRandomBytesResponse>
+            responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
-          getChannel().newCall(getRestoreCryptoKeyVersionMethod(), getCallOptions()),
+          getChannel().newCall(getGenerateRandomBytesMethod(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -2379,6 +2628,61 @@ public final class KeyManagementServiceGrpc {
      *
      *
      * <pre>
+     * Update the version of a [CryptoKey][google.cloud.kms.v1.CryptoKey] that will be used in [Encrypt][google.cloud.kms.v1.KeyManagementService.Encrypt].
+     * Returns an error if called on a key whose purpose is not
+     * [ENCRYPT_DECRYPT][google.cloud.kms.v1.CryptoKey.CryptoKeyPurpose.ENCRYPT_DECRYPT].
+     * </pre>
+     */
+    public com.google.cloud.kms.v1.CryptoKey updateCryptoKeyPrimaryVersion(
+        com.google.cloud.kms.v1.UpdateCryptoKeyPrimaryVersionRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateCryptoKeyPrimaryVersionMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Schedule a [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] for destruction.
+     * Upon calling this method, [CryptoKeyVersion.state][google.cloud.kms.v1.CryptoKeyVersion.state] will be set to
+     * [DESTROY_SCHEDULED][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionState.DESTROY_SCHEDULED]
+     * and [destroy_time][google.cloud.kms.v1.CryptoKeyVersion.destroy_time] will be set to a time 24
+     * hours in the future, at which point the [state][google.cloud.kms.v1.CryptoKeyVersion.state]
+     * will be changed to
+     * [DESTROYED][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionState.DESTROYED], and the key
+     * material will be irrevocably destroyed.
+     * Before the [destroy_time][google.cloud.kms.v1.CryptoKeyVersion.destroy_time] is reached,
+     * [RestoreCryptoKeyVersion][google.cloud.kms.v1.KeyManagementService.RestoreCryptoKeyVersion] may be called to reverse the process.
+     * </pre>
+     */
+    public com.google.cloud.kms.v1.CryptoKeyVersion destroyCryptoKeyVersion(
+        com.google.cloud.kms.v1.DestroyCryptoKeyVersionRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDestroyCryptoKeyVersionMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Restore a [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] in the
+     * [DESTROY_SCHEDULED][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionState.DESTROY_SCHEDULED]
+     * state.
+     * Upon restoration of the CryptoKeyVersion, [state][google.cloud.kms.v1.CryptoKeyVersion.state]
+     * will be set to [DISABLED][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionState.DISABLED],
+     * and [destroy_time][google.cloud.kms.v1.CryptoKeyVersion.destroy_time] will be cleared.
+     * </pre>
+     */
+    public com.google.cloud.kms.v1.CryptoKeyVersion restoreCryptoKeyVersion(
+        com.google.cloud.kms.v1.RestoreCryptoKeyVersionRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getRestoreCryptoKeyVersionMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Encrypts data, so that it can only be recovered by a call to [Decrypt][google.cloud.kms.v1.KeyManagementService.Decrypt].
      * The [CryptoKey.purpose][google.cloud.kms.v1.CryptoKey.purpose] must be
      * [ENCRYPT_DECRYPT][google.cloud.kms.v1.CryptoKey.CryptoKeyPurpose.ENCRYPT_DECRYPT].
@@ -2438,55 +2742,44 @@ public final class KeyManagementServiceGrpc {
      *
      *
      * <pre>
-     * Update the version of a [CryptoKey][google.cloud.kms.v1.CryptoKey] that will be used in [Encrypt][google.cloud.kms.v1.KeyManagementService.Encrypt].
-     * Returns an error if called on a key whose purpose is not
-     * [ENCRYPT_DECRYPT][google.cloud.kms.v1.CryptoKey.CryptoKeyPurpose.ENCRYPT_DECRYPT].
+     * Signs data using a [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] with [CryptoKey.purpose][google.cloud.kms.v1.CryptoKey.purpose]
+     * MAC, producing a tag that can be verified by another source with the
+     * same key.
      * </pre>
      */
-    public com.google.cloud.kms.v1.CryptoKey updateCryptoKeyPrimaryVersion(
-        com.google.cloud.kms.v1.UpdateCryptoKeyPrimaryVersionRequest request) {
+    public com.google.cloud.kms.v1.MacSignResponse macSign(
+        com.google.cloud.kms.v1.MacSignRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getUpdateCryptoKeyPrimaryVersionMethod(), getCallOptions(), request);
+          getChannel(), getMacSignMethod(), getCallOptions(), request);
     }
 
     /**
      *
      *
      * <pre>
-     * Schedule a [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] for destruction.
-     * Upon calling this method, [CryptoKeyVersion.state][google.cloud.kms.v1.CryptoKeyVersion.state] will be set to
-     * [DESTROY_SCHEDULED][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionState.DESTROY_SCHEDULED]
-     * and [destroy_time][google.cloud.kms.v1.CryptoKeyVersion.destroy_time] will be set to a time 24
-     * hours in the future, at which point the [state][google.cloud.kms.v1.CryptoKeyVersion.state]
-     * will be changed to
-     * [DESTROYED][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionState.DESTROYED], and the key
-     * material will be irrevocably destroyed.
-     * Before the [destroy_time][google.cloud.kms.v1.CryptoKeyVersion.destroy_time] is reached,
-     * [RestoreCryptoKeyVersion][google.cloud.kms.v1.KeyManagementService.RestoreCryptoKeyVersion] may be called to reverse the process.
+     * Verifies MAC tag using a [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] with [CryptoKey.purpose][google.cloud.kms.v1.CryptoKey.purpose]
+     * MAC, and returns a response that indicates whether or not the verification
+     * was successful.
      * </pre>
      */
-    public com.google.cloud.kms.v1.CryptoKeyVersion destroyCryptoKeyVersion(
-        com.google.cloud.kms.v1.DestroyCryptoKeyVersionRequest request) {
+    public com.google.cloud.kms.v1.MacVerifyResponse macVerify(
+        com.google.cloud.kms.v1.MacVerifyRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getDestroyCryptoKeyVersionMethod(), getCallOptions(), request);
+          getChannel(), getMacVerifyMethod(), getCallOptions(), request);
     }
 
     /**
      *
      *
      * <pre>
-     * Restore a [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] in the
-     * [DESTROY_SCHEDULED][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionState.DESTROY_SCHEDULED]
-     * state.
-     * Upon restoration of the CryptoKeyVersion, [state][google.cloud.kms.v1.CryptoKeyVersion.state]
-     * will be set to [DISABLED][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionState.DISABLED],
-     * and [destroy_time][google.cloud.kms.v1.CryptoKeyVersion.destroy_time] will be cleared.
+     * Generate random bytes using the Cloud KMS randomness source in the provided
+     * location.
      * </pre>
      */
-    public com.google.cloud.kms.v1.CryptoKeyVersion restoreCryptoKeyVersion(
-        com.google.cloud.kms.v1.RestoreCryptoKeyVersionRequest request) {
+    public com.google.cloud.kms.v1.GenerateRandomBytesResponse generateRandomBytes(
+        com.google.cloud.kms.v1.GenerateRandomBytesRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getRestoreCryptoKeyVersionMethod(), getCallOptions(), request);
+          getChannel(), getGenerateRandomBytesMethod(), getCallOptions(), request);
     }
   }
 
@@ -2757,6 +3050,65 @@ public final class KeyManagementServiceGrpc {
      *
      *
      * <pre>
+     * Update the version of a [CryptoKey][google.cloud.kms.v1.CryptoKey] that will be used in [Encrypt][google.cloud.kms.v1.KeyManagementService.Encrypt].
+     * Returns an error if called on a key whose purpose is not
+     * [ENCRYPT_DECRYPT][google.cloud.kms.v1.CryptoKey.CryptoKeyPurpose.ENCRYPT_DECRYPT].
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.cloud.kms.v1.CryptoKey>
+        updateCryptoKeyPrimaryVersion(
+            com.google.cloud.kms.v1.UpdateCryptoKeyPrimaryVersionRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getUpdateCryptoKeyPrimaryVersionMethod(), getCallOptions()),
+          request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Schedule a [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] for destruction.
+     * Upon calling this method, [CryptoKeyVersion.state][google.cloud.kms.v1.CryptoKeyVersion.state] will be set to
+     * [DESTROY_SCHEDULED][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionState.DESTROY_SCHEDULED]
+     * and [destroy_time][google.cloud.kms.v1.CryptoKeyVersion.destroy_time] will be set to a time 24
+     * hours in the future, at which point the [state][google.cloud.kms.v1.CryptoKeyVersion.state]
+     * will be changed to
+     * [DESTROYED][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionState.DESTROYED], and the key
+     * material will be irrevocably destroyed.
+     * Before the [destroy_time][google.cloud.kms.v1.CryptoKeyVersion.destroy_time] is reached,
+     * [RestoreCryptoKeyVersion][google.cloud.kms.v1.KeyManagementService.RestoreCryptoKeyVersion] may be called to reverse the process.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.kms.v1.CryptoKeyVersion>
+        destroyCryptoKeyVersion(com.google.cloud.kms.v1.DestroyCryptoKeyVersionRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getDestroyCryptoKeyVersionMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Restore a [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] in the
+     * [DESTROY_SCHEDULED][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionState.DESTROY_SCHEDULED]
+     * state.
+     * Upon restoration of the CryptoKeyVersion, [state][google.cloud.kms.v1.CryptoKeyVersion.state]
+     * will be set to [DISABLED][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionState.DISABLED],
+     * and [destroy_time][google.cloud.kms.v1.CryptoKeyVersion.destroy_time] will be cleared.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.kms.v1.CryptoKeyVersion>
+        restoreCryptoKeyVersion(com.google.cloud.kms.v1.RestoreCryptoKeyVersionRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getRestoreCryptoKeyVersionMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Encrypts data, so that it can only be recovered by a call to [Decrypt][google.cloud.kms.v1.KeyManagementService.Decrypt].
      * The [CryptoKey.purpose][google.cloud.kms.v1.CryptoKey.purpose] must be
      * [ENCRYPT_DECRYPT][google.cloud.kms.v1.CryptoKey.CryptoKeyPurpose.ENCRYPT_DECRYPT].
@@ -2820,59 +3172,47 @@ public final class KeyManagementServiceGrpc {
      *
      *
      * <pre>
-     * Update the version of a [CryptoKey][google.cloud.kms.v1.CryptoKey] that will be used in [Encrypt][google.cloud.kms.v1.KeyManagementService.Encrypt].
-     * Returns an error if called on a key whose purpose is not
-     * [ENCRYPT_DECRYPT][google.cloud.kms.v1.CryptoKey.CryptoKeyPurpose.ENCRYPT_DECRYPT].
+     * Signs data using a [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] with [CryptoKey.purpose][google.cloud.kms.v1.CryptoKey.purpose]
+     * MAC, producing a tag that can be verified by another source with the
+     * same key.
      * </pre>
      */
-    public com.google.common.util.concurrent.ListenableFuture<com.google.cloud.kms.v1.CryptoKey>
-        updateCryptoKeyPrimaryVersion(
-            com.google.cloud.kms.v1.UpdateCryptoKeyPrimaryVersionRequest request) {
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.kms.v1.MacSignResponse>
+        macSign(com.google.cloud.kms.v1.MacSignRequest request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
-          getChannel().newCall(getUpdateCryptoKeyPrimaryVersionMethod(), getCallOptions()),
-          request);
+          getChannel().newCall(getMacSignMethod(), getCallOptions()), request);
     }
 
     /**
      *
      *
      * <pre>
-     * Schedule a [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] for destruction.
-     * Upon calling this method, [CryptoKeyVersion.state][google.cloud.kms.v1.CryptoKeyVersion.state] will be set to
-     * [DESTROY_SCHEDULED][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionState.DESTROY_SCHEDULED]
-     * and [destroy_time][google.cloud.kms.v1.CryptoKeyVersion.destroy_time] will be set to a time 24
-     * hours in the future, at which point the [state][google.cloud.kms.v1.CryptoKeyVersion.state]
-     * will be changed to
-     * [DESTROYED][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionState.DESTROYED], and the key
-     * material will be irrevocably destroyed.
-     * Before the [destroy_time][google.cloud.kms.v1.CryptoKeyVersion.destroy_time] is reached,
-     * [RestoreCryptoKeyVersion][google.cloud.kms.v1.KeyManagementService.RestoreCryptoKeyVersion] may be called to reverse the process.
+     * Verifies MAC tag using a [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] with [CryptoKey.purpose][google.cloud.kms.v1.CryptoKey.purpose]
+     * MAC, and returns a response that indicates whether or not the verification
+     * was successful.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
-            com.google.cloud.kms.v1.CryptoKeyVersion>
-        destroyCryptoKeyVersion(com.google.cloud.kms.v1.DestroyCryptoKeyVersionRequest request) {
+            com.google.cloud.kms.v1.MacVerifyResponse>
+        macVerify(com.google.cloud.kms.v1.MacVerifyRequest request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
-          getChannel().newCall(getDestroyCryptoKeyVersionMethod(), getCallOptions()), request);
+          getChannel().newCall(getMacVerifyMethod(), getCallOptions()), request);
     }
 
     /**
      *
      *
      * <pre>
-     * Restore a [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] in the
-     * [DESTROY_SCHEDULED][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionState.DESTROY_SCHEDULED]
-     * state.
-     * Upon restoration of the CryptoKeyVersion, [state][google.cloud.kms.v1.CryptoKeyVersion.state]
-     * will be set to [DISABLED][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionState.DISABLED],
-     * and [destroy_time][google.cloud.kms.v1.CryptoKeyVersion.destroy_time] will be cleared.
+     * Generate random bytes using the Cloud KMS randomness source in the provided
+     * location.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
-            com.google.cloud.kms.v1.CryptoKeyVersion>
-        restoreCryptoKeyVersion(com.google.cloud.kms.v1.RestoreCryptoKeyVersionRequest request) {
+            com.google.cloud.kms.v1.GenerateRandomBytesResponse>
+        generateRandomBytes(com.google.cloud.kms.v1.GenerateRandomBytesRequest request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
-          getChannel().newCall(getRestoreCryptoKeyVersionMethod(), getCallOptions()), request);
+          getChannel().newCall(getGenerateRandomBytesMethod(), getCallOptions()), request);
     }
   }
 
@@ -2892,13 +3232,16 @@ public final class KeyManagementServiceGrpc {
   private static final int METHODID_CREATE_IMPORT_JOB = 13;
   private static final int METHODID_UPDATE_CRYPTO_KEY = 14;
   private static final int METHODID_UPDATE_CRYPTO_KEY_VERSION = 15;
-  private static final int METHODID_ENCRYPT = 16;
-  private static final int METHODID_DECRYPT = 17;
-  private static final int METHODID_ASYMMETRIC_SIGN = 18;
-  private static final int METHODID_ASYMMETRIC_DECRYPT = 19;
-  private static final int METHODID_UPDATE_CRYPTO_KEY_PRIMARY_VERSION = 20;
-  private static final int METHODID_DESTROY_CRYPTO_KEY_VERSION = 21;
-  private static final int METHODID_RESTORE_CRYPTO_KEY_VERSION = 22;
+  private static final int METHODID_UPDATE_CRYPTO_KEY_PRIMARY_VERSION = 16;
+  private static final int METHODID_DESTROY_CRYPTO_KEY_VERSION = 17;
+  private static final int METHODID_RESTORE_CRYPTO_KEY_VERSION = 18;
+  private static final int METHODID_ENCRYPT = 19;
+  private static final int METHODID_DECRYPT = 20;
+  private static final int METHODID_ASYMMETRIC_SIGN = 21;
+  private static final int METHODID_ASYMMETRIC_DECRYPT = 22;
+  private static final int METHODID_MAC_SIGN = 23;
+  private static final int METHODID_MAC_VERIFY = 24;
+  private static final int METHODID_GENERATE_RANDOM_BYTES = 25;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -3005,6 +3348,23 @@ public final class KeyManagementServiceGrpc {
               (io.grpc.stub.StreamObserver<com.google.cloud.kms.v1.CryptoKeyVersion>)
                   responseObserver);
           break;
+        case METHODID_UPDATE_CRYPTO_KEY_PRIMARY_VERSION:
+          serviceImpl.updateCryptoKeyPrimaryVersion(
+              (com.google.cloud.kms.v1.UpdateCryptoKeyPrimaryVersionRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.kms.v1.CryptoKey>) responseObserver);
+          break;
+        case METHODID_DESTROY_CRYPTO_KEY_VERSION:
+          serviceImpl.destroyCryptoKeyVersion(
+              (com.google.cloud.kms.v1.DestroyCryptoKeyVersionRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.kms.v1.CryptoKeyVersion>)
+                  responseObserver);
+          break;
+        case METHODID_RESTORE_CRYPTO_KEY_VERSION:
+          serviceImpl.restoreCryptoKeyVersion(
+              (com.google.cloud.kms.v1.RestoreCryptoKeyVersionRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.kms.v1.CryptoKeyVersion>)
+                  responseObserver);
+          break;
         case METHODID_ENCRYPT:
           serviceImpl.encrypt(
               (com.google.cloud.kms.v1.EncryptRequest) request,
@@ -3029,21 +3389,22 @@ public final class KeyManagementServiceGrpc {
               (io.grpc.stub.StreamObserver<com.google.cloud.kms.v1.AsymmetricDecryptResponse>)
                   responseObserver);
           break;
-        case METHODID_UPDATE_CRYPTO_KEY_PRIMARY_VERSION:
-          serviceImpl.updateCryptoKeyPrimaryVersion(
-              (com.google.cloud.kms.v1.UpdateCryptoKeyPrimaryVersionRequest) request,
-              (io.grpc.stub.StreamObserver<com.google.cloud.kms.v1.CryptoKey>) responseObserver);
-          break;
-        case METHODID_DESTROY_CRYPTO_KEY_VERSION:
-          serviceImpl.destroyCryptoKeyVersion(
-              (com.google.cloud.kms.v1.DestroyCryptoKeyVersionRequest) request,
-              (io.grpc.stub.StreamObserver<com.google.cloud.kms.v1.CryptoKeyVersion>)
+        case METHODID_MAC_SIGN:
+          serviceImpl.macSign(
+              (com.google.cloud.kms.v1.MacSignRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.kms.v1.MacSignResponse>)
                   responseObserver);
           break;
-        case METHODID_RESTORE_CRYPTO_KEY_VERSION:
-          serviceImpl.restoreCryptoKeyVersion(
-              (com.google.cloud.kms.v1.RestoreCryptoKeyVersionRequest) request,
-              (io.grpc.stub.StreamObserver<com.google.cloud.kms.v1.CryptoKeyVersion>)
+        case METHODID_MAC_VERIFY:
+          serviceImpl.macVerify(
+              (com.google.cloud.kms.v1.MacVerifyRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.kms.v1.MacVerifyResponse>)
+                  responseObserver);
+          break;
+        case METHODID_GENERATE_RANDOM_BYTES:
+          serviceImpl.generateRandomBytes(
+              (com.google.cloud.kms.v1.GenerateRandomBytesRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.kms.v1.GenerateRandomBytesResponse>)
                   responseObserver);
           break;
         default:
@@ -3126,13 +3487,16 @@ public final class KeyManagementServiceGrpc {
                       .addMethod(getCreateImportJobMethod())
                       .addMethod(getUpdateCryptoKeyMethod())
                       .addMethod(getUpdateCryptoKeyVersionMethod())
+                      .addMethod(getUpdateCryptoKeyPrimaryVersionMethod())
+                      .addMethod(getDestroyCryptoKeyVersionMethod())
+                      .addMethod(getRestoreCryptoKeyVersionMethod())
                       .addMethod(getEncryptMethod())
                       .addMethod(getDecryptMethod())
                       .addMethod(getAsymmetricSignMethod())
                       .addMethod(getAsymmetricDecryptMethod())
-                      .addMethod(getUpdateCryptoKeyPrimaryVersionMethod())
-                      .addMethod(getDestroyCryptoKeyVersionMethod())
-                      .addMethod(getRestoreCryptoKeyVersionMethod())
+                      .addMethod(getMacSignMethod())
+                      .addMethod(getMacVerifyMethod())
+                      .addMethod(getGenerateRandomBytesMethod())
                       .build();
         }
       }

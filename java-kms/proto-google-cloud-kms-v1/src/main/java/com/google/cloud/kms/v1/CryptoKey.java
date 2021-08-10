@@ -179,6 +179,26 @@ public final class CryptoKey extends com.google.protobuf.GeneratedMessageV3
 
               break;
             }
+          case 104:
+            {
+              importOnly_ = input.readBool();
+              break;
+            }
+          case 114:
+            {
+              com.google.protobuf.Duration.Builder subBuilder = null;
+              if (destroyScheduledDuration_ != null) {
+                subBuilder = destroyScheduledDuration_.toBuilder();
+              }
+              destroyScheduledDuration_ =
+                  input.readMessage(com.google.protobuf.Duration.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(destroyScheduledDuration_);
+                destroyScheduledDuration_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -283,6 +303,17 @@ public final class CryptoKey extends com.google.protobuf.GeneratedMessageV3
      * <code>ASYMMETRIC_DECRYPT = 6;</code>
      */
     ASYMMETRIC_DECRYPT(6),
+    /**
+     *
+     *
+     * <pre>
+     * [CryptoKeys][google.cloud.kms.v1.CryptoKey] with this purpose may be used with
+     * [MacSign][google.cloud.kms.v1.KeyManagementService.MacSign].
+     * </pre>
+     *
+     * <code>MAC = 9;</code>
+     */
+    MAC(9),
     UNRECOGNIZED(-1),
     ;
 
@@ -332,6 +363,17 @@ public final class CryptoKey extends com.google.protobuf.GeneratedMessageV3
      * <code>ASYMMETRIC_DECRYPT = 6;</code>
      */
     public static final int ASYMMETRIC_DECRYPT_VALUE = 6;
+    /**
+     *
+     *
+     * <pre>
+     * [CryptoKeys][google.cloud.kms.v1.CryptoKey] with this purpose may be used with
+     * [MacSign][google.cloud.kms.v1.KeyManagementService.MacSign].
+     * </pre>
+     *
+     * <code>MAC = 9;</code>
+     */
+    public static final int MAC_VALUE = 9;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -365,6 +407,8 @@ public final class CryptoKey extends com.google.protobuf.GeneratedMessageV3
           return ASYMMETRIC_SIGN;
         case 6:
           return ASYMMETRIC_DECRYPT;
+        case 9:
+          return MAC;
         default:
           return null;
       }
@@ -984,6 +1028,90 @@ public final class CryptoKey extends com.google.protobuf.GeneratedMessageV3
     return map.get(key);
   }
 
+  public static final int IMPORT_ONLY_FIELD_NUMBER = 13;
+  private boolean importOnly_;
+  /**
+   *
+   *
+   * <pre>
+   * Immutable. Whether this key may contain imported versions only.
+   * </pre>
+   *
+   * <code>bool import_only = 13 [(.google.api.field_behavior) = IMMUTABLE];</code>
+   *
+   * @return The importOnly.
+   */
+  @java.lang.Override
+  public boolean getImportOnly() {
+    return importOnly_;
+  }
+
+  public static final int DESTROY_SCHEDULED_DURATION_FIELD_NUMBER = 14;
+  private com.google.protobuf.Duration destroyScheduledDuration_;
+  /**
+   *
+   *
+   * <pre>
+   * Immutable. The period of time that versions of this key spend in the
+   * [DESTROY_SCHEDULED][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionState.DESTROY_SCHEDULED]
+   * state before transitioning to
+   * [DESTROYED][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionState.DESTROYED]. If not
+   * specified at creation time, the default duration is 24 hours.
+   * </pre>
+   *
+   * <code>
+   * .google.protobuf.Duration destroy_scheduled_duration = 14 [(.google.api.field_behavior) = IMMUTABLE];
+   * </code>
+   *
+   * @return Whether the destroyScheduledDuration field is set.
+   */
+  @java.lang.Override
+  public boolean hasDestroyScheduledDuration() {
+    return destroyScheduledDuration_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Immutable. The period of time that versions of this key spend in the
+   * [DESTROY_SCHEDULED][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionState.DESTROY_SCHEDULED]
+   * state before transitioning to
+   * [DESTROYED][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionState.DESTROYED]. If not
+   * specified at creation time, the default duration is 24 hours.
+   * </pre>
+   *
+   * <code>
+   * .google.protobuf.Duration destroy_scheduled_duration = 14 [(.google.api.field_behavior) = IMMUTABLE];
+   * </code>
+   *
+   * @return The destroyScheduledDuration.
+   */
+  @java.lang.Override
+  public com.google.protobuf.Duration getDestroyScheduledDuration() {
+    return destroyScheduledDuration_ == null
+        ? com.google.protobuf.Duration.getDefaultInstance()
+        : destroyScheduledDuration_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Immutable. The period of time that versions of this key spend in the
+   * [DESTROY_SCHEDULED][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionState.DESTROY_SCHEDULED]
+   * state before transitioning to
+   * [DESTROYED][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionState.DESTROYED]. If not
+   * specified at creation time, the default duration is 24 hours.
+   * </pre>
+   *
+   * <code>
+   * .google.protobuf.Duration destroy_scheduled_duration = 14 [(.google.api.field_behavior) = IMMUTABLE];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.protobuf.DurationOrBuilder getDestroyScheduledDurationOrBuilder() {
+    return getDestroyScheduledDuration();
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -1022,6 +1150,12 @@ public final class CryptoKey extends com.google.protobuf.GeneratedMessageV3
         output, internalGetLabels(), LabelsDefaultEntryHolder.defaultEntry, 10);
     if (versionTemplate_ != null) {
       output.writeMessage(11, getVersionTemplate());
+    }
+    if (importOnly_ != false) {
+      output.writeBool(13, importOnly_);
+    }
+    if (destroyScheduledDuration_ != null) {
+      output.writeMessage(14, getDestroyScheduledDuration());
     }
     unknownFields.writeTo(output);
   }
@@ -1067,6 +1201,14 @@ public final class CryptoKey extends com.google.protobuf.GeneratedMessageV3
     if (versionTemplate_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(11, getVersionTemplate());
     }
+    if (importOnly_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(13, importOnly_);
+    }
+    if (destroyScheduledDuration_ != null) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              14, getDestroyScheduledDuration());
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1101,6 +1243,11 @@ public final class CryptoKey extends com.google.protobuf.GeneratedMessageV3
       if (!getVersionTemplate().equals(other.getVersionTemplate())) return false;
     }
     if (!internalGetLabels().equals(other.internalGetLabels())) return false;
+    if (getImportOnly() != other.getImportOnly()) return false;
+    if (hasDestroyScheduledDuration() != other.hasDestroyScheduledDuration()) return false;
+    if (hasDestroyScheduledDuration()) {
+      if (!getDestroyScheduledDuration().equals(other.getDestroyScheduledDuration())) return false;
+    }
     if (!getRotationScheduleCase().equals(other.getRotationScheduleCase())) return false;
     switch (rotationScheduleCase_) {
       case 8:
@@ -1143,6 +1290,12 @@ public final class CryptoKey extends com.google.protobuf.GeneratedMessageV3
     if (!internalGetLabels().getMap().isEmpty()) {
       hash = (37 * hash) + LABELS_FIELD_NUMBER;
       hash = (53 * hash) + internalGetLabels().hashCode();
+    }
+    hash = (37 * hash) + IMPORT_ONLY_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getImportOnly());
+    if (hasDestroyScheduledDuration()) {
+      hash = (37 * hash) + DESTROY_SCHEDULED_DURATION_FIELD_NUMBER;
+      hash = (53 * hash) + getDestroyScheduledDuration().hashCode();
     }
     switch (rotationScheduleCase_) {
       case 8:
@@ -1348,6 +1501,14 @@ public final class CryptoKey extends com.google.protobuf.GeneratedMessageV3
         versionTemplateBuilder_ = null;
       }
       internalGetMutableLabels().clear();
+      importOnly_ = false;
+
+      if (destroyScheduledDurationBuilder_ == null) {
+        destroyScheduledDuration_ = null;
+      } else {
+        destroyScheduledDuration_ = null;
+        destroyScheduledDurationBuilder_ = null;
+      }
       rotationScheduleCase_ = 0;
       rotationSchedule_ = null;
       return this;
@@ -1408,6 +1569,12 @@ public final class CryptoKey extends com.google.protobuf.GeneratedMessageV3
       }
       result.labels_ = internalGetLabels();
       result.labels_.makeImmutable();
+      result.importOnly_ = importOnly_;
+      if (destroyScheduledDurationBuilder_ == null) {
+        result.destroyScheduledDuration_ = destroyScheduledDuration_;
+      } else {
+        result.destroyScheduledDuration_ = destroyScheduledDurationBuilder_.build();
+      }
       result.rotationScheduleCase_ = rotationScheduleCase_;
       onBuilt();
       return result;
@@ -1478,6 +1645,12 @@ public final class CryptoKey extends com.google.protobuf.GeneratedMessageV3
         mergeVersionTemplate(other.getVersionTemplate());
       }
       internalGetMutableLabels().mergeFrom(other.internalGetLabels());
+      if (other.getImportOnly() != false) {
+        setImportOnly(other.getImportOnly());
+      }
+      if (other.hasDestroyScheduledDuration()) {
+        mergeDestroyScheduledDuration(other.getDestroyScheduledDuration());
+      }
       switch (other.getRotationScheduleCase()) {
         case ROTATION_PERIOD:
           {
@@ -3118,6 +3291,298 @@ public final class CryptoKey extends com.google.protobuf.GeneratedMessageV3
     public Builder putAllLabels(java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableLabels().getMutableMap().putAll(values);
       return this;
+    }
+
+    private boolean importOnly_;
+    /**
+     *
+     *
+     * <pre>
+     * Immutable. Whether this key may contain imported versions only.
+     * </pre>
+     *
+     * <code>bool import_only = 13 [(.google.api.field_behavior) = IMMUTABLE];</code>
+     *
+     * @return The importOnly.
+     */
+    @java.lang.Override
+    public boolean getImportOnly() {
+      return importOnly_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Immutable. Whether this key may contain imported versions only.
+     * </pre>
+     *
+     * <code>bool import_only = 13 [(.google.api.field_behavior) = IMMUTABLE];</code>
+     *
+     * @param value The importOnly to set.
+     * @return This builder for chaining.
+     */
+    public Builder setImportOnly(boolean value) {
+
+      importOnly_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Immutable. Whether this key may contain imported versions only.
+     * </pre>
+     *
+     * <code>bool import_only = 13 [(.google.api.field_behavior) = IMMUTABLE];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearImportOnly() {
+
+      importOnly_ = false;
+      onChanged();
+      return this;
+    }
+
+    private com.google.protobuf.Duration destroyScheduledDuration_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.Duration,
+            com.google.protobuf.Duration.Builder,
+            com.google.protobuf.DurationOrBuilder>
+        destroyScheduledDurationBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Immutable. The period of time that versions of this key spend in the
+     * [DESTROY_SCHEDULED][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionState.DESTROY_SCHEDULED]
+     * state before transitioning to
+     * [DESTROYED][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionState.DESTROYED]. If not
+     * specified at creation time, the default duration is 24 hours.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Duration destroy_scheduled_duration = 14 [(.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     *
+     * @return Whether the destroyScheduledDuration field is set.
+     */
+    public boolean hasDestroyScheduledDuration() {
+      return destroyScheduledDurationBuilder_ != null || destroyScheduledDuration_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Immutable. The period of time that versions of this key spend in the
+     * [DESTROY_SCHEDULED][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionState.DESTROY_SCHEDULED]
+     * state before transitioning to
+     * [DESTROYED][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionState.DESTROYED]. If not
+     * specified at creation time, the default duration is 24 hours.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Duration destroy_scheduled_duration = 14 [(.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     *
+     * @return The destroyScheduledDuration.
+     */
+    public com.google.protobuf.Duration getDestroyScheduledDuration() {
+      if (destroyScheduledDurationBuilder_ == null) {
+        return destroyScheduledDuration_ == null
+            ? com.google.protobuf.Duration.getDefaultInstance()
+            : destroyScheduledDuration_;
+      } else {
+        return destroyScheduledDurationBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Immutable. The period of time that versions of this key spend in the
+     * [DESTROY_SCHEDULED][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionState.DESTROY_SCHEDULED]
+     * state before transitioning to
+     * [DESTROYED][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionState.DESTROYED]. If not
+     * specified at creation time, the default duration is 24 hours.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Duration destroy_scheduled_duration = 14 [(.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     */
+    public Builder setDestroyScheduledDuration(com.google.protobuf.Duration value) {
+      if (destroyScheduledDurationBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        destroyScheduledDuration_ = value;
+        onChanged();
+      } else {
+        destroyScheduledDurationBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Immutable. The period of time that versions of this key spend in the
+     * [DESTROY_SCHEDULED][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionState.DESTROY_SCHEDULED]
+     * state before transitioning to
+     * [DESTROYED][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionState.DESTROYED]. If not
+     * specified at creation time, the default duration is 24 hours.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Duration destroy_scheduled_duration = 14 [(.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     */
+    public Builder setDestroyScheduledDuration(
+        com.google.protobuf.Duration.Builder builderForValue) {
+      if (destroyScheduledDurationBuilder_ == null) {
+        destroyScheduledDuration_ = builderForValue.build();
+        onChanged();
+      } else {
+        destroyScheduledDurationBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Immutable. The period of time that versions of this key spend in the
+     * [DESTROY_SCHEDULED][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionState.DESTROY_SCHEDULED]
+     * state before transitioning to
+     * [DESTROYED][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionState.DESTROYED]. If not
+     * specified at creation time, the default duration is 24 hours.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Duration destroy_scheduled_duration = 14 [(.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     */
+    public Builder mergeDestroyScheduledDuration(com.google.protobuf.Duration value) {
+      if (destroyScheduledDurationBuilder_ == null) {
+        if (destroyScheduledDuration_ != null) {
+          destroyScheduledDuration_ =
+              com.google.protobuf.Duration.newBuilder(destroyScheduledDuration_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          destroyScheduledDuration_ = value;
+        }
+        onChanged();
+      } else {
+        destroyScheduledDurationBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Immutable. The period of time that versions of this key spend in the
+     * [DESTROY_SCHEDULED][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionState.DESTROY_SCHEDULED]
+     * state before transitioning to
+     * [DESTROYED][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionState.DESTROYED]. If not
+     * specified at creation time, the default duration is 24 hours.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Duration destroy_scheduled_duration = 14 [(.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     */
+    public Builder clearDestroyScheduledDuration() {
+      if (destroyScheduledDurationBuilder_ == null) {
+        destroyScheduledDuration_ = null;
+        onChanged();
+      } else {
+        destroyScheduledDuration_ = null;
+        destroyScheduledDurationBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Immutable. The period of time that versions of this key spend in the
+     * [DESTROY_SCHEDULED][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionState.DESTROY_SCHEDULED]
+     * state before transitioning to
+     * [DESTROYED][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionState.DESTROYED]. If not
+     * specified at creation time, the default duration is 24 hours.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Duration destroy_scheduled_duration = 14 [(.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     */
+    public com.google.protobuf.Duration.Builder getDestroyScheduledDurationBuilder() {
+
+      onChanged();
+      return getDestroyScheduledDurationFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Immutable. The period of time that versions of this key spend in the
+     * [DESTROY_SCHEDULED][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionState.DESTROY_SCHEDULED]
+     * state before transitioning to
+     * [DESTROYED][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionState.DESTROYED]. If not
+     * specified at creation time, the default duration is 24 hours.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Duration destroy_scheduled_duration = 14 [(.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     */
+    public com.google.protobuf.DurationOrBuilder getDestroyScheduledDurationOrBuilder() {
+      if (destroyScheduledDurationBuilder_ != null) {
+        return destroyScheduledDurationBuilder_.getMessageOrBuilder();
+      } else {
+        return destroyScheduledDuration_ == null
+            ? com.google.protobuf.Duration.getDefaultInstance()
+            : destroyScheduledDuration_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Immutable. The period of time that versions of this key spend in the
+     * [DESTROY_SCHEDULED][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionState.DESTROY_SCHEDULED]
+     * state before transitioning to
+     * [DESTROYED][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionState.DESTROYED]. If not
+     * specified at creation time, the default duration is 24 hours.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Duration destroy_scheduled_duration = 14 [(.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.Duration,
+            com.google.protobuf.Duration.Builder,
+            com.google.protobuf.DurationOrBuilder>
+        getDestroyScheduledDurationFieldBuilder() {
+      if (destroyScheduledDurationBuilder_ == null) {
+        destroyScheduledDurationBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.protobuf.Duration,
+                com.google.protobuf.Duration.Builder,
+                com.google.protobuf.DurationOrBuilder>(
+                getDestroyScheduledDuration(), getParentForChildren(), isClean());
+        destroyScheduledDuration_ = null;
+      }
+      return destroyScheduledDurationBuilder_;
     }
 
     @java.lang.Override

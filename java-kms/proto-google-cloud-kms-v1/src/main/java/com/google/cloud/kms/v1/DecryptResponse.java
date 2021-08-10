@@ -39,6 +39,7 @@ public final class DecryptResponse extends com.google.protobuf.GeneratedMessageV
 
   private DecryptResponse() {
     plaintext_ = com.google.protobuf.ByteString.EMPTY;
+    protectionLevel_ = 0;
   }
 
   @java.lang.Override
@@ -88,6 +89,18 @@ public final class DecryptResponse extends com.google.protobuf.GeneratedMessageV
                 plaintextCrc32C_ = subBuilder.buildPartial();
               }
 
+              break;
+            }
+          case 24:
+            {
+              usedPrimary_ = input.readBool();
+              break;
+            }
+          case 32:
+            {
+              int rawValue = input.readEnum();
+
+              protectionLevel_ = rawValue;
               break;
             }
           default:
@@ -161,7 +174,6 @@ public final class DecryptResponse extends com.google.protobuf.GeneratedMessageV
    * different languages. However, it is a non-negative integer, which will
    * never exceed 2^32-1, and can be safely downconverted to uint32 in languages
    * that support this type.
-   * NOTE: This field is in Beta.
    * </pre>
    *
    * <code>.google.protobuf.Int64Value plaintext_crc32c = 2;</code>
@@ -189,7 +201,6 @@ public final class DecryptResponse extends com.google.protobuf.GeneratedMessageV
    * different languages. However, it is a non-negative integer, which will
    * never exceed 2^32-1, and can be safely downconverted to uint32 in languages
    * that support this type.
-   * NOTE: This field is in Beta.
    * </pre>
    *
    * <code>.google.protobuf.Int64Value plaintext_crc32c = 2;</code>
@@ -219,7 +230,6 @@ public final class DecryptResponse extends com.google.protobuf.GeneratedMessageV
    * different languages. However, it is a non-negative integer, which will
    * never exceed 2^32-1, and can be safely downconverted to uint32 in languages
    * that support this type.
-   * NOTE: This field is in Beta.
    * </pre>
    *
    * <code>.google.protobuf.Int64Value plaintext_crc32c = 2;</code>
@@ -227,6 +237,60 @@ public final class DecryptResponse extends com.google.protobuf.GeneratedMessageV
   @java.lang.Override
   public com.google.protobuf.Int64ValueOrBuilder getPlaintextCrc32COrBuilder() {
     return getPlaintextCrc32C();
+  }
+
+  public static final int USED_PRIMARY_FIELD_NUMBER = 3;
+  private boolean usedPrimary_;
+  /**
+   *
+   *
+   * <pre>
+   * Whether the Decryption was performed using the primary key version.
+   * </pre>
+   *
+   * <code>bool used_primary = 3;</code>
+   *
+   * @return The usedPrimary.
+   */
+  @java.lang.Override
+  public boolean getUsedPrimary() {
+    return usedPrimary_;
+  }
+
+  public static final int PROTECTION_LEVEL_FIELD_NUMBER = 4;
+  private int protectionLevel_;
+  /**
+   *
+   *
+   * <pre>
+   * The [ProtectionLevel][google.cloud.kms.v1.ProtectionLevel] of the [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] used in decryption.
+   * </pre>
+   *
+   * <code>.google.cloud.kms.v1.ProtectionLevel protection_level = 4;</code>
+   *
+   * @return The enum numeric value on the wire for protectionLevel.
+   */
+  @java.lang.Override
+  public int getProtectionLevelValue() {
+    return protectionLevel_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The [ProtectionLevel][google.cloud.kms.v1.ProtectionLevel] of the [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] used in decryption.
+   * </pre>
+   *
+   * <code>.google.cloud.kms.v1.ProtectionLevel protection_level = 4;</code>
+   *
+   * @return The protectionLevel.
+   */
+  @java.lang.Override
+  public com.google.cloud.kms.v1.ProtectionLevel getProtectionLevel() {
+    @SuppressWarnings("deprecation")
+    com.google.cloud.kms.v1.ProtectionLevel result =
+        com.google.cloud.kms.v1.ProtectionLevel.valueOf(protectionLevel_);
+    return result == null ? com.google.cloud.kms.v1.ProtectionLevel.UNRECOGNIZED : result;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -249,6 +313,13 @@ public final class DecryptResponse extends com.google.protobuf.GeneratedMessageV
     if (plaintextCrc32C_ != null) {
       output.writeMessage(2, getPlaintextCrc32C());
     }
+    if (usedPrimary_ != false) {
+      output.writeBool(3, usedPrimary_);
+    }
+    if (protectionLevel_
+        != com.google.cloud.kms.v1.ProtectionLevel.PROTECTION_LEVEL_UNSPECIFIED.getNumber()) {
+      output.writeEnum(4, protectionLevel_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -263,6 +334,13 @@ public final class DecryptResponse extends com.google.protobuf.GeneratedMessageV
     }
     if (plaintextCrc32C_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, getPlaintextCrc32C());
+    }
+    if (usedPrimary_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(3, usedPrimary_);
+    }
+    if (protectionLevel_
+        != com.google.cloud.kms.v1.ProtectionLevel.PROTECTION_LEVEL_UNSPECIFIED.getNumber()) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(4, protectionLevel_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -284,6 +362,8 @@ public final class DecryptResponse extends com.google.protobuf.GeneratedMessageV
     if (hasPlaintextCrc32C()) {
       if (!getPlaintextCrc32C().equals(other.getPlaintextCrc32C())) return false;
     }
+    if (getUsedPrimary() != other.getUsedPrimary()) return false;
+    if (protectionLevel_ != other.protectionLevel_) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -301,6 +381,10 @@ public final class DecryptResponse extends com.google.protobuf.GeneratedMessageV
       hash = (37 * hash) + PLAINTEXT_CRC32C_FIELD_NUMBER;
       hash = (53 * hash) + getPlaintextCrc32C().hashCode();
     }
+    hash = (37 * hash) + USED_PRIMARY_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getUsedPrimary());
+    hash = (37 * hash) + PROTECTION_LEVEL_FIELD_NUMBER;
+    hash = (53 * hash) + protectionLevel_;
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -454,6 +538,10 @@ public final class DecryptResponse extends com.google.protobuf.GeneratedMessageV
         plaintextCrc32C_ = null;
         plaintextCrc32CBuilder_ = null;
       }
+      usedPrimary_ = false;
+
+      protectionLevel_ = 0;
+
       return this;
     }
 
@@ -487,6 +575,8 @@ public final class DecryptResponse extends com.google.protobuf.GeneratedMessageV
       } else {
         result.plaintextCrc32C_ = plaintextCrc32CBuilder_.build();
       }
+      result.usedPrimary_ = usedPrimary_;
+      result.protectionLevel_ = protectionLevel_;
       onBuilt();
       return result;
     }
@@ -541,6 +631,12 @@ public final class DecryptResponse extends com.google.protobuf.GeneratedMessageV
       }
       if (other.hasPlaintextCrc32C()) {
         mergePlaintextCrc32C(other.getPlaintextCrc32C());
+      }
+      if (other.getUsedPrimary() != false) {
+        setUsedPrimary(other.getUsedPrimary());
+      }
+      if (other.protectionLevel_ != 0) {
+        setProtectionLevelValue(other.getProtectionLevelValue());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -649,7 +745,6 @@ public final class DecryptResponse extends com.google.protobuf.GeneratedMessageV
      * different languages. However, it is a non-negative integer, which will
      * never exceed 2^32-1, and can be safely downconverted to uint32 in languages
      * that support this type.
-     * NOTE: This field is in Beta.
      * </pre>
      *
      * <code>.google.protobuf.Int64Value plaintext_crc32c = 2;</code>
@@ -676,7 +771,6 @@ public final class DecryptResponse extends com.google.protobuf.GeneratedMessageV
      * different languages. However, it is a non-negative integer, which will
      * never exceed 2^32-1, and can be safely downconverted to uint32 in languages
      * that support this type.
-     * NOTE: This field is in Beta.
      * </pre>
      *
      * <code>.google.protobuf.Int64Value plaintext_crc32c = 2;</code>
@@ -709,7 +803,6 @@ public final class DecryptResponse extends com.google.protobuf.GeneratedMessageV
      * different languages. However, it is a non-negative integer, which will
      * never exceed 2^32-1, and can be safely downconverted to uint32 in languages
      * that support this type.
-     * NOTE: This field is in Beta.
      * </pre>
      *
      * <code>.google.protobuf.Int64Value plaintext_crc32c = 2;</code>
@@ -744,7 +837,6 @@ public final class DecryptResponse extends com.google.protobuf.GeneratedMessageV
      * different languages. However, it is a non-negative integer, which will
      * never exceed 2^32-1, and can be safely downconverted to uint32 in languages
      * that support this type.
-     * NOTE: This field is in Beta.
      * </pre>
      *
      * <code>.google.protobuf.Int64Value plaintext_crc32c = 2;</code>
@@ -776,7 +868,6 @@ public final class DecryptResponse extends com.google.protobuf.GeneratedMessageV
      * different languages. However, it is a non-negative integer, which will
      * never exceed 2^32-1, and can be safely downconverted to uint32 in languages
      * that support this type.
-     * NOTE: This field is in Beta.
      * </pre>
      *
      * <code>.google.protobuf.Int64Value plaintext_crc32c = 2;</code>
@@ -815,7 +906,6 @@ public final class DecryptResponse extends com.google.protobuf.GeneratedMessageV
      * different languages. However, it is a non-negative integer, which will
      * never exceed 2^32-1, and can be safely downconverted to uint32 in languages
      * that support this type.
-     * NOTE: This field is in Beta.
      * </pre>
      *
      * <code>.google.protobuf.Int64Value plaintext_crc32c = 2;</code>
@@ -848,7 +938,6 @@ public final class DecryptResponse extends com.google.protobuf.GeneratedMessageV
      * different languages. However, it is a non-negative integer, which will
      * never exceed 2^32-1, and can be safely downconverted to uint32 in languages
      * that support this type.
-     * NOTE: This field is in Beta.
      * </pre>
      *
      * <code>.google.protobuf.Int64Value plaintext_crc32c = 2;</code>
@@ -875,7 +964,6 @@ public final class DecryptResponse extends com.google.protobuf.GeneratedMessageV
      * different languages. However, it is a non-negative integer, which will
      * never exceed 2^32-1, and can be safely downconverted to uint32 in languages
      * that support this type.
-     * NOTE: This field is in Beta.
      * </pre>
      *
      * <code>.google.protobuf.Int64Value plaintext_crc32c = 2;</code>
@@ -906,7 +994,6 @@ public final class DecryptResponse extends com.google.protobuf.GeneratedMessageV
      * different languages. However, it is a non-negative integer, which will
      * never exceed 2^32-1, and can be safely downconverted to uint32 in languages
      * that support this type.
-     * NOTE: This field is in Beta.
      * </pre>
      *
      * <code>.google.protobuf.Int64Value plaintext_crc32c = 2;</code>
@@ -926,6 +1013,149 @@ public final class DecryptResponse extends com.google.protobuf.GeneratedMessageV
         plaintextCrc32C_ = null;
       }
       return plaintextCrc32CBuilder_;
+    }
+
+    private boolean usedPrimary_;
+    /**
+     *
+     *
+     * <pre>
+     * Whether the Decryption was performed using the primary key version.
+     * </pre>
+     *
+     * <code>bool used_primary = 3;</code>
+     *
+     * @return The usedPrimary.
+     */
+    @java.lang.Override
+    public boolean getUsedPrimary() {
+      return usedPrimary_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Whether the Decryption was performed using the primary key version.
+     * </pre>
+     *
+     * <code>bool used_primary = 3;</code>
+     *
+     * @param value The usedPrimary to set.
+     * @return This builder for chaining.
+     */
+    public Builder setUsedPrimary(boolean value) {
+
+      usedPrimary_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Whether the Decryption was performed using the primary key version.
+     * </pre>
+     *
+     * <code>bool used_primary = 3;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearUsedPrimary() {
+
+      usedPrimary_ = false;
+      onChanged();
+      return this;
+    }
+
+    private int protectionLevel_ = 0;
+    /**
+     *
+     *
+     * <pre>
+     * The [ProtectionLevel][google.cloud.kms.v1.ProtectionLevel] of the [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] used in decryption.
+     * </pre>
+     *
+     * <code>.google.cloud.kms.v1.ProtectionLevel protection_level = 4;</code>
+     *
+     * @return The enum numeric value on the wire for protectionLevel.
+     */
+    @java.lang.Override
+    public int getProtectionLevelValue() {
+      return protectionLevel_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The [ProtectionLevel][google.cloud.kms.v1.ProtectionLevel] of the [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] used in decryption.
+     * </pre>
+     *
+     * <code>.google.cloud.kms.v1.ProtectionLevel protection_level = 4;</code>
+     *
+     * @param value The enum numeric value on the wire for protectionLevel to set.
+     * @return This builder for chaining.
+     */
+    public Builder setProtectionLevelValue(int value) {
+
+      protectionLevel_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The [ProtectionLevel][google.cloud.kms.v1.ProtectionLevel] of the [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] used in decryption.
+     * </pre>
+     *
+     * <code>.google.cloud.kms.v1.ProtectionLevel protection_level = 4;</code>
+     *
+     * @return The protectionLevel.
+     */
+    @java.lang.Override
+    public com.google.cloud.kms.v1.ProtectionLevel getProtectionLevel() {
+      @SuppressWarnings("deprecation")
+      com.google.cloud.kms.v1.ProtectionLevel result =
+          com.google.cloud.kms.v1.ProtectionLevel.valueOf(protectionLevel_);
+      return result == null ? com.google.cloud.kms.v1.ProtectionLevel.UNRECOGNIZED : result;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The [ProtectionLevel][google.cloud.kms.v1.ProtectionLevel] of the [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] used in decryption.
+     * </pre>
+     *
+     * <code>.google.cloud.kms.v1.ProtectionLevel protection_level = 4;</code>
+     *
+     * @param value The protectionLevel to set.
+     * @return This builder for chaining.
+     */
+    public Builder setProtectionLevel(com.google.cloud.kms.v1.ProtectionLevel value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+
+      protectionLevel_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The [ProtectionLevel][google.cloud.kms.v1.ProtectionLevel] of the [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] used in decryption.
+     * </pre>
+     *
+     * <code>.google.cloud.kms.v1.ProtectionLevel protection_level = 4;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearProtectionLevel() {
+
+      protectionLevel_ = 0;
+      onChanged();
+      return this;
     }
 
     @java.lang.Override

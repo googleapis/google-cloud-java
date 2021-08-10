@@ -40,6 +40,7 @@ public final class EncryptResponse extends com.google.protobuf.GeneratedMessageV
   private EncryptResponse() {
     name_ = "";
     ciphertext_ = com.google.protobuf.ByteString.EMPTY;
+    protectionLevel_ = 0;
   }
 
   @java.lang.Override
@@ -106,6 +107,13 @@ public final class EncryptResponse extends com.google.protobuf.GeneratedMessageV
           case 48:
             {
               verifiedAdditionalAuthenticatedDataCrc32C_ = input.readBool();
+              break;
+            }
+          case 56:
+            {
+              int rawValue = input.readEnum();
+
+              protectionLevel_ = rawValue;
               break;
             }
           default:
@@ -228,7 +236,6 @@ public final class EncryptResponse extends com.google.protobuf.GeneratedMessageV
    * different languages. However, it is a non-negative integer, which will
    * never exceed 2^32-1, and can be safely downconverted to uint32 in languages
    * that support this type.
-   * NOTE: This field is in Beta.
    * </pre>
    *
    * <code>.google.protobuf.Int64Value ciphertext_crc32c = 4;</code>
@@ -254,7 +261,6 @@ public final class EncryptResponse extends com.google.protobuf.GeneratedMessageV
    * different languages. However, it is a non-negative integer, which will
    * never exceed 2^32-1, and can be safely downconverted to uint32 in languages
    * that support this type.
-   * NOTE: This field is in Beta.
    * </pre>
    *
    * <code>.google.protobuf.Int64Value ciphertext_crc32c = 4;</code>
@@ -282,7 +288,6 @@ public final class EncryptResponse extends com.google.protobuf.GeneratedMessageV
    * different languages. However, it is a non-negative integer, which will
    * never exceed 2^32-1, and can be safely downconverted to uint32 in languages
    * that support this type.
-   * NOTE: This field is in Beta.
    * </pre>
    *
    * <code>.google.protobuf.Int64Value ciphertext_crc32c = 4;</code>
@@ -306,7 +311,6 @@ public final class EncryptResponse extends com.google.protobuf.GeneratedMessageV
    * that it was not delivered to [KeyManagementService][google.cloud.kms.v1.KeyManagementService]. If you've set
    * [EncryptRequest.plaintext_crc32c][google.cloud.kms.v1.EncryptRequest.plaintext_crc32c] but this field is still false, discard
    * the response and perform a limited number of retries.
-   * NOTE: This field is in Beta.
    * </pre>
    *
    * <code>bool verified_plaintext_crc32c = 5;</code>
@@ -333,7 +337,6 @@ public final class EncryptResponse extends com.google.protobuf.GeneratedMessageV
    * that it was not delivered to [KeyManagementService][google.cloud.kms.v1.KeyManagementService]. If you've set
    * [EncryptRequest.additional_authenticated_data_crc32c][google.cloud.kms.v1.EncryptRequest.additional_authenticated_data_crc32c] but this field is
    * still false, discard the response and perform a limited number of retries.
-   * NOTE: This field is in Beta.
    * </pre>
    *
    * <code>bool verified_additional_authenticated_data_crc32c = 6;</code>
@@ -343,6 +346,42 @@ public final class EncryptResponse extends com.google.protobuf.GeneratedMessageV
   @java.lang.Override
   public boolean getVerifiedAdditionalAuthenticatedDataCrc32C() {
     return verifiedAdditionalAuthenticatedDataCrc32C_;
+  }
+
+  public static final int PROTECTION_LEVEL_FIELD_NUMBER = 7;
+  private int protectionLevel_;
+  /**
+   *
+   *
+   * <pre>
+   * The [ProtectionLevel][google.cloud.kms.v1.ProtectionLevel] of the [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] used in encryption.
+   * </pre>
+   *
+   * <code>.google.cloud.kms.v1.ProtectionLevel protection_level = 7;</code>
+   *
+   * @return The enum numeric value on the wire for protectionLevel.
+   */
+  @java.lang.Override
+  public int getProtectionLevelValue() {
+    return protectionLevel_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The [ProtectionLevel][google.cloud.kms.v1.ProtectionLevel] of the [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] used in encryption.
+   * </pre>
+   *
+   * <code>.google.cloud.kms.v1.ProtectionLevel protection_level = 7;</code>
+   *
+   * @return The protectionLevel.
+   */
+  @java.lang.Override
+  public com.google.cloud.kms.v1.ProtectionLevel getProtectionLevel() {
+    @SuppressWarnings("deprecation")
+    com.google.cloud.kms.v1.ProtectionLevel result =
+        com.google.cloud.kms.v1.ProtectionLevel.valueOf(protectionLevel_);
+    return result == null ? com.google.cloud.kms.v1.ProtectionLevel.UNRECOGNIZED : result;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -374,6 +413,10 @@ public final class EncryptResponse extends com.google.protobuf.GeneratedMessageV
     if (verifiedAdditionalAuthenticatedDataCrc32C_ != false) {
       output.writeBool(6, verifiedAdditionalAuthenticatedDataCrc32C_);
     }
+    if (protectionLevel_
+        != com.google.cloud.kms.v1.ProtectionLevel.PROTECTION_LEVEL_UNSPECIFIED.getNumber()) {
+      output.writeEnum(7, protectionLevel_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -400,6 +443,10 @@ public final class EncryptResponse extends com.google.protobuf.GeneratedMessageV
           com.google.protobuf.CodedOutputStream.computeBoolSize(
               6, verifiedAdditionalAuthenticatedDataCrc32C_);
     }
+    if (protectionLevel_
+        != com.google.cloud.kms.v1.ProtectionLevel.PROTECTION_LEVEL_UNSPECIFIED.getNumber()) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(7, protectionLevel_);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -424,6 +471,7 @@ public final class EncryptResponse extends com.google.protobuf.GeneratedMessageV
     if (getVerifiedPlaintextCrc32C() != other.getVerifiedPlaintextCrc32C()) return false;
     if (getVerifiedAdditionalAuthenticatedDataCrc32C()
         != other.getVerifiedAdditionalAuthenticatedDataCrc32C()) return false;
+    if (protectionLevel_ != other.protectionLevel_) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -450,6 +498,8 @@ public final class EncryptResponse extends com.google.protobuf.GeneratedMessageV
         (53 * hash)
             + com.google.protobuf.Internal.hashBoolean(
                 getVerifiedAdditionalAuthenticatedDataCrc32C());
+    hash = (37 * hash) + PROTECTION_LEVEL_FIELD_NUMBER;
+    hash = (53 * hash) + protectionLevel_;
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -609,6 +659,8 @@ public final class EncryptResponse extends com.google.protobuf.GeneratedMessageV
 
       verifiedAdditionalAuthenticatedDataCrc32C_ = false;
 
+      protectionLevel_ = 0;
+
       return this;
     }
 
@@ -646,6 +698,7 @@ public final class EncryptResponse extends com.google.protobuf.GeneratedMessageV
       result.verifiedPlaintextCrc32C_ = verifiedPlaintextCrc32C_;
       result.verifiedAdditionalAuthenticatedDataCrc32C_ =
           verifiedAdditionalAuthenticatedDataCrc32C_;
+      result.protectionLevel_ = protectionLevel_;
       onBuilt();
       return result;
     }
@@ -711,6 +764,9 @@ public final class EncryptResponse extends com.google.protobuf.GeneratedMessageV
       if (other.getVerifiedAdditionalAuthenticatedDataCrc32C() != false) {
         setVerifiedAdditionalAuthenticatedDataCrc32C(
             other.getVerifiedAdditionalAuthenticatedDataCrc32C());
+      }
+      if (other.protectionLevel_ != 0) {
+        setProtectionLevelValue(other.getProtectionLevelValue());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -928,7 +984,6 @@ public final class EncryptResponse extends com.google.protobuf.GeneratedMessageV
      * different languages. However, it is a non-negative integer, which will
      * never exceed 2^32-1, and can be safely downconverted to uint32 in languages
      * that support this type.
-     * NOTE: This field is in Beta.
      * </pre>
      *
      * <code>.google.protobuf.Int64Value ciphertext_crc32c = 4;</code>
@@ -953,7 +1008,6 @@ public final class EncryptResponse extends com.google.protobuf.GeneratedMessageV
      * different languages. However, it is a non-negative integer, which will
      * never exceed 2^32-1, and can be safely downconverted to uint32 in languages
      * that support this type.
-     * NOTE: This field is in Beta.
      * </pre>
      *
      * <code>.google.protobuf.Int64Value ciphertext_crc32c = 4;</code>
@@ -984,7 +1038,6 @@ public final class EncryptResponse extends com.google.protobuf.GeneratedMessageV
      * different languages. However, it is a non-negative integer, which will
      * never exceed 2^32-1, and can be safely downconverted to uint32 in languages
      * that support this type.
-     * NOTE: This field is in Beta.
      * </pre>
      *
      * <code>.google.protobuf.Int64Value ciphertext_crc32c = 4;</code>
@@ -1017,7 +1070,6 @@ public final class EncryptResponse extends com.google.protobuf.GeneratedMessageV
      * different languages. However, it is a non-negative integer, which will
      * never exceed 2^32-1, and can be safely downconverted to uint32 in languages
      * that support this type.
-     * NOTE: This field is in Beta.
      * </pre>
      *
      * <code>.google.protobuf.Int64Value ciphertext_crc32c = 4;</code>
@@ -1047,7 +1099,6 @@ public final class EncryptResponse extends com.google.protobuf.GeneratedMessageV
      * different languages. However, it is a non-negative integer, which will
      * never exceed 2^32-1, and can be safely downconverted to uint32 in languages
      * that support this type.
-     * NOTE: This field is in Beta.
      * </pre>
      *
      * <code>.google.protobuf.Int64Value ciphertext_crc32c = 4;</code>
@@ -1084,7 +1135,6 @@ public final class EncryptResponse extends com.google.protobuf.GeneratedMessageV
      * different languages. However, it is a non-negative integer, which will
      * never exceed 2^32-1, and can be safely downconverted to uint32 in languages
      * that support this type.
-     * NOTE: This field is in Beta.
      * </pre>
      *
      * <code>.google.protobuf.Int64Value ciphertext_crc32c = 4;</code>
@@ -1115,7 +1165,6 @@ public final class EncryptResponse extends com.google.protobuf.GeneratedMessageV
      * different languages. However, it is a non-negative integer, which will
      * never exceed 2^32-1, and can be safely downconverted to uint32 in languages
      * that support this type.
-     * NOTE: This field is in Beta.
      * </pre>
      *
      * <code>.google.protobuf.Int64Value ciphertext_crc32c = 4;</code>
@@ -1140,7 +1189,6 @@ public final class EncryptResponse extends com.google.protobuf.GeneratedMessageV
      * different languages. However, it is a non-negative integer, which will
      * never exceed 2^32-1, and can be safely downconverted to uint32 in languages
      * that support this type.
-     * NOTE: This field is in Beta.
      * </pre>
      *
      * <code>.google.protobuf.Int64Value ciphertext_crc32c = 4;</code>
@@ -1169,7 +1217,6 @@ public final class EncryptResponse extends com.google.protobuf.GeneratedMessageV
      * different languages. However, it is a non-negative integer, which will
      * never exceed 2^32-1, and can be safely downconverted to uint32 in languages
      * that support this type.
-     * NOTE: This field is in Beta.
      * </pre>
      *
      * <code>.google.protobuf.Int64Value ciphertext_crc32c = 4;</code>
@@ -1204,7 +1251,6 @@ public final class EncryptResponse extends com.google.protobuf.GeneratedMessageV
      * that it was not delivered to [KeyManagementService][google.cloud.kms.v1.KeyManagementService]. If you've set
      * [EncryptRequest.plaintext_crc32c][google.cloud.kms.v1.EncryptRequest.plaintext_crc32c] but this field is still false, discard
      * the response and perform a limited number of retries.
-     * NOTE: This field is in Beta.
      * </pre>
      *
      * <code>bool verified_plaintext_crc32c = 5;</code>
@@ -1227,7 +1273,6 @@ public final class EncryptResponse extends com.google.protobuf.GeneratedMessageV
      * that it was not delivered to [KeyManagementService][google.cloud.kms.v1.KeyManagementService]. If you've set
      * [EncryptRequest.plaintext_crc32c][google.cloud.kms.v1.EncryptRequest.plaintext_crc32c] but this field is still false, discard
      * the response and perform a limited number of retries.
-     * NOTE: This field is in Beta.
      * </pre>
      *
      * <code>bool verified_plaintext_crc32c = 5;</code>
@@ -1253,7 +1298,6 @@ public final class EncryptResponse extends com.google.protobuf.GeneratedMessageV
      * that it was not delivered to [KeyManagementService][google.cloud.kms.v1.KeyManagementService]. If you've set
      * [EncryptRequest.plaintext_crc32c][google.cloud.kms.v1.EncryptRequest.plaintext_crc32c] but this field is still false, discard
      * the response and perform a limited number of retries.
-     * NOTE: This field is in Beta.
      * </pre>
      *
      * <code>bool verified_plaintext_crc32c = 5;</code>
@@ -1281,7 +1325,6 @@ public final class EncryptResponse extends com.google.protobuf.GeneratedMessageV
      * that it was not delivered to [KeyManagementService][google.cloud.kms.v1.KeyManagementService]. If you've set
      * [EncryptRequest.additional_authenticated_data_crc32c][google.cloud.kms.v1.EncryptRequest.additional_authenticated_data_crc32c] but this field is
      * still false, discard the response and perform a limited number of retries.
-     * NOTE: This field is in Beta.
      * </pre>
      *
      * <code>bool verified_additional_authenticated_data_crc32c = 6;</code>
@@ -1305,7 +1348,6 @@ public final class EncryptResponse extends com.google.protobuf.GeneratedMessageV
      * that it was not delivered to [KeyManagementService][google.cloud.kms.v1.KeyManagementService]. If you've set
      * [EncryptRequest.additional_authenticated_data_crc32c][google.cloud.kms.v1.EncryptRequest.additional_authenticated_data_crc32c] but this field is
      * still false, discard the response and perform a limited number of retries.
-     * NOTE: This field is in Beta.
      * </pre>
      *
      * <code>bool verified_additional_authenticated_data_crc32c = 6;</code>
@@ -1332,7 +1374,6 @@ public final class EncryptResponse extends com.google.protobuf.GeneratedMessageV
      * that it was not delivered to [KeyManagementService][google.cloud.kms.v1.KeyManagementService]. If you've set
      * [EncryptRequest.additional_authenticated_data_crc32c][google.cloud.kms.v1.EncryptRequest.additional_authenticated_data_crc32c] but this field is
      * still false, discard the response and perform a limited number of retries.
-     * NOTE: This field is in Beta.
      * </pre>
      *
      * <code>bool verified_additional_authenticated_data_crc32c = 6;</code>
@@ -1342,6 +1383,97 @@ public final class EncryptResponse extends com.google.protobuf.GeneratedMessageV
     public Builder clearVerifiedAdditionalAuthenticatedDataCrc32C() {
 
       verifiedAdditionalAuthenticatedDataCrc32C_ = false;
+      onChanged();
+      return this;
+    }
+
+    private int protectionLevel_ = 0;
+    /**
+     *
+     *
+     * <pre>
+     * The [ProtectionLevel][google.cloud.kms.v1.ProtectionLevel] of the [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] used in encryption.
+     * </pre>
+     *
+     * <code>.google.cloud.kms.v1.ProtectionLevel protection_level = 7;</code>
+     *
+     * @return The enum numeric value on the wire for protectionLevel.
+     */
+    @java.lang.Override
+    public int getProtectionLevelValue() {
+      return protectionLevel_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The [ProtectionLevel][google.cloud.kms.v1.ProtectionLevel] of the [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] used in encryption.
+     * </pre>
+     *
+     * <code>.google.cloud.kms.v1.ProtectionLevel protection_level = 7;</code>
+     *
+     * @param value The enum numeric value on the wire for protectionLevel to set.
+     * @return This builder for chaining.
+     */
+    public Builder setProtectionLevelValue(int value) {
+
+      protectionLevel_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The [ProtectionLevel][google.cloud.kms.v1.ProtectionLevel] of the [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] used in encryption.
+     * </pre>
+     *
+     * <code>.google.cloud.kms.v1.ProtectionLevel protection_level = 7;</code>
+     *
+     * @return The protectionLevel.
+     */
+    @java.lang.Override
+    public com.google.cloud.kms.v1.ProtectionLevel getProtectionLevel() {
+      @SuppressWarnings("deprecation")
+      com.google.cloud.kms.v1.ProtectionLevel result =
+          com.google.cloud.kms.v1.ProtectionLevel.valueOf(protectionLevel_);
+      return result == null ? com.google.cloud.kms.v1.ProtectionLevel.UNRECOGNIZED : result;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The [ProtectionLevel][google.cloud.kms.v1.ProtectionLevel] of the [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] used in encryption.
+     * </pre>
+     *
+     * <code>.google.cloud.kms.v1.ProtectionLevel protection_level = 7;</code>
+     *
+     * @param value The protectionLevel to set.
+     * @return This builder for chaining.
+     */
+    public Builder setProtectionLevel(com.google.cloud.kms.v1.ProtectionLevel value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+
+      protectionLevel_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The [ProtectionLevel][google.cloud.kms.v1.ProtectionLevel] of the [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] used in encryption.
+     * </pre>
+     *
+     * <code>.google.cloud.kms.v1.ProtectionLevel protection_level = 7;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearProtectionLevel() {
+
+      protectionLevel_ = 0;
       onChanged();
       return this;
     }

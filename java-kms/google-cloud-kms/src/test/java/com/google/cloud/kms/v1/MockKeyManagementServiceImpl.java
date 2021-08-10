@@ -395,6 +395,69 @@ public class MockKeyManagementServiceImpl extends KeyManagementServiceImplBase {
   }
 
   @Override
+  public void updateCryptoKeyPrimaryVersion(
+      UpdateCryptoKeyPrimaryVersionRequest request, StreamObserver<CryptoKey> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof CryptoKey) {
+      requests.add(request);
+      responseObserver.onNext(((CryptoKey) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method UpdateCryptoKeyPrimaryVersion, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  CryptoKey.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void destroyCryptoKeyVersion(
+      DestroyCryptoKeyVersionRequest request, StreamObserver<CryptoKeyVersion> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof CryptoKeyVersion) {
+      requests.add(request);
+      responseObserver.onNext(((CryptoKeyVersion) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method DestroyCryptoKeyVersion, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  CryptoKeyVersion.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void restoreCryptoKeyVersion(
+      RestoreCryptoKeyVersionRequest request, StreamObserver<CryptoKeyVersion> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof CryptoKeyVersion) {
+      requests.add(request);
+      responseObserver.onNext(((CryptoKeyVersion) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method RestoreCryptoKeyVersion, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  CryptoKeyVersion.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
   public void encrypt(EncryptRequest request, StreamObserver<EncryptResponse> responseObserver) {
     Object response = responses.poll();
     if (response instanceof EncryptResponse) {
@@ -478,12 +541,11 @@ public class MockKeyManagementServiceImpl extends KeyManagementServiceImplBase {
   }
 
   @Override
-  public void updateCryptoKeyPrimaryVersion(
-      UpdateCryptoKeyPrimaryVersionRequest request, StreamObserver<CryptoKey> responseObserver) {
+  public void macSign(MacSignRequest request, StreamObserver<MacSignResponse> responseObserver) {
     Object response = responses.poll();
-    if (response instanceof CryptoKey) {
+    if (response instanceof MacSignResponse) {
       requests.add(request);
-      responseObserver.onNext(((CryptoKey) response));
+      responseObserver.onNext(((MacSignResponse) response));
       responseObserver.onCompleted();
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
@@ -491,20 +553,20 @@ public class MockKeyManagementServiceImpl extends KeyManagementServiceImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method UpdateCryptoKeyPrimaryVersion, expected %s or %s",
+                  "Unrecognized response type %s for method MacSign, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
-                  CryptoKey.class.getName(),
+                  MacSignResponse.class.getName(),
                   Exception.class.getName())));
     }
   }
 
   @Override
-  public void destroyCryptoKeyVersion(
-      DestroyCryptoKeyVersionRequest request, StreamObserver<CryptoKeyVersion> responseObserver) {
+  public void macVerify(
+      MacVerifyRequest request, StreamObserver<MacVerifyResponse> responseObserver) {
     Object response = responses.poll();
-    if (response instanceof CryptoKeyVersion) {
+    if (response instanceof MacVerifyResponse) {
       requests.add(request);
-      responseObserver.onNext(((CryptoKeyVersion) response));
+      responseObserver.onNext(((MacVerifyResponse) response));
       responseObserver.onCompleted();
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
@@ -512,20 +574,21 @@ public class MockKeyManagementServiceImpl extends KeyManagementServiceImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method DestroyCryptoKeyVersion, expected %s or %s",
+                  "Unrecognized response type %s for method MacVerify, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
-                  CryptoKeyVersion.class.getName(),
+                  MacVerifyResponse.class.getName(),
                   Exception.class.getName())));
     }
   }
 
   @Override
-  public void restoreCryptoKeyVersion(
-      RestoreCryptoKeyVersionRequest request, StreamObserver<CryptoKeyVersion> responseObserver) {
+  public void generateRandomBytes(
+      GenerateRandomBytesRequest request,
+      StreamObserver<GenerateRandomBytesResponse> responseObserver) {
     Object response = responses.poll();
-    if (response instanceof CryptoKeyVersion) {
+    if (response instanceof GenerateRandomBytesResponse) {
       requests.add(request);
-      responseObserver.onNext(((CryptoKeyVersion) response));
+      responseObserver.onNext(((GenerateRandomBytesResponse) response));
       responseObserver.onCompleted();
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
@@ -533,9 +596,9 @@ public class MockKeyManagementServiceImpl extends KeyManagementServiceImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method RestoreCryptoKeyVersion, expected %s or %s",
+                  "Unrecognized response type %s for method GenerateRandomBytes, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
-                  CryptoKeyVersion.class.getName(),
+                  GenerateRandomBytesResponse.class.getName(),
                   Exception.class.getName())));
     }
   }

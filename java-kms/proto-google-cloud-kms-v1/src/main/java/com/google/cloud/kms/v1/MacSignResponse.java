@@ -22,31 +22,31 @@ package com.google.cloud.kms.v1;
  *
  *
  * <pre>
- * Response message for [KeyManagementService.AsymmetricSign][google.cloud.kms.v1.KeyManagementService.AsymmetricSign].
+ * Response message for [KeyManagementService.MacSign][google.cloud.kms.v1.KeyManagementService.MacSign].
  * </pre>
  *
- * Protobuf type {@code google.cloud.kms.v1.AsymmetricSignResponse}
+ * Protobuf type {@code google.cloud.kms.v1.MacSignResponse}
  */
-public final class AsymmetricSignResponse extends com.google.protobuf.GeneratedMessageV3
+public final class MacSignResponse extends com.google.protobuf.GeneratedMessageV3
     implements
-    // @@protoc_insertion_point(message_implements:google.cloud.kms.v1.AsymmetricSignResponse)
-    AsymmetricSignResponseOrBuilder {
+    // @@protoc_insertion_point(message_implements:google.cloud.kms.v1.MacSignResponse)
+    MacSignResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-  // Use AsymmetricSignResponse.newBuilder() to construct.
-  private AsymmetricSignResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+  // Use MacSignResponse.newBuilder() to construct.
+  private MacSignResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
 
-  private AsymmetricSignResponse() {
-    signature_ = com.google.protobuf.ByteString.EMPTY;
+  private MacSignResponse() {
     name_ = "";
+    mac_ = com.google.protobuf.ByteString.EMPTY;
     protectionLevel_ = 0;
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
-    return new AsymmetricSignResponse();
+    return new MacSignResponse();
   }
 
   @java.lang.Override
@@ -54,7 +54,7 @@ public final class AsymmetricSignResponse extends com.google.protobuf.GeneratedM
     return this.unknownFields;
   }
 
-  private AsymmetricSignResponse(
+  private MacSignResponse(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
@@ -74,37 +74,37 @@ public final class AsymmetricSignResponse extends com.google.protobuf.GeneratedM
             break;
           case 10:
             {
-              signature_ = input.readBytes();
-              break;
-            }
-          case 18:
-            {
-              com.google.protobuf.Int64Value.Builder subBuilder = null;
-              if (signatureCrc32C_ != null) {
-                subBuilder = signatureCrc32C_.toBuilder();
-              }
-              signatureCrc32C_ =
-                  input.readMessage(com.google.protobuf.Int64Value.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(signatureCrc32C_);
-                signatureCrc32C_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 24:
-            {
-              verifiedDigestCrc32C_ = input.readBool();
-              break;
-            }
-          case 34:
-            {
               java.lang.String s = input.readStringRequireUtf8();
 
               name_ = s;
               break;
             }
-          case 48:
+          case 18:
+            {
+              mac_ = input.readBytes();
+              break;
+            }
+          case 26:
+            {
+              com.google.protobuf.Int64Value.Builder subBuilder = null;
+              if (macCrc32C_ != null) {
+                subBuilder = macCrc32C_.toBuilder();
+              }
+              macCrc32C_ =
+                  input.readMessage(com.google.protobuf.Int64Value.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(macCrc32C_);
+                macCrc32C_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+          case 32:
+            {
+              verifiedDataCrc32C_ = input.readBool();
+              break;
+            }
+          case 40:
             {
               int rawValue = input.readEnum();
 
@@ -132,141 +132,20 @@ public final class AsymmetricSignResponse extends com.google.protobuf.GeneratedM
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.kms.v1.KmsProto
-        .internal_static_google_cloud_kms_v1_AsymmetricSignResponse_descriptor;
+        .internal_static_google_cloud_kms_v1_MacSignResponse_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
     return com.google.cloud.kms.v1.KmsProto
-        .internal_static_google_cloud_kms_v1_AsymmetricSignResponse_fieldAccessorTable
+        .internal_static_google_cloud_kms_v1_MacSignResponse_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.google.cloud.kms.v1.AsymmetricSignResponse.class,
-            com.google.cloud.kms.v1.AsymmetricSignResponse.Builder.class);
+            com.google.cloud.kms.v1.MacSignResponse.class,
+            com.google.cloud.kms.v1.MacSignResponse.Builder.class);
   }
 
-  public static final int SIGNATURE_FIELD_NUMBER = 1;
-  private com.google.protobuf.ByteString signature_;
-  /**
-   *
-   *
-   * <pre>
-   * The created signature.
-   * </pre>
-   *
-   * <code>bytes signature = 1;</code>
-   *
-   * @return The signature.
-   */
-  @java.lang.Override
-  public com.google.protobuf.ByteString getSignature() {
-    return signature_;
-  }
-
-  public static final int SIGNATURE_CRC32C_FIELD_NUMBER = 2;
-  private com.google.protobuf.Int64Value signatureCrc32C_;
-  /**
-   *
-   *
-   * <pre>
-   * Integrity verification field. A CRC32C checksum of the returned
-   * [AsymmetricSignResponse.signature][google.cloud.kms.v1.AsymmetricSignResponse.signature]. An integrity check of
-   * [AsymmetricSignResponse.signature][google.cloud.kms.v1.AsymmetricSignResponse.signature] can be performed by computing the
-   * CRC32C checksum of [AsymmetricSignResponse.signature][google.cloud.kms.v1.AsymmetricSignResponse.signature] and comparing your
-   * results to this field. Discard the response in case of non-matching
-   * checksum values, and perform a limited number of retries. A persistent
-   * mismatch may indicate an issue in your computation of the CRC32C checksum.
-   * Note: This field is defined as int64 for reasons of compatibility across
-   * different languages. However, it is a non-negative integer, which will
-   * never exceed 2^32-1, and can be safely downconverted to uint32 in languages
-   * that support this type.
-   * </pre>
-   *
-   * <code>.google.protobuf.Int64Value signature_crc32c = 2;</code>
-   *
-   * @return Whether the signatureCrc32c field is set.
-   */
-  @java.lang.Override
-  public boolean hasSignatureCrc32C() {
-    return signatureCrc32C_ != null;
-  }
-  /**
-   *
-   *
-   * <pre>
-   * Integrity verification field. A CRC32C checksum of the returned
-   * [AsymmetricSignResponse.signature][google.cloud.kms.v1.AsymmetricSignResponse.signature]. An integrity check of
-   * [AsymmetricSignResponse.signature][google.cloud.kms.v1.AsymmetricSignResponse.signature] can be performed by computing the
-   * CRC32C checksum of [AsymmetricSignResponse.signature][google.cloud.kms.v1.AsymmetricSignResponse.signature] and comparing your
-   * results to this field. Discard the response in case of non-matching
-   * checksum values, and perform a limited number of retries. A persistent
-   * mismatch may indicate an issue in your computation of the CRC32C checksum.
-   * Note: This field is defined as int64 for reasons of compatibility across
-   * different languages. However, it is a non-negative integer, which will
-   * never exceed 2^32-1, and can be safely downconverted to uint32 in languages
-   * that support this type.
-   * </pre>
-   *
-   * <code>.google.protobuf.Int64Value signature_crc32c = 2;</code>
-   *
-   * @return The signatureCrc32c.
-   */
-  @java.lang.Override
-  public com.google.protobuf.Int64Value getSignatureCrc32C() {
-    return signatureCrc32C_ == null
-        ? com.google.protobuf.Int64Value.getDefaultInstance()
-        : signatureCrc32C_;
-  }
-  /**
-   *
-   *
-   * <pre>
-   * Integrity verification field. A CRC32C checksum of the returned
-   * [AsymmetricSignResponse.signature][google.cloud.kms.v1.AsymmetricSignResponse.signature]. An integrity check of
-   * [AsymmetricSignResponse.signature][google.cloud.kms.v1.AsymmetricSignResponse.signature] can be performed by computing the
-   * CRC32C checksum of [AsymmetricSignResponse.signature][google.cloud.kms.v1.AsymmetricSignResponse.signature] and comparing your
-   * results to this field. Discard the response in case of non-matching
-   * checksum values, and perform a limited number of retries. A persistent
-   * mismatch may indicate an issue in your computation of the CRC32C checksum.
-   * Note: This field is defined as int64 for reasons of compatibility across
-   * different languages. However, it is a non-negative integer, which will
-   * never exceed 2^32-1, and can be safely downconverted to uint32 in languages
-   * that support this type.
-   * </pre>
-   *
-   * <code>.google.protobuf.Int64Value signature_crc32c = 2;</code>
-   */
-  @java.lang.Override
-  public com.google.protobuf.Int64ValueOrBuilder getSignatureCrc32COrBuilder() {
-    return getSignatureCrc32C();
-  }
-
-  public static final int VERIFIED_DIGEST_CRC32C_FIELD_NUMBER = 3;
-  private boolean verifiedDigestCrc32C_;
-  /**
-   *
-   *
-   * <pre>
-   * Integrity verification field. A flag indicating whether
-   * [AsymmetricSignRequest.digest_crc32c][google.cloud.kms.v1.AsymmetricSignRequest.digest_crc32c] was received by
-   * [KeyManagementService][google.cloud.kms.v1.KeyManagementService] and used for the integrity verification of the
-   * [digest][google.cloud.kms.v1.AsymmetricSignRequest.digest]. A false value of this field
-   * indicates either that [AsymmetricSignRequest.digest_crc32c][google.cloud.kms.v1.AsymmetricSignRequest.digest_crc32c] was left
-   * unset or that it was not delivered to [KeyManagementService][google.cloud.kms.v1.KeyManagementService]. If you've
-   * set [AsymmetricSignRequest.digest_crc32c][google.cloud.kms.v1.AsymmetricSignRequest.digest_crc32c] but this field is still false,
-   * discard the response and perform a limited number of retries.
-   * </pre>
-   *
-   * <code>bool verified_digest_crc32c = 3;</code>
-   *
-   * @return The verifiedDigestCrc32c.
-   */
-  @java.lang.Override
-  public boolean getVerifiedDigestCrc32C() {
-    return verifiedDigestCrc32C_;
-  }
-
-  public static final int NAME_FIELD_NUMBER = 4;
+  public static final int NAME_FIELD_NUMBER = 1;
   private volatile java.lang.Object name_;
   /**
    *
@@ -276,7 +155,7 @@ public final class AsymmetricSignResponse extends com.google.protobuf.GeneratedM
    * this field to verify that the intended resource was used for signing.
    * </pre>
    *
-   * <code>string name = 4;</code>
+   * <code>string name = 1;</code>
    *
    * @return The name.
    */
@@ -300,7 +179,7 @@ public final class AsymmetricSignResponse extends com.google.protobuf.GeneratedM
    * this field to verify that the intended resource was used for signing.
    * </pre>
    *
-   * <code>string name = 4;</code>
+   * <code>string name = 1;</code>
    *
    * @return The bytes for name.
    */
@@ -317,7 +196,126 @@ public final class AsymmetricSignResponse extends com.google.protobuf.GeneratedM
     }
   }
 
-  public static final int PROTECTION_LEVEL_FIELD_NUMBER = 6;
+  public static final int MAC_FIELD_NUMBER = 2;
+  private com.google.protobuf.ByteString mac_;
+  /**
+   *
+   *
+   * <pre>
+   * The created signature.
+   * </pre>
+   *
+   * <code>bytes mac = 2;</code>
+   *
+   * @return The mac.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getMac() {
+    return mac_;
+  }
+
+  public static final int MAC_CRC32C_FIELD_NUMBER = 3;
+  private com.google.protobuf.Int64Value macCrc32C_;
+  /**
+   *
+   *
+   * <pre>
+   * Integrity verification field. A CRC32C checksum of the returned
+   * [MacSignResponse.mac][google.cloud.kms.v1.MacSignResponse.mac]. An integrity check of
+   * [MacSignResponse.mac][google.cloud.kms.v1.MacSignResponse.mac] can be performed by computing the
+   * CRC32C checksum of [MacSignResponse.mac][google.cloud.kms.v1.MacSignResponse.mac] and comparing your
+   * results to this field. Discard the response in case of non-matching
+   * checksum values, and perform a limited number of retries. A persistent
+   * mismatch may indicate an issue in your computation of the CRC32C checksum.
+   * Note: This field is defined as int64 for reasons of compatibility across
+   * different languages. However, it is a non-negative integer, which will
+   * never exceed 2^32-1, and can be safely downconverted to uint32 in languages
+   * that support this type.
+   * </pre>
+   *
+   * <code>.google.protobuf.Int64Value mac_crc32c = 3;</code>
+   *
+   * @return Whether the macCrc32c field is set.
+   */
+  @java.lang.Override
+  public boolean hasMacCrc32C() {
+    return macCrc32C_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Integrity verification field. A CRC32C checksum of the returned
+   * [MacSignResponse.mac][google.cloud.kms.v1.MacSignResponse.mac]. An integrity check of
+   * [MacSignResponse.mac][google.cloud.kms.v1.MacSignResponse.mac] can be performed by computing the
+   * CRC32C checksum of [MacSignResponse.mac][google.cloud.kms.v1.MacSignResponse.mac] and comparing your
+   * results to this field. Discard the response in case of non-matching
+   * checksum values, and perform a limited number of retries. A persistent
+   * mismatch may indicate an issue in your computation of the CRC32C checksum.
+   * Note: This field is defined as int64 for reasons of compatibility across
+   * different languages. However, it is a non-negative integer, which will
+   * never exceed 2^32-1, and can be safely downconverted to uint32 in languages
+   * that support this type.
+   * </pre>
+   *
+   * <code>.google.protobuf.Int64Value mac_crc32c = 3;</code>
+   *
+   * @return The macCrc32c.
+   */
+  @java.lang.Override
+  public com.google.protobuf.Int64Value getMacCrc32C() {
+    return macCrc32C_ == null ? com.google.protobuf.Int64Value.getDefaultInstance() : macCrc32C_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Integrity verification field. A CRC32C checksum of the returned
+   * [MacSignResponse.mac][google.cloud.kms.v1.MacSignResponse.mac]. An integrity check of
+   * [MacSignResponse.mac][google.cloud.kms.v1.MacSignResponse.mac] can be performed by computing the
+   * CRC32C checksum of [MacSignResponse.mac][google.cloud.kms.v1.MacSignResponse.mac] and comparing your
+   * results to this field. Discard the response in case of non-matching
+   * checksum values, and perform a limited number of retries. A persistent
+   * mismatch may indicate an issue in your computation of the CRC32C checksum.
+   * Note: This field is defined as int64 for reasons of compatibility across
+   * different languages. However, it is a non-negative integer, which will
+   * never exceed 2^32-1, and can be safely downconverted to uint32 in languages
+   * that support this type.
+   * </pre>
+   *
+   * <code>.google.protobuf.Int64Value mac_crc32c = 3;</code>
+   */
+  @java.lang.Override
+  public com.google.protobuf.Int64ValueOrBuilder getMacCrc32COrBuilder() {
+    return getMacCrc32C();
+  }
+
+  public static final int VERIFIED_DATA_CRC32C_FIELD_NUMBER = 4;
+  private boolean verifiedDataCrc32C_;
+  /**
+   *
+   *
+   * <pre>
+   * Integrity verification field. A flag indicating whether
+   * [MacSignRequest.data_crc32c][google.cloud.kms.v1.MacSignRequest.data_crc32c] was received by
+   * [KeyManagementService][google.cloud.kms.v1.KeyManagementService] and used for the integrity verification of the
+   * [data][google.cloud.kms.v1.MacSignRequest.data]. A false value of this field
+   * indicates either that [MacSignRequest.data_crc32c][google.cloud.kms.v1.MacSignRequest.data_crc32c] was left
+   * unset or that it was not delivered to [KeyManagementService][google.cloud.kms.v1.KeyManagementService]. If you've
+   * set [MacSignRequest.data_crc32c][google.cloud.kms.v1.MacSignRequest.data_crc32c] but this field is still false,
+   * discard the response and perform a limited number of retries.
+   * </pre>
+   *
+   * <code>bool verified_data_crc32c = 4;</code>
+   *
+   * @return The verifiedDataCrc32c.
+   */
+  @java.lang.Override
+  public boolean getVerifiedDataCrc32C() {
+    return verifiedDataCrc32C_;
+  }
+
+  public static final int PROTECTION_LEVEL_FIELD_NUMBER = 5;
   private int protectionLevel_;
   /**
    *
@@ -326,7 +324,7 @@ public final class AsymmetricSignResponse extends com.google.protobuf.GeneratedM
    * The [ProtectionLevel][google.cloud.kms.v1.ProtectionLevel] of the [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] used for signing.
    * </pre>
    *
-   * <code>.google.cloud.kms.v1.ProtectionLevel protection_level = 6;</code>
+   * <code>.google.cloud.kms.v1.ProtectionLevel protection_level = 5;</code>
    *
    * @return The enum numeric value on the wire for protectionLevel.
    */
@@ -341,7 +339,7 @@ public final class AsymmetricSignResponse extends com.google.protobuf.GeneratedM
    * The [ProtectionLevel][google.cloud.kms.v1.ProtectionLevel] of the [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] used for signing.
    * </pre>
    *
-   * <code>.google.cloud.kms.v1.ProtectionLevel protection_level = 6;</code>
+   * <code>.google.cloud.kms.v1.ProtectionLevel protection_level = 5;</code>
    *
    * @return The protectionLevel.
    */
@@ -367,21 +365,21 @@ public final class AsymmetricSignResponse extends com.google.protobuf.GeneratedM
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!signature_.isEmpty()) {
-      output.writeBytes(1, signature_);
-    }
-    if (signatureCrc32C_ != null) {
-      output.writeMessage(2, getSignatureCrc32C());
-    }
-    if (verifiedDigestCrc32C_ != false) {
-      output.writeBool(3, verifiedDigestCrc32C_);
-    }
     if (!getNameBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 4, name_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name_);
+    }
+    if (!mac_.isEmpty()) {
+      output.writeBytes(2, mac_);
+    }
+    if (macCrc32C_ != null) {
+      output.writeMessage(3, getMacCrc32C());
+    }
+    if (verifiedDataCrc32C_ != false) {
+      output.writeBool(4, verifiedDataCrc32C_);
     }
     if (protectionLevel_
         != com.google.cloud.kms.v1.ProtectionLevel.PROTECTION_LEVEL_UNSPECIFIED.getNumber()) {
-      output.writeEnum(6, protectionLevel_);
+      output.writeEnum(5, protectionLevel_);
     }
     unknownFields.writeTo(output);
   }
@@ -392,21 +390,21 @@ public final class AsymmetricSignResponse extends com.google.protobuf.GeneratedM
     if (size != -1) return size;
 
     size = 0;
-    if (!signature_.isEmpty()) {
-      size += com.google.protobuf.CodedOutputStream.computeBytesSize(1, signature_);
-    }
-    if (signatureCrc32C_ != null) {
-      size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, getSignatureCrc32C());
-    }
-    if (verifiedDigestCrc32C_ != false) {
-      size += com.google.protobuf.CodedOutputStream.computeBoolSize(3, verifiedDigestCrc32C_);
-    }
     if (!getNameBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, name_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, name_);
+    }
+    if (!mac_.isEmpty()) {
+      size += com.google.protobuf.CodedOutputStream.computeBytesSize(2, mac_);
+    }
+    if (macCrc32C_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(3, getMacCrc32C());
+    }
+    if (verifiedDataCrc32C_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(4, verifiedDataCrc32C_);
     }
     if (protectionLevel_
         != com.google.cloud.kms.v1.ProtectionLevel.PROTECTION_LEVEL_UNSPECIFIED.getNumber()) {
-      size += com.google.protobuf.CodedOutputStream.computeEnumSize(6, protectionLevel_);
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(5, protectionLevel_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -418,19 +416,18 @@ public final class AsymmetricSignResponse extends com.google.protobuf.GeneratedM
     if (obj == this) {
       return true;
     }
-    if (!(obj instanceof com.google.cloud.kms.v1.AsymmetricSignResponse)) {
+    if (!(obj instanceof com.google.cloud.kms.v1.MacSignResponse)) {
       return super.equals(obj);
     }
-    com.google.cloud.kms.v1.AsymmetricSignResponse other =
-        (com.google.cloud.kms.v1.AsymmetricSignResponse) obj;
+    com.google.cloud.kms.v1.MacSignResponse other = (com.google.cloud.kms.v1.MacSignResponse) obj;
 
-    if (!getSignature().equals(other.getSignature())) return false;
-    if (hasSignatureCrc32C() != other.hasSignatureCrc32C()) return false;
-    if (hasSignatureCrc32C()) {
-      if (!getSignatureCrc32C().equals(other.getSignatureCrc32C())) return false;
-    }
-    if (getVerifiedDigestCrc32C() != other.getVerifiedDigestCrc32C()) return false;
     if (!getName().equals(other.getName())) return false;
+    if (!getMac().equals(other.getMac())) return false;
+    if (hasMacCrc32C() != other.hasMacCrc32C()) return false;
+    if (hasMacCrc32C()) {
+      if (!getMacCrc32C().equals(other.getMacCrc32C())) return false;
+    }
+    if (getVerifiedDataCrc32C() != other.getVerifiedDataCrc32C()) return false;
     if (protectionLevel_ != other.protectionLevel_) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
@@ -443,16 +440,16 @@ public final class AsymmetricSignResponse extends com.google.protobuf.GeneratedM
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + SIGNATURE_FIELD_NUMBER;
-    hash = (53 * hash) + getSignature().hashCode();
-    if (hasSignatureCrc32C()) {
-      hash = (37 * hash) + SIGNATURE_CRC32C_FIELD_NUMBER;
-      hash = (53 * hash) + getSignatureCrc32C().hashCode();
-    }
-    hash = (37 * hash) + VERIFIED_DIGEST_CRC32C_FIELD_NUMBER;
-    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getVerifiedDigestCrc32C());
     hash = (37 * hash) + NAME_FIELD_NUMBER;
     hash = (53 * hash) + getName().hashCode();
+    hash = (37 * hash) + MAC_FIELD_NUMBER;
+    hash = (53 * hash) + getMac().hashCode();
+    if (hasMacCrc32C()) {
+      hash = (37 * hash) + MAC_CRC32C_FIELD_NUMBER;
+      hash = (53 * hash) + getMacCrc32C().hashCode();
+    }
+    hash = (37 * hash) + VERIFIED_DATA_CRC32C_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getVerifiedDataCrc32C());
     hash = (37 * hash) + PROTECTION_LEVEL_FIELD_NUMBER;
     hash = (53 * hash) + protectionLevel_;
     hash = (29 * hash) + unknownFields.hashCode();
@@ -460,71 +457,71 @@ public final class AsymmetricSignResponse extends com.google.protobuf.GeneratedM
     return hash;
   }
 
-  public static com.google.cloud.kms.v1.AsymmetricSignResponse parseFrom(java.nio.ByteBuffer data)
+  public static com.google.cloud.kms.v1.MacSignResponse parseFrom(java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
 
-  public static com.google.cloud.kms.v1.AsymmetricSignResponse parseFrom(
+  public static com.google.cloud.kms.v1.MacSignResponse parseFrom(
       java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
 
-  public static com.google.cloud.kms.v1.AsymmetricSignResponse parseFrom(
+  public static com.google.cloud.kms.v1.MacSignResponse parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
 
-  public static com.google.cloud.kms.v1.AsymmetricSignResponse parseFrom(
+  public static com.google.cloud.kms.v1.MacSignResponse parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
 
-  public static com.google.cloud.kms.v1.AsymmetricSignResponse parseFrom(byte[] data)
+  public static com.google.cloud.kms.v1.MacSignResponse parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
 
-  public static com.google.cloud.kms.v1.AsymmetricSignResponse parseFrom(
+  public static com.google.cloud.kms.v1.MacSignResponse parseFrom(
       byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
 
-  public static com.google.cloud.kms.v1.AsymmetricSignResponse parseFrom(java.io.InputStream input)
+  public static com.google.cloud.kms.v1.MacSignResponse parseFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
 
-  public static com.google.cloud.kms.v1.AsymmetricSignResponse parseFrom(
+  public static com.google.cloud.kms.v1.MacSignResponse parseFrom(
       java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
         PARSER, input, extensionRegistry);
   }
 
-  public static com.google.cloud.kms.v1.AsymmetricSignResponse parseDelimitedFrom(
+  public static com.google.cloud.kms.v1.MacSignResponse parseDelimitedFrom(
       java.io.InputStream input) throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
   }
 
-  public static com.google.cloud.kms.v1.AsymmetricSignResponse parseDelimitedFrom(
+  public static com.google.cloud.kms.v1.MacSignResponse parseDelimitedFrom(
       java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
         PARSER, input, extensionRegistry);
   }
 
-  public static com.google.cloud.kms.v1.AsymmetricSignResponse parseFrom(
+  public static com.google.cloud.kms.v1.MacSignResponse parseFrom(
       com.google.protobuf.CodedInputStream input) throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
 
-  public static com.google.cloud.kms.v1.AsymmetricSignResponse parseFrom(
+  public static com.google.cloud.kms.v1.MacSignResponse parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -541,7 +538,7 @@ public final class AsymmetricSignResponse extends com.google.protobuf.GeneratedM
     return DEFAULT_INSTANCE.toBuilder();
   }
 
-  public static Builder newBuilder(com.google.cloud.kms.v1.AsymmetricSignResponse prototype) {
+  public static Builder newBuilder(com.google.cloud.kms.v1.MacSignResponse prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
 
@@ -559,31 +556,31 @@ public final class AsymmetricSignResponse extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * Response message for [KeyManagementService.AsymmetricSign][google.cloud.kms.v1.KeyManagementService.AsymmetricSign].
+   * Response message for [KeyManagementService.MacSign][google.cloud.kms.v1.KeyManagementService.MacSign].
    * </pre>
    *
-   * Protobuf type {@code google.cloud.kms.v1.AsymmetricSignResponse}
+   * Protobuf type {@code google.cloud.kms.v1.MacSignResponse}
    */
   public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
       implements
-      // @@protoc_insertion_point(builder_implements:google.cloud.kms.v1.AsymmetricSignResponse)
-      com.google.cloud.kms.v1.AsymmetricSignResponseOrBuilder {
+      // @@protoc_insertion_point(builder_implements:google.cloud.kms.v1.MacSignResponse)
+      com.google.cloud.kms.v1.MacSignResponseOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.cloud.kms.v1.KmsProto
-          .internal_static_google_cloud_kms_v1_AsymmetricSignResponse_descriptor;
+          .internal_static_google_cloud_kms_v1_MacSignResponse_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return com.google.cloud.kms.v1.KmsProto
-          .internal_static_google_cloud_kms_v1_AsymmetricSignResponse_fieldAccessorTable
+          .internal_static_google_cloud_kms_v1_MacSignResponse_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.cloud.kms.v1.AsymmetricSignResponse.class,
-              com.google.cloud.kms.v1.AsymmetricSignResponse.Builder.class);
+              com.google.cloud.kms.v1.MacSignResponse.class,
+              com.google.cloud.kms.v1.MacSignResponse.Builder.class);
     }
 
-    // Construct using com.google.cloud.kms.v1.AsymmetricSignResponse.newBuilder()
+    // Construct using com.google.cloud.kms.v1.MacSignResponse.newBuilder()
     private Builder() {
       maybeForceBuilderInitialization();
     }
@@ -600,17 +597,17 @@ public final class AsymmetricSignResponse extends com.google.protobuf.GeneratedM
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      signature_ = com.google.protobuf.ByteString.EMPTY;
-
-      if (signatureCrc32CBuilder_ == null) {
-        signatureCrc32C_ = null;
-      } else {
-        signatureCrc32C_ = null;
-        signatureCrc32CBuilder_ = null;
-      }
-      verifiedDigestCrc32C_ = false;
-
       name_ = "";
+
+      mac_ = com.google.protobuf.ByteString.EMPTY;
+
+      if (macCrc32CBuilder_ == null) {
+        macCrc32C_ = null;
+      } else {
+        macCrc32C_ = null;
+        macCrc32CBuilder_ = null;
+      }
+      verifiedDataCrc32C_ = false;
 
       protectionLevel_ = 0;
 
@@ -620,17 +617,17 @@ public final class AsymmetricSignResponse extends com.google.protobuf.GeneratedM
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
       return com.google.cloud.kms.v1.KmsProto
-          .internal_static_google_cloud_kms_v1_AsymmetricSignResponse_descriptor;
+          .internal_static_google_cloud_kms_v1_MacSignResponse_descriptor;
     }
 
     @java.lang.Override
-    public com.google.cloud.kms.v1.AsymmetricSignResponse getDefaultInstanceForType() {
-      return com.google.cloud.kms.v1.AsymmetricSignResponse.getDefaultInstance();
+    public com.google.cloud.kms.v1.MacSignResponse getDefaultInstanceForType() {
+      return com.google.cloud.kms.v1.MacSignResponse.getDefaultInstance();
     }
 
     @java.lang.Override
-    public com.google.cloud.kms.v1.AsymmetricSignResponse build() {
-      com.google.cloud.kms.v1.AsymmetricSignResponse result = buildPartial();
+    public com.google.cloud.kms.v1.MacSignResponse build() {
+      com.google.cloud.kms.v1.MacSignResponse result = buildPartial();
       if (!result.isInitialized()) {
         throw newUninitializedMessageException(result);
       }
@@ -638,17 +635,17 @@ public final class AsymmetricSignResponse extends com.google.protobuf.GeneratedM
     }
 
     @java.lang.Override
-    public com.google.cloud.kms.v1.AsymmetricSignResponse buildPartial() {
-      com.google.cloud.kms.v1.AsymmetricSignResponse result =
-          new com.google.cloud.kms.v1.AsymmetricSignResponse(this);
-      result.signature_ = signature_;
-      if (signatureCrc32CBuilder_ == null) {
-        result.signatureCrc32C_ = signatureCrc32C_;
-      } else {
-        result.signatureCrc32C_ = signatureCrc32CBuilder_.build();
-      }
-      result.verifiedDigestCrc32C_ = verifiedDigestCrc32C_;
+    public com.google.cloud.kms.v1.MacSignResponse buildPartial() {
+      com.google.cloud.kms.v1.MacSignResponse result =
+          new com.google.cloud.kms.v1.MacSignResponse(this);
       result.name_ = name_;
+      result.mac_ = mac_;
+      if (macCrc32CBuilder_ == null) {
+        result.macCrc32C_ = macCrc32C_;
+      } else {
+        result.macCrc32C_ = macCrc32CBuilder_.build();
+      }
+      result.verifiedDataCrc32C_ = verifiedDataCrc32C_;
       result.protectionLevel_ = protectionLevel_;
       onBuilt();
       return result;
@@ -689,28 +686,28 @@ public final class AsymmetricSignResponse extends com.google.protobuf.GeneratedM
 
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof com.google.cloud.kms.v1.AsymmetricSignResponse) {
-        return mergeFrom((com.google.cloud.kms.v1.AsymmetricSignResponse) other);
+      if (other instanceof com.google.cloud.kms.v1.MacSignResponse) {
+        return mergeFrom((com.google.cloud.kms.v1.MacSignResponse) other);
       } else {
         super.mergeFrom(other);
         return this;
       }
     }
 
-    public Builder mergeFrom(com.google.cloud.kms.v1.AsymmetricSignResponse other) {
-      if (other == com.google.cloud.kms.v1.AsymmetricSignResponse.getDefaultInstance()) return this;
-      if (other.getSignature() != com.google.protobuf.ByteString.EMPTY) {
-        setSignature(other.getSignature());
-      }
-      if (other.hasSignatureCrc32C()) {
-        mergeSignatureCrc32C(other.getSignatureCrc32C());
-      }
-      if (other.getVerifiedDigestCrc32C() != false) {
-        setVerifiedDigestCrc32C(other.getVerifiedDigestCrc32C());
-      }
+    public Builder mergeFrom(com.google.cloud.kms.v1.MacSignResponse other) {
+      if (other == com.google.cloud.kms.v1.MacSignResponse.getDefaultInstance()) return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
         onChanged();
+      }
+      if (other.getMac() != com.google.protobuf.ByteString.EMPTY) {
+        setMac(other.getMac());
+      }
+      if (other.hasMacCrc32C()) {
+        mergeMacCrc32C(other.getMacCrc32C());
+      }
+      if (other.getVerifiedDataCrc32C() != false) {
+        setVerifiedDataCrc32C(other.getVerifiedDataCrc32C());
       }
       if (other.protectionLevel_ != 0) {
         setProtectionLevelValue(other.getProtectionLevelValue());
@@ -730,420 +727,17 @@ public final class AsymmetricSignResponse extends com.google.protobuf.GeneratedM
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.cloud.kms.v1.AsymmetricSignResponse parsedMessage = null;
+      com.google.cloud.kms.v1.MacSignResponse parsedMessage = null;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.google.cloud.kms.v1.AsymmetricSignResponse) e.getUnfinishedMessage();
+        parsedMessage = (com.google.cloud.kms.v1.MacSignResponse) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
           mergeFrom(parsedMessage);
         }
       }
-      return this;
-    }
-
-    private com.google.protobuf.ByteString signature_ = com.google.protobuf.ByteString.EMPTY;
-    /**
-     *
-     *
-     * <pre>
-     * The created signature.
-     * </pre>
-     *
-     * <code>bytes signature = 1;</code>
-     *
-     * @return The signature.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString getSignature() {
-      return signature_;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * The created signature.
-     * </pre>
-     *
-     * <code>bytes signature = 1;</code>
-     *
-     * @param value The signature to set.
-     * @return This builder for chaining.
-     */
-    public Builder setSignature(com.google.protobuf.ByteString value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-
-      signature_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * The created signature.
-     * </pre>
-     *
-     * <code>bytes signature = 1;</code>
-     *
-     * @return This builder for chaining.
-     */
-    public Builder clearSignature() {
-
-      signature_ = getDefaultInstance().getSignature();
-      onChanged();
-      return this;
-    }
-
-    private com.google.protobuf.Int64Value signatureCrc32C_;
-    private com.google.protobuf.SingleFieldBuilderV3<
-            com.google.protobuf.Int64Value,
-            com.google.protobuf.Int64Value.Builder,
-            com.google.protobuf.Int64ValueOrBuilder>
-        signatureCrc32CBuilder_;
-    /**
-     *
-     *
-     * <pre>
-     * Integrity verification field. A CRC32C checksum of the returned
-     * [AsymmetricSignResponse.signature][google.cloud.kms.v1.AsymmetricSignResponse.signature]. An integrity check of
-     * [AsymmetricSignResponse.signature][google.cloud.kms.v1.AsymmetricSignResponse.signature] can be performed by computing the
-     * CRC32C checksum of [AsymmetricSignResponse.signature][google.cloud.kms.v1.AsymmetricSignResponse.signature] and comparing your
-     * results to this field. Discard the response in case of non-matching
-     * checksum values, and perform a limited number of retries. A persistent
-     * mismatch may indicate an issue in your computation of the CRC32C checksum.
-     * Note: This field is defined as int64 for reasons of compatibility across
-     * different languages. However, it is a non-negative integer, which will
-     * never exceed 2^32-1, and can be safely downconverted to uint32 in languages
-     * that support this type.
-     * </pre>
-     *
-     * <code>.google.protobuf.Int64Value signature_crc32c = 2;</code>
-     *
-     * @return Whether the signatureCrc32c field is set.
-     */
-    public boolean hasSignatureCrc32C() {
-      return signatureCrc32CBuilder_ != null || signatureCrc32C_ != null;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Integrity verification field. A CRC32C checksum of the returned
-     * [AsymmetricSignResponse.signature][google.cloud.kms.v1.AsymmetricSignResponse.signature]. An integrity check of
-     * [AsymmetricSignResponse.signature][google.cloud.kms.v1.AsymmetricSignResponse.signature] can be performed by computing the
-     * CRC32C checksum of [AsymmetricSignResponse.signature][google.cloud.kms.v1.AsymmetricSignResponse.signature] and comparing your
-     * results to this field. Discard the response in case of non-matching
-     * checksum values, and perform a limited number of retries. A persistent
-     * mismatch may indicate an issue in your computation of the CRC32C checksum.
-     * Note: This field is defined as int64 for reasons of compatibility across
-     * different languages. However, it is a non-negative integer, which will
-     * never exceed 2^32-1, and can be safely downconverted to uint32 in languages
-     * that support this type.
-     * </pre>
-     *
-     * <code>.google.protobuf.Int64Value signature_crc32c = 2;</code>
-     *
-     * @return The signatureCrc32c.
-     */
-    public com.google.protobuf.Int64Value getSignatureCrc32C() {
-      if (signatureCrc32CBuilder_ == null) {
-        return signatureCrc32C_ == null
-            ? com.google.protobuf.Int64Value.getDefaultInstance()
-            : signatureCrc32C_;
-      } else {
-        return signatureCrc32CBuilder_.getMessage();
-      }
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Integrity verification field. A CRC32C checksum of the returned
-     * [AsymmetricSignResponse.signature][google.cloud.kms.v1.AsymmetricSignResponse.signature]. An integrity check of
-     * [AsymmetricSignResponse.signature][google.cloud.kms.v1.AsymmetricSignResponse.signature] can be performed by computing the
-     * CRC32C checksum of [AsymmetricSignResponse.signature][google.cloud.kms.v1.AsymmetricSignResponse.signature] and comparing your
-     * results to this field. Discard the response in case of non-matching
-     * checksum values, and perform a limited number of retries. A persistent
-     * mismatch may indicate an issue in your computation of the CRC32C checksum.
-     * Note: This field is defined as int64 for reasons of compatibility across
-     * different languages. However, it is a non-negative integer, which will
-     * never exceed 2^32-1, and can be safely downconverted to uint32 in languages
-     * that support this type.
-     * </pre>
-     *
-     * <code>.google.protobuf.Int64Value signature_crc32c = 2;</code>
-     */
-    public Builder setSignatureCrc32C(com.google.protobuf.Int64Value value) {
-      if (signatureCrc32CBuilder_ == null) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        signatureCrc32C_ = value;
-        onChanged();
-      } else {
-        signatureCrc32CBuilder_.setMessage(value);
-      }
-
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Integrity verification field. A CRC32C checksum of the returned
-     * [AsymmetricSignResponse.signature][google.cloud.kms.v1.AsymmetricSignResponse.signature]. An integrity check of
-     * [AsymmetricSignResponse.signature][google.cloud.kms.v1.AsymmetricSignResponse.signature] can be performed by computing the
-     * CRC32C checksum of [AsymmetricSignResponse.signature][google.cloud.kms.v1.AsymmetricSignResponse.signature] and comparing your
-     * results to this field. Discard the response in case of non-matching
-     * checksum values, and perform a limited number of retries. A persistent
-     * mismatch may indicate an issue in your computation of the CRC32C checksum.
-     * Note: This field is defined as int64 for reasons of compatibility across
-     * different languages. However, it is a non-negative integer, which will
-     * never exceed 2^32-1, and can be safely downconverted to uint32 in languages
-     * that support this type.
-     * </pre>
-     *
-     * <code>.google.protobuf.Int64Value signature_crc32c = 2;</code>
-     */
-    public Builder setSignatureCrc32C(com.google.protobuf.Int64Value.Builder builderForValue) {
-      if (signatureCrc32CBuilder_ == null) {
-        signatureCrc32C_ = builderForValue.build();
-        onChanged();
-      } else {
-        signatureCrc32CBuilder_.setMessage(builderForValue.build());
-      }
-
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Integrity verification field. A CRC32C checksum of the returned
-     * [AsymmetricSignResponse.signature][google.cloud.kms.v1.AsymmetricSignResponse.signature]. An integrity check of
-     * [AsymmetricSignResponse.signature][google.cloud.kms.v1.AsymmetricSignResponse.signature] can be performed by computing the
-     * CRC32C checksum of [AsymmetricSignResponse.signature][google.cloud.kms.v1.AsymmetricSignResponse.signature] and comparing your
-     * results to this field. Discard the response in case of non-matching
-     * checksum values, and perform a limited number of retries. A persistent
-     * mismatch may indicate an issue in your computation of the CRC32C checksum.
-     * Note: This field is defined as int64 for reasons of compatibility across
-     * different languages. However, it is a non-negative integer, which will
-     * never exceed 2^32-1, and can be safely downconverted to uint32 in languages
-     * that support this type.
-     * </pre>
-     *
-     * <code>.google.protobuf.Int64Value signature_crc32c = 2;</code>
-     */
-    public Builder mergeSignatureCrc32C(com.google.protobuf.Int64Value value) {
-      if (signatureCrc32CBuilder_ == null) {
-        if (signatureCrc32C_ != null) {
-          signatureCrc32C_ =
-              com.google.protobuf.Int64Value.newBuilder(signatureCrc32C_)
-                  .mergeFrom(value)
-                  .buildPartial();
-        } else {
-          signatureCrc32C_ = value;
-        }
-        onChanged();
-      } else {
-        signatureCrc32CBuilder_.mergeFrom(value);
-      }
-
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Integrity verification field. A CRC32C checksum of the returned
-     * [AsymmetricSignResponse.signature][google.cloud.kms.v1.AsymmetricSignResponse.signature]. An integrity check of
-     * [AsymmetricSignResponse.signature][google.cloud.kms.v1.AsymmetricSignResponse.signature] can be performed by computing the
-     * CRC32C checksum of [AsymmetricSignResponse.signature][google.cloud.kms.v1.AsymmetricSignResponse.signature] and comparing your
-     * results to this field. Discard the response in case of non-matching
-     * checksum values, and perform a limited number of retries. A persistent
-     * mismatch may indicate an issue in your computation of the CRC32C checksum.
-     * Note: This field is defined as int64 for reasons of compatibility across
-     * different languages. However, it is a non-negative integer, which will
-     * never exceed 2^32-1, and can be safely downconverted to uint32 in languages
-     * that support this type.
-     * </pre>
-     *
-     * <code>.google.protobuf.Int64Value signature_crc32c = 2;</code>
-     */
-    public Builder clearSignatureCrc32C() {
-      if (signatureCrc32CBuilder_ == null) {
-        signatureCrc32C_ = null;
-        onChanged();
-      } else {
-        signatureCrc32C_ = null;
-        signatureCrc32CBuilder_ = null;
-      }
-
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Integrity verification field. A CRC32C checksum of the returned
-     * [AsymmetricSignResponse.signature][google.cloud.kms.v1.AsymmetricSignResponse.signature]. An integrity check of
-     * [AsymmetricSignResponse.signature][google.cloud.kms.v1.AsymmetricSignResponse.signature] can be performed by computing the
-     * CRC32C checksum of [AsymmetricSignResponse.signature][google.cloud.kms.v1.AsymmetricSignResponse.signature] and comparing your
-     * results to this field. Discard the response in case of non-matching
-     * checksum values, and perform a limited number of retries. A persistent
-     * mismatch may indicate an issue in your computation of the CRC32C checksum.
-     * Note: This field is defined as int64 for reasons of compatibility across
-     * different languages. However, it is a non-negative integer, which will
-     * never exceed 2^32-1, and can be safely downconverted to uint32 in languages
-     * that support this type.
-     * </pre>
-     *
-     * <code>.google.protobuf.Int64Value signature_crc32c = 2;</code>
-     */
-    public com.google.protobuf.Int64Value.Builder getSignatureCrc32CBuilder() {
-
-      onChanged();
-      return getSignatureCrc32CFieldBuilder().getBuilder();
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Integrity verification field. A CRC32C checksum of the returned
-     * [AsymmetricSignResponse.signature][google.cloud.kms.v1.AsymmetricSignResponse.signature]. An integrity check of
-     * [AsymmetricSignResponse.signature][google.cloud.kms.v1.AsymmetricSignResponse.signature] can be performed by computing the
-     * CRC32C checksum of [AsymmetricSignResponse.signature][google.cloud.kms.v1.AsymmetricSignResponse.signature] and comparing your
-     * results to this field. Discard the response in case of non-matching
-     * checksum values, and perform a limited number of retries. A persistent
-     * mismatch may indicate an issue in your computation of the CRC32C checksum.
-     * Note: This field is defined as int64 for reasons of compatibility across
-     * different languages. However, it is a non-negative integer, which will
-     * never exceed 2^32-1, and can be safely downconverted to uint32 in languages
-     * that support this type.
-     * </pre>
-     *
-     * <code>.google.protobuf.Int64Value signature_crc32c = 2;</code>
-     */
-    public com.google.protobuf.Int64ValueOrBuilder getSignatureCrc32COrBuilder() {
-      if (signatureCrc32CBuilder_ != null) {
-        return signatureCrc32CBuilder_.getMessageOrBuilder();
-      } else {
-        return signatureCrc32C_ == null
-            ? com.google.protobuf.Int64Value.getDefaultInstance()
-            : signatureCrc32C_;
-      }
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Integrity verification field. A CRC32C checksum of the returned
-     * [AsymmetricSignResponse.signature][google.cloud.kms.v1.AsymmetricSignResponse.signature]. An integrity check of
-     * [AsymmetricSignResponse.signature][google.cloud.kms.v1.AsymmetricSignResponse.signature] can be performed by computing the
-     * CRC32C checksum of [AsymmetricSignResponse.signature][google.cloud.kms.v1.AsymmetricSignResponse.signature] and comparing your
-     * results to this field. Discard the response in case of non-matching
-     * checksum values, and perform a limited number of retries. A persistent
-     * mismatch may indicate an issue in your computation of the CRC32C checksum.
-     * Note: This field is defined as int64 for reasons of compatibility across
-     * different languages. However, it is a non-negative integer, which will
-     * never exceed 2^32-1, and can be safely downconverted to uint32 in languages
-     * that support this type.
-     * </pre>
-     *
-     * <code>.google.protobuf.Int64Value signature_crc32c = 2;</code>
-     */
-    private com.google.protobuf.SingleFieldBuilderV3<
-            com.google.protobuf.Int64Value,
-            com.google.protobuf.Int64Value.Builder,
-            com.google.protobuf.Int64ValueOrBuilder>
-        getSignatureCrc32CFieldBuilder() {
-      if (signatureCrc32CBuilder_ == null) {
-        signatureCrc32CBuilder_ =
-            new com.google.protobuf.SingleFieldBuilderV3<
-                com.google.protobuf.Int64Value,
-                com.google.protobuf.Int64Value.Builder,
-                com.google.protobuf.Int64ValueOrBuilder>(
-                getSignatureCrc32C(), getParentForChildren(), isClean());
-        signatureCrc32C_ = null;
-      }
-      return signatureCrc32CBuilder_;
-    }
-
-    private boolean verifiedDigestCrc32C_;
-    /**
-     *
-     *
-     * <pre>
-     * Integrity verification field. A flag indicating whether
-     * [AsymmetricSignRequest.digest_crc32c][google.cloud.kms.v1.AsymmetricSignRequest.digest_crc32c] was received by
-     * [KeyManagementService][google.cloud.kms.v1.KeyManagementService] and used for the integrity verification of the
-     * [digest][google.cloud.kms.v1.AsymmetricSignRequest.digest]. A false value of this field
-     * indicates either that [AsymmetricSignRequest.digest_crc32c][google.cloud.kms.v1.AsymmetricSignRequest.digest_crc32c] was left
-     * unset or that it was not delivered to [KeyManagementService][google.cloud.kms.v1.KeyManagementService]. If you've
-     * set [AsymmetricSignRequest.digest_crc32c][google.cloud.kms.v1.AsymmetricSignRequest.digest_crc32c] but this field is still false,
-     * discard the response and perform a limited number of retries.
-     * </pre>
-     *
-     * <code>bool verified_digest_crc32c = 3;</code>
-     *
-     * @return The verifiedDigestCrc32c.
-     */
-    @java.lang.Override
-    public boolean getVerifiedDigestCrc32C() {
-      return verifiedDigestCrc32C_;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Integrity verification field. A flag indicating whether
-     * [AsymmetricSignRequest.digest_crc32c][google.cloud.kms.v1.AsymmetricSignRequest.digest_crc32c] was received by
-     * [KeyManagementService][google.cloud.kms.v1.KeyManagementService] and used for the integrity verification of the
-     * [digest][google.cloud.kms.v1.AsymmetricSignRequest.digest]. A false value of this field
-     * indicates either that [AsymmetricSignRequest.digest_crc32c][google.cloud.kms.v1.AsymmetricSignRequest.digest_crc32c] was left
-     * unset or that it was not delivered to [KeyManagementService][google.cloud.kms.v1.KeyManagementService]. If you've
-     * set [AsymmetricSignRequest.digest_crc32c][google.cloud.kms.v1.AsymmetricSignRequest.digest_crc32c] but this field is still false,
-     * discard the response and perform a limited number of retries.
-     * </pre>
-     *
-     * <code>bool verified_digest_crc32c = 3;</code>
-     *
-     * @param value The verifiedDigestCrc32c to set.
-     * @return This builder for chaining.
-     */
-    public Builder setVerifiedDigestCrc32C(boolean value) {
-
-      verifiedDigestCrc32C_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Integrity verification field. A flag indicating whether
-     * [AsymmetricSignRequest.digest_crc32c][google.cloud.kms.v1.AsymmetricSignRequest.digest_crc32c] was received by
-     * [KeyManagementService][google.cloud.kms.v1.KeyManagementService] and used for the integrity verification of the
-     * [digest][google.cloud.kms.v1.AsymmetricSignRequest.digest]. A false value of this field
-     * indicates either that [AsymmetricSignRequest.digest_crc32c][google.cloud.kms.v1.AsymmetricSignRequest.digest_crc32c] was left
-     * unset or that it was not delivered to [KeyManagementService][google.cloud.kms.v1.KeyManagementService]. If you've
-     * set [AsymmetricSignRequest.digest_crc32c][google.cloud.kms.v1.AsymmetricSignRequest.digest_crc32c] but this field is still false,
-     * discard the response and perform a limited number of retries.
-     * </pre>
-     *
-     * <code>bool verified_digest_crc32c = 3;</code>
-     *
-     * @return This builder for chaining.
-     */
-    public Builder clearVerifiedDigestCrc32C() {
-
-      verifiedDigestCrc32C_ = false;
-      onChanged();
       return this;
     }
 
@@ -1156,7 +750,7 @@ public final class AsymmetricSignResponse extends com.google.protobuf.GeneratedM
      * this field to verify that the intended resource was used for signing.
      * </pre>
      *
-     * <code>string name = 4;</code>
+     * <code>string name = 1;</code>
      *
      * @return The name.
      */
@@ -1179,7 +773,7 @@ public final class AsymmetricSignResponse extends com.google.protobuf.GeneratedM
      * this field to verify that the intended resource was used for signing.
      * </pre>
      *
-     * <code>string name = 4;</code>
+     * <code>string name = 1;</code>
      *
      * @return The bytes for name.
      */
@@ -1202,7 +796,7 @@ public final class AsymmetricSignResponse extends com.google.protobuf.GeneratedM
      * this field to verify that the intended resource was used for signing.
      * </pre>
      *
-     * <code>string name = 4;</code>
+     * <code>string name = 1;</code>
      *
      * @param value The name to set.
      * @return This builder for chaining.
@@ -1224,7 +818,7 @@ public final class AsymmetricSignResponse extends com.google.protobuf.GeneratedM
      * this field to verify that the intended resource was used for signing.
      * </pre>
      *
-     * <code>string name = 4;</code>
+     * <code>string name = 1;</code>
      *
      * @return This builder for chaining.
      */
@@ -1242,7 +836,7 @@ public final class AsymmetricSignResponse extends com.google.protobuf.GeneratedM
      * this field to verify that the intended resource was used for signing.
      * </pre>
      *
-     * <code>string name = 4;</code>
+     * <code>string name = 1;</code>
      *
      * @param value The bytes for name to set.
      * @return This builder for chaining.
@@ -1258,6 +852,407 @@ public final class AsymmetricSignResponse extends com.google.protobuf.GeneratedM
       return this;
     }
 
+    private com.google.protobuf.ByteString mac_ = com.google.protobuf.ByteString.EMPTY;
+    /**
+     *
+     *
+     * <pre>
+     * The created signature.
+     * </pre>
+     *
+     * <code>bytes mac = 2;</code>
+     *
+     * @return The mac.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getMac() {
+      return mac_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The created signature.
+     * </pre>
+     *
+     * <code>bytes mac = 2;</code>
+     *
+     * @param value The mac to set.
+     * @return This builder for chaining.
+     */
+    public Builder setMac(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+
+      mac_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The created signature.
+     * </pre>
+     *
+     * <code>bytes mac = 2;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearMac() {
+
+      mac_ = getDefaultInstance().getMac();
+      onChanged();
+      return this;
+    }
+
+    private com.google.protobuf.Int64Value macCrc32C_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.Int64Value,
+            com.google.protobuf.Int64Value.Builder,
+            com.google.protobuf.Int64ValueOrBuilder>
+        macCrc32CBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Integrity verification field. A CRC32C checksum of the returned
+     * [MacSignResponse.mac][google.cloud.kms.v1.MacSignResponse.mac]. An integrity check of
+     * [MacSignResponse.mac][google.cloud.kms.v1.MacSignResponse.mac] can be performed by computing the
+     * CRC32C checksum of [MacSignResponse.mac][google.cloud.kms.v1.MacSignResponse.mac] and comparing your
+     * results to this field. Discard the response in case of non-matching
+     * checksum values, and perform a limited number of retries. A persistent
+     * mismatch may indicate an issue in your computation of the CRC32C checksum.
+     * Note: This field is defined as int64 for reasons of compatibility across
+     * different languages. However, it is a non-negative integer, which will
+     * never exceed 2^32-1, and can be safely downconverted to uint32 in languages
+     * that support this type.
+     * </pre>
+     *
+     * <code>.google.protobuf.Int64Value mac_crc32c = 3;</code>
+     *
+     * @return Whether the macCrc32c field is set.
+     */
+    public boolean hasMacCrc32C() {
+      return macCrc32CBuilder_ != null || macCrc32C_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Integrity verification field. A CRC32C checksum of the returned
+     * [MacSignResponse.mac][google.cloud.kms.v1.MacSignResponse.mac]. An integrity check of
+     * [MacSignResponse.mac][google.cloud.kms.v1.MacSignResponse.mac] can be performed by computing the
+     * CRC32C checksum of [MacSignResponse.mac][google.cloud.kms.v1.MacSignResponse.mac] and comparing your
+     * results to this field. Discard the response in case of non-matching
+     * checksum values, and perform a limited number of retries. A persistent
+     * mismatch may indicate an issue in your computation of the CRC32C checksum.
+     * Note: This field is defined as int64 for reasons of compatibility across
+     * different languages. However, it is a non-negative integer, which will
+     * never exceed 2^32-1, and can be safely downconverted to uint32 in languages
+     * that support this type.
+     * </pre>
+     *
+     * <code>.google.protobuf.Int64Value mac_crc32c = 3;</code>
+     *
+     * @return The macCrc32c.
+     */
+    public com.google.protobuf.Int64Value getMacCrc32C() {
+      if (macCrc32CBuilder_ == null) {
+        return macCrc32C_ == null
+            ? com.google.protobuf.Int64Value.getDefaultInstance()
+            : macCrc32C_;
+      } else {
+        return macCrc32CBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Integrity verification field. A CRC32C checksum of the returned
+     * [MacSignResponse.mac][google.cloud.kms.v1.MacSignResponse.mac]. An integrity check of
+     * [MacSignResponse.mac][google.cloud.kms.v1.MacSignResponse.mac] can be performed by computing the
+     * CRC32C checksum of [MacSignResponse.mac][google.cloud.kms.v1.MacSignResponse.mac] and comparing your
+     * results to this field. Discard the response in case of non-matching
+     * checksum values, and perform a limited number of retries. A persistent
+     * mismatch may indicate an issue in your computation of the CRC32C checksum.
+     * Note: This field is defined as int64 for reasons of compatibility across
+     * different languages. However, it is a non-negative integer, which will
+     * never exceed 2^32-1, and can be safely downconverted to uint32 in languages
+     * that support this type.
+     * </pre>
+     *
+     * <code>.google.protobuf.Int64Value mac_crc32c = 3;</code>
+     */
+    public Builder setMacCrc32C(com.google.protobuf.Int64Value value) {
+      if (macCrc32CBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        macCrc32C_ = value;
+        onChanged();
+      } else {
+        macCrc32CBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Integrity verification field. A CRC32C checksum of the returned
+     * [MacSignResponse.mac][google.cloud.kms.v1.MacSignResponse.mac]. An integrity check of
+     * [MacSignResponse.mac][google.cloud.kms.v1.MacSignResponse.mac] can be performed by computing the
+     * CRC32C checksum of [MacSignResponse.mac][google.cloud.kms.v1.MacSignResponse.mac] and comparing your
+     * results to this field. Discard the response in case of non-matching
+     * checksum values, and perform a limited number of retries. A persistent
+     * mismatch may indicate an issue in your computation of the CRC32C checksum.
+     * Note: This field is defined as int64 for reasons of compatibility across
+     * different languages. However, it is a non-negative integer, which will
+     * never exceed 2^32-1, and can be safely downconverted to uint32 in languages
+     * that support this type.
+     * </pre>
+     *
+     * <code>.google.protobuf.Int64Value mac_crc32c = 3;</code>
+     */
+    public Builder setMacCrc32C(com.google.protobuf.Int64Value.Builder builderForValue) {
+      if (macCrc32CBuilder_ == null) {
+        macCrc32C_ = builderForValue.build();
+        onChanged();
+      } else {
+        macCrc32CBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Integrity verification field. A CRC32C checksum of the returned
+     * [MacSignResponse.mac][google.cloud.kms.v1.MacSignResponse.mac]. An integrity check of
+     * [MacSignResponse.mac][google.cloud.kms.v1.MacSignResponse.mac] can be performed by computing the
+     * CRC32C checksum of [MacSignResponse.mac][google.cloud.kms.v1.MacSignResponse.mac] and comparing your
+     * results to this field. Discard the response in case of non-matching
+     * checksum values, and perform a limited number of retries. A persistent
+     * mismatch may indicate an issue in your computation of the CRC32C checksum.
+     * Note: This field is defined as int64 for reasons of compatibility across
+     * different languages. However, it is a non-negative integer, which will
+     * never exceed 2^32-1, and can be safely downconverted to uint32 in languages
+     * that support this type.
+     * </pre>
+     *
+     * <code>.google.protobuf.Int64Value mac_crc32c = 3;</code>
+     */
+    public Builder mergeMacCrc32C(com.google.protobuf.Int64Value value) {
+      if (macCrc32CBuilder_ == null) {
+        if (macCrc32C_ != null) {
+          macCrc32C_ =
+              com.google.protobuf.Int64Value.newBuilder(macCrc32C_).mergeFrom(value).buildPartial();
+        } else {
+          macCrc32C_ = value;
+        }
+        onChanged();
+      } else {
+        macCrc32CBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Integrity verification field. A CRC32C checksum of the returned
+     * [MacSignResponse.mac][google.cloud.kms.v1.MacSignResponse.mac]. An integrity check of
+     * [MacSignResponse.mac][google.cloud.kms.v1.MacSignResponse.mac] can be performed by computing the
+     * CRC32C checksum of [MacSignResponse.mac][google.cloud.kms.v1.MacSignResponse.mac] and comparing your
+     * results to this field. Discard the response in case of non-matching
+     * checksum values, and perform a limited number of retries. A persistent
+     * mismatch may indicate an issue in your computation of the CRC32C checksum.
+     * Note: This field is defined as int64 for reasons of compatibility across
+     * different languages. However, it is a non-negative integer, which will
+     * never exceed 2^32-1, and can be safely downconverted to uint32 in languages
+     * that support this type.
+     * </pre>
+     *
+     * <code>.google.protobuf.Int64Value mac_crc32c = 3;</code>
+     */
+    public Builder clearMacCrc32C() {
+      if (macCrc32CBuilder_ == null) {
+        macCrc32C_ = null;
+        onChanged();
+      } else {
+        macCrc32C_ = null;
+        macCrc32CBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Integrity verification field. A CRC32C checksum of the returned
+     * [MacSignResponse.mac][google.cloud.kms.v1.MacSignResponse.mac]. An integrity check of
+     * [MacSignResponse.mac][google.cloud.kms.v1.MacSignResponse.mac] can be performed by computing the
+     * CRC32C checksum of [MacSignResponse.mac][google.cloud.kms.v1.MacSignResponse.mac] and comparing your
+     * results to this field. Discard the response in case of non-matching
+     * checksum values, and perform a limited number of retries. A persistent
+     * mismatch may indicate an issue in your computation of the CRC32C checksum.
+     * Note: This field is defined as int64 for reasons of compatibility across
+     * different languages. However, it is a non-negative integer, which will
+     * never exceed 2^32-1, and can be safely downconverted to uint32 in languages
+     * that support this type.
+     * </pre>
+     *
+     * <code>.google.protobuf.Int64Value mac_crc32c = 3;</code>
+     */
+    public com.google.protobuf.Int64Value.Builder getMacCrc32CBuilder() {
+
+      onChanged();
+      return getMacCrc32CFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Integrity verification field. A CRC32C checksum of the returned
+     * [MacSignResponse.mac][google.cloud.kms.v1.MacSignResponse.mac]. An integrity check of
+     * [MacSignResponse.mac][google.cloud.kms.v1.MacSignResponse.mac] can be performed by computing the
+     * CRC32C checksum of [MacSignResponse.mac][google.cloud.kms.v1.MacSignResponse.mac] and comparing your
+     * results to this field. Discard the response in case of non-matching
+     * checksum values, and perform a limited number of retries. A persistent
+     * mismatch may indicate an issue in your computation of the CRC32C checksum.
+     * Note: This field is defined as int64 for reasons of compatibility across
+     * different languages. However, it is a non-negative integer, which will
+     * never exceed 2^32-1, and can be safely downconverted to uint32 in languages
+     * that support this type.
+     * </pre>
+     *
+     * <code>.google.protobuf.Int64Value mac_crc32c = 3;</code>
+     */
+    public com.google.protobuf.Int64ValueOrBuilder getMacCrc32COrBuilder() {
+      if (macCrc32CBuilder_ != null) {
+        return macCrc32CBuilder_.getMessageOrBuilder();
+      } else {
+        return macCrc32C_ == null
+            ? com.google.protobuf.Int64Value.getDefaultInstance()
+            : macCrc32C_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Integrity verification field. A CRC32C checksum of the returned
+     * [MacSignResponse.mac][google.cloud.kms.v1.MacSignResponse.mac]. An integrity check of
+     * [MacSignResponse.mac][google.cloud.kms.v1.MacSignResponse.mac] can be performed by computing the
+     * CRC32C checksum of [MacSignResponse.mac][google.cloud.kms.v1.MacSignResponse.mac] and comparing your
+     * results to this field. Discard the response in case of non-matching
+     * checksum values, and perform a limited number of retries. A persistent
+     * mismatch may indicate an issue in your computation of the CRC32C checksum.
+     * Note: This field is defined as int64 for reasons of compatibility across
+     * different languages. However, it is a non-negative integer, which will
+     * never exceed 2^32-1, and can be safely downconverted to uint32 in languages
+     * that support this type.
+     * </pre>
+     *
+     * <code>.google.protobuf.Int64Value mac_crc32c = 3;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.Int64Value,
+            com.google.protobuf.Int64Value.Builder,
+            com.google.protobuf.Int64ValueOrBuilder>
+        getMacCrc32CFieldBuilder() {
+      if (macCrc32CBuilder_ == null) {
+        macCrc32CBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.protobuf.Int64Value,
+                com.google.protobuf.Int64Value.Builder,
+                com.google.protobuf.Int64ValueOrBuilder>(
+                getMacCrc32C(), getParentForChildren(), isClean());
+        macCrc32C_ = null;
+      }
+      return macCrc32CBuilder_;
+    }
+
+    private boolean verifiedDataCrc32C_;
+    /**
+     *
+     *
+     * <pre>
+     * Integrity verification field. A flag indicating whether
+     * [MacSignRequest.data_crc32c][google.cloud.kms.v1.MacSignRequest.data_crc32c] was received by
+     * [KeyManagementService][google.cloud.kms.v1.KeyManagementService] and used for the integrity verification of the
+     * [data][google.cloud.kms.v1.MacSignRequest.data]. A false value of this field
+     * indicates either that [MacSignRequest.data_crc32c][google.cloud.kms.v1.MacSignRequest.data_crc32c] was left
+     * unset or that it was not delivered to [KeyManagementService][google.cloud.kms.v1.KeyManagementService]. If you've
+     * set [MacSignRequest.data_crc32c][google.cloud.kms.v1.MacSignRequest.data_crc32c] but this field is still false,
+     * discard the response and perform a limited number of retries.
+     * </pre>
+     *
+     * <code>bool verified_data_crc32c = 4;</code>
+     *
+     * @return The verifiedDataCrc32c.
+     */
+    @java.lang.Override
+    public boolean getVerifiedDataCrc32C() {
+      return verifiedDataCrc32C_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Integrity verification field. A flag indicating whether
+     * [MacSignRequest.data_crc32c][google.cloud.kms.v1.MacSignRequest.data_crc32c] was received by
+     * [KeyManagementService][google.cloud.kms.v1.KeyManagementService] and used for the integrity verification of the
+     * [data][google.cloud.kms.v1.MacSignRequest.data]. A false value of this field
+     * indicates either that [MacSignRequest.data_crc32c][google.cloud.kms.v1.MacSignRequest.data_crc32c] was left
+     * unset or that it was not delivered to [KeyManagementService][google.cloud.kms.v1.KeyManagementService]. If you've
+     * set [MacSignRequest.data_crc32c][google.cloud.kms.v1.MacSignRequest.data_crc32c] but this field is still false,
+     * discard the response and perform a limited number of retries.
+     * </pre>
+     *
+     * <code>bool verified_data_crc32c = 4;</code>
+     *
+     * @param value The verifiedDataCrc32c to set.
+     * @return This builder for chaining.
+     */
+    public Builder setVerifiedDataCrc32C(boolean value) {
+
+      verifiedDataCrc32C_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Integrity verification field. A flag indicating whether
+     * [MacSignRequest.data_crc32c][google.cloud.kms.v1.MacSignRequest.data_crc32c] was received by
+     * [KeyManagementService][google.cloud.kms.v1.KeyManagementService] and used for the integrity verification of the
+     * [data][google.cloud.kms.v1.MacSignRequest.data]. A false value of this field
+     * indicates either that [MacSignRequest.data_crc32c][google.cloud.kms.v1.MacSignRequest.data_crc32c] was left
+     * unset or that it was not delivered to [KeyManagementService][google.cloud.kms.v1.KeyManagementService]. If you've
+     * set [MacSignRequest.data_crc32c][google.cloud.kms.v1.MacSignRequest.data_crc32c] but this field is still false,
+     * discard the response and perform a limited number of retries.
+     * </pre>
+     *
+     * <code>bool verified_data_crc32c = 4;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearVerifiedDataCrc32C() {
+
+      verifiedDataCrc32C_ = false;
+      onChanged();
+      return this;
+    }
+
     private int protectionLevel_ = 0;
     /**
      *
@@ -1266,7 +1261,7 @@ public final class AsymmetricSignResponse extends com.google.protobuf.GeneratedM
      * The [ProtectionLevel][google.cloud.kms.v1.ProtectionLevel] of the [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] used for signing.
      * </pre>
      *
-     * <code>.google.cloud.kms.v1.ProtectionLevel protection_level = 6;</code>
+     * <code>.google.cloud.kms.v1.ProtectionLevel protection_level = 5;</code>
      *
      * @return The enum numeric value on the wire for protectionLevel.
      */
@@ -1281,7 +1276,7 @@ public final class AsymmetricSignResponse extends com.google.protobuf.GeneratedM
      * The [ProtectionLevel][google.cloud.kms.v1.ProtectionLevel] of the [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] used for signing.
      * </pre>
      *
-     * <code>.google.cloud.kms.v1.ProtectionLevel protection_level = 6;</code>
+     * <code>.google.cloud.kms.v1.ProtectionLevel protection_level = 5;</code>
      *
      * @param value The enum numeric value on the wire for protectionLevel to set.
      * @return This builder for chaining.
@@ -1299,7 +1294,7 @@ public final class AsymmetricSignResponse extends com.google.protobuf.GeneratedM
      * The [ProtectionLevel][google.cloud.kms.v1.ProtectionLevel] of the [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] used for signing.
      * </pre>
      *
-     * <code>.google.cloud.kms.v1.ProtectionLevel protection_level = 6;</code>
+     * <code>.google.cloud.kms.v1.ProtectionLevel protection_level = 5;</code>
      *
      * @return The protectionLevel.
      */
@@ -1317,7 +1312,7 @@ public final class AsymmetricSignResponse extends com.google.protobuf.GeneratedM
      * The [ProtectionLevel][google.cloud.kms.v1.ProtectionLevel] of the [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] used for signing.
      * </pre>
      *
-     * <code>.google.cloud.kms.v1.ProtectionLevel protection_level = 6;</code>
+     * <code>.google.cloud.kms.v1.ProtectionLevel protection_level = 5;</code>
      *
      * @param value The protectionLevel to set.
      * @return This builder for chaining.
@@ -1338,7 +1333,7 @@ public final class AsymmetricSignResponse extends com.google.protobuf.GeneratedM
      * The [ProtectionLevel][google.cloud.kms.v1.ProtectionLevel] of the [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] used for signing.
      * </pre>
      *
-     * <code>.google.cloud.kms.v1.ProtectionLevel protection_level = 6;</code>
+     * <code>.google.cloud.kms.v1.ProtectionLevel protection_level = 5;</code>
      *
      * @return This builder for chaining.
      */
@@ -1360,42 +1355,42 @@ public final class AsymmetricSignResponse extends com.google.protobuf.GeneratedM
       return super.mergeUnknownFields(unknownFields);
     }
 
-    // @@protoc_insertion_point(builder_scope:google.cloud.kms.v1.AsymmetricSignResponse)
+    // @@protoc_insertion_point(builder_scope:google.cloud.kms.v1.MacSignResponse)
   }
 
-  // @@protoc_insertion_point(class_scope:google.cloud.kms.v1.AsymmetricSignResponse)
-  private static final com.google.cloud.kms.v1.AsymmetricSignResponse DEFAULT_INSTANCE;
+  // @@protoc_insertion_point(class_scope:google.cloud.kms.v1.MacSignResponse)
+  private static final com.google.cloud.kms.v1.MacSignResponse DEFAULT_INSTANCE;
 
   static {
-    DEFAULT_INSTANCE = new com.google.cloud.kms.v1.AsymmetricSignResponse();
+    DEFAULT_INSTANCE = new com.google.cloud.kms.v1.MacSignResponse();
   }
 
-  public static com.google.cloud.kms.v1.AsymmetricSignResponse getDefaultInstance() {
+  public static com.google.cloud.kms.v1.MacSignResponse getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<AsymmetricSignResponse> PARSER =
-      new com.google.protobuf.AbstractParser<AsymmetricSignResponse>() {
+  private static final com.google.protobuf.Parser<MacSignResponse> PARSER =
+      new com.google.protobuf.AbstractParser<MacSignResponse>() {
         @java.lang.Override
-        public AsymmetricSignResponse parsePartialFrom(
+        public MacSignResponse parsePartialFrom(
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new AsymmetricSignResponse(input, extensionRegistry);
+          return new MacSignResponse(input, extensionRegistry);
         }
       };
 
-  public static com.google.protobuf.Parser<AsymmetricSignResponse> parser() {
+  public static com.google.protobuf.Parser<MacSignResponse> parser() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.protobuf.Parser<AsymmetricSignResponse> getParserForType() {
+  public com.google.protobuf.Parser<MacSignResponse> getParserForType() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.cloud.kms.v1.AsymmetricSignResponse getDefaultInstanceForType() {
+  public com.google.cloud.kms.v1.MacSignResponse getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
 }

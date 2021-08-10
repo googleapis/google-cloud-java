@@ -38,6 +38,8 @@ import com.google.cloud.kms.v1.DecryptResponse;
 import com.google.cloud.kms.v1.DestroyCryptoKeyVersionRequest;
 import com.google.cloud.kms.v1.EncryptRequest;
 import com.google.cloud.kms.v1.EncryptResponse;
+import com.google.cloud.kms.v1.GenerateRandomBytesRequest;
+import com.google.cloud.kms.v1.GenerateRandomBytesResponse;
 import com.google.cloud.kms.v1.GetCryptoKeyRequest;
 import com.google.cloud.kms.v1.GetCryptoKeyVersionRequest;
 import com.google.cloud.kms.v1.GetImportJobRequest;
@@ -54,6 +56,10 @@ import com.google.cloud.kms.v1.ListImportJobsRequest;
 import com.google.cloud.kms.v1.ListImportJobsResponse;
 import com.google.cloud.kms.v1.ListKeyRingsRequest;
 import com.google.cloud.kms.v1.ListKeyRingsResponse;
+import com.google.cloud.kms.v1.MacSignRequest;
+import com.google.cloud.kms.v1.MacSignResponse;
+import com.google.cloud.kms.v1.MacVerifyRequest;
+import com.google.cloud.kms.v1.MacVerifyResponse;
 import com.google.cloud.kms.v1.PublicKey;
 import com.google.cloud.kms.v1.RestoreCryptoKeyVersionRequest;
 import com.google.cloud.kms.v1.UpdateCryptoKeyPrimaryVersionRequest;
@@ -163,6 +169,22 @@ public abstract class KeyManagementServiceStub implements BackgroundResource {
     throw new UnsupportedOperationException("Not implemented: updateCryptoKeyVersionCallable()");
   }
 
+  public UnaryCallable<UpdateCryptoKeyPrimaryVersionRequest, CryptoKey>
+      updateCryptoKeyPrimaryVersionCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: updateCryptoKeyPrimaryVersionCallable()");
+  }
+
+  public UnaryCallable<DestroyCryptoKeyVersionRequest, CryptoKeyVersion>
+      destroyCryptoKeyVersionCallable() {
+    throw new UnsupportedOperationException("Not implemented: destroyCryptoKeyVersionCallable()");
+  }
+
+  public UnaryCallable<RestoreCryptoKeyVersionRequest, CryptoKeyVersion>
+      restoreCryptoKeyVersionCallable() {
+    throw new UnsupportedOperationException("Not implemented: restoreCryptoKeyVersionCallable()");
+  }
+
   public UnaryCallable<EncryptRequest, EncryptResponse> encryptCallable() {
     throw new UnsupportedOperationException("Not implemented: encryptCallable()");
   }
@@ -180,20 +202,17 @@ public abstract class KeyManagementServiceStub implements BackgroundResource {
     throw new UnsupportedOperationException("Not implemented: asymmetricDecryptCallable()");
   }
 
-  public UnaryCallable<UpdateCryptoKeyPrimaryVersionRequest, CryptoKey>
-      updateCryptoKeyPrimaryVersionCallable() {
-    throw new UnsupportedOperationException(
-        "Not implemented: updateCryptoKeyPrimaryVersionCallable()");
+  public UnaryCallable<MacSignRequest, MacSignResponse> macSignCallable() {
+    throw new UnsupportedOperationException("Not implemented: macSignCallable()");
   }
 
-  public UnaryCallable<DestroyCryptoKeyVersionRequest, CryptoKeyVersion>
-      destroyCryptoKeyVersionCallable() {
-    throw new UnsupportedOperationException("Not implemented: destroyCryptoKeyVersionCallable()");
+  public UnaryCallable<MacVerifyRequest, MacVerifyResponse> macVerifyCallable() {
+    throw new UnsupportedOperationException("Not implemented: macVerifyCallable()");
   }
 
-  public UnaryCallable<RestoreCryptoKeyVersionRequest, CryptoKeyVersion>
-      restoreCryptoKeyVersionCallable() {
-    throw new UnsupportedOperationException("Not implemented: restoreCryptoKeyVersionCallable()");
+  public UnaryCallable<GenerateRandomBytesRequest, GenerateRandomBytesResponse>
+      generateRandomBytesCallable() {
+    throw new UnsupportedOperationException("Not implemented: generateRandomBytesCallable()");
   }
 
   public UnaryCallable<SetIamPolicyRequest, Policy> setIamPolicyCallable() {

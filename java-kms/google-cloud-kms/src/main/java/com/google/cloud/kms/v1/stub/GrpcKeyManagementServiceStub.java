@@ -42,6 +42,8 @@ import com.google.cloud.kms.v1.DecryptResponse;
 import com.google.cloud.kms.v1.DestroyCryptoKeyVersionRequest;
 import com.google.cloud.kms.v1.EncryptRequest;
 import com.google.cloud.kms.v1.EncryptResponse;
+import com.google.cloud.kms.v1.GenerateRandomBytesRequest;
+import com.google.cloud.kms.v1.GenerateRandomBytesResponse;
 import com.google.cloud.kms.v1.GetCryptoKeyRequest;
 import com.google.cloud.kms.v1.GetCryptoKeyVersionRequest;
 import com.google.cloud.kms.v1.GetImportJobRequest;
@@ -58,6 +60,10 @@ import com.google.cloud.kms.v1.ListImportJobsRequest;
 import com.google.cloud.kms.v1.ListImportJobsResponse;
 import com.google.cloud.kms.v1.ListKeyRingsRequest;
 import com.google.cloud.kms.v1.ListKeyRingsResponse;
+import com.google.cloud.kms.v1.MacSignRequest;
+import com.google.cloud.kms.v1.MacSignResponse;
+import com.google.cloud.kms.v1.MacVerifyRequest;
+import com.google.cloud.kms.v1.MacVerifyResponse;
 import com.google.cloud.kms.v1.PublicKey;
 import com.google.cloud.kms.v1.RestoreCryptoKeyVersionRequest;
 import com.google.cloud.kms.v1.UpdateCryptoKeyPrimaryVersionRequest;
@@ -242,6 +248,37 @@ public class GrpcKeyManagementServiceStub extends KeyManagementServiceStub {
               .setResponseMarshaller(ProtoUtils.marshaller(CryptoKeyVersion.getDefaultInstance()))
               .build();
 
+  private static final MethodDescriptor<UpdateCryptoKeyPrimaryVersionRequest, CryptoKey>
+      updateCryptoKeyPrimaryVersionMethodDescriptor =
+          MethodDescriptor.<UpdateCryptoKeyPrimaryVersionRequest, CryptoKey>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.kms.v1.KeyManagementService/UpdateCryptoKeyPrimaryVersion")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(UpdateCryptoKeyPrimaryVersionRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(CryptoKey.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<DestroyCryptoKeyVersionRequest, CryptoKeyVersion>
+      destroyCryptoKeyVersionMethodDescriptor =
+          MethodDescriptor.<DestroyCryptoKeyVersionRequest, CryptoKeyVersion>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.kms.v1.KeyManagementService/DestroyCryptoKeyVersion")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(DestroyCryptoKeyVersionRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(CryptoKeyVersion.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<RestoreCryptoKeyVersionRequest, CryptoKeyVersion>
+      restoreCryptoKeyVersionMethodDescriptor =
+          MethodDescriptor.<RestoreCryptoKeyVersionRequest, CryptoKeyVersion>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.kms.v1.KeyManagementService/RestoreCryptoKeyVersion")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(RestoreCryptoKeyVersionRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(CryptoKeyVersion.getDefaultInstance()))
+              .build();
+
   private static final MethodDescriptor<EncryptRequest, EncryptResponse> encryptMethodDescriptor =
       MethodDescriptor.<EncryptRequest, EncryptResponse>newBuilder()
           .setType(MethodDescriptor.MethodType.UNARY)
@@ -280,35 +317,32 @@ public class GrpcKeyManagementServiceStub extends KeyManagementServiceStub {
                   ProtoUtils.marshaller(AsymmetricDecryptResponse.getDefaultInstance()))
               .build();
 
-  private static final MethodDescriptor<UpdateCryptoKeyPrimaryVersionRequest, CryptoKey>
-      updateCryptoKeyPrimaryVersionMethodDescriptor =
-          MethodDescriptor.<UpdateCryptoKeyPrimaryVersionRequest, CryptoKey>newBuilder()
+  private static final MethodDescriptor<MacSignRequest, MacSignResponse> macSignMethodDescriptor =
+      MethodDescriptor.<MacSignRequest, MacSignResponse>newBuilder()
+          .setType(MethodDescriptor.MethodType.UNARY)
+          .setFullMethodName("google.cloud.kms.v1.KeyManagementService/MacSign")
+          .setRequestMarshaller(ProtoUtils.marshaller(MacSignRequest.getDefaultInstance()))
+          .setResponseMarshaller(ProtoUtils.marshaller(MacSignResponse.getDefaultInstance()))
+          .build();
+
+  private static final MethodDescriptor<MacVerifyRequest, MacVerifyResponse>
+      macVerifyMethodDescriptor =
+          MethodDescriptor.<MacVerifyRequest, MacVerifyResponse>newBuilder()
               .setType(MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(
-                  "google.cloud.kms.v1.KeyManagementService/UpdateCryptoKeyPrimaryVersion")
-              .setRequestMarshaller(
-                  ProtoUtils.marshaller(UpdateCryptoKeyPrimaryVersionRequest.getDefaultInstance()))
-              .setResponseMarshaller(ProtoUtils.marshaller(CryptoKey.getDefaultInstance()))
+              .setFullMethodName("google.cloud.kms.v1.KeyManagementService/MacVerify")
+              .setRequestMarshaller(ProtoUtils.marshaller(MacVerifyRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(MacVerifyResponse.getDefaultInstance()))
               .build();
 
-  private static final MethodDescriptor<DestroyCryptoKeyVersionRequest, CryptoKeyVersion>
-      destroyCryptoKeyVersionMethodDescriptor =
-          MethodDescriptor.<DestroyCryptoKeyVersionRequest, CryptoKeyVersion>newBuilder()
+  private static final MethodDescriptor<GenerateRandomBytesRequest, GenerateRandomBytesResponse>
+      generateRandomBytesMethodDescriptor =
+          MethodDescriptor.<GenerateRandomBytesRequest, GenerateRandomBytesResponse>newBuilder()
               .setType(MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName("google.cloud.kms.v1.KeyManagementService/DestroyCryptoKeyVersion")
+              .setFullMethodName("google.cloud.kms.v1.KeyManagementService/GenerateRandomBytes")
               .setRequestMarshaller(
-                  ProtoUtils.marshaller(DestroyCryptoKeyVersionRequest.getDefaultInstance()))
-              .setResponseMarshaller(ProtoUtils.marshaller(CryptoKeyVersion.getDefaultInstance()))
-              .build();
-
-  private static final MethodDescriptor<RestoreCryptoKeyVersionRequest, CryptoKeyVersion>
-      restoreCryptoKeyVersionMethodDescriptor =
-          MethodDescriptor.<RestoreCryptoKeyVersionRequest, CryptoKeyVersion>newBuilder()
-              .setType(MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName("google.cloud.kms.v1.KeyManagementService/RestoreCryptoKeyVersion")
-              .setRequestMarshaller(
-                  ProtoUtils.marshaller(RestoreCryptoKeyVersionRequest.getDefaultInstance()))
-              .setResponseMarshaller(ProtoUtils.marshaller(CryptoKeyVersion.getDefaultInstance()))
+                  ProtoUtils.marshaller(GenerateRandomBytesRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(GenerateRandomBytesResponse.getDefaultInstance()))
               .build();
 
   private static final MethodDescriptor<SetIamPolicyRequest, Policy> setIamPolicyMethodDescriptor =
@@ -367,17 +401,21 @@ public class GrpcKeyManagementServiceStub extends KeyManagementServiceStub {
   private final UnaryCallable<UpdateCryptoKeyRequest, CryptoKey> updateCryptoKeyCallable;
   private final UnaryCallable<UpdateCryptoKeyVersionRequest, CryptoKeyVersion>
       updateCryptoKeyVersionCallable;
-  private final UnaryCallable<EncryptRequest, EncryptResponse> encryptCallable;
-  private final UnaryCallable<DecryptRequest, DecryptResponse> decryptCallable;
-  private final UnaryCallable<AsymmetricSignRequest, AsymmetricSignResponse> asymmetricSignCallable;
-  private final UnaryCallable<AsymmetricDecryptRequest, AsymmetricDecryptResponse>
-      asymmetricDecryptCallable;
   private final UnaryCallable<UpdateCryptoKeyPrimaryVersionRequest, CryptoKey>
       updateCryptoKeyPrimaryVersionCallable;
   private final UnaryCallable<DestroyCryptoKeyVersionRequest, CryptoKeyVersion>
       destroyCryptoKeyVersionCallable;
   private final UnaryCallable<RestoreCryptoKeyVersionRequest, CryptoKeyVersion>
       restoreCryptoKeyVersionCallable;
+  private final UnaryCallable<EncryptRequest, EncryptResponse> encryptCallable;
+  private final UnaryCallable<DecryptRequest, DecryptResponse> decryptCallable;
+  private final UnaryCallable<AsymmetricSignRequest, AsymmetricSignResponse> asymmetricSignCallable;
+  private final UnaryCallable<AsymmetricDecryptRequest, AsymmetricDecryptResponse>
+      asymmetricDecryptCallable;
+  private final UnaryCallable<MacSignRequest, MacSignResponse> macSignCallable;
+  private final UnaryCallable<MacVerifyRequest, MacVerifyResponse> macVerifyCallable;
+  private final UnaryCallable<GenerateRandomBytesRequest, GenerateRandomBytesResponse>
+      generateRandomBytesCallable;
   private final UnaryCallable<SetIamPolicyRequest, Policy> setIamPolicyCallable;
   private final UnaryCallable<GetIamPolicyRequest, Policy> getIamPolicyCallable;
   private final UnaryCallable<TestIamPermissionsRequest, TestIamPermissionsResponse>
@@ -597,6 +635,39 @@ public class GrpcKeyManagementServiceStub extends KeyManagementServiceStub {
                       return params.build();
                     })
                 .build();
+    GrpcCallSettings<UpdateCryptoKeyPrimaryVersionRequest, CryptoKey>
+        updateCryptoKeyPrimaryVersionTransportSettings =
+            GrpcCallSettings.<UpdateCryptoKeyPrimaryVersionRequest, CryptoKey>newBuilder()
+                .setMethodDescriptor(updateCryptoKeyPrimaryVersionMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("name", String.valueOf(request.getName()));
+                      return params.build();
+                    })
+                .build();
+    GrpcCallSettings<DestroyCryptoKeyVersionRequest, CryptoKeyVersion>
+        destroyCryptoKeyVersionTransportSettings =
+            GrpcCallSettings.<DestroyCryptoKeyVersionRequest, CryptoKeyVersion>newBuilder()
+                .setMethodDescriptor(destroyCryptoKeyVersionMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("name", String.valueOf(request.getName()));
+                      return params.build();
+                    })
+                .build();
+    GrpcCallSettings<RestoreCryptoKeyVersionRequest, CryptoKeyVersion>
+        restoreCryptoKeyVersionTransportSettings =
+            GrpcCallSettings.<RestoreCryptoKeyVersionRequest, CryptoKeyVersion>newBuilder()
+                .setMethodDescriptor(restoreCryptoKeyVersionMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("name", String.valueOf(request.getName()));
+                      return params.build();
+                    })
+                .build();
     GrpcCallSettings<EncryptRequest, EncryptResponse> encryptTransportSettings =
         GrpcCallSettings.<EncryptRequest, EncryptResponse>newBuilder()
             .setMethodDescriptor(encryptMethodDescriptor)
@@ -639,36 +710,34 @@ public class GrpcKeyManagementServiceStub extends KeyManagementServiceStub {
                       return params.build();
                     })
                 .build();
-    GrpcCallSettings<UpdateCryptoKeyPrimaryVersionRequest, CryptoKey>
-        updateCryptoKeyPrimaryVersionTransportSettings =
-            GrpcCallSettings.<UpdateCryptoKeyPrimaryVersionRequest, CryptoKey>newBuilder()
-                .setMethodDescriptor(updateCryptoKeyPrimaryVersionMethodDescriptor)
+    GrpcCallSettings<MacSignRequest, MacSignResponse> macSignTransportSettings =
+        GrpcCallSettings.<MacSignRequest, MacSignResponse>newBuilder()
+            .setMethodDescriptor(macSignMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  return params.build();
+                })
+            .build();
+    GrpcCallSettings<MacVerifyRequest, MacVerifyResponse> macVerifyTransportSettings =
+        GrpcCallSettings.<MacVerifyRequest, MacVerifyResponse>newBuilder()
+            .setMethodDescriptor(macVerifyMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  return params.build();
+                })
+            .build();
+    GrpcCallSettings<GenerateRandomBytesRequest, GenerateRandomBytesResponse>
+        generateRandomBytesTransportSettings =
+            GrpcCallSettings.<GenerateRandomBytesRequest, GenerateRandomBytesResponse>newBuilder()
+                .setMethodDescriptor(generateRandomBytesMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
                       ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("name", String.valueOf(request.getName()));
-                      return params.build();
-                    })
-                .build();
-    GrpcCallSettings<DestroyCryptoKeyVersionRequest, CryptoKeyVersion>
-        destroyCryptoKeyVersionTransportSettings =
-            GrpcCallSettings.<DestroyCryptoKeyVersionRequest, CryptoKeyVersion>newBuilder()
-                .setMethodDescriptor(destroyCryptoKeyVersionMethodDescriptor)
-                .setParamsExtractor(
-                    request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("name", String.valueOf(request.getName()));
-                      return params.build();
-                    })
-                .build();
-    GrpcCallSettings<RestoreCryptoKeyVersionRequest, CryptoKeyVersion>
-        restoreCryptoKeyVersionTransportSettings =
-            GrpcCallSettings.<RestoreCryptoKeyVersionRequest, CryptoKeyVersion>newBuilder()
-                .setMethodDescriptor(restoreCryptoKeyVersionMethodDescriptor)
-                .setParamsExtractor(
-                    request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("name", String.valueOf(request.getName()));
+                      params.put("location", String.valueOf(request.getLocation()));
                       return params.build();
                     })
                 .build();
@@ -776,20 +845,6 @@ public class GrpcKeyManagementServiceStub extends KeyManagementServiceStub {
             updateCryptoKeyVersionTransportSettings,
             settings.updateCryptoKeyVersionSettings(),
             clientContext);
-    this.encryptCallable =
-        callableFactory.createUnaryCallable(
-            encryptTransportSettings, settings.encryptSettings(), clientContext);
-    this.decryptCallable =
-        callableFactory.createUnaryCallable(
-            decryptTransportSettings, settings.decryptSettings(), clientContext);
-    this.asymmetricSignCallable =
-        callableFactory.createUnaryCallable(
-            asymmetricSignTransportSettings, settings.asymmetricSignSettings(), clientContext);
-    this.asymmetricDecryptCallable =
-        callableFactory.createUnaryCallable(
-            asymmetricDecryptTransportSettings,
-            settings.asymmetricDecryptSettings(),
-            clientContext);
     this.updateCryptoKeyPrimaryVersionCallable =
         callableFactory.createUnaryCallable(
             updateCryptoKeyPrimaryVersionTransportSettings,
@@ -804,6 +859,31 @@ public class GrpcKeyManagementServiceStub extends KeyManagementServiceStub {
         callableFactory.createUnaryCallable(
             restoreCryptoKeyVersionTransportSettings,
             settings.restoreCryptoKeyVersionSettings(),
+            clientContext);
+    this.encryptCallable =
+        callableFactory.createUnaryCallable(
+            encryptTransportSettings, settings.encryptSettings(), clientContext);
+    this.decryptCallable =
+        callableFactory.createUnaryCallable(
+            decryptTransportSettings, settings.decryptSettings(), clientContext);
+    this.asymmetricSignCallable =
+        callableFactory.createUnaryCallable(
+            asymmetricSignTransportSettings, settings.asymmetricSignSettings(), clientContext);
+    this.asymmetricDecryptCallable =
+        callableFactory.createUnaryCallable(
+            asymmetricDecryptTransportSettings,
+            settings.asymmetricDecryptSettings(),
+            clientContext);
+    this.macSignCallable =
+        callableFactory.createUnaryCallable(
+            macSignTransportSettings, settings.macSignSettings(), clientContext);
+    this.macVerifyCallable =
+        callableFactory.createUnaryCallable(
+            macVerifyTransportSettings, settings.macVerifySettings(), clientContext);
+    this.generateRandomBytesCallable =
+        callableFactory.createUnaryCallable(
+            generateRandomBytesTransportSettings,
+            settings.generateRandomBytesSettings(),
             clientContext);
     this.setIamPolicyCallable =
         callableFactory.createUnaryCallable(
@@ -933,6 +1013,24 @@ public class GrpcKeyManagementServiceStub extends KeyManagementServiceStub {
   }
 
   @Override
+  public UnaryCallable<UpdateCryptoKeyPrimaryVersionRequest, CryptoKey>
+      updateCryptoKeyPrimaryVersionCallable() {
+    return updateCryptoKeyPrimaryVersionCallable;
+  }
+
+  @Override
+  public UnaryCallable<DestroyCryptoKeyVersionRequest, CryptoKeyVersion>
+      destroyCryptoKeyVersionCallable() {
+    return destroyCryptoKeyVersionCallable;
+  }
+
+  @Override
+  public UnaryCallable<RestoreCryptoKeyVersionRequest, CryptoKeyVersion>
+      restoreCryptoKeyVersionCallable() {
+    return restoreCryptoKeyVersionCallable;
+  }
+
+  @Override
   public UnaryCallable<EncryptRequest, EncryptResponse> encryptCallable() {
     return encryptCallable;
   }
@@ -954,21 +1052,19 @@ public class GrpcKeyManagementServiceStub extends KeyManagementServiceStub {
   }
 
   @Override
-  public UnaryCallable<UpdateCryptoKeyPrimaryVersionRequest, CryptoKey>
-      updateCryptoKeyPrimaryVersionCallable() {
-    return updateCryptoKeyPrimaryVersionCallable;
+  public UnaryCallable<MacSignRequest, MacSignResponse> macSignCallable() {
+    return macSignCallable;
   }
 
   @Override
-  public UnaryCallable<DestroyCryptoKeyVersionRequest, CryptoKeyVersion>
-      destroyCryptoKeyVersionCallable() {
-    return destroyCryptoKeyVersionCallable;
+  public UnaryCallable<MacVerifyRequest, MacVerifyResponse> macVerifyCallable() {
+    return macVerifyCallable;
   }
 
   @Override
-  public UnaryCallable<RestoreCryptoKeyVersionRequest, CryptoKeyVersion>
-      restoreCryptoKeyVersionCallable() {
-    return restoreCryptoKeyVersionCallable;
+  public UnaryCallable<GenerateRandomBytesRequest, GenerateRandomBytesResponse>
+      generateRandomBytesCallable() {
+    return generateRandomBytesCallable;
   }
 
   @Override

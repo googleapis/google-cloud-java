@@ -18,9 +18,9 @@
 
 package com.google.cloud.kms.v1;
 
-public interface AsymmetricSignRequestOrBuilder
+public interface MacSignRequestOrBuilder
     extends
-    // @@protoc_insertion_point(interface_extends:google.cloud.kms.v1.AsymmetricSignRequest)
+    // @@protoc_insertion_point(interface_extends:google.cloud.kms.v1.MacSignRequest)
     com.google.protobuf.MessageOrBuilder {
 
   /**
@@ -56,54 +56,27 @@ public interface AsymmetricSignRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The digest of the data to sign. The digest must be produced with
-   * the same digest algorithm as specified by the key version's
-   * [algorithm][google.cloud.kms.v1.CryptoKeyVersion.algorithm].
+   * Required. The data to sign. The MAC tag is computed over this data field based on
+   * the specific algorithm.
    * </pre>
    *
-   * <code>.google.cloud.kms.v1.Digest digest = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>bytes data = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    *
-   * @return Whether the digest field is set.
+   * @return The data.
    */
-  boolean hasDigest();
-  /**
-   *
-   *
-   * <pre>
-   * Required. The digest of the data to sign. The digest must be produced with
-   * the same digest algorithm as specified by the key version's
-   * [algorithm][google.cloud.kms.v1.CryptoKeyVersion.algorithm].
-   * </pre>
-   *
-   * <code>.google.cloud.kms.v1.Digest digest = 3 [(.google.api.field_behavior) = REQUIRED];</code>
-   *
-   * @return The digest.
-   */
-  com.google.cloud.kms.v1.Digest getDigest();
-  /**
-   *
-   *
-   * <pre>
-   * Required. The digest of the data to sign. The digest must be produced with
-   * the same digest algorithm as specified by the key version's
-   * [algorithm][google.cloud.kms.v1.CryptoKeyVersion.algorithm].
-   * </pre>
-   *
-   * <code>.google.cloud.kms.v1.Digest digest = 3 [(.google.api.field_behavior) = REQUIRED];</code>
-   */
-  com.google.cloud.kms.v1.DigestOrBuilder getDigestOrBuilder();
+  com.google.protobuf.ByteString getData();
 
   /**
    *
    *
    * <pre>
-   * Optional. An optional CRC32C checksum of the [AsymmetricSignRequest.digest][google.cloud.kms.v1.AsymmetricSignRequest.digest]. If
+   * Optional. An optional CRC32C checksum of the [MacSignRequest.data][google.cloud.kms.v1.MacSignRequest.data]. If
    * specified, [KeyManagementService][google.cloud.kms.v1.KeyManagementService] will verify the integrity of the
-   * received [AsymmetricSignRequest.digest][google.cloud.kms.v1.AsymmetricSignRequest.digest] using this checksum.
+   * received [MacSignRequest.data][google.cloud.kms.v1.MacSignRequest.data] using this checksum.
    * [KeyManagementService][google.cloud.kms.v1.KeyManagementService] will report an error if the checksum verification
    * fails. If you receive a checksum error, your client should verify that
-   * CRC32C([AsymmetricSignRequest.digest][google.cloud.kms.v1.AsymmetricSignRequest.digest]) is equal to
-   * [AsymmetricSignRequest.digest_crc32c][google.cloud.kms.v1.AsymmetricSignRequest.digest_crc32c], and if so, perform a limited
+   * CRC32C([MacSignRequest.data][google.cloud.kms.v1.MacSignRequest.data]) is equal to
+   * [MacSignRequest.data_crc32c][google.cloud.kms.v1.MacSignRequest.data_crc32c], and if so, perform a limited
    * number of retries. A persistent mismatch may indicate an issue in your
    * computation of the CRC32C checksum.
    * Note: This field is defined as int64 for reasons of compatibility across
@@ -112,23 +85,23 @@ public interface AsymmetricSignRequestOrBuilder
    * that support this type.
    * </pre>
    *
-   * <code>.google.protobuf.Int64Value digest_crc32c = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * <code>.google.protobuf.Int64Value data_crc32c = 3 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
-   * @return Whether the digestCrc32c field is set.
+   * @return Whether the dataCrc32c field is set.
    */
-  boolean hasDigestCrc32C();
+  boolean hasDataCrc32C();
   /**
    *
    *
    * <pre>
-   * Optional. An optional CRC32C checksum of the [AsymmetricSignRequest.digest][google.cloud.kms.v1.AsymmetricSignRequest.digest]. If
+   * Optional. An optional CRC32C checksum of the [MacSignRequest.data][google.cloud.kms.v1.MacSignRequest.data]. If
    * specified, [KeyManagementService][google.cloud.kms.v1.KeyManagementService] will verify the integrity of the
-   * received [AsymmetricSignRequest.digest][google.cloud.kms.v1.AsymmetricSignRequest.digest] using this checksum.
+   * received [MacSignRequest.data][google.cloud.kms.v1.MacSignRequest.data] using this checksum.
    * [KeyManagementService][google.cloud.kms.v1.KeyManagementService] will report an error if the checksum verification
    * fails. If you receive a checksum error, your client should verify that
-   * CRC32C([AsymmetricSignRequest.digest][google.cloud.kms.v1.AsymmetricSignRequest.digest]) is equal to
-   * [AsymmetricSignRequest.digest_crc32c][google.cloud.kms.v1.AsymmetricSignRequest.digest_crc32c], and if so, perform a limited
+   * CRC32C([MacSignRequest.data][google.cloud.kms.v1.MacSignRequest.data]) is equal to
+   * [MacSignRequest.data_crc32c][google.cloud.kms.v1.MacSignRequest.data_crc32c], and if so, perform a limited
    * number of retries. A persistent mismatch may indicate an issue in your
    * computation of the CRC32C checksum.
    * Note: This field is defined as int64 for reasons of compatibility across
@@ -137,23 +110,23 @@ public interface AsymmetricSignRequestOrBuilder
    * that support this type.
    * </pre>
    *
-   * <code>.google.protobuf.Int64Value digest_crc32c = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * <code>.google.protobuf.Int64Value data_crc32c = 3 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
-   * @return The digestCrc32c.
+   * @return The dataCrc32c.
    */
-  com.google.protobuf.Int64Value getDigestCrc32C();
+  com.google.protobuf.Int64Value getDataCrc32C();
   /**
    *
    *
    * <pre>
-   * Optional. An optional CRC32C checksum of the [AsymmetricSignRequest.digest][google.cloud.kms.v1.AsymmetricSignRequest.digest]. If
+   * Optional. An optional CRC32C checksum of the [MacSignRequest.data][google.cloud.kms.v1.MacSignRequest.data]. If
    * specified, [KeyManagementService][google.cloud.kms.v1.KeyManagementService] will verify the integrity of the
-   * received [AsymmetricSignRequest.digest][google.cloud.kms.v1.AsymmetricSignRequest.digest] using this checksum.
+   * received [MacSignRequest.data][google.cloud.kms.v1.MacSignRequest.data] using this checksum.
    * [KeyManagementService][google.cloud.kms.v1.KeyManagementService] will report an error if the checksum verification
    * fails. If you receive a checksum error, your client should verify that
-   * CRC32C([AsymmetricSignRequest.digest][google.cloud.kms.v1.AsymmetricSignRequest.digest]) is equal to
-   * [AsymmetricSignRequest.digest_crc32c][google.cloud.kms.v1.AsymmetricSignRequest.digest_crc32c], and if so, perform a limited
+   * CRC32C([MacSignRequest.data][google.cloud.kms.v1.MacSignRequest.data]) is equal to
+   * [MacSignRequest.data_crc32c][google.cloud.kms.v1.MacSignRequest.data_crc32c], and if so, perform a limited
    * number of retries. A persistent mismatch may indicate an issue in your
    * computation of the CRC32C checksum.
    * Note: This field is defined as int64 for reasons of compatibility across
@@ -162,8 +135,8 @@ public interface AsymmetricSignRequestOrBuilder
    * that support this type.
    * </pre>
    *
-   * <code>.google.protobuf.Int64Value digest_crc32c = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * <code>.google.protobuf.Int64Value data_crc32c = 3 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
-  com.google.protobuf.Int64ValueOrBuilder getDigestCrc32COrBuilder();
+  com.google.protobuf.Int64ValueOrBuilder getDataCrc32COrBuilder();
 }

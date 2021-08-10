@@ -397,5 +397,71 @@ public interface CryptoKeyOrBuilder
    */
   java.lang.String getLabelsOrThrow(java.lang.String key);
 
+  /**
+   *
+   *
+   * <pre>
+   * Immutable. Whether this key may contain imported versions only.
+   * </pre>
+   *
+   * <code>bool import_only = 13 [(.google.api.field_behavior) = IMMUTABLE];</code>
+   *
+   * @return The importOnly.
+   */
+  boolean getImportOnly();
+
+  /**
+   *
+   *
+   * <pre>
+   * Immutable. The period of time that versions of this key spend in the
+   * [DESTROY_SCHEDULED][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionState.DESTROY_SCHEDULED]
+   * state before transitioning to
+   * [DESTROYED][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionState.DESTROYED]. If not
+   * specified at creation time, the default duration is 24 hours.
+   * </pre>
+   *
+   * <code>
+   * .google.protobuf.Duration destroy_scheduled_duration = 14 [(.google.api.field_behavior) = IMMUTABLE];
+   * </code>
+   *
+   * @return Whether the destroyScheduledDuration field is set.
+   */
+  boolean hasDestroyScheduledDuration();
+  /**
+   *
+   *
+   * <pre>
+   * Immutable. The period of time that versions of this key spend in the
+   * [DESTROY_SCHEDULED][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionState.DESTROY_SCHEDULED]
+   * state before transitioning to
+   * [DESTROYED][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionState.DESTROYED]. If not
+   * specified at creation time, the default duration is 24 hours.
+   * </pre>
+   *
+   * <code>
+   * .google.protobuf.Duration destroy_scheduled_duration = 14 [(.google.api.field_behavior) = IMMUTABLE];
+   * </code>
+   *
+   * @return The destroyScheduledDuration.
+   */
+  com.google.protobuf.Duration getDestroyScheduledDuration();
+  /**
+   *
+   *
+   * <pre>
+   * Immutable. The period of time that versions of this key spend in the
+   * [DESTROY_SCHEDULED][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionState.DESTROY_SCHEDULED]
+   * state before transitioning to
+   * [DESTROYED][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionState.DESTROYED]. If not
+   * specified at creation time, the default duration is 24 hours.
+   * </pre>
+   *
+   * <code>
+   * .google.protobuf.Duration destroy_scheduled_duration = 14 [(.google.api.field_behavior) = IMMUTABLE];
+   * </code>
+   */
+  com.google.protobuf.DurationOrBuilder getDestroyScheduledDurationOrBuilder();
+
   public com.google.cloud.kms.v1.CryptoKey.RotationScheduleCase getRotationScheduleCase();
 }

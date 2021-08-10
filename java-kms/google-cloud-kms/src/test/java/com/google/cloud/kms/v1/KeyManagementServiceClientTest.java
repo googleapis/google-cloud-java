@@ -40,6 +40,7 @@ import com.google.iam.v1.TestIamPermissionsRequest;
 import com.google.iam.v1.TestIamPermissionsResponse;
 import com.google.protobuf.AbstractMessage;
 import com.google.protobuf.ByteString;
+import com.google.protobuf.Duration;
 import com.google.protobuf.FieldMask;
 import com.google.protobuf.Int64Value;
 import com.google.protobuf.Timestamp;
@@ -545,6 +546,8 @@ public class KeyManagementServiceClientTest {
             .setNextRotationTime(Timestamp.newBuilder().build())
             .setVersionTemplate(CryptoKeyVersionTemplate.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())
+            .setImportOnly(true)
+            .setDestroyScheduledDuration(Duration.newBuilder().build())
             .build();
     mockKeyManagementService.addResponse(expectedResponse);
 
@@ -591,6 +594,8 @@ public class KeyManagementServiceClientTest {
             .setNextRotationTime(Timestamp.newBuilder().build())
             .setVersionTemplate(CryptoKeyVersionTemplate.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())
+            .setImportOnly(true)
+            .setDestroyScheduledDuration(Duration.newBuilder().build())
             .build();
     mockKeyManagementService.addResponse(expectedResponse);
 
@@ -745,6 +750,7 @@ public class KeyManagementServiceClientTest {
             .setPem("pem110872")
             .setPemCrc32C(Int64Value.newBuilder().build())
             .setName("name3373707")
+            .setProtectionLevel(ProtectionLevel.forNumber(0))
             .build();
     mockKeyManagementService.addResponse(expectedResponse);
 
@@ -789,6 +795,7 @@ public class KeyManagementServiceClientTest {
             .setPem("pem110872")
             .setPemCrc32C(Int64Value.newBuilder().build())
             .setName("name3373707")
+            .setProtectionLevel(ProtectionLevel.forNumber(0))
             .build();
     mockKeyManagementService.addResponse(expectedResponse);
 
@@ -1019,6 +1026,8 @@ public class KeyManagementServiceClientTest {
             .setNextRotationTime(Timestamp.newBuilder().build())
             .setVersionTemplate(CryptoKeyVersionTemplate.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())
+            .setImportOnly(true)
+            .setDestroyScheduledDuration(Duration.newBuilder().build())
             .build();
     mockKeyManagementService.addResponse(expectedResponse);
 
@@ -1070,6 +1079,8 @@ public class KeyManagementServiceClientTest {
             .setNextRotationTime(Timestamp.newBuilder().build())
             .setVersionTemplate(CryptoKeyVersionTemplate.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())
+            .setImportOnly(true)
+            .setDestroyScheduledDuration(Duration.newBuilder().build())
             .build();
     mockKeyManagementService.addResponse(expectedResponse);
 
@@ -1418,6 +1429,8 @@ public class KeyManagementServiceClientTest {
             .setNextRotationTime(Timestamp.newBuilder().build())
             .setVersionTemplate(CryptoKeyVersionTemplate.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())
+            .setImportOnly(true)
+            .setDestroyScheduledDuration(Duration.newBuilder().build())
             .build();
     mockKeyManagementService.addResponse(expectedResponse);
 
@@ -1514,363 +1527,6 @@ public class KeyManagementServiceClientTest {
   }
 
   @Test
-  public void encryptTest() throws Exception {
-    EncryptResponse expectedResponse =
-        EncryptResponse.newBuilder()
-            .setName("name3373707")
-            .setCiphertext(ByteString.EMPTY)
-            .setCiphertextCrc32C(Int64Value.newBuilder().build())
-            .setVerifiedPlaintextCrc32C(true)
-            .setVerifiedAdditionalAuthenticatedDataCrc32C(true)
-            .build();
-    mockKeyManagementService.addResponse(expectedResponse);
-
-    ResourceName name = KeyRingName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]");
-    ByteString plaintext = ByteString.EMPTY;
-
-    EncryptResponse actualResponse = client.encrypt(name, plaintext);
-    Assert.assertEquals(expectedResponse, actualResponse);
-
-    List<AbstractMessage> actualRequests = mockKeyManagementService.getRequests();
-    Assert.assertEquals(1, actualRequests.size());
-    EncryptRequest actualRequest = ((EncryptRequest) actualRequests.get(0));
-
-    Assert.assertEquals(name.toString(), actualRequest.getName());
-    Assert.assertEquals(plaintext, actualRequest.getPlaintext());
-    Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
-  }
-
-  @Test
-  public void encryptExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
-    mockKeyManagementService.addException(exception);
-
-    try {
-      ResourceName name = KeyRingName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]");
-      ByteString plaintext = ByteString.EMPTY;
-      client.encrypt(name, plaintext);
-      Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception.
-    }
-  }
-
-  @Test
-  public void encryptTest2() throws Exception {
-    EncryptResponse expectedResponse =
-        EncryptResponse.newBuilder()
-            .setName("name3373707")
-            .setCiphertext(ByteString.EMPTY)
-            .setCiphertextCrc32C(Int64Value.newBuilder().build())
-            .setVerifiedPlaintextCrc32C(true)
-            .setVerifiedAdditionalAuthenticatedDataCrc32C(true)
-            .build();
-    mockKeyManagementService.addResponse(expectedResponse);
-
-    String name = "name3373707";
-    ByteString plaintext = ByteString.EMPTY;
-
-    EncryptResponse actualResponse = client.encrypt(name, plaintext);
-    Assert.assertEquals(expectedResponse, actualResponse);
-
-    List<AbstractMessage> actualRequests = mockKeyManagementService.getRequests();
-    Assert.assertEquals(1, actualRequests.size());
-    EncryptRequest actualRequest = ((EncryptRequest) actualRequests.get(0));
-
-    Assert.assertEquals(name, actualRequest.getName());
-    Assert.assertEquals(plaintext, actualRequest.getPlaintext());
-    Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
-  }
-
-  @Test
-  public void encryptExceptionTest2() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
-    mockKeyManagementService.addException(exception);
-
-    try {
-      String name = "name3373707";
-      ByteString plaintext = ByteString.EMPTY;
-      client.encrypt(name, plaintext);
-      Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception.
-    }
-  }
-
-  @Test
-  public void decryptTest() throws Exception {
-    DecryptResponse expectedResponse =
-        DecryptResponse.newBuilder()
-            .setPlaintext(ByteString.EMPTY)
-            .setPlaintextCrc32C(Int64Value.newBuilder().build())
-            .build();
-    mockKeyManagementService.addResponse(expectedResponse);
-
-    CryptoKeyName name = CryptoKeyName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]", "[CRYPTO_KEY]");
-    ByteString ciphertext = ByteString.EMPTY;
-
-    DecryptResponse actualResponse = client.decrypt(name, ciphertext);
-    Assert.assertEquals(expectedResponse, actualResponse);
-
-    List<AbstractMessage> actualRequests = mockKeyManagementService.getRequests();
-    Assert.assertEquals(1, actualRequests.size());
-    DecryptRequest actualRequest = ((DecryptRequest) actualRequests.get(0));
-
-    Assert.assertEquals(name.toString(), actualRequest.getName());
-    Assert.assertEquals(ciphertext, actualRequest.getCiphertext());
-    Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
-  }
-
-  @Test
-  public void decryptExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
-    mockKeyManagementService.addException(exception);
-
-    try {
-      CryptoKeyName name =
-          CryptoKeyName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]", "[CRYPTO_KEY]");
-      ByteString ciphertext = ByteString.EMPTY;
-      client.decrypt(name, ciphertext);
-      Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception.
-    }
-  }
-
-  @Test
-  public void decryptTest2() throws Exception {
-    DecryptResponse expectedResponse =
-        DecryptResponse.newBuilder()
-            .setPlaintext(ByteString.EMPTY)
-            .setPlaintextCrc32C(Int64Value.newBuilder().build())
-            .build();
-    mockKeyManagementService.addResponse(expectedResponse);
-
-    String name = "name3373707";
-    ByteString ciphertext = ByteString.EMPTY;
-
-    DecryptResponse actualResponse = client.decrypt(name, ciphertext);
-    Assert.assertEquals(expectedResponse, actualResponse);
-
-    List<AbstractMessage> actualRequests = mockKeyManagementService.getRequests();
-    Assert.assertEquals(1, actualRequests.size());
-    DecryptRequest actualRequest = ((DecryptRequest) actualRequests.get(0));
-
-    Assert.assertEquals(name, actualRequest.getName());
-    Assert.assertEquals(ciphertext, actualRequest.getCiphertext());
-    Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
-  }
-
-  @Test
-  public void decryptExceptionTest2() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
-    mockKeyManagementService.addException(exception);
-
-    try {
-      String name = "name3373707";
-      ByteString ciphertext = ByteString.EMPTY;
-      client.decrypt(name, ciphertext);
-      Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception.
-    }
-  }
-
-  @Test
-  public void asymmetricSignTest() throws Exception {
-    AsymmetricSignResponse expectedResponse =
-        AsymmetricSignResponse.newBuilder()
-            .setSignature(ByteString.EMPTY)
-            .setSignatureCrc32C(Int64Value.newBuilder().build())
-            .setVerifiedDigestCrc32C(true)
-            .setName("name3373707")
-            .build();
-    mockKeyManagementService.addResponse(expectedResponse);
-
-    CryptoKeyVersionName name =
-        CryptoKeyVersionName.of(
-            "[PROJECT]", "[LOCATION]", "[KEY_RING]", "[CRYPTO_KEY]", "[CRYPTO_KEY_VERSION]");
-    Digest digest = Digest.newBuilder().build();
-
-    AsymmetricSignResponse actualResponse = client.asymmetricSign(name, digest);
-    Assert.assertEquals(expectedResponse, actualResponse);
-
-    List<AbstractMessage> actualRequests = mockKeyManagementService.getRequests();
-    Assert.assertEquals(1, actualRequests.size());
-    AsymmetricSignRequest actualRequest = ((AsymmetricSignRequest) actualRequests.get(0));
-
-    Assert.assertEquals(name.toString(), actualRequest.getName());
-    Assert.assertEquals(digest, actualRequest.getDigest());
-    Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
-  }
-
-  @Test
-  public void asymmetricSignExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
-    mockKeyManagementService.addException(exception);
-
-    try {
-      CryptoKeyVersionName name =
-          CryptoKeyVersionName.of(
-              "[PROJECT]", "[LOCATION]", "[KEY_RING]", "[CRYPTO_KEY]", "[CRYPTO_KEY_VERSION]");
-      Digest digest = Digest.newBuilder().build();
-      client.asymmetricSign(name, digest);
-      Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception.
-    }
-  }
-
-  @Test
-  public void asymmetricSignTest2() throws Exception {
-    AsymmetricSignResponse expectedResponse =
-        AsymmetricSignResponse.newBuilder()
-            .setSignature(ByteString.EMPTY)
-            .setSignatureCrc32C(Int64Value.newBuilder().build())
-            .setVerifiedDigestCrc32C(true)
-            .setName("name3373707")
-            .build();
-    mockKeyManagementService.addResponse(expectedResponse);
-
-    String name = "name3373707";
-    Digest digest = Digest.newBuilder().build();
-
-    AsymmetricSignResponse actualResponse = client.asymmetricSign(name, digest);
-    Assert.assertEquals(expectedResponse, actualResponse);
-
-    List<AbstractMessage> actualRequests = mockKeyManagementService.getRequests();
-    Assert.assertEquals(1, actualRequests.size());
-    AsymmetricSignRequest actualRequest = ((AsymmetricSignRequest) actualRequests.get(0));
-
-    Assert.assertEquals(name, actualRequest.getName());
-    Assert.assertEquals(digest, actualRequest.getDigest());
-    Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
-  }
-
-  @Test
-  public void asymmetricSignExceptionTest2() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
-    mockKeyManagementService.addException(exception);
-
-    try {
-      String name = "name3373707";
-      Digest digest = Digest.newBuilder().build();
-      client.asymmetricSign(name, digest);
-      Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception.
-    }
-  }
-
-  @Test
-  public void asymmetricDecryptTest() throws Exception {
-    AsymmetricDecryptResponse expectedResponse =
-        AsymmetricDecryptResponse.newBuilder()
-            .setPlaintext(ByteString.EMPTY)
-            .setPlaintextCrc32C(Int64Value.newBuilder().build())
-            .setVerifiedCiphertextCrc32C(true)
-            .build();
-    mockKeyManagementService.addResponse(expectedResponse);
-
-    CryptoKeyVersionName name =
-        CryptoKeyVersionName.of(
-            "[PROJECT]", "[LOCATION]", "[KEY_RING]", "[CRYPTO_KEY]", "[CRYPTO_KEY_VERSION]");
-    ByteString ciphertext = ByteString.EMPTY;
-
-    AsymmetricDecryptResponse actualResponse = client.asymmetricDecrypt(name, ciphertext);
-    Assert.assertEquals(expectedResponse, actualResponse);
-
-    List<AbstractMessage> actualRequests = mockKeyManagementService.getRequests();
-    Assert.assertEquals(1, actualRequests.size());
-    AsymmetricDecryptRequest actualRequest = ((AsymmetricDecryptRequest) actualRequests.get(0));
-
-    Assert.assertEquals(name.toString(), actualRequest.getName());
-    Assert.assertEquals(ciphertext, actualRequest.getCiphertext());
-    Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
-  }
-
-  @Test
-  public void asymmetricDecryptExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
-    mockKeyManagementService.addException(exception);
-
-    try {
-      CryptoKeyVersionName name =
-          CryptoKeyVersionName.of(
-              "[PROJECT]", "[LOCATION]", "[KEY_RING]", "[CRYPTO_KEY]", "[CRYPTO_KEY_VERSION]");
-      ByteString ciphertext = ByteString.EMPTY;
-      client.asymmetricDecrypt(name, ciphertext);
-      Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception.
-    }
-  }
-
-  @Test
-  public void asymmetricDecryptTest2() throws Exception {
-    AsymmetricDecryptResponse expectedResponse =
-        AsymmetricDecryptResponse.newBuilder()
-            .setPlaintext(ByteString.EMPTY)
-            .setPlaintextCrc32C(Int64Value.newBuilder().build())
-            .setVerifiedCiphertextCrc32C(true)
-            .build();
-    mockKeyManagementService.addResponse(expectedResponse);
-
-    String name = "name3373707";
-    ByteString ciphertext = ByteString.EMPTY;
-
-    AsymmetricDecryptResponse actualResponse = client.asymmetricDecrypt(name, ciphertext);
-    Assert.assertEquals(expectedResponse, actualResponse);
-
-    List<AbstractMessage> actualRequests = mockKeyManagementService.getRequests();
-    Assert.assertEquals(1, actualRequests.size());
-    AsymmetricDecryptRequest actualRequest = ((AsymmetricDecryptRequest) actualRequests.get(0));
-
-    Assert.assertEquals(name, actualRequest.getName());
-    Assert.assertEquals(ciphertext, actualRequest.getCiphertext());
-    Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
-  }
-
-  @Test
-  public void asymmetricDecryptExceptionTest2() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
-    mockKeyManagementService.addException(exception);
-
-    try {
-      String name = "name3373707";
-      ByteString ciphertext = ByteString.EMPTY;
-      client.asymmetricDecrypt(name, ciphertext);
-      Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception.
-    }
-  }
-
-  @Test
   public void updateCryptoKeyPrimaryVersionTest() throws Exception {
     CryptoKey expectedResponse =
         CryptoKey.newBuilder()
@@ -1882,6 +1538,8 @@ public class KeyManagementServiceClientTest {
             .setNextRotationTime(Timestamp.newBuilder().build())
             .setVersionTemplate(CryptoKeyVersionTemplate.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())
+            .setImportOnly(true)
+            .setDestroyScheduledDuration(Duration.newBuilder().build())
             .build();
     mockKeyManagementService.addResponse(expectedResponse);
 
@@ -1932,6 +1590,8 @@ public class KeyManagementServiceClientTest {
             .setNextRotationTime(Timestamp.newBuilder().build())
             .setVersionTemplate(CryptoKeyVersionTemplate.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())
+            .setImportOnly(true)
+            .setDestroyScheduledDuration(Duration.newBuilder().build())
             .build();
     mockKeyManagementService.addResponse(expectedResponse);
 
@@ -2195,6 +1855,615 @@ public class KeyManagementServiceClientTest {
     try {
       String name = "name3373707";
       client.restoreCryptoKeyVersion(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void encryptTest() throws Exception {
+    EncryptResponse expectedResponse =
+        EncryptResponse.newBuilder()
+            .setName("name3373707")
+            .setCiphertext(ByteString.EMPTY)
+            .setCiphertextCrc32C(Int64Value.newBuilder().build())
+            .setVerifiedPlaintextCrc32C(true)
+            .setVerifiedAdditionalAuthenticatedDataCrc32C(true)
+            .setProtectionLevel(ProtectionLevel.forNumber(0))
+            .build();
+    mockKeyManagementService.addResponse(expectedResponse);
+
+    ResourceName name = KeyRingName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]");
+    ByteString plaintext = ByteString.EMPTY;
+
+    EncryptResponse actualResponse = client.encrypt(name, plaintext);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockKeyManagementService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    EncryptRequest actualRequest = ((EncryptRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertEquals(plaintext, actualRequest.getPlaintext());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void encryptExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockKeyManagementService.addException(exception);
+
+    try {
+      ResourceName name = KeyRingName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]");
+      ByteString plaintext = ByteString.EMPTY;
+      client.encrypt(name, plaintext);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void encryptTest2() throws Exception {
+    EncryptResponse expectedResponse =
+        EncryptResponse.newBuilder()
+            .setName("name3373707")
+            .setCiphertext(ByteString.EMPTY)
+            .setCiphertextCrc32C(Int64Value.newBuilder().build())
+            .setVerifiedPlaintextCrc32C(true)
+            .setVerifiedAdditionalAuthenticatedDataCrc32C(true)
+            .setProtectionLevel(ProtectionLevel.forNumber(0))
+            .build();
+    mockKeyManagementService.addResponse(expectedResponse);
+
+    String name = "name3373707";
+    ByteString plaintext = ByteString.EMPTY;
+
+    EncryptResponse actualResponse = client.encrypt(name, plaintext);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockKeyManagementService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    EncryptRequest actualRequest = ((EncryptRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertEquals(plaintext, actualRequest.getPlaintext());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void encryptExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockKeyManagementService.addException(exception);
+
+    try {
+      String name = "name3373707";
+      ByteString plaintext = ByteString.EMPTY;
+      client.encrypt(name, plaintext);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void decryptTest() throws Exception {
+    DecryptResponse expectedResponse =
+        DecryptResponse.newBuilder()
+            .setPlaintext(ByteString.EMPTY)
+            .setPlaintextCrc32C(Int64Value.newBuilder().build())
+            .setUsedPrimary(true)
+            .setProtectionLevel(ProtectionLevel.forNumber(0))
+            .build();
+    mockKeyManagementService.addResponse(expectedResponse);
+
+    CryptoKeyName name = CryptoKeyName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]", "[CRYPTO_KEY]");
+    ByteString ciphertext = ByteString.EMPTY;
+
+    DecryptResponse actualResponse = client.decrypt(name, ciphertext);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockKeyManagementService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DecryptRequest actualRequest = ((DecryptRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertEquals(ciphertext, actualRequest.getCiphertext());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void decryptExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockKeyManagementService.addException(exception);
+
+    try {
+      CryptoKeyName name =
+          CryptoKeyName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]", "[CRYPTO_KEY]");
+      ByteString ciphertext = ByteString.EMPTY;
+      client.decrypt(name, ciphertext);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void decryptTest2() throws Exception {
+    DecryptResponse expectedResponse =
+        DecryptResponse.newBuilder()
+            .setPlaintext(ByteString.EMPTY)
+            .setPlaintextCrc32C(Int64Value.newBuilder().build())
+            .setUsedPrimary(true)
+            .setProtectionLevel(ProtectionLevel.forNumber(0))
+            .build();
+    mockKeyManagementService.addResponse(expectedResponse);
+
+    String name = "name3373707";
+    ByteString ciphertext = ByteString.EMPTY;
+
+    DecryptResponse actualResponse = client.decrypt(name, ciphertext);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockKeyManagementService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DecryptRequest actualRequest = ((DecryptRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertEquals(ciphertext, actualRequest.getCiphertext());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void decryptExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockKeyManagementService.addException(exception);
+
+    try {
+      String name = "name3373707";
+      ByteString ciphertext = ByteString.EMPTY;
+      client.decrypt(name, ciphertext);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void asymmetricSignTest() throws Exception {
+    AsymmetricSignResponse expectedResponse =
+        AsymmetricSignResponse.newBuilder()
+            .setSignature(ByteString.EMPTY)
+            .setSignatureCrc32C(Int64Value.newBuilder().build())
+            .setVerifiedDigestCrc32C(true)
+            .setName("name3373707")
+            .setProtectionLevel(ProtectionLevel.forNumber(0))
+            .build();
+    mockKeyManagementService.addResponse(expectedResponse);
+
+    CryptoKeyVersionName name =
+        CryptoKeyVersionName.of(
+            "[PROJECT]", "[LOCATION]", "[KEY_RING]", "[CRYPTO_KEY]", "[CRYPTO_KEY_VERSION]");
+    Digest digest = Digest.newBuilder().build();
+
+    AsymmetricSignResponse actualResponse = client.asymmetricSign(name, digest);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockKeyManagementService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    AsymmetricSignRequest actualRequest = ((AsymmetricSignRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertEquals(digest, actualRequest.getDigest());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void asymmetricSignExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockKeyManagementService.addException(exception);
+
+    try {
+      CryptoKeyVersionName name =
+          CryptoKeyVersionName.of(
+              "[PROJECT]", "[LOCATION]", "[KEY_RING]", "[CRYPTO_KEY]", "[CRYPTO_KEY_VERSION]");
+      Digest digest = Digest.newBuilder().build();
+      client.asymmetricSign(name, digest);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void asymmetricSignTest2() throws Exception {
+    AsymmetricSignResponse expectedResponse =
+        AsymmetricSignResponse.newBuilder()
+            .setSignature(ByteString.EMPTY)
+            .setSignatureCrc32C(Int64Value.newBuilder().build())
+            .setVerifiedDigestCrc32C(true)
+            .setName("name3373707")
+            .setProtectionLevel(ProtectionLevel.forNumber(0))
+            .build();
+    mockKeyManagementService.addResponse(expectedResponse);
+
+    String name = "name3373707";
+    Digest digest = Digest.newBuilder().build();
+
+    AsymmetricSignResponse actualResponse = client.asymmetricSign(name, digest);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockKeyManagementService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    AsymmetricSignRequest actualRequest = ((AsymmetricSignRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertEquals(digest, actualRequest.getDigest());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void asymmetricSignExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockKeyManagementService.addException(exception);
+
+    try {
+      String name = "name3373707";
+      Digest digest = Digest.newBuilder().build();
+      client.asymmetricSign(name, digest);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void asymmetricDecryptTest() throws Exception {
+    AsymmetricDecryptResponse expectedResponse =
+        AsymmetricDecryptResponse.newBuilder()
+            .setPlaintext(ByteString.EMPTY)
+            .setPlaintextCrc32C(Int64Value.newBuilder().build())
+            .setVerifiedCiphertextCrc32C(true)
+            .setProtectionLevel(ProtectionLevel.forNumber(0))
+            .build();
+    mockKeyManagementService.addResponse(expectedResponse);
+
+    CryptoKeyVersionName name =
+        CryptoKeyVersionName.of(
+            "[PROJECT]", "[LOCATION]", "[KEY_RING]", "[CRYPTO_KEY]", "[CRYPTO_KEY_VERSION]");
+    ByteString ciphertext = ByteString.EMPTY;
+
+    AsymmetricDecryptResponse actualResponse = client.asymmetricDecrypt(name, ciphertext);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockKeyManagementService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    AsymmetricDecryptRequest actualRequest = ((AsymmetricDecryptRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertEquals(ciphertext, actualRequest.getCiphertext());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void asymmetricDecryptExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockKeyManagementService.addException(exception);
+
+    try {
+      CryptoKeyVersionName name =
+          CryptoKeyVersionName.of(
+              "[PROJECT]", "[LOCATION]", "[KEY_RING]", "[CRYPTO_KEY]", "[CRYPTO_KEY_VERSION]");
+      ByteString ciphertext = ByteString.EMPTY;
+      client.asymmetricDecrypt(name, ciphertext);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void asymmetricDecryptTest2() throws Exception {
+    AsymmetricDecryptResponse expectedResponse =
+        AsymmetricDecryptResponse.newBuilder()
+            .setPlaintext(ByteString.EMPTY)
+            .setPlaintextCrc32C(Int64Value.newBuilder().build())
+            .setVerifiedCiphertextCrc32C(true)
+            .setProtectionLevel(ProtectionLevel.forNumber(0))
+            .build();
+    mockKeyManagementService.addResponse(expectedResponse);
+
+    String name = "name3373707";
+    ByteString ciphertext = ByteString.EMPTY;
+
+    AsymmetricDecryptResponse actualResponse = client.asymmetricDecrypt(name, ciphertext);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockKeyManagementService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    AsymmetricDecryptRequest actualRequest = ((AsymmetricDecryptRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertEquals(ciphertext, actualRequest.getCiphertext());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void asymmetricDecryptExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockKeyManagementService.addException(exception);
+
+    try {
+      String name = "name3373707";
+      ByteString ciphertext = ByteString.EMPTY;
+      client.asymmetricDecrypt(name, ciphertext);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void macSignTest() throws Exception {
+    MacSignResponse expectedResponse =
+        MacSignResponse.newBuilder()
+            .setName("name3373707")
+            .setMac(ByteString.EMPTY)
+            .setMacCrc32C(Int64Value.newBuilder().build())
+            .setVerifiedDataCrc32C(true)
+            .setProtectionLevel(ProtectionLevel.forNumber(0))
+            .build();
+    mockKeyManagementService.addResponse(expectedResponse);
+
+    CryptoKeyVersionName name =
+        CryptoKeyVersionName.of(
+            "[PROJECT]", "[LOCATION]", "[KEY_RING]", "[CRYPTO_KEY]", "[CRYPTO_KEY_VERSION]");
+    ByteString data = ByteString.EMPTY;
+
+    MacSignResponse actualResponse = client.macSign(name, data);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockKeyManagementService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    MacSignRequest actualRequest = ((MacSignRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertEquals(data, actualRequest.getData());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void macSignExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockKeyManagementService.addException(exception);
+
+    try {
+      CryptoKeyVersionName name =
+          CryptoKeyVersionName.of(
+              "[PROJECT]", "[LOCATION]", "[KEY_RING]", "[CRYPTO_KEY]", "[CRYPTO_KEY_VERSION]");
+      ByteString data = ByteString.EMPTY;
+      client.macSign(name, data);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void macSignTest2() throws Exception {
+    MacSignResponse expectedResponse =
+        MacSignResponse.newBuilder()
+            .setName("name3373707")
+            .setMac(ByteString.EMPTY)
+            .setMacCrc32C(Int64Value.newBuilder().build())
+            .setVerifiedDataCrc32C(true)
+            .setProtectionLevel(ProtectionLevel.forNumber(0))
+            .build();
+    mockKeyManagementService.addResponse(expectedResponse);
+
+    String name = "name3373707";
+    ByteString data = ByteString.EMPTY;
+
+    MacSignResponse actualResponse = client.macSign(name, data);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockKeyManagementService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    MacSignRequest actualRequest = ((MacSignRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertEquals(data, actualRequest.getData());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void macSignExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockKeyManagementService.addException(exception);
+
+    try {
+      String name = "name3373707";
+      ByteString data = ByteString.EMPTY;
+      client.macSign(name, data);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void macVerifyTest() throws Exception {
+    MacVerifyResponse expectedResponse =
+        MacVerifyResponse.newBuilder()
+            .setName("name3373707")
+            .setSuccess(true)
+            .setVerifiedDataCrc32C(true)
+            .setVerifiedMacCrc32C(true)
+            .setVerifiedSuccessIntegrity(true)
+            .setProtectionLevel(ProtectionLevel.forNumber(0))
+            .build();
+    mockKeyManagementService.addResponse(expectedResponse);
+
+    CryptoKeyVersionName name =
+        CryptoKeyVersionName.of(
+            "[PROJECT]", "[LOCATION]", "[KEY_RING]", "[CRYPTO_KEY]", "[CRYPTO_KEY_VERSION]");
+    ByteString data = ByteString.EMPTY;
+    ByteString mac = ByteString.EMPTY;
+
+    MacVerifyResponse actualResponse = client.macVerify(name, data, mac);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockKeyManagementService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    MacVerifyRequest actualRequest = ((MacVerifyRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertEquals(data, actualRequest.getData());
+    Assert.assertEquals(mac, actualRequest.getMac());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void macVerifyExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockKeyManagementService.addException(exception);
+
+    try {
+      CryptoKeyVersionName name =
+          CryptoKeyVersionName.of(
+              "[PROJECT]", "[LOCATION]", "[KEY_RING]", "[CRYPTO_KEY]", "[CRYPTO_KEY_VERSION]");
+      ByteString data = ByteString.EMPTY;
+      ByteString mac = ByteString.EMPTY;
+      client.macVerify(name, data, mac);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void macVerifyTest2() throws Exception {
+    MacVerifyResponse expectedResponse =
+        MacVerifyResponse.newBuilder()
+            .setName("name3373707")
+            .setSuccess(true)
+            .setVerifiedDataCrc32C(true)
+            .setVerifiedMacCrc32C(true)
+            .setVerifiedSuccessIntegrity(true)
+            .setProtectionLevel(ProtectionLevel.forNumber(0))
+            .build();
+    mockKeyManagementService.addResponse(expectedResponse);
+
+    String name = "name3373707";
+    ByteString data = ByteString.EMPTY;
+    ByteString mac = ByteString.EMPTY;
+
+    MacVerifyResponse actualResponse = client.macVerify(name, data, mac);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockKeyManagementService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    MacVerifyRequest actualRequest = ((MacVerifyRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertEquals(data, actualRequest.getData());
+    Assert.assertEquals(mac, actualRequest.getMac());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void macVerifyExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockKeyManagementService.addException(exception);
+
+    try {
+      String name = "name3373707";
+      ByteString data = ByteString.EMPTY;
+      ByteString mac = ByteString.EMPTY;
+      client.macVerify(name, data, mac);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void generateRandomBytesTest() throws Exception {
+    GenerateRandomBytesResponse expectedResponse =
+        GenerateRandomBytesResponse.newBuilder()
+            .setData(ByteString.EMPTY)
+            .setDataCrc32C(Int64Value.newBuilder().build())
+            .build();
+    mockKeyManagementService.addResponse(expectedResponse);
+
+    String location = "location1901043637";
+    int lengthBytes = -745661998;
+    ProtectionLevel protectionLevel = ProtectionLevel.forNumber(0);
+
+    GenerateRandomBytesResponse actualResponse =
+        client.generateRandomBytes(location, lengthBytes, protectionLevel);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockKeyManagementService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GenerateRandomBytesRequest actualRequest = ((GenerateRandomBytesRequest) actualRequests.get(0));
+
+    Assert.assertEquals(location, actualRequest.getLocation());
+    Assert.assertEquals(lengthBytes, actualRequest.getLengthBytes());
+    Assert.assertEquals(protectionLevel, actualRequest.getProtectionLevel());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void generateRandomBytesExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockKeyManagementService.addException(exception);
+
+    try {
+      String location = "location1901043637";
+      int lengthBytes = -745661998;
+      ProtectionLevel protectionLevel = ProtectionLevel.forNumber(0);
+      client.generateRandomBytes(location, lengthBytes, protectionLevel);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.

@@ -22,30 +22,30 @@ package com.google.cloud.kms.v1;
  *
  *
  * <pre>
- * Request message for [KeyManagementService.AsymmetricDecrypt][google.cloud.kms.v1.KeyManagementService.AsymmetricDecrypt].
+ * Request message for [KeyManagementService.MacSign][google.cloud.kms.v1.KeyManagementService.MacSign].
  * </pre>
  *
- * Protobuf type {@code google.cloud.kms.v1.AsymmetricDecryptRequest}
+ * Protobuf type {@code google.cloud.kms.v1.MacSignRequest}
  */
-public final class AsymmetricDecryptRequest extends com.google.protobuf.GeneratedMessageV3
+public final class MacSignRequest extends com.google.protobuf.GeneratedMessageV3
     implements
-    // @@protoc_insertion_point(message_implements:google.cloud.kms.v1.AsymmetricDecryptRequest)
-    AsymmetricDecryptRequestOrBuilder {
+    // @@protoc_insertion_point(message_implements:google.cloud.kms.v1.MacSignRequest)
+    MacSignRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-  // Use AsymmetricDecryptRequest.newBuilder() to construct.
-  private AsymmetricDecryptRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+  // Use MacSignRequest.newBuilder() to construct.
+  private MacSignRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
 
-  private AsymmetricDecryptRequest() {
+  private MacSignRequest() {
     name_ = "";
-    ciphertext_ = com.google.protobuf.ByteString.EMPTY;
+    data_ = com.google.protobuf.ByteString.EMPTY;
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
-    return new AsymmetricDecryptRequest();
+    return new MacSignRequest();
   }
 
   @java.lang.Override
@@ -53,7 +53,7 @@ public final class AsymmetricDecryptRequest extends com.google.protobuf.Generate
     return this.unknownFields;
   }
 
-  private AsymmetricDecryptRequest(
+  private MacSignRequest(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
@@ -78,22 +78,22 @@ public final class AsymmetricDecryptRequest extends com.google.protobuf.Generate
               name_ = s;
               break;
             }
-          case 26:
+          case 18:
             {
-              ciphertext_ = input.readBytes();
+              data_ = input.readBytes();
               break;
             }
-          case 34:
+          case 26:
             {
               com.google.protobuf.Int64Value.Builder subBuilder = null;
-              if (ciphertextCrc32C_ != null) {
-                subBuilder = ciphertextCrc32C_.toBuilder();
+              if (dataCrc32C_ != null) {
+                subBuilder = dataCrc32C_.toBuilder();
               }
-              ciphertextCrc32C_ =
+              dataCrc32C_ =
                   input.readMessage(com.google.protobuf.Int64Value.parser(), extensionRegistry);
               if (subBuilder != null) {
-                subBuilder.mergeFrom(ciphertextCrc32C_);
-                ciphertextCrc32C_ = subBuilder.buildPartial();
+                subBuilder.mergeFrom(dataCrc32C_);
+                dataCrc32C_ = subBuilder.buildPartial();
               }
 
               break;
@@ -119,17 +119,17 @@ public final class AsymmetricDecryptRequest extends com.google.protobuf.Generate
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.kms.v1.KmsProto
-        .internal_static_google_cloud_kms_v1_AsymmetricDecryptRequest_descriptor;
+        .internal_static_google_cloud_kms_v1_MacSignRequest_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
     return com.google.cloud.kms.v1.KmsProto
-        .internal_static_google_cloud_kms_v1_AsymmetricDecryptRequest_fieldAccessorTable
+        .internal_static_google_cloud_kms_v1_MacSignRequest_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.google.cloud.kms.v1.AsymmetricDecryptRequest.class,
-            com.google.cloud.kms.v1.AsymmetricDecryptRequest.Builder.class);
+            com.google.cloud.kms.v1.MacSignRequest.class,
+            com.google.cloud.kms.v1.MacSignRequest.Builder.class);
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
@@ -138,8 +138,7 @@ public final class AsymmetricDecryptRequest extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * Required. The resource name of the [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] to use for
-   * decryption.
+   * Required. The resource name of the [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] to use for signing.
    * </pre>
    *
    * <code>
@@ -164,8 +163,7 @@ public final class AsymmetricDecryptRequest extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * Required. The resource name of the [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] to use for
-   * decryption.
+   * Required. The resource name of the [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] to use for signing.
    * </pre>
    *
    * <code>
@@ -187,113 +185,108 @@ public final class AsymmetricDecryptRequest extends com.google.protobuf.Generate
     }
   }
 
-  public static final int CIPHERTEXT_FIELD_NUMBER = 3;
-  private com.google.protobuf.ByteString ciphertext_;
+  public static final int DATA_FIELD_NUMBER = 2;
+  private com.google.protobuf.ByteString data_;
   /**
    *
    *
    * <pre>
-   * Required. The data encrypted with the named [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion]'s public
-   * key using OAEP.
+   * Required. The data to sign. The MAC tag is computed over this data field based on
+   * the specific algorithm.
    * </pre>
    *
-   * <code>bytes ciphertext = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>bytes data = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    *
-   * @return The ciphertext.
+   * @return The data.
    */
   @java.lang.Override
-  public com.google.protobuf.ByteString getCiphertext() {
-    return ciphertext_;
+  public com.google.protobuf.ByteString getData() {
+    return data_;
   }
 
-  public static final int CIPHERTEXT_CRC32C_FIELD_NUMBER = 4;
-  private com.google.protobuf.Int64Value ciphertextCrc32C_;
+  public static final int DATA_CRC32C_FIELD_NUMBER = 3;
+  private com.google.protobuf.Int64Value dataCrc32C_;
   /**
    *
    *
    * <pre>
-   * Optional. An optional CRC32C checksum of the [AsymmetricDecryptRequest.ciphertext][google.cloud.kms.v1.AsymmetricDecryptRequest.ciphertext].
-   * If specified, [KeyManagementService][google.cloud.kms.v1.KeyManagementService] will verify the integrity of the
-   * received [AsymmetricDecryptRequest.ciphertext][google.cloud.kms.v1.AsymmetricDecryptRequest.ciphertext] using this checksum.
+   * Optional. An optional CRC32C checksum of the [MacSignRequest.data][google.cloud.kms.v1.MacSignRequest.data]. If
+   * specified, [KeyManagementService][google.cloud.kms.v1.KeyManagementService] will verify the integrity of the
+   * received [MacSignRequest.data][google.cloud.kms.v1.MacSignRequest.data] using this checksum.
    * [KeyManagementService][google.cloud.kms.v1.KeyManagementService] will report an error if the checksum verification
    * fails. If you receive a checksum error, your client should verify that
-   * CRC32C([AsymmetricDecryptRequest.ciphertext][google.cloud.kms.v1.AsymmetricDecryptRequest.ciphertext]) is equal to
-   * [AsymmetricDecryptRequest.ciphertext_crc32c][google.cloud.kms.v1.AsymmetricDecryptRequest.ciphertext_crc32c], and if so, perform a
-   * limited number of retries. A persistent mismatch may indicate an issue in
-   * your computation of the CRC32C checksum.
+   * CRC32C([MacSignRequest.data][google.cloud.kms.v1.MacSignRequest.data]) is equal to
+   * [MacSignRequest.data_crc32c][google.cloud.kms.v1.MacSignRequest.data_crc32c], and if so, perform a limited
+   * number of retries. A persistent mismatch may indicate an issue in your
+   * computation of the CRC32C checksum.
    * Note: This field is defined as int64 for reasons of compatibility across
    * different languages. However, it is a non-negative integer, which will
    * never exceed 2^32-1, and can be safely downconverted to uint32 in languages
    * that support this type.
    * </pre>
    *
-   * <code>
-   * .google.protobuf.Int64Value ciphertext_crc32c = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * <code>.google.protobuf.Int64Value data_crc32c = 3 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
-   * @return Whether the ciphertextCrc32c field is set.
+   * @return Whether the dataCrc32c field is set.
    */
   @java.lang.Override
-  public boolean hasCiphertextCrc32C() {
-    return ciphertextCrc32C_ != null;
+  public boolean hasDataCrc32C() {
+    return dataCrc32C_ != null;
   }
   /**
    *
    *
    * <pre>
-   * Optional. An optional CRC32C checksum of the [AsymmetricDecryptRequest.ciphertext][google.cloud.kms.v1.AsymmetricDecryptRequest.ciphertext].
-   * If specified, [KeyManagementService][google.cloud.kms.v1.KeyManagementService] will verify the integrity of the
-   * received [AsymmetricDecryptRequest.ciphertext][google.cloud.kms.v1.AsymmetricDecryptRequest.ciphertext] using this checksum.
+   * Optional. An optional CRC32C checksum of the [MacSignRequest.data][google.cloud.kms.v1.MacSignRequest.data]. If
+   * specified, [KeyManagementService][google.cloud.kms.v1.KeyManagementService] will verify the integrity of the
+   * received [MacSignRequest.data][google.cloud.kms.v1.MacSignRequest.data] using this checksum.
    * [KeyManagementService][google.cloud.kms.v1.KeyManagementService] will report an error if the checksum verification
    * fails. If you receive a checksum error, your client should verify that
-   * CRC32C([AsymmetricDecryptRequest.ciphertext][google.cloud.kms.v1.AsymmetricDecryptRequest.ciphertext]) is equal to
-   * [AsymmetricDecryptRequest.ciphertext_crc32c][google.cloud.kms.v1.AsymmetricDecryptRequest.ciphertext_crc32c], and if so, perform a
-   * limited number of retries. A persistent mismatch may indicate an issue in
-   * your computation of the CRC32C checksum.
+   * CRC32C([MacSignRequest.data][google.cloud.kms.v1.MacSignRequest.data]) is equal to
+   * [MacSignRequest.data_crc32c][google.cloud.kms.v1.MacSignRequest.data_crc32c], and if so, perform a limited
+   * number of retries. A persistent mismatch may indicate an issue in your
+   * computation of the CRC32C checksum.
    * Note: This field is defined as int64 for reasons of compatibility across
    * different languages. However, it is a non-negative integer, which will
    * never exceed 2^32-1, and can be safely downconverted to uint32 in languages
    * that support this type.
    * </pre>
    *
-   * <code>
-   * .google.protobuf.Int64Value ciphertext_crc32c = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * <code>.google.protobuf.Int64Value data_crc32c = 3 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
-   * @return The ciphertextCrc32c.
+   * @return The dataCrc32c.
    */
   @java.lang.Override
-  public com.google.protobuf.Int64Value getCiphertextCrc32C() {
-    return ciphertextCrc32C_ == null
-        ? com.google.protobuf.Int64Value.getDefaultInstance()
-        : ciphertextCrc32C_;
+  public com.google.protobuf.Int64Value getDataCrc32C() {
+    return dataCrc32C_ == null ? com.google.protobuf.Int64Value.getDefaultInstance() : dataCrc32C_;
   }
   /**
    *
    *
    * <pre>
-   * Optional. An optional CRC32C checksum of the [AsymmetricDecryptRequest.ciphertext][google.cloud.kms.v1.AsymmetricDecryptRequest.ciphertext].
-   * If specified, [KeyManagementService][google.cloud.kms.v1.KeyManagementService] will verify the integrity of the
-   * received [AsymmetricDecryptRequest.ciphertext][google.cloud.kms.v1.AsymmetricDecryptRequest.ciphertext] using this checksum.
+   * Optional. An optional CRC32C checksum of the [MacSignRequest.data][google.cloud.kms.v1.MacSignRequest.data]. If
+   * specified, [KeyManagementService][google.cloud.kms.v1.KeyManagementService] will verify the integrity of the
+   * received [MacSignRequest.data][google.cloud.kms.v1.MacSignRequest.data] using this checksum.
    * [KeyManagementService][google.cloud.kms.v1.KeyManagementService] will report an error if the checksum verification
    * fails. If you receive a checksum error, your client should verify that
-   * CRC32C([AsymmetricDecryptRequest.ciphertext][google.cloud.kms.v1.AsymmetricDecryptRequest.ciphertext]) is equal to
-   * [AsymmetricDecryptRequest.ciphertext_crc32c][google.cloud.kms.v1.AsymmetricDecryptRequest.ciphertext_crc32c], and if so, perform a
-   * limited number of retries. A persistent mismatch may indicate an issue in
-   * your computation of the CRC32C checksum.
+   * CRC32C([MacSignRequest.data][google.cloud.kms.v1.MacSignRequest.data]) is equal to
+   * [MacSignRequest.data_crc32c][google.cloud.kms.v1.MacSignRequest.data_crc32c], and if so, perform a limited
+   * number of retries. A persistent mismatch may indicate an issue in your
+   * computation of the CRC32C checksum.
    * Note: This field is defined as int64 for reasons of compatibility across
    * different languages. However, it is a non-negative integer, which will
    * never exceed 2^32-1, and can be safely downconverted to uint32 in languages
    * that support this type.
    * </pre>
    *
-   * <code>
-   * .google.protobuf.Int64Value ciphertext_crc32c = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * <code>.google.protobuf.Int64Value data_crc32c = 3 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
   @java.lang.Override
-  public com.google.protobuf.Int64ValueOrBuilder getCiphertextCrc32COrBuilder() {
-    return getCiphertextCrc32C();
+  public com.google.protobuf.Int64ValueOrBuilder getDataCrc32COrBuilder() {
+    return getDataCrc32C();
   }
 
   private byte memoizedIsInitialized = -1;
@@ -313,11 +306,11 @@ public final class AsymmetricDecryptRequest extends com.google.protobuf.Generate
     if (!getNameBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name_);
     }
-    if (!ciphertext_.isEmpty()) {
-      output.writeBytes(3, ciphertext_);
+    if (!data_.isEmpty()) {
+      output.writeBytes(2, data_);
     }
-    if (ciphertextCrc32C_ != null) {
-      output.writeMessage(4, getCiphertextCrc32C());
+    if (dataCrc32C_ != null) {
+      output.writeMessage(3, getDataCrc32C());
     }
     unknownFields.writeTo(output);
   }
@@ -331,11 +324,11 @@ public final class AsymmetricDecryptRequest extends com.google.protobuf.Generate
     if (!getNameBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, name_);
     }
-    if (!ciphertext_.isEmpty()) {
-      size += com.google.protobuf.CodedOutputStream.computeBytesSize(3, ciphertext_);
+    if (!data_.isEmpty()) {
+      size += com.google.protobuf.CodedOutputStream.computeBytesSize(2, data_);
     }
-    if (ciphertextCrc32C_ != null) {
-      size += com.google.protobuf.CodedOutputStream.computeMessageSize(4, getCiphertextCrc32C());
+    if (dataCrc32C_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(3, getDataCrc32C());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -347,17 +340,16 @@ public final class AsymmetricDecryptRequest extends com.google.protobuf.Generate
     if (obj == this) {
       return true;
     }
-    if (!(obj instanceof com.google.cloud.kms.v1.AsymmetricDecryptRequest)) {
+    if (!(obj instanceof com.google.cloud.kms.v1.MacSignRequest)) {
       return super.equals(obj);
     }
-    com.google.cloud.kms.v1.AsymmetricDecryptRequest other =
-        (com.google.cloud.kms.v1.AsymmetricDecryptRequest) obj;
+    com.google.cloud.kms.v1.MacSignRequest other = (com.google.cloud.kms.v1.MacSignRequest) obj;
 
     if (!getName().equals(other.getName())) return false;
-    if (!getCiphertext().equals(other.getCiphertext())) return false;
-    if (hasCiphertextCrc32C() != other.hasCiphertextCrc32C()) return false;
-    if (hasCiphertextCrc32C()) {
-      if (!getCiphertextCrc32C().equals(other.getCiphertextCrc32C())) return false;
+    if (!getData().equals(other.getData())) return false;
+    if (hasDataCrc32C() != other.hasDataCrc32C()) return false;
+    if (hasDataCrc32C()) {
+      if (!getDataCrc32C().equals(other.getDataCrc32C())) return false;
     }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
@@ -372,82 +364,82 @@ public final class AsymmetricDecryptRequest extends com.google.protobuf.Generate
     hash = (19 * hash) + getDescriptor().hashCode();
     hash = (37 * hash) + NAME_FIELD_NUMBER;
     hash = (53 * hash) + getName().hashCode();
-    hash = (37 * hash) + CIPHERTEXT_FIELD_NUMBER;
-    hash = (53 * hash) + getCiphertext().hashCode();
-    if (hasCiphertextCrc32C()) {
-      hash = (37 * hash) + CIPHERTEXT_CRC32C_FIELD_NUMBER;
-      hash = (53 * hash) + getCiphertextCrc32C().hashCode();
+    hash = (37 * hash) + DATA_FIELD_NUMBER;
+    hash = (53 * hash) + getData().hashCode();
+    if (hasDataCrc32C()) {
+      hash = (37 * hash) + DATA_CRC32C_FIELD_NUMBER;
+      hash = (53 * hash) + getDataCrc32C().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
   }
 
-  public static com.google.cloud.kms.v1.AsymmetricDecryptRequest parseFrom(java.nio.ByteBuffer data)
+  public static com.google.cloud.kms.v1.MacSignRequest parseFrom(java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
 
-  public static com.google.cloud.kms.v1.AsymmetricDecryptRequest parseFrom(
+  public static com.google.cloud.kms.v1.MacSignRequest parseFrom(
       java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
 
-  public static com.google.cloud.kms.v1.AsymmetricDecryptRequest parseFrom(
+  public static com.google.cloud.kms.v1.MacSignRequest parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
 
-  public static com.google.cloud.kms.v1.AsymmetricDecryptRequest parseFrom(
+  public static com.google.cloud.kms.v1.MacSignRequest parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
 
-  public static com.google.cloud.kms.v1.AsymmetricDecryptRequest parseFrom(byte[] data)
+  public static com.google.cloud.kms.v1.MacSignRequest parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
 
-  public static com.google.cloud.kms.v1.AsymmetricDecryptRequest parseFrom(
+  public static com.google.cloud.kms.v1.MacSignRequest parseFrom(
       byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
 
-  public static com.google.cloud.kms.v1.AsymmetricDecryptRequest parseFrom(
-      java.io.InputStream input) throws java.io.IOException {
+  public static com.google.cloud.kms.v1.MacSignRequest parseFrom(java.io.InputStream input)
+      throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
 
-  public static com.google.cloud.kms.v1.AsymmetricDecryptRequest parseFrom(
+  public static com.google.cloud.kms.v1.MacSignRequest parseFrom(
       java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
         PARSER, input, extensionRegistry);
   }
 
-  public static com.google.cloud.kms.v1.AsymmetricDecryptRequest parseDelimitedFrom(
-      java.io.InputStream input) throws java.io.IOException {
+  public static com.google.cloud.kms.v1.MacSignRequest parseDelimitedFrom(java.io.InputStream input)
+      throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
   }
 
-  public static com.google.cloud.kms.v1.AsymmetricDecryptRequest parseDelimitedFrom(
+  public static com.google.cloud.kms.v1.MacSignRequest parseDelimitedFrom(
       java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
         PARSER, input, extensionRegistry);
   }
 
-  public static com.google.cloud.kms.v1.AsymmetricDecryptRequest parseFrom(
+  public static com.google.cloud.kms.v1.MacSignRequest parseFrom(
       com.google.protobuf.CodedInputStream input) throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
 
-  public static com.google.cloud.kms.v1.AsymmetricDecryptRequest parseFrom(
+  public static com.google.cloud.kms.v1.MacSignRequest parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -464,7 +456,7 @@ public final class AsymmetricDecryptRequest extends com.google.protobuf.Generate
     return DEFAULT_INSTANCE.toBuilder();
   }
 
-  public static Builder newBuilder(com.google.cloud.kms.v1.AsymmetricDecryptRequest prototype) {
+  public static Builder newBuilder(com.google.cloud.kms.v1.MacSignRequest prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
 
@@ -482,31 +474,31 @@ public final class AsymmetricDecryptRequest extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * Request message for [KeyManagementService.AsymmetricDecrypt][google.cloud.kms.v1.KeyManagementService.AsymmetricDecrypt].
+   * Request message for [KeyManagementService.MacSign][google.cloud.kms.v1.KeyManagementService.MacSign].
    * </pre>
    *
-   * Protobuf type {@code google.cloud.kms.v1.AsymmetricDecryptRequest}
+   * Protobuf type {@code google.cloud.kms.v1.MacSignRequest}
    */
   public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
       implements
-      // @@protoc_insertion_point(builder_implements:google.cloud.kms.v1.AsymmetricDecryptRequest)
-      com.google.cloud.kms.v1.AsymmetricDecryptRequestOrBuilder {
+      // @@protoc_insertion_point(builder_implements:google.cloud.kms.v1.MacSignRequest)
+      com.google.cloud.kms.v1.MacSignRequestOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.cloud.kms.v1.KmsProto
-          .internal_static_google_cloud_kms_v1_AsymmetricDecryptRequest_descriptor;
+          .internal_static_google_cloud_kms_v1_MacSignRequest_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return com.google.cloud.kms.v1.KmsProto
-          .internal_static_google_cloud_kms_v1_AsymmetricDecryptRequest_fieldAccessorTable
+          .internal_static_google_cloud_kms_v1_MacSignRequest_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.cloud.kms.v1.AsymmetricDecryptRequest.class,
-              com.google.cloud.kms.v1.AsymmetricDecryptRequest.Builder.class);
+              com.google.cloud.kms.v1.MacSignRequest.class,
+              com.google.cloud.kms.v1.MacSignRequest.Builder.class);
     }
 
-    // Construct using com.google.cloud.kms.v1.AsymmetricDecryptRequest.newBuilder()
+    // Construct using com.google.cloud.kms.v1.MacSignRequest.newBuilder()
     private Builder() {
       maybeForceBuilderInitialization();
     }
@@ -525,13 +517,13 @@ public final class AsymmetricDecryptRequest extends com.google.protobuf.Generate
       super.clear();
       name_ = "";
 
-      ciphertext_ = com.google.protobuf.ByteString.EMPTY;
+      data_ = com.google.protobuf.ByteString.EMPTY;
 
-      if (ciphertextCrc32CBuilder_ == null) {
-        ciphertextCrc32C_ = null;
+      if (dataCrc32CBuilder_ == null) {
+        dataCrc32C_ = null;
       } else {
-        ciphertextCrc32C_ = null;
-        ciphertextCrc32CBuilder_ = null;
+        dataCrc32C_ = null;
+        dataCrc32CBuilder_ = null;
       }
       return this;
     }
@@ -539,17 +531,17 @@ public final class AsymmetricDecryptRequest extends com.google.protobuf.Generate
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
       return com.google.cloud.kms.v1.KmsProto
-          .internal_static_google_cloud_kms_v1_AsymmetricDecryptRequest_descriptor;
+          .internal_static_google_cloud_kms_v1_MacSignRequest_descriptor;
     }
 
     @java.lang.Override
-    public com.google.cloud.kms.v1.AsymmetricDecryptRequest getDefaultInstanceForType() {
-      return com.google.cloud.kms.v1.AsymmetricDecryptRequest.getDefaultInstance();
+    public com.google.cloud.kms.v1.MacSignRequest getDefaultInstanceForType() {
+      return com.google.cloud.kms.v1.MacSignRequest.getDefaultInstance();
     }
 
     @java.lang.Override
-    public com.google.cloud.kms.v1.AsymmetricDecryptRequest build() {
-      com.google.cloud.kms.v1.AsymmetricDecryptRequest result = buildPartial();
+    public com.google.cloud.kms.v1.MacSignRequest build() {
+      com.google.cloud.kms.v1.MacSignRequest result = buildPartial();
       if (!result.isInitialized()) {
         throw newUninitializedMessageException(result);
       }
@@ -557,15 +549,15 @@ public final class AsymmetricDecryptRequest extends com.google.protobuf.Generate
     }
 
     @java.lang.Override
-    public com.google.cloud.kms.v1.AsymmetricDecryptRequest buildPartial() {
-      com.google.cloud.kms.v1.AsymmetricDecryptRequest result =
-          new com.google.cloud.kms.v1.AsymmetricDecryptRequest(this);
+    public com.google.cloud.kms.v1.MacSignRequest buildPartial() {
+      com.google.cloud.kms.v1.MacSignRequest result =
+          new com.google.cloud.kms.v1.MacSignRequest(this);
       result.name_ = name_;
-      result.ciphertext_ = ciphertext_;
-      if (ciphertextCrc32CBuilder_ == null) {
-        result.ciphertextCrc32C_ = ciphertextCrc32C_;
+      result.data_ = data_;
+      if (dataCrc32CBuilder_ == null) {
+        result.dataCrc32C_ = dataCrc32C_;
       } else {
-        result.ciphertextCrc32C_ = ciphertextCrc32CBuilder_.build();
+        result.dataCrc32C_ = dataCrc32CBuilder_.build();
       }
       onBuilt();
       return result;
@@ -606,26 +598,25 @@ public final class AsymmetricDecryptRequest extends com.google.protobuf.Generate
 
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof com.google.cloud.kms.v1.AsymmetricDecryptRequest) {
-        return mergeFrom((com.google.cloud.kms.v1.AsymmetricDecryptRequest) other);
+      if (other instanceof com.google.cloud.kms.v1.MacSignRequest) {
+        return mergeFrom((com.google.cloud.kms.v1.MacSignRequest) other);
       } else {
         super.mergeFrom(other);
         return this;
       }
     }
 
-    public Builder mergeFrom(com.google.cloud.kms.v1.AsymmetricDecryptRequest other) {
-      if (other == com.google.cloud.kms.v1.AsymmetricDecryptRequest.getDefaultInstance())
-        return this;
+    public Builder mergeFrom(com.google.cloud.kms.v1.MacSignRequest other) {
+      if (other == com.google.cloud.kms.v1.MacSignRequest.getDefaultInstance()) return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
         onChanged();
       }
-      if (other.getCiphertext() != com.google.protobuf.ByteString.EMPTY) {
-        setCiphertext(other.getCiphertext());
+      if (other.getData() != com.google.protobuf.ByteString.EMPTY) {
+        setData(other.getData());
       }
-      if (other.hasCiphertextCrc32C()) {
-        mergeCiphertextCrc32C(other.getCiphertextCrc32C());
+      if (other.hasDataCrc32C()) {
+        mergeDataCrc32C(other.getDataCrc32C());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -642,11 +633,11 @@ public final class AsymmetricDecryptRequest extends com.google.protobuf.Generate
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.cloud.kms.v1.AsymmetricDecryptRequest parsedMessage = null;
+      com.google.cloud.kms.v1.MacSignRequest parsedMessage = null;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.google.cloud.kms.v1.AsymmetricDecryptRequest) e.getUnfinishedMessage();
+        parsedMessage = (com.google.cloud.kms.v1.MacSignRequest) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
@@ -661,8 +652,7 @@ public final class AsymmetricDecryptRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Required. The resource name of the [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] to use for
-     * decryption.
+     * Required. The resource name of the [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] to use for signing.
      * </pre>
      *
      * <code>
@@ -686,8 +676,7 @@ public final class AsymmetricDecryptRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Required. The resource name of the [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] to use for
-     * decryption.
+     * Required. The resource name of the [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] to use for signing.
      * </pre>
      *
      * <code>
@@ -711,8 +700,7 @@ public final class AsymmetricDecryptRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Required. The resource name of the [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] to use for
-     * decryption.
+     * Required. The resource name of the [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] to use for signing.
      * </pre>
      *
      * <code>
@@ -735,8 +723,7 @@ public final class AsymmetricDecryptRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Required. The resource name of the [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] to use for
-     * decryption.
+     * Required. The resource name of the [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] to use for signing.
      * </pre>
      *
      * <code>
@@ -755,8 +742,7 @@ public final class AsymmetricDecryptRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Required. The resource name of the [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] to use for
-     * decryption.
+     * Required. The resource name of the [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] to use for signing.
      * </pre>
      *
      * <code>
@@ -777,42 +763,42 @@ public final class AsymmetricDecryptRequest extends com.google.protobuf.Generate
       return this;
     }
 
-    private com.google.protobuf.ByteString ciphertext_ = com.google.protobuf.ByteString.EMPTY;
+    private com.google.protobuf.ByteString data_ = com.google.protobuf.ByteString.EMPTY;
     /**
      *
      *
      * <pre>
-     * Required. The data encrypted with the named [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion]'s public
-     * key using OAEP.
+     * Required. The data to sign. The MAC tag is computed over this data field based on
+     * the specific algorithm.
      * </pre>
      *
-     * <code>bytes ciphertext = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>bytes data = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      *
-     * @return The ciphertext.
+     * @return The data.
      */
     @java.lang.Override
-    public com.google.protobuf.ByteString getCiphertext() {
-      return ciphertext_;
+    public com.google.protobuf.ByteString getData() {
+      return data_;
     }
     /**
      *
      *
      * <pre>
-     * Required. The data encrypted with the named [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion]'s public
-     * key using OAEP.
+     * Required. The data to sign. The MAC tag is computed over this data field based on
+     * the specific algorithm.
      * </pre>
      *
-     * <code>bytes ciphertext = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>bytes data = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      *
-     * @param value The ciphertext to set.
+     * @param value The data to set.
      * @return This builder for chaining.
      */
-    public Builder setCiphertext(com.google.protobuf.ByteString value) {
+    public Builder setData(com.google.protobuf.ByteString value) {
       if (value == null) {
         throw new NullPointerException();
       }
 
-      ciphertext_ = value;
+      data_ = value;
       onChanged();
       return this;
     }
@@ -820,121 +806,118 @@ public final class AsymmetricDecryptRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Required. The data encrypted with the named [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion]'s public
-     * key using OAEP.
+     * Required. The data to sign. The MAC tag is computed over this data field based on
+     * the specific algorithm.
      * </pre>
      *
-     * <code>bytes ciphertext = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>bytes data = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return This builder for chaining.
      */
-    public Builder clearCiphertext() {
+    public Builder clearData() {
 
-      ciphertext_ = getDefaultInstance().getCiphertext();
+      data_ = getDefaultInstance().getData();
       onChanged();
       return this;
     }
 
-    private com.google.protobuf.Int64Value ciphertextCrc32C_;
+    private com.google.protobuf.Int64Value dataCrc32C_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.protobuf.Int64Value,
             com.google.protobuf.Int64Value.Builder,
             com.google.protobuf.Int64ValueOrBuilder>
-        ciphertextCrc32CBuilder_;
+        dataCrc32CBuilder_;
     /**
      *
      *
      * <pre>
-     * Optional. An optional CRC32C checksum of the [AsymmetricDecryptRequest.ciphertext][google.cloud.kms.v1.AsymmetricDecryptRequest.ciphertext].
-     * If specified, [KeyManagementService][google.cloud.kms.v1.KeyManagementService] will verify the integrity of the
-     * received [AsymmetricDecryptRequest.ciphertext][google.cloud.kms.v1.AsymmetricDecryptRequest.ciphertext] using this checksum.
+     * Optional. An optional CRC32C checksum of the [MacSignRequest.data][google.cloud.kms.v1.MacSignRequest.data]. If
+     * specified, [KeyManagementService][google.cloud.kms.v1.KeyManagementService] will verify the integrity of the
+     * received [MacSignRequest.data][google.cloud.kms.v1.MacSignRequest.data] using this checksum.
      * [KeyManagementService][google.cloud.kms.v1.KeyManagementService] will report an error if the checksum verification
      * fails. If you receive a checksum error, your client should verify that
-     * CRC32C([AsymmetricDecryptRequest.ciphertext][google.cloud.kms.v1.AsymmetricDecryptRequest.ciphertext]) is equal to
-     * [AsymmetricDecryptRequest.ciphertext_crc32c][google.cloud.kms.v1.AsymmetricDecryptRequest.ciphertext_crc32c], and if so, perform a
-     * limited number of retries. A persistent mismatch may indicate an issue in
-     * your computation of the CRC32C checksum.
+     * CRC32C([MacSignRequest.data][google.cloud.kms.v1.MacSignRequest.data]) is equal to
+     * [MacSignRequest.data_crc32c][google.cloud.kms.v1.MacSignRequest.data_crc32c], and if so, perform a limited
+     * number of retries. A persistent mismatch may indicate an issue in your
+     * computation of the CRC32C checksum.
      * Note: This field is defined as int64 for reasons of compatibility across
      * different languages. However, it is a non-negative integer, which will
      * never exceed 2^32-1, and can be safely downconverted to uint32 in languages
      * that support this type.
      * </pre>
      *
-     * <code>
-     * .google.protobuf.Int64Value ciphertext_crc32c = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * <code>.google.protobuf.Int64Value data_crc32c = 3 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
-     * @return Whether the ciphertextCrc32c field is set.
+     * @return Whether the dataCrc32c field is set.
      */
-    public boolean hasCiphertextCrc32C() {
-      return ciphertextCrc32CBuilder_ != null || ciphertextCrc32C_ != null;
+    public boolean hasDataCrc32C() {
+      return dataCrc32CBuilder_ != null || dataCrc32C_ != null;
     }
     /**
      *
      *
      * <pre>
-     * Optional. An optional CRC32C checksum of the [AsymmetricDecryptRequest.ciphertext][google.cloud.kms.v1.AsymmetricDecryptRequest.ciphertext].
-     * If specified, [KeyManagementService][google.cloud.kms.v1.KeyManagementService] will verify the integrity of the
-     * received [AsymmetricDecryptRequest.ciphertext][google.cloud.kms.v1.AsymmetricDecryptRequest.ciphertext] using this checksum.
+     * Optional. An optional CRC32C checksum of the [MacSignRequest.data][google.cloud.kms.v1.MacSignRequest.data]. If
+     * specified, [KeyManagementService][google.cloud.kms.v1.KeyManagementService] will verify the integrity of the
+     * received [MacSignRequest.data][google.cloud.kms.v1.MacSignRequest.data] using this checksum.
      * [KeyManagementService][google.cloud.kms.v1.KeyManagementService] will report an error if the checksum verification
      * fails. If you receive a checksum error, your client should verify that
-     * CRC32C([AsymmetricDecryptRequest.ciphertext][google.cloud.kms.v1.AsymmetricDecryptRequest.ciphertext]) is equal to
-     * [AsymmetricDecryptRequest.ciphertext_crc32c][google.cloud.kms.v1.AsymmetricDecryptRequest.ciphertext_crc32c], and if so, perform a
-     * limited number of retries. A persistent mismatch may indicate an issue in
-     * your computation of the CRC32C checksum.
+     * CRC32C([MacSignRequest.data][google.cloud.kms.v1.MacSignRequest.data]) is equal to
+     * [MacSignRequest.data_crc32c][google.cloud.kms.v1.MacSignRequest.data_crc32c], and if so, perform a limited
+     * number of retries. A persistent mismatch may indicate an issue in your
+     * computation of the CRC32C checksum.
      * Note: This field is defined as int64 for reasons of compatibility across
      * different languages. However, it is a non-negative integer, which will
      * never exceed 2^32-1, and can be safely downconverted to uint32 in languages
      * that support this type.
      * </pre>
      *
-     * <code>
-     * .google.protobuf.Int64Value ciphertext_crc32c = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * <code>.google.protobuf.Int64Value data_crc32c = 3 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
-     * @return The ciphertextCrc32c.
+     * @return The dataCrc32c.
      */
-    public com.google.protobuf.Int64Value getCiphertextCrc32C() {
-      if (ciphertextCrc32CBuilder_ == null) {
-        return ciphertextCrc32C_ == null
+    public com.google.protobuf.Int64Value getDataCrc32C() {
+      if (dataCrc32CBuilder_ == null) {
+        return dataCrc32C_ == null
             ? com.google.protobuf.Int64Value.getDefaultInstance()
-            : ciphertextCrc32C_;
+            : dataCrc32C_;
       } else {
-        return ciphertextCrc32CBuilder_.getMessage();
+        return dataCrc32CBuilder_.getMessage();
       }
     }
     /**
      *
      *
      * <pre>
-     * Optional. An optional CRC32C checksum of the [AsymmetricDecryptRequest.ciphertext][google.cloud.kms.v1.AsymmetricDecryptRequest.ciphertext].
-     * If specified, [KeyManagementService][google.cloud.kms.v1.KeyManagementService] will verify the integrity of the
-     * received [AsymmetricDecryptRequest.ciphertext][google.cloud.kms.v1.AsymmetricDecryptRequest.ciphertext] using this checksum.
+     * Optional. An optional CRC32C checksum of the [MacSignRequest.data][google.cloud.kms.v1.MacSignRequest.data]. If
+     * specified, [KeyManagementService][google.cloud.kms.v1.KeyManagementService] will verify the integrity of the
+     * received [MacSignRequest.data][google.cloud.kms.v1.MacSignRequest.data] using this checksum.
      * [KeyManagementService][google.cloud.kms.v1.KeyManagementService] will report an error if the checksum verification
      * fails. If you receive a checksum error, your client should verify that
-     * CRC32C([AsymmetricDecryptRequest.ciphertext][google.cloud.kms.v1.AsymmetricDecryptRequest.ciphertext]) is equal to
-     * [AsymmetricDecryptRequest.ciphertext_crc32c][google.cloud.kms.v1.AsymmetricDecryptRequest.ciphertext_crc32c], and if so, perform a
-     * limited number of retries. A persistent mismatch may indicate an issue in
-     * your computation of the CRC32C checksum.
+     * CRC32C([MacSignRequest.data][google.cloud.kms.v1.MacSignRequest.data]) is equal to
+     * [MacSignRequest.data_crc32c][google.cloud.kms.v1.MacSignRequest.data_crc32c], and if so, perform a limited
+     * number of retries. A persistent mismatch may indicate an issue in your
+     * computation of the CRC32C checksum.
      * Note: This field is defined as int64 for reasons of compatibility across
      * different languages. However, it is a non-negative integer, which will
      * never exceed 2^32-1, and can be safely downconverted to uint32 in languages
      * that support this type.
      * </pre>
      *
-     * <code>
-     * .google.protobuf.Int64Value ciphertext_crc32c = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * <code>.google.protobuf.Int64Value data_crc32c = 3 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
-    public Builder setCiphertextCrc32C(com.google.protobuf.Int64Value value) {
-      if (ciphertextCrc32CBuilder_ == null) {
+    public Builder setDataCrc32C(com.google.protobuf.Int64Value value) {
+      if (dataCrc32CBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
         }
-        ciphertextCrc32C_ = value;
+        dataCrc32C_ = value;
         onChanged();
       } else {
-        ciphertextCrc32CBuilder_.setMessage(value);
+        dataCrc32CBuilder_.setMessage(value);
       }
 
       return this;
@@ -943,31 +926,30 @@ public final class AsymmetricDecryptRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Optional. An optional CRC32C checksum of the [AsymmetricDecryptRequest.ciphertext][google.cloud.kms.v1.AsymmetricDecryptRequest.ciphertext].
-     * If specified, [KeyManagementService][google.cloud.kms.v1.KeyManagementService] will verify the integrity of the
-     * received [AsymmetricDecryptRequest.ciphertext][google.cloud.kms.v1.AsymmetricDecryptRequest.ciphertext] using this checksum.
+     * Optional. An optional CRC32C checksum of the [MacSignRequest.data][google.cloud.kms.v1.MacSignRequest.data]. If
+     * specified, [KeyManagementService][google.cloud.kms.v1.KeyManagementService] will verify the integrity of the
+     * received [MacSignRequest.data][google.cloud.kms.v1.MacSignRequest.data] using this checksum.
      * [KeyManagementService][google.cloud.kms.v1.KeyManagementService] will report an error if the checksum verification
      * fails. If you receive a checksum error, your client should verify that
-     * CRC32C([AsymmetricDecryptRequest.ciphertext][google.cloud.kms.v1.AsymmetricDecryptRequest.ciphertext]) is equal to
-     * [AsymmetricDecryptRequest.ciphertext_crc32c][google.cloud.kms.v1.AsymmetricDecryptRequest.ciphertext_crc32c], and if so, perform a
-     * limited number of retries. A persistent mismatch may indicate an issue in
-     * your computation of the CRC32C checksum.
+     * CRC32C([MacSignRequest.data][google.cloud.kms.v1.MacSignRequest.data]) is equal to
+     * [MacSignRequest.data_crc32c][google.cloud.kms.v1.MacSignRequest.data_crc32c], and if so, perform a limited
+     * number of retries. A persistent mismatch may indicate an issue in your
+     * computation of the CRC32C checksum.
      * Note: This field is defined as int64 for reasons of compatibility across
      * different languages. However, it is a non-negative integer, which will
      * never exceed 2^32-1, and can be safely downconverted to uint32 in languages
      * that support this type.
      * </pre>
      *
-     * <code>
-     * .google.protobuf.Int64Value ciphertext_crc32c = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * <code>.google.protobuf.Int64Value data_crc32c = 3 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
-    public Builder setCiphertextCrc32C(com.google.protobuf.Int64Value.Builder builderForValue) {
-      if (ciphertextCrc32CBuilder_ == null) {
-        ciphertextCrc32C_ = builderForValue.build();
+    public Builder setDataCrc32C(com.google.protobuf.Int64Value.Builder builderForValue) {
+      if (dataCrc32CBuilder_ == null) {
+        dataCrc32C_ = builderForValue.build();
         onChanged();
       } else {
-        ciphertextCrc32CBuilder_.setMessage(builderForValue.build());
+        dataCrc32CBuilder_.setMessage(builderForValue.build());
       }
 
       return this;
@@ -976,38 +958,37 @@ public final class AsymmetricDecryptRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Optional. An optional CRC32C checksum of the [AsymmetricDecryptRequest.ciphertext][google.cloud.kms.v1.AsymmetricDecryptRequest.ciphertext].
-     * If specified, [KeyManagementService][google.cloud.kms.v1.KeyManagementService] will verify the integrity of the
-     * received [AsymmetricDecryptRequest.ciphertext][google.cloud.kms.v1.AsymmetricDecryptRequest.ciphertext] using this checksum.
+     * Optional. An optional CRC32C checksum of the [MacSignRequest.data][google.cloud.kms.v1.MacSignRequest.data]. If
+     * specified, [KeyManagementService][google.cloud.kms.v1.KeyManagementService] will verify the integrity of the
+     * received [MacSignRequest.data][google.cloud.kms.v1.MacSignRequest.data] using this checksum.
      * [KeyManagementService][google.cloud.kms.v1.KeyManagementService] will report an error if the checksum verification
      * fails. If you receive a checksum error, your client should verify that
-     * CRC32C([AsymmetricDecryptRequest.ciphertext][google.cloud.kms.v1.AsymmetricDecryptRequest.ciphertext]) is equal to
-     * [AsymmetricDecryptRequest.ciphertext_crc32c][google.cloud.kms.v1.AsymmetricDecryptRequest.ciphertext_crc32c], and if so, perform a
-     * limited number of retries. A persistent mismatch may indicate an issue in
-     * your computation of the CRC32C checksum.
+     * CRC32C([MacSignRequest.data][google.cloud.kms.v1.MacSignRequest.data]) is equal to
+     * [MacSignRequest.data_crc32c][google.cloud.kms.v1.MacSignRequest.data_crc32c], and if so, perform a limited
+     * number of retries. A persistent mismatch may indicate an issue in your
+     * computation of the CRC32C checksum.
      * Note: This field is defined as int64 for reasons of compatibility across
      * different languages. However, it is a non-negative integer, which will
      * never exceed 2^32-1, and can be safely downconverted to uint32 in languages
      * that support this type.
      * </pre>
      *
-     * <code>
-     * .google.protobuf.Int64Value ciphertext_crc32c = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * <code>.google.protobuf.Int64Value data_crc32c = 3 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
-    public Builder mergeCiphertextCrc32C(com.google.protobuf.Int64Value value) {
-      if (ciphertextCrc32CBuilder_ == null) {
-        if (ciphertextCrc32C_ != null) {
-          ciphertextCrc32C_ =
-              com.google.protobuf.Int64Value.newBuilder(ciphertextCrc32C_)
+    public Builder mergeDataCrc32C(com.google.protobuf.Int64Value value) {
+      if (dataCrc32CBuilder_ == null) {
+        if (dataCrc32C_ != null) {
+          dataCrc32C_ =
+              com.google.protobuf.Int64Value.newBuilder(dataCrc32C_)
                   .mergeFrom(value)
                   .buildPartial();
         } else {
-          ciphertextCrc32C_ = value;
+          dataCrc32C_ = value;
         }
         onChanged();
       } else {
-        ciphertextCrc32CBuilder_.mergeFrom(value);
+        dataCrc32CBuilder_.mergeFrom(value);
       }
 
       return this;
@@ -1016,32 +997,31 @@ public final class AsymmetricDecryptRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Optional. An optional CRC32C checksum of the [AsymmetricDecryptRequest.ciphertext][google.cloud.kms.v1.AsymmetricDecryptRequest.ciphertext].
-     * If specified, [KeyManagementService][google.cloud.kms.v1.KeyManagementService] will verify the integrity of the
-     * received [AsymmetricDecryptRequest.ciphertext][google.cloud.kms.v1.AsymmetricDecryptRequest.ciphertext] using this checksum.
+     * Optional. An optional CRC32C checksum of the [MacSignRequest.data][google.cloud.kms.v1.MacSignRequest.data]. If
+     * specified, [KeyManagementService][google.cloud.kms.v1.KeyManagementService] will verify the integrity of the
+     * received [MacSignRequest.data][google.cloud.kms.v1.MacSignRequest.data] using this checksum.
      * [KeyManagementService][google.cloud.kms.v1.KeyManagementService] will report an error if the checksum verification
      * fails. If you receive a checksum error, your client should verify that
-     * CRC32C([AsymmetricDecryptRequest.ciphertext][google.cloud.kms.v1.AsymmetricDecryptRequest.ciphertext]) is equal to
-     * [AsymmetricDecryptRequest.ciphertext_crc32c][google.cloud.kms.v1.AsymmetricDecryptRequest.ciphertext_crc32c], and if so, perform a
-     * limited number of retries. A persistent mismatch may indicate an issue in
-     * your computation of the CRC32C checksum.
+     * CRC32C([MacSignRequest.data][google.cloud.kms.v1.MacSignRequest.data]) is equal to
+     * [MacSignRequest.data_crc32c][google.cloud.kms.v1.MacSignRequest.data_crc32c], and if so, perform a limited
+     * number of retries. A persistent mismatch may indicate an issue in your
+     * computation of the CRC32C checksum.
      * Note: This field is defined as int64 for reasons of compatibility across
      * different languages. However, it is a non-negative integer, which will
      * never exceed 2^32-1, and can be safely downconverted to uint32 in languages
      * that support this type.
      * </pre>
      *
-     * <code>
-     * .google.protobuf.Int64Value ciphertext_crc32c = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * <code>.google.protobuf.Int64Value data_crc32c = 3 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
-    public Builder clearCiphertextCrc32C() {
-      if (ciphertextCrc32CBuilder_ == null) {
-        ciphertextCrc32C_ = null;
+    public Builder clearDataCrc32C() {
+      if (dataCrc32CBuilder_ == null) {
+        dataCrc32C_ = null;
         onChanged();
       } else {
-        ciphertextCrc32C_ = null;
-        ciphertextCrc32CBuilder_ = null;
+        dataCrc32C_ = null;
+        dataCrc32CBuilder_ = null;
       }
 
       return this;
@@ -1050,100 +1030,97 @@ public final class AsymmetricDecryptRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Optional. An optional CRC32C checksum of the [AsymmetricDecryptRequest.ciphertext][google.cloud.kms.v1.AsymmetricDecryptRequest.ciphertext].
-     * If specified, [KeyManagementService][google.cloud.kms.v1.KeyManagementService] will verify the integrity of the
-     * received [AsymmetricDecryptRequest.ciphertext][google.cloud.kms.v1.AsymmetricDecryptRequest.ciphertext] using this checksum.
+     * Optional. An optional CRC32C checksum of the [MacSignRequest.data][google.cloud.kms.v1.MacSignRequest.data]. If
+     * specified, [KeyManagementService][google.cloud.kms.v1.KeyManagementService] will verify the integrity of the
+     * received [MacSignRequest.data][google.cloud.kms.v1.MacSignRequest.data] using this checksum.
      * [KeyManagementService][google.cloud.kms.v1.KeyManagementService] will report an error if the checksum verification
      * fails. If you receive a checksum error, your client should verify that
-     * CRC32C([AsymmetricDecryptRequest.ciphertext][google.cloud.kms.v1.AsymmetricDecryptRequest.ciphertext]) is equal to
-     * [AsymmetricDecryptRequest.ciphertext_crc32c][google.cloud.kms.v1.AsymmetricDecryptRequest.ciphertext_crc32c], and if so, perform a
-     * limited number of retries. A persistent mismatch may indicate an issue in
-     * your computation of the CRC32C checksum.
+     * CRC32C([MacSignRequest.data][google.cloud.kms.v1.MacSignRequest.data]) is equal to
+     * [MacSignRequest.data_crc32c][google.cloud.kms.v1.MacSignRequest.data_crc32c], and if so, perform a limited
+     * number of retries. A persistent mismatch may indicate an issue in your
+     * computation of the CRC32C checksum.
      * Note: This field is defined as int64 for reasons of compatibility across
      * different languages. However, it is a non-negative integer, which will
      * never exceed 2^32-1, and can be safely downconverted to uint32 in languages
      * that support this type.
      * </pre>
      *
-     * <code>
-     * .google.protobuf.Int64Value ciphertext_crc32c = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * <code>.google.protobuf.Int64Value data_crc32c = 3 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
-    public com.google.protobuf.Int64Value.Builder getCiphertextCrc32CBuilder() {
+    public com.google.protobuf.Int64Value.Builder getDataCrc32CBuilder() {
 
       onChanged();
-      return getCiphertextCrc32CFieldBuilder().getBuilder();
+      return getDataCrc32CFieldBuilder().getBuilder();
     }
     /**
      *
      *
      * <pre>
-     * Optional. An optional CRC32C checksum of the [AsymmetricDecryptRequest.ciphertext][google.cloud.kms.v1.AsymmetricDecryptRequest.ciphertext].
-     * If specified, [KeyManagementService][google.cloud.kms.v1.KeyManagementService] will verify the integrity of the
-     * received [AsymmetricDecryptRequest.ciphertext][google.cloud.kms.v1.AsymmetricDecryptRequest.ciphertext] using this checksum.
+     * Optional. An optional CRC32C checksum of the [MacSignRequest.data][google.cloud.kms.v1.MacSignRequest.data]. If
+     * specified, [KeyManagementService][google.cloud.kms.v1.KeyManagementService] will verify the integrity of the
+     * received [MacSignRequest.data][google.cloud.kms.v1.MacSignRequest.data] using this checksum.
      * [KeyManagementService][google.cloud.kms.v1.KeyManagementService] will report an error if the checksum verification
      * fails. If you receive a checksum error, your client should verify that
-     * CRC32C([AsymmetricDecryptRequest.ciphertext][google.cloud.kms.v1.AsymmetricDecryptRequest.ciphertext]) is equal to
-     * [AsymmetricDecryptRequest.ciphertext_crc32c][google.cloud.kms.v1.AsymmetricDecryptRequest.ciphertext_crc32c], and if so, perform a
-     * limited number of retries. A persistent mismatch may indicate an issue in
-     * your computation of the CRC32C checksum.
+     * CRC32C([MacSignRequest.data][google.cloud.kms.v1.MacSignRequest.data]) is equal to
+     * [MacSignRequest.data_crc32c][google.cloud.kms.v1.MacSignRequest.data_crc32c], and if so, perform a limited
+     * number of retries. A persistent mismatch may indicate an issue in your
+     * computation of the CRC32C checksum.
      * Note: This field is defined as int64 for reasons of compatibility across
      * different languages. However, it is a non-negative integer, which will
      * never exceed 2^32-1, and can be safely downconverted to uint32 in languages
      * that support this type.
      * </pre>
      *
-     * <code>
-     * .google.protobuf.Int64Value ciphertext_crc32c = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * <code>.google.protobuf.Int64Value data_crc32c = 3 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
-    public com.google.protobuf.Int64ValueOrBuilder getCiphertextCrc32COrBuilder() {
-      if (ciphertextCrc32CBuilder_ != null) {
-        return ciphertextCrc32CBuilder_.getMessageOrBuilder();
+    public com.google.protobuf.Int64ValueOrBuilder getDataCrc32COrBuilder() {
+      if (dataCrc32CBuilder_ != null) {
+        return dataCrc32CBuilder_.getMessageOrBuilder();
       } else {
-        return ciphertextCrc32C_ == null
+        return dataCrc32C_ == null
             ? com.google.protobuf.Int64Value.getDefaultInstance()
-            : ciphertextCrc32C_;
+            : dataCrc32C_;
       }
     }
     /**
      *
      *
      * <pre>
-     * Optional. An optional CRC32C checksum of the [AsymmetricDecryptRequest.ciphertext][google.cloud.kms.v1.AsymmetricDecryptRequest.ciphertext].
-     * If specified, [KeyManagementService][google.cloud.kms.v1.KeyManagementService] will verify the integrity of the
-     * received [AsymmetricDecryptRequest.ciphertext][google.cloud.kms.v1.AsymmetricDecryptRequest.ciphertext] using this checksum.
+     * Optional. An optional CRC32C checksum of the [MacSignRequest.data][google.cloud.kms.v1.MacSignRequest.data]. If
+     * specified, [KeyManagementService][google.cloud.kms.v1.KeyManagementService] will verify the integrity of the
+     * received [MacSignRequest.data][google.cloud.kms.v1.MacSignRequest.data] using this checksum.
      * [KeyManagementService][google.cloud.kms.v1.KeyManagementService] will report an error if the checksum verification
      * fails. If you receive a checksum error, your client should verify that
-     * CRC32C([AsymmetricDecryptRequest.ciphertext][google.cloud.kms.v1.AsymmetricDecryptRequest.ciphertext]) is equal to
-     * [AsymmetricDecryptRequest.ciphertext_crc32c][google.cloud.kms.v1.AsymmetricDecryptRequest.ciphertext_crc32c], and if so, perform a
-     * limited number of retries. A persistent mismatch may indicate an issue in
-     * your computation of the CRC32C checksum.
+     * CRC32C([MacSignRequest.data][google.cloud.kms.v1.MacSignRequest.data]) is equal to
+     * [MacSignRequest.data_crc32c][google.cloud.kms.v1.MacSignRequest.data_crc32c], and if so, perform a limited
+     * number of retries. A persistent mismatch may indicate an issue in your
+     * computation of the CRC32C checksum.
      * Note: This field is defined as int64 for reasons of compatibility across
      * different languages. However, it is a non-negative integer, which will
      * never exceed 2^32-1, and can be safely downconverted to uint32 in languages
      * that support this type.
      * </pre>
      *
-     * <code>
-     * .google.protobuf.Int64Value ciphertext_crc32c = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * <code>.google.protobuf.Int64Value data_crc32c = 3 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.protobuf.Int64Value,
             com.google.protobuf.Int64Value.Builder,
             com.google.protobuf.Int64ValueOrBuilder>
-        getCiphertextCrc32CFieldBuilder() {
-      if (ciphertextCrc32CBuilder_ == null) {
-        ciphertextCrc32CBuilder_ =
+        getDataCrc32CFieldBuilder() {
+      if (dataCrc32CBuilder_ == null) {
+        dataCrc32CBuilder_ =
             new com.google.protobuf.SingleFieldBuilderV3<
                 com.google.protobuf.Int64Value,
                 com.google.protobuf.Int64Value.Builder,
                 com.google.protobuf.Int64ValueOrBuilder>(
-                getCiphertextCrc32C(), getParentForChildren(), isClean());
-        ciphertextCrc32C_ = null;
+                getDataCrc32C(), getParentForChildren(), isClean());
+        dataCrc32C_ = null;
       }
-      return ciphertextCrc32CBuilder_;
+      return dataCrc32CBuilder_;
     }
 
     @java.lang.Override
@@ -1157,42 +1134,42 @@ public final class AsymmetricDecryptRequest extends com.google.protobuf.Generate
       return super.mergeUnknownFields(unknownFields);
     }
 
-    // @@protoc_insertion_point(builder_scope:google.cloud.kms.v1.AsymmetricDecryptRequest)
+    // @@protoc_insertion_point(builder_scope:google.cloud.kms.v1.MacSignRequest)
   }
 
-  // @@protoc_insertion_point(class_scope:google.cloud.kms.v1.AsymmetricDecryptRequest)
-  private static final com.google.cloud.kms.v1.AsymmetricDecryptRequest DEFAULT_INSTANCE;
+  // @@protoc_insertion_point(class_scope:google.cloud.kms.v1.MacSignRequest)
+  private static final com.google.cloud.kms.v1.MacSignRequest DEFAULT_INSTANCE;
 
   static {
-    DEFAULT_INSTANCE = new com.google.cloud.kms.v1.AsymmetricDecryptRequest();
+    DEFAULT_INSTANCE = new com.google.cloud.kms.v1.MacSignRequest();
   }
 
-  public static com.google.cloud.kms.v1.AsymmetricDecryptRequest getDefaultInstance() {
+  public static com.google.cloud.kms.v1.MacSignRequest getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<AsymmetricDecryptRequest> PARSER =
-      new com.google.protobuf.AbstractParser<AsymmetricDecryptRequest>() {
+  private static final com.google.protobuf.Parser<MacSignRequest> PARSER =
+      new com.google.protobuf.AbstractParser<MacSignRequest>() {
         @java.lang.Override
-        public AsymmetricDecryptRequest parsePartialFrom(
+        public MacSignRequest parsePartialFrom(
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new AsymmetricDecryptRequest(input, extensionRegistry);
+          return new MacSignRequest(input, extensionRegistry);
         }
       };
 
-  public static com.google.protobuf.Parser<AsymmetricDecryptRequest> parser() {
+  public static com.google.protobuf.Parser<MacSignRequest> parser() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.protobuf.Parser<AsymmetricDecryptRequest> getParserForType() {
+  public com.google.protobuf.Parser<MacSignRequest> getParserForType() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.cloud.kms.v1.AsymmetricDecryptRequest getDefaultInstanceForType() {
+  public com.google.cloud.kms.v1.MacSignRequest getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
 }

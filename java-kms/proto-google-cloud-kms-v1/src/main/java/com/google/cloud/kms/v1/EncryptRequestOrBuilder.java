@@ -114,7 +114,6 @@ public interface EncryptRequestOrBuilder
    * different languages. However, it is a non-negative integer, which will
    * never exceed 2^32-1, and can be safely downconverted to uint32 in languages
    * that support this type.
-   * NOTE: This field is in Beta.
    * </pre>
    *
    * <code>
@@ -141,7 +140,6 @@ public interface EncryptRequestOrBuilder
    * different languages. However, it is a non-negative integer, which will
    * never exceed 2^32-1, and can be safely downconverted to uint32 in languages
    * that support this type.
-   * NOTE: This field is in Beta.
    * </pre>
    *
    * <code>
@@ -168,7 +166,6 @@ public interface EncryptRequestOrBuilder
    * different languages. However, it is a non-negative integer, which will
    * never exceed 2^32-1, and can be safely downconverted to uint32 in languages
    * that support this type.
-   * NOTE: This field is in Beta.
    * </pre>
    *
    * <code>
@@ -195,7 +192,6 @@ public interface EncryptRequestOrBuilder
    * different languages. However, it is a non-negative integer, which will
    * never exceed 2^32-1, and can be safely downconverted to uint32 in languages
    * that support this type.
-   * NOTE: This field is in Beta.
    * </pre>
    *
    * <code>
@@ -223,7 +219,6 @@ public interface EncryptRequestOrBuilder
    * different languages. However, it is a non-negative integer, which will
    * never exceed 2^32-1, and can be safely downconverted to uint32 in languages
    * that support this type.
-   * NOTE: This field is in Beta.
    * </pre>
    *
    * <code>
@@ -251,7 +246,6 @@ public interface EncryptRequestOrBuilder
    * different languages. However, it is a non-negative integer, which will
    * never exceed 2^32-1, and can be safely downconverted to uint32 in languages
    * that support this type.
-   * NOTE: This field is in Beta.
    * </pre>
    *
    * <code>
