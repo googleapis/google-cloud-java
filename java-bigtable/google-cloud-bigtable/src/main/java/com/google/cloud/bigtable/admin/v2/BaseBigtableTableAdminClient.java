@@ -2722,7 +2722,7 @@ public class BaseBigtableTableAdminClient implements BackgroundResource {
    * <pre>{@code
    * try (BaseBigtableTableAdminClient baseBigtableTableAdminClient =
    *     BaseBigtableTableAdminClient.create()) {
-   *   ResourceName resource = TableName.of("[PROJECT]", "[INSTANCE]", "[TABLE]");
+   *   ResourceName resource = AppProfileName.of("[PROJECT]", "[INSTANCE]", "[APP_PROFILE]");
    *   Policy response = baseBigtableTableAdminClient.getIamPolicy(resource);
    * }
    * }</pre>
@@ -2749,7 +2749,7 @@ public class BaseBigtableTableAdminClient implements BackgroundResource {
    * <pre>{@code
    * try (BaseBigtableTableAdminClient baseBigtableTableAdminClient =
    *     BaseBigtableTableAdminClient.create()) {
-   *   String resource = TableName.of("[PROJECT]", "[INSTANCE]", "[TABLE]").toString();
+   *   String resource = AppProfileName.of("[PROJECT]", "[INSTANCE]", "[APP_PROFILE]").toString();
    *   Policy response = baseBigtableTableAdminClient.getIamPolicy(resource);
    * }
    * }</pre>
@@ -2775,7 +2775,7 @@ public class BaseBigtableTableAdminClient implements BackgroundResource {
    *     BaseBigtableTableAdminClient.create()) {
    *   GetIamPolicyRequest request =
    *       GetIamPolicyRequest.newBuilder()
-   *           .setResource(TableName.of("[PROJECT]", "[INSTANCE]", "[TABLE]").toString())
+   *           .setResource(AppProfileName.of("[PROJECT]", "[INSTANCE]", "[APP_PROFILE]").toString())
    *           .setOptions(GetPolicyOptions.newBuilder().build())
    *           .build();
    *   Policy response = baseBigtableTableAdminClient.getIamPolicy(request);
@@ -2801,7 +2801,7 @@ public class BaseBigtableTableAdminClient implements BackgroundResource {
    *     BaseBigtableTableAdminClient.create()) {
    *   GetIamPolicyRequest request =
    *       GetIamPolicyRequest.newBuilder()
-   *           .setResource(TableName.of("[PROJECT]", "[INSTANCE]", "[TABLE]").toString())
+   *           .setResource(AppProfileName.of("[PROJECT]", "[INSTANCE]", "[APP_PROFILE]").toString())
    *           .setOptions(GetPolicyOptions.newBuilder().build())
    *           .build();
    *   ApiFuture<Policy> future =
@@ -2824,7 +2824,7 @@ public class BaseBigtableTableAdminClient implements BackgroundResource {
    * <pre>{@code
    * try (BaseBigtableTableAdminClient baseBigtableTableAdminClient =
    *     BaseBigtableTableAdminClient.create()) {
-   *   ResourceName resource = TableName.of("[PROJECT]", "[INSTANCE]", "[TABLE]");
+   *   ResourceName resource = AppProfileName.of("[PROJECT]", "[INSTANCE]", "[APP_PROFILE]");
    *   Policy policy = Policy.newBuilder().build();
    *   Policy response = baseBigtableTableAdminClient.setIamPolicy(resource, policy);
    * }
@@ -2855,7 +2855,7 @@ public class BaseBigtableTableAdminClient implements BackgroundResource {
    * <pre>{@code
    * try (BaseBigtableTableAdminClient baseBigtableTableAdminClient =
    *     BaseBigtableTableAdminClient.create()) {
-   *   String resource = TableName.of("[PROJECT]", "[INSTANCE]", "[TABLE]").toString();
+   *   String resource = AppProfileName.of("[PROJECT]", "[INSTANCE]", "[APP_PROFILE]").toString();
    *   Policy policy = Policy.newBuilder().build();
    *   Policy response = baseBigtableTableAdminClient.setIamPolicy(resource, policy);
    * }
@@ -2885,7 +2885,7 @@ public class BaseBigtableTableAdminClient implements BackgroundResource {
    *     BaseBigtableTableAdminClient.create()) {
    *   SetIamPolicyRequest request =
    *       SetIamPolicyRequest.newBuilder()
-   *           .setResource(TableName.of("[PROJECT]", "[INSTANCE]", "[TABLE]").toString())
+   *           .setResource(AppProfileName.of("[PROJECT]", "[INSTANCE]", "[APP_PROFILE]").toString())
    *           .setPolicy(Policy.newBuilder().build())
    *           .build();
    *   Policy response = baseBigtableTableAdminClient.setIamPolicy(request);
@@ -2910,7 +2910,7 @@ public class BaseBigtableTableAdminClient implements BackgroundResource {
    *     BaseBigtableTableAdminClient.create()) {
    *   SetIamPolicyRequest request =
    *       SetIamPolicyRequest.newBuilder()
-   *           .setResource(TableName.of("[PROJECT]", "[INSTANCE]", "[TABLE]").toString())
+   *           .setResource(AppProfileName.of("[PROJECT]", "[INSTANCE]", "[APP_PROFILE]").toString())
    *           .setPolicy(Policy.newBuilder().build())
    *           .build();
    *   ApiFuture<Policy> future =
@@ -2933,7 +2933,7 @@ public class BaseBigtableTableAdminClient implements BackgroundResource {
    * <pre>{@code
    * try (BaseBigtableTableAdminClient baseBigtableTableAdminClient =
    *     BaseBigtableTableAdminClient.create()) {
-   *   ResourceName resource = TableName.of("[PROJECT]", "[INSTANCE]", "[TABLE]");
+   *   ResourceName resource = AppProfileName.of("[PROJECT]", "[INSTANCE]", "[APP_PROFILE]");
    *   List<String> permissions = new ArrayList<>();
    *   TestIamPermissionsResponse response =
    *       baseBigtableTableAdminClient.testIamPermissions(resource, permissions);
@@ -2966,7 +2966,7 @@ public class BaseBigtableTableAdminClient implements BackgroundResource {
    * <pre>{@code
    * try (BaseBigtableTableAdminClient baseBigtableTableAdminClient =
    *     BaseBigtableTableAdminClient.create()) {
-   *   String resource = TableName.of("[PROJECT]", "[INSTANCE]", "[TABLE]").toString();
+   *   String resource = AppProfileName.of("[PROJECT]", "[INSTANCE]", "[APP_PROFILE]").toString();
    *   List<String> permissions = new ArrayList<>();
    *   TestIamPermissionsResponse response =
    *       baseBigtableTableAdminClient.testIamPermissions(resource, permissions);
@@ -3001,7 +3001,7 @@ public class BaseBigtableTableAdminClient implements BackgroundResource {
    *     BaseBigtableTableAdminClient.create()) {
    *   TestIamPermissionsRequest request =
    *       TestIamPermissionsRequest.newBuilder()
-   *           .setResource(TableName.of("[PROJECT]", "[INSTANCE]", "[TABLE]").toString())
+   *           .setResource(AppProfileName.of("[PROJECT]", "[INSTANCE]", "[APP_PROFILE]").toString())
    *           .addAllPermissions(new ArrayList<String>())
    *           .build();
    *   TestIamPermissionsResponse response =
@@ -3027,7 +3027,7 @@ public class BaseBigtableTableAdminClient implements BackgroundResource {
    *     BaseBigtableTableAdminClient.create()) {
    *   TestIamPermissionsRequest request =
    *       TestIamPermissionsRequest.newBuilder()
-   *           .setResource(TableName.of("[PROJECT]", "[INSTANCE]", "[TABLE]").toString())
+   *           .setResource(AppProfileName.of("[PROJECT]", "[INSTANCE]", "[APP_PROFILE]").toString())
    *           .addAllPermissions(new ArrayList<String>())
    *           .build();
    *   ApiFuture<TestIamPermissionsResponse> future =
