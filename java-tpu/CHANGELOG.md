@@ -1,5 +1,26 @@
 # Changelog
 
+## [2.0.0](https://www.github.com/googleapis/java-tpu/compare/v1.0.0...v2.0.0) (2021-08-06)
+
+
+### ⚠ BREAKING CHANGES
+
+* release gapic-generator-java v2.0.0 (#47)
+
+### Features
+
+* release gapic-generator-java v2.0.0 ([#47](https://www.github.com/googleapis/java-tpu/issues/47)) ([2e458a9](https://www.github.com/googleapis/java-tpu/commit/2e458a9d657f9a3dbc1d7bc51dd23901eaace09a))
+
+
+### Bug Fixes
+
+* owlbot post-processor should generate README ([#1154](https://www.github.com/googleapis/java-tpu/issues/1154)) ([#33](https://www.github.com/googleapis/java-tpu/issues/33)) ([117796d](https://www.github.com/googleapis/java-tpu/commit/117796dde0846ac8984d0c24f4a4bc1ada65f0b6)), closes [#1146](https://www.github.com/googleapis/java-tpu/issues/1146) [#1147](https://www.github.com/googleapis/java-tpu/issues/1147)
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2 ([#48](https://www.github.com/googleapis/java-tpu/issues/48)) ([956c268](https://www.github.com/googleapis/java-tpu/commit/956c268fc381a41fb19e3d7dff6c19092983788c))
+
 ## [1.0.0](https://www.github.com/googleapis/java-tpu/compare/v0.1.1...v1.0.0) (2021-07-02)
 
 
