@@ -1,5 +1,21 @@
 # Changelog
 
+## [2.0.0](https://www.github.com/googleapis/java-memcache/compare/v1.1.2...v2.0.0) (2021-08-06)
+
+
+### ⚠ BREAKING CHANGES
+
+* release gapic-generator-java v2.0.0 (#464)
+
+### Features
+
+* release gapic-generator-java v2.0.0 ([#464](https://www.github.com/googleapis/java-memcache/issues/464)) ([4eda9b4](https://www.github.com/googleapis/java-memcache/commit/4eda9b434551afb052126fc86a9552fd4c3bc691))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2 ([#465](https://www.github.com/googleapis/java-memcache/issues/465)) ([020c418](https://www.github.com/googleapis/java-memcache/commit/020c4187420f2e47f1e5479779afff481583f17e))
+
 ### [1.1.2](https://www.github.com/googleapis/java-memcache/compare/v1.1.1...v1.1.2) (2021-07-02)
 
 
