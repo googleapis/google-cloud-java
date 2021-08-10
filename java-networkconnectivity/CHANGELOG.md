@@ -1,5 +1,17 @@
 # Changelog
 
+## [0.4.0](https://www.github.com/googleapis/java-networkconnectivity/compare/v0.3.2...v0.4.0) (2021-08-10)
+
+
+### ⚠ BREAKING CHANGES
+
+* release gapic-generator-java v2.0.0 (#120)
+
+### Features
+
+* Add files for Network Connectivity v1 API ([3f08f1c](https://www.github.com/googleapis/java-networkconnectivity/commit/3f08f1ce35997bc21dc5214857ac0cf505df48e4))
+* release gapic-generator-java v2.0.0 ([#120](https://www.github.com/googleapis/java-networkconnectivity/issues/120)) ([3f08f1c](https://www.github.com/googleapis/java-networkconnectivity/commit/3f08f1ce35997bc21dc5214857ac0cf505df48e4))
+
 ### [0.3.2](https://www.github.com/googleapis/java-networkconnectivity/compare/v0.3.1...v0.3.2) (2021-08-06)
 
 
