@@ -54,9 +54,9 @@ public interface InputOrBuilder
    *
    *
    * <pre>
-   * URI of the media. It must be stored in Cloud Storage. Example
-   * `gs://bucket/inputs/file.mp4`.
-   * If empty the value will be populated from `Job.input_uri`.
+   * URI of the media. Input files must be at least 5 seconds in duration and
+   * stored in Cloud Storage (for example, `gs://bucket/inputs/file.mp4`).
+   * If empty, the value will be populated from `Job.input_uri`.
    * </pre>
    *
    * <code>string uri = 2;</code>
@@ -68,9 +68,9 @@ public interface InputOrBuilder
    *
    *
    * <pre>
-   * URI of the media. It must be stored in Cloud Storage. Example
-   * `gs://bucket/inputs/file.mp4`.
-   * If empty the value will be populated from `Job.input_uri`.
+   * URI of the media. Input files must be at least 5 seconds in duration and
+   * stored in Cloud Storage (for example, `gs://bucket/inputs/file.mp4`).
+   * If empty, the value will be populated from `Job.input_uri`.
    * </pre>
    *
    * <code>string uri = 2;</code>

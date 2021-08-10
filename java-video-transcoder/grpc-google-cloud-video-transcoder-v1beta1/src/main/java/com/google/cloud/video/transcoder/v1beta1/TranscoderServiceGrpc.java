@@ -32,6 +32,7 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
 @javax.annotation.Generated(
     value = "by gRPC proto compiler",
     comments = "Source: google/cloud/video/transcoder/v1beta1/services.proto")
+@java.lang.Deprecated
 public final class TranscoderServiceGrpc {
 
   private TranscoderServiceGrpc() {}
@@ -463,6 +464,7 @@ public final class TranscoderServiceGrpc {
    * concatenation, and digital ad-stitch ready content generation.
    * </pre>
    */
+  @java.lang.Deprecated
   public abstract static class TranscoderServiceImplBase implements io.grpc.BindableService {
 
     /**
@@ -651,6 +653,7 @@ public final class TranscoderServiceGrpc {
    * concatenation, and digital ad-stitch ready content generation.
    * </pre>
    */
+  @java.lang.Deprecated
   public static final class TranscoderServiceStub
       extends io.grpc.stub.AbstractAsyncStub<TranscoderServiceStub> {
     private TranscoderServiceStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
@@ -803,6 +806,7 @@ public final class TranscoderServiceGrpc {
    * concatenation, and digital ad-stitch ready content generation.
    * </pre>
    */
+  @java.lang.Deprecated
   public static final class TranscoderServiceBlockingStub
       extends io.grpc.stub.AbstractBlockingStub<TranscoderServiceBlockingStub> {
     private TranscoderServiceBlockingStub(
@@ -933,6 +937,7 @@ public final class TranscoderServiceGrpc {
    * concatenation, and digital ad-stitch ready content generation.
    * </pre>
    */
+  @java.lang.Deprecated
   public static final class TranscoderServiceFutureStub
       extends io.grpc.stub.AbstractFutureStub<TranscoderServiceFutureStub> {
     private TranscoderServiceFutureStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {

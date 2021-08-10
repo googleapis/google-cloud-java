@@ -156,6 +156,11 @@ public final class SpriteSheet extends com.google.protobuf.GeneratedMessageV3
               extractionStrategyCase_ = 10;
               break;
             }
+          case 88:
+            {
+              quality_ = input.readInt32();
+              break;
+            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -349,7 +354,10 @@ public final class SpriteSheet extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. The width of sprite in pixels. Must be an even integer.
+   * Required. The width of sprite in pixels. Must be an even integer. To preserve the
+   * source aspect ratio, set the [SpriteSheet.sprite_width_pixels][google.cloud.video.transcoder.v1beta1.SpriteSheet.sprite_width_pixels] field or
+   * the [SpriteSheet.sprite_height_pixels][google.cloud.video.transcoder.v1beta1.SpriteSheet.sprite_height_pixels] field, but not both (the API will
+   * automatically calculate the missing field).
    * </pre>
    *
    * <code>int32 sprite_width_pixels = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -367,7 +375,10 @@ public final class SpriteSheet extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. The height of sprite in pixels. Must be an even integer.
+   * Required. The height of sprite in pixels. Must be an even integer. To preserve the
+   * source aspect ratio, set the [SpriteSheet.sprite_height_pixels][google.cloud.video.transcoder.v1beta1.SpriteSheet.sprite_height_pixels] field or
+   * the [SpriteSheet.sprite_width_pixels][google.cloud.video.transcoder.v1beta1.SpriteSheet.sprite_width_pixels] field, but not both (the API will
+   * automatically calculate the missing field).
    * </pre>
    *
    * <code>int32 sprite_height_pixels = 4 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -616,6 +627,27 @@ public final class SpriteSheet extends com.google.protobuf.GeneratedMessageV3
     return com.google.protobuf.Duration.getDefaultInstance();
   }
 
+  public static final int QUALITY_FIELD_NUMBER = 11;
+  private int quality_;
+  /**
+   *
+   *
+   * <pre>
+   * The quality of the generated sprite sheet. Enter a value between 1
+   * and 100, where 1 is the lowest quality and 100 is the highest quality.
+   * The default is 100. A high quality value corresponds to a low image data
+   * compression ratio.
+   * </pre>
+   *
+   * <code>int32 quality = 11;</code>
+   *
+   * @return The quality.
+   */
+  @java.lang.Override
+  public int getQuality() {
+    return quality_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -660,6 +692,9 @@ public final class SpriteSheet extends com.google.protobuf.GeneratedMessageV3
     if (extractionStrategyCase_ == 10) {
       output.writeMessage(10, (com.google.protobuf.Duration) extractionStrategy_);
     }
+    if (quality_ != 0) {
+      output.writeInt32(11, quality_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -703,6 +738,9 @@ public final class SpriteSheet extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               10, (com.google.protobuf.Duration) extractionStrategy_);
     }
+    if (quality_ != 0) {
+      size += com.google.protobuf.CodedOutputStream.computeInt32Size(11, quality_);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -733,6 +771,7 @@ public final class SpriteSheet extends com.google.protobuf.GeneratedMessageV3
     if (hasEndTimeOffset()) {
       if (!getEndTimeOffset().equals(other.getEndTimeOffset())) return false;
     }
+    if (getQuality() != other.getQuality()) return false;
     if (!getExtractionStrategyCase().equals(other.getExtractionStrategyCase())) return false;
     switch (extractionStrategyCase_) {
       case 9:
@@ -775,6 +814,8 @@ public final class SpriteSheet extends com.google.protobuf.GeneratedMessageV3
       hash = (37 * hash) + END_TIME_OFFSET_FIELD_NUMBER;
       hash = (53 * hash) + getEndTimeOffset().hashCode();
     }
+    hash = (37 * hash) + QUALITY_FIELD_NUMBER;
+    hash = (53 * hash) + getQuality();
     switch (extractionStrategyCase_) {
       case 9:
         hash = (37 * hash) + TOTAL_COUNT_FIELD_NUMBER;
@@ -957,6 +998,8 @@ public final class SpriteSheet extends com.google.protobuf.GeneratedMessageV3
         endTimeOffset_ = null;
         endTimeOffsetBuilder_ = null;
       }
+      quality_ = 0;
+
       extractionStrategyCase_ = 0;
       extractionStrategy_ = null;
       return this;
@@ -1012,6 +1055,7 @@ public final class SpriteSheet extends com.google.protobuf.GeneratedMessageV3
           result.extractionStrategy_ = intervalBuilder_.build();
         }
       }
+      result.quality_ = quality_;
       result.extractionStrategyCase_ = extractionStrategyCase_;
       onBuilt();
       return result;
@@ -1088,6 +1132,9 @@ public final class SpriteSheet extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.hasEndTimeOffset()) {
         mergeEndTimeOffset(other.getEndTimeOffset());
+      }
+      if (other.getQuality() != 0) {
+        setQuality(other.getQuality());
       }
       switch (other.getExtractionStrategyCase()) {
         case TOTAL_COUNT:
@@ -1386,7 +1433,10 @@ public final class SpriteSheet extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The width of sprite in pixels. Must be an even integer.
+     * Required. The width of sprite in pixels. Must be an even integer. To preserve the
+     * source aspect ratio, set the [SpriteSheet.sprite_width_pixels][google.cloud.video.transcoder.v1beta1.SpriteSheet.sprite_width_pixels] field or
+     * the [SpriteSheet.sprite_height_pixels][google.cloud.video.transcoder.v1beta1.SpriteSheet.sprite_height_pixels] field, but not both (the API will
+     * automatically calculate the missing field).
      * </pre>
      *
      * <code>int32 sprite_width_pixels = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1401,7 +1451,10 @@ public final class SpriteSheet extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The width of sprite in pixels. Must be an even integer.
+     * Required. The width of sprite in pixels. Must be an even integer. To preserve the
+     * source aspect ratio, set the [SpriteSheet.sprite_width_pixels][google.cloud.video.transcoder.v1beta1.SpriteSheet.sprite_width_pixels] field or
+     * the [SpriteSheet.sprite_height_pixels][google.cloud.video.transcoder.v1beta1.SpriteSheet.sprite_height_pixels] field, but not both (the API will
+     * automatically calculate the missing field).
      * </pre>
      *
      * <code>int32 sprite_width_pixels = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1419,7 +1472,10 @@ public final class SpriteSheet extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The width of sprite in pixels. Must be an even integer.
+     * Required. The width of sprite in pixels. Must be an even integer. To preserve the
+     * source aspect ratio, set the [SpriteSheet.sprite_width_pixels][google.cloud.video.transcoder.v1beta1.SpriteSheet.sprite_width_pixels] field or
+     * the [SpriteSheet.sprite_height_pixels][google.cloud.video.transcoder.v1beta1.SpriteSheet.sprite_height_pixels] field, but not both (the API will
+     * automatically calculate the missing field).
      * </pre>
      *
      * <code>int32 sprite_width_pixels = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1438,7 +1494,10 @@ public final class SpriteSheet extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The height of sprite in pixels. Must be an even integer.
+     * Required. The height of sprite in pixels. Must be an even integer. To preserve the
+     * source aspect ratio, set the [SpriteSheet.sprite_height_pixels][google.cloud.video.transcoder.v1beta1.SpriteSheet.sprite_height_pixels] field or
+     * the [SpriteSheet.sprite_width_pixels][google.cloud.video.transcoder.v1beta1.SpriteSheet.sprite_width_pixels] field, but not both (the API will
+     * automatically calculate the missing field).
      * </pre>
      *
      * <code>int32 sprite_height_pixels = 4 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1453,7 +1512,10 @@ public final class SpriteSheet extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The height of sprite in pixels. Must be an even integer.
+     * Required. The height of sprite in pixels. Must be an even integer. To preserve the
+     * source aspect ratio, set the [SpriteSheet.sprite_height_pixels][google.cloud.video.transcoder.v1beta1.SpriteSheet.sprite_height_pixels] field or
+     * the [SpriteSheet.sprite_width_pixels][google.cloud.video.transcoder.v1beta1.SpriteSheet.sprite_width_pixels] field, but not both (the API will
+     * automatically calculate the missing field).
      * </pre>
      *
      * <code>int32 sprite_height_pixels = 4 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1471,7 +1533,10 @@ public final class SpriteSheet extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The height of sprite in pixels. Must be an even integer.
+     * Required. The height of sprite in pixels. Must be an even integer. To preserve the
+     * source aspect ratio, set the [SpriteSheet.sprite_height_pixels][google.cloud.video.transcoder.v1beta1.SpriteSheet.sprite_height_pixels] field or
+     * the [SpriteSheet.sprite_width_pixels][google.cloud.video.transcoder.v1beta1.SpriteSheet.sprite_width_pixels] field, but not both (the API will
+     * automatically calculate the missing field).
      * </pre>
      *
      * <code>int32 sprite_height_pixels = 4 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -2287,6 +2352,67 @@ public final class SpriteSheet extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       ;
       return intervalBuilder_;
+    }
+
+    private int quality_;
+    /**
+     *
+     *
+     * <pre>
+     * The quality of the generated sprite sheet. Enter a value between 1
+     * and 100, where 1 is the lowest quality and 100 is the highest quality.
+     * The default is 100. A high quality value corresponds to a low image data
+     * compression ratio.
+     * </pre>
+     *
+     * <code>int32 quality = 11;</code>
+     *
+     * @return The quality.
+     */
+    @java.lang.Override
+    public int getQuality() {
+      return quality_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The quality of the generated sprite sheet. Enter a value between 1
+     * and 100, where 1 is the lowest quality and 100 is the highest quality.
+     * The default is 100. A high quality value corresponds to a low image data
+     * compression ratio.
+     * </pre>
+     *
+     * <code>int32 quality = 11;</code>
+     *
+     * @param value The quality to set.
+     * @return This builder for chaining.
+     */
+    public Builder setQuality(int value) {
+
+      quality_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The quality of the generated sprite sheet. Enter a value between 1
+     * and 100, where 1 is the lowest quality and 100 is the highest quality.
+     * The default is 100. A high quality value corresponds to a low image data
+     * compression ratio.
+     * </pre>
+     *
+     * <code>int32 quality = 11;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearQuality() {
+
+      quality_ = 0;
+      onChanged();
+      return this;
     }
 
     @java.lang.Override

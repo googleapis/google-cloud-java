@@ -97,6 +97,7 @@ public class TranscoderServiceClientTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setStartTime(Timestamp.newBuilder().build())
             .setEndTime(Timestamp.newBuilder().build())
+            .setTtlAfterCompletionDays(107576420)
             .build();
     mockTranscoderService.addResponse(expectedResponse);
 
@@ -148,6 +149,7 @@ public class TranscoderServiceClientTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setStartTime(Timestamp.newBuilder().build())
             .setEndTime(Timestamp.newBuilder().build())
+            .setTtlAfterCompletionDays(107576420)
             .build();
     mockTranscoderService.addResponse(expectedResponse);
 
@@ -287,6 +289,7 @@ public class TranscoderServiceClientTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setStartTime(Timestamp.newBuilder().build())
             .setEndTime(Timestamp.newBuilder().build())
+            .setTtlAfterCompletionDays(107576420)
             .build();
     mockTranscoderService.addResponse(expectedResponse);
 
@@ -335,6 +338,7 @@ public class TranscoderServiceClientTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setStartTime(Timestamp.newBuilder().build())
             .setEndTime(Timestamp.newBuilder().build())
+            .setTtlAfterCompletionDays(107576420)
             .build();
     mockTranscoderService.addResponse(expectedResponse);
 

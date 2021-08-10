@@ -164,4 +164,74 @@ public interface PreprocessingConfigOrBuilder
    * <code>.google.cloud.video.transcoder.v1beta1.PreprocessingConfig.Audio audio = 4;</code>
    */
   com.google.cloud.video.transcoder.v1beta1.PreprocessingConfig.AudioOrBuilder getAudioOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Specify the video cropping configuration.
+   * </pre>
+   *
+   * <code>.google.cloud.video.transcoder.v1beta1.PreprocessingConfig.Crop crop = 5;</code>
+   *
+   * @return Whether the crop field is set.
+   */
+  boolean hasCrop();
+  /**
+   *
+   *
+   * <pre>
+   * Specify the video cropping configuration.
+   * </pre>
+   *
+   * <code>.google.cloud.video.transcoder.v1beta1.PreprocessingConfig.Crop crop = 5;</code>
+   *
+   * @return The crop.
+   */
+  com.google.cloud.video.transcoder.v1beta1.PreprocessingConfig.Crop getCrop();
+  /**
+   *
+   *
+   * <pre>
+   * Specify the video cropping configuration.
+   * </pre>
+   *
+   * <code>.google.cloud.video.transcoder.v1beta1.PreprocessingConfig.Crop crop = 5;</code>
+   */
+  com.google.cloud.video.transcoder.v1beta1.PreprocessingConfig.CropOrBuilder getCropOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Specify the video pad filter configuration.
+   * </pre>
+   *
+   * <code>.google.cloud.video.transcoder.v1beta1.PreprocessingConfig.Pad pad = 6;</code>
+   *
+   * @return Whether the pad field is set.
+   */
+  boolean hasPad();
+  /**
+   *
+   *
+   * <pre>
+   * Specify the video pad filter configuration.
+   * </pre>
+   *
+   * <code>.google.cloud.video.transcoder.v1beta1.PreprocessingConfig.Pad pad = 6;</code>
+   *
+   * @return The pad.
+   */
+  com.google.cloud.video.transcoder.v1beta1.PreprocessingConfig.Pad getPad();
+  /**
+   *
+   *
+   * <pre>
+   * Specify the video pad filter configuration.
+   * </pre>
+   *
+   * <code>.google.cloud.video.transcoder.v1beta1.PreprocessingConfig.Pad pad = 6;</code>
+   */
+  com.google.cloud.video.transcoder.v1beta1.PreprocessingConfig.PadOrBuilder getPadOrBuilder();
 }

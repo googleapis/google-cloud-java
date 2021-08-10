@@ -27,7 +27,10 @@ public interface SegmentSettingsOrBuilder
    *
    *
    * <pre>
-   * Duration of the segments in seconds. The default is `"6.0s"`.
+   * Duration of the segments in seconds. The default is `"6.0s"`. Note that
+   * `segmentDuration` must be greater than or equal to
+   * [`gopDuration`](#videostream), and `segmentDuration` must be divisible by
+   * [`gopDuration`](#videostream).
    * </pre>
    *
    * <code>.google.protobuf.Duration segment_duration = 1;</code>
@@ -39,7 +42,10 @@ public interface SegmentSettingsOrBuilder
    *
    *
    * <pre>
-   * Duration of the segments in seconds. The default is `"6.0s"`.
+   * Duration of the segments in seconds. The default is `"6.0s"`. Note that
+   * `segmentDuration` must be greater than or equal to
+   * [`gopDuration`](#videostream), and `segmentDuration` must be divisible by
+   * [`gopDuration`](#videostream).
    * </pre>
    *
    * <code>.google.protobuf.Duration segment_duration = 1;</code>
@@ -51,7 +57,10 @@ public interface SegmentSettingsOrBuilder
    *
    *
    * <pre>
-   * Duration of the segments in seconds. The default is `"6.0s"`.
+   * Duration of the segments in seconds. The default is `"6.0s"`. Note that
+   * `segmentDuration` must be greater than or equal to
+   * [`gopDuration`](#videostream), and `segmentDuration` must be divisible by
+   * [`gopDuration`](#videostream).
    * </pre>
    *
    * <code>.google.protobuf.Duration segment_duration = 1;</code>

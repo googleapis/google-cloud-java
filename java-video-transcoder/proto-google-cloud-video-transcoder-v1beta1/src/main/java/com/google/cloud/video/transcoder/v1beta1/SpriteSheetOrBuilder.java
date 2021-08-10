@@ -85,7 +85,10 @@ public interface SpriteSheetOrBuilder
    *
    *
    * <pre>
-   * Required. The width of sprite in pixels. Must be an even integer.
+   * Required. The width of sprite in pixels. Must be an even integer. To preserve the
+   * source aspect ratio, set the [SpriteSheet.sprite_width_pixels][google.cloud.video.transcoder.v1beta1.SpriteSheet.sprite_width_pixels] field or
+   * the [SpriteSheet.sprite_height_pixels][google.cloud.video.transcoder.v1beta1.SpriteSheet.sprite_height_pixels] field, but not both (the API will
+   * automatically calculate the missing field).
    * </pre>
    *
    * <code>int32 sprite_width_pixels = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -98,7 +101,10 @@ public interface SpriteSheetOrBuilder
    *
    *
    * <pre>
-   * Required. The height of sprite in pixels. Must be an even integer.
+   * Required. The height of sprite in pixels. Must be an even integer. To preserve the
+   * source aspect ratio, set the [SpriteSheet.sprite_height_pixels][google.cloud.video.transcoder.v1beta1.SpriteSheet.sprite_height_pixels] field or
+   * the [SpriteSheet.sprite_width_pixels][google.cloud.video.transcoder.v1beta1.SpriteSheet.sprite_width_pixels] field, but not both (the API will
+   * automatically calculate the missing field).
    * </pre>
    *
    * <code>int32 sprite_height_pixels = 4 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -281,6 +287,22 @@ public interface SpriteSheetOrBuilder
    * <code>.google.protobuf.Duration interval = 10;</code>
    */
   com.google.protobuf.DurationOrBuilder getIntervalOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * The quality of the generated sprite sheet. Enter a value between 1
+   * and 100, where 1 is the lowest quality and 100 is the highest quality.
+   * The default is 100. A high quality value corresponds to a low image data
+   * compression ratio.
+   * </pre>
+   *
+   * <code>int32 quality = 11;</code>
+   *
+   * @return The quality.
+   */
+  int getQuality();
 
   public com.google.cloud.video.transcoder.v1beta1.SpriteSheet.ExtractionStrategyCase
       getExtractionStrategyCase();

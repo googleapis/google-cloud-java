@@ -95,8 +95,11 @@ import org.threeten.bp.Duration;
  * TranscoderServiceStubSettings transcoderServiceSettings =
  *     transcoderServiceSettingsBuilder.build();
  * }</pre>
+ *
+ * @deprecated This class is deprecated and will be removed in the next major version update.
  */
 @BetaApi
+@Deprecated
 @Generated("by gapic-generator-java")
 public class TranscoderServiceStubSettings extends StubSettings<TranscoderServiceStubSettings> {
   /** The default scopes of the service. */
