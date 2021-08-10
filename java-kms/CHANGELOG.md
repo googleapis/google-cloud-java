@@ -1,5 +1,22 @@
 # Changelog
 
+## [2.0.0](https://www.github.com/googleapis/java-kms/compare/v1.43.0...v2.0.0) (2021-08-10)
+
+
+### ⚠ BREAKING CHANGES
+
+* release gapic-generator-java v2.0.0 (#561)
+
+### Features
+
+* add support for HMAC, Variable Key Destruction, and GenerateRandom ([#566](https://www.github.com/googleapis/java-kms/issues/566)) ([d1634f2](https://www.github.com/googleapis/java-kms/commit/d1634f20c728f4beccd266403637c9eb8121941d))
+* release gapic-generator-java v2.0.0 ([#561](https://www.github.com/googleapis/java-kms/issues/561)) ([49661d3](https://www.github.com/googleapis/java-kms/commit/49661d3d2601a7a628ad56a1ae136a23a60994a9))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2 ([#562](https://www.github.com/googleapis/java-kms/issues/562)) ([1e54ced](https://www.github.com/googleapis/java-kms/commit/1e54ceda1a7321b51eb4c165f43dbcfe697bda3f))
+
 ## [1.43.0](https://www.github.com/googleapis/java-kms/compare/v1.42.3...v1.43.0) (2021-07-05)
 
 
