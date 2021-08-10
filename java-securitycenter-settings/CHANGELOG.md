@@ -1,5 +1,27 @@
 # Changelog
 
+## [0.5.0](https://www.github.com/googleapis/java-securitycenter-settings/compare/v0.4.0...v0.5.0) (2021-08-10)
+
+
+### ⚠ BREAKING CHANGES
+
+* release gapic-generator-java v2.0.0 (#346)
+
+### Features
+
+* release gapic-generator-java v2.0.0 ([#346](https://www.github.com/googleapis/java-securitycenter-settings/issues/346)) ([5830ca6](https://www.github.com/googleapis/java-securitycenter-settings/commit/5830ca6f69198473ef2fa0dcc7a88f117170eff8))
+
+
+### Bug Fixes
+
+* Add `shopt -s nullglob` to dependencies script ([#326](https://www.github.com/googleapis/java-securitycenter-settings/issues/326)) ([1b5148e](https://www.github.com/googleapis/java-securitycenter-settings/commit/1b5148e0fbd0a50c6a0514efb55b30532d990117))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v1.4.0 ([#329](https://www.github.com/googleapis/java-securitycenter-settings/issues/329)) ([4bff002](https://www.github.com/googleapis/java-securitycenter-settings/commit/4bff0021ff37bc985282e48d54e176a75170de72))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2 ([#347](https://www.github.com/googleapis/java-securitycenter-settings/issues/347)) ([7be83ed](https://www.github.com/googleapis/java-securitycenter-settings/commit/7be83ed65504e21086dad9eb69264780a2ece787))
+
 ## [0.4.0](https://www.github.com/googleapis/java-securitycenter-settings/compare/v0.3.16...v0.4.0) (2021-06-17)
 
 
