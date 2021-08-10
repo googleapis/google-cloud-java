@@ -865,7 +865,7 @@ public class RegistrationServiceClientTest {
             .setAddress("address-1147692044")
             .setPort(3446913)
             .putAllMetadata(new HashMap<String, String>())
-            .setNetwork(NetworkName.of("[PROJECT]", "[NETWORK]").toString())
+            .setNetwork("network1843485230")
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .build();
@@ -917,7 +917,7 @@ public class RegistrationServiceClientTest {
             .setAddress("address-1147692044")
             .setPort(3446913)
             .putAllMetadata(new HashMap<String, String>())
-            .setNetwork(NetworkName.of("[PROJECT]", "[NETWORK]").toString())
+            .setNetwork("network1843485230")
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .build();
@@ -1057,7 +1057,7 @@ public class RegistrationServiceClientTest {
             .setAddress("address-1147692044")
             .setPort(3446913)
             .putAllMetadata(new HashMap<String, String>())
-            .setNetwork(NetworkName.of("[PROJECT]", "[NETWORK]").toString())
+            .setNetwork("network1843485230")
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .build();
@@ -1105,7 +1105,7 @@ public class RegistrationServiceClientTest {
             .setAddress("address-1147692044")
             .setPort(3446913)
             .putAllMetadata(new HashMap<String, String>())
-            .setNetwork(NetworkName.of("[PROJECT]", "[NETWORK]").toString())
+            .setNetwork("network1843485230")
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .build();
@@ -1151,7 +1151,7 @@ public class RegistrationServiceClientTest {
             .setAddress("address-1147692044")
             .setPort(3446913)
             .putAllMetadata(new HashMap<String, String>())
-            .setNetwork(NetworkName.of("[PROJECT]", "[NETWORK]").toString())
+            .setNetwork("network1843485230")
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .build();

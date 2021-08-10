@@ -16,7 +16,6 @@
 
 package com.google.cloud.servicedirectory.v1beta1;
 
-import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
 import com.google.api.core.BetaApi;
@@ -1952,12 +1951,7 @@ public class RegistrationServiceClient implements BackgroundResource {
           ListNamespacesPage.createEmptyPage().createPageAsync(context, futureResponse);
       return ApiFutures.transform(
           futurePage,
-          new ApiFunction<ListNamespacesPage, ListNamespacesPagedResponse>() {
-            @Override
-            public ListNamespacesPagedResponse apply(ListNamespacesPage input) {
-              return new ListNamespacesPagedResponse(input);
-            }
-          },
+          input -> new ListNamespacesPagedResponse(input),
           MoreExecutors.directExecutor());
     }
 
@@ -2033,12 +2027,7 @@ public class RegistrationServiceClient implements BackgroundResource {
           ListServicesPage.createEmptyPage().createPageAsync(context, futureResponse);
       return ApiFutures.transform(
           futurePage,
-          new ApiFunction<ListServicesPage, ListServicesPagedResponse>() {
-            @Override
-            public ListServicesPagedResponse apply(ListServicesPage input) {
-              return new ListServicesPagedResponse(input);
-            }
-          },
+          input -> new ListServicesPagedResponse(input),
           MoreExecutors.directExecutor());
     }
 
@@ -2113,12 +2102,7 @@ public class RegistrationServiceClient implements BackgroundResource {
           ListEndpointsPage.createEmptyPage().createPageAsync(context, futureResponse);
       return ApiFutures.transform(
           futurePage,
-          new ApiFunction<ListEndpointsPage, ListEndpointsPagedResponse>() {
-            @Override
-            public ListEndpointsPagedResponse apply(ListEndpointsPage input) {
-              return new ListEndpointsPagedResponse(input);
-            }
-          },
+          input -> new ListEndpointsPagedResponse(input),
           MoreExecutors.directExecutor());
     }
 
