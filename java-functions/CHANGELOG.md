@@ -1,5 +1,27 @@
 # Changelog
 
+## [2.0.0](https://www.github.com/googleapis/java-functions/compare/v1.2.2...v2.0.0) (2021-08-10)
+
+
+### ⚠ BREAKING CHANGES
+
+* release gapic-generator-java v2.0.0 (#260)
+
+### Features
+
+* release gapic-generator-java v2.0.0 ([#260](https://www.github.com/googleapis/java-functions/issues/260)) ([f38a61d](https://www.github.com/googleapis/java-functions/commit/f38a61db3c3b3781c687b57be90ddafcd1e4abdf))
+
+
+### Bug Fixes
+
+* owlbot post-processor should generate README ([#1154](https://www.github.com/googleapis/java-functions/issues/1154)) ([#245](https://www.github.com/googleapis/java-functions/issues/245)) ([0d67a94](https://www.github.com/googleapis/java-functions/commit/0d67a94b8eb78900028e0e5568917654c4c6d4fa)), closes [#1146](https://www.github.com/googleapis/java-functions/issues/1146) [#1147](https://www.github.com/googleapis/java-functions/issues/1147)
+* Updating behavior of source_upload_url during Get/List function calls ([#265](https://www.github.com/googleapis/java-functions/issues/265)) ([dce91f4](https://www.github.com/googleapis/java-functions/commit/dce91f4f65360cfc35d03364aa32eab03f49401f))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2 ([#261](https://www.github.com/googleapis/java-functions/issues/261)) ([0908628](https://www.github.com/googleapis/java-functions/commit/0908628a8927731d0edae4a3b07e9ddc28a4cc3d))
+
 ### [1.2.2](https://www.github.com/googleapis/java-functions/compare/v1.2.1...v1.2.2) (2021-07-01)
 
 
