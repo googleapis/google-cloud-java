@@ -1,5 +1,26 @@
 # Changelog
 
+## [2.0.0](https://www.github.com/googleapis/java-service-usage/compare/v1.0.1...v2.0.0) (2021-08-06)
+
+
+### ⚠ BREAKING CHANGES
+
+* release gapic-generator-java v2.0.0 (#72)
+
+### Features
+
+* release gapic-generator-java v2.0.0 ([#72](https://www.github.com/googleapis/java-service-usage/issues/72)) ([136efe1](https://www.github.com/googleapis/java-service-usage/commit/136efe1ce113639060b5b31202c86a6da84a52f9))
+
+
+### Bug Fixes
+
+* owlbot post-processor should generate README ([#1154](https://www.github.com/googleapis/java-service-usage/issues/1154)) ([#57](https://www.github.com/googleapis/java-service-usage/issues/57)) ([f57150d](https://www.github.com/googleapis/java-service-usage/commit/f57150df71a50166ffc1e3b60a20b318a94ff04c)), closes [#1146](https://www.github.com/googleapis/java-service-usage/issues/1146) [#1147](https://www.github.com/googleapis/java-service-usage/issues/1147)
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2 ([#73](https://www.github.com/googleapis/java-service-usage/issues/73)) ([c56d677](https://www.github.com/googleapis/java-service-usage/commit/c56d677b7b8379354c2dfbefacc33386f2d8b43d))
+
 ### [1.0.1](https://www.github.com/googleapis/java-service-usage/compare/v1.0.0...v1.0.1) (2021-07-01)
 
 
