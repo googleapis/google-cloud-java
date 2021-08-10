@@ -1,5 +1,21 @@
 # Changelog
 
+## [2.0.0](https://www.github.com/googleapis/java-os-login/compare/v1.3.1...v2.0.0) (2021-08-06)
+
+
+### ⚠ BREAKING CHANGES
+
+* release gapic-generator-java v2.0.0 (#509)
+
+### Features
+
+* release gapic-generator-java v2.0.0 ([#509](https://www.github.com/googleapis/java-os-login/issues/509)) ([ecc827e](https://www.github.com/googleapis/java-os-login/commit/ecc827ef2a277756c39dbada05a8b2beba6bbdaf))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2 ([#510](https://www.github.com/googleapis/java-os-login/issues/510)) ([113847f](https://www.github.com/googleapis/java-os-login/commit/113847f38ab99d3a1e756211589cf7ed3ee865c9))
+
 ### [1.3.1](https://www.github.com/googleapis/java-os-login/compare/v1.3.0...v1.3.1) (2021-07-05)
 
 
