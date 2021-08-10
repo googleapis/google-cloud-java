@@ -1,5 +1,18 @@
 # Changelog
 
+## [2.0.0](https://www.github.com/googleapis/java-datastore/compare/v1.107.1...v2.0.0) (2021-08-06)
+
+
+### ⚠ BREAKING CHANGES
+
+* update compile level to Java 1.8 ([#486](https://github.com/googleapis/java-datastore/pull/486))
+* upgrade shared dependencies to 2.0.0 (#490)
+
+### Features
+
+* update compile level to Java 1.8 ([#486](https://github.com/googleapis/java-datastore/pull/486))
+* upgrade shared dependencies to 2.0.0 ([#490](https://www.github.com/googleapis/java-datastore/issues/490)) ([d3e1af5](https://www.github.com/googleapis/java-datastore/commit/d3e1af5091ca864f6495a1440d475ecbabe465d4))
+
 ### [1.107.1](https://www.github.com/googleapis/java-datastore/compare/v1.107.0...v1.107.1) (2021-06-30)
 
 
