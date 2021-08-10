@@ -1,5 +1,18 @@
 # Changelog
 
+## [1.7.0](https://www.github.com/googleapis/java-secretmanager/compare/v1.6.4...v1.7.0) (2021-08-10)
+
+
+### Features
+
+* In Secret Manager, users can now use filter to customize the output of ListSecrets/ListSecretVersions calls ([#544](https://www.github.com/googleapis/java-secretmanager/issues/544)) ([bd2d8b3](https://www.github.com/googleapis/java-secretmanager/commit/bd2d8b3a4f60fa042b5fafca1a57249d150e8f8f))
+* Tune Secret Manager auto retry parameters ([#536](https://www.github.com/googleapis/java-secretmanager/issues/536)) ([dcb0303](https://www.github.com/googleapis/java-secretmanager/commit/dcb0303b25c0e8daf64b5e8ec20bda1b473c3f30))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2 ([#552](https://www.github.com/googleapis/java-secretmanager/issues/552)) ([ed61ecb](https://www.github.com/googleapis/java-secretmanager/commit/ed61ecbd643c187a1cb272fdbc499c633fc19155))
+
 ### [1.6.4](https://www.github.com/googleapis/java-secretmanager/compare/v1.6.3...v1.6.4) (2021-07-01)
 
 
