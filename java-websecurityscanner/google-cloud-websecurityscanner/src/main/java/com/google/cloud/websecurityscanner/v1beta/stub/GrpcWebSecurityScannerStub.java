@@ -27,7 +27,6 @@ import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.grpc.GrpcCallSettings;
 import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
-import com.google.api.gax.rpc.RequestParamsExtractor;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.websecurityscanner.v1beta.CreateScanConfigRequest;
 import com.google.cloud.websecurityscanner.v1beta.DeleteScanConfigRequest;
@@ -56,7 +55,6 @@ import com.google.protobuf.Empty;
 import io.grpc.MethodDescriptor;
 import io.grpc.protobuf.ProtoUtils;
 import java.io.IOException;
-import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
@@ -278,39 +276,30 @@ public class GrpcWebSecurityScannerStub extends WebSecurityScannerStub {
         GrpcCallSettings.<CreateScanConfigRequest, ScanConfig>newBuilder()
             .setMethodDescriptor(createScanConfigMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<CreateScanConfigRequest>() {
-                  @Override
-                  public Map<String, String> extract(CreateScanConfigRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("parent", String.valueOf(request.getParent()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("parent", String.valueOf(request.getParent()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<DeleteScanConfigRequest, Empty> deleteScanConfigTransportSettings =
         GrpcCallSettings.<DeleteScanConfigRequest, Empty>newBuilder()
             .setMethodDescriptor(deleteScanConfigMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<DeleteScanConfigRequest>() {
-                  @Override
-                  public Map<String, String> extract(DeleteScanConfigRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("name", String.valueOf(request.getName()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<GetScanConfigRequest, ScanConfig> getScanConfigTransportSettings =
         GrpcCallSettings.<GetScanConfigRequest, ScanConfig>newBuilder()
             .setMethodDescriptor(getScanConfigMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<GetScanConfigRequest>() {
-                  @Override
-                  public Map<String, String> extract(GetScanConfigRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("name", String.valueOf(request.getName()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<ListScanConfigsRequest, ListScanConfigsResponse>
@@ -318,79 +307,60 @@ public class GrpcWebSecurityScannerStub extends WebSecurityScannerStub {
             GrpcCallSettings.<ListScanConfigsRequest, ListScanConfigsResponse>newBuilder()
                 .setMethodDescriptor(listScanConfigsMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<ListScanConfigsRequest>() {
-                      @Override
-                      public Map<String, String> extract(ListScanConfigsRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("parent", String.valueOf(request.getParent()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("parent", String.valueOf(request.getParent()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<UpdateScanConfigRequest, ScanConfig> updateScanConfigTransportSettings =
         GrpcCallSettings.<UpdateScanConfigRequest, ScanConfig>newBuilder()
             .setMethodDescriptor(updateScanConfigMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<UpdateScanConfigRequest>() {
-                  @Override
-                  public Map<String, String> extract(UpdateScanConfigRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put(
-                        "scan_config.name", String.valueOf(request.getScanConfig().getName()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("scan_config.name", String.valueOf(request.getScanConfig().getName()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<StartScanRunRequest, ScanRun> startScanRunTransportSettings =
         GrpcCallSettings.<StartScanRunRequest, ScanRun>newBuilder()
             .setMethodDescriptor(startScanRunMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<StartScanRunRequest>() {
-                  @Override
-                  public Map<String, String> extract(StartScanRunRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("name", String.valueOf(request.getName()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<GetScanRunRequest, ScanRun> getScanRunTransportSettings =
         GrpcCallSettings.<GetScanRunRequest, ScanRun>newBuilder()
             .setMethodDescriptor(getScanRunMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<GetScanRunRequest>() {
-                  @Override
-                  public Map<String, String> extract(GetScanRunRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("name", String.valueOf(request.getName()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<ListScanRunsRequest, ListScanRunsResponse> listScanRunsTransportSettings =
         GrpcCallSettings.<ListScanRunsRequest, ListScanRunsResponse>newBuilder()
             .setMethodDescriptor(listScanRunsMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<ListScanRunsRequest>() {
-                  @Override
-                  public Map<String, String> extract(ListScanRunsRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("parent", String.valueOf(request.getParent()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("parent", String.valueOf(request.getParent()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<StopScanRunRequest, ScanRun> stopScanRunTransportSettings =
         GrpcCallSettings.<StopScanRunRequest, ScanRun>newBuilder()
             .setMethodDescriptor(stopScanRunMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<StopScanRunRequest>() {
-                  @Override
-                  public Map<String, String> extract(StopScanRunRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("name", String.valueOf(request.getName()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<ListCrawledUrlsRequest, ListCrawledUrlsResponse>
@@ -398,39 +368,30 @@ public class GrpcWebSecurityScannerStub extends WebSecurityScannerStub {
             GrpcCallSettings.<ListCrawledUrlsRequest, ListCrawledUrlsResponse>newBuilder()
                 .setMethodDescriptor(listCrawledUrlsMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<ListCrawledUrlsRequest>() {
-                      @Override
-                      public Map<String, String> extract(ListCrawledUrlsRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("parent", String.valueOf(request.getParent()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("parent", String.valueOf(request.getParent()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<GetFindingRequest, Finding> getFindingTransportSettings =
         GrpcCallSettings.<GetFindingRequest, Finding>newBuilder()
             .setMethodDescriptor(getFindingMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<GetFindingRequest>() {
-                  @Override
-                  public Map<String, String> extract(GetFindingRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("name", String.valueOf(request.getName()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<ListFindingsRequest, ListFindingsResponse> listFindingsTransportSettings =
         GrpcCallSettings.<ListFindingsRequest, ListFindingsResponse>newBuilder()
             .setMethodDescriptor(listFindingsMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<ListFindingsRequest>() {
-                  @Override
-                  public Map<String, String> extract(ListFindingsRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("parent", String.valueOf(request.getParent()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("parent", String.valueOf(request.getParent()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<ListFindingTypeStatsRequest, ListFindingTypeStatsResponse>
@@ -438,13 +399,10 @@ public class GrpcWebSecurityScannerStub extends WebSecurityScannerStub {
             GrpcCallSettings.<ListFindingTypeStatsRequest, ListFindingTypeStatsResponse>newBuilder()
                 .setMethodDescriptor(listFindingTypeStatsMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<ListFindingTypeStatsRequest>() {
-                      @Override
-                      public Map<String, String> extract(ListFindingTypeStatsRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("parent", String.valueOf(request.getParent()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("parent", String.valueOf(request.getParent()));
+                      return params.build();
                     })
                 .build();
 
@@ -600,7 +558,13 @@ public class GrpcWebSecurityScannerStub extends WebSecurityScannerStub {
 
   @Override
   public final void close() {
-    shutdown();
+    try {
+      backgroundResources.close();
+    } catch (RuntimeException e) {
+      throw e;
+    } catch (Exception e) {
+      throw new IllegalStateException("Failed to close resource", e);
+    }
   }
 
   @Override
