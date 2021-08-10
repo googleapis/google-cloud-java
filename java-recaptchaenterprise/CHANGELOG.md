@@ -1,5 +1,21 @@
 # Changelog
 
+## [2.0.0](https://www.github.com/googleapis/java-recaptchaenterprise/compare/v1.2.2...v2.0.0) (2021-08-06)
+
+
+### ⚠ BREAKING CHANGES
+
+* release gapic-generator-java v2.0.0 (#514)
+
+### Features
+
+* release gapic-generator-java v2.0.0 ([#514](https://www.github.com/googleapis/java-recaptchaenterprise/issues/514)) ([53f2518](https://www.github.com/googleapis/java-recaptchaenterprise/commit/53f251836b7ed757afa6f8ac6509110f7aafdb3e))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2 ([#515](https://www.github.com/googleapis/java-recaptchaenterprise/issues/515)) ([41a636f](https://www.github.com/googleapis/java-recaptchaenterprise/commit/41a636fd7aaecce94338c7261b17742b741ed9fd))
+
 ### [1.2.2](https://www.github.com/googleapis/java-recaptchaenterprise/compare/v1.2.1...v1.2.2) (2021-07-01)
 
 
