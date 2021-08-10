@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.google.cloud.networkconnectivity.v1alpha1;
+package com.google.cloud.networkconnectivity.v1;
 
 import com.google.api.pathtemplate.PathTemplate;
 import com.google.api.resourcenames.ResourceName;
@@ -28,38 +28,30 @@ import javax.annotation.Generated;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 @Generated("by gapic-generator-java")
-public class VpnTunnelName implements ResourceName {
-  private static final PathTemplate PROJECT_REGION_RESOURCE_ID =
-      PathTemplate.createWithoutUrlEncoding(
-          "projects/{project}/regions/{region}/vpnTunnels/{resource_id}");
+public class LocationName implements ResourceName {
+  private static final PathTemplate PROJECT_LOCATION =
+      PathTemplate.createWithoutUrlEncoding("projects/{project}/locations/{location}");
   private volatile Map<String, String> fieldValuesMap;
   private final String project;
-  private final String region;
-  private final String resourceId;
+  private final String location;
 
   @Deprecated
-  protected VpnTunnelName() {
+  protected LocationName() {
     project = null;
-    region = null;
-    resourceId = null;
+    location = null;
   }
 
-  private VpnTunnelName(Builder builder) {
+  private LocationName(Builder builder) {
     project = Preconditions.checkNotNull(builder.getProject());
-    region = Preconditions.checkNotNull(builder.getRegion());
-    resourceId = Preconditions.checkNotNull(builder.getResourceId());
+    location = Preconditions.checkNotNull(builder.getLocation());
   }
 
   public String getProject() {
     return project;
   }
 
-  public String getRegion() {
-    return region;
-  }
-
-  public String getResourceId() {
-    return resourceId;
+  public String getLocation() {
+    return location;
   }
 
   public static Builder newBuilder() {
@@ -70,40 +62,35 @@ public class VpnTunnelName implements ResourceName {
     return new Builder(this);
   }
 
-  public static VpnTunnelName of(String project, String region, String resourceId) {
-    return newBuilder().setProject(project).setRegion(region).setResourceId(resourceId).build();
+  public static LocationName of(String project, String location) {
+    return newBuilder().setProject(project).setLocation(location).build();
   }
 
-  public static String format(String project, String region, String resourceId) {
-    return newBuilder()
-        .setProject(project)
-        .setRegion(region)
-        .setResourceId(resourceId)
-        .build()
-        .toString();
+  public static String format(String project, String location) {
+    return newBuilder().setProject(project).setLocation(location).build().toString();
   }
 
-  public static VpnTunnelName parse(String formattedString) {
+  public static LocationName parse(String formattedString) {
     if (formattedString.isEmpty()) {
       return null;
     }
     Map<String, String> matchMap =
-        PROJECT_REGION_RESOURCE_ID.validatedMatch(
-            formattedString, "VpnTunnelName.parse: formattedString not in valid format");
-    return of(matchMap.get("project"), matchMap.get("region"), matchMap.get("resource_id"));
+        PROJECT_LOCATION.validatedMatch(
+            formattedString, "LocationName.parse: formattedString not in valid format");
+    return of(matchMap.get("project"), matchMap.get("location"));
   }
 
-  public static List<VpnTunnelName> parseList(List<String> formattedStrings) {
-    List<VpnTunnelName> list = new ArrayList<>(formattedStrings.size());
+  public static List<LocationName> parseList(List<String> formattedStrings) {
+    List<LocationName> list = new ArrayList<>(formattedStrings.size());
     for (String formattedString : formattedStrings) {
       list.add(parse(formattedString));
     }
     return list;
   }
 
-  public static List<String> toStringList(List<VpnTunnelName> values) {
+  public static List<String> toStringList(List<LocationName> values) {
     List<String> list = new ArrayList<>(values.size());
-    for (VpnTunnelName value : values) {
+    for (LocationName value : values) {
       if (value == null) {
         list.add("");
       } else {
@@ -114,7 +101,7 @@ public class VpnTunnelName implements ResourceName {
   }
 
   public static boolean isParsableFrom(String formattedString) {
-    return PROJECT_REGION_RESOURCE_ID.matches(formattedString);
+    return PROJECT_LOCATION.matches(formattedString);
   }
 
   @Override
@@ -126,11 +113,8 @@ public class VpnTunnelName implements ResourceName {
           if (project != null) {
             fieldMapBuilder.put("project", project);
           }
-          if (region != null) {
-            fieldMapBuilder.put("region", region);
-          }
-          if (resourceId != null) {
-            fieldMapBuilder.put("resource_id", resourceId);
+          if (location != null) {
+            fieldMapBuilder.put("location", location);
           }
           fieldValuesMap = fieldMapBuilder.build();
         }
@@ -145,8 +129,7 @@ public class VpnTunnelName implements ResourceName {
 
   @Override
   public String toString() {
-    return PROJECT_REGION_RESOURCE_ID.instantiate(
-        "project", project, "region", region, "resource_id", resourceId);
+    return PROJECT_LOCATION.instantiate("project", project, "location", location);
   }
 
   @Override
@@ -155,10 +138,9 @@ public class VpnTunnelName implements ResourceName {
       return true;
     }
     if (o != null || getClass() == o.getClass()) {
-      VpnTunnelName that = ((VpnTunnelName) o);
+      LocationName that = ((LocationName) o);
       return Objects.equals(this.project, that.project)
-          && Objects.equals(this.region, that.region)
-          && Objects.equals(this.resourceId, that.resourceId);
+          && Objects.equals(this.location, that.location);
     }
     return false;
   }
@@ -169,17 +151,14 @@ public class VpnTunnelName implements ResourceName {
     h *= 1000003;
     h ^= Objects.hashCode(project);
     h *= 1000003;
-    h ^= Objects.hashCode(region);
-    h *= 1000003;
-    h ^= Objects.hashCode(resourceId);
+    h ^= Objects.hashCode(location);
     return h;
   }
 
-  /** Builder for projects/{project}/regions/{region}/vpnTunnels/{resource_id}. */
+  /** Builder for projects/{project}/locations/{location}. */
   public static class Builder {
     private String project;
-    private String region;
-    private String resourceId;
+    private String location;
 
     protected Builder() {}
 
@@ -187,12 +166,8 @@ public class VpnTunnelName implements ResourceName {
       return project;
     }
 
-    public String getRegion() {
-      return region;
-    }
-
-    public String getResourceId() {
-      return resourceId;
+    public String getLocation() {
+      return location;
     }
 
     public Builder setProject(String project) {
@@ -200,24 +175,18 @@ public class VpnTunnelName implements ResourceName {
       return this;
     }
 
-    public Builder setRegion(String region) {
-      this.region = region;
+    public Builder setLocation(String location) {
+      this.location = location;
       return this;
     }
 
-    public Builder setResourceId(String resourceId) {
-      this.resourceId = resourceId;
-      return this;
+    private Builder(LocationName locationName) {
+      this.project = locationName.project;
+      this.location = locationName.location;
     }
 
-    private Builder(VpnTunnelName vpnTunnelName) {
-      this.project = vpnTunnelName.project;
-      this.region = vpnTunnelName.region;
-      this.resourceId = vpnTunnelName.resourceId;
-    }
-
-    public VpnTunnelName build() {
-      return new VpnTunnelName(this);
+    public LocationName build() {
+      return new LocationName(this);
     }
   }
 }

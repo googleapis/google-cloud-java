@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.google.cloud.networkconnectivity.v1alpha1;
+package com.google.cloud.networkconnectivity.v1;
 
 import com.google.api.pathtemplate.PathTemplate;
 import com.google.api.resourcenames.ResourceName;
@@ -28,37 +28,38 @@ import javax.annotation.Generated;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 @Generated("by gapic-generator-java")
-public class InstanceName implements ResourceName {
-  private static final PathTemplate PROJECT_ZONE_INSTANCE =
-      PathTemplate.createWithoutUrlEncoding("projects/{project}/zones/{zone}/instances/{instance}");
+public class SpokeName implements ResourceName {
+  private static final PathTemplate PROJECT_LOCATION_SPOKE =
+      PathTemplate.createWithoutUrlEncoding(
+          "projects/{project}/locations/{location}/spokes/{spoke}");
   private volatile Map<String, String> fieldValuesMap;
   private final String project;
-  private final String zone;
-  private final String instance;
+  private final String location;
+  private final String spoke;
 
   @Deprecated
-  protected InstanceName() {
+  protected SpokeName() {
     project = null;
-    zone = null;
-    instance = null;
+    location = null;
+    spoke = null;
   }
 
-  private InstanceName(Builder builder) {
+  private SpokeName(Builder builder) {
     project = Preconditions.checkNotNull(builder.getProject());
-    zone = Preconditions.checkNotNull(builder.getZone());
-    instance = Preconditions.checkNotNull(builder.getInstance());
+    location = Preconditions.checkNotNull(builder.getLocation());
+    spoke = Preconditions.checkNotNull(builder.getSpoke());
   }
 
   public String getProject() {
     return project;
   }
 
-  public String getZone() {
-    return zone;
+  public String getLocation() {
+    return location;
   }
 
-  public String getInstance() {
-    return instance;
+  public String getSpoke() {
+    return spoke;
   }
 
   public static Builder newBuilder() {
@@ -69,35 +70,40 @@ public class InstanceName implements ResourceName {
     return new Builder(this);
   }
 
-  public static InstanceName of(String project, String zone, String instance) {
-    return newBuilder().setProject(project).setZone(zone).setInstance(instance).build();
+  public static SpokeName of(String project, String location, String spoke) {
+    return newBuilder().setProject(project).setLocation(location).setSpoke(spoke).build();
   }
 
-  public static String format(String project, String zone, String instance) {
-    return newBuilder().setProject(project).setZone(zone).setInstance(instance).build().toString();
+  public static String format(String project, String location, String spoke) {
+    return newBuilder()
+        .setProject(project)
+        .setLocation(location)
+        .setSpoke(spoke)
+        .build()
+        .toString();
   }
 
-  public static InstanceName parse(String formattedString) {
+  public static SpokeName parse(String formattedString) {
     if (formattedString.isEmpty()) {
       return null;
     }
     Map<String, String> matchMap =
-        PROJECT_ZONE_INSTANCE.validatedMatch(
-            formattedString, "InstanceName.parse: formattedString not in valid format");
-    return of(matchMap.get("project"), matchMap.get("zone"), matchMap.get("instance"));
+        PROJECT_LOCATION_SPOKE.validatedMatch(
+            formattedString, "SpokeName.parse: formattedString not in valid format");
+    return of(matchMap.get("project"), matchMap.get("location"), matchMap.get("spoke"));
   }
 
-  public static List<InstanceName> parseList(List<String> formattedStrings) {
-    List<InstanceName> list = new ArrayList<>(formattedStrings.size());
+  public static List<SpokeName> parseList(List<String> formattedStrings) {
+    List<SpokeName> list = new ArrayList<>(formattedStrings.size());
     for (String formattedString : formattedStrings) {
       list.add(parse(formattedString));
     }
     return list;
   }
 
-  public static List<String> toStringList(List<InstanceName> values) {
+  public static List<String> toStringList(List<SpokeName> values) {
     List<String> list = new ArrayList<>(values.size());
-    for (InstanceName value : values) {
+    for (SpokeName value : values) {
       if (value == null) {
         list.add("");
       } else {
@@ -108,7 +114,7 @@ public class InstanceName implements ResourceName {
   }
 
   public static boolean isParsableFrom(String formattedString) {
-    return PROJECT_ZONE_INSTANCE.matches(formattedString);
+    return PROJECT_LOCATION_SPOKE.matches(formattedString);
   }
 
   @Override
@@ -120,11 +126,11 @@ public class InstanceName implements ResourceName {
           if (project != null) {
             fieldMapBuilder.put("project", project);
           }
-          if (zone != null) {
-            fieldMapBuilder.put("zone", zone);
+          if (location != null) {
+            fieldMapBuilder.put("location", location);
           }
-          if (instance != null) {
-            fieldMapBuilder.put("instance", instance);
+          if (spoke != null) {
+            fieldMapBuilder.put("spoke", spoke);
           }
           fieldValuesMap = fieldMapBuilder.build();
         }
@@ -139,8 +145,8 @@ public class InstanceName implements ResourceName {
 
   @Override
   public String toString() {
-    return PROJECT_ZONE_INSTANCE.instantiate(
-        "project", project, "zone", zone, "instance", instance);
+    return PROJECT_LOCATION_SPOKE.instantiate(
+        "project", project, "location", location, "spoke", spoke);
   }
 
   @Override
@@ -149,10 +155,10 @@ public class InstanceName implements ResourceName {
       return true;
     }
     if (o != null || getClass() == o.getClass()) {
-      InstanceName that = ((InstanceName) o);
+      SpokeName that = ((SpokeName) o);
       return Objects.equals(this.project, that.project)
-          && Objects.equals(this.zone, that.zone)
-          && Objects.equals(this.instance, that.instance);
+          && Objects.equals(this.location, that.location)
+          && Objects.equals(this.spoke, that.spoke);
     }
     return false;
   }
@@ -163,17 +169,17 @@ public class InstanceName implements ResourceName {
     h *= 1000003;
     h ^= Objects.hashCode(project);
     h *= 1000003;
-    h ^= Objects.hashCode(zone);
+    h ^= Objects.hashCode(location);
     h *= 1000003;
-    h ^= Objects.hashCode(instance);
+    h ^= Objects.hashCode(spoke);
     return h;
   }
 
-  /** Builder for projects/{project}/zones/{zone}/instances/{instance}. */
+  /** Builder for projects/{project}/locations/{location}/spokes/{spoke}. */
   public static class Builder {
     private String project;
-    private String zone;
-    private String instance;
+    private String location;
+    private String spoke;
 
     protected Builder() {}
 
@@ -181,12 +187,12 @@ public class InstanceName implements ResourceName {
       return project;
     }
 
-    public String getZone() {
-      return zone;
+    public String getLocation() {
+      return location;
     }
 
-    public String getInstance() {
-      return instance;
+    public String getSpoke() {
+      return spoke;
     }
 
     public Builder setProject(String project) {
@@ -194,24 +200,24 @@ public class InstanceName implements ResourceName {
       return this;
     }
 
-    public Builder setZone(String zone) {
-      this.zone = zone;
+    public Builder setLocation(String location) {
+      this.location = location;
       return this;
     }
 
-    public Builder setInstance(String instance) {
-      this.instance = instance;
+    public Builder setSpoke(String spoke) {
+      this.spoke = spoke;
       return this;
     }
 
-    private Builder(InstanceName instanceName) {
-      this.project = instanceName.project;
-      this.zone = instanceName.zone;
-      this.instance = instanceName.instance;
+    private Builder(SpokeName spokeName) {
+      this.project = spokeName.project;
+      this.location = spokeName.location;
+      this.spoke = spokeName.spoke;
     }
 
-    public InstanceName build() {
-      return new InstanceName(this);
+    public SpokeName build() {
+      return new SpokeName(this);
     }
   }
 }

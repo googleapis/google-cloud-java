@@ -65,6 +65,16 @@
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
+        <artifactId>proto-google-cloud-networkconnectivity-v1</artifactId>
+        <version>0.3.3-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-networkconnectivity-v1:current} -->
+      </dependency>
+      <dependency>
+        <groupId>com.google.api.grpc</groupId>
+        <artifactId>grpc-google-cloud-networkconnectivity-v1</artifactId>
+        <version>0.3.3-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-networkconnectivity-v1:current} -->
+      </dependency>
+      <dependency>
+        <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-networkconnectivity-v1alpha1</artifactId>
         <version>0.3.3-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-networkconnectivity-v1alpha1:current} -->
       </dependency>
@@ -104,7 +114,9 @@
   <modules>
     <module>google-cloud-networkconnectivity</module>
     <module>grpc-google-cloud-networkconnectivity-v1alpha1</module>
+    <module>grpc-google-cloud-networkconnectivity-v1</module>
     <module>proto-google-cloud-networkconnectivity-v1alpha1</module>
+    <module>proto-google-cloud-networkconnectivity-v1</module>
     <module>google-cloud-networkconnectivity-bom</module>
   </modules>
 

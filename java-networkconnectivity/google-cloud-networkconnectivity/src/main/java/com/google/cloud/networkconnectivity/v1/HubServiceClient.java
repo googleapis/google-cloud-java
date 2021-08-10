@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.google.cloud.networkconnectivity.v1alpha1;
+package com.google.cloud.networkconnectivity.v1;
 
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
@@ -27,8 +27,8 @@ import com.google.api.gax.paging.AbstractPagedListResponse;
 import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.UnaryCallable;
-import com.google.cloud.networkconnectivity.v1alpha1.stub.HubServiceStub;
-import com.google.cloud.networkconnectivity.v1alpha1.stub.HubServiceStubSettings;
+import com.google.cloud.networkconnectivity.v1.stub.HubServiceStub;
+import com.google.cloud.networkconnectivity.v1.stub.HubServiceStubSettings;
 import com.google.common.util.concurrent.MoreExecutors;
 import com.google.longrunning.Operation;
 import com.google.longrunning.OperationsClient;
@@ -101,7 +101,6 @@ import javax.annotation.Generated;
  *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
-@BetaApi
 @Generated("by gapic-generator-java")
 public class HubServiceClient implements BackgroundResource {
   private final HubServiceSettings settings;
@@ -166,7 +165,7 @@ public class HubServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists Hubs in a given project and location.
+   * Lists hubs in a given project.
    *
    * <p>Sample code:
    *
@@ -190,7 +189,7 @@ public class HubServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists Hubs in a given project and location.
+   * Lists hubs in a given project.
    *
    * <p>Sample code:
    *
@@ -213,7 +212,7 @@ public class HubServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists Hubs in a given project and location.
+   * Lists hubs in a given project.
    *
    * <p>Sample code:
    *
@@ -242,7 +241,7 @@ public class HubServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists Hubs in a given project and location.
+   * Lists hubs in a given project.
    *
    * <p>Sample code:
    *
@@ -270,7 +269,7 @@ public class HubServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists Hubs in a given project and location.
+   * Lists hubs in a given project.
    *
    * <p>Sample code:
    *
@@ -305,7 +304,7 @@ public class HubServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Gets details of a single Hub.
+   * Gets details about the specified hub.
    *
    * <p>Sample code:
    *
@@ -316,7 +315,7 @@ public class HubServiceClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param name Required. Name of the Hub resource to get.
+   * @param name Required. The name of the hub resource to get.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Hub getHub(HubName name) {
@@ -327,7 +326,7 @@ public class HubServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Gets details of a single Hub.
+   * Gets details about the specified hub.
    *
    * <p>Sample code:
    *
@@ -338,7 +337,7 @@ public class HubServiceClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param name Required. Name of the Hub resource to get.
+   * @param name Required. The name of the hub resource to get.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Hub getHub(String name) {
@@ -348,7 +347,7 @@ public class HubServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Gets details of a single Hub.
+   * Gets details about the specified hub.
    *
    * <p>Sample code:
    *
@@ -369,7 +368,7 @@ public class HubServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Gets details of a single Hub.
+   * Gets details about the specified hub.
    *
    * <p>Sample code:
    *
@@ -389,7 +388,7 @@ public class HubServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Creates a new Hub in a given project and location.
+   * Creates a new hub in the specified project.
    *
    * <p>Sample code:
    *
@@ -402,9 +401,9 @@ public class HubServiceClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. The parent resource's name of the Hub.
-   * @param hub Required. Initial values for a new Hub.
-   * @param hubId Optional. Unique id for the Hub to create.
+   * @param parent Required. The parent resource.
+   * @param hub Required. The initial values for a new hub.
+   * @param hubId Optional. A unique identifier for the hub.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Hub, OperationMetadata> createHubAsync(
@@ -420,7 +419,7 @@ public class HubServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Creates a new Hub in a given project and location.
+   * Creates a new hub in the specified project.
    *
    * <p>Sample code:
    *
@@ -433,9 +432,9 @@ public class HubServiceClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. The parent resource's name of the Hub.
-   * @param hub Required. Initial values for a new Hub.
-   * @param hubId Optional. Unique id for the Hub to create.
+   * @param parent Required. The parent resource.
+   * @param hub Required. The initial values for a new hub.
+   * @param hubId Optional. A unique identifier for the hub.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Hub, OperationMetadata> createHubAsync(
@@ -447,7 +446,7 @@ public class HubServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Creates a new Hub in a given project and location.
+   * Creates a new hub in the specified project.
    *
    * <p>Sample code:
    *
@@ -473,7 +472,7 @@ public class HubServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Creates a new Hub in a given project and location.
+   * Creates a new hub in the specified project.
    *
    * <p>Sample code:
    *
@@ -500,7 +499,7 @@ public class HubServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Creates a new Hub in a given project and location.
+   * Creates a new hub in the specified project.
    *
    * <p>Sample code:
    *
@@ -525,7 +524,7 @@ public class HubServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Updates the parameters of a single Hub.
+   * Updates the description and/or labels of the specified hub.
    *
    * <p>Sample code:
    *
@@ -537,11 +536,11 @@ public class HubServiceClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param hub Required. The state that the Hub should be in after the update.
-   * @param updateMask Optional. Field mask is used to specify the fields to be overwritten in the
-   *     Hub resource by the update. The fields specified in the update_mask are relative to the
-   *     resource, not the full request. A field will be overwritten if it is in the mask. If the
-   *     user does not provide a mask then all fields will be overwritten.
+   * @param hub Required. The state that the hub should be in after the update.
+   * @param updateMask Optional. In the case of an update to an existing hub, field mask is used to
+   *     specify the fields to be overwritten. The fields specified in the update_mask are relative
+   *     to the resource, not the full request. A field is overwritten if it is in the mask. If the
+   *     user does not provide a mask, then all fields are overwritten.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Hub, OperationMetadata> updateHubAsync(
@@ -553,7 +552,7 @@ public class HubServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Updates the parameters of a single Hub.
+   * Updates the description and/or labels of the specified hub.
    *
    * <p>Sample code:
    *
@@ -578,7 +577,7 @@ public class HubServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Updates the parameters of a single Hub.
+   * Updates the description and/or labels of the specified hub.
    *
    * <p>Sample code:
    *
@@ -604,7 +603,7 @@ public class HubServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Updates the parameters of a single Hub.
+   * Updates the description and/or labels of the specified hub.
    *
    * <p>Sample code:
    *
@@ -628,7 +627,7 @@ public class HubServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Deletes a single Hub.
+   * Deletes the specified hub.
    *
    * <p>Sample code:
    *
@@ -639,7 +638,7 @@ public class HubServiceClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param name Required. The name of the Hub to delete.
+   * @param name Required. The name of the hub to delete.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Empty, OperationMetadata> deleteHubAsync(HubName name) {
@@ -650,7 +649,7 @@ public class HubServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Deletes a single Hub.
+   * Deletes the specified hub.
    *
    * <p>Sample code:
    *
@@ -661,7 +660,7 @@ public class HubServiceClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param name Required. The name of the Hub to delete.
+   * @param name Required. The name of the hub to delete.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Empty, OperationMetadata> deleteHubAsync(String name) {
@@ -671,7 +670,7 @@ public class HubServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Deletes a single Hub.
+   * Deletes the specified hub.
    *
    * <p>Sample code:
    *
@@ -695,7 +694,7 @@ public class HubServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Deletes a single Hub.
+   * Deletes the specified hub.
    *
    * <p>Sample code:
    *
@@ -720,7 +719,7 @@ public class HubServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Deletes a single Hub.
+   * Deletes the specified hub.
    *
    * <p>Sample code:
    *
@@ -743,7 +742,7 @@ public class HubServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists Spokes in a given project and location.
+   * Lists the spokes in the specified project and location.
    *
    * <p>Sample code:
    *
@@ -756,7 +755,7 @@ public class HubServiceClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. The parent's resource name.
+   * @param parent Required. The parent resource.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListSpokesPagedResponse listSpokes(LocationName parent) {
@@ -767,7 +766,7 @@ public class HubServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists Spokes in a given project and location.
+   * Lists the spokes in the specified project and location.
    *
    * <p>Sample code:
    *
@@ -780,7 +779,7 @@ public class HubServiceClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. The parent's resource name.
+   * @param parent Required. The parent resource.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListSpokesPagedResponse listSpokes(String parent) {
@@ -790,7 +789,7 @@ public class HubServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists Spokes in a given project and location.
+   * Lists the spokes in the specified project and location.
    *
    * <p>Sample code:
    *
@@ -819,7 +818,7 @@ public class HubServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists Spokes in a given project and location.
+   * Lists the spokes in the specified project and location.
    *
    * <p>Sample code:
    *
@@ -847,7 +846,7 @@ public class HubServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists Spokes in a given project and location.
+   * Lists the spokes in the specified project and location.
    *
    * <p>Sample code:
    *
@@ -882,7 +881,7 @@ public class HubServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Gets details of a single Spoke.
+   * Gets details about the specified spoke.
    *
    * <p>Sample code:
    *
@@ -893,7 +892,7 @@ public class HubServiceClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param name Required. The name of Spoke resource.
+   * @param name Required. The name of the spoke resource.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Spoke getSpoke(SpokeName name) {
@@ -904,7 +903,7 @@ public class HubServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Gets details of a single Spoke.
+   * Gets details about the specified spoke.
    *
    * <p>Sample code:
    *
@@ -915,7 +914,7 @@ public class HubServiceClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param name Required. The name of Spoke resource.
+   * @param name Required. The name of the spoke resource.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Spoke getSpoke(String name) {
@@ -925,7 +924,7 @@ public class HubServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Gets details of a single Spoke.
+   * Gets details about the specified spoke.
    *
    * <p>Sample code:
    *
@@ -948,7 +947,7 @@ public class HubServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Gets details of a single Spoke.
+   * Gets details about the specified spoke.
    *
    * <p>Sample code:
    *
@@ -970,7 +969,7 @@ public class HubServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Creates a new Spoke in a given project and location.
+   * Creates a spoke in the specified project and location.
    *
    * <p>Sample code:
    *
@@ -983,9 +982,9 @@ public class HubServiceClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. The parent's resource name of the Spoke.
-   * @param spoke Required. Initial values for a new Hub.
-   * @param spokeId Optional. Unique id for the Spoke to create.
+   * @param parent Required. The parent resource.
+   * @param spoke Required. The initial values for a new spoke.
+   * @param spokeId Optional. Unique id for the spoke to create.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Spoke, OperationMetadata> createSpokeAsync(
@@ -1001,7 +1000,7 @@ public class HubServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Creates a new Spoke in a given project and location.
+   * Creates a spoke in the specified project and location.
    *
    * <p>Sample code:
    *
@@ -1014,9 +1013,9 @@ public class HubServiceClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. The parent's resource name of the Spoke.
-   * @param spoke Required. Initial values for a new Hub.
-   * @param spokeId Optional. Unique id for the Spoke to create.
+   * @param parent Required. The parent resource.
+   * @param spoke Required. The initial values for a new spoke.
+   * @param spokeId Optional. Unique id for the spoke to create.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Spoke, OperationMetadata> createSpokeAsync(
@@ -1032,7 +1031,7 @@ public class HubServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Creates a new Spoke in a given project and location.
+   * Creates a spoke in the specified project and location.
    *
    * <p>Sample code:
    *
@@ -1059,7 +1058,7 @@ public class HubServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Creates a new Spoke in a given project and location.
+   * Creates a spoke in the specified project and location.
    *
    * <p>Sample code:
    *
@@ -1086,7 +1085,7 @@ public class HubServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Creates a new Spoke in a given project and location.
+   * Creates a spoke in the specified project and location.
    *
    * <p>Sample code:
    *
@@ -1111,7 +1110,7 @@ public class HubServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Updates the parameters of a single Spoke.
+   * Updates the parameters of the specified spoke.
    *
    * <p>Sample code:
    *
@@ -1123,11 +1122,11 @@ public class HubServiceClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param spoke Required. The state that the Spoke should be in after the update.
-   * @param updateMask Optional. Field mask is used to specify the fields to be overwritten in the
-   *     Spoke resource by the update. The fields specified in the update_mask are relative to the
-   *     resource, not the full request. A field will be overwritten if it is in the mask. If the
-   *     user does not provide a mask then all fields will be overwritten.
+   * @param spoke Required. The state that the spoke should be in after the update.
+   * @param updateMask Optional. In the case of an update to an existing spoke, field mask is used
+   *     to specify the fields to be overwritten. The fields specified in the update_mask are
+   *     relative to the resource, not the full request. A field is overwritten if it is in the
+   *     mask. If the user does not provide a mask, then all fields are overwritten.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Spoke, OperationMetadata> updateSpokeAsync(
@@ -1139,7 +1138,7 @@ public class HubServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Updates the parameters of a single Spoke.
+   * Updates the parameters of the specified spoke.
    *
    * <p>Sample code:
    *
@@ -1165,7 +1164,7 @@ public class HubServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Updates the parameters of a single Spoke.
+   * Updates the parameters of the specified spoke.
    *
    * <p>Sample code:
    *
@@ -1191,7 +1190,7 @@ public class HubServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Updates the parameters of a single Spoke.
+   * Updates the parameters of the specified spoke.
    *
    * <p>Sample code:
    *
@@ -1215,7 +1214,249 @@ public class HubServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Deletes a single Spoke.
+   * Deactivates the specified spoke. Deactivating keeps the spoke information for future
+   * re-activation, but disconnects the Google Cloud network from non-Google-Cloud network.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (HubServiceClient hubServiceClient = HubServiceClient.create()) {
+   *   SpokeName name = SpokeName.of("[PROJECT]", "[LOCATION]", "[SPOKE]");
+   *   Spoke response = hubServiceClient.deactivateSpokeAsync(name).get();
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the spoke to deactivate.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Spoke, OperationMetadata> deactivateSpokeAsync(SpokeName name) {
+    DeactivateSpokeRequest request =
+        DeactivateSpokeRequest.newBuilder().setName(name == null ? null : name.toString()).build();
+    return deactivateSpokeAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deactivates the specified spoke. Deactivating keeps the spoke information for future
+   * re-activation, but disconnects the Google Cloud network from non-Google-Cloud network.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (HubServiceClient hubServiceClient = HubServiceClient.create()) {
+   *   String name = SpokeName.of("[PROJECT]", "[LOCATION]", "[SPOKE]").toString();
+   *   Spoke response = hubServiceClient.deactivateSpokeAsync(name).get();
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the spoke to deactivate.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Spoke, OperationMetadata> deactivateSpokeAsync(String name) {
+    DeactivateSpokeRequest request = DeactivateSpokeRequest.newBuilder().setName(name).build();
+    return deactivateSpokeAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deactivates the specified spoke. Deactivating keeps the spoke information for future
+   * re-activation, but disconnects the Google Cloud network from non-Google-Cloud network.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (HubServiceClient hubServiceClient = HubServiceClient.create()) {
+   *   DeactivateSpokeRequest request =
+   *       DeactivateSpokeRequest.newBuilder()
+   *           .setName(SpokeName.of("[PROJECT]", "[LOCATION]", "[SPOKE]").toString())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   Spoke response = hubServiceClient.deactivateSpokeAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Spoke, OperationMetadata> deactivateSpokeAsync(
+      DeactivateSpokeRequest request) {
+    return deactivateSpokeOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deactivates the specified spoke. Deactivating keeps the spoke information for future
+   * re-activation, but disconnects the Google Cloud network from non-Google-Cloud network.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (HubServiceClient hubServiceClient = HubServiceClient.create()) {
+   *   DeactivateSpokeRequest request =
+   *       DeactivateSpokeRequest.newBuilder()
+   *           .setName(SpokeName.of("[PROJECT]", "[LOCATION]", "[SPOKE]").toString())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   OperationFuture<Spoke, OperationMetadata> future =
+   *       hubServiceClient.deactivateSpokeOperationCallable().futureCall(request);
+   *   // Do something.
+   *   Spoke response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<DeactivateSpokeRequest, Spoke, OperationMetadata>
+      deactivateSpokeOperationCallable() {
+    return stub.deactivateSpokeOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deactivates the specified spoke. Deactivating keeps the spoke information for future
+   * re-activation, but disconnects the Google Cloud network from non-Google-Cloud network.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (HubServiceClient hubServiceClient = HubServiceClient.create()) {
+   *   DeactivateSpokeRequest request =
+   *       DeactivateSpokeRequest.newBuilder()
+   *           .setName(SpokeName.of("[PROJECT]", "[LOCATION]", "[SPOKE]").toString())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   ApiFuture<Operation> future = hubServiceClient.deactivateSpokeCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<DeactivateSpokeRequest, Operation> deactivateSpokeCallable() {
+    return stub.deactivateSpokeCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Activates the specified spoke. Activating reconnects the Google Cloud network with the
+   * non-Google-Cloud network.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (HubServiceClient hubServiceClient = HubServiceClient.create()) {
+   *   SpokeName name = SpokeName.of("[PROJECT]", "[LOCATION]", "[SPOKE]");
+   *   Spoke response = hubServiceClient.activateSpokeAsync(name).get();
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the spoke to activate.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Spoke, OperationMetadata> activateSpokeAsync(SpokeName name) {
+    ActivateSpokeRequest request =
+        ActivateSpokeRequest.newBuilder().setName(name == null ? null : name.toString()).build();
+    return activateSpokeAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Activates the specified spoke. Activating reconnects the Google Cloud network with the
+   * non-Google-Cloud network.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (HubServiceClient hubServiceClient = HubServiceClient.create()) {
+   *   String name = SpokeName.of("[PROJECT]", "[LOCATION]", "[SPOKE]").toString();
+   *   Spoke response = hubServiceClient.activateSpokeAsync(name).get();
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the spoke to activate.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Spoke, OperationMetadata> activateSpokeAsync(String name) {
+    ActivateSpokeRequest request = ActivateSpokeRequest.newBuilder().setName(name).build();
+    return activateSpokeAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Activates the specified spoke. Activating reconnects the Google Cloud network with the
+   * non-Google-Cloud network.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (HubServiceClient hubServiceClient = HubServiceClient.create()) {
+   *   ActivateSpokeRequest request =
+   *       ActivateSpokeRequest.newBuilder()
+   *           .setName(SpokeName.of("[PROJECT]", "[LOCATION]", "[SPOKE]").toString())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   Spoke response = hubServiceClient.activateSpokeAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Spoke, OperationMetadata> activateSpokeAsync(
+      ActivateSpokeRequest request) {
+    return activateSpokeOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Activates the specified spoke. Activating reconnects the Google Cloud network with the
+   * non-Google-Cloud network.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (HubServiceClient hubServiceClient = HubServiceClient.create()) {
+   *   ActivateSpokeRequest request =
+   *       ActivateSpokeRequest.newBuilder()
+   *           .setName(SpokeName.of("[PROJECT]", "[LOCATION]", "[SPOKE]").toString())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   OperationFuture<Spoke, OperationMetadata> future =
+   *       hubServiceClient.activateSpokeOperationCallable().futureCall(request);
+   *   // Do something.
+   *   Spoke response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<ActivateSpokeRequest, Spoke, OperationMetadata>
+      activateSpokeOperationCallable() {
+    return stub.activateSpokeOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Activates the specified spoke. Activating reconnects the Google Cloud network with the
+   * non-Google-Cloud network.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (HubServiceClient hubServiceClient = HubServiceClient.create()) {
+   *   ActivateSpokeRequest request =
+   *       ActivateSpokeRequest.newBuilder()
+   *           .setName(SpokeName.of("[PROJECT]", "[LOCATION]", "[SPOKE]").toString())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   ApiFuture<Operation> future = hubServiceClient.activateSpokeCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ActivateSpokeRequest, Operation> activateSpokeCallable() {
+    return stub.activateSpokeCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes the specified spoke.
    *
    * <p>Sample code:
    *
@@ -1226,7 +1467,7 @@ public class HubServiceClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param name Required. The name of the Spoke to delete.
+   * @param name Required. The name of the spoke to delete.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Empty, OperationMetadata> deleteSpokeAsync(SpokeName name) {
@@ -1237,7 +1478,7 @@ public class HubServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Deletes a single Spoke.
+   * Deletes the specified spoke.
    *
    * <p>Sample code:
    *
@@ -1248,7 +1489,7 @@ public class HubServiceClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param name Required. The name of the Spoke to delete.
+   * @param name Required. The name of the spoke to delete.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Empty, OperationMetadata> deleteSpokeAsync(String name) {
@@ -1258,7 +1499,7 @@ public class HubServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Deletes a single Spoke.
+   * Deletes the specified spoke.
    *
    * <p>Sample code:
    *
@@ -1283,7 +1524,7 @@ public class HubServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Deletes a single Spoke.
+   * Deletes the specified spoke.
    *
    * <p>Sample code:
    *
@@ -1308,7 +1549,7 @@ public class HubServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Deletes a single Spoke.
+   * Deletes the specified spoke.
    *
    * <p>Sample code:
    *

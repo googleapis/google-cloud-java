@@ -14,10 +14,10 @@
  * limitations under the License.
  */
 
-package com.google.cloud.networkconnectivity.v1alpha1.stub;
+package com.google.cloud.networkconnectivity.v1.stub;
 
-import static com.google.cloud.networkconnectivity.v1alpha1.HubServiceClient.ListHubsPagedResponse;
-import static com.google.cloud.networkconnectivity.v1alpha1.HubServiceClient.ListSpokesPagedResponse;
+import static com.google.cloud.networkconnectivity.v1.HubServiceClient.ListHubsPagedResponse;
+import static com.google.cloud.networkconnectivity.v1.HubServiceClient.ListSpokesPagedResponse;
 
 import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
@@ -45,21 +45,23 @@ import com.google.api.gax.rpc.StubSettings;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.api.gax.rpc.UnaryCallable;
-import com.google.cloud.networkconnectivity.v1alpha1.CreateHubRequest;
-import com.google.cloud.networkconnectivity.v1alpha1.CreateSpokeRequest;
-import com.google.cloud.networkconnectivity.v1alpha1.DeleteHubRequest;
-import com.google.cloud.networkconnectivity.v1alpha1.DeleteSpokeRequest;
-import com.google.cloud.networkconnectivity.v1alpha1.GetHubRequest;
-import com.google.cloud.networkconnectivity.v1alpha1.GetSpokeRequest;
-import com.google.cloud.networkconnectivity.v1alpha1.Hub;
-import com.google.cloud.networkconnectivity.v1alpha1.ListHubsRequest;
-import com.google.cloud.networkconnectivity.v1alpha1.ListHubsResponse;
-import com.google.cloud.networkconnectivity.v1alpha1.ListSpokesRequest;
-import com.google.cloud.networkconnectivity.v1alpha1.ListSpokesResponse;
-import com.google.cloud.networkconnectivity.v1alpha1.OperationMetadata;
-import com.google.cloud.networkconnectivity.v1alpha1.Spoke;
-import com.google.cloud.networkconnectivity.v1alpha1.UpdateHubRequest;
-import com.google.cloud.networkconnectivity.v1alpha1.UpdateSpokeRequest;
+import com.google.cloud.networkconnectivity.v1.ActivateSpokeRequest;
+import com.google.cloud.networkconnectivity.v1.CreateHubRequest;
+import com.google.cloud.networkconnectivity.v1.CreateSpokeRequest;
+import com.google.cloud.networkconnectivity.v1.DeactivateSpokeRequest;
+import com.google.cloud.networkconnectivity.v1.DeleteHubRequest;
+import com.google.cloud.networkconnectivity.v1.DeleteSpokeRequest;
+import com.google.cloud.networkconnectivity.v1.GetHubRequest;
+import com.google.cloud.networkconnectivity.v1.GetSpokeRequest;
+import com.google.cloud.networkconnectivity.v1.Hub;
+import com.google.cloud.networkconnectivity.v1.ListHubsRequest;
+import com.google.cloud.networkconnectivity.v1.ListHubsResponse;
+import com.google.cloud.networkconnectivity.v1.ListSpokesRequest;
+import com.google.cloud.networkconnectivity.v1.ListSpokesResponse;
+import com.google.cloud.networkconnectivity.v1.OperationMetadata;
+import com.google.cloud.networkconnectivity.v1.Spoke;
+import com.google.cloud.networkconnectivity.v1.UpdateHubRequest;
+import com.google.cloud.networkconnectivity.v1.UpdateSpokeRequest;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
@@ -103,7 +105,6 @@ import org.threeten.bp.Duration;
  * HubServiceStubSettings hubServiceSettings = hubServiceSettingsBuilder.build();
  * }</pre>
  */
-@BetaApi
 @Generated("by gapic-generator-java")
 public class HubServiceStubSettings extends StubSettings<HubServiceStubSettings> {
   /** The default scopes of the service. */
@@ -131,6 +132,12 @@ public class HubServiceStubSettings extends StubSettings<HubServiceStubSettings>
   private final UnaryCallSettings<UpdateSpokeRequest, Operation> updateSpokeSettings;
   private final OperationCallSettings<UpdateSpokeRequest, Spoke, OperationMetadata>
       updateSpokeOperationSettings;
+  private final UnaryCallSettings<DeactivateSpokeRequest, Operation> deactivateSpokeSettings;
+  private final OperationCallSettings<DeactivateSpokeRequest, Spoke, OperationMetadata>
+      deactivateSpokeOperationSettings;
+  private final UnaryCallSettings<ActivateSpokeRequest, Operation> activateSpokeSettings;
+  private final OperationCallSettings<ActivateSpokeRequest, Spoke, OperationMetadata>
+      activateSpokeOperationSettings;
   private final UnaryCallSettings<DeleteSpokeRequest, Operation> deleteSpokeSettings;
   private final OperationCallSettings<DeleteSpokeRequest, Empty, OperationMetadata>
       deleteSpokeOperationSettings;
@@ -317,6 +324,28 @@ public class HubServiceStubSettings extends StubSettings<HubServiceStubSettings>
     return updateSpokeOperationSettings;
   }
 
+  /** Returns the object with the settings used for calls to deactivateSpoke. */
+  public UnaryCallSettings<DeactivateSpokeRequest, Operation> deactivateSpokeSettings() {
+    return deactivateSpokeSettings;
+  }
+
+  /** Returns the object with the settings used for calls to deactivateSpoke. */
+  public OperationCallSettings<DeactivateSpokeRequest, Spoke, OperationMetadata>
+      deactivateSpokeOperationSettings() {
+    return deactivateSpokeOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to activateSpoke. */
+  public UnaryCallSettings<ActivateSpokeRequest, Operation> activateSpokeSettings() {
+    return activateSpokeSettings;
+  }
+
+  /** Returns the object with the settings used for calls to activateSpoke. */
+  public OperationCallSettings<ActivateSpokeRequest, Spoke, OperationMetadata>
+      activateSpokeOperationSettings() {
+    return activateSpokeOperationSettings;
+  }
+
   /** Returns the object with the settings used for calls to deleteSpoke. */
   public UnaryCallSettings<DeleteSpokeRequest, Operation> deleteSpokeSettings() {
     return deleteSpokeSettings;
@@ -416,6 +445,10 @@ public class HubServiceStubSettings extends StubSettings<HubServiceStubSettings>
     createSpokeOperationSettings = settingsBuilder.createSpokeOperationSettings().build();
     updateSpokeSettings = settingsBuilder.updateSpokeSettings().build();
     updateSpokeOperationSettings = settingsBuilder.updateSpokeOperationSettings().build();
+    deactivateSpokeSettings = settingsBuilder.deactivateSpokeSettings().build();
+    deactivateSpokeOperationSettings = settingsBuilder.deactivateSpokeOperationSettings().build();
+    activateSpokeSettings = settingsBuilder.activateSpokeSettings().build();
+    activateSpokeOperationSettings = settingsBuilder.activateSpokeOperationSettings().build();
     deleteSpokeSettings = settingsBuilder.deleteSpokeSettings().build();
     deleteSpokeOperationSettings = settingsBuilder.deleteSpokeOperationSettings().build();
   }
@@ -446,6 +479,13 @@ public class HubServiceStubSettings extends StubSettings<HubServiceStubSettings>
     private final UnaryCallSettings.Builder<UpdateSpokeRequest, Operation> updateSpokeSettings;
     private final OperationCallSettings.Builder<UpdateSpokeRequest, Spoke, OperationMetadata>
         updateSpokeOperationSettings;
+    private final UnaryCallSettings.Builder<DeactivateSpokeRequest, Operation>
+        deactivateSpokeSettings;
+    private final OperationCallSettings.Builder<DeactivateSpokeRequest, Spoke, OperationMetadata>
+        deactivateSpokeOperationSettings;
+    private final UnaryCallSettings.Builder<ActivateSpokeRequest, Operation> activateSpokeSettings;
+    private final OperationCallSettings.Builder<ActivateSpokeRequest, Spoke, OperationMetadata>
+        activateSpokeOperationSettings;
     private final UnaryCallSettings.Builder<DeleteSpokeRequest, Operation> deleteSpokeSettings;
     private final OperationCallSettings.Builder<DeleteSpokeRequest, Empty, OperationMetadata>
         deleteSpokeOperationSettings;
@@ -511,6 +551,10 @@ public class HubServiceStubSettings extends StubSettings<HubServiceStubSettings>
       createSpokeOperationSettings = OperationCallSettings.newBuilder();
       updateSpokeSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       updateSpokeOperationSettings = OperationCallSettings.newBuilder();
+      deactivateSpokeSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      deactivateSpokeOperationSettings = OperationCallSettings.newBuilder();
+      activateSpokeSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      activateSpokeOperationSettings = OperationCallSettings.newBuilder();
       deleteSpokeSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       deleteSpokeOperationSettings = OperationCallSettings.newBuilder();
 
@@ -525,6 +569,8 @@ public class HubServiceStubSettings extends StubSettings<HubServiceStubSettings>
               getSpokeSettings,
               createSpokeSettings,
               updateSpokeSettings,
+              deactivateSpokeSettings,
+              activateSpokeSettings,
               deleteSpokeSettings);
       initDefaults(this);
     }
@@ -546,6 +592,10 @@ public class HubServiceStubSettings extends StubSettings<HubServiceStubSettings>
       createSpokeOperationSettings = settings.createSpokeOperationSettings.toBuilder();
       updateSpokeSettings = settings.updateSpokeSettings.toBuilder();
       updateSpokeOperationSettings = settings.updateSpokeOperationSettings.toBuilder();
+      deactivateSpokeSettings = settings.deactivateSpokeSettings.toBuilder();
+      deactivateSpokeOperationSettings = settings.deactivateSpokeOperationSettings.toBuilder();
+      activateSpokeSettings = settings.activateSpokeSettings.toBuilder();
+      activateSpokeOperationSettings = settings.activateSpokeOperationSettings.toBuilder();
       deleteSpokeSettings = settings.deleteSpokeSettings.toBuilder();
       deleteSpokeOperationSettings = settings.deleteSpokeOperationSettings.toBuilder();
 
@@ -560,6 +610,8 @@ public class HubServiceStubSettings extends StubSettings<HubServiceStubSettings>
               getSpokeSettings,
               createSpokeSettings,
               updateSpokeSettings,
+              deactivateSpokeSettings,
+              activateSpokeSettings,
               deleteSpokeSettings);
     }
 
@@ -619,6 +671,16 @@ public class HubServiceStubSettings extends StubSettings<HubServiceStubSettings>
 
       builder
           .updateSpokeSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .deactivateSpokeSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .activateSpokeSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
 
@@ -721,6 +783,54 @@ public class HubServiceStubSettings extends StubSettings<HubServiceStubSettings>
           .updateSpokeOperationSettings()
           .setInitialCallSettings(
               UnaryCallSettings.<UpdateSpokeRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Spoke.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
+                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .deactivateSpokeOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<DeactivateSpokeRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Spoke.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
+                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .activateSpokeOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<ActivateSpokeRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
                   .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
                   .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
                   .build())
@@ -866,6 +976,32 @@ public class HubServiceStubSettings extends StubSettings<HubServiceStubSettings>
     public OperationCallSettings.Builder<UpdateSpokeRequest, Spoke, OperationMetadata>
         updateSpokeOperationSettings() {
       return updateSpokeOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to deactivateSpoke. */
+    public UnaryCallSettings.Builder<DeactivateSpokeRequest, Operation> deactivateSpokeSettings() {
+      return deactivateSpokeSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to deactivateSpoke. */
+    @BetaApi(
+        "The surface for use by generated code is not stable yet and may change in the future.")
+    public OperationCallSettings.Builder<DeactivateSpokeRequest, Spoke, OperationMetadata>
+        deactivateSpokeOperationSettings() {
+      return deactivateSpokeOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to activateSpoke. */
+    public UnaryCallSettings.Builder<ActivateSpokeRequest, Operation> activateSpokeSettings() {
+      return activateSpokeSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to activateSpoke. */
+    @BetaApi(
+        "The surface for use by generated code is not stable yet and may change in the future.")
+    public OperationCallSettings.Builder<ActivateSpokeRequest, Spoke, OperationMetadata>
+        activateSpokeOperationSettings() {
+      return activateSpokeOperationSettings;
     }
 
     /** Returns the builder for the settings used for calls to deleteSpoke. */

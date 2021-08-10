@@ -14,10 +14,10 @@
  * limitations under the License.
  */
 
-package com.google.cloud.networkconnectivity.v1alpha1;
+package com.google.cloud.networkconnectivity.v1;
 
-import static com.google.cloud.networkconnectivity.v1alpha1.HubServiceClient.ListHubsPagedResponse;
-import static com.google.cloud.networkconnectivity.v1alpha1.HubServiceClient.ListSpokesPagedResponse;
+import static com.google.cloud.networkconnectivity.v1.HubServiceClient.ListHubsPagedResponse;
+import static com.google.cloud.networkconnectivity.v1.HubServiceClient.ListSpokesPagedResponse;
 
 import com.google.api.core.ApiFunction;
 import com.google.api.core.BetaApi;
@@ -31,7 +31,7 @@ import com.google.api.gax.rpc.OperationCallSettings;
 import com.google.api.gax.rpc.PagedCallSettings;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
-import com.google.cloud.networkconnectivity.v1alpha1.stub.HubServiceStubSettings;
+import com.google.cloud.networkconnectivity.v1.stub.HubServiceStubSettings;
 import com.google.longrunning.Operation;
 import com.google.protobuf.Empty;
 import java.io.IOException;
@@ -70,7 +70,6 @@ import javax.annotation.Generated;
  * HubServiceSettings hubServiceSettings = hubServiceSettingsBuilder.build();
  * }</pre>
  */
-@BetaApi
 @Generated("by gapic-generator-java")
 public class HubServiceSettings extends ClientSettings<HubServiceSettings> {
 
@@ -149,6 +148,28 @@ public class HubServiceSettings extends ClientSettings<HubServiceSettings> {
   public OperationCallSettings<UpdateSpokeRequest, Spoke, OperationMetadata>
       updateSpokeOperationSettings() {
     return ((HubServiceStubSettings) getStubSettings()).updateSpokeOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deactivateSpoke. */
+  public UnaryCallSettings<DeactivateSpokeRequest, Operation> deactivateSpokeSettings() {
+    return ((HubServiceStubSettings) getStubSettings()).deactivateSpokeSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deactivateSpoke. */
+  public OperationCallSettings<DeactivateSpokeRequest, Spoke, OperationMetadata>
+      deactivateSpokeOperationSettings() {
+    return ((HubServiceStubSettings) getStubSettings()).deactivateSpokeOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to activateSpoke. */
+  public UnaryCallSettings<ActivateSpokeRequest, Operation> activateSpokeSettings() {
+    return ((HubServiceStubSettings) getStubSettings()).activateSpokeSettings();
+  }
+
+  /** Returns the object with the settings used for calls to activateSpoke. */
+  public OperationCallSettings<ActivateSpokeRequest, Spoke, OperationMetadata>
+      activateSpokeOperationSettings() {
+    return ((HubServiceStubSettings) getStubSettings()).activateSpokeOperationSettings();
   }
 
   /** Returns the object with the settings used for calls to deleteSpoke. */
@@ -333,6 +354,28 @@ public class HubServiceSettings extends ClientSettings<HubServiceSettings> {
     public OperationCallSettings.Builder<UpdateSpokeRequest, Spoke, OperationMetadata>
         updateSpokeOperationSettings() {
       return getStubSettingsBuilder().updateSpokeOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deactivateSpoke. */
+    public UnaryCallSettings.Builder<DeactivateSpokeRequest, Operation> deactivateSpokeSettings() {
+      return getStubSettingsBuilder().deactivateSpokeSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deactivateSpoke. */
+    public OperationCallSettings.Builder<DeactivateSpokeRequest, Spoke, OperationMetadata>
+        deactivateSpokeOperationSettings() {
+      return getStubSettingsBuilder().deactivateSpokeOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to activateSpoke. */
+    public UnaryCallSettings.Builder<ActivateSpokeRequest, Operation> activateSpokeSettings() {
+      return getStubSettingsBuilder().activateSpokeSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to activateSpoke. */
+    public OperationCallSettings.Builder<ActivateSpokeRequest, Spoke, OperationMetadata>
+        activateSpokeOperationSettings() {
+      return getStubSettingsBuilder().activateSpokeOperationSettings();
     }
 
     /** Returns the builder for the settings used for calls to deleteSpoke. */

@@ -14,12 +14,11 @@
  * limitations under the License.
  */
 
-package com.google.cloud.networkconnectivity.v1alpha1.stub;
+package com.google.cloud.networkconnectivity.v1.stub;
 
-import static com.google.cloud.networkconnectivity.v1alpha1.HubServiceClient.ListHubsPagedResponse;
-import static com.google.cloud.networkconnectivity.v1alpha1.HubServiceClient.ListSpokesPagedResponse;
+import static com.google.cloud.networkconnectivity.v1.HubServiceClient.ListHubsPagedResponse;
+import static com.google.cloud.networkconnectivity.v1.HubServiceClient.ListSpokesPagedResponse;
 
-import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.grpc.GrpcCallSettings;
@@ -27,21 +26,23 @@ import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.UnaryCallable;
-import com.google.cloud.networkconnectivity.v1alpha1.CreateHubRequest;
-import com.google.cloud.networkconnectivity.v1alpha1.CreateSpokeRequest;
-import com.google.cloud.networkconnectivity.v1alpha1.DeleteHubRequest;
-import com.google.cloud.networkconnectivity.v1alpha1.DeleteSpokeRequest;
-import com.google.cloud.networkconnectivity.v1alpha1.GetHubRequest;
-import com.google.cloud.networkconnectivity.v1alpha1.GetSpokeRequest;
-import com.google.cloud.networkconnectivity.v1alpha1.Hub;
-import com.google.cloud.networkconnectivity.v1alpha1.ListHubsRequest;
-import com.google.cloud.networkconnectivity.v1alpha1.ListHubsResponse;
-import com.google.cloud.networkconnectivity.v1alpha1.ListSpokesRequest;
-import com.google.cloud.networkconnectivity.v1alpha1.ListSpokesResponse;
-import com.google.cloud.networkconnectivity.v1alpha1.OperationMetadata;
-import com.google.cloud.networkconnectivity.v1alpha1.Spoke;
-import com.google.cloud.networkconnectivity.v1alpha1.UpdateHubRequest;
-import com.google.cloud.networkconnectivity.v1alpha1.UpdateSpokeRequest;
+import com.google.cloud.networkconnectivity.v1.ActivateSpokeRequest;
+import com.google.cloud.networkconnectivity.v1.CreateHubRequest;
+import com.google.cloud.networkconnectivity.v1.CreateSpokeRequest;
+import com.google.cloud.networkconnectivity.v1.DeactivateSpokeRequest;
+import com.google.cloud.networkconnectivity.v1.DeleteHubRequest;
+import com.google.cloud.networkconnectivity.v1.DeleteSpokeRequest;
+import com.google.cloud.networkconnectivity.v1.GetHubRequest;
+import com.google.cloud.networkconnectivity.v1.GetSpokeRequest;
+import com.google.cloud.networkconnectivity.v1.Hub;
+import com.google.cloud.networkconnectivity.v1.ListHubsRequest;
+import com.google.cloud.networkconnectivity.v1.ListHubsResponse;
+import com.google.cloud.networkconnectivity.v1.ListSpokesRequest;
+import com.google.cloud.networkconnectivity.v1.ListSpokesResponse;
+import com.google.cloud.networkconnectivity.v1.OperationMetadata;
+import com.google.cloud.networkconnectivity.v1.Spoke;
+import com.google.cloud.networkconnectivity.v1.UpdateHubRequest;
+import com.google.cloud.networkconnectivity.v1.UpdateSpokeRequest;
 import com.google.common.collect.ImmutableMap;
 import com.google.longrunning.Operation;
 import com.google.longrunning.stub.GrpcOperationsStub;
@@ -58,14 +59,13 @@ import javax.annotation.Generated;
  *
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
-@BetaApi
 @Generated("by gapic-generator-java")
 public class GrpcHubServiceStub extends HubServiceStub {
   private static final MethodDescriptor<ListHubsRequest, ListHubsResponse>
       listHubsMethodDescriptor =
           MethodDescriptor.<ListHubsRequest, ListHubsResponse>newBuilder()
               .setType(MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName("google.cloud.networkconnectivity.v1alpha1.HubService/ListHubs")
+              .setFullMethodName("google.cloud.networkconnectivity.v1.HubService/ListHubs")
               .setRequestMarshaller(ProtoUtils.marshaller(ListHubsRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(ListHubsResponse.getDefaultInstance()))
               .build();
@@ -73,7 +73,7 @@ public class GrpcHubServiceStub extends HubServiceStub {
   private static final MethodDescriptor<GetHubRequest, Hub> getHubMethodDescriptor =
       MethodDescriptor.<GetHubRequest, Hub>newBuilder()
           .setType(MethodDescriptor.MethodType.UNARY)
-          .setFullMethodName("google.cloud.networkconnectivity.v1alpha1.HubService/GetHub")
+          .setFullMethodName("google.cloud.networkconnectivity.v1.HubService/GetHub")
           .setRequestMarshaller(ProtoUtils.marshaller(GetHubRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Hub.getDefaultInstance()))
           .build();
@@ -81,7 +81,7 @@ public class GrpcHubServiceStub extends HubServiceStub {
   private static final MethodDescriptor<CreateHubRequest, Operation> createHubMethodDescriptor =
       MethodDescriptor.<CreateHubRequest, Operation>newBuilder()
           .setType(MethodDescriptor.MethodType.UNARY)
-          .setFullMethodName("google.cloud.networkconnectivity.v1alpha1.HubService/CreateHub")
+          .setFullMethodName("google.cloud.networkconnectivity.v1.HubService/CreateHub")
           .setRequestMarshaller(ProtoUtils.marshaller(CreateHubRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
           .build();
@@ -89,7 +89,7 @@ public class GrpcHubServiceStub extends HubServiceStub {
   private static final MethodDescriptor<UpdateHubRequest, Operation> updateHubMethodDescriptor =
       MethodDescriptor.<UpdateHubRequest, Operation>newBuilder()
           .setType(MethodDescriptor.MethodType.UNARY)
-          .setFullMethodName("google.cloud.networkconnectivity.v1alpha1.HubService/UpdateHub")
+          .setFullMethodName("google.cloud.networkconnectivity.v1.HubService/UpdateHub")
           .setRequestMarshaller(ProtoUtils.marshaller(UpdateHubRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
           .build();
@@ -97,7 +97,7 @@ public class GrpcHubServiceStub extends HubServiceStub {
   private static final MethodDescriptor<DeleteHubRequest, Operation> deleteHubMethodDescriptor =
       MethodDescriptor.<DeleteHubRequest, Operation>newBuilder()
           .setType(MethodDescriptor.MethodType.UNARY)
-          .setFullMethodName("google.cloud.networkconnectivity.v1alpha1.HubService/DeleteHub")
+          .setFullMethodName("google.cloud.networkconnectivity.v1.HubService/DeleteHub")
           .setRequestMarshaller(ProtoUtils.marshaller(DeleteHubRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
           .build();
@@ -106,7 +106,7 @@ public class GrpcHubServiceStub extends HubServiceStub {
       listSpokesMethodDescriptor =
           MethodDescriptor.<ListSpokesRequest, ListSpokesResponse>newBuilder()
               .setType(MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName("google.cloud.networkconnectivity.v1alpha1.HubService/ListSpokes")
+              .setFullMethodName("google.cloud.networkconnectivity.v1.HubService/ListSpokes")
               .setRequestMarshaller(ProtoUtils.marshaller(ListSpokesRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(ListSpokesResponse.getDefaultInstance()))
               .build();
@@ -114,7 +114,7 @@ public class GrpcHubServiceStub extends HubServiceStub {
   private static final MethodDescriptor<GetSpokeRequest, Spoke> getSpokeMethodDescriptor =
       MethodDescriptor.<GetSpokeRequest, Spoke>newBuilder()
           .setType(MethodDescriptor.MethodType.UNARY)
-          .setFullMethodName("google.cloud.networkconnectivity.v1alpha1.HubService/GetSpoke")
+          .setFullMethodName("google.cloud.networkconnectivity.v1.HubService/GetSpoke")
           .setRequestMarshaller(ProtoUtils.marshaller(GetSpokeRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Spoke.getDefaultInstance()))
           .build();
@@ -122,7 +122,7 @@ public class GrpcHubServiceStub extends HubServiceStub {
   private static final MethodDescriptor<CreateSpokeRequest, Operation> createSpokeMethodDescriptor =
       MethodDescriptor.<CreateSpokeRequest, Operation>newBuilder()
           .setType(MethodDescriptor.MethodType.UNARY)
-          .setFullMethodName("google.cloud.networkconnectivity.v1alpha1.HubService/CreateSpoke")
+          .setFullMethodName("google.cloud.networkconnectivity.v1.HubService/CreateSpoke")
           .setRequestMarshaller(ProtoUtils.marshaller(CreateSpokeRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
           .build();
@@ -130,15 +130,35 @@ public class GrpcHubServiceStub extends HubServiceStub {
   private static final MethodDescriptor<UpdateSpokeRequest, Operation> updateSpokeMethodDescriptor =
       MethodDescriptor.<UpdateSpokeRequest, Operation>newBuilder()
           .setType(MethodDescriptor.MethodType.UNARY)
-          .setFullMethodName("google.cloud.networkconnectivity.v1alpha1.HubService/UpdateSpoke")
+          .setFullMethodName("google.cloud.networkconnectivity.v1.HubService/UpdateSpoke")
           .setRequestMarshaller(ProtoUtils.marshaller(UpdateSpokeRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
           .build();
 
+  private static final MethodDescriptor<DeactivateSpokeRequest, Operation>
+      deactivateSpokeMethodDescriptor =
+          MethodDescriptor.<DeactivateSpokeRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.networkconnectivity.v1.HubService/DeactivateSpoke")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(DeactivateSpokeRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<ActivateSpokeRequest, Operation>
+      activateSpokeMethodDescriptor =
+          MethodDescriptor.<ActivateSpokeRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.networkconnectivity.v1.HubService/ActivateSpoke")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(ActivateSpokeRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .build();
+
   private static final MethodDescriptor<DeleteSpokeRequest, Operation> deleteSpokeMethodDescriptor =
       MethodDescriptor.<DeleteSpokeRequest, Operation>newBuilder()
           .setType(MethodDescriptor.MethodType.UNARY)
-          .setFullMethodName("google.cloud.networkconnectivity.v1alpha1.HubService/DeleteSpoke")
+          .setFullMethodName("google.cloud.networkconnectivity.v1.HubService/DeleteSpoke")
           .setRequestMarshaller(ProtoUtils.marshaller(DeleteSpokeRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
           .build();
@@ -164,6 +184,12 @@ public class GrpcHubServiceStub extends HubServiceStub {
   private final UnaryCallable<UpdateSpokeRequest, Operation> updateSpokeCallable;
   private final OperationCallable<UpdateSpokeRequest, Spoke, OperationMetadata>
       updateSpokeOperationCallable;
+  private final UnaryCallable<DeactivateSpokeRequest, Operation> deactivateSpokeCallable;
+  private final OperationCallable<DeactivateSpokeRequest, Spoke, OperationMetadata>
+      deactivateSpokeOperationCallable;
+  private final UnaryCallable<ActivateSpokeRequest, Operation> activateSpokeCallable;
+  private final OperationCallable<ActivateSpokeRequest, Spoke, OperationMetadata>
+      activateSpokeOperationCallable;
   private final UnaryCallable<DeleteSpokeRequest, Operation> deleteSpokeCallable;
   private final OperationCallable<DeleteSpokeRequest, Empty, OperationMetadata>
       deleteSpokeOperationCallable;
@@ -300,6 +326,26 @@ public class GrpcHubServiceStub extends HubServiceStub {
                   return params.build();
                 })
             .build();
+    GrpcCallSettings<DeactivateSpokeRequest, Operation> deactivateSpokeTransportSettings =
+        GrpcCallSettings.<DeactivateSpokeRequest, Operation>newBuilder()
+            .setMethodDescriptor(deactivateSpokeMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  return params.build();
+                })
+            .build();
+    GrpcCallSettings<ActivateSpokeRequest, Operation> activateSpokeTransportSettings =
+        GrpcCallSettings.<ActivateSpokeRequest, Operation>newBuilder()
+            .setMethodDescriptor(activateSpokeMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  return params.build();
+                })
+            .build();
     GrpcCallSettings<DeleteSpokeRequest, Operation> deleteSpokeTransportSettings =
         GrpcCallSettings.<DeleteSpokeRequest, Operation>newBuilder()
             .setMethodDescriptor(deleteSpokeMethodDescriptor)
@@ -372,6 +418,24 @@ public class GrpcHubServiceStub extends HubServiceStub {
         callableFactory.createOperationCallable(
             updateSpokeTransportSettings,
             settings.updateSpokeOperationSettings(),
+            clientContext,
+            operationsStub);
+    this.deactivateSpokeCallable =
+        callableFactory.createUnaryCallable(
+            deactivateSpokeTransportSettings, settings.deactivateSpokeSettings(), clientContext);
+    this.deactivateSpokeOperationCallable =
+        callableFactory.createOperationCallable(
+            deactivateSpokeTransportSettings,
+            settings.deactivateSpokeOperationSettings(),
+            clientContext,
+            operationsStub);
+    this.activateSpokeCallable =
+        callableFactory.createUnaryCallable(
+            activateSpokeTransportSettings, settings.activateSpokeSettings(), clientContext);
+    this.activateSpokeOperationCallable =
+        callableFactory.createOperationCallable(
+            activateSpokeTransportSettings,
+            settings.activateSpokeOperationSettings(),
             clientContext,
             operationsStub);
     this.deleteSpokeCallable =
@@ -473,6 +537,28 @@ public class GrpcHubServiceStub extends HubServiceStub {
   public OperationCallable<UpdateSpokeRequest, Spoke, OperationMetadata>
       updateSpokeOperationCallable() {
     return updateSpokeOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<DeactivateSpokeRequest, Operation> deactivateSpokeCallable() {
+    return deactivateSpokeCallable;
+  }
+
+  @Override
+  public OperationCallable<DeactivateSpokeRequest, Spoke, OperationMetadata>
+      deactivateSpokeOperationCallable() {
+    return deactivateSpokeOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<ActivateSpokeRequest, Operation> activateSpokeCallable() {
+    return activateSpokeCallable;
+  }
+
+  @Override
+  public OperationCallable<ActivateSpokeRequest, Spoke, OperationMetadata>
+      activateSpokeOperationCallable() {
+    return activateSpokeOperationCallable;
   }
 
   @Override
