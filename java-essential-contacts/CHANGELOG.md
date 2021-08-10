@@ -1,5 +1,26 @@
 # Changelog
 
+## [2.0.0](https://www.github.com/googleapis/java-essential-contacts/compare/v1.0.0...v2.0.0) (2021-08-06)
+
+
+### ⚠ BREAKING CHANGES
+
+* release gapic-generator-java v2.0.0 (#70)
+
+### Features
+
+* release gapic-generator-java v2.0.0 ([#70](https://www.github.com/googleapis/java-essential-contacts/issues/70)) ([1e3b7f4](https://www.github.com/googleapis/java-essential-contacts/commit/1e3b7f4d8eaebd2bb5c7284bd1fda437fda0a9e0))
+
+
+### Bug Fixes
+
+* owlbot post-processor should generate README ([#1154](https://www.github.com/googleapis/java-essential-contacts/issues/1154)) ([#55](https://www.github.com/googleapis/java-essential-contacts/issues/55)) ([ef7e2ca](https://www.github.com/googleapis/java-essential-contacts/commit/ef7e2ca95d572cd6fa8dddf105fd5eff9d562c4f)), closes [#1146](https://www.github.com/googleapis/java-essential-contacts/issues/1146) [#1147](https://www.github.com/googleapis/java-essential-contacts/issues/1147)
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2 ([#71](https://www.github.com/googleapis/java-essential-contacts/issues/71)) ([d2a5fee](https://www.github.com/googleapis/java-essential-contacts/commit/d2a5feef5965ef42f358c91bddfbc5eb9cdd2714))
+
 ## [1.0.0](https://www.github.com/googleapis/java-essential-contacts/compare/v0.1.3...v1.0.0) (2021-07-02)
 
 
