@@ -1,5 +1,27 @@
 # Changelog
 
+## [2.0.0](https://www.github.com/googleapis/java-tasks/compare/v1.33.2...v2.0.0) (2021-08-06)
+
+
+### ⚠ BREAKING CHANGES
+
+* release gapic-generator-java v2.0.0 (#484)
+
+### Features
+
+* release gapic-generator-java v2.0.0 ([#484](https://www.github.com/googleapis/java-tasks/issues/484)) ([c4f2381](https://www.github.com/googleapis/java-tasks/commit/c4f23810f38f24826dfc51ce0a0e4d4e20e55f07))
+
+
+### Bug Fixes
+
+* Add shopt -s nullglob to dependencies script ([#467](https://www.github.com/googleapis/java-tasks/issues/467)) ([4285ef6](https://www.github.com/googleapis/java-tasks/commit/4285ef63eab332a7582fb37892f33a766b1323b4))
+* Update dependencies.sh to not break on mac ([#458](https://www.github.com/googleapis/java-tasks/issues/458)) ([19bc4be](https://www.github.com/googleapis/java-tasks/commit/19bc4be2d0fc080132b3853126848e4e73c899fb))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2 ([#485](https://www.github.com/googleapis/java-tasks/issues/485)) ([7b44bae](https://www.github.com/googleapis/java-tasks/commit/7b44baec9f5e7b3d85a57fb2b79ac8e5089b05c4))
+
 ### [1.33.2](https://www.github.com/googleapis/java-tasks/compare/v1.33.1...v1.33.2) (2021-07-01)
 
 
