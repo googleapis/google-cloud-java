@@ -1,5 +1,28 @@
 # Changelog
 
+## [0.3.0](https://www.github.com/googleapis/java-policy-troubleshooter/compare/v0.2.1...v0.3.0) (2021-08-06)
+
+
+### ⚠ BREAKING CHANGES
+
+* release gapic-generator-java v2.0.0 (#82)
+
+### Features
+
+* release gapic-generator-java v2.0.0 ([#82](https://www.github.com/googleapis/java-policy-troubleshooter/issues/82)) ([bd7a963](https://www.github.com/googleapis/java-policy-troubleshooter/commit/bd7a963a3056fa266bb14341858f94cd3b72565a))
+
+
+### Bug Fixes
+
+* Add `shopt -s nullglob` to dependencies script ([#66](https://www.github.com/googleapis/java-policy-troubleshooter/issues/66)) ([c712d5b](https://www.github.com/googleapis/java-policy-troubleshooter/commit/c712d5bb9d68f728fe2df872fa4626d6e717e7ae))
+* Update dependencies.sh to not break on mac ([#63](https://www.github.com/googleapis/java-policy-troubleshooter/issues/63)) ([74105d0](https://www.github.com/googleapis/java-policy-troubleshooter/commit/74105d0825d8e80b090063f427da25017289b8a7))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v1.4.0 ([#67](https://www.github.com/googleapis/java-policy-troubleshooter/issues/67)) ([b6056ad](https://www.github.com/googleapis/java-policy-troubleshooter/commit/b6056addb0d12e9db1fc54ecfa2f3f31cb5c0485))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2 ([#83](https://www.github.com/googleapis/java-policy-troubleshooter/issues/83)) ([9696fd9](https://www.github.com/googleapis/java-policy-troubleshooter/commit/9696fd9f2ccec30c5ccd5cc78f489ab643207678))
+
 ### [0.2.1](https://www.github.com/googleapis/java-policy-troubleshooter/compare/v0.2.0...v0.2.1) (2021-06-04)
 
 
