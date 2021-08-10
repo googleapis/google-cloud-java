@@ -1,5 +1,26 @@
 # Changelog
 
+## [2.0.0](https://www.github.com/googleapis/java-vpcaccess/compare/v1.0.0...v2.0.0) (2021-08-06)
+
+
+### ⚠ BREAKING CHANGES
+
+* release gapic-generator-java v2.0.0 (#47)
+
+### Features
+
+* release gapic-generator-java v2.0.0 ([#47](https://www.github.com/googleapis/java-vpcaccess/issues/47)) ([9f1add3](https://www.github.com/googleapis/java-vpcaccess/commit/9f1add32305c0ac3522a9909f803593b17852008))
+
+
+### Bug Fixes
+
+* owlbot post-processor should generate README ([#1154](https://www.github.com/googleapis/java-vpcaccess/issues/1154)) ([#33](https://www.github.com/googleapis/java-vpcaccess/issues/33)) ([04f3834](https://www.github.com/googleapis/java-vpcaccess/commit/04f3834240e0f541f10379f0ebd1d5a3cc2eab41)), closes [#1146](https://www.github.com/googleapis/java-vpcaccess/issues/1146) [#1147](https://www.github.com/googleapis/java-vpcaccess/issues/1147)
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2 ([#48](https://www.github.com/googleapis/java-vpcaccess/issues/48)) ([f2d4fd6](https://www.github.com/googleapis/java-vpcaccess/commit/f2d4fd6302d48aa5e00b743f8e7a0add5e3eda02))
+
 ## [1.0.0](https://www.github.com/googleapis/java-vpcaccess/compare/v0.1.1...v1.0.0) (2021-07-02)
 
 
