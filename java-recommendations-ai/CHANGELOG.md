@@ -1,5 +1,26 @@
 # Changelog
 
+## [0.7.0](https://www.github.com/googleapis/java-recommendations-ai/compare/v0.6.1...v0.7.0) (2021-08-10)
+
+
+### ⚠ BREAKING CHANGES
+
+* release gapic-generator-java v2.0.0 (#370)
+
+### Features
+
+* release gapic-generator-java v2.0.0 ([#370](https://www.github.com/googleapis/java-recommendations-ai/issues/370)) ([bd37507](https://www.github.com/googleapis/java-recommendations-ai/commit/bd37507e410b01f81e86d8ce6cd763d50c9cfd40))
+
+
+### Bug Fixes
+
+* Add `shopt -s nullglob` to dependencies script ([#344](https://www.github.com/googleapis/java-recommendations-ai/issues/344)) ([40d14b2](https://www.github.com/googleapis/java-recommendations-ai/commit/40d14b2f0dd4fccd6f74d489c48c4677b50f2499))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2 ([#371](https://www.github.com/googleapis/java-recommendations-ai/issues/371)) ([82299a1](https://www.github.com/googleapis/java-recommendations-ai/commit/82299a19f2760dc809fc8a6fd20b0ae57591e581))
+
 ### [0.6.1](https://www.github.com/googleapis/java-recommendations-ai/compare/v0.6.0...v0.6.1) (2021-07-01)
 
 
