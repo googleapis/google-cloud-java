@@ -1,5 +1,24 @@
 # Changelog
 
+## [2.0.0](https://www.github.com/googleapis/java-bigtable/compare/v1.27.3...v2.0.0) (2021-08-09)
+
+
+### ⚠ BREAKING CHANGES
+
+* release gapic-generator-java v2.0.0 (#938)
+* update java compile to 1.8 (update google-cloud-shared-config … (#939)
+
+### Features
+
+* gapic-generator-java v1.0.12, mtls support ([#871](https://www.github.com/googleapis/java-bigtable/issues/871)) ([3ec05d4](https://www.github.com/googleapis/java-bigtable/commit/3ec05d4dff8ee3799dd799ecf659610de031564a))
+* release gapic-generator-java v2.0.0 ([#938](https://www.github.com/googleapis/java-bigtable/issues/938)) ([d2456e4](https://www.github.com/googleapis/java-bigtable/commit/d2456e4b014f714c87ff5ad414b5fabd0631e912))
+* update java compile to 1.8 (update google-cloud-shared-config … ([#939](https://www.github.com/googleapis/java-bigtable/issues/939)) ([57cddee](https://www.github.com/googleapis/java-bigtable/commit/57cddee445dec91a8bb96127ee7db947a1e13a7d))
+
+
+### Dependencies
+
+* fix UpperBoundsDep check for checker-qual ([#941](https://www.github.com/googleapis/java-bigtable/issues/941)) ([1d7c224](https://www.github.com/googleapis/java-bigtable/commit/1d7c224bd46f8ab576645e5d722ac595ab875406))
+
 ### [1.27.3](https://www.github.com/googleapis/java-bigtable/compare/v1.27.2...v1.27.3) (2021-07-19)
 
 
