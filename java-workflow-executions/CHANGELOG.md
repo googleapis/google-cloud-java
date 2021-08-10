@@ -1,5 +1,26 @@
 # Changelog
 
+## [2.0.0](https://www.github.com/googleapis/java-workflow-executions/compare/v1.0.1...v2.0.0) (2021-08-06)
+
+
+### ⚠ BREAKING CHANGES
+
+* release gapic-generator-java v2.0.0 (#159)
+
+### Features
+
+* release gapic-generator-java v2.0.0 ([#159](https://www.github.com/googleapis/java-workflow-executions/issues/159)) ([216bca3](https://www.github.com/googleapis/java-workflow-executions/commit/216bca30da2766c3d3267924fc33909f22b0cf59))
+
+
+### Bug Fixes
+
+* Add `shopt -s nullglob` to dependencies script ([#145](https://www.github.com/googleapis/java-workflow-executions/issues/145)) ([dc14b6f](https://www.github.com/googleapis/java-workflow-executions/commit/dc14b6fcd9f4fee8729f21fde161a1380653ae97))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2 ([#161](https://www.github.com/googleapis/java-workflow-executions/issues/161)) ([d5d8ea3](https://www.github.com/googleapis/java-workflow-executions/commit/d5d8ea3d741106184866bc5cf4e068369ce89fe8))
+
 ### [1.0.1](https://www.github.com/googleapis/java-workflow-executions/compare/v1.0.0...v1.0.1) (2021-07-01)
 
 
