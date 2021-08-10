@@ -1,5 +1,21 @@
 # Changelog
 
+## [2.0.0](https://www.github.com/googleapis/java-orgpolicy/compare/v1.2.2...v2.0.0) (2021-08-06)
+
+
+### ⚠ BREAKING CHANGES
+
+* release gapic-generator-java v2.0.0 (#225)
+
+### Features
+
+* release gapic-generator-java v2.0.0 ([#225](https://www.github.com/googleapis/java-orgpolicy/issues/225)) ([5c6d6fd](https://www.github.com/googleapis/java-orgpolicy/commit/5c6d6fd7a9cce37e9518e5323347b3fafb07a5db))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2 ([#226](https://www.github.com/googleapis/java-orgpolicy/issues/226)) ([47f9db6](https://www.github.com/googleapis/java-orgpolicy/commit/47f9db697aae71b56ca5137c94f6dc1d6bebcac5))
+
 ### [1.2.2](https://www.github.com/googleapis/java-orgpolicy/compare/v1.2.1...v1.2.2) (2021-07-01)
 
 
