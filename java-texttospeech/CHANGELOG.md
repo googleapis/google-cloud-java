@@ -1,5 +1,21 @@
 # Changelog
 
+## [2.0.0](https://www.github.com/googleapis/java-texttospeech/compare/v1.5.2...v2.0.0) (2021-08-06)
+
+
+### ⚠ BREAKING CHANGES
+
+* release gapic-generator-java v2.0.0 (#513)
+
+### Features
+
+* release gapic-generator-java v2.0.0 ([#513](https://www.github.com/googleapis/java-texttospeech/issues/513)) ([a311014](https://www.github.com/googleapis/java-texttospeech/commit/a311014bf773704d230b4ea0fafeb31c6088a0d1))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2 ([#514](https://www.github.com/googleapis/java-texttospeech/issues/514)) ([65d148a](https://www.github.com/googleapis/java-texttospeech/commit/65d148a401596cd1bc6751f3c10e694227da0ce3))
+
 ### [1.5.2](https://www.github.com/googleapis/java-texttospeech/compare/v1.5.1...v1.5.2) (2021-07-05)
 
 
