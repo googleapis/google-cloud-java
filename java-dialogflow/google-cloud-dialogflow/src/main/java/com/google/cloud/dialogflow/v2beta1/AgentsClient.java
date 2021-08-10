@@ -16,7 +16,6 @@
 
 package com.google.cloud.dialogflow.v2beta1;
 
-import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
 import com.google.api.core.BetaApi;
@@ -282,6 +281,9 @@ public class AgentsClient implements BackgroundResource {
   /**
    * Creates/updates the specified agent.
    *
+   * <p>Note: You should always train an agent prior to sending it queries. See the [training
+   * documentation](https://cloud.google.com/dialogflow/es/docs/training).
+   *
    * <p>Sample code:
    *
    * <pre>{@code
@@ -302,6 +304,9 @@ public class AgentsClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates/updates the specified agent.
+   *
+   * <p>Note: You should always train an agent prior to sending it queries. See the [training
+   * documentation](https://cloud.google.com/dialogflow/es/docs/training).
    *
    * <p>Sample code:
    *
@@ -326,6 +331,9 @@ public class AgentsClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates/updates the specified agent.
+   *
+   * <p>Note: You should always train an agent prior to sending it queries. See the [training
+   * documentation](https://cloud.google.com/dialogflow/es/docs/training).
    *
    * <p>Sample code:
    *
@@ -653,7 +661,8 @@ public class AgentsClient implements BackgroundResource {
   /**
    * Trains the specified agent.
    *
-   * <p>Operation &lt;response: [google.protobuf.Empty][google.protobuf.Empty]&gt;
+   * <p>Note: You should always train an agent prior to sending it queries. See the [training
+   * documentation](https://cloud.google.com/dialogflow/es/docs/training).
    *
    * <p>Sample code:
    *
@@ -679,7 +688,8 @@ public class AgentsClient implements BackgroundResource {
   /**
    * Trains the specified agent.
    *
-   * <p>Operation &lt;response: [google.protobuf.Empty][google.protobuf.Empty]&gt;
+   * <p>Note: You should always train an agent prior to sending it queries. See the [training
+   * documentation](https://cloud.google.com/dialogflow/es/docs/training).
    *
    * <p>Sample code:
    *
@@ -705,7 +715,8 @@ public class AgentsClient implements BackgroundResource {
   /**
    * Trains the specified agent.
    *
-   * <p>Operation &lt;response: [google.protobuf.Empty][google.protobuf.Empty]&gt;
+   * <p>Note: You should always train an agent prior to sending it queries. See the [training
+   * documentation](https://cloud.google.com/dialogflow/es/docs/training).
    *
    * <p>Sample code:
    *
@@ -730,7 +741,8 @@ public class AgentsClient implements BackgroundResource {
   /**
    * Trains the specified agent.
    *
-   * <p>Operation &lt;response: [google.protobuf.Empty][google.protobuf.Empty]&gt;
+   * <p>Note: You should always train an agent prior to sending it queries. See the [training
+   * documentation](https://cloud.google.com/dialogflow/es/docs/training).
    *
    * <p>Sample code:
    *
@@ -755,7 +767,8 @@ public class AgentsClient implements BackgroundResource {
   /**
    * Trains the specified agent.
    *
-   * <p>Operation &lt;response: [google.protobuf.Empty][google.protobuf.Empty]&gt;
+   * <p>Note: You should always train an agent prior to sending it queries. See the [training
+   * documentation](https://cloud.google.com/dialogflow/es/docs/training).
    *
    * <p>Sample code:
    *
@@ -780,7 +793,8 @@ public class AgentsClient implements BackgroundResource {
   /**
    * Trains the specified agent.
    *
-   * <p>Operation &lt;response: [google.protobuf.Empty][google.protobuf.Empty]&gt;
+   * <p>Note: You should always train an agent prior to sending it queries. See the [training
+   * documentation](https://cloud.google.com/dialogflow/es/docs/training).
    *
    * <p>Sample code:
    *
@@ -803,9 +817,6 @@ public class AgentsClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Exports the specified agent to a ZIP file.
-   *
-   * <p>Operation &lt;response:
-   * [ExportAgentResponse][google.cloud.dialogflow.v2beta1.ExportAgentResponse]&gt;
    *
    * <p>Sample code:
    *
@@ -833,9 +844,6 @@ public class AgentsClient implements BackgroundResource {
   /**
    * Exports the specified agent to a ZIP file.
    *
-   * <p>Operation &lt;response:
-   * [ExportAgentResponse][google.cloud.dialogflow.v2beta1.ExportAgentResponse]&gt;
-   *
    * <p>Sample code:
    *
    * <pre>{@code
@@ -862,9 +870,6 @@ public class AgentsClient implements BackgroundResource {
   /**
    * Exports the specified agent to a ZIP file.
    *
-   * <p>Operation &lt;response:
-   * [ExportAgentResponse][google.cloud.dialogflow.v2beta1.ExportAgentResponse]&gt;
-   *
    * <p>Sample code:
    *
    * <pre>{@code
@@ -887,9 +892,6 @@ public class AgentsClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Exports the specified agent to a ZIP file.
-   *
-   * <p>Operation &lt;response:
-   * [ExportAgentResponse][google.cloud.dialogflow.v2beta1.ExportAgentResponse]&gt;
    *
    * <p>Sample code:
    *
@@ -916,9 +918,6 @@ public class AgentsClient implements BackgroundResource {
   /**
    * Exports the specified agent to a ZIP file.
    *
-   * <p>Operation &lt;response:
-   * [ExportAgentResponse][google.cloud.dialogflow.v2beta1.ExportAgentResponse]&gt;
-   *
    * <p>Sample code:
    *
    * <pre>{@code
@@ -943,9 +942,6 @@ public class AgentsClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Exports the specified agent to a ZIP file.
-   *
-   * <p>Operation &lt;response:
-   * [ExportAgentResponse][google.cloud.dialogflow.v2beta1.ExportAgentResponse]&gt;
    *
    * <p>Sample code:
    *
@@ -978,9 +974,8 @@ public class AgentsClient implements BackgroundResource {
    * [TrainAgent][google.cloud.dialogflow.v2beta1.Agents.TrainAgent] and wait for the operation it
    * returns in order to train explicitly.
    *
-   * <p>Operation &lt;response: [google.protobuf.Empty][google.protobuf.Empty]&gt; An operation
-   * which tracks when importing is complete. It only tracks when the draft agent is updated not
-   * when it is done training.
+   * <p>Note: You should always train an agent prior to sending it queries. See the [training
+   * documentation](https://cloud.google.com/dialogflow/es/docs/training).
    *
    * <p>Sample code:
    *
@@ -1013,9 +1008,8 @@ public class AgentsClient implements BackgroundResource {
    * [TrainAgent][google.cloud.dialogflow.v2beta1.Agents.TrainAgent] and wait for the operation it
    * returns in order to train explicitly.
    *
-   * <p>Operation &lt;response: [google.protobuf.Empty][google.protobuf.Empty]&gt; An operation
-   * which tracks when importing is complete. It only tracks when the draft agent is updated not
-   * when it is done training.
+   * <p>Note: You should always train an agent prior to sending it queries. See the [training
+   * documentation](https://cloud.google.com/dialogflow/es/docs/training).
    *
    * <p>Sample code:
    *
@@ -1048,9 +1042,8 @@ public class AgentsClient implements BackgroundResource {
    * [TrainAgent][google.cloud.dialogflow.v2beta1.Agents.TrainAgent] and wait for the operation it
    * returns in order to train explicitly.
    *
-   * <p>Operation &lt;response: [google.protobuf.Empty][google.protobuf.Empty]&gt; An operation
-   * which tracks when importing is complete. It only tracks when the draft agent is updated not
-   * when it is done training.
+   * <p>Note: You should always train an agent prior to sending it queries. See the [training
+   * documentation](https://cloud.google.com/dialogflow/es/docs/training).
    *
    * <p>Sample code:
    *
@@ -1081,9 +1074,8 @@ public class AgentsClient implements BackgroundResource {
    * [TrainAgent][google.cloud.dialogflow.v2beta1.Agents.TrainAgent] and wait for the operation it
    * returns in order to train explicitly.
    *
-   * <p>Operation &lt;response: [google.protobuf.Empty][google.protobuf.Empty]&gt; An operation
-   * which tracks when restoring is complete. It only tracks when the draft agent is updated not
-   * when it is done training.
+   * <p>Note: You should always train an agent prior to sending it queries. See the [training
+   * documentation](https://cloud.google.com/dialogflow/es/docs/training).
    *
    * <p>Sample code:
    *
@@ -1115,9 +1107,8 @@ public class AgentsClient implements BackgroundResource {
    * [TrainAgent][google.cloud.dialogflow.v2beta1.Agents.TrainAgent] and wait for the operation it
    * returns in order to train explicitly.
    *
-   * <p>Operation &lt;response: [google.protobuf.Empty][google.protobuf.Empty]&gt; An operation
-   * which tracks when restoring is complete. It only tracks when the draft agent is updated not
-   * when it is done training.
+   * <p>Note: You should always train an agent prior to sending it queries. See the [training
+   * documentation](https://cloud.google.com/dialogflow/es/docs/training).
    *
    * <p>Sample code:
    *
@@ -1150,9 +1141,8 @@ public class AgentsClient implements BackgroundResource {
    * [TrainAgent][google.cloud.dialogflow.v2beta1.Agents.TrainAgent] and wait for the operation it
    * returns in order to train explicitly.
    *
-   * <p>Operation &lt;response: [google.protobuf.Empty][google.protobuf.Empty]&gt; An operation
-   * which tracks when restoring is complete. It only tracks when the draft agent is updated not
-   * when it is done training.
+   * <p>Note: You should always train an agent prior to sending it queries. See the [training
+   * documentation](https://cloud.google.com/dialogflow/es/docs/training).
    *
    * <p>Sample code:
    *
@@ -1268,12 +1258,7 @@ public class AgentsClient implements BackgroundResource {
           SearchAgentsPage.createEmptyPage().createPageAsync(context, futureResponse);
       return ApiFutures.transform(
           futurePage,
-          new ApiFunction<SearchAgentsPage, SearchAgentsPagedResponse>() {
-            @Override
-            public SearchAgentsPagedResponse apply(SearchAgentsPage input) {
-              return new SearchAgentsPagedResponse(input);
-            }
-          },
+          input -> new SearchAgentsPagedResponse(input),
           MoreExecutors.directExecutor());
     }
 

@@ -238,6 +238,8 @@ public class ConversationProfilesClientTest {
             .setNewMessageEventNotificationConfig(NotificationConfig.newBuilder().build())
             .setSttConfig(SpeechToTextConfig.newBuilder().build())
             .setLanguageCode("languageCode-2092349083")
+            .setTimeZone("timeZone-2077180903")
+            .setSecuritySettings("securitySettings-1062971517")
             .build();
     mockConversationProfiles.addResponse(expectedResponse);
 
@@ -295,6 +297,8 @@ public class ConversationProfilesClientTest {
             .setNewMessageEventNotificationConfig(NotificationConfig.newBuilder().build())
             .setSttConfig(SpeechToTextConfig.newBuilder().build())
             .setLanguageCode("languageCode-2092349083")
+            .setTimeZone("timeZone-2077180903")
+            .setSecuritySettings("securitySettings-1062971517")
             .build();
     mockConversationProfiles.addResponse(expectedResponse);
 
@@ -348,6 +352,8 @@ public class ConversationProfilesClientTest {
             .setNewMessageEventNotificationConfig(NotificationConfig.newBuilder().build())
             .setSttConfig(SpeechToTextConfig.newBuilder().build())
             .setLanguageCode("languageCode-2092349083")
+            .setTimeZone("timeZone-2077180903")
+            .setSecuritySettings("securitySettings-1062971517")
             .build();
     mockConversationProfiles.addResponse(expectedResponse);
 
@@ -405,6 +411,8 @@ public class ConversationProfilesClientTest {
             .setNewMessageEventNotificationConfig(NotificationConfig.newBuilder().build())
             .setSttConfig(SpeechToTextConfig.newBuilder().build())
             .setLanguageCode("languageCode-2092349083")
+            .setTimeZone("timeZone-2077180903")
+            .setSecuritySettings("securitySettings-1062971517")
             .build();
     mockConversationProfiles.addResponse(expectedResponse);
 
@@ -462,6 +470,8 @@ public class ConversationProfilesClientTest {
             .setNewMessageEventNotificationConfig(NotificationConfig.newBuilder().build())
             .setSttConfig(SpeechToTextConfig.newBuilder().build())
             .setLanguageCode("languageCode-2092349083")
+            .setTimeZone("timeZone-2077180903")
+            .setSecuritySettings("securitySettings-1062971517")
             .build();
     mockConversationProfiles.addResponse(expectedResponse);
 
@@ -519,6 +529,8 @@ public class ConversationProfilesClientTest {
             .setNewMessageEventNotificationConfig(NotificationConfig.newBuilder().build())
             .setSttConfig(SpeechToTextConfig.newBuilder().build())
             .setLanguageCode("languageCode-2092349083")
+            .setTimeZone("timeZone-2077180903")
+            .setSecuritySettings("securitySettings-1062971517")
             .build();
     mockConversationProfiles.addResponse(expectedResponse);
 

@@ -16,7 +16,6 @@
 
 package com.google.cloud.dialogflow.v2beta1;
 
-import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
 import com.google.api.core.BetaApi;
@@ -898,12 +897,7 @@ public class ConversationProfilesClient implements BackgroundResource {
           ListConversationProfilesPage.createEmptyPage().createPageAsync(context, futureResponse);
       return ApiFutures.transform(
           futurePage,
-          new ApiFunction<ListConversationProfilesPage, ListConversationProfilesPagedResponse>() {
-            @Override
-            public ListConversationProfilesPagedResponse apply(ListConversationProfilesPage input) {
-              return new ListConversationProfilesPagedResponse(input);
-            }
-          },
+          input -> new ListConversationProfilesPagedResponse(input),
           MoreExecutors.directExecutor());
     }
 

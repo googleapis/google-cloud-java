@@ -21,7 +21,6 @@ import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.grpc.GrpcCallSettings;
 import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
-import com.google.api.gax.rpc.RequestParamsExtractor;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.dialogflow.v2.Fulfillment;
 import com.google.cloud.dialogflow.v2.GetFulfillmentRequest;
@@ -31,7 +30,6 @@ import com.google.longrunning.stub.GrpcOperationsStub;
 import io.grpc.MethodDescriptor;
 import io.grpc.protobuf.ProtoUtils;
 import java.io.IOException;
-import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
@@ -112,27 +110,21 @@ public class GrpcFulfillmentsStub extends FulfillmentsStub {
         GrpcCallSettings.<GetFulfillmentRequest, Fulfillment>newBuilder()
             .setMethodDescriptor(getFulfillmentMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<GetFulfillmentRequest>() {
-                  @Override
-                  public Map<String, String> extract(GetFulfillmentRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("name", String.valueOf(request.getName()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<UpdateFulfillmentRequest, Fulfillment> updateFulfillmentTransportSettings =
         GrpcCallSettings.<UpdateFulfillmentRequest, Fulfillment>newBuilder()
             .setMethodDescriptor(updateFulfillmentMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<UpdateFulfillmentRequest>() {
-                  @Override
-                  public Map<String, String> extract(UpdateFulfillmentRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put(
-                        "fulfillment.name", String.valueOf(request.getFulfillment().getName()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put(
+                      "fulfillment.name", String.valueOf(request.getFulfillment().getName()));
+                  return params.build();
                 })
             .build();
 
@@ -165,7 +157,13 @@ public class GrpcFulfillmentsStub extends FulfillmentsStub {
 
   @Override
   public final void close() {
-    shutdown();
+    try {
+      backgroundResources.close();
+    } catch (RuntimeException e) {
+      throw e;
+    } catch (Exception e) {
+      throw new IllegalStateException("Failed to close resource", e);
+    }
   }
 
   @Override

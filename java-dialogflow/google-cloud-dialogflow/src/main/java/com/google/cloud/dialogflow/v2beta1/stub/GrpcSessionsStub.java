@@ -23,7 +23,6 @@ import com.google.api.gax.grpc.GrpcCallSettings;
 import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.BidiStreamingCallable;
 import com.google.api.gax.rpc.ClientContext;
-import com.google.api.gax.rpc.RequestParamsExtractor;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.dialogflow.v2beta1.DetectIntentRequest;
 import com.google.cloud.dialogflow.v2beta1.DetectIntentResponse;
@@ -34,7 +33,6 @@ import com.google.longrunning.stub.GrpcOperationsStub;
 import io.grpc.MethodDescriptor;
 import io.grpc.protobuf.ProtoUtils;
 import java.io.IOException;
-import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
@@ -115,13 +113,10 @@ public class GrpcSessionsStub extends SessionsStub {
         GrpcCallSettings.<DetectIntentRequest, DetectIntentResponse>newBuilder()
             .setMethodDescriptor(detectIntentMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<DetectIntentRequest>() {
-                  @Override
-                  public Map<String, String> extract(DetectIntentRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("session", String.valueOf(request.getSession()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("session", String.valueOf(request.getSession()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<StreamingDetectIntentRequest, StreamingDetectIntentResponse>
@@ -161,7 +156,13 @@ public class GrpcSessionsStub extends SessionsStub {
 
   @Override
   public final void close() {
-    shutdown();
+    try {
+      backgroundResources.close();
+    } catch (RuntimeException e) {
+      throw e;
+    } catch (Exception e) {
+      throw new IllegalStateException("Failed to close resource", e);
+    }
   }
 
   @Override

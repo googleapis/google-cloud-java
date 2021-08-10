@@ -24,7 +24,6 @@ import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.grpc.GrpcCallSettings;
 import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
-import com.google.api.gax.rpc.RequestParamsExtractor;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.dialogflow.v2.CreateEnvironmentRequest;
 import com.google.cloud.dialogflow.v2.DeleteEnvironmentRequest;
@@ -41,7 +40,6 @@ import com.google.protobuf.Empty;
 import io.grpc.MethodDescriptor;
 import io.grpc.protobuf.ProtoUtils;
 import java.io.IOException;
-import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
@@ -174,66 +172,51 @@ public class GrpcEnvironmentsStub extends EnvironmentsStub {
             GrpcCallSettings.<ListEnvironmentsRequest, ListEnvironmentsResponse>newBuilder()
                 .setMethodDescriptor(listEnvironmentsMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<ListEnvironmentsRequest>() {
-                      @Override
-                      public Map<String, String> extract(ListEnvironmentsRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("parent", String.valueOf(request.getParent()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("parent", String.valueOf(request.getParent()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<GetEnvironmentRequest, Environment> getEnvironmentTransportSettings =
         GrpcCallSettings.<GetEnvironmentRequest, Environment>newBuilder()
             .setMethodDescriptor(getEnvironmentMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<GetEnvironmentRequest>() {
-                  @Override
-                  public Map<String, String> extract(GetEnvironmentRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("name", String.valueOf(request.getName()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<CreateEnvironmentRequest, Environment> createEnvironmentTransportSettings =
         GrpcCallSettings.<CreateEnvironmentRequest, Environment>newBuilder()
             .setMethodDescriptor(createEnvironmentMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<CreateEnvironmentRequest>() {
-                  @Override
-                  public Map<String, String> extract(CreateEnvironmentRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("parent", String.valueOf(request.getParent()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("parent", String.valueOf(request.getParent()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<UpdateEnvironmentRequest, Environment> updateEnvironmentTransportSettings =
         GrpcCallSettings.<UpdateEnvironmentRequest, Environment>newBuilder()
             .setMethodDescriptor(updateEnvironmentMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<UpdateEnvironmentRequest>() {
-                  @Override
-                  public Map<String, String> extract(UpdateEnvironmentRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put(
-                        "environment.name", String.valueOf(request.getEnvironment().getName()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put(
+                      "environment.name", String.valueOf(request.getEnvironment().getName()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<DeleteEnvironmentRequest, Empty> deleteEnvironmentTransportSettings =
         GrpcCallSettings.<DeleteEnvironmentRequest, Empty>newBuilder()
             .setMethodDescriptor(deleteEnvironmentMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<DeleteEnvironmentRequest>() {
-                  @Override
-                  public Map<String, String> extract(DeleteEnvironmentRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("name", String.valueOf(request.getName()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<GetEnvironmentHistoryRequest, EnvironmentHistory>
@@ -241,13 +224,10 @@ public class GrpcEnvironmentsStub extends EnvironmentsStub {
             GrpcCallSettings.<GetEnvironmentHistoryRequest, EnvironmentHistory>newBuilder()
                 .setMethodDescriptor(getEnvironmentHistoryMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<GetEnvironmentHistoryRequest>() {
-                      @Override
-                      public Map<String, String> extract(GetEnvironmentHistoryRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("parent", String.valueOf(request.getParent()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("parent", String.valueOf(request.getParent()));
+                      return params.build();
                     })
                 .build();
 
@@ -340,7 +320,13 @@ public class GrpcEnvironmentsStub extends EnvironmentsStub {
 
   @Override
   public final void close() {
-    shutdown();
+    try {
+      backgroundResources.close();
+    } catch (RuntimeException e) {
+      throw e;
+    } catch (Exception e) {
+      throw new IllegalStateException("Failed to close resource", e);
+    }
   }
 
   @Override

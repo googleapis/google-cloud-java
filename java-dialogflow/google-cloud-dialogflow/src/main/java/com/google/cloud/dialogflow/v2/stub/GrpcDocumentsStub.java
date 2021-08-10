@@ -24,7 +24,6 @@ import com.google.api.gax.grpc.GrpcCallSettings;
 import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
-import com.google.api.gax.rpc.RequestParamsExtractor;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.dialogflow.v2.CreateDocumentRequest;
 import com.google.cloud.dialogflow.v2.DeleteDocumentRequest;
@@ -42,7 +41,6 @@ import com.google.protobuf.Empty;
 import io.grpc.MethodDescriptor;
 import io.grpc.protobuf.ProtoUtils;
 import java.io.IOException;
-import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
@@ -175,78 +173,60 @@ public class GrpcDocumentsStub extends DocumentsStub {
         GrpcCallSettings.<ListDocumentsRequest, ListDocumentsResponse>newBuilder()
             .setMethodDescriptor(listDocumentsMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<ListDocumentsRequest>() {
-                  @Override
-                  public Map<String, String> extract(ListDocumentsRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("parent", String.valueOf(request.getParent()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("parent", String.valueOf(request.getParent()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<GetDocumentRequest, Document> getDocumentTransportSettings =
         GrpcCallSettings.<GetDocumentRequest, Document>newBuilder()
             .setMethodDescriptor(getDocumentMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<GetDocumentRequest>() {
-                  @Override
-                  public Map<String, String> extract(GetDocumentRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("name", String.valueOf(request.getName()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<CreateDocumentRequest, Operation> createDocumentTransportSettings =
         GrpcCallSettings.<CreateDocumentRequest, Operation>newBuilder()
             .setMethodDescriptor(createDocumentMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<CreateDocumentRequest>() {
-                  @Override
-                  public Map<String, String> extract(CreateDocumentRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("parent", String.valueOf(request.getParent()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("parent", String.valueOf(request.getParent()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<DeleteDocumentRequest, Operation> deleteDocumentTransportSettings =
         GrpcCallSettings.<DeleteDocumentRequest, Operation>newBuilder()
             .setMethodDescriptor(deleteDocumentMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<DeleteDocumentRequest>() {
-                  @Override
-                  public Map<String, String> extract(DeleteDocumentRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("name", String.valueOf(request.getName()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<UpdateDocumentRequest, Operation> updateDocumentTransportSettings =
         GrpcCallSettings.<UpdateDocumentRequest, Operation>newBuilder()
             .setMethodDescriptor(updateDocumentMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<UpdateDocumentRequest>() {
-                  @Override
-                  public Map<String, String> extract(UpdateDocumentRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("document.name", String.valueOf(request.getDocument().getName()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("document.name", String.valueOf(request.getDocument().getName()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<ReloadDocumentRequest, Operation> reloadDocumentTransportSettings =
         GrpcCallSettings.<ReloadDocumentRequest, Operation>newBuilder()
             .setMethodDescriptor(reloadDocumentMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<ReloadDocumentRequest>() {
-                  @Override
-                  public Map<String, String> extract(ReloadDocumentRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("name", String.valueOf(request.getName()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  return params.build();
                 })
             .build();
 
@@ -366,7 +346,13 @@ public class GrpcDocumentsStub extends DocumentsStub {
 
   @Override
   public final void close() {
-    shutdown();
+    try {
+      backgroundResources.close();
+    } catch (RuntimeException e) {
+      throw e;
+    } catch (Exception e) {
+      throw new IllegalStateException("Failed to close resource", e);
+    }
   }
 
   @Override

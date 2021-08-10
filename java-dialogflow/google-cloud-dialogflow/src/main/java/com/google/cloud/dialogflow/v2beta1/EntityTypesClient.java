@@ -16,7 +16,6 @@
 
 package com.google.cloud.dialogflow.v2beta1;
 
-import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
 import com.google.api.core.BetaApi;
@@ -545,6 +544,9 @@ public class EntityTypesClient implements BackgroundResource {
   /**
    * Creates an entity type in the specified agent.
    *
+   * <p>Note: You should always train an agent prior to sending it queries. See the [training
+   * documentation](https://cloud.google.com/dialogflow/es/docs/training).
+   *
    * <p>Sample code:
    *
    * <pre>{@code
@@ -574,6 +576,9 @@ public class EntityTypesClient implements BackgroundResource {
   /**
    * Creates an entity type in the specified agent.
    *
+   * <p>Note: You should always train an agent prior to sending it queries. See the [training
+   * documentation](https://cloud.google.com/dialogflow/es/docs/training).
+   *
    * <p>Sample code:
    *
    * <pre>{@code
@@ -600,6 +605,9 @@ public class EntityTypesClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates an entity type in the specified agent.
+   *
+   * <p>Note: You should always train an agent prior to sending it queries. See the [training
+   * documentation](https://cloud.google.com/dialogflow/es/docs/training).
    *
    * <p>Sample code:
    *
@@ -636,6 +644,9 @@ public class EntityTypesClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates an entity type in the specified agent.
+   *
+   * <p>Note: You should always train an agent prior to sending it queries. See the [training
+   * documentation](https://cloud.google.com/dialogflow/es/docs/training).
    *
    * <p>Sample code:
    *
@@ -674,6 +685,9 @@ public class EntityTypesClient implements BackgroundResource {
   /**
    * Creates an entity type in the specified agent.
    *
+   * <p>Note: You should always train an agent prior to sending it queries. See the [training
+   * documentation](https://cloud.google.com/dialogflow/es/docs/training).
+   *
    * <p>Sample code:
    *
    * <pre>{@code
@@ -699,6 +713,9 @@ public class EntityTypesClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates an entity type in the specified agent.
+   *
+   * <p>Note: You should always train an agent prior to sending it queries. See the [training
+   * documentation](https://cloud.google.com/dialogflow/es/docs/training).
    *
    * <p>Sample code:
    *
@@ -726,6 +743,9 @@ public class EntityTypesClient implements BackgroundResource {
   /**
    * Updates the specified entity type.
    *
+   * <p>Note: You should always train an agent prior to sending it queries. See the [training
+   * documentation](https://cloud.google.com/dialogflow/es/docs/training).
+   *
    * <p>Sample code:
    *
    * <pre>{@code
@@ -747,6 +767,9 @@ public class EntityTypesClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Updates the specified entity type.
+   *
+   * <p>Note: You should always train an agent prior to sending it queries. See the [training
+   * documentation](https://cloud.google.com/dialogflow/es/docs/training).
    *
    * <p>Sample code:
    *
@@ -777,6 +800,9 @@ public class EntityTypesClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Updates the specified entity type.
+   *
+   * <p>Note: You should always train an agent prior to sending it queries. See the [training
+   * documentation](https://cloud.google.com/dialogflow/es/docs/training).
    *
    * <p>Sample code:
    *
@@ -813,6 +839,9 @@ public class EntityTypesClient implements BackgroundResource {
   /**
    * Updates the specified entity type.
    *
+   * <p>Note: You should always train an agent prior to sending it queries. See the [training
+   * documentation](https://cloud.google.com/dialogflow/es/docs/training).
+   *
    * <p>Sample code:
    *
    * <pre>{@code
@@ -837,6 +866,9 @@ public class EntityTypesClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Updates the specified entity type.
+   *
+   * <p>Note: You should always train an agent prior to sending it queries. See the [training
+   * documentation](https://cloud.google.com/dialogflow/es/docs/training).
    *
    * <p>Sample code:
    *
@@ -863,6 +895,9 @@ public class EntityTypesClient implements BackgroundResource {
   /**
    * Deletes the specified entity type.
    *
+   * <p>Note: You should always train an agent prior to sending it queries. See the [training
+   * documentation](https://cloud.google.com/dialogflow/es/docs/training).
+   *
    * <p>Sample code:
    *
    * <pre>{@code
@@ -888,6 +923,9 @@ public class EntityTypesClient implements BackgroundResource {
   /**
    * Deletes the specified entity type.
    *
+   * <p>Note: You should always train an agent prior to sending it queries. See the [training
+   * documentation](https://cloud.google.com/dialogflow/es/docs/training).
+   *
    * <p>Sample code:
    *
    * <pre>{@code
@@ -911,6 +949,9 @@ public class EntityTypesClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes the specified entity type.
+   *
+   * <p>Note: You should always train an agent prior to sending it queries. See the [training
+   * documentation](https://cloud.google.com/dialogflow/es/docs/training).
    *
    * <p>Sample code:
    *
@@ -936,6 +977,9 @@ public class EntityTypesClient implements BackgroundResource {
   /**
    * Deletes the specified entity type.
    *
+   * <p>Note: You should always train an agent prior to sending it queries. See the [training
+   * documentation](https://cloud.google.com/dialogflow/es/docs/training).
+   *
    * <p>Sample code:
    *
    * <pre>{@code
@@ -957,8 +1001,10 @@ public class EntityTypesClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Updates/Creates multiple entity types in the specified agent. Operation &lt;response:
-   * [BatchUpdateEntityTypesResponse][google.cloud.dialogflow.v2beta1.BatchUpdateEntityTypesResponse]&gt;
+   * Updates/Creates multiple entity types in the specified agent.
+   *
+   * <p>Note: You should always train an agent prior to sending it queries. See the [training
+   * documentation](https://cloud.google.com/dialogflow/es/docs/training).
    *
    * <p>Sample code:
    *
@@ -986,8 +1032,10 @@ public class EntityTypesClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Updates/Creates multiple entity types in the specified agent. Operation &lt;response:
-   * [BatchUpdateEntityTypesResponse][google.cloud.dialogflow.v2beta1.BatchUpdateEntityTypesResponse]&gt;
+   * Updates/Creates multiple entity types in the specified agent.
+   *
+   * <p>Note: You should always train an agent prior to sending it queries. See the [training
+   * documentation](https://cloud.google.com/dialogflow/es/docs/training).
    *
    * <p>Sample code:
    *
@@ -1015,8 +1063,10 @@ public class EntityTypesClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Updates/Creates multiple entity types in the specified agent. Operation &lt;response:
-   * [BatchUpdateEntityTypesResponse][google.cloud.dialogflow.v2beta1.BatchUpdateEntityTypesResponse]&gt;
+   * Updates/Creates multiple entity types in the specified agent.
+   *
+   * <p>Note: You should always train an agent prior to sending it queries. See the [training
+   * documentation](https://cloud.google.com/dialogflow/es/docs/training).
    *
    * <p>Sample code:
    *
@@ -1043,8 +1093,10 @@ public class EntityTypesClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Deletes entity types in the specified agent. Operation &lt;response:
-   * [google.protobuf.Empty][google.protobuf.Empty]&gt;
+   * Deletes entity types in the specified agent.
+   *
+   * <p>Note: You should always train an agent prior to sending it queries. See the [training
+   * documentation](https://cloud.google.com/dialogflow/es/docs/training).
    *
    * <p>Sample code:
    *
@@ -1075,8 +1127,10 @@ public class EntityTypesClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Deletes entity types in the specified agent. Operation &lt;response:
-   * [google.protobuf.Empty][google.protobuf.Empty]&gt;
+   * Deletes entity types in the specified agent.
+   *
+   * <p>Note: You should always train an agent prior to sending it queries. See the [training
+   * documentation](https://cloud.google.com/dialogflow/es/docs/training).
    *
    * <p>Sample code:
    *
@@ -1108,8 +1162,10 @@ public class EntityTypesClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Deletes entity types in the specified agent. Operation &lt;response:
-   * [google.protobuf.Empty][google.protobuf.Empty]&gt;
+   * Deletes entity types in the specified agent.
+   *
+   * <p>Note: You should always train an agent prior to sending it queries. See the [training
+   * documentation](https://cloud.google.com/dialogflow/es/docs/training).
    *
    * <p>Sample code:
    *
@@ -1135,8 +1191,10 @@ public class EntityTypesClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Deletes entity types in the specified agent. Operation &lt;response:
-   * [google.protobuf.Empty][google.protobuf.Empty]&gt;
+   * Deletes entity types in the specified agent.
+   *
+   * <p>Note: You should always train an agent prior to sending it queries. See the [training
+   * documentation](https://cloud.google.com/dialogflow/es/docs/training).
    *
    * <p>Sample code:
    *
@@ -1162,8 +1220,10 @@ public class EntityTypesClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Deletes entity types in the specified agent. Operation &lt;response:
-   * [google.protobuf.Empty][google.protobuf.Empty]&gt;
+   * Deletes entity types in the specified agent.
+   *
+   * <p>Note: You should always train an agent prior to sending it queries. See the [training
+   * documentation](https://cloud.google.com/dialogflow/es/docs/training).
    *
    * <p>Sample code:
    *
@@ -1191,7 +1251,8 @@ public class EntityTypesClient implements BackgroundResource {
   /**
    * Creates multiple new entities in the specified entity type.
    *
-   * <p>Operation &lt;response: [google.protobuf.Empty][google.protobuf.Empty]&gt;
+   * <p>Note: You should always train an agent prior to sending it queries. See the [training
+   * documentation](https://cloud.google.com/dialogflow/es/docs/training).
    *
    * <p>Sample code:
    *
@@ -1224,7 +1285,8 @@ public class EntityTypesClient implements BackgroundResource {
   /**
    * Creates multiple new entities in the specified entity type.
    *
-   * <p>Operation &lt;response: [google.protobuf.Empty][google.protobuf.Empty]&gt;
+   * <p>Note: You should always train an agent prior to sending it queries. See the [training
+   * documentation](https://cloud.google.com/dialogflow/es/docs/training).
    *
    * <p>Sample code:
    *
@@ -1255,7 +1317,8 @@ public class EntityTypesClient implements BackgroundResource {
   /**
    * Creates multiple new entities in the specified entity type.
    *
-   * <p>Operation &lt;response: [google.protobuf.Empty][google.protobuf.Empty]&gt;
+   * <p>Note: You should always train an agent prior to sending it queries. See the [training
+   * documentation](https://cloud.google.com/dialogflow/es/docs/training).
    *
    * <p>Sample code:
    *
@@ -1294,7 +1357,8 @@ public class EntityTypesClient implements BackgroundResource {
   /**
    * Creates multiple new entities in the specified entity type.
    *
-   * <p>Operation &lt;response: [google.protobuf.Empty][google.protobuf.Empty]&gt;
+   * <p>Note: You should always train an agent prior to sending it queries. See the [training
+   * documentation](https://cloud.google.com/dialogflow/es/docs/training).
    *
    * <p>Sample code:
    *
@@ -1334,7 +1398,8 @@ public class EntityTypesClient implements BackgroundResource {
   /**
    * Creates multiple new entities in the specified entity type.
    *
-   * <p>Operation &lt;response: [google.protobuf.Empty][google.protobuf.Empty]&gt;
+   * <p>Note: You should always train an agent prior to sending it queries. See the [training
+   * documentation](https://cloud.google.com/dialogflow/es/docs/training).
    *
    * <p>Sample code:
    *
@@ -1363,7 +1428,8 @@ public class EntityTypesClient implements BackgroundResource {
   /**
    * Creates multiple new entities in the specified entity type.
    *
-   * <p>Operation &lt;response: [google.protobuf.Empty][google.protobuf.Empty]&gt;
+   * <p>Note: You should always train an agent prior to sending it queries. See the [training
+   * documentation](https://cloud.google.com/dialogflow/es/docs/training).
    *
    * <p>Sample code:
    *
@@ -1392,7 +1458,8 @@ public class EntityTypesClient implements BackgroundResource {
   /**
    * Creates multiple new entities in the specified entity type.
    *
-   * <p>Operation &lt;response: [google.protobuf.Empty][google.protobuf.Empty]&gt;
+   * <p>Note: You should always train an agent prior to sending it queries. See the [training
+   * documentation](https://cloud.google.com/dialogflow/es/docs/training).
    *
    * <p>Sample code:
    *
@@ -1421,7 +1488,8 @@ public class EntityTypesClient implements BackgroundResource {
    * Updates or creates multiple entities in the specified entity type. This method does not affect
    * entities in the entity type that aren't explicitly specified in the request.
    *
-   * <p>Operation &lt;response: [google.protobuf.Empty][google.protobuf.Empty]&gt;
+   * <p>Note: You should always train an agent prior to sending it queries. See the [training
+   * documentation](https://cloud.google.com/dialogflow/es/docs/training).
    *
    * <p>Sample code:
    *
@@ -1455,7 +1523,8 @@ public class EntityTypesClient implements BackgroundResource {
    * Updates or creates multiple entities in the specified entity type. This method does not affect
    * entities in the entity type that aren't explicitly specified in the request.
    *
-   * <p>Operation &lt;response: [google.protobuf.Empty][google.protobuf.Empty]&gt;
+   * <p>Note: You should always train an agent prior to sending it queries. See the [training
+   * documentation](https://cloud.google.com/dialogflow/es/docs/training).
    *
    * <p>Sample code:
    *
@@ -1487,7 +1556,8 @@ public class EntityTypesClient implements BackgroundResource {
    * Updates or creates multiple entities in the specified entity type. This method does not affect
    * entities in the entity type that aren't explicitly specified in the request.
    *
-   * <p>Operation &lt;response: [google.protobuf.Empty][google.protobuf.Empty]&gt;
+   * <p>Note: You should always train an agent prior to sending it queries. See the [training
+   * documentation](https://cloud.google.com/dialogflow/es/docs/training).
    *
    * <p>Sample code:
    *
@@ -1527,7 +1597,8 @@ public class EntityTypesClient implements BackgroundResource {
    * Updates or creates multiple entities in the specified entity type. This method does not affect
    * entities in the entity type that aren't explicitly specified in the request.
    *
-   * <p>Operation &lt;response: [google.protobuf.Empty][google.protobuf.Empty]&gt;
+   * <p>Note: You should always train an agent prior to sending it queries. See the [training
+   * documentation](https://cloud.google.com/dialogflow/es/docs/training).
    *
    * <p>Sample code:
    *
@@ -1568,7 +1639,8 @@ public class EntityTypesClient implements BackgroundResource {
    * Updates or creates multiple entities in the specified entity type. This method does not affect
    * entities in the entity type that aren't explicitly specified in the request.
    *
-   * <p>Operation &lt;response: [google.protobuf.Empty][google.protobuf.Empty]&gt;
+   * <p>Note: You should always train an agent prior to sending it queries. See the [training
+   * documentation](https://cloud.google.com/dialogflow/es/docs/training).
    *
    * <p>Sample code:
    *
@@ -1599,7 +1671,8 @@ public class EntityTypesClient implements BackgroundResource {
    * Updates or creates multiple entities in the specified entity type. This method does not affect
    * entities in the entity type that aren't explicitly specified in the request.
    *
-   * <p>Operation &lt;response: [google.protobuf.Empty][google.protobuf.Empty]&gt;
+   * <p>Note: You should always train an agent prior to sending it queries. See the [training
+   * documentation](https://cloud.google.com/dialogflow/es/docs/training).
    *
    * <p>Sample code:
    *
@@ -1630,7 +1703,8 @@ public class EntityTypesClient implements BackgroundResource {
    * Updates or creates multiple entities in the specified entity type. This method does not affect
    * entities in the entity type that aren't explicitly specified in the request.
    *
-   * <p>Operation &lt;response: [google.protobuf.Empty][google.protobuf.Empty]&gt;
+   * <p>Note: You should always train an agent prior to sending it queries. See the [training
+   * documentation](https://cloud.google.com/dialogflow/es/docs/training).
    *
    * <p>Sample code:
    *
@@ -1659,7 +1733,8 @@ public class EntityTypesClient implements BackgroundResource {
   /**
    * Deletes entities in the specified entity type.
    *
-   * <p>Operation &lt;response: [google.protobuf.Empty][google.protobuf.Empty]&gt;
+   * <p>Note: You should always train an agent prior to sending it queries. See the [training
+   * documentation](https://cloud.google.com/dialogflow/es/docs/training).
    *
    * <p>Sample code:
    *
@@ -1693,7 +1768,8 @@ public class EntityTypesClient implements BackgroundResource {
   /**
    * Deletes entities in the specified entity type.
    *
-   * <p>Operation &lt;response: [google.protobuf.Empty][google.protobuf.Empty]&gt;
+   * <p>Note: You should always train an agent prior to sending it queries. See the [training
+   * documentation](https://cloud.google.com/dialogflow/es/docs/training).
    *
    * <p>Sample code:
    *
@@ -1728,7 +1804,8 @@ public class EntityTypesClient implements BackgroundResource {
   /**
    * Deletes entities in the specified entity type.
    *
-   * <p>Operation &lt;response: [google.protobuf.Empty][google.protobuf.Empty]&gt;
+   * <p>Note: You should always train an agent prior to sending it queries. See the [training
+   * documentation](https://cloud.google.com/dialogflow/es/docs/training).
    *
    * <p>Sample code:
    *
@@ -1768,7 +1845,8 @@ public class EntityTypesClient implements BackgroundResource {
   /**
    * Deletes entities in the specified entity type.
    *
-   * <p>Operation &lt;response: [google.protobuf.Empty][google.protobuf.Empty]&gt;
+   * <p>Note: You should always train an agent prior to sending it queries. See the [training
+   * documentation](https://cloud.google.com/dialogflow/es/docs/training).
    *
    * <p>Sample code:
    *
@@ -1809,7 +1887,8 @@ public class EntityTypesClient implements BackgroundResource {
   /**
    * Deletes entities in the specified entity type.
    *
-   * <p>Operation &lt;response: [google.protobuf.Empty][google.protobuf.Empty]&gt;
+   * <p>Note: You should always train an agent prior to sending it queries. See the [training
+   * documentation](https://cloud.google.com/dialogflow/es/docs/training).
    *
    * <p>Sample code:
    *
@@ -1838,7 +1917,8 @@ public class EntityTypesClient implements BackgroundResource {
   /**
    * Deletes entities in the specified entity type.
    *
-   * <p>Operation &lt;response: [google.protobuf.Empty][google.protobuf.Empty]&gt;
+   * <p>Note: You should always train an agent prior to sending it queries. See the [training
+   * documentation](https://cloud.google.com/dialogflow/es/docs/training).
    *
    * <p>Sample code:
    *
@@ -1867,7 +1947,8 @@ public class EntityTypesClient implements BackgroundResource {
   /**
    * Deletes entities in the specified entity type.
    *
-   * <p>Operation &lt;response: [google.protobuf.Empty][google.protobuf.Empty]&gt;
+   * <p>Note: You should always train an agent prior to sending it queries. See the [training
+   * documentation](https://cloud.google.com/dialogflow/es/docs/training).
    *
    * <p>Sample code:
    *
@@ -1936,12 +2017,7 @@ public class EntityTypesClient implements BackgroundResource {
           ListEntityTypesPage.createEmptyPage().createPageAsync(context, futureResponse);
       return ApiFutures.transform(
           futurePage,
-          new ApiFunction<ListEntityTypesPage, ListEntityTypesPagedResponse>() {
-            @Override
-            public ListEntityTypesPagedResponse apply(ListEntityTypesPage input) {
-              return new ListEntityTypesPagedResponse(input);
-            }
-          },
+          input -> new ListEntityTypesPagedResponse(input),
           MoreExecutors.directExecutor());
     }
 

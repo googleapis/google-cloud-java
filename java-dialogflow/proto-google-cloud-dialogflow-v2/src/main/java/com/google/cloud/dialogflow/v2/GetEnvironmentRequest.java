@@ -122,6 +122,7 @@ public final class GetEnvironmentRequest extends com.google.protobuf.GeneratedMe
    * - `projects/&lt;Project ID&gt;/agent/environments/&lt;Environment ID&gt;`
    * - `projects/&lt;Project ID&gt;/locations/&lt;Location
    *   ID&gt;/agent/environments/&lt;Environment ID&gt;`
+   * The environment ID for the default environment is `-`.
    * </pre>
    *
    * <code>
@@ -151,6 +152,7 @@ public final class GetEnvironmentRequest extends com.google.protobuf.GeneratedMe
    * - `projects/&lt;Project ID&gt;/agent/environments/&lt;Environment ID&gt;`
    * - `projects/&lt;Project ID&gt;/locations/&lt;Location
    *   ID&gt;/agent/environments/&lt;Environment ID&gt;`
+   * The environment ID for the default environment is `-`.
    * </pre>
    *
    * <code>
@@ -500,6 +502,7 @@ public final class GetEnvironmentRequest extends com.google.protobuf.GeneratedMe
      * - `projects/&lt;Project ID&gt;/agent/environments/&lt;Environment ID&gt;`
      * - `projects/&lt;Project ID&gt;/locations/&lt;Location
      *   ID&gt;/agent/environments/&lt;Environment ID&gt;`
+     * The environment ID for the default environment is `-`.
      * </pre>
      *
      * <code>
@@ -528,6 +531,7 @@ public final class GetEnvironmentRequest extends com.google.protobuf.GeneratedMe
      * - `projects/&lt;Project ID&gt;/agent/environments/&lt;Environment ID&gt;`
      * - `projects/&lt;Project ID&gt;/locations/&lt;Location
      *   ID&gt;/agent/environments/&lt;Environment ID&gt;`
+     * The environment ID for the default environment is `-`.
      * </pre>
      *
      * <code>
@@ -556,6 +560,7 @@ public final class GetEnvironmentRequest extends com.google.protobuf.GeneratedMe
      * - `projects/&lt;Project ID&gt;/agent/environments/&lt;Environment ID&gt;`
      * - `projects/&lt;Project ID&gt;/locations/&lt;Location
      *   ID&gt;/agent/environments/&lt;Environment ID&gt;`
+     * The environment ID for the default environment is `-`.
      * </pre>
      *
      * <code>
@@ -583,6 +588,7 @@ public final class GetEnvironmentRequest extends com.google.protobuf.GeneratedMe
      * - `projects/&lt;Project ID&gt;/agent/environments/&lt;Environment ID&gt;`
      * - `projects/&lt;Project ID&gt;/locations/&lt;Location
      *   ID&gt;/agent/environments/&lt;Environment ID&gt;`
+     * The environment ID for the default environment is `-`.
      * </pre>
      *
      * <code>
@@ -606,6 +612,7 @@ public final class GetEnvironmentRequest extends com.google.protobuf.GeneratedMe
      * - `projects/&lt;Project ID&gt;/agent/environments/&lt;Environment ID&gt;`
      * - `projects/&lt;Project ID&gt;/locations/&lt;Location
      *   ID&gt;/agent/environments/&lt;Environment ID&gt;`
+     * The environment ID for the default environment is `-`.
      * </pre>
      *
      * <code>

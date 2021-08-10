@@ -106,10 +106,10 @@ public interface UpdateEnvironmentRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. This field is used to prevent accidental overwrite of the draft
+   * Optional. This field is used to prevent accidental overwrite of the default
    * environment, which is an operation that cannot be undone. To confirm that
    * the caller desires this overwrite, this field must be explicitly set to
-   * true when updating the draft environment (environment ID = `-`).
+   * true when updating the default environment (environment ID = `-`).
    * </pre>
    *
    * <code>

@@ -433,6 +433,8 @@ public interface ConversationProfileOrBuilder
    * Language code for the conversation profile. If not specified, the language
    * is en-US. Language at ConversationProfile should be set for all non en-us
    * languages.
+   * This should be a [BCP-47](https://www.rfc-editor.org/rfc/bcp/bcp47.txt)
+   * language tag. Example: "en-US".
    * </pre>
    *
    * <code>string language_code = 10;</code>
@@ -447,6 +449,8 @@ public interface ConversationProfileOrBuilder
    * Language code for the conversation profile. If not specified, the language
    * is en-US. Language at ConversationProfile should be set for all non en-us
    * languages.
+   * This should be a [BCP-47](https://www.rfc-editor.org/rfc/bcp/bcp47.txt)
+   * language tag. Example: "en-US".
    * </pre>
    *
    * <code>string language_code = 10;</code>
@@ -454,4 +458,62 @@ public interface ConversationProfileOrBuilder
    * @return The bytes for languageCode.
    */
   com.google.protobuf.ByteString getLanguageCodeBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * The time zone of this conversational profile from the
+   * [time zone database](https://www.iana.org/time-zones), e.g.,
+   * America/New_York, Europe/Paris. Defaults to America/New_York.
+   * </pre>
+   *
+   * <code>string time_zone = 14;</code>
+   *
+   * @return The timeZone.
+   */
+  java.lang.String getTimeZone();
+  /**
+   *
+   *
+   * <pre>
+   * The time zone of this conversational profile from the
+   * [time zone database](https://www.iana.org/time-zones), e.g.,
+   * America/New_York, Europe/Paris. Defaults to America/New_York.
+   * </pre>
+   *
+   * <code>string time_zone = 14;</code>
+   *
+   * @return The bytes for timeZone.
+   */
+  com.google.protobuf.ByteString getTimeZoneBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Name of the CX SecuritySettings reference for the agent.
+   * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
+   * ID&gt;/securitySettings/&lt;Security Settings ID&gt;`.
+   * </pre>
+   *
+   * <code>string security_settings = 13 [(.google.api.resource_reference) = { ... }</code>
+   *
+   * @return The securitySettings.
+   */
+  java.lang.String getSecuritySettings();
+  /**
+   *
+   *
+   * <pre>
+   * Name of the CX SecuritySettings reference for the agent.
+   * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
+   * ID&gt;/securitySettings/&lt;Security Settings ID&gt;`.
+   * </pre>
+   *
+   * <code>string security_settings = 13 [(.google.api.resource_reference) = { ... }</code>
+   *
+   * @return The bytes for securitySettings.
+   */
+  com.google.protobuf.ByteString getSecuritySettingsBytes();
 }

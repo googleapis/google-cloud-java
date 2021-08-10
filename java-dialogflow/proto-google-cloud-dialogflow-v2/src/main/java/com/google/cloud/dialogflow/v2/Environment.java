@@ -390,6 +390,7 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
    * - `projects/&lt;Project ID&gt;/agent/environments/&lt;Environment ID&gt;`
    * - `projects/&lt;Project ID&gt;/locations/&lt;Location
    *   ID&gt;/agent/environments/&lt;Environment ID&gt;`
+   * The environment ID for the default environment is `-`.
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -417,6 +418,7 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
    * - `projects/&lt;Project ID&gt;/agent/environments/&lt;Environment ID&gt;`
    * - `projects/&lt;Project ID&gt;/locations/&lt;Location
    *   ID&gt;/agent/environments/&lt;Environment ID&gt;`
+   * The environment ID for the default environment is `-`.
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -493,7 +495,7 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. The agent version loaded into this environment.
+   * Optional. The agent version loaded into this environment.
    * Supported formats:
    * - `projects/&lt;Project ID&gt;/agent/versions/&lt;Version ID&gt;`
    * - `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agent/versions/&lt;Version
@@ -522,7 +524,7 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. The agent version loaded into this environment.
+   * Optional. The agent version loaded into this environment.
    * Supported formats:
    * - `projects/&lt;Project ID&gt;/agent/versions/&lt;Version ID&gt;`
    * - `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agent/versions/&lt;Version
@@ -1222,6 +1224,7 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
      * - `projects/&lt;Project ID&gt;/agent/environments/&lt;Environment ID&gt;`
      * - `projects/&lt;Project ID&gt;/locations/&lt;Location
      *   ID&gt;/agent/environments/&lt;Environment ID&gt;`
+     * The environment ID for the default environment is `-`.
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1248,6 +1251,7 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
      * - `projects/&lt;Project ID&gt;/agent/environments/&lt;Environment ID&gt;`
      * - `projects/&lt;Project ID&gt;/locations/&lt;Location
      *   ID&gt;/agent/environments/&lt;Environment ID&gt;`
+     * The environment ID for the default environment is `-`.
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1274,6 +1278,7 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
      * - `projects/&lt;Project ID&gt;/agent/environments/&lt;Environment ID&gt;`
      * - `projects/&lt;Project ID&gt;/locations/&lt;Location
      *   ID&gt;/agent/environments/&lt;Environment ID&gt;`
+     * The environment ID for the default environment is `-`.
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1299,6 +1304,7 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
      * - `projects/&lt;Project ID&gt;/agent/environments/&lt;Environment ID&gt;`
      * - `projects/&lt;Project ID&gt;/locations/&lt;Location
      *   ID&gt;/agent/environments/&lt;Environment ID&gt;`
+     * The environment ID for the default environment is `-`.
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1320,6 +1326,7 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
      * - `projects/&lt;Project ID&gt;/agent/environments/&lt;Environment ID&gt;`
      * - `projects/&lt;Project ID&gt;/locations/&lt;Location
      *   ID&gt;/agent/environments/&lt;Environment ID&gt;`
+     * The environment ID for the default environment is `-`.
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1454,7 +1461,7 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The agent version loaded into this environment.
+     * Optional. The agent version loaded into this environment.
      * Supported formats:
      * - `projects/&lt;Project ID&gt;/agent/versions/&lt;Version ID&gt;`
      * - `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agent/versions/&lt;Version
@@ -1482,7 +1489,7 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The agent version loaded into this environment.
+     * Optional. The agent version loaded into this environment.
      * Supported formats:
      * - `projects/&lt;Project ID&gt;/agent/versions/&lt;Version ID&gt;`
      * - `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agent/versions/&lt;Version
@@ -1510,7 +1517,7 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The agent version loaded into this environment.
+     * Optional. The agent version loaded into this environment.
      * Supported formats:
      * - `projects/&lt;Project ID&gt;/agent/versions/&lt;Version ID&gt;`
      * - `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agent/versions/&lt;Version
@@ -1537,7 +1544,7 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The agent version loaded into this environment.
+     * Optional. The agent version loaded into this environment.
      * Supported formats:
      * - `projects/&lt;Project ID&gt;/agent/versions/&lt;Version ID&gt;`
      * - `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agent/versions/&lt;Version
@@ -1560,7 +1567,7 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The agent version loaded into this environment.
+     * Optional. The agent version loaded into this environment.
      * Supported formats:
      * - `projects/&lt;Project ID&gt;/agent/versions/&lt;Version ID&gt;`
      * - `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agent/versions/&lt;Version

@@ -31,7 +31,8 @@ public interface DeleteEnvironmentRequestOrBuilder
    * / Format:
    * - `projects/&lt;Project ID&gt;/agent/environments/&lt;Environment ID&gt;`
    * - `projects/&lt;Project ID&gt;/locations/&lt;Location
-   * ID&gt;/agent/environments/&lt;Environment ID&gt;`
+   *   ID&gt;/agent/environments/&lt;Environment ID&gt;`
+   * The environment ID for the default environment is `-`.
    * </pre>
    *
    * <code>
@@ -49,7 +50,8 @@ public interface DeleteEnvironmentRequestOrBuilder
    * / Format:
    * - `projects/&lt;Project ID&gt;/agent/environments/&lt;Environment ID&gt;`
    * - `projects/&lt;Project ID&gt;/locations/&lt;Location
-   * ID&gt;/agent/environments/&lt;Environment ID&gt;`
+   *   ID&gt;/agent/environments/&lt;Environment ID&gt;`
+   * The environment ID for the default environment is `-`.
    * </pre>
    *
    * <code>

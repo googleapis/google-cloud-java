@@ -23,7 +23,6 @@ import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.grpc.GrpcCallSettings;
 import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
-import com.google.api.gax.rpc.RequestParamsExtractor;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.dialogflow.v2.AnalyzeContentRequest;
 import com.google.cloud.dialogflow.v2.AnalyzeContentResponse;
@@ -42,7 +41,6 @@ import com.google.longrunning.stub.GrpcOperationsStub;
 import io.grpc.MethodDescriptor;
 import io.grpc.protobuf.ProtoUtils;
 import java.io.IOException;
-import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
@@ -187,26 +185,20 @@ public class GrpcParticipantsStub extends ParticipantsStub {
         GrpcCallSettings.<CreateParticipantRequest, Participant>newBuilder()
             .setMethodDescriptor(createParticipantMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<CreateParticipantRequest>() {
-                  @Override
-                  public Map<String, String> extract(CreateParticipantRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("parent", String.valueOf(request.getParent()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("parent", String.valueOf(request.getParent()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<GetParticipantRequest, Participant> getParticipantTransportSettings =
         GrpcCallSettings.<GetParticipantRequest, Participant>newBuilder()
             .setMethodDescriptor(getParticipantMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<GetParticipantRequest>() {
-                  @Override
-                  public Map<String, String> extract(GetParticipantRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("name", String.valueOf(request.getName()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<ListParticipantsRequest, ListParticipantsResponse>
@@ -214,27 +206,21 @@ public class GrpcParticipantsStub extends ParticipantsStub {
             GrpcCallSettings.<ListParticipantsRequest, ListParticipantsResponse>newBuilder()
                 .setMethodDescriptor(listParticipantsMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<ListParticipantsRequest>() {
-                      @Override
-                      public Map<String, String> extract(ListParticipantsRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("parent", String.valueOf(request.getParent()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("parent", String.valueOf(request.getParent()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<UpdateParticipantRequest, Participant> updateParticipantTransportSettings =
         GrpcCallSettings.<UpdateParticipantRequest, Participant>newBuilder()
             .setMethodDescriptor(updateParticipantMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<UpdateParticipantRequest>() {
-                  @Override
-                  public Map<String, String> extract(UpdateParticipantRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put(
-                        "participant.name", String.valueOf(request.getParticipant().getName()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put(
+                      "participant.name", String.valueOf(request.getParticipant().getName()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<AnalyzeContentRequest, AnalyzeContentResponse>
@@ -242,13 +228,10 @@ public class GrpcParticipantsStub extends ParticipantsStub {
             GrpcCallSettings.<AnalyzeContentRequest, AnalyzeContentResponse>newBuilder()
                 .setMethodDescriptor(analyzeContentMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<AnalyzeContentRequest>() {
-                      @Override
-                      public Map<String, String> extract(AnalyzeContentRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("participant", String.valueOf(request.getParticipant()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("participant", String.valueOf(request.getParticipant()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<SuggestArticlesRequest, SuggestArticlesResponse>
@@ -256,13 +239,10 @@ public class GrpcParticipantsStub extends ParticipantsStub {
             GrpcCallSettings.<SuggestArticlesRequest, SuggestArticlesResponse>newBuilder()
                 .setMethodDescriptor(suggestArticlesMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<SuggestArticlesRequest>() {
-                      @Override
-                      public Map<String, String> extract(SuggestArticlesRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("parent", String.valueOf(request.getParent()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("parent", String.valueOf(request.getParent()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<SuggestFaqAnswersRequest, SuggestFaqAnswersResponse>
@@ -270,13 +250,10 @@ public class GrpcParticipantsStub extends ParticipantsStub {
             GrpcCallSettings.<SuggestFaqAnswersRequest, SuggestFaqAnswersResponse>newBuilder()
                 .setMethodDescriptor(suggestFaqAnswersMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<SuggestFaqAnswersRequest>() {
-                      @Override
-                      public Map<String, String> extract(SuggestFaqAnswersRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("parent", String.valueOf(request.getParent()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("parent", String.valueOf(request.getParent()));
+                      return params.build();
                     })
                 .build();
 
@@ -364,7 +341,13 @@ public class GrpcParticipantsStub extends ParticipantsStub {
 
   @Override
   public final void close() {
-    shutdown();
+    try {
+      backgroundResources.close();
+    } catch (RuntimeException e) {
+      throw e;
+    } catch (Exception e) {
+      throw new IllegalStateException("Failed to close resource", e);
+    }
   }
 
   @Override

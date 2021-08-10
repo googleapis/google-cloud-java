@@ -234,6 +234,31 @@ public interface StreamingRecognitionResultOrBuilder
    *
    *
    * <pre>
+   * Detected language code for the transcript.
+   * </pre>
+   *
+   * <code>string language_code = 10;</code>
+   *
+   * @return The languageCode.
+   */
+  java.lang.String getLanguageCode();
+  /**
+   *
+   *
+   * <pre>
+   * Detected language code for the transcript.
+   * </pre>
+   *
+   * <code>string language_code = 10;</code>
+   *
+   * @return The bytes for languageCode.
+   */
+  com.google.protobuf.ByteString getLanguageCodeBytes();
+
+  /**
+   *
+   *
+   * <pre>
    * DTMF digits. Populated if and only if `message_type` = `DTMF_DIGITS`.
    * </pre>
    *

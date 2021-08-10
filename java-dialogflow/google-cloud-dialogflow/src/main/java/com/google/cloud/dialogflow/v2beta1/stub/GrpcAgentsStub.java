@@ -25,7 +25,6 @@ import com.google.api.gax.grpc.GrpcCallSettings;
 import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
-import com.google.api.gax.rpc.RequestParamsExtractor;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.dialogflow.v2beta1.Agent;
 import com.google.cloud.dialogflow.v2beta1.DeleteAgentRequest;
@@ -48,7 +47,6 @@ import com.google.protobuf.Struct;
 import io.grpc.MethodDescriptor;
 import io.grpc.protobuf.ProtoUtils;
 import java.io.IOException;
-import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
@@ -199,104 +197,80 @@ public class GrpcAgentsStub extends AgentsStub {
         GrpcCallSettings.<GetAgentRequest, Agent>newBuilder()
             .setMethodDescriptor(getAgentMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<GetAgentRequest>() {
-                  @Override
-                  public Map<String, String> extract(GetAgentRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("parent", String.valueOf(request.getParent()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("parent", String.valueOf(request.getParent()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<SetAgentRequest, Agent> setAgentTransportSettings =
         GrpcCallSettings.<SetAgentRequest, Agent>newBuilder()
             .setMethodDescriptor(setAgentMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<SetAgentRequest>() {
-                  @Override
-                  public Map<String, String> extract(SetAgentRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("agent.parent", String.valueOf(request.getAgent().getParent()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("agent.parent", String.valueOf(request.getAgent().getParent()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<DeleteAgentRequest, Empty> deleteAgentTransportSettings =
         GrpcCallSettings.<DeleteAgentRequest, Empty>newBuilder()
             .setMethodDescriptor(deleteAgentMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<DeleteAgentRequest>() {
-                  @Override
-                  public Map<String, String> extract(DeleteAgentRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("parent", String.valueOf(request.getParent()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("parent", String.valueOf(request.getParent()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<SearchAgentsRequest, SearchAgentsResponse> searchAgentsTransportSettings =
         GrpcCallSettings.<SearchAgentsRequest, SearchAgentsResponse>newBuilder()
             .setMethodDescriptor(searchAgentsMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<SearchAgentsRequest>() {
-                  @Override
-                  public Map<String, String> extract(SearchAgentsRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("parent", String.valueOf(request.getParent()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("parent", String.valueOf(request.getParent()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<TrainAgentRequest, Operation> trainAgentTransportSettings =
         GrpcCallSettings.<TrainAgentRequest, Operation>newBuilder()
             .setMethodDescriptor(trainAgentMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<TrainAgentRequest>() {
-                  @Override
-                  public Map<String, String> extract(TrainAgentRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("parent", String.valueOf(request.getParent()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("parent", String.valueOf(request.getParent()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<ExportAgentRequest, Operation> exportAgentTransportSettings =
         GrpcCallSettings.<ExportAgentRequest, Operation>newBuilder()
             .setMethodDescriptor(exportAgentMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<ExportAgentRequest>() {
-                  @Override
-                  public Map<String, String> extract(ExportAgentRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("parent", String.valueOf(request.getParent()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("parent", String.valueOf(request.getParent()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<ImportAgentRequest, Operation> importAgentTransportSettings =
         GrpcCallSettings.<ImportAgentRequest, Operation>newBuilder()
             .setMethodDescriptor(importAgentMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<ImportAgentRequest>() {
-                  @Override
-                  public Map<String, String> extract(ImportAgentRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("parent", String.valueOf(request.getParent()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("parent", String.valueOf(request.getParent()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<RestoreAgentRequest, Operation> restoreAgentTransportSettings =
         GrpcCallSettings.<RestoreAgentRequest, Operation>newBuilder()
             .setMethodDescriptor(restoreAgentMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<RestoreAgentRequest>() {
-                  @Override
-                  public Map<String, String> extract(RestoreAgentRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("parent", String.valueOf(request.getParent()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("parent", String.valueOf(request.getParent()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<GetValidationResultRequest, ValidationResult>
@@ -304,13 +278,10 @@ public class GrpcAgentsStub extends AgentsStub {
             GrpcCallSettings.<GetValidationResultRequest, ValidationResult>newBuilder()
                 .setMethodDescriptor(getValidationResultMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<GetValidationResultRequest>() {
-                      @Override
-                      public Map<String, String> extract(GetValidationResultRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("parent", String.valueOf(request.getParent()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("parent", String.valueOf(request.getParent()));
+                      return params.build();
                     })
                 .build();
 
@@ -452,7 +423,13 @@ public class GrpcAgentsStub extends AgentsStub {
 
   @Override
   public final void close() {
-    shutdown();
+    try {
+      backgroundResources.close();
+    } catch (RuntimeException e) {
+      throw e;
+    } catch (Exception e) {
+      throw new IllegalStateException("Failed to close resource", e);
+    }
   }
 
   @Override

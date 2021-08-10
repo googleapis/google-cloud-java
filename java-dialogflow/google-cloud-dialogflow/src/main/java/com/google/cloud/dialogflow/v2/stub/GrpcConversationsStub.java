@@ -24,7 +24,6 @@ import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.grpc.GrpcCallSettings;
 import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
-import com.google.api.gax.rpc.RequestParamsExtractor;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.dialogflow.v2.CompleteConversationRequest;
 import com.google.cloud.dialogflow.v2.Conversation;
@@ -39,7 +38,6 @@ import com.google.longrunning.stub.GrpcOperationsStub;
 import io.grpc.MethodDescriptor;
 import io.grpc.protobuf.ProtoUtils;
 import java.io.IOException;
-import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
@@ -160,13 +158,10 @@ public class GrpcConversationsStub extends ConversationsStub {
         GrpcCallSettings.<CreateConversationRequest, Conversation>newBuilder()
             .setMethodDescriptor(createConversationMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<CreateConversationRequest>() {
-                  @Override
-                  public Map<String, String> extract(CreateConversationRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("parent", String.valueOf(request.getParent()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("parent", String.valueOf(request.getParent()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<ListConversationsRequest, ListConversationsResponse>
@@ -174,26 +169,20 @@ public class GrpcConversationsStub extends ConversationsStub {
             GrpcCallSettings.<ListConversationsRequest, ListConversationsResponse>newBuilder()
                 .setMethodDescriptor(listConversationsMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<ListConversationsRequest>() {
-                      @Override
-                      public Map<String, String> extract(ListConversationsRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("parent", String.valueOf(request.getParent()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("parent", String.valueOf(request.getParent()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<GetConversationRequest, Conversation> getConversationTransportSettings =
         GrpcCallSettings.<GetConversationRequest, Conversation>newBuilder()
             .setMethodDescriptor(getConversationMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<GetConversationRequest>() {
-                  @Override
-                  public Map<String, String> extract(GetConversationRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("name", String.valueOf(request.getName()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<CompleteConversationRequest, Conversation>
@@ -201,26 +190,20 @@ public class GrpcConversationsStub extends ConversationsStub {
             GrpcCallSettings.<CompleteConversationRequest, Conversation>newBuilder()
                 .setMethodDescriptor(completeConversationMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<CompleteConversationRequest>() {
-                      @Override
-                      public Map<String, String> extract(CompleteConversationRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("name", String.valueOf(request.getName()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("name", String.valueOf(request.getName()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<ListMessagesRequest, ListMessagesResponse> listMessagesTransportSettings =
         GrpcCallSettings.<ListMessagesRequest, ListMessagesResponse>newBuilder()
             .setMethodDescriptor(listMessagesMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<ListMessagesRequest>() {
-                  @Override
-                  public Map<String, String> extract(ListMessagesRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("parent", String.valueOf(request.getParent()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("parent", String.valueOf(request.getParent()));
+                  return params.build();
                 })
             .build();
 
@@ -301,7 +284,13 @@ public class GrpcConversationsStub extends ConversationsStub {
 
   @Override
   public final void close() {
-    shutdown();
+    try {
+      backgroundResources.close();
+    } catch (RuntimeException e) {
+      throw e;
+    } catch (Exception e) {
+      throw new IllegalStateException("Failed to close resource", e);
+    }
   }
 
   @Override

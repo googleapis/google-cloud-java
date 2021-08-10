@@ -94,7 +94,9 @@ public interface EnvironmentOrBuilder
    *   ID&gt;`
    * </pre>
    *
-   * <code>string agent_version = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>
+   * string agent_version = 3 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The agentVersion.
    */
@@ -110,7 +112,9 @@ public interface EnvironmentOrBuilder
    *   ID&gt;`
    * </pre>
    *
-   * <code>string agent_version = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>
+   * string agent_version = 3 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The bytes for agentVersion.
    */

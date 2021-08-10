@@ -16,7 +16,6 @@
 
 package com.google.cloud.dialogflow.v2beta1;
 
-import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
 import com.google.api.core.BetaApi;
@@ -1450,12 +1449,7 @@ public class ParticipantsClient implements BackgroundResource {
           ListParticipantsPage.createEmptyPage().createPageAsync(context, futureResponse);
       return ApiFutures.transform(
           futurePage,
-          new ApiFunction<ListParticipantsPage, ListParticipantsPagedResponse>() {
-            @Override
-            public ListParticipantsPagedResponse apply(ListParticipantsPage input) {
-              return new ListParticipantsPagedResponse(input);
-            }
-          },
+          input -> new ListParticipantsPagedResponse(input),
           MoreExecutors.directExecutor());
     }
 
@@ -1532,12 +1526,7 @@ public class ParticipantsClient implements BackgroundResource {
           ListSuggestionsPage.createEmptyPage().createPageAsync(context, futureResponse);
       return ApiFutures.transform(
           futurePage,
-          new ApiFunction<ListSuggestionsPage, ListSuggestionsPagedResponse>() {
-            @Override
-            public ListSuggestionsPagedResponse apply(ListSuggestionsPage input) {
-              return new ListSuggestionsPagedResponse(input);
-            }
-          },
+          input -> new ListSuggestionsPagedResponse(input),
           MoreExecutors.directExecutor());
     }
 

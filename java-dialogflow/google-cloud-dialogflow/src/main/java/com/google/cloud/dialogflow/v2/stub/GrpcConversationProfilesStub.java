@@ -23,7 +23,6 @@ import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.grpc.GrpcCallSettings;
 import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
-import com.google.api.gax.rpc.RequestParamsExtractor;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.dialogflow.v2.ConversationProfile;
 import com.google.cloud.dialogflow.v2.CreateConversationProfileRequest;
@@ -38,7 +37,6 @@ import com.google.protobuf.Empty;
 import io.grpc.MethodDescriptor;
 import io.grpc.protobuf.ProtoUtils;
 import java.io.IOException;
-import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
@@ -175,13 +173,10 @@ public class GrpcConversationProfilesStub extends ConversationProfilesStub {
                 .<ListConversationProfilesRequest, ListConversationProfilesResponse>newBuilder()
                 .setMethodDescriptor(listConversationProfilesMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<ListConversationProfilesRequest>() {
-                      @Override
-                      public Map<String, String> extract(ListConversationProfilesRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("parent", String.valueOf(request.getParent()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("parent", String.valueOf(request.getParent()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<GetConversationProfileRequest, ConversationProfile>
@@ -189,13 +184,10 @@ public class GrpcConversationProfilesStub extends ConversationProfilesStub {
             GrpcCallSettings.<GetConversationProfileRequest, ConversationProfile>newBuilder()
                 .setMethodDescriptor(getConversationProfileMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<GetConversationProfileRequest>() {
-                      @Override
-                      public Map<String, String> extract(GetConversationProfileRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("name", String.valueOf(request.getName()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("name", String.valueOf(request.getName()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<CreateConversationProfileRequest, ConversationProfile>
@@ -203,13 +195,10 @@ public class GrpcConversationProfilesStub extends ConversationProfilesStub {
             GrpcCallSettings.<CreateConversationProfileRequest, ConversationProfile>newBuilder()
                 .setMethodDescriptor(createConversationProfileMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<CreateConversationProfileRequest>() {
-                      @Override
-                      public Map<String, String> extract(CreateConversationProfileRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("parent", String.valueOf(request.getParent()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("parent", String.valueOf(request.getParent()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<UpdateConversationProfileRequest, ConversationProfile>
@@ -217,15 +206,12 @@ public class GrpcConversationProfilesStub extends ConversationProfilesStub {
             GrpcCallSettings.<UpdateConversationProfileRequest, ConversationProfile>newBuilder()
                 .setMethodDescriptor(updateConversationProfileMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<UpdateConversationProfileRequest>() {
-                      @Override
-                      public Map<String, String> extract(UpdateConversationProfileRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put(
-                            "conversation_profile.name",
-                            String.valueOf(request.getConversationProfile().getName()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put(
+                          "conversation_profile.name",
+                          String.valueOf(request.getConversationProfile().getName()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<DeleteConversationProfileRequest, Empty>
@@ -233,13 +219,10 @@ public class GrpcConversationProfilesStub extends ConversationProfilesStub {
             GrpcCallSettings.<DeleteConversationProfileRequest, Empty>newBuilder()
                 .setMethodDescriptor(deleteConversationProfileMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<DeleteConversationProfileRequest>() {
-                      @Override
-                      public Map<String, String> extract(DeleteConversationProfileRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("name", String.valueOf(request.getName()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("name", String.valueOf(request.getName()));
+                      return params.build();
                     })
                 .build();
 
@@ -320,7 +303,13 @@ public class GrpcConversationProfilesStub extends ConversationProfilesStub {
 
   @Override
   public final void close() {
-    shutdown();
+    try {
+      backgroundResources.close();
+    } catch (RuntimeException e) {
+      throw e;
+    } catch (Exception e) {
+      throw new IllegalStateException("Failed to close resource", e);
+    }
   }
 
   @Override

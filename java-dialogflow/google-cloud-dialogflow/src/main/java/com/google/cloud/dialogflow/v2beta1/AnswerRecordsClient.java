@@ -16,7 +16,6 @@
 
 package com.google.cloud.dialogflow.v2beta1;
 
-import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
 import com.google.api.core.BetaApi;
@@ -494,12 +493,7 @@ public class AnswerRecordsClient implements BackgroundResource {
           ListAnswerRecordsPage.createEmptyPage().createPageAsync(context, futureResponse);
       return ApiFutures.transform(
           futurePage,
-          new ApiFunction<ListAnswerRecordsPage, ListAnswerRecordsPagedResponse>() {
-            @Override
-            public ListAnswerRecordsPagedResponse apply(ListAnswerRecordsPage input) {
-              return new ListAnswerRecordsPagedResponse(input);
-            }
-          },
+          input -> new ListAnswerRecordsPagedResponse(input),
           MoreExecutors.directExecutor());
     }
 

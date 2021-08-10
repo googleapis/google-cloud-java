@@ -25,7 +25,6 @@ import com.google.api.gax.grpc.GrpcCallSettings;
 import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
-import com.google.api.gax.rpc.RequestParamsExtractor;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.dialogflow.v2beta1.BatchCreateEntitiesRequest;
 import com.google.cloud.dialogflow.v2beta1.BatchDeleteEntitiesRequest;
@@ -48,7 +47,6 @@ import com.google.protobuf.Struct;
 import io.grpc.MethodDescriptor;
 import io.grpc.protobuf.ProtoUtils;
 import java.io.IOException;
-import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
@@ -238,66 +236,50 @@ public class GrpcEntityTypesStub extends EntityTypesStub {
             GrpcCallSettings.<ListEntityTypesRequest, ListEntityTypesResponse>newBuilder()
                 .setMethodDescriptor(listEntityTypesMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<ListEntityTypesRequest>() {
-                      @Override
-                      public Map<String, String> extract(ListEntityTypesRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("parent", String.valueOf(request.getParent()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("parent", String.valueOf(request.getParent()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<GetEntityTypeRequest, EntityType> getEntityTypeTransportSettings =
         GrpcCallSettings.<GetEntityTypeRequest, EntityType>newBuilder()
             .setMethodDescriptor(getEntityTypeMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<GetEntityTypeRequest>() {
-                  @Override
-                  public Map<String, String> extract(GetEntityTypeRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("name", String.valueOf(request.getName()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<CreateEntityTypeRequest, EntityType> createEntityTypeTransportSettings =
         GrpcCallSettings.<CreateEntityTypeRequest, EntityType>newBuilder()
             .setMethodDescriptor(createEntityTypeMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<CreateEntityTypeRequest>() {
-                  @Override
-                  public Map<String, String> extract(CreateEntityTypeRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("parent", String.valueOf(request.getParent()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("parent", String.valueOf(request.getParent()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<UpdateEntityTypeRequest, EntityType> updateEntityTypeTransportSettings =
         GrpcCallSettings.<UpdateEntityTypeRequest, EntityType>newBuilder()
             .setMethodDescriptor(updateEntityTypeMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<UpdateEntityTypeRequest>() {
-                  @Override
-                  public Map<String, String> extract(UpdateEntityTypeRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put(
-                        "entity_type.name", String.valueOf(request.getEntityType().getName()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("entity_type.name", String.valueOf(request.getEntityType().getName()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<DeleteEntityTypeRequest, Empty> deleteEntityTypeTransportSettings =
         GrpcCallSettings.<DeleteEntityTypeRequest, Empty>newBuilder()
             .setMethodDescriptor(deleteEntityTypeMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<DeleteEntityTypeRequest>() {
-                  @Override
-                  public Map<String, String> extract(DeleteEntityTypeRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("name", String.valueOf(request.getName()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<BatchUpdateEntityTypesRequest, Operation>
@@ -305,13 +287,10 @@ public class GrpcEntityTypesStub extends EntityTypesStub {
             GrpcCallSettings.<BatchUpdateEntityTypesRequest, Operation>newBuilder()
                 .setMethodDescriptor(batchUpdateEntityTypesMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<BatchUpdateEntityTypesRequest>() {
-                      @Override
-                      public Map<String, String> extract(BatchUpdateEntityTypesRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("parent", String.valueOf(request.getParent()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("parent", String.valueOf(request.getParent()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<BatchDeleteEntityTypesRequest, Operation>
@@ -319,52 +298,40 @@ public class GrpcEntityTypesStub extends EntityTypesStub {
             GrpcCallSettings.<BatchDeleteEntityTypesRequest, Operation>newBuilder()
                 .setMethodDescriptor(batchDeleteEntityTypesMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<BatchDeleteEntityTypesRequest>() {
-                      @Override
-                      public Map<String, String> extract(BatchDeleteEntityTypesRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("parent", String.valueOf(request.getParent()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("parent", String.valueOf(request.getParent()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<BatchCreateEntitiesRequest, Operation> batchCreateEntitiesTransportSettings =
         GrpcCallSettings.<BatchCreateEntitiesRequest, Operation>newBuilder()
             .setMethodDescriptor(batchCreateEntitiesMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<BatchCreateEntitiesRequest>() {
-                  @Override
-                  public Map<String, String> extract(BatchCreateEntitiesRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("parent", String.valueOf(request.getParent()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("parent", String.valueOf(request.getParent()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<BatchUpdateEntitiesRequest, Operation> batchUpdateEntitiesTransportSettings =
         GrpcCallSettings.<BatchUpdateEntitiesRequest, Operation>newBuilder()
             .setMethodDescriptor(batchUpdateEntitiesMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<BatchUpdateEntitiesRequest>() {
-                  @Override
-                  public Map<String, String> extract(BatchUpdateEntitiesRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("parent", String.valueOf(request.getParent()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("parent", String.valueOf(request.getParent()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<BatchDeleteEntitiesRequest, Operation> batchDeleteEntitiesTransportSettings =
         GrpcCallSettings.<BatchDeleteEntitiesRequest, Operation>newBuilder()
             .setMethodDescriptor(batchDeleteEntitiesMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<BatchDeleteEntitiesRequest>() {
-                  @Override
-                  public Map<String, String> extract(BatchDeleteEntitiesRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("parent", String.valueOf(request.getParent()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("parent", String.valueOf(request.getParent()));
+                  return params.build();
                 })
             .build();
 
@@ -538,7 +505,13 @@ public class GrpcEntityTypesStub extends EntityTypesStub {
 
   @Override
   public final void close() {
-    shutdown();
+    try {
+      backgroundResources.close();
+    } catch (RuntimeException e) {
+      throw e;
+    } catch (Exception e) {
+      throw new IllegalStateException("Failed to close resource", e);
+    }
   }
 
   @Override
