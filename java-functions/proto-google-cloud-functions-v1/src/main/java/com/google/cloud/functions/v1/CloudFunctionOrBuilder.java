@@ -158,7 +158,10 @@ public interface CloudFunctionOrBuilder
    *
    * <pre>
    * The Google Cloud Storage signed URL used for source uploading, generated
-   * by [google.cloud.functions.v1.GenerateUploadUrl][]
+   * by calling [google.cloud.functions.v1.GenerateUploadUrl].
+   * The signature is validated on write methods {Create, Update}
+   * The signature is stripped from the Function object on read methods {Get,
+   * List}
    * </pre>
    *
    * <code>string source_upload_url = 16;</code>
@@ -171,7 +174,10 @@ public interface CloudFunctionOrBuilder
    *
    * <pre>
    * The Google Cloud Storage signed URL used for source uploading, generated
-   * by [google.cloud.functions.v1.GenerateUploadUrl][]
+   * by calling [google.cloud.functions.v1.GenerateUploadUrl].
+   * The signature is validated on write methods {Create, Update}
+   * The signature is stripped from the Function object on read methods {Get,
+   * List}
    * </pre>
    *
    * <code>string source_upload_url = 16;</code>
@@ -184,7 +190,10 @@ public interface CloudFunctionOrBuilder
    *
    * <pre>
    * The Google Cloud Storage signed URL used for source uploading, generated
-   * by [google.cloud.functions.v1.GenerateUploadUrl][]
+   * by calling [google.cloud.functions.v1.GenerateUploadUrl].
+   * The signature is validated on write methods {Create, Update}
+   * The signature is stripped from the Function object on read methods {Get,
+   * List}
    * </pre>
    *
    * <code>string source_upload_url = 16;</code>
