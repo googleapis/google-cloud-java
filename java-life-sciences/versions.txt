@@ -1,6 +1,6 @@
 # Format:
 # module:released-version:current-version
 
-google-cloud-life-sciences:0.2.0:0.2.0
-grpc-google-cloud-life-sciences-v2beta:0.2.0:0.2.0
-proto-google-cloud-life-sciences-v2beta:0.2.0:0.2.0
+google-cloud-life-sciences:0.2.0:0.2.1-SNAPSHOT
+grpc-google-cloud-life-sciences-v2beta:0.2.0:0.2.1-SNAPSHOT
+proto-google-cloud-life-sciences-v2beta:0.2.0:0.2.1-SNAPSHOT
