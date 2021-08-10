@@ -95,4 +95,37 @@ public interface ListSecretsRequestOrBuilder
    * @return The bytes for pageToken.
    */
   com.google.protobuf.ByteString getPageTokenBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Filter string, adhering to the rules in
+   * [List-operation
+   * filtering](https://cloud.google.com/secret-manager/docs/filtering). List
+   * only secrets matching the filter. If filter is empty, all secrets are
+   * listed.
+   * </pre>
+   *
+   * <code>string filter = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The filter.
+   */
+  java.lang.String getFilter();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Filter string, adhering to the rules in
+   * [List-operation
+   * filtering](https://cloud.google.com/secret-manager/docs/filtering). List
+   * only secrets matching the filter. If filter is empty, all secrets are
+   * listed.
+   * </pre>
+   *
+   * <code>string filter = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for filter.
+   */
+  com.google.protobuf.ByteString getFilterBytes();
 }

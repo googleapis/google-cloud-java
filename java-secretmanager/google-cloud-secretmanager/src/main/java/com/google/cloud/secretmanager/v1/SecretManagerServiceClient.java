@@ -235,6 +235,7 @@ public class SecretManagerServiceClient implements BackgroundResource {
    *           .setParent(ProjectName.of("[PROJECT]").toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
    *           .build();
    *   for (Secret element : secretManagerServiceClient.listSecrets(request).iterateAll()) {
    *     // doThingsWith(element);
@@ -263,6 +264,7 @@ public class SecretManagerServiceClient implements BackgroundResource {
    *           .setParent(ProjectName.of("[PROJECT]").toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
    *           .build();
    *   ApiFuture<Secret> future =
    *       secretManagerServiceClient.listSecretsPagedCallable().futureCall(request);
@@ -292,6 +294,7 @@ public class SecretManagerServiceClient implements BackgroundResource {
    *           .setParent(ProjectName.of("[PROJECT]").toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
    *           .build();
    *   while (true) {
    *     ListSecretsResponse response =
@@ -896,6 +899,7 @@ public class SecretManagerServiceClient implements BackgroundResource {
    *           .setParent(SecretName.of("[PROJECT]", "[SECRET]").toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
    *           .build();
    *   for (SecretVersion element :
    *       secretManagerServiceClient.listSecretVersions(request).iterateAll()) {
@@ -927,6 +931,7 @@ public class SecretManagerServiceClient implements BackgroundResource {
    *           .setParent(SecretName.of("[PROJECT]", "[SECRET]").toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
    *           .build();
    *   ApiFuture<SecretVersion> future =
    *       secretManagerServiceClient.listSecretVersionsPagedCallable().futureCall(request);
@@ -957,6 +962,7 @@ public class SecretManagerServiceClient implements BackgroundResource {
    *           .setParent(SecretName.of("[PROJECT]", "[SECRET]").toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
    *           .build();
    *   while (true) {
    *     ListSecretVersionsResponse response =
