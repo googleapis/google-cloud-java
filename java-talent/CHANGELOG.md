@@ -1,5 +1,22 @@
 # Changelog
 
+## [2.0.0](https://www.github.com/googleapis/java-talent/compare/v1.2.2...v2.0.0) (2021-08-06)
+
+
+### ⚠ BREAKING CHANGES
+
+* release gapic-generator-java v2.0.0 (#567)
+
+### Features
+
+* release gapic-generator-java v2.0.0 ([#567](https://www.github.com/googleapis/java-talent/issues/567)) ([fc04ee9](https://www.github.com/googleapis/java-talent/commit/fc04ee9502a944b84f3c3c77f0f5581b695131d0))
+* remove empty proto BatchProto.java ([#556](https://www.github.com/googleapis/java-talent/issues/556)) ([725d0f7](https://www.github.com/googleapis/java-talent/commit/725d0f7f77f39c212f61d8d1403bfd3bc3f4a1b6))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2 ([#568](https://www.github.com/googleapis/java-talent/issues/568)) ([45e91c7](https://www.github.com/googleapis/java-talent/commit/45e91c74f48a6334cd8e77359f978d3217303250))
+
 ### [1.2.2](https://www.github.com/googleapis/java-talent/compare/v1.2.1...v1.2.2) (2021-07-02)
 
 
