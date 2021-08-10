@@ -16,7 +16,6 @@
 
 package com.google.cloud.networkmanagement.v1;
 
-import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
 import com.google.api.core.BetaApi;
@@ -904,12 +903,7 @@ public class ReachabilityServiceClient implements BackgroundResource {
           ListConnectivityTestsPage.createEmptyPage().createPageAsync(context, futureResponse);
       return ApiFutures.transform(
           futurePage,
-          new ApiFunction<ListConnectivityTestsPage, ListConnectivityTestsPagedResponse>() {
-            @Override
-            public ListConnectivityTestsPagedResponse apply(ListConnectivityTestsPage input) {
-              return new ListConnectivityTestsPagedResponse(input);
-            }
-          },
+          input -> new ListConnectivityTestsPagedResponse(input),
           MoreExecutors.directExecutor());
     }
 

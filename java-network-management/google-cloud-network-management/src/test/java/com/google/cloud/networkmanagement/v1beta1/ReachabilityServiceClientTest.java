@@ -154,7 +154,7 @@ public class ReachabilityServiceClientTest {
   public void getConnectivityTestTest() throws Exception {
     ConnectivityTest expectedResponse =
         ConnectivityTest.newBuilder()
-            .setName(ConnectivityTestName.of("[PROJECT]", "[TEST]").toString())
+            .setName("name3373707")
             .setDescription("description-1724546052")
             .setSource(Endpoint.newBuilder().build())
             .setDestination(Endpoint.newBuilder().build())
@@ -205,7 +205,7 @@ public class ReachabilityServiceClientTest {
   public void createConnectivityTestTest() throws Exception {
     ConnectivityTest expectedResponse =
         ConnectivityTest.newBuilder()
-            .setName(ConnectivityTestName.of("[PROJECT]", "[TEST]").toString())
+            .setName("name3373707")
             .setDescription("description-1724546052")
             .setSource(Endpoint.newBuilder().build())
             .setDestination(Endpoint.newBuilder().build())
@@ -275,7 +275,7 @@ public class ReachabilityServiceClientTest {
   public void updateConnectivityTestTest() throws Exception {
     ConnectivityTest expectedResponse =
         ConnectivityTest.newBuilder()
-            .setName(ConnectivityTestName.of("[PROJECT]", "[TEST]").toString())
+            .setName("name3373707")
             .setDescription("description-1724546052")
             .setSource(Endpoint.newBuilder().build())
             .setDestination(Endpoint.newBuilder().build())
@@ -342,7 +342,7 @@ public class ReachabilityServiceClientTest {
   public void rerunConnectivityTestTest() throws Exception {
     ConnectivityTest expectedResponse =
         ConnectivityTest.newBuilder()
-            .setName(ConnectivityTestName.of("[PROJECT]", "[TEST]").toString())
+            .setName("name3373707")
             .setDescription("description-1724546052")
             .setSource(Endpoint.newBuilder().build())
             .setDestination(Endpoint.newBuilder().build())

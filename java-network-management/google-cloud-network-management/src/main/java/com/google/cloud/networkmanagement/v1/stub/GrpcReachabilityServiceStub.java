@@ -24,7 +24,6 @@ import com.google.api.gax.grpc.GrpcCallSettings;
 import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
-import com.google.api.gax.rpc.RequestParamsExtractor;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.networkmanagement.v1.ConnectivityTest;
 import com.google.cloud.networkmanagement.v1.CreateConnectivityTestRequest;
@@ -42,7 +41,6 @@ import com.google.protobuf.Empty;
 import io.grpc.MethodDescriptor;
 import io.grpc.protobuf.ProtoUtils;
 import java.io.IOException;
-import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
@@ -196,13 +194,10 @@ public class GrpcReachabilityServiceStub extends ReachabilityServiceStub {
                 .<ListConnectivityTestsRequest, ListConnectivityTestsResponse>newBuilder()
                 .setMethodDescriptor(listConnectivityTestsMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<ListConnectivityTestsRequest>() {
-                      @Override
-                      public Map<String, String> extract(ListConnectivityTestsRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("parent", String.valueOf(request.getParent()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("parent", String.valueOf(request.getParent()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<GetConnectivityTestRequest, ConnectivityTest>
@@ -210,13 +205,10 @@ public class GrpcReachabilityServiceStub extends ReachabilityServiceStub {
             GrpcCallSettings.<GetConnectivityTestRequest, ConnectivityTest>newBuilder()
                 .setMethodDescriptor(getConnectivityTestMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<GetConnectivityTestRequest>() {
-                      @Override
-                      public Map<String, String> extract(GetConnectivityTestRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("name", String.valueOf(request.getName()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("name", String.valueOf(request.getName()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<CreateConnectivityTestRequest, Operation>
@@ -224,13 +216,10 @@ public class GrpcReachabilityServiceStub extends ReachabilityServiceStub {
             GrpcCallSettings.<CreateConnectivityTestRequest, Operation>newBuilder()
                 .setMethodDescriptor(createConnectivityTestMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<CreateConnectivityTestRequest>() {
-                      @Override
-                      public Map<String, String> extract(CreateConnectivityTestRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("parent", String.valueOf(request.getParent()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("parent", String.valueOf(request.getParent()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<UpdateConnectivityTestRequest, Operation>
@@ -238,14 +227,10 @@ public class GrpcReachabilityServiceStub extends ReachabilityServiceStub {
             GrpcCallSettings.<UpdateConnectivityTestRequest, Operation>newBuilder()
                 .setMethodDescriptor(updateConnectivityTestMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<UpdateConnectivityTestRequest>() {
-                      @Override
-                      public Map<String, String> extract(UpdateConnectivityTestRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put(
-                            "resource.name", String.valueOf(request.getResource().getName()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("resource.name", String.valueOf(request.getResource().getName()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<RerunConnectivityTestRequest, Operation>
@@ -253,13 +238,10 @@ public class GrpcReachabilityServiceStub extends ReachabilityServiceStub {
             GrpcCallSettings.<RerunConnectivityTestRequest, Operation>newBuilder()
                 .setMethodDescriptor(rerunConnectivityTestMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<RerunConnectivityTestRequest>() {
-                      @Override
-                      public Map<String, String> extract(RerunConnectivityTestRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("name", String.valueOf(request.getName()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("name", String.valueOf(request.getName()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<DeleteConnectivityTestRequest, Operation>
@@ -267,13 +249,10 @@ public class GrpcReachabilityServiceStub extends ReachabilityServiceStub {
             GrpcCallSettings.<DeleteConnectivityTestRequest, Operation>newBuilder()
                 .setMethodDescriptor(deleteConnectivityTestMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<DeleteConnectivityTestRequest>() {
-                      @Override
-                      public Map<String, String> extract(DeleteConnectivityTestRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("name", String.valueOf(request.getName()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("name", String.valueOf(request.getName()));
+                      return params.build();
                     })
                 .build();
 
