@@ -16,7 +16,6 @@
 
 package com.google.cloud.notebooks.v1beta1;
 
-import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
 import com.google.api.core.BetaApi;
@@ -1526,12 +1525,7 @@ public class NotebookServiceClient implements BackgroundResource {
           ListInstancesPage.createEmptyPage().createPageAsync(context, futureResponse);
       return ApiFutures.transform(
           futurePage,
-          new ApiFunction<ListInstancesPage, ListInstancesPagedResponse>() {
-            @Override
-            public ListInstancesPagedResponse apply(ListInstancesPage input) {
-              return new ListInstancesPagedResponse(input);
-            }
-          },
+          input -> new ListInstancesPagedResponse(input),
           MoreExecutors.directExecutor());
     }
 
@@ -1607,12 +1601,7 @@ public class NotebookServiceClient implements BackgroundResource {
           ListEnvironmentsPage.createEmptyPage().createPageAsync(context, futureResponse);
       return ApiFutures.transform(
           futurePage,
-          new ApiFunction<ListEnvironmentsPage, ListEnvironmentsPagedResponse>() {
-            @Override
-            public ListEnvironmentsPagedResponse apply(ListEnvironmentsPage input) {
-              return new ListEnvironmentsPagedResponse(input);
-            }
-          },
+          input -> new ListEnvironmentsPagedResponse(input),
           MoreExecutors.directExecutor());
     }
 
