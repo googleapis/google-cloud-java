@@ -1,5 +1,25 @@
 # Changelog
 
+## [1.30.0](https://www.github.com/googleapis/java-speech/compare/v1.29.5...v1.30.0) (2021-08-10)
+
+
+### Features
+
+* add total_billed_time response field ([08ff216](https://www.github.com/googleapis/java-speech/commit/08ff21639093413f6bb0f7df7c2747d6a5b8437b))
+
+
+### Bug Fixes
+
+* custom_class_id is required field in CreateCustomClassRequest. ([08ff216](https://www.github.com/googleapis/java-speech/commit/08ff21639093413f6bb0f7df7c2747d6a5b8437b))
+* phrase_set_id is required field in CreatePhraseSetRequest ([08ff216](https://www.github.com/googleapis/java-speech/commit/08ff21639093413f6bb0f7df7c2747d6a5b8437b))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2 ([#605](https://www.github.com/googleapis/java-speech/issues/605)) ([d006012](https://www.github.com/googleapis/java-speech/commit/d006012b71c1c0acfe5f79b902ce4e71b865c8b7))
+* update dependency com.google.cloud:google-cloud-storage to v1.118.1 ([#609](https://www.github.com/googleapis/java-speech/issues/609)) ([0e19fd1](https://www.github.com/googleapis/java-speech/commit/0e19fd12bb1d0c6e3380c311d765c2482c6334a5))
+* update dependency com.google.cloud:google-cloud-storage to v2 ([#610](https://www.github.com/googleapis/java-speech/issues/610)) ([d0cd167](https://www.github.com/googleapis/java-speech/commit/d0cd167826e2b2f9c5a735a4db5ee322b7454e34))
+
 ### [1.29.5](https://www.github.com/googleapis/java-speech/compare/v1.29.4...v1.29.5) (2021-08-03)
 
 
