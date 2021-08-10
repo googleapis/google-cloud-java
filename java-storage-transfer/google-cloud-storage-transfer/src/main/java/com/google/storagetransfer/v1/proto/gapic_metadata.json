@@ -1,0 +1,42 @@
+{
+  "schema": "1.0",
+  "comment": "This file maps proto services/RPCs to the corresponding library clients/methods",
+  "language": "java",
+  "protoPackage": "google.storagetransfer.v1",
+  "libraryPackage": "com.google.storagetransfer.v1.proto",
+  "services": {
+    "StorageTransferService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "StorageTransferServiceClient",
+          "rpcs": {
+            "CreateTransferJob": {
+              "methods": ["createTransferJob", "createTransferJobCallable"]
+            },
+            "GetGoogleServiceAccount": {
+              "methods": ["getGoogleServiceAccount", "getGoogleServiceAccountCallable"]
+            },
+            "GetTransferJob": {
+              "methods": ["getTransferJob", "getTransferJobCallable"]
+            },
+            "ListTransferJobs": {
+              "methods": ["listTransferJobs", "listTransferJobsPagedCallable", "listTransferJobsCallable"]
+            },
+            "PauseTransferOperation": {
+              "methods": ["pauseTransferOperation", "pauseTransferOperationCallable"]
+            },
+            "ResumeTransferOperation": {
+              "methods": ["resumeTransferOperation", "resumeTransferOperationCallable"]
+            },
+            "RunTransferJob": {
+              "methods": ["runTransferJobAsync", "runTransferJobOperationCallable", "runTransferJobCallable"]
+            },
+            "UpdateTransferJob": {
+              "methods": ["updateTransferJob", "updateTransferJobCallable"]
+            }
+          }
+        }
+      }
+    }
+  }
+}
