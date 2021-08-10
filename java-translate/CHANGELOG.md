@@ -1,5 +1,29 @@
 # Changelog
 
+## [2.0.0](https://www.github.com/googleapis/java-translate/compare/v1.98.5...v2.0.0) (2021-08-10)
+
+
+### ⚠ BREAKING CHANGES
+
+* release gapic-generator-java v2.0.0 (#719)
+
+### Features
+
+* release gapic-generator-java v2.0.0 ([#719](https://www.github.com/googleapis/java-translate/issues/719)) ([984e09c](https://www.github.com/googleapis/java-translate/commit/984e09cc78abfbc96d3270184bb73f5b3a66a95c))
+
+
+### Bug Fixes
+
+* owlbot post-processor should generate README ([#1154](https://www.github.com/googleapis/java-translate/issues/1154)) ([#621](https://www.github.com/googleapis/java-translate/issues/621)) ([f22e86d](https://www.github.com/googleapis/java-translate/commit/f22e86daf4e306ea72715bf3b0687c88a052de78)), closes [#1146](https://www.github.com/googleapis/java-translate/issues/1146) [#1147](https://www.github.com/googleapis/java-translate/issues/1147)
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-core to v2 ([#718](https://www.github.com/googleapis/java-translate/issues/718)) ([072e27c](https://www.github.com/googleapis/java-translate/commit/072e27c9be099963b84ea4f70b5dbb4cf95d7355))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2 ([#720](https://www.github.com/googleapis/java-translate/issues/720)) ([bfbca10](https://www.github.com/googleapis/java-translate/commit/bfbca10f1381057c1430bbf988551d0c87845e43))
+* update dependency com.google.cloud:google-cloud-storage to v1.118.0 ([#615](https://www.github.com/googleapis/java-translate/issues/615)) ([116981d](https://www.github.com/googleapis/java-translate/commit/116981d87e6f953563e12cbbd3682db381ea56d0))
+* update dependency com.google.cloud:google-cloud-storage to v2 ([#724](https://www.github.com/googleapis/java-translate/issues/724)) ([7f18825](https://www.github.com/googleapis/java-translate/commit/7f188255652468b9c4640d947ed73701ba92d6c3))
+
 ### [1.98.5](https://www.github.com/googleapis/java-translate/compare/v1.98.4...v1.98.5) (2021-07-05)
 
 
