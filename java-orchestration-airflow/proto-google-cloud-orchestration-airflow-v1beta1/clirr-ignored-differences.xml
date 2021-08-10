@@ -16,4 +16,8 @@
     <className>com/google/cloud/orchestration/airflow/service/v1beta1/*OrBuilder</className>
     <method>boolean has*(*)</method>
   </difference>
+  <difference>
+    <differenceType>8001</differenceType>
+    <className>com/google/cloud/orchestration/airflow/service/v1beta1/Environment*</className>
+  </difference>
 </differences>

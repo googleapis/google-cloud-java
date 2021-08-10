@@ -16,7 +16,6 @@
 
 package com.google.cloud.orchestration.airflow.service.v1beta1;
 
-import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
 import com.google.api.core.BetaApi;
@@ -908,12 +907,7 @@ public class EnvironmentsClient implements BackgroundResource {
           ListEnvironmentsPage.createEmptyPage().createPageAsync(context, futureResponse);
       return ApiFutures.transform(
           futurePage,
-          new ApiFunction<ListEnvironmentsPage, ListEnvironmentsPagedResponse>() {
-            @Override
-            public ListEnvironmentsPagedResponse apply(ListEnvironmentsPage input) {
-              return new ListEnvironmentsPagedResponse(input);
-            }
-          },
+          input -> new ListEnvironmentsPagedResponse(input),
           MoreExecutors.directExecutor());
     }
 

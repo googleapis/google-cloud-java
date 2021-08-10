@@ -90,7 +90,7 @@ public class EnvironmentsClientTest {
   public void createEnvironmentTest() throws Exception {
     Environment expectedResponse =
         Environment.newBuilder()
-            .setName(EnvironmentName.of("[PROJECT]", "[LOCATION]", "[ENVIRONMENT]").toString())
+            .setName("name3373707")
             .setConfig(EnvironmentConfig.newBuilder().build())
             .setUuid("uuid3601339")
             .setCreateTime(Timestamp.newBuilder().build())
@@ -144,7 +144,7 @@ public class EnvironmentsClientTest {
   public void getEnvironmentTest() throws Exception {
     Environment expectedResponse =
         Environment.newBuilder()
-            .setName(EnvironmentName.of("[PROJECT]", "[LOCATION]", "[ENVIRONMENT]").toString())
+            .setName("name3373707")
             .setConfig(EnvironmentConfig.newBuilder().build())
             .setUuid("uuid3601339")
             .setCreateTime(Timestamp.newBuilder().build())
@@ -231,7 +231,7 @@ public class EnvironmentsClientTest {
   public void updateEnvironmentTest() throws Exception {
     Environment expectedResponse =
         Environment.newBuilder()
-            .setName(EnvironmentName.of("[PROJECT]", "[LOCATION]", "[ENVIRONMENT]").toString())
+            .setName("name3373707")
             .setConfig(EnvironmentConfig.newBuilder().build())
             .setUuid("uuid3601339")
             .setCreateTime(Timestamp.newBuilder().build())

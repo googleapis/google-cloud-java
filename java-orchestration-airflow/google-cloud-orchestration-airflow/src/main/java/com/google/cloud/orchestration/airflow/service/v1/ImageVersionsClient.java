@@ -16,7 +16,6 @@
 
 package com.google.cloud.orchestration.airflow.service.v1;
 
-import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
 import com.google.api.core.BetaApi;
@@ -312,12 +311,7 @@ public class ImageVersionsClient implements BackgroundResource {
           ListImageVersionsPage.createEmptyPage().createPageAsync(context, futureResponse);
       return ApiFutures.transform(
           futurePage,
-          new ApiFunction<ListImageVersionsPage, ListImageVersionsPagedResponse>() {
-            @Override
-            public ListImageVersionsPagedResponse apply(ListImageVersionsPage input) {
-              return new ListImageVersionsPagedResponse(input);
-            }
-          },
+          input -> new ListImageVersionsPagedResponse(input),
           MoreExecutors.directExecutor());
     }
 
