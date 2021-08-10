@@ -46,13 +46,14 @@ public final class AlertChartProto {
           + "le/api/resource.proto\"|\n\nAlertChart\022\021\n\004n"
           + "ame\030\001 \001(\tB\003\340A\002:[\352AX\n%monitoring.googleap"
           + "is.com/AlertPolicy\022/projects/{project}/a"
-          + "lertPolicies/{alert_policy}B\322\001\n\"com.goog"
+          + "lertPolicies/{alert_policy}B\371\001\n\"com.goog"
           + "le.monitoring.dashboard.v1B\017AlertChartPr"
           + "otoP\001ZGgoogle.golang.org/genproto/google"
-          + "apis/monitoring/dashboard/v1;dashboard\312\002"
-          + "$Google\\Cloud\\Monitoring\\Dashboard\\V1\352\002("
-          + "Google::Cloud::Monitoring::Dashboard::V1"
-          + "b\006proto3"
+          + "apis/monitoring/dashboard/v1;dashboard\252\002"
+          + "$Google.Cloud.Monitoring.Dashboard.V1\312\002$"
+          + "Google\\Cloud\\Monitoring\\Dashboard\\V1\352\002(G"
+          + "oogle::Cloud::Monitoring::Dashboard::V1b"
+          + "\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

@@ -67,12 +67,13 @@ public final class ScorecardProto {
           + "..google.monitoring.dashboard.v1.SparkCh"
           + "artTypeB\003\340A\002\0227\n\024min_alignment_period\030\002 \001"
           + "(\0132\031.google.protobuf.DurationB\013\n\tdata_vi"
-          + "ewB\321\001\n\"com.google.monitoring.dashboard.v"
+          + "ewB\370\001\n\"com.google.monitoring.dashboard.v"
           + "1B\016ScorecardProtoP\001ZGgoogle.golang.org/g"
           + "enproto/googleapis/monitoring/dashboard/"
-          + "v1;dashboard\312\002$Google\\Cloud\\Monitoring\\D"
-          + "ashboard\\V1\352\002(Google::Cloud::Monitoring:"
-          + ":Dashboard::V1b\006proto3"
+          + "v1;dashboard\252\002$Google.Cloud.Monitoring.D"
+          + "ashboard.V1\312\002$Google\\Cloud\\Monitoring\\Da"
+          + "shboard\\V1\352\002(Google::Cloud::Monitoring::"
+          + "Dashboard::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

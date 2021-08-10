@@ -82,13 +82,14 @@ public final class XyChartProto {
           + "G10\020\002\"\216\001\n\014ChartOptions\022?\n\004mode\030\001 \001(\01621.g"
           + "oogle.monitoring.dashboard.v1.ChartOptio"
           + "ns.Mode\"=\n\004Mode\022\024\n\020MODE_UNSPECIFIED\020\000\022\t\n"
-          + "\005COLOR\020\001\022\t\n\005X_RAY\020\002\022\t\n\005STATS\020\003B\317\001\n\"com.g"
+          + "\005COLOR\020\001\022\t\n\005X_RAY\020\002\022\t\n\005STATS\020\003B\366\001\n\"com.g"
           + "oogle.monitoring.dashboard.v1B\014XyChartPr"
           + "otoP\001ZGgoogle.golang.org/genproto/google"
-          + "apis/monitoring/dashboard/v1;dashboard\312\002"
-          + "$Google\\Cloud\\Monitoring\\Dashboard\\V1\352\002("
-          + "Google::Cloud::Monitoring::Dashboard::V1"
-          + "b\006proto3"
+          + "apis/monitoring/dashboard/v1;dashboard\252\002"
+          + "$Google.Cloud.Monitoring.Dashboard.V1\312\002$"
+          + "Google\\Cloud\\Monitoring\\Dashboard\\V1\352\002(G"
+          + "oogle::Cloud::Monitoring::Dashboard::V1b"
+          + "\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

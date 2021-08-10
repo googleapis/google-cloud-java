@@ -56,12 +56,13 @@ public final class WidgetProto {
           + "board.v1.TextH\000\022\'\n\005blank\030\005 \001(\0132\026.google."
           + "protobuf.EmptyH\000\022A\n\013alert_chart\030\007 \001(\0132*."
           + "google.monitoring.dashboard.v1.AlertChar"
-          + "tH\000B\t\n\007contentB\316\001\n\"com.google.monitoring"
+          + "tH\000B\t\n\007contentB\365\001\n\"com.google.monitoring"
           + ".dashboard.v1B\013WidgetProtoP\001ZGgoogle.gol"
           + "ang.org/genproto/googleapis/monitoring/d"
-          + "ashboard/v1;dashboard\312\002$Google\\Cloud\\Mon"
-          + "itoring\\Dashboard\\V1\352\002(Google::Cloud::Mo"
-          + "nitoring::Dashboard::V1b\006proto3"
+          + "ashboard/v1;dashboard\252\002$Google.Cloud.Mon"
+          + "itoring.Dashboard.V1\312\002$Google\\Cloud\\Moni"
+          + "toring\\Dashboard\\V1\352\002(Google::Cloud::Mon"
+          + "itoring::Dashboard::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
