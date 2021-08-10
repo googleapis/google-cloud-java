@@ -1,5 +1,34 @@
 # Changelog
 
+## [2.0.0](https://www.github.com/googleapis/java-monitoring-dashboards/compare/v1.3.2...v2.0.0) (2021-08-10)
+
+
+### ⚠ BREAKING CHANGES
+
+* release gapic-generator-java v2.0.0 (#433)
+
+### Features
+
+* added alert chart widget ([5a95815](https://www.github.com/googleapis/java-monitoring-dashboards/commit/5a958151894372851699d8a5e614c6a912b1da59))
+* added validation only mode when writing dashboards ([#411](https://www.github.com/googleapis/java-monitoring-dashboards/issues/411)) ([5a95815](https://www.github.com/googleapis/java-monitoring-dashboards/commit/5a958151894372851699d8a5e614c6a912b1da59))
+* release gapic-generator-java v2.0.0 ([#433](https://www.github.com/googleapis/java-monitoring-dashboards/issues/433)) ([c1b98e5](https://www.github.com/googleapis/java-monitoring-dashboards/commit/c1b98e50871526ae5ed943f566133b1a73639ea4))
+* remove empty protos ServiceMonitoringProto and DrilldownsProto ([#421](https://www.github.com/googleapis/java-monitoring-dashboards/issues/421)) ([c62a2d8](https://www.github.com/googleapis/java-monitoring-dashboards/commit/c62a2d8339a31a7cd93b44a09b561153556d1355))
+
+
+### Bug Fixes
+
+* Specify a C# namespace option to be consistent with other Cloud APIs ([#435](https://www.github.com/googleapis/java-monitoring-dashboards/issues/435)) ([eb3978f](https://www.github.com/googleapis/java-monitoring-dashboards/commit/eb3978fadfd4130bca4d10fed9375a944259433f))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2 ([#434](https://www.github.com/googleapis/java-monitoring-dashboards/issues/434)) ([256fb14](https://www.github.com/googleapis/java-monitoring-dashboards/commit/256fb14ceacd07b7c8270adba5ecfb11ea881ce2))
+
+
+### Documentation
+
+* fixed broken links ([#416](https://www.github.com/googleapis/java-monitoring-dashboards/issues/416)) ([5ec275c](https://www.github.com/googleapis/java-monitoring-dashboards/commit/5ec275c13646322a85fde44279ffe06baa45d34d))
+
 ### [1.3.2](https://www.github.com/googleapis/java-monitoring-dashboards/compare/v1.3.1...v1.3.2) (2021-07-01)
 
 
