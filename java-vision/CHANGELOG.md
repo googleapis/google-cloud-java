@@ -1,5 +1,23 @@
 # Changelog
 
+## [2.0.0](https://www.github.com/googleapis/java-vision/compare/v1.113.7...v2.0.0) (2021-08-10)
+
+
+### ⚠ BREAKING CHANGES
+
+* release gapic-generator-java v2.0.0 (#600)
+
+### Features
+
+* release gapic-generator-java v2.0.0 ([#600](https://www.github.com/googleapis/java-vision/issues/600)) ([747c5a0](https://www.github.com/googleapis/java-vision/commit/747c5a0a3fa7bca745d6d7aff4d4ecf7f91ac87a))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-core to v2 ([#599](https://www.github.com/googleapis/java-vision/issues/599)) ([17db6ea](https://www.github.com/googleapis/java-vision/commit/17db6ea599e5929a8e487c8867e67d38f4ae8b28))
+* update dependency com.google.cloud:google-cloud-storage to v2 ([#606](https://www.github.com/googleapis/java-vision/issues/606)) ([fe58ac2](https://www.github.com/googleapis/java-vision/commit/fe58ac2fbc0166bad26b90b5a64145fa02350838))
+* update dependency org.apache.commons:commons-csv to v1.9.0 ([#598](https://www.github.com/googleapis/java-vision/issues/598)) ([34ea73f](https://www.github.com/googleapis/java-vision/commit/34ea73f3dcd71027a3bf92eae32bbc78126fef77))
+
 ### [1.113.7](https://www.github.com/googleapis/java-vision/compare/v1.113.6...v1.113.7) (2021-07-22)
 
 
