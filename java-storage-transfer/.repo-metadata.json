@@ -10,7 +10,7 @@
   "repo": "googleapis/java-storage-transfer",
   "repo_short": "java-storage-transfer",
   "distribution_name": "com.google.cloud:google-cloud-storage-transfer",
-  "api_id": "storage-transfer.googleapis.com",
+  "api_id": "storagetransfer.googleapis.com",
   "library_type": "GAPIC_AUTO",
   "requires_billing": true
 }
