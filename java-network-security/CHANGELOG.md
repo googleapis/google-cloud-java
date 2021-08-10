@@ -1,5 +1,26 @@
 # Changelog
 
+## [0.2.0](https://www.github.com/googleapis/java-network-security/compare/v0.1.0...v0.2.0) (2021-08-10)
+
+
+### ⚠ BREAKING CHANGES
+
+* release gapic-generator-java v2.0.0 (#30)
+
+### Features
+
+* release gapic-generator-java v2.0.0 ([#30](https://www.github.com/googleapis/java-network-security/issues/30)) ([0616351](https://www.github.com/googleapis/java-network-security/commit/061635185fa0b3416248123990ac7a448305a86a))
+
+
+### Bug Fixes
+
+* owlbot post-processor should generate README ([#1154](https://www.github.com/googleapis/java-network-security/issues/1154)) ([#16](https://www.github.com/googleapis/java-network-security/issues/16)) ([c54e4ad](https://www.github.com/googleapis/java-network-security/commit/c54e4ad96a31dfb1816cf76dfe6443e0db11f3d1)), closes [#1146](https://www.github.com/googleapis/java-network-security/issues/1146) [#1147](https://www.github.com/googleapis/java-network-security/issues/1147)
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2 ([#31](https://www.github.com/googleapis/java-network-security/issues/31)) ([7c9f533](https://www.github.com/googleapis/java-network-security/commit/7c9f5332e7e1acc50d848d855e9ba8f30f79db61))
+
 ## 0.1.0 (2021-07-06)
 
 
