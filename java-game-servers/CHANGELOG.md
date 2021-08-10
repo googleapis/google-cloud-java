@@ -1,5 +1,26 @@
 # Changelog
 
+## [2.0.0](https://www.github.com/googleapis/java-game-servers/compare/v1.2.2...v2.0.0) (2021-08-06)
+
+
+### ⚠ BREAKING CHANGES
+
+* release gapic-generator-java v2.0.0 (#491)
+
+### Features
+
+* release gapic-generator-java v2.0.0 ([#491](https://www.github.com/googleapis/java-game-servers/issues/491)) ([bb0f811](https://www.github.com/googleapis/java-game-servers/commit/bb0f81177249ce8e1ff92dba1b0d07d9a514cdd8))
+
+
+### Bug Fixes
+
+* owlbot post-processor should generate README ([#1154](https://www.github.com/googleapis/java-game-servers/issues/1154)) ([#472](https://www.github.com/googleapis/java-game-servers/issues/472)) ([eceedcb](https://www.github.com/googleapis/java-game-servers/commit/eceedcbd69d4d3bb46cb797c89a627a4005e1139)), closes [#1146](https://www.github.com/googleapis/java-game-servers/issues/1146) [#1147](https://www.github.com/googleapis/java-game-servers/issues/1147)
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2 ([#492](https://www.github.com/googleapis/java-game-servers/issues/492)) ([f9ae97e](https://www.github.com/googleapis/java-game-servers/commit/f9ae97ef8b8cc1301e1093a2b48c3352e87a7b02))
+
 ### [1.2.2](https://www.github.com/googleapis/java-game-servers/compare/v1.2.1...v1.2.2) (2021-07-01)
 
 
