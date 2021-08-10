@@ -1,5 +1,21 @@
 # Changelog
 
+## [2.0.0](https://www.github.com/googleapis/java-iot/compare/v1.3.2...v2.0.0) (2021-08-10)
+
+
+### ⚠ BREAKING CHANGES
+
+* release gapic-generator-java v2.0.0 (#562)
+
+### Features
+
+* release gapic-generator-java v2.0.0 ([#562](https://www.github.com/googleapis/java-iot/issues/562)) ([413e8f1](https://www.github.com/googleapis/java-iot/commit/413e8f110c371d2ed919e4c31685fac8a3aa58f3))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2 ([#563](https://www.github.com/googleapis/java-iot/issues/563)) ([cc1b78d](https://www.github.com/googleapis/java-iot/commit/cc1b78dd0e9f440404da838c7c405d3231429aa2))
+
 ### [1.3.2](https://www.github.com/googleapis/java-iot/compare/v1.3.1...v1.3.2) (2021-07-01)
 
 
