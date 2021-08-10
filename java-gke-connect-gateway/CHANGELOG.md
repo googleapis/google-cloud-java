@@ -1,5 +1,26 @@
 # Changelog
 
+## [0.2.0](https://www.github.com/googleapis/java-gke-connect-gateway/compare/v0.1.0...v0.2.0) (2021-08-06)
+
+
+### ⚠ BREAKING CHANGES
+
+* release gapic-generator-java v2.0.0 (#33)
+
+### Features
+
+* release gapic-generator-java v2.0.0 ([#33](https://www.github.com/googleapis/java-gke-connect-gateway/issues/33)) ([a4701c7](https://www.github.com/googleapis/java-gke-connect-gateway/commit/a4701c7e709e9d131a99f6a4ea074685ea61d051))
+
+
+### Bug Fixes
+
+* owlbot post-processor should generate README ([#1154](https://www.github.com/googleapis/java-gke-connect-gateway/issues/1154)) ([#19](https://www.github.com/googleapis/java-gke-connect-gateway/issues/19)) ([77b39de](https://www.github.com/googleapis/java-gke-connect-gateway/commit/77b39de68933757ad1295dbfc27431815dc9930a)), closes [#1146](https://www.github.com/googleapis/java-gke-connect-gateway/issues/1146) [#1147](https://www.github.com/googleapis/java-gke-connect-gateway/issues/1147)
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2 ([#34](https://www.github.com/googleapis/java-gke-connect-gateway/issues/34)) ([d6e5c79](https://www.github.com/googleapis/java-gke-connect-gateway/commit/d6e5c79f1b278f70ef15f02500879305087b8f1c))
+
 ## 0.1.0 (2021-07-01)
 
 
