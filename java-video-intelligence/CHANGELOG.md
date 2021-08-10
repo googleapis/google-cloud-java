@@ -1,5 +1,23 @@
 # Changelog
 
+## [2.0.0](https://www.github.com/googleapis/java-video-intelligence/compare/v1.7.5...v2.0.0) (2021-08-10)
+
+
+### ⚠ BREAKING CHANGES
+
+* release gapic-generator-java v2.0.0 (#607)
+
+### Features
+
+* release gapic-generator-java v2.0.0 ([#607](https://www.github.com/googleapis/java-video-intelligence/issues/607)) ([640f805](https://www.github.com/googleapis/java-video-intelligence/commit/640f805850fab13d713f72d1ca52eb1dad452cbd))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-core to v2 ([#606](https://www.github.com/googleapis/java-video-intelligence/issues/606)) ([759f689](https://www.github.com/googleapis/java-video-intelligence/commit/759f689b712d5ef95b562692d5d259627fc85adc))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2 ([#608](https://www.github.com/googleapis/java-video-intelligence/issues/608)) ([8717d5a](https://www.github.com/googleapis/java-video-intelligence/commit/8717d5ac6e85ff96f0aaad3dedcb3e3aeac7d474))
+* update dependency com.google.cloud:google-cloud-storage to v2 ([#614](https://www.github.com/googleapis/java-video-intelligence/issues/614)) ([3092d5b](https://www.github.com/googleapis/java-video-intelligence/commit/3092d5b0d18c79115be15b7b6ec9d0c14185437b))
+
 ### [1.7.5](https://www.github.com/googleapis/java-video-intelligence/compare/v1.7.4...v1.7.5) (2021-07-22)
 
 
