@@ -1,5 +1,26 @@
 # Changelog
 
+## [0.4.0](https://www.github.com/googleapis/java-gkehub/compare/v0.3.0...v0.4.0) (2021-08-10)
+
+
+### ⚠ BREAKING CHANGES
+
+* release gapic-generator-java v2.0.0 (#92)
+
+### Features
+
+* release gapic-generator-java v2.0.0 ([#92](https://www.github.com/googleapis/java-gkehub/issues/92)) ([ee1e841](https://www.github.com/googleapis/java-gkehub/commit/ee1e8412b62c7c2d4c8ce1e4756dd6a174ba481f))
+
+
+### Bug Fixes
+
+* owlbot post-processor should generate README ([#1154](https://www.github.com/googleapis/java-gkehub/issues/1154)) ([#76](https://www.github.com/googleapis/java-gkehub/issues/76)) ([f11632a](https://www.github.com/googleapis/java-gkehub/commit/f11632aa69da36b409a507634b63f979af423618)), closes [#1146](https://www.github.com/googleapis/java-gkehub/issues/1146) [#1147](https://www.github.com/googleapis/java-gkehub/issues/1147)
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2 ([#93](https://www.github.com/googleapis/java-gkehub/issues/93)) ([0f194a7](https://www.github.com/googleapis/java-gkehub/commit/0f194a73231ff99a218a7057b1612170a4f0ad4d))
+
 ## [0.3.0](https://www.github.com/googleapis/java-gkehub/compare/v0.2.1...v0.3.0) (2021-07-14)
 
 
