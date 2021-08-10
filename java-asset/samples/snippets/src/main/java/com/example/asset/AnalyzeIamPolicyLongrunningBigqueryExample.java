@@ -17,10 +17,8 @@
 package com.example.asset;
 
 // [START asset_quickstart_analyze_iam_policy_longrunning_bigquery]
-import com.google.api.gax.longrunning.OperationFuture;
 import com.google.api.gax.rpc.ApiException;
 import com.google.cloud.asset.v1.AnalyzeIamPolicyLongrunningRequest;
-import com.google.cloud.asset.v1.AnalyzeIamPolicyLongrunningResponse;
 import com.google.cloud.asset.v1.AssetServiceClient;
 import com.google.cloud.asset.v1.IamPolicyAnalysisOutputConfig;
 import com.google.cloud.asset.v1.IamPolicyAnalysisOutputConfig.BigQueryDestination;
@@ -71,9 +69,9 @@ public class AnalyzeIamPolicyLongrunningBigqueryExample {
     // once, and can be reused for multiple requests. After completing all of your requests, call
     // the "close" method on the client to safely clean up any remaining background resources.
     try (AssetServiceClient client = AssetServiceClient.create()) {
-      OperationFuture<AnalyzeIamPolicyLongrunningResponse, AnalyzeIamPolicyLongrunningRequest>
-          future = client.analyzeIamPolicyLongrunningAsync(request);
-      System.out.println("Analyze completed successfully:\n" + future.getMetadata().get());
+      System.out.println(
+          "Analyze completed successfully:\n"
+              + client.analyzeIamPolicyLongrunningAsync(request).getMetadata().get());
     } catch (IOException e) {
       System.out.println("Failed to create client:\n" + e.toString());
     } catch (InterruptedException e) {
