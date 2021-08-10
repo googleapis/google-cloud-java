@@ -1,5 +1,27 @@
 # Changelog
 
+## [2.0.0](https://www.github.com/googleapis/java-accessapproval/compare/v1.1.3...v2.0.0) (2021-08-06)
+
+
+### ⚠ BREAKING CHANGES
+
+* release gapic-generator-java v2.0.0 (#513)
+
+### Features
+
+* release gapic-generator-java v2.0.0 ([#513](https://www.github.com/googleapis/java-accessapproval/issues/513)) ([29c5796](https://www.github.com/googleapis/java-accessapproval/commit/29c5796706ee38bcecc5c50e3838fc52f79143dd))
+
+
+### Bug Fixes
+
+* owlbot post-processor should generate README ([#1154](https://www.github.com/googleapis/java-accessapproval/issues/1154)) ([#481](https://www.github.com/googleapis/java-accessapproval/issues/481)) ([86fa01c](https://www.github.com/googleapis/java-accessapproval/commit/86fa01cacebb985fd3238c44d8364080e675eb77)), closes [#1146](https://www.github.com/googleapis/java-accessapproval/issues/1146) [#1147](https://www.github.com/googleapis/java-accessapproval/issues/1147)
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-core to v2 ([#512](https://www.github.com/googleapis/java-accessapproval/issues/512)) ([10817cb](https://www.github.com/googleapis/java-accessapproval/commit/10817cbea1c9a65bcb5793e4e7a1b089d70586f0))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2 ([#514](https://www.github.com/googleapis/java-accessapproval/issues/514)) ([8bfc7fd](https://www.github.com/googleapis/java-accessapproval/commit/8bfc7fd91c1afc8e8b2743f2a0c4cf4fff0da246))
+
 ### [1.1.3](https://www.github.com/googleapis/java-accessapproval/compare/v1.1.2...v1.1.3) (2021-07-02)
 
 
