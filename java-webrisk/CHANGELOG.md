@@ -1,5 +1,21 @@
 # Changelog
 
+## [2.0.0](https://www.github.com/googleapis/java-webrisk/compare/v1.2.2...v2.0.0) (2021-08-06)
+
+
+### ⚠ BREAKING CHANGES
+
+* release gapic-generator-java v2.0.0 (#491)
+
+### Features
+
+* release gapic-generator-java v2.0.0 ([#491](https://www.github.com/googleapis/java-webrisk/issues/491)) ([5ccd35c](https://www.github.com/googleapis/java-webrisk/commit/5ccd35c8f8b231096424820a5c536e852a6e579f))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2 ([#492](https://www.github.com/googleapis/java-webrisk/issues/492)) ([af967e3](https://www.github.com/googleapis/java-webrisk/commit/af967e3d6663a378e995a8b8003854667af8f673))
+
 ### [1.2.2](https://www.github.com/googleapis/java-webrisk/compare/v1.2.1...v1.2.2) (2021-07-01)
 
 
