@@ -60,13 +60,13 @@ public interface CreateCustomClassRequestOrBuilder
    *
    *
    * <pre>
-   * The ID to use for the custom class, which will become the final
+   * Required. The ID to use for the custom class, which will become the final
    * component of the custom class' resource name.
    * This value should be 4-63 characters, and valid characters
    * are /[a-z][0-9]-/.
    * </pre>
    *
-   * <code>string custom_class_id = 2;</code>
+   * <code>string custom_class_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The customClassId.
    */
@@ -75,13 +75,13 @@ public interface CreateCustomClassRequestOrBuilder
    *
    *
    * <pre>
-   * The ID to use for the custom class, which will become the final
+   * Required. The ID to use for the custom class, which will become the final
    * component of the custom class' resource name.
    * This value should be 4-63 characters, and valid characters
    * are /[a-z][0-9]-/.
    * </pre>
    *
-   * <code>string custom_class_id = 2;</code>
+   * <code>string custom_class_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The bytes for customClassId.
    */

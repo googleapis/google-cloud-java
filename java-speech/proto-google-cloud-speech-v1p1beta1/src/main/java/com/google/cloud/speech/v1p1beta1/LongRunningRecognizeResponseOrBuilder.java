@@ -84,6 +84,41 @@ public interface LongRunningRecognizeResponseOrBuilder
    *
    *
    * <pre>
+   * When available, billed audio seconds for the corresponding request.
+   * </pre>
+   *
+   * <code>.google.protobuf.Duration total_billed_time = 3;</code>
+   *
+   * @return Whether the totalBilledTime field is set.
+   */
+  boolean hasTotalBilledTime();
+  /**
+   *
+   *
+   * <pre>
+   * When available, billed audio seconds for the corresponding request.
+   * </pre>
+   *
+   * <code>.google.protobuf.Duration total_billed_time = 3;</code>
+   *
+   * @return The totalBilledTime.
+   */
+  com.google.protobuf.Duration getTotalBilledTime();
+  /**
+   *
+   *
+   * <pre>
+   * When available, billed audio seconds for the corresponding request.
+   * </pre>
+   *
+   * <code>.google.protobuf.Duration total_billed_time = 3;</code>
+   */
+  com.google.protobuf.DurationOrBuilder getTotalBilledTimeOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Original output config if present in the request.
    * </pre>
    *

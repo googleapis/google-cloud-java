@@ -198,13 +198,13 @@ public final class CreatePhraseSetRequest extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * The ID to use for the phrase set, which will become the final
+   * Required. The ID to use for the phrase set, which will become the final
    * component of the phrase set's resource name.
    * This value should be 4-63 characters, and valid characters
    * are /[a-z][0-9]-/.
    * </pre>
    *
-   * <code>string phrase_set_id = 2;</code>
+   * <code>string phrase_set_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The phraseSetId.
    */
@@ -224,13 +224,13 @@ public final class CreatePhraseSetRequest extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * The ID to use for the phrase set, which will become the final
+   * Required. The ID to use for the phrase set, which will become the final
    * component of the phrase set's resource name.
    * This value should be 4-63 characters, and valid characters
    * are /[a-z][0-9]-/.
    * </pre>
    *
-   * <code>string phrase_set_id = 2;</code>
+   * <code>string phrase_set_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The bytes for phraseSetId.
    */
@@ -795,13 +795,13 @@ public final class CreatePhraseSetRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The ID to use for the phrase set, which will become the final
+     * Required. The ID to use for the phrase set, which will become the final
      * component of the phrase set's resource name.
      * This value should be 4-63 characters, and valid characters
      * are /[a-z][0-9]-/.
      * </pre>
      *
-     * <code>string phrase_set_id = 2;</code>
+     * <code>string phrase_set_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return The phraseSetId.
      */
@@ -820,13 +820,13 @@ public final class CreatePhraseSetRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The ID to use for the phrase set, which will become the final
+     * Required. The ID to use for the phrase set, which will become the final
      * component of the phrase set's resource name.
      * This value should be 4-63 characters, and valid characters
      * are /[a-z][0-9]-/.
      * </pre>
      *
-     * <code>string phrase_set_id = 2;</code>
+     * <code>string phrase_set_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return The bytes for phraseSetId.
      */
@@ -845,13 +845,13 @@ public final class CreatePhraseSetRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The ID to use for the phrase set, which will become the final
+     * Required. The ID to use for the phrase set, which will become the final
      * component of the phrase set's resource name.
      * This value should be 4-63 characters, and valid characters
      * are /[a-z][0-9]-/.
      * </pre>
      *
-     * <code>string phrase_set_id = 2;</code>
+     * <code>string phrase_set_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @param value The phraseSetId to set.
      * @return This builder for chaining.
@@ -869,13 +869,13 @@ public final class CreatePhraseSetRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The ID to use for the phrase set, which will become the final
+     * Required. The ID to use for the phrase set, which will become the final
      * component of the phrase set's resource name.
      * This value should be 4-63 characters, and valid characters
      * are /[a-z][0-9]-/.
      * </pre>
      *
-     * <code>string phrase_set_id = 2;</code>
+     * <code>string phrase_set_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return This builder for chaining.
      */
@@ -889,13 +889,13 @@ public final class CreatePhraseSetRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The ID to use for the phrase set, which will become the final
+     * Required. The ID to use for the phrase set, which will become the final
      * component of the phrase set's resource name.
      * This value should be 4-63 characters, and valid characters
      * are /[a-z][0-9]-/.
      * </pre>
      *
-     * <code>string phrase_set_id = 2;</code>
+     * <code>string phrase_set_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @param value The bytes for phraseSetId to set.
      * @return This builder for chaining.

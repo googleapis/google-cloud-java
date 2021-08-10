@@ -170,8 +170,8 @@ public class AdaptationClient implements BackgroundResource {
    * @param parent Required. The parent resource where this phrase set will be created. Format:
    *     {api_version}/projects/{project}/locations/{location}/phraseSets
    * @param phraseSet Required. The phrase set to create.
-   * @param phraseSetId The ID to use for the phrase set, which will become the final component of
-   *     the phrase set's resource name.
+   * @param phraseSetId Required. The ID to use for the phrase set, which will become the final
+   *     component of the phrase set's resource name.
    *     <p>This value should be 4-63 characters, and valid characters are /[a-z][0-9]-/.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -206,8 +206,8 @@ public class AdaptationClient implements BackgroundResource {
    * @param parent Required. The parent resource where this phrase set will be created. Format:
    *     {api_version}/projects/{project}/locations/{location}/phraseSets
    * @param phraseSet Required. The phrase set to create.
-   * @param phraseSetId The ID to use for the phrase set, which will become the final component of
-   *     the phrase set's resource name.
+   * @param phraseSetId Required. The ID to use for the phrase set, which will become the final
+   *     component of the phrase set's resource name.
    *     <p>This value should be 4-63 characters, and valid characters are /[a-z][0-9]-/.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -687,8 +687,8 @@ public class AdaptationClient implements BackgroundResource {
    * @param parent Required. The parent resource where this custom class will be created. Format:
    *     {api_version}/projects/{project}/locations/{location}/customClasses
    * @param customClass Required. The custom class to create.
-   * @param customClassId The ID to use for the custom class, which will become the final component
-   *     of the custom class' resource name.
+   * @param customClassId Required. The ID to use for the custom class, which will become the final
+   *     component of the custom class' resource name.
    *     <p>This value should be 4-63 characters, and valid characters are /[a-z][0-9]-/.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -721,8 +721,8 @@ public class AdaptationClient implements BackgroundResource {
    * @param parent Required. The parent resource where this custom class will be created. Format:
    *     {api_version}/projects/{project}/locations/{location}/customClasses
    * @param customClass Required. The custom class to create.
-   * @param customClassId The ID to use for the custom class, which will become the final component
-   *     of the custom class' resource name.
+   * @param customClassId Required. The ID to use for the custom class, which will become the final
+   *     component of the custom class' resource name.
    *     <p>This value should be 4-63 characters, and valid characters are /[a-z][0-9]-/.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */

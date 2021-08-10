@@ -157,4 +157,42 @@ public interface StreamingRecognizeResponseOrBuilder
    * @return The speechEventType.
    */
   com.google.cloud.speech.v1p1beta1.StreamingRecognizeResponse.SpeechEventType getSpeechEventType();
+
+  /**
+   *
+   *
+   * <pre>
+   * When available, billed audio seconds for the stream.
+   * Set only if this is the last response in the stream.
+   * </pre>
+   *
+   * <code>.google.protobuf.Duration total_billed_time = 5;</code>
+   *
+   * @return Whether the totalBilledTime field is set.
+   */
+  boolean hasTotalBilledTime();
+  /**
+   *
+   *
+   * <pre>
+   * When available, billed audio seconds for the stream.
+   * Set only if this is the last response in the stream.
+   * </pre>
+   *
+   * <code>.google.protobuf.Duration total_billed_time = 5;</code>
+   *
+   * @return The totalBilledTime.
+   */
+  com.google.protobuf.Duration getTotalBilledTime();
+  /**
+   *
+   *
+   * <pre>
+   * When available, billed audio seconds for the stream.
+   * Set only if this is the last response in the stream.
+   * </pre>
+   *
+   * <code>.google.protobuf.Duration total_billed_time = 5;</code>
+   */
+  com.google.protobuf.DurationOrBuilder getTotalBilledTimeOrBuilder();
 }

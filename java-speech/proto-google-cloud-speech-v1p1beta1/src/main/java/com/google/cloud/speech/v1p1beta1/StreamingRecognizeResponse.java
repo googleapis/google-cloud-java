@@ -142,6 +142,21 @@ public final class StreamingRecognizeResponse extends com.google.protobuf.Genera
               speechEventType_ = rawValue;
               break;
             }
+          case 42:
+            {
+              com.google.protobuf.Duration.Builder subBuilder = null;
+              if (totalBilledTime_ != null) {
+                subBuilder = totalBilledTime_.toBuilder();
+              }
+              totalBilledTime_ =
+                  input.readMessage(com.google.protobuf.Duration.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(totalBilledTime_);
+                totalBilledTime_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -510,6 +525,57 @@ public final class StreamingRecognizeResponse extends com.google.protobuf.Genera
         : result;
   }
 
+  public static final int TOTAL_BILLED_TIME_FIELD_NUMBER = 5;
+  private com.google.protobuf.Duration totalBilledTime_;
+  /**
+   *
+   *
+   * <pre>
+   * When available, billed audio seconds for the stream.
+   * Set only if this is the last response in the stream.
+   * </pre>
+   *
+   * <code>.google.protobuf.Duration total_billed_time = 5;</code>
+   *
+   * @return Whether the totalBilledTime field is set.
+   */
+  @java.lang.Override
+  public boolean hasTotalBilledTime() {
+    return totalBilledTime_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * When available, billed audio seconds for the stream.
+   * Set only if this is the last response in the stream.
+   * </pre>
+   *
+   * <code>.google.protobuf.Duration total_billed_time = 5;</code>
+   *
+   * @return The totalBilledTime.
+   */
+  @java.lang.Override
+  public com.google.protobuf.Duration getTotalBilledTime() {
+    return totalBilledTime_ == null
+        ? com.google.protobuf.Duration.getDefaultInstance()
+        : totalBilledTime_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * When available, billed audio seconds for the stream.
+   * Set only if this is the last response in the stream.
+   * </pre>
+   *
+   * <code>.google.protobuf.Duration total_billed_time = 5;</code>
+   */
+  @java.lang.Override
+  public com.google.protobuf.DurationOrBuilder getTotalBilledTimeOrBuilder() {
+    return getTotalBilledTime();
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -536,6 +602,9 @@ public final class StreamingRecognizeResponse extends com.google.protobuf.Genera
             .getNumber()) {
       output.writeEnum(4, speechEventType_);
     }
+    if (totalBilledTime_ != null) {
+      output.writeMessage(5, getTotalBilledTime());
+    }
     unknownFields.writeTo(output);
   }
 
@@ -556,6 +625,9 @@ public final class StreamingRecognizeResponse extends com.google.protobuf.Genera
             .SPEECH_EVENT_UNSPECIFIED
             .getNumber()) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(4, speechEventType_);
+    }
+    if (totalBilledTime_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(5, getTotalBilledTime());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -579,6 +651,10 @@ public final class StreamingRecognizeResponse extends com.google.protobuf.Genera
     }
     if (!getResultsList().equals(other.getResultsList())) return false;
     if (speechEventType_ != other.speechEventType_) return false;
+    if (hasTotalBilledTime() != other.hasTotalBilledTime()) return false;
+    if (hasTotalBilledTime()) {
+      if (!getTotalBilledTime().equals(other.getTotalBilledTime())) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -600,6 +676,10 @@ public final class StreamingRecognizeResponse extends com.google.protobuf.Genera
     }
     hash = (37 * hash) + SPEECH_EVENT_TYPE_FIELD_NUMBER;
     hash = (53 * hash) + speechEventType_;
+    if (hasTotalBilledTime()) {
+      hash = (37 * hash) + TOTAL_BILLED_TIME_FIELD_NUMBER;
+      hash = (53 * hash) + getTotalBilledTime().hashCode();
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -797,6 +877,12 @@ public final class StreamingRecognizeResponse extends com.google.protobuf.Genera
       }
       speechEventType_ = 0;
 
+      if (totalBilledTimeBuilder_ == null) {
+        totalBilledTime_ = null;
+      } else {
+        totalBilledTime_ = null;
+        totalBilledTimeBuilder_ = null;
+      }
       return this;
     }
 
@@ -841,6 +927,11 @@ public final class StreamingRecognizeResponse extends com.google.protobuf.Genera
         result.results_ = resultsBuilder_.build();
       }
       result.speechEventType_ = speechEventType_;
+      if (totalBilledTimeBuilder_ == null) {
+        result.totalBilledTime_ = totalBilledTime_;
+      } else {
+        result.totalBilledTime_ = totalBilledTimeBuilder_.build();
+      }
       onBuilt();
       return result;
     }
@@ -924,6 +1015,9 @@ public final class StreamingRecognizeResponse extends com.google.protobuf.Genera
       }
       if (other.speechEventType_ != 0) {
         setSpeechEventTypeValue(other.getSpeechEventTypeValue());
+      }
+      if (other.hasTotalBilledTime()) {
+        mergeTotalBilledTime(other.getTotalBilledTime());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -1664,6 +1758,200 @@ public final class StreamingRecognizeResponse extends com.google.protobuf.Genera
       speechEventType_ = 0;
       onChanged();
       return this;
+    }
+
+    private com.google.protobuf.Duration totalBilledTime_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.Duration,
+            com.google.protobuf.Duration.Builder,
+            com.google.protobuf.DurationOrBuilder>
+        totalBilledTimeBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * When available, billed audio seconds for the stream.
+     * Set only if this is the last response in the stream.
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration total_billed_time = 5;</code>
+     *
+     * @return Whether the totalBilledTime field is set.
+     */
+    public boolean hasTotalBilledTime() {
+      return totalBilledTimeBuilder_ != null || totalBilledTime_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * When available, billed audio seconds for the stream.
+     * Set only if this is the last response in the stream.
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration total_billed_time = 5;</code>
+     *
+     * @return The totalBilledTime.
+     */
+    public com.google.protobuf.Duration getTotalBilledTime() {
+      if (totalBilledTimeBuilder_ == null) {
+        return totalBilledTime_ == null
+            ? com.google.protobuf.Duration.getDefaultInstance()
+            : totalBilledTime_;
+      } else {
+        return totalBilledTimeBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * When available, billed audio seconds for the stream.
+     * Set only if this is the last response in the stream.
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration total_billed_time = 5;</code>
+     */
+    public Builder setTotalBilledTime(com.google.protobuf.Duration value) {
+      if (totalBilledTimeBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        totalBilledTime_ = value;
+        onChanged();
+      } else {
+        totalBilledTimeBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * When available, billed audio seconds for the stream.
+     * Set only if this is the last response in the stream.
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration total_billed_time = 5;</code>
+     */
+    public Builder setTotalBilledTime(com.google.protobuf.Duration.Builder builderForValue) {
+      if (totalBilledTimeBuilder_ == null) {
+        totalBilledTime_ = builderForValue.build();
+        onChanged();
+      } else {
+        totalBilledTimeBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * When available, billed audio seconds for the stream.
+     * Set only if this is the last response in the stream.
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration total_billed_time = 5;</code>
+     */
+    public Builder mergeTotalBilledTime(com.google.protobuf.Duration value) {
+      if (totalBilledTimeBuilder_ == null) {
+        if (totalBilledTime_ != null) {
+          totalBilledTime_ =
+              com.google.protobuf.Duration.newBuilder(totalBilledTime_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          totalBilledTime_ = value;
+        }
+        onChanged();
+      } else {
+        totalBilledTimeBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * When available, billed audio seconds for the stream.
+     * Set only if this is the last response in the stream.
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration total_billed_time = 5;</code>
+     */
+    public Builder clearTotalBilledTime() {
+      if (totalBilledTimeBuilder_ == null) {
+        totalBilledTime_ = null;
+        onChanged();
+      } else {
+        totalBilledTime_ = null;
+        totalBilledTimeBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * When available, billed audio seconds for the stream.
+     * Set only if this is the last response in the stream.
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration total_billed_time = 5;</code>
+     */
+    public com.google.protobuf.Duration.Builder getTotalBilledTimeBuilder() {
+
+      onChanged();
+      return getTotalBilledTimeFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * When available, billed audio seconds for the stream.
+     * Set only if this is the last response in the stream.
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration total_billed_time = 5;</code>
+     */
+    public com.google.protobuf.DurationOrBuilder getTotalBilledTimeOrBuilder() {
+      if (totalBilledTimeBuilder_ != null) {
+        return totalBilledTimeBuilder_.getMessageOrBuilder();
+      } else {
+        return totalBilledTime_ == null
+            ? com.google.protobuf.Duration.getDefaultInstance()
+            : totalBilledTime_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * When available, billed audio seconds for the stream.
+     * Set only if this is the last response in the stream.
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration total_billed_time = 5;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.Duration,
+            com.google.protobuf.Duration.Builder,
+            com.google.protobuf.DurationOrBuilder>
+        getTotalBilledTimeFieldBuilder() {
+      if (totalBilledTimeBuilder_ == null) {
+        totalBilledTimeBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.protobuf.Duration,
+                com.google.protobuf.Duration.Builder,
+                com.google.protobuf.DurationOrBuilder>(
+                getTotalBilledTime(), getParentForChildren(), isClean());
+        totalBilledTime_ = null;
+      }
+      return totalBilledTimeBuilder_;
     }
 
     @java.lang.Override

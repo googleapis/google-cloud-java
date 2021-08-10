@@ -30,6 +30,7 @@ import com.google.api.gax.rpc.StatusCode;
 import com.google.longrunning.Operation;
 import com.google.protobuf.AbstractMessage;
 import com.google.protobuf.Any;
+import com.google.protobuf.Duration;
 import com.google.rpc.Status;
 import io.grpc.StatusRuntimeException;
 import java.io.IOException;
@@ -89,6 +90,7 @@ public class SpeechClientTest {
     RecognizeResponse expectedResponse =
         RecognizeResponse.newBuilder()
             .addAllResults(new ArrayList<SpeechRecognitionResult>())
+            .setTotalBilledTime(Duration.newBuilder().build())
             .build();
     mockSpeech.addResponse(expectedResponse);
 
@@ -130,6 +132,7 @@ public class SpeechClientTest {
     LongRunningRecognizeResponse expectedResponse =
         LongRunningRecognizeResponse.newBuilder()
             .addAllResults(new ArrayList<SpeechRecognitionResult>())
+            .setTotalBilledTime(Duration.newBuilder().build())
             .setOutputConfig(TranscriptOutputConfig.newBuilder().build())
             .setOutputError(Status.newBuilder().build())
             .build();
@@ -184,6 +187,7 @@ public class SpeechClientTest {
         StreamingRecognizeResponse.newBuilder()
             .setError(Status.newBuilder().build())
             .addAllResults(new ArrayList<StreamingRecognitionResult>())
+            .setTotalBilledTime(Duration.newBuilder().build())
             .build();
     mockSpeech.addResponse(expectedResponse);
     StreamingRecognizeRequest request = StreamingRecognizeRequest.newBuilder().build();
