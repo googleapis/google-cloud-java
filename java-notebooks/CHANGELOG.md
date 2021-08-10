@@ -1,5 +1,27 @@
 # Changelog
 
+## [0.4.0](https://www.github.com/googleapis/java-notebooks/compare/v0.3.0...v0.4.0) (2021-08-10)
+
+
+### ⚠ BREAKING CHANGES
+
+* release gapic-generator-java v2.0.0 (#225)
+
+### Features
+
+* release gapic-generator-java v2.0.0 ([#225](https://www.github.com/googleapis/java-notebooks/issues/225)) ([58bb59d](https://www.github.com/googleapis/java-notebooks/commit/58bb59d1457adf28f571bc6f8b5026e776bafec2))
+
+
+### Bug Fixes
+
+* Add `shopt -s nullglob` to dependencies script ([#198](https://www.github.com/googleapis/java-notebooks/issues/198)) ([a3c4f6b](https://www.github.com/googleapis/java-notebooks/commit/a3c4f6b0a8b18055c083a797fec1d7d0aacad6dc))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v1.4.0 ([#200](https://www.github.com/googleapis/java-notebooks/issues/200)) ([dbdcbee](https://www.github.com/googleapis/java-notebooks/commit/dbdcbee7d46416dffce92e819974a807401e32e8))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2 ([#226](https://www.github.com/googleapis/java-notebooks/issues/226)) ([f5542e6](https://www.github.com/googleapis/java-notebooks/commit/f5542e6b0a6177e3f36957d2d4841b451cd9ba5d))
+
 ## [0.3.0](https://www.github.com/googleapis/java-notebooks/compare/v0.2.6...v0.3.0) (2021-06-17)
 
 
