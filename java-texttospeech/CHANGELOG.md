@@ -1,5 +1,12 @@
 # Changelog
 
+### [2.0.1](https://www.github.com/googleapis/java-texttospeech/compare/v2.0.0...v2.0.1) (2021-08-11)
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.0.1 ([#519](https://www.github.com/googleapis/java-texttospeech/issues/519)) ([4fd35ea](https://www.github.com/googleapis/java-texttospeech/commit/4fd35ea22f390befdf184e738faeee8dd5902515))
+
 ## [2.0.0](https://www.github.com/googleapis/java-texttospeech/compare/v1.5.2...v2.0.0) (2021-08-06)
 
 
