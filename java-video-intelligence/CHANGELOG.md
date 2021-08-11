@@ -1,5 +1,12 @@
 # Changelog
 
+### [2.0.1](https://www.github.com/googleapis/java-video-intelligence/compare/v2.0.0...v2.0.1) (2021-08-11)
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-core to v2.0.3 ([#618](https://www.github.com/googleapis/java-video-intelligence/issues/618)) ([97879bc](https://www.github.com/googleapis/java-video-intelligence/commit/97879bcd5b404bd4c8b6cc22d9d9428fe7313225))
+
 ## [2.0.0](https://www.github.com/googleapis/java-video-intelligence/compare/v1.7.5...v2.0.0) (2021-08-10)
 
 
