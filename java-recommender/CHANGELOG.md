@@ -1,5 +1,21 @@
 # Changelog
 
+## [2.0.0](https://www.github.com/googleapis/java-recommender/compare/v1.6.1...v2.0.0) (2021-08-11)
+
+
+### ⚠ BREAKING CHANGES
+
+* release gapic-generator-java v2.0.0 (#571)
+
+### Features
+
+* release gapic-generator-java v2.0.0 ([#571](https://www.github.com/googleapis/java-recommender/issues/571)) ([6856736](https://www.github.com/googleapis/java-recommender/commit/6856736124cb5a4c47916ee91d345d0200c3437b))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2 ([#601](https://www.github.com/googleapis/java-recommender/issues/601)) ([716c2bc](https://www.github.com/googleapis/java-recommender/commit/716c2bcce0bfc82c91176cc9dd7e8bb799442f60))
+
 ### [1.6.1](https://www.github.com/googleapis/java-recommender/compare/v1.6.0...v1.6.1) (2021-07-02)
 
 
