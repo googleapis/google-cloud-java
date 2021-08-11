@@ -1,5 +1,31 @@
 # Changelog
 
+## [0.9.0](https://www.github.com/googleapis/java-dialogflow-cx/compare/v0.8.0...v0.9.0) (2021-08-11)
+
+
+### ⚠ BREAKING CHANGES
+
+* release gapic-generator-java v2.0.0
+
+### Features
+
+* add advanced settings for agent level ([4057134](https://www.github.com/googleapis/java-dialogflow-cx/commit/40571343d51c2275a556a2a45508c014f2e9aee1))
+* add insights export settings for security setting ([4057134](https://www.github.com/googleapis/java-dialogflow-cx/commit/40571343d51c2275a556a2a45508c014f2e9aee1))
+* add language code for streaming recognition result and flow versions for query parameters ([4057134](https://www.github.com/googleapis/java-dialogflow-cx/commit/40571343d51c2275a556a2a45508c014f2e9aee1))
+* add rollout config, state and failure reason for experiment ([4057134](https://www.github.com/googleapis/java-dialogflow-cx/commit/40571343d51c2275a556a2a45508c014f2e9aee1))
+* added support for DLP templates; expose `Locations` service to get/list avaliable locations of Dialogflow products ([#277](https://www.github.com/googleapis/java-dialogflow-cx/issues/277)) ([4057134](https://www.github.com/googleapis/java-dialogflow-cx/commit/40571343d51c2275a556a2a45508c014f2e9aee1))
+* release gapic-generator-java v2.0.0 ([a7e7674](https://www.github.com/googleapis/java-dialogflow-cx/commit/a7e76744c1660d04b5cdcaccbfbed1ded602914e))
+
+
+### Documentation
+
+* deprecate legacy logging settings ([4057134](https://www.github.com/googleapis/java-dialogflow-cx/commit/40571343d51c2275a556a2a45508c014f2e9aee1))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.0.1 ([#273](https://www.github.com/googleapis/java-dialogflow-cx/issues/273)) ([3d5da6c](https://www.github.com/googleapis/java-dialogflow-cx/commit/3d5da6c516a6de735e55339193b5be7a0141cdea))
+
 ## [0.8.0](https://www.github.com/googleapis/java-dialogflow-cx/compare/v0.7.0...v0.8.0) (2021-07-08)
 
 
