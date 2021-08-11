@@ -58,44 +58,46 @@ public final class FulfillmentProto {
     java.lang.String[] descriptorData = {
       "\n4google/cloud/dialogflow/cx/v3beta1/ful"
           + "fillment.proto\022\"google.cloud.dialogflow."
-          + "cx.v3beta1\032\031google/api/resource.proto\0329g"
-          + "oogle/cloud/dialogflow/cx/v3beta1/respon"
-          + "se_message.proto\032\034google/protobuf/struct"
-          + ".proto\032\034google/api/annotations.proto\"\206\007\n"
-          + "\013Fulfillment\022E\n\010messages\030\001 \003(\01323.google."
-          + "cloud.dialogflow.cx.v3beta1.ResponseMess"
-          + "age\0227\n\007webhook\030\002 \001(\tB&\372A#\n!dialogflow.go"
-          + "ogleapis.com/Webhook\022 \n\030return_partial_r"
-          + "esponses\030\010 \001(\010\022\013\n\003tag\030\003 \001(\t\022a\n\025set_param"
-          + "eter_actions\030\004 \003(\0132B.google.cloud.dialog"
-          + "flow.cx.v3beta1.Fulfillment.SetParameter"
-          + "Action\022[\n\021conditional_cases\030\005 \003(\0132@.goog"
+          + "cx.v3beta1\032\031google/api/resource.proto\032:g"
+          + "oogle/cloud/dialogflow/cx/v3beta1/advanc"
+          + "ed_settings.proto\0329google/cloud/dialogfl"
+          + "ow/cx/v3beta1/response_message.proto\032\034go"
+          + "ogle/protobuf/struct.proto\032\034google/api/a"
+          + "nnotations.proto\"\206\007\n\013Fulfillment\022E\n\010mess"
+          + "ages\030\001 \003(\01323.google.cloud.dialogflow.cx."
+          + "v3beta1.ResponseMessage\0227\n\007webhook\030\002 \001(\t"
+          + "B&\372A#\n!dialogflow.googleapis.com/Webhook"
+          + "\022 \n\030return_partial_responses\030\010 \001(\010\022\013\n\003ta"
+          + "g\030\003 \001(\t\022a\n\025set_parameter_actions\030\004 \003(\0132B"
+          + ".google.cloud.dialogflow.cx.v3beta1.Fulf"
+          + "illment.SetParameterAction\022[\n\021conditiona"
+          + "l_cases\030\005 \003(\0132@.google.cloud.dialogflow."
+          + "cx.v3beta1.Fulfillment.ConditionalCases\032"
+          + "N\n\022SetParameterAction\022\021\n\tparameter\030\001 \001(\t"
+          + "\022%\n\005value\030\002 \001(\0132\026.google.protobuf.Value\032"
+          + "\267\003\n\020ConditionalCases\022T\n\005cases\030\001 \003(\0132E.go"
+          + "ogle.cloud.dialogflow.cx.v3beta1.Fulfill"
+          + "ment.ConditionalCases.Case\032\314\002\n\004Case\022\021\n\tc"
+          + "ondition\030\001 \001(\t\022g\n\014case_content\030\002 \003(\0132Q.g"
+          + "oogle.cloud.dialogflow.cx.v3beta1.Fulfil"
+          + "lment.ConditionalCases.Case.CaseContent\032"
+          + "\307\001\n\013CaseContent\022F\n\007message\030\001 \001(\01323.googl"
+          + "e.cloud.dialogflow.cx.v3beta1.ResponseMe"
+          + "ssageH\000\022\\\n\020additional_cases\030\002 \001(\0132@.goog"
           + "le.cloud.dialogflow.cx.v3beta1.Fulfillme"
-          + "nt.ConditionalCases\032N\n\022SetParameterActio"
-          + "n\022\021\n\tparameter\030\001 \001(\t\022%\n\005value\030\002 \001(\0132\026.go"
-          + "ogle.protobuf.Value\032\267\003\n\020ConditionalCases"
-          + "\022T\n\005cases\030\001 \003(\0132E.google.cloud.dialogflo"
-          + "w.cx.v3beta1.Fulfillment.ConditionalCase"
-          + "s.Case\032\314\002\n\004Case\022\021\n\tcondition\030\001 \001(\t\022g\n\014ca"
-          + "se_content\030\002 \003(\0132Q.google.cloud.dialogfl"
-          + "ow.cx.v3beta1.Fulfillment.ConditionalCas"
-          + "es.Case.CaseContent\032\307\001\n\013CaseContent\022F\n\007m"
-          + "essage\030\001 \001(\01323.google.cloud.dialogflow.c"
-          + "x.v3beta1.ResponseMessageH\000\022\\\n\020additiona"
-          + "l_cases\030\002 \001(\0132@.google.cloud.dialogflow."
-          + "cx.v3beta1.Fulfillment.ConditionalCasesH"
-          + "\000B\022\n\020cases_or_messageB\257\001\n&com.google.clo"
-          + "ud.dialogflow.cx.v3beta1B\020FulfillmentPro"
-          + "toP\001ZDgoogle.golang.org/genproto/googlea"
-          + "pis/cloud/dialogflow/cx/v3beta1;cx\370\001\001\242\002\002"
-          + "DF\252\002\"Google.Cloud.Dialogflow.Cx.V3Beta1b"
-          + "\006proto3"
+          + "nt.ConditionalCasesH\000B\022\n\020cases_or_messag"
+          + "eB\257\001\n&com.google.cloud.dialogflow.cx.v3b"
+          + "eta1B\020FulfillmentProtoP\001ZDgoogle.golang."
+          + "org/genproto/googleapis/cloud/dialogflow"
+          + "/cx/v3beta1;cx\370\001\001\242\002\002DF\252\002\"Google.Cloud.Di"
+          + "alogflow.Cx.V3Beta1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
             descriptorData,
             new com.google.protobuf.Descriptors.FileDescriptor[] {
               com.google.api.ResourceProto.getDescriptor(),
+              com.google.cloud.dialogflow.cx.v3beta1.AdvancedSettingsProto.getDescriptor(),
               com.google.cloud.dialogflow.cx.v3beta1.ResponseMessageProto.getDescriptor(),
               com.google.protobuf.StructProto.getDescriptor(),
               com.google.api.AnnotationsProto.getDescriptor(),
@@ -159,6 +161,7 @@ public final class FulfillmentProto {
     com.google.protobuf.Descriptors.FileDescriptor.internalUpdateFileDescriptor(
         descriptor, registry);
     com.google.api.ResourceProto.getDescriptor();
+    com.google.cloud.dialogflow.cx.v3beta1.AdvancedSettingsProto.getDescriptor();
     com.google.cloud.dialogflow.cx.v3beta1.ResponseMessageProto.getDescriptor();
     com.google.protobuf.StructProto.getDescriptor();
     com.google.api.AnnotationsProto.getDescriptor();

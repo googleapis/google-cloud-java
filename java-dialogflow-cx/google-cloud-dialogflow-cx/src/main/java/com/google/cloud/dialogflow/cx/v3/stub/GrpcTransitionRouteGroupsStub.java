@@ -23,7 +23,6 @@ import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.grpc.GrpcCallSettings;
 import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
-import com.google.api.gax.rpc.RequestParamsExtractor;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.dialogflow.cx.v3.CreateTransitionRouteGroupRequest;
 import com.google.cloud.dialogflow.cx.v3.DeleteTransitionRouteGroupRequest;
@@ -38,7 +37,6 @@ import com.google.protobuf.Empty;
 import io.grpc.MethodDescriptor;
 import io.grpc.protobuf.ProtoUtils;
 import java.io.IOException;
-import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
@@ -175,13 +173,10 @@ public class GrpcTransitionRouteGroupsStub extends TransitionRouteGroupsStub {
                 .<ListTransitionRouteGroupsRequest, ListTransitionRouteGroupsResponse>newBuilder()
                 .setMethodDescriptor(listTransitionRouteGroupsMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<ListTransitionRouteGroupsRequest>() {
-                      @Override
-                      public Map<String, String> extract(ListTransitionRouteGroupsRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("parent", String.valueOf(request.getParent()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("parent", String.valueOf(request.getParent()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<GetTransitionRouteGroupRequest, TransitionRouteGroup>
@@ -189,13 +184,10 @@ public class GrpcTransitionRouteGroupsStub extends TransitionRouteGroupsStub {
             GrpcCallSettings.<GetTransitionRouteGroupRequest, TransitionRouteGroup>newBuilder()
                 .setMethodDescriptor(getTransitionRouteGroupMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<GetTransitionRouteGroupRequest>() {
-                      @Override
-                      public Map<String, String> extract(GetTransitionRouteGroupRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("name", String.valueOf(request.getName()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("name", String.valueOf(request.getName()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<CreateTransitionRouteGroupRequest, TransitionRouteGroup>
@@ -203,14 +195,10 @@ public class GrpcTransitionRouteGroupsStub extends TransitionRouteGroupsStub {
             GrpcCallSettings.<CreateTransitionRouteGroupRequest, TransitionRouteGroup>newBuilder()
                 .setMethodDescriptor(createTransitionRouteGroupMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<CreateTransitionRouteGroupRequest>() {
-                      @Override
-                      public Map<String, String> extract(
-                          CreateTransitionRouteGroupRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("parent", String.valueOf(request.getParent()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("parent", String.valueOf(request.getParent()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<UpdateTransitionRouteGroupRequest, TransitionRouteGroup>
@@ -218,16 +206,12 @@ public class GrpcTransitionRouteGroupsStub extends TransitionRouteGroupsStub {
             GrpcCallSettings.<UpdateTransitionRouteGroupRequest, TransitionRouteGroup>newBuilder()
                 .setMethodDescriptor(updateTransitionRouteGroupMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<UpdateTransitionRouteGroupRequest>() {
-                      @Override
-                      public Map<String, String> extract(
-                          UpdateTransitionRouteGroupRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put(
-                            "transition_route_group.name",
-                            String.valueOf(request.getTransitionRouteGroup().getName()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put(
+                          "transition_route_group.name",
+                          String.valueOf(request.getTransitionRouteGroup().getName()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<DeleteTransitionRouteGroupRequest, Empty>
@@ -235,14 +219,10 @@ public class GrpcTransitionRouteGroupsStub extends TransitionRouteGroupsStub {
             GrpcCallSettings.<DeleteTransitionRouteGroupRequest, Empty>newBuilder()
                 .setMethodDescriptor(deleteTransitionRouteGroupMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<DeleteTransitionRouteGroupRequest>() {
-                      @Override
-                      public Map<String, String> extract(
-                          DeleteTransitionRouteGroupRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("name", String.valueOf(request.getName()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("name", String.valueOf(request.getName()));
+                      return params.build();
                     })
                 .build();
 
@@ -323,7 +303,13 @@ public class GrpcTransitionRouteGroupsStub extends TransitionRouteGroupsStub {
 
   @Override
   public final void close() {
-    shutdown();
+    try {
+      backgroundResources.close();
+    } catch (RuntimeException e) {
+      throw e;
+    } catch (Exception e) {
+      throw new IllegalStateException("Failed to close resource", e);
+    }
   }
 
   @Override

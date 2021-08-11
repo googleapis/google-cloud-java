@@ -16,7 +16,6 @@
 
 package com.google.cloud.dialogflow.cx.v3;
 
-import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
 import com.google.api.core.BetaApi;
@@ -906,13 +905,7 @@ public class TransitionRouteGroupsClient implements BackgroundResource {
           ListTransitionRouteGroupsPage.createEmptyPage().createPageAsync(context, futureResponse);
       return ApiFutures.transform(
           futurePage,
-          new ApiFunction<ListTransitionRouteGroupsPage, ListTransitionRouteGroupsPagedResponse>() {
-            @Override
-            public ListTransitionRouteGroupsPagedResponse apply(
-                ListTransitionRouteGroupsPage input) {
-              return new ListTransitionRouteGroupsPagedResponse(input);
-            }
-          },
+          input -> new ListTransitionRouteGroupsPagedResponse(input),
           MoreExecutors.directExecutor());
     }
 

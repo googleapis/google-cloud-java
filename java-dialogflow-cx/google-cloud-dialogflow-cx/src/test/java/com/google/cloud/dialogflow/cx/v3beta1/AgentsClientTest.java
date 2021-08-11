@@ -191,6 +191,7 @@ public class AgentsClientTest {
                     .toString())
             .setEnableStackdriverLogging(true)
             .setEnableSpellCorrection(true)
+            .setAdvancedSettings(AdvancedSettings.newBuilder().build())
             .build();
     mockAgents.addResponse(expectedResponse);
 
@@ -242,6 +243,7 @@ public class AgentsClientTest {
                     .toString())
             .setEnableStackdriverLogging(true)
             .setEnableSpellCorrection(true)
+            .setAdvancedSettings(AdvancedSettings.newBuilder().build())
             .build();
     mockAgents.addResponse(expectedResponse);
 
@@ -293,6 +295,7 @@ public class AgentsClientTest {
                     .toString())
             .setEnableStackdriverLogging(true)
             .setEnableSpellCorrection(true)
+            .setAdvancedSettings(AdvancedSettings.newBuilder().build())
             .build();
     mockAgents.addResponse(expectedResponse);
 
@@ -347,6 +350,7 @@ public class AgentsClientTest {
                     .toString())
             .setEnableStackdriverLogging(true)
             .setEnableSpellCorrection(true)
+            .setAdvancedSettings(AdvancedSettings.newBuilder().build())
             .build();
     mockAgents.addResponse(expectedResponse);
 
@@ -401,6 +405,7 @@ public class AgentsClientTest {
                     .toString())
             .setEnableStackdriverLogging(true)
             .setEnableSpellCorrection(true)
+            .setAdvancedSettings(AdvancedSettings.newBuilder().build())
             .build();
     mockAgents.addResponse(expectedResponse);
 

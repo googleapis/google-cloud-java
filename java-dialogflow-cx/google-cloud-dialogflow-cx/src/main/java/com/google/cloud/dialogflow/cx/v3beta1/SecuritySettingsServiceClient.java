@@ -16,7 +16,6 @@
 
 package com.google.cloud.dialogflow.cx.v3beta1;
 
-import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
 import com.google.api.core.BetaApi;
@@ -786,12 +785,7 @@ public class SecuritySettingsServiceClient implements BackgroundResource {
           ListSecuritySettingsPage.createEmptyPage().createPageAsync(context, futureResponse);
       return ApiFutures.transform(
           futurePage,
-          new ApiFunction<ListSecuritySettingsPage, ListSecuritySettingsPagedResponse>() {
-            @Override
-            public ListSecuritySettingsPagedResponse apply(ListSecuritySettingsPage input) {
-              return new ListSecuritySettingsPagedResponse(input);
-            }
-          },
+          input -> new ListSecuritySettingsPagedResponse(input),
           MoreExecutors.directExecutor());
     }
 

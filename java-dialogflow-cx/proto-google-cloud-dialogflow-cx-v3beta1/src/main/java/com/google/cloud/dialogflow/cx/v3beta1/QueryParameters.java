@@ -41,6 +41,7 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
     timeZone_ = "";
     sessionEntityTypes_ = java.util.Collections.emptyList();
     currentPage_ = "";
+    flowVersions_ = com.google.protobuf.LazyStringArrayList.EMPTY;
   }
 
   @java.lang.Override
@@ -171,6 +172,16 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
                   .put(webhookHeaders__.getKey(), webhookHeaders__.getValue());
               break;
             }
+          case 114:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
+                flowVersions_ = new com.google.protobuf.LazyStringArrayList();
+                mutable_bitField0_ |= 0x00000004;
+              }
+              flowVersions_.add(s);
+              break;
+            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -187,6 +198,9 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
     } finally {
       if (((mutable_bitField0_ & 0x00000001) != 0)) {
         sessionEntityTypes_ = java.util.Collections.unmodifiableList(sessionEntityTypes_);
+      }
+      if (((mutable_bitField0_ & 0x00000004) != 0)) {
+        flowVersions_ = flowVersions_.getUnmodifiableView();
       }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
@@ -824,6 +838,91 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
     return map.get(key);
   }
 
+  public static final int FLOW_VERSIONS_FIELD_NUMBER = 14;
+  private com.google.protobuf.LazyStringList flowVersions_;
+  /**
+   *
+   *
+   * <pre>
+   * A list of flow versions to override for the request.
+   * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
+   * ID&gt;/flows/&lt;Flow ID&gt;/versions/&lt;Version ID&gt;`.
+   * If version 1 of flow X is included in this list, the traffic of
+   * flow X will go through version 1 regardless of the version configuration in
+   * the environment. Each flow can have at most one version specified in this
+   * list.
+   * </pre>
+   *
+   * <code>repeated string flow_versions = 14 [(.google.api.resource_reference) = { ... }</code>
+   *
+   * @return A list containing the flowVersions.
+   */
+  public com.google.protobuf.ProtocolStringList getFlowVersionsList() {
+    return flowVersions_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * A list of flow versions to override for the request.
+   * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
+   * ID&gt;/flows/&lt;Flow ID&gt;/versions/&lt;Version ID&gt;`.
+   * If version 1 of flow X is included in this list, the traffic of
+   * flow X will go through version 1 regardless of the version configuration in
+   * the environment. Each flow can have at most one version specified in this
+   * list.
+   * </pre>
+   *
+   * <code>repeated string flow_versions = 14 [(.google.api.resource_reference) = { ... }</code>
+   *
+   * @return The count of flowVersions.
+   */
+  public int getFlowVersionsCount() {
+    return flowVersions_.size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * A list of flow versions to override for the request.
+   * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
+   * ID&gt;/flows/&lt;Flow ID&gt;/versions/&lt;Version ID&gt;`.
+   * If version 1 of flow X is included in this list, the traffic of
+   * flow X will go through version 1 regardless of the version configuration in
+   * the environment. Each flow can have at most one version specified in this
+   * list.
+   * </pre>
+   *
+   * <code>repeated string flow_versions = 14 [(.google.api.resource_reference) = { ... }</code>
+   *
+   * @param index The index of the element to return.
+   * @return The flowVersions at the given index.
+   */
+  public java.lang.String getFlowVersions(int index) {
+    return flowVersions_.get(index);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * A list of flow versions to override for the request.
+   * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
+   * ID&gt;/flows/&lt;Flow ID&gt;/versions/&lt;Version ID&gt;`.
+   * If version 1 of flow X is included in this list, the traffic of
+   * flow X will go through version 1 regardless of the version configuration in
+   * the environment. Each flow can have at most one version specified in this
+   * list.
+   * </pre>
+   *
+   * <code>repeated string flow_versions = 14 [(.google.api.resource_reference) = { ... }</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the flowVersions at the given index.
+   */
+  public com.google.protobuf.ByteString getFlowVersionsBytes(int index) {
+    return flowVersions_.getByteString(index);
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -864,6 +963,9 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
     }
     com.google.protobuf.GeneratedMessageV3.serializeStringMapTo(
         output, internalGetWebhookHeaders(), WebhookHeadersDefaultEntryHolder.defaultEntry, 10);
+    for (int i = 0; i < flowVersions_.size(); i++) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 14, flowVersions_.getRaw(i));
+    }
     unknownFields.writeTo(output);
   }
 
@@ -908,6 +1010,14 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
               .build();
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(10, webhookHeaders__);
     }
+    {
+      int dataSize = 0;
+      for (int i = 0; i < flowVersions_.size(); i++) {
+        dataSize += computeStringSizeNoTag(flowVersions_.getRaw(i));
+      }
+      size += dataSize;
+      size += 1 * getFlowVersionsList().size();
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -942,6 +1052,7 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
     if (getDisableWebhook() != other.getDisableWebhook()) return false;
     if (getAnalyzeQueryTextSentiment() != other.getAnalyzeQueryTextSentiment()) return false;
     if (!internalGetWebhookHeaders().equals(other.internalGetWebhookHeaders())) return false;
+    if (!getFlowVersionsList().equals(other.getFlowVersionsList())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -980,6 +1091,10 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
     if (!internalGetWebhookHeaders().getMap().isEmpty()) {
       hash = (37 * hash) + WEBHOOK_HEADERS_FIELD_NUMBER;
       hash = (53 * hash) + internalGetWebhookHeaders().hashCode();
+    }
+    if (getFlowVersionsCount() > 0) {
+      hash = (37 * hash) + FLOW_VERSIONS_FIELD_NUMBER;
+      hash = (53 * hash) + getFlowVersionsList().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -1182,6 +1297,8 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
       analyzeQueryTextSentiment_ = false;
 
       internalGetMutableWebhookHeaders().clear();
+      flowVersions_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField0_ = (bitField0_ & ~0x00000004);
       return this;
     }
 
@@ -1240,6 +1357,11 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
       result.analyzeQueryTextSentiment_ = analyzeQueryTextSentiment_;
       result.webhookHeaders_ = internalGetWebhookHeaders();
       result.webhookHeaders_.makeImmutable();
+      if (((bitField0_ & 0x00000004) != 0)) {
+        flowVersions_ = flowVersions_.getUnmodifiableView();
+        bitField0_ = (bitField0_ & ~0x00000004);
+      }
+      result.flowVersions_ = flowVersions_;
       onBuilt();
       return result;
     }
@@ -1341,6 +1463,16 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
         setAnalyzeQueryTextSentiment(other.getAnalyzeQueryTextSentiment());
       }
       internalGetMutableWebhookHeaders().mergeFrom(other.internalGetWebhookHeaders());
+      if (!other.flowVersions_.isEmpty()) {
+        if (flowVersions_.isEmpty()) {
+          flowVersions_ = other.flowVersions_;
+          bitField0_ = (bitField0_ & ~0x00000004);
+        } else {
+          ensureFlowVersionsIsMutable();
+          flowVersions_.addAll(other.flowVersions_);
+        }
+        onChanged();
+      }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
@@ -3208,6 +3340,228 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
      */
     public Builder putAllWebhookHeaders(java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableWebhookHeaders().getMutableMap().putAll(values);
+      return this;
+    }
+
+    private com.google.protobuf.LazyStringList flowVersions_ =
+        com.google.protobuf.LazyStringArrayList.EMPTY;
+
+    private void ensureFlowVersionsIsMutable() {
+      if (!((bitField0_ & 0x00000004) != 0)) {
+        flowVersions_ = new com.google.protobuf.LazyStringArrayList(flowVersions_);
+        bitField0_ |= 0x00000004;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A list of flow versions to override for the request.
+     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
+     * ID&gt;/flows/&lt;Flow ID&gt;/versions/&lt;Version ID&gt;`.
+     * If version 1 of flow X is included in this list, the traffic of
+     * flow X will go through version 1 regardless of the version configuration in
+     * the environment. Each flow can have at most one version specified in this
+     * list.
+     * </pre>
+     *
+     * <code>repeated string flow_versions = 14 [(.google.api.resource_reference) = { ... }</code>
+     *
+     * @return A list containing the flowVersions.
+     */
+    public com.google.protobuf.ProtocolStringList getFlowVersionsList() {
+      return flowVersions_.getUnmodifiableView();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A list of flow versions to override for the request.
+     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
+     * ID&gt;/flows/&lt;Flow ID&gt;/versions/&lt;Version ID&gt;`.
+     * If version 1 of flow X is included in this list, the traffic of
+     * flow X will go through version 1 regardless of the version configuration in
+     * the environment. Each flow can have at most one version specified in this
+     * list.
+     * </pre>
+     *
+     * <code>repeated string flow_versions = 14 [(.google.api.resource_reference) = { ... }</code>
+     *
+     * @return The count of flowVersions.
+     */
+    public int getFlowVersionsCount() {
+      return flowVersions_.size();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A list of flow versions to override for the request.
+     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
+     * ID&gt;/flows/&lt;Flow ID&gt;/versions/&lt;Version ID&gt;`.
+     * If version 1 of flow X is included in this list, the traffic of
+     * flow X will go through version 1 regardless of the version configuration in
+     * the environment. Each flow can have at most one version specified in this
+     * list.
+     * </pre>
+     *
+     * <code>repeated string flow_versions = 14 [(.google.api.resource_reference) = { ... }</code>
+     *
+     * @param index The index of the element to return.
+     * @return The flowVersions at the given index.
+     */
+    public java.lang.String getFlowVersions(int index) {
+      return flowVersions_.get(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A list of flow versions to override for the request.
+     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
+     * ID&gt;/flows/&lt;Flow ID&gt;/versions/&lt;Version ID&gt;`.
+     * If version 1 of flow X is included in this list, the traffic of
+     * flow X will go through version 1 regardless of the version configuration in
+     * the environment. Each flow can have at most one version specified in this
+     * list.
+     * </pre>
+     *
+     * <code>repeated string flow_versions = 14 [(.google.api.resource_reference) = { ... }</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the flowVersions at the given index.
+     */
+    public com.google.protobuf.ByteString getFlowVersionsBytes(int index) {
+      return flowVersions_.getByteString(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A list of flow versions to override for the request.
+     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
+     * ID&gt;/flows/&lt;Flow ID&gt;/versions/&lt;Version ID&gt;`.
+     * If version 1 of flow X is included in this list, the traffic of
+     * flow X will go through version 1 regardless of the version configuration in
+     * the environment. Each flow can have at most one version specified in this
+     * list.
+     * </pre>
+     *
+     * <code>repeated string flow_versions = 14 [(.google.api.resource_reference) = { ... }</code>
+     *
+     * @param index The index to set the value at.
+     * @param value The flowVersions to set.
+     * @return This builder for chaining.
+     */
+    public Builder setFlowVersions(int index, java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureFlowVersionsIsMutable();
+      flowVersions_.set(index, value);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A list of flow versions to override for the request.
+     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
+     * ID&gt;/flows/&lt;Flow ID&gt;/versions/&lt;Version ID&gt;`.
+     * If version 1 of flow X is included in this list, the traffic of
+     * flow X will go through version 1 regardless of the version configuration in
+     * the environment. Each flow can have at most one version specified in this
+     * list.
+     * </pre>
+     *
+     * <code>repeated string flow_versions = 14 [(.google.api.resource_reference) = { ... }</code>
+     *
+     * @param value The flowVersions to add.
+     * @return This builder for chaining.
+     */
+    public Builder addFlowVersions(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureFlowVersionsIsMutable();
+      flowVersions_.add(value);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A list of flow versions to override for the request.
+     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
+     * ID&gt;/flows/&lt;Flow ID&gt;/versions/&lt;Version ID&gt;`.
+     * If version 1 of flow X is included in this list, the traffic of
+     * flow X will go through version 1 regardless of the version configuration in
+     * the environment. Each flow can have at most one version specified in this
+     * list.
+     * </pre>
+     *
+     * <code>repeated string flow_versions = 14 [(.google.api.resource_reference) = { ... }</code>
+     *
+     * @param values The flowVersions to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllFlowVersions(java.lang.Iterable<java.lang.String> values) {
+      ensureFlowVersionsIsMutable();
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(values, flowVersions_);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A list of flow versions to override for the request.
+     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
+     * ID&gt;/flows/&lt;Flow ID&gt;/versions/&lt;Version ID&gt;`.
+     * If version 1 of flow X is included in this list, the traffic of
+     * flow X will go through version 1 regardless of the version configuration in
+     * the environment. Each flow can have at most one version specified in this
+     * list.
+     * </pre>
+     *
+     * <code>repeated string flow_versions = 14 [(.google.api.resource_reference) = { ... }</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearFlowVersions() {
+      flowVersions_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A list of flow versions to override for the request.
+     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
+     * ID&gt;/flows/&lt;Flow ID&gt;/versions/&lt;Version ID&gt;`.
+     * If version 1 of flow X is included in this list, the traffic of
+     * flow X will go through version 1 regardless of the version configuration in
+     * the environment. Each flow can have at most one version specified in this
+     * list.
+     * </pre>
+     *
+     * <code>repeated string flow_versions = 14 [(.google.api.resource_reference) = { ... }</code>
+     *
+     * @param value The bytes of the flowVersions to add.
+     * @return This builder for chaining.
+     */
+    public Builder addFlowVersionsBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      ensureFlowVersionsIsMutable();
+      flowVersions_.add(value);
+      onChanged();
       return this;
     }
 

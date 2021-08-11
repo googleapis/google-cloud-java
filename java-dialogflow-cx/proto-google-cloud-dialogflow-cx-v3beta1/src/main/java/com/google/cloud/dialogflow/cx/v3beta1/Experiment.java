@@ -42,6 +42,7 @@ public final class Experiment extends com.google.protobuf.GeneratedMessageV3
     displayName_ = "";
     description_ = "";
     state_ = 0;
+    rolloutFailureReason_ = "";
     variantsHistory_ = java.util.Collections.emptyList();
   }
 
@@ -227,6 +228,47 @@ public final class Experiment extends com.google.protobuf.GeneratedMessageV3
                       extensionRegistry));
               break;
             }
+          case 114:
+            {
+              com.google.cloud.dialogflow.cx.v3beta1.RolloutConfig.Builder subBuilder = null;
+              if (rolloutConfig_ != null) {
+                subBuilder = rolloutConfig_.toBuilder();
+              }
+              rolloutConfig_ =
+                  input.readMessage(
+                      com.google.cloud.dialogflow.cx.v3beta1.RolloutConfig.parser(),
+                      extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(rolloutConfig_);
+                rolloutConfig_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+          case 122:
+            {
+              com.google.cloud.dialogflow.cx.v3beta1.RolloutState.Builder subBuilder = null;
+              if (rolloutState_ != null) {
+                subBuilder = rolloutState_.toBuilder();
+              }
+              rolloutState_ =
+                  input.readMessage(
+                      com.google.cloud.dialogflow.cx.v3beta1.RolloutState.parser(),
+                      extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(rolloutState_);
+                rolloutState_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+          case 130:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              rolloutFailureReason_ = s;
+              break;
+            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -314,6 +356,16 @@ public final class Experiment extends com.google.protobuf.GeneratedMessageV3
      * <code>DONE = 3;</code>
      */
     DONE(3),
+    /**
+     *
+     *
+     * <pre>
+     * The experiment with auto-rollout enabled has failed.
+     * </pre>
+     *
+     * <code>ROLLOUT_FAILED = 4;</code>
+     */
+    ROLLOUT_FAILED(4),
     UNRECOGNIZED(-1),
     ;
 
@@ -357,6 +409,16 @@ public final class Experiment extends com.google.protobuf.GeneratedMessageV3
      * <code>DONE = 3;</code>
      */
     public static final int DONE_VALUE = 3;
+    /**
+     *
+     *
+     * <pre>
+     * The experiment with auto-rollout enabled has failed.
+     * </pre>
+     *
+     * <code>ROLLOUT_FAILED = 4;</code>
+     */
+    public static final int ROLLOUT_FAILED_VALUE = 4;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -390,6 +452,8 @@ public final class Experiment extends com.google.protobuf.GeneratedMessageV3
           return RUNNING;
         case 3:
           return DONE;
+        case 4:
+          return ROLLOUT_FAILED;
         default:
           return null;
       }
@@ -7561,9 +7625,9 @@ public final class Experiment extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The current state of the experiment.
-   * Transition triggered by Expriments.StartExperiment: PENDING-&gt;RUNNING.
-   * Transition triggered by Expriments.CancelExperiment: PENDING-&gt;CANCELLED or
-   * RUNNING-&gt;CANCELLED.
+   * Transition triggered by Experiments.StartExperiment: DRAFT-&gt;RUNNING.
+   * Transition triggered by Experiments.CancelExperiment: DRAFT-&gt;DONE or
+   * RUNNING-&gt;DONE.
    * </pre>
    *
    * <code>.google.cloud.dialogflow.cx.v3beta1.Experiment.State state = 4;</code>
@@ -7579,9 +7643,9 @@ public final class Experiment extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The current state of the experiment.
-   * Transition triggered by Expriments.StartExperiment: PENDING-&gt;RUNNING.
-   * Transition triggered by Expriments.CancelExperiment: PENDING-&gt;CANCELLED or
-   * RUNNING-&gt;CANCELLED.
+   * Transition triggered by Experiments.StartExperiment: DRAFT-&gt;RUNNING.
+   * Transition triggered by Experiments.CancelExperiment: DRAFT-&gt;DONE or
+   * RUNNING-&gt;DONE.
    * </pre>
    *
    * <code>.google.cloud.dialogflow.cx.v3beta1.Experiment.State state = 4;</code>
@@ -7645,6 +7709,165 @@ public final class Experiment extends com.google.protobuf.GeneratedMessageV3
   public com.google.cloud.dialogflow.cx.v3beta1.Experiment.DefinitionOrBuilder
       getDefinitionOrBuilder() {
     return getDefinition();
+  }
+
+  public static final int ROLLOUT_CONFIG_FIELD_NUMBER = 14;
+  private com.google.cloud.dialogflow.cx.v3beta1.RolloutConfig rolloutConfig_;
+  /**
+   *
+   *
+   * <pre>
+   * The configuration for auto rollout. If set, there should be exactly two
+   * variants in the experiment (control variant being the default version of
+   * the flow), the traffic allocation for the non-control variant will
+   * gradually increase to 100% when conditions are met, and eventually
+   * replace the control variant to become the default version of the flow.
+   * </pre>
+   *
+   * <code>.google.cloud.dialogflow.cx.v3beta1.RolloutConfig rollout_config = 14;</code>
+   *
+   * @return Whether the rolloutConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasRolloutConfig() {
+    return rolloutConfig_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The configuration for auto rollout. If set, there should be exactly two
+   * variants in the experiment (control variant being the default version of
+   * the flow), the traffic allocation for the non-control variant will
+   * gradually increase to 100% when conditions are met, and eventually
+   * replace the control variant to become the default version of the flow.
+   * </pre>
+   *
+   * <code>.google.cloud.dialogflow.cx.v3beta1.RolloutConfig rollout_config = 14;</code>
+   *
+   * @return The rolloutConfig.
+   */
+  @java.lang.Override
+  public com.google.cloud.dialogflow.cx.v3beta1.RolloutConfig getRolloutConfig() {
+    return rolloutConfig_ == null
+        ? com.google.cloud.dialogflow.cx.v3beta1.RolloutConfig.getDefaultInstance()
+        : rolloutConfig_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The configuration for auto rollout. If set, there should be exactly two
+   * variants in the experiment (control variant being the default version of
+   * the flow), the traffic allocation for the non-control variant will
+   * gradually increase to 100% when conditions are met, and eventually
+   * replace the control variant to become the default version of the flow.
+   * </pre>
+   *
+   * <code>.google.cloud.dialogflow.cx.v3beta1.RolloutConfig rollout_config = 14;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.dialogflow.cx.v3beta1.RolloutConfigOrBuilder getRolloutConfigOrBuilder() {
+    return getRolloutConfig();
+  }
+
+  public static final int ROLLOUT_STATE_FIELD_NUMBER = 15;
+  private com.google.cloud.dialogflow.cx.v3beta1.RolloutState rolloutState_;
+  /**
+   *
+   *
+   * <pre>
+   * State of the auto rollout process.
+   * </pre>
+   *
+   * <code>.google.cloud.dialogflow.cx.v3beta1.RolloutState rollout_state = 15;</code>
+   *
+   * @return Whether the rolloutState field is set.
+   */
+  @java.lang.Override
+  public boolean hasRolloutState() {
+    return rolloutState_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * State of the auto rollout process.
+   * </pre>
+   *
+   * <code>.google.cloud.dialogflow.cx.v3beta1.RolloutState rollout_state = 15;</code>
+   *
+   * @return The rolloutState.
+   */
+  @java.lang.Override
+  public com.google.cloud.dialogflow.cx.v3beta1.RolloutState getRolloutState() {
+    return rolloutState_ == null
+        ? com.google.cloud.dialogflow.cx.v3beta1.RolloutState.getDefaultInstance()
+        : rolloutState_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * State of the auto rollout process.
+   * </pre>
+   *
+   * <code>.google.cloud.dialogflow.cx.v3beta1.RolloutState rollout_state = 15;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.dialogflow.cx.v3beta1.RolloutStateOrBuilder getRolloutStateOrBuilder() {
+    return getRolloutState();
+  }
+
+  public static final int ROLLOUT_FAILURE_REASON_FIELD_NUMBER = 16;
+  private volatile java.lang.Object rolloutFailureReason_;
+  /**
+   *
+   *
+   * <pre>
+   * The reason why rollout has failed. Should only be set when state is
+   * ROLLOUT_FAILED.
+   * </pre>
+   *
+   * <code>string rollout_failure_reason = 16;</code>
+   *
+   * @return The rolloutFailureReason.
+   */
+  @java.lang.Override
+  public java.lang.String getRolloutFailureReason() {
+    java.lang.Object ref = rolloutFailureReason_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      rolloutFailureReason_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The reason why rollout has failed. Should only be set when state is
+   * ROLLOUT_FAILED.
+   * </pre>
+   *
+   * <code>string rollout_failure_reason = 16;</code>
+   *
+   * @return The bytes for rolloutFailureReason.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getRolloutFailureReasonBytes() {
+    java.lang.Object ref = rolloutFailureReason_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      rolloutFailureReason_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   public static final int RESULT_FIELD_NUMBER = 6;
@@ -8062,6 +8285,15 @@ public final class Experiment extends com.google.protobuf.GeneratedMessageV3
     for (int i = 0; i < variantsHistory_.size(); i++) {
       output.writeMessage(12, variantsHistory_.get(i));
     }
+    if (rolloutConfig_ != null) {
+      output.writeMessage(14, getRolloutConfig());
+    }
+    if (rolloutState_ != null) {
+      output.writeMessage(15, getRolloutState());
+    }
+    if (!getRolloutFailureReasonBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 16, rolloutFailureReason_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -8108,6 +8340,15 @@ public final class Experiment extends com.google.protobuf.GeneratedMessageV3
     for (int i = 0; i < variantsHistory_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(12, variantsHistory_.get(i));
     }
+    if (rolloutConfig_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(14, getRolloutConfig());
+    }
+    if (rolloutState_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(15, getRolloutState());
+    }
+    if (!getRolloutFailureReasonBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(16, rolloutFailureReason_);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -8132,6 +8373,15 @@ public final class Experiment extends com.google.protobuf.GeneratedMessageV3
     if (hasDefinition()) {
       if (!getDefinition().equals(other.getDefinition())) return false;
     }
+    if (hasRolloutConfig() != other.hasRolloutConfig()) return false;
+    if (hasRolloutConfig()) {
+      if (!getRolloutConfig().equals(other.getRolloutConfig())) return false;
+    }
+    if (hasRolloutState() != other.hasRolloutState()) return false;
+    if (hasRolloutState()) {
+      if (!getRolloutState().equals(other.getRolloutState())) return false;
+    }
+    if (!getRolloutFailureReason().equals(other.getRolloutFailureReason())) return false;
     if (hasResult() != other.hasResult()) return false;
     if (hasResult()) {
       if (!getResult().equals(other.getResult())) return false;
@@ -8180,6 +8430,16 @@ public final class Experiment extends com.google.protobuf.GeneratedMessageV3
       hash = (37 * hash) + DEFINITION_FIELD_NUMBER;
       hash = (53 * hash) + getDefinition().hashCode();
     }
+    if (hasRolloutConfig()) {
+      hash = (37 * hash) + ROLLOUT_CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + getRolloutConfig().hashCode();
+    }
+    if (hasRolloutState()) {
+      hash = (37 * hash) + ROLLOUT_STATE_FIELD_NUMBER;
+      hash = (53 * hash) + getRolloutState().hashCode();
+    }
+    hash = (37 * hash) + ROLLOUT_FAILURE_REASON_FIELD_NUMBER;
+    hash = (53 * hash) + getRolloutFailureReason().hashCode();
     if (hasResult()) {
       hash = (37 * hash) + RESULT_FIELD_NUMBER;
       hash = (53 * hash) + getResult().hashCode();
@@ -8369,6 +8629,20 @@ public final class Experiment extends com.google.protobuf.GeneratedMessageV3
         definition_ = null;
         definitionBuilder_ = null;
       }
+      if (rolloutConfigBuilder_ == null) {
+        rolloutConfig_ = null;
+      } else {
+        rolloutConfig_ = null;
+        rolloutConfigBuilder_ = null;
+      }
+      if (rolloutStateBuilder_ == null) {
+        rolloutState_ = null;
+      } else {
+        rolloutState_ = null;
+        rolloutStateBuilder_ = null;
+      }
+      rolloutFailureReason_ = "";
+
       if (resultBuilder_ == null) {
         result_ = null;
       } else {
@@ -8448,6 +8722,17 @@ public final class Experiment extends com.google.protobuf.GeneratedMessageV3
       } else {
         result.definition_ = definitionBuilder_.build();
       }
+      if (rolloutConfigBuilder_ == null) {
+        result.rolloutConfig_ = rolloutConfig_;
+      } else {
+        result.rolloutConfig_ = rolloutConfigBuilder_.build();
+      }
+      if (rolloutStateBuilder_ == null) {
+        result.rolloutState_ = rolloutState_;
+      } else {
+        result.rolloutState_ = rolloutStateBuilder_.build();
+      }
+      result.rolloutFailureReason_ = rolloutFailureReason_;
       if (resultBuilder_ == null) {
         result.result_ = result_;
       } else {
@@ -8554,6 +8839,16 @@ public final class Experiment extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.hasDefinition()) {
         mergeDefinition(other.getDefinition());
+      }
+      if (other.hasRolloutConfig()) {
+        mergeRolloutConfig(other.getRolloutConfig());
+      }
+      if (other.hasRolloutState()) {
+        mergeRolloutState(other.getRolloutState());
+      }
+      if (!other.getRolloutFailureReason().isEmpty()) {
+        rolloutFailureReason_ = other.rolloutFailureReason_;
+        onChanged();
       }
       if (other.hasResult()) {
         mergeResult(other.getResult());
@@ -8971,9 +9266,9 @@ public final class Experiment extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The current state of the experiment.
-     * Transition triggered by Expriments.StartExperiment: PENDING-&gt;RUNNING.
-     * Transition triggered by Expriments.CancelExperiment: PENDING-&gt;CANCELLED or
-     * RUNNING-&gt;CANCELLED.
+     * Transition triggered by Experiments.StartExperiment: DRAFT-&gt;RUNNING.
+     * Transition triggered by Experiments.CancelExperiment: DRAFT-&gt;DONE or
+     * RUNNING-&gt;DONE.
      * </pre>
      *
      * <code>.google.cloud.dialogflow.cx.v3beta1.Experiment.State state = 4;</code>
@@ -8989,9 +9284,9 @@ public final class Experiment extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The current state of the experiment.
-     * Transition triggered by Expriments.StartExperiment: PENDING-&gt;RUNNING.
-     * Transition triggered by Expriments.CancelExperiment: PENDING-&gt;CANCELLED or
-     * RUNNING-&gt;CANCELLED.
+     * Transition triggered by Experiments.StartExperiment: DRAFT-&gt;RUNNING.
+     * Transition triggered by Experiments.CancelExperiment: DRAFT-&gt;DONE or
+     * RUNNING-&gt;DONE.
      * </pre>
      *
      * <code>.google.cloud.dialogflow.cx.v3beta1.Experiment.State state = 4;</code>
@@ -9010,9 +9305,9 @@ public final class Experiment extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The current state of the experiment.
-     * Transition triggered by Expriments.StartExperiment: PENDING-&gt;RUNNING.
-     * Transition triggered by Expriments.CancelExperiment: PENDING-&gt;CANCELLED or
-     * RUNNING-&gt;CANCELLED.
+     * Transition triggered by Experiments.StartExperiment: DRAFT-&gt;RUNNING.
+     * Transition triggered by Experiments.CancelExperiment: DRAFT-&gt;DONE or
+     * RUNNING-&gt;DONE.
      * </pre>
      *
      * <code>.google.cloud.dialogflow.cx.v3beta1.Experiment.State state = 4;</code>
@@ -9033,9 +9328,9 @@ public final class Experiment extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The current state of the experiment.
-     * Transition triggered by Expriments.StartExperiment: PENDING-&gt;RUNNING.
-     * Transition triggered by Expriments.CancelExperiment: PENDING-&gt;CANCELLED or
-     * RUNNING-&gt;CANCELLED.
+     * Transition triggered by Experiments.StartExperiment: DRAFT-&gt;RUNNING.
+     * Transition triggered by Experiments.CancelExperiment: DRAFT-&gt;DONE or
+     * RUNNING-&gt;DONE.
      * </pre>
      *
      * <code>.google.cloud.dialogflow.cx.v3beta1.Experiment.State state = 4;</code>
@@ -9057,9 +9352,9 @@ public final class Experiment extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The current state of the experiment.
-     * Transition triggered by Expriments.StartExperiment: PENDING-&gt;RUNNING.
-     * Transition triggered by Expriments.CancelExperiment: PENDING-&gt;CANCELLED or
-     * RUNNING-&gt;CANCELLED.
+     * Transition triggered by Experiments.StartExperiment: DRAFT-&gt;RUNNING.
+     * Transition triggered by Experiments.CancelExperiment: DRAFT-&gt;DONE or
+     * RUNNING-&gt;DONE.
      * </pre>
      *
      * <code>.google.cloud.dialogflow.cx.v3beta1.Experiment.State state = 4;</code>
@@ -9261,6 +9556,526 @@ public final class Experiment extends com.google.protobuf.GeneratedMessageV3
         definition_ = null;
       }
       return definitionBuilder_;
+    }
+
+    private com.google.cloud.dialogflow.cx.v3beta1.RolloutConfig rolloutConfig_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.dialogflow.cx.v3beta1.RolloutConfig,
+            com.google.cloud.dialogflow.cx.v3beta1.RolloutConfig.Builder,
+            com.google.cloud.dialogflow.cx.v3beta1.RolloutConfigOrBuilder>
+        rolloutConfigBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * The configuration for auto rollout. If set, there should be exactly two
+     * variants in the experiment (control variant being the default version of
+     * the flow), the traffic allocation for the non-control variant will
+     * gradually increase to 100% when conditions are met, and eventually
+     * replace the control variant to become the default version of the flow.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.cx.v3beta1.RolloutConfig rollout_config = 14;</code>
+     *
+     * @return Whether the rolloutConfig field is set.
+     */
+    public boolean hasRolloutConfig() {
+      return rolloutConfigBuilder_ != null || rolloutConfig_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The configuration for auto rollout. If set, there should be exactly two
+     * variants in the experiment (control variant being the default version of
+     * the flow), the traffic allocation for the non-control variant will
+     * gradually increase to 100% when conditions are met, and eventually
+     * replace the control variant to become the default version of the flow.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.cx.v3beta1.RolloutConfig rollout_config = 14;</code>
+     *
+     * @return The rolloutConfig.
+     */
+    public com.google.cloud.dialogflow.cx.v3beta1.RolloutConfig getRolloutConfig() {
+      if (rolloutConfigBuilder_ == null) {
+        return rolloutConfig_ == null
+            ? com.google.cloud.dialogflow.cx.v3beta1.RolloutConfig.getDefaultInstance()
+            : rolloutConfig_;
+      } else {
+        return rolloutConfigBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The configuration for auto rollout. If set, there should be exactly two
+     * variants in the experiment (control variant being the default version of
+     * the flow), the traffic allocation for the non-control variant will
+     * gradually increase to 100% when conditions are met, and eventually
+     * replace the control variant to become the default version of the flow.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.cx.v3beta1.RolloutConfig rollout_config = 14;</code>
+     */
+    public Builder setRolloutConfig(com.google.cloud.dialogflow.cx.v3beta1.RolloutConfig value) {
+      if (rolloutConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        rolloutConfig_ = value;
+        onChanged();
+      } else {
+        rolloutConfigBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The configuration for auto rollout. If set, there should be exactly two
+     * variants in the experiment (control variant being the default version of
+     * the flow), the traffic allocation for the non-control variant will
+     * gradually increase to 100% when conditions are met, and eventually
+     * replace the control variant to become the default version of the flow.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.cx.v3beta1.RolloutConfig rollout_config = 14;</code>
+     */
+    public Builder setRolloutConfig(
+        com.google.cloud.dialogflow.cx.v3beta1.RolloutConfig.Builder builderForValue) {
+      if (rolloutConfigBuilder_ == null) {
+        rolloutConfig_ = builderForValue.build();
+        onChanged();
+      } else {
+        rolloutConfigBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The configuration for auto rollout. If set, there should be exactly two
+     * variants in the experiment (control variant being the default version of
+     * the flow), the traffic allocation for the non-control variant will
+     * gradually increase to 100% when conditions are met, and eventually
+     * replace the control variant to become the default version of the flow.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.cx.v3beta1.RolloutConfig rollout_config = 14;</code>
+     */
+    public Builder mergeRolloutConfig(com.google.cloud.dialogflow.cx.v3beta1.RolloutConfig value) {
+      if (rolloutConfigBuilder_ == null) {
+        if (rolloutConfig_ != null) {
+          rolloutConfig_ =
+              com.google.cloud.dialogflow.cx.v3beta1.RolloutConfig.newBuilder(rolloutConfig_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          rolloutConfig_ = value;
+        }
+        onChanged();
+      } else {
+        rolloutConfigBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The configuration for auto rollout. If set, there should be exactly two
+     * variants in the experiment (control variant being the default version of
+     * the flow), the traffic allocation for the non-control variant will
+     * gradually increase to 100% when conditions are met, and eventually
+     * replace the control variant to become the default version of the flow.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.cx.v3beta1.RolloutConfig rollout_config = 14;</code>
+     */
+    public Builder clearRolloutConfig() {
+      if (rolloutConfigBuilder_ == null) {
+        rolloutConfig_ = null;
+        onChanged();
+      } else {
+        rolloutConfig_ = null;
+        rolloutConfigBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The configuration for auto rollout. If set, there should be exactly two
+     * variants in the experiment (control variant being the default version of
+     * the flow), the traffic allocation for the non-control variant will
+     * gradually increase to 100% when conditions are met, and eventually
+     * replace the control variant to become the default version of the flow.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.cx.v3beta1.RolloutConfig rollout_config = 14;</code>
+     */
+    public com.google.cloud.dialogflow.cx.v3beta1.RolloutConfig.Builder getRolloutConfigBuilder() {
+
+      onChanged();
+      return getRolloutConfigFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The configuration for auto rollout. If set, there should be exactly two
+     * variants in the experiment (control variant being the default version of
+     * the flow), the traffic allocation for the non-control variant will
+     * gradually increase to 100% when conditions are met, and eventually
+     * replace the control variant to become the default version of the flow.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.cx.v3beta1.RolloutConfig rollout_config = 14;</code>
+     */
+    public com.google.cloud.dialogflow.cx.v3beta1.RolloutConfigOrBuilder
+        getRolloutConfigOrBuilder() {
+      if (rolloutConfigBuilder_ != null) {
+        return rolloutConfigBuilder_.getMessageOrBuilder();
+      } else {
+        return rolloutConfig_ == null
+            ? com.google.cloud.dialogflow.cx.v3beta1.RolloutConfig.getDefaultInstance()
+            : rolloutConfig_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The configuration for auto rollout. If set, there should be exactly two
+     * variants in the experiment (control variant being the default version of
+     * the flow), the traffic allocation for the non-control variant will
+     * gradually increase to 100% when conditions are met, and eventually
+     * replace the control variant to become the default version of the flow.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.cx.v3beta1.RolloutConfig rollout_config = 14;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.dialogflow.cx.v3beta1.RolloutConfig,
+            com.google.cloud.dialogflow.cx.v3beta1.RolloutConfig.Builder,
+            com.google.cloud.dialogflow.cx.v3beta1.RolloutConfigOrBuilder>
+        getRolloutConfigFieldBuilder() {
+      if (rolloutConfigBuilder_ == null) {
+        rolloutConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.dialogflow.cx.v3beta1.RolloutConfig,
+                com.google.cloud.dialogflow.cx.v3beta1.RolloutConfig.Builder,
+                com.google.cloud.dialogflow.cx.v3beta1.RolloutConfigOrBuilder>(
+                getRolloutConfig(), getParentForChildren(), isClean());
+        rolloutConfig_ = null;
+      }
+      return rolloutConfigBuilder_;
+    }
+
+    private com.google.cloud.dialogflow.cx.v3beta1.RolloutState rolloutState_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.dialogflow.cx.v3beta1.RolloutState,
+            com.google.cloud.dialogflow.cx.v3beta1.RolloutState.Builder,
+            com.google.cloud.dialogflow.cx.v3beta1.RolloutStateOrBuilder>
+        rolloutStateBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * State of the auto rollout process.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.cx.v3beta1.RolloutState rollout_state = 15;</code>
+     *
+     * @return Whether the rolloutState field is set.
+     */
+    public boolean hasRolloutState() {
+      return rolloutStateBuilder_ != null || rolloutState_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * State of the auto rollout process.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.cx.v3beta1.RolloutState rollout_state = 15;</code>
+     *
+     * @return The rolloutState.
+     */
+    public com.google.cloud.dialogflow.cx.v3beta1.RolloutState getRolloutState() {
+      if (rolloutStateBuilder_ == null) {
+        return rolloutState_ == null
+            ? com.google.cloud.dialogflow.cx.v3beta1.RolloutState.getDefaultInstance()
+            : rolloutState_;
+      } else {
+        return rolloutStateBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * State of the auto rollout process.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.cx.v3beta1.RolloutState rollout_state = 15;</code>
+     */
+    public Builder setRolloutState(com.google.cloud.dialogflow.cx.v3beta1.RolloutState value) {
+      if (rolloutStateBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        rolloutState_ = value;
+        onChanged();
+      } else {
+        rolloutStateBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * State of the auto rollout process.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.cx.v3beta1.RolloutState rollout_state = 15;</code>
+     */
+    public Builder setRolloutState(
+        com.google.cloud.dialogflow.cx.v3beta1.RolloutState.Builder builderForValue) {
+      if (rolloutStateBuilder_ == null) {
+        rolloutState_ = builderForValue.build();
+        onChanged();
+      } else {
+        rolloutStateBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * State of the auto rollout process.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.cx.v3beta1.RolloutState rollout_state = 15;</code>
+     */
+    public Builder mergeRolloutState(com.google.cloud.dialogflow.cx.v3beta1.RolloutState value) {
+      if (rolloutStateBuilder_ == null) {
+        if (rolloutState_ != null) {
+          rolloutState_ =
+              com.google.cloud.dialogflow.cx.v3beta1.RolloutState.newBuilder(rolloutState_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          rolloutState_ = value;
+        }
+        onChanged();
+      } else {
+        rolloutStateBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * State of the auto rollout process.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.cx.v3beta1.RolloutState rollout_state = 15;</code>
+     */
+    public Builder clearRolloutState() {
+      if (rolloutStateBuilder_ == null) {
+        rolloutState_ = null;
+        onChanged();
+      } else {
+        rolloutState_ = null;
+        rolloutStateBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * State of the auto rollout process.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.cx.v3beta1.RolloutState rollout_state = 15;</code>
+     */
+    public com.google.cloud.dialogflow.cx.v3beta1.RolloutState.Builder getRolloutStateBuilder() {
+
+      onChanged();
+      return getRolloutStateFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * State of the auto rollout process.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.cx.v3beta1.RolloutState rollout_state = 15;</code>
+     */
+    public com.google.cloud.dialogflow.cx.v3beta1.RolloutStateOrBuilder getRolloutStateOrBuilder() {
+      if (rolloutStateBuilder_ != null) {
+        return rolloutStateBuilder_.getMessageOrBuilder();
+      } else {
+        return rolloutState_ == null
+            ? com.google.cloud.dialogflow.cx.v3beta1.RolloutState.getDefaultInstance()
+            : rolloutState_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * State of the auto rollout process.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.cx.v3beta1.RolloutState rollout_state = 15;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.dialogflow.cx.v3beta1.RolloutState,
+            com.google.cloud.dialogflow.cx.v3beta1.RolloutState.Builder,
+            com.google.cloud.dialogflow.cx.v3beta1.RolloutStateOrBuilder>
+        getRolloutStateFieldBuilder() {
+      if (rolloutStateBuilder_ == null) {
+        rolloutStateBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.dialogflow.cx.v3beta1.RolloutState,
+                com.google.cloud.dialogflow.cx.v3beta1.RolloutState.Builder,
+                com.google.cloud.dialogflow.cx.v3beta1.RolloutStateOrBuilder>(
+                getRolloutState(), getParentForChildren(), isClean());
+        rolloutState_ = null;
+      }
+      return rolloutStateBuilder_;
+    }
+
+    private java.lang.Object rolloutFailureReason_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * The reason why rollout has failed. Should only be set when state is
+     * ROLLOUT_FAILED.
+     * </pre>
+     *
+     * <code>string rollout_failure_reason = 16;</code>
+     *
+     * @return The rolloutFailureReason.
+     */
+    public java.lang.String getRolloutFailureReason() {
+      java.lang.Object ref = rolloutFailureReason_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        rolloutFailureReason_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The reason why rollout has failed. Should only be set when state is
+     * ROLLOUT_FAILED.
+     * </pre>
+     *
+     * <code>string rollout_failure_reason = 16;</code>
+     *
+     * @return The bytes for rolloutFailureReason.
+     */
+    public com.google.protobuf.ByteString getRolloutFailureReasonBytes() {
+      java.lang.Object ref = rolloutFailureReason_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        rolloutFailureReason_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The reason why rollout has failed. Should only be set when state is
+     * ROLLOUT_FAILED.
+     * </pre>
+     *
+     * <code>string rollout_failure_reason = 16;</code>
+     *
+     * @param value The rolloutFailureReason to set.
+     * @return This builder for chaining.
+     */
+    public Builder setRolloutFailureReason(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+
+      rolloutFailureReason_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The reason why rollout has failed. Should only be set when state is
+     * ROLLOUT_FAILED.
+     * </pre>
+     *
+     * <code>string rollout_failure_reason = 16;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearRolloutFailureReason() {
+
+      rolloutFailureReason_ = getDefaultInstance().getRolloutFailureReason();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The reason why rollout has failed. Should only be set when state is
+     * ROLLOUT_FAILED.
+     * </pre>
+     *
+     * <code>string rollout_failure_reason = 16;</code>
+     *
+     * @param value The bytes for rolloutFailureReason to set.
+     * @return This builder for chaining.
+     */
+    public Builder setRolloutFailureReasonBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
+      rolloutFailureReason_ = value;
+      onChanged();
+      return this;
     }
 
     private com.google.cloud.dialogflow.cx.v3beta1.Experiment.Result result_;

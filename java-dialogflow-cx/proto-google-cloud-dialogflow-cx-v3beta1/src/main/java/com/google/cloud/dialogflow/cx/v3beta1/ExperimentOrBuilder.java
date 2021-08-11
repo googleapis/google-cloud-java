@@ -109,9 +109,9 @@ public interface ExperimentOrBuilder
    *
    * <pre>
    * The current state of the experiment.
-   * Transition triggered by Expriments.StartExperiment: PENDING-&gt;RUNNING.
-   * Transition triggered by Expriments.CancelExperiment: PENDING-&gt;CANCELLED or
-   * RUNNING-&gt;CANCELLED.
+   * Transition triggered by Experiments.StartExperiment: DRAFT-&gt;RUNNING.
+   * Transition triggered by Experiments.CancelExperiment: DRAFT-&gt;DONE or
+   * RUNNING-&gt;DONE.
    * </pre>
    *
    * <code>.google.cloud.dialogflow.cx.v3beta1.Experiment.State state = 4;</code>
@@ -124,9 +124,9 @@ public interface ExperimentOrBuilder
    *
    * <pre>
    * The current state of the experiment.
-   * Transition triggered by Expriments.StartExperiment: PENDING-&gt;RUNNING.
-   * Transition triggered by Expriments.CancelExperiment: PENDING-&gt;CANCELLED or
-   * RUNNING-&gt;CANCELLED.
+   * Transition triggered by Experiments.StartExperiment: DRAFT-&gt;RUNNING.
+   * Transition triggered by Experiments.CancelExperiment: DRAFT-&gt;DONE or
+   * RUNNING-&gt;DONE.
    * </pre>
    *
    * <code>.google.cloud.dialogflow.cx.v3beta1.Experiment.State state = 4;</code>
@@ -169,6 +169,115 @@ public interface ExperimentOrBuilder
    * <code>.google.cloud.dialogflow.cx.v3beta1.Experiment.Definition definition = 5;</code>
    */
   com.google.cloud.dialogflow.cx.v3beta1.Experiment.DefinitionOrBuilder getDefinitionOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * The configuration for auto rollout. If set, there should be exactly two
+   * variants in the experiment (control variant being the default version of
+   * the flow), the traffic allocation for the non-control variant will
+   * gradually increase to 100% when conditions are met, and eventually
+   * replace the control variant to become the default version of the flow.
+   * </pre>
+   *
+   * <code>.google.cloud.dialogflow.cx.v3beta1.RolloutConfig rollout_config = 14;</code>
+   *
+   * @return Whether the rolloutConfig field is set.
+   */
+  boolean hasRolloutConfig();
+  /**
+   *
+   *
+   * <pre>
+   * The configuration for auto rollout. If set, there should be exactly two
+   * variants in the experiment (control variant being the default version of
+   * the flow), the traffic allocation for the non-control variant will
+   * gradually increase to 100% when conditions are met, and eventually
+   * replace the control variant to become the default version of the flow.
+   * </pre>
+   *
+   * <code>.google.cloud.dialogflow.cx.v3beta1.RolloutConfig rollout_config = 14;</code>
+   *
+   * @return The rolloutConfig.
+   */
+  com.google.cloud.dialogflow.cx.v3beta1.RolloutConfig getRolloutConfig();
+  /**
+   *
+   *
+   * <pre>
+   * The configuration for auto rollout. If set, there should be exactly two
+   * variants in the experiment (control variant being the default version of
+   * the flow), the traffic allocation for the non-control variant will
+   * gradually increase to 100% when conditions are met, and eventually
+   * replace the control variant to become the default version of the flow.
+   * </pre>
+   *
+   * <code>.google.cloud.dialogflow.cx.v3beta1.RolloutConfig rollout_config = 14;</code>
+   */
+  com.google.cloud.dialogflow.cx.v3beta1.RolloutConfigOrBuilder getRolloutConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * State of the auto rollout process.
+   * </pre>
+   *
+   * <code>.google.cloud.dialogflow.cx.v3beta1.RolloutState rollout_state = 15;</code>
+   *
+   * @return Whether the rolloutState field is set.
+   */
+  boolean hasRolloutState();
+  /**
+   *
+   *
+   * <pre>
+   * State of the auto rollout process.
+   * </pre>
+   *
+   * <code>.google.cloud.dialogflow.cx.v3beta1.RolloutState rollout_state = 15;</code>
+   *
+   * @return The rolloutState.
+   */
+  com.google.cloud.dialogflow.cx.v3beta1.RolloutState getRolloutState();
+  /**
+   *
+   *
+   * <pre>
+   * State of the auto rollout process.
+   * </pre>
+   *
+   * <code>.google.cloud.dialogflow.cx.v3beta1.RolloutState rollout_state = 15;</code>
+   */
+  com.google.cloud.dialogflow.cx.v3beta1.RolloutStateOrBuilder getRolloutStateOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * The reason why rollout has failed. Should only be set when state is
+   * ROLLOUT_FAILED.
+   * </pre>
+   *
+   * <code>string rollout_failure_reason = 16;</code>
+   *
+   * @return The rolloutFailureReason.
+   */
+  java.lang.String getRolloutFailureReason();
+  /**
+   *
+   *
+   * <pre>
+   * The reason why rollout has failed. Should only be set when state is
+   * ROLLOUT_FAILED.
+   * </pre>
+   *
+   * <code>string rollout_failure_reason = 16;</code>
+   *
+   * @return The bytes for rolloutFailureReason.
+   */
+  com.google.protobuf.ByteString getRolloutFailureReasonBytes();
 
   /**
    *

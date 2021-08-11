@@ -60,6 +60,7 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
     messageType_ = 0;
     transcript_ = "";
     speechWordInfo_ = java.util.Collections.emptyList();
+    languageCode_ = "";
   }
 
   @java.lang.Override
@@ -148,6 +149,13 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
                 speechEndOffset_ = subBuilder.buildPartial();
               }
 
+              break;
+            }
+          case 82:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              languageCode_ = s;
               break;
             }
           default:
@@ -658,6 +666,55 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
     return getSpeechEndOffset();
   }
 
+  public static final int LANGUAGE_CODE_FIELD_NUMBER = 10;
+  private volatile java.lang.Object languageCode_;
+  /**
+   *
+   *
+   * <pre>
+   * Detected language code for the transcript.
+   * </pre>
+   *
+   * <code>string language_code = 10;</code>
+   *
+   * @return The languageCode.
+   */
+  @java.lang.Override
+  public java.lang.String getLanguageCode() {
+    java.lang.Object ref = languageCode_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      languageCode_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Detected language code for the transcript.
+   * </pre>
+   *
+   * <code>string language_code = 10;</code>
+   *
+   * @return The bytes for languageCode.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getLanguageCodeBytes() {
+    java.lang.Object ref = languageCode_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      languageCode_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -696,6 +753,9 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
     if (speechEndOffset_ != null) {
       output.writeMessage(8, getSpeechEndOffset());
     }
+    if (!getLanguageCodeBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 10, languageCode_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -729,6 +789,9 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
     if (speechEndOffset_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(8, getSpeechEndOffset());
     }
+    if (!getLanguageCodeBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(10, languageCode_);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -757,6 +820,7 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
     if (hasSpeechEndOffset()) {
       if (!getSpeechEndOffset().equals(other.getSpeechEndOffset())) return false;
     }
+    if (!getLanguageCode().equals(other.getLanguageCode())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -786,6 +850,8 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
       hash = (37 * hash) + SPEECH_END_OFFSET_FIELD_NUMBER;
       hash = (53 * hash) + getSpeechEndOffset().hashCode();
     }
+    hash = (37 * hash) + LANGUAGE_CODE_FIELD_NUMBER;
+    hash = (53 * hash) + getLanguageCode().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -977,6 +1043,8 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
         speechEndOffset_ = null;
         speechEndOffsetBuilder_ = null;
       }
+      languageCode_ = "";
+
       return this;
     }
 
@@ -1025,6 +1093,7 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
       } else {
         result.speechEndOffset_ = speechEndOffsetBuilder_.build();
       }
+      result.languageCode_ = languageCode_;
       onBuilt();
       return result;
     }
@@ -1122,6 +1191,10 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
       }
       if (other.hasSpeechEndOffset()) {
         mergeSpeechEndOffset(other.getSpeechEndOffset());
+      }
+      if (!other.getLanguageCode().isEmpty()) {
+        languageCode_ = other.languageCode_;
+        onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -2191,6 +2264,112 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
         speechEndOffset_ = null;
       }
       return speechEndOffsetBuilder_;
+    }
+
+    private java.lang.Object languageCode_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Detected language code for the transcript.
+     * </pre>
+     *
+     * <code>string language_code = 10;</code>
+     *
+     * @return The languageCode.
+     */
+    public java.lang.String getLanguageCode() {
+      java.lang.Object ref = languageCode_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        languageCode_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Detected language code for the transcript.
+     * </pre>
+     *
+     * <code>string language_code = 10;</code>
+     *
+     * @return The bytes for languageCode.
+     */
+    public com.google.protobuf.ByteString getLanguageCodeBytes() {
+      java.lang.Object ref = languageCode_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        languageCode_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Detected language code for the transcript.
+     * </pre>
+     *
+     * <code>string language_code = 10;</code>
+     *
+     * @param value The languageCode to set.
+     * @return This builder for chaining.
+     */
+    public Builder setLanguageCode(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+
+      languageCode_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Detected language code for the transcript.
+     * </pre>
+     *
+     * <code>string language_code = 10;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearLanguageCode() {
+
+      languageCode_ = getDefaultInstance().getLanguageCode();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Detected language code for the transcript.
+     * </pre>
+     *
+     * <code>string language_code = 10;</code>
+     *
+     * @param value The bytes for languageCode to set.
+     * @return This builder for chaining.
+     */
+    public Builder setLanguageCodeBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
+      languageCode_ = value;
+      onChanged();
+      return this;
     }
 
     @java.lang.Override

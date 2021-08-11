@@ -24,7 +24,6 @@ import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.grpc.GrpcCallSettings;
 import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
-import com.google.api.gax.rpc.RequestParamsExtractor;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.dialogflow.cx.v3beta1.CreateWebhookRequest;
 import com.google.cloud.dialogflow.cx.v3beta1.DeleteWebhookRequest;
@@ -39,7 +38,6 @@ import com.google.protobuf.Empty;
 import io.grpc.MethodDescriptor;
 import io.grpc.protobuf.ProtoUtils;
 import java.io.IOException;
-import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
@@ -149,65 +147,50 @@ public class GrpcWebhooksStub extends WebhooksStub {
         GrpcCallSettings.<ListWebhooksRequest, ListWebhooksResponse>newBuilder()
             .setMethodDescriptor(listWebhooksMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<ListWebhooksRequest>() {
-                  @Override
-                  public Map<String, String> extract(ListWebhooksRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("parent", String.valueOf(request.getParent()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("parent", String.valueOf(request.getParent()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<GetWebhookRequest, Webhook> getWebhookTransportSettings =
         GrpcCallSettings.<GetWebhookRequest, Webhook>newBuilder()
             .setMethodDescriptor(getWebhookMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<GetWebhookRequest>() {
-                  @Override
-                  public Map<String, String> extract(GetWebhookRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("name", String.valueOf(request.getName()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<CreateWebhookRequest, Webhook> createWebhookTransportSettings =
         GrpcCallSettings.<CreateWebhookRequest, Webhook>newBuilder()
             .setMethodDescriptor(createWebhookMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<CreateWebhookRequest>() {
-                  @Override
-                  public Map<String, String> extract(CreateWebhookRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("parent", String.valueOf(request.getParent()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("parent", String.valueOf(request.getParent()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<UpdateWebhookRequest, Webhook> updateWebhookTransportSettings =
         GrpcCallSettings.<UpdateWebhookRequest, Webhook>newBuilder()
             .setMethodDescriptor(updateWebhookMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<UpdateWebhookRequest>() {
-                  @Override
-                  public Map<String, String> extract(UpdateWebhookRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("webhook.name", String.valueOf(request.getWebhook().getName()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("webhook.name", String.valueOf(request.getWebhook().getName()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<DeleteWebhookRequest, Empty> deleteWebhookTransportSettings =
         GrpcCallSettings.<DeleteWebhookRequest, Empty>newBuilder()
             .setMethodDescriptor(deleteWebhookMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<DeleteWebhookRequest>() {
-                  @Override
-                  public Map<String, String> extract(DeleteWebhookRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("name", String.valueOf(request.getName()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  return params.build();
                 })
             .build();
 
@@ -270,7 +253,13 @@ public class GrpcWebhooksStub extends WebhooksStub {
 
   @Override
   public final void close() {
-    shutdown();
+    try {
+      backgroundResources.close();
+    } catch (RuntimeException e) {
+      throw e;
+    } catch (Exception e) {
+      throw new IllegalStateException("Failed to close resource", e);
+    }
   }
 
   @Override

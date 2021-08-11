@@ -26,7 +26,6 @@ import com.google.api.gax.grpc.GrpcCallSettings;
 import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
-import com.google.api.gax.rpc.RequestParamsExtractor;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.dialogflow.cx.v3beta1.BatchDeleteTestCasesRequest;
 import com.google.cloud.dialogflow.cx.v3beta1.BatchRunTestCasesMetadata;
@@ -60,7 +59,6 @@ import com.google.protobuf.Empty;
 import io.grpc.MethodDescriptor;
 import io.grpc.protobuf.ProtoUtils;
 import java.io.IOException;
-import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
@@ -268,91 +266,70 @@ public class GrpcTestCasesStub extends TestCasesStub {
         GrpcCallSettings.<ListTestCasesRequest, ListTestCasesResponse>newBuilder()
             .setMethodDescriptor(listTestCasesMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<ListTestCasesRequest>() {
-                  @Override
-                  public Map<String, String> extract(ListTestCasesRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("parent", String.valueOf(request.getParent()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("parent", String.valueOf(request.getParent()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<BatchDeleteTestCasesRequest, Empty> batchDeleteTestCasesTransportSettings =
         GrpcCallSettings.<BatchDeleteTestCasesRequest, Empty>newBuilder()
             .setMethodDescriptor(batchDeleteTestCasesMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<BatchDeleteTestCasesRequest>() {
-                  @Override
-                  public Map<String, String> extract(BatchDeleteTestCasesRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("parent", String.valueOf(request.getParent()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("parent", String.valueOf(request.getParent()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<GetTestCaseRequest, TestCase> getTestCaseTransportSettings =
         GrpcCallSettings.<GetTestCaseRequest, TestCase>newBuilder()
             .setMethodDescriptor(getTestCaseMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<GetTestCaseRequest>() {
-                  @Override
-                  public Map<String, String> extract(GetTestCaseRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("name", String.valueOf(request.getName()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<CreateTestCaseRequest, TestCase> createTestCaseTransportSettings =
         GrpcCallSettings.<CreateTestCaseRequest, TestCase>newBuilder()
             .setMethodDescriptor(createTestCaseMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<CreateTestCaseRequest>() {
-                  @Override
-                  public Map<String, String> extract(CreateTestCaseRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("parent", String.valueOf(request.getParent()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("parent", String.valueOf(request.getParent()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<UpdateTestCaseRequest, TestCase> updateTestCaseTransportSettings =
         GrpcCallSettings.<UpdateTestCaseRequest, TestCase>newBuilder()
             .setMethodDescriptor(updateTestCaseMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<UpdateTestCaseRequest>() {
-                  @Override
-                  public Map<String, String> extract(UpdateTestCaseRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("test_case.name", String.valueOf(request.getTestCase().getName()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("test_case.name", String.valueOf(request.getTestCase().getName()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<RunTestCaseRequest, Operation> runTestCaseTransportSettings =
         GrpcCallSettings.<RunTestCaseRequest, Operation>newBuilder()
             .setMethodDescriptor(runTestCaseMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<RunTestCaseRequest>() {
-                  @Override
-                  public Map<String, String> extract(RunTestCaseRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("name", String.valueOf(request.getName()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<BatchRunTestCasesRequest, Operation> batchRunTestCasesTransportSettings =
         GrpcCallSettings.<BatchRunTestCasesRequest, Operation>newBuilder()
             .setMethodDescriptor(batchRunTestCasesMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<BatchRunTestCasesRequest>() {
-                  @Override
-                  public Map<String, String> extract(BatchRunTestCasesRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("parent", String.valueOf(request.getParent()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("parent", String.valueOf(request.getParent()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<CalculateCoverageRequest, CalculateCoverageResponse>
@@ -360,39 +337,30 @@ public class GrpcTestCasesStub extends TestCasesStub {
             GrpcCallSettings.<CalculateCoverageRequest, CalculateCoverageResponse>newBuilder()
                 .setMethodDescriptor(calculateCoverageMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<CalculateCoverageRequest>() {
-                      @Override
-                      public Map<String, String> extract(CalculateCoverageRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("agent", String.valueOf(request.getAgent()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("agent", String.valueOf(request.getAgent()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<ImportTestCasesRequest, Operation> importTestCasesTransportSettings =
         GrpcCallSettings.<ImportTestCasesRequest, Operation>newBuilder()
             .setMethodDescriptor(importTestCasesMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<ImportTestCasesRequest>() {
-                  @Override
-                  public Map<String, String> extract(ImportTestCasesRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("parent", String.valueOf(request.getParent()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("parent", String.valueOf(request.getParent()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<ExportTestCasesRequest, Operation> exportTestCasesTransportSettings =
         GrpcCallSettings.<ExportTestCasesRequest, Operation>newBuilder()
             .setMethodDescriptor(exportTestCasesMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<ExportTestCasesRequest>() {
-                  @Override
-                  public Map<String, String> extract(ExportTestCasesRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("parent", String.valueOf(request.getParent()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("parent", String.valueOf(request.getParent()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<ListTestCaseResultsRequest, ListTestCaseResultsResponse>
@@ -400,26 +368,20 @@ public class GrpcTestCasesStub extends TestCasesStub {
             GrpcCallSettings.<ListTestCaseResultsRequest, ListTestCaseResultsResponse>newBuilder()
                 .setMethodDescriptor(listTestCaseResultsMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<ListTestCaseResultsRequest>() {
-                      @Override
-                      public Map<String, String> extract(ListTestCaseResultsRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("parent", String.valueOf(request.getParent()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("parent", String.valueOf(request.getParent()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<GetTestCaseResultRequest, TestCaseResult> getTestCaseResultTransportSettings =
         GrpcCallSettings.<GetTestCaseResultRequest, TestCaseResult>newBuilder()
             .setMethodDescriptor(getTestCaseResultMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<GetTestCaseResultRequest>() {
-                  @Override
-                  public Map<String, String> extract(GetTestCaseResultRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("name", String.valueOf(request.getName()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  return params.build();
                 })
             .build();
 
@@ -611,7 +573,13 @@ public class GrpcTestCasesStub extends TestCasesStub {
 
   @Override
   public final void close() {
-    shutdown();
+    try {
+      backgroundResources.close();
+    } catch (RuntimeException e) {
+      throw e;
+    } catch (Exception e) {
+      throw new IllegalStateException("Failed to close resource", e);
+    }
   }
 
   @Override

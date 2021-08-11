@@ -16,7 +16,6 @@
 
 package com.google.cloud.dialogflow.cx.v3;
 
-import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
 import com.google.api.core.BetaApi;
@@ -1223,12 +1222,7 @@ public class EnvironmentsClient implements BackgroundResource {
           ListEnvironmentsPage.createEmptyPage().createPageAsync(context, futureResponse);
       return ApiFutures.transform(
           futurePage,
-          new ApiFunction<ListEnvironmentsPage, ListEnvironmentsPagedResponse>() {
-            @Override
-            public ListEnvironmentsPagedResponse apply(ListEnvironmentsPage input) {
-              return new ListEnvironmentsPagedResponse(input);
-            }
-          },
+          input -> new ListEnvironmentsPagedResponse(input),
           MoreExecutors.directExecutor());
     }
 
@@ -1306,12 +1300,7 @@ public class EnvironmentsClient implements BackgroundResource {
           LookupEnvironmentHistoryPage.createEmptyPage().createPageAsync(context, futureResponse);
       return ApiFutures.transform(
           futurePage,
-          new ApiFunction<LookupEnvironmentHistoryPage, LookupEnvironmentHistoryPagedResponse>() {
-            @Override
-            public LookupEnvironmentHistoryPagedResponse apply(LookupEnvironmentHistoryPage input) {
-              return new LookupEnvironmentHistoryPagedResponse(input);
-            }
-          },
+          input -> new LookupEnvironmentHistoryPagedResponse(input),
           MoreExecutors.directExecutor());
     }
 
@@ -1398,13 +1387,7 @@ public class EnvironmentsClient implements BackgroundResource {
           ListContinuousTestResultsPage.createEmptyPage().createPageAsync(context, futureResponse);
       return ApiFutures.transform(
           futurePage,
-          new ApiFunction<ListContinuousTestResultsPage, ListContinuousTestResultsPagedResponse>() {
-            @Override
-            public ListContinuousTestResultsPagedResponse apply(
-                ListContinuousTestResultsPage input) {
-              return new ListContinuousTestResultsPagedResponse(input);
-            }
-          },
+          input -> new ListContinuousTestResultsPagedResponse(input),
           MoreExecutors.directExecutor());
     }
 

@@ -477,4 +477,79 @@ public interface QueryParametersOrBuilder
    * <code>map&lt;string, string&gt; webhook_headers = 10;</code>
    */
   java.lang.String getWebhookHeadersOrThrow(java.lang.String key);
+
+  /**
+   *
+   *
+   * <pre>
+   * A list of flow versions to override for the request.
+   * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
+   * ID&gt;/flows/&lt;Flow ID&gt;/versions/&lt;Version ID&gt;`.
+   * If version 1 of flow X is included in this list, the traffic of
+   * flow X will go through version 1 regardless of the version configuration in
+   * the environment. Each flow can have at most one version specified in this
+   * list.
+   * </pre>
+   *
+   * <code>repeated string flow_versions = 14 [(.google.api.resource_reference) = { ... }</code>
+   *
+   * @return A list containing the flowVersions.
+   */
+  java.util.List<java.lang.String> getFlowVersionsList();
+  /**
+   *
+   *
+   * <pre>
+   * A list of flow versions to override for the request.
+   * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
+   * ID&gt;/flows/&lt;Flow ID&gt;/versions/&lt;Version ID&gt;`.
+   * If version 1 of flow X is included in this list, the traffic of
+   * flow X will go through version 1 regardless of the version configuration in
+   * the environment. Each flow can have at most one version specified in this
+   * list.
+   * </pre>
+   *
+   * <code>repeated string flow_versions = 14 [(.google.api.resource_reference) = { ... }</code>
+   *
+   * @return The count of flowVersions.
+   */
+  int getFlowVersionsCount();
+  /**
+   *
+   *
+   * <pre>
+   * A list of flow versions to override for the request.
+   * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
+   * ID&gt;/flows/&lt;Flow ID&gt;/versions/&lt;Version ID&gt;`.
+   * If version 1 of flow X is included in this list, the traffic of
+   * flow X will go through version 1 regardless of the version configuration in
+   * the environment. Each flow can have at most one version specified in this
+   * list.
+   * </pre>
+   *
+   * <code>repeated string flow_versions = 14 [(.google.api.resource_reference) = { ... }</code>
+   *
+   * @param index The index of the element to return.
+   * @return The flowVersions at the given index.
+   */
+  java.lang.String getFlowVersions(int index);
+  /**
+   *
+   *
+   * <pre>
+   * A list of flow versions to override for the request.
+   * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
+   * ID&gt;/flows/&lt;Flow ID&gt;/versions/&lt;Version ID&gt;`.
+   * If version 1 of flow X is included in this list, the traffic of
+   * flow X will go through version 1 regardless of the version configuration in
+   * the environment. Each flow can have at most one version specified in this
+   * list.
+   * </pre>
+   *
+   * <code>repeated string flow_versions = 14 [(.google.api.resource_reference) = { ... }</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the flowVersions at the given index.
+   */
+  com.google.protobuf.ByteString getFlowVersionsBytes(int index);
 }

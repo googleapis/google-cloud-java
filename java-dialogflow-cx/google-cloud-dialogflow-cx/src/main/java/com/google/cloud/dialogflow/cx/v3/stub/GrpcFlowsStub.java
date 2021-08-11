@@ -24,7 +24,6 @@ import com.google.api.gax.grpc.GrpcCallSettings;
 import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
-import com.google.api.gax.rpc.RequestParamsExtractor;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.dialogflow.cx.v3.CreateFlowRequest;
 import com.google.cloud.dialogflow.cx.v3.DeleteFlowRequest;
@@ -49,7 +48,6 @@ import com.google.protobuf.Struct;
 import io.grpc.MethodDescriptor;
 import io.grpc.protobuf.ProtoUtils;
 import java.io.IOException;
-import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
@@ -208,91 +206,70 @@ public class GrpcFlowsStub extends FlowsStub {
         GrpcCallSettings.<CreateFlowRequest, Flow>newBuilder()
             .setMethodDescriptor(createFlowMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<CreateFlowRequest>() {
-                  @Override
-                  public Map<String, String> extract(CreateFlowRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("parent", String.valueOf(request.getParent()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("parent", String.valueOf(request.getParent()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<DeleteFlowRequest, Empty> deleteFlowTransportSettings =
         GrpcCallSettings.<DeleteFlowRequest, Empty>newBuilder()
             .setMethodDescriptor(deleteFlowMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<DeleteFlowRequest>() {
-                  @Override
-                  public Map<String, String> extract(DeleteFlowRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("name", String.valueOf(request.getName()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<ListFlowsRequest, ListFlowsResponse> listFlowsTransportSettings =
         GrpcCallSettings.<ListFlowsRequest, ListFlowsResponse>newBuilder()
             .setMethodDescriptor(listFlowsMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<ListFlowsRequest>() {
-                  @Override
-                  public Map<String, String> extract(ListFlowsRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("parent", String.valueOf(request.getParent()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("parent", String.valueOf(request.getParent()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<GetFlowRequest, Flow> getFlowTransportSettings =
         GrpcCallSettings.<GetFlowRequest, Flow>newBuilder()
             .setMethodDescriptor(getFlowMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<GetFlowRequest>() {
-                  @Override
-                  public Map<String, String> extract(GetFlowRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("name", String.valueOf(request.getName()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<UpdateFlowRequest, Flow> updateFlowTransportSettings =
         GrpcCallSettings.<UpdateFlowRequest, Flow>newBuilder()
             .setMethodDescriptor(updateFlowMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<UpdateFlowRequest>() {
-                  @Override
-                  public Map<String, String> extract(UpdateFlowRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("flow.name", String.valueOf(request.getFlow().getName()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("flow.name", String.valueOf(request.getFlow().getName()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<TrainFlowRequest, Operation> trainFlowTransportSettings =
         GrpcCallSettings.<TrainFlowRequest, Operation>newBuilder()
             .setMethodDescriptor(trainFlowMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<TrainFlowRequest>() {
-                  @Override
-                  public Map<String, String> extract(TrainFlowRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("name", String.valueOf(request.getName()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<ValidateFlowRequest, FlowValidationResult> validateFlowTransportSettings =
         GrpcCallSettings.<ValidateFlowRequest, FlowValidationResult>newBuilder()
             .setMethodDescriptor(validateFlowMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<ValidateFlowRequest>() {
-                  @Override
-                  public Map<String, String> extract(ValidateFlowRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("name", String.valueOf(request.getName()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<GetFlowValidationResultRequest, FlowValidationResult>
@@ -300,39 +277,30 @@ public class GrpcFlowsStub extends FlowsStub {
             GrpcCallSettings.<GetFlowValidationResultRequest, FlowValidationResult>newBuilder()
                 .setMethodDescriptor(getFlowValidationResultMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<GetFlowValidationResultRequest>() {
-                      @Override
-                      public Map<String, String> extract(GetFlowValidationResultRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("name", String.valueOf(request.getName()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("name", String.valueOf(request.getName()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<ImportFlowRequest, Operation> importFlowTransportSettings =
         GrpcCallSettings.<ImportFlowRequest, Operation>newBuilder()
             .setMethodDescriptor(importFlowMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<ImportFlowRequest>() {
-                  @Override
-                  public Map<String, String> extract(ImportFlowRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("parent", String.valueOf(request.getParent()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("parent", String.valueOf(request.getParent()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<ExportFlowRequest, Operation> exportFlowTransportSettings =
         GrpcCallSettings.<ExportFlowRequest, Operation>newBuilder()
             .setMethodDescriptor(exportFlowMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<ExportFlowRequest>() {
-                  @Override
-                  public Map<String, String> extract(ExportFlowRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("name", String.valueOf(request.getName()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  return params.build();
                 })
             .build();
 
@@ -473,7 +441,13 @@ public class GrpcFlowsStub extends FlowsStub {
 
   @Override
   public final void close() {
-    shutdown();
+    try {
+      backgroundResources.close();
+    } catch (RuntimeException e) {
+      throw e;
+    } catch (Exception e) {
+      throw new IllegalStateException("Failed to close resource", e);
+    }
   }
 
   @Override

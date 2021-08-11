@@ -232,4 +232,29 @@ public interface StreamingRecognitionResultOrBuilder
    * <code>.google.protobuf.Duration speech_end_offset = 8;</code>
    */
   com.google.protobuf.DurationOrBuilder getSpeechEndOffsetOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Detected language code for the transcript.
+   * </pre>
+   *
+   * <code>string language_code = 10;</code>
+   *
+   * @return The languageCode.
+   */
+  java.lang.String getLanguageCode();
+  /**
+   *
+   *
+   * <pre>
+   * Detected language code for the transcript.
+   * </pre>
+   *
+   * <code>string language_code = 10;</code>
+   *
+   * @return The bytes for languageCode.
+   */
+  com.google.protobuf.ByteString getLanguageCodeBytes();
 }

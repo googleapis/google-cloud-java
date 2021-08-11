@@ -60,6 +60,18 @@ public final class ExperimentProto {
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_dialogflow_cx_v3beta1_VersionVariants_Variant_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_dialogflow_cx_v3beta1_RolloutConfig_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_dialogflow_cx_v3beta1_RolloutConfig_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_dialogflow_cx_v3beta1_RolloutConfig_RolloutStep_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_dialogflow_cx_v3beta1_RolloutConfig_RolloutStep_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_dialogflow_cx_v3beta1_RolloutState_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_dialogflow_cx_v3beta1_RolloutState_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_dialogflow_cx_v3beta1_VariantsHistory_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_dialogflow_cx_v3beta1_VariantsHistory_fieldAccessorTable;
@@ -112,54 +124,59 @@ public final class ExperimentProto {
           + "roto\032\036google/protobuf/duration.proto\032\033go"
           + "ogle/protobuf/empty.proto\032 google/protob"
           + "uf/field_mask.proto\032\037google/protobuf/tim"
-          + "estamp.proto\"\357\017\n\nExperiment\022\014\n\004name\030\001 \001("
+          + "estamp.proto\"\267\021\n\nExperiment\022\014\n\004name\030\001 \001("
           + "\t\022\031\n\014display_name\030\002 \001(\tB\003\340A\002\022\023\n\013descript"
           + "ion\030\003 \001(\t\022C\n\005state\030\004 \001(\01624.google.cloud."
           + "dialogflow.cx.v3beta1.Experiment.State\022M"
           + "\n\ndefinition\030\005 \001(\01329.google.cloud.dialog"
-          + "flow.cx.v3beta1.Experiment.Definition\022E\n"
-          + "\006result\030\006 \001(\01325.google.cloud.dialogflow."
-          + "cx.v3beta1.Experiment.Result\022/\n\013create_t"
-          + "ime\030\007 \001(\0132\032.google.protobuf.Timestamp\022.\n"
-          + "\nstart_time\030\010 \001(\0132\032.google.protobuf.Time"
-          + "stamp\022,\n\010end_time\030\t \001(\0132\032.google.protobu"
-          + "f.Timestamp\0224\n\020last_update_time\030\n \001(\0132\032."
-          + "google.protobuf.Timestamp\0224\n\021experiment_"
-          + "length\030\013 \001(\0132\031.google.protobuf.Duration\022"
-          + "M\n\020variants_history\030\014 \003(\01323.google.cloud"
-          + ".dialogflow.cx.v3beta1.VariantsHistory\032|"
-          + "\n\nDefinition\022\021\n\tcondition\030\001 \001(\t\022O\n\020versi"
-          + "on_variants\030\002 \001(\01323.google.cloud.dialogf"
-          + "low.cx.v3beta1.VersionVariantsH\000B\n\n\010vari"
-          + "ants\032\244\010\n\006Result\022]\n\017version_metrics\030\001 \003(\013"
-          + "2D.google.cloud.dialogflow.cx.v3beta1.Ex"
-          + "periment.Result.VersionMetrics\0224\n\020last_u"
-          + "pdate_time\030\002 \001(\0132\032.google.protobuf.Times"
-          + "tamp\032g\n\022ConfidenceInterval\022\030\n\020confidence"
-          + "_level\030\001 \001(\001\022\r\n\005ratio\030\002 \001(\001\022\023\n\013lower_bou"
-          + "nd\030\003 \001(\001\022\023\n\013upper_bound\030\004 \001(\001\032\277\002\n\006Metric"
-          + "\022N\n\004type\030\001 \001(\0162@.google.cloud.dialogflow"
-          + ".cx.v3beta1.Experiment.Result.MetricType"
-          + "\022S\n\ncount_type\030\005 \001(\0162?.google.cloud.dial"
-          + "ogflow.cx.v3beta1.Experiment.Result.Coun"
-          + "tType\022\017\n\005ratio\030\002 \001(\001H\000\022\017\n\005count\030\004 \001(\001H\000\022"
-          + "e\n\023confidence_interval\030\003 \001(\0132H.google.cl"
-          + "oud.dialogflow.cx.v3beta1.Experiment.Res"
-          + "ult.ConfidenceIntervalB\007\n\005value\032\257\001\n\016Vers"
-          + "ionMetrics\0227\n\007version\030\001 \001(\tB&\372A#\n!dialog"
-          + "flow.googleapis.com/Version\022M\n\007metrics\030\002"
-          + " \003(\0132<.google.cloud.dialogflow.cx.v3beta"
-          + "1.Experiment.Result.Metric\022\025\n\rsession_co"
-          + "unt\030\003 \001(\005\"\266\001\n\nMetricType\022\026\n\022METRIC_UNSPE"
-          + "CIFIED\020\000\022&\n\"CONTAINED_SESSION_NO_CALLBAC"
-          + "K_RATE\020\001\022\033\n\027LIVE_AGENT_HANDOFF_RATE\020\002\022\031\n"
-          + "\025CALLBACK_SESSION_RATE\020\003\022\032\n\026ABANDONED_SE"
-          + "SSION_RATE\020\004\022\024\n\020SESSION_END_RATE\020\005\"o\n\tCo"
-          + "untType\022\032\n\026COUNT_TYPE_UNSPECIFIED\020\000\022\030\n\024T"
-          + "OTAL_NO_MATCH_COUNT\020\001\022\024\n\020TOTAL_TURN_COUN"
-          + "T\020\002\022\026\n\022AVERAGE_TURN_COUNT\020\003\"@\n\005State\022\025\n\021"
-          + "STATE_UNSPECIFIED\020\000\022\t\n\005DRAFT\020\001\022\013\n\007RUNNIN"
-          + "G\020\002\022\010\n\004DONE\020\003:\226\001\352A\222\001\n$dialogflow.googlea"
+          + "flow.cx.v3beta1.Experiment.Definition\022I\n"
+          + "\016rollout_config\030\016 \001(\01321.google.cloud.dia"
+          + "logflow.cx.v3beta1.RolloutConfig\022G\n\rroll"
+          + "out_state\030\017 \001(\01320.google.cloud.dialogflo"
+          + "w.cx.v3beta1.RolloutState\022\036\n\026rollout_fai"
+          + "lure_reason\030\020 \001(\t\022E\n\006result\030\006 \001(\01325.goog"
+          + "le.cloud.dialogflow.cx.v3beta1.Experimen"
+          + "t.Result\022/\n\013create_time\030\007 \001(\0132\032.google.p"
+          + "rotobuf.Timestamp\022.\n\nstart_time\030\010 \001(\0132\032."
+          + "google.protobuf.Timestamp\022,\n\010end_time\030\t "
+          + "\001(\0132\032.google.protobuf.Timestamp\0224\n\020last_"
+          + "update_time\030\n \001(\0132\032.google.protobuf.Time"
+          + "stamp\0224\n\021experiment_length\030\013 \001(\0132\031.googl"
+          + "e.protobuf.Duration\022M\n\020variants_history\030"
+          + "\014 \003(\01323.google.cloud.dialogflow.cx.v3bet"
+          + "a1.VariantsHistory\032|\n\nDefinition\022\021\n\tcond"
+          + "ition\030\001 \001(\t\022O\n\020version_variants\030\002 \001(\01323."
+          + "google.cloud.dialogflow.cx.v3beta1.Versi"
+          + "onVariantsH\000B\n\n\010variants\032\244\010\n\006Result\022]\n\017v"
+          + "ersion_metrics\030\001 \003(\0132D.google.cloud.dial"
+          + "ogflow.cx.v3beta1.Experiment.Result.Vers"
+          + "ionMetrics\0224\n\020last_update_time\030\002 \001(\0132\032.g"
+          + "oogle.protobuf.Timestamp\032g\n\022ConfidenceIn"
+          + "terval\022\030\n\020confidence_level\030\001 \001(\001\022\r\n\005rati"
+          + "o\030\002 \001(\001\022\023\n\013lower_bound\030\003 \001(\001\022\023\n\013upper_bo"
+          + "und\030\004 \001(\001\032\277\002\n\006Metric\022N\n\004type\030\001 \001(\0162@.goo"
+          + "gle.cloud.dialogflow.cx.v3beta1.Experime"
+          + "nt.Result.MetricType\022S\n\ncount_type\030\005 \001(\016"
+          + "2?.google.cloud.dialogflow.cx.v3beta1.Ex"
+          + "periment.Result.CountType\022\017\n\005ratio\030\002 \001(\001"
+          + "H\000\022\017\n\005count\030\004 \001(\001H\000\022e\n\023confidence_interv"
+          + "al\030\003 \001(\0132H.google.cloud.dialogflow.cx.v3"
+          + "beta1.Experiment.Result.ConfidenceInterv"
+          + "alB\007\n\005value\032\257\001\n\016VersionMetrics\0227\n\007versio"
+          + "n\030\001 \001(\tB&\372A#\n!dialogflow.googleapis.com/"
+          + "Version\022M\n\007metrics\030\002 \003(\0132<.google.cloud."
+          + "dialogflow.cx.v3beta1.Experiment.Result."
+          + "Metric\022\025\n\rsession_count\030\003 \001(\005\"\266\001\n\nMetric"
+          + "Type\022\026\n\022METRIC_UNSPECIFIED\020\000\022&\n\"CONTAINE"
+          + "D_SESSION_NO_CALLBACK_RATE\020\001\022\033\n\027LIVE_AGE"
+          + "NT_HANDOFF_RATE\020\002\022\031\n\025CALLBACK_SESSION_RA"
+          + "TE\020\003\022\032\n\026ABANDONED_SESSION_RATE\020\004\022\024\n\020SESS"
+          + "ION_END_RATE\020\005\"o\n\tCountType\022\032\n\026COUNT_TYP"
+          + "E_UNSPECIFIED\020\000\022\030\n\024TOTAL_NO_MATCH_COUNT\020"
+          + "\001\022\024\n\020TOTAL_TURN_COUNT\020\002\022\026\n\022AVERAGE_TURN_"
+          + "COUNT\020\003\"T\n\005State\022\025\n\021STATE_UNSPECIFIED\020\000\022"
+          + "\t\n\005DRAFT\020\001\022\013\n\007RUNNING\020\002\022\010\n\004DONE\020\003\022\022\n\016ROL"
+          + "LOUT_FAILED\020\004:\226\001\352A\222\001\n$dialogflow.googlea"
           + "pis.com/Experiment\022jprojects/{project}/l"
           + "ocations/{location}/agents/{agent}/envir"
           + "onments/{environment}/experiments/{exper"
@@ -167,83 +184,92 @@ public final class ExperimentProto {
           + " \003(\0132;.google.cloud.dialogflow.cx.v3beta"
           + "1.VersionVariants.Variant\032P\n\007Variant\022\017\n\007"
           + "version\030\001 \001(\t\022\032\n\022traffic_allocation\030\002 \001("
-          + "\002\022\030\n\020is_control_group\030\003 \001(\010\"\237\001\n\017Variants"
-          + "History\022O\n\020version_variants\030\001 \001(\01323.goog"
-          + "le.cloud.dialogflow.cx.v3beta1.VersionVa"
-          + "riantsH\000\022/\n\013update_time\030\002 \001(\0132\032.google.p"
-          + "rotobuf.TimestampB\n\n\010variants\"}\n\026ListExp"
-          + "erimentsRequest\022<\n\006parent\030\001 \001(\tB,\340A\002\372A&\022"
-          + "$dialogflow.googleapis.com/Experiment\022\021\n"
-          + "\tpage_size\030\002 \001(\005\022\022\n\npage_token\030\003 \001(\t\"w\n\027"
-          + "ListExperimentsResponse\022C\n\013experiments\030\001"
-          + " \003(\0132..google.cloud.dialogflow.cx.v3beta"
-          + "1.Experiment\022\027\n\017next_page_token\030\002 \001(\t\"R\n"
-          + "\024GetExperimentRequest\022:\n\004name\030\001 \001(\tB,\340A\002"
-          + "\372A&\n$dialogflow.googleapis.com/Experimen"
-          + "t\"\240\001\n\027CreateExperimentRequest\022<\n\006parent\030"
-          + "\001 \001(\tB,\340A\002\372A&\022$dialogflow.googleapis.com"
-          + "/Experiment\022G\n\nexperiment\030\002 \001(\0132..google"
-          + ".cloud.dialogflow.cx.v3beta1.ExperimentB"
-          + "\003\340A\002\"\230\001\n\027UpdateExperimentRequest\022G\n\nexpe"
-          + "riment\030\001 \001(\0132..google.cloud.dialogflow.c"
-          + "x.v3beta1.ExperimentB\003\340A\002\0224\n\013update_mask"
-          + "\030\002 \001(\0132\032.google.protobuf.FieldMaskB\003\340A\002\""
-          + "U\n\027DeleteExperimentRequest\022:\n\004name\030\001 \001(\t"
-          + "B,\340A\002\372A&\n$dialogflow.googleapis.com/Expe"
-          + "riment\"T\n\026StartExperimentRequest\022:\n\004name"
-          + "\030\001 \001(\tB,\340A\002\372A&\n$dialogflow.googleapis.co"
-          + "m/Experiment\"S\n\025StopExperimentRequest\022:\n"
-          + "\004name\030\001 \001(\tB,\340A\002\372A&\n$dialogflow.googleap"
-          + "is.com/Experiment2\335\r\n\013Experiments\022\351\001\n\017Li"
-          + "stExperiments\022:.google.cloud.dialogflow."
-          + "cx.v3beta1.ListExperimentsRequest\032;.goog"
-          + "le.cloud.dialogflow.cx.v3beta1.ListExper"
-          + "imentsResponse\"]\202\323\344\223\002N\022L/v3beta1/{parent"
-          + "=projects/*/locations/*/agents/*/environ"
-          + "ments/*}/experiments\332A\006parent\022\326\001\n\rGetExp"
-          + "eriment\0228.google.cloud.dialogflow.cx.v3b"
-          + "eta1.GetExperimentRequest\032..google.cloud"
-          + ".dialogflow.cx.v3beta1.Experiment\"[\202\323\344\223\002"
-          + "N\022L/v3beta1/{name=projects/*/locations/*"
-          + "/agents/*/environments/*/experiments/*}\332"
-          + "A\004name\022\365\001\n\020CreateExperiment\022;.google.clo"
-          + "ud.dialogflow.cx.v3beta1.CreateExperimen"
-          + "tRequest\032..google.cloud.dialogflow.cx.v3"
-          + "beta1.Experiment\"t\202\323\344\223\002Z\"L/v3beta1/{pare"
-          + "nt=projects/*/locations/*/agents/*/envir"
-          + "onments/*}/experiments:\nexperiment\332A\021par"
-          + "ent,experiment\022\206\002\n\020UpdateExperiment\022;.go"
-          + "ogle.cloud.dialogflow.cx.v3beta1.UpdateE"
-          + "xperimentRequest\032..google.cloud.dialogfl"
-          + "ow.cx.v3beta1.Experiment\"\204\001\202\323\344\223\002e2W/v3be"
-          + "ta1/{experiment.name=projects/*/location"
-          + "s/*/agents/*/environments/*/experiments/"
-          + "*}:\nexperiment\332A\026experiment,update_mask\022"
-          + "\304\001\n\020DeleteExperiment\022;.google.cloud.dial"
-          + "ogflow.cx.v3beta1.DeleteExperimentReques"
-          + "t\032\026.google.protobuf.Empty\"[\202\323\344\223\002N*L/v3be"
-          + "ta1/{name=projects/*/locations/*/agents/"
-          + "*/environments/*/experiments/*}\332A\004name\022\343"
-          + "\001\n\017StartExperiment\022:.google.cloud.dialog"
-          + "flow.cx.v3beta1.StartExperimentRequest\032."
+          + "\002\022\030\n\020is_control_group\030\003 \001(\010\"\212\002\n\rRolloutC"
+          + "onfig\022T\n\rrollout_steps\030\001 \003(\0132=.google.cl"
+          + "oud.dialogflow.cx.v3beta1.RolloutConfig."
+          + "RolloutStep\022\031\n\021rollout_condition\030\002 \001(\t\022\031"
+          + "\n\021failure_condition\030\003 \001(\t\032m\n\013RolloutStep"
+          + "\022\024\n\014display_name\030\001 \001(\t\022\027\n\017traffic_percen"
+          + "t\030\002 \001(\005\022/\n\014min_duration\030\003 \001(\0132\031.google.p"
+          + "rotobuf.Duration\"`\n\014RolloutState\022\014\n\004step"
+          + "\030\001 \001(\t\022\022\n\nstep_index\030\003 \001(\005\022.\n\nstart_time"
+          + "\030\002 \001(\0132\032.google.protobuf.Timestamp\"\237\001\n\017V"
+          + "ariantsHistory\022O\n\020version_variants\030\001 \001(\013"
+          + "23.google.cloud.dialogflow.cx.v3beta1.Ve"
+          + "rsionVariantsH\000\022/\n\013update_time\030\002 \001(\0132\032.g"
+          + "oogle.protobuf.TimestampB\n\n\010variants\"}\n\026"
+          + "ListExperimentsRequest\022<\n\006parent\030\001 \001(\tB,"
+          + "\340A\002\372A&\022$dialogflow.googleapis.com/Experi"
+          + "ment\022\021\n\tpage_size\030\002 \001(\005\022\022\n\npage_token\030\003 "
+          + "\001(\t\"w\n\027ListExperimentsResponse\022C\n\013experi"
+          + "ments\030\001 \003(\0132..google.cloud.dialogflow.cx"
+          + ".v3beta1.Experiment\022\027\n\017next_page_token\030\002"
+          + " \001(\t\"R\n\024GetExperimentRequest\022:\n\004name\030\001 \001"
+          + "(\tB,\340A\002\372A&\n$dialogflow.googleapis.com/Ex"
+          + "periment\"\240\001\n\027CreateExperimentRequest\022<\n\006"
+          + "parent\030\001 \001(\tB,\340A\002\372A&\022$dialogflow.googlea"
+          + "pis.com/Experiment\022G\n\nexperiment\030\002 \001(\0132."
           + ".google.cloud.dialogflow.cx.v3beta1.Expe"
-          + "riment\"d\202\323\344\223\002W\"R/v3beta1/{name=projects/"
-          + "*/locations/*/agents/*/environments/*/ex"
-          + "periments/*}:start:\001*\332A\004name\022\340\001\n\016StopExp"
-          + "eriment\0229.google.cloud.dialogflow.cx.v3b"
-          + "eta1.StopExperimentRequest\032..google.clou"
-          + "d.dialogflow.cx.v3beta1.Experiment\"c\202\323\344\223"
-          + "\002V\"Q/v3beta1/{name=projects/*/locations/"
-          + "*/agents/*/environments/*/experiments/*}"
-          + ":stop:\001*\332A\004name\032x\312A\031dialogflow.googleapi"
-          + "s.com\322AYhttps://www.googleapis.com/auth/"
-          + "cloud-platform,https://www.googleapis.co"
-          + "m/auth/dialogflowB\256\001\n&com.google.cloud.d"
-          + "ialogflow.cx.v3beta1B\017ExperimentProtoP\001Z"
-          + "Dgoogle.golang.org/genproto/googleapis/c"
-          + "loud/dialogflow/cx/v3beta1;cx\370\001\001\242\002\002DF\252\002\""
-          + "Google.Cloud.Dialogflow.Cx.V3Beta1b\006prot"
-          + "o3"
+          + "rimentB\003\340A\002\"\230\001\n\027UpdateExperimentRequest\022"
+          + "G\n\nexperiment\030\001 \001(\0132..google.cloud.dialo"
+          + "gflow.cx.v3beta1.ExperimentB\003\340A\002\0224\n\013upda"
+          + "te_mask\030\002 \001(\0132\032.google.protobuf.FieldMas"
+          + "kB\003\340A\002\"U\n\027DeleteExperimentRequest\022:\n\004nam"
+          + "e\030\001 \001(\tB,\340A\002\372A&\n$dialogflow.googleapis.c"
+          + "om/Experiment\"T\n\026StartExperimentRequest\022"
+          + ":\n\004name\030\001 \001(\tB,\340A\002\372A&\n$dialogflow.google"
+          + "apis.com/Experiment\"S\n\025StopExperimentReq"
+          + "uest\022:\n\004name\030\001 \001(\tB,\340A\002\372A&\n$dialogflow.g"
+          + "oogleapis.com/Experiment2\335\r\n\013Experiments"
+          + "\022\351\001\n\017ListExperiments\022:.google.cloud.dial"
+          + "ogflow.cx.v3beta1.ListExperimentsRequest"
+          + "\032;.google.cloud.dialogflow.cx.v3beta1.Li"
+          + "stExperimentsResponse\"]\202\323\344\223\002N\022L/v3beta1/"
+          + "{parent=projects/*/locations/*/agents/*/"
+          + "environments/*}/experiments\332A\006parent\022\326\001\n"
+          + "\rGetExperiment\0228.google.cloud.dialogflow"
+          + ".cx.v3beta1.GetExperimentRequest\032..googl"
+          + "e.cloud.dialogflow.cx.v3beta1.Experiment"
+          + "\"[\202\323\344\223\002N\022L/v3beta1/{name=projects/*/loca"
+          + "tions/*/agents/*/environments/*/experime"
+          + "nts/*}\332A\004name\022\365\001\n\020CreateExperiment\022;.goo"
+          + "gle.cloud.dialogflow.cx.v3beta1.CreateEx"
+          + "perimentRequest\032..google.cloud.dialogflo"
+          + "w.cx.v3beta1.Experiment\"t\202\323\344\223\002Z\"L/v3beta"
+          + "1/{parent=projects/*/locations/*/agents/"
+          + "*/environments/*}/experiments:\nexperimen"
+          + "t\332A\021parent,experiment\022\206\002\n\020UpdateExperime"
+          + "nt\022;.google.cloud.dialogflow.cx.v3beta1."
+          + "UpdateExperimentRequest\032..google.cloud.d"
+          + "ialogflow.cx.v3beta1.Experiment\"\204\001\202\323\344\223\002e"
+          + "2W/v3beta1/{experiment.name=projects/*/l"
+          + "ocations/*/agents/*/environments/*/exper"
+          + "iments/*}:\nexperiment\332A\026experiment,updat"
+          + "e_mask\022\304\001\n\020DeleteExperiment\022;.google.clo"
+          + "ud.dialogflow.cx.v3beta1.DeleteExperimen"
+          + "tRequest\032\026.google.protobuf.Empty\"[\202\323\344\223\002N"
+          + "*L/v3beta1/{name=projects/*/locations/*/"
+          + "agents/*/environments/*/experiments/*}\332A"
+          + "\004name\022\343\001\n\017StartExperiment\022:.google.cloud"
+          + ".dialogflow.cx.v3beta1.StartExperimentRe"
+          + "quest\032..google.cloud.dialogflow.cx.v3bet"
+          + "a1.Experiment\"d\202\323\344\223\002W\"R/v3beta1/{name=pr"
+          + "ojects/*/locations/*/agents/*/environmen"
+          + "ts/*/experiments/*}:start:\001*\332A\004name\022\340\001\n\016"
+          + "StopExperiment\0229.google.cloud.dialogflow"
+          + ".cx.v3beta1.StopExperimentRequest\032..goog"
+          + "le.cloud.dialogflow.cx.v3beta1.Experimen"
+          + "t\"c\202\323\344\223\002V\"Q/v3beta1/{name=projects/*/loc"
+          + "ations/*/agents/*/environments/*/experim"
+          + "ents/*}:stop:\001*\332A\004name\032x\312A\031dialogflow.go"
+          + "ogleapis.com\322AYhttps://www.googleapis.co"
+          + "m/auth/cloud-platform,https://www.google"
+          + "apis.com/auth/dialogflowB\256\001\n&com.google."
+          + "cloud.dialogflow.cx.v3beta1B\017ExperimentP"
+          + "rotoP\001ZDgoogle.golang.org/genproto/googl"
+          + "eapis/cloud/dialogflow/cx/v3beta1;cx\370\001\001\242"
+          + "\002\002DF\252\002\"Google.Cloud.Dialogflow.Cx.V3Beta"
+          + "1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -269,6 +295,9 @@ public final class ExperimentProto {
               "Description",
               "State",
               "Definition",
+              "RolloutConfig",
+              "RolloutState",
+              "RolloutFailureReason",
               "Result",
               "CreateTime",
               "StartTime",
@@ -345,8 +374,34 @@ public final class ExperimentProto {
             new java.lang.String[] {
               "Version", "TrafficAllocation", "IsControlGroup",
             });
-    internal_static_google_cloud_dialogflow_cx_v3beta1_VariantsHistory_descriptor =
+    internal_static_google_cloud_dialogflow_cx_v3beta1_RolloutConfig_descriptor =
         getDescriptor().getMessageTypes().get(2);
+    internal_static_google_cloud_dialogflow_cx_v3beta1_RolloutConfig_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_dialogflow_cx_v3beta1_RolloutConfig_descriptor,
+            new java.lang.String[] {
+              "RolloutSteps", "RolloutCondition", "FailureCondition",
+            });
+    internal_static_google_cloud_dialogflow_cx_v3beta1_RolloutConfig_RolloutStep_descriptor =
+        internal_static_google_cloud_dialogflow_cx_v3beta1_RolloutConfig_descriptor
+            .getNestedTypes()
+            .get(0);
+    internal_static_google_cloud_dialogflow_cx_v3beta1_RolloutConfig_RolloutStep_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_dialogflow_cx_v3beta1_RolloutConfig_RolloutStep_descriptor,
+            new java.lang.String[] {
+              "DisplayName", "TrafficPercent", "MinDuration",
+            });
+    internal_static_google_cloud_dialogflow_cx_v3beta1_RolloutState_descriptor =
+        getDescriptor().getMessageTypes().get(3);
+    internal_static_google_cloud_dialogflow_cx_v3beta1_RolloutState_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_dialogflow_cx_v3beta1_RolloutState_descriptor,
+            new java.lang.String[] {
+              "Step", "StepIndex", "StartTime",
+            });
+    internal_static_google_cloud_dialogflow_cx_v3beta1_VariantsHistory_descriptor =
+        getDescriptor().getMessageTypes().get(4);
     internal_static_google_cloud_dialogflow_cx_v3beta1_VariantsHistory_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_dialogflow_cx_v3beta1_VariantsHistory_descriptor,
@@ -354,7 +409,7 @@ public final class ExperimentProto {
               "VersionVariants", "UpdateTime", "Variants",
             });
     internal_static_google_cloud_dialogflow_cx_v3beta1_ListExperimentsRequest_descriptor =
-        getDescriptor().getMessageTypes().get(3);
+        getDescriptor().getMessageTypes().get(5);
     internal_static_google_cloud_dialogflow_cx_v3beta1_ListExperimentsRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_dialogflow_cx_v3beta1_ListExperimentsRequest_descriptor,
@@ -362,7 +417,7 @@ public final class ExperimentProto {
               "Parent", "PageSize", "PageToken",
             });
     internal_static_google_cloud_dialogflow_cx_v3beta1_ListExperimentsResponse_descriptor =
-        getDescriptor().getMessageTypes().get(4);
+        getDescriptor().getMessageTypes().get(6);
     internal_static_google_cloud_dialogflow_cx_v3beta1_ListExperimentsResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_dialogflow_cx_v3beta1_ListExperimentsResponse_descriptor,
@@ -370,7 +425,7 @@ public final class ExperimentProto {
               "Experiments", "NextPageToken",
             });
     internal_static_google_cloud_dialogflow_cx_v3beta1_GetExperimentRequest_descriptor =
-        getDescriptor().getMessageTypes().get(5);
+        getDescriptor().getMessageTypes().get(7);
     internal_static_google_cloud_dialogflow_cx_v3beta1_GetExperimentRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_dialogflow_cx_v3beta1_GetExperimentRequest_descriptor,
@@ -378,7 +433,7 @@ public final class ExperimentProto {
               "Name",
             });
     internal_static_google_cloud_dialogflow_cx_v3beta1_CreateExperimentRequest_descriptor =
-        getDescriptor().getMessageTypes().get(6);
+        getDescriptor().getMessageTypes().get(8);
     internal_static_google_cloud_dialogflow_cx_v3beta1_CreateExperimentRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_dialogflow_cx_v3beta1_CreateExperimentRequest_descriptor,
@@ -386,7 +441,7 @@ public final class ExperimentProto {
               "Parent", "Experiment",
             });
     internal_static_google_cloud_dialogflow_cx_v3beta1_UpdateExperimentRequest_descriptor =
-        getDescriptor().getMessageTypes().get(7);
+        getDescriptor().getMessageTypes().get(9);
     internal_static_google_cloud_dialogflow_cx_v3beta1_UpdateExperimentRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_dialogflow_cx_v3beta1_UpdateExperimentRequest_descriptor,
@@ -394,7 +449,7 @@ public final class ExperimentProto {
               "Experiment", "UpdateMask",
             });
     internal_static_google_cloud_dialogflow_cx_v3beta1_DeleteExperimentRequest_descriptor =
-        getDescriptor().getMessageTypes().get(8);
+        getDescriptor().getMessageTypes().get(10);
     internal_static_google_cloud_dialogflow_cx_v3beta1_DeleteExperimentRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_dialogflow_cx_v3beta1_DeleteExperimentRequest_descriptor,
@@ -402,7 +457,7 @@ public final class ExperimentProto {
               "Name",
             });
     internal_static_google_cloud_dialogflow_cx_v3beta1_StartExperimentRequest_descriptor =
-        getDescriptor().getMessageTypes().get(9);
+        getDescriptor().getMessageTypes().get(11);
     internal_static_google_cloud_dialogflow_cx_v3beta1_StartExperimentRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_dialogflow_cx_v3beta1_StartExperimentRequest_descriptor,
@@ -410,7 +465,7 @@ public final class ExperimentProto {
               "Name",
             });
     internal_static_google_cloud_dialogflow_cx_v3beta1_StopExperimentRequest_descriptor =
-        getDescriptor().getMessageTypes().get(10);
+        getDescriptor().getMessageTypes().get(12);
     internal_static_google_cloud_dialogflow_cx_v3beta1_StopExperimentRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_dialogflow_cx_v3beta1_StopExperimentRequest_descriptor,

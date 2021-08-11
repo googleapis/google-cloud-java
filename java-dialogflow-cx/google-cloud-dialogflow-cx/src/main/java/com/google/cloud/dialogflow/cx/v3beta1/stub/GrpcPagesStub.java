@@ -24,7 +24,6 @@ import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.grpc.GrpcCallSettings;
 import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
-import com.google.api.gax.rpc.RequestParamsExtractor;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.dialogflow.cx.v3beta1.CreatePageRequest;
 import com.google.cloud.dialogflow.cx.v3beta1.DeletePageRequest;
@@ -39,7 +38,6 @@ import com.google.protobuf.Empty;
 import io.grpc.MethodDescriptor;
 import io.grpc.protobuf.ProtoUtils;
 import java.io.IOException;
-import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
@@ -143,65 +141,50 @@ public class GrpcPagesStub extends PagesStub {
         GrpcCallSettings.<ListPagesRequest, ListPagesResponse>newBuilder()
             .setMethodDescriptor(listPagesMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<ListPagesRequest>() {
-                  @Override
-                  public Map<String, String> extract(ListPagesRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("parent", String.valueOf(request.getParent()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("parent", String.valueOf(request.getParent()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<GetPageRequest, Page> getPageTransportSettings =
         GrpcCallSettings.<GetPageRequest, Page>newBuilder()
             .setMethodDescriptor(getPageMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<GetPageRequest>() {
-                  @Override
-                  public Map<String, String> extract(GetPageRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("name", String.valueOf(request.getName()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<CreatePageRequest, Page> createPageTransportSettings =
         GrpcCallSettings.<CreatePageRequest, Page>newBuilder()
             .setMethodDescriptor(createPageMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<CreatePageRequest>() {
-                  @Override
-                  public Map<String, String> extract(CreatePageRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("parent", String.valueOf(request.getParent()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("parent", String.valueOf(request.getParent()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<UpdatePageRequest, Page> updatePageTransportSettings =
         GrpcCallSettings.<UpdatePageRequest, Page>newBuilder()
             .setMethodDescriptor(updatePageMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<UpdatePageRequest>() {
-                  @Override
-                  public Map<String, String> extract(UpdatePageRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("page.name", String.valueOf(request.getPage().getName()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("page.name", String.valueOf(request.getPage().getName()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<DeletePageRequest, Empty> deletePageTransportSettings =
         GrpcCallSettings.<DeletePageRequest, Empty>newBuilder()
             .setMethodDescriptor(deletePageMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<DeletePageRequest>() {
-                  @Override
-                  public Map<String, String> extract(DeletePageRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("name", String.valueOf(request.getName()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  return params.build();
                 })
             .build();
 
@@ -264,7 +247,13 @@ public class GrpcPagesStub extends PagesStub {
 
   @Override
   public final void close() {
-    shutdown();
+    try {
+      backgroundResources.close();
+    } catch (RuntimeException e) {
+      throw e;
+    } catch (Exception e) {
+      throw new IllegalStateException("Failed to close resource", e);
+    }
   }
 
   @Override

@@ -16,7 +16,6 @@
 
 package com.google.cloud.dialogflow.cx.v3beta1;
 
-import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
 import com.google.api.core.BetaApi;
@@ -690,12 +689,7 @@ public class WebhooksClient implements BackgroundResource {
           ListWebhooksPage.createEmptyPage().createPageAsync(context, futureResponse);
       return ApiFutures.transform(
           futurePage,
-          new ApiFunction<ListWebhooksPage, ListWebhooksPagedResponse>() {
-            @Override
-            public ListWebhooksPagedResponse apply(ListWebhooksPage input) {
-              return new ListWebhooksPagedResponse(input);
-            }
-          },
+          input -> new ListWebhooksPagedResponse(input),
           MoreExecutors.directExecutor());
     }
 

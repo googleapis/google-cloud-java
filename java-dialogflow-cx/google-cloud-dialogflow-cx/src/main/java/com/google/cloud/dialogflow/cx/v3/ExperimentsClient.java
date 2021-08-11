@@ -16,7 +16,6 @@
 
 package com.google.cloud.dialogflow.cx.v3;
 
-import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
 import com.google.api.core.BetaApi;
@@ -963,12 +962,7 @@ public class ExperimentsClient implements BackgroundResource {
           ListExperimentsPage.createEmptyPage().createPageAsync(context, futureResponse);
       return ApiFutures.transform(
           futurePage,
-          new ApiFunction<ListExperimentsPage, ListExperimentsPagedResponse>() {
-            @Override
-            public ListExperimentsPagedResponse apply(ListExperimentsPage input) {
-              return new ListExperimentsPagedResponse(input);
-            }
-          },
+          input -> new ListExperimentsPagedResponse(input),
           MoreExecutors.directExecutor());
     }
 

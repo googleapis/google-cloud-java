@@ -178,6 +178,23 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
               enableSpellCorrection_ = input.readBool();
               break;
             }
+          case 178:
+            {
+              com.google.cloud.dialogflow.cx.v3beta1.AdvancedSettings.Builder subBuilder = null;
+              if (advancedSettings_ != null) {
+                subBuilder = advancedSettings_.toBuilder();
+              }
+              advancedSettings_ =
+                  input.readMessage(
+                      com.google.cloud.dialogflow.cx.v3beta1.AdvancedSettings.parser(),
+                      extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(advancedSettings_);
+                advancedSettings_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -777,13 +794,16 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Indicates if stackdriver logging is enabled for the agent.
+   * Please use [agent.advanced_settings][google.cloud.dialogflow.cx.v3beta1.AdvancedSettings.LoggingSettings]
+   * instead.
    * </pre>
    *
-   * <code>bool enable_stackdriver_logging = 18;</code>
+   * <code>bool enable_stackdriver_logging = 18 [deprecated = true];</code>
    *
    * @return The enableStackdriverLogging.
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public boolean getEnableStackdriverLogging() {
     return enableStackdriverLogging_;
   }
@@ -805,6 +825,58 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public boolean getEnableSpellCorrection() {
     return enableSpellCorrection_;
+  }
+
+  public static final int ADVANCED_SETTINGS_FIELD_NUMBER = 22;
+  private com.google.cloud.dialogflow.cx.v3beta1.AdvancedSettings advancedSettings_;
+  /**
+   *
+   *
+   * <pre>
+   * Hierarchical advanced settings for this agent. The settings exposed at the
+   * lower level overrides the settings exposed at the higher level.
+   * </pre>
+   *
+   * <code>.google.cloud.dialogflow.cx.v3beta1.AdvancedSettings advanced_settings = 22;</code>
+   *
+   * @return Whether the advancedSettings field is set.
+   */
+  @java.lang.Override
+  public boolean hasAdvancedSettings() {
+    return advancedSettings_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Hierarchical advanced settings for this agent. The settings exposed at the
+   * lower level overrides the settings exposed at the higher level.
+   * </pre>
+   *
+   * <code>.google.cloud.dialogflow.cx.v3beta1.AdvancedSettings advanced_settings = 22;</code>
+   *
+   * @return The advancedSettings.
+   */
+  @java.lang.Override
+  public com.google.cloud.dialogflow.cx.v3beta1.AdvancedSettings getAdvancedSettings() {
+    return advancedSettings_ == null
+        ? com.google.cloud.dialogflow.cx.v3beta1.AdvancedSettings.getDefaultInstance()
+        : advancedSettings_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Hierarchical advanced settings for this agent. The settings exposed at the
+   * lower level overrides the settings exposed at the higher level.
+   * </pre>
+   *
+   * <code>.google.cloud.dialogflow.cx.v3beta1.AdvancedSettings advanced_settings = 22;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.dialogflow.cx.v3beta1.AdvancedSettingsOrBuilder
+      getAdvancedSettingsOrBuilder() {
+    return getAdvancedSettings();
   }
 
   private byte memoizedIsInitialized = -1;
@@ -858,6 +930,9 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
     if (enableSpellCorrection_ != false) {
       output.writeBool(20, enableSpellCorrection_);
     }
+    if (advancedSettings_ != null) {
+      output.writeMessage(22, getAdvancedSettings());
+    }
     unknownFields.writeTo(output);
   }
 
@@ -909,6 +984,9 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
     if (enableSpellCorrection_ != false) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(20, enableSpellCorrection_);
     }
+    if (advancedSettings_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(22, getAdvancedSettings());
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -941,6 +1019,10 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
     if (!getSecuritySettings().equals(other.getSecuritySettings())) return false;
     if (getEnableStackdriverLogging() != other.getEnableStackdriverLogging()) return false;
     if (getEnableSpellCorrection() != other.getEnableSpellCorrection()) return false;
+    if (hasAdvancedSettings() != other.hasAdvancedSettings()) return false;
+    if (hasAdvancedSettings()) {
+      if (!getAdvancedSettings().equals(other.getAdvancedSettings())) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -980,6 +1062,10 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getEnableStackdriverLogging());
     hash = (37 * hash) + ENABLE_SPELL_CORRECTION_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getEnableSpellCorrection());
+    if (hasAdvancedSettings()) {
+      hash = (37 * hash) + ADVANCED_SETTINGS_FIELD_NUMBER;
+      hash = (53 * hash) + getAdvancedSettings().hashCode();
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -1159,6 +1245,12 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
 
       enableSpellCorrection_ = false;
 
+      if (advancedSettingsBuilder_ == null) {
+        advancedSettings_ = null;
+      } else {
+        advancedSettings_ = null;
+        advancedSettingsBuilder_ = null;
+      }
       return this;
     }
 
@@ -1207,6 +1299,11 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
       result.securitySettings_ = securitySettings_;
       result.enableStackdriverLogging_ = enableStackdriverLogging_;
       result.enableSpellCorrection_ = enableSpellCorrection_;
+      if (advancedSettingsBuilder_ == null) {
+        result.advancedSettings_ = advancedSettings_;
+      } else {
+        result.advancedSettings_ = advancedSettingsBuilder_.build();
+      }
       onBuilt();
       return result;
     }
@@ -1306,6 +1403,9 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.getEnableSpellCorrection() != false) {
         setEnableSpellCorrection(other.getEnableSpellCorrection());
+      }
+      if (other.hasAdvancedSettings()) {
+        mergeAdvancedSettings(other.getAdvancedSettings());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -2685,13 +2785,16 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Indicates if stackdriver logging is enabled for the agent.
+     * Please use [agent.advanced_settings][google.cloud.dialogflow.cx.v3beta1.AdvancedSettings.LoggingSettings]
+     * instead.
      * </pre>
      *
-     * <code>bool enable_stackdriver_logging = 18;</code>
+     * <code>bool enable_stackdriver_logging = 18 [deprecated = true];</code>
      *
      * @return The enableStackdriverLogging.
      */
     @java.lang.Override
+    @java.lang.Deprecated
     public boolean getEnableStackdriverLogging() {
       return enableStackdriverLogging_;
     }
@@ -2700,13 +2803,16 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Indicates if stackdriver logging is enabled for the agent.
+     * Please use [agent.advanced_settings][google.cloud.dialogflow.cx.v3beta1.AdvancedSettings.LoggingSettings]
+     * instead.
      * </pre>
      *
-     * <code>bool enable_stackdriver_logging = 18;</code>
+     * <code>bool enable_stackdriver_logging = 18 [deprecated = true];</code>
      *
      * @param value The enableStackdriverLogging to set.
      * @return This builder for chaining.
      */
+    @java.lang.Deprecated
     public Builder setEnableStackdriverLogging(boolean value) {
 
       enableStackdriverLogging_ = value;
@@ -2718,12 +2824,15 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Indicates if stackdriver logging is enabled for the agent.
+     * Please use [agent.advanced_settings][google.cloud.dialogflow.cx.v3beta1.AdvancedSettings.LoggingSettings]
+     * instead.
      * </pre>
      *
-     * <code>bool enable_stackdriver_logging = 18;</code>
+     * <code>bool enable_stackdriver_logging = 18 [deprecated = true];</code>
      *
      * @return This builder for chaining.
      */
+    @java.lang.Deprecated
     public Builder clearEnableStackdriverLogging() {
 
       enableStackdriverLogging_ = false;
@@ -2784,6 +2893,205 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
       enableSpellCorrection_ = false;
       onChanged();
       return this;
+    }
+
+    private com.google.cloud.dialogflow.cx.v3beta1.AdvancedSettings advancedSettings_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.dialogflow.cx.v3beta1.AdvancedSettings,
+            com.google.cloud.dialogflow.cx.v3beta1.AdvancedSettings.Builder,
+            com.google.cloud.dialogflow.cx.v3beta1.AdvancedSettingsOrBuilder>
+        advancedSettingsBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Hierarchical advanced settings for this agent. The settings exposed at the
+     * lower level overrides the settings exposed at the higher level.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.cx.v3beta1.AdvancedSettings advanced_settings = 22;</code>
+     *
+     * @return Whether the advancedSettings field is set.
+     */
+    public boolean hasAdvancedSettings() {
+      return advancedSettingsBuilder_ != null || advancedSettings_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Hierarchical advanced settings for this agent. The settings exposed at the
+     * lower level overrides the settings exposed at the higher level.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.cx.v3beta1.AdvancedSettings advanced_settings = 22;</code>
+     *
+     * @return The advancedSettings.
+     */
+    public com.google.cloud.dialogflow.cx.v3beta1.AdvancedSettings getAdvancedSettings() {
+      if (advancedSettingsBuilder_ == null) {
+        return advancedSettings_ == null
+            ? com.google.cloud.dialogflow.cx.v3beta1.AdvancedSettings.getDefaultInstance()
+            : advancedSettings_;
+      } else {
+        return advancedSettingsBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Hierarchical advanced settings for this agent. The settings exposed at the
+     * lower level overrides the settings exposed at the higher level.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.cx.v3beta1.AdvancedSettings advanced_settings = 22;</code>
+     */
+    public Builder setAdvancedSettings(
+        com.google.cloud.dialogflow.cx.v3beta1.AdvancedSettings value) {
+      if (advancedSettingsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        advancedSettings_ = value;
+        onChanged();
+      } else {
+        advancedSettingsBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Hierarchical advanced settings for this agent. The settings exposed at the
+     * lower level overrides the settings exposed at the higher level.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.cx.v3beta1.AdvancedSettings advanced_settings = 22;</code>
+     */
+    public Builder setAdvancedSettings(
+        com.google.cloud.dialogflow.cx.v3beta1.AdvancedSettings.Builder builderForValue) {
+      if (advancedSettingsBuilder_ == null) {
+        advancedSettings_ = builderForValue.build();
+        onChanged();
+      } else {
+        advancedSettingsBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Hierarchical advanced settings for this agent. The settings exposed at the
+     * lower level overrides the settings exposed at the higher level.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.cx.v3beta1.AdvancedSettings advanced_settings = 22;</code>
+     */
+    public Builder mergeAdvancedSettings(
+        com.google.cloud.dialogflow.cx.v3beta1.AdvancedSettings value) {
+      if (advancedSettingsBuilder_ == null) {
+        if (advancedSettings_ != null) {
+          advancedSettings_ =
+              com.google.cloud.dialogflow.cx.v3beta1.AdvancedSettings.newBuilder(advancedSettings_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          advancedSettings_ = value;
+        }
+        onChanged();
+      } else {
+        advancedSettingsBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Hierarchical advanced settings for this agent. The settings exposed at the
+     * lower level overrides the settings exposed at the higher level.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.cx.v3beta1.AdvancedSettings advanced_settings = 22;</code>
+     */
+    public Builder clearAdvancedSettings() {
+      if (advancedSettingsBuilder_ == null) {
+        advancedSettings_ = null;
+        onChanged();
+      } else {
+        advancedSettings_ = null;
+        advancedSettingsBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Hierarchical advanced settings for this agent. The settings exposed at the
+     * lower level overrides the settings exposed at the higher level.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.cx.v3beta1.AdvancedSettings advanced_settings = 22;</code>
+     */
+    public com.google.cloud.dialogflow.cx.v3beta1.AdvancedSettings.Builder
+        getAdvancedSettingsBuilder() {
+
+      onChanged();
+      return getAdvancedSettingsFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Hierarchical advanced settings for this agent. The settings exposed at the
+     * lower level overrides the settings exposed at the higher level.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.cx.v3beta1.AdvancedSettings advanced_settings = 22;</code>
+     */
+    public com.google.cloud.dialogflow.cx.v3beta1.AdvancedSettingsOrBuilder
+        getAdvancedSettingsOrBuilder() {
+      if (advancedSettingsBuilder_ != null) {
+        return advancedSettingsBuilder_.getMessageOrBuilder();
+      } else {
+        return advancedSettings_ == null
+            ? com.google.cloud.dialogflow.cx.v3beta1.AdvancedSettings.getDefaultInstance()
+            : advancedSettings_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Hierarchical advanced settings for this agent. The settings exposed at the
+     * lower level overrides the settings exposed at the higher level.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.cx.v3beta1.AdvancedSettings advanced_settings = 22;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.dialogflow.cx.v3beta1.AdvancedSettings,
+            com.google.cloud.dialogflow.cx.v3beta1.AdvancedSettings.Builder,
+            com.google.cloud.dialogflow.cx.v3beta1.AdvancedSettingsOrBuilder>
+        getAdvancedSettingsFieldBuilder() {
+      if (advancedSettingsBuilder_ == null) {
+        advancedSettingsBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.dialogflow.cx.v3beta1.AdvancedSettings,
+                com.google.cloud.dialogflow.cx.v3beta1.AdvancedSettings.Builder,
+                com.google.cloud.dialogflow.cx.v3beta1.AdvancedSettingsOrBuilder>(
+                getAdvancedSettings(), getParentForChildren(), isClean());
+        advancedSettings_ = null;
+      }
+      return advancedSettingsBuilder_;
     }
 
     @java.lang.Override

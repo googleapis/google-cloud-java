@@ -16,7 +16,6 @@
 
 package com.google.cloud.dialogflow.cx.v3;
 
-import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
 import com.google.api.core.BetaApi;
@@ -892,12 +891,7 @@ public class VersionsClient implements BackgroundResource {
           ListVersionsPage.createEmptyPage().createPageAsync(context, futureResponse);
       return ApiFutures.transform(
           futurePage,
-          new ApiFunction<ListVersionsPage, ListVersionsPagedResponse>() {
-            @Override
-            public ListVersionsPagedResponse apply(ListVersionsPage input) {
-              return new ListVersionsPagedResponse(input);
-            }
-          },
+          input -> new ListVersionsPagedResponse(input),
           MoreExecutors.directExecutor());
     }
 

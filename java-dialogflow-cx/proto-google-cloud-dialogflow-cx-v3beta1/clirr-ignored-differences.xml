@@ -16,4 +16,9 @@
     <className>com/google/cloud/dialogflow/cx/v3beta1/*OrBuilder</className>
     <method>boolean has*(*)</method>
   </difference>
+
+  <difference>
+    <differenceType>8001</differenceType>
+    <className>com/google/cloud/dialogflow/cx/v3beta1/Service*</className>
+  </difference>
 </differences>

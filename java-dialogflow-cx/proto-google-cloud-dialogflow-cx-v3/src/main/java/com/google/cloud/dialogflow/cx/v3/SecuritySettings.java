@@ -45,6 +45,7 @@ public final class SecuritySettings extends com.google.protobuf.GeneratedMessage
     redactionStrategy_ = 0;
     redactionScope_ = 0;
     inspectTemplate_ = "";
+    deidentifyTemplate_ = "";
     purgeDataTypes_ = java.util.Collections.emptyList();
   }
 
@@ -142,6 +143,32 @@ public final class SecuritySettings extends com.google.protobuf.GeneratedMessage
               java.lang.String s = input.readStringRequireUtf8();
 
               inspectTemplate_ = s;
+              break;
+            }
+          case 106:
+            {
+              com.google.cloud.dialogflow.cx.v3.SecuritySettings.InsightsExportSettings.Builder
+                  subBuilder = null;
+              if (insightsExportSettings_ != null) {
+                subBuilder = insightsExportSettings_.toBuilder();
+              }
+              insightsExportSettings_ =
+                  input.readMessage(
+                      com.google.cloud.dialogflow.cx.v3.SecuritySettings.InsightsExportSettings
+                          .parser(),
+                      extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(insightsExportSettings_);
+                insightsExportSettings_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+          case 138:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              deidentifyTemplate_ = s;
               break;
             }
           default:
@@ -601,6 +628,588 @@ public final class SecuritySettings extends com.google.protobuf.GeneratedMessage
     // @@protoc_insertion_point(enum_scope:google.cloud.dialogflow.cx.v3.SecuritySettings.PurgeDataType)
   }
 
+  public interface InsightsExportSettingsOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.cloud.dialogflow.cx.v3.SecuritySettings.InsightsExportSettings)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * If enabled, we will automatically exports
+     * conversations to Insights and Insights runs its analyzers.
+     * </pre>
+     *
+     * <code>bool enable_insights_export = 1;</code>
+     *
+     * @return The enableInsightsExport.
+     */
+    boolean getEnableInsightsExport();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Settings for exporting conversations to
+   * [Insights](https://cloud.google.com/dialogflow/priv/docs/insights).
+   * </pre>
+   *
+   * Protobuf type {@code google.cloud.dialogflow.cx.v3.SecuritySettings.InsightsExportSettings}
+   */
+  public static final class InsightsExportSettings extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.cloud.dialogflow.cx.v3.SecuritySettings.InsightsExportSettings)
+      InsightsExportSettingsOrBuilder {
+    private static final long serialVersionUID = 0L;
+    // Use InsightsExportSettings.newBuilder() to construct.
+    private InsightsExportSettings(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private InsightsExportSettings() {}
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new InsightsExportSettings();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+      return this.unknownFields;
+    }
+
+    private InsightsExportSettings(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 8:
+              {
+                enableInsightsExport_ = input.readBool();
+                break;
+              }
+            default:
+              {
+                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
+                  done = true;
+                }
+                break;
+              }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.dialogflow.cx.v3.SecuritySettingsProto
+          .internal_static_google_cloud_dialogflow_cx_v3_SecuritySettings_InsightsExportSettings_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.cloud.dialogflow.cx.v3.SecuritySettingsProto
+          .internal_static_google_cloud_dialogflow_cx_v3_SecuritySettings_InsightsExportSettings_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.dialogflow.cx.v3.SecuritySettings.InsightsExportSettings.class,
+              com.google.cloud.dialogflow.cx.v3.SecuritySettings.InsightsExportSettings.Builder
+                  .class);
+    }
+
+    public static final int ENABLE_INSIGHTS_EXPORT_FIELD_NUMBER = 1;
+    private boolean enableInsightsExport_;
+    /**
+     *
+     *
+     * <pre>
+     * If enabled, we will automatically exports
+     * conversations to Insights and Insights runs its analyzers.
+     * </pre>
+     *
+     * <code>bool enable_insights_export = 1;</code>
+     *
+     * @return The enableInsightsExport.
+     */
+    @java.lang.Override
+    public boolean getEnableInsightsExport() {
+      return enableInsightsExport_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (enableInsightsExport_ != false) {
+        output.writeBool(1, enableInsightsExport_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (enableInsightsExport_ != false) {
+        size += com.google.protobuf.CodedOutputStream.computeBoolSize(1, enableInsightsExport_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj
+          instanceof com.google.cloud.dialogflow.cx.v3.SecuritySettings.InsightsExportSettings)) {
+        return super.equals(obj);
+      }
+      com.google.cloud.dialogflow.cx.v3.SecuritySettings.InsightsExportSettings other =
+          (com.google.cloud.dialogflow.cx.v3.SecuritySettings.InsightsExportSettings) obj;
+
+      if (getEnableInsightsExport() != other.getEnableInsightsExport()) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + ENABLE_INSIGHTS_EXPORT_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getEnableInsightsExport());
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.cloud.dialogflow.cx.v3.SecuritySettings.InsightsExportSettings
+        parseFrom(java.nio.ByteBuffer data)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.dialogflow.cx.v3.SecuritySettings.InsightsExportSettings
+        parseFrom(
+            java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.dialogflow.cx.v3.SecuritySettings.InsightsExportSettings
+        parseFrom(com.google.protobuf.ByteString data)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.dialogflow.cx.v3.SecuritySettings.InsightsExportSettings
+        parseFrom(
+            com.google.protobuf.ByteString data,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.dialogflow.cx.v3.SecuritySettings.InsightsExportSettings
+        parseFrom(byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.dialogflow.cx.v3.SecuritySettings.InsightsExportSettings
+        parseFrom(byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.dialogflow.cx.v3.SecuritySettings.InsightsExportSettings
+        parseFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.dialogflow.cx.v3.SecuritySettings.InsightsExportSettings
+        parseFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.dialogflow.cx.v3.SecuritySettings.InsightsExportSettings
+        parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.dialogflow.cx.v3.SecuritySettings.InsightsExportSettings
+        parseDelimitedFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.dialogflow.cx.v3.SecuritySettings.InsightsExportSettings
+        parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.dialogflow.cx.v3.SecuritySettings.InsightsExportSettings
+        parseFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.cloud.dialogflow.cx.v3.SecuritySettings.InsightsExportSettings prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Settings for exporting conversations to
+     * [Insights](https://cloud.google.com/dialogflow/priv/docs/insights).
+     * </pre>
+     *
+     * Protobuf type {@code google.cloud.dialogflow.cx.v3.SecuritySettings.InsightsExportSettings}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.cloud.dialogflow.cx.v3.SecuritySettings.InsightsExportSettings)
+        com.google.cloud.dialogflow.cx.v3.SecuritySettings.InsightsExportSettingsOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.dialogflow.cx.v3.SecuritySettingsProto
+            .internal_static_google_cloud_dialogflow_cx_v3_SecuritySettings_InsightsExportSettings_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.dialogflow.cx.v3.SecuritySettingsProto
+            .internal_static_google_cloud_dialogflow_cx_v3_SecuritySettings_InsightsExportSettings_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.dialogflow.cx.v3.SecuritySettings.InsightsExportSettings.class,
+                com.google.cloud.dialogflow.cx.v3.SecuritySettings.InsightsExportSettings.Builder
+                    .class);
+      }
+
+      // Construct using
+      // com.google.cloud.dialogflow.cx.v3.SecuritySettings.InsightsExportSettings.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        enableInsightsExport_ = false;
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.dialogflow.cx.v3.SecuritySettingsProto
+            .internal_static_google_cloud_dialogflow_cx_v3_SecuritySettings_InsightsExportSettings_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.dialogflow.cx.v3.SecuritySettings.InsightsExportSettings
+          getDefaultInstanceForType() {
+        return com.google.cloud.dialogflow.cx.v3.SecuritySettings.InsightsExportSettings
+            .getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.cloud.dialogflow.cx.v3.SecuritySettings.InsightsExportSettings build() {
+        com.google.cloud.dialogflow.cx.v3.SecuritySettings.InsightsExportSettings result =
+            buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.dialogflow.cx.v3.SecuritySettings.InsightsExportSettings
+          buildPartial() {
+        com.google.cloud.dialogflow.cx.v3.SecuritySettings.InsightsExportSettings result =
+            new com.google.cloud.dialogflow.cx.v3.SecuritySettings.InsightsExportSettings(this);
+        result.enableInsightsExport_ = enableInsightsExport_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other
+            instanceof com.google.cloud.dialogflow.cx.v3.SecuritySettings.InsightsExportSettings) {
+          return mergeFrom(
+              (com.google.cloud.dialogflow.cx.v3.SecuritySettings.InsightsExportSettings) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(
+          com.google.cloud.dialogflow.cx.v3.SecuritySettings.InsightsExportSettings other) {
+        if (other
+            == com.google.cloud.dialogflow.cx.v3.SecuritySettings.InsightsExportSettings
+                .getDefaultInstance()) return this;
+        if (other.getEnableInsightsExport() != false) {
+          setEnableInsightsExport(other.getEnableInsightsExport());
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.google.cloud.dialogflow.cx.v3.SecuritySettings.InsightsExportSettings parsedMessage =
+            null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage =
+              (com.google.cloud.dialogflow.cx.v3.SecuritySettings.InsightsExportSettings)
+                  e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private boolean enableInsightsExport_;
+      /**
+       *
+       *
+       * <pre>
+       * If enabled, we will automatically exports
+       * conversations to Insights and Insights runs its analyzers.
+       * </pre>
+       *
+       * <code>bool enable_insights_export = 1;</code>
+       *
+       * @return The enableInsightsExport.
+       */
+      @java.lang.Override
+      public boolean getEnableInsightsExport() {
+        return enableInsightsExport_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * If enabled, we will automatically exports
+       * conversations to Insights and Insights runs its analyzers.
+       * </pre>
+       *
+       * <code>bool enable_insights_export = 1;</code>
+       *
+       * @param value The enableInsightsExport to set.
+       * @return This builder for chaining.
+       */
+      public Builder setEnableInsightsExport(boolean value) {
+
+        enableInsightsExport_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * If enabled, we will automatically exports
+       * conversations to Insights and Insights runs its analyzers.
+       * </pre>
+       *
+       * <code>bool enable_insights_export = 1;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearEnableInsightsExport() {
+
+        enableInsightsExport_ = false;
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.cloud.dialogflow.cx.v3.SecuritySettings.InsightsExportSettings)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.cloud.dialogflow.cx.v3.SecuritySettings.InsightsExportSettings)
+    private static final com.google.cloud.dialogflow.cx.v3.SecuritySettings.InsightsExportSettings
+        DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE =
+          new com.google.cloud.dialogflow.cx.v3.SecuritySettings.InsightsExportSettings();
+    }
+
+    public static com.google.cloud.dialogflow.cx.v3.SecuritySettings.InsightsExportSettings
+        getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<InsightsExportSettings> PARSER =
+        new com.google.protobuf.AbstractParser<InsightsExportSettings>() {
+          @java.lang.Override
+          public InsightsExportSettings parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            return new InsightsExportSettings(input, extensionRegistry);
+          }
+        };
+
+    public static com.google.protobuf.Parser<InsightsExportSettings> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<InsightsExportSettings> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.cloud.dialogflow.cx.v3.SecuritySettings.InsightsExportSettings
+        getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
   private int dataRetentionCase_ = 0;
   private java.lang.Object dataRetention_;
 
@@ -841,17 +1450,18 @@ public final class SecuritySettings extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * DLP inspect template name. Use this template to define inspect base
-   * settings.
+   * [DLP](https://cloud.google.com/dlp/docs) inspect template name. Use this
+   * template to define inspect base settings.
    * If empty, we use the default DLP inspect config.
    * The template name will have one of the following formats:
-   * `projects/&lt;Project ID&gt;/inspectTemplates/&lt;Template ID&gt;` OR
    * `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/inspectTemplates/&lt;Template
-   * ID&gt;` OR
-   * `organizations/&lt;Organization ID&gt;/inspectTemplates/&lt;Template ID&gt;`
+   * ID&gt;` OR `organizations/&lt;Organization ID&gt;/locations/&lt;Location
+   * ID&gt;/inspectTemplates/&lt;Template ID&gt;`
+   * Note: `inspect_template` must be located in the same region as the
+   * `SecuritySettings`.
    * </pre>
    *
-   * <code>string inspect_template = 9;</code>
+   * <code>string inspect_template = 9 [(.google.api.resource_reference) = { ... }</code>
    *
    * @return The inspectTemplate.
    */
@@ -871,17 +1481,18 @@ public final class SecuritySettings extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * DLP inspect template name. Use this template to define inspect base
-   * settings.
+   * [DLP](https://cloud.google.com/dlp/docs) inspect template name. Use this
+   * template to define inspect base settings.
    * If empty, we use the default DLP inspect config.
    * The template name will have one of the following formats:
-   * `projects/&lt;Project ID&gt;/inspectTemplates/&lt;Template ID&gt;` OR
    * `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/inspectTemplates/&lt;Template
-   * ID&gt;` OR
-   * `organizations/&lt;Organization ID&gt;/inspectTemplates/&lt;Template ID&gt;`
+   * ID&gt;` OR `organizations/&lt;Organization ID&gt;/locations/&lt;Location
+   * ID&gt;/inspectTemplates/&lt;Template ID&gt;`
+   * Note: `inspect_template` must be located in the same region as the
+   * `SecuritySettings`.
    * </pre>
    *
-   * <code>string inspect_template = 9;</code>
+   * <code>string inspect_template = 9 [(.google.api.resource_reference) = { ... }</code>
    *
    * @return The bytes for inspectTemplate.
    */
@@ -892,6 +1503,71 @@ public final class SecuritySettings extends com.google.protobuf.GeneratedMessage
       com.google.protobuf.ByteString b =
           com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       inspectTemplate_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int DEIDENTIFY_TEMPLATE_FIELD_NUMBER = 17;
+  private volatile java.lang.Object deidentifyTemplate_;
+  /**
+   *
+   *
+   * <pre>
+   * [DLP](https://cloud.google.com/dlp/docs) deidentify template name. Use this
+   * template to define de-identification configuration for the content.
+   * If empty, Dialogflow replaces sensitive info with `[redacted]` text.
+   * The template name will have one of the following formats:
+   * `projects/&lt;Project ID&gt;/locations/&lt;Location
+   * ID&gt;/deidentifyTemplates/&lt;Template ID&gt;` OR `organizations/&lt;Organization
+   * ID&gt;/locations/&lt;Location ID&gt;/deidentifyTemplates/&lt;Template ID&gt;`
+   * Note: `deidentify_template` must be located in the same region as the
+   * `SecuritySettings`.
+   * </pre>
+   *
+   * <code>string deidentify_template = 17 [(.google.api.resource_reference) = { ... }</code>
+   *
+   * @return The deidentifyTemplate.
+   */
+  @java.lang.Override
+  public java.lang.String getDeidentifyTemplate() {
+    java.lang.Object ref = deidentifyTemplate_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      deidentifyTemplate_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * [DLP](https://cloud.google.com/dlp/docs) deidentify template name. Use this
+   * template to define de-identification configuration for the content.
+   * If empty, Dialogflow replaces sensitive info with `[redacted]` text.
+   * The template name will have one of the following formats:
+   * `projects/&lt;Project ID&gt;/locations/&lt;Location
+   * ID&gt;/deidentifyTemplates/&lt;Template ID&gt;` OR `organizations/&lt;Organization
+   * ID&gt;/locations/&lt;Location ID&gt;/deidentifyTemplates/&lt;Template ID&gt;`
+   * Note: `deidentify_template` must be located in the same region as the
+   * `SecuritySettings`.
+   * </pre>
+   *
+   * <code>string deidentify_template = 17 [(.google.api.resource_reference) = { ... }</code>
+   *
+   * @return The bytes for deidentifyTemplate.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getDeidentifyTemplateBytes() {
+    java.lang.Object ref = deidentifyTemplate_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      deidentifyTemplate_ = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -1061,6 +1737,73 @@ public final class SecuritySettings extends com.google.protobuf.GeneratedMessage
 
   private int purgeDataTypesMemoizedSerializedSize;
 
+  public static final int INSIGHTS_EXPORT_SETTINGS_FIELD_NUMBER = 13;
+  private com.google.cloud.dialogflow.cx.v3.SecuritySettings.InsightsExportSettings
+      insightsExportSettings_;
+  /**
+   *
+   *
+   * <pre>
+   * Controls conversation exporting settings to Insights after conversation is
+   * completed.
+   * If [retention_strategy][google.cloud.dialogflow.cx.v3.SecuritySettings.retention_strategy] is set to REMOVE_AFTER_CONVERSATION,
+   * Insights export is disabled no matter what you configure here.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.cx.v3.SecuritySettings.InsightsExportSettings insights_export_settings = 13;
+   * </code>
+   *
+   * @return Whether the insightsExportSettings field is set.
+   */
+  @java.lang.Override
+  public boolean hasInsightsExportSettings() {
+    return insightsExportSettings_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Controls conversation exporting settings to Insights after conversation is
+   * completed.
+   * If [retention_strategy][google.cloud.dialogflow.cx.v3.SecuritySettings.retention_strategy] is set to REMOVE_AFTER_CONVERSATION,
+   * Insights export is disabled no matter what you configure here.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.cx.v3.SecuritySettings.InsightsExportSettings insights_export_settings = 13;
+   * </code>
+   *
+   * @return The insightsExportSettings.
+   */
+  @java.lang.Override
+  public com.google.cloud.dialogflow.cx.v3.SecuritySettings.InsightsExportSettings
+      getInsightsExportSettings() {
+    return insightsExportSettings_ == null
+        ? com.google.cloud.dialogflow.cx.v3.SecuritySettings.InsightsExportSettings
+            .getDefaultInstance()
+        : insightsExportSettings_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Controls conversation exporting settings to Insights after conversation is
+   * completed.
+   * If [retention_strategy][google.cloud.dialogflow.cx.v3.SecuritySettings.retention_strategy] is set to REMOVE_AFTER_CONVERSATION,
+   * Insights export is disabled no matter what you configure here.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.cx.v3.SecuritySettings.InsightsExportSettings insights_export_settings = 13;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.dialogflow.cx.v3.SecuritySettings.InsightsExportSettingsOrBuilder
+      getInsightsExportSettingsOrBuilder() {
+    return getInsightsExportSettings();
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -1106,6 +1849,12 @@ public final class SecuritySettings extends com.google.protobuf.GeneratedMessage
     }
     if (!getInspectTemplateBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 9, inspectTemplate_);
+    }
+    if (insightsExportSettings_ != null) {
+      output.writeMessage(13, getInsightsExportSettings());
+    }
+    if (!getDeidentifyTemplateBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 17, deidentifyTemplate_);
     }
     unknownFields.writeTo(output);
   }
@@ -1155,6 +1904,13 @@ public final class SecuritySettings extends com.google.protobuf.GeneratedMessage
     if (!getInspectTemplateBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(9, inspectTemplate_);
     }
+    if (insightsExportSettings_ != null) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(13, getInsightsExportSettings());
+    }
+    if (!getDeidentifyTemplateBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(17, deidentifyTemplate_);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1176,7 +1932,12 @@ public final class SecuritySettings extends com.google.protobuf.GeneratedMessage
     if (redactionStrategy_ != other.redactionStrategy_) return false;
     if (redactionScope_ != other.redactionScope_) return false;
     if (!getInspectTemplate().equals(other.getInspectTemplate())) return false;
+    if (!getDeidentifyTemplate().equals(other.getDeidentifyTemplate())) return false;
     if (!purgeDataTypes_.equals(other.purgeDataTypes_)) return false;
+    if (hasInsightsExportSettings() != other.hasInsightsExportSettings()) return false;
+    if (hasInsightsExportSettings()) {
+      if (!getInsightsExportSettings().equals(other.getInsightsExportSettings())) return false;
+    }
     if (!getDataRetentionCase().equals(other.getDataRetentionCase())) return false;
     switch (dataRetentionCase_) {
       case 6:
@@ -1206,9 +1967,15 @@ public final class SecuritySettings extends com.google.protobuf.GeneratedMessage
     hash = (53 * hash) + redactionScope_;
     hash = (37 * hash) + INSPECT_TEMPLATE_FIELD_NUMBER;
     hash = (53 * hash) + getInspectTemplate().hashCode();
+    hash = (37 * hash) + DEIDENTIFY_TEMPLATE_FIELD_NUMBER;
+    hash = (53 * hash) + getDeidentifyTemplate().hashCode();
     if (getPurgeDataTypesCount() > 0) {
       hash = (37 * hash) + PURGE_DATA_TYPES_FIELD_NUMBER;
       hash = (53 * hash) + purgeDataTypes_.hashCode();
+    }
+    if (hasInsightsExportSettings()) {
+      hash = (37 * hash) + INSIGHTS_EXPORT_SETTINGS_FIELD_NUMBER;
+      hash = (53 * hash) + getInsightsExportSettings().hashCode();
     }
     switch (dataRetentionCase_) {
       case 6:
@@ -1375,8 +2142,16 @@ public final class SecuritySettings extends com.google.protobuf.GeneratedMessage
 
       inspectTemplate_ = "";
 
+      deidentifyTemplate_ = "";
+
       purgeDataTypes_ = java.util.Collections.emptyList();
       bitField0_ = (bitField0_ & ~0x00000001);
+      if (insightsExportSettingsBuilder_ == null) {
+        insightsExportSettings_ = null;
+      } else {
+        insightsExportSettings_ = null;
+        insightsExportSettingsBuilder_ = null;
+      }
       dataRetentionCase_ = 0;
       dataRetention_ = null;
       return this;
@@ -1412,6 +2187,7 @@ public final class SecuritySettings extends com.google.protobuf.GeneratedMessage
       result.redactionStrategy_ = redactionStrategy_;
       result.redactionScope_ = redactionScope_;
       result.inspectTemplate_ = inspectTemplate_;
+      result.deidentifyTemplate_ = deidentifyTemplate_;
       if (dataRetentionCase_ == 6) {
         result.dataRetention_ = dataRetention_;
       }
@@ -1420,6 +2196,11 @@ public final class SecuritySettings extends com.google.protobuf.GeneratedMessage
         bitField0_ = (bitField0_ & ~0x00000001);
       }
       result.purgeDataTypes_ = purgeDataTypes_;
+      if (insightsExportSettingsBuilder_ == null) {
+        result.insightsExportSettings_ = insightsExportSettings_;
+      } else {
+        result.insightsExportSettings_ = insightsExportSettingsBuilder_.build();
+      }
       result.dataRetentionCase_ = dataRetentionCase_;
       onBuilt();
       return result;
@@ -1489,6 +2270,10 @@ public final class SecuritySettings extends com.google.protobuf.GeneratedMessage
         inspectTemplate_ = other.inspectTemplate_;
         onChanged();
       }
+      if (!other.getDeidentifyTemplate().isEmpty()) {
+        deidentifyTemplate_ = other.deidentifyTemplate_;
+        onChanged();
+      }
       if (!other.purgeDataTypes_.isEmpty()) {
         if (purgeDataTypes_.isEmpty()) {
           purgeDataTypes_ = other.purgeDataTypes_;
@@ -1498,6 +2283,9 @@ public final class SecuritySettings extends com.google.protobuf.GeneratedMessage
           purgeDataTypes_.addAll(other.purgeDataTypes_);
         }
         onChanged();
+      }
+      if (other.hasInsightsExportSettings()) {
+        mergeInsightsExportSettings(other.getInsightsExportSettings());
       }
       switch (other.getDataRetentionCase()) {
         case RETENTION_WINDOW_DAYS:
@@ -2004,17 +2792,18 @@ public final class SecuritySettings extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * DLP inspect template name. Use this template to define inspect base
-     * settings.
+     * [DLP](https://cloud.google.com/dlp/docs) inspect template name. Use this
+     * template to define inspect base settings.
      * If empty, we use the default DLP inspect config.
      * The template name will have one of the following formats:
-     * `projects/&lt;Project ID&gt;/inspectTemplates/&lt;Template ID&gt;` OR
      * `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/inspectTemplates/&lt;Template
-     * ID&gt;` OR
-     * `organizations/&lt;Organization ID&gt;/inspectTemplates/&lt;Template ID&gt;`
+     * ID&gt;` OR `organizations/&lt;Organization ID&gt;/locations/&lt;Location
+     * ID&gt;/inspectTemplates/&lt;Template ID&gt;`
+     * Note: `inspect_template` must be located in the same region as the
+     * `SecuritySettings`.
      * </pre>
      *
-     * <code>string inspect_template = 9;</code>
+     * <code>string inspect_template = 9 [(.google.api.resource_reference) = { ... }</code>
      *
      * @return The inspectTemplate.
      */
@@ -2033,17 +2822,18 @@ public final class SecuritySettings extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * DLP inspect template name. Use this template to define inspect base
-     * settings.
+     * [DLP](https://cloud.google.com/dlp/docs) inspect template name. Use this
+     * template to define inspect base settings.
      * If empty, we use the default DLP inspect config.
      * The template name will have one of the following formats:
-     * `projects/&lt;Project ID&gt;/inspectTemplates/&lt;Template ID&gt;` OR
      * `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/inspectTemplates/&lt;Template
-     * ID&gt;` OR
-     * `organizations/&lt;Organization ID&gt;/inspectTemplates/&lt;Template ID&gt;`
+     * ID&gt;` OR `organizations/&lt;Organization ID&gt;/locations/&lt;Location
+     * ID&gt;/inspectTemplates/&lt;Template ID&gt;`
+     * Note: `inspect_template` must be located in the same region as the
+     * `SecuritySettings`.
      * </pre>
      *
-     * <code>string inspect_template = 9;</code>
+     * <code>string inspect_template = 9 [(.google.api.resource_reference) = { ... }</code>
      *
      * @return The bytes for inspectTemplate.
      */
@@ -2062,17 +2852,18 @@ public final class SecuritySettings extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * DLP inspect template name. Use this template to define inspect base
-     * settings.
+     * [DLP](https://cloud.google.com/dlp/docs) inspect template name. Use this
+     * template to define inspect base settings.
      * If empty, we use the default DLP inspect config.
      * The template name will have one of the following formats:
-     * `projects/&lt;Project ID&gt;/inspectTemplates/&lt;Template ID&gt;` OR
      * `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/inspectTemplates/&lt;Template
-     * ID&gt;` OR
-     * `organizations/&lt;Organization ID&gt;/inspectTemplates/&lt;Template ID&gt;`
+     * ID&gt;` OR `organizations/&lt;Organization ID&gt;/locations/&lt;Location
+     * ID&gt;/inspectTemplates/&lt;Template ID&gt;`
+     * Note: `inspect_template` must be located in the same region as the
+     * `SecuritySettings`.
      * </pre>
      *
-     * <code>string inspect_template = 9;</code>
+     * <code>string inspect_template = 9 [(.google.api.resource_reference) = { ... }</code>
      *
      * @param value The inspectTemplate to set.
      * @return This builder for chaining.
@@ -2090,17 +2881,18 @@ public final class SecuritySettings extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * DLP inspect template name. Use this template to define inspect base
-     * settings.
+     * [DLP](https://cloud.google.com/dlp/docs) inspect template name. Use this
+     * template to define inspect base settings.
      * If empty, we use the default DLP inspect config.
      * The template name will have one of the following formats:
-     * `projects/&lt;Project ID&gt;/inspectTemplates/&lt;Template ID&gt;` OR
      * `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/inspectTemplates/&lt;Template
-     * ID&gt;` OR
-     * `organizations/&lt;Organization ID&gt;/inspectTemplates/&lt;Template ID&gt;`
+     * ID&gt;` OR `organizations/&lt;Organization ID&gt;/locations/&lt;Location
+     * ID&gt;/inspectTemplates/&lt;Template ID&gt;`
+     * Note: `inspect_template` must be located in the same region as the
+     * `SecuritySettings`.
      * </pre>
      *
-     * <code>string inspect_template = 9;</code>
+     * <code>string inspect_template = 9 [(.google.api.resource_reference) = { ... }</code>
      *
      * @return This builder for chaining.
      */
@@ -2114,17 +2906,18 @@ public final class SecuritySettings extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * DLP inspect template name. Use this template to define inspect base
-     * settings.
+     * [DLP](https://cloud.google.com/dlp/docs) inspect template name. Use this
+     * template to define inspect base settings.
      * If empty, we use the default DLP inspect config.
      * The template name will have one of the following formats:
-     * `projects/&lt;Project ID&gt;/inspectTemplates/&lt;Template ID&gt;` OR
      * `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/inspectTemplates/&lt;Template
-     * ID&gt;` OR
-     * `organizations/&lt;Organization ID&gt;/inspectTemplates/&lt;Template ID&gt;`
+     * ID&gt;` OR `organizations/&lt;Organization ID&gt;/locations/&lt;Location
+     * ID&gt;/inspectTemplates/&lt;Template ID&gt;`
+     * Note: `inspect_template` must be located in the same region as the
+     * `SecuritySettings`.
      * </pre>
      *
-     * <code>string inspect_template = 9;</code>
+     * <code>string inspect_template = 9 [(.google.api.resource_reference) = { ... }</code>
      *
      * @param value The bytes for inspectTemplate to set.
      * @return This builder for chaining.
@@ -2136,6 +2929,152 @@ public final class SecuritySettings extends com.google.protobuf.GeneratedMessage
       checkByteStringIsUtf8(value);
 
       inspectTemplate_ = value;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object deidentifyTemplate_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * [DLP](https://cloud.google.com/dlp/docs) deidentify template name. Use this
+     * template to define de-identification configuration for the content.
+     * If empty, Dialogflow replaces sensitive info with `[redacted]` text.
+     * The template name will have one of the following formats:
+     * `projects/&lt;Project ID&gt;/locations/&lt;Location
+     * ID&gt;/deidentifyTemplates/&lt;Template ID&gt;` OR `organizations/&lt;Organization
+     * ID&gt;/locations/&lt;Location ID&gt;/deidentifyTemplates/&lt;Template ID&gt;`
+     * Note: `deidentify_template` must be located in the same region as the
+     * `SecuritySettings`.
+     * </pre>
+     *
+     * <code>string deidentify_template = 17 [(.google.api.resource_reference) = { ... }</code>
+     *
+     * @return The deidentifyTemplate.
+     */
+    public java.lang.String getDeidentifyTemplate() {
+      java.lang.Object ref = deidentifyTemplate_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        deidentifyTemplate_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * [DLP](https://cloud.google.com/dlp/docs) deidentify template name. Use this
+     * template to define de-identification configuration for the content.
+     * If empty, Dialogflow replaces sensitive info with `[redacted]` text.
+     * The template name will have one of the following formats:
+     * `projects/&lt;Project ID&gt;/locations/&lt;Location
+     * ID&gt;/deidentifyTemplates/&lt;Template ID&gt;` OR `organizations/&lt;Organization
+     * ID&gt;/locations/&lt;Location ID&gt;/deidentifyTemplates/&lt;Template ID&gt;`
+     * Note: `deidentify_template` must be located in the same region as the
+     * `SecuritySettings`.
+     * </pre>
+     *
+     * <code>string deidentify_template = 17 [(.google.api.resource_reference) = { ... }</code>
+     *
+     * @return The bytes for deidentifyTemplate.
+     */
+    public com.google.protobuf.ByteString getDeidentifyTemplateBytes() {
+      java.lang.Object ref = deidentifyTemplate_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        deidentifyTemplate_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * [DLP](https://cloud.google.com/dlp/docs) deidentify template name. Use this
+     * template to define de-identification configuration for the content.
+     * If empty, Dialogflow replaces sensitive info with `[redacted]` text.
+     * The template name will have one of the following formats:
+     * `projects/&lt;Project ID&gt;/locations/&lt;Location
+     * ID&gt;/deidentifyTemplates/&lt;Template ID&gt;` OR `organizations/&lt;Organization
+     * ID&gt;/locations/&lt;Location ID&gt;/deidentifyTemplates/&lt;Template ID&gt;`
+     * Note: `deidentify_template` must be located in the same region as the
+     * `SecuritySettings`.
+     * </pre>
+     *
+     * <code>string deidentify_template = 17 [(.google.api.resource_reference) = { ... }</code>
+     *
+     * @param value The deidentifyTemplate to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDeidentifyTemplate(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+
+      deidentifyTemplate_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * [DLP](https://cloud.google.com/dlp/docs) deidentify template name. Use this
+     * template to define de-identification configuration for the content.
+     * If empty, Dialogflow replaces sensitive info with `[redacted]` text.
+     * The template name will have one of the following formats:
+     * `projects/&lt;Project ID&gt;/locations/&lt;Location
+     * ID&gt;/deidentifyTemplates/&lt;Template ID&gt;` OR `organizations/&lt;Organization
+     * ID&gt;/locations/&lt;Location ID&gt;/deidentifyTemplates/&lt;Template ID&gt;`
+     * Note: `deidentify_template` must be located in the same region as the
+     * `SecuritySettings`.
+     * </pre>
+     *
+     * <code>string deidentify_template = 17 [(.google.api.resource_reference) = { ... }</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearDeidentifyTemplate() {
+
+      deidentifyTemplate_ = getDefaultInstance().getDeidentifyTemplate();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * [DLP](https://cloud.google.com/dlp/docs) deidentify template name. Use this
+     * template to define de-identification configuration for the content.
+     * If empty, Dialogflow replaces sensitive info with `[redacted]` text.
+     * The template name will have one of the following formats:
+     * `projects/&lt;Project ID&gt;/locations/&lt;Location
+     * ID&gt;/deidentifyTemplates/&lt;Template ID&gt;` OR `organizations/&lt;Organization
+     * ID&gt;/locations/&lt;Location ID&gt;/deidentifyTemplates/&lt;Template ID&gt;`
+     * Note: `deidentify_template` must be located in the same region as the
+     * `SecuritySettings`.
+     * </pre>
+     *
+     * <code>string deidentify_template = 17 [(.google.api.resource_reference) = { ... }</code>
+     *
+     * @param value The bytes for deidentifyTemplate to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDeidentifyTemplateBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
+      deidentifyTemplate_ = value;
       onChanged();
       return this;
     }
@@ -2490,6 +3429,247 @@ public final class SecuritySettings extends com.google.protobuf.GeneratedMessage
       }
       onChanged();
       return this;
+    }
+
+    private com.google.cloud.dialogflow.cx.v3.SecuritySettings.InsightsExportSettings
+        insightsExportSettings_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.dialogflow.cx.v3.SecuritySettings.InsightsExportSettings,
+            com.google.cloud.dialogflow.cx.v3.SecuritySettings.InsightsExportSettings.Builder,
+            com.google.cloud.dialogflow.cx.v3.SecuritySettings.InsightsExportSettingsOrBuilder>
+        insightsExportSettingsBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Controls conversation exporting settings to Insights after conversation is
+     * completed.
+     * If [retention_strategy][google.cloud.dialogflow.cx.v3.SecuritySettings.retention_strategy] is set to REMOVE_AFTER_CONVERSATION,
+     * Insights export is disabled no matter what you configure here.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.cx.v3.SecuritySettings.InsightsExportSettings insights_export_settings = 13;
+     * </code>
+     *
+     * @return Whether the insightsExportSettings field is set.
+     */
+    public boolean hasInsightsExportSettings() {
+      return insightsExportSettingsBuilder_ != null || insightsExportSettings_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Controls conversation exporting settings to Insights after conversation is
+     * completed.
+     * If [retention_strategy][google.cloud.dialogflow.cx.v3.SecuritySettings.retention_strategy] is set to REMOVE_AFTER_CONVERSATION,
+     * Insights export is disabled no matter what you configure here.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.cx.v3.SecuritySettings.InsightsExportSettings insights_export_settings = 13;
+     * </code>
+     *
+     * @return The insightsExportSettings.
+     */
+    public com.google.cloud.dialogflow.cx.v3.SecuritySettings.InsightsExportSettings
+        getInsightsExportSettings() {
+      if (insightsExportSettingsBuilder_ == null) {
+        return insightsExportSettings_ == null
+            ? com.google.cloud.dialogflow.cx.v3.SecuritySettings.InsightsExportSettings
+                .getDefaultInstance()
+            : insightsExportSettings_;
+      } else {
+        return insightsExportSettingsBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Controls conversation exporting settings to Insights after conversation is
+     * completed.
+     * If [retention_strategy][google.cloud.dialogflow.cx.v3.SecuritySettings.retention_strategy] is set to REMOVE_AFTER_CONVERSATION,
+     * Insights export is disabled no matter what you configure here.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.cx.v3.SecuritySettings.InsightsExportSettings insights_export_settings = 13;
+     * </code>
+     */
+    public Builder setInsightsExportSettings(
+        com.google.cloud.dialogflow.cx.v3.SecuritySettings.InsightsExportSettings value) {
+      if (insightsExportSettingsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        insightsExportSettings_ = value;
+        onChanged();
+      } else {
+        insightsExportSettingsBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Controls conversation exporting settings to Insights after conversation is
+     * completed.
+     * If [retention_strategy][google.cloud.dialogflow.cx.v3.SecuritySettings.retention_strategy] is set to REMOVE_AFTER_CONVERSATION,
+     * Insights export is disabled no matter what you configure here.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.cx.v3.SecuritySettings.InsightsExportSettings insights_export_settings = 13;
+     * </code>
+     */
+    public Builder setInsightsExportSettings(
+        com.google.cloud.dialogflow.cx.v3.SecuritySettings.InsightsExportSettings.Builder
+            builderForValue) {
+      if (insightsExportSettingsBuilder_ == null) {
+        insightsExportSettings_ = builderForValue.build();
+        onChanged();
+      } else {
+        insightsExportSettingsBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Controls conversation exporting settings to Insights after conversation is
+     * completed.
+     * If [retention_strategy][google.cloud.dialogflow.cx.v3.SecuritySettings.retention_strategy] is set to REMOVE_AFTER_CONVERSATION,
+     * Insights export is disabled no matter what you configure here.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.cx.v3.SecuritySettings.InsightsExportSettings insights_export_settings = 13;
+     * </code>
+     */
+    public Builder mergeInsightsExportSettings(
+        com.google.cloud.dialogflow.cx.v3.SecuritySettings.InsightsExportSettings value) {
+      if (insightsExportSettingsBuilder_ == null) {
+        if (insightsExportSettings_ != null) {
+          insightsExportSettings_ =
+              com.google.cloud.dialogflow.cx.v3.SecuritySettings.InsightsExportSettings.newBuilder(
+                      insightsExportSettings_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          insightsExportSettings_ = value;
+        }
+        onChanged();
+      } else {
+        insightsExportSettingsBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Controls conversation exporting settings to Insights after conversation is
+     * completed.
+     * If [retention_strategy][google.cloud.dialogflow.cx.v3.SecuritySettings.retention_strategy] is set to REMOVE_AFTER_CONVERSATION,
+     * Insights export is disabled no matter what you configure here.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.cx.v3.SecuritySettings.InsightsExportSettings insights_export_settings = 13;
+     * </code>
+     */
+    public Builder clearInsightsExportSettings() {
+      if (insightsExportSettingsBuilder_ == null) {
+        insightsExportSettings_ = null;
+        onChanged();
+      } else {
+        insightsExportSettings_ = null;
+        insightsExportSettingsBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Controls conversation exporting settings to Insights after conversation is
+     * completed.
+     * If [retention_strategy][google.cloud.dialogflow.cx.v3.SecuritySettings.retention_strategy] is set to REMOVE_AFTER_CONVERSATION,
+     * Insights export is disabled no matter what you configure here.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.cx.v3.SecuritySettings.InsightsExportSettings insights_export_settings = 13;
+     * </code>
+     */
+    public com.google.cloud.dialogflow.cx.v3.SecuritySettings.InsightsExportSettings.Builder
+        getInsightsExportSettingsBuilder() {
+
+      onChanged();
+      return getInsightsExportSettingsFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Controls conversation exporting settings to Insights after conversation is
+     * completed.
+     * If [retention_strategy][google.cloud.dialogflow.cx.v3.SecuritySettings.retention_strategy] is set to REMOVE_AFTER_CONVERSATION,
+     * Insights export is disabled no matter what you configure here.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.cx.v3.SecuritySettings.InsightsExportSettings insights_export_settings = 13;
+     * </code>
+     */
+    public com.google.cloud.dialogflow.cx.v3.SecuritySettings.InsightsExportSettingsOrBuilder
+        getInsightsExportSettingsOrBuilder() {
+      if (insightsExportSettingsBuilder_ != null) {
+        return insightsExportSettingsBuilder_.getMessageOrBuilder();
+      } else {
+        return insightsExportSettings_ == null
+            ? com.google.cloud.dialogflow.cx.v3.SecuritySettings.InsightsExportSettings
+                .getDefaultInstance()
+            : insightsExportSettings_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Controls conversation exporting settings to Insights after conversation is
+     * completed.
+     * If [retention_strategy][google.cloud.dialogflow.cx.v3.SecuritySettings.retention_strategy] is set to REMOVE_AFTER_CONVERSATION,
+     * Insights export is disabled no matter what you configure here.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.cx.v3.SecuritySettings.InsightsExportSettings insights_export_settings = 13;
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.dialogflow.cx.v3.SecuritySettings.InsightsExportSettings,
+            com.google.cloud.dialogflow.cx.v3.SecuritySettings.InsightsExportSettings.Builder,
+            com.google.cloud.dialogflow.cx.v3.SecuritySettings.InsightsExportSettingsOrBuilder>
+        getInsightsExportSettingsFieldBuilder() {
+      if (insightsExportSettingsBuilder_ == null) {
+        insightsExportSettingsBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.dialogflow.cx.v3.SecuritySettings.InsightsExportSettings,
+                com.google.cloud.dialogflow.cx.v3.SecuritySettings.InsightsExportSettings.Builder,
+                com.google.cloud.dialogflow.cx.v3.SecuritySettings.InsightsExportSettingsOrBuilder>(
+                getInsightsExportSettings(), getParentForChildren(), isClean());
+        insightsExportSettings_ = null;
+      }
+      return insightsExportSettingsBuilder_;
     }
 
     @java.lang.Override

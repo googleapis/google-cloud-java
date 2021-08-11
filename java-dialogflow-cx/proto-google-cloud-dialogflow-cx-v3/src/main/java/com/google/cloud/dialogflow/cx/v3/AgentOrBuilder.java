@@ -365,12 +365,15 @@ public interface AgentOrBuilder
    *
    * <pre>
    * Indicates if stackdriver logging is enabled for the agent.
+   * Please use [agent.advanced_settings][google.cloud.dialogflow.cx.v3.AdvancedSettings.LoggingSettings]
+   * instead.
    * </pre>
    *
-   * <code>bool enable_stackdriver_logging = 18;</code>
+   * <code>bool enable_stackdriver_logging = 18 [deprecated = true];</code>
    *
    * @return The enableStackdriverLogging.
    */
+  @java.lang.Deprecated
   boolean getEnableStackdriverLogging();
 
   /**
@@ -386,4 +389,42 @@ public interface AgentOrBuilder
    * @return The enableSpellCorrection.
    */
   boolean getEnableSpellCorrection();
+
+  /**
+   *
+   *
+   * <pre>
+   * Hierarchical advanced settings for this agent. The settings exposed at the
+   * lower level overrides the settings exposed at the higher level.
+   * </pre>
+   *
+   * <code>.google.cloud.dialogflow.cx.v3.AdvancedSettings advanced_settings = 22;</code>
+   *
+   * @return Whether the advancedSettings field is set.
+   */
+  boolean hasAdvancedSettings();
+  /**
+   *
+   *
+   * <pre>
+   * Hierarchical advanced settings for this agent. The settings exposed at the
+   * lower level overrides the settings exposed at the higher level.
+   * </pre>
+   *
+   * <code>.google.cloud.dialogflow.cx.v3.AdvancedSettings advanced_settings = 22;</code>
+   *
+   * @return The advancedSettings.
+   */
+  com.google.cloud.dialogflow.cx.v3.AdvancedSettings getAdvancedSettings();
+  /**
+   *
+   *
+   * <pre>
+   * Hierarchical advanced settings for this agent. The settings exposed at the
+   * lower level overrides the settings exposed at the higher level.
+   * </pre>
+   *
+   * <code>.google.cloud.dialogflow.cx.v3.AdvancedSettings advanced_settings = 22;</code>
+   */
+  com.google.cloud.dialogflow.cx.v3.AdvancedSettingsOrBuilder getAdvancedSettingsOrBuilder();
 }

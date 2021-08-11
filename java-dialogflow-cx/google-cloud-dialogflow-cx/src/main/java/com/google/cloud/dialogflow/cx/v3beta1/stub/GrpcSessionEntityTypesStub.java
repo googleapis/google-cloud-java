@@ -24,7 +24,6 @@ import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.grpc.GrpcCallSettings;
 import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
-import com.google.api.gax.rpc.RequestParamsExtractor;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.dialogflow.cx.v3beta1.CreateSessionEntityTypeRequest;
 import com.google.cloud.dialogflow.cx.v3beta1.DeleteSessionEntityTypeRequest;
@@ -39,7 +38,6 @@ import com.google.protobuf.Empty;
 import io.grpc.MethodDescriptor;
 import io.grpc.protobuf.ProtoUtils;
 import java.io.IOException;
-import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
@@ -173,13 +171,10 @@ public class GrpcSessionEntityTypesStub extends SessionEntityTypesStub {
                 .<ListSessionEntityTypesRequest, ListSessionEntityTypesResponse>newBuilder()
                 .setMethodDescriptor(listSessionEntityTypesMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<ListSessionEntityTypesRequest>() {
-                      @Override
-                      public Map<String, String> extract(ListSessionEntityTypesRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("parent", String.valueOf(request.getParent()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("parent", String.valueOf(request.getParent()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<GetSessionEntityTypeRequest, SessionEntityType>
@@ -187,13 +182,10 @@ public class GrpcSessionEntityTypesStub extends SessionEntityTypesStub {
             GrpcCallSettings.<GetSessionEntityTypeRequest, SessionEntityType>newBuilder()
                 .setMethodDescriptor(getSessionEntityTypeMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<GetSessionEntityTypeRequest>() {
-                      @Override
-                      public Map<String, String> extract(GetSessionEntityTypeRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("name", String.valueOf(request.getName()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("name", String.valueOf(request.getName()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<CreateSessionEntityTypeRequest, SessionEntityType>
@@ -201,13 +193,10 @@ public class GrpcSessionEntityTypesStub extends SessionEntityTypesStub {
             GrpcCallSettings.<CreateSessionEntityTypeRequest, SessionEntityType>newBuilder()
                 .setMethodDescriptor(createSessionEntityTypeMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<CreateSessionEntityTypeRequest>() {
-                      @Override
-                      public Map<String, String> extract(CreateSessionEntityTypeRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("parent", String.valueOf(request.getParent()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("parent", String.valueOf(request.getParent()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<UpdateSessionEntityTypeRequest, SessionEntityType>
@@ -215,15 +204,12 @@ public class GrpcSessionEntityTypesStub extends SessionEntityTypesStub {
             GrpcCallSettings.<UpdateSessionEntityTypeRequest, SessionEntityType>newBuilder()
                 .setMethodDescriptor(updateSessionEntityTypeMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<UpdateSessionEntityTypeRequest>() {
-                      @Override
-                      public Map<String, String> extract(UpdateSessionEntityTypeRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put(
-                            "session_entity_type.name",
-                            String.valueOf(request.getSessionEntityType().getName()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put(
+                          "session_entity_type.name",
+                          String.valueOf(request.getSessionEntityType().getName()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<DeleteSessionEntityTypeRequest, Empty>
@@ -231,13 +217,10 @@ public class GrpcSessionEntityTypesStub extends SessionEntityTypesStub {
             GrpcCallSettings.<DeleteSessionEntityTypeRequest, Empty>newBuilder()
                 .setMethodDescriptor(deleteSessionEntityTypeMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<DeleteSessionEntityTypeRequest>() {
-                      @Override
-                      public Map<String, String> extract(DeleteSessionEntityTypeRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("name", String.valueOf(request.getName()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("name", String.valueOf(request.getName()));
+                      return params.build();
                     })
                 .build();
 
@@ -317,7 +300,13 @@ public class GrpcSessionEntityTypesStub extends SessionEntityTypesStub {
 
   @Override
   public final void close() {
-    shutdown();
+    try {
+      backgroundResources.close();
+    } catch (RuntimeException e) {
+      throw e;
+    } catch (Exception e) {
+      throw new IllegalStateException("Failed to close resource", e);
+    }
   }
 
   @Override

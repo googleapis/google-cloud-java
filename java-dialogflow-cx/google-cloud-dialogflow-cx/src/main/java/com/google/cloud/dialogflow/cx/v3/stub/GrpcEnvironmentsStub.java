@@ -26,7 +26,6 @@ import com.google.api.gax.grpc.GrpcCallSettings;
 import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
-import com.google.api.gax.rpc.RequestParamsExtractor;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.dialogflow.cx.v3.CreateEnvironmentRequest;
 import com.google.cloud.dialogflow.cx.v3.DeleteEnvironmentRequest;
@@ -50,7 +49,6 @@ import com.google.protobuf.Struct;
 import io.grpc.MethodDescriptor;
 import io.grpc.protobuf.ProtoUtils;
 import java.io.IOException;
-import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
@@ -225,66 +223,51 @@ public class GrpcEnvironmentsStub extends EnvironmentsStub {
             GrpcCallSettings.<ListEnvironmentsRequest, ListEnvironmentsResponse>newBuilder()
                 .setMethodDescriptor(listEnvironmentsMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<ListEnvironmentsRequest>() {
-                      @Override
-                      public Map<String, String> extract(ListEnvironmentsRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("parent", String.valueOf(request.getParent()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("parent", String.valueOf(request.getParent()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<GetEnvironmentRequest, Environment> getEnvironmentTransportSettings =
         GrpcCallSettings.<GetEnvironmentRequest, Environment>newBuilder()
             .setMethodDescriptor(getEnvironmentMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<GetEnvironmentRequest>() {
-                  @Override
-                  public Map<String, String> extract(GetEnvironmentRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("name", String.valueOf(request.getName()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<CreateEnvironmentRequest, Operation> createEnvironmentTransportSettings =
         GrpcCallSettings.<CreateEnvironmentRequest, Operation>newBuilder()
             .setMethodDescriptor(createEnvironmentMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<CreateEnvironmentRequest>() {
-                  @Override
-                  public Map<String, String> extract(CreateEnvironmentRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("parent", String.valueOf(request.getParent()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("parent", String.valueOf(request.getParent()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<UpdateEnvironmentRequest, Operation> updateEnvironmentTransportSettings =
         GrpcCallSettings.<UpdateEnvironmentRequest, Operation>newBuilder()
             .setMethodDescriptor(updateEnvironmentMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<UpdateEnvironmentRequest>() {
-                  @Override
-                  public Map<String, String> extract(UpdateEnvironmentRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put(
-                        "environment.name", String.valueOf(request.getEnvironment().getName()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put(
+                      "environment.name", String.valueOf(request.getEnvironment().getName()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<DeleteEnvironmentRequest, Empty> deleteEnvironmentTransportSettings =
         GrpcCallSettings.<DeleteEnvironmentRequest, Empty>newBuilder()
             .setMethodDescriptor(deleteEnvironmentMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<DeleteEnvironmentRequest>() {
-                  @Override
-                  public Map<String, String> extract(DeleteEnvironmentRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("name", String.valueOf(request.getName()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<LookupEnvironmentHistoryRequest, LookupEnvironmentHistoryResponse>
@@ -293,26 +276,20 @@ public class GrpcEnvironmentsStub extends EnvironmentsStub {
                 .<LookupEnvironmentHistoryRequest, LookupEnvironmentHistoryResponse>newBuilder()
                 .setMethodDescriptor(lookupEnvironmentHistoryMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<LookupEnvironmentHistoryRequest>() {
-                      @Override
-                      public Map<String, String> extract(LookupEnvironmentHistoryRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("name", String.valueOf(request.getName()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("name", String.valueOf(request.getName()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<RunContinuousTestRequest, Operation> runContinuousTestTransportSettings =
         GrpcCallSettings.<RunContinuousTestRequest, Operation>newBuilder()
             .setMethodDescriptor(runContinuousTestMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<RunContinuousTestRequest>() {
-                  @Override
-                  public Map<String, String> extract(RunContinuousTestRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("environment", String.valueOf(request.getEnvironment()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("environment", String.valueOf(request.getEnvironment()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<ListContinuousTestResultsRequest, ListContinuousTestResultsResponse>
@@ -321,13 +298,10 @@ public class GrpcEnvironmentsStub extends EnvironmentsStub {
                 .<ListContinuousTestResultsRequest, ListContinuousTestResultsResponse>newBuilder()
                 .setMethodDescriptor(listContinuousTestResultsMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<ListContinuousTestResultsRequest>() {
-                      @Override
-                      public Map<String, String> extract(ListContinuousTestResultsRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("parent", String.valueOf(request.getParent()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("parent", String.valueOf(request.getParent()));
+                      return params.build();
                     })
                 .build();
 
@@ -489,7 +463,13 @@ public class GrpcEnvironmentsStub extends EnvironmentsStub {
 
   @Override
   public final void close() {
-    shutdown();
+    try {
+      backgroundResources.close();
+    } catch (RuntimeException e) {
+      throw e;
+    } catch (Exception e) {
+      throw new IllegalStateException("Failed to close resource", e);
+    }
   }
 
   @Override
