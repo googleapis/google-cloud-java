@@ -1,5 +1,23 @@
 # Changelog
 
+## [2.0.0](https://www.github.com/googleapis/java-scheduler/compare/v1.24.6...v2.0.0) (2021-08-11)
+
+
+### ⚠ BREAKING CHANGES
+
+* release gapic-generator-java v2.0.0 (#529)
+
+### Features
+
+* release gapic-generator-java v2.0.0 ([#529](https://www.github.com/googleapis/java-scheduler/issues/529)) ([83cc576](https://www.github.com/googleapis/java-scheduler/commit/83cc576a460f6a912cb321fa3b85398d16a19750))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-pubsub-bom to v1.113.7 ([#533](https://www.github.com/googleapis/java-scheduler/issues/533)) ([b9f9ef0](https://www.github.com/googleapis/java-scheduler/commit/b9f9ef086c7fb8ca7ce080f35fff662f91e07783))
+* update dependency com.google.cloud:google-cloud-pubsub-bom to v1.114.0 ([#535](https://www.github.com/googleapis/java-scheduler/issues/535)) ([b66a9dc](https://www.github.com/googleapis/java-scheduler/commit/b66a9dcc327f806105bc03a7abb8097a54a3bb3f))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2 ([#530](https://www.github.com/googleapis/java-scheduler/issues/530)) ([05f78e4](https://www.github.com/googleapis/java-scheduler/commit/05f78e4d0ce83fd350e7be5ee1d618964e06d8ff))
+
 ### [1.24.6](https://www.github.com/googleapis/java-scheduler/compare/v1.24.5...v1.24.6) (2021-07-07)
 
 
