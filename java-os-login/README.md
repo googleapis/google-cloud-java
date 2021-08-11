@@ -56,13 +56,13 @@ compile 'com.google.cloud:google-cloud-os-login'
 If you are using Gradle without BOM, add this to your dependencies
 
 ```Groovy
-compile 'com.google.cloud:google-cloud-os-login:1.3.1'
+compile 'com.google.cloud:google-cloud-os-login:2.0.0'
 ```
 
 If you are using SBT, add this to your dependencies
 
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-os-login" % "1.3.1"
+libraryDependencies += "com.google.cloud" % "google-cloud-os-login" % "2.0.0"
 ```
 
 ## Authentication
