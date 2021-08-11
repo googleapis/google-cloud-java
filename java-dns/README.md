@@ -56,13 +56,13 @@ compile 'com.google.cloud:google-cloud-dns'
 If you are using Gradle without BOM, add this to your dependencies
 
 ```Groovy
-compile 'com.google.cloud:google-cloud-dns:1.2.3'
+compile 'com.google.cloud:google-cloud-dns:1.2.4'
 ```
 
 If you are using SBT, add this to your dependencies
 
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-dns" % "1.2.3"
+libraryDependencies += "com.google.cloud" % "google-cloud-dns" % "1.2.4"
 ```
 
 ## Authentication
