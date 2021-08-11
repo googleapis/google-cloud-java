@@ -16,4 +16,8 @@
     <className>com/google/privacy/dlp/v2/*OrBuilder</className>
     <method>boolean has*(*)</method>
   </difference>
+  <difference>
+    <differenceType>8001</differenceType>
+    <className>com/google/privacy/dlp/v2/Finding*</className>
+  </difference>
 </differences>

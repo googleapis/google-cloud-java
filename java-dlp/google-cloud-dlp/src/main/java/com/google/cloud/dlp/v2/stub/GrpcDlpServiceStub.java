@@ -27,7 +27,6 @@ import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.grpc.GrpcCallSettings;
 import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
-import com.google.api.gax.rpc.RequestParamsExtractor;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.common.collect.ImmutableMap;
 import com.google.longrunning.stub.GrpcOperationsStub;
@@ -85,7 +84,6 @@ import com.google.protobuf.Empty;
 import io.grpc.MethodDescriptor;
 import io.grpc.protobuf.ProtoUtils;
 import java.io.IOException;
-import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
@@ -548,26 +546,20 @@ public class GrpcDlpServiceStub extends DlpServiceStub {
             GrpcCallSettings.<InspectContentRequest, InspectContentResponse>newBuilder()
                 .setMethodDescriptor(inspectContentMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<InspectContentRequest>() {
-                      @Override
-                      public Map<String, String> extract(InspectContentRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("parent", String.valueOf(request.getParent()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("parent", String.valueOf(request.getParent()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<RedactImageRequest, RedactImageResponse> redactImageTransportSettings =
         GrpcCallSettings.<RedactImageRequest, RedactImageResponse>newBuilder()
             .setMethodDescriptor(redactImageMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<RedactImageRequest>() {
-                  @Override
-                  public Map<String, String> extract(RedactImageRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("parent", String.valueOf(request.getParent()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("parent", String.valueOf(request.getParent()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<DeidentifyContentRequest, DeidentifyContentResponse>
@@ -575,13 +567,10 @@ public class GrpcDlpServiceStub extends DlpServiceStub {
             GrpcCallSettings.<DeidentifyContentRequest, DeidentifyContentResponse>newBuilder()
                 .setMethodDescriptor(deidentifyContentMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<DeidentifyContentRequest>() {
-                      @Override
-                      public Map<String, String> extract(DeidentifyContentRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("parent", String.valueOf(request.getParent()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("parent", String.valueOf(request.getParent()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<ReidentifyContentRequest, ReidentifyContentResponse>
@@ -589,26 +578,20 @@ public class GrpcDlpServiceStub extends DlpServiceStub {
             GrpcCallSettings.<ReidentifyContentRequest, ReidentifyContentResponse>newBuilder()
                 .setMethodDescriptor(reidentifyContentMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<ReidentifyContentRequest>() {
-                      @Override
-                      public Map<String, String> extract(ReidentifyContentRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("parent", String.valueOf(request.getParent()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("parent", String.valueOf(request.getParent()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<ListInfoTypesRequest, ListInfoTypesResponse> listInfoTypesTransportSettings =
         GrpcCallSettings.<ListInfoTypesRequest, ListInfoTypesResponse>newBuilder()
             .setMethodDescriptor(listInfoTypesMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<ListInfoTypesRequest>() {
-                  @Override
-                  public Map<String, String> extract(ListInfoTypesRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("parent", String.valueOf(request.getParent()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("parent", String.valueOf(request.getParent()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<CreateInspectTemplateRequest, InspectTemplate>
@@ -616,13 +599,10 @@ public class GrpcDlpServiceStub extends DlpServiceStub {
             GrpcCallSettings.<CreateInspectTemplateRequest, InspectTemplate>newBuilder()
                 .setMethodDescriptor(createInspectTemplateMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<CreateInspectTemplateRequest>() {
-                      @Override
-                      public Map<String, String> extract(CreateInspectTemplateRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("parent", String.valueOf(request.getParent()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("parent", String.valueOf(request.getParent()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<UpdateInspectTemplateRequest, InspectTemplate>
@@ -630,13 +610,10 @@ public class GrpcDlpServiceStub extends DlpServiceStub {
             GrpcCallSettings.<UpdateInspectTemplateRequest, InspectTemplate>newBuilder()
                 .setMethodDescriptor(updateInspectTemplateMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<UpdateInspectTemplateRequest>() {
-                      @Override
-                      public Map<String, String> extract(UpdateInspectTemplateRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("name", String.valueOf(request.getName()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("name", String.valueOf(request.getName()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<GetInspectTemplateRequest, InspectTemplate>
@@ -644,13 +621,10 @@ public class GrpcDlpServiceStub extends DlpServiceStub {
             GrpcCallSettings.<GetInspectTemplateRequest, InspectTemplate>newBuilder()
                 .setMethodDescriptor(getInspectTemplateMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<GetInspectTemplateRequest>() {
-                      @Override
-                      public Map<String, String> extract(GetInspectTemplateRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("name", String.valueOf(request.getName()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("name", String.valueOf(request.getName()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<ListInspectTemplatesRequest, ListInspectTemplatesResponse>
@@ -658,26 +632,20 @@ public class GrpcDlpServiceStub extends DlpServiceStub {
             GrpcCallSettings.<ListInspectTemplatesRequest, ListInspectTemplatesResponse>newBuilder()
                 .setMethodDescriptor(listInspectTemplatesMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<ListInspectTemplatesRequest>() {
-                      @Override
-                      public Map<String, String> extract(ListInspectTemplatesRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("parent", String.valueOf(request.getParent()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("parent", String.valueOf(request.getParent()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<DeleteInspectTemplateRequest, Empty> deleteInspectTemplateTransportSettings =
         GrpcCallSettings.<DeleteInspectTemplateRequest, Empty>newBuilder()
             .setMethodDescriptor(deleteInspectTemplateMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<DeleteInspectTemplateRequest>() {
-                  @Override
-                  public Map<String, String> extract(DeleteInspectTemplateRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("name", String.valueOf(request.getName()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<CreateDeidentifyTemplateRequest, DeidentifyTemplate>
@@ -685,13 +653,10 @@ public class GrpcDlpServiceStub extends DlpServiceStub {
             GrpcCallSettings.<CreateDeidentifyTemplateRequest, DeidentifyTemplate>newBuilder()
                 .setMethodDescriptor(createDeidentifyTemplateMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<CreateDeidentifyTemplateRequest>() {
-                      @Override
-                      public Map<String, String> extract(CreateDeidentifyTemplateRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("parent", String.valueOf(request.getParent()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("parent", String.valueOf(request.getParent()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<UpdateDeidentifyTemplateRequest, DeidentifyTemplate>
@@ -699,13 +664,10 @@ public class GrpcDlpServiceStub extends DlpServiceStub {
             GrpcCallSettings.<UpdateDeidentifyTemplateRequest, DeidentifyTemplate>newBuilder()
                 .setMethodDescriptor(updateDeidentifyTemplateMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<UpdateDeidentifyTemplateRequest>() {
-                      @Override
-                      public Map<String, String> extract(UpdateDeidentifyTemplateRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("name", String.valueOf(request.getName()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("name", String.valueOf(request.getName()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<GetDeidentifyTemplateRequest, DeidentifyTemplate>
@@ -713,13 +675,10 @@ public class GrpcDlpServiceStub extends DlpServiceStub {
             GrpcCallSettings.<GetDeidentifyTemplateRequest, DeidentifyTemplate>newBuilder()
                 .setMethodDescriptor(getDeidentifyTemplateMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<GetDeidentifyTemplateRequest>() {
-                      @Override
-                      public Map<String, String> extract(GetDeidentifyTemplateRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("name", String.valueOf(request.getName()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("name", String.valueOf(request.getName()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<ListDeidentifyTemplatesRequest, ListDeidentifyTemplatesResponse>
@@ -728,13 +687,10 @@ public class GrpcDlpServiceStub extends DlpServiceStub {
                 .<ListDeidentifyTemplatesRequest, ListDeidentifyTemplatesResponse>newBuilder()
                 .setMethodDescriptor(listDeidentifyTemplatesMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<ListDeidentifyTemplatesRequest>() {
-                      @Override
-                      public Map<String, String> extract(ListDeidentifyTemplatesRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("parent", String.valueOf(request.getParent()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("parent", String.valueOf(request.getParent()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<DeleteDeidentifyTemplateRequest, Empty>
@@ -742,39 +698,30 @@ public class GrpcDlpServiceStub extends DlpServiceStub {
             GrpcCallSettings.<DeleteDeidentifyTemplateRequest, Empty>newBuilder()
                 .setMethodDescriptor(deleteDeidentifyTemplateMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<DeleteDeidentifyTemplateRequest>() {
-                      @Override
-                      public Map<String, String> extract(DeleteDeidentifyTemplateRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("name", String.valueOf(request.getName()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("name", String.valueOf(request.getName()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<CreateJobTriggerRequest, JobTrigger> createJobTriggerTransportSettings =
         GrpcCallSettings.<CreateJobTriggerRequest, JobTrigger>newBuilder()
             .setMethodDescriptor(createJobTriggerMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<CreateJobTriggerRequest>() {
-                  @Override
-                  public Map<String, String> extract(CreateJobTriggerRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("parent", String.valueOf(request.getParent()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("parent", String.valueOf(request.getParent()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<UpdateJobTriggerRequest, JobTrigger> updateJobTriggerTransportSettings =
         GrpcCallSettings.<UpdateJobTriggerRequest, JobTrigger>newBuilder()
             .setMethodDescriptor(updateJobTriggerMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<UpdateJobTriggerRequest>() {
-                  @Override
-                  public Map<String, String> extract(UpdateJobTriggerRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("name", String.valueOf(request.getName()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<HybridInspectJobTriggerRequest, HybridInspectResponse>
@@ -782,26 +729,20 @@ public class GrpcDlpServiceStub extends DlpServiceStub {
             GrpcCallSettings.<HybridInspectJobTriggerRequest, HybridInspectResponse>newBuilder()
                 .setMethodDescriptor(hybridInspectJobTriggerMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<HybridInspectJobTriggerRequest>() {
-                      @Override
-                      public Map<String, String> extract(HybridInspectJobTriggerRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("name", String.valueOf(request.getName()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("name", String.valueOf(request.getName()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<GetJobTriggerRequest, JobTrigger> getJobTriggerTransportSettings =
         GrpcCallSettings.<GetJobTriggerRequest, JobTrigger>newBuilder()
             .setMethodDescriptor(getJobTriggerMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<GetJobTriggerRequest>() {
-                  @Override
-                  public Map<String, String> extract(GetJobTriggerRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("name", String.valueOf(request.getName()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<ListJobTriggersRequest, ListJobTriggersResponse>
@@ -809,104 +750,80 @@ public class GrpcDlpServiceStub extends DlpServiceStub {
             GrpcCallSettings.<ListJobTriggersRequest, ListJobTriggersResponse>newBuilder()
                 .setMethodDescriptor(listJobTriggersMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<ListJobTriggersRequest>() {
-                      @Override
-                      public Map<String, String> extract(ListJobTriggersRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("parent", String.valueOf(request.getParent()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("parent", String.valueOf(request.getParent()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<DeleteJobTriggerRequest, Empty> deleteJobTriggerTransportSettings =
         GrpcCallSettings.<DeleteJobTriggerRequest, Empty>newBuilder()
             .setMethodDescriptor(deleteJobTriggerMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<DeleteJobTriggerRequest>() {
-                  @Override
-                  public Map<String, String> extract(DeleteJobTriggerRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("name", String.valueOf(request.getName()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<ActivateJobTriggerRequest, DlpJob> activateJobTriggerTransportSettings =
         GrpcCallSettings.<ActivateJobTriggerRequest, DlpJob>newBuilder()
             .setMethodDescriptor(activateJobTriggerMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<ActivateJobTriggerRequest>() {
-                  @Override
-                  public Map<String, String> extract(ActivateJobTriggerRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("name", String.valueOf(request.getName()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<CreateDlpJobRequest, DlpJob> createDlpJobTransportSettings =
         GrpcCallSettings.<CreateDlpJobRequest, DlpJob>newBuilder()
             .setMethodDescriptor(createDlpJobMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<CreateDlpJobRequest>() {
-                  @Override
-                  public Map<String, String> extract(CreateDlpJobRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("parent", String.valueOf(request.getParent()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("parent", String.valueOf(request.getParent()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<ListDlpJobsRequest, ListDlpJobsResponse> listDlpJobsTransportSettings =
         GrpcCallSettings.<ListDlpJobsRequest, ListDlpJobsResponse>newBuilder()
             .setMethodDescriptor(listDlpJobsMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<ListDlpJobsRequest>() {
-                  @Override
-                  public Map<String, String> extract(ListDlpJobsRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("parent", String.valueOf(request.getParent()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("parent", String.valueOf(request.getParent()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<GetDlpJobRequest, DlpJob> getDlpJobTransportSettings =
         GrpcCallSettings.<GetDlpJobRequest, DlpJob>newBuilder()
             .setMethodDescriptor(getDlpJobMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<GetDlpJobRequest>() {
-                  @Override
-                  public Map<String, String> extract(GetDlpJobRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("name", String.valueOf(request.getName()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<DeleteDlpJobRequest, Empty> deleteDlpJobTransportSettings =
         GrpcCallSettings.<DeleteDlpJobRequest, Empty>newBuilder()
             .setMethodDescriptor(deleteDlpJobMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<DeleteDlpJobRequest>() {
-                  @Override
-                  public Map<String, String> extract(DeleteDlpJobRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("name", String.valueOf(request.getName()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<CancelDlpJobRequest, Empty> cancelDlpJobTransportSettings =
         GrpcCallSettings.<CancelDlpJobRequest, Empty>newBuilder()
             .setMethodDescriptor(cancelDlpJobMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<CancelDlpJobRequest>() {
-                  @Override
-                  public Map<String, String> extract(CancelDlpJobRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("name", String.valueOf(request.getName()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<CreateStoredInfoTypeRequest, StoredInfoType>
@@ -914,13 +831,10 @@ public class GrpcDlpServiceStub extends DlpServiceStub {
             GrpcCallSettings.<CreateStoredInfoTypeRequest, StoredInfoType>newBuilder()
                 .setMethodDescriptor(createStoredInfoTypeMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<CreateStoredInfoTypeRequest>() {
-                      @Override
-                      public Map<String, String> extract(CreateStoredInfoTypeRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("parent", String.valueOf(request.getParent()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("parent", String.valueOf(request.getParent()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<UpdateStoredInfoTypeRequest, StoredInfoType>
@@ -928,26 +842,20 @@ public class GrpcDlpServiceStub extends DlpServiceStub {
             GrpcCallSettings.<UpdateStoredInfoTypeRequest, StoredInfoType>newBuilder()
                 .setMethodDescriptor(updateStoredInfoTypeMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<UpdateStoredInfoTypeRequest>() {
-                      @Override
-                      public Map<String, String> extract(UpdateStoredInfoTypeRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("name", String.valueOf(request.getName()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("name", String.valueOf(request.getName()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<GetStoredInfoTypeRequest, StoredInfoType> getStoredInfoTypeTransportSettings =
         GrpcCallSettings.<GetStoredInfoTypeRequest, StoredInfoType>newBuilder()
             .setMethodDescriptor(getStoredInfoTypeMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<GetStoredInfoTypeRequest>() {
-                  @Override
-                  public Map<String, String> extract(GetStoredInfoTypeRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("name", String.valueOf(request.getName()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<ListStoredInfoTypesRequest, ListStoredInfoTypesResponse>
@@ -955,26 +863,20 @@ public class GrpcDlpServiceStub extends DlpServiceStub {
             GrpcCallSettings.<ListStoredInfoTypesRequest, ListStoredInfoTypesResponse>newBuilder()
                 .setMethodDescriptor(listStoredInfoTypesMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<ListStoredInfoTypesRequest>() {
-                      @Override
-                      public Map<String, String> extract(ListStoredInfoTypesRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("parent", String.valueOf(request.getParent()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("parent", String.valueOf(request.getParent()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<DeleteStoredInfoTypeRequest, Empty> deleteStoredInfoTypeTransportSettings =
         GrpcCallSettings.<DeleteStoredInfoTypeRequest, Empty>newBuilder()
             .setMethodDescriptor(deleteStoredInfoTypeMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<DeleteStoredInfoTypeRequest>() {
-                  @Override
-                  public Map<String, String> extract(DeleteStoredInfoTypeRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("name", String.valueOf(request.getName()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<HybridInspectDlpJobRequest, HybridInspectResponse>
@@ -982,26 +884,20 @@ public class GrpcDlpServiceStub extends DlpServiceStub {
             GrpcCallSettings.<HybridInspectDlpJobRequest, HybridInspectResponse>newBuilder()
                 .setMethodDescriptor(hybridInspectDlpJobMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<HybridInspectDlpJobRequest>() {
-                      @Override
-                      public Map<String, String> extract(HybridInspectDlpJobRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("name", String.valueOf(request.getName()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("name", String.valueOf(request.getName()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<FinishDlpJobRequest, Empty> finishDlpJobTransportSettings =
         GrpcCallSettings.<FinishDlpJobRequest, Empty>newBuilder()
             .setMethodDescriptor(finishDlpJobMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<FinishDlpJobRequest>() {
-                  @Override
-                  public Map<String, String> extract(FinishDlpJobRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("name", String.valueOf(request.getName()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  return params.build();
                 })
             .build();
 
@@ -1390,7 +1286,13 @@ public class GrpcDlpServiceStub extends DlpServiceStub {
 
   @Override
   public final void close() {
-    shutdown();
+    try {
+      backgroundResources.close();
+    } catch (RuntimeException e) {
+      throw e;
+    } catch (Exception e) {
+      throw new IllegalStateException("Failed to close resource", e);
+    }
   }
 
   @Override

@@ -11,8 +11,8 @@
       "git": {
         "name": "googleapis",
         "remote": "https://github.com/googleapis/googleapis.git",
-        "sha": "551681f25e36b11829e87e580281350461f4f3f5",
-        "internalRef": "379784268"
+        "sha": "d9eaf41de44d953458b18712a3f240bb4c564e48",
+        "internalRef": "388535346"
       }
     },
     {
@@ -227,7 +227,6 @@
     "proto-google-cloud-dlp-v2/src/main/java/com/google/privacy/dlp/v2/FieldTransformationOrBuilder.java",
     "proto-google-cloud-dlp-v2/src/main/java/com/google/privacy/dlp/v2/FileType.java",
     "proto-google-cloud-dlp-v2/src/main/java/com/google/privacy/dlp/v2/Finding.java",
-    "proto-google-cloud-dlp-v2/src/main/java/com/google/privacy/dlp/v2/FindingName.java",
     "proto-google-cloud-dlp-v2/src/main/java/com/google/privacy/dlp/v2/FindingOrBuilder.java",
     "proto-google-cloud-dlp-v2/src/main/java/com/google/privacy/dlp/v2/FinishDlpJobRequest.java",
     "proto-google-cloud-dlp-v2/src/main/java/com/google/privacy/dlp/v2/FinishDlpJobRequestOrBuilder.java",

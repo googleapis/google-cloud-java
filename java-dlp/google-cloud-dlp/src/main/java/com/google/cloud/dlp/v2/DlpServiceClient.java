@@ -16,7 +16,6 @@
 
 package com.google.cloud.dlp.v2;
 
-import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
 import com.google.api.core.BetaApi;
@@ -5251,12 +5250,7 @@ public class DlpServiceClient implements BackgroundResource {
           ListInspectTemplatesPage.createEmptyPage().createPageAsync(context, futureResponse);
       return ApiFutures.transform(
           futurePage,
-          new ApiFunction<ListInspectTemplatesPage, ListInspectTemplatesPagedResponse>() {
-            @Override
-            public ListInspectTemplatesPagedResponse apply(ListInspectTemplatesPage input) {
-              return new ListInspectTemplatesPagedResponse(input);
-            }
-          },
+          input -> new ListInspectTemplatesPagedResponse(input),
           MoreExecutors.directExecutor());
     }
 
@@ -5341,12 +5335,7 @@ public class DlpServiceClient implements BackgroundResource {
           ListDeidentifyTemplatesPage.createEmptyPage().createPageAsync(context, futureResponse);
       return ApiFutures.transform(
           futurePage,
-          new ApiFunction<ListDeidentifyTemplatesPage, ListDeidentifyTemplatesPagedResponse>() {
-            @Override
-            public ListDeidentifyTemplatesPagedResponse apply(ListDeidentifyTemplatesPage input) {
-              return new ListDeidentifyTemplatesPagedResponse(input);
-            }
-          },
+          input -> new ListDeidentifyTemplatesPagedResponse(input),
           MoreExecutors.directExecutor());
     }
 
@@ -5432,12 +5421,7 @@ public class DlpServiceClient implements BackgroundResource {
           ListJobTriggersPage.createEmptyPage().createPageAsync(context, futureResponse);
       return ApiFutures.transform(
           futurePage,
-          new ApiFunction<ListJobTriggersPage, ListJobTriggersPagedResponse>() {
-            @Override
-            public ListJobTriggersPagedResponse apply(ListJobTriggersPage input) {
-              return new ListJobTriggersPagedResponse(input);
-            }
-          },
+          input -> new ListJobTriggersPagedResponse(input),
           MoreExecutors.directExecutor());
     }
 
@@ -5513,14 +5497,7 @@ public class DlpServiceClient implements BackgroundResource {
       ApiFuture<ListDlpJobsPage> futurePage =
           ListDlpJobsPage.createEmptyPage().createPageAsync(context, futureResponse);
       return ApiFutures.transform(
-          futurePage,
-          new ApiFunction<ListDlpJobsPage, ListDlpJobsPagedResponse>() {
-            @Override
-            public ListDlpJobsPagedResponse apply(ListDlpJobsPage input) {
-              return new ListDlpJobsPagedResponse(input);
-            }
-          },
-          MoreExecutors.directExecutor());
+          futurePage, input -> new ListDlpJobsPagedResponse(input), MoreExecutors.directExecutor());
     }
 
     private ListDlpJobsPagedResponse(ListDlpJobsPage page) {
@@ -5595,12 +5572,7 @@ public class DlpServiceClient implements BackgroundResource {
           ListStoredInfoTypesPage.createEmptyPage().createPageAsync(context, futureResponse);
       return ApiFutures.transform(
           futurePage,
-          new ApiFunction<ListStoredInfoTypesPage, ListStoredInfoTypesPagedResponse>() {
-            @Override
-            public ListStoredInfoTypesPagedResponse apply(ListStoredInfoTypesPage input) {
-              return new ListStoredInfoTypesPagedResponse(input);
-            }
-          },
+          input -> new ListStoredInfoTypesPagedResponse(input),
           MoreExecutors.directExecutor());
     }
 
