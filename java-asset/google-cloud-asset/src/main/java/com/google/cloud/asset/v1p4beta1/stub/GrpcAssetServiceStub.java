@@ -23,7 +23,6 @@ import com.google.api.gax.grpc.GrpcCallSettings;
 import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
-import com.google.api.gax.rpc.RequestParamsExtractor;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.asset.v1p4beta1.AnalyzeIamPolicyRequest;
 import com.google.cloud.asset.v1p4beta1.AnalyzeIamPolicyResponse;
@@ -35,7 +34,6 @@ import com.google.longrunning.stub.GrpcOperationsStub;
 import io.grpc.MethodDescriptor;
 import io.grpc.protobuf.ProtoUtils;
 import java.io.IOException;
-import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
@@ -127,15 +125,12 @@ public class GrpcAssetServiceStub extends AssetServiceStub {
             GrpcCallSettings.<AnalyzeIamPolicyRequest, AnalyzeIamPolicyResponse>newBuilder()
                 .setMethodDescriptor(analyzeIamPolicyMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<AnalyzeIamPolicyRequest>() {
-                      @Override
-                      public Map<String, String> extract(AnalyzeIamPolicyRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put(
-                            "analysis_query.parent",
-                            String.valueOf(request.getAnalysisQuery().getParent()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put(
+                          "analysis_query.parent",
+                          String.valueOf(request.getAnalysisQuery().getParent()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<ExportIamPolicyAnalysisRequest, Operation>
@@ -143,15 +138,12 @@ public class GrpcAssetServiceStub extends AssetServiceStub {
             GrpcCallSettings.<ExportIamPolicyAnalysisRequest, Operation>newBuilder()
                 .setMethodDescriptor(exportIamPolicyAnalysisMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<ExportIamPolicyAnalysisRequest>() {
-                      @Override
-                      public Map<String, String> extract(ExportIamPolicyAnalysisRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put(
-                            "analysis_query.parent",
-                            String.valueOf(request.getAnalysisQuery().getParent()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put(
+                          "analysis_query.parent",
+                          String.valueOf(request.getAnalysisQuery().getParent()));
+                      return params.build();
                     })
                 .build();
 

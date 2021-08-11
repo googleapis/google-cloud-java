@@ -25,7 +25,6 @@ import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.grpc.GrpcCallSettings;
 import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
-import com.google.api.gax.rpc.RequestParamsExtractor;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.asset.v1p1beta1.SearchAllIamPoliciesRequest;
 import com.google.cloud.asset.v1p1beta1.SearchAllIamPoliciesResponse;
@@ -36,7 +35,6 @@ import com.google.longrunning.stub.GrpcOperationsStub;
 import io.grpc.MethodDescriptor;
 import io.grpc.protobuf.ProtoUtils;
 import java.io.IOException;
-import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
@@ -127,13 +125,10 @@ public class GrpcAssetServiceStub extends AssetServiceStub {
             GrpcCallSettings.<SearchAllResourcesRequest, SearchAllResourcesResponse>newBuilder()
                 .setMethodDescriptor(searchAllResourcesMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<SearchAllResourcesRequest>() {
-                      @Override
-                      public Map<String, String> extract(SearchAllResourcesRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("scope", String.valueOf(request.getScope()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("scope", String.valueOf(request.getScope()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<SearchAllIamPoliciesRequest, SearchAllIamPoliciesResponse>
@@ -141,13 +136,10 @@ public class GrpcAssetServiceStub extends AssetServiceStub {
             GrpcCallSettings.<SearchAllIamPoliciesRequest, SearchAllIamPoliciesResponse>newBuilder()
                 .setMethodDescriptor(searchAllIamPoliciesMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<SearchAllIamPoliciesRequest>() {
-                      @Override
-                      public Map<String, String> extract(SearchAllIamPoliciesRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("scope", String.valueOf(request.getScope()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("scope", String.valueOf(request.getScope()));
+                      return params.build();
                     })
                 .build();
 

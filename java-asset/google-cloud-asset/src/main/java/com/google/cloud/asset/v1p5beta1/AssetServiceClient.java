@@ -16,7 +16,6 @@
 
 package com.google.cloud.asset.v1p5beta1;
 
-import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
 import com.google.api.core.BetaApi;
@@ -296,14 +295,7 @@ public class AssetServiceClient implements BackgroundResource {
       ApiFuture<ListAssetsPage> futurePage =
           ListAssetsPage.createEmptyPage().createPageAsync(context, futureResponse);
       return ApiFutures.transform(
-          futurePage,
-          new ApiFunction<ListAssetsPage, ListAssetsPagedResponse>() {
-            @Override
-            public ListAssetsPagedResponse apply(ListAssetsPage input) {
-              return new ListAssetsPagedResponse(input);
-            }
-          },
-          MoreExecutors.directExecutor());
+          futurePage, input -> new ListAssetsPagedResponse(input), MoreExecutors.directExecutor());
     }
 
     private ListAssetsPagedResponse(ListAssetsPage page) {

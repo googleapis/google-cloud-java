@@ -22,7 +22,6 @@ import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.grpc.GrpcCallSettings;
 import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
-import com.google.api.gax.rpc.RequestParamsExtractor;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.asset.v1p2beta1.CreateFeedRequest;
 import com.google.cloud.asset.v1p2beta1.DeleteFeedRequest;
@@ -37,7 +36,6 @@ import com.google.protobuf.Empty;
 import io.grpc.MethodDescriptor;
 import io.grpc.protobuf.ProtoUtils;
 import java.io.IOException;
-import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
@@ -143,65 +141,50 @@ public class GrpcAssetServiceStub extends AssetServiceStub {
         GrpcCallSettings.<CreateFeedRequest, Feed>newBuilder()
             .setMethodDescriptor(createFeedMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<CreateFeedRequest>() {
-                  @Override
-                  public Map<String, String> extract(CreateFeedRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("parent", String.valueOf(request.getParent()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("parent", String.valueOf(request.getParent()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<GetFeedRequest, Feed> getFeedTransportSettings =
         GrpcCallSettings.<GetFeedRequest, Feed>newBuilder()
             .setMethodDescriptor(getFeedMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<GetFeedRequest>() {
-                  @Override
-                  public Map<String, String> extract(GetFeedRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("name", String.valueOf(request.getName()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<ListFeedsRequest, ListFeedsResponse> listFeedsTransportSettings =
         GrpcCallSettings.<ListFeedsRequest, ListFeedsResponse>newBuilder()
             .setMethodDescriptor(listFeedsMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<ListFeedsRequest>() {
-                  @Override
-                  public Map<String, String> extract(ListFeedsRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("parent", String.valueOf(request.getParent()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("parent", String.valueOf(request.getParent()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<UpdateFeedRequest, Feed> updateFeedTransportSettings =
         GrpcCallSettings.<UpdateFeedRequest, Feed>newBuilder()
             .setMethodDescriptor(updateFeedMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<UpdateFeedRequest>() {
-                  @Override
-                  public Map<String, String> extract(UpdateFeedRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("feed.name", String.valueOf(request.getFeed().getName()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("feed.name", String.valueOf(request.getFeed().getName()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<DeleteFeedRequest, Empty> deleteFeedTransportSettings =
         GrpcCallSettings.<DeleteFeedRequest, Empty>newBuilder()
             .setMethodDescriptor(deleteFeedMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<DeleteFeedRequest>() {
-                  @Override
-                  public Map<String, String> extract(DeleteFeedRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("name", String.valueOf(request.getName()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  return params.build();
                 })
             .build();
 

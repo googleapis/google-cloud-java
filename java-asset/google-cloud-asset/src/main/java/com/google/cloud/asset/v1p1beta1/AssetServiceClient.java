@@ -16,7 +16,6 @@
 
 package com.google.cloud.asset.v1p1beta1;
 
-import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
 import com.google.api.core.BetaApi;
@@ -509,12 +508,7 @@ public class AssetServiceClient implements BackgroundResource {
           SearchAllResourcesPage.createEmptyPage().createPageAsync(context, futureResponse);
       return ApiFutures.transform(
           futurePage,
-          new ApiFunction<SearchAllResourcesPage, SearchAllResourcesPagedResponse>() {
-            @Override
-            public SearchAllResourcesPagedResponse apply(SearchAllResourcesPage input) {
-              return new SearchAllResourcesPagedResponse(input);
-            }
-          },
+          input -> new SearchAllResourcesPagedResponse(input),
           MoreExecutors.directExecutor());
     }
 
@@ -599,12 +593,7 @@ public class AssetServiceClient implements BackgroundResource {
           SearchAllIamPoliciesPage.createEmptyPage().createPageAsync(context, futureResponse);
       return ApiFutures.transform(
           futurePage,
-          new ApiFunction<SearchAllIamPoliciesPage, SearchAllIamPoliciesPagedResponse>() {
-            @Override
-            public SearchAllIamPoliciesPagedResponse apply(SearchAllIamPoliciesPage input) {
-              return new SearchAllIamPoliciesPagedResponse(input);
-            }
-          },
+          input -> new SearchAllIamPoliciesPagedResponse(input),
           MoreExecutors.directExecutor());
     }
 
