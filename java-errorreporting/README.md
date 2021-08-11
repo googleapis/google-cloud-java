@@ -34,7 +34,7 @@ If you are using Maven with [BOM][libraries-bom], add this to your pom.xml file
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-errorreporting</artifactId>
   </dependency>
-  <!-- BEGIN_EXCLUDE -->
+  <!-- START_EXCLUDE -->
   <dependency>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-core</artifactId>
@@ -63,7 +63,7 @@ If you are using Maven without BOM, add this to your dependencies:
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-errorreporting</artifactId>
-  <version>0.121.5-beta</version>
+  <version>0.121.6-beta</version>
 </dependency>
 
 ```
