@@ -1,5 +1,21 @@
 # Changelog
 
+## [3.0.0](https://www.github.com/googleapis/java-dlp/compare/v2.4.6...v3.0.0) (2021-08-11)
+
+
+### ⚠ BREAKING CHANGES
+
+* release gapic-generator-java v2.0.0 (#604)
+
+### Features
+
+* release gapic-generator-java v2.0.0 ([#604](https://www.github.com/googleapis/java-dlp/issues/604)) ([2e4d203](https://www.github.com/googleapis/java-dlp/commit/2e4d20384ea486ca0121ff631032211563fa5e0e))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-pubsub to v1.114.0 ([#611](https://www.github.com/googleapis/java-dlp/issues/611)) ([c6c802c](https://www.github.com/googleapis/java-dlp/commit/c6c802c018e1cdb17bc78643c0a0663d709601bd))
+
 ### [2.4.6](https://www.github.com/googleapis/java-dlp/compare/v2.4.5...v2.4.6) (2021-08-11)
 
 
