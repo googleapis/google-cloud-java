@@ -1,5 +1,12 @@
 # Changelog
 
+### [2.0.4](https://www.github.com/googleapis/java-core/compare/v2.0.3...v2.0.4) (2021-08-11)
+
+
+### Dependencies
+
+* update dependency com.google.api:api-common to v2.0.1 ([#516](https://www.github.com/googleapis/java-core/issues/516)) ([aa6abf3](https://www.github.com/googleapis/java-core/commit/aa6abf3cc458ca117ec009fb29a14fd4f5409ef3))
+
 ### [2.0.3](https://www.github.com/googleapis/java-core/compare/v2.0.2...v2.0.3) (2021-08-10)
 
 
