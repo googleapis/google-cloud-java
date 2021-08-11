@@ -27,6 +27,7 @@ import com.google.api.gax.retrying.TimedRetryAlgorithm;
 import com.google.api.gax.retrying.TimedRetryAlgorithmWithContext;
 import java.util.Iterator;
 import java.util.concurrent.CancellationException;
+import java.util.regex.Pattern;
 
 public class BigQueryRetryAlgorithm<ResponseT> extends RetryAlgorithm<ResponseT> {
   private final BigQueryRetryConfig bigQueryRetryConfig;
@@ -69,15 +70,33 @@ public class BigQueryRetryAlgorithm<ResponseT> extends RetryAlgorithm<ResponseT>
      */
     String errorDesc;
     if (previousThrowable != null && (errorDesc = previousThrowable.getMessage()) != null) {
+      errorDesc = errorDesc.toLowerCase(); // for case insensitive comparison
       for (Iterator<String> retriableMessages =
               bigQueryRetryConfig.getRetriableErrorMessages().iterator();
           retriableMessages.hasNext(); ) {
-        if (errorDesc.contains(retriableMessages.next())) { // Error message should be retried
+        if (errorDesc.contains(
+            retriableMessages
+                .next()
+                .toLowerCase())) { // Error message should be retried, implementing cases
+          // insensitive match
+          return true;
+        }
+      }
+      // Check if there's a regex which matches the error message. This avoids too many regex
+      // matches which is expensive
+      for (Iterator<String> retriableRegExes = bigQueryRetryConfig.getRetriableRegExes().iterator();
+          retriableRegExes.hasNext(); ) {
+        if (matchRegEx(retriableRegExes.next(), errorDesc)) {
           return true;
         }
       }
     }
     return false;
+  }
+
+  public static boolean matchRegEx(
+      String retriableRegEx, String errorDesc) { // cases insensitive match regex matching
+    return Pattern.matches(retriableRegEx.toLowerCase(), errorDesc.toLowerCase());
   }
 
   /*Duplicating this method as it can not be inherited from the RetryAlgorithm due to the default access modifier*/

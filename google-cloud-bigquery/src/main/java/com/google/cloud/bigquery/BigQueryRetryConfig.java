@@ -21,24 +21,38 @@ import com.google.common.collect.ImmutableSet;
 
 public class BigQueryRetryConfig {
   private final ImmutableSet<String> retriableErrorMessages;
+  private final ImmutableSet<String> retriableRegExes;
 
   private BigQueryRetryConfig(Builder builder) {
     retriableErrorMessages = builder.retriableErrorMessages.build();
+    retriableRegExes = builder.retriableRegExes.build();
   }
 
   public ImmutableSet<String> getRetriableErrorMessages() {
     return retriableErrorMessages;
   }
 
+  public ImmutableSet<String> getRetriableRegExes() {
+    return retriableRegExes;
+  }
+
   // BigQueryRetryConfig builder
   public static class Builder {
     private final ImmutableSet.Builder<String> retriableErrorMessages = ImmutableSet.builder();
+    private final ImmutableSet.Builder<String> retriableRegExes = ImmutableSet.builder();
 
     private Builder() {}
 
     public final Builder retryOnMessage(String... errorMessages) {
       for (String errorMessage : errorMessages) {
         retriableErrorMessages.add(checkNotNull(errorMessage));
+      }
+      return this;
+    }
+
+    public final Builder retryOnRegEx(String... regExPatterns) {
+      for (String regExPattern : regExPatterns) {
+        retriableRegExes.add(checkNotNull(regExPattern));
       }
       return this;
     }

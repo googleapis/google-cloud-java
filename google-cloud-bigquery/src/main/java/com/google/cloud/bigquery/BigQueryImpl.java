@@ -240,7 +240,9 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
   private static final BigQueryRetryConfig DEFAULT_RETRY_CONFIG =
       BigQueryRetryConfig.newBuilder()
           .retryOnMessage(BigQueryErrorMessages.RATE_LIMIT_EXCEEDED_MSG)
-          .build(); // retry config with Error Message for RateLimitExceeded Error
+          .retryOnMessage(BigQueryErrorMessages.JOB_RATE_LIMIT_EXCEEDED_MSG)
+          .retryOnRegEx(BigQueryErrorMessages.RetryRegExPatterns.RATE_LIMIT_EXCEEDED_REGEX)
+          .build(); // retry config with Error Messages and RegEx for RateLimitExceeded Error
 
   BigQueryImpl(BigQueryOptions options) {
     super(options);
