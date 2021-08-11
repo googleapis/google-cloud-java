@@ -4,14 +4,14 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/java-pubsub.git",
-        "sha": "3f662d44d04eb8cb9675a4746d6fe9074f524874"
+        "sha": "7940378db1394e3c5631ec854fa57b35cfb12094"
       }
     },
     {
       "git": {
         "name": "synthtool",
         "remote": "https://github.com/googleapis/synthtool.git",
-        "sha": "6252f2cd074c38f37b44abe5e96d128733eb1b61"
+        "sha": "7e1f6da50524b5d98eb67adbf6dd0805df54233d"
       }
     }
   ]
