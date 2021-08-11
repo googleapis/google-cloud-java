@@ -27,7 +27,7 @@ public interface GetGroupRequestOrBuilder
    *
    *
    * <pre>
-   * The group resource name. Written as
+   * Required. The group resource name. Written as
    * `projects/{projectID}/groups/{group_name}`. Call
    * [`groupStats.list`](https://cloud.google.com/error-reporting/reference/rest/v1beta1/projects.groupStats/list)
    * to return a list of groups belonging to this project.
@@ -45,7 +45,7 @@ public interface GetGroupRequestOrBuilder
    *
    *
    * <pre>
-   * The group resource name. Written as
+   * Required. The group resource name. Written as
    * `projects/{projectID}/groups/{group_name}`. Call
    * [`groupStats.list`](https://cloud.google.com/error-reporting/reference/rest/v1beta1/projects.groupStats/list)
    * to return a list of groups belonging to this project.

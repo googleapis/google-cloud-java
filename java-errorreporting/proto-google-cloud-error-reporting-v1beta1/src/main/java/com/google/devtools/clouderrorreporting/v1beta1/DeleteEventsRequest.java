@@ -118,7 +118,7 @@ public final class DeleteEventsRequest extends com.google.protobuf.GeneratedMess
    *
    * <pre>
    * Required. The resource name of the Google Cloud Platform project. Written
-   * as `projects/` plus the
+   * as `projects/{projectID}`, where `{projectID}` is the
    * [Google Cloud Platform project
    * ID](https://support.google.com/cloud/answer/6158840).
    * Example: `projects/my-project-123`.
@@ -147,7 +147,7 @@ public final class DeleteEventsRequest extends com.google.protobuf.GeneratedMess
    *
    * <pre>
    * Required. The resource name of the Google Cloud Platform project. Written
-   * as `projects/` plus the
+   * as `projects/{projectID}`, where `{projectID}` is the
    * [Google Cloud Platform project
    * ID](https://support.google.com/cloud/answer/6158840).
    * Example: `projects/my-project-123`.
@@ -505,7 +505,7 @@ public final class DeleteEventsRequest extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Required. The resource name of the Google Cloud Platform project. Written
-     * as `projects/` plus the
+     * as `projects/{projectID}`, where `{projectID}` is the
      * [Google Cloud Platform project
      * ID](https://support.google.com/cloud/answer/6158840).
      * Example: `projects/my-project-123`.
@@ -533,7 +533,7 @@ public final class DeleteEventsRequest extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Required. The resource name of the Google Cloud Platform project. Written
-     * as `projects/` plus the
+     * as `projects/{projectID}`, where `{projectID}` is the
      * [Google Cloud Platform project
      * ID](https://support.google.com/cloud/answer/6158840).
      * Example: `projects/my-project-123`.
@@ -561,7 +561,7 @@ public final class DeleteEventsRequest extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Required. The resource name of the Google Cloud Platform project. Written
-     * as `projects/` plus the
+     * as `projects/{projectID}`, where `{projectID}` is the
      * [Google Cloud Platform project
      * ID](https://support.google.com/cloud/answer/6158840).
      * Example: `projects/my-project-123`.
@@ -588,7 +588,7 @@ public final class DeleteEventsRequest extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Required. The resource name of the Google Cloud Platform project. Written
-     * as `projects/` plus the
+     * as `projects/{projectID}`, where `{projectID}` is the
      * [Google Cloud Platform project
      * ID](https://support.google.com/cloud/answer/6158840).
      * Example: `projects/my-project-123`.
@@ -611,7 +611,7 @@ public final class DeleteEventsRequest extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Required. The resource name of the Google Cloud Platform project. Written
-     * as `projects/` plus the
+     * as `projects/{projectID}`, where `{projectID}` is the
      * [Google Cloud Platform project
      * ID](https://support.google.com/cloud/answer/6158840).
      * Example: `projects/my-project-123`.

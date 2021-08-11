@@ -66,49 +66,54 @@ public final class CommonProto {
     java.lang.String[] descriptorData = {
       "\n8google/devtools/clouderrorreporting/v1"
           + "beta1/common.proto\022+google.devtools.clou"
-          + "derrorreporting.v1beta1\032\034google/api/anno"
-          + "tations.proto\032\031google/api/resource.proto"
-          + "\032\037google/protobuf/timestamp.proto\"\330\001\n\nEr"
+          + "derrorreporting.v1beta1\032\031google/api/reso"
+          + "urce.proto\032\037google/protobuf/timestamp.pr"
+          + "oto\032\034google/api/annotations.proto\"\262\002\n\nEr"
           + "rorGroup\022\014\n\004name\030\001 \001(\t\022\020\n\010group_id\030\002 \001(\t"
           + "\022S\n\017tracking_issues\030\003 \003(\0132:.google.devto"
           + "ols.clouderrorreporting.v1beta1.Tracking"
-          + "Issue:U\352AR\n-clouderrorreporting.googleap"
-          + "is.com/ErrorGroup\022!projects/{project}/gr"
-          + "oups/{group}\"\034\n\rTrackingIssue\022\013\n\003url\030\001 \001"
-          + "(\t\"\357\001\n\nErrorEvent\022.\n\nevent_time\030\001 \001(\0132\032."
-          + "google.protobuf.Timestamp\022T\n\017service_con"
-          + "text\030\002 \001(\0132;.google.devtools.clouderrorr"
-          + "eporting.v1beta1.ServiceContext\022\017\n\007messa"
-          + "ge\030\003 \001(\t\022J\n\007context\030\005 \001(\01329.google.devto"
-          + "ols.clouderrorreporting.v1beta1.ErrorCon"
-          + "text\"I\n\016ServiceContext\022\017\n\007service\030\002 \001(\t\022"
-          + "\017\n\007version\030\003 \001(\t\022\025\n\rresource_type\030\004 \001(\t\""
-          + "\311\001\n\014ErrorContext\022U\n\014http_request\030\001 \001(\0132?"
-          + ".google.devtools.clouderrorreporting.v1b"
-          + "eta1.HttpRequestContext\022\014\n\004user\030\002 \001(\t\022T\n"
-          + "\017report_location\030\003 \001(\0132;.google.devtools"
-          + ".clouderrorreporting.v1beta1.SourceLocat"
-          + "ion\"\210\001\n\022HttpRequestContext\022\016\n\006method\030\001 \001"
-          + "(\t\022\013\n\003url\030\002 \001(\t\022\022\n\nuser_agent\030\003 \001(\t\022\020\n\010r"
-          + "eferrer\030\004 \001(\t\022\034\n\024response_status_code\030\005 "
-          + "\001(\005\022\021\n\tremote_ip\030\006 \001(\t\"O\n\016SourceLocation"
-          + "\022\021\n\tfile_path\030\001 \001(\t\022\023\n\013line_number\030\002 \001(\005"
-          + "\022\025\n\rfunction_name\030\004 \001(\tB\230\002\n/com.google.d"
-          + "evtools.clouderrorreporting.v1beta1B\013Com"
-          + "monProtoP\001Z^google.golang.org/genproto/g"
-          + "oogleapis/devtools/clouderrorreporting/v"
-          + "1beta1;clouderrorreporting\370\001\001\252\002#Google.C"
-          + "loud.ErrorReporting.V1Beta1\312\002#Google\\Clo"
-          + "ud\\ErrorReporting\\V1beta1\352\002&Google::Clou"
-          + "d::ErrorReporting::V1beta1b\006proto3"
+          + "Issue\022X\n\021resolution_status\030\005 \001(\0162=.googl"
+          + "e.devtools.clouderrorreporting.v1beta1.R"
+          + "esolutionStatus:U\352AR\n-clouderrorreportin"
+          + "g.googleapis.com/ErrorGroup\022!projects/{p"
+          + "roject}/groups/{group}\"\034\n\rTrackingIssue\022"
+          + "\013\n\003url\030\001 \001(\t\"\357\001\n\nErrorEvent\022.\n\nevent_tim"
+          + "e\030\001 \001(\0132\032.google.protobuf.Timestamp\022T\n\017s"
+          + "ervice_context\030\002 \001(\0132;.google.devtools.c"
+          + "louderrorreporting.v1beta1.ServiceContex"
+          + "t\022\017\n\007message\030\003 \001(\t\022J\n\007context\030\005 \001(\01329.go"
+          + "ogle.devtools.clouderrorreporting.v1beta"
+          + "1.ErrorContext\"I\n\016ServiceContext\022\017\n\007serv"
+          + "ice\030\002 \001(\t\022\017\n\007version\030\003 \001(\t\022\025\n\rresource_t"
+          + "ype\030\004 \001(\t\"\311\001\n\014ErrorContext\022U\n\014http_reque"
+          + "st\030\001 \001(\0132?.google.devtools.clouderrorrep"
+          + "orting.v1beta1.HttpRequestContext\022\014\n\004use"
+          + "r\030\002 \001(\t\022T\n\017report_location\030\003 \001(\0132;.googl"
+          + "e.devtools.clouderrorreporting.v1beta1.S"
+          + "ourceLocation\"\210\001\n\022HttpRequestContext\022\016\n\006"
+          + "method\030\001 \001(\t\022\013\n\003url\030\002 \001(\t\022\022\n\nuser_agent\030"
+          + "\003 \001(\t\022\020\n\010referrer\030\004 \001(\t\022\034\n\024response_stat"
+          + "us_code\030\005 \001(\005\022\021\n\tremote_ip\030\006 \001(\t\"O\n\016Sour"
+          + "ceLocation\022\021\n\tfile_path\030\001 \001(\t\022\023\n\013line_nu"
+          + "mber\030\002 \001(\005\022\025\n\rfunction_name\030\004 \001(\t*j\n\020Res"
+          + "olutionStatus\022!\n\035RESOLUTION_STATUS_UNSPE"
+          + "CIFIED\020\000\022\010\n\004OPEN\020\001\022\020\n\014ACKNOWLEDGED\020\002\022\014\n\010"
+          + "RESOLVED\020\003\022\t\n\005MUTED\020\004B\230\002\n/com.google.dev"
+          + "tools.clouderrorreporting.v1beta1B\013Commo"
+          + "nProtoP\001Z^google.golang.org/genproto/goo"
+          + "gleapis/devtools/clouderrorreporting/v1b"
+          + "eta1;clouderrorreporting\370\001\001\252\002#Google.Clo"
+          + "ud.ErrorReporting.V1Beta1\312\002#Google\\Cloud"
+          + "\\ErrorReporting\\V1beta1\352\002&Google::Cloud:"
+          + ":ErrorReporting::V1beta1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
             descriptorData,
             new com.google.protobuf.Descriptors.FileDescriptor[] {
-              com.google.api.AnnotationsProto.getDescriptor(),
               com.google.api.ResourceProto.getDescriptor(),
               com.google.protobuf.TimestampProto.getDescriptor(),
+              com.google.api.AnnotationsProto.getDescriptor(),
             });
     internal_static_google_devtools_clouderrorreporting_v1beta1_ErrorGroup_descriptor =
         getDescriptor().getMessageTypes().get(0);
@@ -116,7 +121,7 @@ public final class CommonProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_devtools_clouderrorreporting_v1beta1_ErrorGroup_descriptor,
             new java.lang.String[] {
-              "Name", "GroupId", "TrackingIssues",
+              "Name", "GroupId", "TrackingIssues", "ResolutionStatus",
             });
     internal_static_google_devtools_clouderrorreporting_v1beta1_TrackingIssue_descriptor =
         getDescriptor().getMessageTypes().get(1);
@@ -171,9 +176,9 @@ public final class CommonProto {
     registry.add(com.google.api.ResourceProto.resource);
     com.google.protobuf.Descriptors.FileDescriptor.internalUpdateFileDescriptor(
         descriptor, registry);
-    com.google.api.AnnotationsProto.getDescriptor();
     com.google.api.ResourceProto.getDescriptor();
     com.google.protobuf.TimestampProto.getDescriptor();
+    com.google.api.AnnotationsProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

@@ -16,11 +16,6 @@
 package com.google.devtools.clouderrorreporting.v1beta1;
 
 import static io.grpc.MethodDescriptor.generateFullMethodName;
-import static io.grpc.stub.ClientCalls.asyncUnaryCall;
-import static io.grpc.stub.ClientCalls.blockingUnaryCall;
-import static io.grpc.stub.ClientCalls.futureUnaryCall;
-import static io.grpc.stub.ServerCalls.asyncUnaryCall;
-import static io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall;
 
 /**
  *
@@ -142,13 +137,19 @@ public final class ReportErrorsServiceGrpc {
      *
      *
      * <pre>
-     * Report an individual error event.
+     * Report an individual error event and record the event to a log.
      * This endpoint accepts **either** an OAuth token,
      * **or** an [API key](https://support.google.com/cloud/answer/6158862)
      * for authentication. To use an API key, append it to the URL as the value of
      * a `key` parameter. For example:
      * `POST
-     * https://clouderrorreporting.googleapis.com/v1beta1/projects/example-project/events:report?key=123ABC456`
+     * https://clouderrorreporting.googleapis.com/v1beta1/{projectName}/events:report?key=123ABC456`
+     * **Note:** [Error Reporting](/error-reporting) is a global service built
+     * on Cloud Logging and doesn't analyze logs stored
+     * in regional log buckets or logs routed to other Google Cloud projects.
+     * For more information, see
+     * [Using Error Reporting with regionalized
+     * logs](/error-reporting/docs/regionalization).
      * </pre>
      */
     public void reportErrorEvent(
@@ -156,7 +157,8 @@ public final class ReportErrorsServiceGrpc {
         io.grpc.stub.StreamObserver<
                 com.google.devtools.clouderrorreporting.v1beta1.ReportErrorEventResponse>
             responseObserver) {
-      asyncUnimplementedUnaryCall(getReportErrorEventMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getReportErrorEventMethod(), responseObserver);
     }
 
     @java.lang.Override
@@ -164,7 +166,7 @@ public final class ReportErrorsServiceGrpc {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
               getReportErrorEventMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.devtools.clouderrorreporting.v1beta1.ReportErrorEventRequest,
                       com.google.devtools.clouderrorreporting.v1beta1.ReportErrorEventResponse>(
@@ -196,13 +198,19 @@ public final class ReportErrorsServiceGrpc {
      *
      *
      * <pre>
-     * Report an individual error event.
+     * Report an individual error event and record the event to a log.
      * This endpoint accepts **either** an OAuth token,
      * **or** an [API key](https://support.google.com/cloud/answer/6158862)
      * for authentication. To use an API key, append it to the URL as the value of
      * a `key` parameter. For example:
      * `POST
-     * https://clouderrorreporting.googleapis.com/v1beta1/projects/example-project/events:report?key=123ABC456`
+     * https://clouderrorreporting.googleapis.com/v1beta1/{projectName}/events:report?key=123ABC456`
+     * **Note:** [Error Reporting](/error-reporting) is a global service built
+     * on Cloud Logging and doesn't analyze logs stored
+     * in regional log buckets or logs routed to other Google Cloud projects.
+     * For more information, see
+     * [Using Error Reporting with regionalized
+     * logs](/error-reporting/docs/regionalization).
      * </pre>
      */
     public void reportErrorEvent(
@@ -210,7 +218,7 @@ public final class ReportErrorsServiceGrpc {
         io.grpc.stub.StreamObserver<
                 com.google.devtools.clouderrorreporting.v1beta1.ReportErrorEventResponse>
             responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getReportErrorEventMethod(), getCallOptions()),
           request,
           responseObserver);
@@ -241,19 +249,25 @@ public final class ReportErrorsServiceGrpc {
      *
      *
      * <pre>
-     * Report an individual error event.
+     * Report an individual error event and record the event to a log.
      * This endpoint accepts **either** an OAuth token,
      * **or** an [API key](https://support.google.com/cloud/answer/6158862)
      * for authentication. To use an API key, append it to the URL as the value of
      * a `key` parameter. For example:
      * `POST
-     * https://clouderrorreporting.googleapis.com/v1beta1/projects/example-project/events:report?key=123ABC456`
+     * https://clouderrorreporting.googleapis.com/v1beta1/{projectName}/events:report?key=123ABC456`
+     * **Note:** [Error Reporting](/error-reporting) is a global service built
+     * on Cloud Logging and doesn't analyze logs stored
+     * in regional log buckets or logs routed to other Google Cloud projects.
+     * For more information, see
+     * [Using Error Reporting with regionalized
+     * logs](/error-reporting/docs/regionalization).
      * </pre>
      */
     public com.google.devtools.clouderrorreporting.v1beta1.ReportErrorEventResponse
         reportErrorEvent(
             com.google.devtools.clouderrorreporting.v1beta1.ReportErrorEventRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getReportErrorEventMethod(), getCallOptions(), request);
     }
   }
@@ -282,20 +296,26 @@ public final class ReportErrorsServiceGrpc {
      *
      *
      * <pre>
-     * Report an individual error event.
+     * Report an individual error event and record the event to a log.
      * This endpoint accepts **either** an OAuth token,
      * **or** an [API key](https://support.google.com/cloud/answer/6158862)
      * for authentication. To use an API key, append it to the URL as the value of
      * a `key` parameter. For example:
      * `POST
-     * https://clouderrorreporting.googleapis.com/v1beta1/projects/example-project/events:report?key=123ABC456`
+     * https://clouderrorreporting.googleapis.com/v1beta1/{projectName}/events:report?key=123ABC456`
+     * **Note:** [Error Reporting](/error-reporting) is a global service built
+     * on Cloud Logging and doesn't analyze logs stored
+     * in regional log buckets or logs routed to other Google Cloud projects.
+     * For more information, see
+     * [Using Error Reporting with regionalized
+     * logs](/error-reporting/docs/regionalization).
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.devtools.clouderrorreporting.v1beta1.ReportErrorEventResponse>
         reportErrorEvent(
             com.google.devtools.clouderrorreporting.v1beta1.ReportErrorEventRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getReportErrorEventMethod(), getCallOptions()), request);
     }
   }

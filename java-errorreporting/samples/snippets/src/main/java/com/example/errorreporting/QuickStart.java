@@ -21,10 +21,10 @@ package com.example.errorreporting;
 // [START error_reporting_setup_java]
 
 import com.google.cloud.ServiceOptions;
-import com.google.cloud.errorreporting.v1beta1.ReportErrorsServiceClient;
 import com.google.devtools.clouderrorreporting.v1beta1.ErrorContext;
 import com.google.devtools.clouderrorreporting.v1beta1.ProjectName;
 import com.google.devtools.clouderrorreporting.v1beta1.ReportedErrorEvent;
+import com.google.devtools.clouderrorreporting.v1beta1.ReportErrorsServiceClient;
 import com.google.devtools.clouderrorreporting.v1beta1.SourceLocation;
 
 /**

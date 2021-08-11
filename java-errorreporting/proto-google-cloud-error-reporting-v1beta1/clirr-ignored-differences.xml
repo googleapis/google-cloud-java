@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- see http://www.mojohaus.org/clirr-maven-plugin/examples/ignored-differences.html -->
+<differences>
+    <!-- Added methods to com.google.devtools.clouderrorreporting.v1beta1.ErrorGroupOrBuilder (resolution status) -->
+    <difference>
+        <differenceType>7012</differenceType>
+        <className>com/google/devtools/clouderrorreporting/v1beta1/ErrorGroupOrBuilder</className>
+        <method>* getResolutionStatus*()</method>
+    </difference>
+    <difference>
+        <differenceType>7012</differenceType>
+        <className>com/google/devtools/clouderrorreporting/v1beta1/ErrorGroupOrBuilder</className>
+        <method>* getResolutionStatusValue()</method>
+    </difference>
+</differences>
