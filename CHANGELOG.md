@@ -1,5 +1,19 @@
 # Changelog
 
+## [2.1.0](https://www.github.com/googleapis/java-bigquery/compare/v2.0.1...v2.1.0) (2021-08-11)
+
+
+### Features
+
+* add support for transactioninfo in query statistics ([#1497](https://www.github.com/googleapis/java-bigquery/issues/1497)) ([4c3b2de](https://www.github.com/googleapis/java-bigquery/commit/4c3b2de16584b9079dd4afd5a33aa8c00bc75f20)), closes [#1467](https://www.github.com/googleapis/java-bigquery/issues/1467)
+* Updated `BigQueryRetryAlgorithm` so that it can retry on RateLimit Errors using RegEx ([#1499](https://www.github.com/googleapis/java-bigquery/issues/1499)) ([ec68c11](https://www.github.com/googleapis/java-bigquery/commit/ec68c1145a89753e7d42458bbea86737cad6090f))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-bigtable to v2 ([#1495](https://www.github.com/googleapis/java-bigquery/issues/1495)) ([cf26534](https://www.github.com/googleapis/java-bigquery/commit/cf265347e5e650670d19a1122f69497272854ebe))
+* update dependency com.google.cloud:google-cloud-storage to v2 ([#1491](https://www.github.com/googleapis/java-bigquery/issues/1491)) ([b705052](https://www.github.com/googleapis/java-bigquery/commit/b705052475899512c7981d3893b7d630f1488c99))
+
 ### [2.0.1](https://www.github.com/googleapis/java-bigquery/compare/v2.0.0...v2.0.1) (2021-08-09)
 
 
