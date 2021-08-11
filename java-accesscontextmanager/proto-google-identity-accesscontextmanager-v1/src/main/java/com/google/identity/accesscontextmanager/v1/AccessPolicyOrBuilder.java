@@ -28,7 +28,7 @@ public interface AccessPolicyOrBuilder
    *
    * <pre>
    * Output only. Resource name of the `AccessPolicy`. Format:
-   * `accessPolicies/{policy_id}`
+   * `accessPolicies/{access_policy}`
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -41,7 +41,7 @@ public interface AccessPolicyOrBuilder
    *
    * <pre>
    * Output only. Resource name of the `AccessPolicy`. Format:
-   * `accessPolicies/{policy_id}`
+   * `accessPolicies/{access_policy}`
    * </pre>
    *
    * <code>string name = 1;</code>

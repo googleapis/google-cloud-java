@@ -262,4 +262,210 @@ public interface ServicePerimeterConfigOrBuilder
    */
   com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig.VpcAccessibleServicesOrBuilder
       getVpcAccessibleServicesOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * List of [IngressPolicies]
+   * [google.identity.accesscontextmanager.v1.ServicePerimeterConfig.IngressPolicy]
+   * to apply to the perimeter. A perimeter may have multiple [IngressPolicies]
+   * [google.identity.accesscontextmanager.v1.ServicePerimeterConfig.IngressPolicy],
+   * each of which is evaluated separately. Access is granted if any [Ingress
+   * Policy]
+   * [google.identity.accesscontextmanager.v1.ServicePerimeterConfig.IngressPolicy]
+   * grants it. Must be empty for a perimeter bridge.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.identity.accesscontextmanager.v1.ServicePerimeterConfig.IngressPolicy ingress_policies = 8;
+   * </code>
+   */
+  java.util.List<com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig.IngressPolicy>
+      getIngressPoliciesList();
+  /**
+   *
+   *
+   * <pre>
+   * List of [IngressPolicies]
+   * [google.identity.accesscontextmanager.v1.ServicePerimeterConfig.IngressPolicy]
+   * to apply to the perimeter. A perimeter may have multiple [IngressPolicies]
+   * [google.identity.accesscontextmanager.v1.ServicePerimeterConfig.IngressPolicy],
+   * each of which is evaluated separately. Access is granted if any [Ingress
+   * Policy]
+   * [google.identity.accesscontextmanager.v1.ServicePerimeterConfig.IngressPolicy]
+   * grants it. Must be empty for a perimeter bridge.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.identity.accesscontextmanager.v1.ServicePerimeterConfig.IngressPolicy ingress_policies = 8;
+   * </code>
+   */
+  com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig.IngressPolicy
+      getIngressPolicies(int index);
+  /**
+   *
+   *
+   * <pre>
+   * List of [IngressPolicies]
+   * [google.identity.accesscontextmanager.v1.ServicePerimeterConfig.IngressPolicy]
+   * to apply to the perimeter. A perimeter may have multiple [IngressPolicies]
+   * [google.identity.accesscontextmanager.v1.ServicePerimeterConfig.IngressPolicy],
+   * each of which is evaluated separately. Access is granted if any [Ingress
+   * Policy]
+   * [google.identity.accesscontextmanager.v1.ServicePerimeterConfig.IngressPolicy]
+   * grants it. Must be empty for a perimeter bridge.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.identity.accesscontextmanager.v1.ServicePerimeterConfig.IngressPolicy ingress_policies = 8;
+   * </code>
+   */
+  int getIngressPoliciesCount();
+  /**
+   *
+   *
+   * <pre>
+   * List of [IngressPolicies]
+   * [google.identity.accesscontextmanager.v1.ServicePerimeterConfig.IngressPolicy]
+   * to apply to the perimeter. A perimeter may have multiple [IngressPolicies]
+   * [google.identity.accesscontextmanager.v1.ServicePerimeterConfig.IngressPolicy],
+   * each of which is evaluated separately. Access is granted if any [Ingress
+   * Policy]
+   * [google.identity.accesscontextmanager.v1.ServicePerimeterConfig.IngressPolicy]
+   * grants it. Must be empty for a perimeter bridge.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.identity.accesscontextmanager.v1.ServicePerimeterConfig.IngressPolicy ingress_policies = 8;
+   * </code>
+   */
+  java.util.List<
+          ? extends
+              com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig
+                  .IngressPolicyOrBuilder>
+      getIngressPoliciesOrBuilderList();
+  /**
+   *
+   *
+   * <pre>
+   * List of [IngressPolicies]
+   * [google.identity.accesscontextmanager.v1.ServicePerimeterConfig.IngressPolicy]
+   * to apply to the perimeter. A perimeter may have multiple [IngressPolicies]
+   * [google.identity.accesscontextmanager.v1.ServicePerimeterConfig.IngressPolicy],
+   * each of which is evaluated separately. Access is granted if any [Ingress
+   * Policy]
+   * [google.identity.accesscontextmanager.v1.ServicePerimeterConfig.IngressPolicy]
+   * grants it. Must be empty for a perimeter bridge.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.identity.accesscontextmanager.v1.ServicePerimeterConfig.IngressPolicy ingress_policies = 8;
+   * </code>
+   */
+  com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig.IngressPolicyOrBuilder
+      getIngressPoliciesOrBuilder(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * List of [EgressPolicies]
+   * [google.identity.accesscontextmanager.v1.ServicePerimeterConfig.EgressPolicy]
+   * to apply to the perimeter. A perimeter may have multiple [EgressPolicies]
+   * [google.identity.accesscontextmanager.v1.ServicePerimeterConfig.EgressPolicy],
+   * each of which is evaluated separately. Access is granted if any
+   * [EgressPolicy]
+   * [google.identity.accesscontextmanager.v1.ServicePerimeterConfig.EgressPolicy]
+   * grants it. Must be empty for a perimeter bridge.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.identity.accesscontextmanager.v1.ServicePerimeterConfig.EgressPolicy egress_policies = 9;
+   * </code>
+   */
+  java.util.List<com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig.EgressPolicy>
+      getEgressPoliciesList();
+  /**
+   *
+   *
+   * <pre>
+   * List of [EgressPolicies]
+   * [google.identity.accesscontextmanager.v1.ServicePerimeterConfig.EgressPolicy]
+   * to apply to the perimeter. A perimeter may have multiple [EgressPolicies]
+   * [google.identity.accesscontextmanager.v1.ServicePerimeterConfig.EgressPolicy],
+   * each of which is evaluated separately. Access is granted if any
+   * [EgressPolicy]
+   * [google.identity.accesscontextmanager.v1.ServicePerimeterConfig.EgressPolicy]
+   * grants it. Must be empty for a perimeter bridge.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.identity.accesscontextmanager.v1.ServicePerimeterConfig.EgressPolicy egress_policies = 9;
+   * </code>
+   */
+  com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig.EgressPolicy getEgressPolicies(
+      int index);
+  /**
+   *
+   *
+   * <pre>
+   * List of [EgressPolicies]
+   * [google.identity.accesscontextmanager.v1.ServicePerimeterConfig.EgressPolicy]
+   * to apply to the perimeter. A perimeter may have multiple [EgressPolicies]
+   * [google.identity.accesscontextmanager.v1.ServicePerimeterConfig.EgressPolicy],
+   * each of which is evaluated separately. Access is granted if any
+   * [EgressPolicy]
+   * [google.identity.accesscontextmanager.v1.ServicePerimeterConfig.EgressPolicy]
+   * grants it. Must be empty for a perimeter bridge.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.identity.accesscontextmanager.v1.ServicePerimeterConfig.EgressPolicy egress_policies = 9;
+   * </code>
+   */
+  int getEgressPoliciesCount();
+  /**
+   *
+   *
+   * <pre>
+   * List of [EgressPolicies]
+   * [google.identity.accesscontextmanager.v1.ServicePerimeterConfig.EgressPolicy]
+   * to apply to the perimeter. A perimeter may have multiple [EgressPolicies]
+   * [google.identity.accesscontextmanager.v1.ServicePerimeterConfig.EgressPolicy],
+   * each of which is evaluated separately. Access is granted if any
+   * [EgressPolicy]
+   * [google.identity.accesscontextmanager.v1.ServicePerimeterConfig.EgressPolicy]
+   * grants it. Must be empty for a perimeter bridge.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.identity.accesscontextmanager.v1.ServicePerimeterConfig.EgressPolicy egress_policies = 9;
+   * </code>
+   */
+  java.util.List<
+          ? extends
+              com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig
+                  .EgressPolicyOrBuilder>
+      getEgressPoliciesOrBuilderList();
+  /**
+   *
+   *
+   * <pre>
+   * List of [EgressPolicies]
+   * [google.identity.accesscontextmanager.v1.ServicePerimeterConfig.EgressPolicy]
+   * to apply to the perimeter. A perimeter may have multiple [EgressPolicies]
+   * [google.identity.accesscontextmanager.v1.ServicePerimeterConfig.EgressPolicy],
+   * each of which is evaluated separately. Access is granted if any
+   * [EgressPolicy]
+   * [google.identity.accesscontextmanager.v1.ServicePerimeterConfig.EgressPolicy]
+   * grants it. Must be empty for a perimeter bridge.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.identity.accesscontextmanager.v1.ServicePerimeterConfig.EgressPolicy egress_policies = 9;
+   * </code>
+   */
+  com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig.EgressPolicyOrBuilder
+      getEgressPoliciesOrBuilder(int index);
 }

@@ -62,57 +62,62 @@ public final class AccessLevelProto {
     java.lang.String[] descriptorData = {
       "\n:google/identity/accesscontextmanager/v"
           + "1/access_level.proto\022\'google.identity.ac"
-          + "cesscontextmanager.v1\032@google/identity/a"
-          + "ccesscontextmanager/type/device_resource"
-          + "s.proto\032\037google/protobuf/timestamp.proto"
-          + "\032\026google/type/expr.proto\032\034google/api/ann"
-          + "otations.proto\"\270\002\n\013AccessLevel\022\014\n\004name\030\001"
-          + " \001(\t\022\r\n\005title\030\002 \001(\t\022\023\n\013description\030\003 \001(\t"
-          + "\022D\n\005basic\030\004 \001(\01323.google.identity.access"
-          + "contextmanager.v1.BasicLevelH\000\022F\n\006custom"
-          + "\030\005 \001(\01324.google.identity.accesscontextma"
-          + "nager.v1.CustomLevelH\000\022/\n\013create_time\030\006 "
-          + "\001(\0132\032.google.protobuf.Timestamp\022/\n\013updat"
-          + "e_time\030\007 \001(\0132\032.google.protobuf.Timestamp"
-          + "B\007\n\005level\"\357\001\n\nBasicLevel\022F\n\nconditions\030\001"
-          + " \003(\01322.google.identity.accesscontextmana"
-          + "ger.v1.Condition\022j\n\022combining_function\030\002"
-          + " \001(\0162N.google.identity.accesscontextmana"
-          + "ger.v1.BasicLevel.ConditionCombiningFunc"
-          + "tion\"-\n\032ConditionCombiningFunction\022\007\n\003AN"
-          + "D\020\000\022\006\n\002OR\020\001\"\303\001\n\tCondition\022\026\n\016ip_subnetwo"
-          + "rks\030\001 \003(\t\022L\n\rdevice_policy\030\002 \001(\01325.googl"
-          + "e.identity.accesscontextmanager.v1.Devic"
-          + "ePolicy\022\036\n\026required_access_levels\030\003 \003(\t\022"
-          + "\016\n\006negate\030\005 \001(\010\022\017\n\007members\030\006 \003(\t\022\017\n\007regi"
-          + "ons\030\007 \003(\t\".\n\013CustomLevel\022\037\n\004expr\030\001 \001(\0132\021"
-          + ".google.type.Expr\"\211\003\n\014DevicePolicy\022\032\n\022re"
-          + "quire_screenlock\030\001 \001(\010\022f\n\033allowed_encryp"
-          + "tion_statuses\030\002 \003(\0162A.google.identity.ac"
-          + "cesscontextmanager.type.DeviceEncryption"
-          + "Status\022M\n\016os_constraints\030\003 \003(\01325.google."
-          + "identity.accesscontextmanager.v1.OsConst"
-          + "raint\022j\n allowed_device_management_level"
-          + "s\030\006 \003(\0162@.google.identity.accesscontextm"
-          + "anager.type.DeviceManagementLevel\022\036\n\026req"
-          + "uire_admin_approval\030\007 \001(\010\022\032\n\022require_cor"
-          + "p_owned\030\010 \001(\010\"\217\001\n\014OsConstraint\022B\n\007os_typ"
-          + "e\030\001 \001(\01621.google.identity.accesscontextm"
-          + "anager.type.OsType\022\027\n\017minimum_version\030\002 "
-          + "\001(\t\022\"\n\032require_verified_chrome_os\030\003 \001(\010B"
-          + "\246\002\n+com.google.identity.accesscontextman"
-          + "ager.v1B\020AccessLevelProtoP\001Z[google.gola"
-          + "ng.org/genproto/googleapis/identity/acce"
-          + "sscontextmanager/v1;accesscontextmanager"
-          + "\242\002\004GACM\252\002\'Google.Identity.AccessContextM"
-          + "anager.V1\312\002\'Google\\Identity\\AccessContex"
-          + "tManager\\V1\352\002*Google::Identity::AccessCo"
-          + "ntextManager::V1b\006proto3"
+          + "cesscontextmanager.v1\032\031google/api/resour"
+          + "ce.proto\032@google/identity/accesscontextm"
+          + "anager/type/device_resources.proto\032\037goog"
+          + "le/protobuf/timestamp.proto\032\026google/type"
+          + "/expr.proto\032\034google/api/annotations.prot"
+          + "o\"\252\003\n\013AccessLevel\022\014\n\004name\030\001 \001(\t\022\r\n\005title"
+          + "\030\002 \001(\t\022\023\n\013description\030\003 \001(\t\022D\n\005basic\030\004 \001"
+          + "(\01323.google.identity.accesscontextmanage"
+          + "r.v1.BasicLevelH\000\022F\n\006custom\030\005 \001(\01324.goog"
+          + "le.identity.accesscontextmanager.v1.Cust"
+          + "omLevelH\000\022/\n\013create_time\030\006 \001(\0132\032.google."
+          + "protobuf.Timestamp\022/\n\013update_time\030\007 \001(\0132"
+          + "\032.google.protobuf.Timestamp:p\352Am\n/access"
+          + "contextmanager.googleapis.com/AccessLeve"
+          + "l\022:accessPolicies/{access_policy}/access"
+          + "Levels/{access_level}B\007\n\005level\"\357\001\n\nBasic"
+          + "Level\022F\n\nconditions\030\001 \003(\01322.google.ident"
+          + "ity.accesscontextmanager.v1.Condition\022j\n"
+          + "\022combining_function\030\002 \001(\0162N.google.ident"
+          + "ity.accesscontextmanager.v1.BasicLevel.C"
+          + "onditionCombiningFunction\"-\n\032ConditionCo"
+          + "mbiningFunction\022\007\n\003AND\020\000\022\006\n\002OR\020\001\"\303\001\n\tCon"
+          + "dition\022\026\n\016ip_subnetworks\030\001 \003(\t\022L\n\rdevice"
+          + "_policy\030\002 \001(\01325.google.identity.accessco"
+          + "ntextmanager.v1.DevicePolicy\022\036\n\026required"
+          + "_access_levels\030\003 \003(\t\022\016\n\006negate\030\005 \001(\010\022\017\n\007"
+          + "members\030\006 \003(\t\022\017\n\007regions\030\007 \003(\t\".\n\013Custom"
+          + "Level\022\037\n\004expr\030\001 \001(\0132\021.google.type.Expr\"\211"
+          + "\003\n\014DevicePolicy\022\032\n\022require_screenlock\030\001 "
+          + "\001(\010\022f\n\033allowed_encryption_statuses\030\002 \003(\016"
+          + "2A.google.identity.accesscontextmanager."
+          + "type.DeviceEncryptionStatus\022M\n\016os_constr"
+          + "aints\030\003 \003(\01325.google.identity.accesscont"
+          + "extmanager.v1.OsConstraint\022j\n allowed_de"
+          + "vice_management_levels\030\006 \003(\0162@.google.id"
+          + "entity.accesscontextmanager.type.DeviceM"
+          + "anagementLevel\022\036\n\026require_admin_approval"
+          + "\030\007 \001(\010\022\032\n\022require_corp_owned\030\010 \001(\010\"\217\001\n\014O"
+          + "sConstraint\022B\n\007os_type\030\001 \001(\01621.google.id"
+          + "entity.accesscontextmanager.type.OsType\022"
+          + "\027\n\017minimum_version\030\002 \001(\t\022\"\n\032require_veri"
+          + "fied_chrome_os\030\003 \001(\010B\246\002\n+com.google.iden"
+          + "tity.accesscontextmanager.v1B\020AccessLeve"
+          + "lProtoP\001Z[google.golang.org/genproto/goo"
+          + "gleapis/identity/accesscontextmanager/v1"
+          + ";accesscontextmanager\242\002\004GACM\252\002\'Google.Id"
+          + "entity.AccessContextManager.V1\312\002\'Google\\"
+          + "Identity\\AccessContextManager\\V1\352\002*Googl"
+          + "e::Identity::AccessContextManager::V1b\006p"
+          + "roto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
             descriptorData,
             new com.google.protobuf.Descriptors.FileDescriptor[] {
+              com.google.api.ResourceProto.getDescriptor(),
               com.google.identity.accesscontextmanager.type.TypeProto.getDescriptor(),
               com.google.protobuf.TimestampProto.getDescriptor(),
               com.google.type.ExprProto.getDescriptor(),
@@ -183,6 +188,12 @@ public final class AccessLevelProto {
             new java.lang.String[] {
               "OsType", "MinimumVersion", "RequireVerifiedChromeOs",
             });
+    com.google.protobuf.ExtensionRegistry registry =
+        com.google.protobuf.ExtensionRegistry.newInstance();
+    registry.add(com.google.api.ResourceProto.resource);
+    com.google.protobuf.Descriptors.FileDescriptor.internalUpdateFileDescriptor(
+        descriptor, registry);
+    com.google.api.ResourceProto.getDescriptor();
     com.google.identity.accesscontextmanager.type.TypeProto.getDescriptor();
     com.google.protobuf.TimestampProto.getDescriptor();
     com.google.type.ExprProto.getDescriptor();
