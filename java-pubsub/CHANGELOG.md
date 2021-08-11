@@ -1,5 +1,15 @@
 # Changelog
 
+### [1.113.9](https://www.github.com/googleapis/java-pubsub/compare/v1.113.8...v1.113.9) (2021-08-11)
+
+
+### Dependencies
+
+* update dependency com.google.api.grpc:grpc-google-cloud-pubsub-v1 to v1.96.0 ([#786](https://www.github.com/googleapis/java-pubsub/issues/786)) ([57c3c2b](https://www.github.com/googleapis/java-pubsub/commit/57c3c2bfd467fd02a03ec581d9254fe3c9c68f8b))
+* update dependency com.google.api.grpc:proto-google-cloud-pubsub-v1 to v1.96.0 ([#787](https://www.github.com/googleapis/java-pubsub/issues/787)) ([7940378](https://www.github.com/googleapis/java-pubsub/commit/7940378db1394e3c5631ec854fa57b35cfb12094))
+* update dependency com.google.cloud:google-cloud-core to v2.0.5 ([#783](https://www.github.com/googleapis/java-pubsub/issues/783)) ([de3d475](https://www.github.com/googleapis/java-pubsub/commit/de3d47544bfe370330dd6b569927cf77204201bf))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.0.1 ([#788](https://www.github.com/googleapis/java-pubsub/issues/788)) ([5d39f85](https://www.github.com/googleapis/java-pubsub/commit/5d39f850040a2c60c5c87a7669f924121e0b8b0a))
+
 ### [1.113.8](https://www.github.com/googleapis/java-pubsub/compare/v1.113.7...v1.113.8) (2021-08-11)
 
 
