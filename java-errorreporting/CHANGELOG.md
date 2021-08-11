@@ -1,5 +1,21 @@
 # Changelog
 
+## [0.122.0](https://www.github.com/googleapis/java-errorreporting/compare/v0.121.6...v0.122.0) (2021-08-11)
+
+
+### ⚠ BREAKING CHANGES
+
+* renamed error reporting APi surface (#618)
+
+### Features
+
+* renamed error reporting APi surface ([#618](https://www.github.com/googleapis/java-errorreporting/issues/618)) ([211ee0f](https://www.github.com/googleapis/java-errorreporting/commit/211ee0f2d096fce5b9faacfdbccb85dced2ce90d))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-core to v2.0.3 ([#622](https://www.github.com/googleapis/java-errorreporting/issues/622)) ([13e6694](https://www.github.com/googleapis/java-errorreporting/commit/13e66947777a30adafd99343514a0b3d953326de))
+
 ### [0.121.6](https://www.github.com/googleapis/java-errorreporting/compare/v0.121.5...v0.121.6) (2021-08-04)
 
 
