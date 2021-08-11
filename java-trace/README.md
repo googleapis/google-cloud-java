@@ -56,13 +56,13 @@ compile 'com.google.cloud:google-cloud-trace'
 If you are using Gradle without BOM, add this to your dependencies
 
 ```Groovy
-compile 'com.google.cloud:google-cloud-trace:1.4.2'
+compile 'com.google.cloud:google-cloud-trace:2.0.0'
 ```
 
 If you are using SBT, add this to your dependencies
 
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-trace" % "1.4.2"
+libraryDependencies += "com.google.cloud" % "google-cloud-trace" % "2.0.0"
 ```
 
 ## Authentication
