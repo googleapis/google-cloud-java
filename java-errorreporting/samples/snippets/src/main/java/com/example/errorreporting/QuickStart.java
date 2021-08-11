@@ -23,8 +23,8 @@ package com.example.errorreporting;
 import com.google.cloud.ServiceOptions;
 import com.google.devtools.clouderrorreporting.v1beta1.ErrorContext;
 import com.google.devtools.clouderrorreporting.v1beta1.ProjectName;
-import com.google.devtools.clouderrorreporting.v1beta1.ReportedErrorEvent;
 import com.google.devtools.clouderrorreporting.v1beta1.ReportErrorsServiceClient;
+import com.google.devtools.clouderrorreporting.v1beta1.ReportedErrorEvent;
 import com.google.devtools.clouderrorreporting.v1beta1.SourceLocation;
 
 /**
