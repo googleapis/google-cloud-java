@@ -1,5 +1,28 @@
 # Changelog
 
+## [0.3.0](https://www.github.com/googleapis/java-artifact-registry/compare/v0.2.1...v0.3.0) (2021-08-09)
+
+
+### ⚠ BREAKING CHANGES
+
+* release gapic-generator-java v2.0.0 (#107)
+
+### Features
+
+* release gapic-generator-java v2.0.0 ([#107](https://www.github.com/googleapis/java-artifact-registry/issues/107)) ([3c689bd](https://www.github.com/googleapis/java-artifact-registry/commit/3c689bd5db887588eb11456871ce1319bd6cee99))
+
+
+### Bug Fixes
+
+* Add `shopt -s nullglob` to dependencies script ([#1130](https://www.github.com/googleapis/java-artifact-registry/issues/1130)) ([#74](https://www.github.com/googleapis/java-artifact-registry/issues/74)) ([c6e41b5](https://www.github.com/googleapis/java-artifact-registry/commit/c6e41b5b9e12b83c3bd7637c52c5a0252d1d736e))
+* owlbot post-processor should generate README ([#1154](https://www.github.com/googleapis/java-artifact-registry/issues/1154)) ([#80](https://www.github.com/googleapis/java-artifact-registry/issues/80)) ([5d200ec](https://www.github.com/googleapis/java-artifact-registry/commit/5d200ec8549a1f07ccb0b2521dbe241a97c95024)), closes [#1146](https://www.github.com/googleapis/java-artifact-registry/issues/1146) [#1147](https://www.github.com/googleapis/java-artifact-registry/issues/1147)
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v1.4.0 ([#76](https://www.github.com/googleapis/java-artifact-registry/issues/76)) ([11482a4](https://www.github.com/googleapis/java-artifact-registry/commit/11482a4938d5a061b493babd250c4298cf4f65f6))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2 ([#108](https://www.github.com/googleapis/java-artifact-registry/issues/108)) ([d613024](https://www.github.com/googleapis/java-artifact-registry/commit/d613024df891ddde445fb59dabfe0f0c01daf576))
+
 ### [0.2.1](https://www.github.com/googleapis/java-artifact-registry/compare/v0.2.0...v0.2.1) (2021-06-09)
 
 
