@@ -1,5 +1,27 @@
 # Changelog
 
+## [0.5.0](https://www.github.com/googleapis/java-assured-workloads/compare/v0.4.1...v0.5.0) (2021-08-09)
+
+
+### ⚠ BREAKING CHANGES
+
+* release gapic-generator-java v2.0.0 (#288)
+
+### Features
+
+* Add EU Regions And Support compliance regime ([#280](https://www.github.com/googleapis/java-assured-workloads/issues/280)) ([66e6aa9](https://www.github.com/googleapis/java-assured-workloads/commit/66e6aa9d76007ac88761cd8d3a90eb7e9056314f))
+* release gapic-generator-java v2.0.0 ([#288](https://www.github.com/googleapis/java-assured-workloads/issues/288)) ([c3fb37b](https://www.github.com/googleapis/java-assured-workloads/commit/c3fb37b76c730c08b6a718caac9f494844c01559))
+
+
+### Bug Fixes
+
+* owlbot post-processor should generate README ([#1154](https://www.github.com/googleapis/java-assured-workloads/issues/1154)) ([#253](https://www.github.com/googleapis/java-assured-workloads/issues/253)) ([1443667](https://www.github.com/googleapis/java-assured-workloads/commit/1443667562ed961664035d6c725534973e64f69a)), closes [#1146](https://www.github.com/googleapis/java-assured-workloads/issues/1146) [#1147](https://www.github.com/googleapis/java-assured-workloads/issues/1147)
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2 ([#289](https://www.github.com/googleapis/java-assured-workloads/issues/289)) ([f3d01d8](https://www.github.com/googleapis/java-assured-workloads/commit/f3d01d89551d686206e5d4603450b2611db3178e))
+
 ### [0.4.1](https://www.github.com/googleapis/java-assured-workloads/compare/v0.4.0...v0.4.1) (2021-07-01)
 
 
