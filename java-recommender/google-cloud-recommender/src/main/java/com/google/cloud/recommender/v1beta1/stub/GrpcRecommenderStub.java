@@ -25,7 +25,6 @@ import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.grpc.GrpcCallSettings;
 import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
-import com.google.api.gax.rpc.RequestParamsExtractor;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.recommender.v1beta1.GetInsightRequest;
 import com.google.cloud.recommender.v1beta1.GetRecommendationRequest;
@@ -44,7 +43,6 @@ import com.google.longrunning.stub.GrpcOperationsStub;
 import io.grpc.MethodDescriptor;
 import io.grpc.protobuf.ProtoUtils;
 import java.io.IOException;
-import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
@@ -202,39 +200,30 @@ public class GrpcRecommenderStub extends RecommenderStub {
         GrpcCallSettings.<ListInsightsRequest, ListInsightsResponse>newBuilder()
             .setMethodDescriptor(listInsightsMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<ListInsightsRequest>() {
-                  @Override
-                  public Map<String, String> extract(ListInsightsRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("parent", String.valueOf(request.getParent()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("parent", String.valueOf(request.getParent()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<GetInsightRequest, Insight> getInsightTransportSettings =
         GrpcCallSettings.<GetInsightRequest, Insight>newBuilder()
             .setMethodDescriptor(getInsightMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<GetInsightRequest>() {
-                  @Override
-                  public Map<String, String> extract(GetInsightRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("name", String.valueOf(request.getName()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<MarkInsightAcceptedRequest, Insight> markInsightAcceptedTransportSettings =
         GrpcCallSettings.<MarkInsightAcceptedRequest, Insight>newBuilder()
             .setMethodDescriptor(markInsightAcceptedMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<MarkInsightAcceptedRequest>() {
-                  @Override
-                  public Map<String, String> extract(MarkInsightAcceptedRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("name", String.valueOf(request.getName()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<ListRecommendationsRequest, ListRecommendationsResponse>
@@ -242,26 +231,20 @@ public class GrpcRecommenderStub extends RecommenderStub {
             GrpcCallSettings.<ListRecommendationsRequest, ListRecommendationsResponse>newBuilder()
                 .setMethodDescriptor(listRecommendationsMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<ListRecommendationsRequest>() {
-                      @Override
-                      public Map<String, String> extract(ListRecommendationsRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("parent", String.valueOf(request.getParent()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("parent", String.valueOf(request.getParent()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<GetRecommendationRequest, Recommendation> getRecommendationTransportSettings =
         GrpcCallSettings.<GetRecommendationRequest, Recommendation>newBuilder()
             .setMethodDescriptor(getRecommendationMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<GetRecommendationRequest>() {
-                  @Override
-                  public Map<String, String> extract(GetRecommendationRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("name", String.valueOf(request.getName()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<MarkRecommendationClaimedRequest, Recommendation>
@@ -269,13 +252,10 @@ public class GrpcRecommenderStub extends RecommenderStub {
             GrpcCallSettings.<MarkRecommendationClaimedRequest, Recommendation>newBuilder()
                 .setMethodDescriptor(markRecommendationClaimedMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<MarkRecommendationClaimedRequest>() {
-                      @Override
-                      public Map<String, String> extract(MarkRecommendationClaimedRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("name", String.valueOf(request.getName()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("name", String.valueOf(request.getName()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<MarkRecommendationSucceededRequest, Recommendation>
@@ -283,14 +263,10 @@ public class GrpcRecommenderStub extends RecommenderStub {
             GrpcCallSettings.<MarkRecommendationSucceededRequest, Recommendation>newBuilder()
                 .setMethodDescriptor(markRecommendationSucceededMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<MarkRecommendationSucceededRequest>() {
-                      @Override
-                      public Map<String, String> extract(
-                          MarkRecommendationSucceededRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("name", String.valueOf(request.getName()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("name", String.valueOf(request.getName()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<MarkRecommendationFailedRequest, Recommendation>
@@ -298,13 +274,10 @@ public class GrpcRecommenderStub extends RecommenderStub {
             GrpcCallSettings.<MarkRecommendationFailedRequest, Recommendation>newBuilder()
                 .setMethodDescriptor(markRecommendationFailedMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<MarkRecommendationFailedRequest>() {
-                      @Override
-                      public Map<String, String> extract(MarkRecommendationFailedRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("name", String.valueOf(request.getName()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("name", String.valueOf(request.getName()));
+                      return params.build();
                     })
                 .build();
 

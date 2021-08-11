@@ -16,7 +16,6 @@
 
 package com.google.cloud.recommender.v1;
 
-import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
 import com.google.api.core.BetaApi;
@@ -1456,12 +1455,7 @@ public class RecommenderClient implements BackgroundResource {
           ListInsightsPage.createEmptyPage().createPageAsync(context, futureResponse);
       return ApiFutures.transform(
           futurePage,
-          new ApiFunction<ListInsightsPage, ListInsightsPagedResponse>() {
-            @Override
-            public ListInsightsPagedResponse apply(ListInsightsPage input) {
-              return new ListInsightsPagedResponse(input);
-            }
-          },
+          input -> new ListInsightsPagedResponse(input),
           MoreExecutors.directExecutor());
     }
 
@@ -1537,12 +1531,7 @@ public class RecommenderClient implements BackgroundResource {
           ListRecommendationsPage.createEmptyPage().createPageAsync(context, futureResponse);
       return ApiFutures.transform(
           futurePage,
-          new ApiFunction<ListRecommendationsPage, ListRecommendationsPagedResponse>() {
-            @Override
-            public ListRecommendationsPagedResponse apply(ListRecommendationsPage input) {
-              return new ListRecommendationsPagedResponse(input);
-            }
-          },
+          input -> new ListRecommendationsPagedResponse(input),
           MoreExecutors.directExecutor());
     }
 
