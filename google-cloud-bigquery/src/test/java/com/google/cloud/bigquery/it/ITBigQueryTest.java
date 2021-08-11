@@ -71,6 +71,7 @@ import com.google.cloud.bigquery.JobId;
 import com.google.cloud.bigquery.JobInfo;
 import com.google.cloud.bigquery.JobStatistics;
 import com.google.cloud.bigquery.JobStatistics.LoadStatistics;
+import com.google.cloud.bigquery.JobStatistics.TransactionInfo;
 import com.google.cloud.bigquery.LegacySQLTypeName;
 import com.google.cloud.bigquery.LoadJobConfiguration;
 import com.google.cloud.bigquery.MaterializedViewDefinition;
@@ -2217,6 +2218,27 @@ public class ITBigQueryTest {
     JobStatistics.QueryStatistics statistics = queryJob.getStatistics();
     assertEquals(2L, statistics.getNumDmlAffectedRows().longValue());
     assertEquals(2L, statistics.getDmlStats().getUpdatedRowCount().longValue());
+  }
+
+  @Test
+  public void testTransactionInfo() throws InterruptedException {
+    String tableName = TABLE_ID_FASTQUERY.getTable();
+    String transaction =
+        String.format(
+            "BEGIN TRANSACTION;\n"
+                + "  UPDATE %s.%s SET StringField = 'hello' WHERE TRUE;\n"
+                + "  COMMIT TRANSACTION;\n",
+            DATASET, tableName);
+    QueryJobConfiguration config = QueryJobConfiguration.of(transaction);
+    Job remoteJob = bigquery.create(JobInfo.of(config));
+    JobInfo parentJobInfo = remoteJob.waitFor();
+    String parentJobId = parentJobInfo.getJobId().getJob();
+    Page<Job> childJobs = bigquery.listJobs(JobListOption.parentJobId(parentJobId));
+    for (Job job : childJobs.iterateAll()) {
+      // only those child jobs inside the transaction would have transactionInfo populated
+      TransactionInfo transactionInfo = job.getStatistics().getTransactionInfo();
+      assertNotNull(transactionInfo.getTransactionId());
+    }
   }
 
   @Test

@@ -44,6 +44,7 @@ public abstract class JobStatistics implements Serializable {
   private final String parentJobId;
   private final ScriptStatistics scriptStatistics;
   private final List<ReservationUsage> reservationUsage;
+  private final TransactionInfo transactionInfo;
 
   /** A Google BigQuery Copy Job statistics. */
   public static class CopyStatistics extends JobStatistics {
@@ -1178,6 +1179,78 @@ public abstract class JobStatistics implements Serializable {
     }
   }
 
+  // TransactionInfo contains information about a multi-statement transaction that may have
+  // associated with a job.
+  public static class TransactionInfo {
+
+    // TransactionID is the system-generated identifier for the transaction.
+    private final String transactionId;
+
+    public static class Builder {
+
+      private String transactionId;
+
+      private Builder() {};
+
+      Builder setTransactionId(String transactionId) {
+        this.transactionId = transactionId;
+        return this;
+      }
+
+      TransactionInfo build() {
+        return new TransactionInfo(this);
+      }
+    }
+
+    private TransactionInfo(Builder builder) {
+      this.transactionId = builder.transactionId;
+    }
+
+    public String getTransactionId() {
+      return transactionId;
+    }
+
+    static Builder newbuilder() {
+      return new Builder();
+    }
+
+    ToStringHelper toStringHelper() {
+      return MoreObjects.toStringHelper(this).add("transactionId", transactionId);
+    }
+
+    @Override
+    public String toString() {
+      return toStringHelper().toString();
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+      return obj == this
+          || obj != null
+              && obj.getClass().equals(TransactionInfo.class)
+              && Objects.equals(toPb(), ((TransactionInfo) obj).toPb());
+    }
+
+    @Override
+    public int hashCode() {
+      return Objects.hash(transactionId);
+    }
+
+    com.google.api.services.bigquery.model.TransactionInfo toPb() {
+      com.google.api.services.bigquery.model.TransactionInfo transactionInfo =
+          new com.google.api.services.bigquery.model.TransactionInfo();
+      transactionInfo.setTransactionId(transactionId);
+      return transactionInfo;
+    }
+
+    static TransactionInfo fromPb(
+        com.google.api.services.bigquery.model.TransactionInfo transactionInfo) {
+      Builder builder = newbuilder();
+      builder.setTransactionId(transactionInfo.getTransactionId());
+      return builder.build();
+    }
+  }
+
   abstract static class Builder<T extends JobStatistics, B extends Builder<T, B>> {
 
     private Long creationTime;
@@ -1187,6 +1260,7 @@ public abstract class JobStatistics implements Serializable {
     private String parentJobId;
     private ScriptStatistics scriptStatistics;
     private List<ReservationUsage> reservationUsage;
+    private TransactionInfo transactionInfo;
 
     protected Builder() {}
 
@@ -1202,6 +1276,9 @@ public abstract class JobStatistics implements Serializable {
       if (reservationUsage != null) {
         this.reservationUsage =
             Lists.transform(statisticsPb.getReservationUsage(), ReservationUsage.FROM_PB_FUNCTION);
+      }
+      if (statisticsPb.getTransactionInfo() != null) {
+        this.transactionInfo = TransactionInfo.fromPb(statisticsPb.getTransactionInfo());
       }
     }
 
@@ -1236,6 +1313,7 @@ public abstract class JobStatistics implements Serializable {
     this.parentJobId = builder.parentJobId;
     this.scriptStatistics = builder.scriptStatistics;
     this.reservationUsage = builder.reservationUsage;
+    this.transactionInfo = builder.transactionInfo;
   }
 
   /** Returns the creation time of the job in milliseconds since epoch. */
@@ -1279,6 +1357,11 @@ public abstract class JobStatistics implements Serializable {
     return reservationUsage;
   }
 
+  /** Info indicates the transaction ID associated with the job, if any. */
+  public TransactionInfo getTransactionInfo() {
+    return transactionInfo;
+  }
+
   ToStringHelper toStringHelper() {
     return MoreObjects.toStringHelper(this)
         .add("creationTime", creationTime)
@@ -1287,7 +1370,8 @@ public abstract class JobStatistics implements Serializable {
         .add("numChildJobs", numChildJobs)
         .add("parentJobId", parentJobId)
         .add("scriptStatistics", scriptStatistics)
-        .add("reservationUsage", reservationUsage);
+        .add("reservationUsage", reservationUsage)
+        .add("transactionInfo", transactionInfo);
   }
 
   @Override
@@ -1303,7 +1387,8 @@ public abstract class JobStatistics implements Serializable {
         numChildJobs,
         parentJobId,
         scriptStatistics,
-        reservationUsage);
+        reservationUsage,
+        transactionInfo);
   }
 
   final boolean baseEquals(JobStatistics jobStatistics) {
@@ -1324,6 +1409,9 @@ public abstract class JobStatistics implements Serializable {
     if (reservationUsage != null) {
       statistics.setReservationUsage(
           Lists.transform(reservationUsage, ReservationUsage.TO_PB_FUNCTION));
+    }
+    if (transactionInfo != null) {
+      statistics.setTransactionInfo(transactionInfo.toPb());
     }
     return statistics;
   }

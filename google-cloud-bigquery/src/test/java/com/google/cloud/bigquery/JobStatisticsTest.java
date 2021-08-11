@@ -26,9 +26,11 @@ import com.google.cloud.bigquery.JobStatistics.QueryStatistics;
 import com.google.cloud.bigquery.JobStatistics.ReservationUsage;
 import com.google.cloud.bigquery.JobStatistics.ScriptStatistics;
 import com.google.cloud.bigquery.JobStatistics.ScriptStatistics.ScriptStackFrame;
+import com.google.cloud.bigquery.JobStatistics.TransactionInfo;
 import com.google.cloud.bigquery.QueryStage.QueryStep;
 import com.google.common.collect.ImmutableList;
 import java.util.List;
+import java.util.UUID;
 import org.junit.Test;
 
 public class JobStatisticsTest {
@@ -70,6 +72,7 @@ public class JobStatisticsTest {
   private static final Long START_TIME = 15L;
   private static final String NAME = "reservation-name";
   private static final Long SLOTMS = 12545L;
+  private static final String TRANSACTION_ID = UUID.randomUUID().toString().substring(0, 8);
   private static final CopyStatistics COPY_STATISTICS =
       CopyStatistics.newBuilder()
           .setCreationTimestamp(CREATION_TIME)
@@ -216,6 +219,9 @@ public class JobStatisticsTest {
   private static final ReservationUsage RESERVATION_USAGE =
       ReservationUsage.newBuilder().setName(NAME).setSlotMs(SLOTMS).build();
 
+  private static final TransactionInfo TRANSACTION_INFO =
+      TransactionInfo.newbuilder().setTransactionId(TRANSACTION_ID).build();
+
   @Test
   public void testBuilder() {
     assertEquals(CREATION_TIME, EXTRACT_STATISTICS.getCreationTime());
@@ -286,6 +292,7 @@ public class JobStatisticsTest {
         ImmutableList.of(EXPRESSION_STACK_FRAME), EXPRESSION_SCRIPT_STATISTICS.getStackFrames());
     assertEquals(NAME, RESERVATION_USAGE.getName());
     assertEquals(SLOTMS, RESERVATION_USAGE.getSlotMs());
+    assertEquals(TRANSACTION_ID, TRANSACTION_INFO.getTransactionId());
   }
 
   @Test
@@ -311,6 +318,7 @@ public class JobStatisticsTest {
       compareStackFrames(stackFrame, ScriptStackFrame.fromPb(stackFrame.toPb()));
     }
     compareReservation(RESERVATION_USAGE, ReservationUsage.fromPb(RESERVATION_USAGE.toPb()));
+    compareTransactionInfo(TRANSACTION_INFO, TransactionInfo.fromPb(TRANSACTION_INFO.toPb()));
   }
 
   @Test
@@ -424,5 +432,13 @@ public class JobStatisticsTest {
     assertEquals(expected.toPb(), value.toPb());
     assertEquals(expected.getName(), value.getName());
     assertEquals(expected.getSlotMs(), value.getSlotMs());
+  }
+
+  private void compareTransactionInfo(TransactionInfo expected, TransactionInfo value) {
+    assertEquals(expected, value);
+    assertEquals(expected.hashCode(), value.hashCode());
+    assertEquals(expected.toString(), value.toString());
+    assertEquals(expected.toPb(), value.toPb());
+    assertEquals(expected.getTransactionId(), value.getTransactionId());
   }
 }
