@@ -1,5 +1,15 @@
 # Changelog
 
+### [2.0.1](https://www.github.com/googleapis/java-shared-dependencies/compare/2.0.0...v2.0.1) (2021-08-11)
+
+
+### Dependencies
+
+* update dependency com.google.api:api-common to v2.0.1 ([#431](https://www.github.com/googleapis/java-shared-dependencies/issues/431)) ([b1a52c8](https://www.github.com/googleapis/java-shared-dependencies/commit/b1a52c83e19be7be80086f2010e928171b046f62))
+* update gax.version to v2.1.0 ([#432](https://www.github.com/googleapis/java-shared-dependencies/issues/432)) ([7f53006](https://www.github.com/googleapis/java-shared-dependencies/commit/7f53006d021e839f52325a87d7c4715eff88818d))
+* update google.core.version to v2.0.4 ([#430](https://www.github.com/googleapis/java-shared-dependencies/issues/430)) ([d0465ad](https://www.github.com/googleapis/java-shared-dependencies/commit/d0465ad3a79993d4e854078ea992e53ab9add07f))
+* update google.core.version to v2.0.5 ([#434](https://www.github.com/googleapis/java-shared-dependencies/issues/434)) ([af00753](https://www.github.com/googleapis/java-shared-dependencies/commit/af0075390034cba5cefede8260ab03f728d525a8))
+
 ## [2.0.0](https://www.github.com/googleapis/java-shared-dependencies/compare/1.4.0...v2.0.0) (2021-08-03)
 
 
