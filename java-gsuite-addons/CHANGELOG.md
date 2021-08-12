@@ -1,5 +1,27 @@
 # Changelog
 
+## [2.0.0](https://www.github.com/googleapis/java-gsuite-addons/compare/v1.0.0...v2.0.0) (2021-08-11)
+
+
+### ⚠ BREAKING CHANGES
+
+* release gapic-generator-java v2.0.0 (#71)
+
+### Features
+
+* release gapic-generator-java v2.0.0 ([#71](https://www.github.com/googleapis/java-gsuite-addons/issues/71)) ([9be92e1](https://www.github.com/googleapis/java-gsuite-addons/commit/9be92e19e4868fd98b153fc522b4cdc775463959))
+
+
+### Bug Fixes
+
+* owlbot post-processor should generate README ([#1154](https://www.github.com/googleapis/java-gsuite-addons/issues/1154)) ([#56](https://www.github.com/googleapis/java-gsuite-addons/issues/56)) ([8738e4d](https://www.github.com/googleapis/java-gsuite-addons/commit/8738e4d69283e926eb3e094a856c3d50885a88a2)), closes [#1146](https://www.github.com/googleapis/java-gsuite-addons/issues/1146) [#1147](https://www.github.com/googleapis/java-gsuite-addons/issues/1147)
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2 ([#72](https://www.github.com/googleapis/java-gsuite-addons/issues/72)) ([6d33d89](https://www.github.com/googleapis/java-gsuite-addons/commit/6d33d897ce2ed7c1e7dc8f3a145bb280b3ae7883))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.0.1 ([#74](https://www.github.com/googleapis/java-gsuite-addons/issues/74)) ([88813c2](https://www.github.com/googleapis/java-gsuite-addons/commit/88813c2786dfffab0b2fc0f2bf33c6b0117a2531))
+
 ## [1.0.0](https://www.github.com/googleapis/java-gsuite-addons/compare/v0.2.0...v1.0.0) (2021-07-02)
 
 
