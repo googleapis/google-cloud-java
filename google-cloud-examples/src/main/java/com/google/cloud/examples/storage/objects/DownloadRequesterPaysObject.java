@@ -45,4 +45,4 @@ public class DownloadRequesterPaysObject {
         "Object " + objectName + " downloaded to " + destFilePath + " and billed to " + projectId);
   }
 }
-// [START storage_download_file_requester_pays]
+// [END storage_download_file_requester_pays]
