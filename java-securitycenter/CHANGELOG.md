@@ -1,5 +1,14 @@
 # Changelog
 
+### [2.0.1](https://www.github.com/googleapis/java-securitycenter/compare/v2.0.0...v2.0.1) (2021-08-12)
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-pubsub to v1.113.7 ([#597](https://www.github.com/googleapis/java-securitycenter/issues/597)) ([77ece06](https://www.github.com/googleapis/java-securitycenter/commit/77ece060e3bfc2d3728fb076420cc94f14654ce2))
+* update dependency com.google.cloud:google-cloud-pubsub to v1.114.0 ([#600](https://www.github.com/googleapis/java-securitycenter/issues/600)) ([2b89260](https://www.github.com/googleapis/java-securitycenter/commit/2b8926093e33fdc5180e688ae5ab63a0d136529d))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.0.1 ([#598](https://www.github.com/googleapis/java-securitycenter/issues/598)) ([3f52233](https://www.github.com/googleapis/java-securitycenter/commit/3f52233b1f5e458ad329436abc8c9e926fbf0aec))
+
 ## [2.0.0](https://www.github.com/googleapis/java-securitycenter/compare/v1.6.4...v2.0.0) (2021-08-10)
 
 
