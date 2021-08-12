@@ -1,5 +1,12 @@
 # Changelog
 
+### [2.0.1](https://www.github.com/googleapis/java-apigee-connect/compare/v2.0.0...v2.0.1) (2021-08-12)
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.0.1 ([#45](https://www.github.com/googleapis/java-apigee-connect/issues/45)) ([535ac2f](https://www.github.com/googleapis/java-apigee-connect/commit/535ac2f6fb1457526d5e0a633d236327e32309b7))
+
 ## [2.0.0](https://www.github.com/googleapis/java-apigee-connect/compare/v1.0.0...v2.0.0) (2021-08-06)
 
 
