@@ -16,12 +16,4 @@
     <className>com/google/cloud/servicedirectory/v1beta1/*OrBuilder</className>
     <method>boolean has*(*)</method>
   </difference>
-  <difference>
-    <differenceType>8001</differenceType>
-    <className>com/google/cloud/servicedirectory/v1beta1/NetworkName</className>
-  </difference>
-  <difference>
-    <differenceType>8001</differenceType>
-    <className>com/google/cloud/servicedirectory/v1beta1/NetworkName$Builder</className>
-  </difference>
 </differences>
