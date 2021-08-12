@@ -1,5 +1,15 @@
 # Changelog
 
+### [2.0.1](https://www.github.com/googleapis/java-vision/compare/v2.0.0...v2.0.1) (2021-08-12)
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-core to v2.0.3 ([#611](https://www.github.com/googleapis/java-vision/issues/611)) ([5c47161](https://www.github.com/googleapis/java-vision/commit/5c4716187b3c3450dc277f541dddf9a32b9314a2))
+* update dependency com.google.cloud:google-cloud-core to v2.0.5 ([#614](https://www.github.com/googleapis/java-vision/issues/614)) ([ccf1700](https://www.github.com/googleapis/java-vision/commit/ccf1700c629067a378f00c0de6ecbef742e9db71))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.0.1 ([#615](https://www.github.com/googleapis/java-vision/issues/615)) ([ce016d5](https://www.github.com/googleapis/java-vision/commit/ce016d58a10b5e612f4d4dab29180c6678c8a193))
+* update dependency com.google.cloud:google-cloud-storage to v2.0.1 ([#616](https://www.github.com/googleapis/java-vision/issues/616)) ([b5ac259](https://www.github.com/googleapis/java-vision/commit/b5ac259fb5e34dfead380afbec3b302c725c5df4))
+
 ## [2.0.0](https://www.github.com/googleapis/java-vision/compare/v1.113.7...v2.0.0) (2021-08-10)
 
 
