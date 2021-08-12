@@ -1,5 +1,22 @@
 # Changelog
 
+## [2.0.0](https://www.github.com/googleapis/java-grafeas/compare/v1.2.3...v2.0.0) (2021-08-12)
+
+
+### ⚠ BREAKING CHANGES
+
+* release gapic-generator-java v2.0.0 (#348)
+
+### Features
+
+* release gapic-generator-java v2.0.0 ([#348](https://www.github.com/googleapis/java-grafeas/issues/348)) ([cb65ffe](https://www.github.com/googleapis/java-grafeas/commit/cb65ffe298935753f02c60639b366c66173c1dba))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2 ([#349](https://www.github.com/googleapis/java-grafeas/issues/349)) ([c5f2ce7](https://www.github.com/googleapis/java-grafeas/commit/c5f2ce77cc58eec7c0c28d85f90e8a472d33e354))
+* update dependency com.puppycrawl.tools:checkstyle to v8.45.1 ([#347](https://www.github.com/googleapis/java-grafeas/issues/347)) ([f8d0d5d](https://www.github.com/googleapis/java-grafeas/commit/f8d0d5d54f6ee73e7508169a2e2cbd1f6c68f3d2))
+
 ### [1.2.3](https://www.github.com/googleapis/java-grafeas/compare/v1.2.2...v1.2.3) (2021-07-01)
 
 
