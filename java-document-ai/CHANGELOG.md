@@ -1,5 +1,18 @@
 # Changelog
 
+### [2.0.1](https://www.github.com/googleapis/java-document-ai/compare/v2.0.0...v2.0.1) (2021-08-12)
+
+
+### Bug Fixes
+
+* Update DocumentUnderstandingService default_host in v1beta2 from a regional endpoint, to non-regional ([#584](https://www.github.com/googleapis/java-document-ai/issues/584)) ([aeb841e](https://www.github.com/googleapis/java-document-ai/commit/aeb841e24c5934a3d4eafad54d2041ab4f8b1d5a))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.0.1 ([#583](https://www.github.com/googleapis/java-document-ai/issues/583)) ([116d929](https://www.github.com/googleapis/java-document-ai/commit/116d929277e1727ef6df9d373dfc4a1eb4661617))
+* update dependency com.google.cloud:google-cloud-storage to v2.0.1 ([#585](https://www.github.com/googleapis/java-document-ai/issues/585)) ([fbb2f87](https://www.github.com/googleapis/java-document-ai/commit/fbb2f87252ac22e642ceb365b1eb5b2d03160fbe))
+
 ## [2.0.0](https://www.github.com/googleapis/java-document-ai/compare/v1.2.1...v2.0.0) (2021-08-09)
 
 
