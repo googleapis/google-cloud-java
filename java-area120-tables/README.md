@@ -22,20 +22,20 @@ If you are using Maven, add this to your pom.xml file:
 <dependency>
   <groupId>com.google.area120</groupId>
   <artifactId>google-area120-tables</artifactId>
-  <version>0.3.1</version>
+  <version>0.4.0</version>
 </dependency>
 ```
 
 If you are using Gradle without BOM, add this to your dependencies
 
 ```Groovy
-compile 'com.google.area120:google-area120-tables:0.3.1'
+compile 'com.google.area120:google-area120-tables:0.4.0'
 ```
 
 If you are using SBT, add this to your dependencies
 
 ```Scala
-libraryDependencies += "com.google.area120" % "google-area120-tables" % "0.3.1"
+libraryDependencies += "com.google.area120" % "google-area120-tables" % "0.4.0"
 ```
 
 ## Authentication
