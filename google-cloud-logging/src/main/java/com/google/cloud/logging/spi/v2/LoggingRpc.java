@@ -34,6 +34,8 @@ import com.google.logging.v2.ListLogEntriesRequest;
 import com.google.logging.v2.ListLogEntriesResponse;
 import com.google.logging.v2.ListLogMetricsRequest;
 import com.google.logging.v2.ListLogMetricsResponse;
+import com.google.logging.v2.ListLogsRequest;
+import com.google.logging.v2.ListLogsResponse;
 import com.google.logging.v2.ListMonitoredResourceDescriptorsRequest;
 import com.google.logging.v2.ListMonitoredResourceDescriptorsResponse;
 import com.google.logging.v2.ListSinksRequest;
@@ -92,6 +94,18 @@ public interface LoggingRpc extends AutoCloseable, ServiceRpc {
    * @param request the request object containing all of the parameters for the API call
    */
   ApiFuture<Empty> delete(DeleteSinkRequest request);
+
+  /**
+   * Sends a request to list the log names in a project. This method returns a {@code ApiFuture}
+   * object to consume the result. {@link ApiFuture#get()} returns a response object containing the
+   * listing result.
+   *
+   * @param request the request object containing all of the parameters for the API call
+   */
+  default ApiFuture<ListLogsResponse> listLogs(ListLogsRequest request) {
+    throw new UnsupportedOperationException(
+        "method list(ListLogsRequest request) does not have default implementation");
+  }
 
   /**
    * Sends a request to deletes a log. This method returns a {@code ApiFuture} object to consume the

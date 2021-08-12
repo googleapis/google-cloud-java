@@ -38,9 +38,10 @@ import org.junit.runners.JUnit4;
 @SuppressWarnings("checkstyle:abbreviationaswordinname")
 public class LoggingIT {
 
-  private static final String QUICKSTART_LOG = "my-log";
-  private static final String TEST_WRITE_LOG = "test-log";
-  private static final String STRING_PAYLOAD = "Hello world!";
+  private static final String TEST_LOG = "test-log";
+  private static final String GOOGLEAPIS_AUDIT_LOGNAME = "cloudaudit.googleapis.com%2Factivity";
+  private static final String STRING_PAYLOAD = "Hello, world!";
+  private static final String STRING_PAYLOAD2 = "Hello world again";
 
   private ByteArrayOutputStream bout;
   private PrintStream out;
@@ -60,37 +61,38 @@ public class LoggingIT {
   @After
   public void tearDown() {
     // Clean up created logs
-    deleteLog(QUICKSTART_LOG);
-    deleteLog(TEST_WRITE_LOG);
+    deleteLog(TEST_LOG);
 
     System.setOut(null);
   }
 
   @Test
   public void testQuickstart() throws Exception {
-    QuickstartSample.main(QUICKSTART_LOG);
+    QuickstartSample.main(TEST_LOG);
     String got = bout.toString();
-    assertThat(got).contains("Logged: Hello, world!");
+    assertThat(got).contains(String.format("Logged: %s", STRING_PAYLOAD));
   }
 
   @Test(timeout = 60000)
   public void testWriteAndListLogs() throws Exception {
     // write a log entry
     LogEntry entry =
-        LogEntry.newBuilder(StringPayload.of("Hello world again"))
-            .setLogName(TEST_WRITE_LOG)
+        LogEntry.newBuilder(StringPayload.of(STRING_PAYLOAD2))
+            .setLogName(TEST_LOG)
             .setResource(MonitoredResource.newBuilder("global").build())
             .build();
     logging.write(Collections.singleton(entry));
     // flush out log immediately
     logging.flush();
     bout.reset();
-    // Check if the log is listed yet
+
+    // Check for mocked STDOUT having data
+    String[] args = new String[] {TEST_LOG};
     while (bout.toString().isEmpty()) {
-      ListLogs.main(TEST_WRITE_LOG);
+      ListLogEntries.main(args);
       Thread.sleep(5000);
     }
-    assertThat(bout.toString().contains("Hello world again")).isTrue();
+    assertThat(bout.toString().contains(STRING_PAYLOAD2)).isTrue();
   }
 
   @Test(timeout = 60000)
@@ -101,20 +103,33 @@ public class LoggingIT {
             .setRequestMethod(HttpRequest.RequestMethod.GET)
             .setStatus(200)
             .build();
-    LogEntryWriteHttpRequest.createLogEntryRequest(TEST_WRITE_LOG, STRING_PAYLOAD, request);
+    LogEntryWriteHttpRequest.createLogEntryRequest(TEST_LOG, STRING_PAYLOAD, request);
     String got = bout.toString();
 
     // Check weather log entry is logged or not
     assertThat(got).contains(String.format("Logged: %s", STRING_PAYLOAD));
     bout.reset();
-    // Check if the log is listed yet
+
+    // Check for mocked STDOUT having data
+    String[] args = new String[] {TEST_LOG};
     while (bout.toString().isEmpty()) {
-      ListLogs.main(TEST_WRITE_LOG);
+      ListLogEntries.main(args);
       Thread.sleep(5000);
     }
 
     // check log entry contain request data
     assertThat(bout.toString().contains(STRING_PAYLOAD)).isTrue();
     assertThat(bout.toString().contains(request.toString())).isTrue();
+  }
+
+  @Test(timeout = 60000)
+  public void testListLogNames_shouldPass() throws Exception {
+    ListLogs.main();
+    // Check for mocked STDOUT having data
+    while (bout.toString().isEmpty()) {
+      Thread.sleep(5000);
+    }
+
+    assertThat(bout.toString().contains(GOOGLEAPIS_AUDIT_LOGNAME)).isTrue();
   }
 }

@@ -415,6 +415,53 @@ public interface Logging extends AutoCloseable, Service<LoggingOptions> {
   ApiFuture<Boolean> deleteSinkAsync(String sink);
 
   /**
+   * Lists the log names. This method returns a {@link Page} object that can be used to consume
+   * paginated results. Use {@link ListOption} to specify the page size or the page token from which
+   * to start listing logs.
+   *
+   * <p>Example of listing log names, specifying the page size.
+   *
+   * <pre>{@code
+   * Page<Log> logNames = logging.listLogs(ListOption.pageSize(100));
+   * Iterator<Log> logIterator = logNames.iterateAll().iterator();
+   * while (logIterator.hasNext()) {
+   *   String logName = logIterator.next();
+   *   // do something with the log name
+   * }
+   * }</pre>
+   *
+   * @throws LoggingException upon failure
+   */
+  default Page<String> listLogs(ListOption... options) {
+    throw new UnsupportedOperationException(
+        "method listLogs() does not have default implementation");
+  }
+
+  /**
+   * Sends a request for listing log names. This method returns a {@code ApiFuture} object to
+   * consume the result. {@link ApiFuture#get()} returns an {@link AsyncPage} object that can be
+   * used to asynchronously handle paginated results. Use {@link ListOption} to specify the page
+   * size or the page token from which to start listing log names.
+   *
+   * <p>Example of asynchronously listing log names, specifying the page size.
+   *
+   * <pre>{@code
+   * ApiFuture<AsyncPage<Log>> future = logging.listLogsAsync(ListOption.pageSize(100));
+   * // ...
+   * AsyncPage<Sink> logNames = future.get();
+   * Iterator<Sink> logIterator = logNames.iterateAll().iterator();
+   * while (logIterator.hasNext()) {
+   *   String logName = logIterator.next();
+   *   // do something with the log name
+   * }
+   * }</pre>
+   */
+  default ApiFuture<AsyncPage<String>> listLogsAsync(ListOption... options) {
+    throw new UnsupportedOperationException(
+        "method listLogsAsync() does not have default implementation");
+  }
+
+  /**
    * Deletes a log and all its log entries. The log will reappear if new entries are written to it.
    *
    * <p>Example of deleting a log.

@@ -63,6 +63,8 @@ import com.google.logging.v2.ListLogEntriesRequest;
 import com.google.logging.v2.ListLogEntriesResponse;
 import com.google.logging.v2.ListLogMetricsRequest;
 import com.google.logging.v2.ListLogMetricsResponse;
+import com.google.logging.v2.ListLogsRequest;
+import com.google.logging.v2.ListLogsResponse;
 import com.google.logging.v2.ListMonitoredResourceDescriptorsRequest;
 import com.google.logging.v2.ListMonitoredResourceDescriptorsResponse;
 import com.google.logging.v2.ListSinksRequest;
@@ -106,6 +108,9 @@ public class LoggingImplTest {
       com.google.api.MonitoredResourceDescriptor.getDefaultInstance();
   private static final MonitoredResourceDescriptor DESCRIPTOR =
       MonitoredResourceDescriptor.fromPb(DESCRIPTOR_PB);
+  private static final String LOG_NAME1 = "test-list-log-name-1";
+  private static final String LOG_NAME2 = "test-list-log-name-2";
+  private static final String LOG_NAMES_CURSOR = "cursor";
   private static final String LOG_NAME = "log";
   private static final String LOG_NAME_PB = "projects/" + PROJECT + "/logs/" + LOG_NAME;
   private static final MonitoredResource MONITORED_RESOURCE =
@@ -173,6 +178,40 @@ public class LoggingImplTest {
   private LoggingRpc loggingRpcMock;
   private Logging logging;
 
+  private void configureListLogsTests(List<String> returnedList, String cursor) {
+    ListLogsRequest request = ListLogsRequest.newBuilder().setParent(PROJECT_PB).build();
+    ListLogsResponse response =
+        ListLogsResponse.newBuilder().setNextPageToken(cursor).addAllLogNames(returnedList).build();
+    ApiFuture<ListLogsResponse> futureResponse = ApiFutures.immediateFuture(response);
+    EasyMock.expect(loggingRpcMock.listLogs(request)).andReturn(futureResponse);
+    EasyMock.replay(loggingRpcMock);
+  }
+
+  private void configureListLogsTests(
+      List<String> page1ReturnedList,
+      List<String> page2ReturnedList,
+      String page1Cursor,
+      String page2Cursor) {
+    ListLogsRequest request1 = ListLogsRequest.newBuilder().setParent(PROJECT_PB).build();
+    ListLogsRequest request2 =
+        ListLogsRequest.newBuilder().setParent(PROJECT_PB).setPageToken(page1Cursor).build();
+    ListLogsResponse response1 =
+        ListLogsResponse.newBuilder()
+            .setNextPageToken(page1Cursor)
+            .addAllLogNames(page1ReturnedList)
+            .build();
+    ListLogsResponse response2 =
+        ListLogsResponse.newBuilder()
+            .setNextPageToken(page2Cursor)
+            .addAllLogNames(page2ReturnedList)
+            .build();
+    ApiFuture<ListLogsResponse> futureResponse1 = ApiFutures.immediateFuture(response1);
+    ApiFuture<ListLogsResponse> futureResponse2 = ApiFutures.immediateFuture(response2);
+    EasyMock.expect(loggingRpcMock.listLogs(request1)).andReturn(futureResponse1);
+    EasyMock.expect(loggingRpcMock.listLogs(request2)).andReturn(futureResponse2);
+    EasyMock.replay(loggingRpcMock);
+  }
+
   @Before
   public void setUp() {
     rpcFactoryMock = EasyMock.createStrictMock(LoggingRpcFactory.class);
@@ -187,8 +226,10 @@ public class LoggingImplTest {
             .build();
 
     // By default when calling ListLogEntries, we append a filter of last 24 hours.
-    // However when testing, the time when it was called by the test and by the method
-    // implementation might differ by microseconds so we use the same time filter implementation
+    // However when testing, the time when it was called by the test and by the
+    // method
+    // implementation might differ by microseconds so we use the same time filter
+    // implementation
     // for test and in "real" method
     LoggingImpl.defaultTimestampFilterCreator =
         new ITimestampDefaultFilter() {
@@ -1577,6 +1618,89 @@ public class LoggingImplTest {
   }
 
   @Test
+  public void testListLogsWithLogNames() {
+    EasyMock.replay(rpcFactoryMock);
+    logging = options.getService();
+    List<String> logNames = ImmutableList.of(LOG_NAME1, LOG_NAME2);
+    configureListLogsTests(logNames, LOG_NAMES_CURSOR);
+
+    Page<String> page = logging.listLogs();
+    assertEquals(LOG_NAMES_CURSOR, page.getNextPageToken());
+    assertArrayEquals(logNames.toArray(), Iterables.toArray(page.getValues(), String.class));
+  }
+
+  @Test
+  public void testListLogsWithEmptySet() {
+    EasyMock.replay(rpcFactoryMock);
+    logging = options.getService();
+    List<String> emptyList = ImmutableList.of();
+    configureListLogsTests(emptyList, LOG_NAMES_CURSOR);
+
+    Page<String> page = logging.listLogs();
+    assertEquals(LOG_NAMES_CURSOR, page.getNextPageToken());
+    assertArrayEquals(emptyList.toArray(), Iterables.toArray(page.getValues(), String.class));
+  }
+
+  @Test
+  public void testListLogsNextPageWithLogNames() throws ExecutionException, InterruptedException {
+    EasyMock.replay(rpcFactoryMock);
+    logging = options.getService();
+    List<String> logNames1 = ImmutableList.of(LOG_NAME1, LOG_NAME2);
+    List<String> logNames2 = ImmutableList.of(LOG_NAME1);
+    String nextPageCursor = "nextCursor";
+    configureListLogsTests(logNames1, logNames2, LOG_NAMES_CURSOR, nextPageCursor);
+
+    Page<String> page = logging.listLogs();
+    assertEquals(LOG_NAMES_CURSOR, page.getNextPageToken());
+    assertArrayEquals(logNames1.toArray(), Iterables.toArray(page.getValues(), String.class));
+    page = page.getNextPage();
+    assertEquals(nextPageCursor, page.getNextPageToken());
+    assertArrayEquals(logNames2.toArray(), Iterables.toArray(page.getValues(), String.class));
+  }
+
+  @Test
+  public void testListLogsAsyncWithLogNames() throws ExecutionException, InterruptedException {
+    EasyMock.replay(rpcFactoryMock);
+    logging = options.getService();
+    List<String> logNames = ImmutableList.of(LOG_NAME1, LOG_NAME2);
+    configureListLogsTests(logNames, LOG_NAMES_CURSOR);
+
+    AsyncPage<String> page = logging.listLogsAsync().get();
+    assertEquals(LOG_NAMES_CURSOR, page.getNextPageToken());
+    assertArrayEquals(logNames.toArray(), Iterables.toArray(page.getValues(), String.class));
+  }
+
+  @Test
+  public void testListLogsAsyncWithEmptySet() throws ExecutionException, InterruptedException {
+    EasyMock.replay(rpcFactoryMock);
+    logging = options.getService();
+    List<String> emptyList = ImmutableList.of();
+    configureListLogsTests(emptyList, LOG_NAMES_CURSOR);
+
+    AsyncPage<String> page = logging.listLogsAsync().get();
+    assertEquals(LOG_NAMES_CURSOR, page.getNextPageToken());
+    assertArrayEquals(emptyList.toArray(), Iterables.toArray(page.getValues(), String.class));
+  }
+
+  @Test
+  public void testListLogsAsyncNextPageWithLogNames()
+      throws ExecutionException, InterruptedException {
+    EasyMock.replay(rpcFactoryMock);
+    logging = options.getService();
+    List<String> logNames1 = ImmutableList.of(LOG_NAME1, LOG_NAME2);
+    List<String> logNames2 = ImmutableList.of(LOG_NAME1);
+    String nextPageCursor = "nextCursor";
+    configureListLogsTests(logNames1, logNames2, LOG_NAMES_CURSOR, nextPageCursor);
+
+    AsyncPage<String> page = logging.listLogsAsync().get();
+    assertEquals(LOG_NAMES_CURSOR, page.getNextPageToken());
+    assertArrayEquals(logNames1.toArray(), Iterables.toArray(page.getValues(), String.class));
+    page = page.getNextPageAsync().get();
+    assertEquals(nextPageCursor, page.getNextPageToken());
+    assertArrayEquals(logNames2.toArray(), Iterables.toArray(page.getValues(), String.class));
+  }
+
+  @Test
   public void testDeleteLog() {
     DeleteLogRequest request = DeleteLogRequest.newBuilder().setLogName(LOG_NAME_PB).build();
     ApiFuture<Empty> response = ApiFutures.immediateFuture(Empty.getDefaultInstance());
@@ -2034,7 +2158,8 @@ public class LoggingImplTest {
     EasyMock.expect(loggingRpcMock.write(request)).andReturn(mockRpcResponse).times(threads.length);
     EasyMock.replay(loggingRpcMock);
 
-    // log and flush concurrently in many threads to trigger a ConcurrentModificationException
+    // log and flush concurrently in many threads to trigger a
+    // ConcurrentModificationException
     final AtomicInteger exceptions = new AtomicInteger(0);
     for (int i = 0; i < threads.length; i++) {
       threads[i] =

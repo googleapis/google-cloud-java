@@ -65,6 +65,8 @@ import com.google.logging.v2.ListLogEntriesRequest;
 import com.google.logging.v2.ListLogEntriesResponse;
 import com.google.logging.v2.ListLogMetricsRequest;
 import com.google.logging.v2.ListLogMetricsResponse;
+import com.google.logging.v2.ListLogsRequest;
+import com.google.logging.v2.ListLogsResponse;
 import com.google.logging.v2.ListMonitoredResourceDescriptorsRequest;
 import com.google.logging.v2.ListMonitoredResourceDescriptorsResponse;
 import com.google.logging.v2.ListSinksRequest;
@@ -192,6 +194,19 @@ class LoggingImpl extends BaseService<LoggingOptions> implements Logging {
     @Override
     public ApiFuture<AsyncPage<Sink>> getNextPage() {
       return listSinksAsync(serviceOptions(), requestOptions());
+    }
+  }
+
+  private static class LogNamePageFetcher extends BasePageFetcher<String> {
+
+    LogNamePageFetcher(
+        LoggingOptions serviceOptions, String cursor, Map<Option.OptionType, ?> requestOptions) {
+      super(serviceOptions, cursor, requestOptions);
+    }
+
+    @Override
+    public ApiFuture<AsyncPage<String>> getNextPage() {
+      return listLogsAsync(serviceOptions(), requestOptions());
     }
   }
 
@@ -364,6 +379,63 @@ class LoggingImpl extends BaseService<LoggingOptions> implements Logging {
                 LogSinkName.ofProjectSinkName(getOptions().getProjectId(), sink).toString())
             .build();
     return transform(rpc.delete(request), EMPTY_TO_BOOLEAN_FUNCTION);
+  }
+
+  /**
+   * Creates a new {@code ListLogsRequest} object.
+   *
+   * <p>Builds an instance of {@code ListLogsRequest} using page size, page token and project id
+   * from the {@code LoggingOptions}. The project id is used as the request's parent parameter.
+   *
+   * @see com.google.logging.v2.ListLogEntriesRequest
+   * @return the created {@code ListLogsRequest} object
+   */
+  private static ListLogsRequest listLogsRequest(
+      LoggingOptions serviceOptions, Map<Option.OptionType, ?> options) {
+    ListLogsRequest.Builder builder = ListLogsRequest.newBuilder();
+    builder.setParent(ProjectName.of(serviceOptions.getProjectId()).toString());
+    Integer pageSize = PAGE_SIZE.get(options);
+    String pageToken = PAGE_TOKEN.get(options);
+    if (pageSize != null) {
+      builder.setPageSize(pageSize);
+    }
+    if (pageToken != null) {
+      builder.setPageToken(pageToken);
+    }
+    return builder.build();
+  }
+
+  private static ApiFuture<AsyncPage<String>> listLogsAsync(
+      final LoggingOptions serviceOptions, final Map<Option.OptionType, ?> options) {
+    final ListLogsRequest request = listLogsRequest(serviceOptions, options);
+    ApiFuture<ListLogsResponse> list = serviceOptions.getLoggingRpcV2().listLogs(request);
+    return transform(
+        list,
+        new Function<ListLogsResponse, AsyncPage<String>>() {
+          @Override
+          public AsyncPage<String> apply(ListLogsResponse listLogsResponse) {
+            List<String> logNames =
+                listLogsResponse.getLogNamesList() == null
+                    ? ImmutableList.<String>of()
+                    : listLogsResponse.getLogNamesList();
+            String cursor =
+                listLogsResponse.getNextPageToken().equals("")
+                    ? null
+                    : listLogsResponse.getNextPageToken();
+            return new AsyncPageImpl<>(
+                new LogNamePageFetcher(serviceOptions, cursor, options), cursor, logNames);
+          }
+        });
+  }
+
+  @Override
+  public Page<String> listLogs(ListOption... options) {
+    return get(listLogsAsync(options));
+  }
+
+  @Override
+  public ApiFuture<AsyncPage<String>> listLogsAsync(ListOption... options) {
+    return listLogsAsync(getOptions(), optionMap(options));
   }
 
   public boolean deleteLog(String log) {

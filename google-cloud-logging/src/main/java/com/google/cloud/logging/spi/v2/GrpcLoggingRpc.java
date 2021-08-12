@@ -61,6 +61,8 @@ import com.google.logging.v2.ListLogEntriesRequest;
 import com.google.logging.v2.ListLogEntriesResponse;
 import com.google.logging.v2.ListLogMetricsRequest;
 import com.google.logging.v2.ListLogMetricsResponse;
+import com.google.logging.v2.ListLogsRequest;
+import com.google.logging.v2.ListLogsResponse;
 import com.google.logging.v2.ListMonitoredResourceDescriptorsRequest;
 import com.google.logging.v2.ListMonitoredResourceDescriptorsResponse;
 import com.google.logging.v2.ListSinksRequest;
@@ -258,6 +260,11 @@ public class GrpcLoggingRpc implements LoggingRpc {
         configClient.deleteExclusionCallable().futureCall(request),
         true,
         StatusCode.Code.NOT_FOUND);
+  }
+
+  @Override
+  public ApiFuture<ListLogsResponse> listLogs(ListLogsRequest request) {
+    return translate(loggingClient.listLogsCallable().futureCall(request), true);
   }
 
   @Override

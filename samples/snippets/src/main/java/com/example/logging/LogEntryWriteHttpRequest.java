@@ -57,7 +57,7 @@ public class LogEntryWriteHttpRequest {
 
       // Writes the log entry asynchronously
       logging.write(Collections.singleton(logEntry));
-      System.out.printf("Logged: %s%n", payLoad);
+      System.out.printf("Logged: %s", payLoad);
     }
   }
 }
