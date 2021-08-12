@@ -16,8 +16,4 @@
     <className>com/google/cloud/gaming/v1/*OrBuilder</className>
     <method>boolean has*(*)</method>
   </difference>
-  <difference>
-    <differenceType>8001</differenceType>
-    <className>com/google/cloud/gaming/v1/GameServerDeployment*</className>
-  </difference>
 </differences>
