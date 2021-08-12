@@ -712,13 +712,15 @@ public interface IntentOrBuilder
    *
    *
    * <pre>
+   * Output only.
    * Read-only. The unique identifier of the root intent in the chain of
    * followup intents. It identifies the correct followup intents chain for
    * this intent. We populate this field only in the output.
    * Format: `projects/&lt;Project ID&gt;/agent/intents/&lt;Intent ID&gt;`.
    * </pre>
    *
-   * <code>string root_followup_intent_name = 16;</code>
+   * <code>string root_followup_intent_name = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
    * @return The rootFollowupIntentName.
    */
@@ -727,13 +729,15 @@ public interface IntentOrBuilder
    *
    *
    * <pre>
+   * Output only.
    * Read-only. The unique identifier of the root intent in the chain of
    * followup intents. It identifies the correct followup intents chain for
    * this intent. We populate this field only in the output.
    * Format: `projects/&lt;Project ID&gt;/agent/intents/&lt;Intent ID&gt;`.
    * </pre>
    *
-   * <code>string root_followup_intent_name = 16;</code>
+   * <code>string root_followup_intent_name = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
    * @return The bytes for rootFollowupIntentName.
    */
@@ -780,11 +784,12 @@ public interface IntentOrBuilder
    *
    *
    * <pre>
-   * Read-only. Information about all followup intents that have this intent as
+   * Output only. Read-only. Information about all followup intents that have this intent as
    * a direct or indirect parent. We populate this field only in the output.
    * </pre>
    *
-   * <code>repeated .google.cloud.dialogflow.v2.Intent.FollowupIntentInfo followup_intent_info = 18;
+   * <code>
+   * repeated .google.cloud.dialogflow.v2.Intent.FollowupIntentInfo followup_intent_info = 18 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    */
   java.util.List<com.google.cloud.dialogflow.v2.Intent.FollowupIntentInfo>
@@ -793,11 +798,12 @@ public interface IntentOrBuilder
    *
    *
    * <pre>
-   * Read-only. Information about all followup intents that have this intent as
+   * Output only. Read-only. Information about all followup intents that have this intent as
    * a direct or indirect parent. We populate this field only in the output.
    * </pre>
    *
-   * <code>repeated .google.cloud.dialogflow.v2.Intent.FollowupIntentInfo followup_intent_info = 18;
+   * <code>
+   * repeated .google.cloud.dialogflow.v2.Intent.FollowupIntentInfo followup_intent_info = 18 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    */
   com.google.cloud.dialogflow.v2.Intent.FollowupIntentInfo getFollowupIntentInfo(int index);
@@ -805,11 +811,12 @@ public interface IntentOrBuilder
    *
    *
    * <pre>
-   * Read-only. Information about all followup intents that have this intent as
+   * Output only. Read-only. Information about all followup intents that have this intent as
    * a direct or indirect parent. We populate this field only in the output.
    * </pre>
    *
-   * <code>repeated .google.cloud.dialogflow.v2.Intent.FollowupIntentInfo followup_intent_info = 18;
+   * <code>
+   * repeated .google.cloud.dialogflow.v2.Intent.FollowupIntentInfo followup_intent_info = 18 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    */
   int getFollowupIntentInfoCount();
@@ -817,11 +824,12 @@ public interface IntentOrBuilder
    *
    *
    * <pre>
-   * Read-only. Information about all followup intents that have this intent as
+   * Output only. Read-only. Information about all followup intents that have this intent as
    * a direct or indirect parent. We populate this field only in the output.
    * </pre>
    *
-   * <code>repeated .google.cloud.dialogflow.v2.Intent.FollowupIntentInfo followup_intent_info = 18;
+   * <code>
+   * repeated .google.cloud.dialogflow.v2.Intent.FollowupIntentInfo followup_intent_info = 18 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    */
   java.util.List<? extends com.google.cloud.dialogflow.v2.Intent.FollowupIntentInfoOrBuilder>
@@ -830,11 +838,12 @@ public interface IntentOrBuilder
    *
    *
    * <pre>
-   * Read-only. Information about all followup intents that have this intent as
+   * Output only. Read-only. Information about all followup intents that have this intent as
    * a direct or indirect parent. We populate this field only in the output.
    * </pre>
    *
-   * <code>repeated .google.cloud.dialogflow.v2.Intent.FollowupIntentInfo followup_intent_info = 18;
+   * <code>
+   * repeated .google.cloud.dialogflow.v2.Intent.FollowupIntentInfo followup_intent_info = 18 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    */
   com.google.cloud.dialogflow.v2.Intent.FollowupIntentInfoOrBuilder getFollowupIntentInfoOrBuilder(

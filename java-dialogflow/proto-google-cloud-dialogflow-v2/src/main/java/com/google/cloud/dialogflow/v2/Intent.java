@@ -48387,13 +48387,15 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
+   * Output only.
    * Read-only. The unique identifier of the root intent in the chain of
    * followup intents. It identifies the correct followup intents chain for
    * this intent. We populate this field only in the output.
    * Format: `projects/&lt;Project ID&gt;/agent/intents/&lt;Intent ID&gt;`.
    * </pre>
    *
-   * <code>string root_followup_intent_name = 16;</code>
+   * <code>string root_followup_intent_name = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
    * @return The rootFollowupIntentName.
    */
@@ -48413,13 +48415,15 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
+   * Output only.
    * Read-only. The unique identifier of the root intent in the chain of
    * followup intents. It identifies the correct followup intents chain for
    * this intent. We populate this field only in the output.
    * Format: `projects/&lt;Project ID&gt;/agent/intents/&lt;Intent ID&gt;`.
    * </pre>
    *
-   * <code>string root_followup_intent_name = 16;</code>
+   * <code>string root_followup_intent_name = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
    * @return The bytes for rootFollowupIntentName.
    */
@@ -48504,11 +48508,12 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Read-only. Information about all followup intents that have this intent as
+   * Output only. Read-only. Information about all followup intents that have this intent as
    * a direct or indirect parent. We populate this field only in the output.
    * </pre>
    *
-   * <code>repeated .google.cloud.dialogflow.v2.Intent.FollowupIntentInfo followup_intent_info = 18;
+   * <code>
+   * repeated .google.cloud.dialogflow.v2.Intent.FollowupIntentInfo followup_intent_info = 18 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    */
   @java.lang.Override
@@ -48520,11 +48525,12 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Read-only. Information about all followup intents that have this intent as
+   * Output only. Read-only. Information about all followup intents that have this intent as
    * a direct or indirect parent. We populate this field only in the output.
    * </pre>
    *
-   * <code>repeated .google.cloud.dialogflow.v2.Intent.FollowupIntentInfo followup_intent_info = 18;
+   * <code>
+   * repeated .google.cloud.dialogflow.v2.Intent.FollowupIntentInfo followup_intent_info = 18 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    */
   @java.lang.Override
@@ -48536,11 +48542,12 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Read-only. Information about all followup intents that have this intent as
+   * Output only. Read-only. Information about all followup intents that have this intent as
    * a direct or indirect parent. We populate this field only in the output.
    * </pre>
    *
-   * <code>repeated .google.cloud.dialogflow.v2.Intent.FollowupIntentInfo followup_intent_info = 18;
+   * <code>
+   * repeated .google.cloud.dialogflow.v2.Intent.FollowupIntentInfo followup_intent_info = 18 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    */
   @java.lang.Override
@@ -48551,11 +48558,12 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Read-only. Information about all followup intents that have this intent as
+   * Output only. Read-only. Information about all followup intents that have this intent as
    * a direct or indirect parent. We populate this field only in the output.
    * </pre>
    *
-   * <code>repeated .google.cloud.dialogflow.v2.Intent.FollowupIntentInfo followup_intent_info = 18;
+   * <code>
+   * repeated .google.cloud.dialogflow.v2.Intent.FollowupIntentInfo followup_intent_info = 18 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    */
   @java.lang.Override
@@ -48566,11 +48574,12 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Read-only. Information about all followup intents that have this intent as
+   * Output only. Read-only. Information about all followup intents that have this intent as
    * a direct or indirect parent. We populate this field only in the output.
    * </pre>
    *
-   * <code>repeated .google.cloud.dialogflow.v2.Intent.FollowupIntentInfo followup_intent_info = 18;
+   * <code>
+   * repeated .google.cloud.dialogflow.v2.Intent.FollowupIntentInfo followup_intent_info = 18 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    */
   @java.lang.Override
@@ -52590,13 +52599,15 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
+     * Output only.
      * Read-only. The unique identifier of the root intent in the chain of
      * followup intents. It identifies the correct followup intents chain for
      * this intent. We populate this field only in the output.
      * Format: `projects/&lt;Project ID&gt;/agent/intents/&lt;Intent ID&gt;`.
      * </pre>
      *
-     * <code>string root_followup_intent_name = 16;</code>
+     * <code>string root_followup_intent_name = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      *
      * @return The rootFollowupIntentName.
      */
@@ -52615,13 +52626,15 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
+     * Output only.
      * Read-only. The unique identifier of the root intent in the chain of
      * followup intents. It identifies the correct followup intents chain for
      * this intent. We populate this field only in the output.
      * Format: `projects/&lt;Project ID&gt;/agent/intents/&lt;Intent ID&gt;`.
      * </pre>
      *
-     * <code>string root_followup_intent_name = 16;</code>
+     * <code>string root_followup_intent_name = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      *
      * @return The bytes for rootFollowupIntentName.
      */
@@ -52640,13 +52653,15 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
+     * Output only.
      * Read-only. The unique identifier of the root intent in the chain of
      * followup intents. It identifies the correct followup intents chain for
      * this intent. We populate this field only in the output.
      * Format: `projects/&lt;Project ID&gt;/agent/intents/&lt;Intent ID&gt;`.
      * </pre>
      *
-     * <code>string root_followup_intent_name = 16;</code>
+     * <code>string root_followup_intent_name = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      *
      * @param value The rootFollowupIntentName to set.
      * @return This builder for chaining.
@@ -52664,13 +52679,15 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
+     * Output only.
      * Read-only. The unique identifier of the root intent in the chain of
      * followup intents. It identifies the correct followup intents chain for
      * this intent. We populate this field only in the output.
      * Format: `projects/&lt;Project ID&gt;/agent/intents/&lt;Intent ID&gt;`.
      * </pre>
      *
-     * <code>string root_followup_intent_name = 16;</code>
+     * <code>string root_followup_intent_name = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      *
      * @return This builder for chaining.
      */
@@ -52684,13 +52701,15 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
+     * Output only.
      * Read-only. The unique identifier of the root intent in the chain of
      * followup intents. It identifies the correct followup intents chain for
      * this intent. We populate this field only in the output.
      * Format: `projects/&lt;Project ID&gt;/agent/intents/&lt;Intent ID&gt;`.
      * </pre>
      *
-     * <code>string root_followup_intent_name = 16;</code>
+     * <code>string root_followup_intent_name = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      *
      * @param value The bytes for rootFollowupIntentName to set.
      * @return This builder for chaining.
@@ -52864,12 +52883,12 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Read-only. Information about all followup intents that have this intent as
+     * Output only. Read-only. Information about all followup intents that have this intent as
      * a direct or indirect parent. We populate this field only in the output.
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.dialogflow.v2.Intent.FollowupIntentInfo followup_intent_info = 18;
+     * repeated .google.cloud.dialogflow.v2.Intent.FollowupIntentInfo followup_intent_info = 18 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      */
     public java.util.List<com.google.cloud.dialogflow.v2.Intent.FollowupIntentInfo>
@@ -52884,12 +52903,12 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Read-only. Information about all followup intents that have this intent as
+     * Output only. Read-only. Information about all followup intents that have this intent as
      * a direct or indirect parent. We populate this field only in the output.
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.dialogflow.v2.Intent.FollowupIntentInfo followup_intent_info = 18;
+     * repeated .google.cloud.dialogflow.v2.Intent.FollowupIntentInfo followup_intent_info = 18 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      */
     public int getFollowupIntentInfoCount() {
@@ -52903,12 +52922,12 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Read-only. Information about all followup intents that have this intent as
+     * Output only. Read-only. Information about all followup intents that have this intent as
      * a direct or indirect parent. We populate this field only in the output.
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.dialogflow.v2.Intent.FollowupIntentInfo followup_intent_info = 18;
+     * repeated .google.cloud.dialogflow.v2.Intent.FollowupIntentInfo followup_intent_info = 18 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      */
     public com.google.cloud.dialogflow.v2.Intent.FollowupIntentInfo getFollowupIntentInfo(
@@ -52923,12 +52942,12 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Read-only. Information about all followup intents that have this intent as
+     * Output only. Read-only. Information about all followup intents that have this intent as
      * a direct or indirect parent. We populate this field only in the output.
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.dialogflow.v2.Intent.FollowupIntentInfo followup_intent_info = 18;
+     * repeated .google.cloud.dialogflow.v2.Intent.FollowupIntentInfo followup_intent_info = 18 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      */
     public Builder setFollowupIntentInfo(
@@ -52949,12 +52968,12 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Read-only. Information about all followup intents that have this intent as
+     * Output only. Read-only. Information about all followup intents that have this intent as
      * a direct or indirect parent. We populate this field only in the output.
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.dialogflow.v2.Intent.FollowupIntentInfo followup_intent_info = 18;
+     * repeated .google.cloud.dialogflow.v2.Intent.FollowupIntentInfo followup_intent_info = 18 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      */
     public Builder setFollowupIntentInfo(
@@ -52973,12 +52992,12 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Read-only. Information about all followup intents that have this intent as
+     * Output only. Read-only. Information about all followup intents that have this intent as
      * a direct or indirect parent. We populate this field only in the output.
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.dialogflow.v2.Intent.FollowupIntentInfo followup_intent_info = 18;
+     * repeated .google.cloud.dialogflow.v2.Intent.FollowupIntentInfo followup_intent_info = 18 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      */
     public Builder addFollowupIntentInfo(
@@ -52999,12 +53018,12 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Read-only. Information about all followup intents that have this intent as
+     * Output only. Read-only. Information about all followup intents that have this intent as
      * a direct or indirect parent. We populate this field only in the output.
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.dialogflow.v2.Intent.FollowupIntentInfo followup_intent_info = 18;
+     * repeated .google.cloud.dialogflow.v2.Intent.FollowupIntentInfo followup_intent_info = 18 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      */
     public Builder addFollowupIntentInfo(
@@ -53025,12 +53044,12 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Read-only. Information about all followup intents that have this intent as
+     * Output only. Read-only. Information about all followup intents that have this intent as
      * a direct or indirect parent. We populate this field only in the output.
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.dialogflow.v2.Intent.FollowupIntentInfo followup_intent_info = 18;
+     * repeated .google.cloud.dialogflow.v2.Intent.FollowupIntentInfo followup_intent_info = 18 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      */
     public Builder addFollowupIntentInfo(
@@ -53048,12 +53067,12 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Read-only. Information about all followup intents that have this intent as
+     * Output only. Read-only. Information about all followup intents that have this intent as
      * a direct or indirect parent. We populate this field only in the output.
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.dialogflow.v2.Intent.FollowupIntentInfo followup_intent_info = 18;
+     * repeated .google.cloud.dialogflow.v2.Intent.FollowupIntentInfo followup_intent_info = 18 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      */
     public Builder addFollowupIntentInfo(
@@ -53072,12 +53091,12 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Read-only. Information about all followup intents that have this intent as
+     * Output only. Read-only. Information about all followup intents that have this intent as
      * a direct or indirect parent. We populate this field only in the output.
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.dialogflow.v2.Intent.FollowupIntentInfo followup_intent_info = 18;
+     * repeated .google.cloud.dialogflow.v2.Intent.FollowupIntentInfo followup_intent_info = 18 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      */
     public Builder addAllFollowupIntentInfo(
@@ -53096,12 +53115,12 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Read-only. Information about all followup intents that have this intent as
+     * Output only. Read-only. Information about all followup intents that have this intent as
      * a direct or indirect parent. We populate this field only in the output.
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.dialogflow.v2.Intent.FollowupIntentInfo followup_intent_info = 18;
+     * repeated .google.cloud.dialogflow.v2.Intent.FollowupIntentInfo followup_intent_info = 18 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      */
     public Builder clearFollowupIntentInfo() {
@@ -53118,12 +53137,12 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Read-only. Information about all followup intents that have this intent as
+     * Output only. Read-only. Information about all followup intents that have this intent as
      * a direct or indirect parent. We populate this field only in the output.
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.dialogflow.v2.Intent.FollowupIntentInfo followup_intent_info = 18;
+     * repeated .google.cloud.dialogflow.v2.Intent.FollowupIntentInfo followup_intent_info = 18 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      */
     public Builder removeFollowupIntentInfo(int index) {
@@ -53140,12 +53159,12 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Read-only. Information about all followup intents that have this intent as
+     * Output only. Read-only. Information about all followup intents that have this intent as
      * a direct or indirect parent. We populate this field only in the output.
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.dialogflow.v2.Intent.FollowupIntentInfo followup_intent_info = 18;
+     * repeated .google.cloud.dialogflow.v2.Intent.FollowupIntentInfo followup_intent_info = 18 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      */
     public com.google.cloud.dialogflow.v2.Intent.FollowupIntentInfo.Builder
@@ -53156,12 +53175,12 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Read-only. Information about all followup intents that have this intent as
+     * Output only. Read-only. Information about all followup intents that have this intent as
      * a direct or indirect parent. We populate this field only in the output.
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.dialogflow.v2.Intent.FollowupIntentInfo followup_intent_info = 18;
+     * repeated .google.cloud.dialogflow.v2.Intent.FollowupIntentInfo followup_intent_info = 18 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      */
     public com.google.cloud.dialogflow.v2.Intent.FollowupIntentInfoOrBuilder
@@ -53176,12 +53195,12 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Read-only. Information about all followup intents that have this intent as
+     * Output only. Read-only. Information about all followup intents that have this intent as
      * a direct or indirect parent. We populate this field only in the output.
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.dialogflow.v2.Intent.FollowupIntentInfo followup_intent_info = 18;
+     * repeated .google.cloud.dialogflow.v2.Intent.FollowupIntentInfo followup_intent_info = 18 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      */
     public java.util.List<
@@ -53197,12 +53216,12 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Read-only. Information about all followup intents that have this intent as
+     * Output only. Read-only. Information about all followup intents that have this intent as
      * a direct or indirect parent. We populate this field only in the output.
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.dialogflow.v2.Intent.FollowupIntentInfo followup_intent_info = 18;
+     * repeated .google.cloud.dialogflow.v2.Intent.FollowupIntentInfo followup_intent_info = 18 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      */
     public com.google.cloud.dialogflow.v2.Intent.FollowupIntentInfo.Builder
@@ -53215,12 +53234,12 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Read-only. Information about all followup intents that have this intent as
+     * Output only. Read-only. Information about all followup intents that have this intent as
      * a direct or indirect parent. We populate this field only in the output.
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.dialogflow.v2.Intent.FollowupIntentInfo followup_intent_info = 18;
+     * repeated .google.cloud.dialogflow.v2.Intent.FollowupIntentInfo followup_intent_info = 18 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      */
     public com.google.cloud.dialogflow.v2.Intent.FollowupIntentInfo.Builder
@@ -53233,12 +53252,12 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Read-only. Information about all followup intents that have this intent as
+     * Output only. Read-only. Information about all followup intents that have this intent as
      * a direct or indirect parent. We populate this field only in the output.
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.dialogflow.v2.Intent.FollowupIntentInfo followup_intent_info = 18;
+     * repeated .google.cloud.dialogflow.v2.Intent.FollowupIntentInfo followup_intent_info = 18 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      */
     public java.util.List<com.google.cloud.dialogflow.v2.Intent.FollowupIntentInfo.Builder>
