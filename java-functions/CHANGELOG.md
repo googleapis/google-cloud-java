@@ -1,5 +1,12 @@
 # Changelog
 
+### [2.0.1](https://www.github.com/googleapis/java-functions/compare/v2.0.0...v2.0.1) (2021-08-12)
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.0.1 ([#268](https://www.github.com/googleapis/java-functions/issues/268)) ([9365fed](https://www.github.com/googleapis/java-functions/commit/9365fedd090b2f1ef7721ddff5e4a3072963afbf))
+
 ## [2.0.0](https://www.github.com/googleapis/java-functions/compare/v1.2.2...v2.0.0) (2021-08-10)
 
 
