@@ -39,11 +39,3 @@ public class ListLogs {
   }
 }
 // [END logging_list_logs]
-
-// the following is a temporary location due to exclusive requirement
-// from snippet layout vs. snippet-bot
-
-// [START logging_list_log_entries]
-
-
-// [END logging_list_log_entries]
