@@ -1,5 +1,23 @@
 # Changelog
 
+## [2.0.0](https://www.github.com/googleapis/java-containeranalysis/compare/v1.3.5...v2.0.0) (2021-08-12)
+
+
+### ⚠ BREAKING CHANGES
+
+* release gapic-generator-java v2.0.0 (#637)
+
+### Features
+
+* release gapic-generator-java v2.0.0 ([#637](https://www.github.com/googleapis/java-containeranalysis/issues/637)) ([c59cddd](https://www.github.com/googleapis/java-containeranalysis/commit/c59cddd78fc47f0eb3e746f4ef84356b15554c8e))
+
+
+### Dependencies
+
+* update dependency com.google.api.grpc:proto-google-cloud-containeranalysis-v1 to v1.4.0 ([#647](https://www.github.com/googleapis/java-containeranalysis/issues/647)) ([0baa203](https://www.github.com/googleapis/java-containeranalysis/commit/0baa2032b64f6c92f9ed80d05addd25823928dc4))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2 ([#638](https://www.github.com/googleapis/java-containeranalysis/issues/638)) ([d1b5d27](https://www.github.com/googleapis/java-containeranalysis/commit/d1b5d27c72746a479c406f97403569cbe689e5f0))
+* update dependency io.grafeas:grafeas to v1.3.0 ([#649](https://www.github.com/googleapis/java-containeranalysis/issues/649)) ([13d0dea](https://www.github.com/googleapis/java-containeranalysis/commit/13d0deaa2e7158be51b3fdcce9201a7ad551b160))
+
 ### [1.3.5](https://www.github.com/googleapis/java-containeranalysis/compare/v1.3.4...v1.3.5) (2021-07-02)
 
 
