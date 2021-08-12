@@ -31,13 +31,13 @@ If you are using Maven, add this to your pom.xml file:
 If you are using Gradle without BOM, add this to your dependencies
 
 ```Groovy
-compile 'com.google.cloud:google-cloud-recommendations-ai:0.6.1'
+compile 'com.google.cloud:google-cloud-recommendations-ai:0.7.0'
 ```
 
 If you are using SBT, add this to your dependencies
 
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-recommendations-ai" % "0.6.1"
+libraryDependencies += "com.google.cloud" % "google-cloud-recommendations-ai" % "0.7.0"
 ```
 
 ## Authentication
