@@ -1,5 +1,13 @@
 # Changelog
 
+### [2.0.1](https://www.github.com/googleapis/java-dataproc/compare/v2.0.0...v2.0.1) (2021-08-12)
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.0.1 ([#635](https://www.github.com/googleapis/java-dataproc/issues/635)) ([bc5162a](https://www.github.com/googleapis/java-dataproc/commit/bc5162a46c5bef3829c18e32c93f7fc08c59c4da))
+* update dependency com.google.cloud:google-cloud-storage to v2.0.1 ([#636](https://www.github.com/googleapis/java-dataproc/issues/636)) ([12c182b](https://www.github.com/googleapis/java-dataproc/commit/12c182bae21b2a4a5ef38c09df729559380cc369))
+
 ## [2.0.0](https://www.github.com/googleapis/java-dataproc/compare/v1.5.4...v2.0.0) (2021-08-09)
 
 
