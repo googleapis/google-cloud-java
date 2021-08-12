@@ -23,7 +23,6 @@ import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.grpc.GrpcCallSettings;
 import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
-import com.google.api.gax.rpc.RequestParamsExtractor;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.retail.v2.Catalog;
 import com.google.cloud.retail.v2.GetDefaultBranchRequest;
@@ -38,7 +37,6 @@ import com.google.protobuf.Empty;
 import io.grpc.MethodDescriptor;
 import io.grpc.protobuf.ProtoUtils;
 import java.io.IOException;
-import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
@@ -147,39 +145,30 @@ public class GrpcCatalogServiceStub extends CatalogServiceStub {
         GrpcCallSettings.<ListCatalogsRequest, ListCatalogsResponse>newBuilder()
             .setMethodDescriptor(listCatalogsMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<ListCatalogsRequest>() {
-                  @Override
-                  public Map<String, String> extract(ListCatalogsRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("parent", String.valueOf(request.getParent()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("parent", String.valueOf(request.getParent()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<UpdateCatalogRequest, Catalog> updateCatalogTransportSettings =
         GrpcCallSettings.<UpdateCatalogRequest, Catalog>newBuilder()
             .setMethodDescriptor(updateCatalogMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<UpdateCatalogRequest>() {
-                  @Override
-                  public Map<String, String> extract(UpdateCatalogRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("catalog.name", String.valueOf(request.getCatalog().getName()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("catalog.name", String.valueOf(request.getCatalog().getName()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<SetDefaultBranchRequest, Empty> setDefaultBranchTransportSettings =
         GrpcCallSettings.<SetDefaultBranchRequest, Empty>newBuilder()
             .setMethodDescriptor(setDefaultBranchMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<SetDefaultBranchRequest>() {
-                  @Override
-                  public Map<String, String> extract(SetDefaultBranchRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("catalog", String.valueOf(request.getCatalog()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("catalog", String.valueOf(request.getCatalog()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<GetDefaultBranchRequest, GetDefaultBranchResponse>
@@ -187,13 +176,10 @@ public class GrpcCatalogServiceStub extends CatalogServiceStub {
             GrpcCallSettings.<GetDefaultBranchRequest, GetDefaultBranchResponse>newBuilder()
                 .setMethodDescriptor(getDefaultBranchMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<GetDefaultBranchRequest>() {
-                      @Override
-                      public Map<String, String> extract(GetDefaultBranchRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("catalog", String.valueOf(request.getCatalog()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("catalog", String.valueOf(request.getCatalog()));
+                      return params.build();
                     })
                 .build();
 
@@ -249,7 +235,13 @@ public class GrpcCatalogServiceStub extends CatalogServiceStub {
 
   @Override
   public final void close() {
-    shutdown();
+    try {
+      backgroundResources.close();
+    } catch (RuntimeException e) {
+      throw e;
+    } catch (Exception e) {
+      throw new IllegalStateException("Failed to close resource", e);
+    }
   }
 
   @Override

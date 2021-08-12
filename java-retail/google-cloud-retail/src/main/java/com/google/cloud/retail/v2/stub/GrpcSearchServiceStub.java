@@ -23,7 +23,6 @@ import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.grpc.GrpcCallSettings;
 import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
-import com.google.api.gax.rpc.RequestParamsExtractor;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.retail.v2.SearchRequest;
 import com.google.cloud.retail.v2.SearchResponse;
@@ -32,7 +31,6 @@ import com.google.longrunning.stub.GrpcOperationsStub;
 import io.grpc.MethodDescriptor;
 import io.grpc.protobuf.ProtoUtils;
 import java.io.IOException;
-import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
@@ -101,13 +99,10 @@ public class GrpcSearchServiceStub extends SearchServiceStub {
         GrpcCallSettings.<SearchRequest, SearchResponse>newBuilder()
             .setMethodDescriptor(searchMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<SearchRequest>() {
-                  @Override
-                  public Map<String, String> extract(SearchRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("placement", String.valueOf(request.getPlacement()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("placement", String.valueOf(request.getPlacement()));
+                  return params.build();
                 })
             .build();
 
@@ -138,7 +133,13 @@ public class GrpcSearchServiceStub extends SearchServiceStub {
 
   @Override
   public final void close() {
-    shutdown();
+    try {
+      backgroundResources.close();
+    } catch (RuntimeException e) {
+      throw e;
+    } catch (Exception e) {
+      throw new IllegalStateException("Failed to close resource", e);
+    }
   }
 
   @Override

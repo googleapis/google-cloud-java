@@ -16,7 +16,6 @@
 
 package com.google.cloud.retail.v2;
 
-import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
 import com.google.api.core.BetaApi;
@@ -361,14 +360,7 @@ public class SearchServiceClient implements BackgroundResource {
       ApiFuture<SearchPage> futurePage =
           SearchPage.createEmptyPage().createPageAsync(context, futureResponse);
       return ApiFutures.transform(
-          futurePage,
-          new ApiFunction<SearchPage, SearchPagedResponse>() {
-            @Override
-            public SearchPagedResponse apply(SearchPage input) {
-              return new SearchPagedResponse(input);
-            }
-          },
-          MoreExecutors.directExecutor());
+          futurePage, input -> new SearchPagedResponse(input), MoreExecutors.directExecutor());
     }
 
     private SearchPagedResponse(SearchPage page) {
