@@ -39,9 +39,9 @@ public class ITGrafeasInteropTest {
     GrafeasSettings grafeasSettings = grafeasClient.getSettings();
 
     assertEquals(settings.getClock(), grafeasSettings.getClock());
-    assertEquals(settings.getExecutorProvider(), grafeasSettings.getExecutorProvider());
+    assertEquals(settings.getBackgroundExecutorProvider(), grafeasSettings.getExecutorProvider());
     assertEquals(settings.getEndpoint(), grafeasSettings.getEndpoint());
-    assertEquals(settings.getExecutorProvider(), grafeasSettings.getExecutorProvider());
+    assertEquals(settings.getBackgroundExecutorProvider(), grafeasSettings.getExecutorProvider());
     assertEquals(settings.getHeaderProvider(), grafeasSettings.getHeaderProvider());
     assertEquals(
         settings.getTransportChannelProvider(), grafeasSettings.getTransportChannelProvider());
