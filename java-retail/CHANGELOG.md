@@ -1,5 +1,27 @@
 # Changelog
 
+## [2.0.0](https://www.github.com/googleapis/java-retail/compare/v1.2.1...v2.0.0) (2021-08-12)
+
+
+### ⚠ BREAKING CHANGES
+
+* release gapic-generator-java v2.0.0 (#169)
+
+### Features
+
+* release gapic-generator-java v2.0.0 ([#169](https://www.github.com/googleapis/java-retail/issues/169)) ([0134460](https://www.github.com/googleapis/java-retail/commit/01344601a46bb54597564cb7d10670e8d99fd47b))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.0.1 ([#170](https://www.github.com/googleapis/java-retail/issues/170)) ([dbdbd64](https://www.github.com/googleapis/java-retail/commit/dbdbd64f15166bb3585e25cd96df787a34b3ae98))
+
+
+### Documentation
+
+* Remove HTML tags from Cloud Retail API library docs ([0134460](https://www.github.com/googleapis/java-retail/commit/01344601a46bb54597564cb7d10670e8d99fd47b))
+* **retail:** Quote several literal expressions for better rendering ([0134460](https://www.github.com/googleapis/java-retail/commit/01344601a46bb54597564cb7d10670e8d99fd47b))
+
 ### [1.2.1](https://www.github.com/googleapis/java-retail/compare/v1.2.0...v1.2.1) (2021-08-10)
 
 
