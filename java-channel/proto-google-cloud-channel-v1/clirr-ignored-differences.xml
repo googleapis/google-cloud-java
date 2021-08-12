@@ -16,8 +16,4 @@
     <className>com/google/cloud/channel/v1/*OrBuilder</className>
     <method>boolean has*(*)</method>
   </difference>
-  <difference>
-    <differenceType>8001</differenceType>
-    <className>com/google/cloud/channel/v1/SkuName*</className>
-  </difference>
 </differences>
