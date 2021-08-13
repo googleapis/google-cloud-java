@@ -1,5 +1,19 @@
 # Changelog
 
+## [4.1.0](https://www.github.com/googleapis/java-dialogflow/compare/v4.0.0...v4.1.0) (2021-08-12)
+
+
+### Features
+
+* expose `Locations` service to get/list avaliable locations of Dialogflow products; fixed some API annotations ([#650](https://www.github.com/googleapis/java-dialogflow/issues/650)) ([c8b874c](https://www.github.com/googleapis/java-dialogflow/commit/c8b874c42fee3abe1c91bb9c855bd0a62b4ebed2))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-core to v2.0.3 ([#647](https://www.github.com/googleapis/java-dialogflow/issues/647)) ([f87fcc4](https://www.github.com/googleapis/java-dialogflow/commit/f87fcc4905624ce5c3008cae6f1d79850e91d99f))
+* update dependency com.google.cloud:google-cloud-core to v2.0.5 ([#649](https://www.github.com/googleapis/java-dialogflow/issues/649)) ([3319771](https://www.github.com/googleapis/java-dialogflow/commit/33197715a0ec905461fdc24e8f8ad90fdd121e5d))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.0.1 ([#651](https://www.github.com/googleapis/java-dialogflow/issues/651)) ([48f247c](https://www.github.com/googleapis/java-dialogflow/commit/48f247cf107cf2c978dd18c9f945fa81e3ff89b4))
+
 ## [4.0.0](https://www.github.com/googleapis/java-dialogflow/compare/v3.3.0...v4.0.0) (2021-08-10)
 
 
