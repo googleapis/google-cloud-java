@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.1.0](https://www.github.com/googleapis/java-containeranalysis/compare/v2.0.0...v2.1.0) (2021-08-13)
+
+
+### Features
+
+* trigger release ([#655](https://www.github.com/googleapis/java-containeranalysis/issues/655)) ([dfebab3](https://www.github.com/googleapis/java-containeranalysis/commit/dfebab3768e67020a409d3e749f2e8db6928798e))
+
 ## [2.0.0](https://www.github.com/googleapis/java-containeranalysis/compare/v1.3.5...v2.0.0) (2021-08-12)
 
 
