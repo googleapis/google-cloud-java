@@ -35,7 +35,7 @@
  *
  * <pre>{@code
  * try (ContainerAnalysisClient containerAnalysisClient = ContainerAnalysisClient.create()) {
- *   ResourceName resource = ProjectName.of("[PROJECT]");
+ *   ResourceName resource = BillingAccountName.of("[BILLING_ACCOUNT]");
  *   Policy policy = Policy.newBuilder().build();
  *   Policy response = containerAnalysisClient.setIamPolicy(resource, policy);
  * }
