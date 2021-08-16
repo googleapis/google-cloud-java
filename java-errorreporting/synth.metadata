@@ -4,7 +4,7 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/java-errorreporting.git",
-        "sha": "a4f8a0099afd3e4562d5798b5c252b10d3160c84"
+        "sha": "38d64eea4317cb55fe11f3f5a94873cc4b4df06c"
       }
     },
     {
@@ -19,7 +19,7 @@
       "git": {
         "name": "synthtool",
         "remote": "https://github.com/googleapis/synthtool.git",
-        "sha": "6252f2cd074c38f37b44abe5e96d128733eb1b61"
+        "sha": "ff01716e16d2c6e87eaf87197b753ac9fcbbed5d"
       }
     }
   ],
