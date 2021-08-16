@@ -108,6 +108,7 @@ public class BaseEmulatorHelperTest {
     String mockInputStream = "mockInputStream";
     String mockProtocol = "mockProtocol";
     String mockFile = "mockFile";
+    String mockAccessToken = "mockAccessToken";
     String mockCommandText = "mockCommandText";
 
     MockURLStreamHandler mockURLStreamHandler = EasyMock.createMock(MockURLStreamHandler.class);
@@ -119,6 +120,7 @@ public class BaseEmulatorHelperTest {
     EasyMock.expect(mockURLConnection.getInputStream())
         .andReturn(new ByteArrayInputStream(mockInputStream.getBytes()))
         .anyTimes();
+    mockURLConnection.setRequestProperty("Authorization", "Bearer " + mockAccessToken);
     EasyMock.expect(mockURLStreamHandler.openConnection(EasyMock.anyObject(URL.class)))
         .andThrow(new EOFException())
         .times(1);
@@ -130,7 +132,7 @@ public class BaseEmulatorHelperTest {
     URL url = new URL(mockProtocol, null, 0, mockFile, mockURLStreamHandler);
     BaseEmulatorHelper.DownloadableEmulatorRunner runner =
         new BaseEmulatorHelper.DownloadableEmulatorRunner(
-            ImmutableList.of(mockCommandText), url, null);
+            ImmutableList.of(mockCommandText), url, null, mockAccessToken);
 
     File cachedFile = new File(System.getProperty("java.io.tmpdir"), mockExternalForm);
     cachedFile.delete(); // Clear the cached version so we're always testing the download

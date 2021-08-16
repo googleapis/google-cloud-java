@@ -38,6 +38,7 @@ import java.math.BigInteger;
 import java.net.HttpURLConnection;
 import java.net.ServerSocket;
 import java.net.URL;
+import java.net.URLConnection;
 import java.nio.channels.Channels;
 import java.nio.channels.ReadableByteChannel;
 import java.nio.file.Files;
@@ -316,6 +317,7 @@ public abstract class BaseEmulatorHelper<T extends ServiceOptions> {
     private final String md5CheckSum;
     private final URL downloadUrl;
     private final String fileName;
+    private String accessToken;
     private Process process;
     private static final Logger log = Logger.getLogger(DownloadableEmulatorRunner.class.getName());
 
@@ -326,6 +328,12 @@ public abstract class BaseEmulatorHelper<T extends ServiceOptions> {
       this.downloadUrl = downloadUrl;
       String[] splitUrl = downloadUrl.toString().split("/");
       this.fileName = splitUrl[splitUrl.length - 1];
+    }
+
+    public DownloadableEmulatorRunner(
+        List<String> commandText, URL downloadUrl, String md5CheckSum, String accessToken) {
+      this(commandText, downloadUrl, md5CheckSum);
+      this.accessToken = accessToken;
     }
 
     @Override
@@ -420,7 +428,11 @@ public abstract class BaseEmulatorHelper<T extends ServiceOptions> {
         if (log.isLoggable(Level.FINE)) {
           log.fine("Fetching emulator");
         }
-        ReadableByteChannel rbc = Channels.newChannel(downloadUrl.openStream());
+        URLConnection urlConnection = downloadUrl.openConnection();
+        if (accessToken != null) {
+          urlConnection.setRequestProperty("Authorization", "Bearer " + accessToken);
+        }
+        ReadableByteChannel rbc = Channels.newChannel(urlConnection.getInputStream());
         try (FileOutputStream fos = new FileOutputStream(zipFile)) {
           fos.getChannel().transferFrom(rbc, 0, Long.MAX_VALUE);
         }
