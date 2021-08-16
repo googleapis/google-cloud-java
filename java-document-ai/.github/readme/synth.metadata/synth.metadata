@@ -4,14 +4,14 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/java-document-ai.git",
-        "sha": "01337159ff902b782e2444e706b7df0369d748c0"
+        "sha": "fde99cac1da510aba355f15fe34fd123238202b8"
       }
     },
     {
       "git": {
         "name": "synthtool",
         "remote": "https://github.com/googleapis/synthtool.git",
-        "sha": "3d32990b6f4b57be77455e3ca89e6e21cd0c06b3"
+        "sha": "a01e1a0bf70754f51450958b966bd673945d1e6e"
       }
     }
   ]
