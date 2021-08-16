@@ -191,7 +191,7 @@ Java is a registered trademark of Oracle and/or its affiliates.
 [code-of-conduct]: https://github.com/googleapis/java-storage-transfer/blob/master/CODE_OF_CONDUCT.md#contributor-code-of-conduct
 [license]: https://github.com/googleapis/java-storage-transfer/blob/master/LICENSE
 [enable-billing]: https://cloud.google.com/apis/docs/getting-started#enabling_billing
-[enable-api]: https://console.cloud.google.com/flows/enableapi?apiid=storage-transfer.googleapis.com
+[enable-api]: https://console.cloud.google.com/flows/enableapi?apiid=storagetransfer.googleapis.com
 [libraries-bom]: https://github.com/GoogleCloudPlatform/cloud-opensource-java/wiki/The-Google-Cloud-Platform-Libraries-BOM
 [shell_img]: https://gstatic.com/cloudssh/images/open-btn.png
 
