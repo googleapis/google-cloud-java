@@ -1,5 +1,12 @@
 # Changelog
 
+### [2.1.2](https://www.github.com/googleapis/java-bigquery/compare/v2.1.1...v2.1.2) (2021-08-17)
+
+
+### Bug Fixes
+
+* add retry logging for BigQueryRetryAlgorithm.java ([#1506](https://www.github.com/googleapis/java-bigquery/issues/1506)) ([f598279](https://www.github.com/googleapis/java-bigquery/commit/f5982794fb5f9c13c3e328efcb8ab852682b4466))
+
 ### [2.1.1](https://www.github.com/googleapis/java-bigquery/compare/v2.1.0...v2.1.1) (2021-08-12)
 
 
