@@ -27,7 +27,10 @@ import com.google.api.gax.retrying.TimedRetryAlgorithm;
 import com.google.api.gax.retrying.TimedRetryAlgorithmWithContext;
 import java.util.Iterator;
 import java.util.concurrent.CancellationException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import java.util.regex.Pattern;
+import org.threeten.bp.Duration;
 
 public class BigQueryRetryAlgorithm<ResponseT> extends RetryAlgorithm<ResponseT> {
   private final BigQueryRetryConfig bigQueryRetryConfig;
@@ -35,6 +38,8 @@ public class BigQueryRetryAlgorithm<ResponseT> extends RetryAlgorithm<ResponseT>
   private final TimedRetryAlgorithm timedAlgorithm;
   private final ResultRetryAlgorithmWithContext<ResponseT> resultAlgorithmWithContext;
   private final TimedRetryAlgorithmWithContext timedAlgorithmWithContext;
+
+  private static final Logger LOG = Logger.getLogger(BigQueryRetryAlgorithm.class.getName());
 
   public BigQueryRetryAlgorithm(
       ResultRetryAlgorithm<ResponseT> resultAlgorithm,
@@ -55,11 +60,32 @@ public class BigQueryRetryAlgorithm<ResponseT> extends RetryAlgorithm<ResponseT>
       ResponseT previousResponse,
       TimedAttemptSettings nextAttemptSettings)
       throws CancellationException {
+    // Log retry info
+    int attemptCount = nextAttemptSettings == null ? 0 : nextAttemptSettings.getAttemptCount();
+    Duration retryDelay =
+        nextAttemptSettings == null ? Duration.ZERO : nextAttemptSettings.getRetryDelay();
+    String errorMessage = previousThrowable != null ? previousThrowable.getMessage() : "";
+
     // Implementing shouldRetryBasedOnBigQueryRetryConfig so that we can retry exceptions based on
     // the exception messages
-    return (shouldRetryBasedOnResult(context, previousThrowable, previousResponse)
-            || shouldRetryBasedOnBigQueryRetryConfig(previousThrowable, bigQueryRetryConfig))
-        && shouldRetryBasedOnTiming(context, nextAttemptSettings);
+    boolean shouldRetry =
+        (shouldRetryBasedOnResult(context, previousThrowable, previousResponse)
+                || shouldRetryBasedOnBigQueryRetryConfig(previousThrowable, bigQueryRetryConfig))
+            && shouldRetryBasedOnTiming(context, nextAttemptSettings);
+
+    if (LOG.isLoggable(Level.FINEST)) {
+      LOG.log(
+          Level.FINEST,
+          "Retrying with:\n{0}\n{1}\n{2}\n{3}\n{4}",
+          new Object[] {
+            "BigQuery attemptCount: " + attemptCount,
+            "BigQuery delay: " + retryDelay,
+            "BigQuery retriableException: " + previousThrowable,
+            "BigQuery shouldRetry: " + shouldRetry,
+            "BigQuery previousThrowable.getMessage: " + errorMessage
+          });
+    }
+    return shouldRetry;
   }
 
   private boolean shouldRetryBasedOnBigQueryRetryConfig(

@@ -16,12 +16,23 @@
 package com.google.cloud.bigquery;
 
 import com.google.api.core.ApiClock;
-import com.google.api.gax.retrying.*;
+import com.google.api.gax.retrying.DirectRetryingExecutor;
+import com.google.api.gax.retrying.ExponentialRetryAlgorithm;
+import com.google.api.gax.retrying.ResultRetryAlgorithm;
+import com.google.api.gax.retrying.RetryAlgorithm;
+import com.google.api.gax.retrying.RetrySettings;
+import com.google.api.gax.retrying.RetryingExecutor;
+import com.google.api.gax.retrying.RetryingFuture;
+import com.google.api.gax.retrying.TimedRetryAlgorithm;
 import com.google.cloud.RetryHelper;
 import java.util.concurrent.Callable;
 import java.util.concurrent.ExecutionException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class BigQueryRetryHelper extends RetryHelper {
+
+  private static final Logger LOG = Logger.getLogger(BigQueryRetryHelper.class.getName());
 
   public static <V> V runWithRetries(
       Callable<V> callable,
@@ -59,6 +70,16 @@ public class BigQueryRetryHelper extends RetryHelper {
     // com.google.api.gax.retrying.RetryAlgorithm, as
     // BigQueryRetryAlgorithm retries considering bigQueryRetryConfig
     RetryingExecutor<V> executor = new DirectRetryingExecutor<>(retryAlgorithm);
+
+    // Log retry info
+    if (LOG.isLoggable(Level.FINEST)) {
+      LOG.log(
+          Level.FINEST,
+          "Retrying with:\n{0}",
+          new Object[] {
+            "BigQuery retried method: " + callable.getClass().getEnclosingMethod().getName(),
+          });
+    }
 
     RetryingFuture<V> retryingFuture = executor.createFuture(callable);
     executor.submit(retryingFuture);
