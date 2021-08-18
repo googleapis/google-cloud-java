@@ -13,7 +13,7 @@ If you are using Maven, use this artifact as your project's parent.
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-shared-config</artifactId>
-    <version>1.0.0</version>
+    <version>1.0.1</version>
   </parent>
 </project>
 ```

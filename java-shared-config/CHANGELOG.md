@@ -1,5 +1,12 @@
 # Changelog
 
+### [1.0.1](https://www.github.com/googleapis/java-shared-config/compare/v1.0.0...v1.0.1) (2021-08-18)
+
+
+### Dependencies
+
+* update dependency com.puppycrawl.tools:checkstyle to v8.45.1 ([#292](https://www.github.com/googleapis/java-shared-config/issues/292)) ([66bf6e6](https://www.github.com/googleapis/java-shared-config/commit/66bf6e6fb95997b9eb4b34268b8d20c2fbe9ed5a))
+
 ## [1.0.0](https://www.github.com/googleapis/java-shared-config/compare/v0.13.1...v1.0.0) (2021-07-29)
 
 
