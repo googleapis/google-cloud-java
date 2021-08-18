@@ -8,9 +8,11 @@ Java idiomatic client for [Recommender][product-docs].
 - [Product Documentation][product-docs]
 - [Client Library Documentation][javadocs]
 
+
 ## Quickstart
 
 If you are using Maven with [BOM][libraries-bom], add this to your pom.xml file
+
 ```xml
 <dependencyManagement>
   <dependencies>
@@ -34,6 +36,7 @@ If you are using Maven with [BOM][libraries-bom], add this to your pom.xml file
 
 If you are using Maven without BOM, add this to your dependencies:
 
+
 ```xml
 <dependency>
   <groupId>com.google.cloud</groupId>
@@ -44,24 +47,31 @@ If you are using Maven without BOM, add this to your dependencies:
 ```
 
 If you are using Gradle 5.x or later, add this to your dependencies
+
 ```Groovy
 implementation platform('com.google.cloud:libraries-bom:20.9.0')
 
 compile 'com.google.cloud:google-cloud-recommender'
 ```
 If you are using Gradle without BOM, add this to your dependencies
+
 ```Groovy
-compile 'com.google.cloud:google-cloud-recommender:1.6.1'
+compile 'com.google.cloud:google-cloud-recommender:2.0.0'
 ```
 
 If you are using SBT, add this to your dependencies
+
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-recommender" % "1.6.1"
+libraryDependencies += "com.google.cloud" % "google-cloud-recommender" % "2.0.0"
 ```
 
 ## Authentication
 
 See the [Authentication][authentication] section in the base directory's README.
+
+## Authorization
+
+The client application making API calls must be granted [authorization scopes][auth-scopes] required for the desired Recommender APIs, and the authenticated principal must have the [IAM role(s)][predefined-iam-roles] required to access GCP resources using the Recommender API calls.
 
 ## Getting Started
 
@@ -92,8 +102,7 @@ use this Recommender Client Library.
 
 ## Samples
 
-Samples are in the [`samples/`](https://github.com/googleapis/java-recommender/tree/master/samples) directory. The samples' `README.md`
-has instructions for running the samples.
+Samples are in the [`samples/`](https://github.com/googleapis/java-recommender/tree/master/samples) directory.
 
 | Sample                      | Source Code                       | Try it |
 | --------------------------- | --------------------------------- | ------ |
@@ -159,6 +168,7 @@ and on [google-cloud-java][g-c-j].
 This library follows [Semantic Versioning](http://semver.org/).
 
 
+
 ## Contributing
 
 
@@ -169,6 +179,7 @@ See [CONTRIBUTING][contributing] for more information how to get started.
 Please note that this project is released with a Contributor Code of Conduct. By participating in
 this project you agree to abide by its terms. See [Code of Conduct][code-of-conduct] for more
 information.
+
 
 ## License
 
@@ -202,6 +213,9 @@ Java is a registered trademark of Oracle and/or its affiliates.
 [maven-version-image]: https://img.shields.io/maven-central/v/com.google.cloud/google-cloud-recommender.svg
 [maven-version-link]: https://search.maven.org/search?q=g:com.google.cloud%20AND%20a:google-cloud-recommender&core=gav
 [authentication]: https://github.com/googleapis/google-cloud-java#authentication
+[auth-scopes]: https://developers.google.com/identity/protocols/oauth2/scopes
+[predefined-iam-roles]: https://cloud.google.com/iam/docs/understanding-roles#predefined_roles
+[iam-policy]: https://cloud.google.com/iam/docs/overview#cloud-iam-policy
 [developer-console]: https://console.developers.google.com/
 [create-project]: https://cloud.google.com/resource-manager/docs/creating-managing-projects
 [cloud-sdk]: https://cloud.google.com/sdk/
