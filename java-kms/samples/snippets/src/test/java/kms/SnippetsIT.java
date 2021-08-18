@@ -33,6 +33,7 @@ import com.google.cloud.kms.v1.KeyRing;
 import com.google.cloud.kms.v1.KeyRingName;
 import com.google.cloud.kms.v1.ListCryptoKeyVersionsRequest;
 import com.google.cloud.kms.v1.LocationName;
+import com.google.cloud.kms.v1.MacSignResponse;
 import com.google.cloud.kms.v1.ProtectionLevel;
 import com.google.cloud.kms.v1.PublicKey;
 import com.google.common.base.Strings;
@@ -76,6 +77,7 @@ public class SnippetsIT {
   private static String ASYMMETRIC_SIGN_EC_KEY_ID;
   private static String ASYMMETRIC_SIGN_RSA_KEY_ID;
   private static String HSM_KEY_ID;
+  private static String MAC_KEY_ID;
   private static String SYMMETRIC_KEY_ID;
 
   private ByteArrayOutputStream stdOut;
@@ -98,6 +100,9 @@ public class SnippetsIT {
 
     HSM_KEY_ID = getRandomId();
     createHsmKey(HSM_KEY_ID);
+
+    MAC_KEY_ID = getRandomId();
+    createMacKey(MAC_KEY_ID);
 
     SYMMETRIC_KEY_ID = getRandomId();
     createSymmetricKey(SYMMETRIC_KEY_ID);
@@ -231,6 +236,24 @@ public class SnippetsIT {
     }
   }
 
+  private static CryptoKey createMacKey(String keyId) throws IOException {
+    try (KeyManagementServiceClient client = KeyManagementServiceClient.create()) {
+      CryptoKey key =
+          CryptoKey.newBuilder()
+              .setPurpose(CryptoKeyPurpose.MAC)
+              .setVersionTemplate(
+                  CryptoKeyVersionTemplate.newBuilder()
+                      .setAlgorithm(CryptoKeyVersionAlgorithm.HMAC_SHA256)
+                      .setProtectionLevel(ProtectionLevel.HSM)
+                      .build())
+              .putLabels("foo", "bar")
+              .putLabels("zip", "zap")
+              .build();
+      CryptoKey createdKey = client.createCryptoKey(getKeyRingName(), keyId, key);
+      return createdKey;
+    }
+  }
+
   private static CryptoKey createSymmetricKey(String keyId) throws IOException {
     try (KeyManagementServiceClient client = KeyManagementServiceClient.create()) {
       CryptoKey key =
@@ -308,6 +331,12 @@ public class SnippetsIT {
   public void testCreateKeyLabels() throws IOException {
     new CreateKeyLabels().createKeyLabels(PROJECT_ID, LOCATION_ID, KEY_RING_ID, getRandomId());
     assertThat(stdOut.toString()).contains("Created key with labels");
+  }
+
+  @Test
+  public void testCreateKeyMac() throws IOException {
+    new CreateKeyMac().createKeyMac(PROJECT_ID, LOCATION_ID, KEY_RING_ID, getRandomId());
+    assertThat(stdOut.toString()).contains("Created mac key");
   }
 
   @Test
@@ -433,6 +462,12 @@ public class SnippetsIT {
   }
 
   @Test
+  public void testGenerateRandomBytes() throws IOException {
+    new GenerateRandomBytes().generateRandomBytes(PROJECT_ID, LOCATION_ID, 256);
+    assertThat(stdOut.toString()).contains("Random bytes");
+  }
+
+  @Test
   public void testGetKeyVersionAttestation() throws IOException {
     new GetKeyVersionAttestation()
         .getKeyVersionAttestation(PROJECT_ID, LOCATION_ID, KEY_RING_ID, HSM_KEY_ID, "1");
@@ -479,6 +514,12 @@ public class SnippetsIT {
     new SignAsymmetric()
         .signAsymmetric(
             PROJECT_ID, LOCATION_ID, KEY_RING_ID, ASYMMETRIC_SIGN_RSA_KEY_ID, "1", "my message");
+    assertThat(stdOut.toString()).contains("Signature");
+  }
+
+  @Test
+  public void testsignMac() throws IOException, GeneralSecurityException {
+    new SignMac().signMac(PROJECT_ID, LOCATION_ID, KEY_RING_ID, MAC_KEY_ID, "1", "my message");
     assertThat(stdOut.toString()).contains("Signature");
   }
 
@@ -573,5 +614,28 @@ public class SnippetsIT {
             message,
             signature);
     assertThat(stdOut.toString()).contains("Signature");
+  }
+
+  @Test
+  public void verifyMac() throws IOException, GeneralSecurityException {
+    String data = "my data";
+
+    try (KeyManagementServiceClient client = KeyManagementServiceClient.create()) {
+      CryptoKeyVersionName versionName =
+          CryptoKeyVersionName.of(PROJECT_ID, LOCATION_ID, KEY_RING_ID, MAC_KEY_ID, "1");
+
+      MacSignResponse response = client.macSign(versionName, ByteString.copyFromUtf8(data));
+
+      new VerifyMac()
+          .verifyMac(
+              PROJECT_ID,
+              LOCATION_ID,
+              KEY_RING_ID,
+              MAC_KEY_ID,
+              "1",
+              data,
+              response.getMac().toByteArray());
+      assertThat(stdOut.toString()).contains("Success: true");
+    }
   }
 }

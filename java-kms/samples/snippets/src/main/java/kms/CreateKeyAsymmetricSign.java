@@ -23,6 +23,7 @@ import com.google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionAlgorithm;
 import com.google.cloud.kms.v1.CryptoKeyVersionTemplate;
 import com.google.cloud.kms.v1.KeyManagementServiceClient;
 import com.google.cloud.kms.v1.KeyRingName;
+import com.google.protobuf.Duration;
 import java.io.IOException;
 
 public class CreateKeyAsymmetricSign {
@@ -54,6 +55,9 @@ public class CreateKeyAsymmetricSign {
               .setVersionTemplate(
                   CryptoKeyVersionTemplate.newBuilder()
                       .setAlgorithm(CryptoKeyVersionAlgorithm.RSA_SIGN_PKCS1_2048_SHA256))
+
+              // Optional: customize how long key versions should be kept before destroying.
+              .setDestroyScheduledDuration(Duration.newBuilder().setSeconds(24 * 60 * 60))
               .build();
 
       // Create the key.

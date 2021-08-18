@@ -24,6 +24,7 @@ import com.google.cloud.kms.v1.CryptoKeyVersionTemplate;
 import com.google.cloud.kms.v1.KeyManagementServiceClient;
 import com.google.cloud.kms.v1.KeyRingName;
 import com.google.cloud.kms.v1.ProtectionLevel;
+import com.google.protobuf.Duration;
 import java.io.IOException;
 
 public class CreateKeyHsm {
@@ -56,6 +57,9 @@ public class CreateKeyHsm {
                   CryptoKeyVersionTemplate.newBuilder()
                       .setProtectionLevel(ProtectionLevel.HSM)
                       .setAlgorithm(CryptoKeyVersionAlgorithm.GOOGLE_SYMMETRIC_ENCRYPTION))
+
+              // Optional: customize how long key versions should be kept before destroying.
+              .setDestroyScheduledDuration(Duration.newBuilder().setSeconds(24 * 60 * 60))
               .build();
 
       // Create the key.
