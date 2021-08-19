@@ -4,7 +4,7 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/java-vision.git",
-        "sha": "18f11ae448607074a1b2199ec62fc15cb5a04c54"
+        "sha": "2ae457d48fb97c0218db58ea187ad622c5963f9a"
       }
     },
     {
