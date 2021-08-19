@@ -22,20 +22,20 @@ If you are using Maven, add this to your pom.xml file:
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-notification</artifactId>
-  <version>0.122.4-beta</version>
+  <version>0.122.5-beta</version>
 </dependency>
 ```
 
 If you are using Gradle without BOM, add this to your dependencies
 
 ```Groovy
-compile 'com.google.cloud:google-cloud-notification:0.122.4-beta'
+compile 'com.google.cloud:google-cloud-notification:0.122.5-beta'
 ```
 
 If you are using SBT, add this to your dependencies
 
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-notification" % "0.122.4-beta"
+libraryDependencies += "com.google.cloud" % "google-cloud-notification" % "0.122.5-beta"
 ```
 
 ## Authentication
