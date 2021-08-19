@@ -30,7 +30,6 @@ branchProtectionRules:
   requiredStatusCheckContexts:
     - "Kokoro - Test: Code Format"
     - "Kokoro - Test: Java 11"
-    - "Kokoro - Test: Java 7"
     - "Kokoro - Test: Java 8"
     - "Kokoro - Test: Linkage Monitor"
     - "cla/google"
