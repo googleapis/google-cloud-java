@@ -1,5 +1,12 @@
 # Changelog
 
+### [1.2.6](https://www.github.com/googleapis/java-dns/compare/v1.2.5...v1.2.6) (2021-08-19)
+
+
+### Dependencies
+
+* update dependency com.google.apis:google-api-services-dns to v1-rev20210809-1.32.1 ([#487](https://www.github.com/googleapis/java-dns/issues/487)) ([264e9ca](https://www.github.com/googleapis/java-dns/commit/264e9cafd12dbf67d5352d8dc6629542a6d12140))
+
 ### [1.2.5](https://www.github.com/googleapis/java-dns/compare/v1.2.4...v1.2.5) (2021-08-11)
 
 
