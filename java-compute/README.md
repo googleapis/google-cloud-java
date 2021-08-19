@@ -22,7 +22,7 @@ If you are using Maven, add this to your pom.xml file:
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-compute</artifactId>
-  <version>1.3.0-alpha</version>
+  <version>1.4.0-alpha</version>
 </dependency>
 
 ```
