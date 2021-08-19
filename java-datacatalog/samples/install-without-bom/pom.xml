@@ -29,7 +29,7 @@
     <dependency>
       <groupId>com.google.cloud</groupId>
       <artifactId>google-cloud-datacatalog</artifactId>
-      <version>1.5.0</version>
+      <version>1.5.2</version>
     </dependency>
     <!-- [END datacatalog_install_without_bom] -->
 
