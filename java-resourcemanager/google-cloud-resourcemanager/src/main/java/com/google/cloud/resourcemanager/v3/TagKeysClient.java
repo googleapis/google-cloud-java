@@ -173,7 +173,7 @@ public class TagKeysClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (TagKeysClient tagKeysClient = TagKeysClient.create()) {
-   *   ResourceName parent = TagValueName.of("[TAG_VALUE]");
+   *   ResourceName parent = FolderName.of("[FOLDER]");
    *   for (TagKey element : tagKeysClient.listTagKeys(parent).iterateAll()) {
    *     // doThingsWith(element);
    *   }
@@ -200,7 +200,7 @@ public class TagKeysClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (TagKeysClient tagKeysClient = TagKeysClient.create()) {
-   *   String parent = TagValueName.of("[TAG_VALUE]").toString();
+   *   String parent = FolderName.of("[FOLDER]").toString();
    *   for (TagKey element : tagKeysClient.listTagKeys(parent).iterateAll()) {
    *     // doThingsWith(element);
    *   }
@@ -226,7 +226,7 @@ public class TagKeysClient implements BackgroundResource {
    * try (TagKeysClient tagKeysClient = TagKeysClient.create()) {
    *   ListTagKeysRequest request =
    *       ListTagKeysRequest.newBuilder()
-   *           .setParent(TagValueName.of("[TAG_VALUE]").toString())
+   *           .setParent(FolderName.of("[FOLDER]").toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .build();
@@ -253,7 +253,7 @@ public class TagKeysClient implements BackgroundResource {
    * try (TagKeysClient tagKeysClient = TagKeysClient.create()) {
    *   ListTagKeysRequest request =
    *       ListTagKeysRequest.newBuilder()
-   *           .setParent(TagValueName.of("[TAG_VALUE]").toString())
+   *           .setParent(FolderName.of("[FOLDER]").toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .build();
@@ -280,7 +280,7 @@ public class TagKeysClient implements BackgroundResource {
    * try (TagKeysClient tagKeysClient = TagKeysClient.create()) {
    *   ListTagKeysRequest request =
    *       ListTagKeysRequest.newBuilder()
-   *           .setParent(TagValueName.of("[TAG_VALUE]").toString())
+   *           .setParent(FolderName.of("[FOLDER]").toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .build();
@@ -732,7 +732,7 @@ public class TagKeysClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (TagKeysClient tagKeysClient = TagKeysClient.create()) {
-   *   ResourceName resource = TagValueName.of("[TAG_VALUE]");
+   *   ResourceName resource = FolderName.of("[FOLDER]");
    *   Policy response = tagKeysClient.getIamPolicy(resource);
    * }
    * }</pre>
@@ -760,7 +760,7 @@ public class TagKeysClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (TagKeysClient tagKeysClient = TagKeysClient.create()) {
-   *   String resource = TagValueName.of("[TAG_VALUE]").toString();
+   *   String resource = FolderName.of("[FOLDER]").toString();
    *   Policy response = tagKeysClient.getIamPolicy(resource);
    * }
    * }</pre>
@@ -787,7 +787,7 @@ public class TagKeysClient implements BackgroundResource {
    * try (TagKeysClient tagKeysClient = TagKeysClient.create()) {
    *   GetIamPolicyRequest request =
    *       GetIamPolicyRequest.newBuilder()
-   *           .setResource(TagValueName.of("[TAG_VALUE]").toString())
+   *           .setResource(FolderName.of("[FOLDER]").toString())
    *           .setOptions(GetPolicyOptions.newBuilder().build())
    *           .build();
    *   Policy response = tagKeysClient.getIamPolicy(request);
@@ -814,7 +814,7 @@ public class TagKeysClient implements BackgroundResource {
    * try (TagKeysClient tagKeysClient = TagKeysClient.create()) {
    *   GetIamPolicyRequest request =
    *       GetIamPolicyRequest.newBuilder()
-   *           .setResource(TagValueName.of("[TAG_VALUE]").toString())
+   *           .setResource(FolderName.of("[FOLDER]").toString())
    *           .setOptions(GetPolicyOptions.newBuilder().build())
    *           .build();
    *   ApiFuture<Policy> future = tagKeysClient.getIamPolicyCallable().futureCall(request);
@@ -837,7 +837,7 @@ public class TagKeysClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (TagKeysClient tagKeysClient = TagKeysClient.create()) {
-   *   ResourceName resource = TagValueName.of("[TAG_VALUE]");
+   *   ResourceName resource = FolderName.of("[FOLDER]");
    *   Policy policy = Policy.newBuilder().build();
    *   Policy response = tagKeysClient.setIamPolicy(resource, policy);
    * }
@@ -869,7 +869,7 @@ public class TagKeysClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (TagKeysClient tagKeysClient = TagKeysClient.create()) {
-   *   String resource = TagValueName.of("[TAG_VALUE]").toString();
+   *   String resource = FolderName.of("[FOLDER]").toString();
    *   Policy policy = Policy.newBuilder().build();
    *   Policy response = tagKeysClient.setIamPolicy(resource, policy);
    * }
@@ -900,7 +900,7 @@ public class TagKeysClient implements BackgroundResource {
    * try (TagKeysClient tagKeysClient = TagKeysClient.create()) {
    *   SetIamPolicyRequest request =
    *       SetIamPolicyRequest.newBuilder()
-   *           .setResource(TagValueName.of("[TAG_VALUE]").toString())
+   *           .setResource(FolderName.of("[FOLDER]").toString())
    *           .setPolicy(Policy.newBuilder().build())
    *           .build();
    *   Policy response = tagKeysClient.setIamPolicy(request);
@@ -926,7 +926,7 @@ public class TagKeysClient implements BackgroundResource {
    * try (TagKeysClient tagKeysClient = TagKeysClient.create()) {
    *   SetIamPolicyRequest request =
    *       SetIamPolicyRequest.newBuilder()
-   *           .setResource(TagValueName.of("[TAG_VALUE]").toString())
+   *           .setResource(FolderName.of("[FOLDER]").toString())
    *           .setPolicy(Policy.newBuilder().build())
    *           .build();
    *   ApiFuture<Policy> future = tagKeysClient.setIamPolicyCallable().futureCall(request);
@@ -950,7 +950,7 @@ public class TagKeysClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (TagKeysClient tagKeysClient = TagKeysClient.create()) {
-   *   ResourceName resource = TagValueName.of("[TAG_VALUE]");
+   *   ResourceName resource = FolderName.of("[FOLDER]");
    *   List<String> permissions = new ArrayList<>();
    *   TestIamPermissionsResponse response = tagKeysClient.testIamPermissions(resource, permissions);
    * }
@@ -984,7 +984,7 @@ public class TagKeysClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (TagKeysClient tagKeysClient = TagKeysClient.create()) {
-   *   String resource = TagValueName.of("[TAG_VALUE]").toString();
+   *   String resource = FolderName.of("[FOLDER]").toString();
    *   List<String> permissions = new ArrayList<>();
    *   TestIamPermissionsResponse response = tagKeysClient.testIamPermissions(resource, permissions);
    * }
@@ -1020,7 +1020,7 @@ public class TagKeysClient implements BackgroundResource {
    * try (TagKeysClient tagKeysClient = TagKeysClient.create()) {
    *   TestIamPermissionsRequest request =
    *       TestIamPermissionsRequest.newBuilder()
-   *           .setResource(TagValueName.of("[TAG_VALUE]").toString())
+   *           .setResource(FolderName.of("[FOLDER]").toString())
    *           .addAllPermissions(new ArrayList<String>())
    *           .build();
    *   TestIamPermissionsResponse response = tagKeysClient.testIamPermissions(request);
@@ -1047,7 +1047,7 @@ public class TagKeysClient implements BackgroundResource {
    * try (TagKeysClient tagKeysClient = TagKeysClient.create()) {
    *   TestIamPermissionsRequest request =
    *       TestIamPermissionsRequest.newBuilder()
-   *           .setResource(TagValueName.of("[TAG_VALUE]").toString())
+   *           .setResource(FolderName.of("[FOLDER]").toString())
    *           .addAllPermissions(new ArrayList<String>())
    *           .build();
    *   ApiFuture<TestIamPermissionsResponse> future =

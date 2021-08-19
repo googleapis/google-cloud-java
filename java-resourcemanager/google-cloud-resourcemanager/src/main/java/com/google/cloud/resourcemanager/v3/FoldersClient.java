@@ -271,7 +271,7 @@ public class FoldersClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (FoldersClient foldersClient = FoldersClient.create()) {
-   *   ResourceName parent = TagValueName.of("[TAG_VALUE]");
+   *   ResourceName parent = FolderName.of("[FOLDER]");
    *   for (Folder element : foldersClient.listFolders(parent).iterateAll()) {
    *     // doThingsWith(element);
    *   }
@@ -303,7 +303,7 @@ public class FoldersClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (FoldersClient foldersClient = FoldersClient.create()) {
-   *   String parent = TagValueName.of("[TAG_VALUE]").toString();
+   *   String parent = FolderName.of("[FOLDER]").toString();
    *   for (Folder element : foldersClient.listFolders(parent).iterateAll()) {
    *     // doThingsWith(element);
    *   }
@@ -334,7 +334,7 @@ public class FoldersClient implements BackgroundResource {
    * try (FoldersClient foldersClient = FoldersClient.create()) {
    *   ListFoldersRequest request =
    *       ListFoldersRequest.newBuilder()
-   *           .setParent(TagValueName.of("[TAG_VALUE]").toString())
+   *           .setParent(FolderName.of("[FOLDER]").toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .setShowDeleted(true)
@@ -365,7 +365,7 @@ public class FoldersClient implements BackgroundResource {
    * try (FoldersClient foldersClient = FoldersClient.create()) {
    *   ListFoldersRequest request =
    *       ListFoldersRequest.newBuilder()
-   *           .setParent(TagValueName.of("[TAG_VALUE]").toString())
+   *           .setParent(FolderName.of("[FOLDER]").toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .setShowDeleted(true)
@@ -396,7 +396,7 @@ public class FoldersClient implements BackgroundResource {
    * try (FoldersClient foldersClient = FoldersClient.create()) {
    *   ListFoldersRequest request =
    *       ListFoldersRequest.newBuilder()
-   *           .setParent(TagValueName.of("[TAG_VALUE]").toString())
+   *           .setParent(FolderName.of("[FOLDER]").toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .setShowDeleted(true)
@@ -890,7 +890,7 @@ public class FoldersClient implements BackgroundResource {
    * <pre>{@code
    * try (FoldersClient foldersClient = FoldersClient.create()) {
    *   FolderName name = FolderName.of("[FOLDER]");
-   *   ResourceName destinationParent = TagValueName.of("[TAG_VALUE]");
+   *   ResourceName destinationParent = FolderName.of("[FOLDER]");
    *   Folder response = foldersClient.moveFolderAsync(name, destinationParent).get();
    * }
    * }</pre>
@@ -932,7 +932,7 @@ public class FoldersClient implements BackgroundResource {
    * <pre>{@code
    * try (FoldersClient foldersClient = FoldersClient.create()) {
    *   FolderName name = FolderName.of("[FOLDER]");
-   *   String destinationParent = TagValueName.of("[TAG_VALUE]").toString();
+   *   String destinationParent = FolderName.of("[FOLDER]").toString();
    *   Folder response = foldersClient.moveFolderAsync(name, destinationParent).get();
    * }
    * }</pre>
@@ -974,7 +974,7 @@ public class FoldersClient implements BackgroundResource {
    * <pre>{@code
    * try (FoldersClient foldersClient = FoldersClient.create()) {
    *   String name = FolderName.of("[FOLDER]").toString();
-   *   ResourceName destinationParent = TagValueName.of("[TAG_VALUE]");
+   *   ResourceName destinationParent = FolderName.of("[FOLDER]");
    *   Folder response = foldersClient.moveFolderAsync(name, destinationParent).get();
    * }
    * }</pre>
@@ -1016,7 +1016,7 @@ public class FoldersClient implements BackgroundResource {
    * <pre>{@code
    * try (FoldersClient foldersClient = FoldersClient.create()) {
    *   String name = FolderName.of("[FOLDER]").toString();
-   *   String destinationParent = TagValueName.of("[TAG_VALUE]").toString();
+   *   String destinationParent = FolderName.of("[FOLDER]").toString();
    *   Folder response = foldersClient.moveFolderAsync(name, destinationParent).get();
    * }
    * }</pre>
@@ -1060,7 +1060,7 @@ public class FoldersClient implements BackgroundResource {
    *   MoveFolderRequest request =
    *       MoveFolderRequest.newBuilder()
    *           .setName(FolderName.of("[FOLDER]").toString())
-   *           .setDestinationParent(TagValueName.of("[TAG_VALUE]").toString())
+   *           .setDestinationParent(FolderName.of("[FOLDER]").toString())
    *           .build();
    *   Folder response = foldersClient.moveFolderAsync(request).get();
    * }
@@ -1096,7 +1096,7 @@ public class FoldersClient implements BackgroundResource {
    *   MoveFolderRequest request =
    *       MoveFolderRequest.newBuilder()
    *           .setName(FolderName.of("[FOLDER]").toString())
-   *           .setDestinationParent(TagValueName.of("[TAG_VALUE]").toString())
+   *           .setDestinationParent(FolderName.of("[FOLDER]").toString())
    *           .build();
    *   OperationFuture<Folder, MoveFolderMetadata> future =
    *       foldersClient.moveFolderOperationCallable().futureCall(request);
@@ -1132,7 +1132,7 @@ public class FoldersClient implements BackgroundResource {
    *   MoveFolderRequest request =
    *       MoveFolderRequest.newBuilder()
    *           .setName(FolderName.of("[FOLDER]").toString())
-   *           .setDestinationParent(TagValueName.of("[TAG_VALUE]").toString())
+   *           .setDestinationParent(FolderName.of("[FOLDER]").toString())
    *           .build();
    *   ApiFuture<Operation> future = foldersClient.moveFolderCallable().futureCall(request);
    *   // Do something.
@@ -1444,7 +1444,7 @@ public class FoldersClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (FoldersClient foldersClient = FoldersClient.create()) {
-   *   ResourceName resource = TagValueName.of("[TAG_VALUE]");
+   *   ResourceName resource = FolderName.of("[FOLDER]");
    *   Policy response = foldersClient.getIamPolicy(resource);
    * }
    * }</pre>
@@ -1472,7 +1472,7 @@ public class FoldersClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (FoldersClient foldersClient = FoldersClient.create()) {
-   *   String resource = TagValueName.of("[TAG_VALUE]").toString();
+   *   String resource = FolderName.of("[FOLDER]").toString();
    *   Policy response = foldersClient.getIamPolicy(resource);
    * }
    * }</pre>
@@ -1499,7 +1499,7 @@ public class FoldersClient implements BackgroundResource {
    * try (FoldersClient foldersClient = FoldersClient.create()) {
    *   GetIamPolicyRequest request =
    *       GetIamPolicyRequest.newBuilder()
-   *           .setResource(TagValueName.of("[TAG_VALUE]").toString())
+   *           .setResource(FolderName.of("[FOLDER]").toString())
    *           .setOptions(GetPolicyOptions.newBuilder().build())
    *           .build();
    *   Policy response = foldersClient.getIamPolicy(request);
@@ -1526,7 +1526,7 @@ public class FoldersClient implements BackgroundResource {
    * try (FoldersClient foldersClient = FoldersClient.create()) {
    *   GetIamPolicyRequest request =
    *       GetIamPolicyRequest.newBuilder()
-   *           .setResource(TagValueName.of("[TAG_VALUE]").toString())
+   *           .setResource(FolderName.of("[FOLDER]").toString())
    *           .setOptions(GetPolicyOptions.newBuilder().build())
    *           .build();
    *   ApiFuture<Policy> future = foldersClient.getIamPolicyCallable().futureCall(request);
@@ -1549,7 +1549,7 @@ public class FoldersClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (FoldersClient foldersClient = FoldersClient.create()) {
-   *   ResourceName resource = TagValueName.of("[TAG_VALUE]");
+   *   ResourceName resource = FolderName.of("[FOLDER]");
    *   Policy policy = Policy.newBuilder().build();
    *   Policy response = foldersClient.setIamPolicy(resource, policy);
    * }
@@ -1581,7 +1581,7 @@ public class FoldersClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (FoldersClient foldersClient = FoldersClient.create()) {
-   *   String resource = TagValueName.of("[TAG_VALUE]").toString();
+   *   String resource = FolderName.of("[FOLDER]").toString();
    *   Policy policy = Policy.newBuilder().build();
    *   Policy response = foldersClient.setIamPolicy(resource, policy);
    * }
@@ -1612,7 +1612,7 @@ public class FoldersClient implements BackgroundResource {
    * try (FoldersClient foldersClient = FoldersClient.create()) {
    *   SetIamPolicyRequest request =
    *       SetIamPolicyRequest.newBuilder()
-   *           .setResource(TagValueName.of("[TAG_VALUE]").toString())
+   *           .setResource(FolderName.of("[FOLDER]").toString())
    *           .setPolicy(Policy.newBuilder().build())
    *           .build();
    *   Policy response = foldersClient.setIamPolicy(request);
@@ -1638,7 +1638,7 @@ public class FoldersClient implements BackgroundResource {
    * try (FoldersClient foldersClient = FoldersClient.create()) {
    *   SetIamPolicyRequest request =
    *       SetIamPolicyRequest.newBuilder()
-   *           .setResource(TagValueName.of("[TAG_VALUE]").toString())
+   *           .setResource(FolderName.of("[FOLDER]").toString())
    *           .setPolicy(Policy.newBuilder().build())
    *           .build();
    *   ApiFuture<Policy> future = foldersClient.setIamPolicyCallable().futureCall(request);
@@ -1662,7 +1662,7 @@ public class FoldersClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (FoldersClient foldersClient = FoldersClient.create()) {
-   *   ResourceName resource = TagValueName.of("[TAG_VALUE]");
+   *   ResourceName resource = FolderName.of("[FOLDER]");
    *   List<String> permissions = new ArrayList<>();
    *   TestIamPermissionsResponse response = foldersClient.testIamPermissions(resource, permissions);
    * }
@@ -1696,7 +1696,7 @@ public class FoldersClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (FoldersClient foldersClient = FoldersClient.create()) {
-   *   String resource = TagValueName.of("[TAG_VALUE]").toString();
+   *   String resource = FolderName.of("[FOLDER]").toString();
    *   List<String> permissions = new ArrayList<>();
    *   TestIamPermissionsResponse response = foldersClient.testIamPermissions(resource, permissions);
    * }
@@ -1732,7 +1732,7 @@ public class FoldersClient implements BackgroundResource {
    * try (FoldersClient foldersClient = FoldersClient.create()) {
    *   TestIamPermissionsRequest request =
    *       TestIamPermissionsRequest.newBuilder()
-   *           .setResource(TagValueName.of("[TAG_VALUE]").toString())
+   *           .setResource(FolderName.of("[FOLDER]").toString())
    *           .addAllPermissions(new ArrayList<String>())
    *           .build();
    *   TestIamPermissionsResponse response = foldersClient.testIamPermissions(request);
@@ -1759,7 +1759,7 @@ public class FoldersClient implements BackgroundResource {
    * try (FoldersClient foldersClient = FoldersClient.create()) {
    *   TestIamPermissionsRequest request =
    *       TestIamPermissionsRequest.newBuilder()
-   *           .setResource(TagValueName.of("[TAG_VALUE]").toString())
+   *           .setResource(FolderName.of("[FOLDER]").toString())
    *           .addAllPermissions(new ArrayList<String>())
    *           .build();
    *   ApiFuture<TestIamPermissionsResponse> future =

@@ -49,7 +49,7 @@ import javax.annotation.Generated;
  *
  * <pre>{@code
  * try (TagBindingsClient tagBindingsClient = TagBindingsClient.create()) {
- *   ResourceName parent = TagValueName.of("[TAG_VALUE]");
+ *   ResourceName parent = FolderName.of("[FOLDER]");
  *   for (TagBinding element : tagBindingsClient.listTagBindings(parent).iterateAll()) {
  *     // doThingsWith(element);
  *   }
@@ -176,7 +176,7 @@ public class TagBindingsClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (TagBindingsClient tagBindingsClient = TagBindingsClient.create()) {
-   *   ResourceName parent = TagValueName.of("[TAG_VALUE]");
+   *   ResourceName parent = FolderName.of("[FOLDER]");
    *   for (TagBinding element : tagBindingsClient.listTagBindings(parent).iterateAll()) {
    *     // doThingsWith(element);
    *   }
@@ -206,7 +206,7 @@ public class TagBindingsClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (TagBindingsClient tagBindingsClient = TagBindingsClient.create()) {
-   *   String parent = TagValueName.of("[TAG_VALUE]").toString();
+   *   String parent = FolderName.of("[FOLDER]").toString();
    *   for (TagBinding element : tagBindingsClient.listTagBindings(parent).iterateAll()) {
    *     // doThingsWith(element);
    *   }
@@ -235,7 +235,7 @@ public class TagBindingsClient implements BackgroundResource {
    * try (TagBindingsClient tagBindingsClient = TagBindingsClient.create()) {
    *   ListTagBindingsRequest request =
    *       ListTagBindingsRequest.newBuilder()
-   *           .setParent(TagValueName.of("[TAG_VALUE]").toString())
+   *           .setParent(FolderName.of("[FOLDER]").toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .build();
@@ -265,7 +265,7 @@ public class TagBindingsClient implements BackgroundResource {
    * try (TagBindingsClient tagBindingsClient = TagBindingsClient.create()) {
    *   ListTagBindingsRequest request =
    *       ListTagBindingsRequest.newBuilder()
-   *           .setParent(TagValueName.of("[TAG_VALUE]").toString())
+   *           .setParent(FolderName.of("[FOLDER]").toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .build();
@@ -296,7 +296,7 @@ public class TagBindingsClient implements BackgroundResource {
    * try (TagBindingsClient tagBindingsClient = TagBindingsClient.create()) {
    *   ListTagBindingsRequest request =
    *       ListTagBindingsRequest.newBuilder()
-   *           .setParent(TagValueName.of("[TAG_VALUE]").toString())
+   *           .setParent(FolderName.of("[FOLDER]").toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .build();

@@ -66,7 +66,7 @@
  *
  * <pre>{@code
  * try (TagBindingsClient tagBindingsClient = TagBindingsClient.create()) {
- *   ResourceName parent = TagValueName.of("[TAG_VALUE]");
+ *   ResourceName parent = FolderName.of("[FOLDER]");
  *   for (TagBinding element : tagBindingsClient.listTagBindings(parent).iterateAll()) {
  *     // doThingsWith(element);
  *   }

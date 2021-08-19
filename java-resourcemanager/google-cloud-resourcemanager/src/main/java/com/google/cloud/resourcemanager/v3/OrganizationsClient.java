@@ -407,7 +407,7 @@ public class OrganizationsClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (OrganizationsClient organizationsClient = OrganizationsClient.create()) {
-   *   ResourceName resource = TagValueName.of("[TAG_VALUE]");
+   *   ResourceName resource = FolderName.of("[FOLDER]");
    *   Policy response = organizationsClient.getIamPolicy(resource);
    * }
    * }</pre>
@@ -437,7 +437,7 @@ public class OrganizationsClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (OrganizationsClient organizationsClient = OrganizationsClient.create()) {
-   *   String resource = TagValueName.of("[TAG_VALUE]").toString();
+   *   String resource = FolderName.of("[FOLDER]").toString();
    *   Policy response = organizationsClient.getIamPolicy(resource);
    * }
    * }</pre>
@@ -466,7 +466,7 @@ public class OrganizationsClient implements BackgroundResource {
    * try (OrganizationsClient organizationsClient = OrganizationsClient.create()) {
    *   GetIamPolicyRequest request =
    *       GetIamPolicyRequest.newBuilder()
-   *           .setResource(TagValueName.of("[TAG_VALUE]").toString())
+   *           .setResource(FolderName.of("[FOLDER]").toString())
    *           .setOptions(GetPolicyOptions.newBuilder().build())
    *           .build();
    *   Policy response = organizationsClient.getIamPolicy(request);
@@ -495,7 +495,7 @@ public class OrganizationsClient implements BackgroundResource {
    * try (OrganizationsClient organizationsClient = OrganizationsClient.create()) {
    *   GetIamPolicyRequest request =
    *       GetIamPolicyRequest.newBuilder()
-   *           .setResource(TagValueName.of("[TAG_VALUE]").toString())
+   *           .setResource(FolderName.of("[FOLDER]").toString())
    *           .setOptions(GetPolicyOptions.newBuilder().build())
    *           .build();
    *   ApiFuture<Policy> future = organizationsClient.getIamPolicyCallable().futureCall(request);
@@ -520,7 +520,7 @@ public class OrganizationsClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (OrganizationsClient organizationsClient = OrganizationsClient.create()) {
-   *   ResourceName resource = TagValueName.of("[TAG_VALUE]");
+   *   ResourceName resource = FolderName.of("[FOLDER]");
    *   Policy response = organizationsClient.setIamPolicy(resource);
    * }
    * }</pre>
@@ -549,7 +549,7 @@ public class OrganizationsClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (OrganizationsClient organizationsClient = OrganizationsClient.create()) {
-   *   String resource = TagValueName.of("[TAG_VALUE]").toString();
+   *   String resource = FolderName.of("[FOLDER]").toString();
    *   Policy response = organizationsClient.setIamPolicy(resource);
    * }
    * }</pre>
@@ -577,7 +577,7 @@ public class OrganizationsClient implements BackgroundResource {
    * try (OrganizationsClient organizationsClient = OrganizationsClient.create()) {
    *   SetIamPolicyRequest request =
    *       SetIamPolicyRequest.newBuilder()
-   *           .setResource(TagValueName.of("[TAG_VALUE]").toString())
+   *           .setResource(FolderName.of("[FOLDER]").toString())
    *           .setPolicy(Policy.newBuilder().build())
    *           .build();
    *   Policy response = organizationsClient.setIamPolicy(request);
@@ -605,7 +605,7 @@ public class OrganizationsClient implements BackgroundResource {
    * try (OrganizationsClient organizationsClient = OrganizationsClient.create()) {
    *   SetIamPolicyRequest request =
    *       SetIamPolicyRequest.newBuilder()
-   *           .setResource(TagValueName.of("[TAG_VALUE]").toString())
+   *           .setResource(FolderName.of("[FOLDER]").toString())
    *           .setPolicy(Policy.newBuilder().build())
    *           .build();
    *   ApiFuture<Policy> future = organizationsClient.setIamPolicyCallable().futureCall(request);
@@ -629,7 +629,7 @@ public class OrganizationsClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (OrganizationsClient organizationsClient = OrganizationsClient.create()) {
-   *   ResourceName resource = TagValueName.of("[TAG_VALUE]");
+   *   ResourceName resource = FolderName.of("[FOLDER]");
    *   List<String> permissions = new ArrayList<>();
    *   TestIamPermissionsResponse response =
    *       organizationsClient.testIamPermissions(resource, permissions);
@@ -664,7 +664,7 @@ public class OrganizationsClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (OrganizationsClient organizationsClient = OrganizationsClient.create()) {
-   *   String resource = TagValueName.of("[TAG_VALUE]").toString();
+   *   String resource = FolderName.of("[FOLDER]").toString();
    *   List<String> permissions = new ArrayList<>();
    *   TestIamPermissionsResponse response =
    *       organizationsClient.testIamPermissions(resource, permissions);
@@ -701,7 +701,7 @@ public class OrganizationsClient implements BackgroundResource {
    * try (OrganizationsClient organizationsClient = OrganizationsClient.create()) {
    *   TestIamPermissionsRequest request =
    *       TestIamPermissionsRequest.newBuilder()
-   *           .setResource(TagValueName.of("[TAG_VALUE]").toString())
+   *           .setResource(FolderName.of("[FOLDER]").toString())
    *           .addAllPermissions(new ArrayList<String>())
    *           .build();
    *   TestIamPermissionsResponse response = organizationsClient.testIamPermissions(request);
@@ -728,7 +728,7 @@ public class OrganizationsClient implements BackgroundResource {
    * try (OrganizationsClient organizationsClient = OrganizationsClient.create()) {
    *   TestIamPermissionsRequest request =
    *       TestIamPermissionsRequest.newBuilder()
-   *           .setResource(TagValueName.of("[TAG_VALUE]").toString())
+   *           .setResource(FolderName.of("[FOLDER]").toString())
    *           .addAllPermissions(new ArrayList<String>())
    *           .build();
    *   ApiFuture<TestIamPermissionsResponse> future =
