@@ -1,5 +1,12 @@
 # Changelog
 
+### [2.0.2](https://www.github.com/googleapis/java-vision/compare/v2.0.1...v2.0.2) (2021-08-19)
+
+
+### Dependencies
+
+* update spring.version to v2.5.4 ([#581](https://www.github.com/googleapis/java-vision/issues/581)) ([b5a13ec](https://www.github.com/googleapis/java-vision/commit/b5a13ecfd80ccb1122595aef4c07eef6fba16f8b))
+
 ### [2.0.1](https://www.github.com/googleapis/java-vision/compare/v2.0.0...v2.0.1) (2021-08-12)
 
 
