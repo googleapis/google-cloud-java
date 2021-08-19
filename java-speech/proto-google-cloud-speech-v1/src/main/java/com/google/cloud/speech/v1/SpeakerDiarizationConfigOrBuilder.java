@@ -72,7 +72,7 @@ public interface SpeakerDiarizationConfigOrBuilder
    *
    *
    * <pre>
-   * Unused.
+   * Output only. Unused.
    * </pre>
    *
    * <code>int32 speaker_tag = 5 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];

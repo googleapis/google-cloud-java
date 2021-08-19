@@ -25,7 +25,6 @@ import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.grpc.GrpcCallSettings;
 import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
-import com.google.api.gax.rpc.RequestParamsExtractor;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.speech.v1p1beta1.CreateCustomClassRequest;
 import com.google.cloud.speech.v1p1beta1.CreatePhraseSetRequest;
@@ -47,7 +46,6 @@ import com.google.protobuf.Empty;
 import io.grpc.MethodDescriptor;
 import io.grpc.protobuf.ProtoUtils;
 import java.io.IOException;
-import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
@@ -223,91 +221,70 @@ public class GrpcAdaptationStub extends AdaptationStub {
         GrpcCallSettings.<CreatePhraseSetRequest, PhraseSet>newBuilder()
             .setMethodDescriptor(createPhraseSetMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<CreatePhraseSetRequest>() {
-                  @Override
-                  public Map<String, String> extract(CreatePhraseSetRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("parent", String.valueOf(request.getParent()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("parent", String.valueOf(request.getParent()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<GetPhraseSetRequest, PhraseSet> getPhraseSetTransportSettings =
         GrpcCallSettings.<GetPhraseSetRequest, PhraseSet>newBuilder()
             .setMethodDescriptor(getPhraseSetMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<GetPhraseSetRequest>() {
-                  @Override
-                  public Map<String, String> extract(GetPhraseSetRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("name", String.valueOf(request.getName()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<ListPhraseSetRequest, ListPhraseSetResponse> listPhraseSetTransportSettings =
         GrpcCallSettings.<ListPhraseSetRequest, ListPhraseSetResponse>newBuilder()
             .setMethodDescriptor(listPhraseSetMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<ListPhraseSetRequest>() {
-                  @Override
-                  public Map<String, String> extract(ListPhraseSetRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("parent", String.valueOf(request.getParent()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("parent", String.valueOf(request.getParent()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<UpdatePhraseSetRequest, PhraseSet> updatePhraseSetTransportSettings =
         GrpcCallSettings.<UpdatePhraseSetRequest, PhraseSet>newBuilder()
             .setMethodDescriptor(updatePhraseSetMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<UpdatePhraseSetRequest>() {
-                  @Override
-                  public Map<String, String> extract(UpdatePhraseSetRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("phrase_set.name", String.valueOf(request.getPhraseSet().getName()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("phrase_set.name", String.valueOf(request.getPhraseSet().getName()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<DeletePhraseSetRequest, Empty> deletePhraseSetTransportSettings =
         GrpcCallSettings.<DeletePhraseSetRequest, Empty>newBuilder()
             .setMethodDescriptor(deletePhraseSetMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<DeletePhraseSetRequest>() {
-                  @Override
-                  public Map<String, String> extract(DeletePhraseSetRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("name", String.valueOf(request.getName()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<CreateCustomClassRequest, CustomClass> createCustomClassTransportSettings =
         GrpcCallSettings.<CreateCustomClassRequest, CustomClass>newBuilder()
             .setMethodDescriptor(createCustomClassMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<CreateCustomClassRequest>() {
-                  @Override
-                  public Map<String, String> extract(CreateCustomClassRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("parent", String.valueOf(request.getParent()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("parent", String.valueOf(request.getParent()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<GetCustomClassRequest, CustomClass> getCustomClassTransportSettings =
         GrpcCallSettings.<GetCustomClassRequest, CustomClass>newBuilder()
             .setMethodDescriptor(getCustomClassMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<GetCustomClassRequest>() {
-                  @Override
-                  public Map<String, String> extract(GetCustomClassRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("name", String.valueOf(request.getName()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<ListCustomClassesRequest, ListCustomClassesResponse>
@@ -315,40 +292,31 @@ public class GrpcAdaptationStub extends AdaptationStub {
             GrpcCallSettings.<ListCustomClassesRequest, ListCustomClassesResponse>newBuilder()
                 .setMethodDescriptor(listCustomClassesMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<ListCustomClassesRequest>() {
-                      @Override
-                      public Map<String, String> extract(ListCustomClassesRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("parent", String.valueOf(request.getParent()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("parent", String.valueOf(request.getParent()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<UpdateCustomClassRequest, CustomClass> updateCustomClassTransportSettings =
         GrpcCallSettings.<UpdateCustomClassRequest, CustomClass>newBuilder()
             .setMethodDescriptor(updateCustomClassMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<UpdateCustomClassRequest>() {
-                  @Override
-                  public Map<String, String> extract(UpdateCustomClassRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put(
-                        "custom_class.name", String.valueOf(request.getCustomClass().getName()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put(
+                      "custom_class.name", String.valueOf(request.getCustomClass().getName()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<DeleteCustomClassRequest, Empty> deleteCustomClassTransportSettings =
         GrpcCallSettings.<DeleteCustomClassRequest, Empty>newBuilder()
             .setMethodDescriptor(deleteCustomClassMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<DeleteCustomClassRequest>() {
-                  @Override
-                  public Map<String, String> extract(DeleteCustomClassRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("name", String.valueOf(request.getName()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  return params.build();
                 })
             .build();
 
@@ -472,7 +440,13 @@ public class GrpcAdaptationStub extends AdaptationStub {
 
   @Override
   public final void close() {
-    shutdown();
+    try {
+      backgroundResources.close();
+    } catch (RuntimeException e) {
+      throw e;
+    } catch (Exception e) {
+      throw new IllegalStateException("Failed to close resource", e);
+    }
   }
 
   @Override

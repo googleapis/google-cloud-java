@@ -39,7 +39,9 @@ public final class LongRunningRecognizeMetadata extends com.google.protobuf.Gene
     super(builder);
   }
 
-  private LongRunningRecognizeMetadata() {}
+  private LongRunningRecognizeMetadata() {
+    uri_ = "";
+  }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
@@ -103,6 +105,13 @@ public final class LongRunningRecognizeMetadata extends com.google.protobuf.Gene
                 lastUpdateTime_ = subBuilder.buildPartial();
               }
 
+              break;
+            }
+          case 34:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              uri_ = s;
               break;
             }
           default:
@@ -252,6 +261,57 @@ public final class LongRunningRecognizeMetadata extends com.google.protobuf.Gene
     return getLastUpdateTime();
   }
 
+  public static final int URI_FIELD_NUMBER = 4;
+  private volatile java.lang.Object uri_;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The URI of the audio file being transcribed. Empty if the audio was sent
+   * as byte content.
+   * </pre>
+   *
+   * <code>string uri = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The uri.
+   */
+  @java.lang.Override
+  public java.lang.String getUri() {
+    java.lang.Object ref = uri_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      uri_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The URI of the audio file being transcribed. Empty if the audio was sent
+   * as byte content.
+   * </pre>
+   *
+   * <code>string uri = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The bytes for uri.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getUriBytes() {
+    java.lang.Object ref = uri_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      uri_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -275,6 +335,9 @@ public final class LongRunningRecognizeMetadata extends com.google.protobuf.Gene
     if (lastUpdateTime_ != null) {
       output.writeMessage(3, getLastUpdateTime());
     }
+    if (!getUriBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 4, uri_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -292,6 +355,9 @@ public final class LongRunningRecognizeMetadata extends com.google.protobuf.Gene
     }
     if (lastUpdateTime_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(3, getLastUpdateTime());
+    }
+    if (!getUriBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, uri_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -318,6 +384,7 @@ public final class LongRunningRecognizeMetadata extends com.google.protobuf.Gene
     if (hasLastUpdateTime()) {
       if (!getLastUpdateTime().equals(other.getLastUpdateTime())) return false;
     }
+    if (!getUri().equals(other.getUri())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -339,6 +406,8 @@ public final class LongRunningRecognizeMetadata extends com.google.protobuf.Gene
       hash = (37 * hash) + LAST_UPDATE_TIME_FIELD_NUMBER;
       hash = (53 * hash) + getLastUpdateTime().hashCode();
     }
+    hash = (37 * hash) + URI_FIELD_NUMBER;
+    hash = (53 * hash) + getUri().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -501,6 +570,8 @@ public final class LongRunningRecognizeMetadata extends com.google.protobuf.Gene
         lastUpdateTime_ = null;
         lastUpdateTimeBuilder_ = null;
       }
+      uri_ = "";
+
       return this;
     }
 
@@ -539,6 +610,7 @@ public final class LongRunningRecognizeMetadata extends com.google.protobuf.Gene
       } else {
         result.lastUpdateTime_ = lastUpdateTimeBuilder_.build();
       }
+      result.uri_ = uri_;
       onBuilt();
       return result;
     }
@@ -597,6 +669,10 @@ public final class LongRunningRecognizeMetadata extends com.google.protobuf.Gene
       }
       if (other.hasLastUpdateTime()) {
         mergeLastUpdateTime(other.getLastUpdateTime());
+      }
+      if (!other.getUri().isEmpty()) {
+        uri_ = other.uri_;
+        onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -1045,6 +1121,117 @@ public final class LongRunningRecognizeMetadata extends com.google.protobuf.Gene
         lastUpdateTime_ = null;
       }
       return lastUpdateTimeBuilder_;
+    }
+
+    private java.lang.Object uri_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The URI of the audio file being transcribed. Empty if the audio was sent
+     * as byte content.
+     * </pre>
+     *
+     * <code>string uri = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The uri.
+     */
+    public java.lang.String getUri() {
+      java.lang.Object ref = uri_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        uri_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The URI of the audio file being transcribed. Empty if the audio was sent
+     * as byte content.
+     * </pre>
+     *
+     * <code>string uri = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The bytes for uri.
+     */
+    public com.google.protobuf.ByteString getUriBytes() {
+      java.lang.Object ref = uri_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        uri_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The URI of the audio file being transcribed. Empty if the audio was sent
+     * as byte content.
+     * </pre>
+     *
+     * <code>string uri = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The uri to set.
+     * @return This builder for chaining.
+     */
+    public Builder setUri(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+
+      uri_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The URI of the audio file being transcribed. Empty if the audio was sent
+     * as byte content.
+     * </pre>
+     *
+     * <code>string uri = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearUri() {
+
+      uri_ = getDefaultInstance().getUri();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The URI of the audio file being transcribed. Empty if the audio was sent
+     * as byte content.
+     * </pre>
+     *
+     * <code>string uri = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The bytes for uri to set.
+     * @return This builder for chaining.
+     */
+    public Builder setUriBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
+      uri_ = value;
+      onChanged();
+      return this;
     }
 
     @java.lang.Override

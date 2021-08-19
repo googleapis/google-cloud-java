@@ -202,6 +202,14 @@ public final class StreamingRecognitionConfig extends com.google.protobuf.Genera
    * `END_OF_SINGLE_UTTERANCE` event and cease recognition. It will return no
    * more than one `StreamingRecognitionResult` with the `is_final` flag set to
    * `true`.
+   * The `single_utterance` field can only be used with specified models,
+   * otherwise an error is thrown. The `model` field in [`RecognitionConfig`][]
+   * must be set to:
+   * * `command_and_search`
+   * * `phone_call` AND additional field `useEnhanced`=`true`
+   * * The `model` field is left undefined. In this case the API auto-selects
+   *   a model based on any other parameters that you set in
+   *   `RecognitionConfig`.
    * </pre>
    *
    * <code>bool single_utterance = 2;</code>
@@ -823,6 +831,14 @@ public final class StreamingRecognitionConfig extends com.google.protobuf.Genera
      * `END_OF_SINGLE_UTTERANCE` event and cease recognition. It will return no
      * more than one `StreamingRecognitionResult` with the `is_final` flag set to
      * `true`.
+     * The `single_utterance` field can only be used with specified models,
+     * otherwise an error is thrown. The `model` field in [`RecognitionConfig`][]
+     * must be set to:
+     * * `command_and_search`
+     * * `phone_call` AND additional field `useEnhanced`=`true`
+     * * The `model` field is left undefined. In this case the API auto-selects
+     *   a model based on any other parameters that you set in
+     *   `RecognitionConfig`.
      * </pre>
      *
      * <code>bool single_utterance = 2;</code>
@@ -847,6 +863,14 @@ public final class StreamingRecognitionConfig extends com.google.protobuf.Genera
      * `END_OF_SINGLE_UTTERANCE` event and cease recognition. It will return no
      * more than one `StreamingRecognitionResult` with the `is_final` flag set to
      * `true`.
+     * The `single_utterance` field can only be used with specified models,
+     * otherwise an error is thrown. The `model` field in [`RecognitionConfig`][]
+     * must be set to:
+     * * `command_and_search`
+     * * `phone_call` AND additional field `useEnhanced`=`true`
+     * * The `model` field is left undefined. In this case the API auto-selects
+     *   a model based on any other parameters that you set in
+     *   `RecognitionConfig`.
      * </pre>
      *
      * <code>bool single_utterance = 2;</code>
@@ -874,6 +898,14 @@ public final class StreamingRecognitionConfig extends com.google.protobuf.Genera
      * `END_OF_SINGLE_UTTERANCE` event and cease recognition. It will return no
      * more than one `StreamingRecognitionResult` with the `is_final` flag set to
      * `true`.
+     * The `single_utterance` field can only be used with specified models,
+     * otherwise an error is thrown. The `model` field in [`RecognitionConfig`][]
+     * must be set to:
+     * * `command_and_search`
+     * * `phone_call` AND additional field `useEnhanced`=`true`
+     * * The `model` field is left undefined. In this case the API auto-selects
+     *   a model based on any other parameters that you set in
+     *   `RecognitionConfig`.
      * </pre>
      *
      * <code>bool single_utterance = 2;</code>

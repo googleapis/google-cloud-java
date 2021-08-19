@@ -323,7 +323,7 @@ public final class WordInfo extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * A distinct integer value is assigned for every speaker within
+   * Output only. A distinct integer value is assigned for every speaker within
    * the audio. This field specifies which one of those speakers was detected to
    * have spoken this word. Value ranges from '1' to diarization_speaker_count.
    * speaker_tag is set if enable_speaker_diarization = 'true' and only in the
@@ -1282,7 +1282,7 @@ public final class WordInfo extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A distinct integer value is assigned for every speaker within
+     * Output only. A distinct integer value is assigned for every speaker within
      * the audio. This field specifies which one of those speakers was detected to
      * have spoken this word. Value ranges from '1' to diarization_speaker_count.
      * speaker_tag is set if enable_speaker_diarization = 'true' and only in the
@@ -1301,7 +1301,7 @@ public final class WordInfo extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A distinct integer value is assigned for every speaker within
+     * Output only. A distinct integer value is assigned for every speaker within
      * the audio. This field specifies which one of those speakers was detected to
      * have spoken this word. Value ranges from '1' to diarization_speaker_count.
      * speaker_tag is set if enable_speaker_diarization = 'true' and only in the
@@ -1323,7 +1323,7 @@ public final class WordInfo extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A distinct integer value is assigned for every speaker within
+     * Output only. A distinct integer value is assigned for every speaker within
      * the audio. This field specifies which one of those speakers was detected to
      * have spoken this word. Value ranges from '1' to diarization_speaker_count.
      * speaker_tag is set if enable_speaker_diarization = 'true' and only in the

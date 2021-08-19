@@ -187,7 +187,7 @@ public interface RecognitionConfigOrBuilder
    * A means to provide context to assist the speech recognition. For more
    * information, see
    * [speech
-   * adaptation](https://cloud.google.com/speech-to-text/docs/context-strength).
+   * adaptation](https://cloud.google.com/speech-to-text/docs/adaptation).
    * </pre>
    *
    * <code>repeated .google.cloud.speech.v1.SpeechContext speech_contexts = 6;</code>
@@ -201,7 +201,7 @@ public interface RecognitionConfigOrBuilder
    * A means to provide context to assist the speech recognition. For more
    * information, see
    * [speech
-   * adaptation](https://cloud.google.com/speech-to-text/docs/context-strength).
+   * adaptation](https://cloud.google.com/speech-to-text/docs/adaptation).
    * </pre>
    *
    * <code>repeated .google.cloud.speech.v1.SpeechContext speech_contexts = 6;</code>
@@ -215,7 +215,7 @@ public interface RecognitionConfigOrBuilder
    * A means to provide context to assist the speech recognition. For more
    * information, see
    * [speech
-   * adaptation](https://cloud.google.com/speech-to-text/docs/context-strength).
+   * adaptation](https://cloud.google.com/speech-to-text/docs/adaptation).
    * </pre>
    *
    * <code>repeated .google.cloud.speech.v1.SpeechContext speech_contexts = 6;</code>
@@ -229,7 +229,7 @@ public interface RecognitionConfigOrBuilder
    * A means to provide context to assist the speech recognition. For more
    * information, see
    * [speech
-   * adaptation](https://cloud.google.com/speech-to-text/docs/context-strength).
+   * adaptation](https://cloud.google.com/speech-to-text/docs/adaptation).
    * </pre>
    *
    * <code>repeated .google.cloud.speech.v1.SpeechContext speech_contexts = 6;</code>
@@ -244,7 +244,7 @@ public interface RecognitionConfigOrBuilder
    * A means to provide context to assist the speech recognition. For more
    * information, see
    * [speech
-   * adaptation](https://cloud.google.com/speech-to-text/docs/context-strength).
+   * adaptation](https://cloud.google.com/speech-to-text/docs/adaptation).
    * </pre>
    *
    * <code>repeated .google.cloud.speech.v1.SpeechContext speech_contexts = 6;</code>
@@ -275,9 +275,6 @@ public interface RecognitionConfigOrBuilder
    * This feature is only available in select languages. Setting this for
    * requests in other languages has no effect at all.
    * The default 'false' value does not add punctuation to result hypotheses.
-   * Note: This is currently offered as an experimental service, complimentary
-   * to all users. In the future this may be exclusively available as a
-   * premium feature.
    * </pre>
    *
    * <code>bool enable_automatic_punctuation = 11;</code>
@@ -401,7 +398,7 @@ public interface RecognitionConfigOrBuilder
    *   &lt;/tr&gt;
    *   &lt;tr&gt;
    *     &lt;td&gt;&lt;code&gt;video&lt;/code&gt;&lt;/td&gt;
-   *     &lt;td&gt;Best for audio that originated from from video or includes multiple
+   *     &lt;td&gt;Best for audio that originated from video or includes multiple
    *         speakers. Ideally the audio is recorded at a 16khz or greater
    *         sampling rate. This is a premium model that costs more than the
    *         standard rate.&lt;/td&gt;
@@ -444,7 +441,7 @@ public interface RecognitionConfigOrBuilder
    *   &lt;/tr&gt;
    *   &lt;tr&gt;
    *     &lt;td&gt;&lt;code&gt;video&lt;/code&gt;&lt;/td&gt;
-   *     &lt;td&gt;Best for audio that originated from from video or includes multiple
+   *     &lt;td&gt;Best for audio that originated from video or includes multiple
    *         speakers. Ideally the audio is recorded at a 16khz or greater
    *         sampling rate. This is a premium model that costs more than the
    *         standard rate.&lt;/td&gt;

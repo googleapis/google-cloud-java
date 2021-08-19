@@ -230,7 +230,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
    * a lossless encoding (`FLAC` or `LINEAR16`). The accuracy of the speech
    * recognition can be reduced if lossy codecs are used to capture or transmit
    * audio, particularly if background noise is present. Lossy codecs include
-   * `MULAW`, `AMR`, `AMR_WB`, `OGG_OPUS`, `SPEEX_WITH_HEADER_BYTE`, and `MP3`.
+   * `MULAW`, `AMR`, `AMR_WB`, `OGG_OPUS`, `SPEEX_WITH_HEADER_BYTE`, `MP3`.
    * The `FLAC` and `WAV` audio file formats include a header that describes the
    * included audio content. You can request recognition for `WAV` files that
    * contain either `LINEAR16` or `MULAW` encoded audio.
@@ -769,7 +769,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
    * A means to provide context to assist the speech recognition. For more
    * information, see
    * [speech
-   * adaptation](https://cloud.google.com/speech-to-text/docs/context-strength).
+   * adaptation](https://cloud.google.com/speech-to-text/docs/adaptation).
    * </pre>
    *
    * <code>repeated .google.cloud.speech.v1.SpeechContext speech_contexts = 6;</code>
@@ -786,7 +786,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
    * A means to provide context to assist the speech recognition. For more
    * information, see
    * [speech
-   * adaptation](https://cloud.google.com/speech-to-text/docs/context-strength).
+   * adaptation](https://cloud.google.com/speech-to-text/docs/adaptation).
    * </pre>
    *
    * <code>repeated .google.cloud.speech.v1.SpeechContext speech_contexts = 6;</code>
@@ -804,7 +804,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
    * A means to provide context to assist the speech recognition. For more
    * information, see
    * [speech
-   * adaptation](https://cloud.google.com/speech-to-text/docs/context-strength).
+   * adaptation](https://cloud.google.com/speech-to-text/docs/adaptation).
    * </pre>
    *
    * <code>repeated .google.cloud.speech.v1.SpeechContext speech_contexts = 6;</code>
@@ -821,7 +821,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
    * A means to provide context to assist the speech recognition. For more
    * information, see
    * [speech
-   * adaptation](https://cloud.google.com/speech-to-text/docs/context-strength).
+   * adaptation](https://cloud.google.com/speech-to-text/docs/adaptation).
    * </pre>
    *
    * <code>repeated .google.cloud.speech.v1.SpeechContext speech_contexts = 6;</code>
@@ -838,7 +838,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
    * A means to provide context to assist the speech recognition. For more
    * information, see
    * [speech
-   * adaptation](https://cloud.google.com/speech-to-text/docs/context-strength).
+   * adaptation](https://cloud.google.com/speech-to-text/docs/adaptation).
    * </pre>
    *
    * <code>repeated .google.cloud.speech.v1.SpeechContext speech_contexts = 6;</code>
@@ -879,9 +879,6 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
    * This feature is only available in select languages. Setting this for
    * requests in other languages has no effect at all.
    * The default 'false' value does not add punctuation to result hypotheses.
-   * Note: This is currently offered as an experimental service, complimentary
-   * to all users. In the future this may be exclusively available as a
-   * premium feature.
    * </pre>
    *
    * <code>bool enable_automatic_punctuation = 11;</code>
@@ -1037,7 +1034,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
    *   &lt;/tr&gt;
    *   &lt;tr&gt;
    *     &lt;td&gt;&lt;code&gt;video&lt;/code&gt;&lt;/td&gt;
-   *     &lt;td&gt;Best for audio that originated from from video or includes multiple
+   *     &lt;td&gt;Best for audio that originated from video or includes multiple
    *         speakers. Ideally the audio is recorded at a 16khz or greater
    *         sampling rate. This is a premium model that costs more than the
    *         standard rate.&lt;/td&gt;
@@ -1091,7 +1088,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
    *   &lt;/tr&gt;
    *   &lt;tr&gt;
    *     &lt;td&gt;&lt;code&gt;video&lt;/code&gt;&lt;/td&gt;
-   *     &lt;td&gt;Best for audio that originated from from video or includes multiple
+   *     &lt;td&gt;Best for audio that originated from video or includes multiple
    *         speakers. Ideally the audio is recorded at a 16khz or greater
    *         sampling rate. This is a premium model that costs more than the
    *         standard rate.&lt;/td&gt;
@@ -2338,7 +2335,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
      * A means to provide context to assist the speech recognition. For more
      * information, see
      * [speech
-     * adaptation](https://cloud.google.com/speech-to-text/docs/context-strength).
+     * adaptation](https://cloud.google.com/speech-to-text/docs/adaptation).
      * </pre>
      *
      * <code>repeated .google.cloud.speech.v1.SpeechContext speech_contexts = 6;</code>
@@ -2358,7 +2355,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
      * A means to provide context to assist the speech recognition. For more
      * information, see
      * [speech
-     * adaptation](https://cloud.google.com/speech-to-text/docs/context-strength).
+     * adaptation](https://cloud.google.com/speech-to-text/docs/adaptation).
      * </pre>
      *
      * <code>repeated .google.cloud.speech.v1.SpeechContext speech_contexts = 6;</code>
@@ -2378,7 +2375,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
      * A means to provide context to assist the speech recognition. For more
      * information, see
      * [speech
-     * adaptation](https://cloud.google.com/speech-to-text/docs/context-strength).
+     * adaptation](https://cloud.google.com/speech-to-text/docs/adaptation).
      * </pre>
      *
      * <code>repeated .google.cloud.speech.v1.SpeechContext speech_contexts = 6;</code>
@@ -2398,7 +2395,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
      * A means to provide context to assist the speech recognition. For more
      * information, see
      * [speech
-     * adaptation](https://cloud.google.com/speech-to-text/docs/context-strength).
+     * adaptation](https://cloud.google.com/speech-to-text/docs/adaptation).
      * </pre>
      *
      * <code>repeated .google.cloud.speech.v1.SpeechContext speech_contexts = 6;</code>
@@ -2424,7 +2421,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
      * A means to provide context to assist the speech recognition. For more
      * information, see
      * [speech
-     * adaptation](https://cloud.google.com/speech-to-text/docs/context-strength).
+     * adaptation](https://cloud.google.com/speech-to-text/docs/adaptation).
      * </pre>
      *
      * <code>repeated .google.cloud.speech.v1.SpeechContext speech_contexts = 6;</code>
@@ -2448,7 +2445,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
      * A means to provide context to assist the speech recognition. For more
      * information, see
      * [speech
-     * adaptation](https://cloud.google.com/speech-to-text/docs/context-strength).
+     * adaptation](https://cloud.google.com/speech-to-text/docs/adaptation).
      * </pre>
      *
      * <code>repeated .google.cloud.speech.v1.SpeechContext speech_contexts = 6;</code>
@@ -2474,7 +2471,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
      * A means to provide context to assist the speech recognition. For more
      * information, see
      * [speech
-     * adaptation](https://cloud.google.com/speech-to-text/docs/context-strength).
+     * adaptation](https://cloud.google.com/speech-to-text/docs/adaptation).
      * </pre>
      *
      * <code>repeated .google.cloud.speech.v1.SpeechContext speech_contexts = 6;</code>
@@ -2500,7 +2497,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
      * A means to provide context to assist the speech recognition. For more
      * information, see
      * [speech
-     * adaptation](https://cloud.google.com/speech-to-text/docs/context-strength).
+     * adaptation](https://cloud.google.com/speech-to-text/docs/adaptation).
      * </pre>
      *
      * <code>repeated .google.cloud.speech.v1.SpeechContext speech_contexts = 6;</code>
@@ -2524,7 +2521,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
      * A means to provide context to assist the speech recognition. For more
      * information, see
      * [speech
-     * adaptation](https://cloud.google.com/speech-to-text/docs/context-strength).
+     * adaptation](https://cloud.google.com/speech-to-text/docs/adaptation).
      * </pre>
      *
      * <code>repeated .google.cloud.speech.v1.SpeechContext speech_contexts = 6;</code>
@@ -2548,7 +2545,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
      * A means to provide context to assist the speech recognition. For more
      * information, see
      * [speech
-     * adaptation](https://cloud.google.com/speech-to-text/docs/context-strength).
+     * adaptation](https://cloud.google.com/speech-to-text/docs/adaptation).
      * </pre>
      *
      * <code>repeated .google.cloud.speech.v1.SpeechContext speech_contexts = 6;</code>
@@ -2572,7 +2569,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
      * A means to provide context to assist the speech recognition. For more
      * information, see
      * [speech
-     * adaptation](https://cloud.google.com/speech-to-text/docs/context-strength).
+     * adaptation](https://cloud.google.com/speech-to-text/docs/adaptation).
      * </pre>
      *
      * <code>repeated .google.cloud.speech.v1.SpeechContext speech_contexts = 6;</code>
@@ -2595,7 +2592,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
      * A means to provide context to assist the speech recognition. For more
      * information, see
      * [speech
-     * adaptation](https://cloud.google.com/speech-to-text/docs/context-strength).
+     * adaptation](https://cloud.google.com/speech-to-text/docs/adaptation).
      * </pre>
      *
      * <code>repeated .google.cloud.speech.v1.SpeechContext speech_contexts = 6;</code>
@@ -2618,7 +2615,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
      * A means to provide context to assist the speech recognition. For more
      * information, see
      * [speech
-     * adaptation](https://cloud.google.com/speech-to-text/docs/context-strength).
+     * adaptation](https://cloud.google.com/speech-to-text/docs/adaptation).
      * </pre>
      *
      * <code>repeated .google.cloud.speech.v1.SpeechContext speech_contexts = 6;</code>
@@ -2634,7 +2631,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
      * A means to provide context to assist the speech recognition. For more
      * information, see
      * [speech
-     * adaptation](https://cloud.google.com/speech-to-text/docs/context-strength).
+     * adaptation](https://cloud.google.com/speech-to-text/docs/adaptation).
      * </pre>
      *
      * <code>repeated .google.cloud.speech.v1.SpeechContext speech_contexts = 6;</code>
@@ -2654,7 +2651,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
      * A means to provide context to assist the speech recognition. For more
      * information, see
      * [speech
-     * adaptation](https://cloud.google.com/speech-to-text/docs/context-strength).
+     * adaptation](https://cloud.google.com/speech-to-text/docs/adaptation).
      * </pre>
      *
      * <code>repeated .google.cloud.speech.v1.SpeechContext speech_contexts = 6;</code>
@@ -2675,7 +2672,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
      * A means to provide context to assist the speech recognition. For more
      * information, see
      * [speech
-     * adaptation](https://cloud.google.com/speech-to-text/docs/context-strength).
+     * adaptation](https://cloud.google.com/speech-to-text/docs/adaptation).
      * </pre>
      *
      * <code>repeated .google.cloud.speech.v1.SpeechContext speech_contexts = 6;</code>
@@ -2692,7 +2689,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
      * A means to provide context to assist the speech recognition. For more
      * information, see
      * [speech
-     * adaptation](https://cloud.google.com/speech-to-text/docs/context-strength).
+     * adaptation](https://cloud.google.com/speech-to-text/docs/adaptation).
      * </pre>
      *
      * <code>repeated .google.cloud.speech.v1.SpeechContext speech_contexts = 6;</code>
@@ -2709,7 +2706,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
      * A means to provide context to assist the speech recognition. For more
      * information, see
      * [speech
-     * adaptation](https://cloud.google.com/speech-to-text/docs/context-strength).
+     * adaptation](https://cloud.google.com/speech-to-text/docs/adaptation).
      * </pre>
      *
      * <code>repeated .google.cloud.speech.v1.SpeechContext speech_contexts = 6;</code>
@@ -2809,9 +2806,6 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
      * This feature is only available in select languages. Setting this for
      * requests in other languages has no effect at all.
      * The default 'false' value does not add punctuation to result hypotheses.
-     * Note: This is currently offered as an experimental service, complimentary
-     * to all users. In the future this may be exclusively available as a
-     * premium feature.
      * </pre>
      *
      * <code>bool enable_automatic_punctuation = 11;</code>
@@ -2830,9 +2824,6 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
      * This feature is only available in select languages. Setting this for
      * requests in other languages has no effect at all.
      * The default 'false' value does not add punctuation to result hypotheses.
-     * Note: This is currently offered as an experimental service, complimentary
-     * to all users. In the future this may be exclusively available as a
-     * premium feature.
      * </pre>
      *
      * <code>bool enable_automatic_punctuation = 11;</code>
@@ -2854,9 +2845,6 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
      * This feature is only available in select languages. Setting this for
      * requests in other languages has no effect at all.
      * The default 'false' value does not add punctuation to result hypotheses.
-     * Note: This is currently offered as an experimental service, complimentary
-     * to all users. In the future this may be exclusively available as a
-     * premium feature.
      * </pre>
      *
      * <code>bool enable_automatic_punctuation = 11;</code>
@@ -3333,7 +3321,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
      *   &lt;/tr&gt;
      *   &lt;tr&gt;
      *     &lt;td&gt;&lt;code&gt;video&lt;/code&gt;&lt;/td&gt;
-     *     &lt;td&gt;Best for audio that originated from from video or includes multiple
+     *     &lt;td&gt;Best for audio that originated from video or includes multiple
      *         speakers. Ideally the audio is recorded at a 16khz or greater
      *         sampling rate. This is a premium model that costs more than the
      *         standard rate.&lt;/td&gt;
@@ -3386,7 +3374,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
      *   &lt;/tr&gt;
      *   &lt;tr&gt;
      *     &lt;td&gt;&lt;code&gt;video&lt;/code&gt;&lt;/td&gt;
-     *     &lt;td&gt;Best for audio that originated from from video or includes multiple
+     *     &lt;td&gt;Best for audio that originated from video or includes multiple
      *         speakers. Ideally the audio is recorded at a 16khz or greater
      *         sampling rate. This is a premium model that costs more than the
      *         standard rate.&lt;/td&gt;
@@ -3439,7 +3427,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
      *   &lt;/tr&gt;
      *   &lt;tr&gt;
      *     &lt;td&gt;&lt;code&gt;video&lt;/code&gt;&lt;/td&gt;
-     *     &lt;td&gt;Best for audio that originated from from video or includes multiple
+     *     &lt;td&gt;Best for audio that originated from video or includes multiple
      *         speakers. Ideally the audio is recorded at a 16khz or greater
      *         sampling rate. This is a premium model that costs more than the
      *         standard rate.&lt;/td&gt;
@@ -3491,7 +3479,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
      *   &lt;/tr&gt;
      *   &lt;tr&gt;
      *     &lt;td&gt;&lt;code&gt;video&lt;/code&gt;&lt;/td&gt;
-     *     &lt;td&gt;Best for audio that originated from from video or includes multiple
+     *     &lt;td&gt;Best for audio that originated from video or includes multiple
      *         speakers. Ideally the audio is recorded at a 16khz or greater
      *         sampling rate. This is a premium model that costs more than the
      *         standard rate.&lt;/td&gt;
@@ -3539,7 +3527,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
      *   &lt;/tr&gt;
      *   &lt;tr&gt;
      *     &lt;td&gt;&lt;code&gt;video&lt;/code&gt;&lt;/td&gt;
-     *     &lt;td&gt;Best for audio that originated from from video or includes multiple
+     *     &lt;td&gt;Best for audio that originated from video or includes multiple
      *         speakers. Ideally the audio is recorded at a 16khz or greater
      *         sampling rate. This is a premium model that costs more than the
      *         standard rate.&lt;/td&gt;
