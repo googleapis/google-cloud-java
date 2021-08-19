@@ -1130,7 +1130,7 @@ public class CloudTasksClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (CloudTasksClient cloudTasksClient = CloudTasksClient.create()) {
-   *   ResourceName resource = LocationName.of("[PROJECT]", "[LOCATION]");
+   *   ResourceName resource = QueueName.of("[PROJECT]", "[LOCATION]", "[QUEUE]");
    *   Policy response = cloudTasksClient.getIamPolicy(resource);
    * }
    * }</pre>
@@ -1163,7 +1163,7 @@ public class CloudTasksClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (CloudTasksClient cloudTasksClient = CloudTasksClient.create()) {
-   *   String resource = LocationName.of("[PROJECT]", "[LOCATION]").toString();
+   *   String resource = QueueName.of("[PROJECT]", "[LOCATION]", "[QUEUE]").toString();
    *   Policy response = cloudTasksClient.getIamPolicy(resource);
    * }
    * }</pre>
@@ -1195,7 +1195,7 @@ public class CloudTasksClient implements BackgroundResource {
    * try (CloudTasksClient cloudTasksClient = CloudTasksClient.create()) {
    *   GetIamPolicyRequest request =
    *       GetIamPolicyRequest.newBuilder()
-   *           .setResource(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setResource(QueueName.of("[PROJECT]", "[LOCATION]", "[QUEUE]").toString())
    *           .setOptions(GetPolicyOptions.newBuilder().build())
    *           .build();
    *   Policy response = cloudTasksClient.getIamPolicy(request);
@@ -1231,7 +1231,7 @@ public class CloudTasksClient implements BackgroundResource {
    * try (CloudTasksClient cloudTasksClient = CloudTasksClient.create()) {
    *   GetIamPolicyRequest request =
    *       GetIamPolicyRequest.newBuilder()
-   *           .setResource(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setResource(QueueName.of("[PROJECT]", "[LOCATION]", "[QUEUE]").toString())
    *           .setOptions(GetPolicyOptions.newBuilder().build())
    *           .build();
    *   ApiFuture<Policy> future = cloudTasksClient.getIamPolicyCallable().futureCall(request);
@@ -1263,7 +1263,7 @@ public class CloudTasksClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (CloudTasksClient cloudTasksClient = CloudTasksClient.create()) {
-   *   ResourceName resource = LocationName.of("[PROJECT]", "[LOCATION]");
+   *   ResourceName resource = QueueName.of("[PROJECT]", "[LOCATION]", "[QUEUE]");
    *   Policy policy = Policy.newBuilder().build();
    *   Policy response = cloudTasksClient.setIamPolicy(resource, policy);
    * }
@@ -1304,7 +1304,7 @@ public class CloudTasksClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (CloudTasksClient cloudTasksClient = CloudTasksClient.create()) {
-   *   String resource = LocationName.of("[PROJECT]", "[LOCATION]").toString();
+   *   String resource = QueueName.of("[PROJECT]", "[LOCATION]", "[QUEUE]").toString();
    *   Policy policy = Policy.newBuilder().build();
    *   Policy response = cloudTasksClient.setIamPolicy(resource, policy);
    * }
@@ -1344,7 +1344,7 @@ public class CloudTasksClient implements BackgroundResource {
    * try (CloudTasksClient cloudTasksClient = CloudTasksClient.create()) {
    *   SetIamPolicyRequest request =
    *       SetIamPolicyRequest.newBuilder()
-   *           .setResource(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setResource(QueueName.of("[PROJECT]", "[LOCATION]", "[QUEUE]").toString())
    *           .setPolicy(Policy.newBuilder().build())
    *           .build();
    *   Policy response = cloudTasksClient.setIamPolicy(request);
@@ -1383,7 +1383,7 @@ public class CloudTasksClient implements BackgroundResource {
    * try (CloudTasksClient cloudTasksClient = CloudTasksClient.create()) {
    *   SetIamPolicyRequest request =
    *       SetIamPolicyRequest.newBuilder()
-   *           .setResource(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setResource(QueueName.of("[PROJECT]", "[LOCATION]", "[QUEUE]").toString())
    *           .setPolicy(Policy.newBuilder().build())
    *           .build();
    *   ApiFuture<Policy> future = cloudTasksClient.setIamPolicyCallable().futureCall(request);
@@ -1410,7 +1410,7 @@ public class CloudTasksClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (CloudTasksClient cloudTasksClient = CloudTasksClient.create()) {
-   *   ResourceName resource = LocationName.of("[PROJECT]", "[LOCATION]");
+   *   ResourceName resource = QueueName.of("[PROJECT]", "[LOCATION]", "[QUEUE]");
    *   List<String> permissions = new ArrayList<>();
    *   TestIamPermissionsResponse response =
    *       cloudTasksClient.testIamPermissions(resource, permissions);
@@ -1448,7 +1448,7 @@ public class CloudTasksClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (CloudTasksClient cloudTasksClient = CloudTasksClient.create()) {
-   *   String resource = LocationName.of("[PROJECT]", "[LOCATION]").toString();
+   *   String resource = QueueName.of("[PROJECT]", "[LOCATION]", "[QUEUE]").toString();
    *   List<String> permissions = new ArrayList<>();
    *   TestIamPermissionsResponse response =
    *       cloudTasksClient.testIamPermissions(resource, permissions);
@@ -1488,7 +1488,7 @@ public class CloudTasksClient implements BackgroundResource {
    * try (CloudTasksClient cloudTasksClient = CloudTasksClient.create()) {
    *   TestIamPermissionsRequest request =
    *       TestIamPermissionsRequest.newBuilder()
-   *           .setResource(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setResource(QueueName.of("[PROJECT]", "[LOCATION]", "[QUEUE]").toString())
    *           .addAllPermissions(new ArrayList<String>())
    *           .build();
    *   TestIamPermissionsResponse response = cloudTasksClient.testIamPermissions(request);
@@ -1523,7 +1523,7 @@ public class CloudTasksClient implements BackgroundResource {
    * try (CloudTasksClient cloudTasksClient = CloudTasksClient.create()) {
    *   TestIamPermissionsRequest request =
    *       TestIamPermissionsRequest.newBuilder()
-   *           .setResource(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setResource(QueueName.of("[PROJECT]", "[LOCATION]", "[QUEUE]").toString())
    *           .addAllPermissions(new ArrayList<String>())
    *           .build();
    *   ApiFuture<TestIamPermissionsResponse> future =
