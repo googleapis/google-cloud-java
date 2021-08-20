@@ -243,6 +243,47 @@ public final class CloudBuildGrpc {
   }
 
   private static volatile io.grpc.MethodDescriptor<
+          com.google.cloudbuild.v1.ApproveBuildRequest, com.google.longrunning.Operation>
+      getApproveBuildMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ApproveBuild",
+      requestType = com.google.cloudbuild.v1.ApproveBuildRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloudbuild.v1.ApproveBuildRequest, com.google.longrunning.Operation>
+      getApproveBuildMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloudbuild.v1.ApproveBuildRequest, com.google.longrunning.Operation>
+        getApproveBuildMethod;
+    if ((getApproveBuildMethod = CloudBuildGrpc.getApproveBuildMethod) == null) {
+      synchronized (CloudBuildGrpc.class) {
+        if ((getApproveBuildMethod = CloudBuildGrpc.getApproveBuildMethod) == null) {
+          CloudBuildGrpc.getApproveBuildMethod =
+              getApproveBuildMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloudbuild.v1.ApproveBuildRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ApproveBuild"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloudbuild.v1.ApproveBuildRequest.getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(new CloudBuildMethodDescriptorSupplier("ApproveBuild"))
+                      .build();
+        }
+      }
+    }
+    return getApproveBuildMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
           com.google.cloudbuild.v1.CreateBuildTriggerRequest, com.google.cloudbuild.v1.BuildTrigger>
       getCreateBuildTriggerMethod;
 
@@ -920,6 +961,23 @@ public final class CloudBuildGrpc {
      *
      *
      * <pre>
+     * Approves or rejects a pending build.
+     * If approved, the returned LRO will be analogous to the LRO returned from
+     * a CreateBuild call.
+     * If rejected, the returned LRO will be immediately done.
+     * </pre>
+     */
+    public void approveBuild(
+        com.google.cloudbuild.v1.ApproveBuildRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getApproveBuildMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Creates a new `BuildTrigger`.
      * This API is experimental.
      * </pre>
@@ -1127,6 +1185,12 @@ public final class CloudBuildGrpc {
                       com.google.cloudbuild.v1.RetryBuildRequest, com.google.longrunning.Operation>(
                       this, METHODID_RETRY_BUILD)))
           .addMethod(
+              getApproveBuildMethod(),
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.cloudbuild.v1.ApproveBuildRequest,
+                      com.google.longrunning.Operation>(this, METHODID_APPROVE_BUILD)))
+          .addMethod(
               getCreateBuildTriggerMethod(),
               io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
@@ -1325,6 +1389,25 @@ public final class CloudBuildGrpc {
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getRetryBuildMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Approves or rejects a pending build.
+     * If approved, the returned LRO will be analogous to the LRO returned from
+     * a CreateBuild call.
+     * If rejected, the returned LRO will be immediately done.
+     * </pre>
+     */
+    public void approveBuild(
+        com.google.cloudbuild.v1.ApproveBuildRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getApproveBuildMethod(), getCallOptions()),
+          request,
+          responseObserver);
     }
 
     /**
@@ -1648,6 +1731,22 @@ public final class CloudBuildGrpc {
      *
      *
      * <pre>
+     * Approves or rejects a pending build.
+     * If approved, the returned LRO will be analogous to the LRO returned from
+     * a CreateBuild call.
+     * If rejected, the returned LRO will be immediately done.
+     * </pre>
+     */
+    public com.google.longrunning.Operation approveBuild(
+        com.google.cloudbuild.v1.ApproveBuildRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getApproveBuildMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Creates a new `BuildTrigger`.
      * This API is experimental.
      * </pre>
@@ -1926,6 +2025,22 @@ public final class CloudBuildGrpc {
      *
      *
      * <pre>
+     * Approves or rejects a pending build.
+     * If approved, the returned LRO will be analogous to the LRO returned from
+     * a CreateBuild call.
+     * If rejected, the returned LRO will be immediately done.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        approveBuild(com.google.cloudbuild.v1.ApproveBuildRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getApproveBuildMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Creates a new `BuildTrigger`.
      * This API is experimental.
      * </pre>
@@ -2093,18 +2208,19 @@ public final class CloudBuildGrpc {
   private static final int METHODID_LIST_BUILDS = 2;
   private static final int METHODID_CANCEL_BUILD = 3;
   private static final int METHODID_RETRY_BUILD = 4;
-  private static final int METHODID_CREATE_BUILD_TRIGGER = 5;
-  private static final int METHODID_GET_BUILD_TRIGGER = 6;
-  private static final int METHODID_LIST_BUILD_TRIGGERS = 7;
-  private static final int METHODID_DELETE_BUILD_TRIGGER = 8;
-  private static final int METHODID_UPDATE_BUILD_TRIGGER = 9;
-  private static final int METHODID_RUN_BUILD_TRIGGER = 10;
-  private static final int METHODID_RECEIVE_TRIGGER_WEBHOOK = 11;
-  private static final int METHODID_CREATE_WORKER_POOL = 12;
-  private static final int METHODID_GET_WORKER_POOL = 13;
-  private static final int METHODID_DELETE_WORKER_POOL = 14;
-  private static final int METHODID_UPDATE_WORKER_POOL = 15;
-  private static final int METHODID_LIST_WORKER_POOLS = 16;
+  private static final int METHODID_APPROVE_BUILD = 5;
+  private static final int METHODID_CREATE_BUILD_TRIGGER = 6;
+  private static final int METHODID_GET_BUILD_TRIGGER = 7;
+  private static final int METHODID_LIST_BUILD_TRIGGERS = 8;
+  private static final int METHODID_DELETE_BUILD_TRIGGER = 9;
+  private static final int METHODID_UPDATE_BUILD_TRIGGER = 10;
+  private static final int METHODID_RUN_BUILD_TRIGGER = 11;
+  private static final int METHODID_RECEIVE_TRIGGER_WEBHOOK = 12;
+  private static final int METHODID_CREATE_WORKER_POOL = 13;
+  private static final int METHODID_GET_WORKER_POOL = 14;
+  private static final int METHODID_DELETE_WORKER_POOL = 15;
+  private static final int METHODID_UPDATE_WORKER_POOL = 16;
+  private static final int METHODID_LIST_WORKER_POOLS = 17;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -2147,6 +2263,11 @@ public final class CloudBuildGrpc {
         case METHODID_RETRY_BUILD:
           serviceImpl.retryBuild(
               (com.google.cloudbuild.v1.RetryBuildRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_APPROVE_BUILD:
+          serviceImpl.approveBuild(
+              (com.google.cloudbuild.v1.ApproveBuildRequest) request,
               (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
           break;
         case METHODID_CREATE_BUILD_TRIGGER:
@@ -2284,6 +2405,7 @@ public final class CloudBuildGrpc {
                       .addMethod(getListBuildsMethod())
                       .addMethod(getCancelBuildMethod())
                       .addMethod(getRetryBuildMethod())
+                      .addMethod(getApproveBuildMethod())
                       .addMethod(getCreateBuildTriggerMethod())
                       .addMethod(getGetBuildTriggerMethod())
                       .addMethod(getListBuildTriggersMethod())

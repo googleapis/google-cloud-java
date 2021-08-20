@@ -29,6 +29,8 @@ import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.devtools.cloudbuild.v1.stub.CloudBuildStub;
 import com.google.cloud.devtools.cloudbuild.v1.stub.CloudBuildStubSettings;
+import com.google.cloudbuild.v1.ApprovalResult;
+import com.google.cloudbuild.v1.ApproveBuildRequest;
 import com.google.cloudbuild.v1.Build;
 import com.google.cloudbuild.v1.BuildOperationMetadata;
 import com.google.cloudbuild.v1.BuildTrigger;
@@ -816,6 +818,121 @@ public class CloudBuildClient implements BackgroundResource {
    */
   public final UnaryCallable<RetryBuildRequest, Operation> retryBuildCallable() {
     return stub.retryBuildCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Approves or rejects a pending build.
+   *
+   * <p>If approved, the returned LRO will be analogous to the LRO returned from a CreateBuild call.
+   *
+   * <p>If rejected, the returned LRO will be immediately done.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CloudBuildClient cloudBuildClient = CloudBuildClient.create()) {
+   *   String name = "name3373707";
+   *   ApprovalResult approvalResult = ApprovalResult.newBuilder().build();
+   *   Build response = cloudBuildClient.approveBuildAsync(name, approvalResult).get();
+   * }
+   * }</pre>
+   *
+   * @param name Required. Name of the target build. For example:
+   *     "projects/{$project_id}/builds/{$build_id}"
+   * @param approvalResult Approval decision and metadata.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Build, BuildOperationMetadata> approveBuildAsync(
+      String name, ApprovalResult approvalResult) {
+    ApproveBuildRequest request =
+        ApproveBuildRequest.newBuilder().setName(name).setApprovalResult(approvalResult).build();
+    return approveBuildAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Approves or rejects a pending build.
+   *
+   * <p>If approved, the returned LRO will be analogous to the LRO returned from a CreateBuild call.
+   *
+   * <p>If rejected, the returned LRO will be immediately done.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CloudBuildClient cloudBuildClient = CloudBuildClient.create()) {
+   *   ApproveBuildRequest request =
+   *       ApproveBuildRequest.newBuilder()
+   *           .setName("name3373707")
+   *           .setApprovalResult(ApprovalResult.newBuilder().build())
+   *           .build();
+   *   Build response = cloudBuildClient.approveBuildAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Build, BuildOperationMetadata> approveBuildAsync(
+      ApproveBuildRequest request) {
+    return approveBuildOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Approves or rejects a pending build.
+   *
+   * <p>If approved, the returned LRO will be analogous to the LRO returned from a CreateBuild call.
+   *
+   * <p>If rejected, the returned LRO will be immediately done.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CloudBuildClient cloudBuildClient = CloudBuildClient.create()) {
+   *   ApproveBuildRequest request =
+   *       ApproveBuildRequest.newBuilder()
+   *           .setName("name3373707")
+   *           .setApprovalResult(ApprovalResult.newBuilder().build())
+   *           .build();
+   *   OperationFuture<Build, BuildOperationMetadata> future =
+   *       cloudBuildClient.approveBuildOperationCallable().futureCall(request);
+   *   // Do something.
+   *   Build response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<ApproveBuildRequest, Build, BuildOperationMetadata>
+      approveBuildOperationCallable() {
+    return stub.approveBuildOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Approves or rejects a pending build.
+   *
+   * <p>If approved, the returned LRO will be analogous to the LRO returned from a CreateBuild call.
+   *
+   * <p>If rejected, the returned LRO will be immediately done.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CloudBuildClient cloudBuildClient = CloudBuildClient.create()) {
+   *   ApproveBuildRequest request =
+   *       ApproveBuildRequest.newBuilder()
+   *           .setName("name3373707")
+   *           .setApprovalResult(ApprovalResult.newBuilder().build())
+   *           .build();
+   *   ApiFuture<Operation> future = cloudBuildClient.approveBuildCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ApproveBuildRequest, Operation> approveBuildCallable() {
+    return stub.approveBuildCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.

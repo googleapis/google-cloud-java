@@ -23,6 +23,7 @@ import static com.google.cloud.devtools.cloudbuild.v1.CloudBuildClient.ListWorke
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloudbuild.v1.ApproveBuildRequest;
 import com.google.cloudbuild.v1.Build;
 import com.google.cloudbuild.v1.BuildOperationMetadata;
 import com.google.cloudbuild.v1.BuildTrigger;
@@ -101,6 +102,15 @@ public abstract class CloudBuildStub implements BackgroundResource {
 
   public UnaryCallable<RetryBuildRequest, Operation> retryBuildCallable() {
     throw new UnsupportedOperationException("Not implemented: retryBuildCallable()");
+  }
+
+  public OperationCallable<ApproveBuildRequest, Build, BuildOperationMetadata>
+      approveBuildOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: approveBuildOperationCallable()");
+  }
+
+  public UnaryCallable<ApproveBuildRequest, Operation> approveBuildCallable() {
+    throw new UnsupportedOperationException("Not implemented: approveBuildCallable()");
   }
 
   public UnaryCallable<CreateBuildTriggerRequest, BuildTrigger> createBuildTriggerCallable() {

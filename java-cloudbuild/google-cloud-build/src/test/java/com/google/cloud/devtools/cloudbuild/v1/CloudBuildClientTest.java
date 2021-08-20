@@ -29,8 +29,11 @@ import com.google.api.gax.grpc.testing.MockServiceHelper;
 import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.InvalidArgumentException;
 import com.google.api.gax.rpc.StatusCode;
+import com.google.cloudbuild.v1.ApprovalResult;
+import com.google.cloudbuild.v1.ApproveBuildRequest;
 import com.google.cloudbuild.v1.Artifacts;
 import com.google.cloudbuild.v1.Build;
+import com.google.cloudbuild.v1.BuildApproval;
 import com.google.cloudbuild.v1.BuildName;
 import com.google.cloudbuild.v1.BuildOptions;
 import com.google.cloudbuild.v1.BuildStep;
@@ -159,6 +162,7 @@ public class CloudBuildClientTest {
             .addAllTags(new ArrayList<String>())
             .addAllSecrets(new ArrayList<Secret>())
             .putAllTiming(new HashMap<String, TimeSpan>())
+            .setApproval(BuildApproval.newBuilder().build())
             .setServiceAccount("serviceAccount1079137720")
             .setAvailableSecrets(Secrets.newBuilder().build())
             .addAllWarnings(new ArrayList<Build.Warning>())
@@ -234,6 +238,7 @@ public class CloudBuildClientTest {
             .addAllTags(new ArrayList<String>())
             .addAllSecrets(new ArrayList<Secret>())
             .putAllTiming(new HashMap<String, TimeSpan>())
+            .setApproval(BuildApproval.newBuilder().build())
             .setServiceAccount("serviceAccount1079137720")
             .setAvailableSecrets(Secrets.newBuilder().build())
             .addAllWarnings(new ArrayList<Build.Warning>())
@@ -348,6 +353,7 @@ public class CloudBuildClientTest {
             .addAllTags(new ArrayList<String>())
             .addAllSecrets(new ArrayList<Secret>())
             .putAllTiming(new HashMap<String, TimeSpan>())
+            .setApproval(BuildApproval.newBuilder().build())
             .setServiceAccount("serviceAccount1079137720")
             .setAvailableSecrets(Secrets.newBuilder().build())
             .addAllWarnings(new ArrayList<Build.Warning>())
@@ -415,6 +421,7 @@ public class CloudBuildClientTest {
             .addAllTags(new ArrayList<String>())
             .addAllSecrets(new ArrayList<Secret>())
             .putAllTiming(new HashMap<String, TimeSpan>())
+            .setApproval(BuildApproval.newBuilder().build())
             .setServiceAccount("serviceAccount1079137720")
             .setAvailableSecrets(Secrets.newBuilder().build())
             .addAllWarnings(new ArrayList<Build.Warning>())
@@ -455,6 +462,82 @@ public class CloudBuildClientTest {
       String projectId = "projectId-894832108";
       String id = "id3355";
       client.retryBuildAsync(projectId, id).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void approveBuildTest() throws Exception {
+    Build expectedResponse =
+        Build.newBuilder()
+            .setName(BuildName.ofProjectBuildName("[PROJECT]", "[BUILD]").toString())
+            .setId("id3355")
+            .setProjectId("projectId-894832108")
+            .setStatusDetail("statusDetail1651087075")
+            .setSource(Source.newBuilder().build())
+            .addAllSteps(new ArrayList<BuildStep>())
+            .setResults(Results.newBuilder().build())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setStartTime(Timestamp.newBuilder().build())
+            .setFinishTime(Timestamp.newBuilder().build())
+            .setTimeout(Duration.newBuilder().build())
+            .addAllImages(new ArrayList<String>())
+            .setQueueTtl(Duration.newBuilder().build())
+            .setArtifacts(Artifacts.newBuilder().build())
+            .setLogsBucket("logsBucket1592573049")
+            .setSourceProvenance(SourceProvenance.newBuilder().build())
+            .setBuildTriggerId("buildTriggerId781747749")
+            .setOptions(BuildOptions.newBuilder().build())
+            .setLogUrl("logUrl-1097354357")
+            .putAllSubstitutions(new HashMap<String, String>())
+            .addAllTags(new ArrayList<String>())
+            .addAllSecrets(new ArrayList<Secret>())
+            .putAllTiming(new HashMap<String, TimeSpan>())
+            .setApproval(BuildApproval.newBuilder().build())
+            .setServiceAccount("serviceAccount1079137720")
+            .setAvailableSecrets(Secrets.newBuilder().build())
+            .addAllWarnings(new ArrayList<Build.Warning>())
+            .setFailureInfo(Build.FailureInfo.newBuilder().build())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("approveBuildTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockCloudBuild.addResponse(resultOperation);
+
+    String name = "name3373707";
+    ApprovalResult approvalResult = ApprovalResult.newBuilder().build();
+
+    Build actualResponse = client.approveBuildAsync(name, approvalResult).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockCloudBuild.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ApproveBuildRequest actualRequest = ((ApproveBuildRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertEquals(approvalResult, actualRequest.getApprovalResult());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void approveBuildExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockCloudBuild.addException(exception);
+
+    try {
+      String name = "name3373707";
+      ApprovalResult approvalResult = ApprovalResult.newBuilder().build();
+      client.approveBuildAsync(name, approvalResult).get();
       Assert.fail("No exception raised");
     } catch (ExecutionException e) {
       Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
@@ -739,6 +822,7 @@ public class CloudBuildClientTest {
             .addAllTags(new ArrayList<String>())
             .addAllSecrets(new ArrayList<Secret>())
             .putAllTiming(new HashMap<String, TimeSpan>())
+            .setApproval(BuildApproval.newBuilder().build())
             .setServiceAccount("serviceAccount1079137720")
             .setAvailableSecrets(Secrets.newBuilder().build())
             .addAllWarnings(new ArrayList<Build.Warning>())

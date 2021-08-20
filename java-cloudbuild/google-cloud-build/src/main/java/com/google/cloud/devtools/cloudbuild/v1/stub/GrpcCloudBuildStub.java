@@ -27,6 +27,7 @@ import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloudbuild.v1.ApproveBuildRequest;
 import com.google.cloudbuild.v1.Build;
 import com.google.cloudbuild.v1.BuildOperationMetadata;
 import com.google.cloudbuild.v1.BuildTrigger;
@@ -113,6 +114,15 @@ public class GrpcCloudBuildStub extends CloudBuildStub {
           .setRequestMarshaller(ProtoUtils.marshaller(RetryBuildRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
           .build();
+
+  private static final MethodDescriptor<ApproveBuildRequest, Operation>
+      approveBuildMethodDescriptor =
+          MethodDescriptor.<ApproveBuildRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.devtools.cloudbuild.v1.CloudBuild/ApproveBuild")
+              .setRequestMarshaller(ProtoUtils.marshaller(ApproveBuildRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .build();
 
   private static final MethodDescriptor<CreateBuildTriggerRequest, BuildTrigger>
       createBuildTriggerMethodDescriptor =
@@ -247,6 +257,9 @@ public class GrpcCloudBuildStub extends CloudBuildStub {
   private final UnaryCallable<RetryBuildRequest, Operation> retryBuildCallable;
   private final OperationCallable<RetryBuildRequest, Build, BuildOperationMetadata>
       retryBuildOperationCallable;
+  private final UnaryCallable<ApproveBuildRequest, Operation> approveBuildCallable;
+  private final OperationCallable<ApproveBuildRequest, Build, BuildOperationMetadata>
+      approveBuildOperationCallable;
   private final UnaryCallable<CreateBuildTriggerRequest, BuildTrigger> createBuildTriggerCallable;
   private final UnaryCallable<GetBuildTriggerRequest, BuildTrigger> getBuildTriggerCallable;
   private final UnaryCallable<ListBuildTriggersRequest, ListBuildTriggersResponse>
@@ -374,6 +387,16 @@ public class GrpcCloudBuildStub extends CloudBuildStub {
                   params.put("id", String.valueOf(request.getId()));
                   params.put("name", String.valueOf(request.getName()));
                   params.put("project_id", String.valueOf(request.getProjectId()));
+                  return params.build();
+                })
+            .build();
+    GrpcCallSettings<ApproveBuildRequest, Operation> approveBuildTransportSettings =
+        GrpcCallSettings.<ApproveBuildRequest, Operation>newBuilder()
+            .setMethodDescriptor(approveBuildMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
                   return params.build();
                 })
             .build();
@@ -546,6 +569,15 @@ public class GrpcCloudBuildStub extends CloudBuildStub {
             settings.retryBuildOperationSettings(),
             clientContext,
             operationsStub);
+    this.approveBuildCallable =
+        callableFactory.createUnaryCallable(
+            approveBuildTransportSettings, settings.approveBuildSettings(), clientContext);
+    this.approveBuildOperationCallable =
+        callableFactory.createOperationCallable(
+            approveBuildTransportSettings,
+            settings.approveBuildOperationSettings(),
+            clientContext,
+            operationsStub);
     this.createBuildTriggerCallable =
         callableFactory.createUnaryCallable(
             createBuildTriggerTransportSettings,
@@ -673,6 +705,17 @@ public class GrpcCloudBuildStub extends CloudBuildStub {
   public OperationCallable<RetryBuildRequest, Build, BuildOperationMetadata>
       retryBuildOperationCallable() {
     return retryBuildOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<ApproveBuildRequest, Operation> approveBuildCallable() {
+    return approveBuildCallable;
+  }
+
+  @Override
+  public OperationCallable<ApproveBuildRequest, Build, BuildOperationMetadata>
+      approveBuildOperationCallable() {
+    return approveBuildOperationCallable;
   }
 
   @Override

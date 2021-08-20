@@ -379,6 +379,22 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
               serviceAccount_ = s;
               break;
             }
+          case 354:
+            {
+              com.google.cloudbuild.v1.BuildApproval.Builder subBuilder = null;
+              if (approval_ != null) {
+                subBuilder = approval_.toBuilder();
+              }
+              approval_ =
+                  input.readMessage(
+                      com.google.cloudbuild.v1.BuildApproval.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(approval_);
+                approval_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
           case 362:
             {
               java.lang.String s = input.readStringRequireUtf8();
@@ -513,6 +529,17 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
+     * Build has been created and is pending execution and queuing. It has not
+     * been queued.
+     * </pre>
+     *
+     * <code>PENDING = 10;</code>
+     */
+    PENDING(10),
+    /**
+     *
+     *
+     * <pre>
      * Build or step is queued; work has not yet begun.
      * </pre>
      *
@@ -602,6 +629,17 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
      * <code>STATUS_UNKNOWN = 0;</code>
      */
     public static final int STATUS_UNKNOWN_VALUE = 0;
+    /**
+     *
+     *
+     * <pre>
+     * Build has been created and is pending execution and queuing. It has not
+     * been queued.
+     * </pre>
+     *
+     * <code>PENDING = 10;</code>
+     */
+    public static final int PENDING_VALUE = 10;
     /**
      *
      *
@@ -709,6 +747,8 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
       switch (value) {
         case 0:
           return STATUS_UNKNOWN;
+        case 10:
+          return PENDING;
         case 1:
           return QUEUED;
         case 2:
@@ -4319,6 +4359,63 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
     return map.get(key);
   }
 
+  public static final int APPROVAL_FIELD_NUMBER = 44;
+  private com.google.cloudbuild.v1.BuildApproval approval_;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Describes this build's approval configuration, status,
+   * and result.
+   * </pre>
+   *
+   * <code>
+   * .google.devtools.cloudbuild.v1.BuildApproval approval = 44 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the approval field is set.
+   */
+  @java.lang.Override
+  public boolean hasApproval() {
+    return approval_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Describes this build's approval configuration, status,
+   * and result.
+   * </pre>
+   *
+   * <code>
+   * .google.devtools.cloudbuild.v1.BuildApproval approval = 44 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The approval.
+   */
+  @java.lang.Override
+  public com.google.cloudbuild.v1.BuildApproval getApproval() {
+    return approval_ == null
+        ? com.google.cloudbuild.v1.BuildApproval.getDefaultInstance()
+        : approval_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Describes this build's approval configuration, status,
+   * and result.
+   * </pre>
+   *
+   * <code>
+   * .google.devtools.cloudbuild.v1.BuildApproval approval = 44 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloudbuild.v1.BuildApprovalOrBuilder getApprovalOrBuilder() {
+    return getApproval();
+  }
+
   public static final int SERVICE_ACCOUNT_FIELD_NUMBER = 42;
   private volatile java.lang.Object serviceAccount_;
   /**
@@ -4642,6 +4739,9 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
     if (!getServiceAccountBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 42, serviceAccount_);
     }
+    if (approval_ != null) {
+      output.writeMessage(44, getApproval());
+    }
     if (!getNameBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 45, name_);
     }
@@ -4759,6 +4859,9 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
     if (!getServiceAccountBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(42, serviceAccount_);
     }
+    if (approval_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(44, getApproval());
+    }
     if (!getNameBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(45, name_);
     }
@@ -4840,6 +4943,10 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
     if (!getTagsList().equals(other.getTagsList())) return false;
     if (!getSecretsList().equals(other.getSecretsList())) return false;
     if (!internalGetTiming().equals(other.internalGetTiming())) return false;
+    if (hasApproval() != other.hasApproval()) return false;
+    if (hasApproval()) {
+      if (!getApproval().equals(other.getApproval())) return false;
+    }
     if (!getServiceAccount().equals(other.getServiceAccount())) return false;
     if (hasAvailableSecrets() != other.hasAvailableSecrets()) return false;
     if (hasAvailableSecrets()) {
@@ -4940,6 +5047,10 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
     if (!internalGetTiming().getMap().isEmpty()) {
       hash = (37 * hash) + TIMING_FIELD_NUMBER;
       hash = (53 * hash) + internalGetTiming().hashCode();
+    }
+    if (hasApproval()) {
+      hash = (37 * hash) + APPROVAL_FIELD_NUMBER;
+      hash = (53 * hash) + getApproval().hashCode();
     }
     hash = (37 * hash) + SERVICE_ACCOUNT_FIELD_NUMBER;
     hash = (53 * hash) + getServiceAccount().hashCode();
@@ -5234,6 +5345,12 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
         secretsBuilder_.clear();
       }
       internalGetMutableTiming().clear();
+      if (approvalBuilder_ == null) {
+        approval_ = null;
+      } else {
+        approval_ = null;
+        approvalBuilder_ = null;
+      }
       serviceAccount_ = "";
 
       if (availableSecretsBuilder_ == null) {
@@ -5371,6 +5488,11 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
       }
       result.timing_ = internalGetTiming();
       result.timing_.makeImmutable();
+      if (approvalBuilder_ == null) {
+        result.approval_ = approval_;
+      } else {
+        result.approval_ = approvalBuilder_.build();
+      }
       result.serviceAccount_ = serviceAccount_;
       if (availableSecretsBuilder_ == null) {
         result.availableSecrets_ = availableSecrets_;
@@ -5577,6 +5699,9 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
         }
       }
       internalGetMutableTiming().mergeFrom(other.internalGetTiming());
+      if (other.hasApproval()) {
+        mergeApproval(other.getApproval());
+      }
       if (!other.getServiceAccount().isEmpty()) {
         serviceAccount_ = other.serviceAccount_;
         onChanged();
@@ -10043,6 +10168,218 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
         java.util.Map<java.lang.String, com.google.cloudbuild.v1.TimeSpan> values) {
       internalGetMutableTiming().getMutableMap().putAll(values);
       return this;
+    }
+
+    private com.google.cloudbuild.v1.BuildApproval approval_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloudbuild.v1.BuildApproval,
+            com.google.cloudbuild.v1.BuildApproval.Builder,
+            com.google.cloudbuild.v1.BuildApprovalOrBuilder>
+        approvalBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Describes this build's approval configuration, status,
+     * and result.
+     * </pre>
+     *
+     * <code>
+     * .google.devtools.cloudbuild.v1.BuildApproval approval = 44 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the approval field is set.
+     */
+    public boolean hasApproval() {
+      return approvalBuilder_ != null || approval_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Describes this build's approval configuration, status,
+     * and result.
+     * </pre>
+     *
+     * <code>
+     * .google.devtools.cloudbuild.v1.BuildApproval approval = 44 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The approval.
+     */
+    public com.google.cloudbuild.v1.BuildApproval getApproval() {
+      if (approvalBuilder_ == null) {
+        return approval_ == null
+            ? com.google.cloudbuild.v1.BuildApproval.getDefaultInstance()
+            : approval_;
+      } else {
+        return approvalBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Describes this build's approval configuration, status,
+     * and result.
+     * </pre>
+     *
+     * <code>
+     * .google.devtools.cloudbuild.v1.BuildApproval approval = 44 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setApproval(com.google.cloudbuild.v1.BuildApproval value) {
+      if (approvalBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        approval_ = value;
+        onChanged();
+      } else {
+        approvalBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Describes this build's approval configuration, status,
+     * and result.
+     * </pre>
+     *
+     * <code>
+     * .google.devtools.cloudbuild.v1.BuildApproval approval = 44 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setApproval(com.google.cloudbuild.v1.BuildApproval.Builder builderForValue) {
+      if (approvalBuilder_ == null) {
+        approval_ = builderForValue.build();
+        onChanged();
+      } else {
+        approvalBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Describes this build's approval configuration, status,
+     * and result.
+     * </pre>
+     *
+     * <code>
+     * .google.devtools.cloudbuild.v1.BuildApproval approval = 44 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder mergeApproval(com.google.cloudbuild.v1.BuildApproval value) {
+      if (approvalBuilder_ == null) {
+        if (approval_ != null) {
+          approval_ =
+              com.google.cloudbuild.v1.BuildApproval.newBuilder(approval_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          approval_ = value;
+        }
+        onChanged();
+      } else {
+        approvalBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Describes this build's approval configuration, status,
+     * and result.
+     * </pre>
+     *
+     * <code>
+     * .google.devtools.cloudbuild.v1.BuildApproval approval = 44 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder clearApproval() {
+      if (approvalBuilder_ == null) {
+        approval_ = null;
+        onChanged();
+      } else {
+        approval_ = null;
+        approvalBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Describes this build's approval configuration, status,
+     * and result.
+     * </pre>
+     *
+     * <code>
+     * .google.devtools.cloudbuild.v1.BuildApproval approval = 44 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloudbuild.v1.BuildApproval.Builder getApprovalBuilder() {
+
+      onChanged();
+      return getApprovalFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Describes this build's approval configuration, status,
+     * and result.
+     * </pre>
+     *
+     * <code>
+     * .google.devtools.cloudbuild.v1.BuildApproval approval = 44 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloudbuild.v1.BuildApprovalOrBuilder getApprovalOrBuilder() {
+      if (approvalBuilder_ != null) {
+        return approvalBuilder_.getMessageOrBuilder();
+      } else {
+        return approval_ == null
+            ? com.google.cloudbuild.v1.BuildApproval.getDefaultInstance()
+            : approval_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Describes this build's approval configuration, status,
+     * and result.
+     * </pre>
+     *
+     * <code>
+     * .google.devtools.cloudbuild.v1.BuildApproval approval = 44 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloudbuild.v1.BuildApproval,
+            com.google.cloudbuild.v1.BuildApproval.Builder,
+            com.google.cloudbuild.v1.BuildApprovalOrBuilder>
+        getApprovalFieldBuilder() {
+      if (approvalBuilder_ == null) {
+        approvalBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloudbuild.v1.BuildApproval,
+                com.google.cloudbuild.v1.BuildApproval.Builder,
+                com.google.cloudbuild.v1.BuildApprovalOrBuilder>(
+                getApproval(), getParentForChildren(), isClean());
+        approval_ = null;
+      }
+      return approvalBuilder_;
     }
 
     private java.lang.Object serviceAccount_ = "";

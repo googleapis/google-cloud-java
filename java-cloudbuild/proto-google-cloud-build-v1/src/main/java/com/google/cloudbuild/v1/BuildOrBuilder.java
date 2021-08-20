@@ -1046,6 +1046,50 @@ public interface BuildOrBuilder
    *
    *
    * <pre>
+   * Output only. Describes this build's approval configuration, status,
+   * and result.
+   * </pre>
+   *
+   * <code>
+   * .google.devtools.cloudbuild.v1.BuildApproval approval = 44 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the approval field is set.
+   */
+  boolean hasApproval();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Describes this build's approval configuration, status,
+   * and result.
+   * </pre>
+   *
+   * <code>
+   * .google.devtools.cloudbuild.v1.BuildApproval approval = 44 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The approval.
+   */
+  com.google.cloudbuild.v1.BuildApproval getApproval();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Describes this build's approval configuration, status,
+   * and result.
+   * </pre>
+   *
+   * <code>
+   * .google.devtools.cloudbuild.v1.BuildApproval approval = 44 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.cloudbuild.v1.BuildApprovalOrBuilder getApprovalOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * IAM service account whose credentials will be used at build runtime.
    * Must be of the format `projects/{PROJECT_ID}/serviceAccounts/{ACCOUNT}`.
    * ACCOUNT can be email address or uniqueId of the service account.

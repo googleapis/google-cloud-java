@@ -46,6 +46,7 @@ import com.google.api.gax.rpc.StubSettings;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloudbuild.v1.ApproveBuildRequest;
 import com.google.cloudbuild.v1.Build;
 import com.google.cloudbuild.v1.BuildOperationMetadata;
 import com.google.cloudbuild.v1.BuildTrigger;
@@ -132,6 +133,9 @@ public class CloudBuildStubSettings extends StubSettings<CloudBuildStubSettings>
   private final UnaryCallSettings<RetryBuildRequest, Operation> retryBuildSettings;
   private final OperationCallSettings<RetryBuildRequest, Build, BuildOperationMetadata>
       retryBuildOperationSettings;
+  private final UnaryCallSettings<ApproveBuildRequest, Operation> approveBuildSettings;
+  private final OperationCallSettings<ApproveBuildRequest, Build, BuildOperationMetadata>
+      approveBuildOperationSettings;
   private final UnaryCallSettings<CreateBuildTriggerRequest, BuildTrigger>
       createBuildTriggerSettings;
   private final UnaryCallSettings<GetBuildTriggerRequest, BuildTrigger> getBuildTriggerSettings;
@@ -371,6 +375,17 @@ public class CloudBuildStubSettings extends StubSettings<CloudBuildStubSettings>
     return retryBuildOperationSettings;
   }
 
+  /** Returns the object with the settings used for calls to approveBuild. */
+  public UnaryCallSettings<ApproveBuildRequest, Operation> approveBuildSettings() {
+    return approveBuildSettings;
+  }
+
+  /** Returns the object with the settings used for calls to approveBuild. */
+  public OperationCallSettings<ApproveBuildRequest, Build, BuildOperationMetadata>
+      approveBuildOperationSettings() {
+    return approveBuildOperationSettings;
+  }
+
   /** Returns the object with the settings used for calls to createBuildTrigger. */
   public UnaryCallSettings<CreateBuildTriggerRequest, BuildTrigger> createBuildTriggerSettings() {
     return createBuildTriggerSettings;
@@ -543,6 +558,8 @@ public class CloudBuildStubSettings extends StubSettings<CloudBuildStubSettings>
     cancelBuildSettings = settingsBuilder.cancelBuildSettings().build();
     retryBuildSettings = settingsBuilder.retryBuildSettings().build();
     retryBuildOperationSettings = settingsBuilder.retryBuildOperationSettings().build();
+    approveBuildSettings = settingsBuilder.approveBuildSettings().build();
+    approveBuildOperationSettings = settingsBuilder.approveBuildOperationSettings().build();
     createBuildTriggerSettings = settingsBuilder.createBuildTriggerSettings().build();
     getBuildTriggerSettings = settingsBuilder.getBuildTriggerSettings().build();
     listBuildTriggersSettings = settingsBuilder.listBuildTriggersSettings().build();
@@ -575,6 +592,9 @@ public class CloudBuildStubSettings extends StubSettings<CloudBuildStubSettings>
     private final UnaryCallSettings.Builder<RetryBuildRequest, Operation> retryBuildSettings;
     private final OperationCallSettings.Builder<RetryBuildRequest, Build, BuildOperationMetadata>
         retryBuildOperationSettings;
+    private final UnaryCallSettings.Builder<ApproveBuildRequest, Operation> approveBuildSettings;
+    private final OperationCallSettings.Builder<ApproveBuildRequest, Build, BuildOperationMetadata>
+        approveBuildOperationSettings;
     private final UnaryCallSettings.Builder<CreateBuildTriggerRequest, BuildTrigger>
         createBuildTriggerSettings;
     private final UnaryCallSettings.Builder<GetBuildTriggerRequest, BuildTrigger>
@@ -673,6 +693,8 @@ public class CloudBuildStubSettings extends StubSettings<CloudBuildStubSettings>
       cancelBuildSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       retryBuildSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       retryBuildOperationSettings = OperationCallSettings.newBuilder();
+      approveBuildSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      approveBuildOperationSettings = OperationCallSettings.newBuilder();
       createBuildTriggerSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       getBuildTriggerSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       listBuildTriggersSettings = PagedCallSettings.newBuilder(LIST_BUILD_TRIGGERS_PAGE_STR_FACT);
@@ -697,6 +719,7 @@ public class CloudBuildStubSettings extends StubSettings<CloudBuildStubSettings>
               listBuildsSettings,
               cancelBuildSettings,
               retryBuildSettings,
+              approveBuildSettings,
               createBuildTriggerSettings,
               getBuildTriggerSettings,
               listBuildTriggersSettings,
@@ -722,6 +745,8 @@ public class CloudBuildStubSettings extends StubSettings<CloudBuildStubSettings>
       cancelBuildSettings = settings.cancelBuildSettings.toBuilder();
       retryBuildSettings = settings.retryBuildSettings.toBuilder();
       retryBuildOperationSettings = settings.retryBuildOperationSettings.toBuilder();
+      approveBuildSettings = settings.approveBuildSettings.toBuilder();
+      approveBuildOperationSettings = settings.approveBuildOperationSettings.toBuilder();
       createBuildTriggerSettings = settings.createBuildTriggerSettings.toBuilder();
       getBuildTriggerSettings = settings.getBuildTriggerSettings.toBuilder();
       listBuildTriggersSettings = settings.listBuildTriggersSettings.toBuilder();
@@ -746,6 +771,7 @@ public class CloudBuildStubSettings extends StubSettings<CloudBuildStubSettings>
               listBuildsSettings,
               cancelBuildSettings,
               retryBuildSettings,
+              approveBuildSettings,
               createBuildTriggerSettings,
               getBuildTriggerSettings,
               listBuildTriggersSettings,
@@ -798,6 +824,11 @@ public class CloudBuildStubSettings extends StubSettings<CloudBuildStubSettings>
           .retryBuildSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .approveBuildSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
 
       builder
           .createBuildTriggerSettings()
@@ -888,6 +919,30 @@ public class CloudBuildStubSettings extends StubSettings<CloudBuildStubSettings>
               UnaryCallSettings.<RetryBuildRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
                   .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
                   .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Build.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(BuildOperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
+                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .approveBuildOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<ApproveBuildRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"))
                   .build())
           .setResponseTransformer(
               ProtoOperationTransformers.ResponseTransformer.create(Build.class))
@@ -1062,6 +1117,19 @@ public class CloudBuildStubSettings extends StubSettings<CloudBuildStubSettings>
     public OperationCallSettings.Builder<RetryBuildRequest, Build, BuildOperationMetadata>
         retryBuildOperationSettings() {
       return retryBuildOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to approveBuild. */
+    public UnaryCallSettings.Builder<ApproveBuildRequest, Operation> approveBuildSettings() {
+      return approveBuildSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to approveBuild. */
+    @BetaApi(
+        "The surface for use by generated code is not stable yet and may change in the future.")
+    public OperationCallSettings.Builder<ApproveBuildRequest, Build, BuildOperationMetadata>
+        approveBuildOperationSettings() {
+      return approveBuildOperationSettings;
     }
 
     /** Returns the builder for the settings used for calls to createBuildTrigger. */
