@@ -172,7 +172,7 @@ With Logging you can also list log entries that have been previously written. Ad
 imports at the top of your file:
 
 ```java
-import com.google.cloud.Page;
+import com.google.api.gax.paging.Page;
 import com.google.cloud.logging.LogEntry;
 import com.google.cloud.logging.Logging.EntryListOption;
 ```
