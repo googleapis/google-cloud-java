@@ -23,6 +23,7 @@ package com.google.pubsub.v1;
  *
  * <pre>
  * Response for the `ValidateSchema` method.
+ * Empty for now.
  * </pre>
  *
  * Protobuf type {@code google.pubsub.v1.ValidateSchemaResponse}
@@ -257,6 +258,7 @@ public final class ValidateSchemaResponse extends com.google.protobuf.GeneratedM
    *
    * <pre>
    * Response for the `ValidateSchema` method.
+   * Empty for now.
    * </pre>
    *
    * Protobuf type {@code google.pubsub.v1.ValidateSchemaResponse}

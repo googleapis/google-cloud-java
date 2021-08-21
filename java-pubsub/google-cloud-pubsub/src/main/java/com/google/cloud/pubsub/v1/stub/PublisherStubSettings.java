@@ -1,11 +1,11 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2021 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.pubsub.v1.stub;
 
 import static com.google.cloud.pubsub.v1.TopicAdminClient.ListTopicSnapshotsPagedResponse;
@@ -24,7 +25,7 @@ import com.google.api.core.ApiFuture;
 import com.google.api.core.BetaApi;
 import com.google.api.gax.batching.BatchingSettings;
 import com.google.api.gax.batching.FlowControlSettings;
-import com.google.api.gax.batching.FlowController.LimitExceededBehavior;
+import com.google.api.gax.batching.FlowController;
 import com.google.api.gax.batching.PartitionKey;
 import com.google.api.gax.batching.RequestBuilder;
 import com.google.api.gax.core.GaxProperties;
@@ -80,7 +81,7 @@ import java.util.List;
 import javax.annotation.Generated;
 import org.threeten.bp.Duration;
 
-// AUTO-GENERATED DOCUMENTATION AND CLASS
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
  * Settings class to configure an instance of {@link PublisherStub}.
  *
@@ -97,21 +98,21 @@ import org.threeten.bp.Duration;
  *
  * <p>For example, to set the total timeout of createTopic to 30 seconds:
  *
- * <pre>
- * <code>
- * PublisherStubSettings.Builder topicAdminSettingsBuilder =
- *     PublisherStubSettings.newBuilder();
+ * <pre>{@code
+ * PublisherStubSettings.Builder topicAdminSettingsBuilder = PublisherStubSettings.newBuilder();
  * topicAdminSettingsBuilder
  *     .createTopicSettings()
  *     .setRetrySettings(
- *         topicAdminSettingsBuilder.createTopicSettings().getRetrySettings().toBuilder()
+ *         topicAdminSettingsBuilder
+ *             .createTopicSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * PublisherStubSettings topicAdminSettings = topicAdminSettingsBuilder.build();
- * </code>
- * </pre>
+ * }</pre>
  */
-@Generated("by gapic-generator")
+@Generated("by gapic-generator-java")
 public class PublisherStubSettings extends StubSettings<PublisherStubSettings> {
   /** The default scopes of the service. */
   private static final ImmutableList<String> DEFAULT_SERVICE_SCOPES =
@@ -135,163 +136,12 @@ public class PublisherStubSettings extends StubSettings<PublisherStubSettings> {
           ListTopicSnapshotsRequest, ListTopicSnapshotsResponse, ListTopicSnapshotsPagedResponse>
       listTopicSnapshotsSettings;
   private final UnaryCallSettings<DeleteTopicRequest, Empty> deleteTopicSettings;
+  private final UnaryCallSettings<DetachSubscriptionRequest, DetachSubscriptionResponse>
+      detachSubscriptionSettings;
   private final UnaryCallSettings<SetIamPolicyRequest, Policy> setIamPolicySettings;
   private final UnaryCallSettings<GetIamPolicyRequest, Policy> getIamPolicySettings;
   private final UnaryCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
       testIamPermissionsSettings;
-  private final UnaryCallSettings<DetachSubscriptionRequest, DetachSubscriptionResponse>
-      detachSubscriptionSettings;
-
-  /** Returns the object with the settings used for calls to createTopic. */
-  public UnaryCallSettings<Topic, Topic> createTopicSettings() {
-    return createTopicSettings;
-  }
-
-  /** Returns the object with the settings used for calls to updateTopic. */
-  public UnaryCallSettings<UpdateTopicRequest, Topic> updateTopicSettings() {
-    return updateTopicSettings;
-  }
-
-  /** Returns the object with the settings used for calls to publish. */
-  public BatchingCallSettings<PublishRequest, PublishResponse> publishSettings() {
-    return publishSettings;
-  }
-
-  /** Returns the object with the settings used for calls to getTopic. */
-  public UnaryCallSettings<GetTopicRequest, Topic> getTopicSettings() {
-    return getTopicSettings;
-  }
-
-  /** Returns the object with the settings used for calls to listTopics. */
-  public PagedCallSettings<ListTopicsRequest, ListTopicsResponse, ListTopicsPagedResponse>
-      listTopicsSettings() {
-    return listTopicsSettings;
-  }
-
-  /** Returns the object with the settings used for calls to listTopicSubscriptions. */
-  public PagedCallSettings<
-          ListTopicSubscriptionsRequest,
-          ListTopicSubscriptionsResponse,
-          ListTopicSubscriptionsPagedResponse>
-      listTopicSubscriptionsSettings() {
-    return listTopicSubscriptionsSettings;
-  }
-
-  /** Returns the object with the settings used for calls to listTopicSnapshots. */
-  public PagedCallSettings<
-          ListTopicSnapshotsRequest, ListTopicSnapshotsResponse, ListTopicSnapshotsPagedResponse>
-      listTopicSnapshotsSettings() {
-    return listTopicSnapshotsSettings;
-  }
-
-  /** Returns the object with the settings used for calls to deleteTopic. */
-  public UnaryCallSettings<DeleteTopicRequest, Empty> deleteTopicSettings() {
-    return deleteTopicSettings;
-  }
-
-  /** Returns the object with the settings used for calls to setIamPolicy. */
-  public UnaryCallSettings<SetIamPolicyRequest, Policy> setIamPolicySettings() {
-    return setIamPolicySettings;
-  }
-
-  /** Returns the object with the settings used for calls to getIamPolicy. */
-  public UnaryCallSettings<GetIamPolicyRequest, Policy> getIamPolicySettings() {
-    return getIamPolicySettings;
-  }
-
-  /** Returns the object with the settings used for calls to testIamPermissions. */
-  public UnaryCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
-      testIamPermissionsSettings() {
-    return testIamPermissionsSettings;
-  }
-
-  /** Returns the object with the settings used for calls to detachSubscription. */
-  public UnaryCallSettings<DetachSubscriptionRequest, DetachSubscriptionResponse>
-      detachSubscriptionSettings() {
-    return detachSubscriptionSettings;
-  }
-
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
-  public PublisherStub createStub() throws IOException {
-    if (getTransportChannelProvider()
-        .getTransportName()
-        .equals(GrpcTransportChannel.getGrpcTransportName())) {
-      return GrpcPublisherStub.create(this);
-    } else {
-      throw new UnsupportedOperationException(
-          "Transport not supported: " + getTransportChannelProvider().getTransportName());
-    }
-  }
-
-  /** Returns a builder for the default ExecutorProvider for this service. */
-  public static InstantiatingExecutorProvider.Builder defaultExecutorProviderBuilder() {
-    return InstantiatingExecutorProvider.newBuilder();
-  }
-
-  /** Returns the default service endpoint. */
-  public static String getDefaultEndpoint() {
-    return "pubsub.googleapis.com:443";
-  }
-
-  /** Returns the default service scopes. */
-  public static List<String> getDefaultServiceScopes() {
-    return DEFAULT_SERVICE_SCOPES;
-  }
-
-  /** Returns a builder for the default credentials for this service. */
-  public static GoogleCredentialsProvider.Builder defaultCredentialsProviderBuilder() {
-    return GoogleCredentialsProvider.newBuilder().setScopesToApply(DEFAULT_SERVICE_SCOPES);
-  }
-
-  /** Returns a builder for the default ChannelProvider for this service. */
-  public static InstantiatingGrpcChannelProvider.Builder defaultGrpcTransportProviderBuilder() {
-    return InstantiatingGrpcChannelProvider.newBuilder()
-        .setMaxInboundMessageSize(Integer.MAX_VALUE);
-  }
-
-  public static TransportChannelProvider defaultTransportChannelProvider() {
-    return defaultGrpcTransportProviderBuilder().build();
-  }
-
-  @BetaApi("The surface for customizing headers is not stable yet and may change in the future.")
-  public static ApiClientHeaderProvider.Builder defaultApiClientHeaderProviderBuilder() {
-    return ApiClientHeaderProvider.newBuilder()
-        .setGeneratedLibToken("gapic", GaxProperties.getLibraryVersion(PublisherStubSettings.class))
-        .setTransportToken(
-            GaxGrpcProperties.getGrpcTokenName(), GaxGrpcProperties.getGrpcVersion());
-  }
-
-  /** Returns a new builder for this class. */
-  public static Builder newBuilder() {
-    return Builder.createDefault();
-  }
-
-  /** Returns a new builder for this class. */
-  public static Builder newBuilder(ClientContext clientContext) {
-    return new Builder(clientContext);
-  }
-
-  /** Returns a builder containing all the values of this settings class. */
-  public Builder toBuilder() {
-    return new Builder(this);
-  }
-
-  protected PublisherStubSettings(Builder settingsBuilder) throws IOException {
-    super(settingsBuilder);
-
-    createTopicSettings = settingsBuilder.createTopicSettings().build();
-    updateTopicSettings = settingsBuilder.updateTopicSettings().build();
-    publishSettings = settingsBuilder.publishSettings().build();
-    getTopicSettings = settingsBuilder.getTopicSettings().build();
-    listTopicsSettings = settingsBuilder.listTopicsSettings().build();
-    listTopicSubscriptionsSettings = settingsBuilder.listTopicSubscriptionsSettings().build();
-    listTopicSnapshotsSettings = settingsBuilder.listTopicSnapshotsSettings().build();
-    deleteTopicSettings = settingsBuilder.deleteTopicSettings().build();
-    setIamPolicySettings = settingsBuilder.setIamPolicySettings().build();
-    getIamPolicySettings = settingsBuilder.getIamPolicySettings().build();
-    testIamPermissionsSettings = settingsBuilder.testIamPermissionsSettings().build();
-    detachSubscriptionSettings = settingsBuilder.detachSubscriptionSettings().build();
-  }
 
   private static final PagedListDescriptor<ListTopicsRequest, ListTopicsResponse, Topic>
       LIST_TOPICS_PAGE_STR_DESC =
@@ -323,9 +173,9 @@ public class PublisherStubSettings extends StubSettings<PublisherStubSettings> {
 
             @Override
             public Iterable<Topic> extractResources(ListTopicsResponse payload) {
-              return payload.getTopicsList() != null
-                  ? payload.getTopicsList()
-                  : ImmutableList.<Topic>of();
+              return payload.getTopicsList() == null
+                  ? ImmutableList.<Topic>of()
+                  : payload.getTopicsList();
             }
           };
 
@@ -365,9 +215,9 @@ public class PublisherStubSettings extends StubSettings<PublisherStubSettings> {
 
             @Override
             public Iterable<String> extractResources(ListTopicSubscriptionsResponse payload) {
-              return payload.getSubscriptionsList() != null
-                  ? payload.getSubscriptionsList()
-                  : ImmutableList.<String>of();
+              return payload.getSubscriptionsList() == null
+                  ? ImmutableList.<String>of()
+                  : payload.getSubscriptionsList();
             }
           };
 
@@ -404,9 +254,9 @@ public class PublisherStubSettings extends StubSettings<PublisherStubSettings> {
 
             @Override
             public Iterable<String> extractResources(ListTopicSnapshotsResponse payload) {
-              return payload.getSnapshotsList() != null
-                  ? payload.getSnapshotsList()
-                  : ImmutableList.<String>of();
+              return payload.getSnapshotsList() == null
+                  ? ImmutableList.<String>of()
+                  : payload.getSnapshotsList();
             }
           };
 
@@ -509,8 +359,7 @@ public class PublisherStubSettings extends StubSettings<PublisherStubSettings> {
             List<String> subresponseElements = new ArrayList<>();
             long subresponseCount = responder.getMessageCount();
             for (int i = 0; i < subresponseCount; i++) {
-              subresponseElements.add(batchResponse.getMessageIds(batchMessageIndex));
-              batchMessageIndex += 1;
+              subresponseElements.add(batchResponse.getMessageIds(batchMessageIndex++));
             }
             PublishResponse response =
                 PublishResponse.newBuilder().addAllMessageIds(subresponseElements).build();
@@ -538,10 +387,165 @@ public class PublisherStubSettings extends StubSettings<PublisherStubSettings> {
         }
       };
 
+  /** Returns the object with the settings used for calls to createTopic. */
+  public UnaryCallSettings<Topic, Topic> createTopicSettings() {
+    return createTopicSettings;
+  }
+
+  /** Returns the object with the settings used for calls to updateTopic. */
+  public UnaryCallSettings<UpdateTopicRequest, Topic> updateTopicSettings() {
+    return updateTopicSettings;
+  }
+
+  /** Returns the object with the settings used for calls to publish. */
+  public BatchingCallSettings<PublishRequest, PublishResponse> publishSettings() {
+    return publishSettings;
+  }
+
+  /** Returns the object with the settings used for calls to getTopic. */
+  public UnaryCallSettings<GetTopicRequest, Topic> getTopicSettings() {
+    return getTopicSettings;
+  }
+
+  /** Returns the object with the settings used for calls to listTopics. */
+  public PagedCallSettings<ListTopicsRequest, ListTopicsResponse, ListTopicsPagedResponse>
+      listTopicsSettings() {
+    return listTopicsSettings;
+  }
+
+  /** Returns the object with the settings used for calls to listTopicSubscriptions. */
+  public PagedCallSettings<
+          ListTopicSubscriptionsRequest,
+          ListTopicSubscriptionsResponse,
+          ListTopicSubscriptionsPagedResponse>
+      listTopicSubscriptionsSettings() {
+    return listTopicSubscriptionsSettings;
+  }
+
+  /** Returns the object with the settings used for calls to listTopicSnapshots. */
+  public PagedCallSettings<
+          ListTopicSnapshotsRequest, ListTopicSnapshotsResponse, ListTopicSnapshotsPagedResponse>
+      listTopicSnapshotsSettings() {
+    return listTopicSnapshotsSettings;
+  }
+
+  /** Returns the object with the settings used for calls to deleteTopic. */
+  public UnaryCallSettings<DeleteTopicRequest, Empty> deleteTopicSettings() {
+    return deleteTopicSettings;
+  }
+
+  /** Returns the object with the settings used for calls to detachSubscription. */
+  public UnaryCallSettings<DetachSubscriptionRequest, DetachSubscriptionResponse>
+      detachSubscriptionSettings() {
+    return detachSubscriptionSettings;
+  }
+
+  /** Returns the object with the settings used for calls to setIamPolicy. */
+  public UnaryCallSettings<SetIamPolicyRequest, Policy> setIamPolicySettings() {
+    return setIamPolicySettings;
+  }
+
+  /** Returns the object with the settings used for calls to getIamPolicy. */
+  public UnaryCallSettings<GetIamPolicyRequest, Policy> getIamPolicySettings() {
+    return getIamPolicySettings;
+  }
+
+  /** Returns the object with the settings used for calls to testIamPermissions. */
+  public UnaryCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
+      testIamPermissionsSettings() {
+    return testIamPermissionsSettings;
+  }
+
+  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
+  public PublisherStub createStub() throws IOException {
+    if (getTransportChannelProvider()
+        .getTransportName()
+        .equals(GrpcTransportChannel.getGrpcTransportName())) {
+      return GrpcPublisherStub.create(this);
+    }
+    throw new UnsupportedOperationException(
+        String.format(
+            "Transport not supported: %s", getTransportChannelProvider().getTransportName()));
+  }
+
+  /** Returns a builder for the default ExecutorProvider for this service. */
+  public static InstantiatingExecutorProvider.Builder defaultExecutorProviderBuilder() {
+    return InstantiatingExecutorProvider.newBuilder();
+  }
+
+  /** Returns the default service endpoint. */
+  public static String getDefaultEndpoint() {
+    return "pubsub.googleapis.com:443";
+  }
+
+  /** Returns the default mTLS service endpoint. */
+  public static String getDefaultMtlsEndpoint() {
+    return "pubsub.mtls.googleapis.com:443";
+  }
+
+  /** Returns the default service scopes. */
+  public static List<String> getDefaultServiceScopes() {
+    return DEFAULT_SERVICE_SCOPES;
+  }
+
+  /** Returns a builder for the default credentials for this service. */
+  public static GoogleCredentialsProvider.Builder defaultCredentialsProviderBuilder() {
+    return GoogleCredentialsProvider.newBuilder().setScopesToApply(DEFAULT_SERVICE_SCOPES);
+  }
+
+  /** Returns a builder for the default ChannelProvider for this service. */
+  public static InstantiatingGrpcChannelProvider.Builder defaultGrpcTransportProviderBuilder() {
+    return InstantiatingGrpcChannelProvider.newBuilder()
+        .setMaxInboundMessageSize(Integer.MAX_VALUE);
+  }
+
+  public static TransportChannelProvider defaultTransportChannelProvider() {
+    return defaultGrpcTransportProviderBuilder().build();
+  }
+
+  @BetaApi("The surface for customizing headers is not stable yet and may change in the future.")
+  public static ApiClientHeaderProvider.Builder defaultApiClientHeaderProviderBuilder() {
+    return ApiClientHeaderProvider.newBuilder()
+        .setGeneratedLibToken("gapic", GaxProperties.getLibraryVersion(PublisherStubSettings.class))
+        .setTransportToken(
+            GaxGrpcProperties.getGrpcTokenName(), GaxGrpcProperties.getGrpcVersion());
+  }
+
+  /** Returns a new builder for this class. */
+  public static Builder newBuilder() {
+    return Builder.createDefault();
+  }
+
+  /** Returns a new builder for this class. */
+  public static Builder newBuilder(ClientContext clientContext) {
+    return new Builder(clientContext);
+  }
+
+  /** Returns a builder containing all the values of this settings class. */
+  public Builder toBuilder() {
+    return new Builder(this);
+  }
+
+  protected PublisherStubSettings(Builder settingsBuilder) throws IOException {
+    super(settingsBuilder);
+
+    createTopicSettings = settingsBuilder.createTopicSettings().build();
+    updateTopicSettings = settingsBuilder.updateTopicSettings().build();
+    publishSettings = settingsBuilder.publishSettings().build();
+    getTopicSettings = settingsBuilder.getTopicSettings().build();
+    listTopicsSettings = settingsBuilder.listTopicsSettings().build();
+    listTopicSubscriptionsSettings = settingsBuilder.listTopicSubscriptionsSettings().build();
+    listTopicSnapshotsSettings = settingsBuilder.listTopicSnapshotsSettings().build();
+    deleteTopicSettings = settingsBuilder.deleteTopicSettings().build();
+    detachSubscriptionSettings = settingsBuilder.detachSubscriptionSettings().build();
+    setIamPolicySettings = settingsBuilder.setIamPolicySettings().build();
+    getIamPolicySettings = settingsBuilder.getIamPolicySettings().build();
+    testIamPermissionsSettings = settingsBuilder.testIamPermissionsSettings().build();
+  }
+
   /** Builder for PublisherStubSettings. */
   public static class Builder extends StubSettings.Builder<PublisherStubSettings, Builder> {
     private final ImmutableList<UnaryCallSettings.Builder<?, ?>> unaryMethodSettingsBuilders;
-
     private final UnaryCallSettings.Builder<Topic, Topic> createTopicSettings;
     private final UnaryCallSettings.Builder<UpdateTopicRequest, Topic> updateTopicSettings;
     private final BatchingCallSettings.Builder<PublishRequest, PublishResponse> publishSettings;
@@ -558,13 +562,12 @@ public class PublisherStubSettings extends StubSettings<PublisherStubSettings> {
             ListTopicSnapshotsRequest, ListTopicSnapshotsResponse, ListTopicSnapshotsPagedResponse>
         listTopicSnapshotsSettings;
     private final UnaryCallSettings.Builder<DeleteTopicRequest, Empty> deleteTopicSettings;
+    private final UnaryCallSettings.Builder<DetachSubscriptionRequest, DetachSubscriptionResponse>
+        detachSubscriptionSettings;
     private final UnaryCallSettings.Builder<SetIamPolicyRequest, Policy> setIamPolicySettings;
     private final UnaryCallSettings.Builder<GetIamPolicyRequest, Policy> getIamPolicySettings;
     private final UnaryCallSettings.Builder<TestIamPermissionsRequest, TestIamPermissionsResponse>
         testIamPermissionsSettings;
-    private final UnaryCallSettings.Builder<DetachSubscriptionRequest, DetachSubscriptionResponse>
-        detachSubscriptionSettings;
-
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
 
@@ -572,16 +575,10 @@ public class PublisherStubSettings extends StubSettings<PublisherStubSettings> {
       ImmutableMap.Builder<String, ImmutableSet<StatusCode.Code>> definitions =
           ImmutableMap.builder();
       definitions.put(
-          "retry_policy_1_codes",
+          "retry_policy_0_codes",
           ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList(StatusCode.Code.UNAVAILABLE)));
-      definitions.put("no_retry_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
       definitions.put(
-          "retry_policy_3_codes",
-          ImmutableSet.copyOf(
-              Lists.<StatusCode.Code>newArrayList(
-                  StatusCode.Code.UNKNOWN, StatusCode.Code.ABORTED, StatusCode.Code.UNAVAILABLE)));
-      definitions.put(
-          "retry_policy_2_codes",
+          "retry_policy_1_codes",
           ImmutableSet.copyOf(
               Lists.<StatusCode.Code>newArrayList(
                   StatusCode.Code.ABORTED,
@@ -591,6 +588,11 @@ public class PublisherStubSettings extends StubSettings<PublisherStubSettings> {
                   StatusCode.Code.UNKNOWN,
                   StatusCode.Code.UNAVAILABLE,
                   StatusCode.Code.DEADLINE_EXCEEDED)));
+      definitions.put(
+          "retry_policy_2_codes",
+          ImmutableSet.copyOf(
+              Lists.<StatusCode.Code>newArrayList(
+                  StatusCode.Code.UNKNOWN, StatusCode.Code.ABORTED, StatusCode.Code.UNAVAILABLE)));
       RETRYABLE_CODE_DEFINITIONS = definitions.build();
     }
 
@@ -599,6 +601,17 @@ public class PublisherStubSettings extends StubSettings<PublisherStubSettings> {
     static {
       ImmutableMap.Builder<String, RetrySettings> definitions = ImmutableMap.builder();
       RetrySettings settings = null;
+      settings =
+          RetrySettings.newBuilder()
+              .setInitialRetryDelay(Duration.ofMillis(100L))
+              .setRetryDelayMultiplier(1.3)
+              .setMaxRetryDelay(Duration.ofMillis(60000L))
+              .setInitialRpcTimeout(Duration.ofMillis(60000L))
+              .setRpcTimeoutMultiplier(1.0)
+              .setMaxRpcTimeout(Duration.ofMillis(60000L))
+              .setTotalTimeout(Duration.ofMillis(60000L))
+              .build();
+      definitions.put("retry_policy_0_params", settings);
       settings =
           RetrySettings.newBuilder()
               .setInitialRetryDelay(Duration.ofMillis(100L))
@@ -620,56 +633,32 @@ public class PublisherStubSettings extends StubSettings<PublisherStubSettings> {
               .setMaxRpcTimeout(Duration.ofMillis(60000L))
               .setTotalTimeout(Duration.ofMillis(60000L))
               .build();
-      definitions.put("retry_policy_3_params", settings);
-      settings =
-          RetrySettings.newBuilder()
-              .setInitialRetryDelay(Duration.ofMillis(100L))
-              .setRetryDelayMultiplier(1.3)
-              .setMaxRetryDelay(Duration.ofMillis(60000L))
-              .setInitialRpcTimeout(Duration.ofMillis(60000L))
-              .setRpcTimeoutMultiplier(1.0)
-              .setMaxRpcTimeout(Duration.ofMillis(60000L))
-              .setTotalTimeout(Duration.ofMillis(60000L))
-              .build();
       definitions.put("retry_policy_2_params", settings);
-      settings = RetrySettings.newBuilder().setRpcTimeoutMultiplier(1.0).build();
-      definitions.put("no_retry_params", settings);
       RETRY_PARAM_DEFINITIONS = definitions.build();
     }
 
     protected Builder() {
-      this((ClientContext) null);
+      this(((ClientContext) null));
     }
 
     protected Builder(ClientContext clientContext) {
       super(clientContext);
 
       createTopicSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       updateTopicSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       publishSettings =
           BatchingCallSettings.newBuilder(PUBLISH_BATCHING_DESC)
               .setBatchingSettings(BatchingSettings.newBuilder().build());
-
       getTopicSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       listTopicsSettings = PagedCallSettings.newBuilder(LIST_TOPICS_PAGE_STR_FACT);
-
       listTopicSubscriptionsSettings =
           PagedCallSettings.newBuilder(LIST_TOPIC_SUBSCRIPTIONS_PAGE_STR_FACT);
-
       listTopicSnapshotsSettings = PagedCallSettings.newBuilder(LIST_TOPIC_SNAPSHOTS_PAGE_STR_FACT);
-
       deleteTopicSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
-      setIamPolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
-      getIamPolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
-      testIamPermissionsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       detachSubscriptionSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      setIamPolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      getIamPolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      testIamPermissionsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -681,98 +670,11 @@ public class PublisherStubSettings extends StubSettings<PublisherStubSettings> {
               listTopicSubscriptionsSettings,
               listTopicSnapshotsSettings,
               deleteTopicSettings,
+              detachSubscriptionSettings,
               setIamPolicySettings,
               getIamPolicySettings,
-              testIamPermissionsSettings,
-              detachSubscriptionSettings);
-
+              testIamPermissionsSettings);
       initDefaults(this);
-    }
-
-    private static Builder createDefault() {
-      Builder builder = new Builder((ClientContext) null);
-      builder.setTransportChannelProvider(defaultTransportChannelProvider());
-      builder.setCredentialsProvider(defaultCredentialsProviderBuilder().build());
-      builder.setInternalHeaderProvider(defaultApiClientHeaderProviderBuilder().build());
-      builder.setEndpoint(getDefaultEndpoint());
-      return initDefaults(builder);
-    }
-
-    private static Builder initDefaults(Builder builder) {
-
-      builder
-          .createTopicSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
-
-      builder
-          .updateTopicSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
-
-      builder
-          .publishSettings()
-          .setBatchingSettings(
-              BatchingSettings.newBuilder()
-                  .setElementCountThreshold(100L)
-                  .setRequestByteThreshold(1048576L)
-                  .setDelayThreshold(Duration.ofMillis(10))
-                  .setFlowControlSettings(
-                      FlowControlSettings.newBuilder()
-                          .setLimitExceededBehavior(LimitExceededBehavior.Ignore)
-                          .build())
-                  .build());
-      builder
-          .publishSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_2_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_2_params"));
-
-      builder
-          .getTopicSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_3_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_3_params"));
-
-      builder
-          .listTopicsSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_3_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_3_params"));
-
-      builder
-          .listTopicSubscriptionsSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_3_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_3_params"));
-
-      builder
-          .listTopicSnapshotsSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_3_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_3_params"));
-
-      builder
-          .deleteTopicSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
-
-      builder
-          .setIamPolicySettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
-
-      builder
-          .getIamPolicySettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_3_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_3_params"));
-
-      builder
-          .testIamPermissionsSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
-
-      builder
-          .detachSubscriptionSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
-
-      return builder;
     }
 
     protected Builder(PublisherStubSettings settings) {
@@ -786,10 +688,10 @@ public class PublisherStubSettings extends StubSettings<PublisherStubSettings> {
       listTopicSubscriptionsSettings = settings.listTopicSubscriptionsSettings.toBuilder();
       listTopicSnapshotsSettings = settings.listTopicSnapshotsSettings.toBuilder();
       deleteTopicSettings = settings.deleteTopicSettings.toBuilder();
+      detachSubscriptionSettings = settings.detachSubscriptionSettings.toBuilder();
       setIamPolicySettings = settings.setIamPolicySettings.toBuilder();
       getIamPolicySettings = settings.getIamPolicySettings.toBuilder();
       testIamPermissionsSettings = settings.testIamPermissionsSettings.toBuilder();
-      detachSubscriptionSettings = settings.detachSubscriptionSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -801,20 +703,109 @@ public class PublisherStubSettings extends StubSettings<PublisherStubSettings> {
               listTopicSubscriptionsSettings,
               listTopicSnapshotsSettings,
               deleteTopicSettings,
+              detachSubscriptionSettings,
               setIamPolicySettings,
               getIamPolicySettings,
-              testIamPermissionsSettings,
-              detachSubscriptionSettings);
+              testIamPermissionsSettings);
     }
 
-    // NEXT_MAJOR_VER: remove 'throws Exception'
+    private static Builder createDefault() {
+      Builder builder = new Builder(((ClientContext) null));
+
+      builder.setTransportChannelProvider(defaultTransportChannelProvider());
+      builder.setCredentialsProvider(defaultCredentialsProviderBuilder().build());
+      builder.setInternalHeaderProvider(defaultApiClientHeaderProviderBuilder().build());
+      builder.setEndpoint(getDefaultEndpoint());
+      builder.setMtlsEndpoint(getDefaultMtlsEndpoint());
+      builder.setSwitchToMtlsEndpointAllowed(true);
+
+      return initDefaults(builder);
+    }
+
+    private static Builder initDefaults(Builder builder) {
+      builder
+          .createTopicSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .updateTopicSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .publishSettings()
+          .setBatchingSettings(
+              BatchingSettings.newBuilder()
+                  .setElementCountThreshold(100L)
+                  .setRequestByteThreshold(1048576L)
+                  .setDelayThreshold(Duration.ofMillis(10L))
+                  .setFlowControlSettings(
+                      FlowControlSettings.newBuilder()
+                          .setLimitExceededBehavior(FlowController.LimitExceededBehavior.Ignore)
+                          .build())
+                  .build());
+
+      builder
+          .publishSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
+
+      builder
+          .getTopicSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_2_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_2_params"));
+
+      builder
+          .listTopicsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_2_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_2_params"));
+
+      builder
+          .listTopicSubscriptionsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_2_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_2_params"));
+
+      builder
+          .listTopicSnapshotsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_2_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_2_params"));
+
+      builder
+          .deleteTopicSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .detachSubscriptionSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .setIamPolicySettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .getIamPolicySettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_2_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_2_params"));
+
+      builder
+          .testIamPermissionsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      return builder;
+    }
+
     /**
      * Applies the given settings updater function to all of the unary API methods in this service.
      *
      * <p>Note: This method does not support applying settings to streaming methods.
      */
     public Builder applyToAllUnaryMethods(
-        ApiFunction<UnaryCallSettings.Builder<?, ?>, Void> settingsUpdater) throws Exception {
+        ApiFunction<UnaryCallSettings.Builder<?, ?>, Void> settingsUpdater) {
       super.applyToAllUnaryMethods(unaryMethodSettingsBuilders, settingsUpdater);
       return this;
     }
@@ -870,6 +861,12 @@ public class PublisherStubSettings extends StubSettings<PublisherStubSettings> {
       return deleteTopicSettings;
     }
 
+    /** Returns the builder for the settings used for calls to detachSubscription. */
+    public UnaryCallSettings.Builder<DetachSubscriptionRequest, DetachSubscriptionResponse>
+        detachSubscriptionSettings() {
+      return detachSubscriptionSettings;
+    }
+
     /** Returns the builder for the settings used for calls to setIamPolicy. */
     public UnaryCallSettings.Builder<SetIamPolicyRequest, Policy> setIamPolicySettings() {
       return setIamPolicySettings;
@@ -884,12 +881,6 @@ public class PublisherStubSettings extends StubSettings<PublisherStubSettings> {
     public UnaryCallSettings.Builder<TestIamPermissionsRequest, TestIamPermissionsResponse>
         testIamPermissionsSettings() {
       return testIamPermissionsSettings;
-    }
-
-    /** Returns the builder for the settings used for calls to detachSubscription. */
-    public UnaryCallSettings.Builder<DetachSubscriptionRequest, DetachSubscriptionResponse>
-        detachSubscriptionSettings() {
-      return detachSubscriptionSettings;
     }
 
     @Override

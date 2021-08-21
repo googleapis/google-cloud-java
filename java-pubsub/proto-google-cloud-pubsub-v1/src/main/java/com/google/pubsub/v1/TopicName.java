@@ -1,11 +1,11 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2021 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -22,27 +22,42 @@ import com.google.api.pathtemplate.ValidationException;
 import com.google.api.resourcenames.ResourceName;
 import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableMap;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Map;
 import java.util.Objects;
+import javax.annotation.Generated;
 
-/** AUTO-GENERATED DOCUMENTATION AND CLASS */
-@javax.annotation.Generated("by GAPIC protoc plugin")
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
+@Generated("by gapic-generator-java")
 public class TopicName implements ResourceName {
-
-  @Deprecated
-  protected TopicName() {}
-
-  private static final PathTemplate PROJECT_TOPIC_PATH_TEMPLATE =
+  private static final PathTemplate PROJECT_TOPIC =
       PathTemplate.createWithoutUrlEncoding("projects/{project}/topics/{topic}");
-  private static final String DELETED_TOPIC_FIXED_VALUE = "_deleted-topic_";
-  private static final TopicName DELETED_TOPIC_INSTANCE = new TopicName("_deleted-topic_");
-
+  private static final String DELETED_TOPIC = "_deleted-topic_";
   private volatile Map<String, String> fieldValuesMap;
   private PathTemplate pathTemplate;
   private String fixedValue;
+  private final String project;
+  private final String topic;
 
-  private String project;
-  private String topic;
+  @Deprecated
+  protected TopicName() {
+    project = null;
+    topic = null;
+  }
+
+  private TopicName(Builder builder) {
+    project = Preconditions.checkNotNull(builder.getProject());
+    topic = Preconditions.checkNotNull(builder.getTopic());
+    pathTemplate = PROJECT_TOPIC;
+  }
+
+  private TopicName(String fixedValue) {
+    this.fixedValue = fixedValue;
+    fieldValuesMap = ImmutableMap.of("", fixedValue);
+    project = null;
+    topic = null;
+  }
 
   public String getProject() {
     return project;
@@ -50,17 +65,6 @@ public class TopicName implements ResourceName {
 
   public String getTopic() {
     return topic;
-  }
-
-  private TopicName(Builder builder) {
-    project = Preconditions.checkNotNull(builder.getProject());
-    topic = Preconditions.checkNotNull(builder.getTopic());
-    pathTemplate = PROJECT_TOPIC_PATH_TEMPLATE;
-  }
-
-  private TopicName(String fixedValue) {
-    this.fixedValue = fixedValue;
-    fieldValuesMap = ImmutableMap.of("", fixedValue);
   }
 
   public static Builder newBuilder() {
@@ -77,17 +81,17 @@ public class TopicName implements ResourceName {
   }
 
   public static TopicName of(String project, String topic) {
-    return newProjectTopicBuilder().setProject(project).setTopic(topic).build();
+    return newBuilder().setProject(project).setTopic(topic).build();
   }
 
   @BetaApi("The static create methods are not stable yet and may be changed in the future.")
   public static TopicName ofProjectTopicName(String project, String topic) {
-    return newProjectTopicBuilder().setProject(project).setTopic(topic).build();
+    return newBuilder().setProject(project).setTopic(topic).build();
   }
 
   @BetaApi("The static create methods are not stable yet and may be changed in the future.")
   public static TopicName ofDeletedTopicName() {
-    return DELETED_TOPIC_INSTANCE;
+    return new TopicName("_deleted-topic_");
   }
 
   public static String format(String project, String topic) {
@@ -101,25 +105,44 @@ public class TopicName implements ResourceName {
 
   @BetaApi("The static format methods are not stable yet and may be changed in the future.")
   public static String formatDeletedTopicName() {
-    return DELETED_TOPIC_FIXED_VALUE;
+    return "_deleted-topic_";
   }
 
   public static TopicName parse(String formattedString) {
     if (formattedString.isEmpty()) {
       return null;
     }
-    if (PROJECT_TOPIC_PATH_TEMPLATE.matches(formattedString)) {
-      Map<String, String> matchMap = PROJECT_TOPIC_PATH_TEMPLATE.match(formattedString);
+    if (PROJECT_TOPIC.matches(formattedString)) {
+      Map<String, String> matchMap = PROJECT_TOPIC.match(formattedString);
       return ofProjectTopicName(matchMap.get("project"), matchMap.get("topic"));
-    } else if (DELETED_TOPIC_FIXED_VALUE.equals(formattedString)) {
-      return DELETED_TOPIC_INSTANCE;
+    } else if (DELETED_TOPIC.equals(formattedString)) {
+      return new TopicName("_deleted-topic_");
     }
-    throw new ValidationException("JobName.parse: formattedString not in valid format");
+    throw new ValidationException("TopicName.parse: formattedString not in valid format");
+  }
+
+  public static List<TopicName> parseList(List<String> formattedStrings) {
+    List<TopicName> list = new ArrayList<>(formattedStrings.size());
+    for (String formattedString : formattedStrings) {
+      list.add(parse(formattedString));
+    }
+    return list;
+  }
+
+  public static List<String> toStringList(List<TopicName> values) {
+    List<String> list = new ArrayList<>(values.size());
+    for (TopicName value : values) {
+      if (value == null) {
+        list.add("");
+      } else {
+        list.add(value.toString());
+      }
+    }
+    return list;
   }
 
   public static boolean isParsableFrom(String formattedString) {
-    return PROJECT_TOPIC_PATH_TEMPLATE.matches(formattedString)
-        || DELETED_TOPIC_FIXED_VALUE.equals(formattedString);
+    return PROJECT_TOPIC.matches(formattedString) || DELETED_TOPIC.equals(formattedString);
   }
 
   @Override
@@ -150,9 +173,30 @@ public class TopicName implements ResourceName {
     return fixedValue != null ? fixedValue : pathTemplate.instantiate(getFieldValuesMap());
   }
 
+  @Override
+  public boolean equals(Object o) {
+    if (o == this) {
+      return true;
+    }
+    if (o != null || getClass() == o.getClass()) {
+      TopicName that = ((TopicName) o);
+      return Objects.equals(this.project, that.project) && Objects.equals(this.topic, that.topic);
+    }
+    return false;
+  }
+
+  @Override
+  public int hashCode() {
+    int h = 1;
+    h *= 1000003;
+    h ^= Objects.hashCode(project);
+    h *= 1000003;
+    h ^= Objects.hashCode(topic);
+    return h;
+  }
+
   /** Builder for projects/{project}/topics/{topic}. */
   public static class Builder {
-
     private String project;
     private String topic;
 
@@ -178,40 +222,14 @@ public class TopicName implements ResourceName {
 
     private Builder(TopicName topicName) {
       Preconditions.checkArgument(
-          topicName.pathTemplate == PROJECT_TOPIC_PATH_TEMPLATE,
-          "toBuilder is only supported when TopicName has the pattern of "
-              + "projects/{project}/topics/{topic}.");
-      project = topicName.project;
-      topic = topicName.topic;
+          Objects.equals(topicName.pathTemplate, PROJECT_TOPIC),
+          "toBuilder is only supported when TopicName has the pattern of projects/{project}/topics/{topic}");
+      this.project = topicName.project;
+      this.topic = topicName.topic;
     }
 
     public TopicName build() {
       return new TopicName(this);
     }
-  }
-
-  @Override
-  public boolean equals(Object o) {
-    if (o == this) {
-      return true;
-    }
-    if (o != null || getClass() == o.getClass()) {
-      TopicName that = (TopicName) o;
-      return (Objects.equals(this.project, that.project))
-          && (Objects.equals(this.topic, that.topic));
-    }
-    return false;
-  }
-
-  @Override
-  public int hashCode() {
-    int h = 1;
-    h *= 1000003;
-    h ^= Objects.hashCode(fixedValue);
-    h *= 1000003;
-    h ^= Objects.hashCode(project);
-    h *= 1000003;
-    h ^= Objects.hashCode(topic);
-    return h;
   }
 }

@@ -1,11 +1,11 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2021 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.pubsub.v1;
 
 import com.google.api.core.ApiFunction;
@@ -28,6 +29,11 @@ import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.pubsub.v1.stub.SchemaServiceStub;
 import com.google.cloud.pubsub.v1.stub.SchemaServiceStubSettings;
 import com.google.common.util.concurrent.MoreExecutors;
+import com.google.iam.v1.GetIamPolicyRequest;
+import com.google.iam.v1.Policy;
+import com.google.iam.v1.SetIamPolicyRequest;
+import com.google.iam.v1.TestIamPermissionsRequest;
+import com.google.iam.v1.TestIamPermissionsResponse;
 import com.google.protobuf.Empty;
 import com.google.pubsub.v1.CreateSchemaRequest;
 import com.google.pubsub.v1.DeleteSchemaRequest;
@@ -46,25 +52,23 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
-// AUTO-GENERATED DOCUMENTATION AND SERVICE
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
  * Service Description: Service for doing schema-related operations.
  *
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
  *
- * <pre>
- * <code>
+ * <pre>{@code
  * try (SchemaServiceClient schemaServiceClient = SchemaServiceClient.create()) {
  *   ProjectName parent = ProjectName.of("[PROJECT]");
  *   Schema schema = Schema.newBuilder().build();
- *   String schemaId = "";
+ *   String schemaId = "schemaId-697673060";
  *   Schema response = schemaServiceClient.createSchema(parent, schema, schemaId);
  * }
- * </code>
- * </pre>
+ * }</pre>
  *
- * <p>Note: close() needs to be called on the schemaServiceClient object to clean up resources such
+ * <p>Note: close() needs to be called on the SchemaServiceClient object to clean up resources such
  * as threads. In the example above, try-with-resources is used, which automatically calls close().
  *
  * <p>The surface of this class includes several types of Java methods for each of the API's
@@ -92,29 +96,25 @@ import javax.annotation.Generated;
  *
  * <p>To customize credentials:
  *
- * <pre>
- * <code>
+ * <pre>{@code
  * SchemaServiceSettings schemaServiceSettings =
  *     SchemaServiceSettings.newBuilder()
  *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
  *         .build();
- * SchemaServiceClient schemaServiceClient =
- *     SchemaServiceClient.create(schemaServiceSettings);
- * </code>
- * </pre>
+ * SchemaServiceClient schemaServiceClient = SchemaServiceClient.create(schemaServiceSettings);
+ * }</pre>
  *
- * To customize the endpoint:
+ * <p>To customize the endpoint:
  *
- * <pre>
- * <code>
+ * <pre>{@code
  * SchemaServiceSettings schemaServiceSettings =
  *     SchemaServiceSettings.newBuilder().setEndpoint(myEndpoint).build();
- * SchemaServiceClient schemaServiceClient =
- *     SchemaServiceClient.create(schemaServiceSettings);
- * </code>
- * </pre>
+ * SchemaServiceClient schemaServiceClient = SchemaServiceClient.create(schemaServiceSettings);
+ * }</pre>
+ *
+ * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
-@Generated("by gapic-generator")
+@Generated("by gapic-generator-java")
 public class SchemaServiceClient implements BackgroundResource {
   private final SchemaServiceSettings settings;
   private final SchemaServiceStub stub;
@@ -135,7 +135,7 @@ public class SchemaServiceClient implements BackgroundResource {
 
   /**
    * Constructs an instance of SchemaServiceClient, using the given stub for making calls. This is
-   * for advanced usage - prefer to use SchemaServiceSettings}.
+   * for advanced usage - prefer using create(SchemaServiceSettings).
    */
   @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final SchemaServiceClient create(SchemaServiceStub stub) {
@@ -167,20 +167,20 @@ public class SchemaServiceClient implements BackgroundResource {
     return stub;
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a schema.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (SchemaServiceClient schemaServiceClient = SchemaServiceClient.create()) {
    *   ProjectName parent = ProjectName.of("[PROJECT]");
    *   Schema schema = Schema.newBuilder().build();
-   *   String schemaId = "";
+   *   String schemaId = "schemaId-697673060";
    *   Schema response = schemaServiceClient.createSchema(parent, schema, schemaId);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param parent Required. The name of the project in which to create the schema. Format is
    *     `projects/{project-id}`.
@@ -203,20 +203,20 @@ public class SchemaServiceClient implements BackgroundResource {
     return createSchema(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a schema.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (SchemaServiceClient schemaServiceClient = SchemaServiceClient.create()) {
-   *   ProjectName parent = ProjectName.of("[PROJECT]");
+   *   String parent = ProjectName.of("[PROJECT]").toString();
    *   Schema schema = Schema.newBuilder().build();
-   *   String schemaId = "";
-   *   Schema response = schemaServiceClient.createSchema(parent.toString(), schema, schemaId);
+   *   String schemaId = "schemaId-697673060";
+   *   Schema response = schemaServiceClient.createSchema(parent, schema, schemaId);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param parent Required. The name of the project in which to create the schema. Format is
    *     `projects/{project-id}`.
@@ -239,23 +239,23 @@ public class SchemaServiceClient implements BackgroundResource {
     return createSchema(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a schema.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (SchemaServiceClient schemaServiceClient = SchemaServiceClient.create()) {
-   *   ProjectName parent = ProjectName.of("[PROJECT]");
-   *   Schema schema = Schema.newBuilder().build();
-   *   CreateSchemaRequest request = CreateSchemaRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .setSchema(schema)
-   *     .build();
+   *   CreateSchemaRequest request =
+   *       CreateSchemaRequest.newBuilder()
+   *           .setParent(ProjectName.of("[PROJECT]").toString())
+   *           .setSchema(Schema.newBuilder().build())
+   *           .setSchemaId("schemaId-697673060")
+   *           .build();
    *   Schema response = schemaServiceClient.createSchema(request);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -264,42 +264,42 @@ public class SchemaServiceClient implements BackgroundResource {
     return createSchemaCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a schema.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (SchemaServiceClient schemaServiceClient = SchemaServiceClient.create()) {
-   *   ProjectName parent = ProjectName.of("[PROJECT]");
-   *   Schema schema = Schema.newBuilder().build();
-   *   CreateSchemaRequest request = CreateSchemaRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .setSchema(schema)
-   *     .build();
-   *   ApiFuture&lt;Schema&gt; future = schemaServiceClient.createSchemaCallable().futureCall(request);
-   *   // Do something
+   *   CreateSchemaRequest request =
+   *       CreateSchemaRequest.newBuilder()
+   *           .setParent(ProjectName.of("[PROJECT]").toString())
+   *           .setSchema(Schema.newBuilder().build())
+   *           .setSchemaId("schemaId-697673060")
+   *           .build();
+   *   ApiFuture<Schema> future = schemaServiceClient.createSchemaCallable().futureCall(request);
+   *   // Do something.
    *   Schema response = future.get();
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<CreateSchemaRequest, Schema> createSchemaCallable() {
     return stub.createSchemaCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Gets a schema.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (SchemaServiceClient schemaServiceClient = SchemaServiceClient.create()) {
    *   SchemaName name = SchemaName.of("[PROJECT]", "[SCHEMA]");
    *   Schema response = schemaServiceClient.getSchema(name);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param name Required. The name of the schema to get. Format is
    *     `projects/{project}/schemas/{schema}`.
@@ -311,18 +311,18 @@ public class SchemaServiceClient implements BackgroundResource {
     return getSchema(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Gets a schema.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (SchemaServiceClient schemaServiceClient = SchemaServiceClient.create()) {
-   *   SchemaName name = SchemaName.of("[PROJECT]", "[SCHEMA]");
-   *   Schema response = schemaServiceClient.getSchema(name.toString());
+   *   String name = SchemaName.of("[PROJECT]", "[SCHEMA]").toString();
+   *   Schema response = schemaServiceClient.getSchema(name);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param name Required. The name of the schema to get. Format is
    *     `projects/{project}/schemas/{schema}`.
@@ -333,21 +333,22 @@ public class SchemaServiceClient implements BackgroundResource {
     return getSchema(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Gets a schema.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (SchemaServiceClient schemaServiceClient = SchemaServiceClient.create()) {
-   *   SchemaName name = SchemaName.of("[PROJECT]", "[SCHEMA]");
-   *   GetSchemaRequest request = GetSchemaRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .build();
+   *   GetSchemaRequest request =
+   *       GetSchemaRequest.newBuilder()
+   *           .setName(SchemaName.of("[PROJECT]", "[SCHEMA]").toString())
+   *           .setView(SchemaView.forNumber(0))
+   *           .build();
    *   Schema response = schemaServiceClient.getSchema(request);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -356,42 +357,43 @@ public class SchemaServiceClient implements BackgroundResource {
     return getSchemaCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Gets a schema.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (SchemaServiceClient schemaServiceClient = SchemaServiceClient.create()) {
-   *   SchemaName name = SchemaName.of("[PROJECT]", "[SCHEMA]");
-   *   GetSchemaRequest request = GetSchemaRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .build();
-   *   ApiFuture&lt;Schema&gt; future = schemaServiceClient.getSchemaCallable().futureCall(request);
-   *   // Do something
+   *   GetSchemaRequest request =
+   *       GetSchemaRequest.newBuilder()
+   *           .setName(SchemaName.of("[PROJECT]", "[SCHEMA]").toString())
+   *           .setView(SchemaView.forNumber(0))
+   *           .build();
+   *   ApiFuture<Schema> future = schemaServiceClient.getSchemaCallable().futureCall(request);
+   *   // Do something.
    *   Schema response = future.get();
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<GetSchemaRequest, Schema> getSchemaCallable() {
     return stub.getSchemaCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists schemas in a project.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (SchemaServiceClient schemaServiceClient = SchemaServiceClient.create()) {
    *   ProjectName parent = ProjectName.of("[PROJECT]");
    *   for (Schema element : schemaServiceClient.listSchemas(parent).iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param parent Required. The name of the project in which to list schemas. Format is
    *     `projects/{project-id}`.
@@ -405,20 +407,20 @@ public class SchemaServiceClient implements BackgroundResource {
     return listSchemas(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists schemas in a project.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (SchemaServiceClient schemaServiceClient = SchemaServiceClient.create()) {
-   *   ProjectName parent = ProjectName.of("[PROJECT]");
-   *   for (Schema element : schemaServiceClient.listSchemas(parent.toString()).iterateAll()) {
+   *   String parent = ProjectName.of("[PROJECT]").toString();
+   *   for (Schema element : schemaServiceClient.listSchemas(parent).iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param parent Required. The name of the project in which to list schemas. Format is
    *     `projects/{project-id}`.
@@ -429,23 +431,26 @@ public class SchemaServiceClient implements BackgroundResource {
     return listSchemas(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists schemas in a project.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (SchemaServiceClient schemaServiceClient = SchemaServiceClient.create()) {
-   *   ProjectName parent = ProjectName.of("[PROJECT]");
-   *   ListSchemasRequest request = ListSchemasRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .build();
+   *   ListSchemasRequest request =
+   *       ListSchemasRequest.newBuilder()
+   *           .setParent(ProjectName.of("[PROJECT]").toString())
+   *           .setView(SchemaView.forNumber(0))
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
    *   for (Schema element : schemaServiceClient.listSchemas(request).iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -454,43 +459,49 @@ public class SchemaServiceClient implements BackgroundResource {
     return listSchemasPagedCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists schemas in a project.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (SchemaServiceClient schemaServiceClient = SchemaServiceClient.create()) {
-   *   ProjectName parent = ProjectName.of("[PROJECT]");
-   *   ListSchemasRequest request = ListSchemasRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .build();
-   *   ApiFuture&lt;ListSchemasPagedResponse&gt; future = schemaServiceClient.listSchemasPagedCallable().futureCall(request);
-   *   // Do something
+   *   ListSchemasRequest request =
+   *       ListSchemasRequest.newBuilder()
+   *           .setParent(ProjectName.of("[PROJECT]").toString())
+   *           .setView(SchemaView.forNumber(0))
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   ApiFuture<ListSchemasPagedResponse> future = schemaServiceClient.listSchemasPagedCallable().futureCall(request);
+   *   // Do something.
    *   for (Schema element : future.get().iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<ListSchemasRequest, ListSchemasPagedResponse>
       listSchemasPagedCallable() {
     return stub.listSchemasPagedCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists schemas in a project.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (SchemaServiceClient schemaServiceClient = SchemaServiceClient.create()) {
-   *   ProjectName parent = ProjectName.of("[PROJECT]");
-   *   ListSchemasRequest request = ListSchemasRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .build();
+   *   ListSchemasRequest request =
+   *       ListSchemasRequest.newBuilder()
+   *           .setParent(ProjectName.of("[PROJECT]").toString())
+   *           .setView(SchemaView.forNumber(0))
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
    *   while (true) {
    *     ListSchemasResponse response = schemaServiceClient.listSchemasCallable().call(request);
    *     for (Schema element : response.getSchemasList()) {
@@ -504,24 +515,24 @@ public class SchemaServiceClient implements BackgroundResource {
    *     }
    *   }
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<ListSchemasRequest, ListSchemasResponse> listSchemasCallable() {
     return stub.listSchemasCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes a schema.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (SchemaServiceClient schemaServiceClient = SchemaServiceClient.create()) {
    *   SchemaName name = SchemaName.of("[PROJECT]", "[SCHEMA]");
    *   schemaServiceClient.deleteSchema(name);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param name Required. Name of the schema to delete. Format is
    *     `projects/{project}/schemas/{schema}`.
@@ -533,18 +544,18 @@ public class SchemaServiceClient implements BackgroundResource {
     deleteSchema(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes a schema.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (SchemaServiceClient schemaServiceClient = SchemaServiceClient.create()) {
-   *   SchemaName name = SchemaName.of("[PROJECT]", "[SCHEMA]");
-   *   schemaServiceClient.deleteSchema(name.toString());
+   *   String name = SchemaName.of("[PROJECT]", "[SCHEMA]").toString();
+   *   schemaServiceClient.deleteSchema(name);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param name Required. Name of the schema to delete. Format is
    *     `projects/{project}/schemas/{schema}`.
@@ -555,21 +566,21 @@ public class SchemaServiceClient implements BackgroundResource {
     deleteSchema(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes a schema.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (SchemaServiceClient schemaServiceClient = SchemaServiceClient.create()) {
-   *   SchemaName name = SchemaName.of("[PROJECT]", "[SCHEMA]");
-   *   DeleteSchemaRequest request = DeleteSchemaRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .build();
+   *   DeleteSchemaRequest request =
+   *       DeleteSchemaRequest.newBuilder()
+   *           .setName(SchemaName.of("[PROJECT]", "[SCHEMA]").toString())
+   *           .build();
    *   schemaServiceClient.deleteSchema(request);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -578,41 +589,41 @@ public class SchemaServiceClient implements BackgroundResource {
     deleteSchemaCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes a schema.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (SchemaServiceClient schemaServiceClient = SchemaServiceClient.create()) {
-   *   SchemaName name = SchemaName.of("[PROJECT]", "[SCHEMA]");
-   *   DeleteSchemaRequest request = DeleteSchemaRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .build();
-   *   ApiFuture&lt;Void&gt; future = schemaServiceClient.deleteSchemaCallable().futureCall(request);
-   *   // Do something
+   *   DeleteSchemaRequest request =
+   *       DeleteSchemaRequest.newBuilder()
+   *           .setName(SchemaName.of("[PROJECT]", "[SCHEMA]").toString())
+   *           .build();
+   *   ApiFuture<Empty> future = schemaServiceClient.deleteSchemaCallable().futureCall(request);
+   *   // Do something.
    *   future.get();
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<DeleteSchemaRequest, Empty> deleteSchemaCallable() {
     return stub.deleteSchemaCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Validates a schema.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (SchemaServiceClient schemaServiceClient = SchemaServiceClient.create()) {
    *   ProjectName parent = ProjectName.of("[PROJECT]");
    *   Schema schema = Schema.newBuilder().build();
    *   ValidateSchemaResponse response = schemaServiceClient.validateSchema(parent, schema);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param parent Required. The name of the project in which to validate schemas. Format is
    *     `projects/{project-id}`.
@@ -628,19 +639,19 @@ public class SchemaServiceClient implements BackgroundResource {
     return validateSchema(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Validates a schema.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (SchemaServiceClient schemaServiceClient = SchemaServiceClient.create()) {
-   *   ProjectName parent = ProjectName.of("[PROJECT]");
+   *   String parent = ProjectName.of("[PROJECT]").toString();
    *   Schema schema = Schema.newBuilder().build();
-   *   ValidateSchemaResponse response = schemaServiceClient.validateSchema(parent.toString(), schema);
+   *   ValidateSchemaResponse response = schemaServiceClient.validateSchema(parent, schema);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param parent Required. The name of the project in which to validate schemas. Format is
    *     `projects/{project-id}`.
@@ -653,23 +664,22 @@ public class SchemaServiceClient implements BackgroundResource {
     return validateSchema(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Validates a schema.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (SchemaServiceClient schemaServiceClient = SchemaServiceClient.create()) {
-   *   ProjectName parent = ProjectName.of("[PROJECT]");
-   *   Schema schema = Schema.newBuilder().build();
-   *   ValidateSchemaRequest request = ValidateSchemaRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .setSchema(schema)
-   *     .build();
+   *   ValidateSchemaRequest request =
+   *       ValidateSchemaRequest.newBuilder()
+   *           .setParent(ProjectName.of("[PROJECT]").toString())
+   *           .setSchema(Schema.newBuilder().build())
+   *           .build();
    *   ValidateSchemaResponse response = schemaServiceClient.validateSchema(request);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -678,46 +688,48 @@ public class SchemaServiceClient implements BackgroundResource {
     return validateSchemaCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Validates a schema.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (SchemaServiceClient schemaServiceClient = SchemaServiceClient.create()) {
-   *   ProjectName parent = ProjectName.of("[PROJECT]");
-   *   Schema schema = Schema.newBuilder().build();
-   *   ValidateSchemaRequest request = ValidateSchemaRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .setSchema(schema)
-   *     .build();
-   *   ApiFuture&lt;ValidateSchemaResponse&gt; future = schemaServiceClient.validateSchemaCallable().futureCall(request);
-   *   // Do something
+   *   ValidateSchemaRequest request =
+   *       ValidateSchemaRequest.newBuilder()
+   *           .setParent(ProjectName.of("[PROJECT]").toString())
+   *           .setSchema(Schema.newBuilder().build())
+   *           .build();
+   *   ApiFuture<ValidateSchemaResponse> future =
+   *       schemaServiceClient.validateSchemaCallable().futureCall(request);
+   *   // Do something.
    *   ValidateSchemaResponse response = future.get();
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<ValidateSchemaRequest, ValidateSchemaResponse>
       validateSchemaCallable() {
     return stub.validateSchemaCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Validates a message against a schema.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (SchemaServiceClient schemaServiceClient = SchemaServiceClient.create()) {
-   *   ProjectName parent = ProjectName.of("[PROJECT]");
-   *   ValidateMessageRequest request = ValidateMessageRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .build();
+   *   ValidateMessageRequest request =
+   *       ValidateMessageRequest.newBuilder()
+   *           .setParent(ProjectName.of("[PROJECT]").toString())
+   *           .setMessage(ByteString.EMPTY)
+   *           .setEncoding(Encoding.forNumber(0))
+   *           .build();
    *   ValidateMessageResponse response = schemaServiceClient.validateMessage(request);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -726,27 +738,189 @@ public class SchemaServiceClient implements BackgroundResource {
     return validateMessageCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Validates a message against a schema.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (SchemaServiceClient schemaServiceClient = SchemaServiceClient.create()) {
-   *   ProjectName parent = ProjectName.of("[PROJECT]");
-   *   ValidateMessageRequest request = ValidateMessageRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .build();
-   *   ApiFuture&lt;ValidateMessageResponse&gt; future = schemaServiceClient.validateMessageCallable().futureCall(request);
-   *   // Do something
+   *   ValidateMessageRequest request =
+   *       ValidateMessageRequest.newBuilder()
+   *           .setParent(ProjectName.of("[PROJECT]").toString())
+   *           .setMessage(ByteString.EMPTY)
+   *           .setEncoding(Encoding.forNumber(0))
+   *           .build();
+   *   ApiFuture<ValidateMessageResponse> future =
+   *       schemaServiceClient.validateMessageCallable().futureCall(request);
+   *   // Do something.
    *   ValidateMessageResponse response = future.get();
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<ValidateMessageRequest, ValidateMessageResponse>
       validateMessageCallable() {
     return stub.validateMessageCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Sets the access control policy on the specified resource. Replacesany existing policy.
+   *
+   * <p>Can return `NOT_FOUND`, `INVALID_ARGUMENT`, and `PERMISSION_DENIED`errors.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (SchemaServiceClient schemaServiceClient = SchemaServiceClient.create()) {
+   *   SetIamPolicyRequest request =
+   *       SetIamPolicyRequest.newBuilder()
+   *           .setResource(ProjectName.of("[PROJECT]").toString())
+   *           .setPolicy(Policy.newBuilder().build())
+   *           .build();
+   *   Policy response = schemaServiceClient.setIamPolicy(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Policy setIamPolicy(SetIamPolicyRequest request) {
+    return setIamPolicyCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Sets the access control policy on the specified resource. Replacesany existing policy.
+   *
+   * <p>Can return `NOT_FOUND`, `INVALID_ARGUMENT`, and `PERMISSION_DENIED`errors.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (SchemaServiceClient schemaServiceClient = SchemaServiceClient.create()) {
+   *   SetIamPolicyRequest request =
+   *       SetIamPolicyRequest.newBuilder()
+   *           .setResource(ProjectName.of("[PROJECT]").toString())
+   *           .setPolicy(Policy.newBuilder().build())
+   *           .build();
+   *   ApiFuture<Policy> future = schemaServiceClient.setIamPolicyCallable().futureCall(request);
+   *   // Do something.
+   *   Policy response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<SetIamPolicyRequest, Policy> setIamPolicyCallable() {
+    return stub.setIamPolicyCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets the access control policy for a resource. Returns an empty policyif the resource exists
+   * and does not have a policy set.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (SchemaServiceClient schemaServiceClient = SchemaServiceClient.create()) {
+   *   GetIamPolicyRequest request =
+   *       GetIamPolicyRequest.newBuilder()
+   *           .setResource(ProjectName.of("[PROJECT]").toString())
+   *           .setOptions(GetPolicyOptions.newBuilder().build())
+   *           .build();
+   *   Policy response = schemaServiceClient.getIamPolicy(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Policy getIamPolicy(GetIamPolicyRequest request) {
+    return getIamPolicyCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets the access control policy for a resource. Returns an empty policyif the resource exists
+   * and does not have a policy set.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (SchemaServiceClient schemaServiceClient = SchemaServiceClient.create()) {
+   *   GetIamPolicyRequest request =
+   *       GetIamPolicyRequest.newBuilder()
+   *           .setResource(ProjectName.of("[PROJECT]").toString())
+   *           .setOptions(GetPolicyOptions.newBuilder().build())
+   *           .build();
+   *   ApiFuture<Policy> future = schemaServiceClient.getIamPolicyCallable().futureCall(request);
+   *   // Do something.
+   *   Policy response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<GetIamPolicyRequest, Policy> getIamPolicyCallable() {
+    return stub.getIamPolicyCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Returns permissions that a caller has on the specified resource. If theresource does not exist,
+   * this will return an empty set ofpermissions, not a `NOT_FOUND` error.
+   *
+   * <p>Note: This operation is designed to be used for buildingpermission-aware UIs and
+   * command-line tools, not for authorizationchecking. This operation may "fail open" without
+   * warning.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (SchemaServiceClient schemaServiceClient = SchemaServiceClient.create()) {
+   *   TestIamPermissionsRequest request =
+   *       TestIamPermissionsRequest.newBuilder()
+   *           .setResource(ProjectName.of("[PROJECT]").toString())
+   *           .addAllPermissions(new ArrayList<String>())
+   *           .build();
+   *   TestIamPermissionsResponse response = schemaServiceClient.testIamPermissions(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final TestIamPermissionsResponse testIamPermissions(TestIamPermissionsRequest request) {
+    return testIamPermissionsCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Returns permissions that a caller has on the specified resource. If theresource does not exist,
+   * this will return an empty set ofpermissions, not a `NOT_FOUND` error.
+   *
+   * <p>Note: This operation is designed to be used for buildingpermission-aware UIs and
+   * command-line tools, not for authorizationchecking. This operation may "fail open" without
+   * warning.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (SchemaServiceClient schemaServiceClient = SchemaServiceClient.create()) {
+   *   TestIamPermissionsRequest request =
+   *       TestIamPermissionsRequest.newBuilder()
+   *           .setResource(ProjectName.of("[PROJECT]").toString())
+   *           .addAllPermissions(new ArrayList<String>())
+   *           .build();
+   *   ApiFuture<TestIamPermissionsResponse> future =
+   *       schemaServiceClient.testIamPermissionsCallable().futureCall(request);
+   *   // Do something.
+   *   TestIamPermissionsResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<TestIamPermissionsRequest, TestIamPermissionsResponse>
+      testIamPermissionsCallable() {
+    return stub.testIamPermissionsCallable();
   }
 
   @Override

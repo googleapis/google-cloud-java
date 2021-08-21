@@ -19,8 +19,6 @@ package com.google.pubsub.v1;
 import com.google.api.resourcenames.ResourceName;
 import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableMap;
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Map;
 
 /**
@@ -46,26 +44,6 @@ public class UntypedTopicName extends TopicName {
 
   public static UntypedTopicName parse(String formattedString) {
     return new UntypedTopicName(formattedString);
-  }
-
-  public static List<UntypedTopicName> parseList(List<String> formattedStrings) {
-    List<UntypedTopicName> list = new ArrayList<>(formattedStrings.size());
-    for (String formattedString : formattedStrings) {
-      list.add(parse(formattedString));
-    }
-    return list;
-  }
-
-  public static List<String> toStringList(List<UntypedTopicName> values) {
-    List<String> list = new ArrayList<String>(values.size());
-    for (UntypedTopicName value : values) {
-      if (value == null) {
-        list.add("");
-      } else {
-        list.add(value.toString());
-      }
-    }
-    return list;
   }
 
   public static boolean isParsableFrom(String formattedString) {

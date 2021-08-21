@@ -204,6 +204,21 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
               detached_ = input.readBool();
               break;
             }
+          case 138:
+            {
+              com.google.protobuf.Duration.Builder subBuilder = null;
+              if (topicMessageRetentionDuration_ != null) {
+                subBuilder = topicMessageRetentionDuration_.toBuilder();
+              }
+              topicMessageRetentionDuration_ =
+                  input.readMessage(com.google.protobuf.Duration.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(topicMessageRetentionDuration_);
+                topicMessageRetentionDuration_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -460,8 +475,9 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
    * Indicates whether to retain acknowledged messages. If true, then
    * messages are not expunged from the subscription's backlog, even if they are
    * acknowledged, until they fall out of the `message_retention_duration`
-   * window. This must be true if you would like to [Seek to a timestamp]
-   * (https://cloud.google.com/pubsub/docs/replay-overview#seek_to_a_time).
+   * window. This must be true if you would like to [`Seek` to a timestamp]
+   * (https://cloud.google.com/pubsub/docs/replay-overview#seek_to_a_time) in
+   * the past to replay previously-acknowledged messages.
    * </pre>
    *
    * <code>bool retain_acked_messages = 7;</code>
@@ -930,6 +946,75 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
     return detached_;
   }
 
+  public static final int TOPIC_MESSAGE_RETENTION_DURATION_FIELD_NUMBER = 17;
+  private com.google.protobuf.Duration topicMessageRetentionDuration_;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Indicates the minimum duration for which a message is retained
+   * after it is published to the subscription's topic. If this field is set,
+   * messages published to the subscription's topic in the last
+   * `topic_message_retention_duration` are always available to subscribers. See
+   * the `message_retention_duration` field in `Topic`. This field is set only
+   * in responses from the server; it is ignored if it is set in any requests.
+   * </pre>
+   *
+   * <code>
+   * .google.protobuf.Duration topic_message_retention_duration = 17 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the topicMessageRetentionDuration field is set.
+   */
+  @java.lang.Override
+  public boolean hasTopicMessageRetentionDuration() {
+    return topicMessageRetentionDuration_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Indicates the minimum duration for which a message is retained
+   * after it is published to the subscription's topic. If this field is set,
+   * messages published to the subscription's topic in the last
+   * `topic_message_retention_duration` are always available to subscribers. See
+   * the `message_retention_duration` field in `Topic`. This field is set only
+   * in responses from the server; it is ignored if it is set in any requests.
+   * </pre>
+   *
+   * <code>
+   * .google.protobuf.Duration topic_message_retention_duration = 17 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The topicMessageRetentionDuration.
+   */
+  @java.lang.Override
+  public com.google.protobuf.Duration getTopicMessageRetentionDuration() {
+    return topicMessageRetentionDuration_ == null
+        ? com.google.protobuf.Duration.getDefaultInstance()
+        : topicMessageRetentionDuration_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Indicates the minimum duration for which a message is retained
+   * after it is published to the subscription's topic. If this field is set,
+   * messages published to the subscription's topic in the last
+   * `topic_message_retention_duration` are always available to subscribers. See
+   * the `message_retention_duration` field in `Topic`. This field is set only
+   * in responses from the server; it is ignored if it is set in any requests.
+   * </pre>
+   *
+   * <code>
+   * .google.protobuf.Duration topic_message_retention_duration = 17 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.protobuf.DurationOrBuilder getTopicMessageRetentionDurationOrBuilder() {
+    return getTopicMessageRetentionDuration();
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -981,6 +1066,9 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
     }
     if (detached_ != false) {
       output.writeBool(15, detached_);
+    }
+    if (topicMessageRetentionDuration_ != null) {
+      output.writeMessage(17, getTopicMessageRetentionDuration());
     }
     unknownFields.writeTo(output);
   }
@@ -1039,6 +1127,11 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
     if (detached_ != false) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(15, detached_);
     }
+    if (topicMessageRetentionDuration_ != null) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              17, getTopicMessageRetentionDuration());
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1082,6 +1175,12 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
       if (!getRetryPolicy().equals(other.getRetryPolicy())) return false;
     }
     if (getDetached() != other.getDetached()) return false;
+    if (hasTopicMessageRetentionDuration() != other.hasTopicMessageRetentionDuration())
+      return false;
+    if (hasTopicMessageRetentionDuration()) {
+      if (!getTopicMessageRetentionDuration().equals(other.getTopicMessageRetentionDuration()))
+        return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -1131,6 +1230,10 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
     }
     hash = (37 * hash) + DETACHED_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getDetached());
+    if (hasTopicMessageRetentionDuration()) {
+      hash = (37 * hash) + TOPIC_MESSAGE_RETENTION_DURATION_FIELD_NUMBER;
+      hash = (53 * hash) + getTopicMessageRetentionDuration().hashCode();
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -1340,6 +1443,12 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
       }
       detached_ = false;
 
+      if (topicMessageRetentionDurationBuilder_ == null) {
+        topicMessageRetentionDuration_ = null;
+      } else {
+        topicMessageRetentionDuration_ = null;
+        topicMessageRetentionDurationBuilder_ = null;
+      }
       return this;
     }
 
@@ -1401,6 +1510,11 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
         result.retryPolicy_ = retryPolicyBuilder_.build();
       }
       result.detached_ = detached_;
+      if (topicMessageRetentionDurationBuilder_ == null) {
+        result.topicMessageRetentionDuration_ = topicMessageRetentionDuration_;
+      } else {
+        result.topicMessageRetentionDuration_ = topicMessageRetentionDurationBuilder_.build();
+      }
       onBuilt();
       return result;
     }
@@ -1489,6 +1603,9 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.getDetached() != false) {
         setDetached(other.getDetached());
+      }
+      if (other.hasTopicMessageRetentionDuration()) {
+        mergeTopicMessageRetentionDuration(other.getTopicMessageRetentionDuration());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -2089,8 +2206,9 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
      * Indicates whether to retain acknowledged messages. If true, then
      * messages are not expunged from the subscription's backlog, even if they are
      * acknowledged, until they fall out of the `message_retention_duration`
-     * window. This must be true if you would like to [Seek to a timestamp]
-     * (https://cloud.google.com/pubsub/docs/replay-overview#seek_to_a_time).
+     * window. This must be true if you would like to [`Seek` to a timestamp]
+     * (https://cloud.google.com/pubsub/docs/replay-overview#seek_to_a_time) in
+     * the past to replay previously-acknowledged messages.
      * </pre>
      *
      * <code>bool retain_acked_messages = 7;</code>
@@ -2108,8 +2226,9 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
      * Indicates whether to retain acknowledged messages. If true, then
      * messages are not expunged from the subscription's backlog, even if they are
      * acknowledged, until they fall out of the `message_retention_duration`
-     * window. This must be true if you would like to [Seek to a timestamp]
-     * (https://cloud.google.com/pubsub/docs/replay-overview#seek_to_a_time).
+     * window. This must be true if you would like to [`Seek` to a timestamp]
+     * (https://cloud.google.com/pubsub/docs/replay-overview#seek_to_a_time) in
+     * the past to replay previously-acknowledged messages.
      * </pre>
      *
      * <code>bool retain_acked_messages = 7;</code>
@@ -2130,8 +2249,9 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
      * Indicates whether to retain acknowledged messages. If true, then
      * messages are not expunged from the subscription's backlog, even if they are
      * acknowledged, until they fall out of the `message_retention_duration`
-     * window. This must be true if you would like to [Seek to a timestamp]
-     * (https://cloud.google.com/pubsub/docs/replay-overview#seek_to_a_time).
+     * window. This must be true if you would like to [`Seek` to a timestamp]
+     * (https://cloud.google.com/pubsub/docs/replay-overview#seek_to_a_time) in
+     * the past to replay previously-acknowledged messages.
      * </pre>
      *
      * <code>bool retain_acked_messages = 7;</code>
@@ -3490,6 +3610,256 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
       detached_ = false;
       onChanged();
       return this;
+    }
+
+    private com.google.protobuf.Duration topicMessageRetentionDuration_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.Duration,
+            com.google.protobuf.Duration.Builder,
+            com.google.protobuf.DurationOrBuilder>
+        topicMessageRetentionDurationBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Indicates the minimum duration for which a message is retained
+     * after it is published to the subscription's topic. If this field is set,
+     * messages published to the subscription's topic in the last
+     * `topic_message_retention_duration` are always available to subscribers. See
+     * the `message_retention_duration` field in `Topic`. This field is set only
+     * in responses from the server; it is ignored if it is set in any requests.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Duration topic_message_retention_duration = 17 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the topicMessageRetentionDuration field is set.
+     */
+    public boolean hasTopicMessageRetentionDuration() {
+      return topicMessageRetentionDurationBuilder_ != null
+          || topicMessageRetentionDuration_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Indicates the minimum duration for which a message is retained
+     * after it is published to the subscription's topic. If this field is set,
+     * messages published to the subscription's topic in the last
+     * `topic_message_retention_duration` are always available to subscribers. See
+     * the `message_retention_duration` field in `Topic`. This field is set only
+     * in responses from the server; it is ignored if it is set in any requests.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Duration topic_message_retention_duration = 17 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The topicMessageRetentionDuration.
+     */
+    public com.google.protobuf.Duration getTopicMessageRetentionDuration() {
+      if (topicMessageRetentionDurationBuilder_ == null) {
+        return topicMessageRetentionDuration_ == null
+            ? com.google.protobuf.Duration.getDefaultInstance()
+            : topicMessageRetentionDuration_;
+      } else {
+        return topicMessageRetentionDurationBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Indicates the minimum duration for which a message is retained
+     * after it is published to the subscription's topic. If this field is set,
+     * messages published to the subscription's topic in the last
+     * `topic_message_retention_duration` are always available to subscribers. See
+     * the `message_retention_duration` field in `Topic`. This field is set only
+     * in responses from the server; it is ignored if it is set in any requests.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Duration topic_message_retention_duration = 17 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setTopicMessageRetentionDuration(com.google.protobuf.Duration value) {
+      if (topicMessageRetentionDurationBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        topicMessageRetentionDuration_ = value;
+        onChanged();
+      } else {
+        topicMessageRetentionDurationBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Indicates the minimum duration for which a message is retained
+     * after it is published to the subscription's topic. If this field is set,
+     * messages published to the subscription's topic in the last
+     * `topic_message_retention_duration` are always available to subscribers. See
+     * the `message_retention_duration` field in `Topic`. This field is set only
+     * in responses from the server; it is ignored if it is set in any requests.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Duration topic_message_retention_duration = 17 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setTopicMessageRetentionDuration(
+        com.google.protobuf.Duration.Builder builderForValue) {
+      if (topicMessageRetentionDurationBuilder_ == null) {
+        topicMessageRetentionDuration_ = builderForValue.build();
+        onChanged();
+      } else {
+        topicMessageRetentionDurationBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Indicates the minimum duration for which a message is retained
+     * after it is published to the subscription's topic. If this field is set,
+     * messages published to the subscription's topic in the last
+     * `topic_message_retention_duration` are always available to subscribers. See
+     * the `message_retention_duration` field in `Topic`. This field is set only
+     * in responses from the server; it is ignored if it is set in any requests.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Duration topic_message_retention_duration = 17 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder mergeTopicMessageRetentionDuration(com.google.protobuf.Duration value) {
+      if (topicMessageRetentionDurationBuilder_ == null) {
+        if (topicMessageRetentionDuration_ != null) {
+          topicMessageRetentionDuration_ =
+              com.google.protobuf.Duration.newBuilder(topicMessageRetentionDuration_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          topicMessageRetentionDuration_ = value;
+        }
+        onChanged();
+      } else {
+        topicMessageRetentionDurationBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Indicates the minimum duration for which a message is retained
+     * after it is published to the subscription's topic. If this field is set,
+     * messages published to the subscription's topic in the last
+     * `topic_message_retention_duration` are always available to subscribers. See
+     * the `message_retention_duration` field in `Topic`. This field is set only
+     * in responses from the server; it is ignored if it is set in any requests.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Duration topic_message_retention_duration = 17 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder clearTopicMessageRetentionDuration() {
+      if (topicMessageRetentionDurationBuilder_ == null) {
+        topicMessageRetentionDuration_ = null;
+        onChanged();
+      } else {
+        topicMessageRetentionDuration_ = null;
+        topicMessageRetentionDurationBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Indicates the minimum duration for which a message is retained
+     * after it is published to the subscription's topic. If this field is set,
+     * messages published to the subscription's topic in the last
+     * `topic_message_retention_duration` are always available to subscribers. See
+     * the `message_retention_duration` field in `Topic`. This field is set only
+     * in responses from the server; it is ignored if it is set in any requests.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Duration topic_message_retention_duration = 17 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.protobuf.Duration.Builder getTopicMessageRetentionDurationBuilder() {
+
+      onChanged();
+      return getTopicMessageRetentionDurationFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Indicates the minimum duration for which a message is retained
+     * after it is published to the subscription's topic. If this field is set,
+     * messages published to the subscription's topic in the last
+     * `topic_message_retention_duration` are always available to subscribers. See
+     * the `message_retention_duration` field in `Topic`. This field is set only
+     * in responses from the server; it is ignored if it is set in any requests.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Duration topic_message_retention_duration = 17 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.protobuf.DurationOrBuilder getTopicMessageRetentionDurationOrBuilder() {
+      if (topicMessageRetentionDurationBuilder_ != null) {
+        return topicMessageRetentionDurationBuilder_.getMessageOrBuilder();
+      } else {
+        return topicMessageRetentionDuration_ == null
+            ? com.google.protobuf.Duration.getDefaultInstance()
+            : topicMessageRetentionDuration_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Indicates the minimum duration for which a message is retained
+     * after it is published to the subscription's topic. If this field is set,
+     * messages published to the subscription's topic in the last
+     * `topic_message_retention_duration` are always available to subscribers. See
+     * the `message_retention_duration` field in `Topic`. This field is set only
+     * in responses from the server; it is ignored if it is set in any requests.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Duration topic_message_retention_duration = 17 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.Duration,
+            com.google.protobuf.Duration.Builder,
+            com.google.protobuf.DurationOrBuilder>
+        getTopicMessageRetentionDurationFieldBuilder() {
+      if (topicMessageRetentionDurationBuilder_ == null) {
+        topicMessageRetentionDurationBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.protobuf.Duration,
+                com.google.protobuf.Duration.Builder,
+                com.google.protobuf.DurationOrBuilder>(
+                getTopicMessageRetentionDuration(), getParentForChildren(), isClean());
+        topicMessageRetentionDuration_ = null;
+      }
+      return topicMessageRetentionDurationBuilder_;
     }
 
     @java.lang.Override

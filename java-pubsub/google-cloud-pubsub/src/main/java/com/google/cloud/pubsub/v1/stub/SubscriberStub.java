@@ -1,11 +1,11 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2021 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,12 +13,12 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.pubsub.v1.stub;
 
 import static com.google.cloud.pubsub.v1.SubscriptionAdminClient.ListSnapshotsPagedResponse;
 import static com.google.cloud.pubsub.v1.SubscriptionAdminClient.ListSubscriptionsPagedResponse;
 
-import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.rpc.BidiStreamingCallable;
 import com.google.api.gax.rpc.UnaryCallable;
@@ -52,14 +52,13 @@ import com.google.pubsub.v1.UpdateSnapshotRequest;
 import com.google.pubsub.v1.UpdateSubscriptionRequest;
 import javax.annotation.Generated;
 
-// AUTO-GENERATED DOCUMENTATION AND CLASS
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
- * Base stub class for Cloud Pub/Sub API.
+ * Base stub class for the Subscriber service API.
  *
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
-@Generated("by gapic-generator")
-@BetaApi("A restructuring of stub classes is planned, so this may break in the future")
+@Generated("by gapic-generator-java")
 public abstract class SubscriberStub implements BackgroundResource {
 
   public UnaryCallable<Subscription, Subscription> createSubscriptionCallable() {
@@ -88,10 +87,6 @@ public abstract class SubscriberStub implements BackgroundResource {
     throw new UnsupportedOperationException("Not implemented: deleteSubscriptionCallable()");
   }
 
-  public UnaryCallable<GetSnapshotRequest, Snapshot> getSnapshotCallable() {
-    throw new UnsupportedOperationException("Not implemented: getSnapshotCallable()");
-  }
-
   public UnaryCallable<ModifyAckDeadlineRequest, Empty> modifyAckDeadlineCallable() {
     throw new UnsupportedOperationException("Not implemented: modifyAckDeadlineCallable()");
   }
@@ -111,6 +106,10 @@ public abstract class SubscriberStub implements BackgroundResource {
 
   public UnaryCallable<ModifyPushConfigRequest, Empty> modifyPushConfigCallable() {
     throw new UnsupportedOperationException("Not implemented: modifyPushConfigCallable()");
+  }
+
+  public UnaryCallable<GetSnapshotRequest, Snapshot> getSnapshotCallable() {
+    throw new UnsupportedOperationException("Not implemented: getSnapshotCallable()");
   }
 
   public UnaryCallable<ListSnapshotsRequest, ListSnapshotsPagedResponse>

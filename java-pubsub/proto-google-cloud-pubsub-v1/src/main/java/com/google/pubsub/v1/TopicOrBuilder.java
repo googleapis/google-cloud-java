@@ -235,4 +235,60 @@ public interface TopicOrBuilder
    * @return The satisfiesPzs.
    */
   boolean getSatisfiesPzs();
+
+  /**
+   *
+   *
+   * <pre>
+   * Indicates the minimum duration to retain a message after it is published to
+   * the topic. If this field is set, messages published to the topic in the
+   * last `message_retention_duration` are always available to subscribers. For
+   * instance, it allows any attached subscription to [seek to a
+   * timestamp](https://cloud.google.com/pubsub/docs/replay-overview#seek_to_a_time)
+   * that is up to `message_retention_duration` in the past. If this field is
+   * not set, message retention is controlled by settings on individual
+   * subscriptions. Cannot be more than 7 days or less than 10 minutes.
+   * </pre>
+   *
+   * <code>.google.protobuf.Duration message_retention_duration = 8;</code>
+   *
+   * @return Whether the messageRetentionDuration field is set.
+   */
+  boolean hasMessageRetentionDuration();
+  /**
+   *
+   *
+   * <pre>
+   * Indicates the minimum duration to retain a message after it is published to
+   * the topic. If this field is set, messages published to the topic in the
+   * last `message_retention_duration` are always available to subscribers. For
+   * instance, it allows any attached subscription to [seek to a
+   * timestamp](https://cloud.google.com/pubsub/docs/replay-overview#seek_to_a_time)
+   * that is up to `message_retention_duration` in the past. If this field is
+   * not set, message retention is controlled by settings on individual
+   * subscriptions. Cannot be more than 7 days or less than 10 minutes.
+   * </pre>
+   *
+   * <code>.google.protobuf.Duration message_retention_duration = 8;</code>
+   *
+   * @return The messageRetentionDuration.
+   */
+  com.google.protobuf.Duration getMessageRetentionDuration();
+  /**
+   *
+   *
+   * <pre>
+   * Indicates the minimum duration to retain a message after it is published to
+   * the topic. If this field is set, messages published to the topic in the
+   * last `message_retention_duration` are always available to subscribers. For
+   * instance, it allows any attached subscription to [seek to a
+   * timestamp](https://cloud.google.com/pubsub/docs/replay-overview#seek_to_a_time)
+   * that is up to `message_retention_duration` in the past. If this field is
+   * not set, message retention is controlled by settings on individual
+   * subscriptions. Cannot be more than 7 days or less than 10 minutes.
+   * </pre>
+   *
+   * <code>.google.protobuf.Duration message_retention_duration = 8;</code>
+   */
+  com.google.protobuf.DurationOrBuilder getMessageRetentionDurationOrBuilder();
 }

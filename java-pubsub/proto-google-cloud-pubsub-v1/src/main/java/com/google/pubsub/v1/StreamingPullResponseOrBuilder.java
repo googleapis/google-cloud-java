@@ -74,4 +74,46 @@ public interface StreamingPullResponseOrBuilder
    * <code>repeated .google.pubsub.v1.ReceivedMessage received_messages = 1;</code>
    */
   com.google.pubsub.v1.ReceivedMessageOrBuilder getReceivedMessagesOrBuilder(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Properties associated with this subscription.
+   * </pre>
+   *
+   * <code>
+   * .google.pubsub.v1.StreamingPullResponse.SubscriptionProperties subscription_properties = 4;
+   * </code>
+   *
+   * @return Whether the subscriptionProperties field is set.
+   */
+  boolean hasSubscriptionProperties();
+  /**
+   *
+   *
+   * <pre>
+   * Properties associated with this subscription.
+   * </pre>
+   *
+   * <code>
+   * .google.pubsub.v1.StreamingPullResponse.SubscriptionProperties subscription_properties = 4;
+   * </code>
+   *
+   * @return The subscriptionProperties.
+   */
+  com.google.pubsub.v1.StreamingPullResponse.SubscriptionProperties getSubscriptionProperties();
+  /**
+   *
+   *
+   * <pre>
+   * Properties associated with this subscription.
+   * </pre>
+   *
+   * <code>
+   * .google.pubsub.v1.StreamingPullResponse.SubscriptionProperties subscription_properties = 4;
+   * </code>
+   */
+  com.google.pubsub.v1.StreamingPullResponse.SubscriptionPropertiesOrBuilder
+      getSubscriptionPropertiesOrBuilder();
 }

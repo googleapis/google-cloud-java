@@ -23,6 +23,7 @@ package com.google.pubsub.v1;
  *
  * <pre>
  * Response for the `ValidateMessage` method.
+ * Empty for now.
  * </pre>
  *
  * Protobuf type {@code google.pubsub.v1.ValidateMessageResponse}
@@ -257,6 +258,7 @@ public final class ValidateMessageResponse extends com.google.protobuf.Generated
    *
    * <pre>
    * Response for the `ValidateMessage` method.
+   * Empty for now.
    * </pre>
    *
    * Protobuf type {@code google.pubsub.v1.ValidateMessageResponse}

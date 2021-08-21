@@ -1,11 +1,11 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2021 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -23,18 +23,28 @@ import com.google.common.collect.ImmutableMap;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
+import java.util.Objects;
+import javax.annotation.Generated;
 
-/** AUTO-GENERATED DOCUMENTATION AND CLASS */
-@javax.annotation.Generated("by GAPIC protoc plugin")
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
+@Generated("by gapic-generator-java")
 public class SchemaName implements ResourceName {
-
-  private static final PathTemplate PATH_TEMPLATE =
+  private static final PathTemplate PROJECT_SCHEMA =
       PathTemplate.createWithoutUrlEncoding("projects/{project}/schemas/{schema}");
-
   private volatile Map<String, String> fieldValuesMap;
-
   private final String project;
   private final String schema;
+
+  @Deprecated
+  protected SchemaName() {
+    project = null;
+    schema = null;
+  }
+
+  private SchemaName(Builder builder) {
+    project = Preconditions.checkNotNull(builder.getProject());
+    schema = Preconditions.checkNotNull(builder.getSchema());
+  }
 
   public String getProject() {
     return project;
@@ -52,11 +62,6 @@ public class SchemaName implements ResourceName {
     return new Builder(this);
   }
 
-  private SchemaName(Builder builder) {
-    project = Preconditions.checkNotNull(builder.getProject());
-    schema = Preconditions.checkNotNull(builder.getSchema());
-  }
-
   public static SchemaName of(String project, String schema) {
     return newBuilder().setProject(project).setSchema(schema).build();
   }
@@ -70,7 +75,7 @@ public class SchemaName implements ResourceName {
       return null;
     }
     Map<String, String> matchMap =
-        PATH_TEMPLATE.validatedMatch(
+        PROJECT_SCHEMA.validatedMatch(
             formattedString, "SchemaName.parse: formattedString not in valid format");
     return of(matchMap.get("project"), matchMap.get("schema"));
   }
@@ -84,7 +89,7 @@ public class SchemaName implements ResourceName {
   }
 
   public static List<String> toStringList(List<SchemaName> values) {
-    List<String> list = new ArrayList<String>(values.size());
+    List<String> list = new ArrayList<>(values.size());
     for (SchemaName value : values) {
       if (value == null) {
         list.add("");
@@ -96,16 +101,21 @@ public class SchemaName implements ResourceName {
   }
 
   public static boolean isParsableFrom(String formattedString) {
-    return PATH_TEMPLATE.matches(formattedString);
+    return PROJECT_SCHEMA.matches(formattedString);
   }
 
+  @Override
   public Map<String, String> getFieldValuesMap() {
     if (fieldValuesMap == null) {
       synchronized (this) {
         if (fieldValuesMap == null) {
           ImmutableMap.Builder<String, String> fieldMapBuilder = ImmutableMap.builder();
-          fieldMapBuilder.put("project", project);
-          fieldMapBuilder.put("schema", schema);
+          if (project != null) {
+            fieldMapBuilder.put("project", project);
+          }
+          if (schema != null) {
+            fieldMapBuilder.put("schema", schema);
+          }
           fieldValuesMap = fieldMapBuilder.build();
         }
       }
@@ -119,14 +129,37 @@ public class SchemaName implements ResourceName {
 
   @Override
   public String toString() {
-    return PATH_TEMPLATE.instantiate("project", project, "schema", schema);
+    return PROJECT_SCHEMA.instantiate("project", project, "schema", schema);
   }
 
-  /** Builder for SchemaName. */
-  public static class Builder {
+  @Override
+  public boolean equals(Object o) {
+    if (o == this) {
+      return true;
+    }
+    if (o != null || getClass() == o.getClass()) {
+      SchemaName that = ((SchemaName) o);
+      return Objects.equals(this.project, that.project) && Objects.equals(this.schema, that.schema);
+    }
+    return false;
+  }
 
+  @Override
+  public int hashCode() {
+    int h = 1;
+    h *= 1000003;
+    h ^= Objects.hashCode(project);
+    h *= 1000003;
+    h ^= Objects.hashCode(schema);
+    return h;
+  }
+
+  /** Builder for projects/{project}/schemas/{schema}. */
+  public static class Builder {
     private String project;
     private String schema;
+
+    protected Builder() {}
 
     public String getProject() {
       return project;
@@ -146,37 +179,13 @@ public class SchemaName implements ResourceName {
       return this;
     }
 
-    private Builder() {}
-
     private Builder(SchemaName schemaName) {
-      project = schemaName.project;
-      schema = schemaName.schema;
+      this.project = schemaName.project;
+      this.schema = schemaName.schema;
     }
 
     public SchemaName build() {
       return new SchemaName(this);
     }
-  }
-
-  @Override
-  public boolean equals(Object o) {
-    if (o == this) {
-      return true;
-    }
-    if (o instanceof SchemaName) {
-      SchemaName that = (SchemaName) o;
-      return (this.project.equals(that.project)) && (this.schema.equals(that.schema));
-    }
-    return false;
-  }
-
-  @Override
-  public int hashCode() {
-    int h = 1;
-    h *= 1000003;
-    h ^= project.hashCode();
-    h *= 1000003;
-    h ^= schema.hashCode();
-    return h;
   }
 }

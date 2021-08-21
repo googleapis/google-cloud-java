@@ -168,8 +168,9 @@ public interface SubscriptionOrBuilder
    * Indicates whether to retain acknowledged messages. If true, then
    * messages are not expunged from the subscription's backlog, even if they are
    * acknowledged, until they fall out of the `message_retention_duration`
-   * window. This must be true if you would like to [Seek to a timestamp]
-   * (https://cloud.google.com/pubsub/docs/replay-overview#seek_to_a_time).
+   * window. This must be true if you would like to [`Seek` to a timestamp]
+   * (https://cloud.google.com/pubsub/docs/replay-overview#seek_to_a_time) in
+   * the past to replay previously-acknowledged messages.
    * </pre>
    *
    * <code>bool retain_acked_messages = 7;</code>
@@ -505,4 +506,60 @@ public interface SubscriptionOrBuilder
    * @return The detached.
    */
   boolean getDetached();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Indicates the minimum duration for which a message is retained
+   * after it is published to the subscription's topic. If this field is set,
+   * messages published to the subscription's topic in the last
+   * `topic_message_retention_duration` are always available to subscribers. See
+   * the `message_retention_duration` field in `Topic`. This field is set only
+   * in responses from the server; it is ignored if it is set in any requests.
+   * </pre>
+   *
+   * <code>
+   * .google.protobuf.Duration topic_message_retention_duration = 17 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the topicMessageRetentionDuration field is set.
+   */
+  boolean hasTopicMessageRetentionDuration();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Indicates the minimum duration for which a message is retained
+   * after it is published to the subscription's topic. If this field is set,
+   * messages published to the subscription's topic in the last
+   * `topic_message_retention_duration` are always available to subscribers. See
+   * the `message_retention_duration` field in `Topic`. This field is set only
+   * in responses from the server; it is ignored if it is set in any requests.
+   * </pre>
+   *
+   * <code>
+   * .google.protobuf.Duration topic_message_retention_duration = 17 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The topicMessageRetentionDuration.
+   */
+  com.google.protobuf.Duration getTopicMessageRetentionDuration();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Indicates the minimum duration for which a message is retained
+   * after it is published to the subscription's topic. If this field is set,
+   * messages published to the subscription's topic in the last
+   * `topic_message_retention_duration` are always available to subscribers. See
+   * the `message_retention_duration` field in `Topic`. This field is set only
+   * in responses from the server; it is ignored if it is set in any requests.
+   * </pre>
+   *
+   * <code>
+   * .google.protobuf.Duration topic_message_retention_duration = 17 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.protobuf.DurationOrBuilder getTopicMessageRetentionDurationOrBuilder();
 }

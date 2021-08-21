@@ -1,11 +1,11 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2021 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.pubsub.v1.stub;
 
 import static com.google.cloud.pubsub.v1.SchemaServiceClient.ListSchemasPagedResponse;
@@ -43,6 +44,11 @@ import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Lists;
+import com.google.iam.v1.GetIamPolicyRequest;
+import com.google.iam.v1.Policy;
+import com.google.iam.v1.SetIamPolicyRequest;
+import com.google.iam.v1.TestIamPermissionsRequest;
+import com.google.iam.v1.TestIamPermissionsResponse;
 import com.google.protobuf.Empty;
 import com.google.pubsub.v1.CreateSchemaRequest;
 import com.google.pubsub.v1.DeleteSchemaRequest;
@@ -57,9 +63,8 @@ import com.google.pubsub.v1.ValidateSchemaResponse;
 import java.io.IOException;
 import java.util.List;
 import javax.annotation.Generated;
-import org.threeten.bp.Duration;
 
-// AUTO-GENERATED DOCUMENTATION AND CLASS
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
  * Settings class to configure an instance of {@link SchemaServiceStub}.
  *
@@ -76,21 +81,22 @@ import org.threeten.bp.Duration;
  *
  * <p>For example, to set the total timeout of createSchema to 30 seconds:
  *
- * <pre>
- * <code>
+ * <pre>{@code
  * SchemaServiceStubSettings.Builder schemaServiceSettingsBuilder =
  *     SchemaServiceStubSettings.newBuilder();
  * schemaServiceSettingsBuilder
  *     .createSchemaSettings()
  *     .setRetrySettings(
- *         schemaServiceSettingsBuilder.createSchemaSettings().getRetrySettings().toBuilder()
+ *         schemaServiceSettingsBuilder
+ *             .createSchemaSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * SchemaServiceStubSettings schemaServiceSettings = schemaServiceSettingsBuilder.build();
- * </code>
- * </pre>
+ * }</pre>
  */
-@Generated("by gapic-generator")
+@Generated("by gapic-generator-java")
 public class SchemaServiceStubSettings extends StubSettings<SchemaServiceStubSettings> {
   /** The default scopes of the service. */
   private static final ImmutableList<String> DEFAULT_SERVICE_SCOPES =
@@ -108,6 +114,63 @@ public class SchemaServiceStubSettings extends StubSettings<SchemaServiceStubSet
       validateSchemaSettings;
   private final UnaryCallSettings<ValidateMessageRequest, ValidateMessageResponse>
       validateMessageSettings;
+  private final UnaryCallSettings<SetIamPolicyRequest, Policy> setIamPolicySettings;
+  private final UnaryCallSettings<GetIamPolicyRequest, Policy> getIamPolicySettings;
+  private final UnaryCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
+      testIamPermissionsSettings;
+
+  private static final PagedListDescriptor<ListSchemasRequest, ListSchemasResponse, Schema>
+      LIST_SCHEMAS_PAGE_STR_DESC =
+          new PagedListDescriptor<ListSchemasRequest, ListSchemasResponse, Schema>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListSchemasRequest injectToken(ListSchemasRequest payload, String token) {
+              return ListSchemasRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListSchemasRequest injectPageSize(ListSchemasRequest payload, int pageSize) {
+              return ListSchemasRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListSchemasRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListSchemasResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<Schema> extractResources(ListSchemasResponse payload) {
+              return payload.getSchemasList() == null
+                  ? ImmutableList.<Schema>of()
+                  : payload.getSchemasList();
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListSchemasRequest, ListSchemasResponse, ListSchemasPagedResponse>
+      LIST_SCHEMAS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListSchemasRequest, ListSchemasResponse, ListSchemasPagedResponse>() {
+            @Override
+            public ApiFuture<ListSchemasPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListSchemasRequest, ListSchemasResponse> callable,
+                ListSchemasRequest request,
+                ApiCallContext context,
+                ApiFuture<ListSchemasResponse> futureResponse) {
+              PageContext<ListSchemasRequest, ListSchemasResponse, Schema> pageContext =
+                  PageContext.create(callable, LIST_SCHEMAS_PAGE_STR_DESC, request, context);
+              return ListSchemasPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
 
   /** Returns the object with the settings used for calls to createSchema. */
   public UnaryCallSettings<CreateSchemaRequest, Schema> createSchemaSettings() {
@@ -141,16 +204,32 @@ public class SchemaServiceStubSettings extends StubSettings<SchemaServiceStubSet
     return validateMessageSettings;
   }
 
+  /** Returns the object with the settings used for calls to setIamPolicy. */
+  public UnaryCallSettings<SetIamPolicyRequest, Policy> setIamPolicySettings() {
+    return setIamPolicySettings;
+  }
+
+  /** Returns the object with the settings used for calls to getIamPolicy. */
+  public UnaryCallSettings<GetIamPolicyRequest, Policy> getIamPolicySettings() {
+    return getIamPolicySettings;
+  }
+
+  /** Returns the object with the settings used for calls to testIamPermissions. */
+  public UnaryCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
+      testIamPermissionsSettings() {
+    return testIamPermissionsSettings;
+  }
+
   @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public SchemaServiceStub createStub() throws IOException {
     if (getTransportChannelProvider()
         .getTransportName()
         .equals(GrpcTransportChannel.getGrpcTransportName())) {
       return GrpcSchemaServiceStub.create(this);
-    } else {
-      throw new UnsupportedOperationException(
-          "Transport not supported: " + getTransportChannelProvider().getTransportName());
     }
+    throw new UnsupportedOperationException(
+        String.format(
+            "Transport not supported: %s", getTransportChannelProvider().getTransportName()));
   }
 
   /** Returns a builder for the default ExecutorProvider for this service. */
@@ -161,6 +240,11 @@ public class SchemaServiceStubSettings extends StubSettings<SchemaServiceStubSet
   /** Returns the default service endpoint. */
   public static String getDefaultEndpoint() {
     return "pubsub.googleapis.com:443";
+  }
+
+  /** Returns the default mTLS service endpoint. */
+  public static String getDefaultMtlsEndpoint() {
+    return "pubsub.mtls.googleapis.com:443";
   }
 
   /** Returns the default service scopes. */
@@ -216,65 +300,14 @@ public class SchemaServiceStubSettings extends StubSettings<SchemaServiceStubSet
     deleteSchemaSettings = settingsBuilder.deleteSchemaSettings().build();
     validateSchemaSettings = settingsBuilder.validateSchemaSettings().build();
     validateMessageSettings = settingsBuilder.validateMessageSettings().build();
+    setIamPolicySettings = settingsBuilder.setIamPolicySettings().build();
+    getIamPolicySettings = settingsBuilder.getIamPolicySettings().build();
+    testIamPermissionsSettings = settingsBuilder.testIamPermissionsSettings().build();
   }
-
-  private static final PagedListDescriptor<ListSchemasRequest, ListSchemasResponse, Schema>
-      LIST_SCHEMAS_PAGE_STR_DESC =
-          new PagedListDescriptor<ListSchemasRequest, ListSchemasResponse, Schema>() {
-            @Override
-            public String emptyToken() {
-              return "";
-            }
-
-            @Override
-            public ListSchemasRequest injectToken(ListSchemasRequest payload, String token) {
-              return ListSchemasRequest.newBuilder(payload).setPageToken(token).build();
-            }
-
-            @Override
-            public ListSchemasRequest injectPageSize(ListSchemasRequest payload, int pageSize) {
-              return ListSchemasRequest.newBuilder(payload).setPageSize(pageSize).build();
-            }
-
-            @Override
-            public Integer extractPageSize(ListSchemasRequest payload) {
-              return payload.getPageSize();
-            }
-
-            @Override
-            public String extractNextToken(ListSchemasResponse payload) {
-              return payload.getNextPageToken();
-            }
-
-            @Override
-            public Iterable<Schema> extractResources(ListSchemasResponse payload) {
-              return payload.getSchemasList() != null
-                  ? payload.getSchemasList()
-                  : ImmutableList.<Schema>of();
-            }
-          };
-
-  private static final PagedListResponseFactory<
-          ListSchemasRequest, ListSchemasResponse, ListSchemasPagedResponse>
-      LIST_SCHEMAS_PAGE_STR_FACT =
-          new PagedListResponseFactory<
-              ListSchemasRequest, ListSchemasResponse, ListSchemasPagedResponse>() {
-            @Override
-            public ApiFuture<ListSchemasPagedResponse> getFuturePagedResponse(
-                UnaryCallable<ListSchemasRequest, ListSchemasResponse> callable,
-                ListSchemasRequest request,
-                ApiCallContext context,
-                ApiFuture<ListSchemasResponse> futureResponse) {
-              PageContext<ListSchemasRequest, ListSchemasResponse, Schema> pageContext =
-                  PageContext.create(callable, LIST_SCHEMAS_PAGE_STR_DESC, request, context);
-              return ListSchemasPagedResponse.createAsync(pageContext, futureResponse);
-            }
-          };
 
   /** Builder for SchemaServiceStubSettings. */
   public static class Builder extends StubSettings.Builder<SchemaServiceStubSettings, Builder> {
     private final ImmutableList<UnaryCallSettings.Builder<?, ?>> unaryMethodSettingsBuilders;
-
     private final UnaryCallSettings.Builder<CreateSchemaRequest, Schema> createSchemaSettings;
     private final UnaryCallSettings.Builder<GetSchemaRequest, Schema> getSchemaSettings;
     private final PagedCallSettings.Builder<
@@ -285,50 +318,17 @@ public class SchemaServiceStubSettings extends StubSettings<SchemaServiceStubSet
         validateSchemaSettings;
     private final UnaryCallSettings.Builder<ValidateMessageRequest, ValidateMessageResponse>
         validateMessageSettings;
-
+    private final UnaryCallSettings.Builder<SetIamPolicyRequest, Policy> setIamPolicySettings;
+    private final UnaryCallSettings.Builder<GetIamPolicyRequest, Policy> getIamPolicySettings;
+    private final UnaryCallSettings.Builder<TestIamPermissionsRequest, TestIamPermissionsResponse>
+        testIamPermissionsSettings;
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
 
     static {
       ImmutableMap.Builder<String, ImmutableSet<StatusCode.Code>> definitions =
           ImmutableMap.builder();
-      definitions.put(
-          "retry_policy_1_codes",
-          ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList(StatusCode.Code.UNAVAILABLE)));
-      definitions.put(
-          "retry_policy_4_codes",
-          ImmutableSet.copyOf(
-              Lists.<StatusCode.Code>newArrayList(
-                  StatusCode.Code.DEADLINE_EXCEEDED,
-                  StatusCode.Code.RESOURCE_EXHAUSTED,
-                  StatusCode.Code.ABORTED,
-                  StatusCode.Code.INTERNAL,
-                  StatusCode.Code.UNAVAILABLE)));
-      definitions.put(
-          "retry_policy_6_codes",
-          ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList(StatusCode.Code.UNAVAILABLE)));
       definitions.put("no_retry_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
-      definitions.put(
-          "retry_policy_3_codes",
-          ImmutableSet.copyOf(
-              Lists.<StatusCode.Code>newArrayList(
-                  StatusCode.Code.UNKNOWN, StatusCode.Code.ABORTED, StatusCode.Code.UNAVAILABLE)));
-      definitions.put(
-          "retry_policy_2_codes",
-          ImmutableSet.copyOf(
-              Lists.<StatusCode.Code>newArrayList(
-                  StatusCode.Code.ABORTED,
-                  StatusCode.Code.CANCELLED,
-                  StatusCode.Code.INTERNAL,
-                  StatusCode.Code.RESOURCE_EXHAUSTED,
-                  StatusCode.Code.UNKNOWN,
-                  StatusCode.Code.UNAVAILABLE,
-                  StatusCode.Code.DEADLINE_EXCEEDED)));
-      definitions.put(
-          "retry_policy_5_codes",
-          ImmutableSet.copyOf(
-              Lists.<StatusCode.Code>newArrayList(
-                  StatusCode.Code.UNKNOWN, StatusCode.Code.ABORTED, StatusCode.Code.UNAVAILABLE)));
       RETRYABLE_CODE_DEFINITIONS = definitions.build();
     }
 
@@ -337,95 +337,27 @@ public class SchemaServiceStubSettings extends StubSettings<SchemaServiceStubSet
     static {
       ImmutableMap.Builder<String, RetrySettings> definitions = ImmutableMap.builder();
       RetrySettings settings = null;
-      settings =
-          RetrySettings.newBuilder()
-              .setInitialRetryDelay(Duration.ofMillis(100L))
-              .setRetryDelayMultiplier(1.3)
-              .setMaxRetryDelay(Duration.ofMillis(60000L))
-              .setInitialRpcTimeout(Duration.ofMillis(60000L))
-              .setRpcTimeoutMultiplier(1.0)
-              .setMaxRpcTimeout(Duration.ofMillis(60000L))
-              .setTotalTimeout(Duration.ofMillis(60000L))
-              .build();
-      definitions.put("retry_policy_1_params", settings);
-      settings =
-          RetrySettings.newBuilder()
-              .setInitialRetryDelay(Duration.ofMillis(100L))
-              .setRetryDelayMultiplier(1.3)
-              .setMaxRetryDelay(Duration.ofMillis(60000L))
-              .setInitialRpcTimeout(Duration.ofMillis(60000L))
-              .setRpcTimeoutMultiplier(1.0)
-              .setMaxRpcTimeout(Duration.ofMillis(60000L))
-              .setTotalTimeout(Duration.ofMillis(60000L))
-              .build();
-      definitions.put("retry_policy_3_params", settings);
-      settings =
-          RetrySettings.newBuilder()
-              .setInitialRetryDelay(Duration.ofMillis(100L))
-              .setRetryDelayMultiplier(1.3)
-              .setMaxRetryDelay(Duration.ofMillis(60000L))
-              .setInitialRpcTimeout(Duration.ofMillis(60000L))
-              .setRpcTimeoutMultiplier(1.0)
-              .setMaxRpcTimeout(Duration.ofMillis(60000L))
-              .setTotalTimeout(Duration.ofMillis(60000L))
-              .build();
-      definitions.put("retry_policy_6_params", settings);
-      settings =
-          RetrySettings.newBuilder()
-              .setInitialRetryDelay(Duration.ofMillis(100L))
-              .setRetryDelayMultiplier(1.3)
-              .setMaxRetryDelay(Duration.ofMillis(60000L))
-              .setInitialRpcTimeout(Duration.ofMillis(60000L))
-              .setRpcTimeoutMultiplier(1.0)
-              .setMaxRpcTimeout(Duration.ofMillis(60000L))
-              .setTotalTimeout(Duration.ofMillis(60000L))
-              .build();
-      definitions.put("retry_policy_2_params", settings);
-      settings =
-          RetrySettings.newBuilder()
-              .setInitialRetryDelay(Duration.ofMillis(100L))
-              .setRetryDelayMultiplier(1.3)
-              .setMaxRetryDelay(Duration.ofMillis(60000L))
-              .setInitialRpcTimeout(Duration.ofMillis(900000L))
-              .setRpcTimeoutMultiplier(1.0)
-              .setMaxRpcTimeout(Duration.ofMillis(900000L))
-              .setTotalTimeout(Duration.ofMillis(900000L))
-              .build();
-      definitions.put("retry_policy_4_params", settings);
-      settings =
-          RetrySettings.newBuilder()
-              .setInitialRetryDelay(Duration.ofMillis(100L))
-              .setRetryDelayMultiplier(1.3)
-              .setMaxRetryDelay(Duration.ofMillis(60000L))
-              .setInitialRpcTimeout(Duration.ofMillis(60000L))
-              .setRpcTimeoutMultiplier(1.0)
-              .setMaxRpcTimeout(Duration.ofMillis(60000L))
-              .setTotalTimeout(Duration.ofMillis(60000L))
-              .build();
-      definitions.put("retry_policy_5_params", settings);
       settings = RetrySettings.newBuilder().setRpcTimeoutMultiplier(1.0).build();
       definitions.put("no_retry_params", settings);
       RETRY_PARAM_DEFINITIONS = definitions.build();
     }
 
     protected Builder() {
-      this((ClientContext) null);
+      this(((ClientContext) null));
     }
 
     protected Builder(ClientContext clientContext) {
       super(clientContext);
 
       createSchemaSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       getSchemaSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       listSchemasSettings = PagedCallSettings.newBuilder(LIST_SCHEMAS_PAGE_STR_FACT);
-
       deleteSchemaSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       validateSchemaSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       validateMessageSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      setIamPolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      getIamPolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      testIamPermissionsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -434,22 +366,53 @@ public class SchemaServiceStubSettings extends StubSettings<SchemaServiceStubSet
               listSchemasSettings,
               deleteSchemaSettings,
               validateSchemaSettings,
-              validateMessageSettings);
-
+              validateMessageSettings,
+              setIamPolicySettings,
+              getIamPolicySettings,
+              testIamPermissionsSettings);
       initDefaults(this);
     }
 
+    protected Builder(SchemaServiceStubSettings settings) {
+      super(settings);
+
+      createSchemaSettings = settings.createSchemaSettings.toBuilder();
+      getSchemaSettings = settings.getSchemaSettings.toBuilder();
+      listSchemasSettings = settings.listSchemasSettings.toBuilder();
+      deleteSchemaSettings = settings.deleteSchemaSettings.toBuilder();
+      validateSchemaSettings = settings.validateSchemaSettings.toBuilder();
+      validateMessageSettings = settings.validateMessageSettings.toBuilder();
+      setIamPolicySettings = settings.setIamPolicySettings.toBuilder();
+      getIamPolicySettings = settings.getIamPolicySettings.toBuilder();
+      testIamPermissionsSettings = settings.testIamPermissionsSettings.toBuilder();
+
+      unaryMethodSettingsBuilders =
+          ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
+              createSchemaSettings,
+              getSchemaSettings,
+              listSchemasSettings,
+              deleteSchemaSettings,
+              validateSchemaSettings,
+              validateMessageSettings,
+              setIamPolicySettings,
+              getIamPolicySettings,
+              testIamPermissionsSettings);
+    }
+
     private static Builder createDefault() {
-      Builder builder = new Builder((ClientContext) null);
+      Builder builder = new Builder(((ClientContext) null));
+
       builder.setTransportChannelProvider(defaultTransportChannelProvider());
       builder.setCredentialsProvider(defaultCredentialsProviderBuilder().build());
       builder.setInternalHeaderProvider(defaultApiClientHeaderProviderBuilder().build());
       builder.setEndpoint(getDefaultEndpoint());
+      builder.setMtlsEndpoint(getDefaultMtlsEndpoint());
+      builder.setSwitchToMtlsEndpointAllowed(true);
+
       return initDefaults(builder);
     }
 
     private static Builder initDefaults(Builder builder) {
-
       builder
           .createSchemaSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
@@ -480,37 +443,31 @@ public class SchemaServiceStubSettings extends StubSettings<SchemaServiceStubSet
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
 
+      builder
+          .setIamPolicySettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .getIamPolicySettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .testIamPermissionsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
       return builder;
     }
 
-    protected Builder(SchemaServiceStubSettings settings) {
-      super(settings);
-
-      createSchemaSettings = settings.createSchemaSettings.toBuilder();
-      getSchemaSettings = settings.getSchemaSettings.toBuilder();
-      listSchemasSettings = settings.listSchemasSettings.toBuilder();
-      deleteSchemaSettings = settings.deleteSchemaSettings.toBuilder();
-      validateSchemaSettings = settings.validateSchemaSettings.toBuilder();
-      validateMessageSettings = settings.validateMessageSettings.toBuilder();
-
-      unaryMethodSettingsBuilders =
-          ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
-              createSchemaSettings,
-              getSchemaSettings,
-              listSchemasSettings,
-              deleteSchemaSettings,
-              validateSchemaSettings,
-              validateMessageSettings);
-    }
-
-    // NEXT_MAJOR_VER: remove 'throws Exception'
     /**
      * Applies the given settings updater function to all of the unary API methods in this service.
      *
      * <p>Note: This method does not support applying settings to streaming methods.
      */
     public Builder applyToAllUnaryMethods(
-        ApiFunction<UnaryCallSettings.Builder<?, ?>, Void> settingsUpdater) throws Exception {
+        ApiFunction<UnaryCallSettings.Builder<?, ?>, Void> settingsUpdater) {
       super.applyToAllUnaryMethods(unaryMethodSettingsBuilders, settingsUpdater);
       return this;
     }
@@ -551,6 +508,22 @@ public class SchemaServiceStubSettings extends StubSettings<SchemaServiceStubSet
     public UnaryCallSettings.Builder<ValidateMessageRequest, ValidateMessageResponse>
         validateMessageSettings() {
       return validateMessageSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to setIamPolicy. */
+    public UnaryCallSettings.Builder<SetIamPolicyRequest, Policy> setIamPolicySettings() {
+      return setIamPolicySettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getIamPolicy. */
+    public UnaryCallSettings.Builder<GetIamPolicyRequest, Policy> getIamPolicySettings() {
+      return getIamPolicySettings;
+    }
+
+    /** Returns the builder for the settings used for calls to testIamPermissions. */
+    public UnaryCallSettings.Builder<TestIamPermissionsRequest, TestIamPermissionsResponse>
+        testIamPermissionsSettings() {
+      return testIamPermissionsSettings;
     }
 
     @Override

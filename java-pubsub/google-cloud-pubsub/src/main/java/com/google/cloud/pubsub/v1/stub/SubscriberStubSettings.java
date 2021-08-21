@@ -1,11 +1,11 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2021 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.pubsub.v1.stub;
 
 import static com.google.cloud.pubsub.v1.SubscriptionAdminClient.ListSnapshotsPagedResponse;
@@ -78,7 +79,7 @@ import java.util.List;
 import javax.annotation.Generated;
 import org.threeten.bp.Duration;
 
-// AUTO-GENERATED DOCUMENTATION AND CLASS
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
  * Settings class to configure an instance of {@link SubscriberStub}.
  *
@@ -95,21 +96,22 @@ import org.threeten.bp.Duration;
  *
  * <p>For example, to set the total timeout of createSubscription to 30 seconds:
  *
- * <pre>
- * <code>
+ * <pre>{@code
  * SubscriberStubSettings.Builder subscriptionAdminSettingsBuilder =
  *     SubscriberStubSettings.newBuilder();
  * subscriptionAdminSettingsBuilder
  *     .createSubscriptionSettings()
  *     .setRetrySettings(
- *         subscriptionAdminSettingsBuilder.createSubscriptionSettings().getRetrySettings().toBuilder()
+ *         subscriptionAdminSettingsBuilder
+ *             .createSubscriptionSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * SubscriberStubSettings subscriptionAdminSettings = subscriptionAdminSettingsBuilder.build();
- * </code>
- * </pre>
+ * }</pre>
  */
-@Generated("by gapic-generator")
+@Generated("by gapic-generator-java")
 public class SubscriberStubSettings extends StubSettings<SubscriberStubSettings> {
   /** The default scopes of the service. */
   private static final ImmutableList<String> DEFAULT_SERVICE_SCOPES =
@@ -126,13 +128,13 @@ public class SubscriberStubSettings extends StubSettings<SubscriberStubSettings>
           ListSubscriptionsRequest, ListSubscriptionsResponse, ListSubscriptionsPagedResponse>
       listSubscriptionsSettings;
   private final UnaryCallSettings<DeleteSubscriptionRequest, Empty> deleteSubscriptionSettings;
-  private final UnaryCallSettings<GetSnapshotRequest, Snapshot> getSnapshotSettings;
   private final UnaryCallSettings<ModifyAckDeadlineRequest, Empty> modifyAckDeadlineSettings;
   private final UnaryCallSettings<AcknowledgeRequest, Empty> acknowledgeSettings;
   private final UnaryCallSettings<PullRequest, PullResponse> pullSettings;
   private final StreamingCallSettings<StreamingPullRequest, StreamingPullResponse>
       streamingPullSettings;
   private final UnaryCallSettings<ModifyPushConfigRequest, Empty> modifyPushConfigSettings;
+  private final UnaryCallSettings<GetSnapshotRequest, Snapshot> getSnapshotSettings;
   private final PagedCallSettings<
           ListSnapshotsRequest, ListSnapshotsResponse, ListSnapshotsPagedResponse>
       listSnapshotsSettings;
@@ -144,6 +146,120 @@ public class SubscriberStubSettings extends StubSettings<SubscriberStubSettings>
   private final UnaryCallSettings<GetIamPolicyRequest, Policy> getIamPolicySettings;
   private final UnaryCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
       testIamPermissionsSettings;
+
+  private static final PagedListDescriptor<
+          ListSubscriptionsRequest, ListSubscriptionsResponse, Subscription>
+      LIST_SUBSCRIPTIONS_PAGE_STR_DESC =
+          new PagedListDescriptor<
+              ListSubscriptionsRequest, ListSubscriptionsResponse, Subscription>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListSubscriptionsRequest injectToken(
+                ListSubscriptionsRequest payload, String token) {
+              return ListSubscriptionsRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListSubscriptionsRequest injectPageSize(
+                ListSubscriptionsRequest payload, int pageSize) {
+              return ListSubscriptionsRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListSubscriptionsRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListSubscriptionsResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<Subscription> extractResources(ListSubscriptionsResponse payload) {
+              return payload.getSubscriptionsList() == null
+                  ? ImmutableList.<Subscription>of()
+                  : payload.getSubscriptionsList();
+            }
+          };
+
+  private static final PagedListDescriptor<ListSnapshotsRequest, ListSnapshotsResponse, Snapshot>
+      LIST_SNAPSHOTS_PAGE_STR_DESC =
+          new PagedListDescriptor<ListSnapshotsRequest, ListSnapshotsResponse, Snapshot>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListSnapshotsRequest injectToken(ListSnapshotsRequest payload, String token) {
+              return ListSnapshotsRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListSnapshotsRequest injectPageSize(ListSnapshotsRequest payload, int pageSize) {
+              return ListSnapshotsRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListSnapshotsRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListSnapshotsResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<Snapshot> extractResources(ListSnapshotsResponse payload) {
+              return payload.getSnapshotsList() == null
+                  ? ImmutableList.<Snapshot>of()
+                  : payload.getSnapshotsList();
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListSubscriptionsRequest, ListSubscriptionsResponse, ListSubscriptionsPagedResponse>
+      LIST_SUBSCRIPTIONS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListSubscriptionsRequest,
+              ListSubscriptionsResponse,
+              ListSubscriptionsPagedResponse>() {
+            @Override
+            public ApiFuture<ListSubscriptionsPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListSubscriptionsRequest, ListSubscriptionsResponse> callable,
+                ListSubscriptionsRequest request,
+                ApiCallContext context,
+                ApiFuture<ListSubscriptionsResponse> futureResponse) {
+              PageContext<ListSubscriptionsRequest, ListSubscriptionsResponse, Subscription>
+                  pageContext =
+                      PageContext.create(
+                          callable, LIST_SUBSCRIPTIONS_PAGE_STR_DESC, request, context);
+              return ListSubscriptionsPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListSnapshotsRequest, ListSnapshotsResponse, ListSnapshotsPagedResponse>
+      LIST_SNAPSHOTS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListSnapshotsRequest, ListSnapshotsResponse, ListSnapshotsPagedResponse>() {
+            @Override
+            public ApiFuture<ListSnapshotsPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListSnapshotsRequest, ListSnapshotsResponse> callable,
+                ListSnapshotsRequest request,
+                ApiCallContext context,
+                ApiFuture<ListSnapshotsResponse> futureResponse) {
+              PageContext<ListSnapshotsRequest, ListSnapshotsResponse, Snapshot> pageContext =
+                  PageContext.create(callable, LIST_SNAPSHOTS_PAGE_STR_DESC, request, context);
+              return ListSnapshotsPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
 
   /** Returns the object with the settings used for calls to createSubscription. */
   public UnaryCallSettings<Subscription, Subscription> createSubscriptionSettings() {
@@ -172,11 +288,6 @@ public class SubscriberStubSettings extends StubSettings<SubscriberStubSettings>
     return deleteSubscriptionSettings;
   }
 
-  /** Returns the object with the settings used for calls to getSnapshot. */
-  public UnaryCallSettings<GetSnapshotRequest, Snapshot> getSnapshotSettings() {
-    return getSnapshotSettings;
-  }
-
   /** Returns the object with the settings used for calls to modifyAckDeadline. */
   public UnaryCallSettings<ModifyAckDeadlineRequest, Empty> modifyAckDeadlineSettings() {
     return modifyAckDeadlineSettings;
@@ -201,6 +312,11 @@ public class SubscriberStubSettings extends StubSettings<SubscriberStubSettings>
   /** Returns the object with the settings used for calls to modifyPushConfig. */
   public UnaryCallSettings<ModifyPushConfigRequest, Empty> modifyPushConfigSettings() {
     return modifyPushConfigSettings;
+  }
+
+  /** Returns the object with the settings used for calls to getSnapshot. */
+  public UnaryCallSettings<GetSnapshotRequest, Snapshot> getSnapshotSettings() {
+    return getSnapshotSettings;
   }
 
   /** Returns the object with the settings used for calls to listSnapshots. */
@@ -251,10 +367,10 @@ public class SubscriberStubSettings extends StubSettings<SubscriberStubSettings>
         .getTransportName()
         .equals(GrpcTransportChannel.getGrpcTransportName())) {
       return GrpcSubscriberStub.create(this);
-    } else {
-      throw new UnsupportedOperationException(
-          "Transport not supported: " + getTransportChannelProvider().getTransportName());
     }
+    throw new UnsupportedOperationException(
+        String.format(
+            "Transport not supported: %s", getTransportChannelProvider().getTransportName()));
   }
 
   /** Returns a builder for the default ExecutorProvider for this service. */
@@ -265,6 +381,11 @@ public class SubscriberStubSettings extends StubSettings<SubscriberStubSettings>
   /** Returns the default service endpoint. */
   public static String getDefaultEndpoint() {
     return "pubsub.googleapis.com:443";
+  }
+
+  /** Returns the default mTLS service endpoint. */
+  public static String getDefaultMtlsEndpoint() {
+    return "pubsub.mtls.googleapis.com:443";
   }
 
   /** Returns the default service scopes. */
@@ -318,12 +439,12 @@ public class SubscriberStubSettings extends StubSettings<SubscriberStubSettings>
     updateSubscriptionSettings = settingsBuilder.updateSubscriptionSettings().build();
     listSubscriptionsSettings = settingsBuilder.listSubscriptionsSettings().build();
     deleteSubscriptionSettings = settingsBuilder.deleteSubscriptionSettings().build();
-    getSnapshotSettings = settingsBuilder.getSnapshotSettings().build();
     modifyAckDeadlineSettings = settingsBuilder.modifyAckDeadlineSettings().build();
     acknowledgeSettings = settingsBuilder.acknowledgeSettings().build();
     pullSettings = settingsBuilder.pullSettings().build();
     streamingPullSettings = settingsBuilder.streamingPullSettings().build();
     modifyPushConfigSettings = settingsBuilder.modifyPushConfigSettings().build();
+    getSnapshotSettings = settingsBuilder.getSnapshotSettings().build();
     listSnapshotsSettings = settingsBuilder.listSnapshotsSettings().build();
     createSnapshotSettings = settingsBuilder.createSnapshotSettings().build();
     updateSnapshotSettings = settingsBuilder.updateSnapshotSettings().build();
@@ -334,124 +455,9 @@ public class SubscriberStubSettings extends StubSettings<SubscriberStubSettings>
     testIamPermissionsSettings = settingsBuilder.testIamPermissionsSettings().build();
   }
 
-  private static final PagedListDescriptor<
-          ListSubscriptionsRequest, ListSubscriptionsResponse, Subscription>
-      LIST_SUBSCRIPTIONS_PAGE_STR_DESC =
-          new PagedListDescriptor<
-              ListSubscriptionsRequest, ListSubscriptionsResponse, Subscription>() {
-            @Override
-            public String emptyToken() {
-              return "";
-            }
-
-            @Override
-            public ListSubscriptionsRequest injectToken(
-                ListSubscriptionsRequest payload, String token) {
-              return ListSubscriptionsRequest.newBuilder(payload).setPageToken(token).build();
-            }
-
-            @Override
-            public ListSubscriptionsRequest injectPageSize(
-                ListSubscriptionsRequest payload, int pageSize) {
-              return ListSubscriptionsRequest.newBuilder(payload).setPageSize(pageSize).build();
-            }
-
-            @Override
-            public Integer extractPageSize(ListSubscriptionsRequest payload) {
-              return payload.getPageSize();
-            }
-
-            @Override
-            public String extractNextToken(ListSubscriptionsResponse payload) {
-              return payload.getNextPageToken();
-            }
-
-            @Override
-            public Iterable<Subscription> extractResources(ListSubscriptionsResponse payload) {
-              return payload.getSubscriptionsList() != null
-                  ? payload.getSubscriptionsList()
-                  : ImmutableList.<Subscription>of();
-            }
-          };
-
-  private static final PagedListDescriptor<ListSnapshotsRequest, ListSnapshotsResponse, Snapshot>
-      LIST_SNAPSHOTS_PAGE_STR_DESC =
-          new PagedListDescriptor<ListSnapshotsRequest, ListSnapshotsResponse, Snapshot>() {
-            @Override
-            public String emptyToken() {
-              return "";
-            }
-
-            @Override
-            public ListSnapshotsRequest injectToken(ListSnapshotsRequest payload, String token) {
-              return ListSnapshotsRequest.newBuilder(payload).setPageToken(token).build();
-            }
-
-            @Override
-            public ListSnapshotsRequest injectPageSize(ListSnapshotsRequest payload, int pageSize) {
-              return ListSnapshotsRequest.newBuilder(payload).setPageSize(pageSize).build();
-            }
-
-            @Override
-            public Integer extractPageSize(ListSnapshotsRequest payload) {
-              return payload.getPageSize();
-            }
-
-            @Override
-            public String extractNextToken(ListSnapshotsResponse payload) {
-              return payload.getNextPageToken();
-            }
-
-            @Override
-            public Iterable<Snapshot> extractResources(ListSnapshotsResponse payload) {
-              return payload.getSnapshotsList() != null
-                  ? payload.getSnapshotsList()
-                  : ImmutableList.<Snapshot>of();
-            }
-          };
-
-  private static final PagedListResponseFactory<
-          ListSubscriptionsRequest, ListSubscriptionsResponse, ListSubscriptionsPagedResponse>
-      LIST_SUBSCRIPTIONS_PAGE_STR_FACT =
-          new PagedListResponseFactory<
-              ListSubscriptionsRequest,
-              ListSubscriptionsResponse,
-              ListSubscriptionsPagedResponse>() {
-            @Override
-            public ApiFuture<ListSubscriptionsPagedResponse> getFuturePagedResponse(
-                UnaryCallable<ListSubscriptionsRequest, ListSubscriptionsResponse> callable,
-                ListSubscriptionsRequest request,
-                ApiCallContext context,
-                ApiFuture<ListSubscriptionsResponse> futureResponse) {
-              PageContext<ListSubscriptionsRequest, ListSubscriptionsResponse, Subscription>
-                  pageContext =
-                      PageContext.create(
-                          callable, LIST_SUBSCRIPTIONS_PAGE_STR_DESC, request, context);
-              return ListSubscriptionsPagedResponse.createAsync(pageContext, futureResponse);
-            }
-          };
-
-  private static final PagedListResponseFactory<
-          ListSnapshotsRequest, ListSnapshotsResponse, ListSnapshotsPagedResponse>
-      LIST_SNAPSHOTS_PAGE_STR_FACT =
-          new PagedListResponseFactory<
-              ListSnapshotsRequest, ListSnapshotsResponse, ListSnapshotsPagedResponse>() {
-            @Override
-            public ApiFuture<ListSnapshotsPagedResponse> getFuturePagedResponse(
-                UnaryCallable<ListSnapshotsRequest, ListSnapshotsResponse> callable,
-                ListSnapshotsRequest request,
-                ApiCallContext context,
-                ApiFuture<ListSnapshotsResponse> futureResponse) {
-              PageContext<ListSnapshotsRequest, ListSnapshotsResponse, Snapshot> pageContext =
-                  PageContext.create(callable, LIST_SNAPSHOTS_PAGE_STR_DESC, request, context);
-              return ListSnapshotsPagedResponse.createAsync(pageContext, futureResponse);
-            }
-          };
-
   /** Builder for SubscriberStubSettings. */
   public static class Builder extends StubSettings.Builder<SubscriberStubSettings, Builder> {
     private final ImmutableList<UnaryCallSettings.Builder<?, ?>> unaryMethodSettingsBuilders;
-
     private final UnaryCallSettings.Builder<Subscription, Subscription> createSubscriptionSettings;
     private final UnaryCallSettings.Builder<GetSubscriptionRequest, Subscription>
         getSubscriptionSettings;
@@ -462,7 +468,6 @@ public class SubscriberStubSettings extends StubSettings<SubscriberStubSettings>
         listSubscriptionsSettings;
     private final UnaryCallSettings.Builder<DeleteSubscriptionRequest, Empty>
         deleteSubscriptionSettings;
-    private final UnaryCallSettings.Builder<GetSnapshotRequest, Snapshot> getSnapshotSettings;
     private final UnaryCallSettings.Builder<ModifyAckDeadlineRequest, Empty>
         modifyAckDeadlineSettings;
     private final UnaryCallSettings.Builder<AcknowledgeRequest, Empty> acknowledgeSettings;
@@ -471,6 +476,7 @@ public class SubscriberStubSettings extends StubSettings<SubscriberStubSettings>
         streamingPullSettings;
     private final UnaryCallSettings.Builder<ModifyPushConfigRequest, Empty>
         modifyPushConfigSettings;
+    private final UnaryCallSettings.Builder<GetSnapshotRequest, Snapshot> getSnapshotSettings;
     private final PagedCallSettings.Builder<
             ListSnapshotsRequest, ListSnapshotsResponse, ListSnapshotsPagedResponse>
         listSnapshotsSettings;
@@ -482,7 +488,6 @@ public class SubscriberStubSettings extends StubSettings<SubscriberStubSettings>
     private final UnaryCallSettings.Builder<GetIamPolicyRequest, Policy> getIamPolicySettings;
     private final UnaryCallSettings.Builder<TestIamPermissionsRequest, TestIamPermissionsResponse>
         testIamPermissionsSettings;
-
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
 
@@ -493,20 +498,19 @@ public class SubscriberStubSettings extends StubSettings<SubscriberStubSettings>
           "retry_policy_4_codes",
           ImmutableSet.copyOf(
               Lists.<StatusCode.Code>newArrayList(
+                  StatusCode.Code.UNKNOWN, StatusCode.Code.ABORTED, StatusCode.Code.UNAVAILABLE)));
+      definitions.put(
+          "retry_policy_5_codes",
+          ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList(StatusCode.Code.UNAVAILABLE)));
+      definitions.put(
+          "retry_policy_3_codes",
+          ImmutableSet.copyOf(
+              Lists.<StatusCode.Code>newArrayList(
                   StatusCode.Code.DEADLINE_EXCEEDED,
                   StatusCode.Code.RESOURCE_EXHAUSTED,
                   StatusCode.Code.ABORTED,
                   StatusCode.Code.INTERNAL,
                   StatusCode.Code.UNAVAILABLE)));
-      definitions.put(
-          "retry_policy_6_codes",
-          ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList(StatusCode.Code.UNAVAILABLE)));
-      definitions.put("no_retry_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
-      definitions.put(
-          "retry_policy_5_codes",
-          ImmutableSet.copyOf(
-              Lists.<StatusCode.Code>newArrayList(
-                  StatusCode.Code.UNKNOWN, StatusCode.Code.ABORTED, StatusCode.Code.UNAVAILABLE)));
       RETRYABLE_CODE_DEFINITIONS = definitions.build();
     }
 
@@ -525,17 +529,6 @@ public class SubscriberStubSettings extends StubSettings<SubscriberStubSettings>
               .setMaxRpcTimeout(Duration.ofMillis(60000L))
               .setTotalTimeout(Duration.ofMillis(60000L))
               .build();
-      definitions.put("retry_policy_6_params", settings);
-      settings =
-          RetrySettings.newBuilder()
-              .setInitialRetryDelay(Duration.ofMillis(100L))
-              .setRetryDelayMultiplier(1.3)
-              .setMaxRetryDelay(Duration.ofMillis(60000L))
-              .setInitialRpcTimeout(Duration.ofMillis(900000L))
-              .setRpcTimeoutMultiplier(1.0)
-              .setMaxRpcTimeout(Duration.ofMillis(900000L))
-              .setTotalTimeout(Duration.ofMillis(900000L))
-              .build();
       definitions.put("retry_policy_4_params", settings);
       settings =
           RetrySettings.newBuilder()
@@ -548,54 +541,45 @@ public class SubscriberStubSettings extends StubSettings<SubscriberStubSettings>
               .setTotalTimeout(Duration.ofMillis(60000L))
               .build();
       definitions.put("retry_policy_5_params", settings);
-      settings = RetrySettings.newBuilder().setRpcTimeoutMultiplier(1.0).build();
-      definitions.put("no_retry_params", settings);
+      settings =
+          RetrySettings.newBuilder()
+              .setInitialRetryDelay(Duration.ofMillis(100L))
+              .setRetryDelayMultiplier(1.3)
+              .setMaxRetryDelay(Duration.ofMillis(60000L))
+              .setInitialRpcTimeout(Duration.ofMillis(900000L))
+              .setRpcTimeoutMultiplier(1.0)
+              .setMaxRpcTimeout(Duration.ofMillis(900000L))
+              .setTotalTimeout(Duration.ofMillis(900000L))
+              .build();
+      definitions.put("retry_policy_3_params", settings);
       RETRY_PARAM_DEFINITIONS = definitions.build();
     }
 
     protected Builder() {
-      this((ClientContext) null);
+      this(((ClientContext) null));
     }
 
     protected Builder(ClientContext clientContext) {
       super(clientContext);
 
       createSubscriptionSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       getSubscriptionSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       updateSubscriptionSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       listSubscriptionsSettings = PagedCallSettings.newBuilder(LIST_SUBSCRIPTIONS_PAGE_STR_FACT);
-
       deleteSubscriptionSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
-      getSnapshotSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       modifyAckDeadlineSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       acknowledgeSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       pullSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       streamingPullSettings = StreamingCallSettings.newBuilder();
-
       modifyPushConfigSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
+      getSnapshotSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       listSnapshotsSettings = PagedCallSettings.newBuilder(LIST_SNAPSHOTS_PAGE_STR_FACT);
-
       createSnapshotSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       updateSnapshotSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       deleteSnapshotSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       seekSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       setIamPolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       getIamPolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       testIamPermissionsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       unaryMethodSettingsBuilders =
@@ -605,11 +589,11 @@ public class SubscriberStubSettings extends StubSettings<SubscriberStubSettings>
               updateSubscriptionSettings,
               listSubscriptionsSettings,
               deleteSubscriptionSettings,
-              getSnapshotSettings,
               modifyAckDeadlineSettings,
               acknowledgeSettings,
               pullSettings,
               modifyPushConfigSettings,
+              getSnapshotSettings,
               listSnapshotsSettings,
               createSnapshotSettings,
               updateSnapshotSettings,
@@ -618,112 +602,7 @@ public class SubscriberStubSettings extends StubSettings<SubscriberStubSettings>
               setIamPolicySettings,
               getIamPolicySettings,
               testIamPermissionsSettings);
-
       initDefaults(this);
-    }
-
-    private static Builder createDefault() {
-      Builder builder = new Builder((ClientContext) null);
-      builder.setTransportChannelProvider(defaultTransportChannelProvider());
-      builder.setCredentialsProvider(defaultCredentialsProviderBuilder().build());
-      builder.setInternalHeaderProvider(defaultApiClientHeaderProviderBuilder().build());
-      builder.setEndpoint(getDefaultEndpoint());
-      return initDefaults(builder);
-    }
-
-    private static Builder initDefaults(Builder builder) {
-
-      builder
-          .createSubscriptionSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_5_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_5_params"));
-
-      builder
-          .getSubscriptionSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_5_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_5_params"));
-
-      builder
-          .updateSubscriptionSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_6_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_6_params"));
-
-      builder
-          .listSubscriptionsSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_5_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_5_params"));
-
-      builder
-          .deleteSubscriptionSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_6_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_6_params"));
-
-      builder
-          .getSnapshotSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_5_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_5_params"));
-
-      builder
-          .modifyAckDeadlineSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_6_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_6_params"));
-
-      builder
-          .acknowledgeSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_6_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_6_params"));
-
-      builder
-          .pullSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_5_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_5_params"));
-
-      builder
-          .modifyPushConfigSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_6_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_6_params"));
-
-      builder
-          .listSnapshotsSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_5_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_5_params"));
-
-      builder
-          .createSnapshotSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_6_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_6_params"));
-
-      builder
-          .updateSnapshotSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_6_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_6_params"));
-
-      builder
-          .deleteSnapshotSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_6_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_6_params"));
-
-      builder
-          .seekSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_5_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_5_params"));
-
-      builder
-          .setIamPolicySettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_6_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_6_params"));
-
-      builder
-          .getIamPolicySettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_5_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_5_params"));
-
-      builder
-          .testIamPermissionsSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_6_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_6_params"));
-
-      return builder;
     }
 
     protected Builder(SubscriberStubSettings settings) {
@@ -734,12 +613,12 @@ public class SubscriberStubSettings extends StubSettings<SubscriberStubSettings>
       updateSubscriptionSettings = settings.updateSubscriptionSettings.toBuilder();
       listSubscriptionsSettings = settings.listSubscriptionsSettings.toBuilder();
       deleteSubscriptionSettings = settings.deleteSubscriptionSettings.toBuilder();
-      getSnapshotSettings = settings.getSnapshotSettings.toBuilder();
       modifyAckDeadlineSettings = settings.modifyAckDeadlineSettings.toBuilder();
       acknowledgeSettings = settings.acknowledgeSettings.toBuilder();
       pullSettings = settings.pullSettings.toBuilder();
       streamingPullSettings = settings.streamingPullSettings.toBuilder();
       modifyPushConfigSettings = settings.modifyPushConfigSettings.toBuilder();
+      getSnapshotSettings = settings.getSnapshotSettings.toBuilder();
       listSnapshotsSettings = settings.listSnapshotsSettings.toBuilder();
       createSnapshotSettings = settings.createSnapshotSettings.toBuilder();
       updateSnapshotSettings = settings.updateSnapshotSettings.toBuilder();
@@ -756,11 +635,11 @@ public class SubscriberStubSettings extends StubSettings<SubscriberStubSettings>
               updateSubscriptionSettings,
               listSubscriptionsSettings,
               deleteSubscriptionSettings,
-              getSnapshotSettings,
               modifyAckDeadlineSettings,
               acknowledgeSettings,
               pullSettings,
               modifyPushConfigSettings,
+              getSnapshotSettings,
               listSnapshotsSettings,
               createSnapshotSettings,
               updateSnapshotSettings,
@@ -771,14 +650,120 @@ public class SubscriberStubSettings extends StubSettings<SubscriberStubSettings>
               testIamPermissionsSettings);
     }
 
-    // NEXT_MAJOR_VER: remove 'throws Exception'
+    private static Builder createDefault() {
+      Builder builder = new Builder(((ClientContext) null));
+
+      builder.setTransportChannelProvider(defaultTransportChannelProvider());
+      builder.setCredentialsProvider(defaultCredentialsProviderBuilder().build());
+      builder.setInternalHeaderProvider(defaultApiClientHeaderProviderBuilder().build());
+      builder.setEndpoint(getDefaultEndpoint());
+      builder.setMtlsEndpoint(getDefaultMtlsEndpoint());
+      builder.setSwitchToMtlsEndpointAllowed(true);
+
+      return initDefaults(builder);
+    }
+
+    private static Builder initDefaults(Builder builder) {
+      builder
+          .createSubscriptionSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_4_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_4_params"));
+
+      builder
+          .getSubscriptionSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_4_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_4_params"));
+
+      builder
+          .updateSubscriptionSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_5_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_5_params"));
+
+      builder
+          .listSubscriptionsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_4_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_4_params"));
+
+      builder
+          .deleteSubscriptionSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_5_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_5_params"));
+
+      builder
+          .modifyAckDeadlineSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_5_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_5_params"));
+
+      builder
+          .acknowledgeSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_5_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_5_params"));
+
+      builder
+          .pullSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_4_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_4_params"));
+
+      builder
+          .modifyPushConfigSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_5_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_5_params"));
+
+      builder
+          .getSnapshotSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_4_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_4_params"));
+
+      builder
+          .listSnapshotsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_4_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_4_params"));
+
+      builder
+          .createSnapshotSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_5_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_5_params"));
+
+      builder
+          .updateSnapshotSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_5_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_5_params"));
+
+      builder
+          .deleteSnapshotSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_5_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_5_params"));
+
+      builder
+          .seekSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_4_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_4_params"));
+
+      builder
+          .setIamPolicySettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_5_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_5_params"));
+
+      builder
+          .getIamPolicySettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_4_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_4_params"));
+
+      builder
+          .testIamPermissionsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_5_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_5_params"));
+
+      return builder;
+    }
+
     /**
      * Applies the given settings updater function to all of the unary API methods in this service.
      *
      * <p>Note: This method does not support applying settings to streaming methods.
      */
     public Builder applyToAllUnaryMethods(
-        ApiFunction<UnaryCallSettings.Builder<?, ?>, Void> settingsUpdater) throws Exception {
+        ApiFunction<UnaryCallSettings.Builder<?, ?>, Void> settingsUpdater) {
       super.applyToAllUnaryMethods(unaryMethodSettingsBuilders, settingsUpdater);
       return this;
     }
@@ -817,11 +802,6 @@ public class SubscriberStubSettings extends StubSettings<SubscriberStubSettings>
       return deleteSubscriptionSettings;
     }
 
-    /** Returns the builder for the settings used for calls to getSnapshot. */
-    public UnaryCallSettings.Builder<GetSnapshotRequest, Snapshot> getSnapshotSettings() {
-      return getSnapshotSettings;
-    }
-
     /** Returns the builder for the settings used for calls to modifyAckDeadline. */
     public UnaryCallSettings.Builder<ModifyAckDeadlineRequest, Empty> modifyAckDeadlineSettings() {
       return modifyAckDeadlineSettings;
@@ -846,6 +826,11 @@ public class SubscriberStubSettings extends StubSettings<SubscriberStubSettings>
     /** Returns the builder for the settings used for calls to modifyPushConfig. */
     public UnaryCallSettings.Builder<ModifyPushConfigRequest, Empty> modifyPushConfigSettings() {
       return modifyPushConfigSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getSnapshot. */
+    public UnaryCallSettings.Builder<GetSnapshotRequest, Snapshot> getSnapshotSettings() {
+      return getSnapshotSettings;
     }
 
     /** Returns the builder for the settings used for calls to listSnapshots. */

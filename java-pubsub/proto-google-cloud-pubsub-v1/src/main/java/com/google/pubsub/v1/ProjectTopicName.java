@@ -19,8 +19,6 @@ package com.google.pubsub.v1;
 import com.google.api.pathtemplate.PathTemplate;
 import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableMap;
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Map;
 
 /** AUTO-GENERATED DOCUMENTATION AND CLASS */
@@ -72,26 +70,6 @@ public class ProjectTopicName extends TopicName {
         PATH_TEMPLATE.validatedMatch(
             formattedString, "ProjectTopicName.parse: formattedString not in valid format");
     return of(matchMap.get("project"), matchMap.get("topic"));
-  }
-
-  public static List<ProjectTopicName> parseList(List<String> formattedStrings) {
-    List<ProjectTopicName> list = new ArrayList<>(formattedStrings.size());
-    for (String formattedString : formattedStrings) {
-      list.add(parse(formattedString));
-    }
-    return list;
-  }
-
-  public static List<String> toStringList(List<ProjectTopicName> values) {
-    List<String> list = new ArrayList<String>(values.size());
-    for (ProjectTopicName value : values) {
-      if (value == null) {
-        list.add("");
-      } else {
-        list.add(value.toString());
-      }
-    }
-    return list;
   }
 
   public static boolean isParsableFrom(String formattedString) {

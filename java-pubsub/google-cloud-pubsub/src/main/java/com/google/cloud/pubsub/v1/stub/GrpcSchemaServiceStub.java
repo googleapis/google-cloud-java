@@ -1,11 +1,11 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2021 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,11 +13,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.pubsub.v1.stub;
 
 import static com.google.cloud.pubsub.v1.SchemaServiceClient.ListSchemasPagedResponse;
 
-import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.grpc.GrpcCallSettings;
@@ -26,6 +26,12 @@ import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.RequestParamsExtractor;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.common.collect.ImmutableMap;
+import com.google.iam.v1.GetIamPolicyRequest;
+import com.google.iam.v1.Policy;
+import com.google.iam.v1.SetIamPolicyRequest;
+import com.google.iam.v1.TestIamPermissionsRequest;
+import com.google.iam.v1.TestIamPermissionsResponse;
+import com.google.longrunning.stub.GrpcOperationsStub;
 import com.google.protobuf.Empty;
 import com.google.pubsub.v1.CreateSchemaRequest;
 import com.google.pubsub.v1.DeleteSchemaRequest;
@@ -44,16 +50,14 @@ import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
-// AUTO-GENERATED DOCUMENTATION AND CLASS
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
- * gRPC stub implementation for Cloud Pub/Sub API.
+ * gRPC stub implementation for the SchemaService service API.
  *
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
-@Generated("by gapic-generator")
-@BetaApi("A restructuring of stub classes is planned, so this may break in the future")
+@Generated("by gapic-generator-java")
 public class GrpcSchemaServiceStub extends SchemaServiceStub {
-
   private static final MethodDescriptor<CreateSchemaRequest, Schema> createSchemaMethodDescriptor =
       MethodDescriptor.<CreateSchemaRequest, Schema>newBuilder()
           .setType(MethodDescriptor.MethodType.UNARY)
@@ -61,6 +65,7 @@ public class GrpcSchemaServiceStub extends SchemaServiceStub {
           .setRequestMarshaller(ProtoUtils.marshaller(CreateSchemaRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Schema.getDefaultInstance()))
           .build();
+
   private static final MethodDescriptor<GetSchemaRequest, Schema> getSchemaMethodDescriptor =
       MethodDescriptor.<GetSchemaRequest, Schema>newBuilder()
           .setType(MethodDescriptor.MethodType.UNARY)
@@ -68,6 +73,7 @@ public class GrpcSchemaServiceStub extends SchemaServiceStub {
           .setRequestMarshaller(ProtoUtils.marshaller(GetSchemaRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Schema.getDefaultInstance()))
           .build();
+
   private static final MethodDescriptor<ListSchemasRequest, ListSchemasResponse>
       listSchemasMethodDescriptor =
           MethodDescriptor.<ListSchemasRequest, ListSchemasResponse>newBuilder()
@@ -77,6 +83,7 @@ public class GrpcSchemaServiceStub extends SchemaServiceStub {
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListSchemasResponse.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<DeleteSchemaRequest, Empty> deleteSchemaMethodDescriptor =
       MethodDescriptor.<DeleteSchemaRequest, Empty>newBuilder()
           .setType(MethodDescriptor.MethodType.UNARY)
@@ -84,6 +91,7 @@ public class GrpcSchemaServiceStub extends SchemaServiceStub {
           .setRequestMarshaller(ProtoUtils.marshaller(DeleteSchemaRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
           .build();
+
   private static final MethodDescriptor<ValidateSchemaRequest, ValidateSchemaResponse>
       validateSchemaMethodDescriptor =
           MethodDescriptor.<ValidateSchemaRequest, ValidateSchemaResponse>newBuilder()
@@ -94,6 +102,7 @@ public class GrpcSchemaServiceStub extends SchemaServiceStub {
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ValidateSchemaResponse.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<ValidateMessageRequest, ValidateMessageResponse>
       validateMessageMethodDescriptor =
           MethodDescriptor.<ValidateMessageRequest, ValidateMessageResponse>newBuilder()
@@ -105,7 +114,32 @@ public class GrpcSchemaServiceStub extends SchemaServiceStub {
                   ProtoUtils.marshaller(ValidateMessageResponse.getDefaultInstance()))
               .build();
 
-  private final BackgroundResource backgroundResources;
+  private static final MethodDescriptor<SetIamPolicyRequest, Policy> setIamPolicyMethodDescriptor =
+      MethodDescriptor.<SetIamPolicyRequest, Policy>newBuilder()
+          .setType(MethodDescriptor.MethodType.UNARY)
+          .setFullMethodName("google.iam.v1.IAMPolicy/SetIamPolicy")
+          .setRequestMarshaller(ProtoUtils.marshaller(SetIamPolicyRequest.getDefaultInstance()))
+          .setResponseMarshaller(ProtoUtils.marshaller(Policy.getDefaultInstance()))
+          .build();
+
+  private static final MethodDescriptor<GetIamPolicyRequest, Policy> getIamPolicyMethodDescriptor =
+      MethodDescriptor.<GetIamPolicyRequest, Policy>newBuilder()
+          .setType(MethodDescriptor.MethodType.UNARY)
+          .setFullMethodName("google.iam.v1.IAMPolicy/GetIamPolicy")
+          .setRequestMarshaller(ProtoUtils.marshaller(GetIamPolicyRequest.getDefaultInstance()))
+          .setResponseMarshaller(ProtoUtils.marshaller(Policy.getDefaultInstance()))
+          .build();
+
+  private static final MethodDescriptor<TestIamPermissionsRequest, TestIamPermissionsResponse>
+      testIamPermissionsMethodDescriptor =
+          MethodDescriptor.<TestIamPermissionsRequest, TestIamPermissionsResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.iam.v1.IAMPolicy/TestIamPermissions")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(TestIamPermissionsRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(TestIamPermissionsResponse.getDefaultInstance()))
+              .build();
 
   private final UnaryCallable<CreateSchemaRequest, Schema> createSchemaCallable;
   private final UnaryCallable<GetSchemaRequest, Schema> getSchemaCallable;
@@ -116,7 +150,13 @@ public class GrpcSchemaServiceStub extends SchemaServiceStub {
   private final UnaryCallable<ValidateSchemaRequest, ValidateSchemaResponse> validateSchemaCallable;
   private final UnaryCallable<ValidateMessageRequest, ValidateMessageResponse>
       validateMessageCallable;
+  private final UnaryCallable<SetIamPolicyRequest, Policy> setIamPolicyCallable;
+  private final UnaryCallable<GetIamPolicyRequest, Policy> getIamPolicyCallable;
+  private final UnaryCallable<TestIamPermissionsRequest, TestIamPermissionsResponse>
+      testIamPermissionsCallable;
 
+  private final BackgroundResource backgroundResources;
+  private final GrpcOperationsStub operationsStub;
   private final GrpcStubCallableFactory callableFactory;
 
   public static final GrpcSchemaServiceStub create(SchemaServiceStubSettings settings)
@@ -155,6 +195,7 @@ public class GrpcSchemaServiceStub extends SchemaServiceStub {
       GrpcStubCallableFactory callableFactory)
       throws IOException {
     this.callableFactory = callableFactory;
+    this.operationsStub = GrpcOperationsStub.create(clientContext, callableFactory);
 
     GrpcCallSettings<CreateSchemaRequest, Schema> createSchemaTransportSettings =
         GrpcCallSettings.<CreateSchemaRequest, Schema>newBuilder()
@@ -236,6 +277,46 @@ public class GrpcSchemaServiceStub extends SchemaServiceStub {
                       }
                     })
                 .build();
+    GrpcCallSettings<SetIamPolicyRequest, Policy> setIamPolicyTransportSettings =
+        GrpcCallSettings.<SetIamPolicyRequest, Policy>newBuilder()
+            .setMethodDescriptor(setIamPolicyMethodDescriptor)
+            .setParamsExtractor(
+                new RequestParamsExtractor<SetIamPolicyRequest>() {
+                  @Override
+                  public Map<String, String> extract(SetIamPolicyRequest request) {
+                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                    params.put("resource", String.valueOf(request.getResource()));
+                    return params.build();
+                  }
+                })
+            .build();
+    GrpcCallSettings<GetIamPolicyRequest, Policy> getIamPolicyTransportSettings =
+        GrpcCallSettings.<GetIamPolicyRequest, Policy>newBuilder()
+            .setMethodDescriptor(getIamPolicyMethodDescriptor)
+            .setParamsExtractor(
+                new RequestParamsExtractor<GetIamPolicyRequest>() {
+                  @Override
+                  public Map<String, String> extract(GetIamPolicyRequest request) {
+                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                    params.put("resource", String.valueOf(request.getResource()));
+                    return params.build();
+                  }
+                })
+            .build();
+    GrpcCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
+        testIamPermissionsTransportSettings =
+            GrpcCallSettings.<TestIamPermissionsRequest, TestIamPermissionsResponse>newBuilder()
+                .setMethodDescriptor(testIamPermissionsMethodDescriptor)
+                .setParamsExtractor(
+                    new RequestParamsExtractor<TestIamPermissionsRequest>() {
+                      @Override
+                      public Map<String, String> extract(TestIamPermissionsRequest request) {
+                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                        params.put("resource", String.valueOf(request.getResource()));
+                        return params.build();
+                      }
+                    })
+                .build();
 
     this.createSchemaCallable =
         callableFactory.createUnaryCallable(
@@ -258,41 +339,86 @@ public class GrpcSchemaServiceStub extends SchemaServiceStub {
     this.validateMessageCallable =
         callableFactory.createUnaryCallable(
             validateMessageTransportSettings, settings.validateMessageSettings(), clientContext);
+    this.setIamPolicyCallable =
+        callableFactory.createUnaryCallable(
+            setIamPolicyTransportSettings, settings.setIamPolicySettings(), clientContext);
+    this.getIamPolicyCallable =
+        callableFactory.createUnaryCallable(
+            getIamPolicyTransportSettings, settings.getIamPolicySettings(), clientContext);
+    this.testIamPermissionsCallable =
+        callableFactory.createUnaryCallable(
+            testIamPermissionsTransportSettings,
+            settings.testIamPermissionsSettings(),
+            clientContext);
 
-    backgroundResources = new BackgroundResourceAggregation(clientContext.getBackgroundResources());
+    this.backgroundResources =
+        new BackgroundResourceAggregation(clientContext.getBackgroundResources());
   }
 
+  public GrpcOperationsStub getOperationsStub() {
+    return operationsStub;
+  }
+
+  @Override
   public UnaryCallable<CreateSchemaRequest, Schema> createSchemaCallable() {
     return createSchemaCallable;
   }
 
+  @Override
   public UnaryCallable<GetSchemaRequest, Schema> getSchemaCallable() {
     return getSchemaCallable;
   }
 
-  public UnaryCallable<ListSchemasRequest, ListSchemasPagedResponse> listSchemasPagedCallable() {
-    return listSchemasPagedCallable;
-  }
-
+  @Override
   public UnaryCallable<ListSchemasRequest, ListSchemasResponse> listSchemasCallable() {
     return listSchemasCallable;
   }
 
+  @Override
+  public UnaryCallable<ListSchemasRequest, ListSchemasPagedResponse> listSchemasPagedCallable() {
+    return listSchemasPagedCallable;
+  }
+
+  @Override
   public UnaryCallable<DeleteSchemaRequest, Empty> deleteSchemaCallable() {
     return deleteSchemaCallable;
   }
 
+  @Override
   public UnaryCallable<ValidateSchemaRequest, ValidateSchemaResponse> validateSchemaCallable() {
     return validateSchemaCallable;
   }
 
+  @Override
   public UnaryCallable<ValidateMessageRequest, ValidateMessageResponse> validateMessageCallable() {
     return validateMessageCallable;
   }
 
   @Override
+  public UnaryCallable<SetIamPolicyRequest, Policy> setIamPolicyCallable() {
+    return setIamPolicyCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetIamPolicyRequest, Policy> getIamPolicyCallable() {
+    return getIamPolicyCallable;
+  }
+
+  @Override
+  public UnaryCallable<TestIamPermissionsRequest, TestIamPermissionsResponse>
+      testIamPermissionsCallable() {
+    return testIamPermissionsCallable;
+  }
+
+  @Override
   public final void close() {
-    shutdown();
+    try {
+      backgroundResources.close();
+    } catch (RuntimeException e) {
+      throw e;
+    } catch (Exception e) {
+      throw new IllegalStateException("Failed to close resource", e);
+    }
   }
 
   @Override

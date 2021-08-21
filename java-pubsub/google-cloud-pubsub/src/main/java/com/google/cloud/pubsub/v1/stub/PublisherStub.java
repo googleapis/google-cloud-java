@@ -1,11 +1,11 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2021 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,13 +13,13 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.pubsub.v1.stub;
 
 import static com.google.cloud.pubsub.v1.TopicAdminClient.ListTopicSnapshotsPagedResponse;
 import static com.google.cloud.pubsub.v1.TopicAdminClient.ListTopicSubscriptionsPagedResponse;
 import static com.google.cloud.pubsub.v1.TopicAdminClient.ListTopicsPagedResponse;
 
-import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.iam.v1.GetIamPolicyRequest;
@@ -44,14 +44,13 @@ import com.google.pubsub.v1.Topic;
 import com.google.pubsub.v1.UpdateTopicRequest;
 import javax.annotation.Generated;
 
-// AUTO-GENERATED DOCUMENTATION AND CLASS
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
- * Base stub class for Cloud Pub/Sub API.
+ * Base stub class for the Publisher service API.
  *
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
-@Generated("by gapic-generator")
-@BetaApi("A restructuring of stub classes is planned, so this may break in the future")
+@Generated("by gapic-generator-java")
 public abstract class PublisherStub implements BackgroundResource {
 
   public UnaryCallable<Topic, Topic> createTopicCallable() {
@@ -103,6 +102,11 @@ public abstract class PublisherStub implements BackgroundResource {
     throw new UnsupportedOperationException("Not implemented: deleteTopicCallable()");
   }
 
+  public UnaryCallable<DetachSubscriptionRequest, DetachSubscriptionResponse>
+      detachSubscriptionCallable() {
+    throw new UnsupportedOperationException("Not implemented: detachSubscriptionCallable()");
+  }
+
   public UnaryCallable<SetIamPolicyRequest, Policy> setIamPolicyCallable() {
     throw new UnsupportedOperationException("Not implemented: setIamPolicyCallable()");
   }
@@ -114,11 +118,6 @@ public abstract class PublisherStub implements BackgroundResource {
   public UnaryCallable<TestIamPermissionsRequest, TestIamPermissionsResponse>
       testIamPermissionsCallable() {
     throw new UnsupportedOperationException("Not implemented: testIamPermissionsCallable()");
-  }
-
-  public UnaryCallable<DetachSubscriptionRequest, DetachSubscriptionResponse>
-      detachSubscriptionCallable() {
-    throw new UnsupportedOperationException("Not implemented: detachSubscriptionCallable()");
   }
 
   @Override
