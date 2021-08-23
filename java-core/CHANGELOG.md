@@ -1,5 +1,21 @@
 # Changelog
 
+## [2.1.0](https://www.github.com/googleapis/java-core/compare/v2.0.5...v2.1.0) (2021-08-23)
+
+
+### Features
+
+* support downloading an emulator from an access controlled URL ([#513](https://www.github.com/googleapis/java-core/issues/513)) ([f42a707](https://www.github.com/googleapis/java-core/commit/f42a7078522461018da96196a67657809d28b15b))
+
+
+### Dependencies
+
+* update dependency com.google.api:gax-bom to v2.3.0 ([#523](https://www.github.com/googleapis/java-core/issues/523)) ([6fa1d96](https://www.github.com/googleapis/java-core/commit/6fa1d96d07a7d255e7564407364216436cad6ca3))
+* update dependency com.google.auth:google-auth-library-bom to v1.1.0 ([#526](https://www.github.com/googleapis/java-core/issues/526)) ([0fc1532](https://www.github.com/googleapis/java-core/commit/0fc1532183148d09c3005a68e528c6c438cb6ddd))
+* update dependency com.google.code.gson:gson to v2.8.8 ([#529](https://www.github.com/googleapis/java-core/issues/529)) ([92b7f97](https://www.github.com/googleapis/java-core/commit/92b7f9715eeab0a07b64437a62dd47e5eed006de))
+* update dependency com.google.errorprone:error_prone_annotations to v2.9.0 ([#528](https://www.github.com/googleapis/java-core/issues/528)) ([5ecba07](https://www.github.com/googleapis/java-core/commit/5ecba07336499fc6fddae4cfdc2bc12105ec9b66))
+* update dependency io.grpc:grpc-bom to v1.40.0 ([#525](https://www.github.com/googleapis/java-core/issues/525)) ([a1e81f7](https://www.github.com/googleapis/java-core/commit/a1e81f73a4cc29e7186adf37f1cb718c1a88f41e))
+
 ### [2.0.5](https://www.github.com/googleapis/java-core/compare/v2.0.4...v2.0.5) (2021-08-11)
 
 
