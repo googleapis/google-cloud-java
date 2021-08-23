@@ -1,5 +1,17 @@
 # Changelog
 
+## [2.1.0](https://www.github.com/googleapis/java-shared-dependencies/compare/2.0.1...v2.1.0) (2021-08-23)
+
+
+### Dependencies
+
+* update dependency com.google.auth:google-auth-library-bom to v1.1.0 ([#439](https://www.github.com/googleapis/java-shared-dependencies/issues/439)) ([ca52bd9](https://www.github.com/googleapis/java-shared-dependencies/commit/ca52bd9c099c96bf7b5a57aa85d39b58a610c875))
+* update dependency com.google.cloud:google-cloud-core-bom to v2.1.0 ([#444](https://www.github.com/googleapis/java-shared-dependencies/issues/444)) ([ff914c6](https://www.github.com/googleapis/java-shared-dependencies/commit/ff914c6de9e3e7fa6ba75591d3d5077c5421827d))
+* update dependency com.google.code.gson:gson to v2.8.8 ([#442](https://www.github.com/googleapis/java-shared-dependencies/issues/442)) ([79a093f](https://www.github.com/googleapis/java-shared-dependencies/commit/79a093f9ccea4d47cf8b678570a1c9699029a8b2))
+* update dependency com.google.errorprone:error_prone_annotations to v2.9.0 ([#441](https://www.github.com/googleapis/java-shared-dependencies/issues/441)) ([e644a4b](https://www.github.com/googleapis/java-shared-dependencies/commit/e644a4b504ab8aa5771f9be36861d1730ea9bcc9))
+* update dependency io.grpc:grpc-bom to v1.40.0 ([#438](https://www.github.com/googleapis/java-shared-dependencies/issues/438)) ([c3f8fb4](https://www.github.com/googleapis/java-shared-dependencies/commit/c3f8fb4408f5dc6c7f7dc0e14f0c24fa755433a5))
+* update gax.version to v2.3.0 ([#437](https://www.github.com/googleapis/java-shared-dependencies/issues/437)) ([e59aaad](https://www.github.com/googleapis/java-shared-dependencies/commit/e59aaadd76e40ab5ea31c3e812686a4ba0471a49))
+
 ### [2.0.1](https://www.github.com/googleapis/java-shared-dependencies/compare/2.0.0...v2.0.1) (2021-08-11)
 
 
