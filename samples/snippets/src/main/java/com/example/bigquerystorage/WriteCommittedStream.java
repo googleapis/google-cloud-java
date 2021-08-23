@@ -62,7 +62,7 @@ public class WriteCommittedStream {
       // For more information about JsonStreamWriter, see:
       // https://googleapis.dev/java/google-cloud-bigquerystorage/latest/com/google/cloud/bigquery/storage/v1beta2/JsonStreamWriter.html
       try (JsonStreamWriter writer =
-          JsonStreamWriter.newBuilder(writeStream.getName(), writeStream.getTableSchema(), client)
+          JsonStreamWriter.newBuilder(writeStream.getName(), writeStream.getTableSchema())
               .build()) {
         // Append 10 JSON objects to the stream.
         for (int i = 0; i < 10; i++) {
