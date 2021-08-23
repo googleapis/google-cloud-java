@@ -19,9 +19,14 @@ import static junit.framework.TestCase.fail;
 
 import com.google.api.gax.rpc.InvalidArgumentException;
 import com.google.api.gax.rpc.NotFoundException;
+import com.google.cloud.compute.v1.Allowed;
 import com.google.cloud.compute.v1.AttachedDisk;
 import com.google.cloud.compute.v1.AttachedDiskInitializeParams;
+import com.google.cloud.compute.v1.Firewall;
+import com.google.cloud.compute.v1.FirewallsClient;
 import com.google.cloud.compute.v1.GetInstanceRequest;
+import com.google.cloud.compute.v1.Image;
+import com.google.cloud.compute.v1.ImagesClient;
 import com.google.cloud.compute.v1.Instance;
 import com.google.cloud.compute.v1.InstanceGroupManager;
 import com.google.cloud.compute.v1.InstanceGroupManagersClient;
@@ -37,6 +42,7 @@ import com.google.cloud.compute.v1.ZoneOperationsClient;
 import com.google.cloud.compute.v1.ZoneOperationsSettings;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.Map;
 import org.junit.AfterClass;
@@ -234,6 +240,53 @@ public class ITSmokeInstancesTest extends BaseTest {
     } catch (NotFoundException ex) {
       String message = "Not Found";
       Assert.assertEquals(message, ex.getMessage());
+    }
+  }
+
+  @Test
+  public void testInt64() throws IOException {
+    // we want to test a field with format:int64
+    String name = generateRandomName("image");
+    List<Long> licenseCodes = Collections.singletonList(5543610867827062957L);
+    String sourceImage = "projects/debian-cloud/global/images/debian-10-buster-v20210721";
+    ImagesClient imagesClient = ImagesClient.create();
+    Image image =
+        Image.newBuilder()
+            .setName(name)
+            .addAllLicenseCodes(licenseCodes)
+            .setSourceImage(sourceImage)
+            .build();
+    try {
+      Operation op = imagesClient.insert(DEFAULT_PROJECT, image);
+      waitGlobalOperation(op);
+
+      Image fetched = imagesClient.get(DEFAULT_PROJECT, name);
+      Assert.assertEquals(licenseCodes, fetched.getLicenseCodesList());
+    } finally {
+      imagesClient.delete(DEFAULT_PROJECT, name);
+    }
+  }
+
+  @Test
+  public void testCapitalLetterField() throws IOException {
+    // we want to test a field like "IPProtocol"
+    String name = generateRandomName("fw-rule");
+    FirewallsClient firewallsClient = FirewallsClient.create();
+    Firewall firewall =
+        Firewall.newBuilder()
+            .setName(name)
+            .addAllowed(Allowed.newBuilder().setIPProtocol("tcp").addPorts("80").build())
+            .addSourceRanges("0.0.0.0/0")
+            .build();
+    try {
+      Operation op = firewallsClient.insert(DEFAULT_PROJECT, firewall);
+      waitGlobalOperation(op);
+
+      Firewall fetched = firewallsClient.get(DEFAULT_PROJECT, name);
+      Assert.assertEquals(name, fetched.getName());
+      Assert.assertEquals("tcp", fetched.getAllowed(0).getIPProtocol());
+    } finally {
+      firewallsClient.delete(DEFAULT_PROJECT, name);
     }
   }
 
