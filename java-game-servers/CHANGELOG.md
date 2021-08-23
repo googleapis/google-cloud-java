@@ -1,5 +1,12 @@
 # Changelog
 
+### [2.0.2](https://www.github.com/googleapis/java-game-servers/compare/v2.0.1...v2.0.2) (2021-08-23)
+
+
+### Dependencies
+
+* update dependency com.google.code.gson:gson to v2.8.8 ([#506](https://www.github.com/googleapis/java-game-servers/issues/506)) ([ec5a649](https://www.github.com/googleapis/java-game-servers/commit/ec5a6496aa93a92ea3f7de462314cb25cc7f6fbd))
+
 ### [2.0.1](https://www.github.com/googleapis/java-game-servers/compare/v2.0.0...v2.0.1) (2021-08-12)
 
 
