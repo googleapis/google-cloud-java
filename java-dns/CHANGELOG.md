@@ -1,5 +1,12 @@
 # Changelog
 
+### [1.2.7](https://www.github.com/googleapis/java-dns/compare/v1.2.6...v1.2.7) (2021-08-23)
+
+
+### Dependencies
+
+* update dependency com.google.errorprone:error_prone_annotations to v2.9.0 ([#495](https://www.github.com/googleapis/java-dns/issues/495)) ([2a96761](https://www.github.com/googleapis/java-dns/commit/2a96761e3fac69d70b704f65d48fa7079ba7664c))
+
 ### [1.2.6](https://www.github.com/googleapis/java-dns/compare/v1.2.5...v1.2.6) (2021-08-19)
 
 
