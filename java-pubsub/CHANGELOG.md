@@ -1,5 +1,17 @@
 # Changelog
 
+## [1.114.0](https://www.github.com/googleapis/java-pubsub/compare/v1.113.9...v1.114.0) (2021-08-23)
+
+
+### Features
+
+* add topic retention support ([#803](https://www.github.com/googleapis/java-pubsub/issues/803)) ([898faf8](https://www.github.com/googleapis/java-pubsub/commit/898faf810276901c4ea878278ec55b80664098f7))
+
+
+### Dependencies
+
+* update dependency com.google.errorprone:error_prone_annotations to v2.9.0 ([#797](https://www.github.com/googleapis/java-pubsub/issues/797)) ([70bb91d](https://www.github.com/googleapis/java-pubsub/commit/70bb91d7a5cbb6da82837d7bd42a08b4b4fe648e))
+
 ### [1.113.9](https://www.github.com/googleapis/java-pubsub/compare/v1.113.8...v1.113.9) (2021-08-11)
 
 
