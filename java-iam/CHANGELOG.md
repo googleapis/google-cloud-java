@@ -1,5 +1,27 @@
 # Changelog
 
+## [1.1.0](https://www.github.com/googleapis/java-iam/compare/v1.0.14...v1.1.0) (2021-08-23)
+
+
+### Features
+
+* add `gcf-owl-bot[bot]` to `ignoreAuthors` ([#148](https://www.github.com/googleapis/java-iam/issues/148)) ([05ef13b](https://www.github.com/googleapis/java-iam/commit/05ef13bfcf31bc8ef7d99bead3f3d9d4d4ffa8f9))
+
+
+### Bug Fixes
+
+* Add `shopt -s nullglob` to dependencies script ([#157](https://www.github.com/googleapis/java-iam/issues/157)) ([dcdffb7](https://www.github.com/googleapis/java-iam/commit/dcdffb70f9bba71121061a7def1b9d39525a9514))
+* Update dependencies.sh to not break on mac ([#155](https://www.github.com/googleapis/java-iam/issues/155)) ([f3993d8](https://www.github.com/googleapis/java-iam/commit/f3993d83efceda7f06e9da2624f418f6c69984e8))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v1.2.0 ([#147](https://www.github.com/googleapis/java-iam/issues/147)) ([ac861d0](https://www.github.com/googleapis/java-iam/commit/ac861d07dea6348cc1f8dc4cac991044f6f0702c))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v1.3.0 ([#154](https://www.github.com/googleapis/java-iam/issues/154)) ([6ba854f](https://www.github.com/googleapis/java-iam/commit/6ba854faefc1d4592062dbbeda0c3226bcb1412c))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v1.4.0 ([#158](https://www.github.com/googleapis/java-iam/issues/158)) ([67c523d](https://www.github.com/googleapis/java-iam/commit/67c523dc179802fcbec5a16893b955a4b3b7e4aa))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2 ([#168](https://www.github.com/googleapis/java-iam/issues/168)) ([86c46ff](https://www.github.com/googleapis/java-iam/commit/86c46ffc3f5348771b854f0996cc625f8889b012))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.1.0 ([#173](https://www.github.com/googleapis/java-iam/issues/173)) ([4788fec](https://www.github.com/googleapis/java-iam/commit/4788fecaf84b9772b1a7d866825dd97fa09ac42b))
+
 ### [1.0.14](https://www.github.com/googleapis/java-iam/compare/v1.0.13...v1.0.14) (2021-05-11)
 
 
