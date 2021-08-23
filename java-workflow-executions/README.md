@@ -25,11 +25,11 @@ If you are using Maven, add this to your pom.xml file:
 
 If you are using Gradle, add this to your dependencies
 ```Groovy
-compile 'com.google.cloud:google-cloud-workflow-executions:2.0.1'
+compile 'com.google.cloud:google-cloud-workflow-executions:2.0.2'
 ```
 If you are using SBT, add this to your dependencies
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-workflow-executions" % "2.0.1"
+libraryDependencies += "com.google.cloud" % "google-cloud-workflow-executions" % "2.0.2"
 ```
 [//]: # ({x-version-update-end})
 
