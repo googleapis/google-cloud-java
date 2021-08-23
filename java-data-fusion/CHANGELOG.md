@@ -1,5 +1,13 @@
 # Changelog
 
+### [0.2.1](https://www.github.com/googleapis/java-data-fusion/compare/v0.2.0...v0.2.1) (2021-08-23)
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.0.1 ([#33](https://www.github.com/googleapis/java-data-fusion/issues/33)) ([789d05a](https://www.github.com/googleapis/java-data-fusion/commit/789d05a865cd04af8d966c6f283af088ed7cdfd8))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.1.0 ([#37](https://www.github.com/googleapis/java-data-fusion/issues/37)) ([fc6e3ed](https://www.github.com/googleapis/java-data-fusion/commit/fc6e3edcb7877df7927be20b8db249c48a1b57cf))
+
 ## [0.2.0](https://www.github.com/googleapis/java-data-fusion/compare/v0.1.0...v0.2.0) (2021-08-09)
 
 
