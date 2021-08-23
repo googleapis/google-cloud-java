@@ -1,5 +1,12 @@
 # Changelog
 
+### [0.121.2](https://www.github.com/googleapis/java-datalabeling/compare/v0.121.1...v0.121.2) (2021-08-23)
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.1.0 ([#581](https://www.github.com/googleapis/java-datalabeling/issues/581)) ([e664221](https://www.github.com/googleapis/java-datalabeling/commit/e6642214225f31de1a46e964f2948fff0717bdb8))
+
 ### [0.121.1](https://www.github.com/googleapis/java-datalabeling/compare/v0.121.0...v0.121.1) (2021-08-12)
 
 
