@@ -1,5 +1,13 @@
 # Changelog
 
+### [0.2.1](https://www.github.com/googleapis/java-datastream/compare/v0.2.0...v0.2.1) (2021-08-24)
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.0.1 ([#35](https://www.github.com/googleapis/java-datastream/issues/35)) ([f722d4e](https://www.github.com/googleapis/java-datastream/commit/f722d4ef7b3953be5f6194223feb5a1087e0e829))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.1.0 ([#40](https://www.github.com/googleapis/java-datastream/issues/40)) ([c4b123b](https://www.github.com/googleapis/java-datastream/commit/c4b123b871655f92963bd0e6afa7fa60c88a2fd3))
+
 ## [0.2.0](https://www.github.com/googleapis/java-datastream/compare/v0.1.0...v0.2.0) (2021-08-09)
 
 
