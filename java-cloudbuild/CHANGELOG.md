@@ -1,5 +1,17 @@
 # Changelog
 
+## [3.1.0](https://www.github.com/googleapis/java-cloudbuild/compare/v3.0.1...v3.1.0) (2021-08-24)
+
+
+### Features
+
+* Add ability to configure BuildTriggers to create Builds that require approval before executing and ApproveBuild API to approve or reject pending Builds ([#574](https://www.github.com/googleapis/java-cloudbuild/issues/574)) ([1e19e5a](https://www.github.com/googleapis/java-cloudbuild/commit/1e19e5adbe845c47b4b3d00e91f349a7b780142b))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.1.0 ([#579](https://www.github.com/googleapis/java-cloudbuild/issues/579)) ([79e20e1](https://www.github.com/googleapis/java-cloudbuild/commit/79e20e13fd6f4e55faced2a41e56004bf47958d7))
+
 ### [3.0.1](https://www.github.com/googleapis/java-cloudbuild/compare/v3.0.0...v3.0.1) (2021-08-12)
 
 
