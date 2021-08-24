@@ -1526,7 +1526,7 @@ public class DeviceManagerClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (DeviceManagerClient deviceManagerClient = DeviceManagerClient.create()) {
-   *   ResourceName resource = LocationName.of("[PROJECT]", "[LOCATION]");
+   *   ResourceName resource = DeviceName.of("[PROJECT]", "[LOCATION]", "[REGISTRY]", "[DEVICE]");
    *   Policy policy = Policy.newBuilder().build();
    *   Policy response = deviceManagerClient.setIamPolicy(resource, policy);
    * }
@@ -1556,7 +1556,8 @@ public class DeviceManagerClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (DeviceManagerClient deviceManagerClient = DeviceManagerClient.create()) {
-   *   String resource = LocationName.of("[PROJECT]", "[LOCATION]").toString();
+   *   String resource =
+   *       DeviceName.of("[PROJECT]", "[LOCATION]", "[REGISTRY]", "[DEVICE]").toString();
    *   Policy policy = Policy.newBuilder().build();
    *   Policy response = deviceManagerClient.setIamPolicy(resource, policy);
    * }
@@ -1585,7 +1586,8 @@ public class DeviceManagerClient implements BackgroundResource {
    * try (DeviceManagerClient deviceManagerClient = DeviceManagerClient.create()) {
    *   SetIamPolicyRequest request =
    *       SetIamPolicyRequest.newBuilder()
-   *           .setResource(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setResource(
+   *               DeviceName.of("[PROJECT]", "[LOCATION]", "[REGISTRY]", "[DEVICE]").toString())
    *           .setPolicy(Policy.newBuilder().build())
    *           .build();
    *   Policy response = deviceManagerClient.setIamPolicy(request);
@@ -1609,7 +1611,8 @@ public class DeviceManagerClient implements BackgroundResource {
    * try (DeviceManagerClient deviceManagerClient = DeviceManagerClient.create()) {
    *   SetIamPolicyRequest request =
    *       SetIamPolicyRequest.newBuilder()
-   *           .setResource(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setResource(
+   *               DeviceName.of("[PROJECT]", "[LOCATION]", "[REGISTRY]", "[DEVICE]").toString())
    *           .setPolicy(Policy.newBuilder().build())
    *           .build();
    *   ApiFuture<Policy> future = deviceManagerClient.setIamPolicyCallable().futureCall(request);
@@ -1631,7 +1634,7 @@ public class DeviceManagerClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (DeviceManagerClient deviceManagerClient = DeviceManagerClient.create()) {
-   *   ResourceName resource = LocationName.of("[PROJECT]", "[LOCATION]");
+   *   ResourceName resource = DeviceName.of("[PROJECT]", "[LOCATION]", "[REGISTRY]", "[DEVICE]");
    *   Policy response = deviceManagerClient.getIamPolicy(resource);
    * }
    * }</pre>
@@ -1657,7 +1660,8 @@ public class DeviceManagerClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (DeviceManagerClient deviceManagerClient = DeviceManagerClient.create()) {
-   *   String resource = LocationName.of("[PROJECT]", "[LOCATION]").toString();
+   *   String resource =
+   *       DeviceName.of("[PROJECT]", "[LOCATION]", "[REGISTRY]", "[DEVICE]").toString();
    *   Policy response = deviceManagerClient.getIamPolicy(resource);
    * }
    * }</pre>
@@ -1682,7 +1686,8 @@ public class DeviceManagerClient implements BackgroundResource {
    * try (DeviceManagerClient deviceManagerClient = DeviceManagerClient.create()) {
    *   GetIamPolicyRequest request =
    *       GetIamPolicyRequest.newBuilder()
-   *           .setResource(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setResource(
+   *               DeviceName.of("[PROJECT]", "[LOCATION]", "[REGISTRY]", "[DEVICE]").toString())
    *           .setOptions(GetPolicyOptions.newBuilder().build())
    *           .build();
    *   Policy response = deviceManagerClient.getIamPolicy(request);
@@ -1707,7 +1712,8 @@ public class DeviceManagerClient implements BackgroundResource {
    * try (DeviceManagerClient deviceManagerClient = DeviceManagerClient.create()) {
    *   GetIamPolicyRequest request =
    *       GetIamPolicyRequest.newBuilder()
-   *           .setResource(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setResource(
+   *               DeviceName.of("[PROJECT]", "[LOCATION]", "[REGISTRY]", "[DEVICE]").toString())
    *           .setOptions(GetPolicyOptions.newBuilder().build())
    *           .build();
    *   ApiFuture<Policy> future = deviceManagerClient.getIamPolicyCallable().futureCall(request);
@@ -1729,7 +1735,7 @@ public class DeviceManagerClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (DeviceManagerClient deviceManagerClient = DeviceManagerClient.create()) {
-   *   ResourceName resource = LocationName.of("[PROJECT]", "[LOCATION]");
+   *   ResourceName resource = DeviceName.of("[PROJECT]", "[LOCATION]", "[REGISTRY]", "[DEVICE]");
    *   List<String> permissions = new ArrayList<>();
    *   TestIamPermissionsResponse response =
    *       deviceManagerClient.testIamPermissions(resource, permissions);
@@ -1762,7 +1768,8 @@ public class DeviceManagerClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (DeviceManagerClient deviceManagerClient = DeviceManagerClient.create()) {
-   *   String resource = LocationName.of("[PROJECT]", "[LOCATION]").toString();
+   *   String resource =
+   *       DeviceName.of("[PROJECT]", "[LOCATION]", "[REGISTRY]", "[DEVICE]").toString();
    *   List<String> permissions = new ArrayList<>();
    *   TestIamPermissionsResponse response =
    *       deviceManagerClient.testIamPermissions(resource, permissions);
@@ -1797,7 +1804,8 @@ public class DeviceManagerClient implements BackgroundResource {
    * try (DeviceManagerClient deviceManagerClient = DeviceManagerClient.create()) {
    *   TestIamPermissionsRequest request =
    *       TestIamPermissionsRequest.newBuilder()
-   *           .setResource(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setResource(
+   *               DeviceName.of("[PROJECT]", "[LOCATION]", "[REGISTRY]", "[DEVICE]").toString())
    *           .addAllPermissions(new ArrayList<String>())
    *           .build();
    *   TestIamPermissionsResponse response = deviceManagerClient.testIamPermissions(request);
@@ -1822,7 +1830,8 @@ public class DeviceManagerClient implements BackgroundResource {
    * try (DeviceManagerClient deviceManagerClient = DeviceManagerClient.create()) {
    *   TestIamPermissionsRequest request =
    *       TestIamPermissionsRequest.newBuilder()
-   *           .setResource(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setResource(
+   *               DeviceName.of("[PROJECT]", "[LOCATION]", "[REGISTRY]", "[DEVICE]").toString())
    *           .addAllPermissions(new ArrayList<String>())
    *           .build();
    *   ApiFuture<TestIamPermissionsResponse> future =
