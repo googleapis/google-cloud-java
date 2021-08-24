@@ -84,4 +84,66 @@ public interface MetadataManagementActivityOrBuilder
    * </code>
    */
   com.google.cloud.metastore.v1.MetadataExportOrBuilder getMetadataExportsOrBuilder(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The latest restores of the metastore service.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.metastore.v1.Restore restores = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  java.util.List<com.google.cloud.metastore.v1.Restore> getRestoresList();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The latest restores of the metastore service.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.metastore.v1.Restore restores = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.cloud.metastore.v1.Restore getRestores(int index);
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The latest restores of the metastore service.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.metastore.v1.Restore restores = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  int getRestoresCount();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The latest restores of the metastore service.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.metastore.v1.Restore restores = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  java.util.List<? extends com.google.cloud.metastore.v1.RestoreOrBuilder>
+      getRestoresOrBuilderList();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The latest restores of the metastore service.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.metastore.v1.Restore restores = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.cloud.metastore.v1.RestoreOrBuilder getRestoresOrBuilder(int index);
 }

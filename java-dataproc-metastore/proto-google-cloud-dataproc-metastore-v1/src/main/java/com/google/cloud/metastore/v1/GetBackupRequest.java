@@ -22,27 +22,29 @@ package com.google.cloud.metastore.v1;
  *
  *
  * <pre>
- * The specification of database dump to import from or export to.
+ * Request message for [DataprocMetastore.GetBackup][google.cloud.metastore.v1.DataprocMetastore.GetBackup].
  * </pre>
  *
- * Protobuf type {@code google.cloud.metastore.v1.DatabaseDumpSpec}
+ * Protobuf type {@code google.cloud.metastore.v1.GetBackupRequest}
  */
-public final class DatabaseDumpSpec extends com.google.protobuf.GeneratedMessageV3
+public final class GetBackupRequest extends com.google.protobuf.GeneratedMessageV3
     implements
-    // @@protoc_insertion_point(message_implements:google.cloud.metastore.v1.DatabaseDumpSpec)
-    DatabaseDumpSpecOrBuilder {
+    // @@protoc_insertion_point(message_implements:google.cloud.metastore.v1.GetBackupRequest)
+    GetBackupRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-  // Use DatabaseDumpSpec.newBuilder() to construct.
-  private DatabaseDumpSpec(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+  // Use GetBackupRequest.newBuilder() to construct.
+  private GetBackupRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
 
-  private DatabaseDumpSpec() {}
+  private GetBackupRequest() {
+    name_ = "";
+  }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
-    return new DatabaseDumpSpec();
+    return new GetBackupRequest();
   }
 
   @java.lang.Override
@@ -50,7 +52,7 @@ public final class DatabaseDumpSpec extends com.google.protobuf.GeneratedMessage
     return this.unknownFields;
   }
 
-  private DatabaseDumpSpec(
+  private GetBackupRequest(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
@@ -68,6 +70,13 @@ public final class DatabaseDumpSpec extends com.google.protobuf.GeneratedMessage
           case 0:
             done = true;
             break;
+          case 10:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              name_ = s;
+              break;
+            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -89,174 +98,74 @@ public final class DatabaseDumpSpec extends com.google.protobuf.GeneratedMessage
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.metastore.v1.MetastoreProto
-        .internal_static_google_cloud_metastore_v1_DatabaseDumpSpec_descriptor;
+        .internal_static_google_cloud_metastore_v1_GetBackupRequest_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
     return com.google.cloud.metastore.v1.MetastoreProto
-        .internal_static_google_cloud_metastore_v1_DatabaseDumpSpec_fieldAccessorTable
+        .internal_static_google_cloud_metastore_v1_GetBackupRequest_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.google.cloud.metastore.v1.DatabaseDumpSpec.class,
-            com.google.cloud.metastore.v1.DatabaseDumpSpec.Builder.class);
+            com.google.cloud.metastore.v1.GetBackupRequest.class,
+            com.google.cloud.metastore.v1.GetBackupRequest.Builder.class);
   }
 
+  public static final int NAME_FIELD_NUMBER = 1;
+  private volatile java.lang.Object name_;
   /**
    *
    *
    * <pre>
-   * The type of the database dump.
+   * Required. The relative resource name of the backup to retrieve, in the
+   * following form:
+   * `projects/{project_number}/locations/{location_id}/services/{service_id}/backups/{backup_id}`.
    * </pre>
    *
-   * Protobuf enum {@code google.cloud.metastore.v1.DatabaseDumpSpec.Type}
+   * <code>
+   * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The name.
    */
-  public enum Type implements com.google.protobuf.ProtocolMessageEnum {
-    /**
-     *
-     *
-     * <pre>
-     * The type of the database dump is unknown.
-     * </pre>
-     *
-     * <code>TYPE_UNSPECIFIED = 0;</code>
-     */
-    TYPE_UNSPECIFIED(0),
-    /**
-     *
-     *
-     * <pre>
-     * Database dump is a MySQL dump file.
-     * </pre>
-     *
-     * <code>MYSQL = 1;</code>
-     */
-    MYSQL(1),
-    /**
-     *
-     *
-     * <pre>
-     * Database dump contains Avro files.
-     * </pre>
-     *
-     * <code>AVRO = 2;</code>
-     */
-    AVRO(2),
-    UNRECOGNIZED(-1),
-    ;
-
-    /**
-     *
-     *
-     * <pre>
-     * The type of the database dump is unknown.
-     * </pre>
-     *
-     * <code>TYPE_UNSPECIFIED = 0;</code>
-     */
-    public static final int TYPE_UNSPECIFIED_VALUE = 0;
-    /**
-     *
-     *
-     * <pre>
-     * Database dump is a MySQL dump file.
-     * </pre>
-     *
-     * <code>MYSQL = 1;</code>
-     */
-    public static final int MYSQL_VALUE = 1;
-    /**
-     *
-     *
-     * <pre>
-     * Database dump contains Avro files.
-     * </pre>
-     *
-     * <code>AVRO = 2;</code>
-     */
-    public static final int AVRO_VALUE = 2;
-
-    public final int getNumber() {
-      if (this == UNRECOGNIZED) {
-        throw new java.lang.IllegalArgumentException(
-            "Can't get the number of an unknown enum value.");
-      }
-      return value;
+  @java.lang.Override
+  public java.lang.String getName() {
+    java.lang.Object ref = name_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      name_ = s;
+      return s;
     }
-
-    /**
-     * @param value The numeric wire value of the corresponding enum entry.
-     * @return The enum associated with the given numeric wire value.
-     * @deprecated Use {@link #forNumber(int)} instead.
-     */
-    @java.lang.Deprecated
-    public static Type valueOf(int value) {
-      return forNumber(value);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Required. The relative resource name of the backup to retrieve, in the
+   * following form:
+   * `projects/{project_number}/locations/{location_id}/services/{service_id}/backups/{backup_id}`.
+   * </pre>
+   *
+   * <code>
+   * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The bytes for name.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getNameBytes() {
+    java.lang.Object ref = name_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      name_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
     }
-
-    /**
-     * @param value The numeric wire value of the corresponding enum entry.
-     * @return The enum associated with the given numeric wire value.
-     */
-    public static Type forNumber(int value) {
-      switch (value) {
-        case 0:
-          return TYPE_UNSPECIFIED;
-        case 1:
-          return MYSQL;
-        case 2:
-          return AVRO;
-        default:
-          return null;
-      }
-    }
-
-    public static com.google.protobuf.Internal.EnumLiteMap<Type> internalGetValueMap() {
-      return internalValueMap;
-    }
-
-    private static final com.google.protobuf.Internal.EnumLiteMap<Type> internalValueMap =
-        new com.google.protobuf.Internal.EnumLiteMap<Type>() {
-          public Type findValueByNumber(int number) {
-            return Type.forNumber(number);
-          }
-        };
-
-    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
-      if (this == UNRECOGNIZED) {
-        throw new java.lang.IllegalStateException(
-            "Can't get the descriptor of an unrecognized enum value.");
-      }
-      return getDescriptor().getValues().get(ordinal());
-    }
-
-    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
-      return getDescriptor();
-    }
-
-    public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
-      return com.google.cloud.metastore.v1.DatabaseDumpSpec.getDescriptor().getEnumTypes().get(0);
-    }
-
-    private static final Type[] VALUES = values();
-
-    public static Type valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
-      if (desc.getType() != getDescriptor()) {
-        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
-      }
-      if (desc.getIndex() == -1) {
-        return UNRECOGNIZED;
-      }
-      return VALUES[desc.getIndex()];
-    }
-
-    private final int value;
-
-    private Type(int value) {
-      this.value = value;
-    }
-
-    // @@protoc_insertion_point(enum_scope:google.cloud.metastore.v1.DatabaseDumpSpec.Type)
   }
 
   private byte memoizedIsInitialized = -1;
@@ -273,6 +182,9 @@ public final class DatabaseDumpSpec extends com.google.protobuf.GeneratedMessage
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+    if (!getNameBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -282,6 +194,9 @@ public final class DatabaseDumpSpec extends com.google.protobuf.GeneratedMessage
     if (size != -1) return size;
 
     size = 0;
+    if (!getNameBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, name_);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -292,12 +207,13 @@ public final class DatabaseDumpSpec extends com.google.protobuf.GeneratedMessage
     if (obj == this) {
       return true;
     }
-    if (!(obj instanceof com.google.cloud.metastore.v1.DatabaseDumpSpec)) {
+    if (!(obj instanceof com.google.cloud.metastore.v1.GetBackupRequest)) {
       return super.equals(obj);
     }
-    com.google.cloud.metastore.v1.DatabaseDumpSpec other =
-        (com.google.cloud.metastore.v1.DatabaseDumpSpec) obj;
+    com.google.cloud.metastore.v1.GetBackupRequest other =
+        (com.google.cloud.metastore.v1.GetBackupRequest) obj;
 
+    if (!getName().equals(other.getName())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -309,76 +225,78 @@ public final class DatabaseDumpSpec extends com.google.protobuf.GeneratedMessage
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
+    hash = (37 * hash) + NAME_FIELD_NUMBER;
+    hash = (53 * hash) + getName().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
   }
 
-  public static com.google.cloud.metastore.v1.DatabaseDumpSpec parseFrom(java.nio.ByteBuffer data)
+  public static com.google.cloud.metastore.v1.GetBackupRequest parseFrom(java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
 
-  public static com.google.cloud.metastore.v1.DatabaseDumpSpec parseFrom(
+  public static com.google.cloud.metastore.v1.GetBackupRequest parseFrom(
       java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
 
-  public static com.google.cloud.metastore.v1.DatabaseDumpSpec parseFrom(
+  public static com.google.cloud.metastore.v1.GetBackupRequest parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
 
-  public static com.google.cloud.metastore.v1.DatabaseDumpSpec parseFrom(
+  public static com.google.cloud.metastore.v1.GetBackupRequest parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
 
-  public static com.google.cloud.metastore.v1.DatabaseDumpSpec parseFrom(byte[] data)
+  public static com.google.cloud.metastore.v1.GetBackupRequest parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
 
-  public static com.google.cloud.metastore.v1.DatabaseDumpSpec parseFrom(
+  public static com.google.cloud.metastore.v1.GetBackupRequest parseFrom(
       byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
 
-  public static com.google.cloud.metastore.v1.DatabaseDumpSpec parseFrom(java.io.InputStream input)
+  public static com.google.cloud.metastore.v1.GetBackupRequest parseFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
 
-  public static com.google.cloud.metastore.v1.DatabaseDumpSpec parseFrom(
+  public static com.google.cloud.metastore.v1.GetBackupRequest parseFrom(
       java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
         PARSER, input, extensionRegistry);
   }
 
-  public static com.google.cloud.metastore.v1.DatabaseDumpSpec parseDelimitedFrom(
+  public static com.google.cloud.metastore.v1.GetBackupRequest parseDelimitedFrom(
       java.io.InputStream input) throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
   }
 
-  public static com.google.cloud.metastore.v1.DatabaseDumpSpec parseDelimitedFrom(
+  public static com.google.cloud.metastore.v1.GetBackupRequest parseDelimitedFrom(
       java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
         PARSER, input, extensionRegistry);
   }
 
-  public static com.google.cloud.metastore.v1.DatabaseDumpSpec parseFrom(
+  public static com.google.cloud.metastore.v1.GetBackupRequest parseFrom(
       com.google.protobuf.CodedInputStream input) throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
 
-  public static com.google.cloud.metastore.v1.DatabaseDumpSpec parseFrom(
+  public static com.google.cloud.metastore.v1.GetBackupRequest parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -395,7 +313,7 @@ public final class DatabaseDumpSpec extends com.google.protobuf.GeneratedMessage
     return DEFAULT_INSTANCE.toBuilder();
   }
 
-  public static Builder newBuilder(com.google.cloud.metastore.v1.DatabaseDumpSpec prototype) {
+  public static Builder newBuilder(com.google.cloud.metastore.v1.GetBackupRequest prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
 
@@ -413,31 +331,31 @@ public final class DatabaseDumpSpec extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * The specification of database dump to import from or export to.
+   * Request message for [DataprocMetastore.GetBackup][google.cloud.metastore.v1.DataprocMetastore.GetBackup].
    * </pre>
    *
-   * Protobuf type {@code google.cloud.metastore.v1.DatabaseDumpSpec}
+   * Protobuf type {@code google.cloud.metastore.v1.GetBackupRequest}
    */
   public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
       implements
-      // @@protoc_insertion_point(builder_implements:google.cloud.metastore.v1.DatabaseDumpSpec)
-      com.google.cloud.metastore.v1.DatabaseDumpSpecOrBuilder {
+      // @@protoc_insertion_point(builder_implements:google.cloud.metastore.v1.GetBackupRequest)
+      com.google.cloud.metastore.v1.GetBackupRequestOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.cloud.metastore.v1.MetastoreProto
-          .internal_static_google_cloud_metastore_v1_DatabaseDumpSpec_descriptor;
+          .internal_static_google_cloud_metastore_v1_GetBackupRequest_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return com.google.cloud.metastore.v1.MetastoreProto
-          .internal_static_google_cloud_metastore_v1_DatabaseDumpSpec_fieldAccessorTable
+          .internal_static_google_cloud_metastore_v1_GetBackupRequest_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.cloud.metastore.v1.DatabaseDumpSpec.class,
-              com.google.cloud.metastore.v1.DatabaseDumpSpec.Builder.class);
+              com.google.cloud.metastore.v1.GetBackupRequest.class,
+              com.google.cloud.metastore.v1.GetBackupRequest.Builder.class);
     }
 
-    // Construct using com.google.cloud.metastore.v1.DatabaseDumpSpec.newBuilder()
+    // Construct using com.google.cloud.metastore.v1.GetBackupRequest.newBuilder()
     private Builder() {
       maybeForceBuilderInitialization();
     }
@@ -454,23 +372,25 @@ public final class DatabaseDumpSpec extends com.google.protobuf.GeneratedMessage
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      name_ = "";
+
       return this;
     }
 
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
       return com.google.cloud.metastore.v1.MetastoreProto
-          .internal_static_google_cloud_metastore_v1_DatabaseDumpSpec_descriptor;
+          .internal_static_google_cloud_metastore_v1_GetBackupRequest_descriptor;
     }
 
     @java.lang.Override
-    public com.google.cloud.metastore.v1.DatabaseDumpSpec getDefaultInstanceForType() {
-      return com.google.cloud.metastore.v1.DatabaseDumpSpec.getDefaultInstance();
+    public com.google.cloud.metastore.v1.GetBackupRequest getDefaultInstanceForType() {
+      return com.google.cloud.metastore.v1.GetBackupRequest.getDefaultInstance();
     }
 
     @java.lang.Override
-    public com.google.cloud.metastore.v1.DatabaseDumpSpec build() {
-      com.google.cloud.metastore.v1.DatabaseDumpSpec result = buildPartial();
+    public com.google.cloud.metastore.v1.GetBackupRequest build() {
+      com.google.cloud.metastore.v1.GetBackupRequest result = buildPartial();
       if (!result.isInitialized()) {
         throw newUninitializedMessageException(result);
       }
@@ -478,9 +398,10 @@ public final class DatabaseDumpSpec extends com.google.protobuf.GeneratedMessage
     }
 
     @java.lang.Override
-    public com.google.cloud.metastore.v1.DatabaseDumpSpec buildPartial() {
-      com.google.cloud.metastore.v1.DatabaseDumpSpec result =
-          new com.google.cloud.metastore.v1.DatabaseDumpSpec(this);
+    public com.google.cloud.metastore.v1.GetBackupRequest buildPartial() {
+      com.google.cloud.metastore.v1.GetBackupRequest result =
+          new com.google.cloud.metastore.v1.GetBackupRequest(this);
+      result.name_ = name_;
       onBuilt();
       return result;
     }
@@ -520,16 +441,20 @@ public final class DatabaseDumpSpec extends com.google.protobuf.GeneratedMessage
 
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof com.google.cloud.metastore.v1.DatabaseDumpSpec) {
-        return mergeFrom((com.google.cloud.metastore.v1.DatabaseDumpSpec) other);
+      if (other instanceof com.google.cloud.metastore.v1.GetBackupRequest) {
+        return mergeFrom((com.google.cloud.metastore.v1.GetBackupRequest) other);
       } else {
         super.mergeFrom(other);
         return this;
       }
     }
 
-    public Builder mergeFrom(com.google.cloud.metastore.v1.DatabaseDumpSpec other) {
-      if (other == com.google.cloud.metastore.v1.DatabaseDumpSpec.getDefaultInstance()) return this;
+    public Builder mergeFrom(com.google.cloud.metastore.v1.GetBackupRequest other) {
+      if (other == com.google.cloud.metastore.v1.GetBackupRequest.getDefaultInstance()) return this;
+      if (!other.getName().isEmpty()) {
+        name_ = other.name_;
+        onChanged();
+      }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
@@ -545,17 +470,143 @@ public final class DatabaseDumpSpec extends com.google.protobuf.GeneratedMessage
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.cloud.metastore.v1.DatabaseDumpSpec parsedMessage = null;
+      com.google.cloud.metastore.v1.GetBackupRequest parsedMessage = null;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.google.cloud.metastore.v1.DatabaseDumpSpec) e.getUnfinishedMessage();
+        parsedMessage = (com.google.cloud.metastore.v1.GetBackupRequest) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
           mergeFrom(parsedMessage);
         }
       }
+      return this;
+    }
+
+    private java.lang.Object name_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Required. The relative resource name of the backup to retrieve, in the
+     * following form:
+     * `projects/{project_number}/locations/{location_id}/services/{service_id}/backups/{backup_id}`.
+     * </pre>
+     *
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return The name.
+     */
+    public java.lang.String getName() {
+      java.lang.Object ref = name_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        name_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Required. The relative resource name of the backup to retrieve, in the
+     * following form:
+     * `projects/{project_number}/locations/{location_id}/services/{service_id}/backups/{backup_id}`.
+     * </pre>
+     *
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return The bytes for name.
+     */
+    public com.google.protobuf.ByteString getNameBytes() {
+      java.lang.Object ref = name_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        name_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Required. The relative resource name of the backup to retrieve, in the
+     * following form:
+     * `projects/{project_number}/locations/{location_id}/services/{service_id}/backups/{backup_id}`.
+     * </pre>
+     *
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @param value The name to set.
+     * @return This builder for chaining.
+     */
+    public Builder setName(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+
+      name_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Required. The relative resource name of the backup to retrieve, in the
+     * following form:
+     * `projects/{project_number}/locations/{location_id}/services/{service_id}/backups/{backup_id}`.
+     * </pre>
+     *
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearName() {
+
+      name_ = getDefaultInstance().getName();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Required. The relative resource name of the backup to retrieve, in the
+     * following form:
+     * `projects/{project_number}/locations/{location_id}/services/{service_id}/backups/{backup_id}`.
+     * </pre>
+     *
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @param value The bytes for name to set.
+     * @return This builder for chaining.
+     */
+    public Builder setNameBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
+      name_ = value;
+      onChanged();
       return this;
     }
 
@@ -570,42 +621,42 @@ public final class DatabaseDumpSpec extends com.google.protobuf.GeneratedMessage
       return super.mergeUnknownFields(unknownFields);
     }
 
-    // @@protoc_insertion_point(builder_scope:google.cloud.metastore.v1.DatabaseDumpSpec)
+    // @@protoc_insertion_point(builder_scope:google.cloud.metastore.v1.GetBackupRequest)
   }
 
-  // @@protoc_insertion_point(class_scope:google.cloud.metastore.v1.DatabaseDumpSpec)
-  private static final com.google.cloud.metastore.v1.DatabaseDumpSpec DEFAULT_INSTANCE;
+  // @@protoc_insertion_point(class_scope:google.cloud.metastore.v1.GetBackupRequest)
+  private static final com.google.cloud.metastore.v1.GetBackupRequest DEFAULT_INSTANCE;
 
   static {
-    DEFAULT_INSTANCE = new com.google.cloud.metastore.v1.DatabaseDumpSpec();
+    DEFAULT_INSTANCE = new com.google.cloud.metastore.v1.GetBackupRequest();
   }
 
-  public static com.google.cloud.metastore.v1.DatabaseDumpSpec getDefaultInstance() {
+  public static com.google.cloud.metastore.v1.GetBackupRequest getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<DatabaseDumpSpec> PARSER =
-      new com.google.protobuf.AbstractParser<DatabaseDumpSpec>() {
+  private static final com.google.protobuf.Parser<GetBackupRequest> PARSER =
+      new com.google.protobuf.AbstractParser<GetBackupRequest>() {
         @java.lang.Override
-        public DatabaseDumpSpec parsePartialFrom(
+        public GetBackupRequest parsePartialFrom(
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new DatabaseDumpSpec(input, extensionRegistry);
+          return new GetBackupRequest(input, extensionRegistry);
         }
       };
 
-  public static com.google.protobuf.Parser<DatabaseDumpSpec> parser() {
+  public static com.google.protobuf.Parser<GetBackupRequest> parser() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.protobuf.Parser<DatabaseDumpSpec> getParserForType() {
+  public com.google.protobuf.Parser<GetBackupRequest> getParserForType() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.cloud.metastore.v1.DatabaseDumpSpec getDefaultInstanceForType() {
+  public com.google.cloud.metastore.v1.GetBackupRequest getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
 }

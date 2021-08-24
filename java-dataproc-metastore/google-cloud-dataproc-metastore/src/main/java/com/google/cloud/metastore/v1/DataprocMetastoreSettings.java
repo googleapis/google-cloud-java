@@ -16,6 +16,7 @@
 
 package com.google.cloud.metastore.v1;
 
+import static com.google.cloud.metastore.v1.DataprocMetastoreClient.ListBackupsPagedResponse;
 import static com.google.cloud.metastore.v1.DataprocMetastoreClient.ListMetadataImportsPagedResponse;
 import static com.google.cloud.metastore.v1.DataprocMetastoreClient.ListServicesPagedResponse;
 
@@ -162,6 +163,50 @@ public class DataprocMetastoreSettings extends ClientSettings<DataprocMetastoreS
   public OperationCallSettings<ExportMetadataRequest, MetadataExport, OperationMetadata>
       exportMetadataOperationSettings() {
     return ((DataprocMetastoreStubSettings) getStubSettings()).exportMetadataOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to restoreService. */
+  public UnaryCallSettings<RestoreServiceRequest, Operation> restoreServiceSettings() {
+    return ((DataprocMetastoreStubSettings) getStubSettings()).restoreServiceSettings();
+  }
+
+  /** Returns the object with the settings used for calls to restoreService. */
+  public OperationCallSettings<RestoreServiceRequest, Restore, OperationMetadata>
+      restoreServiceOperationSettings() {
+    return ((DataprocMetastoreStubSettings) getStubSettings()).restoreServiceOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to listBackups. */
+  public PagedCallSettings<ListBackupsRequest, ListBackupsResponse, ListBackupsPagedResponse>
+      listBackupsSettings() {
+    return ((DataprocMetastoreStubSettings) getStubSettings()).listBackupsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getBackup. */
+  public UnaryCallSettings<GetBackupRequest, Backup> getBackupSettings() {
+    return ((DataprocMetastoreStubSettings) getStubSettings()).getBackupSettings();
+  }
+
+  /** Returns the object with the settings used for calls to createBackup. */
+  public UnaryCallSettings<CreateBackupRequest, Operation> createBackupSettings() {
+    return ((DataprocMetastoreStubSettings) getStubSettings()).createBackupSettings();
+  }
+
+  /** Returns the object with the settings used for calls to createBackup. */
+  public OperationCallSettings<CreateBackupRequest, Backup, OperationMetadata>
+      createBackupOperationSettings() {
+    return ((DataprocMetastoreStubSettings) getStubSettings()).createBackupOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteBackup. */
+  public UnaryCallSettings<DeleteBackupRequest, Operation> deleteBackupSettings() {
+    return ((DataprocMetastoreStubSettings) getStubSettings()).deleteBackupSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteBackup. */
+  public OperationCallSettings<DeleteBackupRequest, Empty, OperationMetadata>
+      deleteBackupOperationSettings() {
+    return ((DataprocMetastoreStubSettings) getStubSettings()).deleteBackupOperationSettings();
   }
 
   public static final DataprocMetastoreSettings create(DataprocMetastoreStubSettings stub)
@@ -356,6 +401,51 @@ public class DataprocMetastoreSettings extends ClientSettings<DataprocMetastoreS
     public OperationCallSettings.Builder<ExportMetadataRequest, MetadataExport, OperationMetadata>
         exportMetadataOperationSettings() {
       return getStubSettingsBuilder().exportMetadataOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to restoreService. */
+    public UnaryCallSettings.Builder<RestoreServiceRequest, Operation> restoreServiceSettings() {
+      return getStubSettingsBuilder().restoreServiceSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to restoreService. */
+    public OperationCallSettings.Builder<RestoreServiceRequest, Restore, OperationMetadata>
+        restoreServiceOperationSettings() {
+      return getStubSettingsBuilder().restoreServiceOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to listBackups. */
+    public PagedCallSettings.Builder<
+            ListBackupsRequest, ListBackupsResponse, ListBackupsPagedResponse>
+        listBackupsSettings() {
+      return getStubSettingsBuilder().listBackupsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getBackup. */
+    public UnaryCallSettings.Builder<GetBackupRequest, Backup> getBackupSettings() {
+      return getStubSettingsBuilder().getBackupSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to createBackup. */
+    public UnaryCallSettings.Builder<CreateBackupRequest, Operation> createBackupSettings() {
+      return getStubSettingsBuilder().createBackupSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to createBackup. */
+    public OperationCallSettings.Builder<CreateBackupRequest, Backup, OperationMetadata>
+        createBackupOperationSettings() {
+      return getStubSettingsBuilder().createBackupOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteBackup. */
+    public UnaryCallSettings.Builder<DeleteBackupRequest, Operation> deleteBackupSettings() {
+      return getStubSettingsBuilder().deleteBackupSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteBackup. */
+    public OperationCallSettings.Builder<DeleteBackupRequest, Empty, OperationMetadata>
+        deleteBackupOperationSettings() {
+      return getStubSettingsBuilder().deleteBackupOperationSettings();
     }
 
     @Override

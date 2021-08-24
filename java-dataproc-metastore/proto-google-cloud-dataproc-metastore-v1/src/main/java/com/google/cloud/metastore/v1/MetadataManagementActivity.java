@@ -39,6 +39,7 @@ public final class MetadataManagementActivity extends com.google.protobuf.Genera
 
   private MetadataManagementActivity() {
     metadataExports_ = java.util.Collections.emptyList();
+    restores_ = java.util.Collections.emptyList();
   }
 
   @java.lang.Override
@@ -83,6 +84,17 @@ public final class MetadataManagementActivity extends com.google.protobuf.Genera
                       com.google.cloud.metastore.v1.MetadataExport.parser(), extensionRegistry));
               break;
             }
+          case 18:
+            {
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+                restores_ = new java.util.ArrayList<com.google.cloud.metastore.v1.Restore>();
+                mutable_bitField0_ |= 0x00000002;
+              }
+              restores_.add(
+                  input.readMessage(
+                      com.google.cloud.metastore.v1.Restore.parser(), extensionRegistry));
+              break;
+            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -99,6 +111,9 @@ public final class MetadataManagementActivity extends com.google.protobuf.Genera
     } finally {
       if (((mutable_bitField0_ & 0x00000001) != 0)) {
         metadataExports_ = java.util.Collections.unmodifiableList(metadataExports_);
+      }
+      if (((mutable_bitField0_ & 0x00000002) != 0)) {
+        restores_ = java.util.Collections.unmodifiableList(restores_);
       }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
@@ -200,6 +215,85 @@ public final class MetadataManagementActivity extends com.google.protobuf.Genera
     return metadataExports_.get(index);
   }
 
+  public static final int RESTORES_FIELD_NUMBER = 2;
+  private java.util.List<com.google.cloud.metastore.v1.Restore> restores_;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The latest restores of the metastore service.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.metastore.v1.Restore restores = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<com.google.cloud.metastore.v1.Restore> getRestoresList() {
+    return restores_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The latest restores of the metastore service.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.metastore.v1.Restore restores = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<? extends com.google.cloud.metastore.v1.RestoreOrBuilder>
+      getRestoresOrBuilderList() {
+    return restores_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The latest restores of the metastore service.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.metastore.v1.Restore restores = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public int getRestoresCount() {
+    return restores_.size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The latest restores of the metastore service.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.metastore.v1.Restore restores = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.metastore.v1.Restore getRestores(int index) {
+    return restores_.get(index);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The latest restores of the metastore service.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.metastore.v1.Restore restores = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.metastore.v1.RestoreOrBuilder getRestoresOrBuilder(int index) {
+    return restores_.get(index);
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -217,6 +311,9 @@ public final class MetadataManagementActivity extends com.google.protobuf.Genera
     for (int i = 0; i < metadataExports_.size(); i++) {
       output.writeMessage(1, metadataExports_.get(i));
     }
+    for (int i = 0; i < restores_.size(); i++) {
+      output.writeMessage(2, restores_.get(i));
+    }
     unknownFields.writeTo(output);
   }
 
@@ -228,6 +325,9 @@ public final class MetadataManagementActivity extends com.google.protobuf.Genera
     size = 0;
     for (int i = 0; i < metadataExports_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, metadataExports_.get(i));
+    }
+    for (int i = 0; i < restores_.size(); i++) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, restores_.get(i));
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -246,6 +346,7 @@ public final class MetadataManagementActivity extends com.google.protobuf.Genera
         (com.google.cloud.metastore.v1.MetadataManagementActivity) obj;
 
     if (!getMetadataExportsList().equals(other.getMetadataExportsList())) return false;
+    if (!getRestoresList().equals(other.getRestoresList())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -260,6 +361,10 @@ public final class MetadataManagementActivity extends com.google.protobuf.Genera
     if (getMetadataExportsCount() > 0) {
       hash = (37 * hash) + METADATA_EXPORTS_FIELD_NUMBER;
       hash = (53 * hash) + getMetadataExportsList().hashCode();
+    }
+    if (getRestoresCount() > 0) {
+      hash = (37 * hash) + RESTORES_FIELD_NUMBER;
+      hash = (53 * hash) + getRestoresList().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -403,6 +508,7 @@ public final class MetadataManagementActivity extends com.google.protobuf.Genera
     private void maybeForceBuilderInitialization() {
       if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
         getMetadataExportsFieldBuilder();
+        getRestoresFieldBuilder();
       }
     }
 
@@ -414,6 +520,12 @@ public final class MetadataManagementActivity extends com.google.protobuf.Genera
         bitField0_ = (bitField0_ & ~0x00000001);
       } else {
         metadataExportsBuilder_.clear();
+      }
+      if (restoresBuilder_ == null) {
+        restores_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000002);
+      } else {
+        restoresBuilder_.clear();
       }
       return this;
     }
@@ -451,6 +563,15 @@ public final class MetadataManagementActivity extends com.google.protobuf.Genera
         result.metadataExports_ = metadataExports_;
       } else {
         result.metadataExports_ = metadataExportsBuilder_.build();
+      }
+      if (restoresBuilder_ == null) {
+        if (((bitField0_ & 0x00000002) != 0)) {
+          restores_ = java.util.Collections.unmodifiableList(restores_);
+          bitField0_ = (bitField0_ & ~0x00000002);
+        }
+        result.restores_ = restores_;
+      } else {
+        result.restores_ = restoresBuilder_.build();
       }
       onBuilt();
       return result;
@@ -526,6 +647,33 @@ public final class MetadataManagementActivity extends com.google.protobuf.Genera
                     : null;
           } else {
             metadataExportsBuilder_.addAllMessages(other.metadataExports_);
+          }
+        }
+      }
+      if (restoresBuilder_ == null) {
+        if (!other.restores_.isEmpty()) {
+          if (restores_.isEmpty()) {
+            restores_ = other.restores_;
+            bitField0_ = (bitField0_ & ~0x00000002);
+          } else {
+            ensureRestoresIsMutable();
+            restores_.addAll(other.restores_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.restores_.isEmpty()) {
+          if (restoresBuilder_.isEmpty()) {
+            restoresBuilder_.dispose();
+            restoresBuilder_ = null;
+            restores_ = other.restores_;
+            bitField0_ = (bitField0_ & ~0x00000002);
+            restoresBuilder_ =
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                    ? getRestoresFieldBuilder()
+                    : null;
+          } else {
+            restoresBuilder_.addAllMessages(other.restores_);
           }
         }
       }
@@ -954,6 +1102,390 @@ public final class MetadataManagementActivity extends com.google.protobuf.Genera
         metadataExports_ = null;
       }
       return metadataExportsBuilder_;
+    }
+
+    private java.util.List<com.google.cloud.metastore.v1.Restore> restores_ =
+        java.util.Collections.emptyList();
+
+    private void ensureRestoresIsMutable() {
+      if (!((bitField0_ & 0x00000002) != 0)) {
+        restores_ = new java.util.ArrayList<com.google.cloud.metastore.v1.Restore>(restores_);
+        bitField0_ |= 0x00000002;
+      }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.cloud.metastore.v1.Restore,
+            com.google.cloud.metastore.v1.Restore.Builder,
+            com.google.cloud.metastore.v1.RestoreOrBuilder>
+        restoresBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The latest restores of the metastore service.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.metastore.v1.Restore restores = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public java.util.List<com.google.cloud.metastore.v1.Restore> getRestoresList() {
+      if (restoresBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(restores_);
+      } else {
+        return restoresBuilder_.getMessageList();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The latest restores of the metastore service.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.metastore.v1.Restore restores = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public int getRestoresCount() {
+      if (restoresBuilder_ == null) {
+        return restores_.size();
+      } else {
+        return restoresBuilder_.getCount();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The latest restores of the metastore service.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.metastore.v1.Restore restores = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.metastore.v1.Restore getRestores(int index) {
+      if (restoresBuilder_ == null) {
+        return restores_.get(index);
+      } else {
+        return restoresBuilder_.getMessage(index);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The latest restores of the metastore service.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.metastore.v1.Restore restores = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setRestores(int index, com.google.cloud.metastore.v1.Restore value) {
+      if (restoresBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureRestoresIsMutable();
+        restores_.set(index, value);
+        onChanged();
+      } else {
+        restoresBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The latest restores of the metastore service.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.metastore.v1.Restore restores = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setRestores(
+        int index, com.google.cloud.metastore.v1.Restore.Builder builderForValue) {
+      if (restoresBuilder_ == null) {
+        ensureRestoresIsMutable();
+        restores_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        restoresBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The latest restores of the metastore service.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.metastore.v1.Restore restores = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder addRestores(com.google.cloud.metastore.v1.Restore value) {
+      if (restoresBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureRestoresIsMutable();
+        restores_.add(value);
+        onChanged();
+      } else {
+        restoresBuilder_.addMessage(value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The latest restores of the metastore service.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.metastore.v1.Restore restores = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder addRestores(int index, com.google.cloud.metastore.v1.Restore value) {
+      if (restoresBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureRestoresIsMutable();
+        restores_.add(index, value);
+        onChanged();
+      } else {
+        restoresBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The latest restores of the metastore service.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.metastore.v1.Restore restores = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder addRestores(com.google.cloud.metastore.v1.Restore.Builder builderForValue) {
+      if (restoresBuilder_ == null) {
+        ensureRestoresIsMutable();
+        restores_.add(builderForValue.build());
+        onChanged();
+      } else {
+        restoresBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The latest restores of the metastore service.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.metastore.v1.Restore restores = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder addRestores(
+        int index, com.google.cloud.metastore.v1.Restore.Builder builderForValue) {
+      if (restoresBuilder_ == null) {
+        ensureRestoresIsMutable();
+        restores_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        restoresBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The latest restores of the metastore service.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.metastore.v1.Restore restores = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder addAllRestores(
+        java.lang.Iterable<? extends com.google.cloud.metastore.v1.Restore> values) {
+      if (restoresBuilder_ == null) {
+        ensureRestoresIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, restores_);
+        onChanged();
+      } else {
+        restoresBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The latest restores of the metastore service.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.metastore.v1.Restore restores = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder clearRestores() {
+      if (restoresBuilder_ == null) {
+        restores_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000002);
+        onChanged();
+      } else {
+        restoresBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The latest restores of the metastore service.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.metastore.v1.Restore restores = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder removeRestores(int index) {
+      if (restoresBuilder_ == null) {
+        ensureRestoresIsMutable();
+        restores_.remove(index);
+        onChanged();
+      } else {
+        restoresBuilder_.remove(index);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The latest restores of the metastore service.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.metastore.v1.Restore restores = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.metastore.v1.Restore.Builder getRestoresBuilder(int index) {
+      return getRestoresFieldBuilder().getBuilder(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The latest restores of the metastore service.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.metastore.v1.Restore restores = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.metastore.v1.RestoreOrBuilder getRestoresOrBuilder(int index) {
+      if (restoresBuilder_ == null) {
+        return restores_.get(index);
+      } else {
+        return restoresBuilder_.getMessageOrBuilder(index);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The latest restores of the metastore service.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.metastore.v1.Restore restores = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public java.util.List<? extends com.google.cloud.metastore.v1.RestoreOrBuilder>
+        getRestoresOrBuilderList() {
+      if (restoresBuilder_ != null) {
+        return restoresBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(restores_);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The latest restores of the metastore service.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.metastore.v1.Restore restores = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.metastore.v1.Restore.Builder addRestoresBuilder() {
+      return getRestoresFieldBuilder()
+          .addBuilder(com.google.cloud.metastore.v1.Restore.getDefaultInstance());
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The latest restores of the metastore service.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.metastore.v1.Restore restores = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.metastore.v1.Restore.Builder addRestoresBuilder(int index) {
+      return getRestoresFieldBuilder()
+          .addBuilder(index, com.google.cloud.metastore.v1.Restore.getDefaultInstance());
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The latest restores of the metastore service.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.metastore.v1.Restore restores = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public java.util.List<com.google.cloud.metastore.v1.Restore.Builder> getRestoresBuilderList() {
+      return getRestoresFieldBuilder().getBuilderList();
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.cloud.metastore.v1.Restore,
+            com.google.cloud.metastore.v1.Restore.Builder,
+            com.google.cloud.metastore.v1.RestoreOrBuilder>
+        getRestoresFieldBuilder() {
+      if (restoresBuilder_ == null) {
+        restoresBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilderV3<
+                com.google.cloud.metastore.v1.Restore,
+                com.google.cloud.metastore.v1.Restore.Builder,
+                com.google.cloud.metastore.v1.RestoreOrBuilder>(
+                restores_, ((bitField0_ & 0x00000002) != 0), getParentForChildren(), isClean());
+        restores_ = null;
+      }
+      return restoresBuilder_;
     }
 
     @java.lang.Override

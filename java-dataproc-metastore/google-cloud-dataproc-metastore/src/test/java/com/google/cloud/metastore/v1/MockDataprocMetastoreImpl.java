@@ -268,4 +268,108 @@ public class MockDataprocMetastoreImpl extends DataprocMetastoreImplBase {
                   Exception.class.getName())));
     }
   }
+
+  @Override
+  public void restoreService(
+      RestoreServiceRequest request, StreamObserver<Operation> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Operation) {
+      requests.add(request);
+      responseObserver.onNext(((Operation) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method RestoreService, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void listBackups(
+      ListBackupsRequest request, StreamObserver<ListBackupsResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof ListBackupsResponse) {
+      requests.add(request);
+      responseObserver.onNext(((ListBackupsResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListBackups, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  ListBackupsResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void getBackup(GetBackupRequest request, StreamObserver<Backup> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Backup) {
+      requests.add(request);
+      responseObserver.onNext(((Backup) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetBackup, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Backup.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void createBackup(
+      CreateBackupRequest request, StreamObserver<Operation> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Operation) {
+      requests.add(request);
+      responseObserver.onNext(((Operation) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method CreateBackup, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void deleteBackup(
+      DeleteBackupRequest request, StreamObserver<Operation> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Operation) {
+      requests.add(request);
+      responseObserver.onNext(((Operation) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method DeleteBackup, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
 }

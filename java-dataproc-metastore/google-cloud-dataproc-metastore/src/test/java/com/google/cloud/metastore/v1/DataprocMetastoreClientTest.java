@@ -16,6 +16,7 @@
 
 package com.google.cloud.metastore.v1;
 
+import static com.google.cloud.metastore.v1.DataprocMetastoreClient.ListBackupsPagedResponse;
 import static com.google.cloud.metastore.v1.DataprocMetastoreClient.ListMetadataImportsPagedResponse;
 import static com.google.cloud.metastore.v1.DataprocMetastoreClient.ListServicesPagedResponse;
 
@@ -36,6 +37,7 @@ import com.google.protobuf.FieldMask;
 import com.google.protobuf.Timestamp;
 import io.grpc.StatusRuntimeException;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
@@ -641,6 +643,7 @@ public class DataprocMetastoreClientTest {
             .setDescription("description-1724546052")
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
+            .setEndTime(Timestamp.newBuilder().build())
             .build();
     mockDataprocMetastore.addResponse(expectedResponse);
 
@@ -686,6 +689,7 @@ public class DataprocMetastoreClientTest {
             .setDescription("description-1724546052")
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
+            .setEndTime(Timestamp.newBuilder().build())
             .build();
     mockDataprocMetastore.addResponse(expectedResponse);
 
@@ -729,6 +733,7 @@ public class DataprocMetastoreClientTest {
             .setDescription("description-1724546052")
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
+            .setEndTime(Timestamp.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -788,6 +793,7 @@ public class DataprocMetastoreClientTest {
             .setDescription("description-1724546052")
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
+            .setEndTime(Timestamp.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -847,6 +853,7 @@ public class DataprocMetastoreClientTest {
             .setDescription("description-1724546052")
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
+            .setEndTime(Timestamp.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -943,6 +950,586 @@ public class DataprocMetastoreClientTest {
               .setRequestId("requestId693933066")
               .build();
       client.exportMetadataAsync(request).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void restoreServiceTest() throws Exception {
+    Restore expectedResponse =
+        Restore.newBuilder()
+            .setStartTime(Timestamp.newBuilder().build())
+            .setEndTime(Timestamp.newBuilder().build())
+            .setBackup(BackupName.of("[PROJECT]", "[LOCATION]", "[SERVICE]", "[BACKUP]").toString())
+            .setDetails("details1557721666")
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("restoreServiceTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockDataprocMetastore.addResponse(resultOperation);
+
+    ServiceName service = ServiceName.of("[PROJECT]", "[LOCATION]", "[SERVICE]");
+    BackupName backup = BackupName.of("[PROJECT]", "[LOCATION]", "[SERVICE]", "[BACKUP]");
+
+    Restore actualResponse = client.restoreServiceAsync(service, backup).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockDataprocMetastore.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    RestoreServiceRequest actualRequest = ((RestoreServiceRequest) actualRequests.get(0));
+
+    Assert.assertEquals(service.toString(), actualRequest.getService());
+    Assert.assertEquals(backup.toString(), actualRequest.getBackup());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void restoreServiceExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockDataprocMetastore.addException(exception);
+
+    try {
+      ServiceName service = ServiceName.of("[PROJECT]", "[LOCATION]", "[SERVICE]");
+      BackupName backup = BackupName.of("[PROJECT]", "[LOCATION]", "[SERVICE]", "[BACKUP]");
+      client.restoreServiceAsync(service, backup).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void restoreServiceTest2() throws Exception {
+    Restore expectedResponse =
+        Restore.newBuilder()
+            .setStartTime(Timestamp.newBuilder().build())
+            .setEndTime(Timestamp.newBuilder().build())
+            .setBackup(BackupName.of("[PROJECT]", "[LOCATION]", "[SERVICE]", "[BACKUP]").toString())
+            .setDetails("details1557721666")
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("restoreServiceTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockDataprocMetastore.addResponse(resultOperation);
+
+    ServiceName service = ServiceName.of("[PROJECT]", "[LOCATION]", "[SERVICE]");
+    String backup = "backup-1396673086";
+
+    Restore actualResponse = client.restoreServiceAsync(service, backup).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockDataprocMetastore.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    RestoreServiceRequest actualRequest = ((RestoreServiceRequest) actualRequests.get(0));
+
+    Assert.assertEquals(service.toString(), actualRequest.getService());
+    Assert.assertEquals(backup, actualRequest.getBackup());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void restoreServiceExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockDataprocMetastore.addException(exception);
+
+    try {
+      ServiceName service = ServiceName.of("[PROJECT]", "[LOCATION]", "[SERVICE]");
+      String backup = "backup-1396673086";
+      client.restoreServiceAsync(service, backup).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void restoreServiceTest3() throws Exception {
+    Restore expectedResponse =
+        Restore.newBuilder()
+            .setStartTime(Timestamp.newBuilder().build())
+            .setEndTime(Timestamp.newBuilder().build())
+            .setBackup(BackupName.of("[PROJECT]", "[LOCATION]", "[SERVICE]", "[BACKUP]").toString())
+            .setDetails("details1557721666")
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("restoreServiceTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockDataprocMetastore.addResponse(resultOperation);
+
+    String service = "service1984153269";
+    BackupName backup = BackupName.of("[PROJECT]", "[LOCATION]", "[SERVICE]", "[BACKUP]");
+
+    Restore actualResponse = client.restoreServiceAsync(service, backup).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockDataprocMetastore.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    RestoreServiceRequest actualRequest = ((RestoreServiceRequest) actualRequests.get(0));
+
+    Assert.assertEquals(service, actualRequest.getService());
+    Assert.assertEquals(backup.toString(), actualRequest.getBackup());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void restoreServiceExceptionTest3() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockDataprocMetastore.addException(exception);
+
+    try {
+      String service = "service1984153269";
+      BackupName backup = BackupName.of("[PROJECT]", "[LOCATION]", "[SERVICE]", "[BACKUP]");
+      client.restoreServiceAsync(service, backup).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void restoreServiceTest4() throws Exception {
+    Restore expectedResponse =
+        Restore.newBuilder()
+            .setStartTime(Timestamp.newBuilder().build())
+            .setEndTime(Timestamp.newBuilder().build())
+            .setBackup(BackupName.of("[PROJECT]", "[LOCATION]", "[SERVICE]", "[BACKUP]").toString())
+            .setDetails("details1557721666")
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("restoreServiceTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockDataprocMetastore.addResponse(resultOperation);
+
+    String service = "service1984153269";
+    String backup = "backup-1396673086";
+
+    Restore actualResponse = client.restoreServiceAsync(service, backup).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockDataprocMetastore.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    RestoreServiceRequest actualRequest = ((RestoreServiceRequest) actualRequests.get(0));
+
+    Assert.assertEquals(service, actualRequest.getService());
+    Assert.assertEquals(backup, actualRequest.getBackup());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void restoreServiceExceptionTest4() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockDataprocMetastore.addException(exception);
+
+    try {
+      String service = "service1984153269";
+      String backup = "backup-1396673086";
+      client.restoreServiceAsync(service, backup).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void listBackupsTest() throws Exception {
+    Backup responsesElement = Backup.newBuilder().build();
+    ListBackupsResponse expectedResponse =
+        ListBackupsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllBackups(Arrays.asList(responsesElement))
+            .build();
+    mockDataprocMetastore.addResponse(expectedResponse);
+
+    ServiceName parent = ServiceName.of("[PROJECT]", "[LOCATION]", "[SERVICE]");
+
+    ListBackupsPagedResponse pagedListResponse = client.listBackups(parent);
+
+    List<Backup> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getBackupsList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockDataprocMetastore.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListBackupsRequest actualRequest = ((ListBackupsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listBackupsExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockDataprocMetastore.addException(exception);
+
+    try {
+      ServiceName parent = ServiceName.of("[PROJECT]", "[LOCATION]", "[SERVICE]");
+      client.listBackups(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listBackupsTest2() throws Exception {
+    Backup responsesElement = Backup.newBuilder().build();
+    ListBackupsResponse expectedResponse =
+        ListBackupsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllBackups(Arrays.asList(responsesElement))
+            .build();
+    mockDataprocMetastore.addResponse(expectedResponse);
+
+    String parent = "parent-995424086";
+
+    ListBackupsPagedResponse pagedListResponse = client.listBackups(parent);
+
+    List<Backup> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getBackupsList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockDataprocMetastore.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListBackupsRequest actualRequest = ((ListBackupsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listBackupsExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockDataprocMetastore.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      client.listBackups(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getBackupTest() throws Exception {
+    Backup expectedResponse =
+        Backup.newBuilder()
+            .setName(BackupName.of("[PROJECT]", "[LOCATION]", "[SERVICE]", "[BACKUP]").toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setEndTime(Timestamp.newBuilder().build())
+            .setServiceRevision(Service.newBuilder().build())
+            .setDescription("description-1724546052")
+            .addAllRestoringServices(new ArrayList<String>())
+            .build();
+    mockDataprocMetastore.addResponse(expectedResponse);
+
+    BackupName name = BackupName.of("[PROJECT]", "[LOCATION]", "[SERVICE]", "[BACKUP]");
+
+    Backup actualResponse = client.getBackup(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockDataprocMetastore.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetBackupRequest actualRequest = ((GetBackupRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getBackupExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockDataprocMetastore.addException(exception);
+
+    try {
+      BackupName name = BackupName.of("[PROJECT]", "[LOCATION]", "[SERVICE]", "[BACKUP]");
+      client.getBackup(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getBackupTest2() throws Exception {
+    Backup expectedResponse =
+        Backup.newBuilder()
+            .setName(BackupName.of("[PROJECT]", "[LOCATION]", "[SERVICE]", "[BACKUP]").toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setEndTime(Timestamp.newBuilder().build())
+            .setServiceRevision(Service.newBuilder().build())
+            .setDescription("description-1724546052")
+            .addAllRestoringServices(new ArrayList<String>())
+            .build();
+    mockDataprocMetastore.addResponse(expectedResponse);
+
+    String name = "name3373707";
+
+    Backup actualResponse = client.getBackup(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockDataprocMetastore.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetBackupRequest actualRequest = ((GetBackupRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getBackupExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockDataprocMetastore.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.getBackup(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void createBackupTest() throws Exception {
+    Backup expectedResponse =
+        Backup.newBuilder()
+            .setName(BackupName.of("[PROJECT]", "[LOCATION]", "[SERVICE]", "[BACKUP]").toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setEndTime(Timestamp.newBuilder().build())
+            .setServiceRevision(Service.newBuilder().build())
+            .setDescription("description-1724546052")
+            .addAllRestoringServices(new ArrayList<String>())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("createBackupTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockDataprocMetastore.addResponse(resultOperation);
+
+    ServiceName parent = ServiceName.of("[PROJECT]", "[LOCATION]", "[SERVICE]");
+    Backup backup = Backup.newBuilder().build();
+    String backupId = "backupId2121930365";
+
+    Backup actualResponse = client.createBackupAsync(parent, backup, backupId).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockDataprocMetastore.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    CreateBackupRequest actualRequest = ((CreateBackupRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertEquals(backup, actualRequest.getBackup());
+    Assert.assertEquals(backupId, actualRequest.getBackupId());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void createBackupExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockDataprocMetastore.addException(exception);
+
+    try {
+      ServiceName parent = ServiceName.of("[PROJECT]", "[LOCATION]", "[SERVICE]");
+      Backup backup = Backup.newBuilder().build();
+      String backupId = "backupId2121930365";
+      client.createBackupAsync(parent, backup, backupId).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void createBackupTest2() throws Exception {
+    Backup expectedResponse =
+        Backup.newBuilder()
+            .setName(BackupName.of("[PROJECT]", "[LOCATION]", "[SERVICE]", "[BACKUP]").toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setEndTime(Timestamp.newBuilder().build())
+            .setServiceRevision(Service.newBuilder().build())
+            .setDescription("description-1724546052")
+            .addAllRestoringServices(new ArrayList<String>())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("createBackupTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockDataprocMetastore.addResponse(resultOperation);
+
+    String parent = "parent-995424086";
+    Backup backup = Backup.newBuilder().build();
+    String backupId = "backupId2121930365";
+
+    Backup actualResponse = client.createBackupAsync(parent, backup, backupId).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockDataprocMetastore.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    CreateBackupRequest actualRequest = ((CreateBackupRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertEquals(backup, actualRequest.getBackup());
+    Assert.assertEquals(backupId, actualRequest.getBackupId());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void createBackupExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockDataprocMetastore.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      Backup backup = Backup.newBuilder().build();
+      String backupId = "backupId2121930365";
+      client.createBackupAsync(parent, backup, backupId).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void deleteBackupTest() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("deleteBackupTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockDataprocMetastore.addResponse(resultOperation);
+
+    BackupName name = BackupName.of("[PROJECT]", "[LOCATION]", "[SERVICE]", "[BACKUP]");
+
+    client.deleteBackupAsync(name).get();
+
+    List<AbstractMessage> actualRequests = mockDataprocMetastore.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DeleteBackupRequest actualRequest = ((DeleteBackupRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void deleteBackupExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockDataprocMetastore.addException(exception);
+
+    try {
+      BackupName name = BackupName.of("[PROJECT]", "[LOCATION]", "[SERVICE]", "[BACKUP]");
+      client.deleteBackupAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void deleteBackupTest2() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("deleteBackupTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockDataprocMetastore.addResponse(resultOperation);
+
+    String name = "name3373707";
+
+    client.deleteBackupAsync(name).get();
+
+    List<AbstractMessage> actualRequests = mockDataprocMetastore.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DeleteBackupRequest actualRequest = ((DeleteBackupRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void deleteBackupExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockDataprocMetastore.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.deleteBackupAsync(name).get();
       Assert.fail("No exception raised");
     } catch (ExecutionException e) {
       Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
