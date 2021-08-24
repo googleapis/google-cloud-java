@@ -22,7 +22,7 @@ If you are using Maven, add this to your pom.xml file:
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-compute</artifactId>
-  <version>1.4.0-alpha</version>
+  <version>1.4.1-alpha</version>
 </dependency>
 
 ```
@@ -30,13 +30,13 @@ If you are using Maven, add this to your pom.xml file:
 If you are using Gradle without BOM, add this to your dependencies
 
 ```Groovy
-compile 'com.google.cloud:google-cloud-compute:1.4.0-alpha'
+compile 'com.google.cloud:google-cloud-compute:1.4.1-alpha'
 ```
 
 If you are using SBT, add this to your dependencies
 
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-compute" % "1.4.0-alpha"
+libraryDependencies += "com.google.cloud" % "google-cloud-compute" % "1.4.1-alpha"
 ```
 
 ## Authentication
