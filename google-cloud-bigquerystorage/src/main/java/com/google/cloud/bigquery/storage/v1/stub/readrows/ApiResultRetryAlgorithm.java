@@ -21,6 +21,8 @@ import com.google.api.gax.retrying.ResultRetryAlgorithm;
 import com.google.api.gax.retrying.TimedAttemptSettings;
 import com.google.api.gax.rpc.ApiException;
 import com.google.cloud.bigquery.storage.util.Errors;
+import com.google.cloud.bigquery.storage.v1.BigQueryReadSettings;
+import io.grpc.Metadata;
 import io.grpc.Status;
 import org.threeten.bp.Duration;
 
@@ -30,17 +32,41 @@ public class ApiResultRetryAlgorithm<ResponseT> implements ResultRetryAlgorithm<
   // Duration to sleep on if the error is DEADLINE_EXCEEDED.
   public static final Duration DEADLINE_SLEEP_DURATION = Duration.ofMillis(1);
 
+  private final BigQueryReadSettings.RetryAttemptListener retryAttemptListener;
+
+  public ApiResultRetryAlgorithm() {
+    this(null);
+  }
+
+  public ApiResultRetryAlgorithm(BigQueryReadSettings.RetryAttemptListener retryAttemptListener) {
+    super();
+    this.retryAttemptListener = retryAttemptListener;
+  }
+
   @Override
   public TimedAttemptSettings createNextAttempt(
       Throwable prevThrowable, ResponseT prevResponse, TimedAttemptSettings prevSettings) {
     if (prevThrowable != null) {
       Status status = Status.fromThrowable(prevThrowable);
-      if (Errors.isRetryableInternalStatus(status)) {
+      Metadata metadata = Status.trailersFromThrowable(prevThrowable);
+      Errors.IsRetryableStatusResult result = Errors.isRetryableStatus(status, metadata);
+      if (result.isRetryable) {
+        // If result.retryDelay isn't null, we know exactly how long we must wait, so both regular
+        // and randomized delays are the same.
+        Duration retryDelay = result.retryDelay;
+        Duration randomizedRetryDelay = result.retryDelay;
+        if (retryDelay == null) {
+          retryDelay = prevSettings.getRetryDelay();
+          randomizedRetryDelay = DEADLINE_SLEEP_DURATION;
+        }
+        if (retryAttemptListener != null) {
+          retryAttemptListener.onRetryAttempt(status, metadata);
+        }
         return TimedAttemptSettings.newBuilder()
             .setGlobalSettings(prevSettings.getGlobalSettings())
-            .setRetryDelay(prevSettings.getRetryDelay())
+            .setRetryDelay(retryDelay)
             .setRpcTimeout(prevSettings.getRpcTimeout())
-            .setRandomizedRetryDelay(DEADLINE_SLEEP_DURATION)
+            .setRandomizedRetryDelay(randomizedRetryDelay)
             .setAttemptCount(prevSettings.getAttemptCount() + 1)
             .setFirstAttemptStartTimeNanos(prevSettings.getFirstAttemptStartTimeNanos())
             .build();
@@ -53,7 +79,8 @@ public class ApiResultRetryAlgorithm<ResponseT> implements ResultRetryAlgorithm<
   public boolean shouldRetry(Throwable prevThrowable, ResponseT prevResponse) {
     if (prevThrowable != null) {
       Status status = Status.fromThrowable(prevThrowable);
-      if (Errors.isRetryableInternalStatus(status)) {
+      Metadata metadata = Status.trailersFromThrowable(prevThrowable);
+      if (Errors.isRetryableStatus(status, metadata).isRetryable) {
         return true;
       }
     }

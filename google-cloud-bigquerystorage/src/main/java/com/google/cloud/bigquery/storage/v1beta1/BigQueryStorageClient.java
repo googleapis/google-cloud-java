@@ -141,7 +141,9 @@ public class BigQueryStorageClient implements BackgroundResource {
    */
   protected BigQueryStorageClient(BigQueryStorageSettings settings) throws IOException {
     this.settings = settings;
-    this.stub = EnhancedBigQueryStorageStub.create(settings.getTypedStubSettings());
+    this.stub =
+        EnhancedBigQueryStorageStub.create(
+            settings.getTypedStubSettings(), settings.getReadRowsRetryAttemptListener());
   }
 
   @BetaApi("A restructuring of stub classes is planned, so this may break in the future")

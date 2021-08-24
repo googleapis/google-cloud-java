@@ -26,6 +26,7 @@ import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.ApiException;
 import com.google.api.gax.rpc.InternalException;
 import com.google.api.gax.rpc.InvalidArgumentException;
+import com.google.api.gax.rpc.ResourceExhaustedException;
 import com.google.api.gax.rpc.ServerStreamingCallable;
 import com.google.api.gax.rpc.StatusCode;
 import com.google.cloud.bigquery.storage.v1beta1.Storage.BatchCreateReadSessionStreamsRequest;
@@ -41,7 +42,11 @@ import com.google.cloud.bigquery.storage.v1beta1.Storage.Stream;
 import com.google.cloud.bigquery.storage.v1beta1.Storage.StreamPosition;
 import com.google.cloud.bigquery.storage.v1beta1.TableReferenceProto.TableReference;
 import com.google.protobuf.AbstractMessage;
+import com.google.protobuf.Duration;
 import com.google.protobuf.Empty;
+import com.google.protobuf.Parser;
+import com.google.rpc.RetryInfo;
+import io.grpc.Metadata;
 import io.grpc.Status;
 import io.grpc.Status.Code;
 import io.grpc.StatusRuntimeException;
@@ -61,6 +66,8 @@ public class BigQueryStorageClientTest {
   private static MockServiceHelper serviceHelper;
   private BigQueryStorageClient client;
   private LocalChannelProvider channelProvider;
+  private int retryCount;
+  private Code lastRetryStatusCode;
 
   @BeforeClass
   public static void startStaticServer() {
@@ -79,10 +86,22 @@ public class BigQueryStorageClientTest {
   public void setUp() throws IOException {
     serviceHelper.reset();
     channelProvider = serviceHelper.createChannelProvider();
+    retryCount = 0;
+    lastRetryStatusCode = Code.OK;
     BigQueryStorageSettings settings =
         BigQueryStorageSettings.newBuilder()
             .setTransportChannelProvider(channelProvider)
             .setCredentialsProvider(NoCredentialsProvider.create())
+            .setReadRowsRetryAttemptListener(
+                new BigQueryStorageSettings.RetryAttemptListener() {
+                  @Override
+                  public void onRetryAttempt(Status prevStatus, Metadata prevMetadata) {
+                    synchronized (this) {
+                      retryCount += 1;
+                      lastRetryStatusCode = prevStatus.getCode();
+                    }
+                  }
+                })
             .build();
     client = BigQueryStorageClient.create(settings);
   }
@@ -153,6 +172,9 @@ public class BigQueryStorageClientTest {
     List<ReadRowsResponse> actualResponses = responseObserver.future().get();
     Assert.assertEquals(1, actualResponses.size());
     Assert.assertEquals(expectedResponse, actualResponses.get(0));
+
+    Assert.assertEquals(retryCount, 0);
+    Assert.assertEquals(lastRetryStatusCode, Code.OK);
   }
 
   @Test
@@ -176,6 +198,9 @@ public class BigQueryStorageClientTest {
       InvalidArgumentException apiException = (InvalidArgumentException) e.getCause();
       Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
     }
+
+    Assert.assertEquals(retryCount, 0);
+    Assert.assertEquals(lastRetryStatusCode, Code.OK);
   }
 
   @Test
@@ -319,6 +344,9 @@ public class BigQueryStorageClientTest {
     callable.serverStreamingCall(request, responseObserver);
     List<ReadRowsResponse> actualResponses = responseObserver.future().get();
     Assert.assertEquals(1, actualResponses.size());
+
+    Assert.assertEquals(retryCount, 1);
+    Assert.assertEquals(lastRetryStatusCode, Code.INTERNAL);
   }
 
   @Test
@@ -343,5 +371,97 @@ public class BigQueryStorageClientTest {
     callable.serverStreamingCall(request, responseObserver);
     List<ReadRowsResponse> actualResponses = responseObserver.future().get();
     Assert.assertEquals(1, actualResponses.size());
+
+    Assert.assertEquals(retryCount, 1);
+    Assert.assertEquals(lastRetryStatusCode, Code.INTERNAL);
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void readRowsNoRetryForResourceExhaustedWithoutRetryInfo()
+      throws ExecutionException, InterruptedException {
+    ApiException exception =
+        new ResourceExhaustedException(
+            new StatusRuntimeException(
+                Status.RESOURCE_EXHAUSTED.withDescription("You are out of quota X")),
+            GrpcStatusCode.of(Code.RESOURCE_EXHAUSTED),
+            /* retryable = */ false);
+    mockBigQueryStorage.addException(exception);
+    long rowCount = 1340416618L;
+    ReadRowsResponse expectedResponse = ReadRowsResponse.newBuilder().setRowCount(rowCount).build();
+    mockBigQueryStorage.addResponse(expectedResponse);
+    ReadRowsRequest request = ReadRowsRequest.newBuilder().build();
+
+    MockStreamObserver<ReadRowsResponse> responseObserver = new MockStreamObserver<>();
+
+    ServerStreamingCallable<ReadRowsRequest, ReadRowsResponse> callable = client.readRowsCallable();
+    callable.serverStreamingCall(request, responseObserver);
+
+    try {
+      List<ReadRowsResponse> actualResponses = responseObserver.future().get();
+      Assert.fail("No exception thrown");
+    } catch (ExecutionException e) {
+      Assert.assertTrue(e.getCause() instanceof ResourceExhaustedException);
+      ResourceExhaustedException apiException = (ResourceExhaustedException) e.getCause();
+      Assert.assertEquals(
+          StatusCode.Code.RESOURCE_EXHAUSTED, apiException.getStatusCode().getCode());
+    }
+
+    Assert.assertEquals(retryCount, 0);
+    Assert.assertEquals(lastRetryStatusCode, Code.OK);
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void readRowsNoRetryForResourceExhaustedWithRetryInfo()
+      throws ExecutionException, InterruptedException {
+    RetryInfo retryInfo =
+        RetryInfo.newBuilder()
+            .setRetryDelay(Duration.newBuilder().setSeconds(123).setNanos(456).build())
+            .build();
+
+    Metadata metadata = new Metadata();
+    metadata.put(
+        Metadata.Key.of(
+            "google.rpc.retryinfo-bin",
+            new Metadata.BinaryMarshaller<RetryInfo>() {
+              @Override
+              public byte[] toBytes(RetryInfo value) {
+                return value.toByteArray();
+              }
+
+              @Override
+              public RetryInfo parseBytes(byte[] serialized) {
+                try {
+                  Parser<RetryInfo> parser = (RetryInfo.newBuilder().build()).getParserForType();
+                  return parser.parseFrom(serialized);
+                } catch (Exception e) {
+                  return null;
+                }
+              }
+            }),
+        retryInfo);
+
+    ApiException exception =
+        new ResourceExhaustedException(
+            new StatusRuntimeException(
+                Status.RESOURCE_EXHAUSTED.withDescription("Try again in a bit"), metadata),
+            GrpcStatusCode.of(Code.RESOURCE_EXHAUSTED),
+            /* retryable = */ false);
+    mockBigQueryStorage.addException(exception);
+    long rowCount = 1340416618L;
+    ReadRowsResponse expectedResponse = ReadRowsResponse.newBuilder().setRowCount(rowCount).build();
+    mockBigQueryStorage.addResponse(expectedResponse);
+    ReadRowsRequest request = ReadRowsRequest.newBuilder().build();
+
+    MockStreamObserver<ReadRowsResponse> responseObserver = new MockStreamObserver<>();
+
+    ServerStreamingCallable<ReadRowsRequest, ReadRowsResponse> callable = client.readRowsCallable();
+    callable.serverStreamingCall(request, responseObserver);
+    List<ReadRowsResponse> actualResponses = responseObserver.future().get();
+    Assert.assertEquals(1, actualResponses.size());
+
+    Assert.assertEquals(retryCount, 1);
+    Assert.assertEquals(lastRetryStatusCode, Code.RESOURCE_EXHAUSTED);
   }
 }

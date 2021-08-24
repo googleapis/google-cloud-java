@@ -27,6 +27,8 @@ import com.google.api.gax.rpc.ServerStreamingCallSettings;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.cloud.bigquery.storage.v1beta2.stub.EnhancedBigQueryReadStubSettings;
+import io.grpc.Metadata;
+import io.grpc.Status;
 import java.io.IOException;
 import java.util.List;
 
@@ -67,6 +69,26 @@ public class BigQueryReadSettings extends ClientSettings<BigQueryReadSettings> {
   /** Returns the object with the settings used for calls to readRows. */
   public ServerStreamingCallSettings<ReadRowsRequest, ReadRowsResponse> readRowsSettings() {
     return getTypedStubSettings().readRowsSettings();
+  }
+
+  public static interface RetryAttemptListener {
+    public void onRetryAttempt(Status prevStatus, Metadata prevMetadata);
+  }
+
+  private RetryAttemptListener readRowsRetryAttemptListener = null;
+
+  /**
+   * If a non null readRowsRetryAttemptListener is provided, client will call onRetryAttempt
+   * function before a failed ReadRows request is retried. This can be used as negative feedback
+   * mechanism for future decision to split read streams because some retried failures are due to
+   * resource exhaustion that increased parallelism only makes it worse.
+   */
+  public void setReadRowsRetryAttemptListener(RetryAttemptListener readRowsRetryAttemptListener) {
+    this.readRowsRetryAttemptListener = readRowsRetryAttemptListener;
+  }
+
+  public RetryAttemptListener getReadRowsRetryAttemptListener() {
+    return readRowsRetryAttemptListener;
   }
 
   /** Returns the object with the settings used for calls to splitReadStream. */
@@ -176,6 +198,14 @@ public class BigQueryReadSettings extends ClientSettings<BigQueryReadSettings> {
       return this;
     }
 
+    private RetryAttemptListener readRowsRetryAttemptListener = null;
+
+    public Builder setReadRowsRetryAttemptListener(
+        RetryAttemptListener readRowsRetryAttemptListener) {
+      this.readRowsRetryAttemptListener = readRowsRetryAttemptListener;
+      return this;
+    }
+
     /** Returns the builder for the settings used for calls to createReadSession. */
     public UnaryCallSettings.Builder<CreateReadSessionRequest, ReadSession>
         createReadSessionSettings() {
@@ -196,7 +226,9 @@ public class BigQueryReadSettings extends ClientSettings<BigQueryReadSettings> {
 
     @Override
     public BigQueryReadSettings build() throws IOException {
-      return new BigQueryReadSettings(this);
+      BigQueryReadSettings settings = new BigQueryReadSettings(this);
+      settings.setReadRowsRetryAttemptListener(readRowsRetryAttemptListener);
+      return settings;
     }
   }
 }

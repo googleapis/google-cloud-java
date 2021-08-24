@@ -126,7 +126,9 @@ public class BigQueryReadClient implements BackgroundResource {
    */
   protected BigQueryReadClient(BigQueryReadSettings settings) throws IOException {
     this.settings = settings;
-    this.stub = EnhancedBigQueryReadStub.create(settings.getTypedStubSettings());
+    this.stub =
+        EnhancedBigQueryReadStub.create(
+            settings.getTypedStubSettings(), settings.getReadRowsRetryAttemptListener());
   }
 
   @BetaApi("A restructuring of stub classes is planned, so this may break in the future")

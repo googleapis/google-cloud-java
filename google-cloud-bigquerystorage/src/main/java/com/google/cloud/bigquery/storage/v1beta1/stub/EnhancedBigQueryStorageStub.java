@@ -31,6 +31,7 @@ import com.google.api.gax.rpc.UnaryCallable;
 import com.google.api.gax.tracing.SpanName;
 import com.google.api.gax.tracing.TracedServerStreamingCallable;
 import com.google.cloud.bigquery.storage.v1beta1.BigQueryStorageGrpc;
+import com.google.cloud.bigquery.storage.v1beta1.BigQueryStorageSettings;
 import com.google.cloud.bigquery.storage.v1beta1.Storage.BatchCreateReadSessionStreamsRequest;
 import com.google.cloud.bigquery.storage.v1beta1.Storage.BatchCreateReadSessionStreamsResponse;
 import com.google.cloud.bigquery.storage.v1beta1.Storage.CreateReadSessionRequest;
@@ -58,9 +59,17 @@ public class EnhancedBigQueryStorageStub implements BackgroundResource {
   private static final String TRACING_OUTER_CLIENT_NAME = "BigQueryStorage";
   private final GrpcBigQueryStorageStub stub;
   private final BigQueryStorageStubSettings stubSettings;
+  private final BigQueryStorageSettings.RetryAttemptListener readRowsRetryAttemptListener;
   private final ClientContext context;
 
   public static EnhancedBigQueryStorageStub create(EnhancedBigQueryStorageStubSettings settings)
+      throws IOException {
+    return create(settings, null);
+  }
+
+  public static EnhancedBigQueryStorageStub create(
+      EnhancedBigQueryStorageStubSettings settings,
+      BigQueryStorageSettings.RetryAttemptListener readRowsRetryAttemptListener)
       throws IOException {
     // Configure the base settings.
     BigQueryStorageStubSettings.Builder baseSettingsBuilder =
@@ -107,16 +116,19 @@ public class EnhancedBigQueryStorageStub implements BackgroundResource {
     BigQueryStorageStubSettings baseSettings = baseSettingsBuilder.build();
     ClientContext clientContext = ClientContext.create(baseSettings);
     GrpcBigQueryStorageStub stub = new GrpcBigQueryStorageStub(baseSettings, clientContext);
-    return new EnhancedBigQueryStorageStub(stub, baseSettings, clientContext);
+    return new EnhancedBigQueryStorageStub(
+        stub, baseSettings, readRowsRetryAttemptListener, clientContext);
   }
 
   @InternalApi("Visible for testing")
   EnhancedBigQueryStorageStub(
       GrpcBigQueryStorageStub stub,
       BigQueryStorageStubSettings stubSettings,
+      BigQueryStorageSettings.RetryAttemptListener readRowsRetryAttemptListener,
       ClientContext context) {
     this.stub = stub;
     this.stubSettings = stubSettings;
+    this.readRowsRetryAttemptListener = readRowsRetryAttemptListener;
     this.context = context;
   }
 
@@ -145,7 +157,7 @@ public class EnhancedBigQueryStorageStub implements BackgroundResource {
 
     StreamingRetryAlgorithm<Void> retryAlgorithm =
         new StreamingRetryAlgorithm<>(
-            new ApiResultRetryAlgorithm<Void>(),
+            new ApiResultRetryAlgorithm<Void>(readRowsRetryAttemptListener),
             new ExponentialRetryAlgorithm(callSettings.getRetrySettings(), context.getClock()));
 
     ScheduledRetryingExecutor<Void> retryingExecutor =
