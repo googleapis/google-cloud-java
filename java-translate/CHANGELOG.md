@@ -1,5 +1,12 @@
 # Changelog
 
+### [2.0.5](https://www.github.com/googleapis/java-translate/compare/v2.0.4...v2.0.5) (2021-08-24)
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-core to v2.1.1 ([#750](https://www.github.com/googleapis/java-translate/issues/750)) ([4b04cad](https://www.github.com/googleapis/java-translate/commit/4b04cad03ad0c414c3d686df9d16555789757c25))
+
 ### [2.0.4](https://www.github.com/googleapis/java-translate/compare/v2.0.3...v2.0.4) (2021-08-24)
 
 
