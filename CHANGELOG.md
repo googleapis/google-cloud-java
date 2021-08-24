@@ -1,5 +1,22 @@
 # Changelog
 
+## [2.1.0](https://www.github.com/googleapis/java-bigquerystorage/compare/v2.0.4...v2.1.0) (2021-08-24)
+
+
+### Features
+
+* retry certain RESOURCE_EXHAUSTED errors observed during ReadRows and report retry attempts ([#1257](https://www.github.com/googleapis/java-bigquerystorage/issues/1257)) ([d56e1ca](https://www.github.com/googleapis/java-bigquerystorage/commit/d56e1caf91297d7c2e1e4a9ce1463c04e44619c0))
+
+
+### Documentation
+
+* **sample:** Remove `client` from `JsonStreamWriter` in `WriteCommittedStream` ([#1248](https://www.github.com/googleapis/java-bigquerystorage/issues/1248)) ([6d38bd5](https://www.github.com/googleapis/java-bigquerystorage/commit/6d38bd5e3ff383e55e852081bbea5807796f59dd))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.1.0 ([#1261](https://www.github.com/googleapis/java-bigquerystorage/issues/1261)) ([0edb25d](https://www.github.com/googleapis/java-bigquerystorage/commit/0edb25d4a55f5480d5717672f30b09e6433483b9))
+
 ### [2.0.4](https://www.github.com/googleapis/java-bigquerystorage/compare/v2.0.3...v2.0.4) (2021-08-19)
 
 
