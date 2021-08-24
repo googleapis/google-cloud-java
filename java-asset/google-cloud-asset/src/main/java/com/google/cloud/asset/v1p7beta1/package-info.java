@@ -27,7 +27,7 @@
  * try (AssetServiceClient assetServiceClient = AssetServiceClient.create()) {
  *   ExportAssetsRequest request =
  *       ExportAssetsRequest.newBuilder()
- *           .setParent(ProjectName.of("[PROJECT]").toString())
+ *           .setParent(BillingAccountName.of("[BILLING_ACCOUNT]").toString())
  *           .setReadTime(Timestamp.newBuilder().build())
  *           .addAllAssetTypes(new ArrayList<String>())
  *           .setContentType(ContentType.forNumber(0))
