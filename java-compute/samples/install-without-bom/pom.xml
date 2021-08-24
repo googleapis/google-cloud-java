@@ -29,7 +29,7 @@
     <dependency>
       <groupId>com.google.cloud</groupId>
       <artifactId>google-cloud-compute</artifactId>
-      <version>1.4.0-alpha</version>
+      <version>1.4.1-alpha</version>
     </dependency>
     <!-- [END compute_install_without_bom] -->
 
