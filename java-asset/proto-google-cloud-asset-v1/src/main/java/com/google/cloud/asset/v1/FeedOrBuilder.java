@@ -347,4 +347,115 @@ public interface FeedOrBuilder
    * <code>.google.type.Expr condition = 6;</code>
    */
   com.google.type.ExprOrBuilder getConditionOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * A list of relationship types to output, for example:
+   * `INSTANCE_TO_INSTANCEGROUP`. This field should only be specified if
+   * content_type=RELATIONSHIP.
+   * * If specified:
+   * it outputs specified relationship updates on the [asset_names] or the
+   * [asset_types]. It returns an error if any of the [relationship_types]
+   * doesn't belong to the supported relationship types of the [asset_names] or
+   * [asset_types], or any of the [asset_names] or the [asset_types] doesn't
+   * belong to the source types of the [relationship_types].
+   * * Otherwise:
+   * it outputs the supported relationships of the types of [asset_names] and
+   * [asset_types] or returns an error if any of the [asset_names] or the
+   * [asset_types] has no replationship support.
+   * See [Introduction to Cloud Asset
+   * Inventory](https://cloud.google.com/asset-inventory/docs/overview)
+   * for all supported asset types and relationship types.
+   * </pre>
+   *
+   * <code>repeated string relationship_types = 7;</code>
+   *
+   * @return A list containing the relationshipTypes.
+   */
+  java.util.List<java.lang.String> getRelationshipTypesList();
+  /**
+   *
+   *
+   * <pre>
+   * A list of relationship types to output, for example:
+   * `INSTANCE_TO_INSTANCEGROUP`. This field should only be specified if
+   * content_type=RELATIONSHIP.
+   * * If specified:
+   * it outputs specified relationship updates on the [asset_names] or the
+   * [asset_types]. It returns an error if any of the [relationship_types]
+   * doesn't belong to the supported relationship types of the [asset_names] or
+   * [asset_types], or any of the [asset_names] or the [asset_types] doesn't
+   * belong to the source types of the [relationship_types].
+   * * Otherwise:
+   * it outputs the supported relationships of the types of [asset_names] and
+   * [asset_types] or returns an error if any of the [asset_names] or the
+   * [asset_types] has no replationship support.
+   * See [Introduction to Cloud Asset
+   * Inventory](https://cloud.google.com/asset-inventory/docs/overview)
+   * for all supported asset types and relationship types.
+   * </pre>
+   *
+   * <code>repeated string relationship_types = 7;</code>
+   *
+   * @return The count of relationshipTypes.
+   */
+  int getRelationshipTypesCount();
+  /**
+   *
+   *
+   * <pre>
+   * A list of relationship types to output, for example:
+   * `INSTANCE_TO_INSTANCEGROUP`. This field should only be specified if
+   * content_type=RELATIONSHIP.
+   * * If specified:
+   * it outputs specified relationship updates on the [asset_names] or the
+   * [asset_types]. It returns an error if any of the [relationship_types]
+   * doesn't belong to the supported relationship types of the [asset_names] or
+   * [asset_types], or any of the [asset_names] or the [asset_types] doesn't
+   * belong to the source types of the [relationship_types].
+   * * Otherwise:
+   * it outputs the supported relationships of the types of [asset_names] and
+   * [asset_types] or returns an error if any of the [asset_names] or the
+   * [asset_types] has no replationship support.
+   * See [Introduction to Cloud Asset
+   * Inventory](https://cloud.google.com/asset-inventory/docs/overview)
+   * for all supported asset types and relationship types.
+   * </pre>
+   *
+   * <code>repeated string relationship_types = 7;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The relationshipTypes at the given index.
+   */
+  java.lang.String getRelationshipTypes(int index);
+  /**
+   *
+   *
+   * <pre>
+   * A list of relationship types to output, for example:
+   * `INSTANCE_TO_INSTANCEGROUP`. This field should only be specified if
+   * content_type=RELATIONSHIP.
+   * * If specified:
+   * it outputs specified relationship updates on the [asset_names] or the
+   * [asset_types]. It returns an error if any of the [relationship_types]
+   * doesn't belong to the supported relationship types of the [asset_names] or
+   * [asset_types], or any of the [asset_names] or the [asset_types] doesn't
+   * belong to the source types of the [relationship_types].
+   * * Otherwise:
+   * it outputs the supported relationships of the types of [asset_names] and
+   * [asset_types] or returns an error if any of the [asset_names] or the
+   * [asset_types] has no replationship support.
+   * See [Introduction to Cloud Asset
+   * Inventory](https://cloud.google.com/asset-inventory/docs/overview)
+   * for all supported asset types and relationship types.
+   * </pre>
+   *
+   * <code>repeated string relationship_types = 7;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the relationshipTypes at the given index.
+   */
+  com.google.protobuf.ByteString getRelationshipTypesBytes(int index);
 }

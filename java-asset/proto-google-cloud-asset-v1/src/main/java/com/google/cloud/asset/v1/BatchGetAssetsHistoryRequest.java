@@ -41,6 +41,7 @@ public final class BatchGetAssetsHistoryRequest extends com.google.protobuf.Gene
     parent_ = "";
     assetNames_ = com.google.protobuf.LazyStringArrayList.EMPTY;
     contentType_ = 0;
+    relationshipTypes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
   }
 
   @java.lang.Override
@@ -113,6 +114,16 @@ public final class BatchGetAssetsHistoryRequest extends com.google.protobuf.Gene
 
               break;
             }
+          case 42:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+                relationshipTypes_ = new com.google.protobuf.LazyStringArrayList();
+                mutable_bitField0_ |= 0x00000002;
+              }
+              relationshipTypes_.add(s);
+              break;
+            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -129,6 +140,9 @@ public final class BatchGetAssetsHistoryRequest extends com.google.protobuf.Gene
     } finally {
       if (((mutable_bitField0_ & 0x00000001) != 0)) {
         assetNames_ = assetNames_.getUnmodifiableView();
+      }
+      if (((mutable_bitField0_ & 0x00000002) != 0)) {
+        relationshipTypes_ = relationshipTypes_.getUnmodifiableView();
       }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
@@ -397,6 +411,127 @@ public final class BatchGetAssetsHistoryRequest extends com.google.protobuf.Gene
     return getReadTimeWindow();
   }
 
+  public static final int RELATIONSHIP_TYPES_FIELD_NUMBER = 5;
+  private com.google.protobuf.LazyStringList relationshipTypes_;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A list of relationship types to output, for example:
+   * `INSTANCE_TO_INSTANCEGROUP`. This field should only be specified if
+   * content_type=RELATIONSHIP.
+   * * If specified:
+   * it outputs specified relationships' history on the [asset_names]. It
+   * returns an error if any of the [relationship_types] doesn't belong to the
+   * supported relationship types of the [asset_names] or if any of the
+   * [asset_names]'s types doesn't belong to the source types of the
+   * [relationship_types].
+   * * Otherwise:
+   * it outputs the supported relationships' history on the [asset_names] or
+   * returns an error if any of the [asset_names]'s types has no relationship
+   * support.
+   * See [Introduction to Cloud Asset
+   * Inventory](https://cloud.google.com/asset-inventory/docs/overview) for all
+   * supported asset types and relationship types.
+   * </pre>
+   *
+   * <code>repeated string relationship_types = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return A list containing the relationshipTypes.
+   */
+  public com.google.protobuf.ProtocolStringList getRelationshipTypesList() {
+    return relationshipTypes_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A list of relationship types to output, for example:
+   * `INSTANCE_TO_INSTANCEGROUP`. This field should only be specified if
+   * content_type=RELATIONSHIP.
+   * * If specified:
+   * it outputs specified relationships' history on the [asset_names]. It
+   * returns an error if any of the [relationship_types] doesn't belong to the
+   * supported relationship types of the [asset_names] or if any of the
+   * [asset_names]'s types doesn't belong to the source types of the
+   * [relationship_types].
+   * * Otherwise:
+   * it outputs the supported relationships' history on the [asset_names] or
+   * returns an error if any of the [asset_names]'s types has no relationship
+   * support.
+   * See [Introduction to Cloud Asset
+   * Inventory](https://cloud.google.com/asset-inventory/docs/overview) for all
+   * supported asset types and relationship types.
+   * </pre>
+   *
+   * <code>repeated string relationship_types = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The count of relationshipTypes.
+   */
+  public int getRelationshipTypesCount() {
+    return relationshipTypes_.size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A list of relationship types to output, for example:
+   * `INSTANCE_TO_INSTANCEGROUP`. This field should only be specified if
+   * content_type=RELATIONSHIP.
+   * * If specified:
+   * it outputs specified relationships' history on the [asset_names]. It
+   * returns an error if any of the [relationship_types] doesn't belong to the
+   * supported relationship types of the [asset_names] or if any of the
+   * [asset_names]'s types doesn't belong to the source types of the
+   * [relationship_types].
+   * * Otherwise:
+   * it outputs the supported relationships' history on the [asset_names] or
+   * returns an error if any of the [asset_names]'s types has no relationship
+   * support.
+   * See [Introduction to Cloud Asset
+   * Inventory](https://cloud.google.com/asset-inventory/docs/overview) for all
+   * supported asset types and relationship types.
+   * </pre>
+   *
+   * <code>repeated string relationship_types = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @param index The index of the element to return.
+   * @return The relationshipTypes at the given index.
+   */
+  public java.lang.String getRelationshipTypes(int index) {
+    return relationshipTypes_.get(index);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A list of relationship types to output, for example:
+   * `INSTANCE_TO_INSTANCEGROUP`. This field should only be specified if
+   * content_type=RELATIONSHIP.
+   * * If specified:
+   * it outputs specified relationships' history on the [asset_names]. It
+   * returns an error if any of the [relationship_types] doesn't belong to the
+   * supported relationship types of the [asset_names] or if any of the
+   * [asset_names]'s types doesn't belong to the source types of the
+   * [relationship_types].
+   * * Otherwise:
+   * it outputs the supported relationships' history on the [asset_names] or
+   * returns an error if any of the [asset_names]'s types has no relationship
+   * support.
+   * See [Introduction to Cloud Asset
+   * Inventory](https://cloud.google.com/asset-inventory/docs/overview) for all
+   * supported asset types and relationship types.
+   * </pre>
+   *
+   * <code>repeated string relationship_types = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the relationshipTypes at the given index.
+   */
+  public com.google.protobuf.ByteString getRelationshipTypesBytes(int index) {
+    return relationshipTypes_.getByteString(index);
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -423,6 +558,9 @@ public final class BatchGetAssetsHistoryRequest extends com.google.protobuf.Gene
     }
     if (readTimeWindow_ != null) {
       output.writeMessage(4, getReadTimeWindow());
+    }
+    for (int i = 0; i < relationshipTypes_.size(); i++) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 5, relationshipTypes_.getRaw(i));
     }
     unknownFields.writeTo(output);
   }
@@ -451,6 +589,14 @@ public final class BatchGetAssetsHistoryRequest extends com.google.protobuf.Gene
     if (readTimeWindow_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(4, getReadTimeWindow());
     }
+    {
+      int dataSize = 0;
+      for (int i = 0; i < relationshipTypes_.size(); i++) {
+        dataSize += computeStringSizeNoTag(relationshipTypes_.getRaw(i));
+      }
+      size += dataSize;
+      size += 1 * getRelationshipTypesList().size();
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -474,6 +620,7 @@ public final class BatchGetAssetsHistoryRequest extends com.google.protobuf.Gene
     if (hasReadTimeWindow()) {
       if (!getReadTimeWindow().equals(other.getReadTimeWindow())) return false;
     }
+    if (!getRelationshipTypesList().equals(other.getRelationshipTypesList())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -496,6 +643,10 @@ public final class BatchGetAssetsHistoryRequest extends com.google.protobuf.Gene
     if (hasReadTimeWindow()) {
       hash = (37 * hash) + READ_TIME_WINDOW_FIELD_NUMBER;
       hash = (53 * hash) + getReadTimeWindow().hashCode();
+    }
+    if (getRelationshipTypesCount() > 0) {
+      hash = (37 * hash) + RELATIONSHIP_TYPES_FIELD_NUMBER;
+      hash = (53 * hash) + getRelationshipTypesList().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -655,6 +806,8 @@ public final class BatchGetAssetsHistoryRequest extends com.google.protobuf.Gene
         readTimeWindow_ = null;
         readTimeWindowBuilder_ = null;
       }
+      relationshipTypes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField0_ = (bitField0_ & ~0x00000002);
       return this;
     }
 
@@ -695,6 +848,11 @@ public final class BatchGetAssetsHistoryRequest extends com.google.protobuf.Gene
       } else {
         result.readTimeWindow_ = readTimeWindowBuilder_.build();
       }
+      if (((bitField0_ & 0x00000002) != 0)) {
+        relationshipTypes_ = relationshipTypes_.getUnmodifiableView();
+        bitField0_ = (bitField0_ & ~0x00000002);
+      }
+      result.relationshipTypes_ = relationshipTypes_;
       onBuilt();
       return result;
     }
@@ -764,6 +922,16 @@ public final class BatchGetAssetsHistoryRequest extends com.google.protobuf.Gene
       }
       if (other.hasReadTimeWindow()) {
         mergeReadTimeWindow(other.getReadTimeWindow());
+      }
+      if (!other.relationshipTypes_.isEmpty()) {
+        if (relationshipTypes_.isEmpty()) {
+          relationshipTypes_ = other.relationshipTypes_;
+          bitField0_ = (bitField0_ & ~0x00000002);
+        } else {
+          ensureRelationshipTypesIsMutable();
+          relationshipTypes_.addAll(other.relationshipTypes_);
+        }
+        onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -1483,6 +1651,318 @@ public final class BatchGetAssetsHistoryRequest extends com.google.protobuf.Gene
         readTimeWindow_ = null;
       }
       return readTimeWindowBuilder_;
+    }
+
+    private com.google.protobuf.LazyStringList relationshipTypes_ =
+        com.google.protobuf.LazyStringArrayList.EMPTY;
+
+    private void ensureRelationshipTypesIsMutable() {
+      if (!((bitField0_ & 0x00000002) != 0)) {
+        relationshipTypes_ = new com.google.protobuf.LazyStringArrayList(relationshipTypes_);
+        bitField0_ |= 0x00000002;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A list of relationship types to output, for example:
+     * `INSTANCE_TO_INSTANCEGROUP`. This field should only be specified if
+     * content_type=RELATIONSHIP.
+     * * If specified:
+     * it outputs specified relationships' history on the [asset_names]. It
+     * returns an error if any of the [relationship_types] doesn't belong to the
+     * supported relationship types of the [asset_names] or if any of the
+     * [asset_names]'s types doesn't belong to the source types of the
+     * [relationship_types].
+     * * Otherwise:
+     * it outputs the supported relationships' history on the [asset_names] or
+     * returns an error if any of the [asset_names]'s types has no relationship
+     * support.
+     * See [Introduction to Cloud Asset
+     * Inventory](https://cloud.google.com/asset-inventory/docs/overview) for all
+     * supported asset types and relationship types.
+     * </pre>
+     *
+     * <code>repeated string relationship_types = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return A list containing the relationshipTypes.
+     */
+    public com.google.protobuf.ProtocolStringList getRelationshipTypesList() {
+      return relationshipTypes_.getUnmodifiableView();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A list of relationship types to output, for example:
+     * `INSTANCE_TO_INSTANCEGROUP`. This field should only be specified if
+     * content_type=RELATIONSHIP.
+     * * If specified:
+     * it outputs specified relationships' history on the [asset_names]. It
+     * returns an error if any of the [relationship_types] doesn't belong to the
+     * supported relationship types of the [asset_names] or if any of the
+     * [asset_names]'s types doesn't belong to the source types of the
+     * [relationship_types].
+     * * Otherwise:
+     * it outputs the supported relationships' history on the [asset_names] or
+     * returns an error if any of the [asset_names]'s types has no relationship
+     * support.
+     * See [Introduction to Cloud Asset
+     * Inventory](https://cloud.google.com/asset-inventory/docs/overview) for all
+     * supported asset types and relationship types.
+     * </pre>
+     *
+     * <code>repeated string relationship_types = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The count of relationshipTypes.
+     */
+    public int getRelationshipTypesCount() {
+      return relationshipTypes_.size();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A list of relationship types to output, for example:
+     * `INSTANCE_TO_INSTANCEGROUP`. This field should only be specified if
+     * content_type=RELATIONSHIP.
+     * * If specified:
+     * it outputs specified relationships' history on the [asset_names]. It
+     * returns an error if any of the [relationship_types] doesn't belong to the
+     * supported relationship types of the [asset_names] or if any of the
+     * [asset_names]'s types doesn't belong to the source types of the
+     * [relationship_types].
+     * * Otherwise:
+     * it outputs the supported relationships' history on the [asset_names] or
+     * returns an error if any of the [asset_names]'s types has no relationship
+     * support.
+     * See [Introduction to Cloud Asset
+     * Inventory](https://cloud.google.com/asset-inventory/docs/overview) for all
+     * supported asset types and relationship types.
+     * </pre>
+     *
+     * <code>repeated string relationship_types = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param index The index of the element to return.
+     * @return The relationshipTypes at the given index.
+     */
+    public java.lang.String getRelationshipTypes(int index) {
+      return relationshipTypes_.get(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A list of relationship types to output, for example:
+     * `INSTANCE_TO_INSTANCEGROUP`. This field should only be specified if
+     * content_type=RELATIONSHIP.
+     * * If specified:
+     * it outputs specified relationships' history on the [asset_names]. It
+     * returns an error if any of the [relationship_types] doesn't belong to the
+     * supported relationship types of the [asset_names] or if any of the
+     * [asset_names]'s types doesn't belong to the source types of the
+     * [relationship_types].
+     * * Otherwise:
+     * it outputs the supported relationships' history on the [asset_names] or
+     * returns an error if any of the [asset_names]'s types has no relationship
+     * support.
+     * See [Introduction to Cloud Asset
+     * Inventory](https://cloud.google.com/asset-inventory/docs/overview) for all
+     * supported asset types and relationship types.
+     * </pre>
+     *
+     * <code>repeated string relationship_types = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the relationshipTypes at the given index.
+     */
+    public com.google.protobuf.ByteString getRelationshipTypesBytes(int index) {
+      return relationshipTypes_.getByteString(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A list of relationship types to output, for example:
+     * `INSTANCE_TO_INSTANCEGROUP`. This field should only be specified if
+     * content_type=RELATIONSHIP.
+     * * If specified:
+     * it outputs specified relationships' history on the [asset_names]. It
+     * returns an error if any of the [relationship_types] doesn't belong to the
+     * supported relationship types of the [asset_names] or if any of the
+     * [asset_names]'s types doesn't belong to the source types of the
+     * [relationship_types].
+     * * Otherwise:
+     * it outputs the supported relationships' history on the [asset_names] or
+     * returns an error if any of the [asset_names]'s types has no relationship
+     * support.
+     * See [Introduction to Cloud Asset
+     * Inventory](https://cloud.google.com/asset-inventory/docs/overview) for all
+     * supported asset types and relationship types.
+     * </pre>
+     *
+     * <code>repeated string relationship_types = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param index The index to set the value at.
+     * @param value The relationshipTypes to set.
+     * @return This builder for chaining.
+     */
+    public Builder setRelationshipTypes(int index, java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureRelationshipTypesIsMutable();
+      relationshipTypes_.set(index, value);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A list of relationship types to output, for example:
+     * `INSTANCE_TO_INSTANCEGROUP`. This field should only be specified if
+     * content_type=RELATIONSHIP.
+     * * If specified:
+     * it outputs specified relationships' history on the [asset_names]. It
+     * returns an error if any of the [relationship_types] doesn't belong to the
+     * supported relationship types of the [asset_names] or if any of the
+     * [asset_names]'s types doesn't belong to the source types of the
+     * [relationship_types].
+     * * Otherwise:
+     * it outputs the supported relationships' history on the [asset_names] or
+     * returns an error if any of the [asset_names]'s types has no relationship
+     * support.
+     * See [Introduction to Cloud Asset
+     * Inventory](https://cloud.google.com/asset-inventory/docs/overview) for all
+     * supported asset types and relationship types.
+     * </pre>
+     *
+     * <code>repeated string relationship_types = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The relationshipTypes to add.
+     * @return This builder for chaining.
+     */
+    public Builder addRelationshipTypes(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureRelationshipTypesIsMutable();
+      relationshipTypes_.add(value);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A list of relationship types to output, for example:
+     * `INSTANCE_TO_INSTANCEGROUP`. This field should only be specified if
+     * content_type=RELATIONSHIP.
+     * * If specified:
+     * it outputs specified relationships' history on the [asset_names]. It
+     * returns an error if any of the [relationship_types] doesn't belong to the
+     * supported relationship types of the [asset_names] or if any of the
+     * [asset_names]'s types doesn't belong to the source types of the
+     * [relationship_types].
+     * * Otherwise:
+     * it outputs the supported relationships' history on the [asset_names] or
+     * returns an error if any of the [asset_names]'s types has no relationship
+     * support.
+     * See [Introduction to Cloud Asset
+     * Inventory](https://cloud.google.com/asset-inventory/docs/overview) for all
+     * supported asset types and relationship types.
+     * </pre>
+     *
+     * <code>repeated string relationship_types = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param values The relationshipTypes to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllRelationshipTypes(java.lang.Iterable<java.lang.String> values) {
+      ensureRelationshipTypesIsMutable();
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(values, relationshipTypes_);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A list of relationship types to output, for example:
+     * `INSTANCE_TO_INSTANCEGROUP`. This field should only be specified if
+     * content_type=RELATIONSHIP.
+     * * If specified:
+     * it outputs specified relationships' history on the [asset_names]. It
+     * returns an error if any of the [relationship_types] doesn't belong to the
+     * supported relationship types of the [asset_names] or if any of the
+     * [asset_names]'s types doesn't belong to the source types of the
+     * [relationship_types].
+     * * Otherwise:
+     * it outputs the supported relationships' history on the [asset_names] or
+     * returns an error if any of the [asset_names]'s types has no relationship
+     * support.
+     * See [Introduction to Cloud Asset
+     * Inventory](https://cloud.google.com/asset-inventory/docs/overview) for all
+     * supported asset types and relationship types.
+     * </pre>
+     *
+     * <code>repeated string relationship_types = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearRelationshipTypes() {
+      relationshipTypes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A list of relationship types to output, for example:
+     * `INSTANCE_TO_INSTANCEGROUP`. This field should only be specified if
+     * content_type=RELATIONSHIP.
+     * * If specified:
+     * it outputs specified relationships' history on the [asset_names]. It
+     * returns an error if any of the [relationship_types] doesn't belong to the
+     * supported relationship types of the [asset_names] or if any of the
+     * [asset_names]'s types doesn't belong to the source types of the
+     * [relationship_types].
+     * * Otherwise:
+     * it outputs the supported relationships' history on the [asset_names] or
+     * returns an error if any of the [asset_names]'s types has no relationship
+     * support.
+     * See [Introduction to Cloud Asset
+     * Inventory](https://cloud.google.com/asset-inventory/docs/overview) for all
+     * supported asset types and relationship types.
+     * </pre>
+     *
+     * <code>repeated string relationship_types = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The bytes of the relationshipTypes to add.
+     * @return This builder for chaining.
+     */
+    public Builder addRelationshipTypesBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      ensureRelationshipTypesIsMutable();
+      relationshipTypes_.add(value);
+      onChanged();
+      return this;
     }
 
     @java.lang.Override

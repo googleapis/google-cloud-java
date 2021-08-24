@@ -54,6 +54,7 @@ import javax.annotation.Generated;
  *           .addAllAssetNames(new ArrayList<String>())
  *           .setContentType(ContentType.forNumber(0))
  *           .setReadTimeWindow(TimeWindow.newBuilder().build())
+ *           .addAllRelationshipTypes(new ArrayList<String>())
  *           .build();
  *   BatchGetAssetsHistoryResponse response = assetServiceClient.batchGetAssetsHistory(request);
  * }
@@ -190,6 +191,7 @@ public class AssetServiceClient implements BackgroundResource {
    *           .addAllAssetTypes(new ArrayList<String>())
    *           .setContentType(ContentType.forNumber(0))
    *           .setOutputConfig(OutputConfig.newBuilder().build())
+   *           .addAllRelationshipTypes(new ArrayList<String>())
    *           .build();
    *   ExportAssetsResponse response = assetServiceClient.exportAssetsAsync(request).get();
    * }
@@ -225,6 +227,7 @@ public class AssetServiceClient implements BackgroundResource {
    *           .addAllAssetTypes(new ArrayList<String>())
    *           .setContentType(ContentType.forNumber(0))
    *           .setOutputConfig(OutputConfig.newBuilder().build())
+   *           .addAllRelationshipTypes(new ArrayList<String>())
    *           .build();
    *   OperationFuture<ExportAssetsResponse, ExportAssetsRequest> future =
    *       assetServiceClient.exportAssetsOperationCallable().futureCall(request);
@@ -260,6 +263,7 @@ public class AssetServiceClient implements BackgroundResource {
    *           .addAllAssetTypes(new ArrayList<String>())
    *           .setContentType(ContentType.forNumber(0))
    *           .setOutputConfig(OutputConfig.newBuilder().build())
+   *           .addAllRelationshipTypes(new ArrayList<String>())
    *           .build();
    *   ApiFuture<Operation> future = assetServiceClient.exportAssetsCallable().futureCall(request);
    *   // Do something.
@@ -340,6 +344,7 @@ public class AssetServiceClient implements BackgroundResource {
    *           .setContentType(ContentType.forNumber(0))
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
+   *           .addAllRelationshipTypes(new ArrayList<String>())
    *           .build();
    *   for (Asset element : assetServiceClient.listAssets(request).iterateAll()) {
    *     // doThingsWith(element);
@@ -370,6 +375,7 @@ public class AssetServiceClient implements BackgroundResource {
    *           .setContentType(ContentType.forNumber(0))
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
+   *           .addAllRelationshipTypes(new ArrayList<String>())
    *           .build();
    *   ApiFuture<Asset> future = assetServiceClient.listAssetsPagedCallable().futureCall(request);
    *   // Do something.
@@ -399,6 +405,7 @@ public class AssetServiceClient implements BackgroundResource {
    *           .setContentType(ContentType.forNumber(0))
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
+   *           .addAllRelationshipTypes(new ArrayList<String>())
    *           .build();
    *   while (true) {
    *     ListAssetsResponse response = assetServiceClient.listAssetsCallable().call(request);
@@ -437,6 +444,7 @@ public class AssetServiceClient implements BackgroundResource {
    *           .addAllAssetNames(new ArrayList<String>())
    *           .setContentType(ContentType.forNumber(0))
    *           .setReadTimeWindow(TimeWindow.newBuilder().build())
+   *           .addAllRelationshipTypes(new ArrayList<String>())
    *           .build();
    *   BatchGetAssetsHistoryResponse response = assetServiceClient.batchGetAssetsHistory(request);
    * }
@@ -468,6 +476,7 @@ public class AssetServiceClient implements BackgroundResource {
    *           .addAllAssetNames(new ArrayList<String>())
    *           .setContentType(ContentType.forNumber(0))
    *           .setReadTimeWindow(TimeWindow.newBuilder().build())
+   *           .addAllRelationshipTypes(new ArrayList<String>())
    *           .build();
    *   ApiFuture<BatchGetAssetsHistoryResponse> future =
    *       assetServiceClient.batchGetAssetsHistoryCallable().futureCall(request);

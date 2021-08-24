@@ -31,6 +31,7 @@
  *           .addAllAssetNames(new ArrayList<String>())
  *           .setContentType(ContentType.forNumber(0))
  *           .setReadTimeWindow(TimeWindow.newBuilder().build())
+ *           .addAllRelationshipTypes(new ArrayList<String>())
  *           .build();
  *   BatchGetAssetsHistoryResponse response = assetServiceClient.batchGetAssetsHistory(request);
  * }

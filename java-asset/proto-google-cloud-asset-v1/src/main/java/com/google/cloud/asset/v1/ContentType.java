@@ -88,6 +88,16 @@ public enum ContentType implements com.google.protobuf.ProtocolMessageEnum {
    * <code>OS_INVENTORY = 6;</code>
    */
   OS_INVENTORY(6),
+  /**
+   *
+   *
+   * <pre>
+   * The related resources.
+   * </pre>
+   *
+   * <code>RELATIONSHIP = 7;</code>
+   */
+  RELATIONSHIP(7),
   UNRECOGNIZED(-1),
   ;
 
@@ -151,6 +161,16 @@ public enum ContentType implements com.google.protobuf.ProtocolMessageEnum {
    * <code>OS_INVENTORY = 6;</code>
    */
   public static final int OS_INVENTORY_VALUE = 6;
+  /**
+   *
+   *
+   * <pre>
+   * The related resources.
+   * </pre>
+   *
+   * <code>RELATIONSHIP = 7;</code>
+   */
+  public static final int RELATIONSHIP_VALUE = 7;
 
   public final int getNumber() {
     if (this == UNRECOGNIZED) {
@@ -188,6 +208,8 @@ public enum ContentType implements com.google.protobuf.ProtocolMessageEnum {
         return ACCESS_POLICY;
       case 6:
         return OS_INVENTORY;
+      case 7:
+        return RELATIONSHIP;
       default:
         return null;
     }

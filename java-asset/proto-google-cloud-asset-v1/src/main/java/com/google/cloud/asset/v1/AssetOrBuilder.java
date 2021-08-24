@@ -446,6 +446,44 @@ public interface AssetOrBuilder
    *
    *
    * <pre>
+   * The related assets of the asset of one relationship type.
+   * One asset only represents one type of relationship.
+   * </pre>
+   *
+   * <code>.google.cloud.asset.v1.RelatedAssets related_assets = 13;</code>
+   *
+   * @return Whether the relatedAssets field is set.
+   */
+  boolean hasRelatedAssets();
+  /**
+   *
+   *
+   * <pre>
+   * The related assets of the asset of one relationship type.
+   * One asset only represents one type of relationship.
+   * </pre>
+   *
+   * <code>.google.cloud.asset.v1.RelatedAssets related_assets = 13;</code>
+   *
+   * @return The relatedAssets.
+   */
+  com.google.cloud.asset.v1.RelatedAssets getRelatedAssets();
+  /**
+   *
+   *
+   * <pre>
+   * The related assets of the asset of one relationship type.
+   * One asset only represents one type of relationship.
+   * </pre>
+   *
+   * <code>.google.cloud.asset.v1.RelatedAssets related_assets = 13;</code>
+   */
+  com.google.cloud.asset.v1.RelatedAssetsOrBuilder getRelatedAssetsOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * The ancestry path of an asset in Google Cloud [resource
    * hierarchy](https://cloud.google.com/resource-manager/docs/cloud-platform-resource-hierarchy),
    * represented as a list of relative resource names. An ancestry path starts
