@@ -28,7 +28,7 @@ public interface OperationMetadataV1OrBuilder
    *
    * <pre>
    * Target of the operation - for example
-   * projects/project-1/locations/region-1/functions/function-1
+   * `projects/project-1/locations/region-1/functions/function-1`
    * </pre>
    *
    * <code>string target = 1;</code>
@@ -41,7 +41,7 @@ public interface OperationMetadataV1OrBuilder
    *
    * <pre>
    * Target of the operation - for example
-   * projects/project-1/locations/region-1/functions/function-1
+   * `projects/project-1/locations/region-1/functions/function-1`
    * </pre>
    *
    * <code>string target = 1;</code>
