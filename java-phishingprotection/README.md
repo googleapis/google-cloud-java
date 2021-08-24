@@ -59,13 +59,13 @@ compile 'com.google.cloud:google-cloud-phishingprotection'
 If you are using Gradle without BOM, add this to your dependencies
 
 ```Groovy
-compile 'com.google.cloud:google-cloud-phishingprotection:0.31.1'
+compile 'com.google.cloud:google-cloud-phishingprotection:0.31.2'
 ```
 
 If you are using SBT, add this to your dependencies
 
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-phishingprotection" % "0.31.1"
+libraryDependencies += "com.google.cloud" % "google-cloud-phishingprotection" % "0.31.2"
 ```
 
 ## Authentication
