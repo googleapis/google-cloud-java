@@ -94,29 +94,29 @@ public final class InstanceProto {
           + "KNOWN\020\000\022\t\n\005READY\020\001\022\014\n\010CREATING\020\002\022\014\n\010RESI"
           + "ZING\020\003\022\014\n\010DISABLED\020\004:`\352A]\n\037bigtable.goog"
           + "leapis.com/Cluster\022:projects/{project}/i"
-          + "nstances/{instance}/clusters/{cluster}\"\356"
-          + "\003\n\nAppProfile\022\014\n\004name\030\001 \001(\t\022\014\n\004etag\030\002 \001("
+          + "nstances/{instance}/clusters/{cluster}\"\203"
+          + "\004\n\nAppProfile\022\014\n\004name\030\001 \001(\t\022\014\n\004etag\030\002 \001("
           + "\t\022\023\n\013description\030\003 \001(\t\022g\n\035multi_cluster_"
           + "routing_use_any\030\005 \001(\0132>.google.bigtable."
           + "admin.v2.AppProfile.MultiClusterRoutingU"
           + "seAnyH\000\022[\n\026single_cluster_routing\030\006 \001(\0132"
           + "9.google.bigtable.admin.v2.AppProfile.Si"
-          + "ngleClusterRoutingH\000\032\033\n\031MultiClusterRout"
-          + "ingUseAny\032N\n\024SingleClusterRouting\022\022\n\nclu"
-          + "ster_id\030\001 \001(\t\022\"\n\032allow_transactional_wri"
-          + "tes\030\002 \001(\010:j\352Ag\n\"bigtable.googleapis.com/"
-          + "AppProfile\022Aprojects/{project}/instances"
-          + "/{instance}/appProfiles/{app_profile}B\020\n"
-          + "\016routing_policyB\320\002\n\034com.google.bigtable."
-          + "admin.v2B\rInstanceProtoP\001Z=google.golang"
-          + ".org/genproto/googleapis/bigtable/admin/"
-          + "v2;admin\252\002\036Google.Cloud.Bigtable.Admin.V"
-          + "2\312\002\036Google\\Cloud\\Bigtable\\Admin\\V2\352\002\"Goo"
-          + "gle::Cloud::Bigtable::Admin::V2\352Ax\n!clou"
-          + "dkms.googleapis.com/CryptoKey\022Sprojects/"
-          + "{project}/locations/{location}/keyRings/"
-          + "{key_ring}/cryptoKeys/{crypto_key}b\006prot"
-          + "o3"
+          + "ngleClusterRoutingH\000\0320\n\031MultiClusterRout"
+          + "ingUseAny\022\023\n\013cluster_ids\030\001 \003(\t\032N\n\024Single"
+          + "ClusterRouting\022\022\n\ncluster_id\030\001 \001(\t\022\"\n\032al"
+          + "low_transactional_writes\030\002 \001(\010:j\352Ag\n\"big"
+          + "table.googleapis.com/AppProfile\022Aproject"
+          + "s/{project}/instances/{instance}/appProf"
+          + "iles/{app_profile}B\020\n\016routing_policyB\320\002\n"
+          + "\034com.google.bigtable.admin.v2B\rInstanceP"
+          + "rotoP\001Z=google.golang.org/genproto/googl"
+          + "eapis/bigtable/admin/v2;admin\252\002\036Google.C"
+          + "loud.Bigtable.Admin.V2\312\002\036Google\\Cloud\\Bi"
+          + "gtable\\Admin\\V2\352\002\"Google::Cloud::Bigtabl"
+          + "e::Admin::V2\352Ax\n!cloudkms.googleapis.com"
+          + "/CryptoKey\022Sprojects/{project}/locations"
+          + "/{location}/keyRings/{key_ring}/cryptoKe"
+          + "ys/{crypto_key}b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -176,7 +176,9 @@ public final class InstanceProto {
     internal_static_google_bigtable_admin_v2_AppProfile_MultiClusterRoutingUseAny_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_bigtable_admin_v2_AppProfile_MultiClusterRoutingUseAny_descriptor,
-            new java.lang.String[] {});
+            new java.lang.String[] {
+              "ClusterIds",
+            });
     internal_static_google_bigtable_admin_v2_AppProfile_SingleClusterRouting_descriptor =
         internal_static_google_bigtable_admin_v2_AppProfile_descriptor.getNestedTypes().get(1);
     internal_static_google_bigtable_admin_v2_AppProfile_SingleClusterRouting_fieldAccessorTable =
