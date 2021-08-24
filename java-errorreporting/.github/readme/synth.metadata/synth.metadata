@@ -4,7 +4,7 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/java-errorreporting.git",
-        "sha": "a8258f001769f8cadfad11a220d0e5d3d05bf956"
+        "sha": "721e249b20839ec8ffa71d1d975a057e2597a6fb"
       }
     },
     {
