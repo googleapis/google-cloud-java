@@ -1,5 +1,15 @@
 # Changelog
 
+### [2.0.2](https://www.github.com/googleapis/java-aiplatform/compare/v2.0.1...v2.0.2) (2021-08-24)
+
+
+### Dependencies
+
+* update dependency com.google.api.grpc:proto-google-cloud-aiplatform-v1beta1 to v0.6.1 ([#617](https://www.github.com/googleapis/java-aiplatform/issues/617)) ([5180b67](https://www.github.com/googleapis/java-aiplatform/commit/5180b67c919c6d5158dc4118afb3117a50e2674d))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.1.0 ([#624](https://www.github.com/googleapis/java-aiplatform/issues/624)) ([8b033fc](https://www.github.com/googleapis/java-aiplatform/commit/8b033fca7f4f5e696b2681f9ddcf3c18ffc56d3b))
+* update dependency com.google.cloud:google-cloud-storage to v2.0.2 ([#621](https://www.github.com/googleapis/java-aiplatform/issues/621)) ([f987977](https://www.github.com/googleapis/java-aiplatform/commit/f987977b07596102ad6ceee00bed47d6753b7a86))
+* update dependency com.google.code.gson:gson to v2.8.8 ([#622](https://www.github.com/googleapis/java-aiplatform/issues/622)) ([a906429](https://www.github.com/googleapis/java-aiplatform/commit/a9064293a9c700465a07e6ec737e7b072eda1f60))
+
 ### [2.0.1](https://www.github.com/googleapis/java-aiplatform/compare/v2.0.0...v2.0.1) (2021-08-12)
 
 
