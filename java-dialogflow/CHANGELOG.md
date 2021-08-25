@@ -1,5 +1,14 @@
 # Changelog
 
+### [4.1.1](https://www.github.com/googleapis/java-dialogflow/compare/v4.1.0...v4.1.1) (2021-08-24)
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-core to v2.1.0 ([#661](https://www.github.com/googleapis/java-dialogflow/issues/661)) ([485cb74](https://www.github.com/googleapis/java-dialogflow/commit/485cb74c3d1492804d96bc73090e3015d8aea652))
+* update dependency com.google.cloud:google-cloud-core to v2.1.1 ([#664](https://www.github.com/googleapis/java-dialogflow/issues/664)) ([a7e78c3](https://www.github.com/googleapis/java-dialogflow/commit/a7e78c3712a3bca87e3c6d289ccea234e0e75e25))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.1.0 ([#662](https://www.github.com/googleapis/java-dialogflow/issues/662)) ([7e57cc6](https://www.github.com/googleapis/java-dialogflow/commit/7e57cc68a5bf27c848fb0bc03d74edb88ab09c93))
+
 ## [4.1.0](https://www.github.com/googleapis/java-dialogflow/compare/v4.0.0...v4.1.0) (2021-08-12)
 
 
