@@ -1,5 +1,12 @@
 # Changelog
 
+### [2.0.3](https://www.github.com/googleapis/java-functions/compare/v2.0.2...v2.0.3) (2021-08-25)
+
+
+### Documentation
+
+* minor formatting fixes to Cloud Functions reference docs ([#272](https://www.github.com/googleapis/java-functions/issues/272)) ([4ffb50d](https://www.github.com/googleapis/java-functions/commit/4ffb50da1877ccf8cc7b4ff321dd3850e2c16d73))
+
 ### [2.0.2](https://www.github.com/googleapis/java-functions/compare/v2.0.1...v2.0.2) (2021-08-23)
 
 
