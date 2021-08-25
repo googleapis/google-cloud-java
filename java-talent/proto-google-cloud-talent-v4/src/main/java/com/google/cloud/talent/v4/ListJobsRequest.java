@@ -206,16 +206,20 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
    * Required. The filter string specifies the jobs to be enumerated.
    * Supported operator: =, AND
    * The fields eligible for filtering are:
-   * * `companyName` (Required)
+   * * `companyName`
    * * `requisitionId`
    * * `status` Available values: OPEN, EXPIRED, ALL. Defaults to
    * OPEN if no value is specified.
+   * At least one of `companyName` and `requisitionId` must present or an
+   * INVALID_ARGUMENT error is thrown.
    * Sample Query:
    * * companyName = "projects/foo/tenants/bar/companies/baz"
    * * companyName = "projects/foo/tenants/bar/companies/baz" AND
    * requisitionId = "req-1"
    * * companyName = "projects/foo/tenants/bar/companies/baz" AND
    * status = "EXPIRED"
+   * * requisitionId = "req-1"
+   * * requisitionId = "req-1" AND status = "EXPIRED"
    * </pre>
    *
    * <code>string filter = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -241,16 +245,20 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
    * Required. The filter string specifies the jobs to be enumerated.
    * Supported operator: =, AND
    * The fields eligible for filtering are:
-   * * `companyName` (Required)
+   * * `companyName`
    * * `requisitionId`
    * * `status` Available values: OPEN, EXPIRED, ALL. Defaults to
    * OPEN if no value is specified.
+   * At least one of `companyName` and `requisitionId` must present or an
+   * INVALID_ARGUMENT error is thrown.
    * Sample Query:
    * * companyName = "projects/foo/tenants/bar/companies/baz"
    * * companyName = "projects/foo/tenants/bar/companies/baz" AND
    * requisitionId = "req-1"
    * * companyName = "projects/foo/tenants/bar/companies/baz" AND
    * status = "EXPIRED"
+   * * requisitionId = "req-1"
+   * * requisitionId = "req-1" AND status = "EXPIRED"
    * </pre>
    *
    * <code>string filter = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -892,16 +900,20 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
      * Required. The filter string specifies the jobs to be enumerated.
      * Supported operator: =, AND
      * The fields eligible for filtering are:
-     * * `companyName` (Required)
+     * * `companyName`
      * * `requisitionId`
      * * `status` Available values: OPEN, EXPIRED, ALL. Defaults to
      * OPEN if no value is specified.
+     * At least one of `companyName` and `requisitionId` must present or an
+     * INVALID_ARGUMENT error is thrown.
      * Sample Query:
      * * companyName = "projects/foo/tenants/bar/companies/baz"
      * * companyName = "projects/foo/tenants/bar/companies/baz" AND
      * requisitionId = "req-1"
      * * companyName = "projects/foo/tenants/bar/companies/baz" AND
      * status = "EXPIRED"
+     * * requisitionId = "req-1"
+     * * requisitionId = "req-1" AND status = "EXPIRED"
      * </pre>
      *
      * <code>string filter = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -926,16 +938,20 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
      * Required. The filter string specifies the jobs to be enumerated.
      * Supported operator: =, AND
      * The fields eligible for filtering are:
-     * * `companyName` (Required)
+     * * `companyName`
      * * `requisitionId`
      * * `status` Available values: OPEN, EXPIRED, ALL. Defaults to
      * OPEN if no value is specified.
+     * At least one of `companyName` and `requisitionId` must present or an
+     * INVALID_ARGUMENT error is thrown.
      * Sample Query:
      * * companyName = "projects/foo/tenants/bar/companies/baz"
      * * companyName = "projects/foo/tenants/bar/companies/baz" AND
      * requisitionId = "req-1"
      * * companyName = "projects/foo/tenants/bar/companies/baz" AND
      * status = "EXPIRED"
+     * * requisitionId = "req-1"
+     * * requisitionId = "req-1" AND status = "EXPIRED"
      * </pre>
      *
      * <code>string filter = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -960,16 +976,20 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
      * Required. The filter string specifies the jobs to be enumerated.
      * Supported operator: =, AND
      * The fields eligible for filtering are:
-     * * `companyName` (Required)
+     * * `companyName`
      * * `requisitionId`
      * * `status` Available values: OPEN, EXPIRED, ALL. Defaults to
      * OPEN if no value is specified.
+     * At least one of `companyName` and `requisitionId` must present or an
+     * INVALID_ARGUMENT error is thrown.
      * Sample Query:
      * * companyName = "projects/foo/tenants/bar/companies/baz"
      * * companyName = "projects/foo/tenants/bar/companies/baz" AND
      * requisitionId = "req-1"
      * * companyName = "projects/foo/tenants/bar/companies/baz" AND
      * status = "EXPIRED"
+     * * requisitionId = "req-1"
+     * * requisitionId = "req-1" AND status = "EXPIRED"
      * </pre>
      *
      * <code>string filter = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -993,16 +1013,20 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
      * Required. The filter string specifies the jobs to be enumerated.
      * Supported operator: =, AND
      * The fields eligible for filtering are:
-     * * `companyName` (Required)
+     * * `companyName`
      * * `requisitionId`
      * * `status` Available values: OPEN, EXPIRED, ALL. Defaults to
      * OPEN if no value is specified.
+     * At least one of `companyName` and `requisitionId` must present or an
+     * INVALID_ARGUMENT error is thrown.
      * Sample Query:
      * * companyName = "projects/foo/tenants/bar/companies/baz"
      * * companyName = "projects/foo/tenants/bar/companies/baz" AND
      * requisitionId = "req-1"
      * * companyName = "projects/foo/tenants/bar/companies/baz" AND
      * status = "EXPIRED"
+     * * requisitionId = "req-1"
+     * * requisitionId = "req-1" AND status = "EXPIRED"
      * </pre>
      *
      * <code>string filter = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1022,16 +1046,20 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
      * Required. The filter string specifies the jobs to be enumerated.
      * Supported operator: =, AND
      * The fields eligible for filtering are:
-     * * `companyName` (Required)
+     * * `companyName`
      * * `requisitionId`
      * * `status` Available values: OPEN, EXPIRED, ALL. Defaults to
      * OPEN if no value is specified.
+     * At least one of `companyName` and `requisitionId` must present or an
+     * INVALID_ARGUMENT error is thrown.
      * Sample Query:
      * * companyName = "projects/foo/tenants/bar/companies/baz"
      * * companyName = "projects/foo/tenants/bar/companies/baz" AND
      * requisitionId = "req-1"
      * * companyName = "projects/foo/tenants/bar/companies/baz" AND
      * status = "EXPIRED"
+     * * requisitionId = "req-1"
+     * * requisitionId = "req-1" AND status = "EXPIRED"
      * </pre>
      *
      * <code>string filter = 2 [(.google.api.field_behavior) = REQUIRED];</code>

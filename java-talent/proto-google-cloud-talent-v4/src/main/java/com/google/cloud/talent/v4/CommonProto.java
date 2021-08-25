@@ -209,12 +209,13 @@ public final class CommonProto {
           + "_PUBLIC\020\003\032\002\030\001*q\n\020HtmlSanitization\022!\n\035HTM"
           + "L_SANITIZATION_UNSPECIFIED\020\000\022\036\n\032HTML_SAN"
           + "ITIZATION_DISABLED\020\001\022\032\n\026SIMPLE_FORMATTIN"
-          + "G_ONLY\020\002*I\n\rCommuteMethod\022\036\n\032COMMUTE_MET"
+          + "G_ONLY\020\002*{\n\rCommuteMethod\022\036\n\032COMMUTE_MET"
           + "HOD_UNSPECIFIED\020\000\022\013\n\007DRIVING\020\001\022\013\n\007TRANSI"
-          + "T\020\002Bo\n\032com.google.cloud.talent.v4B\013Commo"
-          + "nProtoP\001Z<google.golang.org/genproto/goo"
-          + "gleapis/cloud/talent/v4;talent\242\002\003CTSb\006pr"
-          + "oto3"
+          + "T\020\002\022\013\n\007WALKING\020\003\022\013\n\007CYCLING\020\004\022\026\n\022TRANSIT"
+          + "_ACCESSIBLE\020\005Bo\n\032com.google.cloud.talent"
+          + ".v4B\013CommonProtoP\001Z<google.golang.org/ge"
+          + "nproto/googleapis/cloud/talent/v4;talent"
+          + "\242\002\003CTSb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

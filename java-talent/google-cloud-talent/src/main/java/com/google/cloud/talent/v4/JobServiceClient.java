@@ -976,16 +976,20 @@ public class JobServiceClient implements BackgroundResource {
    *     <p>Supported operator: =, AND
    *     <p>The fields eligible for filtering are:
    *     <ul>
-   *       <li>`companyName` (Required)
+   *       <li>`companyName`
    *       <li>`requisitionId`
    *       <li>`status` Available values: OPEN, EXPIRED, ALL. Defaults to OPEN if no value is
    *           specified.
    *     </ul>
+   *     <p>At least one of `companyName` and `requisitionId` must present or an INVALID_ARGUMENT
+   *     error is thrown.
    *     <p>Sample Query:
    *     <ul>
    *       <li>companyName = "projects/foo/tenants/bar/companies/baz"
    *       <li>companyName = "projects/foo/tenants/bar/companies/baz" AND requisitionId = "req-1"
    *       <li>companyName = "projects/foo/tenants/bar/companies/baz" AND status = "EXPIRED"
+   *       <li>requisitionId = "req-1"
+   *       <li>requisitionId = "req-1" AND status = "EXPIRED"
    *     </ul>
    *
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -1022,16 +1026,20 @@ public class JobServiceClient implements BackgroundResource {
    *     <p>Supported operator: =, AND
    *     <p>The fields eligible for filtering are:
    *     <ul>
-   *       <li>`companyName` (Required)
+   *       <li>`companyName`
    *       <li>`requisitionId`
    *       <li>`status` Available values: OPEN, EXPIRED, ALL. Defaults to OPEN if no value is
    *           specified.
    *     </ul>
+   *     <p>At least one of `companyName` and `requisitionId` must present or an INVALID_ARGUMENT
+   *     error is thrown.
    *     <p>Sample Query:
    *     <ul>
    *       <li>companyName = "projects/foo/tenants/bar/companies/baz"
    *       <li>companyName = "projects/foo/tenants/bar/companies/baz" AND requisitionId = "req-1"
    *       <li>companyName = "projects/foo/tenants/bar/companies/baz" AND status = "EXPIRED"
+   *       <li>requisitionId = "req-1"
+   *       <li>requisitionId = "req-1" AND status = "EXPIRED"
    *     </ul>
    *
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
