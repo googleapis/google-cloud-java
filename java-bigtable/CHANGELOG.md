@@ -1,5 +1,17 @@
 # Changelog
 
+## [2.1.0](https://www.github.com/googleapis/java-bigtable/compare/v2.0.1...v2.1.0) (2021-08-25)
+
+
+### Features
+
+* publish new fields to support cluster group routing ([#958](https://www.github.com/googleapis/java-bigtable/issues/958)) ([09b31bd](https://www.github.com/googleapis/java-bigtable/commit/09b31bd9032dc36071cb8d32fc5cb6d4d85878e1))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.1.0 ([#962](https://www.github.com/googleapis/java-bigtable/issues/962)) ([a013e77](https://www.github.com/googleapis/java-bigtable/commit/a013e777af0fb2945099c178832fccd14b33398f))
+
 ### [2.0.1](https://www.github.com/googleapis/java-bigtable/compare/v2.0.0...v2.0.1) (2021-08-11)
 
 
