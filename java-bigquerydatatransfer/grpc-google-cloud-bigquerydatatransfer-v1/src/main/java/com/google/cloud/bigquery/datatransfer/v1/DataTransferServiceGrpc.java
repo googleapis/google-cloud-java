@@ -871,7 +871,8 @@ public final class DataTransferServiceGrpc {
      *
      *
      * <pre>
-     * Returns information about all data transfers in the project.
+     * Returns information about all transfer configs owned by a project in the
+     * specified location.
      * </pre>
      */
     public void listTransferConfigs(
@@ -1240,7 +1241,8 @@ public final class DataTransferServiceGrpc {
      *
      *
      * <pre>
-     * Returns information about all data transfers in the project.
+     * Returns information about all transfer configs owned by a project in the
+     * specified location.
      * </pre>
      */
     public void listTransferConfigs(
@@ -1500,7 +1502,8 @@ public final class DataTransferServiceGrpc {
      *
      *
      * <pre>
-     * Returns information about all data transfers in the project.
+     * Returns information about all transfer configs owned by a project in the
+     * specified location.
      * </pre>
      */
     public com.google.cloud.bigquery.datatransfer.v1.ListTransferConfigsResponse
@@ -1735,7 +1738,8 @@ public final class DataTransferServiceGrpc {
      *
      *
      * <pre>
-     * Returns information about all data transfers in the project.
+     * Returns information about all transfer configs owned by a project in the
+     * specified location.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<

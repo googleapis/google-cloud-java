@@ -303,9 +303,7 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Use First Party Client OAuth. First Party Client OAuth doesn't require a
-     * refresh token to get an offline access token. Instead, it uses a
-     * client-signed JWT assertion to retrieve an access token.
+     * Use First Party OAuth.
      * </pre>
      *
      * <code>FIRST_PARTY_OAUTH = 3;</code>
@@ -350,9 +348,7 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Use First Party Client OAuth. First Party Client OAuth doesn't require a
-     * refresh token to get an offline access token. Instead, it uses a
-     * client-signed JWT assertion to retrieve an access token.
+     * Use First Party OAuth.
      * </pre>
      *
      * <code>FIRST_PARTY_OAUTH = 3;</code>

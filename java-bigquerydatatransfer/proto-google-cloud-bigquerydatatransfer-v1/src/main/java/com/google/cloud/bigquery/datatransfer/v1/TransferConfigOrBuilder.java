@@ -28,12 +28,11 @@ public interface TransferConfigOrBuilder
    *
    * <pre>
    * The resource name of the transfer config.
-   * Transfer config names have the form of
+   * Transfer config names have the form
    * `projects/{project_id}/locations/{region}/transferConfigs/{config_id}`.
-   * The name is automatically generated based on the config_id specified in
-   * CreateTransferConfigRequest along with project_id and region. If config_id
-   * is not provided, usually a uuid, even though it is not guaranteed or
-   * required, will be generated for config_id.
+   * Where `config_id` is usually a uuid, even though it is not
+   * guaranteed or required. The name is ignored when creating a transfer
+   * config.
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -46,12 +45,11 @@ public interface TransferConfigOrBuilder
    *
    * <pre>
    * The resource name of the transfer config.
-   * Transfer config names have the form of
+   * Transfer config names have the form
    * `projects/{project_id}/locations/{region}/transferConfigs/{config_id}`.
-   * The name is automatically generated based on the config_id specified in
-   * CreateTransferConfigRequest along with project_id and region. If config_id
-   * is not provided, usually a uuid, even though it is not guaranteed or
-   * required, will be generated for config_id.
+   * Where `config_id` is usually a uuid, even though it is not
+   * guaranteed or required. The name is ignored when creating a transfer
+   * config.
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -151,7 +149,10 @@ public interface TransferConfigOrBuilder
    *
    *
    * <pre>
-   * Data transfer specific parameters.
+   * Parameters specific to each data source. For more information see the
+   * bq tab in the 'Setting up a data transfer' section for each data source.
+   * For example the parameters for Cloud Storage transfers are listed here:
+   * https://cloud.google.com/bigquery-transfer/docs/cloud-storage-transfer#bq
    * </pre>
    *
    * <code>.google.protobuf.Struct params = 9;</code>
@@ -163,7 +164,10 @@ public interface TransferConfigOrBuilder
    *
    *
    * <pre>
-   * Data transfer specific parameters.
+   * Parameters specific to each data source. For more information see the
+   * bq tab in the 'Setting up a data transfer' section for each data source.
+   * For example the parameters for Cloud Storage transfers are listed here:
+   * https://cloud.google.com/bigquery-transfer/docs/cloud-storage-transfer#bq
    * </pre>
    *
    * <code>.google.protobuf.Struct params = 9;</code>
@@ -175,7 +179,10 @@ public interface TransferConfigOrBuilder
    *
    *
    * <pre>
-   * Data transfer specific parameters.
+   * Parameters specific to each data source. For more information see the
+   * bq tab in the 'Setting up a data transfer' section for each data source.
+   * For example the parameters for Cloud Storage transfers are listed here:
+   * https://cloud.google.com/bigquery-transfer/docs/cloud-storage-transfer#bq
    * </pre>
    *
    * <code>.google.protobuf.Struct params = 9;</code>
@@ -448,6 +455,8 @@ public interface TransferConfigOrBuilder
    * <pre>
    * Pub/Sub topic where notifications will be sent after transfer runs
    * associated with this transfer config finish.
+   * The format for specifying a pubsub topic is:
+   * `projects/{project}/topics/{topic}`
    * </pre>
    *
    * <code>string notification_pubsub_topic = 15;</code>
@@ -461,6 +470,8 @@ public interface TransferConfigOrBuilder
    * <pre>
    * Pub/Sub topic where notifications will be sent after transfer runs
    * associated with this transfer config finish.
+   * The format for specifying a pubsub topic is:
+   * `projects/{project}/topics/{topic}`
    * </pre>
    *
    * <code>string notification_pubsub_topic = 15;</code>

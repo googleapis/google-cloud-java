@@ -868,7 +868,7 @@ public class DataTransferServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Returns information about all data transfers in the project.
+   * Returns information about all transfer configs owned by a project in the specified location.
    *
    * <p>Sample code:
    *
@@ -896,7 +896,7 @@ public class DataTransferServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Returns information about all data transfers in the project.
+   * Returns information about all transfer configs owned by a project in the specified location.
    *
    * <p>Sample code:
    *
@@ -924,7 +924,7 @@ public class DataTransferServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Returns information about all data transfers in the project.
+   * Returns information about all transfer configs owned by a project in the specified location.
    *
    * <p>Sample code:
    *
@@ -952,7 +952,7 @@ public class DataTransferServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Returns information about all data transfers in the project.
+   * Returns information about all transfer configs owned by a project in the specified location.
    *
    * <p>Sample code:
    *
@@ -984,7 +984,7 @@ public class DataTransferServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Returns information about all data transfers in the project.
+   * Returns information about all transfer configs owned by a project in the specified location.
    *
    * <p>Sample code:
    *
@@ -1015,7 +1015,7 @@ public class DataTransferServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Returns information about all data transfers in the project.
+   * Returns information about all transfer configs owned by a project in the specified location.
    *
    * <p>Sample code:
    *

@@ -676,7 +676,10 @@ public final class TransferRun extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Data transfer specific parameters.
+   * Output only. Parameters specific to each data source. For more information see the
+   * bq tab in the 'Setting up a data transfer' section for each data source.
+   * For example the parameters for Cloud Storage transfers are listed here:
+   * https://cloud.google.com/bigquery-transfer/docs/cloud-storage-transfer#bq
    * </pre>
    *
    * <code>.google.protobuf.Struct params = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -691,7 +694,10 @@ public final class TransferRun extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Data transfer specific parameters.
+   * Output only. Parameters specific to each data source. For more information see the
+   * bq tab in the 'Setting up a data transfer' section for each data source.
+   * For example the parameters for Cloud Storage transfers are listed here:
+   * https://cloud.google.com/bigquery-transfer/docs/cloud-storage-transfer#bq
    * </pre>
    *
    * <code>.google.protobuf.Struct params = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -706,7 +712,10 @@ public final class TransferRun extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Data transfer specific parameters.
+   * Output only. Parameters specific to each data source. For more information see the
+   * bq tab in the 'Setting up a data transfer' section for each data source.
+   * For example the parameters for Cloud Storage transfers are listed here:
+   * https://cloud.google.com/bigquery-transfer/docs/cloud-storage-transfer#bq
    * </pre>
    *
    * <code>.google.protobuf.Struct params = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -955,7 +964,9 @@ public final class TransferRun extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Output only. Pub/Sub topic where a notification will be sent after this
-   * transfer run finishes
+   * transfer run finishes.
+   * The format for specifying a pubsub topic is:
+   * `projects/{project}/topics/{topic}`
    * </pre>
    *
    * <code>string notification_pubsub_topic = 23 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -980,7 +991,9 @@ public final class TransferRun extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Output only. Pub/Sub topic where a notification will be sent after this
-   * transfer run finishes
+   * transfer run finishes.
+   * The format for specifying a pubsub topic is:
+   * `projects/{project}/topics/{topic}`
    * </pre>
    *
    * <code>string notification_pubsub_topic = 23 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -3017,7 +3030,10 @@ public final class TransferRun extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Data transfer specific parameters.
+     * Output only. Parameters specific to each data source. For more information see the
+     * bq tab in the 'Setting up a data transfer' section for each data source.
+     * For example the parameters for Cloud Storage transfers are listed here:
+     * https://cloud.google.com/bigquery-transfer/docs/cloud-storage-transfer#bq
      * </pre>
      *
      * <code>.google.protobuf.Struct params = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -3031,7 +3047,10 @@ public final class TransferRun extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Data transfer specific parameters.
+     * Output only. Parameters specific to each data source. For more information see the
+     * bq tab in the 'Setting up a data transfer' section for each data source.
+     * For example the parameters for Cloud Storage transfers are listed here:
+     * https://cloud.google.com/bigquery-transfer/docs/cloud-storage-transfer#bq
      * </pre>
      *
      * <code>.google.protobuf.Struct params = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -3049,7 +3068,10 @@ public final class TransferRun extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Data transfer specific parameters.
+     * Output only. Parameters specific to each data source. For more information see the
+     * bq tab in the 'Setting up a data transfer' section for each data source.
+     * For example the parameters for Cloud Storage transfers are listed here:
+     * https://cloud.google.com/bigquery-transfer/docs/cloud-storage-transfer#bq
      * </pre>
      *
      * <code>.google.protobuf.Struct params = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -3071,7 +3093,10 @@ public final class TransferRun extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Data transfer specific parameters.
+     * Output only. Parameters specific to each data source. For more information see the
+     * bq tab in the 'Setting up a data transfer' section for each data source.
+     * For example the parameters for Cloud Storage transfers are listed here:
+     * https://cloud.google.com/bigquery-transfer/docs/cloud-storage-transfer#bq
      * </pre>
      *
      * <code>.google.protobuf.Struct params = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -3090,7 +3115,10 @@ public final class TransferRun extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Data transfer specific parameters.
+     * Output only. Parameters specific to each data source. For more information see the
+     * bq tab in the 'Setting up a data transfer' section for each data source.
+     * For example the parameters for Cloud Storage transfers are listed here:
+     * https://cloud.google.com/bigquery-transfer/docs/cloud-storage-transfer#bq
      * </pre>
      *
      * <code>.google.protobuf.Struct params = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -3113,7 +3141,10 @@ public final class TransferRun extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Data transfer specific parameters.
+     * Output only. Parameters specific to each data source. For more information see the
+     * bq tab in the 'Setting up a data transfer' section for each data source.
+     * For example the parameters for Cloud Storage transfers are listed here:
+     * https://cloud.google.com/bigquery-transfer/docs/cloud-storage-transfer#bq
      * </pre>
      *
      * <code>.google.protobuf.Struct params = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -3133,7 +3164,10 @@ public final class TransferRun extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Data transfer specific parameters.
+     * Output only. Parameters specific to each data source. For more information see the
+     * bq tab in the 'Setting up a data transfer' section for each data source.
+     * For example the parameters for Cloud Storage transfers are listed here:
+     * https://cloud.google.com/bigquery-transfer/docs/cloud-storage-transfer#bq
      * </pre>
      *
      * <code>.google.protobuf.Struct params = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -3147,7 +3181,10 @@ public final class TransferRun extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Data transfer specific parameters.
+     * Output only. Parameters specific to each data source. For more information see the
+     * bq tab in the 'Setting up a data transfer' section for each data source.
+     * For example the parameters for Cloud Storage transfers are listed here:
+     * https://cloud.google.com/bigquery-transfer/docs/cloud-storage-transfer#bq
      * </pre>
      *
      * <code>.google.protobuf.Struct params = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -3163,7 +3200,10 @@ public final class TransferRun extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Data transfer specific parameters.
+     * Output only. Parameters specific to each data source. For more information see the
+     * bq tab in the 'Setting up a data transfer' section for each data source.
+     * For example the parameters for Cloud Storage transfers are listed here:
+     * https://cloud.google.com/bigquery-transfer/docs/cloud-storage-transfer#bq
      * </pre>
      *
      * <code>.google.protobuf.Struct params = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -3702,7 +3742,9 @@ public final class TransferRun extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. Pub/Sub topic where a notification will be sent after this
-     * transfer run finishes
+     * transfer run finishes.
+     * The format for specifying a pubsub topic is:
+     * `projects/{project}/topics/{topic}`
      * </pre>
      *
      * <code>string notification_pubsub_topic = 23 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -3726,7 +3768,9 @@ public final class TransferRun extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. Pub/Sub topic where a notification will be sent after this
-     * transfer run finishes
+     * transfer run finishes.
+     * The format for specifying a pubsub topic is:
+     * `projects/{project}/topics/{topic}`
      * </pre>
      *
      * <code>string notification_pubsub_topic = 23 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -3750,7 +3794,9 @@ public final class TransferRun extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. Pub/Sub topic where a notification will be sent after this
-     * transfer run finishes
+     * transfer run finishes.
+     * The format for specifying a pubsub topic is:
+     * `projects/{project}/topics/{topic}`
      * </pre>
      *
      * <code>string notification_pubsub_topic = 23 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -3773,7 +3819,9 @@ public final class TransferRun extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. Pub/Sub topic where a notification will be sent after this
-     * transfer run finishes
+     * transfer run finishes.
+     * The format for specifying a pubsub topic is:
+     * `projects/{project}/topics/{topic}`
      * </pre>
      *
      * <code>string notification_pubsub_topic = 23 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -3792,7 +3840,9 @@ public final class TransferRun extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. Pub/Sub topic where a notification will be sent after this
-     * transfer run finishes
+     * transfer run finishes.
+     * The format for specifying a pubsub topic is:
+     * `projects/{project}/topics/{topic}`
      * </pre>
      *
      * <code>string notification_pubsub_topic = 23 [(.google.api.field_behavior) = OUTPUT_ONLY];
