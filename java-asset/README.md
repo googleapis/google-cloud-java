@@ -57,13 +57,13 @@ compile 'com.google.cloud:google-cloud-asset'
 If you are using Gradle without BOM, add this to your dependencies
 
 ```Groovy
-compile 'com.google.cloud:google-cloud-asset:3.0.1'
+compile 'com.google.cloud:google-cloud-asset:3.1.0'
 ```
 
 If you are using SBT, add this to your dependencies
 
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-asset" % "3.0.1"
+libraryDependencies += "com.google.cloud" % "google-cloud-asset" % "3.1.0"
 ```
 
 ## Authentication
