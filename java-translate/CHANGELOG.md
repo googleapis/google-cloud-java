@@ -1,5 +1,17 @@
 # Changelog
 
+### [2.0.6](https://www.github.com/googleapis/java-translate/compare/v2.0.5...v2.0.6) (2021-08-26)
+
+
+### Bug Fixes
+
+* add missing annotation for batch document translation ([#759](https://www.github.com/googleapis/java-translate/issues/759)) ([2de43ad](https://www.github.com/googleapis/java-translate/commit/2de43ad923ef21443298affca877efb28e2af387))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-storage to v2.1.0 ([#757](https://www.github.com/googleapis/java-translate/issues/757)) ([f72ac67](https://www.github.com/googleapis/java-translate/commit/f72ac67cedf4da0fcf1bad0cbd9c85aa74d7989b))
+
 ### [2.0.5](https://www.github.com/googleapis/java-translate/compare/v2.0.4...v2.0.5) (2021-08-24)
 
 
