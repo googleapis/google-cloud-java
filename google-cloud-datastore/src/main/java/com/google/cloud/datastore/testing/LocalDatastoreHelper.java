@@ -63,6 +63,8 @@ public class LocalDatastoreHelper extends BaseEmulatorHelper<DatastoreOptions> {
   private static final String MD5_CHECKSUM = "ec2237a0f0ac54964c6bd95e12c73720";
   private static final String BIN_CMD_PORT_FLAG = "--port=";
   private static final URL EMULATOR_URL;
+  private static final String EMULATOR_URL_ENV_VAR = "DATASTORE_EMULATOR_URL";
+  private static final String ACCESS_TOKEN = System.getenv("DATASTORE_EMULATOR_ACCESS_TOKEN");
 
   // Common settings
   private static final String CONSISTENCY_FLAG = "--consistency=";
@@ -72,7 +74,11 @@ public class LocalDatastoreHelper extends BaseEmulatorHelper<DatastoreOptions> {
 
   static {
     try {
-      EMULATOR_URL = new URL("http://storage.googleapis.com/gcd/tools/" + FILENAME);
+      if (System.getenv(EMULATOR_URL_ENV_VAR) == null) {
+        EMULATOR_URL = new URL("http://storage.googleapis.com/gcd/tools/" + FILENAME);
+      } else {
+        EMULATOR_URL = new URL(System.getenv(EMULATOR_URL_ENV_VAR));
+      }
     } catch (MalformedURLException ex) {
       throw new IllegalStateException(ex);
     }
@@ -147,7 +153,7 @@ public class LocalDatastoreHelper extends BaseEmulatorHelper<DatastoreOptions> {
       gcloudCommand.add("--data-dir=" + getGcdPath());
     }
     DownloadableEmulatorRunner downloadRunner =
-        new DownloadableEmulatorRunner(binCommand, EMULATOR_URL, MD5_CHECKSUM);
+        new DownloadableEmulatorRunner(binCommand, EMULATOR_URL, MD5_CHECKSUM, ACCESS_TOKEN);
     this.emulatorRunners = ImmutableList.of(gcloudRunner, downloadRunner);
   }
 
