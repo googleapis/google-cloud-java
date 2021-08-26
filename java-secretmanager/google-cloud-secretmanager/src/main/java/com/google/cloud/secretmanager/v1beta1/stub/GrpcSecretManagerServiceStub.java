@@ -25,7 +25,6 @@ import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.grpc.GrpcCallSettings;
 import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
-import com.google.api.gax.rpc.RequestParamsExtractor;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.secretmanager.v1beta1.AccessSecretVersionRequest;
 import com.google.cloud.secretmanager.v1beta1.AccessSecretVersionResponse;
@@ -55,7 +54,6 @@ import com.google.protobuf.Empty;
 import io.grpc.MethodDescriptor;
 import io.grpc.protobuf.ProtoUtils;
 import java.io.IOException;
-import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
@@ -291,78 +289,60 @@ public class GrpcSecretManagerServiceStub extends SecretManagerServiceStub {
         GrpcCallSettings.<ListSecretsRequest, ListSecretsResponse>newBuilder()
             .setMethodDescriptor(listSecretsMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<ListSecretsRequest>() {
-                  @Override
-                  public Map<String, String> extract(ListSecretsRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("parent", String.valueOf(request.getParent()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("parent", String.valueOf(request.getParent()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<CreateSecretRequest, Secret> createSecretTransportSettings =
         GrpcCallSettings.<CreateSecretRequest, Secret>newBuilder()
             .setMethodDescriptor(createSecretMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<CreateSecretRequest>() {
-                  @Override
-                  public Map<String, String> extract(CreateSecretRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("parent", String.valueOf(request.getParent()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("parent", String.valueOf(request.getParent()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<AddSecretVersionRequest, SecretVersion> addSecretVersionTransportSettings =
         GrpcCallSettings.<AddSecretVersionRequest, SecretVersion>newBuilder()
             .setMethodDescriptor(addSecretVersionMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<AddSecretVersionRequest>() {
-                  @Override
-                  public Map<String, String> extract(AddSecretVersionRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("parent", String.valueOf(request.getParent()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("parent", String.valueOf(request.getParent()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<GetSecretRequest, Secret> getSecretTransportSettings =
         GrpcCallSettings.<GetSecretRequest, Secret>newBuilder()
             .setMethodDescriptor(getSecretMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<GetSecretRequest>() {
-                  @Override
-                  public Map<String, String> extract(GetSecretRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("name", String.valueOf(request.getName()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<UpdateSecretRequest, Secret> updateSecretTransportSettings =
         GrpcCallSettings.<UpdateSecretRequest, Secret>newBuilder()
             .setMethodDescriptor(updateSecretMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<UpdateSecretRequest>() {
-                  @Override
-                  public Map<String, String> extract(UpdateSecretRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("secret.name", String.valueOf(request.getSecret().getName()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("secret.name", String.valueOf(request.getSecret().getName()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<DeleteSecretRequest, Empty> deleteSecretTransportSettings =
         GrpcCallSettings.<DeleteSecretRequest, Empty>newBuilder()
             .setMethodDescriptor(deleteSecretMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<DeleteSecretRequest>() {
-                  @Override
-                  public Map<String, String> extract(DeleteSecretRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("name", String.valueOf(request.getName()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<ListSecretVersionsRequest, ListSecretVersionsResponse>
@@ -370,26 +350,20 @@ public class GrpcSecretManagerServiceStub extends SecretManagerServiceStub {
             GrpcCallSettings.<ListSecretVersionsRequest, ListSecretVersionsResponse>newBuilder()
                 .setMethodDescriptor(listSecretVersionsMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<ListSecretVersionsRequest>() {
-                      @Override
-                      public Map<String, String> extract(ListSecretVersionsRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("parent", String.valueOf(request.getParent()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("parent", String.valueOf(request.getParent()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<GetSecretVersionRequest, SecretVersion> getSecretVersionTransportSettings =
         GrpcCallSettings.<GetSecretVersionRequest, SecretVersion>newBuilder()
             .setMethodDescriptor(getSecretVersionMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<GetSecretVersionRequest>() {
-                  @Override
-                  public Map<String, String> extract(GetSecretVersionRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("name", String.valueOf(request.getName()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<AccessSecretVersionRequest, AccessSecretVersionResponse>
@@ -397,13 +371,10 @@ public class GrpcSecretManagerServiceStub extends SecretManagerServiceStub {
             GrpcCallSettings.<AccessSecretVersionRequest, AccessSecretVersionResponse>newBuilder()
                 .setMethodDescriptor(accessSecretVersionMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<AccessSecretVersionRequest>() {
-                      @Override
-                      public Map<String, String> extract(AccessSecretVersionRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("name", String.valueOf(request.getName()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("name", String.valueOf(request.getName()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<DisableSecretVersionRequest, SecretVersion>
@@ -411,13 +382,10 @@ public class GrpcSecretManagerServiceStub extends SecretManagerServiceStub {
             GrpcCallSettings.<DisableSecretVersionRequest, SecretVersion>newBuilder()
                 .setMethodDescriptor(disableSecretVersionMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<DisableSecretVersionRequest>() {
-                      @Override
-                      public Map<String, String> extract(DisableSecretVersionRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("name", String.valueOf(request.getName()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("name", String.valueOf(request.getName()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<EnableSecretVersionRequest, SecretVersion>
@@ -425,13 +393,10 @@ public class GrpcSecretManagerServiceStub extends SecretManagerServiceStub {
             GrpcCallSettings.<EnableSecretVersionRequest, SecretVersion>newBuilder()
                 .setMethodDescriptor(enableSecretVersionMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<EnableSecretVersionRequest>() {
-                      @Override
-                      public Map<String, String> extract(EnableSecretVersionRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("name", String.valueOf(request.getName()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("name", String.valueOf(request.getName()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<DestroySecretVersionRequest, SecretVersion>
@@ -439,39 +404,30 @@ public class GrpcSecretManagerServiceStub extends SecretManagerServiceStub {
             GrpcCallSettings.<DestroySecretVersionRequest, SecretVersion>newBuilder()
                 .setMethodDescriptor(destroySecretVersionMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<DestroySecretVersionRequest>() {
-                      @Override
-                      public Map<String, String> extract(DestroySecretVersionRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("name", String.valueOf(request.getName()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("name", String.valueOf(request.getName()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<SetIamPolicyRequest, Policy> setIamPolicyTransportSettings =
         GrpcCallSettings.<SetIamPolicyRequest, Policy>newBuilder()
             .setMethodDescriptor(setIamPolicyMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<SetIamPolicyRequest>() {
-                  @Override
-                  public Map<String, String> extract(SetIamPolicyRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("resource", String.valueOf(request.getResource()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("resource", String.valueOf(request.getResource()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<GetIamPolicyRequest, Policy> getIamPolicyTransportSettings =
         GrpcCallSettings.<GetIamPolicyRequest, Policy>newBuilder()
             .setMethodDescriptor(getIamPolicyMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<GetIamPolicyRequest>() {
-                  @Override
-                  public Map<String, String> extract(GetIamPolicyRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("resource", String.valueOf(request.getResource()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("resource", String.valueOf(request.getResource()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
@@ -479,13 +435,10 @@ public class GrpcSecretManagerServiceStub extends SecretManagerServiceStub {
             GrpcCallSettings.<TestIamPermissionsRequest, TestIamPermissionsResponse>newBuilder()
                 .setMethodDescriptor(testIamPermissionsMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<TestIamPermissionsRequest>() {
-                      @Override
-                      public Map<String, String> extract(TestIamPermissionsRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("resource", String.valueOf(request.getResource()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("resource", String.valueOf(request.getResource()));
+                      return params.build();
                     })
                 .build();
 
@@ -654,7 +607,13 @@ public class GrpcSecretManagerServiceStub extends SecretManagerServiceStub {
 
   @Override
   public final void close() {
-    shutdown();
+    try {
+      backgroundResources.close();
+    } catch (RuntimeException e) {
+      throw e;
+    } catch (Exception e) {
+      throw new IllegalStateException("Failed to close resource", e);
+    }
   }
 
   @Override

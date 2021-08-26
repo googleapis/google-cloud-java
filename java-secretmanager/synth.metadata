@@ -11,8 +11,8 @@
       "git": {
         "name": "googleapis",
         "remote": "https://github.com/googleapis/googleapis.git",
-        "sha": "2948f31dd210514f87ce6e1e08bce48ecf4660d1",
-        "internalRef": "387156636"
+        "sha": "a739464cacb3aa6d375683aefe16b79c21da1bb0",
+        "internalRef": "389657692"
       }
     },
     {
@@ -189,7 +189,6 @@
     "proto-google-cloud-secretmanager-v1/src/main/java/com/google/cloud/secretmanager/v1/SecretVersionOrBuilder.java",
     "proto-google-cloud-secretmanager-v1/src/main/java/com/google/cloud/secretmanager/v1/ServiceProto.java",
     "proto-google-cloud-secretmanager-v1/src/main/java/com/google/cloud/secretmanager/v1/Topic.java",
-    "proto-google-cloud-secretmanager-v1/src/main/java/com/google/cloud/secretmanager/v1/TopicName.java",
     "proto-google-cloud-secretmanager-v1/src/main/java/com/google/cloud/secretmanager/v1/TopicOrBuilder.java",
     "proto-google-cloud-secretmanager-v1/src/main/java/com/google/cloud/secretmanager/v1/UpdateSecretRequest.java",
     "proto-google-cloud-secretmanager-v1/src/main/java/com/google/cloud/secretmanager/v1/UpdateSecretRequestOrBuilder.java",
