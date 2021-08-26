@@ -182,7 +182,7 @@ public final class BatchTranslateDocumentResponse extends com.google.protobuf.Ge
    *
    *
    * <pre>
-   * Total number of pages to translate in all documents. Documents without a
+   * Total number of pages to translate in all documents. Documents without
    * clear page definition (such as XLSX) are not counted.
    * </pre>
    *
@@ -202,7 +202,7 @@ public final class BatchTranslateDocumentResponse extends com.google.protobuf.Ge
    *
    * <pre>
    * Number of successfully translated pages in all documents. Documents without
-   * a clear page definition (such as XLSX) are not counted.
+   * clear page definition (such as XLSX) are not counted.
    * </pre>
    *
    * <code>int64 translated_pages = 2;</code>
@@ -221,7 +221,7 @@ public final class BatchTranslateDocumentResponse extends com.google.protobuf.Ge
    *
    * <pre>
    * Number of pages that failed to process in all documents. Documents without
-   * a clear page definition (such as XLSX) are not counted.
+   * clear page definition (such as XLSX) are not counted.
    * </pre>
    *
    * <code>int64 failed_pages = 3;</code>
@@ -918,7 +918,7 @@ public final class BatchTranslateDocumentResponse extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Total number of pages to translate in all documents. Documents without a
+     * Total number of pages to translate in all documents. Documents without
      * clear page definition (such as XLSX) are not counted.
      * </pre>
      *
@@ -934,7 +934,7 @@ public final class BatchTranslateDocumentResponse extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Total number of pages to translate in all documents. Documents without a
+     * Total number of pages to translate in all documents. Documents without
      * clear page definition (such as XLSX) are not counted.
      * </pre>
      *
@@ -953,7 +953,7 @@ public final class BatchTranslateDocumentResponse extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Total number of pages to translate in all documents. Documents without a
+     * Total number of pages to translate in all documents. Documents without
      * clear page definition (such as XLSX) are not counted.
      * </pre>
      *
@@ -974,7 +974,7 @@ public final class BatchTranslateDocumentResponse extends com.google.protobuf.Ge
      *
      * <pre>
      * Number of successfully translated pages in all documents. Documents without
-     * a clear page definition (such as XLSX) are not counted.
+     * clear page definition (such as XLSX) are not counted.
      * </pre>
      *
      * <code>int64 translated_pages = 2;</code>
@@ -990,7 +990,7 @@ public final class BatchTranslateDocumentResponse extends com.google.protobuf.Ge
      *
      * <pre>
      * Number of successfully translated pages in all documents. Documents without
-     * a clear page definition (such as XLSX) are not counted.
+     * clear page definition (such as XLSX) are not counted.
      * </pre>
      *
      * <code>int64 translated_pages = 2;</code>
@@ -1009,7 +1009,7 @@ public final class BatchTranslateDocumentResponse extends com.google.protobuf.Ge
      *
      * <pre>
      * Number of successfully translated pages in all documents. Documents without
-     * a clear page definition (such as XLSX) are not counted.
+     * clear page definition (such as XLSX) are not counted.
      * </pre>
      *
      * <code>int64 translated_pages = 2;</code>
@@ -1029,7 +1029,7 @@ public final class BatchTranslateDocumentResponse extends com.google.protobuf.Ge
      *
      * <pre>
      * Number of pages that failed to process in all documents. Documents without
-     * a clear page definition (such as XLSX) are not counted.
+     * clear page definition (such as XLSX) are not counted.
      * </pre>
      *
      * <code>int64 failed_pages = 3;</code>
@@ -1045,7 +1045,7 @@ public final class BatchTranslateDocumentResponse extends com.google.protobuf.Ge
      *
      * <pre>
      * Number of pages that failed to process in all documents. Documents without
-     * a clear page definition (such as XLSX) are not counted.
+     * clear page definition (such as XLSX) are not counted.
      * </pre>
      *
      * <code>int64 failed_pages = 3;</code>
@@ -1064,7 +1064,7 @@ public final class BatchTranslateDocumentResponse extends com.google.protobuf.Ge
      *
      * <pre>
      * Number of pages that failed to process in all documents. Documents without
-     * a clear page definition (such as XLSX) are not counted.
+     * clear page definition (such as XLSX) are not counted.
      * </pre>
      *
      * <code>int64 failed_pages = 3;</code>

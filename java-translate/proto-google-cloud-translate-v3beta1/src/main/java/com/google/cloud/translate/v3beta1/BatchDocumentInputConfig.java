@@ -180,10 +180,10 @@ public final class BatchDocumentInputConfig extends com.google.protobuf.Generate
    * application/vnd.openxmlformats-officedocument.presentationml.presentation
    * - `xlsx`,
    * application/vnd.openxmlformats-officedocument.spreadsheetml.sheet
-   * The max file size supported for `.docx`, `.pptx` and `.xlsx` is 100MB.
-   * The max file size supported for `.pdf` is 1GB and the max page limit is
+   * The max file size to support for `.docx`, `.pptx` and `.xlsx` is 100MB.
+   * The max file size to support for `.pdf` is 1GB and the max page limit is
    * 1000 pages.
-   * The max file size supported for all input documents is 1GB.
+   * The max file size to support for all input documents is 1GB.
    * </pre>
    *
    * <code>.google.cloud.translation.v3beta1.GcsSource gcs_source = 1;</code>
@@ -211,10 +211,10 @@ public final class BatchDocumentInputConfig extends com.google.protobuf.Generate
    * application/vnd.openxmlformats-officedocument.presentationml.presentation
    * - `xlsx`,
    * application/vnd.openxmlformats-officedocument.spreadsheetml.sheet
-   * The max file size supported for `.docx`, `.pptx` and `.xlsx` is 100MB.
-   * The max file size supported for `.pdf` is 1GB and the max page limit is
+   * The max file size to support for `.docx`, `.pptx` and `.xlsx` is 100MB.
+   * The max file size to support for `.pdf` is 1GB and the max page limit is
    * 1000 pages.
-   * The max file size supported for all input documents is 1GB.
+   * The max file size to support for all input documents is 1GB.
    * </pre>
    *
    * <code>.google.cloud.translation.v3beta1.GcsSource gcs_source = 1;</code>
@@ -245,10 +245,10 @@ public final class BatchDocumentInputConfig extends com.google.protobuf.Generate
    * application/vnd.openxmlformats-officedocument.presentationml.presentation
    * - `xlsx`,
    * application/vnd.openxmlformats-officedocument.spreadsheetml.sheet
-   * The max file size supported for `.docx`, `.pptx` and `.xlsx` is 100MB.
-   * The max file size supported for `.pdf` is 1GB and the max page limit is
+   * The max file size to support for `.docx`, `.pptx` and `.xlsx` is 100MB.
+   * The max file size to support for `.pdf` is 1GB and the max page limit is
    * 1000 pages.
-   * The max file size supported for all input documents is 1GB.
+   * The max file size to support for all input documents is 1GB.
    * </pre>
    *
    * <code>.google.cloud.translation.v3beta1.GcsSource gcs_source = 1;</code>
@@ -645,10 +645,10 @@ public final class BatchDocumentInputConfig extends com.google.protobuf.Generate
      * application/vnd.openxmlformats-officedocument.presentationml.presentation
      * - `xlsx`,
      * application/vnd.openxmlformats-officedocument.spreadsheetml.sheet
-     * The max file size supported for `.docx`, `.pptx` and `.xlsx` is 100MB.
-     * The max file size supported for `.pdf` is 1GB and the max page limit is
+     * The max file size to support for `.docx`, `.pptx` and `.xlsx` is 100MB.
+     * The max file size to support for `.pdf` is 1GB and the max page limit is
      * 1000 pages.
-     * The max file size supported for all input documents is 1GB.
+     * The max file size to support for all input documents is 1GB.
      * </pre>
      *
      * <code>.google.cloud.translation.v3beta1.GcsSource gcs_source = 1;</code>
@@ -676,10 +676,10 @@ public final class BatchDocumentInputConfig extends com.google.protobuf.Generate
      * application/vnd.openxmlformats-officedocument.presentationml.presentation
      * - `xlsx`,
      * application/vnd.openxmlformats-officedocument.spreadsheetml.sheet
-     * The max file size supported for `.docx`, `.pptx` and `.xlsx` is 100MB.
-     * The max file size supported for `.pdf` is 1GB and the max page limit is
+     * The max file size to support for `.docx`, `.pptx` and `.xlsx` is 100MB.
+     * The max file size to support for `.pdf` is 1GB and the max page limit is
      * 1000 pages.
-     * The max file size supported for all input documents is 1GB.
+     * The max file size to support for all input documents is 1GB.
      * </pre>
      *
      * <code>.google.cloud.translation.v3beta1.GcsSource gcs_source = 1;</code>
@@ -717,10 +717,10 @@ public final class BatchDocumentInputConfig extends com.google.protobuf.Generate
      * application/vnd.openxmlformats-officedocument.presentationml.presentation
      * - `xlsx`,
      * application/vnd.openxmlformats-officedocument.spreadsheetml.sheet
-     * The max file size supported for `.docx`, `.pptx` and `.xlsx` is 100MB.
-     * The max file size supported for `.pdf` is 1GB and the max page limit is
+     * The max file size to support for `.docx`, `.pptx` and `.xlsx` is 100MB.
+     * The max file size to support for `.pdf` is 1GB and the max page limit is
      * 1000 pages.
-     * The max file size supported for all input documents is 1GB.
+     * The max file size to support for all input documents is 1GB.
      * </pre>
      *
      * <code>.google.cloud.translation.v3beta1.GcsSource gcs_source = 1;</code>
@@ -755,10 +755,10 @@ public final class BatchDocumentInputConfig extends com.google.protobuf.Generate
      * application/vnd.openxmlformats-officedocument.presentationml.presentation
      * - `xlsx`,
      * application/vnd.openxmlformats-officedocument.spreadsheetml.sheet
-     * The max file size supported for `.docx`, `.pptx` and `.xlsx` is 100MB.
-     * The max file size supported for `.pdf` is 1GB and the max page limit is
+     * The max file size to support for `.docx`, `.pptx` and `.xlsx` is 100MB.
+     * The max file size to support for `.pdf` is 1GB and the max page limit is
      * 1000 pages.
-     * The max file size supported for all input documents is 1GB.
+     * The max file size to support for all input documents is 1GB.
      * </pre>
      *
      * <code>.google.cloud.translation.v3beta1.GcsSource gcs_source = 1;</code>
@@ -791,10 +791,10 @@ public final class BatchDocumentInputConfig extends com.google.protobuf.Generate
      * application/vnd.openxmlformats-officedocument.presentationml.presentation
      * - `xlsx`,
      * application/vnd.openxmlformats-officedocument.spreadsheetml.sheet
-     * The max file size supported for `.docx`, `.pptx` and `.xlsx` is 100MB.
-     * The max file size supported for `.pdf` is 1GB and the max page limit is
+     * The max file size to support for `.docx`, `.pptx` and `.xlsx` is 100MB.
+     * The max file size to support for `.pdf` is 1GB and the max page limit is
      * 1000 pages.
-     * The max file size supported for all input documents is 1GB.
+     * The max file size to support for all input documents is 1GB.
      * </pre>
      *
      * <code>.google.cloud.translation.v3beta1.GcsSource gcs_source = 1;</code>
@@ -838,10 +838,10 @@ public final class BatchDocumentInputConfig extends com.google.protobuf.Generate
      * application/vnd.openxmlformats-officedocument.presentationml.presentation
      * - `xlsx`,
      * application/vnd.openxmlformats-officedocument.spreadsheetml.sheet
-     * The max file size supported for `.docx`, `.pptx` and `.xlsx` is 100MB.
-     * The max file size supported for `.pdf` is 1GB and the max page limit is
+     * The max file size to support for `.docx`, `.pptx` and `.xlsx` is 100MB.
+     * The max file size to support for `.pdf` is 1GB and the max page limit is
      * 1000 pages.
-     * The max file size supported for all input documents is 1GB.
+     * The max file size to support for all input documents is 1GB.
      * </pre>
      *
      * <code>.google.cloud.translation.v3beta1.GcsSource gcs_source = 1;</code>
@@ -879,10 +879,10 @@ public final class BatchDocumentInputConfig extends com.google.protobuf.Generate
      * application/vnd.openxmlformats-officedocument.presentationml.presentation
      * - `xlsx`,
      * application/vnd.openxmlformats-officedocument.spreadsheetml.sheet
-     * The max file size supported for `.docx`, `.pptx` and `.xlsx` is 100MB.
-     * The max file size supported for `.pdf` is 1GB and the max page limit is
+     * The max file size to support for `.docx`, `.pptx` and `.xlsx` is 100MB.
+     * The max file size to support for `.pdf` is 1GB and the max page limit is
      * 1000 pages.
-     * The max file size supported for all input documents is 1GB.
+     * The max file size to support for all input documents is 1GB.
      * </pre>
      *
      * <code>.google.cloud.translation.v3beta1.GcsSource gcs_source = 1;</code>
@@ -907,10 +907,10 @@ public final class BatchDocumentInputConfig extends com.google.protobuf.Generate
      * application/vnd.openxmlformats-officedocument.presentationml.presentation
      * - `xlsx`,
      * application/vnd.openxmlformats-officedocument.spreadsheetml.sheet
-     * The max file size supported for `.docx`, `.pptx` and `.xlsx` is 100MB.
-     * The max file size supported for `.pdf` is 1GB and the max page limit is
+     * The max file size to support for `.docx`, `.pptx` and `.xlsx` is 100MB.
+     * The max file size to support for `.pdf` is 1GB and the max page limit is
      * 1000 pages.
-     * The max file size supported for all input documents is 1GB.
+     * The max file size to support for all input documents is 1GB.
      * </pre>
      *
      * <code>.google.cloud.translation.v3beta1.GcsSource gcs_source = 1;</code>
@@ -943,10 +943,10 @@ public final class BatchDocumentInputConfig extends com.google.protobuf.Generate
      * application/vnd.openxmlformats-officedocument.presentationml.presentation
      * - `xlsx`,
      * application/vnd.openxmlformats-officedocument.spreadsheetml.sheet
-     * The max file size supported for `.docx`, `.pptx` and `.xlsx` is 100MB.
-     * The max file size supported for `.pdf` is 1GB and the max page limit is
+     * The max file size to support for `.docx`, `.pptx` and `.xlsx` is 100MB.
+     * The max file size to support for `.pdf` is 1GB and the max page limit is
      * 1000 pages.
-     * The max file size supported for all input documents is 1GB.
+     * The max file size to support for all input documents is 1GB.
      * </pre>
      *
      * <code>.google.cloud.translation.v3beta1.GcsSource gcs_source = 1;</code>

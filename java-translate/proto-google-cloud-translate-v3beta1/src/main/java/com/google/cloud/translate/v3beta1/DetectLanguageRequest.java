@@ -215,7 +215,7 @@ public final class DetectLanguageRequest extends com.google.protobuf.GeneratedMe
    * `projects/{project-number-or-id}`.
    * For global calls, use `projects/{project-number-or-id}/locations/global` or
    * `projects/{project-number-or-id}`.
-   * Only models within the same region, which have the same location-id, can be used.
+   * Only models within the same region (has same location-id) can be used.
    * Otherwise an INVALID_ARGUMENT (400) error is returned.
    * </pre>
    *
@@ -247,7 +247,7 @@ public final class DetectLanguageRequest extends com.google.protobuf.GeneratedMe
    * `projects/{project-number-or-id}`.
    * For global calls, use `projects/{project-number-or-id}/locations/global` or
    * `projects/{project-number-or-id}`.
-   * Only models within the same region, which have the same location-id, can be used.
+   * Only models within the same region (has same location-id) can be used.
    * Otherwise an INVALID_ARGUMENT (400) error is returned.
    * </pre>
    *
@@ -1029,7 +1029,7 @@ public final class DetectLanguageRequest extends com.google.protobuf.GeneratedMe
      * `projects/{project-number-or-id}`.
      * For global calls, use `projects/{project-number-or-id}/locations/global` or
      * `projects/{project-number-or-id}`.
-     * Only models within the same region, which have the same location-id, can be used.
+     * Only models within the same region (has same location-id) can be used.
      * Otherwise an INVALID_ARGUMENT (400) error is returned.
      * </pre>
      *
@@ -1060,7 +1060,7 @@ public final class DetectLanguageRequest extends com.google.protobuf.GeneratedMe
      * `projects/{project-number-or-id}`.
      * For global calls, use `projects/{project-number-or-id}/locations/global` or
      * `projects/{project-number-or-id}`.
-     * Only models within the same region, which have the same location-id, can be used.
+     * Only models within the same region (has same location-id) can be used.
      * Otherwise an INVALID_ARGUMENT (400) error is returned.
      * </pre>
      *
@@ -1091,7 +1091,7 @@ public final class DetectLanguageRequest extends com.google.protobuf.GeneratedMe
      * `projects/{project-number-or-id}`.
      * For global calls, use `projects/{project-number-or-id}/locations/global` or
      * `projects/{project-number-or-id}`.
-     * Only models within the same region, which have the same location-id, can be used.
+     * Only models within the same region (has same location-id) can be used.
      * Otherwise an INVALID_ARGUMENT (400) error is returned.
      * </pre>
      *
@@ -1121,7 +1121,7 @@ public final class DetectLanguageRequest extends com.google.protobuf.GeneratedMe
      * `projects/{project-number-or-id}`.
      * For global calls, use `projects/{project-number-or-id}/locations/global` or
      * `projects/{project-number-or-id}`.
-     * Only models within the same region, which have the same location-id, can be used.
+     * Only models within the same region (has same location-id) can be used.
      * Otherwise an INVALID_ARGUMENT (400) error is returned.
      * </pre>
      *
@@ -1147,7 +1147,7 @@ public final class DetectLanguageRequest extends com.google.protobuf.GeneratedMe
      * `projects/{project-number-or-id}`.
      * For global calls, use `projects/{project-number-or-id}/locations/global` or
      * `projects/{project-number-or-id}`.
-     * Only models within the same region, which have the same location-id, can be used.
+     * Only models within the same region (has same location-id) can be used.
      * Otherwise an INVALID_ARGUMENT (400) error is returned.
      * </pre>
      *

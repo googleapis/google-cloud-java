@@ -256,8 +256,8 @@ public class TranslationServiceClient implements BackgroundResource {
    *     `projects/{project-number-or-id}`.
    *     <p>For global calls, use `projects/{project-number-or-id}/locations/global` or
    *     `projects/{project-number-or-id}`.
-   *     <p>Only models within the same region, which have the same location-id, can be used.
-   *     Otherwise an INVALID_ARGUMENT (400) error is returned.
+   *     <p>Only models within the same region (has same location-id) can be used. Otherwise an
+   *     INVALID_ARGUMENT (400) error is returned.
    * @param model Optional. The language detection model to be used.
    *     <p>Format:
    *     `projects/{project-number-or-id}/locations/{location-id}/models/language-detection/{model-id}`
@@ -300,8 +300,8 @@ public class TranslationServiceClient implements BackgroundResource {
    *     `projects/{project-number-or-id}`.
    *     <p>For global calls, use `projects/{project-number-or-id}/locations/global` or
    *     `projects/{project-number-or-id}`.
-   *     <p>Only models within the same region, which have the same location-id, can be used.
-   *     Otherwise an INVALID_ARGUMENT (400) error is returned.
+   *     <p>Only models within the same region (has same location-id) can be used. Otherwise an
+   *     INVALID_ARGUMENT (400) error is returned.
    * @param model Optional. The language detection model to be used.
    *     <p>Format:
    *     `projects/{project-number-or-id}/locations/{location-id}/models/language-detection/{model-id}`
@@ -408,9 +408,8 @@ public class TranslationServiceClient implements BackgroundResource {
    *     `projects/{project-number-or-id}/locations/{location-id}/models/{model-id}`
    *     <p>- General (built-in) models:
    *     `projects/{project-number-or-id}/locations/{location-id}/models/general/nmt`,
-   *     `projects/{project-number-or-id}/locations/{location-id}/models/general/base`
    *     <p>Returns languages supported by the specified model. If missing, we get supported
-   *     languages of Google general base (PBMT) model.
+   *     languages of Google general NMT model.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final SupportedLanguages getSupportedLanguages(
@@ -457,9 +456,8 @@ public class TranslationServiceClient implements BackgroundResource {
    *     `projects/{project-number-or-id}/locations/{location-id}/models/{model-id}`
    *     <p>- General (built-in) models:
    *     `projects/{project-number-or-id}/locations/{location-id}/models/general/nmt`,
-   *     `projects/{project-number-or-id}/locations/{location-id}/models/general/base`
    *     <p>Returns languages supported by the specified model. If missing, we get supported
-   *     languages of Google general base (PBMT) model.
+   *     languages of Google general NMT model.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final SupportedLanguages getSupportedLanguages(
@@ -710,7 +708,7 @@ public class TranslationServiceClient implements BackgroundResource {
    * try (TranslationServiceClient translationServiceClient = TranslationServiceClient.create()) {
    *   BatchTranslateDocumentRequest request =
    *       BatchTranslateDocumentRequest.newBuilder()
-   *           .setParent("parent-995424086")
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
    *           .setSourceLanguageCode("sourceLanguageCode1645917472")
    *           .addAllTargetLanguageCodes(new ArrayList<String>())
    *           .addAllInputConfigs(new ArrayList<BatchDocumentInputConfig>())
@@ -747,7 +745,7 @@ public class TranslationServiceClient implements BackgroundResource {
    * try (TranslationServiceClient translationServiceClient = TranslationServiceClient.create()) {
    *   BatchTranslateDocumentRequest request =
    *       BatchTranslateDocumentRequest.newBuilder()
-   *           .setParent("parent-995424086")
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
    *           .setSourceLanguageCode("sourceLanguageCode1645917472")
    *           .addAllTargetLanguageCodes(new ArrayList<String>())
    *           .addAllInputConfigs(new ArrayList<BatchDocumentInputConfig>())
@@ -786,7 +784,7 @@ public class TranslationServiceClient implements BackgroundResource {
    * try (TranslationServiceClient translationServiceClient = TranslationServiceClient.create()) {
    *   BatchTranslateDocumentRequest request =
    *       BatchTranslateDocumentRequest.newBuilder()
-   *           .setParent("parent-995424086")
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
    *           .setSourceLanguageCode("sourceLanguageCode1645917472")
    *           .addAllTargetLanguageCodes(new ArrayList<String>())
    *           .addAllInputConfigs(new ArrayList<BatchDocumentInputConfig>())

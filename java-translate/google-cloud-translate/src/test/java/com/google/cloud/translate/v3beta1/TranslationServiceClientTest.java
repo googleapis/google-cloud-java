@@ -498,7 +498,7 @@ public class TranslationServiceClientTest {
 
     BatchTranslateDocumentRequest request =
         BatchTranslateDocumentRequest.newBuilder()
-            .setParent("parent-995424086")
+            .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
             .setSourceLanguageCode("sourceLanguageCode1645917472")
             .addAllTargetLanguageCodes(new ArrayList<String>())
             .addAllInputConfigs(new ArrayList<BatchDocumentInputConfig>())
@@ -538,7 +538,7 @@ public class TranslationServiceClientTest {
     try {
       BatchTranslateDocumentRequest request =
           BatchTranslateDocumentRequest.newBuilder()
-              .setParent("parent-995424086")
+              .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
               .setSourceLanguageCode("sourceLanguageCode1645917472")
               .addAllTargetLanguageCodes(new ArrayList<String>())
               .addAllInputConfigs(new ArrayList<BatchDocumentInputConfig>())

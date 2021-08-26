@@ -230,11 +230,10 @@ public interface TranslateTextRequestOrBuilder
    *   `projects/{project-number-or-id}/locations/{location-id}/models/{model-id}`
    * - General (built-in) models:
    *   `projects/{project-number-or-id}/locations/{location-id}/models/general/nmt`,
-   *   `projects/{project-number-or-id}/locations/{location-id}/models/general/base`
    * For global (non-regionalized) requests, use `location-id` `global`.
    * For example,
    * `projects/{project-number-or-id}/locations/global/models/general/nmt`.
-   * If missing, the system decides which google base model to use.
+   * If not provided, the default Google model (NMT) will be used
    * </pre>
    *
    * <code>string model = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -252,11 +251,10 @@ public interface TranslateTextRequestOrBuilder
    *   `projects/{project-number-or-id}/locations/{location-id}/models/{model-id}`
    * - General (built-in) models:
    *   `projects/{project-number-or-id}/locations/{location-id}/models/general/nmt`,
-   *   `projects/{project-number-or-id}/locations/{location-id}/models/general/base`
    * For global (non-regionalized) requests, use `location-id` `global`.
    * For example,
    * `projects/{project-number-or-id}/locations/global/models/general/nmt`.
-   * If missing, the system decides which google base model to use.
+   * If not provided, the default Google model (NMT) will be used
    * </pre>
    *
    * <code>string model = 6 [(.google.api.field_behavior) = OPTIONAL];</code>

@@ -50,12 +50,12 @@ public interface OutputConfigOrBuilder
    * strings if the input_file is tsv. They could also be empty if we have no
    * content to output.
    * Once a row is present in index.csv, the input/output matching never
-   * changes. Callers should also expect the contents in the input_file are
+   * changes. Callers should also expect all the content in input_file are
    * processed and ready to be consumed (that is, no partial output file is
    * written).
-   * Since index.csv will be updated during the process, please make
+   * Since index.csv will be keeping updated during the process, please make
    * sure there is no custom retention policy applied on the output bucket
-   * that may prevent file updating.
+   * that may avoid file updating.
    * (https://cloud.google.com/storage/docs/bucket-lock?hl=en#retention-policy)
    * The format of translations_file (for target language code 'trg') is:
    * gs://translation_test/a_b_c_'trg'_translations.[extension]
@@ -120,12 +120,12 @@ public interface OutputConfigOrBuilder
    * strings if the input_file is tsv. They could also be empty if we have no
    * content to output.
    * Once a row is present in index.csv, the input/output matching never
-   * changes. Callers should also expect the contents in the input_file are
+   * changes. Callers should also expect all the content in input_file are
    * processed and ready to be consumed (that is, no partial output file is
    * written).
-   * Since index.csv will be updated during the process, please make
+   * Since index.csv will be keeping updated during the process, please make
    * sure there is no custom retention policy applied on the output bucket
-   * that may prevent file updating.
+   * that may avoid file updating.
    * (https://cloud.google.com/storage/docs/bucket-lock?hl=en#retention-policy)
    * The format of translations_file (for target language code 'trg') is:
    * gs://translation_test/a_b_c_'trg'_translations.[extension]
@@ -190,12 +190,12 @@ public interface OutputConfigOrBuilder
    * strings if the input_file is tsv. They could also be empty if we have no
    * content to output.
    * Once a row is present in index.csv, the input/output matching never
-   * changes. Callers should also expect the contents in the input_file are
+   * changes. Callers should also expect all the content in input_file are
    * processed and ready to be consumed (that is, no partial output file is
    * written).
-   * Since index.csv will be updated during the process, please make
+   * Since index.csv will be keeping updated during the process, please make
    * sure there is no custom retention policy applied on the output bucket
-   * that may prevent file updating.
+   * that may avoid file updating.
    * (https://cloud.google.com/storage/docs/bucket-lock?hl=en#retention-policy)
    * The format of translations_file (for target language code 'trg') is:
    * gs://translation_test/a_b_c_'trg'_translations.[extension]
