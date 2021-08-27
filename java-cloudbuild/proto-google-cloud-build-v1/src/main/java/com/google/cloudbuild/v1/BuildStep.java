@@ -48,6 +48,7 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
     secretEnv_ = com.google.protobuf.LazyStringArrayList.EMPTY;
     volumes_ = java.util.Collections.emptyList();
     status_ = 0;
+    script_ = "";
   }
 
   @java.lang.Override
@@ -208,6 +209,13 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
                 pullTiming_ = subBuilder.buildPartial();
               }
 
+              break;
+            }
+          case 154:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              script_ = s;
               break;
             }
           default:
@@ -1090,6 +1098,57 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
     return result == null ? com.google.cloudbuild.v1.Build.Status.UNRECOGNIZED : result;
   }
 
+  public static final int SCRIPT_FIELD_NUMBER = 19;
+  private volatile java.lang.Object script_;
+  /**
+   *
+   *
+   * <pre>
+   * A shell script to be executed in the step.
+   * When script is provided, the user cannot specify the entrypoint or args.
+   * </pre>
+   *
+   * <code>string script = 19;</code>
+   *
+   * @return The script.
+   */
+  @java.lang.Override
+  public java.lang.String getScript() {
+    java.lang.Object ref = script_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      script_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * A shell script to be executed in the step.
+   * When script is provided, the user cannot specify the entrypoint or args.
+   * </pre>
+   *
+   * <code>string script = 19;</code>
+   *
+   * @return The bytes for script.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getScriptBytes() {
+    java.lang.Object ref = script_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      script_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -1142,6 +1201,9 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
     }
     if (pullTiming_ != null) {
       output.writeMessage(13, getPullTiming());
+    }
+    if (!getScriptBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 19, script_);
     }
     unknownFields.writeTo(output);
   }
@@ -1211,6 +1273,9 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
     if (pullTiming_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(13, getPullTiming());
     }
+    if (!getScriptBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(19, script_);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1248,6 +1313,7 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
       if (!getTimeout().equals(other.getTimeout())) return false;
     }
     if (status_ != other.status_) return false;
+    if (!getScript().equals(other.getScript())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -1301,6 +1367,8 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
     }
     hash = (37 * hash) + STATUS_FIELD_NUMBER;
     hash = (53 * hash) + status_;
+    hash = (37 * hash) + SCRIPT_FIELD_NUMBER;
+    hash = (53 * hash) + getScript().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -1489,6 +1557,8 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
       }
       status_ = 0;
 
+      script_ = "";
+
       return this;
     }
 
@@ -1565,6 +1635,7 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
         result.timeout_ = timeoutBuilder_.build();
       }
       result.status_ = status_;
+      result.script_ = script_;
       onBuilt();
       return result;
     }
@@ -1708,6 +1779,10 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.status_ != 0) {
         setStatusValue(other.getStatusValue());
+      }
+      if (!other.getScript().isEmpty()) {
+        script_ = other.script_;
+        onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -4202,6 +4277,117 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
     public Builder clearStatus() {
 
       status_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object script_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * A shell script to be executed in the step.
+     * When script is provided, the user cannot specify the entrypoint or args.
+     * </pre>
+     *
+     * <code>string script = 19;</code>
+     *
+     * @return The script.
+     */
+    public java.lang.String getScript() {
+      java.lang.Object ref = script_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        script_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A shell script to be executed in the step.
+     * When script is provided, the user cannot specify the entrypoint or args.
+     * </pre>
+     *
+     * <code>string script = 19;</code>
+     *
+     * @return The bytes for script.
+     */
+    public com.google.protobuf.ByteString getScriptBytes() {
+      java.lang.Object ref = script_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        script_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A shell script to be executed in the step.
+     * When script is provided, the user cannot specify the entrypoint or args.
+     * </pre>
+     *
+     * <code>string script = 19;</code>
+     *
+     * @param value The script to set.
+     * @return This builder for chaining.
+     */
+    public Builder setScript(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+
+      script_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A shell script to be executed in the step.
+     * When script is provided, the user cannot specify the entrypoint or args.
+     * </pre>
+     *
+     * <code>string script = 19;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearScript() {
+
+      script_ = getDefaultInstance().getScript();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A shell script to be executed in the step.
+     * When script is provided, the user cannot specify the entrypoint or args.
+     * </pre>
+     *
+     * <code>string script = 19;</code>
+     *
+     * @param value The bytes for script to set.
+     * @return This builder for chaining.
+     */
+    public Builder setScriptBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
+      script_ = value;
       onChanged();
       return this;
     }
