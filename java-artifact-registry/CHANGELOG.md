@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.4.0](https://www.github.com/googleapis/java-artifact-registry/compare/v0.3.2...v0.4.0) (2021-08-27)
+
+
+### Features
+
+* Remove use of deprecated gradle command in java README ([#1196](https://www.github.com/googleapis/java-artifact-registry/issues/1196)) ([#127](https://www.github.com/googleapis/java-artifact-registry/issues/127)) ([c442676](https://www.github.com/googleapis/java-artifact-registry/commit/c44267689ee8dc224990f28da7d872432ee821ac))
+
 ### [0.3.2](https://www.github.com/googleapis/java-artifact-registry/compare/v0.3.1...v0.3.2) (2021-08-23)
 
 
