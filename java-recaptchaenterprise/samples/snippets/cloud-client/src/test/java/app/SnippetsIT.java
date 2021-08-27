@@ -58,15 +58,14 @@ public class SnippetsIT {
   private static String RECAPTCHA_SITE_KEY_1 = "recaptcha-site-key1";
   private static String RECAPTCHA_SITE_KEY_2 = "recaptcha-site-key2";
   private static WebDriver browser;
-  @LocalServerPort
-  private int randomServerPort;
+  @LocalServerPort private int randomServerPort;
   private ByteArrayOutputStream stdOut;
-
 
   // Check if the required environment variables are set.
   public static void requireEnvVar(String envVarName) {
     assertWithMessage(String.format("Missing environment variable '%s' ", envVarName))
-        .that(System.getenv(envVarName)).isNotEmpty();
+        .that(System.getenv(envVarName))
+        .isNotEmpty();
   }
 
   @BeforeClass
@@ -148,16 +147,19 @@ public class SnippetsIT {
   public void testCreateAssessment() throws IOException, JSONException, InterruptedException {
     // Construct the URL to call for validating the assessment.
     String assessURL = "http://localhost:" + randomServerPort + "/";
-    URI url = UriComponentsBuilder.fromUriString(assessURL)
-        .queryParam("recaptchaSiteKey", RECAPTCHA_SITE_KEY_1)
-        .build().encode().toUri();
+    URI url =
+        UriComponentsBuilder.fromUriString(assessURL)
+            .queryParam("recaptchaSiteKey", RECAPTCHA_SITE_KEY_1)
+            .build()
+            .encode()
+            .toUri();
 
     browser.get(url.toURL().toString());
 
     // Wait until the page is loaded.
     JavascriptExecutor js = (JavascriptExecutor) browser;
-    new WebDriverWait(browser, 10).until(
-        webDriver -> js.executeScript("return document.readyState").equals("complete"));
+    new WebDriverWait(browser, 10)
+        .until(webDriver -> js.executeScript("return document.readyState").equals("complete"));
 
     // Pass the values to be entered.
     browser.findElement(By.id("username")).sendKeys("username");
@@ -186,8 +188,8 @@ public class SnippetsIT {
     recaptcha.CreateAssessment.createAssessment(PROJECT_ID, RECAPTCHA_SITE_KEY_1, token, action);
     String response = stdOut.toString();
     assertThat(response).contains("The reCAPTCHA score is: ");
-    float recaptchaScore = Float
-        .parseFloat(response.substring(response.lastIndexOf(":") + 1).trim());
+    float recaptchaScore =
+        Float.parseFloat(response.substring(response.lastIndexOf(":") + 1).trim());
     return recaptchaScore;
   }
 }

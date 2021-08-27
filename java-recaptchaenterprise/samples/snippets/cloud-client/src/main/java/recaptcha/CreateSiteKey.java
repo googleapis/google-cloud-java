@@ -26,7 +26,6 @@ import com.google.recaptchaenterprise.v1.WebKeySettings;
 import com.google.recaptchaenterprise.v1.WebKeySettings.IntegrationType;
 import java.io.IOException;
 
-
 public class CreateSiteKey {
 
   public static void main(String[] args) throws IOException {
@@ -52,18 +51,22 @@ public class CreateSiteKey {
 
       // Set the type of reCAPTCHA to be displayed.
       // For different types, see: https://cloud.google.com/recaptcha-enterprise/docs/keys
-      Key scoreKey = Key.newBuilder()
-          .setDisplayName("any_descriptive_name_for_the_key")
-          .setWebSettings(WebKeySettings.newBuilder()
-              .addAllowedDomains(domainName)
-              .setAllowAmpTraffic(false)
-              .setIntegrationType(IntegrationType.SCORE).build())
-          .build();
+      Key scoreKey =
+          Key.newBuilder()
+              .setDisplayName("any_descriptive_name_for_the_key")
+              .setWebSettings(
+                  WebKeySettings.newBuilder()
+                      .addAllowedDomains(domainName)
+                      .setAllowAmpTraffic(false)
+                      .setIntegrationType(IntegrationType.SCORE)
+                      .build())
+              .build();
 
-      CreateKeyRequest createKeyRequest = CreateKeyRequest.newBuilder()
-          .setParent(ProjectName.of(projectID).toString())
-          .setKey(scoreKey)
-          .build();
+      CreateKeyRequest createKeyRequest =
+          CreateKeyRequest.newBuilder()
+              .setParent(ProjectName.of(projectID).toString())
+              .setKey(scoreKey)
+              .build();
 
       // Get the name of the created reCAPTCHA site key.
       Key response = client.createKey(createKeyRequest);
@@ -75,4 +78,3 @@ public class CreateSiteKey {
   }
 }
 // [END recaptcha_enterprise_create_site_key]
-

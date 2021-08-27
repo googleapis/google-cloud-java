@@ -56,27 +56,33 @@ public class UpdateSiteKey {
     try (RecaptchaEnterpriseServiceClient client = RecaptchaEnterpriseServiceClient.create()) {
 
       // Set the name and the new settings for the key.
-      UpdateKeyRequest updateKeyRequest = UpdateKeyRequest.newBuilder()
-          .setKey(Key.newBuilder()
-              .setName(KeyName.of(projectID, recaptchaSiteKeyID).toString())
-              .setWebSettings(WebKeySettings.newBuilder()
-                  .setAllowAmpTraffic(true)
-                  .addAllowedDomains(domainName).build())
-              .build())
-          .build();
+      UpdateKeyRequest updateKeyRequest =
+          UpdateKeyRequest.newBuilder()
+              .setKey(
+                  Key.newBuilder()
+                      .setName(KeyName.of(projectID, recaptchaSiteKeyID).toString())
+                      .setWebSettings(
+                          WebKeySettings.newBuilder()
+                              .setAllowAmpTraffic(true)
+                              .addAllowedDomains(domainName)
+                              .build())
+                      .build())
+              .build();
 
       client.updateKeyCallable().futureCall(updateKeyRequest).get();
 
       // Check if the key has been updated.
-      GetKeyRequest getKeyRequest = GetKeyRequest.newBuilder()
-          .setName(KeyName.of(projectID, recaptchaSiteKeyID).toString()).build();
+      GetKeyRequest getKeyRequest =
+          GetKeyRequest.newBuilder()
+              .setName(KeyName.of(projectID, recaptchaSiteKeyID).toString())
+              .build();
       Key response = client.getKey(getKeyRequest);
 
       // Get the changed property.
       boolean allowedAmpTraffic = response.getWebSettings().getAllowAmpTraffic();
       if (!allowedAmpTraffic) {
-        System.out
-            .println("Error! reCAPTCHA Site key property hasn't been updated. Please try again !");
+        System.out.println(
+            "Error! reCAPTCHA Site key property hasn't been updated. Please try again !");
         return;
       }
       System.out.println("reCAPTCHA Site key successfully updated !");

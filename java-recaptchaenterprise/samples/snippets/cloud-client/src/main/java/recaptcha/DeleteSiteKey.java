@@ -52,9 +52,10 @@ public class DeleteSiteKey {
     try (RecaptchaEnterpriseServiceClient client = RecaptchaEnterpriseServiceClient.create()) {
 
       // Set the project ID and reCAPTCHA site key.
-      DeleteKeyRequest deleteKeyRequest = DeleteKeyRequest.newBuilder()
-          .setName(KeyName.of(projectID, recaptchaSiteKey).toString())
-          .build();
+      DeleteKeyRequest deleteKeyRequest =
+          DeleteKeyRequest.newBuilder()
+              .setName(KeyName.of(projectID, recaptchaSiteKey).toString())
+              .build();
 
       client.deleteKeyCallable().futureCall(deleteKeyRequest).get(5, TimeUnit.SECONDS);
       System.out.println("reCAPTCHA Site key successfully deleted !");

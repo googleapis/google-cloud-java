@@ -45,9 +45,8 @@ public class ListSiteKeys {
     // clean up any remaining background resources.
     try (RecaptchaEnterpriseServiceClient client = RecaptchaEnterpriseServiceClient.create()) {
       // Set the project ID to list the keys present in it.
-      ListKeysRequest listKeysRequest = ListKeysRequest.newBuilder()
-          .setParent(ProjectName.of(projectID).toString())
-          .build();
+      ListKeysRequest listKeysRequest =
+          ListKeysRequest.newBuilder().setParent(ProjectName.of(projectID).toString()).build();
 
       System.out.println("Listing reCAPTCHA site keys: ");
       for (Key key : client.listKeys(listKeysRequest).iterateAll()) {

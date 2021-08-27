@@ -101,6 +101,22 @@ use this reCAPTCHA Enterprise Client Library.
 
 
 
+## Samples
+
+Samples are in the [`samples/`](https://github.com/googleapis/java-recaptchaenterprise/tree/master/samples) directory.
+
+| Sample                      | Source Code                       | Try it |
+| --------------------------- | --------------------------------- | ------ |
+| Main | [source code](https://github.com/googleapis/java-recaptchaenterprise/blob/master/samples/snippets/cloud-client/src/main/java/app/Main.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-recaptchaenterprise&page=editor&open_in_editor=samples/snippets/cloud-client/src/main/java/app/Main.java) |
+| Main Controller | [source code](https://github.com/googleapis/java-recaptchaenterprise/blob/master/samples/snippets/cloud-client/src/main/java/app/MainController.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-recaptchaenterprise&page=editor&open_in_editor=samples/snippets/cloud-client/src/main/java/app/MainController.java) |
+| Create Assessment | [source code](https://github.com/googleapis/java-recaptchaenterprise/blob/master/samples/snippets/cloud-client/src/main/java/recaptcha/CreateAssessment.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-recaptchaenterprise&page=editor&open_in_editor=samples/snippets/cloud-client/src/main/java/recaptcha/CreateAssessment.java) |
+| Create Site Key | [source code](https://github.com/googleapis/java-recaptchaenterprise/blob/master/samples/snippets/cloud-client/src/main/java/recaptcha/CreateSiteKey.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-recaptchaenterprise&page=editor&open_in_editor=samples/snippets/cloud-client/src/main/java/recaptcha/CreateSiteKey.java) |
+| Delete Site Key | [source code](https://github.com/googleapis/java-recaptchaenterprise/blob/master/samples/snippets/cloud-client/src/main/java/recaptcha/DeleteSiteKey.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-recaptchaenterprise&page=editor&open_in_editor=samples/snippets/cloud-client/src/main/java/recaptcha/DeleteSiteKey.java) |
+| Get Site Key | [source code](https://github.com/googleapis/java-recaptchaenterprise/blob/master/samples/snippets/cloud-client/src/main/java/recaptcha/GetSiteKey.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-recaptchaenterprise&page=editor&open_in_editor=samples/snippets/cloud-client/src/main/java/recaptcha/GetSiteKey.java) |
+| List Site Keys | [source code](https://github.com/googleapis/java-recaptchaenterprise/blob/master/samples/snippets/cloud-client/src/main/java/recaptcha/ListSiteKeys.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-recaptchaenterprise&page=editor&open_in_editor=samples/snippets/cloud-client/src/main/java/recaptcha/ListSiteKeys.java) |
+| Update Site Key | [source code](https://github.com/googleapis/java-recaptchaenterprise/blob/master/samples/snippets/cloud-client/src/main/java/recaptcha/UpdateSiteKey.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-recaptchaenterprise&page=editor&open_in_editor=samples/snippets/cloud-client/src/main/java/recaptcha/UpdateSiteKey.java) |
+
+
 
 ## Troubleshooting
 

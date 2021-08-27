@@ -39,7 +39,6 @@ public class GetSiteKey {
     getSiteKey(projectID, recaptchaSiteKey);
   }
 
-
   /**
    * Get the reCAPTCHA site key present under the project ID.
    *
@@ -55,9 +54,10 @@ public class GetSiteKey {
     try (RecaptchaEnterpriseServiceClient client = RecaptchaEnterpriseServiceClient.create()) {
 
       // Construct the "GetSiteKey" request.
-      GetKeyRequest getKeyRequest = GetKeyRequest.newBuilder()
-          .setName(KeyName.of(projectID, recaptchaSiteKey).toString())
-          .build();
+      GetKeyRequest getKeyRequest =
+          GetKeyRequest.newBuilder()
+              .setName(KeyName.of(projectID, recaptchaSiteKey).toString())
+              .build();
 
       // Wait for the operation to complete.
       ApiFuture<Key> futureCall = client.getKeyCallable().futureCall(getKeyRequest);
