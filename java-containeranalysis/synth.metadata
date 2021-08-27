@@ -4,15 +4,15 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/java-containeranalysis.git",
-        "sha": "7051453d344f9ec209201367137886a113bc7c64"
+        "sha": "b14ede570a51213e1962a7645934d2e523dc6c85"
       }
     },
     {
       "git": {
         "name": "googleapis",
         "remote": "https://github.com/googleapis/googleapis.git",
-        "sha": "a739464cacb3aa6d375683aefe16b79c21da1bb0",
-        "internalRef": "389657692"
+        "sha": "e1738ee972b49fd0c4d4718b035444495142b781",
+        "internalRef": "391407209"
       }
     },
     {
