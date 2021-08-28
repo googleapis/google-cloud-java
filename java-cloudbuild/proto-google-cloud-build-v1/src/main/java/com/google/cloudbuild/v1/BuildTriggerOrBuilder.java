@@ -747,38 +747,5 @@ public interface BuildTriggerOrBuilder
    */
   com.google.protobuf.ByteString getFilterBytes();
 
-  /**
-   *
-   *
-   * <pre>
-   * The service account used for all user-controlled operations including
-   * UpdateBuildTrigger, RunBuildTrigger, CreateBuild, and CancelBuild.
-   * If no service account is set, then the standard Cloud Build service account
-   * ([PROJECT_NUM]&#64;system.gserviceaccount.com) will be used instead.
-   * Format: `projects/{PROJECT_ID}/serviceAccounts/{ACCOUNT_ID_OR_EMAIL}`
-   * </pre>
-   *
-   * <code>string service_account = 33 [(.google.api.resource_reference) = { ... }</code>
-   *
-   * @return The serviceAccount.
-   */
-  java.lang.String getServiceAccount();
-  /**
-   *
-   *
-   * <pre>
-   * The service account used for all user-controlled operations including
-   * UpdateBuildTrigger, RunBuildTrigger, CreateBuild, and CancelBuild.
-   * If no service account is set, then the standard Cloud Build service account
-   * ([PROJECT_NUM]&#64;system.gserviceaccount.com) will be used instead.
-   * Format: `projects/{PROJECT_ID}/serviceAccounts/{ACCOUNT_ID_OR_EMAIL}`
-   * </pre>
-   *
-   * <code>string service_account = 33 [(.google.api.resource_reference) = { ... }</code>
-   *
-   * @return The bytes for serviceAccount.
-   */
-  com.google.protobuf.ByteString getServiceAccountBytes();
-
   public com.google.cloudbuild.v1.BuildTrigger.BuildTemplateCase getBuildTemplateCase();
 }

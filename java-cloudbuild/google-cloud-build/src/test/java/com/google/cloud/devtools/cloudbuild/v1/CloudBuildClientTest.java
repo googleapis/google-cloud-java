@@ -565,7 +565,6 @@ public class CloudBuildClientTest {
             .addAllIgnoredFiles(new ArrayList<String>())
             .addAllIncludedFiles(new ArrayList<String>())
             .setFilter("filter-1274492040")
-            .setServiceAccount("serviceAccount1079137720")
             .build();
     mockCloudBuild.addResponse(expectedResponse);
 
@@ -621,7 +620,6 @@ public class CloudBuildClientTest {
             .addAllIgnoredFiles(new ArrayList<String>())
             .addAllIncludedFiles(new ArrayList<String>())
             .setFilter("filter-1274492040")
-            .setServiceAccount("serviceAccount1079137720")
             .build();
     mockCloudBuild.addResponse(expectedResponse);
 
@@ -758,7 +756,6 @@ public class CloudBuildClientTest {
             .addAllIgnoredFiles(new ArrayList<String>())
             .addAllIncludedFiles(new ArrayList<String>())
             .setFilter("filter-1274492040")
-            .setServiceAccount("serviceAccount1079137720")
             .build();
     mockCloudBuild.addResponse(expectedResponse);
 
