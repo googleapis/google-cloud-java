@@ -1,5 +1,13 @@
 # Changelog
 
+## [3.2.0](https://www.github.com/googleapis/java-cloudbuild/compare/v3.1.0...v3.2.0) (2021-08-27)
+
+
+### Features
+
+* Remove use of deprecated gradle command in java README ([#1196](https://www.github.com/googleapis/java-cloudbuild/issues/1196)) ([#589](https://www.github.com/googleapis/java-cloudbuild/issues/589)) ([8791708](https://www.github.com/googleapis/java-cloudbuild/commit/8791708b6b01e26108822b1c78be824e9a73af1e))
+* Update cloudbuild proto with the service_account for BYOSA Triggers. ([#586](https://www.github.com/googleapis/java-cloudbuild/issues/586)) ([84ce78e](https://www.github.com/googleapis/java-cloudbuild/commit/84ce78eec59d3889fdce3fd74234d5397aabb3d1))
+
 ## [3.1.0](https://www.github.com/googleapis/java-cloudbuild/compare/v3.0.1...v3.1.0) (2021-08-24)
 
 
