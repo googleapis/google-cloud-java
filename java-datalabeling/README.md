@@ -54,12 +54,12 @@ If you are using Gradle 5.x or later, add this to your dependencies
 ```Groovy
 implementation platform('com.google.cloud:libraries-bom:22.0.0')
 
-compile 'com.google.cloud:google-cloud-datalabeling'
+implementation 'com.google.cloud:google-cloud-datalabeling'
 ```
 If you are using Gradle without BOM, add this to your dependencies
 
 ```Groovy
-compile 'com.google.cloud:google-cloud-datalabeling:0.121.2'
+implementation 'com.google.cloud:google-cloud-datalabeling:0.121.2'
 ```
 
 If you are using SBT, add this to your dependencies
