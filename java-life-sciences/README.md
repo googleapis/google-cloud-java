@@ -29,7 +29,7 @@ If you are using Maven, add this to your pom.xml file:
 If you are using Gradle without BOM, add this to your dependencies
 
 ```Groovy
-compile 'com.google.cloud:google-cloud-life-sciences:0.2.2'
+implementation 'com.google.cloud:google-cloud-life-sciences:0.2.2'
 ```
 
 If you are using SBT, add this to your dependencies
