@@ -38,14 +38,14 @@ If you are using Maven without BOM, add this to your dependencies:
 If you are using Gradle 5.x or later, add this to your dependencies
 
 ```Groovy
-implementation platform('com.google.cloud:libraries-bom:21.0.0')
+implementation platform('com.google.cloud:libraries-bom:22.0.0')
 
-compile 'com.google.cloud:google-cloud-aiplatform'
+implementation 'com.google.cloud:google-cloud-aiplatform'
 ```
 If you are using Gradle without BOM, add this to your dependencies
 
 ```Groovy
-compile 'com.google.cloud:google-cloud-aiplatform:2.0.2'
+implementation 'com.google.cloud:google-cloud-aiplatform:2.0.2'
 ```
 
 If you are using SBT, add this to your dependencies
