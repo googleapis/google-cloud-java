@@ -29,7 +29,7 @@ If you are using Maven, add this to your pom.xml file:
 If you are using Gradle without BOM, add this to your dependencies
 
 ```Groovy
-compile 'com.google.area120:google-area120-tables:0.4.2'
+implementation 'com.google.area120:google-area120-tables:0.4.2'
 ```
 
 If you are using SBT, add this to your dependencies
