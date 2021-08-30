@@ -16,7 +16,6 @@
 
 package com.google.cloud.datacatalog.v1;
 
-import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
 import com.google.api.core.BetaApi;
@@ -3526,7 +3525,7 @@ public class DataCatalogClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (DataCatalogClient dataCatalogClient = DataCatalogClient.create()) {
-   *   ResourceName resource = TaxonomyName.of("[PROJECT]", "[LOCATION]", "[TAXONOMY]");
+   *   ResourceName resource = EntryName.of("[PROJECT]", "[LOCATION]", "[ENTRY_GROUP]", "[ENTRY]");
    *   Policy policy = Policy.newBuilder().build();
    *   Policy response = dataCatalogClient.setIamPolicy(resource, policy);
    * }
@@ -3569,7 +3568,8 @@ public class DataCatalogClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (DataCatalogClient dataCatalogClient = DataCatalogClient.create()) {
-   *   String resource = TaxonomyName.of("[PROJECT]", "[LOCATION]", "[TAXONOMY]").toString();
+   *   String resource =
+   *       EntryName.of("[PROJECT]", "[LOCATION]", "[ENTRY_GROUP]", "[ENTRY]").toString();
    *   Policy policy = Policy.newBuilder().build();
    *   Policy response = dataCatalogClient.setIamPolicy(resource, policy);
    * }
@@ -3611,7 +3611,8 @@ public class DataCatalogClient implements BackgroundResource {
    * try (DataCatalogClient dataCatalogClient = DataCatalogClient.create()) {
    *   SetIamPolicyRequest request =
    *       SetIamPolicyRequest.newBuilder()
-   *           .setResource(TaxonomyName.of("[PROJECT]", "[LOCATION]", "[TAXONOMY]").toString())
+   *           .setResource(
+   *               EntryName.of("[PROJECT]", "[LOCATION]", "[ENTRY_GROUP]", "[ENTRY]").toString())
    *           .setPolicy(Policy.newBuilder().build())
    *           .build();
    *   Policy response = dataCatalogClient.setIamPolicy(request);
@@ -3648,7 +3649,8 @@ public class DataCatalogClient implements BackgroundResource {
    * try (DataCatalogClient dataCatalogClient = DataCatalogClient.create()) {
    *   SetIamPolicyRequest request =
    *       SetIamPolicyRequest.newBuilder()
-   *           .setResource(TaxonomyName.of("[PROJECT]", "[LOCATION]", "[TAXONOMY]").toString())
+   *           .setResource(
+   *               EntryName.of("[PROJECT]", "[LOCATION]", "[ENTRY_GROUP]", "[ENTRY]").toString())
    *           .setPolicy(Policy.newBuilder().build())
    *           .build();
    *   ApiFuture<Policy> future = dataCatalogClient.setIamPolicyCallable().futureCall(request);
@@ -3689,7 +3691,7 @@ public class DataCatalogClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (DataCatalogClient dataCatalogClient = DataCatalogClient.create()) {
-   *   ResourceName resource = TaxonomyName.of("[PROJECT]", "[LOCATION]", "[TAXONOMY]");
+   *   ResourceName resource = EntryName.of("[PROJECT]", "[LOCATION]", "[ENTRY_GROUP]", "[ENTRY]");
    *   Policy response = dataCatalogClient.getIamPolicy(resource);
    * }
    * }</pre>
@@ -3734,7 +3736,8 @@ public class DataCatalogClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (DataCatalogClient dataCatalogClient = DataCatalogClient.create()) {
-   *   String resource = TaxonomyName.of("[PROJECT]", "[LOCATION]", "[TAXONOMY]").toString();
+   *   String resource =
+   *       EntryName.of("[PROJECT]", "[LOCATION]", "[ENTRY_GROUP]", "[ENTRY]").toString();
    *   Policy response = dataCatalogClient.getIamPolicy(resource);
    * }
    * }</pre>
@@ -3778,7 +3781,8 @@ public class DataCatalogClient implements BackgroundResource {
    * try (DataCatalogClient dataCatalogClient = DataCatalogClient.create()) {
    *   GetIamPolicyRequest request =
    *       GetIamPolicyRequest.newBuilder()
-   *           .setResource(TaxonomyName.of("[PROJECT]", "[LOCATION]", "[TAXONOMY]").toString())
+   *           .setResource(
+   *               EntryName.of("[PROJECT]", "[LOCATION]", "[ENTRY_GROUP]", "[ENTRY]").toString())
    *           .setOptions(GetPolicyOptions.newBuilder().build())
    *           .build();
    *   Policy response = dataCatalogClient.getIamPolicy(request);
@@ -3822,7 +3826,8 @@ public class DataCatalogClient implements BackgroundResource {
    * try (DataCatalogClient dataCatalogClient = DataCatalogClient.create()) {
    *   GetIamPolicyRequest request =
    *       GetIamPolicyRequest.newBuilder()
-   *           .setResource(TaxonomyName.of("[PROJECT]", "[LOCATION]", "[TAXONOMY]").toString())
+   *           .setResource(
+   *               EntryName.of("[PROJECT]", "[LOCATION]", "[ENTRY_GROUP]", "[ENTRY]").toString())
    *           .setOptions(GetPolicyOptions.newBuilder().build())
    *           .build();
    *   ApiFuture<Policy> future = dataCatalogClient.getIamPolicyCallable().futureCall(request);
@@ -3857,7 +3862,8 @@ public class DataCatalogClient implements BackgroundResource {
    * try (DataCatalogClient dataCatalogClient = DataCatalogClient.create()) {
    *   TestIamPermissionsRequest request =
    *       TestIamPermissionsRequest.newBuilder()
-   *           .setResource(TaxonomyName.of("[PROJECT]", "[LOCATION]", "[TAXONOMY]").toString())
+   *           .setResource(
+   *               EntryName.of("[PROJECT]", "[LOCATION]", "[ENTRY_GROUP]", "[ENTRY]").toString())
    *           .addAllPermissions(new ArrayList<String>())
    *           .build();
    *   TestIamPermissionsResponse response = dataCatalogClient.testIamPermissions(request);
@@ -3893,7 +3899,8 @@ public class DataCatalogClient implements BackgroundResource {
    * try (DataCatalogClient dataCatalogClient = DataCatalogClient.create()) {
    *   TestIamPermissionsRequest request =
    *       TestIamPermissionsRequest.newBuilder()
-   *           .setResource(TaxonomyName.of("[PROJECT]", "[LOCATION]", "[TAXONOMY]").toString())
+   *           .setResource(
+   *               EntryName.of("[PROJECT]", "[LOCATION]", "[ENTRY_GROUP]", "[ENTRY]").toString())
    *           .addAllPermissions(new ArrayList<String>())
    *           .build();
    *   ApiFuture<TestIamPermissionsResponse> future =
@@ -3953,12 +3960,7 @@ public class DataCatalogClient implements BackgroundResource {
           SearchCatalogPage.createEmptyPage().createPageAsync(context, futureResponse);
       return ApiFutures.transform(
           futurePage,
-          new ApiFunction<SearchCatalogPage, SearchCatalogPagedResponse>() {
-            @Override
-            public SearchCatalogPagedResponse apply(SearchCatalogPage input) {
-              return new SearchCatalogPagedResponse(input);
-            }
-          },
+          input -> new SearchCatalogPagedResponse(input),
           MoreExecutors.directExecutor());
     }
 
@@ -4034,12 +4036,7 @@ public class DataCatalogClient implements BackgroundResource {
           ListEntryGroupsPage.createEmptyPage().createPageAsync(context, futureResponse);
       return ApiFutures.transform(
           futurePage,
-          new ApiFunction<ListEntryGroupsPage, ListEntryGroupsPagedResponse>() {
-            @Override
-            public ListEntryGroupsPagedResponse apply(ListEntryGroupsPage input) {
-              return new ListEntryGroupsPagedResponse(input);
-            }
-          },
+          input -> new ListEntryGroupsPagedResponse(input),
           MoreExecutors.directExecutor());
     }
 
@@ -4115,14 +4112,7 @@ public class DataCatalogClient implements BackgroundResource {
       ApiFuture<ListEntriesPage> futurePage =
           ListEntriesPage.createEmptyPage().createPageAsync(context, futureResponse);
       return ApiFutures.transform(
-          futurePage,
-          new ApiFunction<ListEntriesPage, ListEntriesPagedResponse>() {
-            @Override
-            public ListEntriesPagedResponse apply(ListEntriesPage input) {
-              return new ListEntriesPagedResponse(input);
-            }
-          },
-          MoreExecutors.directExecutor());
+          futurePage, input -> new ListEntriesPagedResponse(input), MoreExecutors.directExecutor());
     }
 
     private ListEntriesPagedResponse(ListEntriesPage page) {
@@ -4191,14 +4181,7 @@ public class DataCatalogClient implements BackgroundResource {
       ApiFuture<ListTagsPage> futurePage =
           ListTagsPage.createEmptyPage().createPageAsync(context, futureResponse);
       return ApiFutures.transform(
-          futurePage,
-          new ApiFunction<ListTagsPage, ListTagsPagedResponse>() {
-            @Override
-            public ListTagsPagedResponse apply(ListTagsPage input) {
-              return new ListTagsPagedResponse(input);
-            }
-          },
-          MoreExecutors.directExecutor());
+          futurePage, input -> new ListTagsPagedResponse(input), MoreExecutors.directExecutor());
     }
 
     private ListTagsPagedResponse(ListTagsPage page) {

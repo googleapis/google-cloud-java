@@ -21,7 +21,6 @@ import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.grpc.GrpcCallSettings;
 import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
-import com.google.api.gax.rpc.RequestParamsExtractor;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.datacatalog.v1.ExportTaxonomiesRequest;
 import com.google.cloud.datacatalog.v1.ExportTaxonomiesResponse;
@@ -34,7 +33,6 @@ import com.google.longrunning.stub.GrpcOperationsStub;
 import io.grpc.MethodDescriptor;
 import io.grpc.protobuf.ProtoUtils;
 import java.io.IOException;
-import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
@@ -138,13 +136,10 @@ public class GrpcPolicyTagManagerSerializationStub extends PolicyTagManagerSeria
         GrpcCallSettings.<ReplaceTaxonomyRequest, Taxonomy>newBuilder()
             .setMethodDescriptor(replaceTaxonomyMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<ReplaceTaxonomyRequest>() {
-                  @Override
-                  public Map<String, String> extract(ReplaceTaxonomyRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("name", String.valueOf(request.getName()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<ImportTaxonomiesRequest, ImportTaxonomiesResponse>
@@ -152,13 +147,10 @@ public class GrpcPolicyTagManagerSerializationStub extends PolicyTagManagerSeria
             GrpcCallSettings.<ImportTaxonomiesRequest, ImportTaxonomiesResponse>newBuilder()
                 .setMethodDescriptor(importTaxonomiesMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<ImportTaxonomiesRequest>() {
-                      @Override
-                      public Map<String, String> extract(ImportTaxonomiesRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("parent", String.valueOf(request.getParent()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("parent", String.valueOf(request.getParent()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<ExportTaxonomiesRequest, ExportTaxonomiesResponse>
@@ -166,13 +158,10 @@ public class GrpcPolicyTagManagerSerializationStub extends PolicyTagManagerSeria
             GrpcCallSettings.<ExportTaxonomiesRequest, ExportTaxonomiesResponse>newBuilder()
                 .setMethodDescriptor(exportTaxonomiesMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<ExportTaxonomiesRequest>() {
-                      @Override
-                      public Map<String, String> extract(ExportTaxonomiesRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("parent", String.valueOf(request.getParent()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("parent", String.valueOf(request.getParent()));
+                      return params.build();
                     })
                 .build();
 
@@ -213,7 +202,13 @@ public class GrpcPolicyTagManagerSerializationStub extends PolicyTagManagerSeria
 
   @Override
   public final void close() {
-    shutdown();
+    try {
+      backgroundResources.close();
+    } catch (RuntimeException e) {
+      throw e;
+    } catch (Exception e) {
+      throw new IllegalStateException("Failed to close resource", e);
+    }
   }
 
   @Override

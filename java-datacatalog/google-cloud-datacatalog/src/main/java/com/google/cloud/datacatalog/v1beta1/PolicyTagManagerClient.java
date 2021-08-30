@@ -16,7 +16,6 @@
 
 package com.google.cloud.datacatalog.v1beta1;
 
-import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
 import com.google.api.core.BetaApi;
@@ -1178,7 +1177,8 @@ public class PolicyTagManagerClient implements BackgroundResource {
    * try (PolicyTagManagerClient policyTagManagerClient = PolicyTagManagerClient.create()) {
    *   GetIamPolicyRequest request =
    *       GetIamPolicyRequest.newBuilder()
-   *           .setResource(TaxonomyName.of("[PROJECT]", "[LOCATION]", "[TAXONOMY]").toString())
+   *           .setResource(
+   *               EntryName.of("[PROJECT]", "[LOCATION]", "[ENTRY_GROUP]", "[ENTRY]").toString())
    *           .setOptions(GetPolicyOptions.newBuilder().build())
    *           .build();
    *   Policy response = policyTagManagerClient.getIamPolicy(request);
@@ -1202,7 +1202,8 @@ public class PolicyTagManagerClient implements BackgroundResource {
    * try (PolicyTagManagerClient policyTagManagerClient = PolicyTagManagerClient.create()) {
    *   GetIamPolicyRequest request =
    *       GetIamPolicyRequest.newBuilder()
-   *           .setResource(TaxonomyName.of("[PROJECT]", "[LOCATION]", "[TAXONOMY]").toString())
+   *           .setResource(
+   *               EntryName.of("[PROJECT]", "[LOCATION]", "[ENTRY_GROUP]", "[ENTRY]").toString())
    *           .setOptions(GetPolicyOptions.newBuilder().build())
    *           .build();
    *   ApiFuture<Policy> future = policyTagManagerClient.getIamPolicyCallable().futureCall(request);
@@ -1225,7 +1226,8 @@ public class PolicyTagManagerClient implements BackgroundResource {
    * try (PolicyTagManagerClient policyTagManagerClient = PolicyTagManagerClient.create()) {
    *   SetIamPolicyRequest request =
    *       SetIamPolicyRequest.newBuilder()
-   *           .setResource(TaxonomyName.of("[PROJECT]", "[LOCATION]", "[TAXONOMY]").toString())
+   *           .setResource(
+   *               EntryName.of("[PROJECT]", "[LOCATION]", "[ENTRY_GROUP]", "[ENTRY]").toString())
    *           .setPolicy(Policy.newBuilder().build())
    *           .build();
    *   Policy response = policyTagManagerClient.setIamPolicy(request);
@@ -1249,7 +1251,8 @@ public class PolicyTagManagerClient implements BackgroundResource {
    * try (PolicyTagManagerClient policyTagManagerClient = PolicyTagManagerClient.create()) {
    *   SetIamPolicyRequest request =
    *       SetIamPolicyRequest.newBuilder()
-   *           .setResource(TaxonomyName.of("[PROJECT]", "[LOCATION]", "[TAXONOMY]").toString())
+   *           .setResource(
+   *               EntryName.of("[PROJECT]", "[LOCATION]", "[ENTRY_GROUP]", "[ENTRY]").toString())
    *           .setPolicy(Policy.newBuilder().build())
    *           .build();
    *   ApiFuture<Policy> future = policyTagManagerClient.setIamPolicyCallable().futureCall(request);
@@ -1272,7 +1275,8 @@ public class PolicyTagManagerClient implements BackgroundResource {
    * try (PolicyTagManagerClient policyTagManagerClient = PolicyTagManagerClient.create()) {
    *   TestIamPermissionsRequest request =
    *       TestIamPermissionsRequest.newBuilder()
-   *           .setResource(TaxonomyName.of("[PROJECT]", "[LOCATION]", "[TAXONOMY]").toString())
+   *           .setResource(
+   *               EntryName.of("[PROJECT]", "[LOCATION]", "[ENTRY_GROUP]", "[ENTRY]").toString())
    *           .addAllPermissions(new ArrayList<String>())
    *           .build();
    *   TestIamPermissionsResponse response = policyTagManagerClient.testIamPermissions(request);
@@ -1296,7 +1300,8 @@ public class PolicyTagManagerClient implements BackgroundResource {
    * try (PolicyTagManagerClient policyTagManagerClient = PolicyTagManagerClient.create()) {
    *   TestIamPermissionsRequest request =
    *       TestIamPermissionsRequest.newBuilder()
-   *           .setResource(TaxonomyName.of("[PROJECT]", "[LOCATION]", "[TAXONOMY]").toString())
+   *           .setResource(
+   *               EntryName.of("[PROJECT]", "[LOCATION]", "[ENTRY_GROUP]", "[ENTRY]").toString())
    *           .addAllPermissions(new ArrayList<String>())
    *           .build();
    *   ApiFuture<TestIamPermissionsResponse> future =
@@ -1356,12 +1361,7 @@ public class PolicyTagManagerClient implements BackgroundResource {
           ListTaxonomiesPage.createEmptyPage().createPageAsync(context, futureResponse);
       return ApiFutures.transform(
           futurePage,
-          new ApiFunction<ListTaxonomiesPage, ListTaxonomiesPagedResponse>() {
-            @Override
-            public ListTaxonomiesPagedResponse apply(ListTaxonomiesPage input) {
-              return new ListTaxonomiesPagedResponse(input);
-            }
-          },
+          input -> new ListTaxonomiesPagedResponse(input),
           MoreExecutors.directExecutor());
     }
 
@@ -1437,12 +1437,7 @@ public class PolicyTagManagerClient implements BackgroundResource {
           ListPolicyTagsPage.createEmptyPage().createPageAsync(context, futureResponse);
       return ApiFutures.transform(
           futurePage,
-          new ApiFunction<ListPolicyTagsPage, ListPolicyTagsPagedResponse>() {
-            @Override
-            public ListPolicyTagsPagedResponse apply(ListPolicyTagsPage input) {
-              return new ListPolicyTagsPagedResponse(input);
-            }
-          },
+          input -> new ListPolicyTagsPagedResponse(input),
           MoreExecutors.directExecutor());
     }
 
