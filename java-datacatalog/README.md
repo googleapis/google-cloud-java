@@ -51,12 +51,12 @@ If you are using Gradle 5.x or later, add this to your dependencies
 ```Groovy
 implementation platform('com.google.cloud:libraries-bom:22.0.0')
 
-compile 'com.google.cloud:google-cloud-datacatalog'
+implementation 'com.google.cloud:google-cloud-datacatalog'
 ```
 If you are using Gradle without BOM, add this to your dependencies
 
 ```Groovy
-compile 'com.google.cloud:google-cloud-datacatalog:1.5.3'
+implementation 'com.google.cloud:google-cloud-datacatalog:1.5.3'
 ```
 
 If you are using SBT, add this to your dependencies
