@@ -1,5 +1,16 @@
 # Changelog
 
+### [2.1.2](https://www.github.com/googleapis/java-core/compare/v2.1.1...v2.1.2) (2021-08-31)
+
+
+### Dependencies
+
+* update dependency com.google.api:api-common to v2.0.2 ([#534](https://www.github.com/googleapis/java-core/issues/534)) ([1883c81](https://www.github.com/googleapis/java-core/commit/1883c81cb0fdf2f4b34a3a3a17987206d8c452aa))
+* update dependency com.google.api:gax-bom to v2.4.0 ([#540](https://www.github.com/googleapis/java-core/issues/540)) ([06b0d6e](https://www.github.com/googleapis/java-core/commit/06b0d6e3ff3c3b6e2aa440a9f893f9b27e0d66d1))
+* update dependency com.google.api.grpc:proto-google-common-protos to v2.5.0 ([#539](https://www.github.com/googleapis/java-core/issues/539)) ([9d5a0b0](https://www.github.com/googleapis/java-core/commit/9d5a0b0918f6a1ab264f1ba272dcd8f22b670a7f))
+* update dependency com.google.http-client:google-http-client-bom to v1.40.0 ([#538](https://www.github.com/googleapis/java-core/issues/538)) ([150e07d](https://www.github.com/googleapis/java-core/commit/150e07ddb884d163d0efbcf786f04a713d29ed81))
+* update dependency io.grpc:grpc-bom to v1.40.1 ([#535](https://www.github.com/googleapis/java-core/issues/535)) ([3cd48a9](https://www.github.com/googleapis/java-core/commit/3cd48a902691ddddb9df9f74517648ca35b5bfd7))
+
 ### [2.1.1](https://www.github.com/googleapis/java-core/compare/v2.1.0...v2.1.1) (2021-08-24)
 
 
