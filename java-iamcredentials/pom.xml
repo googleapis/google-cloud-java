@@ -109,9 +109,9 @@
   </build>
 
   <modules>
-    <module>proto-google-cloud-iamcredentials-v1</module>
-    <module>grpc-google-cloud-iamcredentials-v1</module>
     <module>google-cloud-iamcredentials</module>
+    <module>grpc-google-cloud-iamcredentials-v1</module>
+    <module>proto-google-cloud-iamcredentials-v1</module>
     <module>google-cloud-iamcredentials-bom</module>
   </modules>
 
