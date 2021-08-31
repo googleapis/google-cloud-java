@@ -42,7 +42,7 @@ If you are using Maven without BOM, add this to your dependencies:
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-dlp</artifactId>
-  <version>2.4.6</version>
+  <version>3.0.2</version>
 </dependency>
 
 ```
