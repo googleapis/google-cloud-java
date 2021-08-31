@@ -5287,6 +5287,42 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.cloud.osconfig.v1.Inventory.VersionedPackageOrBuilder getCosPackageOrBuilder();
 
+    /**
+     *
+     *
+     * <pre>
+     * Details of a Windows Application
+     * </pre>
+     *
+     * <code>.google.cloud.osconfig.v1.Inventory.WindowsApplication windows_application = 9;</code>
+     *
+     * @return Whether the windowsApplication field is set.
+     */
+    boolean hasWindowsApplication();
+    /**
+     *
+     *
+     * <pre>
+     * Details of a Windows Application
+     * </pre>
+     *
+     * <code>.google.cloud.osconfig.v1.Inventory.WindowsApplication windows_application = 9;</code>
+     *
+     * @return The windowsApplication.
+     */
+    com.google.cloud.osconfig.v1.Inventory.WindowsApplication getWindowsApplication();
+    /**
+     *
+     *
+     * <pre>
+     * Details of a Windows Application
+     * </pre>
+     *
+     * <code>.google.cloud.osconfig.v1.Inventory.WindowsApplication windows_application = 9;</code>
+     */
+    com.google.cloud.osconfig.v1.Inventory.WindowsApplicationOrBuilder
+        getWindowsApplicationOrBuilder();
+
     public com.google.cloud.osconfig.v1.Inventory.SoftwarePackage.DetailsCase getDetailsCase();
   }
   /**
@@ -5503,6 +5539,26 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
                 detailsCase_ = 8;
                 break;
               }
+            case 74:
+              {
+                com.google.cloud.osconfig.v1.Inventory.WindowsApplication.Builder subBuilder = null;
+                if (detailsCase_ == 9) {
+                  subBuilder =
+                      ((com.google.cloud.osconfig.v1.Inventory.WindowsApplication) details_)
+                          .toBuilder();
+                }
+                details_ =
+                    input.readMessage(
+                        com.google.cloud.osconfig.v1.Inventory.WindowsApplication.parser(),
+                        extensionRegistry);
+                if (subBuilder != null) {
+                  subBuilder.mergeFrom(
+                      (com.google.cloud.osconfig.v1.Inventory.WindowsApplication) details_);
+                  details_ = subBuilder.buildPartial();
+                }
+                detailsCase_ = 9;
+                break;
+              }
             default:
               {
                 if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -5552,6 +5608,7 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
       WUA_PACKAGE(6),
       QFE_PACKAGE(7),
       COS_PACKAGE(8),
+      WINDOWS_APPLICATION(9),
       DETAILS_NOT_SET(0);
       private final int value;
 
@@ -5586,6 +5643,8 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
             return QFE_PACKAGE;
           case 8:
             return COS_PACKAGE;
+          case 9:
+            return WINDOWS_APPLICATION;
           case 0:
             return DETAILS_NOT_SET;
           default:
@@ -6068,6 +6127,58 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
       return com.google.cloud.osconfig.v1.Inventory.VersionedPackage.getDefaultInstance();
     }
 
+    public static final int WINDOWS_APPLICATION_FIELD_NUMBER = 9;
+    /**
+     *
+     *
+     * <pre>
+     * Details of a Windows Application
+     * </pre>
+     *
+     * <code>.google.cloud.osconfig.v1.Inventory.WindowsApplication windows_application = 9;</code>
+     *
+     * @return Whether the windowsApplication field is set.
+     */
+    @java.lang.Override
+    public boolean hasWindowsApplication() {
+      return detailsCase_ == 9;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Details of a Windows Application
+     * </pre>
+     *
+     * <code>.google.cloud.osconfig.v1.Inventory.WindowsApplication windows_application = 9;</code>
+     *
+     * @return The windowsApplication.
+     */
+    @java.lang.Override
+    public com.google.cloud.osconfig.v1.Inventory.WindowsApplication getWindowsApplication() {
+      if (detailsCase_ == 9) {
+        return (com.google.cloud.osconfig.v1.Inventory.WindowsApplication) details_;
+      }
+      return com.google.cloud.osconfig.v1.Inventory.WindowsApplication.getDefaultInstance();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Details of a Windows Application
+     * </pre>
+     *
+     * <code>.google.cloud.osconfig.v1.Inventory.WindowsApplication windows_application = 9;</code>
+     */
+    @java.lang.Override
+    public com.google.cloud.osconfig.v1.Inventory.WindowsApplicationOrBuilder
+        getWindowsApplicationOrBuilder() {
+      if (detailsCase_ == 9) {
+        return (com.google.cloud.osconfig.v1.Inventory.WindowsApplication) details_;
+      }
+      return com.google.cloud.osconfig.v1.Inventory.WindowsApplication.getDefaultInstance();
+    }
+
     private byte memoizedIsInitialized = -1;
 
     @java.lang.Override
@@ -6107,6 +6218,10 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
       }
       if (detailsCase_ == 8) {
         output.writeMessage(8, (com.google.cloud.osconfig.v1.Inventory.VersionedPackage) details_);
+      }
+      if (detailsCase_ == 9) {
+        output.writeMessage(
+            9, (com.google.cloud.osconfig.v1.Inventory.WindowsApplication) details_);
       }
       unknownFields.writeTo(output);
     }
@@ -6159,6 +6274,11 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.CodedOutputStream.computeMessageSize(
                 8, (com.google.cloud.osconfig.v1.Inventory.VersionedPackage) details_);
       }
+      if (detailsCase_ == 9) {
+        size +=
+            com.google.protobuf.CodedOutputStream.computeMessageSize(
+                9, (com.google.cloud.osconfig.v1.Inventory.WindowsApplication) details_);
+      }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
@@ -6200,6 +6320,9 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
           break;
         case 8:
           if (!getCosPackage().equals(other.getCosPackage())) return false;
+          break;
+        case 9:
+          if (!getWindowsApplication().equals(other.getWindowsApplication())) return false;
           break;
         case 0:
         default:
@@ -6247,6 +6370,10 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
         case 8:
           hash = (37 * hash) + COS_PACKAGE_FIELD_NUMBER;
           hash = (53 * hash) + getCosPackage().hashCode();
+          break;
+        case 9:
+          hash = (37 * hash) + WINDOWS_APPLICATION_FIELD_NUMBER;
+          hash = (53 * hash) + getWindowsApplication().hashCode();
           break;
         case 0:
         default:
@@ -6484,6 +6611,13 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
             result.details_ = cosPackageBuilder_.build();
           }
         }
+        if (detailsCase_ == 9) {
+          if (windowsApplicationBuilder_ == null) {
+            result.details_ = details_;
+          } else {
+            result.details_ = windowsApplicationBuilder_.build();
+          }
+        }
         result.detailsCase_ = detailsCase_;
         onBuilt();
         return result;
@@ -6576,6 +6710,11 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
           case COS_PACKAGE:
             {
               mergeCosPackage(other.getCosPackage());
+              break;
+            }
+          case WINDOWS_APPLICATION:
+            {
+              mergeWindowsApplication(other.getWindowsApplication());
               break;
             }
           case DETAILS_NOT_SET:
@@ -8498,6 +8637,231 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         ;
         return cosPackageBuilder_;
+      }
+
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.cloud.osconfig.v1.Inventory.WindowsApplication,
+              com.google.cloud.osconfig.v1.Inventory.WindowsApplication.Builder,
+              com.google.cloud.osconfig.v1.Inventory.WindowsApplicationOrBuilder>
+          windowsApplicationBuilder_;
+      /**
+       *
+       *
+       * <pre>
+       * Details of a Windows Application
+       * </pre>
+       *
+       * <code>.google.cloud.osconfig.v1.Inventory.WindowsApplication windows_application = 9;
+       * </code>
+       *
+       * @return Whether the windowsApplication field is set.
+       */
+      @java.lang.Override
+      public boolean hasWindowsApplication() {
+        return detailsCase_ == 9;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Details of a Windows Application
+       * </pre>
+       *
+       * <code>.google.cloud.osconfig.v1.Inventory.WindowsApplication windows_application = 9;
+       * </code>
+       *
+       * @return The windowsApplication.
+       */
+      @java.lang.Override
+      public com.google.cloud.osconfig.v1.Inventory.WindowsApplication getWindowsApplication() {
+        if (windowsApplicationBuilder_ == null) {
+          if (detailsCase_ == 9) {
+            return (com.google.cloud.osconfig.v1.Inventory.WindowsApplication) details_;
+          }
+          return com.google.cloud.osconfig.v1.Inventory.WindowsApplication.getDefaultInstance();
+        } else {
+          if (detailsCase_ == 9) {
+            return windowsApplicationBuilder_.getMessage();
+          }
+          return com.google.cloud.osconfig.v1.Inventory.WindowsApplication.getDefaultInstance();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Details of a Windows Application
+       * </pre>
+       *
+       * <code>.google.cloud.osconfig.v1.Inventory.WindowsApplication windows_application = 9;
+       * </code>
+       */
+      public Builder setWindowsApplication(
+          com.google.cloud.osconfig.v1.Inventory.WindowsApplication value) {
+        if (windowsApplicationBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          details_ = value;
+          onChanged();
+        } else {
+          windowsApplicationBuilder_.setMessage(value);
+        }
+        detailsCase_ = 9;
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Details of a Windows Application
+       * </pre>
+       *
+       * <code>.google.cloud.osconfig.v1.Inventory.WindowsApplication windows_application = 9;
+       * </code>
+       */
+      public Builder setWindowsApplication(
+          com.google.cloud.osconfig.v1.Inventory.WindowsApplication.Builder builderForValue) {
+        if (windowsApplicationBuilder_ == null) {
+          details_ = builderForValue.build();
+          onChanged();
+        } else {
+          windowsApplicationBuilder_.setMessage(builderForValue.build());
+        }
+        detailsCase_ = 9;
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Details of a Windows Application
+       * </pre>
+       *
+       * <code>.google.cloud.osconfig.v1.Inventory.WindowsApplication windows_application = 9;
+       * </code>
+       */
+      public Builder mergeWindowsApplication(
+          com.google.cloud.osconfig.v1.Inventory.WindowsApplication value) {
+        if (windowsApplicationBuilder_ == null) {
+          if (detailsCase_ == 9
+              && details_
+                  != com.google.cloud.osconfig.v1.Inventory.WindowsApplication
+                      .getDefaultInstance()) {
+            details_ =
+                com.google.cloud.osconfig.v1.Inventory.WindowsApplication.newBuilder(
+                        (com.google.cloud.osconfig.v1.Inventory.WindowsApplication) details_)
+                    .mergeFrom(value)
+                    .buildPartial();
+          } else {
+            details_ = value;
+          }
+          onChanged();
+        } else {
+          if (detailsCase_ == 9) {
+            windowsApplicationBuilder_.mergeFrom(value);
+          }
+          windowsApplicationBuilder_.setMessage(value);
+        }
+        detailsCase_ = 9;
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Details of a Windows Application
+       * </pre>
+       *
+       * <code>.google.cloud.osconfig.v1.Inventory.WindowsApplication windows_application = 9;
+       * </code>
+       */
+      public Builder clearWindowsApplication() {
+        if (windowsApplicationBuilder_ == null) {
+          if (detailsCase_ == 9) {
+            detailsCase_ = 0;
+            details_ = null;
+            onChanged();
+          }
+        } else {
+          if (detailsCase_ == 9) {
+            detailsCase_ = 0;
+            details_ = null;
+          }
+          windowsApplicationBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Details of a Windows Application
+       * </pre>
+       *
+       * <code>.google.cloud.osconfig.v1.Inventory.WindowsApplication windows_application = 9;
+       * </code>
+       */
+      public com.google.cloud.osconfig.v1.Inventory.WindowsApplication.Builder
+          getWindowsApplicationBuilder() {
+        return getWindowsApplicationFieldBuilder().getBuilder();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Details of a Windows Application
+       * </pre>
+       *
+       * <code>.google.cloud.osconfig.v1.Inventory.WindowsApplication windows_application = 9;
+       * </code>
+       */
+      @java.lang.Override
+      public com.google.cloud.osconfig.v1.Inventory.WindowsApplicationOrBuilder
+          getWindowsApplicationOrBuilder() {
+        if ((detailsCase_ == 9) && (windowsApplicationBuilder_ != null)) {
+          return windowsApplicationBuilder_.getMessageOrBuilder();
+        } else {
+          if (detailsCase_ == 9) {
+            return (com.google.cloud.osconfig.v1.Inventory.WindowsApplication) details_;
+          }
+          return com.google.cloud.osconfig.v1.Inventory.WindowsApplication.getDefaultInstance();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Details of a Windows Application
+       * </pre>
+       *
+       * <code>.google.cloud.osconfig.v1.Inventory.WindowsApplication windows_application = 9;
+       * </code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.cloud.osconfig.v1.Inventory.WindowsApplication,
+              com.google.cloud.osconfig.v1.Inventory.WindowsApplication.Builder,
+              com.google.cloud.osconfig.v1.Inventory.WindowsApplicationOrBuilder>
+          getWindowsApplicationFieldBuilder() {
+        if (windowsApplicationBuilder_ == null) {
+          if (!(detailsCase_ == 9)) {
+            details_ =
+                com.google.cloud.osconfig.v1.Inventory.WindowsApplication.getDefaultInstance();
+          }
+          windowsApplicationBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.cloud.osconfig.v1.Inventory.WindowsApplication,
+                  com.google.cloud.osconfig.v1.Inventory.WindowsApplication.Builder,
+                  com.google.cloud.osconfig.v1.Inventory.WindowsApplicationOrBuilder>(
+                  (com.google.cloud.osconfig.v1.Inventory.WindowsApplication) details_,
+                  getParentForChildren(),
+                  isClean());
+          details_ = null;
+        }
+        detailsCase_ = 9;
+        onChanged();
+        ;
+        return windowsApplicationBuilder_;
       }
 
       @java.lang.Override
@@ -16249,6 +16613,1607 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public com.google.cloud.osconfig.v1.Inventory.WindowsQuickFixEngineeringPackage
         getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
+  public interface WindowsApplicationOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.cloud.osconfig.v1.Inventory.WindowsApplication)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * The name of the application or product.
+     * </pre>
+     *
+     * <code>string display_name = 1;</code>
+     *
+     * @return The displayName.
+     */
+    java.lang.String getDisplayName();
+    /**
+     *
+     *
+     * <pre>
+     * The name of the application or product.
+     * </pre>
+     *
+     * <code>string display_name = 1;</code>
+     *
+     * @return The bytes for displayName.
+     */
+    com.google.protobuf.ByteString getDisplayNameBytes();
+
+    /**
+     *
+     *
+     * <pre>
+     * The version of the product or application in string format.
+     * </pre>
+     *
+     * <code>string display_version = 2;</code>
+     *
+     * @return The displayVersion.
+     */
+    java.lang.String getDisplayVersion();
+    /**
+     *
+     *
+     * <pre>
+     * The version of the product or application in string format.
+     * </pre>
+     *
+     * <code>string display_version = 2;</code>
+     *
+     * @return The bytes for displayVersion.
+     */
+    com.google.protobuf.ByteString getDisplayVersionBytes();
+
+    /**
+     *
+     *
+     * <pre>
+     * The name of the manufacturer for the product or application.
+     * </pre>
+     *
+     * <code>string publisher = 3;</code>
+     *
+     * @return The publisher.
+     */
+    java.lang.String getPublisher();
+    /**
+     *
+     *
+     * <pre>
+     * The name of the manufacturer for the product or application.
+     * </pre>
+     *
+     * <code>string publisher = 3;</code>
+     *
+     * @return The bytes for publisher.
+     */
+    com.google.protobuf.ByteString getPublisherBytes();
+
+    /**
+     *
+     *
+     * <pre>
+     * The last time this product received service. The value of this property
+     * is replaced each time a patch is applied or removed from the product or
+     * the command-line option is used to repair the product.
+     * </pre>
+     *
+     * <code>.google.type.Date install_date = 4;</code>
+     *
+     * @return Whether the installDate field is set.
+     */
+    boolean hasInstallDate();
+    /**
+     *
+     *
+     * <pre>
+     * The last time this product received service. The value of this property
+     * is replaced each time a patch is applied or removed from the product or
+     * the command-line option is used to repair the product.
+     * </pre>
+     *
+     * <code>.google.type.Date install_date = 4;</code>
+     *
+     * @return The installDate.
+     */
+    com.google.type.Date getInstallDate();
+    /**
+     *
+     *
+     * <pre>
+     * The last time this product received service. The value of this property
+     * is replaced each time a patch is applied or removed from the product or
+     * the command-line option is used to repair the product.
+     * </pre>
+     *
+     * <code>.google.type.Date install_date = 4;</code>
+     */
+    com.google.type.DateOrBuilder getInstallDateOrBuilder();
+
+    /**
+     *
+     *
+     * <pre>
+     * The internet address for technical support.
+     * </pre>
+     *
+     * <code>string help_link = 5;</code>
+     *
+     * @return The helpLink.
+     */
+    java.lang.String getHelpLink();
+    /**
+     *
+     *
+     * <pre>
+     * The internet address for technical support.
+     * </pre>
+     *
+     * <code>string help_link = 5;</code>
+     *
+     * @return The bytes for helpLink.
+     */
+    com.google.protobuf.ByteString getHelpLinkBytes();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Contains information about a Windows application as retrieved from the
+   * Windows Registry. For more information about these fields, see
+   * [Windows Installer Properties for the Uninstall
+   * Registry](https://docs.microsoft.com/en-us/windows/win32/msi/uninstall-registry-key){:
+   * class="external" }
+   * </pre>
+   *
+   * Protobuf type {@code google.cloud.osconfig.v1.Inventory.WindowsApplication}
+   */
+  public static final class WindowsApplication extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.cloud.osconfig.v1.Inventory.WindowsApplication)
+      WindowsApplicationOrBuilder {
+    private static final long serialVersionUID = 0L;
+    // Use WindowsApplication.newBuilder() to construct.
+    private WindowsApplication(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private WindowsApplication() {
+      displayName_ = "";
+      displayVersion_ = "";
+      publisher_ = "";
+      helpLink_ = "";
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new WindowsApplication();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+      return this.unknownFields;
+    }
+
+    private WindowsApplication(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+
+                displayName_ = s;
+                break;
+              }
+            case 18:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+
+                displayVersion_ = s;
+                break;
+              }
+            case 26:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+
+                publisher_ = s;
+                break;
+              }
+            case 34:
+              {
+                com.google.type.Date.Builder subBuilder = null;
+                if (installDate_ != null) {
+                  subBuilder = installDate_.toBuilder();
+                }
+                installDate_ = input.readMessage(com.google.type.Date.parser(), extensionRegistry);
+                if (subBuilder != null) {
+                  subBuilder.mergeFrom(installDate_);
+                  installDate_ = subBuilder.buildPartial();
+                }
+
+                break;
+              }
+            case 42:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+
+                helpLink_ = s;
+                break;
+              }
+            default:
+              {
+                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
+                  done = true;
+                }
+                break;
+              }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.osconfig.v1.Inventories
+          .internal_static_google_cloud_osconfig_v1_Inventory_WindowsApplication_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.cloud.osconfig.v1.Inventories
+          .internal_static_google_cloud_osconfig_v1_Inventory_WindowsApplication_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.osconfig.v1.Inventory.WindowsApplication.class,
+              com.google.cloud.osconfig.v1.Inventory.WindowsApplication.Builder.class);
+    }
+
+    public static final int DISPLAY_NAME_FIELD_NUMBER = 1;
+    private volatile java.lang.Object displayName_;
+    /**
+     *
+     *
+     * <pre>
+     * The name of the application or product.
+     * </pre>
+     *
+     * <code>string display_name = 1;</code>
+     *
+     * @return The displayName.
+     */
+    @java.lang.Override
+    public java.lang.String getDisplayName() {
+      java.lang.Object ref = displayName_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        displayName_ = s;
+        return s;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The name of the application or product.
+     * </pre>
+     *
+     * <code>string display_name = 1;</code>
+     *
+     * @return The bytes for displayName.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getDisplayNameBytes() {
+      java.lang.Object ref = displayName_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        displayName_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int DISPLAY_VERSION_FIELD_NUMBER = 2;
+    private volatile java.lang.Object displayVersion_;
+    /**
+     *
+     *
+     * <pre>
+     * The version of the product or application in string format.
+     * </pre>
+     *
+     * <code>string display_version = 2;</code>
+     *
+     * @return The displayVersion.
+     */
+    @java.lang.Override
+    public java.lang.String getDisplayVersion() {
+      java.lang.Object ref = displayVersion_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        displayVersion_ = s;
+        return s;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The version of the product or application in string format.
+     * </pre>
+     *
+     * <code>string display_version = 2;</code>
+     *
+     * @return The bytes for displayVersion.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getDisplayVersionBytes() {
+      java.lang.Object ref = displayVersion_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        displayVersion_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int PUBLISHER_FIELD_NUMBER = 3;
+    private volatile java.lang.Object publisher_;
+    /**
+     *
+     *
+     * <pre>
+     * The name of the manufacturer for the product or application.
+     * </pre>
+     *
+     * <code>string publisher = 3;</code>
+     *
+     * @return The publisher.
+     */
+    @java.lang.Override
+    public java.lang.String getPublisher() {
+      java.lang.Object ref = publisher_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        publisher_ = s;
+        return s;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The name of the manufacturer for the product or application.
+     * </pre>
+     *
+     * <code>string publisher = 3;</code>
+     *
+     * @return The bytes for publisher.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getPublisherBytes() {
+      java.lang.Object ref = publisher_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        publisher_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int INSTALL_DATE_FIELD_NUMBER = 4;
+    private com.google.type.Date installDate_;
+    /**
+     *
+     *
+     * <pre>
+     * The last time this product received service. The value of this property
+     * is replaced each time a patch is applied or removed from the product or
+     * the command-line option is used to repair the product.
+     * </pre>
+     *
+     * <code>.google.type.Date install_date = 4;</code>
+     *
+     * @return Whether the installDate field is set.
+     */
+    @java.lang.Override
+    public boolean hasInstallDate() {
+      return installDate_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The last time this product received service. The value of this property
+     * is replaced each time a patch is applied or removed from the product or
+     * the command-line option is used to repair the product.
+     * </pre>
+     *
+     * <code>.google.type.Date install_date = 4;</code>
+     *
+     * @return The installDate.
+     */
+    @java.lang.Override
+    public com.google.type.Date getInstallDate() {
+      return installDate_ == null ? com.google.type.Date.getDefaultInstance() : installDate_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The last time this product received service. The value of this property
+     * is replaced each time a patch is applied or removed from the product or
+     * the command-line option is used to repair the product.
+     * </pre>
+     *
+     * <code>.google.type.Date install_date = 4;</code>
+     */
+    @java.lang.Override
+    public com.google.type.DateOrBuilder getInstallDateOrBuilder() {
+      return getInstallDate();
+    }
+
+    public static final int HELP_LINK_FIELD_NUMBER = 5;
+    private volatile java.lang.Object helpLink_;
+    /**
+     *
+     *
+     * <pre>
+     * The internet address for technical support.
+     * </pre>
+     *
+     * <code>string help_link = 5;</code>
+     *
+     * @return The helpLink.
+     */
+    @java.lang.Override
+    public java.lang.String getHelpLink() {
+      java.lang.Object ref = helpLink_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        helpLink_ = s;
+        return s;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The internet address for technical support.
+     * </pre>
+     *
+     * <code>string help_link = 5;</code>
+     *
+     * @return The bytes for helpLink.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getHelpLinkBytes() {
+      java.lang.Object ref = helpLink_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        helpLink_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (!getDisplayNameBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, displayName_);
+      }
+      if (!getDisplayVersionBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, displayVersion_);
+      }
+      if (!getPublisherBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, publisher_);
+      }
+      if (installDate_ != null) {
+        output.writeMessage(4, getInstallDate());
+      }
+      if (!getHelpLinkBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 5, helpLink_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!getDisplayNameBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, displayName_);
+      }
+      if (!getDisplayVersionBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, displayVersion_);
+      }
+      if (!getPublisherBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, publisher_);
+      }
+      if (installDate_ != null) {
+        size += com.google.protobuf.CodedOutputStream.computeMessageSize(4, getInstallDate());
+      }
+      if (!getHelpLinkBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, helpLink_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.cloud.osconfig.v1.Inventory.WindowsApplication)) {
+        return super.equals(obj);
+      }
+      com.google.cloud.osconfig.v1.Inventory.WindowsApplication other =
+          (com.google.cloud.osconfig.v1.Inventory.WindowsApplication) obj;
+
+      if (!getDisplayName().equals(other.getDisplayName())) return false;
+      if (!getDisplayVersion().equals(other.getDisplayVersion())) return false;
+      if (!getPublisher().equals(other.getPublisher())) return false;
+      if (hasInstallDate() != other.hasInstallDate()) return false;
+      if (hasInstallDate()) {
+        if (!getInstallDate().equals(other.getInstallDate())) return false;
+      }
+      if (!getHelpLink().equals(other.getHelpLink())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + DISPLAY_NAME_FIELD_NUMBER;
+      hash = (53 * hash) + getDisplayName().hashCode();
+      hash = (37 * hash) + DISPLAY_VERSION_FIELD_NUMBER;
+      hash = (53 * hash) + getDisplayVersion().hashCode();
+      hash = (37 * hash) + PUBLISHER_FIELD_NUMBER;
+      hash = (53 * hash) + getPublisher().hashCode();
+      if (hasInstallDate()) {
+        hash = (37 * hash) + INSTALL_DATE_FIELD_NUMBER;
+        hash = (53 * hash) + getInstallDate().hashCode();
+      }
+      hash = (37 * hash) + HELP_LINK_FIELD_NUMBER;
+      hash = (53 * hash) + getHelpLink().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.cloud.osconfig.v1.Inventory.WindowsApplication parseFrom(
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.osconfig.v1.Inventory.WindowsApplication parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.osconfig.v1.Inventory.WindowsApplication parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.osconfig.v1.Inventory.WindowsApplication parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.osconfig.v1.Inventory.WindowsApplication parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.osconfig.v1.Inventory.WindowsApplication parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.osconfig.v1.Inventory.WindowsApplication parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.osconfig.v1.Inventory.WindowsApplication parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.osconfig.v1.Inventory.WindowsApplication parseDelimitedFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.osconfig.v1.Inventory.WindowsApplication parseDelimitedFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.osconfig.v1.Inventory.WindowsApplication parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.osconfig.v1.Inventory.WindowsApplication parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.cloud.osconfig.v1.Inventory.WindowsApplication prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Contains information about a Windows application as retrieved from the
+     * Windows Registry. For more information about these fields, see
+     * [Windows Installer Properties for the Uninstall
+     * Registry](https://docs.microsoft.com/en-us/windows/win32/msi/uninstall-registry-key){:
+     * class="external" }
+     * </pre>
+     *
+     * Protobuf type {@code google.cloud.osconfig.v1.Inventory.WindowsApplication}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.cloud.osconfig.v1.Inventory.WindowsApplication)
+        com.google.cloud.osconfig.v1.Inventory.WindowsApplicationOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.osconfig.v1.Inventories
+            .internal_static_google_cloud_osconfig_v1_Inventory_WindowsApplication_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.osconfig.v1.Inventories
+            .internal_static_google_cloud_osconfig_v1_Inventory_WindowsApplication_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.osconfig.v1.Inventory.WindowsApplication.class,
+                com.google.cloud.osconfig.v1.Inventory.WindowsApplication.Builder.class);
+      }
+
+      // Construct using com.google.cloud.osconfig.v1.Inventory.WindowsApplication.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        displayName_ = "";
+
+        displayVersion_ = "";
+
+        publisher_ = "";
+
+        if (installDateBuilder_ == null) {
+          installDate_ = null;
+        } else {
+          installDate_ = null;
+          installDateBuilder_ = null;
+        }
+        helpLink_ = "";
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.osconfig.v1.Inventories
+            .internal_static_google_cloud_osconfig_v1_Inventory_WindowsApplication_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.osconfig.v1.Inventory.WindowsApplication getDefaultInstanceForType() {
+        return com.google.cloud.osconfig.v1.Inventory.WindowsApplication.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.cloud.osconfig.v1.Inventory.WindowsApplication build() {
+        com.google.cloud.osconfig.v1.Inventory.WindowsApplication result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.osconfig.v1.Inventory.WindowsApplication buildPartial() {
+        com.google.cloud.osconfig.v1.Inventory.WindowsApplication result =
+            new com.google.cloud.osconfig.v1.Inventory.WindowsApplication(this);
+        result.displayName_ = displayName_;
+        result.displayVersion_ = displayVersion_;
+        result.publisher_ = publisher_;
+        if (installDateBuilder_ == null) {
+          result.installDate_ = installDate_;
+        } else {
+          result.installDate_ = installDateBuilder_.build();
+        }
+        result.helpLink_ = helpLink_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.google.cloud.osconfig.v1.Inventory.WindowsApplication) {
+          return mergeFrom((com.google.cloud.osconfig.v1.Inventory.WindowsApplication) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.google.cloud.osconfig.v1.Inventory.WindowsApplication other) {
+        if (other == com.google.cloud.osconfig.v1.Inventory.WindowsApplication.getDefaultInstance())
+          return this;
+        if (!other.getDisplayName().isEmpty()) {
+          displayName_ = other.displayName_;
+          onChanged();
+        }
+        if (!other.getDisplayVersion().isEmpty()) {
+          displayVersion_ = other.displayVersion_;
+          onChanged();
+        }
+        if (!other.getPublisher().isEmpty()) {
+          publisher_ = other.publisher_;
+          onChanged();
+        }
+        if (other.hasInstallDate()) {
+          mergeInstallDate(other.getInstallDate());
+        }
+        if (!other.getHelpLink().isEmpty()) {
+          helpLink_ = other.helpLink_;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.google.cloud.osconfig.v1.Inventory.WindowsApplication parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage =
+              (com.google.cloud.osconfig.v1.Inventory.WindowsApplication) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private java.lang.Object displayName_ = "";
+      /**
+       *
+       *
+       * <pre>
+       * The name of the application or product.
+       * </pre>
+       *
+       * <code>string display_name = 1;</code>
+       *
+       * @return The displayName.
+       */
+      public java.lang.String getDisplayName() {
+        java.lang.Object ref = displayName_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          displayName_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The name of the application or product.
+       * </pre>
+       *
+       * <code>string display_name = 1;</code>
+       *
+       * @return The bytes for displayName.
+       */
+      public com.google.protobuf.ByteString getDisplayNameBytes() {
+        java.lang.Object ref = displayName_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          displayName_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The name of the application or product.
+       * </pre>
+       *
+       * <code>string display_name = 1;</code>
+       *
+       * @param value The displayName to set.
+       * @return This builder for chaining.
+       */
+      public Builder setDisplayName(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+
+        displayName_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The name of the application or product.
+       * </pre>
+       *
+       * <code>string display_name = 1;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearDisplayName() {
+
+        displayName_ = getDefaultInstance().getDisplayName();
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The name of the application or product.
+       * </pre>
+       *
+       * <code>string display_name = 1;</code>
+       *
+       * @param value The bytes for displayName to set.
+       * @return This builder for chaining.
+       */
+      public Builder setDisplayNameBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+
+        displayName_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object displayVersion_ = "";
+      /**
+       *
+       *
+       * <pre>
+       * The version of the product or application in string format.
+       * </pre>
+       *
+       * <code>string display_version = 2;</code>
+       *
+       * @return The displayVersion.
+       */
+      public java.lang.String getDisplayVersion() {
+        java.lang.Object ref = displayVersion_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          displayVersion_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The version of the product or application in string format.
+       * </pre>
+       *
+       * <code>string display_version = 2;</code>
+       *
+       * @return The bytes for displayVersion.
+       */
+      public com.google.protobuf.ByteString getDisplayVersionBytes() {
+        java.lang.Object ref = displayVersion_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          displayVersion_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The version of the product or application in string format.
+       * </pre>
+       *
+       * <code>string display_version = 2;</code>
+       *
+       * @param value The displayVersion to set.
+       * @return This builder for chaining.
+       */
+      public Builder setDisplayVersion(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+
+        displayVersion_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The version of the product or application in string format.
+       * </pre>
+       *
+       * <code>string display_version = 2;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearDisplayVersion() {
+
+        displayVersion_ = getDefaultInstance().getDisplayVersion();
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The version of the product or application in string format.
+       * </pre>
+       *
+       * <code>string display_version = 2;</code>
+       *
+       * @param value The bytes for displayVersion to set.
+       * @return This builder for chaining.
+       */
+      public Builder setDisplayVersionBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+
+        displayVersion_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object publisher_ = "";
+      /**
+       *
+       *
+       * <pre>
+       * The name of the manufacturer for the product or application.
+       * </pre>
+       *
+       * <code>string publisher = 3;</code>
+       *
+       * @return The publisher.
+       */
+      public java.lang.String getPublisher() {
+        java.lang.Object ref = publisher_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          publisher_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The name of the manufacturer for the product or application.
+       * </pre>
+       *
+       * <code>string publisher = 3;</code>
+       *
+       * @return The bytes for publisher.
+       */
+      public com.google.protobuf.ByteString getPublisherBytes() {
+        java.lang.Object ref = publisher_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          publisher_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The name of the manufacturer for the product or application.
+       * </pre>
+       *
+       * <code>string publisher = 3;</code>
+       *
+       * @param value The publisher to set.
+       * @return This builder for chaining.
+       */
+      public Builder setPublisher(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+
+        publisher_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The name of the manufacturer for the product or application.
+       * </pre>
+       *
+       * <code>string publisher = 3;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearPublisher() {
+
+        publisher_ = getDefaultInstance().getPublisher();
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The name of the manufacturer for the product or application.
+       * </pre>
+       *
+       * <code>string publisher = 3;</code>
+       *
+       * @param value The bytes for publisher to set.
+       * @return This builder for chaining.
+       */
+      public Builder setPublisherBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+
+        publisher_ = value;
+        onChanged();
+        return this;
+      }
+
+      private com.google.type.Date installDate_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.type.Date, com.google.type.Date.Builder, com.google.type.DateOrBuilder>
+          installDateBuilder_;
+      /**
+       *
+       *
+       * <pre>
+       * The last time this product received service. The value of this property
+       * is replaced each time a patch is applied or removed from the product or
+       * the command-line option is used to repair the product.
+       * </pre>
+       *
+       * <code>.google.type.Date install_date = 4;</code>
+       *
+       * @return Whether the installDate field is set.
+       */
+      public boolean hasInstallDate() {
+        return installDateBuilder_ != null || installDate_ != null;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The last time this product received service. The value of this property
+       * is replaced each time a patch is applied or removed from the product or
+       * the command-line option is used to repair the product.
+       * </pre>
+       *
+       * <code>.google.type.Date install_date = 4;</code>
+       *
+       * @return The installDate.
+       */
+      public com.google.type.Date getInstallDate() {
+        if (installDateBuilder_ == null) {
+          return installDate_ == null ? com.google.type.Date.getDefaultInstance() : installDate_;
+        } else {
+          return installDateBuilder_.getMessage();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The last time this product received service. The value of this property
+       * is replaced each time a patch is applied or removed from the product or
+       * the command-line option is used to repair the product.
+       * </pre>
+       *
+       * <code>.google.type.Date install_date = 4;</code>
+       */
+      public Builder setInstallDate(com.google.type.Date value) {
+        if (installDateBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          installDate_ = value;
+          onChanged();
+        } else {
+          installDateBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The last time this product received service. The value of this property
+       * is replaced each time a patch is applied or removed from the product or
+       * the command-line option is used to repair the product.
+       * </pre>
+       *
+       * <code>.google.type.Date install_date = 4;</code>
+       */
+      public Builder setInstallDate(com.google.type.Date.Builder builderForValue) {
+        if (installDateBuilder_ == null) {
+          installDate_ = builderForValue.build();
+          onChanged();
+        } else {
+          installDateBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The last time this product received service. The value of this property
+       * is replaced each time a patch is applied or removed from the product or
+       * the command-line option is used to repair the product.
+       * </pre>
+       *
+       * <code>.google.type.Date install_date = 4;</code>
+       */
+      public Builder mergeInstallDate(com.google.type.Date value) {
+        if (installDateBuilder_ == null) {
+          if (installDate_ != null) {
+            installDate_ =
+                com.google.type.Date.newBuilder(installDate_).mergeFrom(value).buildPartial();
+          } else {
+            installDate_ = value;
+          }
+          onChanged();
+        } else {
+          installDateBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The last time this product received service. The value of this property
+       * is replaced each time a patch is applied or removed from the product or
+       * the command-line option is used to repair the product.
+       * </pre>
+       *
+       * <code>.google.type.Date install_date = 4;</code>
+       */
+      public Builder clearInstallDate() {
+        if (installDateBuilder_ == null) {
+          installDate_ = null;
+          onChanged();
+        } else {
+          installDate_ = null;
+          installDateBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The last time this product received service. The value of this property
+       * is replaced each time a patch is applied or removed from the product or
+       * the command-line option is used to repair the product.
+       * </pre>
+       *
+       * <code>.google.type.Date install_date = 4;</code>
+       */
+      public com.google.type.Date.Builder getInstallDateBuilder() {
+
+        onChanged();
+        return getInstallDateFieldBuilder().getBuilder();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The last time this product received service. The value of this property
+       * is replaced each time a patch is applied or removed from the product or
+       * the command-line option is used to repair the product.
+       * </pre>
+       *
+       * <code>.google.type.Date install_date = 4;</code>
+       */
+      public com.google.type.DateOrBuilder getInstallDateOrBuilder() {
+        if (installDateBuilder_ != null) {
+          return installDateBuilder_.getMessageOrBuilder();
+        } else {
+          return installDate_ == null ? com.google.type.Date.getDefaultInstance() : installDate_;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The last time this product received service. The value of this property
+       * is replaced each time a patch is applied or removed from the product or
+       * the command-line option is used to repair the product.
+       * </pre>
+       *
+       * <code>.google.type.Date install_date = 4;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.type.Date, com.google.type.Date.Builder, com.google.type.DateOrBuilder>
+          getInstallDateFieldBuilder() {
+        if (installDateBuilder_ == null) {
+          installDateBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.type.Date,
+                  com.google.type.Date.Builder,
+                  com.google.type.DateOrBuilder>(
+                  getInstallDate(), getParentForChildren(), isClean());
+          installDate_ = null;
+        }
+        return installDateBuilder_;
+      }
+
+      private java.lang.Object helpLink_ = "";
+      /**
+       *
+       *
+       * <pre>
+       * The internet address for technical support.
+       * </pre>
+       *
+       * <code>string help_link = 5;</code>
+       *
+       * @return The helpLink.
+       */
+      public java.lang.String getHelpLink() {
+        java.lang.Object ref = helpLink_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          helpLink_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The internet address for technical support.
+       * </pre>
+       *
+       * <code>string help_link = 5;</code>
+       *
+       * @return The bytes for helpLink.
+       */
+      public com.google.protobuf.ByteString getHelpLinkBytes() {
+        java.lang.Object ref = helpLink_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          helpLink_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The internet address for technical support.
+       * </pre>
+       *
+       * <code>string help_link = 5;</code>
+       *
+       * @param value The helpLink to set.
+       * @return This builder for chaining.
+       */
+      public Builder setHelpLink(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+
+        helpLink_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The internet address for technical support.
+       * </pre>
+       *
+       * <code>string help_link = 5;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearHelpLink() {
+
+        helpLink_ = getDefaultInstance().getHelpLink();
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The internet address for technical support.
+       * </pre>
+       *
+       * <code>string help_link = 5;</code>
+       *
+       * @param value The bytes for helpLink to set.
+       * @return This builder for chaining.
+       */
+      public Builder setHelpLinkBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+
+        helpLink_ = value;
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.cloud.osconfig.v1.Inventory.WindowsApplication)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.cloud.osconfig.v1.Inventory.WindowsApplication)
+    private static final com.google.cloud.osconfig.v1.Inventory.WindowsApplication DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new com.google.cloud.osconfig.v1.Inventory.WindowsApplication();
+    }
+
+    public static com.google.cloud.osconfig.v1.Inventory.WindowsApplication getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<WindowsApplication> PARSER =
+        new com.google.protobuf.AbstractParser<WindowsApplication>() {
+          @java.lang.Override
+          public WindowsApplication parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            return new WindowsApplication(input, extensionRegistry);
+          }
+        };
+
+    public static com.google.protobuf.Parser<WindowsApplication> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<WindowsApplication> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.cloud.osconfig.v1.Inventory.WindowsApplication getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
   }

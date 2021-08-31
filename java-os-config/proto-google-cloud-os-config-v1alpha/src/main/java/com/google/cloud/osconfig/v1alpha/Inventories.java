@@ -64,6 +64,10 @@ public final class Inventories {
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_osconfig_v1alpha_Inventory_WindowsQuickFixEngineeringPackage_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_osconfig_v1alpha_Inventory_WindowsApplication_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_osconfig_v1alpha_Inventory_WindowsApplication_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_osconfig_v1alpha_Inventory_ItemsEntry_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_osconfig_v1alpha_Inventory_ItemsEntry_fieldAccessorTable;
@@ -92,91 +96,98 @@ public final class Inventories {
           + "y.proto\022\035google.cloud.osconfig.v1alpha\032\037"
           + "google/api/field_behavior.proto\032\031google/"
           + "api/resource.proto\032\037google/protobuf/time"
-          + "stamp.proto\"\306\024\n\tInventory\022\021\n\004name\030\003 \001(\tB"
-          + "\003\340A\003\022E\n\007os_info\030\001 \001(\0132/.google.cloud.osc"
-          + "onfig.v1alpha.Inventory.OsInfoB\003\340A\003\022G\n\005i"
-          + "tems\030\002 \003(\01323.google.cloud.osconfig.v1alp"
-          + "ha.Inventory.ItemsEntryB\003\340A\003\0224\n\013update_t"
-          + "ime\030\004 \001(\0132\032.google.protobuf.TimestampB\003\340"
-          + "A\003\032\270\001\n\006OsInfo\022\020\n\010hostname\030\t \001(\t\022\021\n\tlong_"
-          + "name\030\002 \001(\t\022\022\n\nshort_name\030\003 \001(\t\022\017\n\007versio"
-          + "n\030\004 \001(\t\022\024\n\014architecture\030\005 \001(\t\022\026\n\016kernel_"
-          + "version\030\006 \001(\t\022\026\n\016kernel_release\030\007 \001(\t\022\036\n"
-          + "\026osconfig_agent_version\030\010 \001(\t\032\313\004\n\004Item\022\n"
-          + "\n\002id\030\001 \001(\t\022M\n\013origin_type\030\002 \001(\01628.google"
-          + ".cloud.osconfig.v1alpha.Inventory.Item.O"
-          + "riginType\022/\n\013create_time\030\010 \001(\0132\032.google."
-          + "protobuf.Timestamp\022/\n\013update_time\030\t \001(\0132"
-          + "\032.google.protobuf.Timestamp\022@\n\004type\030\005 \001("
-          + "\01622.google.cloud.osconfig.v1alpha.Invent"
-          + "ory.Item.Type\022U\n\021installed_package\030\006 \001(\013"
-          + "28.google.cloud.osconfig.v1alpha.Invento"
-          + "ry.SoftwarePackageH\000\022U\n\021available_packag"
-          + "e\030\007 \001(\01328.google.cloud.osconfig.v1alpha."
-          + "Inventory.SoftwarePackageH\000\"?\n\nOriginTyp"
-          + "e\022\033\n\027ORIGIN_TYPE_UNSPECIFIED\020\000\022\024\n\020INVENT"
-          + "ORY_REPORT\020\001\"J\n\004Type\022\024\n\020TYPE_UNSPECIFIED"
-          + "\020\000\022\025\n\021INSTALLED_PACKAGE\020\001\022\025\n\021AVAILABLE_P"
-          + "ACKAGE\020\002B\t\n\007details\032\303\005\n\017SoftwarePackage\022"
-          + "P\n\013yum_package\030\001 \001(\01329.google.cloud.osco"
-          + "nfig.v1alpha.Inventory.VersionedPackageH"
-          + "\000\022P\n\013apt_package\030\002 \001(\01329.google.cloud.os"
-          + "config.v1alpha.Inventory.VersionedPackag"
-          + "eH\000\022S\n\016zypper_package\030\003 \001(\01329.google.clo"
-          + "ud.osconfig.v1alpha.Inventory.VersionedP"
-          + "ackageH\000\022S\n\016googet_package\030\004 \001(\01329.googl"
-          + "e.cloud.osconfig.v1alpha.Inventory.Versi"
-          + "onedPackageH\000\022L\n\014zypper_patch\030\005 \001(\01324.go"
-          + "ogle.cloud.osconfig.v1alpha.Inventory.Zy"
-          + "pperPatchH\000\022T\n\013wua_package\030\006 \001(\0132=.googl"
-          + "e.cloud.osconfig.v1alpha.Inventory.Windo"
-          + "wsUpdatePackageH\000\022a\n\013qfe_package\030\007 \001(\0132J"
-          + ".google.cloud.osconfig.v1alpha.Inventory"
-          + ".WindowsQuickFixEngineeringPackageH\000\022P\n\013"
-          + "cos_package\030\010 \001(\01329.google.cloud.osconfi"
-          + "g.v1alpha.Inventory.VersionedPackageH\000B\t"
-          + "\n\007details\032O\n\020VersionedPackage\022\024\n\014package"
-          + "_name\030\004 \001(\t\022\024\n\014architecture\030\002 \001(\t\022\017\n\007ver"
-          + "sion\030\003 \001(\t\032V\n\013ZypperPatch\022\022\n\npatch_name\030"
-          + "\005 \001(\t\022\020\n\010category\030\002 \001(\t\022\020\n\010severity\030\003 \001("
-          + "\t\022\017\n\007summary\030\004 \001(\t\032\210\003\n\024WindowsUpdatePack"
-          + "age\022\r\n\005title\030\001 \001(\t\022\023\n\013description\030\002 \001(\t\022"
-          + "g\n\ncategories\030\003 \003(\0132S.google.cloud.oscon"
-          + "fig.v1alpha.Inventory.WindowsUpdatePacka"
-          + "ge.WindowsUpdateCategory\022\026\n\016kb_article_i"
-          + "ds\030\004 \003(\t\022\023\n\013support_url\030\013 \001(\t\022\026\n\016more_in"
-          + "fo_urls\030\005 \003(\t\022\021\n\tupdate_id\030\006 \001(\t\022\027\n\017revi"
-          + "sion_number\030\007 \001(\005\022?\n\033last_deployment_cha"
-          + "nge_time\030\n \001(\0132\032.google.protobuf.Timesta"
-          + "mp\0321\n\025WindowsUpdateCategory\022\n\n\002id\030\001 \001(\t\022"
-          + "\014\n\004name\030\002 \001(\t\032\217\001\n!WindowsQuickFixEnginee"
-          + "ringPackage\022\017\n\007caption\030\001 \001(\t\022\023\n\013descript"
-          + "ion\030\002 \001(\t\022\022\n\nhot_fix_id\030\003 \001(\t\0220\n\014install"
-          + "_time\030\005 \001(\0132\032.google.protobuf.Timestamp\032"
-          + "[\n\nItemsEntry\022\013\n\003key\030\001 \001(\t\022<\n\005value\030\002 \001("
-          + "\0132-.google.cloud.osconfig.v1alpha.Invent"
-          + "ory.Item:\0028\001:n\352Ak\n!osconfig.googleapis.c"
-          + "om/Inventory\022Fprojects/{project}/locatio"
-          + "ns/{location}/instances/{instance}/inven"
-          + "tory\"\212\001\n\023GetInventoryRequest\0227\n\004name\030\001 \001"
-          + "(\tB)\340A\002\372A#\n!osconfig.googleapis.com/Inve"
-          + "ntory\022:\n\004view\030\002 \001(\0162,.google.cloud.oscon"
-          + "fig.v1alpha.InventoryView\"\304\001\n\026ListInvent"
-          + "oriesRequest\0227\n\006parent\030\001 \001(\tB\'\340A\002\372A!\n\037co"
-          + "mpute.googleapis.com/Instance\022:\n\004view\030\002 "
-          + "\001(\0162,.google.cloud.osconfig.v1alpha.Inve"
-          + "ntoryView\022\021\n\tpage_size\030\003 \001(\005\022\022\n\npage_tok"
-          + "en\030\004 \001(\t\022\016\n\006filter\030\005 \001(\t\"q\n\027ListInventor"
-          + "iesResponse\022=\n\013inventories\030\001 \003(\0132(.googl"
-          + "e.cloud.osconfig.v1alpha.Inventory\022\027\n\017ne"
-          + "xt_page_token\030\002 \001(\t*D\n\rInventoryView\022\036\n\032"
-          + "INVENTORY_VIEW_UNSPECIFIED\020\000\022\t\n\005BASIC\020\001\022"
-          + "\010\n\004FULL\020\002B\334\001\n!com.google.cloud.osconfig."
-          + "v1alphaB\013InventoriesP\001ZEgoogle.golang.or"
-          + "g/genproto/googleapis/cloud/osconfig/v1a"
-          + "lpha;osconfig\252\002\035Google.Cloud.OsConfig.V1"
-          + "Alpha\312\002\035Google\\Cloud\\OsConfig\\V1alpha\352\002 "
-          + "Google::Cloud::OsConfig::V1alphab\006proto3"
+          + "stamp.proto\032\026google/type/date.proto\"\267\026\n\t"
+          + "Inventory\022\021\n\004name\030\003 \001(\tB\003\340A\003\022E\n\007os_info\030"
+          + "\001 \001(\0132/.google.cloud.osconfig.v1alpha.In"
+          + "ventory.OsInfoB\003\340A\003\022G\n\005items\030\002 \003(\01323.goo"
+          + "gle.cloud.osconfig.v1alpha.Inventory.Ite"
+          + "msEntryB\003\340A\003\0224\n\013update_time\030\004 \001(\0132\032.goog"
+          + "le.protobuf.TimestampB\003\340A\003\032\270\001\n\006OsInfo\022\020\n"
+          + "\010hostname\030\t \001(\t\022\021\n\tlong_name\030\002 \001(\t\022\022\n\nsh"
+          + "ort_name\030\003 \001(\t\022\017\n\007version\030\004 \001(\t\022\024\n\014archi"
+          + "tecture\030\005 \001(\t\022\026\n\016kernel_version\030\006 \001(\t\022\026\n"
+          + "\016kernel_release\030\007 \001(\t\022\036\n\026osconfig_agent_"
+          + "version\030\010 \001(\t\032\313\004\n\004Item\022\n\n\002id\030\001 \001(\t\022M\n\013or"
+          + "igin_type\030\002 \001(\01628.google.cloud.osconfig."
+          + "v1alpha.Inventory.Item.OriginType\022/\n\013cre"
+          + "ate_time\030\010 \001(\0132\032.google.protobuf.Timesta"
+          + "mp\022/\n\013update_time\030\t \001(\0132\032.google.protobu"
+          + "f.Timestamp\022@\n\004type\030\005 \001(\01622.google.cloud"
+          + ".osconfig.v1alpha.Inventory.Item.Type\022U\n"
+          + "\021installed_package\030\006 \001(\01328.google.cloud."
+          + "osconfig.v1alpha.Inventory.SoftwarePacka"
+          + "geH\000\022U\n\021available_package\030\007 \001(\01328.google"
+          + ".cloud.osconfig.v1alpha.Inventory.Softwa"
+          + "rePackageH\000\"?\n\nOriginType\022\033\n\027ORIGIN_TYPE"
+          + "_UNSPECIFIED\020\000\022\024\n\020INVENTORY_REPORT\020\001\"J\n\004"
+          + "Type\022\024\n\020TYPE_UNSPECIFIED\020\000\022\025\n\021INSTALLED_"
+          + "PACKAGE\020\001\022\025\n\021AVAILABLE_PACKAGE\020\002B\t\n\007deta"
+          + "ils\032\237\006\n\017SoftwarePackage\022P\n\013yum_package\030\001"
+          + " \001(\01329.google.cloud.osconfig.v1alpha.Inv"
+          + "entory.VersionedPackageH\000\022P\n\013apt_package"
+          + "\030\002 \001(\01329.google.cloud.osconfig.v1alpha.I"
+          + "nventory.VersionedPackageH\000\022S\n\016zypper_pa"
+          + "ckage\030\003 \001(\01329.google.cloud.osconfig.v1al"
+          + "pha.Inventory.VersionedPackageH\000\022S\n\016goog"
+          + "et_package\030\004 \001(\01329.google.cloud.osconfig"
+          + ".v1alpha.Inventory.VersionedPackageH\000\022L\n"
+          + "\014zypper_patch\030\005 \001(\01324.google.cloud.oscon"
+          + "fig.v1alpha.Inventory.ZypperPatchH\000\022T\n\013w"
+          + "ua_package\030\006 \001(\0132=.google.cloud.osconfig"
+          + ".v1alpha.Inventory.WindowsUpdatePackageH"
+          + "\000\022a\n\013qfe_package\030\007 \001(\0132J.google.cloud.os"
+          + "config.v1alpha.Inventory.WindowsQuickFix"
+          + "EngineeringPackageH\000\022P\n\013cos_package\030\010 \001("
+          + "\01329.google.cloud.osconfig.v1alpha.Invent"
+          + "ory.VersionedPackageH\000\022Z\n\023windows_applic"
+          + "ation\030\t \001(\0132;.google.cloud.osconfig.v1al"
+          + "pha.Inventory.WindowsApplicationH\000B\t\n\007de"
+          + "tails\032O\n\020VersionedPackage\022\024\n\014package_nam"
+          + "e\030\004 \001(\t\022\024\n\014architecture\030\002 \001(\t\022\017\n\007version"
+          + "\030\003 \001(\t\032V\n\013ZypperPatch\022\022\n\npatch_name\030\005 \001("
+          + "\t\022\020\n\010category\030\002 \001(\t\022\020\n\010severity\030\003 \001(\t\022\017\n"
+          + "\007summary\030\004 \001(\t\032\210\003\n\024WindowsUpdatePackage\022"
+          + "\r\n\005title\030\001 \001(\t\022\023\n\013description\030\002 \001(\t\022g\n\nc"
+          + "ategories\030\003 \003(\0132S.google.cloud.osconfig."
+          + "v1alpha.Inventory.WindowsUpdatePackage.W"
+          + "indowsUpdateCategory\022\026\n\016kb_article_ids\030\004"
+          + " \003(\t\022\023\n\013support_url\030\013 \001(\t\022\026\n\016more_info_u"
+          + "rls\030\005 \003(\t\022\021\n\tupdate_id\030\006 \001(\t\022\027\n\017revision"
+          + "_number\030\007 \001(\005\022?\n\033last_deployment_change_"
+          + "time\030\n \001(\0132\032.google.protobuf.Timestamp\0321"
+          + "\n\025WindowsUpdateCategory\022\n\n\002id\030\001 \001(\t\022\014\n\004n"
+          + "ame\030\002 \001(\t\032\217\001\n!WindowsQuickFixEngineering"
+          + "Package\022\017\n\007caption\030\001 \001(\t\022\023\n\013description\030"
+          + "\002 \001(\t\022\022\n\nhot_fix_id\030\003 \001(\t\0220\n\014install_tim"
+          + "e\030\005 \001(\0132\032.google.protobuf.Timestamp\032\222\001\n\022"
+          + "WindowsApplication\022\024\n\014display_name\030\001 \001(\t"
+          + "\022\027\n\017display_version\030\002 \001(\t\022\021\n\tpublisher\030\003"
+          + " \001(\t\022\'\n\014install_date\030\004 \001(\0132\021.google.type"
+          + ".Date\022\021\n\thelp_link\030\005 \001(\t\032[\n\nItemsEntry\022\013"
+          + "\n\003key\030\001 \001(\t\022<\n\005value\030\002 \001(\0132-.google.clou"
+          + "d.osconfig.v1alpha.Inventory.Item:\0028\001:n\352"
+          + "Ak\n!osconfig.googleapis.com/Inventory\022Fp"
+          + "rojects/{project}/locations/{location}/i"
+          + "nstances/{instance}/inventory\"\212\001\n\023GetInv"
+          + "entoryRequest\0227\n\004name\030\001 \001(\tB)\340A\002\372A#\n!osc"
+          + "onfig.googleapis.com/Inventory\022:\n\004view\030\002"
+          + " \001(\0162,.google.cloud.osconfig.v1alpha.Inv"
+          + "entoryView\"\304\001\n\026ListInventoriesRequest\0227\n"
+          + "\006parent\030\001 \001(\tB\'\340A\002\372A!\n\037compute.googleapi"
+          + "s.com/Instance\022:\n\004view\030\002 \001(\0162,.google.cl"
+          + "oud.osconfig.v1alpha.InventoryView\022\021\n\tpa"
+          + "ge_size\030\003 \001(\005\022\022\n\npage_token\030\004 \001(\t\022\016\n\006fil"
+          + "ter\030\005 \001(\t\"q\n\027ListInventoriesResponse\022=\n\013"
+          + "inventories\030\001 \003(\0132(.google.cloud.osconfi"
+          + "g.v1alpha.Inventory\022\027\n\017next_page_token\030\002"
+          + " \001(\t*D\n\rInventoryView\022\036\n\032INVENTORY_VIEW_"
+          + "UNSPECIFIED\020\000\022\t\n\005BASIC\020\001\022\010\n\004FULL\020\002B\334\001\n!c"
+          + "om.google.cloud.osconfig.v1alphaB\013Invent"
+          + "oriesP\001ZEgoogle.golang.org/genproto/goog"
+          + "leapis/cloud/osconfig/v1alpha;osconfig\252\002"
+          + "\035Google.Cloud.OsConfig.V1Alpha\312\002\035Google\\"
+          + "Cloud\\OsConfig\\V1alpha\352\002 Google::Cloud::"
+          + "OsConfig::V1alphab\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -185,6 +196,7 @@ public final class Inventories {
               com.google.api.FieldBehaviorProto.getDescriptor(),
               com.google.api.ResourceProto.getDescriptor(),
               com.google.protobuf.TimestampProto.getDescriptor(),
+              com.google.type.DateProto.getDescriptor(),
             });
     internal_static_google_cloud_osconfig_v1alpha_Inventory_descriptor =
         getDescriptor().getMessageTypes().get(0);
@@ -238,6 +250,7 @@ public final class Inventories {
               "WuaPackage",
               "QfePackage",
               "CosPackage",
+              "WindowsApplication",
               "Details",
             });
     internal_static_google_cloud_osconfig_v1alpha_Inventory_VersionedPackage_descriptor =
@@ -290,8 +303,16 @@ public final class Inventories {
             new java.lang.String[] {
               "Caption", "Description", "HotFixId", "InstallTime",
             });
-    internal_static_google_cloud_osconfig_v1alpha_Inventory_ItemsEntry_descriptor =
+    internal_static_google_cloud_osconfig_v1alpha_Inventory_WindowsApplication_descriptor =
         internal_static_google_cloud_osconfig_v1alpha_Inventory_descriptor.getNestedTypes().get(7);
+    internal_static_google_cloud_osconfig_v1alpha_Inventory_WindowsApplication_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_osconfig_v1alpha_Inventory_WindowsApplication_descriptor,
+            new java.lang.String[] {
+              "DisplayName", "DisplayVersion", "Publisher", "InstallDate", "HelpLink",
+            });
+    internal_static_google_cloud_osconfig_v1alpha_Inventory_ItemsEntry_descriptor =
+        internal_static_google_cloud_osconfig_v1alpha_Inventory_descriptor.getNestedTypes().get(8);
     internal_static_google_cloud_osconfig_v1alpha_Inventory_ItemsEntry_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_osconfig_v1alpha_Inventory_ItemsEntry_descriptor,
@@ -332,6 +353,7 @@ public final class Inventories {
     com.google.api.FieldBehaviorProto.getDescriptor();
     com.google.api.ResourceProto.getDescriptor();
     com.google.protobuf.TimestampProto.getDescriptor();
+    com.google.type.DateProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)
