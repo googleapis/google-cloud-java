@@ -28,7 +28,7 @@
     <dependency>
       <groupId>com.google.cloud</groupId>
       <artifactId>google-cloud-errorreporting</artifactId>
-      <version>0.122.4-beta</version>
+      <version>0.122.5-beta-SNAPSHOT</version>
     </dependency>
     <!-- {x-version-update-end} -->
 
