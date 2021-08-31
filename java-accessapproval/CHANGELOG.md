@@ -1,5 +1,18 @@
 # Changelog
 
+## [2.1.0](https://www.github.com/googleapis/java-accessapproval/compare/v2.0.4...v2.1.0) (2021-08-31)
+
+
+### Features
+
+* Remove use of deprecated gradle command in java README ([#1196](https://www.github.com/googleapis/java-accessapproval/issues/1196)) ([#546](https://www.github.com/googleapis/java-accessapproval/issues/546)) ([ea8c465](https://www.github.com/googleapis/java-accessapproval/commit/ea8c465c3a2fed1f6fc8c43f78614f0bd01c0414))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-core to v2.1.2 ([#548](https://www.github.com/googleapis/java-accessapproval/issues/548)) ([c00a69f](https://www.github.com/googleapis/java-accessapproval/commit/c00a69fef70645d6ba8950b5cb3ab32dcb9502b6))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.2.0 ([#551](https://www.github.com/googleapis/java-accessapproval/issues/551)) ([f370613](https://www.github.com/googleapis/java-accessapproval/commit/f370613462c46f961d495ab0015260b721397249))
+
 ### [2.0.4](https://www.github.com/googleapis/java-accessapproval/compare/v2.0.3...v2.0.4) (2021-08-24)
 
 
