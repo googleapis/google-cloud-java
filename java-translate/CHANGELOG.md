@@ -1,5 +1,19 @@
 # Changelog
 
+## [2.1.0](https://www.github.com/googleapis/java-translate/compare/v2.0.6...v2.1.0) (2021-08-31)
+
+
+### Features
+
+* added v3 proto for online/batch document translation and updated v3beta1 proto for format conversion ([#767](https://www.github.com/googleapis/java-translate/issues/767)) ([89d2849](https://www.github.com/googleapis/java-translate/commit/89d2849a3f3b70c0e38b2e62c7312c626f98ff90))
+* Remove use of deprecated gradle command in java README ([#1196](https://www.github.com/googleapis/java-translate/issues/1196)) ([#765](https://www.github.com/googleapis/java-translate/issues/765)) ([e410d5e](https://www.github.com/googleapis/java-translate/commit/e410d5efd4d8fb59fbbbcb162f557a8771e9d351))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-core to v2.1.2 ([#769](https://www.github.com/googleapis/java-translate/issues/769)) ([35e410d](https://www.github.com/googleapis/java-translate/commit/35e410d006a80820122cf0da7af998cd45a11520))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.2.0 ([#771](https://www.github.com/googleapis/java-translate/issues/771)) ([348e227](https://www.github.com/googleapis/java-translate/commit/348e2275f8c9cc6f0c2237e3d9c785f605710b74))
+
 ### [2.0.6](https://www.github.com/googleapis/java-translate/compare/v2.0.5...v2.0.6) (2021-08-26)
 
 
