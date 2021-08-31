@@ -1,5 +1,23 @@
 # Changelog
 
+## [2.0.0](https://www.github.com/googleapis/java-speech/compare/v1.30.5...v2.0.0) (2021-08-31)
+
+
+### ⚠ BREAKING CHANGES
+
+* java8 migration
+
+### Features
+
+* Add transcript normalization ([#633](https://www.github.com/googleapis/java-speech/issues/633)) ([548860a](https://www.github.com/googleapis/java-speech/commit/548860ad624860b6ca6da61908b77f485286f0cc))
+* java8 migration ([548860a](https://www.github.com/googleapis/java-speech/commit/548860ad624860b6ca6da61908b77f485286f0cc))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.2.0 ([#652](https://www.github.com/googleapis/java-speech/issues/652)) ([8cbd325](https://www.github.com/googleapis/java-speech/commit/8cbd3251ba937ae0d5cdcc1965064538fa9da59b))
+* update dependency com.google.cloud:google-cloud-storage to v2.1.0 ([#647](https://www.github.com/googleapis/java-speech/issues/647)) ([7d1a376](https://www.github.com/googleapis/java-speech/commit/7d1a37675332193e8b12639743cd212e1c5ea166))
+
 ### [1.30.5](https://www.github.com/googleapis/java-speech/compare/v1.30.4...v1.30.5) (2021-08-23)
 
 
