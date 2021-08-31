@@ -96,6 +96,23 @@ public final class PreviewCreateGameServerClusterResponse
 
               break;
             }
+          case 34:
+            {
+              com.google.cloud.gaming.v1.KubernetesClusterState.Builder subBuilder = null;
+              if (clusterState_ != null) {
+                subBuilder = clusterState_.toBuilder();
+              }
+              clusterState_ =
+                  input.readMessage(
+                      com.google.cloud.gaming.v1.KubernetesClusterState.parser(),
+                      extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(clusterState_);
+                clusterState_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -227,6 +244,63 @@ public final class PreviewCreateGameServerClusterResponse
     return getTargetState();
   }
 
+  public static final int CLUSTER_STATE_FIELD_NUMBER = 4;
+  private com.google.cloud.gaming.v1.KubernetesClusterState clusterState_;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The state of the Kubernetes cluster in preview, this will be available if
+   * 'view' is set to `FULL` in the relevant List/Get/Preview request.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.gaming.v1.KubernetesClusterState cluster_state = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the clusterState field is set.
+   */
+  @java.lang.Override
+  public boolean hasClusterState() {
+    return clusterState_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The state of the Kubernetes cluster in preview, this will be available if
+   * 'view' is set to `FULL` in the relevant List/Get/Preview request.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.gaming.v1.KubernetesClusterState cluster_state = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The clusterState.
+   */
+  @java.lang.Override
+  public com.google.cloud.gaming.v1.KubernetesClusterState getClusterState() {
+    return clusterState_ == null
+        ? com.google.cloud.gaming.v1.KubernetesClusterState.getDefaultInstance()
+        : clusterState_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The state of the Kubernetes cluster in preview, this will be available if
+   * 'view' is set to `FULL` in the relevant List/Get/Preview request.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.gaming.v1.KubernetesClusterState cluster_state = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.gaming.v1.KubernetesClusterStateOrBuilder getClusterStateOrBuilder() {
+    return getClusterState();
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -247,6 +321,9 @@ public final class PreviewCreateGameServerClusterResponse
     if (targetState_ != null) {
       output.writeMessage(3, getTargetState());
     }
+    if (clusterState_ != null) {
+      output.writeMessage(4, getClusterState());
+    }
     unknownFields.writeTo(output);
   }
 
@@ -261,6 +338,9 @@ public final class PreviewCreateGameServerClusterResponse
     }
     if (targetState_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(3, getTargetState());
+    }
+    if (clusterState_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(4, getClusterState());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -283,6 +363,10 @@ public final class PreviewCreateGameServerClusterResponse
     if (hasTargetState()) {
       if (!getTargetState().equals(other.getTargetState())) return false;
     }
+    if (hasClusterState() != other.hasClusterState()) return false;
+    if (hasClusterState()) {
+      if (!getClusterState().equals(other.getClusterState())) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -299,6 +383,10 @@ public final class PreviewCreateGameServerClusterResponse
     if (hasTargetState()) {
       hash = (37 * hash) + TARGET_STATE_FIELD_NUMBER;
       hash = (53 * hash) + getTargetState().hashCode();
+    }
+    if (hasClusterState()) {
+      hash = (37 * hash) + CLUSTER_STATE_FIELD_NUMBER;
+      hash = (53 * hash) + getClusterState().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -457,6 +545,12 @@ public final class PreviewCreateGameServerClusterResponse
         targetState_ = null;
         targetStateBuilder_ = null;
       }
+      if (clusterStateBuilder_ == null) {
+        clusterState_ = null;
+      } else {
+        clusterState_ = null;
+        clusterStateBuilder_ = null;
+      }
       return this;
     }
 
@@ -490,6 +584,11 @@ public final class PreviewCreateGameServerClusterResponse
         result.targetState_ = targetState_;
       } else {
         result.targetState_ = targetStateBuilder_.build();
+      }
+      if (clusterStateBuilder_ == null) {
+        result.clusterState_ = clusterState_;
+      } else {
+        result.clusterState_ = clusterStateBuilder_.build();
       }
       onBuilt();
       return result;
@@ -549,6 +648,9 @@ public final class PreviewCreateGameServerClusterResponse
       }
       if (other.hasTargetState()) {
         mergeTargetState(other.getTargetState());
+      }
+      if (other.hasClusterState()) {
+        mergeClusterState(other.getClusterState());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -870,6 +972,219 @@ public final class PreviewCreateGameServerClusterResponse
         targetState_ = null;
       }
       return targetStateBuilder_;
+    }
+
+    private com.google.cloud.gaming.v1.KubernetesClusterState clusterState_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.gaming.v1.KubernetesClusterState,
+            com.google.cloud.gaming.v1.KubernetesClusterState.Builder,
+            com.google.cloud.gaming.v1.KubernetesClusterStateOrBuilder>
+        clusterStateBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The state of the Kubernetes cluster in preview, this will be available if
+     * 'view' is set to `FULL` in the relevant List/Get/Preview request.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.gaming.v1.KubernetesClusterState cluster_state = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the clusterState field is set.
+     */
+    public boolean hasClusterState() {
+      return clusterStateBuilder_ != null || clusterState_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The state of the Kubernetes cluster in preview, this will be available if
+     * 'view' is set to `FULL` in the relevant List/Get/Preview request.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.gaming.v1.KubernetesClusterState cluster_state = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The clusterState.
+     */
+    public com.google.cloud.gaming.v1.KubernetesClusterState getClusterState() {
+      if (clusterStateBuilder_ == null) {
+        return clusterState_ == null
+            ? com.google.cloud.gaming.v1.KubernetesClusterState.getDefaultInstance()
+            : clusterState_;
+      } else {
+        return clusterStateBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The state of the Kubernetes cluster in preview, this will be available if
+     * 'view' is set to `FULL` in the relevant List/Get/Preview request.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.gaming.v1.KubernetesClusterState cluster_state = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setClusterState(com.google.cloud.gaming.v1.KubernetesClusterState value) {
+      if (clusterStateBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        clusterState_ = value;
+        onChanged();
+      } else {
+        clusterStateBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The state of the Kubernetes cluster in preview, this will be available if
+     * 'view' is set to `FULL` in the relevant List/Get/Preview request.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.gaming.v1.KubernetesClusterState cluster_state = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setClusterState(
+        com.google.cloud.gaming.v1.KubernetesClusterState.Builder builderForValue) {
+      if (clusterStateBuilder_ == null) {
+        clusterState_ = builderForValue.build();
+        onChanged();
+      } else {
+        clusterStateBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The state of the Kubernetes cluster in preview, this will be available if
+     * 'view' is set to `FULL` in the relevant List/Get/Preview request.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.gaming.v1.KubernetesClusterState cluster_state = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder mergeClusterState(com.google.cloud.gaming.v1.KubernetesClusterState value) {
+      if (clusterStateBuilder_ == null) {
+        if (clusterState_ != null) {
+          clusterState_ =
+              com.google.cloud.gaming.v1.KubernetesClusterState.newBuilder(clusterState_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          clusterState_ = value;
+        }
+        onChanged();
+      } else {
+        clusterStateBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The state of the Kubernetes cluster in preview, this will be available if
+     * 'view' is set to `FULL` in the relevant List/Get/Preview request.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.gaming.v1.KubernetesClusterState cluster_state = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder clearClusterState() {
+      if (clusterStateBuilder_ == null) {
+        clusterState_ = null;
+        onChanged();
+      } else {
+        clusterState_ = null;
+        clusterStateBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The state of the Kubernetes cluster in preview, this will be available if
+     * 'view' is set to `FULL` in the relevant List/Get/Preview request.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.gaming.v1.KubernetesClusterState cluster_state = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.gaming.v1.KubernetesClusterState.Builder getClusterStateBuilder() {
+
+      onChanged();
+      return getClusterStateFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The state of the Kubernetes cluster in preview, this will be available if
+     * 'view' is set to `FULL` in the relevant List/Get/Preview request.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.gaming.v1.KubernetesClusterState cluster_state = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.gaming.v1.KubernetesClusterStateOrBuilder getClusterStateOrBuilder() {
+      if (clusterStateBuilder_ != null) {
+        return clusterStateBuilder_.getMessageOrBuilder();
+      } else {
+        return clusterState_ == null
+            ? com.google.cloud.gaming.v1.KubernetesClusterState.getDefaultInstance()
+            : clusterState_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The state of the Kubernetes cluster in preview, this will be available if
+     * 'view' is set to `FULL` in the relevant List/Get/Preview request.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.gaming.v1.KubernetesClusterState cluster_state = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.gaming.v1.KubernetesClusterState,
+            com.google.cloud.gaming.v1.KubernetesClusterState.Builder,
+            com.google.cloud.gaming.v1.KubernetesClusterStateOrBuilder>
+        getClusterStateFieldBuilder() {
+      if (clusterStateBuilder_ == null) {
+        clusterStateBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.gaming.v1.KubernetesClusterState,
+                com.google.cloud.gaming.v1.KubernetesClusterState.Builder,
+                com.google.cloud.gaming.v1.KubernetesClusterStateOrBuilder>(
+                getClusterState(), getParentForChildren(), isClean());
+        clusterState_ = null;
+      }
+      return clusterStateBuilder_;
     }
 
     @java.lang.Override

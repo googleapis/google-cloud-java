@@ -27,7 +27,7 @@ public interface RealmOrBuilder
    *
    *
    * <pre>
-   * The resource name of the realm. Uses the form:
+   * The resource name of the realm, in the following form:
    * `projects/{project}/locations/{location}/realms/{realm}`. For
    * example, `projects/my-project/locations/{location}/realms/my-realm`.
    * </pre>
@@ -41,7 +41,7 @@ public interface RealmOrBuilder
    *
    *
    * <pre>
-   * The resource name of the realm. Uses the form:
+   * The resource name of the realm, in the following form:
    * `projects/{project}/locations/{location}/realms/{realm}`. For
    * example, `projects/my-project/locations/{location}/realms/my-realm`.
    * </pre>

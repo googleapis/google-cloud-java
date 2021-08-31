@@ -118,7 +118,7 @@ public final class DeleteGameServerDeploymentRequest extends com.google.protobuf
    *
    *
    * <pre>
-   * Required. The name of the game server delpoyment to delete. Uses the form:
+   * Required. The name of the game server delpoyment to delete, in the following form:
    * `projects/{project}/locations/{location}/gameServerDeployments/{deployment}`.
    * </pre>
    *
@@ -144,7 +144,7 @@ public final class DeleteGameServerDeploymentRequest extends com.google.protobuf
    *
    *
    * <pre>
-   * Required. The name of the game server delpoyment to delete. Uses the form:
+   * Required. The name of the game server delpoyment to delete, in the following form:
    * `projects/{project}/locations/{location}/gameServerDeployments/{deployment}`.
    * </pre>
    *
@@ -493,7 +493,7 @@ public final class DeleteGameServerDeploymentRequest extends com.google.protobuf
      *
      *
      * <pre>
-     * Required. The name of the game server delpoyment to delete. Uses the form:
+     * Required. The name of the game server delpoyment to delete, in the following form:
      * `projects/{project}/locations/{location}/gameServerDeployments/{deployment}`.
      * </pre>
      *
@@ -518,7 +518,7 @@ public final class DeleteGameServerDeploymentRequest extends com.google.protobuf
      *
      *
      * <pre>
-     * Required. The name of the game server delpoyment to delete. Uses the form:
+     * Required. The name of the game server delpoyment to delete, in the following form:
      * `projects/{project}/locations/{location}/gameServerDeployments/{deployment}`.
      * </pre>
      *
@@ -543,7 +543,7 @@ public final class DeleteGameServerDeploymentRequest extends com.google.protobuf
      *
      *
      * <pre>
-     * Required. The name of the game server delpoyment to delete. Uses the form:
+     * Required. The name of the game server delpoyment to delete, in the following form:
      * `projects/{project}/locations/{location}/gameServerDeployments/{deployment}`.
      * </pre>
      *
@@ -567,7 +567,7 @@ public final class DeleteGameServerDeploymentRequest extends com.google.protobuf
      *
      *
      * <pre>
-     * Required. The name of the game server delpoyment to delete. Uses the form:
+     * Required. The name of the game server delpoyment to delete, in the following form:
      * `projects/{project}/locations/{location}/gameServerDeployments/{deployment}`.
      * </pre>
      *
@@ -587,7 +587,7 @@ public final class DeleteGameServerDeploymentRequest extends com.google.protobuf
      *
      *
      * <pre>
-     * Required. The name of the game server delpoyment to delete. Uses the form:
+     * Required. The name of the game server delpoyment to delete, in the following form:
      * `projects/{project}/locations/{location}/gameServerDeployments/{deployment}`.
      * </pre>
      *

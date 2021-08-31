@@ -27,7 +27,7 @@ public interface ListGameServerClustersRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The parent resource name. Uses the form:
+   * Required. The parent resource name, in the following form:
    * "projects/{project}/locations/{location}/realms/{realm}".
    * </pre>
    *
@@ -42,7 +42,7 @@ public interface ListGameServerClustersRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The parent resource name. Uses the form:
+   * Required. The parent resource name, in the following form:
    * "projects/{project}/locations/{location}/realms/{realm}".
    * </pre>
    *
@@ -58,7 +58,7 @@ public interface ListGameServerClustersRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. The maximum number of items to return.  If unspecified, the server
+   * Optional. The maximum number of items to return. If unspecified, the server
    * will pick an appropriate default. The server may return fewer items than
    * requested. A caller should only rely on response's
    * [next_page_token][google.cloud.gaming.v1.ListGameServerClustersResponse.next_page_token] to
@@ -147,4 +147,43 @@ public interface ListGameServerClustersRequestOrBuilder
    * @return The bytes for orderBy.
    */
   com.google.protobuf.ByteString getOrderByBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. View for the returned GameServerCluster objects. When `FULL` is
+   * specified, the `cluster_state` field is also returned in the
+   * GameServerCluster object, which includes the state of the referenced
+   * Kubernetes cluster such as versions and provider info. The default/unset
+   * value is GAME_SERVER_CLUSTER_VIEW_UNSPECIFIED, same as BASIC, which does
+   * not return the `cluster_state` field.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.gaming.v1.GameServerClusterView view = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for view.
+   */
+  int getViewValue();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. View for the returned GameServerCluster objects. When `FULL` is
+   * specified, the `cluster_state` field is also returned in the
+   * GameServerCluster object, which includes the state of the referenced
+   * Kubernetes cluster such as versions and provider info. The default/unset
+   * value is GAME_SERVER_CLUSTER_VIEW_UNSPECIFIED, same as BASIC, which does
+   * not return the `cluster_state` field.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.gaming.v1.GameServerClusterView view = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The view.
+   */
+  com.google.cloud.gaming.v1.GameServerClusterView getView();
 }

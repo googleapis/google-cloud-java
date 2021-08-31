@@ -27,7 +27,7 @@ public interface GameServerDeploymentOrBuilder
    *
    *
    * <pre>
-   * The resource name of the game server deployment. Uses the form:
+   * The resource name of the game server deployment, in the following form:
    * `projects/{project}/locations/{location}/gameServerDeployments/{deployment}`.
    * For example,
    * `projects/my-project/locations/global/gameServerDeployments/my-deployment`.
@@ -42,7 +42,7 @@ public interface GameServerDeploymentOrBuilder
    *
    *
    * <pre>
-   * The resource name of the game server deployment. Uses the form:
+   * The resource name of the game server deployment, in the following form:
    * `projects/{project}/locations/{location}/gameServerDeployments/{deployment}`.
    * For example,
    * `projects/my-project/locations/global/gameServerDeployments/my-deployment`.

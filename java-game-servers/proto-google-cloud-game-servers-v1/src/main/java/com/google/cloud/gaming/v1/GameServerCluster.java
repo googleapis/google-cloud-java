@@ -154,6 +154,23 @@ public final class GameServerCluster extends com.google.protobuf.GeneratedMessag
               description_ = s;
               break;
             }
+          case 90:
+            {
+              com.google.cloud.gaming.v1.KubernetesClusterState.Builder subBuilder = null;
+              if (clusterState_ != null) {
+                subBuilder = clusterState_.toBuilder();
+              }
+              clusterState_ =
+                  input.readMessage(
+                      com.google.cloud.gaming.v1.KubernetesClusterState.parser(),
+                      extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(clusterState_);
+                clusterState_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -205,7 +222,7 @@ public final class GameServerCluster extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Required. The resource name of the game server cluster. Uses the form:
+   * Required. The resource name of the game server cluster, in the following form:
    * `projects/{project}/locations/{location}/realms/{realm}/gameServerClusters/{cluster}`.
    * For example,
    * `projects/my-project/locations/{location}/realms/zanzibar/gameServerClusters/my-onprem-cluster`.
@@ -231,7 +248,7 @@ public final class GameServerCluster extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Required. The resource name of the game server cluster. Uses the form:
+   * Required. The resource name of the game server cluster, in the following form:
    * `projects/{project}/locations/{location}/realms/{realm}/gameServerClusters/{cluster}`.
    * For example,
    * `projects/my-project/locations/{location}/realms/zanzibar/gameServerClusters/my-onprem-cluster`.
@@ -604,6 +621,63 @@ public final class GameServerCluster extends com.google.protobuf.GeneratedMessag
     }
   }
 
+  public static final int CLUSTER_STATE_FIELD_NUMBER = 11;
+  private com.google.cloud.gaming.v1.KubernetesClusterState clusterState_;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The state of the Kubernetes cluster, this will be available if
+   * 'view' is set to `FULL` in the relevant List/Get/Preview request.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.gaming.v1.KubernetesClusterState cluster_state = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the clusterState field is set.
+   */
+  @java.lang.Override
+  public boolean hasClusterState() {
+    return clusterState_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The state of the Kubernetes cluster, this will be available if
+   * 'view' is set to `FULL` in the relevant List/Get/Preview request.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.gaming.v1.KubernetesClusterState cluster_state = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The clusterState.
+   */
+  @java.lang.Override
+  public com.google.cloud.gaming.v1.KubernetesClusterState getClusterState() {
+    return clusterState_ == null
+        ? com.google.cloud.gaming.v1.KubernetesClusterState.getDefaultInstance()
+        : clusterState_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The state of the Kubernetes cluster, this will be available if
+   * 'view' is set to `FULL` in the relevant List/Get/Preview request.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.gaming.v1.KubernetesClusterState cluster_state = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.gaming.v1.KubernetesClusterStateOrBuilder getClusterStateOrBuilder() {
+    return getClusterState();
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -637,6 +711,9 @@ public final class GameServerCluster extends com.google.protobuf.GeneratedMessag
     }
     if (!getDescriptionBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 7, description_);
+    }
+    if (clusterState_ != null) {
+      output.writeMessage(11, getClusterState());
     }
     unknownFields.writeTo(output);
   }
@@ -675,6 +752,9 @@ public final class GameServerCluster extends com.google.protobuf.GeneratedMessag
     if (!getDescriptionBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, description_);
     }
+    if (clusterState_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(11, getClusterState());
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -707,6 +787,10 @@ public final class GameServerCluster extends com.google.protobuf.GeneratedMessag
     }
     if (!getEtag().equals(other.getEtag())) return false;
     if (!getDescription().equals(other.getDescription())) return false;
+    if (hasClusterState() != other.hasClusterState()) return false;
+    if (hasClusterState()) {
+      if (!getClusterState().equals(other.getClusterState())) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -740,6 +824,10 @@ public final class GameServerCluster extends com.google.protobuf.GeneratedMessag
     hash = (53 * hash) + getEtag().hashCode();
     hash = (37 * hash) + DESCRIPTION_FIELD_NUMBER;
     hash = (53 * hash) + getDescription().hashCode();
+    if (hasClusterState()) {
+      hash = (37 * hash) + CLUSTER_STATE_FIELD_NUMBER;
+      hash = (53 * hash) + getClusterState().hashCode();
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -930,6 +1018,12 @@ public final class GameServerCluster extends com.google.protobuf.GeneratedMessag
 
       description_ = "";
 
+      if (clusterStateBuilder_ == null) {
+        clusterState_ = null;
+      } else {
+        clusterState_ = null;
+        clusterStateBuilder_ = null;
+      }
       return this;
     }
 
@@ -978,6 +1072,11 @@ public final class GameServerCluster extends com.google.protobuf.GeneratedMessag
       }
       result.etag_ = etag_;
       result.description_ = description_;
+      if (clusterStateBuilder_ == null) {
+        result.clusterState_ = clusterState_;
+      } else {
+        result.clusterState_ = clusterStateBuilder_.build();
+      }
       onBuilt();
       return result;
     }
@@ -1049,6 +1148,9 @@ public final class GameServerCluster extends com.google.protobuf.GeneratedMessag
         description_ = other.description_;
         onChanged();
       }
+      if (other.hasClusterState()) {
+        mergeClusterState(other.getClusterState());
+      }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
@@ -1085,7 +1187,7 @@ public final class GameServerCluster extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Required. The resource name of the game server cluster. Uses the form:
+     * Required. The resource name of the game server cluster, in the following form:
      * `projects/{project}/locations/{location}/realms/{realm}/gameServerClusters/{cluster}`.
      * For example,
      * `projects/my-project/locations/{location}/realms/zanzibar/gameServerClusters/my-onprem-cluster`.
@@ -1110,7 +1212,7 @@ public final class GameServerCluster extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Required. The resource name of the game server cluster. Uses the form:
+     * Required. The resource name of the game server cluster, in the following form:
      * `projects/{project}/locations/{location}/realms/{realm}/gameServerClusters/{cluster}`.
      * For example,
      * `projects/my-project/locations/{location}/realms/zanzibar/gameServerClusters/my-onprem-cluster`.
@@ -1135,7 +1237,7 @@ public final class GameServerCluster extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Required. The resource name of the game server cluster. Uses the form:
+     * Required. The resource name of the game server cluster, in the following form:
      * `projects/{project}/locations/{location}/realms/{realm}/gameServerClusters/{cluster}`.
      * For example,
      * `projects/my-project/locations/{location}/realms/zanzibar/gameServerClusters/my-onprem-cluster`.
@@ -1159,7 +1261,7 @@ public final class GameServerCluster extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Required. The resource name of the game server cluster. Uses the form:
+     * Required. The resource name of the game server cluster, in the following form:
      * `projects/{project}/locations/{location}/realms/{realm}/gameServerClusters/{cluster}`.
      * For example,
      * `projects/my-project/locations/{location}/realms/zanzibar/gameServerClusters/my-onprem-cluster`.
@@ -1179,7 +1281,7 @@ public final class GameServerCluster extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Required. The resource name of the game server cluster. Uses the form:
+     * Required. The resource name of the game server cluster, in the following form:
      * `projects/{project}/locations/{location}/realms/{realm}/gameServerClusters/{cluster}`.
      * For example,
      * `projects/my-project/locations/{location}/realms/zanzibar/gameServerClusters/my-onprem-cluster`.
@@ -2176,6 +2278,219 @@ public final class GameServerCluster extends com.google.protobuf.GeneratedMessag
       description_ = value;
       onChanged();
       return this;
+    }
+
+    private com.google.cloud.gaming.v1.KubernetesClusterState clusterState_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.gaming.v1.KubernetesClusterState,
+            com.google.cloud.gaming.v1.KubernetesClusterState.Builder,
+            com.google.cloud.gaming.v1.KubernetesClusterStateOrBuilder>
+        clusterStateBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The state of the Kubernetes cluster, this will be available if
+     * 'view' is set to `FULL` in the relevant List/Get/Preview request.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.gaming.v1.KubernetesClusterState cluster_state = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the clusterState field is set.
+     */
+    public boolean hasClusterState() {
+      return clusterStateBuilder_ != null || clusterState_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The state of the Kubernetes cluster, this will be available if
+     * 'view' is set to `FULL` in the relevant List/Get/Preview request.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.gaming.v1.KubernetesClusterState cluster_state = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The clusterState.
+     */
+    public com.google.cloud.gaming.v1.KubernetesClusterState getClusterState() {
+      if (clusterStateBuilder_ == null) {
+        return clusterState_ == null
+            ? com.google.cloud.gaming.v1.KubernetesClusterState.getDefaultInstance()
+            : clusterState_;
+      } else {
+        return clusterStateBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The state of the Kubernetes cluster, this will be available if
+     * 'view' is set to `FULL` in the relevant List/Get/Preview request.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.gaming.v1.KubernetesClusterState cluster_state = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setClusterState(com.google.cloud.gaming.v1.KubernetesClusterState value) {
+      if (clusterStateBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        clusterState_ = value;
+        onChanged();
+      } else {
+        clusterStateBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The state of the Kubernetes cluster, this will be available if
+     * 'view' is set to `FULL` in the relevant List/Get/Preview request.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.gaming.v1.KubernetesClusterState cluster_state = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setClusterState(
+        com.google.cloud.gaming.v1.KubernetesClusterState.Builder builderForValue) {
+      if (clusterStateBuilder_ == null) {
+        clusterState_ = builderForValue.build();
+        onChanged();
+      } else {
+        clusterStateBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The state of the Kubernetes cluster, this will be available if
+     * 'view' is set to `FULL` in the relevant List/Get/Preview request.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.gaming.v1.KubernetesClusterState cluster_state = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder mergeClusterState(com.google.cloud.gaming.v1.KubernetesClusterState value) {
+      if (clusterStateBuilder_ == null) {
+        if (clusterState_ != null) {
+          clusterState_ =
+              com.google.cloud.gaming.v1.KubernetesClusterState.newBuilder(clusterState_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          clusterState_ = value;
+        }
+        onChanged();
+      } else {
+        clusterStateBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The state of the Kubernetes cluster, this will be available if
+     * 'view' is set to `FULL` in the relevant List/Get/Preview request.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.gaming.v1.KubernetesClusterState cluster_state = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder clearClusterState() {
+      if (clusterStateBuilder_ == null) {
+        clusterState_ = null;
+        onChanged();
+      } else {
+        clusterState_ = null;
+        clusterStateBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The state of the Kubernetes cluster, this will be available if
+     * 'view' is set to `FULL` in the relevant List/Get/Preview request.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.gaming.v1.KubernetesClusterState cluster_state = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.gaming.v1.KubernetesClusterState.Builder getClusterStateBuilder() {
+
+      onChanged();
+      return getClusterStateFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The state of the Kubernetes cluster, this will be available if
+     * 'view' is set to `FULL` in the relevant List/Get/Preview request.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.gaming.v1.KubernetesClusterState cluster_state = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.gaming.v1.KubernetesClusterStateOrBuilder getClusterStateOrBuilder() {
+      if (clusterStateBuilder_ != null) {
+        return clusterStateBuilder_.getMessageOrBuilder();
+      } else {
+        return clusterState_ == null
+            ? com.google.cloud.gaming.v1.KubernetesClusterState.getDefaultInstance()
+            : clusterState_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The state of the Kubernetes cluster, this will be available if
+     * 'view' is set to `FULL` in the relevant List/Get/Preview request.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.gaming.v1.KubernetesClusterState cluster_state = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.gaming.v1.KubernetesClusterState,
+            com.google.cloud.gaming.v1.KubernetesClusterState.Builder,
+            com.google.cloud.gaming.v1.KubernetesClusterStateOrBuilder>
+        getClusterStateFieldBuilder() {
+      if (clusterStateBuilder_ == null) {
+        clusterStateBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.gaming.v1.KubernetesClusterState,
+                com.google.cloud.gaming.v1.KubernetesClusterState.Builder,
+                com.google.cloud.gaming.v1.KubernetesClusterStateOrBuilder>(
+                getClusterState(), getParentForChildren(), isClean());
+        clusterState_ = null;
+      }
+      return clusterStateBuilder_;
     }
 
     @java.lang.Override

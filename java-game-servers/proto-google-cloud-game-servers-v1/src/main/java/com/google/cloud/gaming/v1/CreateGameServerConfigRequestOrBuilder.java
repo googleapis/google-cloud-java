@@ -27,7 +27,7 @@ public interface CreateGameServerConfigRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The parent resource name. Uses the form:
+   * Required. The parent resource name, in the following form:
    * `projects/{project}/locations/{location}/gameServerDeployments/{deployment}/`.
    * </pre>
    *
@@ -42,7 +42,7 @@ public interface CreateGameServerConfigRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The parent resource name. Uses the form:
+   * Required. The parent resource name, in the following form:
    * `projects/{project}/locations/{location}/gameServerDeployments/{deployment}/`.
    * </pre>
    *

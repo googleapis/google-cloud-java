@@ -82,4 +82,48 @@ public interface PreviewCreateGameServerClusterResponseOrBuilder
    * <code>.google.cloud.gaming.v1.TargetState target_state = 3;</code>
    */
   com.google.cloud.gaming.v1.TargetStateOrBuilder getTargetStateOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The state of the Kubernetes cluster in preview, this will be available if
+   * 'view' is set to `FULL` in the relevant List/Get/Preview request.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.gaming.v1.KubernetesClusterState cluster_state = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the clusterState field is set.
+   */
+  boolean hasClusterState();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The state of the Kubernetes cluster in preview, this will be available if
+   * 'view' is set to `FULL` in the relevant List/Get/Preview request.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.gaming.v1.KubernetesClusterState cluster_state = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The clusterState.
+   */
+  com.google.cloud.gaming.v1.KubernetesClusterState getClusterState();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The state of the Kubernetes cluster in preview, this will be available if
+   * 'view' is set to `FULL` in the relevant List/Get/Preview request.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.gaming.v1.KubernetesClusterState cluster_state = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.cloud.gaming.v1.KubernetesClusterStateOrBuilder getClusterStateOrBuilder();
 }

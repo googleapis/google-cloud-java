@@ -42,6 +42,7 @@ public final class ListGameServerClustersRequest extends com.google.protobuf.Gen
     pageToken_ = "";
     filter_ = "";
     orderBy_ = "";
+    view_ = 0;
   }
 
   @java.lang.Override
@@ -106,6 +107,13 @@ public final class ListGameServerClustersRequest extends com.google.protobuf.Gen
               orderBy_ = s;
               break;
             }
+          case 48:
+            {
+              int rawValue = input.readEnum();
+
+              view_ = rawValue;
+              break;
+            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -146,7 +154,7 @@ public final class ListGameServerClustersRequest extends com.google.protobuf.Gen
    *
    *
    * <pre>
-   * Required. The parent resource name. Uses the form:
+   * Required. The parent resource name, in the following form:
    * "projects/{project}/locations/{location}/realms/{realm}".
    * </pre>
    *
@@ -172,7 +180,7 @@ public final class ListGameServerClustersRequest extends com.google.protobuf.Gen
    *
    *
    * <pre>
-   * Required. The parent resource name. Uses the form:
+   * Required. The parent resource name, in the following form:
    * "projects/{project}/locations/{location}/realms/{realm}".
    * </pre>
    *
@@ -201,7 +209,7 @@ public final class ListGameServerClustersRequest extends com.google.protobuf.Gen
    *
    *
    * <pre>
-   * Optional. The maximum number of items to return.  If unspecified, the server
+   * Optional. The maximum number of items to return. If unspecified, the server
    * will pick an appropriate default. The server may return fewer items than
    * requested. A caller should only rely on response's
    * [next_page_token][google.cloud.gaming.v1.ListGameServerClustersResponse.next_page_token] to
@@ -366,6 +374,56 @@ public final class ListGameServerClustersRequest extends com.google.protobuf.Gen
     }
   }
 
+  public static final int VIEW_FIELD_NUMBER = 6;
+  private int view_;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. View for the returned GameServerCluster objects. When `FULL` is
+   * specified, the `cluster_state` field is also returned in the
+   * GameServerCluster object, which includes the state of the referenced
+   * Kubernetes cluster such as versions and provider info. The default/unset
+   * value is GAME_SERVER_CLUSTER_VIEW_UNSPECIFIED, same as BASIC, which does
+   * not return the `cluster_state` field.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.gaming.v1.GameServerClusterView view = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for view.
+   */
+  @java.lang.Override
+  public int getViewValue() {
+    return view_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. View for the returned GameServerCluster objects. When `FULL` is
+   * specified, the `cluster_state` field is also returned in the
+   * GameServerCluster object, which includes the state of the referenced
+   * Kubernetes cluster such as versions and provider info. The default/unset
+   * value is GAME_SERVER_CLUSTER_VIEW_UNSPECIFIED, same as BASIC, which does
+   * not return the `cluster_state` field.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.gaming.v1.GameServerClusterView view = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The view.
+   */
+  @java.lang.Override
+  public com.google.cloud.gaming.v1.GameServerClusterView getView() {
+    @SuppressWarnings("deprecation")
+    com.google.cloud.gaming.v1.GameServerClusterView result =
+        com.google.cloud.gaming.v1.GameServerClusterView.valueOf(view_);
+    return result == null ? com.google.cloud.gaming.v1.GameServerClusterView.UNRECOGNIZED : result;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -395,6 +453,11 @@ public final class ListGameServerClustersRequest extends com.google.protobuf.Gen
     if (!getOrderByBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 5, orderBy_);
     }
+    if (view_
+        != com.google.cloud.gaming.v1.GameServerClusterView.GAME_SERVER_CLUSTER_VIEW_UNSPECIFIED
+            .getNumber()) {
+      output.writeEnum(6, view_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -419,6 +482,11 @@ public final class ListGameServerClustersRequest extends com.google.protobuf.Gen
     if (!getOrderByBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, orderBy_);
     }
+    if (view_
+        != com.google.cloud.gaming.v1.GameServerClusterView.GAME_SERVER_CLUSTER_VIEW_UNSPECIFIED
+            .getNumber()) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(6, view_);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -440,6 +508,7 @@ public final class ListGameServerClustersRequest extends com.google.protobuf.Gen
     if (!getPageToken().equals(other.getPageToken())) return false;
     if (!getFilter().equals(other.getFilter())) return false;
     if (!getOrderBy().equals(other.getOrderBy())) return false;
+    if (view_ != other.view_) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -461,6 +530,8 @@ public final class ListGameServerClustersRequest extends com.google.protobuf.Gen
     hash = (53 * hash) + getFilter().hashCode();
     hash = (37 * hash) + ORDER_BY_FIELD_NUMBER;
     hash = (53 * hash) + getOrderBy().hashCode();
+    hash = (37 * hash) + VIEW_FIELD_NUMBER;
+    hash = (53 * hash) + view_;
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -617,6 +688,8 @@ public final class ListGameServerClustersRequest extends com.google.protobuf.Gen
 
       orderBy_ = "";
 
+      view_ = 0;
+
       return this;
     }
 
@@ -649,6 +722,7 @@ public final class ListGameServerClustersRequest extends com.google.protobuf.Gen
       result.pageToken_ = pageToken_;
       result.filter_ = filter_;
       result.orderBy_ = orderBy_;
+      result.view_ = view_;
       onBuilt();
       return result;
     }
@@ -718,6 +792,9 @@ public final class ListGameServerClustersRequest extends com.google.protobuf.Gen
         orderBy_ = other.orderBy_;
         onChanged();
       }
+      if (other.view_ != 0) {
+        setViewValue(other.getViewValue());
+      }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
@@ -753,7 +830,7 @@ public final class ListGameServerClustersRequest extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Required. The parent resource name. Uses the form:
+     * Required. The parent resource name, in the following form:
      * "projects/{project}/locations/{location}/realms/{realm}".
      * </pre>
      *
@@ -778,7 +855,7 @@ public final class ListGameServerClustersRequest extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Required. The parent resource name. Uses the form:
+     * Required. The parent resource name, in the following form:
      * "projects/{project}/locations/{location}/realms/{realm}".
      * </pre>
      *
@@ -803,7 +880,7 @@ public final class ListGameServerClustersRequest extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Required. The parent resource name. Uses the form:
+     * Required. The parent resource name, in the following form:
      * "projects/{project}/locations/{location}/realms/{realm}".
      * </pre>
      *
@@ -827,7 +904,7 @@ public final class ListGameServerClustersRequest extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Required. The parent resource name. Uses the form:
+     * Required. The parent resource name, in the following form:
      * "projects/{project}/locations/{location}/realms/{realm}".
      * </pre>
      *
@@ -847,7 +924,7 @@ public final class ListGameServerClustersRequest extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Required. The parent resource name. Uses the form:
+     * Required. The parent resource name, in the following form:
      * "projects/{project}/locations/{location}/realms/{realm}".
      * </pre>
      *
@@ -874,7 +951,7 @@ public final class ListGameServerClustersRequest extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Optional. The maximum number of items to return.  If unspecified, the server
+     * Optional. The maximum number of items to return. If unspecified, the server
      * will pick an appropriate default. The server may return fewer items than
      * requested. A caller should only rely on response's
      * [next_page_token][google.cloud.gaming.v1.ListGameServerClustersResponse.next_page_token] to
@@ -893,7 +970,7 @@ public final class ListGameServerClustersRequest extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Optional. The maximum number of items to return.  If unspecified, the server
+     * Optional. The maximum number of items to return. If unspecified, the server
      * will pick an appropriate default. The server may return fewer items than
      * requested. A caller should only rely on response's
      * [next_page_token][google.cloud.gaming.v1.ListGameServerClustersResponse.next_page_token] to
@@ -915,7 +992,7 @@ public final class ListGameServerClustersRequest extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Optional. The maximum number of items to return.  If unspecified, the server
+     * Optional. The maximum number of items to return. If unspecified, the server
      * will pick an appropriate default. The server may return fewer items than
      * requested. A caller should only rely on response's
      * [next_page_token][google.cloud.gaming.v1.ListGameServerClustersResponse.next_page_token] to
@@ -1252,6 +1329,134 @@ public final class ListGameServerClustersRequest extends com.google.protobuf.Gen
       checkByteStringIsUtf8(value);
 
       orderBy_ = value;
+      onChanged();
+      return this;
+    }
+
+    private int view_ = 0;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. View for the returned GameServerCluster objects. When `FULL` is
+     * specified, the `cluster_state` field is also returned in the
+     * GameServerCluster object, which includes the state of the referenced
+     * Kubernetes cluster such as versions and provider info. The default/unset
+     * value is GAME_SERVER_CLUSTER_VIEW_UNSPECIFIED, same as BASIC, which does
+     * not return the `cluster_state` field.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.gaming.v1.GameServerClusterView view = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for view.
+     */
+    @java.lang.Override
+    public int getViewValue() {
+      return view_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. View for the returned GameServerCluster objects. When `FULL` is
+     * specified, the `cluster_state` field is also returned in the
+     * GameServerCluster object, which includes the state of the referenced
+     * Kubernetes cluster such as versions and provider info. The default/unset
+     * value is GAME_SERVER_CLUSTER_VIEW_UNSPECIFIED, same as BASIC, which does
+     * not return the `cluster_state` field.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.gaming.v1.GameServerClusterView view = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The enum numeric value on the wire for view to set.
+     * @return This builder for chaining.
+     */
+    public Builder setViewValue(int value) {
+
+      view_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. View for the returned GameServerCluster objects. When `FULL` is
+     * specified, the `cluster_state` field is also returned in the
+     * GameServerCluster object, which includes the state of the referenced
+     * Kubernetes cluster such as versions and provider info. The default/unset
+     * value is GAME_SERVER_CLUSTER_VIEW_UNSPECIFIED, same as BASIC, which does
+     * not return the `cluster_state` field.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.gaming.v1.GameServerClusterView view = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The view.
+     */
+    @java.lang.Override
+    public com.google.cloud.gaming.v1.GameServerClusterView getView() {
+      @SuppressWarnings("deprecation")
+      com.google.cloud.gaming.v1.GameServerClusterView result =
+          com.google.cloud.gaming.v1.GameServerClusterView.valueOf(view_);
+      return result == null
+          ? com.google.cloud.gaming.v1.GameServerClusterView.UNRECOGNIZED
+          : result;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. View for the returned GameServerCluster objects. When `FULL` is
+     * specified, the `cluster_state` field is also returned in the
+     * GameServerCluster object, which includes the state of the referenced
+     * Kubernetes cluster such as versions and provider info. The default/unset
+     * value is GAME_SERVER_CLUSTER_VIEW_UNSPECIFIED, same as BASIC, which does
+     * not return the `cluster_state` field.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.gaming.v1.GameServerClusterView view = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The view to set.
+     * @return This builder for chaining.
+     */
+    public Builder setView(com.google.cloud.gaming.v1.GameServerClusterView value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+
+      view_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. View for the returned GameServerCluster objects. When `FULL` is
+     * specified, the `cluster_state` field is also returned in the
+     * GameServerCluster object, which includes the state of the referenced
+     * Kubernetes cluster such as versions and provider info. The default/unset
+     * value is GAME_SERVER_CLUSTER_VIEW_UNSPECIFIED, same as BASIC, which does
+     * not return the `cluster_state` field.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.gaming.v1.GameServerClusterView view = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearView() {
+
+      view_ = 0;
       onChanged();
       return this;
     }

@@ -146,7 +146,7 @@ public final class ListRealmsRequest extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Required. The parent resource name. Uses the form:
+   * Required. The parent resource name, in the following form:
    * `projects/{project}/locations/{location}`.
    * </pre>
    *
@@ -172,7 +172,7 @@ public final class ListRealmsRequest extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Required. The parent resource name. Uses the form:
+   * Required. The parent resource name, in the following form:
    * `projects/{project}/locations/{location}`.
    * </pre>
    *
@@ -752,7 +752,7 @@ public final class ListRealmsRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Required. The parent resource name. Uses the form:
+     * Required. The parent resource name, in the following form:
      * `projects/{project}/locations/{location}`.
      * </pre>
      *
@@ -777,7 +777,7 @@ public final class ListRealmsRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Required. The parent resource name. Uses the form:
+     * Required. The parent resource name, in the following form:
      * `projects/{project}/locations/{location}`.
      * </pre>
      *
@@ -802,7 +802,7 @@ public final class ListRealmsRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Required. The parent resource name. Uses the form:
+     * Required. The parent resource name, in the following form:
      * `projects/{project}/locations/{location}`.
      * </pre>
      *
@@ -826,7 +826,7 @@ public final class ListRealmsRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Required. The parent resource name. Uses the form:
+     * Required. The parent resource name, in the following form:
      * `projects/{project}/locations/{location}`.
      * </pre>
      *
@@ -846,7 +846,7 @@ public final class ListRealmsRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Required. The parent resource name. Uses the form:
+     * Required. The parent resource name, in the following form:
      * `projects/{project}/locations/{location}`.
      * </pre>
      *

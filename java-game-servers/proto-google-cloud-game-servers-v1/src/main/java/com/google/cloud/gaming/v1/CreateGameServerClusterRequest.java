@@ -142,7 +142,7 @@ public final class CreateGameServerClusterRequest extends com.google.protobuf.Ge
    *
    *
    * <pre>
-   * Required. The parent resource name. Uses the form:
+   * Required. The parent resource name, in the following form:
    * `projects/{project}/locations/{location}/realms/{realm-id}`.
    * </pre>
    *
@@ -168,7 +168,7 @@ public final class CreateGameServerClusterRequest extends com.google.protobuf.Ge
    *
    *
    * <pre>
-   * Required. The parent resource name. Uses the form:
+   * Required. The parent resource name, in the following form:
    * `projects/{project}/locations/{location}/realms/{realm-id}`.
    * </pre>
    *
@@ -662,7 +662,7 @@ public final class CreateGameServerClusterRequest extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Required. The parent resource name. Uses the form:
+     * Required. The parent resource name, in the following form:
      * `projects/{project}/locations/{location}/realms/{realm-id}`.
      * </pre>
      *
@@ -687,7 +687,7 @@ public final class CreateGameServerClusterRequest extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Required. The parent resource name. Uses the form:
+     * Required. The parent resource name, in the following form:
      * `projects/{project}/locations/{location}/realms/{realm-id}`.
      * </pre>
      *
@@ -712,7 +712,7 @@ public final class CreateGameServerClusterRequest extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Required. The parent resource name. Uses the form:
+     * Required. The parent resource name, in the following form:
      * `projects/{project}/locations/{location}/realms/{realm-id}`.
      * </pre>
      *
@@ -736,7 +736,7 @@ public final class CreateGameServerClusterRequest extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Required. The parent resource name. Uses the form:
+     * Required. The parent resource name, in the following form:
      * `projects/{project}/locations/{location}/realms/{realm-id}`.
      * </pre>
      *
@@ -756,7 +756,7 @@ public final class CreateGameServerClusterRequest extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Required. The parent resource name. Uses the form:
+     * Required. The parent resource name, in the following form:
      * `projects/{project}/locations/{location}/realms/{realm-id}`.
      * </pre>
      *

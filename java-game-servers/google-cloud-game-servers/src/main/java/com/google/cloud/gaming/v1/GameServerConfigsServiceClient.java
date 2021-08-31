@@ -187,8 +187,8 @@ public class GameServerConfigsServiceClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. The parent resource name. Uses the form:
-   *     <p>`projects/{project}/locations/{location}/gameServerDeployments/{deployment}/configs/&#42;`.
+   * @param parent Required. The parent resource name, in the following form:
+   *     `projects/{project}/locations/{location}/gameServerDeployments/{deployment}/configs/&#42;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListGameServerConfigsPagedResponse listGameServerConfigs(
@@ -218,8 +218,8 @@ public class GameServerConfigsServiceClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. The parent resource name. Uses the form:
-   *     <p>`projects/{project}/locations/{location}/gameServerDeployments/{deployment}/configs/&#42;`.
+   * @param parent Required. The parent resource name, in the following form:
+   *     `projects/{project}/locations/{location}/gameServerDeployments/{deployment}/configs/&#42;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListGameServerConfigsPagedResponse listGameServerConfigs(String parent) {
@@ -350,8 +350,8 @@ public class GameServerConfigsServiceClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param name Required. The name of the game server config to retrieve. Uses the form:
-   *     <p>`projects/{project}/locations/{location}/gameServerDeployments/{deployment}/configs/{config}`.
+   * @param name Required. The name of the game server config to retrieve, in the following form:
+   *     `projects/{project}/locations/{location}/gameServerDeployments/{deployment}/configs/{config}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final GameServerConfig getGameServerConfig(GameServerConfigName name) {
@@ -377,8 +377,8 @@ public class GameServerConfigsServiceClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param name Required. The name of the game server config to retrieve. Uses the form:
-   *     <p>`projects/{project}/locations/{location}/gameServerDeployments/{deployment}/configs/{config}`.
+   * @param name Required. The name of the game server config to retrieve, in the following form:
+   *     `projects/{project}/locations/{location}/gameServerDeployments/{deployment}/configs/{config}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final GameServerConfig getGameServerConfig(String name) {
@@ -461,8 +461,8 @@ public class GameServerConfigsServiceClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. The parent resource name. Uses the form:
-   *     <p>`projects/{project}/locations/{location}/gameServerDeployments/{deployment}/`.
+   * @param parent Required. The parent resource name, in the following form:
+   *     `projects/{project}/locations/{location}/gameServerDeployments/{deployment}/`.
    * @param gameServerConfig Required. The game server config resource to be created.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -497,8 +497,8 @@ public class GameServerConfigsServiceClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. The parent resource name. Uses the form:
-   *     <p>`projects/{project}/locations/{location}/gameServerDeployments/{deployment}/`.
+   * @param parent Required. The parent resource name, in the following form:
+   *     `projects/{project}/locations/{location}/gameServerDeployments/{deployment}/`.
    * @param gameServerConfig Required. The game server config resource to be created.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -624,8 +624,8 @@ public class GameServerConfigsServiceClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param name Required. The name of the game server config to delete. Uses the form:
-   *     <p>`projects/{project}/locations/{location}/gameServerDeployments/{deployment}/configs/{config}`.
+   * @param name Required. The name of the game server config to delete, in the following form:
+   *     `projects/{project}/locations/{location}/gameServerDeployments/{deployment}/configs/{config}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Empty, OperationMetadata> deleteGameServerConfigAsync(
@@ -653,8 +653,8 @@ public class GameServerConfigsServiceClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param name Required. The name of the game server config to delete. Uses the form:
-   *     <p>`projects/{project}/locations/{location}/gameServerDeployments/{deployment}/configs/{config}`.
+   * @param name Required. The name of the game server config to delete, in the following form:
+   *     `projects/{project}/locations/{location}/gameServerDeployments/{deployment}/configs/{config}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Empty, OperationMetadata> deleteGameServerConfigAsync(String name) {

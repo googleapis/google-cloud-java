@@ -188,7 +188,7 @@ public class GameServerClustersServiceClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. The parent resource name. Uses the form:
+   * @param parent Required. The parent resource name, in the following form:
    *     "projects/{project}/locations/{location}/realms/{realm}".
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -218,7 +218,7 @@ public class GameServerClustersServiceClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. The parent resource name. Uses the form:
+   * @param parent Required. The parent resource name, in the following form:
    *     "projects/{project}/locations/{location}/realms/{realm}".
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -246,6 +246,7 @@ public class GameServerClustersServiceClient implements BackgroundResource {
    *           .setPageToken("pageToken873572522")
    *           .setFilter("filter-1274492040")
    *           .setOrderBy("orderBy-1207110587")
+   *           .setView(GameServerClusterView.forNumber(0))
    *           .build();
    *   for (GameServerCluster element :
    *       gameServerClustersServiceClient.listGameServerClusters(request).iterateAll()) {
@@ -280,6 +281,7 @@ public class GameServerClustersServiceClient implements BackgroundResource {
    *           .setPageToken("pageToken873572522")
    *           .setFilter("filter-1274492040")
    *           .setOrderBy("orderBy-1207110587")
+   *           .setView(GameServerClusterView.forNumber(0))
    *           .build();
    *   ApiFuture<GameServerCluster> future =
    *       gameServerClustersServiceClient.listGameServerClustersPagedCallable().futureCall(request);
@@ -313,6 +315,7 @@ public class GameServerClustersServiceClient implements BackgroundResource {
    *           .setPageToken("pageToken873572522")
    *           .setFilter("filter-1274492040")
    *           .setOrderBy("orderBy-1207110587")
+   *           .setView(GameServerClusterView.forNumber(0))
    *           .build();
    *   while (true) {
    *     ListGameServerClustersResponse response =
@@ -350,8 +353,8 @@ public class GameServerClustersServiceClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param name Required. The name of the game server cluster to retrieve. Uses the form:
-   *     <p>`projects/{project}/locations/{location}/realms/{realm-id}/gameServerClusters/{cluster}`.
+   * @param name Required. The name of the game server cluster to retrieve, in the following form:
+   *     `projects/{project}/locations/{location}/realms/{realm-id}/gameServerClusters/{cluster}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final GameServerCluster getGameServerCluster(GameServerClusterName name) {
@@ -377,8 +380,8 @@ public class GameServerClustersServiceClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param name Required. The name of the game server cluster to retrieve. Uses the form:
-   *     <p>`projects/{project}/locations/{location}/realms/{realm-id}/gameServerClusters/{cluster}`.
+   * @param name Required. The name of the game server cluster to retrieve, in the following form:
+   *     `projects/{project}/locations/{location}/realms/{realm-id}/gameServerClusters/{cluster}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final GameServerCluster getGameServerCluster(String name) {
@@ -401,6 +404,7 @@ public class GameServerClustersServiceClient implements BackgroundResource {
    *           .setName(
    *               GameServerClusterName.of("[PROJECT]", "[LOCATION]", "[REALM]", "[CLUSTER]")
    *                   .toString())
+   *           .setView(GameServerClusterView.forNumber(0))
    *           .build();
    *   GameServerCluster response = gameServerClustersServiceClient.getGameServerCluster(request);
    * }
@@ -427,6 +431,7 @@ public class GameServerClustersServiceClient implements BackgroundResource {
    *           .setName(
    *               GameServerClusterName.of("[PROJECT]", "[LOCATION]", "[REALM]", "[CLUSTER]")
    *                   .toString())
+   *           .setView(GameServerClusterView.forNumber(0))
    *           .build();
    *   ApiFuture<GameServerCluster> future =
    *       gameServerClustersServiceClient.getGameServerClusterCallable().futureCall(request);
@@ -459,7 +464,7 @@ public class GameServerClustersServiceClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. The parent resource name. Uses the form:
+   * @param parent Required. The parent resource name, in the following form:
    *     `projects/{project}/locations/{location}/realms/{realm-id}`.
    * @param gameServerCluster Required. The game server cluster resource to be created.
    * @param gameServerClusterId Required. The ID of the game server cluster resource to be created.
@@ -496,7 +501,7 @@ public class GameServerClustersServiceClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. The parent resource name. Uses the form:
+   * @param parent Required. The parent resource name, in the following form:
    *     `projects/{project}/locations/{location}/realms/{realm-id}`.
    * @param gameServerCluster Required. The game server cluster resource to be created.
    * @param gameServerClusterId Required. The ID of the game server cluster resource to be created.
@@ -621,6 +626,7 @@ public class GameServerClustersServiceClient implements BackgroundResource {
    *           .setGameServerClusterId("gameServerClusterId-1301104032")
    *           .setGameServerCluster(GameServerCluster.newBuilder().build())
    *           .setPreviewTime(Timestamp.newBuilder().build())
+   *           .setView(GameServerClusterView.forNumber(0))
    *           .build();
    *   PreviewCreateGameServerClusterResponse response =
    *       gameServerClustersServiceClient.previewCreateGameServerCluster(request);
@@ -652,6 +658,7 @@ public class GameServerClustersServiceClient implements BackgroundResource {
    *           .setGameServerClusterId("gameServerClusterId-1301104032")
    *           .setGameServerCluster(GameServerCluster.newBuilder().build())
    *           .setPreviewTime(Timestamp.newBuilder().build())
+   *           .setView(GameServerClusterView.forNumber(0))
    *           .build();
    *   ApiFuture<PreviewCreateGameServerClusterResponse> future =
    *       gameServerClustersServiceClient
@@ -683,7 +690,7 @@ public class GameServerClustersServiceClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param name Required. The name of the game server cluster to delete. Uses the form:
+   * @param name Required. The name of the game server cluster to delete, in the following form:
    *     `projects/{project}/locations/{location}/gameServerClusters/{cluster}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -711,7 +718,7 @@ public class GameServerClustersServiceClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param name Required. The name of the game server cluster to delete. Uses the form:
+   * @param name Required. The name of the game server cluster to delete, in the following form:
    *     `projects/{project}/locations/{location}/gameServerClusters/{cluster}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -886,8 +893,7 @@ public class GameServerClustersServiceClient implements BackgroundResource {
    *     in update_mask are updated.
    * @param updateMask Required. Mask of fields to update. At least one path must be supplied in
    *     this field. For the `FieldMask` definition, see
-   *     <p>https: //developers.google.com/protocol-buffers //
-   *     /docs/reference/google.protobuf#fieldmask
+   *     https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#fieldmask
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<GameServerCluster, OperationMetadata> updateGameServerClusterAsync(

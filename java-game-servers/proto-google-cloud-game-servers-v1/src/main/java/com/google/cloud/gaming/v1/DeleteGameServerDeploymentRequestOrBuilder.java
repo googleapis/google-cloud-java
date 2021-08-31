@@ -27,7 +27,7 @@ public interface DeleteGameServerDeploymentRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The name of the game server delpoyment to delete. Uses the form:
+   * Required. The name of the game server delpoyment to delete, in the following form:
    * `projects/{project}/locations/{location}/gameServerDeployments/{deployment}`.
    * </pre>
    *
@@ -42,7 +42,7 @@ public interface DeleteGameServerDeploymentRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The name of the game server delpoyment to delete. Uses the form:
+   * Required. The name of the game server delpoyment to delete, in the following form:
    * `projects/{project}/locations/{location}/gameServerDeployments/{deployment}`.
    * </pre>
    *

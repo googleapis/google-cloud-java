@@ -27,7 +27,7 @@ public interface PreviewDeleteGameServerClusterRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The name of the game server cluster to delete. Uses the form:
+   * Required. The name of the game server cluster to delete, in the following form:
    * `projects/{project}/locations/{location}/gameServerClusters/{cluster}`.
    * </pre>
    *
@@ -42,7 +42,7 @@ public interface PreviewDeleteGameServerClusterRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The name of the game server cluster to delete. Uses the form:
+   * Required. The name of the game server cluster to delete, in the following form:
    * `projects/{project}/locations/{location}/gameServerClusters/{cluster}`.
    * </pre>
    *

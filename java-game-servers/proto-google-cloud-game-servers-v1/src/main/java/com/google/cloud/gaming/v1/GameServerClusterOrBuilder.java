@@ -27,7 +27,7 @@ public interface GameServerClusterOrBuilder
    *
    *
    * <pre>
-   * Required. The resource name of the game server cluster. Uses the form:
+   * Required. The resource name of the game server cluster, in the following form:
    * `projects/{project}/locations/{location}/realms/{realm}/gameServerClusters/{cluster}`.
    * For example,
    * `projects/my-project/locations/{location}/realms/zanzibar/gameServerClusters/my-onprem-cluster`.
@@ -42,7 +42,7 @@ public interface GameServerClusterOrBuilder
    *
    *
    * <pre>
-   * Required. The resource name of the game server cluster. Uses the form:
+   * Required. The resource name of the game server cluster, in the following form:
    * `projects/{project}/locations/{location}/realms/{realm}/gameServerClusters/{cluster}`.
    * For example,
    * `projects/my-project/locations/{location}/realms/zanzibar/gameServerClusters/my-onprem-cluster`.
@@ -276,4 +276,48 @@ public interface GameServerClusterOrBuilder
    * @return The bytes for description.
    */
   com.google.protobuf.ByteString getDescriptionBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The state of the Kubernetes cluster, this will be available if
+   * 'view' is set to `FULL` in the relevant List/Get/Preview request.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.gaming.v1.KubernetesClusterState cluster_state = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the clusterState field is set.
+   */
+  boolean hasClusterState();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The state of the Kubernetes cluster, this will be available if
+   * 'view' is set to `FULL` in the relevant List/Get/Preview request.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.gaming.v1.KubernetesClusterState cluster_state = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The clusterState.
+   */
+  com.google.cloud.gaming.v1.KubernetesClusterState getClusterState();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The state of the Kubernetes cluster, this will be available if
+   * 'view' is set to `FULL` in the relevant List/Get/Preview request.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.gaming.v1.KubernetesClusterState cluster_state = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.cloud.gaming.v1.KubernetesClusterStateOrBuilder getClusterStateOrBuilder();
 }

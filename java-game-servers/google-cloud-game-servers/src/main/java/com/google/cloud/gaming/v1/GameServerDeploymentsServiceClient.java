@@ -191,7 +191,7 @@ public class GameServerDeploymentsServiceClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. The parent resource name. Uses the form:
+   * @param parent Required. The parent resource name, in the following form:
    *     `projects/{project}/locations/{location}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -222,7 +222,7 @@ public class GameServerDeploymentsServiceClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. The parent resource name. Uses the form:
+   * @param parent Required. The parent resource name, in the following form:
    *     `projects/{project}/locations/{location}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -355,8 +355,8 @@ public class GameServerDeploymentsServiceClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param name Required. The name of the game server delpoyment to retrieve. Uses the form:
-   *     <p>`projects/{project}/locations/{location}/gameServerDeployments/{deployment}`.
+   * @param name Required. The name of the game server delpoyment to retrieve, in the following
+   *     form: `projects/{project}/locations/{location}/gameServerDeployments/{deployment}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final GameServerDeployment getGameServerDeployment(GameServerDeploymentName name) {
@@ -383,8 +383,8 @@ public class GameServerDeploymentsServiceClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param name Required. The name of the game server delpoyment to retrieve. Uses the form:
-   *     <p>`projects/{project}/locations/{location}/gameServerDeployments/{deployment}`.
+   * @param name Required. The name of the game server delpoyment to retrieve, in the following
+   *     form: `projects/{project}/locations/{location}/gameServerDeployments/{deployment}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final GameServerDeployment getGameServerDeployment(String name) {
@@ -464,7 +464,7 @@ public class GameServerDeploymentsServiceClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. The parent resource name. Uses the form:
+   * @param parent Required. The parent resource name, in the following form:
    *     `projects/{project}/locations/{location}`.
    * @param gameServerDeployment Required. The game server delpoyment resource to be created.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -499,7 +499,7 @@ public class GameServerDeploymentsServiceClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. The parent resource name. Uses the form:
+   * @param parent Required. The parent resource name, in the following form:
    *     `projects/{project}/locations/{location}`.
    * @param gameServerDeployment Required. The game server delpoyment resource to be created.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -619,8 +619,8 @@ public class GameServerDeploymentsServiceClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param name Required. The name of the game server delpoyment to delete. Uses the form:
-   *     <p>`projects/{project}/locations/{location}/gameServerDeployments/{deployment}`.
+   * @param name Required. The name of the game server delpoyment to delete, in the following form:
+   *     `projects/{project}/locations/{location}/gameServerDeployments/{deployment}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Empty, OperationMetadata> deleteGameServerDeploymentAsync(
@@ -647,8 +647,8 @@ public class GameServerDeploymentsServiceClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param name Required. The name of the game server delpoyment to delete. Uses the form:
-   *     <p>`projects/{project}/locations/{location}/gameServerDeployments/{deployment}`.
+   * @param name Required. The name of the game server delpoyment to delete, in the following form:
+   *     `projects/{project}/locations/{location}/gameServerDeployments/{deployment}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Empty, OperationMetadata> deleteGameServerDeploymentAsync(
@@ -762,8 +762,7 @@ public class GameServerDeploymentsServiceClient implements BackgroundResource {
    *     specified in update_mask are updated.
    * @param updateMask Required. Mask of fields to update. At least one path must be supplied in
    *     this field. For the `FieldMask` definition, see
-   *     <p>https: //developers.google.com/protocol-buffers //
-   *     /docs/reference/google.protobuf#fieldmask
+   *     https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#fieldmask
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<GameServerDeployment, OperationMetadata>
@@ -877,8 +876,8 @@ public class GameServerDeploymentsServiceClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param name Required. The name of the game server delpoyment to retrieve. Uses the form:
-   *     <p>`projects/{project}/locations/{location}/gameServerDeployments/{deployment}/rollout`.
+   * @param name Required. The name of the game server delpoyment to retrieve, in the following
+   *     form: `projects/{project}/locations/{location}/gameServerDeployments/{deployment}/rollout`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final GameServerDeploymentRollout getGameServerDeploymentRollout(
@@ -906,8 +905,8 @@ public class GameServerDeploymentsServiceClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param name Required. The name of the game server delpoyment to retrieve. Uses the form:
-   *     <p>`projects/{project}/locations/{location}/gameServerDeployments/{deployment}/rollout`.
+   * @param name Required. The name of the game server delpoyment to retrieve, in the following
+   *     form: `projects/{project}/locations/{location}/gameServerDeployments/{deployment}/rollout`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final GameServerDeploymentRollout getGameServerDeploymentRollout(String name) {
@@ -997,8 +996,7 @@ public class GameServerDeploymentsServiceClient implements BackgroundResource {
    *     specified in update_mask are updated.
    * @param updateMask Required. Mask of fields to update. At least one path must be supplied in
    *     this field. For the `FieldMask` definition, see
-   *     <p>https: //developers.google.com/protocol-buffers //
-   *     /docs/reference/google.protobuf#fieldmask
+   *     https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#fieldmask
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<GameServerDeployment, OperationMetadata>

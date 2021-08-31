@@ -190,6 +190,7 @@ public class GameServerClustersServiceClientTest {
             .setConnectionInfo(GameServerClusterConnectionInfo.newBuilder().build())
             .setEtag("etag3123477")
             .setDescription("description-1724546052")
+            .setClusterState(KubernetesClusterState.newBuilder().build())
             .build();
     mockGameServerClustersService.addResponse(expectedResponse);
 
@@ -239,6 +240,7 @@ public class GameServerClustersServiceClientTest {
             .setConnectionInfo(GameServerClusterConnectionInfo.newBuilder().build())
             .setEtag("etag3123477")
             .setDescription("description-1724546052")
+            .setClusterState(KubernetesClusterState.newBuilder().build())
             .build();
     mockGameServerClustersService.addResponse(expectedResponse);
 
@@ -286,6 +288,7 @@ public class GameServerClustersServiceClientTest {
             .setConnectionInfo(GameServerClusterConnectionInfo.newBuilder().build())
             .setEtag("etag3123477")
             .setDescription("description-1724546052")
+            .setClusterState(KubernetesClusterState.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -348,6 +351,7 @@ public class GameServerClustersServiceClientTest {
             .setConnectionInfo(GameServerClusterConnectionInfo.newBuilder().build())
             .setEtag("etag3123477")
             .setDescription("description-1724546052")
+            .setClusterState(KubernetesClusterState.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -403,6 +407,7 @@ public class GameServerClustersServiceClientTest {
         PreviewCreateGameServerClusterResponse.newBuilder()
             .setEtag("etag3123477")
             .setTargetState(TargetState.newBuilder().build())
+            .setClusterState(KubernetesClusterState.newBuilder().build())
             .build();
     mockGameServerClustersService.addResponse(expectedResponse);
 
@@ -414,6 +419,7 @@ public class GameServerClustersServiceClientTest {
             .setGameServerClusterId("gameServerClusterId-1301104032")
             .setGameServerCluster(GameServerCluster.newBuilder().build())
             .setPreviewTime(Timestamp.newBuilder().build())
+            .setView(GameServerClusterView.forNumber(0))
             .build();
 
     PreviewCreateGameServerClusterResponse actualResponse =
@@ -429,6 +435,7 @@ public class GameServerClustersServiceClientTest {
     Assert.assertEquals(request.getGameServerClusterId(), actualRequest.getGameServerClusterId());
     Assert.assertEquals(request.getGameServerCluster(), actualRequest.getGameServerCluster());
     Assert.assertEquals(request.getPreviewTime(), actualRequest.getPreviewTime());
+    Assert.assertEquals(request.getView(), actualRequest.getView());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -449,6 +456,7 @@ public class GameServerClustersServiceClientTest {
               .setGameServerClusterId("gameServerClusterId-1301104032")
               .setGameServerCluster(GameServerCluster.newBuilder().build())
               .setPreviewTime(Timestamp.newBuilder().build())
+              .setView(GameServerClusterView.forNumber(0))
               .build();
       client.previewCreateGameServerCluster(request);
       Assert.fail("No exception raised");
@@ -612,6 +620,7 @@ public class GameServerClustersServiceClientTest {
             .setConnectionInfo(GameServerClusterConnectionInfo.newBuilder().build())
             .setEtag("etag3123477")
             .setDescription("description-1724546052")
+            .setClusterState(KubernetesClusterState.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()

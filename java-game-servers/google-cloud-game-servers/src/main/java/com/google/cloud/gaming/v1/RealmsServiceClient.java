@@ -179,7 +179,7 @@ public class RealmsServiceClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. The parent resource name. Uses the form:
+   * @param parent Required. The parent resource name, in the following form:
    *     `projects/{project}/locations/{location}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -204,7 +204,7 @@ public class RealmsServiceClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. The parent resource name. Uses the form:
+   * @param parent Required. The parent resource name, in the following form:
    *     `projects/{project}/locations/{location}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -318,7 +318,7 @@ public class RealmsServiceClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param name Required. The name of the realm to retrieve. Uses the form:
+   * @param name Required. The name of the realm to retrieve, in the following form:
    *     `projects/{project}/locations/{location}/realms/{realm}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -341,7 +341,7 @@ public class RealmsServiceClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param name Required. The name of the realm to retrieve. Uses the form:
+   * @param name Required. The name of the realm to retrieve, in the following form:
    *     `projects/{project}/locations/{location}/realms/{realm}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -410,7 +410,7 @@ public class RealmsServiceClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. The parent resource name. Uses the form:
+   * @param parent Required. The parent resource name, in the following form:
    *     `projects/{project}/locations/{location}`.
    * @param realm Required. The realm resource to be created.
    * @param realmId Required. The ID of the realm resource to be created.
@@ -442,7 +442,7 @@ public class RealmsServiceClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. The parent resource name. Uses the form:
+   * @param parent Required. The parent resource name, in the following form:
    *     `projects/{project}/locations/{location}`.
    * @param realm Required. The realm resource to be created.
    * @param realmId Required. The ID of the realm resource to be created.
@@ -548,7 +548,7 @@ public class RealmsServiceClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param name Required. The name of the realm to delete. Uses the form:
+   * @param name Required. The name of the realm to delete, in the following form:
    *     `projects/{project}/locations/{location}/realms/{realm}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -571,7 +571,7 @@ public class RealmsServiceClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param name Required. The name of the realm to delete. Uses the form:
+   * @param name Required. The name of the realm to delete, in the following form:
    *     `projects/{project}/locations/{location}/realms/{realm}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -668,8 +668,7 @@ public class RealmsServiceClient implements BackgroundResource {
    *     updated.
    * @param updateMask Required. The update mask applies to the resource. For the `FieldMask`
    *     definition, see
-   *     <p>https: //developers.google.com/protocol-buffers //
-   *     /docs/reference/google.protobuf#fieldmask
+   *     https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#fieldmask
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Realm, OperationMetadata> updateRealmAsync(

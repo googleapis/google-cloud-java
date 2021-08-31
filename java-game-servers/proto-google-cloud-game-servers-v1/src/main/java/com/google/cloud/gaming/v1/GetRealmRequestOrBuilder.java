@@ -27,7 +27,7 @@ public interface GetRealmRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The name of the realm to retrieve. Uses the form:
+   * Required. The name of the realm to retrieve, in the following form:
    * `projects/{project}/locations/{location}/realms/{realm}`.
    * </pre>
    *
@@ -42,7 +42,7 @@ public interface GetRealmRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The name of the realm to retrieve. Uses the form:
+   * Required. The name of the realm to retrieve, in the following form:
    * `projects/{project}/locations/{location}/realms/{realm}`.
    * </pre>
    *
