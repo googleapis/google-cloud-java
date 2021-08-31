@@ -1,5 +1,21 @@
 # Changelog
 
+## [2.1.0](https://www.github.com/googleapis/java-aiplatform/compare/v2.0.2...v2.1.0) (2021-08-31)
+
+
+### Features
+
+* add prediction service RPC RawPredict to aiplatform_v1beta1 feat: add tensorboard service RPCs to aiplatform_v1beta1: BatchCreateTensorboardRuns, BatchCreateTensorboardTimeSeries, WriteTensorboardExperimentData feat: add model_deployment_monitori... ([#636](https://www.github.com/googleapis/java-aiplatform/issues/636)) ([eee1532](https://www.github.com/googleapis/java-aiplatform/commit/eee15324226022cc097167d1f3d5e718262a0d65))
+* add XAI, model monitoring, and index services to aiplatform v1 ([#635](https://www.github.com/googleapis/java-aiplatform/issues/635)) ([8d4a0bc](https://www.github.com/googleapis/java-aiplatform/commit/8d4a0bc3304095c8495ea92b97289e3fa6443e6e))
+* Remove use of deprecated gradle command in java README ([#1196](https://www.github.com/googleapis/java-aiplatform/issues/1196)) ([#633](https://www.github.com/googleapis/java-aiplatform/issues/633)) ([a2410d1](https://www.github.com/googleapis/java-aiplatform/commit/a2410d119996d0b855ea2311fd52dc1ac708c9b4))
+
+
+### Dependencies
+
+* update dependency com.google.api.grpc:proto-google-cloud-aiplatform-v1beta1 to v0.6.2 ([#629](https://www.github.com/googleapis/java-aiplatform/issues/629)) ([30554f2](https://www.github.com/googleapis/java-aiplatform/commit/30554f25a95eb13a8bcc80d0cebfa4886b2c93d8))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.2.0 ([#638](https://www.github.com/googleapis/java-aiplatform/issues/638)) ([0e3745f](https://www.github.com/googleapis/java-aiplatform/commit/0e3745f970bf8117c41cd95be52770027d725e7b))
+* update dependency com.google.cloud:google-cloud-storage to v2.1.0 ([#630](https://www.github.com/googleapis/java-aiplatform/issues/630)) ([b52f11e](https://www.github.com/googleapis/java-aiplatform/commit/b52f11e47b1a432d736e01bc7d368807ded9ad9c))
+
 ### [2.0.2](https://www.github.com/googleapis/java-aiplatform/compare/v2.0.1...v2.0.2) (2021-08-24)
 
 
