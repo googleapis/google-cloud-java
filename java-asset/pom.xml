@@ -168,7 +168,7 @@
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-resourcemanager</artifactId>
-        <version>1.0.3</version>
+        <version>1.0.4</version>
         <scope>test</scope>
       </dependency>
     </dependencies>
