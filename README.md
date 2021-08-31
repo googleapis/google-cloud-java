@@ -42,7 +42,7 @@ If you are using Maven without BOM, add this to your dependencies:
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-logging</artifactId>
-  <version>3.0.1</version>
+  <version>3.1.0</version>
 </dependency>
 
 ```
@@ -52,12 +52,12 @@ If you are using Gradle 5.x or later, add this to your dependencies
 ```Groovy
 implementation platform('com.google.cloud:libraries-bom:22.0.0')
 
-compile 'com.google.cloud:google-cloud-logging'
+implementation 'com.google.cloud:google-cloud-logging'
 ```
 If you are using Gradle without BOM, add this to your dependencies
 
 ```Groovy
-compile 'com.google.cloud:google-cloud-logging:3.1.0'
+implementation 'com.google.cloud:google-cloud-logging:3.1.0'
 ```
 
 If you are using SBT, add this to your dependencies
