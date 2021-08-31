@@ -1,5 +1,17 @@
 # Changelog
 
+## [2.1.0](https://www.github.com/googleapis/java-service-management/compare/v2.0.2...v2.1.0) (2021-08-31)
+
+
+### Features
+
+* Remove use of deprecated gradle command in java README ([#1196](https://www.github.com/googleapis/java-service-management/issues/1196)) ([#115](https://www.github.com/googleapis/java-service-management/issues/115)) ([e971d71](https://www.github.com/googleapis/java-service-management/commit/e971d7193d22de456390d3ae8bb5787683f6aa39))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.2.0 ([#118](https://www.github.com/googleapis/java-service-management/issues/118)) ([231dc31](https://www.github.com/googleapis/java-service-management/commit/231dc31c8d96fbf8e9ef4a5cbf48ba99b9f2a13d))
+
 ### [2.0.2](https://www.github.com/googleapis/java-service-management/compare/v2.0.1...v2.0.2) (2021-08-23)
 
 
