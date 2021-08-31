@@ -255,6 +255,23 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
 
               break;
             }
+          case 194:
+            {
+              com.google.cloud.speech.v1p1beta1.TranscriptNormalization.Builder subBuilder = null;
+              if (transcriptNormalization_ != null) {
+                subBuilder = transcriptNormalization_.toBuilder();
+              }
+              transcriptNormalization_ =
+                  input.readMessage(
+                      com.google.cloud.speech.v1p1beta1.TranscriptNormalization.parser(),
+                      extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(transcriptNormalization_);
+                transcriptNormalization_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -1059,6 +1076,67 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
     return getAdaptation();
   }
 
+  public static final int TRANSCRIPT_NORMALIZATION_FIELD_NUMBER = 24;
+  private com.google.cloud.speech.v1p1beta1.TranscriptNormalization transcriptNormalization_;
+  /**
+   *
+   *
+   * <pre>
+   * Use transcription normalization to automatically replace parts of the
+   * transcript with phrases of your choosing. For StreamingRecognize, this
+   * normalization only applies to stable partial transcripts (stability &gt; 0.8)
+   * and final transcripts.
+   * </pre>
+   *
+   * <code>.google.cloud.speech.v1p1beta1.TranscriptNormalization transcript_normalization = 24;
+   * </code>
+   *
+   * @return Whether the transcriptNormalization field is set.
+   */
+  @java.lang.Override
+  public boolean hasTranscriptNormalization() {
+    return transcriptNormalization_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Use transcription normalization to automatically replace parts of the
+   * transcript with phrases of your choosing. For StreamingRecognize, this
+   * normalization only applies to stable partial transcripts (stability &gt; 0.8)
+   * and final transcripts.
+   * </pre>
+   *
+   * <code>.google.cloud.speech.v1p1beta1.TranscriptNormalization transcript_normalization = 24;
+   * </code>
+   *
+   * @return The transcriptNormalization.
+   */
+  @java.lang.Override
+  public com.google.cloud.speech.v1p1beta1.TranscriptNormalization getTranscriptNormalization() {
+    return transcriptNormalization_ == null
+        ? com.google.cloud.speech.v1p1beta1.TranscriptNormalization.getDefaultInstance()
+        : transcriptNormalization_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Use transcription normalization to automatically replace parts of the
+   * transcript with phrases of your choosing. For StreamingRecognize, this
+   * normalization only applies to stable partial transcripts (stability &gt; 0.8)
+   * and final transcripts.
+   * </pre>
+   *
+   * <code>.google.cloud.speech.v1p1beta1.TranscriptNormalization transcript_normalization = 24;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.speech.v1p1beta1.TranscriptNormalizationOrBuilder
+      getTranscriptNormalizationOrBuilder() {
+    return getTranscriptNormalization();
+  }
+
   public static final int SPEECH_CONTEXTS_FIELD_NUMBER = 6;
   private java.util.List<com.google.cloud.speech.v1p1beta1.SpeechContext> speechContexts_;
   /**
@@ -1713,6 +1791,9 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
     if (enableSpokenEmojis_ != null) {
       output.writeMessage(23, getEnableSpokenEmojis());
     }
+    if (transcriptNormalization_ != null) {
+      output.writeMessage(24, getTranscriptNormalization());
+    }
     unknownFields.writeTo(output);
   }
 
@@ -1797,6 +1878,11 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
     if (enableSpokenEmojis_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(23, getEnableSpokenEmojis());
     }
+    if (transcriptNormalization_ != null) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              24, getTranscriptNormalization());
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1826,6 +1912,10 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
     if (hasAdaptation() != other.hasAdaptation()) return false;
     if (hasAdaptation()) {
       if (!getAdaptation().equals(other.getAdaptation())) return false;
+    }
+    if (hasTranscriptNormalization() != other.hasTranscriptNormalization()) return false;
+    if (hasTranscriptNormalization()) {
+      if (!getTranscriptNormalization().equals(other.getTranscriptNormalization())) return false;
     }
     if (!getSpeechContextsList().equals(other.getSpeechContextsList())) return false;
     if (getEnableWordTimeOffsets() != other.getEnableWordTimeOffsets()) return false;
@@ -1885,6 +1975,10 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
     if (hasAdaptation()) {
       hash = (37 * hash) + ADAPTATION_FIELD_NUMBER;
       hash = (53 * hash) + getAdaptation().hashCode();
+    }
+    if (hasTranscriptNormalization()) {
+      hash = (37 * hash) + TRANSCRIPT_NORMALIZATION_FIELD_NUMBER;
+      hash = (53 * hash) + getTranscriptNormalization().hashCode();
     }
     if (getSpeechContextsCount() > 0) {
       hash = (37 * hash) + SPEECH_CONTEXTS_FIELD_NUMBER;
@@ -2090,6 +2184,12 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
         adaptation_ = null;
         adaptationBuilder_ = null;
       }
+      if (transcriptNormalizationBuilder_ == null) {
+        transcriptNormalization_ = null;
+      } else {
+        transcriptNormalization_ = null;
+        transcriptNormalizationBuilder_ = null;
+      }
       if (speechContextsBuilder_ == null) {
         speechContexts_ = java.util.Collections.emptyList();
         bitField0_ = (bitField0_ & ~0x00000002);
@@ -2178,6 +2278,11 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
         result.adaptation_ = adaptation_;
       } else {
         result.adaptation_ = adaptationBuilder_.build();
+      }
+      if (transcriptNormalizationBuilder_ == null) {
+        result.transcriptNormalization_ = transcriptNormalization_;
+      } else {
+        result.transcriptNormalization_ = transcriptNormalizationBuilder_.build();
       }
       if (speechContextsBuilder_ == null) {
         if (((bitField0_ & 0x00000002) != 0)) {
@@ -2299,6 +2404,9 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
       }
       if (other.hasAdaptation()) {
         mergeAdaptation(other.getAdaptation());
+      }
+      if (other.hasTranscriptNormalization()) {
+        mergeTranscriptNormalization(other.getTranscriptNormalization());
       }
       if (speechContextsBuilder_ == null) {
         if (!other.speechContexts_.isEmpty()) {
@@ -3457,6 +3565,233 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
         adaptation_ = null;
       }
       return adaptationBuilder_;
+    }
+
+    private com.google.cloud.speech.v1p1beta1.TranscriptNormalization transcriptNormalization_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.speech.v1p1beta1.TranscriptNormalization,
+            com.google.cloud.speech.v1p1beta1.TranscriptNormalization.Builder,
+            com.google.cloud.speech.v1p1beta1.TranscriptNormalizationOrBuilder>
+        transcriptNormalizationBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Use transcription normalization to automatically replace parts of the
+     * transcript with phrases of your choosing. For StreamingRecognize, this
+     * normalization only applies to stable partial transcripts (stability &gt; 0.8)
+     * and final transcripts.
+     * </pre>
+     *
+     * <code>.google.cloud.speech.v1p1beta1.TranscriptNormalization transcript_normalization = 24;
+     * </code>
+     *
+     * @return Whether the transcriptNormalization field is set.
+     */
+    public boolean hasTranscriptNormalization() {
+      return transcriptNormalizationBuilder_ != null || transcriptNormalization_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Use transcription normalization to automatically replace parts of the
+     * transcript with phrases of your choosing. For StreamingRecognize, this
+     * normalization only applies to stable partial transcripts (stability &gt; 0.8)
+     * and final transcripts.
+     * </pre>
+     *
+     * <code>.google.cloud.speech.v1p1beta1.TranscriptNormalization transcript_normalization = 24;
+     * </code>
+     *
+     * @return The transcriptNormalization.
+     */
+    public com.google.cloud.speech.v1p1beta1.TranscriptNormalization getTranscriptNormalization() {
+      if (transcriptNormalizationBuilder_ == null) {
+        return transcriptNormalization_ == null
+            ? com.google.cloud.speech.v1p1beta1.TranscriptNormalization.getDefaultInstance()
+            : transcriptNormalization_;
+      } else {
+        return transcriptNormalizationBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Use transcription normalization to automatically replace parts of the
+     * transcript with phrases of your choosing. For StreamingRecognize, this
+     * normalization only applies to stable partial transcripts (stability &gt; 0.8)
+     * and final transcripts.
+     * </pre>
+     *
+     * <code>.google.cloud.speech.v1p1beta1.TranscriptNormalization transcript_normalization = 24;
+     * </code>
+     */
+    public Builder setTranscriptNormalization(
+        com.google.cloud.speech.v1p1beta1.TranscriptNormalization value) {
+      if (transcriptNormalizationBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        transcriptNormalization_ = value;
+        onChanged();
+      } else {
+        transcriptNormalizationBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Use transcription normalization to automatically replace parts of the
+     * transcript with phrases of your choosing. For StreamingRecognize, this
+     * normalization only applies to stable partial transcripts (stability &gt; 0.8)
+     * and final transcripts.
+     * </pre>
+     *
+     * <code>.google.cloud.speech.v1p1beta1.TranscriptNormalization transcript_normalization = 24;
+     * </code>
+     */
+    public Builder setTranscriptNormalization(
+        com.google.cloud.speech.v1p1beta1.TranscriptNormalization.Builder builderForValue) {
+      if (transcriptNormalizationBuilder_ == null) {
+        transcriptNormalization_ = builderForValue.build();
+        onChanged();
+      } else {
+        transcriptNormalizationBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Use transcription normalization to automatically replace parts of the
+     * transcript with phrases of your choosing. For StreamingRecognize, this
+     * normalization only applies to stable partial transcripts (stability &gt; 0.8)
+     * and final transcripts.
+     * </pre>
+     *
+     * <code>.google.cloud.speech.v1p1beta1.TranscriptNormalization transcript_normalization = 24;
+     * </code>
+     */
+    public Builder mergeTranscriptNormalization(
+        com.google.cloud.speech.v1p1beta1.TranscriptNormalization value) {
+      if (transcriptNormalizationBuilder_ == null) {
+        if (transcriptNormalization_ != null) {
+          transcriptNormalization_ =
+              com.google.cloud.speech.v1p1beta1.TranscriptNormalization.newBuilder(
+                      transcriptNormalization_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          transcriptNormalization_ = value;
+        }
+        onChanged();
+      } else {
+        transcriptNormalizationBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Use transcription normalization to automatically replace parts of the
+     * transcript with phrases of your choosing. For StreamingRecognize, this
+     * normalization only applies to stable partial transcripts (stability &gt; 0.8)
+     * and final transcripts.
+     * </pre>
+     *
+     * <code>.google.cloud.speech.v1p1beta1.TranscriptNormalization transcript_normalization = 24;
+     * </code>
+     */
+    public Builder clearTranscriptNormalization() {
+      if (transcriptNormalizationBuilder_ == null) {
+        transcriptNormalization_ = null;
+        onChanged();
+      } else {
+        transcriptNormalization_ = null;
+        transcriptNormalizationBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Use transcription normalization to automatically replace parts of the
+     * transcript with phrases of your choosing. For StreamingRecognize, this
+     * normalization only applies to stable partial transcripts (stability &gt; 0.8)
+     * and final transcripts.
+     * </pre>
+     *
+     * <code>.google.cloud.speech.v1p1beta1.TranscriptNormalization transcript_normalization = 24;
+     * </code>
+     */
+    public com.google.cloud.speech.v1p1beta1.TranscriptNormalization.Builder
+        getTranscriptNormalizationBuilder() {
+
+      onChanged();
+      return getTranscriptNormalizationFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Use transcription normalization to automatically replace parts of the
+     * transcript with phrases of your choosing. For StreamingRecognize, this
+     * normalization only applies to stable partial transcripts (stability &gt; 0.8)
+     * and final transcripts.
+     * </pre>
+     *
+     * <code>.google.cloud.speech.v1p1beta1.TranscriptNormalization transcript_normalization = 24;
+     * </code>
+     */
+    public com.google.cloud.speech.v1p1beta1.TranscriptNormalizationOrBuilder
+        getTranscriptNormalizationOrBuilder() {
+      if (transcriptNormalizationBuilder_ != null) {
+        return transcriptNormalizationBuilder_.getMessageOrBuilder();
+      } else {
+        return transcriptNormalization_ == null
+            ? com.google.cloud.speech.v1p1beta1.TranscriptNormalization.getDefaultInstance()
+            : transcriptNormalization_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Use transcription normalization to automatically replace parts of the
+     * transcript with phrases of your choosing. For StreamingRecognize, this
+     * normalization only applies to stable partial transcripts (stability &gt; 0.8)
+     * and final transcripts.
+     * </pre>
+     *
+     * <code>.google.cloud.speech.v1p1beta1.TranscriptNormalization transcript_normalization = 24;
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.speech.v1p1beta1.TranscriptNormalization,
+            com.google.cloud.speech.v1p1beta1.TranscriptNormalization.Builder,
+            com.google.cloud.speech.v1p1beta1.TranscriptNormalizationOrBuilder>
+        getTranscriptNormalizationFieldBuilder() {
+      if (transcriptNormalizationBuilder_ == null) {
+        transcriptNormalizationBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.speech.v1p1beta1.TranscriptNormalization,
+                com.google.cloud.speech.v1p1beta1.TranscriptNormalization.Builder,
+                com.google.cloud.speech.v1p1beta1.TranscriptNormalizationOrBuilder>(
+                getTranscriptNormalization(), getParentForChildren(), isClean());
+        transcriptNormalization_ = null;
+      }
+      return transcriptNormalizationBuilder_;
     }
 
     private java.util.List<com.google.cloud.speech.v1p1beta1.SpeechContext> speechContexts_ =

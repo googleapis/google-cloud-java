@@ -325,6 +325,54 @@ public interface RecognitionConfigOrBuilder
    *
    *
    * <pre>
+   * Use transcription normalization to automatically replace parts of the
+   * transcript with phrases of your choosing. For StreamingRecognize, this
+   * normalization only applies to stable partial transcripts (stability &gt; 0.8)
+   * and final transcripts.
+   * </pre>
+   *
+   * <code>.google.cloud.speech.v1p1beta1.TranscriptNormalization transcript_normalization = 24;
+   * </code>
+   *
+   * @return Whether the transcriptNormalization field is set.
+   */
+  boolean hasTranscriptNormalization();
+  /**
+   *
+   *
+   * <pre>
+   * Use transcription normalization to automatically replace parts of the
+   * transcript with phrases of your choosing. For StreamingRecognize, this
+   * normalization only applies to stable partial transcripts (stability &gt; 0.8)
+   * and final transcripts.
+   * </pre>
+   *
+   * <code>.google.cloud.speech.v1p1beta1.TranscriptNormalization transcript_normalization = 24;
+   * </code>
+   *
+   * @return The transcriptNormalization.
+   */
+  com.google.cloud.speech.v1p1beta1.TranscriptNormalization getTranscriptNormalization();
+  /**
+   *
+   *
+   * <pre>
+   * Use transcription normalization to automatically replace parts of the
+   * transcript with phrases of your choosing. For StreamingRecognize, this
+   * normalization only applies to stable partial transcripts (stability &gt; 0.8)
+   * and final transcripts.
+   * </pre>
+   *
+   * <code>.google.cloud.speech.v1p1beta1.TranscriptNormalization transcript_normalization = 24;
+   * </code>
+   */
+  com.google.cloud.speech.v1p1beta1.TranscriptNormalizationOrBuilder
+      getTranscriptNormalizationOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Array of [SpeechContext][google.cloud.speech.v1p1beta1.SpeechContext].
    * A means to provide context to assist the speech recognition. For more
    * information, see

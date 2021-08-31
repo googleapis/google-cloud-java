@@ -47,6 +47,14 @@ public final class SpeechResourceProto {
       internal_static_google_cloud_speech_v1p1beta1_SpeechAdaptation_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_speech_v1p1beta1_SpeechAdaptation_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_speech_v1p1beta1_TranscriptNormalization_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_speech_v1p1beta1_TranscriptNormalization_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_speech_v1p1beta1_TranscriptNormalization_Entry_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_speech_v1p1beta1_TranscriptNormalization_Entry_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
     return descriptor;
@@ -58,36 +66,42 @@ public final class SpeechResourceProto {
     java.lang.String[] descriptorData = {
       "\n,google/cloud/speech/v1p1beta1/resource"
           + ".proto\022\035google.cloud.speech.v1p1beta1\032\031g"
-          + "oogle/api/resource.proto\032\034google/api/ann"
-          + "otations.proto\"\203\002\n\013CustomClass\022\014\n\004name\030\001"
-          + " \001(\t\022\027\n\017custom_class_id\030\002 \001(\t\022C\n\005items\030\003"
-          + " \003(\01324.google.cloud.speech.v1p1beta1.Cus"
-          + "tomClass.ClassItem\032\032\n\tClassItem\022\r\n\005value"
-          + "\030\001 \001(\t:l\352Ai\n!speech.googleapis.com/Custo"
-          + "mClass\022Dprojects/{project}/locations/{lo"
-          + "cation}/customClasses/{custom_class}\"\371\001\n"
-          + "\tPhraseSet\022\014\n\004name\030\001 \001(\t\022@\n\007phrases\030\002 \003("
-          + "\0132/.google.cloud.speech.v1p1beta1.Phrase"
-          + "Set.Phrase\022\r\n\005boost\030\004 \001(\002\032&\n\006Phrase\022\r\n\005v"
-          + "alue\030\001 \001(\t\022\r\n\005boost\030\002 \001(\002:e\352Ab\n\037speech.g"
-          + "oogleapis.com/PhraseSet\022?projects/{proje"
-          + "ct}/locations/{location}/phraseSets/{phr"
-          + "ase_set}\"\332\001\n\020SpeechAdaptation\022=\n\013phrase_"
-          + "sets\030\001 \003(\0132(.google.cloud.speech.v1p1bet"
-          + "a1.PhraseSet\022C\n\025phrase_set_references\030\002 "
-          + "\003(\tB$\372A!\n\037speech.googleapis.com/PhraseSe"
-          + "t\022B\n\016custom_classes\030\003 \003(\0132*.google.cloud"
-          + ".speech.v1p1beta1.CustomClassB\210\001\n!com.go"
-          + "ogle.cloud.speech.v1p1beta1B\023SpeechResou"
-          + "rceProtoP\001ZCgoogle.golang.org/genproto/g"
-          + "oogleapis/cloud/speech/v1p1beta1;speech\370"
-          + "\001\001\242\002\003GCSb\006proto3"
+          + "oogle/api/resource.proto\032\037google/protobu"
+          + "f/timestamp.proto\032\034google/api/annotation"
+          + "s.proto\"\203\002\n\013CustomClass\022\014\n\004name\030\001 \001(\t\022\027\n"
+          + "\017custom_class_id\030\002 \001(\t\022C\n\005items\030\003 \003(\01324."
+          + "google.cloud.speech.v1p1beta1.CustomClas"
+          + "s.ClassItem\032\032\n\tClassItem\022\r\n\005value\030\001 \001(\t:"
+          + "l\352Ai\n!speech.googleapis.com/CustomClass\022"
+          + "Dprojects/{project}/locations/{location}"
+          + "/customClasses/{custom_class}\"\371\001\n\tPhrase"
+          + "Set\022\014\n\004name\030\001 \001(\t\022@\n\007phrases\030\002 \003(\0132/.goo"
+          + "gle.cloud.speech.v1p1beta1.PhraseSet.Phr"
+          + "ase\022\r\n\005boost\030\004 \001(\002\032&\n\006Phrase\022\r\n\005value\030\001 "
+          + "\001(\t\022\r\n\005boost\030\002 \001(\002:e\352Ab\n\037speech.googleap"
+          + "is.com/PhraseSet\022?projects/{project}/loc"
+          + "ations/{location}/phraseSets/{phrase_set"
+          + "}\"\332\001\n\020SpeechAdaptation\022=\n\013phrase_sets\030\001 "
+          + "\003(\0132(.google.cloud.speech.v1p1beta1.Phra"
+          + "seSet\022C\n\025phrase_set_references\030\002 \003(\tB$\372A"
+          + "!\n\037speech.googleapis.com/PhraseSet\022B\n\016cu"
+          + "stom_classes\030\003 \003(\0132*.google.cloud.speech"
+          + ".v1p1beta1.CustomClass\"\252\001\n\027TranscriptNor"
+          + "malization\022M\n\007entries\030\001 \003(\0132<.google.clo"
+          + "ud.speech.v1p1beta1.TranscriptNormalizat"
+          + "ion.Entry\032@\n\005Entry\022\016\n\006search\030\001 \001(\t\022\017\n\007re"
+          + "place\030\002 \001(\t\022\026\n\016case_sensitive\030\003 \001(\010B\210\001\n!"
+          + "com.google.cloud.speech.v1p1beta1B\023Speec"
+          + "hResourceProtoP\001ZCgoogle.golang.org/genp"
+          + "roto/googleapis/cloud/speech/v1p1beta1;s"
+          + "peech\370\001\001\242\002\003GCSb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
             descriptorData,
             new com.google.protobuf.Descriptors.FileDescriptor[] {
               com.google.api.ResourceProto.getDescriptor(),
+              com.google.protobuf.TimestampProto.getDescriptor(),
               com.google.api.AnnotationsProto.getDescriptor(),
             });
     internal_static_google_cloud_speech_v1p1beta1_CustomClass_descriptor =
@@ -132,6 +146,24 @@ public final class SpeechResourceProto {
             new java.lang.String[] {
               "PhraseSets", "PhraseSetReferences", "CustomClasses",
             });
+    internal_static_google_cloud_speech_v1p1beta1_TranscriptNormalization_descriptor =
+        getDescriptor().getMessageTypes().get(3);
+    internal_static_google_cloud_speech_v1p1beta1_TranscriptNormalization_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_speech_v1p1beta1_TranscriptNormalization_descriptor,
+            new java.lang.String[] {
+              "Entries",
+            });
+    internal_static_google_cloud_speech_v1p1beta1_TranscriptNormalization_Entry_descriptor =
+        internal_static_google_cloud_speech_v1p1beta1_TranscriptNormalization_descriptor
+            .getNestedTypes()
+            .get(0);
+    internal_static_google_cloud_speech_v1p1beta1_TranscriptNormalization_Entry_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_speech_v1p1beta1_TranscriptNormalization_Entry_descriptor,
+            new java.lang.String[] {
+              "Search", "Replace", "CaseSensitive",
+            });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
     registry.add(com.google.api.ResourceProto.resource);
@@ -139,6 +171,7 @@ public final class SpeechResourceProto {
     com.google.protobuf.Descriptors.FileDescriptor.internalUpdateFileDescriptor(
         descriptor, registry);
     com.google.api.ResourceProto.getDescriptor();
+    com.google.protobuf.TimestampProto.getDescriptor();
     com.google.api.AnnotationsProto.getDescriptor();
   }
 
