@@ -1,5 +1,21 @@
 # Changelog
 
+## [2.1.0](https://www.github.com/googleapis/java-automl/compare/v2.0.2...v2.1.0) (2021-08-31)
+
+
+### Features
+
+* Remove use of deprecated gradle command in java README ([#1196](https://www.github.com/googleapis/java-automl/issues/1196)) ([#874](https://www.github.com/googleapis/java-automl/issues/874)) ([fc4bfff](https://www.github.com/googleapis/java-automl/commit/fc4bfff097895c6e14a936101e923cdbc1efd5be))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-bigquery to v2.1.3 ([#869](https://www.github.com/googleapis/java-automl/issues/869)) ([efb4266](https://www.github.com/googleapis/java-automl/commit/efb42660ad918f04cc885afa14df0d25276f6bb2))
+* update dependency com.google.cloud:google-cloud-bigquery to v2.1.4 ([#879](https://www.github.com/googleapis/java-automl/issues/879)) ([d693d7f](https://www.github.com/googleapis/java-automl/commit/d693d7f61adb3fe373c889b8050cdfc31d25a4b8))
+* update dependency com.google.cloud:google-cloud-core to v2.1.2 ([#877](https://www.github.com/googleapis/java-automl/issues/877)) ([bab1208](https://www.github.com/googleapis/java-automl/commit/bab120835a859b834407ecdfc5ac54b02b50dd3c))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.2.0 ([#878](https://www.github.com/googleapis/java-automl/issues/878)) ([e4bf170](https://www.github.com/googleapis/java-automl/commit/e4bf170075dbd9d928788189f2bac184267b90ad))
+* update dependency com.google.cloud:google-cloud-storage to v2.1.0 ([#870](https://www.github.com/googleapis/java-automl/issues/870)) ([cddf312](https://www.github.com/googleapis/java-automl/commit/cddf312ca54fb212338e9110ee8e8a3c649a412b))
+
 ### [2.0.2](https://www.github.com/googleapis/java-automl/compare/v2.0.1...v2.0.2) (2021-08-24)
 
 
