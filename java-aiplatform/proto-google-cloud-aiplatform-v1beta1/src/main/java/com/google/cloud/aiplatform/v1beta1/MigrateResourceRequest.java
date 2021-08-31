@@ -3492,8 +3492,8 @@ public final class MigrateResourceRequest extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * Config for migrating Dataset in datalabeling.googleapis.com to AI
-   * Platform's Dataset.
+   * Config for migrating Dataset in datalabeling.googleapis.com to Vertex
+   * AI's Dataset.
    * </pre>
    *
    * Protobuf type {@code
@@ -4817,8 +4817,8 @@ public final class MigrateResourceRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Config for migrating Dataset in datalabeling.googleapis.com to AI
-     * Platform's Dataset.
+     * Config for migrating Dataset in datalabeling.googleapis.com to Vertex
+     * AI's Dataset.
      * </pre>
      *
      * Protobuf type {@code

@@ -330,7 +330,7 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Specifies the service account for workload run-as account.
    * Users submitting jobs must have act-as permission on this run-as account.
-   * If unspecified, the [AI Platform Custom Code Service
+   * If unspecified, the [Vertex AI Custom Code Service
    * Agent](https://cloud.google.com/vertex-ai/docs/general/access-control#service-agents)
    * for the CustomJob's project is used.
    * </pre>
@@ -357,7 +357,7 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Specifies the service account for workload run-as account.
    * Users submitting jobs must have act-as permission on this run-as account.
-   * If unspecified, the [AI Platform Custom Code Service
+   * If unspecified, the [Vertex AI Custom Code Service
    * Agent](https://cloud.google.com/vertex-ai/docs/general/access-control#service-agents)
    * for the CustomJob's project is used.
    * </pre>
@@ -603,8 +603,12 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. Vertex AI will enable web portal access to the containers. The portals
-   * can be accessed on web via the URLs given by [web_access_uris][].
+   * Optional. Whether you want Vertex AI to enable [interactive shell
+   * access](https://cloud.google.com/vertex-ai/docs/training/monitor-debug-interactive-shell)
+   * to training containers.
+   * If set to `true`, you can access interactive shells at the URIs given
+   * by [CustomJob.web_access_uris][google.cloud.aiplatform.v1beta1.CustomJob.web_access_uris] or [Trial.web_access_uris][google.cloud.aiplatform.v1beta1.Trial.web_access_uris] (within
+   * [HyperparameterTuningJob.trials][google.cloud.aiplatform.v1beta1.HyperparameterTuningJob.trials]).
    * </pre>
    *
    * <code>bool enable_web_access = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1722,7 +1726,7 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Specifies the service account for workload run-as account.
      * Users submitting jobs must have act-as permission on this run-as account.
-     * If unspecified, the [AI Platform Custom Code Service
+     * If unspecified, the [Vertex AI Custom Code Service
      * Agent](https://cloud.google.com/vertex-ai/docs/general/access-control#service-agents)
      * for the CustomJob's project is used.
      * </pre>
@@ -1748,7 +1752,7 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Specifies the service account for workload run-as account.
      * Users submitting jobs must have act-as permission on this run-as account.
-     * If unspecified, the [AI Platform Custom Code Service
+     * If unspecified, the [Vertex AI Custom Code Service
      * Agent](https://cloud.google.com/vertex-ai/docs/general/access-control#service-agents)
      * for the CustomJob's project is used.
      * </pre>
@@ -1774,7 +1778,7 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Specifies the service account for workload run-as account.
      * Users submitting jobs must have act-as permission on this run-as account.
-     * If unspecified, the [AI Platform Custom Code Service
+     * If unspecified, the [Vertex AI Custom Code Service
      * Agent](https://cloud.google.com/vertex-ai/docs/general/access-control#service-agents)
      * for the CustomJob's project is used.
      * </pre>
@@ -1799,7 +1803,7 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Specifies the service account for workload run-as account.
      * Users submitting jobs must have act-as permission on this run-as account.
-     * If unspecified, the [AI Platform Custom Code Service
+     * If unspecified, the [Vertex AI Custom Code Service
      * Agent](https://cloud.google.com/vertex-ai/docs/general/access-control#service-agents)
      * for the CustomJob's project is used.
      * </pre>
@@ -1820,7 +1824,7 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Specifies the service account for workload run-as account.
      * Users submitting jobs must have act-as permission on this run-as account.
-     * If unspecified, the [AI Platform Custom Code Service
+     * If unspecified, the [Vertex AI Custom Code Service
      * Agent](https://cloud.google.com/vertex-ai/docs/general/access-control#service-agents)
      * for the CustomJob's project is used.
      * </pre>
@@ -2448,8 +2452,12 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Vertex AI will enable web portal access to the containers. The portals
-     * can be accessed on web via the URLs given by [web_access_uris][].
+     * Optional. Whether you want Vertex AI to enable [interactive shell
+     * access](https://cloud.google.com/vertex-ai/docs/training/monitor-debug-interactive-shell)
+     * to training containers.
+     * If set to `true`, you can access interactive shells at the URIs given
+     * by [CustomJob.web_access_uris][google.cloud.aiplatform.v1beta1.CustomJob.web_access_uris] or [Trial.web_access_uris][google.cloud.aiplatform.v1beta1.Trial.web_access_uris] (within
+     * [HyperparameterTuningJob.trials][google.cloud.aiplatform.v1beta1.HyperparameterTuningJob.trials]).
      * </pre>
      *
      * <code>bool enable_web_access = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2464,8 +2472,12 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Vertex AI will enable web portal access to the containers. The portals
-     * can be accessed on web via the URLs given by [web_access_uris][].
+     * Optional. Whether you want Vertex AI to enable [interactive shell
+     * access](https://cloud.google.com/vertex-ai/docs/training/monitor-debug-interactive-shell)
+     * to training containers.
+     * If set to `true`, you can access interactive shells at the URIs given
+     * by [CustomJob.web_access_uris][google.cloud.aiplatform.v1beta1.CustomJob.web_access_uris] or [Trial.web_access_uris][google.cloud.aiplatform.v1beta1.Trial.web_access_uris] (within
+     * [HyperparameterTuningJob.trials][google.cloud.aiplatform.v1beta1.HyperparameterTuningJob.trials]).
      * </pre>
      *
      * <code>bool enable_web_access = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2483,8 +2495,12 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Vertex AI will enable web portal access to the containers. The portals
-     * can be accessed on web via the URLs given by [web_access_uris][].
+     * Optional. Whether you want Vertex AI to enable [interactive shell
+     * access](https://cloud.google.com/vertex-ai/docs/training/monitor-debug-interactive-shell)
+     * to training containers.
+     * If set to `true`, you can access interactive shells at the URIs given
+     * by [CustomJob.web_access_uris][google.cloud.aiplatform.v1beta1.CustomJob.web_access_uris] or [Trial.web_access_uris][google.cloud.aiplatform.v1beta1.Trial.web_access_uris] (within
+     * [HyperparameterTuningJob.trials][google.cloud.aiplatform.v1beta1.HyperparameterTuningJob.trials]).
      * </pre>
      *
      * <code>bool enable_web_access = 10 [(.google.api.field_behavior) = OPTIONAL];</code>

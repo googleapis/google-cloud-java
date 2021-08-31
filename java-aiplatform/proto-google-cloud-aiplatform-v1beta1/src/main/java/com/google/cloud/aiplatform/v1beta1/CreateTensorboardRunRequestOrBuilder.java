@@ -27,8 +27,8 @@ public interface CreateTensorboardRunRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The resource name of the Tensorboard to create the TensorboardRun in.
-   * Format:
+   * Required. The resource name of the TensorboardExperiment to create the TensorboardRun
+   * in. Format:
    * `projects/{project}/locations/{location}/tensorboards/{tensorboard}/experiments/{experiment}`
    * </pre>
    *
@@ -43,8 +43,8 @@ public interface CreateTensorboardRunRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The resource name of the Tensorboard to create the TensorboardRun in.
-   * Format:
+   * Required. The resource name of the TensorboardExperiment to create the TensorboardRun
+   * in. Format:
    * `projects/{project}/locations/{location}/tensorboards/{tensorboard}/experiments/{experiment}`
    * </pre>
    *

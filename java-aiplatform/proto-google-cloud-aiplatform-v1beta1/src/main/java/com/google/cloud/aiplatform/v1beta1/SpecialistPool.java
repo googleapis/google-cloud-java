@@ -23,11 +23,11 @@ package com.google.cloud.aiplatform.v1beta1;
  *
  * <pre>
  * SpecialistPool represents customers' own workforce to work on their data
- * labeling jobs. It includes a group of specialist managers who are responsible
- * for managing the labelers in this pool as well as customers' data labeling
- * jobs associated with this pool.
- * Customers create specialist pool as well as start data labeling jobs on
- * Cloud, managers and labelers work with the jobs using CrowdCompute console.
+ * labeling jobs. It includes a group of specialist managers and workers.
+ * Managers are responsible for managing the workers in this pool as well as
+ * customers' data labeling jobs associated with this pool. Customers create
+ * specialist pool as well as start data labeling jobs on Cloud, managers and
+ * workers handle the jobs using CrowdCompute console.
  * </pre>
  *
  * Protobuf type {@code google.cloud.aiplatform.v1beta1.SpecialistPool}
@@ -268,7 +268,7 @@ public final class SpecialistPool extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. The number of Specialists in this SpecialistPool.
+   * Output only. The number of managers in this SpecialistPool.
    * </pre>
    *
    * <code>int32 specialist_managers_count = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -286,7 +286,7 @@ public final class SpecialistPool extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The email addresses of the specialists in the SpecialistPool.
+   * The email addresses of the managers in the SpecialistPool.
    * </pre>
    *
    * <code>repeated string specialist_manager_emails = 4;</code>
@@ -300,7 +300,7 @@ public final class SpecialistPool extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The email addresses of the specialists in the SpecialistPool.
+   * The email addresses of the managers in the SpecialistPool.
    * </pre>
    *
    * <code>repeated string specialist_manager_emails = 4;</code>
@@ -314,7 +314,7 @@ public final class SpecialistPool extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The email addresses of the specialists in the SpecialistPool.
+   * The email addresses of the managers in the SpecialistPool.
    * </pre>
    *
    * <code>repeated string specialist_manager_emails = 4;</code>
@@ -329,7 +329,7 @@ public final class SpecialistPool extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The email addresses of the specialists in the SpecialistPool.
+   * The email addresses of the managers in the SpecialistPool.
    * </pre>
    *
    * <code>repeated string specialist_manager_emails = 4;</code>
@@ -628,11 +628,11 @@ public final class SpecialistPool extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * SpecialistPool represents customers' own workforce to work on their data
-   * labeling jobs. It includes a group of specialist managers who are responsible
-   * for managing the labelers in this pool as well as customers' data labeling
-   * jobs associated with this pool.
-   * Customers create specialist pool as well as start data labeling jobs on
-   * Cloud, managers and labelers work with the jobs using CrowdCompute console.
+   * labeling jobs. It includes a group of specialist managers and workers.
+   * Managers are responsible for managing the workers in this pool as well as
+   * customers' data labeling jobs associated with this pool. Customers create
+   * specialist pool as well as start data labeling jobs on Cloud, managers and
+   * workers handle the jobs using CrowdCompute console.
    * </pre>
    *
    * Protobuf type {@code google.cloud.aiplatform.v1beta1.SpecialistPool}
@@ -1069,7 +1069,7 @@ public final class SpecialistPool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The number of Specialists in this SpecialistPool.
+     * Output only. The number of managers in this SpecialistPool.
      * </pre>
      *
      * <code>int32 specialist_managers_count = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -1085,7 +1085,7 @@ public final class SpecialistPool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The number of Specialists in this SpecialistPool.
+     * Output only. The number of managers in this SpecialistPool.
      * </pre>
      *
      * <code>int32 specialist_managers_count = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -1104,7 +1104,7 @@ public final class SpecialistPool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The number of Specialists in this SpecialistPool.
+     * Output only. The number of managers in this SpecialistPool.
      * </pre>
      *
      * <code>int32 specialist_managers_count = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -1133,7 +1133,7 @@ public final class SpecialistPool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The email addresses of the specialists in the SpecialistPool.
+     * The email addresses of the managers in the SpecialistPool.
      * </pre>
      *
      * <code>repeated string specialist_manager_emails = 4;</code>
@@ -1147,7 +1147,7 @@ public final class SpecialistPool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The email addresses of the specialists in the SpecialistPool.
+     * The email addresses of the managers in the SpecialistPool.
      * </pre>
      *
      * <code>repeated string specialist_manager_emails = 4;</code>
@@ -1161,7 +1161,7 @@ public final class SpecialistPool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The email addresses of the specialists in the SpecialistPool.
+     * The email addresses of the managers in the SpecialistPool.
      * </pre>
      *
      * <code>repeated string specialist_manager_emails = 4;</code>
@@ -1176,7 +1176,7 @@ public final class SpecialistPool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The email addresses of the specialists in the SpecialistPool.
+     * The email addresses of the managers in the SpecialistPool.
      * </pre>
      *
      * <code>repeated string specialist_manager_emails = 4;</code>
@@ -1191,7 +1191,7 @@ public final class SpecialistPool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The email addresses of the specialists in the SpecialistPool.
+     * The email addresses of the managers in the SpecialistPool.
      * </pre>
      *
      * <code>repeated string specialist_manager_emails = 4;</code>
@@ -1213,7 +1213,7 @@ public final class SpecialistPool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The email addresses of the specialists in the SpecialistPool.
+     * The email addresses of the managers in the SpecialistPool.
      * </pre>
      *
      * <code>repeated string specialist_manager_emails = 4;</code>
@@ -1234,7 +1234,7 @@ public final class SpecialistPool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The email addresses of the specialists in the SpecialistPool.
+     * The email addresses of the managers in the SpecialistPool.
      * </pre>
      *
      * <code>repeated string specialist_manager_emails = 4;</code>
@@ -1252,7 +1252,7 @@ public final class SpecialistPool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The email addresses of the specialists in the SpecialistPool.
+     * The email addresses of the managers in the SpecialistPool.
      * </pre>
      *
      * <code>repeated string specialist_manager_emails = 4;</code>
@@ -1269,7 +1269,7 @@ public final class SpecialistPool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The email addresses of the specialists in the SpecialistPool.
+     * The email addresses of the managers in the SpecialistPool.
      * </pre>
      *
      * <code>repeated string specialist_manager_emails = 4;</code>

@@ -20,6 +20,8 @@ import static com.google.cloud.aiplatform.v1.JobServiceClient.ListBatchPredictio
 import static com.google.cloud.aiplatform.v1.JobServiceClient.ListCustomJobsPagedResponse;
 import static com.google.cloud.aiplatform.v1.JobServiceClient.ListDataLabelingJobsPagedResponse;
 import static com.google.cloud.aiplatform.v1.JobServiceClient.ListHyperparameterTuningJobsPagedResponse;
+import static com.google.cloud.aiplatform.v1.JobServiceClient.ListModelDeploymentMonitoringJobsPagedResponse;
+import static com.google.cloud.aiplatform.v1.JobServiceClient.SearchModelDeploymentMonitoringStatsAnomaliesPagedResponse;
 
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
@@ -37,17 +39,20 @@ import com.google.cloud.aiplatform.v1.CreateBatchPredictionJobRequest;
 import com.google.cloud.aiplatform.v1.CreateCustomJobRequest;
 import com.google.cloud.aiplatform.v1.CreateDataLabelingJobRequest;
 import com.google.cloud.aiplatform.v1.CreateHyperparameterTuningJobRequest;
+import com.google.cloud.aiplatform.v1.CreateModelDeploymentMonitoringJobRequest;
 import com.google.cloud.aiplatform.v1.CustomJob;
 import com.google.cloud.aiplatform.v1.DataLabelingJob;
 import com.google.cloud.aiplatform.v1.DeleteBatchPredictionJobRequest;
 import com.google.cloud.aiplatform.v1.DeleteCustomJobRequest;
 import com.google.cloud.aiplatform.v1.DeleteDataLabelingJobRequest;
 import com.google.cloud.aiplatform.v1.DeleteHyperparameterTuningJobRequest;
+import com.google.cloud.aiplatform.v1.DeleteModelDeploymentMonitoringJobRequest;
 import com.google.cloud.aiplatform.v1.DeleteOperationMetadata;
 import com.google.cloud.aiplatform.v1.GetBatchPredictionJobRequest;
 import com.google.cloud.aiplatform.v1.GetCustomJobRequest;
 import com.google.cloud.aiplatform.v1.GetDataLabelingJobRequest;
 import com.google.cloud.aiplatform.v1.GetHyperparameterTuningJobRequest;
+import com.google.cloud.aiplatform.v1.GetModelDeploymentMonitoringJobRequest;
 import com.google.cloud.aiplatform.v1.HyperparameterTuningJob;
 import com.google.cloud.aiplatform.v1.ListBatchPredictionJobsRequest;
 import com.google.cloud.aiplatform.v1.ListBatchPredictionJobsResponse;
@@ -57,6 +62,15 @@ import com.google.cloud.aiplatform.v1.ListDataLabelingJobsRequest;
 import com.google.cloud.aiplatform.v1.ListDataLabelingJobsResponse;
 import com.google.cloud.aiplatform.v1.ListHyperparameterTuningJobsRequest;
 import com.google.cloud.aiplatform.v1.ListHyperparameterTuningJobsResponse;
+import com.google.cloud.aiplatform.v1.ListModelDeploymentMonitoringJobsRequest;
+import com.google.cloud.aiplatform.v1.ListModelDeploymentMonitoringJobsResponse;
+import com.google.cloud.aiplatform.v1.ModelDeploymentMonitoringJob;
+import com.google.cloud.aiplatform.v1.PauseModelDeploymentMonitoringJobRequest;
+import com.google.cloud.aiplatform.v1.ResumeModelDeploymentMonitoringJobRequest;
+import com.google.cloud.aiplatform.v1.SearchModelDeploymentMonitoringStatsAnomaliesRequest;
+import com.google.cloud.aiplatform.v1.SearchModelDeploymentMonitoringStatsAnomaliesResponse;
+import com.google.cloud.aiplatform.v1.UpdateModelDeploymentMonitoringJobOperationMetadata;
+import com.google.cloud.aiplatform.v1.UpdateModelDeploymentMonitoringJobRequest;
 import com.google.common.collect.ImmutableMap;
 import com.google.longrunning.Operation;
 import com.google.longrunning.stub.GrpcOperationsStub;
@@ -291,6 +305,120 @@ public class GrpcJobServiceStub extends JobServiceStub {
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
               .build();
 
+  private static final MethodDescriptor<
+          CreateModelDeploymentMonitoringJobRequest, ModelDeploymentMonitoringJob>
+      createModelDeploymentMonitoringJobMethodDescriptor =
+          MethodDescriptor
+              .<CreateModelDeploymentMonitoringJobRequest, ModelDeploymentMonitoringJob>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.aiplatform.v1.JobService/CreateModelDeploymentMonitoringJob")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(
+                      CreateModelDeploymentMonitoringJobRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(ModelDeploymentMonitoringJob.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<
+          SearchModelDeploymentMonitoringStatsAnomaliesRequest,
+          SearchModelDeploymentMonitoringStatsAnomaliesResponse>
+      searchModelDeploymentMonitoringStatsAnomaliesMethodDescriptor =
+          MethodDescriptor
+              .<SearchModelDeploymentMonitoringStatsAnomaliesRequest,
+                  SearchModelDeploymentMonitoringStatsAnomaliesResponse>
+                  newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.aiplatform.v1.JobService/SearchModelDeploymentMonitoringStatsAnomalies")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(
+                      SearchModelDeploymentMonitoringStatsAnomaliesRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(
+                      SearchModelDeploymentMonitoringStatsAnomaliesResponse.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<
+          GetModelDeploymentMonitoringJobRequest, ModelDeploymentMonitoringJob>
+      getModelDeploymentMonitoringJobMethodDescriptor =
+          MethodDescriptor
+              .<GetModelDeploymentMonitoringJobRequest, ModelDeploymentMonitoringJob>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.aiplatform.v1.JobService/GetModelDeploymentMonitoringJob")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(
+                      GetModelDeploymentMonitoringJobRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(ModelDeploymentMonitoringJob.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<
+          ListModelDeploymentMonitoringJobsRequest, ListModelDeploymentMonitoringJobsResponse>
+      listModelDeploymentMonitoringJobsMethodDescriptor =
+          MethodDescriptor
+              .<ListModelDeploymentMonitoringJobsRequest, ListModelDeploymentMonitoringJobsResponse>
+                  newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.aiplatform.v1.JobService/ListModelDeploymentMonitoringJobs")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(
+                      ListModelDeploymentMonitoringJobsRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(
+                      ListModelDeploymentMonitoringJobsResponse.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<UpdateModelDeploymentMonitoringJobRequest, Operation>
+      updateModelDeploymentMonitoringJobMethodDescriptor =
+          MethodDescriptor.<UpdateModelDeploymentMonitoringJobRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.aiplatform.v1.JobService/UpdateModelDeploymentMonitoringJob")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(
+                      UpdateModelDeploymentMonitoringJobRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<DeleteModelDeploymentMonitoringJobRequest, Operation>
+      deleteModelDeploymentMonitoringJobMethodDescriptor =
+          MethodDescriptor.<DeleteModelDeploymentMonitoringJobRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.aiplatform.v1.JobService/DeleteModelDeploymentMonitoringJob")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(
+                      DeleteModelDeploymentMonitoringJobRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<PauseModelDeploymentMonitoringJobRequest, Empty>
+      pauseModelDeploymentMonitoringJobMethodDescriptor =
+          MethodDescriptor.<PauseModelDeploymentMonitoringJobRequest, Empty>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.aiplatform.v1.JobService/PauseModelDeploymentMonitoringJob")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(
+                      PauseModelDeploymentMonitoringJobRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<ResumeModelDeploymentMonitoringJobRequest, Empty>
+      resumeModelDeploymentMonitoringJobMethodDescriptor =
+          MethodDescriptor.<ResumeModelDeploymentMonitoringJobRequest, Empty>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.aiplatform.v1.JobService/ResumeModelDeploymentMonitoringJob")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(
+                      ResumeModelDeploymentMonitoringJobRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .build();
+
   private final UnaryCallable<CreateCustomJobRequest, CustomJob> createCustomJobCallable;
   private final UnaryCallable<GetCustomJobRequest, CustomJob> getCustomJobCallable;
   private final UnaryCallable<ListCustomJobsRequest, ListCustomJobsResponse> listCustomJobsCallable;
@@ -344,6 +472,41 @@ public class GrpcJobServiceStub extends JobServiceStub {
       deleteBatchPredictionJobOperationCallable;
   private final UnaryCallable<CancelBatchPredictionJobRequest, Empty>
       cancelBatchPredictionJobCallable;
+  private final UnaryCallable<
+          CreateModelDeploymentMonitoringJobRequest, ModelDeploymentMonitoringJob>
+      createModelDeploymentMonitoringJobCallable;
+  private final UnaryCallable<
+          SearchModelDeploymentMonitoringStatsAnomaliesRequest,
+          SearchModelDeploymentMonitoringStatsAnomaliesResponse>
+      searchModelDeploymentMonitoringStatsAnomaliesCallable;
+  private final UnaryCallable<
+          SearchModelDeploymentMonitoringStatsAnomaliesRequest,
+          SearchModelDeploymentMonitoringStatsAnomaliesPagedResponse>
+      searchModelDeploymentMonitoringStatsAnomaliesPagedCallable;
+  private final UnaryCallable<GetModelDeploymentMonitoringJobRequest, ModelDeploymentMonitoringJob>
+      getModelDeploymentMonitoringJobCallable;
+  private final UnaryCallable<
+          ListModelDeploymentMonitoringJobsRequest, ListModelDeploymentMonitoringJobsResponse>
+      listModelDeploymentMonitoringJobsCallable;
+  private final UnaryCallable<
+          ListModelDeploymentMonitoringJobsRequest, ListModelDeploymentMonitoringJobsPagedResponse>
+      listModelDeploymentMonitoringJobsPagedCallable;
+  private final UnaryCallable<UpdateModelDeploymentMonitoringJobRequest, Operation>
+      updateModelDeploymentMonitoringJobCallable;
+  private final OperationCallable<
+          UpdateModelDeploymentMonitoringJobRequest,
+          ModelDeploymentMonitoringJob,
+          UpdateModelDeploymentMonitoringJobOperationMetadata>
+      updateModelDeploymentMonitoringJobOperationCallable;
+  private final UnaryCallable<DeleteModelDeploymentMonitoringJobRequest, Operation>
+      deleteModelDeploymentMonitoringJobCallable;
+  private final OperationCallable<
+          DeleteModelDeploymentMonitoringJobRequest, Empty, DeleteOperationMetadata>
+      deleteModelDeploymentMonitoringJobOperationCallable;
+  private final UnaryCallable<PauseModelDeploymentMonitoringJobRequest, Empty>
+      pauseModelDeploymentMonitoringJobCallable;
+  private final UnaryCallable<ResumeModelDeploymentMonitoringJobRequest, Empty>
+      resumeModelDeploymentMonitoringJobCallable;
 
   private final BackgroundResource backgroundResources;
   private final GrpcOperationsStub operationsStub;
@@ -607,6 +770,110 @@ public class GrpcJobServiceStub extends JobServiceStub {
                       return params.build();
                     })
                 .build();
+    GrpcCallSettings<CreateModelDeploymentMonitoringJobRequest, ModelDeploymentMonitoringJob>
+        createModelDeploymentMonitoringJobTransportSettings =
+            GrpcCallSettings
+                .<CreateModelDeploymentMonitoringJobRequest, ModelDeploymentMonitoringJob>
+                    newBuilder()
+                .setMethodDescriptor(createModelDeploymentMonitoringJobMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("parent", String.valueOf(request.getParent()));
+                      return params.build();
+                    })
+                .build();
+    GrpcCallSettings<
+            SearchModelDeploymentMonitoringStatsAnomaliesRequest,
+            SearchModelDeploymentMonitoringStatsAnomaliesResponse>
+        searchModelDeploymentMonitoringStatsAnomaliesTransportSettings =
+            GrpcCallSettings
+                .<SearchModelDeploymentMonitoringStatsAnomaliesRequest,
+                    SearchModelDeploymentMonitoringStatsAnomaliesResponse>
+                    newBuilder()
+                .setMethodDescriptor(searchModelDeploymentMonitoringStatsAnomaliesMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put(
+                          "model_deployment_monitoring_job",
+                          String.valueOf(request.getModelDeploymentMonitoringJob()));
+                      return params.build();
+                    })
+                .build();
+    GrpcCallSettings<GetModelDeploymentMonitoringJobRequest, ModelDeploymentMonitoringJob>
+        getModelDeploymentMonitoringJobTransportSettings =
+            GrpcCallSettings
+                .<GetModelDeploymentMonitoringJobRequest, ModelDeploymentMonitoringJob>newBuilder()
+                .setMethodDescriptor(getModelDeploymentMonitoringJobMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("name", String.valueOf(request.getName()));
+                      return params.build();
+                    })
+                .build();
+    GrpcCallSettings<
+            ListModelDeploymentMonitoringJobsRequest, ListModelDeploymentMonitoringJobsResponse>
+        listModelDeploymentMonitoringJobsTransportSettings =
+            GrpcCallSettings
+                .<ListModelDeploymentMonitoringJobsRequest,
+                    ListModelDeploymentMonitoringJobsResponse>
+                    newBuilder()
+                .setMethodDescriptor(listModelDeploymentMonitoringJobsMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("parent", String.valueOf(request.getParent()));
+                      return params.build();
+                    })
+                .build();
+    GrpcCallSettings<UpdateModelDeploymentMonitoringJobRequest, Operation>
+        updateModelDeploymentMonitoringJobTransportSettings =
+            GrpcCallSettings.<UpdateModelDeploymentMonitoringJobRequest, Operation>newBuilder()
+                .setMethodDescriptor(updateModelDeploymentMonitoringJobMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put(
+                          "model_deployment_monitoring_job.name",
+                          String.valueOf(request.getModelDeploymentMonitoringJob().getName()));
+                      return params.build();
+                    })
+                .build();
+    GrpcCallSettings<DeleteModelDeploymentMonitoringJobRequest, Operation>
+        deleteModelDeploymentMonitoringJobTransportSettings =
+            GrpcCallSettings.<DeleteModelDeploymentMonitoringJobRequest, Operation>newBuilder()
+                .setMethodDescriptor(deleteModelDeploymentMonitoringJobMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("name", String.valueOf(request.getName()));
+                      return params.build();
+                    })
+                .build();
+    GrpcCallSettings<PauseModelDeploymentMonitoringJobRequest, Empty>
+        pauseModelDeploymentMonitoringJobTransportSettings =
+            GrpcCallSettings.<PauseModelDeploymentMonitoringJobRequest, Empty>newBuilder()
+                .setMethodDescriptor(pauseModelDeploymentMonitoringJobMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("name", String.valueOf(request.getName()));
+                      return params.build();
+                    })
+                .build();
+    GrpcCallSettings<ResumeModelDeploymentMonitoringJobRequest, Empty>
+        resumeModelDeploymentMonitoringJobTransportSettings =
+            GrpcCallSettings.<ResumeModelDeploymentMonitoringJobRequest, Empty>newBuilder()
+                .setMethodDescriptor(resumeModelDeploymentMonitoringJobMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("name", String.valueOf(request.getName()));
+                      return params.build();
+                    })
+                .build();
 
     this.createCustomJobCallable =
         callableFactory.createUnaryCallable(
@@ -739,6 +1006,68 @@ public class GrpcJobServiceStub extends JobServiceStub {
         callableFactory.createUnaryCallable(
             cancelBatchPredictionJobTransportSettings,
             settings.cancelBatchPredictionJobSettings(),
+            clientContext);
+    this.createModelDeploymentMonitoringJobCallable =
+        callableFactory.createUnaryCallable(
+            createModelDeploymentMonitoringJobTransportSettings,
+            settings.createModelDeploymentMonitoringJobSettings(),
+            clientContext);
+    this.searchModelDeploymentMonitoringStatsAnomaliesCallable =
+        callableFactory.createUnaryCallable(
+            searchModelDeploymentMonitoringStatsAnomaliesTransportSettings,
+            settings.searchModelDeploymentMonitoringStatsAnomaliesSettings(),
+            clientContext);
+    this.searchModelDeploymentMonitoringStatsAnomaliesPagedCallable =
+        callableFactory.createPagedCallable(
+            searchModelDeploymentMonitoringStatsAnomaliesTransportSettings,
+            settings.searchModelDeploymentMonitoringStatsAnomaliesSettings(),
+            clientContext);
+    this.getModelDeploymentMonitoringJobCallable =
+        callableFactory.createUnaryCallable(
+            getModelDeploymentMonitoringJobTransportSettings,
+            settings.getModelDeploymentMonitoringJobSettings(),
+            clientContext);
+    this.listModelDeploymentMonitoringJobsCallable =
+        callableFactory.createUnaryCallable(
+            listModelDeploymentMonitoringJobsTransportSettings,
+            settings.listModelDeploymentMonitoringJobsSettings(),
+            clientContext);
+    this.listModelDeploymentMonitoringJobsPagedCallable =
+        callableFactory.createPagedCallable(
+            listModelDeploymentMonitoringJobsTransportSettings,
+            settings.listModelDeploymentMonitoringJobsSettings(),
+            clientContext);
+    this.updateModelDeploymentMonitoringJobCallable =
+        callableFactory.createUnaryCallable(
+            updateModelDeploymentMonitoringJobTransportSettings,
+            settings.updateModelDeploymentMonitoringJobSettings(),
+            clientContext);
+    this.updateModelDeploymentMonitoringJobOperationCallable =
+        callableFactory.createOperationCallable(
+            updateModelDeploymentMonitoringJobTransportSettings,
+            settings.updateModelDeploymentMonitoringJobOperationSettings(),
+            clientContext,
+            operationsStub);
+    this.deleteModelDeploymentMonitoringJobCallable =
+        callableFactory.createUnaryCallable(
+            deleteModelDeploymentMonitoringJobTransportSettings,
+            settings.deleteModelDeploymentMonitoringJobSettings(),
+            clientContext);
+    this.deleteModelDeploymentMonitoringJobOperationCallable =
+        callableFactory.createOperationCallable(
+            deleteModelDeploymentMonitoringJobTransportSettings,
+            settings.deleteModelDeploymentMonitoringJobOperationSettings(),
+            clientContext,
+            operationsStub);
+    this.pauseModelDeploymentMonitoringJobCallable =
+        callableFactory.createUnaryCallable(
+            pauseModelDeploymentMonitoringJobTransportSettings,
+            settings.pauseModelDeploymentMonitoringJobSettings(),
+            clientContext);
+    this.resumeModelDeploymentMonitoringJobCallable =
+        callableFactory.createUnaryCallable(
+            resumeModelDeploymentMonitoringJobTransportSettings,
+            settings.resumeModelDeploymentMonitoringJobSettings(),
             clientContext);
 
     this.backgroundResources =
@@ -907,6 +1236,88 @@ public class GrpcJobServiceStub extends JobServiceStub {
   @Override
   public UnaryCallable<CancelBatchPredictionJobRequest, Empty> cancelBatchPredictionJobCallable() {
     return cancelBatchPredictionJobCallable;
+  }
+
+  @Override
+  public UnaryCallable<CreateModelDeploymentMonitoringJobRequest, ModelDeploymentMonitoringJob>
+      createModelDeploymentMonitoringJobCallable() {
+    return createModelDeploymentMonitoringJobCallable;
+  }
+
+  @Override
+  public UnaryCallable<
+          SearchModelDeploymentMonitoringStatsAnomaliesRequest,
+          SearchModelDeploymentMonitoringStatsAnomaliesResponse>
+      searchModelDeploymentMonitoringStatsAnomaliesCallable() {
+    return searchModelDeploymentMonitoringStatsAnomaliesCallable;
+  }
+
+  @Override
+  public UnaryCallable<
+          SearchModelDeploymentMonitoringStatsAnomaliesRequest,
+          SearchModelDeploymentMonitoringStatsAnomaliesPagedResponse>
+      searchModelDeploymentMonitoringStatsAnomaliesPagedCallable() {
+    return searchModelDeploymentMonitoringStatsAnomaliesPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetModelDeploymentMonitoringJobRequest, ModelDeploymentMonitoringJob>
+      getModelDeploymentMonitoringJobCallable() {
+    return getModelDeploymentMonitoringJobCallable;
+  }
+
+  @Override
+  public UnaryCallable<
+          ListModelDeploymentMonitoringJobsRequest, ListModelDeploymentMonitoringJobsResponse>
+      listModelDeploymentMonitoringJobsCallable() {
+    return listModelDeploymentMonitoringJobsCallable;
+  }
+
+  @Override
+  public UnaryCallable<
+          ListModelDeploymentMonitoringJobsRequest, ListModelDeploymentMonitoringJobsPagedResponse>
+      listModelDeploymentMonitoringJobsPagedCallable() {
+    return listModelDeploymentMonitoringJobsPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<UpdateModelDeploymentMonitoringJobRequest, Operation>
+      updateModelDeploymentMonitoringJobCallable() {
+    return updateModelDeploymentMonitoringJobCallable;
+  }
+
+  @Override
+  public OperationCallable<
+          UpdateModelDeploymentMonitoringJobRequest,
+          ModelDeploymentMonitoringJob,
+          UpdateModelDeploymentMonitoringJobOperationMetadata>
+      updateModelDeploymentMonitoringJobOperationCallable() {
+    return updateModelDeploymentMonitoringJobOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<DeleteModelDeploymentMonitoringJobRequest, Operation>
+      deleteModelDeploymentMonitoringJobCallable() {
+    return deleteModelDeploymentMonitoringJobCallable;
+  }
+
+  @Override
+  public OperationCallable<
+          DeleteModelDeploymentMonitoringJobRequest, Empty, DeleteOperationMetadata>
+      deleteModelDeploymentMonitoringJobOperationCallable() {
+    return deleteModelDeploymentMonitoringJobOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<PauseModelDeploymentMonitoringJobRequest, Empty>
+      pauseModelDeploymentMonitoringJobCallable() {
+    return pauseModelDeploymentMonitoringJobCallable;
+  }
+
+  @Override
+  public UnaryCallable<ResumeModelDeploymentMonitoringJobRequest, Empty>
+      resumeModelDeploymentMonitoringJobCallable() {
+    return resumeModelDeploymentMonitoringJobCallable;
   }
 
   @Override

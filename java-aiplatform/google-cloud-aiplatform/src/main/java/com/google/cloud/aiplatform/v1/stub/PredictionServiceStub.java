@@ -16,10 +16,14 @@
 
 package com.google.cloud.aiplatform.v1.stub;
 
+import com.google.api.HttpBody;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloud.aiplatform.v1.ExplainRequest;
+import com.google.cloud.aiplatform.v1.ExplainResponse;
 import com.google.cloud.aiplatform.v1.PredictRequest;
 import com.google.cloud.aiplatform.v1.PredictResponse;
+import com.google.cloud.aiplatform.v1.RawPredictRequest;
 import javax.annotation.Generated;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
@@ -33,6 +37,14 @@ public abstract class PredictionServiceStub implements BackgroundResource {
 
   public UnaryCallable<PredictRequest, PredictResponse> predictCallable() {
     throw new UnsupportedOperationException("Not implemented: predictCallable()");
+  }
+
+  public UnaryCallable<RawPredictRequest, HttpBody> rawPredictCallable() {
+    throw new UnsupportedOperationException("Not implemented: rawPredictCallable()");
+  }
+
+  public UnaryCallable<ExplainRequest, ExplainResponse> explainCallable() {
+    throw new UnsupportedOperationException("Not implemented: explainCallable()");
   }
 
   @Override

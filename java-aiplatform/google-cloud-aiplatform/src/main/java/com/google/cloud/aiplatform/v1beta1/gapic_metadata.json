@@ -510,6 +510,9 @@
             },
             "Predict": {
               "methods": ["predict", "predict", "predict", "predictCallable"]
+            },
+            "RawPredict": {
+              "methods": ["rawPredict", "rawPredict", "rawPredict", "rawPredictCallable"]
             }
           }
         }
@@ -544,6 +547,12 @@
         "grpc": {
           "libraryClient": "TensorboardServiceClient",
           "rpcs": {
+            "BatchCreateTensorboardRuns": {
+              "methods": ["batchCreateTensorboardRuns", "batchCreateTensorboardRuns", "batchCreateTensorboardRuns", "batchCreateTensorboardRunsCallable"]
+            },
+            "BatchCreateTensorboardTimeSeries": {
+              "methods": ["batchCreateTensorboardTimeSeries", "batchCreateTensorboardTimeSeries", "batchCreateTensorboardTimeSeries", "batchCreateTensorboardTimeSeriesCallable"]
+            },
             "CreateTensorboard": {
               "methods": ["createTensorboardAsync", "createTensorboardAsync", "createTensorboardAsync", "createTensorboardOperationCallable", "createTensorboardCallable"]
             },
@@ -612,6 +621,9 @@
             },
             "UpdateTensorboardTimeSeries": {
               "methods": ["updateTensorboardTimeSeries", "updateTensorboardTimeSeries", "updateTensorboardTimeSeriesCallable"]
+            },
+            "WriteTensorboardExperimentData": {
+              "methods": ["writeTensorboardExperimentData", "writeTensorboardExperimentData", "writeTensorboardExperimentData", "writeTensorboardExperimentDataCallable"]
             },
             "WriteTensorboardRunData": {
               "methods": ["writeTensorboardRunData", "writeTensorboardRunData", "writeTensorboardRunData", "writeTensorboardRunDataCallable"]

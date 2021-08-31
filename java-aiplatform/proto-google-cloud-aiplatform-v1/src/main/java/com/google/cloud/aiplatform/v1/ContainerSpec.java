@@ -339,6 +339,7 @@ public final class ContainerSpec extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Environment variables to be passed to the container.
+   * Maximum limit is 100.
    * </pre>
    *
    * <code>repeated .google.cloud.aiplatform.v1.EnvVar env = 4;</code>
@@ -352,6 +353,7 @@ public final class ContainerSpec extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Environment variables to be passed to the container.
+   * Maximum limit is 100.
    * </pre>
    *
    * <code>repeated .google.cloud.aiplatform.v1.EnvVar env = 4;</code>
@@ -366,6 +368,7 @@ public final class ContainerSpec extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Environment variables to be passed to the container.
+   * Maximum limit is 100.
    * </pre>
    *
    * <code>repeated .google.cloud.aiplatform.v1.EnvVar env = 4;</code>
@@ -379,6 +382,7 @@ public final class ContainerSpec extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Environment variables to be passed to the container.
+   * Maximum limit is 100.
    * </pre>
    *
    * <code>repeated .google.cloud.aiplatform.v1.EnvVar env = 4;</code>
@@ -392,6 +396,7 @@ public final class ContainerSpec extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Environment variables to be passed to the container.
+   * Maximum limit is 100.
    * </pre>
    *
    * <code>repeated .google.cloud.aiplatform.v1.EnvVar env = 4;</code>
@@ -1318,6 +1323,7 @@ public final class ContainerSpec extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Environment variables to be passed to the container.
+     * Maximum limit is 100.
      * </pre>
      *
      * <code>repeated .google.cloud.aiplatform.v1.EnvVar env = 4;</code>
@@ -1334,6 +1340,7 @@ public final class ContainerSpec extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Environment variables to be passed to the container.
+     * Maximum limit is 100.
      * </pre>
      *
      * <code>repeated .google.cloud.aiplatform.v1.EnvVar env = 4;</code>
@@ -1350,6 +1357,7 @@ public final class ContainerSpec extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Environment variables to be passed to the container.
+     * Maximum limit is 100.
      * </pre>
      *
      * <code>repeated .google.cloud.aiplatform.v1.EnvVar env = 4;</code>
@@ -1366,6 +1374,7 @@ public final class ContainerSpec extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Environment variables to be passed to the container.
+     * Maximum limit is 100.
      * </pre>
      *
      * <code>repeated .google.cloud.aiplatform.v1.EnvVar env = 4;</code>
@@ -1388,6 +1397,7 @@ public final class ContainerSpec extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Environment variables to be passed to the container.
+     * Maximum limit is 100.
      * </pre>
      *
      * <code>repeated .google.cloud.aiplatform.v1.EnvVar env = 4;</code>
@@ -1408,6 +1418,7 @@ public final class ContainerSpec extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Environment variables to be passed to the container.
+     * Maximum limit is 100.
      * </pre>
      *
      * <code>repeated .google.cloud.aiplatform.v1.EnvVar env = 4;</code>
@@ -1430,6 +1441,7 @@ public final class ContainerSpec extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Environment variables to be passed to the container.
+     * Maximum limit is 100.
      * </pre>
      *
      * <code>repeated .google.cloud.aiplatform.v1.EnvVar env = 4;</code>
@@ -1452,6 +1464,7 @@ public final class ContainerSpec extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Environment variables to be passed to the container.
+     * Maximum limit is 100.
      * </pre>
      *
      * <code>repeated .google.cloud.aiplatform.v1.EnvVar env = 4;</code>
@@ -1471,6 +1484,7 @@ public final class ContainerSpec extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Environment variables to be passed to the container.
+     * Maximum limit is 100.
      * </pre>
      *
      * <code>repeated .google.cloud.aiplatform.v1.EnvVar env = 4;</code>
@@ -1491,6 +1505,7 @@ public final class ContainerSpec extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Environment variables to be passed to the container.
+     * Maximum limit is 100.
      * </pre>
      *
      * <code>repeated .google.cloud.aiplatform.v1.EnvVar env = 4;</code>
@@ -1511,6 +1526,7 @@ public final class ContainerSpec extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Environment variables to be passed to the container.
+     * Maximum limit is 100.
      * </pre>
      *
      * <code>repeated .google.cloud.aiplatform.v1.EnvVar env = 4;</code>
@@ -1530,6 +1546,7 @@ public final class ContainerSpec extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Environment variables to be passed to the container.
+     * Maximum limit is 100.
      * </pre>
      *
      * <code>repeated .google.cloud.aiplatform.v1.EnvVar env = 4;</code>
@@ -1549,6 +1566,7 @@ public final class ContainerSpec extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Environment variables to be passed to the container.
+     * Maximum limit is 100.
      * </pre>
      *
      * <code>repeated .google.cloud.aiplatform.v1.EnvVar env = 4;</code>
@@ -1561,6 +1579,7 @@ public final class ContainerSpec extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Environment variables to be passed to the container.
+     * Maximum limit is 100.
      * </pre>
      *
      * <code>repeated .google.cloud.aiplatform.v1.EnvVar env = 4;</code>
@@ -1577,6 +1596,7 @@ public final class ContainerSpec extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Environment variables to be passed to the container.
+     * Maximum limit is 100.
      * </pre>
      *
      * <code>repeated .google.cloud.aiplatform.v1.EnvVar env = 4;</code>
@@ -1594,6 +1614,7 @@ public final class ContainerSpec extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Environment variables to be passed to the container.
+     * Maximum limit is 100.
      * </pre>
      *
      * <code>repeated .google.cloud.aiplatform.v1.EnvVar env = 4;</code>
@@ -1607,6 +1628,7 @@ public final class ContainerSpec extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Environment variables to be passed to the container.
+     * Maximum limit is 100.
      * </pre>
      *
      * <code>repeated .google.cloud.aiplatform.v1.EnvVar env = 4;</code>
@@ -1620,6 +1642,7 @@ public final class ContainerSpec extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Environment variables to be passed to the container.
+     * Maximum limit is 100.
      * </pre>
      *
      * <code>repeated .google.cloud.aiplatform.v1.EnvVar env = 4;</code>

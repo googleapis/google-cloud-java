@@ -584,6 +584,59 @@ public final class TensorboardServiceGrpc {
   }
 
   private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.aiplatform.v1beta1.BatchCreateTensorboardRunsRequest,
+          com.google.cloud.aiplatform.v1beta1.BatchCreateTensorboardRunsResponse>
+      getBatchCreateTensorboardRunsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "BatchCreateTensorboardRuns",
+      requestType = com.google.cloud.aiplatform.v1beta1.BatchCreateTensorboardRunsRequest.class,
+      responseType = com.google.cloud.aiplatform.v1beta1.BatchCreateTensorboardRunsResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.aiplatform.v1beta1.BatchCreateTensorboardRunsRequest,
+          com.google.cloud.aiplatform.v1beta1.BatchCreateTensorboardRunsResponse>
+      getBatchCreateTensorboardRunsMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.aiplatform.v1beta1.BatchCreateTensorboardRunsRequest,
+            com.google.cloud.aiplatform.v1beta1.BatchCreateTensorboardRunsResponse>
+        getBatchCreateTensorboardRunsMethod;
+    if ((getBatchCreateTensorboardRunsMethod =
+            TensorboardServiceGrpc.getBatchCreateTensorboardRunsMethod)
+        == null) {
+      synchronized (TensorboardServiceGrpc.class) {
+        if ((getBatchCreateTensorboardRunsMethod =
+                TensorboardServiceGrpc.getBatchCreateTensorboardRunsMethod)
+            == null) {
+          TensorboardServiceGrpc.getBatchCreateTensorboardRunsMethod =
+              getBatchCreateTensorboardRunsMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.aiplatform.v1beta1.BatchCreateTensorboardRunsRequest,
+                          com.google.cloud.aiplatform.v1beta1.BatchCreateTensorboardRunsResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "BatchCreateTensorboardRuns"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.aiplatform.v1beta1.BatchCreateTensorboardRunsRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.aiplatform.v1beta1.BatchCreateTensorboardRunsResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new TensorboardServiceMethodDescriptorSupplier(
+                              "BatchCreateTensorboardRuns"))
+                      .build();
+        }
+      }
+    }
+    return getBatchCreateTensorboardRunsMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.aiplatform.v1beta1.GetTensorboardRunRequest,
           com.google.cloud.aiplatform.v1beta1.TensorboardRun>
       getGetTensorboardRunMethod;
@@ -778,6 +831,62 @@ public final class TensorboardServiceGrpc {
       }
     }
     return getDeleteTensorboardRunMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.aiplatform.v1beta1.BatchCreateTensorboardTimeSeriesRequest,
+          com.google.cloud.aiplatform.v1beta1.BatchCreateTensorboardTimeSeriesResponse>
+      getBatchCreateTensorboardTimeSeriesMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "BatchCreateTensorboardTimeSeries",
+      requestType =
+          com.google.cloud.aiplatform.v1beta1.BatchCreateTensorboardTimeSeriesRequest.class,
+      responseType =
+          com.google.cloud.aiplatform.v1beta1.BatchCreateTensorboardTimeSeriesResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.aiplatform.v1beta1.BatchCreateTensorboardTimeSeriesRequest,
+          com.google.cloud.aiplatform.v1beta1.BatchCreateTensorboardTimeSeriesResponse>
+      getBatchCreateTensorboardTimeSeriesMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.aiplatform.v1beta1.BatchCreateTensorboardTimeSeriesRequest,
+            com.google.cloud.aiplatform.v1beta1.BatchCreateTensorboardTimeSeriesResponse>
+        getBatchCreateTensorboardTimeSeriesMethod;
+    if ((getBatchCreateTensorboardTimeSeriesMethod =
+            TensorboardServiceGrpc.getBatchCreateTensorboardTimeSeriesMethod)
+        == null) {
+      synchronized (TensorboardServiceGrpc.class) {
+        if ((getBatchCreateTensorboardTimeSeriesMethod =
+                TensorboardServiceGrpc.getBatchCreateTensorboardTimeSeriesMethod)
+            == null) {
+          TensorboardServiceGrpc.getBatchCreateTensorboardTimeSeriesMethod =
+              getBatchCreateTensorboardTimeSeriesMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.aiplatform.v1beta1.BatchCreateTensorboardTimeSeriesRequest,
+                          com.google.cloud.aiplatform.v1beta1
+                              .BatchCreateTensorboardTimeSeriesResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "BatchCreateTensorboardTimeSeries"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.aiplatform.v1beta1
+                                  .BatchCreateTensorboardTimeSeriesRequest.getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.aiplatform.v1beta1
+                                  .BatchCreateTensorboardTimeSeriesResponse.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new TensorboardServiceMethodDescriptorSupplier(
+                              "BatchCreateTensorboardTimeSeries"))
+                      .build();
+        }
+      }
+    }
+    return getBatchCreateTensorboardTimeSeriesMethod;
   }
 
   private static volatile io.grpc.MethodDescriptor<
@@ -1150,6 +1259,61 @@ public final class TensorboardServiceGrpc {
   }
 
   private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.aiplatform.v1beta1.WriteTensorboardExperimentDataRequest,
+          com.google.cloud.aiplatform.v1beta1.WriteTensorboardExperimentDataResponse>
+      getWriteTensorboardExperimentDataMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "WriteTensorboardExperimentData",
+      requestType = com.google.cloud.aiplatform.v1beta1.WriteTensorboardExperimentDataRequest.class,
+      responseType =
+          com.google.cloud.aiplatform.v1beta1.WriteTensorboardExperimentDataResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.aiplatform.v1beta1.WriteTensorboardExperimentDataRequest,
+          com.google.cloud.aiplatform.v1beta1.WriteTensorboardExperimentDataResponse>
+      getWriteTensorboardExperimentDataMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.aiplatform.v1beta1.WriteTensorboardExperimentDataRequest,
+            com.google.cloud.aiplatform.v1beta1.WriteTensorboardExperimentDataResponse>
+        getWriteTensorboardExperimentDataMethod;
+    if ((getWriteTensorboardExperimentDataMethod =
+            TensorboardServiceGrpc.getWriteTensorboardExperimentDataMethod)
+        == null) {
+      synchronized (TensorboardServiceGrpc.class) {
+        if ((getWriteTensorboardExperimentDataMethod =
+                TensorboardServiceGrpc.getWriteTensorboardExperimentDataMethod)
+            == null) {
+          TensorboardServiceGrpc.getWriteTensorboardExperimentDataMethod =
+              getWriteTensorboardExperimentDataMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.aiplatform.v1beta1.WriteTensorboardExperimentDataRequest,
+                          com.google.cloud.aiplatform.v1beta1
+                              .WriteTensorboardExperimentDataResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "WriteTensorboardExperimentData"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.aiplatform.v1beta1
+                                  .WriteTensorboardExperimentDataRequest.getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.aiplatform.v1beta1
+                                  .WriteTensorboardExperimentDataResponse.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new TensorboardServiceMethodDescriptorSupplier(
+                              "WriteTensorboardExperimentData"))
+                      .build();
+        }
+      }
+    }
+    return getWriteTensorboardExperimentDataMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.aiplatform.v1beta1.WriteTensorboardRunDataRequest,
           com.google.cloud.aiplatform.v1beta1.WriteTensorboardRunDataResponse>
       getWriteTensorboardRunDataMethod;
@@ -1472,6 +1636,22 @@ public final class TensorboardServiceGrpc {
      *
      *
      * <pre>
+     * Batch create TensorboardRuns.
+     * </pre>
+     */
+    public void batchCreateTensorboardRuns(
+        com.google.cloud.aiplatform.v1beta1.BatchCreateTensorboardRunsRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.cloud.aiplatform.v1beta1.BatchCreateTensorboardRunsResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getBatchCreateTensorboardRunsMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Gets a TensorboardRun.
      * </pre>
      */
@@ -1525,6 +1705,22 @@ public final class TensorboardServiceGrpc {
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getDeleteTensorboardRunMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Batch create TensorboardTimeSeries that belong to a TensorboardExperiment.
+     * </pre>
+     */
+    public void batchCreateTensorboardTimeSeries(
+        com.google.cloud.aiplatform.v1beta1.BatchCreateTensorboardTimeSeriesRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.cloud.aiplatform.v1beta1.BatchCreateTensorboardTimeSeriesResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getBatchCreateTensorboardTimeSeriesMethod(), responseObserver);
     }
 
     /**
@@ -1645,6 +1841,24 @@ public final class TensorboardServiceGrpc {
      *
      *
      * <pre>
+     * Write time series data points of multiple TensorboardTimeSeries in multiple
+     * TensorboardRun's. If any data fail to be ingested, an error will be
+     * returned.
+     * </pre>
+     */
+    public void writeTensorboardExperimentData(
+        com.google.cloud.aiplatform.v1beta1.WriteTensorboardExperimentDataRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.cloud.aiplatform.v1beta1.WriteTensorboardExperimentDataResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getWriteTensorboardExperimentDataMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Write time series data points into multiple TensorboardTimeSeries under
      * a TensorboardRun. If any data fail to be ingested, an error will be
      * returned.
@@ -1754,6 +1968,13 @@ public final class TensorboardServiceGrpc {
                       com.google.cloud.aiplatform.v1beta1.TensorboardRun>(
                       this, METHODID_CREATE_TENSORBOARD_RUN)))
           .addMethod(
+              getBatchCreateTensorboardRunsMethod(),
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.cloud.aiplatform.v1beta1.BatchCreateTensorboardRunsRequest,
+                      com.google.cloud.aiplatform.v1beta1.BatchCreateTensorboardRunsResponse>(
+                      this, METHODID_BATCH_CREATE_TENSORBOARD_RUNS)))
+          .addMethod(
               getGetTensorboardRunMethod(),
               io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
@@ -1780,6 +2001,13 @@ public final class TensorboardServiceGrpc {
                   new MethodHandlers<
                       com.google.cloud.aiplatform.v1beta1.DeleteTensorboardRunRequest,
                       com.google.longrunning.Operation>(this, METHODID_DELETE_TENSORBOARD_RUN)))
+          .addMethod(
+              getBatchCreateTensorboardTimeSeriesMethod(),
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.cloud.aiplatform.v1beta1.BatchCreateTensorboardTimeSeriesRequest,
+                      com.google.cloud.aiplatform.v1beta1.BatchCreateTensorboardTimeSeriesResponse>(
+                      this, METHODID_BATCH_CREATE_TENSORBOARD_TIME_SERIES)))
           .addMethod(
               getCreateTensorboardTimeSeriesMethod(),
               io.grpc.stub.ServerCalls.asyncUnaryCall(
@@ -1829,6 +2057,13 @@ public final class TensorboardServiceGrpc {
                       com.google.cloud.aiplatform.v1beta1.ReadTensorboardBlobDataRequest,
                       com.google.cloud.aiplatform.v1beta1.ReadTensorboardBlobDataResponse>(
                       this, METHODID_READ_TENSORBOARD_BLOB_DATA)))
+          .addMethod(
+              getWriteTensorboardExperimentDataMethod(),
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.cloud.aiplatform.v1beta1.WriteTensorboardExperimentDataRequest,
+                      com.google.cloud.aiplatform.v1beta1.WriteTensorboardExperimentDataResponse>(
+                      this, METHODID_WRITE_TENSORBOARD_EXPERIMENT_DATA)))
           .addMethod(
               getWriteTensorboardRunDataMethod(),
               io.grpc.stub.ServerCalls.asyncUnaryCall(
@@ -2054,6 +2289,24 @@ public final class TensorboardServiceGrpc {
      *
      *
      * <pre>
+     * Batch create TensorboardRuns.
+     * </pre>
+     */
+    public void batchCreateTensorboardRuns(
+        com.google.cloud.aiplatform.v1beta1.BatchCreateTensorboardRunsRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.cloud.aiplatform.v1beta1.BatchCreateTensorboardRunsResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getBatchCreateTensorboardRunsMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Gets a TensorboardRun.
      * </pre>
      */
@@ -2113,6 +2366,24 @@ public final class TensorboardServiceGrpc {
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getDeleteTensorboardRunMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Batch create TensorboardTimeSeries that belong to a TensorboardExperiment.
+     * </pre>
+     */
+    public void batchCreateTensorboardTimeSeries(
+        com.google.cloud.aiplatform.v1beta1.BatchCreateTensorboardTimeSeriesRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.cloud.aiplatform.v1beta1.BatchCreateTensorboardTimeSeriesResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getBatchCreateTensorboardTimeSeriesMethod(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -2241,6 +2512,26 @@ public final class TensorboardServiceGrpc {
             responseObserver) {
       io.grpc.stub.ClientCalls.asyncServerStreamingCall(
           getChannel().newCall(getReadTensorboardBlobDataMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Write time series data points of multiple TensorboardTimeSeries in multiple
+     * TensorboardRun's. If any data fail to be ingested, an error will be
+     * returned.
+     * </pre>
+     */
+    public void writeTensorboardExperimentData(
+        com.google.cloud.aiplatform.v1beta1.WriteTensorboardExperimentDataRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.cloud.aiplatform.v1beta1.WriteTensorboardExperimentDataResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getWriteTensorboardExperimentDataMethod(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -2453,6 +2744,20 @@ public final class TensorboardServiceGrpc {
      *
      *
      * <pre>
+     * Batch create TensorboardRuns.
+     * </pre>
+     */
+    public com.google.cloud.aiplatform.v1beta1.BatchCreateTensorboardRunsResponse
+        batchCreateTensorboardRuns(
+            com.google.cloud.aiplatform.v1beta1.BatchCreateTensorboardRunsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getBatchCreateTensorboardRunsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Gets a TensorboardRun.
      * </pre>
      */
@@ -2499,6 +2804,20 @@ public final class TensorboardServiceGrpc {
         com.google.cloud.aiplatform.v1beta1.DeleteTensorboardRunRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getDeleteTensorboardRunMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Batch create TensorboardTimeSeries that belong to a TensorboardExperiment.
+     * </pre>
+     */
+    public com.google.cloud.aiplatform.v1beta1.BatchCreateTensorboardTimeSeriesResponse
+        batchCreateTensorboardTimeSeries(
+            com.google.cloud.aiplatform.v1beta1.BatchCreateTensorboardTimeSeriesRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getBatchCreateTensorboardTimeSeriesMethod(), getCallOptions(), request);
     }
 
     /**
@@ -2600,6 +2919,22 @@ public final class TensorboardServiceGrpc {
             com.google.cloud.aiplatform.v1beta1.ReadTensorboardBlobDataRequest request) {
       return io.grpc.stub.ClientCalls.blockingServerStreamingCall(
           getChannel(), getReadTensorboardBlobDataMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Write time series data points of multiple TensorboardTimeSeries in multiple
+     * TensorboardRun's. If any data fail to be ingested, an error will be
+     * returned.
+     * </pre>
+     */
+    public com.google.cloud.aiplatform.v1beta1.WriteTensorboardExperimentDataResponse
+        writeTensorboardExperimentData(
+            com.google.cloud.aiplatform.v1beta1.WriteTensorboardExperimentDataRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getWriteTensorboardExperimentDataMethod(), getCallOptions(), request);
     }
 
     /**
@@ -2813,6 +3148,21 @@ public final class TensorboardServiceGrpc {
      *
      *
      * <pre>
+     * Batch create TensorboardRuns.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.aiplatform.v1beta1.BatchCreateTensorboardRunsResponse>
+        batchCreateTensorboardRuns(
+            com.google.cloud.aiplatform.v1beta1.BatchCreateTensorboardRunsRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getBatchCreateTensorboardRunsMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Gets a TensorboardRun.
      * </pre>
      */
@@ -2865,6 +3215,22 @@ public final class TensorboardServiceGrpc {
             com.google.cloud.aiplatform.v1beta1.DeleteTensorboardRunRequest request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getDeleteTensorboardRunMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Batch create TensorboardTimeSeries that belong to a TensorboardExperiment.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.aiplatform.v1beta1.BatchCreateTensorboardTimeSeriesResponse>
+        batchCreateTensorboardTimeSeries(
+            com.google.cloud.aiplatform.v1beta1.BatchCreateTensorboardTimeSeriesRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getBatchCreateTensorboardTimeSeriesMethod(), getCallOptions()),
+          request);
     }
 
     /**
@@ -2965,6 +3331,24 @@ public final class TensorboardServiceGrpc {
      *
      *
      * <pre>
+     * Write time series data points of multiple TensorboardTimeSeries in multiple
+     * TensorboardRun's. If any data fail to be ingested, an error will be
+     * returned.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.aiplatform.v1beta1.WriteTensorboardExperimentDataResponse>
+        writeTensorboardExperimentData(
+            com.google.cloud.aiplatform.v1beta1.WriteTensorboardExperimentDataRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getWriteTensorboardExperimentDataMethod(), getCallOptions()),
+          request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Write time series data points into multiple TensorboardTimeSeries under
      * a TensorboardRun. If any data fail to be ingested, an error will be
      * returned.
@@ -3007,19 +3391,22 @@ public final class TensorboardServiceGrpc {
   private static final int METHODID_LIST_TENSORBOARD_EXPERIMENTS = 8;
   private static final int METHODID_DELETE_TENSORBOARD_EXPERIMENT = 9;
   private static final int METHODID_CREATE_TENSORBOARD_RUN = 10;
-  private static final int METHODID_GET_TENSORBOARD_RUN = 11;
-  private static final int METHODID_UPDATE_TENSORBOARD_RUN = 12;
-  private static final int METHODID_LIST_TENSORBOARD_RUNS = 13;
-  private static final int METHODID_DELETE_TENSORBOARD_RUN = 14;
-  private static final int METHODID_CREATE_TENSORBOARD_TIME_SERIES = 15;
-  private static final int METHODID_GET_TENSORBOARD_TIME_SERIES = 16;
-  private static final int METHODID_UPDATE_TENSORBOARD_TIME_SERIES = 17;
-  private static final int METHODID_LIST_TENSORBOARD_TIME_SERIES = 18;
-  private static final int METHODID_DELETE_TENSORBOARD_TIME_SERIES = 19;
-  private static final int METHODID_READ_TENSORBOARD_TIME_SERIES_DATA = 20;
-  private static final int METHODID_READ_TENSORBOARD_BLOB_DATA = 21;
-  private static final int METHODID_WRITE_TENSORBOARD_RUN_DATA = 22;
-  private static final int METHODID_EXPORT_TENSORBOARD_TIME_SERIES_DATA = 23;
+  private static final int METHODID_BATCH_CREATE_TENSORBOARD_RUNS = 11;
+  private static final int METHODID_GET_TENSORBOARD_RUN = 12;
+  private static final int METHODID_UPDATE_TENSORBOARD_RUN = 13;
+  private static final int METHODID_LIST_TENSORBOARD_RUNS = 14;
+  private static final int METHODID_DELETE_TENSORBOARD_RUN = 15;
+  private static final int METHODID_BATCH_CREATE_TENSORBOARD_TIME_SERIES = 16;
+  private static final int METHODID_CREATE_TENSORBOARD_TIME_SERIES = 17;
+  private static final int METHODID_GET_TENSORBOARD_TIME_SERIES = 18;
+  private static final int METHODID_UPDATE_TENSORBOARD_TIME_SERIES = 19;
+  private static final int METHODID_LIST_TENSORBOARD_TIME_SERIES = 20;
+  private static final int METHODID_DELETE_TENSORBOARD_TIME_SERIES = 21;
+  private static final int METHODID_READ_TENSORBOARD_TIME_SERIES_DATA = 22;
+  private static final int METHODID_READ_TENSORBOARD_BLOB_DATA = 23;
+  private static final int METHODID_WRITE_TENSORBOARD_EXPERIMENT_DATA = 24;
+  private static final int METHODID_WRITE_TENSORBOARD_RUN_DATA = 25;
+  private static final int METHODID_EXPORT_TENSORBOARD_TIME_SERIES_DATA = 26;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -3105,6 +3492,13 @@ public final class TensorboardServiceGrpc {
               (io.grpc.stub.StreamObserver<com.google.cloud.aiplatform.v1beta1.TensorboardRun>)
                   responseObserver);
           break;
+        case METHODID_BATCH_CREATE_TENSORBOARD_RUNS:
+          serviceImpl.batchCreateTensorboardRuns(
+              (com.google.cloud.aiplatform.v1beta1.BatchCreateTensorboardRunsRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.cloud.aiplatform.v1beta1.BatchCreateTensorboardRunsResponse>)
+                  responseObserver);
+          break;
         case METHODID_GET_TENSORBOARD_RUN:
           serviceImpl.getTensorboardRun(
               (com.google.cloud.aiplatform.v1beta1.GetTensorboardRunRequest) request,
@@ -3128,6 +3522,13 @@ public final class TensorboardServiceGrpc {
           serviceImpl.deleteTensorboardRun(
               (com.google.cloud.aiplatform.v1beta1.DeleteTensorboardRunRequest) request,
               (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_BATCH_CREATE_TENSORBOARD_TIME_SERIES:
+          serviceImpl.batchCreateTensorboardTimeSeries(
+              (com.google.cloud.aiplatform.v1beta1.BatchCreateTensorboardTimeSeriesRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.cloud.aiplatform.v1beta1.BatchCreateTensorboardTimeSeriesResponse>)
+                  responseObserver);
           break;
         case METHODID_CREATE_TENSORBOARD_TIME_SERIES:
           serviceImpl.createTensorboardTimeSeries(
@@ -3174,6 +3575,13 @@ public final class TensorboardServiceGrpc {
               (com.google.cloud.aiplatform.v1beta1.ReadTensorboardBlobDataRequest) request,
               (io.grpc.stub.StreamObserver<
                       com.google.cloud.aiplatform.v1beta1.ReadTensorboardBlobDataResponse>)
+                  responseObserver);
+          break;
+        case METHODID_WRITE_TENSORBOARD_EXPERIMENT_DATA:
+          serviceImpl.writeTensorboardExperimentData(
+              (com.google.cloud.aiplatform.v1beta1.WriteTensorboardExperimentDataRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.cloud.aiplatform.v1beta1.WriteTensorboardExperimentDataResponse>)
                   responseObserver);
           break;
         case METHODID_WRITE_TENSORBOARD_RUN_DATA:
@@ -3265,10 +3673,12 @@ public final class TensorboardServiceGrpc {
                       .addMethod(getListTensorboardExperimentsMethod())
                       .addMethod(getDeleteTensorboardExperimentMethod())
                       .addMethod(getCreateTensorboardRunMethod())
+                      .addMethod(getBatchCreateTensorboardRunsMethod())
                       .addMethod(getGetTensorboardRunMethod())
                       .addMethod(getUpdateTensorboardRunMethod())
                       .addMethod(getListTensorboardRunsMethod())
                       .addMethod(getDeleteTensorboardRunMethod())
+                      .addMethod(getBatchCreateTensorboardTimeSeriesMethod())
                       .addMethod(getCreateTensorboardTimeSeriesMethod())
                       .addMethod(getGetTensorboardTimeSeriesMethod())
                       .addMethod(getUpdateTensorboardTimeSeriesMethod())
@@ -3276,6 +3686,7 @@ public final class TensorboardServiceGrpc {
                       .addMethod(getDeleteTensorboardTimeSeriesMethod())
                       .addMethod(getReadTensorboardTimeSeriesDataMethod())
                       .addMethod(getReadTensorboardBlobDataMethod())
+                      .addMethod(getWriteTensorboardExperimentDataMethod())
                       .addMethod(getWriteTensorboardRunDataMethod())
                       .addMethod(getExportTensorboardTimeSeriesDataMethod())
                       .build();

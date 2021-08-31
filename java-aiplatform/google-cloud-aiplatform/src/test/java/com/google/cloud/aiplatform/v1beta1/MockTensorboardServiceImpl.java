@@ -295,6 +295,28 @@ public class MockTensorboardServiceImpl extends TensorboardServiceImplBase {
   }
 
   @Override
+  public void batchCreateTensorboardRuns(
+      BatchCreateTensorboardRunsRequest request,
+      StreamObserver<BatchCreateTensorboardRunsResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof BatchCreateTensorboardRunsResponse) {
+      requests.add(request);
+      responseObserver.onNext(((BatchCreateTensorboardRunsResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method BatchCreateTensorboardRuns, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  BatchCreateTensorboardRunsResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
   public void getTensorboardRun(
       GetTensorboardRunRequest request, StreamObserver<TensorboardRun> responseObserver) {
     Object response = responses.poll();
@@ -375,6 +397,28 @@ public class MockTensorboardServiceImpl extends TensorboardServiceImplBase {
                   "Unrecognized response type %s for method DeleteTensorboardRun, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void batchCreateTensorboardTimeSeries(
+      BatchCreateTensorboardTimeSeriesRequest request,
+      StreamObserver<BatchCreateTensorboardTimeSeriesResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof BatchCreateTensorboardTimeSeriesResponse) {
+      requests.add(request);
+      responseObserver.onNext(((BatchCreateTensorboardTimeSeriesResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method BatchCreateTensorboardTimeSeries, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  BatchCreateTensorboardTimeSeriesResponse.class.getName(),
                   Exception.class.getName())));
     }
   }
@@ -528,6 +572,28 @@ public class MockTensorboardServiceImpl extends TensorboardServiceImplBase {
                   "Unrecognized response type %s for method ReadTensorboardBlobData, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   ReadTensorboardBlobDataResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void writeTensorboardExperimentData(
+      WriteTensorboardExperimentDataRequest request,
+      StreamObserver<WriteTensorboardExperimentDataResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof WriteTensorboardExperimentDataResponse) {
+      requests.add(request);
+      responseObserver.onNext(((WriteTensorboardExperimentDataResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method WriteTensorboardExperimentData, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  WriteTensorboardExperimentDataResponse.class.getName(),
                   Exception.class.getName())));
     }
   }

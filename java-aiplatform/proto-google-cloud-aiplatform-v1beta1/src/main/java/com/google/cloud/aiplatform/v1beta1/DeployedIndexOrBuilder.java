@@ -477,4 +477,47 @@ public interface DeployedIndexOrBuilder
    * @return The bytes of the reservedIpRanges at the given index.
    */
   com.google.protobuf.ByteString getReservedIpRangesBytes(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The deployment group can be no longer than 64 characters (eg:
+   * 'test', 'prod'). If not set, we will use the 'default' deployment group.
+   * Creating `deployment_groups` with `reserved_ip_ranges` is a recommended
+   * practice when the peered network has multiple peering ranges. This creates
+   * your deployments from predictable IP spaces for easier traffic
+   * administration. Also, one deployment_group (except 'default') can only be
+   * used with the same reserved_ip_ranges which means if the deployment_group
+   * has been used with reserved_ip_ranges: [a, b, c], using it with [a, b] or
+   * [d, e] is disallowed.
+   * Note: we only support up to 5 deployment groups(not including 'default').
+   * </pre>
+   *
+   * <code>string deployment_group = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The deploymentGroup.
+   */
+  java.lang.String getDeploymentGroup();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The deployment group can be no longer than 64 characters (eg:
+   * 'test', 'prod'). If not set, we will use the 'default' deployment group.
+   * Creating `deployment_groups` with `reserved_ip_ranges` is a recommended
+   * practice when the peered network has multiple peering ranges. This creates
+   * your deployments from predictable IP spaces for easier traffic
+   * administration. Also, one deployment_group (except 'default') can only be
+   * used with the same reserved_ip_ranges which means if the deployment_group
+   * has been used with reserved_ip_ranges: [a, b, c], using it with [a, b] or
+   * [d, e] is disallowed.
+   * Note: we only support up to 5 deployment groups(not including 'default').
+   * </pre>
+   *
+   * <code>string deployment_group = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for deploymentGroup.
+   */
+  com.google.protobuf.ByteString getDeploymentGroupBytes();
 }

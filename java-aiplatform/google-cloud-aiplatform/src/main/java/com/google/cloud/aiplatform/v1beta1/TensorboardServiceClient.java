@@ -516,7 +516,7 @@ public class TensorboardServiceClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. The resource name of the Location to list Tensorboards. Format:
-   *     'projects/{project}/locations/{location}'
+   *     `projects/{project}/locations/{location}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListTensorboardsPagedResponse listTensorboards(LocationName parent) {
@@ -543,7 +543,7 @@ public class TensorboardServiceClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. The resource name of the Location to list Tensorboards. Format:
-   *     'projects/{project}/locations/{location}'
+   *     `projects/{project}/locations/{location}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListTensorboardsPagedResponse listTensorboards(String parent) {
@@ -1421,8 +1421,8 @@ public class TensorboardServiceClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. The resource name of the Tensorboard to create the TensorboardRun in.
-   *     Format:
+   * @param parent Required. The resource name of the TensorboardExperiment to create the
+   *     TensorboardRun in. Format:
    *     `projects/{project}/locations/{location}/tensorboards/{tensorboard}/experiments/{experiment}`
    * @param tensorboardRun Required. The TensorboardRun to create.
    * @param tensorboardRunId Required. The ID to use for the Tensorboard run, which will become the
@@ -1459,8 +1459,8 @@ public class TensorboardServiceClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. The resource name of the Tensorboard to create the TensorboardRun in.
-   *     Format:
+   * @param parent Required. The resource name of the TensorboardExperiment to create the
+   *     TensorboardRun in. Format:
    *     `projects/{project}/locations/{location}/tensorboards/{tensorboard}/experiments/{experiment}`
    * @param tensorboardRun Required. The TensorboardRun to create.
    * @param tensorboardRunId Required. The ID to use for the Tensorboard run, which will become the
@@ -1534,6 +1534,132 @@ public class TensorboardServiceClient implements BackgroundResource {
   public final UnaryCallable<CreateTensorboardRunRequest, TensorboardRun>
       createTensorboardRunCallable() {
     return stub.createTensorboardRunCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Batch create TensorboardRuns.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (TensorboardServiceClient tensorboardServiceClient = TensorboardServiceClient.create()) {
+   *   TensorboardExperimentName parent =
+   *       TensorboardExperimentName.of("[PROJECT]", "[LOCATION]", "[TENSORBOARD]", "[EXPERIMENT]");
+   *   List<CreateTensorboardRunRequest> requests = new ArrayList<>();
+   *   BatchCreateTensorboardRunsResponse response =
+   *       tensorboardServiceClient.batchCreateTensorboardRuns(parent, requests);
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The resource name of the TensorboardExperiment to create the
+   *     TensorboardRuns in. Format:
+   *     `projects/{project}/locations/{location}/tensorboards/{tensorboard}/experiments/{experiment}`
+   *     The parent field in the CreateTensorboardRunRequest messages must match this field.
+   * @param requests Required. The request message specifying the TensorboardRuns to create. A
+   *     maximum of 1000 TensorboardRuns can be created in a batch.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final BatchCreateTensorboardRunsResponse batchCreateTensorboardRuns(
+      TensorboardExperimentName parent, List<CreateTensorboardRunRequest> requests) {
+    BatchCreateTensorboardRunsRequest request =
+        BatchCreateTensorboardRunsRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .addAllRequests(requests)
+            .build();
+    return batchCreateTensorboardRuns(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Batch create TensorboardRuns.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (TensorboardServiceClient tensorboardServiceClient = TensorboardServiceClient.create()) {
+   *   String parent =
+   *       TensorboardExperimentName.of("[PROJECT]", "[LOCATION]", "[TENSORBOARD]", "[EXPERIMENT]")
+   *           .toString();
+   *   List<CreateTensorboardRunRequest> requests = new ArrayList<>();
+   *   BatchCreateTensorboardRunsResponse response =
+   *       tensorboardServiceClient.batchCreateTensorboardRuns(parent, requests);
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The resource name of the TensorboardExperiment to create the
+   *     TensorboardRuns in. Format:
+   *     `projects/{project}/locations/{location}/tensorboards/{tensorboard}/experiments/{experiment}`
+   *     The parent field in the CreateTensorboardRunRequest messages must match this field.
+   * @param requests Required. The request message specifying the TensorboardRuns to create. A
+   *     maximum of 1000 TensorboardRuns can be created in a batch.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final BatchCreateTensorboardRunsResponse batchCreateTensorboardRuns(
+      String parent, List<CreateTensorboardRunRequest> requests) {
+    BatchCreateTensorboardRunsRequest request =
+        BatchCreateTensorboardRunsRequest.newBuilder()
+            .setParent(parent)
+            .addAllRequests(requests)
+            .build();
+    return batchCreateTensorboardRuns(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Batch create TensorboardRuns.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (TensorboardServiceClient tensorboardServiceClient = TensorboardServiceClient.create()) {
+   *   BatchCreateTensorboardRunsRequest request =
+   *       BatchCreateTensorboardRunsRequest.newBuilder()
+   *           .setParent(
+   *               TensorboardExperimentName.of(
+   *                       "[PROJECT]", "[LOCATION]", "[TENSORBOARD]", "[EXPERIMENT]")
+   *                   .toString())
+   *           .addAllRequests(new ArrayList<CreateTensorboardRunRequest>())
+   *           .build();
+   *   BatchCreateTensorboardRunsResponse response =
+   *       tensorboardServiceClient.batchCreateTensorboardRuns(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final BatchCreateTensorboardRunsResponse batchCreateTensorboardRuns(
+      BatchCreateTensorboardRunsRequest request) {
+    return batchCreateTensorboardRunsCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Batch create TensorboardRuns.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (TensorboardServiceClient tensorboardServiceClient = TensorboardServiceClient.create()) {
+   *   BatchCreateTensorboardRunsRequest request =
+   *       BatchCreateTensorboardRunsRequest.newBuilder()
+   *           .setParent(
+   *               TensorboardExperimentName.of(
+   *                       "[PROJECT]", "[LOCATION]", "[TENSORBOARD]", "[EXPERIMENT]")
+   *                   .toString())
+   *           .addAllRequests(new ArrayList<CreateTensorboardRunRequest>())
+   *           .build();
+   *   ApiFuture<BatchCreateTensorboardRunsResponse> future =
+   *       tensorboardServiceClient.batchCreateTensorboardRunsCallable().futureCall(request);
+   *   // Do something.
+   *   BatchCreateTensorboardRunsResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<BatchCreateTensorboardRunsRequest, BatchCreateTensorboardRunsResponse>
+      batchCreateTensorboardRunsCallable() {
+    return stub.batchCreateTensorboardRunsCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -1740,7 +1866,8 @@ public class TensorboardServiceClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. The resource name of the Tensorboard to list TensorboardRuns. Format:
+   * @param parent Required. The resource name of the TensorboardExperiment to list TensorboardRuns.
+   *     Format:
    *     'projects/{project}/locations/{location}/tensorboards/{tensorboard}/experiments/{experiment}'
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -1771,7 +1898,8 @@ public class TensorboardServiceClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. The resource name of the Tensorboard to list TensorboardRuns. Format:
+   * @param parent Required. The resource name of the TensorboardExperiment to list TensorboardRuns.
+   *     Format:
    *     'projects/{project}/locations/{location}/tensorboards/{tensorboard}/experiments/{experiment}'
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -2024,6 +2152,137 @@ public class TensorboardServiceClient implements BackgroundResource {
   public final UnaryCallable<DeleteTensorboardRunRequest, Operation>
       deleteTensorboardRunCallable() {
     return stub.deleteTensorboardRunCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Batch create TensorboardTimeSeries that belong to a TensorboardExperiment.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (TensorboardServiceClient tensorboardServiceClient = TensorboardServiceClient.create()) {
+   *   TensorboardExperimentName parent =
+   *       TensorboardExperimentName.of("[PROJECT]", "[LOCATION]", "[TENSORBOARD]", "[EXPERIMENT]");
+   *   List<CreateTensorboardTimeSeriesRequest> requests = new ArrayList<>();
+   *   BatchCreateTensorboardTimeSeriesResponse response =
+   *       tensorboardServiceClient.batchCreateTensorboardTimeSeries(parent, requests);
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The resource name of the TensorboardExperiment to create the
+   *     TensorboardTimeSeries in. Format:
+   *     `projects/{project}/locations/{location}/tensorboards/{tensorboard}/experiments/{experiment}`
+   *     The TensorboardRuns referenced by the parent fields in the
+   *     CreateTensorboardTimeSeriesRequest messages must be sub resources of this
+   *     TensorboardExperiment.
+   * @param requests Required. The request message specifying the TensorboardTimeSeries to create. A
+   *     maximum of 1000 TensorboardTimeSeries can be created in a batch.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final BatchCreateTensorboardTimeSeriesResponse batchCreateTensorboardTimeSeries(
+      TensorboardExperimentName parent, List<CreateTensorboardTimeSeriesRequest> requests) {
+    BatchCreateTensorboardTimeSeriesRequest request =
+        BatchCreateTensorboardTimeSeriesRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .addAllRequests(requests)
+            .build();
+    return batchCreateTensorboardTimeSeries(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Batch create TensorboardTimeSeries that belong to a TensorboardExperiment.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (TensorboardServiceClient tensorboardServiceClient = TensorboardServiceClient.create()) {
+   *   String parent =
+   *       TensorboardExperimentName.of("[PROJECT]", "[LOCATION]", "[TENSORBOARD]", "[EXPERIMENT]")
+   *           .toString();
+   *   List<CreateTensorboardTimeSeriesRequest> requests = new ArrayList<>();
+   *   BatchCreateTensorboardTimeSeriesResponse response =
+   *       tensorboardServiceClient.batchCreateTensorboardTimeSeries(parent, requests);
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The resource name of the TensorboardExperiment to create the
+   *     TensorboardTimeSeries in. Format:
+   *     `projects/{project}/locations/{location}/tensorboards/{tensorboard}/experiments/{experiment}`
+   *     The TensorboardRuns referenced by the parent fields in the
+   *     CreateTensorboardTimeSeriesRequest messages must be sub resources of this
+   *     TensorboardExperiment.
+   * @param requests Required. The request message specifying the TensorboardTimeSeries to create. A
+   *     maximum of 1000 TensorboardTimeSeries can be created in a batch.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final BatchCreateTensorboardTimeSeriesResponse batchCreateTensorboardTimeSeries(
+      String parent, List<CreateTensorboardTimeSeriesRequest> requests) {
+    BatchCreateTensorboardTimeSeriesRequest request =
+        BatchCreateTensorboardTimeSeriesRequest.newBuilder()
+            .setParent(parent)
+            .addAllRequests(requests)
+            .build();
+    return batchCreateTensorboardTimeSeries(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Batch create TensorboardTimeSeries that belong to a TensorboardExperiment.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (TensorboardServiceClient tensorboardServiceClient = TensorboardServiceClient.create()) {
+   *   BatchCreateTensorboardTimeSeriesRequest request =
+   *       BatchCreateTensorboardTimeSeriesRequest.newBuilder()
+   *           .setParent(
+   *               TensorboardExperimentName.of(
+   *                       "[PROJECT]", "[LOCATION]", "[TENSORBOARD]", "[EXPERIMENT]")
+   *                   .toString())
+   *           .addAllRequests(new ArrayList<CreateTensorboardTimeSeriesRequest>())
+   *           .build();
+   *   BatchCreateTensorboardTimeSeriesResponse response =
+   *       tensorboardServiceClient.batchCreateTensorboardTimeSeries(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final BatchCreateTensorboardTimeSeriesResponse batchCreateTensorboardTimeSeries(
+      BatchCreateTensorboardTimeSeriesRequest request) {
+    return batchCreateTensorboardTimeSeriesCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Batch create TensorboardTimeSeries that belong to a TensorboardExperiment.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (TensorboardServiceClient tensorboardServiceClient = TensorboardServiceClient.create()) {
+   *   BatchCreateTensorboardTimeSeriesRequest request =
+   *       BatchCreateTensorboardTimeSeriesRequest.newBuilder()
+   *           .setParent(
+   *               TensorboardExperimentName.of(
+   *                       "[PROJECT]", "[LOCATION]", "[TENSORBOARD]", "[EXPERIMENT]")
+   *                   .toString())
+   *           .addAllRequests(new ArrayList<CreateTensorboardTimeSeriesRequest>())
+   *           .build();
+   *   ApiFuture<BatchCreateTensorboardTimeSeriesResponse> future =
+   *       tensorboardServiceClient.batchCreateTensorboardTimeSeriesCallable().futureCall(request);
+   *   // Do something.
+   *   BatchCreateTensorboardTimeSeriesResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<
+          BatchCreateTensorboardTimeSeriesRequest, BatchCreateTensorboardTimeSeriesResponse>
+      batchCreateTensorboardTimeSeriesCallable() {
+    return stub.batchCreateTensorboardTimeSeriesCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -2909,6 +3168,139 @@ public class TensorboardServiceClient implements BackgroundResource {
           ReadTensorboardBlobDataRequest, ReadTensorboardBlobDataResponse>
       readTensorboardBlobDataCallable() {
     return stub.readTensorboardBlobDataCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Write time series data points of multiple TensorboardTimeSeries in multiple TensorboardRun's.
+   * If any data fail to be ingested, an error will be returned.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (TensorboardServiceClient tensorboardServiceClient = TensorboardServiceClient.create()) {
+   *   TensorboardExperimentName tensorboardExperiment =
+   *       TensorboardExperimentName.of("[PROJECT]", "[LOCATION]", "[TENSORBOARD]", "[EXPERIMENT]");
+   *   List<WriteTensorboardRunDataRequest> writeRunDataRequests = new ArrayList<>();
+   *   WriteTensorboardExperimentDataResponse response =
+   *       tensorboardServiceClient.writeTensorboardExperimentData(
+   *           tensorboardExperiment, writeRunDataRequests);
+   * }
+   * }</pre>
+   *
+   * @param tensorboardExperiment Required. The resource name of the TensorboardExperiment to write
+   *     data to. Format:
+   *     `projects/{project}/locations/{location}/tensorboards/{tensorboard}/experiments/{experiment}`
+   * @param writeRunDataRequests Required. Requests containing per-run TensorboardTimeSeries data to
+   *     write.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final WriteTensorboardExperimentDataResponse writeTensorboardExperimentData(
+      TensorboardExperimentName tensorboardExperiment,
+      List<WriteTensorboardRunDataRequest> writeRunDataRequests) {
+    WriteTensorboardExperimentDataRequest request =
+        WriteTensorboardExperimentDataRequest.newBuilder()
+            .setTensorboardExperiment(
+                tensorboardExperiment == null ? null : tensorboardExperiment.toString())
+            .addAllWriteRunDataRequests(writeRunDataRequests)
+            .build();
+    return writeTensorboardExperimentData(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Write time series data points of multiple TensorboardTimeSeries in multiple TensorboardRun's.
+   * If any data fail to be ingested, an error will be returned.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (TensorboardServiceClient tensorboardServiceClient = TensorboardServiceClient.create()) {
+   *   String tensorboardExperiment =
+   *       TensorboardExperimentName.of("[PROJECT]", "[LOCATION]", "[TENSORBOARD]", "[EXPERIMENT]")
+   *           .toString();
+   *   List<WriteTensorboardRunDataRequest> writeRunDataRequests = new ArrayList<>();
+   *   WriteTensorboardExperimentDataResponse response =
+   *       tensorboardServiceClient.writeTensorboardExperimentData(
+   *           tensorboardExperiment, writeRunDataRequests);
+   * }
+   * }</pre>
+   *
+   * @param tensorboardExperiment Required. The resource name of the TensorboardExperiment to write
+   *     data to. Format:
+   *     `projects/{project}/locations/{location}/tensorboards/{tensorboard}/experiments/{experiment}`
+   * @param writeRunDataRequests Required. Requests containing per-run TensorboardTimeSeries data to
+   *     write.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final WriteTensorboardExperimentDataResponse writeTensorboardExperimentData(
+      String tensorboardExperiment, List<WriteTensorboardRunDataRequest> writeRunDataRequests) {
+    WriteTensorboardExperimentDataRequest request =
+        WriteTensorboardExperimentDataRequest.newBuilder()
+            .setTensorboardExperiment(tensorboardExperiment)
+            .addAllWriteRunDataRequests(writeRunDataRequests)
+            .build();
+    return writeTensorboardExperimentData(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Write time series data points of multiple TensorboardTimeSeries in multiple TensorboardRun's.
+   * If any data fail to be ingested, an error will be returned.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (TensorboardServiceClient tensorboardServiceClient = TensorboardServiceClient.create()) {
+   *   WriteTensorboardExperimentDataRequest request =
+   *       WriteTensorboardExperimentDataRequest.newBuilder()
+   *           .setTensorboardExperiment(
+   *               TensorboardExperimentName.of(
+   *                       "[PROJECT]", "[LOCATION]", "[TENSORBOARD]", "[EXPERIMENT]")
+   *                   .toString())
+   *           .addAllWriteRunDataRequests(new ArrayList<WriteTensorboardRunDataRequest>())
+   *           .build();
+   *   WriteTensorboardExperimentDataResponse response =
+   *       tensorboardServiceClient.writeTensorboardExperimentData(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final WriteTensorboardExperimentDataResponse writeTensorboardExperimentData(
+      WriteTensorboardExperimentDataRequest request) {
+    return writeTensorboardExperimentDataCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Write time series data points of multiple TensorboardTimeSeries in multiple TensorboardRun's.
+   * If any data fail to be ingested, an error will be returned.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (TensorboardServiceClient tensorboardServiceClient = TensorboardServiceClient.create()) {
+   *   WriteTensorboardExperimentDataRequest request =
+   *       WriteTensorboardExperimentDataRequest.newBuilder()
+   *           .setTensorboardExperiment(
+   *               TensorboardExperimentName.of(
+   *                       "[PROJECT]", "[LOCATION]", "[TENSORBOARD]", "[EXPERIMENT]")
+   *                   .toString())
+   *           .addAllWriteRunDataRequests(new ArrayList<WriteTensorboardRunDataRequest>())
+   *           .build();
+   *   ApiFuture<WriteTensorboardExperimentDataResponse> future =
+   *       tensorboardServiceClient.writeTensorboardExperimentDataCallable().futureCall(request);
+   *   // Do something.
+   *   WriteTensorboardExperimentDataResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<
+          WriteTensorboardExperimentDataRequest, WriteTensorboardExperimentDataResponse>
+      writeTensorboardExperimentDataCallable() {
+    return stub.writeTensorboardExperimentDataCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.

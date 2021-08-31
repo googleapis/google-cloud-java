@@ -40,6 +40,7 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
   private Dataset() {
     name_ = "";
     displayName_ = "";
+    description_ = "";
     metadataSchemaUri_ = "";
     etag_ = "";
   }
@@ -173,6 +174,13 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
                 encryptionSpec_ = subBuilder.buildPartial();
               }
 
+              break;
+            }
+          case 130:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              description_ = s;
               break;
             }
           default:
@@ -316,6 +324,55 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
       com.google.protobuf.ByteString b =
           com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       displayName_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int DESCRIPTION_FIELD_NUMBER = 16;
+  private volatile java.lang.Object description_;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The description of the Dataset.
+   * </pre>
+   *
+   * <code>string description = 16 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The description.
+   */
+  @java.lang.Override
+  public java.lang.String getDescription() {
+    java.lang.Object ref = description_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      description_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The description of the Dataset.
+   * </pre>
+   *
+   * <code>string description = 16 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for description.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getDescriptionBytes() {
+    java.lang.Object ref = description_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      description_ = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -803,6 +860,9 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
     if (encryptionSpec_ != null) {
       output.writeMessage(11, getEncryptionSpec());
     }
+    if (!getDescriptionBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 16, description_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -846,6 +906,9 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
     if (encryptionSpec_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(11, getEncryptionSpec());
     }
+    if (!getDescriptionBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(16, description_);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -863,6 +926,7 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
 
     if (!getName().equals(other.getName())) return false;
     if (!getDisplayName().equals(other.getDisplayName())) return false;
+    if (!getDescription().equals(other.getDescription())) return false;
     if (!getMetadataSchemaUri().equals(other.getMetadataSchemaUri())) return false;
     if (hasMetadata() != other.hasMetadata()) return false;
     if (hasMetadata()) {
@@ -897,6 +961,8 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
     hash = (53 * hash) + getName().hashCode();
     hash = (37 * hash) + DISPLAY_NAME_FIELD_NUMBER;
     hash = (53 * hash) + getDisplayName().hashCode();
+    hash = (37 * hash) + DESCRIPTION_FIELD_NUMBER;
+    hash = (53 * hash) + getDescription().hashCode();
     hash = (37 * hash) + METADATA_SCHEMA_URI_FIELD_NUMBER;
     hash = (53 * hash) + getMetadataSchemaUri().hashCode();
     if (hasMetadata()) {
@@ -1090,6 +1156,8 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
 
       displayName_ = "";
 
+      description_ = "";
+
       metadataSchemaUri_ = "";
 
       if (metadataBuilder_ == null) {
@@ -1149,6 +1217,7 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
       int from_bitField0_ = bitField0_;
       result.name_ = name_;
       result.displayName_ = displayName_;
+      result.description_ = description_;
       result.metadataSchemaUri_ = metadataSchemaUri_;
       if (metadataBuilder_ == null) {
         result.metadata_ = metadata_;
@@ -1228,6 +1297,10 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getDisplayName().isEmpty()) {
         displayName_ = other.displayName_;
+        onChanged();
+      }
+      if (!other.getDescription().isEmpty()) {
+        description_ = other.description_;
         onChanged();
       }
       if (!other.getMetadataSchemaUri().isEmpty()) {
@@ -1500,6 +1573,112 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
 
       displayName_ = value;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object description_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The description of the Dataset.
+     * </pre>
+     *
+     * <code>string description = 16 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The description.
+     */
+    public java.lang.String getDescription() {
+      java.lang.Object ref = description_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        description_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The description of the Dataset.
+     * </pre>
+     *
+     * <code>string description = 16 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for description.
+     */
+    public com.google.protobuf.ByteString getDescriptionBytes() {
+      java.lang.Object ref = description_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        description_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The description of the Dataset.
+     * </pre>
+     *
+     * <code>string description = 16 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The description to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDescription(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+
+      description_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The description of the Dataset.
+     * </pre>
+     *
+     * <code>string description = 16 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearDescription() {
+
+      description_ = getDefaultInstance().getDescription();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The description of the Dataset.
+     * </pre>
+     *
+     * <code>string description = 16 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The bytes for description to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDescriptionBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
+      description_ = value;
       onChanged();
       return this;
     }

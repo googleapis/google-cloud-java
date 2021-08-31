@@ -16,6 +16,7 @@
 
 package com.google.cloud.aiplatform.v1;
 
+import com.google.api.HttpBody;
 import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.rpc.UnaryCallable;
@@ -278,6 +279,310 @@ public class PredictionServiceClient implements BackgroundResource {
    */
   public final UnaryCallable<PredictRequest, PredictResponse> predictCallable() {
     return stub.predictCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Perform an online prediction with arbitrary http payload.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (PredictionServiceClient predictionServiceClient = PredictionServiceClient.create()) {
+   *   EndpointName endpoint = EndpointName.of("[PROJECT]", "[LOCATION]", "[ENDPOINT]");
+   *   HttpBody httpBody = HttpBody.newBuilder().build();
+   *   HttpBody response = predictionServiceClient.rawPredict(endpoint, httpBody);
+   * }
+   * }</pre>
+   *
+   * @param endpoint Required. The name of the Endpoint requested to serve the prediction. Format:
+   *     `projects/{project}/locations/{location}/endpoints/{endpoint}`
+   * @param httpBody The prediction input. Supports HTTP headers and arbitrary data payload.
+   *     <p>A [DeployedModel][google.cloud.aiplatform.v1.DeployedModel] may have an upper limit on
+   *     the number of instances it supports per request. When this limit it is exceeded for an
+   *     AutoML model, the [RawPredict][google.cloud.aiplatform.v1.PredictionService.RawPredict]
+   *     method returns an error. When this limit is exceeded for a custom-trained model, the
+   *     behavior varies depending on the model.
+   *     <p>You can specify the schema for each instance in the
+   *     [predict_schemata.instance_schema_uri][google.cloud.aiplatform.v1.PredictSchemata.instance_schema_uri]
+   *     field when you create a [Model][google.cloud.aiplatform.v1.Model]. This schema applies when
+   *     you deploy the `Model` as a `DeployedModel` to an
+   *     [Endpoint][google.cloud.aiplatform.v1.Endpoint] and use the `RawPredict` method.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final HttpBody rawPredict(EndpointName endpoint, HttpBody httpBody) {
+    RawPredictRequest request =
+        RawPredictRequest.newBuilder()
+            .setEndpoint(endpoint == null ? null : endpoint.toString())
+            .setHttpBody(httpBody)
+            .build();
+    return rawPredict(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Perform an online prediction with arbitrary http payload.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (PredictionServiceClient predictionServiceClient = PredictionServiceClient.create()) {
+   *   String endpoint = EndpointName.of("[PROJECT]", "[LOCATION]", "[ENDPOINT]").toString();
+   *   HttpBody httpBody = HttpBody.newBuilder().build();
+   *   HttpBody response = predictionServiceClient.rawPredict(endpoint, httpBody);
+   * }
+   * }</pre>
+   *
+   * @param endpoint Required. The name of the Endpoint requested to serve the prediction. Format:
+   *     `projects/{project}/locations/{location}/endpoints/{endpoint}`
+   * @param httpBody The prediction input. Supports HTTP headers and arbitrary data payload.
+   *     <p>A [DeployedModel][google.cloud.aiplatform.v1.DeployedModel] may have an upper limit on
+   *     the number of instances it supports per request. When this limit it is exceeded for an
+   *     AutoML model, the [RawPredict][google.cloud.aiplatform.v1.PredictionService.RawPredict]
+   *     method returns an error. When this limit is exceeded for a custom-trained model, the
+   *     behavior varies depending on the model.
+   *     <p>You can specify the schema for each instance in the
+   *     [predict_schemata.instance_schema_uri][google.cloud.aiplatform.v1.PredictSchemata.instance_schema_uri]
+   *     field when you create a [Model][google.cloud.aiplatform.v1.Model]. This schema applies when
+   *     you deploy the `Model` as a `DeployedModel` to an
+   *     [Endpoint][google.cloud.aiplatform.v1.Endpoint] and use the `RawPredict` method.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final HttpBody rawPredict(String endpoint, HttpBody httpBody) {
+    RawPredictRequest request =
+        RawPredictRequest.newBuilder().setEndpoint(endpoint).setHttpBody(httpBody).build();
+    return rawPredict(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Perform an online prediction with arbitrary http payload.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (PredictionServiceClient predictionServiceClient = PredictionServiceClient.create()) {
+   *   RawPredictRequest request =
+   *       RawPredictRequest.newBuilder()
+   *           .setEndpoint(EndpointName.of("[PROJECT]", "[LOCATION]", "[ENDPOINT]").toString())
+   *           .setHttpBody(HttpBody.newBuilder().build())
+   *           .build();
+   *   HttpBody response = predictionServiceClient.rawPredict(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final HttpBody rawPredict(RawPredictRequest request) {
+    return rawPredictCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Perform an online prediction with arbitrary http payload.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (PredictionServiceClient predictionServiceClient = PredictionServiceClient.create()) {
+   *   RawPredictRequest request =
+   *       RawPredictRequest.newBuilder()
+   *           .setEndpoint(EndpointName.of("[PROJECT]", "[LOCATION]", "[ENDPOINT]").toString())
+   *           .setHttpBody(HttpBody.newBuilder().build())
+   *           .build();
+   *   ApiFuture<HttpBody> future = predictionServiceClient.rawPredictCallable().futureCall(request);
+   *   // Do something.
+   *   HttpBody response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<RawPredictRequest, HttpBody> rawPredictCallable() {
+    return stub.rawPredictCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Perform an online explanation.
+   *
+   * <p>If [deployed_model_id][google.cloud.aiplatform.v1.ExplainRequest.deployed_model_id] is
+   * specified, the corresponding DeployModel must have
+   * [explanation_spec][google.cloud.aiplatform.v1.DeployedModel.explanation_spec] populated. If
+   * [deployed_model_id][google.cloud.aiplatform.v1.ExplainRequest.deployed_model_id] is not
+   * specified, all DeployedModels must have
+   * [explanation_spec][google.cloud.aiplatform.v1.DeployedModel.explanation_spec] populated. Only
+   * deployed AutoML tabular Models have explanation_spec.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (PredictionServiceClient predictionServiceClient = PredictionServiceClient.create()) {
+   *   EndpointName endpoint = EndpointName.of("[PROJECT]", "[LOCATION]", "[ENDPOINT]");
+   *   List<Value> instances = new ArrayList<>();
+   *   Value parameters = Value.newBuilder().build();
+   *   String deployedModelId = "deployedModelId-1817547906";
+   *   ExplainResponse response =
+   *       predictionServiceClient.explain(endpoint, instances, parameters, deployedModelId);
+   * }
+   * }</pre>
+   *
+   * @param endpoint Required. The name of the Endpoint requested to serve the explanation. Format:
+   *     `projects/{project}/locations/{location}/endpoints/{endpoint}`
+   * @param instances Required. The instances that are the input to the explanation call. A
+   *     DeployedModel may have an upper limit on the number of instances it supports per request,
+   *     and when it is exceeded the explanation call errors in case of AutoML Models, or, in case
+   *     of customer created Models, the behaviour is as documented by that Model. The schema of any
+   *     single instance may be specified via Endpoint's DeployedModels'
+   *     [Model's][google.cloud.aiplatform.v1.DeployedModel.model]
+   *     [PredictSchemata's][google.cloud.aiplatform.v1.Model.predict_schemata]
+   *     [instance_schema_uri][google.cloud.aiplatform.v1.PredictSchemata.instance_schema_uri].
+   * @param parameters The parameters that govern the prediction. The schema of the parameters may
+   *     be specified via Endpoint's DeployedModels' [Model's
+   *     ][google.cloud.aiplatform.v1.DeployedModel.model]
+   *     [PredictSchemata's][google.cloud.aiplatform.v1.Model.predict_schemata]
+   *     [parameters_schema_uri][google.cloud.aiplatform.v1.PredictSchemata.parameters_schema_uri].
+   * @param deployedModelId If specified, this ExplainRequest will be served by the chosen
+   *     DeployedModel, overriding
+   *     [Endpoint.traffic_split][google.cloud.aiplatform.v1.Endpoint.traffic_split].
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ExplainResponse explain(
+      EndpointName endpoint, List<Value> instances, Value parameters, String deployedModelId) {
+    ExplainRequest request =
+        ExplainRequest.newBuilder()
+            .setEndpoint(endpoint == null ? null : endpoint.toString())
+            .addAllInstances(instances)
+            .setParameters(parameters)
+            .setDeployedModelId(deployedModelId)
+            .build();
+    return explain(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Perform an online explanation.
+   *
+   * <p>If [deployed_model_id][google.cloud.aiplatform.v1.ExplainRequest.deployed_model_id] is
+   * specified, the corresponding DeployModel must have
+   * [explanation_spec][google.cloud.aiplatform.v1.DeployedModel.explanation_spec] populated. If
+   * [deployed_model_id][google.cloud.aiplatform.v1.ExplainRequest.deployed_model_id] is not
+   * specified, all DeployedModels must have
+   * [explanation_spec][google.cloud.aiplatform.v1.DeployedModel.explanation_spec] populated. Only
+   * deployed AutoML tabular Models have explanation_spec.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (PredictionServiceClient predictionServiceClient = PredictionServiceClient.create()) {
+   *   String endpoint = EndpointName.of("[PROJECT]", "[LOCATION]", "[ENDPOINT]").toString();
+   *   List<Value> instances = new ArrayList<>();
+   *   Value parameters = Value.newBuilder().build();
+   *   String deployedModelId = "deployedModelId-1817547906";
+   *   ExplainResponse response =
+   *       predictionServiceClient.explain(endpoint, instances, parameters, deployedModelId);
+   * }
+   * }</pre>
+   *
+   * @param endpoint Required. The name of the Endpoint requested to serve the explanation. Format:
+   *     `projects/{project}/locations/{location}/endpoints/{endpoint}`
+   * @param instances Required. The instances that are the input to the explanation call. A
+   *     DeployedModel may have an upper limit on the number of instances it supports per request,
+   *     and when it is exceeded the explanation call errors in case of AutoML Models, or, in case
+   *     of customer created Models, the behaviour is as documented by that Model. The schema of any
+   *     single instance may be specified via Endpoint's DeployedModels'
+   *     [Model's][google.cloud.aiplatform.v1.DeployedModel.model]
+   *     [PredictSchemata's][google.cloud.aiplatform.v1.Model.predict_schemata]
+   *     [instance_schema_uri][google.cloud.aiplatform.v1.PredictSchemata.instance_schema_uri].
+   * @param parameters The parameters that govern the prediction. The schema of the parameters may
+   *     be specified via Endpoint's DeployedModels' [Model's
+   *     ][google.cloud.aiplatform.v1.DeployedModel.model]
+   *     [PredictSchemata's][google.cloud.aiplatform.v1.Model.predict_schemata]
+   *     [parameters_schema_uri][google.cloud.aiplatform.v1.PredictSchemata.parameters_schema_uri].
+   * @param deployedModelId If specified, this ExplainRequest will be served by the chosen
+   *     DeployedModel, overriding
+   *     [Endpoint.traffic_split][google.cloud.aiplatform.v1.Endpoint.traffic_split].
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ExplainResponse explain(
+      String endpoint, List<Value> instances, Value parameters, String deployedModelId) {
+    ExplainRequest request =
+        ExplainRequest.newBuilder()
+            .setEndpoint(endpoint)
+            .addAllInstances(instances)
+            .setParameters(parameters)
+            .setDeployedModelId(deployedModelId)
+            .build();
+    return explain(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Perform an online explanation.
+   *
+   * <p>If [deployed_model_id][google.cloud.aiplatform.v1.ExplainRequest.deployed_model_id] is
+   * specified, the corresponding DeployModel must have
+   * [explanation_spec][google.cloud.aiplatform.v1.DeployedModel.explanation_spec] populated. If
+   * [deployed_model_id][google.cloud.aiplatform.v1.ExplainRequest.deployed_model_id] is not
+   * specified, all DeployedModels must have
+   * [explanation_spec][google.cloud.aiplatform.v1.DeployedModel.explanation_spec] populated. Only
+   * deployed AutoML tabular Models have explanation_spec.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (PredictionServiceClient predictionServiceClient = PredictionServiceClient.create()) {
+   *   ExplainRequest request =
+   *       ExplainRequest.newBuilder()
+   *           .setEndpoint(EndpointName.of("[PROJECT]", "[LOCATION]", "[ENDPOINT]").toString())
+   *           .addAllInstances(new ArrayList<Value>())
+   *           .setParameters(Value.newBuilder().build())
+   *           .setExplanationSpecOverride(ExplanationSpecOverride.newBuilder().build())
+   *           .setDeployedModelId("deployedModelId-1817547906")
+   *           .build();
+   *   ExplainResponse response = predictionServiceClient.explain(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ExplainResponse explain(ExplainRequest request) {
+    return explainCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Perform an online explanation.
+   *
+   * <p>If [deployed_model_id][google.cloud.aiplatform.v1.ExplainRequest.deployed_model_id] is
+   * specified, the corresponding DeployModel must have
+   * [explanation_spec][google.cloud.aiplatform.v1.DeployedModel.explanation_spec] populated. If
+   * [deployed_model_id][google.cloud.aiplatform.v1.ExplainRequest.deployed_model_id] is not
+   * specified, all DeployedModels must have
+   * [explanation_spec][google.cloud.aiplatform.v1.DeployedModel.explanation_spec] populated. Only
+   * deployed AutoML tabular Models have explanation_spec.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (PredictionServiceClient predictionServiceClient = PredictionServiceClient.create()) {
+   *   ExplainRequest request =
+   *       ExplainRequest.newBuilder()
+   *           .setEndpoint(EndpointName.of("[PROJECT]", "[LOCATION]", "[ENDPOINT]").toString())
+   *           .addAllInstances(new ArrayList<Value>())
+   *           .setParameters(Value.newBuilder().build())
+   *           .setExplanationSpecOverride(ExplanationSpecOverride.newBuilder().build())
+   *           .setDeployedModelId("deployedModelId-1817547906")
+   *           .build();
+   *   ApiFuture<ExplainResponse> future =
+   *       predictionServiceClient.explainCallable().futureCall(request);
+   *   // Do something.
+   *   ExplainResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ExplainRequest, ExplainResponse> explainCallable() {
+    return stub.explainCallable();
   }
 
   @Override

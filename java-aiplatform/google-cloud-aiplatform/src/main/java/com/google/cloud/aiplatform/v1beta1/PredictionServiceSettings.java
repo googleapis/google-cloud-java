@@ -16,6 +16,7 @@
 
 package com.google.cloud.aiplatform.v1beta1;
 
+import com.google.api.HttpBody;
 import com.google.api.core.ApiFunction;
 import com.google.api.core.BetaApi;
 import com.google.api.gax.core.GoogleCredentialsProvider;
@@ -70,6 +71,11 @@ public class PredictionServiceSettings extends ClientSettings<PredictionServiceS
   /** Returns the object with the settings used for calls to predict. */
   public UnaryCallSettings<PredictRequest, PredictResponse> predictSettings() {
     return ((PredictionServiceStubSettings) getStubSettings()).predictSettings();
+  }
+
+  /** Returns the object with the settings used for calls to rawPredict. */
+  public UnaryCallSettings<RawPredictRequest, HttpBody> rawPredictSettings() {
+    return ((PredictionServiceStubSettings) getStubSettings()).rawPredictSettings();
   }
 
   /** Returns the object with the settings used for calls to explain. */
@@ -177,6 +183,11 @@ public class PredictionServiceSettings extends ClientSettings<PredictionServiceS
     /** Returns the builder for the settings used for calls to predict. */
     public UnaryCallSettings.Builder<PredictRequest, PredictResponse> predictSettings() {
       return getStubSettingsBuilder().predictSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to rawPredict. */
+    public UnaryCallSettings.Builder<RawPredictRequest, HttpBody> rawPredictSettings() {
+      return getStubSettingsBuilder().rawPredictSettings();
     }
 
     /** Returns the builder for the settings used for calls to explain. */

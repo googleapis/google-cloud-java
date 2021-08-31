@@ -382,6 +382,7 @@ public interface ArtifactOrBuilder
    *
    * <pre>
    * Properties of the Artifact.
+   * The size of this field should not exceed 200KB.
    * </pre>
    *
    * <code>.google.protobuf.Struct metadata = 16;</code>
@@ -394,6 +395,7 @@ public interface ArtifactOrBuilder
    *
    * <pre>
    * Properties of the Artifact.
+   * The size of this field should not exceed 200KB.
    * </pre>
    *
    * <code>.google.protobuf.Struct metadata = 16;</code>
@@ -406,6 +408,7 @@ public interface ArtifactOrBuilder
    *
    * <pre>
    * Properties of the Artifact.
+   * The size of this field should not exceed 200KB.
    * </pre>
    *
    * <code>.google.protobuf.Struct metadata = 16;</code>

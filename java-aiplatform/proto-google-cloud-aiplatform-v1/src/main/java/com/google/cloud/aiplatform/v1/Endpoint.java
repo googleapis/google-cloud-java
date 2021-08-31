@@ -44,6 +44,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
     description_ = "";
     deployedModels_ = java.util.Collections.emptyList();
     etag_ = "";
+    modelDeploymentMonitoringJob_ = "";
   }
 
   @java.lang.Override
@@ -188,6 +189,13 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
                 encryptionSpec_ = subBuilder.buildPartial();
               }
 
+              break;
+            }
+          case 114:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              modelDeploymentMonitoringJob_ = s;
               break;
             }
           default:
@@ -918,6 +926,65 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
     return getEncryptionSpec();
   }
 
+  public static final int MODEL_DEPLOYMENT_MONITORING_JOB_FIELD_NUMBER = 14;
+  private volatile java.lang.Object modelDeploymentMonitoringJob_;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Resource name of the Model Monitoring job associated with this Endpoint
+   * if monitoring is enabled by [CreateModelDeploymentMonitoringJob][].
+   * Format:
+   * `projects/{project}/locations/{location}/modelDeploymentMonitoringJobs/{model_deployment_monitoring_job}`
+   * </pre>
+   *
+   * <code>
+   * string model_deployment_monitoring_job = 14 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The modelDeploymentMonitoringJob.
+   */
+  @java.lang.Override
+  public java.lang.String getModelDeploymentMonitoringJob() {
+    java.lang.Object ref = modelDeploymentMonitoringJob_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      modelDeploymentMonitoringJob_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Resource name of the Model Monitoring job associated with this Endpoint
+   * if monitoring is enabled by [CreateModelDeploymentMonitoringJob][].
+   * Format:
+   * `projects/{project}/locations/{location}/modelDeploymentMonitoringJobs/{model_deployment_monitoring_job}`
+   * </pre>
+   *
+   * <code>
+   * string model_deployment_monitoring_job = 14 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The bytes for modelDeploymentMonitoringJob.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getModelDeploymentMonitoringJobBytes() {
+    java.lang.Object ref = modelDeploymentMonitoringJob_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      modelDeploymentMonitoringJob_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -959,6 +1026,9 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
     }
     if (encryptionSpec_ != null) {
       output.writeMessage(10, getEncryptionSpec());
+    }
+    if (!getModelDeploymentMonitoringJobBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 14, modelDeploymentMonitoringJob_);
     }
     unknownFields.writeTo(output);
   }
@@ -1013,6 +1083,11 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
     if (encryptionSpec_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(10, getEncryptionSpec());
     }
+    if (!getModelDeploymentMonitoringJobBytes().isEmpty()) {
+      size +=
+          com.google.protobuf.GeneratedMessageV3.computeStringSize(
+              14, modelDeploymentMonitoringJob_);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1047,6 +1122,8 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
     if (hasEncryptionSpec()) {
       if (!getEncryptionSpec().equals(other.getEncryptionSpec())) return false;
     }
+    if (!getModelDeploymentMonitoringJob().equals(other.getModelDeploymentMonitoringJob()))
+      return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -1090,6 +1167,8 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
       hash = (37 * hash) + ENCRYPTION_SPEC_FIELD_NUMBER;
       hash = (53 * hash) + getEncryptionSpec().hashCode();
     }
+    hash = (37 * hash) + MODEL_DEPLOYMENT_MONITORING_JOB_FIELD_NUMBER;
+    hash = (53 * hash) + getModelDeploymentMonitoringJob().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -1296,6 +1375,8 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
         encryptionSpec_ = null;
         encryptionSpecBuilder_ = null;
       }
+      modelDeploymentMonitoringJob_ = "";
+
       return this;
     }
 
@@ -1356,6 +1437,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
       } else {
         result.encryptionSpec_ = encryptionSpecBuilder_.build();
       }
+      result.modelDeploymentMonitoringJob_ = modelDeploymentMonitoringJob_;
       onBuilt();
       return result;
     }
@@ -1458,6 +1540,10 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.hasEncryptionSpec()) {
         mergeEncryptionSpec(other.getEncryptionSpec());
+      }
+      if (!other.getModelDeploymentMonitoringJob().isEmpty()) {
+        modelDeploymentMonitoringJob_ = other.modelDeploymentMonitoringJob_;
+        onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -3341,6 +3427,137 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
         encryptionSpec_ = null;
       }
       return encryptionSpecBuilder_;
+    }
+
+    private java.lang.Object modelDeploymentMonitoringJob_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Resource name of the Model Monitoring job associated with this Endpoint
+     * if monitoring is enabled by [CreateModelDeploymentMonitoringJob][].
+     * Format:
+     * `projects/{project}/locations/{location}/modelDeploymentMonitoringJobs/{model_deployment_monitoring_job}`
+     * </pre>
+     *
+     * <code>
+     * string model_deployment_monitoring_job = 14 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return The modelDeploymentMonitoringJob.
+     */
+    public java.lang.String getModelDeploymentMonitoringJob() {
+      java.lang.Object ref = modelDeploymentMonitoringJob_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        modelDeploymentMonitoringJob_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Resource name of the Model Monitoring job associated with this Endpoint
+     * if monitoring is enabled by [CreateModelDeploymentMonitoringJob][].
+     * Format:
+     * `projects/{project}/locations/{location}/modelDeploymentMonitoringJobs/{model_deployment_monitoring_job}`
+     * </pre>
+     *
+     * <code>
+     * string model_deployment_monitoring_job = 14 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return The bytes for modelDeploymentMonitoringJob.
+     */
+    public com.google.protobuf.ByteString getModelDeploymentMonitoringJobBytes() {
+      java.lang.Object ref = modelDeploymentMonitoringJob_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        modelDeploymentMonitoringJob_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Resource name of the Model Monitoring job associated with this Endpoint
+     * if monitoring is enabled by [CreateModelDeploymentMonitoringJob][].
+     * Format:
+     * `projects/{project}/locations/{location}/modelDeploymentMonitoringJobs/{model_deployment_monitoring_job}`
+     * </pre>
+     *
+     * <code>
+     * string model_deployment_monitoring_job = 14 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @param value The modelDeploymentMonitoringJob to set.
+     * @return This builder for chaining.
+     */
+    public Builder setModelDeploymentMonitoringJob(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+
+      modelDeploymentMonitoringJob_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Resource name of the Model Monitoring job associated with this Endpoint
+     * if monitoring is enabled by [CreateModelDeploymentMonitoringJob][].
+     * Format:
+     * `projects/{project}/locations/{location}/modelDeploymentMonitoringJobs/{model_deployment_monitoring_job}`
+     * </pre>
+     *
+     * <code>
+     * string model_deployment_monitoring_job = 14 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearModelDeploymentMonitoringJob() {
+
+      modelDeploymentMonitoringJob_ = getDefaultInstance().getModelDeploymentMonitoringJob();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Resource name of the Model Monitoring job associated with this Endpoint
+     * if monitoring is enabled by [CreateModelDeploymentMonitoringJob][].
+     * Format:
+     * `projects/{project}/locations/{location}/modelDeploymentMonitoringJobs/{model_deployment_monitoring_job}`
+     * </pre>
+     *
+     * <code>
+     * string model_deployment_monitoring_job = 14 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @param value The bytes for modelDeploymentMonitoringJob to set.
+     * @return This builder for chaining.
+     */
+    public Builder setModelDeploymentMonitoringJobBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
+      modelDeploymentMonitoringJob_ = value;
+      onChanged();
+      return this;
     }
 
     @java.lang.Override

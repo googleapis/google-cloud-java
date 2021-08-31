@@ -50,7 +50,7 @@ public final class ArtifactProto {
           + "ource.proto\032&google/cloud/aiplatform/v1/"
           + "value.proto\032\034google/protobuf/struct.prot"
           + "o\032\037google/protobuf/timestamp.proto\032\034goog"
-          + "le/api/annotations.proto\"\246\004\n\010Artifact\022\021\n"
+          + "le/api/annotations.proto\"\224\005\n\010Artifact\022\021\n"
           + "\004name\030\001 \001(\tB\003\340A\003\022\024\n\014display_name\030\002 \001(\t\022\013"
           + "\n\003uri\030\006 \001(\t\022\014\n\004etag\030\t \001(\t\022@\n\006labels\030\n \003("
           + "\01320.google.cloud.aiplatform.v1.Artifact."
@@ -58,18 +58,21 @@ public final class ArtifactProto {
           + "e.protobuf.TimestampB\003\340A\003\0224\n\013update_time"
           + "\030\014 \001(\0132\032.google.protobuf.TimestampB\003\340A\003\022"
           + "9\n\005state\030\r \001(\0162*.google.cloud.aiplatform"
-          + ".v1.Artifact.State\032-\n\013LabelsEntry\022\013\n\003key"
-          + "\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"5\n\005State\022\025\n\021ST"
-          + "ATE_UNSPECIFIED\020\000\022\013\n\007PENDING\020\001\022\010\n\004LIVE\020\002"
-          + ":\206\001\352A\202\001\n\"aiplatform.googleapis.com/Artif"
-          + "act\022\\projects/{project}/locations/{locat"
-          + "ion}/metadataStores/{metadata_store}/art"
-          + "ifacts/{artifact}B\321\001\n\036com.google.cloud.a"
-          + "iplatform.v1B\rArtifactProtoP\001ZDgoogle.go"
-          + "lang.org/genproto/googleapis/cloud/aipla"
-          + "tform/v1;aiplatform\252\002\032Google.Cloud.AIPla"
-          + "tform.V1\312\002\032Google\\Cloud\\AIPlatform\\V1\352\002\035"
-          + "Google::Cloud::AIPlatform::V1b\006proto3"
+          + ".v1.Artifact.State\022\024\n\014schema_title\030\016 \001(\t"
+          + "\022\026\n\016schema_version\030\017 \001(\t\022)\n\010metadata\030\020 \001"
+          + "(\0132\027.google.protobuf.Struct\022\023\n\013descripti"
+          + "on\030\021 \001(\t\032-\n\013LabelsEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005"
+          + "value\030\002 \001(\t:\0028\001\"5\n\005State\022\025\n\021STATE_UNSPEC"
+          + "IFIED\020\000\022\013\n\007PENDING\020\001\022\010\n\004LIVE\020\002:\206\001\352A\202\001\n\"a"
+          + "iplatform.googleapis.com/Artifact\022\\proje"
+          + "cts/{project}/locations/{location}/metad"
+          + "ataStores/{metadata_store}/artifacts/{ar"
+          + "tifact}B\321\001\n\036com.google.cloud.aiplatform."
+          + "v1B\rArtifactProtoP\001ZDgoogle.golang.org/g"
+          + "enproto/googleapis/cloud/aiplatform/v1;a"
+          + "iplatform\252\002\032Google.Cloud.AIPlatform.V1\312\002"
+          + "\032Google\\Cloud\\AIPlatform\\V1\352\002\035Google::Cl"
+          + "oud::AIPlatform::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -88,7 +91,18 @@ public final class ArtifactProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1_Artifact_descriptor,
             new java.lang.String[] {
-              "Name", "DisplayName", "Uri", "Etag", "Labels", "CreateTime", "UpdateTime", "State",
+              "Name",
+              "DisplayName",
+              "Uri",
+              "Etag",
+              "Labels",
+              "CreateTime",
+              "UpdateTime",
+              "State",
+              "SchemaTitle",
+              "SchemaVersion",
+              "Metadata",
+              "Description",
             });
     internal_static_google_cloud_aiplatform_v1_Artifact_LabelsEntry_descriptor =
         internal_static_google_cloud_aiplatform_v1_Artifact_descriptor.getNestedTypes().get(0);

@@ -859,4 +859,83 @@ public interface ModelDeploymentMonitoringJobOrBuilder
    */
   com.google.cloud.aiplatform.v1beta1.GcsDestinationOrBuilder
       getStatsAnomaliesBaseDirectoryOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Customer-managed encryption key spec for a ModelDeploymentMonitoringJob. If
+   * set, this ModelDeploymentMonitoringJob and all sub-resources of this
+   * ModelDeploymentMonitoringJob will be secured by this key.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.EncryptionSpec encryption_spec = 21;</code>
+   *
+   * @return Whether the encryptionSpec field is set.
+   */
+  boolean hasEncryptionSpec();
+  /**
+   *
+   *
+   * <pre>
+   * Customer-managed encryption key spec for a ModelDeploymentMonitoringJob. If
+   * set, this ModelDeploymentMonitoringJob and all sub-resources of this
+   * ModelDeploymentMonitoringJob will be secured by this key.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.EncryptionSpec encryption_spec = 21;</code>
+   *
+   * @return The encryptionSpec.
+   */
+  com.google.cloud.aiplatform.v1beta1.EncryptionSpec getEncryptionSpec();
+  /**
+   *
+   *
+   * <pre>
+   * Customer-managed encryption key spec for a ModelDeploymentMonitoringJob. If
+   * set, this ModelDeploymentMonitoringJob and all sub-resources of this
+   * ModelDeploymentMonitoringJob will be secured by this key.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.EncryptionSpec encryption_spec = 21;</code>
+   */
+  com.google.cloud.aiplatform.v1beta1.EncryptionSpecOrBuilder getEncryptionSpecOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Only populated when the job's state is `JOB_STATE_FAILED` or
+   * `JOB_STATE_CANCELLED`.
+   * </pre>
+   *
+   * <code>.google.rpc.Status error = 23 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return Whether the error field is set.
+   */
+  boolean hasError();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Only populated when the job's state is `JOB_STATE_FAILED` or
+   * `JOB_STATE_CANCELLED`.
+   * </pre>
+   *
+   * <code>.google.rpc.Status error = 23 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The error.
+   */
+  com.google.rpc.Status getError();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Only populated when the job's state is `JOB_STATE_FAILED` or
+   * `JOB_STATE_CANCELLED`.
+   * </pre>
+   *
+   * <code>.google.rpc.Status error = 23 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   */
+  com.google.rpc.StatusOrBuilder getErrorOrBuilder();
 }

@@ -211,6 +211,7 @@ public final class UpdateContextRequest extends com.google.protobuf.GeneratedMes
    *
    * <pre>
    * Required. A FieldMask indicating which fields should be updated.
+   * Functionality of this field is not yet supported.
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
@@ -227,6 +228,7 @@ public final class UpdateContextRequest extends com.google.protobuf.GeneratedMes
    *
    * <pre>
    * Required. A FieldMask indicating which fields should be updated.
+   * Functionality of this field is not yet supported.
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
@@ -243,6 +245,7 @@ public final class UpdateContextRequest extends com.google.protobuf.GeneratedMes
    *
    * <pre>
    * Required. A FieldMask indicating which fields should be updated.
+   * Functionality of this field is not yet supported.
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
@@ -259,8 +262,8 @@ public final class UpdateContextRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * If set to true, and the [Context][google.cloud.aiplatform.v1beta1.Context] is not found, a new [Context][google.cloud.aiplatform.v1beta1.Context] will be
-   * created. In this situation, `update_mask` is ignored.
+   * If set to true, and the [Context][google.cloud.aiplatform.v1beta1.Context] is not found, a new [Context][google.cloud.aiplatform.v1beta1.Context] is
+   * created.
    * </pre>
    *
    * <code>bool allow_missing = 3;</code>
@@ -896,6 +899,7 @@ public final class UpdateContextRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Required. A FieldMask indicating which fields should be updated.
+     * Functionality of this field is not yet supported.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
@@ -911,6 +915,7 @@ public final class UpdateContextRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Required. A FieldMask indicating which fields should be updated.
+     * Functionality of this field is not yet supported.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
@@ -932,6 +937,7 @@ public final class UpdateContextRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Required. A FieldMask indicating which fields should be updated.
+     * Functionality of this field is not yet supported.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
@@ -955,6 +961,7 @@ public final class UpdateContextRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Required. A FieldMask indicating which fields should be updated.
+     * Functionality of this field is not yet supported.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
@@ -975,6 +982,7 @@ public final class UpdateContextRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Required. A FieldMask indicating which fields should be updated.
+     * Functionality of this field is not yet supported.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
@@ -1000,6 +1008,7 @@ public final class UpdateContextRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Required. A FieldMask indicating which fields should be updated.
+     * Functionality of this field is not yet supported.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
@@ -1021,6 +1030,7 @@ public final class UpdateContextRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Required. A FieldMask indicating which fields should be updated.
+     * Functionality of this field is not yet supported.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
@@ -1036,6 +1046,7 @@ public final class UpdateContextRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Required. A FieldMask indicating which fields should be updated.
+     * Functionality of this field is not yet supported.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
@@ -1055,6 +1066,7 @@ public final class UpdateContextRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Required. A FieldMask indicating which fields should be updated.
+     * Functionality of this field is not yet supported.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
@@ -1082,8 +1094,8 @@ public final class UpdateContextRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * If set to true, and the [Context][google.cloud.aiplatform.v1beta1.Context] is not found, a new [Context][google.cloud.aiplatform.v1beta1.Context] will be
-     * created. In this situation, `update_mask` is ignored.
+     * If set to true, and the [Context][google.cloud.aiplatform.v1beta1.Context] is not found, a new [Context][google.cloud.aiplatform.v1beta1.Context] is
+     * created.
      * </pre>
      *
      * <code>bool allow_missing = 3;</code>
@@ -1098,8 +1110,8 @@ public final class UpdateContextRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * If set to true, and the [Context][google.cloud.aiplatform.v1beta1.Context] is not found, a new [Context][google.cloud.aiplatform.v1beta1.Context] will be
-     * created. In this situation, `update_mask` is ignored.
+     * If set to true, and the [Context][google.cloud.aiplatform.v1beta1.Context] is not found, a new [Context][google.cloud.aiplatform.v1beta1.Context] is
+     * created.
      * </pre>
      *
      * <code>bool allow_missing = 3;</code>
@@ -1117,8 +1129,8 @@ public final class UpdateContextRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * If set to true, and the [Context][google.cloud.aiplatform.v1beta1.Context] is not found, a new [Context][google.cloud.aiplatform.v1beta1.Context] will be
-     * created. In this situation, `update_mask` is ignored.
+     * If set to true, and the [Context][google.cloud.aiplatform.v1beta1.Context] is not found, a new [Context][google.cloud.aiplatform.v1beta1.Context] is
+     * created.
      * </pre>
      *
      * <code>bool allow_missing = 3;</code>

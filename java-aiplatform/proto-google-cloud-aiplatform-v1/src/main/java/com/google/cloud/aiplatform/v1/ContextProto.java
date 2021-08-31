@@ -50,7 +50,7 @@ public final class ContextProto {
           + "urce.proto\032&google/cloud/aiplatform/v1/v"
           + "alue.proto\032\034google/protobuf/struct.proto"
           + "\032\037google/protobuf/timestamp.proto\032\034googl"
-          + "e/api/annotations.proto\"\345\003\n\007Context\022\021\n\004n"
+          + "e/api/annotations.proto\"\323\004\n\007Context\022\021\n\004n"
           + "ame\030\001 \001(\tB\003\340A\003\022\024\n\014display_name\030\002 \001(\t\022\014\n\004"
           + "etag\030\010 \001(\t\022?\n\006labels\030\t \003(\0132/.google.clou"
           + "d.aiplatform.v1.Context.LabelsEntry\0224\n\013c"
@@ -58,17 +58,19 @@ public final class ContextProto {
           + "tampB\003\340A\003\0224\n\013update_time\030\013 \001(\0132\032.google."
           + "protobuf.TimestampB\003\340A\003\022B\n\017parent_contex"
           + "ts\030\014 \003(\tB)\340A\003\372A#\n!aiplatform.googleapis."
-          + "com/Context\032-\n\013LabelsEntry\022\013\n\003key\030\001 \001(\t\022"
-          + "\r\n\005value\030\002 \001(\t:\0028\001:\202\001\352A\177\n!aiplatform.goo"
-          + "gleapis.com/Context\022Zprojects/{project}/"
-          + "locations/{location}/metadataStores/{met"
-          + "adata_store}/contexts/{context}B\320\001\n\036com."
-          + "google.cloud.aiplatform.v1B\014ContextProto"
-          + "P\001ZDgoogle.golang.org/genproto/googleapi"
-          + "s/cloud/aiplatform/v1;aiplatform\252\002\032Googl"
-          + "e.Cloud.AIPlatform.V1\312\002\032Google\\Cloud\\AIP"
-          + "latform\\V1\352\002\035Google::Cloud::AIPlatform::"
-          + "V1b\006proto3"
+          + "com/Context\022\024\n\014schema_title\030\r \001(\t\022\026\n\016sch"
+          + "ema_version\030\016 \001(\t\022)\n\010metadata\030\017 \001(\0132\027.go"
+          + "ogle.protobuf.Struct\022\023\n\013description\030\020 \001("
+          + "\t\032-\n\013LabelsEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002"
+          + " \001(\t:\0028\001:\202\001\352A\177\n!aiplatform.googleapis.co"
+          + "m/Context\022Zprojects/{project}/locations/"
+          + "{location}/metadataStores/{metadata_stor"
+          + "e}/contexts/{context}B\320\001\n\036com.google.clo"
+          + "ud.aiplatform.v1B\014ContextProtoP\001ZDgoogle"
+          + ".golang.org/genproto/googleapis/cloud/ai"
+          + "platform/v1;aiplatform\252\002\032Google.Cloud.AI"
+          + "Platform.V1\312\002\032Google\\Cloud\\AIPlatform\\V1"
+          + "\352\002\035Google::Cloud::AIPlatform::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -87,7 +89,17 @@ public final class ContextProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1_Context_descriptor,
             new java.lang.String[] {
-              "Name", "DisplayName", "Etag", "Labels", "CreateTime", "UpdateTime", "ParentContexts",
+              "Name",
+              "DisplayName",
+              "Etag",
+              "Labels",
+              "CreateTime",
+              "UpdateTime",
+              "ParentContexts",
+              "SchemaTitle",
+              "SchemaVersion",
+              "Metadata",
+              "Description",
             });
     internal_static_google_cloud_aiplatform_v1_Context_LabelsEntry_descriptor =
         internal_static_google_cloud_aiplatform_v1_Context_descriptor.getNestedTypes().get(0);

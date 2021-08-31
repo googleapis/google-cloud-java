@@ -384,12 +384,12 @@ public final class Featurestore extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The number of nodes for each cluster. The number of nodes will not
+     * The number of nodes for each cluster. The number of nodes will not
      * scale automatically but can be scaled manually by providing different
      * values when updating.
      * </pre>
      *
-     * <code>int32 fixed_node_count = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>int32 fixed_node_count = 2;</code>
      *
      * @return The fixedNodeCount.
      */
@@ -491,12 +491,12 @@ public final class Featurestore extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The number of nodes for each cluster. The number of nodes will not
+     * The number of nodes for each cluster. The number of nodes will not
      * scale automatically but can be scaled manually by providing different
      * values when updating.
      * </pre>
      *
-     * <code>int32 fixed_node_count = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>int32 fixed_node_count = 2;</code>
      *
      * @return The fixedNodeCount.
      */
@@ -842,12 +842,12 @@ public final class Featurestore extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. The number of nodes for each cluster. The number of nodes will not
+       * The number of nodes for each cluster. The number of nodes will not
        * scale automatically but can be scaled manually by providing different
        * values when updating.
        * </pre>
        *
-       * <code>int32 fixed_node_count = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+       * <code>int32 fixed_node_count = 2;</code>
        *
        * @return The fixedNodeCount.
        */
@@ -859,12 +859,12 @@ public final class Featurestore extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. The number of nodes for each cluster. The number of nodes will not
+       * The number of nodes for each cluster. The number of nodes will not
        * scale automatically but can be scaled manually by providing different
        * values when updating.
        * </pre>
        *
-       * <code>int32 fixed_node_count = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+       * <code>int32 fixed_node_count = 2;</code>
        *
        * @param value The fixedNodeCount to set.
        * @return This builder for chaining.
@@ -879,12 +879,12 @@ public final class Featurestore extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. The number of nodes for each cluster. The number of nodes will not
+       * The number of nodes for each cluster. The number of nodes will not
        * scale automatically but can be scaled manually by providing different
        * values when updating.
        * </pre>
        *
-       * <code>int32 fixed_node_count = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+       * <code>int32 fixed_node_count = 2;</code>
        *
        * @return This builder for chaining.
        */

@@ -16,6 +16,7 @@
 
 package com.google.cloud.aiplatform.v1.stub;
 
+import com.google.api.HttpBody;
 import com.google.api.core.ApiFunction;
 import com.google.api.core.BetaApi;
 import com.google.api.gax.core.GaxProperties;
@@ -31,8 +32,11 @@ import com.google.api.gax.rpc.StatusCode;
 import com.google.api.gax.rpc.StubSettings;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
+import com.google.cloud.aiplatform.v1.ExplainRequest;
+import com.google.cloud.aiplatform.v1.ExplainResponse;
 import com.google.cloud.aiplatform.v1.PredictRequest;
 import com.google.cloud.aiplatform.v1.PredictResponse;
+import com.google.cloud.aiplatform.v1.RawPredictRequest;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
@@ -40,7 +44,6 @@ import com.google.common.collect.Lists;
 import java.io.IOException;
 import java.util.List;
 import javax.annotation.Generated;
-import org.threeten.bp.Duration;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -82,10 +85,22 @@ public class PredictionServiceStubSettings extends StubSettings<PredictionServic
       ImmutableList.<String>builder().add("https://www.googleapis.com/auth/cloud-platform").build();
 
   private final UnaryCallSettings<PredictRequest, PredictResponse> predictSettings;
+  private final UnaryCallSettings<RawPredictRequest, HttpBody> rawPredictSettings;
+  private final UnaryCallSettings<ExplainRequest, ExplainResponse> explainSettings;
 
   /** Returns the object with the settings used for calls to predict. */
   public UnaryCallSettings<PredictRequest, PredictResponse> predictSettings() {
     return predictSettings;
+  }
+
+  /** Returns the object with the settings used for calls to rawPredict. */
+  public UnaryCallSettings<RawPredictRequest, HttpBody> rawPredictSettings() {
+    return rawPredictSettings;
+  }
+
+  /** Returns the object with the settings used for calls to explain. */
+  public UnaryCallSettings<ExplainRequest, ExplainResponse> explainSettings() {
+    return explainSettings;
   }
 
   @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
@@ -165,20 +180,23 @@ public class PredictionServiceStubSettings extends StubSettings<PredictionServic
     super(settingsBuilder);
 
     predictSettings = settingsBuilder.predictSettings().build();
+    rawPredictSettings = settingsBuilder.rawPredictSettings().build();
+    explainSettings = settingsBuilder.explainSettings().build();
   }
 
   /** Builder for PredictionServiceStubSettings. */
   public static class Builder extends StubSettings.Builder<PredictionServiceStubSettings, Builder> {
     private final ImmutableList<UnaryCallSettings.Builder<?, ?>> unaryMethodSettingsBuilders;
     private final UnaryCallSettings.Builder<PredictRequest, PredictResponse> predictSettings;
+    private final UnaryCallSettings.Builder<RawPredictRequest, HttpBody> rawPredictSettings;
+    private final UnaryCallSettings.Builder<ExplainRequest, ExplainResponse> explainSettings;
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
 
     static {
       ImmutableMap.Builder<String, ImmutableSet<StatusCode.Code>> definitions =
           ImmutableMap.builder();
-      definitions.put(
-          "no_retry_5_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
+      definitions.put("no_retry_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
       RETRYABLE_CODE_DEFINITIONS = definitions.build();
     }
 
@@ -187,14 +205,8 @@ public class PredictionServiceStubSettings extends StubSettings<PredictionServic
     static {
       ImmutableMap.Builder<String, RetrySettings> definitions = ImmutableMap.builder();
       RetrySettings settings = null;
-      settings =
-          RetrySettings.newBuilder()
-              .setInitialRpcTimeout(Duration.ofMillis(5000L))
-              .setRpcTimeoutMultiplier(1.0)
-              .setMaxRpcTimeout(Duration.ofMillis(5000L))
-              .setTotalTimeout(Duration.ofMillis(5000L))
-              .build();
-      definitions.put("no_retry_5_params", settings);
+      settings = RetrySettings.newBuilder().setRpcTimeoutMultiplier(1.0).build();
+      definitions.put("no_retry_params", settings);
       RETRY_PARAM_DEFINITIONS = definitions.build();
     }
 
@@ -206,9 +218,12 @@ public class PredictionServiceStubSettings extends StubSettings<PredictionServic
       super(clientContext);
 
       predictSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      rawPredictSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      explainSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       unaryMethodSettingsBuilders =
-          ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(predictSettings);
+          ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
+              predictSettings, rawPredictSettings, explainSettings);
       initDefaults(this);
     }
 
@@ -216,9 +231,12 @@ public class PredictionServiceStubSettings extends StubSettings<PredictionServic
       super(settings);
 
       predictSettings = settings.predictSettings.toBuilder();
+      rawPredictSettings = settings.rawPredictSettings.toBuilder();
+      explainSettings = settings.explainSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
-          ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(predictSettings);
+          ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
+              predictSettings, rawPredictSettings, explainSettings);
     }
 
     private static Builder createDefault() {
@@ -237,8 +255,18 @@ public class PredictionServiceStubSettings extends StubSettings<PredictionServic
     private static Builder initDefaults(Builder builder) {
       builder
           .predictSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_5_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_5_params"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .rawPredictSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .explainSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
 
       return builder;
     }
@@ -261,6 +289,16 @@ public class PredictionServiceStubSettings extends StubSettings<PredictionServic
     /** Returns the builder for the settings used for calls to predict. */
     public UnaryCallSettings.Builder<PredictRequest, PredictResponse> predictSettings() {
       return predictSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to rawPredict. */
+    public UnaryCallSettings.Builder<RawPredictRequest, HttpBody> rawPredictSettings() {
+      return rawPredictSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to explain. */
+    public UnaryCallSettings.Builder<ExplainRequest, ExplainResponse> explainSettings() {
+      return explainSettings;
     }
 
     @Override

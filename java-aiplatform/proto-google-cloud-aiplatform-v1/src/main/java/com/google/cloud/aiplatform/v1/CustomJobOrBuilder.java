@@ -457,4 +457,108 @@ public interface CustomJobOrBuilder
    * <code>.google.cloud.aiplatform.v1.EncryptionSpec encryption_spec = 12;</code>
    */
   com.google.cloud.aiplatform.v1.EncryptionSpecOrBuilder getEncryptionSpecOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. URIs for accessing [interactive
+   * shells](https://cloud.google.com/vertex-ai/docs/training/monitor-debug-interactive-shell)
+   * (one URI for each training node). Only available if
+   * [job_spec.enable_web_access][google.cloud.aiplatform.v1.CustomJobSpec.enable_web_access] is `true`.
+   * The keys are names of each node in the training job; for example,
+   * `workerpool0-0` for the primary node, `workerpool1-0` for the first node in
+   * the second worker pool, and `workerpool1-1` for the second node in the
+   * second worker pool.
+   * The values are the URIs for each node's interactive shell.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, string&gt; web_access_uris = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  int getWebAccessUrisCount();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. URIs for accessing [interactive
+   * shells](https://cloud.google.com/vertex-ai/docs/training/monitor-debug-interactive-shell)
+   * (one URI for each training node). Only available if
+   * [job_spec.enable_web_access][google.cloud.aiplatform.v1.CustomJobSpec.enable_web_access] is `true`.
+   * The keys are names of each node in the training job; for example,
+   * `workerpool0-0` for the primary node, `workerpool1-0` for the first node in
+   * the second worker pool, and `workerpool1-1` for the second node in the
+   * second worker pool.
+   * The values are the URIs for each node's interactive shell.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, string&gt; web_access_uris = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  boolean containsWebAccessUris(java.lang.String key);
+  /** Use {@link #getWebAccessUrisMap()} instead. */
+  @java.lang.Deprecated
+  java.util.Map<java.lang.String, java.lang.String> getWebAccessUris();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. URIs for accessing [interactive
+   * shells](https://cloud.google.com/vertex-ai/docs/training/monitor-debug-interactive-shell)
+   * (one URI for each training node). Only available if
+   * [job_spec.enable_web_access][google.cloud.aiplatform.v1.CustomJobSpec.enable_web_access] is `true`.
+   * The keys are names of each node in the training job; for example,
+   * `workerpool0-0` for the primary node, `workerpool1-0` for the first node in
+   * the second worker pool, and `workerpool1-1` for the second node in the
+   * second worker pool.
+   * The values are the URIs for each node's interactive shell.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, string&gt; web_access_uris = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  java.util.Map<java.lang.String, java.lang.String> getWebAccessUrisMap();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. URIs for accessing [interactive
+   * shells](https://cloud.google.com/vertex-ai/docs/training/monitor-debug-interactive-shell)
+   * (one URI for each training node). Only available if
+   * [job_spec.enable_web_access][google.cloud.aiplatform.v1.CustomJobSpec.enable_web_access] is `true`.
+   * The keys are names of each node in the training job; for example,
+   * `workerpool0-0` for the primary node, `workerpool1-0` for the first node in
+   * the second worker pool, and `workerpool1-1` for the second node in the
+   * second worker pool.
+   * The values are the URIs for each node's interactive shell.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, string&gt; web_access_uris = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  java.lang.String getWebAccessUrisOrDefault(java.lang.String key, java.lang.String defaultValue);
+  /**
+   *
+   *
+   * <pre>
+   * Output only. URIs for accessing [interactive
+   * shells](https://cloud.google.com/vertex-ai/docs/training/monitor-debug-interactive-shell)
+   * (one URI for each training node). Only available if
+   * [job_spec.enable_web_access][google.cloud.aiplatform.v1.CustomJobSpec.enable_web_access] is `true`.
+   * The keys are names of each node in the training job; for example,
+   * `workerpool0-0` for the primary node, `workerpool1-0` for the first node in
+   * the second worker pool, and `workerpool1-1` for the second node in the
+   * second worker pool.
+   * The values are the URIs for each node's interactive shell.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, string&gt; web_access_uris = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  java.lang.String getWebAccessUrisOrThrow(java.lang.String key);
 }

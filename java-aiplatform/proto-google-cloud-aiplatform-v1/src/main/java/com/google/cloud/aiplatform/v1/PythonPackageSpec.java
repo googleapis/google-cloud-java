@@ -408,6 +408,7 @@ public final class PythonPackageSpec extends com.google.protobuf.GeneratedMessag
    *
    * <pre>
    * Environment variables to be passed to the python module.
+   * Maximum limit is 100.
    * </pre>
    *
    * <code>repeated .google.cloud.aiplatform.v1.EnvVar env = 5;</code>
@@ -421,6 +422,7 @@ public final class PythonPackageSpec extends com.google.protobuf.GeneratedMessag
    *
    * <pre>
    * Environment variables to be passed to the python module.
+   * Maximum limit is 100.
    * </pre>
    *
    * <code>repeated .google.cloud.aiplatform.v1.EnvVar env = 5;</code>
@@ -435,6 +437,7 @@ public final class PythonPackageSpec extends com.google.protobuf.GeneratedMessag
    *
    * <pre>
    * Environment variables to be passed to the python module.
+   * Maximum limit is 100.
    * </pre>
    *
    * <code>repeated .google.cloud.aiplatform.v1.EnvVar env = 5;</code>
@@ -448,6 +451,7 @@ public final class PythonPackageSpec extends com.google.protobuf.GeneratedMessag
    *
    * <pre>
    * Environment variables to be passed to the python module.
+   * Maximum limit is 100.
    * </pre>
    *
    * <code>repeated .google.cloud.aiplatform.v1.EnvVar env = 5;</code>
@@ -461,6 +465,7 @@ public final class PythonPackageSpec extends com.google.protobuf.GeneratedMessag
    *
    * <pre>
    * Environment variables to be passed to the python module.
+   * Maximum limit is 100.
    * </pre>
    *
    * <code>repeated .google.cloud.aiplatform.v1.EnvVar env = 5;</code>
@@ -1539,6 +1544,7 @@ public final class PythonPackageSpec extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Environment variables to be passed to the python module.
+     * Maximum limit is 100.
      * </pre>
      *
      * <code>repeated .google.cloud.aiplatform.v1.EnvVar env = 5;</code>
@@ -1555,6 +1561,7 @@ public final class PythonPackageSpec extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Environment variables to be passed to the python module.
+     * Maximum limit is 100.
      * </pre>
      *
      * <code>repeated .google.cloud.aiplatform.v1.EnvVar env = 5;</code>
@@ -1571,6 +1578,7 @@ public final class PythonPackageSpec extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Environment variables to be passed to the python module.
+     * Maximum limit is 100.
      * </pre>
      *
      * <code>repeated .google.cloud.aiplatform.v1.EnvVar env = 5;</code>
@@ -1587,6 +1595,7 @@ public final class PythonPackageSpec extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Environment variables to be passed to the python module.
+     * Maximum limit is 100.
      * </pre>
      *
      * <code>repeated .google.cloud.aiplatform.v1.EnvVar env = 5;</code>
@@ -1609,6 +1618,7 @@ public final class PythonPackageSpec extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Environment variables to be passed to the python module.
+     * Maximum limit is 100.
      * </pre>
      *
      * <code>repeated .google.cloud.aiplatform.v1.EnvVar env = 5;</code>
@@ -1629,6 +1639,7 @@ public final class PythonPackageSpec extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Environment variables to be passed to the python module.
+     * Maximum limit is 100.
      * </pre>
      *
      * <code>repeated .google.cloud.aiplatform.v1.EnvVar env = 5;</code>
@@ -1651,6 +1662,7 @@ public final class PythonPackageSpec extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Environment variables to be passed to the python module.
+     * Maximum limit is 100.
      * </pre>
      *
      * <code>repeated .google.cloud.aiplatform.v1.EnvVar env = 5;</code>
@@ -1673,6 +1685,7 @@ public final class PythonPackageSpec extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Environment variables to be passed to the python module.
+     * Maximum limit is 100.
      * </pre>
      *
      * <code>repeated .google.cloud.aiplatform.v1.EnvVar env = 5;</code>
@@ -1692,6 +1705,7 @@ public final class PythonPackageSpec extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Environment variables to be passed to the python module.
+     * Maximum limit is 100.
      * </pre>
      *
      * <code>repeated .google.cloud.aiplatform.v1.EnvVar env = 5;</code>
@@ -1712,6 +1726,7 @@ public final class PythonPackageSpec extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Environment variables to be passed to the python module.
+     * Maximum limit is 100.
      * </pre>
      *
      * <code>repeated .google.cloud.aiplatform.v1.EnvVar env = 5;</code>
@@ -1732,6 +1747,7 @@ public final class PythonPackageSpec extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Environment variables to be passed to the python module.
+     * Maximum limit is 100.
      * </pre>
      *
      * <code>repeated .google.cloud.aiplatform.v1.EnvVar env = 5;</code>
@@ -1751,6 +1767,7 @@ public final class PythonPackageSpec extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Environment variables to be passed to the python module.
+     * Maximum limit is 100.
      * </pre>
      *
      * <code>repeated .google.cloud.aiplatform.v1.EnvVar env = 5;</code>
@@ -1770,6 +1787,7 @@ public final class PythonPackageSpec extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Environment variables to be passed to the python module.
+     * Maximum limit is 100.
      * </pre>
      *
      * <code>repeated .google.cloud.aiplatform.v1.EnvVar env = 5;</code>
@@ -1782,6 +1800,7 @@ public final class PythonPackageSpec extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Environment variables to be passed to the python module.
+     * Maximum limit is 100.
      * </pre>
      *
      * <code>repeated .google.cloud.aiplatform.v1.EnvVar env = 5;</code>
@@ -1798,6 +1817,7 @@ public final class PythonPackageSpec extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Environment variables to be passed to the python module.
+     * Maximum limit is 100.
      * </pre>
      *
      * <code>repeated .google.cloud.aiplatform.v1.EnvVar env = 5;</code>
@@ -1815,6 +1835,7 @@ public final class PythonPackageSpec extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Environment variables to be passed to the python module.
+     * Maximum limit is 100.
      * </pre>
      *
      * <code>repeated .google.cloud.aiplatform.v1.EnvVar env = 5;</code>
@@ -1828,6 +1849,7 @@ public final class PythonPackageSpec extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Environment variables to be passed to the python module.
+     * Maximum limit is 100.
      * </pre>
      *
      * <code>repeated .google.cloud.aiplatform.v1.EnvVar env = 5;</code>
@@ -1841,6 +1863,7 @@ public final class PythonPackageSpec extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Environment variables to be passed to the python module.
+     * Maximum limit is 100.
      * </pre>
      *
      * <code>repeated .google.cloud.aiplatform.v1.EnvVar env = 5;</code>

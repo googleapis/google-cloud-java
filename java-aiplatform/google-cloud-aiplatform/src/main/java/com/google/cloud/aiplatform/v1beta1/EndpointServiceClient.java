@@ -42,8 +42,10 @@ import javax.annotation.Generated;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
- * This class provides the ability to make remote calls to the backing service through method calls
- * that map to API methods. Sample code to get started:
+ * Service Description: A service for managing Vertex AI's Endpoints.
+ *
+ * <p>This class provides the ability to make remote calls to the backing service through method
+ * calls that map to API methods. Sample code to get started:
  *
  * <pre>{@code
  * try (EndpointServiceClient endpointServiceClient = EndpointServiceClient.create()) {

@@ -81,6 +81,31 @@ public interface DatasetOrBuilder
    *
    *
    * <pre>
+   * Optional. The description of the Dataset.
+   * </pre>
+   *
+   * <code>string description = 16 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The description.
+   */
+  java.lang.String getDescription();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The description of the Dataset.
+   * </pre>
+   *
+   * <code>string description = 16 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for description.
+   */
+  com.google.protobuf.ByteString getDescriptionBytes();
+
+  /**
+   *
+   *
+   * <pre>
    * Required. Points to a YAML file stored on Google Cloud Storage describing additional
    * information about the Dataset.
    * The schema is defined as an OpenAPI 3.0.2 Schema Object.

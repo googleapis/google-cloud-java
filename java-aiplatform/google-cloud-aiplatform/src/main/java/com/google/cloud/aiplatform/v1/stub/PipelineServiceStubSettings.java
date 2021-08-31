@@ -460,8 +460,6 @@ public class PipelineServiceStubSettings extends StubSettings<PipelineServiceStu
     static {
       ImmutableMap.Builder<String, ImmutableSet<StatusCode.Code>> definitions =
           ImmutableMap.builder();
-      definitions.put(
-          "no_retry_4_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
       definitions.put("no_retry_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
       RETRYABLE_CODE_DEFINITIONS = definitions.build();
     }
@@ -471,14 +469,6 @@ public class PipelineServiceStubSettings extends StubSettings<PipelineServiceStu
     static {
       ImmutableMap.Builder<String, RetrySettings> definitions = ImmutableMap.builder();
       RetrySettings settings = null;
-      settings =
-          RetrySettings.newBuilder()
-              .setInitialRpcTimeout(Duration.ofMillis(5000L))
-              .setRpcTimeoutMultiplier(1.0)
-              .setMaxRpcTimeout(Duration.ofMillis(5000L))
-              .setTotalTimeout(Duration.ofMillis(5000L))
-              .build();
-      definitions.put("no_retry_4_params", settings);
       settings = RetrySettings.newBuilder().setRpcTimeoutMultiplier(1.0).build();
       definitions.put("no_retry_params", settings);
       RETRY_PARAM_DEFINITIONS = definitions.build();
@@ -567,28 +557,28 @@ public class PipelineServiceStubSettings extends StubSettings<PipelineServiceStu
     private static Builder initDefaults(Builder builder) {
       builder
           .createTrainingPipelineSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_4_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_4_params"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
 
       builder
           .getTrainingPipelineSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_4_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_4_params"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
 
       builder
           .listTrainingPipelinesSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_4_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_4_params"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
 
       builder
           .deleteTrainingPipelineSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_4_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_4_params"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
 
       builder
           .cancelTrainingPipelineSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_4_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_4_params"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
 
       builder
           .createPipelineJobSettings()
@@ -620,8 +610,8 @@ public class PipelineServiceStubSettings extends StubSettings<PipelineServiceStu
           .setInitialCallSettings(
               UnaryCallSettings
                   .<DeleteTrainingPipelineRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
-                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_4_codes"))
-                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_4_params"))
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"))
                   .build())
           .setResponseTransformer(
               ProtoOperationTransformers.ResponseTransformer.create(Empty.class))

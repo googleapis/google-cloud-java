@@ -127,6 +127,22 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
               sliceDimensions_.add(s);
               break;
             }
+          case 66:
+            {
+              com.google.cloud.aiplatform.v1.ModelExplanation.Builder subBuilder = null;
+              if (modelExplanation_ != null) {
+                subBuilder = modelExplanation_.toBuilder();
+              }
+              modelExplanation_ =
+                  input.readMessage(
+                      com.google.cloud.aiplatform.v1.ModelExplanation.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(modelExplanation_);
+                modelExplanation_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -439,6 +455,66 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
     return sliceDimensions_.getByteString(index);
   }
 
+  public static final int MODEL_EXPLANATION_FIELD_NUMBER = 8;
+  private com.google.cloud.aiplatform.v1.ModelExplanation modelExplanation_;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Aggregated explanation metrics for the Model's prediction output over the
+   * data this ModelEvaluation uses. This field is populated only if the Model
+   * is evaluated with explanations, and only for AutoML tabular Models.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1.ModelExplanation model_explanation = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the modelExplanation field is set.
+   */
+  @java.lang.Override
+  public boolean hasModelExplanation() {
+    return modelExplanation_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Aggregated explanation metrics for the Model's prediction output over the
+   * data this ModelEvaluation uses. This field is populated only if the Model
+   * is evaluated with explanations, and only for AutoML tabular Models.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1.ModelExplanation model_explanation = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The modelExplanation.
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1.ModelExplanation getModelExplanation() {
+    return modelExplanation_ == null
+        ? com.google.cloud.aiplatform.v1.ModelExplanation.getDefaultInstance()
+        : modelExplanation_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Aggregated explanation metrics for the Model's prediction output over the
+   * data this ModelEvaluation uses. This field is populated only if the Model
+   * is evaluated with explanations, and only for AutoML tabular Models.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1.ModelExplanation model_explanation = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1.ModelExplanationOrBuilder getModelExplanationOrBuilder() {
+    return getModelExplanation();
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -467,6 +543,9 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
     }
     for (int i = 0; i < sliceDimensions_.size(); i++) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 5, sliceDimensions_.getRaw(i));
+    }
+    if (modelExplanation_ != null) {
+      output.writeMessage(8, getModelExplanation());
     }
     unknownFields.writeTo(output);
   }
@@ -497,6 +576,9 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
       size += dataSize;
       size += 1 * getSliceDimensionsList().size();
     }
+    if (modelExplanation_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(8, getModelExplanation());
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -524,6 +606,10 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
       if (!getCreateTime().equals(other.getCreateTime())) return false;
     }
     if (!getSliceDimensionsList().equals(other.getSliceDimensionsList())) return false;
+    if (hasModelExplanation() != other.hasModelExplanation()) return false;
+    if (hasModelExplanation()) {
+      if (!getModelExplanation().equals(other.getModelExplanation())) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -550,6 +636,10 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
     if (getSliceDimensionsCount() > 0) {
       hash = (37 * hash) + SLICE_DIMENSIONS_FIELD_NUMBER;
       hash = (53 * hash) + getSliceDimensionsList().hashCode();
+    }
+    if (hasModelExplanation()) {
+      hash = (37 * hash) + MODEL_EXPLANATION_FIELD_NUMBER;
+      hash = (53 * hash) + getModelExplanation().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -715,6 +805,12 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
       }
       sliceDimensions_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0_ = (bitField0_ & ~0x00000001);
+      if (modelExplanationBuilder_ == null) {
+        modelExplanation_ = null;
+      } else {
+        modelExplanation_ = null;
+        modelExplanationBuilder_ = null;
+      }
       return this;
     }
 
@@ -760,6 +856,11 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
         bitField0_ = (bitField0_ & ~0x00000001);
       }
       result.sliceDimensions_ = sliceDimensions_;
+      if (modelExplanationBuilder_ == null) {
+        result.modelExplanation_ = modelExplanation_;
+      } else {
+        result.modelExplanation_ = modelExplanationBuilder_.build();
+      }
       onBuilt();
       return result;
     }
@@ -832,6 +933,9 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
           sliceDimensions_.addAll(other.sliceDimensions_);
         }
         onChanged();
+      }
+      if (other.hasModelExplanation()) {
+        mergeModelExplanation(other.getModelExplanation());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -1681,6 +1785,228 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
       sliceDimensions_.add(value);
       onChanged();
       return this;
+    }
+
+    private com.google.cloud.aiplatform.v1.ModelExplanation modelExplanation_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.aiplatform.v1.ModelExplanation,
+            com.google.cloud.aiplatform.v1.ModelExplanation.Builder,
+            com.google.cloud.aiplatform.v1.ModelExplanationOrBuilder>
+        modelExplanationBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Aggregated explanation metrics for the Model's prediction output over the
+     * data this ModelEvaluation uses. This field is populated only if the Model
+     * is evaluated with explanations, and only for AutoML tabular Models.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.ModelExplanation model_explanation = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the modelExplanation field is set.
+     */
+    public boolean hasModelExplanation() {
+      return modelExplanationBuilder_ != null || modelExplanation_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Aggregated explanation metrics for the Model's prediction output over the
+     * data this ModelEvaluation uses. This field is populated only if the Model
+     * is evaluated with explanations, and only for AutoML tabular Models.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.ModelExplanation model_explanation = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The modelExplanation.
+     */
+    public com.google.cloud.aiplatform.v1.ModelExplanation getModelExplanation() {
+      if (modelExplanationBuilder_ == null) {
+        return modelExplanation_ == null
+            ? com.google.cloud.aiplatform.v1.ModelExplanation.getDefaultInstance()
+            : modelExplanation_;
+      } else {
+        return modelExplanationBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Aggregated explanation metrics for the Model's prediction output over the
+     * data this ModelEvaluation uses. This field is populated only if the Model
+     * is evaluated with explanations, and only for AutoML tabular Models.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.ModelExplanation model_explanation = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setModelExplanation(com.google.cloud.aiplatform.v1.ModelExplanation value) {
+      if (modelExplanationBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        modelExplanation_ = value;
+        onChanged();
+      } else {
+        modelExplanationBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Aggregated explanation metrics for the Model's prediction output over the
+     * data this ModelEvaluation uses. This field is populated only if the Model
+     * is evaluated with explanations, and only for AutoML tabular Models.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.ModelExplanation model_explanation = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setModelExplanation(
+        com.google.cloud.aiplatform.v1.ModelExplanation.Builder builderForValue) {
+      if (modelExplanationBuilder_ == null) {
+        modelExplanation_ = builderForValue.build();
+        onChanged();
+      } else {
+        modelExplanationBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Aggregated explanation metrics for the Model's prediction output over the
+     * data this ModelEvaluation uses. This field is populated only if the Model
+     * is evaluated with explanations, and only for AutoML tabular Models.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.ModelExplanation model_explanation = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder mergeModelExplanation(com.google.cloud.aiplatform.v1.ModelExplanation value) {
+      if (modelExplanationBuilder_ == null) {
+        if (modelExplanation_ != null) {
+          modelExplanation_ =
+              com.google.cloud.aiplatform.v1.ModelExplanation.newBuilder(modelExplanation_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          modelExplanation_ = value;
+        }
+        onChanged();
+      } else {
+        modelExplanationBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Aggregated explanation metrics for the Model's prediction output over the
+     * data this ModelEvaluation uses. This field is populated only if the Model
+     * is evaluated with explanations, and only for AutoML tabular Models.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.ModelExplanation model_explanation = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder clearModelExplanation() {
+      if (modelExplanationBuilder_ == null) {
+        modelExplanation_ = null;
+        onChanged();
+      } else {
+        modelExplanation_ = null;
+        modelExplanationBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Aggregated explanation metrics for the Model's prediction output over the
+     * data this ModelEvaluation uses. This field is populated only if the Model
+     * is evaluated with explanations, and only for AutoML tabular Models.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.ModelExplanation model_explanation = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1.ModelExplanation.Builder getModelExplanationBuilder() {
+
+      onChanged();
+      return getModelExplanationFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Aggregated explanation metrics for the Model's prediction output over the
+     * data this ModelEvaluation uses. This field is populated only if the Model
+     * is evaluated with explanations, and only for AutoML tabular Models.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.ModelExplanation model_explanation = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1.ModelExplanationOrBuilder getModelExplanationOrBuilder() {
+      if (modelExplanationBuilder_ != null) {
+        return modelExplanationBuilder_.getMessageOrBuilder();
+      } else {
+        return modelExplanation_ == null
+            ? com.google.cloud.aiplatform.v1.ModelExplanation.getDefaultInstance()
+            : modelExplanation_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Aggregated explanation metrics for the Model's prediction output over the
+     * data this ModelEvaluation uses. This field is populated only if the Model
+     * is evaluated with explanations, and only for AutoML tabular Models.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.ModelExplanation model_explanation = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.aiplatform.v1.ModelExplanation,
+            com.google.cloud.aiplatform.v1.ModelExplanation.Builder,
+            com.google.cloud.aiplatform.v1.ModelExplanationOrBuilder>
+        getModelExplanationFieldBuilder() {
+      if (modelExplanationBuilder_ == null) {
+        modelExplanationBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.aiplatform.v1.ModelExplanation,
+                com.google.cloud.aiplatform.v1.ModelExplanation.Builder,
+                com.google.cloud.aiplatform.v1.ModelExplanationOrBuilder>(
+                getModelExplanation(), getParentForChildren(), isClean());
+        modelExplanation_ = null;
+      }
+      return modelExplanationBuilder_;
     }
 
     @java.lang.Override

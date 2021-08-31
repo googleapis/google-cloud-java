@@ -161,6 +161,7 @@ public interface ContainerSpecOrBuilder
    *
    * <pre>
    * Environment variables to be passed to the container.
+   * Maximum limit is 100.
    * </pre>
    *
    * <code>repeated .google.cloud.aiplatform.v1.EnvVar env = 4;</code>
@@ -171,6 +172,7 @@ public interface ContainerSpecOrBuilder
    *
    * <pre>
    * Environment variables to be passed to the container.
+   * Maximum limit is 100.
    * </pre>
    *
    * <code>repeated .google.cloud.aiplatform.v1.EnvVar env = 4;</code>
@@ -181,6 +183,7 @@ public interface ContainerSpecOrBuilder
    *
    * <pre>
    * Environment variables to be passed to the container.
+   * Maximum limit is 100.
    * </pre>
    *
    * <code>repeated .google.cloud.aiplatform.v1.EnvVar env = 4;</code>
@@ -191,6 +194,7 @@ public interface ContainerSpecOrBuilder
    *
    * <pre>
    * Environment variables to be passed to the container.
+   * Maximum limit is 100.
    * </pre>
    *
    * <code>repeated .google.cloud.aiplatform.v1.EnvVar env = 4;</code>
@@ -201,6 +205,7 @@ public interface ContainerSpecOrBuilder
    *
    * <pre>
    * Environment variables to be passed to the container.
+   * Maximum limit is 100.
    * </pre>
    *
    * <code>repeated .google.cloud.aiplatform.v1.EnvVar env = 4;</code>

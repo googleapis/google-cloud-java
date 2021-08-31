@@ -16,6 +16,7 @@
 
 package com.google.cloud.aiplatform.v1;
 
+import com.google.api.HttpBody;
 import com.google.api.core.BetaApi;
 import com.google.cloud.aiplatform.v1.PredictionServiceGrpc.PredictionServiceImplBase;
 import com.google.protobuf.AbstractMessage;
@@ -74,6 +75,46 @@ public class MockPredictionServiceImpl extends PredictionServiceImplBase {
                   "Unrecognized response type %s for method Predict, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   PredictResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void rawPredict(RawPredictRequest request, StreamObserver<HttpBody> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof HttpBody) {
+      requests.add(request);
+      responseObserver.onNext(((HttpBody) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method RawPredict, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  HttpBody.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void explain(ExplainRequest request, StreamObserver<ExplainResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof ExplainResponse) {
+      requests.add(request);
+      responseObserver.onNext(((ExplainResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method Explain, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  ExplainResponse.class.getName(),
                   Exception.class.getName())));
     }
   }

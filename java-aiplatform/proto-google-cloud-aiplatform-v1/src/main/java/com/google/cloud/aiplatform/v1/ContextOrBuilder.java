@@ -319,4 +319,129 @@ public interface ContextOrBuilder
    * @return The bytes of the parentContexts at the given index.
    */
   com.google.protobuf.ByteString getParentContextsBytes(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * The title of the schema describing the metadata.
+   * Schema title and version is expected to be registered in earlier Create
+   * Schema calls. And both are used together as unique identifiers to identify
+   * schemas within the local metadata store.
+   * </pre>
+   *
+   * <code>string schema_title = 13;</code>
+   *
+   * @return The schemaTitle.
+   */
+  java.lang.String getSchemaTitle();
+  /**
+   *
+   *
+   * <pre>
+   * The title of the schema describing the metadata.
+   * Schema title and version is expected to be registered in earlier Create
+   * Schema calls. And both are used together as unique identifiers to identify
+   * schemas within the local metadata store.
+   * </pre>
+   *
+   * <code>string schema_title = 13;</code>
+   *
+   * @return The bytes for schemaTitle.
+   */
+  com.google.protobuf.ByteString getSchemaTitleBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * The version of the schema in schema_name to use.
+   * Schema title and version is expected to be registered in earlier Create
+   * Schema calls. And both are used together as unique identifiers to identify
+   * schemas within the local metadata store.
+   * </pre>
+   *
+   * <code>string schema_version = 14;</code>
+   *
+   * @return The schemaVersion.
+   */
+  java.lang.String getSchemaVersion();
+  /**
+   *
+   *
+   * <pre>
+   * The version of the schema in schema_name to use.
+   * Schema title and version is expected to be registered in earlier Create
+   * Schema calls. And both are used together as unique identifiers to identify
+   * schemas within the local metadata store.
+   * </pre>
+   *
+   * <code>string schema_version = 14;</code>
+   *
+   * @return The bytes for schemaVersion.
+   */
+  com.google.protobuf.ByteString getSchemaVersionBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Properties of the Context.
+   * The size of this field should not exceed 200KB.
+   * </pre>
+   *
+   * <code>.google.protobuf.Struct metadata = 15;</code>
+   *
+   * @return Whether the metadata field is set.
+   */
+  boolean hasMetadata();
+  /**
+   *
+   *
+   * <pre>
+   * Properties of the Context.
+   * The size of this field should not exceed 200KB.
+   * </pre>
+   *
+   * <code>.google.protobuf.Struct metadata = 15;</code>
+   *
+   * @return The metadata.
+   */
+  com.google.protobuf.Struct getMetadata();
+  /**
+   *
+   *
+   * <pre>
+   * Properties of the Context.
+   * The size of this field should not exceed 200KB.
+   * </pre>
+   *
+   * <code>.google.protobuf.Struct metadata = 15;</code>
+   */
+  com.google.protobuf.StructOrBuilder getMetadataOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Description of the Context
+   * </pre>
+   *
+   * <code>string description = 16;</code>
+   *
+   * @return The description.
+   */
+  java.lang.String getDescription();
+  /**
+   *
+   *
+   * <pre>
+   * Description of the Context
+   * </pre>
+   *
+   * <code>string description = 16;</code>
+   *
+   * @return The bytes for description.
+   */
+  com.google.protobuf.ByteString getDescriptionBytes();
 }

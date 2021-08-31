@@ -42,6 +42,9 @@ public final class Context extends com.google.protobuf.GeneratedMessageV3
     displayName_ = "";
     etag_ = "";
     parentContexts_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    schemaTitle_ = "";
+    schemaVersion_ = "";
+    description_ = "";
   }
 
   @java.lang.Override
@@ -146,6 +149,41 @@ public final class Context extends com.google.protobuf.GeneratedMessageV3
                 mutable_bitField0_ |= 0x00000002;
               }
               parentContexts_.add(s);
+              break;
+            }
+          case 106:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              schemaTitle_ = s;
+              break;
+            }
+          case 114:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              schemaVersion_ = s;
+              break;
+            }
+          case 122:
+            {
+              com.google.protobuf.Struct.Builder subBuilder = null;
+              if (metadata_ != null) {
+                subBuilder = metadata_.toBuilder();
+              }
+              metadata_ = input.readMessage(com.google.protobuf.Struct.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(metadata_);
+                metadata_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+          case 130:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              description_ = s;
               break;
             }
           default:
@@ -636,6 +674,214 @@ public final class Context extends com.google.protobuf.GeneratedMessageV3
     return parentContexts_.getByteString(index);
   }
 
+  public static final int SCHEMA_TITLE_FIELD_NUMBER = 13;
+  private volatile java.lang.Object schemaTitle_;
+  /**
+   *
+   *
+   * <pre>
+   * The title of the schema describing the metadata.
+   * Schema title and version is expected to be registered in earlier Create
+   * Schema calls. And both are used together as unique identifiers to identify
+   * schemas within the local metadata store.
+   * </pre>
+   *
+   * <code>string schema_title = 13;</code>
+   *
+   * @return The schemaTitle.
+   */
+  @java.lang.Override
+  public java.lang.String getSchemaTitle() {
+    java.lang.Object ref = schemaTitle_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      schemaTitle_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The title of the schema describing the metadata.
+   * Schema title and version is expected to be registered in earlier Create
+   * Schema calls. And both are used together as unique identifiers to identify
+   * schemas within the local metadata store.
+   * </pre>
+   *
+   * <code>string schema_title = 13;</code>
+   *
+   * @return The bytes for schemaTitle.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getSchemaTitleBytes() {
+    java.lang.Object ref = schemaTitle_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      schemaTitle_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int SCHEMA_VERSION_FIELD_NUMBER = 14;
+  private volatile java.lang.Object schemaVersion_;
+  /**
+   *
+   *
+   * <pre>
+   * The version of the schema in schema_name to use.
+   * Schema title and version is expected to be registered in earlier Create
+   * Schema calls. And both are used together as unique identifiers to identify
+   * schemas within the local metadata store.
+   * </pre>
+   *
+   * <code>string schema_version = 14;</code>
+   *
+   * @return The schemaVersion.
+   */
+  @java.lang.Override
+  public java.lang.String getSchemaVersion() {
+    java.lang.Object ref = schemaVersion_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      schemaVersion_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The version of the schema in schema_name to use.
+   * Schema title and version is expected to be registered in earlier Create
+   * Schema calls. And both are used together as unique identifiers to identify
+   * schemas within the local metadata store.
+   * </pre>
+   *
+   * <code>string schema_version = 14;</code>
+   *
+   * @return The bytes for schemaVersion.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getSchemaVersionBytes() {
+    java.lang.Object ref = schemaVersion_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      schemaVersion_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int METADATA_FIELD_NUMBER = 15;
+  private com.google.protobuf.Struct metadata_;
+  /**
+   *
+   *
+   * <pre>
+   * Properties of the Context.
+   * The size of this field should not exceed 200KB.
+   * </pre>
+   *
+   * <code>.google.protobuf.Struct metadata = 15;</code>
+   *
+   * @return Whether the metadata field is set.
+   */
+  @java.lang.Override
+  public boolean hasMetadata() {
+    return metadata_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Properties of the Context.
+   * The size of this field should not exceed 200KB.
+   * </pre>
+   *
+   * <code>.google.protobuf.Struct metadata = 15;</code>
+   *
+   * @return The metadata.
+   */
+  @java.lang.Override
+  public com.google.protobuf.Struct getMetadata() {
+    return metadata_ == null ? com.google.protobuf.Struct.getDefaultInstance() : metadata_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Properties of the Context.
+   * The size of this field should not exceed 200KB.
+   * </pre>
+   *
+   * <code>.google.protobuf.Struct metadata = 15;</code>
+   */
+  @java.lang.Override
+  public com.google.protobuf.StructOrBuilder getMetadataOrBuilder() {
+    return getMetadata();
+  }
+
+  public static final int DESCRIPTION_FIELD_NUMBER = 16;
+  private volatile java.lang.Object description_;
+  /**
+   *
+   *
+   * <pre>
+   * Description of the Context
+   * </pre>
+   *
+   * <code>string description = 16;</code>
+   *
+   * @return The description.
+   */
+  @java.lang.Override
+  public java.lang.String getDescription() {
+    java.lang.Object ref = description_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      description_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Description of the Context
+   * </pre>
+   *
+   * <code>string description = 16;</code>
+   *
+   * @return The bytes for description.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getDescriptionBytes() {
+    java.lang.Object ref = description_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      description_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -669,6 +915,18 @@ public final class Context extends com.google.protobuf.GeneratedMessageV3
     }
     for (int i = 0; i < parentContexts_.size(); i++) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 12, parentContexts_.getRaw(i));
+    }
+    if (!getSchemaTitleBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 13, schemaTitle_);
+    }
+    if (!getSchemaVersionBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 14, schemaVersion_);
+    }
+    if (metadata_ != null) {
+      output.writeMessage(15, getMetadata());
+    }
+    if (!getDescriptionBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 16, description_);
     }
     unknownFields.writeTo(output);
   }
@@ -712,6 +970,18 @@ public final class Context extends com.google.protobuf.GeneratedMessageV3
       size += dataSize;
       size += 1 * getParentContextsList().size();
     }
+    if (!getSchemaTitleBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(13, schemaTitle_);
+    }
+    if (!getSchemaVersionBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(14, schemaVersion_);
+    }
+    if (metadata_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(15, getMetadata());
+    }
+    if (!getDescriptionBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(16, description_);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -740,6 +1010,13 @@ public final class Context extends com.google.protobuf.GeneratedMessageV3
       if (!getUpdateTime().equals(other.getUpdateTime())) return false;
     }
     if (!getParentContextsList().equals(other.getParentContextsList())) return false;
+    if (!getSchemaTitle().equals(other.getSchemaTitle())) return false;
+    if (!getSchemaVersion().equals(other.getSchemaVersion())) return false;
+    if (hasMetadata() != other.hasMetadata()) return false;
+    if (hasMetadata()) {
+      if (!getMetadata().equals(other.getMetadata())) return false;
+    }
+    if (!getDescription().equals(other.getDescription())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -773,6 +1050,16 @@ public final class Context extends com.google.protobuf.GeneratedMessageV3
       hash = (37 * hash) + PARENT_CONTEXTS_FIELD_NUMBER;
       hash = (53 * hash) + getParentContextsList().hashCode();
     }
+    hash = (37 * hash) + SCHEMA_TITLE_FIELD_NUMBER;
+    hash = (53 * hash) + getSchemaTitle().hashCode();
+    hash = (37 * hash) + SCHEMA_VERSION_FIELD_NUMBER;
+    hash = (53 * hash) + getSchemaVersion().hashCode();
+    if (hasMetadata()) {
+      hash = (37 * hash) + METADATA_FIELD_NUMBER;
+      hash = (53 * hash) + getMetadata().hashCode();
+    }
+    hash = (37 * hash) + DESCRIPTION_FIELD_NUMBER;
+    hash = (53 * hash) + getDescription().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -959,6 +1246,18 @@ public final class Context extends com.google.protobuf.GeneratedMessageV3
       }
       parentContexts_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0_ = (bitField0_ & ~0x00000002);
+      schemaTitle_ = "";
+
+      schemaVersion_ = "";
+
+      if (metadataBuilder_ == null) {
+        metadata_ = null;
+      } else {
+        metadata_ = null;
+        metadataBuilder_ = null;
+      }
+      description_ = "";
+
       return this;
     }
 
@@ -1007,6 +1306,14 @@ public final class Context extends com.google.protobuf.GeneratedMessageV3
         bitField0_ = (bitField0_ & ~0x00000002);
       }
       result.parentContexts_ = parentContexts_;
+      result.schemaTitle_ = schemaTitle_;
+      result.schemaVersion_ = schemaVersion_;
+      if (metadataBuilder_ == null) {
+        result.metadata_ = metadata_;
+      } else {
+        result.metadata_ = metadataBuilder_.build();
+      }
+      result.description_ = description_;
       onBuilt();
       return result;
     }
@@ -1083,6 +1390,21 @@ public final class Context extends com.google.protobuf.GeneratedMessageV3
           ensureParentContextsIsMutable();
           parentContexts_.addAll(other.parentContexts_);
         }
+        onChanged();
+      }
+      if (!other.getSchemaTitle().isEmpty()) {
+        schemaTitle_ = other.schemaTitle_;
+        onChanged();
+      }
+      if (!other.getSchemaVersion().isEmpty()) {
+        schemaVersion_ = other.schemaVersion_;
+        onChanged();
+      }
+      if (other.hasMetadata()) {
+        mergeMetadata(other.getMetadata());
+      }
+      if (!other.getDescription().isEmpty()) {
+        description_ = other.description_;
         onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
@@ -2229,6 +2551,542 @@ public final class Context extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       ensureParentContextsIsMutable();
       parentContexts_.add(value);
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object schemaTitle_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * The title of the schema describing the metadata.
+     * Schema title and version is expected to be registered in earlier Create
+     * Schema calls. And both are used together as unique identifiers to identify
+     * schemas within the local metadata store.
+     * </pre>
+     *
+     * <code>string schema_title = 13;</code>
+     *
+     * @return The schemaTitle.
+     */
+    public java.lang.String getSchemaTitle() {
+      java.lang.Object ref = schemaTitle_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        schemaTitle_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The title of the schema describing the metadata.
+     * Schema title and version is expected to be registered in earlier Create
+     * Schema calls. And both are used together as unique identifiers to identify
+     * schemas within the local metadata store.
+     * </pre>
+     *
+     * <code>string schema_title = 13;</code>
+     *
+     * @return The bytes for schemaTitle.
+     */
+    public com.google.protobuf.ByteString getSchemaTitleBytes() {
+      java.lang.Object ref = schemaTitle_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        schemaTitle_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The title of the schema describing the metadata.
+     * Schema title and version is expected to be registered in earlier Create
+     * Schema calls. And both are used together as unique identifiers to identify
+     * schemas within the local metadata store.
+     * </pre>
+     *
+     * <code>string schema_title = 13;</code>
+     *
+     * @param value The schemaTitle to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSchemaTitle(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+
+      schemaTitle_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The title of the schema describing the metadata.
+     * Schema title and version is expected to be registered in earlier Create
+     * Schema calls. And both are used together as unique identifiers to identify
+     * schemas within the local metadata store.
+     * </pre>
+     *
+     * <code>string schema_title = 13;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearSchemaTitle() {
+
+      schemaTitle_ = getDefaultInstance().getSchemaTitle();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The title of the schema describing the metadata.
+     * Schema title and version is expected to be registered in earlier Create
+     * Schema calls. And both are used together as unique identifiers to identify
+     * schemas within the local metadata store.
+     * </pre>
+     *
+     * <code>string schema_title = 13;</code>
+     *
+     * @param value The bytes for schemaTitle to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSchemaTitleBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
+      schemaTitle_ = value;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object schemaVersion_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * The version of the schema in schema_name to use.
+     * Schema title and version is expected to be registered in earlier Create
+     * Schema calls. And both are used together as unique identifiers to identify
+     * schemas within the local metadata store.
+     * </pre>
+     *
+     * <code>string schema_version = 14;</code>
+     *
+     * @return The schemaVersion.
+     */
+    public java.lang.String getSchemaVersion() {
+      java.lang.Object ref = schemaVersion_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        schemaVersion_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The version of the schema in schema_name to use.
+     * Schema title and version is expected to be registered in earlier Create
+     * Schema calls. And both are used together as unique identifiers to identify
+     * schemas within the local metadata store.
+     * </pre>
+     *
+     * <code>string schema_version = 14;</code>
+     *
+     * @return The bytes for schemaVersion.
+     */
+    public com.google.protobuf.ByteString getSchemaVersionBytes() {
+      java.lang.Object ref = schemaVersion_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        schemaVersion_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The version of the schema in schema_name to use.
+     * Schema title and version is expected to be registered in earlier Create
+     * Schema calls. And both are used together as unique identifiers to identify
+     * schemas within the local metadata store.
+     * </pre>
+     *
+     * <code>string schema_version = 14;</code>
+     *
+     * @param value The schemaVersion to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSchemaVersion(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+
+      schemaVersion_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The version of the schema in schema_name to use.
+     * Schema title and version is expected to be registered in earlier Create
+     * Schema calls. And both are used together as unique identifiers to identify
+     * schemas within the local metadata store.
+     * </pre>
+     *
+     * <code>string schema_version = 14;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearSchemaVersion() {
+
+      schemaVersion_ = getDefaultInstance().getSchemaVersion();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The version of the schema in schema_name to use.
+     * Schema title and version is expected to be registered in earlier Create
+     * Schema calls. And both are used together as unique identifiers to identify
+     * schemas within the local metadata store.
+     * </pre>
+     *
+     * <code>string schema_version = 14;</code>
+     *
+     * @param value The bytes for schemaVersion to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSchemaVersionBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
+      schemaVersion_ = value;
+      onChanged();
+      return this;
+    }
+
+    private com.google.protobuf.Struct metadata_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.Struct,
+            com.google.protobuf.Struct.Builder,
+            com.google.protobuf.StructOrBuilder>
+        metadataBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Properties of the Context.
+     * The size of this field should not exceed 200KB.
+     * </pre>
+     *
+     * <code>.google.protobuf.Struct metadata = 15;</code>
+     *
+     * @return Whether the metadata field is set.
+     */
+    public boolean hasMetadata() {
+      return metadataBuilder_ != null || metadata_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Properties of the Context.
+     * The size of this field should not exceed 200KB.
+     * </pre>
+     *
+     * <code>.google.protobuf.Struct metadata = 15;</code>
+     *
+     * @return The metadata.
+     */
+    public com.google.protobuf.Struct getMetadata() {
+      if (metadataBuilder_ == null) {
+        return metadata_ == null ? com.google.protobuf.Struct.getDefaultInstance() : metadata_;
+      } else {
+        return metadataBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Properties of the Context.
+     * The size of this field should not exceed 200KB.
+     * </pre>
+     *
+     * <code>.google.protobuf.Struct metadata = 15;</code>
+     */
+    public Builder setMetadata(com.google.protobuf.Struct value) {
+      if (metadataBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        metadata_ = value;
+        onChanged();
+      } else {
+        metadataBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Properties of the Context.
+     * The size of this field should not exceed 200KB.
+     * </pre>
+     *
+     * <code>.google.protobuf.Struct metadata = 15;</code>
+     */
+    public Builder setMetadata(com.google.protobuf.Struct.Builder builderForValue) {
+      if (metadataBuilder_ == null) {
+        metadata_ = builderForValue.build();
+        onChanged();
+      } else {
+        metadataBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Properties of the Context.
+     * The size of this field should not exceed 200KB.
+     * </pre>
+     *
+     * <code>.google.protobuf.Struct metadata = 15;</code>
+     */
+    public Builder mergeMetadata(com.google.protobuf.Struct value) {
+      if (metadataBuilder_ == null) {
+        if (metadata_ != null) {
+          metadata_ =
+              com.google.protobuf.Struct.newBuilder(metadata_).mergeFrom(value).buildPartial();
+        } else {
+          metadata_ = value;
+        }
+        onChanged();
+      } else {
+        metadataBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Properties of the Context.
+     * The size of this field should not exceed 200KB.
+     * </pre>
+     *
+     * <code>.google.protobuf.Struct metadata = 15;</code>
+     */
+    public Builder clearMetadata() {
+      if (metadataBuilder_ == null) {
+        metadata_ = null;
+        onChanged();
+      } else {
+        metadata_ = null;
+        metadataBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Properties of the Context.
+     * The size of this field should not exceed 200KB.
+     * </pre>
+     *
+     * <code>.google.protobuf.Struct metadata = 15;</code>
+     */
+    public com.google.protobuf.Struct.Builder getMetadataBuilder() {
+
+      onChanged();
+      return getMetadataFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Properties of the Context.
+     * The size of this field should not exceed 200KB.
+     * </pre>
+     *
+     * <code>.google.protobuf.Struct metadata = 15;</code>
+     */
+    public com.google.protobuf.StructOrBuilder getMetadataOrBuilder() {
+      if (metadataBuilder_ != null) {
+        return metadataBuilder_.getMessageOrBuilder();
+      } else {
+        return metadata_ == null ? com.google.protobuf.Struct.getDefaultInstance() : metadata_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Properties of the Context.
+     * The size of this field should not exceed 200KB.
+     * </pre>
+     *
+     * <code>.google.protobuf.Struct metadata = 15;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.Struct,
+            com.google.protobuf.Struct.Builder,
+            com.google.protobuf.StructOrBuilder>
+        getMetadataFieldBuilder() {
+      if (metadataBuilder_ == null) {
+        metadataBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.protobuf.Struct,
+                com.google.protobuf.Struct.Builder,
+                com.google.protobuf.StructOrBuilder>(
+                getMetadata(), getParentForChildren(), isClean());
+        metadata_ = null;
+      }
+      return metadataBuilder_;
+    }
+
+    private java.lang.Object description_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Description of the Context
+     * </pre>
+     *
+     * <code>string description = 16;</code>
+     *
+     * @return The description.
+     */
+    public java.lang.String getDescription() {
+      java.lang.Object ref = description_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        description_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Description of the Context
+     * </pre>
+     *
+     * <code>string description = 16;</code>
+     *
+     * @return The bytes for description.
+     */
+    public com.google.protobuf.ByteString getDescriptionBytes() {
+      java.lang.Object ref = description_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        description_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Description of the Context
+     * </pre>
+     *
+     * <code>string description = 16;</code>
+     *
+     * @param value The description to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDescription(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+
+      description_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Description of the Context
+     * </pre>
+     *
+     * <code>string description = 16;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearDescription() {
+
+      description_ = getDefaultInstance().getDescription();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Description of the Context
+     * </pre>
+     *
+     * <code>string description = 16;</code>
+     *
+     * @param value The bytes for description to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDescriptionBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
+      description_ = value;
       onChanged();
       return this;
     }

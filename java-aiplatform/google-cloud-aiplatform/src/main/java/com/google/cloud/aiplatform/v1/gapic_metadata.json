@@ -74,6 +74,60 @@
         }
       }
     },
+    "IndexEndpointService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "IndexEndpointServiceClient",
+          "rpcs": {
+            "CreateIndexEndpoint": {
+              "methods": ["createIndexEndpointAsync", "createIndexEndpointAsync", "createIndexEndpointAsync", "createIndexEndpointOperationCallable", "createIndexEndpointCallable"]
+            },
+            "DeleteIndexEndpoint": {
+              "methods": ["deleteIndexEndpointAsync", "deleteIndexEndpointAsync", "deleteIndexEndpointAsync", "deleteIndexEndpointOperationCallable", "deleteIndexEndpointCallable"]
+            },
+            "DeployIndex": {
+              "methods": ["deployIndexAsync", "deployIndexAsync", "deployIndexAsync", "deployIndexOperationCallable", "deployIndexCallable"]
+            },
+            "GetIndexEndpoint": {
+              "methods": ["getIndexEndpoint", "getIndexEndpoint", "getIndexEndpoint", "getIndexEndpointCallable"]
+            },
+            "ListIndexEndpoints": {
+              "methods": ["listIndexEndpoints", "listIndexEndpoints", "listIndexEndpoints", "listIndexEndpointsPagedCallable", "listIndexEndpointsCallable"]
+            },
+            "UndeployIndex": {
+              "methods": ["undeployIndexAsync", "undeployIndexAsync", "undeployIndexAsync", "undeployIndexOperationCallable", "undeployIndexCallable"]
+            },
+            "UpdateIndexEndpoint": {
+              "methods": ["updateIndexEndpoint", "updateIndexEndpoint", "updateIndexEndpointCallable"]
+            }
+          }
+        }
+      }
+    },
+    "IndexService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "IndexServiceClient",
+          "rpcs": {
+            "CreateIndex": {
+              "methods": ["createIndexAsync", "createIndexAsync", "createIndexAsync", "createIndexOperationCallable", "createIndexCallable"]
+            },
+            "DeleteIndex": {
+              "methods": ["deleteIndexAsync", "deleteIndexAsync", "deleteIndexAsync", "deleteIndexOperationCallable", "deleteIndexCallable"]
+            },
+            "GetIndex": {
+              "methods": ["getIndex", "getIndex", "getIndex", "getIndexCallable"]
+            },
+            "ListIndexes": {
+              "methods": ["listIndexes", "listIndexes", "listIndexes", "listIndexesPagedCallable", "listIndexesCallable"]
+            },
+            "UpdateIndex": {
+              "methods": ["updateIndexAsync", "updateIndexAsync", "updateIndexOperationCallable", "updateIndexCallable"]
+            }
+          }
+        }
+      }
+    },
     "JobService": {
       "clients": {
         "grpc": {
@@ -103,6 +157,9 @@
             "CreateHyperparameterTuningJob": {
               "methods": ["createHyperparameterTuningJob", "createHyperparameterTuningJob", "createHyperparameterTuningJob", "createHyperparameterTuningJobCallable"]
             },
+            "CreateModelDeploymentMonitoringJob": {
+              "methods": ["createModelDeploymentMonitoringJob", "createModelDeploymentMonitoringJob", "createModelDeploymentMonitoringJob", "createModelDeploymentMonitoringJobCallable"]
+            },
             "DeleteBatchPredictionJob": {
               "methods": ["deleteBatchPredictionJobAsync", "deleteBatchPredictionJobAsync", "deleteBatchPredictionJobAsync", "deleteBatchPredictionJobOperationCallable", "deleteBatchPredictionJobCallable"]
             },
@@ -114,6 +171,9 @@
             },
             "DeleteHyperparameterTuningJob": {
               "methods": ["deleteHyperparameterTuningJobAsync", "deleteHyperparameterTuningJobAsync", "deleteHyperparameterTuningJobAsync", "deleteHyperparameterTuningJobOperationCallable", "deleteHyperparameterTuningJobCallable"]
+            },
+            "DeleteModelDeploymentMonitoringJob": {
+              "methods": ["deleteModelDeploymentMonitoringJobAsync", "deleteModelDeploymentMonitoringJobAsync", "deleteModelDeploymentMonitoringJobAsync", "deleteModelDeploymentMonitoringJobOperationCallable", "deleteModelDeploymentMonitoringJobCallable"]
             },
             "GetBatchPredictionJob": {
               "methods": ["getBatchPredictionJob", "getBatchPredictionJob", "getBatchPredictionJob", "getBatchPredictionJobCallable"]
@@ -127,6 +187,9 @@
             "GetHyperparameterTuningJob": {
               "methods": ["getHyperparameterTuningJob", "getHyperparameterTuningJob", "getHyperparameterTuningJob", "getHyperparameterTuningJobCallable"]
             },
+            "GetModelDeploymentMonitoringJob": {
+              "methods": ["getModelDeploymentMonitoringJob", "getModelDeploymentMonitoringJob", "getModelDeploymentMonitoringJob", "getModelDeploymentMonitoringJobCallable"]
+            },
             "ListBatchPredictionJobs": {
               "methods": ["listBatchPredictionJobs", "listBatchPredictionJobs", "listBatchPredictionJobs", "listBatchPredictionJobsPagedCallable", "listBatchPredictionJobsCallable"]
             },
@@ -138,6 +201,21 @@
             },
             "ListHyperparameterTuningJobs": {
               "methods": ["listHyperparameterTuningJobs", "listHyperparameterTuningJobs", "listHyperparameterTuningJobs", "listHyperparameterTuningJobsPagedCallable", "listHyperparameterTuningJobsCallable"]
+            },
+            "ListModelDeploymentMonitoringJobs": {
+              "methods": ["listModelDeploymentMonitoringJobs", "listModelDeploymentMonitoringJobs", "listModelDeploymentMonitoringJobs", "listModelDeploymentMonitoringJobsPagedCallable", "listModelDeploymentMonitoringJobsCallable"]
+            },
+            "PauseModelDeploymentMonitoringJob": {
+              "methods": ["pauseModelDeploymentMonitoringJob", "pauseModelDeploymentMonitoringJob", "pauseModelDeploymentMonitoringJob", "pauseModelDeploymentMonitoringJobCallable"]
+            },
+            "ResumeModelDeploymentMonitoringJob": {
+              "methods": ["resumeModelDeploymentMonitoringJob", "resumeModelDeploymentMonitoringJob", "resumeModelDeploymentMonitoringJob", "resumeModelDeploymentMonitoringJobCallable"]
+            },
+            "SearchModelDeploymentMonitoringStatsAnomalies": {
+              "methods": ["searchModelDeploymentMonitoringStatsAnomalies", "searchModelDeploymentMonitoringStatsAnomalies", "searchModelDeploymentMonitoringStatsAnomalies", "searchModelDeploymentMonitoringStatsAnomaliesPagedCallable", "searchModelDeploymentMonitoringStatsAnomaliesCallable"]
+            },
+            "UpdateModelDeploymentMonitoringJob": {
+              "methods": ["updateModelDeploymentMonitoringJobAsync", "updateModelDeploymentMonitoringJobAsync", "updateModelDeploymentMonitoringJobOperationCallable", "updateModelDeploymentMonitoringJobCallable"]
             }
           }
         }
@@ -241,8 +319,14 @@
         "grpc": {
           "libraryClient": "PredictionServiceClient",
           "rpcs": {
+            "Explain": {
+              "methods": ["explain", "explain", "explain", "explainCallable"]
+            },
             "Predict": {
               "methods": ["predict", "predict", "predict", "predictCallable"]
+            },
+            "RawPredict": {
+              "methods": ["rawPredict", "rawPredict", "rawPredict", "rawPredictCallable"]
             }
           }
         }

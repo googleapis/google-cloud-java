@@ -22,8 +22,8 @@ package com.google.cloud.aiplatform.v1beta1;
  *
  *
  * <pre>
- * The [ExplanationSpec][google.cloud.aiplatform.v1beta1.ExplanationSpec] entries that can be overridden at [online
- * explanation][PredictionService.Explain][google.cloud.aiplatform.v1beta1.PredictionService.Explain] time.
+ * The [ExplanationSpec][google.cloud.aiplatform.v1beta1.ExplanationSpec] entries that can be overridden at
+ * [online explanation][google.cloud.aiplatform.v1beta1.PredictionService.Explain] time.
  * </pre>
  *
  * Protobuf type {@code google.cloud.aiplatform.v1beta1.ExplanationSpecOverride}
@@ -425,8 +425,8 @@ public final class ExplanationSpecOverride extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * The [ExplanationSpec][google.cloud.aiplatform.v1beta1.ExplanationSpec] entries that can be overridden at [online
-   * explanation][PredictionService.Explain][google.cloud.aiplatform.v1beta1.PredictionService.Explain] time.
+   * The [ExplanationSpec][google.cloud.aiplatform.v1beta1.ExplanationSpec] entries that can be overridden at
+   * [online explanation][google.cloud.aiplatform.v1beta1.PredictionService.Explain] time.
    * </pre>
    *
    * Protobuf type {@code google.cloud.aiplatform.v1beta1.ExplanationSpecOverride}

@@ -172,8 +172,7 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
      * Baseline inputs for this feature.
      * If no baseline is specified, Vertex AI chooses the baseline for this
      * feature. If multiple baselines are specified, Vertex AI returns the
-     * average attributions across them in
-     * [Attributions.baseline_attribution][].
+     * average attributions across them in [Attribution.feature_attributions][google.cloud.aiplatform.v1beta1.Attribution.feature_attributions].
      * For Vertex AI-provided Tensorflow images (both 1.x and 2.x), the shape
      * of each baseline must match the shape of the input tensor. If a scalar is
      * provided, we broadcast to the same shape as the input tensor.
@@ -196,8 +195,7 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
      * Baseline inputs for this feature.
      * If no baseline is specified, Vertex AI chooses the baseline for this
      * feature. If multiple baselines are specified, Vertex AI returns the
-     * average attributions across them in
-     * [Attributions.baseline_attribution][].
+     * average attributions across them in [Attribution.feature_attributions][google.cloud.aiplatform.v1beta1.Attribution.feature_attributions].
      * For Vertex AI-provided Tensorflow images (both 1.x and 2.x), the shape
      * of each baseline must match the shape of the input tensor. If a scalar is
      * provided, we broadcast to the same shape as the input tensor.
@@ -220,8 +218,7 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
      * Baseline inputs for this feature.
      * If no baseline is specified, Vertex AI chooses the baseline for this
      * feature. If multiple baselines are specified, Vertex AI returns the
-     * average attributions across them in
-     * [Attributions.baseline_attribution][].
+     * average attributions across them in [Attribution.feature_attributions][google.cloud.aiplatform.v1beta1.Attribution.feature_attributions].
      * For Vertex AI-provided Tensorflow images (both 1.x and 2.x), the shape
      * of each baseline must match the shape of the input tensor. If a scalar is
      * provided, we broadcast to the same shape as the input tensor.
@@ -244,8 +241,7 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
      * Baseline inputs for this feature.
      * If no baseline is specified, Vertex AI chooses the baseline for this
      * feature. If multiple baselines are specified, Vertex AI returns the
-     * average attributions across them in
-     * [Attributions.baseline_attribution][].
+     * average attributions across them in [Attribution.feature_attributions][google.cloud.aiplatform.v1beta1.Attribution.feature_attributions].
      * For Vertex AI-provided Tensorflow images (both 1.x and 2.x), the shape
      * of each baseline must match the shape of the input tensor. If a scalar is
      * provided, we broadcast to the same shape as the input tensor.
@@ -268,8 +264,7 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
      * Baseline inputs for this feature.
      * If no baseline is specified, Vertex AI chooses the baseline for this
      * feature. If multiple baselines are specified, Vertex AI returns the
-     * average attributions across them in
-     * [Attributions.baseline_attribution][].
+     * average attributions across them in [Attribution.feature_attributions][google.cloud.aiplatform.v1beta1.Attribution.feature_attributions].
      * For Vertex AI-provided Tensorflow images (both 1.x and 2.x), the shape
      * of each baseline must match the shape of the input tensor. If a scalar is
      * provided, we broadcast to the same shape as the input tensor.
@@ -542,10 +537,10 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Encoded tensor is a transformation of the input tensor. Must be provided
-     * if choosing [Integrated Gradients
-     * attribution][ExplanationParameters.integrated_gradients_attribution] or
-     * [XRAI attribution][google.cloud.aiplatform.v1beta1.ExplanationParameters.xrai_attribution]
-     * and the input tensor is not differentiable.
+     * if choosing
+     * [Integrated Gradients attribution][google.cloud.aiplatform.v1beta1.ExplanationParameters.integrated_gradients_attribution]
+     * or [XRAI attribution][google.cloud.aiplatform.v1beta1.ExplanationParameters.xrai_attribution] and the
+     * input tensor is not differentiable.
      * An encoded tensor is generated if the input tensor is encoded by a lookup
      * table.
      * </pre>
@@ -560,10 +555,10 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Encoded tensor is a transformation of the input tensor. Must be provided
-     * if choosing [Integrated Gradients
-     * attribution][ExplanationParameters.integrated_gradients_attribution] or
-     * [XRAI attribution][google.cloud.aiplatform.v1beta1.ExplanationParameters.xrai_attribution]
-     * and the input tensor is not differentiable.
+     * if choosing
+     * [Integrated Gradients attribution][google.cloud.aiplatform.v1beta1.ExplanationParameters.integrated_gradients_attribution]
+     * or [XRAI attribution][google.cloud.aiplatform.v1beta1.ExplanationParameters.xrai_attribution] and the
+     * input tensor is not differentiable.
      * An encoded tensor is generated if the input tensor is encoded by a lookup
      * table.
      * </pre>
@@ -690,9 +685,8 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
      * Name of the group that the input belongs to. Features with the same group
      * name will be treated as one feature when computing attributions. Features
      * grouped together can have different shapes in value. If provided, there
-     * will be one single attribution generated in [
-     * featureAttributions][Attribution.feature_attributions], keyed by the
-     * group name.
+     * will be one single attribution generated in
+     * [Attribution.feature_attributions][google.cloud.aiplatform.v1beta1.Attribution.feature_attributions], keyed by the group name.
      * </pre>
      *
      * <code>string group_name = 12;</code>
@@ -707,9 +701,8 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
      * Name of the group that the input belongs to. Features with the same group
      * name will be treated as one feature when computing attributions. Features
      * grouped together can have different shapes in value. If provided, there
-     * will be one single attribution generated in [
-     * featureAttributions][Attribution.feature_attributions], keyed by the
-     * group name.
+     * will be one single attribution generated in
+     * [Attribution.feature_attributions][google.cloud.aiplatform.v1beta1.Attribution.feature_attributions], keyed by the group name.
      * </pre>
      *
      * <code>string group_name = 12;</code>
@@ -948,8 +941,7 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Defines how the feature is encoded to [encoded_tensor][]. Defaults to
-     * IDENTITY.
+     * Defines how a feature is encoded. Defaults to IDENTITY.
      * </pre>
      *
      * Protobuf enum {@code
@@ -2240,11 +2232,10 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
        *
        *
        * <pre>
-       * Type of the image visualization. Only applicable to [Integrated
-       * Gradients attribution]
-       * [ExplanationParameters.integrated_gradients_attribution]. OUTLINES
-       * shows regions of attribution, while PIXELS shows per-pixel attribution.
-       * Defaults to OUTLINES.
+       * Type of the image visualization. Only applicable to
+       * [Integrated Gradients attribution][google.cloud.aiplatform.v1beta1.ExplanationParameters.integrated_gradients_attribution].
+       * OUTLINES shows regions of attribution, while PIXELS shows per-pixel
+       * attribution. Defaults to OUTLINES.
        * </pre>
        *
        * <code>
@@ -2258,11 +2249,10 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
        *
        *
        * <pre>
-       * Type of the image visualization. Only applicable to [Integrated
-       * Gradients attribution]
-       * [ExplanationParameters.integrated_gradients_attribution]. OUTLINES
-       * shows regions of attribution, while PIXELS shows per-pixel attribution.
-       * Defaults to OUTLINES.
+       * Type of the image visualization. Only applicable to
+       * [Integrated Gradients attribution][google.cloud.aiplatform.v1beta1.ExplanationParameters.integrated_gradients_attribution].
+       * OUTLINES shows regions of attribution, while PIXELS shows per-pixel
+       * attribution. Defaults to OUTLINES.
        * </pre>
        *
        * <code>
@@ -2311,8 +2301,8 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
        *
        * <pre>
        * The color scheme used for the highlighted areas.
-       * Defaults to PINK_GREEN for [Integrated Gradients
-       * attribution][ExplanationParameters.integrated_gradients_attribution],
+       * Defaults to PINK_GREEN for
+       * [Integrated Gradients attribution][google.cloud.aiplatform.v1beta1.ExplanationParameters.integrated_gradients_attribution],
        * which shows positive attributions in green and negative in pink.
        * Defaults to VIRIDIS for
        * [XRAI attribution][google.cloud.aiplatform.v1beta1.ExplanationParameters.xrai_attribution], which
@@ -2332,8 +2322,8 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
        *
        * <pre>
        * The color scheme used for the highlighted areas.
-       * Defaults to PINK_GREEN for [Integrated Gradients
-       * attribution][ExplanationParameters.integrated_gradients_attribution],
+       * Defaults to PINK_GREEN for
+       * [Integrated Gradients attribution][google.cloud.aiplatform.v1beta1.ExplanationParameters.integrated_gradients_attribution],
        * which shows positive attributions in green and negative in pink.
        * Defaults to VIRIDIS for
        * [XRAI attribution][google.cloud.aiplatform.v1beta1.ExplanationParameters.xrai_attribution], which
@@ -2551,9 +2541,8 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
        *
        *
        * <pre>
-       * Type of the image visualization. Only applicable to [Integrated
-       * Gradients attribution]
-       * [ExplanationParameters.integrated_gradients_attribution].
+       * Type of the image visualization. Only applicable to
+       * [Integrated Gradients attribution][google.cloud.aiplatform.v1beta1.ExplanationParameters.integrated_gradients_attribution].
        * </pre>
        *
        * Protobuf enum {@code
@@ -3374,11 +3363,10 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
        *
        *
        * <pre>
-       * Type of the image visualization. Only applicable to [Integrated
-       * Gradients attribution]
-       * [ExplanationParameters.integrated_gradients_attribution]. OUTLINES
-       * shows regions of attribution, while PIXELS shows per-pixel attribution.
-       * Defaults to OUTLINES.
+       * Type of the image visualization. Only applicable to
+       * [Integrated Gradients attribution][google.cloud.aiplatform.v1beta1.ExplanationParameters.integrated_gradients_attribution].
+       * OUTLINES shows regions of attribution, while PIXELS shows per-pixel
+       * attribution. Defaults to OUTLINES.
        * </pre>
        *
        * <code>
@@ -3395,11 +3383,10 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
        *
        *
        * <pre>
-       * Type of the image visualization. Only applicable to [Integrated
-       * Gradients attribution]
-       * [ExplanationParameters.integrated_gradients_attribution]. OUTLINES
-       * shows regions of attribution, while PIXELS shows per-pixel attribution.
-       * Defaults to OUTLINES.
+       * Type of the image visualization. Only applicable to
+       * [Integrated Gradients attribution][google.cloud.aiplatform.v1beta1.ExplanationParameters.integrated_gradients_attribution].
+       * OUTLINES shows regions of attribution, while PIXELS shows per-pixel
+       * attribution. Defaults to OUTLINES.
        * </pre>
        *
        * <code>
@@ -3479,8 +3466,8 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
        *
        * <pre>
        * The color scheme used for the highlighted areas.
-       * Defaults to PINK_GREEN for [Integrated Gradients
-       * attribution][ExplanationParameters.integrated_gradients_attribution],
+       * Defaults to PINK_GREEN for
+       * [Integrated Gradients attribution][google.cloud.aiplatform.v1beta1.ExplanationParameters.integrated_gradients_attribution],
        * which shows positive attributions in green and negative in pink.
        * Defaults to VIRIDIS for
        * [XRAI attribution][google.cloud.aiplatform.v1beta1.ExplanationParameters.xrai_attribution], which
@@ -3503,8 +3490,8 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
        *
        * <pre>
        * The color scheme used for the highlighted areas.
-       * Defaults to PINK_GREEN for [Integrated Gradients
-       * attribution][ExplanationParameters.integrated_gradients_attribution],
+       * Defaults to PINK_GREEN for
+       * [Integrated Gradients attribution][google.cloud.aiplatform.v1beta1.ExplanationParameters.integrated_gradients_attribution],
        * which shows positive attributions in green and negative in pink.
        * Defaults to VIRIDIS for
        * [XRAI attribution][google.cloud.aiplatform.v1beta1.ExplanationParameters.xrai_attribution], which
@@ -4101,11 +4088,10 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
          *
          *
          * <pre>
-         * Type of the image visualization. Only applicable to [Integrated
-         * Gradients attribution]
-         * [ExplanationParameters.integrated_gradients_attribution]. OUTLINES
-         * shows regions of attribution, while PIXELS shows per-pixel attribution.
-         * Defaults to OUTLINES.
+         * Type of the image visualization. Only applicable to
+         * [Integrated Gradients attribution][google.cloud.aiplatform.v1beta1.ExplanationParameters.integrated_gradients_attribution].
+         * OUTLINES shows regions of attribution, while PIXELS shows per-pixel
+         * attribution. Defaults to OUTLINES.
          * </pre>
          *
          * <code>
@@ -4122,11 +4108,10 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
          *
          *
          * <pre>
-         * Type of the image visualization. Only applicable to [Integrated
-         * Gradients attribution]
-         * [ExplanationParameters.integrated_gradients_attribution]. OUTLINES
-         * shows regions of attribution, while PIXELS shows per-pixel attribution.
-         * Defaults to OUTLINES.
+         * Type of the image visualization. Only applicable to
+         * [Integrated Gradients attribution][google.cloud.aiplatform.v1beta1.ExplanationParameters.integrated_gradients_attribution].
+         * OUTLINES shows regions of attribution, while PIXELS shows per-pixel
+         * attribution. Defaults to OUTLINES.
          * </pre>
          *
          * <code>
@@ -4146,11 +4131,10 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
          *
          *
          * <pre>
-         * Type of the image visualization. Only applicable to [Integrated
-         * Gradients attribution]
-         * [ExplanationParameters.integrated_gradients_attribution]. OUTLINES
-         * shows regions of attribution, while PIXELS shows per-pixel attribution.
-         * Defaults to OUTLINES.
+         * Type of the image visualization. Only applicable to
+         * [Integrated Gradients attribution][google.cloud.aiplatform.v1beta1.ExplanationParameters.integrated_gradients_attribution].
+         * OUTLINES shows regions of attribution, while PIXELS shows per-pixel
+         * attribution. Defaults to OUTLINES.
          * </pre>
          *
          * <code>
@@ -4177,11 +4161,10 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
          *
          *
          * <pre>
-         * Type of the image visualization. Only applicable to [Integrated
-         * Gradients attribution]
-         * [ExplanationParameters.integrated_gradients_attribution]. OUTLINES
-         * shows regions of attribution, while PIXELS shows per-pixel attribution.
-         * Defaults to OUTLINES.
+         * Type of the image visualization. Only applicable to
+         * [Integrated Gradients attribution][google.cloud.aiplatform.v1beta1.ExplanationParameters.integrated_gradients_attribution].
+         * OUTLINES shows regions of attribution, while PIXELS shows per-pixel
+         * attribution. Defaults to OUTLINES.
          * </pre>
          *
          * <code>
@@ -4206,11 +4189,10 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
          *
          *
          * <pre>
-         * Type of the image visualization. Only applicable to [Integrated
-         * Gradients attribution]
-         * [ExplanationParameters.integrated_gradients_attribution]. OUTLINES
-         * shows regions of attribution, while PIXELS shows per-pixel attribution.
-         * Defaults to OUTLINES.
+         * Type of the image visualization. Only applicable to
+         * [Integrated Gradients attribution][google.cloud.aiplatform.v1beta1.ExplanationParameters.integrated_gradients_attribution].
+         * OUTLINES shows regions of attribution, while PIXELS shows per-pixel
+         * attribution. Defaults to OUTLINES.
          * </pre>
          *
          * <code>
@@ -4349,8 +4331,8 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
          *
          * <pre>
          * The color scheme used for the highlighted areas.
-         * Defaults to PINK_GREEN for [Integrated Gradients
-         * attribution][ExplanationParameters.integrated_gradients_attribution],
+         * Defaults to PINK_GREEN for
+         * [Integrated Gradients attribution][google.cloud.aiplatform.v1beta1.ExplanationParameters.integrated_gradients_attribution],
          * which shows positive attributions in green and negative in pink.
          * Defaults to VIRIDIS for
          * [XRAI attribution][google.cloud.aiplatform.v1beta1.ExplanationParameters.xrai_attribution], which
@@ -4373,8 +4355,8 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
          *
          * <pre>
          * The color scheme used for the highlighted areas.
-         * Defaults to PINK_GREEN for [Integrated Gradients
-         * attribution][ExplanationParameters.integrated_gradients_attribution],
+         * Defaults to PINK_GREEN for
+         * [Integrated Gradients attribution][google.cloud.aiplatform.v1beta1.ExplanationParameters.integrated_gradients_attribution],
          * which shows positive attributions in green and negative in pink.
          * Defaults to VIRIDIS for
          * [XRAI attribution][google.cloud.aiplatform.v1beta1.ExplanationParameters.xrai_attribution], which
@@ -4400,8 +4382,8 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
          *
          * <pre>
          * The color scheme used for the highlighted areas.
-         * Defaults to PINK_GREEN for [Integrated Gradients
-         * attribution][ExplanationParameters.integrated_gradients_attribution],
+         * Defaults to PINK_GREEN for
+         * [Integrated Gradients attribution][google.cloud.aiplatform.v1beta1.ExplanationParameters.integrated_gradients_attribution],
          * which shows positive attributions in green and negative in pink.
          * Defaults to VIRIDIS for
          * [XRAI attribution][google.cloud.aiplatform.v1beta1.ExplanationParameters.xrai_attribution], which
@@ -4435,8 +4417,8 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
          *
          * <pre>
          * The color scheme used for the highlighted areas.
-         * Defaults to PINK_GREEN for [Integrated Gradients
-         * attribution][ExplanationParameters.integrated_gradients_attribution],
+         * Defaults to PINK_GREEN for
+         * [Integrated Gradients attribution][google.cloud.aiplatform.v1beta1.ExplanationParameters.integrated_gradients_attribution],
          * which shows positive attributions in green and negative in pink.
          * Defaults to VIRIDIS for
          * [XRAI attribution][google.cloud.aiplatform.v1beta1.ExplanationParameters.xrai_attribution], which
@@ -4468,8 +4450,8 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
          *
          * <pre>
          * The color scheme used for the highlighted areas.
-         * Defaults to PINK_GREEN for [Integrated Gradients
-         * attribution][ExplanationParameters.integrated_gradients_attribution],
+         * Defaults to PINK_GREEN for
+         * [Integrated Gradients attribution][google.cloud.aiplatform.v1beta1.ExplanationParameters.integrated_gradients_attribution],
          * which shows positive attributions in green and negative in pink.
          * Defaults to VIRIDIS for
          * [XRAI attribution][google.cloud.aiplatform.v1beta1.ExplanationParameters.xrai_attribution], which
@@ -4799,8 +4781,7 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
      * Baseline inputs for this feature.
      * If no baseline is specified, Vertex AI chooses the baseline for this
      * feature. If multiple baselines are specified, Vertex AI returns the
-     * average attributions across them in
-     * [Attributions.baseline_attribution][].
+     * average attributions across them in [Attribution.feature_attributions][google.cloud.aiplatform.v1beta1.Attribution.feature_attributions].
      * For Vertex AI-provided Tensorflow images (both 1.x and 2.x), the shape
      * of each baseline must match the shape of the input tensor. If a scalar is
      * provided, we broadcast to the same shape as the input tensor.
@@ -4826,8 +4807,7 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
      * Baseline inputs for this feature.
      * If no baseline is specified, Vertex AI chooses the baseline for this
      * feature. If multiple baselines are specified, Vertex AI returns the
-     * average attributions across them in
-     * [Attributions.baseline_attribution][].
+     * average attributions across them in [Attribution.feature_attributions][google.cloud.aiplatform.v1beta1.Attribution.feature_attributions].
      * For Vertex AI-provided Tensorflow images (both 1.x and 2.x), the shape
      * of each baseline must match the shape of the input tensor. If a scalar is
      * provided, we broadcast to the same shape as the input tensor.
@@ -4854,8 +4834,7 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
      * Baseline inputs for this feature.
      * If no baseline is specified, Vertex AI chooses the baseline for this
      * feature. If multiple baselines are specified, Vertex AI returns the
-     * average attributions across them in
-     * [Attributions.baseline_attribution][].
+     * average attributions across them in [Attribution.feature_attributions][google.cloud.aiplatform.v1beta1.Attribution.feature_attributions].
      * For Vertex AI-provided Tensorflow images (both 1.x and 2.x), the shape
      * of each baseline must match the shape of the input tensor. If a scalar is
      * provided, we broadcast to the same shape as the input tensor.
@@ -4881,8 +4860,7 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
      * Baseline inputs for this feature.
      * If no baseline is specified, Vertex AI chooses the baseline for this
      * feature. If multiple baselines are specified, Vertex AI returns the
-     * average attributions across them in
-     * [Attributions.baseline_attribution][].
+     * average attributions across them in [Attribution.feature_attributions][google.cloud.aiplatform.v1beta1.Attribution.feature_attributions].
      * For Vertex AI-provided Tensorflow images (both 1.x and 2.x), the shape
      * of each baseline must match the shape of the input tensor. If a scalar is
      * provided, we broadcast to the same shape as the input tensor.
@@ -4908,8 +4886,7 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
      * Baseline inputs for this feature.
      * If no baseline is specified, Vertex AI chooses the baseline for this
      * feature. If multiple baselines are specified, Vertex AI returns the
-     * average attributions across them in
-     * [Attributions.baseline_attribution][].
+     * average attributions across them in [Attribution.feature_attributions][google.cloud.aiplatform.v1beta1.Attribution.feature_attributions].
      * For Vertex AI-provided Tensorflow images (both 1.x and 2.x), the shape
      * of each baseline must match the shape of the input tensor. If a scalar is
      * provided, we broadcast to the same shape as the input tensor.
@@ -5324,10 +5301,10 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Encoded tensor is a transformation of the input tensor. Must be provided
-     * if choosing [Integrated Gradients
-     * attribution][ExplanationParameters.integrated_gradients_attribution] or
-     * [XRAI attribution][google.cloud.aiplatform.v1beta1.ExplanationParameters.xrai_attribution]
-     * and the input tensor is not differentiable.
+     * if choosing
+     * [Integrated Gradients attribution][google.cloud.aiplatform.v1beta1.ExplanationParameters.integrated_gradients_attribution]
+     * or [XRAI attribution][google.cloud.aiplatform.v1beta1.ExplanationParameters.xrai_attribution] and the
+     * input tensor is not differentiable.
      * An encoded tensor is generated if the input tensor is encoded by a lookup
      * table.
      * </pre>
@@ -5353,10 +5330,10 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Encoded tensor is a transformation of the input tensor. Must be provided
-     * if choosing [Integrated Gradients
-     * attribution][ExplanationParameters.integrated_gradients_attribution] or
-     * [XRAI attribution][google.cloud.aiplatform.v1beta1.ExplanationParameters.xrai_attribution]
-     * and the input tensor is not differentiable.
+     * if choosing
+     * [Integrated Gradients attribution][google.cloud.aiplatform.v1beta1.ExplanationParameters.integrated_gradients_attribution]
+     * or [XRAI attribution][google.cloud.aiplatform.v1beta1.ExplanationParameters.xrai_attribution] and the
+     * input tensor is not differentiable.
      * An encoded tensor is generated if the input tensor is encoded by a lookup
      * table.
      * </pre>
@@ -5530,9 +5507,8 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
      * Name of the group that the input belongs to. Features with the same group
      * name will be treated as one feature when computing attributions. Features
      * grouped together can have different shapes in value. If provided, there
-     * will be one single attribution generated in [
-     * featureAttributions][Attribution.feature_attributions], keyed by the
-     * group name.
+     * will be one single attribution generated in
+     * [Attribution.feature_attributions][google.cloud.aiplatform.v1beta1.Attribution.feature_attributions], keyed by the group name.
      * </pre>
      *
      * <code>string group_name = 12;</code>
@@ -5558,9 +5534,8 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
      * Name of the group that the input belongs to. Features with the same group
      * name will be treated as one feature when computing attributions. Features
      * grouped together can have different shapes in value. If provided, there
-     * will be one single attribution generated in [
-     * featureAttributions][Attribution.feature_attributions], keyed by the
-     * group name.
+     * will be one single attribution generated in
+     * [Attribution.feature_attributions][google.cloud.aiplatform.v1beta1.Attribution.feature_attributions], keyed by the group name.
      * </pre>
      *
      * <code>string group_name = 12;</code>
@@ -6244,8 +6219,7 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
        * Baseline inputs for this feature.
        * If no baseline is specified, Vertex AI chooses the baseline for this
        * feature. If multiple baselines are specified, Vertex AI returns the
-       * average attributions across them in
-       * [Attributions.baseline_attribution][].
+       * average attributions across them in [Attribution.feature_attributions][google.cloud.aiplatform.v1beta1.Attribution.feature_attributions].
        * For Vertex AI-provided Tensorflow images (both 1.x and 2.x), the shape
        * of each baseline must match the shape of the input tensor. If a scalar is
        * provided, we broadcast to the same shape as the input tensor.
@@ -6274,8 +6248,7 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
        * Baseline inputs for this feature.
        * If no baseline is specified, Vertex AI chooses the baseline for this
        * feature. If multiple baselines are specified, Vertex AI returns the
-       * average attributions across them in
-       * [Attributions.baseline_attribution][].
+       * average attributions across them in [Attribution.feature_attributions][google.cloud.aiplatform.v1beta1.Attribution.feature_attributions].
        * For Vertex AI-provided Tensorflow images (both 1.x and 2.x), the shape
        * of each baseline must match the shape of the input tensor. If a scalar is
        * provided, we broadcast to the same shape as the input tensor.
@@ -6304,8 +6277,7 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
        * Baseline inputs for this feature.
        * If no baseline is specified, Vertex AI chooses the baseline for this
        * feature. If multiple baselines are specified, Vertex AI returns the
-       * average attributions across them in
-       * [Attributions.baseline_attribution][].
+       * average attributions across them in [Attribution.feature_attributions][google.cloud.aiplatform.v1beta1.Attribution.feature_attributions].
        * For Vertex AI-provided Tensorflow images (both 1.x and 2.x), the shape
        * of each baseline must match the shape of the input tensor. If a scalar is
        * provided, we broadcast to the same shape as the input tensor.
@@ -6334,8 +6306,7 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
        * Baseline inputs for this feature.
        * If no baseline is specified, Vertex AI chooses the baseline for this
        * feature. If multiple baselines are specified, Vertex AI returns the
-       * average attributions across them in
-       * [Attributions.baseline_attribution][].
+       * average attributions across them in [Attribution.feature_attributions][google.cloud.aiplatform.v1beta1.Attribution.feature_attributions].
        * For Vertex AI-provided Tensorflow images (both 1.x and 2.x), the shape
        * of each baseline must match the shape of the input tensor. If a scalar is
        * provided, we broadcast to the same shape as the input tensor.
@@ -6370,8 +6341,7 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
        * Baseline inputs for this feature.
        * If no baseline is specified, Vertex AI chooses the baseline for this
        * feature. If multiple baselines are specified, Vertex AI returns the
-       * average attributions across them in
-       * [Attributions.baseline_attribution][].
+       * average attributions across them in [Attribution.feature_attributions][google.cloud.aiplatform.v1beta1.Attribution.feature_attributions].
        * For Vertex AI-provided Tensorflow images (both 1.x and 2.x), the shape
        * of each baseline must match the shape of the input tensor. If a scalar is
        * provided, we broadcast to the same shape as the input tensor.
@@ -6404,8 +6374,7 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
        * Baseline inputs for this feature.
        * If no baseline is specified, Vertex AI chooses the baseline for this
        * feature. If multiple baselines are specified, Vertex AI returns the
-       * average attributions across them in
-       * [Attributions.baseline_attribution][].
+       * average attributions across them in [Attribution.feature_attributions][google.cloud.aiplatform.v1beta1.Attribution.feature_attributions].
        * For Vertex AI-provided Tensorflow images (both 1.x and 2.x), the shape
        * of each baseline must match the shape of the input tensor. If a scalar is
        * provided, we broadcast to the same shape as the input tensor.
@@ -6440,8 +6409,7 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
        * Baseline inputs for this feature.
        * If no baseline is specified, Vertex AI chooses the baseline for this
        * feature. If multiple baselines are specified, Vertex AI returns the
-       * average attributions across them in
-       * [Attributions.baseline_attribution][].
+       * average attributions across them in [Attribution.feature_attributions][google.cloud.aiplatform.v1beta1.Attribution.feature_attributions].
        * For Vertex AI-provided Tensorflow images (both 1.x and 2.x), the shape
        * of each baseline must match the shape of the input tensor. If a scalar is
        * provided, we broadcast to the same shape as the input tensor.
@@ -6476,8 +6444,7 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
        * Baseline inputs for this feature.
        * If no baseline is specified, Vertex AI chooses the baseline for this
        * feature. If multiple baselines are specified, Vertex AI returns the
-       * average attributions across them in
-       * [Attributions.baseline_attribution][].
+       * average attributions across them in [Attribution.feature_attributions][google.cloud.aiplatform.v1beta1.Attribution.feature_attributions].
        * For Vertex AI-provided Tensorflow images (both 1.x and 2.x), the shape
        * of each baseline must match the shape of the input tensor. If a scalar is
        * provided, we broadcast to the same shape as the input tensor.
@@ -6509,8 +6476,7 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
        * Baseline inputs for this feature.
        * If no baseline is specified, Vertex AI chooses the baseline for this
        * feature. If multiple baselines are specified, Vertex AI returns the
-       * average attributions across them in
-       * [Attributions.baseline_attribution][].
+       * average attributions across them in [Attribution.feature_attributions][google.cloud.aiplatform.v1beta1.Attribution.feature_attributions].
        * For Vertex AI-provided Tensorflow images (both 1.x and 2.x), the shape
        * of each baseline must match the shape of the input tensor. If a scalar is
        * provided, we broadcast to the same shape as the input tensor.
@@ -6543,8 +6509,7 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
        * Baseline inputs for this feature.
        * If no baseline is specified, Vertex AI chooses the baseline for this
        * feature. If multiple baselines are specified, Vertex AI returns the
-       * average attributions across them in
-       * [Attributions.baseline_attribution][].
+       * average attributions across them in [Attribution.feature_attributions][google.cloud.aiplatform.v1beta1.Attribution.feature_attributions].
        * For Vertex AI-provided Tensorflow images (both 1.x and 2.x), the shape
        * of each baseline must match the shape of the input tensor. If a scalar is
        * provided, we broadcast to the same shape as the input tensor.
@@ -6577,8 +6542,7 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
        * Baseline inputs for this feature.
        * If no baseline is specified, Vertex AI chooses the baseline for this
        * feature. If multiple baselines are specified, Vertex AI returns the
-       * average attributions across them in
-       * [Attributions.baseline_attribution][].
+       * average attributions across them in [Attribution.feature_attributions][google.cloud.aiplatform.v1beta1.Attribution.feature_attributions].
        * For Vertex AI-provided Tensorflow images (both 1.x and 2.x), the shape
        * of each baseline must match the shape of the input tensor. If a scalar is
        * provided, we broadcast to the same shape as the input tensor.
@@ -6610,8 +6574,7 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
        * Baseline inputs for this feature.
        * If no baseline is specified, Vertex AI chooses the baseline for this
        * feature. If multiple baselines are specified, Vertex AI returns the
-       * average attributions across them in
-       * [Attributions.baseline_attribution][].
+       * average attributions across them in [Attribution.feature_attributions][google.cloud.aiplatform.v1beta1.Attribution.feature_attributions].
        * For Vertex AI-provided Tensorflow images (both 1.x and 2.x), the shape
        * of each baseline must match the shape of the input tensor. If a scalar is
        * provided, we broadcast to the same shape as the input tensor.
@@ -6643,8 +6606,7 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
        * Baseline inputs for this feature.
        * If no baseline is specified, Vertex AI chooses the baseline for this
        * feature. If multiple baselines are specified, Vertex AI returns the
-       * average attributions across them in
-       * [Attributions.baseline_attribution][].
+       * average attributions across them in [Attribution.feature_attributions][google.cloud.aiplatform.v1beta1.Attribution.feature_attributions].
        * For Vertex AI-provided Tensorflow images (both 1.x and 2.x), the shape
        * of each baseline must match the shape of the input tensor. If a scalar is
        * provided, we broadcast to the same shape as the input tensor.
@@ -6669,8 +6631,7 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
        * Baseline inputs for this feature.
        * If no baseline is specified, Vertex AI chooses the baseline for this
        * feature. If multiple baselines are specified, Vertex AI returns the
-       * average attributions across them in
-       * [Attributions.baseline_attribution][].
+       * average attributions across them in [Attribution.feature_attributions][google.cloud.aiplatform.v1beta1.Attribution.feature_attributions].
        * For Vertex AI-provided Tensorflow images (both 1.x and 2.x), the shape
        * of each baseline must match the shape of the input tensor. If a scalar is
        * provided, we broadcast to the same shape as the input tensor.
@@ -6699,8 +6660,7 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
        * Baseline inputs for this feature.
        * If no baseline is specified, Vertex AI chooses the baseline for this
        * feature. If multiple baselines are specified, Vertex AI returns the
-       * average attributions across them in
-       * [Attributions.baseline_attribution][].
+       * average attributions across them in [Attribution.feature_attributions][google.cloud.aiplatform.v1beta1.Attribution.feature_attributions].
        * For Vertex AI-provided Tensorflow images (both 1.x and 2.x), the shape
        * of each baseline must match the shape of the input tensor. If a scalar is
        * provided, we broadcast to the same shape as the input tensor.
@@ -6730,8 +6690,7 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
        * Baseline inputs for this feature.
        * If no baseline is specified, Vertex AI chooses the baseline for this
        * feature. If multiple baselines are specified, Vertex AI returns the
-       * average attributions across them in
-       * [Attributions.baseline_attribution][].
+       * average attributions across them in [Attribution.feature_attributions][google.cloud.aiplatform.v1beta1.Attribution.feature_attributions].
        * For Vertex AI-provided Tensorflow images (both 1.x and 2.x), the shape
        * of each baseline must match the shape of the input tensor. If a scalar is
        * provided, we broadcast to the same shape as the input tensor.
@@ -6757,8 +6716,7 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
        * Baseline inputs for this feature.
        * If no baseline is specified, Vertex AI chooses the baseline for this
        * feature. If multiple baselines are specified, Vertex AI returns the
-       * average attributions across them in
-       * [Attributions.baseline_attribution][].
+       * average attributions across them in [Attribution.feature_attributions][google.cloud.aiplatform.v1beta1.Attribution.feature_attributions].
        * For Vertex AI-provided Tensorflow images (both 1.x and 2.x), the shape
        * of each baseline must match the shape of the input tensor. If a scalar is
        * provided, we broadcast to the same shape as the input tensor.
@@ -6784,8 +6742,7 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
        * Baseline inputs for this feature.
        * If no baseline is specified, Vertex AI chooses the baseline for this
        * feature. If multiple baselines are specified, Vertex AI returns the
-       * average attributions across them in
-       * [Attributions.baseline_attribution][].
+       * average attributions across them in [Attribution.feature_attributions][google.cloud.aiplatform.v1beta1.Attribution.feature_attributions].
        * For Vertex AI-provided Tensorflow images (both 1.x and 2.x), the shape
        * of each baseline must match the shape of the input tensor. If a scalar is
        * provided, we broadcast to the same shape as the input tensor.
@@ -7826,10 +7783,10 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
        *
        * <pre>
        * Encoded tensor is a transformation of the input tensor. Must be provided
-       * if choosing [Integrated Gradients
-       * attribution][ExplanationParameters.integrated_gradients_attribution] or
-       * [XRAI attribution][google.cloud.aiplatform.v1beta1.ExplanationParameters.xrai_attribution]
-       * and the input tensor is not differentiable.
+       * if choosing
+       * [Integrated Gradients attribution][google.cloud.aiplatform.v1beta1.ExplanationParameters.integrated_gradients_attribution]
+       * or [XRAI attribution][google.cloud.aiplatform.v1beta1.ExplanationParameters.xrai_attribution] and the
+       * input tensor is not differentiable.
        * An encoded tensor is generated if the input tensor is encoded by a lookup
        * table.
        * </pre>
@@ -7854,10 +7811,10 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
        *
        * <pre>
        * Encoded tensor is a transformation of the input tensor. Must be provided
-       * if choosing [Integrated Gradients
-       * attribution][ExplanationParameters.integrated_gradients_attribution] or
-       * [XRAI attribution][google.cloud.aiplatform.v1beta1.ExplanationParameters.xrai_attribution]
-       * and the input tensor is not differentiable.
+       * if choosing
+       * [Integrated Gradients attribution][google.cloud.aiplatform.v1beta1.ExplanationParameters.integrated_gradients_attribution]
+       * or [XRAI attribution][google.cloud.aiplatform.v1beta1.ExplanationParameters.xrai_attribution] and the
+       * input tensor is not differentiable.
        * An encoded tensor is generated if the input tensor is encoded by a lookup
        * table.
        * </pre>
@@ -7882,10 +7839,10 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
        *
        * <pre>
        * Encoded tensor is a transformation of the input tensor. Must be provided
-       * if choosing [Integrated Gradients
-       * attribution][ExplanationParameters.integrated_gradients_attribution] or
-       * [XRAI attribution][google.cloud.aiplatform.v1beta1.ExplanationParameters.xrai_attribution]
-       * and the input tensor is not differentiable.
+       * if choosing
+       * [Integrated Gradients attribution][google.cloud.aiplatform.v1beta1.ExplanationParameters.integrated_gradients_attribution]
+       * or [XRAI attribution][google.cloud.aiplatform.v1beta1.ExplanationParameters.xrai_attribution] and the
+       * input tensor is not differentiable.
        * An encoded tensor is generated if the input tensor is encoded by a lookup
        * table.
        * </pre>
@@ -7909,10 +7866,10 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
        *
        * <pre>
        * Encoded tensor is a transformation of the input tensor. Must be provided
-       * if choosing [Integrated Gradients
-       * attribution][ExplanationParameters.integrated_gradients_attribution] or
-       * [XRAI attribution][google.cloud.aiplatform.v1beta1.ExplanationParameters.xrai_attribution]
-       * and the input tensor is not differentiable.
+       * if choosing
+       * [Integrated Gradients attribution][google.cloud.aiplatform.v1beta1.ExplanationParameters.integrated_gradients_attribution]
+       * or [XRAI attribution][google.cloud.aiplatform.v1beta1.ExplanationParameters.xrai_attribution] and the
+       * input tensor is not differentiable.
        * An encoded tensor is generated if the input tensor is encoded by a lookup
        * table.
        * </pre>
@@ -7932,10 +7889,10 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
        *
        * <pre>
        * Encoded tensor is a transformation of the input tensor. Must be provided
-       * if choosing [Integrated Gradients
-       * attribution][ExplanationParameters.integrated_gradients_attribution] or
-       * [XRAI attribution][google.cloud.aiplatform.v1beta1.ExplanationParameters.xrai_attribution]
-       * and the input tensor is not differentiable.
+       * if choosing
+       * [Integrated Gradients attribution][google.cloud.aiplatform.v1beta1.ExplanationParameters.integrated_gradients_attribution]
+       * or [XRAI attribution][google.cloud.aiplatform.v1beta1.ExplanationParameters.xrai_attribution] and the
+       * input tensor is not differentiable.
        * An encoded tensor is generated if the input tensor is encoded by a lookup
        * table.
        * </pre>
@@ -8595,9 +8552,8 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
        * Name of the group that the input belongs to. Features with the same group
        * name will be treated as one feature when computing attributions. Features
        * grouped together can have different shapes in value. If provided, there
-       * will be one single attribution generated in [
-       * featureAttributions][Attribution.feature_attributions], keyed by the
-       * group name.
+       * will be one single attribution generated in
+       * [Attribution.feature_attributions][google.cloud.aiplatform.v1beta1.Attribution.feature_attributions], keyed by the group name.
        * </pre>
        *
        * <code>string group_name = 12;</code>
@@ -8622,9 +8578,8 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
        * Name of the group that the input belongs to. Features with the same group
        * name will be treated as one feature when computing attributions. Features
        * grouped together can have different shapes in value. If provided, there
-       * will be one single attribution generated in [
-       * featureAttributions][Attribution.feature_attributions], keyed by the
-       * group name.
+       * will be one single attribution generated in
+       * [Attribution.feature_attributions][google.cloud.aiplatform.v1beta1.Attribution.feature_attributions], keyed by the group name.
        * </pre>
        *
        * <code>string group_name = 12;</code>
@@ -8649,9 +8604,8 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
        * Name of the group that the input belongs to. Features with the same group
        * name will be treated as one feature when computing attributions. Features
        * grouped together can have different shapes in value. If provided, there
-       * will be one single attribution generated in [
-       * featureAttributions][Attribution.feature_attributions], keyed by the
-       * group name.
+       * will be one single attribution generated in
+       * [Attribution.feature_attributions][google.cloud.aiplatform.v1beta1.Attribution.feature_attributions], keyed by the group name.
        * </pre>
        *
        * <code>string group_name = 12;</code>
@@ -8675,9 +8629,8 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
        * Name of the group that the input belongs to. Features with the same group
        * name will be treated as one feature when computing attributions. Features
        * grouped together can have different shapes in value. If provided, there
-       * will be one single attribution generated in [
-       * featureAttributions][Attribution.feature_attributions], keyed by the
-       * group name.
+       * will be one single attribution generated in
+       * [Attribution.feature_attributions][google.cloud.aiplatform.v1beta1.Attribution.feature_attributions], keyed by the group name.
        * </pre>
        *
        * <code>string group_name = 12;</code>
@@ -8697,9 +8650,8 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
        * Name of the group that the input belongs to. Features with the same group
        * name will be treated as one feature when computing attributions. Features
        * grouped together can have different shapes in value. If provided, there
-       * will be one single attribution generated in [
-       * featureAttributions][Attribution.feature_attributions], keyed by the
-       * group name.
+       * will be one single attribution generated in
+       * [Attribution.feature_attributions][google.cloud.aiplatform.v1beta1.Attribution.feature_attributions], keyed by the group name.
        * </pre>
        *
        * <code>string group_name = 12;</code>
@@ -8894,8 +8846,8 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Name of the output tensor. Required and is only applicable to AI
-     * Platform provided images for Tensorflow.
+     * Name of the output tensor. Required and is only applicable to Vertex
+     * AI provided images for Tensorflow.
      * </pre>
      *
      * <code>string output_tensor_name = 3;</code>
@@ -8907,8 +8859,8 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Name of the output tensor. Required and is only applicable to AI
-     * Platform provided images for Tensorflow.
+     * Name of the output tensor. Required and is only applicable to Vertex
+     * AI provided images for Tensorflow.
      * </pre>
      *
      * <code>string output_tensor_name = 3;</code>
@@ -9249,8 +9201,8 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Name of the output tensor. Required and is only applicable to AI
-     * Platform provided images for Tensorflow.
+     * Name of the output tensor. Required and is only applicable to Vertex
+     * AI provided images for Tensorflow.
      * </pre>
      *
      * <code>string output_tensor_name = 3;</code>
@@ -9273,8 +9225,8 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Name of the output tensor. Required and is only applicable to AI
-     * Platform provided images for Tensorflow.
+     * Name of the output tensor. Required and is only applicable to Vertex
+     * AI provided images for Tensorflow.
      * </pre>
      *
      * <code>string output_tensor_name = 3;</code>
@@ -10164,8 +10116,8 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
        *
        *
        * <pre>
-       * Name of the output tensor. Required and is only applicable to AI
-       * Platform provided images for Tensorflow.
+       * Name of the output tensor. Required and is only applicable to Vertex
+       * AI provided images for Tensorflow.
        * </pre>
        *
        * <code>string output_tensor_name = 3;</code>
@@ -10187,8 +10139,8 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
        *
        *
        * <pre>
-       * Name of the output tensor. Required and is only applicable to AI
-       * Platform provided images for Tensorflow.
+       * Name of the output tensor. Required and is only applicable to Vertex
+       * AI provided images for Tensorflow.
        * </pre>
        *
        * <code>string output_tensor_name = 3;</code>
@@ -10210,8 +10162,8 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
        *
        *
        * <pre>
-       * Name of the output tensor. Required and is only applicable to AI
-       * Platform provided images for Tensorflow.
+       * Name of the output tensor. Required and is only applicable to Vertex
+       * AI provided images for Tensorflow.
        * </pre>
        *
        * <code>string output_tensor_name = 3;</code>
@@ -10232,8 +10184,8 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
        *
        *
        * <pre>
-       * Name of the output tensor. Required and is only applicable to AI
-       * Platform provided images for Tensorflow.
+       * Name of the output tensor. Required and is only applicable to Vertex
+       * AI provided images for Tensorflow.
        * </pre>
        *
        * <code>string output_tensor_name = 3;</code>
@@ -10250,8 +10202,8 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
        *
        *
        * <pre>
-       * Name of the output tensor. Required and is only applicable to AI
-       * Platform provided images for Tensorflow.
+       * Name of the output tensor. Required and is only applicable to Vertex
+       * AI provided images for Tensorflow.
        * </pre>
        *
        * <code>string output_tensor_name = 3;</code>

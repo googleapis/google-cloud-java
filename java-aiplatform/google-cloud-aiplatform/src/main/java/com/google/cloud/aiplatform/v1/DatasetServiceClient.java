@@ -41,8 +41,11 @@ import javax.annotation.Generated;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
- * This class provides the ability to make remote calls to the backing service through method calls
- * that map to API methods. Sample code to get started:
+ * Service Description: The service that handles the CRUD of Vertex AI Dataset and its child
+ * resources.
+ *
+ * <p>This class provides the ability to make remote calls to the backing service through method
+ * calls that map to API methods. Sample code to get started:
  *
  * <pre>{@code
  * try (DatasetServiceClient datasetServiceClient = DatasetServiceClient.create()) {

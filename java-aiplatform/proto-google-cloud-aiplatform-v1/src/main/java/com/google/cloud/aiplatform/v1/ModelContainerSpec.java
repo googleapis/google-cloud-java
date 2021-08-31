@@ -198,7 +198,7 @@ public final class ModelContainerSpec extends com.google.protobuf.GeneratedMessa
    * predictions. This URI must identify an image in Artifact Registry or
    * Container Registry. Learn more about the [container publishing
    * requirements](https://cloud.google.com/vertex-ai/docs/predictions/custom-container-requirements#publishing),
-   * including permissions requirements for the AI Platform Service Agent.
+   * including permissions requirements for the Vertex AI Service Agent.
    * The container image is ingested upon [ModelService.UploadModel][google.cloud.aiplatform.v1.ModelService.UploadModel], stored
    * internally, and this original path is afterwards not used.
    * To learn about the requirements for the Docker image itself, see
@@ -235,7 +235,7 @@ public final class ModelContainerSpec extends com.google.protobuf.GeneratedMessa
    * predictions. This URI must identify an image in Artifact Registry or
    * Container Registry. Learn more about the [container publishing
    * requirements](https://cloud.google.com/vertex-ai/docs/predictions/custom-container-requirements#publishing),
-   * including permissions requirements for the AI Platform Service Agent.
+   * including permissions requirements for the Vertex AI Service Agent.
    * The container image is ingested upon [ModelService.UploadModel][google.cloud.aiplatform.v1.ModelService.UploadModel], stored
    * internally, and this original path is afterwards not used.
    * To learn about the requirements for the Docker image itself, see
@@ -844,8 +844,8 @@ public final class ModelContainerSpec extends com.google.protobuf.GeneratedMessa
    *
    * <pre>
    * Immutable. List of ports to expose from the container. Vertex AI sends any
-   * prediction requests that it receives to the first port on this list. AI
-   * Platform also sends
+   * prediction requests that it receives to the first port on this list. Vertex
+   * AI also sends
    * [liveness and health
    * checks](https://cloud.google.com/vertex-ai/docs/predictions/custom-container-requirements#liveness)
    * to this port.
@@ -876,8 +876,8 @@ public final class ModelContainerSpec extends com.google.protobuf.GeneratedMessa
    *
    * <pre>
    * Immutable. List of ports to expose from the container. Vertex AI sends any
-   * prediction requests that it receives to the first port on this list. AI
-   * Platform also sends
+   * prediction requests that it receives to the first port on this list. Vertex
+   * AI also sends
    * [liveness and health
    * checks](https://cloud.google.com/vertex-ai/docs/predictions/custom-container-requirements#liveness)
    * to this port.
@@ -909,8 +909,8 @@ public final class ModelContainerSpec extends com.google.protobuf.GeneratedMessa
    *
    * <pre>
    * Immutable. List of ports to expose from the container. Vertex AI sends any
-   * prediction requests that it receives to the first port on this list. AI
-   * Platform also sends
+   * prediction requests that it receives to the first port on this list. Vertex
+   * AI also sends
    * [liveness and health
    * checks](https://cloud.google.com/vertex-ai/docs/predictions/custom-container-requirements#liveness)
    * to this port.
@@ -941,8 +941,8 @@ public final class ModelContainerSpec extends com.google.protobuf.GeneratedMessa
    *
    * <pre>
    * Immutable. List of ports to expose from the container. Vertex AI sends any
-   * prediction requests that it receives to the first port on this list. AI
-   * Platform also sends
+   * prediction requests that it receives to the first port on this list. Vertex
+   * AI also sends
    * [liveness and health
    * checks](https://cloud.google.com/vertex-ai/docs/predictions/custom-container-requirements#liveness)
    * to this port.
@@ -973,8 +973,8 @@ public final class ModelContainerSpec extends com.google.protobuf.GeneratedMessa
    *
    * <pre>
    * Immutable. List of ports to expose from the container. Vertex AI sends any
-   * prediction requests that it receives to the first port on this list. AI
-   * Platform also sends
+   * prediction requests that it receives to the first port on this list. Vertex
+   * AI also sends
    * [liveness and health
    * checks](https://cloud.google.com/vertex-ai/docs/predictions/custom-container-requirements#liveness)
    * to this port.
@@ -1724,7 +1724,7 @@ public final class ModelContainerSpec extends com.google.protobuf.GeneratedMessa
      * predictions. This URI must identify an image in Artifact Registry or
      * Container Registry. Learn more about the [container publishing
      * requirements](https://cloud.google.com/vertex-ai/docs/predictions/custom-container-requirements#publishing),
-     * including permissions requirements for the AI Platform Service Agent.
+     * including permissions requirements for the Vertex AI Service Agent.
      * The container image is ingested upon [ModelService.UploadModel][google.cloud.aiplatform.v1.ModelService.UploadModel], stored
      * internally, and this original path is afterwards not used.
      * To learn about the requirements for the Docker image itself, see
@@ -1760,7 +1760,7 @@ public final class ModelContainerSpec extends com.google.protobuf.GeneratedMessa
      * predictions. This URI must identify an image in Artifact Registry or
      * Container Registry. Learn more about the [container publishing
      * requirements](https://cloud.google.com/vertex-ai/docs/predictions/custom-container-requirements#publishing),
-     * including permissions requirements for the AI Platform Service Agent.
+     * including permissions requirements for the Vertex AI Service Agent.
      * The container image is ingested upon [ModelService.UploadModel][google.cloud.aiplatform.v1.ModelService.UploadModel], stored
      * internally, and this original path is afterwards not used.
      * To learn about the requirements for the Docker image itself, see
@@ -1796,7 +1796,7 @@ public final class ModelContainerSpec extends com.google.protobuf.GeneratedMessa
      * predictions. This URI must identify an image in Artifact Registry or
      * Container Registry. Learn more about the [container publishing
      * requirements](https://cloud.google.com/vertex-ai/docs/predictions/custom-container-requirements#publishing),
-     * including permissions requirements for the AI Platform Service Agent.
+     * including permissions requirements for the Vertex AI Service Agent.
      * The container image is ingested upon [ModelService.UploadModel][google.cloud.aiplatform.v1.ModelService.UploadModel], stored
      * internally, and this original path is afterwards not used.
      * To learn about the requirements for the Docker image itself, see
@@ -1831,7 +1831,7 @@ public final class ModelContainerSpec extends com.google.protobuf.GeneratedMessa
      * predictions. This URI must identify an image in Artifact Registry or
      * Container Registry. Learn more about the [container publishing
      * requirements](https://cloud.google.com/vertex-ai/docs/predictions/custom-container-requirements#publishing),
-     * including permissions requirements for the AI Platform Service Agent.
+     * including permissions requirements for the Vertex AI Service Agent.
      * The container image is ingested upon [ModelService.UploadModel][google.cloud.aiplatform.v1.ModelService.UploadModel], stored
      * internally, and this original path is afterwards not used.
      * To learn about the requirements for the Docker image itself, see
@@ -1862,7 +1862,7 @@ public final class ModelContainerSpec extends com.google.protobuf.GeneratedMessa
      * predictions. This URI must identify an image in Artifact Registry or
      * Container Registry. Learn more about the [container publishing
      * requirements](https://cloud.google.com/vertex-ai/docs/predictions/custom-container-requirements#publishing),
-     * including permissions requirements for the AI Platform Service Agent.
+     * including permissions requirements for the Vertex AI Service Agent.
      * The container image is ingested upon [ModelService.UploadModel][google.cloud.aiplatform.v1.ModelService.UploadModel], stored
      * internally, and this original path is afterwards not used.
      * To learn about the requirements for the Docker image itself, see
@@ -3622,8 +3622,8 @@ public final class ModelContainerSpec extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Immutable. List of ports to expose from the container. Vertex AI sends any
-     * prediction requests that it receives to the first port on this list. AI
-     * Platform also sends
+     * prediction requests that it receives to the first port on this list. Vertex
+     * AI also sends
      * [liveness and health
      * checks](https://cloud.google.com/vertex-ai/docs/predictions/custom-container-requirements#liveness)
      * to this port.
@@ -3657,8 +3657,8 @@ public final class ModelContainerSpec extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Immutable. List of ports to expose from the container. Vertex AI sends any
-     * prediction requests that it receives to the first port on this list. AI
-     * Platform also sends
+     * prediction requests that it receives to the first port on this list. Vertex
+     * AI also sends
      * [liveness and health
      * checks](https://cloud.google.com/vertex-ai/docs/predictions/custom-container-requirements#liveness)
      * to this port.
@@ -3692,8 +3692,8 @@ public final class ModelContainerSpec extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Immutable. List of ports to expose from the container. Vertex AI sends any
-     * prediction requests that it receives to the first port on this list. AI
-     * Platform also sends
+     * prediction requests that it receives to the first port on this list. Vertex
+     * AI also sends
      * [liveness and health
      * checks](https://cloud.google.com/vertex-ai/docs/predictions/custom-container-requirements#liveness)
      * to this port.
@@ -3727,8 +3727,8 @@ public final class ModelContainerSpec extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Immutable. List of ports to expose from the container. Vertex AI sends any
-     * prediction requests that it receives to the first port on this list. AI
-     * Platform also sends
+     * prediction requests that it receives to the first port on this list. Vertex
+     * AI also sends
      * [liveness and health
      * checks](https://cloud.google.com/vertex-ai/docs/predictions/custom-container-requirements#liveness)
      * to this port.
@@ -3768,8 +3768,8 @@ public final class ModelContainerSpec extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Immutable. List of ports to expose from the container. Vertex AI sends any
-     * prediction requests that it receives to the first port on this list. AI
-     * Platform also sends
+     * prediction requests that it receives to the first port on this list. Vertex
+     * AI also sends
      * [liveness and health
      * checks](https://cloud.google.com/vertex-ai/docs/predictions/custom-container-requirements#liveness)
      * to this port.
@@ -3807,8 +3807,8 @@ public final class ModelContainerSpec extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Immutable. List of ports to expose from the container. Vertex AI sends any
-     * prediction requests that it receives to the first port on this list. AI
-     * Platform also sends
+     * prediction requests that it receives to the first port on this list. Vertex
+     * AI also sends
      * [liveness and health
      * checks](https://cloud.google.com/vertex-ai/docs/predictions/custom-container-requirements#liveness)
      * to this port.
@@ -3848,8 +3848,8 @@ public final class ModelContainerSpec extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Immutable. List of ports to expose from the container. Vertex AI sends any
-     * prediction requests that it receives to the first port on this list. AI
-     * Platform also sends
+     * prediction requests that it receives to the first port on this list. Vertex
+     * AI also sends
      * [liveness and health
      * checks](https://cloud.google.com/vertex-ai/docs/predictions/custom-container-requirements#liveness)
      * to this port.
@@ -3889,8 +3889,8 @@ public final class ModelContainerSpec extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Immutable. List of ports to expose from the container. Vertex AI sends any
-     * prediction requests that it receives to the first port on this list. AI
-     * Platform also sends
+     * prediction requests that it receives to the first port on this list. Vertex
+     * AI also sends
      * [liveness and health
      * checks](https://cloud.google.com/vertex-ai/docs/predictions/custom-container-requirements#liveness)
      * to this port.
@@ -3927,8 +3927,8 @@ public final class ModelContainerSpec extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Immutable. List of ports to expose from the container. Vertex AI sends any
-     * prediction requests that it receives to the first port on this list. AI
-     * Platform also sends
+     * prediction requests that it receives to the first port on this list. Vertex
+     * AI also sends
      * [liveness and health
      * checks](https://cloud.google.com/vertex-ai/docs/predictions/custom-container-requirements#liveness)
      * to this port.
@@ -3966,8 +3966,8 @@ public final class ModelContainerSpec extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Immutable. List of ports to expose from the container. Vertex AI sends any
-     * prediction requests that it receives to the first port on this list. AI
-     * Platform also sends
+     * prediction requests that it receives to the first port on this list. Vertex
+     * AI also sends
      * [liveness and health
      * checks](https://cloud.google.com/vertex-ai/docs/predictions/custom-container-requirements#liveness)
      * to this port.
@@ -4005,8 +4005,8 @@ public final class ModelContainerSpec extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Immutable. List of ports to expose from the container. Vertex AI sends any
-     * prediction requests that it receives to the first port on this list. AI
-     * Platform also sends
+     * prediction requests that it receives to the first port on this list. Vertex
+     * AI also sends
      * [liveness and health
      * checks](https://cloud.google.com/vertex-ai/docs/predictions/custom-container-requirements#liveness)
      * to this port.
@@ -4043,8 +4043,8 @@ public final class ModelContainerSpec extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Immutable. List of ports to expose from the container. Vertex AI sends any
-     * prediction requests that it receives to the first port on this list. AI
-     * Platform also sends
+     * prediction requests that it receives to the first port on this list. Vertex
+     * AI also sends
      * [liveness and health
      * checks](https://cloud.google.com/vertex-ai/docs/predictions/custom-container-requirements#liveness)
      * to this port.
@@ -4081,8 +4081,8 @@ public final class ModelContainerSpec extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Immutable. List of ports to expose from the container. Vertex AI sends any
-     * prediction requests that it receives to the first port on this list. AI
-     * Platform also sends
+     * prediction requests that it receives to the first port on this list. Vertex
+     * AI also sends
      * [liveness and health
      * checks](https://cloud.google.com/vertex-ai/docs/predictions/custom-container-requirements#liveness)
      * to this port.
@@ -4112,8 +4112,8 @@ public final class ModelContainerSpec extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Immutable. List of ports to expose from the container. Vertex AI sends any
-     * prediction requests that it receives to the first port on this list. AI
-     * Platform also sends
+     * prediction requests that it receives to the first port on this list. Vertex
+     * AI also sends
      * [liveness and health
      * checks](https://cloud.google.com/vertex-ai/docs/predictions/custom-container-requirements#liveness)
      * to this port.
@@ -4147,8 +4147,8 @@ public final class ModelContainerSpec extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Immutable. List of ports to expose from the container. Vertex AI sends any
-     * prediction requests that it receives to the first port on this list. AI
-     * Platform also sends
+     * prediction requests that it receives to the first port on this list. Vertex
+     * AI also sends
      * [liveness and health
      * checks](https://cloud.google.com/vertex-ai/docs/predictions/custom-container-requirements#liveness)
      * to this port.
@@ -4183,8 +4183,8 @@ public final class ModelContainerSpec extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Immutable. List of ports to expose from the container. Vertex AI sends any
-     * prediction requests that it receives to the first port on this list. AI
-     * Platform also sends
+     * prediction requests that it receives to the first port on this list. Vertex
+     * AI also sends
      * [liveness and health
      * checks](https://cloud.google.com/vertex-ai/docs/predictions/custom-container-requirements#liveness)
      * to this port.
@@ -4215,8 +4215,8 @@ public final class ModelContainerSpec extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Immutable. List of ports to expose from the container. Vertex AI sends any
-     * prediction requests that it receives to the first port on this list. AI
-     * Platform also sends
+     * prediction requests that it receives to the first port on this list. Vertex
+     * AI also sends
      * [liveness and health
      * checks](https://cloud.google.com/vertex-ai/docs/predictions/custom-container-requirements#liveness)
      * to this port.
@@ -4247,8 +4247,8 @@ public final class ModelContainerSpec extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Immutable. List of ports to expose from the container. Vertex AI sends any
-     * prediction requests that it receives to the first port on this list. AI
-     * Platform also sends
+     * prediction requests that it receives to the first port on this list. Vertex
+     * AI also sends
      * [liveness and health
      * checks](https://cloud.google.com/vertex-ai/docs/predictions/custom-container-requirements#liveness)
      * to this port.

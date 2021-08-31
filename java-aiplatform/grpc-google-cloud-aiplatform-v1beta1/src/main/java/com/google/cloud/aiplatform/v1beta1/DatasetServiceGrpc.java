@@ -17,7 +17,14 @@ package com.google.cloud.aiplatform.v1beta1;
 
 import static io.grpc.MethodDescriptor.generateFullMethodName;
 
-/** */
+/**
+ *
+ *
+ * <pre>
+ * The service that handles the CRUD of Vertex AI Dataset and its child
+ * resources.
+ * </pre>
+ */
 @javax.annotation.Generated(
     value = "by gRPC proto compiler",
     comments = "Source: google/cloud/aiplatform/v1beta1/dataset_service.proto")
@@ -524,7 +531,14 @@ public final class DatasetServiceGrpc {
     return DatasetServiceFutureStub.newStub(factory, channel);
   }
 
-  /** */
+  /**
+   *
+   *
+   * <pre>
+   * The service that handles the CRUD of Vertex AI Dataset and its child
+   * resources.
+   * </pre>
+   */
   public abstract static class DatasetServiceImplBase implements io.grpc.BindableService {
 
     /**
@@ -739,7 +753,14 @@ public final class DatasetServiceGrpc {
     }
   }
 
-  /** */
+  /**
+   *
+   *
+   * <pre>
+   * The service that handles the CRUD of Vertex AI Dataset and its child
+   * resources.
+   * </pre>
+   */
   public static final class DatasetServiceStub
       extends io.grpc.stub.AbstractAsyncStub<DatasetServiceStub> {
     private DatasetServiceStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
@@ -910,7 +931,14 @@ public final class DatasetServiceGrpc {
     }
   }
 
-  /** */
+  /**
+   *
+   *
+   * <pre>
+   * The service that handles the CRUD of Vertex AI Dataset and its child
+   * resources.
+   * </pre>
+   */
   public static final class DatasetServiceBlockingStub
       extends io.grpc.stub.AbstractBlockingStub<DatasetServiceBlockingStub> {
     private DatasetServiceBlockingStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
@@ -1054,7 +1082,14 @@ public final class DatasetServiceGrpc {
     }
   }
 
-  /** */
+  /**
+   *
+   *
+   * <pre>
+   * The service that handles the CRUD of Vertex AI Dataset and its child
+   * resources.
+   * </pre>
+   */
   public static final class DatasetServiceFutureStub
       extends io.grpc.stub.AbstractFutureStub<DatasetServiceFutureStub> {
     private DatasetServiceFutureStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {

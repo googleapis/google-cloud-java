@@ -20,6 +20,8 @@ import static com.google.cloud.aiplatform.v1.JobServiceClient.ListBatchPredictio
 import static com.google.cloud.aiplatform.v1.JobServiceClient.ListCustomJobsPagedResponse;
 import static com.google.cloud.aiplatform.v1.JobServiceClient.ListDataLabelingJobsPagedResponse;
 import static com.google.cloud.aiplatform.v1.JobServiceClient.ListHyperparameterTuningJobsPagedResponse;
+import static com.google.cloud.aiplatform.v1.JobServiceClient.ListModelDeploymentMonitoringJobsPagedResponse;
+import static com.google.cloud.aiplatform.v1.JobServiceClient.SearchModelDeploymentMonitoringStatsAnomaliesPagedResponse;
 
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.rpc.OperationCallable;
@@ -33,17 +35,20 @@ import com.google.cloud.aiplatform.v1.CreateBatchPredictionJobRequest;
 import com.google.cloud.aiplatform.v1.CreateCustomJobRequest;
 import com.google.cloud.aiplatform.v1.CreateDataLabelingJobRequest;
 import com.google.cloud.aiplatform.v1.CreateHyperparameterTuningJobRequest;
+import com.google.cloud.aiplatform.v1.CreateModelDeploymentMonitoringJobRequest;
 import com.google.cloud.aiplatform.v1.CustomJob;
 import com.google.cloud.aiplatform.v1.DataLabelingJob;
 import com.google.cloud.aiplatform.v1.DeleteBatchPredictionJobRequest;
 import com.google.cloud.aiplatform.v1.DeleteCustomJobRequest;
 import com.google.cloud.aiplatform.v1.DeleteDataLabelingJobRequest;
 import com.google.cloud.aiplatform.v1.DeleteHyperparameterTuningJobRequest;
+import com.google.cloud.aiplatform.v1.DeleteModelDeploymentMonitoringJobRequest;
 import com.google.cloud.aiplatform.v1.DeleteOperationMetadata;
 import com.google.cloud.aiplatform.v1.GetBatchPredictionJobRequest;
 import com.google.cloud.aiplatform.v1.GetCustomJobRequest;
 import com.google.cloud.aiplatform.v1.GetDataLabelingJobRequest;
 import com.google.cloud.aiplatform.v1.GetHyperparameterTuningJobRequest;
+import com.google.cloud.aiplatform.v1.GetModelDeploymentMonitoringJobRequest;
 import com.google.cloud.aiplatform.v1.HyperparameterTuningJob;
 import com.google.cloud.aiplatform.v1.ListBatchPredictionJobsRequest;
 import com.google.cloud.aiplatform.v1.ListBatchPredictionJobsResponse;
@@ -53,6 +58,15 @@ import com.google.cloud.aiplatform.v1.ListDataLabelingJobsRequest;
 import com.google.cloud.aiplatform.v1.ListDataLabelingJobsResponse;
 import com.google.cloud.aiplatform.v1.ListHyperparameterTuningJobsRequest;
 import com.google.cloud.aiplatform.v1.ListHyperparameterTuningJobsResponse;
+import com.google.cloud.aiplatform.v1.ListModelDeploymentMonitoringJobsRequest;
+import com.google.cloud.aiplatform.v1.ListModelDeploymentMonitoringJobsResponse;
+import com.google.cloud.aiplatform.v1.ModelDeploymentMonitoringJob;
+import com.google.cloud.aiplatform.v1.PauseModelDeploymentMonitoringJobRequest;
+import com.google.cloud.aiplatform.v1.ResumeModelDeploymentMonitoringJobRequest;
+import com.google.cloud.aiplatform.v1.SearchModelDeploymentMonitoringStatsAnomaliesRequest;
+import com.google.cloud.aiplatform.v1.SearchModelDeploymentMonitoringStatsAnomaliesResponse;
+import com.google.cloud.aiplatform.v1.UpdateModelDeploymentMonitoringJobOperationMetadata;
+import com.google.cloud.aiplatform.v1.UpdateModelDeploymentMonitoringJobRequest;
 import com.google.longrunning.Operation;
 import com.google.longrunning.stub.OperationsStub;
 import com.google.protobuf.Empty;
@@ -211,6 +225,88 @@ public abstract class JobServiceStub implements BackgroundResource {
 
   public UnaryCallable<CancelBatchPredictionJobRequest, Empty> cancelBatchPredictionJobCallable() {
     throw new UnsupportedOperationException("Not implemented: cancelBatchPredictionJobCallable()");
+  }
+
+  public UnaryCallable<CreateModelDeploymentMonitoringJobRequest, ModelDeploymentMonitoringJob>
+      createModelDeploymentMonitoringJobCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: createModelDeploymentMonitoringJobCallable()");
+  }
+
+  public UnaryCallable<
+          SearchModelDeploymentMonitoringStatsAnomaliesRequest,
+          SearchModelDeploymentMonitoringStatsAnomaliesPagedResponse>
+      searchModelDeploymentMonitoringStatsAnomaliesPagedCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: searchModelDeploymentMonitoringStatsAnomaliesPagedCallable()");
+  }
+
+  public UnaryCallable<
+          SearchModelDeploymentMonitoringStatsAnomaliesRequest,
+          SearchModelDeploymentMonitoringStatsAnomaliesResponse>
+      searchModelDeploymentMonitoringStatsAnomaliesCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: searchModelDeploymentMonitoringStatsAnomaliesCallable()");
+  }
+
+  public UnaryCallable<GetModelDeploymentMonitoringJobRequest, ModelDeploymentMonitoringJob>
+      getModelDeploymentMonitoringJobCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: getModelDeploymentMonitoringJobCallable()");
+  }
+
+  public UnaryCallable<
+          ListModelDeploymentMonitoringJobsRequest, ListModelDeploymentMonitoringJobsPagedResponse>
+      listModelDeploymentMonitoringJobsPagedCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: listModelDeploymentMonitoringJobsPagedCallable()");
+  }
+
+  public UnaryCallable<
+          ListModelDeploymentMonitoringJobsRequest, ListModelDeploymentMonitoringJobsResponse>
+      listModelDeploymentMonitoringJobsCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: listModelDeploymentMonitoringJobsCallable()");
+  }
+
+  public OperationCallable<
+          UpdateModelDeploymentMonitoringJobRequest,
+          ModelDeploymentMonitoringJob,
+          UpdateModelDeploymentMonitoringJobOperationMetadata>
+      updateModelDeploymentMonitoringJobOperationCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: updateModelDeploymentMonitoringJobOperationCallable()");
+  }
+
+  public UnaryCallable<UpdateModelDeploymentMonitoringJobRequest, Operation>
+      updateModelDeploymentMonitoringJobCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: updateModelDeploymentMonitoringJobCallable()");
+  }
+
+  public OperationCallable<
+          DeleteModelDeploymentMonitoringJobRequest, Empty, DeleteOperationMetadata>
+      deleteModelDeploymentMonitoringJobOperationCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: deleteModelDeploymentMonitoringJobOperationCallable()");
+  }
+
+  public UnaryCallable<DeleteModelDeploymentMonitoringJobRequest, Operation>
+      deleteModelDeploymentMonitoringJobCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: deleteModelDeploymentMonitoringJobCallable()");
+  }
+
+  public UnaryCallable<PauseModelDeploymentMonitoringJobRequest, Empty>
+      pauseModelDeploymentMonitoringJobCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: pauseModelDeploymentMonitoringJobCallable()");
+  }
+
+  public UnaryCallable<ResumeModelDeploymentMonitoringJobRequest, Empty>
+      resumeModelDeploymentMonitoringJobCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: resumeModelDeploymentMonitoringJobCallable()");
   }
 
   @Override

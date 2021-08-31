@@ -109,6 +109,53 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
               algorithm_ = rawValue;
               break;
             }
+          case 34:
+            {
+              com.google.cloud.aiplatform.v1.StudySpec.DecayCurveAutomatedStoppingSpec.Builder
+                  subBuilder = null;
+              if (automatedStoppingSpecCase_ == 4) {
+                subBuilder =
+                    ((com.google.cloud.aiplatform.v1.StudySpec.DecayCurveAutomatedStoppingSpec)
+                            automatedStoppingSpec_)
+                        .toBuilder();
+              }
+              automatedStoppingSpec_ =
+                  input.readMessage(
+                      com.google.cloud.aiplatform.v1.StudySpec.DecayCurveAutomatedStoppingSpec
+                          .parser(),
+                      extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(
+                    (com.google.cloud.aiplatform.v1.StudySpec.DecayCurveAutomatedStoppingSpec)
+                        automatedStoppingSpec_);
+                automatedStoppingSpec_ = subBuilder.buildPartial();
+              }
+              automatedStoppingSpecCase_ = 4;
+              break;
+            }
+          case 42:
+            {
+              com.google.cloud.aiplatform.v1.StudySpec.MedianAutomatedStoppingSpec.Builder
+                  subBuilder = null;
+              if (automatedStoppingSpecCase_ == 5) {
+                subBuilder =
+                    ((com.google.cloud.aiplatform.v1.StudySpec.MedianAutomatedStoppingSpec)
+                            automatedStoppingSpec_)
+                        .toBuilder();
+              }
+              automatedStoppingSpec_ =
+                  input.readMessage(
+                      com.google.cloud.aiplatform.v1.StudySpec.MedianAutomatedStoppingSpec.parser(),
+                      extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(
+                    (com.google.cloud.aiplatform.v1.StudySpec.MedianAutomatedStoppingSpec)
+                        automatedStoppingSpec_);
+                automatedStoppingSpec_ = subBuilder.buildPartial();
+              }
+              automatedStoppingSpecCase_ = 5;
+              break;
+            }
           case 48:
             {
               int rawValue = input.readEnum();
@@ -13916,6 +13963,1361 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
+  public interface DecayCurveAutomatedStoppingSpecOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.cloud.aiplatform.v1.StudySpec.DecayCurveAutomatedStoppingSpec)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * True if [Measurement.elapsed_duration][google.cloud.aiplatform.v1.Measurement.elapsed_duration] is used as the x-axis of each
+     * Trials Decay Curve. Otherwise, [Measurement.step_count][google.cloud.aiplatform.v1.Measurement.step_count] will be used
+     * as the x-axis.
+     * </pre>
+     *
+     * <code>bool use_elapsed_duration = 1;</code>
+     *
+     * @return The useElapsedDuration.
+     */
+    boolean getUseElapsedDuration();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The decay curve automated stopping rule builds a Gaussian Process
+   * Regressor to predict the final objective value of a Trial based on the
+   * already completed Trials and the intermediate measurements of the current
+   * Trial. Early stopping is requested for the current Trial if there is very
+   * low probability to exceed the optimal value found so far.
+   * </pre>
+   *
+   * Protobuf type {@code google.cloud.aiplatform.v1.StudySpec.DecayCurveAutomatedStoppingSpec}
+   */
+  public static final class DecayCurveAutomatedStoppingSpec
+      extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1.StudySpec.DecayCurveAutomatedStoppingSpec)
+      DecayCurveAutomatedStoppingSpecOrBuilder {
+    private static final long serialVersionUID = 0L;
+    // Use DecayCurveAutomatedStoppingSpec.newBuilder() to construct.
+    private DecayCurveAutomatedStoppingSpec(
+        com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private DecayCurveAutomatedStoppingSpec() {}
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new DecayCurveAutomatedStoppingSpec();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+      return this.unknownFields;
+    }
+
+    private DecayCurveAutomatedStoppingSpec(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 8:
+              {
+                useElapsedDuration_ = input.readBool();
+                break;
+              }
+            default:
+              {
+                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
+                  done = true;
+                }
+                break;
+              }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.aiplatform.v1.StudyProto
+          .internal_static_google_cloud_aiplatform_v1_StudySpec_DecayCurveAutomatedStoppingSpec_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.cloud.aiplatform.v1.StudyProto
+          .internal_static_google_cloud_aiplatform_v1_StudySpec_DecayCurveAutomatedStoppingSpec_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.aiplatform.v1.StudySpec.DecayCurveAutomatedStoppingSpec.class,
+              com.google.cloud.aiplatform.v1.StudySpec.DecayCurveAutomatedStoppingSpec.Builder
+                  .class);
+    }
+
+    public static final int USE_ELAPSED_DURATION_FIELD_NUMBER = 1;
+    private boolean useElapsedDuration_;
+    /**
+     *
+     *
+     * <pre>
+     * True if [Measurement.elapsed_duration][google.cloud.aiplatform.v1.Measurement.elapsed_duration] is used as the x-axis of each
+     * Trials Decay Curve. Otherwise, [Measurement.step_count][google.cloud.aiplatform.v1.Measurement.step_count] will be used
+     * as the x-axis.
+     * </pre>
+     *
+     * <code>bool use_elapsed_duration = 1;</code>
+     *
+     * @return The useElapsedDuration.
+     */
+    @java.lang.Override
+    public boolean getUseElapsedDuration() {
+      return useElapsedDuration_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (useElapsedDuration_ != false) {
+        output.writeBool(1, useElapsedDuration_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (useElapsedDuration_ != false) {
+        size += com.google.protobuf.CodedOutputStream.computeBoolSize(1, useElapsedDuration_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj
+          instanceof com.google.cloud.aiplatform.v1.StudySpec.DecayCurveAutomatedStoppingSpec)) {
+        return super.equals(obj);
+      }
+      com.google.cloud.aiplatform.v1.StudySpec.DecayCurveAutomatedStoppingSpec other =
+          (com.google.cloud.aiplatform.v1.StudySpec.DecayCurveAutomatedStoppingSpec) obj;
+
+      if (getUseElapsedDuration() != other.getUseElapsedDuration()) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + USE_ELAPSED_DURATION_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getUseElapsedDuration());
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.cloud.aiplatform.v1.StudySpec.DecayCurveAutomatedStoppingSpec
+        parseFrom(java.nio.ByteBuffer data)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.aiplatform.v1.StudySpec.DecayCurveAutomatedStoppingSpec
+        parseFrom(
+            java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.aiplatform.v1.StudySpec.DecayCurveAutomatedStoppingSpec
+        parseFrom(com.google.protobuf.ByteString data)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.aiplatform.v1.StudySpec.DecayCurveAutomatedStoppingSpec
+        parseFrom(
+            com.google.protobuf.ByteString data,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.aiplatform.v1.StudySpec.DecayCurveAutomatedStoppingSpec
+        parseFrom(byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.aiplatform.v1.StudySpec.DecayCurveAutomatedStoppingSpec
+        parseFrom(byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.aiplatform.v1.StudySpec.DecayCurveAutomatedStoppingSpec
+        parseFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.aiplatform.v1.StudySpec.DecayCurveAutomatedStoppingSpec
+        parseFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.aiplatform.v1.StudySpec.DecayCurveAutomatedStoppingSpec
+        parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.aiplatform.v1.StudySpec.DecayCurveAutomatedStoppingSpec
+        parseDelimitedFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.aiplatform.v1.StudySpec.DecayCurveAutomatedStoppingSpec
+        parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.aiplatform.v1.StudySpec.DecayCurveAutomatedStoppingSpec
+        parseFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.cloud.aiplatform.v1.StudySpec.DecayCurveAutomatedStoppingSpec prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The decay curve automated stopping rule builds a Gaussian Process
+     * Regressor to predict the final objective value of a Trial based on the
+     * already completed Trials and the intermediate measurements of the current
+     * Trial. Early stopping is requested for the current Trial if there is very
+     * low probability to exceed the optimal value found so far.
+     * </pre>
+     *
+     * Protobuf type {@code google.cloud.aiplatform.v1.StudySpec.DecayCurveAutomatedStoppingSpec}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.cloud.aiplatform.v1.StudySpec.DecayCurveAutomatedStoppingSpec)
+        com.google.cloud.aiplatform.v1.StudySpec.DecayCurveAutomatedStoppingSpecOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.aiplatform.v1.StudyProto
+            .internal_static_google_cloud_aiplatform_v1_StudySpec_DecayCurveAutomatedStoppingSpec_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.aiplatform.v1.StudyProto
+            .internal_static_google_cloud_aiplatform_v1_StudySpec_DecayCurveAutomatedStoppingSpec_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.aiplatform.v1.StudySpec.DecayCurveAutomatedStoppingSpec.class,
+                com.google.cloud.aiplatform.v1.StudySpec.DecayCurveAutomatedStoppingSpec.Builder
+                    .class);
+      }
+
+      // Construct using
+      // com.google.cloud.aiplatform.v1.StudySpec.DecayCurveAutomatedStoppingSpec.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        useElapsedDuration_ = false;
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.aiplatform.v1.StudyProto
+            .internal_static_google_cloud_aiplatform_v1_StudySpec_DecayCurveAutomatedStoppingSpec_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.aiplatform.v1.StudySpec.DecayCurveAutomatedStoppingSpec
+          getDefaultInstanceForType() {
+        return com.google.cloud.aiplatform.v1.StudySpec.DecayCurveAutomatedStoppingSpec
+            .getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.cloud.aiplatform.v1.StudySpec.DecayCurveAutomatedStoppingSpec build() {
+        com.google.cloud.aiplatform.v1.StudySpec.DecayCurveAutomatedStoppingSpec result =
+            buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.aiplatform.v1.StudySpec.DecayCurveAutomatedStoppingSpec
+          buildPartial() {
+        com.google.cloud.aiplatform.v1.StudySpec.DecayCurveAutomatedStoppingSpec result =
+            new com.google.cloud.aiplatform.v1.StudySpec.DecayCurveAutomatedStoppingSpec(this);
+        result.useElapsedDuration_ = useElapsedDuration_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other
+            instanceof com.google.cloud.aiplatform.v1.StudySpec.DecayCurveAutomatedStoppingSpec) {
+          return mergeFrom(
+              (com.google.cloud.aiplatform.v1.StudySpec.DecayCurveAutomatedStoppingSpec) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(
+          com.google.cloud.aiplatform.v1.StudySpec.DecayCurveAutomatedStoppingSpec other) {
+        if (other
+            == com.google.cloud.aiplatform.v1.StudySpec.DecayCurveAutomatedStoppingSpec
+                .getDefaultInstance()) return this;
+        if (other.getUseElapsedDuration() != false) {
+          setUseElapsedDuration(other.getUseElapsedDuration());
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.google.cloud.aiplatform.v1.StudySpec.DecayCurveAutomatedStoppingSpec parsedMessage =
+            null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage =
+              (com.google.cloud.aiplatform.v1.StudySpec.DecayCurveAutomatedStoppingSpec)
+                  e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private boolean useElapsedDuration_;
+      /**
+       *
+       *
+       * <pre>
+       * True if [Measurement.elapsed_duration][google.cloud.aiplatform.v1.Measurement.elapsed_duration] is used as the x-axis of each
+       * Trials Decay Curve. Otherwise, [Measurement.step_count][google.cloud.aiplatform.v1.Measurement.step_count] will be used
+       * as the x-axis.
+       * </pre>
+       *
+       * <code>bool use_elapsed_duration = 1;</code>
+       *
+       * @return The useElapsedDuration.
+       */
+      @java.lang.Override
+      public boolean getUseElapsedDuration() {
+        return useElapsedDuration_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * True if [Measurement.elapsed_duration][google.cloud.aiplatform.v1.Measurement.elapsed_duration] is used as the x-axis of each
+       * Trials Decay Curve. Otherwise, [Measurement.step_count][google.cloud.aiplatform.v1.Measurement.step_count] will be used
+       * as the x-axis.
+       * </pre>
+       *
+       * <code>bool use_elapsed_duration = 1;</code>
+       *
+       * @param value The useElapsedDuration to set.
+       * @return This builder for chaining.
+       */
+      public Builder setUseElapsedDuration(boolean value) {
+
+        useElapsedDuration_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * True if [Measurement.elapsed_duration][google.cloud.aiplatform.v1.Measurement.elapsed_duration] is used as the x-axis of each
+       * Trials Decay Curve. Otherwise, [Measurement.step_count][google.cloud.aiplatform.v1.Measurement.step_count] will be used
+       * as the x-axis.
+       * </pre>
+       *
+       * <code>bool use_elapsed_duration = 1;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearUseElapsedDuration() {
+
+        useElapsedDuration_ = false;
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.cloud.aiplatform.v1.StudySpec.DecayCurveAutomatedStoppingSpec)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.cloud.aiplatform.v1.StudySpec.DecayCurveAutomatedStoppingSpec)
+    private static final com.google.cloud.aiplatform.v1.StudySpec.DecayCurveAutomatedStoppingSpec
+        DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE =
+          new com.google.cloud.aiplatform.v1.StudySpec.DecayCurveAutomatedStoppingSpec();
+    }
+
+    public static com.google.cloud.aiplatform.v1.StudySpec.DecayCurveAutomatedStoppingSpec
+        getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<DecayCurveAutomatedStoppingSpec> PARSER =
+        new com.google.protobuf.AbstractParser<DecayCurveAutomatedStoppingSpec>() {
+          @java.lang.Override
+          public DecayCurveAutomatedStoppingSpec parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            return new DecayCurveAutomatedStoppingSpec(input, extensionRegistry);
+          }
+        };
+
+    public static com.google.protobuf.Parser<DecayCurveAutomatedStoppingSpec> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<DecayCurveAutomatedStoppingSpec> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.cloud.aiplatform.v1.StudySpec.DecayCurveAutomatedStoppingSpec
+        getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
+  public interface MedianAutomatedStoppingSpecOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.cloud.aiplatform.v1.StudySpec.MedianAutomatedStoppingSpec)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * True if median automated stopping rule applies on
+     * [Measurement.elapsed_duration][google.cloud.aiplatform.v1.Measurement.elapsed_duration]. It means that elapsed_duration
+     * field of latest measurement of current Trial is used to compute median
+     * objective value for each completed Trials.
+     * </pre>
+     *
+     * <code>bool use_elapsed_duration = 1;</code>
+     *
+     * @return The useElapsedDuration.
+     */
+    boolean getUseElapsedDuration();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The median automated stopping rule stops a pending Trial if the Trial's
+   * best objective_value is strictly below the median 'performance' of all
+   * completed Trials reported up to the Trial's last measurement.
+   * Currently, 'performance' refers to the running average of the objective
+   * values reported by the Trial in each measurement.
+   * </pre>
+   *
+   * Protobuf type {@code google.cloud.aiplatform.v1.StudySpec.MedianAutomatedStoppingSpec}
+   */
+  public static final class MedianAutomatedStoppingSpec
+      extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1.StudySpec.MedianAutomatedStoppingSpec)
+      MedianAutomatedStoppingSpecOrBuilder {
+    private static final long serialVersionUID = 0L;
+    // Use MedianAutomatedStoppingSpec.newBuilder() to construct.
+    private MedianAutomatedStoppingSpec(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private MedianAutomatedStoppingSpec() {}
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new MedianAutomatedStoppingSpec();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+      return this.unknownFields;
+    }
+
+    private MedianAutomatedStoppingSpec(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 8:
+              {
+                useElapsedDuration_ = input.readBool();
+                break;
+              }
+            default:
+              {
+                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
+                  done = true;
+                }
+                break;
+              }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.aiplatform.v1.StudyProto
+          .internal_static_google_cloud_aiplatform_v1_StudySpec_MedianAutomatedStoppingSpec_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.cloud.aiplatform.v1.StudyProto
+          .internal_static_google_cloud_aiplatform_v1_StudySpec_MedianAutomatedStoppingSpec_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.aiplatform.v1.StudySpec.MedianAutomatedStoppingSpec.class,
+              com.google.cloud.aiplatform.v1.StudySpec.MedianAutomatedStoppingSpec.Builder.class);
+    }
+
+    public static final int USE_ELAPSED_DURATION_FIELD_NUMBER = 1;
+    private boolean useElapsedDuration_;
+    /**
+     *
+     *
+     * <pre>
+     * True if median automated stopping rule applies on
+     * [Measurement.elapsed_duration][google.cloud.aiplatform.v1.Measurement.elapsed_duration]. It means that elapsed_duration
+     * field of latest measurement of current Trial is used to compute median
+     * objective value for each completed Trials.
+     * </pre>
+     *
+     * <code>bool use_elapsed_duration = 1;</code>
+     *
+     * @return The useElapsedDuration.
+     */
+    @java.lang.Override
+    public boolean getUseElapsedDuration() {
+      return useElapsedDuration_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (useElapsedDuration_ != false) {
+        output.writeBool(1, useElapsedDuration_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (useElapsedDuration_ != false) {
+        size += com.google.protobuf.CodedOutputStream.computeBoolSize(1, useElapsedDuration_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.cloud.aiplatform.v1.StudySpec.MedianAutomatedStoppingSpec)) {
+        return super.equals(obj);
+      }
+      com.google.cloud.aiplatform.v1.StudySpec.MedianAutomatedStoppingSpec other =
+          (com.google.cloud.aiplatform.v1.StudySpec.MedianAutomatedStoppingSpec) obj;
+
+      if (getUseElapsedDuration() != other.getUseElapsedDuration()) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + USE_ELAPSED_DURATION_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getUseElapsedDuration());
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.cloud.aiplatform.v1.StudySpec.MedianAutomatedStoppingSpec parseFrom(
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.aiplatform.v1.StudySpec.MedianAutomatedStoppingSpec parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.aiplatform.v1.StudySpec.MedianAutomatedStoppingSpec parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.aiplatform.v1.StudySpec.MedianAutomatedStoppingSpec parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.aiplatform.v1.StudySpec.MedianAutomatedStoppingSpec parseFrom(
+        byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.aiplatform.v1.StudySpec.MedianAutomatedStoppingSpec parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.aiplatform.v1.StudySpec.MedianAutomatedStoppingSpec parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.aiplatform.v1.StudySpec.MedianAutomatedStoppingSpec parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.aiplatform.v1.StudySpec.MedianAutomatedStoppingSpec
+        parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.aiplatform.v1.StudySpec.MedianAutomatedStoppingSpec
+        parseDelimitedFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.aiplatform.v1.StudySpec.MedianAutomatedStoppingSpec parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.aiplatform.v1.StudySpec.MedianAutomatedStoppingSpec parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.cloud.aiplatform.v1.StudySpec.MedianAutomatedStoppingSpec prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The median automated stopping rule stops a pending Trial if the Trial's
+     * best objective_value is strictly below the median 'performance' of all
+     * completed Trials reported up to the Trial's last measurement.
+     * Currently, 'performance' refers to the running average of the objective
+     * values reported by the Trial in each measurement.
+     * </pre>
+     *
+     * Protobuf type {@code google.cloud.aiplatform.v1.StudySpec.MedianAutomatedStoppingSpec}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.cloud.aiplatform.v1.StudySpec.MedianAutomatedStoppingSpec)
+        com.google.cloud.aiplatform.v1.StudySpec.MedianAutomatedStoppingSpecOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.aiplatform.v1.StudyProto
+            .internal_static_google_cloud_aiplatform_v1_StudySpec_MedianAutomatedStoppingSpec_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.aiplatform.v1.StudyProto
+            .internal_static_google_cloud_aiplatform_v1_StudySpec_MedianAutomatedStoppingSpec_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.aiplatform.v1.StudySpec.MedianAutomatedStoppingSpec.class,
+                com.google.cloud.aiplatform.v1.StudySpec.MedianAutomatedStoppingSpec.Builder.class);
+      }
+
+      // Construct using
+      // com.google.cloud.aiplatform.v1.StudySpec.MedianAutomatedStoppingSpec.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        useElapsedDuration_ = false;
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.aiplatform.v1.StudyProto
+            .internal_static_google_cloud_aiplatform_v1_StudySpec_MedianAutomatedStoppingSpec_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.aiplatform.v1.StudySpec.MedianAutomatedStoppingSpec
+          getDefaultInstanceForType() {
+        return com.google.cloud.aiplatform.v1.StudySpec.MedianAutomatedStoppingSpec
+            .getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.cloud.aiplatform.v1.StudySpec.MedianAutomatedStoppingSpec build() {
+        com.google.cloud.aiplatform.v1.StudySpec.MedianAutomatedStoppingSpec result =
+            buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.aiplatform.v1.StudySpec.MedianAutomatedStoppingSpec buildPartial() {
+        com.google.cloud.aiplatform.v1.StudySpec.MedianAutomatedStoppingSpec result =
+            new com.google.cloud.aiplatform.v1.StudySpec.MedianAutomatedStoppingSpec(this);
+        result.useElapsedDuration_ = useElapsedDuration_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.google.cloud.aiplatform.v1.StudySpec.MedianAutomatedStoppingSpec) {
+          return mergeFrom(
+              (com.google.cloud.aiplatform.v1.StudySpec.MedianAutomatedStoppingSpec) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(
+          com.google.cloud.aiplatform.v1.StudySpec.MedianAutomatedStoppingSpec other) {
+        if (other
+            == com.google.cloud.aiplatform.v1.StudySpec.MedianAutomatedStoppingSpec
+                .getDefaultInstance()) return this;
+        if (other.getUseElapsedDuration() != false) {
+          setUseElapsedDuration(other.getUseElapsedDuration());
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.google.cloud.aiplatform.v1.StudySpec.MedianAutomatedStoppingSpec parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage =
+              (com.google.cloud.aiplatform.v1.StudySpec.MedianAutomatedStoppingSpec)
+                  e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private boolean useElapsedDuration_;
+      /**
+       *
+       *
+       * <pre>
+       * True if median automated stopping rule applies on
+       * [Measurement.elapsed_duration][google.cloud.aiplatform.v1.Measurement.elapsed_duration]. It means that elapsed_duration
+       * field of latest measurement of current Trial is used to compute median
+       * objective value for each completed Trials.
+       * </pre>
+       *
+       * <code>bool use_elapsed_duration = 1;</code>
+       *
+       * @return The useElapsedDuration.
+       */
+      @java.lang.Override
+      public boolean getUseElapsedDuration() {
+        return useElapsedDuration_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * True if median automated stopping rule applies on
+       * [Measurement.elapsed_duration][google.cloud.aiplatform.v1.Measurement.elapsed_duration]. It means that elapsed_duration
+       * field of latest measurement of current Trial is used to compute median
+       * objective value for each completed Trials.
+       * </pre>
+       *
+       * <code>bool use_elapsed_duration = 1;</code>
+       *
+       * @param value The useElapsedDuration to set.
+       * @return This builder for chaining.
+       */
+      public Builder setUseElapsedDuration(boolean value) {
+
+        useElapsedDuration_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * True if median automated stopping rule applies on
+       * [Measurement.elapsed_duration][google.cloud.aiplatform.v1.Measurement.elapsed_duration]. It means that elapsed_duration
+       * field of latest measurement of current Trial is used to compute median
+       * objective value for each completed Trials.
+       * </pre>
+       *
+       * <code>bool use_elapsed_duration = 1;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearUseElapsedDuration() {
+
+        useElapsedDuration_ = false;
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.cloud.aiplatform.v1.StudySpec.MedianAutomatedStoppingSpec)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.cloud.aiplatform.v1.StudySpec.MedianAutomatedStoppingSpec)
+    private static final com.google.cloud.aiplatform.v1.StudySpec.MedianAutomatedStoppingSpec
+        DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new com.google.cloud.aiplatform.v1.StudySpec.MedianAutomatedStoppingSpec();
+    }
+
+    public static com.google.cloud.aiplatform.v1.StudySpec.MedianAutomatedStoppingSpec
+        getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<MedianAutomatedStoppingSpec> PARSER =
+        new com.google.protobuf.AbstractParser<MedianAutomatedStoppingSpec>() {
+          @java.lang.Override
+          public MedianAutomatedStoppingSpec parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            return new MedianAutomatedStoppingSpec(input, extensionRegistry);
+          }
+        };
+
+    public static com.google.protobuf.Parser<MedianAutomatedStoppingSpec> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<MedianAutomatedStoppingSpec> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.cloud.aiplatform.v1.StudySpec.MedianAutomatedStoppingSpec
+        getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
+  private int automatedStoppingSpecCase_ = 0;
+  private java.lang.Object automatedStoppingSpec_;
+
+  public enum AutomatedStoppingSpecCase
+      implements
+          com.google.protobuf.Internal.EnumLite,
+          com.google.protobuf.AbstractMessage.InternalOneOfEnum {
+    DECAY_CURVE_STOPPING_SPEC(4),
+    MEDIAN_AUTOMATED_STOPPING_SPEC(5),
+    AUTOMATEDSTOPPINGSPEC_NOT_SET(0);
+    private final int value;
+
+    private AutomatedStoppingSpecCase(int value) {
+      this.value = value;
+    }
+    /**
+     * @param value The number of the enum to look for.
+     * @return The enum associated with the given number.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static AutomatedStoppingSpecCase valueOf(int value) {
+      return forNumber(value);
+    }
+
+    public static AutomatedStoppingSpecCase forNumber(int value) {
+      switch (value) {
+        case 4:
+          return DECAY_CURVE_STOPPING_SPEC;
+        case 5:
+          return MEDIAN_AUTOMATED_STOPPING_SPEC;
+        case 0:
+          return AUTOMATEDSTOPPINGSPEC_NOT_SET;
+        default:
+          return null;
+      }
+    }
+
+    public int getNumber() {
+      return this.value;
+    }
+  };
+
+  public AutomatedStoppingSpecCase getAutomatedStoppingSpecCase() {
+    return AutomatedStoppingSpecCase.forNumber(automatedStoppingSpecCase_);
+  }
+
+  public static final int DECAY_CURVE_STOPPING_SPEC_FIELD_NUMBER = 4;
+  /**
+   *
+   *
+   * <pre>
+   * The automated early stopping spec using decay curve rule.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1.StudySpec.DecayCurveAutomatedStoppingSpec decay_curve_stopping_spec = 4;
+   * </code>
+   *
+   * @return Whether the decayCurveStoppingSpec field is set.
+   */
+  @java.lang.Override
+  public boolean hasDecayCurveStoppingSpec() {
+    return automatedStoppingSpecCase_ == 4;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The automated early stopping spec using decay curve rule.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1.StudySpec.DecayCurveAutomatedStoppingSpec decay_curve_stopping_spec = 4;
+   * </code>
+   *
+   * @return The decayCurveStoppingSpec.
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1.StudySpec.DecayCurveAutomatedStoppingSpec
+      getDecayCurveStoppingSpec() {
+    if (automatedStoppingSpecCase_ == 4) {
+      return (com.google.cloud.aiplatform.v1.StudySpec.DecayCurveAutomatedStoppingSpec)
+          automatedStoppingSpec_;
+    }
+    return com.google.cloud.aiplatform.v1.StudySpec.DecayCurveAutomatedStoppingSpec
+        .getDefaultInstance();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The automated early stopping spec using decay curve rule.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1.StudySpec.DecayCurveAutomatedStoppingSpec decay_curve_stopping_spec = 4;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1.StudySpec.DecayCurveAutomatedStoppingSpecOrBuilder
+      getDecayCurveStoppingSpecOrBuilder() {
+    if (automatedStoppingSpecCase_ == 4) {
+      return (com.google.cloud.aiplatform.v1.StudySpec.DecayCurveAutomatedStoppingSpec)
+          automatedStoppingSpec_;
+    }
+    return com.google.cloud.aiplatform.v1.StudySpec.DecayCurveAutomatedStoppingSpec
+        .getDefaultInstance();
+  }
+
+  public static final int MEDIAN_AUTOMATED_STOPPING_SPEC_FIELD_NUMBER = 5;
+  /**
+   *
+   *
+   * <pre>
+   * The automated early stopping spec using median rule.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1.StudySpec.MedianAutomatedStoppingSpec median_automated_stopping_spec = 5;
+   * </code>
+   *
+   * @return Whether the medianAutomatedStoppingSpec field is set.
+   */
+  @java.lang.Override
+  public boolean hasMedianAutomatedStoppingSpec() {
+    return automatedStoppingSpecCase_ == 5;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The automated early stopping spec using median rule.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1.StudySpec.MedianAutomatedStoppingSpec median_automated_stopping_spec = 5;
+   * </code>
+   *
+   * @return The medianAutomatedStoppingSpec.
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1.StudySpec.MedianAutomatedStoppingSpec
+      getMedianAutomatedStoppingSpec() {
+    if (automatedStoppingSpecCase_ == 5) {
+      return (com.google.cloud.aiplatform.v1.StudySpec.MedianAutomatedStoppingSpec)
+          automatedStoppingSpec_;
+    }
+    return com.google.cloud.aiplatform.v1.StudySpec.MedianAutomatedStoppingSpec
+        .getDefaultInstance();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The automated early stopping spec using median rule.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1.StudySpec.MedianAutomatedStoppingSpec median_automated_stopping_spec = 5;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1.StudySpec.MedianAutomatedStoppingSpecOrBuilder
+      getMedianAutomatedStoppingSpecOrBuilder() {
+    if (automatedStoppingSpecCase_ == 5) {
+      return (com.google.cloud.aiplatform.v1.StudySpec.MedianAutomatedStoppingSpec)
+          automatedStoppingSpec_;
+    }
+    return com.google.cloud.aiplatform.v1.StudySpec.MedianAutomatedStoppingSpec
+        .getDefaultInstance();
+  }
+
   public static final int METRICS_FIELD_NUMBER = 1;
   private java.util.List<com.google.cloud.aiplatform.v1.StudySpec.MetricSpec> metrics_;
   /**
@@ -14225,6 +15627,18 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
         != com.google.cloud.aiplatform.v1.StudySpec.Algorithm.ALGORITHM_UNSPECIFIED.getNumber()) {
       output.writeEnum(3, algorithm_);
     }
+    if (automatedStoppingSpecCase_ == 4) {
+      output.writeMessage(
+          4,
+          (com.google.cloud.aiplatform.v1.StudySpec.DecayCurveAutomatedStoppingSpec)
+              automatedStoppingSpec_);
+    }
+    if (automatedStoppingSpecCase_ == 5) {
+      output.writeMessage(
+          5,
+          (com.google.cloud.aiplatform.v1.StudySpec.MedianAutomatedStoppingSpec)
+              automatedStoppingSpec_);
+    }
     if (observationNoise_
         != com.google.cloud.aiplatform.v1.StudySpec.ObservationNoise.OBSERVATION_NOISE_UNSPECIFIED
             .getNumber()) {
@@ -14254,6 +15668,20 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
     if (algorithm_
         != com.google.cloud.aiplatform.v1.StudySpec.Algorithm.ALGORITHM_UNSPECIFIED.getNumber()) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(3, algorithm_);
+    }
+    if (automatedStoppingSpecCase_ == 4) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              4,
+              (com.google.cloud.aiplatform.v1.StudySpec.DecayCurveAutomatedStoppingSpec)
+                  automatedStoppingSpec_);
+    }
+    if (automatedStoppingSpecCase_ == 5) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              5,
+              (com.google.cloud.aiplatform.v1.StudySpec.MedianAutomatedStoppingSpec)
+                  automatedStoppingSpec_);
     }
     if (observationNoise_
         != com.google.cloud.aiplatform.v1.StudySpec.ObservationNoise.OBSERVATION_NOISE_UNSPECIFIED
@@ -14286,6 +15714,18 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
     if (algorithm_ != other.algorithm_) return false;
     if (observationNoise_ != other.observationNoise_) return false;
     if (measurementSelectionType_ != other.measurementSelectionType_) return false;
+    if (!getAutomatedStoppingSpecCase().equals(other.getAutomatedStoppingSpecCase())) return false;
+    switch (automatedStoppingSpecCase_) {
+      case 4:
+        if (!getDecayCurveStoppingSpec().equals(other.getDecayCurveStoppingSpec())) return false;
+        break;
+      case 5:
+        if (!getMedianAutomatedStoppingSpec().equals(other.getMedianAutomatedStoppingSpec()))
+          return false;
+        break;
+      case 0:
+      default:
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -14311,6 +15751,18 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
     hash = (53 * hash) + observationNoise_;
     hash = (37 * hash) + MEASUREMENT_SELECTION_TYPE_FIELD_NUMBER;
     hash = (53 * hash) + measurementSelectionType_;
+    switch (automatedStoppingSpecCase_) {
+      case 4:
+        hash = (37 * hash) + DECAY_CURVE_STOPPING_SPEC_FIELD_NUMBER;
+        hash = (53 * hash) + getDecayCurveStoppingSpec().hashCode();
+        break;
+      case 5:
+        hash = (37 * hash) + MEDIAN_AUTOMATED_STOPPING_SPEC_FIELD_NUMBER;
+        hash = (53 * hash) + getMedianAutomatedStoppingSpec().hashCode();
+        break;
+      case 0:
+      default:
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -14477,6 +15929,8 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
 
       measurementSelectionType_ = 0;
 
+      automatedStoppingSpecCase_ = 0;
+      automatedStoppingSpec_ = null;
       return this;
     }
 
@@ -14505,6 +15959,20 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
       com.google.cloud.aiplatform.v1.StudySpec result =
           new com.google.cloud.aiplatform.v1.StudySpec(this);
       int from_bitField0_ = bitField0_;
+      if (automatedStoppingSpecCase_ == 4) {
+        if (decayCurveStoppingSpecBuilder_ == null) {
+          result.automatedStoppingSpec_ = automatedStoppingSpec_;
+        } else {
+          result.automatedStoppingSpec_ = decayCurveStoppingSpecBuilder_.build();
+        }
+      }
+      if (automatedStoppingSpecCase_ == 5) {
+        if (medianAutomatedStoppingSpecBuilder_ == null) {
+          result.automatedStoppingSpec_ = automatedStoppingSpec_;
+        } else {
+          result.automatedStoppingSpec_ = medianAutomatedStoppingSpecBuilder_.build();
+        }
+      }
       if (metricsBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           metrics_ = java.util.Collections.unmodifiableList(metrics_);
@@ -14526,6 +15994,7 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
       result.algorithm_ = algorithm_;
       result.observationNoise_ = observationNoise_;
       result.measurementSelectionType_ = measurementSelectionType_;
+      result.automatedStoppingSpecCase_ = automatedStoppingSpecCase_;
       onBuilt();
       return result;
     }
@@ -14638,6 +16107,22 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
       if (other.measurementSelectionType_ != 0) {
         setMeasurementSelectionTypeValue(other.getMeasurementSelectionTypeValue());
       }
+      switch (other.getAutomatedStoppingSpecCase()) {
+        case DECAY_CURVE_STOPPING_SPEC:
+          {
+            mergeDecayCurveStoppingSpec(other.getDecayCurveStoppingSpec());
+            break;
+          }
+        case MEDIAN_AUTOMATED_STOPPING_SPEC:
+          {
+            mergeMedianAutomatedStoppingSpec(other.getMedianAutomatedStoppingSpec());
+            break;
+          }
+        case AUTOMATEDSTOPPINGSPEC_NOT_SET:
+          {
+            break;
+          }
+      }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
@@ -14667,7 +16152,509 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
+    private int automatedStoppingSpecCase_ = 0;
+    private java.lang.Object automatedStoppingSpec_;
+
+    public AutomatedStoppingSpecCase getAutomatedStoppingSpecCase() {
+      return AutomatedStoppingSpecCase.forNumber(automatedStoppingSpecCase_);
+    }
+
+    public Builder clearAutomatedStoppingSpec() {
+      automatedStoppingSpecCase_ = 0;
+      automatedStoppingSpec_ = null;
+      onChanged();
+      return this;
+    }
+
     private int bitField0_;
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.aiplatform.v1.StudySpec.DecayCurveAutomatedStoppingSpec,
+            com.google.cloud.aiplatform.v1.StudySpec.DecayCurveAutomatedStoppingSpec.Builder,
+            com.google.cloud.aiplatform.v1.StudySpec.DecayCurveAutomatedStoppingSpecOrBuilder>
+        decayCurveStoppingSpecBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * The automated early stopping spec using decay curve rule.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.StudySpec.DecayCurveAutomatedStoppingSpec decay_curve_stopping_spec = 4;
+     * </code>
+     *
+     * @return Whether the decayCurveStoppingSpec field is set.
+     */
+    @java.lang.Override
+    public boolean hasDecayCurveStoppingSpec() {
+      return automatedStoppingSpecCase_ == 4;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The automated early stopping spec using decay curve rule.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.StudySpec.DecayCurveAutomatedStoppingSpec decay_curve_stopping_spec = 4;
+     * </code>
+     *
+     * @return The decayCurveStoppingSpec.
+     */
+    @java.lang.Override
+    public com.google.cloud.aiplatform.v1.StudySpec.DecayCurveAutomatedStoppingSpec
+        getDecayCurveStoppingSpec() {
+      if (decayCurveStoppingSpecBuilder_ == null) {
+        if (automatedStoppingSpecCase_ == 4) {
+          return (com.google.cloud.aiplatform.v1.StudySpec.DecayCurveAutomatedStoppingSpec)
+              automatedStoppingSpec_;
+        }
+        return com.google.cloud.aiplatform.v1.StudySpec.DecayCurveAutomatedStoppingSpec
+            .getDefaultInstance();
+      } else {
+        if (automatedStoppingSpecCase_ == 4) {
+          return decayCurveStoppingSpecBuilder_.getMessage();
+        }
+        return com.google.cloud.aiplatform.v1.StudySpec.DecayCurveAutomatedStoppingSpec
+            .getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The automated early stopping spec using decay curve rule.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.StudySpec.DecayCurveAutomatedStoppingSpec decay_curve_stopping_spec = 4;
+     * </code>
+     */
+    public Builder setDecayCurveStoppingSpec(
+        com.google.cloud.aiplatform.v1.StudySpec.DecayCurveAutomatedStoppingSpec value) {
+      if (decayCurveStoppingSpecBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        automatedStoppingSpec_ = value;
+        onChanged();
+      } else {
+        decayCurveStoppingSpecBuilder_.setMessage(value);
+      }
+      automatedStoppingSpecCase_ = 4;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The automated early stopping spec using decay curve rule.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.StudySpec.DecayCurveAutomatedStoppingSpec decay_curve_stopping_spec = 4;
+     * </code>
+     */
+    public Builder setDecayCurveStoppingSpec(
+        com.google.cloud.aiplatform.v1.StudySpec.DecayCurveAutomatedStoppingSpec.Builder
+            builderForValue) {
+      if (decayCurveStoppingSpecBuilder_ == null) {
+        automatedStoppingSpec_ = builderForValue.build();
+        onChanged();
+      } else {
+        decayCurveStoppingSpecBuilder_.setMessage(builderForValue.build());
+      }
+      automatedStoppingSpecCase_ = 4;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The automated early stopping spec using decay curve rule.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.StudySpec.DecayCurveAutomatedStoppingSpec decay_curve_stopping_spec = 4;
+     * </code>
+     */
+    public Builder mergeDecayCurveStoppingSpec(
+        com.google.cloud.aiplatform.v1.StudySpec.DecayCurveAutomatedStoppingSpec value) {
+      if (decayCurveStoppingSpecBuilder_ == null) {
+        if (automatedStoppingSpecCase_ == 4
+            && automatedStoppingSpec_
+                != com.google.cloud.aiplatform.v1.StudySpec.DecayCurveAutomatedStoppingSpec
+                    .getDefaultInstance()) {
+          automatedStoppingSpec_ =
+              com.google.cloud.aiplatform.v1.StudySpec.DecayCurveAutomatedStoppingSpec.newBuilder(
+                      (com.google.cloud.aiplatform.v1.StudySpec.DecayCurveAutomatedStoppingSpec)
+                          automatedStoppingSpec_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          automatedStoppingSpec_ = value;
+        }
+        onChanged();
+      } else {
+        if (automatedStoppingSpecCase_ == 4) {
+          decayCurveStoppingSpecBuilder_.mergeFrom(value);
+        }
+        decayCurveStoppingSpecBuilder_.setMessage(value);
+      }
+      automatedStoppingSpecCase_ = 4;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The automated early stopping spec using decay curve rule.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.StudySpec.DecayCurveAutomatedStoppingSpec decay_curve_stopping_spec = 4;
+     * </code>
+     */
+    public Builder clearDecayCurveStoppingSpec() {
+      if (decayCurveStoppingSpecBuilder_ == null) {
+        if (automatedStoppingSpecCase_ == 4) {
+          automatedStoppingSpecCase_ = 0;
+          automatedStoppingSpec_ = null;
+          onChanged();
+        }
+      } else {
+        if (automatedStoppingSpecCase_ == 4) {
+          automatedStoppingSpecCase_ = 0;
+          automatedStoppingSpec_ = null;
+        }
+        decayCurveStoppingSpecBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The automated early stopping spec using decay curve rule.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.StudySpec.DecayCurveAutomatedStoppingSpec decay_curve_stopping_spec = 4;
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1.StudySpec.DecayCurveAutomatedStoppingSpec.Builder
+        getDecayCurveStoppingSpecBuilder() {
+      return getDecayCurveStoppingSpecFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The automated early stopping spec using decay curve rule.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.StudySpec.DecayCurveAutomatedStoppingSpec decay_curve_stopping_spec = 4;
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.aiplatform.v1.StudySpec.DecayCurveAutomatedStoppingSpecOrBuilder
+        getDecayCurveStoppingSpecOrBuilder() {
+      if ((automatedStoppingSpecCase_ == 4) && (decayCurveStoppingSpecBuilder_ != null)) {
+        return decayCurveStoppingSpecBuilder_.getMessageOrBuilder();
+      } else {
+        if (automatedStoppingSpecCase_ == 4) {
+          return (com.google.cloud.aiplatform.v1.StudySpec.DecayCurveAutomatedStoppingSpec)
+              automatedStoppingSpec_;
+        }
+        return com.google.cloud.aiplatform.v1.StudySpec.DecayCurveAutomatedStoppingSpec
+            .getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The automated early stopping spec using decay curve rule.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.StudySpec.DecayCurveAutomatedStoppingSpec decay_curve_stopping_spec = 4;
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.aiplatform.v1.StudySpec.DecayCurveAutomatedStoppingSpec,
+            com.google.cloud.aiplatform.v1.StudySpec.DecayCurveAutomatedStoppingSpec.Builder,
+            com.google.cloud.aiplatform.v1.StudySpec.DecayCurveAutomatedStoppingSpecOrBuilder>
+        getDecayCurveStoppingSpecFieldBuilder() {
+      if (decayCurveStoppingSpecBuilder_ == null) {
+        if (!(automatedStoppingSpecCase_ == 4)) {
+          automatedStoppingSpec_ =
+              com.google.cloud.aiplatform.v1.StudySpec.DecayCurveAutomatedStoppingSpec
+                  .getDefaultInstance();
+        }
+        decayCurveStoppingSpecBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.aiplatform.v1.StudySpec.DecayCurveAutomatedStoppingSpec,
+                com.google.cloud.aiplatform.v1.StudySpec.DecayCurveAutomatedStoppingSpec.Builder,
+                com.google.cloud.aiplatform.v1.StudySpec.DecayCurveAutomatedStoppingSpecOrBuilder>(
+                (com.google.cloud.aiplatform.v1.StudySpec.DecayCurveAutomatedStoppingSpec)
+                    automatedStoppingSpec_,
+                getParentForChildren(),
+                isClean());
+        automatedStoppingSpec_ = null;
+      }
+      automatedStoppingSpecCase_ = 4;
+      onChanged();
+      ;
+      return decayCurveStoppingSpecBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.aiplatform.v1.StudySpec.MedianAutomatedStoppingSpec,
+            com.google.cloud.aiplatform.v1.StudySpec.MedianAutomatedStoppingSpec.Builder,
+            com.google.cloud.aiplatform.v1.StudySpec.MedianAutomatedStoppingSpecOrBuilder>
+        medianAutomatedStoppingSpecBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * The automated early stopping spec using median rule.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.StudySpec.MedianAutomatedStoppingSpec median_automated_stopping_spec = 5;
+     * </code>
+     *
+     * @return Whether the medianAutomatedStoppingSpec field is set.
+     */
+    @java.lang.Override
+    public boolean hasMedianAutomatedStoppingSpec() {
+      return automatedStoppingSpecCase_ == 5;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The automated early stopping spec using median rule.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.StudySpec.MedianAutomatedStoppingSpec median_automated_stopping_spec = 5;
+     * </code>
+     *
+     * @return The medianAutomatedStoppingSpec.
+     */
+    @java.lang.Override
+    public com.google.cloud.aiplatform.v1.StudySpec.MedianAutomatedStoppingSpec
+        getMedianAutomatedStoppingSpec() {
+      if (medianAutomatedStoppingSpecBuilder_ == null) {
+        if (automatedStoppingSpecCase_ == 5) {
+          return (com.google.cloud.aiplatform.v1.StudySpec.MedianAutomatedStoppingSpec)
+              automatedStoppingSpec_;
+        }
+        return com.google.cloud.aiplatform.v1.StudySpec.MedianAutomatedStoppingSpec
+            .getDefaultInstance();
+      } else {
+        if (automatedStoppingSpecCase_ == 5) {
+          return medianAutomatedStoppingSpecBuilder_.getMessage();
+        }
+        return com.google.cloud.aiplatform.v1.StudySpec.MedianAutomatedStoppingSpec
+            .getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The automated early stopping spec using median rule.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.StudySpec.MedianAutomatedStoppingSpec median_automated_stopping_spec = 5;
+     * </code>
+     */
+    public Builder setMedianAutomatedStoppingSpec(
+        com.google.cloud.aiplatform.v1.StudySpec.MedianAutomatedStoppingSpec value) {
+      if (medianAutomatedStoppingSpecBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        automatedStoppingSpec_ = value;
+        onChanged();
+      } else {
+        medianAutomatedStoppingSpecBuilder_.setMessage(value);
+      }
+      automatedStoppingSpecCase_ = 5;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The automated early stopping spec using median rule.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.StudySpec.MedianAutomatedStoppingSpec median_automated_stopping_spec = 5;
+     * </code>
+     */
+    public Builder setMedianAutomatedStoppingSpec(
+        com.google.cloud.aiplatform.v1.StudySpec.MedianAutomatedStoppingSpec.Builder
+            builderForValue) {
+      if (medianAutomatedStoppingSpecBuilder_ == null) {
+        automatedStoppingSpec_ = builderForValue.build();
+        onChanged();
+      } else {
+        medianAutomatedStoppingSpecBuilder_.setMessage(builderForValue.build());
+      }
+      automatedStoppingSpecCase_ = 5;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The automated early stopping spec using median rule.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.StudySpec.MedianAutomatedStoppingSpec median_automated_stopping_spec = 5;
+     * </code>
+     */
+    public Builder mergeMedianAutomatedStoppingSpec(
+        com.google.cloud.aiplatform.v1.StudySpec.MedianAutomatedStoppingSpec value) {
+      if (medianAutomatedStoppingSpecBuilder_ == null) {
+        if (automatedStoppingSpecCase_ == 5
+            && automatedStoppingSpec_
+                != com.google.cloud.aiplatform.v1.StudySpec.MedianAutomatedStoppingSpec
+                    .getDefaultInstance()) {
+          automatedStoppingSpec_ =
+              com.google.cloud.aiplatform.v1.StudySpec.MedianAutomatedStoppingSpec.newBuilder(
+                      (com.google.cloud.aiplatform.v1.StudySpec.MedianAutomatedStoppingSpec)
+                          automatedStoppingSpec_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          automatedStoppingSpec_ = value;
+        }
+        onChanged();
+      } else {
+        if (automatedStoppingSpecCase_ == 5) {
+          medianAutomatedStoppingSpecBuilder_.mergeFrom(value);
+        }
+        medianAutomatedStoppingSpecBuilder_.setMessage(value);
+      }
+      automatedStoppingSpecCase_ = 5;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The automated early stopping spec using median rule.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.StudySpec.MedianAutomatedStoppingSpec median_automated_stopping_spec = 5;
+     * </code>
+     */
+    public Builder clearMedianAutomatedStoppingSpec() {
+      if (medianAutomatedStoppingSpecBuilder_ == null) {
+        if (automatedStoppingSpecCase_ == 5) {
+          automatedStoppingSpecCase_ = 0;
+          automatedStoppingSpec_ = null;
+          onChanged();
+        }
+      } else {
+        if (automatedStoppingSpecCase_ == 5) {
+          automatedStoppingSpecCase_ = 0;
+          automatedStoppingSpec_ = null;
+        }
+        medianAutomatedStoppingSpecBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The automated early stopping spec using median rule.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.StudySpec.MedianAutomatedStoppingSpec median_automated_stopping_spec = 5;
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1.StudySpec.MedianAutomatedStoppingSpec.Builder
+        getMedianAutomatedStoppingSpecBuilder() {
+      return getMedianAutomatedStoppingSpecFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The automated early stopping spec using median rule.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.StudySpec.MedianAutomatedStoppingSpec median_automated_stopping_spec = 5;
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.aiplatform.v1.StudySpec.MedianAutomatedStoppingSpecOrBuilder
+        getMedianAutomatedStoppingSpecOrBuilder() {
+      if ((automatedStoppingSpecCase_ == 5) && (medianAutomatedStoppingSpecBuilder_ != null)) {
+        return medianAutomatedStoppingSpecBuilder_.getMessageOrBuilder();
+      } else {
+        if (automatedStoppingSpecCase_ == 5) {
+          return (com.google.cloud.aiplatform.v1.StudySpec.MedianAutomatedStoppingSpec)
+              automatedStoppingSpec_;
+        }
+        return com.google.cloud.aiplatform.v1.StudySpec.MedianAutomatedStoppingSpec
+            .getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The automated early stopping spec using median rule.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.StudySpec.MedianAutomatedStoppingSpec median_automated_stopping_spec = 5;
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.aiplatform.v1.StudySpec.MedianAutomatedStoppingSpec,
+            com.google.cloud.aiplatform.v1.StudySpec.MedianAutomatedStoppingSpec.Builder,
+            com.google.cloud.aiplatform.v1.StudySpec.MedianAutomatedStoppingSpecOrBuilder>
+        getMedianAutomatedStoppingSpecFieldBuilder() {
+      if (medianAutomatedStoppingSpecBuilder_ == null) {
+        if (!(automatedStoppingSpecCase_ == 5)) {
+          automatedStoppingSpec_ =
+              com.google.cloud.aiplatform.v1.StudySpec.MedianAutomatedStoppingSpec
+                  .getDefaultInstance();
+        }
+        medianAutomatedStoppingSpecBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.aiplatform.v1.StudySpec.MedianAutomatedStoppingSpec,
+                com.google.cloud.aiplatform.v1.StudySpec.MedianAutomatedStoppingSpec.Builder,
+                com.google.cloud.aiplatform.v1.StudySpec.MedianAutomatedStoppingSpecOrBuilder>(
+                (com.google.cloud.aiplatform.v1.StudySpec.MedianAutomatedStoppingSpec)
+                    automatedStoppingSpec_,
+                getParentForChildren(),
+                isClean());
+        automatedStoppingSpec_ = null;
+      }
+      automatedStoppingSpecCase_ = 5;
+      onChanged();
+      ;
+      return medianAutomatedStoppingSpecBuilder_;
+    }
 
     private java.util.List<com.google.cloud.aiplatform.v1.StudySpec.MetricSpec> metrics_ =
         java.util.Collections.emptyList();

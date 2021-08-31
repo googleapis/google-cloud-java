@@ -16,6 +16,7 @@
 
 package com.google.cloud.aiplatform.v1beta1;
 
+import com.google.api.HttpBody;
 import com.google.api.gax.core.NoCredentialsProvider;
 import com.google.api.gax.grpc.GaxGrpcProperties;
 import com.google.api.gax.grpc.testing.LocalChannelProvider;
@@ -24,6 +25,8 @@ import com.google.api.gax.grpc.testing.MockServiceHelper;
 import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.InvalidArgumentException;
 import com.google.protobuf.AbstractMessage;
+import com.google.protobuf.Any;
+import com.google.protobuf.ByteString;
 import com.google.protobuf.Value;
 import io.grpc.StatusRuntimeException;
 import java.io.IOException;
@@ -161,6 +164,92 @@ public class PredictionServiceClientTest {
       List<Value> instances = new ArrayList<>();
       Value parameters = Value.newBuilder().build();
       client.predict(endpoint, instances, parameters);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void rawPredictTest() throws Exception {
+    HttpBody expectedResponse =
+        HttpBody.newBuilder()
+            .setContentType("contentType-389131437")
+            .setData(ByteString.EMPTY)
+            .addAllExtensions(new ArrayList<Any>())
+            .build();
+    mockPredictionService.addResponse(expectedResponse);
+
+    EndpointName endpoint = EndpointName.of("[PROJECT]", "[LOCATION]", "[ENDPOINT]");
+    HttpBody httpBody = HttpBody.newBuilder().build();
+
+    HttpBody actualResponse = client.rawPredict(endpoint, httpBody);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockPredictionService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    RawPredictRequest actualRequest = ((RawPredictRequest) actualRequests.get(0));
+
+    Assert.assertEquals(endpoint.toString(), actualRequest.getEndpoint());
+    Assert.assertEquals(httpBody, actualRequest.getHttpBody());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void rawPredictExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockPredictionService.addException(exception);
+
+    try {
+      EndpointName endpoint = EndpointName.of("[PROJECT]", "[LOCATION]", "[ENDPOINT]");
+      HttpBody httpBody = HttpBody.newBuilder().build();
+      client.rawPredict(endpoint, httpBody);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void rawPredictTest2() throws Exception {
+    HttpBody expectedResponse =
+        HttpBody.newBuilder()
+            .setContentType("contentType-389131437")
+            .setData(ByteString.EMPTY)
+            .addAllExtensions(new ArrayList<Any>())
+            .build();
+    mockPredictionService.addResponse(expectedResponse);
+
+    String endpoint = "endpoint1741102485";
+    HttpBody httpBody = HttpBody.newBuilder().build();
+
+    HttpBody actualResponse = client.rawPredict(endpoint, httpBody);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockPredictionService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    RawPredictRequest actualRequest = ((RawPredictRequest) actualRequests.get(0));
+
+    Assert.assertEquals(endpoint, actualRequest.getEndpoint());
+    Assert.assertEquals(httpBody, actualRequest.getHttpBody());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void rawPredictExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockPredictionService.addException(exception);
+
+    try {
+      String endpoint = "endpoint1741102485";
+      HttpBody httpBody = HttpBody.newBuilder().build();
+      client.rawPredict(endpoint, httpBody);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.

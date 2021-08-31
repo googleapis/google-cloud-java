@@ -2049,6 +2049,8 @@ public class JobServiceClientTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .setNextScheduleTime(Timestamp.newBuilder().build())
             .setStatsAnomaliesBaseDirectory(GcsDestination.newBuilder().build())
+            .setEncryptionSpec(EncryptionSpec.newBuilder().build())
+            .setError(Status.newBuilder().build())
             .build();
     mockJobService.addResponse(expectedResponse);
 
@@ -2117,6 +2119,8 @@ public class JobServiceClientTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .setNextScheduleTime(Timestamp.newBuilder().build())
             .setStatsAnomaliesBaseDirectory(GcsDestination.newBuilder().build())
+            .setEncryptionSpec(EncryptionSpec.newBuilder().build())
+            .setError(Status.newBuilder().build())
             .build();
     mockJobService.addResponse(expectedResponse);
 
@@ -2297,6 +2301,8 @@ public class JobServiceClientTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .setNextScheduleTime(Timestamp.newBuilder().build())
             .setStatsAnomaliesBaseDirectory(GcsDestination.newBuilder().build())
+            .setEncryptionSpec(EncryptionSpec.newBuilder().build())
+            .setError(Status.newBuilder().build())
             .build();
     mockJobService.addResponse(expectedResponse);
 
@@ -2362,6 +2368,8 @@ public class JobServiceClientTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .setNextScheduleTime(Timestamp.newBuilder().build())
             .setStatsAnomaliesBaseDirectory(GcsDestination.newBuilder().build())
+            .setEncryptionSpec(EncryptionSpec.newBuilder().build())
+            .setError(Status.newBuilder().build())
             .build();
     mockJobService.addResponse(expectedResponse);
 
@@ -2521,6 +2529,8 @@ public class JobServiceClientTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .setNextScheduleTime(Timestamp.newBuilder().build())
             .setStatsAnomaliesBaseDirectory(GcsDestination.newBuilder().build())
+            .setEncryptionSpec(EncryptionSpec.newBuilder().build())
+            .setError(Status.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()

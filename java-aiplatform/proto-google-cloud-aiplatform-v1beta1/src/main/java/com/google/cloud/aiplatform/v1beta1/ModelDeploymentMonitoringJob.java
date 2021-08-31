@@ -320,6 +320,37 @@ public final class ModelDeploymentMonitoringJob extends com.google.protobuf.Gene
 
               break;
             }
+          case 170:
+            {
+              com.google.cloud.aiplatform.v1beta1.EncryptionSpec.Builder subBuilder = null;
+              if (encryptionSpec_ != null) {
+                subBuilder = encryptionSpec_.toBuilder();
+              }
+              encryptionSpec_ =
+                  input.readMessage(
+                      com.google.cloud.aiplatform.v1beta1.EncryptionSpec.parser(),
+                      extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(encryptionSpec_);
+                encryptionSpec_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+          case 186:
+            {
+              com.google.rpc.Status.Builder subBuilder = null;
+              if (error_ != null) {
+                subBuilder = error_.toBuilder();
+              }
+              error_ = input.readMessage(com.google.rpc.Status.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(error_);
+                error_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -1733,6 +1764,109 @@ public final class ModelDeploymentMonitoringJob extends com.google.protobuf.Gene
     return getStatsAnomaliesBaseDirectory();
   }
 
+  public static final int ENCRYPTION_SPEC_FIELD_NUMBER = 21;
+  private com.google.cloud.aiplatform.v1beta1.EncryptionSpec encryptionSpec_;
+  /**
+   *
+   *
+   * <pre>
+   * Customer-managed encryption key spec for a ModelDeploymentMonitoringJob. If
+   * set, this ModelDeploymentMonitoringJob and all sub-resources of this
+   * ModelDeploymentMonitoringJob will be secured by this key.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.EncryptionSpec encryption_spec = 21;</code>
+   *
+   * @return Whether the encryptionSpec field is set.
+   */
+  @java.lang.Override
+  public boolean hasEncryptionSpec() {
+    return encryptionSpec_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Customer-managed encryption key spec for a ModelDeploymentMonitoringJob. If
+   * set, this ModelDeploymentMonitoringJob and all sub-resources of this
+   * ModelDeploymentMonitoringJob will be secured by this key.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.EncryptionSpec encryption_spec = 21;</code>
+   *
+   * @return The encryptionSpec.
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1beta1.EncryptionSpec getEncryptionSpec() {
+    return encryptionSpec_ == null
+        ? com.google.cloud.aiplatform.v1beta1.EncryptionSpec.getDefaultInstance()
+        : encryptionSpec_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Customer-managed encryption key spec for a ModelDeploymentMonitoringJob. If
+   * set, this ModelDeploymentMonitoringJob and all sub-resources of this
+   * ModelDeploymentMonitoringJob will be secured by this key.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.EncryptionSpec encryption_spec = 21;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1beta1.EncryptionSpecOrBuilder getEncryptionSpecOrBuilder() {
+    return getEncryptionSpec();
+  }
+
+  public static final int ERROR_FIELD_NUMBER = 23;
+  private com.google.rpc.Status error_;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Only populated when the job's state is `JOB_STATE_FAILED` or
+   * `JOB_STATE_CANCELLED`.
+   * </pre>
+   *
+   * <code>.google.rpc.Status error = 23 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return Whether the error field is set.
+   */
+  @java.lang.Override
+  public boolean hasError() {
+    return error_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Only populated when the job's state is `JOB_STATE_FAILED` or
+   * `JOB_STATE_CANCELLED`.
+   * </pre>
+   *
+   * <code>.google.rpc.Status error = 23 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The error.
+   */
+  @java.lang.Override
+  public com.google.rpc.Status getError() {
+    return error_ == null ? com.google.rpc.Status.getDefaultInstance() : error_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Only populated when the job's state is `JOB_STATE_FAILED` or
+   * `JOB_STATE_CANCELLED`.
+   * </pre>
+   *
+   * <code>.google.rpc.Status error = 23 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   */
+  @java.lang.Override
+  public com.google.rpc.StatusOrBuilder getErrorOrBuilder() {
+    return getError();
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -1805,6 +1939,12 @@ public final class ModelDeploymentMonitoringJob extends com.google.protobuf.Gene
     }
     if (statsAnomaliesBaseDirectory_ != null) {
       output.writeMessage(20, getStatsAnomaliesBaseDirectory());
+    }
+    if (encryptionSpec_ != null) {
+      output.writeMessage(21, getEncryptionSpec());
+    }
+    if (error_ != null) {
+      output.writeMessage(23, getError());
     }
     unknownFields.writeTo(output);
   }
@@ -1894,6 +2034,12 @@ public final class ModelDeploymentMonitoringJob extends com.google.protobuf.Gene
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               20, getStatsAnomaliesBaseDirectory());
     }
+    if (encryptionSpec_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(21, getEncryptionSpec());
+    }
+    if (error_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(23, getError());
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1960,6 +2106,14 @@ public final class ModelDeploymentMonitoringJob extends com.google.protobuf.Gene
     if (hasStatsAnomaliesBaseDirectory()) {
       if (!getStatsAnomaliesBaseDirectory().equals(other.getStatsAnomaliesBaseDirectory()))
         return false;
+    }
+    if (hasEncryptionSpec() != other.hasEncryptionSpec()) return false;
+    if (hasEncryptionSpec()) {
+      if (!getEncryptionSpec().equals(other.getEncryptionSpec())) return false;
+    }
+    if (hasError() != other.hasError()) return false;
+    if (hasError()) {
+      if (!getError().equals(other.getError())) return false;
     }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
@@ -2033,6 +2187,14 @@ public final class ModelDeploymentMonitoringJob extends com.google.protobuf.Gene
     if (hasStatsAnomaliesBaseDirectory()) {
       hash = (37 * hash) + STATS_ANOMALIES_BASE_DIRECTORY_FIELD_NUMBER;
       hash = (53 * hash) + getStatsAnomaliesBaseDirectory().hashCode();
+    }
+    if (hasEncryptionSpec()) {
+      hash = (37 * hash) + ENCRYPTION_SPEC_FIELD_NUMBER;
+      hash = (53 * hash) + getEncryptionSpec().hashCode();
+    }
+    if (hasError()) {
+      hash = (37 * hash) + ERROR_FIELD_NUMBER;
+      hash = (53 * hash) + getError().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -2286,6 +2448,18 @@ public final class ModelDeploymentMonitoringJob extends com.google.protobuf.Gene
         statsAnomaliesBaseDirectory_ = null;
         statsAnomaliesBaseDirectoryBuilder_ = null;
       }
+      if (encryptionSpecBuilder_ == null) {
+        encryptionSpec_ = null;
+      } else {
+        encryptionSpec_ = null;
+        encryptionSpecBuilder_ = null;
+      }
+      if (errorBuilder_ == null) {
+        error_ = null;
+      } else {
+        error_ = null;
+        errorBuilder_ = null;
+      }
       return this;
     }
 
@@ -2390,6 +2564,16 @@ public final class ModelDeploymentMonitoringJob extends com.google.protobuf.Gene
         result.statsAnomaliesBaseDirectory_ = statsAnomaliesBaseDirectory_;
       } else {
         result.statsAnomaliesBaseDirectory_ = statsAnomaliesBaseDirectoryBuilder_.build();
+      }
+      if (encryptionSpecBuilder_ == null) {
+        result.encryptionSpec_ = encryptionSpec_;
+      } else {
+        result.encryptionSpec_ = encryptionSpecBuilder_.build();
+      }
+      if (errorBuilder_ == null) {
+        result.error_ = error_;
+      } else {
+        result.error_ = errorBuilder_.build();
       }
       onBuilt();
       return result;
@@ -2555,6 +2739,12 @@ public final class ModelDeploymentMonitoringJob extends com.google.protobuf.Gene
       }
       if (other.hasStatsAnomaliesBaseDirectory()) {
         mergeStatsAnomaliesBaseDirectory(other.getStatsAnomaliesBaseDirectory());
+      }
+      if (other.hasEncryptionSpec()) {
+        mergeEncryptionSpec(other.getEncryptionSpec());
+      }
+      if (other.hasError()) {
+        mergeError(other.getError());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -6427,6 +6617,393 @@ public final class ModelDeploymentMonitoringJob extends com.google.protobuf.Gene
         statsAnomaliesBaseDirectory_ = null;
       }
       return statsAnomaliesBaseDirectoryBuilder_;
+    }
+
+    private com.google.cloud.aiplatform.v1beta1.EncryptionSpec encryptionSpec_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.aiplatform.v1beta1.EncryptionSpec,
+            com.google.cloud.aiplatform.v1beta1.EncryptionSpec.Builder,
+            com.google.cloud.aiplatform.v1beta1.EncryptionSpecOrBuilder>
+        encryptionSpecBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Customer-managed encryption key spec for a ModelDeploymentMonitoringJob. If
+     * set, this ModelDeploymentMonitoringJob and all sub-resources of this
+     * ModelDeploymentMonitoringJob will be secured by this key.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.EncryptionSpec encryption_spec = 21;</code>
+     *
+     * @return Whether the encryptionSpec field is set.
+     */
+    public boolean hasEncryptionSpec() {
+      return encryptionSpecBuilder_ != null || encryptionSpec_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Customer-managed encryption key spec for a ModelDeploymentMonitoringJob. If
+     * set, this ModelDeploymentMonitoringJob and all sub-resources of this
+     * ModelDeploymentMonitoringJob will be secured by this key.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.EncryptionSpec encryption_spec = 21;</code>
+     *
+     * @return The encryptionSpec.
+     */
+    public com.google.cloud.aiplatform.v1beta1.EncryptionSpec getEncryptionSpec() {
+      if (encryptionSpecBuilder_ == null) {
+        return encryptionSpec_ == null
+            ? com.google.cloud.aiplatform.v1beta1.EncryptionSpec.getDefaultInstance()
+            : encryptionSpec_;
+      } else {
+        return encryptionSpecBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Customer-managed encryption key spec for a ModelDeploymentMonitoringJob. If
+     * set, this ModelDeploymentMonitoringJob and all sub-resources of this
+     * ModelDeploymentMonitoringJob will be secured by this key.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.EncryptionSpec encryption_spec = 21;</code>
+     */
+    public Builder setEncryptionSpec(com.google.cloud.aiplatform.v1beta1.EncryptionSpec value) {
+      if (encryptionSpecBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        encryptionSpec_ = value;
+        onChanged();
+      } else {
+        encryptionSpecBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Customer-managed encryption key spec for a ModelDeploymentMonitoringJob. If
+     * set, this ModelDeploymentMonitoringJob and all sub-resources of this
+     * ModelDeploymentMonitoringJob will be secured by this key.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.EncryptionSpec encryption_spec = 21;</code>
+     */
+    public Builder setEncryptionSpec(
+        com.google.cloud.aiplatform.v1beta1.EncryptionSpec.Builder builderForValue) {
+      if (encryptionSpecBuilder_ == null) {
+        encryptionSpec_ = builderForValue.build();
+        onChanged();
+      } else {
+        encryptionSpecBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Customer-managed encryption key spec for a ModelDeploymentMonitoringJob. If
+     * set, this ModelDeploymentMonitoringJob and all sub-resources of this
+     * ModelDeploymentMonitoringJob will be secured by this key.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.EncryptionSpec encryption_spec = 21;</code>
+     */
+    public Builder mergeEncryptionSpec(com.google.cloud.aiplatform.v1beta1.EncryptionSpec value) {
+      if (encryptionSpecBuilder_ == null) {
+        if (encryptionSpec_ != null) {
+          encryptionSpec_ =
+              com.google.cloud.aiplatform.v1beta1.EncryptionSpec.newBuilder(encryptionSpec_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          encryptionSpec_ = value;
+        }
+        onChanged();
+      } else {
+        encryptionSpecBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Customer-managed encryption key spec for a ModelDeploymentMonitoringJob. If
+     * set, this ModelDeploymentMonitoringJob and all sub-resources of this
+     * ModelDeploymentMonitoringJob will be secured by this key.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.EncryptionSpec encryption_spec = 21;</code>
+     */
+    public Builder clearEncryptionSpec() {
+      if (encryptionSpecBuilder_ == null) {
+        encryptionSpec_ = null;
+        onChanged();
+      } else {
+        encryptionSpec_ = null;
+        encryptionSpecBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Customer-managed encryption key spec for a ModelDeploymentMonitoringJob. If
+     * set, this ModelDeploymentMonitoringJob and all sub-resources of this
+     * ModelDeploymentMonitoringJob will be secured by this key.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.EncryptionSpec encryption_spec = 21;</code>
+     */
+    public com.google.cloud.aiplatform.v1beta1.EncryptionSpec.Builder getEncryptionSpecBuilder() {
+
+      onChanged();
+      return getEncryptionSpecFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Customer-managed encryption key spec for a ModelDeploymentMonitoringJob. If
+     * set, this ModelDeploymentMonitoringJob and all sub-resources of this
+     * ModelDeploymentMonitoringJob will be secured by this key.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.EncryptionSpec encryption_spec = 21;</code>
+     */
+    public com.google.cloud.aiplatform.v1beta1.EncryptionSpecOrBuilder
+        getEncryptionSpecOrBuilder() {
+      if (encryptionSpecBuilder_ != null) {
+        return encryptionSpecBuilder_.getMessageOrBuilder();
+      } else {
+        return encryptionSpec_ == null
+            ? com.google.cloud.aiplatform.v1beta1.EncryptionSpec.getDefaultInstance()
+            : encryptionSpec_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Customer-managed encryption key spec for a ModelDeploymentMonitoringJob. If
+     * set, this ModelDeploymentMonitoringJob and all sub-resources of this
+     * ModelDeploymentMonitoringJob will be secured by this key.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.EncryptionSpec encryption_spec = 21;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.aiplatform.v1beta1.EncryptionSpec,
+            com.google.cloud.aiplatform.v1beta1.EncryptionSpec.Builder,
+            com.google.cloud.aiplatform.v1beta1.EncryptionSpecOrBuilder>
+        getEncryptionSpecFieldBuilder() {
+      if (encryptionSpecBuilder_ == null) {
+        encryptionSpecBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.aiplatform.v1beta1.EncryptionSpec,
+                com.google.cloud.aiplatform.v1beta1.EncryptionSpec.Builder,
+                com.google.cloud.aiplatform.v1beta1.EncryptionSpecOrBuilder>(
+                getEncryptionSpec(), getParentForChildren(), isClean());
+        encryptionSpec_ = null;
+      }
+      return encryptionSpecBuilder_;
+    }
+
+    private com.google.rpc.Status error_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.rpc.Status, com.google.rpc.Status.Builder, com.google.rpc.StatusOrBuilder>
+        errorBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Only populated when the job's state is `JOB_STATE_FAILED` or
+     * `JOB_STATE_CANCELLED`.
+     * </pre>
+     *
+     * <code>.google.rpc.Status error = 23 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return Whether the error field is set.
+     */
+    public boolean hasError() {
+      return errorBuilder_ != null || error_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Only populated when the job's state is `JOB_STATE_FAILED` or
+     * `JOB_STATE_CANCELLED`.
+     * </pre>
+     *
+     * <code>.google.rpc.Status error = 23 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The error.
+     */
+    public com.google.rpc.Status getError() {
+      if (errorBuilder_ == null) {
+        return error_ == null ? com.google.rpc.Status.getDefaultInstance() : error_;
+      } else {
+        return errorBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Only populated when the job's state is `JOB_STATE_FAILED` or
+     * `JOB_STATE_CANCELLED`.
+     * </pre>
+     *
+     * <code>.google.rpc.Status error = 23 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     */
+    public Builder setError(com.google.rpc.Status value) {
+      if (errorBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        error_ = value;
+        onChanged();
+      } else {
+        errorBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Only populated when the job's state is `JOB_STATE_FAILED` or
+     * `JOB_STATE_CANCELLED`.
+     * </pre>
+     *
+     * <code>.google.rpc.Status error = 23 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     */
+    public Builder setError(com.google.rpc.Status.Builder builderForValue) {
+      if (errorBuilder_ == null) {
+        error_ = builderForValue.build();
+        onChanged();
+      } else {
+        errorBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Only populated when the job's state is `JOB_STATE_FAILED` or
+     * `JOB_STATE_CANCELLED`.
+     * </pre>
+     *
+     * <code>.google.rpc.Status error = 23 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     */
+    public Builder mergeError(com.google.rpc.Status value) {
+      if (errorBuilder_ == null) {
+        if (error_ != null) {
+          error_ = com.google.rpc.Status.newBuilder(error_).mergeFrom(value).buildPartial();
+        } else {
+          error_ = value;
+        }
+        onChanged();
+      } else {
+        errorBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Only populated when the job's state is `JOB_STATE_FAILED` or
+     * `JOB_STATE_CANCELLED`.
+     * </pre>
+     *
+     * <code>.google.rpc.Status error = 23 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     */
+    public Builder clearError() {
+      if (errorBuilder_ == null) {
+        error_ = null;
+        onChanged();
+      } else {
+        error_ = null;
+        errorBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Only populated when the job's state is `JOB_STATE_FAILED` or
+     * `JOB_STATE_CANCELLED`.
+     * </pre>
+     *
+     * <code>.google.rpc.Status error = 23 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     */
+    public com.google.rpc.Status.Builder getErrorBuilder() {
+
+      onChanged();
+      return getErrorFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Only populated when the job's state is `JOB_STATE_FAILED` or
+     * `JOB_STATE_CANCELLED`.
+     * </pre>
+     *
+     * <code>.google.rpc.Status error = 23 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     */
+    public com.google.rpc.StatusOrBuilder getErrorOrBuilder() {
+      if (errorBuilder_ != null) {
+        return errorBuilder_.getMessageOrBuilder();
+      } else {
+        return error_ == null ? com.google.rpc.Status.getDefaultInstance() : error_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Only populated when the job's state is `JOB_STATE_FAILED` or
+     * `JOB_STATE_CANCELLED`.
+     * </pre>
+     *
+     * <code>.google.rpc.Status error = 23 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.rpc.Status, com.google.rpc.Status.Builder, com.google.rpc.StatusOrBuilder>
+        getErrorFieldBuilder() {
+      if (errorBuilder_ == null) {
+        errorBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.rpc.Status,
+                com.google.rpc.Status.Builder,
+                com.google.rpc.StatusOrBuilder>(getError(), getParentForChildren(), isClean());
+        error_ = null;
+      }
+      return errorBuilder_;
     }
 
     @java.lang.Override

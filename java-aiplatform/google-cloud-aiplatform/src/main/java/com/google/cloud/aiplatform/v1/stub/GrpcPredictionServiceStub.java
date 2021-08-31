@@ -16,14 +16,18 @@
 
 package com.google.cloud.aiplatform.v1.stub;
 
+import com.google.api.HttpBody;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.grpc.GrpcCallSettings;
 import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloud.aiplatform.v1.ExplainRequest;
+import com.google.cloud.aiplatform.v1.ExplainResponse;
 import com.google.cloud.aiplatform.v1.PredictRequest;
 import com.google.cloud.aiplatform.v1.PredictResponse;
+import com.google.cloud.aiplatform.v1.RawPredictRequest;
 import com.google.common.collect.ImmutableMap;
 import com.google.longrunning.stub.GrpcOperationsStub;
 import io.grpc.MethodDescriptor;
@@ -48,7 +52,25 @@ public class GrpcPredictionServiceStub extends PredictionServiceStub {
           .setResponseMarshaller(ProtoUtils.marshaller(PredictResponse.getDefaultInstance()))
           .build();
 
+  private static final MethodDescriptor<RawPredictRequest, HttpBody> rawPredictMethodDescriptor =
+      MethodDescriptor.<RawPredictRequest, HttpBody>newBuilder()
+          .setType(MethodDescriptor.MethodType.UNARY)
+          .setFullMethodName("google.cloud.aiplatform.v1.PredictionService/RawPredict")
+          .setRequestMarshaller(ProtoUtils.marshaller(RawPredictRequest.getDefaultInstance()))
+          .setResponseMarshaller(ProtoUtils.marshaller(HttpBody.getDefaultInstance()))
+          .build();
+
+  private static final MethodDescriptor<ExplainRequest, ExplainResponse> explainMethodDescriptor =
+      MethodDescriptor.<ExplainRequest, ExplainResponse>newBuilder()
+          .setType(MethodDescriptor.MethodType.UNARY)
+          .setFullMethodName("google.cloud.aiplatform.v1.PredictionService/Explain")
+          .setRequestMarshaller(ProtoUtils.marshaller(ExplainRequest.getDefaultInstance()))
+          .setResponseMarshaller(ProtoUtils.marshaller(ExplainResponse.getDefaultInstance()))
+          .build();
+
   private final UnaryCallable<PredictRequest, PredictResponse> predictCallable;
+  private final UnaryCallable<RawPredictRequest, HttpBody> rawPredictCallable;
+  private final UnaryCallable<ExplainRequest, ExplainResponse> explainCallable;
 
   private final BackgroundResource backgroundResources;
   private final GrpcOperationsStub operationsStub;
@@ -104,10 +126,36 @@ public class GrpcPredictionServiceStub extends PredictionServiceStub {
                   return params.build();
                 })
             .build();
+    GrpcCallSettings<RawPredictRequest, HttpBody> rawPredictTransportSettings =
+        GrpcCallSettings.<RawPredictRequest, HttpBody>newBuilder()
+            .setMethodDescriptor(rawPredictMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("endpoint", String.valueOf(request.getEndpoint()));
+                  return params.build();
+                })
+            .build();
+    GrpcCallSettings<ExplainRequest, ExplainResponse> explainTransportSettings =
+        GrpcCallSettings.<ExplainRequest, ExplainResponse>newBuilder()
+            .setMethodDescriptor(explainMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("endpoint", String.valueOf(request.getEndpoint()));
+                  return params.build();
+                })
+            .build();
 
     this.predictCallable =
         callableFactory.createUnaryCallable(
             predictTransportSettings, settings.predictSettings(), clientContext);
+    this.rawPredictCallable =
+        callableFactory.createUnaryCallable(
+            rawPredictTransportSettings, settings.rawPredictSettings(), clientContext);
+    this.explainCallable =
+        callableFactory.createUnaryCallable(
+            explainTransportSettings, settings.explainSettings(), clientContext);
 
     this.backgroundResources =
         new BackgroundResourceAggregation(clientContext.getBackgroundResources());
@@ -120,6 +168,16 @@ public class GrpcPredictionServiceStub extends PredictionServiceStub {
   @Override
   public UnaryCallable<PredictRequest, PredictResponse> predictCallable() {
     return predictCallable;
+  }
+
+  @Override
+  public UnaryCallable<RawPredictRequest, HttpBody> rawPredictCallable() {
+    return rawPredictCallable;
+  }
+
+  @Override
+  public UnaryCallable<ExplainRequest, ExplainResponse> explainCallable() {
+    return explainCallable;
   }
 
   @Override

@@ -102,6 +102,10 @@ public class EndpointServiceClientTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .setEncryptionSpec(EncryptionSpec.newBuilder().build())
+            .setModelDeploymentMonitoringJob(
+                ModelDeploymentMonitoringJobName.of(
+                        "[PROJECT]", "[LOCATION]", "[MODEL_DEPLOYMENT_MONITORING_JOB]")
+                    .toString())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -160,6 +164,10 @@ public class EndpointServiceClientTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .setEncryptionSpec(EncryptionSpec.newBuilder().build())
+            .setModelDeploymentMonitoringJob(
+                ModelDeploymentMonitoringJobName.of(
+                        "[PROJECT]", "[LOCATION]", "[MODEL_DEPLOYMENT_MONITORING_JOB]")
+                    .toString())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -218,6 +226,10 @@ public class EndpointServiceClientTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .setEncryptionSpec(EncryptionSpec.newBuilder().build())
+            .setModelDeploymentMonitoringJob(
+                ModelDeploymentMonitoringJobName.of(
+                        "[PROJECT]", "[LOCATION]", "[MODEL_DEPLOYMENT_MONITORING_JOB]")
+                    .toString())
             .build();
     mockEndpointService.addResponse(expectedResponse);
 
@@ -265,6 +277,10 @@ public class EndpointServiceClientTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .setEncryptionSpec(EncryptionSpec.newBuilder().build())
+            .setModelDeploymentMonitoringJob(
+                ModelDeploymentMonitoringJobName.of(
+                        "[PROJECT]", "[LOCATION]", "[MODEL_DEPLOYMENT_MONITORING_JOB]")
+                    .toString())
             .build();
     mockEndpointService.addResponse(expectedResponse);
 
@@ -400,6 +416,10 @@ public class EndpointServiceClientTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .setEncryptionSpec(EncryptionSpec.newBuilder().build())
+            .setModelDeploymentMonitoringJob(
+                ModelDeploymentMonitoringJobName.of(
+                        "[PROJECT]", "[LOCATION]", "[MODEL_DEPLOYMENT_MONITORING_JOB]")
+                    .toString())
             .build();
     mockEndpointService.addResponse(expectedResponse);
 

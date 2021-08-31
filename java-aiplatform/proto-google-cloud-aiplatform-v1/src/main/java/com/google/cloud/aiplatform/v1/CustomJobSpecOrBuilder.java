@@ -136,7 +136,7 @@ public interface CustomJobSpecOrBuilder
    * <pre>
    * Specifies the service account for workload run-as account.
    * Users submitting jobs must have act-as permission on this run-as account.
-   * If unspecified, the [AI Platform Custom Code Service
+   * If unspecified, the [Vertex AI Custom Code Service
    * Agent](https://cloud.google.com/vertex-ai/docs/general/access-control#service-agents)
    * for the CustomJob's project is used.
    * </pre>
@@ -152,7 +152,7 @@ public interface CustomJobSpecOrBuilder
    * <pre>
    * Specifies the service account for workload run-as account.
    * Users submitting jobs must have act-as permission on this run-as account.
-   * If unspecified, the [AI Platform Custom Code Service
+   * If unspecified, the [Vertex AI Custom Code Service
    * Agent](https://cloud.google.com/vertex-ai/docs/general/access-control#service-agents)
    * for the CustomJob's project is used.
    * </pre>
@@ -283,4 +283,22 @@ public interface CustomJobSpecOrBuilder
    * <code>.google.cloud.aiplatform.v1.GcsDestination base_output_directory = 6;</code>
    */
   com.google.cloud.aiplatform.v1.GcsDestinationOrBuilder getBaseOutputDirectoryOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Whether you want Vertex AI to enable [interactive shell
+   * access](https://cloud.google.com/vertex-ai/docs/training/monitor-debug-interactive-shell)
+   * to training containers.
+   * If set to `true`, you can access interactive shells at the URIs given
+   * by [CustomJob.web_access_uris][google.cloud.aiplatform.v1.CustomJob.web_access_uris] or [Trial.web_access_uris][google.cloud.aiplatform.v1.Trial.web_access_uris] (within
+   * [HyperparameterTuningJob.trials][google.cloud.aiplatform.v1.HyperparameterTuningJob.trials]).
+   * </pre>
+   *
+   * <code>bool enable_web_access = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The enableWebAccess.
+   */
+  boolean getEnableWebAccess();
 }

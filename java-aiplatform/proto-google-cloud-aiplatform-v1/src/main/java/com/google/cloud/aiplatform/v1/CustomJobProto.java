@@ -36,6 +36,10 @@ public final class CustomJobProto {
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_aiplatform_v1_CustomJob_LabelsEntry_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_aiplatform_v1_CustomJob_WebAccessUrisEntry_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_aiplatform_v1_CustomJob_WebAccessUrisEntry_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_aiplatform_v1_CustomJobSpec_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_aiplatform_v1_CustomJobSpec_fieldAccessorTable;
@@ -75,8 +79,8 @@ public final class CustomJobProto {
           + "/aiplatform/v1/machine_resources.proto\032\036"
           + "google/protobuf/duration.proto\032\037google/p"
           + "rotobuf/timestamp.proto\032\027google/rpc/stat"
-          + "us.proto\032\034google/api/annotations.proto\"\323"
-          + "\005\n\tCustomJob\022\021\n\004name\030\001 \001(\tB\003\340A\003\022\031\n\014displ"
+          + "us.proto\032\034google/api/annotations.proto\"\341"
+          + "\006\n\tCustomJob\022\021\n\004name\030\001 \001(\tB\003\340A\003\022\031\n\014displ"
           + "ay_name\030\002 \001(\tB\003\340A\002\022@\n\010job_spec\030\004 \001(\0132).g"
           + "oogle.cloud.aiplatform.v1.CustomJobSpecB"
           + "\003\340A\002\0228\n\005state\030\005 \001(\0162$.google.cloud.aipla"
@@ -90,42 +94,46 @@ public final class CustomJobProto {
           + "bels\030\013 \003(\01321.google.cloud.aiplatform.v1."
           + "CustomJob.LabelsEntry\022C\n\017encryption_spec"
           + "\030\014 \001(\0132*.google.cloud.aiplatform.v1.Encr"
-          + "yptionSpec\032-\n\013LabelsEntry\022\013\n\003key\030\001 \001(\t\022\r"
-          + "\n\005value\030\002 \001(\t:\0028\001:i\352Af\n#aiplatform.googl"
-          + "eapis.com/CustomJob\022?projects/{project}/"
-          + "locations/{location}/customJobs/{custom_"
-          + "job}\"\261\002\n\rCustomJobSpec\022J\n\021worker_pool_sp"
-          + "ecs\030\001 \003(\0132*.google.cloud.aiplatform.v1.W"
-          + "orkerPoolSpecB\003\340A\002\022:\n\nscheduling\030\003 \001(\0132&"
-          + ".google.cloud.aiplatform.v1.Scheduling\022\027"
-          + "\n\017service_account\030\004 \001(\t\0224\n\007network\030\005 \001(\t"
-          + "B#\372A \n\036compute.googleapis.com/Network\022I\n"
-          + "\025base_output_directory\030\006 \001(\0132*.google.cl"
-          + "oud.aiplatform.v1.GcsDestination\"\307\002\n\016Wor"
-          + "kerPoolSpec\022C\n\016container_spec\030\006 \001(\0132).go"
-          + "ogle.cloud.aiplatform.v1.ContainerSpecH\000"
-          + "\022L\n\023python_package_spec\030\007 \001(\0132-.google.c"
-          + "loud.aiplatform.v1.PythonPackageSpecH\000\022E"
-          + "\n\014machine_spec\030\001 \001(\0132\'.google.cloud.aipl"
-          + "atform.v1.MachineSpecB\006\340A\001\340A\005\022\032\n\rreplica"
-          + "_count\030\002 \001(\003B\003\340A\001\0227\n\tdisk_spec\030\005 \001(\0132$.g"
-          + "oogle.cloud.aiplatform.v1.DiskSpecB\006\n\004ta"
-          + "sk\"w\n\rContainerSpec\022\026\n\timage_uri\030\001 \001(\tB\003"
-          + "\340A\002\022\017\n\007command\030\002 \003(\t\022\014\n\004args\030\003 \003(\t\022/\n\003en"
-          + "v\030\004 \003(\0132\".google.cloud.aiplatform.v1.Env"
-          + "Var\"\252\001\n\021PythonPackageSpec\022\037\n\022executor_im"
-          + "age_uri\030\001 \001(\tB\003\340A\002\022\031\n\014package_uris\030\002 \003(\t"
-          + "B\003\340A\002\022\032\n\rpython_module\030\003 \001(\tB\003\340A\002\022\014\n\004arg"
-          + "s\030\004 \003(\t\022/\n\003env\030\005 \003(\0132\".google.cloud.aipl"
-          + "atform.v1.EnvVar\"_\n\nScheduling\022*\n\007timeou"
-          + "t\030\001 \001(\0132\031.google.protobuf.Duration\022%\n\035re"
-          + "start_job_on_worker_restart\030\003 \001(\010B\322\001\n\036co"
-          + "m.google.cloud.aiplatform.v1B\016CustomJobP"
-          + "rotoP\001ZDgoogle.golang.org/genproto/googl"
-          + "eapis/cloud/aiplatform/v1;aiplatform\252\002\032G"
-          + "oogle.Cloud.AIPlatform.V1\312\002\032Google\\Cloud"
-          + "\\AIPlatform\\V1\352\002\035Google::Cloud::AIPlatfo"
-          + "rm::V1b\006proto3"
+          + "yptionSpec\022V\n\017web_access_uris\030\020 \003(\01328.go"
+          + "ogle.cloud.aiplatform.v1.CustomJob.WebAc"
+          + "cessUrisEntryB\003\340A\003\032-\n\013LabelsEntry\022\013\n\003key"
+          + "\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\0324\n\022WebAccessUr"
+          + "isEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001:"
+          + "i\352Af\n#aiplatform.googleapis.com/CustomJo"
+          + "b\022?projects/{project}/locations/{locatio"
+          + "n}/customJobs/{custom_job}\"\321\002\n\rCustomJob"
+          + "Spec\022J\n\021worker_pool_specs\030\001 \003(\0132*.google"
+          + ".cloud.aiplatform.v1.WorkerPoolSpecB\003\340A\002"
+          + "\022:\n\nscheduling\030\003 \001(\0132&.google.cloud.aipl"
+          + "atform.v1.Scheduling\022\027\n\017service_account\030"
+          + "\004 \001(\t\0224\n\007network\030\005 \001(\tB#\372A \n\036compute.goo"
+          + "gleapis.com/Network\022I\n\025base_output_direc"
+          + "tory\030\006 \001(\0132*.google.cloud.aiplatform.v1."
+          + "GcsDestination\022\036\n\021enable_web_access\030\n \001("
+          + "\010B\003\340A\001\"\307\002\n\016WorkerPoolSpec\022C\n\016container_s"
+          + "pec\030\006 \001(\0132).google.cloud.aiplatform.v1.C"
+          + "ontainerSpecH\000\022L\n\023python_package_spec\030\007 "
+          + "\001(\0132-.google.cloud.aiplatform.v1.PythonP"
+          + "ackageSpecH\000\022E\n\014machine_spec\030\001 \001(\0132\'.goo"
+          + "gle.cloud.aiplatform.v1.MachineSpecB\006\340A\001"
+          + "\340A\005\022\032\n\rreplica_count\030\002 \001(\003B\003\340A\001\0227\n\tdisk_"
+          + "spec\030\005 \001(\0132$.google.cloud.aiplatform.v1."
+          + "DiskSpecB\006\n\004task\"w\n\rContainerSpec\022\026\n\tima"
+          + "ge_uri\030\001 \001(\tB\003\340A\002\022\017\n\007command\030\002 \003(\t\022\014\n\004ar"
+          + "gs\030\003 \003(\t\022/\n\003env\030\004 \003(\0132\".google.cloud.aip"
+          + "latform.v1.EnvVar\"\252\001\n\021PythonPackageSpec\022"
+          + "\037\n\022executor_image_uri\030\001 \001(\tB\003\340A\002\022\031\n\014pack"
+          + "age_uris\030\002 \003(\tB\003\340A\002\022\032\n\rpython_module\030\003 \001"
+          + "(\tB\003\340A\002\022\014\n\004args\030\004 \003(\t\022/\n\003env\030\005 \003(\0132\".goo"
+          + "gle.cloud.aiplatform.v1.EnvVar\"_\n\nSchedu"
+          + "ling\022*\n\007timeout\030\001 \001(\0132\031.google.protobuf."
+          + "Duration\022%\n\035restart_job_on_worker_restar"
+          + "t\030\003 \001(\010B\322\001\n\036com.google.cloud.aiplatform."
+          + "v1B\016CustomJobProtoP\001ZDgoogle.golang.org/"
+          + "genproto/googleapis/cloud/aiplatform/v1;"
+          + "aiplatform\252\002\032Google.Cloud.AIPlatform.V1\312"
+          + "\002\032Google\\Cloud\\AIPlatform\\V1\352\002\035Google::C"
+          + "loud::AIPlatform::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -160,6 +168,7 @@ public final class CustomJobProto {
               "Error",
               "Labels",
               "EncryptionSpec",
+              "WebAccessUris",
             });
     internal_static_google_cloud_aiplatform_v1_CustomJob_LabelsEntry_descriptor =
         internal_static_google_cloud_aiplatform_v1_CustomJob_descriptor.getNestedTypes().get(0);
@@ -169,13 +178,26 @@ public final class CustomJobProto {
             new java.lang.String[] {
               "Key", "Value",
             });
+    internal_static_google_cloud_aiplatform_v1_CustomJob_WebAccessUrisEntry_descriptor =
+        internal_static_google_cloud_aiplatform_v1_CustomJob_descriptor.getNestedTypes().get(1);
+    internal_static_google_cloud_aiplatform_v1_CustomJob_WebAccessUrisEntry_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_aiplatform_v1_CustomJob_WebAccessUrisEntry_descriptor,
+            new java.lang.String[] {
+              "Key", "Value",
+            });
     internal_static_google_cloud_aiplatform_v1_CustomJobSpec_descriptor =
         getDescriptor().getMessageTypes().get(1);
     internal_static_google_cloud_aiplatform_v1_CustomJobSpec_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1_CustomJobSpec_descriptor,
             new java.lang.String[] {
-              "WorkerPoolSpecs", "Scheduling", "ServiceAccount", "Network", "BaseOutputDirectory",
+              "WorkerPoolSpecs",
+              "Scheduling",
+              "ServiceAccount",
+              "Network",
+              "BaseOutputDirectory",
+              "EnableWebAccess",
             });
     internal_static_google_cloud_aiplatform_v1_WorkerPoolSpec_descriptor =
         getDescriptor().getMessageTypes().get(2);

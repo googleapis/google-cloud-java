@@ -81,7 +81,7 @@ public final class IndexEndpointProto {
           + "y\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001:u\352Ar\n\'aiplatf"
           + "orm.googleapis.com/IndexEndpoint\022Gprojec"
           + "ts/{project}/locations/{location}/indexE"
-          + "ndpoints/{index_endpoint}\"\265\004\n\rDeployedIn"
+          + "ndpoints/{index_endpoint}\"\324\004\n\rDeployedIn"
           + "dex\022\017\n\002id\030\001 \001(\tB\003\340A\002\0226\n\005index\030\002 \001(\tB\'\340A\002"
           + "\372A!\n\037aiplatform.googleapis.com/Index\022\024\n\014"
           + "display_name\030\003 \001(\t\0224\n\013create_time\030\004 \001(\0132"
@@ -95,20 +95,20 @@ public final class IndexEndpointProto {
           + "ss_logging\030\010 \001(\010B\003\340A\001\022a\n\032deployed_index_"
           + "auth_config\030\t \001(\01328.google.cloud.aiplatf"
           + "orm.v1beta1.DeployedIndexAuthConfigB\003\340A\001"
-          + "\022\037\n\022reserved_ip_ranges\030\n \003(\tB\003\340A\001\"\263\001\n\027De"
-          + "ployedIndexAuthConfig\022\\\n\rauth_provider\030\001"
-          + " \001(\0132E.google.cloud.aiplatform.v1beta1.D"
-          + "eployedIndexAuthConfig.AuthProvider\032:\n\014A"
-          + "uthProvider\022\021\n\taudiences\030\001 \003(\t\022\027\n\017allowe"
-          + "d_issuers\030\002 \003(\t\"8\n\025IndexPrivateEndpoints"
-          + "\022\037\n\022match_grpc_address\030\001 \001(\tB\003\340A\003B\357\001\n#co"
-          + "m.google.cloud.aiplatform.v1beta1B\022Index"
-          + "EndpointProtoP\001ZIgoogle.golang.org/genpr"
-          + "oto/googleapis/cloud/aiplatform/v1beta1;"
-          + "aiplatform\252\002\037Google.Cloud.AIPlatform.V1B"
-          + "eta1\312\002\037Google\\Cloud\\AIPlatform\\V1beta1\352\002"
-          + "\"Google::Cloud::AIPlatform::V1beta1b\006pro"
-          + "to3"
+          + "\022\037\n\022reserved_ip_ranges\030\n \003(\tB\003\340A\001\022\035\n\020dep"
+          + "loyment_group\030\013 \001(\tB\003\340A\001\"\263\001\n\027DeployedInd"
+          + "exAuthConfig\022\\\n\rauth_provider\030\001 \001(\0132E.go"
+          + "ogle.cloud.aiplatform.v1beta1.DeployedIn"
+          + "dexAuthConfig.AuthProvider\032:\n\014AuthProvid"
+          + "er\022\021\n\taudiences\030\001 \003(\t\022\027\n\017allowed_issuers"
+          + "\030\002 \003(\t\"8\n\025IndexPrivateEndpoints\022\037\n\022match"
+          + "_grpc_address\030\001 \001(\tB\003\340A\003B\357\001\n#com.google."
+          + "cloud.aiplatform.v1beta1B\022IndexEndpointP"
+          + "rotoP\001ZIgoogle.golang.org/genproto/googl"
+          + "eapis/cloud/aiplatform/v1beta1;aiplatfor"
+          + "m\252\002\037Google.Cloud.AIPlatform.V1Beta1\312\002\037Go"
+          + "ogle\\Cloud\\AIPlatform\\V1beta1\352\002\"Google::"
+          + "Cloud::AIPlatform::V1beta1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -163,6 +163,7 @@ public final class IndexEndpointProto {
               "EnableAccessLogging",
               "DeployedIndexAuthConfig",
               "ReservedIpRanges",
+              "DeploymentGroup",
             });
     internal_static_google_cloud_aiplatform_v1beta1_DeployedIndexAuthConfig_descriptor =
         getDescriptor().getMessageTypes().get(2);

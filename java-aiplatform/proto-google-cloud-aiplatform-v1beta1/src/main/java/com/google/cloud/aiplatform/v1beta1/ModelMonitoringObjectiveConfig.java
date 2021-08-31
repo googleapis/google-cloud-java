@@ -5993,8 +5993,7 @@ public final class ModelMonitoringObjectiveConfig extends com.google.protobuf.Ge
          *
          *
          * <pre>
-         * Predictions are in JSONL files, consistent from the definition here
-         * (http://shortn/_4bS0hL7ofb).
+         * Predictions are in JSONL files.
          * </pre>
          *
          * <code>JSONL = 2;</code>
@@ -6027,8 +6026,7 @@ public final class ModelMonitoringObjectiveConfig extends com.google.protobuf.Ge
          *
          *
          * <pre>
-         * Predictions are in JSONL files, consistent from the definition here
-         * (http://shortn/_4bS0hL7ofb).
+         * Predictions are in JSONL files.
          * </pre>
          *
          * <code>JSONL = 2;</code>

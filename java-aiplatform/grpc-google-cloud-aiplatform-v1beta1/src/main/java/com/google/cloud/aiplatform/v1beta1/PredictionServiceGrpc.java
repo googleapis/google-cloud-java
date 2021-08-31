@@ -81,6 +81,49 @@ public final class PredictionServiceGrpc {
   }
 
   private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.aiplatform.v1beta1.RawPredictRequest, com.google.api.HttpBody>
+      getRawPredictMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "RawPredict",
+      requestType = com.google.cloud.aiplatform.v1beta1.RawPredictRequest.class,
+      responseType = com.google.api.HttpBody.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.aiplatform.v1beta1.RawPredictRequest, com.google.api.HttpBody>
+      getRawPredictMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.aiplatform.v1beta1.RawPredictRequest, com.google.api.HttpBody>
+        getRawPredictMethod;
+    if ((getRawPredictMethod = PredictionServiceGrpc.getRawPredictMethod) == null) {
+      synchronized (PredictionServiceGrpc.class) {
+        if ((getRawPredictMethod = PredictionServiceGrpc.getRawPredictMethod) == null) {
+          PredictionServiceGrpc.getRawPredictMethod =
+              getRawPredictMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.aiplatform.v1beta1.RawPredictRequest,
+                          com.google.api.HttpBody>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "RawPredict"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.aiplatform.v1beta1.RawPredictRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.api.HttpBody.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new PredictionServiceMethodDescriptorSupplier("RawPredict"))
+                      .build();
+        }
+      }
+    }
+    return getRawPredictMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.aiplatform.v1beta1.ExplainRequest,
           com.google.cloud.aiplatform.v1beta1.ExplainResponse>
       getExplainMethod;
@@ -194,6 +237,19 @@ public final class PredictionServiceGrpc {
      *
      *
      * <pre>
+     * Perform an online prediction with arbitrary http payload.
+     * </pre>
+     */
+    public void rawPredict(
+        com.google.cloud.aiplatform.v1beta1.RawPredictRequest request,
+        io.grpc.stub.StreamObserver<com.google.api.HttpBody> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getRawPredictMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Perform an online explanation.
      * If [deployed_model_id][google.cloud.aiplatform.v1beta1.ExplainRequest.deployed_model_id] is specified,
      * the corresponding DeployModel must have
@@ -221,6 +277,12 @@ public final class PredictionServiceGrpc {
                   new MethodHandlers<
                       com.google.cloud.aiplatform.v1beta1.PredictRequest,
                       com.google.cloud.aiplatform.v1beta1.PredictResponse>(this, METHODID_PREDICT)))
+          .addMethod(
+              getRawPredictMethod(),
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.cloud.aiplatform.v1beta1.RawPredictRequest,
+                      com.google.api.HttpBody>(this, METHODID_RAW_PREDICT)))
           .addMethod(
               getExplainMethod(),
               io.grpc.stub.ServerCalls.asyncUnaryCall(
@@ -263,6 +325,20 @@ public final class PredictionServiceGrpc {
             responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getPredictMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Perform an online prediction with arbitrary http payload.
+     * </pre>
+     */
+    public void rawPredict(
+        com.google.cloud.aiplatform.v1beta1.RawPredictRequest request,
+        io.grpc.stub.StreamObserver<com.google.api.HttpBody> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getRawPredictMethod(), getCallOptions()), request, responseObserver);
     }
 
     /**
@@ -326,6 +402,19 @@ public final class PredictionServiceGrpc {
      *
      *
      * <pre>
+     * Perform an online prediction with arbitrary http payload.
+     * </pre>
+     */
+    public com.google.api.HttpBody rawPredict(
+        com.google.cloud.aiplatform.v1beta1.RawPredictRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getRawPredictMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Perform an online explanation.
      * If [deployed_model_id][google.cloud.aiplatform.v1beta1.ExplainRequest.deployed_model_id] is specified,
      * the corresponding DeployModel must have
@@ -381,6 +470,19 @@ public final class PredictionServiceGrpc {
      *
      *
      * <pre>
+     * Perform an online prediction with arbitrary http payload.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.api.HttpBody> rawPredict(
+        com.google.cloud.aiplatform.v1beta1.RawPredictRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getRawPredictMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Perform an online explanation.
      * If [deployed_model_id][google.cloud.aiplatform.v1beta1.ExplainRequest.deployed_model_id] is specified,
      * the corresponding DeployModel must have
@@ -401,7 +503,8 @@ public final class PredictionServiceGrpc {
   }
 
   private static final int METHODID_PREDICT = 0;
-  private static final int METHODID_EXPLAIN = 1;
+  private static final int METHODID_RAW_PREDICT = 1;
+  private static final int METHODID_EXPLAIN = 2;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -425,6 +528,11 @@ public final class PredictionServiceGrpc {
               (com.google.cloud.aiplatform.v1beta1.PredictRequest) request,
               (io.grpc.stub.StreamObserver<com.google.cloud.aiplatform.v1beta1.PredictResponse>)
                   responseObserver);
+          break;
+        case METHODID_RAW_PREDICT:
+          serviceImpl.rawPredict(
+              (com.google.cloud.aiplatform.v1beta1.RawPredictRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.api.HttpBody>) responseObserver);
           break;
         case METHODID_EXPLAIN:
           serviceImpl.explain(
@@ -497,6 +605,7 @@ public final class PredictionServiceGrpc {
                   io.grpc.ServiceDescriptor.newBuilder(SERVICE_NAME)
                       .setSchemaDescriptor(new PredictionServiceFileDescriptorSupplier())
                       .addMethod(getPredictMethod())
+                      .addMethod(getRawPredictMethod())
                       .addMethod(getExplainMethod())
                       .build();
         }

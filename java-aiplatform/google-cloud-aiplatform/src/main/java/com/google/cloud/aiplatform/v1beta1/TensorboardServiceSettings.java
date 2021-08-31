@@ -179,6 +179,13 @@ public class TensorboardServiceSettings extends ClientSettings<TensorboardServic
     return ((TensorboardServiceStubSettings) getStubSettings()).createTensorboardRunSettings();
   }
 
+  /** Returns the object with the settings used for calls to batchCreateTensorboardRuns. */
+  public UnaryCallSettings<BatchCreateTensorboardRunsRequest, BatchCreateTensorboardRunsResponse>
+      batchCreateTensorboardRunsSettings() {
+    return ((TensorboardServiceStubSettings) getStubSettings())
+        .batchCreateTensorboardRunsSettings();
+  }
+
   /** Returns the object with the settings used for calls to getTensorboardRun. */
   public UnaryCallSettings<GetTensorboardRunRequest, TensorboardRun> getTensorboardRunSettings() {
     return ((TensorboardServiceStubSettings) getStubSettings()).getTensorboardRunSettings();
@@ -207,6 +214,14 @@ public class TensorboardServiceSettings extends ClientSettings<TensorboardServic
       deleteTensorboardRunOperationSettings() {
     return ((TensorboardServiceStubSettings) getStubSettings())
         .deleteTensorboardRunOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to batchCreateTensorboardTimeSeries. */
+  public UnaryCallSettings<
+          BatchCreateTensorboardTimeSeriesRequest, BatchCreateTensorboardTimeSeriesResponse>
+      batchCreateTensorboardTimeSeriesSettings() {
+    return ((TensorboardServiceStubSettings) getStubSettings())
+        .batchCreateTensorboardTimeSeriesSettings();
   }
 
   /** Returns the object with the settings used for calls to createTensorboardTimeSeries. */
@@ -265,6 +280,14 @@ public class TensorboardServiceSettings extends ClientSettings<TensorboardServic
           ReadTensorboardBlobDataRequest, ReadTensorboardBlobDataResponse>
       readTensorboardBlobDataSettings() {
     return ((TensorboardServiceStubSettings) getStubSettings()).readTensorboardBlobDataSettings();
+  }
+
+  /** Returns the object with the settings used for calls to writeTensorboardExperimentData. */
+  public UnaryCallSettings<
+          WriteTensorboardExperimentDataRequest, WriteTensorboardExperimentDataResponse>
+      writeTensorboardExperimentDataSettings() {
+    return ((TensorboardServiceStubSettings) getStubSettings())
+        .writeTensorboardExperimentDataSettings();
   }
 
   /** Returns the object with the settings used for calls to writeTensorboardRunData. */
@@ -476,6 +499,13 @@ public class TensorboardServiceSettings extends ClientSettings<TensorboardServic
       return getStubSettingsBuilder().createTensorboardRunSettings();
     }
 
+    /** Returns the builder for the settings used for calls to batchCreateTensorboardRuns. */
+    public UnaryCallSettings.Builder<
+            BatchCreateTensorboardRunsRequest, BatchCreateTensorboardRunsResponse>
+        batchCreateTensorboardRunsSettings() {
+      return getStubSettingsBuilder().batchCreateTensorboardRunsSettings();
+    }
+
     /** Returns the builder for the settings used for calls to getTensorboardRun. */
     public UnaryCallSettings.Builder<GetTensorboardRunRequest, TensorboardRun>
         getTensorboardRunSettings() {
@@ -508,6 +538,13 @@ public class TensorboardServiceSettings extends ClientSettings<TensorboardServic
             DeleteTensorboardRunRequest, Empty, DeleteOperationMetadata>
         deleteTensorboardRunOperationSettings() {
       return getStubSettingsBuilder().deleteTensorboardRunOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to batchCreateTensorboardTimeSeries. */
+    public UnaryCallSettings.Builder<
+            BatchCreateTensorboardTimeSeriesRequest, BatchCreateTensorboardTimeSeriesResponse>
+        batchCreateTensorboardTimeSeriesSettings() {
+      return getStubSettingsBuilder().batchCreateTensorboardTimeSeriesSettings();
     }
 
     /** Returns the builder for the settings used for calls to createTensorboardTimeSeries. */
@@ -562,6 +599,13 @@ public class TensorboardServiceSettings extends ClientSettings<TensorboardServic
             ReadTensorboardBlobDataRequest, ReadTensorboardBlobDataResponse>
         readTensorboardBlobDataSettings() {
       return getStubSettingsBuilder().readTensorboardBlobDataSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to writeTensorboardExperimentData. */
+    public UnaryCallSettings.Builder<
+            WriteTensorboardExperimentDataRequest, WriteTensorboardExperimentDataResponse>
+        writeTensorboardExperimentDataSettings() {
+      return getStubSettingsBuilder().writeTensorboardExperimentDataSettings();
     }
 
     /** Returns the builder for the settings used for calls to writeTensorboardRunData. */

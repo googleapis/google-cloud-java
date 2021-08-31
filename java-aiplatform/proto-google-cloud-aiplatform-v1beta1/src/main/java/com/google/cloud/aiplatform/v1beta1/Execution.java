@@ -1001,6 +1001,7 @@ public final class Execution extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Properties of the Execution.
+   * The size of this field should not exceed 200KB.
    * </pre>
    *
    * <code>.google.protobuf.Struct metadata = 15;</code>
@@ -1016,6 +1017,7 @@ public final class Execution extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Properties of the Execution.
+   * The size of this field should not exceed 200KB.
    * </pre>
    *
    * <code>.google.protobuf.Struct metadata = 15;</code>
@@ -1031,6 +1033,7 @@ public final class Execution extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Properties of the Execution.
+   * The size of this field should not exceed 200KB.
    * </pre>
    *
    * <code>.google.protobuf.Struct metadata = 15;</code>
@@ -2913,6 +2916,7 @@ public final class Execution extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Properties of the Execution.
+     * The size of this field should not exceed 200KB.
      * </pre>
      *
      * <code>.google.protobuf.Struct metadata = 15;</code>
@@ -2927,6 +2931,7 @@ public final class Execution extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Properties of the Execution.
+     * The size of this field should not exceed 200KB.
      * </pre>
      *
      * <code>.google.protobuf.Struct metadata = 15;</code>
@@ -2945,6 +2950,7 @@ public final class Execution extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Properties of the Execution.
+     * The size of this field should not exceed 200KB.
      * </pre>
      *
      * <code>.google.protobuf.Struct metadata = 15;</code>
@@ -2967,6 +2973,7 @@ public final class Execution extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Properties of the Execution.
+     * The size of this field should not exceed 200KB.
      * </pre>
      *
      * <code>.google.protobuf.Struct metadata = 15;</code>
@@ -2986,6 +2993,7 @@ public final class Execution extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Properties of the Execution.
+     * The size of this field should not exceed 200KB.
      * </pre>
      *
      * <code>.google.protobuf.Struct metadata = 15;</code>
@@ -3010,6 +3018,7 @@ public final class Execution extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Properties of the Execution.
+     * The size of this field should not exceed 200KB.
      * </pre>
      *
      * <code>.google.protobuf.Struct metadata = 15;</code>
@@ -3030,6 +3039,7 @@ public final class Execution extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Properties of the Execution.
+     * The size of this field should not exceed 200KB.
      * </pre>
      *
      * <code>.google.protobuf.Struct metadata = 15;</code>
@@ -3044,6 +3054,7 @@ public final class Execution extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Properties of the Execution.
+     * The size of this field should not exceed 200KB.
      * </pre>
      *
      * <code>.google.protobuf.Struct metadata = 15;</code>
@@ -3060,6 +3071,7 @@ public final class Execution extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Properties of the Execution.
+     * The size of this field should not exceed 200KB.
      * </pre>
      *
      * <code>.google.protobuf.Struct metadata = 15;</code>

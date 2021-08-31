@@ -485,4 +485,178 @@ public class MockJobServiceImpl extends JobServiceImplBase {
                   Exception.class.getName())));
     }
   }
+
+  @Override
+  public void createModelDeploymentMonitoringJob(
+      CreateModelDeploymentMonitoringJobRequest request,
+      StreamObserver<ModelDeploymentMonitoringJob> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof ModelDeploymentMonitoringJob) {
+      requests.add(request);
+      responseObserver.onNext(((ModelDeploymentMonitoringJob) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method CreateModelDeploymentMonitoringJob, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  ModelDeploymentMonitoringJob.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void searchModelDeploymentMonitoringStatsAnomalies(
+      SearchModelDeploymentMonitoringStatsAnomaliesRequest request,
+      StreamObserver<SearchModelDeploymentMonitoringStatsAnomaliesResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof SearchModelDeploymentMonitoringStatsAnomaliesResponse) {
+      requests.add(request);
+      responseObserver.onNext(((SearchModelDeploymentMonitoringStatsAnomaliesResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method SearchModelDeploymentMonitoringStatsAnomalies, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  SearchModelDeploymentMonitoringStatsAnomaliesResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void getModelDeploymentMonitoringJob(
+      GetModelDeploymentMonitoringJobRequest request,
+      StreamObserver<ModelDeploymentMonitoringJob> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof ModelDeploymentMonitoringJob) {
+      requests.add(request);
+      responseObserver.onNext(((ModelDeploymentMonitoringJob) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetModelDeploymentMonitoringJob, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  ModelDeploymentMonitoringJob.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void listModelDeploymentMonitoringJobs(
+      ListModelDeploymentMonitoringJobsRequest request,
+      StreamObserver<ListModelDeploymentMonitoringJobsResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof ListModelDeploymentMonitoringJobsResponse) {
+      requests.add(request);
+      responseObserver.onNext(((ListModelDeploymentMonitoringJobsResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListModelDeploymentMonitoringJobs, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  ListModelDeploymentMonitoringJobsResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void updateModelDeploymentMonitoringJob(
+      UpdateModelDeploymentMonitoringJobRequest request,
+      StreamObserver<Operation> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Operation) {
+      requests.add(request);
+      responseObserver.onNext(((Operation) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method UpdateModelDeploymentMonitoringJob, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void deleteModelDeploymentMonitoringJob(
+      DeleteModelDeploymentMonitoringJobRequest request,
+      StreamObserver<Operation> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Operation) {
+      requests.add(request);
+      responseObserver.onNext(((Operation) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method DeleteModelDeploymentMonitoringJob, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void pauseModelDeploymentMonitoringJob(
+      PauseModelDeploymentMonitoringJobRequest request, StreamObserver<Empty> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Empty) {
+      requests.add(request);
+      responseObserver.onNext(((Empty) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method PauseModelDeploymentMonitoringJob, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Empty.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void resumeModelDeploymentMonitoringJob(
+      ResumeModelDeploymentMonitoringJobRequest request, StreamObserver<Empty> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Empty) {
+      requests.add(request);
+      responseObserver.onNext(((Empty) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ResumeModelDeploymentMonitoringJob, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Empty.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
 }

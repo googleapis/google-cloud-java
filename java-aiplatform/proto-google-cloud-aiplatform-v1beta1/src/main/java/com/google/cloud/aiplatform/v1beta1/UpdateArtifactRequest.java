@@ -211,6 +211,7 @@ public final class UpdateArtifactRequest extends com.google.protobuf.GeneratedMe
    *
    * <pre>
    * Required. A FieldMask indicating which fields should be updated.
+   * Functionality of this field is not yet supported.
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
@@ -227,6 +228,7 @@ public final class UpdateArtifactRequest extends com.google.protobuf.GeneratedMe
    *
    * <pre>
    * Required. A FieldMask indicating which fields should be updated.
+   * Functionality of this field is not yet supported.
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
@@ -243,6 +245,7 @@ public final class UpdateArtifactRequest extends com.google.protobuf.GeneratedMe
    *
    * <pre>
    * Required. A FieldMask indicating which fields should be updated.
+   * Functionality of this field is not yet supported.
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
@@ -259,8 +262,8 @@ public final class UpdateArtifactRequest extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * If set to true, and the [Artifact][google.cloud.aiplatform.v1beta1.Artifact] is not found, a new [Artifact][google.cloud.aiplatform.v1beta1.Artifact] will
-   * be created. In this situation, `update_mask` is ignored.
+   * If set to true, and the [Artifact][google.cloud.aiplatform.v1beta1.Artifact] is not found, a new [Artifact][google.cloud.aiplatform.v1beta1.Artifact] is
+   * created.
    * </pre>
    *
    * <code>bool allow_missing = 3;</code>
@@ -897,6 +900,7 @@ public final class UpdateArtifactRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Required. A FieldMask indicating which fields should be updated.
+     * Functionality of this field is not yet supported.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
@@ -912,6 +916,7 @@ public final class UpdateArtifactRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Required. A FieldMask indicating which fields should be updated.
+     * Functionality of this field is not yet supported.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
@@ -933,6 +938,7 @@ public final class UpdateArtifactRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Required. A FieldMask indicating which fields should be updated.
+     * Functionality of this field is not yet supported.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
@@ -956,6 +962,7 @@ public final class UpdateArtifactRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Required. A FieldMask indicating which fields should be updated.
+     * Functionality of this field is not yet supported.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
@@ -976,6 +983,7 @@ public final class UpdateArtifactRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Required. A FieldMask indicating which fields should be updated.
+     * Functionality of this field is not yet supported.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
@@ -1001,6 +1009,7 @@ public final class UpdateArtifactRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Required. A FieldMask indicating which fields should be updated.
+     * Functionality of this field is not yet supported.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
@@ -1022,6 +1031,7 @@ public final class UpdateArtifactRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Required. A FieldMask indicating which fields should be updated.
+     * Functionality of this field is not yet supported.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
@@ -1037,6 +1047,7 @@ public final class UpdateArtifactRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Required. A FieldMask indicating which fields should be updated.
+     * Functionality of this field is not yet supported.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
@@ -1056,6 +1067,7 @@ public final class UpdateArtifactRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Required. A FieldMask indicating which fields should be updated.
+     * Functionality of this field is not yet supported.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
@@ -1083,8 +1095,8 @@ public final class UpdateArtifactRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * If set to true, and the [Artifact][google.cloud.aiplatform.v1beta1.Artifact] is not found, a new [Artifact][google.cloud.aiplatform.v1beta1.Artifact] will
-     * be created. In this situation, `update_mask` is ignored.
+     * If set to true, and the [Artifact][google.cloud.aiplatform.v1beta1.Artifact] is not found, a new [Artifact][google.cloud.aiplatform.v1beta1.Artifact] is
+     * created.
      * </pre>
      *
      * <code>bool allow_missing = 3;</code>
@@ -1099,8 +1111,8 @@ public final class UpdateArtifactRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * If set to true, and the [Artifact][google.cloud.aiplatform.v1beta1.Artifact] is not found, a new [Artifact][google.cloud.aiplatform.v1beta1.Artifact] will
-     * be created. In this situation, `update_mask` is ignored.
+     * If set to true, and the [Artifact][google.cloud.aiplatform.v1beta1.Artifact] is not found, a new [Artifact][google.cloud.aiplatform.v1beta1.Artifact] is
+     * created.
      * </pre>
      *
      * <code>bool allow_missing = 3;</code>
@@ -1118,8 +1130,8 @@ public final class UpdateArtifactRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * If set to true, and the [Artifact][google.cloud.aiplatform.v1beta1.Artifact] is not found, a new [Artifact][google.cloud.aiplatform.v1beta1.Artifact] will
-     * be created. In this situation, `update_mask` is ignored.
+     * If set to true, and the [Artifact][google.cloud.aiplatform.v1beta1.Artifact] is not found, a new [Artifact][google.cloud.aiplatform.v1beta1.Artifact] is
+     * created.
      * </pre>
      *
      * <code>bool allow_missing = 3;</code>

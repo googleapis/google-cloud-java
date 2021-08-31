@@ -564,7 +564,8 @@ public class MetadataServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Deletes a single MetadataStore.
+   * Deletes a single MetadataStore and all its child resources (Artifacts, Executions, and
+   * Contexts).
    *
    * <p>Sample code:
    *
@@ -590,7 +591,8 @@ public class MetadataServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Deletes a single MetadataStore.
+   * Deletes a single MetadataStore and all its child resources (Artifacts, Executions, and
+   * Contexts).
    *
    * <p>Sample code:
    *
@@ -614,7 +616,8 @@ public class MetadataServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Deletes a single MetadataStore.
+   * Deletes a single MetadataStore and all its child resources (Artifacts, Executions, and
+   * Contexts).
    *
    * <p>Sample code:
    *
@@ -640,7 +643,8 @@ public class MetadataServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Deletes a single MetadataStore.
+   * Deletes a single MetadataStore and all its child resources (Artifacts, Executions, and
+   * Contexts).
    *
    * <p>Sample code:
    *
@@ -667,7 +671,8 @@ public class MetadataServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Deletes a single MetadataStore.
+   * Deletes a single MetadataStore and all its child resources (Artifacts, Executions, and
+   * Contexts).
    *
    * <p>Sample code:
    *
@@ -1083,6 +1088,7 @@ public class MetadataServiceClient implements BackgroundResource {
    *     the Artifact to be updated. Format:
    *     projects/{project}/locations/{location}/metadataStores/{metadatastore}/artifacts/{artifact}
    * @param updateMask Required. A FieldMask indicating which fields should be updated.
+   *     Functionality of this field is not yet supported.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Artifact updateArtifact(Artifact artifact, FieldMask updateMask) {
@@ -1793,6 +1799,7 @@ public class MetadataServiceClient implements BackgroundResource {
    *     Context to be updated. Format:
    *     projects/{project}/locations/{location}/metadataStores/{metadatastore}/contexts/{context}
    * @param updateMask Required. A FieldMask indicating which fields should be updated.
+   *     Functionality of this field is not yet supported.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Context updateContext(Context context, FieldMask updateMask) {
@@ -2890,6 +2897,7 @@ public class MetadataServiceClient implements BackgroundResource {
    *     the Execution to be updated. Format:
    *     projects/{project}/locations/{location}/metadataStores/{metadatastore}/executions/{execution}
    * @param updateMask Required. A FieldMask indicating which fields should be updated.
+   *     Functionality of this field is not yet supported.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Execution updateExecution(Execution execution, FieldMask updateMask) {

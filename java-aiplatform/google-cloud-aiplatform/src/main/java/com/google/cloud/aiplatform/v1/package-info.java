@@ -19,6 +19,9 @@
  *
  * <p>======================= DatasetServiceClient =======================
  *
+ * <p>Service Description: The service that handles the CRUD of Vertex AI Dataset and its child
+ * resources.
+ *
  * <p>Sample for DatasetServiceClient:
  *
  * <pre>{@code
@@ -30,12 +33,41 @@
  *
  * <p>======================= EndpointServiceClient =======================
  *
+ * <p>Service Description: A service for managing Vertex AI's Endpoints.
+ *
  * <p>Sample for EndpointServiceClient:
  *
  * <pre>{@code
  * try (EndpointServiceClient endpointServiceClient = EndpointServiceClient.create()) {
  *   EndpointName name = EndpointName.of("[PROJECT]", "[LOCATION]", "[ENDPOINT]");
  *   Endpoint response = endpointServiceClient.getEndpoint(name);
+ * }
+ * }</pre>
+ *
+ * <p>======================= IndexEndpointServiceClient =======================
+ *
+ * <p>Service Description: A service for managing Vertex AI's IndexEndpoints.
+ *
+ * <p>Sample for IndexEndpointServiceClient:
+ *
+ * <pre>{@code
+ * try (IndexEndpointServiceClient indexEndpointServiceClient =
+ *     IndexEndpointServiceClient.create()) {
+ *   IndexEndpointName name = IndexEndpointName.of("[PROJECT]", "[LOCATION]", "[INDEX_ENDPOINT]");
+ *   IndexEndpoint response = indexEndpointServiceClient.getIndexEndpoint(name);
+ * }
+ * }</pre>
+ *
+ * <p>======================= IndexServiceClient =======================
+ *
+ * <p>Service Description: A service for creating and managing Vertex AI's Index resources.
+ *
+ * <p>Sample for IndexServiceClient:
+ *
+ * <pre>{@code
+ * try (IndexServiceClient indexServiceClient = IndexServiceClient.create()) {
+ *   IndexName name = IndexName.of("[PROJECT]", "[LOCATION]", "[INDEX]");
+ *   Index response = indexServiceClient.getIndex(name);
  * }
  * }</pre>
  *

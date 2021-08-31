@@ -154,38 +154,41 @@ public final class FeaturestoreMonitoringConfig extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Configuration of the snapshot analysis based monitoring pipeline
-     * running interval. The value is rolled up to full day.
+     * Configuration of the snapshot analysis based monitoring pipeline running
+     * interval. The value is rolled up to full day.
      * </pre>
      *
-     * <code>.google.protobuf.Duration monitoring_interval = 2;</code>
+     * <code>.google.protobuf.Duration monitoring_interval = 2 [deprecated = true];</code>
      *
      * @return Whether the monitoringInterval field is set.
      */
+    @java.lang.Deprecated
     boolean hasMonitoringInterval();
     /**
      *
      *
      * <pre>
-     * Configuration of the snapshot analysis based monitoring pipeline
-     * running interval. The value is rolled up to full day.
+     * Configuration of the snapshot analysis based monitoring pipeline running
+     * interval. The value is rolled up to full day.
      * </pre>
      *
-     * <code>.google.protobuf.Duration monitoring_interval = 2;</code>
+     * <code>.google.protobuf.Duration monitoring_interval = 2 [deprecated = true];</code>
      *
      * @return The monitoringInterval.
      */
+    @java.lang.Deprecated
     com.google.protobuf.Duration getMonitoringInterval();
     /**
      *
      *
      * <pre>
-     * Configuration of the snapshot analysis based monitoring pipeline
-     * running interval. The value is rolled up to full day.
+     * Configuration of the snapshot analysis based monitoring pipeline running
+     * interval. The value is rolled up to full day.
      * </pre>
      *
-     * <code>.google.protobuf.Duration monitoring_interval = 2;</code>
+     * <code>.google.protobuf.Duration monitoring_interval = 2 [deprecated = true];</code>
      */
+    @java.lang.Deprecated
     com.google.protobuf.DurationOrBuilder getMonitoringIntervalOrBuilder();
 
     /**
@@ -357,15 +360,16 @@ public final class FeaturestoreMonitoringConfig extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Configuration of the snapshot analysis based monitoring pipeline
-     * running interval. The value is rolled up to full day.
+     * Configuration of the snapshot analysis based monitoring pipeline running
+     * interval. The value is rolled up to full day.
      * </pre>
      *
-     * <code>.google.protobuf.Duration monitoring_interval = 2;</code>
+     * <code>.google.protobuf.Duration monitoring_interval = 2 [deprecated = true];</code>
      *
      * @return Whether the monitoringInterval field is set.
      */
     @java.lang.Override
+    @java.lang.Deprecated
     public boolean hasMonitoringInterval() {
       return monitoringInterval_ != null;
     }
@@ -373,15 +377,16 @@ public final class FeaturestoreMonitoringConfig extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Configuration of the snapshot analysis based monitoring pipeline
-     * running interval. The value is rolled up to full day.
+     * Configuration of the snapshot analysis based monitoring pipeline running
+     * interval. The value is rolled up to full day.
      * </pre>
      *
-     * <code>.google.protobuf.Duration monitoring_interval = 2;</code>
+     * <code>.google.protobuf.Duration monitoring_interval = 2 [deprecated = true];</code>
      *
      * @return The monitoringInterval.
      */
     @java.lang.Override
+    @java.lang.Deprecated
     public com.google.protobuf.Duration getMonitoringInterval() {
       return monitoringInterval_ == null
           ? com.google.protobuf.Duration.getDefaultInstance()
@@ -391,13 +396,14 @@ public final class FeaturestoreMonitoringConfig extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Configuration of the snapshot analysis based monitoring pipeline
-     * running interval. The value is rolled up to full day.
+     * Configuration of the snapshot analysis based monitoring pipeline running
+     * interval. The value is rolled up to full day.
      * </pre>
      *
-     * <code>.google.protobuf.Duration monitoring_interval = 2;</code>
+     * <code>.google.protobuf.Duration monitoring_interval = 2 [deprecated = true];</code>
      */
     @java.lang.Override
+    @java.lang.Deprecated
     public com.google.protobuf.DurationOrBuilder getMonitoringIntervalOrBuilder() {
       return getMonitoringInterval();
     }
@@ -915,14 +921,15 @@ public final class FeaturestoreMonitoringConfig extends com.google.protobuf.Gene
        *
        *
        * <pre>
-       * Configuration of the snapshot analysis based monitoring pipeline
-       * running interval. The value is rolled up to full day.
+       * Configuration of the snapshot analysis based monitoring pipeline running
+       * interval. The value is rolled up to full day.
        * </pre>
        *
-       * <code>.google.protobuf.Duration monitoring_interval = 2;</code>
+       * <code>.google.protobuf.Duration monitoring_interval = 2 [deprecated = true];</code>
        *
        * @return Whether the monitoringInterval field is set.
        */
+      @java.lang.Deprecated
       public boolean hasMonitoringInterval() {
         return monitoringIntervalBuilder_ != null || monitoringInterval_ != null;
       }
@@ -930,14 +937,15 @@ public final class FeaturestoreMonitoringConfig extends com.google.protobuf.Gene
        *
        *
        * <pre>
-       * Configuration of the snapshot analysis based monitoring pipeline
-       * running interval. The value is rolled up to full day.
+       * Configuration of the snapshot analysis based monitoring pipeline running
+       * interval. The value is rolled up to full day.
        * </pre>
        *
-       * <code>.google.protobuf.Duration monitoring_interval = 2;</code>
+       * <code>.google.protobuf.Duration monitoring_interval = 2 [deprecated = true];</code>
        *
        * @return The monitoringInterval.
        */
+      @java.lang.Deprecated
       public com.google.protobuf.Duration getMonitoringInterval() {
         if (monitoringIntervalBuilder_ == null) {
           return monitoringInterval_ == null
@@ -951,12 +959,13 @@ public final class FeaturestoreMonitoringConfig extends com.google.protobuf.Gene
        *
        *
        * <pre>
-       * Configuration of the snapshot analysis based monitoring pipeline
-       * running interval. The value is rolled up to full day.
+       * Configuration of the snapshot analysis based monitoring pipeline running
+       * interval. The value is rolled up to full day.
        * </pre>
        *
-       * <code>.google.protobuf.Duration monitoring_interval = 2;</code>
+       * <code>.google.protobuf.Duration monitoring_interval = 2 [deprecated = true];</code>
        */
+      @java.lang.Deprecated
       public Builder setMonitoringInterval(com.google.protobuf.Duration value) {
         if (monitoringIntervalBuilder_ == null) {
           if (value == null) {
@@ -974,12 +983,13 @@ public final class FeaturestoreMonitoringConfig extends com.google.protobuf.Gene
        *
        *
        * <pre>
-       * Configuration of the snapshot analysis based monitoring pipeline
-       * running interval. The value is rolled up to full day.
+       * Configuration of the snapshot analysis based monitoring pipeline running
+       * interval. The value is rolled up to full day.
        * </pre>
        *
-       * <code>.google.protobuf.Duration monitoring_interval = 2;</code>
+       * <code>.google.protobuf.Duration monitoring_interval = 2 [deprecated = true];</code>
        */
+      @java.lang.Deprecated
       public Builder setMonitoringInterval(com.google.protobuf.Duration.Builder builderForValue) {
         if (monitoringIntervalBuilder_ == null) {
           monitoringInterval_ = builderForValue.build();
@@ -994,12 +1004,13 @@ public final class FeaturestoreMonitoringConfig extends com.google.protobuf.Gene
        *
        *
        * <pre>
-       * Configuration of the snapshot analysis based monitoring pipeline
-       * running interval. The value is rolled up to full day.
+       * Configuration of the snapshot analysis based monitoring pipeline running
+       * interval. The value is rolled up to full day.
        * </pre>
        *
-       * <code>.google.protobuf.Duration monitoring_interval = 2;</code>
+       * <code>.google.protobuf.Duration monitoring_interval = 2 [deprecated = true];</code>
        */
+      @java.lang.Deprecated
       public Builder mergeMonitoringInterval(com.google.protobuf.Duration value) {
         if (monitoringIntervalBuilder_ == null) {
           if (monitoringInterval_ != null) {
@@ -1021,12 +1032,13 @@ public final class FeaturestoreMonitoringConfig extends com.google.protobuf.Gene
        *
        *
        * <pre>
-       * Configuration of the snapshot analysis based monitoring pipeline
-       * running interval. The value is rolled up to full day.
+       * Configuration of the snapshot analysis based monitoring pipeline running
+       * interval. The value is rolled up to full day.
        * </pre>
        *
-       * <code>.google.protobuf.Duration monitoring_interval = 2;</code>
+       * <code>.google.protobuf.Duration monitoring_interval = 2 [deprecated = true];</code>
        */
+      @java.lang.Deprecated
       public Builder clearMonitoringInterval() {
         if (monitoringIntervalBuilder_ == null) {
           monitoringInterval_ = null;
@@ -1042,12 +1054,13 @@ public final class FeaturestoreMonitoringConfig extends com.google.protobuf.Gene
        *
        *
        * <pre>
-       * Configuration of the snapshot analysis based monitoring pipeline
-       * running interval. The value is rolled up to full day.
+       * Configuration of the snapshot analysis based monitoring pipeline running
+       * interval. The value is rolled up to full day.
        * </pre>
        *
-       * <code>.google.protobuf.Duration monitoring_interval = 2;</code>
+       * <code>.google.protobuf.Duration monitoring_interval = 2 [deprecated = true];</code>
        */
+      @java.lang.Deprecated
       public com.google.protobuf.Duration.Builder getMonitoringIntervalBuilder() {
 
         onChanged();
@@ -1057,12 +1070,13 @@ public final class FeaturestoreMonitoringConfig extends com.google.protobuf.Gene
        *
        *
        * <pre>
-       * Configuration of the snapshot analysis based monitoring pipeline
-       * running interval. The value is rolled up to full day.
+       * Configuration of the snapshot analysis based monitoring pipeline running
+       * interval. The value is rolled up to full day.
        * </pre>
        *
-       * <code>.google.protobuf.Duration monitoring_interval = 2;</code>
+       * <code>.google.protobuf.Duration monitoring_interval = 2 [deprecated = true];</code>
        */
+      @java.lang.Deprecated
       public com.google.protobuf.DurationOrBuilder getMonitoringIntervalOrBuilder() {
         if (monitoringIntervalBuilder_ != null) {
           return monitoringIntervalBuilder_.getMessageOrBuilder();
@@ -1076,11 +1090,11 @@ public final class FeaturestoreMonitoringConfig extends com.google.protobuf.Gene
        *
        *
        * <pre>
-       * Configuration of the snapshot analysis based monitoring pipeline
-       * running interval. The value is rolled up to full day.
+       * Configuration of the snapshot analysis based monitoring pipeline running
+       * interval. The value is rolled up to full day.
        * </pre>
        *
-       * <code>.google.protobuf.Duration monitoring_interval = 2;</code>
+       * <code>.google.protobuf.Duration monitoring_interval = 2 [deprecated = true];</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
               com.google.protobuf.Duration,

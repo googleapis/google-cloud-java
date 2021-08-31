@@ -81,6 +81,7 @@ public interface UpdateExecutionRequestOrBuilder
    *
    * <pre>
    * Required. A FieldMask indicating which fields should be updated.
+   * Functionality of this field is not yet supported.
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
@@ -94,6 +95,7 @@ public interface UpdateExecutionRequestOrBuilder
    *
    * <pre>
    * Required. A FieldMask indicating which fields should be updated.
+   * Functionality of this field is not yet supported.
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
@@ -107,6 +109,7 @@ public interface UpdateExecutionRequestOrBuilder
    *
    * <pre>
    * Required. A FieldMask indicating which fields should be updated.
+   * Functionality of this field is not yet supported.
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
@@ -119,7 +122,7 @@ public interface UpdateExecutionRequestOrBuilder
    *
    * <pre>
    * If set to true, and the [Execution][google.cloud.aiplatform.v1beta1.Execution] is not found, a new [Execution][google.cloud.aiplatform.v1beta1.Execution]
-   * will be created. In this situation, `update_mask` is ignored.
+   * is created.
    * </pre>
    *
    * <code>bool allow_missing = 3;</code>

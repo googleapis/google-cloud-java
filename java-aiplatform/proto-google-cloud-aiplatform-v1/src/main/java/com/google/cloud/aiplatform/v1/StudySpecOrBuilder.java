@@ -27,6 +27,92 @@ public interface StudySpecOrBuilder
    *
    *
    * <pre>
+   * The automated early stopping spec using decay curve rule.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1.StudySpec.DecayCurveAutomatedStoppingSpec decay_curve_stopping_spec = 4;
+   * </code>
+   *
+   * @return Whether the decayCurveStoppingSpec field is set.
+   */
+  boolean hasDecayCurveStoppingSpec();
+  /**
+   *
+   *
+   * <pre>
+   * The automated early stopping spec using decay curve rule.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1.StudySpec.DecayCurveAutomatedStoppingSpec decay_curve_stopping_spec = 4;
+   * </code>
+   *
+   * @return The decayCurveStoppingSpec.
+   */
+  com.google.cloud.aiplatform.v1.StudySpec.DecayCurveAutomatedStoppingSpec
+      getDecayCurveStoppingSpec();
+  /**
+   *
+   *
+   * <pre>
+   * The automated early stopping spec using decay curve rule.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1.StudySpec.DecayCurveAutomatedStoppingSpec decay_curve_stopping_spec = 4;
+   * </code>
+   */
+  com.google.cloud.aiplatform.v1.StudySpec.DecayCurveAutomatedStoppingSpecOrBuilder
+      getDecayCurveStoppingSpecOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * The automated early stopping spec using median rule.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1.StudySpec.MedianAutomatedStoppingSpec median_automated_stopping_spec = 5;
+   * </code>
+   *
+   * @return Whether the medianAutomatedStoppingSpec field is set.
+   */
+  boolean hasMedianAutomatedStoppingSpec();
+  /**
+   *
+   *
+   * <pre>
+   * The automated early stopping spec using median rule.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1.StudySpec.MedianAutomatedStoppingSpec median_automated_stopping_spec = 5;
+   * </code>
+   *
+   * @return The medianAutomatedStoppingSpec.
+   */
+  com.google.cloud.aiplatform.v1.StudySpec.MedianAutomatedStoppingSpec
+      getMedianAutomatedStoppingSpec();
+  /**
+   *
+   *
+   * <pre>
+   * The automated early stopping spec using median rule.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1.StudySpec.MedianAutomatedStoppingSpec median_automated_stopping_spec = 5;
+   * </code>
+   */
+  com.google.cloud.aiplatform.v1.StudySpec.MedianAutomatedStoppingSpecOrBuilder
+      getMedianAutomatedStoppingSpecOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Required. Metric specs for the Study.
    * </pre>
    *
@@ -229,4 +315,7 @@ public interface StudySpecOrBuilder
    * @return The measurementSelectionType.
    */
   com.google.cloud.aiplatform.v1.StudySpec.MeasurementSelectionType getMeasurementSelectionType();
+
+  public com.google.cloud.aiplatform.v1.StudySpec.AutomatedStoppingSpecCase
+      getAutomatedStoppingSpecCase();
 }

@@ -60,14 +60,13 @@ public interface DeleteMetadataStoreRequestOrBuilder
    *
    *
    * <pre>
-   * If set to true, any child resources of this MetadataStore will be deleted.
-   * (Otherwise, the request will fail with a FAILED_PRECONDITION error if the
-   * MetadataStore has any child resources.)
+   * Deprecated: Field is no longer supported.
    * </pre>
    *
-   * <code>bool force = 2;</code>
+   * <code>bool force = 2 [deprecated = true];</code>
    *
    * @return The force.
    */
+  @java.lang.Deprecated
   boolean getForce();
 }

@@ -19,6 +19,9 @@
  *
  * <p>======================= DatasetServiceClient =======================
  *
+ * <p>Service Description: The service that handles the CRUD of Vertex AI Dataset and its child
+ * resources.
+ *
  * <p>Sample for DatasetServiceClient:
  *
  * <pre>{@code
@@ -29,6 +32,8 @@
  * }</pre>
  *
  * <p>======================= EndpointServiceClient =======================
+ *
+ * <p>Service Description: A service for managing Vertex AI's Endpoints.
  *
  * <p>Sample for EndpointServiceClient:
  *

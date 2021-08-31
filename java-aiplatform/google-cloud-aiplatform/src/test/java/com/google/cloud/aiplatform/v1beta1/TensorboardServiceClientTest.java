@@ -1095,6 +1095,94 @@ public class TensorboardServiceClientTest {
   }
 
   @Test
+  public void batchCreateTensorboardRunsTest() throws Exception {
+    BatchCreateTensorboardRunsResponse expectedResponse =
+        BatchCreateTensorboardRunsResponse.newBuilder()
+            .addAllTensorboardRuns(new ArrayList<TensorboardRun>())
+            .build();
+    mockTensorboardService.addResponse(expectedResponse);
+
+    TensorboardExperimentName parent =
+        TensorboardExperimentName.of("[PROJECT]", "[LOCATION]", "[TENSORBOARD]", "[EXPERIMENT]");
+    List<CreateTensorboardRunRequest> requests = new ArrayList<>();
+
+    BatchCreateTensorboardRunsResponse actualResponse =
+        client.batchCreateTensorboardRuns(parent, requests);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockTensorboardService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    BatchCreateTensorboardRunsRequest actualRequest =
+        ((BatchCreateTensorboardRunsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertEquals(requests, actualRequest.getRequestsList());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void batchCreateTensorboardRunsExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockTensorboardService.addException(exception);
+
+    try {
+      TensorboardExperimentName parent =
+          TensorboardExperimentName.of("[PROJECT]", "[LOCATION]", "[TENSORBOARD]", "[EXPERIMENT]");
+      List<CreateTensorboardRunRequest> requests = new ArrayList<>();
+      client.batchCreateTensorboardRuns(parent, requests);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void batchCreateTensorboardRunsTest2() throws Exception {
+    BatchCreateTensorboardRunsResponse expectedResponse =
+        BatchCreateTensorboardRunsResponse.newBuilder()
+            .addAllTensorboardRuns(new ArrayList<TensorboardRun>())
+            .build();
+    mockTensorboardService.addResponse(expectedResponse);
+
+    String parent = "parent-995424086";
+    List<CreateTensorboardRunRequest> requests = new ArrayList<>();
+
+    BatchCreateTensorboardRunsResponse actualResponse =
+        client.batchCreateTensorboardRuns(parent, requests);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockTensorboardService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    BatchCreateTensorboardRunsRequest actualRequest =
+        ((BatchCreateTensorboardRunsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertEquals(requests, actualRequest.getRequestsList());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void batchCreateTensorboardRunsExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockTensorboardService.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      List<CreateTensorboardRunRequest> requests = new ArrayList<>();
+      client.batchCreateTensorboardRuns(parent, requests);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
   public void getTensorboardRunTest() throws Exception {
     TensorboardRun expectedResponse =
         TensorboardRun.newBuilder()
@@ -1418,6 +1506,94 @@ public class TensorboardServiceClientTest {
       Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
       InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
       Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void batchCreateTensorboardTimeSeriesTest() throws Exception {
+    BatchCreateTensorboardTimeSeriesResponse expectedResponse =
+        BatchCreateTensorboardTimeSeriesResponse.newBuilder()
+            .addAllTensorboardTimeSeries(new ArrayList<TensorboardTimeSeries>())
+            .build();
+    mockTensorboardService.addResponse(expectedResponse);
+
+    TensorboardExperimentName parent =
+        TensorboardExperimentName.of("[PROJECT]", "[LOCATION]", "[TENSORBOARD]", "[EXPERIMENT]");
+    List<CreateTensorboardTimeSeriesRequest> requests = new ArrayList<>();
+
+    BatchCreateTensorboardTimeSeriesResponse actualResponse =
+        client.batchCreateTensorboardTimeSeries(parent, requests);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockTensorboardService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    BatchCreateTensorboardTimeSeriesRequest actualRequest =
+        ((BatchCreateTensorboardTimeSeriesRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertEquals(requests, actualRequest.getRequestsList());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void batchCreateTensorboardTimeSeriesExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockTensorboardService.addException(exception);
+
+    try {
+      TensorboardExperimentName parent =
+          TensorboardExperimentName.of("[PROJECT]", "[LOCATION]", "[TENSORBOARD]", "[EXPERIMENT]");
+      List<CreateTensorboardTimeSeriesRequest> requests = new ArrayList<>();
+      client.batchCreateTensorboardTimeSeries(parent, requests);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void batchCreateTensorboardTimeSeriesTest2() throws Exception {
+    BatchCreateTensorboardTimeSeriesResponse expectedResponse =
+        BatchCreateTensorboardTimeSeriesResponse.newBuilder()
+            .addAllTensorboardTimeSeries(new ArrayList<TensorboardTimeSeries>())
+            .build();
+    mockTensorboardService.addResponse(expectedResponse);
+
+    String parent = "parent-995424086";
+    List<CreateTensorboardTimeSeriesRequest> requests = new ArrayList<>();
+
+    BatchCreateTensorboardTimeSeriesResponse actualResponse =
+        client.batchCreateTensorboardTimeSeries(parent, requests);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockTensorboardService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    BatchCreateTensorboardTimeSeriesRequest actualRequest =
+        ((BatchCreateTensorboardTimeSeriesRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertEquals(requests, actualRequest.getRequestsList());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void batchCreateTensorboardTimeSeriesExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockTensorboardService.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      List<CreateTensorboardTimeSeriesRequest> requests = new ArrayList<>();
+      client.batchCreateTensorboardTimeSeries(parent, requests);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
     }
   }
 
@@ -2050,6 +2226,90 @@ public class TensorboardServiceClientTest {
       Assert.assertTrue(e.getCause() instanceof InvalidArgumentException);
       InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
       Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void writeTensorboardExperimentDataTest() throws Exception {
+    WriteTensorboardExperimentDataResponse expectedResponse =
+        WriteTensorboardExperimentDataResponse.newBuilder().build();
+    mockTensorboardService.addResponse(expectedResponse);
+
+    TensorboardExperimentName tensorboardExperiment =
+        TensorboardExperimentName.of("[PROJECT]", "[LOCATION]", "[TENSORBOARD]", "[EXPERIMENT]");
+    List<WriteTensorboardRunDataRequest> writeRunDataRequests = new ArrayList<>();
+
+    WriteTensorboardExperimentDataResponse actualResponse =
+        client.writeTensorboardExperimentData(tensorboardExperiment, writeRunDataRequests);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockTensorboardService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    WriteTensorboardExperimentDataRequest actualRequest =
+        ((WriteTensorboardExperimentDataRequest) actualRequests.get(0));
+
+    Assert.assertEquals(tensorboardExperiment.toString(), actualRequest.getTensorboardExperiment());
+    Assert.assertEquals(writeRunDataRequests, actualRequest.getWriteRunDataRequestsList());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void writeTensorboardExperimentDataExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockTensorboardService.addException(exception);
+
+    try {
+      TensorboardExperimentName tensorboardExperiment =
+          TensorboardExperimentName.of("[PROJECT]", "[LOCATION]", "[TENSORBOARD]", "[EXPERIMENT]");
+      List<WriteTensorboardRunDataRequest> writeRunDataRequests = new ArrayList<>();
+      client.writeTensorboardExperimentData(tensorboardExperiment, writeRunDataRequests);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void writeTensorboardExperimentDataTest2() throws Exception {
+    WriteTensorboardExperimentDataResponse expectedResponse =
+        WriteTensorboardExperimentDataResponse.newBuilder().build();
+    mockTensorboardService.addResponse(expectedResponse);
+
+    String tensorboardExperiment = "tensorboardExperiment-293652982";
+    List<WriteTensorboardRunDataRequest> writeRunDataRequests = new ArrayList<>();
+
+    WriteTensorboardExperimentDataResponse actualResponse =
+        client.writeTensorboardExperimentData(tensorboardExperiment, writeRunDataRequests);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockTensorboardService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    WriteTensorboardExperimentDataRequest actualRequest =
+        ((WriteTensorboardExperimentDataRequest) actualRequests.get(0));
+
+    Assert.assertEquals(tensorboardExperiment, actualRequest.getTensorboardExperiment());
+    Assert.assertEquals(writeRunDataRequests, actualRequest.getWriteRunDataRequestsList());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void writeTensorboardExperimentDataExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockTensorboardService.addException(exception);
+
+    try {
+      String tensorboardExperiment = "tensorboardExperiment-293652982";
+      List<WriteTensorboardRunDataRequest> writeRunDataRequests = new ArrayList<>();
+      client.writeTensorboardExperimentData(tensorboardExperiment, writeRunDataRequests);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
     }
   }
 

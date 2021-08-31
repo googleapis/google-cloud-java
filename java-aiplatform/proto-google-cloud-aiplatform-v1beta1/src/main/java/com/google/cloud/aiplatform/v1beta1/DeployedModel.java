@@ -341,8 +341,8 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * A description of resources that to large degree are decided by AI
-   * Platform, and require only a modest additional configuration.
+   * A description of resources that to large degree are decided by Vertex
+   * AI, and require only a modest additional configuration.
    * </pre>
    *
    * <code>.google.cloud.aiplatform.v1beta1.AutomaticResources automatic_resources = 8;</code>
@@ -357,8 +357,8 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * A description of resources that to large degree are decided by AI
-   * Platform, and require only a modest additional configuration.
+   * A description of resources that to large degree are decided by Vertex
+   * AI, and require only a modest additional configuration.
    * </pre>
    *
    * <code>.google.cloud.aiplatform.v1beta1.AutomaticResources automatic_resources = 8;</code>
@@ -376,8 +376,8 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * A description of resources that to large degree are decided by AI
-   * Platform, and require only a modest additional configuration.
+   * A description of resources that to large degree are decided by Vertex
+   * AI, and require only a modest additional configuration.
    * </pre>
    *
    * <code>.google.cloud.aiplatform.v1beta1.AutomaticResources automatic_resources = 8;</code>
@@ -1628,8 +1628,8 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A description of resources that to large degree are decided by AI
-     * Platform, and require only a modest additional configuration.
+     * A description of resources that to large degree are decided by Vertex
+     * AI, and require only a modest additional configuration.
      * </pre>
      *
      * <code>.google.cloud.aiplatform.v1beta1.AutomaticResources automatic_resources = 8;</code>
@@ -1644,8 +1644,8 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A description of resources that to large degree are decided by AI
-     * Platform, and require only a modest additional configuration.
+     * A description of resources that to large degree are decided by Vertex
+     * AI, and require only a modest additional configuration.
      * </pre>
      *
      * <code>.google.cloud.aiplatform.v1beta1.AutomaticResources automatic_resources = 8;</code>
@@ -1670,8 +1670,8 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A description of resources that to large degree are decided by AI
-     * Platform, and require only a modest additional configuration.
+     * A description of resources that to large degree are decided by Vertex
+     * AI, and require only a modest additional configuration.
      * </pre>
      *
      * <code>.google.cloud.aiplatform.v1beta1.AutomaticResources automatic_resources = 8;</code>
@@ -1694,8 +1694,8 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A description of resources that to large degree are decided by AI
-     * Platform, and require only a modest additional configuration.
+     * A description of resources that to large degree are decided by Vertex
+     * AI, and require only a modest additional configuration.
      * </pre>
      *
      * <code>.google.cloud.aiplatform.v1beta1.AutomaticResources automatic_resources = 8;</code>
@@ -1715,8 +1715,8 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A description of resources that to large degree are decided by AI
-     * Platform, and require only a modest additional configuration.
+     * A description of resources that to large degree are decided by Vertex
+     * AI, and require only a modest additional configuration.
      * </pre>
      *
      * <code>.google.cloud.aiplatform.v1beta1.AutomaticResources automatic_resources = 8;</code>
@@ -1749,8 +1749,8 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A description of resources that to large degree are decided by AI
-     * Platform, and require only a modest additional configuration.
+     * A description of resources that to large degree are decided by Vertex
+     * AI, and require only a modest additional configuration.
      * </pre>
      *
      * <code>.google.cloud.aiplatform.v1beta1.AutomaticResources automatic_resources = 8;</code>
@@ -1775,8 +1775,8 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A description of resources that to large degree are decided by AI
-     * Platform, and require only a modest additional configuration.
+     * A description of resources that to large degree are decided by Vertex
+     * AI, and require only a modest additional configuration.
      * </pre>
      *
      * <code>.google.cloud.aiplatform.v1beta1.AutomaticResources automatic_resources = 8;</code>
@@ -1789,8 +1789,8 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A description of resources that to large degree are decided by AI
-     * Platform, and require only a modest additional configuration.
+     * A description of resources that to large degree are decided by Vertex
+     * AI, and require only a modest additional configuration.
      * </pre>
      *
      * <code>.google.cloud.aiplatform.v1beta1.AutomaticResources automatic_resources = 8;</code>
@@ -1811,8 +1811,8 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A description of resources that to large degree are decided by AI
-     * Platform, and require only a modest additional configuration.
+     * A description of resources that to large degree are decided by Vertex
+     * AI, and require only a modest additional configuration.
      * </pre>
      *
      * <code>.google.cloud.aiplatform.v1beta1.AutomaticResources automatic_resources = 8;</code>

@@ -89,6 +89,11 @@ public final class NearestNeighborSearchOperationMetadata
                       extensionRegistry));
               break;
             }
+          case 16:
+            {
+              dataBytesCount_ = input.readInt64();
+              break;
+            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -3710,6 +3715,24 @@ public final class NearestNeighborSearchOperationMetadata
     return contentValidationStats_.get(index);
   }
 
+  public static final int DATA_BYTES_COUNT_FIELD_NUMBER = 2;
+  private long dataBytesCount_;
+  /**
+   *
+   *
+   * <pre>
+   * The ingested data size in bytes.
+   * </pre>
+   *
+   * <code>int64 data_bytes_count = 2;</code>
+   *
+   * @return The dataBytesCount.
+   */
+  @java.lang.Override
+  public long getDataBytesCount() {
+    return dataBytesCount_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -3727,6 +3750,9 @@ public final class NearestNeighborSearchOperationMetadata
     for (int i = 0; i < contentValidationStats_.size(); i++) {
       output.writeMessage(1, contentValidationStats_.get(i));
     }
+    if (dataBytesCount_ != 0L) {
+      output.writeInt64(2, dataBytesCount_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -3740,6 +3766,9 @@ public final class NearestNeighborSearchOperationMetadata
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               1, contentValidationStats_.get(i));
+    }
+    if (dataBytesCount_ != 0L) {
+      size += com.google.protobuf.CodedOutputStream.computeInt64Size(2, dataBytesCount_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -3760,6 +3789,7 @@ public final class NearestNeighborSearchOperationMetadata
 
     if (!getContentValidationStatsList().equals(other.getContentValidationStatsList()))
       return false;
+    if (getDataBytesCount() != other.getDataBytesCount()) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -3775,6 +3805,8 @@ public final class NearestNeighborSearchOperationMetadata
       hash = (37 * hash) + CONTENT_VALIDATION_STATS_FIELD_NUMBER;
       hash = (53 * hash) + getContentValidationStatsList().hashCode();
     }
+    hash = (37 * hash) + DATA_BYTES_COUNT_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getDataBytesCount());
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -3937,6 +3969,8 @@ public final class NearestNeighborSearchOperationMetadata
       } else {
         contentValidationStatsBuilder_.clear();
       }
+      dataBytesCount_ = 0L;
+
       return this;
     }
 
@@ -3978,6 +4012,7 @@ public final class NearestNeighborSearchOperationMetadata
       } else {
         result.contentValidationStats_ = contentValidationStatsBuilder_.build();
       }
+      result.dataBytesCount_ = dataBytesCount_;
       onBuilt();
       return result;
     }
@@ -4058,6 +4093,9 @@ public final class NearestNeighborSearchOperationMetadata
             contentValidationStatsBuilder_.addAllMessages(other.contentValidationStats_);
           }
         }
+      }
+      if (other.getDataBytesCount() != 0L) {
+        setDataBytesCount(other.getDataBytesCount());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -4612,6 +4650,58 @@ public final class NearestNeighborSearchOperationMetadata
         contentValidationStats_ = null;
       }
       return contentValidationStatsBuilder_;
+    }
+
+    private long dataBytesCount_;
+    /**
+     *
+     *
+     * <pre>
+     * The ingested data size in bytes.
+     * </pre>
+     *
+     * <code>int64 data_bytes_count = 2;</code>
+     *
+     * @return The dataBytesCount.
+     */
+    @java.lang.Override
+    public long getDataBytesCount() {
+      return dataBytesCount_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The ingested data size in bytes.
+     * </pre>
+     *
+     * <code>int64 data_bytes_count = 2;</code>
+     *
+     * @param value The dataBytesCount to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDataBytesCount(long value) {
+
+      dataBytesCount_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The ingested data size in bytes.
+     * </pre>
+     *
+     * <code>int64 data_bytes_count = 2;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearDataBytesCount() {
+
+      dataBytesCount_ = 0L;
+      onChanged();
+      return this;
     }
 
     @java.lang.Override

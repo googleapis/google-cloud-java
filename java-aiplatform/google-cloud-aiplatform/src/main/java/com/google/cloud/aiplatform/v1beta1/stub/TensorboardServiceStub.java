@@ -27,6 +27,10 @@ import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.ServerStreamingCallable;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloud.aiplatform.v1beta1.BatchCreateTensorboardRunsRequest;
+import com.google.cloud.aiplatform.v1beta1.BatchCreateTensorboardRunsResponse;
+import com.google.cloud.aiplatform.v1beta1.BatchCreateTensorboardTimeSeriesRequest;
+import com.google.cloud.aiplatform.v1beta1.BatchCreateTensorboardTimeSeriesResponse;
 import com.google.cloud.aiplatform.v1beta1.CreateTensorboardExperimentRequest;
 import com.google.cloud.aiplatform.v1beta1.CreateTensorboardOperationMetadata;
 import com.google.cloud.aiplatform.v1beta1.CreateTensorboardRequest;
@@ -64,6 +68,8 @@ import com.google.cloud.aiplatform.v1beta1.UpdateTensorboardOperationMetadata;
 import com.google.cloud.aiplatform.v1beta1.UpdateTensorboardRequest;
 import com.google.cloud.aiplatform.v1beta1.UpdateTensorboardRunRequest;
 import com.google.cloud.aiplatform.v1beta1.UpdateTensorboardTimeSeriesRequest;
+import com.google.cloud.aiplatform.v1beta1.WriteTensorboardExperimentDataRequest;
+import com.google.cloud.aiplatform.v1beta1.WriteTensorboardExperimentDataResponse;
 import com.google.cloud.aiplatform.v1beta1.WriteTensorboardRunDataRequest;
 import com.google.cloud.aiplatform.v1beta1.WriteTensorboardRunDataResponse;
 import com.google.longrunning.Operation;
@@ -176,6 +182,12 @@ public abstract class TensorboardServiceStub implements BackgroundResource {
     throw new UnsupportedOperationException("Not implemented: createTensorboardRunCallable()");
   }
 
+  public UnaryCallable<BatchCreateTensorboardRunsRequest, BatchCreateTensorboardRunsResponse>
+      batchCreateTensorboardRunsCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: batchCreateTensorboardRunsCallable()");
+  }
+
   public UnaryCallable<GetTensorboardRunRequest, TensorboardRun> getTensorboardRunCallable() {
     throw new UnsupportedOperationException("Not implemented: getTensorboardRunCallable()");
   }
@@ -202,6 +214,13 @@ public abstract class TensorboardServiceStub implements BackgroundResource {
 
   public UnaryCallable<DeleteTensorboardRunRequest, Operation> deleteTensorboardRunCallable() {
     throw new UnsupportedOperationException("Not implemented: deleteTensorboardRunCallable()");
+  }
+
+  public UnaryCallable<
+          BatchCreateTensorboardTimeSeriesRequest, BatchCreateTensorboardTimeSeriesResponse>
+      batchCreateTensorboardTimeSeriesCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: batchCreateTensorboardTimeSeriesCallable()");
   }
 
   public UnaryCallable<CreateTensorboardTimeSeriesRequest, TensorboardTimeSeries>
@@ -253,6 +272,13 @@ public abstract class TensorboardServiceStub implements BackgroundResource {
   public ServerStreamingCallable<ReadTensorboardBlobDataRequest, ReadTensorboardBlobDataResponse>
       readTensorboardBlobDataCallable() {
     throw new UnsupportedOperationException("Not implemented: readTensorboardBlobDataCallable()");
+  }
+
+  public UnaryCallable<
+          WriteTensorboardExperimentDataRequest, WriteTensorboardExperimentDataResponse>
+      writeTensorboardExperimentDataCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: writeTensorboardExperimentDataCallable()");
   }
 
   public UnaryCallable<WriteTensorboardRunDataRequest, WriteTensorboardRunDataResponse>

@@ -210,6 +210,7 @@ public class ModelServiceClientTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .addAllDeployedModels(new ArrayList<DeployedModelRef>())
+            .setExplanationSpec(ExplanationSpec.newBuilder().build())
             .setEtag("etag3123477")
             .putAllLabels(new HashMap<String, String>())
             .setEncryptionSpec(EncryptionSpec.newBuilder().build())
@@ -268,6 +269,7 @@ public class ModelServiceClientTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .addAllDeployedModels(new ArrayList<DeployedModelRef>())
+            .setExplanationSpec(ExplanationSpec.newBuilder().build())
             .setEtag("etag3123477")
             .putAllLabels(new HashMap<String, String>())
             .setEncryptionSpec(EncryptionSpec.newBuilder().build())
@@ -414,6 +416,7 @@ public class ModelServiceClientTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .addAllDeployedModels(new ArrayList<DeployedModelRef>())
+            .setExplanationSpec(ExplanationSpec.newBuilder().build())
             .setEtag("etag3123477")
             .putAllLabels(new HashMap<String, String>())
             .setEncryptionSpec(EncryptionSpec.newBuilder().build())
@@ -644,6 +647,7 @@ public class ModelServiceClientTest {
             .setMetrics(Value.newBuilder().build())
             .setCreateTime(Timestamp.newBuilder().build())
             .addAllSliceDimensions(new ArrayList<String>())
+            .setModelExplanation(ModelExplanation.newBuilder().build())
             .build();
     mockModelService.addResponse(expectedResponse);
 
@@ -690,6 +694,7 @@ public class ModelServiceClientTest {
             .setMetrics(Value.newBuilder().build())
             .setCreateTime(Timestamp.newBuilder().build())
             .addAllSliceDimensions(new ArrayList<String>())
+            .setModelExplanation(ModelExplanation.newBuilder().build())
             .build();
     mockModelService.addResponse(expectedResponse);
 
