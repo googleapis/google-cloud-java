@@ -3,6 +3,20 @@
 <differences>
   <difference>
     <differenceType>7012</differenceType>
+    <className>com/google/cloud/location/*OrBuilder</className>
+    <method>* get*(*)</method>
+  </difference>
+  <difference>
+    <differenceType>7012</differenceType>
+    <className>com/google/cloud/location/*OrBuilder</className>
+    <method>boolean contains*(*)</method>
+  </difference>
+  <difference>
+    <differenceType>7012</differenceType>
+    <className>com/google/cloud/location/*OrBuilder</className>
+    <method>boolean has*(*)</method>
+  </difference>  <difference>
+    <differenceType>7012</differenceType>
     <className>com/google/cloud/translate/v3beta1/*OrBuilder</className>
     <method>* get*(*)</method>
   </difference>
