@@ -4,23 +4,23 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/java-datacatalog.git",
-        "sha": "65022d48cc00b5b982438d79878845a437764c00"
+        "sha": "fe71e643a6a39af8e1d883e4bd3ad7380921e260"
       }
     },
     {
       "git": {
         "name": "googleapis",
         "remote": "https://github.com/googleapis/googleapis.git",
-        "sha": "a739464cacb3aa6d375683aefe16b79c21da1bb0",
-        "internalRef": "389657692"
+        "sha": "84b7c63c66a06faccd4c46b920fb531126784f30",
+        "internalRef": "391801304"
       }
     },
     {
       "git": {
         "name": "googleapis",
         "remote": "https://github.com/googleapis/googleapis.git",
-        "sha": "a739464cacb3aa6d375683aefe16b79c21da1bb0",
-        "internalRef": "389657692"
+        "sha": "84b7c63c66a06faccd4c46b920fb531126784f30",
+        "internalRef": "391801304"
       }
     },
     {

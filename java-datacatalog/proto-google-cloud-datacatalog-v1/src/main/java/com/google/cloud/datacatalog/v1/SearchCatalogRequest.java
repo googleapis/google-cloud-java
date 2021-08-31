@@ -2142,7 +2142,7 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
    * <pre>
    * Optional. The query string with a minimum of 3 characters and specific syntax.
    * For more information, see
-   * [Data Catalog search syntax](/data-catalog/docs/how-to/search-reference).
+   * [Data Catalog search syntax](https://cloud.google.com/data-catalog/docs/how-to/search-reference).
    * An empty query string returns all data assets (in the specified scope)
    * that you have access to.
    * A query string can be a simple `xyz` or qualified by predicates:
@@ -2173,7 +2173,7 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
    * <pre>
    * Optional. The query string with a minimum of 3 characters and specific syntax.
    * For more information, see
-   * [Data Catalog search syntax](/data-catalog/docs/how-to/search-reference).
+   * [Data Catalog search syntax](https://cloud.google.com/data-catalog/docs/how-to/search-reference).
    * An empty query string returns all data assets (in the specified scope)
    * that you have access to.
    * A query string can be a simple `xyz` or qualified by predicates:
@@ -2968,7 +2968,7 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
      * <pre>
      * Optional. The query string with a minimum of 3 characters and specific syntax.
      * For more information, see
-     * [Data Catalog search syntax](/data-catalog/docs/how-to/search-reference).
+     * [Data Catalog search syntax](https://cloud.google.com/data-catalog/docs/how-to/search-reference).
      * An empty query string returns all data assets (in the specified scope)
      * that you have access to.
      * A query string can be a simple `xyz` or qualified by predicates:
@@ -2998,7 +2998,7 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
      * <pre>
      * Optional. The query string with a minimum of 3 characters and specific syntax.
      * For more information, see
-     * [Data Catalog search syntax](/data-catalog/docs/how-to/search-reference).
+     * [Data Catalog search syntax](https://cloud.google.com/data-catalog/docs/how-to/search-reference).
      * An empty query string returns all data assets (in the specified scope)
      * that you have access to.
      * A query string can be a simple `xyz` or qualified by predicates:
@@ -3028,7 +3028,7 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
      * <pre>
      * Optional. The query string with a minimum of 3 characters and specific syntax.
      * For more information, see
-     * [Data Catalog search syntax](/data-catalog/docs/how-to/search-reference).
+     * [Data Catalog search syntax](https://cloud.google.com/data-catalog/docs/how-to/search-reference).
      * An empty query string returns all data assets (in the specified scope)
      * that you have access to.
      * A query string can be a simple `xyz` or qualified by predicates:
@@ -3057,7 +3057,7 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
      * <pre>
      * Optional. The query string with a minimum of 3 characters and specific syntax.
      * For more information, see
-     * [Data Catalog search syntax](/data-catalog/docs/how-to/search-reference).
+     * [Data Catalog search syntax](https://cloud.google.com/data-catalog/docs/how-to/search-reference).
      * An empty query string returns all data assets (in the specified scope)
      * that you have access to.
      * A query string can be a simple `xyz` or qualified by predicates:
@@ -3082,7 +3082,7 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
      * <pre>
      * Optional. The query string with a minimum of 3 characters and specific syntax.
      * For more information, see
-     * [Data Catalog search syntax](/data-catalog/docs/how-to/search-reference).
+     * [Data Catalog search syntax](https://cloud.google.com/data-catalog/docs/how-to/search-reference).
      * An empty query string returns all data assets (in the specified scope)
      * that you have access to.
      * A query string can be a simple `xyz` or qualified by predicates:
