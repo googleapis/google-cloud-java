@@ -657,8 +657,11 @@ public class Publisher implements PublisherInterface {
     static final long DEFAULT_REQUEST_BYTES_THRESHOLD = 1000L; // 1 kB
     static final Duration DEFAULT_DELAY_THRESHOLD = Duration.ofMillis(1);
     private static final Duration DEFAULT_INITIAL_RPC_TIMEOUT = Duration.ofSeconds(5);
-    private static final Duration DEFAULT_MAX_RPC_TIMEOUT = Duration.ofSeconds(600);
+    private static final Duration DEFAULT_MAX_RPC_TIMEOUT = Duration.ofSeconds(60);
     private static final Duration DEFAULT_TOTAL_TIMEOUT = Duration.ofSeconds(600);
+    private static final Duration DEFAULT_INITIAL_RETRY_DELAY = Duration.ofMillis(100);
+    private static final Duration DEFAULT_MAX_RETRY_DELAY = Duration.ofSeconds(60);
+    private static final double DEFAULT_MULTIPLIER = 1.3;
     static final BatchingSettings DEFAULT_BATCHING_SETTINGS =
         BatchingSettings.newBuilder()
             .setDelayThreshold(DEFAULT_DELAY_THRESHOLD)
@@ -672,11 +675,11 @@ public class Publisher implements PublisherInterface {
     static final RetrySettings DEFAULT_RETRY_SETTINGS =
         RetrySettings.newBuilder()
             .setTotalTimeout(DEFAULT_TOTAL_TIMEOUT)
-            .setInitialRetryDelay(Duration.ofMillis(100))
-            .setRetryDelayMultiplier(1.3)
-            .setMaxRetryDelay(Duration.ofSeconds(60))
+            .setInitialRetryDelay(DEFAULT_INITIAL_RETRY_DELAY)
+            .setRetryDelayMultiplier(DEFAULT_MULTIPLIER)
+            .setMaxRetryDelay(DEFAULT_MAX_RETRY_DELAY)
             .setInitialRpcTimeout(DEFAULT_INITIAL_RPC_TIMEOUT)
-            .setRpcTimeoutMultiplier(1)
+            .setRpcTimeoutMultiplier(DEFAULT_MULTIPLIER)
             .setMaxRpcTimeout(DEFAULT_MAX_RPC_TIMEOUT)
             .build();
     static final boolean DEFAULT_ENABLE_MESSAGE_ORDERING = false;
