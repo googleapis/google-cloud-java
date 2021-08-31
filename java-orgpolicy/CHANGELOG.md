@@ -1,5 +1,12 @@
 # Changelog
 
+### [2.0.3](https://www.github.com/googleapis/java-orgpolicy/compare/v2.0.2...v2.0.3) (2021-08-31)
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.2.0 ([#245](https://www.github.com/googleapis/java-orgpolicy/issues/245)) ([cefc470](https://www.github.com/googleapis/java-orgpolicy/commit/cefc470003514cfd3a67412a5d153215e6f30fb8))
+
 ### [2.0.2](https://www.github.com/googleapis/java-orgpolicy/compare/v2.0.1...v2.0.2) (2021-08-23)
 
 
