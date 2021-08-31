@@ -1,5 +1,17 @@
 # Changelog
 
+## [2.1.0](https://www.github.com/googleapis/java-billingbudgets/compare/v2.0.2...v2.1.0) (2021-08-31)
+
+
+### Features
+
+* Remove use of deprecated gradle command in java README ([#1196](https://www.github.com/googleapis/java-billingbudgets/issues/1196)) ([#571](https://www.github.com/googleapis/java-billingbudgets/issues/571)) ([47ea233](https://www.github.com/googleapis/java-billingbudgets/commit/47ea2337951c3d6463b424075822164df976eec8))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.2.0 ([#574](https://www.github.com/googleapis/java-billingbudgets/issues/574)) ([2b521e3](https://www.github.com/googleapis/java-billingbudgets/commit/2b521e3e55f042383c19463280b4aec6cdd42a7c))
+
 ### [2.0.2](https://www.github.com/googleapis/java-billingbudgets/compare/v2.0.1...v2.0.2) (2021-08-23)
 
 
