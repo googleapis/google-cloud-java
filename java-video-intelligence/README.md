@@ -60,12 +60,12 @@ If you are using Gradle 5.x or later, add this to your dependencies
 ```Groovy
 implementation platform('com.google.cloud:libraries-bom:22.0.0')
 
-compile 'com.google.cloud:google-cloud-video-intelligence'
+implementation 'com.google.cloud:google-cloud-video-intelligence'
 ```
 If you are using Gradle without BOM, add this to your dependencies
 
 ```Groovy
-compile 'com.google.cloud:google-cloud-video-intelligence:2.0.4'
+implementation 'com.google.cloud:google-cloud-video-intelligence:2.0.4'
 ```
 
 If you are using SBT, add this to your dependencies
