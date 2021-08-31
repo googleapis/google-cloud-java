@@ -25,6 +25,9 @@ import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloud.translate.v3.BatchTranslateDocumentMetadata;
+import com.google.cloud.translate.v3.BatchTranslateDocumentRequest;
+import com.google.cloud.translate.v3.BatchTranslateDocumentResponse;
 import com.google.cloud.translate.v3.BatchTranslateMetadata;
 import com.google.cloud.translate.v3.BatchTranslateResponse;
 import com.google.cloud.translate.v3.BatchTranslateTextRequest;
@@ -41,6 +44,8 @@ import com.google.cloud.translate.v3.Glossary;
 import com.google.cloud.translate.v3.ListGlossariesRequest;
 import com.google.cloud.translate.v3.ListGlossariesResponse;
 import com.google.cloud.translate.v3.SupportedLanguages;
+import com.google.cloud.translate.v3.TranslateDocumentRequest;
+import com.google.cloud.translate.v3.TranslateDocumentResponse;
 import com.google.cloud.translate.v3.TranslateTextRequest;
 import com.google.cloud.translate.v3.TranslateTextResponse;
 import com.google.common.collect.ImmutableMap;
@@ -93,6 +98,17 @@ public class GrpcTranslationServiceStub extends TranslationServiceStub {
               .setResponseMarshaller(ProtoUtils.marshaller(SupportedLanguages.getDefaultInstance()))
               .build();
 
+  private static final MethodDescriptor<TranslateDocumentRequest, TranslateDocumentResponse>
+      translateDocumentMethodDescriptor =
+          MethodDescriptor.<TranslateDocumentRequest, TranslateDocumentResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.translation.v3.TranslationService/TranslateDocument")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(TranslateDocumentRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(TranslateDocumentResponse.getDefaultInstance()))
+              .build();
+
   private static final MethodDescriptor<BatchTranslateTextRequest, Operation>
       batchTranslateTextMethodDescriptor =
           MethodDescriptor.<BatchTranslateTextRequest, Operation>newBuilder()
@@ -101,6 +117,17 @@ public class GrpcTranslationServiceStub extends TranslationServiceStub {
                   "google.cloud.translation.v3.TranslationService/BatchTranslateText")
               .setRequestMarshaller(
                   ProtoUtils.marshaller(BatchTranslateTextRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<BatchTranslateDocumentRequest, Operation>
+      batchTranslateDocumentMethodDescriptor =
+          MethodDescriptor.<BatchTranslateDocumentRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.translation.v3.TranslationService/BatchTranslateDocument")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(BatchTranslateDocumentRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
               .build();
 
@@ -147,10 +174,19 @@ public class GrpcTranslationServiceStub extends TranslationServiceStub {
   private final UnaryCallable<DetectLanguageRequest, DetectLanguageResponse> detectLanguageCallable;
   private final UnaryCallable<GetSupportedLanguagesRequest, SupportedLanguages>
       getSupportedLanguagesCallable;
+  private final UnaryCallable<TranslateDocumentRequest, TranslateDocumentResponse>
+      translateDocumentCallable;
   private final UnaryCallable<BatchTranslateTextRequest, Operation> batchTranslateTextCallable;
   private final OperationCallable<
           BatchTranslateTextRequest, BatchTranslateResponse, BatchTranslateMetadata>
       batchTranslateTextOperationCallable;
+  private final UnaryCallable<BatchTranslateDocumentRequest, Operation>
+      batchTranslateDocumentCallable;
+  private final OperationCallable<
+          BatchTranslateDocumentRequest,
+          BatchTranslateDocumentResponse,
+          BatchTranslateDocumentMetadata>
+      batchTranslateDocumentOperationCallable;
   private final UnaryCallable<CreateGlossaryRequest, Operation> createGlossaryCallable;
   private final OperationCallable<CreateGlossaryRequest, Glossary, CreateGlossaryMetadata>
       createGlossaryOperationCallable;
@@ -239,6 +275,17 @@ public class GrpcTranslationServiceStub extends TranslationServiceStub {
                       return params.build();
                     })
                 .build();
+    GrpcCallSettings<TranslateDocumentRequest, TranslateDocumentResponse>
+        translateDocumentTransportSettings =
+            GrpcCallSettings.<TranslateDocumentRequest, TranslateDocumentResponse>newBuilder()
+                .setMethodDescriptor(translateDocumentMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("parent", String.valueOf(request.getParent()));
+                      return params.build();
+                    })
+                .build();
     GrpcCallSettings<BatchTranslateTextRequest, Operation> batchTranslateTextTransportSettings =
         GrpcCallSettings.<BatchTranslateTextRequest, Operation>newBuilder()
             .setMethodDescriptor(batchTranslateTextMethodDescriptor)
@@ -249,6 +296,17 @@ public class GrpcTranslationServiceStub extends TranslationServiceStub {
                   return params.build();
                 })
             .build();
+    GrpcCallSettings<BatchTranslateDocumentRequest, Operation>
+        batchTranslateDocumentTransportSettings =
+            GrpcCallSettings.<BatchTranslateDocumentRequest, Operation>newBuilder()
+                .setMethodDescriptor(batchTranslateDocumentMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("parent", String.valueOf(request.getParent()));
+                      return params.build();
+                    })
+                .build();
     GrpcCallSettings<CreateGlossaryRequest, Operation> createGlossaryTransportSettings =
         GrpcCallSettings.<CreateGlossaryRequest, Operation>newBuilder()
             .setMethodDescriptor(createGlossaryMethodDescriptor)
@@ -302,6 +360,11 @@ public class GrpcTranslationServiceStub extends TranslationServiceStub {
             getSupportedLanguagesTransportSettings,
             settings.getSupportedLanguagesSettings(),
             clientContext);
+    this.translateDocumentCallable =
+        callableFactory.createUnaryCallable(
+            translateDocumentTransportSettings,
+            settings.translateDocumentSettings(),
+            clientContext);
     this.batchTranslateTextCallable =
         callableFactory.createUnaryCallable(
             batchTranslateTextTransportSettings,
@@ -311,6 +374,17 @@ public class GrpcTranslationServiceStub extends TranslationServiceStub {
         callableFactory.createOperationCallable(
             batchTranslateTextTransportSettings,
             settings.batchTranslateTextOperationSettings(),
+            clientContext,
+            operationsStub);
+    this.batchTranslateDocumentCallable =
+        callableFactory.createUnaryCallable(
+            batchTranslateDocumentTransportSettings,
+            settings.batchTranslateDocumentSettings(),
+            clientContext);
+    this.batchTranslateDocumentOperationCallable =
+        callableFactory.createOperationCallable(
+            batchTranslateDocumentTransportSettings,
+            settings.batchTranslateDocumentOperationSettings(),
             clientContext,
             operationsStub);
     this.createGlossaryCallable =
@@ -366,6 +440,12 @@ public class GrpcTranslationServiceStub extends TranslationServiceStub {
   }
 
   @Override
+  public UnaryCallable<TranslateDocumentRequest, TranslateDocumentResponse>
+      translateDocumentCallable() {
+    return translateDocumentCallable;
+  }
+
+  @Override
   public UnaryCallable<BatchTranslateTextRequest, Operation> batchTranslateTextCallable() {
     return batchTranslateTextCallable;
   }
@@ -375,6 +455,20 @@ public class GrpcTranslationServiceStub extends TranslationServiceStub {
           BatchTranslateTextRequest, BatchTranslateResponse, BatchTranslateMetadata>
       batchTranslateTextOperationCallable() {
     return batchTranslateTextOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<BatchTranslateDocumentRequest, Operation> batchTranslateDocumentCallable() {
+    return batchTranslateDocumentCallable;
+  }
+
+  @Override
+  public OperationCallable<
+          BatchTranslateDocumentRequest,
+          BatchTranslateDocumentResponse,
+          BatchTranslateDocumentMetadata>
+      batchTranslateDocumentOperationCallable() {
+    return batchTranslateDocumentOperationCallable;
   }
 
   @Override

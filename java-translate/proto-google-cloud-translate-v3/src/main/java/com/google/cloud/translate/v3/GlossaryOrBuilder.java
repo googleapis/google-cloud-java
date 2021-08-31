@@ -31,7 +31,7 @@ public interface GlossaryOrBuilder
    * `projects/{project-number-or-id}/locations/{location-id}/glossaries/{glossary-id}`.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The name.
    */
@@ -44,7 +44,7 @@ public interface GlossaryOrBuilder
    * `projects/{project-number-or-id}/locations/{location-id}/glossaries/{glossary-id}`.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The bytes for name.
    */

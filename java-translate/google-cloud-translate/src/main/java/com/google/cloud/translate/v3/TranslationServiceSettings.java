@@ -88,6 +88,12 @@ public class TranslationServiceSettings extends ClientSettings<TranslationServic
     return ((TranslationServiceStubSettings) getStubSettings()).getSupportedLanguagesSettings();
   }
 
+  /** Returns the object with the settings used for calls to translateDocument. */
+  public UnaryCallSettings<TranslateDocumentRequest, TranslateDocumentResponse>
+      translateDocumentSettings() {
+    return ((TranslationServiceStubSettings) getStubSettings()).translateDocumentSettings();
+  }
+
   /** Returns the object with the settings used for calls to batchTranslateText. */
   public UnaryCallSettings<BatchTranslateTextRequest, Operation> batchTranslateTextSettings() {
     return ((TranslationServiceStubSettings) getStubSettings()).batchTranslateTextSettings();
@@ -99,6 +105,22 @@ public class TranslationServiceSettings extends ClientSettings<TranslationServic
       batchTranslateTextOperationSettings() {
     return ((TranslationServiceStubSettings) getStubSettings())
         .batchTranslateTextOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to batchTranslateDocument. */
+  public UnaryCallSettings<BatchTranslateDocumentRequest, Operation>
+      batchTranslateDocumentSettings() {
+    return ((TranslationServiceStubSettings) getStubSettings()).batchTranslateDocumentSettings();
+  }
+
+  /** Returns the object with the settings used for calls to batchTranslateDocument. */
+  public OperationCallSettings<
+          BatchTranslateDocumentRequest,
+          BatchTranslateDocumentResponse,
+          BatchTranslateDocumentMetadata>
+      batchTranslateDocumentOperationSettings() {
+    return ((TranslationServiceStubSettings) getStubSettings())
+        .batchTranslateDocumentOperationSettings();
   }
 
   /** Returns the object with the settings used for calls to createGlossary. */
@@ -251,6 +273,12 @@ public class TranslationServiceSettings extends ClientSettings<TranslationServic
       return getStubSettingsBuilder().getSupportedLanguagesSettings();
     }
 
+    /** Returns the builder for the settings used for calls to translateDocument. */
+    public UnaryCallSettings.Builder<TranslateDocumentRequest, TranslateDocumentResponse>
+        translateDocumentSettings() {
+      return getStubSettingsBuilder().translateDocumentSettings();
+    }
+
     /** Returns the builder for the settings used for calls to batchTranslateText. */
     public UnaryCallSettings.Builder<BatchTranslateTextRequest, Operation>
         batchTranslateTextSettings() {
@@ -262,6 +290,21 @@ public class TranslationServiceSettings extends ClientSettings<TranslationServic
             BatchTranslateTextRequest, BatchTranslateResponse, BatchTranslateMetadata>
         batchTranslateTextOperationSettings() {
       return getStubSettingsBuilder().batchTranslateTextOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to batchTranslateDocument. */
+    public UnaryCallSettings.Builder<BatchTranslateDocumentRequest, Operation>
+        batchTranslateDocumentSettings() {
+      return getStubSettingsBuilder().batchTranslateDocumentSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to batchTranslateDocument. */
+    public OperationCallSettings.Builder<
+            BatchTranslateDocumentRequest,
+            BatchTranslateDocumentResponse,
+            BatchTranslateDocumentMetadata>
+        batchTranslateDocumentOperationSettings() {
+      return getStubSettingsBuilder().batchTranslateDocumentOperationSettings();
     }
 
     /** Returns the builder for the settings used for calls to createGlossary. */

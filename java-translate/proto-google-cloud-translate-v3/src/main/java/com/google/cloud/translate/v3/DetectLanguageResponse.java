@@ -126,8 +126,8 @@ public final class DetectLanguageResponse extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * A list of detected languages sorted by detection confidence in descending
-   * order. The most probable language first.
+   * The most probable language detected by the Translation API. For each
+   * request, the Translation API will always return only one result.
    * </pre>
    *
    * <code>repeated .google.cloud.translation.v3.DetectedLanguage languages = 1;</code>
@@ -140,8 +140,8 @@ public final class DetectLanguageResponse extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * A list of detected languages sorted by detection confidence in descending
-   * order. The most probable language first.
+   * The most probable language detected by the Translation API. For each
+   * request, the Translation API will always return only one result.
    * </pre>
    *
    * <code>repeated .google.cloud.translation.v3.DetectedLanguage languages = 1;</code>
@@ -155,8 +155,8 @@ public final class DetectLanguageResponse extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * A list of detected languages sorted by detection confidence in descending
-   * order. The most probable language first.
+   * The most probable language detected by the Translation API. For each
+   * request, the Translation API will always return only one result.
    * </pre>
    *
    * <code>repeated .google.cloud.translation.v3.DetectedLanguage languages = 1;</code>
@@ -169,8 +169,8 @@ public final class DetectLanguageResponse extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * A list of detected languages sorted by detection confidence in descending
-   * order. The most probable language first.
+   * The most probable language detected by the Translation API. For each
+   * request, the Translation API will always return only one result.
    * </pre>
    *
    * <code>repeated .google.cloud.translation.v3.DetectedLanguage languages = 1;</code>
@@ -183,8 +183,8 @@ public final class DetectLanguageResponse extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * A list of detected languages sorted by detection confidence in descending
-   * order. The most probable language first.
+   * The most probable language detected by the Translation API. For each
+   * request, the Translation API will always return only one result.
    * </pre>
    *
    * <code>repeated .google.cloud.translation.v3.DetectedLanguage languages = 1;</code>
@@ -575,8 +575,8 @@ public final class DetectLanguageResponse extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * A list of detected languages sorted by detection confidence in descending
-     * order. The most probable language first.
+     * The most probable language detected by the Translation API. For each
+     * request, the Translation API will always return only one result.
      * </pre>
      *
      * <code>repeated .google.cloud.translation.v3.DetectedLanguage languages = 1;</code>
@@ -592,8 +592,8 @@ public final class DetectLanguageResponse extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * A list of detected languages sorted by detection confidence in descending
-     * order. The most probable language first.
+     * The most probable language detected by the Translation API. For each
+     * request, the Translation API will always return only one result.
      * </pre>
      *
      * <code>repeated .google.cloud.translation.v3.DetectedLanguage languages = 1;</code>
@@ -609,8 +609,8 @@ public final class DetectLanguageResponse extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * A list of detected languages sorted by detection confidence in descending
-     * order. The most probable language first.
+     * The most probable language detected by the Translation API. For each
+     * request, the Translation API will always return only one result.
      * </pre>
      *
      * <code>repeated .google.cloud.translation.v3.DetectedLanguage languages = 1;</code>
@@ -626,8 +626,8 @@ public final class DetectLanguageResponse extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * A list of detected languages sorted by detection confidence in descending
-     * order. The most probable language first.
+     * The most probable language detected by the Translation API. For each
+     * request, the Translation API will always return only one result.
      * </pre>
      *
      * <code>repeated .google.cloud.translation.v3.DetectedLanguage languages = 1;</code>
@@ -649,8 +649,8 @@ public final class DetectLanguageResponse extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * A list of detected languages sorted by detection confidence in descending
-     * order. The most probable language first.
+     * The most probable language detected by the Translation API. For each
+     * request, the Translation API will always return only one result.
      * </pre>
      *
      * <code>repeated .google.cloud.translation.v3.DetectedLanguage languages = 1;</code>
@@ -670,8 +670,8 @@ public final class DetectLanguageResponse extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * A list of detected languages sorted by detection confidence in descending
-     * order. The most probable language first.
+     * The most probable language detected by the Translation API. For each
+     * request, the Translation API will always return only one result.
      * </pre>
      *
      * <code>repeated .google.cloud.translation.v3.DetectedLanguage languages = 1;</code>
@@ -693,8 +693,8 @@ public final class DetectLanguageResponse extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * A list of detected languages sorted by detection confidence in descending
-     * order. The most probable language first.
+     * The most probable language detected by the Translation API. For each
+     * request, the Translation API will always return only one result.
      * </pre>
      *
      * <code>repeated .google.cloud.translation.v3.DetectedLanguage languages = 1;</code>
@@ -716,8 +716,8 @@ public final class DetectLanguageResponse extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * A list of detected languages sorted by detection confidence in descending
-     * order. The most probable language first.
+     * The most probable language detected by the Translation API. For each
+     * request, the Translation API will always return only one result.
      * </pre>
      *
      * <code>repeated .google.cloud.translation.v3.DetectedLanguage languages = 1;</code>
@@ -737,8 +737,8 @@ public final class DetectLanguageResponse extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * A list of detected languages sorted by detection confidence in descending
-     * order. The most probable language first.
+     * The most probable language detected by the Translation API. For each
+     * request, the Translation API will always return only one result.
      * </pre>
      *
      * <code>repeated .google.cloud.translation.v3.DetectedLanguage languages = 1;</code>
@@ -758,8 +758,8 @@ public final class DetectLanguageResponse extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * A list of detected languages sorted by detection confidence in descending
-     * order. The most probable language first.
+     * The most probable language detected by the Translation API. For each
+     * request, the Translation API will always return only one result.
      * </pre>
      *
      * <code>repeated .google.cloud.translation.v3.DetectedLanguage languages = 1;</code>
@@ -779,8 +779,8 @@ public final class DetectLanguageResponse extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * A list of detected languages sorted by detection confidence in descending
-     * order. The most probable language first.
+     * The most probable language detected by the Translation API. For each
+     * request, the Translation API will always return only one result.
      * </pre>
      *
      * <code>repeated .google.cloud.translation.v3.DetectedLanguage languages = 1;</code>
@@ -799,8 +799,8 @@ public final class DetectLanguageResponse extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * A list of detected languages sorted by detection confidence in descending
-     * order. The most probable language first.
+     * The most probable language detected by the Translation API. For each
+     * request, the Translation API will always return only one result.
      * </pre>
      *
      * <code>repeated .google.cloud.translation.v3.DetectedLanguage languages = 1;</code>
@@ -819,8 +819,8 @@ public final class DetectLanguageResponse extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * A list of detected languages sorted by detection confidence in descending
-     * order. The most probable language first.
+     * The most probable language detected by the Translation API. For each
+     * request, the Translation API will always return only one result.
      * </pre>
      *
      * <code>repeated .google.cloud.translation.v3.DetectedLanguage languages = 1;</code>
@@ -832,8 +832,8 @@ public final class DetectLanguageResponse extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * A list of detected languages sorted by detection confidence in descending
-     * order. The most probable language first.
+     * The most probable language detected by the Translation API. For each
+     * request, the Translation API will always return only one result.
      * </pre>
      *
      * <code>repeated .google.cloud.translation.v3.DetectedLanguage languages = 1;</code>
@@ -850,8 +850,8 @@ public final class DetectLanguageResponse extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * A list of detected languages sorted by detection confidence in descending
-     * order. The most probable language first.
+     * The most probable language detected by the Translation API. For each
+     * request, the Translation API will always return only one result.
      * </pre>
      *
      * <code>repeated .google.cloud.translation.v3.DetectedLanguage languages = 1;</code>
@@ -868,8 +868,8 @@ public final class DetectLanguageResponse extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * A list of detected languages sorted by detection confidence in descending
-     * order. The most probable language first.
+     * The most probable language detected by the Translation API. For each
+     * request, the Translation API will always return only one result.
      * </pre>
      *
      * <code>repeated .google.cloud.translation.v3.DetectedLanguage languages = 1;</code>
@@ -882,8 +882,8 @@ public final class DetectLanguageResponse extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * A list of detected languages sorted by detection confidence in descending
-     * order. The most probable language first.
+     * The most probable language detected by the Translation API. For each
+     * request, the Translation API will always return only one result.
      * </pre>
      *
      * <code>repeated .google.cloud.translation.v3.DetectedLanguage languages = 1;</code>
@@ -896,8 +896,8 @@ public final class DetectLanguageResponse extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * A list of detected languages sorted by detection confidence in descending
-     * order. The most probable language first.
+     * The most probable language detected by the Translation API. For each
+     * request, the Translation API will always return only one result.
      * </pre>
      *
      * <code>repeated .google.cloud.translation.v3.DetectedLanguage languages = 1;</code>

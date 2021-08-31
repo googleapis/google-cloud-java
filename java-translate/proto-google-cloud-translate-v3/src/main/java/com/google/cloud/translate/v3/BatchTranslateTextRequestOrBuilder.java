@@ -154,7 +154,6 @@ public interface BatchTranslateTextRequestOrBuilder
    *   `projects/{project-number-or-id}/locations/{location-id}/models/{model-id}`
    * - General (built-in) models:
    *   `projects/{project-number-or-id}/locations/{location-id}/models/general/nmt`,
-   *   `projects/{project-number-or-id}/locations/{location-id}/models/general/base`
    * If the map is empty or a specific model is
    * not requested for a language pair, then default google model (nmt) is used.
    * </pre>
@@ -174,7 +173,6 @@ public interface BatchTranslateTextRequestOrBuilder
    *   `projects/{project-number-or-id}/locations/{location-id}/models/{model-id}`
    * - General (built-in) models:
    *   `projects/{project-number-or-id}/locations/{location-id}/models/general/nmt`,
-   *   `projects/{project-number-or-id}/locations/{location-id}/models/general/base`
    * If the map is empty or a specific model is
    * not requested for a language pair, then default google model (nmt) is used.
    * </pre>
@@ -197,7 +195,6 @@ public interface BatchTranslateTextRequestOrBuilder
    *   `projects/{project-number-or-id}/locations/{location-id}/models/{model-id}`
    * - General (built-in) models:
    *   `projects/{project-number-or-id}/locations/{location-id}/models/general/nmt`,
-   *   `projects/{project-number-or-id}/locations/{location-id}/models/general/base`
    * If the map is empty or a specific model is
    * not requested for a language pair, then default google model (nmt) is used.
    * </pre>
@@ -217,7 +214,6 @@ public interface BatchTranslateTextRequestOrBuilder
    *   `projects/{project-number-or-id}/locations/{location-id}/models/{model-id}`
    * - General (built-in) models:
    *   `projects/{project-number-or-id}/locations/{location-id}/models/general/nmt`,
-   *   `projects/{project-number-or-id}/locations/{location-id}/models/general/base`
    * If the map is empty or a specific model is
    * not requested for a language pair, then default google model (nmt) is used.
    * </pre>
@@ -237,7 +233,6 @@ public interface BatchTranslateTextRequestOrBuilder
    *   `projects/{project-number-or-id}/locations/{location-id}/models/{model-id}`
    * - General (built-in) models:
    *   `projects/{project-number-or-id}/locations/{location-id}/models/general/nmt`,
-   *   `projects/{project-number-or-id}/locations/{location-id}/models/general/base`
    * If the map is empty or a specific model is
    * not requested for a language pair, then default google model (nmt) is used.
    * </pre>
@@ -251,7 +246,7 @@ public interface BatchTranslateTextRequestOrBuilder
    *
    * <pre>
    * Required. Input configurations.
-   * The total number of files matched should be &lt;= 1000.
+   * The total number of files matched should be &lt;= 100.
    * The total content size should be &lt;= 100M Unicode codepoints.
    * The files must use UTF-8 encoding.
    * </pre>
@@ -266,7 +261,7 @@ public interface BatchTranslateTextRequestOrBuilder
    *
    * <pre>
    * Required. Input configurations.
-   * The total number of files matched should be &lt;= 1000.
+   * The total number of files matched should be &lt;= 100.
    * The total content size should be &lt;= 100M Unicode codepoints.
    * The files must use UTF-8 encoding.
    * </pre>
@@ -281,7 +276,7 @@ public interface BatchTranslateTextRequestOrBuilder
    *
    * <pre>
    * Required. Input configurations.
-   * The total number of files matched should be &lt;= 1000.
+   * The total number of files matched should be &lt;= 100.
    * The total content size should be &lt;= 100M Unicode codepoints.
    * The files must use UTF-8 encoding.
    * </pre>
@@ -296,7 +291,7 @@ public interface BatchTranslateTextRequestOrBuilder
    *
    * <pre>
    * Required. Input configurations.
-   * The total number of files matched should be &lt;= 1000.
+   * The total number of files matched should be &lt;= 100.
    * The total content size should be &lt;= 100M Unicode codepoints.
    * The files must use UTF-8 encoding.
    * </pre>
@@ -312,7 +307,7 @@ public interface BatchTranslateTextRequestOrBuilder
    *
    * <pre>
    * Required. Input configurations.
-   * The total number of files matched should be &lt;= 1000.
+   * The total number of files matched should be &lt;= 100.
    * The total content size should be &lt;= 100M Unicode codepoints.
    * The files must use UTF-8 encoding.
    * </pre>
@@ -452,7 +447,8 @@ public interface BatchTranslateTextRequestOrBuilder
    * (Unicode codepoints), can only contain lowercase letters, numeric
    * characters, underscores and dashes. International characters are allowed.
    * Label values are optional. Label keys must start with a letter.
-   * See https://cloud.google.com/translate/docs/labels for more information.
+   * See https://cloud.google.com/translate/docs/advanced/labels for more
+   * information.
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -467,7 +463,8 @@ public interface BatchTranslateTextRequestOrBuilder
    * (Unicode codepoints), can only contain lowercase letters, numeric
    * characters, underscores and dashes. International characters are allowed.
    * Label values are optional. Label keys must start with a letter.
-   * See https://cloud.google.com/translate/docs/labels for more information.
+   * See https://cloud.google.com/translate/docs/advanced/labels for more
+   * information.
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -485,7 +482,8 @@ public interface BatchTranslateTextRequestOrBuilder
    * (Unicode codepoints), can only contain lowercase letters, numeric
    * characters, underscores and dashes. International characters are allowed.
    * Label values are optional. Label keys must start with a letter.
-   * See https://cloud.google.com/translate/docs/labels for more information.
+   * See https://cloud.google.com/translate/docs/advanced/labels for more
+   * information.
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -500,7 +498,8 @@ public interface BatchTranslateTextRequestOrBuilder
    * (Unicode codepoints), can only contain lowercase letters, numeric
    * characters, underscores and dashes. International characters are allowed.
    * Label values are optional. Label keys must start with a letter.
-   * See https://cloud.google.com/translate/docs/labels for more information.
+   * See https://cloud.google.com/translate/docs/advanced/labels for more
+   * information.
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -515,7 +514,8 @@ public interface BatchTranslateTextRequestOrBuilder
    * (Unicode codepoints), can only contain lowercase letters, numeric
    * characters, underscores and dashes. International characters are allowed.
    * Label values are optional. Label keys must start with a letter.
-   * See https://cloud.google.com/translate/docs/labels for more information.
+   * See https://cloud.google.com/translate/docs/advanced/labels for more
+   * information.
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 9 [(.google.api.field_behavior) = OPTIONAL];</code>

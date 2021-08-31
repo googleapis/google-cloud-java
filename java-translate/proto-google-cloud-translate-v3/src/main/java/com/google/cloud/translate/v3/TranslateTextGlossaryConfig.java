@@ -123,8 +123,10 @@ public final class TranslateTextGlossaryConfig extends com.google.protobuf.Gener
    *
    *
    * <pre>
-   * Required. Specifies the glossary used for this translation. Use
-   * this format: projects/&#42;&#47;locations/&#42;&#47;glossaries/&#42;
+   * Required. The `glossary` to be applied for this translation.
+   * The format depends on glossary:
+   * - User provided custom glossary:
+   *   `projects/{project-number-or-id}/locations/{location-id}/glossaries/{glossary-id}`
    * </pre>
    *
    * <code>string glossary = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -147,8 +149,10 @@ public final class TranslateTextGlossaryConfig extends com.google.protobuf.Gener
    *
    *
    * <pre>
-   * Required. Specifies the glossary used for this translation. Use
-   * this format: projects/&#42;&#47;locations/&#42;&#47;glossaries/&#42;
+   * Required. The `glossary` to be applied for this translation.
+   * The format depends on glossary:
+   * - User provided custom glossary:
+   *   `projects/{project-number-or-id}/locations/{location-id}/glossaries/{glossary-id}`
    * </pre>
    *
    * <code>string glossary = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -527,8 +531,10 @@ public final class TranslateTextGlossaryConfig extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Required. Specifies the glossary used for this translation. Use
-     * this format: projects/&#42;&#47;locations/&#42;&#47;glossaries/&#42;
+     * Required. The `glossary` to be applied for this translation.
+     * The format depends on glossary:
+     * - User provided custom glossary:
+     *   `projects/{project-number-or-id}/locations/{location-id}/glossaries/{glossary-id}`
      * </pre>
      *
      * <code>string glossary = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -550,8 +556,10 @@ public final class TranslateTextGlossaryConfig extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Required. Specifies the glossary used for this translation. Use
-     * this format: projects/&#42;&#47;locations/&#42;&#47;glossaries/&#42;
+     * Required. The `glossary` to be applied for this translation.
+     * The format depends on glossary:
+     * - User provided custom glossary:
+     *   `projects/{project-number-or-id}/locations/{location-id}/glossaries/{glossary-id}`
      * </pre>
      *
      * <code>string glossary = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -573,8 +581,10 @@ public final class TranslateTextGlossaryConfig extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Required. Specifies the glossary used for this translation. Use
-     * this format: projects/&#42;&#47;locations/&#42;&#47;glossaries/&#42;
+     * Required. The `glossary` to be applied for this translation.
+     * The format depends on glossary:
+     * - User provided custom glossary:
+     *   `projects/{project-number-or-id}/locations/{location-id}/glossaries/{glossary-id}`
      * </pre>
      *
      * <code>string glossary = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -595,8 +605,10 @@ public final class TranslateTextGlossaryConfig extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Required. Specifies the glossary used for this translation. Use
-     * this format: projects/&#42;&#47;locations/&#42;&#47;glossaries/&#42;
+     * Required. The `glossary` to be applied for this translation.
+     * The format depends on glossary:
+     * - User provided custom glossary:
+     *   `projects/{project-number-or-id}/locations/{location-id}/glossaries/{glossary-id}`
      * </pre>
      *
      * <code>string glossary = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -613,8 +625,10 @@ public final class TranslateTextGlossaryConfig extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Required. Specifies the glossary used for this translation. Use
-     * this format: projects/&#42;&#47;locations/&#42;&#47;glossaries/&#42;
+     * Required. The `glossary` to be applied for this translation.
+     * The format depends on glossary:
+     * - User provided custom glossary:
+     *   `projects/{project-number-or-id}/locations/{location-id}/glossaries/{glossary-id}`
      * </pre>
      *
      * <code>string glossary = 1 [(.google.api.field_behavior) = REQUIRED];</code>

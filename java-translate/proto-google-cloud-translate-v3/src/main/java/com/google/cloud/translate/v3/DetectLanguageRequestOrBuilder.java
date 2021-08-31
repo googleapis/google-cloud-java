@@ -174,7 +174,8 @@ public interface DetectLanguageRequestOrBuilder
    * (Unicode codepoints), can only contain lowercase letters, numeric
    * characters, underscores and dashes. International characters are allowed.
    * Label values are optional. Label keys must start with a letter.
-   * See https://cloud.google.com/translate/docs/labels for more information.
+   * See https://cloud.google.com/translate/docs/advanced/labels for more
+   * information.
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -189,7 +190,8 @@ public interface DetectLanguageRequestOrBuilder
    * (Unicode codepoints), can only contain lowercase letters, numeric
    * characters, underscores and dashes. International characters are allowed.
    * Label values are optional. Label keys must start with a letter.
-   * See https://cloud.google.com/translate/docs/labels for more information.
+   * See https://cloud.google.com/translate/docs/advanced/labels for more
+   * information.
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -207,7 +209,8 @@ public interface DetectLanguageRequestOrBuilder
    * (Unicode codepoints), can only contain lowercase letters, numeric
    * characters, underscores and dashes. International characters are allowed.
    * Label values are optional. Label keys must start with a letter.
-   * See https://cloud.google.com/translate/docs/labels for more information.
+   * See https://cloud.google.com/translate/docs/advanced/labels for more
+   * information.
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -222,7 +225,8 @@ public interface DetectLanguageRequestOrBuilder
    * (Unicode codepoints), can only contain lowercase letters, numeric
    * characters, underscores and dashes. International characters are allowed.
    * Label values are optional. Label keys must start with a letter.
-   * See https://cloud.google.com/translate/docs/labels for more information.
+   * See https://cloud.google.com/translate/docs/advanced/labels for more
+   * information.
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -237,7 +241,8 @@ public interface DetectLanguageRequestOrBuilder
    * (Unicode codepoints), can only contain lowercase letters, numeric
    * characters, underscores and dashes. International characters are allowed.
    * Label values are optional. Label keys must start with a letter.
-   * See https://cloud.google.com/translate/docs/labels for more information.
+   * See https://cloud.google.com/translate/docs/advanced/labels for more
+   * information.
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 6 [(.google.api.field_behavior) = OPTIONAL];</code>

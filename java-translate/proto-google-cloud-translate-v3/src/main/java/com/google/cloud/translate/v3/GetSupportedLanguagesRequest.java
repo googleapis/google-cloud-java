@@ -261,9 +261,8 @@ public final class GetSupportedLanguagesRequest extends com.google.protobuf.Gene
    *   `projects/{project-number-or-id}/locations/{location-id}/models/{model-id}`
    * - General (built-in) models:
    *   `projects/{project-number-or-id}/locations/{location-id}/models/general/nmt`,
-   *   `projects/{project-number-or-id}/locations/{location-id}/models/general/base`
    * Returns languages supported by the specified model.
-   * If missing, we get supported languages of Google general base (PBMT) model.
+   * If missing, we get supported languages of Google general NMT model.
    * </pre>
    *
    * <code>string model = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -292,9 +291,8 @@ public final class GetSupportedLanguagesRequest extends com.google.protobuf.Gene
    *   `projects/{project-number-or-id}/locations/{location-id}/models/{model-id}`
    * - General (built-in) models:
    *   `projects/{project-number-or-id}/locations/{location-id}/models/general/nmt`,
-   *   `projects/{project-number-or-id}/locations/{location-id}/models/general/base`
    * Returns languages supported by the specified model.
-   * If missing, we get supported languages of Google general base (PBMT) model.
+   * If missing, we get supported languages of Google general NMT model.
    * </pre>
    *
    * <code>string model = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -948,9 +946,8 @@ public final class GetSupportedLanguagesRequest extends com.google.protobuf.Gene
      *   `projects/{project-number-or-id}/locations/{location-id}/models/{model-id}`
      * - General (built-in) models:
      *   `projects/{project-number-or-id}/locations/{location-id}/models/general/nmt`,
-     *   `projects/{project-number-or-id}/locations/{location-id}/models/general/base`
      * Returns languages supported by the specified model.
-     * If missing, we get supported languages of Google general base (PBMT) model.
+     * If missing, we get supported languages of Google general NMT model.
      * </pre>
      *
      * <code>string model = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -978,9 +975,8 @@ public final class GetSupportedLanguagesRequest extends com.google.protobuf.Gene
      *   `projects/{project-number-or-id}/locations/{location-id}/models/{model-id}`
      * - General (built-in) models:
      *   `projects/{project-number-or-id}/locations/{location-id}/models/general/nmt`,
-     *   `projects/{project-number-or-id}/locations/{location-id}/models/general/base`
      * Returns languages supported by the specified model.
-     * If missing, we get supported languages of Google general base (PBMT) model.
+     * If missing, we get supported languages of Google general NMT model.
      * </pre>
      *
      * <code>string model = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1008,9 +1004,8 @@ public final class GetSupportedLanguagesRequest extends com.google.protobuf.Gene
      *   `projects/{project-number-or-id}/locations/{location-id}/models/{model-id}`
      * - General (built-in) models:
      *   `projects/{project-number-or-id}/locations/{location-id}/models/general/nmt`,
-     *   `projects/{project-number-or-id}/locations/{location-id}/models/general/base`
      * Returns languages supported by the specified model.
-     * If missing, we get supported languages of Google general base (PBMT) model.
+     * If missing, we get supported languages of Google general NMT model.
      * </pre>
      *
      * <code>string model = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1037,9 +1032,8 @@ public final class GetSupportedLanguagesRequest extends com.google.protobuf.Gene
      *   `projects/{project-number-or-id}/locations/{location-id}/models/{model-id}`
      * - General (built-in) models:
      *   `projects/{project-number-or-id}/locations/{location-id}/models/general/nmt`,
-     *   `projects/{project-number-or-id}/locations/{location-id}/models/general/base`
      * Returns languages supported by the specified model.
-     * If missing, we get supported languages of Google general base (PBMT) model.
+     * If missing, we get supported languages of Google general NMT model.
      * </pre>
      *
      * <code>string model = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1062,9 +1056,8 @@ public final class GetSupportedLanguagesRequest extends com.google.protobuf.Gene
      *   `projects/{project-number-or-id}/locations/{location-id}/models/{model-id}`
      * - General (built-in) models:
      *   `projects/{project-number-or-id}/locations/{location-id}/models/general/nmt`,
-     *   `projects/{project-number-or-id}/locations/{location-id}/models/general/base`
      * Returns languages supported by the specified model.
-     * If missing, we get supported languages of Google general base (PBMT) model.
+     * If missing, we get supported languages of Google general NMT model.
      * </pre>
      *
      * <code>string model = 2 [(.google.api.field_behavior) = OPTIONAL];</code>

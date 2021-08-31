@@ -92,6 +92,30 @@ public final class TranslationServiceProto {
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_translation_v3_OutputConfig_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_translation_v3_DocumentInputConfig_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_translation_v3_DocumentInputConfig_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_translation_v3_DocumentOutputConfig_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_translation_v3_DocumentOutputConfig_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_translation_v3_TranslateDocumentRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_translation_v3_TranslateDocumentRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_translation_v3_TranslateDocumentRequest_LabelsEntry_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_translation_v3_TranslateDocumentRequest_LabelsEntry_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_translation_v3_DocumentTranslation_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_translation_v3_DocumentTranslation_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_translation_v3_TranslateDocumentResponse_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_translation_v3_TranslateDocumentResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_translation_v3_BatchTranslateTextRequest_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_translation_v3_BatchTranslateTextRequest_fieldAccessorTable;
@@ -163,6 +187,38 @@ public final class TranslationServiceProto {
       internal_static_google_cloud_translation_v3_DeleteGlossaryResponse_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_translation_v3_DeleteGlossaryResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_translation_v3_BatchTranslateDocumentRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_translation_v3_BatchTranslateDocumentRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_translation_v3_BatchTranslateDocumentRequest_ModelsEntry_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_translation_v3_BatchTranslateDocumentRequest_ModelsEntry_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_translation_v3_BatchTranslateDocumentRequest_GlossariesEntry_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_translation_v3_BatchTranslateDocumentRequest_GlossariesEntry_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_translation_v3_BatchTranslateDocumentRequest_FormatConversionsEntry_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_translation_v3_BatchTranslateDocumentRequest_FormatConversionsEntry_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_translation_v3_BatchDocumentInputConfig_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_translation_v3_BatchDocumentInputConfig_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_translation_v3_BatchDocumentOutputConfig_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_translation_v3_BatchDocumentOutputConfig_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_translation_v3_BatchTranslateDocumentResponse_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_translation_v3_BatchTranslateDocumentResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_translation_v3_BatchTranslateDocumentMetadata_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_translation_v3_BatchTranslateDocumentMetadata_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
     return descriptor;
@@ -177,196 +233,287 @@ public final class TranslationServiceProto {
           + "v3\032\034google/api/annotations.proto\032\027google"
           + "/api/client.proto\032\037google/api/field_beha"
           + "vior.proto\032\031google/api/resource.proto\032#g"
-          + "oogle/longrunning/operations.proto\032\037goog"
-          + "le/protobuf/timestamp.proto\"N\n\033Translate"
-          + "TextGlossaryConfig\022\025\n\010glossary\030\001 \001(\tB\003\340A"
-          + "\002\022\030\n\013ignore_case\030\002 \001(\010B\003\340A\001\"\265\003\n\024Translat"
-          + "eTextRequest\022\025\n\010contents\030\001 \003(\tB\003\340A\002\022\026\n\tm"
-          + "ime_type\030\003 \001(\tB\003\340A\001\022!\n\024source_language_c"
-          + "ode\030\004 \001(\tB\003\340A\001\022!\n\024target_language_code\030\005"
-          + " \001(\tB\003\340A\002\0229\n\006parent\030\010 \001(\tB)\340A\002\372A#\n!locat"
-          + "ions.googleapis.com/Location\022\022\n\005model\030\006 "
-          + "\001(\tB\003\340A\001\022V\n\017glossary_config\030\007 \001(\01328.goog"
-          + "le.cloud.translation.v3.TranslateTextGlo"
-          + "ssaryConfigB\003\340A\001\022R\n\006labels\030\n \003(\0132=.googl"
-          + "e.cloud.translation.v3.TranslateTextRequ"
-          + "est.LabelsEntryB\003\340A\001\032-\n\013LabelsEntry\022\013\n\003k"
-          + "ey\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"\240\001\n\025Translat"
-          + "eTextResponse\022>\n\014translations\030\001 \003(\0132(.go"
-          + "ogle.cloud.translation.v3.Translation\022G\n"
-          + "\025glossary_translations\030\003 \003(\0132(.google.cl"
-          + "oud.translation.v3.Translation\"\250\001\n\013Trans"
-          + "lation\022\027\n\017translated_text\030\001 \001(\t\022\r\n\005model"
-          + "\030\002 \001(\t\022\036\n\026detected_language_code\030\004 \001(\t\022Q"
-          + "\n\017glossary_config\030\003 \001(\01328.google.cloud.t"
-          + "ranslation.v3.TranslateTextGlossaryConfi"
-          + "g\"\237\002\n\025DetectLanguageRequest\0229\n\006parent\030\005 "
-          + "\001(\tB)\340A\002\372A#\n!locations.googleapis.com/Lo"
-          + "cation\022\022\n\005model\030\004 \001(\tB\003\340A\001\022\021\n\007content\030\001 "
-          + "\001(\tH\000\022\026\n\tmime_type\030\003 \001(\tB\003\340A\001\022S\n\006labels\030"
-          + "\006 \003(\0132>.google.cloud.translation.v3.Dete"
-          + "ctLanguageRequest.LabelsEntryB\003\340A\001\032-\n\013La"
+          + "oogle/longrunning/operations.proto\032\033goog"
+          + "le/protobuf/empty.proto\032\037google/protobuf"
+          + "/timestamp.proto\032\027google/rpc/status.prot"
+          + "o\"N\n\033TranslateTextGlossaryConfig\022\025\n\010glos"
+          + "sary\030\001 \001(\tB\003\340A\002\022\030\n\013ignore_case\030\002 \001(\010B\003\340A"
+          + "\001\"\265\003\n\024TranslateTextRequest\022\025\n\010contents\030\001"
+          + " \003(\tB\003\340A\002\022\026\n\tmime_type\030\003 \001(\tB\003\340A\001\022!\n\024sou"
+          + "rce_language_code\030\004 \001(\tB\003\340A\001\022!\n\024target_l"
+          + "anguage_code\030\005 \001(\tB\003\340A\002\0229\n\006parent\030\010 \001(\tB"
+          + ")\340A\002\372A#\n!locations.googleapis.com/Locati"
+          + "on\022\022\n\005model\030\006 \001(\tB\003\340A\001\022V\n\017glossary_confi"
+          + "g\030\007 \001(\01328.google.cloud.translation.v3.Tr"
+          + "anslateTextGlossaryConfigB\003\340A\001\022R\n\006labels"
+          + "\030\n \003(\0132=.google.cloud.translation.v3.Tra"
+          + "nslateTextRequest.LabelsEntryB\003\340A\001\032-\n\013La"
           + "belsEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028"
-          + "\001B\010\n\006source\"=\n\020DetectedLanguage\022\025\n\rlangu"
-          + "age_code\030\001 \001(\t\022\022\n\nconfidence\030\002 \001(\002\"Z\n\026De"
-          + "tectLanguageResponse\022@\n\tlanguages\030\001 \003(\0132"
-          + "-.google.cloud.translation.v3.DetectedLa"
-          + "nguage\"\221\001\n\034GetSupportedLanguagesRequest\022"
-          + "9\n\006parent\030\003 \001(\tB)\340A\002\372A#\n!locations.googl"
-          + "eapis.com/Location\022\"\n\025display_language_c"
-          + "ode\030\001 \001(\tB\003\340A\001\022\022\n\005model\030\002 \001(\tB\003\340A\001\"W\n\022Su"
-          + "pportedLanguages\022A\n\tlanguages\030\001 \003(\0132..go"
-          + "ogle.cloud.translation.v3.SupportedLangu"
-          + "age\"p\n\021SupportedLanguage\022\025\n\rlanguage_cod"
-          + "e\030\001 \001(\t\022\024\n\014display_name\030\002 \001(\t\022\026\n\016support"
-          + "_source\030\003 \001(\010\022\026\n\016support_target\030\004 \001(\010\"\036\n"
-          + "\tGcsSource\022\021\n\tinput_uri\030\001 \001(\t\"m\n\013InputCo"
-          + "nfig\022\026\n\tmime_type\030\001 \001(\tB\003\340A\001\022<\n\ngcs_sour"
-          + "ce\030\002 \001(\0132&.google.cloud.translation.v3.G"
-          + "csSourceH\000B\010\n\006source\"+\n\016GcsDestination\022\031"
-          + "\n\021output_uri_prefix\030\001 \001(\t\"e\n\014OutputConfi"
-          + "g\022F\n\017gcs_destination\030\001 \001(\0132+.google.clou"
-          + "d.translation.v3.GcsDestinationH\000B\r\n\013des"
-          + "tination\"\210\006\n\031BatchTranslateTextRequest\0229"
-          + "\n\006parent\030\001 \001(\tB)\340A\002\372A#\n!locations.google"
-          + "apis.com/Location\022!\n\024source_language_cod"
-          + "e\030\002 \001(\tB\003\340A\002\022\"\n\025target_language_codes\030\003 "
-          + "\003(\tB\003\340A\002\022W\n\006models\030\004 \003(\0132B.google.cloud."
-          + "translation.v3.BatchTranslateTextRequest"
-          + ".ModelsEntryB\003\340A\001\022D\n\rinput_configs\030\005 \003(\013"
-          + "2(.google.cloud.translation.v3.InputConf"
-          + "igB\003\340A\002\022E\n\routput_config\030\006 \001(\0132).google."
-          + "cloud.translation.v3.OutputConfigB\003\340A\002\022_"
-          + "\n\nglossaries\030\007 \003(\0132F.google.cloud.transl"
-          + "ation.v3.BatchTranslateTextRequest.Gloss"
-          + "ariesEntryB\003\340A\001\022W\n\006labels\030\t \003(\0132B.google"
-          + ".cloud.translation.v3.BatchTranslateText"
-          + "Request.LabelsEntryB\003\340A\001\032-\n\013ModelsEntry\022"
-          + "\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\032k\n\017Gloss"
-          + "ariesEntry\022\013\n\003key\030\001 \001(\t\022G\n\005value\030\002 \001(\01328"
-          + ".google.cloud.translation.v3.TranslateTe"
-          + "xtGlossaryConfig:\0028\001\032-\n\013LabelsEntry\022\013\n\003k"
-          + "ey\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"\316\002\n\026BatchTra"
-          + "nslateMetadata\022H\n\005state\030\001 \001(\01629.google.c"
-          + "loud.translation.v3.BatchTranslateMetada"
-          + "ta.State\022\035\n\025translated_characters\030\002 \001(\003\022"
-          + "\031\n\021failed_characters\030\003 \001(\003\022\030\n\020total_char"
-          + "acters\030\004 \001(\003\022/\n\013submit_time\030\005 \001(\0132\032.goog"
-          + "le.protobuf.Timestamp\"e\n\005State\022\025\n\021STATE_"
-          + "UNSPECIFIED\020\000\022\013\n\007RUNNING\020\001\022\r\n\tSUCCEEDED\020"
-          + "\002\022\n\n\006FAILED\020\003\022\016\n\nCANCELLING\020\004\022\r\n\tCANCELL"
-          + "ED\020\005\"\313\001\n\026BatchTranslateResponse\022\030\n\020total"
-          + "_characters\030\001 \001(\003\022\035\n\025translated_characte"
-          + "rs\030\002 \001(\003\022\031\n\021failed_characters\030\003 \001(\003\022/\n\013s"
-          + "ubmit_time\030\004 \001(\0132\032.google.protobuf.Times"
-          + "tamp\022,\n\010end_time\030\005 \001(\0132\032.google.protobuf"
-          + ".Timestamp\"]\n\023GlossaryInputConfig\022<\n\ngcs"
-          + "_source\030\001 \001(\0132&.google.cloud.translation"
-          + ".v3.GcsSourceH\000B\010\n\006source\"\372\004\n\010Glossary\022\014"
-          + "\n\004name\030\001 \001(\t\022O\n\rlanguage_pair\030\003 \001(\01326.go"
-          + "ogle.cloud.translation.v3.Glossary.Langu"
-          + "ageCodePairH\000\022T\n\022language_codes_set\030\004 \001("
-          + "\01326.google.cloud.translation.v3.Glossary"
-          + ".LanguageCodesSetH\000\022F\n\014input_config\030\005 \001("
-          + "\01320.google.cloud.translation.v3.Glossary"
-          + "InputConfig\022\030\n\013entry_count\030\006 \001(\005B\003\340A\003\0224\n"
-          + "\013submit_time\030\007 \001(\0132\032.google.protobuf.Tim"
-          + "estampB\003\340A\003\0221\n\010end_time\030\010 \001(\0132\032.google.p"
-          + "rotobuf.TimestampB\003\340A\003\032N\n\020LanguageCodePa"
-          + "ir\022\034\n\024source_language_code\030\001 \001(\t\022\034\n\024targ"
-          + "et_language_code\030\002 \001(\t\032*\n\020LanguageCodesS"
-          + "et\022\026\n\016language_codes\030\001 \003(\t:e\352Ab\n!transla"
-          + "te.googleapis.com/Glossary\022=projects/{pr"
-          + "oject}/locations/{location}/glossaries/{"
-          + "glossary}B\013\n\tlanguages\"\220\001\n\025CreateGlossar"
-          + "yRequest\0229\n\006parent\030\001 \001(\tB)\340A\002\372A#\n!locati"
-          + "ons.googleapis.com/Location\022<\n\010glossary\030"
-          + "\002 \001(\0132%.google.cloud.translation.v3.Glos"
-          + "saryB\003\340A\002\"M\n\022GetGlossaryRequest\0227\n\004name\030"
-          + "\001 \001(\tB)\340A\002\372A#\n!translate.googleapis.com/"
-          + "Glossary\"P\n\025DeleteGlossaryRequest\0227\n\004nam"
-          + "e\030\001 \001(\tB)\340A\002\372A#\n!translate.googleapis.co"
-          + "m/Glossary\"\230\001\n\025ListGlossariesRequest\0229\n\006"
-          + "parent\030\001 \001(\tB)\340A\002\372A#\n!locations.googleap"
-          + "is.com/Location\022\026\n\tpage_size\030\002 \001(\005B\003\340A\001\022"
-          + "\027\n\npage_token\030\003 \001(\tB\003\340A\001\022\023\n\006filter\030\004 \001(\t"
-          + "B\003\340A\001\"l\n\026ListGlossariesResponse\0229\n\ngloss"
-          + "aries\030\001 \003(\0132%.google.cloud.translation.v"
-          + "3.Glossary\022\027\n\017next_page_token\030\002 \001(\t\"\210\002\n\026"
-          + "CreateGlossaryMetadata\022\014\n\004name\030\001 \001(\t\022H\n\005"
-          + "state\030\002 \001(\01629.google.cloud.translation.v"
-          + "3.CreateGlossaryMetadata.State\022/\n\013submit"
-          + "_time\030\003 \001(\0132\032.google.protobuf.Timestamp\""
-          + "e\n\005State\022\025\n\021STATE_UNSPECIFIED\020\000\022\013\n\007RUNNI"
-          + "NG\020\001\022\r\n\tSUCCEEDED\020\002\022\n\n\006FAILED\020\003\022\016\n\nCANCE"
-          + "LLING\020\004\022\r\n\tCANCELLED\020\005\"\210\002\n\026DeleteGlossar"
-          + "yMetadata\022\014\n\004name\030\001 \001(\t\022H\n\005state\030\002 \001(\01629"
-          + ".google.cloud.translation.v3.DeleteGloss"
-          + "aryMetadata.State\022/\n\013submit_time\030\003 \001(\0132\032"
-          + ".google.protobuf.Timestamp\"e\n\005State\022\025\n\021S"
-          + "TATE_UNSPECIFIED\020\000\022\013\n\007RUNNING\020\001\022\r\n\tSUCCE"
-          + "EDED\020\002\022\n\n\006FAILED\020\003\022\016\n\nCANCELLING\020\004\022\r\n\tCA"
-          + "NCELLED\020\005\"\205\001\n\026DeleteGlossaryResponse\022\014\n\004"
-          + "name\030\001 \001(\t\022/\n\013submit_time\030\002 \001(\0132\032.google"
-          + ".protobuf.Timestamp\022,\n\010end_time\030\003 \001(\0132\032."
-          + "google.protobuf.Timestamp2\216\020\n\022Translatio"
-          + "nService\022\324\002\n\rTranslateText\0221.google.clou"
-          + "d.translation.v3.TranslateTextRequest\0322."
+          + "\001\"\240\001\n\025TranslateTextResponse\022>\n\014translati"
+          + "ons\030\001 \003(\0132(.google.cloud.translation.v3."
+          + "Translation\022G\n\025glossary_translations\030\003 \003"
+          + "(\0132(.google.cloud.translation.v3.Transla"
+          + "tion\"\250\001\n\013Translation\022\027\n\017translated_text\030"
+          + "\001 \001(\t\022\r\n\005model\030\002 \001(\t\022\036\n\026detected_languag"
+          + "e_code\030\004 \001(\t\022Q\n\017glossary_config\030\003 \001(\01328."
           + "google.cloud.translation.v3.TranslateTex"
-          + "tResponse\"\333\001\202\323\344\223\002b\"1/v3/{parent=projects"
-          + "/*/locations/*}:translateText:\001*Z*\"%/v3/"
-          + "{parent=projects/*}:translateText:\001*\332A$p"
-          + "arent,target_language_code,contents\332AIpa"
-          + "rent,model,mime_type,source_language_cod"
-          + "e,target_language_code,contents\022\207\002\n\016Dete"
-          + "ctLanguage\0222.google.cloud.translation.v3"
-          + ".DetectLanguageRequest\0323.google.cloud.tr"
-          + "anslation.v3.DetectLanguageResponse\"\213\001\202\323"
-          + "\344\223\002d\"2/v3/{parent=projects/*/locations/*"
-          + "}:detectLanguage:\001*Z+\"&/v3/{parent=proje"
-          + "cts/*}:detectLanguage:\001*\332A\036parent,model,"
-          + "mime_type,content\022\227\002\n\025GetSupportedLangua"
-          + "ges\0229.google.cloud.translation.v3.GetSup"
-          + "portedLanguagesRequest\032/.google.cloud.tr"
-          + "anslation.v3.SupportedLanguages\"\221\001\202\323\344\223\002f"
-          + "\0226/v3/{parent=projects/*/locations/*}/su"
-          + "pportedLanguagesZ,\022*/v3/{parent=projects"
-          + "/*}/supportedLanguages\332A\"parent,model,di"
-          + "splay_language_code\022\341\001\n\022BatchTranslateTe"
-          + "xt\0226.google.cloud.translation.v3.BatchTr"
-          + "anslateTextRequest\032\035.google.longrunning."
-          + "Operation\"t\202\323\344\223\002;\"6/v3/{parent=projects/"
-          + "*/locations/*}:batchTranslateText:\001*\312A0\n"
-          + "\026BatchTranslateResponse\022\026BatchTranslateM"
-          + "etadata\022\334\001\n\016CreateGlossary\0222.google.clou"
-          + "d.translation.v3.CreateGlossaryRequest\032\035"
-          + ".google.longrunning.Operation\"w\202\323\344\223\002:\"./"
-          + "v3/{parent=projects/*/locations/*}/gloss"
-          + "aries:\010glossary\332A\017parent,glossary\312A\"\n\010Gl"
-          + "ossary\022\026CreateGlossaryMetadata\022\272\001\n\016ListG"
-          + "lossaries\0222.google.cloud.translation.v3."
-          + "ListGlossariesRequest\0323.google.cloud.tra"
-          + "nslation.v3.ListGlossariesResponse\"?\202\323\344\223"
-          + "\0020\022./v3/{parent=projects/*/locations/*}/"
-          + "glossaries\332A\006parent\022\244\001\n\013GetGlossary\022/.go"
-          + "ogle.cloud.translation.v3.GetGlossaryReq"
-          + "uest\032%.google.cloud.translation.v3.Gloss"
-          + "ary\"=\202\323\344\223\0020\022./v3/{name=projects/*/locati"
-          + "ons/*/glossaries/*}\332A\004name\022\325\001\n\016DeleteGlo"
-          + "ssary\0222.google.cloud.translation.v3.Dele"
-          + "teGlossaryRequest\032\035.google.longrunning.O"
-          + "peration\"p\202\323\344\223\0020*./v3/{name=projects/*/l"
-          + "ocations/*/glossaries/*}\332A\004name\312A0\n\026Dele"
-          + "teGlossaryResponse\022\026DeleteGlossaryMetada"
-          + "ta\032~\312A\030translate.googleapis.com\322A`https:"
-          + "//www.googleapis.com/auth/cloud-platform"
-          + ",https://www.googleapis.com/auth/cloud-t"
-          + "ranslationB\330\001\n\035com.google.cloud.translat"
-          + "e.v3B\027TranslationServiceProtoP\001ZBgoogle."
-          + "golang.org/genproto/googleapis/cloud/tra"
-          + "nslate/v3;translate\370\001\001\252\002\031Google.Cloud.Tr"
-          + "anslate.V3\312\002\031Google\\Cloud\\Translate\\V3\352\002"
-          + "\034Google::Cloud::Translate::V3b\006proto3"
+          + "tGlossaryConfig\"\237\002\n\025DetectLanguageReques"
+          + "t\0229\n\006parent\030\005 \001(\tB)\340A\002\372A#\n!locations.goo"
+          + "gleapis.com/Location\022\022\n\005model\030\004 \001(\tB\003\340A\001"
+          + "\022\021\n\007content\030\001 \001(\tH\000\022\026\n\tmime_type\030\003 \001(\tB\003"
+          + "\340A\001\022S\n\006labels\030\006 \003(\0132>.google.cloud.trans"
+          + "lation.v3.DetectLanguageRequest.LabelsEn"
+          + "tryB\003\340A\001\032-\n\013LabelsEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005"
+          + "value\030\002 \001(\t:\0028\001B\010\n\006source\"=\n\020DetectedLan"
+          + "guage\022\025\n\rlanguage_code\030\001 \001(\t\022\022\n\nconfiden"
+          + "ce\030\002 \001(\002\"Z\n\026DetectLanguageResponse\022@\n\tla"
+          + "nguages\030\001 \003(\0132-.google.cloud.translation"
+          + ".v3.DetectedLanguage\"\221\001\n\034GetSupportedLan"
+          + "guagesRequest\0229\n\006parent\030\003 \001(\tB)\340A\002\372A#\n!l"
+          + "ocations.googleapis.com/Location\022\"\n\025disp"
+          + "lay_language_code\030\001 \001(\tB\003\340A\001\022\022\n\005model\030\002 "
+          + "\001(\tB\003\340A\001\"W\n\022SupportedLanguages\022A\n\tlangua"
+          + "ges\030\001 \003(\0132..google.cloud.translation.v3."
+          + "SupportedLanguage\"p\n\021SupportedLanguage\022\025"
+          + "\n\rlanguage_code\030\001 \001(\t\022\024\n\014display_name\030\002 "
+          + "\001(\t\022\026\n\016support_source\030\003 \001(\010\022\026\n\016support_t"
+          + "arget\030\004 \001(\010\"#\n\tGcsSource\022\026\n\tinput_uri\030\001 "
+          + "\001(\tB\003\340A\002\"m\n\013InputConfig\022\026\n\tmime_type\030\001 \001"
+          + "(\tB\003\340A\001\022<\n\ngcs_source\030\002 \001(\0132&.google.clo"
+          + "ud.translation.v3.GcsSourceH\000B\010\n\006source\""
+          + "0\n\016GcsDestination\022\036\n\021output_uri_prefix\030\001"
+          + " \001(\tB\003\340A\002\"e\n\014OutputConfig\022F\n\017gcs_destina"
+          + "tion\030\001 \001(\0132+.google.cloud.translation.v3"
+          + ".GcsDestinationH\000B\r\n\013destination\"\203\001\n\023Doc"
+          + "umentInputConfig\022\021\n\007content\030\001 \001(\014H\000\022<\n\ng"
+          + "cs_source\030\002 \001(\0132&.google.cloud.translati"
+          + "on.v3.GcsSourceH\000\022\021\n\tmime_type\030\004 \001(\tB\010\n\006"
+          + "source\"\212\001\n\024DocumentOutputConfig\022K\n\017gcs_d"
+          + "estination\030\001 \001(\0132+.google.cloud.translat"
+          + "ion.v3.GcsDestinationB\003\340A\001H\000\022\026\n\tmime_typ"
+          + "e\030\003 \001(\tB\003\340A\001B\r\n\013destination\"\226\004\n\030Translat"
+          + "eDocumentRequest\022\023\n\006parent\030\001 \001(\tB\003\340A\002\022!\n"
+          + "\024source_language_code\030\002 \001(\tB\003\340A\001\022!\n\024targ"
+          + "et_language_code\030\003 \001(\tB\003\340A\002\022T\n\025document_"
+          + "input_config\030\004 \001(\01320.google.cloud.transl"
+          + "ation.v3.DocumentInputConfigB\003\340A\002\022V\n\026doc"
+          + "ument_output_config\030\005 \001(\01321.google.cloud"
+          + ".translation.v3.DocumentOutputConfigB\003\340A"
+          + "\001\022\022\n\005model\030\006 \001(\tB\003\340A\001\022V\n\017glossary_config"
+          + "\030\007 \001(\01328.google.cloud.translation.v3.Tra"
+          + "nslateTextGlossaryConfigB\003\340A\001\022V\n\006labels\030"
+          + "\010 \003(\0132A.google.cloud.translation.v3.Tran"
+          + "slateDocumentRequest.LabelsEntryB\003\340A\001\032-\n"
+          + "\013LabelsEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t"
+          + ":\0028\001\"e\n\023DocumentTranslation\022\033\n\023byte_stre"
+          + "am_outputs\030\001 \003(\014\022\021\n\tmime_type\030\002 \001(\t\022\036\n\026d"
+          + "etected_language_code\030\003 \001(\t\"\246\002\n\031Translat"
+          + "eDocumentResponse\022N\n\024document_translatio"
+          + "n\030\001 \001(\01320.google.cloud.translation.v3.Do"
+          + "cumentTranslation\022W\n\035glossary_document_t"
+          + "ranslation\030\002 \001(\01320.google.cloud.translat"
+          + "ion.v3.DocumentTranslation\022\r\n\005model\030\003 \001("
+          + "\t\022Q\n\017glossary_config\030\004 \001(\01328.google.clou"
+          + "d.translation.v3.TranslateTextGlossaryCo"
+          + "nfig\"\210\006\n\031BatchTranslateTextRequest\0229\n\006pa"
+          + "rent\030\001 \001(\tB)\340A\002\372A#\n!locations.googleapis"
+          + ".com/Location\022!\n\024source_language_code\030\002 "
+          + "\001(\tB\003\340A\002\022\"\n\025target_language_codes\030\003 \003(\tB"
+          + "\003\340A\002\022W\n\006models\030\004 \003(\0132B.google.cloud.tran"
+          + "slation.v3.BatchTranslateTextRequest.Mod"
+          + "elsEntryB\003\340A\001\022D\n\rinput_configs\030\005 \003(\0132(.g"
+          + "oogle.cloud.translation.v3.InputConfigB\003"
+          + "\340A\002\022E\n\routput_config\030\006 \001(\0132).google.clou"
+          + "d.translation.v3.OutputConfigB\003\340A\002\022_\n\ngl"
+          + "ossaries\030\007 \003(\0132F.google.cloud.translatio"
+          + "n.v3.BatchTranslateTextRequest.Glossarie"
+          + "sEntryB\003\340A\001\022W\n\006labels\030\t \003(\0132B.google.clo"
+          + "ud.translation.v3.BatchTranslateTextRequ"
+          + "est.LabelsEntryB\003\340A\001\032-\n\013ModelsEntry\022\013\n\003k"
+          + "ey\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\032k\n\017Glossarie"
+          + "sEntry\022\013\n\003key\030\001 \001(\t\022G\n\005value\030\002 \001(\01328.goo"
+          + "gle.cloud.translation.v3.TranslateTextGl"
+          + "ossaryConfig:\0028\001\032-\n\013LabelsEntry\022\013\n\003key\030\001"
+          + " \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"\316\002\n\026BatchTransla"
+          + "teMetadata\022H\n\005state\030\001 \001(\01629.google.cloud"
+          + ".translation.v3.BatchTranslateMetadata.S"
+          + "tate\022\035\n\025translated_characters\030\002 \001(\003\022\031\n\021f"
+          + "ailed_characters\030\003 \001(\003\022\030\n\020total_characte"
+          + "rs\030\004 \001(\003\022/\n\013submit_time\030\005 \001(\0132\032.google.p"
+          + "rotobuf.Timestamp\"e\n\005State\022\025\n\021STATE_UNSP"
+          + "ECIFIED\020\000\022\013\n\007RUNNING\020\001\022\r\n\tSUCCEEDED\020\002\022\n\n"
+          + "\006FAILED\020\003\022\016\n\nCANCELLING\020\004\022\r\n\tCANCELLED\020\005"
+          + "\"\313\001\n\026BatchTranslateResponse\022\030\n\020total_cha"
+          + "racters\030\001 \001(\003\022\035\n\025translated_characters\030\002"
+          + " \001(\003\022\031\n\021failed_characters\030\003 \001(\003\022/\n\013submi"
+          + "t_time\030\004 \001(\0132\032.google.protobuf.Timestamp"
+          + "\022,\n\010end_time\030\005 \001(\0132\032.google.protobuf.Tim"
+          + "estamp\"]\n\023GlossaryInputConfig\022<\n\ngcs_sou"
+          + "rce\030\001 \001(\0132&.google.cloud.translation.v3."
+          + "GcsSourceH\000B\010\n\006source\"\377\004\n\010Glossary\022\021\n\004na"
+          + "me\030\001 \001(\tB\003\340A\002\022O\n\rlanguage_pair\030\003 \001(\01326.g"
+          + "oogle.cloud.translation.v3.Glossary.Lang"
+          + "uageCodePairH\000\022T\n\022language_codes_set\030\004 \001"
+          + "(\01326.google.cloud.translation.v3.Glossar"
+          + "y.LanguageCodesSetH\000\022F\n\014input_config\030\005 \001"
+          + "(\01320.google.cloud.translation.v3.Glossar"
+          + "yInputConfig\022\030\n\013entry_count\030\006 \001(\005B\003\340A\003\0224"
+          + "\n\013submit_time\030\007 \001(\0132\032.google.protobuf.Ti"
+          + "mestampB\003\340A\003\0221\n\010end_time\030\010 \001(\0132\032.google."
+          + "protobuf.TimestampB\003\340A\003\032N\n\020LanguageCodeP"
+          + "air\022\034\n\024source_language_code\030\001 \001(\t\022\034\n\024tar"
+          + "get_language_code\030\002 \001(\t\032*\n\020LanguageCodes"
+          + "Set\022\026\n\016language_codes\030\001 \003(\t:e\352Ab\n!transl"
+          + "ate.googleapis.com/Glossary\022=projects/{p"
+          + "roject}/locations/{location}/glossaries/"
+          + "{glossary}B\013\n\tlanguages\"\220\001\n\025CreateGlossa"
+          + "ryRequest\0229\n\006parent\030\001 \001(\tB)\340A\002\372A#\n!locat"
+          + "ions.googleapis.com/Location\022<\n\010glossary"
+          + "\030\002 \001(\0132%.google.cloud.translation.v3.Glo"
+          + "ssaryB\003\340A\002\"M\n\022GetGlossaryRequest\0227\n\004name"
+          + "\030\001 \001(\tB)\340A\002\372A#\n!translate.googleapis.com"
+          + "/Glossary\"P\n\025DeleteGlossaryRequest\0227\n\004na"
+          + "me\030\001 \001(\tB)\340A\002\372A#\n!translate.googleapis.c"
+          + "om/Glossary\"\230\001\n\025ListGlossariesRequest\0229\n"
+          + "\006parent\030\001 \001(\tB)\340A\002\372A#\n!locations.googlea"
+          + "pis.com/Location\022\026\n\tpage_size\030\002 \001(\005B\003\340A\001"
+          + "\022\027\n\npage_token\030\003 \001(\tB\003\340A\001\022\023\n\006filter\030\004 \001("
+          + "\tB\003\340A\001\"l\n\026ListGlossariesResponse\0229\n\nglos"
+          + "saries\030\001 \003(\0132%.google.cloud.translation."
+          + "v3.Glossary\022\027\n\017next_page_token\030\002 \001(\t\"\210\002\n"
+          + "\026CreateGlossaryMetadata\022\014\n\004name\030\001 \001(\t\022H\n"
+          + "\005state\030\002 \001(\01629.google.cloud.translation."
+          + "v3.CreateGlossaryMetadata.State\022/\n\013submi"
+          + "t_time\030\003 \001(\0132\032.google.protobuf.Timestamp"
+          + "\"e\n\005State\022\025\n\021STATE_UNSPECIFIED\020\000\022\013\n\007RUNN"
+          + "ING\020\001\022\r\n\tSUCCEEDED\020\002\022\n\n\006FAILED\020\003\022\016\n\nCANC"
+          + "ELLING\020\004\022\r\n\tCANCELLED\020\005\"\210\002\n\026DeleteGlossa"
+          + "ryMetadata\022\014\n\004name\030\001 \001(\t\022H\n\005state\030\002 \001(\0162"
+          + "9.google.cloud.translation.v3.DeleteGlos"
+          + "saryMetadata.State\022/\n\013submit_time\030\003 \001(\0132"
+          + "\032.google.protobuf.Timestamp\"e\n\005State\022\025\n\021"
+          + "STATE_UNSPECIFIED\020\000\022\013\n\007RUNNING\020\001\022\r\n\tSUCC"
+          + "EEDED\020\002\022\n\n\006FAILED\020\003\022\016\n\nCANCELLING\020\004\022\r\n\tC"
+          + "ANCELLED\020\005\"\205\001\n\026DeleteGlossaryResponse\022\014\n"
+          + "\004name\030\001 \001(\t\022/\n\013submit_time\030\002 \001(\0132\032.googl"
+          + "e.protobuf.Timestamp\022,\n\010end_time\030\003 \001(\0132\032"
+          + ".google.protobuf.Timestamp\"\324\006\n\035BatchTran"
+          + "slateDocumentRequest\0229\n\006parent\030\001 \001(\tB)\340A"
+          + "\002\372A#\n!locations.googleapis.com/Location\022"
+          + "!\n\024source_language_code\030\002 \001(\tB\003\340A\002\022\"\n\025ta"
+          + "rget_language_codes\030\003 \003(\tB\003\340A\002\022Q\n\rinput_"
+          + "configs\030\004 \003(\01325.google.cloud.translation"
+          + ".v3.BatchDocumentInputConfigB\003\340A\002\022R\n\rout"
+          + "put_config\030\005 \001(\01326.google.cloud.translat"
+          + "ion.v3.BatchDocumentOutputConfigB\003\340A\002\022[\n"
+          + "\006models\030\006 \003(\0132F.google.cloud.translation"
+          + ".v3.BatchTranslateDocumentRequest.Models"
+          + "EntryB\003\340A\001\022c\n\nglossaries\030\007 \003(\0132J.google."
+          + "cloud.translation.v3.BatchTranslateDocum"
+          + "entRequest.GlossariesEntryB\003\340A\001\022r\n\022forma"
+          + "t_conversions\030\010 \003(\0132Q.google.cloud.trans"
+          + "lation.v3.BatchTranslateDocumentRequest."
+          + "FormatConversionsEntryB\003\340A\001\032-\n\013ModelsEnt"
+          + "ry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\032k\n\017Gl"
+          + "ossariesEntry\022\013\n\003key\030\001 \001(\t\022G\n\005value\030\002 \001("
+          + "\01328.google.cloud.translation.v3.Translat"
+          + "eTextGlossaryConfig:\0028\001\0328\n\026FormatConvers"
+          + "ionsEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028"
+          + "\001\"b\n\030BatchDocumentInputConfig\022<\n\ngcs_sou"
+          + "rce\030\001 \001(\0132&.google.cloud.translation.v3."
+          + "GcsSourceH\000B\010\n\006source\"r\n\031BatchDocumentOu"
+          + "tputConfig\022F\n\017gcs_destination\030\001 \001(\0132+.go"
+          + "ogle.cloud.translation.v3.GcsDestination"
+          + "H\000B\r\n\013destination\"\331\002\n\036BatchTranslateDocu"
+          + "mentResponse\022\023\n\013total_pages\030\001 \001(\003\022\030\n\020tra"
+          + "nslated_pages\030\002 \001(\003\022\024\n\014failed_pages\030\003 \001("
+          + "\003\022\034\n\024total_billable_pages\030\004 \001(\003\022\030\n\020total"
+          + "_characters\030\005 \001(\003\022\035\n\025translated_characte"
+          + "rs\030\006 \001(\003\022\031\n\021failed_characters\030\007 \001(\003\022!\n\031t"
+          + "otal_billable_characters\030\010 \001(\003\022/\n\013submit"
+          + "_time\030\t \001(\0132\032.google.protobuf.Timestamp\022"
+          + ",\n\010end_time\030\n \001(\0132\032.google.protobuf.Time"
+          + "stamp\"\344\003\n\036BatchTranslateDocumentMetadata"
+          + "\022P\n\005state\030\001 \001(\0162A.google.cloud.translati"
+          + "on.v3.BatchTranslateDocumentMetadata.Sta"
+          + "te\022\023\n\013total_pages\030\002 \001(\003\022\030\n\020translated_pa"
+          + "ges\030\003 \001(\003\022\024\n\014failed_pages\030\004 \001(\003\022\034\n\024total"
+          + "_billable_pages\030\005 \001(\003\022\030\n\020total_character"
+          + "s\030\006 \001(\003\022\035\n\025translated_characters\030\007 \001(\003\022\031"
+          + "\n\021failed_characters\030\010 \001(\003\022!\n\031total_billa"
+          + "ble_characters\030\t \001(\003\022/\n\013submit_time\030\n \001("
+          + "\0132\032.google.protobuf.Timestamp\"e\n\005State\022\025"
+          + "\n\021STATE_UNSPECIFIED\020\000\022\013\n\007RUNNING\020\001\022\r\n\tSU"
+          + "CCEEDED\020\002\022\n\n\006FAILED\020\003\022\016\n\nCANCELLING\020\004\022\r\n"
+          + "\tCANCELLED\020\0052\326\023\n\022TranslationService\022\324\002\n\r"
+          + "TranslateText\0221.google.cloud.translation"
+          + ".v3.TranslateTextRequest\0322.google.cloud."
+          + "translation.v3.TranslateTextResponse\"\333\001\202"
+          + "\323\344\223\002b\"1/v3/{parent=projects/*/locations/"
+          + "*}:translateText:\001*Z*\"%/v3/{parent=proje"
+          + "cts/*}:translateText:\001*\332A$parent,target_"
+          + "language_code,contents\332AIparent,model,mi"
+          + "me_type,source_language_code,target_lang"
+          + "uage_code,contents\022\207\002\n\016DetectLanguage\0222."
+          + "google.cloud.translation.v3.DetectLangua"
+          + "geRequest\0323.google.cloud.translation.v3."
+          + "DetectLanguageResponse\"\213\001\202\323\344\223\002d\"2/v3/{pa"
+          + "rent=projects/*/locations/*}:detectLangu"
+          + "age:\001*Z+\"&/v3/{parent=projects/*}:detect"
+          + "Language:\001*\332A\036parent,model,mime_type,con"
+          + "tent\022\227\002\n\025GetSupportedLanguages\0229.google."
+          + "cloud.translation.v3.GetSupportedLanguag"
+          + "esRequest\032/.google.cloud.translation.v3."
+          + "SupportedLanguages\"\221\001\202\323\344\223\002f\0226/v3/{parent"
+          + "=projects/*/locations/*}/supportedLangua"
+          + "gesZ,\022*/v3/{parent=projects/*}/supported"
+          + "Languages\332A\"parent,model,display_languag"
+          + "e_code\022\304\001\n\021TranslateDocument\0225.google.cl"
+          + "oud.translation.v3.TranslateDocumentRequ"
+          + "est\0326.google.cloud.translation.v3.Transl"
+          + "ateDocumentResponse\"@\202\323\344\223\002:\"5/v3/{parent"
+          + "=projects/*/locations/*}:translateDocume"
+          + "nt:\001*\022\341\001\n\022BatchTranslateText\0226.google.cl"
+          + "oud.translation.v3.BatchTranslateTextReq"
+          + "uest\032\035.google.longrunning.Operation\"t\202\323\344"
+          + "\223\002;\"6/v3/{parent=projects/*/locations/*}"
+          + ":batchTranslateText:\001*\312A0\n\026BatchTranslat"
+          + "eResponse\022\026BatchTranslateMetadata\022\376\001\n\026Ba"
+          + "tchTranslateDocument\022:.google.cloud.tran"
+          + "slation.v3.BatchTranslateDocumentRequest"
+          + "\032\035.google.longrunning.Operation\"\210\001\202\323\344\223\002?"
+          + "\":/v3/{parent=projects/*/locations/*}:ba"
+          + "tchTranslateDocument:\001*\312A@\n\036BatchTransla"
+          + "teDocumentResponse\022\036BatchTranslateDocume"
+          + "ntMetadata\022\334\001\n\016CreateGlossary\0222.google.c"
+          + "loud.translation.v3.CreateGlossaryReques"
+          + "t\032\035.google.longrunning.Operation\"w\202\323\344\223\002:"
+          + "\"./v3/{parent=projects/*/locations/*}/gl"
+          + "ossaries:\010glossary\332A\017parent,glossary\312A\"\n"
+          + "\010Glossary\022\026CreateGlossaryMetadata\022\272\001\n\016Li"
+          + "stGlossaries\0222.google.cloud.translation."
+          + "v3.ListGlossariesRequest\0323.google.cloud."
+          + "translation.v3.ListGlossariesResponse\"?\202"
+          + "\323\344\223\0020\022./v3/{parent=projects/*/locations/"
+          + "*}/glossaries\332A\006parent\022\244\001\n\013GetGlossary\022/"
+          + ".google.cloud.translation.v3.GetGlossary"
+          + "Request\032%.google.cloud.translation.v3.Gl"
+          + "ossary\"=\202\323\344\223\0020\022./v3/{name=projects/*/loc"
+          + "ations/*/glossaries/*}\332A\004name\022\325\001\n\016Delete"
+          + "Glossary\0222.google.cloud.translation.v3.D"
+          + "eleteGlossaryRequest\032\035.google.longrunnin"
+          + "g.Operation\"p\202\323\344\223\0020*./v3/{name=projects/"
+          + "*/locations/*/glossaries/*}\332A\004name\312A0\n\026D"
+          + "eleteGlossaryResponse\022\026DeleteGlossaryMet"
+          + "adata\032~\312A\030translate.googleapis.com\322A`htt"
+          + "ps://www.googleapis.com/auth/cloud-platf"
+          + "orm,https://www.googleapis.com/auth/clou"
+          + "d-translationB\330\001\n\035com.google.cloud.trans"
+          + "late.v3B\027TranslationServiceProtoP\001ZBgoog"
+          + "le.golang.org/genproto/googleapis/cloud/"
+          + "translate/v3;translate\370\001\001\252\002\031Google.Cloud"
+          + ".Translate.V3\312\002\031Google\\Cloud\\Translate\\V"
+          + "3\352\002\034Google::Cloud::Translate::V3b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -377,7 +524,9 @@ public final class TranslationServiceProto {
               com.google.api.FieldBehaviorProto.getDescriptor(),
               com.google.api.ResourceProto.getDescriptor(),
               com.google.longrunning.OperationsProto.getDescriptor(),
+              com.google.protobuf.EmptyProto.getDescriptor(),
               com.google.protobuf.TimestampProto.getDescriptor(),
+              com.google.rpc.StatusProto.getDescriptor(),
             });
     internal_static_google_cloud_translation_v3_TranslateTextGlossaryConfig_descriptor =
         getDescriptor().getMessageTypes().get(0);
@@ -518,8 +667,65 @@ public final class TranslationServiceProto {
             new java.lang.String[] {
               "GcsDestination", "Destination",
             });
-    internal_static_google_cloud_translation_v3_BatchTranslateTextRequest_descriptor =
+    internal_static_google_cloud_translation_v3_DocumentInputConfig_descriptor =
         getDescriptor().getMessageTypes().get(14);
+    internal_static_google_cloud_translation_v3_DocumentInputConfig_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_translation_v3_DocumentInputConfig_descriptor,
+            new java.lang.String[] {
+              "Content", "GcsSource", "MimeType", "Source",
+            });
+    internal_static_google_cloud_translation_v3_DocumentOutputConfig_descriptor =
+        getDescriptor().getMessageTypes().get(15);
+    internal_static_google_cloud_translation_v3_DocumentOutputConfig_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_translation_v3_DocumentOutputConfig_descriptor,
+            new java.lang.String[] {
+              "GcsDestination", "MimeType", "Destination",
+            });
+    internal_static_google_cloud_translation_v3_TranslateDocumentRequest_descriptor =
+        getDescriptor().getMessageTypes().get(16);
+    internal_static_google_cloud_translation_v3_TranslateDocumentRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_translation_v3_TranslateDocumentRequest_descriptor,
+            new java.lang.String[] {
+              "Parent",
+              "SourceLanguageCode",
+              "TargetLanguageCode",
+              "DocumentInputConfig",
+              "DocumentOutputConfig",
+              "Model",
+              "GlossaryConfig",
+              "Labels",
+            });
+    internal_static_google_cloud_translation_v3_TranslateDocumentRequest_LabelsEntry_descriptor =
+        internal_static_google_cloud_translation_v3_TranslateDocumentRequest_descriptor
+            .getNestedTypes()
+            .get(0);
+    internal_static_google_cloud_translation_v3_TranslateDocumentRequest_LabelsEntry_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_translation_v3_TranslateDocumentRequest_LabelsEntry_descriptor,
+            new java.lang.String[] {
+              "Key", "Value",
+            });
+    internal_static_google_cloud_translation_v3_DocumentTranslation_descriptor =
+        getDescriptor().getMessageTypes().get(17);
+    internal_static_google_cloud_translation_v3_DocumentTranslation_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_translation_v3_DocumentTranslation_descriptor,
+            new java.lang.String[] {
+              "ByteStreamOutputs", "MimeType", "DetectedLanguageCode",
+            });
+    internal_static_google_cloud_translation_v3_TranslateDocumentResponse_descriptor =
+        getDescriptor().getMessageTypes().get(18);
+    internal_static_google_cloud_translation_v3_TranslateDocumentResponse_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_translation_v3_TranslateDocumentResponse_descriptor,
+            new java.lang.String[] {
+              "DocumentTranslation", "GlossaryDocumentTranslation", "Model", "GlossaryConfig",
+            });
+    internal_static_google_cloud_translation_v3_BatchTranslateTextRequest_descriptor =
+        getDescriptor().getMessageTypes().get(19);
     internal_static_google_cloud_translation_v3_BatchTranslateTextRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_translation_v3_BatchTranslateTextRequest_descriptor,
@@ -564,7 +770,7 @@ public final class TranslationServiceProto {
               "Key", "Value",
             });
     internal_static_google_cloud_translation_v3_BatchTranslateMetadata_descriptor =
-        getDescriptor().getMessageTypes().get(15);
+        getDescriptor().getMessageTypes().get(20);
     internal_static_google_cloud_translation_v3_BatchTranslateMetadata_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_translation_v3_BatchTranslateMetadata_descriptor,
@@ -572,7 +778,7 @@ public final class TranslationServiceProto {
               "State", "TranslatedCharacters", "FailedCharacters", "TotalCharacters", "SubmitTime",
             });
     internal_static_google_cloud_translation_v3_BatchTranslateResponse_descriptor =
-        getDescriptor().getMessageTypes().get(16);
+        getDescriptor().getMessageTypes().get(21);
     internal_static_google_cloud_translation_v3_BatchTranslateResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_translation_v3_BatchTranslateResponse_descriptor,
@@ -584,7 +790,7 @@ public final class TranslationServiceProto {
               "EndTime",
             });
     internal_static_google_cloud_translation_v3_GlossaryInputConfig_descriptor =
-        getDescriptor().getMessageTypes().get(17);
+        getDescriptor().getMessageTypes().get(22);
     internal_static_google_cloud_translation_v3_GlossaryInputConfig_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_translation_v3_GlossaryInputConfig_descriptor,
@@ -592,7 +798,7 @@ public final class TranslationServiceProto {
               "GcsSource", "Source",
             });
     internal_static_google_cloud_translation_v3_Glossary_descriptor =
-        getDescriptor().getMessageTypes().get(18);
+        getDescriptor().getMessageTypes().get(23);
     internal_static_google_cloud_translation_v3_Glossary_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_translation_v3_Glossary_descriptor,
@@ -623,7 +829,7 @@ public final class TranslationServiceProto {
               "LanguageCodes",
             });
     internal_static_google_cloud_translation_v3_CreateGlossaryRequest_descriptor =
-        getDescriptor().getMessageTypes().get(19);
+        getDescriptor().getMessageTypes().get(24);
     internal_static_google_cloud_translation_v3_CreateGlossaryRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_translation_v3_CreateGlossaryRequest_descriptor,
@@ -631,7 +837,7 @@ public final class TranslationServiceProto {
               "Parent", "Glossary",
             });
     internal_static_google_cloud_translation_v3_GetGlossaryRequest_descriptor =
-        getDescriptor().getMessageTypes().get(20);
+        getDescriptor().getMessageTypes().get(25);
     internal_static_google_cloud_translation_v3_GetGlossaryRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_translation_v3_GetGlossaryRequest_descriptor,
@@ -639,7 +845,7 @@ public final class TranslationServiceProto {
               "Name",
             });
     internal_static_google_cloud_translation_v3_DeleteGlossaryRequest_descriptor =
-        getDescriptor().getMessageTypes().get(21);
+        getDescriptor().getMessageTypes().get(26);
     internal_static_google_cloud_translation_v3_DeleteGlossaryRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_translation_v3_DeleteGlossaryRequest_descriptor,
@@ -647,7 +853,7 @@ public final class TranslationServiceProto {
               "Name",
             });
     internal_static_google_cloud_translation_v3_ListGlossariesRequest_descriptor =
-        getDescriptor().getMessageTypes().get(22);
+        getDescriptor().getMessageTypes().get(27);
     internal_static_google_cloud_translation_v3_ListGlossariesRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_translation_v3_ListGlossariesRequest_descriptor,
@@ -655,7 +861,7 @@ public final class TranslationServiceProto {
               "Parent", "PageSize", "PageToken", "Filter",
             });
     internal_static_google_cloud_translation_v3_ListGlossariesResponse_descriptor =
-        getDescriptor().getMessageTypes().get(23);
+        getDescriptor().getMessageTypes().get(28);
     internal_static_google_cloud_translation_v3_ListGlossariesResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_translation_v3_ListGlossariesResponse_descriptor,
@@ -663,7 +869,7 @@ public final class TranslationServiceProto {
               "Glossaries", "NextPageToken",
             });
     internal_static_google_cloud_translation_v3_CreateGlossaryMetadata_descriptor =
-        getDescriptor().getMessageTypes().get(24);
+        getDescriptor().getMessageTypes().get(29);
     internal_static_google_cloud_translation_v3_CreateGlossaryMetadata_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_translation_v3_CreateGlossaryMetadata_descriptor,
@@ -671,7 +877,7 @@ public final class TranslationServiceProto {
               "Name", "State", "SubmitTime",
             });
     internal_static_google_cloud_translation_v3_DeleteGlossaryMetadata_descriptor =
-        getDescriptor().getMessageTypes().get(25);
+        getDescriptor().getMessageTypes().get(30);
     internal_static_google_cloud_translation_v3_DeleteGlossaryMetadata_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_translation_v3_DeleteGlossaryMetadata_descriptor,
@@ -679,12 +885,107 @@ public final class TranslationServiceProto {
               "Name", "State", "SubmitTime",
             });
     internal_static_google_cloud_translation_v3_DeleteGlossaryResponse_descriptor =
-        getDescriptor().getMessageTypes().get(26);
+        getDescriptor().getMessageTypes().get(31);
     internal_static_google_cloud_translation_v3_DeleteGlossaryResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_translation_v3_DeleteGlossaryResponse_descriptor,
             new java.lang.String[] {
               "Name", "SubmitTime", "EndTime",
+            });
+    internal_static_google_cloud_translation_v3_BatchTranslateDocumentRequest_descriptor =
+        getDescriptor().getMessageTypes().get(32);
+    internal_static_google_cloud_translation_v3_BatchTranslateDocumentRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_translation_v3_BatchTranslateDocumentRequest_descriptor,
+            new java.lang.String[] {
+              "Parent",
+              "SourceLanguageCode",
+              "TargetLanguageCodes",
+              "InputConfigs",
+              "OutputConfig",
+              "Models",
+              "Glossaries",
+              "FormatConversions",
+            });
+    internal_static_google_cloud_translation_v3_BatchTranslateDocumentRequest_ModelsEntry_descriptor =
+        internal_static_google_cloud_translation_v3_BatchTranslateDocumentRequest_descriptor
+            .getNestedTypes()
+            .get(0);
+    internal_static_google_cloud_translation_v3_BatchTranslateDocumentRequest_ModelsEntry_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_translation_v3_BatchTranslateDocumentRequest_ModelsEntry_descriptor,
+            new java.lang.String[] {
+              "Key", "Value",
+            });
+    internal_static_google_cloud_translation_v3_BatchTranslateDocumentRequest_GlossariesEntry_descriptor =
+        internal_static_google_cloud_translation_v3_BatchTranslateDocumentRequest_descriptor
+            .getNestedTypes()
+            .get(1);
+    internal_static_google_cloud_translation_v3_BatchTranslateDocumentRequest_GlossariesEntry_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_translation_v3_BatchTranslateDocumentRequest_GlossariesEntry_descriptor,
+            new java.lang.String[] {
+              "Key", "Value",
+            });
+    internal_static_google_cloud_translation_v3_BatchTranslateDocumentRequest_FormatConversionsEntry_descriptor =
+        internal_static_google_cloud_translation_v3_BatchTranslateDocumentRequest_descriptor
+            .getNestedTypes()
+            .get(2);
+    internal_static_google_cloud_translation_v3_BatchTranslateDocumentRequest_FormatConversionsEntry_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_translation_v3_BatchTranslateDocumentRequest_FormatConversionsEntry_descriptor,
+            new java.lang.String[] {
+              "Key", "Value",
+            });
+    internal_static_google_cloud_translation_v3_BatchDocumentInputConfig_descriptor =
+        getDescriptor().getMessageTypes().get(33);
+    internal_static_google_cloud_translation_v3_BatchDocumentInputConfig_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_translation_v3_BatchDocumentInputConfig_descriptor,
+            new java.lang.String[] {
+              "GcsSource", "Source",
+            });
+    internal_static_google_cloud_translation_v3_BatchDocumentOutputConfig_descriptor =
+        getDescriptor().getMessageTypes().get(34);
+    internal_static_google_cloud_translation_v3_BatchDocumentOutputConfig_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_translation_v3_BatchDocumentOutputConfig_descriptor,
+            new java.lang.String[] {
+              "GcsDestination", "Destination",
+            });
+    internal_static_google_cloud_translation_v3_BatchTranslateDocumentResponse_descriptor =
+        getDescriptor().getMessageTypes().get(35);
+    internal_static_google_cloud_translation_v3_BatchTranslateDocumentResponse_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_translation_v3_BatchTranslateDocumentResponse_descriptor,
+            new java.lang.String[] {
+              "TotalPages",
+              "TranslatedPages",
+              "FailedPages",
+              "TotalBillablePages",
+              "TotalCharacters",
+              "TranslatedCharacters",
+              "FailedCharacters",
+              "TotalBillableCharacters",
+              "SubmitTime",
+              "EndTime",
+            });
+    internal_static_google_cloud_translation_v3_BatchTranslateDocumentMetadata_descriptor =
+        getDescriptor().getMessageTypes().get(36);
+    internal_static_google_cloud_translation_v3_BatchTranslateDocumentMetadata_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_translation_v3_BatchTranslateDocumentMetadata_descriptor,
+            new java.lang.String[] {
+              "State",
+              "TotalPages",
+              "TranslatedPages",
+              "FailedPages",
+              "TotalBillablePages",
+              "TotalCharacters",
+              "TranslatedCharacters",
+              "FailedCharacters",
+              "TotalBillableCharacters",
+              "SubmitTime",
             });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
@@ -703,7 +1004,9 @@ public final class TranslationServiceProto {
     com.google.api.FieldBehaviorProto.getDescriptor();
     com.google.api.ResourceProto.getDescriptor();
     com.google.longrunning.OperationsProto.getDescriptor();
+    com.google.protobuf.EmptyProto.getDescriptor();
     com.google.protobuf.TimestampProto.getDescriptor();
+    com.google.rpc.StatusProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

@@ -715,6 +715,7 @@ public class TranslationServiceClient implements BackgroundResource {
    *           .setOutputConfig(BatchDocumentOutputConfig.newBuilder().build())
    *           .putAllModels(new HashMap<String, String>())
    *           .putAllGlossaries(new HashMap<String, TranslateTextGlossaryConfig>())
+   *           .putAllFormatConversions(new HashMap<String, String>())
    *           .build();
    *   BatchTranslateDocumentResponse response =
    *       translationServiceClient.batchTranslateDocumentAsync(request).get();
@@ -752,6 +753,7 @@ public class TranslationServiceClient implements BackgroundResource {
    *           .setOutputConfig(BatchDocumentOutputConfig.newBuilder().build())
    *           .putAllModels(new HashMap<String, String>())
    *           .putAllGlossaries(new HashMap<String, TranslateTextGlossaryConfig>())
+   *           .putAllFormatConversions(new HashMap<String, String>())
    *           .build();
    *   OperationFuture<BatchTranslateDocumentResponse, BatchTranslateDocumentMetadata> future =
    *       translationServiceClient.batchTranslateDocumentOperationCallable().futureCall(request);
@@ -791,6 +793,7 @@ public class TranslationServiceClient implements BackgroundResource {
    *           .setOutputConfig(BatchDocumentOutputConfig.newBuilder().build())
    *           .putAllModels(new HashMap<String, String>())
    *           .putAllGlossaries(new HashMap<String, TranslateTextGlossaryConfig>())
+   *           .putAllFormatConversions(new HashMap<String, String>())
    *           .build();
    *   ApiFuture<Operation> future =
    *       translationServiceClient.batchTranslateDocumentCallable().futureCall(request);

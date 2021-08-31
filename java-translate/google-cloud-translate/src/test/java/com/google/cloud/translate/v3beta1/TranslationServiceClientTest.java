@@ -505,6 +505,7 @@ public class TranslationServiceClientTest {
             .setOutputConfig(BatchDocumentOutputConfig.newBuilder().build())
             .putAllModels(new HashMap<String, String>())
             .putAllGlossaries(new HashMap<String, TranslateTextGlossaryConfig>())
+            .putAllFormatConversions(new HashMap<String, String>())
             .build();
 
     BatchTranslateDocumentResponse actualResponse =
@@ -524,6 +525,7 @@ public class TranslationServiceClientTest {
     Assert.assertEquals(request.getOutputConfig(), actualRequest.getOutputConfig());
     Assert.assertEquals(request.getModelsMap(), actualRequest.getModelsMap());
     Assert.assertEquals(request.getGlossariesMap(), actualRequest.getGlossariesMap());
+    Assert.assertEquals(request.getFormatConversionsMap(), actualRequest.getFormatConversionsMap());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -545,6 +547,7 @@ public class TranslationServiceClientTest {
               .setOutputConfig(BatchDocumentOutputConfig.newBuilder().build())
               .putAllModels(new HashMap<String, String>())
               .putAllGlossaries(new HashMap<String, TranslateTextGlossaryConfig>())
+              .putAllFormatConversions(new HashMap<String, String>())
               .build();
       client.batchTranslateDocumentAsync(request).get();
       Assert.fail("No exception raised");

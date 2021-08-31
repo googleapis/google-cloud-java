@@ -474,6 +474,74 @@ public class TranslationServiceClientTest {
   }
 
   @Test
+  public void translateDocumentTest() throws Exception {
+    TranslateDocumentResponse expectedResponse =
+        TranslateDocumentResponse.newBuilder()
+            .setDocumentTranslation(DocumentTranslation.newBuilder().build())
+            .setGlossaryDocumentTranslation(DocumentTranslation.newBuilder().build())
+            .setModel("model104069929")
+            .setGlossaryConfig(TranslateTextGlossaryConfig.newBuilder().build())
+            .build();
+    mockTranslationService.addResponse(expectedResponse);
+
+    TranslateDocumentRequest request =
+        TranslateDocumentRequest.newBuilder()
+            .setParent("parent-995424086")
+            .setSourceLanguageCode("sourceLanguageCode1645917472")
+            .setTargetLanguageCode("targetLanguageCode-106414698")
+            .setDocumentInputConfig(DocumentInputConfig.newBuilder().build())
+            .setDocumentOutputConfig(DocumentOutputConfig.newBuilder().build())
+            .setModel("model104069929")
+            .setGlossaryConfig(TranslateTextGlossaryConfig.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
+            .build();
+
+    TranslateDocumentResponse actualResponse = client.translateDocument(request);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockTranslationService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    TranslateDocumentRequest actualRequest = ((TranslateDocumentRequest) actualRequests.get(0));
+
+    Assert.assertEquals(request.getParent(), actualRequest.getParent());
+    Assert.assertEquals(request.getSourceLanguageCode(), actualRequest.getSourceLanguageCode());
+    Assert.assertEquals(request.getTargetLanguageCode(), actualRequest.getTargetLanguageCode());
+    Assert.assertEquals(request.getDocumentInputConfig(), actualRequest.getDocumentInputConfig());
+    Assert.assertEquals(request.getDocumentOutputConfig(), actualRequest.getDocumentOutputConfig());
+    Assert.assertEquals(request.getModel(), actualRequest.getModel());
+    Assert.assertEquals(request.getGlossaryConfig(), actualRequest.getGlossaryConfig());
+    Assert.assertEquals(request.getLabelsMap(), actualRequest.getLabelsMap());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void translateDocumentExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockTranslationService.addException(exception);
+
+    try {
+      TranslateDocumentRequest request =
+          TranslateDocumentRequest.newBuilder()
+              .setParent("parent-995424086")
+              .setSourceLanguageCode("sourceLanguageCode1645917472")
+              .setTargetLanguageCode("targetLanguageCode-106414698")
+              .setDocumentInputConfig(DocumentInputConfig.newBuilder().build())
+              .setDocumentOutputConfig(DocumentOutputConfig.newBuilder().build())
+              .setModel("model104069929")
+              .setGlossaryConfig(TranslateTextGlossaryConfig.newBuilder().build())
+              .putAllLabels(new HashMap<String, String>())
+              .build();
+      client.translateDocument(request);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
   public void batchTranslateTextTest() throws Exception {
     BatchTranslateResponse expectedResponse =
         BatchTranslateResponse.newBuilder()
@@ -543,6 +611,91 @@ public class TranslationServiceClientTest {
               .putAllLabels(new HashMap<String, String>())
               .build();
       client.batchTranslateTextAsync(request).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void batchTranslateDocumentTest() throws Exception {
+    BatchTranslateDocumentResponse expectedResponse =
+        BatchTranslateDocumentResponse.newBuilder()
+            .setTotalPages(-396186871)
+            .setTranslatedPages(-1652747493)
+            .setFailedPages(-2002254526)
+            .setTotalBillablePages(1292117569)
+            .setTotalCharacters(-1368640955)
+            .setTranslatedCharacters(-1337326221)
+            .setFailedCharacters(1723028396)
+            .setTotalBillableCharacters(1242495501)
+            .setSubmitTime(Timestamp.newBuilder().build())
+            .setEndTime(Timestamp.newBuilder().build())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("batchTranslateDocumentTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockTranslationService.addResponse(resultOperation);
+
+    BatchTranslateDocumentRequest request =
+        BatchTranslateDocumentRequest.newBuilder()
+            .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+            .setSourceLanguageCode("sourceLanguageCode1645917472")
+            .addAllTargetLanguageCodes(new ArrayList<String>())
+            .addAllInputConfigs(new ArrayList<BatchDocumentInputConfig>())
+            .setOutputConfig(BatchDocumentOutputConfig.newBuilder().build())
+            .putAllModels(new HashMap<String, String>())
+            .putAllGlossaries(new HashMap<String, TranslateTextGlossaryConfig>())
+            .putAllFormatConversions(new HashMap<String, String>())
+            .build();
+
+    BatchTranslateDocumentResponse actualResponse =
+        client.batchTranslateDocumentAsync(request).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockTranslationService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    BatchTranslateDocumentRequest actualRequest =
+        ((BatchTranslateDocumentRequest) actualRequests.get(0));
+
+    Assert.assertEquals(request.getParent(), actualRequest.getParent());
+    Assert.assertEquals(request.getSourceLanguageCode(), actualRequest.getSourceLanguageCode());
+    Assert.assertEquals(
+        request.getTargetLanguageCodesList(), actualRequest.getTargetLanguageCodesList());
+    Assert.assertEquals(request.getInputConfigsList(), actualRequest.getInputConfigsList());
+    Assert.assertEquals(request.getOutputConfig(), actualRequest.getOutputConfig());
+    Assert.assertEquals(request.getModelsMap(), actualRequest.getModelsMap());
+    Assert.assertEquals(request.getGlossariesMap(), actualRequest.getGlossariesMap());
+    Assert.assertEquals(request.getFormatConversionsMap(), actualRequest.getFormatConversionsMap());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void batchTranslateDocumentExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockTranslationService.addException(exception);
+
+    try {
+      BatchTranslateDocumentRequest request =
+          BatchTranslateDocumentRequest.newBuilder()
+              .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+              .setSourceLanguageCode("sourceLanguageCode1645917472")
+              .addAllTargetLanguageCodes(new ArrayList<String>())
+              .addAllInputConfigs(new ArrayList<BatchDocumentInputConfig>())
+              .setOutputConfig(BatchDocumentOutputConfig.newBuilder().build())
+              .putAllModels(new HashMap<String, String>())
+              .putAllGlossaries(new HashMap<String, TranslateTextGlossaryConfig>())
+              .putAllFormatConversions(new HashMap<String, String>())
+              .build();
+      client.batchTranslateDocumentAsync(request).get();
       Assert.fail("No exception raised");
     } catch (ExecutionException e) {
       Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());

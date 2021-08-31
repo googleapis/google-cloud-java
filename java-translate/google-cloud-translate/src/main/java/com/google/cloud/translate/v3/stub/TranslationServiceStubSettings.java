@@ -44,6 +44,9 @@ import com.google.api.gax.rpc.StubSettings;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloud.translate.v3.BatchTranslateDocumentMetadata;
+import com.google.cloud.translate.v3.BatchTranslateDocumentRequest;
+import com.google.cloud.translate.v3.BatchTranslateDocumentResponse;
 import com.google.cloud.translate.v3.BatchTranslateMetadata;
 import com.google.cloud.translate.v3.BatchTranslateResponse;
 import com.google.cloud.translate.v3.BatchTranslateTextRequest;
@@ -60,6 +63,8 @@ import com.google.cloud.translate.v3.Glossary;
 import com.google.cloud.translate.v3.ListGlossariesRequest;
 import com.google.cloud.translate.v3.ListGlossariesResponse;
 import com.google.cloud.translate.v3.SupportedLanguages;
+import com.google.cloud.translate.v3.TranslateDocumentRequest;
+import com.google.cloud.translate.v3.TranslateDocumentResponse;
 import com.google.cloud.translate.v3.TranslateTextRequest;
 import com.google.cloud.translate.v3.TranslateTextResponse;
 import com.google.common.collect.ImmutableList;
@@ -120,10 +125,19 @@ public class TranslationServiceStubSettings extends StubSettings<TranslationServ
       detectLanguageSettings;
   private final UnaryCallSettings<GetSupportedLanguagesRequest, SupportedLanguages>
       getSupportedLanguagesSettings;
+  private final UnaryCallSettings<TranslateDocumentRequest, TranslateDocumentResponse>
+      translateDocumentSettings;
   private final UnaryCallSettings<BatchTranslateTextRequest, Operation> batchTranslateTextSettings;
   private final OperationCallSettings<
           BatchTranslateTextRequest, BatchTranslateResponse, BatchTranslateMetadata>
       batchTranslateTextOperationSettings;
+  private final UnaryCallSettings<BatchTranslateDocumentRequest, Operation>
+      batchTranslateDocumentSettings;
+  private final OperationCallSettings<
+          BatchTranslateDocumentRequest,
+          BatchTranslateDocumentResponse,
+          BatchTranslateDocumentMetadata>
+      batchTranslateDocumentOperationSettings;
   private final UnaryCallSettings<CreateGlossaryRequest, Operation> createGlossarySettings;
   private final OperationCallSettings<CreateGlossaryRequest, Glossary, CreateGlossaryMetadata>
       createGlossaryOperationSettings;
@@ -206,6 +220,12 @@ public class TranslationServiceStubSettings extends StubSettings<TranslationServ
     return getSupportedLanguagesSettings;
   }
 
+  /** Returns the object with the settings used for calls to translateDocument. */
+  public UnaryCallSettings<TranslateDocumentRequest, TranslateDocumentResponse>
+      translateDocumentSettings() {
+    return translateDocumentSettings;
+  }
+
   /** Returns the object with the settings used for calls to batchTranslateText. */
   public UnaryCallSettings<BatchTranslateTextRequest, Operation> batchTranslateTextSettings() {
     return batchTranslateTextSettings;
@@ -216,6 +236,21 @@ public class TranslationServiceStubSettings extends StubSettings<TranslationServ
           BatchTranslateTextRequest, BatchTranslateResponse, BatchTranslateMetadata>
       batchTranslateTextOperationSettings() {
     return batchTranslateTextOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to batchTranslateDocument. */
+  public UnaryCallSettings<BatchTranslateDocumentRequest, Operation>
+      batchTranslateDocumentSettings() {
+    return batchTranslateDocumentSettings;
+  }
+
+  /** Returns the object with the settings used for calls to batchTranslateDocument. */
+  public OperationCallSettings<
+          BatchTranslateDocumentRequest,
+          BatchTranslateDocumentResponse,
+          BatchTranslateDocumentMetadata>
+      batchTranslateDocumentOperationSettings() {
+    return batchTranslateDocumentOperationSettings;
   }
 
   /** Returns the object with the settings used for calls to createGlossary. */
@@ -332,9 +367,13 @@ public class TranslationServiceStubSettings extends StubSettings<TranslationServ
     translateTextSettings = settingsBuilder.translateTextSettings().build();
     detectLanguageSettings = settingsBuilder.detectLanguageSettings().build();
     getSupportedLanguagesSettings = settingsBuilder.getSupportedLanguagesSettings().build();
+    translateDocumentSettings = settingsBuilder.translateDocumentSettings().build();
     batchTranslateTextSettings = settingsBuilder.batchTranslateTextSettings().build();
     batchTranslateTextOperationSettings =
         settingsBuilder.batchTranslateTextOperationSettings().build();
+    batchTranslateDocumentSettings = settingsBuilder.batchTranslateDocumentSettings().build();
+    batchTranslateDocumentOperationSettings =
+        settingsBuilder.batchTranslateDocumentOperationSettings().build();
     createGlossarySettings = settingsBuilder.createGlossarySettings().build();
     createGlossaryOperationSettings = settingsBuilder.createGlossaryOperationSettings().build();
     listGlossariesSettings = settingsBuilder.listGlossariesSettings().build();
@@ -353,11 +392,20 @@ public class TranslationServiceStubSettings extends StubSettings<TranslationServ
         detectLanguageSettings;
     private final UnaryCallSettings.Builder<GetSupportedLanguagesRequest, SupportedLanguages>
         getSupportedLanguagesSettings;
+    private final UnaryCallSettings.Builder<TranslateDocumentRequest, TranslateDocumentResponse>
+        translateDocumentSettings;
     private final UnaryCallSettings.Builder<BatchTranslateTextRequest, Operation>
         batchTranslateTextSettings;
     private final OperationCallSettings.Builder<
             BatchTranslateTextRequest, BatchTranslateResponse, BatchTranslateMetadata>
         batchTranslateTextOperationSettings;
+    private final UnaryCallSettings.Builder<BatchTranslateDocumentRequest, Operation>
+        batchTranslateDocumentSettings;
+    private final OperationCallSettings.Builder<
+            BatchTranslateDocumentRequest,
+            BatchTranslateDocumentResponse,
+            BatchTranslateDocumentMetadata>
+        batchTranslateDocumentOperationSettings;
     private final UnaryCallSettings.Builder<CreateGlossaryRequest, Operation>
         createGlossarySettings;
     private final OperationCallSettings.Builder<
@@ -425,8 +473,11 @@ public class TranslationServiceStubSettings extends StubSettings<TranslationServ
       translateTextSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       detectLanguageSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       getSupportedLanguagesSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      translateDocumentSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       batchTranslateTextSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       batchTranslateTextOperationSettings = OperationCallSettings.newBuilder();
+      batchTranslateDocumentSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      batchTranslateDocumentOperationSettings = OperationCallSettings.newBuilder();
       createGlossarySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       createGlossaryOperationSettings = OperationCallSettings.newBuilder();
       listGlossariesSettings = PagedCallSettings.newBuilder(LIST_GLOSSARIES_PAGE_STR_FACT);
@@ -439,7 +490,9 @@ public class TranslationServiceStubSettings extends StubSettings<TranslationServ
               translateTextSettings,
               detectLanguageSettings,
               getSupportedLanguagesSettings,
+              translateDocumentSettings,
               batchTranslateTextSettings,
+              batchTranslateDocumentSettings,
               createGlossarySettings,
               listGlossariesSettings,
               getGlossarySettings,
@@ -453,9 +506,13 @@ public class TranslationServiceStubSettings extends StubSettings<TranslationServ
       translateTextSettings = settings.translateTextSettings.toBuilder();
       detectLanguageSettings = settings.detectLanguageSettings.toBuilder();
       getSupportedLanguagesSettings = settings.getSupportedLanguagesSettings.toBuilder();
+      translateDocumentSettings = settings.translateDocumentSettings.toBuilder();
       batchTranslateTextSettings = settings.batchTranslateTextSettings.toBuilder();
       batchTranslateTextOperationSettings =
           settings.batchTranslateTextOperationSettings.toBuilder();
+      batchTranslateDocumentSettings = settings.batchTranslateDocumentSettings.toBuilder();
+      batchTranslateDocumentOperationSettings =
+          settings.batchTranslateDocumentOperationSettings.toBuilder();
       createGlossarySettings = settings.createGlossarySettings.toBuilder();
       createGlossaryOperationSettings = settings.createGlossaryOperationSettings.toBuilder();
       listGlossariesSettings = settings.listGlossariesSettings.toBuilder();
@@ -468,7 +525,9 @@ public class TranslationServiceStubSettings extends StubSettings<TranslationServ
               translateTextSettings,
               detectLanguageSettings,
               getSupportedLanguagesSettings,
+              translateDocumentSettings,
               batchTranslateTextSettings,
+              batchTranslateDocumentSettings,
               createGlossarySettings,
               listGlossariesSettings,
               getGlossarySettings,
@@ -505,7 +564,17 @@ public class TranslationServiceStubSettings extends StubSettings<TranslationServ
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
 
       builder
+          .translateDocumentSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
           .batchTranslateTextSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .batchTranslateDocumentSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
 
@@ -541,6 +610,32 @@ public class TranslationServiceStubSettings extends StubSettings<TranslationServ
               ProtoOperationTransformers.ResponseTransformer.create(BatchTranslateResponse.class))
           .setMetadataTransformer(
               ProtoOperationTransformers.MetadataTransformer.create(BatchTranslateMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
+                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .batchTranslateDocumentOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<BatchTranslateDocumentRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(
+                  BatchTranslateDocumentResponse.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(
+                  BatchTranslateDocumentMetadata.class))
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
@@ -637,6 +732,12 @@ public class TranslationServiceStubSettings extends StubSettings<TranslationServ
       return getSupportedLanguagesSettings;
     }
 
+    /** Returns the builder for the settings used for calls to translateDocument. */
+    public UnaryCallSettings.Builder<TranslateDocumentRequest, TranslateDocumentResponse>
+        translateDocumentSettings() {
+      return translateDocumentSettings;
+    }
+
     /** Returns the builder for the settings used for calls to batchTranslateText. */
     public UnaryCallSettings.Builder<BatchTranslateTextRequest, Operation>
         batchTranslateTextSettings() {
@@ -650,6 +751,23 @@ public class TranslationServiceStubSettings extends StubSettings<TranslationServ
             BatchTranslateTextRequest, BatchTranslateResponse, BatchTranslateMetadata>
         batchTranslateTextOperationSettings() {
       return batchTranslateTextOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to batchTranslateDocument. */
+    public UnaryCallSettings.Builder<BatchTranslateDocumentRequest, Operation>
+        batchTranslateDocumentSettings() {
+      return batchTranslateDocumentSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to batchTranslateDocument. */
+    @BetaApi(
+        "The surface for use by generated code is not stable yet and may change in the future.")
+    public OperationCallSettings.Builder<
+            BatchTranslateDocumentRequest,
+            BatchTranslateDocumentResponse,
+            BatchTranslateDocumentMetadata>
+        batchTranslateDocumentOperationSettings() {
+      return batchTranslateDocumentOperationSettings;
     }
 
     /** Returns the builder for the settings used for calls to createGlossary. */

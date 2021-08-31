@@ -194,7 +194,8 @@ public class TranslationServiceClient implements BackgroundResource {
    * @param targetLanguageCode Required. The BCP-47 language code to use for translation of the
    *     input text, set to one of the language codes listed in Language Support.
    * @param contents Required. The content of the input in string format. We recommend the total
-   *     content be less than 30k codepoints. Use BatchTranslateText for larger text.
+   *     content be less than 30k codepoints. The max length of this field is 1024. Use
+   *     BatchTranslateText for larger text.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final TranslateTextResponse translateText(
@@ -235,7 +236,8 @@ public class TranslationServiceClient implements BackgroundResource {
    * @param targetLanguageCode Required. The BCP-47 language code to use for translation of the
    *     input text, set to one of the language codes listed in Language Support.
    * @param contents Required. The content of the input in string format. We recommend the total
-   *     content be less than 30k codepoints. Use BatchTranslateText for larger text.
+   *     content be less than 30k codepoints. The max length of this field is 1024. Use
+   *     BatchTranslateText for larger text.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final TranslateTextResponse translateText(
@@ -283,10 +285,9 @@ public class TranslationServiceClient implements BackgroundResource {
    *     `projects/{project-number-or-id}/locations/{location-id}/models/{model-id}`
    *     <p>- General (built-in) models:
    *     `projects/{project-number-or-id}/locations/{location-id}/models/general/nmt`,
-   *     `projects/{project-number-or-id}/locations/{location-id}/models/general/base`
    *     <p>For global (non-regionalized) requests, use `location-id` `global`. For example,
    *     `projects/{project-number-or-id}/locations/global/models/general/nmt`.
-   *     <p>If missing, the system decides which google base model to use.
+   *     <p>If not provided, the default Google model (NMT) will be used.
    * @param mimeType Optional. The format of the source text, for example, "text/html",
    *     "text/plain". If left blank, the MIME type defaults to "text/html".
    * @param sourceLanguageCode Optional. The BCP-47 language code of the input text if known, for
@@ -296,7 +297,8 @@ public class TranslationServiceClient implements BackgroundResource {
    * @param targetLanguageCode Required. The BCP-47 language code to use for translation of the
    *     input text, set to one of the language codes listed in Language Support.
    * @param contents Required. The content of the input in string format. We recommend the total
-   *     content be less than 30k codepoints. Use BatchTranslateText for larger text.
+   *     content be less than 30k codepoints. The max length of this field is 1024. Use
+   *     BatchTranslateText for larger text.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final TranslateTextResponse translateText(
@@ -352,10 +354,9 @@ public class TranslationServiceClient implements BackgroundResource {
    *     `projects/{project-number-or-id}/locations/{location-id}/models/{model-id}`
    *     <p>- General (built-in) models:
    *     `projects/{project-number-or-id}/locations/{location-id}/models/general/nmt`,
-   *     `projects/{project-number-or-id}/locations/{location-id}/models/general/base`
    *     <p>For global (non-regionalized) requests, use `location-id` `global`. For example,
    *     `projects/{project-number-or-id}/locations/global/models/general/nmt`.
-   *     <p>If missing, the system decides which google base model to use.
+   *     <p>If not provided, the default Google model (NMT) will be used.
    * @param mimeType Optional. The format of the source text, for example, "text/html",
    *     "text/plain". If left blank, the MIME type defaults to "text/html".
    * @param sourceLanguageCode Optional. The BCP-47 language code of the input text if known, for
@@ -365,7 +366,8 @@ public class TranslationServiceClient implements BackgroundResource {
    * @param targetLanguageCode Required. The BCP-47 language code to use for translation of the
    *     input text, set to one of the language codes listed in Language Support.
    * @param contents Required. The content of the input in string format. We recommend the total
-   *     content be less than 30k codepoints. Use BatchTranslateText for larger text.
+   *     content be less than 30k codepoints. The max length of this field is 1024. Use
+   *     BatchTranslateText for larger text.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final TranslateTextResponse translateText(
@@ -624,9 +626,8 @@ public class TranslationServiceClient implements BackgroundResource {
    *     `projects/{project-number-or-id}/locations/{location-id}/models/{model-id}`
    *     <p>- General (built-in) models:
    *     `projects/{project-number-or-id}/locations/{location-id}/models/general/nmt`,
-   *     `projects/{project-number-or-id}/locations/{location-id}/models/general/base`
    *     <p>Returns languages supported by the specified model. If missing, we get supported
-   *     languages of Google general base (PBMT) model.
+   *     languages of Google general NMT model.
    * @param displayLanguageCode Optional. The language to use to return localized, human readable
    *     names of supported languages. If missing, then display names are not returned in a
    *     response.
@@ -673,9 +674,8 @@ public class TranslationServiceClient implements BackgroundResource {
    *     `projects/{project-number-or-id}/locations/{location-id}/models/{model-id}`
    *     <p>- General (built-in) models:
    *     `projects/{project-number-or-id}/locations/{location-id}/models/general/nmt`,
-   *     `projects/{project-number-or-id}/locations/{location-id}/models/general/base`
    *     <p>Returns languages supported by the specified model. If missing, we get supported
-   *     languages of Google general base (PBMT) model.
+   *     languages of Google general NMT model.
    * @param displayLanguageCode Optional. The language to use to return localized, human readable
    *     names of supported languages. If missing, then display names are not returned in a
    *     response.
@@ -741,6 +741,67 @@ public class TranslationServiceClient implements BackgroundResource {
   public final UnaryCallable<GetSupportedLanguagesRequest, SupportedLanguages>
       getSupportedLanguagesCallable() {
     return stub.getSupportedLanguagesCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Translates documents in synchronous mode.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (TranslationServiceClient translationServiceClient = TranslationServiceClient.create()) {
+   *   TranslateDocumentRequest request =
+   *       TranslateDocumentRequest.newBuilder()
+   *           .setParent("parent-995424086")
+   *           .setSourceLanguageCode("sourceLanguageCode1645917472")
+   *           .setTargetLanguageCode("targetLanguageCode-106414698")
+   *           .setDocumentInputConfig(DocumentInputConfig.newBuilder().build())
+   *           .setDocumentOutputConfig(DocumentOutputConfig.newBuilder().build())
+   *           .setModel("model104069929")
+   *           .setGlossaryConfig(TranslateTextGlossaryConfig.newBuilder().build())
+   *           .putAllLabels(new HashMap<String, String>())
+   *           .build();
+   *   TranslateDocumentResponse response = translationServiceClient.translateDocument(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final TranslateDocumentResponse translateDocument(TranslateDocumentRequest request) {
+    return translateDocumentCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Translates documents in synchronous mode.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (TranslationServiceClient translationServiceClient = TranslationServiceClient.create()) {
+   *   TranslateDocumentRequest request =
+   *       TranslateDocumentRequest.newBuilder()
+   *           .setParent("parent-995424086")
+   *           .setSourceLanguageCode("sourceLanguageCode1645917472")
+   *           .setTargetLanguageCode("targetLanguageCode-106414698")
+   *           .setDocumentInputConfig(DocumentInputConfig.newBuilder().build())
+   *           .setDocumentOutputConfig(DocumentOutputConfig.newBuilder().build())
+   *           .setModel("model104069929")
+   *           .setGlossaryConfig(TranslateTextGlossaryConfig.newBuilder().build())
+   *           .putAllLabels(new HashMap<String, String>())
+   *           .build();
+   *   ApiFuture<TranslateDocumentResponse> future =
+   *       translationServiceClient.translateDocumentCallable().futureCall(request);
+   *   // Do something.
+   *   TranslateDocumentResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<TranslateDocumentRequest, TranslateDocumentResponse>
+      translateDocumentCallable() {
+    return stub.translateDocumentCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -850,6 +911,121 @@ public class TranslationServiceClient implements BackgroundResource {
    */
   public final UnaryCallable<BatchTranslateTextRequest, Operation> batchTranslateTextCallable() {
     return stub.batchTranslateTextCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Translates a large volume of document in asynchronous batch mode. This function provides
+   * real-time output as the inputs are being processed. If caller cancels a request, the partial
+   * results (for an input file, it's all or nothing) may still be available on the specified output
+   * location.
+   *
+   * <p>This call returns immediately and you can use google.longrunning.Operation.name to poll the
+   * status of the call.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (TranslationServiceClient translationServiceClient = TranslationServiceClient.create()) {
+   *   BatchTranslateDocumentRequest request =
+   *       BatchTranslateDocumentRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setSourceLanguageCode("sourceLanguageCode1645917472")
+   *           .addAllTargetLanguageCodes(new ArrayList<String>())
+   *           .addAllInputConfigs(new ArrayList<BatchDocumentInputConfig>())
+   *           .setOutputConfig(BatchDocumentOutputConfig.newBuilder().build())
+   *           .putAllModels(new HashMap<String, String>())
+   *           .putAllGlossaries(new HashMap<String, TranslateTextGlossaryConfig>())
+   *           .putAllFormatConversions(new HashMap<String, String>())
+   *           .build();
+   *   BatchTranslateDocumentResponse response =
+   *       translationServiceClient.batchTranslateDocumentAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<BatchTranslateDocumentResponse, BatchTranslateDocumentMetadata>
+      batchTranslateDocumentAsync(BatchTranslateDocumentRequest request) {
+    return batchTranslateDocumentOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Translates a large volume of document in asynchronous batch mode. This function provides
+   * real-time output as the inputs are being processed. If caller cancels a request, the partial
+   * results (for an input file, it's all or nothing) may still be available on the specified output
+   * location.
+   *
+   * <p>This call returns immediately and you can use google.longrunning.Operation.name to poll the
+   * status of the call.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (TranslationServiceClient translationServiceClient = TranslationServiceClient.create()) {
+   *   BatchTranslateDocumentRequest request =
+   *       BatchTranslateDocumentRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setSourceLanguageCode("sourceLanguageCode1645917472")
+   *           .addAllTargetLanguageCodes(new ArrayList<String>())
+   *           .addAllInputConfigs(new ArrayList<BatchDocumentInputConfig>())
+   *           .setOutputConfig(BatchDocumentOutputConfig.newBuilder().build())
+   *           .putAllModels(new HashMap<String, String>())
+   *           .putAllGlossaries(new HashMap<String, TranslateTextGlossaryConfig>())
+   *           .putAllFormatConversions(new HashMap<String, String>())
+   *           .build();
+   *   OperationFuture<BatchTranslateDocumentResponse, BatchTranslateDocumentMetadata> future =
+   *       translationServiceClient.batchTranslateDocumentOperationCallable().futureCall(request);
+   *   // Do something.
+   *   BatchTranslateDocumentResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<
+          BatchTranslateDocumentRequest,
+          BatchTranslateDocumentResponse,
+          BatchTranslateDocumentMetadata>
+      batchTranslateDocumentOperationCallable() {
+    return stub.batchTranslateDocumentOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Translates a large volume of document in asynchronous batch mode. This function provides
+   * real-time output as the inputs are being processed. If caller cancels a request, the partial
+   * results (for an input file, it's all or nothing) may still be available on the specified output
+   * location.
+   *
+   * <p>This call returns immediately and you can use google.longrunning.Operation.name to poll the
+   * status of the call.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (TranslationServiceClient translationServiceClient = TranslationServiceClient.create()) {
+   *   BatchTranslateDocumentRequest request =
+   *       BatchTranslateDocumentRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setSourceLanguageCode("sourceLanguageCode1645917472")
+   *           .addAllTargetLanguageCodes(new ArrayList<String>())
+   *           .addAllInputConfigs(new ArrayList<BatchDocumentInputConfig>())
+   *           .setOutputConfig(BatchDocumentOutputConfig.newBuilder().build())
+   *           .putAllModels(new HashMap<String, String>())
+   *           .putAllGlossaries(new HashMap<String, TranslateTextGlossaryConfig>())
+   *           .putAllFormatConversions(new HashMap<String, String>())
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       translationServiceClient.batchTranslateDocumentCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<BatchTranslateDocumentRequest, Operation>
+      batchTranslateDocumentCallable() {
+    return stub.batchTranslateDocumentCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.

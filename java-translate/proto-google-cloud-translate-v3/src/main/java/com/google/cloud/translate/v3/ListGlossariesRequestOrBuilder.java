@@ -102,7 +102,20 @@ public interface ListGlossariesRequestOrBuilder
    *
    * <pre>
    * Optional. Filter specifying constraints of a list operation.
-   * Filtering is not supported yet, and the parameter currently has no effect.
+   * Specify the constraint by the format of "key=value", where key must be
+   * "src" or "tgt", and the value must be a valid language code.
+   * For multiple restrictions, concatenate them by "AND" (uppercase only),
+   * such as: "src=en-US AND tgt=zh-CN". Notice that the exact match is used
+   * here, which means using 'en-US' and 'en' can lead to different results,
+   * which depends on the language code you used when you create the glossary.
+   * For the unidirectional glossaries, the "src" and "tgt" add restrictions
+   * on the source and target language code separately.
+   * For the equivalent term set glossaries, the "src" and/or "tgt" add
+   * restrictions on the term set.
+   * For example: "src=en-US AND tgt=zh-CN" will only pick the unidirectional
+   * glossaries which exactly match the source language code as "en-US" and the
+   * target language code "zh-CN", but all equivalent term set glossaries which
+   * contain "en-US" and "zh-CN" in their language set will be picked.
    * If missing, no filtering is performed.
    * </pre>
    *
@@ -116,7 +129,20 @@ public interface ListGlossariesRequestOrBuilder
    *
    * <pre>
    * Optional. Filter specifying constraints of a list operation.
-   * Filtering is not supported yet, and the parameter currently has no effect.
+   * Specify the constraint by the format of "key=value", where key must be
+   * "src" or "tgt", and the value must be a valid language code.
+   * For multiple restrictions, concatenate them by "AND" (uppercase only),
+   * such as: "src=en-US AND tgt=zh-CN". Notice that the exact match is used
+   * here, which means using 'en-US' and 'en' can lead to different results,
+   * which depends on the language code you used when you create the glossary.
+   * For the unidirectional glossaries, the "src" and "tgt" add restrictions
+   * on the source and target language code separately.
+   * For the equivalent term set glossaries, the "src" and/or "tgt" add
+   * restrictions on the term set.
+   * For example: "src=en-US AND tgt=zh-CN" will only pick the unidirectional
+   * glossaries which exactly match the source language code as "en-US" and the
+   * target language code "zh-CN", but all equivalent term set glossaries which
+   * contain "en-US" and "zh-CN" in their language set will be picked.
    * If missing, no filtering is performed.
    * </pre>
    *

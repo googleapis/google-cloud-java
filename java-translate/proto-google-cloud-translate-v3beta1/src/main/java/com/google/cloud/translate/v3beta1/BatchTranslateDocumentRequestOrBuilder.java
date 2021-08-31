@@ -442,4 +442,104 @@ public interface BatchTranslateDocumentRequestOrBuilder
    */
   com.google.cloud.translate.v3beta1.TranslateTextGlossaryConfig getGlossariesOrThrow(
       java.lang.String key);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. File format conversion map to be applied to all input files.
+   * Map's key is the original mime_type. Map's value is the target mime_type of
+   * translated documents.
+   * Supported file format conversion includes:
+   * - `application/pdf` to
+   *   `application/vnd.openxmlformats-officedocument.wordprocessingml.document`
+   * If nothing specified, output files will be in the same format as the
+   * original file.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, string&gt; format_conversions = 8 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  int getFormatConversionsCount();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. File format conversion map to be applied to all input files.
+   * Map's key is the original mime_type. Map's value is the target mime_type of
+   * translated documents.
+   * Supported file format conversion includes:
+   * - `application/pdf` to
+   *   `application/vnd.openxmlformats-officedocument.wordprocessingml.document`
+   * If nothing specified, output files will be in the same format as the
+   * original file.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, string&gt; format_conversions = 8 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  boolean containsFormatConversions(java.lang.String key);
+  /** Use {@link #getFormatConversionsMap()} instead. */
+  @java.lang.Deprecated
+  java.util.Map<java.lang.String, java.lang.String> getFormatConversions();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. File format conversion map to be applied to all input files.
+   * Map's key is the original mime_type. Map's value is the target mime_type of
+   * translated documents.
+   * Supported file format conversion includes:
+   * - `application/pdf` to
+   *   `application/vnd.openxmlformats-officedocument.wordprocessingml.document`
+   * If nothing specified, output files will be in the same format as the
+   * original file.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, string&gt; format_conversions = 8 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  java.util.Map<java.lang.String, java.lang.String> getFormatConversionsMap();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. File format conversion map to be applied to all input files.
+   * Map's key is the original mime_type. Map's value is the target mime_type of
+   * translated documents.
+   * Supported file format conversion includes:
+   * - `application/pdf` to
+   *   `application/vnd.openxmlformats-officedocument.wordprocessingml.document`
+   * If nothing specified, output files will be in the same format as the
+   * original file.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, string&gt; format_conversions = 8 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  java.lang.String getFormatConversionsOrDefault(
+      java.lang.String key, java.lang.String defaultValue);
+  /**
+   *
+   *
+   * <pre>
+   * Optional. File format conversion map to be applied to all input files.
+   * Map's key is the original mime_type. Map's value is the target mime_type of
+   * translated documents.
+   * Supported file format conversion includes:
+   * - `application/pdf` to
+   *   `application/vnd.openxmlformats-officedocument.wordprocessingml.document`
+   * If nothing specified, output files will be in the same format as the
+   * original file.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, string&gt; format_conversions = 8 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  java.lang.String getFormatConversionsOrThrow(java.lang.String key);
 }

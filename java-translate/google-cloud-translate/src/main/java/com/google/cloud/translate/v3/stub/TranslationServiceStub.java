@@ -21,6 +21,9 @@ import static com.google.cloud.translate.v3.TranslationServiceClient.ListGlossar
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloud.translate.v3.BatchTranslateDocumentMetadata;
+import com.google.cloud.translate.v3.BatchTranslateDocumentRequest;
+import com.google.cloud.translate.v3.BatchTranslateDocumentResponse;
 import com.google.cloud.translate.v3.BatchTranslateMetadata;
 import com.google.cloud.translate.v3.BatchTranslateResponse;
 import com.google.cloud.translate.v3.BatchTranslateTextRequest;
@@ -37,6 +40,8 @@ import com.google.cloud.translate.v3.Glossary;
 import com.google.cloud.translate.v3.ListGlossariesRequest;
 import com.google.cloud.translate.v3.ListGlossariesResponse;
 import com.google.cloud.translate.v3.SupportedLanguages;
+import com.google.cloud.translate.v3.TranslateDocumentRequest;
+import com.google.cloud.translate.v3.TranslateDocumentResponse;
 import com.google.cloud.translate.v3.TranslateTextRequest;
 import com.google.cloud.translate.v3.TranslateTextResponse;
 import com.google.longrunning.Operation;
@@ -69,6 +74,11 @@ public abstract class TranslationServiceStub implements BackgroundResource {
     throw new UnsupportedOperationException("Not implemented: getSupportedLanguagesCallable()");
   }
 
+  public UnaryCallable<TranslateDocumentRequest, TranslateDocumentResponse>
+      translateDocumentCallable() {
+    throw new UnsupportedOperationException("Not implemented: translateDocumentCallable()");
+  }
+
   public OperationCallable<
           BatchTranslateTextRequest, BatchTranslateResponse, BatchTranslateMetadata>
       batchTranslateTextOperationCallable() {
@@ -78,6 +88,19 @@ public abstract class TranslationServiceStub implements BackgroundResource {
 
   public UnaryCallable<BatchTranslateTextRequest, Operation> batchTranslateTextCallable() {
     throw new UnsupportedOperationException("Not implemented: batchTranslateTextCallable()");
+  }
+
+  public OperationCallable<
+          BatchTranslateDocumentRequest,
+          BatchTranslateDocumentResponse,
+          BatchTranslateDocumentMetadata>
+      batchTranslateDocumentOperationCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: batchTranslateDocumentOperationCallable()");
+  }
+
+  public UnaryCallable<BatchTranslateDocumentRequest, Operation> batchTranslateDocumentCallable() {
+    throw new UnsupportedOperationException("Not implemented: batchTranslateDocumentCallable()");
   }
 
   public OperationCallable<CreateGlossaryRequest, Glossary, CreateGlossaryMetadata>

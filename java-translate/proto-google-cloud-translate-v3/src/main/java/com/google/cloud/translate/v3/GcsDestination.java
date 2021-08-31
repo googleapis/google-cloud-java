@@ -117,12 +117,14 @@ public final class GcsDestination extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. There must be no files under 'output_uri_prefix'.
-   * 'output_uri_prefix' must end with "/" and start with "gs://", otherwise an
-   * INVALID_ARGUMENT (400) error is returned.
+   * Required. The bucket used in 'output_uri_prefix' must exist and there must
+   * be no files under 'output_uri_prefix'. 'output_uri_prefix' must end with
+   * "/" and start with "gs://". One 'output_uri_prefix' can only be used by one
+   * batch translation job at a time. Otherwise an INVALID_ARGUMENT (400) error
+   * is returned.
    * </pre>
    *
-   * <code>string output_uri_prefix = 1;</code>
+   * <code>string output_uri_prefix = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The outputUriPrefix.
    */
@@ -142,12 +144,14 @@ public final class GcsDestination extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. There must be no files under 'output_uri_prefix'.
-   * 'output_uri_prefix' must end with "/" and start with "gs://", otherwise an
-   * INVALID_ARGUMENT (400) error is returned.
+   * Required. The bucket used in 'output_uri_prefix' must exist and there must
+   * be no files under 'output_uri_prefix'. 'output_uri_prefix' must end with
+   * "/" and start with "gs://". One 'output_uri_prefix' can only be used by one
+   * batch translation job at a time. Otherwise an INVALID_ARGUMENT (400) error
+   * is returned.
    * </pre>
    *
-   * <code>string output_uri_prefix = 1;</code>
+   * <code>string output_uri_prefix = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The bytes for outputUriPrefix.
    */
@@ -485,12 +489,14 @@ public final class GcsDestination extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. There must be no files under 'output_uri_prefix'.
-     * 'output_uri_prefix' must end with "/" and start with "gs://", otherwise an
-     * INVALID_ARGUMENT (400) error is returned.
+     * Required. The bucket used in 'output_uri_prefix' must exist and there must
+     * be no files under 'output_uri_prefix'. 'output_uri_prefix' must end with
+     * "/" and start with "gs://". One 'output_uri_prefix' can only be used by one
+     * batch translation job at a time. Otherwise an INVALID_ARGUMENT (400) error
+     * is returned.
      * </pre>
      *
-     * <code>string output_uri_prefix = 1;</code>
+     * <code>string output_uri_prefix = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return The outputUriPrefix.
      */
@@ -509,12 +515,14 @@ public final class GcsDestination extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. There must be no files under 'output_uri_prefix'.
-     * 'output_uri_prefix' must end with "/" and start with "gs://", otherwise an
-     * INVALID_ARGUMENT (400) error is returned.
+     * Required. The bucket used in 'output_uri_prefix' must exist and there must
+     * be no files under 'output_uri_prefix'. 'output_uri_prefix' must end with
+     * "/" and start with "gs://". One 'output_uri_prefix' can only be used by one
+     * batch translation job at a time. Otherwise an INVALID_ARGUMENT (400) error
+     * is returned.
      * </pre>
      *
-     * <code>string output_uri_prefix = 1;</code>
+     * <code>string output_uri_prefix = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return The bytes for outputUriPrefix.
      */
@@ -533,12 +541,14 @@ public final class GcsDestination extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. There must be no files under 'output_uri_prefix'.
-     * 'output_uri_prefix' must end with "/" and start with "gs://", otherwise an
-     * INVALID_ARGUMENT (400) error is returned.
+     * Required. The bucket used in 'output_uri_prefix' must exist and there must
+     * be no files under 'output_uri_prefix'. 'output_uri_prefix' must end with
+     * "/" and start with "gs://". One 'output_uri_prefix' can only be used by one
+     * batch translation job at a time. Otherwise an INVALID_ARGUMENT (400) error
+     * is returned.
      * </pre>
      *
-     * <code>string output_uri_prefix = 1;</code>
+     * <code>string output_uri_prefix = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @param value The outputUriPrefix to set.
      * @return This builder for chaining.
@@ -556,12 +566,14 @@ public final class GcsDestination extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. There must be no files under 'output_uri_prefix'.
-     * 'output_uri_prefix' must end with "/" and start with "gs://", otherwise an
-     * INVALID_ARGUMENT (400) error is returned.
+     * Required. The bucket used in 'output_uri_prefix' must exist and there must
+     * be no files under 'output_uri_prefix'. 'output_uri_prefix' must end with
+     * "/" and start with "gs://". One 'output_uri_prefix' can only be used by one
+     * batch translation job at a time. Otherwise an INVALID_ARGUMENT (400) error
+     * is returned.
      * </pre>
      *
-     * <code>string output_uri_prefix = 1;</code>
+     * <code>string output_uri_prefix = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return This builder for chaining.
      */
@@ -575,12 +587,14 @@ public final class GcsDestination extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. There must be no files under 'output_uri_prefix'.
-     * 'output_uri_prefix' must end with "/" and start with "gs://", otherwise an
-     * INVALID_ARGUMENT (400) error is returned.
+     * Required. The bucket used in 'output_uri_prefix' must exist and there must
+     * be no files under 'output_uri_prefix'. 'output_uri_prefix' must end with
+     * "/" and start with "gs://". One 'output_uri_prefix' can only be used by one
+     * batch translation job at a time. Otherwise an INVALID_ARGUMENT (400) error
+     * is returned.
      * </pre>
      *
-     * <code>string output_uri_prefix = 1;</code>
+     * <code>string output_uri_prefix = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @param value The bytes for outputUriPrefix to set.
      * @return This builder for chaining.
