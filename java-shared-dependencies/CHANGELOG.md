@@ -1,5 +1,21 @@
 # Changelog
 
+## [2.2.0](https://www.github.com/googleapis/java-shared-dependencies/compare/2.1.0...v2.2.0) (2021-08-31)
+
+
+### Dependencies
+
+* update dependency com.fasterxml.jackson:jackson-bom to v2.12.5 ([#456](https://www.github.com/googleapis/java-shared-dependencies/issues/456)) ([05b58e8](https://www.github.com/googleapis/java-shared-dependencies/commit/05b58e84ff6617bdcbb1ea644aa6e061bdea0319))
+* update dependency com.google.api:api-common to v2.0.2 ([#450](https://www.github.com/googleapis/java-shared-dependencies/issues/450)) ([51caebe](https://www.github.com/googleapis/java-shared-dependencies/commit/51caebe89bfade98866f63952bf82bc663a0179a))
+* update dependency com.google.http-client:google-http-client-bom to v1.40.0 ([#455](https://www.github.com/googleapis/java-shared-dependencies/issues/455)) ([82a5e42](https://www.github.com/googleapis/java-shared-dependencies/commit/82a5e42b06570a2c7c9d53b03161b110a44487a1))
+* update dependency com.google.oauth-client:google-oauth-client-bom to v1.32.1 ([#447](https://www.github.com/googleapis/java-shared-dependencies/issues/447)) ([9d2b895](https://www.github.com/googleapis/java-shared-dependencies/commit/9d2b8958f62daa6a3015a8ac052762fb3d79b35b))
+* update dependency io.grpc:grpc-bom to v1.40.1 ([#451](https://www.github.com/googleapis/java-shared-dependencies/issues/451)) ([df668ea](https://www.github.com/googleapis/java-shared-dependencies/commit/df668ead8830a40acf9d5605d47f93c465b779c0))
+* update gax.version to v2.4.0 ([#458](https://www.github.com/googleapis/java-shared-dependencies/issues/458)) ([a797d9e](https://www.github.com/googleapis/java-shared-dependencies/commit/a797d9eb8a4bcb3025a9511eae61271278a4a5c9))
+* update google.common-protos.version to v2.5.0 ([#457](https://www.github.com/googleapis/java-shared-dependencies/issues/457)) ([38c7bb9](https://www.github.com/googleapis/java-shared-dependencies/commit/38c7bb925414d90ff3065650d06589f79bcab9b6))
+* update google.core.version to v2.1.1 ([#449](https://www.github.com/googleapis/java-shared-dependencies/issues/449)) ([b28723a](https://www.github.com/googleapis/java-shared-dependencies/commit/b28723ace0c27ebc73f23a2d094e0fe9ba8a9075))
+* update google.core.version to v2.1.2 ([#459](https://www.github.com/googleapis/java-shared-dependencies/issues/459)) ([df4d5b7](https://www.github.com/googleapis/java-shared-dependencies/commit/df4d5b7717386f5e0e2cca87bd9afc56b2c7aee8))
+* update iam.version to v1.1.0 ([#448](https://www.github.com/googleapis/java-shared-dependencies/issues/448)) ([3967928](https://www.github.com/googleapis/java-shared-dependencies/commit/39679287f3ef8c1cbca5dfc8aca3f69cfee3d4a6))
+
 ## [2.1.0](https://www.github.com/googleapis/java-shared-dependencies/compare/2.0.1...v2.1.0) (2021-08-23)
 
 
