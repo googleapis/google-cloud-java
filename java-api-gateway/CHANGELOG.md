@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.1.0](https://www.github.com/googleapis/java-api-gateway/compare/v2.0.2...v2.1.0) (2021-08-31)
+
+
+### Features
+
+* Remove use of deprecated gradle command in java README ([#1196](https://www.github.com/googleapis/java-api-gateway/issues/1196)) ([#123](https://www.github.com/googleapis/java-api-gateway/issues/123)) ([0261753](https://www.github.com/googleapis/java-api-gateway/commit/026175339d0cea9c034c571412c2397bf2f55d31))
+
 ### [2.0.2](https://www.github.com/googleapis/java-api-gateway/compare/v2.0.1...v2.0.2) (2021-08-23)
 
 
