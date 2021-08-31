@@ -51,12 +51,12 @@ If you are using Gradle 5.x or later, add this to your dependencies
 ```Groovy
 implementation platform('com.google.cloud:libraries-bom:22.0.0')
 
-compile 'com.google.cloud:google-cloud-os-login'
+implementation 'com.google.cloud:google-cloud-os-login'
 ```
 If you are using Gradle without BOM, add this to your dependencies
 
 ```Groovy
-compile 'com.google.cloud:google-cloud-os-login:2.0.2'
+implementation 'com.google.cloud:google-cloud-os-login:2.0.2'
 ```
 
 If you are using SBT, add this to your dependencies
