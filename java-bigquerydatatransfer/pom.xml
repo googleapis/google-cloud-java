@@ -118,10 +118,10 @@
   </build>
 
   <modules>
-    <module>proto-google-cloud-bigquerydatatransfer-v1</module>
-    <module>grpc-google-cloud-bigquerydatatransfer-v1</module>
     <module>google-cloud-bigquerydatatransfer</module>
-  <module>google-cloud-bigquerydatatransfer-bom</module>
+    <module>grpc-google-cloud-bigquerydatatransfer-v1</module>
+    <module>proto-google-cloud-bigquerydatatransfer-v1</module>
+    <module>google-cloud-bigquerydatatransfer-bom</module>
   </modules>
 
   <reporting>
