@@ -1,5 +1,18 @@
 # Changelog
 
+## [2.1.0](https://www.github.com/googleapis/java-dataproc/compare/v2.0.2...v2.1.0) (2021-08-31)
+
+
+### Features
+
+* Remove use of deprecated gradle command in java README ([#1196](https://www.github.com/googleapis/java-dataproc/issues/1196)) ([#655](https://www.github.com/googleapis/java-dataproc/issues/655)) ([abd29be](https://www.github.com/googleapis/java-dataproc/commit/abd29beeb85a2e2bf9063c54d51f7339fbfb1c42))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.2.0 ([#658](https://www.github.com/googleapis/java-dataproc/issues/658)) ([313dab9](https://www.github.com/googleapis/java-dataproc/commit/313dab9c1f34626ca3c2f97a93891786426b04c3))
+* update dependency com.google.cloud:google-cloud-storage to v2.1.0 ([#652](https://www.github.com/googleapis/java-dataproc/issues/652)) ([3cc8f67](https://www.github.com/googleapis/java-dataproc/commit/3cc8f67b6695411043d01692b1cfcd1031437c1f))
+
 ### [2.0.2](https://www.github.com/googleapis/java-dataproc/compare/v2.0.1...v2.0.2) (2021-08-24)
 
 
