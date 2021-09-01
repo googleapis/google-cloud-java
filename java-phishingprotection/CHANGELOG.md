@@ -1,5 +1,17 @@
 # Changelog
 
+## [0.32.0](https://www.github.com/googleapis/java-phishingprotection/compare/v0.31.2...v0.32.0) (2021-09-01)
+
+
+### Features
+
+* Remove use of deprecated gradle command in java README ([#1196](https://www.github.com/googleapis/java-phishingprotection/issues/1196)) ([#532](https://www.github.com/googleapis/java-phishingprotection/issues/532)) ([bb433c2](https://www.github.com/googleapis/java-phishingprotection/commit/bb433c24a4554107e3dc25ab7e351ccc29dcfe82))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.2.0 ([#534](https://www.github.com/googleapis/java-phishingprotection/issues/534)) ([d98cf2b](https://www.github.com/googleapis/java-phishingprotection/commit/d98cf2b18aa45abc9a730585def49196254c6629))
+
 ### [0.31.2](https://www.github.com/googleapis/java-phishingprotection/compare/v0.31.1...v0.31.2) (2021-08-23)
 
 
