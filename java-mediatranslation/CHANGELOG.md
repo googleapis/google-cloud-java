@@ -1,5 +1,17 @@
 # Changelog
 
+## [0.7.0](https://www.github.com/googleapis/java-mediatranslation/compare/v0.6.2...v0.7.0) (2021-09-01)
+
+
+### Features
+
+* Remove use of deprecated gradle command in java README ([#1196](https://www.github.com/googleapis/java-mediatranslation/issues/1196)) ([#522](https://www.github.com/googleapis/java-mediatranslation/issues/522)) ([349150c](https://www.github.com/googleapis/java-mediatranslation/commit/349150c6b96c8a7f9977f02415560badd07ff525))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.2.0 ([#525](https://www.github.com/googleapis/java-mediatranslation/issues/525)) ([e3d023c](https://www.github.com/googleapis/java-mediatranslation/commit/e3d023c6f85b345bba47e6a79ff69246707347e6))
+
 ### [0.6.2](https://www.github.com/googleapis/java-mediatranslation/compare/v0.6.1...v0.6.2) (2021-08-23)
 
 
