@@ -1748,11 +1748,12 @@ public class KeyManagementServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Imports a new [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] into an existing
-   * [CryptoKey][google.cloud.kms.v1.CryptoKey] using the wrapped key material provided in the
-   * request.
+   * Import wrapped key material into a [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion].
    *
-   * <p>The version ID will be assigned the next sequential id within the
+   * <p>All requests must specify a [CryptoKey][google.cloud.kms.v1.CryptoKey]. If a
+   * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] is additionally specified in the
+   * request, key material will be reimported into that version. Otherwise, a new version will be
+   * created, and will be assigned the next sequential id within the
    * [CryptoKey][google.cloud.kms.v1.CryptoKey].
    *
    * <p>Sample code:
@@ -1764,6 +1765,14 @@ public class KeyManagementServiceClient implements BackgroundResource {
    *       ImportCryptoKeyVersionRequest.newBuilder()
    *           .setParent(
    *               CryptoKeyName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]", "[CRYPTO_KEY]")
+   *                   .toString())
+   *           .setCryptoKeyVersion(
+   *               CryptoKeyVersionName.of(
+   *                       "[PROJECT]",
+   *                       "[LOCATION]",
+   *                       "[KEY_RING]",
+   *                       "[CRYPTO_KEY]",
+   *                       "[CRYPTO_KEY_VERSION]")
    *                   .toString())
    *           .setImportJob("importJob-208547368")
    *           .build();
@@ -1780,11 +1789,12 @@ public class KeyManagementServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Imports a new [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] into an existing
-   * [CryptoKey][google.cloud.kms.v1.CryptoKey] using the wrapped key material provided in the
-   * request.
+   * Import wrapped key material into a [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion].
    *
-   * <p>The version ID will be assigned the next sequential id within the
+   * <p>All requests must specify a [CryptoKey][google.cloud.kms.v1.CryptoKey]. If a
+   * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] is additionally specified in the
+   * request, key material will be reimported into that version. Otherwise, a new version will be
+   * created, and will be assigned the next sequential id within the
    * [CryptoKey][google.cloud.kms.v1.CryptoKey].
    *
    * <p>Sample code:
@@ -1796,6 +1806,14 @@ public class KeyManagementServiceClient implements BackgroundResource {
    *       ImportCryptoKeyVersionRequest.newBuilder()
    *           .setParent(
    *               CryptoKeyName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]", "[CRYPTO_KEY]")
+   *                   .toString())
+   *           .setCryptoKeyVersion(
+   *               CryptoKeyVersionName.of(
+   *                       "[PROJECT]",
+   *                       "[LOCATION]",
+   *                       "[KEY_RING]",
+   *                       "[CRYPTO_KEY]",
+   *                       "[CRYPTO_KEY_VERSION]")
    *                   .toString())
    *           .setImportJob("importJob-208547368")
    *           .build();
@@ -2275,10 +2293,11 @@ public class KeyManagementServiceClient implements BackgroundResource {
    *
    * <p>Upon calling this method,
    * [CryptoKeyVersion.state][google.cloud.kms.v1.CryptoKeyVersion.state] will be set to
-   * [DESTROY_SCHEDULED][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionState.DESTROY_SCHEDULED]
-   * and [destroy_time][google.cloud.kms.v1.CryptoKeyVersion.destroy_time] will be set to a time 24
-   * hours in the future, at which point the [state][google.cloud.kms.v1.CryptoKeyVersion.state]
-   * will be changed to
+   * [DESTROY_SCHEDULED][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionState.DESTROY_SCHEDULED],
+   * and [destroy_time][google.cloud.kms.v1.CryptoKeyVersion.destroy_time] will be set to the time
+   * [destroy_scheduled_duration][google.cloud.kms.v1.CryptoKey.destroy_scheduled_duration] in the
+   * future. At that time, the [state][google.cloud.kms.v1.CryptoKeyVersion.state] will
+   * automatically change to
    * [DESTROYED][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionState.DESTROYED], and the key
    * material will be irrevocably destroyed.
    *
@@ -2316,10 +2335,11 @@ public class KeyManagementServiceClient implements BackgroundResource {
    *
    * <p>Upon calling this method,
    * [CryptoKeyVersion.state][google.cloud.kms.v1.CryptoKeyVersion.state] will be set to
-   * [DESTROY_SCHEDULED][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionState.DESTROY_SCHEDULED]
-   * and [destroy_time][google.cloud.kms.v1.CryptoKeyVersion.destroy_time] will be set to a time 24
-   * hours in the future, at which point the [state][google.cloud.kms.v1.CryptoKeyVersion.state]
-   * will be changed to
+   * [DESTROY_SCHEDULED][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionState.DESTROY_SCHEDULED],
+   * and [destroy_time][google.cloud.kms.v1.CryptoKeyVersion.destroy_time] will be set to the time
+   * [destroy_scheduled_duration][google.cloud.kms.v1.CryptoKey.destroy_scheduled_duration] in the
+   * future. At that time, the [state][google.cloud.kms.v1.CryptoKeyVersion.state] will
+   * automatically change to
    * [DESTROYED][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionState.DESTROYED], and the key
    * material will be irrevocably destroyed.
    *
@@ -2356,10 +2376,11 @@ public class KeyManagementServiceClient implements BackgroundResource {
    *
    * <p>Upon calling this method,
    * [CryptoKeyVersion.state][google.cloud.kms.v1.CryptoKeyVersion.state] will be set to
-   * [DESTROY_SCHEDULED][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionState.DESTROY_SCHEDULED]
-   * and [destroy_time][google.cloud.kms.v1.CryptoKeyVersion.destroy_time] will be set to a time 24
-   * hours in the future, at which point the [state][google.cloud.kms.v1.CryptoKeyVersion.state]
-   * will be changed to
+   * [DESTROY_SCHEDULED][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionState.DESTROY_SCHEDULED],
+   * and [destroy_time][google.cloud.kms.v1.CryptoKeyVersion.destroy_time] will be set to the time
+   * [destroy_scheduled_duration][google.cloud.kms.v1.CryptoKey.destroy_scheduled_duration] in the
+   * future. At that time, the [state][google.cloud.kms.v1.CryptoKeyVersion.state] will
+   * automatically change to
    * [DESTROYED][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionState.DESTROYED], and the key
    * material will be irrevocably destroyed.
    *
@@ -2400,10 +2421,11 @@ public class KeyManagementServiceClient implements BackgroundResource {
    *
    * <p>Upon calling this method,
    * [CryptoKeyVersion.state][google.cloud.kms.v1.CryptoKeyVersion.state] will be set to
-   * [DESTROY_SCHEDULED][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionState.DESTROY_SCHEDULED]
-   * and [destroy_time][google.cloud.kms.v1.CryptoKeyVersion.destroy_time] will be set to a time 24
-   * hours in the future, at which point the [state][google.cloud.kms.v1.CryptoKeyVersion.state]
-   * will be changed to
+   * [DESTROY_SCHEDULED][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionState.DESTROY_SCHEDULED],
+   * and [destroy_time][google.cloud.kms.v1.CryptoKeyVersion.destroy_time] will be set to the time
+   * [destroy_scheduled_duration][google.cloud.kms.v1.CryptoKey.destroy_scheduled_duration] in the
+   * future. At that time, the [state][google.cloud.kms.v1.CryptoKeyVersion.state] will
+   * automatically change to
    * [DESTROYED][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionState.DESTROYED], and the key
    * material will be irrevocably destroyed.
    *

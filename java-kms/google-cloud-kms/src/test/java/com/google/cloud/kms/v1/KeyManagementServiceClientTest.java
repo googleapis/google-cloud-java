@@ -651,6 +651,7 @@ public class KeyManagementServiceClientTest {
             .setImportTime(Timestamp.newBuilder().build())
             .setImportFailureReason("importFailureReason985493705")
             .setExternalProtectionLevelOptions(ExternalProtectionLevelOptions.newBuilder().build())
+            .setReimportEligible(true)
             .build();
     mockKeyManagementService.addResponse(expectedResponse);
 
@@ -710,6 +711,7 @@ public class KeyManagementServiceClientTest {
             .setImportTime(Timestamp.newBuilder().build())
             .setImportFailureReason("importFailureReason985493705")
             .setExternalProtectionLevelOptions(ExternalProtectionLevelOptions.newBuilder().build())
+            .setReimportEligible(true)
             .build();
     mockKeyManagementService.addResponse(expectedResponse);
 
@@ -1142,6 +1144,7 @@ public class KeyManagementServiceClientTest {
             .setImportTime(Timestamp.newBuilder().build())
             .setImportFailureReason("importFailureReason985493705")
             .setExternalProtectionLevelOptions(ExternalProtectionLevelOptions.newBuilder().build())
+            .setReimportEligible(true)
             .build();
     mockKeyManagementService.addResponse(expectedResponse);
 
@@ -1203,6 +1206,7 @@ public class KeyManagementServiceClientTest {
             .setImportTime(Timestamp.newBuilder().build())
             .setImportFailureReason("importFailureReason985493705")
             .setExternalProtectionLevelOptions(ExternalProtectionLevelOptions.newBuilder().build())
+            .setReimportEligible(true)
             .build();
     mockKeyManagementService.addResponse(expectedResponse);
 
@@ -1262,6 +1266,7 @@ public class KeyManagementServiceClientTest {
             .setImportTime(Timestamp.newBuilder().build())
             .setImportFailureReason("importFailureReason985493705")
             .setExternalProtectionLevelOptions(ExternalProtectionLevelOptions.newBuilder().build())
+            .setReimportEligible(true)
             .build();
     mockKeyManagementService.addResponse(expectedResponse);
 
@@ -1269,6 +1274,14 @@ public class KeyManagementServiceClientTest {
         ImportCryptoKeyVersionRequest.newBuilder()
             .setParent(
                 CryptoKeyName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]", "[CRYPTO_KEY]")
+                    .toString())
+            .setCryptoKeyVersion(
+                CryptoKeyVersionName.of(
+                        "[PROJECT]",
+                        "[LOCATION]",
+                        "[KEY_RING]",
+                        "[CRYPTO_KEY]",
+                        "[CRYPTO_KEY_VERSION]")
                     .toString())
             .setImportJob("importJob-208547368")
             .build();
@@ -1282,6 +1295,7 @@ public class KeyManagementServiceClientTest {
         ((ImportCryptoKeyVersionRequest) actualRequests.get(0));
 
     Assert.assertEquals(request.getParent(), actualRequest.getParent());
+    Assert.assertEquals(request.getCryptoKeyVersion(), actualRequest.getCryptoKeyVersion());
     Assert.assertEquals(request.getAlgorithm(), actualRequest.getAlgorithm());
     Assert.assertEquals(request.getImportJob(), actualRequest.getImportJob());
     Assert.assertEquals(request.getRsaAesWrappedKey(), actualRequest.getRsaAesWrappedKey());
@@ -1301,6 +1315,14 @@ public class KeyManagementServiceClientTest {
           ImportCryptoKeyVersionRequest.newBuilder()
               .setParent(
                   CryptoKeyName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]", "[CRYPTO_KEY]")
+                      .toString())
+              .setCryptoKeyVersion(
+                  CryptoKeyVersionName.of(
+                          "[PROJECT]",
+                          "[LOCATION]",
+                          "[KEY_RING]",
+                          "[CRYPTO_KEY]",
+                          "[CRYPTO_KEY_VERSION]")
                       .toString())
               .setImportJob("importJob-208547368")
               .build();
@@ -1489,6 +1511,7 @@ public class KeyManagementServiceClientTest {
             .setImportTime(Timestamp.newBuilder().build())
             .setImportFailureReason("importFailureReason985493705")
             .setExternalProtectionLevelOptions(ExternalProtectionLevelOptions.newBuilder().build())
+            .setReimportEligible(true)
             .build();
     mockKeyManagementService.addResponse(expectedResponse);
 
@@ -1651,6 +1674,7 @@ public class KeyManagementServiceClientTest {
             .setImportTime(Timestamp.newBuilder().build())
             .setImportFailureReason("importFailureReason985493705")
             .setExternalProtectionLevelOptions(ExternalProtectionLevelOptions.newBuilder().build())
+            .setReimportEligible(true)
             .build();
     mockKeyManagementService.addResponse(expectedResponse);
 
@@ -1711,6 +1735,7 @@ public class KeyManagementServiceClientTest {
             .setImportTime(Timestamp.newBuilder().build())
             .setImportFailureReason("importFailureReason985493705")
             .setExternalProtectionLevelOptions(ExternalProtectionLevelOptions.newBuilder().build())
+            .setReimportEligible(true)
             .build();
     mockKeyManagementService.addResponse(expectedResponse);
 
@@ -1767,6 +1792,7 @@ public class KeyManagementServiceClientTest {
             .setImportTime(Timestamp.newBuilder().build())
             .setImportFailureReason("importFailureReason985493705")
             .setExternalProtectionLevelOptions(ExternalProtectionLevelOptions.newBuilder().build())
+            .setReimportEligible(true)
             .build();
     mockKeyManagementService.addResponse(expectedResponse);
 
@@ -1827,6 +1853,7 @@ public class KeyManagementServiceClientTest {
             .setImportTime(Timestamp.newBuilder().build())
             .setImportFailureReason("importFailureReason985493705")
             .setExternalProtectionLevelOptions(ExternalProtectionLevelOptions.newBuilder().build())
+            .setReimportEligible(true)
             .build();
     mockKeyManagementService.addResponse(expectedResponse);
 

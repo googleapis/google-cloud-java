@@ -27,8 +27,9 @@ public interface ImportCryptoKeyVersionRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The [name][google.cloud.kms.v1.CryptoKey.name] of the [CryptoKey][google.cloud.kms.v1.CryptoKey] to
-   * be imported into.
+   * Required. The [name][google.cloud.kms.v1.CryptoKey.name] of the [CryptoKey][google.cloud.kms.v1.CryptoKey] to be imported into.
+   * The create permission is only required on this key when creating a new
+   * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion].
    * </pre>
    *
    * <code>
@@ -42,8 +43,9 @@ public interface ImportCryptoKeyVersionRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The [name][google.cloud.kms.v1.CryptoKey.name] of the [CryptoKey][google.cloud.kms.v1.CryptoKey] to
-   * be imported into.
+   * Required. The [name][google.cloud.kms.v1.CryptoKey.name] of the [CryptoKey][google.cloud.kms.v1.CryptoKey] to be imported into.
+   * The create permission is only required on this key when creating a new
+   * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion].
    * </pre>
    *
    * <code>
@@ -53,6 +55,61 @@ public interface ImportCryptoKeyVersionRequestOrBuilder
    * @return The bytes for parent.
    */
   com.google.protobuf.ByteString getParentBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The optional [name][google.cloud.kms.v1.CryptoKeyVersion.name] of an existing
+   * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] to target for an import operation.
+   * If this field is not present, a new [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] containing the
+   * supplied key material is created.
+   * If this field is present, the supplied key material is imported into
+   * the existing [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion]. To import into an existing
+   * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion], the [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] must be a child of
+   * [ImportCryptoKeyVersionRequest.parent][google.cloud.kms.v1.ImportCryptoKeyVersionRequest.parent], have been previously created via
+   * [ImportCryptoKeyVersion][], and be in
+   * [DESTROYED][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionState.DESTROYED] or
+   * [IMPORT_FAILED][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionState.IMPORT_FAILED]
+   * state. The key material and algorithm must match the previous
+   * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] exactly if the [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] has ever contained
+   * key material.
+   * </pre>
+   *
+   * <code>
+   * string crypto_key_version = 6 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The cryptoKeyVersion.
+   */
+  java.lang.String getCryptoKeyVersion();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The optional [name][google.cloud.kms.v1.CryptoKeyVersion.name] of an existing
+   * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] to target for an import operation.
+   * If this field is not present, a new [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] containing the
+   * supplied key material is created.
+   * If this field is present, the supplied key material is imported into
+   * the existing [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion]. To import into an existing
+   * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion], the [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] must be a child of
+   * [ImportCryptoKeyVersionRequest.parent][google.cloud.kms.v1.ImportCryptoKeyVersionRequest.parent], have been previously created via
+   * [ImportCryptoKeyVersion][], and be in
+   * [DESTROYED][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionState.DESTROYED] or
+   * [IMPORT_FAILED][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionState.IMPORT_FAILED]
+   * state. The key material and algorithm must match the previous
+   * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] exactly if the [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] has ever contained
+   * key material.
+   * </pre>
+   *
+   * <code>
+   * string crypto_key_version = 6 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The bytes for cryptoKeyVersion.
+   */
+  com.google.protobuf.ByteString getCryptoKeyVersionBytes();
 
   /**
    *

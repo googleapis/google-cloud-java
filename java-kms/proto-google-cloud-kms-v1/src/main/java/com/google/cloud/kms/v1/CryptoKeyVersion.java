@@ -232,6 +232,11 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
 
               break;
             }
+          case 144:
+            {
+              reimportEligible_ = input.readBool();
+              break;
+            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -866,6 +871,10 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * This version is destroyed, and the key material is no longer stored.
+     * This version may only become [ENABLED][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionState.ENABLED] again if this version is
+     * [reimport_eligible][google.cloud.kms.v1.CryptoKeyVersion.reimport_eligible] and the original
+     * key material is reimported with a call to
+     * [KeyManagementService.ImportCryptoKeyVersion][google.cloud.kms.v1.KeyManagementService.ImportCryptoKeyVersion].
      * </pre>
      *
      * <code>DESTROYED = 3;</code>
@@ -960,6 +969,10 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * This version is destroyed, and the key material is no longer stored.
+     * This version may only become [ENABLED][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionState.ENABLED] again if this version is
+     * [reimport_eligible][google.cloud.kms.v1.CryptoKeyVersion.reimport_eligible] and the original
+     * key material is reimported with a call to
+     * [KeyManagementService.ImportCryptoKeyVersion][google.cloud.kms.v1.KeyManagementService.ImportCryptoKeyVersion].
      * </pre>
      *
      * <code>DESTROYED = 3;</code>
@@ -1710,7 +1723,7 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Output only. The name of the [ImportJob][google.cloud.kms.v1.ImportJob] used to import this
+   * Output only. The name of the [ImportJob][google.cloud.kms.v1.ImportJob] used in the most recent import of this
    * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion]. Only present if the underlying key material was
    * imported.
    * </pre>
@@ -1735,7 +1748,7 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Output only. The name of the [ImportJob][google.cloud.kms.v1.ImportJob] used to import this
+   * Output only. The name of the [ImportJob][google.cloud.kms.v1.ImportJob] used in the most recent import of this
    * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion]. Only present if the underlying key material was
    * imported.
    * </pre>
@@ -1764,7 +1777,7 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * Output only. The time at which this [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion]'s key material
-   * was imported.
+   * was most recently imported.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp import_time = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -1781,7 +1794,7 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * Output only. The time at which this [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion]'s key material
-   * was imported.
+   * was most recently imported.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp import_time = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -1798,7 +1811,7 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * Output only. The time at which this [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion]'s key material
-   * was imported.
+   * was most recently imported.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp import_time = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -1815,7 +1828,7 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Output only. The root cause of an import failure. Only present if
+   * Output only. The root cause of the most recent import failure. Only present if
    * [state][google.cloud.kms.v1.CryptoKeyVersion.state] is
    * [IMPORT_FAILED][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionState.IMPORT_FAILED].
    * </pre>
@@ -1840,7 +1853,7 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Output only. The root cause of an import failure. Only present if
+   * Output only. The root cause of the most recent import failure. Only present if
    * [state][google.cloud.kms.v1.CryptoKeyVersion.state] is
    * [IMPORT_FAILED][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionState.IMPORT_FAILED].
    * </pre>
@@ -1924,6 +1937,26 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
     return getExternalProtectionLevelOptions();
   }
 
+  public static final int REIMPORT_ELIGIBLE_FIELD_NUMBER = 18;
+  private boolean reimportEligible_;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Whether or not this key version is eligible for reimport, by being
+   * specified as a target in
+   * [ImportCryptoKeyVersionRequest.crypto_key_version][google.cloud.kms.v1.ImportCryptoKeyVersionRequest.crypto_key_version].
+   * </pre>
+   *
+   * <code>bool reimport_eligible = 18 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The reimportEligible.
+   */
+  @java.lang.Override
+  public boolean getReimportEligible() {
+    return reimportEligible_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -1984,6 +2017,9 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
     if (externalProtectionLevelOptions_ != null) {
       output.writeMessage(17, getExternalProtectionLevelOptions());
     }
+    if (reimportEligible_ != false) {
+      output.writeBool(18, reimportEligible_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -2041,6 +2077,9 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               17, getExternalProtectionLevelOptions());
     }
+    if (reimportEligible_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(18, reimportEligible_);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -2092,6 +2131,7 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
       if (!getExternalProtectionLevelOptions().equals(other.getExternalProtectionLevelOptions()))
         return false;
     }
+    if (getReimportEligible() != other.getReimportEligible()) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -2143,6 +2183,8 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
       hash = (37 * hash) + EXTERNAL_PROTECTION_LEVEL_OPTIONS_FIELD_NUMBER;
       hash = (53 * hash) + getExternalProtectionLevelOptions().hashCode();
     }
+    hash = (37 * hash) + REIMPORT_ELIGIBLE_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getReimportEligible());
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -2349,6 +2391,8 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
         externalProtectionLevelOptions_ = null;
         externalProtectionLevelOptionsBuilder_ = null;
       }
+      reimportEligible_ = false;
+
       return this;
     }
 
@@ -2417,6 +2461,7 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
       } else {
         result.externalProtectionLevelOptions_ = externalProtectionLevelOptionsBuilder_.build();
       }
+      result.reimportEligible_ = reimportEligible_;
       onBuilt();
       return result;
     }
@@ -2507,6 +2552,9 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
       }
       if (other.hasExternalProtectionLevelOptions()) {
         mergeExternalProtectionLevelOptions(other.getExternalProtectionLevelOptions());
+      }
+      if (other.getReimportEligible() != false) {
+        setReimportEligible(other.getReimportEligible());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -4047,7 +4095,7 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. The name of the [ImportJob][google.cloud.kms.v1.ImportJob] used to import this
+     * Output only. The name of the [ImportJob][google.cloud.kms.v1.ImportJob] used in the most recent import of this
      * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion]. Only present if the underlying key material was
      * imported.
      * </pre>
@@ -4071,7 +4119,7 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. The name of the [ImportJob][google.cloud.kms.v1.ImportJob] used to import this
+     * Output only. The name of the [ImportJob][google.cloud.kms.v1.ImportJob] used in the most recent import of this
      * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion]. Only present if the underlying key material was
      * imported.
      * </pre>
@@ -4095,7 +4143,7 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. The name of the [ImportJob][google.cloud.kms.v1.ImportJob] used to import this
+     * Output only. The name of the [ImportJob][google.cloud.kms.v1.ImportJob] used in the most recent import of this
      * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion]. Only present if the underlying key material was
      * imported.
      * </pre>
@@ -4118,7 +4166,7 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. The name of the [ImportJob][google.cloud.kms.v1.ImportJob] used to import this
+     * Output only. The name of the [ImportJob][google.cloud.kms.v1.ImportJob] used in the most recent import of this
      * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion]. Only present if the underlying key material was
      * imported.
      * </pre>
@@ -4137,7 +4185,7 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. The name of the [ImportJob][google.cloud.kms.v1.ImportJob] used to import this
+     * Output only. The name of the [ImportJob][google.cloud.kms.v1.ImportJob] used in the most recent import of this
      * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion]. Only present if the underlying key material was
      * imported.
      * </pre>
@@ -4169,7 +4217,7 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Output only. The time at which this [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion]'s key material
-     * was imported.
+     * was most recently imported.
      * </pre>
      *
      * <code>
@@ -4186,7 +4234,7 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Output only. The time at which this [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion]'s key material
-     * was imported.
+     * was most recently imported.
      * </pre>
      *
      * <code>
@@ -4209,7 +4257,7 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Output only. The time at which this [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion]'s key material
-     * was imported.
+     * was most recently imported.
      * </pre>
      *
      * <code>
@@ -4234,7 +4282,7 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Output only. The time at which this [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion]'s key material
-     * was imported.
+     * was most recently imported.
      * </pre>
      *
      * <code>
@@ -4256,7 +4304,7 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Output only. The time at which this [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion]'s key material
-     * was imported.
+     * was most recently imported.
      * </pre>
      *
      * <code>
@@ -4283,7 +4331,7 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Output only. The time at which this [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion]'s key material
-     * was imported.
+     * was most recently imported.
      * </pre>
      *
      * <code>
@@ -4306,7 +4354,7 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Output only. The time at which this [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion]'s key material
-     * was imported.
+     * was most recently imported.
      * </pre>
      *
      * <code>
@@ -4323,7 +4371,7 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Output only. The time at which this [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion]'s key material
-     * was imported.
+     * was most recently imported.
      * </pre>
      *
      * <code>
@@ -4344,7 +4392,7 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Output only. The time at which this [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion]'s key material
-     * was imported.
+     * was most recently imported.
      * </pre>
      *
      * <code>
@@ -4373,7 +4421,7 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. The root cause of an import failure. Only present if
+     * Output only. The root cause of the most recent import failure. Only present if
      * [state][google.cloud.kms.v1.CryptoKeyVersion.state] is
      * [IMPORT_FAILED][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionState.IMPORT_FAILED].
      * </pre>
@@ -4397,7 +4445,7 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. The root cause of an import failure. Only present if
+     * Output only. The root cause of the most recent import failure. Only present if
      * [state][google.cloud.kms.v1.CryptoKeyVersion.state] is
      * [IMPORT_FAILED][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionState.IMPORT_FAILED].
      * </pre>
@@ -4421,7 +4469,7 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. The root cause of an import failure. Only present if
+     * Output only. The root cause of the most recent import failure. Only present if
      * [state][google.cloud.kms.v1.CryptoKeyVersion.state] is
      * [IMPORT_FAILED][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionState.IMPORT_FAILED].
      * </pre>
@@ -4444,7 +4492,7 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. The root cause of an import failure. Only present if
+     * Output only. The root cause of the most recent import failure. Only present if
      * [state][google.cloud.kms.v1.CryptoKeyVersion.state] is
      * [IMPORT_FAILED][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionState.IMPORT_FAILED].
      * </pre>
@@ -4463,7 +4511,7 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. The root cause of an import failure. Only present if
+     * Output only. The root cause of the most recent import failure. Only present if
      * [state][google.cloud.kms.v1.CryptoKeyVersion.state] is
      * [IMPORT_FAILED][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionState.IMPORT_FAILED].
      * </pre>
@@ -4711,6 +4759,64 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
         externalProtectionLevelOptions_ = null;
       }
       return externalProtectionLevelOptionsBuilder_;
+    }
+
+    private boolean reimportEligible_;
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Whether or not this key version is eligible for reimport, by being
+     * specified as a target in
+     * [ImportCryptoKeyVersionRequest.crypto_key_version][google.cloud.kms.v1.ImportCryptoKeyVersionRequest.crypto_key_version].
+     * </pre>
+     *
+     * <code>bool reimport_eligible = 18 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The reimportEligible.
+     */
+    @java.lang.Override
+    public boolean getReimportEligible() {
+      return reimportEligible_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Whether or not this key version is eligible for reimport, by being
+     * specified as a target in
+     * [ImportCryptoKeyVersionRequest.crypto_key_version][google.cloud.kms.v1.ImportCryptoKeyVersionRequest.crypto_key_version].
+     * </pre>
+     *
+     * <code>bool reimport_eligible = 18 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The reimportEligible to set.
+     * @return This builder for chaining.
+     */
+    public Builder setReimportEligible(boolean value) {
+
+      reimportEligible_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Whether or not this key version is eligible for reimport, by being
+     * specified as a target in
+     * [ImportCryptoKeyVersionRequest.crypto_key_version][google.cloud.kms.v1.ImportCryptoKeyVersionRequest.crypto_key_version].
+     * </pre>
+     *
+     * <code>bool reimport_eligible = 18 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearReimportEligible() {
+
+      reimportEligible_ = false;
+      onChanged();
+      return this;
     }
 
     @java.lang.Override

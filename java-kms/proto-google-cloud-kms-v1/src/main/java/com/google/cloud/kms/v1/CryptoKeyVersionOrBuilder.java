@@ -364,7 +364,7 @@ public interface CryptoKeyVersionOrBuilder
    *
    *
    * <pre>
-   * Output only. The name of the [ImportJob][google.cloud.kms.v1.ImportJob] used to import this
+   * Output only. The name of the [ImportJob][google.cloud.kms.v1.ImportJob] used in the most recent import of this
    * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion]. Only present if the underlying key material was
    * imported.
    * </pre>
@@ -378,7 +378,7 @@ public interface CryptoKeyVersionOrBuilder
    *
    *
    * <pre>
-   * Output only. The name of the [ImportJob][google.cloud.kms.v1.ImportJob] used to import this
+   * Output only. The name of the [ImportJob][google.cloud.kms.v1.ImportJob] used in the most recent import of this
    * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion]. Only present if the underlying key material was
    * imported.
    * </pre>
@@ -394,7 +394,7 @@ public interface CryptoKeyVersionOrBuilder
    *
    * <pre>
    * Output only. The time at which this [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion]'s key material
-   * was imported.
+   * was most recently imported.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp import_time = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -408,7 +408,7 @@ public interface CryptoKeyVersionOrBuilder
    *
    * <pre>
    * Output only. The time at which this [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion]'s key material
-   * was imported.
+   * was most recently imported.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp import_time = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -422,7 +422,7 @@ public interface CryptoKeyVersionOrBuilder
    *
    * <pre>
    * Output only. The time at which this [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion]'s key material
-   * was imported.
+   * was most recently imported.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp import_time = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -434,7 +434,7 @@ public interface CryptoKeyVersionOrBuilder
    *
    *
    * <pre>
-   * Output only. The root cause of an import failure. Only present if
+   * Output only. The root cause of the most recent import failure. Only present if
    * [state][google.cloud.kms.v1.CryptoKeyVersion.state] is
    * [IMPORT_FAILED][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionState.IMPORT_FAILED].
    * </pre>
@@ -448,7 +448,7 @@ public interface CryptoKeyVersionOrBuilder
    *
    *
    * <pre>
-   * Output only. The root cause of an import failure. Only present if
+   * Output only. The root cause of the most recent import failure. Only present if
    * [state][google.cloud.kms.v1.CryptoKeyVersion.state] is
    * [IMPORT_FAILED][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionState.IMPORT_FAILED].
    * </pre>
@@ -506,4 +506,19 @@ public interface CryptoKeyVersionOrBuilder
    */
   com.google.cloud.kms.v1.ExternalProtectionLevelOptionsOrBuilder
       getExternalProtectionLevelOptionsOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Whether or not this key version is eligible for reimport, by being
+   * specified as a target in
+   * [ImportCryptoKeyVersionRequest.crypto_key_version][google.cloud.kms.v1.ImportCryptoKeyVersionRequest.crypto_key_version].
+   * </pre>
+   *
+   * <code>bool reimport_eligible = 18 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The reimportEligible.
+   */
+  boolean getReimportEligible();
 }
