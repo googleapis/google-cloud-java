@@ -167,13 +167,13 @@
   </build>
 
   <modules>
-    <module>proto-google-cloud-bigquerystorage-v1beta1</module>
-    <module>proto-google-cloud-bigquerystorage-v1beta2</module>
-    <module>proto-google-cloud-bigquerystorage-v1</module>
+    <module>google-cloud-bigquerystorage</module>
     <module>grpc-google-cloud-bigquerystorage-v1beta1</module>
     <module>grpc-google-cloud-bigquerystorage-v1beta2</module>
     <module>grpc-google-cloud-bigquerystorage-v1</module>
-    <module>google-cloud-bigquerystorage</module>
+    <module>proto-google-cloud-bigquerystorage-v1beta1</module>
+    <module>proto-google-cloud-bigquerystorage-v1beta2</module>
+    <module>proto-google-cloud-bigquerystorage-v1</module>
     <module>google-cloud-bigquerystorage-bom</module>
   </modules>
 

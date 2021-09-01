@@ -38,7 +38,7 @@ public class WriteCommittedStream {
     String projectId = "MY_PROJECT_ID";
     String datasetName = "MY_DATASET_NAME";
     String tableName = "MY_TABLE_NAME";
-    
+
     writeCommittedStream(projectId, datasetName, tableName);
   }
 
