@@ -1,5 +1,17 @@
 # Changelog
 
+## [2.1.0](https://www.github.com/googleapis/java-tpu/compare/v2.0.2...v2.1.0) (2021-09-01)
+
+
+### Features
+
+* Remove use of deprecated gradle command in java README ([#1196](https://www.github.com/googleapis/java-tpu/issues/1196)) ([#64](https://www.github.com/googleapis/java-tpu/issues/64)) ([9c07009](https://www.github.com/googleapis/java-tpu/commit/9c07009131f0c15ff9b52d99dbed8e947f3bd628))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.2.0 ([#67](https://www.github.com/googleapis/java-tpu/issues/67)) ([9d0f3ba](https://www.github.com/googleapis/java-tpu/commit/9d0f3ba364c520f3184169c027fb36b882570da4))
+
 ### [2.0.2](https://www.github.com/googleapis/java-tpu/compare/v2.0.1...v2.0.2) (2021-08-23)
 
 
