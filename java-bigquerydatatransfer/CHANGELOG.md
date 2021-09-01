@@ -1,5 +1,21 @@
 # Changelog
 
+### [2.0.7](https://www.github.com/googleapis/java-bigquerydatatransfer/compare/v2.0.6...v2.0.7) (2021-08-31)
+
+
+### Documentation
+
+* Improvements to various message and field descriptions ([#1010](https://www.github.com/googleapis/java-bigquerydatatransfer/issues/1010)) ([a857946](https://www.github.com/googleapis/java-bigquerydatatransfer/commit/a85794644c3454a06f4d07628f2adb8ee9bc0c59))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-bigquery to v2.1.3 ([#1012](https://www.github.com/googleapis/java-bigquerydatatransfer/issues/1012)) ([25fe359](https://www.github.com/googleapis/java-bigquerydatatransfer/commit/25fe359f8098af2a1a99b233a3c7e860ae3219c3))
+* update dependency com.google.cloud:google-cloud-bigquery to v2.1.4 ([#1015](https://www.github.com/googleapis/java-bigquerydatatransfer/issues/1015)) ([09dc2d3](https://www.github.com/googleapis/java-bigquerydatatransfer/commit/09dc2d32a4b6d3fdd6da2ce0aef2c6f9dcb48128))
+* update dependency com.google.cloud:google-cloud-bigquery to v2.1.5 ([#1023](https://www.github.com/googleapis/java-bigquerydatatransfer/issues/1023)) ([5e9dabf](https://www.github.com/googleapis/java-bigquerydatatransfer/commit/5e9dabf45ebde472f7559001402584f06f42d7c1))
+* update dependency com.google.cloud:google-cloud-pubsub to v1.114.2 ([#1011](https://www.github.com/googleapis/java-bigquerydatatransfer/issues/1011)) ([da02a76](https://www.github.com/googleapis/java-bigquerydatatransfer/commit/da02a76c649b26ece293eae55a05409fda0cf941))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.2.0 ([#1022](https://www.github.com/googleapis/java-bigquerydatatransfer/issues/1022)) ([fa31042](https://www.github.com/googleapis/java-bigquerydatatransfer/commit/fa31042d040bdde86a3858fdad88ef35cf94c87f))
+
 ### [2.0.6](https://www.github.com/googleapis/java-bigquerydatatransfer/compare/v2.0.5...v2.0.6) (2021-08-24)
 
 
