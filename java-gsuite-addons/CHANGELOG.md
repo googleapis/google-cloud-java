@@ -1,5 +1,17 @@
 # Changelog
 
+## [2.1.0](https://www.github.com/googleapis/java-gsuite-addons/compare/v2.0.1...v2.1.0) (2021-08-31)
+
+
+### Features
+
+* Remove use of deprecated gradle command in java README ([#1196](https://www.github.com/googleapis/java-gsuite-addons/issues/1196)) ([#87](https://www.github.com/googleapis/java-gsuite-addons/issues/87)) ([6440d4f](https://www.github.com/googleapis/java-gsuite-addons/commit/6440d4fe48477583555c0f433736d7a7835a5749))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.2.0 ([#90](https://www.github.com/googleapis/java-gsuite-addons/issues/90)) ([8576707](https://www.github.com/googleapis/java-gsuite-addons/commit/8576707927d29ebf549677ae1cfca12c53180ec6))
+
 ### [2.0.1](https://www.github.com/googleapis/java-gsuite-addons/compare/v2.0.0...v2.0.1) (2021-08-23)
 
 
