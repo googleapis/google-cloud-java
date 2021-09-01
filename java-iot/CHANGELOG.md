@@ -1,5 +1,17 @@
 # Changelog
 
+## [2.1.0](https://www.github.com/googleapis/java-iot/compare/v2.0.2...v2.1.0) (2021-09-01)
+
+
+### Features
+
+* Remove use of deprecated gradle command in java README ([#1196](https://www.github.com/googleapis/java-iot/issues/1196)) ([#587](https://www.github.com/googleapis/java-iot/issues/587)) ([944c08a](https://www.github.com/googleapis/java-iot/commit/944c08a98c04511734fc4bed2524d84330e6634f))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.2.0 ([#590](https://www.github.com/googleapis/java-iot/issues/590)) ([dd89994](https://www.github.com/googleapis/java-iot/commit/dd899945a0036a474ffe6087e16a09e31cf20276))
+
 ### [2.0.2](https://www.github.com/googleapis/java-iot/compare/v2.0.1...v2.0.2) (2021-08-23)
 
 
