@@ -1,5 +1,17 @@
 # Changelog
 
+## [2.1.0](https://www.github.com/googleapis/java-workflows/compare/v2.0.2...v2.1.0) (2021-09-01)
+
+
+### Features
+
+* Remove use of deprecated gradle command in java README ([#1196](https://www.github.com/googleapis/java-workflows/issues/1196)) ([#327](https://www.github.com/googleapis/java-workflows/issues/327)) ([e3c82d9](https://www.github.com/googleapis/java-workflows/commit/e3c82d994db99e9d8606a25faa8f6d763b38d94f))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.2.0 ([#329](https://www.github.com/googleapis/java-workflows/issues/329)) ([dfef32d](https://www.github.com/googleapis/java-workflows/commit/dfef32d14f3b5cf7cfc0b62b405f6ea67a637567))
+
 ### [2.0.2](https://www.github.com/googleapis/java-workflows/compare/v2.0.1...v2.0.2) (2021-08-23)
 
 
