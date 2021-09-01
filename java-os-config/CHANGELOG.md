@@ -1,5 +1,18 @@
 # Changelog
 
+## [2.1.0](https://www.github.com/googleapis/java-os-config/compare/v2.0.2...v2.1.0) (2021-08-31)
+
+
+### Features
+
+* Remove use of deprecated gradle command in java README ([#1196](https://www.github.com/googleapis/java-os-config/issues/1196)) ([#347](https://www.github.com/googleapis/java-os-config/issues/347)) ([a612544](https://www.github.com/googleapis/java-os-config/commit/a6125445307121f1b17d4629430d3804c4dc9d2e))
+* Update osconfig v1 and v1alpha with WindowsApplication ([#348](https://www.github.com/googleapis/java-os-config/issues/348)) ([5317798](https://www.github.com/googleapis/java-os-config/commit/53177980f4a2b05959a81fd6f727e144bec16abd))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.2.0 ([#351](https://www.github.com/googleapis/java-os-config/issues/351)) ([bf58044](https://www.github.com/googleapis/java-os-config/commit/bf58044b65fff5152af184a139d24e2171a510b2))
+
 ### [2.0.2](https://www.github.com/googleapis/java-os-config/compare/v2.0.1...v2.0.2) (2021-08-23)
 
 
