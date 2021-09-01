@@ -1,5 +1,17 @@
 # Changelog
 
+## [0.122.0](https://www.github.com/googleapis/java-datalabeling/compare/v0.121.2...v0.122.0) (2021-09-01)
+
+
+### Features
+
+* Remove use of deprecated gradle command in java README ([#1196](https://www.github.com/googleapis/java-datalabeling/issues/1196)) ([#588](https://www.github.com/googleapis/java-datalabeling/issues/588)) ([1e11758](https://www.github.com/googleapis/java-datalabeling/commit/1e117581d2b8773eb0e91db632a9ba9e5220b82e))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.2.0 ([#590](https://www.github.com/googleapis/java-datalabeling/issues/590)) ([c0ada08](https://www.github.com/googleapis/java-datalabeling/commit/c0ada084c083c2f0dfd8b0b67f45323a8f215ea3))
+
 ### [0.121.2](https://www.github.com/googleapis/java-datalabeling/compare/v0.121.1...v0.121.2) (2021-08-23)
 
 
