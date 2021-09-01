@@ -1,5 +1,14 @@
 # Changelog
 
+### [3.0.3](https://www.github.com/googleapis/java-dlp/compare/v3.0.2...v3.0.3) (2021-09-01)
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-pubsub to v1.114.1 ([#632](https://www.github.com/googleapis/java-dlp/issues/632)) ([eaa725d](https://www.github.com/googleapis/java-dlp/commit/eaa725dcd9df341890e1da49568d801af2b376af))
+* update dependency com.google.cloud:google-cloud-pubsub to v1.114.2 ([#636](https://www.github.com/googleapis/java-dlp/issues/636)) ([9d39ba7](https://www.github.com/googleapis/java-dlp/commit/9d39ba766602fda634dcb3eb63ba46ff355336f7))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.2.0 ([#642](https://www.github.com/googleapis/java-dlp/issues/642)) ([7b92659](https://www.github.com/googleapis/java-dlp/commit/7b9265988321d778d6e00395dab25e1429e49428))
+
 ### [3.0.2](https://www.github.com/googleapis/java-dlp/compare/v3.0.1...v3.0.2) (2021-08-23)
 
 
