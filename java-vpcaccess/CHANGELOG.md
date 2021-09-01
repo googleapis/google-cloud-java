@@ -1,5 +1,17 @@
 # Changelog
 
+## [2.1.0](https://www.github.com/googleapis/java-vpcaccess/compare/v2.0.2...v2.1.0) (2021-09-01)
+
+
+### Features
+
+* Remove use of deprecated gradle command in java README ([#1196](https://www.github.com/googleapis/java-vpcaccess/issues/1196)) ([#64](https://www.github.com/googleapis/java-vpcaccess/issues/64)) ([6d08ae5](https://www.github.com/googleapis/java-vpcaccess/commit/6d08ae5221ca26a059057576bfd5785feab0bea2))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.2.0 ([#67](https://www.github.com/googleapis/java-vpcaccess/issues/67)) ([60c0954](https://www.github.com/googleapis/java-vpcaccess/commit/60c095463f1372424bc1ebadf34ff633f65efa84))
+
 ### [2.0.2](https://www.github.com/googleapis/java-vpcaccess/compare/v2.0.1...v2.0.2) (2021-08-23)
 
 
