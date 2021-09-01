@@ -1,5 +1,17 @@
 # Changelog
 
+## [2.1.0](https://www.github.com/googleapis/java-bigqueryconnection/compare/v2.0.2...v2.1.0) (2021-08-31)
+
+
+### Features
+
+* Remove use of deprecated gradle command in java README ([#1196](https://www.github.com/googleapis/java-bigqueryconnection/issues/1196)) ([#512](https://www.github.com/googleapis/java-bigqueryconnection/issues/512)) ([038f3c7](https://www.github.com/googleapis/java-bigqueryconnection/commit/038f3c7833010a98dbc1c65ac0bc78c8341dd980))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.2.0 ([#515](https://www.github.com/googleapis/java-bigqueryconnection/issues/515)) ([f0518c8](https://www.github.com/googleapis/java-bigqueryconnection/commit/f0518c89282fe5223ad494e7385c8e7db71d6aef))
+
 ### [2.0.2](https://www.github.com/googleapis/java-bigqueryconnection/compare/v2.0.1...v2.0.2) (2021-08-23)
 
 
