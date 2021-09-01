@@ -1,5 +1,17 @@
 # Changelog
 
+## [2.1.0](https://www.github.com/googleapis/java-dms/compare/v2.0.2...v2.1.0) (2021-09-01)
+
+
+### Features
+
+* Remove use of deprecated gradle command in java README ([#1196](https://www.github.com/googleapis/java-dms/issues/1196)) ([#92](https://www.github.com/googleapis/java-dms/issues/92)) ([e7ddc21](https://www.github.com/googleapis/java-dms/commit/e7ddc216f7e98b922c1984b1dc0955756b306a82))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.2.0 ([#95](https://www.github.com/googleapis/java-dms/issues/95)) ([edf2fb0](https://www.github.com/googleapis/java-dms/commit/edf2fb0e8f1725d91eed8793c4b6224dc6e179a5))
+
 ### [2.0.2](https://www.github.com/googleapis/java-dms/compare/v2.0.1...v2.0.2) (2021-08-23)
 
 
