@@ -1,5 +1,18 @@
 # Changelog
 
+## [1.1.0](https://www.github.com/googleapis/java-resourcemanager/compare/v1.0.4...v1.1.0) (2021-08-31)
+
+
+### Features
+
+* Remove use of deprecated gradle command in java README ([#1196](https://www.github.com/googleapis/java-resourcemanager/issues/1196)) ([#613](https://www.github.com/googleapis/java-resourcemanager/issues/613)) ([90da8c8](https://www.github.com/googleapis/java-resourcemanager/commit/90da8c828d26dae93837b167b7a3804dce4f28c8))
+
+
+### Dependencies
+
+* update dependency com.google.apis:google-api-services-cloudresourcemanager to v1-rev20210830-1.32.1 ([#617](https://www.github.com/googleapis/java-resourcemanager/issues/617)) ([d27ca6d](https://www.github.com/googleapis/java-resourcemanager/commit/d27ca6de54b428cf0c6ce653911ea19d11e8c1a4))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.2.0 ([#616](https://www.github.com/googleapis/java-resourcemanager/issues/616)) ([9cb24cf](https://www.github.com/googleapis/java-resourcemanager/commit/9cb24cf26a3fc620db7b7961c49469a1d8877668))
+
 ### [1.0.4](https://www.github.com/googleapis/java-resourcemanager/compare/v1.0.3...v1.0.4) (2021-08-24)
 
 
