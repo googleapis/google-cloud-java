@@ -1,5 +1,17 @@
 # Changelog
 
+## [2.1.0](https://www.github.com/googleapis/java-memcache/compare/v2.0.2...v2.1.0) (2021-09-01)
+
+
+### Features
+
+* Remove use of deprecated gradle command in java README ([#1196](https://www.github.com/googleapis/java-memcache/issues/1196)) ([#487](https://www.github.com/googleapis/java-memcache/issues/487)) ([cacd631](https://www.github.com/googleapis/java-memcache/commit/cacd631af73bb3d0713a91b55662290b3fe718e1))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.2.0 ([#490](https://www.github.com/googleapis/java-memcache/issues/490)) ([445880a](https://www.github.com/googleapis/java-memcache/commit/445880a1266b5255693895f50b1b955c6fa27197))
+
 ### [2.0.2](https://www.github.com/googleapis/java-memcache/compare/v2.0.1...v2.0.2) (2021-08-23)
 
 
