@@ -118,12 +118,12 @@
   </build>
 
   <modules>
-    <module>proto-google-cloud-dialogflow-v2</module>
-    <module>proto-google-cloud-dialogflow-v2beta1</module>
+    <module>google-cloud-dialogflow</module>
     <module>grpc-google-cloud-dialogflow-v2beta1</module>
     <module>grpc-google-cloud-dialogflow-v2</module>
-    <module>google-cloud-dialogflow</module>
-  <module>google-cloud-dialogflow-bom</module>
+    <module>proto-google-cloud-dialogflow-v2</module>
+    <module>proto-google-cloud-dialogflow-v2beta1</module>
+    <module>google-cloud-dialogflow-bom</module>
   </modules>
 
   <reporting>
