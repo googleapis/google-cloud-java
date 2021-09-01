@@ -1,5 +1,17 @@
 # Changelog
 
+## [2.1.0](https://www.github.com/googleapis/java-essential-contacts/compare/v2.0.2...v2.1.0) (2021-09-01)
+
+
+### Features
+
+* Remove use of deprecated gradle command in java README ([#1196](https://www.github.com/googleapis/java-essential-contacts/issues/1196)) ([#87](https://www.github.com/googleapis/java-essential-contacts/issues/87)) ([ae1cd79](https://www.github.com/googleapis/java-essential-contacts/commit/ae1cd79009826092a34e33da6851ff3bd8db947a))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.2.0 ([#90](https://www.github.com/googleapis/java-essential-contacts/issues/90)) ([435e3fb](https://www.github.com/googleapis/java-essential-contacts/commit/435e3fbead5424ee68eb4d971de7315bcb5ff4fd))
+
 ### [2.0.2](https://www.github.com/googleapis/java-essential-contacts/compare/v2.0.1...v2.0.2) (2021-08-23)
 
 
