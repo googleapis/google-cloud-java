@@ -1,5 +1,18 @@
 # Changelog
 
+## [2.1.0](https://www.github.com/googleapis/java-dataproc-metastore/compare/v2.0.2...v2.1.0) (2021-09-01)
+
+
+### Features
+
+* Added the Backup resource and Backup resource GetIamPolicy/SetIamPolicy to V1 feat: Added the RestoreService method to V1 ([#98](https://www.github.com/googleapis/java-dataproc-metastore/issues/98)) ([bc0d79a](https://www.github.com/googleapis/java-dataproc-metastore/commit/bc0d79a5aa16e6d9a2de6d95b023e238cdb36bcd))
+* Remove use of deprecated gradle command in java README ([#1196](https://www.github.com/googleapis/java-dataproc-metastore/issues/1196)) ([#110](https://www.github.com/googleapis/java-dataproc-metastore/issues/110)) ([338bc3e](https://www.github.com/googleapis/java-dataproc-metastore/commit/338bc3e263cf779fa5c88d586c8e4b37e30502d8))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.2.0 ([#113](https://www.github.com/googleapis/java-dataproc-metastore/issues/113)) ([50d2ec6](https://www.github.com/googleapis/java-dataproc-metastore/commit/50d2ec670c5ca8d915715490ecbcae684e279d9e))
+
 ### [2.0.2](https://www.github.com/googleapis/java-dataproc-metastore/compare/v2.0.1...v2.0.2) (2021-08-23)
 
 
