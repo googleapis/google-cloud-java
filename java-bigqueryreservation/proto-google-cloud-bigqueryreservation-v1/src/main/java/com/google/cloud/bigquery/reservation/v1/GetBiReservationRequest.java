@@ -118,7 +118,7 @@ public final class GetBiReservationRequest extends com.google.protobuf.Generated
    *
    * <pre>
    * Required. Name of the requested reservation, for example:
-   * `projects/{project_id}/locations/{location_id}/bireservation`
+   * `projects/{project_id}/locations/{location_id}/biReservation`
    * </pre>
    *
    * <code>
@@ -144,7 +144,7 @@ public final class GetBiReservationRequest extends com.google.protobuf.Generated
    *
    * <pre>
    * Required. Name of the requested reservation, for example:
-   * `projects/{project_id}/locations/{location_id}/bireservation`
+   * `projects/{project_id}/locations/{location_id}/biReservation`
    * </pre>
    *
    * <code>
@@ -495,7 +495,7 @@ public final class GetBiReservationRequest extends com.google.protobuf.Generated
      *
      * <pre>
      * Required. Name of the requested reservation, for example:
-     * `projects/{project_id}/locations/{location_id}/bireservation`
+     * `projects/{project_id}/locations/{location_id}/biReservation`
      * </pre>
      *
      * <code>
@@ -520,7 +520,7 @@ public final class GetBiReservationRequest extends com.google.protobuf.Generated
      *
      * <pre>
      * Required. Name of the requested reservation, for example:
-     * `projects/{project_id}/locations/{location_id}/bireservation`
+     * `projects/{project_id}/locations/{location_id}/biReservation`
      * </pre>
      *
      * <code>
@@ -545,7 +545,7 @@ public final class GetBiReservationRequest extends com.google.protobuf.Generated
      *
      * <pre>
      * Required. Name of the requested reservation, for example:
-     * `projects/{project_id}/locations/{location_id}/bireservation`
+     * `projects/{project_id}/locations/{location_id}/biReservation`
      * </pre>
      *
      * <code>
@@ -569,7 +569,7 @@ public final class GetBiReservationRequest extends com.google.protobuf.Generated
      *
      * <pre>
      * Required. Name of the requested reservation, for example:
-     * `projects/{project_id}/locations/{location_id}/bireservation`
+     * `projects/{project_id}/locations/{location_id}/biReservation`
      * </pre>
      *
      * <code>
@@ -589,7 +589,7 @@ public final class GetBiReservationRequest extends com.google.protobuf.Generated
      *
      * <pre>
      * Required. Name of the requested reservation, for example:
-     * `projects/{project_id}/locations/{location_id}/bireservation`
+     * `projects/{project_id}/locations/{location_id}/biReservation`
      * </pre>
      *
      * <code>

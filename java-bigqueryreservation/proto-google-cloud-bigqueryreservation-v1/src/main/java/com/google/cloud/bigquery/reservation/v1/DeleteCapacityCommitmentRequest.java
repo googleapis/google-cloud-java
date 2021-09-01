@@ -78,6 +78,11 @@ public final class DeleteCapacityCommitmentRequest extends com.google.protobuf.G
               name_ = s;
               break;
             }
+          case 24:
+            {
+              force_ = input.readBool();
+              break;
+            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -167,6 +172,26 @@ public final class DeleteCapacityCommitmentRequest extends com.google.protobuf.G
     }
   }
 
+  public static final int FORCE_FIELD_NUMBER = 3;
+  private boolean force_;
+  /**
+   *
+   *
+   * <pre>
+   * Can be used to force delete commitments even if assignments exist. Deleting
+   * commitments with assignments may cause queries to fail if they no longer
+   * have access to slots.
+   * </pre>
+   *
+   * <code>bool force = 3;</code>
+   *
+   * @return The force.
+   */
+  @java.lang.Override
+  public boolean getForce() {
+    return force_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -184,6 +209,9 @@ public final class DeleteCapacityCommitmentRequest extends com.google.protobuf.G
     if (!getNameBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name_);
     }
+    if (force_ != false) {
+      output.writeBool(3, force_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -195,6 +223,9 @@ public final class DeleteCapacityCommitmentRequest extends com.google.protobuf.G
     size = 0;
     if (!getNameBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, name_);
+    }
+    if (force_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(3, force_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -214,6 +245,7 @@ public final class DeleteCapacityCommitmentRequest extends com.google.protobuf.G
         (com.google.cloud.bigquery.reservation.v1.DeleteCapacityCommitmentRequest) obj;
 
     if (!getName().equals(other.getName())) return false;
+    if (getForce() != other.getForce()) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -227,6 +259,8 @@ public final class DeleteCapacityCommitmentRequest extends com.google.protobuf.G
     hash = (19 * hash) + getDescriptor().hashCode();
     hash = (37 * hash) + NAME_FIELD_NUMBER;
     hash = (53 * hash) + getName().hashCode();
+    hash = (37 * hash) + FORCE_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getForce());
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -378,6 +412,8 @@ public final class DeleteCapacityCommitmentRequest extends com.google.protobuf.G
       super.clear();
       name_ = "";
 
+      force_ = false;
+
       return this;
     }
 
@@ -409,6 +445,7 @@ public final class DeleteCapacityCommitmentRequest extends com.google.protobuf.G
       com.google.cloud.bigquery.reservation.v1.DeleteCapacityCommitmentRequest result =
           new com.google.cloud.bigquery.reservation.v1.DeleteCapacityCommitmentRequest(this);
       result.name_ = name_;
+      result.force_ = force_;
       onBuilt();
       return result;
     }
@@ -466,6 +503,9 @@ public final class DeleteCapacityCommitmentRequest extends com.google.protobuf.G
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
         onChanged();
+      }
+      if (other.getForce() != false) {
+        setForce(other.getForce());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -615,6 +655,64 @@ public final class DeleteCapacityCommitmentRequest extends com.google.protobuf.G
       checkByteStringIsUtf8(value);
 
       name_ = value;
+      onChanged();
+      return this;
+    }
+
+    private boolean force_;
+    /**
+     *
+     *
+     * <pre>
+     * Can be used to force delete commitments even if assignments exist. Deleting
+     * commitments with assignments may cause queries to fail if they no longer
+     * have access to slots.
+     * </pre>
+     *
+     * <code>bool force = 3;</code>
+     *
+     * @return The force.
+     */
+    @java.lang.Override
+    public boolean getForce() {
+      return force_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Can be used to force delete commitments even if assignments exist. Deleting
+     * commitments with assignments may cause queries to fail if they no longer
+     * have access to slots.
+     * </pre>
+     *
+     * <code>bool force = 3;</code>
+     *
+     * @param value The force to set.
+     * @return This builder for chaining.
+     */
+    public Builder setForce(boolean value) {
+
+      force_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Can be used to force delete commitments even if assignments exist. Deleting
+     * commitments with assignments may cause queries to fail if they no longer
+     * have access to slots.
+     * </pre>
+     *
+     * <code>bool force = 3;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearForce() {
+
+      force_ = false;
       onChanged();
       return this;
     }

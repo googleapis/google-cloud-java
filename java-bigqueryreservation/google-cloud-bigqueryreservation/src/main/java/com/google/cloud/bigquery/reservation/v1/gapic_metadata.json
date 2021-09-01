@@ -52,6 +52,9 @@
             "MoveAssignment": {
               "methods": ["moveAssignment", "moveAssignment", "moveAssignment", "moveAssignment", "moveAssignment", "moveAssignmentCallable"]
             },
+            "SearchAllAssignments": {
+              "methods": ["searchAllAssignments", "searchAllAssignments", "searchAllAssignments", "searchAllAssignmentsPagedCallable", "searchAllAssignmentsCallable"]
+            },
             "SearchAssignments": {
               "methods": ["searchAssignments", "searchAssignments", "searchAssignments", "searchAssignmentsPagedCallable", "searchAssignmentsCallable"]
             },

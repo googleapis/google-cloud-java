@@ -19,6 +19,7 @@ package com.google.cloud.bigquery.reservation.v1.stub;
 import static com.google.cloud.bigquery.reservation.v1.ReservationServiceClient.ListAssignmentsPagedResponse;
 import static com.google.cloud.bigquery.reservation.v1.ReservationServiceClient.ListCapacityCommitmentsPagedResponse;
 import static com.google.cloud.bigquery.reservation.v1.ReservationServiceClient.ListReservationsPagedResponse;
+import static com.google.cloud.bigquery.reservation.v1.ReservationServiceClient.SearchAllAssignmentsPagedResponse;
 import static com.google.cloud.bigquery.reservation.v1.ReservationServiceClient.SearchAssignmentsPagedResponse;
 
 import com.google.api.gax.core.BackgroundResource;
@@ -44,6 +45,8 @@ import com.google.cloud.bigquery.reservation.v1.ListReservationsResponse;
 import com.google.cloud.bigquery.reservation.v1.MergeCapacityCommitmentsRequest;
 import com.google.cloud.bigquery.reservation.v1.MoveAssignmentRequest;
 import com.google.cloud.bigquery.reservation.v1.Reservation;
+import com.google.cloud.bigquery.reservation.v1.SearchAllAssignmentsRequest;
+import com.google.cloud.bigquery.reservation.v1.SearchAllAssignmentsResponse;
 import com.google.cloud.bigquery.reservation.v1.SearchAssignmentsRequest;
 import com.google.cloud.bigquery.reservation.v1.SearchAssignmentsResponse;
 import com.google.cloud.bigquery.reservation.v1.SplitCapacityCommitmentRequest;
@@ -146,14 +149,26 @@ public abstract class ReservationServiceStub implements BackgroundResource {
     throw new UnsupportedOperationException("Not implemented: deleteAssignmentCallable()");
   }
 
+  @Deprecated
   public UnaryCallable<SearchAssignmentsRequest, SearchAssignmentsPagedResponse>
       searchAssignmentsPagedCallable() {
     throw new UnsupportedOperationException("Not implemented: searchAssignmentsPagedCallable()");
   }
 
+  @Deprecated
   public UnaryCallable<SearchAssignmentsRequest, SearchAssignmentsResponse>
       searchAssignmentsCallable() {
     throw new UnsupportedOperationException("Not implemented: searchAssignmentsCallable()");
+  }
+
+  public UnaryCallable<SearchAllAssignmentsRequest, SearchAllAssignmentsPagedResponse>
+      searchAllAssignmentsPagedCallable() {
+    throw new UnsupportedOperationException("Not implemented: searchAllAssignmentsPagedCallable()");
+  }
+
+  public UnaryCallable<SearchAllAssignmentsRequest, SearchAllAssignmentsResponse>
+      searchAllAssignmentsCallable() {
+    throw new UnsupportedOperationException("Not implemented: searchAllAssignmentsCallable()");
   }
 
   public UnaryCallable<MoveAssignmentRequest, Assignment> moveAssignmentCallable() {

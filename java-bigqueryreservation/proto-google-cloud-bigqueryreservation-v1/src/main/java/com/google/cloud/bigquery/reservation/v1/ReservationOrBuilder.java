@@ -74,9 +74,10 @@ public interface ReservationOrBuilder
    *
    *
    * <pre>
-   * If false, any query using this reservation will use idle slots from other
-   * reservations within the same admin project. If true, a query using this
-   * reservation will execute with the slot capacity specified above at most.
+   * If false, any query or pipeline job using this reservation will use idle
+   * slots from other reservations within the same admin project. If true, a
+   * query or pipeline job using this reservation will execute with the slot
+   * capacity specified in the slot_capacity field at most.
    * </pre>
    *
    * <code>bool ignore_idle_slots = 4;</code>
@@ -84,4 +85,83 @@ public interface ReservationOrBuilder
    * @return The ignoreIdleSlots.
    */
   boolean getIgnoreIdleSlots();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Creation time of the reservation.
+   * </pre>
+   *
+   * <code>
+   * .google.protobuf.Timestamp creation_time = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the creationTime field is set.
+   */
+  boolean hasCreationTime();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Creation time of the reservation.
+   * </pre>
+   *
+   * <code>
+   * .google.protobuf.Timestamp creation_time = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The creationTime.
+   */
+  com.google.protobuf.Timestamp getCreationTime();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Creation time of the reservation.
+   * </pre>
+   *
+   * <code>
+   * .google.protobuf.Timestamp creation_time = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.protobuf.TimestampOrBuilder getCreationTimeOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Last update time of the reservation.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp update_time = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the updateTime field is set.
+   */
+  boolean hasUpdateTime();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Last update time of the reservation.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp update_time = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The updateTime.
+   */
+  com.google.protobuf.Timestamp getUpdateTime();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Last update time of the reservation.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp update_time = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.protobuf.TimestampOrBuilder getUpdateTimeOrBuilder();
 }

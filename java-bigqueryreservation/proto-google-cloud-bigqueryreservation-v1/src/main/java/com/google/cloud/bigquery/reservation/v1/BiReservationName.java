@@ -31,7 +31,7 @@ import javax.annotation.Generated;
 public class BiReservationName implements ResourceName {
   private static final PathTemplate PROJECT_LOCATION =
       PathTemplate.createWithoutUrlEncoding(
-          "projects/{project}/locations/{location}/bireservation");
+          "projects/{project}/locations/{location}/biReservation");
   private volatile Map<String, String> fieldValuesMap;
   private final String project;
   private final String location;
@@ -156,7 +156,7 @@ public class BiReservationName implements ResourceName {
     return h;
   }
 
-  /** Builder for projects/{project}/locations/{location}/bireservation. */
+  /** Builder for projects/{project}/locations/{location}/biReservation. */
   public static class Builder {
     private String project;
     private String location;

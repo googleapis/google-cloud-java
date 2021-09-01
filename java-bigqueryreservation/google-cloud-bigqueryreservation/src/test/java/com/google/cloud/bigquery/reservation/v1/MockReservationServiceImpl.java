@@ -402,6 +402,28 @@ public class MockReservationServiceImpl extends ReservationServiceImplBase {
   }
 
   @Override
+  public void searchAllAssignments(
+      SearchAllAssignmentsRequest request,
+      StreamObserver<SearchAllAssignmentsResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof SearchAllAssignmentsResponse) {
+      requests.add(request);
+      responseObserver.onNext(((SearchAllAssignmentsResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method SearchAllAssignments, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  SearchAllAssignmentsResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
   public void moveAssignment(
       MoveAssignmentRequest request, StreamObserver<Assignment> responseObserver) {
     Object response = responses.poll();

@@ -19,6 +19,7 @@ package com.google.cloud.bigquery.reservation.v1;
 import static com.google.cloud.bigquery.reservation.v1.ReservationServiceClient.ListAssignmentsPagedResponse;
 import static com.google.cloud.bigquery.reservation.v1.ReservationServiceClient.ListCapacityCommitmentsPagedResponse;
 import static com.google.cloud.bigquery.reservation.v1.ReservationServiceClient.ListReservationsPagedResponse;
+import static com.google.cloud.bigquery.reservation.v1.ReservationServiceClient.SearchAllAssignmentsPagedResponse;
 import static com.google.cloud.bigquery.reservation.v1.ReservationServiceClient.SearchAssignmentsPagedResponse;
 
 import com.google.api.core.ApiFunction;
@@ -164,11 +165,25 @@ public class ReservationServiceSettings extends ClientSettings<ReservationServic
     return ((ReservationServiceStubSettings) getStubSettings()).deleteAssignmentSettings();
   }
 
-  /** Returns the object with the settings used for calls to searchAssignments. */
+  /**
+   * Returns the object with the settings used for calls to searchAssignments.
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
+   */
+  @Deprecated
   public PagedCallSettings<
           SearchAssignmentsRequest, SearchAssignmentsResponse, SearchAssignmentsPagedResponse>
       searchAssignmentsSettings() {
     return ((ReservationServiceStubSettings) getStubSettings()).searchAssignmentsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to searchAllAssignments. */
+  public PagedCallSettings<
+          SearchAllAssignmentsRequest,
+          SearchAllAssignmentsResponse,
+          SearchAllAssignmentsPagedResponse>
+      searchAllAssignmentsSettings() {
+    return ((ReservationServiceStubSettings) getStubSettings()).searchAllAssignmentsSettings();
   }
 
   /** Returns the object with the settings used for calls to moveAssignment. */
@@ -377,11 +392,25 @@ public class ReservationServiceSettings extends ClientSettings<ReservationServic
       return getStubSettingsBuilder().deleteAssignmentSettings();
     }
 
-    /** Returns the builder for the settings used for calls to searchAssignments. */
+    /**
+     * Returns the builder for the settings used for calls to searchAssignments.
+     *
+     * @deprecated This method is deprecated and will be removed in the next major version update.
+     */
+    @Deprecated
     public PagedCallSettings.Builder<
             SearchAssignmentsRequest, SearchAssignmentsResponse, SearchAssignmentsPagedResponse>
         searchAssignmentsSettings() {
       return getStubSettingsBuilder().searchAssignmentsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to searchAllAssignments. */
+    public PagedCallSettings.Builder<
+            SearchAllAssignmentsRequest,
+            SearchAllAssignmentsResponse,
+            SearchAllAssignmentsPagedResponse>
+        searchAllAssignmentsSettings() {
+      return getStubSettingsBuilder().searchAllAssignmentsSettings();
     }
 
     /** Returns the builder for the settings used for calls to moveAssignment. */

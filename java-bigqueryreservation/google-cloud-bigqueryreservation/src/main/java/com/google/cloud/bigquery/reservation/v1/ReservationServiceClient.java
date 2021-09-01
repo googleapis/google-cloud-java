@@ -763,6 +763,7 @@ public class ReservationServiceClient implements BackgroundResource {
    *                   .toString())
    *           .setCapacityCommitment(CapacityCommitment.newBuilder().build())
    *           .setEnforceSingleAdminProjectPerOrg(true)
+   *           .setCapacityCommitmentId("capacityCommitmentId1185645802")
    *           .build();
    *   CapacityCommitment response = reservationServiceClient.createCapacityCommitment(request);
    * }
@@ -791,6 +792,7 @@ public class ReservationServiceClient implements BackgroundResource {
    *                   .toString())
    *           .setCapacityCommitment(CapacityCommitment.newBuilder().build())
    *           .setEnforceSingleAdminProjectPerOrg(true)
+   *           .setCapacityCommitmentId("capacityCommitmentId1185645802")
    *           .build();
    *   ApiFuture<CapacityCommitment> future =
    *       reservationServiceClient.createCapacityCommitmentCallable().futureCall(request);
@@ -1124,6 +1126,7 @@ public class ReservationServiceClient implements BackgroundResource {
    *           .setName(
    *               CapacityCommitmentName.of("[PROJECT]", "[LOCATION]", "[CAPACITY_COMMITMENT]")
    *                   .toString())
+   *           .setForce(true)
    *           .build();
    *   reservationServiceClient.deleteCapacityCommitment(request);
    * }
@@ -1150,6 +1153,7 @@ public class ReservationServiceClient implements BackgroundResource {
    *           .setName(
    *               CapacityCommitmentName.of("[PROJECT]", "[LOCATION]", "[CAPACITY_COMMITMENT]")
    *                   .toString())
+   *           .setForce(true)
    *           .build();
    *   ApiFuture<Empty> future =
    *       reservationServiceClient.deleteCapacityCommitmentCallable().futureCall(request);
@@ -1567,6 +1571,10 @@ public class ReservationServiceClient implements BackgroundResource {
    *       all be created and mapped to the same or different reservations.
    * </ul>
    *
+   * <p>"None" assignments represent an absence of the assignment. Projects assigned to None use
+   * on-demand pricing. To create a "None" assignment, use "none" as a reservation_id in the parent.
+   * Example parent: `projects/myproject/locations/US/reservations/none`.
+   *
    * <p>Returns `google.rpc.Code.PERMISSION_DENIED` if user does not have 'bigquery.admin'
    * permissions on the project using the reservation and the project that owns this reservation.
    *
@@ -1621,6 +1629,10 @@ public class ReservationServiceClient implements BackgroundResource {
    *       all be created and mapped to the same or different reservations.
    * </ul>
    *
+   * <p>"None" assignments represent an absence of the assignment. Projects assigned to None use
+   * on-demand pricing. To create a "None" assignment, use "none" as a reservation_id in the parent.
+   * Example parent: `projects/myproject/locations/US/reservations/none`.
+   *
    * <p>Returns `google.rpc.Code.PERMISSION_DENIED` if user does not have 'bigquery.admin'
    * permissions on the project using the reservation and the project that owns this reservation.
    *
@@ -1673,6 +1685,10 @@ public class ReservationServiceClient implements BackgroundResource {
    *       all be created and mapped to the same or different reservations.
    * </ul>
    *
+   * <p>"None" assignments represent an absence of the assignment. Projects assigned to None use
+   * on-demand pricing. To create a "None" assignment, use "none" as a reservation_id in the parent.
+   * Example parent: `projects/myproject/locations/US/reservations/none`.
+   *
    * <p>Returns `google.rpc.Code.PERMISSION_DENIED` if user does not have 'bigquery.admin'
    * permissions on the project using the reservation and the project that owns this reservation.
    *
@@ -1689,6 +1705,7 @@ public class ReservationServiceClient implements BackgroundResource {
    *               AssignmentName.of("[PROJECT]", "[LOCATION]", "[RESERVATION]", "[ASSIGNMENT]")
    *                   .toString())
    *           .setAssignment(Assignment.newBuilder().build())
+   *           .setAssignmentId("assignmentId-1603989304")
    *           .build();
    *   Assignment response = reservationServiceClient.createAssignment(request);
    * }
@@ -1725,6 +1742,10 @@ public class ReservationServiceClient implements BackgroundResource {
    *       all be created and mapped to the same or different reservations.
    * </ul>
    *
+   * <p>"None" assignments represent an absence of the assignment. Projects assigned to None use
+   * on-demand pricing. To create a "None" assignment, use "none" as a reservation_id in the parent.
+   * Example parent: `projects/myproject/locations/US/reservations/none`.
+   *
    * <p>Returns `google.rpc.Code.PERMISSION_DENIED` if user does not have 'bigquery.admin'
    * permissions on the project using the reservation and the project that owns this reservation.
    *
@@ -1741,6 +1762,7 @@ public class ReservationServiceClient implements BackgroundResource {
    *               AssignmentName.of("[PROJECT]", "[LOCATION]", "[RESERVATION]", "[ASSIGNMENT]")
    *                   .toString())
    *           .setAssignment(Assignment.newBuilder().build())
+   *           .setAssignmentId("assignmentId-1603989304")
    *           .build();
    *   ApiFuture<Assignment> future =
    *       reservationServiceClient.createAssignmentCallable().futureCall(request);
@@ -2151,8 +2173,8 @@ public class ReservationServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Looks up assignments for a specified resource for a particular region. If the request is about
-   * a project:
+   * Deprecated: Looks up assignments for a specified resource for a particular region. If the
+   * request is about a project:
    *
    * <p>1. Assignments created on the project will be returned if they exist. 2. Otherwise
    * assignments created on the closest ancestor will be returned. 3. Assignments for different
@@ -2196,7 +2218,9 @@ public class ReservationServiceClient implements BackgroundResource {
    *     </ul>
    *
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final SearchAssignmentsPagedResponse searchAssignments(LocationName parent, String query) {
     SearchAssignmentsRequest request =
         SearchAssignmentsRequest.newBuilder()
@@ -2208,8 +2232,8 @@ public class ReservationServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Looks up assignments for a specified resource for a particular region. If the request is about
-   * a project:
+   * Deprecated: Looks up assignments for a specified resource for a particular region. If the
+   * request is about a project:
    *
    * <p>1. Assignments created on the project will be returned if they exist. 2. Otherwise
    * assignments created on the closest ancestor will be returned. 3. Assignments for different
@@ -2253,7 +2277,9 @@ public class ReservationServiceClient implements BackgroundResource {
    *     </ul>
    *
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final SearchAssignmentsPagedResponse searchAssignments(String parent, String query) {
     SearchAssignmentsRequest request =
         SearchAssignmentsRequest.newBuilder().setParent(parent).setQuery(query).build();
@@ -2262,8 +2288,8 @@ public class ReservationServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Looks up assignments for a specified resource for a particular region. If the request is about
-   * a project:
+   * Deprecated: Looks up assignments for a specified resource for a particular region. If the
+   * request is about a project:
    *
    * <p>1. Assignments created on the project will be returned if they exist. 2. Otherwise
    * assignments created on the closest ancestor will be returned. 3. Assignments for different
@@ -2302,15 +2328,17 @@ public class ReservationServiceClient implements BackgroundResource {
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final SearchAssignmentsPagedResponse searchAssignments(SearchAssignmentsRequest request) {
     return searchAssignmentsPagedCallable().call(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Looks up assignments for a specified resource for a particular region. If the request is about
-   * a project:
+   * Deprecated: Looks up assignments for a specified resource for a particular region. If the
+   * request is about a project:
    *
    * <p>1. Assignments created on the project will be returned if they exist. 2. Otherwise
    * assignments created on the closest ancestor will be returned. 3. Assignments for different
@@ -2349,7 +2377,10 @@ public class ReservationServiceClient implements BackgroundResource {
    *   }
    * }
    * }</pre>
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final UnaryCallable<SearchAssignmentsRequest, SearchAssignmentsPagedResponse>
       searchAssignmentsPagedCallable() {
     return stub.searchAssignmentsPagedCallable();
@@ -2357,8 +2388,8 @@ public class ReservationServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Looks up assignments for a specified resource for a particular region. If the request is about
-   * a project:
+   * Deprecated: Looks up assignments for a specified resource for a particular region. If the
+   * request is about a project:
    *
    * <p>1. Assignments created on the project will be returned if they exist. 2. Otherwise
    * assignments created on the closest ancestor will be returned. 3. Assignments for different
@@ -2404,10 +2435,267 @@ public class ReservationServiceClient implements BackgroundResource {
    *   }
    * }
    * }</pre>
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final UnaryCallable<SearchAssignmentsRequest, SearchAssignmentsResponse>
       searchAssignmentsCallable() {
     return stub.searchAssignmentsCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Looks up assignments for a specified resource for a particular region. If the request is about
+   * a project:
+   *
+   * <p>1. Assignments created on the project will be returned if they exist. 2. Otherwise
+   * assignments created on the closest ancestor will be returned. 3. Assignments for different
+   * JobTypes will all be returned.
+   *
+   * <p>The same logic applies if the request is about a folder.
+   *
+   * <p>If the request is about an organization, then assignments created on the organization will
+   * be returned (organization doesn't have ancestors).
+   *
+   * <p>Comparing to ListAssignments, there are some behavior differences:
+   *
+   * <p>1. permission on the assignee will be verified in this API. 2. Hierarchy lookup
+   * (project-&gt;folder-&gt;organization) happens in this API. 3. Parent here is
+   * `projects/&#42;/locations/&#42;`, instead of
+   * `projects/&#42;/locations/&#42;reservations/&#42;`.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ReservationServiceClient reservationServiceClient = ReservationServiceClient.create()) {
+   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+   *   String query = "query107944136";
+   *   for (Assignment element :
+   *       reservationServiceClient.searchAllAssignments(parent, query).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The resource name with location (project name could be the wildcard
+   *     '-'), e.g.: `projects/-/locations/US`.
+   * @param query Please specify resource name as assignee in the query.
+   *     <p>Examples:
+   *     <ul>
+   *       <li>`assignee=projects/myproject`
+   *       <li>`assignee=folders/123`
+   *       <li>`assignee=organizations/456`
+   *     </ul>
+   *
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final SearchAllAssignmentsPagedResponse searchAllAssignments(
+      LocationName parent, String query) {
+    SearchAllAssignmentsRequest request =
+        SearchAllAssignmentsRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .setQuery(query)
+            .build();
+    return searchAllAssignments(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Looks up assignments for a specified resource for a particular region. If the request is about
+   * a project:
+   *
+   * <p>1. Assignments created on the project will be returned if they exist. 2. Otherwise
+   * assignments created on the closest ancestor will be returned. 3. Assignments for different
+   * JobTypes will all be returned.
+   *
+   * <p>The same logic applies if the request is about a folder.
+   *
+   * <p>If the request is about an organization, then assignments created on the organization will
+   * be returned (organization doesn't have ancestors).
+   *
+   * <p>Comparing to ListAssignments, there are some behavior differences:
+   *
+   * <p>1. permission on the assignee will be verified in this API. 2. Hierarchy lookup
+   * (project-&gt;folder-&gt;organization) happens in this API. 3. Parent here is
+   * `projects/&#42;/locations/&#42;`, instead of
+   * `projects/&#42;/locations/&#42;reservations/&#42;`.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ReservationServiceClient reservationServiceClient = ReservationServiceClient.create()) {
+   *   String parent = LocationName.of("[PROJECT]", "[LOCATION]").toString();
+   *   String query = "query107944136";
+   *   for (Assignment element :
+   *       reservationServiceClient.searchAllAssignments(parent, query).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The resource name with location (project name could be the wildcard
+   *     '-'), e.g.: `projects/-/locations/US`.
+   * @param query Please specify resource name as assignee in the query.
+   *     <p>Examples:
+   *     <ul>
+   *       <li>`assignee=projects/myproject`
+   *       <li>`assignee=folders/123`
+   *       <li>`assignee=organizations/456`
+   *     </ul>
+   *
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final SearchAllAssignmentsPagedResponse searchAllAssignments(String parent, String query) {
+    SearchAllAssignmentsRequest request =
+        SearchAllAssignmentsRequest.newBuilder().setParent(parent).setQuery(query).build();
+    return searchAllAssignments(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Looks up assignments for a specified resource for a particular region. If the request is about
+   * a project:
+   *
+   * <p>1. Assignments created on the project will be returned if they exist. 2. Otherwise
+   * assignments created on the closest ancestor will be returned. 3. Assignments for different
+   * JobTypes will all be returned.
+   *
+   * <p>The same logic applies if the request is about a folder.
+   *
+   * <p>If the request is about an organization, then assignments created on the organization will
+   * be returned (organization doesn't have ancestors).
+   *
+   * <p>Comparing to ListAssignments, there are some behavior differences:
+   *
+   * <p>1. permission on the assignee will be verified in this API. 2. Hierarchy lookup
+   * (project-&gt;folder-&gt;organization) happens in this API. 3. Parent here is
+   * `projects/&#42;/locations/&#42;`, instead of
+   * `projects/&#42;/locations/&#42;reservations/&#42;`.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ReservationServiceClient reservationServiceClient = ReservationServiceClient.create()) {
+   *   SearchAllAssignmentsRequest request =
+   *       SearchAllAssignmentsRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setQuery("query107944136")
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   for (Assignment element :
+   *       reservationServiceClient.searchAllAssignments(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final SearchAllAssignmentsPagedResponse searchAllAssignments(
+      SearchAllAssignmentsRequest request) {
+    return searchAllAssignmentsPagedCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Looks up assignments for a specified resource for a particular region. If the request is about
+   * a project:
+   *
+   * <p>1. Assignments created on the project will be returned if they exist. 2. Otherwise
+   * assignments created on the closest ancestor will be returned. 3. Assignments for different
+   * JobTypes will all be returned.
+   *
+   * <p>The same logic applies if the request is about a folder.
+   *
+   * <p>If the request is about an organization, then assignments created on the organization will
+   * be returned (organization doesn't have ancestors).
+   *
+   * <p>Comparing to ListAssignments, there are some behavior differences:
+   *
+   * <p>1. permission on the assignee will be verified in this API. 2. Hierarchy lookup
+   * (project-&gt;folder-&gt;organization) happens in this API. 3. Parent here is
+   * `projects/&#42;/locations/&#42;`, instead of
+   * `projects/&#42;/locations/&#42;reservations/&#42;`.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ReservationServiceClient reservationServiceClient = ReservationServiceClient.create()) {
+   *   SearchAllAssignmentsRequest request =
+   *       SearchAllAssignmentsRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setQuery("query107944136")
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   ApiFuture<Assignment> future =
+   *       reservationServiceClient.searchAllAssignmentsPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (Assignment element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<SearchAllAssignmentsRequest, SearchAllAssignmentsPagedResponse>
+      searchAllAssignmentsPagedCallable() {
+    return stub.searchAllAssignmentsPagedCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Looks up assignments for a specified resource for a particular region. If the request is about
+   * a project:
+   *
+   * <p>1. Assignments created on the project will be returned if they exist. 2. Otherwise
+   * assignments created on the closest ancestor will be returned. 3. Assignments for different
+   * JobTypes will all be returned.
+   *
+   * <p>The same logic applies if the request is about a folder.
+   *
+   * <p>If the request is about an organization, then assignments created on the organization will
+   * be returned (organization doesn't have ancestors).
+   *
+   * <p>Comparing to ListAssignments, there are some behavior differences:
+   *
+   * <p>1. permission on the assignee will be verified in this API. 2. Hierarchy lookup
+   * (project-&gt;folder-&gt;organization) happens in this API. 3. Parent here is
+   * `projects/&#42;/locations/&#42;`, instead of
+   * `projects/&#42;/locations/&#42;reservations/&#42;`.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ReservationServiceClient reservationServiceClient = ReservationServiceClient.create()) {
+   *   SearchAllAssignmentsRequest request =
+   *       SearchAllAssignmentsRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setQuery("query107944136")
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   while (true) {
+   *     SearchAllAssignmentsResponse response =
+   *         reservationServiceClient.searchAllAssignmentsCallable().call(request);
+   *     for (Assignment element : response.getResponsesList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<SearchAllAssignmentsRequest, SearchAllAssignmentsResponse>
+      searchAllAssignmentsCallable() {
+    return stub.searchAllAssignmentsCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -2619,7 +2907,7 @@ public class ReservationServiceClient implements BackgroundResource {
    * }</pre>
    *
    * @param name Required. Name of the requested reservation, for example:
-   *     `projects/{project_id}/locations/{location_id}/bireservation`
+   *     `projects/{project_id}/locations/{location_id}/biReservation`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final BiReservation getBiReservation(BiReservationName name) {
@@ -2642,7 +2930,7 @@ public class ReservationServiceClient implements BackgroundResource {
    * }</pre>
    *
    * @param name Required. Name of the requested reservation, for example:
-   *     `projects/{project_id}/locations/{location_id}/bireservation`
+   *     `projects/{project_id}/locations/{location_id}/biReservation`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final BiReservation getBiReservation(String name) {
@@ -3138,6 +3426,86 @@ public class ReservationServiceClient implements BackgroundResource {
     protected SearchAssignmentsFixedSizeCollection createCollection(
         List<SearchAssignmentsPage> pages, int collectionSize) {
       return new SearchAssignmentsFixedSizeCollection(pages, collectionSize);
+    }
+  }
+
+  public static class SearchAllAssignmentsPagedResponse
+      extends AbstractPagedListResponse<
+          SearchAllAssignmentsRequest,
+          SearchAllAssignmentsResponse,
+          Assignment,
+          SearchAllAssignmentsPage,
+          SearchAllAssignmentsFixedSizeCollection> {
+
+    public static ApiFuture<SearchAllAssignmentsPagedResponse> createAsync(
+        PageContext<SearchAllAssignmentsRequest, SearchAllAssignmentsResponse, Assignment> context,
+        ApiFuture<SearchAllAssignmentsResponse> futureResponse) {
+      ApiFuture<SearchAllAssignmentsPage> futurePage =
+          SearchAllAssignmentsPage.createEmptyPage().createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage,
+          input -> new SearchAllAssignmentsPagedResponse(input),
+          MoreExecutors.directExecutor());
+    }
+
+    private SearchAllAssignmentsPagedResponse(SearchAllAssignmentsPage page) {
+      super(page, SearchAllAssignmentsFixedSizeCollection.createEmptyCollection());
+    }
+  }
+
+  public static class SearchAllAssignmentsPage
+      extends AbstractPage<
+          SearchAllAssignmentsRequest,
+          SearchAllAssignmentsResponse,
+          Assignment,
+          SearchAllAssignmentsPage> {
+
+    private SearchAllAssignmentsPage(
+        PageContext<SearchAllAssignmentsRequest, SearchAllAssignmentsResponse, Assignment> context,
+        SearchAllAssignmentsResponse response) {
+      super(context, response);
+    }
+
+    private static SearchAllAssignmentsPage createEmptyPage() {
+      return new SearchAllAssignmentsPage(null, null);
+    }
+
+    @Override
+    protected SearchAllAssignmentsPage createPage(
+        PageContext<SearchAllAssignmentsRequest, SearchAllAssignmentsResponse, Assignment> context,
+        SearchAllAssignmentsResponse response) {
+      return new SearchAllAssignmentsPage(context, response);
+    }
+
+    @Override
+    public ApiFuture<SearchAllAssignmentsPage> createPageAsync(
+        PageContext<SearchAllAssignmentsRequest, SearchAllAssignmentsResponse, Assignment> context,
+        ApiFuture<SearchAllAssignmentsResponse> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+  }
+
+  public static class SearchAllAssignmentsFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          SearchAllAssignmentsRequest,
+          SearchAllAssignmentsResponse,
+          Assignment,
+          SearchAllAssignmentsPage,
+          SearchAllAssignmentsFixedSizeCollection> {
+
+    private SearchAllAssignmentsFixedSizeCollection(
+        List<SearchAllAssignmentsPage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static SearchAllAssignmentsFixedSizeCollection createEmptyCollection() {
+      return new SearchAllAssignmentsFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected SearchAllAssignmentsFixedSizeCollection createCollection(
+        List<SearchAllAssignmentsPage> pages, int collectionSize) {
+      return new SearchAllAssignmentsFixedSizeCollection(pages, collectionSize);
     }
   }
 }

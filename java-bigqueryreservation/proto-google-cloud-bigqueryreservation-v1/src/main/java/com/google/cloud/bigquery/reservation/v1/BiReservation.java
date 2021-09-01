@@ -139,7 +139,7 @@ public final class BiReservation extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * The resource name of the singleton BI reservation.
    * Reservation names have the form
-   * `projects/{project_id}/locations/{location_id}/bireservation`.
+   * `projects/{project_id}/locations/{location_id}/biReservation`.
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -164,7 +164,7 @@ public final class BiReservation extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * The resource name of the singleton BI reservation.
    * Reservation names have the form
-   * `projects/{project_id}/locations/{location_id}/bireservation`.
+   * `projects/{project_id}/locations/{location_id}/biReservation`.
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -620,7 +620,7 @@ public final class BiReservation extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The resource name of the singleton BI reservation.
      * Reservation names have the form
-     * `projects/{project_id}/locations/{location_id}/bireservation`.
+     * `projects/{project_id}/locations/{location_id}/biReservation`.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -644,7 +644,7 @@ public final class BiReservation extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The resource name of the singleton BI reservation.
      * Reservation names have the form
-     * `projects/{project_id}/locations/{location_id}/bireservation`.
+     * `projects/{project_id}/locations/{location_id}/biReservation`.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -668,7 +668,7 @@ public final class BiReservation extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The resource name of the singleton BI reservation.
      * Reservation names have the form
-     * `projects/{project_id}/locations/{location_id}/bireservation`.
+     * `projects/{project_id}/locations/{location_id}/biReservation`.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -691,7 +691,7 @@ public final class BiReservation extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The resource name of the singleton BI reservation.
      * Reservation names have the form
-     * `projects/{project_id}/locations/{location_id}/bireservation`.
+     * `projects/{project_id}/locations/{location_id}/biReservation`.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -710,7 +710,7 @@ public final class BiReservation extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The resource name of the singleton BI reservation.
      * Reservation names have the form
-     * `projects/{project_id}/locations/{location_id}/bireservation`.
+     * `projects/{project_id}/locations/{location_id}/biReservation`.
      * </pre>
      *
      * <code>string name = 1;</code>

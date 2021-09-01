@@ -177,6 +177,17 @@ public final class Assignment extends com.google.protobuf.GeneratedMessageV3
      * <code>QUERY = 2;</code>
      */
     QUERY(2),
+    /**
+     *
+     *
+     * <pre>
+     * BigQuery ML jobs that use services external to BigQuery for model
+     * training. These jobs will not utilize idle slots from other reservations.
+     * </pre>
+     *
+     * <code>ML_EXTERNAL = 3;</code>
+     */
+    ML_EXTERNAL(3),
     UNRECOGNIZED(-1),
     ;
 
@@ -211,6 +222,17 @@ public final class Assignment extends com.google.protobuf.GeneratedMessageV3
      * <code>QUERY = 2;</code>
      */
     public static final int QUERY_VALUE = 2;
+    /**
+     *
+     *
+     * <pre>
+     * BigQuery ML jobs that use services external to BigQuery for model
+     * training. These jobs will not utilize idle slots from other reservations.
+     * </pre>
+     *
+     * <code>ML_EXTERNAL = 3;</code>
+     */
+    public static final int ML_EXTERNAL_VALUE = 3;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -242,6 +264,8 @@ public final class Assignment extends com.google.protobuf.GeneratedMessageV3
           return PIPELINE;
         case 2:
           return QUERY;
+        case 3:
+          return ML_EXTERNAL;
         default:
           return null;
       }

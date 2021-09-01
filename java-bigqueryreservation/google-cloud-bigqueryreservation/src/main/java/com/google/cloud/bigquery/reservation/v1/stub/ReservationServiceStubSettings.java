@@ -19,6 +19,7 @@ package com.google.cloud.bigquery.reservation.v1.stub;
 import static com.google.cloud.bigquery.reservation.v1.ReservationServiceClient.ListAssignmentsPagedResponse;
 import static com.google.cloud.bigquery.reservation.v1.ReservationServiceClient.ListCapacityCommitmentsPagedResponse;
 import static com.google.cloud.bigquery.reservation.v1.ReservationServiceClient.ListReservationsPagedResponse;
+import static com.google.cloud.bigquery.reservation.v1.ReservationServiceClient.SearchAllAssignmentsPagedResponse;
 import static com.google.cloud.bigquery.reservation.v1.ReservationServiceClient.SearchAssignmentsPagedResponse;
 
 import com.google.api.core.ApiFunction;
@@ -64,6 +65,8 @@ import com.google.cloud.bigquery.reservation.v1.ListReservationsResponse;
 import com.google.cloud.bigquery.reservation.v1.MergeCapacityCommitmentsRequest;
 import com.google.cloud.bigquery.reservation.v1.MoveAssignmentRequest;
 import com.google.cloud.bigquery.reservation.v1.Reservation;
+import com.google.cloud.bigquery.reservation.v1.SearchAllAssignmentsRequest;
+import com.google.cloud.bigquery.reservation.v1.SearchAllAssignmentsResponse;
 import com.google.cloud.bigquery.reservation.v1.SearchAssignmentsRequest;
 import com.google.cloud.bigquery.reservation.v1.SearchAssignmentsResponse;
 import com.google.cloud.bigquery.reservation.v1.SplitCapacityCommitmentRequest;
@@ -156,6 +159,11 @@ public class ReservationServiceStubSettings extends StubSettings<ReservationServ
   private final PagedCallSettings<
           SearchAssignmentsRequest, SearchAssignmentsResponse, SearchAssignmentsPagedResponse>
       searchAssignmentsSettings;
+  private final PagedCallSettings<
+          SearchAllAssignmentsRequest,
+          SearchAllAssignmentsResponse,
+          SearchAllAssignmentsPagedResponse>
+      searchAllAssignmentsSettings;
   private final UnaryCallSettings<MoveAssignmentRequest, Assignment> moveAssignmentSettings;
   private final UnaryCallSettings<GetBiReservationRequest, BiReservation> getBiReservationSettings;
   private final UnaryCallSettings<UpdateBiReservationRequest, BiReservation>
@@ -325,6 +333,46 @@ public class ReservationServiceStubSettings extends StubSettings<ReservationServ
             }
           };
 
+  private static final PagedListDescriptor<
+          SearchAllAssignmentsRequest, SearchAllAssignmentsResponse, Assignment>
+      SEARCH_ALL_ASSIGNMENTS_PAGE_STR_DESC =
+          new PagedListDescriptor<
+              SearchAllAssignmentsRequest, SearchAllAssignmentsResponse, Assignment>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public SearchAllAssignmentsRequest injectToken(
+                SearchAllAssignmentsRequest payload, String token) {
+              return SearchAllAssignmentsRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public SearchAllAssignmentsRequest injectPageSize(
+                SearchAllAssignmentsRequest payload, int pageSize) {
+              return SearchAllAssignmentsRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(SearchAllAssignmentsRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(SearchAllAssignmentsResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<Assignment> extractResources(SearchAllAssignmentsResponse payload) {
+              return payload.getAssignmentsList() == null
+                  ? ImmutableList.<Assignment>of()
+                  : payload.getAssignmentsList();
+            }
+          };
+
   private static final PagedListResponseFactory<
           ListReservationsRequest, ListReservationsResponse, ListReservationsPagedResponse>
       LIST_RESERVATIONS_PAGE_STR_FACT =
@@ -406,6 +454,29 @@ public class ReservationServiceStubSettings extends StubSettings<ReservationServ
                       PageContext.create(
                           callable, SEARCH_ASSIGNMENTS_PAGE_STR_DESC, request, context);
               return SearchAssignmentsPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          SearchAllAssignmentsRequest,
+          SearchAllAssignmentsResponse,
+          SearchAllAssignmentsPagedResponse>
+      SEARCH_ALL_ASSIGNMENTS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              SearchAllAssignmentsRequest,
+              SearchAllAssignmentsResponse,
+              SearchAllAssignmentsPagedResponse>() {
+            @Override
+            public ApiFuture<SearchAllAssignmentsPagedResponse> getFuturePagedResponse(
+                UnaryCallable<SearchAllAssignmentsRequest, SearchAllAssignmentsResponse> callable,
+                SearchAllAssignmentsRequest request,
+                ApiCallContext context,
+                ApiFuture<SearchAllAssignmentsResponse> futureResponse) {
+              PageContext<SearchAllAssignmentsRequest, SearchAllAssignmentsResponse, Assignment>
+                  pageContext =
+                      PageContext.create(
+                          callable, SEARCH_ALL_ASSIGNMENTS_PAGE_STR_DESC, request, context);
+              return SearchAllAssignmentsPagedResponse.createAsync(pageContext, futureResponse);
             }
           };
 
@@ -498,11 +569,25 @@ public class ReservationServiceStubSettings extends StubSettings<ReservationServ
     return deleteAssignmentSettings;
   }
 
-  /** Returns the object with the settings used for calls to searchAssignments. */
+  /**
+   * Returns the object with the settings used for calls to searchAssignments.
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
+   */
+  @Deprecated
   public PagedCallSettings<
           SearchAssignmentsRequest, SearchAssignmentsResponse, SearchAssignmentsPagedResponse>
       searchAssignmentsSettings() {
     return searchAssignmentsSettings;
+  }
+
+  /** Returns the object with the settings used for calls to searchAllAssignments. */
+  public PagedCallSettings<
+          SearchAllAssignmentsRequest,
+          SearchAllAssignmentsResponse,
+          SearchAllAssignmentsPagedResponse>
+      searchAllAssignmentsSettings() {
+    return searchAllAssignmentsSettings;
   }
 
   /** Returns the object with the settings used for calls to moveAssignment. */
@@ -613,6 +698,7 @@ public class ReservationServiceStubSettings extends StubSettings<ReservationServ
     listAssignmentsSettings = settingsBuilder.listAssignmentsSettings().build();
     deleteAssignmentSettings = settingsBuilder.deleteAssignmentSettings().build();
     searchAssignmentsSettings = settingsBuilder.searchAssignmentsSettings().build();
+    searchAllAssignmentsSettings = settingsBuilder.searchAllAssignmentsSettings().build();
     moveAssignmentSettings = settingsBuilder.moveAssignmentSettings().build();
     getBiReservationSettings = settingsBuilder.getBiReservationSettings().build();
     updateBiReservationSettings = settingsBuilder.updateBiReservationSettings().build();
@@ -661,6 +747,11 @@ public class ReservationServiceStubSettings extends StubSettings<ReservationServ
     private final PagedCallSettings.Builder<
             SearchAssignmentsRequest, SearchAssignmentsResponse, SearchAssignmentsPagedResponse>
         searchAssignmentsSettings;
+    private final PagedCallSettings.Builder<
+            SearchAllAssignmentsRequest,
+            SearchAllAssignmentsResponse,
+            SearchAllAssignmentsPagedResponse>
+        searchAllAssignmentsSettings;
     private final UnaryCallSettings.Builder<MoveAssignmentRequest, Assignment>
         moveAssignmentSettings;
     private final UnaryCallSettings.Builder<GetBiReservationRequest, BiReservation>
@@ -680,6 +771,7 @@ public class ReservationServiceStubSettings extends StubSettings<ReservationServ
           ImmutableSet.copyOf(
               Lists.<StatusCode.Code>newArrayList(
                   StatusCode.Code.DEADLINE_EXCEEDED, StatusCode.Code.UNAVAILABLE)));
+      definitions.put("no_retry_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
       RETRYABLE_CODE_DEFINITIONS = definitions.build();
     }
 
@@ -690,10 +782,10 @@ public class ReservationServiceStubSettings extends StubSettings<ReservationServ
       RetrySettings settings = null;
       settings =
           RetrySettings.newBuilder()
-              .setInitialRpcTimeout(Duration.ofMillis(60000L))
+              .setInitialRpcTimeout(Duration.ofMillis(300000L))
               .setRpcTimeoutMultiplier(1.0)
-              .setMaxRpcTimeout(Duration.ofMillis(60000L))
-              .setTotalTimeout(Duration.ofMillis(60000L))
+              .setMaxRpcTimeout(Duration.ofMillis(300000L))
+              .setTotalTimeout(Duration.ofMillis(300000L))
               .build();
       definitions.put("no_retry_0_params", settings);
       settings =
@@ -707,6 +799,8 @@ public class ReservationServiceStubSettings extends StubSettings<ReservationServ
               .setTotalTimeout(Duration.ofMillis(60000L))
               .build();
       definitions.put("retry_policy_1_params", settings);
+      settings = RetrySettings.newBuilder().setRpcTimeoutMultiplier(1.0).build();
+      definitions.put("no_retry_params", settings);
       RETRY_PARAM_DEFINITIONS = definitions.build();
     }
 
@@ -734,6 +828,8 @@ public class ReservationServiceStubSettings extends StubSettings<ReservationServ
       listAssignmentsSettings = PagedCallSettings.newBuilder(LIST_ASSIGNMENTS_PAGE_STR_FACT);
       deleteAssignmentSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       searchAssignmentsSettings = PagedCallSettings.newBuilder(SEARCH_ASSIGNMENTS_PAGE_STR_FACT);
+      searchAllAssignmentsSettings =
+          PagedCallSettings.newBuilder(SEARCH_ALL_ASSIGNMENTS_PAGE_STR_FACT);
       moveAssignmentSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       getBiReservationSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       updateBiReservationSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
@@ -756,6 +852,7 @@ public class ReservationServiceStubSettings extends StubSettings<ReservationServ
               listAssignmentsSettings,
               deleteAssignmentSettings,
               searchAssignmentsSettings,
+              searchAllAssignmentsSettings,
               moveAssignmentSettings,
               getBiReservationSettings,
               updateBiReservationSettings);
@@ -781,6 +878,7 @@ public class ReservationServiceStubSettings extends StubSettings<ReservationServ
       listAssignmentsSettings = settings.listAssignmentsSettings.toBuilder();
       deleteAssignmentSettings = settings.deleteAssignmentSettings.toBuilder();
       searchAssignmentsSettings = settings.searchAssignmentsSettings.toBuilder();
+      searchAllAssignmentsSettings = settings.searchAllAssignmentsSettings.toBuilder();
       moveAssignmentSettings = settings.moveAssignmentSettings.toBuilder();
       getBiReservationSettings = settings.getBiReservationSettings.toBuilder();
       updateBiReservationSettings = settings.updateBiReservationSettings.toBuilder();
@@ -803,6 +901,7 @@ public class ReservationServiceStubSettings extends StubSettings<ReservationServ
               listAssignmentsSettings,
               deleteAssignmentSettings,
               searchAssignmentsSettings,
+              searchAllAssignmentsSettings,
               moveAssignmentSettings,
               getBiReservationSettings,
               updateBiReservationSettings);
@@ -901,6 +1000,11 @@ public class ReservationServiceStubSettings extends StubSettings<ReservationServ
           .searchAssignmentsSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
+
+      builder
+          .searchAllAssignmentsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
 
       builder
           .moveAssignmentSettings()
@@ -1028,11 +1132,25 @@ public class ReservationServiceStubSettings extends StubSettings<ReservationServ
       return deleteAssignmentSettings;
     }
 
-    /** Returns the builder for the settings used for calls to searchAssignments. */
+    /**
+     * Returns the builder for the settings used for calls to searchAssignments.
+     *
+     * @deprecated This method is deprecated and will be removed in the next major version update.
+     */
+    @Deprecated
     public PagedCallSettings.Builder<
             SearchAssignmentsRequest, SearchAssignmentsResponse, SearchAssignmentsPagedResponse>
         searchAssignmentsSettings() {
       return searchAssignmentsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to searchAllAssignments. */
+    public PagedCallSettings.Builder<
+            SearchAllAssignmentsRequest,
+            SearchAllAssignmentsResponse,
+            SearchAllAssignmentsPagedResponse>
+        searchAllAssignmentsSettings() {
+      return searchAllAssignmentsSettings;
     }
 
     /** Returns the builder for the settings used for calls to moveAssignment. */

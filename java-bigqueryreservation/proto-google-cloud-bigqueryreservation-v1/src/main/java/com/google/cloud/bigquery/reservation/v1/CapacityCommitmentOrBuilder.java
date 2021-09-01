@@ -121,6 +121,50 @@ public interface CapacityCommitmentOrBuilder
    *
    *
    * <pre>
+   * Output only. The start of the current commitment period. It is applicable only for
+   * ACTIVE capacity commitments.
+   * </pre>
+   *
+   * <code>
+   * .google.protobuf.Timestamp commitment_start_time = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the commitmentStartTime field is set.
+   */
+  boolean hasCommitmentStartTime();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The start of the current commitment period. It is applicable only for
+   * ACTIVE capacity commitments.
+   * </pre>
+   *
+   * <code>
+   * .google.protobuf.Timestamp commitment_start_time = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The commitmentStartTime.
+   */
+  com.google.protobuf.Timestamp getCommitmentStartTime();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The start of the current commitment period. It is applicable only for
+   * ACTIVE capacity commitments.
+   * </pre>
+   *
+   * <code>
+   * .google.protobuf.Timestamp commitment_start_time = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.protobuf.TimestampOrBuilder getCommitmentStartTimeOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Output only. The end of the current commitment period. It is applicable only for ACTIVE
    * capacity commitments.
    * </pre>

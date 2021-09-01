@@ -103,4 +103,37 @@ public interface CreateCapacityCommitmentRequestOrBuilder
    * @return The enforceSingleAdminProjectPerOrg.
    */
   boolean getEnforceSingleAdminProjectPerOrg();
+
+  /**
+   *
+   *
+   * <pre>
+   * The optional capacity commitment ID. Capacity commitment name will be
+   * generated automatically if this field is empty.
+   * This field must only contain lower case alphanumeric characters or dash.
+   * Max length is 64 characters.
+   * NOTE: this ID won't be kept if the capacity commitment is split or merged.
+   * </pre>
+   *
+   * <code>string capacity_commitment_id = 5;</code>
+   *
+   * @return The capacityCommitmentId.
+   */
+  java.lang.String getCapacityCommitmentId();
+  /**
+   *
+   *
+   * <pre>
+   * The optional capacity commitment ID. Capacity commitment name will be
+   * generated automatically if this field is empty.
+   * This field must only contain lower case alphanumeric characters or dash.
+   * Max length is 64 characters.
+   * NOTE: this ID won't be kept if the capacity commitment is split or merged.
+   * </pre>
+   *
+   * <code>string capacity_commitment_id = 5;</code>
+   *
+   * @return The bytes for capacityCommitmentId.
+   */
+  com.google.protobuf.ByteString getCapacityCommitmentIdBytes();
 }

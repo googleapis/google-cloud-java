@@ -87,6 +87,36 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
               ignoreIdleSlots_ = input.readBool();
               break;
             }
+          case 66:
+            {
+              com.google.protobuf.Timestamp.Builder subBuilder = null;
+              if (creationTime_ != null) {
+                subBuilder = creationTime_.toBuilder();
+              }
+              creationTime_ =
+                  input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(creationTime_);
+                creationTime_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+          case 74:
+            {
+              com.google.protobuf.Timestamp.Builder subBuilder = null;
+              if (updateTime_ != null) {
+                subBuilder = updateTime_.toBuilder();
+              }
+              updateTime_ =
+                  input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(updateTime_);
+                updateTime_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -203,9 +233,10 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * If false, any query using this reservation will use idle slots from other
-   * reservations within the same admin project. If true, a query using this
-   * reservation will execute with the slot capacity specified above at most.
+   * If false, any query or pipeline job using this reservation will use idle
+   * slots from other reservations within the same admin project. If true, a
+   * query or pipeline job using this reservation will execute with the slot
+   * capacity specified in the slot_capacity field at most.
    * </pre>
    *
    * <code>bool ignore_idle_slots = 4;</code>
@@ -215,6 +246,109 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public boolean getIgnoreIdleSlots() {
     return ignoreIdleSlots_;
+  }
+
+  public static final int CREATION_TIME_FIELD_NUMBER = 8;
+  private com.google.protobuf.Timestamp creationTime_;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Creation time of the reservation.
+   * </pre>
+   *
+   * <code>
+   * .google.protobuf.Timestamp creation_time = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the creationTime field is set.
+   */
+  @java.lang.Override
+  public boolean hasCreationTime() {
+    return creationTime_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Creation time of the reservation.
+   * </pre>
+   *
+   * <code>
+   * .google.protobuf.Timestamp creation_time = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The creationTime.
+   */
+  @java.lang.Override
+  public com.google.protobuf.Timestamp getCreationTime() {
+    return creationTime_ == null
+        ? com.google.protobuf.Timestamp.getDefaultInstance()
+        : creationTime_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Creation time of the reservation.
+   * </pre>
+   *
+   * <code>
+   * .google.protobuf.Timestamp creation_time = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.protobuf.TimestampOrBuilder getCreationTimeOrBuilder() {
+    return getCreationTime();
+  }
+
+  public static final int UPDATE_TIME_FIELD_NUMBER = 9;
+  private com.google.protobuf.Timestamp updateTime_;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Last update time of the reservation.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp update_time = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the updateTime field is set.
+   */
+  @java.lang.Override
+  public boolean hasUpdateTime() {
+    return updateTime_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Last update time of the reservation.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp update_time = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The updateTime.
+   */
+  @java.lang.Override
+  public com.google.protobuf.Timestamp getUpdateTime() {
+    return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Last update time of the reservation.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp update_time = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.protobuf.TimestampOrBuilder getUpdateTimeOrBuilder() {
+    return getUpdateTime();
   }
 
   private byte memoizedIsInitialized = -1;
@@ -240,6 +374,12 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
     if (ignoreIdleSlots_ != false) {
       output.writeBool(4, ignoreIdleSlots_);
     }
+    if (creationTime_ != null) {
+      output.writeMessage(8, getCreationTime());
+    }
+    if (updateTime_ != null) {
+      output.writeMessage(9, getUpdateTime());
+    }
     unknownFields.writeTo(output);
   }
 
@@ -257,6 +397,12 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
     }
     if (ignoreIdleSlots_ != false) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(4, ignoreIdleSlots_);
+    }
+    if (creationTime_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(8, getCreationTime());
+    }
+    if (updateTime_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(9, getUpdateTime());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -277,6 +423,14 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
     if (!getName().equals(other.getName())) return false;
     if (getSlotCapacity() != other.getSlotCapacity()) return false;
     if (getIgnoreIdleSlots() != other.getIgnoreIdleSlots()) return false;
+    if (hasCreationTime() != other.hasCreationTime()) return false;
+    if (hasCreationTime()) {
+      if (!getCreationTime().equals(other.getCreationTime())) return false;
+    }
+    if (hasUpdateTime() != other.hasUpdateTime()) return false;
+    if (hasUpdateTime()) {
+      if (!getUpdateTime().equals(other.getUpdateTime())) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -294,6 +448,14 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
     hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getSlotCapacity());
     hash = (37 * hash) + IGNORE_IDLE_SLOTS_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getIgnoreIdleSlots());
+    if (hasCreationTime()) {
+      hash = (37 * hash) + CREATION_TIME_FIELD_NUMBER;
+      hash = (53 * hash) + getCreationTime().hashCode();
+    }
+    if (hasUpdateTime()) {
+      hash = (37 * hash) + UPDATE_TIME_FIELD_NUMBER;
+      hash = (53 * hash) + getUpdateTime().hashCode();
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -445,6 +607,18 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
 
       ignoreIdleSlots_ = false;
 
+      if (creationTimeBuilder_ == null) {
+        creationTime_ = null;
+      } else {
+        creationTime_ = null;
+        creationTimeBuilder_ = null;
+      }
+      if (updateTimeBuilder_ == null) {
+        updateTime_ = null;
+      } else {
+        updateTime_ = null;
+        updateTimeBuilder_ = null;
+      }
       return this;
     }
 
@@ -475,6 +649,16 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
       result.name_ = name_;
       result.slotCapacity_ = slotCapacity_;
       result.ignoreIdleSlots_ = ignoreIdleSlots_;
+      if (creationTimeBuilder_ == null) {
+        result.creationTime_ = creationTime_;
+      } else {
+        result.creationTime_ = creationTimeBuilder_.build();
+      }
+      if (updateTimeBuilder_ == null) {
+        result.updateTime_ = updateTime_;
+      } else {
+        result.updateTime_ = updateTimeBuilder_.build();
+      }
       onBuilt();
       return result;
     }
@@ -534,6 +718,12 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.getIgnoreIdleSlots() != false) {
         setIgnoreIdleSlots(other.getIgnoreIdleSlots());
+      }
+      if (other.hasCreationTime()) {
+        mergeCreationTime(other.getCreationTime());
+      }
+      if (other.hasUpdateTime()) {
+        mergeUpdateTime(other.getUpdateTime());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -754,9 +944,10 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * If false, any query using this reservation will use idle slots from other
-     * reservations within the same admin project. If true, a query using this
-     * reservation will execute with the slot capacity specified above at most.
+     * If false, any query or pipeline job using this reservation will use idle
+     * slots from other reservations within the same admin project. If true, a
+     * query or pipeline job using this reservation will execute with the slot
+     * capacity specified in the slot_capacity field at most.
      * </pre>
      *
      * <code>bool ignore_idle_slots = 4;</code>
@@ -771,9 +962,10 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * If false, any query using this reservation will use idle slots from other
-     * reservations within the same admin project. If true, a query using this
-     * reservation will execute with the slot capacity specified above at most.
+     * If false, any query or pipeline job using this reservation will use idle
+     * slots from other reservations within the same admin project. If true, a
+     * query or pipeline job using this reservation will execute with the slot
+     * capacity specified in the slot_capacity field at most.
      * </pre>
      *
      * <code>bool ignore_idle_slots = 4;</code>
@@ -791,9 +983,10 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * If false, any query using this reservation will use idle slots from other
-     * reservations within the same admin project. If true, a query using this
-     * reservation will execute with the slot capacity specified above at most.
+     * If false, any query or pipeline job using this reservation will use idle
+     * slots from other reservations within the same admin project. If true, a
+     * query or pipeline job using this reservation will execute with the slot
+     * capacity specified in the slot_capacity field at most.
      * </pre>
      *
      * <code>bool ignore_idle_slots = 4;</code>
@@ -805,6 +998,410 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
       ignoreIdleSlots_ = false;
       onChanged();
       return this;
+    }
+
+    private com.google.protobuf.Timestamp creationTime_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
+        creationTimeBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Creation time of the reservation.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp creation_time = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the creationTime field is set.
+     */
+    public boolean hasCreationTime() {
+      return creationTimeBuilder_ != null || creationTime_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Creation time of the reservation.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp creation_time = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The creationTime.
+     */
+    public com.google.protobuf.Timestamp getCreationTime() {
+      if (creationTimeBuilder_ == null) {
+        return creationTime_ == null
+            ? com.google.protobuf.Timestamp.getDefaultInstance()
+            : creationTime_;
+      } else {
+        return creationTimeBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Creation time of the reservation.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp creation_time = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setCreationTime(com.google.protobuf.Timestamp value) {
+      if (creationTimeBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        creationTime_ = value;
+        onChanged();
+      } else {
+        creationTimeBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Creation time of the reservation.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp creation_time = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setCreationTime(com.google.protobuf.Timestamp.Builder builderForValue) {
+      if (creationTimeBuilder_ == null) {
+        creationTime_ = builderForValue.build();
+        onChanged();
+      } else {
+        creationTimeBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Creation time of the reservation.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp creation_time = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder mergeCreationTime(com.google.protobuf.Timestamp value) {
+      if (creationTimeBuilder_ == null) {
+        if (creationTime_ != null) {
+          creationTime_ =
+              com.google.protobuf.Timestamp.newBuilder(creationTime_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          creationTime_ = value;
+        }
+        onChanged();
+      } else {
+        creationTimeBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Creation time of the reservation.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp creation_time = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder clearCreationTime() {
+      if (creationTimeBuilder_ == null) {
+        creationTime_ = null;
+        onChanged();
+      } else {
+        creationTime_ = null;
+        creationTimeBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Creation time of the reservation.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp creation_time = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.protobuf.Timestamp.Builder getCreationTimeBuilder() {
+
+      onChanged();
+      return getCreationTimeFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Creation time of the reservation.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp creation_time = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.protobuf.TimestampOrBuilder getCreationTimeOrBuilder() {
+      if (creationTimeBuilder_ != null) {
+        return creationTimeBuilder_.getMessageOrBuilder();
+      } else {
+        return creationTime_ == null
+            ? com.google.protobuf.Timestamp.getDefaultInstance()
+            : creationTime_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Creation time of the reservation.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp creation_time = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
+        getCreationTimeFieldBuilder() {
+      if (creationTimeBuilder_ == null) {
+        creationTimeBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.protobuf.Timestamp,
+                com.google.protobuf.Timestamp.Builder,
+                com.google.protobuf.TimestampOrBuilder>(
+                getCreationTime(), getParentForChildren(), isClean());
+        creationTime_ = null;
+      }
+      return creationTimeBuilder_;
+    }
+
+    private com.google.protobuf.Timestamp updateTime_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
+        updateTimeBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Last update time of the reservation.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp update_time = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the updateTime field is set.
+     */
+    public boolean hasUpdateTime() {
+      return updateTimeBuilder_ != null || updateTime_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Last update time of the reservation.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp update_time = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The updateTime.
+     */
+    public com.google.protobuf.Timestamp getUpdateTime() {
+      if (updateTimeBuilder_ == null) {
+        return updateTime_ == null
+            ? com.google.protobuf.Timestamp.getDefaultInstance()
+            : updateTime_;
+      } else {
+        return updateTimeBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Last update time of the reservation.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp update_time = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setUpdateTime(com.google.protobuf.Timestamp value) {
+      if (updateTimeBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        updateTime_ = value;
+        onChanged();
+      } else {
+        updateTimeBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Last update time of the reservation.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp update_time = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setUpdateTime(com.google.protobuf.Timestamp.Builder builderForValue) {
+      if (updateTimeBuilder_ == null) {
+        updateTime_ = builderForValue.build();
+        onChanged();
+      } else {
+        updateTimeBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Last update time of the reservation.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp update_time = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder mergeUpdateTime(com.google.protobuf.Timestamp value) {
+      if (updateTimeBuilder_ == null) {
+        if (updateTime_ != null) {
+          updateTime_ =
+              com.google.protobuf.Timestamp.newBuilder(updateTime_).mergeFrom(value).buildPartial();
+        } else {
+          updateTime_ = value;
+        }
+        onChanged();
+      } else {
+        updateTimeBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Last update time of the reservation.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp update_time = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder clearUpdateTime() {
+      if (updateTimeBuilder_ == null) {
+        updateTime_ = null;
+        onChanged();
+      } else {
+        updateTime_ = null;
+        updateTimeBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Last update time of the reservation.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp update_time = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.protobuf.Timestamp.Builder getUpdateTimeBuilder() {
+
+      onChanged();
+      return getUpdateTimeFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Last update time of the reservation.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp update_time = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.protobuf.TimestampOrBuilder getUpdateTimeOrBuilder() {
+      if (updateTimeBuilder_ != null) {
+        return updateTimeBuilder_.getMessageOrBuilder();
+      } else {
+        return updateTime_ == null
+            ? com.google.protobuf.Timestamp.getDefaultInstance()
+            : updateTime_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Last update time of the reservation.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp update_time = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
+        getUpdateTimeFieldBuilder() {
+      if (updateTimeBuilder_ == null) {
+        updateTimeBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.protobuf.Timestamp,
+                com.google.protobuf.Timestamp.Builder,
+                com.google.protobuf.TimestampOrBuilder>(
+                getUpdateTime(), getParentForChildren(), isClean());
+        updateTime_ = null;
+      }
+      return updateTimeBuilder_;
     }
 
     @java.lang.Override

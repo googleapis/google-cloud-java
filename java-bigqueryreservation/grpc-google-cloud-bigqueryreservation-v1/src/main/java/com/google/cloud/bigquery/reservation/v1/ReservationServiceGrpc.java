@@ -839,6 +839,56 @@ public final class ReservationServiceGrpc {
   }
 
   private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.bigquery.reservation.v1.SearchAllAssignmentsRequest,
+          com.google.cloud.bigquery.reservation.v1.SearchAllAssignmentsResponse>
+      getSearchAllAssignmentsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "SearchAllAssignments",
+      requestType = com.google.cloud.bigquery.reservation.v1.SearchAllAssignmentsRequest.class,
+      responseType = com.google.cloud.bigquery.reservation.v1.SearchAllAssignmentsResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.bigquery.reservation.v1.SearchAllAssignmentsRequest,
+          com.google.cloud.bigquery.reservation.v1.SearchAllAssignmentsResponse>
+      getSearchAllAssignmentsMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.bigquery.reservation.v1.SearchAllAssignmentsRequest,
+            com.google.cloud.bigquery.reservation.v1.SearchAllAssignmentsResponse>
+        getSearchAllAssignmentsMethod;
+    if ((getSearchAllAssignmentsMethod = ReservationServiceGrpc.getSearchAllAssignmentsMethod)
+        == null) {
+      synchronized (ReservationServiceGrpc.class) {
+        if ((getSearchAllAssignmentsMethod = ReservationServiceGrpc.getSearchAllAssignmentsMethod)
+            == null) {
+          ReservationServiceGrpc.getSearchAllAssignmentsMethod =
+              getSearchAllAssignmentsMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.bigquery.reservation.v1.SearchAllAssignmentsRequest,
+                          com.google.cloud.bigquery.reservation.v1.SearchAllAssignmentsResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "SearchAllAssignments"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.bigquery.reservation.v1.SearchAllAssignmentsRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.bigquery.reservation.v1.SearchAllAssignmentsResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new ReservationServiceMethodDescriptorSupplier("SearchAllAssignments"))
+                      .build();
+        }
+      }
+    }
+    return getSearchAllAssignmentsMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.bigquery.reservation.v1.MoveAssignmentRequest,
           com.google.cloud.bigquery.reservation.v1.Assignment>
       getMoveAssignmentMethod;
@@ -1265,6 +1315,10 @@ public final class ReservationServiceGrpc {
      * * Assignments for all three entities (`organizationA`, `project1`, and
      *   `project2`) could all be created and mapped to the same or different
      *   reservations.
+     * "None" assignments represent an absence of the assignment. Projects
+     * assigned to None use on-demand pricing. To create a "None" assignment, use
+     * "none" as a reservation_id in the parent. Example parent:
+     * `projects/myproject/locations/US/reservations/none`.
      * Returns `google.rpc.Code.PERMISSION_DENIED` if user does not have
      * 'bigquery.admin' permissions on the project using the reservation
      * and the project that owns this reservation.
@@ -1339,7 +1393,7 @@ public final class ReservationServiceGrpc {
      *
      *
      * <pre>
-     * Looks up assignments for a specified resource for a particular region.
+     * Deprecated: Looks up assignments for a specified resource for a particular region.
      * If the request is about a project:
      * 1. Assignments created on the project will be returned if they exist.
      * 2. Otherwise assignments created on the closest ancestor will be
@@ -1358,6 +1412,7 @@ public final class ReservationServiceGrpc {
      * nor locations.
      * </pre>
      */
+    @java.lang.Deprecated
     public void searchAssignments(
         com.google.cloud.bigquery.reservation.v1.SearchAssignmentsRequest request,
         io.grpc.stub.StreamObserver<
@@ -1365,6 +1420,36 @@ public final class ReservationServiceGrpc {
             responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getSearchAssignmentsMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Looks up assignments for a specified resource for a particular region.
+     * If the request is about a project:
+     * 1. Assignments created on the project will be returned if they exist.
+     * 2. Otherwise assignments created on the closest ancestor will be
+     *    returned.
+     * 3. Assignments for different JobTypes will all be returned.
+     * The same logic applies if the request is about a folder.
+     * If the request is about an organization, then assignments created on the
+     * organization will be returned (organization doesn't have ancestors).
+     * Comparing to ListAssignments, there are some behavior
+     * differences:
+     * 1. permission on the assignee will be verified in this API.
+     * 2. Hierarchy lookup (project-&gt;folder-&gt;organization) happens in this API.
+     * 3. Parent here is `projects/&#42;&#47;locations/&#42;`, instead of
+     *    `projects/&#42;&#47;locations/&#42;reservations/&#42;`.
+     * </pre>
+     */
+    public void searchAllAssignments(
+        com.google.cloud.bigquery.reservation.v1.SearchAllAssignmentsRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.cloud.bigquery.reservation.v1.SearchAllAssignmentsResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getSearchAllAssignmentsMethod(), responseObserver);
     }
 
     /**
@@ -1532,6 +1617,13 @@ public final class ReservationServiceGrpc {
                       com.google.cloud.bigquery.reservation.v1.SearchAssignmentsRequest,
                       com.google.cloud.bigquery.reservation.v1.SearchAssignmentsResponse>(
                       this, METHODID_SEARCH_ASSIGNMENTS)))
+          .addMethod(
+              getSearchAllAssignmentsMethod(),
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.cloud.bigquery.reservation.v1.SearchAllAssignmentsRequest,
+                      com.google.cloud.bigquery.reservation.v1.SearchAllAssignmentsResponse>(
+                      this, METHODID_SEARCH_ALL_ASSIGNMENTS)))
           .addMethod(
               getMoveAssignmentMethod(),
               io.grpc.stub.ServerCalls.asyncUnaryCall(
@@ -1832,6 +1924,10 @@ public final class ReservationServiceGrpc {
      * * Assignments for all three entities (`organizationA`, `project1`, and
      *   `project2`) could all be created and mapped to the same or different
      *   reservations.
+     * "None" assignments represent an absence of the assignment. Projects
+     * assigned to None use on-demand pricing. To create a "None" assignment, use
+     * "none" as a reservation_id in the parent. Example parent:
+     * `projects/myproject/locations/US/reservations/none`.
      * Returns `google.rpc.Code.PERMISSION_DENIED` if user does not have
      * 'bigquery.admin' permissions on the project using the reservation
      * and the project that owns this reservation.
@@ -1912,7 +2008,7 @@ public final class ReservationServiceGrpc {
      *
      *
      * <pre>
-     * Looks up assignments for a specified resource for a particular region.
+     * Deprecated: Looks up assignments for a specified resource for a particular region.
      * If the request is about a project:
      * 1. Assignments created on the project will be returned if they exist.
      * 2. Otherwise assignments created on the closest ancestor will be
@@ -1931,6 +2027,7 @@ public final class ReservationServiceGrpc {
      * nor locations.
      * </pre>
      */
+    @java.lang.Deprecated
     public void searchAssignments(
         com.google.cloud.bigquery.reservation.v1.SearchAssignmentsRequest request,
         io.grpc.stub.StreamObserver<
@@ -1938,6 +2035,38 @@ public final class ReservationServiceGrpc {
             responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getSearchAssignmentsMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Looks up assignments for a specified resource for a particular region.
+     * If the request is about a project:
+     * 1. Assignments created on the project will be returned if they exist.
+     * 2. Otherwise assignments created on the closest ancestor will be
+     *    returned.
+     * 3. Assignments for different JobTypes will all be returned.
+     * The same logic applies if the request is about a folder.
+     * If the request is about an organization, then assignments created on the
+     * organization will be returned (organization doesn't have ancestors).
+     * Comparing to ListAssignments, there are some behavior
+     * differences:
+     * 1. permission on the assignee will be verified in this API.
+     * 2. Hierarchy lookup (project-&gt;folder-&gt;organization) happens in this API.
+     * 3. Parent here is `projects/&#42;&#47;locations/&#42;`, instead of
+     *    `projects/&#42;&#47;locations/&#42;reservations/&#42;`.
+     * </pre>
+     */
+    public void searchAllAssignments(
+        com.google.cloud.bigquery.reservation.v1.SearchAllAssignmentsRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.cloud.bigquery.reservation.v1.SearchAllAssignmentsResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getSearchAllAssignmentsMethod(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -2231,6 +2360,10 @@ public final class ReservationServiceGrpc {
      * * Assignments for all three entities (`organizationA`, `project1`, and
      *   `project2`) could all be created and mapped to the same or different
      *   reservations.
+     * "None" assignments represent an absence of the assignment. Projects
+     * assigned to None use on-demand pricing. To create a "None" assignment, use
+     * "none" as a reservation_id in the parent. Example parent:
+     * `projects/myproject/locations/US/reservations/none`.
      * Returns `google.rpc.Code.PERMISSION_DENIED` if user does not have
      * 'bigquery.admin' permissions on the project using the reservation
      * and the project that owns this reservation.
@@ -2299,7 +2432,7 @@ public final class ReservationServiceGrpc {
      *
      *
      * <pre>
-     * Looks up assignments for a specified resource for a particular region.
+     * Deprecated: Looks up assignments for a specified resource for a particular region.
      * If the request is about a project:
      * 1. Assignments created on the project will be returned if they exist.
      * 2. Otherwise assignments created on the closest ancestor will be
@@ -2318,10 +2451,39 @@ public final class ReservationServiceGrpc {
      * nor locations.
      * </pre>
      */
+    @java.lang.Deprecated
     public com.google.cloud.bigquery.reservation.v1.SearchAssignmentsResponse searchAssignments(
         com.google.cloud.bigquery.reservation.v1.SearchAssignmentsRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getSearchAssignmentsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Looks up assignments for a specified resource for a particular region.
+     * If the request is about a project:
+     * 1. Assignments created on the project will be returned if they exist.
+     * 2. Otherwise assignments created on the closest ancestor will be
+     *    returned.
+     * 3. Assignments for different JobTypes will all be returned.
+     * The same logic applies if the request is about a folder.
+     * If the request is about an organization, then assignments created on the
+     * organization will be returned (organization doesn't have ancestors).
+     * Comparing to ListAssignments, there are some behavior
+     * differences:
+     * 1. permission on the assignee will be verified in this API.
+     * 2. Hierarchy lookup (project-&gt;folder-&gt;organization) happens in this API.
+     * 3. Parent here is `projects/&#42;&#47;locations/&#42;`, instead of
+     *    `projects/&#42;&#47;locations/&#42;reservations/&#42;`.
+     * </pre>
+     */
+    public com.google.cloud.bigquery.reservation.v1.SearchAllAssignmentsResponse
+        searchAllAssignments(
+            com.google.cloud.bigquery.reservation.v1.SearchAllAssignmentsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getSearchAllAssignmentsMethod(), getCallOptions(), request);
     }
 
     /**
@@ -2618,6 +2780,10 @@ public final class ReservationServiceGrpc {
      * * Assignments for all three entities (`organizationA`, `project1`, and
      *   `project2`) could all be created and mapped to the same or different
      *   reservations.
+     * "None" assignments represent an absence of the assignment. Projects
+     * assigned to None use on-demand pricing. To create a "None" assignment, use
+     * "none" as a reservation_id in the parent. Example parent:
+     * `projects/myproject/locations/US/reservations/none`.
      * Returns `google.rpc.Code.PERMISSION_DENIED` if user does not have
      * 'bigquery.admin' permissions on the project using the reservation
      * and the project that owns this reservation.
@@ -2688,7 +2854,7 @@ public final class ReservationServiceGrpc {
      *
      *
      * <pre>
-     * Looks up assignments for a specified resource for a particular region.
+     * Deprecated: Looks up assignments for a specified resource for a particular region.
      * If the request is about a project:
      * 1. Assignments created on the project will be returned if they exist.
      * 2. Otherwise assignments created on the closest ancestor will be
@@ -2707,12 +2873,42 @@ public final class ReservationServiceGrpc {
      * nor locations.
      * </pre>
      */
+    @java.lang.Deprecated
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.bigquery.reservation.v1.SearchAssignmentsResponse>
         searchAssignments(
             com.google.cloud.bigquery.reservation.v1.SearchAssignmentsRequest request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getSearchAssignmentsMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Looks up assignments for a specified resource for a particular region.
+     * If the request is about a project:
+     * 1. Assignments created on the project will be returned if they exist.
+     * 2. Otherwise assignments created on the closest ancestor will be
+     *    returned.
+     * 3. Assignments for different JobTypes will all be returned.
+     * The same logic applies if the request is about a folder.
+     * If the request is about an organization, then assignments created on the
+     * organization will be returned (organization doesn't have ancestors).
+     * Comparing to ListAssignments, there are some behavior
+     * differences:
+     * 1. permission on the assignee will be verified in this API.
+     * 2. Hierarchy lookup (project-&gt;folder-&gt;organization) happens in this API.
+     * 3. Parent here is `projects/&#42;&#47;locations/&#42;`, instead of
+     *    `projects/&#42;&#47;locations/&#42;reservations/&#42;`.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.bigquery.reservation.v1.SearchAllAssignmentsResponse>
+        searchAllAssignments(
+            com.google.cloud.bigquery.reservation.v1.SearchAllAssignmentsRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getSearchAllAssignmentsMethod(), getCallOptions()), request);
     }
 
     /**
@@ -2783,9 +2979,10 @@ public final class ReservationServiceGrpc {
   private static final int METHODID_LIST_ASSIGNMENTS = 13;
   private static final int METHODID_DELETE_ASSIGNMENT = 14;
   private static final int METHODID_SEARCH_ASSIGNMENTS = 15;
-  private static final int METHODID_MOVE_ASSIGNMENT = 16;
-  private static final int METHODID_GET_BI_RESERVATION = 17;
-  private static final int METHODID_UPDATE_BI_RESERVATION = 18;
+  private static final int METHODID_SEARCH_ALL_ASSIGNMENTS = 16;
+  private static final int METHODID_MOVE_ASSIGNMENT = 17;
+  private static final int METHODID_GET_BI_RESERVATION = 18;
+  private static final int METHODID_UPDATE_BI_RESERVATION = 19;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -2906,6 +3103,13 @@ public final class ReservationServiceGrpc {
                       com.google.cloud.bigquery.reservation.v1.SearchAssignmentsResponse>)
                   responseObserver);
           break;
+        case METHODID_SEARCH_ALL_ASSIGNMENTS:
+          serviceImpl.searchAllAssignments(
+              (com.google.cloud.bigquery.reservation.v1.SearchAllAssignmentsRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.cloud.bigquery.reservation.v1.SearchAllAssignmentsResponse>)
+                  responseObserver);
+          break;
         case METHODID_MOVE_ASSIGNMENT:
           serviceImpl.moveAssignment(
               (com.google.cloud.bigquery.reservation.v1.MoveAssignmentRequest) request,
@@ -3004,6 +3208,7 @@ public final class ReservationServiceGrpc {
                       .addMethod(getListAssignmentsMethod())
                       .addMethod(getDeleteAssignmentMethod())
                       .addMethod(getSearchAssignmentsMethod())
+                      .addMethod(getSearchAllAssignmentsMethod())
                       .addMethod(getMoveAssignmentMethod())
                       .addMethod(getGetBiReservationMethod())
                       .addMethod(getUpdateBiReservationMethod())

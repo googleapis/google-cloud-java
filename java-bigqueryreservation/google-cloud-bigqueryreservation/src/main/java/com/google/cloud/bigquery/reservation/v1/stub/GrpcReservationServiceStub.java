@@ -19,6 +19,7 @@ package com.google.cloud.bigquery.reservation.v1.stub;
 import static com.google.cloud.bigquery.reservation.v1.ReservationServiceClient.ListAssignmentsPagedResponse;
 import static com.google.cloud.bigquery.reservation.v1.ReservationServiceClient.ListCapacityCommitmentsPagedResponse;
 import static com.google.cloud.bigquery.reservation.v1.ReservationServiceClient.ListReservationsPagedResponse;
+import static com.google.cloud.bigquery.reservation.v1.ReservationServiceClient.SearchAllAssignmentsPagedResponse;
 import static com.google.cloud.bigquery.reservation.v1.ReservationServiceClient.SearchAssignmentsPagedResponse;
 
 import com.google.api.gax.core.BackgroundResource;
@@ -48,6 +49,8 @@ import com.google.cloud.bigquery.reservation.v1.ListReservationsResponse;
 import com.google.cloud.bigquery.reservation.v1.MergeCapacityCommitmentsRequest;
 import com.google.cloud.bigquery.reservation.v1.MoveAssignmentRequest;
 import com.google.cloud.bigquery.reservation.v1.Reservation;
+import com.google.cloud.bigquery.reservation.v1.SearchAllAssignmentsRequest;
+import com.google.cloud.bigquery.reservation.v1.SearchAllAssignmentsResponse;
 import com.google.cloud.bigquery.reservation.v1.SearchAssignmentsRequest;
 import com.google.cloud.bigquery.reservation.v1.SearchAssignmentsResponse;
 import com.google.cloud.bigquery.reservation.v1.SplitCapacityCommitmentRequest;
@@ -257,6 +260,18 @@ public class GrpcReservationServiceStub extends ReservationServiceStub {
                   ProtoUtils.marshaller(SearchAssignmentsResponse.getDefaultInstance()))
               .build();
 
+  private static final MethodDescriptor<SearchAllAssignmentsRequest, SearchAllAssignmentsResponse>
+      searchAllAssignmentsMethodDescriptor =
+          MethodDescriptor.<SearchAllAssignmentsRequest, SearchAllAssignmentsResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.bigquery.reservation.v1.ReservationService/SearchAllAssignments")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(SearchAllAssignmentsRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(SearchAllAssignmentsResponse.getDefaultInstance()))
+              .build();
+
   private static final MethodDescriptor<MoveAssignmentRequest, Assignment>
       moveAssignmentMethodDescriptor =
           MethodDescriptor.<MoveAssignmentRequest, Assignment>newBuilder()
@@ -324,6 +339,10 @@ public class GrpcReservationServiceStub extends ReservationServiceStub {
       searchAssignmentsCallable;
   private final UnaryCallable<SearchAssignmentsRequest, SearchAssignmentsPagedResponse>
       searchAssignmentsPagedCallable;
+  private final UnaryCallable<SearchAllAssignmentsRequest, SearchAllAssignmentsResponse>
+      searchAllAssignmentsCallable;
+  private final UnaryCallable<SearchAllAssignmentsRequest, SearchAllAssignmentsPagedResponse>
+      searchAllAssignmentsPagedCallable;
   private final UnaryCallable<MoveAssignmentRequest, Assignment> moveAssignmentCallable;
   private final UnaryCallable<GetBiReservationRequest, BiReservation> getBiReservationCallable;
   private final UnaryCallable<UpdateBiReservationRequest, BiReservation>
@@ -548,6 +567,17 @@ public class GrpcReservationServiceStub extends ReservationServiceStub {
                       return params.build();
                     })
                 .build();
+    GrpcCallSettings<SearchAllAssignmentsRequest, SearchAllAssignmentsResponse>
+        searchAllAssignmentsTransportSettings =
+            GrpcCallSettings.<SearchAllAssignmentsRequest, SearchAllAssignmentsResponse>newBuilder()
+                .setMethodDescriptor(searchAllAssignmentsMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("parent", String.valueOf(request.getParent()));
+                      return params.build();
+                    })
+                .build();
     GrpcCallSettings<MoveAssignmentRequest, Assignment> moveAssignmentTransportSettings =
         GrpcCallSettings.<MoveAssignmentRequest, Assignment>newBuilder()
             .setMethodDescriptor(moveAssignmentMethodDescriptor)
@@ -667,6 +697,16 @@ public class GrpcReservationServiceStub extends ReservationServiceStub {
         callableFactory.createPagedCallable(
             searchAssignmentsTransportSettings,
             settings.searchAssignmentsSettings(),
+            clientContext);
+    this.searchAllAssignmentsCallable =
+        callableFactory.createUnaryCallable(
+            searchAllAssignmentsTransportSettings,
+            settings.searchAllAssignmentsSettings(),
+            clientContext);
+    this.searchAllAssignmentsPagedCallable =
+        callableFactory.createPagedCallable(
+            searchAllAssignmentsTransportSettings,
+            settings.searchAllAssignmentsSettings(),
             clientContext);
     this.moveAssignmentCallable =
         callableFactory.createUnaryCallable(
@@ -798,6 +838,18 @@ public class GrpcReservationServiceStub extends ReservationServiceStub {
   public UnaryCallable<SearchAssignmentsRequest, SearchAssignmentsPagedResponse>
       searchAssignmentsPagedCallable() {
     return searchAssignmentsPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<SearchAllAssignmentsRequest, SearchAllAssignmentsResponse>
+      searchAllAssignmentsCallable() {
+    return searchAllAssignmentsCallable;
+  }
+
+  @Override
+  public UnaryCallable<SearchAllAssignmentsRequest, SearchAllAssignmentsPagedResponse>
+      searchAllAssignmentsPagedCallable() {
+    return searchAllAssignmentsPagedCallable;
   }
 
   @Override

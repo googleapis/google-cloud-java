@@ -19,6 +19,7 @@ package com.google.cloud.bigquery.reservation.v1;
 import static com.google.cloud.bigquery.reservation.v1.ReservationServiceClient.ListAssignmentsPagedResponse;
 import static com.google.cloud.bigquery.reservation.v1.ReservationServiceClient.ListCapacityCommitmentsPagedResponse;
 import static com.google.cloud.bigquery.reservation.v1.ReservationServiceClient.ListReservationsPagedResponse;
+import static com.google.cloud.bigquery.reservation.v1.ReservationServiceClient.SearchAllAssignmentsPagedResponse;
 import static com.google.cloud.bigquery.reservation.v1.ReservationServiceClient.SearchAssignmentsPagedResponse;
 
 import com.google.api.gax.core.NoCredentialsProvider;
@@ -93,6 +94,8 @@ public class ReservationServiceClientTest {
             .setName(ReservationName.of("[PROJECT]", "[LOCATION]", "[RESERVATION]").toString())
             .setSlotCapacity(-1516717605)
             .setIgnoreIdleSlots(true)
+            .setCreationTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
             .build();
     mockReservationService.addResponse(expectedResponse);
 
@@ -139,6 +142,8 @@ public class ReservationServiceClientTest {
             .setName(ReservationName.of("[PROJECT]", "[LOCATION]", "[RESERVATION]").toString())
             .setSlotCapacity(-1516717605)
             .setIgnoreIdleSlots(true)
+            .setCreationTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
             .build();
     mockReservationService.addResponse(expectedResponse);
 
@@ -273,6 +278,8 @@ public class ReservationServiceClientTest {
             .setName(ReservationName.of("[PROJECT]", "[LOCATION]", "[RESERVATION]").toString())
             .setSlotCapacity(-1516717605)
             .setIgnoreIdleSlots(true)
+            .setCreationTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
             .build();
     mockReservationService.addResponse(expectedResponse);
 
@@ -313,6 +320,8 @@ public class ReservationServiceClientTest {
             .setName(ReservationName.of("[PROJECT]", "[LOCATION]", "[RESERVATION]").toString())
             .setSlotCapacity(-1516717605)
             .setIgnoreIdleSlots(true)
+            .setCreationTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
             .build();
     mockReservationService.addResponse(expectedResponse);
 
@@ -421,6 +430,8 @@ public class ReservationServiceClientTest {
             .setName(ReservationName.of("[PROJECT]", "[LOCATION]", "[RESERVATION]").toString())
             .setSlotCapacity(-1516717605)
             .setIgnoreIdleSlots(true)
+            .setCreationTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
             .build();
     mockReservationService.addResponse(expectedResponse);
 
@@ -465,6 +476,7 @@ public class ReservationServiceClientTest {
                 CapacityCommitmentName.of("[PROJECT]", "[LOCATION]", "[CAPACITY_COMMITMENT]")
                     .toString())
             .setSlotCount(-191518834)
+            .setCommitmentStartTime(Timestamp.newBuilder().build())
             .setCommitmentEndTime(Timestamp.newBuilder().build())
             .setFailureStatus(Status.newBuilder().build())
             .build();
@@ -512,6 +524,7 @@ public class ReservationServiceClientTest {
                 CapacityCommitmentName.of("[PROJECT]", "[LOCATION]", "[CAPACITY_COMMITMENT]")
                     .toString())
             .setSlotCount(-191518834)
+            .setCommitmentStartTime(Timestamp.newBuilder().build())
             .setCommitmentEndTime(Timestamp.newBuilder().build())
             .setFailureStatus(Status.newBuilder().build())
             .build();
@@ -649,6 +662,7 @@ public class ReservationServiceClientTest {
                 CapacityCommitmentName.of("[PROJECT]", "[LOCATION]", "[CAPACITY_COMMITMENT]")
                     .toString())
             .setSlotCount(-191518834)
+            .setCommitmentStartTime(Timestamp.newBuilder().build())
             .setCommitmentEndTime(Timestamp.newBuilder().build())
             .setFailureStatus(Status.newBuilder().build())
             .build();
@@ -695,6 +709,7 @@ public class ReservationServiceClientTest {
                 CapacityCommitmentName.of("[PROJECT]", "[LOCATION]", "[CAPACITY_COMMITMENT]")
                     .toString())
             .setSlotCount(-191518834)
+            .setCommitmentStartTime(Timestamp.newBuilder().build())
             .setCommitmentEndTime(Timestamp.newBuilder().build())
             .setFailureStatus(Status.newBuilder().build())
             .build();
@@ -811,6 +826,7 @@ public class ReservationServiceClientTest {
                 CapacityCommitmentName.of("[PROJECT]", "[LOCATION]", "[CAPACITY_COMMITMENT]")
                     .toString())
             .setSlotCount(-191518834)
+            .setCommitmentStartTime(Timestamp.newBuilder().build())
             .setCommitmentEndTime(Timestamp.newBuilder().build())
             .setFailureStatus(Status.newBuilder().build())
             .build();
@@ -949,6 +965,7 @@ public class ReservationServiceClientTest {
                 CapacityCommitmentName.of("[PROJECT]", "[LOCATION]", "[CAPACITY_COMMITMENT]")
                     .toString())
             .setSlotCount(-191518834)
+            .setCommitmentStartTime(Timestamp.newBuilder().build())
             .setCommitmentEndTime(Timestamp.newBuilder().build())
             .setFailureStatus(Status.newBuilder().build())
             .build();
@@ -997,6 +1014,7 @@ public class ReservationServiceClientTest {
                 CapacityCommitmentName.of("[PROJECT]", "[LOCATION]", "[CAPACITY_COMMITMENT]")
                     .toString())
             .setSlotCount(-191518834)
+            .setCommitmentStartTime(Timestamp.newBuilder().build())
             .setCommitmentEndTime(Timestamp.newBuilder().build())
             .setFailureStatus(Status.newBuilder().build())
             .build();
@@ -1371,6 +1389,104 @@ public class ReservationServiceClientTest {
       String parent = "parent-995424086";
       String query = "query107944136";
       client.searchAssignments(parent, query);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void searchAllAssignmentsTest() throws Exception {
+    Assignment responsesElement = Assignment.newBuilder().build();
+    SearchAllAssignmentsResponse expectedResponse =
+        SearchAllAssignmentsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllAssignments(Arrays.asList(responsesElement))
+            .build();
+    mockReservationService.addResponse(expectedResponse);
+
+    LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+    String query = "query107944136";
+
+    SearchAllAssignmentsPagedResponse pagedListResponse =
+        client.searchAllAssignments(parent, query);
+
+    List<Assignment> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getAssignmentsList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockReservationService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    SearchAllAssignmentsRequest actualRequest =
+        ((SearchAllAssignmentsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertEquals(query, actualRequest.getQuery());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void searchAllAssignmentsExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockReservationService.addException(exception);
+
+    try {
+      LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+      String query = "query107944136";
+      client.searchAllAssignments(parent, query);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void searchAllAssignmentsTest2() throws Exception {
+    Assignment responsesElement = Assignment.newBuilder().build();
+    SearchAllAssignmentsResponse expectedResponse =
+        SearchAllAssignmentsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllAssignments(Arrays.asList(responsesElement))
+            .build();
+    mockReservationService.addResponse(expectedResponse);
+
+    String parent = "parent-995424086";
+    String query = "query107944136";
+
+    SearchAllAssignmentsPagedResponse pagedListResponse =
+        client.searchAllAssignments(parent, query);
+
+    List<Assignment> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getAssignmentsList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockReservationService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    SearchAllAssignmentsRequest actualRequest =
+        ((SearchAllAssignmentsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertEquals(query, actualRequest.getQuery());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void searchAllAssignmentsExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockReservationService.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      String query = "query107944136";
+      client.searchAllAssignments(parent, query);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.
