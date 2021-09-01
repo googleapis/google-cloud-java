@@ -1,5 +1,18 @@
 # Changelog
 
+## [2.1.0](https://www.github.com/googleapis/java-document-ai/compare/v2.0.3...v2.1.0) (2021-09-01)
+
+
+### Features
+
+* Remove use of deprecated gradle command in java README ([#1196](https://www.github.com/googleapis/java-document-ai/issues/1196)) ([#607](https://www.github.com/googleapis/java-document-ai/issues/607)) ([95cb397](https://www.github.com/googleapis/java-document-ai/commit/95cb397a9fd80014304cedb89bff56e4abe2fc80))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.2.0 ([#610](https://www.github.com/googleapis/java-document-ai/issues/610)) ([7c8037d](https://www.github.com/googleapis/java-document-ai/commit/7c8037d54d18fed262f2a19d5b5b2796a8f9862d))
+* update dependency com.google.cloud:google-cloud-storage to v2.1.0 ([#603](https://www.github.com/googleapis/java-document-ai/issues/603)) ([dafaf0e](https://www.github.com/googleapis/java-document-ai/commit/dafaf0eb76783e3b3be24d461f697fc6441a0f88))
+
 ### [2.0.3](https://www.github.com/googleapis/java-document-ai/compare/v2.0.2...v2.0.3) (2021-08-24)
 
 
