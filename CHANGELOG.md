@@ -1,5 +1,17 @@
 # Changelog
 
+## [2.1.0](https://www.github.com/googleapis/java-datastore/compare/v2.0.3...v2.1.0) (2021-08-31)
+
+
+### Features
+
+* support overriding the emulator download URL in LocalDatastoreHelper ([#492](https://www.github.com/googleapis/java-datastore/issues/492)) ([76397bf](https://www.github.com/googleapis/java-datastore/commit/76397bf7ce27804101a1622e82f436cac0dcd605)), closes [#376](https://www.github.com/googleapis/java-datastore/issues/376)
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.2.0 ([#524](https://www.github.com/googleapis/java-datastore/issues/524)) ([81b9de5](https://www.github.com/googleapis/java-datastore/commit/81b9de5b8bc6e788618b2530a9f47ca97aa30d98))
+
 ### [2.0.3](https://www.github.com/googleapis/java-datastore/compare/v2.0.2...v2.0.3) (2021-08-24)
 
 
