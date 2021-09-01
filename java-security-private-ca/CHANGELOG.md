@@ -1,5 +1,22 @@
 # Changelog
 
+## [2.1.0](https://www.github.com/googleapis/java-security-private-ca/compare/v2.0.2...v2.1.0) (2021-09-01)
+
+
+### Features
+
+* Remove use of deprecated gradle command in java README ([#1196](https://www.github.com/googleapis/java-security-private-ca/issues/1196)) ([#258](https://www.github.com/googleapis/java-security-private-ca/issues/258)) ([b8b3f05](https://www.github.com/googleapis/java-security-private-ca/commit/b8b3f0500eaf6ca7d278157577bbc4354d0ed3af))
+
+
+### Documentation
+
+* **samples:** adding client library samples  ([#242](https://www.github.com/googleapis/java-security-private-ca/issues/242)) ([7454cb0](https://www.github.com/googleapis/java-security-private-ca/commit/7454cb03c23bbf32a4afa4db9596a6a1f326de15))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.2.0 ([#260](https://www.github.com/googleapis/java-security-private-ca/issues/260)) ([cc44e1e](https://www.github.com/googleapis/java-security-private-ca/commit/cc44e1e10b47f3ca5cabdc375617399c4921c734))
+
 ### [2.0.2](https://www.github.com/googleapis/java-security-private-ca/compare/v2.0.1...v2.0.2) (2021-08-23)
 
 
