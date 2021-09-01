@@ -1,5 +1,17 @@
 # Changelog
 
+## [2.1.0](https://www.github.com/googleapis/java-monitoring-dashboards/compare/v2.0.2...v2.1.0) (2021-08-31)
+
+
+### Features
+
+* Remove use of deprecated gradle command in java README ([#1196](https://www.github.com/googleapis/java-monitoring-dashboards/issues/1196)) ([#456](https://www.github.com/googleapis/java-monitoring-dashboards/issues/456)) ([e1fa9b4](https://www.github.com/googleapis/java-monitoring-dashboards/commit/e1fa9b4ed25ab94d6d5ee91d6fb42fda562fb454))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.2.0 ([#459](https://www.github.com/googleapis/java-monitoring-dashboards/issues/459)) ([4efeead](https://www.github.com/googleapis/java-monitoring-dashboards/commit/4efeead85fe3ed4cc8421bab2fc15d1cb50fb7dd))
+
 ### [2.0.2](https://www.github.com/googleapis/java-monitoring-dashboards/compare/v2.0.1...v2.0.2) (2021-08-23)
 
 
