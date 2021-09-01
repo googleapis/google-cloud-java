@@ -1,5 +1,18 @@
 # Changelog
 
+## [2.1.0](https://www.github.com/googleapis/java-game-servers/compare/v2.0.3...v2.1.0) (2021-08-31)
+
+
+### Features
+
+* Remove use of deprecated gradle command in java README ([#1196](https://www.github.com/googleapis/java-game-servers/issues/1196)) ([#519](https://www.github.com/googleapis/java-game-servers/issues/519)) ([dbdc5ed](https://www.github.com/googleapis/java-game-servers/commit/dbdc5ed7b324dfc7d50fa128b484755333995696))
+* support version reporting API ([#520](https://www.github.com/googleapis/java-game-servers/issues/520)) ([a4906a5](https://www.github.com/googleapis/java-game-servers/commit/a4906a5c76afef56bd28c67a120b47a219551bdb))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.2.0 ([#523](https://www.github.com/googleapis/java-game-servers/issues/523)) ([6bd5d24](https://www.github.com/googleapis/java-game-servers/commit/6bd5d247acefdb4715fe5eea9a3fbdaa8365bbc9))
+
 ### [2.0.3](https://www.github.com/googleapis/java-game-servers/compare/v2.0.2...v2.0.3) (2021-08-24)
 
 
