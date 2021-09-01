@@ -1,5 +1,17 @@
 # Changelog
 
+## [2.1.0](https://www.github.com/googleapis/java-language/compare/v2.0.2...v2.1.0) (2021-09-01)
+
+
+### Features
+
+* Remove use of deprecated gradle command in java README ([#1196](https://www.github.com/googleapis/java-language/issues/1196)) ([#699](https://www.github.com/googleapis/java-language/issues/699)) ([cfd2179](https://www.github.com/googleapis/java-language/commit/cfd2179e4e835f4a372ed73fd174a4b7e7edbb5e))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.2.0 ([#702](https://www.github.com/googleapis/java-language/issues/702)) ([ef02aeb](https://www.github.com/googleapis/java-language/commit/ef02aebfad0e6607d4d0d37ca4d129e4bd783916))
+
 ### [2.0.2](https://www.github.com/googleapis/java-language/compare/v2.0.1...v2.0.2) (2021-08-23)
 
 
