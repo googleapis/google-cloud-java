@@ -1,5 +1,19 @@
 # Changelog
 
+## [2.1.0](https://www.github.com/googleapis/java-scheduler/compare/v2.0.2...v2.1.0) (2021-09-01)
+
+
+### Features
+
+* Remove use of deprecated gradle command in java README ([#1196](https://www.github.com/googleapis/java-scheduler/issues/1196)) ([#556](https://www.github.com/googleapis/java-scheduler/issues/556)) ([8132359](https://www.github.com/googleapis/java-scheduler/commit/8132359ae21f538ac92cbea65fa5c78807604447))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-pubsub-bom to v1.114.1 ([#550](https://www.github.com/googleapis/java-scheduler/issues/550)) ([1182b18](https://www.github.com/googleapis/java-scheduler/commit/1182b18d592f02b7b99aff245659b48d5d879a0b))
+* update dependency com.google.cloud:google-cloud-pubsub-bom to v1.114.2 ([#561](https://www.github.com/googleapis/java-scheduler/issues/561)) ([0756e46](https://www.github.com/googleapis/java-scheduler/commit/0756e464a48882750b86027fc514268d872b9d70))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.2.0 ([#559](https://www.github.com/googleapis/java-scheduler/issues/559)) ([80dd7bf](https://www.github.com/googleapis/java-scheduler/commit/80dd7bf89fed9260e40b2cd06086209edeed182f))
+
 ### [2.0.2](https://www.github.com/googleapis/java-scheduler/compare/v2.0.1...v2.0.2) (2021-08-23)
 
 
