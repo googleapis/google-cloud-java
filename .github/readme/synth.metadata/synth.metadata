@@ -4,14 +4,14 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/java-bigquerystorage.git",
-        "sha": "0ab4bbbb1203f0dda49be721df7e2cee3838ec0b"
+        "sha": "0b5ef38a2f23cfe48653fcbf725ffdb05df46c2f"
       }
     },
     {
       "git": {
         "name": "synthtool",
         "remote": "https://github.com/googleapis/synthtool.git",
-        "sha": "e770c12f2a9a5f84566fe04b16a4ceec1c8c109b"
+        "sha": "5c0fa62eea9c33ebe61e582424b659eb264e1ba4"
       }
     }
   ]
