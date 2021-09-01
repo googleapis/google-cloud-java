@@ -1,5 +1,20 @@
 # Changelog
 
+## [2.1.0](https://www.github.com/googleapis/java-securitycenter/compare/v2.0.2...v2.1.0) (2021-09-01)
+
+
+### Features
+
+* generate java files for error_reason.proto, bigquery_audit_metadata.proto and localized_text.proto ([#616](https://www.github.com/googleapis/java-securitycenter/issues/616)) ([dacada4](https://www.github.com/googleapis/java-securitycenter/commit/dacada43de25debb7b44cc613f2e95f6b79eafa7))
+* Remove use of deprecated gradle command in java README ([#1196](https://www.github.com/googleapis/java-securitycenter/issues/1196)) ([#618](https://www.github.com/googleapis/java-securitycenter/issues/618)) ([16f63df](https://www.github.com/googleapis/java-securitycenter/commit/16f63dfc93e36599d0c02eefad38d153c3b2315d))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-pubsub to v1.114.1 ([#611](https://www.github.com/googleapis/java-securitycenter/issues/611)) ([8fc790b](https://www.github.com/googleapis/java-securitycenter/commit/8fc790b3ca2a6f0952c08d7578927fa7a8b51227))
+* update dependency com.google.cloud:google-cloud-pubsub to v1.114.2 ([#622](https://www.github.com/googleapis/java-securitycenter/issues/622)) ([85cc9a2](https://www.github.com/googleapis/java-securitycenter/commit/85cc9a20f204319a443b549cf14ce100f1304662))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.2.0 ([#620](https://www.github.com/googleapis/java-securitycenter/issues/620)) ([3141953](https://www.github.com/googleapis/java-securitycenter/commit/31419536b9718a86849a2ba7578b6487ae437bd9))
+
 ### [2.0.2](https://www.github.com/googleapis/java-securitycenter/compare/v2.0.1...v2.0.2) (2021-08-23)
 
 
