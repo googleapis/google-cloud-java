@@ -11,5 +11,6 @@
   "repo_short": "java-contact-center-insights",
   "distribution_name": "com.google.cloud:google-cloud-contact-center-insights",
   "api_id": "contactcenterinsights.googleapis.com",
-  "requires_billing": true
+  "requires_billing": true,
+  "codeowner_team": "@googleapis/api-contact-center-insights"
 }
