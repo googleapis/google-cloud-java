@@ -1,5 +1,21 @@
 # Changelog
 
+## [2.0.0](https://www.github.com/googleapis/java-secretmanager/compare/v1.7.2...v2.0.0) (2021-08-31)
+
+
+### ⚠ BREAKING CHANGES
+
+* release gapic-generator-java v2.0.0 (#557)
+
+### Features
+
+* release gapic-generator-java v2.0.0 ([#557](https://www.github.com/googleapis/java-secretmanager/issues/557)) ([39419ba](https://www.github.com/googleapis/java-secretmanager/commit/39419ba94374404447bb59f653fb14482f12cfa9))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.2.0 ([#582](https://www.github.com/googleapis/java-secretmanager/issues/582)) ([f7031c2](https://www.github.com/googleapis/java-secretmanager/commit/f7031c2eacf09b9bf5c4bb918ff3611535e19659))
+
 ### [1.7.2](https://www.github.com/googleapis/java-secretmanager/compare/v1.7.1...v1.7.2) (2021-08-23)
 
 
