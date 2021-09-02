@@ -25,8 +25,8 @@ import com.google.common.collect.ImmutableMap;
 import com.google.logging.v2.LogEntryOperation;
 import com.google.logging.v2.LogEntrySourceLocation;
 import com.google.logging.v2.LogName;
-import com.google.protobuf.Timestamp;
 import java.io.Serializable;
+import java.time.Instant;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
@@ -44,8 +44,6 @@ import java.util.Objects;
 public class LogEntry implements Serializable {
 
   private static final long serialVersionUID = -944788159728228219L;
-  private static final long NANOS_PER_MILLISECOND = 1000000;
-  private static final long MILLIS_PER_SECOND = 1000;
   static final Function<com.google.logging.v2.LogEntry, LogEntry> FROM_PB_FUNCTION =
       new Function<com.google.logging.v2.LogEntry, LogEntry>() {
         @Override
@@ -56,8 +54,8 @@ public class LogEntry implements Serializable {
 
   private final String logName;
   private final MonitoredResource resource;
-  private final Long timestamp;
-  private final Long receiveTimestamp;
+  private final Instant timestamp;
+  private final Instant receiveTimestamp;
   private final Severity severity;
   private final String insertId;
   private final HttpRequest httpRequest;
@@ -74,8 +72,8 @@ public class LogEntry implements Serializable {
 
     private String logName;
     private MonitoredResource resource;
-    private Long timestamp;
-    private Long receiveTimestamp;
+    private Instant timestamp;
+    private Instant receiveTimestamp;
     private Severity severity = Severity.DEFAULT;
     private String insertId;
     private HttpRequest httpRequest;
@@ -133,14 +131,44 @@ public class LogEntry implements Serializable {
     /**
      * Sets the time at which the event described by the log entry occurred, in milliseconds. If
      * omitted, the Logging service will use the time at which the log entry is received.
+     *
+     * @deprecated This method is no longer recommended to setup the entry timestamp.
+     *     <p>Use {@link setTimeStamp(Instant)} instead.
      */
-    public Builder setTimestamp(long timestamp) {
+    @Deprecated
+    public Builder setTimestamp(long milliseconds) {
+      this.timestamp = Instant.ofEpochMilli(milliseconds);
+      return this;
+    }
+
+    /**
+     * Sets the time at which the event described by the log entry occurred. If omitted, the Logging
+     * service will use the time at which the log entry is received.
+     */
+    public Builder setTimestamp(Instant timestamp) {
       this.timestamp = timestamp;
       return this;
     }
 
-    /** Sets the time the log entry was received by Cloud Logging. */
-    public Builder setReceiveTimestamp(long receiveTimestamp) {
+    /**
+     * Sets the time the log entry was received by Cloud Logging, in milliseconds. If omitted, the
+     * Logging service will set the time at which the log entry is received.
+     *
+     * @deprecated This method is no longer recommended to setup the receive time timestamp.
+     *     <p>Use {@link setReceiveTimestamp(Instant)} instead.
+     */
+    @Deprecated
+    public Builder setReceiveTimestamp(long milliseconds) {
+      this.receiveTimestamp = Instant.ofEpochMilli(milliseconds);
+      ;
+      return this;
+    }
+
+    /**
+     * Sets the time the log entry was received by Cloud Logging. If omitted, the Logging service
+     * will set the time at which the log entry is received.
+     */
+    public Builder setReceiveTimestamp(Instant receiveTimestamp) {
       this.receiveTimestamp = receiveTimestamp;
       return this;
     }
@@ -298,15 +326,44 @@ public class LogEntry implements Serializable {
   }
 
   /**
-   * Returns the time at which the event described by the log entry occurred, in milliseconds. If
-   * omitted, the Logging service will use the time at which the log entry is received.
+   * Returns the time at which the event described by the log entry occurred, in milliseconds.
+   *
+   * @deprecated This method is no longer recommended to get the entry timestamp.
+   *     <p>Use {@link getInstantTimestamp()} instead.
+   * @return timestamp in milliseconds
    */
+  @Deprecated
   public Long getTimestamp() {
+    return timestamp != null ? timestamp.toEpochMilli() : null;
+  }
+
+  /**
+   * Returns the time at which the event described by the log entry occurred.
+   *
+   * @return timestamp as {@link Instant}
+   */
+  public Instant getInstantTimestamp() {
     return timestamp;
   }
 
-  /** Returns the time the log entry was received by Cloud Logging. */
+  /**
+   * Returns the time the log entry was received by Cloud Logging, in milliseconds.
+   *
+   * @deprecated This method is no longer recommended to get the received time timestamp.
+   *     <p>Use {@link getInstantReceiveTimestamp()} instead.
+   * @return timestamp in milliseconds
+   */
+  @Deprecated
   public Long getReceiveTimestamp() {
+    return receiveTimestamp != null ? receiveTimestamp.toEpochMilli() : null;
+  }
+
+  /**
+   * Returns the time the log entry was received by Cloud Logging, in milliseconds.
+   *
+   * @return timestamp as {@link Instant}
+   */
+  public Instant getInstantReceiveTimestamp() {
     return receiveTimestamp;
   }
 
@@ -450,18 +507,6 @@ public class LogEntry implements Serializable {
     return new Builder(this);
   }
 
-  private static Timestamp timestampFromMillis(Long millis) {
-    Timestamp.Builder tsBuilder = Timestamp.newBuilder();
-    tsBuilder.setSeconds(millis / MILLIS_PER_SECOND);
-    tsBuilder.setNanos((int) (millis % MILLIS_PER_SECOND * NANOS_PER_MILLISECOND));
-    return tsBuilder.build();
-  }
-
-  private static Long millisFromTimestamp(Timestamp timestamp) {
-    return timestamp.getSeconds() * MILLIS_PER_SECOND
-        + timestamp.getNanos() / NANOS_PER_MILLISECOND;
-  }
-
   com.google.logging.v2.LogEntry toPb(String projectId) {
     com.google.logging.v2.LogEntry.Builder builder = payload.toPb();
     builder.putAllLabels(labels);
@@ -472,10 +517,10 @@ public class LogEntry implements Serializable {
       builder.setResource(resource.toPb());
     }
     if (timestamp != null) {
-      builder.setTimestamp(timestampFromMillis(timestamp));
+      builder.setTimestamp(JavaTimeConversions.toProtoTimestamp(timestamp));
     }
     if (receiveTimestamp != null) {
-      builder.setReceiveTimestamp(timestampFromMillis(receiveTimestamp));
+      builder.setReceiveTimestamp(JavaTimeConversions.toProtoTimestamp(receiveTimestamp));
     }
     if (severity != null) {
       builder.setSeverity(severity.toPb());
@@ -531,16 +576,10 @@ public class LogEntry implements Serializable {
       builder.setResource(MonitoredResource.fromPb(entryPb.getResource()));
     }
     if (entryPb.hasTimestamp()) {
-      Long millis = millisFromTimestamp(entryPb.getTimestamp());
-      if (millis != 0) {
-        builder.setTimestamp(millis);
-      }
+      builder.setTimestamp(JavaTimeConversions.toJavaInstant(entryPb.getTimestamp()));
     }
     if (entryPb.hasReceiveTimestamp()) {
-      Long millis = millisFromTimestamp(entryPb.getReceiveTimestamp());
-      if (millis != 0) {
-        builder.setReceiveTimestamp(millis);
-      }
+      builder.setReceiveTimestamp(JavaTimeConversions.toJavaInstant(entryPb.getReceiveTimestamp()));
     }
     if (!entryPb.getInsertId().equals("")) {
       builder.setInsertId(entryPb.getInsertId());

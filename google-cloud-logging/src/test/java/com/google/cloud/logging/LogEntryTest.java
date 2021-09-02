@@ -27,6 +27,7 @@ import com.google.cloud.logging.Payload.StringPayload;
 import com.google.common.collect.ImmutableMap;
 import com.google.protobuf.Any;
 import com.google.protobuf.Empty;
+import java.time.Instant;
 import java.util.Map;
 import org.junit.Test;
 
@@ -37,8 +38,8 @@ public class LogEntryTest {
       MonitoredResource.newBuilder("cloudsql_database")
           .setLabels(ImmutableMap.of("datasetId", "myDataset", "zone", "myZone"))
           .build();
-  private static final long TIMESTAMP = 42;
-  private static final long RECEIVE_TIMESTAMP = 24;
+  private static final Instant TIMESTAMP = Instant.ofEpochMilli(42);
+  private static final Instant RECEIVE_TIMESTAMP = Instant.ofEpochMilli(24);
   private static final Severity SEVERITY = Severity.ALERT;
   private static final String INSERT_ID = "insertId";
   private static final HttpRequest HTTP_REQUEST =
@@ -131,7 +132,9 @@ public class LogEntryTest {
     assertNull(logEntry.getLogName());
     assertNull(logEntry.getResource());
     assertNull(logEntry.getTimestamp());
+    assertNull(logEntry.getInstantTimestamp());
     assertNull(logEntry.getReceiveTimestamp());
+    assertNull(logEntry.getInstantReceiveTimestamp());
     assertNull(logEntry.getInsertId());
     assertNull(logEntry.getHttpRequest());
     assertNull(logEntry.getOperation());
@@ -147,7 +150,9 @@ public class LogEntryTest {
     assertEquals(ImmutableMap.of(), logEntry.getLabels());
     assertEquals(ImmutableMap.of(), logEntry.getLabels());
     assertNull(logEntry.getTimestamp());
+    assertNull(logEntry.getInstantTimestamp());
     assertNull(logEntry.getReceiveTimestamp());
+    assertNull(logEntry.getInstantReceiveTimestamp());
     assertNull(logEntry.getInsertId());
     assertNull(logEntry.getHttpRequest());
     assertNull(logEntry.getOperation());
@@ -161,8 +166,10 @@ public class LogEntryTest {
   public void testBuilder() {
     assertEquals(LOG_NAME, STRING_ENTRY.getLogName());
     assertEquals(RESOURCE, STRING_ENTRY.getResource());
-    assertEquals(TIMESTAMP, (long) STRING_ENTRY.getTimestamp());
-    assertEquals(RECEIVE_TIMESTAMP, (long) STRING_ENTRY.getReceiveTimestamp());
+    assertEquals(TIMESTAMP.toEpochMilli(), (long) STRING_ENTRY.getTimestamp());
+    assertEquals(TIMESTAMP, STRING_ENTRY.getInstantTimestamp());
+    assertEquals(RECEIVE_TIMESTAMP.toEpochMilli(), (long) STRING_ENTRY.getReceiveTimestamp());
+    assertEquals(RECEIVE_TIMESTAMP, STRING_ENTRY.getInstantReceiveTimestamp());
     assertEquals(SEVERITY, STRING_ENTRY.getSeverity());
     assertEquals(INSERT_ID, STRING_ENTRY.getInsertId());
     assertEquals(HTTP_REQUEST, STRING_ENTRY.getHttpRequest());
@@ -175,8 +182,10 @@ public class LogEntryTest {
     assertEquals(STRING_PAYLOAD, STRING_ENTRY.getPayload());
     assertEquals(LOG_NAME, JSON_ENTRY.getLogName());
     assertEquals(RESOURCE, JSON_ENTRY.getResource());
-    assertEquals(TIMESTAMP, (long) JSON_ENTRY.getTimestamp());
-    assertEquals(RECEIVE_TIMESTAMP, (long) JSON_ENTRY.getReceiveTimestamp());
+    assertEquals(TIMESTAMP.toEpochMilli(), (long) JSON_ENTRY.getTimestamp());
+    assertEquals(TIMESTAMP, JSON_ENTRY.getInstantTimestamp());
+    assertEquals(RECEIVE_TIMESTAMP.toEpochMilli(), (long) JSON_ENTRY.getReceiveTimestamp());
+    assertEquals(RECEIVE_TIMESTAMP, JSON_ENTRY.getInstantReceiveTimestamp());
     assertEquals(SEVERITY, JSON_ENTRY.getSeverity());
     assertEquals(INSERT_ID, JSON_ENTRY.getInsertId());
     assertEquals(HTTP_REQUEST, JSON_ENTRY.getHttpRequest());
@@ -187,10 +196,13 @@ public class LogEntryTest {
     assertEquals(TRACE_SAMPLED, JSON_ENTRY.getTraceSampled());
     assertEquals(SOURCE_LOCATION, JSON_ENTRY.getSourceLocation());
     assertEquals(JSON_PAYLOAD, JSON_ENTRY.getPayload());
+
     assertEquals(LOG_NAME, PROTO_ENTRY.getLogName());
     assertEquals(RESOURCE, PROTO_ENTRY.getResource());
-    assertEquals(TIMESTAMP, (long) PROTO_ENTRY.getTimestamp());
-    assertEquals(RECEIVE_TIMESTAMP, (long) PROTO_ENTRY.getReceiveTimestamp());
+    assertEquals(TIMESTAMP.toEpochMilli(), (long) PROTO_ENTRY.getTimestamp());
+    assertEquals(TIMESTAMP, PROTO_ENTRY.getInstantTimestamp());
+    assertEquals(RECEIVE_TIMESTAMP.toEpochMilli(), (long) PROTO_ENTRY.getReceiveTimestamp());
+    assertEquals(RECEIVE_TIMESTAMP, PROTO_ENTRY.getInstantReceiveTimestamp());
     assertEquals(SEVERITY, PROTO_ENTRY.getSeverity());
     assertEquals(INSERT_ID, PROTO_ENTRY.getInsertId());
     assertEquals(HTTP_REQUEST, PROTO_ENTRY.getHttpRequest());
@@ -221,8 +233,10 @@ public class LogEntryTest {
             .build();
     assertEquals(LOG_NAME, logEntry.getLogName());
     assertEquals(RESOURCE, logEntry.getResource());
-    assertEquals(TIMESTAMP, (long) logEntry.getTimestamp());
-    assertEquals(RECEIVE_TIMESTAMP, (long) logEntry.getReceiveTimestamp());
+    assertEquals(TIMESTAMP.toEpochMilli(), (long) logEntry.getTimestamp());
+    assertEquals(TIMESTAMP, logEntry.getInstantTimestamp());
+    assertEquals(RECEIVE_TIMESTAMP.toEpochMilli(), (long) logEntry.getReceiveTimestamp());
+    assertEquals(RECEIVE_TIMESTAMP, logEntry.getInstantReceiveTimestamp());
     assertEquals(SEVERITY, logEntry.getSeverity());
     assertEquals(INSERT_ID, logEntry.getInsertId());
     assertEquals(HTTP_REQUEST, logEntry.getHttpRequest());
@@ -314,7 +328,9 @@ public class LogEntryTest {
     assertEquals(expected.getLogName(), value.getLogName());
     assertEquals(expected.getResource(), value.getResource());
     assertEquals(expected.getTimestamp(), value.getTimestamp());
+    assertEquals(expected.getInstantTimestamp(), value.getInstantTimestamp());
     assertEquals(expected.getReceiveTimestamp(), value.getReceiveTimestamp());
+    assertEquals(expected.getInstantReceiveTimestamp(), value.getInstantReceiveTimestamp());
     assertEquals(expected.getSeverity(), value.getSeverity());
     assertEquals(expected.getInsertId(), value.getInsertId());
     assertEquals(expected.getHttpRequest(), value.getHttpRequest());
