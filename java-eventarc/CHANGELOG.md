@@ -1,5 +1,17 @@
 # Changelog
 
+## [1.1.0](https://www.github.com/googleapis/java-eventarc/compare/v1.0.1...v1.1.0) (2021-09-03)
+
+
+### Features
+
+* Remove use of deprecated gradle command in java README ([#1196](https://www.github.com/googleapis/java-eventarc/issues/1196)) ([#54](https://www.github.com/googleapis/java-eventarc/issues/54)) ([45cdfda](https://www.github.com/googleapis/java-eventarc/commit/45cdfdafc02217b3fe49f6a781f0eff6c6d22fbb))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.2.0 ([#57](https://www.github.com/googleapis/java-eventarc/issues/57)) ([3d3bf47](https://www.github.com/googleapis/java-eventarc/commit/3d3bf47dc4f914391918dd08a0ece84cc3f06104))
+
 ### [1.0.1](https://www.github.com/googleapis/java-eventarc/compare/v1.0.0...v1.0.1) (2021-08-25)
 
 
