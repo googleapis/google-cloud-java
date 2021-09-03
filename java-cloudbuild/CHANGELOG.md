@@ -1,5 +1,18 @@
 # Changelog
 
+## [3.3.0](https://www.github.com/googleapis/java-cloudbuild/compare/v3.2.0...v3.3.0) (2021-09-03)
+
+
+### Features
+
+* Add script field to BuildStep message ([#584](https://www.github.com/googleapis/java-cloudbuild/issues/584)) ([1d7ba55](https://www.github.com/googleapis/java-cloudbuild/commit/1d7ba55644d47d3ce8f355dbf18322577777ba09))
+* Update cloudbuild proto with the service_account for BYOSA Triggers. ([#599](https://www.github.com/googleapis/java-cloudbuild/issues/599)) ([f4e035a](https://www.github.com/googleapis/java-cloudbuild/commit/f4e035a77408da6f0cc4d058b6dd346ba8d457bb))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.2.0 ([#596](https://www.github.com/googleapis/java-cloudbuild/issues/596)) ([4b2d414](https://www.github.com/googleapis/java-cloudbuild/commit/4b2d414f84d63e4fcd04b00c6a04d4bf02b71cc6))
+
 ## [3.2.0](https://www.github.com/googleapis/java-cloudbuild/compare/v3.1.0...v3.2.0) (2021-08-27)
 
 
