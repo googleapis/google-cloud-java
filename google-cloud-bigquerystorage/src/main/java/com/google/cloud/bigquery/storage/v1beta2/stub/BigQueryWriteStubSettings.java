@@ -283,10 +283,10 @@ public class BigQueryWriteStubSettings extends StubSettings<BigQueryWriteStubSet
               .setInitialRetryDelay(Duration.ofMillis(100L))
               .setRetryDelayMultiplier(1.3)
               .setMaxRetryDelay(Duration.ofMillis(60000L))
-              .setInitialRpcTimeout(Duration.ofMillis(5000L))
+              .setInitialRpcTimeout(Duration.ofMillis(86400000L))
               .setRpcTimeoutMultiplier(1.0)
-              .setMaxRpcTimeout(Duration.ofMillis(5000L))
-              .setTotalTimeout(Duration.ofMillis(5000L))
+              .setMaxRpcTimeout(Duration.ofMillis(86400000L))
+              .setTotalTimeout(Duration.ofMillis(86400000L))
               .build();
       definitions.put("retry_policy_4_params", settings);
       settings =
