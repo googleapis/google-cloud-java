@@ -16,8 +16,4 @@
     <className>com/google/cloud/networkmanagement/v1beta1/*OrBuilder</className>
     <method>boolean has*(*)</method>
   </difference>
-  <difference>
-    <differenceType>8001</differenceType>
-    <className>com/google/cloud/networkmanagement/v1beta1/ConnectivityTestName*</className>
-  </difference>
 </differences>
