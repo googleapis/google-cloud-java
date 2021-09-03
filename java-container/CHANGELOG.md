@@ -1,5 +1,17 @@
 # Changelog
 
+## [2.1.0](https://www.github.com/googleapis/java-container/compare/v2.0.2...v2.1.0) (2021-09-03)
+
+
+### Features
+
+* Remove use of deprecated gradle command in java README ([#1196](https://www.github.com/googleapis/java-container/issues/1196)) ([#556](https://www.github.com/googleapis/java-container/issues/556)) ([d6d6905](https://www.github.com/googleapis/java-container/commit/d6d6905d6b19b79586a1a23c88b2759bcf77d93c))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.2.0 ([#558](https://www.github.com/googleapis/java-container/issues/558)) ([674b516](https://www.github.com/googleapis/java-container/commit/674b51685f9ecb2c26634926319c19c052f130cd))
+
 ### [2.0.2](https://www.github.com/googleapis/java-container/compare/v2.0.1...v2.0.2) (2021-08-23)
 
 
