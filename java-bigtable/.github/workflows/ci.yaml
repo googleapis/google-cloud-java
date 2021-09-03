@@ -12,6 +12,9 @@ jobs:
         java: [8, 11]
     steps:
     - uses: actions/checkout@v2
+    - uses: stCarolas/setup-maven@v4
+      with:
+        maven-version: 3.8.1
     - uses: actions/setup-java@v1
       with:
         java-version: ${{matrix.java}}
@@ -37,6 +40,9 @@ jobs:
         java: [8, 11]
     steps:
     - uses: actions/checkout@v2
+    - uses: stCarolas/setup-maven@v4
+      with:
+        maven-version: 3.8.1
     - uses: actions/setup-java@v1
       with:
         java-version: ${{matrix.java}}
@@ -46,6 +52,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
+    - uses: stCarolas/setup-maven@v4
+      with:
+        maven-version: 3.8.1
     - uses: actions/setup-java@v1
       with:
         java-version: 8
@@ -57,6 +66,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
+    - uses: stCarolas/setup-maven@v4
+      with:
+        maven-version: 3.8.1
     - uses: actions/setup-java@v1
       with:
         java-version: 8
