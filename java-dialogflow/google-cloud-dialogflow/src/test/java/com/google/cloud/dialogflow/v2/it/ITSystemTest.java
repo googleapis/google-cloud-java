@@ -282,7 +282,6 @@ public class ITSystemTest {
     assertEquals(EVENT_NAME, result.getQueryText());
     assertEquals(ACTION_NAME, result.getAction());
     assertEquals(DEFAULT_LANGUAGE_CODE, result.getLanguageCode());
-    assertEquals(intent.getName(), result.getIntent().getName());
     assertEquals(intent.getDisplayName(), result.getIntent().getDisplayName());
   }
 
