@@ -1,5 +1,23 @@
 # Changelog
 
+### [4.1.2](https://www.github.com/googleapis/java-dialogflow/compare/v4.1.1...v4.1.2) (2021-09-03)
+
+
+### Bug Fixes
+
+* removes flaky intent equivalence assertion ([#688](https://www.github.com/googleapis/java-dialogflow/issues/688)) ([a965fb9](https://www.github.com/googleapis/java-dialogflow/commit/a965fb919fef422dd1a3fcea300f060706885fa7))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-core to v2.1.2 ([#680](https://www.github.com/googleapis/java-dialogflow/issues/680)) ([4e6b60e](https://www.github.com/googleapis/java-dialogflow/commit/4e6b60ec28b4ce33b9f48b815304ab6e063f80f7))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.2.0 ([#681](https://www.github.com/googleapis/java-dialogflow/issues/681)) ([6708e3a](https://www.github.com/googleapis/java-dialogflow/commit/6708e3a1f1ab2431add1084b20a1c562ba934d61))
+
+
+### Documentation
+
+* clarified some LRO types ([#686](https://www.github.com/googleapis/java-dialogflow/issues/686)) ([84b863c](https://www.github.com/googleapis/java-dialogflow/commit/84b863cd166f3f5a0df353f381f9f03b2f6556b8))
+
 ### [4.1.1](https://www.github.com/googleapis/java-dialogflow/compare/v4.1.0...v4.1.1) (2021-08-24)
 
 
