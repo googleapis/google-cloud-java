@@ -1,5 +1,31 @@
 # Changelog
 
+## [2.1.0](https://www.github.com/googleapis/java-recaptchaenterprise/compare/v2.0.2...v2.1.0) (2021-09-03)
+
+
+### Features
+
+* Remove use of deprecated gradle command in java README ([#1196](https://www.github.com/googleapis/java-recaptchaenterprise/issues/1196)) ([#542](https://www.github.com/googleapis/java-recaptchaenterprise/issues/542)) ([45fbfc9](https://www.github.com/googleapis/java-recaptchaenterprise/commit/45fbfc9c5de343811686b03898dc4f21a346fba9))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.2.0 ([#553](https://www.github.com/googleapis/java-recaptchaenterprise/issues/553)) ([f9fde85](https://www.github.com/googleapis/java-recaptchaenterprise/commit/f9fde857ff3daba10ab4999c5d32a2ce2667cc3e))
+* update dependency com.google.guava:guava to v30 ([#550](https://www.github.com/googleapis/java-recaptchaenterprise/issues/550)) ([d1505d8](https://www.github.com/googleapis/java-recaptchaenterprise/commit/d1505d8ae30c60e36dffb42cbac8d3b7785e3557))
+* update dependency io.github.bonigarcia:webdrivermanager to v5 ([#551](https://www.github.com/googleapis/java-recaptchaenterprise/issues/551)) ([83b0558](https://www.github.com/googleapis/java-recaptchaenterprise/commit/83b05589dae646ce48c1d35f76a50d0f3d700fc5))
+* update dependency net.bytebuddy:byte-buddy to v1.11.14 ([#547](https://www.github.com/googleapis/java-recaptchaenterprise/issues/547)) ([fc69126](https://www.github.com/googleapis/java-recaptchaenterprise/commit/fc691268301942e53c40aab33e218e0eae100944))
+* update dependency org.seleniumhq.selenium:selenium-chrome-driver to v3.141.59 ([#548](https://www.github.com/googleapis/java-recaptchaenterprise/issues/548)) ([ea8534e](https://www.github.com/googleapis/java-recaptchaenterprise/commit/ea8534eaec31c61731deec11898317c1c0cd8cf8))
+* update dependency org.seleniumhq.selenium:selenium-java to v3.141.59 ([#549](https://www.github.com/googleapis/java-recaptchaenterprise/issues/549)) ([ec7cfc0](https://www.github.com/googleapis/java-recaptchaenterprise/commit/ec7cfc0e513ccfc16273b0a9683a20d5ac2c30d9))
+* update dependency org.springframework.boot:spring-boot-starter-test to v2.5.4 ([#543](https://www.github.com/googleapis/java-recaptchaenterprise/issues/543)) ([3e92322](https://www.github.com/googleapis/java-recaptchaenterprise/commit/3e92322c146f4a6696e9f668b384f88092f49da5))
+* update dependency org.springframework.boot:spring-boot-starter-thymeleaf to v2.5.4 ([#544](https://www.github.com/googleapis/java-recaptchaenterprise/issues/544)) ([b0fcd3e](https://www.github.com/googleapis/java-recaptchaenterprise/commit/b0fcd3e3aedf54baeb4a7c9ce45afb4bf544294f))
+* update dependency org.springframework.boot:spring-boot-starter-web to v2.5.4 ([#545](https://www.github.com/googleapis/java-recaptchaenterprise/issues/545)) ([267b904](https://www.github.com/googleapis/java-recaptchaenterprise/commit/267b90414dab07f3657b2328f627595d27aff076))
+
+
+### Documentation
+
+* **samples:** adding README.md ([#557](https://www.github.com/googleapis/java-recaptchaenterprise/issues/557)) ([e109351](https://www.github.com/googleapis/java-recaptchaenterprise/commit/e109351c8be316314b761aac5bd9767b6045b4a5))
+* **samples:** create recaptcha samples  ([#535](https://www.github.com/googleapis/java-recaptchaenterprise/issues/535)) ([f09d9ee](https://www.github.com/googleapis/java-recaptchaenterprise/commit/f09d9ee7ebf21d10953ad624422e6cb57256a7f3))
+
 ### [2.0.2](https://www.github.com/googleapis/java-recaptchaenterprise/compare/v2.0.1...v2.0.2) (2021-08-23)
 
 
