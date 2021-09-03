@@ -56,13 +56,13 @@ implementation 'com.google.cloud:google-cloud-build'
 If you are using Gradle without BOM, add this to your dependencies
 
 ```Groovy
-implementation 'com.google.cloud:google-cloud-build:3.1.0'
+implementation 'com.google.cloud:google-cloud-build:3.2.0'
 ```
 
 If you are using SBT, add this to your dependencies
 
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-build" % "3.1.0"
+libraryDependencies += "com.google.cloud" % "google-cloud-build" % "3.2.0"
 ```
 
 ## Authentication
