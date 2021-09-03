@@ -376,8 +376,11 @@ public final class DocumentsGrpc {
      *
      * <pre>
      * Creates a new document.
-     * Operation &lt;response: [Document][google.cloud.dialogflow.v2.Document],
-     *            metadata: [KnowledgeOperationMetadata][google.cloud.dialogflow.v2.KnowledgeOperationMetadata]&gt;
+     * This method is a [long-running
+     * operation](https://cloud.google.com/dialogflow/cx/docs/how/long-running-operation).
+     * The returned `Operation` type has the following method-specific fields:
+     * - `metadata`: [KnowledgeOperationMetadata][google.cloud.dialogflow.v2.KnowledgeOperationMetadata]
+     * - `response`: [Document][google.cloud.dialogflow.v2.Document]
      * </pre>
      */
     public void createDocument(
@@ -392,8 +395,12 @@ public final class DocumentsGrpc {
      *
      * <pre>
      * Deletes the specified document.
-     * Operation &lt;response: [google.protobuf.Empty][google.protobuf.Empty],
-     *            metadata: [KnowledgeOperationMetadata][google.cloud.dialogflow.v2.KnowledgeOperationMetadata]&gt;
+     * This method is a [long-running
+     * operation](https://cloud.google.com/dialogflow/cx/docs/how/long-running-operation).
+     * The returned `Operation` type has the following method-specific fields:
+     * - `metadata`: [KnowledgeOperationMetadata][google.cloud.dialogflow.v2.KnowledgeOperationMetadata]
+     * - `response`: An [Empty
+     *   message](https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#empty)
      * </pre>
      */
     public void deleteDocument(
@@ -408,8 +415,11 @@ public final class DocumentsGrpc {
      *
      * <pre>
      * Updates the specified document.
-     * Operation &lt;response: [Document][google.cloud.dialogflow.v2.Document],
-     *            metadata: [KnowledgeOperationMetadata][google.cloud.dialogflow.v2.KnowledgeOperationMetadata]&gt;
+     * This method is a [long-running
+     * operation](https://cloud.google.com/dialogflow/cx/docs/how/long-running-operation).
+     * The returned `Operation` type has the following method-specific fields:
+     * - `metadata`: [KnowledgeOperationMetadata][google.cloud.dialogflow.v2.KnowledgeOperationMetadata]
+     * - `response`: [Document][google.cloud.dialogflow.v2.Document]
      * </pre>
      */
     public void updateDocument(
@@ -427,10 +437,13 @@ public final class DocumentsGrpc {
      * content. The previously loaded content of the document will be deleted.
      * Note: Even when the content of the document has not changed, there still
      * may be side effects because of internal implementation changes.
+     * This method is a [long-running
+     * operation](https://cloud.google.com/dialogflow/cx/docs/how/long-running-operation).
+     * The returned `Operation` type has the following method-specific fields:
+     * - `metadata`: [KnowledgeOperationMetadata][google.cloud.dialogflow.v2.KnowledgeOperationMetadata]
+     * - `response`: [Document][google.cloud.dialogflow.v2.Document]
      * Note: The `projects.agent.knowledgeBases.documents` resource is deprecated;
      * only use `projects.knowledgeBases.documents`.
-     * Operation &lt;response: [Document][google.cloud.dialogflow.v2.Document],
-     *            metadata: [KnowledgeOperationMetadata][google.cloud.dialogflow.v2.KnowledgeOperationMetadata]&gt;
      * </pre>
      */
     public void reloadDocument(
@@ -539,8 +552,11 @@ public final class DocumentsGrpc {
      *
      * <pre>
      * Creates a new document.
-     * Operation &lt;response: [Document][google.cloud.dialogflow.v2.Document],
-     *            metadata: [KnowledgeOperationMetadata][google.cloud.dialogflow.v2.KnowledgeOperationMetadata]&gt;
+     * This method is a [long-running
+     * operation](https://cloud.google.com/dialogflow/cx/docs/how/long-running-operation).
+     * The returned `Operation` type has the following method-specific fields:
+     * - `metadata`: [KnowledgeOperationMetadata][google.cloud.dialogflow.v2.KnowledgeOperationMetadata]
+     * - `response`: [Document][google.cloud.dialogflow.v2.Document]
      * </pre>
      */
     public void createDocument(
@@ -557,8 +573,12 @@ public final class DocumentsGrpc {
      *
      * <pre>
      * Deletes the specified document.
-     * Operation &lt;response: [google.protobuf.Empty][google.protobuf.Empty],
-     *            metadata: [KnowledgeOperationMetadata][google.cloud.dialogflow.v2.KnowledgeOperationMetadata]&gt;
+     * This method is a [long-running
+     * operation](https://cloud.google.com/dialogflow/cx/docs/how/long-running-operation).
+     * The returned `Operation` type has the following method-specific fields:
+     * - `metadata`: [KnowledgeOperationMetadata][google.cloud.dialogflow.v2.KnowledgeOperationMetadata]
+     * - `response`: An [Empty
+     *   message](https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#empty)
      * </pre>
      */
     public void deleteDocument(
@@ -575,8 +595,11 @@ public final class DocumentsGrpc {
      *
      * <pre>
      * Updates the specified document.
-     * Operation &lt;response: [Document][google.cloud.dialogflow.v2.Document],
-     *            metadata: [KnowledgeOperationMetadata][google.cloud.dialogflow.v2.KnowledgeOperationMetadata]&gt;
+     * This method is a [long-running
+     * operation](https://cloud.google.com/dialogflow/cx/docs/how/long-running-operation).
+     * The returned `Operation` type has the following method-specific fields:
+     * - `metadata`: [KnowledgeOperationMetadata][google.cloud.dialogflow.v2.KnowledgeOperationMetadata]
+     * - `response`: [Document][google.cloud.dialogflow.v2.Document]
      * </pre>
      */
     public void updateDocument(
@@ -596,10 +619,13 @@ public final class DocumentsGrpc {
      * content. The previously loaded content of the document will be deleted.
      * Note: Even when the content of the document has not changed, there still
      * may be side effects because of internal implementation changes.
+     * This method is a [long-running
+     * operation](https://cloud.google.com/dialogflow/cx/docs/how/long-running-operation).
+     * The returned `Operation` type has the following method-specific fields:
+     * - `metadata`: [KnowledgeOperationMetadata][google.cloud.dialogflow.v2.KnowledgeOperationMetadata]
+     * - `response`: [Document][google.cloud.dialogflow.v2.Document]
      * Note: The `projects.agent.knowledgeBases.documents` resource is deprecated;
      * only use `projects.knowledgeBases.documents`.
-     * Operation &lt;response: [Document][google.cloud.dialogflow.v2.Document],
-     *            metadata: [KnowledgeOperationMetadata][google.cloud.dialogflow.v2.KnowledgeOperationMetadata]&gt;
      * </pre>
      */
     public void reloadDocument(
@@ -662,8 +688,11 @@ public final class DocumentsGrpc {
      *
      * <pre>
      * Creates a new document.
-     * Operation &lt;response: [Document][google.cloud.dialogflow.v2.Document],
-     *            metadata: [KnowledgeOperationMetadata][google.cloud.dialogflow.v2.KnowledgeOperationMetadata]&gt;
+     * This method is a [long-running
+     * operation](https://cloud.google.com/dialogflow/cx/docs/how/long-running-operation).
+     * The returned `Operation` type has the following method-specific fields:
+     * - `metadata`: [KnowledgeOperationMetadata][google.cloud.dialogflow.v2.KnowledgeOperationMetadata]
+     * - `response`: [Document][google.cloud.dialogflow.v2.Document]
      * </pre>
      */
     public com.google.longrunning.Operation createDocument(
@@ -677,8 +706,12 @@ public final class DocumentsGrpc {
      *
      * <pre>
      * Deletes the specified document.
-     * Operation &lt;response: [google.protobuf.Empty][google.protobuf.Empty],
-     *            metadata: [KnowledgeOperationMetadata][google.cloud.dialogflow.v2.KnowledgeOperationMetadata]&gt;
+     * This method is a [long-running
+     * operation](https://cloud.google.com/dialogflow/cx/docs/how/long-running-operation).
+     * The returned `Operation` type has the following method-specific fields:
+     * - `metadata`: [KnowledgeOperationMetadata][google.cloud.dialogflow.v2.KnowledgeOperationMetadata]
+     * - `response`: An [Empty
+     *   message](https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#empty)
      * </pre>
      */
     public com.google.longrunning.Operation deleteDocument(
@@ -692,8 +725,11 @@ public final class DocumentsGrpc {
      *
      * <pre>
      * Updates the specified document.
-     * Operation &lt;response: [Document][google.cloud.dialogflow.v2.Document],
-     *            metadata: [KnowledgeOperationMetadata][google.cloud.dialogflow.v2.KnowledgeOperationMetadata]&gt;
+     * This method is a [long-running
+     * operation](https://cloud.google.com/dialogflow/cx/docs/how/long-running-operation).
+     * The returned `Operation` type has the following method-specific fields:
+     * - `metadata`: [KnowledgeOperationMetadata][google.cloud.dialogflow.v2.KnowledgeOperationMetadata]
+     * - `response`: [Document][google.cloud.dialogflow.v2.Document]
      * </pre>
      */
     public com.google.longrunning.Operation updateDocument(
@@ -710,10 +746,13 @@ public final class DocumentsGrpc {
      * content. The previously loaded content of the document will be deleted.
      * Note: Even when the content of the document has not changed, there still
      * may be side effects because of internal implementation changes.
+     * This method is a [long-running
+     * operation](https://cloud.google.com/dialogflow/cx/docs/how/long-running-operation).
+     * The returned `Operation` type has the following method-specific fields:
+     * - `metadata`: [KnowledgeOperationMetadata][google.cloud.dialogflow.v2.KnowledgeOperationMetadata]
+     * - `response`: [Document][google.cloud.dialogflow.v2.Document]
      * Note: The `projects.agent.knowledgeBases.documents` resource is deprecated;
      * only use `projects.knowledgeBases.documents`.
-     * Operation &lt;response: [Document][google.cloud.dialogflow.v2.Document],
-     *            metadata: [KnowledgeOperationMetadata][google.cloud.dialogflow.v2.KnowledgeOperationMetadata]&gt;
      * </pre>
      */
     public com.google.longrunning.Operation reloadDocument(
@@ -774,8 +813,11 @@ public final class DocumentsGrpc {
      *
      * <pre>
      * Creates a new document.
-     * Operation &lt;response: [Document][google.cloud.dialogflow.v2.Document],
-     *            metadata: [KnowledgeOperationMetadata][google.cloud.dialogflow.v2.KnowledgeOperationMetadata]&gt;
+     * This method is a [long-running
+     * operation](https://cloud.google.com/dialogflow/cx/docs/how/long-running-operation).
+     * The returned `Operation` type has the following method-specific fields:
+     * - `metadata`: [KnowledgeOperationMetadata][google.cloud.dialogflow.v2.KnowledgeOperationMetadata]
+     * - `response`: [Document][google.cloud.dialogflow.v2.Document]
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
@@ -789,8 +831,12 @@ public final class DocumentsGrpc {
      *
      * <pre>
      * Deletes the specified document.
-     * Operation &lt;response: [google.protobuf.Empty][google.protobuf.Empty],
-     *            metadata: [KnowledgeOperationMetadata][google.cloud.dialogflow.v2.KnowledgeOperationMetadata]&gt;
+     * This method is a [long-running
+     * operation](https://cloud.google.com/dialogflow/cx/docs/how/long-running-operation).
+     * The returned `Operation` type has the following method-specific fields:
+     * - `metadata`: [KnowledgeOperationMetadata][google.cloud.dialogflow.v2.KnowledgeOperationMetadata]
+     * - `response`: An [Empty
+     *   message](https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#empty)
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
@@ -804,8 +850,11 @@ public final class DocumentsGrpc {
      *
      * <pre>
      * Updates the specified document.
-     * Operation &lt;response: [Document][google.cloud.dialogflow.v2.Document],
-     *            metadata: [KnowledgeOperationMetadata][google.cloud.dialogflow.v2.KnowledgeOperationMetadata]&gt;
+     * This method is a [long-running
+     * operation](https://cloud.google.com/dialogflow/cx/docs/how/long-running-operation).
+     * The returned `Operation` type has the following method-specific fields:
+     * - `metadata`: [KnowledgeOperationMetadata][google.cloud.dialogflow.v2.KnowledgeOperationMetadata]
+     * - `response`: [Document][google.cloud.dialogflow.v2.Document]
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
@@ -822,10 +871,13 @@ public final class DocumentsGrpc {
      * content. The previously loaded content of the document will be deleted.
      * Note: Even when the content of the document has not changed, there still
      * may be side effects because of internal implementation changes.
+     * This method is a [long-running
+     * operation](https://cloud.google.com/dialogflow/cx/docs/how/long-running-operation).
+     * The returned `Operation` type has the following method-specific fields:
+     * - `metadata`: [KnowledgeOperationMetadata][google.cloud.dialogflow.v2.KnowledgeOperationMetadata]
+     * - `response`: [Document][google.cloud.dialogflow.v2.Document]
      * Note: The `projects.agent.knowledgeBases.documents` resource is deprecated;
      * only use `projects.knowledgeBases.documents`.
-     * Operation &lt;response: [Document][google.cloud.dialogflow.v2.Document],
-     *            metadata: [KnowledgeOperationMetadata][google.cloud.dialogflow.v2.KnowledgeOperationMetadata]&gt;
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>

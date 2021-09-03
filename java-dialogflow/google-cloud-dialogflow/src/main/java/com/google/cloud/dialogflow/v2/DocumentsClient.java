@@ -424,8 +424,13 @@ public class DocumentsClient implements BackgroundResource {
   /**
    * Creates a new document.
    *
-   * <p>Operation &lt;response: [Document][google.cloud.dialogflow.v2.Document], metadata:
-   * [KnowledgeOperationMetadata][google.cloud.dialogflow.v2.KnowledgeOperationMetadata]&gt;
+   * <p>This method is a [long-running
+   * operation](https://cloud.google.com/dialogflow/cx/docs/how/long-running-operation). The
+   * returned `Operation` type has the following method-specific fields:
+   *
+   * <p>- `metadata`:
+   * [KnowledgeOperationMetadata][google.cloud.dialogflow.v2.KnowledgeOperationMetadata] -
+   * `response`: [Document][google.cloud.dialogflow.v2.Document]
    *
    * <p>Sample code:
    *
@@ -458,8 +463,13 @@ public class DocumentsClient implements BackgroundResource {
   /**
    * Creates a new document.
    *
-   * <p>Operation &lt;response: [Document][google.cloud.dialogflow.v2.Document], metadata:
-   * [KnowledgeOperationMetadata][google.cloud.dialogflow.v2.KnowledgeOperationMetadata]&gt;
+   * <p>This method is a [long-running
+   * operation](https://cloud.google.com/dialogflow/cx/docs/how/long-running-operation). The
+   * returned `Operation` type has the following method-specific fields:
+   *
+   * <p>- `metadata`:
+   * [KnowledgeOperationMetadata][google.cloud.dialogflow.v2.KnowledgeOperationMetadata] -
+   * `response`: [Document][google.cloud.dialogflow.v2.Document]
    *
    * <p>Sample code:
    *
@@ -491,8 +501,13 @@ public class DocumentsClient implements BackgroundResource {
   /**
    * Creates a new document.
    *
-   * <p>Operation &lt;response: [Document][google.cloud.dialogflow.v2.Document], metadata:
-   * [KnowledgeOperationMetadata][google.cloud.dialogflow.v2.KnowledgeOperationMetadata]&gt;
+   * <p>This method is a [long-running
+   * operation](https://cloud.google.com/dialogflow/cx/docs/how/long-running-operation). The
+   * returned `Operation` type has the following method-specific fields:
+   *
+   * <p>- `metadata`:
+   * [KnowledgeOperationMetadata][google.cloud.dialogflow.v2.KnowledgeOperationMetadata] -
+   * `response`: [Document][google.cloud.dialogflow.v2.Document]
    *
    * <p>Sample code:
    *
@@ -522,8 +537,13 @@ public class DocumentsClient implements BackgroundResource {
   /**
    * Creates a new document.
    *
-   * <p>Operation &lt;response: [Document][google.cloud.dialogflow.v2.Document], metadata:
-   * [KnowledgeOperationMetadata][google.cloud.dialogflow.v2.KnowledgeOperationMetadata]&gt;
+   * <p>This method is a [long-running
+   * operation](https://cloud.google.com/dialogflow/cx/docs/how/long-running-operation). The
+   * returned `Operation` type has the following method-specific fields:
+   *
+   * <p>- `metadata`:
+   * [KnowledgeOperationMetadata][google.cloud.dialogflow.v2.KnowledgeOperationMetadata] -
+   * `response`: [Document][google.cloud.dialogflow.v2.Document]
    *
    * <p>Sample code:
    *
@@ -553,8 +573,13 @@ public class DocumentsClient implements BackgroundResource {
   /**
    * Creates a new document.
    *
-   * <p>Operation &lt;response: [Document][google.cloud.dialogflow.v2.Document], metadata:
-   * [KnowledgeOperationMetadata][google.cloud.dialogflow.v2.KnowledgeOperationMetadata]&gt;
+   * <p>This method is a [long-running
+   * operation](https://cloud.google.com/dialogflow/cx/docs/how/long-running-operation). The
+   * returned `Operation` type has the following method-specific fields:
+   *
+   * <p>- `metadata`:
+   * [KnowledgeOperationMetadata][google.cloud.dialogflow.v2.KnowledgeOperationMetadata] -
+   * `response`: [Document][google.cloud.dialogflow.v2.Document]
    *
    * <p>Sample code:
    *
@@ -582,8 +607,14 @@ public class DocumentsClient implements BackgroundResource {
   /**
    * Deletes the specified document.
    *
-   * <p>Operation &lt;response: [google.protobuf.Empty][google.protobuf.Empty], metadata:
-   * [KnowledgeOperationMetadata][google.cloud.dialogflow.v2.KnowledgeOperationMetadata]&gt;
+   * <p>This method is a [long-running
+   * operation](https://cloud.google.com/dialogflow/cx/docs/how/long-running-operation). The
+   * returned `Operation` type has the following method-specific fields:
+   *
+   * <p>- `metadata`:
+   * [KnowledgeOperationMetadata][google.cloud.dialogflow.v2.KnowledgeOperationMetadata] -
+   * `response`: An [Empty
+   * message](https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#empty)
    *
    * <p>Sample code:
    *
@@ -612,8 +643,14 @@ public class DocumentsClient implements BackgroundResource {
   /**
    * Deletes the specified document.
    *
-   * <p>Operation &lt;response: [google.protobuf.Empty][google.protobuf.Empty], metadata:
-   * [KnowledgeOperationMetadata][google.cloud.dialogflow.v2.KnowledgeOperationMetadata]&gt;
+   * <p>This method is a [long-running
+   * operation](https://cloud.google.com/dialogflow/cx/docs/how/long-running-operation). The
+   * returned `Operation` type has the following method-specific fields:
+   *
+   * <p>- `metadata`:
+   * [KnowledgeOperationMetadata][google.cloud.dialogflow.v2.KnowledgeOperationMetadata] -
+   * `response`: An [Empty
+   * message](https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#empty)
    *
    * <p>Sample code:
    *
@@ -641,8 +678,14 @@ public class DocumentsClient implements BackgroundResource {
   /**
    * Deletes the specified document.
    *
-   * <p>Operation &lt;response: [google.protobuf.Empty][google.protobuf.Empty], metadata:
-   * [KnowledgeOperationMetadata][google.cloud.dialogflow.v2.KnowledgeOperationMetadata]&gt;
+   * <p>This method is a [long-running
+   * operation](https://cloud.google.com/dialogflow/cx/docs/how/long-running-operation). The
+   * returned `Operation` type has the following method-specific fields:
+   *
+   * <p>- `metadata`:
+   * [KnowledgeOperationMetadata][google.cloud.dialogflow.v2.KnowledgeOperationMetadata] -
+   * `response`: An [Empty
+   * message](https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#empty)
    *
    * <p>Sample code:
    *
@@ -671,8 +714,14 @@ public class DocumentsClient implements BackgroundResource {
   /**
    * Deletes the specified document.
    *
-   * <p>Operation &lt;response: [google.protobuf.Empty][google.protobuf.Empty], metadata:
-   * [KnowledgeOperationMetadata][google.cloud.dialogflow.v2.KnowledgeOperationMetadata]&gt;
+   * <p>This method is a [long-running
+   * operation](https://cloud.google.com/dialogflow/cx/docs/how/long-running-operation). The
+   * returned `Operation` type has the following method-specific fields:
+   *
+   * <p>- `metadata`:
+   * [KnowledgeOperationMetadata][google.cloud.dialogflow.v2.KnowledgeOperationMetadata] -
+   * `response`: An [Empty
+   * message](https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#empty)
    *
    * <p>Sample code:
    *
@@ -701,8 +750,14 @@ public class DocumentsClient implements BackgroundResource {
   /**
    * Deletes the specified document.
    *
-   * <p>Operation &lt;response: [google.protobuf.Empty][google.protobuf.Empty], metadata:
-   * [KnowledgeOperationMetadata][google.cloud.dialogflow.v2.KnowledgeOperationMetadata]&gt;
+   * <p>This method is a [long-running
+   * operation](https://cloud.google.com/dialogflow/cx/docs/how/long-running-operation). The
+   * returned `Operation` type has the following method-specific fields:
+   *
+   * <p>- `metadata`:
+   * [KnowledgeOperationMetadata][google.cloud.dialogflow.v2.KnowledgeOperationMetadata] -
+   * `response`: An [Empty
+   * message](https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#empty)
    *
    * <p>Sample code:
    *
@@ -729,8 +784,13 @@ public class DocumentsClient implements BackgroundResource {
   /**
    * Updates the specified document.
    *
-   * <p>Operation &lt;response: [Document][google.cloud.dialogflow.v2.Document], metadata:
-   * [KnowledgeOperationMetadata][google.cloud.dialogflow.v2.KnowledgeOperationMetadata]&gt;
+   * <p>This method is a [long-running
+   * operation](https://cloud.google.com/dialogflow/cx/docs/how/long-running-operation). The
+   * returned `Operation` type has the following method-specific fields:
+   *
+   * <p>- `metadata`:
+   * [KnowledgeOperationMetadata][google.cloud.dialogflow.v2.KnowledgeOperationMetadata] -
+   * `response`: [Document][google.cloud.dialogflow.v2.Document]
    *
    * <p>Sample code:
    *
@@ -758,8 +818,13 @@ public class DocumentsClient implements BackgroundResource {
   /**
    * Updates the specified document.
    *
-   * <p>Operation &lt;response: [Document][google.cloud.dialogflow.v2.Document], metadata:
-   * [KnowledgeOperationMetadata][google.cloud.dialogflow.v2.KnowledgeOperationMetadata]&gt;
+   * <p>This method is a [long-running
+   * operation](https://cloud.google.com/dialogflow/cx/docs/how/long-running-operation). The
+   * returned `Operation` type has the following method-specific fields:
+   *
+   * <p>- `metadata`:
+   * [KnowledgeOperationMetadata][google.cloud.dialogflow.v2.KnowledgeOperationMetadata] -
+   * `response`: [Document][google.cloud.dialogflow.v2.Document]
    *
    * <p>Sample code:
    *
@@ -786,8 +851,13 @@ public class DocumentsClient implements BackgroundResource {
   /**
    * Updates the specified document.
    *
-   * <p>Operation &lt;response: [Document][google.cloud.dialogflow.v2.Document], metadata:
-   * [KnowledgeOperationMetadata][google.cloud.dialogflow.v2.KnowledgeOperationMetadata]&gt;
+   * <p>This method is a [long-running
+   * operation](https://cloud.google.com/dialogflow/cx/docs/how/long-running-operation). The
+   * returned `Operation` type has the following method-specific fields:
+   *
+   * <p>- `metadata`:
+   * [KnowledgeOperationMetadata][google.cloud.dialogflow.v2.KnowledgeOperationMetadata] -
+   * `response`: [Document][google.cloud.dialogflow.v2.Document]
    *
    * <p>Sample code:
    *
@@ -814,8 +884,13 @@ public class DocumentsClient implements BackgroundResource {
   /**
    * Updates the specified document.
    *
-   * <p>Operation &lt;response: [Document][google.cloud.dialogflow.v2.Document], metadata:
-   * [KnowledgeOperationMetadata][google.cloud.dialogflow.v2.KnowledgeOperationMetadata]&gt;
+   * <p>This method is a [long-running
+   * operation](https://cloud.google.com/dialogflow/cx/docs/how/long-running-operation). The
+   * returned `Operation` type has the following method-specific fields:
+   *
+   * <p>- `metadata`:
+   * [KnowledgeOperationMetadata][google.cloud.dialogflow.v2.KnowledgeOperationMetadata] -
+   * `response`: [Document][google.cloud.dialogflow.v2.Document]
    *
    * <p>Sample code:
    *
@@ -843,11 +918,16 @@ public class DocumentsClient implements BackgroundResource {
    * document has not changed, there still may be side effects because of internal implementation
    * changes.
    *
+   * <p>This method is a [long-running
+   * operation](https://cloud.google.com/dialogflow/cx/docs/how/long-running-operation). The
+   * returned `Operation` type has the following method-specific fields:
+   *
+   * <p>- `metadata`:
+   * [KnowledgeOperationMetadata][google.cloud.dialogflow.v2.KnowledgeOperationMetadata] -
+   * `response`: [Document][google.cloud.dialogflow.v2.Document]
+   *
    * <p>Note: The `projects.agent.knowledgeBases.documents` resource is deprecated; only use
    * `projects.knowledgeBases.documents`.
-   *
-   * <p>Operation &lt;response: [Document][google.cloud.dialogflow.v2.Document], metadata:
-   * [KnowledgeOperationMetadata][google.cloud.dialogflow.v2.KnowledgeOperationMetadata]&gt;
    *
    * <p>Sample code:
    *
@@ -887,11 +967,16 @@ public class DocumentsClient implements BackgroundResource {
    * document has not changed, there still may be side effects because of internal implementation
    * changes.
    *
+   * <p>This method is a [long-running
+   * operation](https://cloud.google.com/dialogflow/cx/docs/how/long-running-operation). The
+   * returned `Operation` type has the following method-specific fields:
+   *
+   * <p>- `metadata`:
+   * [KnowledgeOperationMetadata][google.cloud.dialogflow.v2.KnowledgeOperationMetadata] -
+   * `response`: [Document][google.cloud.dialogflow.v2.Document]
+   *
    * <p>Note: The `projects.agent.knowledgeBases.documents` resource is deprecated; only use
    * `projects.knowledgeBases.documents`.
-   *
-   * <p>Operation &lt;response: [Document][google.cloud.dialogflow.v2.Document], metadata:
-   * [KnowledgeOperationMetadata][google.cloud.dialogflow.v2.KnowledgeOperationMetadata]&gt;
    *
    * <p>Sample code:
    *
@@ -929,11 +1014,16 @@ public class DocumentsClient implements BackgroundResource {
    * document has not changed, there still may be side effects because of internal implementation
    * changes.
    *
+   * <p>This method is a [long-running
+   * operation](https://cloud.google.com/dialogflow/cx/docs/how/long-running-operation). The
+   * returned `Operation` type has the following method-specific fields:
+   *
+   * <p>- `metadata`:
+   * [KnowledgeOperationMetadata][google.cloud.dialogflow.v2.KnowledgeOperationMetadata] -
+   * `response`: [Document][google.cloud.dialogflow.v2.Document]
+   *
    * <p>Note: The `projects.agent.knowledgeBases.documents` resource is deprecated; only use
    * `projects.knowledgeBases.documents`.
-   *
-   * <p>Operation &lt;response: [Document][google.cloud.dialogflow.v2.Document], metadata:
-   * [KnowledgeOperationMetadata][google.cloud.dialogflow.v2.KnowledgeOperationMetadata]&gt;
    *
    * <p>Sample code:
    *
@@ -965,11 +1055,16 @@ public class DocumentsClient implements BackgroundResource {
    * document has not changed, there still may be side effects because of internal implementation
    * changes.
    *
+   * <p>This method is a [long-running
+   * operation](https://cloud.google.com/dialogflow/cx/docs/how/long-running-operation). The
+   * returned `Operation` type has the following method-specific fields:
+   *
+   * <p>- `metadata`:
+   * [KnowledgeOperationMetadata][google.cloud.dialogflow.v2.KnowledgeOperationMetadata] -
+   * `response`: [Document][google.cloud.dialogflow.v2.Document]
+   *
    * <p>Note: The `projects.agent.knowledgeBases.documents` resource is deprecated; only use
    * `projects.knowledgeBases.documents`.
-   *
-   * <p>Operation &lt;response: [Document][google.cloud.dialogflow.v2.Document], metadata:
-   * [KnowledgeOperationMetadata][google.cloud.dialogflow.v2.KnowledgeOperationMetadata]&gt;
    *
    * <p>Sample code:
    *
@@ -1001,11 +1096,16 @@ public class DocumentsClient implements BackgroundResource {
    * document has not changed, there still may be side effects because of internal implementation
    * changes.
    *
+   * <p>This method is a [long-running
+   * operation](https://cloud.google.com/dialogflow/cx/docs/how/long-running-operation). The
+   * returned `Operation` type has the following method-specific fields:
+   *
+   * <p>- `metadata`:
+   * [KnowledgeOperationMetadata][google.cloud.dialogflow.v2.KnowledgeOperationMetadata] -
+   * `response`: [Document][google.cloud.dialogflow.v2.Document]
+   *
    * <p>Note: The `projects.agent.knowledgeBases.documents` resource is deprecated; only use
    * `projects.knowledgeBases.documents`.
-   *
-   * <p>Operation &lt;response: [Document][google.cloud.dialogflow.v2.Document], metadata:
-   * [KnowledgeOperationMetadata][google.cloud.dialogflow.v2.KnowledgeOperationMetadata]&gt;
    *
    * <p>Sample code:
    *
