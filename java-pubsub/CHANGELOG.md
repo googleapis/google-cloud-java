@@ -1,5 +1,18 @@
 # Changelog
 
+### [1.114.3](https://www.github.com/googleapis/java-pubsub/compare/v1.114.2...v1.114.3) (2021-08-31)
+
+
+### Bug Fixes
+
+* Set publish timeouts to be consistent with desired values ([#820](https://www.github.com/googleapis/java-pubsub/issues/820)) ([826dc10](https://www.github.com/googleapis/java-pubsub/commit/826dc10f5bb373e88b06d390fc2029960a2cad7c))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-core to v2.1.2 ([#823](https://www.github.com/googleapis/java-pubsub/issues/823)) ([cc0786f](https://www.github.com/googleapis/java-pubsub/commit/cc0786f0c8e8c88df15563204953ff8870244fd5))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.2.0 ([#824](https://www.github.com/googleapis/java-pubsub/issues/824)) ([32623af](https://www.github.com/googleapis/java-pubsub/commit/32623af172e367b61a5bcb10c0001d5488b1e772))
+
 ### [1.114.2](https://www.github.com/googleapis/java-pubsub/compare/v1.114.1...v1.114.2) (2021-08-24)
 
 
