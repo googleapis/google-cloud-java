@@ -1,5 +1,17 @@
 # Changelog
 
+## [2.1.0](https://www.github.com/googleapis/java-billing/compare/v2.0.2...v2.1.0) (2021-09-02)
+
+
+### Features
+
+* Remove use of deprecated gradle command in java README ([#1196](https://www.github.com/googleapis/java-billing/issues/1196)) ([#508](https://www.github.com/googleapis/java-billing/issues/508)) ([1a0684f](https://www.github.com/googleapis/java-billing/commit/1a0684f7b2d629680956097cd053285796f9f8a9))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.2.0 ([#511](https://www.github.com/googleapis/java-billing/issues/511)) ([c23dc44](https://www.github.com/googleapis/java-billing/commit/c23dc44d11289b7a9bdc3f0ab55988134125b4d8))
+
 ### [2.0.2](https://www.github.com/googleapis/java-billing/compare/v2.0.1...v2.0.2) (2021-08-23)
 
 
