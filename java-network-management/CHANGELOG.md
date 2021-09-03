@@ -1,5 +1,19 @@
 # Changelog
 
+## [1.1.0](https://www.github.com/googleapis/java-network-management/compare/v1.0.0...v1.1.0) (2021-09-03)
+
+
+### Features
+
+* Remove use of deprecated gradle command in java README ([#1196](https://www.github.com/googleapis/java-network-management/issues/1196)) ([#43](https://www.github.com/googleapis/java-network-management/issues/43)) ([d773a95](https://www.github.com/googleapis/java-network-management/commit/d773a957fd1a31504a2f410e38fa63eb715b11cb))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.0.1 ([#35](https://www.github.com/googleapis/java-network-management/issues/35)) ([17e2158](https://www.github.com/googleapis/java-network-management/commit/17e2158d1fdc6a076220ea5f220c96517f5fd9b0))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.1.0 ([#39](https://www.github.com/googleapis/java-network-management/issues/39)) ([fa1e318](https://www.github.com/googleapis/java-network-management/commit/fa1e3180bec2c03a89eaac8be6bf04ba8e6665d3))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.2.0 ([#45](https://www.github.com/googleapis/java-network-management/issues/45)) ([50d62f5](https://www.github.com/googleapis/java-network-management/commit/50d62f54a47cbd977c80550b7ab7d947a2fce7f0))
+
 ## [1.0.0](https://www.github.com/googleapis/java-network-management/compare/v0.1.0...v1.0.0) (2021-08-10)
 
 
