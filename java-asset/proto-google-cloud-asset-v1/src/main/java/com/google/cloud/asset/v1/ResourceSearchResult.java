@@ -257,6 +257,25 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
                       com.google.cloud.asset.v1.AttachedResource.parser(), extensionRegistry));
               break;
             }
+          case 170:
+            {
+              if (!((mutable_bitField0_ & 0x00000020) != 0)) {
+                relationships_ =
+                    com.google.protobuf.MapField.newMapField(
+                        RelationshipsDefaultEntryHolder.defaultEntry);
+                mutable_bitField0_ |= 0x00000020;
+              }
+              com.google.protobuf.MapEntry<
+                      java.lang.String, com.google.cloud.asset.v1.RelatedResources>
+                  relationships__ =
+                      input.readMessage(
+                          RelationshipsDefaultEntryHolder.defaultEntry.getParserForType(),
+                          extensionRegistry);
+              relationships_
+                  .getMutableMap()
+                  .put(relationships__.getKey(), relationships__.getValue());
+              break;
+            }
           case 826:
             {
               java.lang.String s = input.readStringRequireUtf8();
@@ -306,6 +325,8 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
     switch (number) {
       case 7:
         return internalGetLabels();
+      case 21:
+        return internalGetRelationships();
       default:
         throw new RuntimeException("Invalid map field number: " + number);
     }
@@ -1669,6 +1690,135 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
     return attachedResources_.get(index);
   }
 
+  public static final int RELATIONSHIPS_FIELD_NUMBER = 21;
+
+  private static final class RelationshipsDefaultEntryHolder {
+    static final com.google.protobuf.MapEntry<
+            java.lang.String, com.google.cloud.asset.v1.RelatedResources>
+        defaultEntry =
+            com.google.protobuf.MapEntry
+                .<java.lang.String, com.google.cloud.asset.v1.RelatedResources>newDefaultInstance(
+                    com.google.cloud.asset.v1.AssetProto
+                        .internal_static_google_cloud_asset_v1_ResourceSearchResult_RelationshipsEntry_descriptor,
+                    com.google.protobuf.WireFormat.FieldType.STRING,
+                    "",
+                    com.google.protobuf.WireFormat.FieldType.MESSAGE,
+                    com.google.cloud.asset.v1.RelatedResources.getDefaultInstance());
+  }
+
+  private com.google.protobuf.MapField<java.lang.String, com.google.cloud.asset.v1.RelatedResources>
+      relationships_;
+
+  private com.google.protobuf.MapField<java.lang.String, com.google.cloud.asset.v1.RelatedResources>
+      internalGetRelationships() {
+    if (relationships_ == null) {
+      return com.google.protobuf.MapField.emptyMapField(
+          RelationshipsDefaultEntryHolder.defaultEntry);
+    }
+    return relationships_;
+  }
+
+  public int getRelationshipsCount() {
+    return internalGetRelationships().getMap().size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * A map of related resources of this resource, keyed by the
+   * relationship type. A relationship type is in the format of
+   * {SourceType}_{ACTION}_{DestType}. Example: `DISK_TO_INSTANCE`,
+   * `DISK_TO_NETWORK`, `INSTANCE_TO_INSTANCEGROUP`.
+   * See [supported relationship
+   * types](https://cloud.google.com/asset-inventory/docs/supported-asset-types#supported_relationship_types).
+   * </pre>
+   *
+   * <code>map&lt;string, .google.cloud.asset.v1.RelatedResources&gt; relationships = 21;</code>
+   */
+  @java.lang.Override
+  public boolean containsRelationships(java.lang.String key) {
+    if (key == null) {
+      throw new java.lang.NullPointerException();
+    }
+    return internalGetRelationships().getMap().containsKey(key);
+  }
+  /** Use {@link #getRelationshipsMap()} instead. */
+  @java.lang.Override
+  @java.lang.Deprecated
+  public java.util.Map<java.lang.String, com.google.cloud.asset.v1.RelatedResources>
+      getRelationships() {
+    return getRelationshipsMap();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * A map of related resources of this resource, keyed by the
+   * relationship type. A relationship type is in the format of
+   * {SourceType}_{ACTION}_{DestType}. Example: `DISK_TO_INSTANCE`,
+   * `DISK_TO_NETWORK`, `INSTANCE_TO_INSTANCEGROUP`.
+   * See [supported relationship
+   * types](https://cloud.google.com/asset-inventory/docs/supported-asset-types#supported_relationship_types).
+   * </pre>
+   *
+   * <code>map&lt;string, .google.cloud.asset.v1.RelatedResources&gt; relationships = 21;</code>
+   */
+  @java.lang.Override
+  public java.util.Map<java.lang.String, com.google.cloud.asset.v1.RelatedResources>
+      getRelationshipsMap() {
+    return internalGetRelationships().getMap();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * A map of related resources of this resource, keyed by the
+   * relationship type. A relationship type is in the format of
+   * {SourceType}_{ACTION}_{DestType}. Example: `DISK_TO_INSTANCE`,
+   * `DISK_TO_NETWORK`, `INSTANCE_TO_INSTANCEGROUP`.
+   * See [supported relationship
+   * types](https://cloud.google.com/asset-inventory/docs/supported-asset-types#supported_relationship_types).
+   * </pre>
+   *
+   * <code>map&lt;string, .google.cloud.asset.v1.RelatedResources&gt; relationships = 21;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.asset.v1.RelatedResources getRelationshipsOrDefault(
+      java.lang.String key, com.google.cloud.asset.v1.RelatedResources defaultValue) {
+    if (key == null) {
+      throw new java.lang.NullPointerException();
+    }
+    java.util.Map<java.lang.String, com.google.cloud.asset.v1.RelatedResources> map =
+        internalGetRelationships().getMap();
+    return map.containsKey(key) ? map.get(key) : defaultValue;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * A map of related resources of this resource, keyed by the
+   * relationship type. A relationship type is in the format of
+   * {SourceType}_{ACTION}_{DestType}. Example: `DISK_TO_INSTANCE`,
+   * `DISK_TO_NETWORK`, `INSTANCE_TO_INSTANCEGROUP`.
+   * See [supported relationship
+   * types](https://cloud.google.com/asset-inventory/docs/supported-asset-types#supported_relationship_types).
+   * </pre>
+   *
+   * <code>map&lt;string, .google.cloud.asset.v1.RelatedResources&gt; relationships = 21;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.asset.v1.RelatedResources getRelationshipsOrThrow(java.lang.String key) {
+    if (key == null) {
+      throw new java.lang.NullPointerException();
+    }
+    java.util.Map<java.lang.String, com.google.cloud.asset.v1.RelatedResources> map =
+        internalGetRelationships().getMap();
+    if (!map.containsKey(key)) {
+      throw new java.lang.IllegalArgumentException();
+    }
+    return map.get(key);
+  }
+
   public static final int PARENT_ASSET_TYPE_FIELD_NUMBER = 103;
   private volatile java.lang.Object parentAssetType_;
   /**
@@ -1795,6 +1945,8 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
     for (int i = 0; i < attachedResources_.size(); i++) {
       output.writeMessage(20, attachedResources_.get(i));
     }
+    com.google.protobuf.GeneratedMessageV3.serializeStringMapTo(
+        output, internalGetRelationships(), RelationshipsDefaultEntryHolder.defaultEntry, 21);
     if (!getParentAssetTypeBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 103, parentAssetType_);
     }
@@ -1881,6 +2033,17 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(20, attachedResources_.get(i));
     }
+    for (java.util.Map.Entry<java.lang.String, com.google.cloud.asset.v1.RelatedResources> entry :
+        internalGetRelationships().getMap().entrySet()) {
+      com.google.protobuf.MapEntry<java.lang.String, com.google.cloud.asset.v1.RelatedResources>
+          relationships__ =
+              RelationshipsDefaultEntryHolder.defaultEntry
+                  .newBuilderForType()
+                  .setKey(entry.getKey())
+                  .setValue(entry.getValue())
+                  .build();
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(21, relationships__);
+    }
     if (!getParentAssetTypeBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(103, parentAssetType_);
     }
@@ -1927,6 +2090,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
     if (!getParentFullResourceName().equals(other.getParentFullResourceName())) return false;
     if (!getVersionedResourcesList().equals(other.getVersionedResourcesList())) return false;
     if (!getAttachedResourcesList().equals(other.getAttachedResourcesList())) return false;
+    if (!internalGetRelationships().equals(other.internalGetRelationships())) return false;
     if (!getParentAssetType().equals(other.getParentAssetType())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
@@ -1990,6 +2154,10 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
     if (getAttachedResourcesCount() > 0) {
       hash = (37 * hash) + ATTACHED_RESOURCES_FIELD_NUMBER;
       hash = (53 * hash) + getAttachedResourcesList().hashCode();
+    }
+    if (!internalGetRelationships().getMap().isEmpty()) {
+      hash = (37 * hash) + RELATIONSHIPS_FIELD_NUMBER;
+      hash = (53 * hash) + internalGetRelationships().hashCode();
     }
     hash = (37 * hash) + PARENT_ASSET_TYPE_FIELD_NUMBER;
     hash = (53 * hash) + getParentAssetType().hashCode();
@@ -2116,6 +2284,8 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
       switch (number) {
         case 7:
           return internalGetLabels();
+        case 21:
+          return internalGetRelationships();
         default:
           throw new RuntimeException("Invalid map field number: " + number);
       }
@@ -2126,6 +2296,8 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
       switch (number) {
         case 7:
           return internalGetMutableLabels();
+        case 21:
+          return internalGetMutableRelationships();
         default:
           throw new RuntimeException("Invalid map field number: " + number);
       }
@@ -2216,6 +2388,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
       } else {
         attachedResourcesBuilder_.clear();
       }
+      internalGetMutableRelationships().clear();
       parentAssetType_ = "";
 
       return this;
@@ -2301,6 +2474,8 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
       } else {
         result.attachedResources_ = attachedResourcesBuilder_.build();
       }
+      result.relationships_ = internalGetRelationships();
+      result.relationships_.makeImmutable();
       result.parentAssetType_ = parentAssetType_;
       onBuilt();
       return result;
@@ -2475,6 +2650,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
           }
         }
       }
+      internalGetMutableRelationships().mergeFrom(other.internalGetRelationships());
       if (!other.getParentAssetType().isEmpty()) {
         parentAssetType_ = other.parentAssetType_;
         onChanged();
@@ -6289,6 +6465,213 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
         attachedResources_ = null;
       }
       return attachedResourcesBuilder_;
+    }
+
+    private com.google.protobuf.MapField<
+            java.lang.String, com.google.cloud.asset.v1.RelatedResources>
+        relationships_;
+
+    private com.google.protobuf.MapField<
+            java.lang.String, com.google.cloud.asset.v1.RelatedResources>
+        internalGetRelationships() {
+      if (relationships_ == null) {
+        return com.google.protobuf.MapField.emptyMapField(
+            RelationshipsDefaultEntryHolder.defaultEntry);
+      }
+      return relationships_;
+    }
+
+    private com.google.protobuf.MapField<
+            java.lang.String, com.google.cloud.asset.v1.RelatedResources>
+        internalGetMutableRelationships() {
+      onChanged();
+      ;
+      if (relationships_ == null) {
+        relationships_ =
+            com.google.protobuf.MapField.newMapField(RelationshipsDefaultEntryHolder.defaultEntry);
+      }
+      if (!relationships_.isMutable()) {
+        relationships_ = relationships_.copy();
+      }
+      return relationships_;
+    }
+
+    public int getRelationshipsCount() {
+      return internalGetRelationships().getMap().size();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A map of related resources of this resource, keyed by the
+     * relationship type. A relationship type is in the format of
+     * {SourceType}_{ACTION}_{DestType}. Example: `DISK_TO_INSTANCE`,
+     * `DISK_TO_NETWORK`, `INSTANCE_TO_INSTANCEGROUP`.
+     * See [supported relationship
+     * types](https://cloud.google.com/asset-inventory/docs/supported-asset-types#supported_relationship_types).
+     * </pre>
+     *
+     * <code>map&lt;string, .google.cloud.asset.v1.RelatedResources&gt; relationships = 21;</code>
+     */
+    @java.lang.Override
+    public boolean containsRelationships(java.lang.String key) {
+      if (key == null) {
+        throw new java.lang.NullPointerException();
+      }
+      return internalGetRelationships().getMap().containsKey(key);
+    }
+    /** Use {@link #getRelationshipsMap()} instead. */
+    @java.lang.Override
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, com.google.cloud.asset.v1.RelatedResources>
+        getRelationships() {
+      return getRelationshipsMap();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A map of related resources of this resource, keyed by the
+     * relationship type. A relationship type is in the format of
+     * {SourceType}_{ACTION}_{DestType}. Example: `DISK_TO_INSTANCE`,
+     * `DISK_TO_NETWORK`, `INSTANCE_TO_INSTANCEGROUP`.
+     * See [supported relationship
+     * types](https://cloud.google.com/asset-inventory/docs/supported-asset-types#supported_relationship_types).
+     * </pre>
+     *
+     * <code>map&lt;string, .google.cloud.asset.v1.RelatedResources&gt; relationships = 21;</code>
+     */
+    @java.lang.Override
+    public java.util.Map<java.lang.String, com.google.cloud.asset.v1.RelatedResources>
+        getRelationshipsMap() {
+      return internalGetRelationships().getMap();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A map of related resources of this resource, keyed by the
+     * relationship type. A relationship type is in the format of
+     * {SourceType}_{ACTION}_{DestType}. Example: `DISK_TO_INSTANCE`,
+     * `DISK_TO_NETWORK`, `INSTANCE_TO_INSTANCEGROUP`.
+     * See [supported relationship
+     * types](https://cloud.google.com/asset-inventory/docs/supported-asset-types#supported_relationship_types).
+     * </pre>
+     *
+     * <code>map&lt;string, .google.cloud.asset.v1.RelatedResources&gt; relationships = 21;</code>
+     */
+    @java.lang.Override
+    public com.google.cloud.asset.v1.RelatedResources getRelationshipsOrDefault(
+        java.lang.String key, com.google.cloud.asset.v1.RelatedResources defaultValue) {
+      if (key == null) {
+        throw new java.lang.NullPointerException();
+      }
+      java.util.Map<java.lang.String, com.google.cloud.asset.v1.RelatedResources> map =
+          internalGetRelationships().getMap();
+      return map.containsKey(key) ? map.get(key) : defaultValue;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A map of related resources of this resource, keyed by the
+     * relationship type. A relationship type is in the format of
+     * {SourceType}_{ACTION}_{DestType}. Example: `DISK_TO_INSTANCE`,
+     * `DISK_TO_NETWORK`, `INSTANCE_TO_INSTANCEGROUP`.
+     * See [supported relationship
+     * types](https://cloud.google.com/asset-inventory/docs/supported-asset-types#supported_relationship_types).
+     * </pre>
+     *
+     * <code>map&lt;string, .google.cloud.asset.v1.RelatedResources&gt; relationships = 21;</code>
+     */
+    @java.lang.Override
+    public com.google.cloud.asset.v1.RelatedResources getRelationshipsOrThrow(
+        java.lang.String key) {
+      if (key == null) {
+        throw new java.lang.NullPointerException();
+      }
+      java.util.Map<java.lang.String, com.google.cloud.asset.v1.RelatedResources> map =
+          internalGetRelationships().getMap();
+      if (!map.containsKey(key)) {
+        throw new java.lang.IllegalArgumentException();
+      }
+      return map.get(key);
+    }
+
+    public Builder clearRelationships() {
+      internalGetMutableRelationships().getMutableMap().clear();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A map of related resources of this resource, keyed by the
+     * relationship type. A relationship type is in the format of
+     * {SourceType}_{ACTION}_{DestType}. Example: `DISK_TO_INSTANCE`,
+     * `DISK_TO_NETWORK`, `INSTANCE_TO_INSTANCEGROUP`.
+     * See [supported relationship
+     * types](https://cloud.google.com/asset-inventory/docs/supported-asset-types#supported_relationship_types).
+     * </pre>
+     *
+     * <code>map&lt;string, .google.cloud.asset.v1.RelatedResources&gt; relationships = 21;</code>
+     */
+    public Builder removeRelationships(java.lang.String key) {
+      if (key == null) {
+        throw new java.lang.NullPointerException();
+      }
+      internalGetMutableRelationships().getMutableMap().remove(key);
+      return this;
+    }
+    /** Use alternate mutation accessors instead. */
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, com.google.cloud.asset.v1.RelatedResources>
+        getMutableRelationships() {
+      return internalGetMutableRelationships().getMutableMap();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A map of related resources of this resource, keyed by the
+     * relationship type. A relationship type is in the format of
+     * {SourceType}_{ACTION}_{DestType}. Example: `DISK_TO_INSTANCE`,
+     * `DISK_TO_NETWORK`, `INSTANCE_TO_INSTANCEGROUP`.
+     * See [supported relationship
+     * types](https://cloud.google.com/asset-inventory/docs/supported-asset-types#supported_relationship_types).
+     * </pre>
+     *
+     * <code>map&lt;string, .google.cloud.asset.v1.RelatedResources&gt; relationships = 21;</code>
+     */
+    public Builder putRelationships(
+        java.lang.String key, com.google.cloud.asset.v1.RelatedResources value) {
+      if (key == null) {
+        throw new java.lang.NullPointerException();
+      }
+      if (value == null) {
+        throw new java.lang.NullPointerException();
+      }
+      internalGetMutableRelationships().getMutableMap().put(key, value);
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A map of related resources of this resource, keyed by the
+     * relationship type. A relationship type is in the format of
+     * {SourceType}_{ACTION}_{DestType}. Example: `DISK_TO_INSTANCE`,
+     * `DISK_TO_NETWORK`, `INSTANCE_TO_INSTANCEGROUP`.
+     * See [supported relationship
+     * types](https://cloud.google.com/asset-inventory/docs/supported-asset-types#supported_relationship_types).
+     * </pre>
+     *
+     * <code>map&lt;string, .google.cloud.asset.v1.RelatedResources&gt; relationships = 21;</code>
+     */
+    public Builder putAllRelationships(
+        java.util.Map<java.lang.String, com.google.cloud.asset.v1.RelatedResources> values) {
+      internalGetMutableRelationships().getMutableMap().putAll(values);
+      return this;
     }
 
     private java.lang.Object parentAssetType_ = "";

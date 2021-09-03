@@ -1009,6 +1009,86 @@ public interface ResourceSearchResultOrBuilder
    *
    *
    * <pre>
+   * A map of related resources of this resource, keyed by the
+   * relationship type. A relationship type is in the format of
+   * {SourceType}_{ACTION}_{DestType}. Example: `DISK_TO_INSTANCE`,
+   * `DISK_TO_NETWORK`, `INSTANCE_TO_INSTANCEGROUP`.
+   * See [supported relationship
+   * types](https://cloud.google.com/asset-inventory/docs/supported-asset-types#supported_relationship_types).
+   * </pre>
+   *
+   * <code>map&lt;string, .google.cloud.asset.v1.RelatedResources&gt; relationships = 21;</code>
+   */
+  int getRelationshipsCount();
+  /**
+   *
+   *
+   * <pre>
+   * A map of related resources of this resource, keyed by the
+   * relationship type. A relationship type is in the format of
+   * {SourceType}_{ACTION}_{DestType}. Example: `DISK_TO_INSTANCE`,
+   * `DISK_TO_NETWORK`, `INSTANCE_TO_INSTANCEGROUP`.
+   * See [supported relationship
+   * types](https://cloud.google.com/asset-inventory/docs/supported-asset-types#supported_relationship_types).
+   * </pre>
+   *
+   * <code>map&lt;string, .google.cloud.asset.v1.RelatedResources&gt; relationships = 21;</code>
+   */
+  boolean containsRelationships(java.lang.String key);
+  /** Use {@link #getRelationshipsMap()} instead. */
+  @java.lang.Deprecated
+  java.util.Map<java.lang.String, com.google.cloud.asset.v1.RelatedResources> getRelationships();
+  /**
+   *
+   *
+   * <pre>
+   * A map of related resources of this resource, keyed by the
+   * relationship type. A relationship type is in the format of
+   * {SourceType}_{ACTION}_{DestType}. Example: `DISK_TO_INSTANCE`,
+   * `DISK_TO_NETWORK`, `INSTANCE_TO_INSTANCEGROUP`.
+   * See [supported relationship
+   * types](https://cloud.google.com/asset-inventory/docs/supported-asset-types#supported_relationship_types).
+   * </pre>
+   *
+   * <code>map&lt;string, .google.cloud.asset.v1.RelatedResources&gt; relationships = 21;</code>
+   */
+  java.util.Map<java.lang.String, com.google.cloud.asset.v1.RelatedResources> getRelationshipsMap();
+  /**
+   *
+   *
+   * <pre>
+   * A map of related resources of this resource, keyed by the
+   * relationship type. A relationship type is in the format of
+   * {SourceType}_{ACTION}_{DestType}. Example: `DISK_TO_INSTANCE`,
+   * `DISK_TO_NETWORK`, `INSTANCE_TO_INSTANCEGROUP`.
+   * See [supported relationship
+   * types](https://cloud.google.com/asset-inventory/docs/supported-asset-types#supported_relationship_types).
+   * </pre>
+   *
+   * <code>map&lt;string, .google.cloud.asset.v1.RelatedResources&gt; relationships = 21;</code>
+   */
+  com.google.cloud.asset.v1.RelatedResources getRelationshipsOrDefault(
+      java.lang.String key, com.google.cloud.asset.v1.RelatedResources defaultValue);
+  /**
+   *
+   *
+   * <pre>
+   * A map of related resources of this resource, keyed by the
+   * relationship type. A relationship type is in the format of
+   * {SourceType}_{ACTION}_{DestType}. Example: `DISK_TO_INSTANCE`,
+   * `DISK_TO_NETWORK`, `INSTANCE_TO_INSTANCEGROUP`.
+   * See [supported relationship
+   * types](https://cloud.google.com/asset-inventory/docs/supported-asset-types#supported_relationship_types).
+   * </pre>
+   *
+   * <code>map&lt;string, .google.cloud.asset.v1.RelatedResources&gt; relationships = 21;</code>
+   */
+  com.google.cloud.asset.v1.RelatedResources getRelationshipsOrThrow(java.lang.String key);
+
+  /**
+   *
+   *
+   * <pre>
    * The type of this resource's immediate parent, if there is one.
    * To search against the `parent_asset_type`:
    * * use a field query. Example:
