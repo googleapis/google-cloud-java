@@ -1,5 +1,17 @@
 # Changelog
 
+## [1.1.0](https://www.github.com/googleapis/java-resource-settings/compare/v1.0.2...v1.1.0) (2021-09-02)
+
+
+### Features
+
+* Remove use of deprecated gradle command in java README ([#1196](https://www.github.com/googleapis/java-resource-settings/issues/1196)) ([#47](https://www.github.com/googleapis/java-resource-settings/issues/47)) ([b6bc4ec](https://www.github.com/googleapis/java-resource-settings/commit/b6bc4ec1edd45e33fc6815fcaca4299220a32c0d))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.2.0 ([#50](https://www.github.com/googleapis/java-resource-settings/issues/50)) ([de54bfa](https://www.github.com/googleapis/java-resource-settings/commit/de54bfa38ec16dbf883ca57556fd5b6ab2b5d1b8))
+
 ### [1.0.2](https://www.github.com/googleapis/java-resource-settings/compare/v1.0.1...v1.0.2) (2021-08-23)
 
 
