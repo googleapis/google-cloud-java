@@ -18,10 +18,6 @@ package com.example.dialogflow;
 
 import static com.google.common.truth.Truth.assertThat;
 
-import com.google.cloud.dialogflow.v2.Agent;
-import com.google.cloud.dialogflow.v2.Agent.Builder;
-import com.google.cloud.dialogflow.v2.AgentsClient;
-import com.google.cloud.dialogflow.v2.AgentsSettings;
 import com.google.cloud.dialogflow.v2.Intent;
 import com.google.cloud.dialogflow.v2.IntentsClient;
 import java.io.ByteArrayOutputStream;
@@ -64,11 +60,8 @@ public class UpdateIntentIT {
 
     IntentsClient client = IntentsClient.create();
 
-    String intentPath = 
-        "projects/"
-            + PROJECT_ID
-            + "/locations/global/agent/intents/"
-            + UpdateIntentIT.intentID;
+    String intentPath =
+        "projects/" + PROJECT_ID + "/locations/global/agent/intents/" + UpdateIntentIT.intentID;
 
     client.deleteIntent(intentPath);
   }
@@ -78,8 +71,7 @@ public class UpdateIntentIT {
 
     String fakeIntent = "fake_intent_" + UUID.randomUUID().toString();
 
-    UpdateIntent.updateIntent(
-        PROJECT_ID, UpdateIntentIT.intentID, "global", fakeIntent);
+    UpdateIntent.updateIntent(PROJECT_ID, UpdateIntentIT.intentID, "global", fakeIntent);
 
     assertThat(stdOut.toString()).contains(fakeIntent);
   }

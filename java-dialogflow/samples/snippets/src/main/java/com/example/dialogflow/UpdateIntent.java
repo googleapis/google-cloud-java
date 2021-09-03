@@ -24,7 +24,6 @@ import com.google.cloud.dialogflow.v2.UpdateIntentRequest;
 import com.google.protobuf.FieldMask;
 import java.io.IOException;
 
-
 public class UpdateIntent {
 
   public static void main(String[] args) throws IOException {
@@ -38,23 +37,15 @@ public class UpdateIntent {
 
   // DialogFlow API Update Intent sample.
   public static void updateIntent(
-      String projectId, String intentId, String location, String displayName)
-      throws IOException {
+      String projectId, String intentId, String location, String displayName) throws IOException {
     try (IntentsClient client = IntentsClient.create()) {
       String intentPath =
-          "projects/"
-              + projectId
-              + "/locations/"
-              + location
-              + "/agent/intents/"
-              + intentId;
+          "projects/" + projectId + "/locations/" + location + "/agent/intents/" + intentId;
 
       Builder intentBuilder = client.getIntent(intentPath).toBuilder();
 
       intentBuilder.setDisplayName(displayName);
-      FieldMask fieldMask = FieldMask.newBuilder()
-          .addPaths("display_name")
-          .build();
+      FieldMask fieldMask = FieldMask.newBuilder().addPaths("display_name").build();
 
       Intent intent = intentBuilder.build();
       UpdateIntentRequest request =
