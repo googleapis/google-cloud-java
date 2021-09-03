@@ -6,7 +6,7 @@ branchProtectionRules:
     isAdminEnforced: true
     requiredApprovingReviewCount: 1
     requiresCodeOwnerReviews: true
-    requiresStrictStatusChecks: true
+    requiresStrictStatusChecks: false
     requiredStatusCheckContexts:
       - dependencies (8)
       - dependencies (11)
@@ -21,7 +21,7 @@ branchProtectionRules:
     isAdminEnforced: true
     requiredApprovingReviewCount: 1
     requiresCodeOwnerReviews: true
-    requiresStrictStatusChecks: true
+    requiresStrictStatusChecks: false
     requiredStatusCheckContexts:
       - dependencies (8)
       - dependencies (11)
