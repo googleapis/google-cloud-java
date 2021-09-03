@@ -64,4 +64,18 @@ public class ListAssets {
       assertThat(got).contains("asset");
     }
   }
+
+  @Test
+  public void testListAssetsRelationshipExample() throws Exception {
+    // Use the default project Id (configure it by setting environment variable
+    // "GOOGLE_CLOUD_PROJECT").
+    String projectId = ServiceOptions.getDefaultProjectId();
+    String[] assetTypes = {"compute.googleapis.com/Instance", "compute.googleapis.com/Disk"};
+    ContentType contentType = ContentType.RELATIONSHIP;
+    ListAssetsExample.listAssets(projectId, assetTypes, contentType);
+    String got = bout.toString();
+    if (!got.isEmpty()) {
+      assertThat(got).contains("asset");
+    }
+  }
 }

@@ -22,33 +22,58 @@ package com.example.asset;
 import com.google.cloud.ServiceOptions;
 import com.google.cloud.asset.v1.AssetServiceClient;
 import com.google.cloud.asset.v1.BigQueryDestination;
+import com.google.cloud.asset.v1.ContentType;
 import com.google.cloud.asset.v1.ExportAssetsRequest;
 import com.google.cloud.asset.v1.ExportAssetsResponse;
 import com.google.cloud.asset.v1.OutputConfig;
+import com.google.cloud.asset.v1.PartitionSpec;
 import com.google.cloud.asset.v1.ProjectName;
+import java.io.IOException;
+import java.util.concurrent.ExecutionException;
 
 public class ExportAssetsBigqueryExample {
 
   // Use the default project Id.
   private static final String projectId = ServiceOptions.getDefaultProjectId();
 
-  // Export assets for a project.
-  // @param args path where the results will be exported to.
-  public static void exportBigQuery(String bigqueryDataset, String bigqueryTable) throws Exception {
+  // Export assets to BigQuery for a project.
+  public static void exportBigQuery(
+      String bigqueryDataset, String bigqueryTable, ContentType contentType, boolean isPerType)
+      throws IOException, IllegalArgumentException, InterruptedException, ExecutionException {
     try (AssetServiceClient client = AssetServiceClient.create()) {
       ProjectName parent = ProjectName.of(projectId);
-      OutputConfig outputConfig =
-          OutputConfig.newBuilder()
-              .setBigqueryDestination(
-                  BigQueryDestination.newBuilder()
-                      .setDataset(bigqueryDataset)
-                      .setTable(bigqueryTable)
-                      .setForce(true)
-                      .build())
-              .build();
+      OutputConfig outputConfig;
+      // Outputs to per-type BigQuery table.
+      if (isPerType) {
+        outputConfig =
+            OutputConfig.newBuilder()
+                .setBigqueryDestination(
+                    BigQueryDestination.newBuilder()
+                        .setDataset(bigqueryDataset)
+                        .setTable(bigqueryTable)
+                        .setForce(true)
+                        .setSeparateTablesPerAssetType(true)
+                        .setPartitionSpec(
+                            PartitionSpec.newBuilder()
+                                .setPartitionKey(PartitionSpec.PartitionKey.READ_TIME)
+                                .build())
+                        .build())
+                .build();
+      } else {
+        outputConfig =
+            OutputConfig.newBuilder()
+                .setBigqueryDestination(
+                    BigQueryDestination.newBuilder()
+                        .setDataset(bigqueryDataset)
+                        .setTable(bigqueryTable)
+                        .setForce(true)
+                        .build())
+                .build();
+      }
       ExportAssetsRequest request =
           ExportAssetsRequest.newBuilder()
               .setParent(parent.toString())
+              .setContentType(contentType)
               .setOutputConfig(outputConfig)
               .build();
       ExportAssetsResponse response = client.exportAssetsAsync(request).get();

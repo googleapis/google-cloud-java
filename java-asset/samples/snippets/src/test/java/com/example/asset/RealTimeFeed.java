@@ -18,6 +18,7 @@ package com.example.asset;
 
 import static com.google.common.truth.Truth.assertThat;
 
+import com.google.cloud.asset.v1.ContentType;
 import com.google.cloud.pubsub.v1.TopicAdminClient;
 import com.google.cloud.resourcemanager.ProjectInfo;
 import com.google.cloud.resourcemanager.ResourceManager;
@@ -87,7 +88,20 @@ public class RealTimeFeed {
 
   @Test
   public void test1CreateFeedExample() throws Exception {
-    CreateFeedExample.createFeed(assetNames, feedId, topicName.toString(), projectId);
+    CreateFeedExample.createFeed(
+        assetNames, feedId, topicName.toString(), projectId, ContentType.RESOURCE);
+    String got = bout.toString();
+    assertThat(got).contains("Feed created successfully: " + feedName);
+  }
+
+  @Test
+  public void test1CreateFeedRelationshipExample() throws Exception {
+    CreateFeedExample.createFeed(
+        assetNames,
+        feedId + "relationship",
+        topicName.toString(),
+        projectId,
+        ContentType.RELATIONSHIP);
     String got = bout.toString();
     assertThat(got).contains("Feed created successfully: " + feedName);
   }
@@ -116,6 +130,7 @@ public class RealTimeFeed {
   @Test
   public void test5DeleteFeedExample() throws Exception {
     DeleteFeedExample.deleteFeed(feedName);
+    DeleteFeedExample.deleteFeed(feedName + "relationship");
     String got = bout.toString();
     assertThat(got).contains("Feed deleted");
   }

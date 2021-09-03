@@ -21,6 +21,7 @@ import com.google.cloud.asset.v1.AssetServiceClient.ListAssetsPagedResponse;
 import com.google.cloud.asset.v1.ContentType;
 import com.google.cloud.asset.v1.ListAssetsRequest;
 import com.google.cloud.asset.v1.ProjectName;
+import java.io.IOException;
 import java.util.Arrays;
 
 // [START asset_quickstart_list_assets]
@@ -28,7 +29,7 @@ import java.util.Arrays;
 
 public class ListAssetsExample {
 
-  public static void listAssets() throws Exception {
+  public static void listAssets() throws IOException, IllegalArgumentException {
     // The project id of the asset parent to list.
     String projectId = "YOUR_PROJECT_ID";
     // The asset types to list. E.g.,
@@ -44,7 +45,7 @@ public class ListAssetsExample {
   }
 
   public static void listAssets(String projectId, String[] assetTypes, ContentType contentType)
-      throws Exception {
+      throws IOException, IllegalArgumentException {
     try (AssetServiceClient client = AssetServiceClient.create()) {
       ProjectName parent = ProjectName.of(projectId);
 

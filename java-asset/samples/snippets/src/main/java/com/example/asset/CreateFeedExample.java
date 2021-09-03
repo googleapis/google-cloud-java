@@ -18,24 +18,29 @@ package com.example.asset;
 
 // [START asset_quickstart_create_feed]
 import com.google.cloud.asset.v1.AssetServiceClient;
+import com.google.cloud.asset.v1.ContentType;
 import com.google.cloud.asset.v1.CreateFeedRequest;
 import com.google.cloud.asset.v1.Feed;
 import com.google.cloud.asset.v1.FeedOutputConfig;
 import com.google.cloud.asset.v1.ProjectName;
 import com.google.cloud.asset.v1.PubsubDestination;
+import java.io.IOException;
 import java.util.Arrays;
 
 public class CreateFeedExample {
   // Create a feed
-  public static void createFeed(String[] assetNames, String feedId, String topic, String projectId)
-      throws Exception {
+  public static void createFeed(
+      String[] assetNames, String feedId, String topic, String projectId, ContentType contentType)
+      throws IOException, IllegalArgumentException {
     // String[] assetNames = {"MY_ASSET_NAME"}
+    // ContentType contentType = contentType
     // String FeedId = "MY_FEED_ID"
     // String topic = "projects/[PROJECT_ID]/topics/[TOPIC_NAME]"
     // String projectID = "MY_PROJECT_ID"
     Feed feed =
         Feed.newBuilder()
             .addAllAssetNames(Arrays.asList(assetNames))
+            .setContentType(contentType)
             .setFeedOutputConfig(
                 FeedOutputConfig.newBuilder()
                     .setPubsubDestination(PubsubDestination.newBuilder().setTopic(topic).build())
@@ -53,7 +58,7 @@ public class CreateFeedExample {
     try (AssetServiceClient client = AssetServiceClient.create()) {
       Feed response = client.createFeed(request);
       System.out.println("Feed created successfully: " + response.getName());
-    } catch (Exception e) {
+    } catch (IOException | IllegalArgumentException e) {
       System.out.println("Error during CreateFeed: \n" + e.toString());
     }
   }
