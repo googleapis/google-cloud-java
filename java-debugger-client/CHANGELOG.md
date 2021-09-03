@@ -1,5 +1,17 @@
 # Changelog
 
+## [1.1.0](https://www.github.com/googleapis/java-debugger-client/compare/v1.0.2...v1.1.0) (2021-09-02)
+
+
+### Features
+
+* Remove use of deprecated gradle command in java README ([#1196](https://www.github.com/googleapis/java-debugger-client/issues/1196)) ([#53](https://www.github.com/googleapis/java-debugger-client/issues/53)) ([a2f7bf8](https://www.github.com/googleapis/java-debugger-client/commit/a2f7bf8d39d9280b495793c37df4db6eee081355))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.2.0 ([#56](https://www.github.com/googleapis/java-debugger-client/issues/56)) ([b439309](https://www.github.com/googleapis/java-debugger-client/commit/b4393096b900d86d662bf09007c1f4a1ebbacbe0))
+
 ### [1.0.2](https://www.github.com/googleapis/java-debugger-client/compare/v1.0.1...v1.0.2) (2021-08-23)
 
 
