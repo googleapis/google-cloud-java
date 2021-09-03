@@ -1,5 +1,17 @@
 # Changelog
 
+## [2.1.0](https://www.github.com/googleapis/java-profiler/compare/v2.0.2...v2.1.0) (2021-09-02)
+
+
+### Features
+
+* Remove use of deprecated gradle command in java README ([#1196](https://www.github.com/googleapis/java-profiler/issues/1196)) ([#138](https://www.github.com/googleapis/java-profiler/issues/138)) ([140bf46](https://www.github.com/googleapis/java-profiler/commit/140bf46758c317cd8fa8d74c46ec7dbdb2ccc584))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.2.0 ([#141](https://www.github.com/googleapis/java-profiler/issues/141)) ([2503071](https://www.github.com/googleapis/java-profiler/commit/2503071a01ebe7b8868b56e399c4c620110f5964))
+
 ### [2.0.2](https://www.github.com/googleapis/java-profiler/compare/v2.0.1...v2.0.2) (2021-08-23)
 
 
