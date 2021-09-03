@@ -1249,6 +1249,7 @@ public final class Cloudbuild {
               "IgnoredFiles",
               "IncludedFiles",
               "Filter",
+              "ServiceAccount",
               "BuildTemplate",
             });
     internal_static_google_devtools_cloudbuild_v1_BuildTrigger_SubstitutionsEntry_descriptor =

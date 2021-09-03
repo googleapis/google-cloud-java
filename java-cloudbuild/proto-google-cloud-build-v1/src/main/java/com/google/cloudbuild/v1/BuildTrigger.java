@@ -47,6 +47,7 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
     ignoredFiles_ = com.google.protobuf.LazyStringArrayList.EMPTY;
     includedFiles_ = com.google.protobuf.LazyStringArrayList.EMPTY;
     filter_ = "";
+    serviceAccount_ = "";
   }
 
   @java.lang.Override
@@ -264,6 +265,13 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
                 webhookConfig_ = subBuilder.buildPartial();
               }
 
+              break;
+            }
+          case 266:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              serviceAccount_ = s;
               break;
             }
           case 274:
@@ -1424,6 +1432,63 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
+  public static final int SERVICE_ACCOUNT_FIELD_NUMBER = 33;
+  private volatile java.lang.Object serviceAccount_;
+  /**
+   *
+   *
+   * <pre>
+   * The service account used for all user-controlled operations including
+   * UpdateBuildTrigger, RunBuildTrigger, CreateBuild, and CancelBuild.
+   * If no service account is set, then the standard Cloud Build service account
+   * ([PROJECT_NUM]&#64;system.gserviceaccount.com) will be used instead.
+   * Format: `projects/{PROJECT_ID}/serviceAccounts/{ACCOUNT_ID_OR_EMAIL}`
+   * </pre>
+   *
+   * <code>string service_account = 33 [(.google.api.resource_reference) = { ... }</code>
+   *
+   * @return The serviceAccount.
+   */
+  @java.lang.Override
+  public java.lang.String getServiceAccount() {
+    java.lang.Object ref = serviceAccount_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      serviceAccount_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The service account used for all user-controlled operations including
+   * UpdateBuildTrigger, RunBuildTrigger, CreateBuild, and CancelBuild.
+   * If no service account is set, then the standard Cloud Build service account
+   * ([PROJECT_NUM]&#64;system.gserviceaccount.com) will be used instead.
+   * Format: `projects/{PROJECT_ID}/serviceAccounts/{ACCOUNT_ID_OR_EMAIL}`
+   * </pre>
+   *
+   * <code>string service_account = 33 [(.google.api.resource_reference) = { ... }</code>
+   *
+   * @return The bytes for serviceAccount.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getServiceAccountBytes() {
+    java.lang.Object ref = serviceAccount_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      serviceAccount_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -1487,6 +1552,9 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
     }
     if (webhookConfig_ != null) {
       output.writeMessage(31, getWebhookConfig());
+    }
+    if (!getServiceAccountBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 33, serviceAccount_);
     }
     if (!getResourceNameBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 34, resourceName_);
@@ -1577,6 +1645,9 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
     if (webhookConfig_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(31, getWebhookConfig());
     }
+    if (!getServiceAccountBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(33, serviceAccount_);
+    }
     if (!getResourceNameBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(34, resourceName_);
     }
@@ -1625,6 +1696,7 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
     if (!getIgnoredFilesList().equals(other.getIgnoredFilesList())) return false;
     if (!getIncludedFilesList().equals(other.getIncludedFilesList())) return false;
     if (!getFilter().equals(other.getFilter())) return false;
+    if (!getServiceAccount().equals(other.getServiceAccount())) return false;
     if (!getBuildTemplateCase().equals(other.getBuildTemplateCase())) return false;
     switch (buildTemplateCase_) {
       case 18:
@@ -1698,6 +1770,8 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
     }
     hash = (37 * hash) + FILTER_FIELD_NUMBER;
     hash = (53 * hash) + getFilter().hashCode();
+    hash = (37 * hash) + SERVICE_ACCOUNT_FIELD_NUMBER;
+    hash = (53 * hash) + getServiceAccount().hashCode();
     switch (buildTemplateCase_) {
       case 18:
         hash = (37 * hash) + AUTODETECT_FIELD_NUMBER;
@@ -1928,6 +2002,8 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
       bitField0_ = (bitField0_ & ~0x00000008);
       filter_ = "";
 
+      serviceAccount_ = "";
+
       buildTemplateCase_ = 0;
       buildTemplate_ = null;
       return this;
@@ -2019,6 +2095,7 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
       }
       result.includedFiles_ = includedFiles_;
       result.filter_ = filter_;
+      result.serviceAccount_ = serviceAccount_;
       result.buildTemplateCase_ = buildTemplateCase_;
       onBuilt();
       return result;
@@ -2136,6 +2213,10 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getFilter().isEmpty()) {
         filter_ = other.filter_;
+        onChanged();
+      }
+      if (!other.getServiceAccount().isEmpty()) {
+        serviceAccount_ = other.serviceAccount_;
         onChanged();
       }
       switch (other.getBuildTemplateCase()) {
@@ -5046,6 +5127,132 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
 
       filter_ = value;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object serviceAccount_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * The service account used for all user-controlled operations including
+     * UpdateBuildTrigger, RunBuildTrigger, CreateBuild, and CancelBuild.
+     * If no service account is set, then the standard Cloud Build service account
+     * ([PROJECT_NUM]&#64;system.gserviceaccount.com) will be used instead.
+     * Format: `projects/{PROJECT_ID}/serviceAccounts/{ACCOUNT_ID_OR_EMAIL}`
+     * </pre>
+     *
+     * <code>string service_account = 33 [(.google.api.resource_reference) = { ... }</code>
+     *
+     * @return The serviceAccount.
+     */
+    public java.lang.String getServiceAccount() {
+      java.lang.Object ref = serviceAccount_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        serviceAccount_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The service account used for all user-controlled operations including
+     * UpdateBuildTrigger, RunBuildTrigger, CreateBuild, and CancelBuild.
+     * If no service account is set, then the standard Cloud Build service account
+     * ([PROJECT_NUM]&#64;system.gserviceaccount.com) will be used instead.
+     * Format: `projects/{PROJECT_ID}/serviceAccounts/{ACCOUNT_ID_OR_EMAIL}`
+     * </pre>
+     *
+     * <code>string service_account = 33 [(.google.api.resource_reference) = { ... }</code>
+     *
+     * @return The bytes for serviceAccount.
+     */
+    public com.google.protobuf.ByteString getServiceAccountBytes() {
+      java.lang.Object ref = serviceAccount_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        serviceAccount_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The service account used for all user-controlled operations including
+     * UpdateBuildTrigger, RunBuildTrigger, CreateBuild, and CancelBuild.
+     * If no service account is set, then the standard Cloud Build service account
+     * ([PROJECT_NUM]&#64;system.gserviceaccount.com) will be used instead.
+     * Format: `projects/{PROJECT_ID}/serviceAccounts/{ACCOUNT_ID_OR_EMAIL}`
+     * </pre>
+     *
+     * <code>string service_account = 33 [(.google.api.resource_reference) = { ... }</code>
+     *
+     * @param value The serviceAccount to set.
+     * @return This builder for chaining.
+     */
+    public Builder setServiceAccount(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+
+      serviceAccount_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The service account used for all user-controlled operations including
+     * UpdateBuildTrigger, RunBuildTrigger, CreateBuild, and CancelBuild.
+     * If no service account is set, then the standard Cloud Build service account
+     * ([PROJECT_NUM]&#64;system.gserviceaccount.com) will be used instead.
+     * Format: `projects/{PROJECT_ID}/serviceAccounts/{ACCOUNT_ID_OR_EMAIL}`
+     * </pre>
+     *
+     * <code>string service_account = 33 [(.google.api.resource_reference) = { ... }</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearServiceAccount() {
+
+      serviceAccount_ = getDefaultInstance().getServiceAccount();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The service account used for all user-controlled operations including
+     * UpdateBuildTrigger, RunBuildTrigger, CreateBuild, and CancelBuild.
+     * If no service account is set, then the standard Cloud Build service account
+     * ([PROJECT_NUM]&#64;system.gserviceaccount.com) will be used instead.
+     * Format: `projects/{PROJECT_ID}/serviceAccounts/{ACCOUNT_ID_OR_EMAIL}`
+     * </pre>
+     *
+     * <code>string service_account = 33 [(.google.api.resource_reference) = { ... }</code>
+     *
+     * @param value The bytes for serviceAccount to set.
+     * @return This builder for chaining.
+     */
+    public Builder setServiceAccountBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
+      serviceAccount_ = value;
       onChanged();
       return this;
     }
