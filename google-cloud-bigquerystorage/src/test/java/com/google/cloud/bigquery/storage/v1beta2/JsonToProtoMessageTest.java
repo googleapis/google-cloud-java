@@ -743,15 +743,12 @@ public class JsonToProtoMessageTest {
 
   @Test
   public void testJsonNullValue() throws Exception {
+    TestInt64 expectedProto = TestInt64.newBuilder().setInt(1).build();
     JSONObject json = new JSONObject();
     json.put("long", JSONObject.NULL);
     json.put("int", 1);
-    try {
-      DynamicMessage protoMsg =
-          JsonToProtoMessage.convertJsonToProtoMessage(TestInt64.getDescriptor(), json);
-      Assert.fail("Should fail");
-    } catch (IllegalArgumentException e) {
-      assertEquals(e.getMessage(), "JSONObject does not have a int64 field at root.long.");
-    }
+    DynamicMessage protoMsg =
+        JsonToProtoMessage.convertJsonToProtoMessage(TestInt64.getDescriptor(), json);
+    assertEquals(expectedProto, protoMsg);
   }
 }

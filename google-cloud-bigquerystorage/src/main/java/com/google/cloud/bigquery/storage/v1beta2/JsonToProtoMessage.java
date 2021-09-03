@@ -133,6 +133,9 @@ public class JsonToProtoMessage {
       throws IllegalArgumentException {
 
     java.lang.Object val = json.get(exactJsonKeyName);
+    if (val == JSONObject.NULL) {
+      return;
+    }
     switch (fieldDescriptor.getType()) {
       case BOOL:
         if (val instanceof Boolean) {
