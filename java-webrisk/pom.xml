@@ -119,11 +119,11 @@
   </build>
 
   <modules>
-    <module>proto-google-cloud-webrisk-v1</module>
-    <module>proto-google-cloud-webrisk-v1beta1</module>
+    <module>google-cloud-webrisk</module>
     <module>grpc-google-cloud-webrisk-v1</module>
     <module>grpc-google-cloud-webrisk-v1beta1</module>
-    <module>google-cloud-webrisk</module>
+    <module>proto-google-cloud-webrisk-v1</module>
+    <module>proto-google-cloud-webrisk-v1beta1</module>
     <module>google-cloud-webrisk-bom</module>
   </modules>
 

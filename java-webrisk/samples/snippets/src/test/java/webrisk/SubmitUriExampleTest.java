@@ -14,7 +14,6 @@
  * limitations under the License.
  */
 
-
 package webrisk;
 
 import com.google.common.truth.Truth;

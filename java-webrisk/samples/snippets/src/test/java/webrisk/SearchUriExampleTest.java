@@ -29,7 +29,7 @@ import org.junit.runners.JUnit4;
 public class SearchUriExampleTest {
   @Test
   public void testSearchWithThreat() throws IOException {
-    //The URL to be searched
+    // The URL to be searched
     String uri = "http://testsafebrowsing.appspot.com/s/malware.html";
     SearchUrisResponse actualResponse = SearchUriExample.searchUriExample(uri);
     List<ThreatType> type = actualResponse.getThreat().getThreatTypesList();
@@ -38,7 +38,7 @@ public class SearchUriExampleTest {
 
   @Test
   public void testSearchWithoutThreat() throws IOException {
-    //The URL to be searched
+    // The URL to be searched
     String uri = "http://testsafebrowsing.appspot.com/malware.html";
     SearchUrisResponse actualResponse = SearchUriExample.searchUriExample(uri);
     List<ThreatType> type = actualResponse.getThreat().getThreatTypesList();
