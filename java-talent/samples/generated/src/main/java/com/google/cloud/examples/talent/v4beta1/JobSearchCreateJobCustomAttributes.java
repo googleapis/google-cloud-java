@@ -17,7 +17,12 @@
 // sample-metadata:
 //   title:
 //   description: Create Job with Custom Attributes
-//   usage: gradle run -PmainClass=com.google.cloud.examples.talent.v4beta1.JobSearchCreateJobCustomAttributes [--args='[--project_id "Your Google Cloud Project ID"] [--tenant_id "Your Tenant ID (using tenancy is optional)"] [--company_name "Company name, e.g. projects/your-project/companies/company-id"] [--requisition_id "Job requisition ID, aka Posting ID. Unique per job."] [--language_code "en-US"]']
+//   usage: gradle run
+// -PmainClass=com.google.cloud.examples.talent.v4beta1.JobSearchCreateJobCustomAttributes
+// [--args='[--project_id "Your Google Cloud Project ID"] [--tenant_id "Your Tenant ID (using
+// tenancy is optional)"] [--company_name "Company name, e.g.
+// projects/your-project/companies/company-id"] [--requisition_id "Job requisition ID, aka Posting
+// ID. Unique per job."] [--language_code "en-US"]']
 
 package com.google.cloud.examples.talent.v4beta1;
 

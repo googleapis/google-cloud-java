@@ -41,8 +41,7 @@ public class CustomRankingSearchJobsTest {
   @Test
   public void testCustomRankingSearchJobs() throws IOException {
     // retrieve a job.
-    CustomRankingSearchJobs.searchCustomRankingJobs(
-        PROJECT_ID, TENANT_ID);
+    CustomRankingSearchJobs.searchCustomRankingJobs(PROJECT_ID, TENANT_ID);
     String got = bout.toString();
 
     assertThat(got).contains("Job summary:");

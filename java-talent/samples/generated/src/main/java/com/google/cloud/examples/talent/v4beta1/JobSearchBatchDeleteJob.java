@@ -17,7 +17,9 @@
 // sample-metadata:
 //   title:
 //   description: Batch delete jobs using a filter
-//   usage: gradle run -PmainClass=com.google.cloud.examples.talent.v4beta1.JobSearchBatchDeleteJob [--args='[--project_id "Your Google Cloud Project ID"] [--tenant_id "Your Tenant ID (using tenancy is optional)"] [--filter "[Query]"]']
+//   usage: gradle run -PmainClass=com.google.cloud.examples.talent.v4beta1.JobSearchBatchDeleteJob
+// [--args='[--project_id "Your Google Cloud Project ID"] [--tenant_id "Your Tenant ID (using
+// tenancy is optional)"] [--filter "[Query]"]']
 
 package com.google.cloud.examples.talent.v4beta1;
 

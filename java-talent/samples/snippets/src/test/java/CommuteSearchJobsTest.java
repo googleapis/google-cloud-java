@@ -41,8 +41,7 @@ public class CommuteSearchJobsTest {
   @Test
   public void testCommuteSearchJobs() throws IOException {
     // retrieve a job.
-    CommuteSearchJobs.searchJobs(
-        PROJECT_ID, TENANT_ID);
+    CommuteSearchJobs.searchJobs(PROJECT_ID, TENANT_ID);
     String got = bout.toString();
 
     assertThat(got).contains("Job summary:");

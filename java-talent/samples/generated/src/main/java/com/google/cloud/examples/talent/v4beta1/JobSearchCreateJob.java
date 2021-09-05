@@ -17,13 +17,19 @@
 // sample-metadata:
 //   title:
 //   description: Create Job
-//   usage: gradle run -PmainClass=com.google.cloud.examples.talent.v4beta1.JobSearchCreateJob [--args='[--project_id "Your Google Cloud Project ID"] [--tenant_id "Your Tenant ID (using tenancy is optional)"] [--company_name "Company name, e.g. projects/your-project/companies/company-id"] [--requisition_id "Job requisition ID, aka Posting ID. Unique per job."] [--title "Software Engineer"] [--description "This is a description of this <i>wonderful</i> job!"] [--job_application_url "https://www.example.org/job-posting/123"] [--address_one "1600 Amphitheatre Parkway, Mountain View, CA 94043"] [--address_two "111 8th Avenue, New York, NY 10011"] [--language_code "en-US"]']
+//   usage: gradle run -PmainClass=com.google.cloud.examples.talent.v4beta1.JobSearchCreateJob
+// [--args='[--project_id "Your Google Cloud Project ID"] [--tenant_id "Your Tenant ID (using
+// tenancy is optional)"] [--company_name "Company name, e.g.
+// projects/your-project/companies/company-id"] [--requisition_id "Job requisition ID, aka Posting
+// ID. Unique per job."] [--title "Software Engineer"] [--description "This is a description of this
+// <i>wonderful</i> job!"] [--job_application_url "https://www.example.org/job-posting/123"]
+// [--address_one "1600 Amphitheatre Parkway, Mountain View, CA 94043"] [--address_two "111 8th
+// Avenue, New York, NY 10011"] [--language_code "en-US"]']
 
 package com.google.cloud.examples.talent.v4beta1;
 
 import com.google.cloud.talent.v4beta1.CreateJobRequest;
 import com.google.cloud.talent.v4beta1.Job;
-import com.google.cloud.talent.v4beta1.Job.ApplicationInfo;
 import com.google.cloud.talent.v4beta1.JobServiceClient;
 import com.google.cloud.talent.v4beta1.TenantName;
 import com.google.cloud.talent.v4beta1.TenantOrProjectName;

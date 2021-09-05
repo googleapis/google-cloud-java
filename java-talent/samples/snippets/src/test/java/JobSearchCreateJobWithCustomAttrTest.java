@@ -49,8 +49,7 @@ public class JobSearchCreateJobWithCustomAttrTest {
   @Test
   public void testCreateJob() throws IOException {
     // create a job with custom attributes.
-    JobSearchCreateJobCustomAttributes.createJob(
-        PROJECT_ID, TENANT_ID, COMPANY_ID, POST_UNIQUE_ID);
+    JobSearchCreateJobCustomAttributes.createJob(PROJECT_ID, TENANT_ID, COMPANY_ID, POST_UNIQUE_ID);
     String got = bout.toString();
 
     assertThat(got).contains("Created job:");

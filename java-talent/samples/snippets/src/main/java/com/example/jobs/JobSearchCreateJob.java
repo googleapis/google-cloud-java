@@ -23,13 +23,8 @@ import com.google.cloud.talent.v4.Job;
 import com.google.cloud.talent.v4.JobServiceClient;
 import com.google.cloud.talent.v4.TenantName;
 import java.io.IOException;
-import java.sql.Timestamp;
-import java.time.LocalDate;
-import java.time.LocalDateTime;
 import java.util.Arrays;
-import java.util.Calendar;
 import java.util.List;
-import java.util.Locale;
 
 public class JobSearchCreateJob {
 

@@ -17,7 +17,9 @@
 // sample-metadata:
 //   title:
 //   description: Delete Job
-//   usage: gradle run -PmainClass=com.google.cloud.examples.talent.v4beta1.JobSearchDeleteJob [--args='[--project_id "Your Google Cloud Project ID"] [--tenant_id "Your Tenant ID (using tenancy is optional)"] [--job_id "Company ID"]']
+//   usage: gradle run -PmainClass=com.google.cloud.examples.talent.v4beta1.JobSearchDeleteJob
+// [--args='[--project_id "Your Google Cloud Project ID"] [--tenant_id "Your Tenant ID (using
+// tenancy is optional)"] [--job_id "Company ID"]']
 
 package com.google.cloud.examples.talent.v4beta1;
 

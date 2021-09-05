@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8" ?>
+<?xml version='1.0' encoding='UTF-8'?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.cloud</groupId>
@@ -124,11 +124,11 @@
   </build>
 
   <modules>
-    <module>proto-google-cloud-talent-v4beta1</module>
-    <module>proto-google-cloud-talent-v4</module>
-    <module>grpc-google-cloud-talent-v4beta1</module>
-    <module>grpc-google-cloud-talent-v4</module>
     <module>google-cloud-talent</module>
+    <module>grpc-google-cloud-talent-v4</module>
+    <module>grpc-google-cloud-talent-v4beta1</module>
+    <module>proto-google-cloud-talent-v4</module>
+    <module>proto-google-cloud-talent-v4beta1</module>
     <module>google-cloud-talent-bom</module>
   </modules>
 

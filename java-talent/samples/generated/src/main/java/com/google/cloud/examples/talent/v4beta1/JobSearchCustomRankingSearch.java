@@ -17,7 +17,10 @@
 // sample-metadata:
 //   title:
 //   description: Search Jobs using custom rankings
-//   usage: gradle run -PmainClass=com.google.cloud.examples.talent.v4beta1.JobSearchCustomRankingSearch [--args='[--project_id "Your Google Cloud Project ID"] [--tenant_id "Your Tenant ID (using tenancy is optional)"]']
+//   usage: gradle run
+// -PmainClass=com.google.cloud.examples.talent.v4beta1.JobSearchCustomRankingSearch
+// [--args='[--project_id "Your Google Cloud Project ID"] [--tenant_id "Your Tenant ID (using
+// tenancy is optional)"]']
 
 package com.google.cloud.examples.talent.v4beta1;
 
@@ -25,8 +28,6 @@ import com.google.cloud.talent.v4beta1.Job;
 import com.google.cloud.talent.v4beta1.JobServiceClient;
 import com.google.cloud.talent.v4beta1.RequestMetadata;
 import com.google.cloud.talent.v4beta1.SearchJobsRequest;
-import com.google.cloud.talent.v4beta1.SearchJobsRequest.CustomRankingInfo;
-import com.google.cloud.talent.v4beta1.SearchJobsResponse.MatchingJob;
 import com.google.cloud.talent.v4beta1.TenantName;
 import com.google.cloud.talent.v4beta1.TenantOrProjectName;
 import org.apache.commons.cli.CommandLine;

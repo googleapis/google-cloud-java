@@ -17,7 +17,9 @@
 // sample-metadata:
 //   title:
 //   description: Get Company
-//   usage: gradle run -PmainClass=com.google.cloud.examples.talent.v4beta1.JobSearchGetCompany [--args='[--project_id "Your Google Cloud Project ID"] [--tenant_id "Your Tenant ID (using tenancy is optional)"] [--company_id "Company ID"]']
+//   usage: gradle run -PmainClass=com.google.cloud.examples.talent.v4beta1.JobSearchGetCompany
+// [--args='[--project_id "Your Google Cloud Project ID"] [--tenant_id "Your Tenant ID (using
+// tenancy is optional)"] [--company_id "Company ID"]']
 
 package com.google.cloud.examples.talent.v4beta1;
 

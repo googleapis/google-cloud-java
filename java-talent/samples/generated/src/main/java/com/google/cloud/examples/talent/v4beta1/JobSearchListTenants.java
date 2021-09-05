@@ -17,7 +17,8 @@
 // sample-metadata:
 //   title:
 //   description: List Tenants
-//   usage: gradle run -PmainClass=com.google.cloud.examples.talent.v4beta1.JobSearchListTenants [--args='[--project_id "Your Google Cloud Project ID"]']
+//   usage: gradle run -PmainClass=com.google.cloud.examples.talent.v4beta1.JobSearchListTenants
+// [--args='[--project_id "Your Google Cloud Project ID"]']
 
 package com.google.cloud.examples.talent.v4beta1;
 
