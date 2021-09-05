@@ -152,6 +152,11 @@
         <version>2.0.4-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-trace-v1:current} -->
       </dependency>
       <dependency>
+        <groupId>com.google.cloud</groupId>
+        <artifactId>google-cloud-trace</artifactId>
+        <version>2.0.2-SNAPSHOT</version><!-- {x-version-update:google-cloud-trace:current} -->
+      </dependency>
+      <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-trace-v2</artifactId>
         <version>2.0.4-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-trace-v2:current} -->
@@ -202,11 +207,11 @@
   </build>
 
   <modules>
-    <module>proto-google-cloud-trace-v1</module>
-    <module>proto-google-cloud-trace-v2</module>
+    <module>google-cloud-trace</module>
     <module>grpc-google-cloud-trace-v1</module>
     <module>grpc-google-cloud-trace-v2</module>
-    <module>google-cloud-trace</module>
+    <module>proto-google-cloud-trace-v1</module>
+    <module>proto-google-cloud-trace-v2</module>
     <module>google-cloud-trace-bom</module>
   </modules>
 
