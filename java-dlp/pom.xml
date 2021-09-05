@@ -109,9 +109,9 @@
   </build>
 
   <modules>
-    <module>proto-google-cloud-dlp-v2</module>
-    <module>grpc-google-cloud-dlp-v2</module>
     <module>google-cloud-dlp</module>
+    <module>grpc-google-cloud-dlp-v2</module>
+    <module>proto-google-cloud-dlp-v2</module>
     <module>google-cloud-dlp-bom</module>
   </modules>
 
