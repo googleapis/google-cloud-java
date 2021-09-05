@@ -56,13 +56,13 @@ implementation 'com.google.cloud:google-cloud-datacatalog'
 If you are using Gradle without BOM, add this to your dependencies
 
 ```Groovy
-implementation 'com.google.cloud:google-cloud-datacatalog:1.5.3'
+implementation 'com.google.cloud:google-cloud-datacatalog:1.5.4'
 ```
 
 If you are using SBT, add this to your dependencies
 
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-datacatalog" % "1.5.3"
+libraryDependencies += "com.google.cloud" % "google-cloud-datacatalog" % "1.5.4"
 ```
 
 ## Authentication
@@ -106,10 +106,6 @@ Samples are in the [`samples/`](https://github.com/googleapis/java-datacatalog/t
 
 | Sample                      | Source Code                       | Try it |
 | --------------------------- | --------------------------------- | ------ |
-| None | [source code](https://github.com/googleapis/java-datacatalog/blob/master/samples/generated/src/main/java/com/google/cloud/examples/datacatalog/v1beta1/DatacatalogGetEntry.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-datacatalog&page=editor&open_in_editor=samples/generated/src/main/java/com/google/cloud/examples/datacatalog/v1beta1/DatacatalogGetEntry.java) |
-| None | [source code](https://github.com/googleapis/java-datacatalog/blob/master/samples/generated/src/main/java/com/google/cloud/examples/datacatalog/v1beta1/DatacatalogLookupEntry.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-datacatalog&page=editor&open_in_editor=samples/generated/src/main/java/com/google/cloud/examples/datacatalog/v1beta1/DatacatalogLookupEntry.java) |
-| None | [source code](https://github.com/googleapis/java-datacatalog/blob/master/samples/generated/src/main/java/com/google/cloud/examples/datacatalog/v1beta1/DatacatalogLookupEntrySqlResource.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-datacatalog&page=editor&open_in_editor=samples/generated/src/main/java/com/google/cloud/examples/datacatalog/v1beta1/DatacatalogLookupEntrySqlResource.java) |
-| None | [source code](https://github.com/googleapis/java-datacatalog/blob/master/samples/generated/src/main/java/com/google/cloud/examples/datacatalog/v1beta1/DatacatalogSearch.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-datacatalog&page=editor&open_in_editor=samples/generated/src/main/java/com/google/cloud/examples/datacatalog/v1beta1/DatacatalogSearch.java) |
 | Create Custom Entry | [source code](https://github.com/googleapis/java-datacatalog/blob/master/samples/snippets/src/main/java/com/example/datacatalog/CreateCustomEntry.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-datacatalog&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/datacatalog/CreateCustomEntry.java) |
 | Create Entry | [source code](https://github.com/googleapis/java-datacatalog/blob/master/samples/snippets/src/main/java/com/example/datacatalog/CreateEntry.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-datacatalog&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/datacatalog/CreateEntry.java) |
 | Create Entry Group | [source code](https://github.com/googleapis/java-datacatalog/blob/master/samples/snippets/src/main/java/com/example/datacatalog/CreateEntryGroup.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-datacatalog&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/datacatalog/CreateEntryGroup.java) |

@@ -119,11 +119,11 @@
   </build>
 
   <modules>
-    <module>proto-google-cloud-datacatalog-v1</module>
-    <module>proto-google-cloud-datacatalog-v1beta1</module>
+    <module>google-cloud-datacatalog</module>
     <module>grpc-google-cloud-datacatalog-v1</module>
     <module>grpc-google-cloud-datacatalog-v1beta1</module>
-    <module>google-cloud-datacatalog</module>
+    <module>proto-google-cloud-datacatalog-v1</module>
+    <module>proto-google-cloud-datacatalog-v1beta1</module>
     <module>google-cloud-datacatalog-bom</module>
   </modules>
 
