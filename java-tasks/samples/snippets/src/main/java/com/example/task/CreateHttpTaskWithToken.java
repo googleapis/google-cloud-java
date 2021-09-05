@@ -34,7 +34,7 @@ public class CreateHttpTaskWithToken {
     String projectId = "my-project-id";
     String locationId = "us-central1";
     String queueId = "my-queue";
-    String serviceAccountEmail = 
+    String serviceAccountEmail =
         "java-docs-samples-testing@java-docs-samples-testing.iam.gserviceaccount.com";
     createTask(projectId, locationId, queueId, serviceAccountEmail);
   }

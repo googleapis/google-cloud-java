@@ -61,7 +61,7 @@ public class DeleteQueueIT {
     bout = new ByteArrayOutputStream();
     out = new PrintStream(bout);
     System.setOut(out);
-    
+
     try (CloudTasksClient client = CloudTasksClient.create()) {
       String parent = LocationName.of(PROJECT_ID, LOCATION_ID).toString();
       String queuePath = QueueName.of(PROJECT_ID, LOCATION_ID, QUEUE_ID).toString();

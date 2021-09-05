@@ -129,14 +129,14 @@
   </build>
 
   <modules>
-    <module>proto-google-cloud-tasks-v2beta3</module>
-    <module>proto-google-cloud-tasks-v2beta2</module>
-    <module>proto-google-cloud-tasks-v2</module>
+    <module>google-cloud-tasks</module>
     <module>grpc-google-cloud-tasks-v2beta3</module>
     <module>grpc-google-cloud-tasks-v2beta2</module>
     <module>grpc-google-cloud-tasks-v2</module>
-    <module>google-cloud-tasks</module>
-  <module>google-cloud-tasks-bom</module>
+    <module>proto-google-cloud-tasks-v2beta3</module>
+    <module>proto-google-cloud-tasks-v2beta2</module>
+    <module>proto-google-cloud-tasks-v2</module>
+    <module>google-cloud-tasks-bom</module>
   </modules>
 
   <reporting>

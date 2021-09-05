@@ -30,8 +30,7 @@ public class ListQueues {
   }
 
   // List queues using the Cloud Tasks client.
-  public static void listQueues(String projectId, String locationId)
-      throws IOException {
+  public static void listQueues(String projectId, String locationId) throws IOException {
 
     // Instantiates a client.
     try (CloudTasksClient client = CloudTasksClient.create()) {

@@ -17,7 +17,6 @@ package com.example.task;
 import static com.google.common.truth.Truth.assertThat;
 import static org.junit.Assert.assertNotNull;
 
-import com.google.api.gax.rpc.NotFoundException;
 import com.google.cloud.tasks.v2.CloudTasksClient;
 import com.google.cloud.tasks.v2.LocationName;
 import com.google.cloud.tasks.v2.Queue;
@@ -61,7 +60,7 @@ public class ListQueuesIT {
     bout = new ByteArrayOutputStream();
     out = new PrintStream(bout);
     System.setOut(out);
-    
+
     try (CloudTasksClient client = CloudTasksClient.create()) {
       String parent = LocationName.of(PROJECT_ID, LOCATION_ID).toString();
       String queuePath = QueueName.of(PROJECT_ID, LOCATION_ID, QUEUE_ID).toString();
