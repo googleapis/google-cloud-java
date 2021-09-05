@@ -109,10 +109,10 @@
   </build>
 
   <modules>
-    <module>proto-google-cloud-os-login-v1</module>
-    <module>grpc-google-cloud-os-login-v1</module>
     <module>google-cloud-os-login</module>
-  <module>google-cloud-os-login-bom</module>
+    <module>grpc-google-cloud-os-login-v1</module>
+    <module>proto-google-cloud-os-login-v1</module>
+    <module>google-cloud-os-login-bom</module>
   </modules>
 
   <reporting>
