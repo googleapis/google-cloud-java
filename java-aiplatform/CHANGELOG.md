@@ -1,5 +1,17 @@
 # Changelog
 
+## [2.2.0](https://www.github.com/googleapis/java-aiplatform/compare/v2.1.0...v2.2.0) (2021-09-07)
+
+
+### Features
+
+* add Vizier service to aiplatform v1 ([#642](https://www.github.com/googleapis/java-aiplatform/issues/642)) ([6173518](https://www.github.com/googleapis/java-aiplatform/commit/6173518e9b74c9742ef1b8fc6d91d59b5b9b063e))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-storage to v2.1.1 ([#644](https://www.github.com/googleapis/java-aiplatform/issues/644)) ([d4cd890](https://www.github.com/googleapis/java-aiplatform/commit/d4cd890ea128676b8a30230a2013a9fc6e65ab9f))
+
 ## [2.1.0](https://www.github.com/googleapis/java-aiplatform/compare/v2.0.2...v2.1.0) (2021-08-31)
 
 
