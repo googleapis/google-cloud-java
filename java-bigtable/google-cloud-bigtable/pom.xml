@@ -224,64 +224,10 @@
         * Exclude protobuf-java to prefer the version declared here
           in the project.
         -->
-<!--        <exclusion>-->
-<!--          <groupId>*</groupId>-->
-<!--          <artifactId>*</artifactId>-->
-<!--        </exclusion>-->
-<!-- TODO: figure out why maven fails to exclude wildcards, in the interim, manually exclude all deps -->
         <exclusion>
-          <artifactId>api-common</artifactId>
-          <groupId>com.google.api</groupId>
+          <groupId>*</groupId>
+          <artifactId>*</artifactId>
         </exclusion>
-        <exclusion>
-          <groupId>com.google.api.grpc</groupId>
-          <artifactId>proto-google-cloud-firestore-v1</artifactId>
-        </exclusion>
-        <exclusion>
-          <groupId>com.google.api.grpc</groupId>
-          <artifactId>proto-google-common-protos</artifactId>
-        </exclusion>
-        <exclusion>
-          <groupId>com.google.api.grpc</groupId>
-          <artifactId>proto-google-cloud-bigtable-v2</artifactId>
-        </exclusion>
-        <exclusion>
-          <groupId>com.google.auto.value</groupId>
-          <artifactId>auto-value-annotations</artifactId>
-        </exclusion>
-        <exclusion>
-          <groupId>com.google.code.findbugs</groupId>
-          <artifactId>jsr305</artifactId>
-        </exclusion>
-        <exclusion>
-          <groupId>com.google.errorprone</groupId>
-          <artifactId>error_prone_annotations</artifactId>
-        </exclusion>
-        <exclusion>
-          <groupId>com.google.guava</groupId>
-          <artifactId>failureaccess</artifactId>
-        </exclusion>
-        <exclusion>
-          <groupId>com.google.guava</groupId>
-          <artifactId>listenablefuture</artifactId>
-        </exclusion>
-        <exclusion>
-          <groupId>com.google.j2objc</groupId>
-          <artifactId>j2objc-annotations</artifactId>
-        </exclusion>
-        <exclusion>
-          <groupId>com.google.protobuf</groupId>
-          <artifactId>protobuf-java</artifactId>
-        </exclusion>
-        <exclusion>
-          <groupId>javax.annotation</groupId>
-          <artifactId>javax.annotation-api</artifactId>
-        </exclusion>
-        <exclusion>
-          <groupId>org.checkerframework</groupId>
-          <artifactId>checker-qual</artifactId>
-        </exclusion>
-
       </exclusions>
     </dependency>
     <dependency>
