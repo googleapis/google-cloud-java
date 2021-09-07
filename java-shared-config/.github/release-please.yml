@@ -1,4 +1,5 @@
 releaseType: java-yoshi
+handleGHRelease: true
 branches:
 - bumpMinorPreMajor: true
   handleGHRelease: true
