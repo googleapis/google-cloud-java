@@ -1,6 +1,8 @@
 releaseType: java-bom
+handleGHRelease: true
 bumpMinorPreMajor: true
 branches:
   - releaseType: java-yoshi
+    handleGHRelease: true
     bumpMinorPreMajor: true
     branch: java7
