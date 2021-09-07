@@ -175,7 +175,7 @@ public class MutationTest {
     assertThat(actual)
         .containsExactly(
             com.google.bigtable.v2.Mutation.newBuilder()
-                .setDeleteFromRow(DeleteFromRow.newBuilder())
+                .setDeleteFromRow(DeleteFromRow.getDefaultInstance())
                 .build());
   }
 
