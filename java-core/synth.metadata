@@ -4,14 +4,14 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/java-core.git",
-        "sha": "3c4f4797f43b9a26710b53769ed0a98384e0fb61"
+        "sha": "29231705fd7960c23f56ec56d98f9c259ef674e8"
       }
     },
     {
       "git": {
         "name": "synthtool",
         "remote": "https://github.com/googleapis/synthtool.git",
-        "sha": "ad7fd76e17bf9494a3e47ff9cf445f61564432e0"
+        "sha": "396d9b84a1e93880f5bf88b59ecd38a0a6dffc5e"
       }
     }
   ],
@@ -23,7 +23,6 @@
     ".github/PULL_REQUEST_TEMPLATE.md",
     ".github/blunderbuss.yml",
     ".github/generated-files-bot.yml",
-    ".github/readme/synth.py",
     ".github/release-please.yml",
     ".github/release-trigger.yml",
     ".github/snippet-bot.yml",
@@ -39,7 +38,6 @@
     ".kokoro/common.sh",
     ".kokoro/continuous/common.cfg",
     ".kokoro/continuous/java8.cfg",
-    ".kokoro/continuous/readme.cfg",
     ".kokoro/dependencies.sh",
     ".kokoro/nightly/common.cfg",
     ".kokoro/nightly/integration.cfg",
