@@ -88,7 +88,7 @@ public class BatchTranslateText {
       System.out.println("Waiting for operation to complete...");
 
       // random number between 300 - 450 (maximum allowed seconds)
-      long randomNumber = ThreadLocalRandom.current().nextInt(300, 450);
+      long randomNumber = ThreadLocalRandom.current().nextInt(450, 600);
       BatchTranslateResponse response = future.get(randomNumber, TimeUnit.SECONDS);
 
       System.out.printf("Total Characters: %s\n", response.getTotalCharacters());
