@@ -23,8 +23,8 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * <pre>
  * Auto-completion service for retail.
  * This feature is only available for users who have Retail Search enabled.
- * Contact Retail Support (retail-search-support&#64;google.com) if you are
- * interested in using Retail Search.
+ * Please submit a form [here](https://cloud.google.com/contact) to contact
+ * cloud sales if you are interested in using Retail Search.
  * </pre>
  */
 @javax.annotation.Generated(
@@ -177,8 +177,8 @@ public final class CompletionServiceGrpc {
    * <pre>
    * Auto-completion service for retail.
    * This feature is only available for users who have Retail Search enabled.
-   * Contact Retail Support (retail-search-support&#64;google.com) if you are
-   * interested in using Retail Search.
+   * Please submit a form [here](https://cloud.google.com/contact) to contact
+   * cloud sales if you are interested in using Retail Search.
    * </pre>
    */
   public abstract static class CompletionServiceImplBase implements io.grpc.BindableService {
@@ -189,8 +189,8 @@ public final class CompletionServiceGrpc {
      * <pre>
      * Completes the specified prefix with keyword suggestions.
      * This feature is only available for users who have Retail Search enabled.
-     * Contact Retail Support (retail-search-support&#64;google.com) if you are
-     * interested in using Retail Search.
+     * Please submit a form [here](https://cloud.google.com/contact) to contact
+     * cloud sales if you are interested in using Retail Search.
      * </pre>
      */
     public void completeQuery(
@@ -208,8 +208,8 @@ public final class CompletionServiceGrpc {
      * Bulk import of processed completion dataset.
      * Request processing may be synchronous. Partial updating is not supported.
      * This feature is only available for users who have Retail Search enabled.
-     * Contact Retail Support (retail-search-support&#64;google.com) if you are
-     * interested in using Retail Search.
+     * Please submit a form [here](https://cloud.google.com/contact) to contact
+     * cloud sales if you are interested in using Retail Search.
      * </pre>
      */
     public void importCompletionData(
@@ -245,8 +245,8 @@ public final class CompletionServiceGrpc {
    * <pre>
    * Auto-completion service for retail.
    * This feature is only available for users who have Retail Search enabled.
-   * Contact Retail Support (retail-search-support&#64;google.com) if you are
-   * interested in using Retail Search.
+   * Please submit a form [here](https://cloud.google.com/contact) to contact
+   * cloud sales if you are interested in using Retail Search.
    * </pre>
    */
   public static final class CompletionServiceStub
@@ -267,8 +267,8 @@ public final class CompletionServiceGrpc {
      * <pre>
      * Completes the specified prefix with keyword suggestions.
      * This feature is only available for users who have Retail Search enabled.
-     * Contact Retail Support (retail-search-support&#64;google.com) if you are
-     * interested in using Retail Search.
+     * Please submit a form [here](https://cloud.google.com/contact) to contact
+     * cloud sales if you are interested in using Retail Search.
      * </pre>
      */
     public void completeQuery(
@@ -288,8 +288,8 @@ public final class CompletionServiceGrpc {
      * Bulk import of processed completion dataset.
      * Request processing may be synchronous. Partial updating is not supported.
      * This feature is only available for users who have Retail Search enabled.
-     * Contact Retail Support (retail-search-support&#64;google.com) if you are
-     * interested in using Retail Search.
+     * Please submit a form [here](https://cloud.google.com/contact) to contact
+     * cloud sales if you are interested in using Retail Search.
      * </pre>
      */
     public void importCompletionData(
@@ -308,8 +308,8 @@ public final class CompletionServiceGrpc {
    * <pre>
    * Auto-completion service for retail.
    * This feature is only available for users who have Retail Search enabled.
-   * Contact Retail Support (retail-search-support&#64;google.com) if you are
-   * interested in using Retail Search.
+   * Please submit a form [here](https://cloud.google.com/contact) to contact
+   * cloud sales if you are interested in using Retail Search.
    * </pre>
    */
   public static final class CompletionServiceBlockingStub
@@ -331,8 +331,8 @@ public final class CompletionServiceGrpc {
      * <pre>
      * Completes the specified prefix with keyword suggestions.
      * This feature is only available for users who have Retail Search enabled.
-     * Contact Retail Support (retail-search-support&#64;google.com) if you are
-     * interested in using Retail Search.
+     * Please submit a form [here](https://cloud.google.com/contact) to contact
+     * cloud sales if you are interested in using Retail Search.
      * </pre>
      */
     public com.google.cloud.retail.v2.CompleteQueryResponse completeQuery(
@@ -348,8 +348,8 @@ public final class CompletionServiceGrpc {
      * Bulk import of processed completion dataset.
      * Request processing may be synchronous. Partial updating is not supported.
      * This feature is only available for users who have Retail Search enabled.
-     * Contact Retail Support (retail-search-support&#64;google.com) if you are
-     * interested in using Retail Search.
+     * Please submit a form [here](https://cloud.google.com/contact) to contact
+     * cloud sales if you are interested in using Retail Search.
      * </pre>
      */
     public com.google.longrunning.Operation importCompletionData(
@@ -365,8 +365,8 @@ public final class CompletionServiceGrpc {
    * <pre>
    * Auto-completion service for retail.
    * This feature is only available for users who have Retail Search enabled.
-   * Contact Retail Support (retail-search-support&#64;google.com) if you are
-   * interested in using Retail Search.
+   * Please submit a form [here](https://cloud.google.com/contact) to contact
+   * cloud sales if you are interested in using Retail Search.
    * </pre>
    */
   public static final class CompletionServiceFutureStub
@@ -387,8 +387,8 @@ public final class CompletionServiceGrpc {
      * <pre>
      * Completes the specified prefix with keyword suggestions.
      * This feature is only available for users who have Retail Search enabled.
-     * Contact Retail Support (retail-search-support&#64;google.com) if you are
-     * interested in using Retail Search.
+     * Please submit a form [here](https://cloud.google.com/contact) to contact
+     * cloud sales if you are interested in using Retail Search.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -405,8 +405,8 @@ public final class CompletionServiceGrpc {
      * Bulk import of processed completion dataset.
      * Request processing may be synchronous. Partial updating is not supported.
      * This feature is only available for users who have Retail Search enabled.
-     * Contact Retail Support (retail-search-support&#64;google.com) if you are
-     * interested in using Retail Search.
+     * Please submit a form [here](https://cloud.google.com/contact) to contact
+     * cloud sales if you are interested in using Retail Search.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>

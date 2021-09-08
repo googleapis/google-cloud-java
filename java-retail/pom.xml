@@ -103,8 +103,8 @@
 
   <modules>
     <module>google-cloud-retail</module>
-    <module>proto-google-cloud-retail-v2</module>
     <module>grpc-google-cloud-retail-v2</module>
+    <module>proto-google-cloud-retail-v2</module>
     <module>google-cloud-retail-bom</module>
   </modules>
 

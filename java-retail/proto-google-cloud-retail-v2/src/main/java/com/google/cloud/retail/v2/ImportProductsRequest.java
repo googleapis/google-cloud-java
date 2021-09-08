@@ -221,12 +221,12 @@ public final class ImportProductsRequest extends com.google.protobuf.GeneratedMe
      * products may be deleted if they are not present in the source location.
      * Can only be while using
      * [BigQuerySource][google.cloud.retail.v2.BigQuerySource].
-     * Add the IAM permission “BigQuery Data Viewer” for
+     * Add the IAM permission "BigQuery Data Viewer" for
      * cloud-retail-customer-data-access&#64;system.gserviceaccount.com before
      * using this feature otherwise an error is thrown.
      * This feature is only available for users who have Retail Search enabled.
-     * Contact Retail Support (retail-search-support&#64;google.com) if you are
-     * interested in using Retail Search.
+     * Please submit a form [here](https://cloud.google.com/contact) to contact
+     * cloud sales if you are interested in using Retail Search.
      * </pre>
      *
      * <code>FULL = 2;</code>
@@ -263,12 +263,12 @@ public final class ImportProductsRequest extends com.google.protobuf.GeneratedMe
      * products may be deleted if they are not present in the source location.
      * Can only be while using
      * [BigQuerySource][google.cloud.retail.v2.BigQuerySource].
-     * Add the IAM permission “BigQuery Data Viewer” for
+     * Add the IAM permission "BigQuery Data Viewer" for
      * cloud-retail-customer-data-access&#64;system.gserviceaccount.com before
      * using this feature otherwise an error is thrown.
      * This feature is only available for users who have Retail Search enabled.
-     * Contact Retail Support (retail-search-support&#64;google.com) if you are
-     * interested in using Retail Search.
+     * Please submit a form [here](https://cloud.google.com/contact) to contact
+     * cloud sales if you are interested in using Retail Search.
      * </pre>
      *
      * <code>FULL = 2;</code>

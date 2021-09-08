@@ -2,5 +2,5 @@
 # module:released-version:current-version
 
 google-cloud-retail:2.0.2:2.0.3-SNAPSHOT
-proto-google-cloud-retail-v2:2.0.2:2.0.3-SNAPSHOT
 grpc-google-cloud-retail-v2:2.0.2:2.0.3-SNAPSHOT
+proto-google-cloud-retail-v2:2.0.2:2.0.3-SNAPSHOT

@@ -428,9 +428,8 @@ public interface SearchRequestOrBuilder
    * <pre>
    * The specification for dynamically generated facets. Notice that only
    * textual facets can be dynamically generated.
-   * This feature requires additional allowlisting. Contact Retail Support
-   * (retail-search-support&#64;google.com) if you are interested in using dynamic
-   * facet feature.
+   * This feature requires additional allowlisting. Contact Retail Search
+   * support team if you are interested in using dynamic facet feature.
    * </pre>
    *
    * <code>.google.cloud.retail.v2.SearchRequest.DynamicFacetSpec dynamic_facet_spec = 21;</code>
@@ -444,9 +443,8 @@ public interface SearchRequestOrBuilder
    * <pre>
    * The specification for dynamically generated facets. Notice that only
    * textual facets can be dynamically generated.
-   * This feature requires additional allowlisting. Contact Retail Support
-   * (retail-search-support&#64;google.com) if you are interested in using dynamic
-   * facet feature.
+   * This feature requires additional allowlisting. Contact Retail Search
+   * support team if you are interested in using dynamic facet feature.
    * </pre>
    *
    * <code>.google.cloud.retail.v2.SearchRequest.DynamicFacetSpec dynamic_facet_spec = 21;</code>
@@ -460,9 +458,8 @@ public interface SearchRequestOrBuilder
    * <pre>
    * The specification for dynamically generated facets. Notice that only
    * textual facets can be dynamically generated.
-   * This feature requires additional allowlisting. Contact Retail Support
-   * (retail-search-support&#64;google.com) if you are interested in using dynamic
-   * facet feature.
+   * This feature requires additional allowlisting. Contact Retail Search
+   * support team if you are interested in using dynamic facet feature.
    * </pre>
    *
    * <code>.google.cloud.retail.v2.SearchRequest.DynamicFacetSpec dynamic_facet_spec = 21;</code>
@@ -558,10 +555,9 @@ public interface SearchRequestOrBuilder
    * Notice that rollup [variant][google.cloud.retail.v2.Product.Type.VARIANT]
    * [Product][google.cloud.retail.v2.Product]s attributes will lead to extra
    * query latency. Maximum number of keys is 10.
-   * For
-   * [Product.fulfillment_info][google.cloud.retail.v2.Product.fulfillment_info],
-   * a fulfillment type and a fulfillment ID must be provided in the format of
-   * "fulfillmentType.filfillmentId". E.g., in "pickupInStore.store123",
+   * For [FulfillmentInfo][google.cloud.retail.v2.FulfillmentInfo], a
+   * fulfillment type and a fulfillment ID must be provided in the format of
+   * "fulfillmentType.fulfillmentId". E.g., in "pickupInStore.store123",
    * "pickupInStore" is fulfillment type and "store123" is the store ID.
    * Supported keys are:
    * * colorFamilies
@@ -570,24 +566,42 @@ public interface SearchRequestOrBuilder
    * * discount
    * * attributes.key, where key is any key in the
    *   [Product.attributes][google.cloud.retail.v2.Product.attributes] map.
-   * * pickupInStore.id, where id is any [FulfillmentInfo.ids][] for type
-   *   [FulfillmentInfo.Type.PICKUP_IN_STORE][].
-   * * shipToStore.id, where id is any [FulfillmentInfo.ids][] for type
-   *   [FulfillmentInfo.Type.SHIP_TO_STORE][].
-   * * sameDayDelivery.id, where id is any [FulfillmentInfo.ids][] for type
-   *   [FulfillmentInfo.Type.SAME_DAY_DELIVERY][].
-   * * nextDayDelivery.id, where id is any [FulfillmentInfo.ids][] for type
-   *   [FulfillmentInfo.Type.NEXT_DAY_DELIVERY][].
-   * * customFulfillment1.id, where id is any [FulfillmentInfo.ids][] for type
-   *   [FulfillmentInfo.Type.CUSTOM_TYPE_1][].
-   * * customFulfillment2.id, where id is any [FulfillmentInfo.ids][] for type
-   *   [FulfillmentInfo.Type.CUSTOM_TYPE_2][].
-   * * customFulfillment3.id, where id is any [FulfillmentInfo.ids][] for type
-   *   [FulfillmentInfo.Type.CUSTOM_TYPE_3][].
-   * * customFulfillment4.id, where id is any [FulfillmentInfo.ids][] for type
-   *   [FulfillmentInfo.Type.CUSTOM_TYPE_4][].
-   * * customFulfillment5.id, where id is any [FulfillmentInfo.ids][] for type
-   *   [FulfillmentInfo.Type.CUSTOM_TYPE_5][].
+   * * pickupInStore.id, where id is any
+   * [FulfillmentInfo.place_ids][google.cloud.retail.v2.FulfillmentInfo.place_ids]
+   * for [FulfillmentInfo.type][google.cloud.retail.v2.FulfillmentInfo.type]
+   *   "pickup-in-store".
+   * * shipToStore.id, where id is any
+   * [FulfillmentInfo.place_ids][google.cloud.retail.v2.FulfillmentInfo.place_ids]
+   * for [FulfillmentInfo.type][google.cloud.retail.v2.FulfillmentInfo.type]
+   *   "ship-to-store".
+   * * sameDayDelivery.id, where id is any
+   * [FulfillmentInfo.place_ids][google.cloud.retail.v2.FulfillmentInfo.place_ids]
+   * for [FulfillmentInfo.type][google.cloud.retail.v2.FulfillmentInfo.type]
+   *   "same-day-delivery".
+   * * nextDayDelivery.id, where id is any
+   * [FulfillmentInfo.place_ids][google.cloud.retail.v2.FulfillmentInfo.place_ids]
+   * for [FulfillmentInfo.type][google.cloud.retail.v2.FulfillmentInfo.type]
+   *   "next-day-delivery".
+   * * customFulfillment1.id, where id is any
+   * [FulfillmentInfo.place_ids][google.cloud.retail.v2.FulfillmentInfo.place_ids]
+   * for [FulfillmentInfo.type][google.cloud.retail.v2.FulfillmentInfo.type]
+   *   "custom-type-1".
+   * * customFulfillment2.id, where id is any
+   * [FulfillmentInfo.place_ids][google.cloud.retail.v2.FulfillmentInfo.place_ids]
+   * for [FulfillmentInfo.type][google.cloud.retail.v2.FulfillmentInfo.type]
+   *   "custom-type-2".
+   * * customFulfillment3.id, where id is any
+   * [FulfillmentInfo.place_ids][google.cloud.retail.v2.FulfillmentInfo.place_ids]
+   * for [FulfillmentInfo.type][google.cloud.retail.v2.FulfillmentInfo.type]
+   *   "custom-type-3".
+   * * customFulfillment4.id, where id is any
+   * [FulfillmentInfo.place_ids][google.cloud.retail.v2.FulfillmentInfo.place_ids]
+   * for [FulfillmentInfo.type][google.cloud.retail.v2.FulfillmentInfo.type]
+   *   "custom-type-4".
+   * * customFulfillment5.id, where id is any
+   * [FulfillmentInfo.place_ids][google.cloud.retail.v2.FulfillmentInfo.place_ids]
+   * for [FulfillmentInfo.type][google.cloud.retail.v2.FulfillmentInfo.type]
+   *   "custom-type-5".
    * If this field is set to an invalid value other than these, an
    * INVALID_ARGUMENT error is returned.
    * </pre>
@@ -609,10 +623,9 @@ public interface SearchRequestOrBuilder
    * Notice that rollup [variant][google.cloud.retail.v2.Product.Type.VARIANT]
    * [Product][google.cloud.retail.v2.Product]s attributes will lead to extra
    * query latency. Maximum number of keys is 10.
-   * For
-   * [Product.fulfillment_info][google.cloud.retail.v2.Product.fulfillment_info],
-   * a fulfillment type and a fulfillment ID must be provided in the format of
-   * "fulfillmentType.filfillmentId". E.g., in "pickupInStore.store123",
+   * For [FulfillmentInfo][google.cloud.retail.v2.FulfillmentInfo], a
+   * fulfillment type and a fulfillment ID must be provided in the format of
+   * "fulfillmentType.fulfillmentId". E.g., in "pickupInStore.store123",
    * "pickupInStore" is fulfillment type and "store123" is the store ID.
    * Supported keys are:
    * * colorFamilies
@@ -621,24 +634,42 @@ public interface SearchRequestOrBuilder
    * * discount
    * * attributes.key, where key is any key in the
    *   [Product.attributes][google.cloud.retail.v2.Product.attributes] map.
-   * * pickupInStore.id, where id is any [FulfillmentInfo.ids][] for type
-   *   [FulfillmentInfo.Type.PICKUP_IN_STORE][].
-   * * shipToStore.id, where id is any [FulfillmentInfo.ids][] for type
-   *   [FulfillmentInfo.Type.SHIP_TO_STORE][].
-   * * sameDayDelivery.id, where id is any [FulfillmentInfo.ids][] for type
-   *   [FulfillmentInfo.Type.SAME_DAY_DELIVERY][].
-   * * nextDayDelivery.id, where id is any [FulfillmentInfo.ids][] for type
-   *   [FulfillmentInfo.Type.NEXT_DAY_DELIVERY][].
-   * * customFulfillment1.id, where id is any [FulfillmentInfo.ids][] for type
-   *   [FulfillmentInfo.Type.CUSTOM_TYPE_1][].
-   * * customFulfillment2.id, where id is any [FulfillmentInfo.ids][] for type
-   *   [FulfillmentInfo.Type.CUSTOM_TYPE_2][].
-   * * customFulfillment3.id, where id is any [FulfillmentInfo.ids][] for type
-   *   [FulfillmentInfo.Type.CUSTOM_TYPE_3][].
-   * * customFulfillment4.id, where id is any [FulfillmentInfo.ids][] for type
-   *   [FulfillmentInfo.Type.CUSTOM_TYPE_4][].
-   * * customFulfillment5.id, where id is any [FulfillmentInfo.ids][] for type
-   *   [FulfillmentInfo.Type.CUSTOM_TYPE_5][].
+   * * pickupInStore.id, where id is any
+   * [FulfillmentInfo.place_ids][google.cloud.retail.v2.FulfillmentInfo.place_ids]
+   * for [FulfillmentInfo.type][google.cloud.retail.v2.FulfillmentInfo.type]
+   *   "pickup-in-store".
+   * * shipToStore.id, where id is any
+   * [FulfillmentInfo.place_ids][google.cloud.retail.v2.FulfillmentInfo.place_ids]
+   * for [FulfillmentInfo.type][google.cloud.retail.v2.FulfillmentInfo.type]
+   *   "ship-to-store".
+   * * sameDayDelivery.id, where id is any
+   * [FulfillmentInfo.place_ids][google.cloud.retail.v2.FulfillmentInfo.place_ids]
+   * for [FulfillmentInfo.type][google.cloud.retail.v2.FulfillmentInfo.type]
+   *   "same-day-delivery".
+   * * nextDayDelivery.id, where id is any
+   * [FulfillmentInfo.place_ids][google.cloud.retail.v2.FulfillmentInfo.place_ids]
+   * for [FulfillmentInfo.type][google.cloud.retail.v2.FulfillmentInfo.type]
+   *   "next-day-delivery".
+   * * customFulfillment1.id, where id is any
+   * [FulfillmentInfo.place_ids][google.cloud.retail.v2.FulfillmentInfo.place_ids]
+   * for [FulfillmentInfo.type][google.cloud.retail.v2.FulfillmentInfo.type]
+   *   "custom-type-1".
+   * * customFulfillment2.id, where id is any
+   * [FulfillmentInfo.place_ids][google.cloud.retail.v2.FulfillmentInfo.place_ids]
+   * for [FulfillmentInfo.type][google.cloud.retail.v2.FulfillmentInfo.type]
+   *   "custom-type-2".
+   * * customFulfillment3.id, where id is any
+   * [FulfillmentInfo.place_ids][google.cloud.retail.v2.FulfillmentInfo.place_ids]
+   * for [FulfillmentInfo.type][google.cloud.retail.v2.FulfillmentInfo.type]
+   *   "custom-type-3".
+   * * customFulfillment4.id, where id is any
+   * [FulfillmentInfo.place_ids][google.cloud.retail.v2.FulfillmentInfo.place_ids]
+   * for [FulfillmentInfo.type][google.cloud.retail.v2.FulfillmentInfo.type]
+   *   "custom-type-4".
+   * * customFulfillment5.id, where id is any
+   * [FulfillmentInfo.place_ids][google.cloud.retail.v2.FulfillmentInfo.place_ids]
+   * for [FulfillmentInfo.type][google.cloud.retail.v2.FulfillmentInfo.type]
+   *   "custom-type-5".
    * If this field is set to an invalid value other than these, an
    * INVALID_ARGUMENT error is returned.
    * </pre>
@@ -660,10 +691,9 @@ public interface SearchRequestOrBuilder
    * Notice that rollup [variant][google.cloud.retail.v2.Product.Type.VARIANT]
    * [Product][google.cloud.retail.v2.Product]s attributes will lead to extra
    * query latency. Maximum number of keys is 10.
-   * For
-   * [Product.fulfillment_info][google.cloud.retail.v2.Product.fulfillment_info],
-   * a fulfillment type and a fulfillment ID must be provided in the format of
-   * "fulfillmentType.filfillmentId". E.g., in "pickupInStore.store123",
+   * For [FulfillmentInfo][google.cloud.retail.v2.FulfillmentInfo], a
+   * fulfillment type and a fulfillment ID must be provided in the format of
+   * "fulfillmentType.fulfillmentId". E.g., in "pickupInStore.store123",
    * "pickupInStore" is fulfillment type and "store123" is the store ID.
    * Supported keys are:
    * * colorFamilies
@@ -672,24 +702,42 @@ public interface SearchRequestOrBuilder
    * * discount
    * * attributes.key, where key is any key in the
    *   [Product.attributes][google.cloud.retail.v2.Product.attributes] map.
-   * * pickupInStore.id, where id is any [FulfillmentInfo.ids][] for type
-   *   [FulfillmentInfo.Type.PICKUP_IN_STORE][].
-   * * shipToStore.id, where id is any [FulfillmentInfo.ids][] for type
-   *   [FulfillmentInfo.Type.SHIP_TO_STORE][].
-   * * sameDayDelivery.id, where id is any [FulfillmentInfo.ids][] for type
-   *   [FulfillmentInfo.Type.SAME_DAY_DELIVERY][].
-   * * nextDayDelivery.id, where id is any [FulfillmentInfo.ids][] for type
-   *   [FulfillmentInfo.Type.NEXT_DAY_DELIVERY][].
-   * * customFulfillment1.id, where id is any [FulfillmentInfo.ids][] for type
-   *   [FulfillmentInfo.Type.CUSTOM_TYPE_1][].
-   * * customFulfillment2.id, where id is any [FulfillmentInfo.ids][] for type
-   *   [FulfillmentInfo.Type.CUSTOM_TYPE_2][].
-   * * customFulfillment3.id, where id is any [FulfillmentInfo.ids][] for type
-   *   [FulfillmentInfo.Type.CUSTOM_TYPE_3][].
-   * * customFulfillment4.id, where id is any [FulfillmentInfo.ids][] for type
-   *   [FulfillmentInfo.Type.CUSTOM_TYPE_4][].
-   * * customFulfillment5.id, where id is any [FulfillmentInfo.ids][] for type
-   *   [FulfillmentInfo.Type.CUSTOM_TYPE_5][].
+   * * pickupInStore.id, where id is any
+   * [FulfillmentInfo.place_ids][google.cloud.retail.v2.FulfillmentInfo.place_ids]
+   * for [FulfillmentInfo.type][google.cloud.retail.v2.FulfillmentInfo.type]
+   *   "pickup-in-store".
+   * * shipToStore.id, where id is any
+   * [FulfillmentInfo.place_ids][google.cloud.retail.v2.FulfillmentInfo.place_ids]
+   * for [FulfillmentInfo.type][google.cloud.retail.v2.FulfillmentInfo.type]
+   *   "ship-to-store".
+   * * sameDayDelivery.id, where id is any
+   * [FulfillmentInfo.place_ids][google.cloud.retail.v2.FulfillmentInfo.place_ids]
+   * for [FulfillmentInfo.type][google.cloud.retail.v2.FulfillmentInfo.type]
+   *   "same-day-delivery".
+   * * nextDayDelivery.id, where id is any
+   * [FulfillmentInfo.place_ids][google.cloud.retail.v2.FulfillmentInfo.place_ids]
+   * for [FulfillmentInfo.type][google.cloud.retail.v2.FulfillmentInfo.type]
+   *   "next-day-delivery".
+   * * customFulfillment1.id, where id is any
+   * [FulfillmentInfo.place_ids][google.cloud.retail.v2.FulfillmentInfo.place_ids]
+   * for [FulfillmentInfo.type][google.cloud.retail.v2.FulfillmentInfo.type]
+   *   "custom-type-1".
+   * * customFulfillment2.id, where id is any
+   * [FulfillmentInfo.place_ids][google.cloud.retail.v2.FulfillmentInfo.place_ids]
+   * for [FulfillmentInfo.type][google.cloud.retail.v2.FulfillmentInfo.type]
+   *   "custom-type-2".
+   * * customFulfillment3.id, where id is any
+   * [FulfillmentInfo.place_ids][google.cloud.retail.v2.FulfillmentInfo.place_ids]
+   * for [FulfillmentInfo.type][google.cloud.retail.v2.FulfillmentInfo.type]
+   *   "custom-type-3".
+   * * customFulfillment4.id, where id is any
+   * [FulfillmentInfo.place_ids][google.cloud.retail.v2.FulfillmentInfo.place_ids]
+   * for [FulfillmentInfo.type][google.cloud.retail.v2.FulfillmentInfo.type]
+   *   "custom-type-4".
+   * * customFulfillment5.id, where id is any
+   * [FulfillmentInfo.place_ids][google.cloud.retail.v2.FulfillmentInfo.place_ids]
+   * for [FulfillmentInfo.type][google.cloud.retail.v2.FulfillmentInfo.type]
+   *   "custom-type-5".
    * If this field is set to an invalid value other than these, an
    * INVALID_ARGUMENT error is returned.
    * </pre>
@@ -712,10 +760,9 @@ public interface SearchRequestOrBuilder
    * Notice that rollup [variant][google.cloud.retail.v2.Product.Type.VARIANT]
    * [Product][google.cloud.retail.v2.Product]s attributes will lead to extra
    * query latency. Maximum number of keys is 10.
-   * For
-   * [Product.fulfillment_info][google.cloud.retail.v2.Product.fulfillment_info],
-   * a fulfillment type and a fulfillment ID must be provided in the format of
-   * "fulfillmentType.filfillmentId". E.g., in "pickupInStore.store123",
+   * For [FulfillmentInfo][google.cloud.retail.v2.FulfillmentInfo], a
+   * fulfillment type and a fulfillment ID must be provided in the format of
+   * "fulfillmentType.fulfillmentId". E.g., in "pickupInStore.store123",
    * "pickupInStore" is fulfillment type and "store123" is the store ID.
    * Supported keys are:
    * * colorFamilies
@@ -724,24 +771,42 @@ public interface SearchRequestOrBuilder
    * * discount
    * * attributes.key, where key is any key in the
    *   [Product.attributes][google.cloud.retail.v2.Product.attributes] map.
-   * * pickupInStore.id, where id is any [FulfillmentInfo.ids][] for type
-   *   [FulfillmentInfo.Type.PICKUP_IN_STORE][].
-   * * shipToStore.id, where id is any [FulfillmentInfo.ids][] for type
-   *   [FulfillmentInfo.Type.SHIP_TO_STORE][].
-   * * sameDayDelivery.id, where id is any [FulfillmentInfo.ids][] for type
-   *   [FulfillmentInfo.Type.SAME_DAY_DELIVERY][].
-   * * nextDayDelivery.id, where id is any [FulfillmentInfo.ids][] for type
-   *   [FulfillmentInfo.Type.NEXT_DAY_DELIVERY][].
-   * * customFulfillment1.id, where id is any [FulfillmentInfo.ids][] for type
-   *   [FulfillmentInfo.Type.CUSTOM_TYPE_1][].
-   * * customFulfillment2.id, where id is any [FulfillmentInfo.ids][] for type
-   *   [FulfillmentInfo.Type.CUSTOM_TYPE_2][].
-   * * customFulfillment3.id, where id is any [FulfillmentInfo.ids][] for type
-   *   [FulfillmentInfo.Type.CUSTOM_TYPE_3][].
-   * * customFulfillment4.id, where id is any [FulfillmentInfo.ids][] for type
-   *   [FulfillmentInfo.Type.CUSTOM_TYPE_4][].
-   * * customFulfillment5.id, where id is any [FulfillmentInfo.ids][] for type
-   *   [FulfillmentInfo.Type.CUSTOM_TYPE_5][].
+   * * pickupInStore.id, where id is any
+   * [FulfillmentInfo.place_ids][google.cloud.retail.v2.FulfillmentInfo.place_ids]
+   * for [FulfillmentInfo.type][google.cloud.retail.v2.FulfillmentInfo.type]
+   *   "pickup-in-store".
+   * * shipToStore.id, where id is any
+   * [FulfillmentInfo.place_ids][google.cloud.retail.v2.FulfillmentInfo.place_ids]
+   * for [FulfillmentInfo.type][google.cloud.retail.v2.FulfillmentInfo.type]
+   *   "ship-to-store".
+   * * sameDayDelivery.id, where id is any
+   * [FulfillmentInfo.place_ids][google.cloud.retail.v2.FulfillmentInfo.place_ids]
+   * for [FulfillmentInfo.type][google.cloud.retail.v2.FulfillmentInfo.type]
+   *   "same-day-delivery".
+   * * nextDayDelivery.id, where id is any
+   * [FulfillmentInfo.place_ids][google.cloud.retail.v2.FulfillmentInfo.place_ids]
+   * for [FulfillmentInfo.type][google.cloud.retail.v2.FulfillmentInfo.type]
+   *   "next-day-delivery".
+   * * customFulfillment1.id, where id is any
+   * [FulfillmentInfo.place_ids][google.cloud.retail.v2.FulfillmentInfo.place_ids]
+   * for [FulfillmentInfo.type][google.cloud.retail.v2.FulfillmentInfo.type]
+   *   "custom-type-1".
+   * * customFulfillment2.id, where id is any
+   * [FulfillmentInfo.place_ids][google.cloud.retail.v2.FulfillmentInfo.place_ids]
+   * for [FulfillmentInfo.type][google.cloud.retail.v2.FulfillmentInfo.type]
+   *   "custom-type-2".
+   * * customFulfillment3.id, where id is any
+   * [FulfillmentInfo.place_ids][google.cloud.retail.v2.FulfillmentInfo.place_ids]
+   * for [FulfillmentInfo.type][google.cloud.retail.v2.FulfillmentInfo.type]
+   *   "custom-type-3".
+   * * customFulfillment4.id, where id is any
+   * [FulfillmentInfo.place_ids][google.cloud.retail.v2.FulfillmentInfo.place_ids]
+   * for [FulfillmentInfo.type][google.cloud.retail.v2.FulfillmentInfo.type]
+   *   "custom-type-4".
+   * * customFulfillment5.id, where id is any
+   * [FulfillmentInfo.place_ids][google.cloud.retail.v2.FulfillmentInfo.place_ids]
+   * for [FulfillmentInfo.type][google.cloud.retail.v2.FulfillmentInfo.type]
+   *   "custom-type-5".
    * If this field is set to an invalid value other than these, an
    * INVALID_ARGUMENT error is returned.
    * </pre>

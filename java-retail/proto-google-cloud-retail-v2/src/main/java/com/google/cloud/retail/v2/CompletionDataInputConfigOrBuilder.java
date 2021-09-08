@@ -28,7 +28,7 @@ public interface CompletionDataInputConfigOrBuilder
    *
    * <pre>
    * Required. BigQuery input source.
-   * Add the IAM permission “BigQuery Data Viewer” for
+   * Add the IAM permission "BigQuery Data Viewer" for
    * cloud-retail-customer-data-access&#64;system.gserviceaccount.com before
    * using this feature otherwise an error is thrown.
    * </pre>
@@ -45,7 +45,7 @@ public interface CompletionDataInputConfigOrBuilder
    *
    * <pre>
    * Required. BigQuery input source.
-   * Add the IAM permission “BigQuery Data Viewer” for
+   * Add the IAM permission "BigQuery Data Viewer" for
    * cloud-retail-customer-data-access&#64;system.gserviceaccount.com before
    * using this feature otherwise an error is thrown.
    * </pre>
@@ -62,7 +62,7 @@ public interface CompletionDataInputConfigOrBuilder
    *
    * <pre>
    * Required. BigQuery input source.
-   * Add the IAM permission “BigQuery Data Viewer” for
+   * Add the IAM permission "BigQuery Data Viewer" for
    * cloud-retail-customer-data-access&#64;system.gserviceaccount.com before
    * using this feature otherwise an error is thrown.
    * </pre>

@@ -242,8 +242,8 @@ public interface CompleteQueryRequestOrBuilder
    * Current supported values:
    * * user-data
    * * cloud-retail
-   *   This option is not automatically enabled. Before using cloud-retail,
-   *   contact retail-search-support&#64;google.com first.
+   *   This option requires additional allowlisting. Before using cloud-retail,
+   *   contact Cloud Retail support team first.
    * </pre>
    *
    * <code>string dataset = 6;</code>
@@ -263,8 +263,8 @@ public interface CompleteQueryRequestOrBuilder
    * Current supported values:
    * * user-data
    * * cloud-retail
-   *   This option is not automatically enabled. Before using cloud-retail,
-   *   contact retail-search-support&#64;google.com first.
+   *   This option requires additional allowlisting. Before using cloud-retail,
+   *   contact Cloud Retail support team first.
    * </pre>
    *
    * <code>string dataset = 6;</code>
@@ -277,8 +277,10 @@ public interface CompleteQueryRequestOrBuilder
    *
    *
    * <pre>
-   * Completion max suggestions.
-   * The maximum allowed max suggestions is 20. The default value is 20.
+   * Completion max suggestions. If left unset or set to 0, then will fallback
+   * to the configured value [CompletionConfig.max_suggestions][].
+   * The maximum allowed max suggestions is 20. If it is set higher, it will be
+   * capped by 20.
    * </pre>
    *
    * <code>int32 max_suggestions = 5;</code>
