@@ -27,6 +27,6 @@ public class QuickStartIT {
   @Test
   public void testQuickStart() throws Exception {
     // Ensure quick start runs without any exception
-    QuickStart.main(new String[]{});
+    QuickStart.main(new String[] {});
   }
 }

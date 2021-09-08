@@ -29,12 +29,11 @@ import com.google.devtools.clouderrorreporting.v1beta1.SourceLocation;
 
 /**
  * Snippet demonstrates using the Cloud Error Reporting API to report a custom error event.
- * <p>
- * This library is not required on App Engine, errors written to stderr are automatically written
- * to Cloud Error Reporting.
- * It is also not required if you are writing logs to Cloud Logging.
- * Errors written to Cloud Logging that contain an exception or stack trace
- * are automatically written out to Cloud Error Reporting.
+ *
+ * <p>This library is not required on App Engine, errors written to stderr are automatically written
+ * to Cloud Error Reporting. It is also not required if you are writing logs to Cloud Logging.
+ * Errors written to Cloud Logging that contain an exception or stack trace are automatically
+ * written out to Cloud Error Reporting.
  */
 public class QuickStart {
   public static void main(String[] args) throws Exception {
@@ -47,20 +46,23 @@ public class QuickStart {
     try (ReportErrorsServiceClient reportErrorsServiceClient = ReportErrorsServiceClient.create()) {
 
       // Custom error events require an error reporting location as well.
-      ErrorContext errorContext = ErrorContext.newBuilder()
-          .setReportLocation(SourceLocation.newBuilder()
-              .setFilePath("Test.java")
-              .setLineNumber(10)
-              .setFunctionName("myMethod")
-              .build())
-          .build();
+      ErrorContext errorContext =
+          ErrorContext.newBuilder()
+              .setReportLocation(
+                  SourceLocation.newBuilder()
+                      .setFilePath("Test.java")
+                      .setLineNumber(10)
+                      .setFunctionName("myMethod")
+                      .build())
+              .build();
 
-      //Report a custom error event
-      ReportedErrorEvent customErrorEvent = ReportedErrorEvent.getDefaultInstance()
-          .toBuilder()
-          .setMessage("custom error event")
-          .setContext(errorContext)
-          .build();
+      // Report a custom error event
+      ReportedErrorEvent customErrorEvent =
+          ReportedErrorEvent.getDefaultInstance()
+              .toBuilder()
+              .setMessage("custom error event")
+              .setContext(errorContext)
+              .build();
       // Report an event synchronously, use .reportErrorEventCallable for asynchronous reporting.
       reportErrorsServiceClient.reportErrorEvent(projectName, customErrorEvent);
     }
