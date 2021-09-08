@@ -60,9 +60,7 @@ public class VisionController {
             this.resourceLoader.getResource(imageUrl), Type.LABEL_DETECTION);
 
     Map<String, Float> imageLabels =
-        response
-            .getLabelAnnotationsList()
-            .stream()
+        response.getLabelAnnotationsList().stream()
             .collect(
                 Collectors.toMap(
                     EntityAnnotation::getDescription,

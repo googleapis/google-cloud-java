@@ -100,7 +100,7 @@ public class DetectBetaIT {
   public void testDetectHandwrittenOcrGcs() throws Exception {
     // Act
     String[] args = {
-        "handwritten-ocr", "gs://cloud-samples-data/vision/handwritten.jpg",
+      "handwritten-ocr", "gs://cloud-samples-data/vision/handwritten.jpg",
     };
     DetectBeta.argsHelper(args, out);
 
@@ -145,8 +145,11 @@ public class DetectBetaIT {
 
     Storage storage = StorageOptions.getDefaultInstance().getService();
 
-    Page<Blob> blobs = storage.list(OUTPUT_BUCKET, BlobListOption.currentDirectory(),
-        BlobListOption.prefix(OUTPUT_PREFIX + "/"));
+    Page<Blob> blobs =
+        storage.list(
+            OUTPUT_BUCKET,
+            BlobListOption.currentDirectory(),
+            BlobListOption.prefix(OUTPUT_PREFIX + "/"));
     for (Blob blob : blobs.iterateAll()) {
       blob.delete();
     }

@@ -60,9 +60,8 @@ public class DetectIT {
     System.setOut(originalPrintStream);
   }
 
-  @Rule
-  public MultipleAttemptsRule multipleAttemptsRule = new MultipleAttemptsRule(3);
-  
+  @Rule public MultipleAttemptsRule multipleAttemptsRule = new MultipleAttemptsRule(3);
+
   @Test
   public void testDocumentText() throws Exception {
     // Act

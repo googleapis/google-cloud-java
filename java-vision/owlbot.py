@@ -1,10 +1,10 @@
-# Copyright 2018 Google LLC
+# Copyright 2021 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
 # You may obtain a copy of the License at
 #
-#     http://www.apache.org/licenses/LICENSE-2.0
+#     https://www.apache.org/licenses/LICENSE-2.0
 #
 # Unless required by applicable law or agreed to in writing, software
 # distributed under the License is distributed on an "AS IS" BASIS,
@@ -12,24 +12,9 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-"""This script is used to synthesize generated parts of this library."""
-
 import synthtool as s
-import synthtool.languages.java as java
+from synthtool.languages import java
 
-AUTOSYNTH_MULTIPLE_COMMITS = True
-
-service = 'vision'
-versions = ['v1', 'v1p1beta1', 'v1p2beta1', 'v1p3beta1', 'v1p4beta1']
-
-for version in versions:
-  library = java.bazel_library(
-      service=service,
-      version=version,
-      bazel_target=f'//google/cloud/{service}/{version}:google-cloud-{service}-{version}-java',
-  )
-
-java.common_templates()
 
 # restore deprecated resource name helpers
 # TODO: remove in version 2.0.0
@@ -231,15 +216,19 @@ public static final String parseReferenceImageFromReferenceImageName(String refe
 }
 """
 
-s.replace(
-  "google-cloud-vision/src/main/java/com/google/cloud/vision/v1/ProductSearchClient.java",
-  "private final OperationsClient operationsClient;",
-  f"private final OperationsClient operationsClient;\n{DEPRECATED_RESOURCE_NAME_HELPERS}"
-)
-s.replace(
-  "google-cloud-vision/src/main/java/com/google/cloud/vision/v1/ProductSearchClient.java",
-  "import com.google.api.gax.rpc.UnaryCallable;",
-  "import com.google.api.gax.rpc.UnaryCallable;\nimport com.google.api.pathtemplate.PathTemplate;"
-)
+for library in s.get_staging_dirs():
+    # put any special-case replacements here
+    s.replace(
+        "owl-bot-staging/v1/google-cloud-vision/src/main/java/com/google/cloud/vision/v1/ProductSearchClient.java",
+        "private final OperationsClient operationsClient;",
+        f"private final OperationsClient operationsClient;\n{DEPRECATED_RESOURCE_NAME_HELPERS}"
+    )
+    s.replace(
+        "owl-bot-staging/v1/google-cloud-vision/src/main/java/com/google/cloud/vision/v1/ProductSearchClient.java",
+        "import com.google.api.gax.rpc.UnaryCallable;",
+        "import com.google.api.gax.rpc.UnaryCallable;\nimport com.google.api.pathtemplate.PathTemplate;"
+    )
+    s.move(library)
 
-java.format_code("google-cloud-vision/src/main/java/com/google/cloud/vision/v1/")
+s.remove_staging_dirs()
+java.common_templates()

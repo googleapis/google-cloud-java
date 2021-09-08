@@ -19,7 +19,7 @@ If you are using Maven with [BOM][libraries-bom], add this to your pom.xml file
     <dependency>
       <groupId>com.google.cloud</groupId>
       <artifactId>libraries-bom</artifactId>
-      <version>22.0.0</version>
+      <version>23.0.0</version>
       <type>pom</type>
       <scope>import</scope>
     </dependency>
@@ -42,7 +42,7 @@ If you are using Maven without BOM, add this to your dependencies:
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-vision</artifactId>
-  <version>2.0.5</version>
+  <version>2.0.6</version>
 </dependency>
 
 ```
@@ -50,20 +50,20 @@ If you are using Maven without BOM, add this to your dependencies:
 If you are using Gradle 5.x or later, add this to your dependencies
 
 ```Groovy
-implementation platform('com.google.cloud:libraries-bom:22.0.0')
+implementation platform('com.google.cloud:libraries-bom:23.0.0')
 
 implementation 'com.google.cloud:google-cloud-vision'
 ```
 If you are using Gradle without BOM, add this to your dependencies
 
 ```Groovy
-implementation 'com.google.cloud:google-cloud-vision:2.0.5'
+implementation 'com.google.cloud:google-cloud-vision:2.0.7'
 ```
 
 If you are using SBT, add this to your dependencies
 
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-vision" % "2.0.5"
+libraryDependencies += "com.google.cloud" % "google-cloud-vision" % "2.0.7"
 ```
 
 ## Authentication
@@ -107,9 +107,6 @@ Samples are in the [`samples/`](https://github.com/googleapis/java-vision/tree/m
 
 | Sample                      | Source Code                       | Try it |
 | --------------------------- | --------------------------------- | ------ |
-| Async Batch Image Annotation | [source code](https://github.com/googleapis/java-vision/blob/master/samples/generated/src/main/java/com/google/cloud/examples/vision/v1/VisionAsyncBatchAnnotateImages.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-vision&page=editor&open_in_editor=samples/generated/src/main/java/com/google/cloud/examples/vision/v1/VisionAsyncBatchAnnotateImages.java) |
-| None | [source code](https://github.com/googleapis/java-vision/blob/master/samples/generated/src/main/java/com/google/cloud/examples/vision/v1/VisionBatchAnnotateFiles.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-vision&page=editor&open_in_editor=samples/generated/src/main/java/com/google/cloud/examples/vision/v1/VisionBatchAnnotateFiles.java) |
-| None | [source code](https://github.com/googleapis/java-vision/blob/master/samples/generated/src/main/java/com/google/cloud/examples/vision/v1/VisionBatchAnnotateFilesGcs.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-vision&page=editor&open_in_editor=samples/generated/src/main/java/com/google/cloud/examples/vision/v1/VisionBatchAnnotateFilesGcs.java) |
 | Async Batch Annotate Images Gcs | [source code](https://github.com/googleapis/java-vision/blob/master/samples/snippets/src/main/java/com/example/vision/AsyncBatchAnnotateImagesGcs.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-vision&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/vision/AsyncBatchAnnotateImagesGcs.java) |
 | Detect | [source code](https://github.com/googleapis/java-vision/blob/master/samples/snippets/src/main/java/com/example/vision/Detect.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-vision&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/vision/Detect.java) |
 | Detect Batch Annotate Files | [source code](https://github.com/googleapis/java-vision/blob/master/samples/snippets/src/main/java/com/example/vision/DetectBatchAnnotateFiles.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-vision&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/vision/DetectBatchAnnotateFiles.java) |

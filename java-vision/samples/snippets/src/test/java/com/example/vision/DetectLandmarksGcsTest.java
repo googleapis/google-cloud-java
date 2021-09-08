@@ -54,8 +54,7 @@ public class DetectLandmarksGcsTest {
     System.setOut(originalPrintStream);
   }
 
-  @Rule
-  public MultipleAttemptsRule multipleAttemptsRule = new MultipleAttemptsRule(3);
+  @Rule public MultipleAttemptsRule multipleAttemptsRule = new MultipleAttemptsRule(3);
 
   @Test
   public void testLandmarksUrl() throws Exception {

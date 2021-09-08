@@ -25,7 +25,6 @@ import com.google.cloud.vision.v1.ImportProductSetsInputConfig;
 import com.google.cloud.vision.v1.ImportProductSetsResponse;
 import com.google.cloud.vision.v1.ProductSearchClient;
 import com.google.cloud.vision.v1.ReferenceImage;
-// [END vision_product_search_tutorial_import]
 import java.io.PrintStream;
 import javax.swing.JPanel;
 import net.sourceforge.argparse4j.ArgumentParsers;
@@ -34,6 +33,8 @@ import net.sourceforge.argparse4j.inf.ArgumentParserException;
 import net.sourceforge.argparse4j.inf.Namespace;
 import net.sourceforge.argparse4j.inf.Subparser;
 import net.sourceforge.argparse4j.inf.Subparsers;
+
+// [END vision_product_search_tutorial_import]
 
 /**
  * This application demonstrates how to Import Product Sets in Cloud Vision Product Search.
