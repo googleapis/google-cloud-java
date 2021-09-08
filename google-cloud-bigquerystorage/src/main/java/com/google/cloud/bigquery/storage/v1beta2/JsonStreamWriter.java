@@ -72,7 +72,8 @@ public class JsonStreamWriter implements AutoCloseable {
         builder.channelProvider,
         builder.credentialsProvider,
         builder.endpoint,
-        builder.flowControlSettings);
+        builder.flowControlSettings,
+        builder.traceId);
     this.streamWriter = streamWriterBuilder.build();
     this.streamName = builder.streamName;
   }
@@ -156,7 +157,8 @@ public class JsonStreamWriter implements AutoCloseable {
       @Nullable TransportChannelProvider channelProvider,
       @Nullable CredentialsProvider credentialsProvider,
       @Nullable String endpoint,
-      @Nullable FlowControlSettings flowControlSettings) {
+      @Nullable FlowControlSettings flowControlSettings,
+      @Nullable String traceId) {
     if (channelProvider != null) {
       streamWriterBuilder.setChannelProvider(channelProvider);
     }
@@ -165,6 +167,11 @@ public class JsonStreamWriter implements AutoCloseable {
     }
     if (endpoint != null) {
       streamWriterBuilder.setEndpoint(endpoint);
+    }
+    if (traceId != null) {
+      streamWriterBuilder.setTraceId("JsonWriterBeta_" + traceId);
+    } else {
+      streamWriterBuilder.setTraceId("JsonWriterBeta:null");
     }
     if (flowControlSettings != null) {
       if (flowControlSettings.getMaxOutstandingRequestBytes() != null) {
@@ -246,6 +253,7 @@ public class JsonStreamWriter implements AutoCloseable {
     private FlowControlSettings flowControlSettings;
     private String endpoint;
     private boolean createDefaultStream = false;
+    private String traceId;
 
     private static String streamPatternString =
         "(projects/[^/]+/datasets/[^/]+/tables/[^/]+)/streams/[^/]+";
@@ -333,6 +341,17 @@ public class JsonStreamWriter implements AutoCloseable {
      */
     public Builder setEndpoint(String endpoint) {
       this.endpoint = Preconditions.checkNotNull(endpoint, "Endpoint is null.");
+      return this;
+    }
+
+    /**
+     * Setter for a traceId to help identify traffic origin.
+     *
+     * @param traceId
+     * @return Builder
+     */
+    public Builder setTraceId(String traceId) {
+      this.traceId = Preconditions.checkNotNull(traceId, "TraceId is null.");
       return this;
     }
 
