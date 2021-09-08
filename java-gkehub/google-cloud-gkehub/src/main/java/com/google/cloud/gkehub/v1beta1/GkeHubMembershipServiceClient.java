@@ -41,8 +41,15 @@ import javax.annotation.Generated;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
- * Service Description: GKE Hub CRUD API for the Membership resource. The Membership service is
- * currently only available in the global location.
+ * Service Description: The GKE Hub MembershipService handles the registration of many Kubernetes
+ * clusters to Google Cloud, represented with the
+ * [Membership][google.cloud.gkehub.v1beta1.Membership] resource.
+ *
+ * <p>GKE Hub is currently only available in the global region.
+ *
+ * <p>&#42;&#42;Membership management may be non-trivial:&#42;&#42; it is recommended to use one of
+ * the Google-provided client libraries or tools where possible when working with Membership
+ * resources.
  *
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
@@ -365,7 +372,11 @@ public class GkeHubMembershipServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Adds a new Membership.
+   * Creates a new Membership.
+   *
+   * <p>&#42;&#42;This is currently only supported for GKE clusters on Google Cloud&#42;&#42;. To
+   * register other clusters, follow the instructions at
+   * https://cloud.google.com/anthos/multicluster-management/connect/registering-a-cluster.
    *
    * <p>Sample code:
    *
@@ -404,7 +415,11 @@ public class GkeHubMembershipServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Adds a new Membership.
+   * Creates a new Membership.
+   *
+   * <p>&#42;&#42;This is currently only supported for GKE clusters on Google Cloud&#42;&#42;. To
+   * register other clusters, follow the instructions at
+   * https://cloud.google.com/anthos/multicluster-management/connect/registering-a-cluster.
    *
    * <p>Sample code:
    *
@@ -416,6 +431,7 @@ public class GkeHubMembershipServiceClient implements BackgroundResource {
    *           .setParent("parent-995424086")
    *           .setMembershipId("membershipId517665681")
    *           .setResource(Membership.newBuilder().build())
+   *           .setRequestId("requestId693933066")
    *           .build();
    *   Membership response = gkeHubMembershipServiceClient.createMembershipAsync(request).get();
    * }
@@ -431,7 +447,11 @@ public class GkeHubMembershipServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Adds a new Membership.
+   * Creates a new Membership.
+   *
+   * <p>&#42;&#42;This is currently only supported for GKE clusters on Google Cloud&#42;&#42;. To
+   * register other clusters, follow the instructions at
+   * https://cloud.google.com/anthos/multicluster-management/connect/registering-a-cluster.
    *
    * <p>Sample code:
    *
@@ -443,6 +463,7 @@ public class GkeHubMembershipServiceClient implements BackgroundResource {
    *           .setParent("parent-995424086")
    *           .setMembershipId("membershipId517665681")
    *           .setResource(Membership.newBuilder().build())
+   *           .setRequestId("requestId693933066")
    *           .build();
    *   OperationFuture<Membership, OperationMetadata> future =
    *       gkeHubMembershipServiceClient.createMembershipOperationCallable().futureCall(request);
@@ -458,7 +479,11 @@ public class GkeHubMembershipServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Adds a new Membership.
+   * Creates a new Membership.
+   *
+   * <p>&#42;&#42;This is currently only supported for GKE clusters on Google Cloud&#42;&#42;. To
+   * register other clusters, follow the instructions at
+   * https://cloud.google.com/anthos/multicluster-management/connect/registering-a-cluster.
    *
    * <p>Sample code:
    *
@@ -470,6 +495,7 @@ public class GkeHubMembershipServiceClient implements BackgroundResource {
    *           .setParent("parent-995424086")
    *           .setMembershipId("membershipId517665681")
    *           .setResource(Membership.newBuilder().build())
+   *           .setRequestId("requestId693933066")
    *           .build();
    *   ApiFuture<Operation> future =
    *       gkeHubMembershipServiceClient.createMembershipCallable().futureCall(request);
@@ -485,6 +511,10 @@ public class GkeHubMembershipServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Removes a Membership.
+   *
+   * <p>&#42;&#42;This is currently only supported for GKE clusters on Google Cloud&#42;&#42;. To
+   * unregister other clusters, follow the instructions at
+   * https://cloud.google.com/anthos/multicluster-management/connect/unregistering-a-cluster.
    *
    * <p>Sample code:
    *
@@ -509,13 +539,20 @@ public class GkeHubMembershipServiceClient implements BackgroundResource {
   /**
    * Removes a Membership.
    *
+   * <p>&#42;&#42;This is currently only supported for GKE clusters on Google Cloud&#42;&#42;. To
+   * unregister other clusters, follow the instructions at
+   * https://cloud.google.com/anthos/multicluster-management/connect/unregistering-a-cluster.
+   *
    * <p>Sample code:
    *
    * <pre>{@code
    * try (GkeHubMembershipServiceClient gkeHubMembershipServiceClient =
    *     GkeHubMembershipServiceClient.create()) {
    *   DeleteMembershipRequest request =
-   *       DeleteMembershipRequest.newBuilder().setName("name3373707").build();
+   *       DeleteMembershipRequest.newBuilder()
+   *           .setName("name3373707")
+   *           .setRequestId("requestId693933066")
+   *           .build();
    *   gkeHubMembershipServiceClient.deleteMembershipAsync(request).get();
    * }
    * }</pre>
@@ -532,13 +569,20 @@ public class GkeHubMembershipServiceClient implements BackgroundResource {
   /**
    * Removes a Membership.
    *
+   * <p>&#42;&#42;This is currently only supported for GKE clusters on Google Cloud&#42;&#42;. To
+   * unregister other clusters, follow the instructions at
+   * https://cloud.google.com/anthos/multicluster-management/connect/unregistering-a-cluster.
+   *
    * <p>Sample code:
    *
    * <pre>{@code
    * try (GkeHubMembershipServiceClient gkeHubMembershipServiceClient =
    *     GkeHubMembershipServiceClient.create()) {
    *   DeleteMembershipRequest request =
-   *       DeleteMembershipRequest.newBuilder().setName("name3373707").build();
+   *       DeleteMembershipRequest.newBuilder()
+   *           .setName("name3373707")
+   *           .setRequestId("requestId693933066")
+   *           .build();
    *   OperationFuture<Empty, OperationMetadata> future =
    *       gkeHubMembershipServiceClient.deleteMembershipOperationCallable().futureCall(request);
    *   // Do something.
@@ -555,13 +599,20 @@ public class GkeHubMembershipServiceClient implements BackgroundResource {
   /**
    * Removes a Membership.
    *
+   * <p>&#42;&#42;This is currently only supported for GKE clusters on Google Cloud&#42;&#42;. To
+   * unregister other clusters, follow the instructions at
+   * https://cloud.google.com/anthos/multicluster-management/connect/unregistering-a-cluster.
+   *
    * <p>Sample code:
    *
    * <pre>{@code
    * try (GkeHubMembershipServiceClient gkeHubMembershipServiceClient =
    *     GkeHubMembershipServiceClient.create()) {
    *   DeleteMembershipRequest request =
-   *       DeleteMembershipRequest.newBuilder().setName("name3373707").build();
+   *       DeleteMembershipRequest.newBuilder()
+   *           .setName("name3373707")
+   *           .setRequestId("requestId693933066")
+   *           .build();
    *   ApiFuture<Operation> future =
    *       gkeHubMembershipServiceClient.deleteMembershipCallable().futureCall(request);
    *   // Do something.
@@ -595,7 +646,9 @@ public class GkeHubMembershipServiceClient implements BackgroundResource {
    * @param resource Required. Only fields specified in update_mask are updated. If you specify a
    *     field in the update_mask but don't specify its value here that field will be deleted. If
    *     you are updating a map field, set the value of a key to null or empty string to delete the
-   *     key from the map. It's not possible to update a key's value to the empty string.
+   *     key from the map. It's not possible to update a key's value to the empty string. If you
+   *     specify the update_mask to be a special path "&#42;", fully replaces all user-modifiable
+   *     fields to match `resource`.
    * @param updateMask Required. Mask of fields to update. At least one field path must be specified
    *     in this mask.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -625,6 +678,7 @@ public class GkeHubMembershipServiceClient implements BackgroundResource {
    *           .setName("name3373707")
    *           .setUpdateMask(FieldMask.newBuilder().build())
    *           .setResource(Membership.newBuilder().build())
+   *           .setRequestId("requestId693933066")
    *           .build();
    *   Membership response = gkeHubMembershipServiceClient.updateMembershipAsync(request).get();
    * }
@@ -652,6 +706,7 @@ public class GkeHubMembershipServiceClient implements BackgroundResource {
    *           .setName("name3373707")
    *           .setUpdateMask(FieldMask.newBuilder().build())
    *           .setResource(Membership.newBuilder().build())
+   *           .setRequestId("requestId693933066")
    *           .build();
    *   OperationFuture<Membership, OperationMetadata> future =
    *       gkeHubMembershipServiceClient.updateMembershipOperationCallable().futureCall(request);
@@ -679,6 +734,7 @@ public class GkeHubMembershipServiceClient implements BackgroundResource {
    *           .setName("name3373707")
    *           .setUpdateMask(FieldMask.newBuilder().build())
    *           .setResource(Membership.newBuilder().build())
+   *           .setRequestId("requestId693933066")
    *           .build();
    *   ApiFuture<Operation> future =
    *       gkeHubMembershipServiceClient.updateMembershipCallable().futureCall(request);
@@ -694,6 +750,9 @@ public class GkeHubMembershipServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Generates the manifest for deployment of the GKE connect agent.
+   *
+   * <p>&#42;&#42;This method is used internally by Google-provided libraries.&#42;&#42; Most
+   * clients should not need to call this method directly.
    *
    * <p>Sample code:
    *
@@ -725,6 +784,9 @@ public class GkeHubMembershipServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Generates the manifest for deployment of the GKE connect agent.
+   *
+   * <p>&#42;&#42;This method is used internally by Google-provided libraries.&#42;&#42; Most
+   * clients should not need to call this method directly.
    *
    * <p>Sample code:
    *

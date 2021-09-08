@@ -39,6 +39,7 @@ public final class DeleteMembershipRequest extends com.google.protobuf.Generated
 
   private DeleteMembershipRequest() {
     name_ = "";
+    requestId_ = "";
   }
 
   @java.lang.Override
@@ -75,6 +76,13 @@ public final class DeleteMembershipRequest extends com.google.protobuf.Generated
               java.lang.String s = input.readStringRequireUtf8();
 
               name_ = s;
+              break;
+            }
+          case 34:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              requestId_ = s;
               break;
             }
           default:
@@ -162,6 +170,75 @@ public final class DeleteMembershipRequest extends com.google.protobuf.Generated
     }
   }
 
+  public static final int REQUEST_ID_FIELD_NUMBER = 4;
+  private volatile java.lang.Object requestId_;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A request ID to identify requests. Specify a unique request ID
+   * so that if you must retry your request, the server will know to ignore
+   * the request if it has already been completed. The server will guarantee
+   * that for at least 60 minutes after the first request.
+   * For example, consider a situation where you make an initial request and
+   * the request times out. If you make the request again with the same request
+   * ID, the server can check if original operation with the same request ID
+   * was received, and if so, will ignore the second request. This prevents
+   * clients from accidentally creating duplicate commitments.
+   * The request ID must be a valid UUID with the exception that zero UUID is
+   * not supported (00000000-0000-0000-0000-000000000000).
+   * </pre>
+   *
+   * <code>string request_id = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The requestId.
+   */
+  @java.lang.Override
+  public java.lang.String getRequestId() {
+    java.lang.Object ref = requestId_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      requestId_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A request ID to identify requests. Specify a unique request ID
+   * so that if you must retry your request, the server will know to ignore
+   * the request if it has already been completed. The server will guarantee
+   * that for at least 60 minutes after the first request.
+   * For example, consider a situation where you make an initial request and
+   * the request times out. If you make the request again with the same request
+   * ID, the server can check if original operation with the same request ID
+   * was received, and if so, will ignore the second request. This prevents
+   * clients from accidentally creating duplicate commitments.
+   * The request ID must be a valid UUID with the exception that zero UUID is
+   * not supported (00000000-0000-0000-0000-000000000000).
+   * </pre>
+   *
+   * <code>string request_id = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for requestId.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getRequestIdBytes() {
+    java.lang.Object ref = requestId_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      requestId_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -179,6 +256,9 @@ public final class DeleteMembershipRequest extends com.google.protobuf.Generated
     if (!getNameBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name_);
     }
+    if (!getRequestIdBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 4, requestId_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -190,6 +270,9 @@ public final class DeleteMembershipRequest extends com.google.protobuf.Generated
     size = 0;
     if (!getNameBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, name_);
+    }
+    if (!getRequestIdBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, requestId_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -208,6 +291,7 @@ public final class DeleteMembershipRequest extends com.google.protobuf.Generated
         (com.google.cloud.gkehub.v1beta1.DeleteMembershipRequest) obj;
 
     if (!getName().equals(other.getName())) return false;
+    if (!getRequestId().equals(other.getRequestId())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -221,6 +305,8 @@ public final class DeleteMembershipRequest extends com.google.protobuf.Generated
     hash = (19 * hash) + getDescriptor().hashCode();
     hash = (37 * hash) + NAME_FIELD_NUMBER;
     hash = (53 * hash) + getName().hashCode();
+    hash = (37 * hash) + REQUEST_ID_FIELD_NUMBER;
+    hash = (53 * hash) + getRequestId().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -369,6 +455,8 @@ public final class DeleteMembershipRequest extends com.google.protobuf.Generated
       super.clear();
       name_ = "";
 
+      requestId_ = "";
+
       return this;
     }
 
@@ -397,6 +485,7 @@ public final class DeleteMembershipRequest extends com.google.protobuf.Generated
       com.google.cloud.gkehub.v1beta1.DeleteMembershipRequest result =
           new com.google.cloud.gkehub.v1beta1.DeleteMembershipRequest(this);
       result.name_ = name_;
+      result.requestId_ = requestId_;
       onBuilt();
       return result;
     }
@@ -449,6 +538,10 @@ public final class DeleteMembershipRequest extends com.google.protobuf.Generated
         return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        onChanged();
+      }
+      if (!other.getRequestId().isEmpty()) {
+        requestId_ = other.requestId_;
         onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
@@ -588,6 +681,162 @@ public final class DeleteMembershipRequest extends com.google.protobuf.Generated
       checkByteStringIsUtf8(value);
 
       name_ = value;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object requestId_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A request ID to identify requests. Specify a unique request ID
+     * so that if you must retry your request, the server will know to ignore
+     * the request if it has already been completed. The server will guarantee
+     * that for at least 60 minutes after the first request.
+     * For example, consider a situation where you make an initial request and
+     * the request times out. If you make the request again with the same request
+     * ID, the server can check if original operation with the same request ID
+     * was received, and if so, will ignore the second request. This prevents
+     * clients from accidentally creating duplicate commitments.
+     * The request ID must be a valid UUID with the exception that zero UUID is
+     * not supported (00000000-0000-0000-0000-000000000000).
+     * </pre>
+     *
+     * <code>string request_id = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The requestId.
+     */
+    public java.lang.String getRequestId() {
+      java.lang.Object ref = requestId_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        requestId_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A request ID to identify requests. Specify a unique request ID
+     * so that if you must retry your request, the server will know to ignore
+     * the request if it has already been completed. The server will guarantee
+     * that for at least 60 minutes after the first request.
+     * For example, consider a situation where you make an initial request and
+     * the request times out. If you make the request again with the same request
+     * ID, the server can check if original operation with the same request ID
+     * was received, and if so, will ignore the second request. This prevents
+     * clients from accidentally creating duplicate commitments.
+     * The request ID must be a valid UUID with the exception that zero UUID is
+     * not supported (00000000-0000-0000-0000-000000000000).
+     * </pre>
+     *
+     * <code>string request_id = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for requestId.
+     */
+    public com.google.protobuf.ByteString getRequestIdBytes() {
+      java.lang.Object ref = requestId_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        requestId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A request ID to identify requests. Specify a unique request ID
+     * so that if you must retry your request, the server will know to ignore
+     * the request if it has already been completed. The server will guarantee
+     * that for at least 60 minutes after the first request.
+     * For example, consider a situation where you make an initial request and
+     * the request times out. If you make the request again with the same request
+     * ID, the server can check if original operation with the same request ID
+     * was received, and if so, will ignore the second request. This prevents
+     * clients from accidentally creating duplicate commitments.
+     * The request ID must be a valid UUID with the exception that zero UUID is
+     * not supported (00000000-0000-0000-0000-000000000000).
+     * </pre>
+     *
+     * <code>string request_id = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The requestId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setRequestId(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+
+      requestId_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A request ID to identify requests. Specify a unique request ID
+     * so that if you must retry your request, the server will know to ignore
+     * the request if it has already been completed. The server will guarantee
+     * that for at least 60 minutes after the first request.
+     * For example, consider a situation where you make an initial request and
+     * the request times out. If you make the request again with the same request
+     * ID, the server can check if original operation with the same request ID
+     * was received, and if so, will ignore the second request. This prevents
+     * clients from accidentally creating duplicate commitments.
+     * The request ID must be a valid UUID with the exception that zero UUID is
+     * not supported (00000000-0000-0000-0000-000000000000).
+     * </pre>
+     *
+     * <code>string request_id = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearRequestId() {
+
+      requestId_ = getDefaultInstance().getRequestId();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A request ID to identify requests. Specify a unique request ID
+     * so that if you must retry your request, the server will know to ignore
+     * the request if it has already been completed. The server will guarantee
+     * that for at least 60 minutes after the first request.
+     * For example, consider a situation where you make an initial request and
+     * the request times out. If you make the request again with the same request
+     * ID, the server can check if original operation with the same request ID
+     * was received, and if so, will ignore the second request. This prevents
+     * clients from accidentally creating duplicate commitments.
+     * The request ID must be a valid UUID with the exception that zero UUID is
+     * not supported (00000000-0000-0000-0000-000000000000).
+     * </pre>
+     *
+     * <code>string request_id = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The bytes for requestId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setRequestIdBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
+      requestId_ = value;
       onChanged();
       return this;
     }

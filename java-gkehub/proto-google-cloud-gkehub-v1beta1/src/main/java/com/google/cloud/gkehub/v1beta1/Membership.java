@@ -657,11 +657,11 @@ public final class Membership extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. Description of this membership, limited to 63 characters.
+   * Optional. Description of this membership, limited to 63 characters.
    * Must match the regex: `[a-zA-Z0-9][a-zA-Z0-9_&#92;-&#92;.&#92; ]*`
    * </pre>
    *
-   * <code>string description = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string description = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The description.
    */
@@ -681,11 +681,11 @@ public final class Membership extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. Description of this membership, limited to 63 characters.
+   * Optional. Description of this membership, limited to 63 characters.
    * Must match the regex: `[a-zA-Z0-9][a-zA-Z0-9_&#92;-&#92;.&#92; ]*`
    * </pre>
    *
-   * <code>string description = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string description = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for description.
    */
@@ -2196,11 +2196,11 @@ public final class Membership extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Description of this membership, limited to 63 characters.
+     * Optional. Description of this membership, limited to 63 characters.
      * Must match the regex: `[a-zA-Z0-9][a-zA-Z0-9_&#92;-&#92;.&#92; ]*`
      * </pre>
      *
-     * <code>string description = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string description = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The description.
      */
@@ -2219,11 +2219,11 @@ public final class Membership extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Description of this membership, limited to 63 characters.
+     * Optional. Description of this membership, limited to 63 characters.
      * Must match the regex: `[a-zA-Z0-9][a-zA-Z0-9_&#92;-&#92;.&#92; ]*`
      * </pre>
      *
-     * <code>string description = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string description = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The bytes for description.
      */
@@ -2242,11 +2242,11 @@ public final class Membership extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Description of this membership, limited to 63 characters.
+     * Optional. Description of this membership, limited to 63 characters.
      * Must match the regex: `[a-zA-Z0-9][a-zA-Z0-9_&#92;-&#92;.&#92; ]*`
      * </pre>
      *
-     * <code>string description = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string description = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The description to set.
      * @return This builder for chaining.
@@ -2264,11 +2264,11 @@ public final class Membership extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Description of this membership, limited to 63 characters.
+     * Optional. Description of this membership, limited to 63 characters.
      * Must match the regex: `[a-zA-Z0-9][a-zA-Z0-9_&#92;-&#92;.&#92; ]*`
      * </pre>
      *
-     * <code>string description = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string description = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return This builder for chaining.
      */
@@ -2282,11 +2282,11 @@ public final class Membership extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Description of this membership, limited to 63 characters.
+     * Optional. Description of this membership, limited to 63 characters.
      * Must match the regex: `[a-zA-Z0-9][a-zA-Z0-9_&#92;-&#92;.&#92; ]*`
      * </pre>
      *
-     * <code>string description = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string description = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The bytes for description to set.
      * @return This builder for chaining.
