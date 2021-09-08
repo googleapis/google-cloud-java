@@ -1,10 +1,10 @@
-# Copyright 2018 Google LLC
+# Copyright 2021 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
 # You may obtain a copy of the License at
 #
-#     http://www.apache.org/licenses/LICENSE-2.0
+#     https://www.apache.org/licenses/LICENSE-2.0
 #
 # Unless required by applicable law or agreed to in writing, software
 # distributed under the License is distributed on an "AS IS" BASIS,
@@ -12,15 +12,8 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-"""This script is used to synthesize generated parts of this library."""
-
 import synthtool as s
-import synthtool.languages.java as java
-
-AUTOSYNTH_MULTIPLE_COMMITS = True
-
-service = 'kms'
-versions = ['v1']
+from synthtool.languages import java
 
 IMPLEMENTS_RESOURCE_NAME = "implements ResourceName"
 EXTENDS_KEY_NAME = "extends KeyName"
@@ -260,52 +253,44 @@ TEST_IAM_METHODS = """
   }
 """
 
+for library in s.get_staging_dirs():
+    # put any special-case replacements here
+    s.replace(
+        "**/KeyManagementServiceClient.java",
+        ENCRYPT_INSERTION_POINT,
+        "\g<1>\n\n" + ENCRYPT_METHOD
+    )
 
+    s.replace(
+        "**/KeyManagementServiceClient.java",
+        GET_IAM_INSERTION_POINT,
+        "\g<1>\n\n" + GET_IAM_METHODS
+    )
 
-for version in versions:
-  library = java.bazel_library(
-      service=service,
-      version=version,
-      bazel_target=f'//google/cloud/{service}/{version}:google-cloud-{service}-{version}-java',
-  )
+    s.replace(
+        "**/KeyManagementServiceClient.java",
+        SET_IAM_INSERTION_POINT,
+        "\g<1>\n\n" + SET_IAM_METHODS
+    )
 
-  s.replace(
-  	"**/KeyManagementServiceClient.java",
-  	ENCRYPT_INSERTION_POINT,
-  	"\g<1>\n\n" + ENCRYPT_METHOD
-  )
+    s.replace(
+        "**/KeyManagementServiceClient.java",
+        TEST_IAM_INSERTION_POINT,
+        "\g<1>\n\n" + TEST_IAM_METHODS
+    )
 
-  s.replace(
-  	"**/KeyManagementServiceClient.java",
-  	GET_IAM_INSERTION_POINT,
-  	"\g<1>\n\n" + GET_IAM_METHODS
-  )
+    s.replace(
+        "**/KeyRingName.java",
+        IMPLEMENTS_RESOURCE_NAME,
+        EXTENDS_KEY_NAME
+    )
 
-  s.replace(
-  	"**/KeyManagementServiceClient.java",
-  	SET_IAM_INSERTION_POINT,
-  	"\g<1>\n\n" + SET_IAM_METHODS
-  )
+    s.replace(
+        "**/CryptoKeyName.java",
+        IMPLEMENTS_RESOURCE_NAME,
+        EXTENDS_KEY_NAME)
 
-  s.replace(
-  	"**/KeyManagementServiceClient.java",
-  	TEST_IAM_INSERTION_POINT,
-  	"\g<1>\n\n" + TEST_IAM_METHODS
-  )
+    s.move(library)
 
-  s.replace(
-  	"**/KeyRingName.java",
-  	IMPLEMENTS_RESOURCE_NAME,
-  	EXTENDS_KEY_NAME
-  )
-
-  s.replace(
-  	"**/CryptoKeyName.java",
-  	IMPLEMENTS_RESOURCE_NAME,
-  	EXTENDS_KEY_NAME)
-
-  java.format_code('google-cloud-kms/src')
-  java.format_code(f'grpc-google-cloud-{service}-{version}/src')
-  java.format_code(f'proto-google-cloud-{service}-{version}/src')
-
+s.remove_staging_dirs()
 java.common_templates()
