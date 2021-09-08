@@ -110,8 +110,8 @@
 
   <modules>
     <module>google-cloud-securitycenter-settings</module>
-    <module>proto-google-cloud-securitycenter-settings-v1beta1</module>
     <module>grpc-google-cloud-securitycenter-settings-v1beta1</module>
+    <module>proto-google-cloud-securitycenter-settings-v1beta1</module>
     <module>google-cloud-securitycenter-settings-bom</module>
   </modules>
 
