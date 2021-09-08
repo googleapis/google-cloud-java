@@ -4,14 +4,14 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/java-secretmanager.git",
-        "sha": "d9eb9ec47a3f578d9870c2259f57cbaf783ac361"
+        "sha": "4d739aea93209c1655cb62852458a3eaa888c664"
       }
     },
     {
       "git": {
         "name": "synthtool",
         "remote": "https://github.com/googleapis/synthtool.git",
-        "sha": "5c0fa62eea9c33ebe61e582424b659eb264e1ba4"
+        "sha": "17ee6e5c08f2eb47029beee4776ce990e56b3925"
       }
     }
   ]
