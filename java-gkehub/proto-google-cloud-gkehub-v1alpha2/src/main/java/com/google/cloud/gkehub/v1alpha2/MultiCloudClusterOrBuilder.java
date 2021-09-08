@@ -18,18 +18,19 @@
 
 package com.google.cloud.gkehub.v1alpha2;
 
-public interface GkeClusterOrBuilder
+public interface MultiCloudClusterOrBuilder
     extends
-    // @@protoc_insertion_point(interface_extends:google.cloud.gkehub.v1alpha2.GkeCluster)
+    // @@protoc_insertion_point(interface_extends:google.cloud.gkehub.v1alpha2.MultiCloudCluster)
     com.google.protobuf.MessageOrBuilder {
 
   /**
    *
    *
    * <pre>
-   * Immutable. Self-link of the GCP resource for the GKE cluster. For example:
-   *     //container.googleapis.com/projects/my-project/locations/us-west1-a/clusters/my-cluster
-   * Zonal clusters are also supported.
+   * Immutable. Self-link of the GCP resource for the GKE Multi-Cloud cluster. For
+   * example:
+   *  //gkemulticloud.googleapis.com/projects/my-project/locations/us-west1-a/awsClusters/my-cluster
+   *  //gkemulticloud.googleapis.com/projects/my-project/locations/us-west1-a/azureClusters/my-cluster
    * </pre>
    *
    * <code>string resource_link = 1 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -41,9 +42,10 @@ public interface GkeClusterOrBuilder
    *
    *
    * <pre>
-   * Immutable. Self-link of the GCP resource for the GKE cluster. For example:
-   *     //container.googleapis.com/projects/my-project/locations/us-west1-a/clusters/my-cluster
-   * Zonal clusters are also supported.
+   * Immutable. Self-link of the GCP resource for the GKE Multi-Cloud cluster. For
+   * example:
+   *  //gkemulticloud.googleapis.com/projects/my-project/locations/us-west1-a/awsClusters/my-cluster
+   *  //gkemulticloud.googleapis.com/projects/my-project/locations/us-west1-a/azureClusters/my-cluster
    * </pre>
    *
    * <code>string resource_link = 1 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -56,8 +58,9 @@ public interface GkeClusterOrBuilder
    *
    *
    * <pre>
-   * Output only. If cluster_missing is set then it denotes that the GKE cluster no longer
-   * exists in the GKE Control Plane.
+   * Output only. If cluster_missing is set then it denotes that
+   * API(gkemulticloud.googleapis.com) resource for this GKE Multi-Cloud cluster
+   * no longer exists.
    * </pre>
    *
    * <code>bool cluster_missing = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>

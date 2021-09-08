@@ -27,7 +27,7 @@ public interface MembershipEndpointOrBuilder
    *
    *
    * <pre>
-   * Optional. GKE-specific information. Only present if this Membership is a GKE cluster.
+   * Optional. Specific information for a GKE-on-GCP cluster.
    * </pre>
    *
    * <code>
@@ -41,7 +41,7 @@ public interface MembershipEndpointOrBuilder
    *
    *
    * <pre>
-   * Optional. GKE-specific information. Only present if this Membership is a GKE cluster.
+   * Optional. Specific information for a GKE-on-GCP cluster.
    * </pre>
    *
    * <code>
@@ -55,7 +55,7 @@ public interface MembershipEndpointOrBuilder
    *
    *
    * <pre>
-   * Optional. GKE-specific information. Only present if this Membership is a GKE cluster.
+   * Optional. Specific information for a GKE-on-GCP cluster.
    * </pre>
    *
    * <code>
@@ -63,6 +63,88 @@ public interface MembershipEndpointOrBuilder
    * </code>
    */
   com.google.cloud.gkehub.v1alpha2.GkeClusterOrBuilder getGkeClusterOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Specific information for a GKE On-Prem cluster.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.gkehub.v1alpha2.OnPremCluster on_prem_cluster = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the onPremCluster field is set.
+   */
+  boolean hasOnPremCluster();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Specific information for a GKE On-Prem cluster.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.gkehub.v1alpha2.OnPremCluster on_prem_cluster = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The onPremCluster.
+   */
+  com.google.cloud.gkehub.v1alpha2.OnPremCluster getOnPremCluster();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Specific information for a GKE On-Prem cluster.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.gkehub.v1alpha2.OnPremCluster on_prem_cluster = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.gkehub.v1alpha2.OnPremClusterOrBuilder getOnPremClusterOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Specific information for a GKE Multi-Cloud cluster.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.gkehub.v1alpha2.MultiCloudCluster multi_cloud_cluster = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the multiCloudCluster field is set.
+   */
+  boolean hasMultiCloudCluster();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Specific information for a GKE Multi-Cloud cluster.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.gkehub.v1alpha2.MultiCloudCluster multi_cloud_cluster = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The multiCloudCluster.
+   */
+  com.google.cloud.gkehub.v1alpha2.MultiCloudCluster getMultiCloudCluster();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Specific information for a GKE Multi-Cloud cluster.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.gkehub.v1alpha2.MultiCloudCluster multi_cloud_cluster = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.gkehub.v1alpha2.MultiCloudClusterOrBuilder getMultiCloudClusterOrBuilder();
 
   /**
    *
@@ -163,4 +245,6 @@ public interface MembershipEndpointOrBuilder
    * </code>
    */
   com.google.cloud.gkehub.v1alpha2.KubernetesResourceOrBuilder getKubernetesResourceOrBuilder();
+
+  public com.google.cloud.gkehub.v1alpha2.MembershipEndpoint.TypeCase getTypeCase();
 }

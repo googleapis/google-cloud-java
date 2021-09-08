@@ -52,6 +52,14 @@ public final class MembershipProto {
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_gkehub_v1alpha2_GkeCluster_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_gkehub_v1alpha2_OnPremCluster_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_gkehub_v1alpha2_OnPremCluster_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_gkehub_v1alpha2_MultiCloudCluster_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_gkehub_v1alpha2_MultiCloudCluster_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_gkehub_v1alpha2_KubernetesMetadata_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_gkehub_v1alpha2_KubernetesMetadata_fieldAccessorTable;
@@ -159,127 +167,137 @@ public final class MembershipProto {
           + "_PREM\020\001\022\017\n\013MULTI_CLOUD\020\002:g\352Ad\n gkehub.go"
           + "ogleapis.com/Membership\022@projects/{proje"
           + "ct}/locations/{location}/memberships/{me"
-          + "mbership}B\006\n\004type\"\200\002\n\022MembershipEndpoint"
-          + "\022B\n\013gke_cluster\030\001 \001(\0132(.google.cloud.gke"
-          + "hub.v1alpha2.GkeClusterB\003\340A\001\022R\n\023kubernet"
-          + "es_metadata\030\002 \001(\01320.google.cloud.gkehub."
-          + "v1alpha2.KubernetesMetadataB\003\340A\003\022R\n\023kube"
-          + "rnetes_resource\030\003 \001(\01320.google.cloud.gke"
-          + "hub.v1alpha2.KubernetesResourceB\003\340A\001\"\252\002\n"
-          + "\022KubernetesResource\022#\n\026membership_cr_man"
-          + "ifest\030\001 \001(\tB\003\340A\004\022Q\n\024membership_resources"
-          + "\030\003 \003(\0132..google.cloud.gkehub.v1alpha2.Re"
-          + "sourceManifestB\003\340A\003\022N\n\021connect_resources"
-          + "\030\004 \003(\0132..google.cloud.gkehub.v1alpha2.Re"
-          + "sourceManifestB\003\340A\003\022L\n\020resource_options\030"
-          + "\005 \001(\0132-.google.cloud.gkehub.v1alpha2.Res"
-          + "ourceOptionsB\003\340A\001\"I\n\017ResourceOptions\022\034\n\017"
-          + "connect_version\030\001 \001(\tB\003\340A\001\022\030\n\013v1beta1_cr"
-          + "d\030\002 \001(\010B\003\340A\001\"(\n\nGkeCluster\022\032\n\rresource_l"
-          + "ink\030\001 \001(\tB\003\340A\005\"\337\001\n\022KubernetesMetadata\022*\n"
-          + "\035kubernetes_api_server_version\030\001 \001(\tB\003\340A"
-          + "\003\022\035\n\020node_provider_id\030\002 \001(\tB\003\340A\003\022\027\n\nnode"
-          + "_count\030\003 \001(\005B\003\340A\003\022\027\n\nvcpu_count\030\004 \001(\005B\003\340"
-          + "A\003\022\026\n\tmemory_mb\030\005 \001(\005B\003\340A\003\0224\n\013update_tim"
-          + "e\030d \001(\0132\032.google.protobuf.TimestampB\003\340A\003"
-          + "\"}\n\tAuthority\022\023\n\006issuer\030\001 \001(\tB\003\340A\001\022\026\n\toi"
-          + "dc_jwks\030\005 \001(\014B\003\340A\001\022\036\n\021identity_provider\030"
-          + "\003 \001(\tB\003\340A\003\022#\n\026workload_identity_pool\030\004 \001"
-          + "(\tB\003\340A\003\"\301\001\n\017MembershipState\022E\n\004code\030\001 \001("
-          + "\01622.google.cloud.gkehub.v1alpha2.Members"
-          + "hipState.CodeB\003\340A\003\"g\n\004Code\022\024\n\020CODE_UNSPE"
-          + "CIFIED\020\000\022\014\n\010CREATING\020\001\022\t\n\005READY\020\002\022\014\n\010DEL"
-          + "ETING\020\003\022\014\n\010UPDATING\020\004\022\024\n\020SERVICE_UPDATIN"
-          + "G\020\005\"\257\001\n\026ListMembershipsRequest\0228\n\006parent"
-          + "\030\001 \001(\tB(\340A\002\372A\"\022 gkehub.googleapis.com/Me"
-          + "mbership\022\026\n\tpage_size\030\002 \001(\005B\003\340A\001\022\027\n\npage"
-          + "_token\030\003 \001(\tB\003\340A\001\022\023\n\006filter\030\004 \001(\tB\003\340A\001\022\025"
-          + "\n\010order_by\030\005 \001(\tB\003\340A\001\"\204\001\n\027ListMembership"
-          + "sResponse\022;\n\tresources\030\001 \003(\0132(.google.cl"
-          + "oud.gkehub.v1alpha2.Membership\022\027\n\017next_p"
-          + "age_token\030\002 \001(\t\022\023\n\013unreachable\030\003 \003(\t\"N\n\024"
-          + "GetMembershipRequest\0226\n\004name\030\001 \001(\tB(\340A\002\372"
-          + "A\"\n gkehub.googleapis.com/Membership\"\260\001\n"
-          + "\027CreateMembershipRequest\0228\n\006parent\030\001 \001(\t"
-          + "B(\340A\002\372A\"\022 gkehub.googleapis.com/Membersh"
-          + "ip\022\032\n\rmembership_id\030\002 \001(\tB\003\340A\002\022?\n\010resour"
-          + "ce\030\003 \001(\0132(.google.cloud.gkehub.v1alpha2."
-          + "MembershipB\003\340A\002\"Q\n\027DeleteMembershipReque"
-          + "st\0226\n\004name\030\001 \001(\tB(\340A\002\372A\"\n gkehub.googlea"
-          + "pis.com/Membership\"\243\001\n\027UpdateMembershipR"
-          + "equest\022\021\n\004name\030\001 \001(\tB\003\340A\002\0224\n\013update_mask"
-          + "\030\002 \001(\0132\032.google.protobuf.FieldMaskB\003\340A\002\022"
-          + "?\n\010resource\030\003 \001(\0132(.google.cloud.gkehub."
-          + "v1alpha2.MembershipB\003\340A\002\"\315\001\n\036GenerateCon"
-          + "nectManifestRequest\022\021\n\004name\030\001 \001(\tB\003\340A\002\022\026"
-          + "\n\tnamespace\030\002 \001(\tB\003\340A\001\022\022\n\005proxy\030\003 \001(\014B\003\340"
-          + "A\001\022\024\n\007version\030\004 \001(\tB\003\340A\001\022\027\n\nis_upgrade\030\005"
-          + " \001(\010B\003\340A\001\022\025\n\010registry\030\006 \001(\tB\003\340A\001\022&\n\031imag"
-          + "e_pull_secret_content\030\007 \001(\014B\003\340A\001\"g\n\037Gene"
-          + "rateConnectManifestResponse\022D\n\010manifest\030"
-          + "\001 \003(\01322.google.cloud.gkehub.v1alpha2.Con"
-          + "nectAgentResource\"^\n\024ConnectAgentResourc"
-          + "e\0224\n\004type\030\001 \001(\0132&.google.cloud.gkehub.v1"
-          + "alpha2.TypeMeta\022\020\n\010manifest\030\002 \001(\t\"<\n\020Res"
-          + "ourceManifest\022\020\n\010manifest\030\001 \001(\t\022\026\n\016clust"
-          + "er_scoped\030\002 \001(\010\"-\n\010TypeMeta\022\014\n\004kind\030\001 \001("
-          + "\t\022\023\n\013api_version\030\002 \001(\t\",\n\024InitializeHubR"
-          + "equest\022\024\n\007project\030\001 \001(\tB\003\340A\002\"Q\n\025Initiali"
-          + "zeHubResponse\022\030\n\020service_identity\030\001 \001(\t\022"
-          + "\036\n\026workload_identity_pool\030\002 \001(\t\"\371\001\n\021Oper"
-          + "ationMetadata\0224\n\013create_time\030\001 \001(\0132\032.goo"
-          + "gle.protobuf.TimestampB\003\340A\003\0221\n\010end_time\030"
-          + "\002 \001(\0132\032.google.protobuf.TimestampB\003\340A\003\022\023"
-          + "\n\006target\030\003 \001(\tB\003\340A\003\022\021\n\004verb\030\004 \001(\tB\003\340A\003\022\032"
-          + "\n\rstatus_detail\030\005 \001(\tB\003\340A\003\022\035\n\020cancel_req"
-          + "uested\030\006 \001(\010B\003\340A\003\022\030\n\013api_version\030\007 \001(\tB\003"
-          + "\340A\0032\333\014\n\006GkeHub\022\306\001\n\017ListMemberships\0224.goo"
-          + "gle.cloud.gkehub.v1alpha2.ListMembership"
-          + "sRequest\0325.google.cloud.gkehub.v1alpha2."
-          + "ListMembershipsResponse\"F\202\323\344\223\0027\0225/v1alph"
-          + "a2/{parent=projects/*/locations/*}/membe"
-          + "rships\332A\006parent\022\263\001\n\rGetMembership\0222.goog"
-          + "le.cloud.gkehub.v1alpha2.GetMembershipRe"
-          + "quest\032(.google.cloud.gkehub.v1alpha2.Mem"
-          + "bership\"D\202\323\344\223\0027\0225/v1alpha2/{name=project"
-          + "s/*/locations/*/memberships/*}\332A\004name\022\364\001"
-          + "\n\020CreateMembership\0225.google.cloud.gkehub"
-          + ".v1alpha2.CreateMembershipRequest\032\035.goog"
-          + "le.longrunning.Operation\"\211\001\202\323\344\223\002A\"5/v1al"
-          + "pha2/{parent=projects/*/locations/*}/mem"
-          + "berships:\010resource\332A\035parent,resource,mem"
-          + "bership_id\312A\037\n\nMembership\022\021OperationMeta"
-          + "data\022\333\001\n\020DeleteMembership\0225.google.cloud"
-          + ".gkehub.v1alpha2.DeleteMembershipRequest"
-          + "\032\035.google.longrunning.Operation\"q\202\323\344\223\0027*"
+          + "mbership}B\006\n\004type\"\254\003\n\022MembershipEndpoint"
+          + "\022D\n\013gke_cluster\030\001 \001(\0132(.google.cloud.gke"
+          + "hub.v1alpha2.GkeClusterB\003\340A\001H\000\022K\n\017on_pre"
+          + "m_cluster\030\004 \001(\0132+.google.cloud.gkehub.v1"
+          + "alpha2.OnPremClusterB\003\340A\001H\000\022S\n\023multi_clo"
+          + "ud_cluster\030\005 \001(\0132/.google.cloud.gkehub.v"
+          + "1alpha2.MultiCloudClusterB\003\340A\001H\000\022R\n\023kube"
+          + "rnetes_metadata\030\002 \001(\01320.google.cloud.gke"
+          + "hub.v1alpha2.KubernetesMetadataB\003\340A\003\022R\n\023"
+          + "kubernetes_resource\030\003 \001(\01320.google.cloud"
+          + ".gkehub.v1alpha2.KubernetesResourceB\003\340A\001"
+          + "B\006\n\004type\"\252\002\n\022KubernetesResource\022#\n\026membe"
+          + "rship_cr_manifest\030\001 \001(\tB\003\340A\004\022Q\n\024membersh"
+          + "ip_resources\030\003 \003(\0132..google.cloud.gkehub"
+          + ".v1alpha2.ResourceManifestB\003\340A\003\022N\n\021conne"
+          + "ct_resources\030\004 \003(\0132..google.cloud.gkehub"
+          + ".v1alpha2.ResourceManifestB\003\340A\003\022L\n\020resou"
+          + "rce_options\030\005 \001(\0132-.google.cloud.gkehub."
+          + "v1alpha2.ResourceOptionsB\003\340A\001\"I\n\017Resourc"
+          + "eOptions\022\034\n\017connect_version\030\001 \001(\tB\003\340A\001\022\030"
+          + "\n\013v1beta1_crd\030\002 \001(\010B\003\340A\001\"F\n\nGkeCluster\022\032"
+          + "\n\rresource_link\030\001 \001(\tB\003\340A\005\022\034\n\017cluster_mi"
+          + "ssing\030\002 \001(\010B\003\340A\003\"e\n\rOnPremCluster\022\032\n\rres"
+          + "ource_link\030\001 \001(\tB\003\340A\005\022\034\n\017cluster_missing"
+          + "\030\002 \001(\010B\003\340A\003\022\032\n\radmin_cluster\030\003 \001(\010B\003\340A\005\""
+          + "M\n\021MultiCloudCluster\022\032\n\rresource_link\030\001 "
+          + "\001(\tB\003\340A\005\022\034\n\017cluster_missing\030\002 \001(\010B\003\340A\003\"\337"
+          + "\001\n\022KubernetesMetadata\022*\n\035kubernetes_api_"
+          + "server_version\030\001 \001(\tB\003\340A\003\022\035\n\020node_provid"
+          + "er_id\030\002 \001(\tB\003\340A\003\022\027\n\nnode_count\030\003 \001(\005B\003\340A"
+          + "\003\022\027\n\nvcpu_count\030\004 \001(\005B\003\340A\003\022\026\n\tmemory_mb\030"
+          + "\005 \001(\005B\003\340A\003\0224\n\013update_time\030d \001(\0132\032.google"
+          + ".protobuf.TimestampB\003\340A\003\"}\n\tAuthority\022\023\n"
+          + "\006issuer\030\001 \001(\tB\003\340A\001\022\026\n\toidc_jwks\030\005 \001(\014B\003\340"
+          + "A\001\022\036\n\021identity_provider\030\003 \001(\tB\003\340A\003\022#\n\026wo"
+          + "rkload_identity_pool\030\004 \001(\tB\003\340A\003\"\301\001\n\017Memb"
+          + "ershipState\022E\n\004code\030\001 \001(\01622.google.cloud"
+          + ".gkehub.v1alpha2.MembershipState.CodeB\003\340"
+          + "A\003\"g\n\004Code\022\024\n\020CODE_UNSPECIFIED\020\000\022\014\n\010CREA"
+          + "TING\020\001\022\t\n\005READY\020\002\022\014\n\010DELETING\020\003\022\014\n\010UPDAT"
+          + "ING\020\004\022\024\n\020SERVICE_UPDATING\020\005\"\257\001\n\026ListMemb"
+          + "ershipsRequest\0228\n\006parent\030\001 \001(\tB(\340A\002\372A\"\022 "
+          + "gkehub.googleapis.com/Membership\022\026\n\tpage"
+          + "_size\030\002 \001(\005B\003\340A\001\022\027\n\npage_token\030\003 \001(\tB\003\340A"
+          + "\001\022\023\n\006filter\030\004 \001(\tB\003\340A\001\022\025\n\010order_by\030\005 \001(\t"
+          + "B\003\340A\001\"\204\001\n\027ListMembershipsResponse\022;\n\tres"
+          + "ources\030\001 \003(\0132(.google.cloud.gkehub.v1alp"
+          + "ha2.Membership\022\027\n\017next_page_token\030\002 \001(\t\022"
+          + "\023\n\013unreachable\030\003 \003(\t\"N\n\024GetMembershipReq"
+          + "uest\0226\n\004name\030\001 \001(\tB(\340A\002\372A\"\n gkehub.googl"
+          + "eapis.com/Membership\"\260\001\n\027CreateMembershi"
+          + "pRequest\0228\n\006parent\030\001 \001(\tB(\340A\002\372A\"\022 gkehub"
+          + ".googleapis.com/Membership\022\032\n\rmembership"
+          + "_id\030\002 \001(\tB\003\340A\002\022?\n\010resource\030\003 \001(\0132(.googl"
+          + "e.cloud.gkehub.v1alpha2.MembershipB\003\340A\002\""
+          + "Q\n\027DeleteMembershipRequest\0226\n\004name\030\001 \001(\t"
+          + "B(\340A\002\372A\"\n gkehub.googleapis.com/Membersh"
+          + "ip\"\243\001\n\027UpdateMembershipRequest\022\021\n\004name\030\001"
+          + " \001(\tB\003\340A\002\0224\n\013update_mask\030\002 \001(\0132\032.google."
+          + "protobuf.FieldMaskB\003\340A\002\022?\n\010resource\030\003 \001("
+          + "\0132(.google.cloud.gkehub.v1alpha2.Members"
+          + "hipB\003\340A\002\"\315\001\n\036GenerateConnectManifestRequ"
+          + "est\022\021\n\004name\030\001 \001(\tB\003\340A\002\022\026\n\tnamespace\030\002 \001("
+          + "\tB\003\340A\001\022\022\n\005proxy\030\003 \001(\014B\003\340A\001\022\024\n\007version\030\004 "
+          + "\001(\tB\003\340A\001\022\027\n\nis_upgrade\030\005 \001(\010B\003\340A\001\022\025\n\010reg"
+          + "istry\030\006 \001(\tB\003\340A\001\022&\n\031image_pull_secret_co"
+          + "ntent\030\007 \001(\014B\003\340A\001\"g\n\037GenerateConnectManif"
+          + "estResponse\022D\n\010manifest\030\001 \003(\01322.google.c"
+          + "loud.gkehub.v1alpha2.ConnectAgentResourc"
+          + "e\"^\n\024ConnectAgentResource\0224\n\004type\030\001 \001(\0132"
+          + "&.google.cloud.gkehub.v1alpha2.TypeMeta\022"
+          + "\020\n\010manifest\030\002 \001(\t\"<\n\020ResourceManifest\022\020\n"
+          + "\010manifest\030\001 \001(\t\022\026\n\016cluster_scoped\030\002 \001(\010\""
+          + "-\n\010TypeMeta\022\014\n\004kind\030\001 \001(\t\022\023\n\013api_version"
+          + "\030\002 \001(\t\",\n\024InitializeHubRequest\022\024\n\007projec"
+          + "t\030\001 \001(\tB\003\340A\002\"Q\n\025InitializeHubResponse\022\030\n"
+          + "\020service_identity\030\001 \001(\t\022\036\n\026workload_iden"
+          + "tity_pool\030\002 \001(\t\"\371\001\n\021OperationMetadata\0224\n"
+          + "\013create_time\030\001 \001(\0132\032.google.protobuf.Tim"
+          + "estampB\003\340A\003\0221\n\010end_time\030\002 \001(\0132\032.google.p"
+          + "rotobuf.TimestampB\003\340A\003\022\023\n\006target\030\003 \001(\tB\003"
+          + "\340A\003\022\021\n\004verb\030\004 \001(\tB\003\340A\003\022\032\n\rstatus_detail\030"
+          + "\005 \001(\tB\003\340A\003\022\035\n\020cancel_requested\030\006 \001(\010B\003\340A"
+          + "\003\022\030\n\013api_version\030\007 \001(\tB\003\340A\0032\333\014\n\006GkeHub\022\306"
+          + "\001\n\017ListMemberships\0224.google.cloud.gkehub"
+          + ".v1alpha2.ListMembershipsRequest\0325.googl"
+          + "e.cloud.gkehub.v1alpha2.ListMembershipsR"
+          + "esponse\"F\202\323\344\223\0027\0225/v1alpha2/{parent=proje"
+          + "cts/*/locations/*}/memberships\332A\006parent\022"
+          + "\263\001\n\rGetMembership\0222.google.cloud.gkehub."
+          + "v1alpha2.GetMembershipRequest\032(.google.c"
+          + "loud.gkehub.v1alpha2.Membership\"D\202\323\344\223\0027\022"
           + "5/v1alpha2/{name=projects/*/locations/*/"
-          + "memberships/*}\332A\004name\312A*\n\025google.protobu"
-          + "f.Empty\022\021OperationMetadata\022\360\001\n\020UpdateMem"
-          + "bership\0225.google.cloud.gkehub.v1alpha2.U"
-          + "pdateMembershipRequest\032\035.google.longrunn"
-          + "ing.Operation\"\205\001\202\323\344\223\002A25/v1alpha2/{name="
-          + "projects/*/locations/*/memberships/*}:\010r"
-          + "esource\332A\031name,resource,update_mask\312A\037\n\n"
-          + "Membership\022\021OperationMetadata\022\355\001\n\027Genera"
-          + "teConnectManifest\022<.google.cloud.gkehub."
-          + "v1alpha2.GenerateConnectManifestRequest\032"
-          + "=.google.cloud.gkehub.v1alpha2.GenerateC"
-          + "onnectManifestResponse\"U\202\323\344\223\002O\022M/v1alpha"
-          + "2/{name=projects/*/locations/*/membershi"
-          + "ps/*}:generateConnectManifest\022\316\001\n\rInitia"
-          + "lizeHub\0222.google.cloud.gkehub.v1alpha2.I"
-          + "nitializeHubRequest\0323.google.cloud.gkehu"
-          + "b.v1alpha2.InitializeHubResponse\"T\202\323\344\223\002N"
-          + "\"I/v1alpha2/{project=projects/*/location"
-          + "s/global/memberships}:initializeHub:\001*\032I"
-          + "\312A\025gkehub.googleapis.com\322A.https://www.g"
-          + "oogleapis.com/auth/cloud-platformB\331\001\n co"
-          + "m.google.cloud.gkehub.v1alpha2B\017Membersh"
-          + "ipProtoP\001ZBgoogle.golang.org/genproto/go"
-          + "ogleapis/cloud/gkehub/v1alpha2;gkehub\252\002\034"
-          + "Google.Cloud.GkeHub.V1Alpha2\312\002\034Google\\Cl"
-          + "oud\\GkeHub\\V1alpha2\352\002\037Google::Cloud::Gke"
-          + "Hub::V1alpha2b\006proto3"
+          + "memberships/*}\332A\004name\022\364\001\n\020CreateMembersh"
+          + "ip\0225.google.cloud.gkehub.v1alpha2.Create"
+          + "MembershipRequest\032\035.google.longrunning.O"
+          + "peration\"\211\001\202\323\344\223\002A\"5/v1alpha2/{parent=pro"
+          + "jects/*/locations/*}/memberships:\010resour"
+          + "ce\332A\035parent,resource,membership_id\312A\037\n\nM"
+          + "embership\022\021OperationMetadata\022\333\001\n\020DeleteM"
+          + "embership\0225.google.cloud.gkehub.v1alpha2"
+          + ".DeleteMembershipRequest\032\035.google.longru"
+          + "nning.Operation\"q\202\323\344\223\0027*5/v1alpha2/{name"
+          + "=projects/*/locations/*/memberships/*}\332A"
+          + "\004name\312A*\n\025google.protobuf.Empty\022\021Operati"
+          + "onMetadata\022\360\001\n\020UpdateMembership\0225.google"
+          + ".cloud.gkehub.v1alpha2.UpdateMembershipR"
+          + "equest\032\035.google.longrunning.Operation\"\205\001"
+          + "\202\323\344\223\002A25/v1alpha2/{name=projects/*/locat"
+          + "ions/*/memberships/*}:\010resource\332A\031name,r"
+          + "esource,update_mask\312A\037\n\nMembership\022\021Oper"
+          + "ationMetadata\022\355\001\n\027GenerateConnectManifes"
+          + "t\022<.google.cloud.gkehub.v1alpha2.Generat"
+          + "eConnectManifestRequest\032=.google.cloud.g"
+          + "kehub.v1alpha2.GenerateConnectManifestRe"
+          + "sponse\"U\202\323\344\223\002O\022M/v1alpha2/{name=projects"
+          + "/*/locations/*/memberships/*}:generateCo"
+          + "nnectManifest\022\316\001\n\rInitializeHub\0222.google"
+          + ".cloud.gkehub.v1alpha2.InitializeHubRequ"
+          + "est\0323.google.cloud.gkehub.v1alpha2.Initi"
+          + "alizeHubResponse\"T\202\323\344\223\002N\"I/v1alpha2/{pro"
+          + "ject=projects/*/locations/global/members"
+          + "hips}:initializeHub:\001*\032I\312A\025gkehub.google"
+          + "apis.com\322A.https://www.googleapis.com/au"
+          + "th/cloud-platformB\331\001\n com.google.cloud.g"
+          + "kehub.v1alpha2B\017MembershipProtoP\001ZBgoogl"
+          + "e.golang.org/genproto/googleapis/cloud/g"
+          + "kehub/v1alpha2;gkehub\252\002\034Google.Cloud.Gke"
+          + "Hub.V1Alpha2\312\002\034Google\\Cloud\\GkeHub\\V1alp"
+          + "ha2\352\002\037Google::Cloud::GkeHub::V1alpha2b\006p"
+          + "roto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -328,7 +346,12 @@ public final class MembershipProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_gkehub_v1alpha2_MembershipEndpoint_descriptor,
             new java.lang.String[] {
-              "GkeCluster", "KubernetesMetadata", "KubernetesResource",
+              "GkeCluster",
+              "OnPremCluster",
+              "MultiCloudCluster",
+              "KubernetesMetadata",
+              "KubernetesResource",
+              "Type",
             });
     internal_static_google_cloud_gkehub_v1alpha2_KubernetesResource_descriptor =
         getDescriptor().getMessageTypes().get(2);
@@ -352,10 +375,26 @@ public final class MembershipProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_gkehub_v1alpha2_GkeCluster_descriptor,
             new java.lang.String[] {
-              "ResourceLink",
+              "ResourceLink", "ClusterMissing",
+            });
+    internal_static_google_cloud_gkehub_v1alpha2_OnPremCluster_descriptor =
+        getDescriptor().getMessageTypes().get(5);
+    internal_static_google_cloud_gkehub_v1alpha2_OnPremCluster_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_gkehub_v1alpha2_OnPremCluster_descriptor,
+            new java.lang.String[] {
+              "ResourceLink", "ClusterMissing", "AdminCluster",
+            });
+    internal_static_google_cloud_gkehub_v1alpha2_MultiCloudCluster_descriptor =
+        getDescriptor().getMessageTypes().get(6);
+    internal_static_google_cloud_gkehub_v1alpha2_MultiCloudCluster_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_gkehub_v1alpha2_MultiCloudCluster_descriptor,
+            new java.lang.String[] {
+              "ResourceLink", "ClusterMissing",
             });
     internal_static_google_cloud_gkehub_v1alpha2_KubernetesMetadata_descriptor =
-        getDescriptor().getMessageTypes().get(5);
+        getDescriptor().getMessageTypes().get(7);
     internal_static_google_cloud_gkehub_v1alpha2_KubernetesMetadata_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_gkehub_v1alpha2_KubernetesMetadata_descriptor,
@@ -368,7 +407,7 @@ public final class MembershipProto {
               "UpdateTime",
             });
     internal_static_google_cloud_gkehub_v1alpha2_Authority_descriptor =
-        getDescriptor().getMessageTypes().get(6);
+        getDescriptor().getMessageTypes().get(8);
     internal_static_google_cloud_gkehub_v1alpha2_Authority_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_gkehub_v1alpha2_Authority_descriptor,
@@ -376,7 +415,7 @@ public final class MembershipProto {
               "Issuer", "OidcJwks", "IdentityProvider", "WorkloadIdentityPool",
             });
     internal_static_google_cloud_gkehub_v1alpha2_MembershipState_descriptor =
-        getDescriptor().getMessageTypes().get(7);
+        getDescriptor().getMessageTypes().get(9);
     internal_static_google_cloud_gkehub_v1alpha2_MembershipState_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_gkehub_v1alpha2_MembershipState_descriptor,
@@ -384,7 +423,7 @@ public final class MembershipProto {
               "Code",
             });
     internal_static_google_cloud_gkehub_v1alpha2_ListMembershipsRequest_descriptor =
-        getDescriptor().getMessageTypes().get(8);
+        getDescriptor().getMessageTypes().get(10);
     internal_static_google_cloud_gkehub_v1alpha2_ListMembershipsRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_gkehub_v1alpha2_ListMembershipsRequest_descriptor,
@@ -392,7 +431,7 @@ public final class MembershipProto {
               "Parent", "PageSize", "PageToken", "Filter", "OrderBy",
             });
     internal_static_google_cloud_gkehub_v1alpha2_ListMembershipsResponse_descriptor =
-        getDescriptor().getMessageTypes().get(9);
+        getDescriptor().getMessageTypes().get(11);
     internal_static_google_cloud_gkehub_v1alpha2_ListMembershipsResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_gkehub_v1alpha2_ListMembershipsResponse_descriptor,
@@ -400,7 +439,7 @@ public final class MembershipProto {
               "Resources", "NextPageToken", "Unreachable",
             });
     internal_static_google_cloud_gkehub_v1alpha2_GetMembershipRequest_descriptor =
-        getDescriptor().getMessageTypes().get(10);
+        getDescriptor().getMessageTypes().get(12);
     internal_static_google_cloud_gkehub_v1alpha2_GetMembershipRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_gkehub_v1alpha2_GetMembershipRequest_descriptor,
@@ -408,7 +447,7 @@ public final class MembershipProto {
               "Name",
             });
     internal_static_google_cloud_gkehub_v1alpha2_CreateMembershipRequest_descriptor =
-        getDescriptor().getMessageTypes().get(11);
+        getDescriptor().getMessageTypes().get(13);
     internal_static_google_cloud_gkehub_v1alpha2_CreateMembershipRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_gkehub_v1alpha2_CreateMembershipRequest_descriptor,
@@ -416,7 +455,7 @@ public final class MembershipProto {
               "Parent", "MembershipId", "Resource",
             });
     internal_static_google_cloud_gkehub_v1alpha2_DeleteMembershipRequest_descriptor =
-        getDescriptor().getMessageTypes().get(12);
+        getDescriptor().getMessageTypes().get(14);
     internal_static_google_cloud_gkehub_v1alpha2_DeleteMembershipRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_gkehub_v1alpha2_DeleteMembershipRequest_descriptor,
@@ -424,7 +463,7 @@ public final class MembershipProto {
               "Name",
             });
     internal_static_google_cloud_gkehub_v1alpha2_UpdateMembershipRequest_descriptor =
-        getDescriptor().getMessageTypes().get(13);
+        getDescriptor().getMessageTypes().get(15);
     internal_static_google_cloud_gkehub_v1alpha2_UpdateMembershipRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_gkehub_v1alpha2_UpdateMembershipRequest_descriptor,
@@ -432,7 +471,7 @@ public final class MembershipProto {
               "Name", "UpdateMask", "Resource",
             });
     internal_static_google_cloud_gkehub_v1alpha2_GenerateConnectManifestRequest_descriptor =
-        getDescriptor().getMessageTypes().get(14);
+        getDescriptor().getMessageTypes().get(16);
     internal_static_google_cloud_gkehub_v1alpha2_GenerateConnectManifestRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_gkehub_v1alpha2_GenerateConnectManifestRequest_descriptor,
@@ -446,7 +485,7 @@ public final class MembershipProto {
               "ImagePullSecretContent",
             });
     internal_static_google_cloud_gkehub_v1alpha2_GenerateConnectManifestResponse_descriptor =
-        getDescriptor().getMessageTypes().get(15);
+        getDescriptor().getMessageTypes().get(17);
     internal_static_google_cloud_gkehub_v1alpha2_GenerateConnectManifestResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_gkehub_v1alpha2_GenerateConnectManifestResponse_descriptor,
@@ -454,7 +493,7 @@ public final class MembershipProto {
               "Manifest",
             });
     internal_static_google_cloud_gkehub_v1alpha2_ConnectAgentResource_descriptor =
-        getDescriptor().getMessageTypes().get(16);
+        getDescriptor().getMessageTypes().get(18);
     internal_static_google_cloud_gkehub_v1alpha2_ConnectAgentResource_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_gkehub_v1alpha2_ConnectAgentResource_descriptor,
@@ -462,7 +501,7 @@ public final class MembershipProto {
               "Type", "Manifest",
             });
     internal_static_google_cloud_gkehub_v1alpha2_ResourceManifest_descriptor =
-        getDescriptor().getMessageTypes().get(17);
+        getDescriptor().getMessageTypes().get(19);
     internal_static_google_cloud_gkehub_v1alpha2_ResourceManifest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_gkehub_v1alpha2_ResourceManifest_descriptor,
@@ -470,7 +509,7 @@ public final class MembershipProto {
               "Manifest", "ClusterScoped",
             });
     internal_static_google_cloud_gkehub_v1alpha2_TypeMeta_descriptor =
-        getDescriptor().getMessageTypes().get(18);
+        getDescriptor().getMessageTypes().get(20);
     internal_static_google_cloud_gkehub_v1alpha2_TypeMeta_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_gkehub_v1alpha2_TypeMeta_descriptor,
@@ -478,7 +517,7 @@ public final class MembershipProto {
               "Kind", "ApiVersion",
             });
     internal_static_google_cloud_gkehub_v1alpha2_InitializeHubRequest_descriptor =
-        getDescriptor().getMessageTypes().get(19);
+        getDescriptor().getMessageTypes().get(21);
     internal_static_google_cloud_gkehub_v1alpha2_InitializeHubRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_gkehub_v1alpha2_InitializeHubRequest_descriptor,
@@ -486,7 +525,7 @@ public final class MembershipProto {
               "Project",
             });
     internal_static_google_cloud_gkehub_v1alpha2_InitializeHubResponse_descriptor =
-        getDescriptor().getMessageTypes().get(20);
+        getDescriptor().getMessageTypes().get(22);
     internal_static_google_cloud_gkehub_v1alpha2_InitializeHubResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_gkehub_v1alpha2_InitializeHubResponse_descriptor,
@@ -494,7 +533,7 @@ public final class MembershipProto {
               "ServiceIdentity", "WorkloadIdentityPool",
             });
     internal_static_google_cloud_gkehub_v1alpha2_OperationMetadata_descriptor =
-        getDescriptor().getMessageTypes().get(21);
+        getDescriptor().getMessageTypes().get(23);
     internal_static_google_cloud_gkehub_v1alpha2_OperationMetadata_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_gkehub_v1alpha2_OperationMetadata_descriptor,

@@ -41,8 +41,15 @@ import javax.annotation.Generated;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
- * Service Description: GKE Hub CRUD API for the Membership resource. The Membership service is
- * currently only available in the global location.
+ * Service Description: The GKE Hub service handles the registration of many Kubernetes clusters to
+ * Google Cloud, represented with the [Membership][google.cloud.gkehub.v1alpha2.Membership]
+ * resource.
+ *
+ * <p>GKE Hub is currently only available in the global region.
+ *
+ * <p>&#42;&#42;Membership management may be non-trivial:&#42;&#42; it is recommended to use one of
+ * the Google-provided client libraries or tools where possible when working with Membership
+ * resources.
  *
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
@@ -400,7 +407,11 @@ public class GkeHubClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Adds a new Membership.
+   * Creates a new Membership.
+   *
+   * <p>&#42;&#42;This is currently only supported for GKE clusters on Google Cloud&#42;&#42;. To
+   * register other clusters, follow the instructions at
+   * https://cloud.google.com/anthos/multicluster-management/connect/registering-a-cluster.
    *
    * <p>Sample code:
    *
@@ -438,7 +449,11 @@ public class GkeHubClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Adds a new Membership.
+   * Creates a new Membership.
+   *
+   * <p>&#42;&#42;This is currently only supported for GKE clusters on Google Cloud&#42;&#42;. To
+   * register other clusters, follow the instructions at
+   * https://cloud.google.com/anthos/multicluster-management/connect/registering-a-cluster.
    *
    * <p>Sample code:
    *
@@ -476,7 +491,11 @@ public class GkeHubClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Adds a new Membership.
+   * Creates a new Membership.
+   *
+   * <p>&#42;&#42;This is currently only supported for GKE clusters on Google Cloud&#42;&#42;. To
+   * register other clusters, follow the instructions at
+   * https://cloud.google.com/anthos/multicluster-management/connect/registering-a-cluster.
    *
    * <p>Sample code:
    *
@@ -502,7 +521,11 @@ public class GkeHubClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Adds a new Membership.
+   * Creates a new Membership.
+   *
+   * <p>&#42;&#42;This is currently only supported for GKE clusters on Google Cloud&#42;&#42;. To
+   * register other clusters, follow the instructions at
+   * https://cloud.google.com/anthos/multicluster-management/connect/registering-a-cluster.
    *
    * <p>Sample code:
    *
@@ -528,7 +551,11 @@ public class GkeHubClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Adds a new Membership.
+   * Creates a new Membership.
+   *
+   * <p>&#42;&#42;This is currently only supported for GKE clusters on Google Cloud&#42;&#42;. To
+   * register other clusters, follow the instructions at
+   * https://cloud.google.com/anthos/multicluster-management/connect/registering-a-cluster.
    *
    * <p>Sample code:
    *
@@ -554,6 +581,10 @@ public class GkeHubClient implements BackgroundResource {
   /**
    * Removes a Membership.
    *
+   * <p>&#42;&#42;This is currently only supported for GKE clusters on Google Cloud&#42;&#42;. To
+   * unregister other clusters, follow the instructions at
+   * https://cloud.google.com/anthos/multicluster-management/connect/unregistering-a-cluster.
+   *
    * <p>Sample code:
    *
    * <pre>{@code
@@ -578,6 +609,10 @@ public class GkeHubClient implements BackgroundResource {
   /**
    * Removes a Membership.
    *
+   * <p>&#42;&#42;This is currently only supported for GKE clusters on Google Cloud&#42;&#42;. To
+   * unregister other clusters, follow the instructions at
+   * https://cloud.google.com/anthos/multicluster-management/connect/unregistering-a-cluster.
+   *
    * <p>Sample code:
    *
    * <pre>{@code
@@ -599,6 +634,10 @@ public class GkeHubClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Removes a Membership.
+   *
+   * <p>&#42;&#42;This is currently only supported for GKE clusters on Google Cloud&#42;&#42;. To
+   * unregister other clusters, follow the instructions at
+   * https://cloud.google.com/anthos/multicluster-management/connect/unregistering-a-cluster.
    *
    * <p>Sample code:
    *
@@ -624,6 +663,10 @@ public class GkeHubClient implements BackgroundResource {
   /**
    * Removes a Membership.
    *
+   * <p>&#42;&#42;This is currently only supported for GKE clusters on Google Cloud&#42;&#42;. To
+   * unregister other clusters, follow the instructions at
+   * https://cloud.google.com/anthos/multicluster-management/connect/unregistering-a-cluster.
+   *
    * <p>Sample code:
    *
    * <pre>{@code
@@ -647,6 +690,10 @@ public class GkeHubClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Removes a Membership.
+   *
+   * <p>&#42;&#42;This is currently only supported for GKE clusters on Google Cloud&#42;&#42;. To
+   * unregister other clusters, follow the instructions at
+   * https://cloud.google.com/anthos/multicluster-management/connect/unregistering-a-cluster.
    *
    * <p>Sample code:
    *
@@ -686,7 +733,9 @@ public class GkeHubClient implements BackgroundResource {
    * @param resource Required. Only fields specified in update_mask are updated. If you specify a
    *     field in the update_mask but don't specify its value here that field will be deleted. If
    *     you are updating a map field, set the value of a key to null or empty string to delete the
-   *     key from the map. It's not possible to update a key's value to the empty string.
+   *     key from the map. It's not possible to update a key's value to the empty string. If you
+   *     specify the update_mask to be a special path "&#42;", fully replaces all user-modifiable
+   *     fields to match `resource`.
    * @param updateMask Required. Mask of fields to update.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -781,6 +830,9 @@ public class GkeHubClient implements BackgroundResource {
   /**
    * Generates the manifest for deployment of the GKE connect agent.
    *
+   * <p>&#42;&#42;This method is used internally by Google-provided libraries.&#42;&#42; Most
+   * clients should not need to call this method directly.
+   *
    * <p>Sample code:
    *
    * <pre>{@code
@@ -810,6 +862,9 @@ public class GkeHubClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Generates the manifest for deployment of the GKE connect agent.
+   *
+   * <p>&#42;&#42;This method is used internally by Google-provided libraries.&#42;&#42; Most
+   * clients should not need to call this method directly.
    *
    * <p>Sample code:
    *
