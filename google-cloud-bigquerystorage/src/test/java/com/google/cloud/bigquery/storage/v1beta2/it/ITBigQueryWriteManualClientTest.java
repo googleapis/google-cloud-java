@@ -29,7 +29,6 @@ import com.google.cloud.bigquery.storage.test.Test.*;
 import com.google.cloud.bigquery.storage.v1beta2.*;
 import com.google.cloud.bigquery.testing.RemoteBigQueryHelper;
 import com.google.protobuf.Descriptors;
-import com.google.protobuf.Int64Value;
 import java.io.IOException;
 import java.math.BigDecimal;
 import java.util.*;
@@ -145,44 +144,22 @@ public class ITBigQueryWriteManualClientTest {
     }
   }
 
-  private AppendRowsRequest.Builder createAppendRequest(String streamName, String[] messages) {
-    AppendRowsRequest.Builder requestBuilder = AppendRowsRequest.newBuilder();
-
-    AppendRowsRequest.ProtoData.Builder dataBuilder = AppendRowsRequest.ProtoData.newBuilder();
-    dataBuilder.setWriterSchema(ProtoSchemaConverter.convert(FooType.getDescriptor()));
-
+  ProtoRows CreateProtoRows(String[] messages) {
     ProtoRows.Builder rows = ProtoRows.newBuilder();
     for (String message : messages) {
       FooType foo = FooType.newBuilder().setFoo(message).build();
       rows.addSerializedRows(foo.toByteString());
     }
-    dataBuilder.setRows(rows.build());
-    return requestBuilder.setProtoRows(dataBuilder.build()).setWriteStream(streamName);
+    return rows.build();
   }
 
-  private AppendRowsRequest.Builder createAppendRequestComplicateType(
-      String streamName, String[] messages) {
-    AppendRowsRequest.Builder requestBuilder = AppendRowsRequest.newBuilder();
-
-    AppendRowsRequest.ProtoData.Builder dataBuilder = AppendRowsRequest.ProtoData.newBuilder();
-    dataBuilder.setWriterSchema(ProtoSchemaConverter.convert(ComplicateType.getDescriptor()));
-
+  ProtoRows CreateProtoRowsComplex(String[] messages) {
     ProtoRows.Builder rows = ProtoRows.newBuilder();
     for (String message : messages) {
       ComplicateType foo =
           ComplicateType.newBuilder()
               .setInnerType(InnerType.newBuilder().addValue(message).addValue(message).build())
               .build();
-      rows.addSerializedRows(foo.toByteString());
-    }
-    dataBuilder.setRows(rows.build());
-    return requestBuilder.setProtoRows(dataBuilder.build()).setWriteStream(streamName);
-  }
-
-  ProtoRows CreateProtoRows(String[] messages) {
-    ProtoRows.Builder rows = ProtoRows.newBuilder();
-    for (String message : messages) {
-      FooType foo = FooType.newBuilder().setFoo(message).build();
       rows.addSerializedRows(foo.toByteString());
     }
     return rows.build();
@@ -431,20 +408,17 @@ public class ITBigQueryWriteManualClientTest {
                 .setWriteStream(WriteStream.newBuilder().setType(WriteStream.Type.PENDING).build())
                 .build());
     FinalizeWriteStreamResponse finalizeResponse = FinalizeWriteStreamResponse.getDefaultInstance();
-    try (StreamWriter streamWriter = StreamWriter.newBuilder(writeStream.getName()).build()) {
+    try (StreamWriterV2 streamWriter =
+        StreamWriterV2.newBuilder(writeStream.getName())
+            .setWriterSchema(ProtoSchemaConverter.convert(ComplicateType.getDescriptor()))
+            .build()) {
       LOG.info("Sending two messages");
       ApiFuture<AppendRowsResponse> response =
-          streamWriter.append(
-              createAppendRequestComplicateType(writeStream.getName(), new String[] {"aaa"})
-                  .setOffset(Int64Value.of(0L))
-                  .build());
+          streamWriter.append(CreateProtoRowsComplex(new String[] {"aaa"}), 0L);
       assertEquals(0, response.get().getAppendResult().getOffset().getValue());
 
       ApiFuture<AppendRowsResponse> response2 =
-          streamWriter.append(
-              createAppendRequestComplicateType(writeStream.getName(), new String[] {"bbb"})
-                  .setOffset(Int64Value.of(1L))
-                  .build());
+          streamWriter.append(CreateProtoRowsComplex(new String[] {"bbb"}), 1L);
       assertEquals(1, response2.get().getAppendResult().getOffset().getValue());
 
       // Nothing showed up since rows are not committed.
@@ -460,10 +434,7 @@ public class ITBigQueryWriteManualClientTest {
               FinalizeWriteStreamRequest.newBuilder().setName(writeStream.getName()).build());
 
       ApiFuture<AppendRowsResponse> response3 =
-          streamWriter.append(
-              createAppendRequestComplicateType(writeStream.getName(), new String[] {"ccc"})
-                  .setOffset(Int64Value.of(2L))
-                  .build());
+          streamWriter.append(CreateProtoRows(new String[] {"ccc"}), 2L);
       try {
         response3.get();
         Assert.fail("Append to finalized stream should fail.");
@@ -503,23 +474,16 @@ public class ITBigQueryWriteManualClientTest {
                 .setWriteStream(
                     WriteStream.newBuilder().setType(WriteStream.Type.COMMITTED).build())
                 .build());
-    try (StreamWriter streamWriter = StreamWriter.newBuilder(writeStream.getName()).build()) {
-      AppendRowsRequest request =
-          createAppendRequest(writeStream.getName(), new String[] {"aaa"}).build();
-      request
-          .toBuilder()
-          .setProtoRows(request.getProtoRows().toBuilder().clearWriterSchema().build())
-          .build();
+    try (StreamWriterV2 streamWriter =
+        StreamWriterV2.newBuilder(writeStream.getName())
+            .setWriterSchema(ProtoSchemaConverter.convert(FooType.getDescriptor()))
+            .build()) {
       ApiFuture<AppendRowsResponse> response =
-          streamWriter.append(
-              createAppendRequest(writeStream.getName(), new String[] {"aaa"}).build());
+          streamWriter.append(CreateProtoRows(new String[] {"aaa"}), -1L);
       assertEquals(0L, response.get().getAppendResult().getOffset().getValue());
       // Send in a bogus stream name should cause in connection error.
       ApiFuture<AppendRowsResponse> response2 =
-          streamWriter.append(
-              createAppendRequest(writeStream.getName(), new String[] {"aaa"})
-                  .setOffset(Int64Value.of(100L))
-                  .build());
+          streamWriter.append(CreateProtoRows(new String[] {"aaa"}), 100L);
       try {
         response2.get();
         Assert.fail("Should fail");
@@ -529,8 +493,7 @@ public class ITBigQueryWriteManualClientTest {
       }
       // We can keep sending requests on the same stream.
       ApiFuture<AppendRowsResponse> response3 =
-          streamWriter.append(
-              createAppendRequest(writeStream.getName(), new String[] {"aaa"}).build());
+          streamWriter.append(CreateProtoRows(new String[] {"aaa"}), -1L);
       assertEquals(1L, response3.get().getAppendResult().getOffset().getValue());
     } finally {
     }
@@ -545,23 +508,23 @@ public class ITBigQueryWriteManualClientTest {
                 .setWriteStream(
                     WriteStream.newBuilder().setType(WriteStream.Type.COMMITTED).build())
                 .build());
-    try (StreamWriter streamWriter = StreamWriter.newBuilder(writeStream.getName()).build()) {
+    try (StreamWriterV2 streamWriter =
+        StreamWriterV2.newBuilder(writeStream.getName())
+            .setWriterSchema(ProtoSchemaConverter.convert(FooType.getDescriptor()))
+            .build()) {
       ApiFuture<AppendRowsResponse> response =
-          streamWriter.append(
-              createAppendRequest(writeStream.getName(), new String[] {"aaa"})
-                  .setOffset(Int64Value.of(0L))
-                  .build());
+          streamWriter.append(CreateProtoRows(new String[] {"aaa"}), 0L);
       assertEquals(0L, response.get().getAppendResult().getOffset().getValue());
     }
 
-    try (StreamWriter streamWriter = StreamWriter.newBuilder(writeStream.getName()).build()) {
+    try (StreamWriterV2 streamWriter =
+        StreamWriterV2.newBuilder(writeStream.getName())
+            .setWriterSchema(ProtoSchemaConverter.convert(FooType.getDescriptor()))
+            .build()) {
       // Currently there is a bug that reconnection must wait 5 seconds to get the real row count.
       Thread.sleep(5000L);
       ApiFuture<AppendRowsResponse> response =
-          streamWriter.append(
-              createAppendRequest(writeStream.getName(), new String[] {"bbb"})
-                  .setOffset(Int64Value.of(1L))
-                  .build());
+          streamWriter.append(CreateProtoRows(new String[] {"bbb"}), 1L);
       assertEquals(1L, response.get().getAppendResult().getOffset().getValue());
     }
   }

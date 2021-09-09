@@ -117,23 +117,6 @@ public class JsonStreamWriter implements AutoCloseable {
   }
 
   /**
-   * Refreshes connection for a JsonStreamWriter by first flushing all remaining rows, then
-   * recreates stream writer, and finally setting the descriptor. All of these actions need to be
-   * performed atomically to avoid having synchronization issues with append(). Flushing all rows
-   * first is necessary since if there are rows remaining when the connection refreshes, it will
-   * send out the old writer schema instead of the new one.
-   */
-  void refreshConnection()
-      throws IOException, InterruptedException, Descriptors.DescriptorValidationException {
-    synchronized (this) {
-      this.streamWriter.close();
-      this.streamWriter = streamWriterBuilder.build();
-      this.descriptor =
-          BQTableSchemaToProtoDescriptor.convertBQTableSchemaToProtoDescriptor(this.tableSchema);
-    }
-  }
-
-  /**
    * Gets streamName
    *
    * @return String

@@ -16,4 +16,16 @@
     <className>com/google/cloud/bigquery/storage/v1beta2/JsonStreamWriter</className>
     <method>com.google.cloud.bigquery.storage.v1beta2.JsonStreamWriter$Builder newBuilder(java.lang.String, com.google.cloud.bigquery.Schema)</method>
   </difference>
+  <difference>
+    <differenceType>8001</differenceType>
+    <className>com/google/cloud/bigquery/storage/v1beta2/StreamWriter</className>
+  </difference>
+  <difference>
+    <differenceType>8001</differenceType>
+    <className>com/google/cloud/bigquery/storage/v1beta2/StreamWriter$Builder</className>
+   </difference>
+  <difference>
+    <differenceType>8001</differenceType>
+    <className>com/google/cloud/bigquery/storage/v1beta2/OnSchemaUpdateRunnable</className>
+   </difference>
 </differences>
