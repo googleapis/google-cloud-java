@@ -38,8 +38,7 @@ import java.util.Arrays;
 
 class StreamingAutoMlObjectTracking {
 
-  public static void main(String[] args)
-      throws IOException {
+  public static void main(String[] args) throws IOException {
     // TODO(developer): Replace these variables before running the sample.
     String filePath = "YOUR_VIDEO_FILE";
     String projectId = "YOUR_PROJECT_ID";
@@ -64,9 +63,7 @@ class StreamingAutoMlObjectTracking {
           String.format("projects/%s/locations/us-central1/models/%s", projectId, modelId);
 
       StreamingAutomlObjectTrackingConfig streamingAutomlObjectTrackingConfig =
-          StreamingAutomlObjectTrackingConfig.newBuilder()
-              .setModelName(modelPath)
-              .build();
+          StreamingAutomlObjectTrackingConfig.newBuilder().setModelName(modelPath).build();
 
       StreamingVideoConfig streamingVideoConfig =
           StreamingVideoConfig.newBuilder()
@@ -79,9 +76,7 @@ class StreamingAutoMlObjectTracking {
 
       // The first request must **only** contain the audio configuration:
       call.send(
-          StreamingAnnotateVideoRequest.newBuilder()
-              .setVideoConfig(streamingVideoConfig)
-              .build());
+          StreamingAnnotateVideoRequest.newBuilder().setVideoConfig(streamingVideoConfig).build());
 
       // Subsequent requests must **only** contain the audio data.
       // Send the requests in chunks

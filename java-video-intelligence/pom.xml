@@ -154,17 +154,17 @@
   </build>
 
   <modules>
-    <module>proto-google-cloud-video-intelligence-v1p3beta1</module>
-    <module>proto-google-cloud-video-intelligence-v1beta2</module>
-    <module>proto-google-cloud-video-intelligence-v1p1beta1</module>
-    <module>proto-google-cloud-video-intelligence-v1</module>
-    <module>proto-google-cloud-video-intelligence-v1p2beta1</module>
+    <module>google-cloud-video-intelligence</module>
     <module>grpc-google-cloud-video-intelligence-v1p1beta1</module>
     <module>grpc-google-cloud-video-intelligence-v1beta2</module>
     <module>grpc-google-cloud-video-intelligence-v1</module>
     <module>grpc-google-cloud-video-intelligence-v1p2beta1</module>
     <module>grpc-google-cloud-video-intelligence-v1p3beta1</module>
-    <module>google-cloud-video-intelligence</module>
+    <module>proto-google-cloud-video-intelligence-v1p3beta1</module>
+    <module>proto-google-cloud-video-intelligence-v1beta2</module>
+    <module>proto-google-cloud-video-intelligence-v1p1beta1</module>
+    <module>proto-google-cloud-video-intelligence-v1</module>
+    <module>proto-google-cloud-video-intelligence-v1p2beta1</module>
     <module>google-cloud-video-intelligence-bom</module>
   </modules>
 

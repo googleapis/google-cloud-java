@@ -21,7 +21,6 @@ import static com.google.common.truth.Truth.assertThat;
 import io.grpc.Status;
 import io.grpc.StatusRuntimeException;
 import java.io.ByteArrayOutputStream;
-import java.io.IOException;
 import java.io.PrintStream;
 import org.junit.After;
 import org.junit.Before;

@@ -47,8 +47,7 @@ public class DetectTextTest {
           "METRO",
           "RUE",
           "CARLO");
-  @Rule
-  public MultipleAttemptsRule multipleAttemptsRule = new MultipleAttemptsRule(3);
+  @Rule public MultipleAttemptsRule multipleAttemptsRule = new MultipleAttemptsRule(3);
   private ByteArrayOutputStream bout;
   private PrintStream out;
   private PrintStream originalPrintStream;

@@ -45,7 +45,7 @@ If you are using Maven without BOM, add this to your dependencies:
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-video-intelligence</artifactId>
-  <version>2.0.4</version>
+  <version>2.0.5</version>
 </dependency>
 <dependency>
   <groupId>com.google.cloud</groupId>
@@ -58,20 +58,20 @@ If you are using Maven without BOM, add this to your dependencies:
 If you are using Gradle 5.x or later, add this to your dependencies
 
 ```Groovy
-implementation platform('com.google.cloud:libraries-bom:22.0.0')
+implementation platform('com.google.cloud:libraries-bom:23.0.0')
 
 implementation 'com.google.cloud:google-cloud-video-intelligence'
 ```
 If you are using Gradle without BOM, add this to your dependencies
 
 ```Groovy
-implementation 'com.google.cloud:google-cloud-video-intelligence:2.0.4'
+implementation 'com.google.cloud:google-cloud-video-intelligence:2.0.5'
 ```
 
 If you are using SBT, add this to your dependencies
 
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-video-intelligence" % "2.0.4"
+libraryDependencies += "com.google.cloud" % "google-cloud-video-intelligence" % "2.0.5"
 ```
 
 ## Authentication
@@ -115,8 +115,6 @@ Samples are in the [`samples/`](https://github.com/googleapis/java-video-intelli
 
 | Sample                      | Source Code                       | Try it |
 | --------------------------- | --------------------------------- | ------ |
-| None | [source code](https://github.com/googleapis/java-video-intelligence/blob/master/samples/generated/src/main/java/com/google/cloud/examples/videointelligence/v1p3beta1/VideoDetectLogoBeta.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-video-intelligence&page=editor&open_in_editor=samples/generated/src/main/java/com/google/cloud/examples/videointelligence/v1p3beta1/VideoDetectLogoBeta.java) |
-| None | [source code](https://github.com/googleapis/java-video-intelligence/blob/master/samples/generated/src/main/java/com/google/cloud/examples/videointelligence/v1p3beta1/VideoDetectLogoGcsBeta.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-video-intelligence&page=editor&open_in_editor=samples/generated/src/main/java/com/google/cloud/examples/videointelligence/v1p3beta1/VideoDetectLogoGcsBeta.java) |
 | Detect | [source code](https://github.com/googleapis/java-video-intelligence/blob/master/samples/snippets/src/main/java/beta/video/Detect.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-video-intelligence&page=editor&open_in_editor=samples/snippets/src/main/java/beta/video/Detect.java) |
 | Detect Logo | [source code](https://github.com/googleapis/java-video-intelligence/blob/master/samples/snippets/src/main/java/beta/video/DetectLogo.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-video-intelligence&page=editor&open_in_editor=samples/snippets/src/main/java/beta/video/DetectLogo.java) |
 | Detect Logo Gcs | [source code](https://github.com/googleapis/java-video-intelligence/blob/master/samples/snippets/src/main/java/beta/video/DetectLogoGcs.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-video-intelligence&page=editor&open_in_editor=samples/snippets/src/main/java/beta/video/DetectLogoGcs.java) |
