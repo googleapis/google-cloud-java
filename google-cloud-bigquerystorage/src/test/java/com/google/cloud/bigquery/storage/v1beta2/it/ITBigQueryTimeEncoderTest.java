@@ -34,7 +34,9 @@ import com.google.cloud.bigquery.storage.v1beta2.AppendRowsResponse;
 import com.google.cloud.bigquery.storage.v1beta2.BigQueryWriteClient;
 import com.google.cloud.bigquery.storage.v1beta2.CivilTimeEncoder;
 import com.google.cloud.bigquery.storage.v1beta2.JsonStreamWriter;
+import com.google.cloud.bigquery.storage.v1beta2.TableFieldSchema;
 import com.google.cloud.bigquery.storage.v1beta2.TableName;
+import com.google.cloud.bigquery.storage.v1beta2.TableSchema;
 import com.google.cloud.bigquery.testing.RemoteBigQueryHelper;
 import com.google.protobuf.Descriptors;
 import java.io.IOException;
@@ -102,9 +104,32 @@ public class ITBigQueryTimeEncoderTest {
       throws IOException, InterruptedException, ExecutionException,
           Descriptors.DescriptorValidationException {
     TableName parent = TableName.of(ServiceOptions.getDefaultProjectId(), DATASET, TABLE);
+    TableFieldSchema TEST_STRING =
+        TableFieldSchema.newBuilder()
+            .setType(TableFieldSchema.Type.STRING)
+            .setMode(TableFieldSchema.Mode.NULLABLE)
+            .setName("test_str")
+            .build();
+    TableFieldSchema TEST_TIME =
+        TableFieldSchema.newBuilder()
+            .setType(TableFieldSchema.Type.TIME)
+            .setMode(TableFieldSchema.Mode.REPEATED)
+            .setName("test_time_micros")
+            .build();
+    TableFieldSchema TEST_DATETIME =
+        TableFieldSchema.newBuilder()
+            .setType(TableFieldSchema.Type.DATETIME)
+            .setMode(TableFieldSchema.Mode.REPEATED)
+            .setName("test_datetime_micros")
+            .build();
+    TableSchema tableSchema =
+        TableSchema.newBuilder()
+            .addFields(0, TEST_STRING)
+            .addFields(1, TEST_TIME)
+            .addFields(2, TEST_DATETIME)
+            .build();
     try (JsonStreamWriter jsonStreamWriter =
-        JsonStreamWriter.newBuilder(parent.toString(), tableInfo.getDefinition().getSchema())
-            .build()) {
+        JsonStreamWriter.newBuilder(parent.toString(), tableSchema).build()) {
       JSONObject row = new JSONObject();
       row.put("test_str", "Start of the day");
       row.put(

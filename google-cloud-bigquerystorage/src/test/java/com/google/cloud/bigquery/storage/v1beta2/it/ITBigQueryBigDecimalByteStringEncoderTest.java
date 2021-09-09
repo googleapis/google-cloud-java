@@ -35,7 +35,9 @@ import com.google.cloud.bigquery.storage.v1beta2.AppendRowsResponse.AppendResult
 import com.google.cloud.bigquery.storage.v1beta2.BigDecimalByteStringEncoder;
 import com.google.cloud.bigquery.storage.v1beta2.BigQueryWriteClient;
 import com.google.cloud.bigquery.storage.v1beta2.JsonStreamWriter;
+import com.google.cloud.bigquery.storage.v1beta2.TableFieldSchema;
 import com.google.cloud.bigquery.storage.v1beta2.TableName;
+import com.google.cloud.bigquery.storage.v1beta2.TableSchema;
 import com.google.cloud.bigquery.testing.RemoteBigQueryHelper;
 import com.google.protobuf.Descriptors;
 import java.io.IOException;
@@ -103,9 +105,32 @@ public class ITBigQueryBigDecimalByteStringEncoderTest {
       throws IOException, InterruptedException, ExecutionException,
           Descriptors.DescriptorValidationException {
     TableName parent = TableName.of(ServiceOptions.getDefaultProjectId(), DATASET, TABLE);
+    TableFieldSchema TEST_NUMERIC_ZERO =
+        TableFieldSchema.newBuilder()
+            .setType(TableFieldSchema.Type.NUMERIC)
+            .setMode(TableFieldSchema.Mode.NULLABLE)
+            .setName("test_numeric_zero")
+            .build();
+    TableFieldSchema TEST_NUMERIC_ONE =
+        TableFieldSchema.newBuilder()
+            .setType(TableFieldSchema.Type.NUMERIC)
+            .setMode(TableFieldSchema.Mode.NULLABLE)
+            .setName("test_numeric_one")
+            .build();
+    TableFieldSchema TEST_NUMERIC_REPEATED =
+        TableFieldSchema.newBuilder()
+            .setType(TableFieldSchema.Type.NUMERIC)
+            .setMode(TableFieldSchema.Mode.REPEATED)
+            .setName("test_numeric_repeated")
+            .build();
+    TableSchema tableSchema =
+        TableSchema.newBuilder()
+            .addFields(0, TEST_NUMERIC_ZERO)
+            .addFields(1, TEST_NUMERIC_ONE)
+            .addFields(2, TEST_NUMERIC_REPEATED)
+            .build();
     try (JsonStreamWriter jsonStreamWriter =
-        JsonStreamWriter.newBuilder(parent.toString(), tableInfo.getDefinition().getSchema())
-            .build()) {
+        JsonStreamWriter.newBuilder(parent.toString(), tableSchema).build()) {
       JSONObject row = new JSONObject();
       row.put(
           "test_numeric_zero",

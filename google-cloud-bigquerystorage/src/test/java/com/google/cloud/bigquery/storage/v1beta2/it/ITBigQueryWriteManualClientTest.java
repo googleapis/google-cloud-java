@@ -320,6 +320,30 @@ public class ITBigQueryWriteManualClientTest {
       throws IOException, InterruptedException, ExecutionException,
           Descriptors.DescriptorValidationException {
     String tableName = "JsonTableDefaultStream";
+    TableFieldSchema TEST_STRING =
+        TableFieldSchema.newBuilder()
+            .setType(TableFieldSchema.Type.STRING)
+            .setMode(TableFieldSchema.Mode.NULLABLE)
+            .setName("test_str")
+            .build();
+    TableFieldSchema TEST_NUMERIC =
+        TableFieldSchema.newBuilder()
+            .setType(TableFieldSchema.Type.NUMERIC)
+            .setMode(TableFieldSchema.Mode.REPEATED)
+            .setName("test_numerics")
+            .build();
+    TableFieldSchema TEST_DATE =
+        TableFieldSchema.newBuilder()
+            .setType(TableFieldSchema.Type.DATETIME)
+            .setMode(TableFieldSchema.Mode.NULLABLE)
+            .setName("test_datetime")
+            .build();
+    TableSchema tableSchema =
+        TableSchema.newBuilder()
+            .addFields(0, TEST_STRING)
+            .addFields(1, TEST_DATE)
+            .addFields(2, TEST_NUMERIC)
+            .build();
     TableInfo tableInfo =
         TableInfo.newBuilder(
                 TableId.of(DATASET, tableName),
@@ -339,8 +363,7 @@ public class ITBigQueryWriteManualClientTest {
     bigquery.create(tableInfo);
     TableName parent = TableName.of(ServiceOptions.getDefaultProjectId(), DATASET, tableName);
     try (JsonStreamWriter jsonStreamWriter =
-        JsonStreamWriter.newBuilder(parent.toString(), tableInfo.getDefinition().getSchema())
-            .build()) {
+        JsonStreamWriter.newBuilder(parent.toString(), tableSchema).build()) {
       LOG.info("Sending one message");
       JSONObject row1 = new JSONObject();
       row1.put("test_str", "aaa");

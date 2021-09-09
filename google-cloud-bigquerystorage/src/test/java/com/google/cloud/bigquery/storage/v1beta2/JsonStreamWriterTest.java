@@ -24,9 +24,6 @@ import com.google.api.gax.core.NoCredentialsProvider;
 import com.google.api.gax.grpc.testing.LocalChannelProvider;
 import com.google.api.gax.grpc.testing.MockGrpcService;
 import com.google.api.gax.grpc.testing.MockServiceHelper;
-import com.google.cloud.bigquery.Field;
-import com.google.cloud.bigquery.Schema;
-import com.google.cloud.bigquery.StandardSQLTypeName;
 import com.google.cloud.bigquery.storage.test.JsonTest.ComplexRoot;
 import com.google.cloud.bigquery.storage.test.Test.FooType;
 import com.google.protobuf.ByteString;
@@ -528,13 +525,10 @@ public class JsonStreamWriterTest {
 
   @Test
   public void testCreateDefaultStream() throws Exception {
-    Schema v2Schema =
-        Schema.of(
-            Field.newBuilder("foo", StandardSQLTypeName.STRING)
-                .setMode(Field.Mode.NULLABLE)
-                .build());
+    TableSchema tableSchema =
+        TableSchema.newBuilder().addFields(0, TEST_INT).addFields(1, TEST_STRING).build();
     try (JsonStreamWriter writer =
-        JsonStreamWriter.newBuilder(TEST_TABLE, v2Schema)
+        JsonStreamWriter.newBuilder(TEST_TABLE, tableSchema)
             .setChannelProvider(channelProvider)
             .setCredentialsProvider(NoCredentialsProvider.create())
             .build()) {

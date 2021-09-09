@@ -81,11 +81,6 @@
         <scope>import</scope>
       </dependency>
       <dependency>
-        <groupId>com.google.cloud</groupId>
-        <artifactId>google-cloud-bigquery</artifactId>
-        <version>2.1.7</version>
-      </dependency>
-      <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-bigquerystorage-v1beta1</artifactId>
         <version>0.125.3-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-bigquerystorage-v1beta1:current} -->
@@ -132,6 +127,12 @@
         <groupId>junit</groupId>
         <artifactId>junit</artifactId>
         <version>4.13.2</version>
+        <scope>test</scope>
+      </dependency>
+      <dependency>
+        <groupId>com.google.cloud</groupId>
+        <artifactId>google-cloud-bigquery</artifactId>
+        <version>2.1.6</version>
         <scope>test</scope>
       </dependency>
     </dependencies>

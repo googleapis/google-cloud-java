@@ -30,6 +30,8 @@ import com.google.cloud.bigquery.StandardSQLTypeName;
 import com.google.cloud.bigquery.StandardTableDefinition;
 import com.google.cloud.bigquery.TableId;
 import com.google.cloud.bigquery.TableInfo;
+import com.google.cloud.bigquery.storage.v1beta2.TableFieldSchema;
+import com.google.cloud.bigquery.storage.v1beta2.TableSchema;
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
 import java.util.UUID;
@@ -50,6 +52,7 @@ public class WriteToDefaultStreamIT {
   private BigQuery bigquery;
   private String datasetName;
   private String tableName;
+  private TableSchema tableSchema;
 
   private static void requireEnvVar(String varName) {
     assertNotNull(
@@ -73,10 +76,23 @@ public class WriteToDefaultStreamIT {
     // Create a new dataset and table for each test.
     datasetName = "WRITE_STREAM_TEST" + UUID.randomUUID().toString().substring(0, 8);
     tableName = "DEFAULT_STREAM_TEST" + UUID.randomUUID().toString().substring(0, 8);
-    Schema schema = Schema.of(Field.of("col1", StandardSQLTypeName.STRING));
     bigquery.create(DatasetInfo.newBuilder(datasetName).build());
+    TableFieldSchema strField =
+        TableFieldSchema.newBuilder()
+            .setType(TableFieldSchema.Type.STRING)
+            .setMode(TableFieldSchema.Mode.NULLABLE)
+            .setName("test_string")
+            .build();
+    tableSchema = TableSchema.newBuilder().addFields(0, strField).build();
     TableInfo tableInfo =
-        TableInfo.newBuilder(TableId.of(datasetName, tableName), StandardTableDefinition.of(schema))
+        TableInfo.newBuilder(
+                TableId.of(datasetName, tableName),
+                StandardTableDefinition.of(
+                    Schema.of(
+                        com.google.cloud.bigquery.Field.newBuilder(
+                                "test_string", StandardSQLTypeName.STRING)
+                            .setMode(Field.Mode.NULLABLE)
+                            .build())))
             .build();
     bigquery.create(tableInfo);
   }
@@ -90,7 +106,8 @@ public class WriteToDefaultStreamIT {
 
   @Test
   public void testWriteToDefaultStream() throws Exception {
-    WriteToDefaultStream.writeToDefaultStream(GOOGLE_CLOUD_PROJECT, datasetName, tableName);
+    WriteToDefaultStream.writeToDefaultStream(
+        GOOGLE_CLOUD_PROJECT, datasetName, tableName, tableSchema);
     assertThat(bout.toString()).contains("Appended records successfully.");
   }
 }

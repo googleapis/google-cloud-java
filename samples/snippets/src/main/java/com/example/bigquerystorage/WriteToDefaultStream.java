@@ -18,13 +18,11 @@ package com.example.bigquerystorage;
 
 // [START bigquerystorage_jsonstreamwriter_default]
 import com.google.api.core.ApiFuture;
-import com.google.cloud.bigquery.BigQuery;
-import com.google.cloud.bigquery.BigQueryOptions;
-import com.google.cloud.bigquery.Schema;
-import com.google.cloud.bigquery.Table;
 import com.google.cloud.bigquery.storage.v1beta2.AppendRowsResponse;
 import com.google.cloud.bigquery.storage.v1beta2.JsonStreamWriter;
+import com.google.cloud.bigquery.storage.v1beta2.TableFieldSchema;
 import com.google.cloud.bigquery.storage.v1beta2.TableName;
+import com.google.cloud.bigquery.storage.v1beta2.TableSchema;
 import com.google.protobuf.Descriptors.DescriptorValidationException;
 import java.io.IOException;
 import java.util.concurrent.ExecutionException;
@@ -39,27 +37,31 @@ public class WriteToDefaultStream {
     String projectId = "MY_PROJECT_ID";
     String datasetName = "MY_DATASET_NAME";
     String tableName = "MY_TABLE_NAME";
-
-    writeToDefaultStream(projectId, datasetName, tableName);
+    TableFieldSchema strField =
+        TableFieldSchema.newBuilder()
+            .setType(TableFieldSchema.Type.STRING)
+            .setMode(TableFieldSchema.Mode.NULLABLE)
+            .setName("test_string")
+            .build();
+    TableSchema tableSchema = TableSchema.newBuilder().addFields(0, strField).build();
+    writeToDefaultStream(projectId, datasetName, tableName, tableSchema);
   }
 
-  public static void writeToDefaultStream(String projectId, String datasetName, String tableName)
+  public static void writeToDefaultStream(
+      String projectId, String datasetName, String tableName, TableSchema tableSchema)
       throws DescriptorValidationException, InterruptedException, IOException {
-    BigQuery bigquery = BigQueryOptions.getDefaultInstance().getService();
-    Table table = bigquery.getTable(datasetName, tableName);
     TableName parentTable = TableName.of(projectId, datasetName, tableName);
-    Schema schema = table.getDefinition().getSchema();
 
     // Use the JSON stream writer to send records in JSON format.
     // For more information about JsonStreamWriter, see:
     // https://googleapis.dev/java/google-cloud-bigquerystorage/latest/com/google/cloud/bigquery/storage/v1beta2/JsonStreamWriter.html
     try (JsonStreamWriter writer =
-        JsonStreamWriter.newBuilder(parentTable.toString(), schema).build()) {
+        JsonStreamWriter.newBuilder(parentTable.toString(), tableSchema).build()) {
       // Append 10 JSON objects to the stream.
       for (int i = 0; i < 10; i++) {
         // Create a JSON object that is compatible with the table schema.
         JSONObject record = new JSONObject();
-        record.put("col1", String.format("record %03d", i));
+        record.put("test_string", String.format("record %03d", i));
         JSONArray jsonArr = new JSONArray();
         jsonArr.put(record);
 

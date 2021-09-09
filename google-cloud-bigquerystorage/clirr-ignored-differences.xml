@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- see http://www.mojohaus.org/clirr-maven-plugin/examples/ignored-differences.html -->
+<differences>
+  <difference>
+    <differenceType>8001</differenceType>
+    <className>com/google/cloud/bigquery/storage/v1beta2/BQV2ToBQStorageConverter</className>
+    <method>com.google.cloud.bigquery.storage.v1beta2.BQV2ToBQStorageConverter</method>
+  </difference>
+  <difference>
+    <differenceType>8001</differenceType>
+    <className>com/google/cloud/bigquery/storage/v1beta2/SchemaCompatibility</className>
+    <method>com.google.cloud.bigquery.storage.v1beta2.SchemaCompatibility</method>
+  </difference>
+  <difference>
+    <differenceType>7002</differenceType>
+    <className>com/google/cloud/bigquery/storage/v1beta2/JsonStreamWriter</className>
+    <method>com.google.cloud.bigquery.storage.v1beta2.JsonStreamWriter$Builder newBuilder(java.lang.String, com.google.cloud.bigquery.Schema)</method>
+  </difference>
+</differences>

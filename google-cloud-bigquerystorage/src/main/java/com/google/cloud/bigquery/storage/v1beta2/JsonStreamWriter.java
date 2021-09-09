@@ -19,7 +19,6 @@ import com.google.api.core.ApiFuture;
 import com.google.api.gax.batching.FlowControlSettings;
 import com.google.api.gax.core.CredentialsProvider;
 import com.google.api.gax.rpc.TransportChannelProvider;
-import com.google.cloud.bigquery.Schema;
 import com.google.common.base.Preconditions;
 import com.google.protobuf.Descriptors;
 import com.google.protobuf.Descriptors.Descriptor;
@@ -200,23 +199,6 @@ public class JsonStreamWriter implements AutoCloseable {
     Preconditions.checkNotNull(streamOrTableName, "StreamOrTableName is null.");
     Preconditions.checkNotNull(tableSchema, "TableSchema is null.");
     return new Builder(streamOrTableName, tableSchema, null);
-  }
-
-  /**
-   * newBuilder that constructs a JsonStreamWriter builder with BigQuery client being initialized by
-   * StreamWriter by default.
-   *
-   * @param streamOrTableName name of the stream that must follow
-   *     "projects/[^/]+/datasets/[^/]+/tables/[^/]+/streams/[^/]+"
-   * @param tableSchema The schema of the table when the stream was created, which is passed back
-   *     through {@code WriteStream}
-   * @return Builder
-   */
-  public static Builder newBuilder(String streamOrTableName, Schema tableSchema) {
-    Preconditions.checkNotNull(streamOrTableName, "StreamOrTableName is null.");
-    Preconditions.checkNotNull(tableSchema, "TableSchema is null.");
-    return new Builder(
-        streamOrTableName, BQV2ToBQStorageConverter.ConvertTableSchema(tableSchema), null);
   }
 
   /**
