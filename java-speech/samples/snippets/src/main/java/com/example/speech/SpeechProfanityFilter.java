@@ -24,7 +24,6 @@ import com.google.cloud.speech.v1.RecognizeResponse;
 import com.google.cloud.speech.v1.SpeechClient;
 import com.google.cloud.speech.v1.SpeechRecognitionAlternative;
 import com.google.cloud.speech.v1.SpeechRecognitionResult;
-import java.io.IOException;
 import java.util.List;
 
 public class SpeechProfanityFilter {
@@ -43,7 +42,7 @@ public class SpeechProfanityFilter {
     // Instantiates a client with GOOGLE_APPLICATION_CREDENTIALS
     try (SpeechClient speech = SpeechClient.create()) {
 
-      // Configure remote file request 
+      // Configure remote file request
       RecognitionConfig config =
           RecognitionConfig.newBuilder()
               .setEncoding(AudioEncoding.FLAC)
@@ -65,7 +64,7 @@ public class SpeechProfanityFilter {
         SpeechRecognitionAlternative alternative = result.getAlternativesList().get(0);
         System.out.printf("Transcription: %s\n", alternative.getTranscript());
       }
-    } 
+    }
   }
 }
 // [END speech_transcribe_with_profanity_filter_gcs]

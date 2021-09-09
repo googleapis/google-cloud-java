@@ -26,7 +26,6 @@ import com.google.cloud.speech.v1.SpeechClient;
 import com.google.cloud.speech.v1.SpeechRecognitionAlternative;
 import com.google.cloud.speech.v1.SpeechRecognitionResult;
 import com.google.cloud.speech.v1.SpeechSettings;
-import java.io.IOException;
 import java.util.List;
 
 public class SpeechTranscribeMultiRegion {
@@ -44,21 +43,18 @@ public class SpeechTranscribeMultiRegion {
   public static void speechTranscribeMultiRegion(String gcsUri) throws Exception {
     // Use the SpeechSettings to initialize the SpeechClient with the new endpoint.
     String endPoint = "eu-speech.googleapis.com:443";
-    SpeechSettings speechSettings =
-            SpeechSettings.newBuilder()
-              .setEndpoint(endPoint)
-              .build();
+    SpeechSettings speechSettings = SpeechSettings.newBuilder().setEndpoint(endPoint).build();
 
     // Instantiates a client with GOOGLE_APPLICATION_CREDENTIALS
     try (SpeechClient speech = SpeechClient.create(speechSettings)) {
 
-      // Configure remote file request 
+      // Configure remote file request
       RecognitionConfig config =
           RecognitionConfig.newBuilder()
-            .setEncoding(AudioEncoding.FLAC)
-            .setLanguageCode("en-US")
-            .setSampleRateHertz(16000)
-            .build();
+              .setEncoding(AudioEncoding.FLAC)
+              .setLanguageCode("en-US")
+              .setSampleRateHertz(16000)
+              .build();
 
       // Set the remote path for the audio file
       RecognitionAudio audio = RecognitionAudio.newBuilder().setUri(gcsUri).build();

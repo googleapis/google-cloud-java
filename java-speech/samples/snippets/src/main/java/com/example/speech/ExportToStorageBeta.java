@@ -44,7 +44,10 @@ public class ExportToStorageBeta {
 
   // Exports the recognized output to specified GCS destination.
   public static void exportToStorage(
-      String inputUri, String outputStorageUri, String encoding, int sampleRateHertz,
+      String inputUri,
+      String outputStorageUri,
+      String encoding,
+      int sampleRateHertz,
       String languageCode)
       throws IOException, ExecutionException, InterruptedException {
     // Initialize client that will be used to send requests. This client only needs to be created
@@ -56,14 +59,15 @@ public class ExportToStorageBeta {
       AudioEncoding audioEncoding = AudioEncoding.valueOf(encoding);
 
       // Pass in the URI of the Cloud Storage bucket to hold the transcription
-      TranscriptOutputConfig outputConfig = TranscriptOutputConfig.newBuilder()
-          .setGcsUri(outputStorageUri).build();
+      TranscriptOutputConfig outputConfig =
+          TranscriptOutputConfig.newBuilder().setGcsUri(outputStorageUri).build();
 
-      RecognitionConfig config = RecognitionConfig.newBuilder()
-          .setEncoding(audioEncoding)
-          .setSampleRateHertz(sampleRateHertz)
-          .setLanguageCode(languageCode)
-          .build();
+      RecognitionConfig config =
+          RecognitionConfig.newBuilder()
+              .setEncoding(audioEncoding)
+              .setSampleRateHertz(sampleRateHertz)
+              .setLanguageCode(languageCode)
+              .build();
 
       LongRunningRecognizeRequest request =
           LongRunningRecognizeRequest.newBuilder()
@@ -80,9 +84,10 @@ public class ExportToStorageBeta {
 
       System.out.println("Results saved to specified output Cloud Storage bucket.");
 
-      String output = response.getResultsList().stream().map(
-          result -> String.valueOf(result.getAlternatives(0).getTranscript()))
-          .collect(Collectors.joining("\n"));
+      String output =
+          response.getResultsList().stream()
+              .map(result -> String.valueOf(result.getAlternatives(0).getTranscript()))
+              .collect(Collectors.joining("\n"));
       System.out.printf("Transcription: %s", output);
     }
   }
