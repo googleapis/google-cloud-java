@@ -89,7 +89,6 @@ import java.util.UUID;
 import java.util.concurrent.ExecutionException;
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
-import org.junit.Ignore;
 import org.junit.Test;
 
 public class ITSystemTest {
@@ -398,11 +397,13 @@ public class ITSystemTest {
   }
 
   @Test
-  @Ignore("https://github.com/googleapis/java-dialogflow-cx/issues/230")
   public void trainFlowTest() throws ExecutionException, InterruptedException {
-    Empty expectedResponse = Empty.newBuilder().build();
-    Empty response = flowsClient.trainFlowAsync(trainFlowName).get();
-    assertEquals(expectedResponse, response);
+    try {
+      flowsClient.trainFlowAsync(trainFlowName).get();
+      assertTrue(true);
+    } catch (Exception e) {
+      assertEquals(e, "");
+    }
   }
 
   @Test
