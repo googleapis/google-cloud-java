@@ -1,5 +1,17 @@
 # Changelog
 
+## [0.3.0](https://www.github.com/googleapis/java-binary-authorization/compare/v0.2.2...v0.3.0) (2021-09-10)
+
+
+### Features
+
+* Remove use of deprecated gradle command in java README ([#1196](https://www.github.com/googleapis/java-binary-authorization/issues/1196)) ([#65](https://www.github.com/googleapis/java-binary-authorization/issues/65)) ([8cb0da3](https://www.github.com/googleapis/java-binary-authorization/commit/8cb0da37f9c387a79c9255bca3402ec22643ded8))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.2.0 ([#69](https://www.github.com/googleapis/java-binary-authorization/issues/69)) ([4843a90](https://www.github.com/googleapis/java-binary-authorization/commit/4843a904a0e402ed6ae9677e940faec9f1d1f71e))
+
 ### [0.2.2](https://www.github.com/googleapis/java-binary-authorization/compare/v0.2.1...v0.2.2) (2021-08-23)
 
 
