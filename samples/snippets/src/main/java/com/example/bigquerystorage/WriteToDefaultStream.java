@@ -18,9 +18,12 @@ package com.example.bigquerystorage;
 
 // [START bigquerystorage_jsonstreamwriter_default]
 import com.google.api.core.ApiFuture;
+import com.google.cloud.bigquery.BigQuery;
+import com.google.cloud.bigquery.BigQueryOptions;
+import com.google.cloud.bigquery.Schema;
+import com.google.cloud.bigquery.Table;
 import com.google.cloud.bigquery.storage.v1beta2.AppendRowsResponse;
 import com.google.cloud.bigquery.storage.v1beta2.JsonStreamWriter;
-import com.google.cloud.bigquery.storage.v1beta2.TableFieldSchema;
 import com.google.cloud.bigquery.storage.v1beta2.TableName;
 import com.google.cloud.bigquery.storage.v1beta2.TableSchema;
 import com.google.protobuf.Descriptors.DescriptorValidationException;
@@ -37,20 +40,16 @@ public class WriteToDefaultStream {
     String projectId = "MY_PROJECT_ID";
     String datasetName = "MY_DATASET_NAME";
     String tableName = "MY_TABLE_NAME";
-    TableFieldSchema strField =
-        TableFieldSchema.newBuilder()
-            .setType(TableFieldSchema.Type.STRING)
-            .setMode(TableFieldSchema.Mode.NULLABLE)
-            .setName("test_string")
-            .build();
-    TableSchema tableSchema = TableSchema.newBuilder().addFields(0, strField).build();
-    writeToDefaultStream(projectId, datasetName, tableName, tableSchema);
+    writeToDefaultStream(projectId, datasetName, tableName);
   }
 
-  public static void writeToDefaultStream(
-      String projectId, String datasetName, String tableName, TableSchema tableSchema)
+  public static void writeToDefaultStream(String projectId, String datasetName, String tableName)
       throws DescriptorValidationException, InterruptedException, IOException {
+    BigQuery bigquery = BigQueryOptions.getDefaultInstance().getService();
+    Table table = bigquery.getTable(datasetName, tableName);
     TableName parentTable = TableName.of(projectId, datasetName, tableName);
+    Schema schema = table.getDefinition().getSchema();
+    TableSchema tableSchema = BQToBQStorageSchemaConverter.ConvertTableSchema(schema);
 
     // Use the JSON stream writer to send records in JSON format.
     // For more information about JsonStreamWriter, see:
