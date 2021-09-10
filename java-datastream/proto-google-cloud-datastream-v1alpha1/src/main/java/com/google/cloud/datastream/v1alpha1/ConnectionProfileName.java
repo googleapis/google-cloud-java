@@ -29,9 +29,9 @@ import javax.annotation.Generated;
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 @Generated("by gapic-generator-java")
 public class ConnectionProfileName implements ResourceName {
-  private static final PathTemplate PROJECT_LOCATION_CONNECTIONPROFILE =
+  private static final PathTemplate PROJECT_LOCATION_CONNECTION_PROFILE =
       PathTemplate.createWithoutUrlEncoding(
-          "projects/{project}/locations/{location}/connectionProfiles/{connectionProfile}");
+          "projects/{project}/locations/{location}/connectionProfiles/{connection_profile}");
   private volatile Map<String, String> fieldValuesMap;
   private final String project;
   private final String location;
@@ -93,9 +93,10 @@ public class ConnectionProfileName implements ResourceName {
       return null;
     }
     Map<String, String> matchMap =
-        PROJECT_LOCATION_CONNECTIONPROFILE.validatedMatch(
+        PROJECT_LOCATION_CONNECTION_PROFILE.validatedMatch(
             formattedString, "ConnectionProfileName.parse: formattedString not in valid format");
-    return of(matchMap.get("project"), matchMap.get("location"), matchMap.get("connectionProfile"));
+    return of(
+        matchMap.get("project"), matchMap.get("location"), matchMap.get("connection_profile"));
   }
 
   public static List<ConnectionProfileName> parseList(List<String> formattedStrings) {
@@ -119,7 +120,7 @@ public class ConnectionProfileName implements ResourceName {
   }
 
   public static boolean isParsableFrom(String formattedString) {
-    return PROJECT_LOCATION_CONNECTIONPROFILE.matches(formattedString);
+    return PROJECT_LOCATION_CONNECTION_PROFILE.matches(formattedString);
   }
 
   @Override
@@ -135,7 +136,7 @@ public class ConnectionProfileName implements ResourceName {
             fieldMapBuilder.put("location", location);
           }
           if (connectionProfile != null) {
-            fieldMapBuilder.put("connectionProfile", connectionProfile);
+            fieldMapBuilder.put("connection_profile", connectionProfile);
           }
           fieldValuesMap = fieldMapBuilder.build();
         }
@@ -150,8 +151,8 @@ public class ConnectionProfileName implements ResourceName {
 
   @Override
   public String toString() {
-    return PROJECT_LOCATION_CONNECTIONPROFILE.instantiate(
-        "project", project, "location", location, "connectionProfile", connectionProfile);
+    return PROJECT_LOCATION_CONNECTION_PROFILE.instantiate(
+        "project", project, "location", location, "connection_profile", connectionProfile);
   }
 
   @Override
@@ -180,7 +181,9 @@ public class ConnectionProfileName implements ResourceName {
     return h;
   }
 
-  /** Builder for projects/{project}/locations/{location}/connectionProfiles/{connectionProfile}. */
+  /**
+   * Builder for projects/{project}/locations/{location}/connectionProfiles/{connection_profile}.
+   */
   public static class Builder {
     private String project;
     private String location;

@@ -26,7 +26,7 @@
  * <pre>{@code
  * try (DatastreamClient datastreamClient = DatastreamClient.create()) {
  *   ConnectionProfileName name =
- *       ConnectionProfileName.of("[PROJECT]", "[LOCATION]", "[CONNECTIONPROFILE]");
+ *       ConnectionProfileName.of("[PROJECT]", "[LOCATION]", "[CONNECTION_PROFILE]");
  *   ConnectionProfile response = datastreamClient.getConnectionProfile(name);
  * }
  * }</pre>

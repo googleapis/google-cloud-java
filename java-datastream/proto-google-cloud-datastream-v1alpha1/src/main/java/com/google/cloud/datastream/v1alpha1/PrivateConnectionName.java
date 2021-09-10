@@ -29,9 +29,9 @@ import javax.annotation.Generated;
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 @Generated("by gapic-generator-java")
 public class PrivateConnectionName implements ResourceName {
-  private static final PathTemplate PROJECT_LOCATION_PRIVATECONNECTION =
+  private static final PathTemplate PROJECT_LOCATION_PRIVATE_CONNECTION =
       PathTemplate.createWithoutUrlEncoding(
-          "projects/{project}/locations/{location}/privateConnections/{privateConnection}");
+          "projects/{project}/locations/{location}/privateConnections/{private_connection}");
   private volatile Map<String, String> fieldValuesMap;
   private final String project;
   private final String location;
@@ -93,9 +93,10 @@ public class PrivateConnectionName implements ResourceName {
       return null;
     }
     Map<String, String> matchMap =
-        PROJECT_LOCATION_PRIVATECONNECTION.validatedMatch(
+        PROJECT_LOCATION_PRIVATE_CONNECTION.validatedMatch(
             formattedString, "PrivateConnectionName.parse: formattedString not in valid format");
-    return of(matchMap.get("project"), matchMap.get("location"), matchMap.get("privateConnection"));
+    return of(
+        matchMap.get("project"), matchMap.get("location"), matchMap.get("private_connection"));
   }
 
   public static List<PrivateConnectionName> parseList(List<String> formattedStrings) {
@@ -119,7 +120,7 @@ public class PrivateConnectionName implements ResourceName {
   }
 
   public static boolean isParsableFrom(String formattedString) {
-    return PROJECT_LOCATION_PRIVATECONNECTION.matches(formattedString);
+    return PROJECT_LOCATION_PRIVATE_CONNECTION.matches(formattedString);
   }
 
   @Override
@@ -135,7 +136,7 @@ public class PrivateConnectionName implements ResourceName {
             fieldMapBuilder.put("location", location);
           }
           if (privateConnection != null) {
-            fieldMapBuilder.put("privateConnection", privateConnection);
+            fieldMapBuilder.put("private_connection", privateConnection);
           }
           fieldValuesMap = fieldMapBuilder.build();
         }
@@ -150,8 +151,8 @@ public class PrivateConnectionName implements ResourceName {
 
   @Override
   public String toString() {
-    return PROJECT_LOCATION_PRIVATECONNECTION.instantiate(
-        "project", project, "location", location, "privateConnection", privateConnection);
+    return PROJECT_LOCATION_PRIVATE_CONNECTION.instantiate(
+        "project", project, "location", location, "private_connection", privateConnection);
   }
 
   @Override
@@ -180,7 +181,9 @@ public class PrivateConnectionName implements ResourceName {
     return h;
   }
 
-  /** Builder for projects/{project}/locations/{location}/privateConnections/{privateConnection}. */
+  /**
+   * Builder for projects/{project}/locations/{location}/privateConnections/{private_connection}.
+   */
   public static class Builder {
     private String project;
     private String location;

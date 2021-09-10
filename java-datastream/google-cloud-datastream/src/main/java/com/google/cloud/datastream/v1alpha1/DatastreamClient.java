@@ -49,7 +49,7 @@ import javax.annotation.Generated;
  * <pre>{@code
  * try (DatastreamClient datastreamClient = DatastreamClient.create()) {
  *   ConnectionProfileName name =
- *       ConnectionProfileName.of("[PROJECT]", "[LOCATION]", "[CONNECTIONPROFILE]");
+ *       ConnectionProfileName.of("[PROJECT]", "[LOCATION]", "[CONNECTION_PROFILE]");
  *   ConnectionProfile response = datastreamClient.getConnectionProfile(name);
  * }
  * }</pre>
@@ -199,7 +199,7 @@ public class DatastreamClient implements BackgroundResource {
    * <pre>{@code
    * try (DatastreamClient datastreamClient = DatastreamClient.create()) {
    *   String parent =
-   *       ConnectionProfileName.of("[PROJECT]", "[LOCATION]", "[CONNECTIONPROFILE]").toString();
+   *       ConnectionProfileName.of("[PROJECT]", "[LOCATION]", "[CONNECTION_PROFILE]").toString();
    *   for (ConnectionProfile element :
    *       datastreamClient.listConnectionProfiles(parent).iterateAll()) {
    *     // doThingsWith(element);
@@ -227,7 +227,7 @@ public class DatastreamClient implements BackgroundResource {
    *   ListConnectionProfilesRequest request =
    *       ListConnectionProfilesRequest.newBuilder()
    *           .setParent(
-   *               ConnectionProfileName.of("[PROJECT]", "[LOCATION]", "[CONNECTIONPROFILE]")
+   *               ConnectionProfileName.of("[PROJECT]", "[LOCATION]", "[CONNECTION_PROFILE]")
    *                   .toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
@@ -260,7 +260,7 @@ public class DatastreamClient implements BackgroundResource {
    *   ListConnectionProfilesRequest request =
    *       ListConnectionProfilesRequest.newBuilder()
    *           .setParent(
-   *               ConnectionProfileName.of("[PROJECT]", "[LOCATION]", "[CONNECTIONPROFILE]")
+   *               ConnectionProfileName.of("[PROJECT]", "[LOCATION]", "[CONNECTION_PROFILE]")
    *                   .toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
@@ -292,7 +292,7 @@ public class DatastreamClient implements BackgroundResource {
    *   ListConnectionProfilesRequest request =
    *       ListConnectionProfilesRequest.newBuilder()
    *           .setParent(
-   *               ConnectionProfileName.of("[PROJECT]", "[LOCATION]", "[CONNECTIONPROFILE]")
+   *               ConnectionProfileName.of("[PROJECT]", "[LOCATION]", "[CONNECTION_PROFILE]")
    *                   .toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
@@ -329,7 +329,7 @@ public class DatastreamClient implements BackgroundResource {
    * <pre>{@code
    * try (DatastreamClient datastreamClient = DatastreamClient.create()) {
    *   ConnectionProfileName name =
-   *       ConnectionProfileName.of("[PROJECT]", "[LOCATION]", "[CONNECTIONPROFILE]");
+   *       ConnectionProfileName.of("[PROJECT]", "[LOCATION]", "[CONNECTION_PROFILE]");
    *   ConnectionProfile response = datastreamClient.getConnectionProfile(name);
    * }
    * }</pre>
@@ -354,7 +354,7 @@ public class DatastreamClient implements BackgroundResource {
    * <pre>{@code
    * try (DatastreamClient datastreamClient = DatastreamClient.create()) {
    *   String name =
-   *       ConnectionProfileName.of("[PROJECT]", "[LOCATION]", "[CONNECTIONPROFILE]").toString();
+   *       ConnectionProfileName.of("[PROJECT]", "[LOCATION]", "[CONNECTION_PROFILE]").toString();
    *   ConnectionProfile response = datastreamClient.getConnectionProfile(name);
    * }
    * }</pre>
@@ -379,7 +379,7 @@ public class DatastreamClient implements BackgroundResource {
    *   GetConnectionProfileRequest request =
    *       GetConnectionProfileRequest.newBuilder()
    *           .setName(
-   *               ConnectionProfileName.of("[PROJECT]", "[LOCATION]", "[CONNECTIONPROFILE]")
+   *               ConnectionProfileName.of("[PROJECT]", "[LOCATION]", "[CONNECTION_PROFILE]")
    *                   .toString())
    *           .build();
    *   ConnectionProfile response = datastreamClient.getConnectionProfile(request);
@@ -404,7 +404,7 @@ public class DatastreamClient implements BackgroundResource {
    *   GetConnectionProfileRequest request =
    *       GetConnectionProfileRequest.newBuilder()
    *           .setName(
-   *               ConnectionProfileName.of("[PROJECT]", "[LOCATION]", "[CONNECTIONPROFILE]")
+   *               ConnectionProfileName.of("[PROJECT]", "[LOCATION]", "[CONNECTION_PROFILE]")
    *                   .toString())
    *           .build();
    *   ApiFuture<ConnectionProfile> future =
@@ -462,7 +462,7 @@ public class DatastreamClient implements BackgroundResource {
    * <pre>{@code
    * try (DatastreamClient datastreamClient = DatastreamClient.create()) {
    *   String parent =
-   *       ConnectionProfileName.of("[PROJECT]", "[LOCATION]", "[CONNECTIONPROFILE]").toString();
+   *       ConnectionProfileName.of("[PROJECT]", "[LOCATION]", "[CONNECTION_PROFILE]").toString();
    *   ConnectionProfile connectionProfile = ConnectionProfile.newBuilder().build();
    *   String connectionProfileId = "connectionProfileId597575526";
    *   ConnectionProfile response =
@@ -499,7 +499,7 @@ public class DatastreamClient implements BackgroundResource {
    *   CreateConnectionProfileRequest request =
    *       CreateConnectionProfileRequest.newBuilder()
    *           .setParent(
-   *               ConnectionProfileName.of("[PROJECT]", "[LOCATION]", "[CONNECTIONPROFILE]")
+   *               ConnectionProfileName.of("[PROJECT]", "[LOCATION]", "[CONNECTION_PROFILE]")
    *                   .toString())
    *           .setConnectionProfileId("connectionProfileId597575526")
    *           .setConnectionProfile(ConnectionProfile.newBuilder().build())
@@ -528,7 +528,7 @@ public class DatastreamClient implements BackgroundResource {
    *   CreateConnectionProfileRequest request =
    *       CreateConnectionProfileRequest.newBuilder()
    *           .setParent(
-   *               ConnectionProfileName.of("[PROJECT]", "[LOCATION]", "[CONNECTIONPROFILE]")
+   *               ConnectionProfileName.of("[PROJECT]", "[LOCATION]", "[CONNECTION_PROFILE]")
    *                   .toString())
    *           .setConnectionProfileId("connectionProfileId597575526")
    *           .setConnectionProfile(ConnectionProfile.newBuilder().build())
@@ -558,7 +558,7 @@ public class DatastreamClient implements BackgroundResource {
    *   CreateConnectionProfileRequest request =
    *       CreateConnectionProfileRequest.newBuilder()
    *           .setParent(
-   *               ConnectionProfileName.of("[PROJECT]", "[LOCATION]", "[CONNECTIONPROFILE]")
+   *               ConnectionProfileName.of("[PROJECT]", "[LOCATION]", "[CONNECTION_PROFILE]")
    *                   .toString())
    *           .setConnectionProfileId("connectionProfileId597575526")
    *           .setConnectionProfile(ConnectionProfile.newBuilder().build())
@@ -696,7 +696,7 @@ public class DatastreamClient implements BackgroundResource {
    * <pre>{@code
    * try (DatastreamClient datastreamClient = DatastreamClient.create()) {
    *   ConnectionProfileName name =
-   *       ConnectionProfileName.of("[PROJECT]", "[LOCATION]", "[CONNECTIONPROFILE]");
+   *       ConnectionProfileName.of("[PROJECT]", "[LOCATION]", "[CONNECTION_PROFILE]");
    *   datastreamClient.deleteConnectionProfileAsync(name).get();
    * }
    * }</pre>
@@ -722,7 +722,7 @@ public class DatastreamClient implements BackgroundResource {
    * <pre>{@code
    * try (DatastreamClient datastreamClient = DatastreamClient.create()) {
    *   String name =
-   *       ConnectionProfileName.of("[PROJECT]", "[LOCATION]", "[CONNECTIONPROFILE]").toString();
+   *       ConnectionProfileName.of("[PROJECT]", "[LOCATION]", "[CONNECTION_PROFILE]").toString();
    *   datastreamClient.deleteConnectionProfileAsync(name).get();
    * }
    * }</pre>
@@ -747,7 +747,7 @@ public class DatastreamClient implements BackgroundResource {
    *   DeleteConnectionProfileRequest request =
    *       DeleteConnectionProfileRequest.newBuilder()
    *           .setName(
-   *               ConnectionProfileName.of("[PROJECT]", "[LOCATION]", "[CONNECTIONPROFILE]")
+   *               ConnectionProfileName.of("[PROJECT]", "[LOCATION]", "[CONNECTION_PROFILE]")
    *                   .toString())
    *           .setRequestId("requestId693933066")
    *           .build();
@@ -774,7 +774,7 @@ public class DatastreamClient implements BackgroundResource {
    *   DeleteConnectionProfileRequest request =
    *       DeleteConnectionProfileRequest.newBuilder()
    *           .setName(
-   *               ConnectionProfileName.of("[PROJECT]", "[LOCATION]", "[CONNECTIONPROFILE]")
+   *               ConnectionProfileName.of("[PROJECT]", "[LOCATION]", "[CONNECTION_PROFILE]")
    *                   .toString())
    *           .setRequestId("requestId693933066")
    *           .build();
@@ -801,7 +801,7 @@ public class DatastreamClient implements BackgroundResource {
    *   DeleteConnectionProfileRequest request =
    *       DeleteConnectionProfileRequest.newBuilder()
    *           .setName(
-   *               ConnectionProfileName.of("[PROJECT]", "[LOCATION]", "[CONNECTIONPROFILE]")
+   *               ConnectionProfileName.of("[PROJECT]", "[LOCATION]", "[CONNECTION_PROFILE]")
    *                   .toString())
    *           .setRequestId("requestId693933066")
    *           .build();
@@ -830,7 +830,7 @@ public class DatastreamClient implements BackgroundResource {
    *   DiscoverConnectionProfileRequest request =
    *       DiscoverConnectionProfileRequest.newBuilder()
    *           .setParent(
-   *               ConnectionProfileName.of("[PROJECT]", "[LOCATION]", "[CONNECTIONPROFILE]")
+   *               ConnectionProfileName.of("[PROJECT]", "[LOCATION]", "[CONNECTION_PROFILE]")
    *                   .toString())
    *           .build();
    *   DiscoverConnectionProfileResponse response =
@@ -859,7 +859,7 @@ public class DatastreamClient implements BackgroundResource {
    *   DiscoverConnectionProfileRequest request =
    *       DiscoverConnectionProfileRequest.newBuilder()
    *           .setParent(
-   *               ConnectionProfileName.of("[PROJECT]", "[LOCATION]", "[CONNECTIONPROFILE]")
+   *               ConnectionProfileName.of("[PROJECT]", "[LOCATION]", "[CONNECTION_PROFILE]")
    *                   .toString())
    *           .build();
    *   ApiFuture<DiscoverConnectionProfileResponse> future =
@@ -1737,7 +1737,7 @@ public class DatastreamClient implements BackgroundResource {
    * <pre>{@code
    * try (DatastreamClient datastreamClient = DatastreamClient.create()) {
    *   String parent =
-   *       PrivateConnectionName.of("[PROJECT]", "[LOCATION]", "[PRIVATECONNECTION]").toString();
+   *       PrivateConnectionName.of("[PROJECT]", "[LOCATION]", "[PRIVATE_CONNECTION]").toString();
    *   PrivateConnection privateConnection = PrivateConnection.newBuilder().build();
    *   String privateConnectionId = "privateConnectionId-1926654532";
    *   PrivateConnection response =
@@ -1774,7 +1774,7 @@ public class DatastreamClient implements BackgroundResource {
    *   CreatePrivateConnectionRequest request =
    *       CreatePrivateConnectionRequest.newBuilder()
    *           .setParent(
-   *               PrivateConnectionName.of("[PROJECT]", "[LOCATION]", "[PRIVATECONNECTION]")
+   *               PrivateConnectionName.of("[PROJECT]", "[LOCATION]", "[PRIVATE_CONNECTION]")
    *                   .toString())
    *           .setPrivateConnectionId("privateConnectionId-1926654532")
    *           .setPrivateConnection(PrivateConnection.newBuilder().build())
@@ -1803,7 +1803,7 @@ public class DatastreamClient implements BackgroundResource {
    *   CreatePrivateConnectionRequest request =
    *       CreatePrivateConnectionRequest.newBuilder()
    *           .setParent(
-   *               PrivateConnectionName.of("[PROJECT]", "[LOCATION]", "[PRIVATECONNECTION]")
+   *               PrivateConnectionName.of("[PROJECT]", "[LOCATION]", "[PRIVATE_CONNECTION]")
    *                   .toString())
    *           .setPrivateConnectionId("privateConnectionId-1926654532")
    *           .setPrivateConnection(PrivateConnection.newBuilder().build())
@@ -1833,7 +1833,7 @@ public class DatastreamClient implements BackgroundResource {
    *   CreatePrivateConnectionRequest request =
    *       CreatePrivateConnectionRequest.newBuilder()
    *           .setParent(
-   *               PrivateConnectionName.of("[PROJECT]", "[LOCATION]", "[PRIVATECONNECTION]")
+   *               PrivateConnectionName.of("[PROJECT]", "[LOCATION]", "[PRIVATE_CONNECTION]")
    *                   .toString())
    *           .setPrivateConnectionId("privateConnectionId-1926654532")
    *           .setPrivateConnection(PrivateConnection.newBuilder().build())
@@ -1860,7 +1860,7 @@ public class DatastreamClient implements BackgroundResource {
    * <pre>{@code
    * try (DatastreamClient datastreamClient = DatastreamClient.create()) {
    *   PrivateConnectionName name =
-   *       PrivateConnectionName.of("[PROJECT]", "[LOCATION]", "[PRIVATECONNECTION]");
+   *       PrivateConnectionName.of("[PROJECT]", "[LOCATION]", "[PRIVATE_CONNECTION]");
    *   PrivateConnection response = datastreamClient.getPrivateConnection(name);
    * }
    * }</pre>
@@ -1885,7 +1885,7 @@ public class DatastreamClient implements BackgroundResource {
    * <pre>{@code
    * try (DatastreamClient datastreamClient = DatastreamClient.create()) {
    *   String name =
-   *       PrivateConnectionName.of("[PROJECT]", "[LOCATION]", "[PRIVATECONNECTION]").toString();
+   *       PrivateConnectionName.of("[PROJECT]", "[LOCATION]", "[PRIVATE_CONNECTION]").toString();
    *   PrivateConnection response = datastreamClient.getPrivateConnection(name);
    * }
    * }</pre>
@@ -1910,7 +1910,7 @@ public class DatastreamClient implements BackgroundResource {
    *   GetPrivateConnectionRequest request =
    *       GetPrivateConnectionRequest.newBuilder()
    *           .setName(
-   *               PrivateConnectionName.of("[PROJECT]", "[LOCATION]", "[PRIVATECONNECTION]")
+   *               PrivateConnectionName.of("[PROJECT]", "[LOCATION]", "[PRIVATE_CONNECTION]")
    *                   .toString())
    *           .build();
    *   PrivateConnection response = datastreamClient.getPrivateConnection(request);
@@ -1935,7 +1935,7 @@ public class DatastreamClient implements BackgroundResource {
    *   GetPrivateConnectionRequest request =
    *       GetPrivateConnectionRequest.newBuilder()
    *           .setName(
-   *               PrivateConnectionName.of("[PROJECT]", "[LOCATION]", "[PRIVATECONNECTION]")
+   *               PrivateConnectionName.of("[PROJECT]", "[LOCATION]", "[PRIVATE_CONNECTION]")
    *                   .toString())
    *           .build();
    *   ApiFuture<PrivateConnection> future =
@@ -1987,7 +1987,7 @@ public class DatastreamClient implements BackgroundResource {
    * <pre>{@code
    * try (DatastreamClient datastreamClient = DatastreamClient.create()) {
    *   String parent =
-   *       PrivateConnectionName.of("[PROJECT]", "[LOCATION]", "[PRIVATECONNECTION]").toString();
+   *       PrivateConnectionName.of("[PROJECT]", "[LOCATION]", "[PRIVATE_CONNECTION]").toString();
    *   for (PrivateConnection element :
    *       datastreamClient.listPrivateConnections(parent).iterateAll()) {
    *     // doThingsWith(element);
@@ -2016,7 +2016,7 @@ public class DatastreamClient implements BackgroundResource {
    *   ListPrivateConnectionsRequest request =
    *       ListPrivateConnectionsRequest.newBuilder()
    *           .setParent(
-   *               PrivateConnectionName.of("[PROJECT]", "[LOCATION]", "[PRIVATECONNECTION]")
+   *               PrivateConnectionName.of("[PROJECT]", "[LOCATION]", "[PRIVATE_CONNECTION]")
    *                   .toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
@@ -2049,7 +2049,7 @@ public class DatastreamClient implements BackgroundResource {
    *   ListPrivateConnectionsRequest request =
    *       ListPrivateConnectionsRequest.newBuilder()
    *           .setParent(
-   *               PrivateConnectionName.of("[PROJECT]", "[LOCATION]", "[PRIVATECONNECTION]")
+   *               PrivateConnectionName.of("[PROJECT]", "[LOCATION]", "[PRIVATE_CONNECTION]")
    *                   .toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
@@ -2081,7 +2081,7 @@ public class DatastreamClient implements BackgroundResource {
    *   ListPrivateConnectionsRequest request =
    *       ListPrivateConnectionsRequest.newBuilder()
    *           .setParent(
-   *               PrivateConnectionName.of("[PROJECT]", "[LOCATION]", "[PRIVATECONNECTION]")
+   *               PrivateConnectionName.of("[PROJECT]", "[LOCATION]", "[PRIVATE_CONNECTION]")
    *                   .toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
@@ -2118,7 +2118,7 @@ public class DatastreamClient implements BackgroundResource {
    * <pre>{@code
    * try (DatastreamClient datastreamClient = DatastreamClient.create()) {
    *   PrivateConnectionName name =
-   *       PrivateConnectionName.of("[PROJECT]", "[LOCATION]", "[PRIVATECONNECTION]");
+   *       PrivateConnectionName.of("[PROJECT]", "[LOCATION]", "[PRIVATE_CONNECTION]");
    *   datastreamClient.deletePrivateConnectionAsync(name).get();
    * }
    * }</pre>
@@ -2144,7 +2144,7 @@ public class DatastreamClient implements BackgroundResource {
    * <pre>{@code
    * try (DatastreamClient datastreamClient = DatastreamClient.create()) {
    *   String name =
-   *       PrivateConnectionName.of("[PROJECT]", "[LOCATION]", "[PRIVATECONNECTION]").toString();
+   *       PrivateConnectionName.of("[PROJECT]", "[LOCATION]", "[PRIVATE_CONNECTION]").toString();
    *   datastreamClient.deletePrivateConnectionAsync(name).get();
    * }
    * }</pre>
@@ -2169,7 +2169,7 @@ public class DatastreamClient implements BackgroundResource {
    *   DeletePrivateConnectionRequest request =
    *       DeletePrivateConnectionRequest.newBuilder()
    *           .setName(
-   *               PrivateConnectionName.of("[PROJECT]", "[LOCATION]", "[PRIVATECONNECTION]")
+   *               PrivateConnectionName.of("[PROJECT]", "[LOCATION]", "[PRIVATE_CONNECTION]")
    *                   .toString())
    *           .setRequestId("requestId693933066")
    *           .setForce(true)
@@ -2197,7 +2197,7 @@ public class DatastreamClient implements BackgroundResource {
    *   DeletePrivateConnectionRequest request =
    *       DeletePrivateConnectionRequest.newBuilder()
    *           .setName(
-   *               PrivateConnectionName.of("[PROJECT]", "[LOCATION]", "[PRIVATECONNECTION]")
+   *               PrivateConnectionName.of("[PROJECT]", "[LOCATION]", "[PRIVATE_CONNECTION]")
    *                   .toString())
    *           .setRequestId("requestId693933066")
    *           .setForce(true)
@@ -2225,7 +2225,7 @@ public class DatastreamClient implements BackgroundResource {
    *   DeletePrivateConnectionRequest request =
    *       DeletePrivateConnectionRequest.newBuilder()
    *           .setName(
-   *               PrivateConnectionName.of("[PROJECT]", "[LOCATION]", "[PRIVATECONNECTION]")
+   *               PrivateConnectionName.of("[PROJECT]", "[LOCATION]", "[PRIVATE_CONNECTION]")
    *                   .toString())
    *           .setRequestId("requestId693933066")
    *           .setForce(true)
@@ -2251,7 +2251,7 @@ public class DatastreamClient implements BackgroundResource {
    * <pre>{@code
    * try (DatastreamClient datastreamClient = DatastreamClient.create()) {
    *   PrivateConnectionName parent =
-   *       PrivateConnectionName.of("[PROJECT]", "[LOCATION]", "[PRIVATECONNECTION]");
+   *       PrivateConnectionName.of("[PROJECT]", "[LOCATION]", "[PRIVATE_CONNECTION]");
    *   Route route = Route.newBuilder().build();
    *   String routeId = "routeId1385647428";
    *   Route response = datastreamClient.createRouteAsync(parent, route, routeId).get();
@@ -2283,7 +2283,7 @@ public class DatastreamClient implements BackgroundResource {
    * <pre>{@code
    * try (DatastreamClient datastreamClient = DatastreamClient.create()) {
    *   String parent =
-   *       RouteName.of("[PROJECT]", "[LOCATION]", "[PRIVATECONNECTION]", "[ROUTE]").toString();
+   *       RouteName.of("[PROJECT]", "[LOCATION]", "[PRIVATE_CONNECTION]", "[ROUTE]").toString();
    *   Route route = Route.newBuilder().build();
    *   String routeId = "routeId1385647428";
    *   Route response = datastreamClient.createRouteAsync(parent, route, routeId).get();
@@ -2317,7 +2317,7 @@ public class DatastreamClient implements BackgroundResource {
    *   CreateRouteRequest request =
    *       CreateRouteRequest.newBuilder()
    *           .setParent(
-   *               RouteName.of("[PROJECT]", "[LOCATION]", "[PRIVATECONNECTION]", "[ROUTE]")
+   *               RouteName.of("[PROJECT]", "[LOCATION]", "[PRIVATE_CONNECTION]", "[ROUTE]")
    *                   .toString())
    *           .setRouteId("routeId1385647428")
    *           .setRoute(Route.newBuilder().build())
@@ -2346,7 +2346,7 @@ public class DatastreamClient implements BackgroundResource {
    *   CreateRouteRequest request =
    *       CreateRouteRequest.newBuilder()
    *           .setParent(
-   *               RouteName.of("[PROJECT]", "[LOCATION]", "[PRIVATECONNECTION]", "[ROUTE]")
+   *               RouteName.of("[PROJECT]", "[LOCATION]", "[PRIVATE_CONNECTION]", "[ROUTE]")
    *                   .toString())
    *           .setRouteId("routeId1385647428")
    *           .setRoute(Route.newBuilder().build())
@@ -2375,7 +2375,7 @@ public class DatastreamClient implements BackgroundResource {
    *   CreateRouteRequest request =
    *       CreateRouteRequest.newBuilder()
    *           .setParent(
-   *               RouteName.of("[PROJECT]", "[LOCATION]", "[PRIVATECONNECTION]", "[ROUTE]")
+   *               RouteName.of("[PROJECT]", "[LOCATION]", "[PRIVATE_CONNECTION]", "[ROUTE]")
    *                   .toString())
    *           .setRouteId("routeId1385647428")
    *           .setRoute(Route.newBuilder().build())
@@ -2399,7 +2399,7 @@ public class DatastreamClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (DatastreamClient datastreamClient = DatastreamClient.create()) {
-   *   RouteName name = RouteName.of("[PROJECT]", "[LOCATION]", "[PRIVATECONNECTION]", "[ROUTE]");
+   *   RouteName name = RouteName.of("[PROJECT]", "[LOCATION]", "[PRIVATE_CONNECTION]", "[ROUTE]");
    *   Route response = datastreamClient.getRoute(name);
    * }
    * }</pre>
@@ -2422,7 +2422,7 @@ public class DatastreamClient implements BackgroundResource {
    * <pre>{@code
    * try (DatastreamClient datastreamClient = DatastreamClient.create()) {
    *   String name =
-   *       RouteName.of("[PROJECT]", "[LOCATION]", "[PRIVATECONNECTION]", "[ROUTE]").toString();
+   *       RouteName.of("[PROJECT]", "[LOCATION]", "[PRIVATE_CONNECTION]", "[ROUTE]").toString();
    *   Route response = datastreamClient.getRoute(name);
    * }
    * }</pre>
@@ -2446,7 +2446,7 @@ public class DatastreamClient implements BackgroundResource {
    *   GetRouteRequest request =
    *       GetRouteRequest.newBuilder()
    *           .setName(
-   *               RouteName.of("[PROJECT]", "[LOCATION]", "[PRIVATECONNECTION]", "[ROUTE]")
+   *               RouteName.of("[PROJECT]", "[LOCATION]", "[PRIVATE_CONNECTION]", "[ROUTE]")
    *                   .toString())
    *           .build();
    *   Route response = datastreamClient.getRoute(request);
@@ -2471,7 +2471,7 @@ public class DatastreamClient implements BackgroundResource {
    *   GetRouteRequest request =
    *       GetRouteRequest.newBuilder()
    *           .setName(
-   *               RouteName.of("[PROJECT]", "[LOCATION]", "[PRIVATECONNECTION]", "[ROUTE]")
+   *               RouteName.of("[PROJECT]", "[LOCATION]", "[PRIVATE_CONNECTION]", "[ROUTE]")
    *                   .toString())
    *           .build();
    *   ApiFuture<Route> future = datastreamClient.getRouteCallable().futureCall(request);
@@ -2493,7 +2493,7 @@ public class DatastreamClient implements BackgroundResource {
    * <pre>{@code
    * try (DatastreamClient datastreamClient = DatastreamClient.create()) {
    *   PrivateConnectionName parent =
-   *       PrivateConnectionName.of("[PROJECT]", "[LOCATION]", "[PRIVATECONNECTION]");
+   *       PrivateConnectionName.of("[PROJECT]", "[LOCATION]", "[PRIVATE_CONNECTION]");
    *   for (Route element : datastreamClient.listRoutes(parent).iterateAll()) {
    *     // doThingsWith(element);
    *   }
@@ -2518,7 +2518,7 @@ public class DatastreamClient implements BackgroundResource {
    * <pre>{@code
    * try (DatastreamClient datastreamClient = DatastreamClient.create()) {
    *   String parent =
-   *       RouteName.of("[PROJECT]", "[LOCATION]", "[PRIVATECONNECTION]", "[ROUTE]").toString();
+   *       RouteName.of("[PROJECT]", "[LOCATION]", "[PRIVATE_CONNECTION]", "[ROUTE]").toString();
    *   for (Route element : datastreamClient.listRoutes(parent).iterateAll()) {
    *     // doThingsWith(element);
    *   }
@@ -2544,7 +2544,7 @@ public class DatastreamClient implements BackgroundResource {
    *   ListRoutesRequest request =
    *       ListRoutesRequest.newBuilder()
    *           .setParent(
-   *               RouteName.of("[PROJECT]", "[LOCATION]", "[PRIVATECONNECTION]", "[ROUTE]")
+   *               RouteName.of("[PROJECT]", "[LOCATION]", "[PRIVATE_CONNECTION]", "[ROUTE]")
    *                   .toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
@@ -2575,7 +2575,7 @@ public class DatastreamClient implements BackgroundResource {
    *   ListRoutesRequest request =
    *       ListRoutesRequest.newBuilder()
    *           .setParent(
-   *               RouteName.of("[PROJECT]", "[LOCATION]", "[PRIVATECONNECTION]", "[ROUTE]")
+   *               RouteName.of("[PROJECT]", "[LOCATION]", "[PRIVATE_CONNECTION]", "[ROUTE]")
    *                   .toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
@@ -2605,7 +2605,7 @@ public class DatastreamClient implements BackgroundResource {
    *   ListRoutesRequest request =
    *       ListRoutesRequest.newBuilder()
    *           .setParent(
-   *               RouteName.of("[PROJECT]", "[LOCATION]", "[PRIVATECONNECTION]", "[ROUTE]")
+   *               RouteName.of("[PROJECT]", "[LOCATION]", "[PRIVATE_CONNECTION]", "[ROUTE]")
    *                   .toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
@@ -2639,7 +2639,7 @@ public class DatastreamClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (DatastreamClient datastreamClient = DatastreamClient.create()) {
-   *   RouteName name = RouteName.of("[PROJECT]", "[LOCATION]", "[PRIVATECONNECTION]", "[ROUTE]");
+   *   RouteName name = RouteName.of("[PROJECT]", "[LOCATION]", "[PRIVATE_CONNECTION]", "[ROUTE]");
    *   datastreamClient.deleteRouteAsync(name).get();
    * }
    * }</pre>
@@ -2662,7 +2662,7 @@ public class DatastreamClient implements BackgroundResource {
    * <pre>{@code
    * try (DatastreamClient datastreamClient = DatastreamClient.create()) {
    *   String name =
-   *       RouteName.of("[PROJECT]", "[LOCATION]", "[PRIVATECONNECTION]", "[ROUTE]").toString();
+   *       RouteName.of("[PROJECT]", "[LOCATION]", "[PRIVATE_CONNECTION]", "[ROUTE]").toString();
    *   datastreamClient.deleteRouteAsync(name).get();
    * }
    * }</pre>
@@ -2686,7 +2686,7 @@ public class DatastreamClient implements BackgroundResource {
    *   DeleteRouteRequest request =
    *       DeleteRouteRequest.newBuilder()
    *           .setName(
-   *               RouteName.of("[PROJECT]", "[LOCATION]", "[PRIVATECONNECTION]", "[ROUTE]")
+   *               RouteName.of("[PROJECT]", "[LOCATION]", "[PRIVATE_CONNECTION]", "[ROUTE]")
    *                   .toString())
    *           .setRequestId("requestId693933066")
    *           .build();
@@ -2713,7 +2713,7 @@ public class DatastreamClient implements BackgroundResource {
    *   DeleteRouteRequest request =
    *       DeleteRouteRequest.newBuilder()
    *           .setName(
-   *               RouteName.of("[PROJECT]", "[LOCATION]", "[PRIVATECONNECTION]", "[ROUTE]")
+   *               RouteName.of("[PROJECT]", "[LOCATION]", "[PRIVATE_CONNECTION]", "[ROUTE]")
    *                   .toString())
    *           .setRequestId("requestId693933066")
    *           .build();
@@ -2740,7 +2740,7 @@ public class DatastreamClient implements BackgroundResource {
    *   DeleteRouteRequest request =
    *       DeleteRouteRequest.newBuilder()
    *           .setName(
-   *               RouteName.of("[PROJECT]", "[LOCATION]", "[PRIVATECONNECTION]", "[ROUTE]")
+   *               RouteName.of("[PROJECT]", "[LOCATION]", "[PRIVATE_CONNECTION]", "[ROUTE]")
    *                   .toString())
    *           .setRequestId("requestId693933066")
    *           .build();

@@ -29,9 +29,9 @@ import javax.annotation.Generated;
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 @Generated("by gapic-generator-java")
 public class RouteName implements ResourceName {
-  private static final PathTemplate PROJECT_LOCATION_PRIVATECONNECTION_ROUTE =
+  private static final PathTemplate PROJECT_LOCATION_PRIVATE_CONNECTION_ROUTE =
       PathTemplate.createWithoutUrlEncoding(
-          "projects/{project}/locations/{location}/privateConnections/{privateConnection}/routes/{route}");
+          "projects/{project}/locations/{location}/privateConnections/{private_connection}/routes/{route}");
   private volatile Map<String, String> fieldValuesMap;
   private final String project;
   private final String location;
@@ -103,12 +103,12 @@ public class RouteName implements ResourceName {
       return null;
     }
     Map<String, String> matchMap =
-        PROJECT_LOCATION_PRIVATECONNECTION_ROUTE.validatedMatch(
+        PROJECT_LOCATION_PRIVATE_CONNECTION_ROUTE.validatedMatch(
             formattedString, "RouteName.parse: formattedString not in valid format");
     return of(
         matchMap.get("project"),
         matchMap.get("location"),
-        matchMap.get("privateConnection"),
+        matchMap.get("private_connection"),
         matchMap.get("route"));
   }
 
@@ -133,7 +133,7 @@ public class RouteName implements ResourceName {
   }
 
   public static boolean isParsableFrom(String formattedString) {
-    return PROJECT_LOCATION_PRIVATECONNECTION_ROUTE.matches(formattedString);
+    return PROJECT_LOCATION_PRIVATE_CONNECTION_ROUTE.matches(formattedString);
   }
 
   @Override
@@ -149,7 +149,7 @@ public class RouteName implements ResourceName {
             fieldMapBuilder.put("location", location);
           }
           if (privateConnection != null) {
-            fieldMapBuilder.put("privateConnection", privateConnection);
+            fieldMapBuilder.put("private_connection", privateConnection);
           }
           if (route != null) {
             fieldMapBuilder.put("route", route);
@@ -167,12 +167,12 @@ public class RouteName implements ResourceName {
 
   @Override
   public String toString() {
-    return PROJECT_LOCATION_PRIVATECONNECTION_ROUTE.instantiate(
+    return PROJECT_LOCATION_PRIVATE_CONNECTION_ROUTE.instantiate(
         "project",
         project,
         "location",
         location,
-        "privateConnection",
+        "private_connection",
         privateConnection,
         "route",
         route);
@@ -209,7 +209,7 @@ public class RouteName implements ResourceName {
 
   /**
    * Builder for
-   * projects/{project}/locations/{location}/privateConnections/{privateConnection}/routes/{route}.
+   * projects/{project}/locations/{location}/privateConnections/{private_connection}/routes/{route}.
    */
   public static class Builder {
     private String project;

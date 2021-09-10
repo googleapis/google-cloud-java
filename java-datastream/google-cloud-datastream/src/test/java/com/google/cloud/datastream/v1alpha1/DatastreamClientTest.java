@@ -186,7 +186,7 @@ public class DatastreamClientTest {
     ConnectionProfile expectedResponse =
         ConnectionProfile.newBuilder()
             .setName(
-                ConnectionProfileName.of("[PROJECT]", "[LOCATION]", "[CONNECTIONPROFILE]")
+                ConnectionProfileName.of("[PROJECT]", "[LOCATION]", "[CONNECTION_PROFILE]")
                     .toString())
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
@@ -196,7 +196,7 @@ public class DatastreamClientTest {
     mockDatastream.addResponse(expectedResponse);
 
     ConnectionProfileName name =
-        ConnectionProfileName.of("[PROJECT]", "[LOCATION]", "[CONNECTIONPROFILE]");
+        ConnectionProfileName.of("[PROJECT]", "[LOCATION]", "[CONNECTION_PROFILE]");
 
     ConnectionProfile actualResponse = client.getConnectionProfile(name);
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -220,7 +220,7 @@ public class DatastreamClientTest {
 
     try {
       ConnectionProfileName name =
-          ConnectionProfileName.of("[PROJECT]", "[LOCATION]", "[CONNECTIONPROFILE]");
+          ConnectionProfileName.of("[PROJECT]", "[LOCATION]", "[CONNECTION_PROFILE]");
       client.getConnectionProfile(name);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -233,7 +233,7 @@ public class DatastreamClientTest {
     ConnectionProfile expectedResponse =
         ConnectionProfile.newBuilder()
             .setName(
-                ConnectionProfileName.of("[PROJECT]", "[LOCATION]", "[CONNECTIONPROFILE]")
+                ConnectionProfileName.of("[PROJECT]", "[LOCATION]", "[CONNECTION_PROFILE]")
                     .toString())
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
@@ -278,7 +278,7 @@ public class DatastreamClientTest {
     ConnectionProfile expectedResponse =
         ConnectionProfile.newBuilder()
             .setName(
-                ConnectionProfileName.of("[PROJECT]", "[LOCATION]", "[CONNECTIONPROFILE]")
+                ConnectionProfileName.of("[PROJECT]", "[LOCATION]", "[CONNECTION_PROFILE]")
                     .toString())
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
@@ -338,7 +338,7 @@ public class DatastreamClientTest {
     ConnectionProfile expectedResponse =
         ConnectionProfile.newBuilder()
             .setName(
-                ConnectionProfileName.of("[PROJECT]", "[LOCATION]", "[CONNECTIONPROFILE]")
+                ConnectionProfileName.of("[PROJECT]", "[LOCATION]", "[CONNECTION_PROFILE]")
                     .toString())
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
@@ -398,7 +398,7 @@ public class DatastreamClientTest {
     ConnectionProfile expectedResponse =
         ConnectionProfile.newBuilder()
             .setName(
-                ConnectionProfileName.of("[PROJECT]", "[LOCATION]", "[CONNECTIONPROFILE]")
+                ConnectionProfileName.of("[PROJECT]", "[LOCATION]", "[CONNECTION_PROFILE]")
                     .toString())
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
@@ -462,7 +462,7 @@ public class DatastreamClientTest {
     mockDatastream.addResponse(resultOperation);
 
     ConnectionProfileName name =
-        ConnectionProfileName.of("[PROJECT]", "[LOCATION]", "[CONNECTIONPROFILE]");
+        ConnectionProfileName.of("[PROJECT]", "[LOCATION]", "[CONNECTION_PROFILE]");
 
     client.deleteConnectionProfileAsync(name).get();
 
@@ -485,7 +485,7 @@ public class DatastreamClientTest {
 
     try {
       ConnectionProfileName name =
-          ConnectionProfileName.of("[PROJECT]", "[LOCATION]", "[CONNECTIONPROFILE]");
+          ConnectionProfileName.of("[PROJECT]", "[LOCATION]", "[CONNECTION_PROFILE]");
       client.deleteConnectionProfileAsync(name).get();
       Assert.fail("No exception raised");
     } catch (ExecutionException e) {
@@ -547,7 +547,7 @@ public class DatastreamClientTest {
     DiscoverConnectionProfileRequest request =
         DiscoverConnectionProfileRequest.newBuilder()
             .setParent(
-                ConnectionProfileName.of("[PROJECT]", "[LOCATION]", "[CONNECTIONPROFILE]")
+                ConnectionProfileName.of("[PROJECT]", "[LOCATION]", "[CONNECTION_PROFILE]")
                     .toString())
             .build();
 
@@ -582,7 +582,7 @@ public class DatastreamClientTest {
       DiscoverConnectionProfileRequest request =
           DiscoverConnectionProfileRequest.newBuilder()
               .setParent(
-                  ConnectionProfileName.of("[PROJECT]", "[LOCATION]", "[CONNECTIONPROFILE]")
+                  ConnectionProfileName.of("[PROJECT]", "[LOCATION]", "[CONNECTION_PROFILE]")
                       .toString())
               .build();
       client.discoverConnectionProfile(request);
@@ -1171,7 +1171,7 @@ public class DatastreamClientTest {
     PrivateConnection expectedResponse =
         PrivateConnection.newBuilder()
             .setName(
-                PrivateConnectionName.of("[PROJECT]", "[LOCATION]", "[PRIVATECONNECTION]")
+                PrivateConnectionName.of("[PROJECT]", "[LOCATION]", "[PRIVATE_CONNECTION]")
                     .toString())
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
@@ -1233,7 +1233,7 @@ public class DatastreamClientTest {
     PrivateConnection expectedResponse =
         PrivateConnection.newBuilder()
             .setName(
-                PrivateConnectionName.of("[PROJECT]", "[LOCATION]", "[PRIVATECONNECTION]")
+                PrivateConnectionName.of("[PROJECT]", "[LOCATION]", "[PRIVATE_CONNECTION]")
                     .toString())
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
@@ -1295,7 +1295,7 @@ public class DatastreamClientTest {
     PrivateConnection expectedResponse =
         PrivateConnection.newBuilder()
             .setName(
-                PrivateConnectionName.of("[PROJECT]", "[LOCATION]", "[PRIVATECONNECTION]")
+                PrivateConnectionName.of("[PROJECT]", "[LOCATION]", "[PRIVATE_CONNECTION]")
                     .toString())
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
@@ -1307,7 +1307,7 @@ public class DatastreamClientTest {
     mockDatastream.addResponse(expectedResponse);
 
     PrivateConnectionName name =
-        PrivateConnectionName.of("[PROJECT]", "[LOCATION]", "[PRIVATECONNECTION]");
+        PrivateConnectionName.of("[PROJECT]", "[LOCATION]", "[PRIVATE_CONNECTION]");
 
     PrivateConnection actualResponse = client.getPrivateConnection(name);
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -1331,7 +1331,7 @@ public class DatastreamClientTest {
 
     try {
       PrivateConnectionName name =
-          PrivateConnectionName.of("[PROJECT]", "[LOCATION]", "[PRIVATECONNECTION]");
+          PrivateConnectionName.of("[PROJECT]", "[LOCATION]", "[PRIVATE_CONNECTION]");
       client.getPrivateConnection(name);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -1344,7 +1344,7 @@ public class DatastreamClientTest {
     PrivateConnection expectedResponse =
         PrivateConnection.newBuilder()
             .setName(
-                PrivateConnectionName.of("[PROJECT]", "[LOCATION]", "[PRIVATECONNECTION]")
+                PrivateConnectionName.of("[PROJECT]", "[LOCATION]", "[PRIVATE_CONNECTION]")
                     .toString())
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
@@ -1488,7 +1488,7 @@ public class DatastreamClientTest {
     mockDatastream.addResponse(resultOperation);
 
     PrivateConnectionName name =
-        PrivateConnectionName.of("[PROJECT]", "[LOCATION]", "[PRIVATECONNECTION]");
+        PrivateConnectionName.of("[PROJECT]", "[LOCATION]", "[PRIVATE_CONNECTION]");
 
     client.deletePrivateConnectionAsync(name).get();
 
@@ -1511,7 +1511,7 @@ public class DatastreamClientTest {
 
     try {
       PrivateConnectionName name =
-          PrivateConnectionName.of("[PROJECT]", "[LOCATION]", "[PRIVATECONNECTION]");
+          PrivateConnectionName.of("[PROJECT]", "[LOCATION]", "[PRIVATE_CONNECTION]");
       client.deletePrivateConnectionAsync(name).get();
       Assert.fail("No exception raised");
     } catch (ExecutionException e) {
@@ -1569,7 +1569,7 @@ public class DatastreamClientTest {
     Route expectedResponse =
         Route.newBuilder()
             .setName(
-                RouteName.of("[PROJECT]", "[LOCATION]", "[PRIVATECONNECTION]", "[ROUTE]")
+                RouteName.of("[PROJECT]", "[LOCATION]", "[PRIVATE_CONNECTION]", "[ROUTE]")
                     .toString())
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
@@ -1587,7 +1587,7 @@ public class DatastreamClientTest {
     mockDatastream.addResponse(resultOperation);
 
     PrivateConnectionName parent =
-        PrivateConnectionName.of("[PROJECT]", "[LOCATION]", "[PRIVATECONNECTION]");
+        PrivateConnectionName.of("[PROJECT]", "[LOCATION]", "[PRIVATE_CONNECTION]");
     Route route = Route.newBuilder().build();
     String routeId = "routeId1385647428";
 
@@ -1614,7 +1614,7 @@ public class DatastreamClientTest {
 
     try {
       PrivateConnectionName parent =
-          PrivateConnectionName.of("[PROJECT]", "[LOCATION]", "[PRIVATECONNECTION]");
+          PrivateConnectionName.of("[PROJECT]", "[LOCATION]", "[PRIVATE_CONNECTION]");
       Route route = Route.newBuilder().build();
       String routeId = "routeId1385647428";
       client.createRouteAsync(parent, route, routeId).get();
@@ -1631,7 +1631,7 @@ public class DatastreamClientTest {
     Route expectedResponse =
         Route.newBuilder()
             .setName(
-                RouteName.of("[PROJECT]", "[LOCATION]", "[PRIVATECONNECTION]", "[ROUTE]")
+                RouteName.of("[PROJECT]", "[LOCATION]", "[PRIVATE_CONNECTION]", "[ROUTE]")
                     .toString())
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
@@ -1691,7 +1691,7 @@ public class DatastreamClientTest {
     Route expectedResponse =
         Route.newBuilder()
             .setName(
-                RouteName.of("[PROJECT]", "[LOCATION]", "[PRIVATECONNECTION]", "[ROUTE]")
+                RouteName.of("[PROJECT]", "[LOCATION]", "[PRIVATE_CONNECTION]", "[ROUTE]")
                     .toString())
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
@@ -1702,7 +1702,7 @@ public class DatastreamClientTest {
             .build();
     mockDatastream.addResponse(expectedResponse);
 
-    RouteName name = RouteName.of("[PROJECT]", "[LOCATION]", "[PRIVATECONNECTION]", "[ROUTE]");
+    RouteName name = RouteName.of("[PROJECT]", "[LOCATION]", "[PRIVATE_CONNECTION]", "[ROUTE]");
 
     Route actualResponse = client.getRoute(name);
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -1724,7 +1724,7 @@ public class DatastreamClientTest {
     mockDatastream.addException(exception);
 
     try {
-      RouteName name = RouteName.of("[PROJECT]", "[LOCATION]", "[PRIVATECONNECTION]", "[ROUTE]");
+      RouteName name = RouteName.of("[PROJECT]", "[LOCATION]", "[PRIVATE_CONNECTION]", "[ROUTE]");
       client.getRoute(name);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -1737,7 +1737,7 @@ public class DatastreamClientTest {
     Route expectedResponse =
         Route.newBuilder()
             .setName(
-                RouteName.of("[PROJECT]", "[LOCATION]", "[PRIVATECONNECTION]", "[ROUTE]")
+                RouteName.of("[PROJECT]", "[LOCATION]", "[PRIVATE_CONNECTION]", "[ROUTE]")
                     .toString())
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
@@ -1789,7 +1789,7 @@ public class DatastreamClientTest {
     mockDatastream.addResponse(expectedResponse);
 
     PrivateConnectionName parent =
-        PrivateConnectionName.of("[PROJECT]", "[LOCATION]", "[PRIVATECONNECTION]");
+        PrivateConnectionName.of("[PROJECT]", "[LOCATION]", "[PRIVATE_CONNECTION]");
 
     ListRoutesPagedResponse pagedListResponse = client.listRoutes(parent);
 
@@ -1816,7 +1816,7 @@ public class DatastreamClientTest {
 
     try {
       PrivateConnectionName parent =
-          PrivateConnectionName.of("[PROJECT]", "[LOCATION]", "[PRIVATECONNECTION]");
+          PrivateConnectionName.of("[PROJECT]", "[LOCATION]", "[PRIVATE_CONNECTION]");
       client.listRoutes(parent);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -1879,7 +1879,7 @@ public class DatastreamClientTest {
             .build();
     mockDatastream.addResponse(resultOperation);
 
-    RouteName name = RouteName.of("[PROJECT]", "[LOCATION]", "[PRIVATECONNECTION]", "[ROUTE]");
+    RouteName name = RouteName.of("[PROJECT]", "[LOCATION]", "[PRIVATE_CONNECTION]", "[ROUTE]");
 
     client.deleteRouteAsync(name).get();
 
@@ -1900,7 +1900,7 @@ public class DatastreamClientTest {
     mockDatastream.addException(exception);
 
     try {
-      RouteName name = RouteName.of("[PROJECT]", "[LOCATION]", "[PRIVATECONNECTION]", "[ROUTE]");
+      RouteName name = RouteName.of("[PROJECT]", "[LOCATION]", "[PRIVATE_CONNECTION]", "[ROUTE]");
       client.deleteRouteAsync(name).get();
       Assert.fail("No exception raised");
     } catch (ExecutionException e) {
