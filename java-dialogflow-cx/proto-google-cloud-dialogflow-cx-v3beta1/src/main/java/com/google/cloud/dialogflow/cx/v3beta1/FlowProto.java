@@ -239,11 +239,12 @@ public final class FlowProto {
           + "tobuf.Struct\032x\312A\031dialogflow.googleapis.c"
           + "om\322AYhttps://www.googleapis.com/auth/clo"
           + "ud-platform,https://www.googleapis.com/a"
-          + "uth/dialogflowB\250\001\n&com.google.cloud.dial"
+          + "uth/dialogflowB\321\001\n&com.google.cloud.dial"
           + "ogflow.cx.v3beta1B\tFlowProtoP\001ZDgoogle.g"
           + "olang.org/genproto/googleapis/cloud/dial"
           + "ogflow/cx/v3beta1;cx\370\001\001\242\002\002DF\252\002\"Google.Cl"
-          + "oud.Dialogflow.Cx.V3Beta1b\006proto3"
+          + "oud.Dialogflow.Cx.V3Beta1\352\002&Google::Clou"
+          + "d::Dialogflow::CX::V3beta1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

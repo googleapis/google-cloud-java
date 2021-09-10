@@ -140,12 +140,13 @@ public final class TransitionRouteGroupProto {
           + "/transitionRouteGroups/*}\332A\004name\032x\312A\031dia"
           + "logflow.googleapis.com\322AYhttps://www.goo"
           + "gleapis.com/auth/cloud-platform,https://"
-          + "www.googleapis.com/auth/dialogflowB\251\001\n!c"
+          + "www.googleapis.com/auth/dialogflowB\315\001\n!c"
           + "om.google.cloud.dialogflow.cx.v3B\031Transi"
           + "tionRouteGroupProtoP\001Z?google.golang.org"
           + "/genproto/googleapis/cloud/dialogflow/cx"
           + "/v3;cx\370\001\001\242\002\002DF\252\002\035Google.Cloud.Dialogflow"
-          + ".Cx.V3b\006proto3"
+          + ".Cx.V3\352\002!Google::Cloud::Dialogflow::CX::"
+          + "V3b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

@@ -155,11 +155,12 @@ public final class VersionProto {
           + "ty\022\026google.protobuf.Struct\032x\312A\031dialogflo"
           + "w.googleapis.com\322AYhttps://www.googleapi"
           + "s.com/auth/cloud-platform,https://www.go"
-          + "ogleapis.com/auth/dialogflowB\234\001\n!com.goo"
+          + "ogleapis.com/auth/dialogflowB\300\001\n!com.goo"
           + "gle.cloud.dialogflow.cx.v3B\014VersionProto"
           + "P\001Z?google.golang.org/genproto/googleapi"
           + "s/cloud/dialogflow/cx/v3;cx\370\001\001\242\002\002DF\252\002\035Go"
-          + "ogle.Cloud.Dialogflow.Cx.V3b\006proto3"
+          + "ogle.Cloud.Dialogflow.Cx.V3\352\002!Google::Cl"
+          + "oud::Dialogflow::CX::V3b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

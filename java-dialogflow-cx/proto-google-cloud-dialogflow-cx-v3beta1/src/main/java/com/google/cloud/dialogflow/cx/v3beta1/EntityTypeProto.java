@@ -151,11 +151,12 @@ public final class EntityTypeProto {
           + "\312A\031dialogflow.googleapis.com\322AYhttps://w"
           + "ww.googleapis.com/auth/cloud-platform,ht"
           + "tps://www.googleapis.com/auth/dialogflow"
-          + "B\256\001\n&com.google.cloud.dialogflow.cx.v3be"
+          + "B\327\001\n&com.google.cloud.dialogflow.cx.v3be"
           + "ta1B\017EntityTypeProtoP\001ZDgoogle.golang.or"
           + "g/genproto/googleapis/cloud/dialogflow/c"
           + "x/v3beta1;cx\370\001\001\242\002\002DF\252\002\"Google.Cloud.Dial"
-          + "ogflow.Cx.V3Beta1b\006proto3"
+          + "ogflow.Cx.V3Beta1\352\002&Google::Cloud::Dialo"
+          + "gflow::CX::V3beta1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

@@ -179,11 +179,12 @@ public final class PageProto {
           + "\004name\032x\312A\031dialogflow.googleapis.com\322AYht"
           + "tps://www.googleapis.com/auth/cloud-plat"
           + "form,https://www.googleapis.com/auth/dia"
-          + "logflowB\231\001\n!com.google.cloud.dialogflow."
+          + "logflowB\275\001\n!com.google.cloud.dialogflow."
           + "cx.v3B\tPageProtoP\001Z?google.golang.org/ge"
           + "nproto/googleapis/cloud/dialogflow/cx/v3"
           + ";cx\370\001\001\242\002\002DF\252\002\035Google.Cloud.Dialogflow.Cx"
-          + ".V3b\006proto3"
+          + ".V3\352\002!Google::Cloud::Dialogflow::CX::V3b"
+          + "\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

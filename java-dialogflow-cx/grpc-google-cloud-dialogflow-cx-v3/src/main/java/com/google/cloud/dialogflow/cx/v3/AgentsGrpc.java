@@ -566,6 +566,12 @@ public final class AgentsGrpc {
      *
      * <pre>
      * Exports the specified agent to a binary file.
+     * This method is a [long-running
+     * operation](https://cloud.google.com/dialogflow/cx/docs/how/long-running-operation).
+     * The returned `Operation` type has the following method-specific fields:
+     * - `metadata`: An empty [Struct
+     *   message](https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#struct)
+     * - `response`: [ExportAgentResponse][google.cloud.dialogflow.cx.v3.ExportAgentResponse]
      * </pre>
      */
     public void exportAgent(
@@ -796,6 +802,12 @@ public final class AgentsGrpc {
      *
      * <pre>
      * Exports the specified agent to a binary file.
+     * This method is a [long-running
+     * operation](https://cloud.google.com/dialogflow/cx/docs/how/long-running-operation).
+     * The returned `Operation` type has the following method-specific fields:
+     * - `metadata`: An empty [Struct
+     *   message](https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#struct)
+     * - `response`: [ExportAgentResponse][google.cloud.dialogflow.cx.v3.ExportAgentResponse]
      * </pre>
      */
     public void exportAgent(
@@ -960,6 +972,12 @@ public final class AgentsGrpc {
      *
      * <pre>
      * Exports the specified agent to a binary file.
+     * This method is a [long-running
+     * operation](https://cloud.google.com/dialogflow/cx/docs/how/long-running-operation).
+     * The returned `Operation` type has the following method-specific fields:
+     * - `metadata`: An empty [Struct
+     *   message](https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#struct)
+     * - `response`: [ExportAgentResponse][google.cloud.dialogflow.cx.v3.ExportAgentResponse]
      * </pre>
      */
     public com.google.longrunning.Operation exportAgent(
@@ -1114,6 +1132,12 @@ public final class AgentsGrpc {
      *
      * <pre>
      * Exports the specified agent to a binary file.
+     * This method is a [long-running
+     * operation](https://cloud.google.com/dialogflow/cx/docs/how/long-running-operation).
+     * The returned `Operation` type has the following method-specific fields:
+     * - `metadata`: An empty [Struct
+     *   message](https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#struct)
+     * - `response`: [ExportAgentResponse][google.cloud.dialogflow.cx.v3.ExportAgentResponse]
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>

@@ -275,15 +275,16 @@ public final class WebhookProto {
           + "gents/*/webhooks/*}\332A\004name\032x\312A\031dialogflo"
           + "w.googleapis.com\322AYhttps://www.googleapi"
           + "s.com/auth/cloud-platform,https://www.go"
-          + "ogleapis.com/auth/dialogflowB\252\002\n&com.goo"
+          + "ogleapis.com/auth/dialogflowB\323\002\n&com.goo"
           + "gle.cloud.dialogflow.cx.v3beta1B\014Webhook"
           + "ProtoP\001ZDgoogle.golang.org/genproto/goog"
           + "leapis/cloud/dialogflow/cx/v3beta1;cx\370\001\001"
           + "\242\002\002DF\252\002\"Google.Cloud.Dialogflow.Cx.V3Bet"
-          + "a1\352A|\n\'servicedirectory.googleapis.com/S"
-          + "ervice\022Qprojects/{project}/locations/{lo"
-          + "cation}/namespaces/{namespace}/services/"
-          + "{service}b\006proto3"
+          + "a1\352\002&Google::Cloud::Dialogflow::CX::V3be"
+          + "ta1\352A|\n\'servicedirectory.googleapis.com/"
+          + "Service\022Qprojects/{project}/locations/{l"
+          + "ocation}/namespaces/{namespace}/services"
+          + "/{service}b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

@@ -671,7 +671,13 @@ public class AgentsClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Exports the specified agent to a binary file.
+   * Exports the specified agent to a binary file. This method is a [long-running
+   * operation](https://cloud.google.com/dialogflow/cx/docs/how/long-running-operation). The
+   * returned `Operation` type has the following method-specific fields:
+   *
+   * <p>- `metadata`: An empty [Struct
+   * message](https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#struct)
+   * - `response`: [ExportAgentResponse][google.cloud.dialogflow.cx.v3.ExportAgentResponse]
    *
    * <p>Sample code:
    *
@@ -699,7 +705,13 @@ public class AgentsClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Exports the specified agent to a binary file.
+   * Exports the specified agent to a binary file. This method is a [long-running
+   * operation](https://cloud.google.com/dialogflow/cx/docs/how/long-running-operation). The
+   * returned `Operation` type has the following method-specific fields:
+   *
+   * <p>- `metadata`: An empty [Struct
+   * message](https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#struct)
+   * - `response`: [ExportAgentResponse][google.cloud.dialogflow.cx.v3.ExportAgentResponse]
    *
    * <p>Sample code:
    *
@@ -727,7 +739,13 @@ public class AgentsClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Exports the specified agent to a binary file.
+   * Exports the specified agent to a binary file. This method is a [long-running
+   * operation](https://cloud.google.com/dialogflow/cx/docs/how/long-running-operation). The
+   * returned `Operation` type has the following method-specific fields:
+   *
+   * <p>- `metadata`: An empty [Struct
+   * message](https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#struct)
+   * - `response`: [ExportAgentResponse][google.cloud.dialogflow.cx.v3.ExportAgentResponse]
    *
    * <p>Sample code:
    *

@@ -104,12 +104,13 @@ public final class AudioConfigProto {
           + "AR_16\020\001\022\035\n\031OUTPUT_AUDIO_ENCODING_MP3\020\002\022%"
           + "\n!OUTPUT_AUDIO_ENCODING_MP3_64_KBPS\020\004\022\"\n"
           + "\036OUTPUT_AUDIO_ENCODING_OGG_OPUS\020\003\022\037\n\033OUT"
-          + "PUT_AUDIO_ENCODING_MULAW\020\005B\257\001\n&com.googl"
+          + "PUT_AUDIO_ENCODING_MULAW\020\005B\330\001\n&com.googl"
           + "e.cloud.dialogflow.cx.v3beta1B\020AudioConf"
           + "igProtoP\001ZDgoogle.golang.org/genproto/go"
           + "ogleapis/cloud/dialogflow/cx/v3beta1;cx\370"
           + "\001\001\242\002\002DF\252\002\"Google.Cloud.Dialogflow.Cx.V3B"
-          + "eta1b\006proto3"
+          + "eta1\352\002&Google::Cloud::Dialogflow::CX::V3"
+          + "beta1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

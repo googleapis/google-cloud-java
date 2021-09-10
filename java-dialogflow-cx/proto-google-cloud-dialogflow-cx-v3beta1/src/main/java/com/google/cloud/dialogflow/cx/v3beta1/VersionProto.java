@@ -159,11 +159,12 @@ public final class VersionProto {
           + "Struct\032x\312A\031dialogflow.googleapis.com\322AYh"
           + "ttps://www.googleapis.com/auth/cloud-pla"
           + "tform,https://www.googleapis.com/auth/di"
-          + "alogflowB\253\001\n&com.google.cloud.dialogflow"
+          + "alogflowB\324\001\n&com.google.cloud.dialogflow"
           + ".cx.v3beta1B\014VersionProtoP\001ZDgoogle.gola"
           + "ng.org/genproto/googleapis/cloud/dialogf"
           + "low/cx/v3beta1;cx\370\001\001\242\002\002DF\252\002\"Google.Cloud"
-          + ".Dialogflow.Cx.V3Beta1b\006proto3"
+          + ".Dialogflow.Cx.V3Beta1\352\002&Google::Cloud::"
+          + "Dialogflow::CX::V3beta1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

@@ -155,11 +155,12 @@ public final class SessionEntityTypeProto {
           + "A\004name\032x\312A\031dialogflow.googleapis.com\322AYh"
           + "ttps://www.googleapis.com/auth/cloud-pla"
           + "tform,https://www.googleapis.com/auth/di"
-          + "alogflowB\246\001\n!com.google.cloud.dialogflow"
+          + "alogflowB\312\001\n!com.google.cloud.dialogflow"
           + ".cx.v3B\026SessionEntityTypeProtoP\001Z?google"
           + ".golang.org/genproto/googleapis/cloud/di"
           + "alogflow/cx/v3;cx\370\001\001\242\002\002DF\252\002\035Google.Cloud"
-          + ".Dialogflow.Cx.V3b\006proto3"
+          + ".Dialogflow.Cx.V3\352\002!Google::Cloud::Dialo"
+          + "gflow::CX::V3b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

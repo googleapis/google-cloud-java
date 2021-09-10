@@ -23,6 +23,7 @@ package com.google.cloud.dialogflow.cx.v3;
  *
  * <pre>
  * Metadata returned for the [TestCases.RunTestCase][google.cloud.dialogflow.cx.v3.TestCases.RunTestCase] long running operation.
+ * This message currently has no fields.
  * </pre>
  *
  * Protobuf type {@code google.cloud.dialogflow.cx.v3.RunTestCaseMetadata}
@@ -258,6 +259,7 @@ public final class RunTestCaseMetadata extends com.google.protobuf.GeneratedMess
    *
    * <pre>
    * Metadata returned for the [TestCases.RunTestCase][google.cloud.dialogflow.cx.v3.TestCases.RunTestCase] long running operation.
+   * This message currently has no fields.
    * </pre>
    *
    * Protobuf type {@code google.cloud.dialogflow.cx.v3.RunTestCaseMetadata}

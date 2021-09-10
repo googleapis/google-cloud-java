@@ -264,12 +264,13 @@ public final class ExperimentProto {
           + "ents/*}:stop:\001*\332A\004name\032x\312A\031dialogflow.go"
           + "ogleapis.com\322AYhttps://www.googleapis.co"
           + "m/auth/cloud-platform,https://www.google"
-          + "apis.com/auth/dialogflowB\256\001\n&com.google."
+          + "apis.com/auth/dialogflowB\327\001\n&com.google."
           + "cloud.dialogflow.cx.v3beta1B\017ExperimentP"
           + "rotoP\001ZDgoogle.golang.org/genproto/googl"
           + "eapis/cloud/dialogflow/cx/v3beta1;cx\370\001\001\242"
           + "\002\002DF\252\002\"Google.Cloud.Dialogflow.Cx.V3Beta"
-          + "1b\006proto3"
+          + "1\352\002&Google::Cloud::Dialogflow::CX::V3bet"
+          + "a1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

@@ -108,12 +108,12 @@ public final class ResponseMessageProto {
           + "x.v3.ResponseMessage.MixedAudio.Segment\032"
           + "^\n\007Segment\022\017\n\005audio\030\001 \001(\014H\000\022\r\n\003uri\030\002 \001(\t"
           + "H\000\022(\n\033allow_playback_interruption\030\003 \001(\010B"
-          + "\003\340A\003B\t\n\007contentB\t\n\007messageB\244\001\n!com.googl"
+          + "\003\340A\003B\t\n\007contentB\t\n\007messageB\310\001\n!com.googl"
           + "e.cloud.dialogflow.cx.v3B\024ResponseMessag"
           + "eProtoP\001Z?google.golang.org/genproto/goo"
           + "gleapis/cloud/dialogflow/cx/v3;cx\370\001\001\242\002\002D"
-          + "F\252\002\035Google.Cloud.Dialogflow.Cx.V3b\006proto"
-          + "3"
+          + "F\252\002\035Google.Cloud.Dialogflow.Cx.V3\352\002!Goog"
+          + "le::Cloud::Dialogflow::CX::V3b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

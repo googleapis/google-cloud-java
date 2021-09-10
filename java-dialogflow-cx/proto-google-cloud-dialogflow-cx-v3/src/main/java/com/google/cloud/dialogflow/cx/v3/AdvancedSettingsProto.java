@@ -53,11 +53,12 @@ public final class AdvancedSettingsProto {
           + "oud.dialogflow.cx.v3.AdvancedSettings.Lo"
           + "ggingSettings\032Y\n\017LoggingSettings\022\"\n\032enab"
           + "le_stackdriver_logging\030\002 \001(\010\022\"\n\032enable_i"
-          + "nteraction_logging\030\003 \001(\010B\245\001\n!com.google."
+          + "nteraction_logging\030\003 \001(\010B\311\001\n!com.google."
           + "cloud.dialogflow.cx.v3B\025AdvancedSettings"
           + "ProtoP\001Z?google.golang.org/genproto/goog"
           + "leapis/cloud/dialogflow/cx/v3;cx\370\001\001\242\002\002DF"
-          + "\252\002\035Google.Cloud.Dialogflow.Cx.V3b\006proto3"
+          + "\252\002\035Google.Cloud.Dialogflow.Cx.V3\352\002!Googl"
+          + "e::Cloud::Dialogflow::CX::V3b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

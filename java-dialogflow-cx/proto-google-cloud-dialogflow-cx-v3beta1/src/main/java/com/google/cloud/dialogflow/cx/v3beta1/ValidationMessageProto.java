@@ -65,12 +65,13 @@ public final class ValidationMessageProto {
           + "N_ROUTE_GROUP\020\007\"F\n\010Severity\022\030\n\024SEVERITY_"
           + "UNSPECIFIED\020\000\022\010\n\004INFO\020\001\022\013\n\007WARNING\020\002\022\t\n\005"
           + "ERROR\020\003\"2\n\014ResourceName\022\014\n\004name\030\001 \001(\t\022\024\n"
-          + "\014display_name\030\002 \001(\tB\265\001\n&com.google.cloud"
+          + "\014display_name\030\002 \001(\tB\336\001\n&com.google.cloud"
           + ".dialogflow.cx.v3beta1B\026ValidationMessag"
           + "eProtoP\001ZDgoogle.golang.org/genproto/goo"
           + "gleapis/cloud/dialogflow/cx/v3beta1;cx\370\001"
           + "\001\242\002\002DF\252\002\"Google.Cloud.Dialogflow.Cx.V3Be"
-          + "ta1b\006proto3"
+          + "ta1\352\002&Google::Cloud::Dialogflow::CX::V3b"
+          + "eta1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

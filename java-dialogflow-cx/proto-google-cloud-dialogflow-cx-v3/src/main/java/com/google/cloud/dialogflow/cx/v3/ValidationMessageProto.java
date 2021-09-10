@@ -64,12 +64,13 @@ public final class ValidationMessageProto {
           + "\020\r\022\032\n\026TRANSITION_ROUTE_GROUP\020\007\"F\n\010Severi"
           + "ty\022\030\n\024SEVERITY_UNSPECIFIED\020\000\022\010\n\004INFO\020\001\022\013"
           + "\n\007WARNING\020\002\022\t\n\005ERROR\020\003\"2\n\014ResourceName\022\014"
-          + "\n\004name\030\001 \001(\t\022\024\n\014display_name\030\002 \001(\tB\246\001\n!c"
+          + "\n\004name\030\001 \001(\t\022\024\n\014display_name\030\002 \001(\tB\312\001\n!c"
           + "om.google.cloud.dialogflow.cx.v3B\026Valida"
           + "tionMessageProtoP\001Z?google.golang.org/ge"
           + "nproto/googleapis/cloud/dialogflow/cx/v3"
           + ";cx\370\001\001\242\002\002DF\252\002\035Google.Cloud.Dialogflow.Cx"
-          + ".V3b\006proto3"
+          + ".V3\352\002!Google::Cloud::Dialogflow::CX::V3b"
+          + "\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
