@@ -1,5 +1,5 @@
 #!/bin/bash
-# Copyright 2019 Google Inc.
+# Copyright 2019 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -33,7 +33,7 @@ python3 -m pip install gcp-docuploader
 # compile all packages
 mvn clean install -B -q -DskipTests=true
 
-export NAME=proto-google-cloud-orgpolicy-v1
+export NAME=google-cloud-orgpolicy
 export VERSION=$(grep ${NAME}: versions.txt | cut -d: -f3)
 
 # build the docs

@@ -2,6 +2,6 @@
 # module:released-version:current-version
 
 google-cloud-orgpolicy:2.0.3:2.0.4-SNAPSHOT
+grpc-google-cloud-orgpolicy-v2:2.0.3:2.0.4-SNAPSHOT
 proto-google-cloud-orgpolicy-v1:2.0.3:2.0.4-SNAPSHOT
 proto-google-cloud-orgpolicy-v2:2.0.3:2.0.4-SNAPSHOT
-grpc-google-cloud-orgpolicy-v2:2.0.3:2.0.4-SNAPSHOT

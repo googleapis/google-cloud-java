@@ -1,11 +1,10 @@
-#!/bin/bash
-# Copyright 2018 Google LLC
+# Copyright 2021 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
 # You may obtain a copy of the License at
 #
-#      http://www.apache.org/licenses/LICENSE-2.0
+#     https://www.apache.org/licenses/LICENSE-2.0
 #
 # Unless required by applicable law or agreed to in writing, software
 # distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,20 +12,15 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-set -eo pipefail
+import synthtool as s
+from synthtool.languages import java
 
-# STAGING_REPOSITORY_ID must be set
-if [ -z "${STAGING_REPOSITORY_ID}" ]; then
-  echo "Missing STAGING_REPOSITORY_ID environment variable"
-  exit 1
-fi
 
-source $(dirname "$0")/common.sh
-pushd $(dirname "$0")/../../
+for library in s.get_staging_dirs():
+    # put any special-case replacements here
+    s.move(library)
 
-setup_environment_secrets
-create_settings_xml_file "settings.xml"
-
-mvn nexus-staging:drop -B \
-  --settings=settings.xml \
-  -DstagingRepositoryId=${STAGING_REPOSITORY_ID}
+s.remove_staging_dirs()
+java.common_templates(
+    excludes=["README.md", "samples/*", ".github/workflows/samples.yaml"]
+)

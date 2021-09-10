@@ -10,5 +10,5 @@
   "language": "java",
   "repo": "googleapis/java-orgpolicy",
   "repo_short": "java-orgpolicy",
-  "distribution_name": "com.google.api.grpc:proto-google-cloud-orgpolicy-v1"
+  "distribution_name": "com.google.cloud:google-cloud-orgpolicy"
 }
