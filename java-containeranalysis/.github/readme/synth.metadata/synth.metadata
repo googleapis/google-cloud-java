@@ -1,0 +1,18 @@
+{
+  "sources": [
+    {
+      "git": {
+        "name": ".",
+        "remote": "https://github.com/googleapis/java-containeranalysis.git",
+        "sha": "597c7e6ca295e466df6a0c47d5ed7eb80173a3c7"
+      }
+    },
+    {
+      "git": {
+        "name": "synthtool",
+        "remote": "https://github.com/googleapis/synthtool.git",
+        "sha": "5c0fa62eea9c33ebe61e582424b659eb264e1ba4"
+      }
+    }
+  ]
+}
