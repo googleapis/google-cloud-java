@@ -141,4 +141,75 @@ public interface CreateWorkloadOperationMetadataOrBuilder
    * @return The complianceRegime.
    */
   com.google.cloud.assuredworkloads.v1beta1.Workload.ComplianceRegime getComplianceRegime();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Resource properties in the input that are used for creating/customizing
+   * workload resources.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.assuredworkloads.v1beta1.Workload.ResourceSettings resource_settings = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  java.util.List<com.google.cloud.assuredworkloads.v1beta1.Workload.ResourceSettings>
+      getResourceSettingsList();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Resource properties in the input that are used for creating/customizing
+   * workload resources.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.assuredworkloads.v1beta1.Workload.ResourceSettings resource_settings = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.assuredworkloads.v1beta1.Workload.ResourceSettings getResourceSettings(
+      int index);
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Resource properties in the input that are used for creating/customizing
+   * workload resources.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.assuredworkloads.v1beta1.Workload.ResourceSettings resource_settings = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  int getResourceSettingsCount();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Resource properties in the input that are used for creating/customizing
+   * workload resources.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.assuredworkloads.v1beta1.Workload.ResourceSettings resource_settings = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  java.util.List<
+          ? extends com.google.cloud.assuredworkloads.v1beta1.Workload.ResourceSettingsOrBuilder>
+      getResourceSettingsOrBuilderList();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Resource properties in the input that are used for creating/customizing
+   * workload resources.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.assuredworkloads.v1beta1.Workload.ResourceSettings resource_settings = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.assuredworkloads.v1beta1.Workload.ResourceSettingsOrBuilder
+      getResourceSettingsOrBuilder(int index);
 }
