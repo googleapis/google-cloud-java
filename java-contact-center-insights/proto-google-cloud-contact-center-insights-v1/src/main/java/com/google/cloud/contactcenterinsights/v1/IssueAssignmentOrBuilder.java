@@ -61,4 +61,31 @@ public interface IssueAssignmentOrBuilder
    * @return The score.
    */
   double getScore();
+
+  /**
+   *
+   *
+   * <pre>
+   * Immutable. Display name of the assigned issue. This field is set at time of analyis
+   * and immutable since then.
+   * </pre>
+   *
+   * <code>string display_name = 3 [(.google.api.field_behavior) = IMMUTABLE];</code>
+   *
+   * @return The displayName.
+   */
+  java.lang.String getDisplayName();
+  /**
+   *
+   *
+   * <pre>
+   * Immutable. Display name of the assigned issue. This field is set at time of analyis
+   * and immutable since then.
+   * </pre>
+   *
+   * <code>string display_name = 3 [(.google.api.field_behavior) = IMMUTABLE];</code>
+   *
+   * @return The bytes for displayName.
+   */
+  com.google.protobuf.ByteString getDisplayNameBytes();
 }

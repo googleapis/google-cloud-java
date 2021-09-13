@@ -32,10 +32,17 @@ import com.google.cloud.contactcenterinsights.v1.Conversation;
 import com.google.cloud.contactcenterinsights.v1.CreateAnalysisOperationMetadata;
 import com.google.cloud.contactcenterinsights.v1.CreateAnalysisRequest;
 import com.google.cloud.contactcenterinsights.v1.CreateConversationRequest;
+import com.google.cloud.contactcenterinsights.v1.CreateIssueModelMetadata;
+import com.google.cloud.contactcenterinsights.v1.CreateIssueModelRequest;
 import com.google.cloud.contactcenterinsights.v1.CreatePhraseMatcherRequest;
 import com.google.cloud.contactcenterinsights.v1.DeleteAnalysisRequest;
 import com.google.cloud.contactcenterinsights.v1.DeleteConversationRequest;
+import com.google.cloud.contactcenterinsights.v1.DeleteIssueModelMetadata;
+import com.google.cloud.contactcenterinsights.v1.DeleteIssueModelRequest;
 import com.google.cloud.contactcenterinsights.v1.DeletePhraseMatcherRequest;
+import com.google.cloud.contactcenterinsights.v1.DeployIssueModelMetadata;
+import com.google.cloud.contactcenterinsights.v1.DeployIssueModelRequest;
+import com.google.cloud.contactcenterinsights.v1.DeployIssueModelResponse;
 import com.google.cloud.contactcenterinsights.v1.ExportInsightsDataMetadata;
 import com.google.cloud.contactcenterinsights.v1.ExportInsightsDataRequest;
 import com.google.cloud.contactcenterinsights.v1.ExportInsightsDataResponse;
@@ -59,7 +66,12 @@ import com.google.cloud.contactcenterinsights.v1.ListPhraseMatchersRequest;
 import com.google.cloud.contactcenterinsights.v1.ListPhraseMatchersResponse;
 import com.google.cloud.contactcenterinsights.v1.PhraseMatcher;
 import com.google.cloud.contactcenterinsights.v1.Settings;
+import com.google.cloud.contactcenterinsights.v1.UndeployIssueModelMetadata;
+import com.google.cloud.contactcenterinsights.v1.UndeployIssueModelRequest;
+import com.google.cloud.contactcenterinsights.v1.UndeployIssueModelResponse;
 import com.google.cloud.contactcenterinsights.v1.UpdateConversationRequest;
+import com.google.cloud.contactcenterinsights.v1.UpdateIssueModelRequest;
+import com.google.cloud.contactcenterinsights.v1.UpdateIssueRequest;
 import com.google.cloud.contactcenterinsights.v1.UpdateSettingsRequest;
 import com.google.longrunning.Operation;
 import com.google.longrunning.stub.OperationsStub;
@@ -141,6 +153,19 @@ public abstract class ContactCenterInsightsStub implements BackgroundResource {
     throw new UnsupportedOperationException("Not implemented: exportInsightsDataCallable()");
   }
 
+  public OperationCallable<CreateIssueModelRequest, IssueModel, CreateIssueModelMetadata>
+      createIssueModelOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: createIssueModelOperationCallable()");
+  }
+
+  public UnaryCallable<CreateIssueModelRequest, Operation> createIssueModelCallable() {
+    throw new UnsupportedOperationException("Not implemented: createIssueModelCallable()");
+  }
+
+  public UnaryCallable<UpdateIssueModelRequest, IssueModel> updateIssueModelCallable() {
+    throw new UnsupportedOperationException("Not implemented: updateIssueModelCallable()");
+  }
+
   public UnaryCallable<GetIssueModelRequest, IssueModel> getIssueModelCallable() {
     throw new UnsupportedOperationException("Not implemented: getIssueModelCallable()");
   }
@@ -149,12 +174,46 @@ public abstract class ContactCenterInsightsStub implements BackgroundResource {
     throw new UnsupportedOperationException("Not implemented: listIssueModelsCallable()");
   }
 
+  public OperationCallable<DeleteIssueModelRequest, Empty, DeleteIssueModelMetadata>
+      deleteIssueModelOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: deleteIssueModelOperationCallable()");
+  }
+
+  public UnaryCallable<DeleteIssueModelRequest, Operation> deleteIssueModelCallable() {
+    throw new UnsupportedOperationException("Not implemented: deleteIssueModelCallable()");
+  }
+
+  public OperationCallable<
+          DeployIssueModelRequest, DeployIssueModelResponse, DeployIssueModelMetadata>
+      deployIssueModelOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: deployIssueModelOperationCallable()");
+  }
+
+  public UnaryCallable<DeployIssueModelRequest, Operation> deployIssueModelCallable() {
+    throw new UnsupportedOperationException("Not implemented: deployIssueModelCallable()");
+  }
+
+  public OperationCallable<
+          UndeployIssueModelRequest, UndeployIssueModelResponse, UndeployIssueModelMetadata>
+      undeployIssueModelOperationCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: undeployIssueModelOperationCallable()");
+  }
+
+  public UnaryCallable<UndeployIssueModelRequest, Operation> undeployIssueModelCallable() {
+    throw new UnsupportedOperationException("Not implemented: undeployIssueModelCallable()");
+  }
+
   public UnaryCallable<GetIssueRequest, Issue> getIssueCallable() {
     throw new UnsupportedOperationException("Not implemented: getIssueCallable()");
   }
 
   public UnaryCallable<ListIssuesRequest, ListIssuesResponse> listIssuesCallable() {
     throw new UnsupportedOperationException("Not implemented: listIssuesCallable()");
+  }
+
+  public UnaryCallable<UpdateIssueRequest, Issue> updateIssueCallable() {
+    throw new UnsupportedOperationException("Not implemented: updateIssueCallable()");
   }
 
   public UnaryCallable<CalculateIssueModelStatsRequest, CalculateIssueModelStatsResponse>

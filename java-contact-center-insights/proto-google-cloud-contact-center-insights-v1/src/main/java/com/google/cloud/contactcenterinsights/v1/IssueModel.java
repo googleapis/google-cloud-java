@@ -123,6 +123,24 @@ public final class IssueModel extends com.google.protobuf.GeneratedMessageV3
               state_ = rawValue;
               break;
             }
+          case 50:
+            {
+              com.google.cloud.contactcenterinsights.v1.IssueModel.InputDataConfig.Builder
+                  subBuilder = null;
+              if (inputDataConfig_ != null) {
+                subBuilder = inputDataConfig_.toBuilder();
+              }
+              inputDataConfig_ =
+                  input.readMessage(
+                      com.google.cloud.contactcenterinsights.v1.IssueModel.InputDataConfig.parser(),
+                      extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(inputDataConfig_);
+                inputDataConfig_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
           case 58:
             {
               com.google.cloud.contactcenterinsights.v1.IssueModelLabelStats.Builder subBuilder =
@@ -402,6 +420,778 @@ public final class IssueModel extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(enum_scope:google.cloud.contactcenterinsights.v1.IssueModel.State)
   }
 
+  public interface InputDataConfigOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.cloud.contactcenterinsights.v1.IssueModel.InputDataConfig)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. Medium of conversations used in training data.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.contactcenterinsights.v1.Conversation.Medium medium = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for medium.
+     */
+    int getMediumValue();
+    /**
+     *
+     *
+     * <pre>
+     * Required. Medium of conversations used in training data.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.contactcenterinsights.v1.Conversation.Medium medium = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     *
+     * @return The medium.
+     */
+    com.google.cloud.contactcenterinsights.v1.Conversation.Medium getMedium();
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Number of conversations used in training. Output only.
+     * </pre>
+     *
+     * <code>int64 training_conversations_count = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The trainingConversationsCount.
+     */
+    long getTrainingConversationsCount();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Configs for the input data used to create the issue model.
+   * </pre>
+   *
+   * Protobuf type {@code google.cloud.contactcenterinsights.v1.IssueModel.InputDataConfig}
+   */
+  public static final class InputDataConfig extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.cloud.contactcenterinsights.v1.IssueModel.InputDataConfig)
+      InputDataConfigOrBuilder {
+    private static final long serialVersionUID = 0L;
+    // Use InputDataConfig.newBuilder() to construct.
+    private InputDataConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private InputDataConfig() {
+      medium_ = 0;
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new InputDataConfig();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+      return this.unknownFields;
+    }
+
+    private InputDataConfig(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 8:
+              {
+                int rawValue = input.readEnum();
+
+                medium_ = rawValue;
+                break;
+              }
+            case 16:
+              {
+                trainingConversationsCount_ = input.readInt64();
+                break;
+              }
+            default:
+              {
+                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
+                  done = true;
+                }
+                break;
+              }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.contactcenterinsights.v1.ResourcesProto
+          .internal_static_google_cloud_contactcenterinsights_v1_IssueModel_InputDataConfig_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.cloud.contactcenterinsights.v1.ResourcesProto
+          .internal_static_google_cloud_contactcenterinsights_v1_IssueModel_InputDataConfig_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.contactcenterinsights.v1.IssueModel.InputDataConfig.class,
+              com.google.cloud.contactcenterinsights.v1.IssueModel.InputDataConfig.Builder.class);
+    }
+
+    public static final int MEDIUM_FIELD_NUMBER = 1;
+    private int medium_;
+    /**
+     *
+     *
+     * <pre>
+     * Required. Medium of conversations used in training data.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.contactcenterinsights.v1.Conversation.Medium medium = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for medium.
+     */
+    @java.lang.Override
+    public int getMediumValue() {
+      return medium_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Required. Medium of conversations used in training data.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.contactcenterinsights.v1.Conversation.Medium medium = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     *
+     * @return The medium.
+     */
+    @java.lang.Override
+    public com.google.cloud.contactcenterinsights.v1.Conversation.Medium getMedium() {
+      @SuppressWarnings("deprecation")
+      com.google.cloud.contactcenterinsights.v1.Conversation.Medium result =
+          com.google.cloud.contactcenterinsights.v1.Conversation.Medium.valueOf(medium_);
+      return result == null
+          ? com.google.cloud.contactcenterinsights.v1.Conversation.Medium.UNRECOGNIZED
+          : result;
+    }
+
+    public static final int TRAINING_CONVERSATIONS_COUNT_FIELD_NUMBER = 2;
+    private long trainingConversationsCount_;
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Number of conversations used in training. Output only.
+     * </pre>
+     *
+     * <code>int64 training_conversations_count = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The trainingConversationsCount.
+     */
+    @java.lang.Override
+    public long getTrainingConversationsCount() {
+      return trainingConversationsCount_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (medium_
+          != com.google.cloud.contactcenterinsights.v1.Conversation.Medium.MEDIUM_UNSPECIFIED
+              .getNumber()) {
+        output.writeEnum(1, medium_);
+      }
+      if (trainingConversationsCount_ != 0L) {
+        output.writeInt64(2, trainingConversationsCount_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (medium_
+          != com.google.cloud.contactcenterinsights.v1.Conversation.Medium.MEDIUM_UNSPECIFIED
+              .getNumber()) {
+        size += com.google.protobuf.CodedOutputStream.computeEnumSize(1, medium_);
+      }
+      if (trainingConversationsCount_ != 0L) {
+        size +=
+            com.google.protobuf.CodedOutputStream.computeInt64Size(2, trainingConversationsCount_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.cloud.contactcenterinsights.v1.IssueModel.InputDataConfig)) {
+        return super.equals(obj);
+      }
+      com.google.cloud.contactcenterinsights.v1.IssueModel.InputDataConfig other =
+          (com.google.cloud.contactcenterinsights.v1.IssueModel.InputDataConfig) obj;
+
+      if (medium_ != other.medium_) return false;
+      if (getTrainingConversationsCount() != other.getTrainingConversationsCount()) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + MEDIUM_FIELD_NUMBER;
+      hash = (53 * hash) + medium_;
+      hash = (37 * hash) + TRAINING_CONVERSATIONS_COUNT_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getTrainingConversationsCount());
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.cloud.contactcenterinsights.v1.IssueModel.InputDataConfig parseFrom(
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.contactcenterinsights.v1.IssueModel.InputDataConfig parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.contactcenterinsights.v1.IssueModel.InputDataConfig parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.contactcenterinsights.v1.IssueModel.InputDataConfig parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.contactcenterinsights.v1.IssueModel.InputDataConfig parseFrom(
+        byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.contactcenterinsights.v1.IssueModel.InputDataConfig parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.contactcenterinsights.v1.IssueModel.InputDataConfig parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.contactcenterinsights.v1.IssueModel.InputDataConfig parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.contactcenterinsights.v1.IssueModel.InputDataConfig
+        parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.contactcenterinsights.v1.IssueModel.InputDataConfig
+        parseDelimitedFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.contactcenterinsights.v1.IssueModel.InputDataConfig parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.contactcenterinsights.v1.IssueModel.InputDataConfig parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.cloud.contactcenterinsights.v1.IssueModel.InputDataConfig prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configs for the input data used to create the issue model.
+     * </pre>
+     *
+     * Protobuf type {@code google.cloud.contactcenterinsights.v1.IssueModel.InputDataConfig}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.cloud.contactcenterinsights.v1.IssueModel.InputDataConfig)
+        com.google.cloud.contactcenterinsights.v1.IssueModel.InputDataConfigOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.contactcenterinsights.v1.ResourcesProto
+            .internal_static_google_cloud_contactcenterinsights_v1_IssueModel_InputDataConfig_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.contactcenterinsights.v1.ResourcesProto
+            .internal_static_google_cloud_contactcenterinsights_v1_IssueModel_InputDataConfig_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.contactcenterinsights.v1.IssueModel.InputDataConfig.class,
+                com.google.cloud.contactcenterinsights.v1.IssueModel.InputDataConfig.Builder.class);
+      }
+
+      // Construct using
+      // com.google.cloud.contactcenterinsights.v1.IssueModel.InputDataConfig.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        medium_ = 0;
+
+        trainingConversationsCount_ = 0L;
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.contactcenterinsights.v1.ResourcesProto
+            .internal_static_google_cloud_contactcenterinsights_v1_IssueModel_InputDataConfig_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.contactcenterinsights.v1.IssueModel.InputDataConfig
+          getDefaultInstanceForType() {
+        return com.google.cloud.contactcenterinsights.v1.IssueModel.InputDataConfig
+            .getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.cloud.contactcenterinsights.v1.IssueModel.InputDataConfig build() {
+        com.google.cloud.contactcenterinsights.v1.IssueModel.InputDataConfig result =
+            buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.contactcenterinsights.v1.IssueModel.InputDataConfig buildPartial() {
+        com.google.cloud.contactcenterinsights.v1.IssueModel.InputDataConfig result =
+            new com.google.cloud.contactcenterinsights.v1.IssueModel.InputDataConfig(this);
+        result.medium_ = medium_;
+        result.trainingConversationsCount_ = trainingConversationsCount_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.google.cloud.contactcenterinsights.v1.IssueModel.InputDataConfig) {
+          return mergeFrom(
+              (com.google.cloud.contactcenterinsights.v1.IssueModel.InputDataConfig) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(
+          com.google.cloud.contactcenterinsights.v1.IssueModel.InputDataConfig other) {
+        if (other
+            == com.google.cloud.contactcenterinsights.v1.IssueModel.InputDataConfig
+                .getDefaultInstance()) return this;
+        if (other.medium_ != 0) {
+          setMediumValue(other.getMediumValue());
+        }
+        if (other.getTrainingConversationsCount() != 0L) {
+          setTrainingConversationsCount(other.getTrainingConversationsCount());
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.google.cloud.contactcenterinsights.v1.IssueModel.InputDataConfig parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage =
+              (com.google.cloud.contactcenterinsights.v1.IssueModel.InputDataConfig)
+                  e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private int medium_ = 0;
+      /**
+       *
+       *
+       * <pre>
+       * Required. Medium of conversations used in training data.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.contactcenterinsights.v1.Conversation.Medium medium = 1 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       *
+       * @return The enum numeric value on the wire for medium.
+       */
+      @java.lang.Override
+      public int getMediumValue() {
+        return medium_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. Medium of conversations used in training data.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.contactcenterinsights.v1.Conversation.Medium medium = 1 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       *
+       * @param value The enum numeric value on the wire for medium to set.
+       * @return This builder for chaining.
+       */
+      public Builder setMediumValue(int value) {
+
+        medium_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. Medium of conversations used in training data.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.contactcenterinsights.v1.Conversation.Medium medium = 1 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       *
+       * @return The medium.
+       */
+      @java.lang.Override
+      public com.google.cloud.contactcenterinsights.v1.Conversation.Medium getMedium() {
+        @SuppressWarnings("deprecation")
+        com.google.cloud.contactcenterinsights.v1.Conversation.Medium result =
+            com.google.cloud.contactcenterinsights.v1.Conversation.Medium.valueOf(medium_);
+        return result == null
+            ? com.google.cloud.contactcenterinsights.v1.Conversation.Medium.UNRECOGNIZED
+            : result;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. Medium of conversations used in training data.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.contactcenterinsights.v1.Conversation.Medium medium = 1 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       *
+       * @param value The medium to set.
+       * @return This builder for chaining.
+       */
+      public Builder setMedium(
+          com.google.cloud.contactcenterinsights.v1.Conversation.Medium value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+
+        medium_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. Medium of conversations used in training data.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.contactcenterinsights.v1.Conversation.Medium medium = 1 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearMedium() {
+
+        medium_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private long trainingConversationsCount_;
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Number of conversations used in training. Output only.
+       * </pre>
+       *
+       * <code>int64 training_conversations_count = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @return The trainingConversationsCount.
+       */
+      @java.lang.Override
+      public long getTrainingConversationsCount() {
+        return trainingConversationsCount_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Number of conversations used in training. Output only.
+       * </pre>
+       *
+       * <code>int64 training_conversations_count = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @param value The trainingConversationsCount to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTrainingConversationsCount(long value) {
+
+        trainingConversationsCount_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Number of conversations used in training. Output only.
+       * </pre>
+       *
+       * <code>int64 training_conversations_count = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearTrainingConversationsCount() {
+
+        trainingConversationsCount_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.cloud.contactcenterinsights.v1.IssueModel.InputDataConfig)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.cloud.contactcenterinsights.v1.IssueModel.InputDataConfig)
+    private static final com.google.cloud.contactcenterinsights.v1.IssueModel.InputDataConfig
+        DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new com.google.cloud.contactcenterinsights.v1.IssueModel.InputDataConfig();
+    }
+
+    public static com.google.cloud.contactcenterinsights.v1.IssueModel.InputDataConfig
+        getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<InputDataConfig> PARSER =
+        new com.google.protobuf.AbstractParser<InputDataConfig>() {
+          @java.lang.Override
+          public InputDataConfig parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            return new InputDataConfig(input, extensionRegistry);
+          }
+        };
+
+    public static com.google.protobuf.Parser<InputDataConfig> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<InputDataConfig> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.cloud.contactcenterinsights.v1.IssueModel.InputDataConfig
+        getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
   public static final int NAME_FIELD_NUMBER = 1;
   private volatile java.lang.Object name_;
   /**
@@ -644,6 +1434,58 @@ public final class IssueModel extends com.google.protobuf.GeneratedMessageV3
         : result;
   }
 
+  public static final int INPUT_DATA_CONFIG_FIELD_NUMBER = 6;
+  private com.google.cloud.contactcenterinsights.v1.IssueModel.InputDataConfig inputDataConfig_;
+  /**
+   *
+   *
+   * <pre>
+   * Configs for the input data that used to create the issue model.
+   * </pre>
+   *
+   * <code>.google.cloud.contactcenterinsights.v1.IssueModel.InputDataConfig input_data_config = 6;
+   * </code>
+   *
+   * @return Whether the inputDataConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasInputDataConfig() {
+    return inputDataConfig_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Configs for the input data that used to create the issue model.
+   * </pre>
+   *
+   * <code>.google.cloud.contactcenterinsights.v1.IssueModel.InputDataConfig input_data_config = 6;
+   * </code>
+   *
+   * @return The inputDataConfig.
+   */
+  @java.lang.Override
+  public com.google.cloud.contactcenterinsights.v1.IssueModel.InputDataConfig getInputDataConfig() {
+    return inputDataConfig_ == null
+        ? com.google.cloud.contactcenterinsights.v1.IssueModel.InputDataConfig.getDefaultInstance()
+        : inputDataConfig_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Configs for the input data that used to create the issue model.
+   * </pre>
+   *
+   * <code>.google.cloud.contactcenterinsights.v1.IssueModel.InputDataConfig input_data_config = 6;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.contactcenterinsights.v1.IssueModel.InputDataConfigOrBuilder
+      getInputDataConfigOrBuilder() {
+    return getInputDataConfig();
+  }
+
   public static final int TRAINING_STATS_FIELD_NUMBER = 7;
   private com.google.cloud.contactcenterinsights.v1.IssueModelLabelStats trainingStats_;
   /**
@@ -730,6 +1572,9 @@ public final class IssueModel extends com.google.protobuf.GeneratedMessageV3
             .getNumber()) {
       output.writeEnum(5, state_);
     }
+    if (inputDataConfig_ != null) {
+      output.writeMessage(6, getInputDataConfig());
+    }
     if (trainingStats_ != null) {
       output.writeMessage(7, getTrainingStats());
     }
@@ -758,6 +1603,9 @@ public final class IssueModel extends com.google.protobuf.GeneratedMessageV3
         != com.google.cloud.contactcenterinsights.v1.IssueModel.State.STATE_UNSPECIFIED
             .getNumber()) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(5, state_);
+    }
+    if (inputDataConfig_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(6, getInputDataConfig());
     }
     if (trainingStats_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(7, getTrainingStats());
@@ -789,6 +1637,10 @@ public final class IssueModel extends com.google.protobuf.GeneratedMessageV3
       if (!getUpdateTime().equals(other.getUpdateTime())) return false;
     }
     if (state_ != other.state_) return false;
+    if (hasInputDataConfig() != other.hasInputDataConfig()) return false;
+    if (hasInputDataConfig()) {
+      if (!getInputDataConfig().equals(other.getInputDataConfig())) return false;
+    }
     if (hasTrainingStats() != other.hasTrainingStats()) return false;
     if (hasTrainingStats()) {
       if (!getTrainingStats().equals(other.getTrainingStats())) return false;
@@ -818,6 +1670,10 @@ public final class IssueModel extends com.google.protobuf.GeneratedMessageV3
     }
     hash = (37 * hash) + STATE_FIELD_NUMBER;
     hash = (53 * hash) + state_;
+    if (hasInputDataConfig()) {
+      hash = (37 * hash) + INPUT_DATA_CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + getInputDataConfig().hashCode();
+    }
     if (hasTrainingStats()) {
       hash = (37 * hash) + TRAINING_STATS_FIELD_NUMBER;
       hash = (53 * hash) + getTrainingStats().hashCode();
@@ -985,6 +1841,12 @@ public final class IssueModel extends com.google.protobuf.GeneratedMessageV3
       }
       state_ = 0;
 
+      if (inputDataConfigBuilder_ == null) {
+        inputDataConfig_ = null;
+      } else {
+        inputDataConfig_ = null;
+        inputDataConfigBuilder_ = null;
+      }
       if (trainingStatsBuilder_ == null) {
         trainingStats_ = null;
       } else {
@@ -1031,6 +1893,11 @@ public final class IssueModel extends com.google.protobuf.GeneratedMessageV3
         result.updateTime_ = updateTimeBuilder_.build();
       }
       result.state_ = state_;
+      if (inputDataConfigBuilder_ == null) {
+        result.inputDataConfig_ = inputDataConfig_;
+      } else {
+        result.inputDataConfig_ = inputDataConfigBuilder_.build();
+      }
       if (trainingStatsBuilder_ == null) {
         result.trainingStats_ = trainingStats_;
       } else {
@@ -1102,6 +1969,9 @@ public final class IssueModel extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.state_ != 0) {
         setStateValue(other.getStateValue());
+      }
+      if (other.hasInputDataConfig()) {
+        mergeInputDataConfig(other.getInputDataConfig());
       }
       if (other.hasTrainingStats()) {
         mergeTrainingStats(other.getTrainingStats());
@@ -1861,6 +2731,219 @@ public final class IssueModel extends com.google.protobuf.GeneratedMessageV3
       state_ = 0;
       onChanged();
       return this;
+    }
+
+    private com.google.cloud.contactcenterinsights.v1.IssueModel.InputDataConfig inputDataConfig_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.contactcenterinsights.v1.IssueModel.InputDataConfig,
+            com.google.cloud.contactcenterinsights.v1.IssueModel.InputDataConfig.Builder,
+            com.google.cloud.contactcenterinsights.v1.IssueModel.InputDataConfigOrBuilder>
+        inputDataConfigBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Configs for the input data that used to create the issue model.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.contactcenterinsights.v1.IssueModel.InputDataConfig input_data_config = 6;
+     * </code>
+     *
+     * @return Whether the inputDataConfig field is set.
+     */
+    public boolean hasInputDataConfig() {
+      return inputDataConfigBuilder_ != null || inputDataConfig_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configs for the input data that used to create the issue model.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.contactcenterinsights.v1.IssueModel.InputDataConfig input_data_config = 6;
+     * </code>
+     *
+     * @return The inputDataConfig.
+     */
+    public com.google.cloud.contactcenterinsights.v1.IssueModel.InputDataConfig
+        getInputDataConfig() {
+      if (inputDataConfigBuilder_ == null) {
+        return inputDataConfig_ == null
+            ? com.google.cloud.contactcenterinsights.v1.IssueModel.InputDataConfig
+                .getDefaultInstance()
+            : inputDataConfig_;
+      } else {
+        return inputDataConfigBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configs for the input data that used to create the issue model.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.contactcenterinsights.v1.IssueModel.InputDataConfig input_data_config = 6;
+     * </code>
+     */
+    public Builder setInputDataConfig(
+        com.google.cloud.contactcenterinsights.v1.IssueModel.InputDataConfig value) {
+      if (inputDataConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        inputDataConfig_ = value;
+        onChanged();
+      } else {
+        inputDataConfigBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configs for the input data that used to create the issue model.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.contactcenterinsights.v1.IssueModel.InputDataConfig input_data_config = 6;
+     * </code>
+     */
+    public Builder setInputDataConfig(
+        com.google.cloud.contactcenterinsights.v1.IssueModel.InputDataConfig.Builder
+            builderForValue) {
+      if (inputDataConfigBuilder_ == null) {
+        inputDataConfig_ = builderForValue.build();
+        onChanged();
+      } else {
+        inputDataConfigBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configs for the input data that used to create the issue model.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.contactcenterinsights.v1.IssueModel.InputDataConfig input_data_config = 6;
+     * </code>
+     */
+    public Builder mergeInputDataConfig(
+        com.google.cloud.contactcenterinsights.v1.IssueModel.InputDataConfig value) {
+      if (inputDataConfigBuilder_ == null) {
+        if (inputDataConfig_ != null) {
+          inputDataConfig_ =
+              com.google.cloud.contactcenterinsights.v1.IssueModel.InputDataConfig.newBuilder(
+                      inputDataConfig_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          inputDataConfig_ = value;
+        }
+        onChanged();
+      } else {
+        inputDataConfigBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configs for the input data that used to create the issue model.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.contactcenterinsights.v1.IssueModel.InputDataConfig input_data_config = 6;
+     * </code>
+     */
+    public Builder clearInputDataConfig() {
+      if (inputDataConfigBuilder_ == null) {
+        inputDataConfig_ = null;
+        onChanged();
+      } else {
+        inputDataConfig_ = null;
+        inputDataConfigBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configs for the input data that used to create the issue model.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.contactcenterinsights.v1.IssueModel.InputDataConfig input_data_config = 6;
+     * </code>
+     */
+    public com.google.cloud.contactcenterinsights.v1.IssueModel.InputDataConfig.Builder
+        getInputDataConfigBuilder() {
+
+      onChanged();
+      return getInputDataConfigFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configs for the input data that used to create the issue model.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.contactcenterinsights.v1.IssueModel.InputDataConfig input_data_config = 6;
+     * </code>
+     */
+    public com.google.cloud.contactcenterinsights.v1.IssueModel.InputDataConfigOrBuilder
+        getInputDataConfigOrBuilder() {
+      if (inputDataConfigBuilder_ != null) {
+        return inputDataConfigBuilder_.getMessageOrBuilder();
+      } else {
+        return inputDataConfig_ == null
+            ? com.google.cloud.contactcenterinsights.v1.IssueModel.InputDataConfig
+                .getDefaultInstance()
+            : inputDataConfig_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configs for the input data that used to create the issue model.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.contactcenterinsights.v1.IssueModel.InputDataConfig input_data_config = 6;
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.contactcenterinsights.v1.IssueModel.InputDataConfig,
+            com.google.cloud.contactcenterinsights.v1.IssueModel.InputDataConfig.Builder,
+            com.google.cloud.contactcenterinsights.v1.IssueModel.InputDataConfigOrBuilder>
+        getInputDataConfigFieldBuilder() {
+      if (inputDataConfigBuilder_ == null) {
+        inputDataConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.contactcenterinsights.v1.IssueModel.InputDataConfig,
+                com.google.cloud.contactcenterinsights.v1.IssueModel.InputDataConfig.Builder,
+                com.google.cloud.contactcenterinsights.v1.IssueModel.InputDataConfigOrBuilder>(
+                getInputDataConfig(), getParentForChildren(), isClean());
+        inputDataConfig_ = null;
+      }
+      return inputDataConfigBuilder_;
     }
 
     private com.google.cloud.contactcenterinsights.v1.IssueModelLabelStats trainingStats_;

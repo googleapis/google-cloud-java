@@ -36,10 +36,17 @@ import com.google.cloud.contactcenterinsights.v1.Conversation;
 import com.google.cloud.contactcenterinsights.v1.CreateAnalysisOperationMetadata;
 import com.google.cloud.contactcenterinsights.v1.CreateAnalysisRequest;
 import com.google.cloud.contactcenterinsights.v1.CreateConversationRequest;
+import com.google.cloud.contactcenterinsights.v1.CreateIssueModelMetadata;
+import com.google.cloud.contactcenterinsights.v1.CreateIssueModelRequest;
 import com.google.cloud.contactcenterinsights.v1.CreatePhraseMatcherRequest;
 import com.google.cloud.contactcenterinsights.v1.DeleteAnalysisRequest;
 import com.google.cloud.contactcenterinsights.v1.DeleteConversationRequest;
+import com.google.cloud.contactcenterinsights.v1.DeleteIssueModelMetadata;
+import com.google.cloud.contactcenterinsights.v1.DeleteIssueModelRequest;
 import com.google.cloud.contactcenterinsights.v1.DeletePhraseMatcherRequest;
+import com.google.cloud.contactcenterinsights.v1.DeployIssueModelMetadata;
+import com.google.cloud.contactcenterinsights.v1.DeployIssueModelRequest;
+import com.google.cloud.contactcenterinsights.v1.DeployIssueModelResponse;
 import com.google.cloud.contactcenterinsights.v1.ExportInsightsDataMetadata;
 import com.google.cloud.contactcenterinsights.v1.ExportInsightsDataRequest;
 import com.google.cloud.contactcenterinsights.v1.ExportInsightsDataResponse;
@@ -63,7 +70,12 @@ import com.google.cloud.contactcenterinsights.v1.ListPhraseMatchersRequest;
 import com.google.cloud.contactcenterinsights.v1.ListPhraseMatchersResponse;
 import com.google.cloud.contactcenterinsights.v1.PhraseMatcher;
 import com.google.cloud.contactcenterinsights.v1.Settings;
+import com.google.cloud.contactcenterinsights.v1.UndeployIssueModelMetadata;
+import com.google.cloud.contactcenterinsights.v1.UndeployIssueModelRequest;
+import com.google.cloud.contactcenterinsights.v1.UndeployIssueModelResponse;
 import com.google.cloud.contactcenterinsights.v1.UpdateConversationRequest;
+import com.google.cloud.contactcenterinsights.v1.UpdateIssueModelRequest;
+import com.google.cloud.contactcenterinsights.v1.UpdateIssueRequest;
 import com.google.cloud.contactcenterinsights.v1.UpdateSettingsRequest;
 import com.google.common.collect.ImmutableMap;
 import com.google.longrunning.Operation;
@@ -192,6 +204,28 @@ public class GrpcContactCenterInsightsStub extends ContactCenterInsightsStub {
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
               .build();
 
+  private static final MethodDescriptor<CreateIssueModelRequest, Operation>
+      createIssueModelMethodDescriptor =
+          MethodDescriptor.<CreateIssueModelRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.contactcenterinsights.v1.ContactCenterInsights/CreateIssueModel")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(CreateIssueModelRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<UpdateIssueModelRequest, IssueModel>
+      updateIssueModelMethodDescriptor =
+          MethodDescriptor.<UpdateIssueModelRequest, IssueModel>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.contactcenterinsights.v1.ContactCenterInsights/UpdateIssueModel")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(UpdateIssueModelRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(IssueModel.getDefaultInstance()))
+              .build();
+
   private static final MethodDescriptor<GetIssueModelRequest, IssueModel>
       getIssueModelMethodDescriptor =
           MethodDescriptor.<GetIssueModelRequest, IssueModel>newBuilder()
@@ -215,6 +249,39 @@ public class GrpcContactCenterInsightsStub extends ContactCenterInsightsStub {
                   ProtoUtils.marshaller(ListIssueModelsResponse.getDefaultInstance()))
               .build();
 
+  private static final MethodDescriptor<DeleteIssueModelRequest, Operation>
+      deleteIssueModelMethodDescriptor =
+          MethodDescriptor.<DeleteIssueModelRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.contactcenterinsights.v1.ContactCenterInsights/DeleteIssueModel")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(DeleteIssueModelRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<DeployIssueModelRequest, Operation>
+      deployIssueModelMethodDescriptor =
+          MethodDescriptor.<DeployIssueModelRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.contactcenterinsights.v1.ContactCenterInsights/DeployIssueModel")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(DeployIssueModelRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<UndeployIssueModelRequest, Operation>
+      undeployIssueModelMethodDescriptor =
+          MethodDescriptor.<UndeployIssueModelRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.contactcenterinsights.v1.ContactCenterInsights/UndeployIssueModel")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(UndeployIssueModelRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .build();
+
   private static final MethodDescriptor<GetIssueRequest, Issue> getIssueMethodDescriptor =
       MethodDescriptor.<GetIssueRequest, Issue>newBuilder()
           .setType(MethodDescriptor.MethodType.UNARY)
@@ -232,6 +299,15 @@ public class GrpcContactCenterInsightsStub extends ContactCenterInsightsStub {
               .setRequestMarshaller(ProtoUtils.marshaller(ListIssuesRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(ListIssuesResponse.getDefaultInstance()))
               .build();
+
+  private static final MethodDescriptor<UpdateIssueRequest, Issue> updateIssueMethodDescriptor =
+      MethodDescriptor.<UpdateIssueRequest, Issue>newBuilder()
+          .setType(MethodDescriptor.MethodType.UNARY)
+          .setFullMethodName(
+              "google.cloud.contactcenterinsights.v1.ContactCenterInsights/UpdateIssue")
+          .setRequestMarshaller(ProtoUtils.marshaller(UpdateIssueRequest.getDefaultInstance()))
+          .setResponseMarshaller(ProtoUtils.marshaller(Issue.getDefaultInstance()))
+          .build();
 
   private static final MethodDescriptor<
           CalculateIssueModelStatsRequest, CalculateIssueModelStatsResponse>
@@ -344,11 +420,27 @@ public class GrpcContactCenterInsightsStub extends ContactCenterInsightsStub {
   private final OperationCallable<
           ExportInsightsDataRequest, ExportInsightsDataResponse, ExportInsightsDataMetadata>
       exportInsightsDataOperationCallable;
+  private final UnaryCallable<CreateIssueModelRequest, Operation> createIssueModelCallable;
+  private final OperationCallable<CreateIssueModelRequest, IssueModel, CreateIssueModelMetadata>
+      createIssueModelOperationCallable;
+  private final UnaryCallable<UpdateIssueModelRequest, IssueModel> updateIssueModelCallable;
   private final UnaryCallable<GetIssueModelRequest, IssueModel> getIssueModelCallable;
   private final UnaryCallable<ListIssueModelsRequest, ListIssueModelsResponse>
       listIssueModelsCallable;
+  private final UnaryCallable<DeleteIssueModelRequest, Operation> deleteIssueModelCallable;
+  private final OperationCallable<DeleteIssueModelRequest, Empty, DeleteIssueModelMetadata>
+      deleteIssueModelOperationCallable;
+  private final UnaryCallable<DeployIssueModelRequest, Operation> deployIssueModelCallable;
+  private final OperationCallable<
+          DeployIssueModelRequest, DeployIssueModelResponse, DeployIssueModelMetadata>
+      deployIssueModelOperationCallable;
+  private final UnaryCallable<UndeployIssueModelRequest, Operation> undeployIssueModelCallable;
+  private final OperationCallable<
+          UndeployIssueModelRequest, UndeployIssueModelResponse, UndeployIssueModelMetadata>
+      undeployIssueModelOperationCallable;
   private final UnaryCallable<GetIssueRequest, Issue> getIssueCallable;
   private final UnaryCallable<ListIssuesRequest, ListIssuesResponse> listIssuesCallable;
+  private final UnaryCallable<UpdateIssueRequest, Issue> updateIssueCallable;
   private final UnaryCallable<CalculateIssueModelStatsRequest, CalculateIssueModelStatsResponse>
       calculateIssueModelStatsCallable;
   private final UnaryCallable<CreatePhraseMatcherRequest, PhraseMatcher>
@@ -509,6 +601,26 @@ public class GrpcContactCenterInsightsStub extends ContactCenterInsightsStub {
                   return params.build();
                 })
             .build();
+    GrpcCallSettings<CreateIssueModelRequest, Operation> createIssueModelTransportSettings =
+        GrpcCallSettings.<CreateIssueModelRequest, Operation>newBuilder()
+            .setMethodDescriptor(createIssueModelMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("parent", String.valueOf(request.getParent()));
+                  return params.build();
+                })
+            .build();
+    GrpcCallSettings<UpdateIssueModelRequest, IssueModel> updateIssueModelTransportSettings =
+        GrpcCallSettings.<UpdateIssueModelRequest, IssueModel>newBuilder()
+            .setMethodDescriptor(updateIssueModelMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("issue_model.name", String.valueOf(request.getIssueModel().getName()));
+                  return params.build();
+                })
+            .build();
     GrpcCallSettings<GetIssueModelRequest, IssueModel> getIssueModelTransportSettings =
         GrpcCallSettings.<GetIssueModelRequest, IssueModel>newBuilder()
             .setMethodDescriptor(getIssueModelMethodDescriptor)
@@ -530,6 +642,36 @@ public class GrpcContactCenterInsightsStub extends ContactCenterInsightsStub {
                       return params.build();
                     })
                 .build();
+    GrpcCallSettings<DeleteIssueModelRequest, Operation> deleteIssueModelTransportSettings =
+        GrpcCallSettings.<DeleteIssueModelRequest, Operation>newBuilder()
+            .setMethodDescriptor(deleteIssueModelMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  return params.build();
+                })
+            .build();
+    GrpcCallSettings<DeployIssueModelRequest, Operation> deployIssueModelTransportSettings =
+        GrpcCallSettings.<DeployIssueModelRequest, Operation>newBuilder()
+            .setMethodDescriptor(deployIssueModelMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  return params.build();
+                })
+            .build();
+    GrpcCallSettings<UndeployIssueModelRequest, Operation> undeployIssueModelTransportSettings =
+        GrpcCallSettings.<UndeployIssueModelRequest, Operation>newBuilder()
+            .setMethodDescriptor(undeployIssueModelMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  return params.build();
+                })
+            .build();
     GrpcCallSettings<GetIssueRequest, Issue> getIssueTransportSettings =
         GrpcCallSettings.<GetIssueRequest, Issue>newBuilder()
             .setMethodDescriptor(getIssueMethodDescriptor)
@@ -547,6 +689,16 @@ public class GrpcContactCenterInsightsStub extends ContactCenterInsightsStub {
                 request -> {
                   ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
                   params.put("parent", String.valueOf(request.getParent()));
+                  return params.build();
+                })
+            .build();
+    GrpcCallSettings<UpdateIssueRequest, Issue> updateIssueTransportSettings =
+        GrpcCallSettings.<UpdateIssueRequest, Issue>newBuilder()
+            .setMethodDescriptor(updateIssueMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("issue.name", String.valueOf(request.getIssue().getName()));
                   return params.build();
                 })
             .build();
@@ -696,18 +848,62 @@ public class GrpcContactCenterInsightsStub extends ContactCenterInsightsStub {
             settings.exportInsightsDataOperationSettings(),
             clientContext,
             operationsStub);
+    this.createIssueModelCallable =
+        callableFactory.createUnaryCallable(
+            createIssueModelTransportSettings, settings.createIssueModelSettings(), clientContext);
+    this.createIssueModelOperationCallable =
+        callableFactory.createOperationCallable(
+            createIssueModelTransportSettings,
+            settings.createIssueModelOperationSettings(),
+            clientContext,
+            operationsStub);
+    this.updateIssueModelCallable =
+        callableFactory.createUnaryCallable(
+            updateIssueModelTransportSettings, settings.updateIssueModelSettings(), clientContext);
     this.getIssueModelCallable =
         callableFactory.createUnaryCallable(
             getIssueModelTransportSettings, settings.getIssueModelSettings(), clientContext);
     this.listIssueModelsCallable =
         callableFactory.createUnaryCallable(
             listIssueModelsTransportSettings, settings.listIssueModelsSettings(), clientContext);
+    this.deleteIssueModelCallable =
+        callableFactory.createUnaryCallable(
+            deleteIssueModelTransportSettings, settings.deleteIssueModelSettings(), clientContext);
+    this.deleteIssueModelOperationCallable =
+        callableFactory.createOperationCallable(
+            deleteIssueModelTransportSettings,
+            settings.deleteIssueModelOperationSettings(),
+            clientContext,
+            operationsStub);
+    this.deployIssueModelCallable =
+        callableFactory.createUnaryCallable(
+            deployIssueModelTransportSettings, settings.deployIssueModelSettings(), clientContext);
+    this.deployIssueModelOperationCallable =
+        callableFactory.createOperationCallable(
+            deployIssueModelTransportSettings,
+            settings.deployIssueModelOperationSettings(),
+            clientContext,
+            operationsStub);
+    this.undeployIssueModelCallable =
+        callableFactory.createUnaryCallable(
+            undeployIssueModelTransportSettings,
+            settings.undeployIssueModelSettings(),
+            clientContext);
+    this.undeployIssueModelOperationCallable =
+        callableFactory.createOperationCallable(
+            undeployIssueModelTransportSettings,
+            settings.undeployIssueModelOperationSettings(),
+            clientContext,
+            operationsStub);
     this.getIssueCallable =
         callableFactory.createUnaryCallable(
             getIssueTransportSettings, settings.getIssueSettings(), clientContext);
     this.listIssuesCallable =
         callableFactory.createUnaryCallable(
             listIssuesTransportSettings, settings.listIssuesSettings(), clientContext);
+    this.updateIssueCallable =
+        callableFactory.createUnaryCallable(
+            updateIssueTransportSettings, settings.updateIssueSettings(), clientContext);
     this.calculateIssueModelStatsCallable =
         callableFactory.createUnaryCallable(
             calculateIssueModelStatsTransportSettings,
@@ -830,6 +1026,22 @@ public class GrpcContactCenterInsightsStub extends ContactCenterInsightsStub {
   }
 
   @Override
+  public UnaryCallable<CreateIssueModelRequest, Operation> createIssueModelCallable() {
+    return createIssueModelCallable;
+  }
+
+  @Override
+  public OperationCallable<CreateIssueModelRequest, IssueModel, CreateIssueModelMetadata>
+      createIssueModelOperationCallable() {
+    return createIssueModelOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<UpdateIssueModelRequest, IssueModel> updateIssueModelCallable() {
+    return updateIssueModelCallable;
+  }
+
+  @Override
   public UnaryCallable<GetIssueModelRequest, IssueModel> getIssueModelCallable() {
     return getIssueModelCallable;
   }
@@ -840,6 +1052,41 @@ public class GrpcContactCenterInsightsStub extends ContactCenterInsightsStub {
   }
 
   @Override
+  public UnaryCallable<DeleteIssueModelRequest, Operation> deleteIssueModelCallable() {
+    return deleteIssueModelCallable;
+  }
+
+  @Override
+  public OperationCallable<DeleteIssueModelRequest, Empty, DeleteIssueModelMetadata>
+      deleteIssueModelOperationCallable() {
+    return deleteIssueModelOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<DeployIssueModelRequest, Operation> deployIssueModelCallable() {
+    return deployIssueModelCallable;
+  }
+
+  @Override
+  public OperationCallable<
+          DeployIssueModelRequest, DeployIssueModelResponse, DeployIssueModelMetadata>
+      deployIssueModelOperationCallable() {
+    return deployIssueModelOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<UndeployIssueModelRequest, Operation> undeployIssueModelCallable() {
+    return undeployIssueModelCallable;
+  }
+
+  @Override
+  public OperationCallable<
+          UndeployIssueModelRequest, UndeployIssueModelResponse, UndeployIssueModelMetadata>
+      undeployIssueModelOperationCallable() {
+    return undeployIssueModelOperationCallable;
+  }
+
+  @Override
   public UnaryCallable<GetIssueRequest, Issue> getIssueCallable() {
     return getIssueCallable;
   }
@@ -847,6 +1094,11 @@ public class GrpcContactCenterInsightsStub extends ContactCenterInsightsStub {
   @Override
   public UnaryCallable<ListIssuesRequest, ListIssuesResponse> listIssuesCallable() {
     return listIssuesCallable;
+  }
+
+  @Override
+  public UnaryCallable<UpdateIssueRequest, Issue> updateIssueCallable() {
+    return updateIssueCallable;
   }
 
   @Override

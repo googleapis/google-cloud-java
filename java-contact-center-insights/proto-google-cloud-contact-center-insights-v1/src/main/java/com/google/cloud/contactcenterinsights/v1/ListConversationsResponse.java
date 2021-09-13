@@ -207,8 +207,9 @@ public final class ListConversationsResponse extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * A token, which can be sent as `page_token` to retrieve the next page.
-   * If this field is omitted, there are no subsequent pages.
+   * A token which can be sent as `page_token` to retrieve the next page. If
+   * this field is set, it means there is another page available. If it is not
+   * set, it means no other pages are available.
    * </pre>
    *
    * <code>string next_page_token = 2;</code>
@@ -231,8 +232,9 @@ public final class ListConversationsResponse extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * A token, which can be sent as `page_token` to retrieve the next page.
-   * If this field is omitted, there are no subsequent pages.
+   * A token which can be sent as `page_token` to retrieve the next page. If
+   * this field is set, it means there is another page available. If it is not
+   * set, it means no other pages are available.
    * </pre>
    *
    * <code>string next_page_token = 2;</code>
@@ -1006,8 +1008,9 @@ public final class ListConversationsResponse extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * A token, which can be sent as `page_token` to retrieve the next page.
-     * If this field is omitted, there are no subsequent pages.
+     * A token which can be sent as `page_token` to retrieve the next page. If
+     * this field is set, it means there is another page available. If it is not
+     * set, it means no other pages are available.
      * </pre>
      *
      * <code>string next_page_token = 2;</code>
@@ -1029,8 +1032,9 @@ public final class ListConversationsResponse extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * A token, which can be sent as `page_token` to retrieve the next page.
-     * If this field is omitted, there are no subsequent pages.
+     * A token which can be sent as `page_token` to retrieve the next page. If
+     * this field is set, it means there is another page available. If it is not
+     * set, it means no other pages are available.
      * </pre>
      *
      * <code>string next_page_token = 2;</code>
@@ -1052,8 +1056,9 @@ public final class ListConversationsResponse extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * A token, which can be sent as `page_token` to retrieve the next page.
-     * If this field is omitted, there are no subsequent pages.
+     * A token which can be sent as `page_token` to retrieve the next page. If
+     * this field is set, it means there is another page available. If it is not
+     * set, it means no other pages are available.
      * </pre>
      *
      * <code>string next_page_token = 2;</code>
@@ -1074,8 +1079,9 @@ public final class ListConversationsResponse extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * A token, which can be sent as `page_token` to retrieve the next page.
-     * If this field is omitted, there are no subsequent pages.
+     * A token which can be sent as `page_token` to retrieve the next page. If
+     * this field is set, it means there is another page available. If it is not
+     * set, it means no other pages are available.
      * </pre>
      *
      * <code>string next_page_token = 2;</code>
@@ -1092,8 +1098,9 @@ public final class ListConversationsResponse extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * A token, which can be sent as `page_token` to retrieve the next page.
-     * If this field is omitted, there are no subsequent pages.
+     * A token which can be sent as `page_token` to retrieve the next page. If
+     * this field is set, it means there is another page available. If it is not
+     * set, it means no other pages are available.
      * </pre>
      *
      * <code>string next_page_token = 2;</code>

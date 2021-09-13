@@ -271,6 +271,48 @@ public class MockContactCenterInsightsImpl extends ContactCenterInsightsImplBase
   }
 
   @Override
+  public void createIssueModel(
+      CreateIssueModelRequest request, StreamObserver<Operation> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Operation) {
+      requests.add(request);
+      responseObserver.onNext(((Operation) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method CreateIssueModel, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void updateIssueModel(
+      UpdateIssueModelRequest request, StreamObserver<IssueModel> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof IssueModel) {
+      requests.add(request);
+      responseObserver.onNext(((IssueModel) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method UpdateIssueModel, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  IssueModel.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
   public void getIssueModel(
       GetIssueModelRequest request, StreamObserver<IssueModel> responseObserver) {
     Object response = responses.poll();
@@ -313,6 +355,69 @@ public class MockContactCenterInsightsImpl extends ContactCenterInsightsImplBase
   }
 
   @Override
+  public void deleteIssueModel(
+      DeleteIssueModelRequest request, StreamObserver<Operation> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Operation) {
+      requests.add(request);
+      responseObserver.onNext(((Operation) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method DeleteIssueModel, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void deployIssueModel(
+      DeployIssueModelRequest request, StreamObserver<Operation> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Operation) {
+      requests.add(request);
+      responseObserver.onNext(((Operation) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method DeployIssueModel, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void undeployIssueModel(
+      UndeployIssueModelRequest request, StreamObserver<Operation> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Operation) {
+      requests.add(request);
+      responseObserver.onNext(((Operation) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method UndeployIssueModel, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
   public void getIssue(GetIssueRequest request, StreamObserver<Issue> responseObserver) {
     Object response = responses.poll();
     if (response instanceof Issue) {
@@ -349,6 +454,26 @@ public class MockContactCenterInsightsImpl extends ContactCenterInsightsImplBase
                   "Unrecognized response type %s for method ListIssues, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   ListIssuesResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void updateIssue(UpdateIssueRequest request, StreamObserver<Issue> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Issue) {
+      requests.add(request);
+      responseObserver.onNext(((Issue) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method UpdateIssue, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Issue.class.getName(),
                   Exception.class.getName())));
     }
   }

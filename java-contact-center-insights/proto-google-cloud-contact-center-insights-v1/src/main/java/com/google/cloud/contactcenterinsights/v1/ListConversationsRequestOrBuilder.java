@@ -56,10 +56,10 @@ public interface ListConversationsRequestOrBuilder
    *
    *
    * <pre>
-   * The maximum number of conversations to return in the response. If this
-   * value is zero, the service will select a default size. A call might return
-   * fewer objects than requested. A non-empty `next_page_token` in the response
-   * indicates that more data is available.
+   * The maximum number of conversations to return in the response. A valid page
+   * size ranges from 0 to 1,000 inclusive. If the page size is zero or
+   * unspecified, a default page size of 100 will be chosen. Note that a call
+   * might return fewer results than the requested page size.
    * </pre>
    *
    * <code>int32 page_size = 2;</code>

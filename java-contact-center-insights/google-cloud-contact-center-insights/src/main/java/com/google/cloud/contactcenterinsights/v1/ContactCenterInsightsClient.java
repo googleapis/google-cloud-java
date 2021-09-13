@@ -1340,6 +1340,218 @@ public class ContactCenterInsightsClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
+   * Creates an issue model.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ContactCenterInsightsClient contactCenterInsightsClient =
+   *     ContactCenterInsightsClient.create()) {
+   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+   *   IssueModel issueModel = IssueModel.newBuilder().build();
+   *   IssueModel response =
+   *       contactCenterInsightsClient.createIssueModelAsync(parent, issueModel).get();
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The parent resource of the issue model.
+   * @param issueModel Required. The issue model to create.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<IssueModel, CreateIssueModelMetadata> createIssueModelAsync(
+      LocationName parent, IssueModel issueModel) {
+    CreateIssueModelRequest request =
+        CreateIssueModelRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .setIssueModel(issueModel)
+            .build();
+    return createIssueModelAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates an issue model.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ContactCenterInsightsClient contactCenterInsightsClient =
+   *     ContactCenterInsightsClient.create()) {
+   *   String parent = LocationName.of("[PROJECT]", "[LOCATION]").toString();
+   *   IssueModel issueModel = IssueModel.newBuilder().build();
+   *   IssueModel response =
+   *       contactCenterInsightsClient.createIssueModelAsync(parent, issueModel).get();
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The parent resource of the issue model.
+   * @param issueModel Required. The issue model to create.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<IssueModel, CreateIssueModelMetadata> createIssueModelAsync(
+      String parent, IssueModel issueModel) {
+    CreateIssueModelRequest request =
+        CreateIssueModelRequest.newBuilder().setParent(parent).setIssueModel(issueModel).build();
+    return createIssueModelAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates an issue model.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ContactCenterInsightsClient contactCenterInsightsClient =
+   *     ContactCenterInsightsClient.create()) {
+   *   CreateIssueModelRequest request =
+   *       CreateIssueModelRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setIssueModel(IssueModel.newBuilder().build())
+   *           .build();
+   *   IssueModel response = contactCenterInsightsClient.createIssueModelAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<IssueModel, CreateIssueModelMetadata> createIssueModelAsync(
+      CreateIssueModelRequest request) {
+    return createIssueModelOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates an issue model.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ContactCenterInsightsClient contactCenterInsightsClient =
+   *     ContactCenterInsightsClient.create()) {
+   *   CreateIssueModelRequest request =
+   *       CreateIssueModelRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setIssueModel(IssueModel.newBuilder().build())
+   *           .build();
+   *   OperationFuture<IssueModel, CreateIssueModelMetadata> future =
+   *       contactCenterInsightsClient.createIssueModelOperationCallable().futureCall(request);
+   *   // Do something.
+   *   IssueModel response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<CreateIssueModelRequest, IssueModel, CreateIssueModelMetadata>
+      createIssueModelOperationCallable() {
+    return stub.createIssueModelOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates an issue model.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ContactCenterInsightsClient contactCenterInsightsClient =
+   *     ContactCenterInsightsClient.create()) {
+   *   CreateIssueModelRequest request =
+   *       CreateIssueModelRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setIssueModel(IssueModel.newBuilder().build())
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       contactCenterInsightsClient.createIssueModelCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<CreateIssueModelRequest, Operation> createIssueModelCallable() {
+    return stub.createIssueModelCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates an issue model.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ContactCenterInsightsClient contactCenterInsightsClient =
+   *     ContactCenterInsightsClient.create()) {
+   *   IssueModel issueModel = IssueModel.newBuilder().build();
+   *   FieldMask updateMask = FieldMask.newBuilder().build();
+   *   IssueModel response = contactCenterInsightsClient.updateIssueModel(issueModel, updateMask);
+   * }
+   * }</pre>
+   *
+   * @param issueModel Required. The new values for the issue model.
+   * @param updateMask The list of fields to be updated.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final IssueModel updateIssueModel(IssueModel issueModel, FieldMask updateMask) {
+    UpdateIssueModelRequest request =
+        UpdateIssueModelRequest.newBuilder()
+            .setIssueModel(issueModel)
+            .setUpdateMask(updateMask)
+            .build();
+    return updateIssueModel(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates an issue model.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ContactCenterInsightsClient contactCenterInsightsClient =
+   *     ContactCenterInsightsClient.create()) {
+   *   UpdateIssueModelRequest request =
+   *       UpdateIssueModelRequest.newBuilder()
+   *           .setIssueModel(IssueModel.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   IssueModel response = contactCenterInsightsClient.updateIssueModel(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final IssueModel updateIssueModel(UpdateIssueModelRequest request) {
+    return updateIssueModelCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates an issue model.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ContactCenterInsightsClient contactCenterInsightsClient =
+   *     ContactCenterInsightsClient.create()) {
+   *   UpdateIssueModelRequest request =
+   *       UpdateIssueModelRequest.newBuilder()
+   *           .setIssueModel(IssueModel.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   ApiFuture<IssueModel> future =
+   *       contactCenterInsightsClient.updateIssueModelCallable().futureCall(request);
+   *   // Do something.
+   *   IssueModel response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<UpdateIssueModelRequest, IssueModel> updateIssueModelCallable() {
+    return stub.updateIssueModelCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
    * Gets an issue model.
    *
    * <p>Sample code:
@@ -1529,6 +1741,389 @@ public class ContactCenterInsightsClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
+   * Deletes an issue model.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ContactCenterInsightsClient contactCenterInsightsClient =
+   *     ContactCenterInsightsClient.create()) {
+   *   IssueModelName name = IssueModelName.of("[PROJECT]", "[LOCATION]", "[ISSUE_MODEL]");
+   *   contactCenterInsightsClient.deleteIssueModelAsync(name).get();
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the issue model to delete.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Empty, DeleteIssueModelMetadata> deleteIssueModelAsync(
+      IssueModelName name) {
+    DeleteIssueModelRequest request =
+        DeleteIssueModelRequest.newBuilder().setName(name == null ? null : name.toString()).build();
+    return deleteIssueModelAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes an issue model.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ContactCenterInsightsClient contactCenterInsightsClient =
+   *     ContactCenterInsightsClient.create()) {
+   *   String name = IssueModelName.of("[PROJECT]", "[LOCATION]", "[ISSUE_MODEL]").toString();
+   *   contactCenterInsightsClient.deleteIssueModelAsync(name).get();
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the issue model to delete.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Empty, DeleteIssueModelMetadata> deleteIssueModelAsync(String name) {
+    DeleteIssueModelRequest request = DeleteIssueModelRequest.newBuilder().setName(name).build();
+    return deleteIssueModelAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes an issue model.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ContactCenterInsightsClient contactCenterInsightsClient =
+   *     ContactCenterInsightsClient.create()) {
+   *   DeleteIssueModelRequest request =
+   *       DeleteIssueModelRequest.newBuilder()
+   *           .setName(IssueModelName.of("[PROJECT]", "[LOCATION]", "[ISSUE_MODEL]").toString())
+   *           .build();
+   *   contactCenterInsightsClient.deleteIssueModelAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Empty, DeleteIssueModelMetadata> deleteIssueModelAsync(
+      DeleteIssueModelRequest request) {
+    return deleteIssueModelOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes an issue model.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ContactCenterInsightsClient contactCenterInsightsClient =
+   *     ContactCenterInsightsClient.create()) {
+   *   DeleteIssueModelRequest request =
+   *       DeleteIssueModelRequest.newBuilder()
+   *           .setName(IssueModelName.of("[PROJECT]", "[LOCATION]", "[ISSUE_MODEL]").toString())
+   *           .build();
+   *   OperationFuture<Empty, DeleteIssueModelMetadata> future =
+   *       contactCenterInsightsClient.deleteIssueModelOperationCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<DeleteIssueModelRequest, Empty, DeleteIssueModelMetadata>
+      deleteIssueModelOperationCallable() {
+    return stub.deleteIssueModelOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes an issue model.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ContactCenterInsightsClient contactCenterInsightsClient =
+   *     ContactCenterInsightsClient.create()) {
+   *   DeleteIssueModelRequest request =
+   *       DeleteIssueModelRequest.newBuilder()
+   *           .setName(IssueModelName.of("[PROJECT]", "[LOCATION]", "[ISSUE_MODEL]").toString())
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       contactCenterInsightsClient.deleteIssueModelCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<DeleteIssueModelRequest, Operation> deleteIssueModelCallable() {
+    return stub.deleteIssueModelCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deploys an issue model. Returns an error if a model is already deployed. An issue model can
+   * only be used in analysis after it has been deployed.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ContactCenterInsightsClient contactCenterInsightsClient =
+   *     ContactCenterInsightsClient.create()) {
+   *   IssueModelName name = IssueModelName.of("[PROJECT]", "[LOCATION]", "[ISSUE_MODEL]");
+   *   DeployIssueModelResponse response =
+   *       contactCenterInsightsClient.deployIssueModelAsync(name).get();
+   * }
+   * }</pre>
+   *
+   * @param name Required. The issue model to deploy.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<DeployIssueModelResponse, DeployIssueModelMetadata>
+      deployIssueModelAsync(IssueModelName name) {
+    DeployIssueModelRequest request =
+        DeployIssueModelRequest.newBuilder().setName(name == null ? null : name.toString()).build();
+    return deployIssueModelAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deploys an issue model. Returns an error if a model is already deployed. An issue model can
+   * only be used in analysis after it has been deployed.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ContactCenterInsightsClient contactCenterInsightsClient =
+   *     ContactCenterInsightsClient.create()) {
+   *   String name = IssueModelName.of("[PROJECT]", "[LOCATION]", "[ISSUE_MODEL]").toString();
+   *   DeployIssueModelResponse response =
+   *       contactCenterInsightsClient.deployIssueModelAsync(name).get();
+   * }
+   * }</pre>
+   *
+   * @param name Required. The issue model to deploy.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<DeployIssueModelResponse, DeployIssueModelMetadata>
+      deployIssueModelAsync(String name) {
+    DeployIssueModelRequest request = DeployIssueModelRequest.newBuilder().setName(name).build();
+    return deployIssueModelAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deploys an issue model. Returns an error if a model is already deployed. An issue model can
+   * only be used in analysis after it has been deployed.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ContactCenterInsightsClient contactCenterInsightsClient =
+   *     ContactCenterInsightsClient.create()) {
+   *   DeployIssueModelRequest request =
+   *       DeployIssueModelRequest.newBuilder()
+   *           .setName(IssueModelName.of("[PROJECT]", "[LOCATION]", "[ISSUE_MODEL]").toString())
+   *           .build();
+   *   DeployIssueModelResponse response =
+   *       contactCenterInsightsClient.deployIssueModelAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<DeployIssueModelResponse, DeployIssueModelMetadata>
+      deployIssueModelAsync(DeployIssueModelRequest request) {
+    return deployIssueModelOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deploys an issue model. Returns an error if a model is already deployed. An issue model can
+   * only be used in analysis after it has been deployed.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ContactCenterInsightsClient contactCenterInsightsClient =
+   *     ContactCenterInsightsClient.create()) {
+   *   DeployIssueModelRequest request =
+   *       DeployIssueModelRequest.newBuilder()
+   *           .setName(IssueModelName.of("[PROJECT]", "[LOCATION]", "[ISSUE_MODEL]").toString())
+   *           .build();
+   *   OperationFuture<DeployIssueModelResponse, DeployIssueModelMetadata> future =
+   *       contactCenterInsightsClient.deployIssueModelOperationCallable().futureCall(request);
+   *   // Do something.
+   *   DeployIssueModelResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<
+          DeployIssueModelRequest, DeployIssueModelResponse, DeployIssueModelMetadata>
+      deployIssueModelOperationCallable() {
+    return stub.deployIssueModelOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deploys an issue model. Returns an error if a model is already deployed. An issue model can
+   * only be used in analysis after it has been deployed.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ContactCenterInsightsClient contactCenterInsightsClient =
+   *     ContactCenterInsightsClient.create()) {
+   *   DeployIssueModelRequest request =
+   *       DeployIssueModelRequest.newBuilder()
+   *           .setName(IssueModelName.of("[PROJECT]", "[LOCATION]", "[ISSUE_MODEL]").toString())
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       contactCenterInsightsClient.deployIssueModelCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<DeployIssueModelRequest, Operation> deployIssueModelCallable() {
+    return stub.deployIssueModelCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Undeploys an issue model. An issue model can not be used in analysis after it has been
+   * undeployed.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ContactCenterInsightsClient contactCenterInsightsClient =
+   *     ContactCenterInsightsClient.create()) {
+   *   IssueModelName name = IssueModelName.of("[PROJECT]", "[LOCATION]", "[ISSUE_MODEL]");
+   *   UndeployIssueModelResponse response =
+   *       contactCenterInsightsClient.undeployIssueModelAsync(name).get();
+   * }
+   * }</pre>
+   *
+   * @param name Required. The issue model to undeploy.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<UndeployIssueModelResponse, UndeployIssueModelMetadata>
+      undeployIssueModelAsync(IssueModelName name) {
+    UndeployIssueModelRequest request =
+        UndeployIssueModelRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .build();
+    return undeployIssueModelAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Undeploys an issue model. An issue model can not be used in analysis after it has been
+   * undeployed.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ContactCenterInsightsClient contactCenterInsightsClient =
+   *     ContactCenterInsightsClient.create()) {
+   *   String name = IssueModelName.of("[PROJECT]", "[LOCATION]", "[ISSUE_MODEL]").toString();
+   *   UndeployIssueModelResponse response =
+   *       contactCenterInsightsClient.undeployIssueModelAsync(name).get();
+   * }
+   * }</pre>
+   *
+   * @param name Required. The issue model to undeploy.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<UndeployIssueModelResponse, UndeployIssueModelMetadata>
+      undeployIssueModelAsync(String name) {
+    UndeployIssueModelRequest request =
+        UndeployIssueModelRequest.newBuilder().setName(name).build();
+    return undeployIssueModelAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Undeploys an issue model. An issue model can not be used in analysis after it has been
+   * undeployed.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ContactCenterInsightsClient contactCenterInsightsClient =
+   *     ContactCenterInsightsClient.create()) {
+   *   UndeployIssueModelRequest request =
+   *       UndeployIssueModelRequest.newBuilder()
+   *           .setName(IssueModelName.of("[PROJECT]", "[LOCATION]", "[ISSUE_MODEL]").toString())
+   *           .build();
+   *   UndeployIssueModelResponse response =
+   *       contactCenterInsightsClient.undeployIssueModelAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<UndeployIssueModelResponse, UndeployIssueModelMetadata>
+      undeployIssueModelAsync(UndeployIssueModelRequest request) {
+    return undeployIssueModelOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Undeploys an issue model. An issue model can not be used in analysis after it has been
+   * undeployed.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ContactCenterInsightsClient contactCenterInsightsClient =
+   *     ContactCenterInsightsClient.create()) {
+   *   UndeployIssueModelRequest request =
+   *       UndeployIssueModelRequest.newBuilder()
+   *           .setName(IssueModelName.of("[PROJECT]", "[LOCATION]", "[ISSUE_MODEL]").toString())
+   *           .build();
+   *   OperationFuture<UndeployIssueModelResponse, UndeployIssueModelMetadata> future =
+   *       contactCenterInsightsClient.undeployIssueModelOperationCallable().futureCall(request);
+   *   // Do something.
+   *   UndeployIssueModelResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<
+          UndeployIssueModelRequest, UndeployIssueModelResponse, UndeployIssueModelMetadata>
+      undeployIssueModelOperationCallable() {
+    return stub.undeployIssueModelOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Undeploys an issue model. An issue model can not be used in analysis after it has been
+   * undeployed.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ContactCenterInsightsClient contactCenterInsightsClient =
+   *     ContactCenterInsightsClient.create()) {
+   *   UndeployIssueModelRequest request =
+   *       UndeployIssueModelRequest.newBuilder()
+   *           .setName(IssueModelName.of("[PROJECT]", "[LOCATION]", "[ISSUE_MODEL]").toString())
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       contactCenterInsightsClient.undeployIssueModelCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<UndeployIssueModelRequest, Operation> undeployIssueModelCallable() {
+    return stub.undeployIssueModelCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
    * Gets an issue.
    *
    * <p>Sample code:
@@ -1712,6 +2307,81 @@ public class ContactCenterInsightsClient implements BackgroundResource {
    */
   public final UnaryCallable<ListIssuesRequest, ListIssuesResponse> listIssuesCallable() {
     return stub.listIssuesCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates an issue.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ContactCenterInsightsClient contactCenterInsightsClient =
+   *     ContactCenterInsightsClient.create()) {
+   *   Issue issue = Issue.newBuilder().build();
+   *   FieldMask updateMask = FieldMask.newBuilder().build();
+   *   Issue response = contactCenterInsightsClient.updateIssue(issue, updateMask);
+   * }
+   * }</pre>
+   *
+   * @param issue Required. The new values for the issue.
+   * @param updateMask The list of fields to be updated.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Issue updateIssue(Issue issue, FieldMask updateMask) {
+    UpdateIssueRequest request =
+        UpdateIssueRequest.newBuilder().setIssue(issue).setUpdateMask(updateMask).build();
+    return updateIssue(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates an issue.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ContactCenterInsightsClient contactCenterInsightsClient =
+   *     ContactCenterInsightsClient.create()) {
+   *   UpdateIssueRequest request =
+   *       UpdateIssueRequest.newBuilder()
+   *           .setIssue(Issue.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   Issue response = contactCenterInsightsClient.updateIssue(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Issue updateIssue(UpdateIssueRequest request) {
+    return updateIssueCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates an issue.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ContactCenterInsightsClient contactCenterInsightsClient =
+   *     ContactCenterInsightsClient.create()) {
+   *   UpdateIssueRequest request =
+   *       UpdateIssueRequest.newBuilder()
+   *           .setIssue(Issue.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   ApiFuture<Issue> future =
+   *       contactCenterInsightsClient.updateIssueCallable().futureCall(request);
+   *   // Do something.
+   *   Issue response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<UpdateIssueRequest, Issue> updateIssueCallable() {
+    return stub.updateIssueCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -2483,7 +3153,7 @@ public class ContactCenterInsightsClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param settings Required. The new values for the conversation.
+   * @param settings Required. The new settings values.
    * @param updateMask Required. The list of fields to be updated.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */

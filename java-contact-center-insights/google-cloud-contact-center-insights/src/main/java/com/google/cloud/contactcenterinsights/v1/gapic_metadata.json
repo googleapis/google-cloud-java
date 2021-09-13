@@ -22,6 +22,9 @@
             "CreateConversation": {
               "methods": ["createConversation", "createConversation", "createConversation", "createConversationCallable"]
             },
+            "CreateIssueModel": {
+              "methods": ["createIssueModelAsync", "createIssueModelAsync", "createIssueModelAsync", "createIssueModelOperationCallable", "createIssueModelCallable"]
+            },
             "CreatePhraseMatcher": {
               "methods": ["createPhraseMatcher", "createPhraseMatcher", "createPhraseMatcher", "createPhraseMatcherCallable"]
             },
@@ -31,8 +34,14 @@
             "DeleteConversation": {
               "methods": ["deleteConversation", "deleteConversation", "deleteConversation", "deleteConversationCallable"]
             },
+            "DeleteIssueModel": {
+              "methods": ["deleteIssueModelAsync", "deleteIssueModelAsync", "deleteIssueModelAsync", "deleteIssueModelOperationCallable", "deleteIssueModelCallable"]
+            },
             "DeletePhraseMatcher": {
               "methods": ["deletePhraseMatcher", "deletePhraseMatcher", "deletePhraseMatcher", "deletePhraseMatcherCallable"]
+            },
+            "DeployIssueModel": {
+              "methods": ["deployIssueModelAsync", "deployIssueModelAsync", "deployIssueModelAsync", "deployIssueModelOperationCallable", "deployIssueModelCallable"]
             },
             "ExportInsightsData": {
               "methods": ["exportInsightsDataAsync", "exportInsightsDataAsync", "exportInsightsDataAsync", "exportInsightsDataOperationCallable", "exportInsightsDataCallable"]
@@ -70,8 +79,17 @@
             "ListPhraseMatchers": {
               "methods": ["listPhraseMatchers", "listPhraseMatchers", "listPhraseMatchers", "listPhraseMatchersPagedCallable", "listPhraseMatchersCallable"]
             },
+            "UndeployIssueModel": {
+              "methods": ["undeployIssueModelAsync", "undeployIssueModelAsync", "undeployIssueModelAsync", "undeployIssueModelOperationCallable", "undeployIssueModelCallable"]
+            },
             "UpdateConversation": {
               "methods": ["updateConversation", "updateConversation", "updateConversationCallable"]
+            },
+            "UpdateIssue": {
+              "methods": ["updateIssue", "updateIssue", "updateIssueCallable"]
+            },
+            "UpdateIssueModel": {
+              "methods": ["updateIssueModel", "updateIssueModel", "updateIssueModelCallable"]
             },
             "UpdateSettings": {
               "methods": ["updateSettings", "updateSettings", "updateSettingsCallable"]

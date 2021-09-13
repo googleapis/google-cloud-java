@@ -18,61 +18,60 @@
 
 package com.google.cloud.contactcenterinsights.v1;
 
-public interface UpdateSettingsRequestOrBuilder
+public interface UpdateIssueModelRequestOrBuilder
     extends
-    // @@protoc_insertion_point(interface_extends:google.cloud.contactcenterinsights.v1.UpdateSettingsRequest)
+    // @@protoc_insertion_point(interface_extends:google.cloud.contactcenterinsights.v1.UpdateIssueModelRequest)
     com.google.protobuf.MessageOrBuilder {
 
   /**
    *
    *
    * <pre>
-   * Required. The new settings values.
+   * Required. The new values for the issue model.
    * </pre>
    *
    * <code>
-   * .google.cloud.contactcenterinsights.v1.Settings settings = 1 [(.google.api.field_behavior) = REQUIRED];
+   * .google.cloud.contactcenterinsights.v1.IssueModel issue_model = 1 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
-   * @return Whether the settings field is set.
+   * @return Whether the issueModel field is set.
    */
-  boolean hasSettings();
+  boolean hasIssueModel();
   /**
    *
    *
    * <pre>
-   * Required. The new settings values.
+   * Required. The new values for the issue model.
    * </pre>
    *
    * <code>
-   * .google.cloud.contactcenterinsights.v1.Settings settings = 1 [(.google.api.field_behavior) = REQUIRED];
+   * .google.cloud.contactcenterinsights.v1.IssueModel issue_model = 1 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
-   * @return The settings.
+   * @return The issueModel.
    */
-  com.google.cloud.contactcenterinsights.v1.Settings getSettings();
+  com.google.cloud.contactcenterinsights.v1.IssueModel getIssueModel();
   /**
    *
    *
    * <pre>
-   * Required. The new settings values.
+   * Required. The new values for the issue model.
    * </pre>
    *
    * <code>
-   * .google.cloud.contactcenterinsights.v1.Settings settings = 1 [(.google.api.field_behavior) = REQUIRED];
+   * .google.cloud.contactcenterinsights.v1.IssueModel issue_model = 1 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
-  com.google.cloud.contactcenterinsights.v1.SettingsOrBuilder getSettingsOrBuilder();
+  com.google.cloud.contactcenterinsights.v1.IssueModelOrBuilder getIssueModelOrBuilder();
 
   /**
    *
    *
    * <pre>
-   * Required. The list of fields to be updated.
+   * The list of fields to be updated.
    * </pre>
    *
-   * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
-   * </code>
+   * <code>.google.protobuf.FieldMask update_mask = 2;</code>
    *
    * @return Whether the updateMask field is set.
    */
@@ -81,11 +80,10 @@ public interface UpdateSettingsRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The list of fields to be updated.
+   * The list of fields to be updated.
    * </pre>
    *
-   * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
-   * </code>
+   * <code>.google.protobuf.FieldMask update_mask = 2;</code>
    *
    * @return The updateMask.
    */
@@ -94,11 +92,10 @@ public interface UpdateSettingsRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The list of fields to be updated.
+   * The list of fields to be updated.
    * </pre>
    *
-   * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
-   * </code>
+   * <code>.google.protobuf.FieldMask update_mask = 2;</code>
    */
   com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder();
 }

@@ -144,6 +144,23 @@ public class ContactCenterInsightsSettings extends ClientSettings<ContactCenterI
         .exportInsightsDataOperationSettings();
   }
 
+  /** Returns the object with the settings used for calls to createIssueModel. */
+  public UnaryCallSettings<CreateIssueModelRequest, Operation> createIssueModelSettings() {
+    return ((ContactCenterInsightsStubSettings) getStubSettings()).createIssueModelSettings();
+  }
+
+  /** Returns the object with the settings used for calls to createIssueModel. */
+  public OperationCallSettings<CreateIssueModelRequest, IssueModel, CreateIssueModelMetadata>
+      createIssueModelOperationSettings() {
+    return ((ContactCenterInsightsStubSettings) getStubSettings())
+        .createIssueModelOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to updateIssueModel. */
+  public UnaryCallSettings<UpdateIssueModelRequest, IssueModel> updateIssueModelSettings() {
+    return ((ContactCenterInsightsStubSettings) getStubSettings()).updateIssueModelSettings();
+  }
+
   /** Returns the object with the settings used for calls to getIssueModel. */
   public UnaryCallSettings<GetIssueModelRequest, IssueModel> getIssueModelSettings() {
     return ((ContactCenterInsightsStubSettings) getStubSettings()).getIssueModelSettings();
@@ -155,6 +172,44 @@ public class ContactCenterInsightsSettings extends ClientSettings<ContactCenterI
     return ((ContactCenterInsightsStubSettings) getStubSettings()).listIssueModelsSettings();
   }
 
+  /** Returns the object with the settings used for calls to deleteIssueModel. */
+  public UnaryCallSettings<DeleteIssueModelRequest, Operation> deleteIssueModelSettings() {
+    return ((ContactCenterInsightsStubSettings) getStubSettings()).deleteIssueModelSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteIssueModel. */
+  public OperationCallSettings<DeleteIssueModelRequest, Empty, DeleteIssueModelMetadata>
+      deleteIssueModelOperationSettings() {
+    return ((ContactCenterInsightsStubSettings) getStubSettings())
+        .deleteIssueModelOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deployIssueModel. */
+  public UnaryCallSettings<DeployIssueModelRequest, Operation> deployIssueModelSettings() {
+    return ((ContactCenterInsightsStubSettings) getStubSettings()).deployIssueModelSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deployIssueModel. */
+  public OperationCallSettings<
+          DeployIssueModelRequest, DeployIssueModelResponse, DeployIssueModelMetadata>
+      deployIssueModelOperationSettings() {
+    return ((ContactCenterInsightsStubSettings) getStubSettings())
+        .deployIssueModelOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to undeployIssueModel. */
+  public UnaryCallSettings<UndeployIssueModelRequest, Operation> undeployIssueModelSettings() {
+    return ((ContactCenterInsightsStubSettings) getStubSettings()).undeployIssueModelSettings();
+  }
+
+  /** Returns the object with the settings used for calls to undeployIssueModel. */
+  public OperationCallSettings<
+          UndeployIssueModelRequest, UndeployIssueModelResponse, UndeployIssueModelMetadata>
+      undeployIssueModelOperationSettings() {
+    return ((ContactCenterInsightsStubSettings) getStubSettings())
+        .undeployIssueModelOperationSettings();
+  }
+
   /** Returns the object with the settings used for calls to getIssue. */
   public UnaryCallSettings<GetIssueRequest, Issue> getIssueSettings() {
     return ((ContactCenterInsightsStubSettings) getStubSettings()).getIssueSettings();
@@ -163,6 +218,11 @@ public class ContactCenterInsightsSettings extends ClientSettings<ContactCenterI
   /** Returns the object with the settings used for calls to listIssues. */
   public UnaryCallSettings<ListIssuesRequest, ListIssuesResponse> listIssuesSettings() {
     return ((ContactCenterInsightsStubSettings) getStubSettings()).listIssuesSettings();
+  }
+
+  /** Returns the object with the settings used for calls to updateIssue. */
+  public UnaryCallSettings<UpdateIssueRequest, Issue> updateIssueSettings() {
+    return ((ContactCenterInsightsStubSettings) getStubSettings()).updateIssueSettings();
   }
 
   /** Returns the object with the settings used for calls to calculateIssueModelStats. */
@@ -381,6 +441,25 @@ public class ContactCenterInsightsSettings extends ClientSettings<ContactCenterI
       return getStubSettingsBuilder().exportInsightsDataOperationSettings();
     }
 
+    /** Returns the builder for the settings used for calls to createIssueModel. */
+    public UnaryCallSettings.Builder<CreateIssueModelRequest, Operation>
+        createIssueModelSettings() {
+      return getStubSettingsBuilder().createIssueModelSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to createIssueModel. */
+    public OperationCallSettings.Builder<
+            CreateIssueModelRequest, IssueModel, CreateIssueModelMetadata>
+        createIssueModelOperationSettings() {
+      return getStubSettingsBuilder().createIssueModelOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updateIssueModel. */
+    public UnaryCallSettings.Builder<UpdateIssueModelRequest, IssueModel>
+        updateIssueModelSettings() {
+      return getStubSettingsBuilder().updateIssueModelSettings();
+    }
+
     /** Returns the builder for the settings used for calls to getIssueModel. */
     public UnaryCallSettings.Builder<GetIssueModelRequest, IssueModel> getIssueModelSettings() {
       return getStubSettingsBuilder().getIssueModelSettings();
@@ -392,6 +471,44 @@ public class ContactCenterInsightsSettings extends ClientSettings<ContactCenterI
       return getStubSettingsBuilder().listIssueModelsSettings();
     }
 
+    /** Returns the builder for the settings used for calls to deleteIssueModel. */
+    public UnaryCallSettings.Builder<DeleteIssueModelRequest, Operation>
+        deleteIssueModelSettings() {
+      return getStubSettingsBuilder().deleteIssueModelSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteIssueModel. */
+    public OperationCallSettings.Builder<DeleteIssueModelRequest, Empty, DeleteIssueModelMetadata>
+        deleteIssueModelOperationSettings() {
+      return getStubSettingsBuilder().deleteIssueModelOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deployIssueModel. */
+    public UnaryCallSettings.Builder<DeployIssueModelRequest, Operation>
+        deployIssueModelSettings() {
+      return getStubSettingsBuilder().deployIssueModelSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deployIssueModel. */
+    public OperationCallSettings.Builder<
+            DeployIssueModelRequest, DeployIssueModelResponse, DeployIssueModelMetadata>
+        deployIssueModelOperationSettings() {
+      return getStubSettingsBuilder().deployIssueModelOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to undeployIssueModel. */
+    public UnaryCallSettings.Builder<UndeployIssueModelRequest, Operation>
+        undeployIssueModelSettings() {
+      return getStubSettingsBuilder().undeployIssueModelSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to undeployIssueModel. */
+    public OperationCallSettings.Builder<
+            UndeployIssueModelRequest, UndeployIssueModelResponse, UndeployIssueModelMetadata>
+        undeployIssueModelOperationSettings() {
+      return getStubSettingsBuilder().undeployIssueModelOperationSettings();
+    }
+
     /** Returns the builder for the settings used for calls to getIssue. */
     public UnaryCallSettings.Builder<GetIssueRequest, Issue> getIssueSettings() {
       return getStubSettingsBuilder().getIssueSettings();
@@ -400,6 +517,11 @@ public class ContactCenterInsightsSettings extends ClientSettings<ContactCenterI
     /** Returns the builder for the settings used for calls to listIssues. */
     public UnaryCallSettings.Builder<ListIssuesRequest, ListIssuesResponse> listIssuesSettings() {
       return getStubSettingsBuilder().listIssuesSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updateIssue. */
+    public UnaryCallSettings.Builder<UpdateIssueRequest, Issue> updateIssueSettings() {
+      return getStubSettingsBuilder().updateIssueSettings();
     }
 
     /** Returns the builder for the settings used for calls to calculateIssueModelStats. */

@@ -22,27 +22,27 @@ package com.google.cloud.contactcenterinsights.v1;
  *
  *
  * <pre>
- * The request to update project-level settings.
+ * The request to update an issue model.
  * </pre>
  *
- * Protobuf type {@code google.cloud.contactcenterinsights.v1.UpdateSettingsRequest}
+ * Protobuf type {@code google.cloud.contactcenterinsights.v1.UpdateIssueModelRequest}
  */
-public final class UpdateSettingsRequest extends com.google.protobuf.GeneratedMessageV3
+public final class UpdateIssueModelRequest extends com.google.protobuf.GeneratedMessageV3
     implements
-    // @@protoc_insertion_point(message_implements:google.cloud.contactcenterinsights.v1.UpdateSettingsRequest)
-    UpdateSettingsRequestOrBuilder {
+    // @@protoc_insertion_point(message_implements:google.cloud.contactcenterinsights.v1.UpdateIssueModelRequest)
+    UpdateIssueModelRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-  // Use UpdateSettingsRequest.newBuilder() to construct.
-  private UpdateSettingsRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+  // Use UpdateIssueModelRequest.newBuilder() to construct.
+  private UpdateIssueModelRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
 
-  private UpdateSettingsRequest() {}
+  private UpdateIssueModelRequest() {}
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
-    return new UpdateSettingsRequest();
+    return new UpdateIssueModelRequest();
   }
 
   @java.lang.Override
@@ -50,7 +50,7 @@ public final class UpdateSettingsRequest extends com.google.protobuf.GeneratedMe
     return this.unknownFields;
   }
 
-  private UpdateSettingsRequest(
+  private UpdateIssueModelRequest(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
@@ -70,17 +70,17 @@ public final class UpdateSettingsRequest extends com.google.protobuf.GeneratedMe
             break;
           case 10:
             {
-              com.google.cloud.contactcenterinsights.v1.Settings.Builder subBuilder = null;
-              if (settings_ != null) {
-                subBuilder = settings_.toBuilder();
+              com.google.cloud.contactcenterinsights.v1.IssueModel.Builder subBuilder = null;
+              if (issueModel_ != null) {
+                subBuilder = issueModel_.toBuilder();
               }
-              settings_ =
+              issueModel_ =
                   input.readMessage(
-                      com.google.cloud.contactcenterinsights.v1.Settings.parser(),
+                      com.google.cloud.contactcenterinsights.v1.IssueModel.parser(),
                       extensionRegistry);
               if (subBuilder != null) {
-                subBuilder.mergeFrom(settings_);
-                settings_ = subBuilder.buildPartial();
+                subBuilder.mergeFrom(issueModel_);
+                issueModel_ = subBuilder.buildPartial();
               }
 
               break;
@@ -121,71 +121,71 @@ public final class UpdateSettingsRequest extends com.google.protobuf.GeneratedMe
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.contactcenterinsights.v1.ContactCenterInsightsProto
-        .internal_static_google_cloud_contactcenterinsights_v1_UpdateSettingsRequest_descriptor;
+        .internal_static_google_cloud_contactcenterinsights_v1_UpdateIssueModelRequest_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
     return com.google.cloud.contactcenterinsights.v1.ContactCenterInsightsProto
-        .internal_static_google_cloud_contactcenterinsights_v1_UpdateSettingsRequest_fieldAccessorTable
+        .internal_static_google_cloud_contactcenterinsights_v1_UpdateIssueModelRequest_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.google.cloud.contactcenterinsights.v1.UpdateSettingsRequest.class,
-            com.google.cloud.contactcenterinsights.v1.UpdateSettingsRequest.Builder.class);
+            com.google.cloud.contactcenterinsights.v1.UpdateIssueModelRequest.class,
+            com.google.cloud.contactcenterinsights.v1.UpdateIssueModelRequest.Builder.class);
   }
 
-  public static final int SETTINGS_FIELD_NUMBER = 1;
-  private com.google.cloud.contactcenterinsights.v1.Settings settings_;
+  public static final int ISSUE_MODEL_FIELD_NUMBER = 1;
+  private com.google.cloud.contactcenterinsights.v1.IssueModel issueModel_;
   /**
    *
    *
    * <pre>
-   * Required. The new settings values.
+   * Required. The new values for the issue model.
    * </pre>
    *
    * <code>
-   * .google.cloud.contactcenterinsights.v1.Settings settings = 1 [(.google.api.field_behavior) = REQUIRED];
+   * .google.cloud.contactcenterinsights.v1.IssueModel issue_model = 1 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
-   * @return Whether the settings field is set.
+   * @return Whether the issueModel field is set.
    */
   @java.lang.Override
-  public boolean hasSettings() {
-    return settings_ != null;
+  public boolean hasIssueModel() {
+    return issueModel_ != null;
   }
   /**
    *
    *
    * <pre>
-   * Required. The new settings values.
+   * Required. The new values for the issue model.
    * </pre>
    *
    * <code>
-   * .google.cloud.contactcenterinsights.v1.Settings settings = 1 [(.google.api.field_behavior) = REQUIRED];
+   * .google.cloud.contactcenterinsights.v1.IssueModel issue_model = 1 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
-   * @return The settings.
+   * @return The issueModel.
    */
   @java.lang.Override
-  public com.google.cloud.contactcenterinsights.v1.Settings getSettings() {
-    return settings_ == null
-        ? com.google.cloud.contactcenterinsights.v1.Settings.getDefaultInstance()
-        : settings_;
+  public com.google.cloud.contactcenterinsights.v1.IssueModel getIssueModel() {
+    return issueModel_ == null
+        ? com.google.cloud.contactcenterinsights.v1.IssueModel.getDefaultInstance()
+        : issueModel_;
   }
   /**
    *
    *
    * <pre>
-   * Required. The new settings values.
+   * Required. The new values for the issue model.
    * </pre>
    *
    * <code>
-   * .google.cloud.contactcenterinsights.v1.Settings settings = 1 [(.google.api.field_behavior) = REQUIRED];
+   * .google.cloud.contactcenterinsights.v1.IssueModel issue_model = 1 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
   @java.lang.Override
-  public com.google.cloud.contactcenterinsights.v1.SettingsOrBuilder getSettingsOrBuilder() {
-    return getSettings();
+  public com.google.cloud.contactcenterinsights.v1.IssueModelOrBuilder getIssueModelOrBuilder() {
+    return getIssueModel();
   }
 
   public static final int UPDATE_MASK_FIELD_NUMBER = 2;
@@ -194,11 +194,10 @@ public final class UpdateSettingsRequest extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Required. The list of fields to be updated.
+   * The list of fields to be updated.
    * </pre>
    *
-   * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
-   * </code>
+   * <code>.google.protobuf.FieldMask update_mask = 2;</code>
    *
    * @return Whether the updateMask field is set.
    */
@@ -210,11 +209,10 @@ public final class UpdateSettingsRequest extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Required. The list of fields to be updated.
+   * The list of fields to be updated.
    * </pre>
    *
-   * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
-   * </code>
+   * <code>.google.protobuf.FieldMask update_mask = 2;</code>
    *
    * @return The updateMask.
    */
@@ -226,11 +224,10 @@ public final class UpdateSettingsRequest extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Required. The list of fields to be updated.
+   * The list of fields to be updated.
    * </pre>
    *
-   * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
-   * </code>
+   * <code>.google.protobuf.FieldMask update_mask = 2;</code>
    */
   @java.lang.Override
   public com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder() {
@@ -251,8 +248,8 @@ public final class UpdateSettingsRequest extends com.google.protobuf.GeneratedMe
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (settings_ != null) {
-      output.writeMessage(1, getSettings());
+    if (issueModel_ != null) {
+      output.writeMessage(1, getIssueModel());
     }
     if (updateMask_ != null) {
       output.writeMessage(2, getUpdateMask());
@@ -266,8 +263,8 @@ public final class UpdateSettingsRequest extends com.google.protobuf.GeneratedMe
     if (size != -1) return size;
 
     size = 0;
-    if (settings_ != null) {
-      size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, getSettings());
+    if (issueModel_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, getIssueModel());
     }
     if (updateMask_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, getUpdateMask());
@@ -282,15 +279,15 @@ public final class UpdateSettingsRequest extends com.google.protobuf.GeneratedMe
     if (obj == this) {
       return true;
     }
-    if (!(obj instanceof com.google.cloud.contactcenterinsights.v1.UpdateSettingsRequest)) {
+    if (!(obj instanceof com.google.cloud.contactcenterinsights.v1.UpdateIssueModelRequest)) {
       return super.equals(obj);
     }
-    com.google.cloud.contactcenterinsights.v1.UpdateSettingsRequest other =
-        (com.google.cloud.contactcenterinsights.v1.UpdateSettingsRequest) obj;
+    com.google.cloud.contactcenterinsights.v1.UpdateIssueModelRequest other =
+        (com.google.cloud.contactcenterinsights.v1.UpdateIssueModelRequest) obj;
 
-    if (hasSettings() != other.hasSettings()) return false;
-    if (hasSettings()) {
-      if (!getSettings().equals(other.getSettings())) return false;
+    if (hasIssueModel() != other.hasIssueModel()) return false;
+    if (hasIssueModel()) {
+      if (!getIssueModel().equals(other.getIssueModel())) return false;
     }
     if (hasUpdateMask() != other.hasUpdateMask()) return false;
     if (hasUpdateMask()) {
@@ -307,9 +304,9 @@ public final class UpdateSettingsRequest extends com.google.protobuf.GeneratedMe
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    if (hasSettings()) {
-      hash = (37 * hash) + SETTINGS_FIELD_NUMBER;
-      hash = (53 * hash) + getSettings().hashCode();
+    if (hasIssueModel()) {
+      hash = (37 * hash) + ISSUE_MODEL_FIELD_NUMBER;
+      hash = (53 * hash) + getIssueModel().hashCode();
     }
     if (hasUpdateMask()) {
       hash = (37 * hash) + UPDATE_MASK_FIELD_NUMBER;
@@ -320,71 +317,72 @@ public final class UpdateSettingsRequest extends com.google.protobuf.GeneratedMe
     return hash;
   }
 
-  public static com.google.cloud.contactcenterinsights.v1.UpdateSettingsRequest parseFrom(
+  public static com.google.cloud.contactcenterinsights.v1.UpdateIssueModelRequest parseFrom(
       java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
 
-  public static com.google.cloud.contactcenterinsights.v1.UpdateSettingsRequest parseFrom(
+  public static com.google.cloud.contactcenterinsights.v1.UpdateIssueModelRequest parseFrom(
       java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
 
-  public static com.google.cloud.contactcenterinsights.v1.UpdateSettingsRequest parseFrom(
+  public static com.google.cloud.contactcenterinsights.v1.UpdateIssueModelRequest parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
 
-  public static com.google.cloud.contactcenterinsights.v1.UpdateSettingsRequest parseFrom(
+  public static com.google.cloud.contactcenterinsights.v1.UpdateIssueModelRequest parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
 
-  public static com.google.cloud.contactcenterinsights.v1.UpdateSettingsRequest parseFrom(
+  public static com.google.cloud.contactcenterinsights.v1.UpdateIssueModelRequest parseFrom(
       byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
 
-  public static com.google.cloud.contactcenterinsights.v1.UpdateSettingsRequest parseFrom(
+  public static com.google.cloud.contactcenterinsights.v1.UpdateIssueModelRequest parseFrom(
       byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
 
-  public static com.google.cloud.contactcenterinsights.v1.UpdateSettingsRequest parseFrom(
+  public static com.google.cloud.contactcenterinsights.v1.UpdateIssueModelRequest parseFrom(
       java.io.InputStream input) throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
 
-  public static com.google.cloud.contactcenterinsights.v1.UpdateSettingsRequest parseFrom(
+  public static com.google.cloud.contactcenterinsights.v1.UpdateIssueModelRequest parseFrom(
       java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
         PARSER, input, extensionRegistry);
   }
 
-  public static com.google.cloud.contactcenterinsights.v1.UpdateSettingsRequest parseDelimitedFrom(
-      java.io.InputStream input) throws java.io.IOException {
+  public static com.google.cloud.contactcenterinsights.v1.UpdateIssueModelRequest
+      parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
   }
 
-  public static com.google.cloud.contactcenterinsights.v1.UpdateSettingsRequest parseDelimitedFrom(
-      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws java.io.IOException {
+  public static com.google.cloud.contactcenterinsights.v1.UpdateIssueModelRequest
+      parseDelimitedFrom(
+          java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
         PARSER, input, extensionRegistry);
   }
 
-  public static com.google.cloud.contactcenterinsights.v1.UpdateSettingsRequest parseFrom(
+  public static com.google.cloud.contactcenterinsights.v1.UpdateIssueModelRequest parseFrom(
       com.google.protobuf.CodedInputStream input) throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
 
-  public static com.google.cloud.contactcenterinsights.v1.UpdateSettingsRequest parseFrom(
+  public static com.google.cloud.contactcenterinsights.v1.UpdateIssueModelRequest parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -402,7 +400,7 @@ public final class UpdateSettingsRequest extends com.google.protobuf.GeneratedMe
   }
 
   public static Builder newBuilder(
-      com.google.cloud.contactcenterinsights.v1.UpdateSettingsRequest prototype) {
+      com.google.cloud.contactcenterinsights.v1.UpdateIssueModelRequest prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
 
@@ -420,31 +418,32 @@ public final class UpdateSettingsRequest extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * The request to update project-level settings.
+   * The request to update an issue model.
    * </pre>
    *
-   * Protobuf type {@code google.cloud.contactcenterinsights.v1.UpdateSettingsRequest}
+   * Protobuf type {@code google.cloud.contactcenterinsights.v1.UpdateIssueModelRequest}
    */
   public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
       implements
-      // @@protoc_insertion_point(builder_implements:google.cloud.contactcenterinsights.v1.UpdateSettingsRequest)
-      com.google.cloud.contactcenterinsights.v1.UpdateSettingsRequestOrBuilder {
+      // @@protoc_insertion_point(builder_implements:google.cloud.contactcenterinsights.v1.UpdateIssueModelRequest)
+      com.google.cloud.contactcenterinsights.v1.UpdateIssueModelRequestOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.cloud.contactcenterinsights.v1.ContactCenterInsightsProto
-          .internal_static_google_cloud_contactcenterinsights_v1_UpdateSettingsRequest_descriptor;
+          .internal_static_google_cloud_contactcenterinsights_v1_UpdateIssueModelRequest_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return com.google.cloud.contactcenterinsights.v1.ContactCenterInsightsProto
-          .internal_static_google_cloud_contactcenterinsights_v1_UpdateSettingsRequest_fieldAccessorTable
+          .internal_static_google_cloud_contactcenterinsights_v1_UpdateIssueModelRequest_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.cloud.contactcenterinsights.v1.UpdateSettingsRequest.class,
-              com.google.cloud.contactcenterinsights.v1.UpdateSettingsRequest.Builder.class);
+              com.google.cloud.contactcenterinsights.v1.UpdateIssueModelRequest.class,
+              com.google.cloud.contactcenterinsights.v1.UpdateIssueModelRequest.Builder.class);
     }
 
-    // Construct using com.google.cloud.contactcenterinsights.v1.UpdateSettingsRequest.newBuilder()
+    // Construct using
+    // com.google.cloud.contactcenterinsights.v1.UpdateIssueModelRequest.newBuilder()
     private Builder() {
       maybeForceBuilderInitialization();
     }
@@ -461,11 +460,11 @@ public final class UpdateSettingsRequest extends com.google.protobuf.GeneratedMe
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (settingsBuilder_ == null) {
-        settings_ = null;
+      if (issueModelBuilder_ == null) {
+        issueModel_ = null;
       } else {
-        settings_ = null;
-        settingsBuilder_ = null;
+        issueModel_ = null;
+        issueModelBuilder_ = null;
       }
       if (updateMaskBuilder_ == null) {
         updateMask_ = null;
@@ -479,18 +478,18 @@ public final class UpdateSettingsRequest extends com.google.protobuf.GeneratedMe
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
       return com.google.cloud.contactcenterinsights.v1.ContactCenterInsightsProto
-          .internal_static_google_cloud_contactcenterinsights_v1_UpdateSettingsRequest_descriptor;
+          .internal_static_google_cloud_contactcenterinsights_v1_UpdateIssueModelRequest_descriptor;
     }
 
     @java.lang.Override
-    public com.google.cloud.contactcenterinsights.v1.UpdateSettingsRequest
+    public com.google.cloud.contactcenterinsights.v1.UpdateIssueModelRequest
         getDefaultInstanceForType() {
-      return com.google.cloud.contactcenterinsights.v1.UpdateSettingsRequest.getDefaultInstance();
+      return com.google.cloud.contactcenterinsights.v1.UpdateIssueModelRequest.getDefaultInstance();
     }
 
     @java.lang.Override
-    public com.google.cloud.contactcenterinsights.v1.UpdateSettingsRequest build() {
-      com.google.cloud.contactcenterinsights.v1.UpdateSettingsRequest result = buildPartial();
+    public com.google.cloud.contactcenterinsights.v1.UpdateIssueModelRequest build() {
+      com.google.cloud.contactcenterinsights.v1.UpdateIssueModelRequest result = buildPartial();
       if (!result.isInitialized()) {
         throw newUninitializedMessageException(result);
       }
@@ -498,13 +497,13 @@ public final class UpdateSettingsRequest extends com.google.protobuf.GeneratedMe
     }
 
     @java.lang.Override
-    public com.google.cloud.contactcenterinsights.v1.UpdateSettingsRequest buildPartial() {
-      com.google.cloud.contactcenterinsights.v1.UpdateSettingsRequest result =
-          new com.google.cloud.contactcenterinsights.v1.UpdateSettingsRequest(this);
-      if (settingsBuilder_ == null) {
-        result.settings_ = settings_;
+    public com.google.cloud.contactcenterinsights.v1.UpdateIssueModelRequest buildPartial() {
+      com.google.cloud.contactcenterinsights.v1.UpdateIssueModelRequest result =
+          new com.google.cloud.contactcenterinsights.v1.UpdateIssueModelRequest(this);
+      if (issueModelBuilder_ == null) {
+        result.issueModel_ = issueModel_;
       } else {
-        result.settings_ = settingsBuilder_.build();
+        result.issueModel_ = issueModelBuilder_.build();
       }
       if (updateMaskBuilder_ == null) {
         result.updateMask_ = updateMask_;
@@ -550,8 +549,8 @@ public final class UpdateSettingsRequest extends com.google.protobuf.GeneratedMe
 
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof com.google.cloud.contactcenterinsights.v1.UpdateSettingsRequest) {
-        return mergeFrom((com.google.cloud.contactcenterinsights.v1.UpdateSettingsRequest) other);
+      if (other instanceof com.google.cloud.contactcenterinsights.v1.UpdateIssueModelRequest) {
+        return mergeFrom((com.google.cloud.contactcenterinsights.v1.UpdateIssueModelRequest) other);
       } else {
         super.mergeFrom(other);
         return this;
@@ -559,12 +558,12 @@ public final class UpdateSettingsRequest extends com.google.protobuf.GeneratedMe
     }
 
     public Builder mergeFrom(
-        com.google.cloud.contactcenterinsights.v1.UpdateSettingsRequest other) {
+        com.google.cloud.contactcenterinsights.v1.UpdateIssueModelRequest other) {
       if (other
-          == com.google.cloud.contactcenterinsights.v1.UpdateSettingsRequest.getDefaultInstance())
+          == com.google.cloud.contactcenterinsights.v1.UpdateIssueModelRequest.getDefaultInstance())
         return this;
-      if (other.hasSettings()) {
-        mergeSettings(other.getSettings());
+      if (other.hasIssueModel()) {
+        mergeIssueModel(other.getIssueModel());
       }
       if (other.hasUpdateMask()) {
         mergeUpdateMask(other.getUpdateMask());
@@ -584,12 +583,12 @@ public final class UpdateSettingsRequest extends com.google.protobuf.GeneratedMe
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.cloud.contactcenterinsights.v1.UpdateSettingsRequest parsedMessage = null;
+      com.google.cloud.contactcenterinsights.v1.UpdateIssueModelRequest parsedMessage = null;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         parsedMessage =
-            (com.google.cloud.contactcenterinsights.v1.UpdateSettingsRequest)
+            (com.google.cloud.contactcenterinsights.v1.UpdateIssueModelRequest)
                 e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
@@ -600,70 +599,70 @@ public final class UpdateSettingsRequest extends com.google.protobuf.GeneratedMe
       return this;
     }
 
-    private com.google.cloud.contactcenterinsights.v1.Settings settings_;
+    private com.google.cloud.contactcenterinsights.v1.IssueModel issueModel_;
     private com.google.protobuf.SingleFieldBuilderV3<
-            com.google.cloud.contactcenterinsights.v1.Settings,
-            com.google.cloud.contactcenterinsights.v1.Settings.Builder,
-            com.google.cloud.contactcenterinsights.v1.SettingsOrBuilder>
-        settingsBuilder_;
+            com.google.cloud.contactcenterinsights.v1.IssueModel,
+            com.google.cloud.contactcenterinsights.v1.IssueModel.Builder,
+            com.google.cloud.contactcenterinsights.v1.IssueModelOrBuilder>
+        issueModelBuilder_;
     /**
      *
      *
      * <pre>
-     * Required. The new settings values.
+     * Required. The new values for the issue model.
      * </pre>
      *
      * <code>
-     * .google.cloud.contactcenterinsights.v1.Settings settings = 1 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.contactcenterinsights.v1.IssueModel issue_model = 1 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      *
-     * @return Whether the settings field is set.
+     * @return Whether the issueModel field is set.
      */
-    public boolean hasSettings() {
-      return settingsBuilder_ != null || settings_ != null;
+    public boolean hasIssueModel() {
+      return issueModelBuilder_ != null || issueModel_ != null;
     }
     /**
      *
      *
      * <pre>
-     * Required. The new settings values.
+     * Required. The new values for the issue model.
      * </pre>
      *
      * <code>
-     * .google.cloud.contactcenterinsights.v1.Settings settings = 1 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.contactcenterinsights.v1.IssueModel issue_model = 1 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      *
-     * @return The settings.
+     * @return The issueModel.
      */
-    public com.google.cloud.contactcenterinsights.v1.Settings getSettings() {
-      if (settingsBuilder_ == null) {
-        return settings_ == null
-            ? com.google.cloud.contactcenterinsights.v1.Settings.getDefaultInstance()
-            : settings_;
+    public com.google.cloud.contactcenterinsights.v1.IssueModel getIssueModel() {
+      if (issueModelBuilder_ == null) {
+        return issueModel_ == null
+            ? com.google.cloud.contactcenterinsights.v1.IssueModel.getDefaultInstance()
+            : issueModel_;
       } else {
-        return settingsBuilder_.getMessage();
+        return issueModelBuilder_.getMessage();
       }
     }
     /**
      *
      *
      * <pre>
-     * Required. The new settings values.
+     * Required. The new values for the issue model.
      * </pre>
      *
      * <code>
-     * .google.cloud.contactcenterinsights.v1.Settings settings = 1 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.contactcenterinsights.v1.IssueModel issue_model = 1 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
-    public Builder setSettings(com.google.cloud.contactcenterinsights.v1.Settings value) {
-      if (settingsBuilder_ == null) {
+    public Builder setIssueModel(com.google.cloud.contactcenterinsights.v1.IssueModel value) {
+      if (issueModelBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
         }
-        settings_ = value;
+        issueModel_ = value;
         onChanged();
       } else {
-        settingsBuilder_.setMessage(value);
+        issueModelBuilder_.setMessage(value);
       }
 
       return this;
@@ -672,20 +671,20 @@ public final class UpdateSettingsRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Required. The new settings values.
+     * Required. The new values for the issue model.
      * </pre>
      *
      * <code>
-     * .google.cloud.contactcenterinsights.v1.Settings settings = 1 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.contactcenterinsights.v1.IssueModel issue_model = 1 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
-    public Builder setSettings(
-        com.google.cloud.contactcenterinsights.v1.Settings.Builder builderForValue) {
-      if (settingsBuilder_ == null) {
-        settings_ = builderForValue.build();
+    public Builder setIssueModel(
+        com.google.cloud.contactcenterinsights.v1.IssueModel.Builder builderForValue) {
+      if (issueModelBuilder_ == null) {
+        issueModel_ = builderForValue.build();
         onChanged();
       } else {
-        settingsBuilder_.setMessage(builderForValue.build());
+        issueModelBuilder_.setMessage(builderForValue.build());
       }
 
       return this;
@@ -694,26 +693,26 @@ public final class UpdateSettingsRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Required. The new settings values.
+     * Required. The new values for the issue model.
      * </pre>
      *
      * <code>
-     * .google.cloud.contactcenterinsights.v1.Settings settings = 1 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.contactcenterinsights.v1.IssueModel issue_model = 1 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
-    public Builder mergeSettings(com.google.cloud.contactcenterinsights.v1.Settings value) {
-      if (settingsBuilder_ == null) {
-        if (settings_ != null) {
-          settings_ =
-              com.google.cloud.contactcenterinsights.v1.Settings.newBuilder(settings_)
+    public Builder mergeIssueModel(com.google.cloud.contactcenterinsights.v1.IssueModel value) {
+      if (issueModelBuilder_ == null) {
+        if (issueModel_ != null) {
+          issueModel_ =
+              com.google.cloud.contactcenterinsights.v1.IssueModel.newBuilder(issueModel_)
                   .mergeFrom(value)
                   .buildPartial();
         } else {
-          settings_ = value;
+          issueModel_ = value;
         }
         onChanged();
       } else {
-        settingsBuilder_.mergeFrom(value);
+        issueModelBuilder_.mergeFrom(value);
       }
 
       return this;
@@ -722,20 +721,20 @@ public final class UpdateSettingsRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Required. The new settings values.
+     * Required. The new values for the issue model.
      * </pre>
      *
      * <code>
-     * .google.cloud.contactcenterinsights.v1.Settings settings = 1 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.contactcenterinsights.v1.IssueModel issue_model = 1 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
-    public Builder clearSettings() {
-      if (settingsBuilder_ == null) {
-        settings_ = null;
+    public Builder clearIssueModel() {
+      if (issueModelBuilder_ == null) {
+        issueModel_ = null;
         onChanged();
       } else {
-        settings_ = null;
-        settingsBuilder_ = null;
+        issueModel_ = null;
+        issueModelBuilder_ = null;
       }
 
       return this;
@@ -744,64 +743,64 @@ public final class UpdateSettingsRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Required. The new settings values.
+     * Required. The new values for the issue model.
      * </pre>
      *
      * <code>
-     * .google.cloud.contactcenterinsights.v1.Settings settings = 1 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.contactcenterinsights.v1.IssueModel issue_model = 1 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
-    public com.google.cloud.contactcenterinsights.v1.Settings.Builder getSettingsBuilder() {
+    public com.google.cloud.contactcenterinsights.v1.IssueModel.Builder getIssueModelBuilder() {
 
       onChanged();
-      return getSettingsFieldBuilder().getBuilder();
+      return getIssueModelFieldBuilder().getBuilder();
     }
     /**
      *
      *
      * <pre>
-     * Required. The new settings values.
+     * Required. The new values for the issue model.
      * </pre>
      *
      * <code>
-     * .google.cloud.contactcenterinsights.v1.Settings settings = 1 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.contactcenterinsights.v1.IssueModel issue_model = 1 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
-    public com.google.cloud.contactcenterinsights.v1.SettingsOrBuilder getSettingsOrBuilder() {
-      if (settingsBuilder_ != null) {
-        return settingsBuilder_.getMessageOrBuilder();
+    public com.google.cloud.contactcenterinsights.v1.IssueModelOrBuilder getIssueModelOrBuilder() {
+      if (issueModelBuilder_ != null) {
+        return issueModelBuilder_.getMessageOrBuilder();
       } else {
-        return settings_ == null
-            ? com.google.cloud.contactcenterinsights.v1.Settings.getDefaultInstance()
-            : settings_;
+        return issueModel_ == null
+            ? com.google.cloud.contactcenterinsights.v1.IssueModel.getDefaultInstance()
+            : issueModel_;
       }
     }
     /**
      *
      *
      * <pre>
-     * Required. The new settings values.
+     * Required. The new values for the issue model.
      * </pre>
      *
      * <code>
-     * .google.cloud.contactcenterinsights.v1.Settings settings = 1 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.contactcenterinsights.v1.IssueModel issue_model = 1 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-            com.google.cloud.contactcenterinsights.v1.Settings,
-            com.google.cloud.contactcenterinsights.v1.Settings.Builder,
-            com.google.cloud.contactcenterinsights.v1.SettingsOrBuilder>
-        getSettingsFieldBuilder() {
-      if (settingsBuilder_ == null) {
-        settingsBuilder_ =
+            com.google.cloud.contactcenterinsights.v1.IssueModel,
+            com.google.cloud.contactcenterinsights.v1.IssueModel.Builder,
+            com.google.cloud.contactcenterinsights.v1.IssueModelOrBuilder>
+        getIssueModelFieldBuilder() {
+      if (issueModelBuilder_ == null) {
+        issueModelBuilder_ =
             new com.google.protobuf.SingleFieldBuilderV3<
-                com.google.cloud.contactcenterinsights.v1.Settings,
-                com.google.cloud.contactcenterinsights.v1.Settings.Builder,
-                com.google.cloud.contactcenterinsights.v1.SettingsOrBuilder>(
-                getSettings(), getParentForChildren(), isClean());
-        settings_ = null;
+                com.google.cloud.contactcenterinsights.v1.IssueModel,
+                com.google.cloud.contactcenterinsights.v1.IssueModel.Builder,
+                com.google.cloud.contactcenterinsights.v1.IssueModelOrBuilder>(
+                getIssueModel(), getParentForChildren(), isClean());
+        issueModel_ = null;
       }
-      return settingsBuilder_;
+      return issueModelBuilder_;
     }
 
     private com.google.protobuf.FieldMask updateMask_;
@@ -814,11 +813,10 @@ public final class UpdateSettingsRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Required. The list of fields to be updated.
+     * The list of fields to be updated.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
-     * </code>
+     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
      *
      * @return Whether the updateMask field is set.
      */
@@ -829,11 +827,10 @@ public final class UpdateSettingsRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Required. The list of fields to be updated.
+     * The list of fields to be updated.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
-     * </code>
+     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
      *
      * @return The updateMask.
      */
@@ -850,11 +847,10 @@ public final class UpdateSettingsRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Required. The list of fields to be updated.
+     * The list of fields to be updated.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
-     * </code>
+     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
      */
     public Builder setUpdateMask(com.google.protobuf.FieldMask value) {
       if (updateMaskBuilder_ == null) {
@@ -873,11 +869,10 @@ public final class UpdateSettingsRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Required. The list of fields to be updated.
+     * The list of fields to be updated.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
-     * </code>
+     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
      */
     public Builder setUpdateMask(com.google.protobuf.FieldMask.Builder builderForValue) {
       if (updateMaskBuilder_ == null) {
@@ -893,11 +888,10 @@ public final class UpdateSettingsRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Required. The list of fields to be updated.
+     * The list of fields to be updated.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
-     * </code>
+     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
      */
     public Builder mergeUpdateMask(com.google.protobuf.FieldMask value) {
       if (updateMaskBuilder_ == null) {
@@ -918,11 +912,10 @@ public final class UpdateSettingsRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Required. The list of fields to be updated.
+     * The list of fields to be updated.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
-     * </code>
+     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
      */
     public Builder clearUpdateMask() {
       if (updateMaskBuilder_ == null) {
@@ -939,11 +932,10 @@ public final class UpdateSettingsRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Required. The list of fields to be updated.
+     * The list of fields to be updated.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
-     * </code>
+     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
      */
     public com.google.protobuf.FieldMask.Builder getUpdateMaskBuilder() {
 
@@ -954,11 +946,10 @@ public final class UpdateSettingsRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Required. The list of fields to be updated.
+     * The list of fields to be updated.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
-     * </code>
+     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
      */
     public com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder() {
       if (updateMaskBuilder_ != null) {
@@ -973,11 +964,10 @@ public final class UpdateSettingsRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Required. The list of fields to be updated.
+     * The list of fields to be updated.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
-     * </code>
+     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.protobuf.FieldMask,
@@ -1007,44 +997,44 @@ public final class UpdateSettingsRequest extends com.google.protobuf.GeneratedMe
       return super.mergeUnknownFields(unknownFields);
     }
 
-    // @@protoc_insertion_point(builder_scope:google.cloud.contactcenterinsights.v1.UpdateSettingsRequest)
+    // @@protoc_insertion_point(builder_scope:google.cloud.contactcenterinsights.v1.UpdateIssueModelRequest)
   }
 
-  // @@protoc_insertion_point(class_scope:google.cloud.contactcenterinsights.v1.UpdateSettingsRequest)
-  private static final com.google.cloud.contactcenterinsights.v1.UpdateSettingsRequest
+  // @@protoc_insertion_point(class_scope:google.cloud.contactcenterinsights.v1.UpdateIssueModelRequest)
+  private static final com.google.cloud.contactcenterinsights.v1.UpdateIssueModelRequest
       DEFAULT_INSTANCE;
 
   static {
-    DEFAULT_INSTANCE = new com.google.cloud.contactcenterinsights.v1.UpdateSettingsRequest();
+    DEFAULT_INSTANCE = new com.google.cloud.contactcenterinsights.v1.UpdateIssueModelRequest();
   }
 
-  public static com.google.cloud.contactcenterinsights.v1.UpdateSettingsRequest
+  public static com.google.cloud.contactcenterinsights.v1.UpdateIssueModelRequest
       getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<UpdateSettingsRequest> PARSER =
-      new com.google.protobuf.AbstractParser<UpdateSettingsRequest>() {
+  private static final com.google.protobuf.Parser<UpdateIssueModelRequest> PARSER =
+      new com.google.protobuf.AbstractParser<UpdateIssueModelRequest>() {
         @java.lang.Override
-        public UpdateSettingsRequest parsePartialFrom(
+        public UpdateIssueModelRequest parsePartialFrom(
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new UpdateSettingsRequest(input, extensionRegistry);
+          return new UpdateIssueModelRequest(input, extensionRegistry);
         }
       };
 
-  public static com.google.protobuf.Parser<UpdateSettingsRequest> parser() {
+  public static com.google.protobuf.Parser<UpdateIssueModelRequest> parser() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.protobuf.Parser<UpdateSettingsRequest> getParserForType() {
+  public com.google.protobuf.Parser<UpdateIssueModelRequest> getParserForType() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.cloud.contactcenterinsights.v1.UpdateSettingsRequest
+  public com.google.cloud.contactcenterinsights.v1.UpdateIssueModelRequest
       getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }

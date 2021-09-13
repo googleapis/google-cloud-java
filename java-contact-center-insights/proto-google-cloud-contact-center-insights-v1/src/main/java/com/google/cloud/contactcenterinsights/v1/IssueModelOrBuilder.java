@@ -186,6 +186,45 @@ public interface IssueModelOrBuilder
    *
    *
    * <pre>
+   * Configs for the input data that used to create the issue model.
+   * </pre>
+   *
+   * <code>.google.cloud.contactcenterinsights.v1.IssueModel.InputDataConfig input_data_config = 6;
+   * </code>
+   *
+   * @return Whether the inputDataConfig field is set.
+   */
+  boolean hasInputDataConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Configs for the input data that used to create the issue model.
+   * </pre>
+   *
+   * <code>.google.cloud.contactcenterinsights.v1.IssueModel.InputDataConfig input_data_config = 6;
+   * </code>
+   *
+   * @return The inputDataConfig.
+   */
+  com.google.cloud.contactcenterinsights.v1.IssueModel.InputDataConfig getInputDataConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Configs for the input data that used to create the issue model.
+   * </pre>
+   *
+   * <code>.google.cloud.contactcenterinsights.v1.IssueModel.InputDataConfig input_data_config = 6;
+   * </code>
+   */
+  com.google.cloud.contactcenterinsights.v1.IssueModel.InputDataConfigOrBuilder
+      getInputDataConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Output only. Immutable. The issue model's label statistics on its training data.
    * </pre>
    *
