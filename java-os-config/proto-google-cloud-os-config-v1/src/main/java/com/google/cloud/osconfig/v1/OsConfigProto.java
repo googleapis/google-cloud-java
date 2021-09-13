@@ -85,14 +85,16 @@ public final class OsConfigProto {
           + "\002**(/v1/{name=projects/*/patchDeployment"
           + "s/*}\332A\004name\032K\312A\027osconfig.googleapis.com\322"
           + "A.https://www.googleapis.com/auth/cloud-"
-          + "platformB\235\002\n\034com.google.cloud.osconfig.v"
+          + "platformB\334\002\n\034com.google.cloud.osconfig.v"
           + "1B\rOsConfigProtoZ@google.golang.org/genp"
           + "roto/googleapis/cloud/osconfig/v1;osconf"
           + "ig\252\002\030Google.Cloud.OsConfig.V1\312\002\030Google\\C"
           + "loud\\OsConfig\\V1\352\002\033Google::Cloud::OsConf"
-          + "ig::V1\352AW\n\037compute.googleapis.com/Instan"
-          + "ce\0224projects/{project}/zones/{zone}/inst"
-          + "ances/{instance}b\006proto3"
+          + "ig::V1\352A\225\001\n\037compute.googleapis.com/Insta"
+          + "nce\0224projects/{project}/zones/{zone}/ins"
+          + "tances/{instance}\022<projects/{project}/lo"
+          + "cations/{location}/instances/{instance}b"
+          + "\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

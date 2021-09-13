@@ -22,7 +22,11 @@ package com.google.cloud.osconfig.v1;
  *
  *
  * <pre>
- * The inventory details of a VM.
+ * This API resource represents the available inventory data for a
+ * Compute Engine virtual machine (VM) instance at a given point in time.
+ * You can use this API resource to determine the inventory data of your VM.
+ * For more information, see [Information provided by OS inventory
+ * management](https://cloud.google.com/compute/docs/instances/os-inventory-management#data-collected).
  * </pre>
  *
  * Protobuf type {@code google.cloud.osconfig.v1.Inventory}
@@ -37,7 +41,9 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
     super(builder);
   }
 
-  private Inventory() {}
+  private Inventory() {
+    name_ = "";
+  }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
@@ -99,6 +105,28 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
                           ItemsDefaultEntryHolder.defaultEntry.getParserForType(),
                           extensionRegistry);
               items_.getMutableMap().put(items__.getKey(), items__.getValue());
+              break;
+            }
+          case 26:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              name_ = s;
+              break;
+            }
+          case 34:
+            {
+              com.google.protobuf.Timestamp.Builder subBuilder = null;
+              if (updateTime_ != null) {
+                subBuilder = updateTime_.toBuilder();
+              }
+              updateTime_ =
+                  input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(updateTime_);
+                updateTime_ = subBuilder.buildPartial();
+              }
+
               break;
             }
           default:
@@ -5291,7 +5319,7 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Details of a Windows Application
+     * Details of Windows Application.
      * </pre>
      *
      * <code>.google.cloud.osconfig.v1.Inventory.WindowsApplication windows_application = 9;</code>
@@ -5303,7 +5331,7 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Details of a Windows Application
+     * Details of Windows Application.
      * </pre>
      *
      * <code>.google.cloud.osconfig.v1.Inventory.WindowsApplication windows_application = 9;</code>
@@ -5315,7 +5343,7 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Details of a Windows Application
+     * Details of Windows Application.
      * </pre>
      *
      * <code>.google.cloud.osconfig.v1.Inventory.WindowsApplication windows_application = 9;</code>
@@ -6132,7 +6160,7 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Details of a Windows Application
+     * Details of Windows Application.
      * </pre>
      *
      * <code>.google.cloud.osconfig.v1.Inventory.WindowsApplication windows_application = 9;</code>
@@ -6147,7 +6175,7 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Details of a Windows Application
+     * Details of Windows Application.
      * </pre>
      *
      * <code>.google.cloud.osconfig.v1.Inventory.WindowsApplication windows_application = 9;</code>
@@ -6165,7 +6193,7 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Details of a Windows Application
+     * Details of Windows Application.
      * </pre>
      *
      * <code>.google.cloud.osconfig.v1.Inventory.WindowsApplication windows_application = 9;</code>
@@ -8648,7 +8676,7 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Details of a Windows Application
+       * Details of Windows Application.
        * </pre>
        *
        * <code>.google.cloud.osconfig.v1.Inventory.WindowsApplication windows_application = 9;
@@ -8664,7 +8692,7 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Details of a Windows Application
+       * Details of Windows Application.
        * </pre>
        *
        * <code>.google.cloud.osconfig.v1.Inventory.WindowsApplication windows_application = 9;
@@ -8690,7 +8718,7 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Details of a Windows Application
+       * Details of Windows Application.
        * </pre>
        *
        * <code>.google.cloud.osconfig.v1.Inventory.WindowsApplication windows_application = 9;
@@ -8714,7 +8742,7 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Details of a Windows Application
+       * Details of Windows Application.
        * </pre>
        *
        * <code>.google.cloud.osconfig.v1.Inventory.WindowsApplication windows_application = 9;
@@ -8735,7 +8763,7 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Details of a Windows Application
+       * Details of Windows Application.
        * </pre>
        *
        * <code>.google.cloud.osconfig.v1.Inventory.WindowsApplication windows_application = 9;
@@ -8770,7 +8798,7 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Details of a Windows Application
+       * Details of Windows Application.
        * </pre>
        *
        * <code>.google.cloud.osconfig.v1.Inventory.WindowsApplication windows_application = 9;
@@ -8796,7 +8824,7 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Details of a Windows Application
+       * Details of Windows Application.
        * </pre>
        *
        * <code>.google.cloud.osconfig.v1.Inventory.WindowsApplication windows_application = 9;
@@ -8810,7 +8838,7 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Details of a Windows Application
+       * Details of Windows Application.
        * </pre>
        *
        * <code>.google.cloud.osconfig.v1.Inventory.WindowsApplication windows_application = 9;
@@ -8832,7 +8860,7 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Details of a Windows Application
+       * Details of Windows Application.
        * </pre>
        *
        * <code>.google.cloud.osconfig.v1.Inventory.WindowsApplication windows_application = 9;
@@ -9975,6 +10003,1270 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
 
     @java.lang.Override
     public com.google.cloud.osconfig.v1.Inventory.VersionedPackage getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
+  public interface ZypperPatchOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.cloud.osconfig.v1.Inventory.ZypperPatch)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * The name of the patch.
+     * </pre>
+     *
+     * <code>string patch_name = 5;</code>
+     *
+     * @return The patchName.
+     */
+    java.lang.String getPatchName();
+    /**
+     *
+     *
+     * <pre>
+     * The name of the patch.
+     * </pre>
+     *
+     * <code>string patch_name = 5;</code>
+     *
+     * @return The bytes for patchName.
+     */
+    com.google.protobuf.ByteString getPatchNameBytes();
+
+    /**
+     *
+     *
+     * <pre>
+     * The category of the patch.
+     * </pre>
+     *
+     * <code>string category = 2;</code>
+     *
+     * @return The category.
+     */
+    java.lang.String getCategory();
+    /**
+     *
+     *
+     * <pre>
+     * The category of the patch.
+     * </pre>
+     *
+     * <code>string category = 2;</code>
+     *
+     * @return The bytes for category.
+     */
+    com.google.protobuf.ByteString getCategoryBytes();
+
+    /**
+     *
+     *
+     * <pre>
+     * The severity specified for this patch
+     * </pre>
+     *
+     * <code>string severity = 3;</code>
+     *
+     * @return The severity.
+     */
+    java.lang.String getSeverity();
+    /**
+     *
+     *
+     * <pre>
+     * The severity specified for this patch
+     * </pre>
+     *
+     * <code>string severity = 3;</code>
+     *
+     * @return The bytes for severity.
+     */
+    com.google.protobuf.ByteString getSeverityBytes();
+
+    /**
+     *
+     *
+     * <pre>
+     * Any summary information provided about this patch.
+     * </pre>
+     *
+     * <code>string summary = 4;</code>
+     *
+     * @return The summary.
+     */
+    java.lang.String getSummary();
+    /**
+     *
+     *
+     * <pre>
+     * Any summary information provided about this patch.
+     * </pre>
+     *
+     * <code>string summary = 4;</code>
+     *
+     * @return The bytes for summary.
+     */
+    com.google.protobuf.ByteString getSummaryBytes();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Details related to a Zypper Patch.
+   * </pre>
+   *
+   * Protobuf type {@code google.cloud.osconfig.v1.Inventory.ZypperPatch}
+   */
+  public static final class ZypperPatch extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.cloud.osconfig.v1.Inventory.ZypperPatch)
+      ZypperPatchOrBuilder {
+    private static final long serialVersionUID = 0L;
+    // Use ZypperPatch.newBuilder() to construct.
+    private ZypperPatch(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private ZypperPatch() {
+      patchName_ = "";
+      category_ = "";
+      severity_ = "";
+      summary_ = "";
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new ZypperPatch();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+      return this.unknownFields;
+    }
+
+    private ZypperPatch(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 18:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+
+                category_ = s;
+                break;
+              }
+            case 26:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+
+                severity_ = s;
+                break;
+              }
+            case 34:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+
+                summary_ = s;
+                break;
+              }
+            case 42:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+
+                patchName_ = s;
+                break;
+              }
+            default:
+              {
+                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
+                  done = true;
+                }
+                break;
+              }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.osconfig.v1.Inventories
+          .internal_static_google_cloud_osconfig_v1_Inventory_ZypperPatch_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.cloud.osconfig.v1.Inventories
+          .internal_static_google_cloud_osconfig_v1_Inventory_ZypperPatch_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.osconfig.v1.Inventory.ZypperPatch.class,
+              com.google.cloud.osconfig.v1.Inventory.ZypperPatch.Builder.class);
+    }
+
+    public static final int PATCH_NAME_FIELD_NUMBER = 5;
+    private volatile java.lang.Object patchName_;
+    /**
+     *
+     *
+     * <pre>
+     * The name of the patch.
+     * </pre>
+     *
+     * <code>string patch_name = 5;</code>
+     *
+     * @return The patchName.
+     */
+    @java.lang.Override
+    public java.lang.String getPatchName() {
+      java.lang.Object ref = patchName_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        patchName_ = s;
+        return s;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The name of the patch.
+     * </pre>
+     *
+     * <code>string patch_name = 5;</code>
+     *
+     * @return The bytes for patchName.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getPatchNameBytes() {
+      java.lang.Object ref = patchName_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        patchName_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int CATEGORY_FIELD_NUMBER = 2;
+    private volatile java.lang.Object category_;
+    /**
+     *
+     *
+     * <pre>
+     * The category of the patch.
+     * </pre>
+     *
+     * <code>string category = 2;</code>
+     *
+     * @return The category.
+     */
+    @java.lang.Override
+    public java.lang.String getCategory() {
+      java.lang.Object ref = category_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        category_ = s;
+        return s;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The category of the patch.
+     * </pre>
+     *
+     * <code>string category = 2;</code>
+     *
+     * @return The bytes for category.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getCategoryBytes() {
+      java.lang.Object ref = category_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        category_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int SEVERITY_FIELD_NUMBER = 3;
+    private volatile java.lang.Object severity_;
+    /**
+     *
+     *
+     * <pre>
+     * The severity specified for this patch
+     * </pre>
+     *
+     * <code>string severity = 3;</code>
+     *
+     * @return The severity.
+     */
+    @java.lang.Override
+    public java.lang.String getSeverity() {
+      java.lang.Object ref = severity_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        severity_ = s;
+        return s;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The severity specified for this patch
+     * </pre>
+     *
+     * <code>string severity = 3;</code>
+     *
+     * @return The bytes for severity.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getSeverityBytes() {
+      java.lang.Object ref = severity_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        severity_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int SUMMARY_FIELD_NUMBER = 4;
+    private volatile java.lang.Object summary_;
+    /**
+     *
+     *
+     * <pre>
+     * Any summary information provided about this patch.
+     * </pre>
+     *
+     * <code>string summary = 4;</code>
+     *
+     * @return The summary.
+     */
+    @java.lang.Override
+    public java.lang.String getSummary() {
+      java.lang.Object ref = summary_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        summary_ = s;
+        return s;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Any summary information provided about this patch.
+     * </pre>
+     *
+     * <code>string summary = 4;</code>
+     *
+     * @return The bytes for summary.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getSummaryBytes() {
+      java.lang.Object ref = summary_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        summary_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (!getCategoryBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, category_);
+      }
+      if (!getSeverityBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, severity_);
+      }
+      if (!getSummaryBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, summary_);
+      }
+      if (!getPatchNameBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 5, patchName_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!getCategoryBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, category_);
+      }
+      if (!getSeverityBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, severity_);
+      }
+      if (!getSummaryBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, summary_);
+      }
+      if (!getPatchNameBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, patchName_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.cloud.osconfig.v1.Inventory.ZypperPatch)) {
+        return super.equals(obj);
+      }
+      com.google.cloud.osconfig.v1.Inventory.ZypperPatch other =
+          (com.google.cloud.osconfig.v1.Inventory.ZypperPatch) obj;
+
+      if (!getPatchName().equals(other.getPatchName())) return false;
+      if (!getCategory().equals(other.getCategory())) return false;
+      if (!getSeverity().equals(other.getSeverity())) return false;
+      if (!getSummary().equals(other.getSummary())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + PATCH_NAME_FIELD_NUMBER;
+      hash = (53 * hash) + getPatchName().hashCode();
+      hash = (37 * hash) + CATEGORY_FIELD_NUMBER;
+      hash = (53 * hash) + getCategory().hashCode();
+      hash = (37 * hash) + SEVERITY_FIELD_NUMBER;
+      hash = (53 * hash) + getSeverity().hashCode();
+      hash = (37 * hash) + SUMMARY_FIELD_NUMBER;
+      hash = (53 * hash) + getSummary().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.cloud.osconfig.v1.Inventory.ZypperPatch parseFrom(
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.osconfig.v1.Inventory.ZypperPatch parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.osconfig.v1.Inventory.ZypperPatch parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.osconfig.v1.Inventory.ZypperPatch parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.osconfig.v1.Inventory.ZypperPatch parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.osconfig.v1.Inventory.ZypperPatch parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.osconfig.v1.Inventory.ZypperPatch parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.osconfig.v1.Inventory.ZypperPatch parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.osconfig.v1.Inventory.ZypperPatch parseDelimitedFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.osconfig.v1.Inventory.ZypperPatch parseDelimitedFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.osconfig.v1.Inventory.ZypperPatch parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.osconfig.v1.Inventory.ZypperPatch parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(com.google.cloud.osconfig.v1.Inventory.ZypperPatch prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Details related to a Zypper Patch.
+     * </pre>
+     *
+     * Protobuf type {@code google.cloud.osconfig.v1.Inventory.ZypperPatch}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.cloud.osconfig.v1.Inventory.ZypperPatch)
+        com.google.cloud.osconfig.v1.Inventory.ZypperPatchOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.osconfig.v1.Inventories
+            .internal_static_google_cloud_osconfig_v1_Inventory_ZypperPatch_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.osconfig.v1.Inventories
+            .internal_static_google_cloud_osconfig_v1_Inventory_ZypperPatch_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.osconfig.v1.Inventory.ZypperPatch.class,
+                com.google.cloud.osconfig.v1.Inventory.ZypperPatch.Builder.class);
+      }
+
+      // Construct using com.google.cloud.osconfig.v1.Inventory.ZypperPatch.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        patchName_ = "";
+
+        category_ = "";
+
+        severity_ = "";
+
+        summary_ = "";
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.osconfig.v1.Inventories
+            .internal_static_google_cloud_osconfig_v1_Inventory_ZypperPatch_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.osconfig.v1.Inventory.ZypperPatch getDefaultInstanceForType() {
+        return com.google.cloud.osconfig.v1.Inventory.ZypperPatch.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.cloud.osconfig.v1.Inventory.ZypperPatch build() {
+        com.google.cloud.osconfig.v1.Inventory.ZypperPatch result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.osconfig.v1.Inventory.ZypperPatch buildPartial() {
+        com.google.cloud.osconfig.v1.Inventory.ZypperPatch result =
+            new com.google.cloud.osconfig.v1.Inventory.ZypperPatch(this);
+        result.patchName_ = patchName_;
+        result.category_ = category_;
+        result.severity_ = severity_;
+        result.summary_ = summary_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.google.cloud.osconfig.v1.Inventory.ZypperPatch) {
+          return mergeFrom((com.google.cloud.osconfig.v1.Inventory.ZypperPatch) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.google.cloud.osconfig.v1.Inventory.ZypperPatch other) {
+        if (other == com.google.cloud.osconfig.v1.Inventory.ZypperPatch.getDefaultInstance())
+          return this;
+        if (!other.getPatchName().isEmpty()) {
+          patchName_ = other.patchName_;
+          onChanged();
+        }
+        if (!other.getCategory().isEmpty()) {
+          category_ = other.category_;
+          onChanged();
+        }
+        if (!other.getSeverity().isEmpty()) {
+          severity_ = other.severity_;
+          onChanged();
+        }
+        if (!other.getSummary().isEmpty()) {
+          summary_ = other.summary_;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.google.cloud.osconfig.v1.Inventory.ZypperPatch parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage =
+              (com.google.cloud.osconfig.v1.Inventory.ZypperPatch) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private java.lang.Object patchName_ = "";
+      /**
+       *
+       *
+       * <pre>
+       * The name of the patch.
+       * </pre>
+       *
+       * <code>string patch_name = 5;</code>
+       *
+       * @return The patchName.
+       */
+      public java.lang.String getPatchName() {
+        java.lang.Object ref = patchName_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          patchName_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The name of the patch.
+       * </pre>
+       *
+       * <code>string patch_name = 5;</code>
+       *
+       * @return The bytes for patchName.
+       */
+      public com.google.protobuf.ByteString getPatchNameBytes() {
+        java.lang.Object ref = patchName_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          patchName_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The name of the patch.
+       * </pre>
+       *
+       * <code>string patch_name = 5;</code>
+       *
+       * @param value The patchName to set.
+       * @return This builder for chaining.
+       */
+      public Builder setPatchName(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+
+        patchName_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The name of the patch.
+       * </pre>
+       *
+       * <code>string patch_name = 5;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearPatchName() {
+
+        patchName_ = getDefaultInstance().getPatchName();
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The name of the patch.
+       * </pre>
+       *
+       * <code>string patch_name = 5;</code>
+       *
+       * @param value The bytes for patchName to set.
+       * @return This builder for chaining.
+       */
+      public Builder setPatchNameBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+
+        patchName_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object category_ = "";
+      /**
+       *
+       *
+       * <pre>
+       * The category of the patch.
+       * </pre>
+       *
+       * <code>string category = 2;</code>
+       *
+       * @return The category.
+       */
+      public java.lang.String getCategory() {
+        java.lang.Object ref = category_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          category_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The category of the patch.
+       * </pre>
+       *
+       * <code>string category = 2;</code>
+       *
+       * @return The bytes for category.
+       */
+      public com.google.protobuf.ByteString getCategoryBytes() {
+        java.lang.Object ref = category_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          category_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The category of the patch.
+       * </pre>
+       *
+       * <code>string category = 2;</code>
+       *
+       * @param value The category to set.
+       * @return This builder for chaining.
+       */
+      public Builder setCategory(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+
+        category_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The category of the patch.
+       * </pre>
+       *
+       * <code>string category = 2;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearCategory() {
+
+        category_ = getDefaultInstance().getCategory();
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The category of the patch.
+       * </pre>
+       *
+       * <code>string category = 2;</code>
+       *
+       * @param value The bytes for category to set.
+       * @return This builder for chaining.
+       */
+      public Builder setCategoryBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+
+        category_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object severity_ = "";
+      /**
+       *
+       *
+       * <pre>
+       * The severity specified for this patch
+       * </pre>
+       *
+       * <code>string severity = 3;</code>
+       *
+       * @return The severity.
+       */
+      public java.lang.String getSeverity() {
+        java.lang.Object ref = severity_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          severity_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The severity specified for this patch
+       * </pre>
+       *
+       * <code>string severity = 3;</code>
+       *
+       * @return The bytes for severity.
+       */
+      public com.google.protobuf.ByteString getSeverityBytes() {
+        java.lang.Object ref = severity_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          severity_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The severity specified for this patch
+       * </pre>
+       *
+       * <code>string severity = 3;</code>
+       *
+       * @param value The severity to set.
+       * @return This builder for chaining.
+       */
+      public Builder setSeverity(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+
+        severity_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The severity specified for this patch
+       * </pre>
+       *
+       * <code>string severity = 3;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearSeverity() {
+
+        severity_ = getDefaultInstance().getSeverity();
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The severity specified for this patch
+       * </pre>
+       *
+       * <code>string severity = 3;</code>
+       *
+       * @param value The bytes for severity to set.
+       * @return This builder for chaining.
+       */
+      public Builder setSeverityBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+
+        severity_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object summary_ = "";
+      /**
+       *
+       *
+       * <pre>
+       * Any summary information provided about this patch.
+       * </pre>
+       *
+       * <code>string summary = 4;</code>
+       *
+       * @return The summary.
+       */
+      public java.lang.String getSummary() {
+        java.lang.Object ref = summary_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          summary_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Any summary information provided about this patch.
+       * </pre>
+       *
+       * <code>string summary = 4;</code>
+       *
+       * @return The bytes for summary.
+       */
+      public com.google.protobuf.ByteString getSummaryBytes() {
+        java.lang.Object ref = summary_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          summary_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Any summary information provided about this patch.
+       * </pre>
+       *
+       * <code>string summary = 4;</code>
+       *
+       * @param value The summary to set.
+       * @return This builder for chaining.
+       */
+      public Builder setSummary(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+
+        summary_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Any summary information provided about this patch.
+       * </pre>
+       *
+       * <code>string summary = 4;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearSummary() {
+
+        summary_ = getDefaultInstance().getSummary();
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Any summary information provided about this patch.
+       * </pre>
+       *
+       * <code>string summary = 4;</code>
+       *
+       * @param value The bytes for summary to set.
+       * @return This builder for chaining.
+       */
+      public Builder setSummaryBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+
+        summary_ = value;
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.cloud.osconfig.v1.Inventory.ZypperPatch)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.cloud.osconfig.v1.Inventory.ZypperPatch)
+    private static final com.google.cloud.osconfig.v1.Inventory.ZypperPatch DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new com.google.cloud.osconfig.v1.Inventory.ZypperPatch();
+    }
+
+    public static com.google.cloud.osconfig.v1.Inventory.ZypperPatch getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<ZypperPatch> PARSER =
+        new com.google.protobuf.AbstractParser<ZypperPatch>() {
+          @java.lang.Override
+          public ZypperPatch parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            return new ZypperPatch(input, extensionRegistry);
+          }
+        };
+
+    public static com.google.protobuf.Parser<ZypperPatch> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<ZypperPatch> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.cloud.osconfig.v1.Inventory.ZypperPatch getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
   }
@@ -13949,1270 +15241,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
-  public interface ZypperPatchOrBuilder
-      extends
-      // @@protoc_insertion_point(interface_extends:google.cloud.osconfig.v1.Inventory.ZypperPatch)
-      com.google.protobuf.MessageOrBuilder {
-
-    /**
-     *
-     *
-     * <pre>
-     * The name of the patch.
-     * </pre>
-     *
-     * <code>string patch_name = 5;</code>
-     *
-     * @return The patchName.
-     */
-    java.lang.String getPatchName();
-    /**
-     *
-     *
-     * <pre>
-     * The name of the patch.
-     * </pre>
-     *
-     * <code>string patch_name = 5;</code>
-     *
-     * @return The bytes for patchName.
-     */
-    com.google.protobuf.ByteString getPatchNameBytes();
-
-    /**
-     *
-     *
-     * <pre>
-     * The category of the patch.
-     * </pre>
-     *
-     * <code>string category = 2;</code>
-     *
-     * @return The category.
-     */
-    java.lang.String getCategory();
-    /**
-     *
-     *
-     * <pre>
-     * The category of the patch.
-     * </pre>
-     *
-     * <code>string category = 2;</code>
-     *
-     * @return The bytes for category.
-     */
-    com.google.protobuf.ByteString getCategoryBytes();
-
-    /**
-     *
-     *
-     * <pre>
-     * The severity specified for this patch
-     * </pre>
-     *
-     * <code>string severity = 3;</code>
-     *
-     * @return The severity.
-     */
-    java.lang.String getSeverity();
-    /**
-     *
-     *
-     * <pre>
-     * The severity specified for this patch
-     * </pre>
-     *
-     * <code>string severity = 3;</code>
-     *
-     * @return The bytes for severity.
-     */
-    com.google.protobuf.ByteString getSeverityBytes();
-
-    /**
-     *
-     *
-     * <pre>
-     * Any summary information provided about this patch.
-     * </pre>
-     *
-     * <code>string summary = 4;</code>
-     *
-     * @return The summary.
-     */
-    java.lang.String getSummary();
-    /**
-     *
-     *
-     * <pre>
-     * Any summary information provided about this patch.
-     * </pre>
-     *
-     * <code>string summary = 4;</code>
-     *
-     * @return The bytes for summary.
-     */
-    com.google.protobuf.ByteString getSummaryBytes();
-  }
-  /**
-   *
-   *
-   * <pre>
-   * Details related to a Zypper Patch.
-   * </pre>
-   *
-   * Protobuf type {@code google.cloud.osconfig.v1.Inventory.ZypperPatch}
-   */
-  public static final class ZypperPatch extends com.google.protobuf.GeneratedMessageV3
-      implements
-      // @@protoc_insertion_point(message_implements:google.cloud.osconfig.v1.Inventory.ZypperPatch)
-      ZypperPatchOrBuilder {
-    private static final long serialVersionUID = 0L;
-    // Use ZypperPatch.newBuilder() to construct.
-    private ZypperPatch(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-      super(builder);
-    }
-
-    private ZypperPatch() {
-      patchName_ = "";
-      category_ = "";
-      severity_ = "";
-      summary_ = "";
-    }
-
-    @java.lang.Override
-    @SuppressWarnings({"unused"})
-    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
-      return new ZypperPatch();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
-    }
-
-    private ZypperPatch(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 18:
-              {
-                java.lang.String s = input.readStringRequireUtf8();
-
-                category_ = s;
-                break;
-              }
-            case 26:
-              {
-                java.lang.String s = input.readStringRequireUtf8();
-
-                severity_ = s;
-                break;
-              }
-            case 34:
-              {
-                java.lang.String s = input.readStringRequireUtf8();
-
-                summary_ = s;
-                break;
-              }
-            case 42:
-              {
-                java.lang.String s = input.readStringRequireUtf8();
-
-                patchName_ = s;
-                break;
-              }
-            default:
-              {
-                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                  done = true;
-                }
-                break;
-              }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
-
-    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
-      return com.google.cloud.osconfig.v1.Inventories
-          .internal_static_google_cloud_osconfig_v1_Inventory_ZypperPatch_descriptor;
-    }
-
-    @java.lang.Override
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-        internalGetFieldAccessorTable() {
-      return com.google.cloud.osconfig.v1.Inventories
-          .internal_static_google_cloud_osconfig_v1_Inventory_ZypperPatch_fieldAccessorTable
-          .ensureFieldAccessorsInitialized(
-              com.google.cloud.osconfig.v1.Inventory.ZypperPatch.class,
-              com.google.cloud.osconfig.v1.Inventory.ZypperPatch.Builder.class);
-    }
-
-    public static final int PATCH_NAME_FIELD_NUMBER = 5;
-    private volatile java.lang.Object patchName_;
-    /**
-     *
-     *
-     * <pre>
-     * The name of the patch.
-     * </pre>
-     *
-     * <code>string patch_name = 5;</code>
-     *
-     * @return The patchName.
-     */
-    @java.lang.Override
-    public java.lang.String getPatchName() {
-      java.lang.Object ref = patchName_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        patchName_ = s;
-        return s;
-      }
-    }
-    /**
-     *
-     *
-     * <pre>
-     * The name of the patch.
-     * </pre>
-     *
-     * <code>string patch_name = 5;</code>
-     *
-     * @return The bytes for patchName.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString getPatchNameBytes() {
-      java.lang.Object ref = patchName_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b =
-            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
-        patchName_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int CATEGORY_FIELD_NUMBER = 2;
-    private volatile java.lang.Object category_;
-    /**
-     *
-     *
-     * <pre>
-     * The category of the patch.
-     * </pre>
-     *
-     * <code>string category = 2;</code>
-     *
-     * @return The category.
-     */
-    @java.lang.Override
-    public java.lang.String getCategory() {
-      java.lang.Object ref = category_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        category_ = s;
-        return s;
-      }
-    }
-    /**
-     *
-     *
-     * <pre>
-     * The category of the patch.
-     * </pre>
-     *
-     * <code>string category = 2;</code>
-     *
-     * @return The bytes for category.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString getCategoryBytes() {
-      java.lang.Object ref = category_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b =
-            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
-        category_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int SEVERITY_FIELD_NUMBER = 3;
-    private volatile java.lang.Object severity_;
-    /**
-     *
-     *
-     * <pre>
-     * The severity specified for this patch
-     * </pre>
-     *
-     * <code>string severity = 3;</code>
-     *
-     * @return The severity.
-     */
-    @java.lang.Override
-    public java.lang.String getSeverity() {
-      java.lang.Object ref = severity_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        severity_ = s;
-        return s;
-      }
-    }
-    /**
-     *
-     *
-     * <pre>
-     * The severity specified for this patch
-     * </pre>
-     *
-     * <code>string severity = 3;</code>
-     *
-     * @return The bytes for severity.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString getSeverityBytes() {
-      java.lang.Object ref = severity_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b =
-            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
-        severity_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int SUMMARY_FIELD_NUMBER = 4;
-    private volatile java.lang.Object summary_;
-    /**
-     *
-     *
-     * <pre>
-     * Any summary information provided about this patch.
-     * </pre>
-     *
-     * <code>string summary = 4;</code>
-     *
-     * @return The summary.
-     */
-    @java.lang.Override
-    public java.lang.String getSummary() {
-      java.lang.Object ref = summary_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        summary_ = s;
-        return s;
-      }
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Any summary information provided about this patch.
-     * </pre>
-     *
-     * <code>string summary = 4;</code>
-     *
-     * @return The bytes for summary.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString getSummaryBytes() {
-      java.lang.Object ref = summary_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b =
-            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
-        summary_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    private byte memoizedIsInitialized = -1;
-
-    @java.lang.Override
-    public final boolean isInitialized() {
-      byte isInitialized = memoizedIsInitialized;
-      if (isInitialized == 1) return true;
-      if (isInitialized == 0) return false;
-
-      memoizedIsInitialized = 1;
-      return true;
-    }
-
-    @java.lang.Override
-    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-      if (!getCategoryBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, category_);
-      }
-      if (!getSeverityBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, severity_);
-      }
-      if (!getSummaryBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, summary_);
-      }
-      if (!getPatchNameBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 5, patchName_);
-      }
-      unknownFields.writeTo(output);
-    }
-
-    @java.lang.Override
-    public int getSerializedSize() {
-      int size = memoizedSize;
-      if (size != -1) return size;
-
-      size = 0;
-      if (!getCategoryBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, category_);
-      }
-      if (!getSeverityBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, severity_);
-      }
-      if (!getSummaryBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, summary_);
-      }
-      if (!getPatchNameBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, patchName_);
-      }
-      size += unknownFields.getSerializedSize();
-      memoizedSize = size;
-      return size;
-    }
-
-    @java.lang.Override
-    public boolean equals(final java.lang.Object obj) {
-      if (obj == this) {
-        return true;
-      }
-      if (!(obj instanceof com.google.cloud.osconfig.v1.Inventory.ZypperPatch)) {
-        return super.equals(obj);
-      }
-      com.google.cloud.osconfig.v1.Inventory.ZypperPatch other =
-          (com.google.cloud.osconfig.v1.Inventory.ZypperPatch) obj;
-
-      if (!getPatchName().equals(other.getPatchName())) return false;
-      if (!getCategory().equals(other.getCategory())) return false;
-      if (!getSeverity().equals(other.getSeverity())) return false;
-      if (!getSummary().equals(other.getSummary())) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
-      return true;
-    }
-
-    @java.lang.Override
-    public int hashCode() {
-      if (memoizedHashCode != 0) {
-        return memoizedHashCode;
-      }
-      int hash = 41;
-      hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + PATCH_NAME_FIELD_NUMBER;
-      hash = (53 * hash) + getPatchName().hashCode();
-      hash = (37 * hash) + CATEGORY_FIELD_NUMBER;
-      hash = (53 * hash) + getCategory().hashCode();
-      hash = (37 * hash) + SEVERITY_FIELD_NUMBER;
-      hash = (53 * hash) + getSeverity().hashCode();
-      hash = (37 * hash) + SUMMARY_FIELD_NUMBER;
-      hash = (53 * hash) + getSummary().hashCode();
-      hash = (29 * hash) + unknownFields.hashCode();
-      memoizedHashCode = hash;
-      return hash;
-    }
-
-    public static com.google.cloud.osconfig.v1.Inventory.ZypperPatch parseFrom(
-        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-
-    public static com.google.cloud.osconfig.v1.Inventory.ZypperPatch parseFrom(
-        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-
-    public static com.google.cloud.osconfig.v1.Inventory.ZypperPatch parseFrom(
-        com.google.protobuf.ByteString data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-
-    public static com.google.cloud.osconfig.v1.Inventory.ZypperPatch parseFrom(
-        com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-
-    public static com.google.cloud.osconfig.v1.Inventory.ZypperPatch parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-
-    public static com.google.cloud.osconfig.v1.Inventory.ZypperPatch parseFrom(
-        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-
-    public static com.google.cloud.osconfig.v1.Inventory.ZypperPatch parseFrom(
-        java.io.InputStream input) throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
-    }
-
-    public static com.google.cloud.osconfig.v1.Inventory.ZypperPatch parseFrom(
-        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
-          PARSER, input, extensionRegistry);
-    }
-
-    public static com.google.cloud.osconfig.v1.Inventory.ZypperPatch parseDelimitedFrom(
-        java.io.InputStream input) throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
-    }
-
-    public static com.google.cloud.osconfig.v1.Inventory.ZypperPatch parseDelimitedFrom(
-        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
-          PARSER, input, extensionRegistry);
-    }
-
-    public static com.google.cloud.osconfig.v1.Inventory.ZypperPatch parseFrom(
-        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
-    }
-
-    public static com.google.cloud.osconfig.v1.Inventory.ZypperPatch parseFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
-          PARSER, input, extensionRegistry);
-    }
-
-    @java.lang.Override
-    public Builder newBuilderForType() {
-      return newBuilder();
-    }
-
-    public static Builder newBuilder() {
-      return DEFAULT_INSTANCE.toBuilder();
-    }
-
-    public static Builder newBuilder(com.google.cloud.osconfig.v1.Inventory.ZypperPatch prototype) {
-      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-    }
-
-    @java.lang.Override
-    public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
-    }
-
-    @java.lang.Override
-    protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-      Builder builder = new Builder(parent);
-      return builder;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Details related to a Zypper Patch.
-     * </pre>
-     *
-     * Protobuf type {@code google.cloud.osconfig.v1.Inventory.ZypperPatch}
-     */
-    public static final class Builder
-        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
-        implements
-        // @@protoc_insertion_point(builder_implements:google.cloud.osconfig.v1.Inventory.ZypperPatch)
-        com.google.cloud.osconfig.v1.Inventory.ZypperPatchOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
-        return com.google.cloud.osconfig.v1.Inventories
-            .internal_static_google_cloud_osconfig_v1_Inventory_ZypperPatch_descriptor;
-      }
-
-      @java.lang.Override
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return com.google.cloud.osconfig.v1.Inventories
-            .internal_static_google_cloud_osconfig_v1_Inventory_ZypperPatch_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                com.google.cloud.osconfig.v1.Inventory.ZypperPatch.class,
-                com.google.cloud.osconfig.v1.Inventory.ZypperPatch.Builder.class);
-      }
-
-      // Construct using com.google.cloud.osconfig.v1.Inventory.ZypperPatch.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
-
-      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-        super(parent);
-        maybeForceBuilderInitialization();
-      }
-
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
-      }
-
-      @java.lang.Override
-      public Builder clear() {
-        super.clear();
-        patchName_ = "";
-
-        category_ = "";
-
-        severity_ = "";
-
-        summary_ = "";
-
-        return this;
-      }
-
-      @java.lang.Override
-      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
-        return com.google.cloud.osconfig.v1.Inventories
-            .internal_static_google_cloud_osconfig_v1_Inventory_ZypperPatch_descriptor;
-      }
-
-      @java.lang.Override
-      public com.google.cloud.osconfig.v1.Inventory.ZypperPatch getDefaultInstanceForType() {
-        return com.google.cloud.osconfig.v1.Inventory.ZypperPatch.getDefaultInstance();
-      }
-
-      @java.lang.Override
-      public com.google.cloud.osconfig.v1.Inventory.ZypperPatch build() {
-        com.google.cloud.osconfig.v1.Inventory.ZypperPatch result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(result);
-        }
-        return result;
-      }
-
-      @java.lang.Override
-      public com.google.cloud.osconfig.v1.Inventory.ZypperPatch buildPartial() {
-        com.google.cloud.osconfig.v1.Inventory.ZypperPatch result =
-            new com.google.cloud.osconfig.v1.Inventory.ZypperPatch(this);
-        result.patchName_ = patchName_;
-        result.category_ = category_;
-        result.severity_ = severity_;
-        result.summary_ = summary_;
-        onBuilt();
-        return result;
-      }
-
-      @java.lang.Override
-      public Builder clone() {
-        return super.clone();
-      }
-
-      @java.lang.Override
-      public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-        return super.setField(field, value);
-      }
-
-      @java.lang.Override
-      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return super.clearField(field);
-      }
-
-      @java.lang.Override
-      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return super.clearOneof(oneof);
-      }
-
-      @java.lang.Override
-      public Builder setRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index,
-          java.lang.Object value) {
-        return super.setRepeatedField(field, index, value);
-      }
-
-      @java.lang.Override
-      public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-        return super.addRepeatedField(field, value);
-      }
-
-      @java.lang.Override
-      public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof com.google.cloud.osconfig.v1.Inventory.ZypperPatch) {
-          return mergeFrom((com.google.cloud.osconfig.v1.Inventory.ZypperPatch) other);
-        } else {
-          super.mergeFrom(other);
-          return this;
-        }
-      }
-
-      public Builder mergeFrom(com.google.cloud.osconfig.v1.Inventory.ZypperPatch other) {
-        if (other == com.google.cloud.osconfig.v1.Inventory.ZypperPatch.getDefaultInstance())
-          return this;
-        if (!other.getPatchName().isEmpty()) {
-          patchName_ = other.patchName_;
-          onChanged();
-        }
-        if (!other.getCategory().isEmpty()) {
-          category_ = other.category_;
-          onChanged();
-        }
-        if (!other.getSeverity().isEmpty()) {
-          severity_ = other.severity_;
-          onChanged();
-        }
-        if (!other.getSummary().isEmpty()) {
-          summary_ = other.summary_;
-          onChanged();
-        }
-        this.mergeUnknownFields(other.unknownFields);
-        onChanged();
-        return this;
-      }
-
-      @java.lang.Override
-      public final boolean isInitialized() {
-        return true;
-      }
-
-      @java.lang.Override
-      public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        com.google.cloud.osconfig.v1.Inventory.ZypperPatch parsedMessage = null;
-        try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage =
-              (com.google.cloud.osconfig.v1.Inventory.ZypperPatch) e.getUnfinishedMessage();
-          throw e.unwrapIOException();
-        } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
-        return this;
-      }
-
-      private java.lang.Object patchName_ = "";
-      /**
-       *
-       *
-       * <pre>
-       * The name of the patch.
-       * </pre>
-       *
-       * <code>string patch_name = 5;</code>
-       *
-       * @return The patchName.
-       */
-      public java.lang.String getPatchName() {
-        java.lang.Object ref = patchName_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          patchName_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       *
-       *
-       * <pre>
-       * The name of the patch.
-       * </pre>
-       *
-       * <code>string patch_name = 5;</code>
-       *
-       * @return The bytes for patchName.
-       */
-      public com.google.protobuf.ByteString getPatchNameBytes() {
-        java.lang.Object ref = patchName_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b =
-              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
-          patchName_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       *
-       *
-       * <pre>
-       * The name of the patch.
-       * </pre>
-       *
-       * <code>string patch_name = 5;</code>
-       *
-       * @param value The patchName to set.
-       * @return This builder for chaining.
-       */
-      public Builder setPatchName(java.lang.String value) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-
-        patchName_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       *
-       *
-       * <pre>
-       * The name of the patch.
-       * </pre>
-       *
-       * <code>string patch_name = 5;</code>
-       *
-       * @return This builder for chaining.
-       */
-      public Builder clearPatchName() {
-
-        patchName_ = getDefaultInstance().getPatchName();
-        onChanged();
-        return this;
-      }
-      /**
-       *
-       *
-       * <pre>
-       * The name of the patch.
-       * </pre>
-       *
-       * <code>string patch_name = 5;</code>
-       *
-       * @param value The bytes for patchName to set.
-       * @return This builder for chaining.
-       */
-      public Builder setPatchNameBytes(com.google.protobuf.ByteString value) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        checkByteStringIsUtf8(value);
-
-        patchName_ = value;
-        onChanged();
-        return this;
-      }
-
-      private java.lang.Object category_ = "";
-      /**
-       *
-       *
-       * <pre>
-       * The category of the patch.
-       * </pre>
-       *
-       * <code>string category = 2;</code>
-       *
-       * @return The category.
-       */
-      public java.lang.String getCategory() {
-        java.lang.Object ref = category_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          category_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       *
-       *
-       * <pre>
-       * The category of the patch.
-       * </pre>
-       *
-       * <code>string category = 2;</code>
-       *
-       * @return The bytes for category.
-       */
-      public com.google.protobuf.ByteString getCategoryBytes() {
-        java.lang.Object ref = category_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b =
-              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
-          category_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       *
-       *
-       * <pre>
-       * The category of the patch.
-       * </pre>
-       *
-       * <code>string category = 2;</code>
-       *
-       * @param value The category to set.
-       * @return This builder for chaining.
-       */
-      public Builder setCategory(java.lang.String value) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-
-        category_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       *
-       *
-       * <pre>
-       * The category of the patch.
-       * </pre>
-       *
-       * <code>string category = 2;</code>
-       *
-       * @return This builder for chaining.
-       */
-      public Builder clearCategory() {
-
-        category_ = getDefaultInstance().getCategory();
-        onChanged();
-        return this;
-      }
-      /**
-       *
-       *
-       * <pre>
-       * The category of the patch.
-       * </pre>
-       *
-       * <code>string category = 2;</code>
-       *
-       * @param value The bytes for category to set.
-       * @return This builder for chaining.
-       */
-      public Builder setCategoryBytes(com.google.protobuf.ByteString value) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        checkByteStringIsUtf8(value);
-
-        category_ = value;
-        onChanged();
-        return this;
-      }
-
-      private java.lang.Object severity_ = "";
-      /**
-       *
-       *
-       * <pre>
-       * The severity specified for this patch
-       * </pre>
-       *
-       * <code>string severity = 3;</code>
-       *
-       * @return The severity.
-       */
-      public java.lang.String getSeverity() {
-        java.lang.Object ref = severity_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          severity_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       *
-       *
-       * <pre>
-       * The severity specified for this patch
-       * </pre>
-       *
-       * <code>string severity = 3;</code>
-       *
-       * @return The bytes for severity.
-       */
-      public com.google.protobuf.ByteString getSeverityBytes() {
-        java.lang.Object ref = severity_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b =
-              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
-          severity_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       *
-       *
-       * <pre>
-       * The severity specified for this patch
-       * </pre>
-       *
-       * <code>string severity = 3;</code>
-       *
-       * @param value The severity to set.
-       * @return This builder for chaining.
-       */
-      public Builder setSeverity(java.lang.String value) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-
-        severity_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       *
-       *
-       * <pre>
-       * The severity specified for this patch
-       * </pre>
-       *
-       * <code>string severity = 3;</code>
-       *
-       * @return This builder for chaining.
-       */
-      public Builder clearSeverity() {
-
-        severity_ = getDefaultInstance().getSeverity();
-        onChanged();
-        return this;
-      }
-      /**
-       *
-       *
-       * <pre>
-       * The severity specified for this patch
-       * </pre>
-       *
-       * <code>string severity = 3;</code>
-       *
-       * @param value The bytes for severity to set.
-       * @return This builder for chaining.
-       */
-      public Builder setSeverityBytes(com.google.protobuf.ByteString value) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        checkByteStringIsUtf8(value);
-
-        severity_ = value;
-        onChanged();
-        return this;
-      }
-
-      private java.lang.Object summary_ = "";
-      /**
-       *
-       *
-       * <pre>
-       * Any summary information provided about this patch.
-       * </pre>
-       *
-       * <code>string summary = 4;</code>
-       *
-       * @return The summary.
-       */
-      public java.lang.String getSummary() {
-        java.lang.Object ref = summary_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          summary_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       *
-       *
-       * <pre>
-       * Any summary information provided about this patch.
-       * </pre>
-       *
-       * <code>string summary = 4;</code>
-       *
-       * @return The bytes for summary.
-       */
-      public com.google.protobuf.ByteString getSummaryBytes() {
-        java.lang.Object ref = summary_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b =
-              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
-          summary_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       *
-       *
-       * <pre>
-       * Any summary information provided about this patch.
-       * </pre>
-       *
-       * <code>string summary = 4;</code>
-       *
-       * @param value The summary to set.
-       * @return This builder for chaining.
-       */
-      public Builder setSummary(java.lang.String value) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-
-        summary_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       *
-       *
-       * <pre>
-       * Any summary information provided about this patch.
-       * </pre>
-       *
-       * <code>string summary = 4;</code>
-       *
-       * @return This builder for chaining.
-       */
-      public Builder clearSummary() {
-
-        summary_ = getDefaultInstance().getSummary();
-        onChanged();
-        return this;
-      }
-      /**
-       *
-       *
-       * <pre>
-       * Any summary information provided about this patch.
-       * </pre>
-       *
-       * <code>string summary = 4;</code>
-       *
-       * @param value The bytes for summary to set.
-       * @return This builder for chaining.
-       */
-      public Builder setSummaryBytes(com.google.protobuf.ByteString value) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        checkByteStringIsUtf8(value);
-
-        summary_ = value;
-        onChanged();
-        return this;
-      }
-
-      @java.lang.Override
-      public final Builder setUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFields(unknownFields);
-      }
-
-      @java.lang.Override
-      public final Builder mergeUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.mergeUnknownFields(unknownFields);
-      }
-
-      // @@protoc_insertion_point(builder_scope:google.cloud.osconfig.v1.Inventory.ZypperPatch)
-    }
-
-    // @@protoc_insertion_point(class_scope:google.cloud.osconfig.v1.Inventory.ZypperPatch)
-    private static final com.google.cloud.osconfig.v1.Inventory.ZypperPatch DEFAULT_INSTANCE;
-
-    static {
-      DEFAULT_INSTANCE = new com.google.cloud.osconfig.v1.Inventory.ZypperPatch();
-    }
-
-    public static com.google.cloud.osconfig.v1.Inventory.ZypperPatch getDefaultInstance() {
-      return DEFAULT_INSTANCE;
-    }
-
-    private static final com.google.protobuf.Parser<ZypperPatch> PARSER =
-        new com.google.protobuf.AbstractParser<ZypperPatch>() {
-          @java.lang.Override
-          public ZypperPatch parsePartialFrom(
-              com.google.protobuf.CodedInputStream input,
-              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-              throws com.google.protobuf.InvalidProtocolBufferException {
-            return new ZypperPatch(input, extensionRegistry);
-          }
-        };
-
-    public static com.google.protobuf.Parser<ZypperPatch> parser() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public com.google.protobuf.Parser<ZypperPatch> getParserForType() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public com.google.cloud.osconfig.v1.Inventory.ZypperPatch getDefaultInstanceForType() {
-      return DEFAULT_INSTANCE;
-    }
-  }
-
   public interface WindowsQuickFixEngineeringPackageOrBuilder
       extends
       // @@protoc_insertion_point(interface_extends:google.cloud.osconfig.v1.Inventory.WindowsQuickFixEngineeringPackage)
@@ -18218,6 +18246,59 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
+  public static final int NAME_FIELD_NUMBER = 3;
+  private volatile java.lang.Object name_;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The `Inventory` API resource name.
+   * Format:
+   * `projects/{project_number}/locations/{location}/instances/{instance_id}/inventory`
+   * </pre>
+   *
+   * <code>string name = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The name.
+   */
+  @java.lang.Override
+  public java.lang.String getName() {
+    java.lang.Object ref = name_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      name_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The `Inventory` API resource name.
+   * Format:
+   * `projects/{project_number}/locations/{location}/instances/{instance_id}/inventory`
+   * </pre>
+   *
+   * <code>string name = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The bytes for name.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getNameBytes() {
+    java.lang.Object ref = name_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      name_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   public static final int OS_INFO_FIELD_NUMBER = 1;
   private com.google.cloud.osconfig.v1.Inventory.OsInfo osInfo_;
   /**
@@ -18387,6 +18468,55 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
     return map.get(key);
   }
 
+  public static final int UPDATE_TIME_FIELD_NUMBER = 4;
+  private com.google.protobuf.Timestamp updateTime_;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Timestamp of the last reported inventory for the VM.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp update_time = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the updateTime field is set.
+   */
+  @java.lang.Override
+  public boolean hasUpdateTime() {
+    return updateTime_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Timestamp of the last reported inventory for the VM.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp update_time = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The updateTime.
+   */
+  @java.lang.Override
+  public com.google.protobuf.Timestamp getUpdateTime() {
+    return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Timestamp of the last reported inventory for the VM.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp update_time = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.protobuf.TimestampOrBuilder getUpdateTimeOrBuilder() {
+    return getUpdateTime();
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -18406,6 +18536,12 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
     }
     com.google.protobuf.GeneratedMessageV3.serializeStringMapTo(
         output, internalGetItems(), ItemsDefaultEntryHolder.defaultEntry, 2);
+    if (!getNameBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, name_);
+    }
+    if (updateTime_ != null) {
+      output.writeMessage(4, getUpdateTime());
+    }
     unknownFields.writeTo(output);
   }
 
@@ -18429,6 +18565,12 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
                   .build();
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, items__);
     }
+    if (!getNameBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, name_);
+    }
+    if (updateTime_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(4, getUpdateTime());
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -18444,11 +18586,16 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
     }
     com.google.cloud.osconfig.v1.Inventory other = (com.google.cloud.osconfig.v1.Inventory) obj;
 
+    if (!getName().equals(other.getName())) return false;
     if (hasOsInfo() != other.hasOsInfo()) return false;
     if (hasOsInfo()) {
       if (!getOsInfo().equals(other.getOsInfo())) return false;
     }
     if (!internalGetItems().equals(other.internalGetItems())) return false;
+    if (hasUpdateTime() != other.hasUpdateTime()) return false;
+    if (hasUpdateTime()) {
+      if (!getUpdateTime().equals(other.getUpdateTime())) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -18460,6 +18607,8 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
+    hash = (37 * hash) + NAME_FIELD_NUMBER;
+    hash = (53 * hash) + getName().hashCode();
     if (hasOsInfo()) {
       hash = (37 * hash) + OS_INFO_FIELD_NUMBER;
       hash = (53 * hash) + getOsInfo().hashCode();
@@ -18467,6 +18616,10 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
     if (!internalGetItems().getMap().isEmpty()) {
       hash = (37 * hash) + ITEMS_FIELD_NUMBER;
       hash = (53 * hash) + internalGetItems().hashCode();
+    }
+    if (hasUpdateTime()) {
+      hash = (37 * hash) + UPDATE_TIME_FIELD_NUMBER;
+      hash = (53 * hash) + getUpdateTime().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -18572,7 +18725,11 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The inventory details of a VM.
+   * This API resource represents the available inventory data for a
+   * Compute Engine virtual machine (VM) instance at a given point in time.
+   * You can use this API resource to determine the inventory data of your VM.
+   * For more information, see [Information provided by OS inventory
+   * management](https://cloud.google.com/compute/docs/instances/os-inventory-management#data-collected).
    * </pre>
    *
    * Protobuf type {@code google.cloud.osconfig.v1.Inventory}
@@ -18633,6 +18790,8 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      name_ = "";
+
       if (osInfoBuilder_ == null) {
         osInfo_ = null;
       } else {
@@ -18640,6 +18799,12 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
         osInfoBuilder_ = null;
       }
       internalGetMutableItems().clear();
+      if (updateTimeBuilder_ == null) {
+        updateTime_ = null;
+      } else {
+        updateTime_ = null;
+        updateTimeBuilder_ = null;
+      }
       return this;
     }
 
@@ -18668,6 +18833,7 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
       com.google.cloud.osconfig.v1.Inventory result =
           new com.google.cloud.osconfig.v1.Inventory(this);
       int from_bitField0_ = bitField0_;
+      result.name_ = name_;
       if (osInfoBuilder_ == null) {
         result.osInfo_ = osInfo_;
       } else {
@@ -18675,6 +18841,11 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
       }
       result.items_ = internalGetItems();
       result.items_.makeImmutable();
+      if (updateTimeBuilder_ == null) {
+        result.updateTime_ = updateTime_;
+      } else {
+        result.updateTime_ = updateTimeBuilder_.build();
+      }
       onBuilt();
       return result;
     }
@@ -18724,10 +18895,17 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
 
     public Builder mergeFrom(com.google.cloud.osconfig.v1.Inventory other) {
       if (other == com.google.cloud.osconfig.v1.Inventory.getDefaultInstance()) return this;
+      if (!other.getName().isEmpty()) {
+        name_ = other.name_;
+        onChanged();
+      }
       if (other.hasOsInfo()) {
         mergeOsInfo(other.getOsInfo());
       }
       internalGetMutableItems().mergeFrom(other.internalGetItems());
+      if (other.hasUpdateTime()) {
+        mergeUpdateTime(other.getUpdateTime());
+      }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
@@ -18758,6 +18936,122 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int bitField0_;
+
+    private java.lang.Object name_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The `Inventory` API resource name.
+     * Format:
+     * `projects/{project_number}/locations/{location}/instances/{instance_id}/inventory`
+     * </pre>
+     *
+     * <code>string name = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The name.
+     */
+    public java.lang.String getName() {
+      java.lang.Object ref = name_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        name_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The `Inventory` API resource name.
+     * Format:
+     * `projects/{project_number}/locations/{location}/instances/{instance_id}/inventory`
+     * </pre>
+     *
+     * <code>string name = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The bytes for name.
+     */
+    public com.google.protobuf.ByteString getNameBytes() {
+      java.lang.Object ref = name_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        name_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The `Inventory` API resource name.
+     * Format:
+     * `projects/{project_number}/locations/{location}/instances/{instance_id}/inventory`
+     * </pre>
+     *
+     * <code>string name = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The name to set.
+     * @return This builder for chaining.
+     */
+    public Builder setName(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+
+      name_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The `Inventory` API resource name.
+     * Format:
+     * `projects/{project_number}/locations/{location}/instances/{instance_id}/inventory`
+     * </pre>
+     *
+     * <code>string name = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearName() {
+
+      name_ = getDefaultInstance().getName();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The `Inventory` API resource name.
+     * Format:
+     * `projects/{project_number}/locations/{location}/instances/{instance_id}/inventory`
+     * </pre>
+     *
+     * <code>string name = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The bytes for name to set.
+     * @return This builder for chaining.
+     */
+    public Builder setNameBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
+      name_ = value;
+      onChanged();
+      return this;
+    }
 
     private com.google.cloud.osconfig.v1.Inventory.OsInfo osInfo_;
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -19132,6 +19426,207 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
         java.util.Map<java.lang.String, com.google.cloud.osconfig.v1.Inventory.Item> values) {
       internalGetMutableItems().getMutableMap().putAll(values);
       return this;
+    }
+
+    private com.google.protobuf.Timestamp updateTime_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
+        updateTimeBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Timestamp of the last reported inventory for the VM.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp update_time = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the updateTime field is set.
+     */
+    public boolean hasUpdateTime() {
+      return updateTimeBuilder_ != null || updateTime_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Timestamp of the last reported inventory for the VM.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp update_time = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The updateTime.
+     */
+    public com.google.protobuf.Timestamp getUpdateTime() {
+      if (updateTimeBuilder_ == null) {
+        return updateTime_ == null
+            ? com.google.protobuf.Timestamp.getDefaultInstance()
+            : updateTime_;
+      } else {
+        return updateTimeBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Timestamp of the last reported inventory for the VM.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp update_time = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setUpdateTime(com.google.protobuf.Timestamp value) {
+      if (updateTimeBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        updateTime_ = value;
+        onChanged();
+      } else {
+        updateTimeBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Timestamp of the last reported inventory for the VM.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp update_time = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setUpdateTime(com.google.protobuf.Timestamp.Builder builderForValue) {
+      if (updateTimeBuilder_ == null) {
+        updateTime_ = builderForValue.build();
+        onChanged();
+      } else {
+        updateTimeBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Timestamp of the last reported inventory for the VM.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp update_time = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder mergeUpdateTime(com.google.protobuf.Timestamp value) {
+      if (updateTimeBuilder_ == null) {
+        if (updateTime_ != null) {
+          updateTime_ =
+              com.google.protobuf.Timestamp.newBuilder(updateTime_).mergeFrom(value).buildPartial();
+        } else {
+          updateTime_ = value;
+        }
+        onChanged();
+      } else {
+        updateTimeBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Timestamp of the last reported inventory for the VM.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp update_time = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder clearUpdateTime() {
+      if (updateTimeBuilder_ == null) {
+        updateTime_ = null;
+        onChanged();
+      } else {
+        updateTime_ = null;
+        updateTimeBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Timestamp of the last reported inventory for the VM.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp update_time = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.protobuf.Timestamp.Builder getUpdateTimeBuilder() {
+
+      onChanged();
+      return getUpdateTimeFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Timestamp of the last reported inventory for the VM.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp update_time = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.protobuf.TimestampOrBuilder getUpdateTimeOrBuilder() {
+      if (updateTimeBuilder_ != null) {
+        return updateTimeBuilder_.getMessageOrBuilder();
+      } else {
+        return updateTime_ == null
+            ? com.google.protobuf.Timestamp.getDefaultInstance()
+            : updateTime_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Timestamp of the last reported inventory for the VM.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp update_time = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
+        getUpdateTimeFieldBuilder() {
+      if (updateTimeBuilder_ == null) {
+        updateTimeBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.protobuf.Timestamp,
+                com.google.protobuf.Timestamp.Builder,
+                com.google.protobuf.TimestampOrBuilder>(
+                getUpdateTime(), getParentForChildren(), isClean());
+        updateTime_ = null;
+      }
+      return updateTimeBuilder_;
     }
 
     @java.lang.Override

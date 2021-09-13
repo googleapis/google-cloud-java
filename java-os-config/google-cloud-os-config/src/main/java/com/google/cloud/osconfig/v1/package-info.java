@@ -42,6 +42,23 @@
  *   PatchJobs.PatchJob response = osConfigServiceClient.executePatchJob(request);
  * }
  * }</pre>
+ *
+ * <p>======================= OsConfigZonalServiceClient =======================
+ *
+ * <p>Service Description: Zonal OS Config API
+ *
+ * <p>The OS Config service is the server-side component that allows users to manage package
+ * installations and patch jobs for Compute Engine VM instances.
+ *
+ * <p>Sample for OsConfigZonalServiceClient:
+ *
+ * <pre>{@code
+ * try (OsConfigZonalServiceClient osConfigZonalServiceClient =
+ *     OsConfigZonalServiceClient.create()) {
+ *   InventoryName name = InventoryName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]");
+ *   Inventory response = osConfigZonalServiceClient.getInventory(name);
+ * }
+ * }</pre>
  */
 @Generated("by gapic-generator-java")
 package com.google.cloud.osconfig.v1;

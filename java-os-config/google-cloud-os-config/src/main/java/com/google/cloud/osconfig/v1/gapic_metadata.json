@@ -40,6 +40,27 @@
           }
         }
       }
+    },
+    "OsConfigZonalService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "OsConfigZonalServiceClient",
+          "rpcs": {
+            "GetInventory": {
+              "methods": ["getInventory", "getInventory", "getInventory", "getInventoryCallable"]
+            },
+            "GetVulnerabilityReport": {
+              "methods": ["getVulnerabilityReport", "getVulnerabilityReport", "getVulnerabilityReport", "getVulnerabilityReportCallable"]
+            },
+            "ListInventories": {
+              "methods": ["listInventories", "listInventories", "listInventories", "listInventoriesPagedCallable", "listInventoriesCallable"]
+            },
+            "ListVulnerabilityReports": {
+              "methods": ["listVulnerabilityReports", "listVulnerabilityReports", "listVulnerabilityReports", "listVulnerabilityReportsPagedCallable", "listVulnerabilityReportsCallable"]
+            }
+          }
+        }
+      }
     }
   }
 }
