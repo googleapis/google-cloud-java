@@ -200,12 +200,11 @@ public final class UpdateFlowRequest extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Required. The mask to control which fields get updated. If `update_mask` is not
-   * specified, an error will be returned.
+   * The mask to control which fields get updated. If the mask is not present,
+   * all fields will be updated.
    * </pre>
    *
-   * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
-   * </code>
+   * <code>.google.protobuf.FieldMask update_mask = 2;</code>
    *
    * @return Whether the updateMask field is set.
    */
@@ -217,12 +216,11 @@ public final class UpdateFlowRequest extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Required. The mask to control which fields get updated. If `update_mask` is not
-   * specified, an error will be returned.
+   * The mask to control which fields get updated. If the mask is not present,
+   * all fields will be updated.
    * </pre>
    *
-   * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
-   * </code>
+   * <code>.google.protobuf.FieldMask update_mask = 2;</code>
    *
    * @return The updateMask.
    */
@@ -234,12 +232,11 @@ public final class UpdateFlowRequest extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Required. The mask to control which fields get updated. If `update_mask` is not
-   * specified, an error will be returned.
+   * The mask to control which fields get updated. If the mask is not present,
+   * all fields will be updated.
    * </pre>
    *
-   * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
-   * </code>
+   * <code>.google.protobuf.FieldMask update_mask = 2;</code>
    */
   @java.lang.Override
   public com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder() {
@@ -901,12 +898,11 @@ public final class UpdateFlowRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Required. The mask to control which fields get updated. If `update_mask` is not
-     * specified, an error will be returned.
+     * The mask to control which fields get updated. If the mask is not present,
+     * all fields will be updated.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
-     * </code>
+     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
      *
      * @return Whether the updateMask field is set.
      */
@@ -917,12 +913,11 @@ public final class UpdateFlowRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Required. The mask to control which fields get updated. If `update_mask` is not
-     * specified, an error will be returned.
+     * The mask to control which fields get updated. If the mask is not present,
+     * all fields will be updated.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
-     * </code>
+     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
      *
      * @return The updateMask.
      */
@@ -939,12 +934,11 @@ public final class UpdateFlowRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Required. The mask to control which fields get updated. If `update_mask` is not
-     * specified, an error will be returned.
+     * The mask to control which fields get updated. If the mask is not present,
+     * all fields will be updated.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
-     * </code>
+     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
      */
     public Builder setUpdateMask(com.google.protobuf.FieldMask value) {
       if (updateMaskBuilder_ == null) {
@@ -963,12 +957,11 @@ public final class UpdateFlowRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Required. The mask to control which fields get updated. If `update_mask` is not
-     * specified, an error will be returned.
+     * The mask to control which fields get updated. If the mask is not present,
+     * all fields will be updated.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
-     * </code>
+     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
      */
     public Builder setUpdateMask(com.google.protobuf.FieldMask.Builder builderForValue) {
       if (updateMaskBuilder_ == null) {
@@ -984,12 +977,11 @@ public final class UpdateFlowRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Required. The mask to control which fields get updated. If `update_mask` is not
-     * specified, an error will be returned.
+     * The mask to control which fields get updated. If the mask is not present,
+     * all fields will be updated.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
-     * </code>
+     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
      */
     public Builder mergeUpdateMask(com.google.protobuf.FieldMask value) {
       if (updateMaskBuilder_ == null) {
@@ -1010,12 +1002,11 @@ public final class UpdateFlowRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Required. The mask to control which fields get updated. If `update_mask` is not
-     * specified, an error will be returned.
+     * The mask to control which fields get updated. If the mask is not present,
+     * all fields will be updated.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
-     * </code>
+     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
      */
     public Builder clearUpdateMask() {
       if (updateMaskBuilder_ == null) {
@@ -1032,12 +1023,11 @@ public final class UpdateFlowRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Required. The mask to control which fields get updated. If `update_mask` is not
-     * specified, an error will be returned.
+     * The mask to control which fields get updated. If the mask is not present,
+     * all fields will be updated.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
-     * </code>
+     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
      */
     public com.google.protobuf.FieldMask.Builder getUpdateMaskBuilder() {
 
@@ -1048,12 +1038,11 @@ public final class UpdateFlowRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Required. The mask to control which fields get updated. If `update_mask` is not
-     * specified, an error will be returned.
+     * The mask to control which fields get updated. If the mask is not present,
+     * all fields will be updated.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
-     * </code>
+     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
      */
     public com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder() {
       if (updateMaskBuilder_ != null) {
@@ -1068,12 +1057,11 @@ public final class UpdateFlowRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Required. The mask to control which fields get updated. If `update_mask` is not
-     * specified, an error will be returned.
+     * The mask to control which fields get updated. If the mask is not present,
+     * all fields will be updated.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
-     * </code>
+     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.protobuf.FieldMask,

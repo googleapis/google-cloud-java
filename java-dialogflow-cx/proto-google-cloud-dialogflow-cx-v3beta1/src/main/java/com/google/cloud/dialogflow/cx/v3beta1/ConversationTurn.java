@@ -1590,7 +1590,7 @@ public final class ConversationTurn extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Required. Input only. The diagnostic
      * [info][Session.DetectIntentResponse.QueryResult.diagnostic_info]
-     * output for the turn.
+     * output for the turn. Required to calculate the testing coverage.
      * </pre>
      *
      * <code>
@@ -1606,7 +1606,7 @@ public final class ConversationTurn extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Required. Input only. The diagnostic
      * [info][Session.DetectIntentResponse.QueryResult.diagnostic_info]
-     * output for the turn.
+     * output for the turn. Required to calculate the testing coverage.
      * </pre>
      *
      * <code>
@@ -1622,7 +1622,7 @@ public final class ConversationTurn extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Required. Input only. The diagnostic
      * [info][Session.DetectIntentResponse.QueryResult.diagnostic_info]
-     * output for the turn.
+     * output for the turn. Required to calculate the testing coverage.
      * </pre>
      *
      * <code>
@@ -2151,7 +2151,7 @@ public final class ConversationTurn extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Required. Input only. The diagnostic
      * [info][Session.DetectIntentResponse.QueryResult.diagnostic_info]
-     * output for the turn.
+     * output for the turn. Required to calculate the testing coverage.
      * </pre>
      *
      * <code>
@@ -2170,7 +2170,7 @@ public final class ConversationTurn extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Required. Input only. The diagnostic
      * [info][Session.DetectIntentResponse.QueryResult.diagnostic_info]
-     * output for the turn.
+     * output for the turn. Required to calculate the testing coverage.
      * </pre>
      *
      * <code>
@@ -2191,7 +2191,7 @@ public final class ConversationTurn extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Required. Input only. The diagnostic
      * [info][Session.DetectIntentResponse.QueryResult.diagnostic_info]
-     * output for the turn.
+     * output for the turn. Required to calculate the testing coverage.
      * </pre>
      *
      * <code>
@@ -3649,7 +3649,7 @@ public final class ConversationTurn extends com.google.protobuf.GeneratedMessage
        * <pre>
        * Required. Input only. The diagnostic
        * [info][Session.DetectIntentResponse.QueryResult.diagnostic_info]
-       * output for the turn.
+       * output for the turn. Required to calculate the testing coverage.
        * </pre>
        *
        * <code>
@@ -3667,7 +3667,7 @@ public final class ConversationTurn extends com.google.protobuf.GeneratedMessage
        * <pre>
        * Required. Input only. The diagnostic
        * [info][Session.DetectIntentResponse.QueryResult.diagnostic_info]
-       * output for the turn.
+       * output for the turn. Required to calculate the testing coverage.
        * </pre>
        *
        * <code>
@@ -3691,7 +3691,7 @@ public final class ConversationTurn extends com.google.protobuf.GeneratedMessage
        * <pre>
        * Required. Input only. The diagnostic
        * [info][Session.DetectIntentResponse.QueryResult.diagnostic_info]
-       * output for the turn.
+       * output for the turn. Required to calculate the testing coverage.
        * </pre>
        *
        * <code>
@@ -3717,7 +3717,7 @@ public final class ConversationTurn extends com.google.protobuf.GeneratedMessage
        * <pre>
        * Required. Input only. The diagnostic
        * [info][Session.DetectIntentResponse.QueryResult.diagnostic_info]
-       * output for the turn.
+       * output for the turn. Required to calculate the testing coverage.
        * </pre>
        *
        * <code>
@@ -3740,7 +3740,7 @@ public final class ConversationTurn extends com.google.protobuf.GeneratedMessage
        * <pre>
        * Required. Input only. The diagnostic
        * [info][Session.DetectIntentResponse.QueryResult.diagnostic_info]
-       * output for the turn.
+       * output for the turn. Required to calculate the testing coverage.
        * </pre>
        *
        * <code>
@@ -3770,7 +3770,7 @@ public final class ConversationTurn extends com.google.protobuf.GeneratedMessage
        * <pre>
        * Required. Input only. The diagnostic
        * [info][Session.DetectIntentResponse.QueryResult.diagnostic_info]
-       * output for the turn.
+       * output for the turn. Required to calculate the testing coverage.
        * </pre>
        *
        * <code>
@@ -3794,7 +3794,7 @@ public final class ConversationTurn extends com.google.protobuf.GeneratedMessage
        * <pre>
        * Required. Input only. The diagnostic
        * [info][Session.DetectIntentResponse.QueryResult.diagnostic_info]
-       * output for the turn.
+       * output for the turn. Required to calculate the testing coverage.
        * </pre>
        *
        * <code>
@@ -3812,7 +3812,7 @@ public final class ConversationTurn extends com.google.protobuf.GeneratedMessage
        * <pre>
        * Required. Input only. The diagnostic
        * [info][Session.DetectIntentResponse.QueryResult.diagnostic_info]
-       * output for the turn.
+       * output for the turn. Required to calculate the testing coverage.
        * </pre>
        *
        * <code>
@@ -3834,7 +3834,7 @@ public final class ConversationTurn extends com.google.protobuf.GeneratedMessage
        * <pre>
        * Required. Input only. The diagnostic
        * [info][Session.DetectIntentResponse.QueryResult.diagnostic_info]
-       * output for the turn.
+       * output for the turn. Required to calculate the testing coverage.
        * </pre>
        *
        * <code>
