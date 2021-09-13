@@ -1,5 +1,33 @@
 # Changelog
 
+## [2.2.0](https://www.github.com/googleapis/java-bigquerystorage/compare/v2.1.2...v2.2.0) (2021-09-10)
+
+
+### Features
+
+* add trace id support to JsonWriter and add default trace id to help identify json writer users. ([#1302](https://www.github.com/googleapis/java-bigquerystorage/issues/1302)) ([0e749d9](https://www.github.com/googleapis/java-bigquerystorage/commit/0e749d9ee0201bc4653735ac34638452502a1c26))
+
+
+### Bug Fixes
+
+* Accept null json values in JsonToProtoMessage converter ([#1288](https://www.github.com/googleapis/java-bigquerystorage/issues/1288)) ([fb515ab](https://www.github.com/googleapis/java-bigquerystorage/commit/fb515ab0d8681bb7e559e3788f0ec8c0852b6e64))
+* beta cleanup: remove deprecated classes and unused functionalities ([#1300](https://www.github.com/googleapis/java-bigquerystorage/issues/1300)) ([7d08d7b](https://www.github.com/googleapis/java-bigquerystorage/commit/7d08d7b96bc13b6bc72e795b0b975a77d7712882))
+* Cannot share client between appendRows and other function becaus… ([#1290](https://www.github.com/googleapis/java-bigquerystorage/issues/1290)) ([c2dcf6f](https://www.github.com/googleapis/java-bigquerystorage/commit/c2dcf6fea0e6c5ed8085269fbec884deb5f32ad0))
+* remove dependency on google-cloud-bigquery (cyclic dep) ([#1295](https://www.github.com/googleapis/java-bigquerystorage/issues/1295)) ([7ac47de](https://www.github.com/googleapis/java-bigquerystorage/commit/7ac47de0ad5a37fcc7bbb6ea7ce0f5b7e59d276c)), closes [#1249](https://www.github.com/googleapis/java-bigquerystorage/issues/1249)
+* the request limit should be 10MB instead of 8MB ([#1289](https://www.github.com/googleapis/java-bigquerystorage/issues/1289)) ([ed1ea00](https://www.github.com/googleapis/java-bigquerystorage/commit/ed1ea00e25da1501d300f3c80ce0a17cc1f3d883))
+* update comment to be consistent with code ([#1292](https://www.github.com/googleapis/java-bigquerystorage/issues/1292)) ([5669420](https://www.github.com/googleapis/java-bigquerystorage/commit/56694206740ded2edc115a88c0bf4bf4229b4fdf))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-bigquery to v2.1.7 ([#1298](https://www.github.com/googleapis/java-bigquerystorage/issues/1298)) ([c156410](https://www.github.com/googleapis/java-bigquerystorage/commit/c1564102147ceaf0bd77b9c86a9e5209dbc73174))
+
+
+### Documentation
+
+* Align session length with public documentation feat: Align ReadRows timeout with other versions of the API. ([#1281](https://www.github.com/googleapis/java-bigquerystorage/issues/1281)) ([b920cd5](https://www.github.com/googleapis/java-bigquerystorage/commit/b920cd59756b9db60026035605447236d4a0adf0))
+* **samples:** update WriteToDefaultStream.java sample ([#1305](https://www.github.com/googleapis/java-bigquerystorage/issues/1305)) ([83c8e23](https://www.github.com/googleapis/java-bigquerystorage/commit/83c8e23b45ad233d82af89df1b61cc39b22ffe1c))
+
 ### [2.1.2](https://www.github.com/googleapis/java-bigquerystorage/compare/v2.1.1...v2.1.2) (2021-09-02)
 
 

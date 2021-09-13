@@ -49,7 +49,7 @@ public class WriteToDefaultStream {
     Table table = bigquery.getTable(datasetName, tableName);
     TableName parentTable = TableName.of(projectId, datasetName, tableName);
     Schema schema = table.getDefinition().getSchema();
-    TableSchema tableSchema = BQToBQStorageSchemaConverter.ConvertTableSchema(schema);
+    TableSchema tableSchema = BqToBqStorageSchemaConverter.convertTableSchema(schema);
 
     // Use the JSON stream writer to send records in JSON format.
     // For more information about JsonStreamWriter, see:
