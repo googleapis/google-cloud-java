@@ -1,5 +1,13 @@
 # Changelog
 
+### [2.2.1](https://www.github.com/googleapis/java-shared-dependencies/compare/2.2.0...v2.2.1) (2021-09-13)
+
+
+### Dependencies
+
+* update gax.version to v2.4.1 ([#464](https://www.github.com/googleapis/java-shared-dependencies/issues/464)) ([bc7c6d7](https://www.github.com/googleapis/java-shared-dependencies/commit/bc7c6d7ca161ebfa31895c375d65bca29d4c7336))
+* update google.core.version to v2.1.3 ([#465](https://www.github.com/googleapis/java-shared-dependencies/issues/465)) ([848f608](https://www.github.com/googleapis/java-shared-dependencies/commit/848f608ae850bd2dd80ec56034eb0c9a18f0415b))
+
 ## [2.2.0](https://www.github.com/googleapis/java-shared-dependencies/compare/2.1.0...v2.2.0) (2021-08-31)
 
 
