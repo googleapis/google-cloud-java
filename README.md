@@ -41,7 +41,7 @@ If you are using Maven without BOM, add this to your dependencies:
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-bigquerystorage</artifactId>
-  <version>2.1.2</version>
+  <version>2.2.0</version>
 </dependency>
 
 ```
@@ -56,13 +56,13 @@ implementation 'com.google.cloud:google-cloud-bigquerystorage'
 If you are using Gradle without BOM, add this to your dependencies
 
 ```Groovy
-implementation 'com.google.cloud:google-cloud-bigquerystorage:2.1.2'
+implementation 'com.google.cloud:google-cloud-bigquerystorage:2.2.0'
 ```
 
 If you are using SBT, add this to your dependencies
 
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-bigquerystorage" % "2.1.2"
+libraryDependencies += "com.google.cloud" % "google-cloud-bigquerystorage" % "2.2.0"
 ```
 
 ## Authentication
@@ -108,7 +108,7 @@ Samples are in the [`samples/`](https://github.com/googleapis/java-bigquerystora
 
 | Sample                      | Source Code                       | Try it |
 | --------------------------- | --------------------------------- | ------ |
-| BQ To BQ Storage Schema Converter | [source code](https://github.com/googleapis/java-bigquerystorage/blob/master/samples/snippets/src/main/java/com/example/bigquerystorage/BQToBQStorageSchemaConverter.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-bigquerystorage&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/bigquerystorage/BQToBQStorageSchemaConverter.java) |
+| Bq To Bq Storage Schema Converter | [source code](https://github.com/googleapis/java-bigquerystorage/blob/master/samples/snippets/src/main/java/com/example/bigquerystorage/BqToBqStorageSchemaConverter.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-bigquerystorage&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/bigquerystorage/BqToBqStorageSchemaConverter.java) |
 | Parallel Write Committed Stream | [source code](https://github.com/googleapis/java-bigquerystorage/blob/master/samples/snippets/src/main/java/com/example/bigquerystorage/ParallelWriteCommittedStream.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-bigquerystorage&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/bigquerystorage/ParallelWriteCommittedStream.java) |
 | Storage Arrow Sample | [source code](https://github.com/googleapis/java-bigquerystorage/blob/master/samples/snippets/src/main/java/com/example/bigquerystorage/StorageArrowSample.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-bigquerystorage&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/bigquerystorage/StorageArrowSample.java) |
 | Storage Sample | [source code](https://github.com/googleapis/java-bigquerystorage/blob/master/samples/snippets/src/main/java/com/example/bigquerystorage/StorageSample.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-bigquerystorage&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/bigquerystorage/StorageSample.java) |
