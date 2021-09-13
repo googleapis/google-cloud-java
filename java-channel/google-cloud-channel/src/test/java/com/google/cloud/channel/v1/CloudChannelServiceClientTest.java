@@ -485,6 +485,75 @@ public class CloudChannelServiceClientTest {
   }
 
   @Test
+  public void importCustomerTest() throws Exception {
+    Customer expectedResponse =
+        Customer.newBuilder()
+            .setName(CustomerName.of("[ACCOUNT]", "[CUSTOMER]").toString())
+            .setOrgDisplayName("orgDisplayName127031529")
+            .setOrgPostalAddress(PostalAddress.newBuilder().build())
+            .setPrimaryContactInfo(ContactInfo.newBuilder().build())
+            .setAlternateEmail("alternateEmail-232564926")
+            .setDomain("domain-1326197564")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setCloudIdentityId("cloudIdentityId941784718")
+            .setLanguageCode("languageCode-2092349083")
+            .setCloudIdentityInfo(CloudIdentityInfo.newBuilder().build())
+            .setChannelPartnerId("channelPartnerId-170366400")
+            .build();
+    mockCloudChannelService.addResponse(expectedResponse);
+
+    ImportCustomerRequest request =
+        ImportCustomerRequest.newBuilder()
+            .setParent("parent-995424086")
+            .setAuthToken("authToken1450587441")
+            .setOverwriteIfExists(true)
+            .setChannelPartnerId("channelPartnerId-170366400")
+            .setCustomer(CustomerName.of("[ACCOUNT]", "[CUSTOMER]").toString())
+            .build();
+
+    Customer actualResponse = client.importCustomer(request);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockCloudChannelService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ImportCustomerRequest actualRequest = ((ImportCustomerRequest) actualRequests.get(0));
+
+    Assert.assertEquals(request.getDomain(), actualRequest.getDomain());
+    Assert.assertEquals(request.getCloudIdentityId(), actualRequest.getCloudIdentityId());
+    Assert.assertEquals(request.getParent(), actualRequest.getParent());
+    Assert.assertEquals(request.getAuthToken(), actualRequest.getAuthToken());
+    Assert.assertEquals(request.getOverwriteIfExists(), actualRequest.getOverwriteIfExists());
+    Assert.assertEquals(request.getChannelPartnerId(), actualRequest.getChannelPartnerId());
+    Assert.assertEquals(request.getCustomer(), actualRequest.getCustomer());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void importCustomerExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockCloudChannelService.addException(exception);
+
+    try {
+      ImportCustomerRequest request =
+          ImportCustomerRequest.newBuilder()
+              .setParent("parent-995424086")
+              .setAuthToken("authToken1450587441")
+              .setOverwriteIfExists(true)
+              .setChannelPartnerId("channelPartnerId-170366400")
+              .setCustomer(CustomerName.of("[ACCOUNT]", "[CUSTOMER]").toString())
+              .build();
+      client.importCustomer(request);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
   public void provisionCloudIdentityTest() throws Exception {
     Customer expectedResponse =
         Customer.newBuilder()

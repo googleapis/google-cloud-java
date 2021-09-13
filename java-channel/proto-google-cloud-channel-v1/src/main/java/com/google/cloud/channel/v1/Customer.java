@@ -456,7 +456,8 @@ public final class Customer extends com.google.protobuf.GeneratedMessageV3
    * Secondary contact email. You need to provide an alternate email to create
    * different domains if a primary contact email already exists. Users will
    * receive a notification with credentials when you create an admin.google.com
-   * account. Secondary emails are also recovery email addresses.
+   * account. Secondary emails are also recovery email addresses. Alternate
+   * emails are optional when you create Team customers.
    * </pre>
    *
    * <code>string alternate_email = 5;</code>
@@ -482,7 +483,8 @@ public final class Customer extends com.google.protobuf.GeneratedMessageV3
    * Secondary contact email. You need to provide an alternate email to create
    * different domains if a primary contact email already exists. Users will
    * receive a notification with credentials when you create an admin.google.com
-   * account. Secondary emails are also recovery email addresses.
+   * account. Secondary emails are also recovery email addresses. Alternate
+   * emails are optional when you create Team customers.
    * </pre>
    *
    * <code>string alternate_email = 5;</code>
@@ -2053,7 +2055,8 @@ public final class Customer extends com.google.protobuf.GeneratedMessageV3
      * Secondary contact email. You need to provide an alternate email to create
      * different domains if a primary contact email already exists. Users will
      * receive a notification with credentials when you create an admin.google.com
-     * account. Secondary emails are also recovery email addresses.
+     * account. Secondary emails are also recovery email addresses. Alternate
+     * emails are optional when you create Team customers.
      * </pre>
      *
      * <code>string alternate_email = 5;</code>
@@ -2078,7 +2081,8 @@ public final class Customer extends com.google.protobuf.GeneratedMessageV3
      * Secondary contact email. You need to provide an alternate email to create
      * different domains if a primary contact email already exists. Users will
      * receive a notification with credentials when you create an admin.google.com
-     * account. Secondary emails are also recovery email addresses.
+     * account. Secondary emails are also recovery email addresses. Alternate
+     * emails are optional when you create Team customers.
      * </pre>
      *
      * <code>string alternate_email = 5;</code>
@@ -2103,7 +2107,8 @@ public final class Customer extends com.google.protobuf.GeneratedMessageV3
      * Secondary contact email. You need to provide an alternate email to create
      * different domains if a primary contact email already exists. Users will
      * receive a notification with credentials when you create an admin.google.com
-     * account. Secondary emails are also recovery email addresses.
+     * account. Secondary emails are also recovery email addresses. Alternate
+     * emails are optional when you create Team customers.
      * </pre>
      *
      * <code>string alternate_email = 5;</code>
@@ -2127,7 +2132,8 @@ public final class Customer extends com.google.protobuf.GeneratedMessageV3
      * Secondary contact email. You need to provide an alternate email to create
      * different domains if a primary contact email already exists. Users will
      * receive a notification with credentials when you create an admin.google.com
-     * account. Secondary emails are also recovery email addresses.
+     * account. Secondary emails are also recovery email addresses. Alternate
+     * emails are optional when you create Team customers.
      * </pre>
      *
      * <code>string alternate_email = 5;</code>
@@ -2147,7 +2153,8 @@ public final class Customer extends com.google.protobuf.GeneratedMessageV3
      * Secondary contact email. You need to provide an alternate email to create
      * different domains if a primary contact email already exists. Users will
      * receive a notification with credentials when you create an admin.google.com
-     * account. Secondary emails are also recovery email addresses.
+     * account. Secondary emails are also recovery email addresses. Alternate
+     * emails are optional when you create Team customers.
      * </pre>
      *
      * <code>string alternate_email = 5;</code>

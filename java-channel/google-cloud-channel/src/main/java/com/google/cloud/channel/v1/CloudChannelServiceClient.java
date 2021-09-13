@@ -807,6 +807,92 @@ public class CloudChannelServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
+   * Imports a [Customer][google.cloud.channel.v1.Customer] from the Cloud Identity associated with
+   * the provided Cloud Identity ID or domain before a TransferEntitlements call. If a linked
+   * Customer already exists and overwrite_if_exists is true, it will update that Customer's data.
+   *
+   * <p>Possible error codes:
+   *
+   * <ul>
+   *   <li>PERMISSION_DENIED: The reseller account making the request is different from the reseller
+   *       account in the API request.
+   *   <li>NOT_FOUND: Cloud Identity doesn't exist or was deleted.
+   *   <li>INVALID_ARGUMENT: Required parameters are missing, or the auth_token is expired or
+   *       invalid.
+   *   <li>ALREADY_EXISTS: A customer already exists and has conflicting critical fields. Requires
+   *       an overwrite.
+   * </ul>
+   *
+   * <p>Return value: The [Customer][google.cloud.channel.v1.Customer].
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CloudChannelServiceClient cloudChannelServiceClient = CloudChannelServiceClient.create()) {
+   *   ImportCustomerRequest request =
+   *       ImportCustomerRequest.newBuilder()
+   *           .setParent("parent-995424086")
+   *           .setAuthToken("authToken1450587441")
+   *           .setOverwriteIfExists(true)
+   *           .setChannelPartnerId("channelPartnerId-170366400")
+   *           .setCustomer(CustomerName.of("[ACCOUNT]", "[CUSTOMER]").toString())
+   *           .build();
+   *   Customer response = cloudChannelServiceClient.importCustomer(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Customer importCustomer(ImportCustomerRequest request) {
+    return importCustomerCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Imports a [Customer][google.cloud.channel.v1.Customer] from the Cloud Identity associated with
+   * the provided Cloud Identity ID or domain before a TransferEntitlements call. If a linked
+   * Customer already exists and overwrite_if_exists is true, it will update that Customer's data.
+   *
+   * <p>Possible error codes:
+   *
+   * <ul>
+   *   <li>PERMISSION_DENIED: The reseller account making the request is different from the reseller
+   *       account in the API request.
+   *   <li>NOT_FOUND: Cloud Identity doesn't exist or was deleted.
+   *   <li>INVALID_ARGUMENT: Required parameters are missing, or the auth_token is expired or
+   *       invalid.
+   *   <li>ALREADY_EXISTS: A customer already exists and has conflicting critical fields. Requires
+   *       an overwrite.
+   * </ul>
+   *
+   * <p>Return value: The [Customer][google.cloud.channel.v1.Customer].
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CloudChannelServiceClient cloudChannelServiceClient = CloudChannelServiceClient.create()) {
+   *   ImportCustomerRequest request =
+   *       ImportCustomerRequest.newBuilder()
+   *           .setParent("parent-995424086")
+   *           .setAuthToken("authToken1450587441")
+   *           .setOverwriteIfExists(true)
+   *           .setChannelPartnerId("channelPartnerId-170366400")
+   *           .setCustomer(CustomerName.of("[ACCOUNT]", "[CUSTOMER]").toString())
+   *           .build();
+   *   ApiFuture<Customer> future =
+   *       cloudChannelServiceClient.importCustomerCallable().futureCall(request);
+   *   // Do something.
+   *   Customer response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ImportCustomerRequest, Customer> importCustomerCallable() {
+    return stub.importCustomerCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
    * Creates a Cloud Identity for the given customer using the customer's information, or the
    * information provided here.
    *

@@ -187,6 +187,27 @@ public class MockCloudChannelServiceImpl extends CloudChannelServiceImplBase {
   }
 
   @Override
+  public void importCustomer(
+      ImportCustomerRequest request, StreamObserver<Customer> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Customer) {
+      requests.add(request);
+      responseObserver.onNext(((Customer) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ImportCustomer, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Customer.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
   public void provisionCloudIdentity(
       ProvisionCloudIdentityRequest request, StreamObserver<Operation> responseObserver) {
     Object response = responses.poll();

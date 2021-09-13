@@ -49,6 +49,9 @@
             "GetEntitlement": {
               "methods": ["getEntitlement", "getEntitlementCallable"]
             },
+            "ImportCustomer": {
+              "methods": ["importCustomer", "importCustomerCallable"]
+            },
             "ListChannelPartnerLinks": {
               "methods": ["listChannelPartnerLinks", "listChannelPartnerLinksPagedCallable", "listChannelPartnerLinksCallable"]
             },

@@ -48,6 +48,7 @@ import com.google.cloud.channel.v1.Entitlement;
 import com.google.cloud.channel.v1.GetChannelPartnerLinkRequest;
 import com.google.cloud.channel.v1.GetCustomerRequest;
 import com.google.cloud.channel.v1.GetEntitlementRequest;
+import com.google.cloud.channel.v1.ImportCustomerRequest;
 import com.google.cloud.channel.v1.ListChannelPartnerLinksRequest;
 import com.google.cloud.channel.v1.ListChannelPartnerLinksResponse;
 import com.google.cloud.channel.v1.ListCustomersRequest;
@@ -133,6 +134,10 @@ public abstract class CloudChannelServiceStub implements BackgroundResource {
 
   public UnaryCallable<DeleteCustomerRequest, Empty> deleteCustomerCallable() {
     throw new UnsupportedOperationException("Not implemented: deleteCustomerCallable()");
+  }
+
+  public UnaryCallable<ImportCustomerRequest, Customer> importCustomerCallable() {
+    throw new UnsupportedOperationException("Not implemented: importCustomerCallable()");
   }
 
   public OperationCallable<ProvisionCloudIdentityRequest, Customer, OperationMetadata>
