@@ -1,5 +1,17 @@
 # Changelog
 
+### [2.1.2](https://www.github.com/googleapis/java-bigtable/compare/v2.1.1...v2.1.2) (2021-09-13)
+
+
+### Bug Fixes
+
+* parallel execution and verbose grpc logs ([#1004](https://www.github.com/googleapis/java-bigtable/issues/1004)) ([dd5164d](https://www.github.com/googleapis/java-bigtable/commit/dd5164dc9de7f060bb0dab79820cb43ac434d703))
+
+
+### Reverts
+
+* temporary workaround for maven wildcard excludes ([#989](https://www.github.com/googleapis/java-bigtable/issues/989)) ([148a928](https://www.github.com/googleapis/java-bigtable/commit/148a928e3f8f6d1e2ee1d1b119ca820d676802fd))
+
 ### [2.1.1](https://www.github.com/googleapis/java-bigtable/compare/v2.1.0...v2.1.1) (2021-09-01)
 
 
