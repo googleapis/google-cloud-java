@@ -19,7 +19,7 @@ If you are using Maven, add this to your pom.xml file:
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-filestore</artifactId>
-  <version>0.1.0</version>
+  <version>1.0.0</version>
 </dependency>
 
 ```
