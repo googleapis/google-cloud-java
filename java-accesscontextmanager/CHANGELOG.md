@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.2.0](https://www.github.com/googleapis/java-accesscontextmanager/compare/v1.1.5...v1.2.0) (2021-09-13)
+
+
+### Features
+
+* add v1 GAPIC client ([#243](https://www.github.com/googleapis/java-accesscontextmanager/issues/243)) ([0aceb4a](https://www.github.com/googleapis/java-accesscontextmanager/commit/0aceb4abc70aa6911a1219142ee5a4d823a88584))
+
 ### [1.1.5](https://www.github.com/googleapis/java-accesscontextmanager/compare/v1.1.4...v1.1.5) (2021-08-31)
 
 
