@@ -323,6 +323,7 @@
 
                   <systemPropertyVariables>
                     <bigtable.env>emulator</bigtable.env>
+                    <bigtable.enable-grpc-logs>${bigtable.enable-grpc-logs}</bigtable.enable-grpc-logs>
                     <bigtable.grpc-log-dir>${project.build.directory}/test-grpc-logs/emulator-it</bigtable.grpc-log-dir>
                   </systemPropertyVariables>
                   <includes>
@@ -358,6 +359,7 @@
                     <bigtable.env>cloud</bigtable.env>
                     <bigtable.data-endpoint>${bigtable.cfe-data-endpoint}</bigtable.data-endpoint>
                     <bigtable.admin-endpoint>${bigtable.cfe-admin-endpoint}</bigtable.admin-endpoint>
+                    <bigtable.enable-grpc-logs>${bigtable.enable-grpc-logs}</bigtable.enable-grpc-logs>
                     <bigtable.grpc-log-dir>${project.build.directory}/test-grpc-logs/prod-it</bigtable.grpc-log-dir>
                   </systemPropertyVariables>
                   <includes>
@@ -407,6 +409,7 @@
                     <bigtable.env>cloud</bigtable.env>
                     <bigtable.data-endpoint>${bigtable.cfe-data-batch-endpoint}</bigtable.data-endpoint>
                     <bigtable.admin-endpoint>${bigtable.cfe-admin-endpoint}</bigtable.admin-endpoint>
+                    <bigtable.enable-grpc-logs>${bigtable.enable-grpc-logs}</bigtable.enable-grpc-logs>
                     <bigtable.grpc-log-dir>${project.build.directory}/test-grpc-logs/prod-batch-it</bigtable.grpc-log-dir>
                   </systemPropertyVariables>
                   <includes>
@@ -442,6 +445,7 @@
                     <bigtable.env>cloud</bigtable.env>
                     <bigtable.data-endpoint>${bigtable.directpath-data-endpoint}</bigtable.data-endpoint>
                     <bigtable.admin-endpoint>${bigtable.directpath-admin-endpoint}</bigtable.admin-endpoint>
+                    <bigtable.enable-grpc-logs>${bigtable.enable-grpc-logs}</bigtable.enable-grpc-logs>
                     <bigtable.grpc-log-dir>${project.build.directory}/test-grpc-logs/directpath-it</bigtable.grpc-log-dir>
                     <bigtable.connection-mode>REQUIRE_DIRECT_PATH</bigtable.connection-mode>
                   </systemPropertyVariables>
@@ -479,6 +483,7 @@
                     <bigtable.env>cloud</bigtable.env>
                     <bigtable.data-endpoint>${bigtable.cfe-data-endpoint}</bigtable.data-endpoint>
                     <bigtable.admin-endpoint>${bigtable.cfe-admin-endpoint}</bigtable.admin-endpoint>
+                    <bigtable.enable-grpc-logs>${bigtable.enable-grpc-logs}</bigtable.enable-grpc-logs>
                     <bigtable.grpc-log-dir>${project.build.directory}/test-grpc-logs/cfe-it</bigtable.grpc-log-dir>
                     <bigtable.connection-mode>REQUIRE_CFE</bigtable.connection-mode>
                   </systemPropertyVariables>
@@ -516,6 +521,7 @@
                     <bigtable.env>cloud</bigtable.env>
                     <bigtable.data-endpoint>${bigtable.directpath-data-endpoint}</bigtable.data-endpoint>
                     <bigtable.admin-endpoint>${bigtable.directpath-admin-endpoint}</bigtable.admin-endpoint>
+                    <bigtable.enable-grpc-logs>${bigtable.enable-grpc-logs}</bigtable.enable-grpc-logs>
                     <bigtable.grpc-log-dir>${project.build.directory}/test-grpc-logs/directpath-ipv4only-it</bigtable.grpc-log-dir>
                     <bigtable.connection-mode>REQUIRE_DIRECT_PATH_IPV4</bigtable.connection-mode>
                   </systemPropertyVariables>
