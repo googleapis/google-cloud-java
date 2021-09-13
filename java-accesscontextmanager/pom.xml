@@ -4,7 +4,7 @@
   <groupId>com.google.cloud</groupId>
   <artifactId>google-identity-accesscontextmanager-parent</artifactId>
   <packaging>pom</packaging>
-  <version>1.1.6-SNAPSHOT</version><!-- {x-version-update:proto-google-identity-accesscontextmanager-v1:current} -->
+  <version>1.1.6-SNAPSHOT</version><!-- {x-version-update:google-identity-accesscontextmanager:current} -->
   <name>Google Identity Access Context Manager Parent</name>
   <url>https://github.com/googleapis/java-accesscontextmanager</url>
   <description>
@@ -68,6 +68,26 @@
       </dependency>
 
       <dependency>
+        <groupId>com.google.api.grpc</groupId>
+        <artifactId>proto-google-identity-accesscontextmanager-type</artifactId>
+        <version>1.1.6-SNAPSHOT</version><!-- {x-version-update:proto-google-identity-accesscontextmanager-type:current} -->
+      </dependency>
+      <dependency>
+        <groupId>com.google.api.grpc</groupId>
+        <artifactId>proto-google-identity-accesscontextmanager-v1</artifactId>
+        <version>1.1.6-SNAPSHOT</version><!-- {x-version-update:proto-google-identity-accesscontextmanager-v1:current} -->
+      </dependency>
+      <dependency>
+        <groupId>com.google.api.grpc</groupId>
+        <artifactId>grpc-google-identity-accesscontextmanager-v1</artifactId>
+        <version>1.1.6-SNAPSHOT</version><!-- {x-version-update:grpc-google-identity-accesscontextmanager-v1:current} -->
+      </dependency>
+      <dependency>
+        <groupId>com.google.cloud</groupId>
+        <artifactId>google-identity-accesscontextmanager</artifactId>
+        <version>1.1.6-SNAPSHOT</version><!-- {x-version-update:google-identity-accesscontextmanager:current} -->
+      </dependency>
+      <dependency>
         <groupId>junit</groupId>
         <artifactId>junit</artifactId>
         <version>${junit.version}</version>
@@ -77,8 +97,10 @@
   </dependencyManagement>
 
   <modules>
-    <module>proto-google-identity-accesscontextmanager-type</module>
+    <module>google-identity-accesscontextmanager</module>
+    <module>grpc-google-identity-accesscontextmanager-v1</module>
     <module>proto-google-identity-accesscontextmanager-v1</module>
+    <module>proto-google-identity-accesscontextmanager-type</module>
   </modules>
 
   <reporting>

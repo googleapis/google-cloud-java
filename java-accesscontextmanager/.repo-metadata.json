@@ -10,6 +10,6 @@
     "language": "java",
     "repo": "googleapis/java-accesscontextmanager",
     "repo_short": "java-accesscontextmanager",
-    "distribution_name": "com.google.api.grpc:proto-google-identity-accesscontextmanager-v1",
+    "distribution_name": "com.google.cloud:google-identity-accesscontextmanager",
     "library_type": "GAPIC_AUTO"
 }
