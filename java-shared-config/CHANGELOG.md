@@ -1,5 +1,18 @@
 # Changelog
 
+### [1.0.2](https://www.github.com/googleapis/java-shared-config/compare/v1.0.1...v1.0.2) (2021-09-13)
+
+
+### Bug Fixes
+
+* specify animal-sniffer-maven-plugin version ([#308](https://www.github.com/googleapis/java-shared-config/issues/308)) ([378bf43](https://www.github.com/googleapis/java-shared-config/commit/378bf431383306c1cdd0a4f922956c87edf321b5))
+* update java docfx doclet version ([#312](https://www.github.com/googleapis/java-shared-config/issues/312)) ([dd7f6e0](https://www.github.com/googleapis/java-shared-config/commit/dd7f6e0c1a7cc73831b74b4475457611a8c097d3))
+
+
+### Dependencies
+
+* update dependency com.puppycrawl.tools:checkstyle to v9 ([#303](https://www.github.com/googleapis/java-shared-config/issues/303)) ([71faea3](https://www.github.com/googleapis/java-shared-config/commit/71faea38d4132407598550e2bb4c77f9d4a4d83d))
+
 ### [1.0.1](https://www.github.com/googleapis/java-shared-config/compare/v1.0.0...v1.0.1) (2021-08-18)
 
 
