@@ -33,15 +33,6 @@
     <module>snippets</module>
   </modules>
 
-  <profiles>
-    <profile>
-      <id>enable-samples</id>
-      <modules>
-        <module>sample</module>
-      </modules>
-    </profile>
-  </profiles>
-
   <build>
     <plugins>
       <plugin>
