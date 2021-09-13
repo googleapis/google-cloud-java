@@ -25,6 +25,7 @@ import com.google.cloud.bigtable.admin.v2.models.AppProfile;
 import com.google.cloud.bigtable.admin.v2.models.Cluster;
 import com.google.cloud.bigtable.admin.v2.models.Instance;
 import com.google.common.base.Joiner;
+import com.google.common.base.Preconditions;
 import com.google.common.base.Strings;
 import com.google.common.collect.ImmutableSet;
 import java.io.IOException;
@@ -69,6 +70,8 @@ import org.threeten.bp.temporal.ChronoUnit;
 public class TestEnvRule implements TestRule {
 
   private static final Logger LOGGER = Logger.getLogger(TestEnvRule.class.getName());
+  private static final Boolean BIGTABLE_ENABLE_VERBOSE_GRPC_LOGS =
+      Boolean.getBoolean("bigtable.enable-grpc-logs");
   private static final String BIGTABLE_GRPC_LOG_DIR = System.getProperty("bigtable.grpc-log-dir");
   private static final String BIGTABLE_EMULATOR_HOST_ENV_VAR = "BIGTABLE_EMULATOR_HOST";
   private static final String ENV_PROPERTY = "bigtable.env";
@@ -122,9 +125,14 @@ public class TestEnvRule implements TestRule {
   }
 
   private void configureLogging(Description description) throws IOException {
-    if (Strings.isNullOrEmpty(BIGTABLE_GRPC_LOG_DIR)) {
+    if (!BIGTABLE_ENABLE_VERBOSE_GRPC_LOGS) {
       return;
     }
+    Preconditions.checkState(
+        !Strings.isNullOrEmpty(BIGTABLE_GRPC_LOG_DIR),
+        "The property "
+            + BIGTABLE_GRPC_LOG_DIR
+            + " must be set when verbose grpc logs are enabled");
 
     Files.createDirectories(Paths.get(BIGTABLE_GRPC_LOG_DIR));
 

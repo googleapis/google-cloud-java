@@ -280,6 +280,28 @@
 
   <profiles>
     <profile>
+      <!-- Enable per-test verbose grpc logs
+      However, parallel test execution must be disabled to allow TestEnvRule to add/remove the
+      appender -->
+      <id>enable-verbose-grpc-logs</id>
+      <properties>
+        <bigtable.enable-grpc-logs>true</bigtable.enable-grpc-logs>
+        <!-- NOTE: bigtable.grpc-log-dir is configured separately for each execution -->
+      </properties>
+      <build>
+        <plugins>
+          <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-failsafe-plugin</artifactId>
+            <configuration>
+              <forkCount>1</forkCount>
+              <parallel>none</parallel>
+            </configuration>
+          </plugin>
+        </plugins>
+      </build>
+    </profile>
+    <profile>
       <id>bigtable-emulator-it</id>
       <activation>
         <activeByDefault>true</activeByDefault>
@@ -587,11 +609,11 @@
           <!-- enabled by profiles -->
           <skip>true</skip>
 
+          <!-- Enable concurrent test execution by default -->
           <parallel>classes</parallel>
-          <forkCount>2C</forkCount>
-          <threadCount>1</threadCount>
-          <reuseForks>true</reuseForks>
+          <threadCount>10</threadCount>
 
+          <!-- print full stacktraces by default -->
           <trimStackTrace>false</trimStackTrace>
         </configuration>
       </plugin>
@@ -602,6 +624,11 @@
         <configuration>
           <!-- enable the ability to skip unit tests, while running integration tests -->
           <skipTests>${skipUnitTests}</skipTests>
+
+          <!-- Enable concurrent test execution by default -->
+          <parallel>classes</parallel>
+          <threadCount>10</threadCount>
+
           <trimStackTrace>false</trimStackTrace>
         </configuration>
       </plugin>
