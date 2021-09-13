@@ -4,14 +4,14 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/java-logging-logback.git",
-        "sha": "9c74fc8946d8a03211cdec6fd0d472c84d4bce49"
+        "sha": "f0ff2d94137803285214a8e700a0e83e579dcc66"
       }
     },
     {
       "git": {
         "name": "synthtool",
         "remote": "https://github.com/googleapis/synthtool.git",
-        "sha": "17ee6e5c08f2eb47029beee4776ce990e56b3925"
+        "sha": "396d9b84a1e93880f5bf88b59ecd38a0a6dffc5e"
       }
     }
   ],
@@ -21,7 +21,6 @@
     ".github/ISSUE_TEMPLATE/support_request.md",
     ".github/PULL_REQUEST_TEMPLATE.md",
     ".github/generated-files-bot.yml",
-    ".github/readme/synth.py",
     ".github/release-please.yml",
     ".github/release-trigger.yml",
     ".github/snippet-bot.yml",
@@ -38,7 +37,6 @@
     ".kokoro/common.sh",
     ".kokoro/continuous/common.cfg",
     ".kokoro/continuous/java8.cfg",
-    ".kokoro/continuous/readme.cfg",
     ".kokoro/dependencies.sh",
     ".kokoro/nightly/common.cfg",
     ".kokoro/nightly/integration.cfg",
