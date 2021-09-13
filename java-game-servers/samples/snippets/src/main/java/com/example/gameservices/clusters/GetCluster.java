@@ -19,7 +19,10 @@ package com.example.gameservices.clusters;
 // [START cloud_game_servers_cluster_get]
 
 import com.google.cloud.gaming.v1.GameServerCluster;
+import com.google.cloud.gaming.v1.GameServerClusterName;
+import com.google.cloud.gaming.v1.GameServerClusterView;
 import com.google.cloud.gaming.v1.GameServerClustersServiceClient;
+import com.google.cloud.gaming.v1.GetGameServerClusterRequest;
 import java.io.IOException;
 
 public class GetCluster {
@@ -34,13 +37,22 @@ public class GetCluster {
     // once, and can be reused for multiple requests. After completing all of your requests, call
     // the "close" method on the client to safely clean up any remaining background resources.
     try (GameServerClustersServiceClient client = GameServerClustersServiceClient.create()) {
-      String parent =
-          String.format("projects/%s/locations/%s/realms/%s", projectId, regionId, realmId);
-      String clusterName = String.format("%s/gameServerClusters/%s", parent, clusterId);
-
-      GameServerCluster cluster = client.getGameServerCluster(clusterName);
+      GetGameServerClusterRequest request =
+          GetGameServerClusterRequest.newBuilder()
+              .setName(GameServerClusterName.of(projectId, regionId, realmId, clusterId).toString())
+              .setView(GameServerClusterView.FULL)
+              .build();
+      GameServerCluster cluster = client.getGameServerCluster(request);
 
       System.out.println("Game Server Cluster found: " + cluster.getName());
+      System.out.println(
+          "Cluster installed Agones version: "
+              + cluster.getClusterState().getAgonesVersionInstalled());
+      System.out.println(
+          "Cluster installed Kubernetes version: "
+              + cluster.getClusterState().getKubernetesVersionInstalled());
+      System.out.println(
+          "Cluster installation state: " + cluster.getClusterState().getInstallationState());
     }
   }
 }

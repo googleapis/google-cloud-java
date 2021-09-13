@@ -19,9 +19,11 @@ package com.example.gameservices.clusters;
 // [START cloud_game_servers_cluster_list]
 
 import com.google.cloud.gaming.v1.GameServerCluster;
+import com.google.cloud.gaming.v1.GameServerClusterView;
 import com.google.cloud.gaming.v1.GameServerClustersServiceClient;
 import com.google.cloud.gaming.v1.GameServerClustersServiceClient.ListGameServerClustersPagedResponse;
 import com.google.cloud.gaming.v1.ListGameServerClustersRequest;
+import com.google.cloud.gaming.v1.RealmName;
 import com.google.common.base.Strings;
 import java.io.IOException;
 
@@ -35,23 +37,41 @@ public class ListClusters {
     // once, and can be reused for multiple requests. After completing all of your requests, call
     // the "close" method on the client to safely clean up any remaining background resources.
     try (GameServerClustersServiceClient client = GameServerClustersServiceClient.create()) {
-      String parent =
-          String.format("projects/%s/locations/%s/realms/%s", projectId, regionId, realmId);
-
-      ListGameServerClustersPagedResponse response = client.listGameServerClusters(parent);
+      ListGameServerClustersRequest request =
+          ListGameServerClustersRequest.newBuilder()
+              .setParent(RealmName.of(projectId, regionId, realmId).toString())
+              .setView(GameServerClusterView.FULL)
+              .build();
+      ListGameServerClustersPagedResponse response = client.listGameServerClusters(request);
       for (GameServerCluster cluster : response.iterateAll()) {
         System.out.println("Game Server Cluster found: " + cluster.getName());
+        System.out.println(
+            "Cluster installed Agones version: "
+                + cluster.getClusterState().getAgonesVersionInstalled());
+        System.out.println(
+            "Cluster installed Kubernetes version: "
+                + cluster.getClusterState().getKubernetesVersionInstalled());
+        System.out.println(
+            "Cluster installation state: " + cluster.getClusterState().getInstallationState());
       }
 
       while (!Strings.isNullOrEmpty(response.getNextPageToken())) {
-        ListGameServerClustersRequest request =
+        ListGameServerClustersRequest request2 =
             ListGameServerClustersRequest.newBuilder()
-                .setParent(parent)
+                .setParent(RealmName.of(projectId, regionId, realmId).toString())
                 .setPageToken(response.getNextPageToken())
                 .build();
-        response = client.listGameServerClusters(request);
+        response = client.listGameServerClusters(request2);
         for (GameServerCluster cluster : response.iterateAll()) {
           System.out.println("Game Server Cluster found: " + cluster.getName());
+          System.out.println(
+              "Cluster installed Agones version: "
+                  + cluster.getClusterState().getAgonesVersionInstalled());
+          System.out.println(
+              "Cluster installed Kubernetes version: "
+                  + cluster.getClusterState().getKubernetesVersionInstalled());
+          System.out.println(
+              "Cluster installation state: " + cluster.getClusterState().getInstallationState());
         }
       }
     }
