@@ -1,5 +1,18 @@
 # Changelog
 
+## [0.4.0](https://www.github.com/googleapis/java-video-transcoder/compare/v0.3.2...v0.4.0) (2021-09-14)
+
+
+### Features
+
+* Remove use of deprecated gradle command in java README ([#1196](https://www.github.com/googleapis/java-video-transcoder/issues/1196)) ([#220](https://www.github.com/googleapis/java-video-transcoder/issues/220)) ([9e27d67](https://www.github.com/googleapis/java-video-transcoder/commit/9e27d679a18abdb2294fe638cc522d2070582395))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.2.0 ([#223](https://www.github.com/googleapis/java-video-transcoder/issues/223)) ([ab322c3](https://www.github.com/googleapis/java-video-transcoder/commit/ab322c3496d033acc8a3b55d0592ae38467f8349))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.2.1 ([#231](https://www.github.com/googleapis/java-video-transcoder/issues/231)) ([85d2e4d](https://www.github.com/googleapis/java-video-transcoder/commit/85d2e4dba2f9f3529597b3bbe159abf33279f02c))
+
 ### [0.3.2](https://www.github.com/googleapis/java-video-transcoder/compare/v0.3.1...v0.3.2) (2021-08-23)
 
 
