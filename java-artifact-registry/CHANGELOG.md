@@ -1,5 +1,12 @@
 # Changelog
 
+### [0.4.2](https://www.github.com/googleapis/java-artifact-registry/compare/v0.4.1...v0.4.2) (2021-09-14)
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.2.1 ([#148](https://www.github.com/googleapis/java-artifact-registry/issues/148)) ([57573bd](https://www.github.com/googleapis/java-artifact-registry/commit/57573bd2c46b70122ce43065494047fcab96d0bb))
+
 ### [0.4.1](https://www.github.com/googleapis/java-artifact-registry/compare/v0.4.0...v0.4.1) (2021-09-03)
 
 
