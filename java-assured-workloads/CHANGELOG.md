@@ -1,5 +1,28 @@
 # Changelog
 
+## [0.6.0](https://www.github.com/googleapis/java-assured-workloads/compare/v0.5.2...v0.6.0) (2021-09-14)
+
+
+### Features
+
+* Add Canada Regions And Support compliance regime ([#308](https://www.github.com/googleapis/java-assured-workloads/issues/308)) ([d949e0e](https://www.github.com/googleapis/java-assured-workloads/commit/d949e0e940752265388e9e60a973430e301e8a78))
+* display_name is added to ResourceSettings ([d949e0e](https://www.github.com/googleapis/java-assured-workloads/commit/d949e0e940752265388e9e60a973430e301e8a78))
+* Remove use of deprecated gradle command in java README ([#1196](https://www.github.com/googleapis/java-assured-workloads/issues/1196)) ([#309](https://www.github.com/googleapis/java-assured-workloads/issues/309)) ([872e8e6](https://www.github.com/googleapis/java-assured-workloads/commit/872e8e620024b0bee075439dad8e51aabd94e882))
+* resource_settings is added to CreateWorkloadOperationMetadata ([d949e0e](https://www.github.com/googleapis/java-assured-workloads/commit/d949e0e940752265388e9e60a973430e301e8a78))
+* ResourceType CONSUMER_FOLDER and KEYRING are added ([d949e0e](https://www.github.com/googleapis/java-assured-workloads/commit/d949e0e940752265388e9e60a973430e301e8a78))
+
+
+### Bug Fixes
+
+* billing_account is now optional in Workload ([d949e0e](https://www.github.com/googleapis/java-assured-workloads/commit/d949e0e940752265388e9e60a973430e301e8a78))
+* ResourceType CONSUMER_PROJECT is deprecated ([d949e0e](https://www.github.com/googleapis/java-assured-workloads/commit/d949e0e940752265388e9e60a973430e301e8a78))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.2.0 ([#311](https://www.github.com/googleapis/java-assured-workloads/issues/311)) ([281a61a](https://www.github.com/googleapis/java-assured-workloads/commit/281a61a6004aaaf709b0250526e2372fc65a1195))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.2.1 ([#319](https://www.github.com/googleapis/java-assured-workloads/issues/319)) ([faa1336](https://www.github.com/googleapis/java-assured-workloads/commit/faa133609cd87a7806c734620350b90a6242f02e))
+
 ### [0.5.2](https://www.github.com/googleapis/java-assured-workloads/compare/v0.5.1...v0.5.2) (2021-08-23)
 
 
