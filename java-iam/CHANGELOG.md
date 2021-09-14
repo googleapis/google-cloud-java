@@ -1,5 +1,17 @@
 # Changelog
 
+### [1.1.1](https://www.github.com/googleapis/java-iam/compare/v1.1.0...v1.1.1) (2021-09-14)
+
+
+### Dependencies
+
+* update dependency com.google.api:api-common to v1.10.6 ([#178](https://www.github.com/googleapis/java-iam/issues/178)) ([05754fa](https://www.github.com/googleapis/java-iam/commit/05754fa01b0cb71e7c0e8be5c5947abd8301e55f))
+* update dependency com.google.api:api-common to v2 ([#182](https://www.github.com/googleapis/java-iam/issues/182)) ([87b589f](https://www.github.com/googleapis/java-iam/commit/87b589f978d94d465ab4d067584305d834f8be0e))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.2.0 ([#183](https://www.github.com/googleapis/java-iam/issues/183)) ([049d5bf](https://www.github.com/googleapis/java-iam/commit/049d5bf50d690765e8eef20e9eb098c13068b559))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.2.1 ([#189](https://www.github.com/googleapis/java-iam/issues/189)) ([c450ac3](https://www.github.com/googleapis/java-iam/commit/c450ac3e3e409f51e60015a501843f8de3d8eb8e))
+* update dependency io.grpc:grpc-protobuf to v1.40.1 ([#180](https://www.github.com/googleapis/java-iam/issues/180)) ([c1eeb9c](https://www.github.com/googleapis/java-iam/commit/c1eeb9cbf5dbaa21a3e9524d5f97807e5b0fb909))
+* update dependency io.grpc:grpc-stub to v1.40.1 ([#181](https://www.github.com/googleapis/java-iam/issues/181)) ([a5dbb9e](https://www.github.com/googleapis/java-iam/commit/a5dbb9e395e769f1604ab87c844ab5fe67a8a850))
+
 ## [1.1.0](https://www.github.com/googleapis/java-iam/compare/v1.0.14...v1.1.0) (2021-08-23)
 
 
