@@ -1,5 +1,18 @@
 # Changelog
 
+## [0.5.0](https://www.github.com/googleapis/java-notebooks/compare/v0.4.1...v0.5.0) (2021-09-14)
+
+
+### Features
+
+* Remove use of deprecated gradle command in java README ([#1196](https://www.github.com/googleapis/java-notebooks/issues/1196)) ([#241](https://www.github.com/googleapis/java-notebooks/issues/241)) ([3ce8cb2](https://www.github.com/googleapis/java-notebooks/commit/3ce8cb24810809ac82272882435508f0d2e723bf))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.2.0 ([#245](https://www.github.com/googleapis/java-notebooks/issues/245)) ([b410a2e](https://www.github.com/googleapis/java-notebooks/commit/b410a2e3367e43d1d2938c4cdcea5fb3d9b74029))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.2.1 ([#254](https://www.github.com/googleapis/java-notebooks/issues/254)) ([2758446](https://www.github.com/googleapis/java-notebooks/commit/2758446958d8da7241549ef290b08ee4e857e8f0))
+
 ### [0.4.1](https://www.github.com/googleapis/java-notebooks/compare/v0.4.0...v0.4.1) (2021-08-25)
 
 
