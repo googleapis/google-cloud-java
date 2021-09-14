@@ -1,5 +1,18 @@
 # Changelog
 
+## [0.4.0](https://www.github.com/googleapis/java-domains/compare/v0.3.2...v0.4.0) (2021-09-14)
+
+
+### Features
+
+* Remove use of deprecated gradle command in java README ([#1196](https://www.github.com/googleapis/java-domains/issues/1196)) ([#98](https://www.github.com/googleapis/java-domains/issues/98)) ([31f25c2](https://www.github.com/googleapis/java-domains/commit/31f25c2cc35be38e7fb77856fb560f66db3d7f22))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.2.0 ([#101](https://www.github.com/googleapis/java-domains/issues/101)) ([e1cc274](https://www.github.com/googleapis/java-domains/commit/e1cc27446a6730d947339f09601509af5698e916))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.2.1 ([#110](https://www.github.com/googleapis/java-domains/issues/110)) ([f50b0a8](https://www.github.com/googleapis/java-domains/commit/f50b0a8647db6b8ee41902065d66966299983911))
+
 ### [0.3.2](https://www.github.com/googleapis/java-domains/compare/v0.3.1...v0.3.2) (2021-08-23)
 
 
