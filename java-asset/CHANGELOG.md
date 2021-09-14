@@ -1,5 +1,22 @@
 # Changelog
 
+### [3.2.1](https://www.github.com/googleapis/java-asset/compare/v3.2.0...v3.2.1) (2021-09-14)
+
+
+### Dependencies
+
+* update dependency com.google.api.grpc:proto-google-cloud-orgpolicy-v1 to v2.0.4 ([#917](https://www.github.com/googleapis/java-asset/issues/917)) ([3d19cf6](https://www.github.com/googleapis/java-asset/commit/3d19cf68a4fa4b9df5d1809b994790cd5c106847))
+* update dependency com.google.api.grpc:proto-google-cloud-pubsub-v1 to v1.96.3 ([#898](https://www.github.com/googleapis/java-asset/issues/898)) ([45cca2d](https://www.github.com/googleapis/java-asset/commit/45cca2dbf69df98ca4f3a233a900b76544f7d06b))
+* update dependency com.google.api.grpc:proto-google-identity-accesscontextmanager-v1 to v1.2.0 ([#913](https://www.github.com/googleapis/java-asset/issues/913)) ([8a3ead2](https://www.github.com/googleapis/java-asset/commit/8a3ead2c6cbef30fbe9f43cfe07cb646652fb12a))
+* update dependency com.google.api.grpc:proto-google-identity-accesscontextmanager-v1 to v1.2.1 ([#916](https://www.github.com/googleapis/java-asset/issues/916)) ([0aabc83](https://www.github.com/googleapis/java-asset/commit/0aabc831156d9c6df716d4773ce78b5b3b0e7bd4))
+* update dependency com.google.cloud:google-cloud-bigquery to v2.1.7 ([#906](https://www.github.com/googleapis/java-asset/issues/906)) ([b1cc89c](https://www.github.com/googleapis/java-asset/commit/b1cc89cc3f44cf8913e341c0c3498279e8302d0e))
+* update dependency com.google.cloud:google-cloud-core to v2.1.3 ([#912](https://www.github.com/googleapis/java-asset/issues/912)) ([91bb60e](https://www.github.com/googleapis/java-asset/commit/91bb60e24516c4ee2d4a95f00efc1353e7a6d5d5))
+* update dependency com.google.cloud:google-cloud-resourcemanager to v1.1.0 ([#901](https://www.github.com/googleapis/java-asset/issues/901)) ([d9d20b5](https://www.github.com/googleapis/java-asset/commit/d9d20b5d395a777b0dfe9d0603201db1f07c263e))
+* update dependency com.google.cloud:google-cloud-resourcemanager to v1.1.1 ([#918](https://www.github.com/googleapis/java-asset/issues/918)) ([7c61eac](https://www.github.com/googleapis/java-asset/commit/7c61eac931e697cd0f75001fc13acd9e33189780))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.2.1 ([#914](https://www.github.com/googleapis/java-asset/issues/914)) ([8c3f4f9](https://www.github.com/googleapis/java-asset/commit/8c3f4f9d08fc08d52e129c8fb37d963e24e58fdd))
+* update dependency com.google.cloud:google-cloud-storage to v2.1.1 ([#899](https://www.github.com/googleapis/java-asset/issues/899)) ([92cbcd4](https://www.github.com/googleapis/java-asset/commit/92cbcd4f93dbe7a8e214a64fe827232d81639a77))
+* update dependency com.google.cloud:google-cloud-storage to v2.1.2 ([#919](https://www.github.com/googleapis/java-asset/issues/919)) ([9509ef9](https://www.github.com/googleapis/java-asset/commit/9509ef909015bf9c80e0f4817ce9800748bc21f3))
+
 ## [3.2.0](https://www.github.com/googleapis/java-asset/compare/v3.1.0...v3.2.0) (2021-09-03)
 
 
