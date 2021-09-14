@@ -1,5 +1,17 @@
 # Changelog
 
+### [2.1.1](https://www.github.com/googleapis/java-security-private-ca/compare/v2.1.0...v2.1.1) (2021-09-14)
+
+
+### Documentation
+
+* **samples:** added samples for issuance policy and certificate templates ([#264](https://www.github.com/googleapis/java-security-private-ca/issues/264)) ([e79724d](https://www.github.com/googleapis/java-security-private-ca/commit/e79724d2fdfae1a496870e4071ad340951bdf92c))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.2.1 ([#275](https://www.github.com/googleapis/java-security-private-ca/issues/275)) ([987321d](https://www.github.com/googleapis/java-security-private-ca/commit/987321de7f636f24da8a74f7559a602035338f0c))
+
 ## [2.1.0](https://www.github.com/googleapis/java-security-private-ca/compare/v2.0.2...v2.1.0) (2021-09-01)
 
 
