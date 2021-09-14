@@ -1,5 +1,12 @@
 # Changelog
 
+### [1.1.1](https://www.github.com/googleapis/java-resource-settings/compare/v1.1.0...v1.1.1) (2021-09-14)
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.2.1 ([#60](https://www.github.com/googleapis/java-resource-settings/issues/60)) ([dd611a4](https://www.github.com/googleapis/java-resource-settings/commit/dd611a478fdbbf2c045e3168894ac7abe996dd35))
+
 ## [1.1.0](https://www.github.com/googleapis/java-resource-settings/compare/v1.0.2...v1.1.0) (2021-09-02)
 
 
