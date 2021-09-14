@@ -1,5 +1,17 @@
 # Changelog
 
+## [2.2.0](https://www.github.com/googleapis/java-os-config/compare/v2.1.0...v2.2.0) (2021-09-14)
+
+
+### Features
+
+* add OSConfigZonalService API Committer: [@jaiminsh](https://www.github.com/jaiminsh) ([#356](https://www.github.com/googleapis/java-os-config/issues/356)) ([b68ebde](https://www.github.com/googleapis/java-os-config/commit/b68ebde5f9a9a5a9e57d089bd3df4cea8e11dc35))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.2.1 ([#364](https://www.github.com/googleapis/java-os-config/issues/364)) ([51548e8](https://www.github.com/googleapis/java-os-config/commit/51548e81aa72b0d766bc5226dda4155b0a32472b))
+
 ## [2.1.0](https://www.github.com/googleapis/java-os-config/compare/v2.0.2...v2.1.0) (2021-08-31)
 
 
