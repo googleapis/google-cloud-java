@@ -1,5 +1,18 @@
 # Changelog
 
+## [0.8.0](https://www.github.com/googleapis/java-recommendations-ai/compare/v0.7.2...v0.8.0) (2021-09-14)
+
+
+### Features
+
+* Remove use of deprecated gradle command in java README ([#1196](https://www.github.com/googleapis/java-recommendations-ai/issues/1196)) ([#392](https://www.github.com/googleapis/java-recommendations-ai/issues/392)) ([e2be62f](https://www.github.com/googleapis/java-recommendations-ai/commit/e2be62fc153868b52685c90fb9fc82a01a026399))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.2.0 ([#395](https://www.github.com/googleapis/java-recommendations-ai/issues/395)) ([122b8fc](https://www.github.com/googleapis/java-recommendations-ai/commit/122b8fc37904f94c4ef8065ad9dad1df35a9f7e3))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.2.1 ([#404](https://www.github.com/googleapis/java-recommendations-ai/issues/404)) ([0a9f1ff](https://www.github.com/googleapis/java-recommendations-ai/commit/0a9f1ff00f499d17628b3264c7bb47d3aa9f58c1))
+
 ### [0.7.2](https://www.github.com/googleapis/java-recommendations-ai/compare/v0.7.1...v0.7.2) (2021-08-23)
 
 
