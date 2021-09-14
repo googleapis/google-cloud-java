@@ -18,12 +18,14 @@ package privateca;
 import static com.google.common.truth.Truth.assertThat;
 import static com.google.common.truth.Truth.assertWithMessage;
 
+import com.google.cloud.security.privateca.v1.CaPool.IssuancePolicy;
 import com.google.cloud.security.privateca.v1.CaPoolName;
 import com.google.cloud.security.privateca.v1.Certificate;
 import com.google.cloud.security.privateca.v1.CertificateAuthority;
 import com.google.cloud.security.privateca.v1.CertificateAuthorityName;
 import com.google.cloud.security.privateca.v1.CertificateAuthorityServiceClient;
 import com.google.cloud.security.privateca.v1.CertificateName;
+import com.google.cloud.security.privateca.v1.CertificateTemplateName;
 import com.google.cloud.security.privateca.v1.FetchCertificateAuthorityCsrResponse;
 import com.google.protobuf.ByteString;
 import java.io.ByteArrayOutputStream;
@@ -63,6 +65,7 @@ public class SnippetsIT {
   private static String CA_NAME;
   private static String CA_NAME_DELETE;
   private static String SUBORDINATE_CA_NAME;
+  private static String CERTIFICATE_TEMPLATE_NAME;
   private static String CERTIFICATE_NAME;
   private static String CSR_CERTIFICATE_NAME;
   private static int KEY_SIZE;
@@ -79,18 +82,19 @@ public class SnippetsIT {
   @BeforeClass
   public static void setUp()
       throws IOException, ExecutionException, NoSuchProviderException, NoSuchAlgorithmException,
-          InterruptedException {
+          InterruptedException, TimeoutException {
     reqEnvVar("GOOGLE_APPLICATION_CREDENTIALS");
     reqEnvVar("GOOGLE_CLOUD_PROJECT");
 
     LOCATION = "asia-south1";
-    CA_POOL_ID = "ca-pool-" + UUID.randomUUID().toString();
-    CA_POOL_ID_DELETE = "ca-pool-" + UUID.randomUUID().toString();
-    CA_NAME = "ca-name-" + UUID.randomUUID().toString();
-    CA_NAME_DELETE = "ca-name-" + UUID.randomUUID().toString();
-    SUBORDINATE_CA_NAME = "sub-ca-name-" + UUID.randomUUID().toString();
-    CERTIFICATE_NAME = "certificate-name-" + UUID.randomUUID().toString();
-    CSR_CERTIFICATE_NAME = "csr-certificate-name-" + UUID.randomUUID().toString();
+    CA_POOL_ID = "ca-pool-" + UUID.randomUUID();
+    CA_POOL_ID_DELETE = "ca-pool-" + UUID.randomUUID();
+    CA_NAME = "ca-name-" + UUID.randomUUID();
+    CA_NAME_DELETE = "ca-name-" + UUID.randomUUID();
+    SUBORDINATE_CA_NAME = "sub-ca-name-" + UUID.randomUUID();
+    CERTIFICATE_TEMPLATE_NAME = "certificate-template-name-" + UUID.randomUUID();
+    CERTIFICATE_NAME = "certificate-name-" + UUID.randomUUID();
+    CSR_CERTIFICATE_NAME = "csr-certificate-name-" + UUID.randomUUID();
     KEY_SIZE = 2048; // Default key size
 
     // <--- START CA POOL --->
@@ -98,6 +102,9 @@ public class SnippetsIT {
     privateca.CreateCaPool.createCaPool(PROJECT_ID, LOCATION, CA_POOL_ID);
     privateca.CreateCaPool.createCaPool(PROJECT_ID, LOCATION, CA_POOL_ID_DELETE);
     sleep(5);
+    // Set the issuance policy for the created CA Pool.
+    privateca.UpdateCaPool_IssuancePolicy.updateCaPoolIssuancePolicy(
+        PROJECT_ID, LOCATION, CA_POOL_ID);
     // <--- END CA POOL --->
 
     // <--- START ROOT CA --->
@@ -117,18 +124,23 @@ public class SnippetsIT {
     // <--- END ROOT CA --->
 
     // <--- START SUBORDINATE CA --->
-    // Create a Subordinate Certificate Authority.
+    // Follow the below steps to create and enable a Subordinate Certificate Authority.
+    // 1. Create a Subordinate Certificate Authority.
     privateca.CreateSubordinateCa.createSubordinateCertificateAuthority(
         PROJECT_ID, LOCATION, CA_POOL_ID, SUBORDINATE_CA_NAME);
     sleep(10);
-    // Fetch CSR.
+    // 2. Fetch CSR.
     String pemCSR = fetchPemCSR(CA_POOL_ID, SUBORDINATE_CA_NAME);
-    // Sign the CSR, and create a certificate.
+    // 3. Sign the CSR, and create a certificate.
     privateca.CreateCertificate_CSR.createCertificateWithCSR(
         PROJECT_ID, LOCATION, CA_POOL_ID, CA_NAME, CSR_CERTIFICATE_NAME, pemCSR);
     // <--- END SUBORDINATE CA --->
 
     // <--- START CERTIFICATE --->
+    // Create Certificate Template.
+    privateca.CreateCertificateTemplate.createCertificateTemplate(
+        PROJECT_ID, LOCATION, CERTIFICATE_TEMPLATE_NAME);
+
     // Create an asymmetric key pair using Bouncy Castle crypto framework.
     KeyPair asymmetricKeyPair = createAsymmetricKeyPair();
 
@@ -155,7 +167,8 @@ public class SnippetsIT {
   }
 
   @AfterClass
-  public static void cleanUp() throws InterruptedException, ExecutionException, IOException {
+  public static void cleanUp()
+      throws InterruptedException, ExecutionException, IOException, TimeoutException {
 
     ByteArrayOutputStream stdOut = new ByteArrayOutputStream();
     System.setOut(new PrintStream(stdOut));
@@ -163,6 +176,10 @@ public class SnippetsIT {
     // Revoke Certificate.
     privateca.RevokeCertificate.revokeCertificate(
         PROJECT_ID, LOCATION, CA_POOL_ID, CSR_CERTIFICATE_NAME);
+
+    // Delete Certificate Template.
+    privateca.DeleteCertificateTemplate.deleteCertificateTemplate(
+        PROJECT_ID, LOCATION, CERTIFICATE_TEMPLATE_NAME);
 
     // Delete root CA.
     privateca.DeleteCertificateAuthority.deleteCertificateAuthority(
@@ -256,6 +273,23 @@ public class SnippetsIT {
   }
 
   @Test
+  public void testUpdateCAPoolIssuancePolicy() throws IOException {
+    try (CertificateAuthorityServiceClient certificateAuthorityServiceClient =
+        CertificateAuthorityServiceClient.create()) {
+      IssuancePolicy issuancePolicy =
+          certificateAuthorityServiceClient
+              .getCaPool(CaPoolName.of(PROJECT_ID, LOCATION, CA_POOL_ID).toString())
+              .getIssuancePolicy();
+
+      String actualExpression =
+          issuancePolicy.getIdentityConstraints().getCelExpression().getExpression();
+      String expectedExpression =
+          "subject_alt_names.all(san, san.type == DNS && (san.value == \"us.google.org\" || san.value.endsWith(\".google.com\")) )";
+      assertThat(actualExpression).contains(expectedExpression);
+    }
+  }
+
+  @Test
   public void testListCAPools() throws IOException {
     privateca.ListCaPools.listCaPools(PROJECT_ID, LOCATION);
     assertThat(stdOut.toString()).contains(CA_POOL_ID);
@@ -309,6 +343,38 @@ public class SnippetsIT {
   }
 
   @Test
+  public void testCreateCertificateTemplate() throws IOException {
+    // Check that the Certificate template has been created as part of the setup.
+    try (CertificateAuthorityServiceClient certificateAuthorityServiceClient =
+        CertificateAuthorityServiceClient.create()) {
+      String certificateTemplate =
+          certificateAuthorityServiceClient
+              .getCertificateTemplate(
+                  CertificateTemplateName.of(PROJECT_ID, LOCATION, CERTIFICATE_TEMPLATE_NAME)
+                      .toString())
+              .getName();
+
+      assertThat(certificateTemplate)
+          .contains(String.format("projects/%s/locations/%s/", PROJECT_ID, LOCATION));
+    }
+  }
+
+  @Test
+  public void testListCertificateTemplate()
+      throws IOException, ExecutionException, InterruptedException, TimeoutException {
+    privateca.ListCertificateTemplates.listCertificateTemplates(PROJECT_ID, LOCATION);
+    assertThat(stdOut.toString()).contains(CERTIFICATE_TEMPLATE_NAME);
+  }
+
+  @Test
+  public void updateCertificateTemplate()
+      throws IOException, ExecutionException, InterruptedException, TimeoutException {
+    privateca.UpdateCertificateTemplate.updateCertificateTemplate(
+        PROJECT_ID, LOCATION, CERTIFICATE_TEMPLATE_NAME);
+    assertThat(stdOut.toString()).contains("Successfully updated the certificate template ! ");
+  }
+
+  @Test
   public void testCreateCertificate() throws IOException {
     // Check if the certificate created during setup is successful.
     try (CertificateAuthorityServiceClient certificateAuthorityServiceClient =
@@ -329,10 +395,7 @@ public class SnippetsIT {
   @Test
   public void testFilterCertificates() throws IOException {
     // Filter only certificates created using CSR.
-    String filterCondition =
-        "certificate_description.subject_description.subject.organization=csr-org-name";
-    privateca.FilterCertificates.filterCertificates(
-        PROJECT_ID, LOCATION, CA_POOL_ID, filterCondition);
+    privateca.FilterCertificates.filterCertificates(PROJECT_ID, LOCATION, CA_POOL_ID);
     assertThat(stdOut.toString()).contains(CSR_CERTIFICATE_NAME);
     assertThat(stdOut.toString()).doesNotContain(CERTIFICATE_NAME);
   }

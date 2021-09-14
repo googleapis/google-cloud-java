@@ -29,6 +29,7 @@ import com.google.cloud.security.privateca.v1.CreateCertificateAuthorityRequest;
 import com.google.cloud.security.privateca.v1.KeyUsage;
 import com.google.cloud.security.privateca.v1.KeyUsage.KeyUsageOptions;
 import com.google.cloud.security.privateca.v1.Subject;
+import com.google.cloud.security.privateca.v1.SubjectAltNames;
 import com.google.cloud.security.privateca.v1.X509Parameters;
 import com.google.cloud.security.privateca.v1.X509Parameters.CaOptions;
 import com.google.longrunning.Operation;
@@ -65,6 +66,7 @@ public class CreateSubordinateCa {
 
       String commonName = "common-name";
       String orgName = "csr-org-name";
+      String domainName = "dns.your-domain.com";
       int caDuration = 100000; // Validity of this CA in seconds.
 
       // Set the type of Algorithm.
@@ -76,6 +78,8 @@ public class CreateSubordinateCa {
           SubjectConfig.newBuilder()
               .setSubject(
                   Subject.newBuilder().setCommonName(commonName).setOrganization(orgName).build())
+              // Set the fully qualified domain name.
+              .setSubjectAltName(SubjectAltNames.newBuilder().addDnsNames(domainName).build())
               .build();
 
       //  Set the key usage options for X.509 fields.

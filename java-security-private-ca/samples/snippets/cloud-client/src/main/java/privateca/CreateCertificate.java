@@ -85,7 +85,7 @@ public class CreateCertificate {
       // certificateLifetime: The validity of the certificate in seconds.
       String commonName = "common-name";
       String orgName = "org-name";
-      String domainName = "dnsname.com";
+      String domainName = "dns.your-domain.com";
       long certificateLifetime = 1000L;
 
       // Set the Public Key and its format.
