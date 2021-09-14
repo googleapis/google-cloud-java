@@ -16,21 +16,26 @@
 package com.google.cloud.bigtable.data.v2.stub.readrows;
 
 import com.google.api.core.SettableApiFuture;
-import com.google.api.gax.rpc.ApiCallContext;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.bigtable.data.v2.internal.RequestContext;
 import com.google.cloud.bigtable.data.v2.models.Query;
 import com.google.cloud.bigtable.data.v2.models.Row;
 import com.google.common.truth.Truth;
 import org.junit.Before;
+import org.junit.Rule;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 import org.mockito.ArgumentCaptor;
 import org.mockito.Mockito;
+import org.mockito.junit.MockitoJUnit;
+import org.mockito.junit.MockitoRule;
+import org.mockito.quality.Strictness;
 
 @RunWith(JUnit4.class)
 public class ReadRowsFirstCallableTest {
+  @Rule public MockitoRule mockitoRule = MockitoJUnit.rule().strictness(Strictness.WARN);
+
   private static final RequestContext REQUEST_CONTEXT =
       RequestContext.create("fake-project", "fake-instance", "fake-profile");
   private UnaryCallable<Query, Row> innerCallable;
@@ -43,7 +48,7 @@ public class ReadRowsFirstCallableTest {
     innerCallable = Mockito.mock(UnaryCallable.class);
     innerQuery = ArgumentCaptor.forClass(Query.class);
     innerResult = SettableApiFuture.create();
-    Mockito.when(innerCallable.futureCall(innerQuery.capture(), Mockito.any(ApiCallContext.class)))
+    Mockito.when(innerCallable.futureCall(innerQuery.capture(), Mockito.any()))
         .thenReturn(innerResult);
   }
 

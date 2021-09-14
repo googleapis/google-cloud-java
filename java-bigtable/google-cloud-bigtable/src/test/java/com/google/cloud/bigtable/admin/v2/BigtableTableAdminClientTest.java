@@ -67,7 +67,6 @@ import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Lists;
 import com.google.common.io.BaseEncoding;
 import com.google.longrunning.Operation;
-import com.google.protobuf.Any;
 import com.google.protobuf.ByteString;
 import com.google.protobuf.Empty;
 import com.google.protobuf.Timestamp;
@@ -83,10 +82,9 @@ import org.junit.Rule;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
-import org.mockito.Matchers;
+import org.mockito.ArgumentMatchers;
 import org.mockito.Mock;
 import org.mockito.Mockito;
-import org.mockito.invocation.InvocationOnMock;
 import org.mockito.junit.MockitoJUnit;
 import org.mockito.junit.MockitoRule;
 import org.mockito.stubbing.Answer;
@@ -128,10 +126,6 @@ public class BigtableTableAdminClientTest {
   @Mock private UnaryCallable<ListTablesRequest, ListTablesPagedResponse> mockListTableCallable;
   @Mock private UnaryCallable<DropRowRangeRequest, Empty> mockDropRowRangeCallable;
   @Mock private UnaryCallable<TableName, Void> mockAwaitReplicationCallable;
-
-  @Mock
-  private UnaryCallable<com.google.bigtable.admin.v2.CreateBackupRequest, Operation>
-      mockCreateBackupCallable;
 
   @Mock
   private OperationCallable<
@@ -179,32 +173,13 @@ public class BigtableTableAdminClientTest {
   @Before
   public void setUp() {
     adminClient = BigtableTableAdminClient.create(PROJECT_ID, INSTANCE_ID, mockStub);
-
-    Mockito.when(mockStub.createTableCallable()).thenReturn(mockCreateTableCallable);
-    Mockito.when(mockStub.modifyColumnFamiliesCallable()).thenReturn(mockModifyTableCallable);
-    Mockito.when(mockStub.deleteTableCallable()).thenReturn(mockDeleteTableCallable);
-    Mockito.when(mockStub.getTableCallable()).thenReturn(mockGetTableCallable);
-    Mockito.when(mockStub.listTablesPagedCallable()).thenReturn(mockListTableCallable);
-    Mockito.when(mockStub.dropRowRangeCallable()).thenReturn(mockDropRowRangeCallable);
-    Mockito.when(mockStub.awaitReplicationCallable()).thenReturn(mockAwaitReplicationCallable);
-    Mockito.when(mockStub.createBackupOperationCallable())
-        .thenReturn(mockCreateBackupOperationCallable);
-    Mockito.when(mockStub.createBackupCallable()).thenReturn(mockCreateBackupCallable);
-    Mockito.when(mockStub.getBackupCallable()).thenReturn(mockGetBackupCallable);
-    Mockito.when(mockStub.listBackupsPagedCallable()).thenReturn(mockListBackupCallable);
-    Mockito.when(mockStub.updateBackupCallable()).thenReturn(mockUpdateBackupCallable);
-    Mockito.when(mockStub.deleteBackupCallable()).thenReturn(mockDeleteBackupCallable);
-    Mockito.when(mockStub.restoreTableCallable()).thenReturn(mockRestoreTableCallable);
-    Mockito.when(mockStub.restoreTableOperationCallable())
-        .thenReturn(mockRestoreTableOperationCallable);
-    Mockito.when(mockStub.getIamPolicyCallable()).thenReturn(mockGetIamPolicyCallable);
-    Mockito.when(mockStub.setIamPolicyCallable()).thenReturn(mockSetIamPolicyCallable);
-    Mockito.when(mockStub.testIamPermissionsCallable()).thenReturn(mockTestIamPermissionsCallable);
   }
 
   @Test
   public void testCreateTable() {
     // Setup
+    Mockito.when(mockStub.createTableCallable()).thenReturn(mockCreateTableCallable);
+
     com.google.bigtable.admin.v2.CreateTableRequest expectedRequest =
         com.google.bigtable.admin.v2.CreateTableRequest.newBuilder()
             .setParent(INSTANCE_NAME)
@@ -227,6 +202,8 @@ public class BigtableTableAdminClientTest {
   @Test
   public void testModifyFamilies() {
     // Setup
+    Mockito.when(mockStub.modifyColumnFamiliesCallable()).thenReturn(mockModifyTableCallable);
+
     com.google.bigtable.admin.v2.ModifyColumnFamiliesRequest expectedRequest =
         com.google.bigtable.admin.v2.ModifyColumnFamiliesRequest.newBuilder()
             .setName(TABLE_NAME)
@@ -257,6 +234,8 @@ public class BigtableTableAdminClientTest {
   @Test
   public void testDeleteTable() {
     // Setup
+    Mockito.when(mockStub.deleteTableCallable()).thenReturn(mockDeleteTableCallable);
+
     DeleteTableRequest expectedRequest =
         DeleteTableRequest.newBuilder().setName(TABLE_NAME).build();
 
@@ -264,13 +243,11 @@ public class BigtableTableAdminClientTest {
 
     Mockito.when(mockDeleteTableCallable.futureCall(expectedRequest))
         .thenAnswer(
-            new Answer<ApiFuture<Empty>>() {
-              @Override
-              public ApiFuture<Empty> answer(InvocationOnMock invocationOnMock) {
-                wasCalled.set(true);
-                return ApiFutures.immediateFuture(Empty.getDefaultInstance());
-              }
-            });
+            (Answer<ApiFuture<Empty>>)
+                invocationOnMock -> {
+                  wasCalled.set(true);
+                  return ApiFutures.immediateFuture(Empty.getDefaultInstance());
+                });
 
     // Execute
     adminClient.deleteTable(TABLE_ID);
@@ -282,6 +259,8 @@ public class BigtableTableAdminClientTest {
   @Test
   public void testGetTable() {
     // Setup
+    Mockito.when(mockStub.getTableCallable()).thenReturn(mockGetTableCallable);
+
     GetTableRequest expectedRequest =
         GetTableRequest.newBuilder().setName(TABLE_NAME).setView(View.SCHEMA_VIEW).build();
 
@@ -301,6 +280,8 @@ public class BigtableTableAdminClientTest {
   @Test
   public void testGetEncryptionInfos() {
     // Setup
+    Mockito.when(mockStub.getTableCallable()).thenReturn(mockGetTableCallable);
+
     GetTableRequest expectedRequest =
         GetTableRequest.newBuilder().setName(TABLE_NAME).setView(View.ENCRYPTION_VIEW).build();
 
@@ -340,6 +321,8 @@ public class BigtableTableAdminClientTest {
   @Test
   public void testListTables() {
     // Setup
+    Mockito.when(mockStub.listTablesPagedCallable()).thenReturn(mockListTableCallable);
+
     com.google.bigtable.admin.v2.ListTablesRequest expectedRequest =
         com.google.bigtable.admin.v2.ListTablesRequest.newBuilder()
             .setParent(INSTANCE_NAME)
@@ -354,7 +337,6 @@ public class BigtableTableAdminClientTest {
     // 2 on the first page
     ListTablesPage page0 = Mockito.mock(ListTablesPage.class);
     Mockito.when(page0.getValues()).thenReturn(expectedProtos.subList(0, 2));
-    Mockito.when(page0.getNextPageToken()).thenReturn("next-page");
     Mockito.when(page0.hasNextPage()).thenReturn(true);
 
     // 1 on the last page
@@ -386,6 +368,8 @@ public class BigtableTableAdminClientTest {
   @Test
   public void testDropRowRange() {
     // Setup
+    Mockito.when(mockStub.dropRowRangeCallable()).thenReturn(mockDropRowRangeCallable);
+
     DropRowRangeRequest expectedRequest =
         DropRowRangeRequest.newBuilder()
             .setName(TABLE_NAME)
@@ -398,13 +382,11 @@ public class BigtableTableAdminClientTest {
 
     Mockito.when(mockDropRowRangeCallable.futureCall(expectedRequest))
         .thenAnswer(
-            new Answer<ApiFuture<Empty>>() {
-              @Override
-              public ApiFuture<Empty> answer(InvocationOnMock invocationOnMock) {
-                wasCalled.set(true);
-                return ApiFutures.immediateFuture(expectedResponse);
-              }
-            });
+            (Answer<ApiFuture<Empty>>)
+                invocationOnMock -> {
+                  wasCalled.set(true);
+                  return ApiFutures.immediateFuture(expectedResponse);
+                });
 
     // Execute
     adminClient.dropRowRange(TABLE_ID, "rowKeyPrefix");
@@ -416,19 +398,19 @@ public class BigtableTableAdminClientTest {
   @Test
   public void testAwaitReplication() {
     // Setup
+    Mockito.when(mockStub.awaitReplicationCallable()).thenReturn(mockAwaitReplicationCallable);
+
     TableName expectedRequest = TableName.parse(TABLE_NAME);
 
     final AtomicBoolean wasCalled = new AtomicBoolean(false);
 
     Mockito.when(mockAwaitReplicationCallable.futureCall(expectedRequest))
         .thenAnswer(
-            new Answer<ApiFuture<Void>>() {
-              @Override
-              public ApiFuture<Void> answer(InvocationOnMock invocationOnMock) {
-                wasCalled.set(true);
-                return ApiFutures.immediateFuture(null);
-              }
-            });
+            (Answer<ApiFuture<Void>>)
+                invocationOnMock -> {
+                  wasCalled.set(true);
+                  return ApiFutures.immediateFuture(null);
+                });
 
     // Execute
     adminClient.awaitReplication(TABLE_ID);
@@ -440,10 +422,12 @@ public class BigtableTableAdminClientTest {
   @Test
   public void testExistsTrue() {
     // Setup
+    Mockito.when(mockStub.getTableCallable()).thenReturn(mockGetTableCallable);
+
     com.google.bigtable.admin.v2.Table expectedResponse =
         com.google.bigtable.admin.v2.Table.newBuilder().setName(TABLE_NAME).build();
 
-    Mockito.when(mockGetTableCallable.futureCall(Matchers.any(GetTableRequest.class)))
+    Mockito.when(mockGetTableCallable.futureCall(ArgumentMatchers.any(GetTableRequest.class)))
         .thenReturn(ApiFutures.immediateFuture(expectedResponse));
 
     // Execute
@@ -456,10 +440,12 @@ public class BigtableTableAdminClientTest {
   @Test
   public void testExistsFalse() {
     // Setup
+    Mockito.when(mockStub.getTableCallable()).thenReturn(mockGetTableCallable);
+
     NotFoundException exception =
         new NotFoundException("fake error", null, GrpcStatusCode.of(Status.Code.NOT_FOUND), false);
 
-    Mockito.when(mockGetTableCallable.futureCall(Matchers.any(GetTableRequest.class)))
+    Mockito.when(mockGetTableCallable.futureCall(ArgumentMatchers.any(GetTableRequest.class)))
         .thenReturn(
             ApiFutures.<com.google.bigtable.admin.v2.Table>immediateFailedFuture(exception));
 
@@ -473,6 +459,9 @@ public class BigtableTableAdminClientTest {
   @Test
   public void testCreateBackup() {
     // Setup
+    Mockito.when(mockStub.createBackupOperationCallable())
+        .thenReturn(mockCreateBackupOperationCallable);
+
     String backupName = NameUtil.formatBackupName(PROJECT_ID, INSTANCE_ID, CLUSTER_ID, BACKUP_ID);
     Timestamp startTime = Timestamp.newBuilder().setSeconds(123).build();
     Timestamp endTime = Timestamp.newBuilder().setSeconds(456).build();
@@ -515,6 +504,8 @@ public class BigtableTableAdminClientTest {
   @Test
   public void testGetBackup() {
     // Setup
+    Mockito.when(mockStub.getBackupCallable()).thenReturn(mockGetBackupCallable);
+
     Timestamp expireTime = Timestamp.newBuilder().setSeconds(123456789).build();
     Timestamp startTime = Timestamp.newBuilder().setSeconds(1234).build();
     Timestamp endTime = Timestamp.newBuilder().setSeconds(5678).build();
@@ -557,6 +548,8 @@ public class BigtableTableAdminClientTest {
   @Test
   public void testUpdateBackup() {
     // Setup
+    Mockito.when(mockStub.updateBackupCallable()).thenReturn(mockUpdateBackupCallable);
+
     Timestamp expireTime = Timestamp.newBuilder().setSeconds(123456789).build();
     long sizeBytes = 12345L;
     UpdateBackupRequest req = UpdateBackupRequest.of(CLUSTER_ID, BACKUP_ID);
@@ -585,32 +578,13 @@ public class BigtableTableAdminClientTest {
   @Test
   public void testRestoreTable() throws ExecutionException, InterruptedException {
     // Setup
+    Mockito.when(mockStub.restoreTableOperationCallable())
+        .thenReturn(mockRestoreTableOperationCallable);
+
     Timestamp startTime = Timestamp.newBuilder().setSeconds(1234).build();
     Timestamp endTime = Timestamp.newBuilder().setSeconds(5678).build();
     String operationName = "my-operation";
     RestoreTableRequest req = RestoreTableRequest.of(CLUSTER_ID, BACKUP_ID).setTableId(TABLE_ID);
-    Mockito.when(mockRestoreTableCallable.futureCall(req.toProto(PROJECT_ID, INSTANCE_ID)))
-        .thenReturn(
-            ApiFutures.immediateFuture(
-                Operation.newBuilder()
-                    .setMetadata(
-                        Any.pack(
-                            RestoreTableMetadata.newBuilder()
-                                .setName(
-                                    NameUtil.formatTableName(PROJECT_ID, INSTANCE_ID, TABLE_ID))
-                                .setOptimizeTableOperationName(operationName)
-                                .setSourceType(RestoreSourceType.BACKUP)
-                                .setBackupInfo(
-                                    BackupInfo.newBuilder()
-                                        .setBackup(BACKUP_ID)
-                                        .setSourceTable(
-                                            NameUtil.formatTableName(
-                                                PROJECT_ID, INSTANCE_ID, TABLE_ID))
-                                        .setStartTime(startTime)
-                                        .setEndTime(endTime)
-                                        .build())
-                                .build()))
-                    .build()));
     mockOperationResult(
         mockRestoreTableOperationCallable,
         req.toProto(PROJECT_ID, INSTANCE_ID),
@@ -637,6 +611,8 @@ public class BigtableTableAdminClientTest {
   @Test
   public void testDeleteBackup() {
     // Setup
+    Mockito.when(mockStub.deleteBackupCallable()).thenReturn(mockDeleteBackupCallable);
+
     DeleteBackupRequest testRequest =
         DeleteBackupRequest.newBuilder()
             .setName(NameUtil.formatBackupName(PROJECT_ID, INSTANCE_ID, CLUSTER_ID, BACKUP_ID))
@@ -654,6 +630,8 @@ public class BigtableTableAdminClientTest {
   @Test
   public void testListBackups() {
     // Setup
+    Mockito.when(mockStub.listBackupsPagedCallable()).thenReturn(mockListBackupCallable);
+
     com.google.bigtable.admin.v2.ListBackupsRequest testRequest =
         com.google.bigtable.admin.v2.ListBackupsRequest.newBuilder()
             .setParent(NameUtil.formatClusterName(PROJECT_ID, INSTANCE_ID, CLUSTER_ID))
@@ -672,7 +650,6 @@ public class BigtableTableAdminClientTest {
     // 2 on the first page
     ListBackupsPage page0 = Mockito.mock(ListBackupsPage.class);
     Mockito.when(page0.getValues()).thenReturn(expectedProtos.subList(0, 2));
-    Mockito.when(page0.getNextPageToken()).thenReturn("next-page");
     Mockito.when(page0.hasNextPage()).thenReturn(true);
 
     // 1 on the last page
@@ -704,6 +681,8 @@ public class BigtableTableAdminClientTest {
   @Test
   public void testGetBackupIamPolicy() {
     // Setup
+    Mockito.when(mockStub.getIamPolicyCallable()).thenReturn(mockGetIamPolicyCallable);
+
     com.google.iam.v1.GetIamPolicyRequest expectedRequest =
         com.google.iam.v1.GetIamPolicyRequest.newBuilder()
             .setResource(NameUtil.formatBackupName(PROJECT_ID, INSTANCE_ID, CLUSTER_ID, BACKUP_ID))
@@ -736,6 +715,8 @@ public class BigtableTableAdminClientTest {
   @Test
   public void testSetIamPolicy() {
     // Setup
+    Mockito.when(mockStub.setIamPolicyCallable()).thenReturn(mockSetIamPolicyCallable);
+
     com.google.iam.v1.SetIamPolicyRequest expectedRequest =
         com.google.iam.v1.SetIamPolicyRequest.newBuilder()
             .setResource(NameUtil.formatBackupName(PROJECT_ID, INSTANCE_ID, CLUSTER_ID, BACKUP_ID))
@@ -780,6 +761,8 @@ public class BigtableTableAdminClientTest {
   @Test
   public void testTestIamPermissions() {
     // Setup
+    Mockito.when(mockStub.testIamPermissionsCallable()).thenReturn(mockTestIamPermissionsCallable);
+
     com.google.iam.v1.TestIamPermissionsRequest expectedRequest =
         com.google.iam.v1.TestIamPermissionsRequest.newBuilder()
             .setResource(NameUtil.formatBackupName(PROJECT_ID, INSTANCE_ID, CLUSTER_ID, BACKUP_ID))

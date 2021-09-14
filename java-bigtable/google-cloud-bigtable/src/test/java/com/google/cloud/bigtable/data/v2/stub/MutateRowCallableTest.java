@@ -16,7 +16,6 @@
 package com.google.cloud.bigtable.data.v2.stub;
 
 import com.google.api.core.SettableApiFuture;
-import com.google.api.gax.rpc.ApiCallContext;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.bigtable.v2.MutateRowRequest;
 import com.google.bigtable.v2.MutateRowResponse;
@@ -45,8 +44,7 @@ public class MutateRowCallableTest {
     innerCallable = Mockito.mock(UnaryCallable.class);
     innerMutation = ArgumentCaptor.forClass(MutateRowRequest.class);
     innerResult = SettableApiFuture.create();
-    Mockito.when(
-            innerCallable.futureCall(innerMutation.capture(), Mockito.any(ApiCallContext.class)))
+    Mockito.when(innerCallable.futureCall(innerMutation.capture(), Mockito.any()))
         .thenReturn(innerResult);
   }
 

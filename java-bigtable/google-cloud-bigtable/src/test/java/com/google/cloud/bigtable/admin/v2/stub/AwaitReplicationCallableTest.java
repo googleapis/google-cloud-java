@@ -35,15 +35,21 @@ import com.google.bigtable.admin.v2.TableName;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.TimeUnit;
 import org.junit.Before;
+import org.junit.Rule;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.junit.runners.JUnit4;
 import org.mockito.Mock;
 import org.mockito.Mockito;
-import org.mockito.runners.MockitoJUnitRunner;
+import org.mockito.junit.MockitoJUnit;
+import org.mockito.junit.MockitoRule;
+import org.mockito.quality.Strictness;
 import org.threeten.bp.Duration;
 
-@RunWith(MockitoJUnitRunner.class)
+@RunWith(JUnit4.class)
 public class AwaitReplicationCallableTest {
+  @Rule public MockitoRule mockitoRule = MockitoJUnit.rule().strictness(Strictness.WARN);
+
   private static final TableName TABLE_NAME = TableName.of("my-project", "my-instance", "my-table");
   private static final ApiCallContext CALL_CONTEXT = FakeCallContext.createDefault();
 
