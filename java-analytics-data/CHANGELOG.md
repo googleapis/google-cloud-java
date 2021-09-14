@@ -1,5 +1,18 @@
 # Changelog
 
+## [0.10.0](https://www.github.com/googleapis/java-analytics-data/compare/v0.9.2...v0.10.0) (2021-09-14)
+
+
+### Features
+
+* Remove use of deprecated gradle command in java README ([#1196](https://www.github.com/googleapis/java-analytics-data/issues/1196)) ([#319](https://www.github.com/googleapis/java-analytics-data/issues/319)) ([a9738c2](https://www.github.com/googleapis/java-analytics-data/commit/a9738c250bc6fe00b647d0b62ad001a3f9e04fa1))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.2.0 ([#322](https://www.github.com/googleapis/java-analytics-data/issues/322)) ([a274776](https://www.github.com/googleapis/java-analytics-data/commit/a27477683a4dedb04b4189b0ddeda54d1f303cb0))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.2.1 ([#332](https://www.github.com/googleapis/java-analytics-data/issues/332)) ([f3fc6b7](https://www.github.com/googleapis/java-analytics-data/commit/f3fc6b7613ef41597178d0f964fae7d873bb2e1d))
+
 ### [0.9.2](https://www.github.com/googleapis/java-analytics-data/compare/v0.9.1...v0.9.2) (2021-08-23)
 
 
