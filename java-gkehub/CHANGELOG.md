@@ -1,5 +1,29 @@
 # Changelog
 
+## [0.5.0](https://www.github.com/googleapis/java-gkehub/compare/v0.4.0...v0.5.0) (2021-09-14)
+
+
+### Features
+
+* Add `OnPremCluster` and `MultiCloudCluster` as `GkeCluster` equivalent field ([1beaef5](https://www.github.com/googleapis/java-gkehub/commit/1beaef52df97c981d7aced51b64e146dab46c60d))
+* Add `OnPremCluster` and `MultiCloudCluster` as `GkeCluster` equivalent field ([#108](https://www.github.com/googleapis/java-gkehub/issues/108)) ([b9e9611](https://www.github.com/googleapis/java-gkehub/commit/b9e96116bff0c782d43755cb9489d29b63dacb82))
+* Add request_id under `DeleteMembershipRequest` and `UpdateMembershipRequest` ([#103](https://www.github.com/googleapis/java-gkehub/issues/103)) ([1beaef5](https://www.github.com/googleapis/java-gkehub/commit/1beaef52df97c981d7aced51b64e146dab46c60d))
+* Move `GkeCluster` under oneof ([b9e9611](https://www.github.com/googleapis/java-gkehub/commit/b9e96116bff0c782d43755cb9489d29b63dacb82))
+* Remove use of deprecated gradle command in java README ([#1196](https://www.github.com/googleapis/java-gkehub/issues/1196)) ([#107](https://www.github.com/googleapis/java-gkehub/issues/107)) ([59bd4e3](https://www.github.com/googleapis/java-gkehub/commit/59bd4e363b34d3f5755f1d12000a73dbd22901a7))
+
+
+### Bug Fixes
+
+* Move `GkeCluster` under oneof ([1beaef5](https://www.github.com/googleapis/java-gkehub/commit/1beaef52df97c981d7aced51b64e146dab46c60d))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.0.1 ([#97](https://www.github.com/googleapis/java-gkehub/issues/97)) ([89ef34a](https://www.github.com/googleapis/java-gkehub/commit/89ef34a629e2c629983e97c69e9b97e0bf81857a))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.1.0 ([#101](https://www.github.com/googleapis/java-gkehub/issues/101)) ([14ebe56](https://www.github.com/googleapis/java-gkehub/commit/14ebe56abd9eae08c9a179fdc220a82d39a39e91))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.2.0 ([#110](https://www.github.com/googleapis/java-gkehub/issues/110)) ([332fb25](https://www.github.com/googleapis/java-gkehub/commit/332fb25ba8f5a4398dff6e1a78296b187d640855))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.2.1 ([#120](https://www.github.com/googleapis/java-gkehub/issues/120)) ([9245359](https://www.github.com/googleapis/java-gkehub/commit/9245359d3125a0daa6a24c941ddd81f36c75f0a1))
+
 ## [0.4.0](https://www.github.com/googleapis/java-gkehub/compare/v0.3.0...v0.4.0) (2021-08-10)
 
 
