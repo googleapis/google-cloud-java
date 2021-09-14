@@ -1,5 +1,20 @@
 # Changelog
 
+### [2.1.1](https://www.github.com/googleapis/java-translate/compare/v2.1.0...v2.1.1) (2021-09-14)
+
+
+### Bug Fixes
+
+* extend timeout on batch translation requests ([#775](https://www.github.com/googleapis/java-translate/issues/775)) ([5c9b5d6](https://www.github.com/googleapis/java-translate/commit/5c9b5d6ef148bc4596f9e7f37cd1feb20a93a311))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-core to v2.1.3 ([#787](https://www.github.com/googleapis/java-translate/issues/787)) ([061fdd1](https://www.github.com/googleapis/java-translate/commit/061fdd19810c0dcb34d5e800be4edb0e594aa07d))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.2.1 ([#788](https://www.github.com/googleapis/java-translate/issues/788)) ([0673e6e](https://www.github.com/googleapis/java-translate/commit/0673e6e88f0a686de04e36c9c5b89ff5fdef4b35))
+* update dependency com.google.cloud:google-cloud-storage to v2.1.1 ([#777](https://www.github.com/googleapis/java-translate/issues/777)) ([f81d39b](https://www.github.com/googleapis/java-translate/commit/f81d39b319c9a6f71f40883af0b4c086dc322e21))
+* update dependency com.google.cloud:google-cloud-storage to v2.1.2 ([#790](https://www.github.com/googleapis/java-translate/issues/790)) ([3d10b29](https://www.github.com/googleapis/java-translate/commit/3d10b298bcb7701caed374511a717a2a08df2496))
+
 ## [2.1.0](https://www.github.com/googleapis/java-translate/compare/v2.0.6...v2.1.0) (2021-08-31)
 
 
