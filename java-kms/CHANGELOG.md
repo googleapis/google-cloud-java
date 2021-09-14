@@ -1,5 +1,17 @@
 # Changelog
 
+## [2.1.0](https://www.github.com/googleapis/java-kms/compare/v2.0.3...v2.1.0) (2021-09-14)
+
+
+### Features
+
+* add support for Key Reimport ([#602](https://www.github.com/googleapis/java-kms/issues/602)) ([ced1d5c](https://www.github.com/googleapis/java-kms/commit/ced1d5c03e838bcef3c0ed8070342c6795891987))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.2.1 ([#613](https://www.github.com/googleapis/java-kms/issues/613)) ([05d235c](https://www.github.com/googleapis/java-kms/commit/05d235c80684d2325ef2416554ef2a4825192708))
+
 ### [2.0.3](https://www.github.com/googleapis/java-kms/compare/v2.0.2...v2.0.3) (2021-08-31)
 
 
