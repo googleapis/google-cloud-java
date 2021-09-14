@@ -1,5 +1,18 @@
 # Changelog
 
+## [0.5.0](https://www.github.com/googleapis/java-area120-tables/compare/v0.4.2...v0.5.0) (2021-09-14)
+
+
+### Features
+
+* Remove use of deprecated gradle command in java README ([#1196](https://www.github.com/googleapis/java-area120-tables/issues/1196)) ([#233](https://www.github.com/googleapis/java-area120-tables/issues/233)) ([05571c5](https://www.github.com/googleapis/java-area120-tables/commit/05571c585efc46f0733208ba5e451e06c1b4b165))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.2.0 ([#235](https://www.github.com/googleapis/java-area120-tables/issues/235)) ([65e16db](https://www.github.com/googleapis/java-area120-tables/commit/65e16dba6af0016d4b4641b5ec0db2c808d5a989))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.2.1 ([#243](https://www.github.com/googleapis/java-area120-tables/issues/243)) ([c110d7d](https://www.github.com/googleapis/java-area120-tables/commit/c110d7d918b525f2ec67b33c8cbf64a88e733b44))
+
 ### [0.4.2](https://www.github.com/googleapis/java-area120-tables/compare/v0.4.1...v0.4.2) (2021-08-23)
 
 
