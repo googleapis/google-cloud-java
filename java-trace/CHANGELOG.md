@@ -1,5 +1,12 @@
 # Changelog
 
+### [2.0.4](https://www.github.com/googleapis/java-trace/compare/v2.0.3...v2.0.4) (2021-09-14)
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.2.1 ([#631](https://www.github.com/googleapis/java-trace/issues/631)) ([38f7ddc](https://www.github.com/googleapis/java-trace/commit/38f7ddc10805317b03cfcd17127c54b88137b31e))
+
 ### [2.0.3](https://www.github.com/googleapis/java-trace/compare/v2.0.2...v2.0.3) (2021-08-31)
 
 
