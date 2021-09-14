@@ -1,5 +1,12 @@
 # Changelog
 
+### [1.1.1](https://www.github.com/googleapis/java-eventarc/compare/v1.1.0...v1.1.1) (2021-09-14)
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.2.1 ([#67](https://www.github.com/googleapis/java-eventarc/issues/67)) ([c20b68c](https://www.github.com/googleapis/java-eventarc/commit/c20b68c49a9e22b88b9c10e7db1ea8c75dce9e25))
+
 ## [1.1.0](https://www.github.com/googleapis/java-eventarc/compare/v1.0.1...v1.1.0) (2021-09-03)
 
 
