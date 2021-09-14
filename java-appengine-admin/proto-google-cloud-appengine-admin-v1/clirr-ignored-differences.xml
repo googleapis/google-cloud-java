@@ -30,9 +30,4 @@
     <className>com/google/appengine/v1/firewall/*OrBuilder</className>
     <method>boolean has*(*)</method>
   </difference>
-  <difference>
-    <differenceType>8001</differenceType>
-    <className>com/google/appengine/v1/Instance*</className>
-  </difference>
-
 </differences>
