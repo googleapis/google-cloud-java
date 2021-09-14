@@ -1,5 +1,17 @@
 # Changelog
 
+## [3.2.0](https://www.github.com/googleapis/java-channel/compare/v3.1.0...v3.2.0) (2021-09-14)
+
+
+### Features
+
+* add API ImportCustomer for Cloud Channel API docs: update comments for a few fields ([#175](https://www.github.com/googleapis/java-channel/issues/175)) ([825dd14](https://www.github.com/googleapis/java-channel/commit/825dd14d7ae7b585a75226a486638c155d32805b))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.2.1 ([#182](https://www.github.com/googleapis/java-channel/issues/182)) ([bbe62f2](https://www.github.com/googleapis/java-channel/commit/bbe62f2bcbda9a06daff8ad4e50513df7dbf9639))
+
 ## [3.1.0](https://www.github.com/googleapis/java-channel/compare/v3.0.2...v3.1.0) (2021-08-31)
 
 
