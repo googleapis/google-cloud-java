@@ -1,11 +1,10 @@
-#!/bin/bash
-# Copyright 2018 Google Inc.
+# Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
 # You may obtain a copy of the License at
 #
-#      http://www.apache.org/licenses/LICENSE-2.0
+#     http://www.apache.org/licenses/LICENSE-2.0
 #
 # Unless required by applicable law or agreed to in writing, software
 # distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,20 +12,8 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-set -eo pipefail
+"""This script is used to synthesize generated the README for this library."""
 
-# STAGING_REPOSITORY_ID must be set
-if [ -z "${STAGING_REPOSITORY_ID}" ]; then
-  echo "Missing STAGING_REPOSITORY_ID environment variable"
-  exit 1
-fi
+from synthtool.languages import java
 
-source $(dirname "$0")/common.sh
-pushd $(dirname "$0")/../../
-
-setup_environment_secrets
-create_settings_xml_file "settings.xml"
-
-mvn nexus-staging:drop -B \
-  --settings=settings.xml \
-  -DstagingRepositoryId=${STAGING_REPOSITORY_ID}
+java.custom_templates(["java_library/README.md"])

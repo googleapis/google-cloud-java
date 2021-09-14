@@ -1,5 +1,20 @@
 # Changelog
 
+### [2.0.6](https://www.github.com/googleapis/java-video-intelligence/compare/v2.0.5...v2.0.6) (2021-09-14)
+
+
+### Features
+
+* Add code sample for video streaming action recognition.  ([#667](https://www.github.com/googleapis/java-video-intelligence/issues/667)) ([3cf1a45](https://www.github.com/googleapis/java-video-intelligence/commit/3cf1a4562999371e9e51adbcd5766937cb388d8c))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-core to v2.1.3 ([#671](https://www.github.com/googleapis/java-video-intelligence/issues/671)) ([e1c543f](https://www.github.com/googleapis/java-video-intelligence/commit/e1c543f76921c4f920533fca7073b376dd2836b7))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.2.1 ([#673](https://www.github.com/googleapis/java-video-intelligence/issues/673)) ([5fd2dcb](https://www.github.com/googleapis/java-video-intelligence/commit/5fd2dcb896fac51e932f57eef717ea5383e6a655))
+* update dependency com.google.cloud:google-cloud-storage to v2.1.1 ([#663](https://www.github.com/googleapis/java-video-intelligence/issues/663)) ([d01f0ff](https://www.github.com/googleapis/java-video-intelligence/commit/d01f0ff3aac4a85ef9542c5f126734dda3c92599))
+* update dependency com.google.cloud:google-cloud-storage to v2.1.2 ([#675](https://www.github.com/googleapis/java-video-intelligence/issues/675)) ([b69341a](https://www.github.com/googleapis/java-video-intelligence/commit/b69341aed764b877c065d0e89b2d6dbf7c70b7bd))
+
 ### [2.0.5](https://www.github.com/googleapis/java-video-intelligence/compare/v2.0.4...v2.0.5) (2021-08-31)
 
 
