@@ -1,5 +1,14 @@
 # Changelog
 
+### [2.1.1](https://www.github.com/googleapis/java-recaptchaenterprise/compare/v2.1.0...v2.1.1) (2021-09-14)
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.2.1 ([#569](https://www.github.com/googleapis/java-recaptchaenterprise/issues/569)) ([a4cc699](https://www.github.com/googleapis/java-recaptchaenterprise/commit/a4cc699a432626e4d49c495ff58d3aa505e14515))
+* update dependency io.github.bonigarcia:webdrivermanager to v5.0.2 ([#568](https://www.github.com/googleapis/java-recaptchaenterprise/issues/568)) ([2cc0183](https://www.github.com/googleapis/java-recaptchaenterprise/commit/2cc0183e2d6cb5ef33f8f0cac6e36370ac9495c6))
+* update dependency net.bytebuddy:byte-buddy to v1.11.15 ([#555](https://www.github.com/googleapis/java-recaptchaenterprise/issues/555)) ([412ebe6](https://www.github.com/googleapis/java-recaptchaenterprise/commit/412ebe62fa1b56c279d323ab684da4ece4629afd))
+
 ## [2.1.0](https://www.github.com/googleapis/java-recaptchaenterprise/compare/v2.0.2...v2.1.0) (2021-09-03)
 
 
