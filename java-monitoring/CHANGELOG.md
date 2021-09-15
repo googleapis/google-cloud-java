@@ -1,5 +1,12 @@
 # Changelog
 
+### [3.0.5](https://www.github.com/googleapis/java-monitoring/compare/v3.0.4...v3.0.5) (2021-09-15)
+
+
+### Dependencies
+
+* update dependency com.google.protobuf:protobuf-java-util to v3.18.0 ([#678](https://www.github.com/googleapis/java-monitoring/issues/678)) ([a6f7e57](https://www.github.com/googleapis/java-monitoring/commit/a6f7e575bd8e54e9cc119898643a9490e6c4a4e3))
+
 ### [3.0.4](https://www.github.com/googleapis/java-monitoring/compare/v3.0.3...v3.0.4) (2021-09-14)
 
 
