@@ -41,7 +41,7 @@ If you are using Maven without BOM, add this to your dependencies:
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-memcache</artifactId>
-  <version>2.1.0</version>
+  <version>2.1.1</version>
 </dependency>
 
 ```
@@ -56,13 +56,13 @@ implementation 'com.google.cloud:google-cloud-memcache'
 If you are using Gradle without BOM, add this to your dependencies
 
 ```Groovy
-implementation 'com.google.cloud:google-cloud-memcache:2.1.0'
+implementation 'com.google.cloud:google-cloud-memcache:2.1.1'
 ```
 
 If you are using SBT, add this to your dependencies
 
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-memcache" % "2.1.0"
+libraryDependencies += "com.google.cloud" % "google-cloud-memcache" % "2.1.1"
 ```
 
 ## Authentication
