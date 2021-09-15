@@ -1,5 +1,20 @@
 # Changelog
 
+## [0.6.0](https://www.github.com/googleapis/java-analytics-admin/compare/v0.5.0...v0.6.0) (2021-09-15)
+
+
+### Features
+
+* Remove use of deprecated gradle command in java README ([#1196](https://www.github.com/googleapis/java-analytics-admin/issues/1196)) ([#273](https://www.github.com/googleapis/java-analytics-admin/issues/273)) ([dd7bfaa](https://www.github.com/googleapis/java-analytics-admin/commit/dd7bfaa111cf32a7e3f415ec43fcd53c7010769e))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.0.1 ([#264](https://www.github.com/googleapis/java-analytics-admin/issues/264)) ([a1c4442](https://www.github.com/googleapis/java-analytics-admin/commit/a1c444255cf6d0e14f81b679f7f41e4c8c5bbfa3))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.1.0 ([#268](https://www.github.com/googleapis/java-analytics-admin/issues/268)) ([1ef6fd5](https://www.github.com/googleapis/java-analytics-admin/commit/1ef6fd5631f6380ea10dbeb56959b93088fd7bab))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.2.0 ([#275](https://www.github.com/googleapis/java-analytics-admin/issues/275)) ([98c2fc5](https://www.github.com/googleapis/java-analytics-admin/commit/98c2fc502d1640021c84e3c739c74b0f48fbed9b))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.2.1 ([#283](https://www.github.com/googleapis/java-analytics-admin/issues/283)) ([498c5bf](https://www.github.com/googleapis/java-analytics-admin/commit/498c5bf2459a813d12f796362e113e782aa78114))
+
 ## [0.5.0](https://www.github.com/googleapis/java-analytics-admin/compare/v0.4.0...v0.5.0) (2021-08-06)
 
 
