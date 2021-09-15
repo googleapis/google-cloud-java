@@ -1,5 +1,12 @@
 # Changelog
 
+### [1.5.6](https://www.github.com/googleapis/java-datacatalog/compare/v1.5.5...v1.5.6) (2021-09-15)
+
+
+### Dependencies
+
+* update dependency com.google.protobuf:protobuf-java-util to v3.18.0 ([#649](https://www.github.com/googleapis/java-datacatalog/issues/649)) ([9baaa93](https://www.github.com/googleapis/java-datacatalog/commit/9baaa937c8b947a3c15886f8a7f9cc4e3016d275))
+
 ### [1.5.5](https://www.github.com/googleapis/java-datacatalog/compare/v1.5.4...v1.5.5) (2021-09-14)
 
 
