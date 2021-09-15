@@ -1,5 +1,12 @@
 # Changelog
 
+### [2.1.2](https://www.github.com/googleapis/java-bigqueryconnection/compare/v2.1.1...v2.1.2) (2021-09-15)
+
+
+### Dependencies
+
+* update dependency com.google.protobuf:protobuf-java-util to v3.18.0 ([#532](https://www.github.com/googleapis/java-bigqueryconnection/issues/532)) ([c9ba178](https://www.github.com/googleapis/java-bigqueryconnection/commit/c9ba178c2f7c85952c0a8cc873a5b170f712eb40))
+
 ### [2.1.1](https://www.github.com/googleapis/java-bigqueryconnection/compare/v2.1.0...v2.1.1) (2021-09-14)
 
 
