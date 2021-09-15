@@ -1356,6 +1356,44 @@ public interface ClusterOrBuilder
    *
    *
    * <pre>
+   * Configuration for issuance of mTLS keys and certificates to Kubernetes
+   * pods.
+   * </pre>
+   *
+   * <code>.google.container.v1beta1.WorkloadCertificates workload_certificates = 52;</code>
+   *
+   * @return Whether the workloadCertificates field is set.
+   */
+  boolean hasWorkloadCertificates();
+  /**
+   *
+   *
+   * <pre>
+   * Configuration for issuance of mTLS keys and certificates to Kubernetes
+   * pods.
+   * </pre>
+   *
+   * <code>.google.container.v1beta1.WorkloadCertificates workload_certificates = 52;</code>
+   *
+   * @return The workloadCertificates.
+   */
+  com.google.container.v1beta1.WorkloadCertificates getWorkloadCertificates();
+  /**
+   *
+   *
+   * <pre>
+   * Configuration for issuance of mTLS keys and certificates to Kubernetes
+   * pods.
+   * </pre>
+   *
+   * <code>.google.container.v1beta1.WorkloadCertificates workload_certificates = 52;</code>
+   */
+  com.google.container.v1beta1.WorkloadCertificatesOrBuilder getWorkloadCertificatesOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Telemetry integration for the cluster.
    * </pre>
    *
@@ -1491,6 +1529,41 @@ public interface ClusterOrBuilder
    * <code>.google.container.v1beta1.ConfidentialNodes confidential_nodes = 50;</code>
    */
   com.google.container.v1beta1.ConfidentialNodesOrBuilder getConfidentialNodesOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Configuration for Identity Service component.
+   * </pre>
+   *
+   * <code>.google.container.v1beta1.IdentityServiceConfig identity_service_config = 54;</code>
+   *
+   * @return Whether the identityServiceConfig field is set.
+   */
+  boolean hasIdentityServiceConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Configuration for Identity Service component.
+   * </pre>
+   *
+   * <code>.google.container.v1beta1.IdentityServiceConfig identity_service_config = 54;</code>
+   *
+   * @return The identityServiceConfig.
+   */
+  com.google.container.v1beta1.IdentityServiceConfig getIdentityServiceConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Configuration for Identity Service component.
+   * </pre>
+   *
+   * <code>.google.container.v1beta1.IdentityServiceConfig identity_service_config = 54;</code>
+   */
+  com.google.container.v1beta1.IdentityServiceConfigOrBuilder getIdentityServiceConfigOrBuilder();
 
   /**
    *
@@ -2112,4 +2185,172 @@ public interface ClusterOrBuilder
    * <code>.google.container.v1beta1.Master master = 124;</code>
    */
   com.google.container.v1beta1.MasterOrBuilder getMasterOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Autopilot configuration for the cluster.
+   * </pre>
+   *
+   * <code>.google.container.v1beta1.Autopilot autopilot = 128;</code>
+   *
+   * @return Whether the autopilot field is set.
+   */
+  boolean hasAutopilot();
+  /**
+   *
+   *
+   * <pre>
+   * Autopilot configuration for the cluster.
+   * </pre>
+   *
+   * <code>.google.container.v1beta1.Autopilot autopilot = 128;</code>
+   *
+   * @return The autopilot.
+   */
+  com.google.container.v1beta1.Autopilot getAutopilot();
+  /**
+   *
+   *
+   * <pre>
+   * Autopilot configuration for the cluster.
+   * </pre>
+   *
+   * <code>.google.container.v1beta1.Autopilot autopilot = 128;</code>
+   */
+  com.google.container.v1beta1.AutopilotOrBuilder getAutopilotOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Unique id for the cluster.
+   * </pre>
+   *
+   * <code>string id = 129 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The id.
+   */
+  java.lang.String getId();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Unique id for the cluster.
+   * </pre>
+   *
+   * <code>string id = 129 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The bytes for id.
+   */
+  com.google.protobuf.ByteString getIdBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Default NodePool settings for the entire cluster. These settings are
+   * overridden if specified on the specific NodePool object.
+   * </pre>
+   *
+   * <code>.google.container.v1beta1.NodePoolDefaults node_pool_defaults = 131;</code>
+   *
+   * @return Whether the nodePoolDefaults field is set.
+   */
+  boolean hasNodePoolDefaults();
+  /**
+   *
+   *
+   * <pre>
+   * Default NodePool settings for the entire cluster. These settings are
+   * overridden if specified on the specific NodePool object.
+   * </pre>
+   *
+   * <code>.google.container.v1beta1.NodePoolDefaults node_pool_defaults = 131;</code>
+   *
+   * @return The nodePoolDefaults.
+   */
+  com.google.container.v1beta1.NodePoolDefaults getNodePoolDefaults();
+  /**
+   *
+   *
+   * <pre>
+   * Default NodePool settings for the entire cluster. These settings are
+   * overridden if specified on the specific NodePool object.
+   * </pre>
+   *
+   * <code>.google.container.v1beta1.NodePoolDefaults node_pool_defaults = 131;</code>
+   */
+  com.google.container.v1beta1.NodePoolDefaultsOrBuilder getNodePoolDefaultsOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Logging configuration for the cluster.
+   * </pre>
+   *
+   * <code>.google.container.v1beta1.LoggingConfig logging_config = 132;</code>
+   *
+   * @return Whether the loggingConfig field is set.
+   */
+  boolean hasLoggingConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Logging configuration for the cluster.
+   * </pre>
+   *
+   * <code>.google.container.v1beta1.LoggingConfig logging_config = 132;</code>
+   *
+   * @return The loggingConfig.
+   */
+  com.google.container.v1beta1.LoggingConfig getLoggingConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Logging configuration for the cluster.
+   * </pre>
+   *
+   * <code>.google.container.v1beta1.LoggingConfig logging_config = 132;</code>
+   */
+  com.google.container.v1beta1.LoggingConfigOrBuilder getLoggingConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Monitoring configuration for the cluster.
+   * </pre>
+   *
+   * <code>.google.container.v1beta1.MonitoringConfig monitoring_config = 133;</code>
+   *
+   * @return Whether the monitoringConfig field is set.
+   */
+  boolean hasMonitoringConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Monitoring configuration for the cluster.
+   * </pre>
+   *
+   * <code>.google.container.v1beta1.MonitoringConfig monitoring_config = 133;</code>
+   *
+   * @return The monitoringConfig.
+   */
+  com.google.container.v1beta1.MonitoringConfig getMonitoringConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Monitoring configuration for the cluster.
+   * </pre>
+   *
+   * <code>.google.container.v1beta1.MonitoringConfig monitoring_config = 133;</code>
+   */
+  com.google.container.v1beta1.MonitoringConfigOrBuilder getMonitoringConfigOrBuilder();
 }

@@ -134,6 +134,25 @@ public final class ServerConfig extends com.google.protobuf.GeneratedMessageV3
                       extensionRegistry));
               break;
             }
+          case 82:
+            {
+              if (!((mutable_bitField0_ & 0x00000010) != 0)) {
+                windowsVersionMaps_ =
+                    com.google.protobuf.MapField.newMapField(
+                        WindowsVersionMapsDefaultEntryHolder.defaultEntry);
+                mutable_bitField0_ |= 0x00000010;
+              }
+              com.google.protobuf.MapEntry<
+                      java.lang.String, com.google.container.v1beta1.WindowsVersions>
+                  windowsVersionMaps__ =
+                      input.readMessage(
+                          WindowsVersionMapsDefaultEntryHolder.defaultEntry.getParserForType(),
+                          extensionRegistry);
+              windowsVersionMaps_
+                  .getMutableMap()
+                  .put(windowsVersionMaps__.getKey(), windowsVersionMaps__.getValue());
+              break;
+            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -168,6 +187,17 @@ public final class ServerConfig extends com.google.protobuf.GeneratedMessageV3
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.container.v1beta1.ClusterServiceProto
         .internal_static_google_container_v1beta1_ServerConfig_descriptor;
+  }
+
+  @SuppressWarnings({"rawtypes"})
+  @java.lang.Override
+  protected com.google.protobuf.MapField internalGetMapField(int number) {
+    switch (number) {
+      case 10:
+        return internalGetWindowsVersionMaps();
+      default:
+        throw new RuntimeException("Invalid map field number: " + number);
+    }
   }
 
   @java.lang.Override
@@ -3347,6 +3377,122 @@ public final class ServerConfig extends com.google.protobuf.GeneratedMessageV3
     return channels_.get(index);
   }
 
+  public static final int WINDOWS_VERSION_MAPS_FIELD_NUMBER = 10;
+
+  private static final class WindowsVersionMapsDefaultEntryHolder {
+    static final com.google.protobuf.MapEntry<
+            java.lang.String, com.google.container.v1beta1.WindowsVersions>
+        defaultEntry =
+            com.google.protobuf.MapEntry
+                .<java.lang.String, com.google.container.v1beta1.WindowsVersions>newDefaultInstance(
+                    com.google.container.v1beta1.ClusterServiceProto
+                        .internal_static_google_container_v1beta1_ServerConfig_WindowsVersionMapsEntry_descriptor,
+                    com.google.protobuf.WireFormat.FieldType.STRING,
+                    "",
+                    com.google.protobuf.WireFormat.FieldType.MESSAGE,
+                    com.google.container.v1beta1.WindowsVersions.getDefaultInstance());
+  }
+
+  private com.google.protobuf.MapField<
+          java.lang.String, com.google.container.v1beta1.WindowsVersions>
+      windowsVersionMaps_;
+
+  private com.google.protobuf.MapField<
+          java.lang.String, com.google.container.v1beta1.WindowsVersions>
+      internalGetWindowsVersionMaps() {
+    if (windowsVersionMaps_ == null) {
+      return com.google.protobuf.MapField.emptyMapField(
+          WindowsVersionMapsDefaultEntryHolder.defaultEntry);
+    }
+    return windowsVersionMaps_;
+  }
+
+  public int getWindowsVersionMapsCount() {
+    return internalGetWindowsVersionMaps().getMap().size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Maps of Kubernetes version and supported Windows server versions.
+   * </pre>
+   *
+   * <code>map&lt;string, .google.container.v1beta1.WindowsVersions&gt; windows_version_maps = 10;
+   * </code>
+   */
+  @java.lang.Override
+  public boolean containsWindowsVersionMaps(java.lang.String key) {
+    if (key == null) {
+      throw new java.lang.NullPointerException();
+    }
+    return internalGetWindowsVersionMaps().getMap().containsKey(key);
+  }
+  /** Use {@link #getWindowsVersionMapsMap()} instead. */
+  @java.lang.Override
+  @java.lang.Deprecated
+  public java.util.Map<java.lang.String, com.google.container.v1beta1.WindowsVersions>
+      getWindowsVersionMaps() {
+    return getWindowsVersionMapsMap();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Maps of Kubernetes version and supported Windows server versions.
+   * </pre>
+   *
+   * <code>map&lt;string, .google.container.v1beta1.WindowsVersions&gt; windows_version_maps = 10;
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.Map<java.lang.String, com.google.container.v1beta1.WindowsVersions>
+      getWindowsVersionMapsMap() {
+    return internalGetWindowsVersionMaps().getMap();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Maps of Kubernetes version and supported Windows server versions.
+   * </pre>
+   *
+   * <code>map&lt;string, .google.container.v1beta1.WindowsVersions&gt; windows_version_maps = 10;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.container.v1beta1.WindowsVersions getWindowsVersionMapsOrDefault(
+      java.lang.String key, com.google.container.v1beta1.WindowsVersions defaultValue) {
+    if (key == null) {
+      throw new java.lang.NullPointerException();
+    }
+    java.util.Map<java.lang.String, com.google.container.v1beta1.WindowsVersions> map =
+        internalGetWindowsVersionMaps().getMap();
+    return map.containsKey(key) ? map.get(key) : defaultValue;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Maps of Kubernetes version and supported Windows server versions.
+   * </pre>
+   *
+   * <code>map&lt;string, .google.container.v1beta1.WindowsVersions&gt; windows_version_maps = 10;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.container.v1beta1.WindowsVersions getWindowsVersionMapsOrThrow(
+      java.lang.String key) {
+    if (key == null) {
+      throw new java.lang.NullPointerException();
+    }
+    java.util.Map<java.lang.String, com.google.container.v1beta1.WindowsVersions> map =
+        internalGetWindowsVersionMaps().getMap();
+    if (!map.containsKey(key)) {
+      throw new java.lang.IllegalArgumentException();
+    }
+    return map.get(key);
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -3379,6 +3525,11 @@ public final class ServerConfig extends com.google.protobuf.GeneratedMessageV3
     for (int i = 0; i < channels_.size(); i++) {
       output.writeMessage(9, channels_.get(i));
     }
+    com.google.protobuf.GeneratedMessageV3.serializeStringMapTo(
+        output,
+        internalGetWindowsVersionMaps(),
+        WindowsVersionMapsDefaultEntryHolder.defaultEntry,
+        10);
     unknownFields.writeTo(output);
   }
 
@@ -3421,6 +3572,17 @@ public final class ServerConfig extends com.google.protobuf.GeneratedMessageV3
     for (int i = 0; i < channels_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(9, channels_.get(i));
     }
+    for (java.util.Map.Entry<java.lang.String, com.google.container.v1beta1.WindowsVersions> entry :
+        internalGetWindowsVersionMaps().getMap().entrySet()) {
+      com.google.protobuf.MapEntry<java.lang.String, com.google.container.v1beta1.WindowsVersions>
+          windowsVersionMaps__ =
+              WindowsVersionMapsDefaultEntryHolder.defaultEntry
+                  .newBuilderForType()
+                  .setKey(entry.getKey())
+                  .setValue(entry.getValue())
+                  .build();
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(10, windowsVersionMaps__);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -3443,6 +3605,8 @@ public final class ServerConfig extends com.google.protobuf.GeneratedMessageV3
     if (!getValidImageTypesList().equals(other.getValidImageTypesList())) return false;
     if (!getValidMasterVersionsList().equals(other.getValidMasterVersionsList())) return false;
     if (!getChannelsList().equals(other.getChannelsList())) return false;
+    if (!internalGetWindowsVersionMaps().equals(other.internalGetWindowsVersionMaps()))
+      return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -3473,6 +3637,10 @@ public final class ServerConfig extends com.google.protobuf.GeneratedMessageV3
     if (getChannelsCount() > 0) {
       hash = (37 * hash) + CHANNELS_FIELD_NUMBER;
       hash = (53 * hash) + getChannelsList().hashCode();
+    }
+    if (!internalGetWindowsVersionMaps().getMap().isEmpty()) {
+      hash = (37 * hash) + WINDOWS_VERSION_MAPS_FIELD_NUMBER;
+      hash = (53 * hash) + internalGetWindowsVersionMaps().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -3592,6 +3760,26 @@ public final class ServerConfig extends com.google.protobuf.GeneratedMessageV3
           .internal_static_google_container_v1beta1_ServerConfig_descriptor;
     }
 
+    @SuppressWarnings({"rawtypes"})
+    protected com.google.protobuf.MapField internalGetMapField(int number) {
+      switch (number) {
+        case 10:
+          return internalGetWindowsVersionMaps();
+        default:
+          throw new RuntimeException("Invalid map field number: " + number);
+      }
+    }
+
+    @SuppressWarnings({"rawtypes"})
+    protected com.google.protobuf.MapField internalGetMutableMapField(int number) {
+      switch (number) {
+        case 10:
+          return internalGetMutableWindowsVersionMaps();
+        default:
+          throw new RuntimeException("Invalid map field number: " + number);
+      }
+    }
+
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
@@ -3637,6 +3825,7 @@ public final class ServerConfig extends com.google.protobuf.GeneratedMessageV3
       } else {
         channelsBuilder_.clear();
       }
+      internalGetMutableWindowsVersionMaps().clear();
       return this;
     }
 
@@ -3691,6 +3880,8 @@ public final class ServerConfig extends com.google.protobuf.GeneratedMessageV3
       } else {
         result.channels_ = channelsBuilder_.build();
       }
+      result.windowsVersionMaps_ = internalGetWindowsVersionMaps();
+      result.windowsVersionMaps_.makeImmutable();
       onBuilt();
       return result;
     }
@@ -3805,6 +3996,7 @@ public final class ServerConfig extends com.google.protobuf.GeneratedMessageV3
           }
         }
       }
+      internalGetMutableWindowsVersionMaps().mergeFrom(other.internalGetWindowsVersionMaps());
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
@@ -4935,6 +5127,186 @@ public final class ServerConfig extends com.google.protobuf.GeneratedMessageV3
         channels_ = null;
       }
       return channelsBuilder_;
+    }
+
+    private com.google.protobuf.MapField<
+            java.lang.String, com.google.container.v1beta1.WindowsVersions>
+        windowsVersionMaps_;
+
+    private com.google.protobuf.MapField<
+            java.lang.String, com.google.container.v1beta1.WindowsVersions>
+        internalGetWindowsVersionMaps() {
+      if (windowsVersionMaps_ == null) {
+        return com.google.protobuf.MapField.emptyMapField(
+            WindowsVersionMapsDefaultEntryHolder.defaultEntry);
+      }
+      return windowsVersionMaps_;
+    }
+
+    private com.google.protobuf.MapField<
+            java.lang.String, com.google.container.v1beta1.WindowsVersions>
+        internalGetMutableWindowsVersionMaps() {
+      onChanged();
+      ;
+      if (windowsVersionMaps_ == null) {
+        windowsVersionMaps_ =
+            com.google.protobuf.MapField.newMapField(
+                WindowsVersionMapsDefaultEntryHolder.defaultEntry);
+      }
+      if (!windowsVersionMaps_.isMutable()) {
+        windowsVersionMaps_ = windowsVersionMaps_.copy();
+      }
+      return windowsVersionMaps_;
+    }
+
+    public int getWindowsVersionMapsCount() {
+      return internalGetWindowsVersionMaps().getMap().size();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Maps of Kubernetes version and supported Windows server versions.
+     * </pre>
+     *
+     * <code>map&lt;string, .google.container.v1beta1.WindowsVersions&gt; windows_version_maps = 10;
+     * </code>
+     */
+    @java.lang.Override
+    public boolean containsWindowsVersionMaps(java.lang.String key) {
+      if (key == null) {
+        throw new java.lang.NullPointerException();
+      }
+      return internalGetWindowsVersionMaps().getMap().containsKey(key);
+    }
+    /** Use {@link #getWindowsVersionMapsMap()} instead. */
+    @java.lang.Override
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, com.google.container.v1beta1.WindowsVersions>
+        getWindowsVersionMaps() {
+      return getWindowsVersionMapsMap();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Maps of Kubernetes version and supported Windows server versions.
+     * </pre>
+     *
+     * <code>map&lt;string, .google.container.v1beta1.WindowsVersions&gt; windows_version_maps = 10;
+     * </code>
+     */
+    @java.lang.Override
+    public java.util.Map<java.lang.String, com.google.container.v1beta1.WindowsVersions>
+        getWindowsVersionMapsMap() {
+      return internalGetWindowsVersionMaps().getMap();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Maps of Kubernetes version and supported Windows server versions.
+     * </pre>
+     *
+     * <code>map&lt;string, .google.container.v1beta1.WindowsVersions&gt; windows_version_maps = 10;
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.container.v1beta1.WindowsVersions getWindowsVersionMapsOrDefault(
+        java.lang.String key, com.google.container.v1beta1.WindowsVersions defaultValue) {
+      if (key == null) {
+        throw new java.lang.NullPointerException();
+      }
+      java.util.Map<java.lang.String, com.google.container.v1beta1.WindowsVersions> map =
+          internalGetWindowsVersionMaps().getMap();
+      return map.containsKey(key) ? map.get(key) : defaultValue;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Maps of Kubernetes version and supported Windows server versions.
+     * </pre>
+     *
+     * <code>map&lt;string, .google.container.v1beta1.WindowsVersions&gt; windows_version_maps = 10;
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.container.v1beta1.WindowsVersions getWindowsVersionMapsOrThrow(
+        java.lang.String key) {
+      if (key == null) {
+        throw new java.lang.NullPointerException();
+      }
+      java.util.Map<java.lang.String, com.google.container.v1beta1.WindowsVersions> map =
+          internalGetWindowsVersionMaps().getMap();
+      if (!map.containsKey(key)) {
+        throw new java.lang.IllegalArgumentException();
+      }
+      return map.get(key);
+    }
+
+    public Builder clearWindowsVersionMaps() {
+      internalGetMutableWindowsVersionMaps().getMutableMap().clear();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Maps of Kubernetes version and supported Windows server versions.
+     * </pre>
+     *
+     * <code>map&lt;string, .google.container.v1beta1.WindowsVersions&gt; windows_version_maps = 10;
+     * </code>
+     */
+    public Builder removeWindowsVersionMaps(java.lang.String key) {
+      if (key == null) {
+        throw new java.lang.NullPointerException();
+      }
+      internalGetMutableWindowsVersionMaps().getMutableMap().remove(key);
+      return this;
+    }
+    /** Use alternate mutation accessors instead. */
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, com.google.container.v1beta1.WindowsVersions>
+        getMutableWindowsVersionMaps() {
+      return internalGetMutableWindowsVersionMaps().getMutableMap();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Maps of Kubernetes version and supported Windows server versions.
+     * </pre>
+     *
+     * <code>map&lt;string, .google.container.v1beta1.WindowsVersions&gt; windows_version_maps = 10;
+     * </code>
+     */
+    public Builder putWindowsVersionMaps(
+        java.lang.String key, com.google.container.v1beta1.WindowsVersions value) {
+      if (key == null) {
+        throw new java.lang.NullPointerException();
+      }
+      if (value == null) {
+        throw new java.lang.NullPointerException();
+      }
+      internalGetMutableWindowsVersionMaps().getMutableMap().put(key, value);
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Maps of Kubernetes version and supported Windows server versions.
+     * </pre>
+     *
+     * <code>map&lt;string, .google.container.v1beta1.WindowsVersions&gt; windows_version_maps = 10;
+     * </code>
+     */
+    public Builder putAllWindowsVersionMaps(
+        java.util.Map<java.lang.String, com.google.container.v1beta1.WindowsVersions> values) {
+      internalGetMutableWindowsVersionMaps().getMutableMap().putAll(values);
+      return this;
     }
 
     @java.lang.Override

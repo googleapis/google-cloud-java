@@ -596,8 +596,12 @@ public class ClusterManagerClient implements BackgroundResource {
    *           .setWorkloadMetadataConfig(WorkloadMetadataConfig.newBuilder().build())
    *           .setName("name3373707")
    *           .setUpgradeSettings(NodePool.UpgradeSettings.newBuilder().build())
+   *           .setTags(NetworkTags.newBuilder().build())
+   *           .setTaints(NodeTaints.newBuilder().build())
+   *           .setLabels(NodeLabels.newBuilder().build())
    *           .setLinuxNodeConfig(LinuxNodeConfig.newBuilder().build())
    *           .setKubeletConfig(NodeKubeletConfig.newBuilder().build())
+   *           .setGvnic(VirtualNIC.newBuilder().build())
    *           .build();
    *   Operation response = clusterManagerClient.updateNodePool(request);
    * }
@@ -630,8 +634,12 @@ public class ClusterManagerClient implements BackgroundResource {
    *           .setWorkloadMetadataConfig(WorkloadMetadataConfig.newBuilder().build())
    *           .setName("name3373707")
    *           .setUpgradeSettings(NodePool.UpgradeSettings.newBuilder().build())
+   *           .setTags(NetworkTags.newBuilder().build())
+   *           .setTaints(NodeTaints.newBuilder().build())
+   *           .setLabels(NodeLabels.newBuilder().build())
    *           .setLinuxNodeConfig(LinuxNodeConfig.newBuilder().build())
    *           .setKubeletConfig(NodeKubeletConfig.newBuilder().build())
+   *           .setGvnic(VirtualNIC.newBuilder().build())
    *           .build();
    *   ApiFuture<Operation> future =
    *       clusterManagerClient.updateNodePoolCallable().futureCall(request);
@@ -2703,7 +2711,9 @@ public class ClusterManagerClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Sets the size for a specific node pool.
+   * SetNodePoolSizeRequest sets the size of a node pool. The new size will be used for all
+   * replicas, including future replicas created by modifying
+   * [NodePool.locations][google.container.v1beta1.NodePool.locations].
    *
    * <p>Sample code:
    *
@@ -2731,7 +2741,9 @@ public class ClusterManagerClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Sets the size for a specific node pool.
+   * SetNodePoolSizeRequest sets the size of a node pool. The new size will be used for all
+   * replicas, including future replicas created by modifying
+   * [NodePool.locations][google.container.v1beta1.NodePool.locations].
    *
    * <p>Sample code:
    *

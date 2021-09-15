@@ -28,6 +28,7 @@ import com.google.api.gax.rpc.InvalidArgumentException;
 import com.google.common.collect.Lists;
 import com.google.container.v1beta1.AddonsConfig;
 import com.google.container.v1beta1.AuthenticatorGroupsConfig;
+import com.google.container.v1beta1.Autopilot;
 import com.google.container.v1beta1.BinaryAuthorization;
 import com.google.container.v1beta1.CancelOperationRequest;
 import com.google.container.v1beta1.Cluster;
@@ -48,6 +49,7 @@ import com.google.container.v1beta1.GetNodePoolRequest;
 import com.google.container.v1beta1.GetOperationRequest;
 import com.google.container.v1beta1.GetServerConfigRequest;
 import com.google.container.v1beta1.IPAllocationPolicy;
+import com.google.container.v1beta1.IdentityServiceConfig;
 import com.google.container.v1beta1.Jwk;
 import com.google.container.v1beta1.LegacyAbac;
 import com.google.container.v1beta1.LinuxNodeConfig;
@@ -62,18 +64,25 @@ import com.google.container.v1beta1.ListOperationsResponse;
 import com.google.container.v1beta1.ListUsableSubnetworksRequest;
 import com.google.container.v1beta1.ListUsableSubnetworksResponse;
 import com.google.container.v1beta1.Location;
+import com.google.container.v1beta1.LoggingConfig;
 import com.google.container.v1beta1.MaintenancePolicy;
 import com.google.container.v1beta1.Master;
 import com.google.container.v1beta1.MasterAuth;
 import com.google.container.v1beta1.MasterAuthorizedNetworksConfig;
 import com.google.container.v1beta1.MaxPodsConstraint;
+import com.google.container.v1beta1.MonitoringConfig;
 import com.google.container.v1beta1.NetworkConfig;
 import com.google.container.v1beta1.NetworkPolicy;
+import com.google.container.v1beta1.NetworkTags;
 import com.google.container.v1beta1.NodeConfig;
 import com.google.container.v1beta1.NodeKubeletConfig;
+import com.google.container.v1beta1.NodeLabels;
 import com.google.container.v1beta1.NodeManagement;
+import com.google.container.v1beta1.NodeNetworkConfig;
 import com.google.container.v1beta1.NodePool;
 import com.google.container.v1beta1.NodePoolAutoscaling;
+import com.google.container.v1beta1.NodePoolDefaults;
+import com.google.container.v1beta1.NodeTaints;
 import com.google.container.v1beta1.NotificationConfig;
 import com.google.container.v1beta1.Operation;
 import com.google.container.v1beta1.OperationProgress;
@@ -104,6 +113,9 @@ import com.google.container.v1beta1.UpdateMasterRequest;
 import com.google.container.v1beta1.UpdateNodePoolRequest;
 import com.google.container.v1beta1.UsableSubnetwork;
 import com.google.container.v1beta1.VerticalPodAutoscaling;
+import com.google.container.v1beta1.VirtualNIC;
+import com.google.container.v1beta1.WindowsVersions;
+import com.google.container.v1beta1.WorkloadCertificates;
 import com.google.container.v1beta1.WorkloadIdentityConfig;
 import com.google.container.v1beta1.WorkloadMetadataConfig;
 import com.google.protobuf.AbstractMessage;
@@ -244,10 +256,12 @@ public class ClusterManagerClientTest {
             .setShieldedNodes(ShieldedNodes.newBuilder().build())
             .setReleaseChannel(ReleaseChannel.newBuilder().build())
             .setWorkloadIdentityConfig(WorkloadIdentityConfig.newBuilder().build())
+            .setWorkloadCertificates(WorkloadCertificates.newBuilder().build())
             .setClusterTelemetry(ClusterTelemetry.newBuilder().build())
             .setTpuConfig(TpuConfig.newBuilder().build())
             .setNotificationConfig(NotificationConfig.newBuilder().build())
             .setConfidentialNodes(ConfidentialNodes.newBuilder().build())
+            .setIdentityServiceConfig(IdentityServiceConfig.newBuilder().build())
             .setSelfLink("selfLink1191800166")
             .setZone("zone3744684")
             .setEndpoint("endpoint1741102485")
@@ -267,6 +281,11 @@ public class ClusterManagerClientTest {
             .setDatabaseEncryption(DatabaseEncryption.newBuilder().build())
             .addAllConditions(new ArrayList<StatusCondition>())
             .setMaster(Master.newBuilder().build())
+            .setAutopilot(Autopilot.newBuilder().build())
+            .setId("id3355")
+            .setNodePoolDefaults(NodePoolDefaults.newBuilder().build())
+            .setLoggingConfig(LoggingConfig.newBuilder().build())
+            .setMonitoringConfig(MonitoringConfig.newBuilder().build())
             .build();
     mockClusterManager.addResponse(expectedResponse);
 
@@ -453,8 +472,12 @@ public class ClusterManagerClientTest {
             .setWorkloadMetadataConfig(WorkloadMetadataConfig.newBuilder().build())
             .setName("name3373707")
             .setUpgradeSettings(NodePool.UpgradeSettings.newBuilder().build())
+            .setTags(NetworkTags.newBuilder().build())
+            .setTaints(NodeTaints.newBuilder().build())
+            .setLabels(NodeLabels.newBuilder().build())
             .setLinuxNodeConfig(LinuxNodeConfig.newBuilder().build())
             .setKubeletConfig(NodeKubeletConfig.newBuilder().build())
+            .setGvnic(VirtualNIC.newBuilder().build())
             .build();
 
     Operation actualResponse = client.updateNodePool(request);
@@ -475,8 +498,12 @@ public class ClusterManagerClientTest {
         request.getWorkloadMetadataConfig(), actualRequest.getWorkloadMetadataConfig());
     Assert.assertEquals(request.getName(), actualRequest.getName());
     Assert.assertEquals(request.getUpgradeSettings(), actualRequest.getUpgradeSettings());
+    Assert.assertEquals(request.getTags(), actualRequest.getTags());
+    Assert.assertEquals(request.getTaints(), actualRequest.getTaints());
+    Assert.assertEquals(request.getLabels(), actualRequest.getLabels());
     Assert.assertEquals(request.getLinuxNodeConfig(), actualRequest.getLinuxNodeConfig());
     Assert.assertEquals(request.getKubeletConfig(), actualRequest.getKubeletConfig());
+    Assert.assertEquals(request.getGvnic(), actualRequest.getGvnic());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -501,8 +528,12 @@ public class ClusterManagerClientTest {
               .setWorkloadMetadataConfig(WorkloadMetadataConfig.newBuilder().build())
               .setName("name3373707")
               .setUpgradeSettings(NodePool.UpgradeSettings.newBuilder().build())
+              .setTags(NetworkTags.newBuilder().build())
+              .setTaints(NodeTaints.newBuilder().build())
+              .setLabels(NodeLabels.newBuilder().build())
               .setLinuxNodeConfig(LinuxNodeConfig.newBuilder().build())
               .setKubeletConfig(NodeKubeletConfig.newBuilder().build())
+              .setGvnic(VirtualNIC.newBuilder().build())
               .build();
       client.updateNodePool(request);
       Assert.fail("No exception raised");
@@ -1153,6 +1184,7 @@ public class ClusterManagerClientTest {
             .addAllValidImageTypes(new ArrayList<String>())
             .addAllValidMasterVersions(new ArrayList<String>())
             .addAllChannels(new ArrayList<ServerConfig.ReleaseChannelConfig>())
+            .putAllWindowsVersionMaps(new HashMap<String, WindowsVersions>())
             .build();
     mockClusterManager.addResponse(expectedResponse);
 
@@ -1277,6 +1309,7 @@ public class ClusterManagerClientTest {
             .setConfig(NodeConfig.newBuilder().build())
             .setInitialNodeCount(1682564205)
             .addAllLocations(new ArrayList<String>())
+            .setNetworkConfig(NodeNetworkConfig.newBuilder().build())
             .setSelfLink("selfLink1191800166")
             .setVersion("version351608024")
             .addAllInstanceGroupUrls(new ArrayList<String>())

@@ -41,6 +41,7 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
     network_ = "";
     subnetwork_ = "";
     datapathProvider_ = 0;
+    privateIpv6GoogleAccess_ = 0;
   }
 
   @java.lang.Override
@@ -107,11 +108,56 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
 
               break;
             }
+          case 80:
+            {
+              enableL4IlbSubsetting_ = input.readBool();
+              break;
+            }
           case 88:
             {
               int rawValue = input.readEnum();
 
               datapathProvider_ = rawValue;
+              break;
+            }
+          case 96:
+            {
+              int rawValue = input.readEnum();
+
+              privateIpv6GoogleAccess_ = rawValue;
+              break;
+            }
+          case 106:
+            {
+              com.google.container.v1beta1.DNSConfig.Builder subBuilder = null;
+              if (dnsConfig_ != null) {
+                subBuilder = dnsConfig_.toBuilder();
+              }
+              dnsConfig_ =
+                  input.readMessage(
+                      com.google.container.v1beta1.DNSConfig.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(dnsConfig_);
+                dnsConfig_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+          case 122:
+            {
+              com.google.container.v1beta1.ServiceExternalIPsConfig.Builder subBuilder = null;
+              if (serviceExternalIpsConfig_ != null) {
+                subBuilder = serviceExternalIpsConfig_.toBuilder();
+              }
+              serviceExternalIpsConfig_ =
+                  input.readMessage(
+                      com.google.container.v1beta1.ServiceExternalIPsConfig.parser(),
+                      extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(serviceExternalIpsConfig_);
+                serviceExternalIpsConfig_ = subBuilder.buildPartial();
+              }
+
               break;
             }
           default:
@@ -334,6 +380,24 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
     return getDefaultSnatStatus();
   }
 
+  public static final int ENABLE_L4ILB_SUBSETTING_FIELD_NUMBER = 10;
+  private boolean enableL4IlbSubsetting_;
+  /**
+   *
+   *
+   * <pre>
+   * Whether L4ILB Subsetting is enabled for this cluster.
+   * </pre>
+   *
+   * <code>bool enable_l4ilb_subsetting = 10;</code>
+   *
+   * @return The enableL4ilbSubsetting.
+   */
+  @java.lang.Override
+  public boolean getEnableL4IlbSubsetting() {
+    return enableL4IlbSubsetting_;
+  }
+
   public static final int DATAPATH_PROVIDER_FIELD_NUMBER = 11;
   private int datapathProvider_;
   /**
@@ -372,6 +436,151 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
     return result == null ? com.google.container.v1beta1.DatapathProvider.UNRECOGNIZED : result;
   }
 
+  public static final int PRIVATE_IPV6_GOOGLE_ACCESS_FIELD_NUMBER = 12;
+  private int privateIpv6GoogleAccess_;
+  /**
+   *
+   *
+   * <pre>
+   * The desired state of IPv6 connectivity to Google Services.
+   * By default, no private IPv6 access to or from Google Services (all access
+   * will be via IPv4)
+   * </pre>
+   *
+   * <code>.google.container.v1beta1.PrivateIPv6GoogleAccess private_ipv6_google_access = 12;</code>
+   *
+   * @return The enum numeric value on the wire for privateIpv6GoogleAccess.
+   */
+  @java.lang.Override
+  public int getPrivateIpv6GoogleAccessValue() {
+    return privateIpv6GoogleAccess_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The desired state of IPv6 connectivity to Google Services.
+   * By default, no private IPv6 access to or from Google Services (all access
+   * will be via IPv4)
+   * </pre>
+   *
+   * <code>.google.container.v1beta1.PrivateIPv6GoogleAccess private_ipv6_google_access = 12;</code>
+   *
+   * @return The privateIpv6GoogleAccess.
+   */
+  @java.lang.Override
+  public com.google.container.v1beta1.PrivateIPv6GoogleAccess getPrivateIpv6GoogleAccess() {
+    @SuppressWarnings("deprecation")
+    com.google.container.v1beta1.PrivateIPv6GoogleAccess result =
+        com.google.container.v1beta1.PrivateIPv6GoogleAccess.valueOf(privateIpv6GoogleAccess_);
+    return result == null
+        ? com.google.container.v1beta1.PrivateIPv6GoogleAccess.UNRECOGNIZED
+        : result;
+  }
+
+  public static final int DNS_CONFIG_FIELD_NUMBER = 13;
+  private com.google.container.v1beta1.DNSConfig dnsConfig_;
+  /**
+   *
+   *
+   * <pre>
+   * DNSConfig contains clusterDNS config for this cluster.
+   * </pre>
+   *
+   * <code>.google.container.v1beta1.DNSConfig dns_config = 13;</code>
+   *
+   * @return Whether the dnsConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasDnsConfig() {
+    return dnsConfig_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * DNSConfig contains clusterDNS config for this cluster.
+   * </pre>
+   *
+   * <code>.google.container.v1beta1.DNSConfig dns_config = 13;</code>
+   *
+   * @return The dnsConfig.
+   */
+  @java.lang.Override
+  public com.google.container.v1beta1.DNSConfig getDnsConfig() {
+    return dnsConfig_ == null
+        ? com.google.container.v1beta1.DNSConfig.getDefaultInstance()
+        : dnsConfig_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * DNSConfig contains clusterDNS config for this cluster.
+   * </pre>
+   *
+   * <code>.google.container.v1beta1.DNSConfig dns_config = 13;</code>
+   */
+  @java.lang.Override
+  public com.google.container.v1beta1.DNSConfigOrBuilder getDnsConfigOrBuilder() {
+    return getDnsConfig();
+  }
+
+  public static final int SERVICE_EXTERNAL_IPS_CONFIG_FIELD_NUMBER = 15;
+  private com.google.container.v1beta1.ServiceExternalIPsConfig serviceExternalIpsConfig_;
+  /**
+   *
+   *
+   * <pre>
+   * ServiceExternalIPsConfig specifies if services with externalIPs field are
+   * blocked or not.
+   * </pre>
+   *
+   * <code>.google.container.v1beta1.ServiceExternalIPsConfig service_external_ips_config = 15;
+   * </code>
+   *
+   * @return Whether the serviceExternalIpsConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasServiceExternalIpsConfig() {
+    return serviceExternalIpsConfig_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * ServiceExternalIPsConfig specifies if services with externalIPs field are
+   * blocked or not.
+   * </pre>
+   *
+   * <code>.google.container.v1beta1.ServiceExternalIPsConfig service_external_ips_config = 15;
+   * </code>
+   *
+   * @return The serviceExternalIpsConfig.
+   */
+  @java.lang.Override
+  public com.google.container.v1beta1.ServiceExternalIPsConfig getServiceExternalIpsConfig() {
+    return serviceExternalIpsConfig_ == null
+        ? com.google.container.v1beta1.ServiceExternalIPsConfig.getDefaultInstance()
+        : serviceExternalIpsConfig_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * ServiceExternalIPsConfig specifies if services with externalIPs field are
+   * blocked or not.
+   * </pre>
+   *
+   * <code>.google.container.v1beta1.ServiceExternalIPsConfig service_external_ips_config = 15;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.container.v1beta1.ServiceExternalIPsConfigOrBuilder
+      getServiceExternalIpsConfigOrBuilder() {
+    return getServiceExternalIpsConfig();
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -398,10 +607,25 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
     if (defaultSnatStatus_ != null) {
       output.writeMessage(7, getDefaultSnatStatus());
     }
+    if (enableL4IlbSubsetting_ != false) {
+      output.writeBool(10, enableL4IlbSubsetting_);
+    }
     if (datapathProvider_
         != com.google.container.v1beta1.DatapathProvider.DATAPATH_PROVIDER_UNSPECIFIED
             .getNumber()) {
       output.writeEnum(11, datapathProvider_);
+    }
+    if (privateIpv6GoogleAccess_
+        != com.google.container.v1beta1.PrivateIPv6GoogleAccess
+            .PRIVATE_IPV6_GOOGLE_ACCESS_UNSPECIFIED
+            .getNumber()) {
+      output.writeEnum(12, privateIpv6GoogleAccess_);
+    }
+    if (dnsConfig_ != null) {
+      output.writeMessage(13, getDnsConfig());
+    }
+    if (serviceExternalIpsConfig_ != null) {
+      output.writeMessage(15, getServiceExternalIpsConfig());
     }
     unknownFields.writeTo(output);
   }
@@ -424,10 +648,27 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
     if (defaultSnatStatus_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(7, getDefaultSnatStatus());
     }
+    if (enableL4IlbSubsetting_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(10, enableL4IlbSubsetting_);
+    }
     if (datapathProvider_
         != com.google.container.v1beta1.DatapathProvider.DATAPATH_PROVIDER_UNSPECIFIED
             .getNumber()) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(11, datapathProvider_);
+    }
+    if (privateIpv6GoogleAccess_
+        != com.google.container.v1beta1.PrivateIPv6GoogleAccess
+            .PRIVATE_IPV6_GOOGLE_ACCESS_UNSPECIFIED
+            .getNumber()) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(12, privateIpv6GoogleAccess_);
+    }
+    if (dnsConfig_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(13, getDnsConfig());
+    }
+    if (serviceExternalIpsConfig_ != null) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              15, getServiceExternalIpsConfig());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -452,7 +693,17 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
     if (hasDefaultSnatStatus()) {
       if (!getDefaultSnatStatus().equals(other.getDefaultSnatStatus())) return false;
     }
+    if (getEnableL4IlbSubsetting() != other.getEnableL4IlbSubsetting()) return false;
     if (datapathProvider_ != other.datapathProvider_) return false;
+    if (privateIpv6GoogleAccess_ != other.privateIpv6GoogleAccess_) return false;
+    if (hasDnsConfig() != other.hasDnsConfig()) return false;
+    if (hasDnsConfig()) {
+      if (!getDnsConfig().equals(other.getDnsConfig())) return false;
+    }
+    if (hasServiceExternalIpsConfig() != other.hasServiceExternalIpsConfig()) return false;
+    if (hasServiceExternalIpsConfig()) {
+      if (!getServiceExternalIpsConfig().equals(other.getServiceExternalIpsConfig())) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -474,8 +725,20 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
       hash = (37 * hash) + DEFAULT_SNAT_STATUS_FIELD_NUMBER;
       hash = (53 * hash) + getDefaultSnatStatus().hashCode();
     }
+    hash = (37 * hash) + ENABLE_L4ILB_SUBSETTING_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getEnableL4IlbSubsetting());
     hash = (37 * hash) + DATAPATH_PROVIDER_FIELD_NUMBER;
     hash = (53 * hash) + datapathProvider_;
+    hash = (37 * hash) + PRIVATE_IPV6_GOOGLE_ACCESS_FIELD_NUMBER;
+    hash = (53 * hash) + privateIpv6GoogleAccess_;
+    if (hasDnsConfig()) {
+      hash = (37 * hash) + DNS_CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + getDnsConfig().hashCode();
+    }
+    if (hasServiceExternalIpsConfig()) {
+      hash = (37 * hash) + SERVICE_EXTERNAL_IPS_CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + getServiceExternalIpsConfig().hashCode();
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -633,8 +896,24 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
         defaultSnatStatus_ = null;
         defaultSnatStatusBuilder_ = null;
       }
+      enableL4IlbSubsetting_ = false;
+
       datapathProvider_ = 0;
 
+      privateIpv6GoogleAccess_ = 0;
+
+      if (dnsConfigBuilder_ == null) {
+        dnsConfig_ = null;
+      } else {
+        dnsConfig_ = null;
+        dnsConfigBuilder_ = null;
+      }
+      if (serviceExternalIpsConfigBuilder_ == null) {
+        serviceExternalIpsConfig_ = null;
+      } else {
+        serviceExternalIpsConfig_ = null;
+        serviceExternalIpsConfigBuilder_ = null;
+      }
       return this;
     }
 
@@ -670,7 +949,19 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
       } else {
         result.defaultSnatStatus_ = defaultSnatStatusBuilder_.build();
       }
+      result.enableL4IlbSubsetting_ = enableL4IlbSubsetting_;
       result.datapathProvider_ = datapathProvider_;
+      result.privateIpv6GoogleAccess_ = privateIpv6GoogleAccess_;
+      if (dnsConfigBuilder_ == null) {
+        result.dnsConfig_ = dnsConfig_;
+      } else {
+        result.dnsConfig_ = dnsConfigBuilder_.build();
+      }
+      if (serviceExternalIpsConfigBuilder_ == null) {
+        result.serviceExternalIpsConfig_ = serviceExternalIpsConfig_;
+      } else {
+        result.serviceExternalIpsConfig_ = serviceExternalIpsConfigBuilder_.build();
+      }
       onBuilt();
       return result;
     }
@@ -734,8 +1025,20 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
       if (other.hasDefaultSnatStatus()) {
         mergeDefaultSnatStatus(other.getDefaultSnatStatus());
       }
+      if (other.getEnableL4IlbSubsetting() != false) {
+        setEnableL4IlbSubsetting(other.getEnableL4IlbSubsetting());
+      }
       if (other.datapathProvider_ != 0) {
         setDatapathProviderValue(other.getDatapathProviderValue());
+      }
+      if (other.privateIpv6GoogleAccess_ != 0) {
+        setPrivateIpv6GoogleAccessValue(other.getPrivateIpv6GoogleAccessValue());
+      }
+      if (other.hasDnsConfig()) {
+        mergeDnsConfig(other.getDnsConfig());
+      }
+      if (other.hasServiceExternalIpsConfig()) {
+        mergeServiceExternalIpsConfig(other.getServiceExternalIpsConfig());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -1276,6 +1579,58 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
       return defaultSnatStatusBuilder_;
     }
 
+    private boolean enableL4IlbSubsetting_;
+    /**
+     *
+     *
+     * <pre>
+     * Whether L4ILB Subsetting is enabled for this cluster.
+     * </pre>
+     *
+     * <code>bool enable_l4ilb_subsetting = 10;</code>
+     *
+     * @return The enableL4ilbSubsetting.
+     */
+    @java.lang.Override
+    public boolean getEnableL4IlbSubsetting() {
+      return enableL4IlbSubsetting_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Whether L4ILB Subsetting is enabled for this cluster.
+     * </pre>
+     *
+     * <code>bool enable_l4ilb_subsetting = 10;</code>
+     *
+     * @param value The enableL4ilbSubsetting to set.
+     * @return This builder for chaining.
+     */
+    public Builder setEnableL4IlbSubsetting(boolean value) {
+
+      enableL4IlbSubsetting_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Whether L4ILB Subsetting is enabled for this cluster.
+     * </pre>
+     *
+     * <code>bool enable_l4ilb_subsetting = 10;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearEnableL4IlbSubsetting() {
+
+      enableL4IlbSubsetting_ = false;
+      onChanged();
+      return this;
+    }
+
     private int datapathProvider_ = 0;
     /**
      *
@@ -1370,6 +1725,509 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
       datapathProvider_ = 0;
       onChanged();
       return this;
+    }
+
+    private int privateIpv6GoogleAccess_ = 0;
+    /**
+     *
+     *
+     * <pre>
+     * The desired state of IPv6 connectivity to Google Services.
+     * By default, no private IPv6 access to or from Google Services (all access
+     * will be via IPv4)
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.PrivateIPv6GoogleAccess private_ipv6_google_access = 12;
+     * </code>
+     *
+     * @return The enum numeric value on the wire for privateIpv6GoogleAccess.
+     */
+    @java.lang.Override
+    public int getPrivateIpv6GoogleAccessValue() {
+      return privateIpv6GoogleAccess_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The desired state of IPv6 connectivity to Google Services.
+     * By default, no private IPv6 access to or from Google Services (all access
+     * will be via IPv4)
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.PrivateIPv6GoogleAccess private_ipv6_google_access = 12;
+     * </code>
+     *
+     * @param value The enum numeric value on the wire for privateIpv6GoogleAccess to set.
+     * @return This builder for chaining.
+     */
+    public Builder setPrivateIpv6GoogleAccessValue(int value) {
+
+      privateIpv6GoogleAccess_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The desired state of IPv6 connectivity to Google Services.
+     * By default, no private IPv6 access to or from Google Services (all access
+     * will be via IPv4)
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.PrivateIPv6GoogleAccess private_ipv6_google_access = 12;
+     * </code>
+     *
+     * @return The privateIpv6GoogleAccess.
+     */
+    @java.lang.Override
+    public com.google.container.v1beta1.PrivateIPv6GoogleAccess getPrivateIpv6GoogleAccess() {
+      @SuppressWarnings("deprecation")
+      com.google.container.v1beta1.PrivateIPv6GoogleAccess result =
+          com.google.container.v1beta1.PrivateIPv6GoogleAccess.valueOf(privateIpv6GoogleAccess_);
+      return result == null
+          ? com.google.container.v1beta1.PrivateIPv6GoogleAccess.UNRECOGNIZED
+          : result;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The desired state of IPv6 connectivity to Google Services.
+     * By default, no private IPv6 access to or from Google Services (all access
+     * will be via IPv4)
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.PrivateIPv6GoogleAccess private_ipv6_google_access = 12;
+     * </code>
+     *
+     * @param value The privateIpv6GoogleAccess to set.
+     * @return This builder for chaining.
+     */
+    public Builder setPrivateIpv6GoogleAccess(
+        com.google.container.v1beta1.PrivateIPv6GoogleAccess value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+
+      privateIpv6GoogleAccess_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The desired state of IPv6 connectivity to Google Services.
+     * By default, no private IPv6 access to or from Google Services (all access
+     * will be via IPv4)
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.PrivateIPv6GoogleAccess private_ipv6_google_access = 12;
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearPrivateIpv6GoogleAccess() {
+
+      privateIpv6GoogleAccess_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private com.google.container.v1beta1.DNSConfig dnsConfig_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.container.v1beta1.DNSConfig,
+            com.google.container.v1beta1.DNSConfig.Builder,
+            com.google.container.v1beta1.DNSConfigOrBuilder>
+        dnsConfigBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * DNSConfig contains clusterDNS config for this cluster.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.DNSConfig dns_config = 13;</code>
+     *
+     * @return Whether the dnsConfig field is set.
+     */
+    public boolean hasDnsConfig() {
+      return dnsConfigBuilder_ != null || dnsConfig_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * DNSConfig contains clusterDNS config for this cluster.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.DNSConfig dns_config = 13;</code>
+     *
+     * @return The dnsConfig.
+     */
+    public com.google.container.v1beta1.DNSConfig getDnsConfig() {
+      if (dnsConfigBuilder_ == null) {
+        return dnsConfig_ == null
+            ? com.google.container.v1beta1.DNSConfig.getDefaultInstance()
+            : dnsConfig_;
+      } else {
+        return dnsConfigBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * DNSConfig contains clusterDNS config for this cluster.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.DNSConfig dns_config = 13;</code>
+     */
+    public Builder setDnsConfig(com.google.container.v1beta1.DNSConfig value) {
+      if (dnsConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        dnsConfig_ = value;
+        onChanged();
+      } else {
+        dnsConfigBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * DNSConfig contains clusterDNS config for this cluster.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.DNSConfig dns_config = 13;</code>
+     */
+    public Builder setDnsConfig(com.google.container.v1beta1.DNSConfig.Builder builderForValue) {
+      if (dnsConfigBuilder_ == null) {
+        dnsConfig_ = builderForValue.build();
+        onChanged();
+      } else {
+        dnsConfigBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * DNSConfig contains clusterDNS config for this cluster.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.DNSConfig dns_config = 13;</code>
+     */
+    public Builder mergeDnsConfig(com.google.container.v1beta1.DNSConfig value) {
+      if (dnsConfigBuilder_ == null) {
+        if (dnsConfig_ != null) {
+          dnsConfig_ =
+              com.google.container.v1beta1.DNSConfig.newBuilder(dnsConfig_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          dnsConfig_ = value;
+        }
+        onChanged();
+      } else {
+        dnsConfigBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * DNSConfig contains clusterDNS config for this cluster.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.DNSConfig dns_config = 13;</code>
+     */
+    public Builder clearDnsConfig() {
+      if (dnsConfigBuilder_ == null) {
+        dnsConfig_ = null;
+        onChanged();
+      } else {
+        dnsConfig_ = null;
+        dnsConfigBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * DNSConfig contains clusterDNS config for this cluster.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.DNSConfig dns_config = 13;</code>
+     */
+    public com.google.container.v1beta1.DNSConfig.Builder getDnsConfigBuilder() {
+
+      onChanged();
+      return getDnsConfigFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * DNSConfig contains clusterDNS config for this cluster.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.DNSConfig dns_config = 13;</code>
+     */
+    public com.google.container.v1beta1.DNSConfigOrBuilder getDnsConfigOrBuilder() {
+      if (dnsConfigBuilder_ != null) {
+        return dnsConfigBuilder_.getMessageOrBuilder();
+      } else {
+        return dnsConfig_ == null
+            ? com.google.container.v1beta1.DNSConfig.getDefaultInstance()
+            : dnsConfig_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * DNSConfig contains clusterDNS config for this cluster.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.DNSConfig dns_config = 13;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.container.v1beta1.DNSConfig,
+            com.google.container.v1beta1.DNSConfig.Builder,
+            com.google.container.v1beta1.DNSConfigOrBuilder>
+        getDnsConfigFieldBuilder() {
+      if (dnsConfigBuilder_ == null) {
+        dnsConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.container.v1beta1.DNSConfig,
+                com.google.container.v1beta1.DNSConfig.Builder,
+                com.google.container.v1beta1.DNSConfigOrBuilder>(
+                getDnsConfig(), getParentForChildren(), isClean());
+        dnsConfig_ = null;
+      }
+      return dnsConfigBuilder_;
+    }
+
+    private com.google.container.v1beta1.ServiceExternalIPsConfig serviceExternalIpsConfig_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.container.v1beta1.ServiceExternalIPsConfig,
+            com.google.container.v1beta1.ServiceExternalIPsConfig.Builder,
+            com.google.container.v1beta1.ServiceExternalIPsConfigOrBuilder>
+        serviceExternalIpsConfigBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * ServiceExternalIPsConfig specifies if services with externalIPs field are
+     * blocked or not.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.ServiceExternalIPsConfig service_external_ips_config = 15;
+     * </code>
+     *
+     * @return Whether the serviceExternalIpsConfig field is set.
+     */
+    public boolean hasServiceExternalIpsConfig() {
+      return serviceExternalIpsConfigBuilder_ != null || serviceExternalIpsConfig_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * ServiceExternalIPsConfig specifies if services with externalIPs field are
+     * blocked or not.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.ServiceExternalIPsConfig service_external_ips_config = 15;
+     * </code>
+     *
+     * @return The serviceExternalIpsConfig.
+     */
+    public com.google.container.v1beta1.ServiceExternalIPsConfig getServiceExternalIpsConfig() {
+      if (serviceExternalIpsConfigBuilder_ == null) {
+        return serviceExternalIpsConfig_ == null
+            ? com.google.container.v1beta1.ServiceExternalIPsConfig.getDefaultInstance()
+            : serviceExternalIpsConfig_;
+      } else {
+        return serviceExternalIpsConfigBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * ServiceExternalIPsConfig specifies if services with externalIPs field are
+     * blocked or not.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.ServiceExternalIPsConfig service_external_ips_config = 15;
+     * </code>
+     */
+    public Builder setServiceExternalIpsConfig(
+        com.google.container.v1beta1.ServiceExternalIPsConfig value) {
+      if (serviceExternalIpsConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        serviceExternalIpsConfig_ = value;
+        onChanged();
+      } else {
+        serviceExternalIpsConfigBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * ServiceExternalIPsConfig specifies if services with externalIPs field are
+     * blocked or not.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.ServiceExternalIPsConfig service_external_ips_config = 15;
+     * </code>
+     */
+    public Builder setServiceExternalIpsConfig(
+        com.google.container.v1beta1.ServiceExternalIPsConfig.Builder builderForValue) {
+      if (serviceExternalIpsConfigBuilder_ == null) {
+        serviceExternalIpsConfig_ = builderForValue.build();
+        onChanged();
+      } else {
+        serviceExternalIpsConfigBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * ServiceExternalIPsConfig specifies if services with externalIPs field are
+     * blocked or not.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.ServiceExternalIPsConfig service_external_ips_config = 15;
+     * </code>
+     */
+    public Builder mergeServiceExternalIpsConfig(
+        com.google.container.v1beta1.ServiceExternalIPsConfig value) {
+      if (serviceExternalIpsConfigBuilder_ == null) {
+        if (serviceExternalIpsConfig_ != null) {
+          serviceExternalIpsConfig_ =
+              com.google.container.v1beta1.ServiceExternalIPsConfig.newBuilder(
+                      serviceExternalIpsConfig_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          serviceExternalIpsConfig_ = value;
+        }
+        onChanged();
+      } else {
+        serviceExternalIpsConfigBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * ServiceExternalIPsConfig specifies if services with externalIPs field are
+     * blocked or not.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.ServiceExternalIPsConfig service_external_ips_config = 15;
+     * </code>
+     */
+    public Builder clearServiceExternalIpsConfig() {
+      if (serviceExternalIpsConfigBuilder_ == null) {
+        serviceExternalIpsConfig_ = null;
+        onChanged();
+      } else {
+        serviceExternalIpsConfig_ = null;
+        serviceExternalIpsConfigBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * ServiceExternalIPsConfig specifies if services with externalIPs field are
+     * blocked or not.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.ServiceExternalIPsConfig service_external_ips_config = 15;
+     * </code>
+     */
+    public com.google.container.v1beta1.ServiceExternalIPsConfig.Builder
+        getServiceExternalIpsConfigBuilder() {
+
+      onChanged();
+      return getServiceExternalIpsConfigFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * ServiceExternalIPsConfig specifies if services with externalIPs field are
+     * blocked or not.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.ServiceExternalIPsConfig service_external_ips_config = 15;
+     * </code>
+     */
+    public com.google.container.v1beta1.ServiceExternalIPsConfigOrBuilder
+        getServiceExternalIpsConfigOrBuilder() {
+      if (serviceExternalIpsConfigBuilder_ != null) {
+        return serviceExternalIpsConfigBuilder_.getMessageOrBuilder();
+      } else {
+        return serviceExternalIpsConfig_ == null
+            ? com.google.container.v1beta1.ServiceExternalIPsConfig.getDefaultInstance()
+            : serviceExternalIpsConfig_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * ServiceExternalIPsConfig specifies if services with externalIPs field are
+     * blocked or not.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.ServiceExternalIPsConfig service_external_ips_config = 15;
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.container.v1beta1.ServiceExternalIPsConfig,
+            com.google.container.v1beta1.ServiceExternalIPsConfig.Builder,
+            com.google.container.v1beta1.ServiceExternalIPsConfigOrBuilder>
+        getServiceExternalIpsConfigFieldBuilder() {
+      if (serviceExternalIpsConfigBuilder_ == null) {
+        serviceExternalIpsConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.container.v1beta1.ServiceExternalIPsConfig,
+                com.google.container.v1beta1.ServiceExternalIPsConfig.Builder,
+                com.google.container.v1beta1.ServiceExternalIPsConfigOrBuilder>(
+                getServiceExternalIpsConfig(), getParentForChildren(), isClean());
+        serviceExternalIpsConfig_ = null;
+      }
+      return serviceExternalIpsConfigBuilder_;
     }
 
     @java.lang.Override

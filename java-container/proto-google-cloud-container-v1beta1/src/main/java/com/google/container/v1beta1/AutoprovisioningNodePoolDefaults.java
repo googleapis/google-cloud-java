@@ -722,7 +722,7 @@ public final class AutoprovisioningNodePoolDefaults extends com.google.protobuf.
    *
    *
    * <pre>
-   * The image type to use for node created by NodeAutoprovisioning.
+   * The image type to use for NAP created node.
    * </pre>
    *
    * <code>string image_type = 10;</code>
@@ -745,7 +745,7 @@ public final class AutoprovisioningNodePoolDefaults extends com.google.protobuf.
    *
    *
    * <pre>
-   * The image type to use for node created by NodeAutoprovisioning.
+   * The image type to use for NAP created node.
    * </pre>
    *
    * <code>string image_type = 10;</code>
@@ -2693,7 +2693,7 @@ public final class AutoprovisioningNodePoolDefaults extends com.google.protobuf.
      *
      *
      * <pre>
-     * The image type to use for node created by NodeAutoprovisioning.
+     * The image type to use for NAP created node.
      * </pre>
      *
      * <code>string image_type = 10;</code>
@@ -2715,7 +2715,7 @@ public final class AutoprovisioningNodePoolDefaults extends com.google.protobuf.
      *
      *
      * <pre>
-     * The image type to use for node created by NodeAutoprovisioning.
+     * The image type to use for NAP created node.
      * </pre>
      *
      * <code>string image_type = 10;</code>
@@ -2737,7 +2737,7 @@ public final class AutoprovisioningNodePoolDefaults extends com.google.protobuf.
      *
      *
      * <pre>
-     * The image type to use for node created by NodeAutoprovisioning.
+     * The image type to use for NAP created node.
      * </pre>
      *
      * <code>string image_type = 10;</code>
@@ -2758,7 +2758,7 @@ public final class AutoprovisioningNodePoolDefaults extends com.google.protobuf.
      *
      *
      * <pre>
-     * The image type to use for node created by NodeAutoprovisioning.
+     * The image type to use for NAP created node.
      * </pre>
      *
      * <code>string image_type = 10;</code>
@@ -2775,7 +2775,7 @@ public final class AutoprovisioningNodePoolDefaults extends com.google.protobuf.
      *
      *
      * <pre>
-     * The image type to use for node created by NodeAutoprovisioning.
+     * The image type to use for NAP created node.
      * </pre>
      *
      * <code>string image_type = 10;</code>

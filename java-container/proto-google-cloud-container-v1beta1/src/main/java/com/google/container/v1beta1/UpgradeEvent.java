@@ -165,12 +165,10 @@ public final class UpgradeEvent extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. The resource type that is upgrading.
+   * The resource type that is upgrading.
    * </pre>
    *
-   * <code>
-   * .google.container.v1beta1.UpgradeResourceType resource_type = 1 [(.google.api.field_behavior) = REQUIRED];
-   * </code>
+   * <code>.google.container.v1beta1.UpgradeResourceType resource_type = 1;</code>
    *
    * @return The enum numeric value on the wire for resourceType.
    */
@@ -182,12 +180,10 @@ public final class UpgradeEvent extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. The resource type that is upgrading.
+   * The resource type that is upgrading.
    * </pre>
    *
-   * <code>
-   * .google.container.v1beta1.UpgradeResourceType resource_type = 1 [(.google.api.field_behavior) = REQUIRED];
-   * </code>
+   * <code>.google.container.v1beta1.UpgradeResourceType resource_type = 1;</code>
    *
    * @return The resourceType.
    */
@@ -205,10 +201,10 @@ public final class UpgradeEvent extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. The operation associated with this upgrade.
+   * The operation associated with this upgrade.
    * </pre>
    *
-   * <code>string operation = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string operation = 2;</code>
    *
    * @return The operation.
    */
@@ -228,10 +224,10 @@ public final class UpgradeEvent extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. The operation associated with this upgrade.
+   * The operation associated with this upgrade.
    * </pre>
    *
-   * <code>string operation = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string operation = 2;</code>
    *
    * @return The bytes for operation.
    */
@@ -254,12 +250,10 @@ public final class UpgradeEvent extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. The time when the operation was started.
+   * The time when the operation was started.
    * </pre>
    *
-   * <code>
-   * .google.protobuf.Timestamp operation_start_time = 3 [(.google.api.field_behavior) = REQUIRED];
-   * </code>
+   * <code>.google.protobuf.Timestamp operation_start_time = 3;</code>
    *
    * @return Whether the operationStartTime field is set.
    */
@@ -271,12 +265,10 @@ public final class UpgradeEvent extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. The time when the operation was started.
+   * The time when the operation was started.
    * </pre>
    *
-   * <code>
-   * .google.protobuf.Timestamp operation_start_time = 3 [(.google.api.field_behavior) = REQUIRED];
-   * </code>
+   * <code>.google.protobuf.Timestamp operation_start_time = 3;</code>
    *
    * @return The operationStartTime.
    */
@@ -290,12 +282,10 @@ public final class UpgradeEvent extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. The time when the operation was started.
+   * The time when the operation was started.
    * </pre>
    *
-   * <code>
-   * .google.protobuf.Timestamp operation_start_time = 3 [(.google.api.field_behavior) = REQUIRED];
-   * </code>
+   * <code>.google.protobuf.Timestamp operation_start_time = 3;</code>
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getOperationStartTimeOrBuilder() {
@@ -308,10 +298,10 @@ public final class UpgradeEvent extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. The current version before the upgrade.
+   * The current version before the upgrade.
    * </pre>
    *
-   * <code>string current_version = 4 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string current_version = 4;</code>
    *
    * @return The currentVersion.
    */
@@ -331,10 +321,10 @@ public final class UpgradeEvent extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. The current version before the upgrade.
+   * The current version before the upgrade.
    * </pre>
    *
-   * <code>string current_version = 4 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string current_version = 4;</code>
    *
    * @return The bytes for currentVersion.
    */
@@ -357,10 +347,10 @@ public final class UpgradeEvent extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. The target version for the upgrade.
+   * The target version for the upgrade.
    * </pre>
    *
-   * <code>string target_version = 5 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string target_version = 5;</code>
    *
    * @return The targetVersion.
    */
@@ -380,10 +370,10 @@ public final class UpgradeEvent extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. The target version for the upgrade.
+   * The target version for the upgrade.
    * </pre>
    *
-   * <code>string target_version = 5 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string target_version = 5;</code>
    *
    * @return The bytes for targetVersion.
    */
@@ -406,11 +396,11 @@ public final class UpgradeEvent extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. Optional relative path to the resource. For example in node pool upgrades,
+   * Optional relative path to the resource. For example in node pool upgrades,
    * the relative path of the node pool.
    * </pre>
    *
-   * <code>string resource = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>string resource = 6;</code>
    *
    * @return The resource.
    */
@@ -430,11 +420,11 @@ public final class UpgradeEvent extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. Optional relative path to the resource. For example in node pool upgrades,
+   * Optional relative path to the resource. For example in node pool upgrades,
    * the relative path of the node pool.
    * </pre>
    *
-   * <code>string resource = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>string resource = 6;</code>
    *
    * @return The bytes for resource.
    */
@@ -868,12 +858,10 @@ public final class UpgradeEvent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The resource type that is upgrading.
+     * The resource type that is upgrading.
      * </pre>
      *
-     * <code>
-     * .google.container.v1beta1.UpgradeResourceType resource_type = 1 [(.google.api.field_behavior) = REQUIRED];
-     * </code>
+     * <code>.google.container.v1beta1.UpgradeResourceType resource_type = 1;</code>
      *
      * @return The enum numeric value on the wire for resourceType.
      */
@@ -885,12 +873,10 @@ public final class UpgradeEvent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The resource type that is upgrading.
+     * The resource type that is upgrading.
      * </pre>
      *
-     * <code>
-     * .google.container.v1beta1.UpgradeResourceType resource_type = 1 [(.google.api.field_behavior) = REQUIRED];
-     * </code>
+     * <code>.google.container.v1beta1.UpgradeResourceType resource_type = 1;</code>
      *
      * @param value The enum numeric value on the wire for resourceType to set.
      * @return This builder for chaining.
@@ -905,12 +891,10 @@ public final class UpgradeEvent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The resource type that is upgrading.
+     * The resource type that is upgrading.
      * </pre>
      *
-     * <code>
-     * .google.container.v1beta1.UpgradeResourceType resource_type = 1 [(.google.api.field_behavior) = REQUIRED];
-     * </code>
+     * <code>.google.container.v1beta1.UpgradeResourceType resource_type = 1;</code>
      *
      * @return The resourceType.
      */
@@ -927,12 +911,10 @@ public final class UpgradeEvent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The resource type that is upgrading.
+     * The resource type that is upgrading.
      * </pre>
      *
-     * <code>
-     * .google.container.v1beta1.UpgradeResourceType resource_type = 1 [(.google.api.field_behavior) = REQUIRED];
-     * </code>
+     * <code>.google.container.v1beta1.UpgradeResourceType resource_type = 1;</code>
      *
      * @param value The resourceType to set.
      * @return This builder for chaining.
@@ -950,12 +932,10 @@ public final class UpgradeEvent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The resource type that is upgrading.
+     * The resource type that is upgrading.
      * </pre>
      *
-     * <code>
-     * .google.container.v1beta1.UpgradeResourceType resource_type = 1 [(.google.api.field_behavior) = REQUIRED];
-     * </code>
+     * <code>.google.container.v1beta1.UpgradeResourceType resource_type = 1;</code>
      *
      * @return This builder for chaining.
      */
@@ -971,10 +951,10 @@ public final class UpgradeEvent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The operation associated with this upgrade.
+     * The operation associated with this upgrade.
      * </pre>
      *
-     * <code>string operation = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string operation = 2;</code>
      *
      * @return The operation.
      */
@@ -993,10 +973,10 @@ public final class UpgradeEvent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The operation associated with this upgrade.
+     * The operation associated with this upgrade.
      * </pre>
      *
-     * <code>string operation = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string operation = 2;</code>
      *
      * @return The bytes for operation.
      */
@@ -1015,10 +995,10 @@ public final class UpgradeEvent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The operation associated with this upgrade.
+     * The operation associated with this upgrade.
      * </pre>
      *
-     * <code>string operation = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string operation = 2;</code>
      *
      * @param value The operation to set.
      * @return This builder for chaining.
@@ -1036,10 +1016,10 @@ public final class UpgradeEvent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The operation associated with this upgrade.
+     * The operation associated with this upgrade.
      * </pre>
      *
-     * <code>string operation = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string operation = 2;</code>
      *
      * @return This builder for chaining.
      */
@@ -1053,10 +1033,10 @@ public final class UpgradeEvent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The operation associated with this upgrade.
+     * The operation associated with this upgrade.
      * </pre>
      *
-     * <code>string operation = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string operation = 2;</code>
      *
      * @param value The bytes for operation to set.
      * @return This builder for chaining.
@@ -1082,12 +1062,10 @@ public final class UpgradeEvent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The time when the operation was started.
+     * The time when the operation was started.
      * </pre>
      *
-     * <code>
-     * .google.protobuf.Timestamp operation_start_time = 3 [(.google.api.field_behavior) = REQUIRED];
-     * </code>
+     * <code>.google.protobuf.Timestamp operation_start_time = 3;</code>
      *
      * @return Whether the operationStartTime field is set.
      */
@@ -1098,12 +1076,10 @@ public final class UpgradeEvent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The time when the operation was started.
+     * The time when the operation was started.
      * </pre>
      *
-     * <code>
-     * .google.protobuf.Timestamp operation_start_time = 3 [(.google.api.field_behavior) = REQUIRED];
-     * </code>
+     * <code>.google.protobuf.Timestamp operation_start_time = 3;</code>
      *
      * @return The operationStartTime.
      */
@@ -1120,12 +1096,10 @@ public final class UpgradeEvent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The time when the operation was started.
+     * The time when the operation was started.
      * </pre>
      *
-     * <code>
-     * .google.protobuf.Timestamp operation_start_time = 3 [(.google.api.field_behavior) = REQUIRED];
-     * </code>
+     * <code>.google.protobuf.Timestamp operation_start_time = 3;</code>
      */
     public Builder setOperationStartTime(com.google.protobuf.Timestamp value) {
       if (operationStartTimeBuilder_ == null) {
@@ -1144,12 +1118,10 @@ public final class UpgradeEvent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The time when the operation was started.
+     * The time when the operation was started.
      * </pre>
      *
-     * <code>
-     * .google.protobuf.Timestamp operation_start_time = 3 [(.google.api.field_behavior) = REQUIRED];
-     * </code>
+     * <code>.google.protobuf.Timestamp operation_start_time = 3;</code>
      */
     public Builder setOperationStartTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (operationStartTimeBuilder_ == null) {
@@ -1165,12 +1137,10 @@ public final class UpgradeEvent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The time when the operation was started.
+     * The time when the operation was started.
      * </pre>
      *
-     * <code>
-     * .google.protobuf.Timestamp operation_start_time = 3 [(.google.api.field_behavior) = REQUIRED];
-     * </code>
+     * <code>.google.protobuf.Timestamp operation_start_time = 3;</code>
      */
     public Builder mergeOperationStartTime(com.google.protobuf.Timestamp value) {
       if (operationStartTimeBuilder_ == null) {
@@ -1193,12 +1163,10 @@ public final class UpgradeEvent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The time when the operation was started.
+     * The time when the operation was started.
      * </pre>
      *
-     * <code>
-     * .google.protobuf.Timestamp operation_start_time = 3 [(.google.api.field_behavior) = REQUIRED];
-     * </code>
+     * <code>.google.protobuf.Timestamp operation_start_time = 3;</code>
      */
     public Builder clearOperationStartTime() {
       if (operationStartTimeBuilder_ == null) {
@@ -1215,12 +1183,10 @@ public final class UpgradeEvent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The time when the operation was started.
+     * The time when the operation was started.
      * </pre>
      *
-     * <code>
-     * .google.protobuf.Timestamp operation_start_time = 3 [(.google.api.field_behavior) = REQUIRED];
-     * </code>
+     * <code>.google.protobuf.Timestamp operation_start_time = 3;</code>
      */
     public com.google.protobuf.Timestamp.Builder getOperationStartTimeBuilder() {
 
@@ -1231,12 +1197,10 @@ public final class UpgradeEvent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The time when the operation was started.
+     * The time when the operation was started.
      * </pre>
      *
-     * <code>
-     * .google.protobuf.Timestamp operation_start_time = 3 [(.google.api.field_behavior) = REQUIRED];
-     * </code>
+     * <code>.google.protobuf.Timestamp operation_start_time = 3;</code>
      */
     public com.google.protobuf.TimestampOrBuilder getOperationStartTimeOrBuilder() {
       if (operationStartTimeBuilder_ != null) {
@@ -1251,12 +1215,10 @@ public final class UpgradeEvent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The time when the operation was started.
+     * The time when the operation was started.
      * </pre>
      *
-     * <code>
-     * .google.protobuf.Timestamp operation_start_time = 3 [(.google.api.field_behavior) = REQUIRED];
-     * </code>
+     * <code>.google.protobuf.Timestamp operation_start_time = 3;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.protobuf.Timestamp,
@@ -1280,10 +1242,10 @@ public final class UpgradeEvent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The current version before the upgrade.
+     * The current version before the upgrade.
      * </pre>
      *
-     * <code>string current_version = 4 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string current_version = 4;</code>
      *
      * @return The currentVersion.
      */
@@ -1302,10 +1264,10 @@ public final class UpgradeEvent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The current version before the upgrade.
+     * The current version before the upgrade.
      * </pre>
      *
-     * <code>string current_version = 4 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string current_version = 4;</code>
      *
      * @return The bytes for currentVersion.
      */
@@ -1324,10 +1286,10 @@ public final class UpgradeEvent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The current version before the upgrade.
+     * The current version before the upgrade.
      * </pre>
      *
-     * <code>string current_version = 4 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string current_version = 4;</code>
      *
      * @param value The currentVersion to set.
      * @return This builder for chaining.
@@ -1345,10 +1307,10 @@ public final class UpgradeEvent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The current version before the upgrade.
+     * The current version before the upgrade.
      * </pre>
      *
-     * <code>string current_version = 4 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string current_version = 4;</code>
      *
      * @return This builder for chaining.
      */
@@ -1362,10 +1324,10 @@ public final class UpgradeEvent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The current version before the upgrade.
+     * The current version before the upgrade.
      * </pre>
      *
-     * <code>string current_version = 4 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string current_version = 4;</code>
      *
      * @param value The bytes for currentVersion to set.
      * @return This builder for chaining.
@@ -1386,10 +1348,10 @@ public final class UpgradeEvent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The target version for the upgrade.
+     * The target version for the upgrade.
      * </pre>
      *
-     * <code>string target_version = 5 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string target_version = 5;</code>
      *
      * @return The targetVersion.
      */
@@ -1408,10 +1370,10 @@ public final class UpgradeEvent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The target version for the upgrade.
+     * The target version for the upgrade.
      * </pre>
      *
-     * <code>string target_version = 5 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string target_version = 5;</code>
      *
      * @return The bytes for targetVersion.
      */
@@ -1430,10 +1392,10 @@ public final class UpgradeEvent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The target version for the upgrade.
+     * The target version for the upgrade.
      * </pre>
      *
-     * <code>string target_version = 5 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string target_version = 5;</code>
      *
      * @param value The targetVersion to set.
      * @return This builder for chaining.
@@ -1451,10 +1413,10 @@ public final class UpgradeEvent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The target version for the upgrade.
+     * The target version for the upgrade.
      * </pre>
      *
-     * <code>string target_version = 5 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string target_version = 5;</code>
      *
      * @return This builder for chaining.
      */
@@ -1468,10 +1430,10 @@ public final class UpgradeEvent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The target version for the upgrade.
+     * The target version for the upgrade.
      * </pre>
      *
-     * <code>string target_version = 5 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string target_version = 5;</code>
      *
      * @param value The bytes for targetVersion to set.
      * @return This builder for chaining.
@@ -1492,11 +1454,11 @@ public final class UpgradeEvent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Optional relative path to the resource. For example in node pool upgrades,
+     * Optional relative path to the resource. For example in node pool upgrades,
      * the relative path of the node pool.
      * </pre>
      *
-     * <code>string resource = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>string resource = 6;</code>
      *
      * @return The resource.
      */
@@ -1515,11 +1477,11 @@ public final class UpgradeEvent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Optional relative path to the resource. For example in node pool upgrades,
+     * Optional relative path to the resource. For example in node pool upgrades,
      * the relative path of the node pool.
      * </pre>
      *
-     * <code>string resource = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>string resource = 6;</code>
      *
      * @return The bytes for resource.
      */
@@ -1538,11 +1500,11 @@ public final class UpgradeEvent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Optional relative path to the resource. For example in node pool upgrades,
+     * Optional relative path to the resource. For example in node pool upgrades,
      * the relative path of the node pool.
      * </pre>
      *
-     * <code>string resource = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>string resource = 6;</code>
      *
      * @param value The resource to set.
      * @return This builder for chaining.
@@ -1560,11 +1522,11 @@ public final class UpgradeEvent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Optional relative path to the resource. For example in node pool upgrades,
+     * Optional relative path to the resource. For example in node pool upgrades,
      * the relative path of the node pool.
      * </pre>
      *
-     * <code>string resource = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>string resource = 6;</code>
      *
      * @return This builder for chaining.
      */
@@ -1578,11 +1540,11 @@ public final class UpgradeEvent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Optional relative path to the resource. For example in node pool upgrades,
+     * Optional relative path to the resource. For example in node pool upgrades,
      * the relative path of the node pool.
      * </pre>
      *
-     * <code>string resource = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>string resource = 6;</code>
      *
      * @param value The bytes for resource to set.
      * @return This builder for chaining.

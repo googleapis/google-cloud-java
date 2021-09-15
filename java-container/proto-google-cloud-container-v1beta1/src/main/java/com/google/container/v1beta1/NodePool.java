@@ -28,6 +28,24 @@ package com.google.container.v1beta1;
  * of Kubernetes labels applied to them, which may be used to reference them
  * during pod scheduling. They may also be resized up or down, to accommodate
  * the workload.
+ * These upgrade settings control the level of parallelism and the level of
+ * disruption caused by an upgrade.
+ * maxUnavailable controls the number of nodes that can be simultaneously
+ * unavailable.
+ * maxSurge controls the number of additional nodes that can be added to the
+ * node pool temporarily for the time of the upgrade to increase the number of
+ * available nodes.
+ * (maxUnavailable + maxSurge) determines the level of parallelism (how many
+ * nodes are being upgraded at the same time).
+ * Note: upgrades inevitably introduce some disruption since workloads need to
+ * be moved from old nodes to new, upgraded ones. Even if maxUnavailable=0,
+ * this holds true. (Disruption stays within the limits of
+ * PodDisruptionBudget, if it is configured.)
+ * Consider a hypothetical node pool with 5 nodes having maxSurge=2,
+ * maxUnavailable=1. This means the upgrade process upgrades 3 nodes
+ * simultaneously. It creates 2 additional (upgraded) nodes, then it brings
+ * down 3 old (not yet upgraded) nodes at the same time. This ensures that
+ * there are always at least 4 nodes available.
  * </pre>
  *
  * Protobuf type {@code google.container.v1beta1.NodePool}
@@ -172,6 +190,22 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
                 mutable_bitField0_ |= 0x00000001;
               }
               locations_.add(s);
+              break;
+            }
+          case 114:
+            {
+              com.google.container.v1beta1.NodeNetworkConfig.Builder subBuilder = null;
+              if (networkConfig_ != null) {
+                subBuilder = networkConfig_.toBuilder();
+              }
+              networkConfig_ =
+                  input.readMessage(
+                      com.google.container.v1beta1.NodeNetworkConfig.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(networkConfig_);
+                networkConfig_ = subBuilder.buildPartial();
+              }
+
               break;
             }
           case 802:
@@ -577,32 +611,7 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
      */
     int getMaxUnavailable();
   }
-  /**
-   *
-   *
-   * <pre>
-   * These upgrade settings control the level of parallelism and the level of
-   * disruption caused by an upgrade.
-   * maxUnavailable controls the number of nodes that can be simultaneously
-   * unavailable.
-   * maxSurge controls the number of additional nodes that can be added to the
-   * node pool temporarily for the time of the upgrade to increase the number of
-   * available nodes.
-   * (maxUnavailable + maxSurge) determines the level of parallelism (how many
-   * nodes are being upgraded at the same time).
-   * Note: upgrades inevitably introduce some disruption since workloads need to
-   * be moved from old nodes to new, upgraded ones. Even if maxUnavailable=0,
-   * this holds true. (Disruption stays within the limits of
-   * PodDisruptionBudget, if it is configured.)
-   * Consider a hypothetical node pool with 5 nodes having maxSurge=2,
-   * maxUnavailable=1. This means the upgrade process upgrades 3 nodes
-   * simultaneously. It creates 2 additional (upgraded) nodes, then it brings
-   * down 3 old (not yet upgraded) nodes at the same time. This ensures that
-   * there are always at least 4 nodes available.
-   * </pre>
-   *
-   * Protobuf type {@code google.container.v1beta1.NodePool.UpgradeSettings}
-   */
+  /** Protobuf type {@code google.container.v1beta1.NodePool.UpgradeSettings} */
   public static final class UpgradeSettings extends com.google.protobuf.GeneratedMessageV3
       implements
       // @@protoc_insertion_point(message_implements:google.container.v1beta1.NodePool.UpgradeSettings)
@@ -897,32 +906,7 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
-    /**
-     *
-     *
-     * <pre>
-     * These upgrade settings control the level of parallelism and the level of
-     * disruption caused by an upgrade.
-     * maxUnavailable controls the number of nodes that can be simultaneously
-     * unavailable.
-     * maxSurge controls the number of additional nodes that can be added to the
-     * node pool temporarily for the time of the upgrade to increase the number of
-     * available nodes.
-     * (maxUnavailable + maxSurge) determines the level of parallelism (how many
-     * nodes are being upgraded at the same time).
-     * Note: upgrades inevitably introduce some disruption since workloads need to
-     * be moved from old nodes to new, upgraded ones. Even if maxUnavailable=0,
-     * this holds true. (Disruption stays within the limits of
-     * PodDisruptionBudget, if it is configured.)
-     * Consider a hypothetical node pool with 5 nodes having maxSurge=2,
-     * maxUnavailable=1. This means the upgrade process upgrades 3 nodes
-     * simultaneously. It creates 2 additional (upgraded) nodes, then it brings
-     * down 3 old (not yet upgraded) nodes at the same time. This ensures that
-     * there are always at least 4 nodes available.
-     * </pre>
-     *
-     * Protobuf type {@code google.container.v1beta1.NodePool.UpgradeSettings}
-     */
+    /** Protobuf type {@code google.container.v1beta1.NodePool.UpgradeSettings} */
     public static final class Builder
         extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
         implements
@@ -1449,6 +1433,57 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
    */
   public com.google.protobuf.ByteString getLocationsBytes(int index) {
     return locations_.getByteString(index);
+  }
+
+  public static final int NETWORK_CONFIG_FIELD_NUMBER = 14;
+  private com.google.container.v1beta1.NodeNetworkConfig networkConfig_;
+  /**
+   *
+   *
+   * <pre>
+   * Networking configuration for this NodePool. If specified, it overrides the
+   * cluster-level defaults.
+   * </pre>
+   *
+   * <code>.google.container.v1beta1.NodeNetworkConfig network_config = 14;</code>
+   *
+   * @return Whether the networkConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasNetworkConfig() {
+    return networkConfig_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Networking configuration for this NodePool. If specified, it overrides the
+   * cluster-level defaults.
+   * </pre>
+   *
+   * <code>.google.container.v1beta1.NodeNetworkConfig network_config = 14;</code>
+   *
+   * @return The networkConfig.
+   */
+  @java.lang.Override
+  public com.google.container.v1beta1.NodeNetworkConfig getNetworkConfig() {
+    return networkConfig_ == null
+        ? com.google.container.v1beta1.NodeNetworkConfig.getDefaultInstance()
+        : networkConfig_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Networking configuration for this NodePool. If specified, it overrides the
+   * cluster-level defaults.
+   * </pre>
+   *
+   * <code>.google.container.v1beta1.NodeNetworkConfig network_config = 14;</code>
+   */
+  @java.lang.Override
+  public com.google.container.v1beta1.NodeNetworkConfigOrBuilder getNetworkConfigOrBuilder() {
+    return getNetworkConfig();
   }
 
   public static final int SELF_LINK_FIELD_NUMBER = 100;
@@ -2033,6 +2068,9 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
     for (int i = 0; i < locations_.size(); i++) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 13, locations_.getRaw(i));
     }
+    if (networkConfig_ != null) {
+      output.writeMessage(14, getNetworkConfig());
+    }
     if (!getSelfLinkBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 100, selfLink_);
     }
@@ -2092,6 +2130,9 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
       size += dataSize;
       size += 1 * getLocationsList().size();
     }
+    if (networkConfig_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(14, getNetworkConfig());
+    }
     if (!getSelfLinkBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(100, selfLink_);
     }
@@ -2140,6 +2181,10 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
     }
     if (getInitialNodeCount() != other.getInitialNodeCount()) return false;
     if (!getLocationsList().equals(other.getLocationsList())) return false;
+    if (hasNetworkConfig() != other.hasNetworkConfig()) return false;
+    if (hasNetworkConfig()) {
+      if (!getNetworkConfig().equals(other.getNetworkConfig())) return false;
+    }
     if (!getSelfLink().equals(other.getSelfLink())) return false;
     if (!getVersion().equals(other.getVersion())) return false;
     if (!getInstanceGroupUrlsList().equals(other.getInstanceGroupUrlsList())) return false;
@@ -2185,6 +2230,10 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
     if (getLocationsCount() > 0) {
       hash = (37 * hash) + LOCATIONS_FIELD_NUMBER;
       hash = (53 * hash) + getLocationsList().hashCode();
+    }
+    if (hasNetworkConfig()) {
+      hash = (37 * hash) + NETWORK_CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + getNetworkConfig().hashCode();
     }
     hash = (37 * hash) + SELF_LINK_FIELD_NUMBER;
     hash = (53 * hash) + getSelfLink().hashCode();
@@ -2329,6 +2378,24 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
    * of Kubernetes labels applied to them, which may be used to reference them
    * during pod scheduling. They may also be resized up or down, to accommodate
    * the workload.
+   * These upgrade settings control the level of parallelism and the level of
+   * disruption caused by an upgrade.
+   * maxUnavailable controls the number of nodes that can be simultaneously
+   * unavailable.
+   * maxSurge controls the number of additional nodes that can be added to the
+   * node pool temporarily for the time of the upgrade to increase the number of
+   * available nodes.
+   * (maxUnavailable + maxSurge) determines the level of parallelism (how many
+   * nodes are being upgraded at the same time).
+   * Note: upgrades inevitably introduce some disruption since workloads need to
+   * be moved from old nodes to new, upgraded ones. Even if maxUnavailable=0,
+   * this holds true. (Disruption stays within the limits of
+   * PodDisruptionBudget, if it is configured.)
+   * Consider a hypothetical node pool with 5 nodes having maxSurge=2,
+   * maxUnavailable=1. This means the upgrade process upgrades 3 nodes
+   * simultaneously. It creates 2 additional (upgraded) nodes, then it brings
+   * down 3 old (not yet upgraded) nodes at the same time. This ensures that
+   * there are always at least 4 nodes available.
    * </pre>
    *
    * Protobuf type {@code google.container.v1beta1.NodePool}
@@ -2383,6 +2450,12 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
 
       locations_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0_ = (bitField0_ & ~0x00000001);
+      if (networkConfigBuilder_ == null) {
+        networkConfig_ = null;
+      } else {
+        networkConfig_ = null;
+        networkConfigBuilder_ = null;
+      }
       selfLink_ = "";
 
       version_ = "";
@@ -2465,6 +2538,11 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
         bitField0_ = (bitField0_ & ~0x00000001);
       }
       result.locations_ = locations_;
+      if (networkConfigBuilder_ == null) {
+        result.networkConfig_ = networkConfig_;
+      } else {
+        result.networkConfig_ = networkConfigBuilder_.build();
+      }
       result.selfLink_ = selfLink_;
       result.version_ = version_;
       if (((bitField0_ & 0x00000002) != 0)) {
@@ -2572,6 +2650,9 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
           locations_.addAll(other.locations_);
         }
         onChanged();
+      }
+      if (other.hasNetworkConfig()) {
+        mergeNetworkConfig(other.getNetworkConfig());
       }
       if (!other.getSelfLink().isEmpty()) {
         selfLink_ = other.selfLink_;
@@ -3252,6 +3333,201 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
       locations_.add(value);
       onChanged();
       return this;
+    }
+
+    private com.google.container.v1beta1.NodeNetworkConfig networkConfig_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.container.v1beta1.NodeNetworkConfig,
+            com.google.container.v1beta1.NodeNetworkConfig.Builder,
+            com.google.container.v1beta1.NodeNetworkConfigOrBuilder>
+        networkConfigBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Networking configuration for this NodePool. If specified, it overrides the
+     * cluster-level defaults.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.NodeNetworkConfig network_config = 14;</code>
+     *
+     * @return Whether the networkConfig field is set.
+     */
+    public boolean hasNetworkConfig() {
+      return networkConfigBuilder_ != null || networkConfig_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Networking configuration for this NodePool. If specified, it overrides the
+     * cluster-level defaults.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.NodeNetworkConfig network_config = 14;</code>
+     *
+     * @return The networkConfig.
+     */
+    public com.google.container.v1beta1.NodeNetworkConfig getNetworkConfig() {
+      if (networkConfigBuilder_ == null) {
+        return networkConfig_ == null
+            ? com.google.container.v1beta1.NodeNetworkConfig.getDefaultInstance()
+            : networkConfig_;
+      } else {
+        return networkConfigBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Networking configuration for this NodePool. If specified, it overrides the
+     * cluster-level defaults.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.NodeNetworkConfig network_config = 14;</code>
+     */
+    public Builder setNetworkConfig(com.google.container.v1beta1.NodeNetworkConfig value) {
+      if (networkConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        networkConfig_ = value;
+        onChanged();
+      } else {
+        networkConfigBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Networking configuration for this NodePool. If specified, it overrides the
+     * cluster-level defaults.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.NodeNetworkConfig network_config = 14;</code>
+     */
+    public Builder setNetworkConfig(
+        com.google.container.v1beta1.NodeNetworkConfig.Builder builderForValue) {
+      if (networkConfigBuilder_ == null) {
+        networkConfig_ = builderForValue.build();
+        onChanged();
+      } else {
+        networkConfigBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Networking configuration for this NodePool. If specified, it overrides the
+     * cluster-level defaults.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.NodeNetworkConfig network_config = 14;</code>
+     */
+    public Builder mergeNetworkConfig(com.google.container.v1beta1.NodeNetworkConfig value) {
+      if (networkConfigBuilder_ == null) {
+        if (networkConfig_ != null) {
+          networkConfig_ =
+              com.google.container.v1beta1.NodeNetworkConfig.newBuilder(networkConfig_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          networkConfig_ = value;
+        }
+        onChanged();
+      } else {
+        networkConfigBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Networking configuration for this NodePool. If specified, it overrides the
+     * cluster-level defaults.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.NodeNetworkConfig network_config = 14;</code>
+     */
+    public Builder clearNetworkConfig() {
+      if (networkConfigBuilder_ == null) {
+        networkConfig_ = null;
+        onChanged();
+      } else {
+        networkConfig_ = null;
+        networkConfigBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Networking configuration for this NodePool. If specified, it overrides the
+     * cluster-level defaults.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.NodeNetworkConfig network_config = 14;</code>
+     */
+    public com.google.container.v1beta1.NodeNetworkConfig.Builder getNetworkConfigBuilder() {
+
+      onChanged();
+      return getNetworkConfigFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Networking configuration for this NodePool. If specified, it overrides the
+     * cluster-level defaults.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.NodeNetworkConfig network_config = 14;</code>
+     */
+    public com.google.container.v1beta1.NodeNetworkConfigOrBuilder getNetworkConfigOrBuilder() {
+      if (networkConfigBuilder_ != null) {
+        return networkConfigBuilder_.getMessageOrBuilder();
+      } else {
+        return networkConfig_ == null
+            ? com.google.container.v1beta1.NodeNetworkConfig.getDefaultInstance()
+            : networkConfig_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Networking configuration for this NodePool. If specified, it overrides the
+     * cluster-level defaults.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.NodeNetworkConfig network_config = 14;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.container.v1beta1.NodeNetworkConfig,
+            com.google.container.v1beta1.NodeNetworkConfig.Builder,
+            com.google.container.v1beta1.NodeNetworkConfigOrBuilder>
+        getNetworkConfigFieldBuilder() {
+      if (networkConfigBuilder_ == null) {
+        networkConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.container.v1beta1.NodeNetworkConfig,
+                com.google.container.v1beta1.NodeNetworkConfig.Builder,
+                com.google.container.v1beta1.NodeNetworkConfigOrBuilder>(
+                getNetworkConfig(), getParentForChildren(), isClean());
+        networkConfig_ = null;
+      }
+      return networkConfigBuilder_;
     }
 
     private java.lang.Object selfLink_ = "";

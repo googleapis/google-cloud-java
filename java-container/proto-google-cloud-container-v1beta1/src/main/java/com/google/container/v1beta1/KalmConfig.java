@@ -116,11 +116,12 @@ public final class KalmConfig extends com.google.protobuf.GeneratedMessageV3
    * Whether KALM is enabled for this cluster.
    * </pre>
    *
-   * <code>bool enabled = 1;</code>
+   * <code>bool enabled = 1 [deprecated = true];</code>
    *
    * @return The enabled.
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public boolean getEnabled() {
     return enabled_;
   }
@@ -447,11 +448,12 @@ public final class KalmConfig extends com.google.protobuf.GeneratedMessageV3
      * Whether KALM is enabled for this cluster.
      * </pre>
      *
-     * <code>bool enabled = 1;</code>
+     * <code>bool enabled = 1 [deprecated = true];</code>
      *
      * @return The enabled.
      */
     @java.lang.Override
+    @java.lang.Deprecated
     public boolean getEnabled() {
       return enabled_;
     }
@@ -462,11 +464,12 @@ public final class KalmConfig extends com.google.protobuf.GeneratedMessageV3
      * Whether KALM is enabled for this cluster.
      * </pre>
      *
-     * <code>bool enabled = 1;</code>
+     * <code>bool enabled = 1 [deprecated = true];</code>
      *
      * @param value The enabled to set.
      * @return This builder for chaining.
      */
+    @java.lang.Deprecated
     public Builder setEnabled(boolean value) {
 
       enabled_ = value;
@@ -480,10 +483,11 @@ public final class KalmConfig extends com.google.protobuf.GeneratedMessageV3
      * Whether KALM is enabled for this cluster.
      * </pre>
      *
-     * <code>bool enabled = 1;</code>
+     * <code>bool enabled = 1 [deprecated = true];</code>
      *
      * @return This builder for chaining.
      */
+    @java.lang.Deprecated
     public Builder clearEnabled() {
 
       enabled_ = false;

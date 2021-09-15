@@ -137,6 +137,7 @@ public final class StatusCondition extends com.google.protobuf.GeneratedMessageV
    *
    * Protobuf enum {@code google.container.v1beta1.StatusCondition.Code}
    */
+  @java.lang.Deprecated
   public enum Code implements com.google.protobuf.ProtocolMessageEnum {
     /**
      *
@@ -196,12 +197,22 @@ public final class StatusCondition extends com.google.protobuf.GeneratedMessageV
      * <pre>
      * Unable to perform an encrypt operation against the CloudKMS key used for
      * etcd level encryption.
-     * More codes TBA
      * </pre>
      *
      * <code>CLOUD_KMS_KEY_ERROR = 7;</code>
      */
     CLOUD_KMS_KEY_ERROR(7),
+    /**
+     *
+     *
+     * <pre>
+     * Cluster CA is expiring soon.
+     * More codes TBA
+     * </pre>
+     *
+     * <code>CA_EXPIRING = 9;</code>
+     */
+    CA_EXPIRING(9),
     UNRECOGNIZED(-1),
     ;
 
@@ -263,12 +274,22 @@ public final class StatusCondition extends com.google.protobuf.GeneratedMessageV
      * <pre>
      * Unable to perform an encrypt operation against the CloudKMS key used for
      * etcd level encryption.
-     * More codes TBA
      * </pre>
      *
      * <code>CLOUD_KMS_KEY_ERROR = 7;</code>
      */
     public static final int CLOUD_KMS_KEY_ERROR_VALUE = 7;
+    /**
+     *
+     *
+     * <pre>
+     * Cluster CA is expiring soon.
+     * More codes TBA
+     * </pre>
+     *
+     * <code>CA_EXPIRING = 9;</code>
+     */
+    public static final int CA_EXPIRING_VALUE = 9;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -306,6 +327,8 @@ public final class StatusCondition extends com.google.protobuf.GeneratedMessageV
           return SET_BY_OPERATOR;
         case 7:
           return CLOUD_KMS_KEY_ERROR;
+        case 9:
+          return CA_EXPIRING;
         default:
           return null;
       }

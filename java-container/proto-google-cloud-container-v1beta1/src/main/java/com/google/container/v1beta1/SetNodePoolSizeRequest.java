@@ -22,8 +22,7 @@ package com.google.container.v1beta1;
  *
  *
  * <pre>
- * SetNodePoolSizeRequest sets the size a node
- * pool.
+ * SetNodePoolSizeRequest sets the size of a node pool.
  * </pre>
  *
  * Protobuf type {@code google.container.v1beta1.SetNodePoolSizeRequest}
@@ -652,8 +651,7 @@ public final class SetNodePoolSizeRequest extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * SetNodePoolSizeRequest sets the size a node
-   * pool.
+   * SetNodePoolSizeRequest sets the size of a node pool.
    * </pre>
    *
    * Protobuf type {@code google.container.v1beta1.SetNodePoolSizeRequest}

@@ -158,7 +158,7 @@ public enum DatapathProvider implements com.google.protobuf.ProtocolMessageEnum 
   }
 
   public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
-    return com.google.container.v1beta1.ClusterServiceProto.getDescriptor().getEnumTypes().get(0);
+    return com.google.container.v1beta1.ClusterServiceProto.getDescriptor().getEnumTypes().get(1);
   }
 
   private static final DatapathProvider[] VALUES = values();

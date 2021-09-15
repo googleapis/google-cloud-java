@@ -770,11 +770,12 @@ public final class AddonsConfig extends com.google.protobuf.GeneratedMessageV3
    * applications.
    * </pre>
    *
-   * <code>.google.container.v1beta1.KalmConfig kalm_config = 12;</code>
+   * <code>.google.container.v1beta1.KalmConfig kalm_config = 12 [deprecated = true];</code>
    *
    * @return Whether the kalmConfig field is set.
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public boolean hasKalmConfig() {
     return kalmConfig_ != null;
   }
@@ -786,11 +787,12 @@ public final class AddonsConfig extends com.google.protobuf.GeneratedMessageV3
    * applications.
    * </pre>
    *
-   * <code>.google.container.v1beta1.KalmConfig kalm_config = 12;</code>
+   * <code>.google.container.v1beta1.KalmConfig kalm_config = 12 [deprecated = true];</code>
    *
    * @return The kalmConfig.
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public com.google.container.v1beta1.KalmConfig getKalmConfig() {
     return kalmConfig_ == null
         ? com.google.container.v1beta1.KalmConfig.getDefaultInstance()
@@ -804,9 +806,10 @@ public final class AddonsConfig extends com.google.protobuf.GeneratedMessageV3
    * applications.
    * </pre>
    *
-   * <code>.google.container.v1beta1.KalmConfig kalm_config = 12;</code>
+   * <code>.google.container.v1beta1.KalmConfig kalm_config = 12 [deprecated = true];</code>
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public com.google.container.v1beta1.KalmConfigOrBuilder getKalmConfigOrBuilder() {
     return getKalmConfig();
   }
@@ -3280,10 +3283,11 @@ public final class AddonsConfig extends com.google.protobuf.GeneratedMessageV3
      * applications.
      * </pre>
      *
-     * <code>.google.container.v1beta1.KalmConfig kalm_config = 12;</code>
+     * <code>.google.container.v1beta1.KalmConfig kalm_config = 12 [deprecated = true];</code>
      *
      * @return Whether the kalmConfig field is set.
      */
+    @java.lang.Deprecated
     public boolean hasKalmConfig() {
       return kalmConfigBuilder_ != null || kalmConfig_ != null;
     }
@@ -3295,10 +3299,11 @@ public final class AddonsConfig extends com.google.protobuf.GeneratedMessageV3
      * applications.
      * </pre>
      *
-     * <code>.google.container.v1beta1.KalmConfig kalm_config = 12;</code>
+     * <code>.google.container.v1beta1.KalmConfig kalm_config = 12 [deprecated = true];</code>
      *
      * @return The kalmConfig.
      */
+    @java.lang.Deprecated
     public com.google.container.v1beta1.KalmConfig getKalmConfig() {
       if (kalmConfigBuilder_ == null) {
         return kalmConfig_ == null
@@ -3316,8 +3321,9 @@ public final class AddonsConfig extends com.google.protobuf.GeneratedMessageV3
      * applications.
      * </pre>
      *
-     * <code>.google.container.v1beta1.KalmConfig kalm_config = 12;</code>
+     * <code>.google.container.v1beta1.KalmConfig kalm_config = 12 [deprecated = true];</code>
      */
+    @java.lang.Deprecated
     public Builder setKalmConfig(com.google.container.v1beta1.KalmConfig value) {
       if (kalmConfigBuilder_ == null) {
         if (value == null) {
@@ -3339,8 +3345,9 @@ public final class AddonsConfig extends com.google.protobuf.GeneratedMessageV3
      * applications.
      * </pre>
      *
-     * <code>.google.container.v1beta1.KalmConfig kalm_config = 12;</code>
+     * <code>.google.container.v1beta1.KalmConfig kalm_config = 12 [deprecated = true];</code>
      */
+    @java.lang.Deprecated
     public Builder setKalmConfig(com.google.container.v1beta1.KalmConfig.Builder builderForValue) {
       if (kalmConfigBuilder_ == null) {
         kalmConfig_ = builderForValue.build();
@@ -3359,8 +3366,9 @@ public final class AddonsConfig extends com.google.protobuf.GeneratedMessageV3
      * applications.
      * </pre>
      *
-     * <code>.google.container.v1beta1.KalmConfig kalm_config = 12;</code>
+     * <code>.google.container.v1beta1.KalmConfig kalm_config = 12 [deprecated = true];</code>
      */
+    @java.lang.Deprecated
     public Builder mergeKalmConfig(com.google.container.v1beta1.KalmConfig value) {
       if (kalmConfigBuilder_ == null) {
         if (kalmConfig_ != null) {
@@ -3386,8 +3394,9 @@ public final class AddonsConfig extends com.google.protobuf.GeneratedMessageV3
      * applications.
      * </pre>
      *
-     * <code>.google.container.v1beta1.KalmConfig kalm_config = 12;</code>
+     * <code>.google.container.v1beta1.KalmConfig kalm_config = 12 [deprecated = true];</code>
      */
+    @java.lang.Deprecated
     public Builder clearKalmConfig() {
       if (kalmConfigBuilder_ == null) {
         kalmConfig_ = null;
@@ -3407,8 +3416,9 @@ public final class AddonsConfig extends com.google.protobuf.GeneratedMessageV3
      * applications.
      * </pre>
      *
-     * <code>.google.container.v1beta1.KalmConfig kalm_config = 12;</code>
+     * <code>.google.container.v1beta1.KalmConfig kalm_config = 12 [deprecated = true];</code>
      */
+    @java.lang.Deprecated
     public com.google.container.v1beta1.KalmConfig.Builder getKalmConfigBuilder() {
 
       onChanged();
@@ -3422,8 +3432,9 @@ public final class AddonsConfig extends com.google.protobuf.GeneratedMessageV3
      * applications.
      * </pre>
      *
-     * <code>.google.container.v1beta1.KalmConfig kalm_config = 12;</code>
+     * <code>.google.container.v1beta1.KalmConfig kalm_config = 12 [deprecated = true];</code>
      */
+    @java.lang.Deprecated
     public com.google.container.v1beta1.KalmConfigOrBuilder getKalmConfigOrBuilder() {
       if (kalmConfigBuilder_ != null) {
         return kalmConfigBuilder_.getMessageOrBuilder();
@@ -3441,7 +3452,7 @@ public final class AddonsConfig extends com.google.protobuf.GeneratedMessageV3
      * applications.
      * </pre>
      *
-     * <code>.google.container.v1beta1.KalmConfig kalm_config = 12;</code>
+     * <code>.google.container.v1beta1.KalmConfig kalm_config = 12 [deprecated = true];</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.container.v1beta1.KalmConfig,

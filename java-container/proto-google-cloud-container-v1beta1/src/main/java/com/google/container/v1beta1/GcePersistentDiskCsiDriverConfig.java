@@ -22,8 +22,7 @@ package com.google.container.v1beta1;
  *
  *
  * <pre>
- * Configuration for the Compute Engine PD CSI driver. This option can only be
- * enabled at cluster creation time.
+ * Configuration for the Compute Engine PD CSI driver.
  * </pre>
  *
  * Protobuf type {@code google.container.v1beta1.GcePersistentDiskCsiDriverConfig}
@@ -291,8 +290,7 @@ public final class GcePersistentDiskCsiDriverConfig extends com.google.protobuf.
    *
    *
    * <pre>
-   * Configuration for the Compute Engine PD CSI driver. This option can only be
-   * enabled at cluster creation time.
+   * Configuration for the Compute Engine PD CSI driver.
    * </pre>
    *
    * Protobuf type {@code google.container.v1beta1.GcePersistentDiskCsiDriverConfig}

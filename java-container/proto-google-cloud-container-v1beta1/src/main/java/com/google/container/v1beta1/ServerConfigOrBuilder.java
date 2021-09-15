@@ -278,4 +278,66 @@ public interface ServerConfigOrBuilder
    */
   com.google.container.v1beta1.ServerConfig.ReleaseChannelConfigOrBuilder getChannelsOrBuilder(
       int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Maps of Kubernetes version and supported Windows server versions.
+   * </pre>
+   *
+   * <code>map&lt;string, .google.container.v1beta1.WindowsVersions&gt; windows_version_maps = 10;
+   * </code>
+   */
+  int getWindowsVersionMapsCount();
+  /**
+   *
+   *
+   * <pre>
+   * Maps of Kubernetes version and supported Windows server versions.
+   * </pre>
+   *
+   * <code>map&lt;string, .google.container.v1beta1.WindowsVersions&gt; windows_version_maps = 10;
+   * </code>
+   */
+  boolean containsWindowsVersionMaps(java.lang.String key);
+  /** Use {@link #getWindowsVersionMapsMap()} instead. */
+  @java.lang.Deprecated
+  java.util.Map<java.lang.String, com.google.container.v1beta1.WindowsVersions>
+      getWindowsVersionMaps();
+  /**
+   *
+   *
+   * <pre>
+   * Maps of Kubernetes version and supported Windows server versions.
+   * </pre>
+   *
+   * <code>map&lt;string, .google.container.v1beta1.WindowsVersions&gt; windows_version_maps = 10;
+   * </code>
+   */
+  java.util.Map<java.lang.String, com.google.container.v1beta1.WindowsVersions>
+      getWindowsVersionMapsMap();
+  /**
+   *
+   *
+   * <pre>
+   * Maps of Kubernetes version and supported Windows server versions.
+   * </pre>
+   *
+   * <code>map&lt;string, .google.container.v1beta1.WindowsVersions&gt; windows_version_maps = 10;
+   * </code>
+   */
+  com.google.container.v1beta1.WindowsVersions getWindowsVersionMapsOrDefault(
+      java.lang.String key, com.google.container.v1beta1.WindowsVersions defaultValue);
+  /**
+   *
+   *
+   * <pre>
+   * Maps of Kubernetes version and supported Windows server versions.
+   * </pre>
+   *
+   * <code>map&lt;string, .google.container.v1beta1.WindowsVersions&gt; windows_version_maps = 10;
+   * </code>
+   */
+  com.google.container.v1beta1.WindowsVersions getWindowsVersionMapsOrThrow(java.lang.String key);
 }

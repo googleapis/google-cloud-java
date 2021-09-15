@@ -403,10 +403,11 @@ public interface AddonsConfigOrBuilder
    * applications.
    * </pre>
    *
-   * <code>.google.container.v1beta1.KalmConfig kalm_config = 12;</code>
+   * <code>.google.container.v1beta1.KalmConfig kalm_config = 12 [deprecated = true];</code>
    *
    * @return Whether the kalmConfig field is set.
    */
+  @java.lang.Deprecated
   boolean hasKalmConfig();
   /**
    *
@@ -416,10 +417,11 @@ public interface AddonsConfigOrBuilder
    * applications.
    * </pre>
    *
-   * <code>.google.container.v1beta1.KalmConfig kalm_config = 12;</code>
+   * <code>.google.container.v1beta1.KalmConfig kalm_config = 12 [deprecated = true];</code>
    *
    * @return The kalmConfig.
    */
+  @java.lang.Deprecated
   com.google.container.v1beta1.KalmConfig getKalmConfig();
   /**
    *
@@ -429,7 +431,8 @@ public interface AddonsConfigOrBuilder
    * applications.
    * </pre>
    *
-   * <code>.google.container.v1beta1.KalmConfig kalm_config = 12;</code>
+   * <code>.google.container.v1beta1.KalmConfig kalm_config = 12 [deprecated = true];</code>
    */
+  @java.lang.Deprecated
   com.google.container.v1beta1.KalmConfigOrBuilder getKalmConfigOrBuilder();
 }

@@ -817,6 +817,45 @@ public interface ClusterUpdateOrBuilder
    *
    *
    * <pre>
+   * The desired L4 Internal Load Balancer Subsetting configuration.
+   * </pre>
+   *
+   * <code>.google.container.v1beta1.ILBSubsettingConfig desired_l4ilb_subsetting_config = 39;
+   * </code>
+   *
+   * @return Whether the desiredL4ilbSubsettingConfig field is set.
+   */
+  boolean hasDesiredL4IlbSubsettingConfig();
+  /**
+   *
+   *
+   * <pre>
+   * The desired L4 Internal Load Balancer Subsetting configuration.
+   * </pre>
+   *
+   * <code>.google.container.v1beta1.ILBSubsettingConfig desired_l4ilb_subsetting_config = 39;
+   * </code>
+   *
+   * @return The desiredL4ilbSubsettingConfig.
+   */
+  com.google.container.v1beta1.ILBSubsettingConfig getDesiredL4IlbSubsettingConfig();
+  /**
+   *
+   *
+   * <pre>
+   * The desired L4 Internal Load Balancer Subsetting configuration.
+   * </pre>
+   *
+   * <code>.google.container.v1beta1.ILBSubsettingConfig desired_l4ilb_subsetting_config = 39;
+   * </code>
+   */
+  com.google.container.v1beta1.ILBSubsettingConfigOrBuilder
+      getDesiredL4IlbSubsettingConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * The desired datapath provider for the cluster.
    * </pre>
    *
@@ -837,6 +876,35 @@ public interface ClusterUpdateOrBuilder
    * @return The desiredDatapathProvider.
    */
   com.google.container.v1beta1.DatapathProvider getDesiredDatapathProvider();
+
+  /**
+   *
+   *
+   * <pre>
+   * The desired state of IPv6 connectivity to Google Services.
+   * </pre>
+   *
+   * <code>
+   * .google.container.v1beta1.PrivateIPv6GoogleAccess desired_private_ipv6_google_access = 51;
+   * </code>
+   *
+   * @return The enum numeric value on the wire for desiredPrivateIpv6GoogleAccess.
+   */
+  int getDesiredPrivateIpv6GoogleAccessValue();
+  /**
+   *
+   *
+   * <pre>
+   * The desired state of IPv6 connectivity to Google Services.
+   * </pre>
+   *
+   * <code>
+   * .google.container.v1beta1.PrivateIPv6GoogleAccess desired_private_ipv6_google_access = 51;
+   * </code>
+   *
+   * @return The desiredPrivateIpv6GoogleAccess.
+   */
+  com.google.container.v1beta1.PrivateIPv6GoogleAccess getDesiredPrivateIpv6GoogleAccess();
 
   /**
    *
@@ -992,6 +1060,45 @@ public interface ClusterUpdateOrBuilder
    *
    *
    * <pre>
+   * Configuration for issuance of mTLS keys and certificates to Kubernetes
+   * pods.
+   * </pre>
+   *
+   * <code>.google.container.v1beta1.WorkloadCertificates desired_workload_certificates = 61;</code>
+   *
+   * @return Whether the desiredWorkloadCertificates field is set.
+   */
+  boolean hasDesiredWorkloadCertificates();
+  /**
+   *
+   *
+   * <pre>
+   * Configuration for issuance of mTLS keys and certificates to Kubernetes
+   * pods.
+   * </pre>
+   *
+   * <code>.google.container.v1beta1.WorkloadCertificates desired_workload_certificates = 61;</code>
+   *
+   * @return The desiredWorkloadCertificates.
+   */
+  com.google.container.v1beta1.WorkloadCertificates getDesiredWorkloadCertificates();
+  /**
+   *
+   *
+   * <pre>
+   * Configuration for issuance of mTLS keys and certificates to Kubernetes
+   * pods.
+   * </pre>
+   *
+   * <code>.google.container.v1beta1.WorkloadCertificates desired_workload_certificates = 61;</code>
+   */
+  com.google.container.v1beta1.WorkloadCertificatesOrBuilder
+      getDesiredWorkloadCertificatesOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Configuration for Shielded Nodes.
    * </pre>
    *
@@ -1062,6 +1169,86 @@ public interface ClusterUpdateOrBuilder
    *
    *
    * <pre>
+   * DNSConfig contains clusterDNS config for this cluster.
+   * </pre>
+   *
+   * <code>.google.container.v1beta1.DNSConfig desired_dns_config = 53;</code>
+   *
+   * @return Whether the desiredDnsConfig field is set.
+   */
+  boolean hasDesiredDnsConfig();
+  /**
+   *
+   *
+   * <pre>
+   * DNSConfig contains clusterDNS config for this cluster.
+   * </pre>
+   *
+   * <code>.google.container.v1beta1.DNSConfig desired_dns_config = 53;</code>
+   *
+   * @return The desiredDnsConfig.
+   */
+  com.google.container.v1beta1.DNSConfig getDesiredDnsConfig();
+  /**
+   *
+   *
+   * <pre>
+   * DNSConfig contains clusterDNS config for this cluster.
+   * </pre>
+   *
+   * <code>.google.container.v1beta1.DNSConfig desired_dns_config = 53;</code>
+   */
+  com.google.container.v1beta1.DNSConfigOrBuilder getDesiredDnsConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * ServiceExternalIPsConfig specifies the config for the use of Services with
+   * ExternalIPs field.
+   * </pre>
+   *
+   * <code>
+   * .google.container.v1beta1.ServiceExternalIPsConfig desired_service_external_ips_config = 60;
+   * </code>
+   *
+   * @return Whether the desiredServiceExternalIpsConfig field is set.
+   */
+  boolean hasDesiredServiceExternalIpsConfig();
+  /**
+   *
+   *
+   * <pre>
+   * ServiceExternalIPsConfig specifies the config for the use of Services with
+   * ExternalIPs field.
+   * </pre>
+   *
+   * <code>
+   * .google.container.v1beta1.ServiceExternalIPsConfig desired_service_external_ips_config = 60;
+   * </code>
+   *
+   * @return The desiredServiceExternalIpsConfig.
+   */
+  com.google.container.v1beta1.ServiceExternalIPsConfig getDesiredServiceExternalIpsConfig();
+  /**
+   *
+   *
+   * <pre>
+   * ServiceExternalIPsConfig specifies the config for the use of Services with
+   * ExternalIPs field.
+   * </pre>
+   *
+   * <code>
+   * .google.container.v1beta1.ServiceExternalIPsConfig desired_service_external_ips_config = 60;
+   * </code>
+   */
+  com.google.container.v1beta1.ServiceExternalIPsConfigOrBuilder
+      getDesiredServiceExternalIpsConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * AuthenticatorGroupsConfig specifies the config for the cluster security
    * groups settings.
    * </pre>
@@ -1102,4 +1289,113 @@ public interface ClusterUpdateOrBuilder
    */
   com.google.container.v1beta1.AuthenticatorGroupsConfigOrBuilder
       getDesiredAuthenticatorGroupsConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * The desired logging configuration.
+   * </pre>
+   *
+   * <code>.google.container.v1beta1.LoggingConfig desired_logging_config = 64;</code>
+   *
+   * @return Whether the desiredLoggingConfig field is set.
+   */
+  boolean hasDesiredLoggingConfig();
+  /**
+   *
+   *
+   * <pre>
+   * The desired logging configuration.
+   * </pre>
+   *
+   * <code>.google.container.v1beta1.LoggingConfig desired_logging_config = 64;</code>
+   *
+   * @return The desiredLoggingConfig.
+   */
+  com.google.container.v1beta1.LoggingConfig getDesiredLoggingConfig();
+  /**
+   *
+   *
+   * <pre>
+   * The desired logging configuration.
+   * </pre>
+   *
+   * <code>.google.container.v1beta1.LoggingConfig desired_logging_config = 64;</code>
+   */
+  com.google.container.v1beta1.LoggingConfigOrBuilder getDesiredLoggingConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * The desired monitoring configuration.
+   * </pre>
+   *
+   * <code>.google.container.v1beta1.MonitoringConfig desired_monitoring_config = 65;</code>
+   *
+   * @return Whether the desiredMonitoringConfig field is set.
+   */
+  boolean hasDesiredMonitoringConfig();
+  /**
+   *
+   *
+   * <pre>
+   * The desired monitoring configuration.
+   * </pre>
+   *
+   * <code>.google.container.v1beta1.MonitoringConfig desired_monitoring_config = 65;</code>
+   *
+   * @return The desiredMonitoringConfig.
+   */
+  com.google.container.v1beta1.MonitoringConfig getDesiredMonitoringConfig();
+  /**
+   *
+   *
+   * <pre>
+   * The desired monitoring configuration.
+   * </pre>
+   *
+   * <code>.google.container.v1beta1.MonitoringConfig desired_monitoring_config = 65;</code>
+   */
+  com.google.container.v1beta1.MonitoringConfigOrBuilder getDesiredMonitoringConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * The desired Identity Service component configuration.
+   * </pre>
+   *
+   * <code>.google.container.v1beta1.IdentityServiceConfig desired_identity_service_config = 66;
+   * </code>
+   *
+   * @return Whether the desiredIdentityServiceConfig field is set.
+   */
+  boolean hasDesiredIdentityServiceConfig();
+  /**
+   *
+   *
+   * <pre>
+   * The desired Identity Service component configuration.
+   * </pre>
+   *
+   * <code>.google.container.v1beta1.IdentityServiceConfig desired_identity_service_config = 66;
+   * </code>
+   *
+   * @return The desiredIdentityServiceConfig.
+   */
+  com.google.container.v1beta1.IdentityServiceConfig getDesiredIdentityServiceConfig();
+  /**
+   *
+   *
+   * <pre>
+   * The desired Identity Service component configuration.
+   * </pre>
+   *
+   * <code>.google.container.v1beta1.IdentityServiceConfig desired_identity_service_config = 66;
+   * </code>
+   */
+  com.google.container.v1beta1.IdentityServiceConfigOrBuilder
+      getDesiredIdentityServiceConfigOrBuilder();
 }

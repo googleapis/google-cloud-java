@@ -387,6 +387,129 @@ public interface UpdateNodePoolRequestOrBuilder
    *
    *
    * <pre>
+   * The desired network tags to be applied to all nodes in the node pool.
+   * If this field is not present, the tags will not be changed. Otherwise,
+   * the existing network tags will be *replaced* with the provided tags.
+   * </pre>
+   *
+   * <code>.google.container.v1beta1.NetworkTags tags = 16;</code>
+   *
+   * @return Whether the tags field is set.
+   */
+  boolean hasTags();
+  /**
+   *
+   *
+   * <pre>
+   * The desired network tags to be applied to all nodes in the node pool.
+   * If this field is not present, the tags will not be changed. Otherwise,
+   * the existing network tags will be *replaced* with the provided tags.
+   * </pre>
+   *
+   * <code>.google.container.v1beta1.NetworkTags tags = 16;</code>
+   *
+   * @return The tags.
+   */
+  com.google.container.v1beta1.NetworkTags getTags();
+  /**
+   *
+   *
+   * <pre>
+   * The desired network tags to be applied to all nodes in the node pool.
+   * If this field is not present, the tags will not be changed. Otherwise,
+   * the existing network tags will be *replaced* with the provided tags.
+   * </pre>
+   *
+   * <code>.google.container.v1beta1.NetworkTags tags = 16;</code>
+   */
+  com.google.container.v1beta1.NetworkTagsOrBuilder getTagsOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * The desired node taints to be applied to all nodes in the node pool.
+   * If this field is not present, the taints will not be changed. Otherwise,
+   * the existing node taints will be *replaced* with the provided taints.
+   * </pre>
+   *
+   * <code>.google.container.v1beta1.NodeTaints taints = 17;</code>
+   *
+   * @return Whether the taints field is set.
+   */
+  boolean hasTaints();
+  /**
+   *
+   *
+   * <pre>
+   * The desired node taints to be applied to all nodes in the node pool.
+   * If this field is not present, the taints will not be changed. Otherwise,
+   * the existing node taints will be *replaced* with the provided taints.
+   * </pre>
+   *
+   * <code>.google.container.v1beta1.NodeTaints taints = 17;</code>
+   *
+   * @return The taints.
+   */
+  com.google.container.v1beta1.NodeTaints getTaints();
+  /**
+   *
+   *
+   * <pre>
+   * The desired node taints to be applied to all nodes in the node pool.
+   * If this field is not present, the taints will not be changed. Otherwise,
+   * the existing node taints will be *replaced* with the provided taints.
+   * </pre>
+   *
+   * <code>.google.container.v1beta1.NodeTaints taints = 17;</code>
+   */
+  com.google.container.v1beta1.NodeTaintsOrBuilder getTaintsOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * The desired node labels to be applied to all nodes in the node pool.
+   * If this field is not present, the labels will not be changed. Otherwise,
+   * the existing node labels will be *replaced* with the provided labels.
+   * </pre>
+   *
+   * <code>.google.container.v1beta1.NodeLabels labels = 18;</code>
+   *
+   * @return Whether the labels field is set.
+   */
+  boolean hasLabels();
+  /**
+   *
+   *
+   * <pre>
+   * The desired node labels to be applied to all nodes in the node pool.
+   * If this field is not present, the labels will not be changed. Otherwise,
+   * the existing node labels will be *replaced* with the provided labels.
+   * </pre>
+   *
+   * <code>.google.container.v1beta1.NodeLabels labels = 18;</code>
+   *
+   * @return The labels.
+   */
+  com.google.container.v1beta1.NodeLabels getLabels();
+  /**
+   *
+   *
+   * <pre>
+   * The desired node labels to be applied to all nodes in the node pool.
+   * If this field is not present, the labels will not be changed. Otherwise,
+   * the existing node labels will be *replaced* with the provided labels.
+   * </pre>
+   *
+   * <code>.google.container.v1beta1.NodeLabels labels = 18;</code>
+   */
+  com.google.container.v1beta1.NodeLabelsOrBuilder getLabelsOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Parameters that can be configured on Linux nodes.
    * </pre>
    *
@@ -452,4 +575,39 @@ public interface UpdateNodePoolRequestOrBuilder
    * <code>.google.container.v1beta1.NodeKubeletConfig kubelet_config = 20;</code>
    */
   com.google.container.v1beta1.NodeKubeletConfigOrBuilder getKubeletConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Enable or disable gvnic on the node pool.
+   * </pre>
+   *
+   * <code>.google.container.v1beta1.VirtualNIC gvnic = 29;</code>
+   *
+   * @return Whether the gvnic field is set.
+   */
+  boolean hasGvnic();
+  /**
+   *
+   *
+   * <pre>
+   * Enable or disable gvnic on the node pool.
+   * </pre>
+   *
+   * <code>.google.container.v1beta1.VirtualNIC gvnic = 29;</code>
+   *
+   * @return The gvnic.
+   */
+  com.google.container.v1beta1.VirtualNIC getGvnic();
+  /**
+   *
+   *
+   * <pre>
+   * Enable or disable gvnic on the node pool.
+   * </pre>
+   *
+   * <code>.google.container.v1beta1.VirtualNIC gvnic = 29;</code>
+   */
+  com.google.container.v1beta1.VirtualNICOrBuilder getGvnicOrBuilder();
 }

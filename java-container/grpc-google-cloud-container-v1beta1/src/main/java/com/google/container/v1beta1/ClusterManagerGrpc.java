@@ -2019,7 +2019,9 @@ public final class ClusterManagerGrpc {
      *
      *
      * <pre>
-     * Sets the size for a specific node pool.
+     * SetNodePoolSizeRequest sets the size of a node pool. The new size will be
+     * used for all replicas, including future replicas created by modifying
+     * [NodePool.locations][google.container.v1beta1.NodePool.locations].
      * </pre>
      */
     public void setNodePoolSize(
@@ -2800,7 +2802,9 @@ public final class ClusterManagerGrpc {
      *
      *
      * <pre>
-     * Sets the size for a specific node pool.
+     * SetNodePoolSizeRequest sets the size of a node pool. The new size will be
+     * used for all replicas, including future replicas created by modifying
+     * [NodePool.locations][google.container.v1beta1.NodePool.locations].
      * </pre>
      */
     public void setNodePoolSize(
@@ -3293,7 +3297,9 @@ public final class ClusterManagerGrpc {
      *
      *
      * <pre>
-     * Sets the size for a specific node pool.
+     * SetNodePoolSizeRequest sets the size of a node pool. The new size will be
+     * used for all replicas, including future replicas created by modifying
+     * [NodePool.locations][google.container.v1beta1.NodePool.locations].
      * </pre>
      */
     public com.google.container.v1beta1.Operation setNodePoolSize(
@@ -3795,7 +3801,9 @@ public final class ClusterManagerGrpc {
      *
      *
      * <pre>
-     * Sets the size for a specific node pool.
+     * SetNodePoolSizeRequest sets the size of a node pool. The new size will be
+     * used for all replicas, including future replicas created by modifying
+     * [NodePool.locations][google.container.v1beta1.NodePool.locations].
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
