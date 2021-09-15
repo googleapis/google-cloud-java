@@ -1,5 +1,12 @@
 # Changelog
 
+### [2.0.9](https://www.github.com/googleapis/java-vision/compare/v2.0.8...v2.0.9) (2021-09-15)
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-storage to v2.1.3 ([#681](https://www.github.com/googleapis/java-vision/issues/681)) ([2e23161](https://www.github.com/googleapis/java-vision/commit/2e231617d433aaede89de62816eb0b1d4bcf7994))
+
 ### [2.0.8](https://www.github.com/googleapis/java-vision/compare/v2.0.7...v2.0.8) (2021-09-15)
 
 
