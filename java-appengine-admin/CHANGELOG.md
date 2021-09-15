@@ -1,5 +1,20 @@
 # Changelog
 
+## [2.1.0](https://www.github.com/googleapis/java-appengine-admin/compare/v2.0.0...v2.1.0) (2021-09-14)
+
+
+### Features
+
+* Remove use of deprecated gradle command in java README ([#1196](https://www.github.com/googleapis/java-appengine-admin/issues/1196)) ([#107](https://www.github.com/googleapis/java-appengine-admin/issues/107)) ([56d2811](https://www.github.com/googleapis/java-appengine-admin/commit/56d281182957d0cb28e780bba7125dcf2970d6c0))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.0.1 ([#99](https://www.github.com/googleapis/java-appengine-admin/issues/99)) ([58e4679](https://www.github.com/googleapis/java-appengine-admin/commit/58e46796278c6836531497f46bf19dbef82ebc2a))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.1.0 ([#103](https://www.github.com/googleapis/java-appengine-admin/issues/103)) ([f83cedf](https://www.github.com/googleapis/java-appengine-admin/commit/f83cedf8b3c163ba585250a6597930b11ff3fce1))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.2.0 ([#109](https://www.github.com/googleapis/java-appengine-admin/issues/109)) ([33dbbd8](https://www.github.com/googleapis/java-appengine-admin/commit/33dbbd89d3410d37176bb4625bd833514090e493))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.2.1 ([#117](https://www.github.com/googleapis/java-appengine-admin/issues/117)) ([e45e18f](https://www.github.com/googleapis/java-appengine-admin/commit/e45e18f126c7f58b621fb3cbd8c4d2d077acc59e))
+
 ## [2.0.0](https://www.github.com/googleapis/java-appengine-admin/compare/v1.0.1...v2.0.0) (2021-08-09)
 
 
