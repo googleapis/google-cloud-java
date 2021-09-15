@@ -1,5 +1,25 @@
 # Changelog
 
+## [0.10.0](https://www.github.com/googleapis/java-dialogflow-cx/compare/v0.9.0...v0.10.0) (2021-09-15)
+
+
+### Features
+
+* Remove use of deprecated gradle command in java README ([#1196](https://www.github.com/googleapis/java-dialogflow-cx/issues/1196)) ([#295](https://www.github.com/googleapis/java-dialogflow-cx/issues/295)) ([886ff84](https://www.github.com/googleapis/java-dialogflow-cx/commit/886ff84dcd53330e2593439c26f2caf51702c4ac))
+
+
+### Documentation
+
+* clarified some LRO types docs: fixed some wrong update mask descriptions ([#296](https://www.github.com/googleapis/java-dialogflow-cx/issues/296)) ([fcb3c26](https://www.github.com/googleapis/java-dialogflow-cx/commit/fcb3c2618dfdda7f6b994c7ca129dc604e1ef173))
+* clarified some LRO types docs: fixed some wrong update mask descriptions ([#298](https://www.github.com/googleapis/java-dialogflow-cx/issues/298)) ([2095640](https://www.github.com/googleapis/java-dialogflow-cx/commit/20956402f7dee061d9267162810182d656975a1b))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.1.0 ([#291](https://www.github.com/googleapis/java-dialogflow-cx/issues/291)) ([64a0ae9](https://www.github.com/googleapis/java-dialogflow-cx/commit/64a0ae9a877de8e0850f427bc1f7a2066fb6fb5b))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.2.0 ([#299](https://www.github.com/googleapis/java-dialogflow-cx/issues/299)) ([ad04d9f](https://www.github.com/googleapis/java-dialogflow-cx/commit/ad04d9fcfaec30834119f6429e2fa8f19130e450))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.2.1 ([#309](https://www.github.com/googleapis/java-dialogflow-cx/issues/309)) ([d6fd1bb](https://www.github.com/googleapis/java-dialogflow-cx/commit/d6fd1bbb65b07215c93bfe558a1f8f611330f1c5))
+
 ## [0.9.0](https://www.github.com/googleapis/java-dialogflow-cx/compare/v0.8.0...v0.9.0) (2021-08-11)
 
 
