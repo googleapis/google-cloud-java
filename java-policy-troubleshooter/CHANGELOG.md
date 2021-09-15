@@ -1,5 +1,18 @@
 # Changelog
 
+## [0.4.0](https://www.github.com/googleapis/java-policy-troubleshooter/compare/v0.3.2...v0.4.0) (2021-09-14)
+
+
+### Features
+
+* Remove use of deprecated gradle command in java README ([#1196](https://www.github.com/googleapis/java-policy-troubleshooter/issues/1196)) ([#99](https://www.github.com/googleapis/java-policy-troubleshooter/issues/99)) ([8b83666](https://www.github.com/googleapis/java-policy-troubleshooter/commit/8b836665306e3479a8c819b521aec95dfda25582))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.2.0 ([#102](https://www.github.com/googleapis/java-policy-troubleshooter/issues/102)) ([780fd59](https://www.github.com/googleapis/java-policy-troubleshooter/commit/780fd5934ae0207e119353ac75ca73f44ca3a94e))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.2.1 ([#110](https://www.github.com/googleapis/java-policy-troubleshooter/issues/110)) ([0c5b1cd](https://www.github.com/googleapis/java-policy-troubleshooter/commit/0c5b1cda1d2125d8fc9ec80aab09fb39db3e9263))
+
 ### [0.3.2](https://www.github.com/googleapis/java-policy-troubleshooter/compare/v0.3.1...v0.3.2) (2021-08-23)
 
 
