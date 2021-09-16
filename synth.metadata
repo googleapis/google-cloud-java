@@ -21,6 +21,7 @@
     ".github/ISSUE_TEMPLATE/support_request.md",
     ".github/PULL_REQUEST_TEMPLATE.md",
     ".github/generated-files-bot.yml",
+    ".github/readme/owlbot.py",
     ".github/release-please.yml",
     ".github/release-trigger.yml",
     ".github/snippet-bot.yml",
