@@ -226,7 +226,7 @@ public class MonitoredResourceUtil {
       return Resource.GaeAppFlex;
     }
     if (System.getenv("KUBERNETES_SERVICE_HOST") != null) {
-      return Resource.Container;
+      return Resource.K8sContainer;
     }
     if (ServiceOptions.getAppEngineAppId() != null) {
       return Resource.GaeAppStandard;
