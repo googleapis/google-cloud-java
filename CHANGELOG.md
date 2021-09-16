@@ -1,5 +1,19 @@
 # Changelog
 
+### [3.1.2](https://www.github.com/googleapis/java-logging/compare/v3.1.1...v3.1.2) (2021-09-16)
+
+
+### Bug Fixes
+
+* Change timestamp type to support nanosecond resolution ([#654](https://www.github.com/googleapis/java-logging/issues/654)) ([7ae1537](https://www.github.com/googleapis/java-logging/commit/7ae153789268629539cf1ea5246597aae7aa8d19)), closes [#598](https://www.github.com/googleapis/java-logging/issues/598)
+* Return Resource.K8sContainer when autodetecting resource type ([#641](https://www.github.com/googleapis/java-logging/issues/641)) ([6103560](https://www.github.com/googleapis/java-logging/commit/6103560c1c59c3c1ba83a4c9f2be5b5781640c36))
+* update CI to use maven 3.8.1 ([#662](https://www.github.com/googleapis/java-logging/issues/662)) ([9beb2ed](https://www.github.com/googleapis/java-logging/commit/9beb2ed44e3b7ad3eeaf6710b2195e50ac39016f))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.2.1 ([#667](https://www.github.com/googleapis/java-logging/issues/667)) ([8190656](https://www.github.com/googleapis/java-logging/commit/8190656732d3d388569b02dbd0aeefe0e0c7fdff))
+
 ### [3.1.1](https://www.github.com/googleapis/java-logging/compare/v3.1.0...v3.1.1) (2021-08-31)
 
 
