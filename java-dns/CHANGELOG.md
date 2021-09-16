@@ -1,5 +1,21 @@
 # Changelog
 
+## [2.0.0](https://www.github.com/googleapis/java-dns/compare/v1.2.9...v2.0.0) (2021-09-16)
+
+
+### ⚠ BREAKING CHANGES
+
+* java8 migration
+
+### Features
+
+* java8 migration ([d1fa056](https://www.github.com/googleapis/java-dns/commit/d1fa056d264393c50342dec851e2029ab4fc9199))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.2.1 ([#521](https://www.github.com/googleapis/java-dns/issues/521)) ([fd47d98](https://www.github.com/googleapis/java-dns/commit/fd47d980fbecd6fe12bbf024ef6367a0090bc67f))
+
 ### [1.2.9](https://www.github.com/googleapis/java-dns/compare/v1.2.8...v1.2.9) (2021-08-31)
 
 
