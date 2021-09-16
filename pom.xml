@@ -135,9 +135,9 @@
   </build>
 
   <modules>
-    <module>proto-google-cloud-logging-v2</module>
-    <module>grpc-google-cloud-logging-v2</module>
     <module>google-cloud-logging</module>
+    <module>grpc-google-cloud-logging-v2</module>
+    <module>proto-google-cloud-logging-v2</module>
     <module>google-cloud-logging-bom</module>
   </modules>
 

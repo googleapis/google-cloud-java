@@ -19,7 +19,7 @@ If you are using Maven with [BOM][libraries-bom], add this to your pom.xml file
     <dependency>
       <groupId>com.google.cloud</groupId>
       <artifactId>libraries-bom</artifactId>
-      <version>22.0.0</version>
+      <version>23.0.0</version>
       <type>pom</type>
       <scope>import</scope>
     </dependency>
@@ -42,7 +42,7 @@ If you are using Maven without BOM, add this to your dependencies:
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-logging</artifactId>
-  <version>3.1.0</version>
+  <version>3.1.1</version>
 </dependency>
 
 ```
@@ -50,20 +50,20 @@ If you are using Maven without BOM, add this to your dependencies:
 If you are using Gradle 5.x or later, add this to your dependencies
 
 ```Groovy
-implementation platform('com.google.cloud:libraries-bom:22.0.0')
+implementation platform('com.google.cloud:libraries-bom:23.0.0')
 
 implementation 'com.google.cloud:google-cloud-logging'
 ```
 If you are using Gradle without BOM, add this to your dependencies
 
 ```Groovy
-implementation 'com.google.cloud:google-cloud-logging:3.1.1'
+implementation 'com.google.cloud:google-cloud-logging:3.1.2'
 ```
 
 If you are using SBT, add this to your dependencies
 
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-logging" % "3.1.1"
+libraryDependencies += "com.google.cloud" % "google-cloud-logging" % "3.1.2"
 ```
 
 ## Authentication
@@ -165,27 +165,6 @@ LogEntry firstEntry = LogEntry.newBuilder(StringPayload.of("message"))
     .build();
 logging.write(Collections.singleton(firstEntry));
 ```
-
-The library supports writing log entries synchronously and asynchronously.
-In the synchronous mode each call to `write()` method results in a consequent call to Logging API to write a log entry.
-In the asynchronous mode the call(s) to Logging API takes place asynchronously and few calls to `write()` method may be batched together to compose a single call to Logging API.
-The default mode of writing is asynchronous.
-It can be configured in the `java.util.logging` handler [configuration file](https://cloud.google.com/logging/docs/setup/java#javautillogging_configuration):
-
-```
-com.google.cloud.logging.LoggingHandler.synchronicity=SYNC
-```
-
-or in the code after initiating an instance of `Logging` by calling:
-
-```java
-logging.setWriteSynchronicity(Synchronicity.SYNC);
-```
-
-NOTE:
-> Writing log entries asynchronously in some Google Cloud managed environments (e.g. Cloud Functions)
-> may lead to unexpected results such as absense of expected log entries or abnormal program execution.
-> To avoid these unexpected results, it is recommended to use synchronous mode.
 
 #### Listing log entries
 
