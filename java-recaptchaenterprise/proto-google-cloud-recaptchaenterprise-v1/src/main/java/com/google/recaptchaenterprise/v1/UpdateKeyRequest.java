@@ -191,7 +191,7 @@ public final class UpdateKeyRequest extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Optional. The mask to control which field of the key get updated. If the mask is not
+   * Optional. The mask to control which fields of the key get updated. If the mask is not
    * present, all fields will be updated.
    * </pre>
    *
@@ -208,7 +208,7 @@ public final class UpdateKeyRequest extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Optional. The mask to control which field of the key get updated. If the mask is not
+   * Optional. The mask to control which fields of the key get updated. If the mask is not
    * present, all fields will be updated.
    * </pre>
    *
@@ -225,7 +225,7 @@ public final class UpdateKeyRequest extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Optional. The mask to control which field of the key get updated. If the mask is not
+   * Optional. The mask to control which fields of the key get updated. If the mask is not
    * present, all fields will be updated.
    * </pre>
    *
@@ -804,7 +804,7 @@ public final class UpdateKeyRequest extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. The mask to control which field of the key get updated. If the mask is not
+     * Optional. The mask to control which fields of the key get updated. If the mask is not
      * present, all fields will be updated.
      * </pre>
      *
@@ -820,7 +820,7 @@ public final class UpdateKeyRequest extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. The mask to control which field of the key get updated. If the mask is not
+     * Optional. The mask to control which fields of the key get updated. If the mask is not
      * present, all fields will be updated.
      * </pre>
      *
@@ -842,7 +842,7 @@ public final class UpdateKeyRequest extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. The mask to control which field of the key get updated. If the mask is not
+     * Optional. The mask to control which fields of the key get updated. If the mask is not
      * present, all fields will be updated.
      * </pre>
      *
@@ -866,7 +866,7 @@ public final class UpdateKeyRequest extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. The mask to control which field of the key get updated. If the mask is not
+     * Optional. The mask to control which fields of the key get updated. If the mask is not
      * present, all fields will be updated.
      * </pre>
      *
@@ -887,7 +887,7 @@ public final class UpdateKeyRequest extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. The mask to control which field of the key get updated. If the mask is not
+     * Optional. The mask to control which fields of the key get updated. If the mask is not
      * present, all fields will be updated.
      * </pre>
      *
@@ -913,7 +913,7 @@ public final class UpdateKeyRequest extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. The mask to control which field of the key get updated. If the mask is not
+     * Optional. The mask to control which fields of the key get updated. If the mask is not
      * present, all fields will be updated.
      * </pre>
      *
@@ -935,7 +935,7 @@ public final class UpdateKeyRequest extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. The mask to control which field of the key get updated. If the mask is not
+     * Optional. The mask to control which fields of the key get updated. If the mask is not
      * present, all fields will be updated.
      * </pre>
      *
@@ -951,7 +951,7 @@ public final class UpdateKeyRequest extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. The mask to control which field of the key get updated. If the mask is not
+     * Optional. The mask to control which fields of the key get updated. If the mask is not
      * present, all fields will be updated.
      * </pre>
      *
@@ -971,7 +971,7 @@ public final class UpdateKeyRequest extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. The mask to control which field of the key get updated. If the mask is not
+     * Optional. The mask to control which fields of the key get updated. If the mask is not
      * present, all fields will be updated.
      * </pre>
      *

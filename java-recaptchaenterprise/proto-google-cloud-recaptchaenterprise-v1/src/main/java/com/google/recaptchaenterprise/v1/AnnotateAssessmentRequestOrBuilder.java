@@ -58,11 +58,13 @@ public interface AnnotateAssessmentRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The annotation that will be assigned to the Event.
+   * Optional. The annotation that will be assigned to the Event. This field can be left
+   * empty to provide reasons that apply to an event without concluding whether
+   * the event is legitimate or fraudulent.
    * </pre>
    *
    * <code>
-   * .google.cloud.recaptchaenterprise.v1.AnnotateAssessmentRequest.Annotation annotation = 2 [(.google.api.field_behavior) = REQUIRED];
+   * .google.cloud.recaptchaenterprise.v1.AnnotateAssessmentRequest.Annotation annotation = 2 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
    * @return The enum numeric value on the wire for annotation.
@@ -72,14 +74,90 @@ public interface AnnotateAssessmentRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The annotation that will be assigned to the Event.
+   * Optional. The annotation that will be assigned to the Event. This field can be left
+   * empty to provide reasons that apply to an event without concluding whether
+   * the event is legitimate or fraudulent.
    * </pre>
    *
    * <code>
-   * .google.cloud.recaptchaenterprise.v1.AnnotateAssessmentRequest.Annotation annotation = 2 [(.google.api.field_behavior) = REQUIRED];
+   * .google.cloud.recaptchaenterprise.v1.AnnotateAssessmentRequest.Annotation annotation = 2 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
    * @return The annotation.
    */
   com.google.recaptchaenterprise.v1.AnnotateAssessmentRequest.Annotation getAnnotation();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Optional reasons for the annotation that will be assigned to the Event.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.recaptchaenterprise.v1.AnnotateAssessmentRequest.Reason reasons = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return A list containing the reasons.
+   */
+  java.util.List<com.google.recaptchaenterprise.v1.AnnotateAssessmentRequest.Reason>
+      getReasonsList();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Optional reasons for the annotation that will be assigned to the Event.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.recaptchaenterprise.v1.AnnotateAssessmentRequest.Reason reasons = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The count of reasons.
+   */
+  int getReasonsCount();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Optional reasons for the annotation that will be assigned to the Event.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.recaptchaenterprise.v1.AnnotateAssessmentRequest.Reason reasons = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @param index The index of the element to return.
+   * @return The reasons at the given index.
+   */
+  com.google.recaptchaenterprise.v1.AnnotateAssessmentRequest.Reason getReasons(int index);
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Optional reasons for the annotation that will be assigned to the Event.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.recaptchaenterprise.v1.AnnotateAssessmentRequest.Reason reasons = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return A list containing the enum numeric values on the wire for reasons.
+   */
+  java.util.List<java.lang.Integer> getReasonsValueList();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Optional reasons for the annotation that will be assigned to the Event.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.recaptchaenterprise.v1.AnnotateAssessmentRequest.Reason reasons = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @param index The index of the value to return.
+   * @return The enum numeric value on the wire of reasons at the given index.
+   */
+  int getReasonsValue(int index);
 }

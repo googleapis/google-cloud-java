@@ -27,6 +27,19 @@ public interface AndroidKeySettingsOrBuilder
    *
    *
    * <pre>
+   * If set to true, it means allowed_package_names will not be enforced.
+   * </pre>
+   *
+   * <code>bool allow_all_package_names = 2;</code>
+   *
+   * @return The allowAllPackageNames.
+   */
+  boolean getAllowAllPackageNames();
+
+  /**
+   *
+   *
+   * <pre>
    * Android package names of apps allowed to use the key.
    * Example: 'com.companyname.appname'
    * </pre>

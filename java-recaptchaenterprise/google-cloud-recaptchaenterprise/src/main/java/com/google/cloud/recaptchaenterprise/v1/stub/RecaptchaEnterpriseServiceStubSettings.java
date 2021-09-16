@@ -52,9 +52,12 @@ import com.google.recaptchaenterprise.v1.CreateAssessmentRequest;
 import com.google.recaptchaenterprise.v1.CreateKeyRequest;
 import com.google.recaptchaenterprise.v1.DeleteKeyRequest;
 import com.google.recaptchaenterprise.v1.GetKeyRequest;
+import com.google.recaptchaenterprise.v1.GetMetricsRequest;
 import com.google.recaptchaenterprise.v1.Key;
 import com.google.recaptchaenterprise.v1.ListKeysRequest;
 import com.google.recaptchaenterprise.v1.ListKeysResponse;
+import com.google.recaptchaenterprise.v1.Metrics;
+import com.google.recaptchaenterprise.v1.MigrateKeyRequest;
 import com.google.recaptchaenterprise.v1.UpdateKeyRequest;
 import java.io.IOException;
 import java.util.List;
@@ -111,6 +114,8 @@ public class RecaptchaEnterpriseServiceStubSettings
   private final UnaryCallSettings<GetKeyRequest, Key> getKeySettings;
   private final UnaryCallSettings<UpdateKeyRequest, Key> updateKeySettings;
   private final UnaryCallSettings<DeleteKeyRequest, Empty> deleteKeySettings;
+  private final UnaryCallSettings<MigrateKeyRequest, Key> migrateKeySettings;
+  private final UnaryCallSettings<GetMetricsRequest, Metrics> getMetricsSettings;
 
   private static final PagedListDescriptor<ListKeysRequest, ListKeysResponse, Key>
       LIST_KEYS_PAGE_STR_DESC =
@@ -201,6 +206,16 @@ public class RecaptchaEnterpriseServiceStubSettings
     return deleteKeySettings;
   }
 
+  /** Returns the object with the settings used for calls to migrateKey. */
+  public UnaryCallSettings<MigrateKeyRequest, Key> migrateKeySettings() {
+    return migrateKeySettings;
+  }
+
+  /** Returns the object with the settings used for calls to getMetrics. */
+  public UnaryCallSettings<GetMetricsRequest, Metrics> getMetricsSettings() {
+    return getMetricsSettings;
+  }
+
   @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public RecaptchaEnterpriseServiceStub createStub() throws IOException {
     if (getTransportChannelProvider()
@@ -284,6 +299,8 @@ public class RecaptchaEnterpriseServiceStubSettings
     getKeySettings = settingsBuilder.getKeySettings().build();
     updateKeySettings = settingsBuilder.updateKeySettings().build();
     deleteKeySettings = settingsBuilder.deleteKeySettings().build();
+    migrateKeySettings = settingsBuilder.migrateKeySettings().build();
+    getMetricsSettings = settingsBuilder.getMetricsSettings().build();
   }
 
   /** Builder for RecaptchaEnterpriseServiceStubSettings. */
@@ -301,6 +318,8 @@ public class RecaptchaEnterpriseServiceStubSettings
     private final UnaryCallSettings.Builder<GetKeyRequest, Key> getKeySettings;
     private final UnaryCallSettings.Builder<UpdateKeyRequest, Key> updateKeySettings;
     private final UnaryCallSettings.Builder<DeleteKeyRequest, Empty> deleteKeySettings;
+    private final UnaryCallSettings.Builder<MigrateKeyRequest, Key> migrateKeySettings;
+    private final UnaryCallSettings.Builder<GetMetricsRequest, Metrics> getMetricsSettings;
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
 
@@ -309,6 +328,7 @@ public class RecaptchaEnterpriseServiceStubSettings
           ImmutableMap.builder();
       definitions.put(
           "no_retry_0_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
+      definitions.put("no_retry_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
       RETRYABLE_CODE_DEFINITIONS = definitions.build();
     }
 
@@ -325,6 +345,8 @@ public class RecaptchaEnterpriseServiceStubSettings
               .setTotalTimeout(Duration.ofMillis(600000L))
               .build();
       definitions.put("no_retry_0_params", settings);
+      settings = RetrySettings.newBuilder().setRpcTimeoutMultiplier(1.0).build();
+      definitions.put("no_retry_params", settings);
       RETRY_PARAM_DEFINITIONS = definitions.build();
     }
 
@@ -342,6 +364,8 @@ public class RecaptchaEnterpriseServiceStubSettings
       getKeySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       updateKeySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       deleteKeySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      migrateKeySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      getMetricsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -351,7 +375,9 @@ public class RecaptchaEnterpriseServiceStubSettings
               listKeysSettings,
               getKeySettings,
               updateKeySettings,
-              deleteKeySettings);
+              deleteKeySettings,
+              migrateKeySettings,
+              getMetricsSettings);
       initDefaults(this);
     }
 
@@ -365,6 +391,8 @@ public class RecaptchaEnterpriseServiceStubSettings
       getKeySettings = settings.getKeySettings.toBuilder();
       updateKeySettings = settings.updateKeySettings.toBuilder();
       deleteKeySettings = settings.deleteKeySettings.toBuilder();
+      migrateKeySettings = settings.migrateKeySettings.toBuilder();
+      getMetricsSettings = settings.getMetricsSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -374,7 +402,9 @@ public class RecaptchaEnterpriseServiceStubSettings
               listKeysSettings,
               getKeySettings,
               updateKeySettings,
-              deleteKeySettings);
+              deleteKeySettings,
+              migrateKeySettings,
+              getMetricsSettings);
     }
 
     private static Builder createDefault() {
@@ -425,6 +455,16 @@ public class RecaptchaEnterpriseServiceStubSettings
           .deleteKeySettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
+
+      builder
+          .migrateKeySettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .getMetricsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
 
       return builder;
     }
@@ -480,6 +520,16 @@ public class RecaptchaEnterpriseServiceStubSettings
     /** Returns the builder for the settings used for calls to deleteKey. */
     public UnaryCallSettings.Builder<DeleteKeyRequest, Empty> deleteKeySettings() {
       return deleteKeySettings;
+    }
+
+    /** Returns the builder for the settings used for calls to migrateKey. */
+    public UnaryCallSettings.Builder<MigrateKeyRequest, Key> migrateKeySettings() {
+      return migrateKeySettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getMetrics. */
+    public UnaryCallSettings.Builder<GetMetricsRequest, Metrics> getMetricsSettings() {
+      return getMetricsSettings;
     }
 
     @Override

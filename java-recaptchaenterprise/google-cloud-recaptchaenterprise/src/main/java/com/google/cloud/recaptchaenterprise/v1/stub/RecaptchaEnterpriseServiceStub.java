@@ -28,9 +28,12 @@ import com.google.recaptchaenterprise.v1.CreateAssessmentRequest;
 import com.google.recaptchaenterprise.v1.CreateKeyRequest;
 import com.google.recaptchaenterprise.v1.DeleteKeyRequest;
 import com.google.recaptchaenterprise.v1.GetKeyRequest;
+import com.google.recaptchaenterprise.v1.GetMetricsRequest;
 import com.google.recaptchaenterprise.v1.Key;
 import com.google.recaptchaenterprise.v1.ListKeysRequest;
 import com.google.recaptchaenterprise.v1.ListKeysResponse;
+import com.google.recaptchaenterprise.v1.Metrics;
+import com.google.recaptchaenterprise.v1.MigrateKeyRequest;
 import com.google.recaptchaenterprise.v1.UpdateKeyRequest;
 import javax.annotation.Generated;
 
@@ -74,6 +77,14 @@ public abstract class RecaptchaEnterpriseServiceStub implements BackgroundResour
 
   public UnaryCallable<DeleteKeyRequest, Empty> deleteKeyCallable() {
     throw new UnsupportedOperationException("Not implemented: deleteKeyCallable()");
+  }
+
+  public UnaryCallable<MigrateKeyRequest, Key> migrateKeyCallable() {
+    throw new UnsupportedOperationException("Not implemented: migrateKeyCallable()");
+  }
+
+  public UnaryCallable<GetMetricsRequest, Metrics> getMetricsCallable() {
+    throw new UnsupportedOperationException("Not implemented: getMetricsCallable()");
   }
 
   @Override

@@ -143,7 +143,6 @@ public final class TokenProperties extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * LINT.IfChange
    * Enum that represents the types of invalid token reasons.
    * </pre>
    *
@@ -210,6 +209,17 @@ public final class TokenProperties extends com.google.protobuf.GeneratedMessageV
      * <code>MISSING = 5;</code>
      */
     MISSING(5),
+    /**
+     *
+     *
+     * <pre>
+     * A retriable error (such as network failure) occurred on the browser.
+     * Could easily be simulated by an attacker.
+     * </pre>
+     *
+     * <code>BROWSER_ERROR = 6;</code>
+     */
+    BROWSER_ERROR(6),
     UNRECOGNIZED(-1),
     ;
 
@@ -273,6 +283,17 @@ public final class TokenProperties extends com.google.protobuf.GeneratedMessageV
      * <code>MISSING = 5;</code>
      */
     public static final int MISSING_VALUE = 5;
+    /**
+     *
+     *
+     * <pre>
+     * A retriable error (such as network failure) occurred on the browser.
+     * Could easily be simulated by an attacker.
+     * </pre>
+     *
+     * <code>BROWSER_ERROR = 6;</code>
+     */
+    public static final int BROWSER_ERROR_VALUE = 6;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -310,6 +331,8 @@ public final class TokenProperties extends com.google.protobuf.GeneratedMessageV
           return DUPE;
         case 5:
           return MISSING;
+        case 6:
+          return BROWSER_ERROR;
         default:
           return null;
       }

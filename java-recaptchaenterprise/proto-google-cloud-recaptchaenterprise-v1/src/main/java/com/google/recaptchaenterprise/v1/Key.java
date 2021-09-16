@@ -173,6 +173,22 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
 
               break;
             }
+          case 74:
+            {
+              com.google.recaptchaenterprise.v1.TestingOptions.Builder subBuilder = null;
+              if (testingOptions_ != null) {
+                subBuilder = testingOptions_.toBuilder();
+              }
+              testingOptions_ =
+                  input.readMessage(
+                      com.google.recaptchaenterprise.v1.TestingOptions.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(testingOptions_);
+                testingOptions_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -551,11 +567,11 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. See &lt;a href="https://cloud.google.com/recaptcha-enterprise/docs/labels"&gt;
+   * See &lt;a href="https://cloud.google.com/recaptcha-enterprise/docs/labels"&gt;
    * Creating and managing labels&lt;/a&gt;.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; labels = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>map&lt;string, string&gt; labels = 6;</code>
    */
   @java.lang.Override
   public boolean containsLabels(java.lang.String key) {
@@ -574,11 +590,11 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. See &lt;a href="https://cloud.google.com/recaptcha-enterprise/docs/labels"&gt;
+   * See &lt;a href="https://cloud.google.com/recaptcha-enterprise/docs/labels"&gt;
    * Creating and managing labels&lt;/a&gt;.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; labels = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>map&lt;string, string&gt; labels = 6;</code>
    */
   @java.lang.Override
   public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
@@ -588,11 +604,11 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. See &lt;a href="https://cloud.google.com/recaptcha-enterprise/docs/labels"&gt;
+   * See &lt;a href="https://cloud.google.com/recaptcha-enterprise/docs/labels"&gt;
    * Creating and managing labels&lt;/a&gt;.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; labels = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>map&lt;string, string&gt; labels = 6;</code>
    */
   @java.lang.Override
   public java.lang.String getLabelsOrDefault(java.lang.String key, java.lang.String defaultValue) {
@@ -606,11 +622,11 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. See &lt;a href="https://cloud.google.com/recaptcha-enterprise/docs/labels"&gt;
+   * See &lt;a href="https://cloud.google.com/recaptcha-enterprise/docs/labels"&gt;
    * Creating and managing labels&lt;/a&gt;.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; labels = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>map&lt;string, string&gt; labels = 6;</code>
    */
   @java.lang.Override
   public java.lang.String getLabelsOrThrow(java.lang.String key) {
@@ -670,6 +686,54 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
     return getCreateTime();
   }
 
+  public static final int TESTING_OPTIONS_FIELD_NUMBER = 9;
+  private com.google.recaptchaenterprise.v1.TestingOptions testingOptions_;
+  /**
+   *
+   *
+   * <pre>
+   * Options for user acceptance testing.
+   * </pre>
+   *
+   * <code>.google.cloud.recaptchaenterprise.v1.TestingOptions testing_options = 9;</code>
+   *
+   * @return Whether the testingOptions field is set.
+   */
+  @java.lang.Override
+  public boolean hasTestingOptions() {
+    return testingOptions_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Options for user acceptance testing.
+   * </pre>
+   *
+   * <code>.google.cloud.recaptchaenterprise.v1.TestingOptions testing_options = 9;</code>
+   *
+   * @return The testingOptions.
+   */
+  @java.lang.Override
+  public com.google.recaptchaenterprise.v1.TestingOptions getTestingOptions() {
+    return testingOptions_ == null
+        ? com.google.recaptchaenterprise.v1.TestingOptions.getDefaultInstance()
+        : testingOptions_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Options for user acceptance testing.
+   * </pre>
+   *
+   * <code>.google.cloud.recaptchaenterprise.v1.TestingOptions testing_options = 9;</code>
+   */
+  @java.lang.Override
+  public com.google.recaptchaenterprise.v1.TestingOptionsOrBuilder getTestingOptionsOrBuilder() {
+    return getTestingOptions();
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -704,6 +768,9 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
         output, internalGetLabels(), LabelsDefaultEntryHolder.defaultEntry, 6);
     if (createTime_ != null) {
       output.writeMessage(7, getCreateTime());
+    }
+    if (testingOptions_ != null) {
+      output.writeMessage(9, getTestingOptions());
     }
     unknownFields.writeTo(output);
   }
@@ -748,6 +815,9 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
     if (createTime_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(7, getCreateTime());
     }
+    if (testingOptions_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(9, getTestingOptions());
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -769,6 +839,10 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
     if (hasCreateTime() != other.hasCreateTime()) return false;
     if (hasCreateTime()) {
       if (!getCreateTime().equals(other.getCreateTime())) return false;
+    }
+    if (hasTestingOptions() != other.hasTestingOptions()) return false;
+    if (hasTestingOptions()) {
+      if (!getTestingOptions().equals(other.getTestingOptions())) return false;
     }
     if (!getPlatformSettingsCase().equals(other.getPlatformSettingsCase())) return false;
     switch (platformSettingsCase_) {
@@ -806,6 +880,10 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
     if (hasCreateTime()) {
       hash = (37 * hash) + CREATE_TIME_FIELD_NUMBER;
       hash = (53 * hash) + getCreateTime().hashCode();
+    }
+    if (hasTestingOptions()) {
+      hash = (37 * hash) + TESTING_OPTIONS_FIELD_NUMBER;
+      hash = (53 * hash) + getTestingOptions().hashCode();
     }
     switch (platformSettingsCase_) {
       case 3:
@@ -999,6 +1077,12 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
         createTime_ = null;
         createTimeBuilder_ = null;
       }
+      if (testingOptionsBuilder_ == null) {
+        testingOptions_ = null;
+      } else {
+        testingOptions_ = null;
+        testingOptionsBuilder_ = null;
+      }
       platformSettingsCase_ = 0;
       platformSettings_ = null;
       return this;
@@ -1058,6 +1142,11 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
         result.createTime_ = createTime_;
       } else {
         result.createTime_ = createTimeBuilder_.build();
+      }
+      if (testingOptionsBuilder_ == null) {
+        result.testingOptions_ = testingOptions_;
+      } else {
+        result.testingOptions_ = testingOptionsBuilder_.build();
       }
       result.platformSettingsCase_ = platformSettingsCase_;
       onBuilt();
@@ -1120,6 +1209,9 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
       internalGetMutableLabels().mergeFrom(other.internalGetLabels());
       if (other.hasCreateTime()) {
         mergeCreateTime(other.getCreateTime());
+      }
+      if (other.hasTestingOptions()) {
+        mergeTestingOptions(other.getTestingOptions());
       }
       switch (other.getPlatformSettingsCase()) {
         case WEB_SETTINGS:
@@ -2067,11 +2159,11 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. See &lt;a href="https://cloud.google.com/recaptcha-enterprise/docs/labels"&gt;
+     * See &lt;a href="https://cloud.google.com/recaptcha-enterprise/docs/labels"&gt;
      * Creating and managing labels&lt;/a&gt;.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; labels = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>map&lt;string, string&gt; labels = 6;</code>
      */
     @java.lang.Override
     public boolean containsLabels(java.lang.String key) {
@@ -2090,11 +2182,11 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. See &lt;a href="https://cloud.google.com/recaptcha-enterprise/docs/labels"&gt;
+     * See &lt;a href="https://cloud.google.com/recaptcha-enterprise/docs/labels"&gt;
      * Creating and managing labels&lt;/a&gt;.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; labels = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>map&lt;string, string&gt; labels = 6;</code>
      */
     @java.lang.Override
     public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
@@ -2104,11 +2196,11 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. See &lt;a href="https://cloud.google.com/recaptcha-enterprise/docs/labels"&gt;
+     * See &lt;a href="https://cloud.google.com/recaptcha-enterprise/docs/labels"&gt;
      * Creating and managing labels&lt;/a&gt;.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; labels = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>map&lt;string, string&gt; labels = 6;</code>
      */
     @java.lang.Override
     public java.lang.String getLabelsOrDefault(
@@ -2123,11 +2215,11 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. See &lt;a href="https://cloud.google.com/recaptcha-enterprise/docs/labels"&gt;
+     * See &lt;a href="https://cloud.google.com/recaptcha-enterprise/docs/labels"&gt;
      * Creating and managing labels&lt;/a&gt;.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; labels = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>map&lt;string, string&gt; labels = 6;</code>
      */
     @java.lang.Override
     public java.lang.String getLabelsOrThrow(java.lang.String key) {
@@ -2149,11 +2241,11 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. See &lt;a href="https://cloud.google.com/recaptcha-enterprise/docs/labels"&gt;
+     * See &lt;a href="https://cloud.google.com/recaptcha-enterprise/docs/labels"&gt;
      * Creating and managing labels&lt;/a&gt;.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; labels = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>map&lt;string, string&gt; labels = 6;</code>
      */
     public Builder removeLabels(java.lang.String key) {
       if (key == null) {
@@ -2171,11 +2263,11 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. See &lt;a href="https://cloud.google.com/recaptcha-enterprise/docs/labels"&gt;
+     * See &lt;a href="https://cloud.google.com/recaptcha-enterprise/docs/labels"&gt;
      * Creating and managing labels&lt;/a&gt;.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; labels = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>map&lt;string, string&gt; labels = 6;</code>
      */
     public Builder putLabels(java.lang.String key, java.lang.String value) {
       if (key == null) {
@@ -2191,11 +2283,11 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. See &lt;a href="https://cloud.google.com/recaptcha-enterprise/docs/labels"&gt;
+     * See &lt;a href="https://cloud.google.com/recaptcha-enterprise/docs/labels"&gt;
      * Creating and managing labels&lt;/a&gt;.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; labels = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>map&lt;string, string&gt; labels = 6;</code>
      */
     public Builder putAllLabels(java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableLabels().getMutableMap().putAll(values);
@@ -2383,6 +2475,192 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
         createTime_ = null;
       }
       return createTimeBuilder_;
+    }
+
+    private com.google.recaptchaenterprise.v1.TestingOptions testingOptions_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.recaptchaenterprise.v1.TestingOptions,
+            com.google.recaptchaenterprise.v1.TestingOptions.Builder,
+            com.google.recaptchaenterprise.v1.TestingOptionsOrBuilder>
+        testingOptionsBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Options for user acceptance testing.
+     * </pre>
+     *
+     * <code>.google.cloud.recaptchaenterprise.v1.TestingOptions testing_options = 9;</code>
+     *
+     * @return Whether the testingOptions field is set.
+     */
+    public boolean hasTestingOptions() {
+      return testingOptionsBuilder_ != null || testingOptions_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Options for user acceptance testing.
+     * </pre>
+     *
+     * <code>.google.cloud.recaptchaenterprise.v1.TestingOptions testing_options = 9;</code>
+     *
+     * @return The testingOptions.
+     */
+    public com.google.recaptchaenterprise.v1.TestingOptions getTestingOptions() {
+      if (testingOptionsBuilder_ == null) {
+        return testingOptions_ == null
+            ? com.google.recaptchaenterprise.v1.TestingOptions.getDefaultInstance()
+            : testingOptions_;
+      } else {
+        return testingOptionsBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Options for user acceptance testing.
+     * </pre>
+     *
+     * <code>.google.cloud.recaptchaenterprise.v1.TestingOptions testing_options = 9;</code>
+     */
+    public Builder setTestingOptions(com.google.recaptchaenterprise.v1.TestingOptions value) {
+      if (testingOptionsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        testingOptions_ = value;
+        onChanged();
+      } else {
+        testingOptionsBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Options for user acceptance testing.
+     * </pre>
+     *
+     * <code>.google.cloud.recaptchaenterprise.v1.TestingOptions testing_options = 9;</code>
+     */
+    public Builder setTestingOptions(
+        com.google.recaptchaenterprise.v1.TestingOptions.Builder builderForValue) {
+      if (testingOptionsBuilder_ == null) {
+        testingOptions_ = builderForValue.build();
+        onChanged();
+      } else {
+        testingOptionsBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Options for user acceptance testing.
+     * </pre>
+     *
+     * <code>.google.cloud.recaptchaenterprise.v1.TestingOptions testing_options = 9;</code>
+     */
+    public Builder mergeTestingOptions(com.google.recaptchaenterprise.v1.TestingOptions value) {
+      if (testingOptionsBuilder_ == null) {
+        if (testingOptions_ != null) {
+          testingOptions_ =
+              com.google.recaptchaenterprise.v1.TestingOptions.newBuilder(testingOptions_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          testingOptions_ = value;
+        }
+        onChanged();
+      } else {
+        testingOptionsBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Options for user acceptance testing.
+     * </pre>
+     *
+     * <code>.google.cloud.recaptchaenterprise.v1.TestingOptions testing_options = 9;</code>
+     */
+    public Builder clearTestingOptions() {
+      if (testingOptionsBuilder_ == null) {
+        testingOptions_ = null;
+        onChanged();
+      } else {
+        testingOptions_ = null;
+        testingOptionsBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Options for user acceptance testing.
+     * </pre>
+     *
+     * <code>.google.cloud.recaptchaenterprise.v1.TestingOptions testing_options = 9;</code>
+     */
+    public com.google.recaptchaenterprise.v1.TestingOptions.Builder getTestingOptionsBuilder() {
+
+      onChanged();
+      return getTestingOptionsFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Options for user acceptance testing.
+     * </pre>
+     *
+     * <code>.google.cloud.recaptchaenterprise.v1.TestingOptions testing_options = 9;</code>
+     */
+    public com.google.recaptchaenterprise.v1.TestingOptionsOrBuilder getTestingOptionsOrBuilder() {
+      if (testingOptionsBuilder_ != null) {
+        return testingOptionsBuilder_.getMessageOrBuilder();
+      } else {
+        return testingOptions_ == null
+            ? com.google.recaptchaenterprise.v1.TestingOptions.getDefaultInstance()
+            : testingOptions_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Options for user acceptance testing.
+     * </pre>
+     *
+     * <code>.google.cloud.recaptchaenterprise.v1.TestingOptions testing_options = 9;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.recaptchaenterprise.v1.TestingOptions,
+            com.google.recaptchaenterprise.v1.TestingOptions.Builder,
+            com.google.recaptchaenterprise.v1.TestingOptionsOrBuilder>
+        getTestingOptionsFieldBuilder() {
+      if (testingOptionsBuilder_ == null) {
+        testingOptionsBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.recaptchaenterprise.v1.TestingOptions,
+                com.google.recaptchaenterprise.v1.TestingOptions.Builder,
+                com.google.recaptchaenterprise.v1.TestingOptionsOrBuilder>(
+                getTestingOptions(), getParentForChildren(), isClean());
+        testingOptions_ = null;
+      }
+      return testingOptionsBuilder_;
     }
 
     @java.lang.Override

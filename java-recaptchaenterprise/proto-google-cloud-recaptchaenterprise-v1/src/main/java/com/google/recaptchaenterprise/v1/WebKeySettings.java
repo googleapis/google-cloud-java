@@ -617,6 +617,7 @@ public final class WebKeySettings extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Required. Whether this key can be used on AMP (Accelerated Mobile Pages) websites.
+   * This can only be set for the SCORE integration type.
    * </pre>
    *
    * <code>bool allow_amp_traffic = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1381,6 +1382,7 @@ public final class WebKeySettings extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required. Whether this key can be used on AMP (Accelerated Mobile Pages) websites.
+     * This can only be set for the SCORE integration type.
      * </pre>
      *
      * <code>bool allow_amp_traffic = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1396,6 +1398,7 @@ public final class WebKeySettings extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required. Whether this key can be used on AMP (Accelerated Mobile Pages) websites.
+     * This can only be set for the SCORE integration type.
      * </pre>
      *
      * <code>bool allow_amp_traffic = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1414,6 +1417,7 @@ public final class WebKeySettings extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required. Whether this key can be used on AMP (Accelerated Mobile Pages) websites.
+     * This can only be set for the SCORE integration type.
      * </pre>
      *
      * <code>bool allow_amp_traffic = 2 [(.google.api.field_behavior) = REQUIRED];</code>

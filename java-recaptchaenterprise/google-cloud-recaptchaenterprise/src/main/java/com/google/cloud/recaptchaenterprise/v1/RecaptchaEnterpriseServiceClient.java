@@ -37,9 +37,13 @@ import com.google.recaptchaenterprise.v1.CreateAssessmentRequest;
 import com.google.recaptchaenterprise.v1.CreateKeyRequest;
 import com.google.recaptchaenterprise.v1.DeleteKeyRequest;
 import com.google.recaptchaenterprise.v1.GetKeyRequest;
+import com.google.recaptchaenterprise.v1.GetMetricsRequest;
 import com.google.recaptchaenterprise.v1.Key;
 import com.google.recaptchaenterprise.v1.ListKeysRequest;
 import com.google.recaptchaenterprise.v1.ListKeysResponse;
+import com.google.recaptchaenterprise.v1.Metrics;
+import com.google.recaptchaenterprise.v1.MetricsName;
+import com.google.recaptchaenterprise.v1.MigrateKeyRequest;
 import com.google.recaptchaenterprise.v1.ProjectName;
 import com.google.recaptchaenterprise.v1.UpdateKeyRequest;
 import java.io.IOException;
@@ -275,7 +279,7 @@ public class RecaptchaEnterpriseServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Annotates a previously created Assessment to provide additional information on whether the
-   * event turned out to be authentic or fradulent.
+   * event turned out to be authentic or fraudulent.
    *
    * <p>Sample code:
    *
@@ -292,7 +296,9 @@ public class RecaptchaEnterpriseServiceClient implements BackgroundResource {
    *
    * @param name Required. The resource name of the Assessment, in the format
    *     "projects/{project}/assessments/{assessment}".
-   * @param annotation Required. The annotation that will be assigned to the Event.
+   * @param annotation Optional. The annotation that will be assigned to the Event. This field can
+   *     be left empty to provide reasons that apply to an event without concluding whether the
+   *     event is legitimate or fraudulent.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final AnnotateAssessmentResponse annotateAssessment(
@@ -308,7 +314,7 @@ public class RecaptchaEnterpriseServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Annotates a previously created Assessment to provide additional information on whether the
-   * event turned out to be authentic or fradulent.
+   * event turned out to be authentic or fraudulent.
    *
    * <p>Sample code:
    *
@@ -325,7 +331,9 @@ public class RecaptchaEnterpriseServiceClient implements BackgroundResource {
    *
    * @param name Required. The resource name of the Assessment, in the format
    *     "projects/{project}/assessments/{assessment}".
-   * @param annotation Required. The annotation that will be assigned to the Event.
+   * @param annotation Optional. The annotation that will be assigned to the Event. This field can
+   *     be left empty to provide reasons that apply to an event without concluding whether the
+   *     event is legitimate or fraudulent.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final AnnotateAssessmentResponse annotateAssessment(
@@ -338,7 +346,7 @@ public class RecaptchaEnterpriseServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Annotates a previously created Assessment to provide additional information on whether the
-   * event turned out to be authentic or fradulent.
+   * event turned out to be authentic or fraudulent.
    *
    * <p>Sample code:
    *
@@ -348,6 +356,7 @@ public class RecaptchaEnterpriseServiceClient implements BackgroundResource {
    *   AnnotateAssessmentRequest request =
    *       AnnotateAssessmentRequest.newBuilder()
    *           .setName(AssessmentName.of("[PROJECT]", "[ASSESSMENT]").toString())
+   *           .addAllReasons(new ArrayList<AnnotateAssessmentRequest.Reason>())
    *           .build();
    *   AnnotateAssessmentResponse response =
    *       recaptchaEnterpriseServiceClient.annotateAssessment(request);
@@ -364,7 +373,7 @@ public class RecaptchaEnterpriseServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Annotates a previously created Assessment to provide additional information on whether the
-   * event turned out to be authentic or fradulent.
+   * event turned out to be authentic or fraudulent.
    *
    * <p>Sample code:
    *
@@ -374,6 +383,7 @@ public class RecaptchaEnterpriseServiceClient implements BackgroundResource {
    *   AnnotateAssessmentRequest request =
    *       AnnotateAssessmentRequest.newBuilder()
    *           .setName(AssessmentName.of("[PROJECT]", "[ASSESSMENT]").toString())
+   *           .addAllReasons(new ArrayList<AnnotateAssessmentRequest.Reason>())
    *           .build();
    *   ApiFuture<AnnotateAssessmentResponse> future =
    *       recaptchaEnterpriseServiceClient.annotateAssessmentCallable().futureCall(request);
@@ -667,6 +677,155 @@ public class RecaptchaEnterpriseServiceClient implements BackgroundResource {
    */
   public final UnaryCallable<DeleteKeyRequest, Empty> deleteKeyCallable() {
     return stub.deleteKeyCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Migrates an existing key from reCAPTCHA to reCAPTCHA Enterprise. Once a key is migrated, it can
+   * be used from either product. SiteVerify requests are billed as CreateAssessment calls. You must
+   * be authenticated as one of the current owners of the reCAPTCHA Site Key, and your user must
+   * have the reCAPTCHA Enterprise Admin IAM role in the destination project.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (RecaptchaEnterpriseServiceClient recaptchaEnterpriseServiceClient =
+   *     RecaptchaEnterpriseServiceClient.create()) {
+   *   MigrateKeyRequest request =
+   *       MigrateKeyRequest.newBuilder()
+   *           .setName(KeyName.of("[PROJECT]", "[KEY]").toString())
+   *           .build();
+   *   Key response = recaptchaEnterpriseServiceClient.migrateKey(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Key migrateKey(MigrateKeyRequest request) {
+    return migrateKeyCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Migrates an existing key from reCAPTCHA to reCAPTCHA Enterprise. Once a key is migrated, it can
+   * be used from either product. SiteVerify requests are billed as CreateAssessment calls. You must
+   * be authenticated as one of the current owners of the reCAPTCHA Site Key, and your user must
+   * have the reCAPTCHA Enterprise Admin IAM role in the destination project.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (RecaptchaEnterpriseServiceClient recaptchaEnterpriseServiceClient =
+   *     RecaptchaEnterpriseServiceClient.create()) {
+   *   MigrateKeyRequest request =
+   *       MigrateKeyRequest.newBuilder()
+   *           .setName(KeyName.of("[PROJECT]", "[KEY]").toString())
+   *           .build();
+   *   ApiFuture<Key> future =
+   *       recaptchaEnterpriseServiceClient.migrateKeyCallable().futureCall(request);
+   *   // Do something.
+   *   Key response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<MigrateKeyRequest, Key> migrateKeyCallable() {
+    return stub.migrateKeyCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Get some aggregated metrics for a Key. This data can be used to build dashboards.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (RecaptchaEnterpriseServiceClient recaptchaEnterpriseServiceClient =
+   *     RecaptchaEnterpriseServiceClient.create()) {
+   *   MetricsName name = MetricsName.of("[PROJECT]", "[KEY]");
+   *   Metrics response = recaptchaEnterpriseServiceClient.getMetrics(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the requested metrics, in the format
+   *     "projects/{project}/keys/{key}/metrics".
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Metrics getMetrics(MetricsName name) {
+    GetMetricsRequest request =
+        GetMetricsRequest.newBuilder().setName(name == null ? null : name.toString()).build();
+    return getMetrics(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Get some aggregated metrics for a Key. This data can be used to build dashboards.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (RecaptchaEnterpriseServiceClient recaptchaEnterpriseServiceClient =
+   *     RecaptchaEnterpriseServiceClient.create()) {
+   *   String name = MetricsName.of("[PROJECT]", "[KEY]").toString();
+   *   Metrics response = recaptchaEnterpriseServiceClient.getMetrics(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the requested metrics, in the format
+   *     "projects/{project}/keys/{key}/metrics".
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Metrics getMetrics(String name) {
+    GetMetricsRequest request = GetMetricsRequest.newBuilder().setName(name).build();
+    return getMetrics(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Get some aggregated metrics for a Key. This data can be used to build dashboards.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (RecaptchaEnterpriseServiceClient recaptchaEnterpriseServiceClient =
+   *     RecaptchaEnterpriseServiceClient.create()) {
+   *   GetMetricsRequest request =
+   *       GetMetricsRequest.newBuilder()
+   *           .setName(MetricsName.of("[PROJECT]", "[KEY]").toString())
+   *           .build();
+   *   Metrics response = recaptchaEnterpriseServiceClient.getMetrics(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Metrics getMetrics(GetMetricsRequest request) {
+    return getMetricsCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Get some aggregated metrics for a Key. This data can be used to build dashboards.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (RecaptchaEnterpriseServiceClient recaptchaEnterpriseServiceClient =
+   *     RecaptchaEnterpriseServiceClient.create()) {
+   *   GetMetricsRequest request =
+   *       GetMetricsRequest.newBuilder()
+   *           .setName(MetricsName.of("[PROJECT]", "[KEY]").toString())
+   *           .build();
+   *   ApiFuture<Metrics> future =
+   *       recaptchaEnterpriseServiceClient.getMetricsCallable().futureCall(request);
+   *   // Do something.
+   *   Metrics response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<GetMetricsRequest, Metrics> getMetricsCallable() {
+    return stub.getMetricsCallable();
   }
 
   @Override

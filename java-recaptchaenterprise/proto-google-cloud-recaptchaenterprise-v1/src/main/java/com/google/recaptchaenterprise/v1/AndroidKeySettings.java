@@ -81,6 +81,11 @@ public final class AndroidKeySettings extends com.google.protobuf.GeneratedMessa
               allowedPackageNames_.add(s);
               break;
             }
+          case 16:
+            {
+              allowAllPackageNames_ = input.readBool();
+              break;
+            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -116,6 +121,24 @@ public final class AndroidKeySettings extends com.google.protobuf.GeneratedMessa
         .ensureFieldAccessorsInitialized(
             com.google.recaptchaenterprise.v1.AndroidKeySettings.class,
             com.google.recaptchaenterprise.v1.AndroidKeySettings.Builder.class);
+  }
+
+  public static final int ALLOW_ALL_PACKAGE_NAMES_FIELD_NUMBER = 2;
+  private boolean allowAllPackageNames_;
+  /**
+   *
+   *
+   * <pre>
+   * If set to true, it means allowed_package_names will not be enforced.
+   * </pre>
+   *
+   * <code>bool allow_all_package_names = 2;</code>
+   *
+   * @return The allowAllPackageNames.
+   */
+  @java.lang.Override
+  public boolean getAllowAllPackageNames() {
+    return allowAllPackageNames_;
   }
 
   public static final int ALLOWED_PACKAGE_NAMES_FIELD_NUMBER = 1;
@@ -200,6 +223,9 @@ public final class AndroidKeySettings extends com.google.protobuf.GeneratedMessa
     for (int i = 0; i < allowedPackageNames_.size(); i++) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, allowedPackageNames_.getRaw(i));
     }
+    if (allowAllPackageNames_ != false) {
+      output.writeBool(2, allowAllPackageNames_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -217,6 +243,9 @@ public final class AndroidKeySettings extends com.google.protobuf.GeneratedMessa
       size += dataSize;
       size += 1 * getAllowedPackageNamesList().size();
     }
+    if (allowAllPackageNames_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(2, allowAllPackageNames_);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -233,6 +262,7 @@ public final class AndroidKeySettings extends com.google.protobuf.GeneratedMessa
     com.google.recaptchaenterprise.v1.AndroidKeySettings other =
         (com.google.recaptchaenterprise.v1.AndroidKeySettings) obj;
 
+    if (getAllowAllPackageNames() != other.getAllowAllPackageNames()) return false;
     if (!getAllowedPackageNamesList().equals(other.getAllowedPackageNamesList())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
@@ -245,6 +275,8 @@ public final class AndroidKeySettings extends com.google.protobuf.GeneratedMessa
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
+    hash = (37 * hash) + ALLOW_ALL_PACKAGE_NAMES_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getAllowAllPackageNames());
     if (getAllowedPackageNamesCount() > 0) {
       hash = (37 * hash) + ALLOWED_PACKAGE_NAMES_FIELD_NUMBER;
       hash = (53 * hash) + getAllowedPackageNamesList().hashCode();
@@ -394,6 +426,8 @@ public final class AndroidKeySettings extends com.google.protobuf.GeneratedMessa
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      allowAllPackageNames_ = false;
+
       allowedPackageNames_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0_ = (bitField0_ & ~0x00000001);
       return this;
@@ -424,6 +458,7 @@ public final class AndroidKeySettings extends com.google.protobuf.GeneratedMessa
       com.google.recaptchaenterprise.v1.AndroidKeySettings result =
           new com.google.recaptchaenterprise.v1.AndroidKeySettings(this);
       int from_bitField0_ = bitField0_;
+      result.allowAllPackageNames_ = allowAllPackageNames_;
       if (((bitField0_ & 0x00000001) != 0)) {
         allowedPackageNames_ = allowedPackageNames_.getUnmodifiableView();
         bitField0_ = (bitField0_ & ~0x00000001);
@@ -479,6 +514,9 @@ public final class AndroidKeySettings extends com.google.protobuf.GeneratedMessa
     public Builder mergeFrom(com.google.recaptchaenterprise.v1.AndroidKeySettings other) {
       if (other == com.google.recaptchaenterprise.v1.AndroidKeySettings.getDefaultInstance())
         return this;
+      if (other.getAllowAllPackageNames() != false) {
+        setAllowAllPackageNames(other.getAllowAllPackageNames());
+      }
       if (!other.allowedPackageNames_.isEmpty()) {
         if (allowedPackageNames_.isEmpty()) {
           allowedPackageNames_ = other.allowedPackageNames_;
@@ -520,6 +558,58 @@ public final class AndroidKeySettings extends com.google.protobuf.GeneratedMessa
     }
 
     private int bitField0_;
+
+    private boolean allowAllPackageNames_;
+    /**
+     *
+     *
+     * <pre>
+     * If set to true, it means allowed_package_names will not be enforced.
+     * </pre>
+     *
+     * <code>bool allow_all_package_names = 2;</code>
+     *
+     * @return The allowAllPackageNames.
+     */
+    @java.lang.Override
+    public boolean getAllowAllPackageNames() {
+      return allowAllPackageNames_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If set to true, it means allowed_package_names will not be enforced.
+     * </pre>
+     *
+     * <code>bool allow_all_package_names = 2;</code>
+     *
+     * @param value The allowAllPackageNames to set.
+     * @return This builder for chaining.
+     */
+    public Builder setAllowAllPackageNames(boolean value) {
+
+      allowAllPackageNames_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If set to true, it means allowed_package_names will not be enforced.
+     * </pre>
+     *
+     * <code>bool allow_all_package_names = 2;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearAllowAllPackageNames() {
+
+      allowAllPackageNames_ = false;
+      onChanged();
+      return this;
+    }
 
     private com.google.protobuf.LazyStringList allowedPackageNames_ =
         com.google.protobuf.LazyStringArrayList.EMPTY;

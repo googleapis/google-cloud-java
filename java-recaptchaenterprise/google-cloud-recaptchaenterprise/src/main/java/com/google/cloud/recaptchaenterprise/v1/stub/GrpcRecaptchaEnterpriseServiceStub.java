@@ -34,9 +34,12 @@ import com.google.recaptchaenterprise.v1.CreateAssessmentRequest;
 import com.google.recaptchaenterprise.v1.CreateKeyRequest;
 import com.google.recaptchaenterprise.v1.DeleteKeyRequest;
 import com.google.recaptchaenterprise.v1.GetKeyRequest;
+import com.google.recaptchaenterprise.v1.GetMetricsRequest;
 import com.google.recaptchaenterprise.v1.Key;
 import com.google.recaptchaenterprise.v1.ListKeysRequest;
 import com.google.recaptchaenterprise.v1.ListKeysResponse;
+import com.google.recaptchaenterprise.v1.Metrics;
+import com.google.recaptchaenterprise.v1.MigrateKeyRequest;
 import com.google.recaptchaenterprise.v1.UpdateKeyRequest;
 import io.grpc.MethodDescriptor;
 import io.grpc.protobuf.ProtoUtils;
@@ -121,6 +124,24 @@ public class GrpcRecaptchaEnterpriseServiceStub extends RecaptchaEnterpriseServi
           .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
           .build();
 
+  private static final MethodDescriptor<MigrateKeyRequest, Key> migrateKeyMethodDescriptor =
+      MethodDescriptor.<MigrateKeyRequest, Key>newBuilder()
+          .setType(MethodDescriptor.MethodType.UNARY)
+          .setFullMethodName(
+              "google.cloud.recaptchaenterprise.v1.RecaptchaEnterpriseService/MigrateKey")
+          .setRequestMarshaller(ProtoUtils.marshaller(MigrateKeyRequest.getDefaultInstance()))
+          .setResponseMarshaller(ProtoUtils.marshaller(Key.getDefaultInstance()))
+          .build();
+
+  private static final MethodDescriptor<GetMetricsRequest, Metrics> getMetricsMethodDescriptor =
+      MethodDescriptor.<GetMetricsRequest, Metrics>newBuilder()
+          .setType(MethodDescriptor.MethodType.UNARY)
+          .setFullMethodName(
+              "google.cloud.recaptchaenterprise.v1.RecaptchaEnterpriseService/GetMetrics")
+          .setRequestMarshaller(ProtoUtils.marshaller(GetMetricsRequest.getDefaultInstance()))
+          .setResponseMarshaller(ProtoUtils.marshaller(Metrics.getDefaultInstance()))
+          .build();
+
   private final UnaryCallable<CreateAssessmentRequest, Assessment> createAssessmentCallable;
   private final UnaryCallable<AnnotateAssessmentRequest, AnnotateAssessmentResponse>
       annotateAssessmentCallable;
@@ -130,6 +151,8 @@ public class GrpcRecaptchaEnterpriseServiceStub extends RecaptchaEnterpriseServi
   private final UnaryCallable<GetKeyRequest, Key> getKeyCallable;
   private final UnaryCallable<UpdateKeyRequest, Key> updateKeyCallable;
   private final UnaryCallable<DeleteKeyRequest, Empty> deleteKeyCallable;
+  private final UnaryCallable<MigrateKeyRequest, Key> migrateKeyCallable;
+  private final UnaryCallable<GetMetricsRequest, Metrics> getMetricsCallable;
 
   private final BackgroundResource backgroundResources;
   private final GrpcOperationsStub operationsStub;
@@ -249,6 +272,26 @@ public class GrpcRecaptchaEnterpriseServiceStub extends RecaptchaEnterpriseServi
                   return params.build();
                 })
             .build();
+    GrpcCallSettings<MigrateKeyRequest, Key> migrateKeyTransportSettings =
+        GrpcCallSettings.<MigrateKeyRequest, Key>newBuilder()
+            .setMethodDescriptor(migrateKeyMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  return params.build();
+                })
+            .build();
+    GrpcCallSettings<GetMetricsRequest, Metrics> getMetricsTransportSettings =
+        GrpcCallSettings.<GetMetricsRequest, Metrics>newBuilder()
+            .setMethodDescriptor(getMetricsMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  return params.build();
+                })
+            .build();
 
     this.createAssessmentCallable =
         callableFactory.createUnaryCallable(
@@ -276,6 +319,12 @@ public class GrpcRecaptchaEnterpriseServiceStub extends RecaptchaEnterpriseServi
     this.deleteKeyCallable =
         callableFactory.createUnaryCallable(
             deleteKeyTransportSettings, settings.deleteKeySettings(), clientContext);
+    this.migrateKeyCallable =
+        callableFactory.createUnaryCallable(
+            migrateKeyTransportSettings, settings.migrateKeySettings(), clientContext);
+    this.getMetricsCallable =
+        callableFactory.createUnaryCallable(
+            getMetricsTransportSettings, settings.getMetricsSettings(), clientContext);
 
     this.backgroundResources =
         new BackgroundResourceAggregation(clientContext.getBackgroundResources());
@@ -324,6 +373,16 @@ public class GrpcRecaptchaEnterpriseServiceStub extends RecaptchaEnterpriseServi
   @Override
   public UnaryCallable<DeleteKeyRequest, Empty> deleteKeyCallable() {
     return deleteKeyCallable;
+  }
+
+  @Override
+  public UnaryCallable<MigrateKeyRequest, Key> migrateKeyCallable() {
+    return migrateKeyCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetMetricsRequest, Metrics> getMetricsCallable() {
+    return getMetricsCallable;
   }
 
   @Override

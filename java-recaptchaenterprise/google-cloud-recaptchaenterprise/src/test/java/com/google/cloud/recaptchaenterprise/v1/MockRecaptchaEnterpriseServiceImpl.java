@@ -26,9 +26,12 @@ import com.google.recaptchaenterprise.v1.CreateAssessmentRequest;
 import com.google.recaptchaenterprise.v1.CreateKeyRequest;
 import com.google.recaptchaenterprise.v1.DeleteKeyRequest;
 import com.google.recaptchaenterprise.v1.GetKeyRequest;
+import com.google.recaptchaenterprise.v1.GetMetricsRequest;
 import com.google.recaptchaenterprise.v1.Key;
 import com.google.recaptchaenterprise.v1.ListKeysRequest;
 import com.google.recaptchaenterprise.v1.ListKeysResponse;
+import com.google.recaptchaenterprise.v1.Metrics;
+import com.google.recaptchaenterprise.v1.MigrateKeyRequest;
 import com.google.recaptchaenterprise.v1.RecaptchaEnterpriseServiceGrpc.RecaptchaEnterpriseServiceImplBase;
 import com.google.recaptchaenterprise.v1.UpdateKeyRequest;
 import io.grpc.stub.StreamObserver;
@@ -209,6 +212,46 @@ public class MockRecaptchaEnterpriseServiceImpl extends RecaptchaEnterpriseServi
                   "Unrecognized response type %s for method DeleteKey, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   Empty.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void migrateKey(MigrateKeyRequest request, StreamObserver<Key> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Key) {
+      requests.add(request);
+      responseObserver.onNext(((Key) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method MigrateKey, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Key.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void getMetrics(GetMetricsRequest request, StreamObserver<Metrics> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Metrics) {
+      requests.add(request);
+      responseObserver.onNext(((Metrics) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetMetrics, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Metrics.class.getName(),
                   Exception.class.getName())));
     }
   }

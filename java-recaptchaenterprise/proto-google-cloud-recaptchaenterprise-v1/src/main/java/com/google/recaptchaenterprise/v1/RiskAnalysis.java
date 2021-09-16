@@ -142,7 +142,6 @@ public final class RiskAnalysis extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * LINT.IfChange(classification_reason)
    * Reasons contributing to the risk analysis verdict.
    * </pre>
    *

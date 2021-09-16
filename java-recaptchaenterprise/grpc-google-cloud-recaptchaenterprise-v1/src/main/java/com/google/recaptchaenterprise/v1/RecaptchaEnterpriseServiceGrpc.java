@@ -355,6 +355,98 @@ public final class RecaptchaEnterpriseServiceGrpc {
     return getDeleteKeyMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.recaptchaenterprise.v1.MigrateKeyRequest,
+          com.google.recaptchaenterprise.v1.Key>
+      getMigrateKeyMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "MigrateKey",
+      requestType = com.google.recaptchaenterprise.v1.MigrateKeyRequest.class,
+      responseType = com.google.recaptchaenterprise.v1.Key.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.recaptchaenterprise.v1.MigrateKeyRequest,
+          com.google.recaptchaenterprise.v1.Key>
+      getMigrateKeyMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.recaptchaenterprise.v1.MigrateKeyRequest,
+            com.google.recaptchaenterprise.v1.Key>
+        getMigrateKeyMethod;
+    if ((getMigrateKeyMethod = RecaptchaEnterpriseServiceGrpc.getMigrateKeyMethod) == null) {
+      synchronized (RecaptchaEnterpriseServiceGrpc.class) {
+        if ((getMigrateKeyMethod = RecaptchaEnterpriseServiceGrpc.getMigrateKeyMethod) == null) {
+          RecaptchaEnterpriseServiceGrpc.getMigrateKeyMethod =
+              getMigrateKeyMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.recaptchaenterprise.v1.MigrateKeyRequest,
+                          com.google.recaptchaenterprise.v1.Key>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "MigrateKey"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.recaptchaenterprise.v1.MigrateKeyRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.recaptchaenterprise.v1.Key.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new RecaptchaEnterpriseServiceMethodDescriptorSupplier("MigrateKey"))
+                      .build();
+        }
+      }
+    }
+    return getMigrateKeyMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.recaptchaenterprise.v1.GetMetricsRequest,
+          com.google.recaptchaenterprise.v1.Metrics>
+      getGetMetricsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetMetrics",
+      requestType = com.google.recaptchaenterprise.v1.GetMetricsRequest.class,
+      responseType = com.google.recaptchaenterprise.v1.Metrics.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.recaptchaenterprise.v1.GetMetricsRequest,
+          com.google.recaptchaenterprise.v1.Metrics>
+      getGetMetricsMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.recaptchaenterprise.v1.GetMetricsRequest,
+            com.google.recaptchaenterprise.v1.Metrics>
+        getGetMetricsMethod;
+    if ((getGetMetricsMethod = RecaptchaEnterpriseServiceGrpc.getGetMetricsMethod) == null) {
+      synchronized (RecaptchaEnterpriseServiceGrpc.class) {
+        if ((getGetMetricsMethod = RecaptchaEnterpriseServiceGrpc.getGetMetricsMethod) == null) {
+          RecaptchaEnterpriseServiceGrpc.getGetMetricsMethod =
+              getGetMetricsMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.recaptchaenterprise.v1.GetMetricsRequest,
+                          com.google.recaptchaenterprise.v1.Metrics>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetMetrics"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.recaptchaenterprise.v1.GetMetricsRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.recaptchaenterprise.v1.Metrics.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new RecaptchaEnterpriseServiceMethodDescriptorSupplier("GetMetrics"))
+                      .build();
+        }
+      }
+    }
+    return getGetMetricsMethod;
+  }
+
   /** Creates a new async stub that supports all call types for the service */
   public static RecaptchaEnterpriseServiceStub newStub(io.grpc.Channel channel) {
     io.grpc.stub.AbstractStub.StubFactory<RecaptchaEnterpriseServiceStub> factory =
@@ -426,7 +518,7 @@ public final class RecaptchaEnterpriseServiceGrpc {
      *
      * <pre>
      * Annotates a previously created Assessment to provide additional information
-     * on whether the event turned out to be authentic or fradulent.
+     * on whether the event turned out to be authentic or fraudulent.
      * </pre>
      */
     public void annotateAssessment(
@@ -503,6 +595,38 @@ public final class RecaptchaEnterpriseServiceGrpc {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getDeleteKeyMethod(), responseObserver);
     }
 
+    /**
+     *
+     *
+     * <pre>
+     * Migrates an existing key from reCAPTCHA to reCAPTCHA Enterprise.
+     * Once a key is migrated, it can be used from either product. SiteVerify
+     * requests are billed as CreateAssessment calls. You must be
+     * authenticated as one of the current owners of the reCAPTCHA Site Key, and
+     * your user must have the reCAPTCHA Enterprise Admin IAM role in the
+     * destination project.
+     * </pre>
+     */
+    public void migrateKey(
+        com.google.recaptchaenterprise.v1.MigrateKeyRequest request,
+        io.grpc.stub.StreamObserver<com.google.recaptchaenterprise.v1.Key> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getMigrateKeyMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Get some aggregated metrics for a Key. This data can be used to build
+     * dashboards.
+     * </pre>
+     */
+    public void getMetrics(
+        com.google.recaptchaenterprise.v1.GetMetricsRequest request,
+        io.grpc.stub.StreamObserver<com.google.recaptchaenterprise.v1.Metrics> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetMetricsMethod(), responseObserver);
+    }
+
     @java.lang.Override
     public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
@@ -551,6 +675,18 @@ public final class RecaptchaEnterpriseServiceGrpc {
                   new MethodHandlers<
                       com.google.recaptchaenterprise.v1.DeleteKeyRequest,
                       com.google.protobuf.Empty>(this, METHODID_DELETE_KEY)))
+          .addMethod(
+              getMigrateKeyMethod(),
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.recaptchaenterprise.v1.MigrateKeyRequest,
+                      com.google.recaptchaenterprise.v1.Key>(this, METHODID_MIGRATE_KEY)))
+          .addMethod(
+              getGetMetricsMethod(),
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.recaptchaenterprise.v1.GetMetricsRequest,
+                      com.google.recaptchaenterprise.v1.Metrics>(this, METHODID_GET_METRICS)))
           .build();
     }
   }
@@ -597,7 +733,7 @@ public final class RecaptchaEnterpriseServiceGrpc {
      *
      * <pre>
      * Annotates a previously created Assessment to provide additional information
-     * on whether the event turned out to be authentic or fradulent.
+     * on whether the event turned out to be authentic or fraudulent.
      * </pre>
      */
     public void annotateAssessment(
@@ -680,6 +816,40 @@ public final class RecaptchaEnterpriseServiceGrpc {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getDeleteKeyMethod(), getCallOptions()), request, responseObserver);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Migrates an existing key from reCAPTCHA to reCAPTCHA Enterprise.
+     * Once a key is migrated, it can be used from either product. SiteVerify
+     * requests are billed as CreateAssessment calls. You must be
+     * authenticated as one of the current owners of the reCAPTCHA Site Key, and
+     * your user must have the reCAPTCHA Enterprise Admin IAM role in the
+     * destination project.
+     * </pre>
+     */
+    public void migrateKey(
+        com.google.recaptchaenterprise.v1.MigrateKeyRequest request,
+        io.grpc.stub.StreamObserver<com.google.recaptchaenterprise.v1.Key> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getMigrateKeyMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Get some aggregated metrics for a Key. This data can be used to build
+     * dashboards.
+     * </pre>
+     */
+    public void getMetrics(
+        com.google.recaptchaenterprise.v1.GetMetricsRequest request,
+        io.grpc.stub.StreamObserver<com.google.recaptchaenterprise.v1.Metrics> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetMetricsMethod(), getCallOptions()), request, responseObserver);
+    }
   }
 
   /**
@@ -720,7 +890,7 @@ public final class RecaptchaEnterpriseServiceGrpc {
      *
      * <pre>
      * Annotates a previously created Assessment to provide additional information
-     * on whether the event turned out to be authentic or fradulent.
+     * on whether the event turned out to be authentic or fraudulent.
      * </pre>
      */
     public com.google.recaptchaenterprise.v1.AnnotateAssessmentResponse annotateAssessment(
@@ -793,6 +963,38 @@ public final class RecaptchaEnterpriseServiceGrpc {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getDeleteKeyMethod(), getCallOptions(), request);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Migrates an existing key from reCAPTCHA to reCAPTCHA Enterprise.
+     * Once a key is migrated, it can be used from either product. SiteVerify
+     * requests are billed as CreateAssessment calls. You must be
+     * authenticated as one of the current owners of the reCAPTCHA Site Key, and
+     * your user must have the reCAPTCHA Enterprise Admin IAM role in the
+     * destination project.
+     * </pre>
+     */
+    public com.google.recaptchaenterprise.v1.Key migrateKey(
+        com.google.recaptchaenterprise.v1.MigrateKeyRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getMigrateKeyMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Get some aggregated metrics for a Key. This data can be used to build
+     * dashboards.
+     * </pre>
+     */
+    public com.google.recaptchaenterprise.v1.Metrics getMetrics(
+        com.google.recaptchaenterprise.v1.GetMetricsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetMetricsMethod(), getCallOptions(), request);
+    }
   }
 
   /**
@@ -834,7 +1036,7 @@ public final class RecaptchaEnterpriseServiceGrpc {
      *
      * <pre>
      * Annotates a previously created Assessment to provide additional information
-     * on whether the event turned out to be authentic or fradulent.
+     * on whether the event turned out to be authentic or fraudulent.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -909,6 +1111,39 @@ public final class RecaptchaEnterpriseServiceGrpc {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getDeleteKeyMethod(), getCallOptions()), request);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Migrates an existing key from reCAPTCHA to reCAPTCHA Enterprise.
+     * Once a key is migrated, it can be used from either product. SiteVerify
+     * requests are billed as CreateAssessment calls. You must be
+     * authenticated as one of the current owners of the reCAPTCHA Site Key, and
+     * your user must have the reCAPTCHA Enterprise Admin IAM role in the
+     * destination project.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.recaptchaenterprise.v1.Key>
+        migrateKey(com.google.recaptchaenterprise.v1.MigrateKeyRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getMigrateKeyMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Get some aggregated metrics for a Key. This data can be used to build
+     * dashboards.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.recaptchaenterprise.v1.Metrics>
+        getMetrics(com.google.recaptchaenterprise.v1.GetMetricsRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetMetricsMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_CREATE_ASSESSMENT = 0;
@@ -918,6 +1153,8 @@ public final class RecaptchaEnterpriseServiceGrpc {
   private static final int METHODID_GET_KEY = 4;
   private static final int METHODID_UPDATE_KEY = 5;
   private static final int METHODID_DELETE_KEY = 6;
+  private static final int METHODID_MIGRATE_KEY = 7;
+  private static final int METHODID_GET_METRICS = 8;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -977,6 +1214,18 @@ public final class RecaptchaEnterpriseServiceGrpc {
           serviceImpl.deleteKey(
               (com.google.recaptchaenterprise.v1.DeleteKeyRequest) request,
               (io.grpc.stub.StreamObserver<com.google.protobuf.Empty>) responseObserver);
+          break;
+        case METHODID_MIGRATE_KEY:
+          serviceImpl.migrateKey(
+              (com.google.recaptchaenterprise.v1.MigrateKeyRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.recaptchaenterprise.v1.Key>)
+                  responseObserver);
+          break;
+        case METHODID_GET_METRICS:
+          serviceImpl.getMetrics(
+              (com.google.recaptchaenterprise.v1.GetMetricsRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.recaptchaenterprise.v1.Metrics>)
+                  responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -1049,6 +1298,8 @@ public final class RecaptchaEnterpriseServiceGrpc {
                       .addMethod(getGetKeyMethod())
                       .addMethod(getUpdateKeyMethod())
                       .addMethod(getDeleteKeyMethod())
+                      .addMethod(getMigrateKeyMethod())
+                      .addMethod(getGetMetricsMethod())
                       .build();
         }
       }

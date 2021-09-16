@@ -38,9 +38,12 @@ import com.google.recaptchaenterprise.v1.CreateAssessmentRequest;
 import com.google.recaptchaenterprise.v1.CreateKeyRequest;
 import com.google.recaptchaenterprise.v1.DeleteKeyRequest;
 import com.google.recaptchaenterprise.v1.GetKeyRequest;
+import com.google.recaptchaenterprise.v1.GetMetricsRequest;
 import com.google.recaptchaenterprise.v1.Key;
 import com.google.recaptchaenterprise.v1.ListKeysRequest;
 import com.google.recaptchaenterprise.v1.ListKeysResponse;
+import com.google.recaptchaenterprise.v1.Metrics;
+import com.google.recaptchaenterprise.v1.MigrateKeyRequest;
 import com.google.recaptchaenterprise.v1.UpdateKeyRequest;
 import java.io.IOException;
 import java.util.List;
@@ -120,6 +123,16 @@ public class RecaptchaEnterpriseServiceSettings
   /** Returns the object with the settings used for calls to deleteKey. */
   public UnaryCallSettings<DeleteKeyRequest, Empty> deleteKeySettings() {
     return ((RecaptchaEnterpriseServiceStubSettings) getStubSettings()).deleteKeySettings();
+  }
+
+  /** Returns the object with the settings used for calls to migrateKey. */
+  public UnaryCallSettings<MigrateKeyRequest, Key> migrateKeySettings() {
+    return ((RecaptchaEnterpriseServiceStubSettings) getStubSettings()).migrateKeySettings();
+  }
+
+  /** Returns the object with the settings used for calls to getMetrics. */
+  public UnaryCallSettings<GetMetricsRequest, Metrics> getMetricsSettings() {
+    return ((RecaptchaEnterpriseServiceStubSettings) getStubSettings()).getMetricsSettings();
   }
 
   public static final RecaptchaEnterpriseServiceSettings create(
@@ -256,6 +269,16 @@ public class RecaptchaEnterpriseServiceSettings
     /** Returns the builder for the settings used for calls to deleteKey. */
     public UnaryCallSettings.Builder<DeleteKeyRequest, Empty> deleteKeySettings() {
       return getStubSettingsBuilder().deleteKeySettings();
+    }
+
+    /** Returns the builder for the settings used for calls to migrateKey. */
+    public UnaryCallSettings.Builder<MigrateKeyRequest, Key> migrateKeySettings() {
+      return getStubSettingsBuilder().migrateKeySettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getMetrics. */
+    public UnaryCallSettings.Builder<GetMetricsRequest, Metrics> getMetricsSettings() {
+      return getStubSettingsBuilder().getMetricsSettings();
     }
 
     @Override

@@ -68,7 +68,7 @@ public interface UpdateKeyRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. The mask to control which field of the key get updated. If the mask is not
+   * Optional. The mask to control which fields of the key get updated. If the mask is not
    * present, all fields will be updated.
    * </pre>
    *
@@ -82,7 +82,7 @@ public interface UpdateKeyRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. The mask to control which field of the key get updated. If the mask is not
+   * Optional. The mask to control which fields of the key get updated. If the mask is not
    * present, all fields will be updated.
    * </pre>
    *
@@ -96,7 +96,7 @@ public interface UpdateKeyRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. The mask to control which field of the key get updated. If the mask is not
+   * Optional. The mask to control which fields of the key get updated. If the mask is not
    * present, all fields will be updated.
    * </pre>
    *
