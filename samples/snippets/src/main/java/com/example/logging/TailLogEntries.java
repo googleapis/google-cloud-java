@@ -16,7 +16,7 @@
 
 package com.example.logging;
 
-// [START logging_write_log_entry]
+// [START logging_tail_log_entries]
 import com.google.cloud.logging.LogEntry;
 import com.google.cloud.logging.LogEntryServerStream;
 import com.google.cloud.logging.Logging;
@@ -52,4 +52,4 @@ public class TailLogEntries {
     }
   }
 }
-// [END logging_write_log_entry]
+// [END logging_tail_log_entries]
