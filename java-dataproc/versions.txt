@@ -3,6 +3,4 @@
 
 google-cloud-dataproc:2.1.4:2.1.5-SNAPSHOT
 grpc-google-cloud-dataproc-v1:2.1.4:2.1.5-SNAPSHOT
-grpc-google-cloud-dataproc-v1beta2:0.95.4:0.95.5-SNAPSHOT
-proto-google-cloud-dataproc-v1beta2:0.95.4:0.95.5-SNAPSHOT
 proto-google-cloud-dataproc-v1:2.1.4:2.1.5-SNAPSHOT
