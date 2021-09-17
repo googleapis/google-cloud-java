@@ -52,8 +52,10 @@ public class ITLoggingTest extends BaseSystemTest {
   @BeforeClass
   public static void insertLogs() {
     // This ensures predictability of the test:
-    // with batching enabled by default, it's possible that for two log entries, batching
-    // will send them together, so they might be stored not in the same logical order.
+    // with batching enabled by default, it's possible that for two log entries,
+    // batching
+    // will send them together, so they might be stored not in the same logical
+    // order.
     logging.setWriteSynchronicity(Synchronicity.SYNC);
     LogEntry firstEntry =
         LogEntry.newBuilder(FIRST_PAYLOAD)
@@ -77,15 +79,7 @@ public class ITLoggingTest extends BaseSystemTest {
 
   @AfterClass
   public static void cleanUpLogs() throws InterruptedException {
-    int deleteAttempts = 0;
-    int allowedDeleteAttempts = 5;
-    boolean deleted = false;
-    while (!deleted && deleteAttempts < allowedDeleteAttempts) {
-      Thread.sleep(5000);
-      deleted = logging.deleteLog(LOG_ID);
-      deleteAttempts++;
-    }
-    assertTrue(deleted);
+    assertTrue(cleanupLog(LOG_ID));
   }
 
   @Test(timeout = 600_000) // Note: it can take ~10 minutes for logs to propagate!

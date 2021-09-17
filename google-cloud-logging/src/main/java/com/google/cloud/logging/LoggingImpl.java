@@ -17,11 +17,7 @@
 package com.google.cloud.logging;
 
 import static com.google.api.client.util.Preconditions.checkArgument;
-import static com.google.cloud.logging.Logging.EntryListOption.OptionType.BILLINGACCOUNT;
-import static com.google.cloud.logging.Logging.EntryListOption.OptionType.FILTER;
-import static com.google.cloud.logging.Logging.EntryListOption.OptionType.FOLDER;
 import static com.google.cloud.logging.Logging.EntryListOption.OptionType.ORDER_BY;
-import static com.google.cloud.logging.Logging.EntryListOption.OptionType.ORGANIZATION;
 import static com.google.cloud.logging.Logging.ListOption.OptionType.PAGE_SIZE;
 import static com.google.cloud.logging.Logging.ListOption.OptionType.PAGE_TOKEN;
 import static com.google.cloud.logging.Logging.WriteOption.OptionType.LABELS;
@@ -34,6 +30,7 @@ import com.google.api.core.ApiFutureCallback;
 import com.google.api.core.ApiFutures;
 import com.google.api.gax.paging.AsyncPage;
 import com.google.api.gax.paging.Page;
+import com.google.api.gax.rpc.BidiStream;
 import com.google.cloud.AsyncPageImpl;
 import com.google.cloud.BaseService;
 import com.google.cloud.MonitoredResource;
@@ -76,12 +73,15 @@ import com.google.logging.v2.LogMetricName;
 import com.google.logging.v2.LogName;
 import com.google.logging.v2.LogSinkName;
 import com.google.logging.v2.ProjectName;
+import com.google.logging.v2.TailLogEntriesRequest;
+import com.google.logging.v2.TailLogEntriesResponse;
 import com.google.logging.v2.UpdateExclusionRequest;
 import com.google.logging.v2.UpdateLogMetricRequest;
 import com.google.logging.v2.UpdateSinkRequest;
 import com.google.logging.v2.WriteLogEntriesRequest;
 import com.google.logging.v2.WriteLogEntriesResponse;
 import com.google.protobuf.Empty;
+import com.google.protobuf.util.Durations;
 import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ExecutionException;
@@ -790,7 +790,10 @@ class LoggingImpl extends BaseService<LoggingOptions> implements Logging {
     }
   }
 
-  /* Write logs synchronously or asynchronously based on writeSynchronicity setting. */
+  /*
+   * Write logs synchronously or asynchronously based on writeSynchronicity
+   * setting.
+   */
   private void writeLogEntries(Iterable<LogEntry> logEntries, WriteOption... writeOptions) {
     if (closed) return;
 
@@ -841,15 +844,15 @@ class LoggingImpl extends BaseService<LoggingOptions> implements Logging {
       String projectId, Map<Option.OptionType, ?> options) {
     ListLogEntriesRequest.Builder builder = ListLogEntriesRequest.newBuilder();
     builder.addResourceNames("projects/" + projectId);
-    String organization = ORGANIZATION.get(options);
+    String organization = EntryListOption.OptionType.ORGANIZATION.get(options);
     if (organization != null) {
       builder.addResourceNames("organizations/" + organization);
     }
-    String billingAccount = BILLINGACCOUNT.get(options);
+    String billingAccount = EntryListOption.OptionType.BILLINGACCOUNT.get(options);
     if (billingAccount != null) {
       builder.addResourceNames("billingAccounts/" + billingAccount);
     }
-    String folder = FOLDER.get(options);
+    String folder = EntryListOption.OptionType.FOLDER.get(options);
     if (folder != null) {
       builder.addResourceNames("folders/" + folder);
     }
@@ -865,8 +868,9 @@ class LoggingImpl extends BaseService<LoggingOptions> implements Logging {
     if (orderBy != null) {
       builder.setOrderBy(orderBy);
     }
-    String filter = FILTER.get(options);
-    // Make sure timestamp filter is either explicitly specified or we add a default time filter
+    String filter = EntryListOption.OptionType.FILTER.get(options);
+    // Make sure timestamp filter is either explicitly specified or we add a default
+    // time filter
     // of 24 hours back to be inline with gcloud behavior for the same API
     if (filter != null) {
       if (!filter.toLowerCase().contains("timestamp")) {
@@ -876,7 +880,8 @@ class LoggingImpl extends BaseService<LoggingOptions> implements Logging {
       }
       builder.setFilter(filter);
     } else {
-      // If filter is not specified, default filter is looking back 24 hours in line with gcloud
+      // If filter is not specified, default filter is looking back 24 hours in line
+      // with gcloud
       // behavior
       builder.setFilter(defaultTimestampFilterCreator.createDefaultTimestampFilter());
     }
@@ -917,6 +922,54 @@ class LoggingImpl extends BaseService<LoggingOptions> implements Logging {
   @Override
   public ApiFuture<AsyncPage<LogEntry>> listLogEntriesAsync(EntryListOption... options) {
     return listLogEntriesAsync(getOptions(), optionMap(options));
+  }
+
+  static TailLogEntriesRequest tailLogEntriesRequest(
+      Map<Option.OptionType, ?> options, String defaultProjectId) {
+    TailLogEntriesRequest.Builder builder = TailLogEntriesRequest.newBuilder();
+
+    String organization = TailOption.OptionType.ORGANIZATION.get(options);
+    if (organization != null) {
+      builder.addResourceNames("organizations/" + organization);
+    }
+    String billingAccount = TailOption.OptionType.BILLINGACCOUNT.get(options);
+    if (billingAccount != null) {
+      builder.addResourceNames("billingAccounts/" + billingAccount);
+    }
+    String folder = TailOption.OptionType.FOLDER.get(options);
+    if (folder != null) {
+      builder.addResourceNames("folders/" + folder);
+    }
+    String project = TailOption.OptionType.PROJECT.get(options);
+    if (project != null) {
+      builder.addResourceNames("projects/" + project);
+    } else if (defaultProjectId != null) {
+      builder.addResourceNames("projects/" + defaultProjectId);
+    }
+    String filter = TailOption.OptionType.FILTER.get(options);
+    if (filter != null) {
+      builder.setFilter(filter);
+    }
+    String bufferWindow = TailOption.OptionType.BUFFERWINDOW.get(options);
+    if (bufferWindow != null) {
+      try {
+        builder.setBufferWindow(Durations.parse(bufferWindow));
+      } catch (java.text.ParseException err) {
+        System.err.println("ERROR: invalid duration format: " + bufferWindow);
+      }
+    }
+    return builder.build();
+  }
+
+  @Override
+  public LogEntryServerStream tailLogEntries(TailOption... options) {
+    LoggingOptions serviceOptions = getOptions();
+    BidiStream<TailLogEntriesRequest, TailLogEntriesResponse> bidiStream =
+        serviceOptions.getLoggingRpcV2().getTailLogEntriesStream();
+    final TailLogEntriesRequest request =
+        tailLogEntriesRequest(optionMap(options), serviceOptions.getProjectId());
+    bidiStream.send(request);
+    return new LogEntryServerStream(bidiStream);
   }
 
   @Override

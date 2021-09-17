@@ -56,17 +56,29 @@ public class BaseSystemTest {
   /**
    * Creates an equality expression for logging filter.
    *
-   * @see <a href="https://cloud.google.com/logging/docs/view/advanced_filters">Advanced Logs
+   * @see <a href= "https://cloud.google.com/logging/docs/view/advanced_filters">Advanced Logs
    *     Filters Documentation</a>
    */
   protected static <V> String createEqualityFilter(String name, V value) {
     return name + "=" + "\"" + value.toString() + "\"";
   }
 
+  protected static boolean cleanupLog(String logName) throws InterruptedException {
+    int deleteAttempts = 0;
+    int allowedDeleteAttempts = 5;
+    boolean deleted = false;
+    while (!deleted && deleteAttempts < allowedDeleteAttempts) {
+      Thread.sleep(5000);
+      deleted = logging.deleteLog(logName);
+      deleteAttempts++;
+    }
+    return deleted;
+  }
+
   /**
    * Creates an equality expression for logging filter.
    *
-   * @see <a href="https://cloud.google.com/logging/docs/view/advanced_filters">Advanced Logs
+   * @see <a href= "https://cloud.google.com/logging/docs/view/advanced_filters">Advanced Logs
    *     Filters Documentation</a>
    */
   protected static String createTimestampFilter(int hoursAgo) {

@@ -17,6 +17,7 @@
 package com.google.cloud.logging.spi.v2;
 
 import com.google.api.core.ApiFuture;
+import com.google.api.gax.rpc.BidiStream;
 import com.google.cloud.ServiceRpc;
 import com.google.logging.v2.CreateExclusionRequest;
 import com.google.logging.v2.CreateLogMetricRequest;
@@ -43,6 +44,8 @@ import com.google.logging.v2.ListSinksResponse;
 import com.google.logging.v2.LogExclusion;
 import com.google.logging.v2.LogMetric;
 import com.google.logging.v2.LogSink;
+import com.google.logging.v2.TailLogEntriesRequest;
+import com.google.logging.v2.TailLogEntriesResponse;
 import com.google.logging.v2.UpdateExclusionRequest;
 import com.google.logging.v2.UpdateLogMetricRequest;
 import com.google.logging.v2.UpdateSinkRequest;
@@ -133,6 +136,12 @@ public interface LoggingRpc extends AutoCloseable, ServiceRpc {
    * @param request the request object containing all of the parameters for the API call
    */
   ApiFuture<ListLogEntriesResponse> list(ListLogEntriesRequest request);
+
+  /** This method returns a {code BidiStream} object to consume the stream of log entries. */
+  default BidiStream<TailLogEntriesRequest, TailLogEntriesResponse> getTailLogEntriesStream() {
+    throw new UnsupportedOperationException(
+        "method tailLogEntries() does not have default implementation");
+  }
 
   /**
    * Sends a request to list monitored resource descriptors. This method returns a {@code ApiFuture}

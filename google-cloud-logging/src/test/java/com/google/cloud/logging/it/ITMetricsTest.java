@@ -25,31 +25,16 @@ import static org.junit.Assert.assertTrue;
 
 import com.google.api.gax.paging.Page;
 import com.google.cloud.MonitoredResourceDescriptor;
+import com.google.cloud.logging.BaseSystemTest;
 import com.google.cloud.logging.Logging;
 import com.google.cloud.logging.Metric;
 import com.google.cloud.logging.MetricInfo;
-import com.google.cloud.logging.testing.RemoteLoggingHelper;
 import com.google.common.collect.Sets;
 import java.util.Iterator;
 import java.util.Set;
-import org.junit.AfterClass;
-import org.junit.BeforeClass;
 import org.junit.Test;
 
-public class ITMetricsTest {
-
-  private static Logging logging;
-
-  @BeforeClass
-  public static void beforeClass() {
-    RemoteLoggingHelper helper = RemoteLoggingHelper.create();
-    logging = helper.getOptions().getService();
-  }
-
-  @AfterClass
-  public static void afterClass() throws Exception {
-    logging.close();
-  }
+public class ITMetricsTest extends BaseSystemTest {
 
   @Test
   public void testListMonitoredResourceDescriptors() {
