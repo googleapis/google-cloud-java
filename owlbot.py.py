@@ -16,8 +16,6 @@
 
 import synthtool.languages.java as java
 
-AUTOSYNTH_MULTIPLE_COMMITS = True
-
 java.common_templates(excludes=[
     '.kokoro/continuous/java8-samples.cfg',
     '.kokoro/continuous/java11-samples.cfg',
