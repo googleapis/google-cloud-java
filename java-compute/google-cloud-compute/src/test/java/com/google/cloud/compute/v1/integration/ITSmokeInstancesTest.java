@@ -49,7 +49,6 @@ import org.junit.AfterClass;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.BeforeClass;
-import org.junit.Ignore;
 import org.junit.Test;
 
 public class ITSmokeInstancesTest extends BaseTest {
@@ -290,7 +289,6 @@ public class ITSmokeInstancesTest extends BaseTest {
     }
   }
 
-  @Ignore("Patch is not supported")
   @Test
   public void testPatch() {
     Instance resultInstance = insertInstance();
