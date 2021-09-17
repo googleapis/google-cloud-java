@@ -16,7 +16,6 @@
 
 package com.google.cloud.pubsub.v1;
 
-import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
 import com.google.api.core.BetaApi;
@@ -409,13 +408,14 @@ public class SubscriptionAdminClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (SubscriptionAdminClient subscriptionAdminClient = SubscriptionAdminClient.create()) {
-   *   ProjectSubscriptionName name = ProjectSubscriptionName.of("[PROJECT]", "[SUBSCRIPTION]");
-   *   TopicName topic = TopicName.ofProjectTopicName("[PROJECT]", "[TOPIC]");
+   *   String name = ProjectSubscriptionName.of("[PROJECT]", "[SUBSCRIPTION]").toString();
+   *   String topic = TopicName.ofProjectTopicName("[PROJECT]", "[TOPIC]").toString();
    *   PushConfig pushConfig = PushConfig.newBuilder().build();
-   *   int ackDeadlineSeconds = 0;
-   *   Subscription response = subscriptionAdminClient.createSubscription(name.toString(), topic.toString(), pushConfig, ackDeadlineSeconds);
+   *   int ackDeadlineSeconds = 2135351438;
+   *   Subscription response =
+   *       subscriptionAdminClient.createSubscription(name, topic, pushConfig, ackDeadlineSeconds);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param name Required. The name of the subscription. It must have the format
    *     `"projects/{project}/subscriptions/{subscription}"`. `{subscription}` must start with a
@@ -651,8 +651,8 @@ public class SubscriptionAdminClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (SubscriptionAdminClient subscriptionAdminClient = SubscriptionAdminClient.create()) {
-   *   ProjectSubscriptionName subscription = ProjectSubscriptionName.of("[PROJECT]", "[SUBSCRIPTION]");
-   *   Subscription response = subscriptionAdminClient.getSubscription(subscription.toString());
+   *   String subscription = ProjectSubscriptionName.of("[PROJECT]", "[SUBSCRIPTION]").toString();
+   *   Subscription response = subscriptionAdminClient.getSubscription(subscription);
    * }
    * }</pre>
    *
@@ -1172,8 +1172,7 @@ public class SubscriptionAdminClient implements BackgroundResource {
    *     returned by the Pub/Sub system in the `Pull` response. Must not be empty.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  /* package-private */ final void acknowledge(
-      ProjectSubscriptionName subscription, List<String> ackIds) {
+  public final void acknowledge(ProjectSubscriptionName subscription, List<String> ackIds) {
     AcknowledgeRequest request =
         AcknowledgeRequest.newBuilder()
             .setSubscription(subscription == null ? null : subscription.toString())
@@ -2373,9 +2372,9 @@ public class SubscriptionAdminClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Sets the access control policy on the specified resource. Replaces any existing policy.
+   * Sets the access control policy on the specified resource. Replacesany existing policy.
    *
-   * <p>Can return `NOT_FOUND`, `INVALID_ARGUMENT`, and `PERMISSION_DENIED` errors.
+   * <p>Can return `NOT_FOUND`, `INVALID_ARGUMENT`, and `PERMISSION_DENIED`errors.
    *
    * <p>Sample code:
    *
@@ -2430,9 +2429,9 @@ public class SubscriptionAdminClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Sets the access control policy on the specified resource. Replaces any existing policy.
+   * Sets the access control policy on the specified resource. Replacesany existing policy.
    *
-   * <p>Can return `NOT_FOUND`, `INVALID_ARGUMENT`, and `PERMISSION_DENIED` errors.
+   * <p>Can return `NOT_FOUND`, `INVALID_ARGUMENT`, and `PERMISSION_DENIED`errors.
    *
    * <p>Sample code:
    *
@@ -2455,7 +2454,7 @@ public class SubscriptionAdminClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Gets the access control policy for a resource. Returns an empty policy if the resource exists
+   * Gets the access control policy for a resource. Returns an empty policyif the resource exists
    * and does not have a policy set.
    *
    * <p>Sample code:
@@ -2505,7 +2504,7 @@ public class SubscriptionAdminClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Gets the access control policy for a resource. Returns an empty policy if the resource exists
+   * Gets the access control policy for a resource. Returns an empty policyif the resource exists
    * and does not have a policy set.
    *
    * <p>Sample code:
@@ -2529,11 +2528,11 @@ public class SubscriptionAdminClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Returns permissions that a caller has on the specified resource. If the resource does not
-   * exist, this will return an empty set of permissions, not a `NOT_FOUND` error.
+   * Returns permissions that a caller has on the specified resource. If theresource does not exist,
+   * this will return an empty set ofpermissions, not a `NOT_FOUND` error.
    *
-   * <p>Note: This operation is designed to be used for building permission-aware UIs and
-   * command-line tools, not for authorization checking. This operation may "fail open" without
+   * <p>Note: This operation is designed to be used for buildingpermission-aware UIs and
+   * command-line tools, not for authorizationchecking. This operation may "fail open" without
    * warning.
    *
    * <p>Sample code:
@@ -2596,11 +2595,11 @@ public class SubscriptionAdminClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Returns permissions that a caller has on the specified resource. If the resource does not
-   * exist, this will return an empty set of permissions, not a `NOT_FOUND` error.
+   * Returns permissions that a caller has on the specified resource. If theresource does not exist,
+   * this will return an empty set ofpermissions, not a `NOT_FOUND` error.
    *
-   * <p>Note: This operation is designed to be used for building permission-aware UIs and
-   * command-line tools, not for authorization checking. This operation may "fail open" without
+   * <p>Note: This operation is designed to be used for buildingpermission-aware UIs and
+   * command-line tools, not for authorizationchecking. This operation may "fail open" without
    * warning.
    *
    * <p>Sample code:
@@ -2669,12 +2668,7 @@ public class SubscriptionAdminClient implements BackgroundResource {
           ListSubscriptionsPage.createEmptyPage().createPageAsync(context, futureResponse);
       return ApiFutures.transform(
           futurePage,
-          new ApiFunction<ListSubscriptionsPage, ListSubscriptionsPagedResponse>() {
-            @Override
-            public ListSubscriptionsPagedResponse apply(ListSubscriptionsPage input) {
-              return new ListSubscriptionsPagedResponse(input);
-            }
-          },
+          input -> new ListSubscriptionsPagedResponse(input),
           MoreExecutors.directExecutor());
     }
 
@@ -2754,12 +2748,7 @@ public class SubscriptionAdminClient implements BackgroundResource {
           ListSnapshotsPage.createEmptyPage().createPageAsync(context, futureResponse);
       return ApiFutures.transform(
           futurePage,
-          new ApiFunction<ListSnapshotsPage, ListSnapshotsPagedResponse>() {
-            @Override
-            public ListSnapshotsPagedResponse apply(ListSnapshotsPage input) {
-              return new ListSnapshotsPagedResponse(input);
-            }
-          },
+          input -> new ListSnapshotsPagedResponse(input),
           MoreExecutors.directExecutor());
     }
 

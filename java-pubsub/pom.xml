@@ -134,9 +134,9 @@
   </build>
 
   <modules>
-    <module>proto-google-cloud-pubsub-v1</module>
-    <module>grpc-google-cloud-pubsub-v1</module>
     <module>google-cloud-pubsub</module>
+    <module>grpc-google-cloud-pubsub-v1</module>
+    <module>proto-google-cloud-pubsub-v1</module>
     <module>google-cloud-pubsub-bom</module>
   </modules>
 

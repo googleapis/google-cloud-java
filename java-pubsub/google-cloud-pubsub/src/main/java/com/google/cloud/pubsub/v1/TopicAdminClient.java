@@ -16,7 +16,6 @@
 
 package com.google.cloud.pubsub.v1;
 
-import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
 import com.google.api.core.BetaApi;
@@ -1282,9 +1281,9 @@ public class TopicAdminClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Sets the access control policy on the specified resource. Replaces any existing policy.
+   * Sets the access control policy on the specified resource. Replacesany existing policy.
    *
-   * <p>Can return `NOT_FOUND`, `INVALID_ARGUMENT`, and `PERMISSION_DENIED` errors.
+   * <p>Can return `NOT_FOUND`, `INVALID_ARGUMENT`, and `PERMISSION_DENIED`errors.
    *
    * <p>Sample code:
    *
@@ -1357,7 +1356,7 @@ public class TopicAdminClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Gets the access control policy for a resource. Returns an empty policy if the resource exists
+   * Gets the access control policy for a resource. Returns an empty policyif the resource exists
    * and does not have a policy set.
    *
    * <p>Sample code:
@@ -1381,11 +1380,11 @@ public class TopicAdminClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Returns permissions that a caller has on the specified resource. If the resource does not
-   * exist, this will return an empty set of permissions, not a `NOT_FOUND` error.
+   * Returns permissions that a caller has on the specified resource. If theresource does not exist,
+   * this will return an empty set ofpermissions, not a `NOT_FOUND` error.
    *
-   * <p>Note: This operation is designed to be used for building permission-aware UIs and
-   * command-line tools, not for authorization checking. This operation may "fail open" without
+   * <p>Note: This operation is designed to be used for buildingpermission-aware UIs and
+   * command-line tools, not for authorizationchecking. This operation may "fail open" without
    * warning.
    *
    * <p>Sample code:
@@ -1448,11 +1447,11 @@ public class TopicAdminClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Returns permissions that a caller has on the specified resource. If the resource does not
-   * exist, this will return an empty set of permissions, not a `NOT_FOUND` error.
+   * Returns permissions that a caller has on the specified resource. If theresource does not exist,
+   * this will return an empty set ofpermissions, not a `NOT_FOUND` error.
    *
-   * <p>Note: This operation is designed to be used for building permission-aware UIs and
-   * command-line tools, not for authorization checking. This operation may "fail open" without
+   * <p>Note: This operation is designed to be used for buildingpermission-aware UIs and
+   * command-line tools, not for authorizationchecking. This operation may "fail open" without
    * warning.
    *
    * <p>Sample code:
@@ -1520,14 +1519,7 @@ public class TopicAdminClient implements BackgroundResource {
       ApiFuture<ListTopicsPage> futurePage =
           ListTopicsPage.createEmptyPage().createPageAsync(context, futureResponse);
       return ApiFutures.transform(
-          futurePage,
-          new ApiFunction<ListTopicsPage, ListTopicsPagedResponse>() {
-            @Override
-            public ListTopicsPagedResponse apply(ListTopicsPage input) {
-              return new ListTopicsPagedResponse(input);
-            }
-          },
-          MoreExecutors.directExecutor());
+          futurePage, input -> new ListTopicsPagedResponse(input), MoreExecutors.directExecutor());
     }
 
     private ListTopicsPagedResponse(ListTopicsPage page) {
@@ -1601,12 +1593,7 @@ public class TopicAdminClient implements BackgroundResource {
           ListTopicSubscriptionsPage.createEmptyPage().createPageAsync(context, futureResponse);
       return ApiFutures.transform(
           futurePage,
-          new ApiFunction<ListTopicSubscriptionsPage, ListTopicSubscriptionsPagedResponse>() {
-            @Override
-            public ListTopicSubscriptionsPagedResponse apply(ListTopicSubscriptionsPage input) {
-              return new ListTopicSubscriptionsPagedResponse(input);
-            }
-          },
+          input -> new ListTopicSubscriptionsPagedResponse(input),
           MoreExecutors.directExecutor());
     }
 
@@ -1730,12 +1717,7 @@ public class TopicAdminClient implements BackgroundResource {
           ListTopicSnapshotsPage.createEmptyPage().createPageAsync(context, futureResponse);
       return ApiFutures.transform(
           futurePage,
-          new ApiFunction<ListTopicSnapshotsPage, ListTopicSnapshotsPagedResponse>() {
-            @Override
-            public ListTopicSnapshotsPagedResponse apply(ListTopicSnapshotsPage input) {
-              return new ListTopicSnapshotsPagedResponse(input);
-            }
-          },
+          input -> new ListTopicSnapshotsPagedResponse(input),
           MoreExecutors.directExecutor());
     }
 

@@ -23,7 +23,6 @@ import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.grpc.GrpcCallSettings;
 import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
-import com.google.api.gax.rpc.RequestParamsExtractor;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.common.collect.ImmutableMap;
 import com.google.iam.v1.GetIamPolicyRequest;
@@ -46,7 +45,6 @@ import com.google.pubsub.v1.ValidateSchemaResponse;
 import io.grpc.MethodDescriptor;
 import io.grpc.protobuf.ProtoUtils;
 import java.io.IOException;
-import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
@@ -201,52 +199,40 @@ public class GrpcSchemaServiceStub extends SchemaServiceStub {
         GrpcCallSettings.<CreateSchemaRequest, Schema>newBuilder()
             .setMethodDescriptor(createSchemaMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<CreateSchemaRequest>() {
-                  @Override
-                  public Map<String, String> extract(CreateSchemaRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("parent", String.valueOf(request.getParent()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("parent", String.valueOf(request.getParent()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<GetSchemaRequest, Schema> getSchemaTransportSettings =
         GrpcCallSettings.<GetSchemaRequest, Schema>newBuilder()
             .setMethodDescriptor(getSchemaMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<GetSchemaRequest>() {
-                  @Override
-                  public Map<String, String> extract(GetSchemaRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("name", String.valueOf(request.getName()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<ListSchemasRequest, ListSchemasResponse> listSchemasTransportSettings =
         GrpcCallSettings.<ListSchemasRequest, ListSchemasResponse>newBuilder()
             .setMethodDescriptor(listSchemasMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<ListSchemasRequest>() {
-                  @Override
-                  public Map<String, String> extract(ListSchemasRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("parent", String.valueOf(request.getParent()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("parent", String.valueOf(request.getParent()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<DeleteSchemaRequest, Empty> deleteSchemaTransportSettings =
         GrpcCallSettings.<DeleteSchemaRequest, Empty>newBuilder()
             .setMethodDescriptor(deleteSchemaMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<DeleteSchemaRequest>() {
-                  @Override
-                  public Map<String, String> extract(DeleteSchemaRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("name", String.valueOf(request.getName()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<ValidateSchemaRequest, ValidateSchemaResponse>
@@ -254,13 +240,10 @@ public class GrpcSchemaServiceStub extends SchemaServiceStub {
             GrpcCallSettings.<ValidateSchemaRequest, ValidateSchemaResponse>newBuilder()
                 .setMethodDescriptor(validateSchemaMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<ValidateSchemaRequest>() {
-                      @Override
-                      public Map<String, String> extract(ValidateSchemaRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("parent", String.valueOf(request.getParent()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("parent", String.valueOf(request.getParent()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<ValidateMessageRequest, ValidateMessageResponse>
@@ -268,39 +251,30 @@ public class GrpcSchemaServiceStub extends SchemaServiceStub {
             GrpcCallSettings.<ValidateMessageRequest, ValidateMessageResponse>newBuilder()
                 .setMethodDescriptor(validateMessageMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<ValidateMessageRequest>() {
-                      @Override
-                      public Map<String, String> extract(ValidateMessageRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("parent", String.valueOf(request.getParent()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("parent", String.valueOf(request.getParent()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<SetIamPolicyRequest, Policy> setIamPolicyTransportSettings =
         GrpcCallSettings.<SetIamPolicyRequest, Policy>newBuilder()
             .setMethodDescriptor(setIamPolicyMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<SetIamPolicyRequest>() {
-                  @Override
-                  public Map<String, String> extract(SetIamPolicyRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("resource", String.valueOf(request.getResource()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("resource", String.valueOf(request.getResource()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<GetIamPolicyRequest, Policy> getIamPolicyTransportSettings =
         GrpcCallSettings.<GetIamPolicyRequest, Policy>newBuilder()
             .setMethodDescriptor(getIamPolicyMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<GetIamPolicyRequest>() {
-                  @Override
-                  public Map<String, String> extract(GetIamPolicyRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("resource", String.valueOf(request.getResource()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("resource", String.valueOf(request.getResource()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
@@ -308,13 +282,10 @@ public class GrpcSchemaServiceStub extends SchemaServiceStub {
             GrpcCallSettings.<TestIamPermissionsRequest, TestIamPermissionsResponse>newBuilder()
                 .setMethodDescriptor(testIamPermissionsMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<TestIamPermissionsRequest>() {
-                      @Override
-                      public Map<String, String> extract(TestIamPermissionsRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("resource", String.valueOf(request.getResource()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("resource", String.valueOf(request.getResource()));
+                      return params.build();
                     })
                 .build();
 
