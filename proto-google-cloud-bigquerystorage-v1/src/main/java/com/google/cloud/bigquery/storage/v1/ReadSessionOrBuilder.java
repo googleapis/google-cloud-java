@@ -402,5 +402,21 @@ public interface ReadSessionOrBuilder
    */
   com.google.cloud.bigquery.storage.v1.ReadStreamOrBuilder getStreamsOrBuilder(int index);
 
+  /**
+   *
+   *
+   * <pre>
+   * Output only. An estimate on the number of bytes this session will scan when
+   * all streams are completely consumed. This estimate is based on
+   * metadata from the table which might be incomplete or stale.
+   * </pre>
+   *
+   * <code>int64 estimated_total_bytes_scanned = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The estimatedTotalBytesScanned.
+   */
+  long getEstimatedTotalBytesScanned();
+
   public com.google.cloud.bigquery.storage.v1.ReadSession.SchemaCase getSchemaCase();
 }

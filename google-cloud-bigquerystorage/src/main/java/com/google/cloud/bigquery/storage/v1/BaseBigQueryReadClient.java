@@ -163,7 +163,7 @@ public class BaseBigQueryReadClient implements BackgroundResource {
    * limits are enforced based on the number of pre-filtered rows, so some filters can lead to
    * lopsided assignments.
    *
-   * <p>Read sessions automatically expire 24 hours after they are created and do not require manual
+   * <p>Read sessions automatically expire 6 hours after they are created and do not require manual
    * clean-up by the caller.
    *
    * <p>Sample code:
@@ -216,7 +216,7 @@ public class BaseBigQueryReadClient implements BackgroundResource {
    * limits are enforced based on the number of pre-filtered rows, so some filters can lead to
    * lopsided assignments.
    *
-   * <p>Read sessions automatically expire 24 hours after they are created and do not require manual
+   * <p>Read sessions automatically expire 6 hours after they are created and do not require manual
    * clean-up by the caller.
    *
    * <p>Sample code:
@@ -269,7 +269,7 @@ public class BaseBigQueryReadClient implements BackgroundResource {
    * limits are enforced based on the number of pre-filtered rows, so some filters can lead to
    * lopsided assignments.
    *
-   * <p>Read sessions automatically expire 24 hours after they are created and do not require manual
+   * <p>Read sessions automatically expire 6 hours after they are created and do not require manual
    * clean-up by the caller.
    *
    * <p>Sample code:
@@ -309,7 +309,7 @@ public class BaseBigQueryReadClient implements BackgroundResource {
    * limits are enforced based on the number of pre-filtered rows, so some filters can lead to
    * lopsided assignments.
    *
-   * <p>Read sessions automatically expire 24 hours after they are created and do not require manual
+   * <p>Read sessions automatically expire 6 hours after they are created and do not require manual
    * clean-up by the caller.
    *
    * <p>Sample code:

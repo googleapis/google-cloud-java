@@ -92,6 +92,7 @@ public class BaseBigQueryReadClientTest {
             .setTableModifiers(ReadSession.TableModifiers.newBuilder().build())
             .setReadOptions(ReadSession.TableReadOptions.newBuilder().build())
             .addAllStreams(new ArrayList<ReadStream>())
+            .setEstimatedTotalBytesScanned(452788190)
             .build();
     mockBigQueryRead.addResponse(expectedResponse);
 
@@ -142,6 +143,7 @@ public class BaseBigQueryReadClientTest {
             .setTableModifiers(ReadSession.TableModifiers.newBuilder().build())
             .setReadOptions(ReadSession.TableReadOptions.newBuilder().build())
             .addAllStreams(new ArrayList<ReadStream>())
+            .setEstimatedTotalBytesScanned(452788190)
             .build();
     mockBigQueryRead.addResponse(expectedResponse);
 

@@ -192,6 +192,11 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
                       com.google.cloud.bigquery.storage.v1.ReadStream.parser(), extensionRegistry));
               break;
             }
+          case 96:
+            {
+              estimatedTotalBytesScanned_ = input.readInt64();
+              break;
+            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -3161,6 +3166,27 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
     return streams_.get(index);
   }
 
+  public static final int ESTIMATED_TOTAL_BYTES_SCANNED_FIELD_NUMBER = 12;
+  private long estimatedTotalBytesScanned_;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. An estimate on the number of bytes this session will scan when
+   * all streams are completely consumed. This estimate is based on
+   * metadata from the table which might be incomplete or stale.
+   * </pre>
+   *
+   * <code>int64 estimated_total_bytes_scanned = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The estimatedTotalBytesScanned.
+   */
+  @java.lang.Override
+  public long getEstimatedTotalBytesScanned() {
+    return estimatedTotalBytesScanned_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -3203,6 +3229,9 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
     for (int i = 0; i < streams_.size(); i++) {
       output.writeMessage(10, streams_.get(i));
     }
+    if (estimatedTotalBytesScanned_ != 0L) {
+      output.writeInt64(12, estimatedTotalBytesScanned_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -3244,6 +3273,10 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
     for (int i = 0; i < streams_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(10, streams_.get(i));
     }
+    if (estimatedTotalBytesScanned_ != 0L) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeInt64Size(12, estimatedTotalBytesScanned_);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -3276,6 +3309,7 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
       if (!getReadOptions().equals(other.getReadOptions())) return false;
     }
     if (!getStreamsList().equals(other.getStreamsList())) return false;
+    if (getEstimatedTotalBytesScanned() != other.getEstimatedTotalBytesScanned()) return false;
     if (!getSchemaCase().equals(other.getSchemaCase())) return false;
     switch (schemaCase_) {
       case 4:
@@ -3320,6 +3354,8 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
       hash = (37 * hash) + STREAMS_FIELD_NUMBER;
       hash = (53 * hash) + getStreamsList().hashCode();
     }
+    hash = (37 * hash) + ESTIMATED_TOTAL_BYTES_SCANNED_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getEstimatedTotalBytesScanned());
     switch (schemaCase_) {
       case 4:
         hash = (37 * hash) + AVRO_SCHEMA_FIELD_NUMBER;
@@ -3509,6 +3545,8 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
       } else {
         streamsBuilder_.clear();
       }
+      estimatedTotalBytesScanned_ = 0L;
+
       schemaCase_ = 0;
       schema_ = null;
       return this;
@@ -3580,6 +3618,7 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
       } else {
         result.streams_ = streamsBuilder_.build();
       }
+      result.estimatedTotalBytesScanned_ = estimatedTotalBytesScanned_;
       result.schemaCase_ = schemaCase_;
       onBuilt();
       return result;
@@ -3677,6 +3716,9 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
             streamsBuilder_.addAllMessages(other.streams_);
           }
         }
+      }
+      if (other.getEstimatedTotalBytesScanned() != 0L) {
+        setEstimatedTotalBytesScanned(other.getEstimatedTotalBytesScanned());
       }
       switch (other.getSchemaCase()) {
         case AVRO_SCHEMA:
@@ -5620,6 +5662,67 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
         streams_ = null;
       }
       return streamsBuilder_;
+    }
+
+    private long estimatedTotalBytesScanned_;
+    /**
+     *
+     *
+     * <pre>
+     * Output only. An estimate on the number of bytes this session will scan when
+     * all streams are completely consumed. This estimate is based on
+     * metadata from the table which might be incomplete or stale.
+     * </pre>
+     *
+     * <code>int64 estimated_total_bytes_scanned = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The estimatedTotalBytesScanned.
+     */
+    @java.lang.Override
+    public long getEstimatedTotalBytesScanned() {
+      return estimatedTotalBytesScanned_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. An estimate on the number of bytes this session will scan when
+     * all streams are completely consumed. This estimate is based on
+     * metadata from the table which might be incomplete or stale.
+     * </pre>
+     *
+     * <code>int64 estimated_total_bytes_scanned = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param value The estimatedTotalBytesScanned to set.
+     * @return This builder for chaining.
+     */
+    public Builder setEstimatedTotalBytesScanned(long value) {
+
+      estimatedTotalBytesScanned_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. An estimate on the number of bytes this session will scan when
+     * all streams are completely consumed. This estimate is based on
+     * metadata from the table which might be incomplete or stale.
+     * </pre>
+     *
+     * <code>int64 estimated_total_bytes_scanned = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearEstimatedTotalBytesScanned() {
+
+      estimatedTotalBytesScanned_ = 0L;
+      onChanged();
+      return this;
     }
 
     @java.lang.Override
