@@ -21,7 +21,14 @@ import com.google.logging.v2.TailLogEntriesResponse;
 import java.util.Iterator;
 import java.util.LinkedList;
 
+/**
+ * The class implements {@see Iterator} interface over {@see LogEntry} by iterating through {@see
+ * TailLogEntriesResponse} streamed by {@code BidiStream}. This class is instantiated by {@see
+ * LogEntryServerStream} and is not intended to be used explicitly.
+ */
 public class LogEntryIterator implements Iterator<LogEntry> {
+  // TODO: consider converting this to use generics instead of
+  // fixed TailLogEntriesResponse
   private final Iterator<TailLogEntriesResponse> streamIterator;
   private final LinkedList<LogEntry> buffer = new LinkedList<>();
 

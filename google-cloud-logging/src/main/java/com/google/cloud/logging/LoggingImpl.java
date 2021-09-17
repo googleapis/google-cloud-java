@@ -924,7 +924,7 @@ class LoggingImpl extends BaseService<LoggingOptions> implements Logging {
     return listLogEntriesAsync(getOptions(), optionMap(options));
   }
 
-  static TailLogEntriesRequest tailLogEntriesRequest(
+  static TailLogEntriesRequest buildTailLogEntriesRequest(
       Map<Option.OptionType, ?> options, String defaultProjectId) {
     TailLogEntriesRequest.Builder builder = TailLogEntriesRequest.newBuilder();
 
@@ -967,7 +967,7 @@ class LoggingImpl extends BaseService<LoggingOptions> implements Logging {
     BidiStream<TailLogEntriesRequest, TailLogEntriesResponse> bidiStream =
         serviceOptions.getLoggingRpcV2().getTailLogEntriesStream();
     final TailLogEntriesRequest request =
-        tailLogEntriesRequest(optionMap(options), serviceOptions.getProjectId());
+        buildTailLogEntriesRequest(optionMap(options), serviceOptions.getProjectId());
     bidiStream.send(request);
     return new LogEntryServerStream(bidiStream);
   }

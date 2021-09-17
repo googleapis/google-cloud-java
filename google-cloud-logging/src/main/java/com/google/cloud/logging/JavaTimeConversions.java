@@ -16,6 +16,7 @@
 
 package com.google.cloud.logging;
 
+import static com.google.common.base.Preconditions.checkNotNull;
 import static com.google.common.math.LongMath.checkedAdd;
 import static com.google.common.math.LongMath.checkedSubtract;
 
@@ -33,8 +34,8 @@ import java.time.Instant;
  * The class complements convertion methods that are currently not supported in the published
  * protobuf-java-util. After migrating protobuf-java-util to Java 8 this class can be removed.
  *
- * @see <a
- *     href="https://mvnrepository.com/artifact/com.google.protobuf/protobuf-java-util">protobuf-java-util</a>
+ * @see <a href=
+ *     "https://mvnrepository.com/artifact/com.google.protobuf/protobuf-java-util">protobuf-java-util</a>
  */
 class JavaTimeConversions {
   static final long NANOS_PER_SECOND = 1000000000;
@@ -48,6 +49,7 @@ class JavaTimeConversions {
    *     Timestamps#isValid}.
    */
   public static Instant toJavaInstant(Timestamp timestamp) {
+    checkNotNull(timestamp);
     timestamp = normalizedTimestamp(timestamp.getSeconds(), timestamp.getNanos());
     return Instant.ofEpochSecond(timestamp.getSeconds(), timestamp.getNanos());
   }
@@ -59,6 +61,7 @@ class JavaTimeConversions {
    *     a {@link Timestamp}. See {@link Timestamps#isValid}.
    */
   public static Timestamp toProtoTimestamp(Instant instant) {
+    checkNotNull(instant);
     return normalizedTimestamp(instant.getEpochSecond(), instant.getNano());
   }
 

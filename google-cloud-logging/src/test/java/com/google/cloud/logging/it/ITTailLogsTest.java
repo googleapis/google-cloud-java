@@ -34,10 +34,6 @@ public class ITTailLogsTest extends BaseSystemTest {
   private static final MonitoredResource GLOBAL_RESOURCE =
       MonitoredResource.newBuilder("global").build();
 
-  // @BeforeClass
-  // public static void configureWriteLogs() {
-  // }
-
   @AfterClass
   public static void cleanUpLogs() throws InterruptedException {
     assertTrue(cleanupLog(LOG_ID));
@@ -83,7 +79,9 @@ public class ITTailLogsTest extends BaseSystemTest {
     assertEquals(testLogEntry.getLogName(), resultEntry.getLogName());
     assertEquals(
         testLogEntry.getHttpRequest().getStatus(), resultEntry.getHttpRequest().getStatus());
+    // assert equals for Payload objects
     assertTrue(testLogEntry.getPayload().equals(resultEntry.getPayload()));
+    // assert equals for Map<String,String> objects
     assertTrue(testLogEntry.getLabels().equals(resultEntry.getLabels()));
   }
 }

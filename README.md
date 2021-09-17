@@ -42,7 +42,7 @@ If you are using Maven without BOM, add this to your dependencies:
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-logging</artifactId>
-  <version>3.1.1</version>
+  <version>3.1.2</version>
 </dependency>
 
 ```
@@ -235,6 +235,7 @@ Samples are in the [`samples/`](https://github.com/googleapis/java-logging/tree/
 | List Logs | [source code](https://github.com/googleapis/java-logging/blob/master/samples/snippets/src/main/java/com/example/logging/ListLogs.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-logging&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/logging/ListLogs.java) |
 | Log Entry Write Http Request | [source code](https://github.com/googleapis/java-logging/blob/master/samples/snippets/src/main/java/com/example/logging/LogEntryWriteHttpRequest.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-logging&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/logging/LogEntryWriteHttpRequest.java) |
 | Quickstart Sample | [source code](https://github.com/googleapis/java-logging/blob/master/samples/snippets/src/main/java/com/example/logging/QuickstartSample.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-logging&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/logging/QuickstartSample.java) |
+| Tail Log Entries | [source code](https://github.com/googleapis/java-logging/blob/master/samples/snippets/src/main/java/com/example/logging/TailLogEntries.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-logging&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/logging/TailLogEntries.java) |
 | Quickstart | [source code](https://github.com/googleapis/java-logging/blob/master/samples/snippets/src/main/java/com/example/logging/jul/Quickstart.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-logging&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/logging/jul/Quickstart.java) |
 | Example Enhancer | [source code](https://github.com/googleapis/java-logging/blob/master/samples/snippets/src/main/java/com/example/logging/jul/enhancers/ExampleEnhancer.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-logging&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/logging/jul/enhancers/ExampleEnhancer.java) |
 

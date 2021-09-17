@@ -64,19 +64,18 @@ public class LoggingIT {
   public void tearDown() {
     // Clean up created logs
     deleteLog(TEST_LOG);
-
     System.setOut(null);
   }
 
   @Test
-  public void testQuickstart() throws Exception {
+  public void testQuickstartSample() throws Exception {
     QuickstartSample.main(TEST_LOG);
     String got = bout.toString();
     assertThat(got).contains(String.format("Logged: %s", STRING_PAYLOAD));
   }
 
   @Test(timeout = 60000)
-  public void testListLogEntries() throws Exception {
+  public void testListLogEntriesSample() throws Exception {
     // write a log entry
     LogEntry entry =
         LogEntry.newBuilder(StringPayload.of(STRING_PAYLOAD2))
@@ -99,7 +98,7 @@ public class LoggingIT {
   }
 
   @Test(timeout = 60000)
-  public void testWriteLogHttpRequest() throws Exception {
+  public void testWriteLogHttpRequestSample() throws Exception {
     HttpRequest request =
         HttpRequest.newBuilder()
             .setRequestUrl("www.example.com")
@@ -126,7 +125,7 @@ public class LoggingIT {
   }
 
   @Test(timeout = 60000)
-  public void testListLogNames_shouldPass() throws Exception {
+  public void testListLogNamesSample() throws Exception {
     ListLogs.main();
     // Check for mocked STDOUT having data
     while (bout.toString().isEmpty()) {
@@ -134,5 +133,38 @@ public class LoggingIT {
     }
 
     assertThat(bout.toString().contains(GOOGLEAPIS_AUDIT_LOGNAME)).isTrue();
+  }
+
+  @Test(timeout = 60000)
+  public void testTailLogEntriesSample() throws Exception {
+    Runnable task =
+        () -> {
+          // wait 10 seconds to allow establishing tail stream in the sample
+          try {
+            Thread.sleep(10_000);
+            try (Logging logging = LoggingOptions.getDefaultInstance().getService()) {
+              // create an instance of LogEntry with HTTP request
+              LogEntry logEntry =
+                  LogEntry.newBuilder(StringPayload.of(STRING_PAYLOAD))
+                      .setLogName(TEST_LOG)
+                      .setResource(MonitoredResource.newBuilder("global").build())
+                      .build();
+              // Writes the log entry asynchronously
+              logging.write(Collections.singleton(logEntry));
+            }
+          } catch (Exception t) {
+            System.out.println("Failed to write log entry:\n" + t)
+          }
+        };
+    Thread thread = new Thread(task);
+    thread.start();
+
+    TailLogEntries.main(new String[] {TEST_LOG});
+
+    // Check for mocked STDOUT having data
+    while (bout.toString().isEmpty()) {
+      Thread.sleep(1000);
+    }
+    assertThat(bout.toString().contains(STRING_PAYLOAD)).isTrue();
   }
 }

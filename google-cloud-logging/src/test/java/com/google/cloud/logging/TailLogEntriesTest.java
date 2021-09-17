@@ -43,7 +43,7 @@ public class TailLogEntriesTest {
   @Test
   public void testTailOptions() {
     TailLogEntriesRequest request =
-        LoggingImpl.tailLogEntriesRequest(
+        LoggingImpl.buildTailLogEntriesRequest(
             LoggingImpl.optionMap(
                 TailOption.filter(FILTER),
                 TailOption.bufferWindow(WINDOW),
@@ -66,7 +66,7 @@ public class TailLogEntriesTest {
   @Test
   public void testEmptyTailOptions() {
     TailLogEntriesRequest request =
-        LoggingImpl.tailLogEntriesRequest(LoggingImpl.optionMap(), DEFAULT_PROJECT_ID);
+        LoggingImpl.buildTailLogEntriesRequest(LoggingImpl.optionMap(), DEFAULT_PROJECT_ID);
     assertThat(request.getFilter()).isEqualTo("");
     assertThat(request.getBufferWindow()).isEqualTo(Duration.newBuilder().build());
     assertThat(request.getResourceNamesList()).containsExactly("projects/" + DEFAULT_PROJECT_ID);

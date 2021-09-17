@@ -22,6 +22,26 @@ import com.google.logging.v2.TailLogEntriesRequest;
 import com.google.logging.v2.TailLogEntriesResponse;
 import java.util.Iterator;
 
+/**
+ * The class implements {@Iterable} interface over {@see LogEntry}. It wraps around {@BidiStream}
+ * bi-directional gRPC stream to support iterating through ingested responses. The class uses {@see
+ * LogEntryIterator} to iterate through the processed responses. The stream should be explicitly
+ * canceled by calling {@see LogEntryServerStream#cancel()} method. The class does not provide
+ * recovery or resuming functionality over the stream.
+ *
+ * <p>To iterate run:
+ *
+ * <pre>{@code
+ * LogEntryServerStream stream;
+ * // code to initialize stream
+ * for (LogEntry log : stream) {
+ *   // do something with logs
+ * }
+ * stream.cancel();
+ * }</pre>
+ *
+ * <p>The iteration can be blocked on waiting for another response sent in the stream.
+ */
 public class LogEntryServerStream implements Iterable<LogEntry> {
   private final BidiStream<TailLogEntriesRequest, TailLogEntriesResponse> serverStream;
 
