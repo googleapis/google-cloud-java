@@ -1811,6 +1811,7 @@ public class ContactCenterInsightsClientTest {
             .setActive(true)
             .addAllPhraseMatchRuleGroups(new ArrayList<PhraseMatchRuleGroup>())
             .setActivationUpdateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
             .build();
     mockContactCenterInsights.addResponse(expectedResponse);
 
@@ -1859,6 +1860,7 @@ public class ContactCenterInsightsClientTest {
             .setActive(true)
             .addAllPhraseMatchRuleGroups(new ArrayList<PhraseMatchRuleGroup>())
             .setActivationUpdateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
             .build();
     mockContactCenterInsights.addResponse(expectedResponse);
 
@@ -1907,6 +1909,7 @@ public class ContactCenterInsightsClientTest {
             .setActive(true)
             .addAllPhraseMatchRuleGroups(new ArrayList<PhraseMatchRuleGroup>())
             .setActivationUpdateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
             .build();
     mockContactCenterInsights.addResponse(expectedResponse);
 
@@ -1952,6 +1955,7 @@ public class ContactCenterInsightsClientTest {
             .setActive(true)
             .addAllPhraseMatchRuleGroups(new ArrayList<PhraseMatchRuleGroup>())
             .setActivationUpdateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
             .build();
     mockContactCenterInsights.addResponse(expectedResponse);
 

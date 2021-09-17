@@ -429,29 +429,35 @@ public final class IssueModel extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Medium of conversations used in training data.
+     * Medium of conversations used in training data. This field is being
+     * deprecated. To specify the medium to be used in training a new issue
+     * model, set the `medium` field on `filter`.
      * </pre>
      *
      * <code>
-     * .google.cloud.contactcenterinsights.v1.Conversation.Medium medium = 1 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.contactcenterinsights.v1.Conversation.Medium medium = 1 [deprecated = true];
      * </code>
      *
      * @return The enum numeric value on the wire for medium.
      */
+    @java.lang.Deprecated
     int getMediumValue();
     /**
      *
      *
      * <pre>
-     * Required. Medium of conversations used in training data.
+     * Medium of conversations used in training data. This field is being
+     * deprecated. To specify the medium to be used in training a new issue
+     * model, set the `medium` field on `filter`.
      * </pre>
      *
      * <code>
-     * .google.cloud.contactcenterinsights.v1.Conversation.Medium medium = 1 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.contactcenterinsights.v1.Conversation.Medium medium = 1 [deprecated = true];
      * </code>
      *
      * @return The medium.
      */
+    @java.lang.Deprecated
     com.google.cloud.contactcenterinsights.v1.Conversation.Medium getMedium();
 
     /**
@@ -467,6 +473,33 @@ public final class IssueModel extends com.google.protobuf.GeneratedMessageV3
      * @return The trainingConversationsCount.
      */
     long getTrainingConversationsCount();
+
+    /**
+     *
+     *
+     * <pre>
+     * A filter to reduce the conversations used for training the model to a
+     * specific subset.
+     * </pre>
+     *
+     * <code>string filter = 3;</code>
+     *
+     * @return The filter.
+     */
+    java.lang.String getFilter();
+    /**
+     *
+     *
+     * <pre>
+     * A filter to reduce the conversations used for training the model to a
+     * specific subset.
+     * </pre>
+     *
+     * <code>string filter = 3;</code>
+     *
+     * @return The bytes for filter.
+     */
+    com.google.protobuf.ByteString getFilterBytes();
   }
   /**
    *
@@ -489,6 +522,7 @@ public final class IssueModel extends com.google.protobuf.GeneratedMessageV3
 
     private InputDataConfig() {
       medium_ = 0;
+      filter_ = "";
     }
 
     @java.lang.Override
@@ -532,6 +566,13 @@ public final class IssueModel extends com.google.protobuf.GeneratedMessageV3
                 trainingConversationsCount_ = input.readInt64();
                 break;
               }
+            case 26:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+
+                filter_ = s;
+                break;
+              }
             default:
               {
                 if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -572,16 +613,19 @@ public final class IssueModel extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Medium of conversations used in training data.
+     * Medium of conversations used in training data. This field is being
+     * deprecated. To specify the medium to be used in training a new issue
+     * model, set the `medium` field on `filter`.
      * </pre>
      *
      * <code>
-     * .google.cloud.contactcenterinsights.v1.Conversation.Medium medium = 1 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.contactcenterinsights.v1.Conversation.Medium medium = 1 [deprecated = true];
      * </code>
      *
      * @return The enum numeric value on the wire for medium.
      */
     @java.lang.Override
+    @java.lang.Deprecated
     public int getMediumValue() {
       return medium_;
     }
@@ -589,16 +633,19 @@ public final class IssueModel extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Medium of conversations used in training data.
+     * Medium of conversations used in training data. This field is being
+     * deprecated. To specify the medium to be used in training a new issue
+     * model, set the `medium` field on `filter`.
      * </pre>
      *
      * <code>
-     * .google.cloud.contactcenterinsights.v1.Conversation.Medium medium = 1 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.contactcenterinsights.v1.Conversation.Medium medium = 1 [deprecated = true];
      * </code>
      *
      * @return The medium.
      */
     @java.lang.Override
+    @java.lang.Deprecated
     public com.google.cloud.contactcenterinsights.v1.Conversation.Medium getMedium() {
       @SuppressWarnings("deprecation")
       com.google.cloud.contactcenterinsights.v1.Conversation.Medium result =
@@ -627,6 +674,57 @@ public final class IssueModel extends com.google.protobuf.GeneratedMessageV3
       return trainingConversationsCount_;
     }
 
+    public static final int FILTER_FIELD_NUMBER = 3;
+    private volatile java.lang.Object filter_;
+    /**
+     *
+     *
+     * <pre>
+     * A filter to reduce the conversations used for training the model to a
+     * specific subset.
+     * </pre>
+     *
+     * <code>string filter = 3;</code>
+     *
+     * @return The filter.
+     */
+    @java.lang.Override
+    public java.lang.String getFilter() {
+      java.lang.Object ref = filter_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        filter_ = s;
+        return s;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A filter to reduce the conversations used for training the model to a
+     * specific subset.
+     * </pre>
+     *
+     * <code>string filter = 3;</code>
+     *
+     * @return The bytes for filter.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getFilterBytes() {
+      java.lang.Object ref = filter_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        filter_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
     private byte memoizedIsInitialized = -1;
 
     @java.lang.Override
@@ -649,6 +747,9 @@ public final class IssueModel extends com.google.protobuf.GeneratedMessageV3
       if (trainingConversationsCount_ != 0L) {
         output.writeInt64(2, trainingConversationsCount_);
       }
+      if (!getFilterBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, filter_);
+      }
       unknownFields.writeTo(output);
     }
 
@@ -666,6 +767,9 @@ public final class IssueModel extends com.google.protobuf.GeneratedMessageV3
       if (trainingConversationsCount_ != 0L) {
         size +=
             com.google.protobuf.CodedOutputStream.computeInt64Size(2, trainingConversationsCount_);
+      }
+      if (!getFilterBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, filter_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -685,6 +789,7 @@ public final class IssueModel extends com.google.protobuf.GeneratedMessageV3
 
       if (medium_ != other.medium_) return false;
       if (getTrainingConversationsCount() != other.getTrainingConversationsCount()) return false;
+      if (!getFilter().equals(other.getFilter())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -700,6 +805,8 @@ public final class IssueModel extends com.google.protobuf.GeneratedMessageV3
       hash = (53 * hash) + medium_;
       hash = (37 * hash) + TRAINING_CONVERSATIONS_COUNT_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getTrainingConversationsCount());
+      hash = (37 * hash) + FILTER_FIELD_NUMBER;
+      hash = (53 * hash) + getFilter().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -854,6 +961,8 @@ public final class IssueModel extends com.google.protobuf.GeneratedMessageV3
 
         trainingConversationsCount_ = 0L;
 
+        filter_ = "";
+
         return this;
       }
 
@@ -886,6 +995,7 @@ public final class IssueModel extends com.google.protobuf.GeneratedMessageV3
             new com.google.cloud.contactcenterinsights.v1.IssueModel.InputDataConfig(this);
         result.medium_ = medium_;
         result.trainingConversationsCount_ = trainingConversationsCount_;
+        result.filter_ = filter_;
         onBuilt();
         return result;
       }
@@ -947,6 +1057,10 @@ public final class IssueModel extends com.google.protobuf.GeneratedMessageV3
         if (other.getTrainingConversationsCount() != 0L) {
           setTrainingConversationsCount(other.getTrainingConversationsCount());
         }
+        if (!other.getFilter().isEmpty()) {
+          filter_ = other.filter_;
+          onChanged();
+        }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
@@ -983,16 +1097,19 @@ public final class IssueModel extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. Medium of conversations used in training data.
+       * Medium of conversations used in training data. This field is being
+       * deprecated. To specify the medium to be used in training a new issue
+       * model, set the `medium` field on `filter`.
        * </pre>
        *
        * <code>
-       * .google.cloud.contactcenterinsights.v1.Conversation.Medium medium = 1 [(.google.api.field_behavior) = REQUIRED];
+       * .google.cloud.contactcenterinsights.v1.Conversation.Medium medium = 1 [deprecated = true];
        * </code>
        *
        * @return The enum numeric value on the wire for medium.
        */
       @java.lang.Override
+      @java.lang.Deprecated
       public int getMediumValue() {
         return medium_;
       }
@@ -1000,16 +1117,19 @@ public final class IssueModel extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. Medium of conversations used in training data.
+       * Medium of conversations used in training data. This field is being
+       * deprecated. To specify the medium to be used in training a new issue
+       * model, set the `medium` field on `filter`.
        * </pre>
        *
        * <code>
-       * .google.cloud.contactcenterinsights.v1.Conversation.Medium medium = 1 [(.google.api.field_behavior) = REQUIRED];
+       * .google.cloud.contactcenterinsights.v1.Conversation.Medium medium = 1 [deprecated = true];
        * </code>
        *
        * @param value The enum numeric value on the wire for medium to set.
        * @return This builder for chaining.
        */
+      @java.lang.Deprecated
       public Builder setMediumValue(int value) {
 
         medium_ = value;
@@ -1020,16 +1140,19 @@ public final class IssueModel extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. Medium of conversations used in training data.
+       * Medium of conversations used in training data. This field is being
+       * deprecated. To specify the medium to be used in training a new issue
+       * model, set the `medium` field on `filter`.
        * </pre>
        *
        * <code>
-       * .google.cloud.contactcenterinsights.v1.Conversation.Medium medium = 1 [(.google.api.field_behavior) = REQUIRED];
+       * .google.cloud.contactcenterinsights.v1.Conversation.Medium medium = 1 [deprecated = true];
        * </code>
        *
        * @return The medium.
        */
       @java.lang.Override
+      @java.lang.Deprecated
       public com.google.cloud.contactcenterinsights.v1.Conversation.Medium getMedium() {
         @SuppressWarnings("deprecation")
         com.google.cloud.contactcenterinsights.v1.Conversation.Medium result =
@@ -1042,16 +1165,19 @@ public final class IssueModel extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. Medium of conversations used in training data.
+       * Medium of conversations used in training data. This field is being
+       * deprecated. To specify the medium to be used in training a new issue
+       * model, set the `medium` field on `filter`.
        * </pre>
        *
        * <code>
-       * .google.cloud.contactcenterinsights.v1.Conversation.Medium medium = 1 [(.google.api.field_behavior) = REQUIRED];
+       * .google.cloud.contactcenterinsights.v1.Conversation.Medium medium = 1 [deprecated = true];
        * </code>
        *
        * @param value The medium to set.
        * @return This builder for chaining.
        */
+      @java.lang.Deprecated
       public Builder setMedium(
           com.google.cloud.contactcenterinsights.v1.Conversation.Medium value) {
         if (value == null) {
@@ -1066,15 +1192,18 @@ public final class IssueModel extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. Medium of conversations used in training data.
+       * Medium of conversations used in training data. This field is being
+       * deprecated. To specify the medium to be used in training a new issue
+       * model, set the `medium` field on `filter`.
        * </pre>
        *
        * <code>
-       * .google.cloud.contactcenterinsights.v1.Conversation.Medium medium = 1 [(.google.api.field_behavior) = REQUIRED];
+       * .google.cloud.contactcenterinsights.v1.Conversation.Medium medium = 1 [deprecated = true];
        * </code>
        *
        * @return This builder for chaining.
        */
+      @java.lang.Deprecated
       public Builder clearMedium() {
 
         medium_ = 0;
@@ -1133,6 +1262,117 @@ public final class IssueModel extends com.google.protobuf.GeneratedMessageV3
       public Builder clearTrainingConversationsCount() {
 
         trainingConversationsCount_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object filter_ = "";
+      /**
+       *
+       *
+       * <pre>
+       * A filter to reduce the conversations used for training the model to a
+       * specific subset.
+       * </pre>
+       *
+       * <code>string filter = 3;</code>
+       *
+       * @return The filter.
+       */
+      public java.lang.String getFilter() {
+        java.lang.Object ref = filter_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          filter_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A filter to reduce the conversations used for training the model to a
+       * specific subset.
+       * </pre>
+       *
+       * <code>string filter = 3;</code>
+       *
+       * @return The bytes for filter.
+       */
+      public com.google.protobuf.ByteString getFilterBytes() {
+        java.lang.Object ref = filter_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          filter_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A filter to reduce the conversations used for training the model to a
+       * specific subset.
+       * </pre>
+       *
+       * <code>string filter = 3;</code>
+       *
+       * @param value The filter to set.
+       * @return This builder for chaining.
+       */
+      public Builder setFilter(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+
+        filter_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A filter to reduce the conversations used for training the model to a
+       * specific subset.
+       * </pre>
+       *
+       * <code>string filter = 3;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearFilter() {
+
+        filter_ = getDefaultInstance().getFilter();
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A filter to reduce the conversations used for training the model to a
+       * specific subset.
+       * </pre>
+       *
+       * <code>string filter = 3;</code>
+       *
+       * @param value The bytes for filter to set.
+       * @return This builder for chaining.
+       */
+      public Builder setFilterBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+
+        filter_ = value;
         onChanged();
         return this;
       }

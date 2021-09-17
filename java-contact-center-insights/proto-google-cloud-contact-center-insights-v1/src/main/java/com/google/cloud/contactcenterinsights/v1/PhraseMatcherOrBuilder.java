@@ -361,4 +361,42 @@ public interface PhraseMatcherOrBuilder
    * @return The roleMatch.
    */
   com.google.cloud.contactcenterinsights.v1.ConversationParticipant.Role getRoleMatch();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The most recent time at which the phrase matcher was updated.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp update_time = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the updateTime field is set.
+   */
+  boolean hasUpdateTime();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The most recent time at which the phrase matcher was updated.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp update_time = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The updateTime.
+   */
+  com.google.protobuf.Timestamp getUpdateTime();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The most recent time at which the phrase matcher was updated.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp update_time = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.protobuf.TimestampOrBuilder getUpdateTimeOrBuilder();
 }
