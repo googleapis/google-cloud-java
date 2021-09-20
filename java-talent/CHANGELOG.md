@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.2.0](https://www.github.com/googleapis/java-talent/compare/v2.1.2...v2.2.0) (2021-09-20)
+
+
+### Features
+
+* Added a new `KeywordMatchMode` field to support more keyword matching options ([#616](https://www.github.com/googleapis/java-talent/issues/616)) ([0265721](https://www.github.com/googleapis/java-talent/commit/02657217f52f459c39bf0d48a4afee1d637d23c8))
+
 ### [2.1.2](https://www.github.com/googleapis/java-talent/compare/v2.1.1...v2.1.2) (2021-09-14)
 
 
