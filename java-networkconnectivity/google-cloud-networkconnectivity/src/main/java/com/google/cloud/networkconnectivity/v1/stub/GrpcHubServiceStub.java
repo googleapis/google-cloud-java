@@ -26,10 +26,8 @@ import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.UnaryCallable;
-import com.google.cloud.networkconnectivity.v1.ActivateSpokeRequest;
 import com.google.cloud.networkconnectivity.v1.CreateHubRequest;
 import com.google.cloud.networkconnectivity.v1.CreateSpokeRequest;
-import com.google.cloud.networkconnectivity.v1.DeactivateSpokeRequest;
 import com.google.cloud.networkconnectivity.v1.DeleteHubRequest;
 import com.google.cloud.networkconnectivity.v1.DeleteSpokeRequest;
 import com.google.cloud.networkconnectivity.v1.GetHubRequest;
@@ -135,26 +133,6 @@ public class GrpcHubServiceStub extends HubServiceStub {
           .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
           .build();
 
-  private static final MethodDescriptor<DeactivateSpokeRequest, Operation>
-      deactivateSpokeMethodDescriptor =
-          MethodDescriptor.<DeactivateSpokeRequest, Operation>newBuilder()
-              .setType(MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName("google.cloud.networkconnectivity.v1.HubService/DeactivateSpoke")
-              .setRequestMarshaller(
-                  ProtoUtils.marshaller(DeactivateSpokeRequest.getDefaultInstance()))
-              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
-              .build();
-
-  private static final MethodDescriptor<ActivateSpokeRequest, Operation>
-      activateSpokeMethodDescriptor =
-          MethodDescriptor.<ActivateSpokeRequest, Operation>newBuilder()
-              .setType(MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName("google.cloud.networkconnectivity.v1.HubService/ActivateSpoke")
-              .setRequestMarshaller(
-                  ProtoUtils.marshaller(ActivateSpokeRequest.getDefaultInstance()))
-              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
-              .build();
-
   private static final MethodDescriptor<DeleteSpokeRequest, Operation> deleteSpokeMethodDescriptor =
       MethodDescriptor.<DeleteSpokeRequest, Operation>newBuilder()
           .setType(MethodDescriptor.MethodType.UNARY)
@@ -184,12 +162,6 @@ public class GrpcHubServiceStub extends HubServiceStub {
   private final UnaryCallable<UpdateSpokeRequest, Operation> updateSpokeCallable;
   private final OperationCallable<UpdateSpokeRequest, Spoke, OperationMetadata>
       updateSpokeOperationCallable;
-  private final UnaryCallable<DeactivateSpokeRequest, Operation> deactivateSpokeCallable;
-  private final OperationCallable<DeactivateSpokeRequest, Spoke, OperationMetadata>
-      deactivateSpokeOperationCallable;
-  private final UnaryCallable<ActivateSpokeRequest, Operation> activateSpokeCallable;
-  private final OperationCallable<ActivateSpokeRequest, Spoke, OperationMetadata>
-      activateSpokeOperationCallable;
   private final UnaryCallable<DeleteSpokeRequest, Operation> deleteSpokeCallable;
   private final OperationCallable<DeleteSpokeRequest, Empty, OperationMetadata>
       deleteSpokeOperationCallable;
@@ -326,26 +298,6 @@ public class GrpcHubServiceStub extends HubServiceStub {
                   return params.build();
                 })
             .build();
-    GrpcCallSettings<DeactivateSpokeRequest, Operation> deactivateSpokeTransportSettings =
-        GrpcCallSettings.<DeactivateSpokeRequest, Operation>newBuilder()
-            .setMethodDescriptor(deactivateSpokeMethodDescriptor)
-            .setParamsExtractor(
-                request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
-                })
-            .build();
-    GrpcCallSettings<ActivateSpokeRequest, Operation> activateSpokeTransportSettings =
-        GrpcCallSettings.<ActivateSpokeRequest, Operation>newBuilder()
-            .setMethodDescriptor(activateSpokeMethodDescriptor)
-            .setParamsExtractor(
-                request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
-                })
-            .build();
     GrpcCallSettings<DeleteSpokeRequest, Operation> deleteSpokeTransportSettings =
         GrpcCallSettings.<DeleteSpokeRequest, Operation>newBuilder()
             .setMethodDescriptor(deleteSpokeMethodDescriptor)
@@ -418,24 +370,6 @@ public class GrpcHubServiceStub extends HubServiceStub {
         callableFactory.createOperationCallable(
             updateSpokeTransportSettings,
             settings.updateSpokeOperationSettings(),
-            clientContext,
-            operationsStub);
-    this.deactivateSpokeCallable =
-        callableFactory.createUnaryCallable(
-            deactivateSpokeTransportSettings, settings.deactivateSpokeSettings(), clientContext);
-    this.deactivateSpokeOperationCallable =
-        callableFactory.createOperationCallable(
-            deactivateSpokeTransportSettings,
-            settings.deactivateSpokeOperationSettings(),
-            clientContext,
-            operationsStub);
-    this.activateSpokeCallable =
-        callableFactory.createUnaryCallable(
-            activateSpokeTransportSettings, settings.activateSpokeSettings(), clientContext);
-    this.activateSpokeOperationCallable =
-        callableFactory.createOperationCallable(
-            activateSpokeTransportSettings,
-            settings.activateSpokeOperationSettings(),
             clientContext,
             operationsStub);
     this.deleteSpokeCallable =
@@ -537,28 +471,6 @@ public class GrpcHubServiceStub extends HubServiceStub {
   public OperationCallable<UpdateSpokeRequest, Spoke, OperationMetadata>
       updateSpokeOperationCallable() {
     return updateSpokeOperationCallable;
-  }
-
-  @Override
-  public UnaryCallable<DeactivateSpokeRequest, Operation> deactivateSpokeCallable() {
-    return deactivateSpokeCallable;
-  }
-
-  @Override
-  public OperationCallable<DeactivateSpokeRequest, Spoke, OperationMetadata>
-      deactivateSpokeOperationCallable() {
-    return deactivateSpokeOperationCallable;
-  }
-
-  @Override
-  public UnaryCallable<ActivateSpokeRequest, Operation> activateSpokeCallable() {
-    return activateSpokeCallable;
-  }
-
-  @Override
-  public OperationCallable<ActivateSpokeRequest, Spoke, OperationMetadata>
-      activateSpokeOperationCallable() {
-    return activateSpokeOperationCallable;
   }
 
   @Override

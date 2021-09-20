@@ -274,4 +274,76 @@ public interface HubOrBuilder
    * @return The state.
    */
   com.google.cloud.networkconnectivity.v1.State getState();
+
+  /**
+   *
+   *
+   * <pre>
+   * The VPC network associated with this hub's spokes. All of the VPN tunnels,
+   * VLAN attachments, and router appliance instances referenced by this hub's
+   * spokes must belong to this VPC network.
+   * This field is read-only. Network Connectivity Center automatically
+   * populates it based on the set of spokes attached to the hub.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.networkconnectivity.v1.RoutingVPC routing_vpcs = 10;</code>
+   */
+  java.util.List<com.google.cloud.networkconnectivity.v1.RoutingVPC> getRoutingVpcsList();
+  /**
+   *
+   *
+   * <pre>
+   * The VPC network associated with this hub's spokes. All of the VPN tunnels,
+   * VLAN attachments, and router appliance instances referenced by this hub's
+   * spokes must belong to this VPC network.
+   * This field is read-only. Network Connectivity Center automatically
+   * populates it based on the set of spokes attached to the hub.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.networkconnectivity.v1.RoutingVPC routing_vpcs = 10;</code>
+   */
+  com.google.cloud.networkconnectivity.v1.RoutingVPC getRoutingVpcs(int index);
+  /**
+   *
+   *
+   * <pre>
+   * The VPC network associated with this hub's spokes. All of the VPN tunnels,
+   * VLAN attachments, and router appliance instances referenced by this hub's
+   * spokes must belong to this VPC network.
+   * This field is read-only. Network Connectivity Center automatically
+   * populates it based on the set of spokes attached to the hub.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.networkconnectivity.v1.RoutingVPC routing_vpcs = 10;</code>
+   */
+  int getRoutingVpcsCount();
+  /**
+   *
+   *
+   * <pre>
+   * The VPC network associated with this hub's spokes. All of the VPN tunnels,
+   * VLAN attachments, and router appliance instances referenced by this hub's
+   * spokes must belong to this VPC network.
+   * This field is read-only. Network Connectivity Center automatically
+   * populates it based on the set of spokes attached to the hub.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.networkconnectivity.v1.RoutingVPC routing_vpcs = 10;</code>
+   */
+  java.util.List<? extends com.google.cloud.networkconnectivity.v1.RoutingVPCOrBuilder>
+      getRoutingVpcsOrBuilderList();
+  /**
+   *
+   *
+   * <pre>
+   * The VPC network associated with this hub's spokes. All of the VPN tunnels,
+   * VLAN attachments, and router appliance instances referenced by this hub's
+   * spokes must belong to this VPC network.
+   * This field is read-only. Network Connectivity Center automatically
+   * populates it based on the set of spokes attached to the hub.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.networkconnectivity.v1.RoutingVPC routing_vpcs = 10;</code>
+   */
+  com.google.cloud.networkconnectivity.v1.RoutingVPCOrBuilder getRoutingVpcsOrBuilder(int index);
 }

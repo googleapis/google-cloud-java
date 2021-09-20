@@ -36,6 +36,7 @@ import com.google.protobuf.FieldMask;
 import com.google.protobuf.Timestamp;
 import io.grpc.StatusRuntimeException;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
@@ -186,6 +187,7 @@ public class HubServiceClientTest {
             .setDescription("description-1724546052")
             .setUniqueId("uniqueId-294460212")
             .setState(State.forNumber(0))
+            .addAllRoutingVpcs(new ArrayList<RoutingVPC>())
             .build();
     mockHubService.addResponse(expectedResponse);
 
@@ -230,6 +232,7 @@ public class HubServiceClientTest {
             .setDescription("description-1724546052")
             .setUniqueId("uniqueId-294460212")
             .setState(State.forNumber(0))
+            .addAllRoutingVpcs(new ArrayList<RoutingVPC>())
             .build();
     mockHubService.addResponse(expectedResponse);
 
@@ -274,6 +277,7 @@ public class HubServiceClientTest {
             .setDescription("description-1724546052")
             .setUniqueId("uniqueId-294460212")
             .setState(State.forNumber(0))
+            .addAllRoutingVpcs(new ArrayList<RoutingVPC>())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -332,6 +336,7 @@ public class HubServiceClientTest {
             .setDescription("description-1724546052")
             .setUniqueId("uniqueId-294460212")
             .setState(State.forNumber(0))
+            .addAllRoutingVpcs(new ArrayList<RoutingVPC>())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -390,6 +395,7 @@ public class HubServiceClientTest {
             .setDescription("description-1724546052")
             .setUniqueId("uniqueId-294460212")
             .setState(State.forNumber(0))
+            .addAllRoutingVpcs(new ArrayList<RoutingVPC>())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -877,230 +883,6 @@ public class HubServiceClientTest {
       Spoke spoke = Spoke.newBuilder().build();
       FieldMask updateMask = FieldMask.newBuilder().build();
       client.updateSpokeAsync(spoke, updateMask).get();
-      Assert.fail("No exception raised");
-    } catch (ExecutionException e) {
-      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
-      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
-      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
-    }
-  }
-
-  @Test
-  public void deactivateSpokeTest() throws Exception {
-    Spoke expectedResponse =
-        Spoke.newBuilder()
-            .setName(SpokeName.of("[PROJECT]", "[LOCATION]", "[SPOKE]").toString())
-            .setCreateTime(Timestamp.newBuilder().build())
-            .setUpdateTime(Timestamp.newBuilder().build())
-            .putAllLabels(new HashMap<String, String>())
-            .setDescription("description-1724546052")
-            .setHub(HubName.of("[PROJECT]", "[HUB]").toString())
-            .setLinkedVpnTunnels(LinkedVpnTunnels.newBuilder().build())
-            .setLinkedInterconnectAttachments(LinkedInterconnectAttachments.newBuilder().build())
-            .setLinkedRouterApplianceInstances(LinkedRouterApplianceInstances.newBuilder().build())
-            .setUniqueId("uniqueId-294460212")
-            .setState(State.forNumber(0))
-            .build();
-    Operation resultOperation =
-        Operation.newBuilder()
-            .setName("deactivateSpokeTest")
-            .setDone(true)
-            .setResponse(Any.pack(expectedResponse))
-            .build();
-    mockHubService.addResponse(resultOperation);
-
-    SpokeName name = SpokeName.of("[PROJECT]", "[LOCATION]", "[SPOKE]");
-
-    Spoke actualResponse = client.deactivateSpokeAsync(name).get();
-    Assert.assertEquals(expectedResponse, actualResponse);
-
-    List<AbstractMessage> actualRequests = mockHubService.getRequests();
-    Assert.assertEquals(1, actualRequests.size());
-    DeactivateSpokeRequest actualRequest = ((DeactivateSpokeRequest) actualRequests.get(0));
-
-    Assert.assertEquals(name.toString(), actualRequest.getName());
-    Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
-  }
-
-  @Test
-  public void deactivateSpokeExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
-    mockHubService.addException(exception);
-
-    try {
-      SpokeName name = SpokeName.of("[PROJECT]", "[LOCATION]", "[SPOKE]");
-      client.deactivateSpokeAsync(name).get();
-      Assert.fail("No exception raised");
-    } catch (ExecutionException e) {
-      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
-      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
-      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
-    }
-  }
-
-  @Test
-  public void deactivateSpokeTest2() throws Exception {
-    Spoke expectedResponse =
-        Spoke.newBuilder()
-            .setName(SpokeName.of("[PROJECT]", "[LOCATION]", "[SPOKE]").toString())
-            .setCreateTime(Timestamp.newBuilder().build())
-            .setUpdateTime(Timestamp.newBuilder().build())
-            .putAllLabels(new HashMap<String, String>())
-            .setDescription("description-1724546052")
-            .setHub(HubName.of("[PROJECT]", "[HUB]").toString())
-            .setLinkedVpnTunnels(LinkedVpnTunnels.newBuilder().build())
-            .setLinkedInterconnectAttachments(LinkedInterconnectAttachments.newBuilder().build())
-            .setLinkedRouterApplianceInstances(LinkedRouterApplianceInstances.newBuilder().build())
-            .setUniqueId("uniqueId-294460212")
-            .setState(State.forNumber(0))
-            .build();
-    Operation resultOperation =
-        Operation.newBuilder()
-            .setName("deactivateSpokeTest")
-            .setDone(true)
-            .setResponse(Any.pack(expectedResponse))
-            .build();
-    mockHubService.addResponse(resultOperation);
-
-    String name = "name3373707";
-
-    Spoke actualResponse = client.deactivateSpokeAsync(name).get();
-    Assert.assertEquals(expectedResponse, actualResponse);
-
-    List<AbstractMessage> actualRequests = mockHubService.getRequests();
-    Assert.assertEquals(1, actualRequests.size());
-    DeactivateSpokeRequest actualRequest = ((DeactivateSpokeRequest) actualRequests.get(0));
-
-    Assert.assertEquals(name, actualRequest.getName());
-    Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
-  }
-
-  @Test
-  public void deactivateSpokeExceptionTest2() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
-    mockHubService.addException(exception);
-
-    try {
-      String name = "name3373707";
-      client.deactivateSpokeAsync(name).get();
-      Assert.fail("No exception raised");
-    } catch (ExecutionException e) {
-      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
-      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
-      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
-    }
-  }
-
-  @Test
-  public void activateSpokeTest() throws Exception {
-    Spoke expectedResponse =
-        Spoke.newBuilder()
-            .setName(SpokeName.of("[PROJECT]", "[LOCATION]", "[SPOKE]").toString())
-            .setCreateTime(Timestamp.newBuilder().build())
-            .setUpdateTime(Timestamp.newBuilder().build())
-            .putAllLabels(new HashMap<String, String>())
-            .setDescription("description-1724546052")
-            .setHub(HubName.of("[PROJECT]", "[HUB]").toString())
-            .setLinkedVpnTunnels(LinkedVpnTunnels.newBuilder().build())
-            .setLinkedInterconnectAttachments(LinkedInterconnectAttachments.newBuilder().build())
-            .setLinkedRouterApplianceInstances(LinkedRouterApplianceInstances.newBuilder().build())
-            .setUniqueId("uniqueId-294460212")
-            .setState(State.forNumber(0))
-            .build();
-    Operation resultOperation =
-        Operation.newBuilder()
-            .setName("activateSpokeTest")
-            .setDone(true)
-            .setResponse(Any.pack(expectedResponse))
-            .build();
-    mockHubService.addResponse(resultOperation);
-
-    SpokeName name = SpokeName.of("[PROJECT]", "[LOCATION]", "[SPOKE]");
-
-    Spoke actualResponse = client.activateSpokeAsync(name).get();
-    Assert.assertEquals(expectedResponse, actualResponse);
-
-    List<AbstractMessage> actualRequests = mockHubService.getRequests();
-    Assert.assertEquals(1, actualRequests.size());
-    ActivateSpokeRequest actualRequest = ((ActivateSpokeRequest) actualRequests.get(0));
-
-    Assert.assertEquals(name.toString(), actualRequest.getName());
-    Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
-  }
-
-  @Test
-  public void activateSpokeExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
-    mockHubService.addException(exception);
-
-    try {
-      SpokeName name = SpokeName.of("[PROJECT]", "[LOCATION]", "[SPOKE]");
-      client.activateSpokeAsync(name).get();
-      Assert.fail("No exception raised");
-    } catch (ExecutionException e) {
-      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
-      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
-      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
-    }
-  }
-
-  @Test
-  public void activateSpokeTest2() throws Exception {
-    Spoke expectedResponse =
-        Spoke.newBuilder()
-            .setName(SpokeName.of("[PROJECT]", "[LOCATION]", "[SPOKE]").toString())
-            .setCreateTime(Timestamp.newBuilder().build())
-            .setUpdateTime(Timestamp.newBuilder().build())
-            .putAllLabels(new HashMap<String, String>())
-            .setDescription("description-1724546052")
-            .setHub(HubName.of("[PROJECT]", "[HUB]").toString())
-            .setLinkedVpnTunnels(LinkedVpnTunnels.newBuilder().build())
-            .setLinkedInterconnectAttachments(LinkedInterconnectAttachments.newBuilder().build())
-            .setLinkedRouterApplianceInstances(LinkedRouterApplianceInstances.newBuilder().build())
-            .setUniqueId("uniqueId-294460212")
-            .setState(State.forNumber(0))
-            .build();
-    Operation resultOperation =
-        Operation.newBuilder()
-            .setName("activateSpokeTest")
-            .setDone(true)
-            .setResponse(Any.pack(expectedResponse))
-            .build();
-    mockHubService.addResponse(resultOperation);
-
-    String name = "name3373707";
-
-    Spoke actualResponse = client.activateSpokeAsync(name).get();
-    Assert.assertEquals(expectedResponse, actualResponse);
-
-    List<AbstractMessage> actualRequests = mockHubService.getRequests();
-    Assert.assertEquals(1, actualRequests.size());
-    ActivateSpokeRequest actualRequest = ((ActivateSpokeRequest) actualRequests.get(0));
-
-    Assert.assertEquals(name, actualRequest.getName());
-    Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
-  }
-
-  @Test
-  public void activateSpokeExceptionTest2() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
-    mockHubService.addException(exception);
-
-    try {
-      String name = "name3373707";
-      client.activateSpokeAsync(name).get();
       Assert.fail("No exception raised");
     } catch (ExecutionException e) {
       Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());

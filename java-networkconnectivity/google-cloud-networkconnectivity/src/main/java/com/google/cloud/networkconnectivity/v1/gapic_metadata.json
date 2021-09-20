@@ -10,17 +10,11 @@
         "grpc": {
           "libraryClient": "HubServiceClient",
           "rpcs": {
-            "ActivateSpoke": {
-              "methods": ["activateSpokeAsync", "activateSpokeAsync", "activateSpokeAsync", "activateSpokeOperationCallable", "activateSpokeCallable"]
-            },
             "CreateHub": {
               "methods": ["createHubAsync", "createHubAsync", "createHubAsync", "createHubOperationCallable", "createHubCallable"]
             },
             "CreateSpoke": {
               "methods": ["createSpokeAsync", "createSpokeAsync", "createSpokeAsync", "createSpokeOperationCallable", "createSpokeCallable"]
-            },
-            "DeactivateSpoke": {
-              "methods": ["deactivateSpokeAsync", "deactivateSpokeAsync", "deactivateSpokeAsync", "deactivateSpokeOperationCallable", "deactivateSpokeCallable"]
             },
             "DeleteHub": {
               "methods": ["deleteHubAsync", "deleteHubAsync", "deleteHubAsync", "deleteHubOperationCallable", "deleteHubCallable"]

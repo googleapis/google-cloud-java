@@ -22,10 +22,8 @@ import static com.google.cloud.networkconnectivity.v1.HubServiceClient.ListSpoke
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.UnaryCallable;
-import com.google.cloud.networkconnectivity.v1.ActivateSpokeRequest;
 import com.google.cloud.networkconnectivity.v1.CreateHubRequest;
 import com.google.cloud.networkconnectivity.v1.CreateSpokeRequest;
-import com.google.cloud.networkconnectivity.v1.DeactivateSpokeRequest;
 import com.google.cloud.networkconnectivity.v1.DeleteHubRequest;
 import com.google.cloud.networkconnectivity.v1.DeleteSpokeRequest;
 import com.google.cloud.networkconnectivity.v1.GetHubRequest;
@@ -122,24 +120,6 @@ public abstract class HubServiceStub implements BackgroundResource {
 
   public UnaryCallable<UpdateSpokeRequest, Operation> updateSpokeCallable() {
     throw new UnsupportedOperationException("Not implemented: updateSpokeCallable()");
-  }
-
-  public OperationCallable<DeactivateSpokeRequest, Spoke, OperationMetadata>
-      deactivateSpokeOperationCallable() {
-    throw new UnsupportedOperationException("Not implemented: deactivateSpokeOperationCallable()");
-  }
-
-  public UnaryCallable<DeactivateSpokeRequest, Operation> deactivateSpokeCallable() {
-    throw new UnsupportedOperationException("Not implemented: deactivateSpokeCallable()");
-  }
-
-  public OperationCallable<ActivateSpokeRequest, Spoke, OperationMetadata>
-      activateSpokeOperationCallable() {
-    throw new UnsupportedOperationException("Not implemented: activateSpokeOperationCallable()");
-  }
-
-  public UnaryCallable<ActivateSpokeRequest, Operation> activateSpokeCallable() {
-    throw new UnsupportedOperationException("Not implemented: activateSpokeCallable()");
   }
 
   public OperationCallable<DeleteSpokeRequest, Empty, OperationMetadata>

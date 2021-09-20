@@ -444,97 +444,6 @@ public final class HubServiceGrpc {
   }
 
   private static volatile io.grpc.MethodDescriptor<
-          com.google.cloud.networkconnectivity.v1.DeactivateSpokeRequest,
-          com.google.longrunning.Operation>
-      getDeactivateSpokeMethod;
-
-  @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "DeactivateSpoke",
-      requestType = com.google.cloud.networkconnectivity.v1.DeactivateSpokeRequest.class,
-      responseType = com.google.longrunning.Operation.class,
-      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<
-          com.google.cloud.networkconnectivity.v1.DeactivateSpokeRequest,
-          com.google.longrunning.Operation>
-      getDeactivateSpokeMethod() {
-    io.grpc.MethodDescriptor<
-            com.google.cloud.networkconnectivity.v1.DeactivateSpokeRequest,
-            com.google.longrunning.Operation>
-        getDeactivateSpokeMethod;
-    if ((getDeactivateSpokeMethod = HubServiceGrpc.getDeactivateSpokeMethod) == null) {
-      synchronized (HubServiceGrpc.class) {
-        if ((getDeactivateSpokeMethod = HubServiceGrpc.getDeactivateSpokeMethod) == null) {
-          HubServiceGrpc.getDeactivateSpokeMethod =
-              getDeactivateSpokeMethod =
-                  io.grpc.MethodDescriptor
-                      .<com.google.cloud.networkconnectivity.v1.DeactivateSpokeRequest,
-                          com.google.longrunning.Operation>
-                          newBuilder()
-                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "DeactivateSpoke"))
-                      .setSampledToLocalTracing(true)
-                      .setRequestMarshaller(
-                          io.grpc.protobuf.ProtoUtils.marshaller(
-                              com.google.cloud.networkconnectivity.v1.DeactivateSpokeRequest
-                                  .getDefaultInstance()))
-                      .setResponseMarshaller(
-                          io.grpc.protobuf.ProtoUtils.marshaller(
-                              com.google.longrunning.Operation.getDefaultInstance()))
-                      .setSchemaDescriptor(
-                          new HubServiceMethodDescriptorSupplier("DeactivateSpoke"))
-                      .build();
-        }
-      }
-    }
-    return getDeactivateSpokeMethod;
-  }
-
-  private static volatile io.grpc.MethodDescriptor<
-          com.google.cloud.networkconnectivity.v1.ActivateSpokeRequest,
-          com.google.longrunning.Operation>
-      getActivateSpokeMethod;
-
-  @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "ActivateSpoke",
-      requestType = com.google.cloud.networkconnectivity.v1.ActivateSpokeRequest.class,
-      responseType = com.google.longrunning.Operation.class,
-      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<
-          com.google.cloud.networkconnectivity.v1.ActivateSpokeRequest,
-          com.google.longrunning.Operation>
-      getActivateSpokeMethod() {
-    io.grpc.MethodDescriptor<
-            com.google.cloud.networkconnectivity.v1.ActivateSpokeRequest,
-            com.google.longrunning.Operation>
-        getActivateSpokeMethod;
-    if ((getActivateSpokeMethod = HubServiceGrpc.getActivateSpokeMethod) == null) {
-      synchronized (HubServiceGrpc.class) {
-        if ((getActivateSpokeMethod = HubServiceGrpc.getActivateSpokeMethod) == null) {
-          HubServiceGrpc.getActivateSpokeMethod =
-              getActivateSpokeMethod =
-                  io.grpc.MethodDescriptor
-                      .<com.google.cloud.networkconnectivity.v1.ActivateSpokeRequest,
-                          com.google.longrunning.Operation>
-                          newBuilder()
-                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ActivateSpoke"))
-                      .setSampledToLocalTracing(true)
-                      .setRequestMarshaller(
-                          io.grpc.protobuf.ProtoUtils.marshaller(
-                              com.google.cloud.networkconnectivity.v1.ActivateSpokeRequest
-                                  .getDefaultInstance()))
-                      .setResponseMarshaller(
-                          io.grpc.protobuf.ProtoUtils.marshaller(
-                              com.google.longrunning.Operation.getDefaultInstance()))
-                      .setSchemaDescriptor(new HubServiceMethodDescriptorSupplier("ActivateSpoke"))
-                      .build();
-        }
-      }
-    }
-    return getActivateSpokeMethod;
-  }
-
-  private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.networkconnectivity.v1.DeleteSpokeRequest,
           com.google.longrunning.Operation>
       getDeleteSpokeMethod;
@@ -756,37 +665,6 @@ public final class HubServiceGrpc {
      *
      *
      * <pre>
-     * Deactivates the specified spoke. Deactivating keeps the spoke information
-     * for future re-activation, but disconnects the Google Cloud network from
-     * non-Google-Cloud network.
-     * </pre>
-     */
-    public void deactivateSpoke(
-        com.google.cloud.networkconnectivity.v1.DeactivateSpokeRequest request,
-        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
-      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
-          getDeactivateSpokeMethod(), responseObserver);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Activates the specified spoke. Activating reconnects the Google Cloud
-     * network with the non-Google-Cloud network.
-     * </pre>
-     */
-    public void activateSpoke(
-        com.google.cloud.networkconnectivity.v1.ActivateSpokeRequest request,
-        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
-      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
-          getActivateSpokeMethod(), responseObserver);
-    }
-
-    /**
-     *
-     *
-     * <pre>
      * Deletes the specified spoke.
      * </pre>
      */
@@ -856,18 +734,6 @@ public final class HubServiceGrpc {
                   new MethodHandlers<
                       com.google.cloud.networkconnectivity.v1.UpdateSpokeRequest,
                       com.google.longrunning.Operation>(this, METHODID_UPDATE_SPOKE)))
-          .addMethod(
-              getDeactivateSpokeMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.networkconnectivity.v1.DeactivateSpokeRequest,
-                      com.google.longrunning.Operation>(this, METHODID_DEACTIVATE_SPOKE)))
-          .addMethod(
-              getActivateSpokeMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.networkconnectivity.v1.ActivateSpokeRequest,
-                      com.google.longrunning.Operation>(this, METHODID_ACTIVATE_SPOKE)))
           .addMethod(
               getDeleteSpokeMethod(),
               io.grpc.stub.ServerCalls.asyncUnaryCall(
@@ -1034,41 +900,6 @@ public final class HubServiceGrpc {
      *
      *
      * <pre>
-     * Deactivates the specified spoke. Deactivating keeps the spoke information
-     * for future re-activation, but disconnects the Google Cloud network from
-     * non-Google-Cloud network.
-     * </pre>
-     */
-    public void deactivateSpoke(
-        com.google.cloud.networkconnectivity.v1.DeactivateSpokeRequest request,
-        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
-      io.grpc.stub.ClientCalls.asyncUnaryCall(
-          getChannel().newCall(getDeactivateSpokeMethod(), getCallOptions()),
-          request,
-          responseObserver);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Activates the specified spoke. Activating reconnects the Google Cloud
-     * network with the non-Google-Cloud network.
-     * </pre>
-     */
-    public void activateSpoke(
-        com.google.cloud.networkconnectivity.v1.ActivateSpokeRequest request,
-        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
-      io.grpc.stub.ClientCalls.asyncUnaryCall(
-          getChannel().newCall(getActivateSpokeMethod(), getCallOptions()),
-          request,
-          responseObserver);
-    }
-
-    /**
-     *
-     *
-     * <pre>
      * Deletes the specified spoke.
      * </pre>
      */
@@ -1218,35 +1049,6 @@ public final class HubServiceGrpc {
         com.google.cloud.networkconnectivity.v1.UpdateSpokeRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getUpdateSpokeMethod(), getCallOptions(), request);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Deactivates the specified spoke. Deactivating keeps the spoke information
-     * for future re-activation, but disconnects the Google Cloud network from
-     * non-Google-Cloud network.
-     * </pre>
-     */
-    public com.google.longrunning.Operation deactivateSpoke(
-        com.google.cloud.networkconnectivity.v1.DeactivateSpokeRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getDeactivateSpokeMethod(), getCallOptions(), request);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Activates the specified spoke. Activating reconnects the Google Cloud
-     * network with the non-Google-Cloud network.
-     * </pre>
-     */
-    public com.google.longrunning.Operation activateSpoke(
-        com.google.cloud.networkconnectivity.v1.ActivateSpokeRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getActivateSpokeMethod(), getCallOptions(), request);
     }
 
     /**
@@ -1408,35 +1210,6 @@ public final class HubServiceGrpc {
      *
      *
      * <pre>
-     * Deactivates the specified spoke. Deactivating keeps the spoke information
-     * for future re-activation, but disconnects the Google Cloud network from
-     * non-Google-Cloud network.
-     * </pre>
-     */
-    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
-        deactivateSpoke(com.google.cloud.networkconnectivity.v1.DeactivateSpokeRequest request) {
-      return io.grpc.stub.ClientCalls.futureUnaryCall(
-          getChannel().newCall(getDeactivateSpokeMethod(), getCallOptions()), request);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Activates the specified spoke. Activating reconnects the Google Cloud
-     * network with the non-Google-Cloud network.
-     * </pre>
-     */
-    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
-        activateSpoke(com.google.cloud.networkconnectivity.v1.ActivateSpokeRequest request) {
-      return io.grpc.stub.ClientCalls.futureUnaryCall(
-          getChannel().newCall(getActivateSpokeMethod(), getCallOptions()), request);
-    }
-
-    /**
-     *
-     *
-     * <pre>
      * Deletes the specified spoke.
      * </pre>
      */
@@ -1456,9 +1229,7 @@ public final class HubServiceGrpc {
   private static final int METHODID_GET_SPOKE = 6;
   private static final int METHODID_CREATE_SPOKE = 7;
   private static final int METHODID_UPDATE_SPOKE = 8;
-  private static final int METHODID_DEACTIVATE_SPOKE = 9;
-  private static final int METHODID_ACTIVATE_SPOKE = 10;
-  private static final int METHODID_DELETE_SPOKE = 11;
+  private static final int METHODID_DELETE_SPOKE = 9;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -1526,16 +1297,6 @@ public final class HubServiceGrpc {
         case METHODID_UPDATE_SPOKE:
           serviceImpl.updateSpoke(
               (com.google.cloud.networkconnectivity.v1.UpdateSpokeRequest) request,
-              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
-          break;
-        case METHODID_DEACTIVATE_SPOKE:
-          serviceImpl.deactivateSpoke(
-              (com.google.cloud.networkconnectivity.v1.DeactivateSpokeRequest) request,
-              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
-          break;
-        case METHODID_ACTIVATE_SPOKE:
-          serviceImpl.activateSpoke(
-              (com.google.cloud.networkconnectivity.v1.ActivateSpokeRequest) request,
               (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
           break;
         case METHODID_DELETE_SPOKE:
@@ -1616,8 +1377,6 @@ public final class HubServiceGrpc {
                       .addMethod(getGetSpokeMethod())
                       .addMethod(getCreateSpokeMethod())
                       .addMethod(getUpdateSpokeMethod())
-                      .addMethod(getDeactivateSpokeMethod())
-                      .addMethod(getActivateSpokeMethod())
                       .addMethod(getDeleteSpokeMethod())
                       .build();
         }
