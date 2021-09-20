@@ -3,4 +3,6 @@
 
 google-cloud-assured-workloads:0.7.0:0.7.1-SNAPSHOT
 grpc-google-cloud-assured-workloads-v1beta1:0.7.0:0.7.1-SNAPSHOT
+grpc-google-cloud-assured-workloads-v1:0.7.0:0.7.1-SNAPSHOT
 proto-google-cloud-assured-workloads-v1beta1:0.7.0:0.7.1-SNAPSHOT
+proto-google-cloud-assured-workloads-v1:0.7.0:0.7.1-SNAPSHOT
