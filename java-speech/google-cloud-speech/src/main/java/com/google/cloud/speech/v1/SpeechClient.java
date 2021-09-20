@@ -272,6 +272,7 @@ public class SpeechClient implements BackgroundResource {
    *       LongRunningRecognizeRequest.newBuilder()
    *           .setConfig(RecognitionConfig.newBuilder().build())
    *           .setAudio(RecognitionAudio.newBuilder().build())
+   *           .setOutputConfig(TranscriptOutputConfig.newBuilder().build())
    *           .build();
    *   LongRunningRecognizeResponse response = speechClient.longRunningRecognizeAsync(request).get();
    * }
@@ -300,6 +301,7 @@ public class SpeechClient implements BackgroundResource {
    *       LongRunningRecognizeRequest.newBuilder()
    *           .setConfig(RecognitionConfig.newBuilder().build())
    *           .setAudio(RecognitionAudio.newBuilder().build())
+   *           .setOutputConfig(TranscriptOutputConfig.newBuilder().build())
    *           .build();
    *   OperationFuture<LongRunningRecognizeResponse, LongRunningRecognizeMetadata> future =
    *       speechClient.longRunningRecognizeOperationCallable().futureCall(request);
@@ -329,6 +331,7 @@ public class SpeechClient implements BackgroundResource {
    *       LongRunningRecognizeRequest.newBuilder()
    *           .setConfig(RecognitionConfig.newBuilder().build())
    *           .setAudio(RecognitionAudio.newBuilder().build())
+   *           .setOutputConfig(TranscriptOutputConfig.newBuilder().build())
    *           .build();
    *   ApiFuture<Operation> future = speechClient.longRunningRecognizeCallable().futureCall(request);
    *   // Do something.
