@@ -2766,4 +2766,21 @@ public class BigQueryImplTest {
     assertEquals(perms, grantedPermissions);
     verify(bigqueryRpcMock).testIamPermissions(resourceId, checkedPermissions, EMPTY_RPC_OPTIONS);
   }
+
+  @Test
+  public void testTestIamPermissionsWhenNoPermissionsGranted() {
+    final String resourceId =
+        String.format("projects/%s/datasets/%s/tables/%s", PROJECT, DATASET, TABLE);
+    final List<String> checkedPermissions = ImmutableList.<String>of("foo", "bar", "baz");
+    // If caller has no permissions, TestIamPermissionsResponse.permissions will be null
+    final com.google.api.services.bigquery.model.TestIamPermissionsResponse response =
+        new com.google.api.services.bigquery.model.TestIamPermissionsResponse()
+            .setPermissions(null);
+    when(bigqueryRpcMock.testIamPermissions(resourceId, checkedPermissions, EMPTY_RPC_OPTIONS))
+        .thenReturn(response);
+    bigquery = options.getService();
+    List<String> perms = bigquery.testIamPermissions(TABLE_ID, checkedPermissions);
+    assertEquals(perms, ImmutableList.of());
+    verify(bigqueryRpcMock).testIamPermissions(resourceId, checkedPermissions, EMPTY_RPC_OPTIONS);
+  }
 }
