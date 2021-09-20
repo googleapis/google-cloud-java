@@ -13,12 +13,6 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-// DO NOT EDIT! This is a generated sample ("Request",  "job_search_get_tenant")
-// sample-metadata:
-//   title:
-//   description: Get Tenant by name
-//   usage: gradle run -PmainClass=com.google.cloud.examples.talent.v4beta1.JobSearchGetTenant
-// [--args='[--project_id "Your Google Cloud Project ID"] [--tenant_id "Your Tenant ID"]']
 
 package com.google.cloud.examples.talent.v4beta1;
 

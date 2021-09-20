@@ -13,13 +13,6 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-// DO NOT EDIT! This is a generated sample ("RequestPaged",  "job_search_list_jobs")
-// sample-metadata:
-//   title:
-//   description: List Jobs
-//   usage: gradle run -PmainClass=com.google.cloud.examples.talent.v4beta1.JobSearchListJobs
-// [--args='[--project_id "Your Google Cloud Project ID"] [--tenant_id "Your Tenant ID (using
-// tenancy is optional)"] [--filter "companyName=projects/my-project/companies/company-id"]']
 
 package com.google.cloud.examples.talent.v4beta1;
 

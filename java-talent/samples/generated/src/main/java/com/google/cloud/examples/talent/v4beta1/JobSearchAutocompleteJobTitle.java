@@ -13,15 +13,6 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-// DO NOT EDIT! This is a generated sample ("Request",  "job_search_autocomplete_job_title")
-// sample-metadata:
-//   title:
-//   description: Complete job title given partial text (autocomplete)
-//   usage: gradle run
-// -PmainClass=com.google.cloud.examples.talent.v4beta1.JobSearchAutocompleteJobTitle
-// [--args='[--project_id "Your Google Cloud Project ID"] [--tenant_id "Your Tenant ID (using
-// tenancy is optional)"] [--query "[partially typed job title]"] [--num_results 5] [--language_code
-// "en-US"]']
 
 package com.google.cloud.examples.talent.v4beta1;
 

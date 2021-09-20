@@ -13,14 +13,6 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-// DO NOT EDIT! This is a generated sample ("RequestPaged",  "job_search_commute_search")
-// sample-metadata:
-//   title:
-//   description: Search Jobs using commute distance
-//   usage: gradle run -PmainClass=com.google.cloud.examples.talent.v4beta1.JobSearchCommuteSearch
-// [--args='[--project_id "Your Google Cloud Project ID"] [--tenant_id "Your Tenant ID (using
-// tenancy is optional)"]']
-
 package com.google.cloud.examples.talent.v4beta1;
 
 import com.google.cloud.talent.v4beta1.CommuteFilter;

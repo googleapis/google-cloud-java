@@ -13,13 +13,6 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-// DO NOT EDIT! This is a generated sample ("Request",  "job_search_create_tenant")
-// sample-metadata:
-//   title:
-//   description: Create Tenant for scoping resources, e.g. companies and jobs
-//   usage: gradle run -PmainClass=com.google.cloud.examples.talent.v4beta1.JobSearchCreateTenant
-// [--args='[--project_id "Your Google Cloud Project ID"] [--external_id "Your Unique Identifier for
-// Tenant"]']
 
 package com.google.cloud.examples.talent.v4beta1;
 

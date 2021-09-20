@@ -937,6 +937,12 @@ public interface SearchJobsRequestOrBuilder
    *
    *
    * <pre>
+   * This field is deprecated. Please use
+   * [SearchJobsRequest.keyword_match_mode][google.cloud.talent.v4.SearchJobsRequest.keyword_match_mode] going forward.
+   * To migrate, disable_keyword_match set to false maps to
+   * [KeywordMatchMode.KEYWORD_MATCH_ALL][google.cloud.talent.v4.SearchJobsRequest.KeywordMatchMode.KEYWORD_MATCH_ALL], and disable_keyword_match set to
+   * true maps to [KeywordMatchMode.KEYWORD_MATCH_DISABLED][google.cloud.talent.v4.SearchJobsRequest.KeywordMatchMode.KEYWORD_MATCH_DISABLED]. If
+   * [SearchJobsRequest.keyword_match_mode][google.cloud.talent.v4.SearchJobsRequest.keyword_match_mode] is set, this field is ignored.
    * Controls whether to disable exact keyword match on [Job.title][google.cloud.talent.v4.Job.title],
    * [Job.description][google.cloud.talent.v4.Job.description], [Job.company_display_name][google.cloud.talent.v4.Job.company_display_name], [Job.addresses][google.cloud.talent.v4.Job.addresses],
    * [Job.qualifications][google.cloud.talent.v4.Job.qualifications]. When disable keyword match is turned off, a
@@ -955,9 +961,43 @@ public interface SearchJobsRequestOrBuilder
    * Defaults to false.
    * </pre>
    *
-   * <code>bool disable_keyword_match = 16;</code>
+   * <code>bool disable_keyword_match = 16 [deprecated = true];</code>
    *
    * @return The disableKeywordMatch.
    */
+  @java.lang.Deprecated
   boolean getDisableKeywordMatch();
+
+  /**
+   *
+   *
+   * <pre>
+   * Controls what keyword match options to use. If both keyword_match_mode and
+   * disable_keyword_match are set, keyword_match_mode will take precedence.
+   * Defaults to [KeywordMatchMode.KEYWORD_MATCH_ALL][google.cloud.talent.v4.SearchJobsRequest.KeywordMatchMode.KEYWORD_MATCH_ALL] if no value
+   * is specified.
+   * </pre>
+   *
+   * <code>.google.cloud.talent.v4.SearchJobsRequest.KeywordMatchMode keyword_match_mode = 18;
+   * </code>
+   *
+   * @return The enum numeric value on the wire for keywordMatchMode.
+   */
+  int getKeywordMatchModeValue();
+  /**
+   *
+   *
+   * <pre>
+   * Controls what keyword match options to use. If both keyword_match_mode and
+   * disable_keyword_match are set, keyword_match_mode will take precedence.
+   * Defaults to [KeywordMatchMode.KEYWORD_MATCH_ALL][google.cloud.talent.v4.SearchJobsRequest.KeywordMatchMode.KEYWORD_MATCH_ALL] if no value
+   * is specified.
+   * </pre>
+   *
+   * <code>.google.cloud.talent.v4.SearchJobsRequest.KeywordMatchMode keyword_match_mode = 18;
+   * </code>
+   *
+   * @return The keywordMatchMode.
+   */
+  com.google.cloud.talent.v4.SearchJobsRequest.KeywordMatchMode getKeywordMatchMode();
 }

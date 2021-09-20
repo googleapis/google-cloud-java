@@ -13,16 +13,6 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-// DO NOT EDIT! This is a generated sample ("Request",  "job_search_create_job_custom_attributes")
-// sample-metadata:
-//   title:
-//   description: Create Job with Custom Attributes
-//   usage: gradle run
-// -PmainClass=com.google.cloud.examples.talent.v4beta1.JobSearchCreateJobCustomAttributes
-// [--args='[--project_id "Your Google Cloud Project ID"] [--tenant_id "Your Tenant ID (using
-// tenancy is optional)"] [--company_name "Company name, e.g.
-// projects/your-project/companies/company-id"] [--requisition_id "Job requisition ID, aka Posting
-// ID. Unique per job."] [--language_code "en-US"]']
 
 package com.google.cloud.examples.talent.v4beta1;
 

@@ -45,6 +45,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
     pageToken_ = "";
     orderBy_ = "";
     diversificationLevel_ = 0;
+    keywordMatchMode_ = 0;
   }
 
   @java.lang.Override
@@ -199,6 +200,13 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
           case 128:
             {
               disableKeywordMatch_ = input.readBool();
+              break;
+            }
+          case 144:
+            {
+              int rawValue = input.readEnum();
+
+              keywordMatchMode_ = rawValue;
               break;
             }
           default:
@@ -418,6 +426,10 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
    * clustered so that only one representative job of the cluster is
    * displayed to the job seeker higher up in the results, with the other jobs
    * being displayed lower down in the results.
+   * If you are using pageToken to page through the result set,
+   * latency might be lower but we can't guarantee that all results are
+   * returned. If you are using page offset, latency might be higher but all
+   * results are returned.
    * </pre>
    *
    * Protobuf enum {@code google.cloud.talent.v4.SearchJobsRequest.DiversificationLevel}
@@ -451,15 +463,48 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
      * <pre>
      * Default diversifying behavior. The result list is ordered so that
      * highly similar results are pushed to the end of the last page of search
-     * results. If you are using pageToken to page through the result set,
-     * latency might be lower but we can't guarantee that all results are
-     * returned. If you are using page offset, latency might be higher but all
-     * results are returned.
+     * results.
      * </pre>
      *
      * <code>SIMPLE = 2;</code>
      */
     SIMPLE(2),
+    /**
+     *
+     *
+     * <pre>
+     * Only one job from the same company will be shown at once, other jobs
+     * under same company are pushed to the end of the last page of search
+     * result.
+     * </pre>
+     *
+     * <code>ONE_PER_COMPANY = 3;</code>
+     */
+    ONE_PER_COMPANY(3),
+    /**
+     *
+     *
+     * <pre>
+     * Similar to ONE_PER_COMPANY, but it allows at most two jobs in the
+     * same company to be shown at once, the other jobs under same company are
+     * pushed to the end of the last page of search result.
+     * </pre>
+     *
+     * <code>TWO_PER_COMPANY = 4;</code>
+     */
+    TWO_PER_COMPANY(4),
+    /**
+     *
+     *
+     * <pre>
+     * The result list is ordered such that somewhat similar results are pushed
+     * to the end of the last page of the search results. This option is
+     * recommended if SIMPLE diversification does not diversify enough.
+     * </pre>
+     *
+     * <code>DIVERSIFY_BY_LOOSER_SIMILARITY = 5;</code>
+     */
+    DIVERSIFY_BY_LOOSER_SIMILARITY(5),
     UNRECOGNIZED(-1),
     ;
 
@@ -491,15 +536,48 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
      * <pre>
      * Default diversifying behavior. The result list is ordered so that
      * highly similar results are pushed to the end of the last page of search
-     * results. If you are using pageToken to page through the result set,
-     * latency might be lower but we can't guarantee that all results are
-     * returned. If you are using page offset, latency might be higher but all
-     * results are returned.
+     * results.
      * </pre>
      *
      * <code>SIMPLE = 2;</code>
      */
     public static final int SIMPLE_VALUE = 2;
+    /**
+     *
+     *
+     * <pre>
+     * Only one job from the same company will be shown at once, other jobs
+     * under same company are pushed to the end of the last page of search
+     * result.
+     * </pre>
+     *
+     * <code>ONE_PER_COMPANY = 3;</code>
+     */
+    public static final int ONE_PER_COMPANY_VALUE = 3;
+    /**
+     *
+     *
+     * <pre>
+     * Similar to ONE_PER_COMPANY, but it allows at most two jobs in the
+     * same company to be shown at once, the other jobs under same company are
+     * pushed to the end of the last page of search result.
+     * </pre>
+     *
+     * <code>TWO_PER_COMPANY = 4;</code>
+     */
+    public static final int TWO_PER_COMPANY_VALUE = 4;
+    /**
+     *
+     *
+     * <pre>
+     * The result list is ordered such that somewhat similar results are pushed
+     * to the end of the last page of the search results. This option is
+     * recommended if SIMPLE diversification does not diversify enough.
+     * </pre>
+     *
+     * <code>DIVERSIFY_BY_LOOSER_SIMILARITY = 5;</code>
+     */
+    public static final int DIVERSIFY_BY_LOOSER_SIMILARITY_VALUE = 5;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -531,6 +609,12 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
           return DISABLED;
         case 2:
           return SIMPLE;
+        case 3:
+          return ONE_PER_COMPANY;
+        case 4:
+          return TWO_PER_COMPANY;
+        case 5:
+          return DIVERSIFY_BY_LOOSER_SIMILARITY;
         default:
           return null;
       }
@@ -587,6 +671,208 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
     // @@protoc_insertion_point(enum_scope:google.cloud.talent.v4.SearchJobsRequest.DiversificationLevel)
   }
 
+  /**
+   *
+   *
+   * <pre>
+   * Controls what keyword matching behavior the search has. When keyword
+   * matching is enabled, a keyword match returns jobs that may not match given
+   * category filters when there are matching keywords. For example, for the
+   * query "program manager" with KeywordMatchMode set to KEYWORD_MATCH_ALL, a
+   * job posting with the title "software developer," which doesn't fall into
+   * "program manager" ontology, and "program manager" appearing in its
+   * description will be surfaced.
+   * For queries like "cloud" that don't contain title or
+   * location specific ontology, jobs with "cloud" keyword matches are returned
+   * regardless of this enum's value.
+   * Use [Company.keyword_searchable_job_custom_attributes][google.cloud.talent.v4.Company.keyword_searchable_job_custom_attributes] if
+   * company-specific globally matched custom field/attribute string values are
+   * needed. Enabling keyword match improves recall of subsequent search
+   * requests.
+   * </pre>
+   *
+   * Protobuf enum {@code google.cloud.talent.v4.SearchJobsRequest.KeywordMatchMode}
+   */
+  public enum KeywordMatchMode implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     *
+     *
+     * <pre>
+     * The keyword match option isn't specified. Defaults to
+     * [KeywordMatchMode.KEYWORD_MATCH_ALL][google.cloud.talent.v4.SearchJobsRequest.KeywordMatchMode.KEYWORD_MATCH_ALL] behavior.
+     * </pre>
+     *
+     * <code>KEYWORD_MATCH_MODE_UNSPECIFIED = 0;</code>
+     */
+    KEYWORD_MATCH_MODE_UNSPECIFIED(0),
+    /**
+     *
+     *
+     * <pre>
+     * Disables keyword matching.
+     * </pre>
+     *
+     * <code>KEYWORD_MATCH_DISABLED = 1;</code>
+     */
+    KEYWORD_MATCH_DISABLED(1),
+    /**
+     *
+     *
+     * <pre>
+     * Enable keyword matching over [Job.title][google.cloud.talent.v4.Job.title],
+     * [Job.description][google.cloud.talent.v4.Job.description], [Job.company_display_name][google.cloud.talent.v4.Job.company_display_name], [Job.addresses][google.cloud.talent.v4.Job.addresses],
+     * [Job.qualifications][google.cloud.talent.v4.Job.qualifications], and keyword searchable [Job.custom_attributes][google.cloud.talent.v4.Job.custom_attributes]
+     * fields.
+     * </pre>
+     *
+     * <code>KEYWORD_MATCH_ALL = 2;</code>
+     */
+    KEYWORD_MATCH_ALL(2),
+    /**
+     *
+     *
+     * <pre>
+     * Only enable keyword matching over [Job.title][google.cloud.talent.v4.Job.title].
+     * </pre>
+     *
+     * <code>KEYWORD_MATCH_TITLE_ONLY = 3;</code>
+     */
+    KEYWORD_MATCH_TITLE_ONLY(3),
+    UNRECOGNIZED(-1),
+    ;
+
+    /**
+     *
+     *
+     * <pre>
+     * The keyword match option isn't specified. Defaults to
+     * [KeywordMatchMode.KEYWORD_MATCH_ALL][google.cloud.talent.v4.SearchJobsRequest.KeywordMatchMode.KEYWORD_MATCH_ALL] behavior.
+     * </pre>
+     *
+     * <code>KEYWORD_MATCH_MODE_UNSPECIFIED = 0;</code>
+     */
+    public static final int KEYWORD_MATCH_MODE_UNSPECIFIED_VALUE = 0;
+    /**
+     *
+     *
+     * <pre>
+     * Disables keyword matching.
+     * </pre>
+     *
+     * <code>KEYWORD_MATCH_DISABLED = 1;</code>
+     */
+    public static final int KEYWORD_MATCH_DISABLED_VALUE = 1;
+    /**
+     *
+     *
+     * <pre>
+     * Enable keyword matching over [Job.title][google.cloud.talent.v4.Job.title],
+     * [Job.description][google.cloud.talent.v4.Job.description], [Job.company_display_name][google.cloud.talent.v4.Job.company_display_name], [Job.addresses][google.cloud.talent.v4.Job.addresses],
+     * [Job.qualifications][google.cloud.talent.v4.Job.qualifications], and keyword searchable [Job.custom_attributes][google.cloud.talent.v4.Job.custom_attributes]
+     * fields.
+     * </pre>
+     *
+     * <code>KEYWORD_MATCH_ALL = 2;</code>
+     */
+    public static final int KEYWORD_MATCH_ALL_VALUE = 2;
+    /**
+     *
+     *
+     * <pre>
+     * Only enable keyword matching over [Job.title][google.cloud.talent.v4.Job.title].
+     * </pre>
+     *
+     * <code>KEYWORD_MATCH_TITLE_ONLY = 3;</code>
+     */
+    public static final int KEYWORD_MATCH_TITLE_ONLY_VALUE = 3;
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static KeywordMatchMode valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static KeywordMatchMode forNumber(int value) {
+      switch (value) {
+        case 0:
+          return KEYWORD_MATCH_MODE_UNSPECIFIED;
+        case 1:
+          return KEYWORD_MATCH_DISABLED;
+        case 2:
+          return KEYWORD_MATCH_ALL;
+        case 3:
+          return KEYWORD_MATCH_TITLE_ONLY;
+        default:
+          return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<KeywordMatchMode> internalGetValueMap() {
+      return internalValueMap;
+    }
+
+    private static final com.google.protobuf.Internal.EnumLiteMap<KeywordMatchMode>
+        internalValueMap =
+            new com.google.protobuf.Internal.EnumLiteMap<KeywordMatchMode>() {
+              public KeywordMatchMode findValueByNumber(int number) {
+                return KeywordMatchMode.forNumber(number);
+              }
+            };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+      return getDescriptor();
+    }
+
+    public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+      return com.google.cloud.talent.v4.SearchJobsRequest.getDescriptor().getEnumTypes().get(2);
+    }
+
+    private static final KeywordMatchMode[] VALUES = values();
+
+    public static KeywordMatchMode valueOf(
+        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private KeywordMatchMode(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:google.cloud.talent.v4.SearchJobsRequest.KeywordMatchMode)
+  }
+
   public interface CustomRankingInfoOrBuilder
       extends
       // @@protoc_insertion_point(interface_extends:google.cloud.talent.v4.SearchJobsRequest.CustomRankingInfo)
@@ -641,7 +927,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
      * the operator is either a numeric [Job.custom_attributes][google.cloud.talent.v4.Job.custom_attributes] key,
      * integer/double value or an expression that can be evaluated to a number.
      * Parenthesis are supported to adjust calculation precedence. The
-     * expression must be &lt; 100 characters in length.
+     * expression must be &lt; 200 characters in length.
      * The expression is considered invalid for a job if the expression
      * references custom attributes that are not populated on the job or if the
      * expression results in a divide by zero. If an expression is invalid for a
@@ -668,7 +954,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
      * the operator is either a numeric [Job.custom_attributes][google.cloud.talent.v4.Job.custom_attributes] key,
      * integer/double value or an expression that can be evaluated to a number.
      * Parenthesis are supported to adjust calculation precedence. The
-     * expression must be &lt; 100 characters in length.
+     * expression must be &lt; 200 characters in length.
      * The expression is considered invalid for a job if the expression
      * references custom attributes that are not populated on the job or if the
      * expression results in a divide by zero. If an expression is invalid for a
@@ -1125,7 +1411,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
      * the operator is either a numeric [Job.custom_attributes][google.cloud.talent.v4.Job.custom_attributes] key,
      * integer/double value or an expression that can be evaluated to a number.
      * Parenthesis are supported to adjust calculation precedence. The
-     * expression must be &lt; 100 characters in length.
+     * expression must be &lt; 200 characters in length.
      * The expression is considered invalid for a job if the expression
      * references custom attributes that are not populated on the job or if the
      * expression results in a divide by zero. If an expression is invalid for a
@@ -1163,7 +1449,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
      * the operator is either a numeric [Job.custom_attributes][google.cloud.talent.v4.Job.custom_attributes] key,
      * integer/double value or an expression that can be evaluated to a number.
      * Parenthesis are supported to adjust calculation precedence. The
-     * expression must be &lt; 100 characters in length.
+     * expression must be &lt; 200 characters in length.
      * The expression is considered invalid for a job if the expression
      * references custom attributes that are not populated on the job or if the
      * expression results in a divide by zero. If an expression is invalid for a
@@ -1673,7 +1959,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
        * the operator is either a numeric [Job.custom_attributes][google.cloud.talent.v4.Job.custom_attributes] key,
        * integer/double value or an expression that can be evaluated to a number.
        * Parenthesis are supported to adjust calculation precedence. The
-       * expression must be &lt; 100 characters in length.
+       * expression must be &lt; 200 characters in length.
        * The expression is considered invalid for a job if the expression
        * references custom attributes that are not populated on the job or if the
        * expression results in a divide by zero. If an expression is invalid for a
@@ -1710,7 +1996,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
        * the operator is either a numeric [Job.custom_attributes][google.cloud.talent.v4.Job.custom_attributes] key,
        * integer/double value or an expression that can be evaluated to a number.
        * Parenthesis are supported to adjust calculation precedence. The
-       * expression must be &lt; 100 characters in length.
+       * expression must be &lt; 200 characters in length.
        * The expression is considered invalid for a job if the expression
        * references custom attributes that are not populated on the job or if the
        * expression results in a divide by zero. If an expression is invalid for a
@@ -1747,7 +2033,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
        * the operator is either a numeric [Job.custom_attributes][google.cloud.talent.v4.Job.custom_attributes] key,
        * integer/double value or an expression that can be evaluated to a number.
        * Parenthesis are supported to adjust calculation precedence. The
-       * expression must be &lt; 100 characters in length.
+       * expression must be &lt; 200 characters in length.
        * The expression is considered invalid for a job if the expression
        * references custom attributes that are not populated on the job or if the
        * expression results in a divide by zero. If an expression is invalid for a
@@ -1783,7 +2069,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
        * the operator is either a numeric [Job.custom_attributes][google.cloud.talent.v4.Job.custom_attributes] key,
        * integer/double value or an expression that can be evaluated to a number.
        * Parenthesis are supported to adjust calculation precedence. The
-       * expression must be &lt; 100 characters in length.
+       * expression must be &lt; 200 characters in length.
        * The expression is considered invalid for a job if the expression
        * references custom attributes that are not populated on the job or if the
        * expression results in a divide by zero. If an expression is invalid for a
@@ -1815,7 +2101,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
        * the operator is either a numeric [Job.custom_attributes][google.cloud.talent.v4.Job.custom_attributes] key,
        * integer/double value or an expression that can be evaluated to a number.
        * Parenthesis are supported to adjust calculation precedence. The
-       * expression must be &lt; 100 characters in length.
+       * expression must be &lt; 200 characters in length.
        * The expression is considered invalid for a job if the expression
        * references custom attributes that are not populated on the job or if the
        * expression results in a divide by zero. If an expression is invalid for a
@@ -2992,6 +3278,12 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
+   * This field is deprecated. Please use
+   * [SearchJobsRequest.keyword_match_mode][google.cloud.talent.v4.SearchJobsRequest.keyword_match_mode] going forward.
+   * To migrate, disable_keyword_match set to false maps to
+   * [KeywordMatchMode.KEYWORD_MATCH_ALL][google.cloud.talent.v4.SearchJobsRequest.KeywordMatchMode.KEYWORD_MATCH_ALL], and disable_keyword_match set to
+   * true maps to [KeywordMatchMode.KEYWORD_MATCH_DISABLED][google.cloud.talent.v4.SearchJobsRequest.KeywordMatchMode.KEYWORD_MATCH_DISABLED]. If
+   * [SearchJobsRequest.keyword_match_mode][google.cloud.talent.v4.SearchJobsRequest.keyword_match_mode] is set, this field is ignored.
    * Controls whether to disable exact keyword match on [Job.title][google.cloud.talent.v4.Job.title],
    * [Job.description][google.cloud.talent.v4.Job.description], [Job.company_display_name][google.cloud.talent.v4.Job.company_display_name], [Job.addresses][google.cloud.talent.v4.Job.addresses],
    * [Job.qualifications][google.cloud.talent.v4.Job.qualifications]. When disable keyword match is turned off, a
@@ -3010,13 +3302,60 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
    * Defaults to false.
    * </pre>
    *
-   * <code>bool disable_keyword_match = 16;</code>
+   * <code>bool disable_keyword_match = 16 [deprecated = true];</code>
    *
    * @return The disableKeywordMatch.
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public boolean getDisableKeywordMatch() {
     return disableKeywordMatch_;
+  }
+
+  public static final int KEYWORD_MATCH_MODE_FIELD_NUMBER = 18;
+  private int keywordMatchMode_;
+  /**
+   *
+   *
+   * <pre>
+   * Controls what keyword match options to use. If both keyword_match_mode and
+   * disable_keyword_match are set, keyword_match_mode will take precedence.
+   * Defaults to [KeywordMatchMode.KEYWORD_MATCH_ALL][google.cloud.talent.v4.SearchJobsRequest.KeywordMatchMode.KEYWORD_MATCH_ALL] if no value
+   * is specified.
+   * </pre>
+   *
+   * <code>.google.cloud.talent.v4.SearchJobsRequest.KeywordMatchMode keyword_match_mode = 18;
+   * </code>
+   *
+   * @return The enum numeric value on the wire for keywordMatchMode.
+   */
+  @java.lang.Override
+  public int getKeywordMatchModeValue() {
+    return keywordMatchMode_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Controls what keyword match options to use. If both keyword_match_mode and
+   * disable_keyword_match are set, keyword_match_mode will take precedence.
+   * Defaults to [KeywordMatchMode.KEYWORD_MATCH_ALL][google.cloud.talent.v4.SearchJobsRequest.KeywordMatchMode.KEYWORD_MATCH_ALL] if no value
+   * is specified.
+   * </pre>
+   *
+   * <code>.google.cloud.talent.v4.SearchJobsRequest.KeywordMatchMode keyword_match_mode = 18;
+   * </code>
+   *
+   * @return The keywordMatchMode.
+   */
+  @java.lang.Override
+  public com.google.cloud.talent.v4.SearchJobsRequest.KeywordMatchMode getKeywordMatchMode() {
+    @SuppressWarnings("deprecation")
+    com.google.cloud.talent.v4.SearchJobsRequest.KeywordMatchMode result =
+        com.google.cloud.talent.v4.SearchJobsRequest.KeywordMatchMode.valueOf(keywordMatchMode_);
+    return result == null
+        ? com.google.cloud.talent.v4.SearchJobsRequest.KeywordMatchMode.UNRECOGNIZED
+        : result;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -3080,6 +3419,12 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
     if (disableKeywordMatch_ != false) {
       output.writeBool(16, disableKeywordMatch_);
     }
+    if (keywordMatchMode_
+        != com.google.cloud.talent.v4.SearchJobsRequest.KeywordMatchMode
+            .KEYWORD_MATCH_MODE_UNSPECIFIED
+            .getNumber()) {
+      output.writeEnum(18, keywordMatchMode_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -3136,6 +3481,12 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
     if (disableKeywordMatch_ != false) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(16, disableKeywordMatch_);
     }
+    if (keywordMatchMode_
+        != com.google.cloud.talent.v4.SearchJobsRequest.KeywordMatchMode
+            .KEYWORD_MATCH_MODE_UNSPECIFIED
+            .getNumber()) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(18, keywordMatchMode_);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -3175,6 +3526,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
       if (!getCustomRankingInfo().equals(other.getCustomRankingInfo())) return false;
     }
     if (getDisableKeywordMatch() != other.getDisableKeywordMatch()) return false;
+    if (keywordMatchMode_ != other.keywordMatchMode_) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -3222,6 +3574,8 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
     }
     hash = (37 * hash) + DISABLE_KEYWORD_MATCH_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getDisableKeywordMatch());
+    hash = (37 * hash) + KEYWORD_MATCH_MODE_FIELD_NUMBER;
+    hash = (53 * hash) + keywordMatchMode_;
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -3413,6 +3767,8 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
       }
       disableKeywordMatch_ = false;
 
+      keywordMatchMode_ = 0;
+
       return this;
     }
 
@@ -3475,6 +3831,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
         result.customRankingInfo_ = customRankingInfoBuilder_.build();
       }
       result.disableKeywordMatch_ = disableKeywordMatch_;
+      result.keywordMatchMode_ = keywordMatchMode_;
       onBuilt();
       return result;
     }
@@ -3592,6 +3949,9 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
       }
       if (other.getDisableKeywordMatch() != false) {
         setDisableKeywordMatch(other.getDisableKeywordMatch());
+      }
+      if (other.keywordMatchMode_ != 0) {
+        setKeywordMatchModeValue(other.getKeywordMatchModeValue());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -7168,6 +7528,12 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
+     * This field is deprecated. Please use
+     * [SearchJobsRequest.keyword_match_mode][google.cloud.talent.v4.SearchJobsRequest.keyword_match_mode] going forward.
+     * To migrate, disable_keyword_match set to false maps to
+     * [KeywordMatchMode.KEYWORD_MATCH_ALL][google.cloud.talent.v4.SearchJobsRequest.KeywordMatchMode.KEYWORD_MATCH_ALL], and disable_keyword_match set to
+     * true maps to [KeywordMatchMode.KEYWORD_MATCH_DISABLED][google.cloud.talent.v4.SearchJobsRequest.KeywordMatchMode.KEYWORD_MATCH_DISABLED]. If
+     * [SearchJobsRequest.keyword_match_mode][google.cloud.talent.v4.SearchJobsRequest.keyword_match_mode] is set, this field is ignored.
      * Controls whether to disable exact keyword match on [Job.title][google.cloud.talent.v4.Job.title],
      * [Job.description][google.cloud.talent.v4.Job.description], [Job.company_display_name][google.cloud.talent.v4.Job.company_display_name], [Job.addresses][google.cloud.talent.v4.Job.addresses],
      * [Job.qualifications][google.cloud.talent.v4.Job.qualifications]. When disable keyword match is turned off, a
@@ -7186,11 +7552,12 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
      * Defaults to false.
      * </pre>
      *
-     * <code>bool disable_keyword_match = 16;</code>
+     * <code>bool disable_keyword_match = 16 [deprecated = true];</code>
      *
      * @return The disableKeywordMatch.
      */
     @java.lang.Override
+    @java.lang.Deprecated
     public boolean getDisableKeywordMatch() {
       return disableKeywordMatch_;
     }
@@ -7198,6 +7565,12 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
+     * This field is deprecated. Please use
+     * [SearchJobsRequest.keyword_match_mode][google.cloud.talent.v4.SearchJobsRequest.keyword_match_mode] going forward.
+     * To migrate, disable_keyword_match set to false maps to
+     * [KeywordMatchMode.KEYWORD_MATCH_ALL][google.cloud.talent.v4.SearchJobsRequest.KeywordMatchMode.KEYWORD_MATCH_ALL], and disable_keyword_match set to
+     * true maps to [KeywordMatchMode.KEYWORD_MATCH_DISABLED][google.cloud.talent.v4.SearchJobsRequest.KeywordMatchMode.KEYWORD_MATCH_DISABLED]. If
+     * [SearchJobsRequest.keyword_match_mode][google.cloud.talent.v4.SearchJobsRequest.keyword_match_mode] is set, this field is ignored.
      * Controls whether to disable exact keyword match on [Job.title][google.cloud.talent.v4.Job.title],
      * [Job.description][google.cloud.talent.v4.Job.description], [Job.company_display_name][google.cloud.talent.v4.Job.company_display_name], [Job.addresses][google.cloud.talent.v4.Job.addresses],
      * [Job.qualifications][google.cloud.talent.v4.Job.qualifications]. When disable keyword match is turned off, a
@@ -7216,11 +7589,12 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
      * Defaults to false.
      * </pre>
      *
-     * <code>bool disable_keyword_match = 16;</code>
+     * <code>bool disable_keyword_match = 16 [deprecated = true];</code>
      *
      * @param value The disableKeywordMatch to set.
      * @return This builder for chaining.
      */
+    @java.lang.Deprecated
     public Builder setDisableKeywordMatch(boolean value) {
 
       disableKeywordMatch_ = value;
@@ -7231,6 +7605,12 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
+     * This field is deprecated. Please use
+     * [SearchJobsRequest.keyword_match_mode][google.cloud.talent.v4.SearchJobsRequest.keyword_match_mode] going forward.
+     * To migrate, disable_keyword_match set to false maps to
+     * [KeywordMatchMode.KEYWORD_MATCH_ALL][google.cloud.talent.v4.SearchJobsRequest.KeywordMatchMode.KEYWORD_MATCH_ALL], and disable_keyword_match set to
+     * true maps to [KeywordMatchMode.KEYWORD_MATCH_DISABLED][google.cloud.talent.v4.SearchJobsRequest.KeywordMatchMode.KEYWORD_MATCH_DISABLED]. If
+     * [SearchJobsRequest.keyword_match_mode][google.cloud.talent.v4.SearchJobsRequest.keyword_match_mode] is set, this field is ignored.
      * Controls whether to disable exact keyword match on [Job.title][google.cloud.talent.v4.Job.title],
      * [Job.description][google.cloud.talent.v4.Job.description], [Job.company_display_name][google.cloud.talent.v4.Job.company_display_name], [Job.addresses][google.cloud.talent.v4.Job.addresses],
      * [Job.qualifications][google.cloud.talent.v4.Job.qualifications]. When disable keyword match is turned off, a
@@ -7249,13 +7629,128 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
      * Defaults to false.
      * </pre>
      *
-     * <code>bool disable_keyword_match = 16;</code>
+     * <code>bool disable_keyword_match = 16 [deprecated = true];</code>
      *
      * @return This builder for chaining.
      */
+    @java.lang.Deprecated
     public Builder clearDisableKeywordMatch() {
 
       disableKeywordMatch_ = false;
+      onChanged();
+      return this;
+    }
+
+    private int keywordMatchMode_ = 0;
+    /**
+     *
+     *
+     * <pre>
+     * Controls what keyword match options to use. If both keyword_match_mode and
+     * disable_keyword_match are set, keyword_match_mode will take precedence.
+     * Defaults to [KeywordMatchMode.KEYWORD_MATCH_ALL][google.cloud.talent.v4.SearchJobsRequest.KeywordMatchMode.KEYWORD_MATCH_ALL] if no value
+     * is specified.
+     * </pre>
+     *
+     * <code>.google.cloud.talent.v4.SearchJobsRequest.KeywordMatchMode keyword_match_mode = 18;
+     * </code>
+     *
+     * @return The enum numeric value on the wire for keywordMatchMode.
+     */
+    @java.lang.Override
+    public int getKeywordMatchModeValue() {
+      return keywordMatchMode_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Controls what keyword match options to use. If both keyword_match_mode and
+     * disable_keyword_match are set, keyword_match_mode will take precedence.
+     * Defaults to [KeywordMatchMode.KEYWORD_MATCH_ALL][google.cloud.talent.v4.SearchJobsRequest.KeywordMatchMode.KEYWORD_MATCH_ALL] if no value
+     * is specified.
+     * </pre>
+     *
+     * <code>.google.cloud.talent.v4.SearchJobsRequest.KeywordMatchMode keyword_match_mode = 18;
+     * </code>
+     *
+     * @param value The enum numeric value on the wire for keywordMatchMode to set.
+     * @return This builder for chaining.
+     */
+    public Builder setKeywordMatchModeValue(int value) {
+
+      keywordMatchMode_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Controls what keyword match options to use. If both keyword_match_mode and
+     * disable_keyword_match are set, keyword_match_mode will take precedence.
+     * Defaults to [KeywordMatchMode.KEYWORD_MATCH_ALL][google.cloud.talent.v4.SearchJobsRequest.KeywordMatchMode.KEYWORD_MATCH_ALL] if no value
+     * is specified.
+     * </pre>
+     *
+     * <code>.google.cloud.talent.v4.SearchJobsRequest.KeywordMatchMode keyword_match_mode = 18;
+     * </code>
+     *
+     * @return The keywordMatchMode.
+     */
+    @java.lang.Override
+    public com.google.cloud.talent.v4.SearchJobsRequest.KeywordMatchMode getKeywordMatchMode() {
+      @SuppressWarnings("deprecation")
+      com.google.cloud.talent.v4.SearchJobsRequest.KeywordMatchMode result =
+          com.google.cloud.talent.v4.SearchJobsRequest.KeywordMatchMode.valueOf(keywordMatchMode_);
+      return result == null
+          ? com.google.cloud.talent.v4.SearchJobsRequest.KeywordMatchMode.UNRECOGNIZED
+          : result;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Controls what keyword match options to use. If both keyword_match_mode and
+     * disable_keyword_match are set, keyword_match_mode will take precedence.
+     * Defaults to [KeywordMatchMode.KEYWORD_MATCH_ALL][google.cloud.talent.v4.SearchJobsRequest.KeywordMatchMode.KEYWORD_MATCH_ALL] if no value
+     * is specified.
+     * </pre>
+     *
+     * <code>.google.cloud.talent.v4.SearchJobsRequest.KeywordMatchMode keyword_match_mode = 18;
+     * </code>
+     *
+     * @param value The keywordMatchMode to set.
+     * @return This builder for chaining.
+     */
+    public Builder setKeywordMatchMode(
+        com.google.cloud.talent.v4.SearchJobsRequest.KeywordMatchMode value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+
+      keywordMatchMode_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Controls what keyword match options to use. If both keyword_match_mode and
+     * disable_keyword_match are set, keyword_match_mode will take precedence.
+     * Defaults to [KeywordMatchMode.KEYWORD_MATCH_ALL][google.cloud.talent.v4.SearchJobsRequest.KeywordMatchMode.KEYWORD_MATCH_ALL] if no value
+     * is specified.
+     * </pre>
+     *
+     * <code>.google.cloud.talent.v4.SearchJobsRequest.KeywordMatchMode keyword_match_mode = 18;
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearKeywordMatchMode() {
+
+      keywordMatchMode_ = 0;
       onChanged();
       return this;
     }

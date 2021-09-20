@@ -13,15 +13,6 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-// DO NOT EDIT! This is a generated sample ("Request",  "job_search_create_client_event")
-// sample-metadata:
-//   title:
-//   description: Creates a client event
-//   usage: gradle run
-// -PmainClass=com.google.cloud.examples.talent.v4beta1.JobSearchCreateClientEvent
-// [--args='[--project_id "Your Google Cloud Project ID"] [--tenant_id "Your Tenant ID (using
-// tenancy is optional)"] [--request_id "[request_id from ResponseMetadata]"] [--event_id "[Set this
-// to a unique identifier]"]']
 
 package com.google.cloud.examples.talent.v4beta1;
 
