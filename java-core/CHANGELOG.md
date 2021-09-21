@@ -1,5 +1,12 @@
 # Changelog
 
+### [2.1.5](https://www.github.com/googleapis/java-core/compare/v2.1.4...v2.1.5) (2021-09-21)
+
+
+### Dependencies
+
+* downgrading protobuf to 3.17.3 ([#562](https://www.github.com/googleapis/java-core/issues/562)) ([5711b83](https://www.github.com/googleapis/java-core/commit/5711b835a19238df1bfa1f2e4dfc115495a55c9b))
+
 ### [2.1.4](https://www.github.com/googleapis/java-core/compare/v2.1.3...v2.1.4) (2021-09-15)
 
 
