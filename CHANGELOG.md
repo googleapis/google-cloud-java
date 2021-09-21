@@ -1,5 +1,17 @@
 # Changelog
 
+### [2.1.9](https://www.github.com/googleapis/java-bigquery/compare/v2.1.8...v2.1.9) (2021-09-21)
+
+
+### Bug Fixes
+
+* do not throw NPE from BigQueryImpl.testIamPermissions ([#1596](https://www.github.com/googleapis/java-bigquery/issues/1596)) ([4251b19](https://www.github.com/googleapis/java-bigquery/commit/4251b19f5b240b907aa5fc6d0cc64026245714cf))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-storage to v2.1.4 ([#1597](https://www.github.com/googleapis/java-bigquery/issues/1597)) ([354cf7f](https://www.github.com/googleapis/java-bigquery/commit/354cf7f3a8dd8cf24d9a5f7e3377591a13b60863))
+
 ### [2.1.8](https://www.github.com/googleapis/java-bigquery/compare/v2.1.7...v2.1.8) (2021-09-16)
 
 
