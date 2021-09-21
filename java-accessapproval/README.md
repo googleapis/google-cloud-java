@@ -56,13 +56,13 @@ implementation 'com.google.cloud:google-cloud-accessapproval'
 If you are using Gradle without BOM, add this to your dependencies
 
 ```Groovy
-implementation 'com.google.cloud:google-cloud-accessapproval:2.1.1'
+implementation 'com.google.cloud:google-cloud-accessapproval:2.1.3'
 ```
 
 If you are using SBT, add this to your dependencies
 
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-accessapproval" % "2.1.1"
+libraryDependencies += "com.google.cloud" % "google-cloud-accessapproval" % "2.1.3"
 ```
 
 ## Authentication
