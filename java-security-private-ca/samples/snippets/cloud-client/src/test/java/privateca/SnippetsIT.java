@@ -321,6 +321,19 @@ public class SnippetsIT {
   }
 
   @Test
+  public void testUpdateCertificateAuthority()
+      throws IOException, ExecutionException, InterruptedException, TimeoutException {
+    privateca.UpdateCertificateAuthority.updateCaLabel(PROJECT_ID, LOCATION, CA_POOL_ID, CA_NAME);
+    assertThat(stdOut.toString()).contains("Successfully updated the labels ! ");
+  }
+
+  @Test
+  public void testMonitorCertificateAuthority() throws IOException, InterruptedException {
+    privateca.MonitorCertificateAuthority.createCaMonitoringPolicy(PROJECT_ID);
+    assertThat(stdOut.toString()).contains("Monitoring policy successfully created !");
+  }
+
+  @Test
   public void testEnableDisableCertificateAuthority()
       throws InterruptedException, ExecutionException, IOException {
     privateca.EnableCertificateAuthority.enableCertificateAuthority(
