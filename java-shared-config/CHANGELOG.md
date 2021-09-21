@@ -1,5 +1,12 @@
 # Changelog
 
+### [1.0.3](https://www.github.com/googleapis/java-shared-config/compare/v1.0.2...v1.0.3) (2021-09-21)
+
+
+### Bug Fixes
+
+* update java-docfx-doclet version ([#315](https://www.github.com/googleapis/java-shared-config/issues/315)) ([07af07c](https://www.github.com/googleapis/java-shared-config/commit/07af07c188447ea5728ecd2700121ff477d1c58a))
+
 ### [1.0.2](https://www.github.com/googleapis/java-shared-config/compare/v1.0.1...v1.0.2) (2021-09-13)
 
 
