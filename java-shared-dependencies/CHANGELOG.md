@@ -1,5 +1,17 @@
 # Changelog
 
+## [2.3.0](https://www.github.com/googleapis/java-shared-dependencies/compare/2.2.1...v2.3.0) (2021-09-22)
+
+
+### Dependencies
+
+* keep protobuf at 3.17.3 (not the latest 3.18.0) ([#476](https://www.github.com/googleapis/java-shared-dependencies/issues/476)) ([e207c81](https://www.github.com/googleapis/java-shared-dependencies/commit/e207c818f220967e3618d7a9d36f2cf26c07892e))
+* update gax.version to v2.5.0 ([#479](https://www.github.com/googleapis/java-shared-dependencies/issues/479)) ([e22e62a](https://www.github.com/googleapis/java-shared-dependencies/commit/e22e62a3b248023ae94da2a02ec50006377a5157))
+* update google.core.version to v2.1.4 ([#473](https://www.github.com/googleapis/java-shared-dependencies/issues/473)) ([116f278](https://www.github.com/googleapis/java-shared-dependencies/commit/116f2783dfc18f215905ceaff9f85f331f83472b))
+* update google.core.version to v2.1.6 ([#478](https://www.github.com/googleapis/java-shared-dependencies/issues/478)) ([9e09728](https://www.github.com/googleapis/java-shared-dependencies/commit/9e0972834764b25e5e194e0e805efc5453120df3))
+* update iam.version to v1.1.1 ([#470](https://www.github.com/googleapis/java-shared-dependencies/issues/470)) ([3b6e960](https://www.github.com/googleapis/java-shared-dependencies/commit/3b6e96050af8d976a30165481d764d8226143a39))
+* update iam.version to v1.1.2 ([#472](https://www.github.com/googleapis/java-shared-dependencies/issues/472)) ([85329cc](https://www.github.com/googleapis/java-shared-dependencies/commit/85329cc6c13d16fe2eeeb076959ee16a752c1f9e))
+
 ### [2.2.1](https://www.github.com/googleapis/java-shared-dependencies/compare/2.2.0...v2.2.1) (2021-09-13)
 
 
