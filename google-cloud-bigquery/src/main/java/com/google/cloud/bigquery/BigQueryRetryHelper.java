@@ -75,9 +75,10 @@ public class BigQueryRetryHelper extends RetryHelper {
     if (LOG.isLoggable(Level.FINEST)) {
       LOG.log(
           Level.FINEST,
-          "Retrying with:\n{0}",
+          "Retrying with:\n{0}\n{1}",
           new Object[] {
             "BigQuery retried method: " + callable.getClass().getEnclosingMethod().getName(),
+            "BigQuery retry settings: " + timedAlgorithm.createFirstAttempt().getGlobalSettings()
           });
     }
 
