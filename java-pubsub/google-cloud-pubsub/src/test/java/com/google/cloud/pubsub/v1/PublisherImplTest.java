@@ -1019,6 +1019,84 @@ public class PublisherImplTest {
   }
 
   @Test
+  public void invalidFlowControlBytes_throwException() throws Exception {
+    try {
+      Publisher publisher =
+          getTestPublisherBuilder()
+              .setBatchingSettings(
+                  Publisher.Builder.DEFAULT_BATCHING_SETTINGS
+                      .toBuilder()
+                      .setElementCountThreshold(1L)
+                      .setDelayThreshold(Duration.ofSeconds(5))
+                      .setFlowControlSettings(
+                          FlowControlSettings.newBuilder()
+                              .setLimitExceededBehavior(
+                                  FlowController.LimitExceededBehavior.ThrowException)
+                              .setMaxOutstandingElementCount(1L)
+                              .setMaxOutstandingRequestBytes(0L)
+                              .build())
+                      .build())
+              .build();
+      fail("Expected an IllegalArgumentException");
+    } catch (Exception e) {
+      assertThat(e).isInstanceOf(IllegalArgumentException.class);
+    }
+  }
+
+  @Test
+  public void invalidFlowControlElementCount_throwException() throws Exception {
+    try {
+      Publisher publisher =
+          getTestPublisherBuilder()
+              .setBatchingSettings(
+                  Publisher.Builder.DEFAULT_BATCHING_SETTINGS
+                      .toBuilder()
+                      .setElementCountThreshold(1L)
+                      .setDelayThreshold(Duration.ofSeconds(5))
+                      .setFlowControlSettings(
+                          FlowControlSettings.newBuilder()
+                              .setLimitExceededBehavior(
+                                  FlowController.LimitExceededBehavior.ThrowException)
+                              .setMaxOutstandingElementCount(0L)
+                              .setMaxOutstandingRequestBytes(1000L)
+                              .build())
+                      .build())
+              .build();
+      fail("Expected an IllegalArgumentException");
+    } catch (Exception e) {
+      assertThat(e).isInstanceOf(IllegalArgumentException.class);
+    }
+  }
+
+  @Test
+  public void testMessageExceedsFlowControlLimits_throwException() throws Exception {
+    Publisher publisher =
+        getTestPublisherBuilder()
+            .setExecutorProvider(SINGLE_THREAD_EXECUTOR)
+            .setBatchingSettings(
+                Publisher.Builder.DEFAULT_BATCHING_SETTINGS
+                    .toBuilder()
+                    .setElementCountThreshold(1L)
+                    .setDelayThreshold(Duration.ofSeconds(5))
+                    .setFlowControlSettings(
+                        FlowControlSettings.newBuilder()
+                            .setLimitExceededBehavior(FlowController.LimitExceededBehavior.Block)
+                            .setMaxOutstandingElementCount(1L)
+                            .setMaxOutstandingRequestBytes(1L)
+                            .build())
+                    .build())
+            .build();
+
+    try {
+      sendTestMessage(publisher, "AAAAAAAAAAAAAAAAAAAAA").get();
+      fail("Should have thrown a FlowController.MaxOutstandingRequestBytesReachedException");
+    } catch (ExecutionException e) {
+      assertThat(e.getCause())
+          .isInstanceOf(FlowController.MaxOutstandingRequestBytesReachedException.class);
+    }
+  }
+
+  @Test
   public void testPublishFlowControl_throwException() throws Exception {
     Publisher publisher =
         getTestPublisherBuilder()
@@ -1038,23 +1116,13 @@ public class PublisherImplTest {
                     .build())
             .build();
 
-    // Sending a message that is too large results in an exception.
-    ApiFuture<String> publishFuture1 = sendTestMessage(publisher, "AAAAAAAAAAA");
-    try {
-      publishFuture1.get();
-      fail("Should have thrown an FlowController.MaxOutstandingRequestBytesReachedException");
-    } catch (ExecutionException e) {
-      assertThat(e.getCause())
-          .isInstanceOf(FlowController.MaxOutstandingRequestBytesReachedException.class);
-    }
+    // Sending a message less than the byte limit succeeds.
+    ApiFuture<String> publishFuture1 = sendTestMessage(publisher, "AAAA");
 
-    // Sending a second message succeeds.
-    ApiFuture<String> publishFuture2 = sendTestMessage(publisher, "AAAA");
-
-    // Sending a third message fails because of the outstanding message.
-    ApiFuture<String> publishFuture3 = sendTestMessage(publisher, "AA");
+    // Sending another message fails because of the outstanding message.
+    ApiFuture<String> publishFuture2 = sendTestMessage(publisher, "AA");
     try {
-      publishFuture3.get();
+      publishFuture2.get();
       fail("Should have thrown an FlowController.MaxOutstandingElementCountReachedException");
     } catch (ExecutionException e) {
       assertThat(e.getCause())
@@ -1062,7 +1130,7 @@ public class PublisherImplTest {
     }
 
     testPublisherServiceImpl.addPublishResponse(PublishResponse.newBuilder().addMessageIds("1"));
-    assertEquals("1", publishFuture2.get());
+    assertEquals("1", publishFuture1.get());
 
     // Sending another message succeeds.
     ApiFuture<String> publishFuture4 = sendTestMessage(publisher, "AAAA");
@@ -1091,22 +1159,27 @@ public class PublisherImplTest {
             .setEnableMessageOrdering(true)
             .build();
 
-    // Sending a message that is too large results in an exception.
-    ApiFuture<String> publishFuture1 =
-        sendTestMessageWithOrderingKey(publisher, "AAAAAAAAAAA", "a");
-    try {
-      publishFuture1.get();
-      fail("Should have thrown an FlowController.MaxOutstandingRequestBytesReachedException");
-    } catch (ExecutionException e) {
-      assertThat(e.getCause())
-          .isInstanceOf(FlowController.MaxOutstandingRequestBytesReachedException.class);
-    }
+    // Sending a message less than the byte limit succeeds.
+    ApiFuture<String> publishFuture1 = sendTestMessageWithOrderingKey(publisher, "AAAA", "a");
 
-    // Sending a second message for the same ordering key fails because the first one failed.
-    ApiFuture<String> publishFuture2 = sendTestMessageWithOrderingKey(publisher, "AAAA", "a");
+    // Sending another message fails because of the outstanding message.
+    ApiFuture<String> publishFuture2 = sendTestMessageWithOrderingKey(publisher, "AA", "a");
     try {
       publishFuture2.get();
-      Assert.fail("This should fail.");
+      fail("Should have thrown an FlowController.MaxOutstandingElementCountReachedException");
+    } catch (ExecutionException e) {
+      assertThat(e.getCause())
+          .isInstanceOf(FlowController.MaxOutstandingElementCountReachedException.class);
+    }
+
+    testPublisherServiceImpl.addPublishResponse(PublishResponse.newBuilder().addMessageIds("1"));
+    assertEquals("1", publishFuture1.get());
+
+    // Sending another message for the same ordering key fails because the one before failed.
+    ApiFuture<String> publishFuture3 = sendTestMessageWithOrderingKey(publisher, "AAAA", "a");
+    try {
+      publishFuture3.get();
+      fail("This should fail.");
     } catch (ExecutionException e) {
       assertEquals(SequentialExecutorService.CallbackExecutor.CANCELLATION_EXCEPTION, e.getCause());
     }
