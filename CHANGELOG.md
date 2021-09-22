@@ -1,5 +1,13 @@
 # Changelog
 
+### [2.1.11](https://www.github.com/googleapis/java-bigquery/compare/v2.1.10...v2.1.11) (2021-09-22)
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-bigtable to v2.1.3 ([#1609](https://www.github.com/googleapis/java-bigquery/issues/1609)) ([6b04f76](https://www.github.com/googleapis/java-bigquery/commit/6b04f769ad5fb2eaa0eec57a5e937b81413c95e3))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.3.0 ([#1610](https://www.github.com/googleapis/java-bigquery/issues/1610)) ([fb3895e](https://www.github.com/googleapis/java-bigquery/commit/fb3895e811cdec46b05f2188cd054788fcb03a1d))
+
 ### [2.1.10](https://www.github.com/googleapis/java-bigquery/compare/v2.1.9...v2.1.10) (2021-09-22)
 
 
