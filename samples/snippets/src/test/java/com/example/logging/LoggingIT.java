@@ -153,7 +153,7 @@ public class LoggingIT {
               logging.write(Collections.singleton(logEntry));
             }
           } catch (Exception t) {
-            System.out.println("Failed to write log entry:\n" + t)
+            System.out.println("Failed to write log entry:\n" + t);
           }
         };
     Thread thread = new Thread(task);
