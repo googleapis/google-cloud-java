@@ -34,6 +34,25 @@
  *       baseBigQueryReadClient.createReadSession(parent, readSession, maxStreamCount);
  * }
  * }</pre>
+ *
+ * <p>======================= BigQueryWriteClient =======================
+ *
+ * <p>Service Description: BigQuery Write API.
+ *
+ * <p>The Write API can be used to write data to BigQuery.
+ *
+ * <p>For supplementary information about the Write API, see:
+ * https://cloud.google.com/bigquery/docs/write-api
+ *
+ * <p>Sample for BigQueryWriteClient:
+ *
+ * <pre>{@code
+ * try (BigQueryWriteClient bigQueryWriteClient = BigQueryWriteClient.create()) {
+ *   TableName parent = TableName.of("[PROJECT]", "[DATASET]", "[TABLE]");
+ *   WriteStream writeStream = WriteStream.newBuilder().build();
+ *   WriteStream response = bigQueryWriteClient.createWriteStream(parent, writeStream);
+ * }
+ * }</pre>
  */
 @Generated("by gapic-generator-java")
 package com.google.cloud.bigquery.storage.v1;

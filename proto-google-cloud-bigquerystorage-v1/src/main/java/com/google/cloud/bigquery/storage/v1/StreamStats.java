@@ -22,7 +22,7 @@ package com.google.cloud.bigquery.storage.v1;
  *
  *
  * <pre>
- * Estimated stream statistics for a given Stream.
+ * Estimated stream statistics for a given read Stream.
  * </pre>
  *
  * Protobuf type {@code google.cloud.bigquery.storage.v1.StreamStats}
@@ -1031,7 +1031,7 @@ public final class StreamStats extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Estimated stream statistics for a given Stream.
+   * Estimated stream statistics for a given read Stream.
    * </pre>
    *
    * Protobuf type {@code google.cloud.bigquery.storage.v1.StreamStats}
