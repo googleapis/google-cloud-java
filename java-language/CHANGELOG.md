@@ -1,5 +1,12 @@
 # Changelog
 
+### [2.1.2](https://www.github.com/googleapis/java-language/compare/v2.1.1...v2.1.2) (2021-09-22)
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.3.0 ([#723](https://www.github.com/googleapis/java-language/issues/723)) ([b245fe1](https://www.github.com/googleapis/java-language/commit/b245fe10f6ca80519354e0c0064c9b298cb6dd02))
+
 ### [2.1.1](https://www.github.com/googleapis/java-language/compare/v2.1.0...v2.1.1) (2021-09-14)
 
 
