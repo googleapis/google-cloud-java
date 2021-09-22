@@ -1,5 +1,12 @@
 # Changelog
 
+### [1.1.2](https://www.github.com/googleapis/java-service-control/compare/v1.1.1...v1.1.2) (2021-09-22)
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.3.0 ([#66](https://www.github.com/googleapis/java-service-control/issues/66)) ([ac6d19e](https://www.github.com/googleapis/java-service-control/commit/ac6d19ebc617eef95d723ffd05777f819d037789))
+
 ### [1.1.1](https://www.github.com/googleapis/java-service-control/compare/v1.1.0...v1.1.1) (2021-09-14)
 
 
