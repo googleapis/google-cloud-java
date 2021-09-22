@@ -44,15 +44,13 @@ public class DeadLetterQueueIT {
   private PrintStream out;
 
   private static final String projectId = System.getenv("GOOGLE_CLOUD_PROJECT");
-  private static final String _suffix = UUID.randomUUID().toString();
-  private static final String topicId = "topic-" + _suffix;
-  private static final String subscriptionId = "subscription-" + _suffix;
-  private static final String deadLetterTopicId = "topic-dlq-" + _suffix;
-  private static final ProjectTopicName topicName = ProjectTopicName.of(projectId, topicId);
-  private static final ProjectTopicName deadLetterTopicName =
-      ProjectTopicName.of(projectId, deadLetterTopicId);
-  private static final ProjectSubscriptionName subscriptionName =
-      ProjectSubscriptionName.of(projectId, subscriptionId);
+  private static String _suffix;
+  private static String topicId;
+  private static String subscriptionId;
+  private static String deadLetterTopicId;
+  private static ProjectTopicName topicName;
+  private static ProjectTopicName deadLetterTopicName;
+  private static ProjectSubscriptionName subscriptionName;
 
   private static void requireEnvVar(String varName) {
     assertNotNull(
@@ -75,6 +73,13 @@ public class DeadLetterQueueIT {
   @BeforeClass
   public static void checkRequirements() {
     requireEnvVar("GOOGLE_CLOUD_PROJECT");
+    _suffix = UUID.randomUUID().toString();
+    topicId = "topic-" + _suffix;
+    subscriptionId = "subscription-" + _suffix;
+    deadLetterTopicId = "topic-dlq-" + _suffix;
+    topicName = ProjectTopicName.of(projectId, topicId);
+    deadLetterTopicName = ProjectTopicName.of(projectId, deadLetterTopicId);
+    subscriptionName = ProjectSubscriptionName.of(projectId, subscriptionId);
   }
 
   @Before

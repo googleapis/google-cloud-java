@@ -43,13 +43,13 @@ public class SchemaIT {
   private PrintStream out;
 
   private static final String projectId = System.getenv("GOOGLE_CLOUD_PROJECT");
-  private static final String _suffix = UUID.randomUUID().toString();
-  private static final String avroTopicId = "avro-topic-" + _suffix;
-  private static final String protoTopicId = "proto-topic-" + _suffix;
-  private static final String avroSubscriptionId = "avro-subscription-" + _suffix;
-  private static final String protoSubscriptionId = "proto-subscription-" + _suffix;
-  private static final String avroSchemaId = "avro-schema-" + _suffix;
-  private static final String protoSchemaId = "proto-schema-" + _suffix;
+  private static String _suffix;
+  private static String avroTopicId;
+  private static String protoTopicId;
+  private static String avroSubscriptionId;
+  private static String protoSubscriptionId;
+  private static String avroSchemaId;
+  private static String protoSchemaId;
 
   ClassLoader classLoader = getClass().getClassLoader();
   File avscFile = new File(classLoader.getResource("us-states.avsc").getFile());
@@ -58,14 +58,12 @@ public class SchemaIT {
   File protoFile = new File(classLoader.getResource("us-states.proto").getFile());
   String absoluteProtoFilePath = protoFile.getAbsolutePath();
 
-  private static final TopicName avroTopicName = TopicName.of(projectId, avroTopicId);
-  private static final TopicName protoTopicName = TopicName.of(projectId, protoTopicId);
-  private static final ProjectSubscriptionName avroSubscriptionName =
-      ProjectSubscriptionName.of(projectId, avroSubscriptionId);
-  private static final ProjectSubscriptionName protoSubscriptionName =
-      ProjectSubscriptionName.of(projectId, protoSubscriptionId);
-  private static final SchemaName avroSchemaName = SchemaName.of(projectId, avroSchemaId);
-  private static final SchemaName protoSchemaName = SchemaName.of(projectId, protoSchemaId);
+  private static TopicName avroTopicName;
+  private static TopicName protoTopicName;
+  private static ProjectSubscriptionName avroSubscriptionName;
+  private static ProjectSubscriptionName protoSubscriptionName;
+  private static SchemaName avroSchemaName;
+  private static SchemaName protoSchemaName;
 
   private static void requireEnvVar(String varName) {
     assertNotNull(
@@ -78,6 +76,19 @@ public class SchemaIT {
 
   @Before
   public void setUp() {
+    _suffix = UUID.randomUUID().toString();
+    avroTopicId = "avro-topic-" + _suffix;
+    protoTopicId = "proto-topic-" + _suffix;
+    avroSubscriptionId = "avro-subscription-" + _suffix;
+    protoSubscriptionId = "proto-subscription-" + _suffix;
+    avroSchemaId = "avro-schema-" + _suffix;
+    protoSchemaId = "proto-schema-" + _suffix;
+    avroTopicName = TopicName.of(projectId, avroTopicId);
+    protoTopicName = TopicName.of(projectId, protoTopicId);
+    avroSubscriptionName = ProjectSubscriptionName.of(projectId, avroSubscriptionId);
+    protoSubscriptionName = ProjectSubscriptionName.of(projectId, protoSubscriptionId);
+    avroSchemaName = SchemaName.of(projectId, avroSchemaId);
+    protoSchemaName = SchemaName.of(projectId, protoSchemaId);
     bout = new ByteArrayOutputStream();
     out = new PrintStream(bout);
     System.setOut(out);
