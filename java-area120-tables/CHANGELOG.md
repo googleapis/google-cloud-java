@@ -1,5 +1,12 @@
 # Changelog
 
+### [0.5.1](https://www.github.com/googleapis/java-area120-tables/compare/v0.5.0...v0.5.1) (2021-09-22)
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.3.0 ([#251](https://www.github.com/googleapis/java-area120-tables/issues/251)) ([ef55982](https://www.github.com/googleapis/java-area120-tables/commit/ef559827e1c156669b4e921bc815ba8d6ce7061e))
+
 ## [0.5.0](https://www.github.com/googleapis/java-area120-tables/compare/v0.4.2...v0.5.0) (2021-09-14)
 
 
