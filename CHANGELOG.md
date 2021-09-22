@@ -1,5 +1,17 @@
 # Changelog
 
+### [2.1.10](https://www.github.com/googleapis/java-bigquery/compare/v2.1.9...v2.1.10) (2021-09-22)
+
+
+### Bug Fixes
+
+* add retrySetting in logging ([#1604](https://www.github.com/googleapis/java-bigquery/issues/1604)) ([1a96cb0](https://www.github.com/googleapis/java-bigquery/commit/1a96cb076ded8eae8c34962aa00e914ba197b516))
+
+
+### Dependencies
+
+* update dependency com.google.apis:google-api-services-bigquery to v2-rev20210910-1.32.1 ([#1602](https://www.github.com/googleapis/java-bigquery/issues/1602)) ([1ccac9a](https://www.github.com/googleapis/java-bigquery/commit/1ccac9a6ca891fd160911de524e8227414b29e75))
+
 ### [2.1.9](https://www.github.com/googleapis/java-bigquery/compare/v2.1.8...v2.1.9) (2021-09-21)
 
 
