@@ -42,7 +42,7 @@ If you are using Maven without BOM, add this to your dependencies:
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-translate</artifactId>
-  <version>2.1.3</version>
+  <version>2.1.4</version>
 </dependency>
 
 ```
@@ -57,13 +57,13 @@ implementation 'com.google.cloud:google-cloud-translate'
 If you are using Gradle without BOM, add this to your dependencies
 
 ```Groovy
-implementation 'com.google.cloud:google-cloud-translate:2.1.3'
+implementation 'com.google.cloud:google-cloud-translate:2.1.4'
 ```
 
 If you are using SBT, add this to your dependencies
 
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-translate" % "2.1.3"
+libraryDependencies += "com.google.cloud" % "google-cloud-translate" % "2.1.4"
 ```
 
 ## Authentication
