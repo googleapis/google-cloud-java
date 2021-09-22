@@ -1,5 +1,12 @@
 # Changelog
 
+### [2.1.2](https://www.github.com/googleapis/java-kms/compare/v2.1.1...v2.1.2) (2021-09-22)
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.3.0 ([#625](https://www.github.com/googleapis/java-kms/issues/625)) ([416793b](https://www.github.com/googleapis/java-kms/commit/416793b1286599331123d87b14238f16170443ba))
+
 ### [2.1.1](https://www.github.com/googleapis/java-kms/compare/v2.1.0...v2.1.1) (2021-09-15)
 
 
