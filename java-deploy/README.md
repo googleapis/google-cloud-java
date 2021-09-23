@@ -1,4 +1,4 @@
-# Google Google CLoud Deploy Client for Java
+# Google Google Cloud Deploy Client for Java
 
 Java idiomatic client for [Google CLoud Deploy][product-docs].
 
