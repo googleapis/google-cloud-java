@@ -19,20 +19,20 @@ If you are using Maven, add this to your pom.xml file:
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-workflow-executions</artifactId>
-  <version>2.0.3</version>
+  <version>2.0.5</version>
 </dependency>
 ```
 
 If you are using Gradle without BOM, add this to your dependencies
 
 ```Groovy
-implementation 'com.google.cloud:google-cloud-workflow-executions:2.0.3'
+implementation 'com.google.cloud:google-cloud-workflow-executions:2.0.5'
 ```
 
 If you are using SBT, add this to your dependencies
 
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-workflow-executions" % "2.0.3"
+libraryDependencies += "com.google.cloud" % "google-cloud-workflow-executions" % "2.0.5"
 ```
 
 ## Authentication
