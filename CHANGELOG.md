@@ -1,5 +1,27 @@
 # Changelog
 
+### [2.2.1](https://www.github.com/googleapis/java-bigquerystorage/compare/v2.2.0...v2.2.1) (2021-09-23)
+
+
+### Bug Fixes
+
+* add missing read api retry setting on SplitReadStream ([#1315](https://www.github.com/googleapis/java-bigquerystorage/issues/1315)) ([015d6f4](https://www.github.com/googleapis/java-bigquerystorage/commit/015d6f4bbae4d7a4e8351e8173b25086372cfd8d))
+
+
+### Documentation
+
+* Align session length with public documentation feat: Expose estimated bytes that a session will scan. ([#1310](https://www.github.com/googleapis/java-bigquerystorage/issues/1310)) ([fff5c89](https://www.github.com/googleapis/java-bigquerystorage/commit/fff5c89738187bc4a34ce649ccf9c725a76282f7))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-bigquery to v2.1.10 ([#1318](https://www.github.com/googleapis/java-bigquerystorage/issues/1318)) ([f5d8b2d](https://www.github.com/googleapis/java-bigquerystorage/commit/f5d8b2d3fc3036de3b3e1167cd59bd826e451e45))
+* update dependency com.google.cloud:google-cloud-bigquery to v2.1.11 ([#1320](https://www.github.com/googleapis/java-bigquerystorage/issues/1320)) ([12a2b03](https://www.github.com/googleapis/java-bigquerystorage/commit/12a2b03f0146173249c5b7c4e906e995e2fa6212))
+* update dependency com.google.cloud:google-cloud-bigquery to v2.1.8 ([#1311](https://www.github.com/googleapis/java-bigquerystorage/issues/1311)) ([e5aa8fd](https://www.github.com/googleapis/java-bigquerystorage/commit/e5aa8fdcb4e1ba111f5eb23b82161b88a2012e31))
+* update dependency com.google.cloud:google-cloud-bigquery to v2.1.9 ([#1317](https://www.github.com/googleapis/java-bigquerystorage/issues/1317)) ([600531d](https://www.github.com/googleapis/java-bigquerystorage/commit/600531d39f1642dcc4fda44790edc5dbb54d04f7))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.2.1 ([#1308](https://www.github.com/googleapis/java-bigquerystorage/issues/1308)) ([7be798d](https://www.github.com/googleapis/java-bigquerystorage/commit/7be798d3a1aa00bd7a4329b7539bf72cb301c844))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.3.0 ([#1319](https://www.github.com/googleapis/java-bigquerystorage/issues/1319)) ([2f2a44c](https://www.github.com/googleapis/java-bigquerystorage/commit/2f2a44cf649e29dce52ac36ffda91777158caf9a))
+
 ## [2.2.0](https://www.github.com/googleapis/java-bigquerystorage/compare/v2.1.2...v2.2.0) (2021-09-10)
 
 
