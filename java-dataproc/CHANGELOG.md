@@ -1,5 +1,19 @@
 # Changelog
 
+## [2.2.0](https://www.github.com/googleapis/java-dataproc/compare/v2.1.4...v2.2.0) (2021-09-22)
+
+
+### Features
+
+* delete deprecated Dataproc v1beta2 API client ([#651](https://www.github.com/googleapis/java-dataproc/issues/651)) ([1415252](https://www.github.com/googleapis/java-dataproc/commit/1415252bc06133dfa2db43feccfcbc448e60672a))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.3.0 ([#696](https://www.github.com/googleapis/java-dataproc/issues/696)) ([e0e66e1](https://www.github.com/googleapis/java-dataproc/commit/e0e66e1c3cf4bab0ac939343a4b35de4d3dce4b1))
+* update dependency com.google.cloud:google-cloud-storage to v2.1.4 ([#693](https://www.github.com/googleapis/java-dataproc/issues/693)) ([d83fee0](https://www.github.com/googleapis/java-dataproc/commit/d83fee0d7c6f766324a01624c73b017488656129))
+* update dependency com.google.cloud:google-cloud-storage to v2.1.5 ([#697](https://www.github.com/googleapis/java-dataproc/issues/697)) ([fcd23bf](https://www.github.com/googleapis/java-dataproc/commit/fcd23bf81f0de10084e20874f8bc5f6a07307612))
+
 ### [2.1.4](https://www.github.com/googleapis/java-dataproc/compare/v2.1.3...v2.1.4) (2021-09-16)
 
 
