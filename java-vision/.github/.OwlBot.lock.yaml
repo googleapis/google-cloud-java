@@ -1,3 +1,3 @@
 docker:
-  digest: sha256:4837f2a7fdff2985b4f7432f8a6d6a87beacebf3ac071746532c0ce2e3f24b9b
+  digest: sha256:db1616f2f70823d8381d859835229e04371d14f59ac78063c5af73c55c3fffbb
   image: gcr.io/cloud-devrel-public-resources/owlbot-java:latest
