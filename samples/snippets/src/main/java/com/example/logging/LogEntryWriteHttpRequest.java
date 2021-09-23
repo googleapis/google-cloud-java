@@ -16,7 +16,7 @@
 
 package com.example.logging;
 
-// [START logging_write_request_entry]
+// [START logging_write_log_entry_advanced]
 import com.google.cloud.MonitoredResource;
 import com.google.cloud.logging.HttpRequest;
 import com.google.cloud.logging.LogEntry;
@@ -61,4 +61,4 @@ public class LogEntryWriteHttpRequest {
     }
   }
 }
-// [END logging_write_request_entry]
+// [END logging_write_log_entry_advanced]

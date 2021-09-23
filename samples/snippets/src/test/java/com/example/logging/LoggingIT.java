@@ -30,7 +30,9 @@ import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
 import java.util.Collections;
 import org.junit.After;
+import org.junit.AfterClass;
 import org.junit.Before;
+import org.junit.BeforeClass;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
@@ -41,16 +43,38 @@ import org.junit.runners.JUnit4;
 public class LoggingIT {
 
   private static final String TEST_LOG = formatForTest("test-log");
-  private static final String GOOGLEAPIS_AUDIT_LOGNAME = "cloudaudit.googleapis.com%2Factivity";
   private static final String STRING_PAYLOAD = "Hello, world!";
   private static final String STRING_PAYLOAD2 = "Hello world again";
 
   private ByteArrayOutputStream bout;
   private PrintStream out;
-  private Logging logging = LoggingOptions.getDefaultInstance().getService();
+  private static Logging logging;
 
-  private void deleteLog(String logName) {
-    logging.deleteLog(logName);
+  private void deleteLog(String logName) throws InterruptedException {
+    int deleteAttempts = 0;
+    int allowedDeleteAttempts = 5;
+    boolean deleted = false;
+    while (!deleted && deleteAttempts < allowedDeleteAttempts) {
+      deleted = logging.deleteLog(logName);
+      deleteAttempts++;
+      if (!deleted) {
+        Thread.sleep(1000);
+      }
+    }
+    if (!deleted) {
+      System.err.println(
+          "Failed to clean up log entries after 5 attempts. Following tests may be flaky...");
+    }
+  }
+
+  @BeforeClass
+  public static void startup() {
+    logging = LoggingOptions.getDefaultInstance().getService();
+  }
+
+  @AfterClass
+  public static void shutDown() throws Exception {
+    logging.close();
   }
 
   @Before
@@ -61,13 +85,13 @@ public class LoggingIT {
   }
 
   @After
-  public void tearDown() {
+  public void tearDown() throws Exception {
     // Clean up created logs
     deleteLog(TEST_LOG);
     System.setOut(null);
   }
 
-  @Test
+  @Test(timeout = 60000)
   public void testQuickstartSample() throws Exception {
     QuickstartSample.main(TEST_LOG);
     String got = bout.toString();
@@ -116,7 +140,7 @@ public class LoggingIT {
     String[] args = new String[] {TEST_LOG};
     while (bout.toString().isEmpty()) {
       ListLogEntries.main(args);
-      Thread.sleep(5000);
+      Thread.sleep(1000);
     }
 
     // check log entry contain request data
@@ -125,14 +149,10 @@ public class LoggingIT {
   }
 
   @Test(timeout = 60000)
-  public void testListLogNamesSample() throws Exception {
-    ListLogs.main();
-    // Check for mocked STDOUT having data
-    while (bout.toString().isEmpty()) {
-      Thread.sleep(5000);
-    }
-
-    assertThat(bout.toString().contains(GOOGLEAPIS_AUDIT_LOGNAME)).isTrue();
+  public void testWriteLogEntrySample() throws Exception {
+    WriteLogEntry.main(new String[] {TEST_LOG});
+    String got = bout.toString();
+    assertThat(got).contains(String.format("Wrote to %s", TEST_LOG));
   }
 
   @Test(timeout = 60000)
@@ -153,7 +173,7 @@ public class LoggingIT {
               logging.write(Collections.singleton(logEntry));
             }
           } catch (Exception t) {
-            System.out.println("Failed to write log entry:\n" + t);
+            System.err.println("Failed to write log entry:\n" + t);
           }
         };
     Thread thread = new Thread(task);

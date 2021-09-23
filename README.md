@@ -166,6 +166,27 @@ LogEntry firstEntry = LogEntry.newBuilder(StringPayload.of("message"))
 logging.write(Collections.singleton(firstEntry));
 ```
 
+The library supports writing log entries synchronously and asynchronously.
+In the synchronous mode each call to `write()` method results in a consequent call to Logging API to write a log entry.
+In the asynchronous mode the call(s) to Logging API takes place asynchronously and few calls to `write()` method may be batched together to compose a single call to Logging API.
+The default mode of writing is asynchronous.
+It can be configured in the `java.util.logging` handler [configuration file](https://cloud.google.com/logging/docs/setup/java#javautillogging_configuration):
+
+```
+com.google.cloud.logging.LoggingHandler.synchronicity=SYNC
+```
+
+or in the code after initiating an instance of `Logging` by calling:
+
+```java
+logging.setWriteSynchronicity(Synchronicity.SYNC);
+```
+
+NOTE:
+> Writing log entries asynchronously in some Google Cloud managed environments (e.g. Cloud Functions)
+> may lead to unexpected results such as absense of expected log entries or abnormal program execution.
+> To avoid these unexpected results, it is recommended to use synchronous mode.
+
 #### Listing log entries
 
 With Logging you can also list log entries that have been previously written. Add the following
@@ -236,6 +257,7 @@ Samples are in the [`samples/`](https://github.com/googleapis/java-logging/tree/
 | Log Entry Write Http Request | [source code](https://github.com/googleapis/java-logging/blob/master/samples/snippets/src/main/java/com/example/logging/LogEntryWriteHttpRequest.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-logging&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/logging/LogEntryWriteHttpRequest.java) |
 | Quickstart Sample | [source code](https://github.com/googleapis/java-logging/blob/master/samples/snippets/src/main/java/com/example/logging/QuickstartSample.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-logging&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/logging/QuickstartSample.java) |
 | Tail Log Entries | [source code](https://github.com/googleapis/java-logging/blob/master/samples/snippets/src/main/java/com/example/logging/TailLogEntries.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-logging&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/logging/TailLogEntries.java) |
+| Write Log Entry | [source code](https://github.com/googleapis/java-logging/blob/master/samples/snippets/src/main/java/com/example/logging/WriteLogEntry.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-logging&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/logging/WriteLogEntry.java) |
 | Quickstart | [source code](https://github.com/googleapis/java-logging/blob/master/samples/snippets/src/main/java/com/example/logging/jul/Quickstart.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-logging&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/logging/jul/Quickstart.java) |
 | Example Enhancer | [source code](https://github.com/googleapis/java-logging/blob/master/samples/snippets/src/main/java/com/example/logging/jul/enhancers/ExampleEnhancer.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-logging&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/logging/jul/enhancers/ExampleEnhancer.java) |
 

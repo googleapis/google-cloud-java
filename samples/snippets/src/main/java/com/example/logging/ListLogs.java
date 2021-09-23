@@ -25,16 +25,16 @@ public class ListLogs {
 
   public static void main(String... args) throws Exception {
 
-    LoggingOptions options = LoggingOptions.getDefaultInstance();
-    Logging logging = options.getService();
+    try (Logging logging = LoggingOptions.getDefaultInstance().getService()) {
 
-    // List all log names
-    Page<String> logNames = logging.listLogs();
-    while (logNames != null) {
-      for (String logName : logNames.iterateAll()) {
-        System.out.println(logName);
+      // List all log names
+      Page<String> logNames = logging.listLogs();
+      while (logNames != null) {
+        for (String logName : logNames.iterateAll()) {
+          System.out.println(logName);
+        }
+        logNames = logNames.getNextPage();
       }
-      logNames = logNames.getNextPage();
     }
   }
 }
