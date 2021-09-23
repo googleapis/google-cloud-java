@@ -13,12 +13,10 @@
 # limitations under the License.
 
 on:
-  pull_request:
-#    branches:
-#      - master
-#  workflow_dispatch:
-#  # every morning
-#  schedule: '0 1 * * *'
+  workflow_dispatch:
+  schedule:
+    # every morning
+    - cron: '0 1 * * *'
 name: readme
 jobs:
   update:
