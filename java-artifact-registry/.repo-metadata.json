@@ -12,6 +12,5 @@
     "distribution_name": "com.google.cloud:google-cloud-artifact-registry",
     "api_id": "artifactregistry.googleapis.com",
     "requires_billing": true,
-    "library_type": "GAPIC_AUTO",
-    "codeowner_team": "@googleapis/yoshi-java"
+    "library_type": "GAPIC_AUTO"
 }
