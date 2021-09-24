@@ -1,5 +1,17 @@
 # Changelog
 
+### [2.0.4](https://www.github.com/googleapis/java-retail/compare/v2.0.3...v2.0.4) (2021-09-23)
+
+
+### Documentation
+
+* Keep the API doc up-to-date ([#193](https://www.github.com/googleapis/java-retail/issues/193)) ([c5570be](https://www.github.com/googleapis/java-retail/commit/c5570bee6912cfe59d93aae069cf6c0a8e3ef199))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.3.0 ([#211](https://www.github.com/googleapis/java-retail/issues/211)) ([029663e](https://www.github.com/googleapis/java-retail/commit/029663eae531dffb3dbf563bc84f5413ba3dcc4d))
+
 ### [2.0.3](https://www.github.com/googleapis/java-retail/compare/v2.0.2...v2.0.3) (2021-09-14)
 
 
