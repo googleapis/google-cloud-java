@@ -1,5 +1,12 @@
 # Changelog
 
+### [2.0.6](https://www.github.com/googleapis/java-websecurityscanner/compare/v2.0.5...v2.0.6) (2021-09-24)
+
+
+### Dependencies
+
+* update dependency joda-time:joda-time to v2.10.11 ([#567](https://www.github.com/googleapis/java-websecurityscanner/issues/567)) ([4018c5a](https://www.github.com/googleapis/java-websecurityscanner/commit/4018c5a6415c936e2d73076e918d5d9c893d2826))
+
 ### [2.0.5](https://www.github.com/googleapis/java-websecurityscanner/compare/v2.0.4...v2.0.5) (2021-09-22)
 
 
