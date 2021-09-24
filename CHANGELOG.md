@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.3.0](https://www.github.com/googleapis/java-bigquerystorage/compare/v2.2.1...v2.3.0) (2021-09-24)
+
+
+### Features
+
+* writeapi v1 manual client lib ([#1323](https://www.github.com/googleapis/java-bigquerystorage/issues/1323)) ([baf8fb3](https://www.github.com/googleapis/java-bigquerystorage/commit/baf8fb3adc2e5135b71dd918ab30b619493a1b83))
+
 ### [2.2.1](https://www.github.com/googleapis/java-bigquerystorage/compare/v2.2.0...v2.2.1) (2021-09-23)
 
 
