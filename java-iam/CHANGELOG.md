@@ -1,5 +1,14 @@
 # Changelog
 
+### [1.1.3](https://www.github.com/googleapis/java-iam/compare/v1.1.2...v1.1.3) (2021-09-24)
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.3.0 ([#197](https://www.github.com/googleapis/java-iam/issues/197)) ([8594f40](https://www.github.com/googleapis/java-iam/commit/8594f4074be618506a553ba4436a6fc4fd9993ff))
+* update dependency io.grpc:grpc-protobuf to v1.41.0 ([#198](https://www.github.com/googleapis/java-iam/issues/198)) ([7862c1d](https://www.github.com/googleapis/java-iam/commit/7862c1de5798ed933279521e19cb2b4c6181871b))
+* update dependency io.grpc:grpc-stub to v1.41.0 ([#199](https://www.github.com/googleapis/java-iam/issues/199)) ([bf30e86](https://www.github.com/googleapis/java-iam/commit/bf30e86f21729716838e38a6527c16b2b09bc600))
+
 ### [1.1.2](https://www.github.com/googleapis/java-iam/compare/v1.1.1...v1.1.2) (2021-09-15)
 
 
