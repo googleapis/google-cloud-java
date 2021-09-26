@@ -41,6 +41,7 @@
       <groupId>com.google.cloud</groupId>
       <artifactId>google-cloud-logging</artifactId>
     </dependency>
+    
     <!-- [START_EXCLUDE] -->
     <dependency>
       <groupId>junit</groupId>
