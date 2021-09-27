@@ -1,5 +1,19 @@
 # Changelog
 
+## [0.3.0](https://www.github.com/googleapis/java-gke-connect-gateway/compare/v0.2.2...v0.3.0) (2021-09-27)
+
+
+### Features
+
+* Remove use of deprecated gradle command in java README ([#1196](https://www.github.com/googleapis/java-gke-connect-gateway/issues/1196)) ([#53](https://www.github.com/googleapis/java-gke-connect-gateway/issues/53)) ([e176976](https://www.github.com/googleapis/java-gke-connect-gateway/commit/e1769769899caf818ab959322180bb3d6d9d3075))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.2.0 ([#56](https://www.github.com/googleapis/java-gke-connect-gateway/issues/56)) ([9c4edbc](https://www.github.com/googleapis/java-gke-connect-gateway/commit/9c4edbcd43aa708b0d32dccdf848eaf56ec1d65c))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.2.1 ([#64](https://www.github.com/googleapis/java-gke-connect-gateway/issues/64)) ([816290c](https://www.github.com/googleapis/java-gke-connect-gateway/commit/816290cd4e33a78944dff6e386a19ca03dd146bb))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.3.0 ([#68](https://www.github.com/googleapis/java-gke-connect-gateway/issues/68)) ([ea6916b](https://www.github.com/googleapis/java-gke-connect-gateway/commit/ea6916b56719d4c8c51403d34ade383841101ee8))
+
 ### [0.2.2](https://www.github.com/googleapis/java-gke-connect-gateway/compare/v0.2.1...v0.2.2) (2021-08-23)
 
 
