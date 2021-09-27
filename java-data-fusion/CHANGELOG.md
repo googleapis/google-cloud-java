@@ -1,5 +1,19 @@
 # Changelog
 
+## [0.3.0](https://www.github.com/googleapis/java-data-fusion/compare/v0.2.1...v0.3.0) (2021-09-24)
+
+
+### Features
+
+* Remove use of deprecated gradle command in java README ([#1196](https://www.github.com/googleapis/java-data-fusion/issues/1196)) ([#45](https://www.github.com/googleapis/java-data-fusion/issues/45)) ([0144525](https://www.github.com/googleapis/java-data-fusion/commit/01445257a46e35c1efbc49c363a499cfd9fefc78))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.2.0 ([#48](https://www.github.com/googleapis/java-data-fusion/issues/48)) ([64e9e96](https://www.github.com/googleapis/java-data-fusion/commit/64e9e96dedb29462ec303df5b7e2d09068ccc462))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.2.1 ([#56](https://www.github.com/googleapis/java-data-fusion/issues/56)) ([c6aed09](https://www.github.com/googleapis/java-data-fusion/commit/c6aed09c8a2fc27620d89bbc42ca53942da66aef))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.3.0 ([#60](https://www.github.com/googleapis/java-data-fusion/issues/60)) ([0f8f47a](https://www.github.com/googleapis/java-data-fusion/commit/0f8f47ac59b53840144f3f89abeffec6fb7092f2))
+
 ### [0.2.1](https://www.github.com/googleapis/java-data-fusion/compare/v0.2.0...v0.2.1) (2021-08-23)
 
 
