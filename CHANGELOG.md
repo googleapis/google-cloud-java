@@ -1,5 +1,24 @@
 # Changelog
 
+## [3.2.0](https://www.github.com/googleapis/java-logging/compare/v3.1.2...v3.2.0) (2021-09-27)
+
+
+### Features
+
+* Add a sample snippet for use of the tailLogEntries API ([8115888](https://www.github.com/googleapis/java-logging/commit/81158885911e6c150fa04053fc41f95640329548))
+* add support for tailLogEntry API ([5a7845a](https://www.github.com/googleapis/java-logging/commit/5a7845a8c6476ca2d80e6fffdcb2f5f061f6260b))
+
+
+### Bug Fixes
+
+* add space to fix embedding exclusion in docs ([#615](https://www.github.com/googleapis/java-logging/issues/615)) ([9d70b96](https://www.github.com/googleapis/java-logging/commit/9d70b96914ae6217cbe58ab1af93e1d5dfe67ce1))
+* fix samples region tags and test flakiness ([#680](https://www.github.com/googleapis/java-logging/issues/680)) ([53481bd](https://www.github.com/googleapis/java-logging/commit/53481bde1e455037cd8102bc1b404ea2c491c235))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.3.0 ([#681](https://www.github.com/googleapis/java-logging/issues/681)) ([9be4047](https://www.github.com/googleapis/java-logging/commit/9be4047f5631c824e3f07cfc8c21211168bd51d4))
+
 ### [3.1.2](https://www.github.com/googleapis/java-logging/compare/v3.1.1...v3.1.2) (2021-09-16)
 
 
