@@ -124,11 +124,11 @@ use this Cloud Error Reporting Client Library.
 
 ## Samples
 
-Samples are in the [`samples/`](https://github.com/googleapis/java-errorreporting/tree/master/samples) directory.
+Samples are in the [`samples/`](https://github.com/googleapis/java-errorreporting/tree/main/samples) directory.
 
 | Sample                      | Source Code                       | Try it |
 | --------------------------- | --------------------------------- | ------ |
-| Quick Start | [source code](https://github.com/googleapis/java-errorreporting/blob/master/samples/snippets/src/main/java/com/example/errorreporting/QuickStart.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-errorreporting&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/errorreporting/QuickStart.java) |
+| Quick Start | [source code](https://github.com/googleapis/java-errorreporting/blob/main/samples/snippets/src/main/java/com/example/errorreporting/QuickStart.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-errorreporting&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/errorreporting/QuickStart.java) |
 
 
 
@@ -244,10 +244,10 @@ Java is a registered trademark of Oracle and/or its affiliates.
 [developer-console]: https://console.developers.google.com/
 [create-project]: https://cloud.google.com/resource-manager/docs/creating-managing-projects
 [cloud-sdk]: https://cloud.google.com/sdk/
-[troubleshooting]: https://github.com/googleapis/google-cloud-common/blob/master/troubleshooting/readme.md#troubleshooting
-[contributing]: https://github.com/googleapis/java-errorreporting/blob/master/CONTRIBUTING.md
-[code-of-conduct]: https://github.com/googleapis/java-errorreporting/blob/master/CODE_OF_CONDUCT.md#contributor-code-of-conduct
-[license]: https://github.com/googleapis/java-errorreporting/blob/master/LICENSE
+[troubleshooting]: https://github.com/googleapis/google-cloud-common/blob/main/troubleshooting/readme.md#troubleshooting
+[contributing]: https://github.com/googleapis/java-errorreporting/blob/main/CONTRIBUTING.md
+[code-of-conduct]: https://github.com/googleapis/java-errorreporting/blob/main/CODE_OF_CONDUCT.md#contributor-code-of-conduct
+[license]: https://github.com/googleapis/java-errorreporting/blob/main/LICENSE
 
 [enable-api]: https://console.cloud.google.com/flows/enableapi?apiid=clouderrorreporting.googleapis.com
 [libraries-bom]: https://github.com/GoogleCloudPlatform/cloud-opensource-java/wiki/The-Google-Cloud-Platform-Libraries-BOM
