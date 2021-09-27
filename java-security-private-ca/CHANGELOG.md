@@ -1,5 +1,17 @@
 # Changelog
 
+### [2.1.2](https://www.github.com/googleapis/java-security-private-ca/compare/v2.1.1...v2.1.2) (2021-09-23)
+
+
+### Documentation
+
+* **samples:** added samples and tests for updating and monitoring CA ([#274](https://www.github.com/googleapis/java-security-private-ca/issues/274)) ([f9aba8b](https://www.github.com/googleapis/java-security-private-ca/commit/f9aba8bdce4d00c7b5bd7b6fd77c7758ba334da7))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.3.0 ([#283](https://www.github.com/googleapis/java-security-private-ca/issues/283)) ([ef0535f](https://www.github.com/googleapis/java-security-private-ca/commit/ef0535f6714cab18ca370335d77a55e5274be3e5))
+
 ### [2.1.1](https://www.github.com/googleapis/java-security-private-ca/compare/v2.1.0...v2.1.1) (2021-09-14)
 
 
