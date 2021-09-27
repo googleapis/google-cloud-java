@@ -1,5 +1,18 @@
 # Changelog
 
+## [0.122.0](https://www.github.com/googleapis/java-logging-logback/compare/v0.121.14...v0.122.0) (2021-09-27)
+
+
+### Features
+
+* add writeSynchronicity flag to appender configuration ([#542](https://www.github.com/googleapis/java-logging-logback/issues/542)) ([65ab6f8](https://www.github.com/googleapis/java-logging-logback/commit/65ab6f8dfbfe9f28538b905db58aadeae0182276))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-logging to v3.1.2 ([#543](https://www.github.com/googleapis/java-logging-logback/issues/543)) ([288a368](https://www.github.com/googleapis/java-logging-logback/commit/288a36884becc81ad5d79548162e401b6035b63b))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.3.0 ([#547](https://www.github.com/googleapis/java-logging-logback/issues/547)) ([1c745c3](https://www.github.com/googleapis/java-logging-logback/commit/1c745c34fc081d2b00d196ec8091b3d0ecab8937))
+
 ### [0.121.14](https://www.github.com/googleapis/java-logging-logback/compare/v0.121.13...v0.121.14) (2021-09-14)
 
 
