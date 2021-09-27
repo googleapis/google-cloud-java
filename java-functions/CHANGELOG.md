@@ -1,5 +1,17 @@
 # Changelog
 
+## [2.2.0](https://www.github.com/googleapis/java-functions/compare/v2.1.1...v2.2.0) (2021-09-27)
+
+
+### Features
+
+* add SecurityLevel option on HttpsTrigger ([#304](https://www.github.com/googleapis/java-functions/issues/304)) ([7141d40](https://www.github.com/googleapis/java-functions/commit/7141d405a8b0a6988dc751a4706f37f3fbe75119))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.3.0 ([#308](https://www.github.com/googleapis/java-functions/issues/308)) ([4624393](https://www.github.com/googleapis/java-functions/commit/462439372a9b84976ee16c581f24f1cb994a7925))
+
 ### [2.1.1](https://www.github.com/googleapis/java-functions/compare/v2.1.0...v2.1.1) (2021-09-14)
 
 
