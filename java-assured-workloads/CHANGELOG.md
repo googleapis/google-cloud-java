@@ -1,5 +1,17 @@
 # Changelog
 
+## [0.7.0](https://www.github.com/googleapis/java-assured-workloads/compare/v0.6.0...v0.7.0) (2021-09-27)
+
+
+### Features
+
+* assuredworkloads v1 public protos ([#327](https://www.github.com/googleapis/java-assured-workloads/issues/327)) ([8367a63](https://www.github.com/googleapis/java-assured-workloads/commit/8367a63846b7b98654b00c29dcd64d7435fcfd39))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.3.0 ([#331](https://www.github.com/googleapis/java-assured-workloads/issues/331)) ([f9053ee](https://www.github.com/googleapis/java-assured-workloads/commit/f9053eec594249a5e3a74cfd51ac2e234cdca25a))
+
 ## [0.6.0](https://www.github.com/googleapis/java-assured-workloads/compare/v0.5.2...v0.6.0) (2021-09-14)
 
 
