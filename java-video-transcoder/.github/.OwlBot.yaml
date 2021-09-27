@@ -13,7 +13,7 @@
 # limitations under the License.
 
 docker:
-  image: "gcr.io/repo-automation-bots/owlbot-java:latest"
+  image: "gcr.io/cloud-devrel-public-resources/owlbot-java:latest"
 
 deep-remove-regex:
 - "/grpc-google-.*/src"
