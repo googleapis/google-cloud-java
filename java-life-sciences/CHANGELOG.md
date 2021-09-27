@@ -1,5 +1,19 @@
 # Changelog
 
+## [0.3.0](https://www.github.com/googleapis/java-life-sciences/compare/v0.2.2...v0.3.0) (2021-09-27)
+
+
+### Features
+
+* Remove use of deprecated gradle command in java README ([#1196](https://www.github.com/googleapis/java-life-sciences/issues/1196)) ([#57](https://www.github.com/googleapis/java-life-sciences/issues/57)) ([3a9f8ae](https://www.github.com/googleapis/java-life-sciences/commit/3a9f8ae62a250d80a124c02eb88d4b46e36abfea))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.2.0 ([#60](https://www.github.com/googleapis/java-life-sciences/issues/60)) ([7247e57](https://www.github.com/googleapis/java-life-sciences/commit/7247e5738c9f126c088e12fd3a1b107efd849dbb))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.2.1 ([#69](https://www.github.com/googleapis/java-life-sciences/issues/69)) ([7c723fa](https://www.github.com/googleapis/java-life-sciences/commit/7c723fa88e109383cd43cdcb49b2a6844d8ebae3))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.3.0 ([#73](https://www.github.com/googleapis/java-life-sciences/issues/73)) ([95f64ec](https://www.github.com/googleapis/java-life-sciences/commit/95f64ec7f3d37c7a83039231e4f0dd4288afacba))
+
 ### [0.2.2](https://www.github.com/googleapis/java-life-sciences/compare/v0.2.1...v0.2.2) (2021-08-23)
 
 
