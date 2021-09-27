@@ -1,5 +1,19 @@
 # Changelog
 
+## [0.2.0](https://www.github.com/googleapis/java-storage-transfer/compare/v0.1.1...v0.2.0) (2021-09-24)
+
+
+### Features
+
+* Remove use of deprecated gradle command in java README ([#1196](https://www.github.com/googleapis/java-storage-transfer/issues/1196)) ([#22](https://www.github.com/googleapis/java-storage-transfer/issues/22)) ([d54ac8d](https://www.github.com/googleapis/java-storage-transfer/commit/d54ac8d1cedbcaa0e1b6bbbe22bc59294c11a2b3))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.2.0 ([#25](https://www.github.com/googleapis/java-storage-transfer/issues/25)) ([9a32379](https://www.github.com/googleapis/java-storage-transfer/commit/9a32379cde1b8afa2dc7664a3864c60d86751a26))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.2.1 ([#34](https://www.github.com/googleapis/java-storage-transfer/issues/34)) ([bb6b23f](https://www.github.com/googleapis/java-storage-transfer/commit/bb6b23f85688735fb6d9bc360696b8bd58e8f648))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.3.0 ([#39](https://www.github.com/googleapis/java-storage-transfer/issues/39)) ([4c5b527](https://www.github.com/googleapis/java-storage-transfer/commit/4c5b5271d25e6eac46a8be72f2cc8c86db9fb0c5))
+
 ### [0.1.1](https://www.github.com/googleapis/java-storage-transfer/compare/v0.1.0...v0.1.1) (2021-08-23)
 
 
