@@ -1,5 +1,25 @@
 # Changelog
 
+## [2.2.0](https://www.github.com/googleapis/java-recaptchaenterprise/compare/v2.1.1...v2.2.0) (2021-09-27)
+
+
+### Features
+
+* add GetMetrics and MigrateKey methods to reCAPTCHA enterprise API ([#574](https://www.github.com/googleapis/java-recaptchaenterprise/issues/574)) ([aba39fa](https://www.github.com/googleapis/java-recaptchaenterprise/commit/aba39fa1937e71113444d2e1bb732f2f8da21ea8))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.3.0 ([#579](https://www.github.com/googleapis/java-recaptchaenterprise/issues/579)) ([176a5d9](https://www.github.com/googleapis/java-recaptchaenterprise/commit/176a5d939e00856c595c466dda02919c9e6ef48a))
+* update dependency com.google.guava:guava to v31 ([#587](https://www.github.com/googleapis/java-recaptchaenterprise/issues/587)) ([6677469](https://www.github.com/googleapis/java-recaptchaenterprise/commit/6677469def8904183d0b9a6ad5844dc9dd2b0c4b))
+* update dependency io.github.bonigarcia:webdrivermanager to v5.0.3 ([#576](https://www.github.com/googleapis/java-recaptchaenterprise/issues/576)) ([d22504e](https://www.github.com/googleapis/java-recaptchaenterprise/commit/d22504e066ea7929ed2e6df179e0c54d7731f31d))
+* update dependency net.bytebuddy:byte-buddy to v1.11.16 ([#575](https://www.github.com/googleapis/java-recaptchaenterprise/issues/575)) ([59a56cd](https://www.github.com/googleapis/java-recaptchaenterprise/commit/59a56cdae4da8672cd57c6cec85cc5414accc123))
+* update dependency net.bytebuddy:byte-buddy to v1.11.17 ([#580](https://www.github.com/googleapis/java-recaptchaenterprise/issues/580)) ([0c003e3](https://www.github.com/googleapis/java-recaptchaenterprise/commit/0c003e3e697e7526c3d9752d1685a09be27c9ab6))
+* update dependency net.bytebuddy:byte-buddy to v1.11.18 ([#581](https://www.github.com/googleapis/java-recaptchaenterprise/issues/581)) ([e37a425](https://www.github.com/googleapis/java-recaptchaenterprise/commit/e37a425bbe1be087f668931301baf897db2b7efd))
+* update dependency org.springframework.boot:spring-boot-starter-test to v2.5.5 ([#583](https://www.github.com/googleapis/java-recaptchaenterprise/issues/583)) ([4814dac](https://www.github.com/googleapis/java-recaptchaenterprise/commit/4814dac71cbe71209c178590bac175254c8e64f6))
+* update dependency org.springframework.boot:spring-boot-starter-thymeleaf to v2.5.5 ([#584](https://www.github.com/googleapis/java-recaptchaenterprise/issues/584)) ([558d8d1](https://www.github.com/googleapis/java-recaptchaenterprise/commit/558d8d11f04a847c1fdb22949fa027e408dabb19))
+* update dependency org.springframework.boot:spring-boot-starter-web to v2.5.5 ([#582](https://www.github.com/googleapis/java-recaptchaenterprise/issues/582)) ([d57c343](https://www.github.com/googleapis/java-recaptchaenterprise/commit/d57c3436d30264eb69c0129b362b18b8396528c9))
+
 ### [2.1.1](https://www.github.com/googleapis/java-recaptchaenterprise/compare/v2.1.0...v2.1.1) (2021-09-14)
 
 
