@@ -1,5 +1,17 @@
 # Changelog
 
+## [2.2.0](https://www.github.com/googleapis/java-container/compare/v2.1.1...v2.2.0) (2021-09-24)
+
+
+### Features
+
+* added a flag to enable/disable gvnic on a node pool ([#577](https://www.github.com/googleapis/java-container/issues/577)) ([f2cc312](https://www.github.com/googleapis/java-container/commit/f2cc3123232d834daeee05bbe782488a4c71b9a5))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.3.0 ([#581](https://www.github.com/googleapis/java-container/issues/581)) ([28d3a4a](https://www.github.com/googleapis/java-container/commit/28d3a4a0931730765224e7850e45ec5172edfdd1))
+
 ### [2.1.1](https://www.github.com/googleapis/java-container/compare/v2.1.0...v2.1.1) (2021-09-14)
 
 
