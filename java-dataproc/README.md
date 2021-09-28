@@ -103,16 +103,16 @@ use this Dataproc Client Library.
 
 ## Samples
 
-Samples are in the [`samples/`](https://github.com/googleapis/java-dataproc/tree/master/samples) directory.
+Samples are in the [`samples/`](https://github.com/googleapis/java-dataproc/tree/main/samples) directory.
 
 | Sample                      | Source Code                       | Try it |
 | --------------------------- | --------------------------------- | ------ |
-| Create Cluster | [source code](https://github.com/googleapis/java-dataproc/blob/master/samples/snippets/src/main/java/CreateCluster.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-dataproc&page=editor&open_in_editor=samples/snippets/src/main/java/CreateCluster.java) |
-| Create Cluster With Autoscaling | [source code](https://github.com/googleapis/java-dataproc/blob/master/samples/snippets/src/main/java/CreateClusterWithAutoscaling.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-dataproc&page=editor&open_in_editor=samples/snippets/src/main/java/CreateClusterWithAutoscaling.java) |
-| Instantiate Inline Workflow Template | [source code](https://github.com/googleapis/java-dataproc/blob/master/samples/snippets/src/main/java/InstantiateInlineWorkflowTemplate.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-dataproc&page=editor&open_in_editor=samples/snippets/src/main/java/InstantiateInlineWorkflowTemplate.java) |
-| Quickstart | [source code](https://github.com/googleapis/java-dataproc/blob/master/samples/snippets/src/main/java/Quickstart.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-dataproc&page=editor&open_in_editor=samples/snippets/src/main/java/Quickstart.java) |
-| Submit Hadoop Fs Job | [source code](https://github.com/googleapis/java-dataproc/blob/master/samples/snippets/src/main/java/SubmitHadoopFsJob.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-dataproc&page=editor&open_in_editor=samples/snippets/src/main/java/SubmitHadoopFsJob.java) |
-| Submit Job | [source code](https://github.com/googleapis/java-dataproc/blob/master/samples/snippets/src/main/java/SubmitJob.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-dataproc&page=editor&open_in_editor=samples/snippets/src/main/java/SubmitJob.java) |
+| Create Cluster | [source code](https://github.com/googleapis/java-dataproc/blob/main/samples/snippets/src/main/java/CreateCluster.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-dataproc&page=editor&open_in_editor=samples/snippets/src/main/java/CreateCluster.java) |
+| Create Cluster With Autoscaling | [source code](https://github.com/googleapis/java-dataproc/blob/main/samples/snippets/src/main/java/CreateClusterWithAutoscaling.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-dataproc&page=editor&open_in_editor=samples/snippets/src/main/java/CreateClusterWithAutoscaling.java) |
+| Instantiate Inline Workflow Template | [source code](https://github.com/googleapis/java-dataproc/blob/main/samples/snippets/src/main/java/InstantiateInlineWorkflowTemplate.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-dataproc&page=editor&open_in_editor=samples/snippets/src/main/java/InstantiateInlineWorkflowTemplate.java) |
+| Quickstart | [source code](https://github.com/googleapis/java-dataproc/blob/main/samples/snippets/src/main/java/Quickstart.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-dataproc&page=editor&open_in_editor=samples/snippets/src/main/java/Quickstart.java) |
+| Submit Hadoop Fs Job | [source code](https://github.com/googleapis/java-dataproc/blob/main/samples/snippets/src/main/java/SubmitHadoopFsJob.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-dataproc&page=editor&open_in_editor=samples/snippets/src/main/java/SubmitHadoopFsJob.java) |
+| Submit Job | [source code](https://github.com/googleapis/java-dataproc/blob/main/samples/snippets/src/main/java/SubmitJob.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-dataproc&page=editor&open_in_editor=samples/snippets/src/main/java/SubmitJob.java) |
 
 
 
@@ -225,10 +225,10 @@ Java is a registered trademark of Oracle and/or its affiliates.
 [developer-console]: https://console.developers.google.com/
 [create-project]: https://cloud.google.com/resource-manager/docs/creating-managing-projects
 [cloud-sdk]: https://cloud.google.com/sdk/
-[troubleshooting]: https://github.com/googleapis/google-cloud-common/blob/master/troubleshooting/readme.md#troubleshooting
-[contributing]: https://github.com/googleapis/java-dataproc/blob/master/CONTRIBUTING.md
-[code-of-conduct]: https://github.com/googleapis/java-dataproc/blob/master/CODE_OF_CONDUCT.md#contributor-code-of-conduct
-[license]: https://github.com/googleapis/java-dataproc/blob/master/LICENSE
+[troubleshooting]: https://github.com/googleapis/google-cloud-common/blob/main/troubleshooting/readme.md#troubleshooting
+[contributing]: https://github.com/googleapis/java-dataproc/blob/main/CONTRIBUTING.md
+[code-of-conduct]: https://github.com/googleapis/java-dataproc/blob/main/CODE_OF_CONDUCT.md#contributor-code-of-conduct
+[license]: https://github.com/googleapis/java-dataproc/blob/main/LICENSE
 [enable-billing]: https://cloud.google.com/apis/docs/getting-started#enabling_billing
 [enable-api]: https://console.cloud.google.com/flows/enableapi?apiid=dataproc.googleapis.com
 [libraries-bom]: https://github.com/GoogleCloudPlatform/cloud-opensource-java/wiki/The-Google-Cloud-Platform-Libraries-BOM
