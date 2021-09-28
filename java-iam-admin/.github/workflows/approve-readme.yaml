@@ -1,0 +1,54 @@
+on:
+  pull_request:
+name: auto-merge-readme
+jobs:
+  approve:
+    runs-on: ubuntu-latest
+    if: github.repository_owner == 'googleapis' && github.head_ref == 'autosynth-readme'
+    steps:
+      - uses: actions/github-script@v3
+        with:
+          github-token: ${{secrets.YOSHI_APPROVER_TOKEN}}
+          script: |
+            // only approve PRs from yoshi-automation
+            if (context.payload.pull_request.user.login !== "yoshi-automation") {
+              return;
+            }
+
+            // only approve PRs like "chore: release <release version>"
+            if (!context.payload.pull_request.title === "chore: regenerate README") {
+              return;
+            }
+
+            // only approve PRs with README.md and synth.metadata changes
+            const files = new Set(
+              (
+                await github.paginate(
+                  github.pulls.listFiles.endpoint({
+                    owner: context.repo.owner,
+                    repo: context.repo.repo,
+                    pull_number: context.payload.pull_request.number,
+                  })
+                )
+              ).map(file => file.filename)
+            );
+            if (files.size != 2 || !files.has("README.md") || !files.has(".github/readme/synth.metadata/synth.metadata")) {
+              return;
+            }
+
+            // approve README regeneration PR
+            await github.pulls.createReview({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: 'Rubber stamped PR!',
+              pull_number: context.payload.pull_request.number,
+              event: 'APPROVE'
+            });
+
+            // attach automerge label
+            await github.issues.addLabels({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: context.payload.pull_request.number,
+              labels: ['automerge']
+            });
