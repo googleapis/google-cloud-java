@@ -1,5 +1,21 @@
 # Changelog
 
+## [0.2.0](https://www.github.com/googleapis/java-private-catalog/compare/v0.1.2...v0.2.0) (2021-09-27)
+
+
+### Features
+
+* Remove use of deprecated gradle command in java README ([#1196](https://www.github.com/googleapis/java-private-catalog/issues/1196)) ([#58](https://www.github.com/googleapis/java-private-catalog/issues/58)) ([fdd90c6](https://www.github.com/googleapis/java-private-catalog/commit/fdd90c67f1dd06745bd469b86ae982dc75117cae))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.0.1 ([#50](https://www.github.com/googleapis/java-private-catalog/issues/50)) ([2be4251](https://www.github.com/googleapis/java-private-catalog/commit/2be4251fc2b2b577b1848ff5d7cdcdb11f091385))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.1.0 ([#54](https://www.github.com/googleapis/java-private-catalog/issues/54)) ([21b1529](https://www.github.com/googleapis/java-private-catalog/commit/21b1529ed96d010594985028a62e17e6bef5b8fe))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.2.0 ([#60](https://www.github.com/googleapis/java-private-catalog/issues/60)) ([64e5004](https://www.github.com/googleapis/java-private-catalog/commit/64e500491a1b16f0dc9f696b2e4aa53f95804ab3))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.2.1 ([#68](https://www.github.com/googleapis/java-private-catalog/issues/68)) ([caae956](https://www.github.com/googleapis/java-private-catalog/commit/caae9562c00060c3487d720f16f51bd9f8f6f4cc))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.3.0 ([#72](https://www.github.com/googleapis/java-private-catalog/issues/72)) ([b6fff74](https://www.github.com/googleapis/java-private-catalog/commit/b6fff74c5960e5f3b826fd0352fea3d7f1d96e9f))
+
 ### [0.1.2](https://www.github.com/googleapis/java-private-catalog/compare/v0.1.1...v0.1.2) (2021-08-10)
 
 
