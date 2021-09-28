@@ -1,5 +1,19 @@
 # Changelog
 
+## [0.3.0](https://www.github.com/googleapis/java-dataflow/compare/v0.2.2...v0.3.0) (2021-09-24)
+
+
+### Features
+
+* Remove use of deprecated gradle command in java README ([#1196](https://www.github.com/googleapis/java-dataflow/issues/1196)) ([#47](https://www.github.com/googleapis/java-dataflow/issues/47)) ([e964024](https://www.github.com/googleapis/java-dataflow/commit/e96402449684e7cc0f555b62e4ea669cfeac9ab7))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.2.0 ([#50](https://www.github.com/googleapis/java-dataflow/issues/50)) ([69e2e57](https://www.github.com/googleapis/java-dataflow/commit/69e2e5700d6ac5ba52db308daeac2488cd7abe8a))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.2.1 ([#59](https://www.github.com/googleapis/java-dataflow/issues/59)) ([0226a2e](https://www.github.com/googleapis/java-dataflow/commit/0226a2efe859e8938f67ee190b610e6811a3990f))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.3.0 ([#63](https://www.github.com/googleapis/java-dataflow/issues/63)) ([452c8cb](https://www.github.com/googleapis/java-dataflow/commit/452c8cb55bab436735e16c243b63eb50351245ad))
+
 ### [0.2.2](https://www.github.com/googleapis/java-dataflow/compare/v0.2.1...v0.2.2) (2021-08-23)
 
 
