@@ -1,7 +1,7 @@
 on:
   push:
     branches:
-    - master
+    - main
   pull_request:
 name: ci
 jobs:
@@ -9,14 +9,15 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        java: [8, 11]
+        java: [8, 11, 17]
     steps:
     - uses: actions/checkout@v2
     - uses: stCarolas/setup-maven@v4
       with:
         maven-version: 3.8.1
-    - uses: actions/setup-java@v1
+    - uses: actions/setup-java@v2
       with:
+        distribution: zulu
         java-version: ${{matrix.java}}
     - run: java -version
     - run: .kokoro/build.sh
@@ -29,8 +30,9 @@ jobs:
     - uses: stCarolas/setup-maven@v4
       with:
         maven-version: 3.8.1
-    - uses: actions/setup-java@v1
+    - uses: actions/setup-java@v2
       with:
+        distribution: zulu
         java-version: 8
     - run: java -version
     - run: .kokoro/build.bat
@@ -40,14 +42,15 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        java: [8, 11]
+        java: [8, 11, 17]
     steps:
     - uses: actions/checkout@v2
     - uses: stCarolas/setup-maven@v4
       with:
         maven-version: 3.8.1
-    - uses: actions/setup-java@v1
+    - uses: actions/setup-java@v2
       with:
+        distribution: zulu
         java-version: ${{matrix.java}}
     - run: java -version
     - run: .kokoro/dependencies.sh
@@ -58,8 +61,9 @@ jobs:
     - uses: stCarolas/setup-maven@v4
       with:
         maven-version: 3.8.1
-    - uses: actions/setup-java@v1
+    - uses: actions/setup-java@v2
       with:
+        distribution: zulu
         java-version: 8
     - run: java -version
     - run: .kokoro/build.sh
@@ -72,8 +76,9 @@ jobs:
     - uses: stCarolas/setup-maven@v4
       with:
         maven-version: 3.8.1
-    - uses: actions/setup-java@v1
+    - uses: actions/setup-java@v2
       with:
+        distribution: zulu
         java-version: 8
     - run: java -version
     - run: .kokoro/build.sh
