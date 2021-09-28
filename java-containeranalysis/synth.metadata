@@ -4,7 +4,7 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/java-containeranalysis.git",
-        "sha": "be44cd9fbe6353aba3e5c45515f4dc11a800f34a"
+        "sha": "e82b1fc8fd69b6fd8711fa0c576ceb2897f00c3a"
       }
     },
     {
@@ -19,7 +19,7 @@
       "git": {
         "name": "synthtool",
         "remote": "https://github.com/googleapis/synthtool.git",
-        "sha": "0752ff727a19a467dffed335d5e59303689cf0d1"
+        "sha": "a4be3384ccb92364795d981f2863f6986fcee620"
       }
     }
   ],
