@@ -19,25 +19,22 @@ import com.google.api.client.http.HttpResponse;
 import com.google.common.annotations.VisibleForTesting;
 import java.io.IOException;
 import java.io.InputStream;
-import java.security.MessageDigest;
 
 /** This class provides End-to-End Checksum API for http protocol. */
 class ChecksumEnforcingInputStream extends InputStream {
   private final InputStream delegate;
-  private final MessageDigest messageDigest;
+  private final EndToEndChecksumHandler endToEndChecksumHandler;
   private final String expectedChecksum;
 
-  ChecksumEnforcingInputStream(
-      InputStream originalInputStream, HttpResponse response, MessageDigest digest) {
-    this(originalInputStream, EndToEndChecksumHandler.getChecksumHeader(response), digest);
+  ChecksumEnforcingInputStream(InputStream originalInputStream, HttpResponse response) {
+    this(originalInputStream, EndToEndChecksumHandler.getChecksumHeader(response));
   }
 
   @VisibleForTesting
-  ChecksumEnforcingInputStream(
-      InputStream originalInputStream, String checksum, MessageDigest digest) {
+  ChecksumEnforcingInputStream(InputStream originalInputStream, String checksum) {
     delegate = originalInputStream;
     expectedChecksum = checksum;
-    messageDigest = digest;
+    endToEndChecksumHandler = new EndToEndChecksumHandler();
   }
 
   @Override
@@ -76,11 +73,10 @@ class ChecksumEnforcingInputStream extends InputStream {
     if (len <= 0) return 0;
     int i = delegate.read(b, off, len);
     if (i > 0) {
-      messageDigest.update(b, off, i);
+      endToEndChecksumHandler.update(b, off, i);
     } else {
       // no more payload to read. compute checksum and verify
-      if (!expectedChecksum.equalsIgnoreCase(
-          com.google.common.io.BaseEncoding.base16().encode(messageDigest.digest()))) {
+      if (!expectedChecksum.equalsIgnoreCase(endToEndChecksumHandler.hash())) {
         throw new IOException("possible memory corruption on payload detected");
       }
     }

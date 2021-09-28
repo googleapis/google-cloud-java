@@ -109,8 +109,7 @@ class RemoteRpc {
         }
         InputStream inputStream = httpResponse.getContent();
         return enableE2EChecksum && EndToEndChecksumHandler.hasChecksumHeader(httpResponse)
-            ? new ChecksumEnforcingInputStream(
-                inputStream, httpResponse, EndToEndChecksumHandler.getMessageDigestInstance())
+            ? new ChecksumEnforcingInputStream(inputStream, httpResponse)
             : inputStream;
       } catch (SocketTimeoutException e) {
         throw makeException(url, methodName, Code.DEADLINE_EXCEEDED, "Deadline exceeded", e);

@@ -21,7 +21,6 @@ import static org.junit.Assert.fail;
 
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
-import java.security.MessageDigest;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
@@ -29,8 +28,6 @@ import org.junit.runners.JUnit4;
 /** Test for {@link ChecksumEnforcingInputStream}. */
 @RunWith(JUnit4.class)
 public class ChecksumEnforcingInputStreamTest {
-  private final MessageDigest digest = EndToEndChecksumHandler.getMessageDigestInstance();
-
   public void test(int payloadSize) throws Exception {
     // read 1000 bytes at a time
     // Since checksum should be correct, do not expect IOException
@@ -40,7 +37,7 @@ public class ChecksumEnforcingInputStreamTest {
         // do nothing with the bytes read
       }
     } catch (IOException e) {
-      fail("checksum verification failed!");
+      fail("checksum verification failed! " + e.getMessage());
     }
   }
 
@@ -66,9 +63,7 @@ public class ChecksumEnforcingInputStreamTest {
     // Since checksum should be correct, do not expect IOException
     try (ChecksumEnforcingInputStream instance =
         new ChecksumEnforcingInputStream(
-            new ByteArrayInputStream("hello there".getBytes(UTF_8)),
-            "this checksum is invalid",
-            digest)) {
+            new ByteArrayInputStream("hello there".getBytes(UTF_8)), "this checksum is invalid")) {
       byte[] buf = new byte[1000];
       while (instance.read(buf, 0, 1000) != -1) {
         // do nothing with the bytes read
@@ -103,7 +98,6 @@ public class ChecksumEnforcingInputStreamTest {
     }
     byte[] bytes = payload.getBytes(UTF_8);
     String expectedChecksum = EndToEndChecksumHandler.computeChecksum(bytes);
-    return new ChecksumEnforcingInputStream(
-        new ByteArrayInputStream(bytes), expectedChecksum, digest);
+    return new ChecksumEnforcingInputStream(new ByteArrayInputStream(bytes), expectedChecksum);
   }
 }

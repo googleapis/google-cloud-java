@@ -16,8 +16,9 @@
 package com.google.datastore.v1.client;
 
 import com.google.api.client.http.HttpResponse;
-import java.security.MessageDigest;
-import java.security.NoSuchAlgorithmException;
+import com.google.common.hash.HashCode;
+import com.google.common.hash.Hasher;
+import com.google.common.hash.Hashing;
 
 /** This class provides End-to-End Checksum API for http protocol. */
 class EndToEndChecksumHandler {
@@ -25,22 +26,25 @@ class EndToEndChecksumHandler {
   static final String HTTP_REQUEST_CHECKSUM_HEADER = "x-request-checksum-348659783";
   /** The checksum http header on http responses */
   static final String HTTP_RESPONSE_CHECKSUM_HEADER = "x-response-checksum-348659783";
-  /** Algorithm used for checksum */
-  private static final String MD5 = "MD5";
+
+  final Hasher hasher = EndToEndChecksumHandler.getNewCrc32cHasher();
 
   /**
    * Create and return checksum as a string value for the input 'bytes'.
    *
    * @param bytes raw message for which the checksum is being computed
    * @return computed checksum as a hex string
-   * @throws RuntimeException if MD5 Algorithm is not found in the VM
    */
   static String computeChecksum(byte[] bytes) {
     if (bytes == null || (bytes.length == 0)) {
       return null;
     }
-    return com.google.common.io.BaseEncoding.base16()
-        .encode(getMessageDigestInstance().digest(bytes));
+    HashCode hc = getNewCrc32cHasher().putBytes(bytes).hash();
+    return hc.toString();
+  }
+
+  private static Hasher getNewCrc32cHasher() {
+    return Hashing.crc32c().newHasher();
   }
 
   /**
@@ -58,14 +62,6 @@ class EndToEndChecksumHandler {
         && checksum.equalsIgnoreCase(computeChecksum(bytes));
   }
 
-  static MessageDigest getMessageDigestInstance() {
-    try {
-      return MessageDigest.getInstance(MD5);
-    } catch (NoSuchAlgorithmException e) {
-      throw new RuntimeException("MD5 algorithm is not found when computing checksum!");
-    }
-  }
-
   static boolean hasChecksumHeader(HttpResponse response) {
     String checksum = getChecksumHeader(response);
     return checksum != null && !checksum.isEmpty();
@@ -73,5 +69,13 @@ class EndToEndChecksumHandler {
 
   static String getChecksumHeader(HttpResponse response) {
     return response.getHeaders().getFirstHeaderStringValue(HTTP_RESPONSE_CHECKSUM_HEADER);
+  }
+
+  void update(byte[] bytes, int off, int len) {
+    hasher.putBytes(bytes, off, len);
+  }
+
+  String hash() {
+    return hasher.hash().toString();
   }
 }
