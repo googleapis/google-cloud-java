@@ -1,5 +1,21 @@
 # Changelog
 
+## [0.3.0](https://www.github.com/googleapis/java-orchestration-airflow/compare/v0.2.0...v0.3.0) (2021-09-27)
+
+
+### Features
+
+* Remove use of deprecated gradle command in java README ([#1196](https://www.github.com/googleapis/java-orchestration-airflow/issues/1196)) ([#52](https://www.github.com/googleapis/java-orchestration-airflow/issues/52)) ([07be24b](https://www.github.com/googleapis/java-orchestration-airflow/commit/07be24bb8fb3e608ebb0e68a9e8dabd5f3c1516b))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.0.1 ([#44](https://www.github.com/googleapis/java-orchestration-airflow/issues/44)) ([8ef7989](https://www.github.com/googleapis/java-orchestration-airflow/commit/8ef7989e7748d303eabb3a25fcdaac18db40e140))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.1.0 ([#48](https://www.github.com/googleapis/java-orchestration-airflow/issues/48)) ([e409977](https://www.github.com/googleapis/java-orchestration-airflow/commit/e4099776be1c4ac2de1f9df65d6d993d6f90f263))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.2.0 ([#54](https://www.github.com/googleapis/java-orchestration-airflow/issues/54)) ([8f6cb55](https://www.github.com/googleapis/java-orchestration-airflow/commit/8f6cb550592c1ac919a23c157a89b058b28fc35b))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.2.1 ([#62](https://www.github.com/googleapis/java-orchestration-airflow/issues/62)) ([9db334c](https://www.github.com/googleapis/java-orchestration-airflow/commit/9db334c77faf7d497b4e062e7c7ad50ad49014fa))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.3.0 ([#66](https://www.github.com/googleapis/java-orchestration-airflow/issues/66)) ([a756614](https://www.github.com/googleapis/java-orchestration-airflow/commit/a756614bfc649a39345472ce2402eedb0a1477c7))
+
 ## [0.2.0](https://www.github.com/googleapis/java-orchestration-airflow/compare/v0.1.1...v0.2.0) (2021-08-10)
 
 
