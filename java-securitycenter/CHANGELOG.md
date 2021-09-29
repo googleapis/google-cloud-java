@@ -1,5 +1,12 @@
 # Changelog
 
+### [2.1.6](https://www.github.com/googleapis/java-securitycenter/compare/v2.1.5...v2.1.6) (2021-09-29)
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-pubsub to v1.114.5 ([#661](https://www.github.com/googleapis/java-securitycenter/issues/661)) ([a748606](https://www.github.com/googleapis/java-securitycenter/commit/a748606774b6f6fe17aeb39837c9b4661570cc05))
+
 ### [2.1.5](https://www.github.com/googleapis/java-securitycenter/compare/v2.1.4...v2.1.5) (2021-09-22)
 
 
