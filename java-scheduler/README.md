@@ -56,13 +56,13 @@ implementation 'com.google.cloud:google-cloud-scheduler'
 If you are using Gradle without BOM, add this to your dependencies
 
 ```Groovy
-implementation 'com.google.cloud:google-cloud-scheduler:2.1.4'
+implementation 'com.google.cloud:google-cloud-scheduler:2.1.5'
 ```
 
 If you are using SBT, add this to your dependencies
 
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-scheduler" % "2.1.4"
+libraryDependencies += "com.google.cloud" % "google-cloud-scheduler" % "2.1.5"
 ```
 
 ## Authentication
@@ -210,10 +210,10 @@ Java is a registered trademark of Oracle and/or its affiliates.
 [developer-console]: https://console.developers.google.com/
 [create-project]: https://cloud.google.com/resource-manager/docs/creating-managing-projects
 [cloud-sdk]: https://cloud.google.com/sdk/
-[troubleshooting]: https://github.com/googleapis/google-cloud-common/blob/master/troubleshooting/readme.md#troubleshooting
-[contributing]: https://github.com/googleapis/java-scheduler/blob/master/CONTRIBUTING.md
-[code-of-conduct]: https://github.com/googleapis/java-scheduler/blob/master/CODE_OF_CONDUCT.md#contributor-code-of-conduct
-[license]: https://github.com/googleapis/java-scheduler/blob/master/LICENSE
+[troubleshooting]: https://github.com/googleapis/google-cloud-common/blob/main/troubleshooting/readme.md#troubleshooting
+[contributing]: https://github.com/googleapis/java-scheduler/blob/main/CONTRIBUTING.md
+[code-of-conduct]: https://github.com/googleapis/java-scheduler/blob/main/CODE_OF_CONDUCT.md#contributor-code-of-conduct
+[license]: https://github.com/googleapis/java-scheduler/blob/main/LICENSE
 
 [enable-api]: https://console.cloud.google.com/flows/enableapi?apiid=cloudscheduler.googleapis.com
 [libraries-bom]: https://github.com/GoogleCloudPlatform/cloud-opensource-java/wiki/The-Google-Cloud-Platform-Libraries-BOM
