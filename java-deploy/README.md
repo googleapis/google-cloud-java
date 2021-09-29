@@ -1,6 +1,6 @@
 # Google Google Cloud Deploy Client for Java
 
-Java idiomatic client for [Google CLoud Deploy][product-docs].
+Java idiomatic client for [Google Cloud Deploy][product-docs].
 
 [![Maven][maven-version-image]][maven-version-link]
 ![Stability][stability-image]
@@ -24,6 +24,7 @@ If you are using Maven, add this to your pom.xml file:
   <artifactId>google-cloud-deploy</artifactId>
   <version>0.0.0</version>
 </dependency>
+
 ```
 
 If you are using Gradle without BOM, add this to your dependencies
@@ -44,14 +45,14 @@ See the [Authentication][authentication] section in the base directory's README.
 
 ## Authorization
 
-The client application making API calls must be granted [authorization scopes][auth-scopes] required for the desired Google CLoud Deploy APIs, and the authenticated principal must have the [IAM role(s)][predefined-iam-roles] required to access GCP resources using the Google CLoud Deploy API calls.
+The client application making API calls must be granted [authorization scopes][auth-scopes] required for the desired Google Cloud Deploy APIs, and the authenticated principal must have the [IAM role(s)][predefined-iam-roles] required to access GCP resources using the Google Cloud Deploy API calls.
 
 ## Getting Started
 
 ### Prerequisites
 
-You will need a [Google Cloud Platform Console][developer-console] project with the Google CLoud Deploy [API enabled][enable-api].
-You will need to [enable billing][enable-billing] to use Google Google CLoud Deploy.
+You will need a [Google Cloud Platform Console][developer-console] project with the Google Cloud Deploy [API enabled][enable-api].
+You will need to [enable billing][enable-billing] to use Google Google Cloud Deploy.
 [Follow these instructions][create-project] to get your project set up. You will also need to set up the local development environment by
 [installing the Google Cloud SDK][cloud-sdk] and running the following commands in command line:
 `gcloud auth login` and `gcloud config set project [YOUR PROJECT ID]`.
@@ -61,13 +62,13 @@ You will need to [enable billing][enable-billing] to use Google Google CLoud Dep
 You'll need to obtain the `google-cloud-deploy` library.  See the [Quickstart](#quickstart) section
 to add `google-cloud-deploy` as a dependency in your code.
 
-## About Google CLoud Deploy
+## About Google Cloud Deploy
 
 
-[Google CLoud Deploy][product-docs] is a service that automates delivery of your applications to a series of target environments in a defined sequence
+[Google Cloud Deploy][product-docs] is a service that automates delivery of your applications to a series of target environments in a defined sequence
 
-See the [Google CLoud Deploy client library docs][javadocs] to learn how to
-use this Google CLoud Deploy Client Library.
+See the [Google Cloud Deploy client library docs][javadocs] to learn how to
+use this Google Cloud Deploy Client Library.
 
 
 
@@ -80,7 +81,7 @@ To get help, follow the instructions in the [shared Troubleshooting document][tr
 
 ## Transport
 
-Google CLoud Deploy uses gRPC for the transport layer.
+Google Cloud Deploy uses gRPC for the transport layer.
 
 ## Supported Java Versions
 
@@ -191,7 +192,7 @@ Java is a registered trademark of Oracle and/or its affiliates.
 [code-of-conduct]: https://github.com/googleapis/java-deploy/blob/master/CODE_OF_CONDUCT.md#contributor-code-of-conduct
 [license]: https://github.com/googleapis/java-deploy/blob/master/LICENSE
 [enable-billing]: https://cloud.google.com/apis/docs/getting-started#enabling_billing
-[enable-api]: https://console.cloud.google.com/flows/enableapi?apiid=deploy.googleapis.com
+[enable-api]: https://console.cloud.google.com/flows/enableapi?apiid=clouddeploy.googleapis.com
 [libraries-bom]: https://github.com/GoogleCloudPlatform/cloud-opensource-java/wiki/The-Google-Cloud-Platform-Libraries-BOM
 [shell_img]: https://gstatic.com/cloudssh/images/open-btn.png
 
