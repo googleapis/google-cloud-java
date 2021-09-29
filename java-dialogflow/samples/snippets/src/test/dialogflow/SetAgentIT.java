@@ -20,7 +20,6 @@ import org.junit.Assert;
 import org.junit.Test;
 
 public class SetAgentIT {
-
   /*
    * We cannot test setAgent because Dialogflow ES can only have one agent
    * and if we create a agent it will delete the exisitng testing agent and
