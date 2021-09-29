@@ -40,6 +40,6 @@ jobs:
           title: 'chore: regenerate client table in README'
           message: 'chore: regenerate client table in README'
           branch: update-readme
-          primary: master
+          primary: main
           force: true
           git_dir: '.'

@@ -180,7 +180,7 @@ In cases where the library may expect a project ID explicitly, we provide a help
 `google-cloud-java` uses
 [https://github.com/googleapis/google-auth-library-java](https://github.com/googleapis/google-auth-library-java)
 to authenticate requests. `google-auth-library-java` supports a wide range of authentication types;
-see the project's [README](https://github.com/google/google-auth-library-java/blob/master/README.md)
+see the project's [README](https://github.com/google/google-auth-library-java/blob/main/README.md)
 and [javadoc](http://googleapis.dev/java/google-auth-library/latest/) for more
 details.
 
@@ -265,7 +265,7 @@ Credentials in the following locations (in order):
 
 ## Troubleshooting
 
-To get help, follow the instructions in the [Troubleshooting document](https://github.com/googleapis/google-cloud-java/blob/master/TROUBLESHOOTING.md).
+To get help, follow the instructions in the [Troubleshooting document](https://github.com/googleapis/google-cloud-java/blob/main/TROUBLESHOOTING.md).
 
 ## Configuring a Proxy
 
@@ -392,7 +392,7 @@ Thus, the following are not supported:
 - Android 
   - Consider [Firebase](https://firebase.google.com), which includes many of these APIs.
   - It is possible to use these libraries in many cases, although it is unsupported.
-    You can find examples, such as [this one](https://github.com/GoogleCloudPlatform/android-docs-samples/tree/master/speech/SpeechRecognitionClient),
+    You can find examples, such as [this one](https://github.com/GoogleCloudPlatform/android-docs-samples/tree/main/speech/SpeechRecognitionClient),
     in this [example repository](https://github.com/GoogleCloudPlatform/android-docs-samples) but consider the risks carefully before using these libraries in an application.
 - Raspberry Pi (since it runs on the ARM architecture)
 - Google App Engine Standard Java 7
@@ -479,7 +479,7 @@ runtime. However, Datastore, Storage, and Bigquery should work.
 
 Contributions to this library are always welcome and highly encouraged.
 
-See `google-cloud`'s [CONTRIBUTING] documentation and the [shared documentation](https://github.com/googleapis/google-cloud-common/blob/master/contributing/readme.md#how-to-contribute-to-gcloud) for more information on how to get started.
+See `google-cloud`'s [CONTRIBUTING] documentation and the [shared documentation](https://github.com/googleapis/google-cloud-common/blob/main/contributing/readme.md#how-to-contribute-to-gcloud) for more information on how to get started.
 
 Please note that this project is released with a Contributor Code of Conduct. By participating in this project you agree to abide by its terms. See [Code of Conduct][code-of-conduct] for more information.
 
@@ -495,10 +495,10 @@ Apache 2.0 - See [LICENSE] for more information.
 [alpha-stability]: https://img.shields.io/badge/stability-alpha-orange
 [alpha-description]: #alpha
 [google-api-java-client-services]: https://github.com/googleapis/google-api-java-client-services#supported-google-apis
-[CONTRIBUTING]:https://github.com/googleapis/google-cloud-java/blob/master/CONTRIBUTING.md
-[code-of-conduct]:https://github.com/googleapis/google-cloud-java/blob/master/CODE_OF_CONDUCT.md#contributor-code-of-conduct
-[LICENSE]: https://github.com/googleapis/google-cloud-java/blob/master/LICENSE
-[TESTING]: https://github.com/googleapis/google-cloud-java/blob/master/TESTING.md
+[CONTRIBUTING]:https://github.com/googleapis/google-cloud-java/blob/main/CONTRIBUTING.md
+[code-of-conduct]:https://github.com/googleapis/google-cloud-java/blob/main/CODE_OF_CONDUCT.md#contributor-code-of-conduct
+[LICENSE]: https://github.com/googleapis/google-cloud-java/blob/main/LICENSE
+[TESTING]: https://github.com/googleapis/google-cloud-java/blob/main/TESTING.md
 [cloud-platform]: https://cloud.google.com/
 [cloud-platform-docs]: https://cloud.google.com/docs/
 [client-lib-docs]: https://googleapis.dev/java/google-cloud-clients/latest/index.html
