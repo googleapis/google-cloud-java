@@ -44,9 +44,9 @@ Java 8 Windows | [![Kokoro CI](https://storage.googleapis.com/cloud-devrel-publi
 Java 11 | [![Kokoro CI](https://storage.googleapis.com/cloud-devrel-public/java/badges/java-core/java11.svg)](https://storage.googleapis.com/cloud-devrel-public/java/badges/java-core/java11.html)
 
 
-[contributing]: https://github.com/googleapis/java-core/blob/master/CONTRIBUTING.md
-[code-of-conduct]: https://github.com/googleapis/java-core/blob/master/CODE_OF_CONDUCT.md
-[license]: https://github.com/googleapis/java-core/blob/master/LICENSE
+[contributing]: https://github.com/googleapis/java-core/blob/main/CONTRIBUTING.md
+[code-of-conduct]: https://github.com/googleapis/java-core/blob/main/CODE_OF_CONDUCT.md
+[license]: https://github.com/googleapis/java-core/blob/main/LICENSE
 [semver]: http://semver.org/
 [cloud-platform]: https://cloud.google.com/
 [api-docs]: https://googleapis.dev/java/google-cloud-core/latest
