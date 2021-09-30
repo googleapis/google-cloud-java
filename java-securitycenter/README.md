@@ -61,13 +61,13 @@ implementation 'com.google.cloud:google-cloud-securitycenter'
 If you are using Gradle without BOM, add this to your dependencies
 
 ```Groovy
-implementation 'com.google.cloud:google-cloud-securitycenter:2.1.5'
+implementation 'com.google.cloud:google-cloud-securitycenter:2.1.6'
 ```
 
 If you are using SBT, add this to your dependencies
 
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-securitycenter" % "2.1.5"
+libraryDependencies += "com.google.cloud" % "google-cloud-securitycenter" % "2.1.6"
 ```
 
 ## Authentication
