@@ -10,6 +10,7 @@
   "repo": "googleapis/java-bigquerymigration",
   "repo_short": "java-bigquerymigration",
   "distribution_name": "com.google.cloud:google-cloud-bigquerymigration",
+  "codeowner_team": "@googleapis/api-bigquery",
   "api_id": "bigquerymigration.googleapis.com",
   "library_type": "GAPIC_AUTO",
   "requires_billing": true
