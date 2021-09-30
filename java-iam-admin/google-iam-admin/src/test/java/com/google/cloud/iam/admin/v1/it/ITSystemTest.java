@@ -16,18 +16,17 @@
 
 package com.google.cloud.iam.admin.v1.it;
 
-import com.google.cloud.iam.admin.v1.IAMClient;
-import com.google.iam.admin.v1.ProjectName;
-import com.google.iam.admin.v1.ServiceAccount;
-import org.junit.AfterClass;
-import org.junit.BeforeClass;
-import org.junit.Test;
-
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 import static org.junit.Assume.assumeNotNull;
 
+import com.google.cloud.iam.admin.v1.IAMClient;
+import com.google.iam.admin.v1.ProjectName;
+import com.google.iam.admin.v1.ServiceAccount;
 import java.io.IOException;
+import org.junit.AfterClass;
+import org.junit.BeforeClass;
+import org.junit.Test;
 
 public class ITSystemTest {
   private static IAMClient client;
@@ -48,7 +47,8 @@ public class ITSystemTest {
     assumeNotNull(PROJECT_ID);
 
     int count = 0;
-    for (ServiceAccount serviceAccount : client.listServiceAccounts(ProjectName.of(PROJECT_ID)).iterateAll()) {
+    for (ServiceAccount serviceAccount :
+        client.listServiceAccounts(ProjectName.of(PROJECT_ID)).iterateAll()) {
       assertEquals(PROJECT_ID, serviceAccount.getProjectId());
       count += 1;
     }
