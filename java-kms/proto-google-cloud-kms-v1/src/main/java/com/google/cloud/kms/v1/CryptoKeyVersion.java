@@ -453,6 +453,36 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
+     * RSAES-OAEP 2048 bit key with a SHA1 digest.
+     * </pre>
+     *
+     * <code>RSA_DECRYPT_OAEP_2048_SHA1 = 37;</code>
+     */
+    RSA_DECRYPT_OAEP_2048_SHA1(37),
+    /**
+     *
+     *
+     * <pre>
+     * RSAES-OAEP 3072 bit key with a SHA1 digest.
+     * </pre>
+     *
+     * <code>RSA_DECRYPT_OAEP_3072_SHA1 = 38;</code>
+     */
+    RSA_DECRYPT_OAEP_3072_SHA1(38),
+    /**
+     *
+     *
+     * <pre>
+     * RSAES-OAEP 4096 bit key with a SHA1 digest.
+     * </pre>
+     *
+     * <code>RSA_DECRYPT_OAEP_4096_SHA1 = 39;</code>
+     */
+    RSA_DECRYPT_OAEP_4096_SHA1(39),
+    /**
+     *
+     *
+     * <pre>
      * ECDSA on the NIST P-256 curve with a SHA256 digest.
      * </pre>
      *
@@ -647,6 +677,36 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
+     * RSAES-OAEP 2048 bit key with a SHA1 digest.
+     * </pre>
+     *
+     * <code>RSA_DECRYPT_OAEP_2048_SHA1 = 37;</code>
+     */
+    public static final int RSA_DECRYPT_OAEP_2048_SHA1_VALUE = 37;
+    /**
+     *
+     *
+     * <pre>
+     * RSAES-OAEP 3072 bit key with a SHA1 digest.
+     * </pre>
+     *
+     * <code>RSA_DECRYPT_OAEP_3072_SHA1 = 38;</code>
+     */
+    public static final int RSA_DECRYPT_OAEP_3072_SHA1_VALUE = 38;
+    /**
+     *
+     *
+     * <pre>
+     * RSAES-OAEP 4096 bit key with a SHA1 digest.
+     * </pre>
+     *
+     * <code>RSA_DECRYPT_OAEP_4096_SHA1 = 39;</code>
+     */
+    public static final int RSA_DECRYPT_OAEP_4096_SHA1_VALUE = 39;
+    /**
+     *
+     *
+     * <pre>
      * ECDSA on the NIST P-256 curve with a SHA256 digest.
      * </pre>
      *
@@ -747,6 +807,12 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
           return RSA_DECRYPT_OAEP_4096_SHA256;
         case 17:
           return RSA_DECRYPT_OAEP_4096_SHA512;
+        case 37:
+          return RSA_DECRYPT_OAEP_2048_SHA1;
+        case 38:
+          return RSA_DECRYPT_OAEP_3072_SHA1;
+        case 39:
+          return RSA_DECRYPT_OAEP_4096_SHA1;
         case 12:
           return EC_SIGN_P256_SHA256;
         case 13:
