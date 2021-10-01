@@ -35,6 +35,7 @@ import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
+import org.threeten.bp.LocalTime;
 
 @RunWith(JUnit4.class)
 public class JsonToProtoMessageTest {
@@ -277,6 +278,146 @@ public class JsonToProtoMessageTest {
                 }))
   };
 
+  private final TableFieldSchema TEST_INT =
+      TableFieldSchema.newBuilder()
+          .setType(TableFieldSchema.Type.INT64)
+          .setMode(TableFieldSchema.Mode.NULLABLE)
+          .setName("test_int")
+          .build();
+  private final TableFieldSchema TEST_STRING =
+      TableFieldSchema.newBuilder()
+          .setType(TableFieldSchema.Type.STRING)
+          .setMode(TableFieldSchema.Mode.REPEATED)
+          .setName("test_string")
+          .build();
+  private final TableFieldSchema TEST_BYTES =
+      TableFieldSchema.newBuilder()
+          .setType(TableFieldSchema.Type.BYTES)
+          .setMode(TableFieldSchema.Mode.REQUIRED)
+          .setName("test_bytes")
+          .build();
+  private final TableFieldSchema TEST_BOOL =
+      TableFieldSchema.newBuilder()
+          .setType(TableFieldSchema.Type.BOOL)
+          .setMode(TableFieldSchema.Mode.NULLABLE)
+          .setName("test_bool")
+          .build();
+  private final TableFieldSchema TEST_DOUBLE =
+      TableFieldSchema.newBuilder()
+          .setType(TableFieldSchema.Type.DOUBLE)
+          .setMode(TableFieldSchema.Mode.REPEATED)
+          .setName("test_double")
+          .build();
+  private final TableFieldSchema TEST_DATE =
+      TableFieldSchema.newBuilder()
+          .setType(TableFieldSchema.Type.DATE)
+          .setMode(TableFieldSchema.Mode.REQUIRED)
+          .setName("test_date")
+          .build();
+  private final TableFieldSchema TEST_DATETIME =
+      TableFieldSchema.newBuilder()
+          .setType(TableFieldSchema.Type.DATETIME)
+          .setMode(TableFieldSchema.Mode.NULLABLE)
+          .setName("test_datetime")
+          .build();
+  private final TableFieldSchema TEST_DATETIME_STR =
+      TableFieldSchema.newBuilder()
+          .setType(TableFieldSchema.Type.DATETIME)
+          .setMode(TableFieldSchema.Mode.REPEATED)
+          .setName("test_datetime_str")
+          .build();
+  private final TableFieldSchema COMPLEXLVL2 =
+      TableFieldSchema.newBuilder()
+          .setType(TableFieldSchema.Type.STRUCT)
+          .setMode(TableFieldSchema.Mode.REQUIRED)
+          .addFields(0, TEST_INT)
+          .setName("complex_lvl2")
+          .build();
+  private final TableFieldSchema COMPLEXLVL1 =
+      TableFieldSchema.newBuilder()
+          .setType(TableFieldSchema.Type.STRUCT)
+          .setMode(TableFieldSchema.Mode.REQUIRED)
+          .addFields(0, TEST_INT)
+          .addFields(1, COMPLEXLVL2)
+          .setName("complex_lvl1")
+          .build();
+  private final TableFieldSchema TEST_NUMERIC =
+      TableFieldSchema.newBuilder()
+          .setType(TableFieldSchema.Type.NUMERIC)
+          .setMode(TableFieldSchema.Mode.NULLABLE)
+          .setName("test_numeric")
+          .build();
+  private final TableFieldSchema TEST_NUMERIC_REPEATED =
+      TableFieldSchema.newBuilder()
+          .setType(TableFieldSchema.Type.NUMERIC)
+          .setMode(TableFieldSchema.Mode.REPEATED)
+          .setName("test_numeric_repeated")
+          .build();
+  private final TableFieldSchema TEST_GEO =
+      TableFieldSchema.newBuilder()
+          .setType(TableFieldSchema.Type.GEOGRAPHY)
+          .setMode(TableFieldSchema.Mode.NULLABLE)
+          .setName("test_geo")
+          .build();
+  private final TableFieldSchema TEST_TIMESTAMP =
+      TableFieldSchema.newBuilder()
+          .setType(TableFieldSchema.Type.TIMESTAMP)
+          .setMode(TableFieldSchema.Mode.NULLABLE)
+          .setName("test_timestamp")
+          .build();
+  private final TableFieldSchema TEST_TIME =
+      TableFieldSchema.newBuilder()
+          .setType(TableFieldSchema.Type.TIME)
+          .setMode(TableFieldSchema.Mode.NULLABLE)
+          .setName("test_time")
+          .build();
+  private final TableFieldSchema TEST_TIME_STR =
+      TableFieldSchema.newBuilder()
+          .setType(TableFieldSchema.Type.TIME)
+          .setMode(TableFieldSchema.Mode.NULLABLE)
+          .setName("test_time_str")
+          .build();
+  private final TableFieldSchema TEST_NUMERIC_STR =
+      TableFieldSchema.newBuilder()
+          .setType(TableFieldSchema.Type.NUMERIC)
+          .setMode(TableFieldSchema.Mode.NULLABLE)
+          .setName("test_numeric_str")
+          .build();
+  private final TableFieldSchema TEST_BIGNUMERIC =
+      TableFieldSchema.newBuilder()
+          .setType(TableFieldSchema.Type.NUMERIC)
+          .setMode(TableFieldSchema.Mode.NULLABLE)
+          .setName("test_bignumeric")
+          .build();
+  private final TableFieldSchema TEST_BIGNUMERIC_STR =
+      TableFieldSchema.newBuilder()
+          .setType(TableFieldSchema.Type.NUMERIC)
+          .setMode(TableFieldSchema.Mode.REPEATED)
+          .setName("test_bignumeric_str")
+          .build();
+  private final TableSchema COMPLEX_TABLE_SCHEMA =
+      TableSchema.newBuilder()
+          .addFields(0, TEST_INT)
+          .addFields(1, TEST_STRING)
+          .addFields(2, TEST_BYTES)
+          .addFields(3, TEST_BOOL)
+          .addFields(4, TEST_DOUBLE)
+          .addFields(5, TEST_DATE)
+          .addFields(6, TEST_DATETIME)
+          .addFields(7, TEST_DATETIME_STR)
+          .addFields(8, COMPLEXLVL1)
+          .addFields(9, COMPLEXLVL2)
+          .addFields(10, TEST_NUMERIC)
+          .addFields(11, TEST_GEO)
+          .addFields(12, TEST_TIMESTAMP)
+          .addFields(13, TEST_TIME)
+          .addFields(14, TEST_TIME_STR)
+          .addFields(15, TEST_NUMERIC_REPEATED)
+          .addFields(16, TEST_NUMERIC_STR)
+          .addFields(17, TEST_BIGNUMERIC)
+          .addFields(18, TEST_BIGNUMERIC_STR)
+          .build();
+
   @Test
   public void testDifferentNameCasing() throws Exception {
     TestInt64 expectedProto =
@@ -330,6 +471,89 @@ public class JsonToProtoMessageTest {
       Assert.fail("should fail");
     } catch (IllegalArgumentException e) {
       assertEquals("JSONObject does not have a int32 field at root.int.", e.getMessage());
+    }
+  }
+
+  @Test
+  public void testDateTimeMismatch() throws Exception {
+    TableFieldSchema field =
+        TableFieldSchema.newBuilder()
+            .setName("datetime")
+            .setType(TableFieldSchema.Type.DATETIME)
+            .setMode(TableFieldSchema.Mode.REPEATED)
+            .build();
+    TableSchema tableSchema = TableSchema.newBuilder().addFields(field).build();
+    JSONObject json = new JSONObject();
+    json.put("datetime", 1.0);
+    try {
+      DynamicMessage protoMsg =
+          JsonToProtoMessage.convertJsonToProtoMessage(
+              TestDatetime.getDescriptor(), tableSchema, json);
+      Assert.fail("should fail");
+    } catch (IllegalArgumentException e) {
+      assertEquals("JSONObject does not have a int64 field at root.datetime.", e.getMessage());
+    }
+  }
+
+  @Test
+  public void testTimeMismatch() throws Exception {
+    TableFieldSchema field =
+        TableFieldSchema.newBuilder()
+            .setName("time")
+            .setType(TableFieldSchema.Type.TIME)
+            .setMode(TableFieldSchema.Mode.REPEATED)
+            .build();
+    TableSchema tableSchema = TableSchema.newBuilder().addFields(field).build();
+    JSONObject json = new JSONObject();
+    json.put("time", new JSONArray(new Double[] {1.0}));
+    try {
+      DynamicMessage protoMsg =
+          JsonToProtoMessage.convertJsonToProtoMessage(TestTime.getDescriptor(), tableSchema, json);
+      Assert.fail("should fail");
+    } catch (IllegalArgumentException e) {
+      assertEquals("JSONObject does not have a int64 field at root.time[0].", e.getMessage());
+    }
+  }
+
+  @Test
+  public void testNumericMismatch() throws Exception {
+    TableFieldSchema field =
+        TableFieldSchema.newBuilder()
+            .setName("numeric")
+            .setType(TableFieldSchema.Type.NUMERIC)
+            .setMode(TableFieldSchema.Mode.NULLABLE)
+            .build();
+    TableSchema tableSchema = TableSchema.newBuilder().addFields(field).build();
+    JSONObject json = new JSONObject();
+    json.put("numeric", 1.0);
+    try {
+      DynamicMessage protoMsg =
+          JsonToProtoMessage.convertJsonToProtoMessage(
+              TestNumeric.getDescriptor(), tableSchema, json);
+      Assert.fail("should fail");
+    } catch (IllegalArgumentException e) {
+      assertEquals("JSONObject does not have a bytes field at root.numeric.", e.getMessage());
+    }
+  }
+
+  @Test
+  public void testBigNumericMismatch() throws Exception {
+    TableFieldSchema field =
+        TableFieldSchema.newBuilder()
+            .setName("bignumeric")
+            .setType(TableFieldSchema.Type.BIGNUMERIC)
+            .setMode(TableFieldSchema.Mode.REPEATED)
+            .build();
+    TableSchema tableSchema = TableSchema.newBuilder().addFields(field).build();
+    JSONObject json = new JSONObject();
+    json.put("bignumeric", new JSONArray(new Double[] {1.0}));
+    try {
+      DynamicMessage protoMsg =
+          JsonToProtoMessage.convertJsonToProtoMessage(
+              TestBignumeric.getDescriptor(), tableSchema, json);
+      Assert.fail("should fail");
+    } catch (IllegalArgumentException e) {
+      assertEquals("JSONObject does not have a bytes field at root.bignumeric[0].", e.getMessage());
     }
   }
 
@@ -491,12 +715,35 @@ public class JsonToProtoMessageTest {
             .addTestDouble(3.3)
             .addTestDouble(4.4)
             .setTestDate(1)
+            .setTestDatetime(1)
+            .addTestDatetimeStr(142258614586538368L)
+            .addTestDatetimeStr(142258525253402624L)
             .setComplexLvl1(
                 ComplexLvl1.newBuilder()
                     .setTestInt(2)
                     .setComplexLvl2(ComplexLvl2.newBuilder().setTestInt(3).build())
                     .build())
             .setComplexLvl2(ComplexLvl2.newBuilder().setTestInt(3).build())
+            .setTestNumeric(
+                BigDecimalByteStringEncoder.encodeToNumericByteString(new BigDecimal("1.23456")))
+            .setTestGeo("POINT(1,1)")
+            .setTestTimestamp(12345678)
+            .setTestTime(CivilTimeEncoder.encodePacked64TimeMicros(LocalTime.of(1, 0, 1)))
+            .setTestTimeStr(89332507144L)
+            .addTestNumericRepeated(
+                BigDecimalByteStringEncoder.encodeToNumericByteString(new BigDecimal("0")))
+            .addTestNumericRepeated(
+                BigDecimalByteStringEncoder.encodeToNumericByteString(
+                    new BigDecimal("99999999999999999999999999999.999999999")))
+            .addTestNumericRepeated(
+                BigDecimalByteStringEncoder.encodeToNumericByteString(
+                    new BigDecimal("-99999999999999999999999999999.999999999")))
+            .setTestNumericStr(
+                BigDecimalByteStringEncoder.encodeToNumericByteString(new BigDecimal("12.4")))
+            .setTestBignumeric(
+                BigDecimalByteStringEncoder.encodeToNumericByteString(new BigDecimal("2.3")))
+            .addTestBignumericStr(
+                BigDecimalByteStringEncoder.encodeToNumericByteString(new BigDecimal("1.23")))
             .build();
     JSONObject complex_lvl2 = new JSONObject();
     complex_lvl2.put("test_int", 3);
@@ -512,11 +759,40 @@ public class JsonToProtoMessageTest {
     json.put("test_bool", true);
     json.put("test_DOUBLe", new JSONArray(new Double[] {1.1, 2.2, 3.3, 4.4}));
     json.put("test_date", 1);
+    json.put("test_datetime", 1);
+    json.put(
+        "test_datetime_str",
+        new JSONArray(new String[] {"2021-09-27T20:51:10.752", "2021-09-27T00:00:00"}));
     json.put("complex_lvl1", complex_lvl1);
     json.put("complex_lvl2", complex_lvl2);
-
+    json.put(
+        "test_numeric",
+        BigDecimalByteStringEncoder.encodeToNumericByteString(new BigDecimal("1.23456")));
+    json.put(
+        "test_numeric_repeated",
+        new JSONArray(
+            new byte[][] {
+              BigDecimalByteStringEncoder.encodeToNumericByteString(new BigDecimal("0"))
+                  .toByteArray(),
+              BigDecimalByteStringEncoder.encodeToNumericByteString(
+                      new BigDecimal("99999999999999999999999999999.999999999"))
+                  .toByteArray(),
+              BigDecimalByteStringEncoder.encodeToNumericByteString(
+                      new BigDecimal("-99999999999999999999999999999.999999999"))
+                  .toByteArray(),
+            }));
+    json.put("test_geo", "POINT(1,1)");
+    json.put("test_timestamp", 12345678);
+    json.put("test_time", CivilTimeEncoder.encodePacked64TimeMicros(LocalTime.of(1, 0, 1)));
+    json.put("test_time_str", "20:51:10.1234");
+    json.put("test_numeric_str", "12.4");
+    json.put(
+        "test_bignumeric",
+        BigDecimalByteStringEncoder.encodeToNumericByteString(BigDecimal.valueOf(2.3)));
+    json.put("test_bignumeric_str", new JSONArray(new String[] {"1.23"}));
     DynamicMessage protoMsg =
-        JsonToProtoMessage.convertJsonToProtoMessage(ComplexRoot.getDescriptor(), json);
+        JsonToProtoMessage.convertJsonToProtoMessage(
+            ComplexRoot.getDescriptor(), COMPLEX_TABLE_SCHEMA, json);
     assertEquals(expectedProto, protoMsg);
   }
 

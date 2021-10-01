@@ -24,14 +24,12 @@ import com.google.api.gax.core.NoCredentialsProvider;
 import com.google.api.gax.grpc.testing.LocalChannelProvider;
 import com.google.api.gax.grpc.testing.MockGrpcService;
 import com.google.api.gax.grpc.testing.MockServiceHelper;
-import com.google.cloud.bigquery.storage.test.JsonTest.ComplexRoot;
+import com.google.cloud.bigquery.storage.test.JsonTest;
 import com.google.cloud.bigquery.storage.test.Test.FooType;
-import com.google.protobuf.ByteString;
 import com.google.protobuf.Descriptors.DescriptorValidationException;
 import com.google.protobuf.Int64Value;
 import com.google.protobuf.Timestamp;
 import java.io.IOException;
-import java.math.BigDecimal;
 import java.util.Arrays;
 import java.util.UUID;
 import java.util.concurrent.ExecutionException;
@@ -95,91 +93,6 @@ public class JsonStreamWriterTest {
           .setType(TableFieldSchema.Type.STRING)
           .setMode(TableFieldSchema.Mode.REPEATED)
           .setName("test_string")
-          .build();
-  private final TableFieldSchema TEST_BYTES =
-      TableFieldSchema.newBuilder()
-          .setType(TableFieldSchema.Type.BYTES)
-          .setMode(TableFieldSchema.Mode.REQUIRED)
-          .setName("test_bytes")
-          .build();
-  private final TableFieldSchema TEST_BOOL =
-      TableFieldSchema.newBuilder()
-          .setType(TableFieldSchema.Type.BOOL)
-          .setMode(TableFieldSchema.Mode.NULLABLE)
-          .setName("test_bool")
-          .build();
-  private final TableFieldSchema TEST_DOUBLE =
-      TableFieldSchema.newBuilder()
-          .setType(TableFieldSchema.Type.DOUBLE)
-          .setMode(TableFieldSchema.Mode.REPEATED)
-          .setName("test_double")
-          .build();
-  private final TableFieldSchema TEST_DATE =
-      TableFieldSchema.newBuilder()
-          .setType(TableFieldSchema.Type.DATE)
-          .setMode(TableFieldSchema.Mode.REQUIRED)
-          .setName("test_date")
-          .build();
-  private final TableFieldSchema COMPLEXLVL2 =
-      TableFieldSchema.newBuilder()
-          .setType(TableFieldSchema.Type.STRUCT)
-          .setMode(TableFieldSchema.Mode.REQUIRED)
-          .addFields(0, TEST_INT)
-          .setName("complex_lvl2")
-          .build();
-  private final TableFieldSchema COMPLEXLVL1 =
-      TableFieldSchema.newBuilder()
-          .setType(TableFieldSchema.Type.STRUCT)
-          .setMode(TableFieldSchema.Mode.REQUIRED)
-          .addFields(0, TEST_INT)
-          .addFields(1, COMPLEXLVL2)
-          .setName("complex_lvl1")
-          .build();
-  private final TableFieldSchema TEST_NUMERIC =
-      TableFieldSchema.newBuilder()
-          .setType(TableFieldSchema.Type.NUMERIC)
-          .setMode(TableFieldSchema.Mode.NULLABLE)
-          .setName("test_numeric")
-          .build();
-  private final TableFieldSchema TEST_NUMERIC_REPEATED =
-      TableFieldSchema.newBuilder()
-          .setType(TableFieldSchema.Type.NUMERIC)
-          .setMode(TableFieldSchema.Mode.REPEATED)
-          .setName("test_numeric_repeated")
-          .build();
-  private final TableFieldSchema TEST_GEO =
-      TableFieldSchema.newBuilder()
-          .setType(TableFieldSchema.Type.GEOGRAPHY)
-          .setMode(TableFieldSchema.Mode.NULLABLE)
-          .setName("test_geo")
-          .build();
-  private final TableFieldSchema TEST_TIMESTAMP =
-      TableFieldSchema.newBuilder()
-          .setType(TableFieldSchema.Type.TIMESTAMP)
-          .setMode(TableFieldSchema.Mode.NULLABLE)
-          .setName("test_timestamp")
-          .build();
-  private final TableFieldSchema TEST_TIME =
-      TableFieldSchema.newBuilder()
-          .setType(TableFieldSchema.Type.TIME)
-          .setMode(TableFieldSchema.Mode.NULLABLE)
-          .setName("test_time")
-          .build();
-  private final TableSchema COMPLEX_TABLE_SCHEMA =
-      TableSchema.newBuilder()
-          .addFields(0, TEST_INT)
-          .addFields(1, TEST_STRING)
-          .addFields(2, TEST_BYTES)
-          .addFields(3, TEST_BOOL)
-          .addFields(4, TEST_DOUBLE)
-          .addFields(5, TEST_DATE)
-          .addFields(6, COMPLEXLVL1)
-          .addFields(7, COMPLEXLVL2)
-          .addFields(8, TEST_NUMERIC)
-          .addFields(9, TEST_GEO)
-          .addFields(10, TEST_TIMESTAMP)
-          .addFields(11, TEST_TIME)
-          .addFields(12, TEST_NUMERIC_REPEATED)
           .build();
 
   @Before
@@ -281,6 +194,56 @@ public class JsonStreamWriterTest {
           expectedProto.toByteString());
       assertEquals(
           testBigQueryWrite.getAppendRequests().get(0).getTraceId(), "JsonWriterBeta_test:empty");
+    }
+  }
+
+  @Test
+  public void testSpecialTypeAppend() throws Exception {
+    TableFieldSchema field =
+        TableFieldSchema.newBuilder()
+            .setName("time")
+            .setType(TableFieldSchema.Type.TIME)
+            .setMode(TableFieldSchema.Mode.REPEATED)
+            .build();
+    TableSchema tableSchema = TableSchema.newBuilder().addFields(field).build();
+
+    JsonTest.TestTime expectedProto =
+        JsonTest.TestTime.newBuilder()
+            .addTime(CivilTimeEncoder.encodePacked64TimeMicros(LocalTime.of(1, 0, 1)))
+            .build();
+    JSONObject foo = new JSONObject();
+    foo.put("time", new JSONArray(new String[] {"01:00:01"}));
+    JSONArray jsonArr = new JSONArray();
+    jsonArr.put(foo);
+
+    try (JsonStreamWriter writer =
+        getTestJsonStreamWriterBuilder(TEST_STREAM, tableSchema).build()) {
+
+      testBigQueryWrite.addResponse(
+          AppendRowsResponse.newBuilder()
+              .setAppendResult(
+                  AppendRowsResponse.AppendResult.newBuilder().setOffset(Int64Value.of(0)).build())
+              .build());
+
+      ApiFuture<AppendRowsResponse> appendFuture = writer.append(jsonArr);
+      assertEquals(0L, appendFuture.get().getAppendResult().getOffset().getValue());
+      appendFuture.get();
+      assertEquals(
+          1,
+          testBigQueryWrite
+              .getAppendRequests()
+              .get(0)
+              .getProtoRows()
+              .getRows()
+              .getSerializedRowsCount());
+      assertEquals(
+          testBigQueryWrite
+              .getAppendRequests()
+              .get(0)
+              .getProtoRows()
+              .getRows()
+              .getSerializedRows(0),
+          expectedProto.toByteString());
     }
   }
 
@@ -388,116 +351,6 @@ public class JsonStreamWriterTest {
                 .getSerializedRows(0),
             expectedProto.toByteString());
       }
-    }
-  }
-
-  @Test
-  public void testSingleAppendComplexJson() throws Exception {
-    ComplexRoot expectedProto =
-        ComplexRoot.newBuilder()
-            .setTestInt(1)
-            .addTestString("a")
-            .addTestString("b")
-            .addTestString("c")
-            .setTestBytes(ByteString.copyFrom("hello".getBytes()))
-            .setTestBool(true)
-            .addTestDouble(1.1)
-            .addTestDouble(2.2)
-            .addTestDouble(3.3)
-            .addTestDouble(4.4)
-            .setTestDate(1)
-            .setComplexLvl1(
-                com.google.cloud.bigquery.storage.test.JsonTest.ComplexLvl1.newBuilder()
-                    .setTestInt(2)
-                    .setComplexLvl2(
-                        com.google.cloud.bigquery.storage.test.JsonTest.ComplexLvl2.newBuilder()
-                            .setTestInt(3)
-                            .build())
-                    .build())
-            .setComplexLvl2(
-                com.google.cloud.bigquery.storage.test.JsonTest.ComplexLvl2.newBuilder()
-                    .setTestInt(3)
-                    .build())
-            .setTestNumeric(
-                BigDecimalByteStringEncoder.encodeToNumericByteString(new BigDecimal("1.23456")))
-            .setTestGeo("POINT(1,1)")
-            .setTestTimestamp(12345678)
-            .setTestTime(CivilTimeEncoder.encodePacked64TimeMicros(LocalTime.of(1, 0, 1)))
-            .addTestNumericRepeated(
-                BigDecimalByteStringEncoder.encodeToNumericByteString(new BigDecimal("0")))
-            .addTestNumericRepeated(
-                BigDecimalByteStringEncoder.encodeToNumericByteString(
-                    new BigDecimal("99999999999999999999999999999.999999999")))
-            .addTestNumericRepeated(
-                BigDecimalByteStringEncoder.encodeToNumericByteString(
-                    new BigDecimal("-99999999999999999999999999999.999999999")))
-            .build();
-    JSONObject complex_lvl2 = new JSONObject();
-    complex_lvl2.put("test_int", 3);
-
-    JSONObject complex_lvl1 = new JSONObject();
-    complex_lvl1.put("test_int", 2);
-    complex_lvl1.put("complex_lvl2", complex_lvl2);
-
-    JSONObject json = new JSONObject();
-    json.put("test_int", 1);
-    json.put("test_string", new JSONArray(new String[] {"a", "b", "c"}));
-    json.put("test_bytes", ByteString.copyFrom("hello".getBytes()));
-    json.put("test_bool", true);
-    json.put("test_DOUBLe", new JSONArray(new Double[] {1.1, 2.2, 3.3, 4.4}));
-    json.put("test_date", 1);
-    json.put("complex_lvl1", complex_lvl1);
-    json.put("complex_lvl2", complex_lvl2);
-    json.put(
-        "test_numeric",
-        BigDecimalByteStringEncoder.encodeToNumericByteString(new BigDecimal("1.23456")));
-    json.put(
-        "test_numeric_repeated",
-        new JSONArray(
-            new byte[][] {
-              BigDecimalByteStringEncoder.encodeToNumericByteString(new BigDecimal("0"))
-                  .toByteArray(),
-              BigDecimalByteStringEncoder.encodeToNumericByteString(
-                      new BigDecimal("99999999999999999999999999999.999999999"))
-                  .toByteArray(),
-              BigDecimalByteStringEncoder.encodeToNumericByteString(
-                      new BigDecimal("-99999999999999999999999999999.999999999"))
-                  .toByteArray(),
-            }));
-    json.put("test_geo", "POINT(1,1)");
-    json.put("test_timestamp", 12345678);
-    json.put("test_time", CivilTimeEncoder.encodePacked64TimeMicros(LocalTime.of(1, 0, 1)));
-    JSONArray jsonArr = new JSONArray();
-    jsonArr.put(json);
-
-    try (JsonStreamWriter writer =
-        getTestJsonStreamWriterBuilder(TEST_STREAM, COMPLEX_TABLE_SCHEMA).build()) {
-      testBigQueryWrite.addResponse(
-          AppendRowsResponse.newBuilder()
-              .setAppendResult(
-                  AppendRowsResponse.AppendResult.newBuilder().setOffset(Int64Value.of(0)).build())
-              .build());
-
-      ApiFuture<AppendRowsResponse> appendFuture = writer.append(jsonArr);
-
-      assertEquals(0L, appendFuture.get().getAppendResult().getOffset().getValue());
-      appendFuture.get();
-      assertEquals(
-          1,
-          testBigQueryWrite
-              .getAppendRequests()
-              .get(0)
-              .getProtoRows()
-              .getRows()
-              .getSerializedRowsCount());
-      assertEquals(
-          testBigQueryWrite
-              .getAppendRequests()
-              .get(0)
-              .getProtoRows()
-              .getRows()
-              .getSerializedRows(0),
-          expectedProto.toByteString());
     }
   }
 

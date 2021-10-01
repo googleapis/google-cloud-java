@@ -75,6 +75,7 @@ public class JsonStreamWriter implements AutoCloseable {
         builder.traceId);
     this.streamWriter = streamWriterBuilder.build();
     this.streamName = builder.streamName;
+    this.tableSchema = builder.tableSchema;
   }
 
   /**
@@ -105,7 +106,8 @@ public class JsonStreamWriter implements AutoCloseable {
     // of JSON data.
     for (int i = 0; i < jsonArr.length(); i++) {
       JSONObject json = jsonArr.getJSONObject(i);
-      Message protoMessage = JsonToProtoMessage.convertJsonToProtoMessage(this.descriptor, json);
+      Message protoMessage =
+          JsonToProtoMessage.convertJsonToProtoMessage(this.descriptor, this.tableSchema, json);
       rowsBuilder.addSerializedRows(protoMessage.toByteString());
     }
     // Need to make sure refreshAppendAndSetDescriptor finish first before this can run

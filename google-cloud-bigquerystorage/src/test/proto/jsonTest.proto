@@ -9,13 +9,20 @@ message ComplexRoot {
   optional bool test_bool = 4;
   repeated double test_double = 5;
   required int32 test_date = 6;
-  required ComplexLvl1 complex_lvl1 = 7;
-  required ComplexLvl2 complex_lvl2 = 8;
-  optional bytes test_numeric = 9;
-  optional string test_geo = 10;
-  optional int64 test_timestamp = 11;
-  optional int64 test_time = 12;
-  repeated bytes test_numeric_repeated = 13;
+  optional int64 test_datetime = 7;
+  repeated int64 test_datetime_str = 8;
+  required ComplexLvl1 complex_lvl1 = 9;
+  required
+      ComplexLvl2 complex_lvl2 = 10;
+  optional bytes test_numeric = 11;
+  optional string test_geo = 12;
+  optional int64 test_timestamp = 13;
+  optional int64 test_time = 14;
+  optional int64 test_time_str = 15;
+  repeated bytes test_numeric_repeated = 16;
+  optional bytes test_numeric_str = 17;
+  optional bytes test_bignumeric = 18;
+  repeated bytes test_bignumeric_str = 19;
 }
 
 message CasingComplex {
@@ -130,4 +137,20 @@ message TestRepeatedIsOptional {
 
 message TopLevelMismatch {
   optional double mismatch_double = 1;
+}
+
+message TestDatetime {
+  optional int64 datetime = 1;
+}
+
+message TestTime {
+  repeated int64 time = 1;
+}
+
+message TestNumeric {
+  optional bytes numeric = 1;
+}
+
+message TestBignumeric {
+  repeated bytes bignumeric = 1;
 }

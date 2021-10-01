@@ -164,6 +164,18 @@ public class BQTableSchemaToProtoDescriptorTest {
             .setMode(TableFieldSchema.Mode.REQUIRED)
             .setName("test_date")
             .build();
+    final TableFieldSchema test_datetime =
+        TableFieldSchema.newBuilder()
+            .setType(TableFieldSchema.Type.DATETIME)
+            .setMode(TableFieldSchema.Mode.NULLABLE)
+            .setName("test_datetime")
+            .build();
+    final TableFieldSchema test_datetime_str =
+        TableFieldSchema.newBuilder()
+            .setType(TableFieldSchema.Type.DATETIME)
+            .setMode(TableFieldSchema.Mode.REPEATED)
+            .setName("test_datetime_str")
+            .build();
     final TableFieldSchema ComplexLvl2 =
         TableFieldSchema.newBuilder()
             .setType(TableFieldSchema.Type.STRUCT)
@@ -203,11 +215,35 @@ public class BQTableSchemaToProtoDescriptorTest {
             .setMode(TableFieldSchema.Mode.NULLABLE)
             .setName("test_time")
             .build();
+    final TableFieldSchema TEST_TIME_STR =
+        TableFieldSchema.newBuilder()
+            .setType(TableFieldSchema.Type.TIME)
+            .setMode(TableFieldSchema.Mode.NULLABLE)
+            .setName("test_time_str")
+            .build();
     final TableFieldSchema TEST_NUMERIC_REPEATED =
         TableFieldSchema.newBuilder()
             .setType(TableFieldSchema.Type.NUMERIC)
             .setMode(TableFieldSchema.Mode.REPEATED)
             .setName("test_numeric_repeated")
+            .build();
+    final TableFieldSchema TEST_NUMERIC_STR =
+        TableFieldSchema.newBuilder()
+            .setType(TableFieldSchema.Type.NUMERIC)
+            .setMode(TableFieldSchema.Mode.NULLABLE)
+            .setName("test_numeric_str")
+            .build();
+    final TableFieldSchema TEST_BIGNUMERIC =
+        TableFieldSchema.newBuilder()
+            .setType(TableFieldSchema.Type.NUMERIC)
+            .setMode(TableFieldSchema.Mode.NULLABLE)
+            .setName("test_bignumeric")
+            .build();
+    final TableFieldSchema TEST_BIGNUMERIC_STR =
+        TableFieldSchema.newBuilder()
+            .setType(TableFieldSchema.Type.NUMERIC)
+            .setMode(TableFieldSchema.Mode.REPEATED)
+            .setName("test_bignumeric_str")
             .build();
     final TableSchema tableSchema =
         TableSchema.newBuilder()
@@ -217,13 +253,19 @@ public class BQTableSchemaToProtoDescriptorTest {
             .addFields(3, test_bool)
             .addFields(4, test_double)
             .addFields(5, test_date)
-            .addFields(6, ComplexLvl1)
-            .addFields(7, ComplexLvl2)
-            .addFields(8, TEST_NUMERIC)
-            .addFields(9, TEST_GEO)
-            .addFields(10, TEST_TIMESTAMP)
-            .addFields(11, TEST_TIME)
-            .addFields(12, TEST_NUMERIC_REPEATED)
+            .addFields(6, test_datetime)
+            .addFields(7, test_datetime_str)
+            .addFields(8, ComplexLvl1)
+            .addFields(9, ComplexLvl2)
+            .addFields(10, TEST_NUMERIC)
+            .addFields(11, TEST_GEO)
+            .addFields(12, TEST_TIMESTAMP)
+            .addFields(13, TEST_TIME)
+            .addFields(14, TEST_TIME_STR)
+            .addFields(15, TEST_NUMERIC_REPEATED)
+            .addFields(16, TEST_NUMERIC_STR)
+            .addFields(17, TEST_BIGNUMERIC)
+            .addFields(18, TEST_BIGNUMERIC_STR)
             .build();
     final Descriptor descriptor =
         BQTableSchemaToProtoDescriptor.convertBQTableSchemaToProtoDescriptor(tableSchema);
