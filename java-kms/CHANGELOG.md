@@ -1,5 +1,13 @@
 # Changelog
 
+## [2.2.0](https://www.github.com/googleapis/java-kms/compare/v2.1.2...v2.2.0) (2021-10-01)
+
+
+### Features
+
+* add OAEP+SHA1 to the list of supported algorithms ([#635](https://www.github.com/googleapis/java-kms/issues/635)) ([c271e93](https://www.github.com/googleapis/java-kms/commit/c271e934e0e701dcc06f341a1ee2b09ecae14492))
+* add RPC retry information for MacSign, MacVerify, and GenerateRandomBytes ([#636](https://www.github.com/googleapis/java-kms/issues/636)) ([ba0a626](https://www.github.com/googleapis/java-kms/commit/ba0a626fe790521d0e082373842a367dfd8de1b3))
+
 ### [2.1.2](https://www.github.com/googleapis/java-kms/compare/v2.1.1...v2.1.2) (2021-09-22)
 
 
