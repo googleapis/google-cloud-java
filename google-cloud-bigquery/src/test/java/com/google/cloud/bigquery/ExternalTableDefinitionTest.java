@@ -50,6 +50,7 @@ public class ExternalTableDefinitionTest {
   private static final String COMPRESSION = "GZIP";
   private static final String CONNECTION_ID = "123456789";
   private static final Boolean AUTODETECT = true;
+  private static final AvroOptions AVRO_OPTIONS = AvroOptions.newBuilder().build();
   private static final CsvOptions CSV_OPTIONS = CsvOptions.newBuilder().build();
   private static final HivePartitioningOptions HIVE_PARTITIONING_OPTIONS =
       HivePartitioningOptions.newBuilder()
@@ -66,6 +67,9 @@ public class ExternalTableDefinitionTest {
           .setAutodetect(AUTODETECT)
           .setHivePartitioningOptions(HIVE_PARTITIONING_OPTIONS)
           .build();
+
+  private static final ExternalTableDefinition EXTERNAL_TABLE_DEFINITION_AVRO =
+      ExternalTableDefinition.newBuilder(SOURCE_URIS, TABLE_SCHEMA, AVRO_OPTIONS).build();
 
   @Test
   public void testToBuilder() {
@@ -109,6 +113,7 @@ public class ExternalTableDefinitionTest {
     assertEquals(TableDefinition.Type.EXTERNAL, EXTERNAL_TABLE_DEFINITION.getType());
     assertEquals(COMPRESSION, EXTERNAL_TABLE_DEFINITION.getCompression());
     assertEquals(CONNECTION_ID, EXTERNAL_TABLE_DEFINITION.getConnectionId());
+    assertEquals(AVRO_OPTIONS, EXTERNAL_TABLE_DEFINITION_AVRO.getFormatOptions());
     assertEquals(CSV_OPTIONS, EXTERNAL_TABLE_DEFINITION.getFormatOptions());
     assertEquals(IGNORE_UNKNOWN_VALUES, EXTERNAL_TABLE_DEFINITION.ignoreUnknownValues());
     assertEquals(MAX_BAD_RECORDS, EXTERNAL_TABLE_DEFINITION.getMaxBadRecords());

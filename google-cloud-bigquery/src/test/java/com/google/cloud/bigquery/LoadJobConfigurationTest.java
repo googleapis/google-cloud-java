@@ -56,7 +56,7 @@ public class LoadJobConfigurationTest {
       ImmutableList.of(SchemaUpdateOption.ALLOW_FIELD_ADDITION);
   private static final Schema TABLE_SCHEMA = Schema.of(FIELD_SCHEMA);
   private static final Boolean AUTODETECT = true;
-  private static final Boolean USERAVROLOGICALTYPES = true;
+  private static final Boolean USE_AVRO_LOGICAL_TYPES = true;
   private static final EncryptionConfiguration JOB_ENCRYPTION_CONFIGURATION =
       EncryptionConfiguration.newBuilder().setKmsKeyName("KMS_KEY_1").build();
   private static final TimePartitioning TIME_PARTITIONING = TimePartitioning.of(Type.DAY);
@@ -128,7 +128,7 @@ public class LoadJobConfigurationTest {
           .setDestinationEncryptionConfiguration(JOB_ENCRYPTION_CONFIGURATION)
           .setTimePartitioning(TIME_PARTITIONING)
           .setClustering(CLUSTERING)
-          .setUseAvroLogicalTypes(USERAVROLOGICALTYPES)
+          .setUseAvroLogicalTypes(USE_AVRO_LOGICAL_TYPES)
           .setLabels(LABELS)
           .setJobTimeoutMs(TIMEOUT)
           .setRangePartitioning(RANGE_PARTITIONING)

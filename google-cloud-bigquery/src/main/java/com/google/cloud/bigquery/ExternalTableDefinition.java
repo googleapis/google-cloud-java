@@ -300,6 +300,9 @@ public abstract class ExternalTableDefinition extends TableDefinition {
     if (getDecimalTargetTypes() != null) {
       externalConfigurationPb.setDecimalTargetTypes(getDecimalTargetTypes());
     }
+    if (getFormatOptions() != null && FormatOptions.AVRO.equals(getFormatOptions().getType())) {
+      externalConfigurationPb.setAvroOptions(((AvroOptions) getFormatOptions()).toPb());
+    }
     if (getFormatOptions() != null && FormatOptions.CSV.equals(getFormatOptions().getType())) {
       externalConfigurationPb.setCsvOptions(((CsvOptions) getFormatOptions()).toPb());
     }
@@ -459,6 +462,9 @@ public abstract class ExternalTableDefinition extends TableDefinition {
         builder.setConnectionId(externalDataConfiguration.getConnectionId());
       }
       builder.setIgnoreUnknownValues(externalDataConfiguration.getIgnoreUnknownValues());
+      if (externalDataConfiguration.getAvroOptions() != null) {
+        builder.setFormatOptions(AvroOptions.fromPb(externalDataConfiguration.getAvroOptions()));
+      }
       if (externalDataConfiguration.getCsvOptions() != null) {
         builder.setFormatOptions(CsvOptions.fromPb(externalDataConfiguration.getCsvOptions()));
       }
@@ -507,6 +513,9 @@ public abstract class ExternalTableDefinition extends TableDefinition {
     }
     if (externalDataConfiguration.getIgnoreUnknownValues() != null) {
       builder.setIgnoreUnknownValues(externalDataConfiguration.getIgnoreUnknownValues());
+    }
+    if (externalDataConfiguration.getAvroOptions() != null) {
+      builder.setFormatOptions(AvroOptions.fromPb(externalDataConfiguration.getAvroOptions()));
     }
     if (externalDataConfiguration.getCsvOptions() != null) {
       builder.setFormatOptions(CsvOptions.fromPb(externalDataConfiguration.getCsvOptions()));
