@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.2.0](https://www.github.com/googleapis/java-bigquery/compare/v2.1.13...v2.2.0) (2021-10-01)
+
+
+### Features
+
+* add support for AvroOptions ([#1630](https://www.github.com/googleapis/java-bigquery/issues/1630)) ([10c1961](https://www.github.com/googleapis/java-bigquery/commit/10c1961f53ab6ba1b71ead9c51a369bf14389c49))
+
 ### [2.1.13](https://www.github.com/googleapis/java-bigquery/compare/v2.1.12...v2.1.13) (2021-09-29)
 
 
