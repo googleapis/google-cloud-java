@@ -213,10 +213,12 @@ public interface CalculateStatsResponseOrBuilder
    * matches in the set of conversations. Key has the format:
    * `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/issueModels/&lt;Issue Model
    * ID&gt;/issues/&lt;Issue ID&gt;`
+   * Deprecated, use `issue_matches_stats` field instead.
    * </pre>
    *
-   * <code>map&lt;string, int32&gt; issue_matches = 6;</code>
+   * <code>map&lt;string, int32&gt; issue_matches = 6 [deprecated = true];</code>
    */
+  @java.lang.Deprecated
   int getIssueMatchesCount();
   /**
    *
@@ -226,10 +228,12 @@ public interface CalculateStatsResponseOrBuilder
    * matches in the set of conversations. Key has the format:
    * `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/issueModels/&lt;Issue Model
    * ID&gt;/issues/&lt;Issue ID&gt;`
+   * Deprecated, use `issue_matches_stats` field instead.
    * </pre>
    *
-   * <code>map&lt;string, int32&gt; issue_matches = 6;</code>
+   * <code>map&lt;string, int32&gt; issue_matches = 6 [deprecated = true];</code>
    */
+  @java.lang.Deprecated
   boolean containsIssueMatches(java.lang.String key);
   /** Use {@link #getIssueMatchesMap()} instead. */
   @java.lang.Deprecated
@@ -242,10 +246,12 @@ public interface CalculateStatsResponseOrBuilder
    * matches in the set of conversations. Key has the format:
    * `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/issueModels/&lt;Issue Model
    * ID&gt;/issues/&lt;Issue ID&gt;`
+   * Deprecated, use `issue_matches_stats` field instead.
    * </pre>
    *
-   * <code>map&lt;string, int32&gt; issue_matches = 6;</code>
+   * <code>map&lt;string, int32&gt; issue_matches = 6 [deprecated = true];</code>
    */
+  @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.Integer> getIssueMatchesMap();
   /**
    *
@@ -255,10 +261,12 @@ public interface CalculateStatsResponseOrBuilder
    * matches in the set of conversations. Key has the format:
    * `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/issueModels/&lt;Issue Model
    * ID&gt;/issues/&lt;Issue ID&gt;`
+   * Deprecated, use `issue_matches_stats` field instead.
    * </pre>
    *
-   * <code>map&lt;string, int32&gt; issue_matches = 6;</code>
+   * <code>map&lt;string, int32&gt; issue_matches = 6 [deprecated = true];</code>
    */
+  @java.lang.Deprecated
   int getIssueMatchesOrDefault(java.lang.String key, int defaultValue);
   /**
    *
@@ -268,10 +276,12 @@ public interface CalculateStatsResponseOrBuilder
    * matches in the set of conversations. Key has the format:
    * `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/issueModels/&lt;Issue Model
    * ID&gt;/issues/&lt;Issue ID&gt;`
+   * Deprecated, use `issue_matches_stats` field instead.
    * </pre>
    *
-   * <code>map&lt;string, int32&gt; issue_matches = 6;</code>
+   * <code>map&lt;string, int32&gt; issue_matches = 6 [deprecated = true];</code>
    */
+  @java.lang.Deprecated
   int getIssueMatchesOrThrow(java.lang.String key);
 
   /**

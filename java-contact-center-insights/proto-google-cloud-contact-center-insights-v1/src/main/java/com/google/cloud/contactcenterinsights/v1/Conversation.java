@@ -384,7 +384,7 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Default value.
+     * Default value, if unspecified will default to PHONE_CALL.
      * </pre>
      *
      * <code>MEDIUM_UNSPECIFIED = 0;</code>
@@ -417,7 +417,7 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Default value.
+     * Default value, if unspecified will default to PHONE_CALL.
      * </pre>
      *
      * <code>MEDIUM_UNSPECIFIED = 0;</code>
@@ -8450,7 +8450,7 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Immutable. The conversation medium.
+   * Immutable. The conversation medium, if unspecified will default to PHONE_CALL.
    * </pre>
    *
    * <code>
@@ -8467,7 +8467,7 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Immutable. The conversation medium.
+   * Immutable. The conversation medium, if unspecified will default to PHONE_CALL.
    * </pre>
    *
    * <code>
@@ -11827,7 +11827,7 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Immutable. The conversation medium.
+     * Immutable. The conversation medium, if unspecified will default to PHONE_CALL.
      * </pre>
      *
      * <code>
@@ -11844,7 +11844,7 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Immutable. The conversation medium.
+     * Immutable. The conversation medium, if unspecified will default to PHONE_CALL.
      * </pre>
      *
      * <code>
@@ -11864,7 +11864,7 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Immutable. The conversation medium.
+     * Immutable. The conversation medium, if unspecified will default to PHONE_CALL.
      * </pre>
      *
      * <code>
@@ -11886,7 +11886,7 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Immutable. The conversation medium.
+     * Immutable. The conversation medium, if unspecified will default to PHONE_CALL.
      * </pre>
      *
      * <code>
@@ -11909,7 +11909,7 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Immutable. The conversation medium.
+     * Immutable. The conversation medium, if unspecified will default to PHONE_CALL.
      * </pre>
      *
      * <code>

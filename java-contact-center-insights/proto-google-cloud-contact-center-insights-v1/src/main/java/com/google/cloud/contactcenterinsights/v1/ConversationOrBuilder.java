@@ -471,7 +471,7 @@ public interface ConversationOrBuilder
    *
    *
    * <pre>
-   * Immutable. The conversation medium.
+   * Immutable. The conversation medium, if unspecified will default to PHONE_CALL.
    * </pre>
    *
    * <code>
@@ -485,7 +485,7 @@ public interface ConversationOrBuilder
    *
    *
    * <pre>
-   * Immutable. The conversation medium.
+   * Immutable. The conversation medium, if unspecified will default to PHONE_CALL.
    * </pre>
    *
    * <code>
