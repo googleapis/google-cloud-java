@@ -24,6 +24,7 @@ import com.google.api.gax.core.NoCredentialsProvider;
 import com.google.api.gax.grpc.testing.LocalChannelProvider;
 import com.google.api.gax.grpc.testing.MockGrpcService;
 import com.google.api.gax.grpc.testing.MockServiceHelper;
+import com.google.cloud.bigquery.storage.test.JsonTest;
 import com.google.cloud.bigquery.storage.test.Test.FooType;
 import com.google.protobuf.Descriptors.DescriptorValidationException;
 import com.google.protobuf.Int64Value;
@@ -42,6 +43,7 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 import org.threeten.bp.Instant;
+import org.threeten.bp.LocalTime;
 
 @RunWith(JUnit4.class)
 public class JsonStreamWriterTest {
@@ -192,6 +194,56 @@ public class JsonStreamWriterTest {
           expectedProto.toByteString());
       assertEquals(
           testBigQueryWrite.getAppendRequests().get(0).getTraceId(), "JsonWriterBeta_test:empty");
+    }
+  }
+
+  @Test
+  public void testSpecialTypeAppend() throws Exception {
+    TableFieldSchema field =
+        TableFieldSchema.newBuilder()
+            .setName("time")
+            .setType(TableFieldSchema.Type.TIME)
+            .setMode(TableFieldSchema.Mode.REPEATED)
+            .build();
+    TableSchema tableSchema = TableSchema.newBuilder().addFields(field).build();
+
+    JsonTest.TestTime expectedProto =
+        JsonTest.TestTime.newBuilder()
+            .addTime(CivilTimeEncoder.encodePacked64TimeMicros(LocalTime.of(1, 0, 1)))
+            .build();
+    JSONObject foo = new JSONObject();
+    foo.put("time", new JSONArray(new String[] {"01:00:01"}));
+    JSONArray jsonArr = new JSONArray();
+    jsonArr.put(foo);
+
+    try (JsonStreamWriter writer =
+        getTestJsonStreamWriterBuilder(TEST_STREAM, tableSchema).build()) {
+
+      testBigQueryWrite.addResponse(
+          AppendRowsResponse.newBuilder()
+              .setAppendResult(
+                  AppendRowsResponse.AppendResult.newBuilder().setOffset(Int64Value.of(0)).build())
+              .build());
+
+      ApiFuture<AppendRowsResponse> appendFuture = writer.append(jsonArr);
+      assertEquals(0L, appendFuture.get().getAppendResult().getOffset().getValue());
+      appendFuture.get();
+      assertEquals(
+          1,
+          testBigQueryWrite
+              .getAppendRequests()
+              .get(0)
+              .getProtoRows()
+              .getRows()
+              .getSerializedRowsCount());
+      assertEquals(
+          testBigQueryWrite
+              .getAppendRequests()
+              .get(0)
+              .getProtoRows()
+              .getRows()
+              .getSerializedRows(0),
+          expectedProto.toByteString());
     }
   }
 

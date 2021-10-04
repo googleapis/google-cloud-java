@@ -15,6 +15,7 @@
  */
 package com.google.cloud.bigquery.storage.v1;
 
+import com.google.api.pathtemplate.ValidationException;
 import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableMap;
 import com.google.protobuf.ByteString;
@@ -23,10 +24,14 @@ import com.google.protobuf.Descriptors.FieldDescriptor;
 import com.google.protobuf.DynamicMessage;
 import com.google.protobuf.Message;
 import com.google.protobuf.UninitializedMessageException;
+import java.math.BigDecimal;
+import java.util.List;
 import java.util.logging.Logger;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
+import org.threeten.bp.LocalDateTime;
+import org.threeten.bp.LocalTime;
 
 /**
  * Converts Json data to protocol buffer messages given the protocol buffer descriptor. The protobuf
@@ -58,7 +63,28 @@ public class JsonToProtoMessage {
     Preconditions.checkNotNull(protoSchema, "Protobuf descriptor is null.");
     Preconditions.checkState(json.length() != 0, "JSONObject is empty.");
 
-    return convertJsonToProtoMessageImpl(protoSchema, json, "root", /*topLevel=*/ true);
+    return convertJsonToProtoMessageImpl(protoSchema, null, json, "root", /*topLevel=*/ true);
+  }
+
+  /**
+   * Converts Json data to protocol buffer messages given the protocol buffer descriptor.
+   *
+   * @param protoSchema
+   * @param tableSchema bigquery table schema is needed for type conversion of DATETIME, TIME,
+   *     NUMERIC, BIGNUMERIC
+   * @param json
+   * @throws IllegalArgumentException when JSON data is not compatible with proto descriptor.
+   */
+  public static DynamicMessage convertJsonToProtoMessage(
+      Descriptor protoSchema, TableSchema tableSchema, JSONObject json)
+      throws IllegalArgumentException {
+    Preconditions.checkNotNull(json, "JSONObject is null.");
+    Preconditions.checkNotNull(protoSchema, "Protobuf descriptor is null.");
+    Preconditions.checkNotNull(tableSchema, "TableSchema is null.");
+    Preconditions.checkState(json.length() != 0, "JSONObject is empty.");
+
+    return convertJsonToProtoMessageImpl(
+        protoSchema, tableSchema.getFieldsList(), json, "root", /*topLevel=*/ true);
   }
 
   /**
@@ -71,7 +97,11 @@ public class JsonToProtoMessage {
    * @throws IllegalArgumentException when JSON data is not compatible with proto descriptor.
    */
   private static DynamicMessage convertJsonToProtoMessageImpl(
-      Descriptor protoSchema, JSONObject json, String jsonScope, boolean topLevel)
+      Descriptor protoSchema,
+      List<TableFieldSchema> tableSchema,
+      JSONObject json,
+      String jsonScope,
+      boolean topLevel)
       throws IllegalArgumentException {
 
     DynamicMessage.Builder protoMsg = DynamicMessage.newBuilder(protoSchema);
@@ -90,10 +120,25 @@ public class JsonToProtoMessage {
         throw new IllegalArgumentException(
             String.format("JSONObject has fields unknown to BigQuery: %s.", currentScope));
       }
+      TableFieldSchema fieldSchema = null;
+      if (tableSchema != null) {
+        // protoSchema is generated from tableSchema so their field ordering should match.
+        fieldSchema = tableSchema.get(field.getIndex());
+        if (!fieldSchema.getName().equals(field.getName())) {
+          throw new ValidationException(
+              "Field at index "
+                  + field.getIndex()
+                  + " has mismatch names ("
+                  + fieldSchema.getName()
+                  + ") ("
+                  + field.getName()
+                  + ")");
+        }
+      }
       if (!field.isRepeated()) {
-        fillField(protoMsg, field, json, jsonName, currentScope);
+        fillField(protoMsg, field, fieldSchema, json, jsonName, currentScope);
       } else {
-        fillRepeatedField(protoMsg, field, json, jsonName, currentScope);
+        fillRepeatedField(protoMsg, field, fieldSchema, json, jsonName, currentScope);
       }
     }
 
@@ -119,6 +164,7 @@ public class JsonToProtoMessage {
    *
    * @param protoMsg The protocol buffer message being constructed
    * @param fieldDescriptor
+   * @param fieldSchema
    * @param json
    * @param exactJsonKeyName Exact key name in JSONObject instead of lowercased version
    * @param currentScope Debugging purposes
@@ -127,6 +173,7 @@ public class JsonToProtoMessage {
   private static void fillField(
       DynamicMessage.Builder protoMsg,
       FieldDescriptor fieldDescriptor,
+      TableFieldSchema fieldSchema,
       JSONObject json,
       String exactJsonKeyName,
       String currentScope)
@@ -144,6 +191,25 @@ public class JsonToProtoMessage {
         }
         break;
       case BYTES:
+        if (fieldSchema != null) {
+          if (fieldSchema.getType() == TableFieldSchema.Type.NUMERIC) {
+            if (val instanceof String) {
+              protoMsg.setField(
+                  fieldDescriptor,
+                  BigDecimalByteStringEncoder.encodeToNumericByteString(
+                      new BigDecimal((String) val)));
+              return;
+            }
+          } else if (fieldSchema.getType() == TableFieldSchema.Type.BIGNUMERIC) {
+            if (val instanceof String) {
+              protoMsg.setField(
+                  fieldDescriptor,
+                  BigDecimalByteStringEncoder.encodeToNumericByteString(
+                      new BigDecimal((String) val)));
+              return;
+            }
+          }
+        }
         if (val instanceof ByteString) {
           protoMsg.setField(fieldDescriptor, ((ByteString) val).toByteArray());
           return;
@@ -170,6 +236,29 @@ public class JsonToProtoMessage {
         }
         break;
       case INT64:
+        if (fieldSchema != null) {
+          if (fieldSchema.getType() == TableFieldSchema.Type.DATETIME) {
+            if (val instanceof String) {
+              protoMsg.setField(
+                  fieldDescriptor,
+                  CivilTimeEncoder.encodePacked64DatetimeMicros(LocalDateTime.parse((String) val)));
+              return;
+            } else if (val instanceof Long) {
+              protoMsg.setField(fieldDescriptor, (Long) val);
+              return;
+            }
+          } else if (fieldSchema.getType() == TableFieldSchema.Type.TIME) {
+            if (val instanceof String) {
+              protoMsg.setField(
+                  fieldDescriptor,
+                  CivilTimeEncoder.encodePacked64TimeMicros(LocalTime.parse((String) val)));
+              return;
+            } else if (val instanceof Long) {
+              protoMsg.setField(fieldDescriptor, (Long) val);
+              return;
+            }
+          }
+        }
         if (val instanceof Integer) {
           protoMsg.setField(fieldDescriptor, new Long((Integer) val));
           return;
@@ -206,6 +295,7 @@ public class JsonToProtoMessage {
               fieldDescriptor,
               convertJsonToProtoMessageImpl(
                   fieldDescriptor.getMessageType(),
+                  fieldSchema == null ? null : fieldSchema.getFieldsList(),
                   json.getJSONObject(exactJsonKeyName),
                   currentScope,
                   /*topLevel =*/ false));
@@ -224,6 +314,7 @@ public class JsonToProtoMessage {
    *
    * @param protoMsg The protocol buffer message being constructed
    * @param fieldDescriptor
+   * @param fieldSchema
    * @param json If root level has no matching fields, throws exception.
    * @param exactJsonKeyName Exact key name in JSONObject instead of lowercased version
    * @param currentScope Debugging purposes
@@ -232,6 +323,7 @@ public class JsonToProtoMessage {
   private static void fillRepeatedField(
       DynamicMessage.Builder protoMsg,
       FieldDescriptor fieldDescriptor,
+      TableFieldSchema fieldSchema,
       JSONObject json,
       String exactJsonKeyName,
       String currentScope)
@@ -259,40 +351,81 @@ public class JsonToProtoMessage {
           }
           break;
         case BYTES:
-          if (val instanceof JSONArray) {
-            try {
-              byte[] bytes = new byte[((JSONArray) val).length()];
-              for (int j = 0; j < ((JSONArray) val).length(); j++) {
-                bytes[j] = (byte) ((JSONArray) val).getInt(j);
-                if (bytes[j] != ((JSONArray) val).getInt(j)) {
-                  throw new IllegalArgumentException(
-                      String.format(
-                          "Error: "
-                              + currentScope
-                              + "["
-                              + index
-                              + "] could not be converted to byte[]."));
-                }
-              }
-              protoMsg.addRepeatedField(fieldDescriptor, bytes);
-            } catch (JSONException e) {
-              throw new IllegalArgumentException(
-                  String.format(
-                      "Error: "
-                          + currentScope
-                          + "["
-                          + index
-                          + "] could not be converted to byte[]."));
+          Boolean added = false;
+          if (fieldSchema != null && fieldSchema.getType() == TableFieldSchema.Type.NUMERIC) {
+            if (val instanceof String) {
+              protoMsg.addRepeatedField(
+                  fieldDescriptor,
+                  BigDecimalByteStringEncoder.encodeToNumericByteString(
+                      new BigDecimal((String) val)));
+              added = true;
             }
-          } else if (val instanceof ByteString) {
-            protoMsg.addRepeatedField(fieldDescriptor, ((ByteString) val).toByteArray());
-            return;
-          } else {
-            fail = true;
+          } else if (fieldSchema != null
+              && fieldSchema.getType() == TableFieldSchema.Type.BIGNUMERIC) {
+            if (val instanceof String) {
+              protoMsg.addRepeatedField(
+                  fieldDescriptor,
+                  BigDecimalByteStringEncoder.encodeToNumericByteString(
+                      new BigDecimal((String) val)));
+              added = true;
+            }
+          }
+          if (!added) {
+            if (val instanceof JSONArray) {
+              try {
+                byte[] bytes = new byte[((JSONArray) val).length()];
+                for (int j = 0; j < ((JSONArray) val).length(); j++) {
+                  bytes[j] = (byte) ((JSONArray) val).getInt(j);
+                  if (bytes[j] != ((JSONArray) val).getInt(j)) {
+                    throw new IllegalArgumentException(
+                        String.format(
+                            "Error: "
+                                + currentScope
+                                + "["
+                                + index
+                                + "] could not be converted to byte[]."));
+                  }
+                }
+                protoMsg.addRepeatedField(fieldDescriptor, bytes);
+              } catch (JSONException e) {
+                throw new IllegalArgumentException(
+                    String.format(
+                        "Error: "
+                            + currentScope
+                            + "["
+                            + index
+                            + "] could not be converted to byte[]."));
+              }
+            } else if (val instanceof ByteString) {
+              protoMsg.addRepeatedField(fieldDescriptor, ((ByteString) val).toByteArray());
+              return;
+            } else {
+              fail = true;
+            }
           }
           break;
         case INT64:
-          if (val instanceof Integer) {
+          if (fieldSchema != null && fieldSchema.getType() == TableFieldSchema.Type.DATETIME) {
+            if (val instanceof String) {
+              protoMsg.addRepeatedField(
+                  fieldDescriptor,
+                  CivilTimeEncoder.encodePacked64DatetimeMicros(LocalDateTime.parse((String) val)));
+            } else if (val instanceof Long) {
+              protoMsg.addRepeatedField(fieldDescriptor, (Long) val);
+            } else {
+              fail = true;
+            }
+          } else if (fieldSchema != null && fieldSchema.getType() == TableFieldSchema.Type.TIME) {
+            if (val instanceof String) {
+              protoMsg.addRepeatedField(
+                  fieldDescriptor,
+                  CivilTimeEncoder.encodePacked64TimeMicros(LocalTime.parse((String) val)));
+            } else if (val instanceof Long) {
+              protoMsg.addRepeatedField(fieldDescriptor, (Long) val);
+            } else {
+              fail = true;
+            }
+          } else if (val instanceof Integer) {
             protoMsg.addRepeatedField(fieldDescriptor, new Long((Integer) val));
           } else if (val instanceof Long) {
             protoMsg.addRepeatedField(fieldDescriptor, (Long) val);
@@ -330,6 +463,7 @@ public class JsonToProtoMessage {
                 fieldDescriptor,
                 convertJsonToProtoMessageImpl(
                     fieldDescriptor.getMessageType(),
+                    fieldSchema == null ? null : fieldSchema.getFieldsList(),
                     jsonArray.getJSONObject(i),
                     currentScope,
                     /*topLevel =*/ false));
