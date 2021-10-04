@@ -112,12 +112,14 @@ public class LoggingIT {
     logging.flush();
     bout.reset();
 
-    // Check for mocked STDOUT having data
+    // Check for mocked STDOUT for having STRING_PAYLOAD2 substring
     String[] args = new String[] {TEST_LOG};
-    while (bout.toString().isEmpty()) {
+    while (!bout.toString().contains(STRING_PAYLOAD2)) {
       ListLogEntries.main(args);
       Thread.sleep(5000);
     }
+    // although the following assertion is formal
+    // the line is left to emphasis the validation that is done by the test
     assertThat(bout.toString().contains(STRING_PAYLOAD2)).isTrue();
   }
 
