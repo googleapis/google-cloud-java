@@ -317,7 +317,7 @@ public class ITBucketSnippets {
           .toBuilder()
           .setIamConfiguration(
               BucketInfo.IamConfiguration.newBuilder()
-                  .setPublicAccessPrevention(BucketInfo.PublicAccessPrevention.INHERITED)
+                  .setPublicAccessPrevention(BucketInfo.PublicAccessPrevention.ENFORCED)
                   .build())
           .build()
           .update();
