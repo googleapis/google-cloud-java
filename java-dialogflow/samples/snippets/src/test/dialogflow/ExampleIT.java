@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package dialogflow.cx;
+package dialogflow;
 
 import static com.google.common.truth.Truth.assertThat;
 import static org.mockito.Mockito.when;
