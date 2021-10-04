@@ -1383,6 +1383,41 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
+       * The time that the message occurred, if provided.
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp message_time = 6;</code>
+       *
+       * @return Whether the messageTime field is set.
+       */
+      boolean hasMessageTime();
+      /**
+       *
+       *
+       * <pre>
+       * The time that the message occurred, if provided.
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp message_time = 6;</code>
+       *
+       * @return The messageTime.
+       */
+      com.google.protobuf.Timestamp getMessageTime();
+      /**
+       *
+       *
+       * <pre>
+       * The time that the message occurred, if provided.
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp message_time = 6;</code>
+       */
+      com.google.protobuf.TimestampOrBuilder getMessageTimeOrBuilder();
+
+      /**
+       *
+       *
+       * <pre>
        * The text of this segment.
        * </pre>
        *
@@ -1575,6 +1610,86 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
        */
       com.google.cloud.contactcenterinsights.v1.ConversationParticipantOrBuilder
           getSegmentParticipantOrBuilder();
+
+      /**
+       *
+       *
+       * <pre>
+       * CCAI metadata relating to the current transcript segment.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.contactcenterinsights.v1.Conversation.Transcript.TranscriptSegment.DialogflowSegmentMetadata dialogflow_segment_metadata = 10;
+       * </code>
+       *
+       * @return Whether the dialogflowSegmentMetadata field is set.
+       */
+      boolean hasDialogflowSegmentMetadata();
+      /**
+       *
+       *
+       * <pre>
+       * CCAI metadata relating to the current transcript segment.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.contactcenterinsights.v1.Conversation.Transcript.TranscriptSegment.DialogflowSegmentMetadata dialogflow_segment_metadata = 10;
+       * </code>
+       *
+       * @return The dialogflowSegmentMetadata.
+       */
+      com.google.cloud.contactcenterinsights.v1.Conversation.Transcript.TranscriptSegment
+              .DialogflowSegmentMetadata
+          getDialogflowSegmentMetadata();
+      /**
+       *
+       *
+       * <pre>
+       * CCAI metadata relating to the current transcript segment.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.contactcenterinsights.v1.Conversation.Transcript.TranscriptSegment.DialogflowSegmentMetadata dialogflow_segment_metadata = 10;
+       * </code>
+       */
+      com.google.cloud.contactcenterinsights.v1.Conversation.Transcript.TranscriptSegment
+              .DialogflowSegmentMetadataOrBuilder
+          getDialogflowSegmentMetadataOrBuilder();
+
+      /**
+       *
+       *
+       * <pre>
+       * The sentiment for this transcript segment.
+       * </pre>
+       *
+       * <code>.google.cloud.contactcenterinsights.v1.SentimentData sentiment = 11;</code>
+       *
+       * @return Whether the sentiment field is set.
+       */
+      boolean hasSentiment();
+      /**
+       *
+       *
+       * <pre>
+       * The sentiment for this transcript segment.
+       * </pre>
+       *
+       * <code>.google.cloud.contactcenterinsights.v1.SentimentData sentiment = 11;</code>
+       *
+       * @return The sentiment.
+       */
+      com.google.cloud.contactcenterinsights.v1.SentimentData getSentiment();
+      /**
+       *
+       *
+       * <pre>
+       * The sentiment for this transcript segment.
+       * </pre>
+       *
+       * <code>.google.cloud.contactcenterinsights.v1.SentimentData sentiment = 11;</code>
+       */
+      com.google.cloud.contactcenterinsights.v1.SentimentDataOrBuilder getSentimentOrBuilder();
     }
     /**
      *
@@ -1672,6 +1787,21 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
                   channelTag_ = input.readInt32();
                   break;
                 }
+              case 50:
+                {
+                  com.google.protobuf.Timestamp.Builder subBuilder = null;
+                  if (messageTime_ != null) {
+                    subBuilder = messageTime_.toBuilder();
+                  }
+                  messageTime_ =
+                      input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
+                  if (subBuilder != null) {
+                    subBuilder.mergeFrom(messageTime_);
+                    messageTime_ = subBuilder.buildPartial();
+                  }
+
+                  break;
+                }
               case 74:
                 {
                   com.google.cloud.contactcenterinsights.v1.ConversationParticipant.Builder
@@ -1687,6 +1817,43 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
                   if (subBuilder != null) {
                     subBuilder.mergeFrom(segmentParticipant_);
                     segmentParticipant_ = subBuilder.buildPartial();
+                  }
+
+                  break;
+                }
+              case 82:
+                {
+                  com.google.cloud.contactcenterinsights.v1.Conversation.Transcript
+                          .TranscriptSegment.DialogflowSegmentMetadata.Builder
+                      subBuilder = null;
+                  if (dialogflowSegmentMetadata_ != null) {
+                    subBuilder = dialogflowSegmentMetadata_.toBuilder();
+                  }
+                  dialogflowSegmentMetadata_ =
+                      input.readMessage(
+                          com.google.cloud.contactcenterinsights.v1.Conversation.Transcript
+                              .TranscriptSegment.DialogflowSegmentMetadata.parser(),
+                          extensionRegistry);
+                  if (subBuilder != null) {
+                    subBuilder.mergeFrom(dialogflowSegmentMetadata_);
+                    dialogflowSegmentMetadata_ = subBuilder.buildPartial();
+                  }
+
+                  break;
+                }
+              case 90:
+                {
+                  com.google.cloud.contactcenterinsights.v1.SentimentData.Builder subBuilder = null;
+                  if (sentiment_ != null) {
+                    subBuilder = sentiment_.toBuilder();
+                  }
+                  sentiment_ =
+                      input.readMessage(
+                          com.google.cloud.contactcenterinsights.v1.SentimentData.parser(),
+                          extensionRegistry);
+                  if (subBuilder != null) {
+                    subBuilder.mergeFrom(sentiment_);
+                    sentiment_ = subBuilder.buildPartial();
                   }
 
                   break;
@@ -3220,6 +3387,692 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
         }
       }
 
+      public interface DialogflowSegmentMetadataOrBuilder
+          extends
+          // @@protoc_insertion_point(interface_extends:google.cloud.contactcenterinsights.v1.Conversation.Transcript.TranscriptSegment.DialogflowSegmentMetadata)
+          com.google.protobuf.MessageOrBuilder {
+
+        /**
+         *
+         *
+         * <pre>
+         * Whether the transcript segment was covered under the configured smart
+         * reply allowlist in Agent Assist.
+         * </pre>
+         *
+         * <code>bool smart_reply_allowlist_covered = 1;</code>
+         *
+         * @return The smartReplyAllowlistCovered.
+         */
+        boolean getSmartReplyAllowlistCovered();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Metadata from Dialogflow relating to the current transcript segment.
+       * </pre>
+       *
+       * Protobuf type {@code
+       * google.cloud.contactcenterinsights.v1.Conversation.Transcript.TranscriptSegment.DialogflowSegmentMetadata}
+       */
+      public static final class DialogflowSegmentMetadata
+          extends com.google.protobuf.GeneratedMessageV3
+          implements
+          // @@protoc_insertion_point(message_implements:google.cloud.contactcenterinsights.v1.Conversation.Transcript.TranscriptSegment.DialogflowSegmentMetadata)
+          DialogflowSegmentMetadataOrBuilder {
+        private static final long serialVersionUID = 0L;
+        // Use DialogflowSegmentMetadata.newBuilder() to construct.
+        private DialogflowSegmentMetadata(
+            com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+          super(builder);
+        }
+
+        private DialogflowSegmentMetadata() {}
+
+        @java.lang.Override
+        @SuppressWarnings({"unused"})
+        protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+          return new DialogflowSegmentMetadata();
+        }
+
+        @java.lang.Override
+        public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+          return this.unknownFields;
+        }
+
+        private DialogflowSegmentMetadata(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          this();
+          if (extensionRegistry == null) {
+            throw new java.lang.NullPointerException();
+          }
+          com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+              com.google.protobuf.UnknownFieldSet.newBuilder();
+          try {
+            boolean done = false;
+            while (!done) {
+              int tag = input.readTag();
+              switch (tag) {
+                case 0:
+                  done = true;
+                  break;
+                case 8:
+                  {
+                    smartReplyAllowlistCovered_ = input.readBool();
+                    break;
+                  }
+                default:
+                  {
+                    if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
+                      done = true;
+                    }
+                    break;
+                  }
+              }
+            }
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(this);
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(this);
+          } finally {
+            this.unknownFields = unknownFields.build();
+            makeExtensionsImmutable();
+          }
+        }
+
+        public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+          return com.google.cloud.contactcenterinsights.v1.ResourcesProto
+              .internal_static_google_cloud_contactcenterinsights_v1_Conversation_Transcript_TranscriptSegment_DialogflowSegmentMetadata_descriptor;
+        }
+
+        @java.lang.Override
+        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+          return com.google.cloud.contactcenterinsights.v1.ResourcesProto
+              .internal_static_google_cloud_contactcenterinsights_v1_Conversation_Transcript_TranscriptSegment_DialogflowSegmentMetadata_fieldAccessorTable
+              .ensureFieldAccessorsInitialized(
+                  com.google.cloud.contactcenterinsights.v1.Conversation.Transcript
+                      .TranscriptSegment.DialogflowSegmentMetadata.class,
+                  com.google.cloud.contactcenterinsights.v1.Conversation.Transcript
+                      .TranscriptSegment.DialogflowSegmentMetadata.Builder.class);
+        }
+
+        public static final int SMART_REPLY_ALLOWLIST_COVERED_FIELD_NUMBER = 1;
+        private boolean smartReplyAllowlistCovered_;
+        /**
+         *
+         *
+         * <pre>
+         * Whether the transcript segment was covered under the configured smart
+         * reply allowlist in Agent Assist.
+         * </pre>
+         *
+         * <code>bool smart_reply_allowlist_covered = 1;</code>
+         *
+         * @return The smartReplyAllowlistCovered.
+         */
+        @java.lang.Override
+        public boolean getSmartReplyAllowlistCovered() {
+          return smartReplyAllowlistCovered_;
+        }
+
+        private byte memoizedIsInitialized = -1;
+
+        @java.lang.Override
+        public final boolean isInitialized() {
+          byte isInitialized = memoizedIsInitialized;
+          if (isInitialized == 1) return true;
+          if (isInitialized == 0) return false;
+
+          memoizedIsInitialized = 1;
+          return true;
+        }
+
+        @java.lang.Override
+        public void writeTo(com.google.protobuf.CodedOutputStream output)
+            throws java.io.IOException {
+          if (smartReplyAllowlistCovered_ != false) {
+            output.writeBool(1, smartReplyAllowlistCovered_);
+          }
+          unknownFields.writeTo(output);
+        }
+
+        @java.lang.Override
+        public int getSerializedSize() {
+          int size = memoizedSize;
+          if (size != -1) return size;
+
+          size = 0;
+          if (smartReplyAllowlistCovered_ != false) {
+            size +=
+                com.google.protobuf.CodedOutputStream.computeBoolSize(
+                    1, smartReplyAllowlistCovered_);
+          }
+          size += unknownFields.getSerializedSize();
+          memoizedSize = size;
+          return size;
+        }
+
+        @java.lang.Override
+        public boolean equals(final java.lang.Object obj) {
+          if (obj == this) {
+            return true;
+          }
+          if (!(obj
+              instanceof
+              com.google.cloud.contactcenterinsights.v1.Conversation.Transcript.TranscriptSegment
+                  .DialogflowSegmentMetadata)) {
+            return super.equals(obj);
+          }
+          com.google.cloud.contactcenterinsights.v1.Conversation.Transcript.TranscriptSegment
+                  .DialogflowSegmentMetadata
+              other =
+                  (com.google.cloud.contactcenterinsights.v1.Conversation.Transcript
+                          .TranscriptSegment.DialogflowSegmentMetadata)
+                      obj;
+
+          if (getSmartReplyAllowlistCovered() != other.getSmartReplyAllowlistCovered())
+            return false;
+          if (!unknownFields.equals(other.unknownFields)) return false;
+          return true;
+        }
+
+        @java.lang.Override
+        public int hashCode() {
+          if (memoizedHashCode != 0) {
+            return memoizedHashCode;
+          }
+          int hash = 41;
+          hash = (19 * hash) + getDescriptor().hashCode();
+          hash = (37 * hash) + SMART_REPLY_ALLOWLIST_COVERED_FIELD_NUMBER;
+          hash =
+              (53 * hash)
+                  + com.google.protobuf.Internal.hashBoolean(getSmartReplyAllowlistCovered());
+          hash = (29 * hash) + unknownFields.hashCode();
+          memoizedHashCode = hash;
+          return hash;
+        }
+
+        public static com.google.cloud.contactcenterinsights.v1.Conversation.Transcript
+                .TranscriptSegment.DialogflowSegmentMetadata
+            parseFrom(java.nio.ByteBuffer data)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data);
+        }
+
+        public static com.google.cloud.contactcenterinsights.v1.Conversation.Transcript
+                .TranscriptSegment.DialogflowSegmentMetadata
+            parseFrom(
+                java.nio.ByteBuffer data,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static com.google.cloud.contactcenterinsights.v1.Conversation.Transcript
+                .TranscriptSegment.DialogflowSegmentMetadata
+            parseFrom(com.google.protobuf.ByteString data)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data);
+        }
+
+        public static com.google.cloud.contactcenterinsights.v1.Conversation.Transcript
+                .TranscriptSegment.DialogflowSegmentMetadata
+            parseFrom(
+                com.google.protobuf.ByteString data,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static com.google.cloud.contactcenterinsights.v1.Conversation.Transcript
+                .TranscriptSegment.DialogflowSegmentMetadata
+            parseFrom(byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data);
+        }
+
+        public static com.google.cloud.contactcenterinsights.v1.Conversation.Transcript
+                .TranscriptSegment.DialogflowSegmentMetadata
+            parseFrom(byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static com.google.cloud.contactcenterinsights.v1.Conversation.Transcript
+                .TranscriptSegment.DialogflowSegmentMetadata
+            parseFrom(java.io.InputStream input) throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+        }
+
+        public static com.google.cloud.contactcenterinsights.v1.Conversation.Transcript
+                .TranscriptSegment.DialogflowSegmentMetadata
+            parseFrom(
+                java.io.InputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+              PARSER, input, extensionRegistry);
+        }
+
+        public static com.google.cloud.contactcenterinsights.v1.Conversation.Transcript
+                .TranscriptSegment.DialogflowSegmentMetadata
+            parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+              PARSER, input);
+        }
+
+        public static com.google.cloud.contactcenterinsights.v1.Conversation.Transcript
+                .TranscriptSegment.DialogflowSegmentMetadata
+            parseDelimitedFrom(
+                java.io.InputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+              PARSER, input, extensionRegistry);
+        }
+
+        public static com.google.cloud.contactcenterinsights.v1.Conversation.Transcript
+                .TranscriptSegment.DialogflowSegmentMetadata
+            parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+        }
+
+        public static com.google.cloud.contactcenterinsights.v1.Conversation.Transcript
+                .TranscriptSegment.DialogflowSegmentMetadata
+            parseFrom(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+              PARSER, input, extensionRegistry);
+        }
+
+        @java.lang.Override
+        public Builder newBuilderForType() {
+          return newBuilder();
+        }
+
+        public static Builder newBuilder() {
+          return DEFAULT_INSTANCE.toBuilder();
+        }
+
+        public static Builder newBuilder(
+            com.google.cloud.contactcenterinsights.v1.Conversation.Transcript.TranscriptSegment
+                    .DialogflowSegmentMetadata
+                prototype) {
+          return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+        }
+
+        @java.lang.Override
+        public Builder toBuilder() {
+          return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+        }
+
+        @java.lang.Override
+        protected Builder newBuilderForType(
+            com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+          Builder builder = new Builder(parent);
+          return builder;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Metadata from Dialogflow relating to the current transcript segment.
+         * </pre>
+         *
+         * Protobuf type {@code
+         * google.cloud.contactcenterinsights.v1.Conversation.Transcript.TranscriptSegment.DialogflowSegmentMetadata}
+         */
+        public static final class Builder
+            extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+            implements
+            // @@protoc_insertion_point(builder_implements:google.cloud.contactcenterinsights.v1.Conversation.Transcript.TranscriptSegment.DialogflowSegmentMetadata)
+            com.google.cloud.contactcenterinsights.v1.Conversation.Transcript.TranscriptSegment
+                .DialogflowSegmentMetadataOrBuilder {
+          public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+            return com.google.cloud.contactcenterinsights.v1.ResourcesProto
+                .internal_static_google_cloud_contactcenterinsights_v1_Conversation_Transcript_TranscriptSegment_DialogflowSegmentMetadata_descriptor;
+          }
+
+          @java.lang.Override
+          protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+              internalGetFieldAccessorTable() {
+            return com.google.cloud.contactcenterinsights.v1.ResourcesProto
+                .internal_static_google_cloud_contactcenterinsights_v1_Conversation_Transcript_TranscriptSegment_DialogflowSegmentMetadata_fieldAccessorTable
+                .ensureFieldAccessorsInitialized(
+                    com.google.cloud.contactcenterinsights.v1.Conversation.Transcript
+                        .TranscriptSegment.DialogflowSegmentMetadata.class,
+                    com.google.cloud.contactcenterinsights.v1.Conversation.Transcript
+                        .TranscriptSegment.DialogflowSegmentMetadata.Builder.class);
+          }
+
+          // Construct using
+          // com.google.cloud.contactcenterinsights.v1.Conversation.Transcript.TranscriptSegment.DialogflowSegmentMetadata.newBuilder()
+          private Builder() {
+            maybeForceBuilderInitialization();
+          }
+
+          private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+            super(parent);
+            maybeForceBuilderInitialization();
+          }
+
+          private void maybeForceBuilderInitialization() {
+            if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
+          }
+
+          @java.lang.Override
+          public Builder clear() {
+            super.clear();
+            smartReplyAllowlistCovered_ = false;
+
+            return this;
+          }
+
+          @java.lang.Override
+          public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+            return com.google.cloud.contactcenterinsights.v1.ResourcesProto
+                .internal_static_google_cloud_contactcenterinsights_v1_Conversation_Transcript_TranscriptSegment_DialogflowSegmentMetadata_descriptor;
+          }
+
+          @java.lang.Override
+          public com.google.cloud.contactcenterinsights.v1.Conversation.Transcript.TranscriptSegment
+                  .DialogflowSegmentMetadata
+              getDefaultInstanceForType() {
+            return com.google.cloud.contactcenterinsights.v1.Conversation.Transcript
+                .TranscriptSegment.DialogflowSegmentMetadata.getDefaultInstance();
+          }
+
+          @java.lang.Override
+          public com.google.cloud.contactcenterinsights.v1.Conversation.Transcript.TranscriptSegment
+                  .DialogflowSegmentMetadata
+              build() {
+            com.google.cloud.contactcenterinsights.v1.Conversation.Transcript.TranscriptSegment
+                    .DialogflowSegmentMetadata
+                result = buildPartial();
+            if (!result.isInitialized()) {
+              throw newUninitializedMessageException(result);
+            }
+            return result;
+          }
+
+          @java.lang.Override
+          public com.google.cloud.contactcenterinsights.v1.Conversation.Transcript.TranscriptSegment
+                  .DialogflowSegmentMetadata
+              buildPartial() {
+            com.google.cloud.contactcenterinsights.v1.Conversation.Transcript.TranscriptSegment
+                    .DialogflowSegmentMetadata
+                result =
+                    new com.google.cloud.contactcenterinsights.v1.Conversation.Transcript
+                        .TranscriptSegment.DialogflowSegmentMetadata(this);
+            result.smartReplyAllowlistCovered_ = smartReplyAllowlistCovered_;
+            onBuilt();
+            return result;
+          }
+
+          @java.lang.Override
+          public Builder clone() {
+            return super.clone();
+          }
+
+          @java.lang.Override
+          public Builder setField(
+              com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+            return super.setField(field, value);
+          }
+
+          @java.lang.Override
+          public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+            return super.clearField(field);
+          }
+
+          @java.lang.Override
+          public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+            return super.clearOneof(oneof);
+          }
+
+          @java.lang.Override
+          public Builder setRepeatedField(
+              com.google.protobuf.Descriptors.FieldDescriptor field,
+              int index,
+              java.lang.Object value) {
+            return super.setRepeatedField(field, index, value);
+          }
+
+          @java.lang.Override
+          public Builder addRepeatedField(
+              com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+            return super.addRepeatedField(field, value);
+          }
+
+          @java.lang.Override
+          public Builder mergeFrom(com.google.protobuf.Message other) {
+            if (other
+                instanceof
+                com.google.cloud.contactcenterinsights.v1.Conversation.Transcript.TranscriptSegment
+                    .DialogflowSegmentMetadata) {
+              return mergeFrom(
+                  (com.google.cloud.contactcenterinsights.v1.Conversation.Transcript
+                          .TranscriptSegment.DialogflowSegmentMetadata)
+                      other);
+            } else {
+              super.mergeFrom(other);
+              return this;
+            }
+          }
+
+          public Builder mergeFrom(
+              com.google.cloud.contactcenterinsights.v1.Conversation.Transcript.TranscriptSegment
+                      .DialogflowSegmentMetadata
+                  other) {
+            if (other
+                == com.google.cloud.contactcenterinsights.v1.Conversation.Transcript
+                    .TranscriptSegment.DialogflowSegmentMetadata.getDefaultInstance()) return this;
+            if (other.getSmartReplyAllowlistCovered() != false) {
+              setSmartReplyAllowlistCovered(other.getSmartReplyAllowlistCovered());
+            }
+            this.mergeUnknownFields(other.unknownFields);
+            onChanged();
+            return this;
+          }
+
+          @java.lang.Override
+          public final boolean isInitialized() {
+            return true;
+          }
+
+          @java.lang.Override
+          public Builder mergeFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+            com.google.cloud.contactcenterinsights.v1.Conversation.Transcript.TranscriptSegment
+                    .DialogflowSegmentMetadata
+                parsedMessage = null;
+            try {
+              parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              parsedMessage =
+                  (com.google.cloud.contactcenterinsights.v1.Conversation.Transcript
+                          .TranscriptSegment.DialogflowSegmentMetadata)
+                      e.getUnfinishedMessage();
+              throw e.unwrapIOException();
+            } finally {
+              if (parsedMessage != null) {
+                mergeFrom(parsedMessage);
+              }
+            }
+            return this;
+          }
+
+          private boolean smartReplyAllowlistCovered_;
+          /**
+           *
+           *
+           * <pre>
+           * Whether the transcript segment was covered under the configured smart
+           * reply allowlist in Agent Assist.
+           * </pre>
+           *
+           * <code>bool smart_reply_allowlist_covered = 1;</code>
+           *
+           * @return The smartReplyAllowlistCovered.
+           */
+          @java.lang.Override
+          public boolean getSmartReplyAllowlistCovered() {
+            return smartReplyAllowlistCovered_;
+          }
+          /**
+           *
+           *
+           * <pre>
+           * Whether the transcript segment was covered under the configured smart
+           * reply allowlist in Agent Assist.
+           * </pre>
+           *
+           * <code>bool smart_reply_allowlist_covered = 1;</code>
+           *
+           * @param value The smartReplyAllowlistCovered to set.
+           * @return This builder for chaining.
+           */
+          public Builder setSmartReplyAllowlistCovered(boolean value) {
+
+            smartReplyAllowlistCovered_ = value;
+            onChanged();
+            return this;
+          }
+          /**
+           *
+           *
+           * <pre>
+           * Whether the transcript segment was covered under the configured smart
+           * reply allowlist in Agent Assist.
+           * </pre>
+           *
+           * <code>bool smart_reply_allowlist_covered = 1;</code>
+           *
+           * @return This builder for chaining.
+           */
+          public Builder clearSmartReplyAllowlistCovered() {
+
+            smartReplyAllowlistCovered_ = false;
+            onChanged();
+            return this;
+          }
+
+          @java.lang.Override
+          public final Builder setUnknownFields(
+              final com.google.protobuf.UnknownFieldSet unknownFields) {
+            return super.setUnknownFields(unknownFields);
+          }
+
+          @java.lang.Override
+          public final Builder mergeUnknownFields(
+              final com.google.protobuf.UnknownFieldSet unknownFields) {
+            return super.mergeUnknownFields(unknownFields);
+          }
+
+          // @@protoc_insertion_point(builder_scope:google.cloud.contactcenterinsights.v1.Conversation.Transcript.TranscriptSegment.DialogflowSegmentMetadata)
+        }
+
+        // @@protoc_insertion_point(class_scope:google.cloud.contactcenterinsights.v1.Conversation.Transcript.TranscriptSegment.DialogflowSegmentMetadata)
+        private static final com.google.cloud.contactcenterinsights.v1.Conversation.Transcript
+                .TranscriptSegment.DialogflowSegmentMetadata
+            DEFAULT_INSTANCE;
+
+        static {
+          DEFAULT_INSTANCE =
+              new com.google.cloud.contactcenterinsights.v1.Conversation.Transcript
+                  .TranscriptSegment.DialogflowSegmentMetadata();
+        }
+
+        public static com.google.cloud.contactcenterinsights.v1.Conversation.Transcript
+                .TranscriptSegment.DialogflowSegmentMetadata
+            getDefaultInstance() {
+          return DEFAULT_INSTANCE;
+        }
+
+        private static final com.google.protobuf.Parser<DialogflowSegmentMetadata> PARSER =
+            new com.google.protobuf.AbstractParser<DialogflowSegmentMetadata>() {
+              @java.lang.Override
+              public DialogflowSegmentMetadata parsePartialFrom(
+                  com.google.protobuf.CodedInputStream input,
+                  com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                  throws com.google.protobuf.InvalidProtocolBufferException {
+                return new DialogflowSegmentMetadata(input, extensionRegistry);
+              }
+            };
+
+        public static com.google.protobuf.Parser<DialogflowSegmentMetadata> parser() {
+          return PARSER;
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Parser<DialogflowSegmentMetadata> getParserForType() {
+          return PARSER;
+        }
+
+        @java.lang.Override
+        public com.google.cloud.contactcenterinsights.v1.Conversation.Transcript.TranscriptSegment
+                .DialogflowSegmentMetadata
+            getDefaultInstanceForType() {
+          return DEFAULT_INSTANCE;
+        }
+      }
+
+      public static final int MESSAGE_TIME_FIELD_NUMBER = 6;
+      private com.google.protobuf.Timestamp messageTime_;
+      /**
+       *
+       *
+       * <pre>
+       * The time that the message occurred, if provided.
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp message_time = 6;</code>
+       *
+       * @return Whether the messageTime field is set.
+       */
+      @java.lang.Override
+      public boolean hasMessageTime() {
+        return messageTime_ != null;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The time that the message occurred, if provided.
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp message_time = 6;</code>
+       *
+       * @return The messageTime.
+       */
+      @java.lang.Override
+      public com.google.protobuf.Timestamp getMessageTime() {
+        return messageTime_ == null
+            ? com.google.protobuf.Timestamp.getDefaultInstance()
+            : messageTime_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The time that the message occurred, if provided.
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp message_time = 6;</code>
+       */
+      @java.lang.Override
+      public com.google.protobuf.TimestampOrBuilder getMessageTimeOrBuilder() {
+        return getMessageTime();
+      }
+
       public static final int TEXT_FIELD_NUMBER = 1;
       private volatile java.lang.Object text_;
       /**
@@ -3510,6 +4363,116 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
         return getSegmentParticipant();
       }
 
+      public static final int DIALOGFLOW_SEGMENT_METADATA_FIELD_NUMBER = 10;
+      private com.google.cloud.contactcenterinsights.v1.Conversation.Transcript.TranscriptSegment
+              .DialogflowSegmentMetadata
+          dialogflowSegmentMetadata_;
+      /**
+       *
+       *
+       * <pre>
+       * CCAI metadata relating to the current transcript segment.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.contactcenterinsights.v1.Conversation.Transcript.TranscriptSegment.DialogflowSegmentMetadata dialogflow_segment_metadata = 10;
+       * </code>
+       *
+       * @return Whether the dialogflowSegmentMetadata field is set.
+       */
+      @java.lang.Override
+      public boolean hasDialogflowSegmentMetadata() {
+        return dialogflowSegmentMetadata_ != null;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * CCAI metadata relating to the current transcript segment.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.contactcenterinsights.v1.Conversation.Transcript.TranscriptSegment.DialogflowSegmentMetadata dialogflow_segment_metadata = 10;
+       * </code>
+       *
+       * @return The dialogflowSegmentMetadata.
+       */
+      @java.lang.Override
+      public com.google.cloud.contactcenterinsights.v1.Conversation.Transcript.TranscriptSegment
+              .DialogflowSegmentMetadata
+          getDialogflowSegmentMetadata() {
+        return dialogflowSegmentMetadata_ == null
+            ? com.google.cloud.contactcenterinsights.v1.Conversation.Transcript.TranscriptSegment
+                .DialogflowSegmentMetadata.getDefaultInstance()
+            : dialogflowSegmentMetadata_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * CCAI metadata relating to the current transcript segment.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.contactcenterinsights.v1.Conversation.Transcript.TranscriptSegment.DialogflowSegmentMetadata dialogflow_segment_metadata = 10;
+       * </code>
+       */
+      @java.lang.Override
+      public com.google.cloud.contactcenterinsights.v1.Conversation.Transcript.TranscriptSegment
+              .DialogflowSegmentMetadataOrBuilder
+          getDialogflowSegmentMetadataOrBuilder() {
+        return getDialogflowSegmentMetadata();
+      }
+
+      public static final int SENTIMENT_FIELD_NUMBER = 11;
+      private com.google.cloud.contactcenterinsights.v1.SentimentData sentiment_;
+      /**
+       *
+       *
+       * <pre>
+       * The sentiment for this transcript segment.
+       * </pre>
+       *
+       * <code>.google.cloud.contactcenterinsights.v1.SentimentData sentiment = 11;</code>
+       *
+       * @return Whether the sentiment field is set.
+       */
+      @java.lang.Override
+      public boolean hasSentiment() {
+        return sentiment_ != null;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The sentiment for this transcript segment.
+       * </pre>
+       *
+       * <code>.google.cloud.contactcenterinsights.v1.SentimentData sentiment = 11;</code>
+       *
+       * @return The sentiment.
+       */
+      @java.lang.Override
+      public com.google.cloud.contactcenterinsights.v1.SentimentData getSentiment() {
+        return sentiment_ == null
+            ? com.google.cloud.contactcenterinsights.v1.SentimentData.getDefaultInstance()
+            : sentiment_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The sentiment for this transcript segment.
+       * </pre>
+       *
+       * <code>.google.cloud.contactcenterinsights.v1.SentimentData sentiment = 11;</code>
+       */
+      @java.lang.Override
+      public com.google.cloud.contactcenterinsights.v1.SentimentDataOrBuilder
+          getSentimentOrBuilder() {
+        return getSentiment();
+      }
+
       private byte memoizedIsInitialized = -1;
 
       @java.lang.Override
@@ -3539,8 +4502,17 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
         if (channelTag_ != 0) {
           output.writeInt32(5, channelTag_);
         }
+        if (messageTime_ != null) {
+          output.writeMessage(6, getMessageTime());
+        }
         if (segmentParticipant_ != null) {
           output.writeMessage(9, getSegmentParticipant());
+        }
+        if (dialogflowSegmentMetadata_ != null) {
+          output.writeMessage(10, getDialogflowSegmentMetadata());
+        }
+        if (sentiment_ != null) {
+          output.writeMessage(11, getSentiment());
         }
         unknownFields.writeTo(output);
       }
@@ -3566,9 +4538,20 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
         if (channelTag_ != 0) {
           size += com.google.protobuf.CodedOutputStream.computeInt32Size(5, channelTag_);
         }
+        if (messageTime_ != null) {
+          size += com.google.protobuf.CodedOutputStream.computeMessageSize(6, getMessageTime());
+        }
         if (segmentParticipant_ != null) {
           size +=
               com.google.protobuf.CodedOutputStream.computeMessageSize(9, getSegmentParticipant());
+        }
+        if (dialogflowSegmentMetadata_ != null) {
+          size +=
+              com.google.protobuf.CodedOutputStream.computeMessageSize(
+                  10, getDialogflowSegmentMetadata());
+        }
+        if (sentiment_ != null) {
+          size += com.google.protobuf.CodedOutputStream.computeMessageSize(11, getSentiment());
         }
         size += unknownFields.getSerializedSize();
         memoizedSize = size;
@@ -3589,6 +4572,10 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
             (com.google.cloud.contactcenterinsights.v1.Conversation.Transcript.TranscriptSegment)
                 obj;
 
+        if (hasMessageTime() != other.hasMessageTime()) return false;
+        if (hasMessageTime()) {
+          if (!getMessageTime().equals(other.getMessageTime())) return false;
+        }
         if (!getText().equals(other.getText())) return false;
         if (java.lang.Float.floatToIntBits(getConfidence())
             != java.lang.Float.floatToIntBits(other.getConfidence())) return false;
@@ -3598,6 +4585,15 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
         if (hasSegmentParticipant() != other.hasSegmentParticipant()) return false;
         if (hasSegmentParticipant()) {
           if (!getSegmentParticipant().equals(other.getSegmentParticipant())) return false;
+        }
+        if (hasDialogflowSegmentMetadata() != other.hasDialogflowSegmentMetadata()) return false;
+        if (hasDialogflowSegmentMetadata()) {
+          if (!getDialogflowSegmentMetadata().equals(other.getDialogflowSegmentMetadata()))
+            return false;
+        }
+        if (hasSentiment() != other.hasSentiment()) return false;
+        if (hasSentiment()) {
+          if (!getSentiment().equals(other.getSentiment())) return false;
         }
         if (!unknownFields.equals(other.unknownFields)) return false;
         return true;
@@ -3610,6 +4606,10 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
         }
         int hash = 41;
         hash = (19 * hash) + getDescriptor().hashCode();
+        if (hasMessageTime()) {
+          hash = (37 * hash) + MESSAGE_TIME_FIELD_NUMBER;
+          hash = (53 * hash) + getMessageTime().hashCode();
+        }
         hash = (37 * hash) + TEXT_FIELD_NUMBER;
         hash = (53 * hash) + getText().hashCode();
         hash = (37 * hash) + CONFIDENCE_FIELD_NUMBER;
@@ -3625,6 +4625,14 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
         if (hasSegmentParticipant()) {
           hash = (37 * hash) + SEGMENT_PARTICIPANT_FIELD_NUMBER;
           hash = (53 * hash) + getSegmentParticipant().hashCode();
+        }
+        if (hasDialogflowSegmentMetadata()) {
+          hash = (37 * hash) + DIALOGFLOW_SEGMENT_METADATA_FIELD_NUMBER;
+          hash = (53 * hash) + getDialogflowSegmentMetadata().hashCode();
+        }
+        if (hasSentiment()) {
+          hash = (37 * hash) + SENTIMENT_FIELD_NUMBER;
+          hash = (53 * hash) + getSentiment().hashCode();
         }
         hash = (29 * hash) + unknownFields.hashCode();
         memoizedHashCode = hash;
@@ -3802,6 +4810,12 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
         @java.lang.Override
         public Builder clear() {
           super.clear();
+          if (messageTimeBuilder_ == null) {
+            messageTime_ = null;
+          } else {
+            messageTime_ = null;
+            messageTimeBuilder_ = null;
+          }
           text_ = "";
 
           confidence_ = 0F;
@@ -3821,6 +4835,18 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
           } else {
             segmentParticipant_ = null;
             segmentParticipantBuilder_ = null;
+          }
+          if (dialogflowSegmentMetadataBuilder_ == null) {
+            dialogflowSegmentMetadata_ = null;
+          } else {
+            dialogflowSegmentMetadata_ = null;
+            dialogflowSegmentMetadataBuilder_ = null;
+          }
+          if (sentimentBuilder_ == null) {
+            sentiment_ = null;
+          } else {
+            sentiment_ = null;
+            sentimentBuilder_ = null;
           }
           return this;
         }
@@ -3857,6 +4883,11 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
                   new com.google.cloud.contactcenterinsights.v1.Conversation.Transcript
                       .TranscriptSegment(this);
           int from_bitField0_ = bitField0_;
+          if (messageTimeBuilder_ == null) {
+            result.messageTime_ = messageTime_;
+          } else {
+            result.messageTime_ = messageTimeBuilder_.build();
+          }
           result.text_ = text_;
           result.confidence_ = confidence_;
           if (wordsBuilder_ == null) {
@@ -3874,6 +4905,16 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
             result.segmentParticipant_ = segmentParticipant_;
           } else {
             result.segmentParticipant_ = segmentParticipantBuilder_.build();
+          }
+          if (dialogflowSegmentMetadataBuilder_ == null) {
+            result.dialogflowSegmentMetadata_ = dialogflowSegmentMetadata_;
+          } else {
+            result.dialogflowSegmentMetadata_ = dialogflowSegmentMetadataBuilder_.build();
+          }
+          if (sentimentBuilder_ == null) {
+            result.sentiment_ = sentiment_;
+          } else {
+            result.sentiment_ = sentimentBuilder_.build();
           }
           onBuilt();
           return result;
@@ -3935,6 +4976,9 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
           if (other
               == com.google.cloud.contactcenterinsights.v1.Conversation.Transcript.TranscriptSegment
                   .getDefaultInstance()) return this;
+          if (other.hasMessageTime()) {
+            mergeMessageTime(other.getMessageTime());
+          }
           if (!other.getText().isEmpty()) {
             text_ = other.text_;
             onChanged();
@@ -3979,6 +5023,12 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
           if (other.hasSegmentParticipant()) {
             mergeSegmentParticipant(other.getSegmentParticipant());
           }
+          if (other.hasDialogflowSegmentMetadata()) {
+            mergeDialogflowSegmentMetadata(other.getDialogflowSegmentMetadata());
+          }
+          if (other.hasSentiment()) {
+            mergeSentiment(other.getSentiment());
+          }
           this.mergeUnknownFields(other.unknownFields);
           onChanged();
           return this;
@@ -4013,6 +5063,191 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
         }
 
         private int bitField0_;
+
+        private com.google.protobuf.Timestamp messageTime_;
+        private com.google.protobuf.SingleFieldBuilderV3<
+                com.google.protobuf.Timestamp,
+                com.google.protobuf.Timestamp.Builder,
+                com.google.protobuf.TimestampOrBuilder>
+            messageTimeBuilder_;
+        /**
+         *
+         *
+         * <pre>
+         * The time that the message occurred, if provided.
+         * </pre>
+         *
+         * <code>.google.protobuf.Timestamp message_time = 6;</code>
+         *
+         * @return Whether the messageTime field is set.
+         */
+        public boolean hasMessageTime() {
+          return messageTimeBuilder_ != null || messageTime_ != null;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * The time that the message occurred, if provided.
+         * </pre>
+         *
+         * <code>.google.protobuf.Timestamp message_time = 6;</code>
+         *
+         * @return The messageTime.
+         */
+        public com.google.protobuf.Timestamp getMessageTime() {
+          if (messageTimeBuilder_ == null) {
+            return messageTime_ == null
+                ? com.google.protobuf.Timestamp.getDefaultInstance()
+                : messageTime_;
+          } else {
+            return messageTimeBuilder_.getMessage();
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * The time that the message occurred, if provided.
+         * </pre>
+         *
+         * <code>.google.protobuf.Timestamp message_time = 6;</code>
+         */
+        public Builder setMessageTime(com.google.protobuf.Timestamp value) {
+          if (messageTimeBuilder_ == null) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            messageTime_ = value;
+            onChanged();
+          } else {
+            messageTimeBuilder_.setMessage(value);
+          }
+
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * The time that the message occurred, if provided.
+         * </pre>
+         *
+         * <code>.google.protobuf.Timestamp message_time = 6;</code>
+         */
+        public Builder setMessageTime(com.google.protobuf.Timestamp.Builder builderForValue) {
+          if (messageTimeBuilder_ == null) {
+            messageTime_ = builderForValue.build();
+            onChanged();
+          } else {
+            messageTimeBuilder_.setMessage(builderForValue.build());
+          }
+
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * The time that the message occurred, if provided.
+         * </pre>
+         *
+         * <code>.google.protobuf.Timestamp message_time = 6;</code>
+         */
+        public Builder mergeMessageTime(com.google.protobuf.Timestamp value) {
+          if (messageTimeBuilder_ == null) {
+            if (messageTime_ != null) {
+              messageTime_ =
+                  com.google.protobuf.Timestamp.newBuilder(messageTime_)
+                      .mergeFrom(value)
+                      .buildPartial();
+            } else {
+              messageTime_ = value;
+            }
+            onChanged();
+          } else {
+            messageTimeBuilder_.mergeFrom(value);
+          }
+
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * The time that the message occurred, if provided.
+         * </pre>
+         *
+         * <code>.google.protobuf.Timestamp message_time = 6;</code>
+         */
+        public Builder clearMessageTime() {
+          if (messageTimeBuilder_ == null) {
+            messageTime_ = null;
+            onChanged();
+          } else {
+            messageTime_ = null;
+            messageTimeBuilder_ = null;
+          }
+
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * The time that the message occurred, if provided.
+         * </pre>
+         *
+         * <code>.google.protobuf.Timestamp message_time = 6;</code>
+         */
+        public com.google.protobuf.Timestamp.Builder getMessageTimeBuilder() {
+
+          onChanged();
+          return getMessageTimeFieldBuilder().getBuilder();
+        }
+        /**
+         *
+         *
+         * <pre>
+         * The time that the message occurred, if provided.
+         * </pre>
+         *
+         * <code>.google.protobuf.Timestamp message_time = 6;</code>
+         */
+        public com.google.protobuf.TimestampOrBuilder getMessageTimeOrBuilder() {
+          if (messageTimeBuilder_ != null) {
+            return messageTimeBuilder_.getMessageOrBuilder();
+          } else {
+            return messageTime_ == null
+                ? com.google.protobuf.Timestamp.getDefaultInstance()
+                : messageTime_;
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * The time that the message occurred, if provided.
+         * </pre>
+         *
+         * <code>.google.protobuf.Timestamp message_time = 6;</code>
+         */
+        private com.google.protobuf.SingleFieldBuilderV3<
+                com.google.protobuf.Timestamp,
+                com.google.protobuf.Timestamp.Builder,
+                com.google.protobuf.TimestampOrBuilder>
+            getMessageTimeFieldBuilder() {
+          if (messageTimeBuilder_ == null) {
+            messageTimeBuilder_ =
+                new com.google.protobuf.SingleFieldBuilderV3<
+                    com.google.protobuf.Timestamp,
+                    com.google.protobuf.Timestamp.Builder,
+                    com.google.protobuf.TimestampOrBuilder>(
+                    getMessageTime(), getParentForChildren(), isClean());
+            messageTime_ = null;
+          }
+          return messageTimeBuilder_;
+        }
 
         private java.lang.Object text_ = "";
         /**
@@ -5010,6 +6245,428 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
             segmentParticipant_ = null;
           }
           return segmentParticipantBuilder_;
+        }
+
+        private com.google.cloud.contactcenterinsights.v1.Conversation.Transcript.TranscriptSegment
+                .DialogflowSegmentMetadata
+            dialogflowSegmentMetadata_;
+        private com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.contactcenterinsights.v1.Conversation.Transcript.TranscriptSegment
+                    .DialogflowSegmentMetadata,
+                com.google.cloud.contactcenterinsights.v1.Conversation.Transcript.TranscriptSegment
+                    .DialogflowSegmentMetadata.Builder,
+                com.google.cloud.contactcenterinsights.v1.Conversation.Transcript.TranscriptSegment
+                    .DialogflowSegmentMetadataOrBuilder>
+            dialogflowSegmentMetadataBuilder_;
+        /**
+         *
+         *
+         * <pre>
+         * CCAI metadata relating to the current transcript segment.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.contactcenterinsights.v1.Conversation.Transcript.TranscriptSegment.DialogflowSegmentMetadata dialogflow_segment_metadata = 10;
+         * </code>
+         *
+         * @return Whether the dialogflowSegmentMetadata field is set.
+         */
+        public boolean hasDialogflowSegmentMetadata() {
+          return dialogflowSegmentMetadataBuilder_ != null || dialogflowSegmentMetadata_ != null;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * CCAI metadata relating to the current transcript segment.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.contactcenterinsights.v1.Conversation.Transcript.TranscriptSegment.DialogflowSegmentMetadata dialogflow_segment_metadata = 10;
+         * </code>
+         *
+         * @return The dialogflowSegmentMetadata.
+         */
+        public com.google.cloud.contactcenterinsights.v1.Conversation.Transcript.TranscriptSegment
+                .DialogflowSegmentMetadata
+            getDialogflowSegmentMetadata() {
+          if (dialogflowSegmentMetadataBuilder_ == null) {
+            return dialogflowSegmentMetadata_ == null
+                ? com.google.cloud.contactcenterinsights.v1.Conversation.Transcript
+                    .TranscriptSegment.DialogflowSegmentMetadata.getDefaultInstance()
+                : dialogflowSegmentMetadata_;
+          } else {
+            return dialogflowSegmentMetadataBuilder_.getMessage();
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * CCAI metadata relating to the current transcript segment.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.contactcenterinsights.v1.Conversation.Transcript.TranscriptSegment.DialogflowSegmentMetadata dialogflow_segment_metadata = 10;
+         * </code>
+         */
+        public Builder setDialogflowSegmentMetadata(
+            com.google.cloud.contactcenterinsights.v1.Conversation.Transcript.TranscriptSegment
+                    .DialogflowSegmentMetadata
+                value) {
+          if (dialogflowSegmentMetadataBuilder_ == null) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            dialogflowSegmentMetadata_ = value;
+            onChanged();
+          } else {
+            dialogflowSegmentMetadataBuilder_.setMessage(value);
+          }
+
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * CCAI metadata relating to the current transcript segment.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.contactcenterinsights.v1.Conversation.Transcript.TranscriptSegment.DialogflowSegmentMetadata dialogflow_segment_metadata = 10;
+         * </code>
+         */
+        public Builder setDialogflowSegmentMetadata(
+            com.google.cloud.contactcenterinsights.v1.Conversation.Transcript.TranscriptSegment
+                    .DialogflowSegmentMetadata.Builder
+                builderForValue) {
+          if (dialogflowSegmentMetadataBuilder_ == null) {
+            dialogflowSegmentMetadata_ = builderForValue.build();
+            onChanged();
+          } else {
+            dialogflowSegmentMetadataBuilder_.setMessage(builderForValue.build());
+          }
+
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * CCAI metadata relating to the current transcript segment.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.contactcenterinsights.v1.Conversation.Transcript.TranscriptSegment.DialogflowSegmentMetadata dialogflow_segment_metadata = 10;
+         * </code>
+         */
+        public Builder mergeDialogflowSegmentMetadata(
+            com.google.cloud.contactcenterinsights.v1.Conversation.Transcript.TranscriptSegment
+                    .DialogflowSegmentMetadata
+                value) {
+          if (dialogflowSegmentMetadataBuilder_ == null) {
+            if (dialogflowSegmentMetadata_ != null) {
+              dialogflowSegmentMetadata_ =
+                  com.google.cloud.contactcenterinsights.v1.Conversation.Transcript
+                      .TranscriptSegment.DialogflowSegmentMetadata.newBuilder(
+                          dialogflowSegmentMetadata_)
+                      .mergeFrom(value)
+                      .buildPartial();
+            } else {
+              dialogflowSegmentMetadata_ = value;
+            }
+            onChanged();
+          } else {
+            dialogflowSegmentMetadataBuilder_.mergeFrom(value);
+          }
+
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * CCAI metadata relating to the current transcript segment.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.contactcenterinsights.v1.Conversation.Transcript.TranscriptSegment.DialogflowSegmentMetadata dialogflow_segment_metadata = 10;
+         * </code>
+         */
+        public Builder clearDialogflowSegmentMetadata() {
+          if (dialogflowSegmentMetadataBuilder_ == null) {
+            dialogflowSegmentMetadata_ = null;
+            onChanged();
+          } else {
+            dialogflowSegmentMetadata_ = null;
+            dialogflowSegmentMetadataBuilder_ = null;
+          }
+
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * CCAI metadata relating to the current transcript segment.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.contactcenterinsights.v1.Conversation.Transcript.TranscriptSegment.DialogflowSegmentMetadata dialogflow_segment_metadata = 10;
+         * </code>
+         */
+        public com.google.cloud.contactcenterinsights.v1.Conversation.Transcript.TranscriptSegment
+                .DialogflowSegmentMetadata.Builder
+            getDialogflowSegmentMetadataBuilder() {
+
+          onChanged();
+          return getDialogflowSegmentMetadataFieldBuilder().getBuilder();
+        }
+        /**
+         *
+         *
+         * <pre>
+         * CCAI metadata relating to the current transcript segment.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.contactcenterinsights.v1.Conversation.Transcript.TranscriptSegment.DialogflowSegmentMetadata dialogflow_segment_metadata = 10;
+         * </code>
+         */
+        public com.google.cloud.contactcenterinsights.v1.Conversation.Transcript.TranscriptSegment
+                .DialogflowSegmentMetadataOrBuilder
+            getDialogflowSegmentMetadataOrBuilder() {
+          if (dialogflowSegmentMetadataBuilder_ != null) {
+            return dialogflowSegmentMetadataBuilder_.getMessageOrBuilder();
+          } else {
+            return dialogflowSegmentMetadata_ == null
+                ? com.google.cloud.contactcenterinsights.v1.Conversation.Transcript
+                    .TranscriptSegment.DialogflowSegmentMetadata.getDefaultInstance()
+                : dialogflowSegmentMetadata_;
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * CCAI metadata relating to the current transcript segment.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.contactcenterinsights.v1.Conversation.Transcript.TranscriptSegment.DialogflowSegmentMetadata dialogflow_segment_metadata = 10;
+         * </code>
+         */
+        private com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.contactcenterinsights.v1.Conversation.Transcript.TranscriptSegment
+                    .DialogflowSegmentMetadata,
+                com.google.cloud.contactcenterinsights.v1.Conversation.Transcript.TranscriptSegment
+                    .DialogflowSegmentMetadata.Builder,
+                com.google.cloud.contactcenterinsights.v1.Conversation.Transcript.TranscriptSegment
+                    .DialogflowSegmentMetadataOrBuilder>
+            getDialogflowSegmentMetadataFieldBuilder() {
+          if (dialogflowSegmentMetadataBuilder_ == null) {
+            dialogflowSegmentMetadataBuilder_ =
+                new com.google.protobuf.SingleFieldBuilderV3<
+                    com.google.cloud.contactcenterinsights.v1.Conversation.Transcript
+                        .TranscriptSegment.DialogflowSegmentMetadata,
+                    com.google.cloud.contactcenterinsights.v1.Conversation.Transcript
+                        .TranscriptSegment.DialogflowSegmentMetadata.Builder,
+                    com.google.cloud.contactcenterinsights.v1.Conversation.Transcript
+                        .TranscriptSegment.DialogflowSegmentMetadataOrBuilder>(
+                    getDialogflowSegmentMetadata(), getParentForChildren(), isClean());
+            dialogflowSegmentMetadata_ = null;
+          }
+          return dialogflowSegmentMetadataBuilder_;
+        }
+
+        private com.google.cloud.contactcenterinsights.v1.SentimentData sentiment_;
+        private com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.contactcenterinsights.v1.SentimentData,
+                com.google.cloud.contactcenterinsights.v1.SentimentData.Builder,
+                com.google.cloud.contactcenterinsights.v1.SentimentDataOrBuilder>
+            sentimentBuilder_;
+        /**
+         *
+         *
+         * <pre>
+         * The sentiment for this transcript segment.
+         * </pre>
+         *
+         * <code>.google.cloud.contactcenterinsights.v1.SentimentData sentiment = 11;</code>
+         *
+         * @return Whether the sentiment field is set.
+         */
+        public boolean hasSentiment() {
+          return sentimentBuilder_ != null || sentiment_ != null;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * The sentiment for this transcript segment.
+         * </pre>
+         *
+         * <code>.google.cloud.contactcenterinsights.v1.SentimentData sentiment = 11;</code>
+         *
+         * @return The sentiment.
+         */
+        public com.google.cloud.contactcenterinsights.v1.SentimentData getSentiment() {
+          if (sentimentBuilder_ == null) {
+            return sentiment_ == null
+                ? com.google.cloud.contactcenterinsights.v1.SentimentData.getDefaultInstance()
+                : sentiment_;
+          } else {
+            return sentimentBuilder_.getMessage();
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * The sentiment for this transcript segment.
+         * </pre>
+         *
+         * <code>.google.cloud.contactcenterinsights.v1.SentimentData sentiment = 11;</code>
+         */
+        public Builder setSentiment(com.google.cloud.contactcenterinsights.v1.SentimentData value) {
+          if (sentimentBuilder_ == null) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            sentiment_ = value;
+            onChanged();
+          } else {
+            sentimentBuilder_.setMessage(value);
+          }
+
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * The sentiment for this transcript segment.
+         * </pre>
+         *
+         * <code>.google.cloud.contactcenterinsights.v1.SentimentData sentiment = 11;</code>
+         */
+        public Builder setSentiment(
+            com.google.cloud.contactcenterinsights.v1.SentimentData.Builder builderForValue) {
+          if (sentimentBuilder_ == null) {
+            sentiment_ = builderForValue.build();
+            onChanged();
+          } else {
+            sentimentBuilder_.setMessage(builderForValue.build());
+          }
+
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * The sentiment for this transcript segment.
+         * </pre>
+         *
+         * <code>.google.cloud.contactcenterinsights.v1.SentimentData sentiment = 11;</code>
+         */
+        public Builder mergeSentiment(
+            com.google.cloud.contactcenterinsights.v1.SentimentData value) {
+          if (sentimentBuilder_ == null) {
+            if (sentiment_ != null) {
+              sentiment_ =
+                  com.google.cloud.contactcenterinsights.v1.SentimentData.newBuilder(sentiment_)
+                      .mergeFrom(value)
+                      .buildPartial();
+            } else {
+              sentiment_ = value;
+            }
+            onChanged();
+          } else {
+            sentimentBuilder_.mergeFrom(value);
+          }
+
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * The sentiment for this transcript segment.
+         * </pre>
+         *
+         * <code>.google.cloud.contactcenterinsights.v1.SentimentData sentiment = 11;</code>
+         */
+        public Builder clearSentiment() {
+          if (sentimentBuilder_ == null) {
+            sentiment_ = null;
+            onChanged();
+          } else {
+            sentiment_ = null;
+            sentimentBuilder_ = null;
+          }
+
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * The sentiment for this transcript segment.
+         * </pre>
+         *
+         * <code>.google.cloud.contactcenterinsights.v1.SentimentData sentiment = 11;</code>
+         */
+        public com.google.cloud.contactcenterinsights.v1.SentimentData.Builder
+            getSentimentBuilder() {
+
+          onChanged();
+          return getSentimentFieldBuilder().getBuilder();
+        }
+        /**
+         *
+         *
+         * <pre>
+         * The sentiment for this transcript segment.
+         * </pre>
+         *
+         * <code>.google.cloud.contactcenterinsights.v1.SentimentData sentiment = 11;</code>
+         */
+        public com.google.cloud.contactcenterinsights.v1.SentimentDataOrBuilder
+            getSentimentOrBuilder() {
+          if (sentimentBuilder_ != null) {
+            return sentimentBuilder_.getMessageOrBuilder();
+          } else {
+            return sentiment_ == null
+                ? com.google.cloud.contactcenterinsights.v1.SentimentData.getDefaultInstance()
+                : sentiment_;
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * The sentiment for this transcript segment.
+         * </pre>
+         *
+         * <code>.google.cloud.contactcenterinsights.v1.SentimentData sentiment = 11;</code>
+         */
+        private com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.contactcenterinsights.v1.SentimentData,
+                com.google.cloud.contactcenterinsights.v1.SentimentData.Builder,
+                com.google.cloud.contactcenterinsights.v1.SentimentDataOrBuilder>
+            getSentimentFieldBuilder() {
+          if (sentimentBuilder_ == null) {
+            sentimentBuilder_ =
+                new com.google.protobuf.SingleFieldBuilderV3<
+                    com.google.cloud.contactcenterinsights.v1.SentimentData,
+                    com.google.cloud.contactcenterinsights.v1.SentimentData.Builder,
+                    com.google.cloud.contactcenterinsights.v1.SentimentDataOrBuilder>(
+                    getSentiment(), getParentForChildren(), isClean());
+            sentiment_ = null;
+          }
+          return sentimentBuilder_;
         }
 
         @java.lang.Override

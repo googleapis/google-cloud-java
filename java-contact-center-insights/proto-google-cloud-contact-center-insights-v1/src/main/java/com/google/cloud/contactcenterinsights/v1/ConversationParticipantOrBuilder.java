@@ -135,6 +135,31 @@ public interface ConversationParticipantOrBuilder
    *
    *
    * <pre>
+   * Obfuscated user ID from Dialogflow.
+   * </pre>
+   *
+   * <code>string obfuscated_external_user_id = 3;</code>
+   *
+   * @return The obfuscatedExternalUserId.
+   */
+  java.lang.String getObfuscatedExternalUserId();
+  /**
+   *
+   *
+   * <pre>
+   * Obfuscated user ID from Dialogflow.
+   * </pre>
+   *
+   * <code>string obfuscated_external_user_id = 3;</code>
+   *
+   * @return The bytes for obfuscatedExternalUserId.
+   */
+  com.google.protobuf.ByteString getObfuscatedExternalUserIdBytes();
+
+  /**
+   *
+   *
+   * <pre>
    * The role of the participant.
    * </pre>
    *

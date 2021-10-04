@@ -39,6 +39,7 @@ public final class ConversationParticipant extends com.google.protobuf.Generated
 
   private ConversationParticipant() {
     dialogflowParticipant_ = "";
+    obfuscatedExternalUserId_ = "";
     role_ = 0;
   }
 
@@ -83,6 +84,13 @@ public final class ConversationParticipant extends com.google.protobuf.Generated
               int rawValue = input.readEnum();
 
               role_ = rawValue;
+              break;
+            }
+          case 26:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              obfuscatedExternalUserId_ = s;
               break;
             }
           case 42:
@@ -581,6 +589,55 @@ public final class ConversationParticipant extends com.google.protobuf.Generated
     }
   }
 
+  public static final int OBFUSCATED_EXTERNAL_USER_ID_FIELD_NUMBER = 3;
+  private volatile java.lang.Object obfuscatedExternalUserId_;
+  /**
+   *
+   *
+   * <pre>
+   * Obfuscated user ID from Dialogflow.
+   * </pre>
+   *
+   * <code>string obfuscated_external_user_id = 3;</code>
+   *
+   * @return The obfuscatedExternalUserId.
+   */
+  @java.lang.Override
+  public java.lang.String getObfuscatedExternalUserId() {
+    java.lang.Object ref = obfuscatedExternalUserId_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      obfuscatedExternalUserId_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Obfuscated user ID from Dialogflow.
+   * </pre>
+   *
+   * <code>string obfuscated_external_user_id = 3;</code>
+   *
+   * @return The bytes for obfuscatedExternalUserId.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getObfuscatedExternalUserIdBytes() {
+    java.lang.Object ref = obfuscatedExternalUserId_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      obfuscatedExternalUserId_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   public static final int ROLE_FIELD_NUMBER = 2;
   private int role_;
   /**
@@ -641,6 +698,9 @@ public final class ConversationParticipant extends com.google.protobuf.Generated
             .getNumber()) {
       output.writeEnum(2, role_);
     }
+    if (!getObfuscatedExternalUserIdBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, obfuscatedExternalUserId_);
+    }
     if (participantCase_ == 5) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 5, participant_);
     }
@@ -663,6 +723,10 @@ public final class ConversationParticipant extends com.google.protobuf.Generated
         != com.google.cloud.contactcenterinsights.v1.ConversationParticipant.Role.ROLE_UNSPECIFIED
             .getNumber()) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(2, role_);
+    }
+    if (!getObfuscatedExternalUserIdBytes().isEmpty()) {
+      size +=
+          com.google.protobuf.GeneratedMessageV3.computeStringSize(3, obfuscatedExternalUserId_);
     }
     if (participantCase_ == 5) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, participant_);
@@ -687,6 +751,7 @@ public final class ConversationParticipant extends com.google.protobuf.Generated
         (com.google.cloud.contactcenterinsights.v1.ConversationParticipant) obj;
 
     if (!getDialogflowParticipant().equals(other.getDialogflowParticipant())) return false;
+    if (!getObfuscatedExternalUserId().equals(other.getObfuscatedExternalUserId())) return false;
     if (role_ != other.role_) return false;
     if (!getParticipantCase().equals(other.getParticipantCase())) return false;
     switch (participantCase_) {
@@ -713,6 +778,8 @@ public final class ConversationParticipant extends com.google.protobuf.Generated
     hash = (19 * hash) + getDescriptor().hashCode();
     hash = (37 * hash) + DIALOGFLOW_PARTICIPANT_FIELD_NUMBER;
     hash = (53 * hash) + getDialogflowParticipant().hashCode();
+    hash = (37 * hash) + OBFUSCATED_EXTERNAL_USER_ID_FIELD_NUMBER;
+    hash = (53 * hash) + getObfuscatedExternalUserId().hashCode();
     hash = (37 * hash) + ROLE_FIELD_NUMBER;
     hash = (53 * hash) + role_;
     switch (participantCase_) {
@@ -877,6 +944,8 @@ public final class ConversationParticipant extends com.google.protobuf.Generated
       super.clear();
       dialogflowParticipant_ = "";
 
+      obfuscatedExternalUserId_ = "";
+
       role_ = 0;
 
       participantCase_ = 0;
@@ -916,6 +985,7 @@ public final class ConversationParticipant extends com.google.protobuf.Generated
         result.participant_ = participant_;
       }
       result.dialogflowParticipant_ = dialogflowParticipant_;
+      result.obfuscatedExternalUserId_ = obfuscatedExternalUserId_;
       result.role_ = role_;
       result.participantCase_ = participantCase_;
       onBuilt();
@@ -972,6 +1042,10 @@ public final class ConversationParticipant extends com.google.protobuf.Generated
         return this;
       if (!other.getDialogflowParticipant().isEmpty()) {
         dialogflowParticipant_ = other.dialogflowParticipant_;
+        onChanged();
+      }
+      if (!other.getObfuscatedExternalUserId().isEmpty()) {
+        obfuscatedExternalUserId_ = other.obfuscatedExternalUserId_;
         onChanged();
       }
       if (other.role_ != 0) {
@@ -1439,6 +1513,112 @@ public final class ConversationParticipant extends com.google.protobuf.Generated
       checkByteStringIsUtf8(value);
 
       dialogflowParticipant_ = value;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object obfuscatedExternalUserId_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Obfuscated user ID from Dialogflow.
+     * </pre>
+     *
+     * <code>string obfuscated_external_user_id = 3;</code>
+     *
+     * @return The obfuscatedExternalUserId.
+     */
+    public java.lang.String getObfuscatedExternalUserId() {
+      java.lang.Object ref = obfuscatedExternalUserId_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        obfuscatedExternalUserId_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Obfuscated user ID from Dialogflow.
+     * </pre>
+     *
+     * <code>string obfuscated_external_user_id = 3;</code>
+     *
+     * @return The bytes for obfuscatedExternalUserId.
+     */
+    public com.google.protobuf.ByteString getObfuscatedExternalUserIdBytes() {
+      java.lang.Object ref = obfuscatedExternalUserId_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        obfuscatedExternalUserId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Obfuscated user ID from Dialogflow.
+     * </pre>
+     *
+     * <code>string obfuscated_external_user_id = 3;</code>
+     *
+     * @param value The obfuscatedExternalUserId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setObfuscatedExternalUserId(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+
+      obfuscatedExternalUserId_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Obfuscated user ID from Dialogflow.
+     * </pre>
+     *
+     * <code>string obfuscated_external_user_id = 3;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearObfuscatedExternalUserId() {
+
+      obfuscatedExternalUserId_ = getDefaultInstance().getObfuscatedExternalUserId();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Obfuscated user ID from Dialogflow.
+     * </pre>
+     *
+     * <code>string obfuscated_external_user_id = 3;</code>
+     *
+     * @param value The bytes for obfuscatedExternalUserId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setObfuscatedExternalUserIdBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
+      obfuscatedExternalUserId_ = value;
       onChanged();
       return this;
     }
