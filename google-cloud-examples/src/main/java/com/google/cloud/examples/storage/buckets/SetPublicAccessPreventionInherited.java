@@ -42,7 +42,7 @@ public class SetPublicAccessPreventionInherited {
         .build()
         .update();
 
-    System.out.println("Public access prevention is set to inherited for " + bucketName);
+    System.out.println("Public access prevention is set to 'inherited' for " + bucketName);
   }
 }
 // [END storage_set_public_access_prevention_inherited]
