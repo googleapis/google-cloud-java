@@ -64,17 +64,19 @@ public class WriteCommittedStream {
       try (JsonStreamWriter writer =
           JsonStreamWriter.newBuilder(writeStream.getName(), writeStream.getTableSchema())
               .build()) {
-        // Append 10 JSON objects to the stream.
-        for (int i = 0; i < 10; i++) {
+        // Write two batches to the stream, each with 10 JSON records.
+        for (int i = 0; i < 2; i++) {
           // Create a JSON object that is compatible with the table schema.
-          JSONObject record = new JSONObject();
-          record.put("col1", String.format("record %03d", i));
           JSONArray jsonArr = new JSONArray();
-          jsonArr.put(record);
+          for (int j = 0; j < 10; j++) {
+            JSONObject record = new JSONObject();
+            record.put("col1", String.format("record %03d-%03d", i, j));
+            jsonArr.put(record);
+          }
 
           // To detect duplicate records, pass the index as the record offset.
           // To disable deduplication, omit the offset or use WriteStream.Type.DEFAULT.
-          ApiFuture<AppendRowsResponse> future = writer.append(jsonArr, /*offset=*/ i);
+          ApiFuture<AppendRowsResponse> future = writer.append(jsonArr, /*offset=*/ i * 10);
           AppendRowsResponse response = future.get();
         }
       }

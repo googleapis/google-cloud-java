@@ -56,14 +56,15 @@ public class WriteToDefaultStream {
     // https://googleapis.dev/java/google-cloud-bigquerystorage/latest/com/google/cloud/bigquery/storage/v1beta2/JsonStreamWriter.html
     try (JsonStreamWriter writer =
         JsonStreamWriter.newBuilder(parentTable.toString(), tableSchema).build()) {
-      // Append 10 JSON objects to the stream.
-      for (int i = 0; i < 10; i++) {
+      // Write two batches to the stream, each with 10 JSON records.
+      for (int i = 0; i < 2; i++) {
         // Create a JSON object that is compatible with the table schema.
-        JSONObject record = new JSONObject();
-        record.put("test_string", String.format("record %03d", i));
         JSONArray jsonArr = new JSONArray();
-        jsonArr.put(record);
-
+        for (int j = 0; j < 10; j++) {
+          JSONObject record = new JSONObject();
+          record.put("test_string", String.format("record %03d-%03d", i, j));
+          jsonArr.put(record);
+        }
         ApiFuture<AppendRowsResponse> future = writer.append(jsonArr);
         AppendRowsResponse response = future.get();
       }
