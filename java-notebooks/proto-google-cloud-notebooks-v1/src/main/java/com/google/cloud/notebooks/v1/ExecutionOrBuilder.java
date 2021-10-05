@@ -63,7 +63,7 @@ public interface ExecutionOrBuilder
    *
    * <pre>
    * Output only. The resource name of the execute. Format:
-   * `projects/{project_id}/locations/{location}/execution/{execution_id}
+   * `projects/{project_id}/locations/{location}/execution/{execution_id}`
    * </pre>
    *
    * <code>string name = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -76,7 +76,7 @@ public interface ExecutionOrBuilder
    *
    * <pre>
    * Output only. The resource name of the execute. Format:
-   * `projects/{project_id}/locations/{location}/execution/{execution_id}
+   * `projects/{project_id}/locations/{location}/execution/{execution_id}`
    * </pre>
    *
    * <code>string name = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>

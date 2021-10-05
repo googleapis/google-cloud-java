@@ -173,7 +173,7 @@ public final class InstanceConfig extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Verifies core internal services are running. More info: go/notebooks-health
+   * Verifies core internal services are running.
    * </pre>
    *
    * <code>bool enable_health_monitoring = 2;</code>
@@ -632,7 +632,7 @@ public final class InstanceConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Verifies core internal services are running. More info: go/notebooks-health
+     * Verifies core internal services are running.
      * </pre>
      *
      * <code>bool enable_health_monitoring = 2;</code>
@@ -647,7 +647,7 @@ public final class InstanceConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Verifies core internal services are running. More info: go/notebooks-health
+     * Verifies core internal services are running.
      * </pre>
      *
      * <code>bool enable_health_monitoring = 2;</code>
@@ -665,7 +665,7 @@ public final class InstanceConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Verifies core internal services are running. More info: go/notebooks-health
+     * Verifies core internal services are running.
      * </pre>
      *
      * <code>bool enable_health_monitoring = 2;</code>

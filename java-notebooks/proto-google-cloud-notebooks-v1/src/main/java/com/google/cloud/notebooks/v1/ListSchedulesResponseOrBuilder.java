@@ -106,9 +106,9 @@ public interface ListSchedulesResponseOrBuilder
    *
    *
    * <pre>
-   * Schedules that could not be reached. For example,
-   * ['projects/{project_id}/location/{location}/schedules/monthly_digest',
-   *  'projects/{project_id}/location/{location}/schedules/weekly_sentiment'].
+   * Schedules that could not be reached. For example:
+   *     ['projects/{project_id}/location/{location}/schedules/monthly_digest',
+   *      'projects/{project_id}/location/{location}/schedules/weekly_sentiment']
    * </pre>
    *
    * <code>repeated string unreachable = 3;</code>
@@ -120,9 +120,9 @@ public interface ListSchedulesResponseOrBuilder
    *
    *
    * <pre>
-   * Schedules that could not be reached. For example,
-   * ['projects/{project_id}/location/{location}/schedules/monthly_digest',
-   *  'projects/{project_id}/location/{location}/schedules/weekly_sentiment'].
+   * Schedules that could not be reached. For example:
+   *     ['projects/{project_id}/location/{location}/schedules/monthly_digest',
+   *      'projects/{project_id}/location/{location}/schedules/weekly_sentiment']
    * </pre>
    *
    * <code>repeated string unreachable = 3;</code>
@@ -134,9 +134,9 @@ public interface ListSchedulesResponseOrBuilder
    *
    *
    * <pre>
-   * Schedules that could not be reached. For example,
-   * ['projects/{project_id}/location/{location}/schedules/monthly_digest',
-   *  'projects/{project_id}/location/{location}/schedules/weekly_sentiment'].
+   * Schedules that could not be reached. For example:
+   *     ['projects/{project_id}/location/{location}/schedules/monthly_digest',
+   *      'projects/{project_id}/location/{location}/schedules/weekly_sentiment']
    * </pre>
    *
    * <code>repeated string unreachable = 3;</code>
@@ -149,9 +149,9 @@ public interface ListSchedulesResponseOrBuilder
    *
    *
    * <pre>
-   * Schedules that could not be reached. For example,
-   * ['projects/{project_id}/location/{location}/schedules/monthly_digest',
-   *  'projects/{project_id}/location/{location}/schedules/weekly_sentiment'].
+   * Schedules that could not be reached. For example:
+   *     ['projects/{project_id}/location/{location}/schedules/monthly_digest',
+   *      'projects/{project_id}/location/{location}/schedules/weekly_sentiment']
    * </pre>
    *
    * <code>repeated string unreachable = 3;</code>

@@ -10382,7 +10382,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Path to a Bash script that automatically runs after a notebook instance
    * fully boots up. The path must be a URL or
-   * Cloud Storage path (gs://path-to-file/file-name).
+   * Cloud Storage path (`gs://path-to-file/file-name`).
    * </pre>
    *
    * <code>string post_startup_script = 4;</code>
@@ -10407,7 +10407,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Path to a Bash script that automatically runs after a notebook instance
    * fully boots up. The path must be a URL or
-   * Cloud Storage path (gs://path-to-file/file-name).
+   * Cloud Storage path (`gs://path-to-file/file-name`).
    * </pre>
    *
    * <code>string post_startup_script = 4;</code>
@@ -11256,8 +11256,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Optional. Shielded VM configuration.
-   * [Images using supported Shielded VM features]
-   * (https://cloud.google.com/compute/docs/instances/modifying-shielded-vm).
+   * [Images using supported Shielded VM
+   * features](https://cloud.google.com/compute/docs/instances/modifying-shielded-vm).
    * </pre>
    *
    * <code>
@@ -11275,8 +11275,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Optional. Shielded VM configuration.
-   * [Images using supported Shielded VM features]
-   * (https://cloud.google.com/compute/docs/instances/modifying-shielded-vm).
+   * [Images using supported Shielded VM
+   * features](https://cloud.google.com/compute/docs/instances/modifying-shielded-vm).
    * </pre>
    *
    * <code>
@@ -11296,8 +11296,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Optional. Shielded VM configuration.
-   * [Images using supported Shielded VM features]
-   * (https://cloud.google.com/compute/docs/instances/modifying-shielded-vm).
+   * [Images using supported Shielded VM
+   * features](https://cloud.google.com/compute/docs/instances/modifying-shielded-vm).
    * </pre>
    *
    * <code>
@@ -13659,7 +13659,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Path to a Bash script that automatically runs after a notebook instance
      * fully boots up. The path must be a URL or
-     * Cloud Storage path (gs://path-to-file/file-name).
+     * Cloud Storage path (`gs://path-to-file/file-name`).
      * </pre>
      *
      * <code>string post_startup_script = 4;</code>
@@ -13683,7 +13683,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Path to a Bash script that automatically runs after a notebook instance
      * fully boots up. The path must be a URL or
-     * Cloud Storage path (gs://path-to-file/file-name).
+     * Cloud Storage path (`gs://path-to-file/file-name`).
      * </pre>
      *
      * <code>string post_startup_script = 4;</code>
@@ -13707,7 +13707,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Path to a Bash script that automatically runs after a notebook instance
      * fully boots up. The path must be a URL or
-     * Cloud Storage path (gs://path-to-file/file-name).
+     * Cloud Storage path (`gs://path-to-file/file-name`).
      * </pre>
      *
      * <code>string post_startup_script = 4;</code>
@@ -13730,7 +13730,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Path to a Bash script that automatically runs after a notebook instance
      * fully boots up. The path must be a URL or
-     * Cloud Storage path (gs://path-to-file/file-name).
+     * Cloud Storage path (`gs://path-to-file/file-name`).
      * </pre>
      *
      * <code>string post_startup_script = 4;</code>
@@ -13749,7 +13749,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Path to a Bash script that automatically runs after a notebook instance
      * fully boots up. The path must be a URL or
-     * Cloud Storage path (gs://path-to-file/file-name).
+     * Cloud Storage path (`gs://path-to-file/file-name`).
      * </pre>
      *
      * <code>string post_startup_script = 4;</code>
@@ -16064,8 +16064,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. Shielded VM configuration.
-     * [Images using supported Shielded VM features]
-     * (https://cloud.google.com/compute/docs/instances/modifying-shielded-vm).
+     * [Images using supported Shielded VM
+     * features](https://cloud.google.com/compute/docs/instances/modifying-shielded-vm).
      * </pre>
      *
      * <code>
@@ -16082,8 +16082,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. Shielded VM configuration.
-     * [Images using supported Shielded VM features]
-     * (https://cloud.google.com/compute/docs/instances/modifying-shielded-vm).
+     * [Images using supported Shielded VM
+     * features](https://cloud.google.com/compute/docs/instances/modifying-shielded-vm).
      * </pre>
      *
      * <code>
@@ -16107,8 +16107,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. Shielded VM configuration.
-     * [Images using supported Shielded VM features]
-     * (https://cloud.google.com/compute/docs/instances/modifying-shielded-vm).
+     * [Images using supported Shielded VM
+     * features](https://cloud.google.com/compute/docs/instances/modifying-shielded-vm).
      * </pre>
      *
      * <code>
@@ -16134,8 +16134,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. Shielded VM configuration.
-     * [Images using supported Shielded VM features]
-     * (https://cloud.google.com/compute/docs/instances/modifying-shielded-vm).
+     * [Images using supported Shielded VM
+     * features](https://cloud.google.com/compute/docs/instances/modifying-shielded-vm).
      * </pre>
      *
      * <code>
@@ -16158,8 +16158,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. Shielded VM configuration.
-     * [Images using supported Shielded VM features]
-     * (https://cloud.google.com/compute/docs/instances/modifying-shielded-vm).
+     * [Images using supported Shielded VM
+     * features](https://cloud.google.com/compute/docs/instances/modifying-shielded-vm).
      * </pre>
      *
      * <code>
@@ -16190,8 +16190,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. Shielded VM configuration.
-     * [Images using supported Shielded VM features]
-     * (https://cloud.google.com/compute/docs/instances/modifying-shielded-vm).
+     * [Images using supported Shielded VM
+     * features](https://cloud.google.com/compute/docs/instances/modifying-shielded-vm).
      * </pre>
      *
      * <code>
@@ -16214,8 +16214,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. Shielded VM configuration.
-     * [Images using supported Shielded VM features]
-     * (https://cloud.google.com/compute/docs/instances/modifying-shielded-vm).
+     * [Images using supported Shielded VM
+     * features](https://cloud.google.com/compute/docs/instances/modifying-shielded-vm).
      * </pre>
      *
      * <code>
@@ -16233,8 +16233,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. Shielded VM configuration.
-     * [Images using supported Shielded VM features]
-     * (https://cloud.google.com/compute/docs/instances/modifying-shielded-vm).
+     * [Images using supported Shielded VM
+     * features](https://cloud.google.com/compute/docs/instances/modifying-shielded-vm).
      * </pre>
      *
      * <code>
@@ -16256,8 +16256,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. Shielded VM configuration.
-     * [Images using supported Shielded VM features]
-     * (https://cloud.google.com/compute/docs/instances/modifying-shielded-vm).
+     * [Images using supported Shielded VM
+     * features](https://cloud.google.com/compute/docs/instances/modifying-shielded-vm).
      * </pre>
      *
      * <code>
