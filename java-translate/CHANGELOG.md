@@ -1,5 +1,12 @@
 # Changelog
 
+### [2.1.6](https://www.github.com/googleapis/java-translate/compare/v2.1.5...v2.1.6) (2021-10-05)
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-storage to v2.1.7 ([#825](https://www.github.com/googleapis/java-translate/issues/825)) ([706fc19](https://www.github.com/googleapis/java-translate/commit/706fc191116582a40612e229cd830a70053be350))
+
 ### [2.1.5](https://www.github.com/googleapis/java-translate/compare/v2.1.4...v2.1.5) (2021-09-28)
 
 
