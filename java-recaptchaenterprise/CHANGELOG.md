@@ -1,5 +1,12 @@
 # Changelog
 
+### [2.2.1](https://www.github.com/googleapis/java-recaptchaenterprise/compare/v2.2.0...v2.2.1) (2021-10-05)
+
+
+### Dependencies
+
+* update dependency net.bytebuddy:byte-buddy to v1.11.19 ([#595](https://www.github.com/googleapis/java-recaptchaenterprise/issues/595)) ([f6a70df](https://www.github.com/googleapis/java-recaptchaenterprise/commit/f6a70df22b40b6a51caf2e83d4f7927c7d973b98))
+
 ## [2.2.0](https://www.github.com/googleapis/java-recaptchaenterprise/compare/v2.1.1...v2.2.0) (2021-09-27)
 
 
