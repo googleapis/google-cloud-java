@@ -270,7 +270,7 @@ public class ReadRowsRetryTest {
         new InternalException(
             new StatusRuntimeException(
                 Status.INTERNAL.withDescription(
-                    "HTTP/2 error code: INTERNAL_ERROR\nReceived Rst stream")),
+                    "INTERNAL: HTTP/2 error code: INTERNAL_ERROR\nReceived Rst Stream")),
             GrpcStatusCode.of(Code.INTERNAL),
             false);
     service.expectations.add(
