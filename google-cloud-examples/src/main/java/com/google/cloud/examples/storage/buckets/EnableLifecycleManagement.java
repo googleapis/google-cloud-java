@@ -36,8 +36,7 @@ public class EnableLifecycleManagement {
     // See the LifecycleRule documentation for additional info on what you can do with lifecycle
     // management rules. This one deletes objects that are over 100 days old.
     // https://googleapis.dev/java/google-cloud-clients/latest/com/google/cloud/storage/BucketInfo.LifecycleRule.html
-    bucket
-        .toBuilder()
+    bucket.toBuilder()
         .setLifecycleRules(
             ImmutableList.of(
                 new LifecycleRule(
