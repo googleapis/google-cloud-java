@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2021 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,14 +15,14 @@
  */
 package com.google.cloud.examples.storage.buckets;
 
-// [START storage_get_public_access_prevention]
+// [START storage_set_public_access_prevention_inherited]
 import com.google.cloud.storage.Bucket;
 import com.google.cloud.storage.BucketInfo;
 import com.google.cloud.storage.Storage;
 import com.google.cloud.storage.StorageOptions;
 
-public class GetPublicAccessPrevention {
-  public static void getPublicAccessPrevention(String projectId, String bucketName) {
+public class SetPublicAccessPreventionInherited {
+  public static void setPublicAccessPreventionInherited(String projectId, String bucketName) {
     // The ID of your GCP project
     // String projectId = "your-project-id";
 
@@ -32,16 +32,17 @@ public class GetPublicAccessPrevention {
     Storage storage = StorageOptions.newBuilder().setProjectId(projectId).build().getService();
     Bucket bucket = storage.get(bucketName);
 
-    // Gets Bucket Metadata and prints publicAccessPrevention value (either 'inherited' or
-    // 'enforced').
-    BucketInfo.PublicAccessPrevention publicAccessPrevention =
-        bucket.getIamConfiguration().getPublicAccessPrevention();
+    // Sets public access prevention to 'inherited' for the bucket
+    bucket
+        .toBuilder()
+        .setIamConfiguration(
+            BucketInfo.IamConfiguration.newBuilder()
+                .setPublicAccessPrevention(BucketInfo.PublicAccessPrevention.INHERITED)
+                .build())
+        .build()
+        .update();
 
-    System.out.println(
-        "Public access prevention is set to "
-            + publicAccessPrevention.getValue()
-            + " for "
-            + bucketName);
+    System.out.println("Public access prevention is set to 'inherited' for " + bucketName);
   }
 }
-// [END storage_get_public_access_prevention]
+// [END storage_set_public_access_prevention_inherited]

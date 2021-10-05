@@ -49,7 +49,7 @@ Libraries are available on GitHub and Maven Central for developing Java applicat
 | [Functions](https://github.com/googleapis/java-functions) | [![GA][ga-stability]][ga-description] | [![Maven](https://img.shields.io/maven-central/v/com.google.cloud/google-cloud-functions.svg)](https://search.maven.org/search?q=g:com.google.cloud%20AND%20a:google-cloud-functions&core=gav) |
 | [Gaming](https://github.com/googleapis/java-game-servers) | [![GA][ga-stability]][ga-description] | [![Maven](https://img.shields.io/maven-central/v/com.google.cloud/google-cloud-game-servers.svg)](https://search.maven.org/search?q=g:com.google.cloud%20AND%20a:google-cloud-game-servers&core=gav) |
 | [IAM Service Account Credentials API](https://github.com/googleapis/java-iamcredentials) | [![GA][ga-stability]][ga-description] | [![Maven](https://img.shields.io/maven-central/v/com.google.cloud/google-cloud-iamcredentials.svg)](https://search.maven.org/search?q=g:com.google.cloud%20AND%20a:google-cloud-iamcredentials&core=gav) |
-| [Identity Access Context Manager](https://github.com/googleapis/java-accesscontextmanager) | [![GA][ga-stability]][ga-description] | [![Maven](https://img.shields.io/maven-central/v/com.google.api.grpc/proto-google-identity-accesscontextmanager-v1.svg)](https://search.maven.org/search?q=g:com.google.api.grpc%20AND%20a:proto-google-identity-accesscontextmanager-v1&core=gav) |
+| [Identity Access Context Manager](https://github.com/googleapis/java-accesscontextmanager) | [![GA][ga-stability]][ga-description] | [![Maven](https://img.shields.io/maven-central/v/com.google.cloud/google-identity-accesscontextmanager.svg)](https://search.maven.org/search?q=g:com.google.cloud%20AND%20a:google-identity-accesscontextmanager&core=gav) |
 | [Internet of Things (IoT) Core](https://github.com/googleapis/java-iot) | [![GA][ga-stability]][ga-description] | [![Maven](https://img.shields.io/maven-central/v/com.google.cloud/google-cloud-iot.svg)](https://search.maven.org/search?q=g:com.google.cloud%20AND%20a:google-cloud-iot&core=gav) |
 | [Key Management Service](https://github.com/googleapis/java-kms) | [![GA][ga-stability]][ga-description] | [![Maven](https://img.shields.io/maven-central/v/com.google.cloud/google-cloud-kms.svg)](https://search.maven.org/search?q=g:com.google.cloud%20AND%20a:google-cloud-kms&core=gav) |
 | [Kubernetes Engine](https://github.com/googleapis/java-container) | [![GA][ga-stability]][ga-description] | [![Maven](https://img.shields.io/maven-central/v/com.google.cloud/google-cloud-container.svg)](https://search.maven.org/search?q=g:com.google.cloud%20AND%20a:google-cloud-container&core=gav) |
@@ -60,7 +60,7 @@ Libraries are available on GitHub and Maven Central for developing Java applicat
 | [Network Management API](https://github.com/googleapis/java-network-management) | [![GA][ga-stability]][ga-description] | [![Maven](https://img.shields.io/maven-central/v/com.google.cloud/google-cloud-network-management.svg)](https://search.maven.org/search?q=g:com.google.cloud%20AND%20a:google-cloud-network-management&core=gav) |
 | [OS Config API](https://github.com/googleapis/java-os-config) | [![GA][ga-stability]][ga-description] | [![Maven](https://img.shields.io/maven-central/v/com.google.cloud/google-cloud-os-config.svg)](https://search.maven.org/search?q=g:com.google.cloud%20AND%20a:google-cloud-os-config&core=gav) |
 | [OS Login](https://github.com/googleapis/java-os-login) | [![GA][ga-stability]][ga-description] | [![Maven](https://img.shields.io/maven-central/v/com.google.cloud/google-cloud-os-login.svg)](https://search.maven.org/search?q=g:com.google.cloud%20AND%20a:google-cloud-os-login&core=gav) |
-| [Organization Policy](https://github.com/googleapis/java-orgpolicy) | [![GA][ga-stability]][ga-description] | [![Maven](https://img.shields.io/maven-central/v/com.google.api.grpc/proto-google-cloud-orgpolicy-v1.svg)](https://search.maven.org/search?q=g:com.google.api.grpc%20AND%20a:proto-google-cloud-orgpolicy-v1&core=gav) |
+| [Organization Policy](https://github.com/googleapis/java-orgpolicy) | [![GA][ga-stability]][ga-description] | [![Maven](https://img.shields.io/maven-central/v/com.google.cloud/google-cloud-orgpolicy.svg)](https://search.maven.org/search?q=g:com.google.cloud%20AND%20a:google-cloud-orgpolicy&core=gav) |
 | [Profiler](https://github.com/googleapis/java-profiler) | [![GA][ga-stability]][ga-description] | [![Maven](https://img.shields.io/maven-central/v/com.google.cloud/google-cloud-profiler.svg)](https://search.maven.org/search?q=g:com.google.cloud%20AND%20a:google-cloud-profiler&core=gav) |
 | [Pub/Sub](https://github.com/googleapis/java-pubsub) | [![GA][ga-stability]][ga-description] | [![Maven](https://img.shields.io/maven-central/v/com.google.cloud/google-cloud-pubsub.svg)](https://search.maven.org/search?q=g:com.google.cloud%20AND%20a:google-cloud-pubsub&core=gav) |
 | [Pub/Sub Lite](https://github.com/googleapis/java-pubsublite) | [![GA][ga-stability]][ga-description] | [![Maven](https://img.shields.io/maven-central/v/com.google.cloud/google-cloud-pubsublite.svg)](https://search.maven.org/search?q=g:com.google.cloud%20AND%20a:google-cloud-pubsublite&core=gav) |
@@ -180,7 +180,7 @@ In cases where the library may expect a project ID explicitly, we provide a help
 `google-cloud-java` uses
 [https://github.com/googleapis/google-auth-library-java](https://github.com/googleapis/google-auth-library-java)
 to authenticate requests. `google-auth-library-java` supports a wide range of authentication types;
-see the project's [README](https://github.com/google/google-auth-library-java/blob/master/README.md)
+see the project's [README](https://github.com/google/google-auth-library-java/blob/main/README.md)
 and [javadoc](http://googleapis.dev/java/google-auth-library/latest/) for more
 details.
 
@@ -265,7 +265,7 @@ Credentials in the following locations (in order):
 
 ## Troubleshooting
 
-To get help, follow the instructions in the [Troubleshooting document](https://github.com/googleapis/google-cloud-java/blob/master/TROUBLESHOOTING.md).
+To get help, follow the instructions in the [Troubleshooting document](https://github.com/googleapis/google-cloud-java/blob/main/TROUBLESHOOTING.md).
 
 ## Configuring a Proxy
 
@@ -392,7 +392,7 @@ Thus, the following are not supported:
 - Android 
   - Consider [Firebase](https://firebase.google.com), which includes many of these APIs.
   - It is possible to use these libraries in many cases, although it is unsupported.
-    You can find examples, such as [this one](https://github.com/GoogleCloudPlatform/android-docs-samples/tree/master/speech/SpeechRecognitionClient),
+    You can find examples, such as [this one](https://github.com/GoogleCloudPlatform/android-docs-samples/tree/main/speech/SpeechRecognitionClient),
     in this [example repository](https://github.com/GoogleCloudPlatform/android-docs-samples) but consider the risks carefully before using these libraries in an application.
 - Raspberry Pi (since it runs on the ARM architecture)
 - Google App Engine Standard Java 7
@@ -479,7 +479,7 @@ runtime. However, Datastore, Storage, and Bigquery should work.
 
 Contributions to this library are always welcome and highly encouraged.
 
-See `google-cloud`'s [CONTRIBUTING] documentation and the [shared documentation](https://github.com/googleapis/google-cloud-common/blob/master/contributing/readme.md#how-to-contribute-to-gcloud) for more information on how to get started.
+See `google-cloud`'s [CONTRIBUTING] documentation and the [shared documentation](https://github.com/googleapis/google-cloud-common/blob/main/contributing/readme.md#how-to-contribute-to-gcloud) for more information on how to get started.
 
 Please note that this project is released with a Contributor Code of Conduct. By participating in this project you agree to abide by its terms. See [Code of Conduct][code-of-conduct] for more information.
 
@@ -495,10 +495,10 @@ Apache 2.0 - See [LICENSE] for more information.
 [alpha-stability]: https://img.shields.io/badge/stability-alpha-orange
 [alpha-description]: #alpha
 [google-api-java-client-services]: https://github.com/googleapis/google-api-java-client-services#supported-google-apis
-[CONTRIBUTING]:https://github.com/googleapis/google-cloud-java/blob/master/CONTRIBUTING.md
-[code-of-conduct]:https://github.com/googleapis/google-cloud-java/blob/master/CODE_OF_CONDUCT.md#contributor-code-of-conduct
-[LICENSE]: https://github.com/googleapis/google-cloud-java/blob/master/LICENSE
-[TESTING]: https://github.com/googleapis/google-cloud-java/blob/master/TESTING.md
+[CONTRIBUTING]:https://github.com/googleapis/google-cloud-java/blob/main/CONTRIBUTING.md
+[code-of-conduct]:https://github.com/googleapis/google-cloud-java/blob/main/CODE_OF_CONDUCT.md#contributor-code-of-conduct
+[LICENSE]: https://github.com/googleapis/google-cloud-java/blob/main/LICENSE
+[TESTING]: https://github.com/googleapis/google-cloud-java/blob/main/TESTING.md
 [cloud-platform]: https://cloud.google.com/
 [cloud-platform-docs]: https://cloud.google.com/docs/
 [client-lib-docs]: https://googleapis.dev/java/google-cloud-clients/latest/index.html

@@ -47,7 +47,7 @@ import com.google.cloud.examples.storage.buckets.RemoveBucketIamMember;
 import com.google.cloud.examples.storage.buckets.RemoveBucketLabel;
 import com.google.cloud.examples.storage.buckets.SetBucketWebsiteInfo;
 import com.google.cloud.examples.storage.buckets.SetPublicAccessPreventionEnforced;
-import com.google.cloud.examples.storage.buckets.SetPublicAccessPreventionUnspecified;
+import com.google.cloud.examples.storage.buckets.SetPublicAccessPreventionInherited;
 import com.google.cloud.examples.storage.objects.DownloadRequesterPaysObject;
 import com.google.cloud.storage.Acl;
 import com.google.cloud.storage.Acl.Role;
@@ -307,7 +307,7 @@ public class ITBucketSnippets {
   @Test
   public void testGetPublicAccessPrevention() {
     try {
-      // By default a bucket PAP state is UNSPECIFIED and we are changing the state to validate
+      // By default a bucket PAP state is INHERITED and we are changing the state to validate
       // non-default state.
       storage.get(BUCKET).toBuilder()
           .setIamConfiguration(
@@ -326,7 +326,7 @@ public class ITBucketSnippets {
       storage.get(BUCKET).toBuilder()
           .setIamConfiguration(
               BucketInfo.IamConfiguration.newBuilder()
-                  .setPublicAccessPrevention(BucketInfo.PublicAccessPrevention.UNSPECIFIED)
+                  .setPublicAccessPrevention(BucketInfo.PublicAccessPrevention.INHERITED)
                   .build())
           .build()
           .update();
@@ -335,7 +335,7 @@ public class ITBucketSnippets {
       storage.get(BUCKET).toBuilder()
           .setIamConfiguration(
               BucketInfo.IamConfiguration.newBuilder()
-                  .setPublicAccessPrevention(BucketInfo.PublicAccessPrevention.UNSPECIFIED)
+                  .setPublicAccessPrevention(BucketInfo.PublicAccessPrevention.INHERITED)
                   .build())
           .build()
           .update();
@@ -352,7 +352,7 @@ public class ITBucketSnippets {
       storage.get(BUCKET).toBuilder()
           .setIamConfiguration(
               BucketInfo.IamConfiguration.newBuilder()
-                  .setPublicAccessPrevention(BucketInfo.PublicAccessPrevention.UNSPECIFIED)
+                  .setPublicAccessPrevention(BucketInfo.PublicAccessPrevention.INHERITED)
                   .build())
           .build()
           .update();
@@ -361,7 +361,7 @@ public class ITBucketSnippets {
       storage.get(BUCKET).toBuilder()
           .setIamConfiguration(
               BucketInfo.IamConfiguration.newBuilder()
-                  .setPublicAccessPrevention(BucketInfo.PublicAccessPrevention.UNSPECIFIED)
+                  .setPublicAccessPrevention(BucketInfo.PublicAccessPrevention.INHERITED)
                   .build())
           .build()
           .update();
@@ -369,7 +369,7 @@ public class ITBucketSnippets {
   }
 
   @Test
-  public void testSetPublicAccessPreventionUnspecified() {
+  public void testSetPublicAccessPreventionInherited() {
     try {
       storage.get(BUCKET).toBuilder()
           .setIamConfiguration(
@@ -378,16 +378,16 @@ public class ITBucketSnippets {
                   .build())
           .build()
           .update();
-      SetPublicAccessPreventionUnspecified.setPublicAccessPreventionUnspecified(PROJECT_ID, BUCKET);
+      SetPublicAccessPreventionInherited.setPublicAccessPreventionInherited(PROJECT_ID, BUCKET);
       assertEquals(
           storage.get(BUCKET).getIamConfiguration().getPublicAccessPrevention(),
-          BucketInfo.PublicAccessPrevention.UNSPECIFIED);
+          BucketInfo.PublicAccessPrevention.INHERITED);
     } finally {
       // No matter what happens make sure test set bucket back to UNSPECIFIED
       storage.get(BUCKET).toBuilder()
           .setIamConfiguration(
               BucketInfo.IamConfiguration.newBuilder()
-                  .setPublicAccessPrevention(BucketInfo.PublicAccessPrevention.UNSPECIFIED)
+                  .setPublicAccessPrevention(BucketInfo.PublicAccessPrevention.INHERITED)
                   .build())
           .build()
           .update();
