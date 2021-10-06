@@ -193,6 +193,44 @@ public interface QueryResultOrBuilder
    *
    *
    * <pre>
+   * If a [DTMF][DTMFInput] was provided as input, this field will contain
+   * a copy of the [DTMFInput][].
+   * </pre>
+   *
+   * <code>.google.cloud.dialogflow.cx.v3beta1.DtmfInput dtmf = 23;</code>
+   *
+   * @return Whether the dtmf field is set.
+   */
+  boolean hasDtmf();
+  /**
+   *
+   *
+   * <pre>
+   * If a [DTMF][DTMFInput] was provided as input, this field will contain
+   * a copy of the [DTMFInput][].
+   * </pre>
+   *
+   * <code>.google.cloud.dialogflow.cx.v3beta1.DtmfInput dtmf = 23;</code>
+   *
+   * @return The dtmf.
+   */
+  com.google.cloud.dialogflow.cx.v3beta1.DtmfInput getDtmf();
+  /**
+   *
+   *
+   * <pre>
+   * If a [DTMF][DTMFInput] was provided as input, this field will contain
+   * a copy of the [DTMFInput][].
+   * </pre>
+   *
+   * <code>.google.cloud.dialogflow.cx.v3beta1.DtmfInput dtmf = 23;</code>
+   */
+  com.google.cloud.dialogflow.cx.v3beta1.DtmfInputOrBuilder getDtmfOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * The language that was triggered during intent detection.
    * See [Language
    * Support](https://cloud.google.com/dialogflow/cx/docs/reference/language)

@@ -244,6 +244,23 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
 
               break;
             }
+          case 186:
+            {
+              com.google.cloud.dialogflow.cx.v3beta1.DtmfInput.Builder subBuilder = null;
+              if (queryCase_ == 23) {
+                subBuilder =
+                    ((com.google.cloud.dialogflow.cx.v3beta1.DtmfInput) query_).toBuilder();
+              }
+              query_ =
+                  input.readMessage(
+                      com.google.cloud.dialogflow.cx.v3beta1.DtmfInput.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom((com.google.cloud.dialogflow.cx.v3beta1.DtmfInput) query_);
+                query_ = subBuilder.buildPartial();
+              }
+              queryCase_ = 23;
+              break;
+            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -298,6 +315,7 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
     TRIGGER_INTENT(11),
     TRANSCRIPT(12),
     TRIGGER_EVENT(14),
+    DTMF(23),
     QUERY_NOT_SET(0);
     private final int value;
 
@@ -324,6 +342,8 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
           return TRANSCRIPT;
         case 14:
           return TRIGGER_EVENT;
+        case 23:
+          return DTMF;
         case 0:
           return QUERY_NOT_SET;
         default:
@@ -636,6 +656,60 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
     } else {
       return (com.google.protobuf.ByteString) ref;
     }
+  }
+
+  public static final int DTMF_FIELD_NUMBER = 23;
+  /**
+   *
+   *
+   * <pre>
+   * If a [DTMF][DTMFInput] was provided as input, this field will contain
+   * a copy of the [DTMFInput][].
+   * </pre>
+   *
+   * <code>.google.cloud.dialogflow.cx.v3beta1.DtmfInput dtmf = 23;</code>
+   *
+   * @return Whether the dtmf field is set.
+   */
+  @java.lang.Override
+  public boolean hasDtmf() {
+    return queryCase_ == 23;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * If a [DTMF][DTMFInput] was provided as input, this field will contain
+   * a copy of the [DTMFInput][].
+   * </pre>
+   *
+   * <code>.google.cloud.dialogflow.cx.v3beta1.DtmfInput dtmf = 23;</code>
+   *
+   * @return The dtmf.
+   */
+  @java.lang.Override
+  public com.google.cloud.dialogflow.cx.v3beta1.DtmfInput getDtmf() {
+    if (queryCase_ == 23) {
+      return (com.google.cloud.dialogflow.cx.v3beta1.DtmfInput) query_;
+    }
+    return com.google.cloud.dialogflow.cx.v3beta1.DtmfInput.getDefaultInstance();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * If a [DTMF][DTMFInput] was provided as input, this field will contain
+   * a copy of the [DTMFInput][].
+   * </pre>
+   *
+   * <code>.google.cloud.dialogflow.cx.v3beta1.DtmfInput dtmf = 23;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.dialogflow.cx.v3beta1.DtmfInputOrBuilder getDtmfOrBuilder() {
+    if (queryCase_ == 23) {
+      return (com.google.cloud.dialogflow.cx.v3beta1.DtmfInput) query_;
+    }
+    return com.google.cloud.dialogflow.cx.v3beta1.DtmfInput.getDefaultInstance();
   }
 
   public static final int LANGUAGE_CODE_FIELD_NUMBER = 2;
@@ -1371,6 +1445,9 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
     if (sentimentAnalysisResult_ != null) {
       output.writeMessage(17, getSentimentAnalysisResult());
     }
+    if (queryCase_ == 23) {
+      output.writeMessage(23, (com.google.cloud.dialogflow.cx.v3beta1.DtmfInput) query_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -1426,6 +1503,11 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               17, getSentimentAnalysisResult());
+    }
+    if (queryCase_ == 23) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              23, (com.google.cloud.dialogflow.cx.v3beta1.DtmfInput) query_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -1486,6 +1568,9 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
         break;
       case 14:
         if (!getTriggerEvent().equals(other.getTriggerEvent())) return false;
+        break;
+      case 23:
+        if (!getDtmf().equals(other.getDtmf())) return false;
         break;
       case 0:
       default:
@@ -1557,6 +1642,10 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
       case 14:
         hash = (37 * hash) + TRIGGER_EVENT_FIELD_NUMBER;
         hash = (53 * hash) + getTriggerEvent().hashCode();
+        break;
+      case 23:
+        hash = (37 * hash) + DTMF_FIELD_NUMBER;
+        hash = (53 * hash) + getDtmf().hashCode();
         break;
       case 0:
       default:
@@ -1810,6 +1899,13 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
       if (queryCase_ == 14) {
         result.query_ = query_;
       }
+      if (queryCase_ == 23) {
+        if (dtmfBuilder_ == null) {
+          result.query_ = query_;
+        } else {
+          result.query_ = dtmfBuilder_.build();
+        }
+      }
       result.languageCode_ = languageCode_;
       if (parametersBuilder_ == null) {
         result.parameters_ = parameters_;
@@ -2053,6 +2149,11 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
             queryCase_ = 14;
             query_ = other.query_;
             onChanged();
+            break;
+          }
+        case DTMF:
+          {
+            mergeDtmf(other.getDtmf());
             break;
           }
         case QUERY_NOT_SET:
@@ -2676,6 +2777,224 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
       query_ = value;
       onChanged();
       return this;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.dialogflow.cx.v3beta1.DtmfInput,
+            com.google.cloud.dialogflow.cx.v3beta1.DtmfInput.Builder,
+            com.google.cloud.dialogflow.cx.v3beta1.DtmfInputOrBuilder>
+        dtmfBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * If a [DTMF][DTMFInput] was provided as input, this field will contain
+     * a copy of the [DTMFInput][].
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.cx.v3beta1.DtmfInput dtmf = 23;</code>
+     *
+     * @return Whether the dtmf field is set.
+     */
+    @java.lang.Override
+    public boolean hasDtmf() {
+      return queryCase_ == 23;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If a [DTMF][DTMFInput] was provided as input, this field will contain
+     * a copy of the [DTMFInput][].
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.cx.v3beta1.DtmfInput dtmf = 23;</code>
+     *
+     * @return The dtmf.
+     */
+    @java.lang.Override
+    public com.google.cloud.dialogflow.cx.v3beta1.DtmfInput getDtmf() {
+      if (dtmfBuilder_ == null) {
+        if (queryCase_ == 23) {
+          return (com.google.cloud.dialogflow.cx.v3beta1.DtmfInput) query_;
+        }
+        return com.google.cloud.dialogflow.cx.v3beta1.DtmfInput.getDefaultInstance();
+      } else {
+        if (queryCase_ == 23) {
+          return dtmfBuilder_.getMessage();
+        }
+        return com.google.cloud.dialogflow.cx.v3beta1.DtmfInput.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If a [DTMF][DTMFInput] was provided as input, this field will contain
+     * a copy of the [DTMFInput][].
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.cx.v3beta1.DtmfInput dtmf = 23;</code>
+     */
+    public Builder setDtmf(com.google.cloud.dialogflow.cx.v3beta1.DtmfInput value) {
+      if (dtmfBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        query_ = value;
+        onChanged();
+      } else {
+        dtmfBuilder_.setMessage(value);
+      }
+      queryCase_ = 23;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If a [DTMF][DTMFInput] was provided as input, this field will contain
+     * a copy of the [DTMFInput][].
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.cx.v3beta1.DtmfInput dtmf = 23;</code>
+     */
+    public Builder setDtmf(
+        com.google.cloud.dialogflow.cx.v3beta1.DtmfInput.Builder builderForValue) {
+      if (dtmfBuilder_ == null) {
+        query_ = builderForValue.build();
+        onChanged();
+      } else {
+        dtmfBuilder_.setMessage(builderForValue.build());
+      }
+      queryCase_ = 23;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If a [DTMF][DTMFInput] was provided as input, this field will contain
+     * a copy of the [DTMFInput][].
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.cx.v3beta1.DtmfInput dtmf = 23;</code>
+     */
+    public Builder mergeDtmf(com.google.cloud.dialogflow.cx.v3beta1.DtmfInput value) {
+      if (dtmfBuilder_ == null) {
+        if (queryCase_ == 23
+            && query_ != com.google.cloud.dialogflow.cx.v3beta1.DtmfInput.getDefaultInstance()) {
+          query_ =
+              com.google.cloud.dialogflow.cx.v3beta1.DtmfInput.newBuilder(
+                      (com.google.cloud.dialogflow.cx.v3beta1.DtmfInput) query_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          query_ = value;
+        }
+        onChanged();
+      } else {
+        if (queryCase_ == 23) {
+          dtmfBuilder_.mergeFrom(value);
+        }
+        dtmfBuilder_.setMessage(value);
+      }
+      queryCase_ = 23;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If a [DTMF][DTMFInput] was provided as input, this field will contain
+     * a copy of the [DTMFInput][].
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.cx.v3beta1.DtmfInput dtmf = 23;</code>
+     */
+    public Builder clearDtmf() {
+      if (dtmfBuilder_ == null) {
+        if (queryCase_ == 23) {
+          queryCase_ = 0;
+          query_ = null;
+          onChanged();
+        }
+      } else {
+        if (queryCase_ == 23) {
+          queryCase_ = 0;
+          query_ = null;
+        }
+        dtmfBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If a [DTMF][DTMFInput] was provided as input, this field will contain
+     * a copy of the [DTMFInput][].
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.cx.v3beta1.DtmfInput dtmf = 23;</code>
+     */
+    public com.google.cloud.dialogflow.cx.v3beta1.DtmfInput.Builder getDtmfBuilder() {
+      return getDtmfFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If a [DTMF][DTMFInput] was provided as input, this field will contain
+     * a copy of the [DTMFInput][].
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.cx.v3beta1.DtmfInput dtmf = 23;</code>
+     */
+    @java.lang.Override
+    public com.google.cloud.dialogflow.cx.v3beta1.DtmfInputOrBuilder getDtmfOrBuilder() {
+      if ((queryCase_ == 23) && (dtmfBuilder_ != null)) {
+        return dtmfBuilder_.getMessageOrBuilder();
+      } else {
+        if (queryCase_ == 23) {
+          return (com.google.cloud.dialogflow.cx.v3beta1.DtmfInput) query_;
+        }
+        return com.google.cloud.dialogflow.cx.v3beta1.DtmfInput.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If a [DTMF][DTMFInput] was provided as input, this field will contain
+     * a copy of the [DTMFInput][].
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.cx.v3beta1.DtmfInput dtmf = 23;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.dialogflow.cx.v3beta1.DtmfInput,
+            com.google.cloud.dialogflow.cx.v3beta1.DtmfInput.Builder,
+            com.google.cloud.dialogflow.cx.v3beta1.DtmfInputOrBuilder>
+        getDtmfFieldBuilder() {
+      if (dtmfBuilder_ == null) {
+        if (!(queryCase_ == 23)) {
+          query_ = com.google.cloud.dialogflow.cx.v3beta1.DtmfInput.getDefaultInstance();
+        }
+        dtmfBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.dialogflow.cx.v3beta1.DtmfInput,
+                com.google.cloud.dialogflow.cx.v3beta1.DtmfInput.Builder,
+                com.google.cloud.dialogflow.cx.v3beta1.DtmfInputOrBuilder>(
+                (com.google.cloud.dialogflow.cx.v3beta1.DtmfInput) query_,
+                getParentForChildren(),
+                isClean());
+        query_ = null;
+      }
+      queryCase_ = 23;
+      onChanged();
+      ;
+      return dtmfBuilder_;
     }
 
     private java.lang.Object languageCode_ = "";
