@@ -1,8 +1,8 @@
 # Format:
 # module:released-version:current-version
 
-google-cloud-scheduler:2.1.6:2.1.6
-grpc-google-cloud-scheduler-v1beta1:0.86.6:0.86.6
-grpc-google-cloud-scheduler-v1:2.1.6:2.1.6
-proto-google-cloud-scheduler-v1beta1:0.86.6:0.86.6
-proto-google-cloud-scheduler-v1:2.1.6:2.1.6
+google-cloud-scheduler:2.1.6:2.1.7-SNAPSHOT
+grpc-google-cloud-scheduler-v1beta1:0.86.6:0.86.7-SNAPSHOT
+grpc-google-cloud-scheduler-v1:2.1.6:2.1.7-SNAPSHOT
+proto-google-cloud-scheduler-v1beta1:0.86.6:0.86.7-SNAPSHOT
+proto-google-cloud-scheduler-v1:2.1.6:2.1.7-SNAPSHOT
