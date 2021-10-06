@@ -120,13 +120,13 @@
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-datacatalog</artifactId>
-        <version>1.5.7</version>
+        <version>1.5.8</version>
         <scope>test</scope>
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-datacatalog-v1</artifactId>
-        <version>1.5.7</version>
+        <version>1.5.8</version>
         <scope>test</scope>
       </dependency>
       <dependency>
