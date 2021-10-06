@@ -1,5 +1,25 @@
 # Changelog
 
+### [2.3.3](https://www.github.com/googleapis/java-bigquerystorage/compare/v2.3.2...v2.3.3) (2021-10-05)
+
+
+### Bug Fixes
+
+* add string to DATETIME, TIME, NUMERIC, BIGNUMERIC support in JsonStreamWriter v1 ([#1345](https://www.github.com/googleapis/java-bigquerystorage/issues/1345)) ([9d272dd](https://www.github.com/googleapis/java-bigquerystorage/commit/9d272dd711dfe8909a7b421dabdcdef30f1dc689))
+* JsonWriter accepts string input for DATETIME, TIME, NUMERIC, BIGNUMERIC field ([#1339](https://www.github.com/googleapis/java-bigquerystorage/issues/1339)) ([691f078](https://www.github.com/googleapis/java-bigquerystorage/commit/691f078f09e32fa7784d4afeeee0e8071f78d6fd))
+* Sample should show sending multiple rows in one request ([#1335](https://www.github.com/googleapis/java-bigquerystorage/issues/1335)) ([3f85a68](https://www.github.com/googleapis/java-bigquerystorage/commit/3f85a68d6812aac94ca8a266d76be2aa94cd0b32))
+
+
+### Documentation
+
+* **samples:** Add WriteAPI BUFFERED mode sample ([#1338](https://www.github.com/googleapis/java-bigquerystorage/issues/1338)) ([5dfd523](https://www.github.com/googleapis/java-bigquerystorage/commit/5dfd5231c1ffa68a1b92ba01a9608d8cee2c0596))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-bigquery to v2.2.0 ([#1346](https://www.github.com/googleapis/java-bigquerystorage/issues/1346)) ([9370eb8](https://www.github.com/googleapis/java-bigquerystorage/commit/9370eb8ea74547792f9597d20707546836c417b6))
+* update dependency com.google.cloud:google-cloud-bigquery to v2.2.1 ([#1347](https://www.github.com/googleapis/java-bigquerystorage/issues/1347)) ([406f5d3](https://www.github.com/googleapis/java-bigquerystorage/commit/406f5d3d446d3a9639b2c95590b3c6c38118d741))
+
 ### [2.3.2](https://www.github.com/googleapis/java-bigquerystorage/compare/v2.3.1...v2.3.2) (2021-10-01)
 
 
