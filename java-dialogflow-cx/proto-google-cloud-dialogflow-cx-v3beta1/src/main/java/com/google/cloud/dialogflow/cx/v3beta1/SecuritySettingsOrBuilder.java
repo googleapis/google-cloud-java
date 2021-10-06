@@ -27,12 +27,15 @@ public interface SecuritySettingsOrBuilder
    *
    *
    * <pre>
-   * Required. Resource name of the settings.
+   * Resource name of the settings.
+   * Required for the [SecuritySettingsService.UpdateSecuritySettings][google.cloud.dialogflow.cx.v3beta1.SecuritySettingsService.UpdateSecuritySettings] method.
+   * [SecuritySettingsService.CreateSecuritySettings][google.cloud.dialogflow.cx.v3beta1.SecuritySettingsService.CreateSecuritySettings] populates the name
+   * automatically.
    * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
    * ID&gt;/securitySettings/&lt;Security Settings ID&gt;`.
    * </pre>
    *
-   * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string name = 1;</code>
    *
    * @return The name.
    */
@@ -41,12 +44,15 @@ public interface SecuritySettingsOrBuilder
    *
    *
    * <pre>
-   * Required. Resource name of the settings.
+   * Resource name of the settings.
+   * Required for the [SecuritySettingsService.UpdateSecuritySettings][google.cloud.dialogflow.cx.v3beta1.SecuritySettingsService.UpdateSecuritySettings] method.
+   * [SecuritySettingsService.CreateSecuritySettings][google.cloud.dialogflow.cx.v3beta1.SecuritySettingsService.CreateSecuritySettings] populates the name
+   * automatically.
    * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
    * ID&gt;/securitySettings/&lt;Security Settings ID&gt;`.
    * </pre>
    *
-   * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string name = 1;</code>
    *
    * @return The bytes for name.
    */

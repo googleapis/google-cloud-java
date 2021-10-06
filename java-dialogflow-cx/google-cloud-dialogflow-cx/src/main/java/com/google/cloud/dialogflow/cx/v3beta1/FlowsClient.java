@@ -686,6 +686,15 @@ public class FlowsClient implements BackgroundResource {
   /**
    * Trains the specified flow. Note that only the flow in 'draft' environment is trained.
    *
+   * <p>This method is a [long-running
+   * operation](https://cloud.google.com/dialogflow/cx/docs/how/long-running-operation). The
+   * returned `Operation` type has the following method-specific fields:
+   *
+   * <p>- `metadata`: An empty [Struct
+   * message](https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#struct)
+   * - `response`: An [Empty
+   * message](https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#empty)
+   *
    * <p>Note: You should always train a flow prior to sending it queries. See the [training
    * documentation](https://cloud.google.com/dialogflow/cx/docs/concept/training).
    *
@@ -712,6 +721,15 @@ public class FlowsClient implements BackgroundResource {
   /**
    * Trains the specified flow. Note that only the flow in 'draft' environment is trained.
    *
+   * <p>This method is a [long-running
+   * operation](https://cloud.google.com/dialogflow/cx/docs/how/long-running-operation). The
+   * returned `Operation` type has the following method-specific fields:
+   *
+   * <p>- `metadata`: An empty [Struct
+   * message](https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#struct)
+   * - `response`: An [Empty
+   * message](https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#empty)
+   *
    * <p>Note: You should always train a flow prior to sending it queries. See the [training
    * documentation](https://cloud.google.com/dialogflow/cx/docs/concept/training).
    *
@@ -736,6 +754,15 @@ public class FlowsClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Trains the specified flow. Note that only the flow in 'draft' environment is trained.
+   *
+   * <p>This method is a [long-running
+   * operation](https://cloud.google.com/dialogflow/cx/docs/how/long-running-operation). The
+   * returned `Operation` type has the following method-specific fields:
+   *
+   * <p>- `metadata`: An empty [Struct
+   * message](https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#struct)
+   * - `response`: An [Empty
+   * message](https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#empty)
    *
    * <p>Note: You should always train a flow prior to sending it queries. See the [training
    * documentation](https://cloud.google.com/dialogflow/cx/docs/concept/training).
@@ -763,6 +790,15 @@ public class FlowsClient implements BackgroundResource {
   /**
    * Trains the specified flow. Note that only the flow in 'draft' environment is trained.
    *
+   * <p>This method is a [long-running
+   * operation](https://cloud.google.com/dialogflow/cx/docs/how/long-running-operation). The
+   * returned `Operation` type has the following method-specific fields:
+   *
+   * <p>- `metadata`: An empty [Struct
+   * message](https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#struct)
+   * - `response`: An [Empty
+   * message](https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#empty)
+   *
    * <p>Note: You should always train a flow prior to sending it queries. See the [training
    * documentation](https://cloud.google.com/dialogflow/cx/docs/concept/training).
    *
@@ -788,6 +824,15 @@ public class FlowsClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Trains the specified flow. Note that only the flow in 'draft' environment is trained.
+   *
+   * <p>This method is a [long-running
+   * operation](https://cloud.google.com/dialogflow/cx/docs/how/long-running-operation). The
+   * returned `Operation` type has the following method-specific fields:
+   *
+   * <p>- `metadata`: An empty [Struct
+   * message](https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#struct)
+   * - `response`: An [Empty
+   * message](https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#empty)
    *
    * <p>Note: You should always train a flow prior to sending it queries. See the [training
    * documentation](https://cloud.google.com/dialogflow/cx/docs/concept/training).
@@ -974,6 +1019,14 @@ public class FlowsClient implements BackgroundResource {
   /**
    * Imports the specified flow to the specified agent from a binary file.
    *
+   * <p>This method is a [long-running
+   * operation](https://cloud.google.com/dialogflow/cx/docs/how/long-running-operation). The
+   * returned `Operation` type has the following method-specific fields:
+   *
+   * <p>- `metadata`: An empty [Struct
+   * message](https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#struct)
+   * - `response`: [ImportFlowResponse][google.cloud.dialogflow.cx.v3beta1.ImportFlowResponse]
+   *
    * <p>Note: You should always train a flow prior to sending it queries. See the [training
    * documentation](https://cloud.google.com/dialogflow/cx/docs/concept/training).
    *
@@ -1000,6 +1053,14 @@ public class FlowsClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Imports the specified flow to the specified agent from a binary file.
+   *
+   * <p>This method is a [long-running
+   * operation](https://cloud.google.com/dialogflow/cx/docs/how/long-running-operation). The
+   * returned `Operation` type has the following method-specific fields:
+   *
+   * <p>- `metadata`: An empty [Struct
+   * message](https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#struct)
+   * - `response`: [ImportFlowResponse][google.cloud.dialogflow.cx.v3beta1.ImportFlowResponse]
    *
    * <p>Note: You should always train a flow prior to sending it queries. See the [training
    * documentation](https://cloud.google.com/dialogflow/cx/docs/concept/training).
@@ -1028,6 +1089,14 @@ public class FlowsClient implements BackgroundResource {
   /**
    * Imports the specified flow to the specified agent from a binary file.
    *
+   * <p>This method is a [long-running
+   * operation](https://cloud.google.com/dialogflow/cx/docs/how/long-running-operation). The
+   * returned `Operation` type has the following method-specific fields:
+   *
+   * <p>- `metadata`: An empty [Struct
+   * message](https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#struct)
+   * - `response`: [ImportFlowResponse][google.cloud.dialogflow.cx.v3beta1.ImportFlowResponse]
+   *
    * <p>Note: You should always train a flow prior to sending it queries. See the [training
    * documentation](https://cloud.google.com/dialogflow/cx/docs/concept/training).
    *
@@ -1052,6 +1121,14 @@ public class FlowsClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Exports the specified flow to a binary file.
+   *
+   * <p>This method is a [long-running
+   * operation](https://cloud.google.com/dialogflow/cx/docs/how/long-running-operation). The
+   * returned `Operation` type has the following method-specific fields:
+   *
+   * <p>- `metadata`: An empty [Struct
+   * message](https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#struct)
+   * - `response`: [ExportFlowResponse][google.cloud.dialogflow.cx.v3beta1.ExportFlowResponse]
    *
    * <p>Note that resources (e.g. intents, entities, webhooks) that the flow references will also be
    * exported.
@@ -1082,6 +1159,14 @@ public class FlowsClient implements BackgroundResource {
   /**
    * Exports the specified flow to a binary file.
    *
+   * <p>This method is a [long-running
+   * operation](https://cloud.google.com/dialogflow/cx/docs/how/long-running-operation). The
+   * returned `Operation` type has the following method-specific fields:
+   *
+   * <p>- `metadata`: An empty [Struct
+   * message](https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#struct)
+   * - `response`: [ExportFlowResponse][google.cloud.dialogflow.cx.v3beta1.ExportFlowResponse]
+   *
    * <p>Note that resources (e.g. intents, entities, webhooks) that the flow references will also be
    * exported.
    *
@@ -1110,6 +1195,14 @@ public class FlowsClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Exports the specified flow to a binary file.
+   *
+   * <p>This method is a [long-running
+   * operation](https://cloud.google.com/dialogflow/cx/docs/how/long-running-operation). The
+   * returned `Operation` type has the following method-specific fields:
+   *
+   * <p>- `metadata`: An empty [Struct
+   * message](https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#struct)
+   * - `response`: [ExportFlowResponse][google.cloud.dialogflow.cx.v3beta1.ExportFlowResponse]
    *
    * <p>Note that resources (e.g. intents, entities, webhooks) that the flow references will also be
    * exported.

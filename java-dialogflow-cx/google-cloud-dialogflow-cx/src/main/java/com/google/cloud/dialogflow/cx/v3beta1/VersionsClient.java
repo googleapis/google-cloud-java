@@ -419,6 +419,14 @@ public class VersionsClient implements BackgroundResource {
    * Creates a [Version][google.cloud.dialogflow.cx.v3beta1.Version] in the specified
    * [Flow][google.cloud.dialogflow.cx.v3beta1.Flow].
    *
+   * <p>This method is a [long-running
+   * operation](https://cloud.google.com/dialogflow/cx/docs/how/long-running-operation). The
+   * returned `Operation` type has the following method-specific fields:
+   *
+   * <p>- `metadata`:
+   * [CreateVersionOperationMetadata][google.cloud.dialogflow.cx.v3beta1.CreateVersionOperationMetadata]
+   * - `response`: [Version][google.cloud.dialogflow.cx.v3beta1.Version]
+   *
    * <p>Sample code:
    *
    * <pre>{@code
@@ -450,6 +458,14 @@ public class VersionsClient implements BackgroundResource {
    * Creates a [Version][google.cloud.dialogflow.cx.v3beta1.Version] in the specified
    * [Flow][google.cloud.dialogflow.cx.v3beta1.Flow].
    *
+   * <p>This method is a [long-running
+   * operation](https://cloud.google.com/dialogflow/cx/docs/how/long-running-operation). The
+   * returned `Operation` type has the following method-specific fields:
+   *
+   * <p>- `metadata`:
+   * [CreateVersionOperationMetadata][google.cloud.dialogflow.cx.v3beta1.CreateVersionOperationMetadata]
+   * - `response`: [Version][google.cloud.dialogflow.cx.v3beta1.Version]
+   *
    * <p>Sample code:
    *
    * <pre>{@code
@@ -479,6 +495,14 @@ public class VersionsClient implements BackgroundResource {
    * Creates a [Version][google.cloud.dialogflow.cx.v3beta1.Version] in the specified
    * [Flow][google.cloud.dialogflow.cx.v3beta1.Flow].
    *
+   * <p>This method is a [long-running
+   * operation](https://cloud.google.com/dialogflow/cx/docs/how/long-running-operation). The
+   * returned `Operation` type has the following method-specific fields:
+   *
+   * <p>- `metadata`:
+   * [CreateVersionOperationMetadata][google.cloud.dialogflow.cx.v3beta1.CreateVersionOperationMetadata]
+   * - `response`: [Version][google.cloud.dialogflow.cx.v3beta1.Version]
+   *
    * <p>Sample code:
    *
    * <pre>{@code
@@ -507,6 +531,14 @@ public class VersionsClient implements BackgroundResource {
    * Creates a [Version][google.cloud.dialogflow.cx.v3beta1.Version] in the specified
    * [Flow][google.cloud.dialogflow.cx.v3beta1.Flow].
    *
+   * <p>This method is a [long-running
+   * operation](https://cloud.google.com/dialogflow/cx/docs/how/long-running-operation). The
+   * returned `Operation` type has the following method-specific fields:
+   *
+   * <p>- `metadata`:
+   * [CreateVersionOperationMetadata][google.cloud.dialogflow.cx.v3beta1.CreateVersionOperationMetadata]
+   * - `response`: [Version][google.cloud.dialogflow.cx.v3beta1.Version]
+   *
    * <p>Sample code:
    *
    * <pre>{@code
@@ -534,6 +566,14 @@ public class VersionsClient implements BackgroundResource {
   /**
    * Creates a [Version][google.cloud.dialogflow.cx.v3beta1.Version] in the specified
    * [Flow][google.cloud.dialogflow.cx.v3beta1.Flow].
+   *
+   * <p>This method is a [long-running
+   * operation](https://cloud.google.com/dialogflow/cx/docs/how/long-running-operation). The
+   * returned `Operation` type has the following method-specific fields:
+   *
+   * <p>- `metadata`:
+   * [CreateVersionOperationMetadata][google.cloud.dialogflow.cx.v3beta1.CreateVersionOperationMetadata]
+   * - `response`: [Version][google.cloud.dialogflow.cx.v3beta1.Version]
    *
    * <p>Sample code:
    *
@@ -730,6 +770,15 @@ public class VersionsClient implements BackgroundResource {
   /**
    * Loads resources in the specified version to the draft flow.
    *
+   * <p>This method is a [long-running
+   * operation](https://cloud.google.com/dialogflow/cx/docs/how/long-running-operation). The
+   * returned `Operation` type has the following method-specific fields:
+   *
+   * <p>- `metadata`: An empty [Struct
+   * message](https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#struct)
+   * - `response`: An [Empty
+   * message](https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#empty)
+   *
    * <p>Sample code:
    *
    * <pre>{@code
@@ -755,6 +804,15 @@ public class VersionsClient implements BackgroundResource {
   /**
    * Loads resources in the specified version to the draft flow.
    *
+   * <p>This method is a [long-running
+   * operation](https://cloud.google.com/dialogflow/cx/docs/how/long-running-operation). The
+   * returned `Operation` type has the following method-specific fields:
+   *
+   * <p>- `metadata`: An empty [Struct
+   * message](https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#struct)
+   * - `response`: An [Empty
+   * message](https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#empty)
+   *
    * <p>Sample code:
    *
    * <pre>{@code
@@ -778,6 +836,15 @@ public class VersionsClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Loads resources in the specified version to the draft flow.
+   *
+   * <p>This method is a [long-running
+   * operation](https://cloud.google.com/dialogflow/cx/docs/how/long-running-operation). The
+   * returned `Operation` type has the following method-specific fields:
+   *
+   * <p>- `metadata`: An empty [Struct
+   * message](https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#struct)
+   * - `response`: An [Empty
+   * message](https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#empty)
    *
    * <p>Sample code:
    *
@@ -805,6 +872,15 @@ public class VersionsClient implements BackgroundResource {
   /**
    * Loads resources in the specified version to the draft flow.
    *
+   * <p>This method is a [long-running
+   * operation](https://cloud.google.com/dialogflow/cx/docs/how/long-running-operation). The
+   * returned `Operation` type has the following method-specific fields:
+   *
+   * <p>- `metadata`: An empty [Struct
+   * message](https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#struct)
+   * - `response`: An [Empty
+   * message](https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#empty)
+   *
    * <p>Sample code:
    *
    * <pre>{@code
@@ -830,6 +906,15 @@ public class VersionsClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Loads resources in the specified version to the draft flow.
+   *
+   * <p>This method is a [long-running
+   * operation](https://cloud.google.com/dialogflow/cx/docs/how/long-running-operation). The
+   * returned `Operation` type has the following method-specific fields:
+   *
+   * <p>- `metadata`: An empty [Struct
+   * message](https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#struct)
+   * - `response`: An [Empty
+   * message](https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#empty)
    *
    * <p>Sample code:
    *

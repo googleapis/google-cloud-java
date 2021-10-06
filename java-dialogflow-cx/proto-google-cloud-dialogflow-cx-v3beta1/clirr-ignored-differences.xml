@@ -30,4 +30,17 @@
     <className>com/google/cloud/location/*OrBuilder</className>
     <method>boolean has*(*)</method>
   </difference>
+
+  <difference>
+    <differenceType>8001</differenceType>
+    <className>com/google/cloud/location/*LocationRequest*</className>
+  </difference>
+  <difference>
+    <differenceType>8001</differenceType>
+    <className>com/google/cloud/location/*LocationsResponse*</className>
+  </difference>
+  <difference>
+    <differenceType>8001</differenceType>
+    <className>com/google/cloud/location/*Location*</className>
+  </difference>
 </differences>

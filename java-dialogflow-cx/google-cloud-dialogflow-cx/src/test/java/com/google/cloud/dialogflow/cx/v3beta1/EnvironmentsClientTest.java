@@ -187,6 +187,7 @@ public class EnvironmentsClientTest {
             .setDescription("description-1724546052")
             .addAllVersionConfigs(new ArrayList<Environment.VersionConfig>())
             .setUpdateTime(Timestamp.newBuilder().build())
+            .setTestCasesConfig(Environment.TestCasesConfig.newBuilder().build())
             .build();
     mockEnvironments.addResponse(expectedResponse);
 
@@ -233,6 +234,7 @@ public class EnvironmentsClientTest {
             .setDescription("description-1724546052")
             .addAllVersionConfigs(new ArrayList<Environment.VersionConfig>())
             .setUpdateTime(Timestamp.newBuilder().build())
+            .setTestCasesConfig(Environment.TestCasesConfig.newBuilder().build())
             .build();
     mockEnvironments.addResponse(expectedResponse);
 
@@ -277,6 +279,7 @@ public class EnvironmentsClientTest {
             .setDescription("description-1724546052")
             .addAllVersionConfigs(new ArrayList<Environment.VersionConfig>())
             .setUpdateTime(Timestamp.newBuilder().build())
+            .setTestCasesConfig(Environment.TestCasesConfig.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -332,6 +335,7 @@ public class EnvironmentsClientTest {
             .setDescription("description-1724546052")
             .addAllVersionConfigs(new ArrayList<Environment.VersionConfig>())
             .setUpdateTime(Timestamp.newBuilder().build())
+            .setTestCasesConfig(Environment.TestCasesConfig.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -387,6 +391,7 @@ public class EnvironmentsClientTest {
             .setDescription("description-1724546052")
             .addAllVersionConfigs(new ArrayList<Environment.VersionConfig>())
             .setUpdateTime(Timestamp.newBuilder().build())
+            .setTestCasesConfig(Environment.TestCasesConfig.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -740,6 +745,70 @@ public class EnvironmentsClientTest {
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.
+    }
+  }
+
+  @Test
+  public void deployFlowTest() throws Exception {
+    DeployFlowResponse expectedResponse =
+        DeployFlowResponse.newBuilder()
+            .setEnvironment(Environment.newBuilder().build())
+            .setDeployment("deployment1939520197")
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("deployFlowTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockEnvironments.addResponse(resultOperation);
+
+    DeployFlowRequest request =
+        DeployFlowRequest.newBuilder()
+            .setEnvironment(
+                EnvironmentName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[ENVIRONMENT]")
+                    .toString())
+            .setFlowVersion(
+                VersionName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[FLOW]", "[VERSION]")
+                    .toString())
+            .build();
+
+    DeployFlowResponse actualResponse = client.deployFlowAsync(request).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockEnvironments.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DeployFlowRequest actualRequest = ((DeployFlowRequest) actualRequests.get(0));
+
+    Assert.assertEquals(request.getEnvironment(), actualRequest.getEnvironment());
+    Assert.assertEquals(request.getFlowVersion(), actualRequest.getFlowVersion());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void deployFlowExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockEnvironments.addException(exception);
+
+    try {
+      DeployFlowRequest request =
+          DeployFlowRequest.newBuilder()
+              .setEnvironment(
+                  EnvironmentName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[ENVIRONMENT]")
+                      .toString())
+              .setFlowVersion(
+                  VersionName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[FLOW]", "[VERSION]")
+                      .toString())
+              .build();
+      client.deployFlowAsync(request).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
     }
   }
 }

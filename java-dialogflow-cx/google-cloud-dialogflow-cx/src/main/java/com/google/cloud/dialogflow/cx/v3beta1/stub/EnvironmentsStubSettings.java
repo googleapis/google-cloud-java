@@ -49,6 +49,9 @@ import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.dialogflow.cx.v3beta1.ContinuousTestResult;
 import com.google.cloud.dialogflow.cx.v3beta1.CreateEnvironmentRequest;
 import com.google.cloud.dialogflow.cx.v3beta1.DeleteEnvironmentRequest;
+import com.google.cloud.dialogflow.cx.v3beta1.DeployFlowMetadata;
+import com.google.cloud.dialogflow.cx.v3beta1.DeployFlowRequest;
+import com.google.cloud.dialogflow.cx.v3beta1.DeployFlowResponse;
 import com.google.cloud.dialogflow.cx.v3beta1.Environment;
 import com.google.cloud.dialogflow.cx.v3beta1.GetEnvironmentRequest;
 import com.google.cloud.dialogflow.cx.v3beta1.ListContinuousTestResultsRequest;
@@ -140,6 +143,9 @@ public class EnvironmentsStubSettings extends StubSettings<EnvironmentsStubSetti
           ListContinuousTestResultsResponse,
           ListContinuousTestResultsPagedResponse>
       listContinuousTestResultsSettings;
+  private final UnaryCallSettings<DeployFlowRequest, Operation> deployFlowSettings;
+  private final OperationCallSettings<DeployFlowRequest, DeployFlowResponse, DeployFlowMetadata>
+      deployFlowOperationSettings;
 
   private static final PagedListDescriptor<
           ListEnvironmentsRequest, ListEnvironmentsResponse, Environment>
@@ -416,6 +422,17 @@ public class EnvironmentsStubSettings extends StubSettings<EnvironmentsStubSetti
     return listContinuousTestResultsSettings;
   }
 
+  /** Returns the object with the settings used for calls to deployFlow. */
+  public UnaryCallSettings<DeployFlowRequest, Operation> deployFlowSettings() {
+    return deployFlowSettings;
+  }
+
+  /** Returns the object with the settings used for calls to deployFlow. */
+  public OperationCallSettings<DeployFlowRequest, DeployFlowResponse, DeployFlowMetadata>
+      deployFlowOperationSettings() {
+    return deployFlowOperationSettings;
+  }
+
   @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public EnvironmentsStub createStub() throws IOException {
     if (getTransportChannelProvider()
@@ -506,6 +523,8 @@ public class EnvironmentsStubSettings extends StubSettings<EnvironmentsStubSetti
     runContinuousTestOperationSettings =
         settingsBuilder.runContinuousTestOperationSettings().build();
     listContinuousTestResultsSettings = settingsBuilder.listContinuousTestResultsSettings().build();
+    deployFlowSettings = settingsBuilder.deployFlowSettings().build();
+    deployFlowOperationSettings = settingsBuilder.deployFlowOperationSettings().build();
   }
 
   /** Builder for EnvironmentsStubSettings. */
@@ -541,6 +560,10 @@ public class EnvironmentsStubSettings extends StubSettings<EnvironmentsStubSetti
             ListContinuousTestResultsResponse,
             ListContinuousTestResultsPagedResponse>
         listContinuousTestResultsSettings;
+    private final UnaryCallSettings.Builder<DeployFlowRequest, Operation> deployFlowSettings;
+    private final OperationCallSettings.Builder<
+            DeployFlowRequest, DeployFlowResponse, DeployFlowMetadata>
+        deployFlowOperationSettings;
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
 
@@ -592,6 +615,8 @@ public class EnvironmentsStubSettings extends StubSettings<EnvironmentsStubSetti
       runContinuousTestOperationSettings = OperationCallSettings.newBuilder();
       listContinuousTestResultsSettings =
           PagedCallSettings.newBuilder(LIST_CONTINUOUS_TEST_RESULTS_PAGE_STR_FACT);
+      deployFlowSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      deployFlowOperationSettings = OperationCallSettings.newBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -602,7 +627,8 @@ public class EnvironmentsStubSettings extends StubSettings<EnvironmentsStubSetti
               deleteEnvironmentSettings,
               lookupEnvironmentHistorySettings,
               runContinuousTestSettings,
-              listContinuousTestResultsSettings);
+              listContinuousTestResultsSettings,
+              deployFlowSettings);
       initDefaults(this);
     }
 
@@ -620,6 +646,8 @@ public class EnvironmentsStubSettings extends StubSettings<EnvironmentsStubSetti
       runContinuousTestSettings = settings.runContinuousTestSettings.toBuilder();
       runContinuousTestOperationSettings = settings.runContinuousTestOperationSettings.toBuilder();
       listContinuousTestResultsSettings = settings.listContinuousTestResultsSettings.toBuilder();
+      deployFlowSettings = settings.deployFlowSettings.toBuilder();
+      deployFlowOperationSettings = settings.deployFlowOperationSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -630,7 +658,8 @@ public class EnvironmentsStubSettings extends StubSettings<EnvironmentsStubSetti
               deleteEnvironmentSettings,
               lookupEnvironmentHistorySettings,
               runContinuousTestSettings,
-              listContinuousTestResultsSettings);
+              listContinuousTestResultsSettings,
+              deployFlowSettings);
     }
 
     private static Builder createDefault() {
@@ -684,6 +713,11 @@ public class EnvironmentsStubSettings extends StubSettings<EnvironmentsStubSetti
 
       builder
           .listContinuousTestResultsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .deployFlowSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
 
@@ -749,6 +783,29 @@ public class EnvironmentsStubSettings extends StubSettings<EnvironmentsStubSetti
           .setMetadataTransformer(
               ProtoOperationTransformers.MetadataTransformer.create(
                   RunContinuousTestMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
+                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .deployFlowOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings.<DeployFlowRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(DeployFlowResponse.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(DeployFlowMetadata.class))
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
@@ -855,6 +912,19 @@ public class EnvironmentsStubSettings extends StubSettings<EnvironmentsStubSetti
             ListContinuousTestResultsPagedResponse>
         listContinuousTestResultsSettings() {
       return listContinuousTestResultsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to deployFlow. */
+    public UnaryCallSettings.Builder<DeployFlowRequest, Operation> deployFlowSettings() {
+      return deployFlowSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to deployFlow. */
+    @BetaApi(
+        "The surface for use by generated code is not stable yet and may change in the future.")
+    public OperationCallSettings.Builder<DeployFlowRequest, DeployFlowResponse, DeployFlowMetadata>
+        deployFlowOperationSettings() {
+      return deployFlowOperationSettings;
     }
 
     @Override

@@ -30,6 +30,9 @@ import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.dialogflow.cx.v3beta1.CreateEnvironmentRequest;
 import com.google.cloud.dialogflow.cx.v3beta1.DeleteEnvironmentRequest;
+import com.google.cloud.dialogflow.cx.v3beta1.DeployFlowMetadata;
+import com.google.cloud.dialogflow.cx.v3beta1.DeployFlowRequest;
+import com.google.cloud.dialogflow.cx.v3beta1.DeployFlowResponse;
 import com.google.cloud.dialogflow.cx.v3beta1.Environment;
 import com.google.cloud.dialogflow.cx.v3beta1.GetEnvironmentRequest;
 import com.google.cloud.dialogflow.cx.v3beta1.ListContinuousTestResultsRequest;
@@ -155,6 +158,14 @@ public class GrpcEnvironmentsStub extends EnvironmentsStub {
                   ProtoUtils.marshaller(ListContinuousTestResultsResponse.getDefaultInstance()))
               .build();
 
+  private static final MethodDescriptor<DeployFlowRequest, Operation> deployFlowMethodDescriptor =
+      MethodDescriptor.<DeployFlowRequest, Operation>newBuilder()
+          .setType(MethodDescriptor.MethodType.UNARY)
+          .setFullMethodName("google.cloud.dialogflow.cx.v3beta1.Environments/DeployFlow")
+          .setRequestMarshaller(ProtoUtils.marshaller(DeployFlowRequest.getDefaultInstance()))
+          .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+          .build();
+
   private final UnaryCallable<ListEnvironmentsRequest, ListEnvironmentsResponse>
       listEnvironmentsCallable;
   private final UnaryCallable<ListEnvironmentsRequest, ListEnvironmentsPagedResponse>
@@ -181,6 +192,9 @@ public class GrpcEnvironmentsStub extends EnvironmentsStub {
   private final UnaryCallable<
           ListContinuousTestResultsRequest, ListContinuousTestResultsPagedResponse>
       listContinuousTestResultsPagedCallable;
+  private final UnaryCallable<DeployFlowRequest, Operation> deployFlowCallable;
+  private final OperationCallable<DeployFlowRequest, DeployFlowResponse, DeployFlowMetadata>
+      deployFlowOperationCallable;
 
   private final BackgroundResource backgroundResources;
   private final GrpcOperationsStub operationsStub;
@@ -310,6 +324,16 @@ public class GrpcEnvironmentsStub extends EnvironmentsStub {
                       return params.build();
                     })
                 .build();
+    GrpcCallSettings<DeployFlowRequest, Operation> deployFlowTransportSettings =
+        GrpcCallSettings.<DeployFlowRequest, Operation>newBuilder()
+            .setMethodDescriptor(deployFlowMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("environment", String.valueOf(request.getEnvironment()));
+                  return params.build();
+                })
+            .build();
 
     this.listEnvironmentsCallable =
         callableFactory.createUnaryCallable(
@@ -378,6 +402,15 @@ public class GrpcEnvironmentsStub extends EnvironmentsStub {
             listContinuousTestResultsTransportSettings,
             settings.listContinuousTestResultsSettings(),
             clientContext);
+    this.deployFlowCallable =
+        callableFactory.createUnaryCallable(
+            deployFlowTransportSettings, settings.deployFlowSettings(), clientContext);
+    this.deployFlowOperationCallable =
+        callableFactory.createOperationCallable(
+            deployFlowTransportSettings,
+            settings.deployFlowOperationSettings(),
+            clientContext,
+            operationsStub);
 
     this.backgroundResources =
         new BackgroundResourceAggregation(clientContext.getBackgroundResources());
@@ -465,6 +498,17 @@ public class GrpcEnvironmentsStub extends EnvironmentsStub {
   public UnaryCallable<ListContinuousTestResultsRequest, ListContinuousTestResultsPagedResponse>
       listContinuousTestResultsPagedCallable() {
     return listContinuousTestResultsPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<DeployFlowRequest, Operation> deployFlowCallable() {
+    return deployFlowCallable;
+  }
+
+  @Override
+  public OperationCallable<DeployFlowRequest, DeployFlowResponse, DeployFlowMetadata>
+      deployFlowOperationCallable() {
+    return deployFlowOperationCallable;
   }
 
   @Override
