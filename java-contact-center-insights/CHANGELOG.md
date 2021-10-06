@@ -1,5 +1,12 @@
 # Changelog
 
+### [2.1.1](https://www.github.com/googleapis/java-contact-center-insights/compare/v2.1.0...v2.1.1) (2021-10-06)
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-pubsub to v1.114.6 ([#108](https://www.github.com/googleapis/java-contact-center-insights/issues/108)) ([da9a533](https://www.github.com/googleapis/java-contact-center-insights/commit/da9a53368e229c1f3ec30443ee62709cdc0423f0))
+
 ## [2.1.0](https://www.github.com/googleapis/java-contact-center-insights/compare/v2.0.0...v2.1.0) (2021-10-04)
 
 
