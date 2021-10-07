@@ -2,7 +2,7 @@
   "name": "bigtable",
   "name_pretty": "Cloud Bigtable",
   "product_documentation": "https://cloud.google.com/bigtable",
-  "client_documentation": "https://googleapis.dev/java/google-cloud-bigtable/latest/index.html",
+  "client_documentation": "https://cloud.google.com/java/docs/reference/google-cloud-bigtable/latest/history",
   "issue_tracker": "https://issuetracker.google.com/savedsearches/559777",
   "release_level": "ga",
   "language": "java",
