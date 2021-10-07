@@ -778,5 +778,69 @@
       </build>
     </profile>
 
+    <profile>
+      <!-- This profile is used to enable GraalVM native image testing -->
+      <id>native</id>
+
+      <dependencies>
+        <dependency>
+          <groupId>com.google.cloud</groupId>
+          <artifactId>native-image-support</artifactId>
+          <version>0.8.0</version>
+          <scope>test</scope>
+        </dependency>
+
+        <dependency>
+          <groupId>org.junit.vintage</groupId>
+          <artifactId>junit-vintage-engine</artifactId>
+          <version>5.7.2</version>
+          <scope>test</scope>
+        </dependency>
+
+        <dependency>
+          <groupId>org.graalvm.buildtools</groupId>
+          <artifactId>junit-platform-native</artifactId>
+          <version>0.9.5</version>
+          <scope>test</scope>
+        </dependency>
+      </dependencies>
+
+      <build>
+        <plugins>
+          <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-surefire-plugin</artifactId>
+            <!-- Must use older version of surefire plugin for native-image testing. -->
+            <version>2.22.2</version>
+            <configuration>
+              <!-- Include all tests during native image testing. -->
+              <excludes combine.self="override" />
+            </configuration>
+          </plugin>
+
+          <plugin>
+            <groupId>org.graalvm.buildtools</groupId>
+            <artifactId>native-maven-plugin</artifactId>
+            <version>0.9.5</version>
+            <executions>
+              <execution>
+                <id>test-native</id>
+                <goals>
+                  <goal>test</goal>
+                </goals>
+                <phase>test</phase>
+              </execution>
+            </executions>
+            <configuration>
+              <buildArgs>
+                <buildArg>--no-fallback</buildArg>
+                <buildArg>--no-server</buildArg>
+              </buildArgs>
+            </configuration>
+          </plugin>
+        </plugins>
+      </build>
+    </profile>
+
   </profiles>
 </project>
