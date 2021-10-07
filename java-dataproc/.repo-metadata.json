@@ -2,7 +2,7 @@
     "name": "dataproc",
     "name_pretty": "Dataproc",
     "product_documentation": "https://cloud.google.com/dataproc",
-    "client_documentation": "https://googleapis.dev/java/google-cloud-dataproc/latest/",
+    "client_documentation": "https://cloud.google.com/java/docs/reference/google-cloud-dataproc/latest/history",
     "issue_tracker": "https://issuetracker.google.com/savedsearches/559745",
     "release_level": "ga",
     "language": "java",
