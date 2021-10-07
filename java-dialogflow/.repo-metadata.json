@@ -2,7 +2,7 @@
     "name": "dialogflow",
     "name_pretty": "Dialogflow API",
     "product_documentation": "https://cloud.google.com/dialogflow-enterprise/",
-    "client_documentation": "https://googleapis.dev/java/google-cloud-dialogflow/latest/",
+    "client_documentation": "https://cloud.google.com/java/docs/reference/google-cloud-dialogflow/latest/history",
     "issue_tracker": "https://issuetracker.google.com/savedsearches/5300385",
     "release_level": "ga",
     "language": "java",
