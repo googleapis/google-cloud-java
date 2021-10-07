@@ -45,7 +45,7 @@ If you are using Maven without BOM, add this to your dependencies:
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-video-intelligence</artifactId>
-  <version>2.0.8</version>
+  <version>2.0.9</version>
 </dependency>
 <dependency>
   <groupId>com.google.cloud</groupId>
@@ -65,13 +65,13 @@ implementation 'com.google.cloud:google-cloud-video-intelligence'
 If you are using Gradle without BOM, add this to your dependencies
 
 ```Groovy
-implementation 'com.google.cloud:google-cloud-video-intelligence:2.0.8'
+implementation 'com.google.cloud:google-cloud-video-intelligence:2.0.9'
 ```
 
 If you are using SBT, add this to your dependencies
 
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-video-intelligence" % "2.0.8"
+libraryDependencies += "com.google.cloud" % "google-cloud-video-intelligence" % "2.0.9"
 ```
 
 ## Authentication
