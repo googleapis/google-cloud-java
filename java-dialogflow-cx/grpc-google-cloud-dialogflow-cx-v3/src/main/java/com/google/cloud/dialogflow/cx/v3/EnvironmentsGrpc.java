@@ -409,6 +409,48 @@ public final class EnvironmentsGrpc {
     return getListContinuousTestResultsMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.dialogflow.cx.v3.DeployFlowRequest, com.google.longrunning.Operation>
+      getDeployFlowMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "DeployFlow",
+      requestType = com.google.cloud.dialogflow.cx.v3.DeployFlowRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.dialogflow.cx.v3.DeployFlowRequest, com.google.longrunning.Operation>
+      getDeployFlowMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.dialogflow.cx.v3.DeployFlowRequest, com.google.longrunning.Operation>
+        getDeployFlowMethod;
+    if ((getDeployFlowMethod = EnvironmentsGrpc.getDeployFlowMethod) == null) {
+      synchronized (EnvironmentsGrpc.class) {
+        if ((getDeployFlowMethod = EnvironmentsGrpc.getDeployFlowMethod) == null) {
+          EnvironmentsGrpc.getDeployFlowMethod =
+              getDeployFlowMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.dialogflow.cx.v3.DeployFlowRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "DeployFlow"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.dialogflow.cx.v3.DeployFlowRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(new EnvironmentsMethodDescriptorSupplier("DeployFlow"))
+                      .build();
+        }
+      }
+    }
+    return getDeployFlowMethod;
+  }
+
   /** Creates a new async stub that supports all call types for the service */
   public static EnvironmentsStub newStub(io.grpc.Channel channel) {
     io.grpc.stub.AbstractStub.StubFactory<EnvironmentsStub> factory =
@@ -494,6 +536,12 @@ public final class EnvironmentsGrpc {
      *
      * <pre>
      * Creates an [Environment][google.cloud.dialogflow.cx.v3.Environment] in the specified [Agent][google.cloud.dialogflow.cx.v3.Agent].
+     * This method is a [long-running
+     * operation](https://cloud.google.com/dialogflow/cx/docs/how/long-running-operation).
+     * The returned `Operation` type has the following method-specific fields:
+     * - `metadata`: An empty [Struct
+     *   message](https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#struct)
+     * - `response`: [Environment][google.cloud.dialogflow.cx.v3.Environment]
      * </pre>
      */
     public void createEnvironment(
@@ -508,6 +556,12 @@ public final class EnvironmentsGrpc {
      *
      * <pre>
      * Updates the specified [Environment][google.cloud.dialogflow.cx.v3.Environment].
+     * This method is a [long-running
+     * operation](https://cloud.google.com/dialogflow/cx/docs/how/long-running-operation).
+     * The returned `Operation` type has the following method-specific fields:
+     * - `metadata`: An empty [Struct
+     *   message](https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#struct)
+     * - `response`: [Environment][google.cloud.dialogflow.cx.v3.Environment]
      * </pre>
      */
     public void updateEnvironment(
@@ -552,6 +606,11 @@ public final class EnvironmentsGrpc {
      *
      * <pre>
      * Kicks off a continuous test under the specified [Environment][google.cloud.dialogflow.cx.v3.Environment].
+     * This method is a [long-running
+     * operation](https://cloud.google.com/dialogflow/cx/docs/how/long-running-operation).
+     * The returned `Operation` type has the following method-specific fields:
+     * - `metadata`: [RunContinuousTestMetadata][google.cloud.dialogflow.cx.v3.RunContinuousTestMetadata]
+     * - `response`: [RunContinuousTestResponse][google.cloud.dialogflow.cx.v3.RunContinuousTestResponse]
      * </pre>
      */
     public void runContinuousTest(
@@ -575,6 +634,24 @@ public final class EnvironmentsGrpc {
             responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getListContinuousTestResultsMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deploys a flow to the specified [Environment][google.cloud.dialogflow.cx.v3.Environment].
+     * This method is a [long-running
+     * operation](https://cloud.google.com/dialogflow/cx/docs/how/long-running-operation).
+     * The returned `Operation` type has the following method-specific fields:
+     * - `metadata`: [DeployFlowMetadata][google.cloud.dialogflow.cx.v3.DeployFlowMetadata]
+     * - `response`: [DeployFlowResponse][google.cloud.dialogflow.cx.v3.DeployFlowResponse]
+     * </pre>
+     */
+    public void deployFlow(
+        com.google.cloud.dialogflow.cx.v3.DeployFlowRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getDeployFlowMethod(), responseObserver);
     }
 
     @java.lang.Override
@@ -632,6 +709,12 @@ public final class EnvironmentsGrpc {
                       com.google.cloud.dialogflow.cx.v3.ListContinuousTestResultsRequest,
                       com.google.cloud.dialogflow.cx.v3.ListContinuousTestResultsResponse>(
                       this, METHODID_LIST_CONTINUOUS_TEST_RESULTS)))
+          .addMethod(
+              getDeployFlowMethod(),
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.cloud.dialogflow.cx.v3.DeployFlowRequest,
+                      com.google.longrunning.Operation>(this, METHODID_DEPLOY_FLOW)))
           .build();
     }
   }
@@ -693,6 +776,12 @@ public final class EnvironmentsGrpc {
      *
      * <pre>
      * Creates an [Environment][google.cloud.dialogflow.cx.v3.Environment] in the specified [Agent][google.cloud.dialogflow.cx.v3.Agent].
+     * This method is a [long-running
+     * operation](https://cloud.google.com/dialogflow/cx/docs/how/long-running-operation).
+     * The returned `Operation` type has the following method-specific fields:
+     * - `metadata`: An empty [Struct
+     *   message](https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#struct)
+     * - `response`: [Environment][google.cloud.dialogflow.cx.v3.Environment]
      * </pre>
      */
     public void createEnvironment(
@@ -709,6 +798,12 @@ public final class EnvironmentsGrpc {
      *
      * <pre>
      * Updates the specified [Environment][google.cloud.dialogflow.cx.v3.Environment].
+     * This method is a [long-running
+     * operation](https://cloud.google.com/dialogflow/cx/docs/how/long-running-operation).
+     * The returned `Operation` type has the following method-specific fields:
+     * - `metadata`: An empty [Struct
+     *   message](https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#struct)
+     * - `response`: [Environment][google.cloud.dialogflow.cx.v3.Environment]
      * </pre>
      */
     public void updateEnvironment(
@@ -759,6 +854,11 @@ public final class EnvironmentsGrpc {
      *
      * <pre>
      * Kicks off a continuous test under the specified [Environment][google.cloud.dialogflow.cx.v3.Environment].
+     * This method is a [long-running
+     * operation](https://cloud.google.com/dialogflow/cx/docs/how/long-running-operation).
+     * The returned `Operation` type has the following method-specific fields:
+     * - `metadata`: [RunContinuousTestMetadata][google.cloud.dialogflow.cx.v3.RunContinuousTestMetadata]
+     * - `response`: [RunContinuousTestResponse][google.cloud.dialogflow.cx.v3.RunContinuousTestResponse]
      * </pre>
      */
     public void runContinuousTest(
@@ -786,6 +886,25 @@ public final class EnvironmentsGrpc {
           getChannel().newCall(getListContinuousTestResultsMethod(), getCallOptions()),
           request,
           responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deploys a flow to the specified [Environment][google.cloud.dialogflow.cx.v3.Environment].
+     * This method is a [long-running
+     * operation](https://cloud.google.com/dialogflow/cx/docs/how/long-running-operation).
+     * The returned `Operation` type has the following method-specific fields:
+     * - `metadata`: [DeployFlowMetadata][google.cloud.dialogflow.cx.v3.DeployFlowMetadata]
+     * - `response`: [DeployFlowResponse][google.cloud.dialogflow.cx.v3.DeployFlowResponse]
+     * </pre>
+     */
+    public void deployFlow(
+        com.google.cloud.dialogflow.cx.v3.DeployFlowRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getDeployFlowMethod(), getCallOptions()), request, responseObserver);
     }
   }
 
@@ -839,6 +958,12 @@ public final class EnvironmentsGrpc {
      *
      * <pre>
      * Creates an [Environment][google.cloud.dialogflow.cx.v3.Environment] in the specified [Agent][google.cloud.dialogflow.cx.v3.Agent].
+     * This method is a [long-running
+     * operation](https://cloud.google.com/dialogflow/cx/docs/how/long-running-operation).
+     * The returned `Operation` type has the following method-specific fields:
+     * - `metadata`: An empty [Struct
+     *   message](https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#struct)
+     * - `response`: [Environment][google.cloud.dialogflow.cx.v3.Environment]
      * </pre>
      */
     public com.google.longrunning.Operation createEnvironment(
@@ -852,6 +977,12 @@ public final class EnvironmentsGrpc {
      *
      * <pre>
      * Updates the specified [Environment][google.cloud.dialogflow.cx.v3.Environment].
+     * This method is a [long-running
+     * operation](https://cloud.google.com/dialogflow/cx/docs/how/long-running-operation).
+     * The returned `Operation` type has the following method-specific fields:
+     * - `metadata`: An empty [Struct
+     *   message](https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#struct)
+     * - `response`: [Environment][google.cloud.dialogflow.cx.v3.Environment]
      * </pre>
      */
     public com.google.longrunning.Operation updateEnvironment(
@@ -892,6 +1023,11 @@ public final class EnvironmentsGrpc {
      *
      * <pre>
      * Kicks off a continuous test under the specified [Environment][google.cloud.dialogflow.cx.v3.Environment].
+     * This method is a [long-running
+     * operation](https://cloud.google.com/dialogflow/cx/docs/how/long-running-operation).
+     * The returned `Operation` type has the following method-specific fields:
+     * - `metadata`: [RunContinuousTestMetadata][google.cloud.dialogflow.cx.v3.RunContinuousTestMetadata]
+     * - `response`: [RunContinuousTestResponse][google.cloud.dialogflow.cx.v3.RunContinuousTestResponse]
      * </pre>
      */
     public com.google.longrunning.Operation runContinuousTest(
@@ -912,6 +1048,24 @@ public final class EnvironmentsGrpc {
             com.google.cloud.dialogflow.cx.v3.ListContinuousTestResultsRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getListContinuousTestResultsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deploys a flow to the specified [Environment][google.cloud.dialogflow.cx.v3.Environment].
+     * This method is a [long-running
+     * operation](https://cloud.google.com/dialogflow/cx/docs/how/long-running-operation).
+     * The returned `Operation` type has the following method-specific fields:
+     * - `metadata`: [DeployFlowMetadata][google.cloud.dialogflow.cx.v3.DeployFlowMetadata]
+     * - `response`: [DeployFlowResponse][google.cloud.dialogflow.cx.v3.DeployFlowResponse]
+     * </pre>
+     */
+    public com.google.longrunning.Operation deployFlow(
+        com.google.cloud.dialogflow.cx.v3.DeployFlowRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeployFlowMethod(), getCallOptions(), request);
     }
   }
 
@@ -967,6 +1121,12 @@ public final class EnvironmentsGrpc {
      *
      * <pre>
      * Creates an [Environment][google.cloud.dialogflow.cx.v3.Environment] in the specified [Agent][google.cloud.dialogflow.cx.v3.Agent].
+     * This method is a [long-running
+     * operation](https://cloud.google.com/dialogflow/cx/docs/how/long-running-operation).
+     * The returned `Operation` type has the following method-specific fields:
+     * - `metadata`: An empty [Struct
+     *   message](https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#struct)
+     * - `response`: [Environment][google.cloud.dialogflow.cx.v3.Environment]
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
@@ -980,6 +1140,12 @@ public final class EnvironmentsGrpc {
      *
      * <pre>
      * Updates the specified [Environment][google.cloud.dialogflow.cx.v3.Environment].
+     * This method is a [long-running
+     * operation](https://cloud.google.com/dialogflow/cx/docs/how/long-running-operation).
+     * The returned `Operation` type has the following method-specific fields:
+     * - `metadata`: An empty [Struct
+     *   message](https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#struct)
+     * - `response`: [Environment][google.cloud.dialogflow.cx.v3.Environment]
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
@@ -1021,6 +1187,11 @@ public final class EnvironmentsGrpc {
      *
      * <pre>
      * Kicks off a continuous test under the specified [Environment][google.cloud.dialogflow.cx.v3.Environment].
+     * This method is a [long-running
+     * operation](https://cloud.google.com/dialogflow/cx/docs/how/long-running-operation).
+     * The returned `Operation` type has the following method-specific fields:
+     * - `metadata`: [RunContinuousTestMetadata][google.cloud.dialogflow.cx.v3.RunContinuousTestMetadata]
+     * - `response`: [RunContinuousTestResponse][google.cloud.dialogflow.cx.v3.RunContinuousTestResponse]
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
@@ -1043,6 +1214,24 @@ public final class EnvironmentsGrpc {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getListContinuousTestResultsMethod(), getCallOptions()), request);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deploys a flow to the specified [Environment][google.cloud.dialogflow.cx.v3.Environment].
+     * This method is a [long-running
+     * operation](https://cloud.google.com/dialogflow/cx/docs/how/long-running-operation).
+     * The returned `Operation` type has the following method-specific fields:
+     * - `metadata`: [DeployFlowMetadata][google.cloud.dialogflow.cx.v3.DeployFlowMetadata]
+     * - `response`: [DeployFlowResponse][google.cloud.dialogflow.cx.v3.DeployFlowResponse]
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        deployFlow(com.google.cloud.dialogflow.cx.v3.DeployFlowRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getDeployFlowMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_LIST_ENVIRONMENTS = 0;
@@ -1053,6 +1242,7 @@ public final class EnvironmentsGrpc {
   private static final int METHODID_LOOKUP_ENVIRONMENT_HISTORY = 5;
   private static final int METHODID_RUN_CONTINUOUS_TEST = 6;
   private static final int METHODID_LIST_CONTINUOUS_TEST_RESULTS = 7;
+  private static final int METHODID_DEPLOY_FLOW = 8;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -1117,6 +1307,11 @@ public final class EnvironmentsGrpc {
               (io.grpc.stub.StreamObserver<
                       com.google.cloud.dialogflow.cx.v3.ListContinuousTestResultsResponse>)
                   responseObserver);
+          break;
+        case METHODID_DEPLOY_FLOW:
+          serviceImpl.deployFlow(
+              (com.google.cloud.dialogflow.cx.v3.DeployFlowRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -1190,6 +1385,7 @@ public final class EnvironmentsGrpc {
                       .addMethod(getLookupEnvironmentHistoryMethod())
                       .addMethod(getRunContinuousTestMethod())
                       .addMethod(getListContinuousTestResultsMethod())
+                      .addMethod(getDeployFlowMethod())
                       .build();
         }
       }

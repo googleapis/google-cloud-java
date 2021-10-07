@@ -425,6 +425,14 @@ public class EnvironmentsClient implements BackgroundResource {
    * Creates an [Environment][google.cloud.dialogflow.cx.v3.Environment] in the specified
    * [Agent][google.cloud.dialogflow.cx.v3.Agent].
    *
+   * <p>This method is a [long-running
+   * operation](https://cloud.google.com/dialogflow/cx/docs/how/long-running-operation). The
+   * returned `Operation` type has the following method-specific fields:
+   *
+   * <p>- `metadata`: An empty [Struct
+   * message](https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#struct)
+   * - `response`: [Environment][google.cloud.dialogflow.cx.v3.Environment]
+   *
    * <p>Sample code:
    *
    * <pre>{@code
@@ -456,6 +464,14 @@ public class EnvironmentsClient implements BackgroundResource {
    * Creates an [Environment][google.cloud.dialogflow.cx.v3.Environment] in the specified
    * [Agent][google.cloud.dialogflow.cx.v3.Agent].
    *
+   * <p>This method is a [long-running
+   * operation](https://cloud.google.com/dialogflow/cx/docs/how/long-running-operation). The
+   * returned `Operation` type has the following method-specific fields:
+   *
+   * <p>- `metadata`: An empty [Struct
+   * message](https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#struct)
+   * - `response`: [Environment][google.cloud.dialogflow.cx.v3.Environment]
+   *
    * <p>Sample code:
    *
    * <pre>{@code
@@ -485,6 +501,14 @@ public class EnvironmentsClient implements BackgroundResource {
    * Creates an [Environment][google.cloud.dialogflow.cx.v3.Environment] in the specified
    * [Agent][google.cloud.dialogflow.cx.v3.Agent].
    *
+   * <p>This method is a [long-running
+   * operation](https://cloud.google.com/dialogflow/cx/docs/how/long-running-operation). The
+   * returned `Operation` type has the following method-specific fields:
+   *
+   * <p>- `metadata`: An empty [Struct
+   * message](https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#struct)
+   * - `response`: [Environment][google.cloud.dialogflow.cx.v3.Environment]
+   *
    * <p>Sample code:
    *
    * <pre>{@code
@@ -512,6 +536,14 @@ public class EnvironmentsClient implements BackgroundResource {
   /**
    * Creates an [Environment][google.cloud.dialogflow.cx.v3.Environment] in the specified
    * [Agent][google.cloud.dialogflow.cx.v3.Agent].
+   *
+   * <p>This method is a [long-running
+   * operation](https://cloud.google.com/dialogflow/cx/docs/how/long-running-operation). The
+   * returned `Operation` type has the following method-specific fields:
+   *
+   * <p>- `metadata`: An empty [Struct
+   * message](https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#struct)
+   * - `response`: [Environment][google.cloud.dialogflow.cx.v3.Environment]
    *
    * <p>Sample code:
    *
@@ -541,6 +573,14 @@ public class EnvironmentsClient implements BackgroundResource {
    * Creates an [Environment][google.cloud.dialogflow.cx.v3.Environment] in the specified
    * [Agent][google.cloud.dialogflow.cx.v3.Agent].
    *
+   * <p>This method is a [long-running
+   * operation](https://cloud.google.com/dialogflow/cx/docs/how/long-running-operation). The
+   * returned `Operation` type has the following method-specific fields:
+   *
+   * <p>- `metadata`: An empty [Struct
+   * message](https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#struct)
+   * - `response`: [Environment][google.cloud.dialogflow.cx.v3.Environment]
+   *
    * <p>Sample code:
    *
    * <pre>{@code
@@ -566,6 +606,14 @@ public class EnvironmentsClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Updates the specified [Environment][google.cloud.dialogflow.cx.v3.Environment].
+   *
+   * <p>This method is a [long-running
+   * operation](https://cloud.google.com/dialogflow/cx/docs/how/long-running-operation). The
+   * returned `Operation` type has the following method-specific fields:
+   *
+   * <p>- `metadata`: An empty [Struct
+   * message](https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#struct)
+   * - `response`: [Environment][google.cloud.dialogflow.cx.v3.Environment]
    *
    * <p>Sample code:
    *
@@ -596,6 +644,14 @@ public class EnvironmentsClient implements BackgroundResource {
   /**
    * Updates the specified [Environment][google.cloud.dialogflow.cx.v3.Environment].
    *
+   * <p>This method is a [long-running
+   * operation](https://cloud.google.com/dialogflow/cx/docs/how/long-running-operation). The
+   * returned `Operation` type has the following method-specific fields:
+   *
+   * <p>- `metadata`: An empty [Struct
+   * message](https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#struct)
+   * - `response`: [Environment][google.cloud.dialogflow.cx.v3.Environment]
+   *
    * <p>Sample code:
    *
    * <pre>{@code
@@ -621,6 +677,14 @@ public class EnvironmentsClient implements BackgroundResource {
   /**
    * Updates the specified [Environment][google.cloud.dialogflow.cx.v3.Environment].
    *
+   * <p>This method is a [long-running
+   * operation](https://cloud.google.com/dialogflow/cx/docs/how/long-running-operation). The
+   * returned `Operation` type has the following method-specific fields:
+   *
+   * <p>- `metadata`: An empty [Struct
+   * message](https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#struct)
+   * - `response`: [Environment][google.cloud.dialogflow.cx.v3.Environment]
+   *
    * <p>Sample code:
    *
    * <pre>{@code
@@ -645,6 +709,14 @@ public class EnvironmentsClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Updates the specified [Environment][google.cloud.dialogflow.cx.v3.Environment].
+   *
+   * <p>This method is a [long-running
+   * operation](https://cloud.google.com/dialogflow/cx/docs/how/long-running-operation). The
+   * returned `Operation` type has the following method-specific fields:
+   *
+   * <p>- `metadata`: An empty [Struct
+   * message](https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#struct)
+   * - `response`: [Environment][google.cloud.dialogflow.cx.v3.Environment]
    *
    * <p>Sample code:
    *
@@ -926,6 +998,15 @@ public class EnvironmentsClient implements BackgroundResource {
    * Kicks off a continuous test under the specified
    * [Environment][google.cloud.dialogflow.cx.v3.Environment].
    *
+   * <p>This method is a [long-running
+   * operation](https://cloud.google.com/dialogflow/cx/docs/how/long-running-operation). The
+   * returned `Operation` type has the following method-specific fields:
+   *
+   * <p>- `metadata`:
+   * [RunContinuousTestMetadata][google.cloud.dialogflow.cx.v3.RunContinuousTestMetadata] -
+   * `response`:
+   * [RunContinuousTestResponse][google.cloud.dialogflow.cx.v3.RunContinuousTestResponse]
+   *
    * <p>Sample code:
    *
    * <pre>{@code
@@ -952,6 +1033,15 @@ public class EnvironmentsClient implements BackgroundResource {
   /**
    * Kicks off a continuous test under the specified
    * [Environment][google.cloud.dialogflow.cx.v3.Environment].
+   *
+   * <p>This method is a [long-running
+   * operation](https://cloud.google.com/dialogflow/cx/docs/how/long-running-operation). The
+   * returned `Operation` type has the following method-specific fields:
+   *
+   * <p>- `metadata`:
+   * [RunContinuousTestMetadata][google.cloud.dialogflow.cx.v3.RunContinuousTestMetadata] -
+   * `response`:
+   * [RunContinuousTestResponse][google.cloud.dialogflow.cx.v3.RunContinuousTestResponse]
    *
    * <p>Sample code:
    *
@@ -980,6 +1070,15 @@ public class EnvironmentsClient implements BackgroundResource {
   /**
    * Kicks off a continuous test under the specified
    * [Environment][google.cloud.dialogflow.cx.v3.Environment].
+   *
+   * <p>This method is a [long-running
+   * operation](https://cloud.google.com/dialogflow/cx/docs/how/long-running-operation). The
+   * returned `Operation` type has the following method-specific fields:
+   *
+   * <p>- `metadata`:
+   * [RunContinuousTestMetadata][google.cloud.dialogflow.cx.v3.RunContinuousTestMetadata] -
+   * `response`:
+   * [RunContinuousTestResponse][google.cloud.dialogflow.cx.v3.RunContinuousTestResponse]
    *
    * <p>Sample code:
    *
@@ -1175,6 +1274,112 @@ public class EnvironmentsClient implements BackgroundResource {
   public final UnaryCallable<ListContinuousTestResultsRequest, ListContinuousTestResultsResponse>
       listContinuousTestResultsCallable() {
     return stub.listContinuousTestResultsCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deploys a flow to the specified [Environment][google.cloud.dialogflow.cx.v3.Environment].
+   *
+   * <p>This method is a [long-running
+   * operation](https://cloud.google.com/dialogflow/cx/docs/how/long-running-operation). The
+   * returned `Operation` type has the following method-specific fields:
+   *
+   * <p>- `metadata`: [DeployFlowMetadata][google.cloud.dialogflow.cx.v3.DeployFlowMetadata] -
+   * `response`: [DeployFlowResponse][google.cloud.dialogflow.cx.v3.DeployFlowResponse]
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (EnvironmentsClient environmentsClient = EnvironmentsClient.create()) {
+   *   DeployFlowRequest request =
+   *       DeployFlowRequest.newBuilder()
+   *           .setEnvironment(
+   *               EnvironmentName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[ENVIRONMENT]")
+   *                   .toString())
+   *           .setFlowVersion(
+   *               VersionName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[FLOW]", "[VERSION]")
+   *                   .toString())
+   *           .build();
+   *   DeployFlowResponse response = environmentsClient.deployFlowAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<DeployFlowResponse, DeployFlowMetadata> deployFlowAsync(
+      DeployFlowRequest request) {
+    return deployFlowOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deploys a flow to the specified [Environment][google.cloud.dialogflow.cx.v3.Environment].
+   *
+   * <p>This method is a [long-running
+   * operation](https://cloud.google.com/dialogflow/cx/docs/how/long-running-operation). The
+   * returned `Operation` type has the following method-specific fields:
+   *
+   * <p>- `metadata`: [DeployFlowMetadata][google.cloud.dialogflow.cx.v3.DeployFlowMetadata] -
+   * `response`: [DeployFlowResponse][google.cloud.dialogflow.cx.v3.DeployFlowResponse]
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (EnvironmentsClient environmentsClient = EnvironmentsClient.create()) {
+   *   DeployFlowRequest request =
+   *       DeployFlowRequest.newBuilder()
+   *           .setEnvironment(
+   *               EnvironmentName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[ENVIRONMENT]")
+   *                   .toString())
+   *           .setFlowVersion(
+   *               VersionName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[FLOW]", "[VERSION]")
+   *                   .toString())
+   *           .build();
+   *   OperationFuture<DeployFlowResponse, DeployFlowMetadata> future =
+   *       environmentsClient.deployFlowOperationCallable().futureCall(request);
+   *   // Do something.
+   *   DeployFlowResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<DeployFlowRequest, DeployFlowResponse, DeployFlowMetadata>
+      deployFlowOperationCallable() {
+    return stub.deployFlowOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deploys a flow to the specified [Environment][google.cloud.dialogflow.cx.v3.Environment].
+   *
+   * <p>This method is a [long-running
+   * operation](https://cloud.google.com/dialogflow/cx/docs/how/long-running-operation). The
+   * returned `Operation` type has the following method-specific fields:
+   *
+   * <p>- `metadata`: [DeployFlowMetadata][google.cloud.dialogflow.cx.v3.DeployFlowMetadata] -
+   * `response`: [DeployFlowResponse][google.cloud.dialogflow.cx.v3.DeployFlowResponse]
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (EnvironmentsClient environmentsClient = EnvironmentsClient.create()) {
+   *   DeployFlowRequest request =
+   *       DeployFlowRequest.newBuilder()
+   *           .setEnvironment(
+   *               EnvironmentName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[ENVIRONMENT]")
+   *                   .toString())
+   *           .setFlowVersion(
+   *               VersionName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[FLOW]", "[VERSION]")
+   *                   .toString())
+   *           .build();
+   *   ApiFuture<Operation> future = environmentsClient.deployFlowCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<DeployFlowRequest, Operation> deployFlowCallable() {
+    return stub.deployFlowCallable();
   }
 
   @Override

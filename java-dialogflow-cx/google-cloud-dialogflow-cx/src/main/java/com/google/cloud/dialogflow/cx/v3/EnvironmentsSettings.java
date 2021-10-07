@@ -143,6 +143,17 @@ public class EnvironmentsSettings extends ClientSettings<EnvironmentsSettings> {
     return ((EnvironmentsStubSettings) getStubSettings()).listContinuousTestResultsSettings();
   }
 
+  /** Returns the object with the settings used for calls to deployFlow. */
+  public UnaryCallSettings<DeployFlowRequest, Operation> deployFlowSettings() {
+    return ((EnvironmentsStubSettings) getStubSettings()).deployFlowSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deployFlow. */
+  public OperationCallSettings<DeployFlowRequest, DeployFlowResponse, DeployFlowMetadata>
+      deployFlowOperationSettings() {
+    return ((EnvironmentsStubSettings) getStubSettings()).deployFlowOperationSettings();
+  }
+
   public static final EnvironmentsSettings create(EnvironmentsStubSettings stub)
       throws IOException {
     return new EnvironmentsSettings.Builder(stub.toBuilder()).build();
@@ -310,6 +321,17 @@ public class EnvironmentsSettings extends ClientSettings<EnvironmentsSettings> {
             ListContinuousTestResultsPagedResponse>
         listContinuousTestResultsSettings() {
       return getStubSettingsBuilder().listContinuousTestResultsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deployFlow. */
+    public UnaryCallSettings.Builder<DeployFlowRequest, Operation> deployFlowSettings() {
+      return getStubSettingsBuilder().deployFlowSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deployFlow. */
+    public OperationCallSettings.Builder<DeployFlowRequest, DeployFlowResponse, DeployFlowMetadata>
+        deployFlowOperationSettings() {
+      return getStubSettingsBuilder().deployFlowOperationSettings();
     }
 
     @Override

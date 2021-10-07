@@ -675,7 +675,9 @@ public class TestCasesClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Kicks off a test case run. This method is a [long-running
+   * Kicks off a test case run.
+   *
+   * <p>This method is a [long-running
    * operation](https://cloud.google.com/dialogflow/cx/docs/how/long-running-operation). The
    * returned `Operation` type has the following method-specific fields:
    *
@@ -708,7 +710,9 @@ public class TestCasesClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Kicks off a test case run. This method is a [long-running
+   * Kicks off a test case run.
+   *
+   * <p>This method is a [long-running
    * operation](https://cloud.google.com/dialogflow/cx/docs/how/long-running-operation). The
    * returned `Operation` type has the following method-specific fields:
    *
@@ -741,7 +745,9 @@ public class TestCasesClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Kicks off a test case run. This method is a [long-running
+   * Kicks off a test case run.
+   *
+   * <p>This method is a [long-running
    * operation](https://cloud.google.com/dialogflow/cx/docs/how/long-running-operation). The
    * returned `Operation` type has the following method-specific fields:
    *
@@ -774,6 +780,15 @@ public class TestCasesClient implements BackgroundResource {
   /**
    * Kicks off a batch run of test cases.
    *
+   * <p>This method is a [long-running
+   * operation](https://cloud.google.com/dialogflow/cx/docs/how/long-running-operation). The
+   * returned `Operation` type has the following method-specific fields:
+   *
+   * <p>- `metadata`:
+   * [BatchRunTestCasesMetadata][google.cloud.dialogflow.cx.v3.BatchRunTestCasesMetadata] -
+   * `response`:
+   * [BatchRunTestCasesResponse][google.cloud.dialogflow.cx.v3.BatchRunTestCasesResponse]
+   *
    * <p>Sample code:
    *
    * <pre>{@code
@@ -802,6 +817,15 @@ public class TestCasesClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Kicks off a batch run of test cases.
+   *
+   * <p>This method is a [long-running
+   * operation](https://cloud.google.com/dialogflow/cx/docs/how/long-running-operation). The
+   * returned `Operation` type has the following method-specific fields:
+   *
+   * <p>- `metadata`:
+   * [BatchRunTestCasesMetadata][google.cloud.dialogflow.cx.v3.BatchRunTestCasesMetadata] -
+   * `response`:
+   * [BatchRunTestCasesResponse][google.cloud.dialogflow.cx.v3.BatchRunTestCasesResponse]
    *
    * <p>Sample code:
    *
@@ -832,6 +856,15 @@ public class TestCasesClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Kicks off a batch run of test cases.
+   *
+   * <p>This method is a [long-running
+   * operation](https://cloud.google.com/dialogflow/cx/docs/how/long-running-operation). The
+   * returned `Operation` type has the following method-specific fields:
+   *
+   * <p>- `metadata`:
+   * [BatchRunTestCasesMetadata][google.cloud.dialogflow.cx.v3.BatchRunTestCasesMetadata] -
+   * `response`:
+   * [BatchRunTestCasesResponse][google.cloud.dialogflow.cx.v3.BatchRunTestCasesResponse]
    *
    * <p>Sample code:
    *
@@ -909,6 +942,14 @@ public class TestCasesClient implements BackgroundResource {
    * cases and won't overwite any existing ones. The provided ID in the imported test case is
    * neglected.
    *
+   * <p>This method is a [long-running
+   * operation](https://cloud.google.com/dialogflow/cx/docs/how/long-running-operation). The
+   * returned `Operation` type has the following method-specific fields:
+   *
+   * <p>- `metadata`:
+   * [ImportTestCasesMetadata][google.cloud.dialogflow.cx.v3.ImportTestCasesMetadata] - `response`:
+   * [ImportTestCasesResponse][google.cloud.dialogflow.cx.v3.ImportTestCasesResponse]
+   *
    * <p>Sample code:
    *
    * <pre>{@code
@@ -935,6 +976,14 @@ public class TestCasesClient implements BackgroundResource {
    * Imports the test cases from a Cloud Storage bucket or a local file. It always creates new test
    * cases and won't overwite any existing ones. The provided ID in the imported test case is
    * neglected.
+   *
+   * <p>This method is a [long-running
+   * operation](https://cloud.google.com/dialogflow/cx/docs/how/long-running-operation). The
+   * returned `Operation` type has the following method-specific fields:
+   *
+   * <p>- `metadata`:
+   * [ImportTestCasesMetadata][google.cloud.dialogflow.cx.v3.ImportTestCasesMetadata] - `response`:
+   * [ImportTestCasesResponse][google.cloud.dialogflow.cx.v3.ImportTestCasesResponse]
    *
    * <p>Sample code:
    *
@@ -964,6 +1013,14 @@ public class TestCasesClient implements BackgroundResource {
    * cases and won't overwite any existing ones. The provided ID in the imported test case is
    * neglected.
    *
+   * <p>This method is a [long-running
+   * operation](https://cloud.google.com/dialogflow/cx/docs/how/long-running-operation). The
+   * returned `Operation` type has the following method-specific fields:
+   *
+   * <p>- `metadata`:
+   * [ImportTestCasesMetadata][google.cloud.dialogflow.cx.v3.ImportTestCasesMetadata] - `response`:
+   * [ImportTestCasesResponse][google.cloud.dialogflow.cx.v3.ImportTestCasesResponse]
+   *
    * <p>Sample code:
    *
    * <pre>{@code
@@ -987,6 +1044,14 @@ public class TestCasesClient implements BackgroundResource {
   /**
    * Exports the test cases under the agent to a Cloud Storage bucket or a local file. Filter can be
    * applied to export a subset of test cases.
+   *
+   * <p>This method is a [long-running
+   * operation](https://cloud.google.com/dialogflow/cx/docs/how/long-running-operation). The
+   * returned `Operation` type has the following method-specific fields:
+   *
+   * <p>- `metadata`:
+   * [ExportTestCasesMetadata][google.cloud.dialogflow.cx.v3.ExportTestCasesMetadata] - `response`:
+   * [ExportTestCasesResponse][google.cloud.dialogflow.cx.v3.ExportTestCasesResponse]
    *
    * <p>Sample code:
    *
@@ -1015,6 +1080,14 @@ public class TestCasesClient implements BackgroundResource {
    * Exports the test cases under the agent to a Cloud Storage bucket or a local file. Filter can be
    * applied to export a subset of test cases.
    *
+   * <p>This method is a [long-running
+   * operation](https://cloud.google.com/dialogflow/cx/docs/how/long-running-operation). The
+   * returned `Operation` type has the following method-specific fields:
+   *
+   * <p>- `metadata`:
+   * [ExportTestCasesMetadata][google.cloud.dialogflow.cx.v3.ExportTestCasesMetadata] - `response`:
+   * [ExportTestCasesResponse][google.cloud.dialogflow.cx.v3.ExportTestCasesResponse]
+   *
    * <p>Sample code:
    *
    * <pre>{@code
@@ -1042,6 +1115,14 @@ public class TestCasesClient implements BackgroundResource {
   /**
    * Exports the test cases under the agent to a Cloud Storage bucket or a local file. Filter can be
    * applied to export a subset of test cases.
+   *
+   * <p>This method is a [long-running
+   * operation](https://cloud.google.com/dialogflow/cx/docs/how/long-running-operation). The
+   * returned `Operation` type has the following method-specific fields:
+   *
+   * <p>- `metadata`:
+   * [ExportTestCasesMetadata][google.cloud.dialogflow.cx.v3.ExportTestCasesMetadata] - `response`:
+   * [ExportTestCasesResponse][google.cloud.dialogflow.cx.v3.ExportTestCasesResponse]
    *
    * <p>Sample code:
    *

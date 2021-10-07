@@ -726,6 +726,11 @@ public final class TestCasesGrpc {
      *
      * <pre>
      * Kicks off a batch run of test cases.
+     * This method is a [long-running
+     * operation](https://cloud.google.com/dialogflow/cx/docs/how/long-running-operation).
+     * The returned `Operation` type has the following method-specific fields:
+     * - `metadata`: [BatchRunTestCasesMetadata][google.cloud.dialogflow.cx.v3.BatchRunTestCasesMetadata]
+     * - `response`: [BatchRunTestCasesResponse][google.cloud.dialogflow.cx.v3.BatchRunTestCasesResponse]
      * </pre>
      */
     public void batchRunTestCases(
@@ -757,6 +762,11 @@ public final class TestCasesGrpc {
      * Imports the test cases from a Cloud Storage bucket or a local file. It
      * always creates new test cases and won't overwite any existing ones. The
      * provided ID in the imported test case is neglected.
+     * This method is a [long-running
+     * operation](https://cloud.google.com/dialogflow/cx/docs/how/long-running-operation).
+     * The returned `Operation` type has the following method-specific fields:
+     * - `metadata`: [ImportTestCasesMetadata][google.cloud.dialogflow.cx.v3.ImportTestCasesMetadata]
+     * - `response`: [ImportTestCasesResponse][google.cloud.dialogflow.cx.v3.ImportTestCasesResponse]
      * </pre>
      */
     public void importTestCases(
@@ -772,6 +782,11 @@ public final class TestCasesGrpc {
      * <pre>
      * Exports the test cases under the agent to a Cloud Storage bucket or a local
      * file. Filter can be applied to export a subset of test cases.
+     * This method is a [long-running
+     * operation](https://cloud.google.com/dialogflow/cx/docs/how/long-running-operation).
+     * The returned `Operation` type has the following method-specific fields:
+     * - `metadata`: [ExportTestCasesMetadata][google.cloud.dialogflow.cx.v3.ExportTestCasesMetadata]
+     * - `response`: [ExportTestCasesResponse][google.cloud.dialogflow.cx.v3.ExportTestCasesResponse]
      * </pre>
      */
     public void exportTestCases(
@@ -1019,6 +1034,11 @@ public final class TestCasesGrpc {
      *
      * <pre>
      * Kicks off a batch run of test cases.
+     * This method is a [long-running
+     * operation](https://cloud.google.com/dialogflow/cx/docs/how/long-running-operation).
+     * The returned `Operation` type has the following method-specific fields:
+     * - `metadata`: [BatchRunTestCasesMetadata][google.cloud.dialogflow.cx.v3.BatchRunTestCasesMetadata]
+     * - `response`: [BatchRunTestCasesResponse][google.cloud.dialogflow.cx.v3.BatchRunTestCasesResponse]
      * </pre>
      */
     public void batchRunTestCases(
@@ -1054,6 +1074,11 @@ public final class TestCasesGrpc {
      * Imports the test cases from a Cloud Storage bucket or a local file. It
      * always creates new test cases and won't overwite any existing ones. The
      * provided ID in the imported test case is neglected.
+     * This method is a [long-running
+     * operation](https://cloud.google.com/dialogflow/cx/docs/how/long-running-operation).
+     * The returned `Operation` type has the following method-specific fields:
+     * - `metadata`: [ImportTestCasesMetadata][google.cloud.dialogflow.cx.v3.ImportTestCasesMetadata]
+     * - `response`: [ImportTestCasesResponse][google.cloud.dialogflow.cx.v3.ImportTestCasesResponse]
      * </pre>
      */
     public void importTestCases(
@@ -1071,6 +1096,11 @@ public final class TestCasesGrpc {
      * <pre>
      * Exports the test cases under the agent to a Cloud Storage bucket or a local
      * file. Filter can be applied to export a subset of test cases.
+     * This method is a [long-running
+     * operation](https://cloud.google.com/dialogflow/cx/docs/how/long-running-operation).
+     * The returned `Operation` type has the following method-specific fields:
+     * - `metadata`: [ExportTestCasesMetadata][google.cloud.dialogflow.cx.v3.ExportTestCasesMetadata]
+     * - `response`: [ExportTestCasesResponse][google.cloud.dialogflow.cx.v3.ExportTestCasesResponse]
      * </pre>
      */
     public void exportTestCases(
@@ -1225,6 +1255,11 @@ public final class TestCasesGrpc {
      *
      * <pre>
      * Kicks off a batch run of test cases.
+     * This method is a [long-running
+     * operation](https://cloud.google.com/dialogflow/cx/docs/how/long-running-operation).
+     * The returned `Operation` type has the following method-specific fields:
+     * - `metadata`: [BatchRunTestCasesMetadata][google.cloud.dialogflow.cx.v3.BatchRunTestCasesMetadata]
+     * - `response`: [BatchRunTestCasesResponse][google.cloud.dialogflow.cx.v3.BatchRunTestCasesResponse]
      * </pre>
      */
     public com.google.longrunning.Operation batchRunTestCases(
@@ -1253,6 +1288,11 @@ public final class TestCasesGrpc {
      * Imports the test cases from a Cloud Storage bucket or a local file. It
      * always creates new test cases and won't overwite any existing ones. The
      * provided ID in the imported test case is neglected.
+     * This method is a [long-running
+     * operation](https://cloud.google.com/dialogflow/cx/docs/how/long-running-operation).
+     * The returned `Operation` type has the following method-specific fields:
+     * - `metadata`: [ImportTestCasesMetadata][google.cloud.dialogflow.cx.v3.ImportTestCasesMetadata]
+     * - `response`: [ImportTestCasesResponse][google.cloud.dialogflow.cx.v3.ImportTestCasesResponse]
      * </pre>
      */
     public com.google.longrunning.Operation importTestCases(
@@ -1267,6 +1307,11 @@ public final class TestCasesGrpc {
      * <pre>
      * Exports the test cases under the agent to a Cloud Storage bucket or a local
      * file. Filter can be applied to export a subset of test cases.
+     * This method is a [long-running
+     * operation](https://cloud.google.com/dialogflow/cx/docs/how/long-running-operation).
+     * The returned `Operation` type has the following method-specific fields:
+     * - `metadata`: [ExportTestCasesMetadata][google.cloud.dialogflow.cx.v3.ExportTestCasesMetadata]
+     * - `response`: [ExportTestCasesResponse][google.cloud.dialogflow.cx.v3.ExportTestCasesResponse]
      * </pre>
      */
     public com.google.longrunning.Operation exportTestCases(
@@ -1414,6 +1459,11 @@ public final class TestCasesGrpc {
      *
      * <pre>
      * Kicks off a batch run of test cases.
+     * This method is a [long-running
+     * operation](https://cloud.google.com/dialogflow/cx/docs/how/long-running-operation).
+     * The returned `Operation` type has the following method-specific fields:
+     * - `metadata`: [BatchRunTestCasesMetadata][google.cloud.dialogflow.cx.v3.BatchRunTestCasesMetadata]
+     * - `response`: [BatchRunTestCasesResponse][google.cloud.dialogflow.cx.v3.BatchRunTestCasesResponse]
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
@@ -1443,6 +1493,11 @@ public final class TestCasesGrpc {
      * Imports the test cases from a Cloud Storage bucket or a local file. It
      * always creates new test cases and won't overwite any existing ones. The
      * provided ID in the imported test case is neglected.
+     * This method is a [long-running
+     * operation](https://cloud.google.com/dialogflow/cx/docs/how/long-running-operation).
+     * The returned `Operation` type has the following method-specific fields:
+     * - `metadata`: [ImportTestCasesMetadata][google.cloud.dialogflow.cx.v3.ImportTestCasesMetadata]
+     * - `response`: [ImportTestCasesResponse][google.cloud.dialogflow.cx.v3.ImportTestCasesResponse]
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
@@ -1457,6 +1512,11 @@ public final class TestCasesGrpc {
      * <pre>
      * Exports the test cases under the agent to a Cloud Storage bucket or a local
      * file. Filter can be applied to export a subset of test cases.
+     * This method is a [long-running
+     * operation](https://cloud.google.com/dialogflow/cx/docs/how/long-running-operation).
+     * The returned `Operation` type has the following method-specific fields:
+     * - `metadata`: [ExportTestCasesMetadata][google.cloud.dialogflow.cx.v3.ExportTestCasesMetadata]
+     * - `response`: [ExportTestCasesResponse][google.cloud.dialogflow.cx.v3.ExportTestCasesResponse]
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>

@@ -41,6 +41,21 @@
         }
       }
     },
+    "Deployments": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "DeploymentsClient",
+          "rpcs": {
+            "GetDeployment": {
+              "methods": ["getDeployment", "getDeployment", "getDeployment", "getDeploymentCallable"]
+            },
+            "ListDeployments": {
+              "methods": ["listDeployments", "listDeployments", "listDeployments", "listDeploymentsPagedCallable", "listDeploymentsCallable"]
+            }
+          }
+        }
+      }
+    },
     "EntityTypes": {
       "clients": {
         "grpc": {
@@ -75,6 +90,9 @@
             },
             "DeleteEnvironment": {
               "methods": ["deleteEnvironment", "deleteEnvironment", "deleteEnvironment", "deleteEnvironmentCallable"]
+            },
+            "DeployFlow": {
+              "methods": ["deployFlowAsync", "deployFlowOperationCallable", "deployFlowCallable"]
             },
             "GetEnvironment": {
               "methods": ["getEnvironment", "getEnvironment", "getEnvironment", "getEnvironmentCallable"]

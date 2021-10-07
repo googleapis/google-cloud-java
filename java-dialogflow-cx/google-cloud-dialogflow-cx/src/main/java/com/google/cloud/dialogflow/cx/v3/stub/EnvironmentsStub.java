@@ -25,6 +25,9 @@ import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.dialogflow.cx.v3.CreateEnvironmentRequest;
 import com.google.cloud.dialogflow.cx.v3.DeleteEnvironmentRequest;
+import com.google.cloud.dialogflow.cx.v3.DeployFlowMetadata;
+import com.google.cloud.dialogflow.cx.v3.DeployFlowRequest;
+import com.google.cloud.dialogflow.cx.v3.DeployFlowResponse;
 import com.google.cloud.dialogflow.cx.v3.Environment;
 import com.google.cloud.dialogflow.cx.v3.GetEnvironmentRequest;
 import com.google.cloud.dialogflow.cx.v3.ListContinuousTestResultsRequest;
@@ -125,6 +128,15 @@ public abstract class EnvironmentsStub implements BackgroundResource {
   public UnaryCallable<ListContinuousTestResultsRequest, ListContinuousTestResultsResponse>
       listContinuousTestResultsCallable() {
     throw new UnsupportedOperationException("Not implemented: listContinuousTestResultsCallable()");
+  }
+
+  public OperationCallable<DeployFlowRequest, DeployFlowResponse, DeployFlowMetadata>
+      deployFlowOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: deployFlowOperationCallable()");
+  }
+
+  public UnaryCallable<DeployFlowRequest, Operation> deployFlowCallable() {
+    throw new UnsupportedOperationException("Not implemented: deployFlowCallable()");
   }
 
   @Override

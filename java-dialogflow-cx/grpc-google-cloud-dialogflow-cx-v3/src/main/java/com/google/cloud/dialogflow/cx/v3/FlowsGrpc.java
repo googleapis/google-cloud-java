@@ -602,6 +602,13 @@ public final class FlowsGrpc {
      * <pre>
      * Trains the specified flow. Note that only the flow in 'draft' environment
      * is trained.
+     * This method is a [long-running
+     * operation](https://cloud.google.com/dialogflow/cx/docs/how/long-running-operation).
+     * The returned `Operation` type has the following method-specific fields:
+     * - `metadata`: An empty [Struct
+     *   message](https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#struct)
+     * - `response`: An [Empty
+     *   message](https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#empty)
      * Note: You should always train a flow prior to sending it queries. See the
      * [training
      * documentation](https://cloud.google.com/dialogflow/cx/docs/concept/training).
@@ -651,6 +658,12 @@ public final class FlowsGrpc {
      *
      * <pre>
      * Imports the specified flow to the specified agent from a binary file.
+     * This method is a [long-running
+     * operation](https://cloud.google.com/dialogflow/cx/docs/how/long-running-operation).
+     * The returned `Operation` type has the following method-specific fields:
+     * - `metadata`: An empty [Struct
+     *   message](https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#struct)
+     * - `response`: [ImportFlowResponse][google.cloud.dialogflow.cx.v3.ImportFlowResponse]
      * Note: You should always train a flow prior to sending it queries. See the
      * [training
      * documentation](https://cloud.google.com/dialogflow/cx/docs/concept/training).
@@ -667,6 +680,12 @@ public final class FlowsGrpc {
      *
      * <pre>
      * Exports the specified flow to a binary file.
+     * This method is a [long-running
+     * operation](https://cloud.google.com/dialogflow/cx/docs/how/long-running-operation).
+     * The returned `Operation` type has the following method-specific fields:
+     * - `metadata`: An empty [Struct
+     *   message](https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#struct)
+     * - `response`: [ExportFlowResponse][google.cloud.dialogflow.cx.v3.ExportFlowResponse]
      * Note that resources (e.g. intents, entities, webhooks) that the flow
      * references will also be exported.
      * </pre>
@@ -847,6 +866,13 @@ public final class FlowsGrpc {
      * <pre>
      * Trains the specified flow. Note that only the flow in 'draft' environment
      * is trained.
+     * This method is a [long-running
+     * operation](https://cloud.google.com/dialogflow/cx/docs/how/long-running-operation).
+     * The returned `Operation` type has the following method-specific fields:
+     * - `metadata`: An empty [Struct
+     *   message](https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#struct)
+     * - `response`: An [Empty
+     *   message](https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#empty)
      * Note: You should always train a flow prior to sending it queries. See the
      * [training
      * documentation](https://cloud.google.com/dialogflow/cx/docs/concept/training).
@@ -901,6 +927,12 @@ public final class FlowsGrpc {
      *
      * <pre>
      * Imports the specified flow to the specified agent from a binary file.
+     * This method is a [long-running
+     * operation](https://cloud.google.com/dialogflow/cx/docs/how/long-running-operation).
+     * The returned `Operation` type has the following method-specific fields:
+     * - `metadata`: An empty [Struct
+     *   message](https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#struct)
+     * - `response`: [ImportFlowResponse][google.cloud.dialogflow.cx.v3.ImportFlowResponse]
      * Note: You should always train a flow prior to sending it queries. See the
      * [training
      * documentation](https://cloud.google.com/dialogflow/cx/docs/concept/training).
@@ -918,6 +950,12 @@ public final class FlowsGrpc {
      *
      * <pre>
      * Exports the specified flow to a binary file.
+     * This method is a [long-running
+     * operation](https://cloud.google.com/dialogflow/cx/docs/how/long-running-operation).
+     * The returned `Operation` type has the following method-specific fields:
+     * - `metadata`: An empty [Struct
+     *   message](https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#struct)
+     * - `response`: [ExportFlowResponse][google.cloud.dialogflow.cx.v3.ExportFlowResponse]
      * Note that resources (e.g. intents, entities, webhooks) that the flow
      * references will also be exported.
      * </pre>
@@ -1025,6 +1063,13 @@ public final class FlowsGrpc {
      * <pre>
      * Trains the specified flow. Note that only the flow in 'draft' environment
      * is trained.
+     * This method is a [long-running
+     * operation](https://cloud.google.com/dialogflow/cx/docs/how/long-running-operation).
+     * The returned `Operation` type has the following method-specific fields:
+     * - `metadata`: An empty [Struct
+     *   message](https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#struct)
+     * - `response`: An [Empty
+     *   message](https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#empty)
      * Note: You should always train a flow prior to sending it queries. See the
      * [training
      * documentation](https://cloud.google.com/dialogflow/cx/docs/concept/training).
@@ -1070,6 +1115,12 @@ public final class FlowsGrpc {
      *
      * <pre>
      * Imports the specified flow to the specified agent from a binary file.
+     * This method is a [long-running
+     * operation](https://cloud.google.com/dialogflow/cx/docs/how/long-running-operation).
+     * The returned `Operation` type has the following method-specific fields:
+     * - `metadata`: An empty [Struct
+     *   message](https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#struct)
+     * - `response`: [ImportFlowResponse][google.cloud.dialogflow.cx.v3.ImportFlowResponse]
      * Note: You should always train a flow prior to sending it queries. See the
      * [training
      * documentation](https://cloud.google.com/dialogflow/cx/docs/concept/training).
@@ -1086,6 +1137,12 @@ public final class FlowsGrpc {
      *
      * <pre>
      * Exports the specified flow to a binary file.
+     * This method is a [long-running
+     * operation](https://cloud.google.com/dialogflow/cx/docs/how/long-running-operation).
+     * The returned `Operation` type has the following method-specific fields:
+     * - `metadata`: An empty [Struct
+     *   message](https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#struct)
+     * - `response`: [ExportFlowResponse][google.cloud.dialogflow.cx.v3.ExportFlowResponse]
      * Note that resources (e.g. intents, entities, webhooks) that the flow
      * references will also be exported.
      * </pre>
@@ -1196,6 +1253,13 @@ public final class FlowsGrpc {
      * <pre>
      * Trains the specified flow. Note that only the flow in 'draft' environment
      * is trained.
+     * This method is a [long-running
+     * operation](https://cloud.google.com/dialogflow/cx/docs/how/long-running-operation).
+     * The returned `Operation` type has the following method-specific fields:
+     * - `metadata`: An empty [Struct
+     *   message](https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#struct)
+     * - `response`: An [Empty
+     *   message](https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#empty)
      * Note: You should always train a flow prior to sending it queries. See the
      * [training
      * documentation](https://cloud.google.com/dialogflow/cx/docs/concept/training).
@@ -1244,6 +1308,12 @@ public final class FlowsGrpc {
      *
      * <pre>
      * Imports the specified flow to the specified agent from a binary file.
+     * This method is a [long-running
+     * operation](https://cloud.google.com/dialogflow/cx/docs/how/long-running-operation).
+     * The returned `Operation` type has the following method-specific fields:
+     * - `metadata`: An empty [Struct
+     *   message](https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#struct)
+     * - `response`: [ImportFlowResponse][google.cloud.dialogflow.cx.v3.ImportFlowResponse]
      * Note: You should always train a flow prior to sending it queries. See the
      * [training
      * documentation](https://cloud.google.com/dialogflow/cx/docs/concept/training).
@@ -1260,6 +1330,12 @@ public final class FlowsGrpc {
      *
      * <pre>
      * Exports the specified flow to a binary file.
+     * This method is a [long-running
+     * operation](https://cloud.google.com/dialogflow/cx/docs/how/long-running-operation).
+     * The returned `Operation` type has the following method-specific fields:
+     * - `metadata`: An empty [Struct
+     *   message](https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#struct)
+     * - `response`: [ExportFlowResponse][google.cloud.dialogflow.cx.v3.ExportFlowResponse]
      * Note that resources (e.g. intents, entities, webhooks) that the flow
      * references will also be exported.
      * </pre>

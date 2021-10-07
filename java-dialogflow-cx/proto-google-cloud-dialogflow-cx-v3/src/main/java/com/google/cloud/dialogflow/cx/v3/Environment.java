@@ -131,6 +131,24 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
                       extensionRegistry));
               break;
             }
+          case 58:
+            {
+              com.google.cloud.dialogflow.cx.v3.Environment.TestCasesConfig.Builder subBuilder =
+                  null;
+              if (testCasesConfig_ != null) {
+                subBuilder = testCasesConfig_.toBuilder();
+              }
+              testCasesConfig_ =
+                  input.readMessage(
+                      com.google.cloud.dialogflow.cx.v3.Environment.TestCasesConfig.parser(),
+                      extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(testCasesConfig_);
+                testCasesConfig_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -852,6 +870,1043 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
+  public interface TestCasesConfigOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.cloud.dialogflow.cx.v3.Environment.TestCasesConfig)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * A list of test case names to run. They should be under the same agent.
+     * Format of each test case name: `projects/&lt;Project ID&gt;/locations/
+     * &lt;Location ID&gt;/agents/&lt;AgentID&gt;/testCases/&lt;TestCase ID&gt;`
+     * </pre>
+     *
+     * <code>repeated string test_cases = 1 [(.google.api.resource_reference) = { ... }</code>
+     *
+     * @return A list containing the testCases.
+     */
+    java.util.List<java.lang.String> getTestCasesList();
+    /**
+     *
+     *
+     * <pre>
+     * A list of test case names to run. They should be under the same agent.
+     * Format of each test case name: `projects/&lt;Project ID&gt;/locations/
+     * &lt;Location ID&gt;/agents/&lt;AgentID&gt;/testCases/&lt;TestCase ID&gt;`
+     * </pre>
+     *
+     * <code>repeated string test_cases = 1 [(.google.api.resource_reference) = { ... }</code>
+     *
+     * @return The count of testCases.
+     */
+    int getTestCasesCount();
+    /**
+     *
+     *
+     * <pre>
+     * A list of test case names to run. They should be under the same agent.
+     * Format of each test case name: `projects/&lt;Project ID&gt;/locations/
+     * &lt;Location ID&gt;/agents/&lt;AgentID&gt;/testCases/&lt;TestCase ID&gt;`
+     * </pre>
+     *
+     * <code>repeated string test_cases = 1 [(.google.api.resource_reference) = { ... }</code>
+     *
+     * @param index The index of the element to return.
+     * @return The testCases at the given index.
+     */
+    java.lang.String getTestCases(int index);
+    /**
+     *
+     *
+     * <pre>
+     * A list of test case names to run. They should be under the same agent.
+     * Format of each test case name: `projects/&lt;Project ID&gt;/locations/
+     * &lt;Location ID&gt;/agents/&lt;AgentID&gt;/testCases/&lt;TestCase ID&gt;`
+     * </pre>
+     *
+     * <code>repeated string test_cases = 1 [(.google.api.resource_reference) = { ... }</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the testCases at the given index.
+     */
+    com.google.protobuf.ByteString getTestCasesBytes(int index);
+
+    /**
+     *
+     *
+     * <pre>
+     * Whether to run test cases in [TestCasesConfig.test_cases][google.cloud.dialogflow.cx.v3.Environment.TestCasesConfig.test_cases] periodically.
+     * Default false. If set to ture, run once a day.
+     * </pre>
+     *
+     * <code>bool enable_continuous_run = 2;</code>
+     *
+     * @return The enableContinuousRun.
+     */
+    boolean getEnableContinuousRun();
+
+    /**
+     *
+     *
+     * <pre>
+     * Whether to run test cases in [TestCasesConfig.test_cases][google.cloud.dialogflow.cx.v3.Environment.TestCasesConfig.test_cases] before
+     * deploying a flow version to the environment. Default false.
+     * </pre>
+     *
+     * <code>bool enable_predeployment_run = 3;</code>
+     *
+     * @return The enablePredeploymentRun.
+     */
+    boolean getEnablePredeploymentRun();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The configuration for continuous tests.
+   * </pre>
+   *
+   * Protobuf type {@code google.cloud.dialogflow.cx.v3.Environment.TestCasesConfig}
+   */
+  public static final class TestCasesConfig extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.cloud.dialogflow.cx.v3.Environment.TestCasesConfig)
+      TestCasesConfigOrBuilder {
+    private static final long serialVersionUID = 0L;
+    // Use TestCasesConfig.newBuilder() to construct.
+    private TestCasesConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private TestCasesConfig() {
+      testCases_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new TestCasesConfig();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+      return this.unknownFields;
+    }
+
+    private TestCasesConfig(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+                if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                  testCases_ = new com.google.protobuf.LazyStringArrayList();
+                  mutable_bitField0_ |= 0x00000001;
+                }
+                testCases_.add(s);
+                break;
+              }
+            case 16:
+              {
+                enableContinuousRun_ = input.readBool();
+                break;
+              }
+            case 24:
+              {
+                enablePredeploymentRun_ = input.readBool();
+                break;
+              }
+            default:
+              {
+                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
+                  done = true;
+                }
+                break;
+              }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          testCases_ = testCases_.getUnmodifiableView();
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.dialogflow.cx.v3.EnvironmentProto
+          .internal_static_google_cloud_dialogflow_cx_v3_Environment_TestCasesConfig_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.cloud.dialogflow.cx.v3.EnvironmentProto
+          .internal_static_google_cloud_dialogflow_cx_v3_Environment_TestCasesConfig_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.dialogflow.cx.v3.Environment.TestCasesConfig.class,
+              com.google.cloud.dialogflow.cx.v3.Environment.TestCasesConfig.Builder.class);
+    }
+
+    public static final int TEST_CASES_FIELD_NUMBER = 1;
+    private com.google.protobuf.LazyStringList testCases_;
+    /**
+     *
+     *
+     * <pre>
+     * A list of test case names to run. They should be under the same agent.
+     * Format of each test case name: `projects/&lt;Project ID&gt;/locations/
+     * &lt;Location ID&gt;/agents/&lt;AgentID&gt;/testCases/&lt;TestCase ID&gt;`
+     * </pre>
+     *
+     * <code>repeated string test_cases = 1 [(.google.api.resource_reference) = { ... }</code>
+     *
+     * @return A list containing the testCases.
+     */
+    public com.google.protobuf.ProtocolStringList getTestCasesList() {
+      return testCases_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A list of test case names to run. They should be under the same agent.
+     * Format of each test case name: `projects/&lt;Project ID&gt;/locations/
+     * &lt;Location ID&gt;/agents/&lt;AgentID&gt;/testCases/&lt;TestCase ID&gt;`
+     * </pre>
+     *
+     * <code>repeated string test_cases = 1 [(.google.api.resource_reference) = { ... }</code>
+     *
+     * @return The count of testCases.
+     */
+    public int getTestCasesCount() {
+      return testCases_.size();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A list of test case names to run. They should be under the same agent.
+     * Format of each test case name: `projects/&lt;Project ID&gt;/locations/
+     * &lt;Location ID&gt;/agents/&lt;AgentID&gt;/testCases/&lt;TestCase ID&gt;`
+     * </pre>
+     *
+     * <code>repeated string test_cases = 1 [(.google.api.resource_reference) = { ... }</code>
+     *
+     * @param index The index of the element to return.
+     * @return The testCases at the given index.
+     */
+    public java.lang.String getTestCases(int index) {
+      return testCases_.get(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A list of test case names to run. They should be under the same agent.
+     * Format of each test case name: `projects/&lt;Project ID&gt;/locations/
+     * &lt;Location ID&gt;/agents/&lt;AgentID&gt;/testCases/&lt;TestCase ID&gt;`
+     * </pre>
+     *
+     * <code>repeated string test_cases = 1 [(.google.api.resource_reference) = { ... }</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the testCases at the given index.
+     */
+    public com.google.protobuf.ByteString getTestCasesBytes(int index) {
+      return testCases_.getByteString(index);
+    }
+
+    public static final int ENABLE_CONTINUOUS_RUN_FIELD_NUMBER = 2;
+    private boolean enableContinuousRun_;
+    /**
+     *
+     *
+     * <pre>
+     * Whether to run test cases in [TestCasesConfig.test_cases][google.cloud.dialogflow.cx.v3.Environment.TestCasesConfig.test_cases] periodically.
+     * Default false. If set to ture, run once a day.
+     * </pre>
+     *
+     * <code>bool enable_continuous_run = 2;</code>
+     *
+     * @return The enableContinuousRun.
+     */
+    @java.lang.Override
+    public boolean getEnableContinuousRun() {
+      return enableContinuousRun_;
+    }
+
+    public static final int ENABLE_PREDEPLOYMENT_RUN_FIELD_NUMBER = 3;
+    private boolean enablePredeploymentRun_;
+    /**
+     *
+     *
+     * <pre>
+     * Whether to run test cases in [TestCasesConfig.test_cases][google.cloud.dialogflow.cx.v3.Environment.TestCasesConfig.test_cases] before
+     * deploying a flow version to the environment. Default false.
+     * </pre>
+     *
+     * <code>bool enable_predeployment_run = 3;</code>
+     *
+     * @return The enablePredeploymentRun.
+     */
+    @java.lang.Override
+    public boolean getEnablePredeploymentRun() {
+      return enablePredeploymentRun_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      for (int i = 0; i < testCases_.size(); i++) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, testCases_.getRaw(i));
+      }
+      if (enableContinuousRun_ != false) {
+        output.writeBool(2, enableContinuousRun_);
+      }
+      if (enablePredeploymentRun_ != false) {
+        output.writeBool(3, enablePredeploymentRun_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      {
+        int dataSize = 0;
+        for (int i = 0; i < testCases_.size(); i++) {
+          dataSize += computeStringSizeNoTag(testCases_.getRaw(i));
+        }
+        size += dataSize;
+        size += 1 * getTestCasesList().size();
+      }
+      if (enableContinuousRun_ != false) {
+        size += com.google.protobuf.CodedOutputStream.computeBoolSize(2, enableContinuousRun_);
+      }
+      if (enablePredeploymentRun_ != false) {
+        size += com.google.protobuf.CodedOutputStream.computeBoolSize(3, enablePredeploymentRun_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.cloud.dialogflow.cx.v3.Environment.TestCasesConfig)) {
+        return super.equals(obj);
+      }
+      com.google.cloud.dialogflow.cx.v3.Environment.TestCasesConfig other =
+          (com.google.cloud.dialogflow.cx.v3.Environment.TestCasesConfig) obj;
+
+      if (!getTestCasesList().equals(other.getTestCasesList())) return false;
+      if (getEnableContinuousRun() != other.getEnableContinuousRun()) return false;
+      if (getEnablePredeploymentRun() != other.getEnablePredeploymentRun()) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (getTestCasesCount() > 0) {
+        hash = (37 * hash) + TEST_CASES_FIELD_NUMBER;
+        hash = (53 * hash) + getTestCasesList().hashCode();
+      }
+      hash = (37 * hash) + ENABLE_CONTINUOUS_RUN_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getEnableContinuousRun());
+      hash = (37 * hash) + ENABLE_PREDEPLOYMENT_RUN_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getEnablePredeploymentRun());
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.cloud.dialogflow.cx.v3.Environment.TestCasesConfig parseFrom(
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.dialogflow.cx.v3.Environment.TestCasesConfig parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.dialogflow.cx.v3.Environment.TestCasesConfig parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.dialogflow.cx.v3.Environment.TestCasesConfig parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.dialogflow.cx.v3.Environment.TestCasesConfig parseFrom(
+        byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.dialogflow.cx.v3.Environment.TestCasesConfig parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.dialogflow.cx.v3.Environment.TestCasesConfig parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.dialogflow.cx.v3.Environment.TestCasesConfig parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.dialogflow.cx.v3.Environment.TestCasesConfig parseDelimitedFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.dialogflow.cx.v3.Environment.TestCasesConfig parseDelimitedFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.dialogflow.cx.v3.Environment.TestCasesConfig parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.dialogflow.cx.v3.Environment.TestCasesConfig parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.cloud.dialogflow.cx.v3.Environment.TestCasesConfig prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The configuration for continuous tests.
+     * </pre>
+     *
+     * Protobuf type {@code google.cloud.dialogflow.cx.v3.Environment.TestCasesConfig}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.cloud.dialogflow.cx.v3.Environment.TestCasesConfig)
+        com.google.cloud.dialogflow.cx.v3.Environment.TestCasesConfigOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.dialogflow.cx.v3.EnvironmentProto
+            .internal_static_google_cloud_dialogflow_cx_v3_Environment_TestCasesConfig_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.dialogflow.cx.v3.EnvironmentProto
+            .internal_static_google_cloud_dialogflow_cx_v3_Environment_TestCasesConfig_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.dialogflow.cx.v3.Environment.TestCasesConfig.class,
+                com.google.cloud.dialogflow.cx.v3.Environment.TestCasesConfig.Builder.class);
+      }
+
+      // Construct using com.google.cloud.dialogflow.cx.v3.Environment.TestCasesConfig.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        testCases_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        enableContinuousRun_ = false;
+
+        enablePredeploymentRun_ = false;
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.dialogflow.cx.v3.EnvironmentProto
+            .internal_static_google_cloud_dialogflow_cx_v3_Environment_TestCasesConfig_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.dialogflow.cx.v3.Environment.TestCasesConfig
+          getDefaultInstanceForType() {
+        return com.google.cloud.dialogflow.cx.v3.Environment.TestCasesConfig.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.cloud.dialogflow.cx.v3.Environment.TestCasesConfig build() {
+        com.google.cloud.dialogflow.cx.v3.Environment.TestCasesConfig result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.dialogflow.cx.v3.Environment.TestCasesConfig buildPartial() {
+        com.google.cloud.dialogflow.cx.v3.Environment.TestCasesConfig result =
+            new com.google.cloud.dialogflow.cx.v3.Environment.TestCasesConfig(this);
+        int from_bitField0_ = bitField0_;
+        if (((bitField0_ & 0x00000001) != 0)) {
+          testCases_ = testCases_.getUnmodifiableView();
+          bitField0_ = (bitField0_ & ~0x00000001);
+        }
+        result.testCases_ = testCases_;
+        result.enableContinuousRun_ = enableContinuousRun_;
+        result.enablePredeploymentRun_ = enablePredeploymentRun_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.google.cloud.dialogflow.cx.v3.Environment.TestCasesConfig) {
+          return mergeFrom((com.google.cloud.dialogflow.cx.v3.Environment.TestCasesConfig) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(
+          com.google.cloud.dialogflow.cx.v3.Environment.TestCasesConfig other) {
+        if (other
+            == com.google.cloud.dialogflow.cx.v3.Environment.TestCasesConfig.getDefaultInstance())
+          return this;
+        if (!other.testCases_.isEmpty()) {
+          if (testCases_.isEmpty()) {
+            testCases_ = other.testCases_;
+            bitField0_ = (bitField0_ & ~0x00000001);
+          } else {
+            ensureTestCasesIsMutable();
+            testCases_.addAll(other.testCases_);
+          }
+          onChanged();
+        }
+        if (other.getEnableContinuousRun() != false) {
+          setEnableContinuousRun(other.getEnableContinuousRun());
+        }
+        if (other.getEnablePredeploymentRun() != false) {
+          setEnablePredeploymentRun(other.getEnablePredeploymentRun());
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.google.cloud.dialogflow.cx.v3.Environment.TestCasesConfig parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage =
+              (com.google.cloud.dialogflow.cx.v3.Environment.TestCasesConfig)
+                  e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private int bitField0_;
+
+      private com.google.protobuf.LazyStringList testCases_ =
+          com.google.protobuf.LazyStringArrayList.EMPTY;
+
+      private void ensureTestCasesIsMutable() {
+        if (!((bitField0_ & 0x00000001) != 0)) {
+          testCases_ = new com.google.protobuf.LazyStringArrayList(testCases_);
+          bitField0_ |= 0x00000001;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A list of test case names to run. They should be under the same agent.
+       * Format of each test case name: `projects/&lt;Project ID&gt;/locations/
+       * &lt;Location ID&gt;/agents/&lt;AgentID&gt;/testCases/&lt;TestCase ID&gt;`
+       * </pre>
+       *
+       * <code>repeated string test_cases = 1 [(.google.api.resource_reference) = { ... }</code>
+       *
+       * @return A list containing the testCases.
+       */
+      public com.google.protobuf.ProtocolStringList getTestCasesList() {
+        return testCases_.getUnmodifiableView();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A list of test case names to run. They should be under the same agent.
+       * Format of each test case name: `projects/&lt;Project ID&gt;/locations/
+       * &lt;Location ID&gt;/agents/&lt;AgentID&gt;/testCases/&lt;TestCase ID&gt;`
+       * </pre>
+       *
+       * <code>repeated string test_cases = 1 [(.google.api.resource_reference) = { ... }</code>
+       *
+       * @return The count of testCases.
+       */
+      public int getTestCasesCount() {
+        return testCases_.size();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A list of test case names to run. They should be under the same agent.
+       * Format of each test case name: `projects/&lt;Project ID&gt;/locations/
+       * &lt;Location ID&gt;/agents/&lt;AgentID&gt;/testCases/&lt;TestCase ID&gt;`
+       * </pre>
+       *
+       * <code>repeated string test_cases = 1 [(.google.api.resource_reference) = { ... }</code>
+       *
+       * @param index The index of the element to return.
+       * @return The testCases at the given index.
+       */
+      public java.lang.String getTestCases(int index) {
+        return testCases_.get(index);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A list of test case names to run. They should be under the same agent.
+       * Format of each test case name: `projects/&lt;Project ID&gt;/locations/
+       * &lt;Location ID&gt;/agents/&lt;AgentID&gt;/testCases/&lt;TestCase ID&gt;`
+       * </pre>
+       *
+       * <code>repeated string test_cases = 1 [(.google.api.resource_reference) = { ... }</code>
+       *
+       * @param index The index of the value to return.
+       * @return The bytes of the testCases at the given index.
+       */
+      public com.google.protobuf.ByteString getTestCasesBytes(int index) {
+        return testCases_.getByteString(index);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A list of test case names to run. They should be under the same agent.
+       * Format of each test case name: `projects/&lt;Project ID&gt;/locations/
+       * &lt;Location ID&gt;/agents/&lt;AgentID&gt;/testCases/&lt;TestCase ID&gt;`
+       * </pre>
+       *
+       * <code>repeated string test_cases = 1 [(.google.api.resource_reference) = { ... }</code>
+       *
+       * @param index The index to set the value at.
+       * @param value The testCases to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTestCases(int index, java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureTestCasesIsMutable();
+        testCases_.set(index, value);
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A list of test case names to run. They should be under the same agent.
+       * Format of each test case name: `projects/&lt;Project ID&gt;/locations/
+       * &lt;Location ID&gt;/agents/&lt;AgentID&gt;/testCases/&lt;TestCase ID&gt;`
+       * </pre>
+       *
+       * <code>repeated string test_cases = 1 [(.google.api.resource_reference) = { ... }</code>
+       *
+       * @param value The testCases to add.
+       * @return This builder for chaining.
+       */
+      public Builder addTestCases(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureTestCasesIsMutable();
+        testCases_.add(value);
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A list of test case names to run. They should be under the same agent.
+       * Format of each test case name: `projects/&lt;Project ID&gt;/locations/
+       * &lt;Location ID&gt;/agents/&lt;AgentID&gt;/testCases/&lt;TestCase ID&gt;`
+       * </pre>
+       *
+       * <code>repeated string test_cases = 1 [(.google.api.resource_reference) = { ... }</code>
+       *
+       * @param values The testCases to add.
+       * @return This builder for chaining.
+       */
+      public Builder addAllTestCases(java.lang.Iterable<java.lang.String> values) {
+        ensureTestCasesIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, testCases_);
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A list of test case names to run. They should be under the same agent.
+       * Format of each test case name: `projects/&lt;Project ID&gt;/locations/
+       * &lt;Location ID&gt;/agents/&lt;AgentID&gt;/testCases/&lt;TestCase ID&gt;`
+       * </pre>
+       *
+       * <code>repeated string test_cases = 1 [(.google.api.resource_reference) = { ... }</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearTestCases() {
+        testCases_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A list of test case names to run. They should be under the same agent.
+       * Format of each test case name: `projects/&lt;Project ID&gt;/locations/
+       * &lt;Location ID&gt;/agents/&lt;AgentID&gt;/testCases/&lt;TestCase ID&gt;`
+       * </pre>
+       *
+       * <code>repeated string test_cases = 1 [(.google.api.resource_reference) = { ... }</code>
+       *
+       * @param value The bytes of the testCases to add.
+       * @return This builder for chaining.
+       */
+      public Builder addTestCasesBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        ensureTestCasesIsMutable();
+        testCases_.add(value);
+        onChanged();
+        return this;
+      }
+
+      private boolean enableContinuousRun_;
+      /**
+       *
+       *
+       * <pre>
+       * Whether to run test cases in [TestCasesConfig.test_cases][google.cloud.dialogflow.cx.v3.Environment.TestCasesConfig.test_cases] periodically.
+       * Default false. If set to ture, run once a day.
+       * </pre>
+       *
+       * <code>bool enable_continuous_run = 2;</code>
+       *
+       * @return The enableContinuousRun.
+       */
+      @java.lang.Override
+      public boolean getEnableContinuousRun() {
+        return enableContinuousRun_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Whether to run test cases in [TestCasesConfig.test_cases][google.cloud.dialogflow.cx.v3.Environment.TestCasesConfig.test_cases] periodically.
+       * Default false. If set to ture, run once a day.
+       * </pre>
+       *
+       * <code>bool enable_continuous_run = 2;</code>
+       *
+       * @param value The enableContinuousRun to set.
+       * @return This builder for chaining.
+       */
+      public Builder setEnableContinuousRun(boolean value) {
+
+        enableContinuousRun_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Whether to run test cases in [TestCasesConfig.test_cases][google.cloud.dialogflow.cx.v3.Environment.TestCasesConfig.test_cases] periodically.
+       * Default false. If set to ture, run once a day.
+       * </pre>
+       *
+       * <code>bool enable_continuous_run = 2;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearEnableContinuousRun() {
+
+        enableContinuousRun_ = false;
+        onChanged();
+        return this;
+      }
+
+      private boolean enablePredeploymentRun_;
+      /**
+       *
+       *
+       * <pre>
+       * Whether to run test cases in [TestCasesConfig.test_cases][google.cloud.dialogflow.cx.v3.Environment.TestCasesConfig.test_cases] before
+       * deploying a flow version to the environment. Default false.
+       * </pre>
+       *
+       * <code>bool enable_predeployment_run = 3;</code>
+       *
+       * @return The enablePredeploymentRun.
+       */
+      @java.lang.Override
+      public boolean getEnablePredeploymentRun() {
+        return enablePredeploymentRun_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Whether to run test cases in [TestCasesConfig.test_cases][google.cloud.dialogflow.cx.v3.Environment.TestCasesConfig.test_cases] before
+       * deploying a flow version to the environment. Default false.
+       * </pre>
+       *
+       * <code>bool enable_predeployment_run = 3;</code>
+       *
+       * @param value The enablePredeploymentRun to set.
+       * @return This builder for chaining.
+       */
+      public Builder setEnablePredeploymentRun(boolean value) {
+
+        enablePredeploymentRun_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Whether to run test cases in [TestCasesConfig.test_cases][google.cloud.dialogflow.cx.v3.Environment.TestCasesConfig.test_cases] before
+       * deploying a flow version to the environment. Default false.
+       * </pre>
+       *
+       * <code>bool enable_predeployment_run = 3;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearEnablePredeploymentRun() {
+
+        enablePredeploymentRun_ = false;
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.cloud.dialogflow.cx.v3.Environment.TestCasesConfig)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.cloud.dialogflow.cx.v3.Environment.TestCasesConfig)
+    private static final com.google.cloud.dialogflow.cx.v3.Environment.TestCasesConfig
+        DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new com.google.cloud.dialogflow.cx.v3.Environment.TestCasesConfig();
+    }
+
+    public static com.google.cloud.dialogflow.cx.v3.Environment.TestCasesConfig
+        getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<TestCasesConfig> PARSER =
+        new com.google.protobuf.AbstractParser<TestCasesConfig>() {
+          @java.lang.Override
+          public TestCasesConfig parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            return new TestCasesConfig(input, extensionRegistry);
+          }
+        };
+
+    public static com.google.protobuf.Parser<TestCasesConfig> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<TestCasesConfig> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.cloud.dialogflow.cx.v3.Environment.TestCasesConfig
+        getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
   public static final int NAME_FIELD_NUMBER = 1;
   private volatile java.lang.Object name_;
   /**
@@ -1154,6 +2209,55 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
     return getUpdateTime();
   }
 
+  public static final int TEST_CASES_CONFIG_FIELD_NUMBER = 7;
+  private com.google.cloud.dialogflow.cx.v3.Environment.TestCasesConfig testCasesConfig_;
+  /**
+   *
+   *
+   * <pre>
+   * The test cases config for continuous tests of this environment.
+   * </pre>
+   *
+   * <code>.google.cloud.dialogflow.cx.v3.Environment.TestCasesConfig test_cases_config = 7;</code>
+   *
+   * @return Whether the testCasesConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasTestCasesConfig() {
+    return testCasesConfig_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The test cases config for continuous tests of this environment.
+   * </pre>
+   *
+   * <code>.google.cloud.dialogflow.cx.v3.Environment.TestCasesConfig test_cases_config = 7;</code>
+   *
+   * @return The testCasesConfig.
+   */
+  @java.lang.Override
+  public com.google.cloud.dialogflow.cx.v3.Environment.TestCasesConfig getTestCasesConfig() {
+    return testCasesConfig_ == null
+        ? com.google.cloud.dialogflow.cx.v3.Environment.TestCasesConfig.getDefaultInstance()
+        : testCasesConfig_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The test cases config for continuous tests of this environment.
+   * </pre>
+   *
+   * <code>.google.cloud.dialogflow.cx.v3.Environment.TestCasesConfig test_cases_config = 7;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.dialogflow.cx.v3.Environment.TestCasesConfigOrBuilder
+      getTestCasesConfigOrBuilder() {
+    return getTestCasesConfig();
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -1183,6 +2287,9 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
     for (int i = 0; i < versionConfigs_.size(); i++) {
       output.writeMessage(6, versionConfigs_.get(i));
     }
+    if (testCasesConfig_ != null) {
+      output.writeMessage(7, getTestCasesConfig());
+    }
     unknownFields.writeTo(output);
   }
 
@@ -1206,6 +2313,9 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
     }
     for (int i = 0; i < versionConfigs_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(6, versionConfigs_.get(i));
+    }
+    if (testCasesConfig_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(7, getTestCasesConfig());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -1231,6 +2341,10 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
     if (hasUpdateTime()) {
       if (!getUpdateTime().equals(other.getUpdateTime())) return false;
     }
+    if (hasTestCasesConfig() != other.hasTestCasesConfig()) return false;
+    if (hasTestCasesConfig()) {
+      if (!getTestCasesConfig().equals(other.getTestCasesConfig())) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -1255,6 +2369,10 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
     if (hasUpdateTime()) {
       hash = (37 * hash) + UPDATE_TIME_FIELD_NUMBER;
       hash = (53 * hash) + getUpdateTime().hashCode();
+    }
+    if (hasTestCasesConfig()) {
+      hash = (37 * hash) + TEST_CASES_CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + getTestCasesConfig().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -1428,6 +2546,12 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
         updateTime_ = null;
         updateTimeBuilder_ = null;
       }
+      if (testCasesConfigBuilder_ == null) {
+        testCasesConfig_ = null;
+      } else {
+        testCasesConfig_ = null;
+        testCasesConfigBuilder_ = null;
+      }
       return this;
     }
 
@@ -1472,6 +2596,11 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
         result.updateTime_ = updateTime_;
       } else {
         result.updateTime_ = updateTimeBuilder_.build();
+      }
+      if (testCasesConfigBuilder_ == null) {
+        result.testCasesConfig_ = testCasesConfig_;
+      } else {
+        result.testCasesConfig_ = testCasesConfigBuilder_.build();
       }
       onBuilt();
       return result;
@@ -1563,6 +2692,9 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.hasUpdateTime()) {
         mergeUpdateTime(other.getUpdateTime());
+      }
+      if (other.hasTestCasesConfig()) {
+        mergeTestCasesConfig(other.getTestCasesConfig());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -2593,6 +3725,206 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
         updateTime_ = null;
       }
       return updateTimeBuilder_;
+    }
+
+    private com.google.cloud.dialogflow.cx.v3.Environment.TestCasesConfig testCasesConfig_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.dialogflow.cx.v3.Environment.TestCasesConfig,
+            com.google.cloud.dialogflow.cx.v3.Environment.TestCasesConfig.Builder,
+            com.google.cloud.dialogflow.cx.v3.Environment.TestCasesConfigOrBuilder>
+        testCasesConfigBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * The test cases config for continuous tests of this environment.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.cx.v3.Environment.TestCasesConfig test_cases_config = 7;
+     * </code>
+     *
+     * @return Whether the testCasesConfig field is set.
+     */
+    public boolean hasTestCasesConfig() {
+      return testCasesConfigBuilder_ != null || testCasesConfig_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The test cases config for continuous tests of this environment.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.cx.v3.Environment.TestCasesConfig test_cases_config = 7;
+     * </code>
+     *
+     * @return The testCasesConfig.
+     */
+    public com.google.cloud.dialogflow.cx.v3.Environment.TestCasesConfig getTestCasesConfig() {
+      if (testCasesConfigBuilder_ == null) {
+        return testCasesConfig_ == null
+            ? com.google.cloud.dialogflow.cx.v3.Environment.TestCasesConfig.getDefaultInstance()
+            : testCasesConfig_;
+      } else {
+        return testCasesConfigBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The test cases config for continuous tests of this environment.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.cx.v3.Environment.TestCasesConfig test_cases_config = 7;
+     * </code>
+     */
+    public Builder setTestCasesConfig(
+        com.google.cloud.dialogflow.cx.v3.Environment.TestCasesConfig value) {
+      if (testCasesConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        testCasesConfig_ = value;
+        onChanged();
+      } else {
+        testCasesConfigBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The test cases config for continuous tests of this environment.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.cx.v3.Environment.TestCasesConfig test_cases_config = 7;
+     * </code>
+     */
+    public Builder setTestCasesConfig(
+        com.google.cloud.dialogflow.cx.v3.Environment.TestCasesConfig.Builder builderForValue) {
+      if (testCasesConfigBuilder_ == null) {
+        testCasesConfig_ = builderForValue.build();
+        onChanged();
+      } else {
+        testCasesConfigBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The test cases config for continuous tests of this environment.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.cx.v3.Environment.TestCasesConfig test_cases_config = 7;
+     * </code>
+     */
+    public Builder mergeTestCasesConfig(
+        com.google.cloud.dialogflow.cx.v3.Environment.TestCasesConfig value) {
+      if (testCasesConfigBuilder_ == null) {
+        if (testCasesConfig_ != null) {
+          testCasesConfig_ =
+              com.google.cloud.dialogflow.cx.v3.Environment.TestCasesConfig.newBuilder(
+                      testCasesConfig_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          testCasesConfig_ = value;
+        }
+        onChanged();
+      } else {
+        testCasesConfigBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The test cases config for continuous tests of this environment.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.cx.v3.Environment.TestCasesConfig test_cases_config = 7;
+     * </code>
+     */
+    public Builder clearTestCasesConfig() {
+      if (testCasesConfigBuilder_ == null) {
+        testCasesConfig_ = null;
+        onChanged();
+      } else {
+        testCasesConfig_ = null;
+        testCasesConfigBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The test cases config for continuous tests of this environment.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.cx.v3.Environment.TestCasesConfig test_cases_config = 7;
+     * </code>
+     */
+    public com.google.cloud.dialogflow.cx.v3.Environment.TestCasesConfig.Builder
+        getTestCasesConfigBuilder() {
+
+      onChanged();
+      return getTestCasesConfigFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The test cases config for continuous tests of this environment.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.cx.v3.Environment.TestCasesConfig test_cases_config = 7;
+     * </code>
+     */
+    public com.google.cloud.dialogflow.cx.v3.Environment.TestCasesConfigOrBuilder
+        getTestCasesConfigOrBuilder() {
+      if (testCasesConfigBuilder_ != null) {
+        return testCasesConfigBuilder_.getMessageOrBuilder();
+      } else {
+        return testCasesConfig_ == null
+            ? com.google.cloud.dialogflow.cx.v3.Environment.TestCasesConfig.getDefaultInstance()
+            : testCasesConfig_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The test cases config for continuous tests of this environment.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.cx.v3.Environment.TestCasesConfig test_cases_config = 7;
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.dialogflow.cx.v3.Environment.TestCasesConfig,
+            com.google.cloud.dialogflow.cx.v3.Environment.TestCasesConfig.Builder,
+            com.google.cloud.dialogflow.cx.v3.Environment.TestCasesConfigOrBuilder>
+        getTestCasesConfigFieldBuilder() {
+      if (testCasesConfigBuilder_ == null) {
+        testCasesConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.dialogflow.cx.v3.Environment.TestCasesConfig,
+                com.google.cloud.dialogflow.cx.v3.Environment.TestCasesConfig.Builder,
+                com.google.cloud.dialogflow.cx.v3.Environment.TestCasesConfigOrBuilder>(
+                getTestCasesConfig(), getParentForChildren(), isClean());
+        testCasesConfig_ = null;
+      }
+      return testCasesConfigBuilder_;
     }
 
     @java.lang.Override

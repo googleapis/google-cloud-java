@@ -32,6 +32,21 @@
  * }
  * }</pre>
  *
+ * <p>======================= DeploymentsClient =======================
+ *
+ * <p>Service Description: Service for managing
+ * [Deployments][google.cloud.dialogflow.cx.v3.Deployment].
+ *
+ * <p>Sample for DeploymentsClient:
+ *
+ * <pre>{@code
+ * try (DeploymentsClient deploymentsClient = DeploymentsClient.create()) {
+ *   DeploymentName name =
+ *       DeploymentName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[ENVIRONMENT]", "[DEPLOYMENT]");
+ *   Deployment response = deploymentsClient.getDeployment(name);
+ * }
+ * }</pre>
+ *
  * <p>======================= EntityTypesClient =======================
  *
  * <p>Service Description: Service for managing
