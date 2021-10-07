@@ -2,7 +2,7 @@
     "name": "datalabeling",
     "name_pretty": "Data Labeling",
     "product_documentation": "https://cloud.google.com/ai-platform/data-labeling/docs/",
-    "client_documentation": "https://googleapis.dev/java/google-cloud-datalabeling/latest/",
+    "client_documentation": "https://cloud.google.com/java/docs/reference/google-cloud-datalabeling/latest/history",
     "api_description": "",
     "issue_tracker": "",
     "release_level": "beta",
