@@ -2,7 +2,7 @@
     "name": "cloudtasks",
     "name_pretty": "Cloud Tasks",
     "product_documentation": "https://cloud.google.com/tasks/docs/",
-    "client_documentation": "https://googleapis.dev/java/google-cloud-tasks/latest/",
+    "client_documentation": "https://cloud.google.com/java/docs/reference/google-cloud-tasks/latest/history",
     "issue_tracker": "https://issuetracker.google.com/savedsearches/5433985",
     "release_level": "ga",
     "language": "java",
