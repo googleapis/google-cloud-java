@@ -6,7 +6,7 @@
     "repo": "googleapis/java-speech",
     "repo_short": "java-speech",
     "distribution_name": "com.google.cloud:google-cloud-speech",
-    "client_documentation": "https://googleapis.dev/java/google-cloud-speech/latest/",
+    "client_documentation": "https://cloud.google.com/java/docs/reference/google-cloud-speech/latest/history",
     "transport": "grpc",
     "issue_tracker": "https://issuetracker.google.com/savedsearches/559758",
     "requires_billing": false,
