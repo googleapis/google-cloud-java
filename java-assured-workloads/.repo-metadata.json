@@ -3,7 +3,7 @@
     "name_pretty": "Assured Workloads for Government",
     "product_documentation": "https://cloud.google.com/assured-workloads/",
     "api_description": "allows you to secure your government workloads and accelerate your path to running compliant workloads on Google Cloud with Assured Workloads for Government.",
-    "client_documentation": "https://googleapis.dev/java/google-cloud-assured-workloads/latest/index.html",
+    "client_documentation": "https://cloud.google.com/java/docs/reference/google-cloud-assured-workloads/latest/history",
     "release_level": "beta",
     "transport": "grpc",
     "language": "java",
