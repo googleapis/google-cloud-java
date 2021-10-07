@@ -2,7 +2,7 @@
     "name": "vision",
     "name_pretty": "Cloud Vision",
     "product_documentation": "https://cloud.google.com/vision/docs/",
-    "client_documentation": "https://googleapis.dev/java/google-cloud-vision/latest/",
+    "client_documentation": "https://cloud.google.com/java/docs/reference/google-cloud-vision/latest/history",
     "issue_tracker": "https://issuetracker.google.com/issues?q=status:open%20componentid:187174",
     "release_level": "ga",
     "language": "java",
