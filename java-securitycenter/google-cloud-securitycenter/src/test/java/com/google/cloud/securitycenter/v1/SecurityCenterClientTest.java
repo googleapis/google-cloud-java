@@ -208,6 +208,7 @@ public class SecurityCenterClientTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setCanonicalName("canonicalName2122381727")
             .setIndicator(Indicator.newBuilder().build())
+            .setVulnerability(Vulnerability.newBuilder().build())
             .build();
     mockSecurityCenter.addResponse(expectedResponse);
 
@@ -265,6 +266,7 @@ public class SecurityCenterClientTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setCanonicalName("canonicalName2122381727")
             .setIndicator(Indicator.newBuilder().build())
+            .setVulnerability(Vulnerability.newBuilder().build())
             .build();
     mockSecurityCenter.addResponse(expectedResponse);
 
@@ -578,7 +580,7 @@ public class SecurityCenterClientTest {
             .build();
     mockSecurityCenter.addResponse(expectedResponse);
 
-    ResourceName resource = SourceName.ofOrganizationSourceName("[ORGANIZATION]", "[SOURCE]");
+    ResourceName resource = ProjectName.of("[PROJECT]");
 
     Policy actualResponse = client.getIamPolicy(resource);
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -600,7 +602,7 @@ public class SecurityCenterClientTest {
     mockSecurityCenter.addException(exception);
 
     try {
-      ResourceName resource = SourceName.ofOrganizationSourceName("[ORGANIZATION]", "[SOURCE]");
+      ResourceName resource = ProjectName.of("[PROJECT]");
       client.getIamPolicy(resource);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -1581,6 +1583,7 @@ public class SecurityCenterClientTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setCanonicalName("canonicalName2122381727")
             .setIndicator(Indicator.newBuilder().build())
+            .setVulnerability(Vulnerability.newBuilder().build())
             .build();
     mockSecurityCenter.addResponse(expectedResponse);
 
@@ -1640,6 +1643,7 @@ public class SecurityCenterClientTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setCanonicalName("canonicalName2122381727")
             .setIndicator(Indicator.newBuilder().build())
+            .setVulnerability(Vulnerability.newBuilder().build())
             .build();
     mockSecurityCenter.addResponse(expectedResponse);
 
@@ -1689,7 +1693,7 @@ public class SecurityCenterClientTest {
             .build();
     mockSecurityCenter.addResponse(expectedResponse);
 
-    ResourceName resource = SourceName.ofOrganizationSourceName("[ORGANIZATION]", "[SOURCE]");
+    ResourceName resource = ProjectName.of("[PROJECT]");
     Policy policy = Policy.newBuilder().build();
 
     Policy actualResponse = client.setIamPolicy(resource, policy);
@@ -1713,7 +1717,7 @@ public class SecurityCenterClientTest {
     mockSecurityCenter.addException(exception);
 
     try {
-      ResourceName resource = SourceName.ofOrganizationSourceName("[ORGANIZATION]", "[SOURCE]");
+      ResourceName resource = ProjectName.of("[PROJECT]");
       Policy policy = Policy.newBuilder().build();
       client.setIamPolicy(resource, policy);
       Assert.fail("No exception raised");
@@ -1771,7 +1775,7 @@ public class SecurityCenterClientTest {
         TestIamPermissionsResponse.newBuilder().addAllPermissions(new ArrayList<String>()).build();
     mockSecurityCenter.addResponse(expectedResponse);
 
-    ResourceName resource = SourceName.ofOrganizationSourceName("[ORGANIZATION]", "[SOURCE]");
+    ResourceName resource = ProjectName.of("[PROJECT]");
     List<String> permissions = new ArrayList<>();
 
     TestIamPermissionsResponse actualResponse = client.testIamPermissions(resource, permissions);
@@ -1795,7 +1799,7 @@ public class SecurityCenterClientTest {
     mockSecurityCenter.addException(exception);
 
     try {
-      ResourceName resource = SourceName.ofOrganizationSourceName("[ORGANIZATION]", "[SOURCE]");
+      ResourceName resource = ProjectName.of("[PROJECT]");
       List<String> permissions = new ArrayList<>();
       client.testIamPermissions(resource, permissions);
       Assert.fail("No exception raised");
@@ -1861,6 +1865,7 @@ public class SecurityCenterClientTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setCanonicalName("canonicalName2122381727")
             .setIndicator(Indicator.newBuilder().build())
+            .setVulnerability(Vulnerability.newBuilder().build())
             .build();
     mockSecurityCenter.addResponse(expectedResponse);
 

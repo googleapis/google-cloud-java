@@ -540,4 +540,45 @@ public interface FindingOrBuilder
    * <code>.google.cloud.securitycenter.v1.Indicator indicator = 18;</code>
    */
   com.google.cloud.securitycenter.v1.IndicatorOrBuilder getIndicatorOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Represents vulnerability specific fields like cve, cvss scores etc.
+   * CVE stands for Common Vulnerabilities and Exposures
+   * (https://cve.mitre.org/about/)
+   * </pre>
+   *
+   * <code>.google.cloud.securitycenter.v1.Vulnerability vulnerability = 20;</code>
+   *
+   * @return Whether the vulnerability field is set.
+   */
+  boolean hasVulnerability();
+  /**
+   *
+   *
+   * <pre>
+   * Represents vulnerability specific fields like cve, cvss scores etc.
+   * CVE stands for Common Vulnerabilities and Exposures
+   * (https://cve.mitre.org/about/)
+   * </pre>
+   *
+   * <code>.google.cloud.securitycenter.v1.Vulnerability vulnerability = 20;</code>
+   *
+   * @return The vulnerability.
+   */
+  com.google.cloud.securitycenter.v1.Vulnerability getVulnerability();
+  /**
+   *
+   *
+   * <pre>
+   * Represents vulnerability specific fields like cve, cvss scores etc.
+   * CVE stands for Common Vulnerabilities and Exposures
+   * (https://cve.mitre.org/about/)
+   * </pre>
+   *
+   * <code>.google.cloud.securitycenter.v1.Vulnerability vulnerability = 20;</code>
+   */
+  com.google.cloud.securitycenter.v1.VulnerabilityOrBuilder getVulnerabilityOrBuilder();
 }

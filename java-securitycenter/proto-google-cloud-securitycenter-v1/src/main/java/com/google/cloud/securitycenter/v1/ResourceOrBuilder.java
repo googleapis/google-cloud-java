@@ -154,6 +154,31 @@ public interface ResourceOrBuilder
    *
    *
    * <pre>
+   * The full resource type of the resource.
+   * </pre>
+   *
+   * <code>string type = 6;</code>
+   *
+   * @return The type.
+   */
+  java.lang.String getType();
+  /**
+   *
+   *
+   * <pre>
+   * The full resource type of the resource.
+   * </pre>
+   *
+   * <code>string type = 6;</code>
+   *
+   * @return The bytes for type.
+   */
+  com.google.protobuf.ByteString getTypeBytes();
+
+  /**
+   *
+   *
+   * <pre>
    * Output only. Contains a Folder message for each folder in the assets ancestry.
    * The first folder is the deepest nested folder, and the last folder is the
    * folder directly under the Organization.
