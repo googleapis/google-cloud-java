@@ -1,5 +1,15 @@
 # Changelog
 
+### [3.2.5](https://www.github.com/googleapis/java-asset/compare/v3.2.4...v3.2.5) (2021-10-08)
+
+
+### Dependencies
+
+* update dependency com.google.api.grpc:proto-google-cloud-pubsub-v1 to v1.96.6 ([#965](https://www.github.com/googleapis/java-asset/issues/965)) ([96287ea](https://www.github.com/googleapis/java-asset/commit/96287ea9716098fc84c454818d932731aba9a6b6))
+* update dependency com.google.cloud:google-cloud-bigquery to v2.2.1 ([#964](https://www.github.com/googleapis/java-asset/issues/964)) ([7b77993](https://www.github.com/googleapis/java-asset/commit/7b77993345bd92cdf283b0397f821c4d9143d156))
+* update dependency com.google.cloud:google-cloud-pubsub to v1.114.6 and com.google.api.grpc:proto-google-cloud-pubsub-v1 to 1.96.6 ([#966](https://www.github.com/googleapis/java-asset/issues/966)) ([1ed562a](https://www.github.com/googleapis/java-asset/commit/1ed562a15ef9fc5a934948ea5e76468f9dc0bb7d))
+* update dependency com.google.cloud:google-cloud-resourcemanager to v1.1.3 ([#968](https://www.github.com/googleapis/java-asset/issues/968)) ([87dba6b](https://www.github.com/googleapis/java-asset/commit/87dba6b6278d5769d61e3d1f53a105dac26828d2))
+
 ### [3.2.4](https://www.github.com/googleapis/java-asset/compare/v3.2.3...v3.2.4) (2021-10-05)
 
 
