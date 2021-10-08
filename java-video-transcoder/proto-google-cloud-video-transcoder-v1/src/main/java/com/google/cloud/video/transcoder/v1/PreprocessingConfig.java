@@ -1039,10 +1039,10 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Set the denoiser mode. The default is `"standard"`.
+     * Set the denoiser mode. The default is `standard`.
      * Supported denoiser modes:
-     * - 'standard'
-     * - 'grain'
+     * - `standard`
+     * - `grain`
      * </pre>
      *
      * <code>string tune = 2;</code>
@@ -1054,10 +1054,10 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Set the denoiser mode. The default is `"standard"`.
+     * Set the denoiser mode. The default is `standard`.
      * Supported denoiser modes:
-     * - 'standard'
-     * - 'grain'
+     * - `standard`
+     * - `grain`
      * </pre>
      *
      * <code>string tune = 2;</code>
@@ -1189,10 +1189,10 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Set the denoiser mode. The default is `"standard"`.
+     * Set the denoiser mode. The default is `standard`.
      * Supported denoiser modes:
-     * - 'standard'
-     * - 'grain'
+     * - `standard`
+     * - `grain`
      * </pre>
      *
      * <code>string tune = 2;</code>
@@ -1215,10 +1215,10 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Set the denoiser mode. The default is `"standard"`.
+     * Set the denoiser mode. The default is `standard`.
      * Supported denoiser modes:
-     * - 'standard'
-     * - 'grain'
+     * - `standard`
+     * - `grain`
      * </pre>
      *
      * <code>string tune = 2;</code>
@@ -1648,10 +1648,10 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
        *
        *
        * <pre>
-       * Set the denoiser mode. The default is `"standard"`.
+       * Set the denoiser mode. The default is `standard`.
        * Supported denoiser modes:
-       * - 'standard'
-       * - 'grain'
+       * - `standard`
+       * - `grain`
        * </pre>
        *
        * <code>string tune = 2;</code>
@@ -1673,10 +1673,10 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
        *
        *
        * <pre>
-       * Set the denoiser mode. The default is `"standard"`.
+       * Set the denoiser mode. The default is `standard`.
        * Supported denoiser modes:
-       * - 'standard'
-       * - 'grain'
+       * - `standard`
+       * - `grain`
        * </pre>
        *
        * <code>string tune = 2;</code>
@@ -1698,10 +1698,10 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
        *
        *
        * <pre>
-       * Set the denoiser mode. The default is `"standard"`.
+       * Set the denoiser mode. The default is `standard`.
        * Supported denoiser modes:
-       * - 'standard'
-       * - 'grain'
+       * - `standard`
+       * - `grain`
        * </pre>
        *
        * <code>string tune = 2;</code>
@@ -1722,10 +1722,10 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
        *
        *
        * <pre>
-       * Set the denoiser mode. The default is `"standard"`.
+       * Set the denoiser mode. The default is `standard`.
        * Supported denoiser modes:
-       * - 'standard'
-       * - 'grain'
+       * - `standard`
+       * - `grain`
        * </pre>
        *
        * <code>string tune = 2;</code>
@@ -1742,10 +1742,10 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
        *
        *
        * <pre>
-       * Set the denoiser mode. The default is `"standard"`.
+       * Set the denoiser mode. The default is `standard`.
        * Supported denoiser modes:
-       * - 'standard'
-       * - 'grain'
+       * - `standard`
+       * - `grain`
        * </pre>
        *
        * <code>string tune = 2;</code>

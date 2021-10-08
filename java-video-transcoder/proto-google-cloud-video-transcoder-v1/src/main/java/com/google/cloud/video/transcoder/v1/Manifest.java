@@ -138,7 +138,7 @@ public final class Manifest extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The manifest type can be either `"HLS"` or `"DASH"`.
+   * The manifest type can be either `HLS` or `DASH`.
    * </pre>
    *
    * Protobuf enum {@code google.cloud.video.transcoder.v1.Manifest.ManifestType}
@@ -158,7 +158,7 @@ public final class Manifest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Create `"HLS"` manifest. The corresponding file extension is `".m3u8"`.
+     * Create `HLS` manifest. The corresponding file extension is `.m3u8`.
      * </pre>
      *
      * <code>HLS = 1;</code>
@@ -168,7 +168,7 @@ public final class Manifest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Create `"DASH"` manifest. The corresponding file extension is `".mpd"`.
+     * Create `DASH` manifest. The corresponding file extension is `.mpd`.
      * </pre>
      *
      * <code>DASH = 2;</code>
@@ -191,7 +191,7 @@ public final class Manifest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Create `"HLS"` manifest. The corresponding file extension is `".m3u8"`.
+     * Create `HLS` manifest. The corresponding file extension is `.m3u8`.
      * </pre>
      *
      * <code>HLS = 1;</code>
@@ -201,7 +201,7 @@ public final class Manifest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Create `"DASH"` manifest. The corresponding file extension is `".mpd"`.
+     * Create `DASH` manifest. The corresponding file extension is `.mpd`.
      * </pre>
      *
      * <code>DASH = 2;</code>
@@ -297,7 +297,7 @@ public final class Manifest extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The name of the generated file. The default is `"manifest"` with the
+   * The name of the generated file. The default is `manifest` with the
    * extension suffix corresponding to the `Manifest.type`.
    * </pre>
    *
@@ -321,7 +321,7 @@ public final class Manifest extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The name of the generated file. The default is `"manifest"` with the
+   * The name of the generated file. The default is `manifest` with the
    * extension suffix corresponding to the `Manifest.type`.
    * </pre>
    *
@@ -348,7 +348,7 @@ public final class Manifest extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. Type of the manifest, can be "HLS" or "DASH".
+   * Required. Type of the manifest, can be `HLS` or `DASH`.
    * </pre>
    *
    * <code>
@@ -365,7 +365,7 @@ public final class Manifest extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. Type of the manifest, can be "HLS" or "DASH".
+   * Required. Type of the manifest, can be `HLS` or `DASH`.
    * </pre>
    *
    * <code>
@@ -833,7 +833,7 @@ public final class Manifest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The name of the generated file. The default is `"manifest"` with the
+     * The name of the generated file. The default is `manifest` with the
      * extension suffix corresponding to the `Manifest.type`.
      * </pre>
      *
@@ -856,7 +856,7 @@ public final class Manifest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The name of the generated file. The default is `"manifest"` with the
+     * The name of the generated file. The default is `manifest` with the
      * extension suffix corresponding to the `Manifest.type`.
      * </pre>
      *
@@ -879,7 +879,7 @@ public final class Manifest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The name of the generated file. The default is `"manifest"` with the
+     * The name of the generated file. The default is `manifest` with the
      * extension suffix corresponding to the `Manifest.type`.
      * </pre>
      *
@@ -901,7 +901,7 @@ public final class Manifest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The name of the generated file. The default is `"manifest"` with the
+     * The name of the generated file. The default is `manifest` with the
      * extension suffix corresponding to the `Manifest.type`.
      * </pre>
      *
@@ -919,7 +919,7 @@ public final class Manifest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The name of the generated file. The default is `"manifest"` with the
+     * The name of the generated file. The default is `manifest` with the
      * extension suffix corresponding to the `Manifest.type`.
      * </pre>
      *
@@ -944,7 +944,7 @@ public final class Manifest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Type of the manifest, can be "HLS" or "DASH".
+     * Required. Type of the manifest, can be `HLS` or `DASH`.
      * </pre>
      *
      * <code>
@@ -961,7 +961,7 @@ public final class Manifest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Type of the manifest, can be "HLS" or "DASH".
+     * Required. Type of the manifest, can be `HLS` or `DASH`.
      * </pre>
      *
      * <code>
@@ -981,7 +981,7 @@ public final class Manifest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Type of the manifest, can be "HLS" or "DASH".
+     * Required. Type of the manifest, can be `HLS` or `DASH`.
      * </pre>
      *
      * <code>
@@ -1003,7 +1003,7 @@ public final class Manifest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Type of the manifest, can be "HLS" or "DASH".
+     * Required. Type of the manifest, can be `HLS` or `DASH`.
      * </pre>
      *
      * <code>
@@ -1026,7 +1026,7 @@ public final class Manifest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Type of the manifest, can be "HLS" or "DASH".
+     * Required. Type of the manifest, can be `HLS` or `DASH`.
      * </pre>
      *
      * <code>

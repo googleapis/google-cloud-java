@@ -482,7 +482,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The resource name of the job.
-   * Format: `projects/{project}/locations/{location}/jobs/{job}`
+   * Format: `projects/{project_number}/locations/{location}/jobs/{job}`
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -506,7 +506,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The resource name of the job.
-   * Format: `projects/{project}/locations/{location}/jobs/{job}`
+   * Format: `projects/{project_number}/locations/{location}/jobs/{job}`
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -1609,7 +1609,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The resource name of the job.
-     * Format: `projects/{project}/locations/{location}/jobs/{job}`
+     * Format: `projects/{project_number}/locations/{location}/jobs/{job}`
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -1632,7 +1632,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The resource name of the job.
-     * Format: `projects/{project}/locations/{location}/jobs/{job}`
+     * Format: `projects/{project_number}/locations/{location}/jobs/{job}`
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -1655,7 +1655,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The resource name of the job.
-     * Format: `projects/{project}/locations/{location}/jobs/{job}`
+     * Format: `projects/{project_number}/locations/{location}/jobs/{job}`
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -1677,7 +1677,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The resource name of the job.
-     * Format: `projects/{project}/locations/{location}/jobs/{job}`
+     * Format: `projects/{project_number}/locations/{location}/jobs/{job}`
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -1695,7 +1695,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The resource name of the job.
-     * Format: `projects/{project}/locations/{location}/jobs/{job}`
+     * Format: `projects/{project_number}/locations/{location}/jobs/{job}`
      * </pre>
      *
      * <code>string name = 1;</code>

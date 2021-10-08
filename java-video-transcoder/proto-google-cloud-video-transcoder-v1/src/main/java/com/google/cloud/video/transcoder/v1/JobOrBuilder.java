@@ -28,7 +28,7 @@ public interface JobOrBuilder
    *
    * <pre>
    * The resource name of the job.
-   * Format: `projects/{project}/locations/{location}/jobs/{job}`
+   * Format: `projects/{project_number}/locations/{location}/jobs/{job}`
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -41,7 +41,7 @@ public interface JobOrBuilder
    *
    * <pre>
    * The resource name of the job.
-   * Format: `projects/{project}/locations/{location}/jobs/{job}`
+   * Format: `projects/{project_number}/locations/{location}/jobs/{job}`
    * </pre>
    *
    * <code>string name = 1;</code>

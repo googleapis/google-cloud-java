@@ -539,6 +539,7 @@ public class TranscoderServiceClient implements BackgroundResource {
    *   DeleteJobRequest request =
    *       DeleteJobRequest.newBuilder()
    *           .setName(JobName.of("[PROJECT]", "[LOCATION]", "[JOB]").toString())
+   *           .setAllowMissing(true)
    *           .build();
    *   transcoderServiceClient.deleteJob(request);
    * }
@@ -562,6 +563,7 @@ public class TranscoderServiceClient implements BackgroundResource {
    *   DeleteJobRequest request =
    *       DeleteJobRequest.newBuilder()
    *           .setName(JobName.of("[PROJECT]", "[LOCATION]", "[JOB]").toString())
+   *           .setAllowMissing(true)
    *           .build();
    *   ApiFuture<Empty> future = transcoderServiceClient.deleteJobCallable().futureCall(request);
    *   // Do something.
@@ -992,6 +994,7 @@ public class TranscoderServiceClient implements BackgroundResource {
    *   DeleteJobTemplateRequest request =
    *       DeleteJobTemplateRequest.newBuilder()
    *           .setName(JobTemplateName.of("[PROJECT]", "[LOCATION]", "[JOB_TEMPLATE]").toString())
+   *           .setAllowMissing(true)
    *           .build();
    *   transcoderServiceClient.deleteJobTemplate(request);
    * }
@@ -1015,6 +1018,7 @@ public class TranscoderServiceClient implements BackgroundResource {
    *   DeleteJobTemplateRequest request =
    *       DeleteJobTemplateRequest.newBuilder()
    *           .setName(JobTemplateName.of("[PROJECT]", "[LOCATION]", "[JOB_TEMPLATE]").toString())
+   *           .setAllowMissing(true)
    *           .build();
    *   ApiFuture<Empty> future =
    *       transcoderServiceClient.deleteJobTemplateCallable().futureCall(request);

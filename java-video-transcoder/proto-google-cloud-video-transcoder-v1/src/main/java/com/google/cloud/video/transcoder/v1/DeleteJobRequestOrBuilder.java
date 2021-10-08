@@ -53,4 +53,18 @@ public interface DeleteJobRequestOrBuilder
    * @return The bytes for name.
    */
   com.google.protobuf.ByteString getNameBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * If set to true, and the job is not found, the request will succeed but no
+   * action will be taken on the server.
+   * </pre>
+   *
+   * <code>bool allow_missing = 2;</code>
+   *
+   * @return The allowMissing.
+   */
+  boolean getAllowMissing();
 }

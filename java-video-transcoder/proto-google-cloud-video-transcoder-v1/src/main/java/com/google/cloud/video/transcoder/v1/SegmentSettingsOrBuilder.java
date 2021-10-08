@@ -27,7 +27,7 @@ public interface SegmentSettingsOrBuilder
    *
    *
    * <pre>
-   * Duration of the segments in seconds. The default is `"6.0s"`. Note that
+   * Duration of the segments in seconds. The default is `6.0s`. Note that
    * `segmentDuration` must be greater than or equal to
    * [`gopDuration`](#videostream), and `segmentDuration` must be divisible by
    * [`gopDuration`](#videostream).
@@ -42,7 +42,7 @@ public interface SegmentSettingsOrBuilder
    *
    *
    * <pre>
-   * Duration of the segments in seconds. The default is `"6.0s"`. Note that
+   * Duration of the segments in seconds. The default is `6.0s`. Note that
    * `segmentDuration` must be greater than or equal to
    * [`gopDuration`](#videostream), and `segmentDuration` must be divisible by
    * [`gopDuration`](#videostream).
@@ -57,7 +57,7 @@ public interface SegmentSettingsOrBuilder
    *
    *
    * <pre>
-   * Duration of the segments in seconds. The default is `"6.0s"`. Note that
+   * Duration of the segments in seconds. The default is `6.0s`. Note that
    * `segmentDuration` must be greater than or equal to
    * [`gopDuration`](#videostream), and `segmentDuration` must be divisible by
    * [`gopDuration`](#videostream).

@@ -1109,13 +1109,13 @@ public final class TextStream extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The codec for this text stream. The default is `"webvtt"`.
+   * The codec for this text stream. The default is `webvtt`.
    * Supported text codecs:
-   * - 'srt'
-   * - 'ttml'
-   * - 'cea608'
-   * - 'cea708'
-   * - 'webvtt'
+   * - `srt`
+   * - `ttml`
+   * - `cea608`
+   * - `cea708`
+   * - `webvtt`
    * </pre>
    *
    * <code>string codec = 1;</code>
@@ -1138,13 +1138,13 @@ public final class TextStream extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The codec for this text stream. The default is `"webvtt"`.
+   * The codec for this text stream. The default is `webvtt`.
    * Supported text codecs:
-   * - 'srt'
-   * - 'ttml'
-   * - 'cea608'
-   * - 'cea708'
-   * - 'webvtt'
+   * - `srt`
+   * - `ttml`
+   * - `cea608`
+   * - `cea708`
+   * - `webvtt`
    * </pre>
    *
    * <code>string codec = 1;</code>
@@ -1616,13 +1616,13 @@ public final class TextStream extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The codec for this text stream. The default is `"webvtt"`.
+     * The codec for this text stream. The default is `webvtt`.
      * Supported text codecs:
-     * - 'srt'
-     * - 'ttml'
-     * - 'cea608'
-     * - 'cea708'
-     * - 'webvtt'
+     * - `srt`
+     * - `ttml`
+     * - `cea608`
+     * - `cea708`
+     * - `webvtt`
      * </pre>
      *
      * <code>string codec = 1;</code>
@@ -1644,13 +1644,13 @@ public final class TextStream extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The codec for this text stream. The default is `"webvtt"`.
+     * The codec for this text stream. The default is `webvtt`.
      * Supported text codecs:
-     * - 'srt'
-     * - 'ttml'
-     * - 'cea608'
-     * - 'cea708'
-     * - 'webvtt'
+     * - `srt`
+     * - `ttml`
+     * - `cea608`
+     * - `cea708`
+     * - `webvtt`
      * </pre>
      *
      * <code>string codec = 1;</code>
@@ -1672,13 +1672,13 @@ public final class TextStream extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The codec for this text stream. The default is `"webvtt"`.
+     * The codec for this text stream. The default is `webvtt`.
      * Supported text codecs:
-     * - 'srt'
-     * - 'ttml'
-     * - 'cea608'
-     * - 'cea708'
-     * - 'webvtt'
+     * - `srt`
+     * - `ttml`
+     * - `cea608`
+     * - `cea708`
+     * - `webvtt`
      * </pre>
      *
      * <code>string codec = 1;</code>
@@ -1699,13 +1699,13 @@ public final class TextStream extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The codec for this text stream. The default is `"webvtt"`.
+     * The codec for this text stream. The default is `webvtt`.
      * Supported text codecs:
-     * - 'srt'
-     * - 'ttml'
-     * - 'cea608'
-     * - 'cea708'
-     * - 'webvtt'
+     * - `srt`
+     * - `ttml`
+     * - `cea608`
+     * - `cea708`
+     * - `webvtt`
      * </pre>
      *
      * <code>string codec = 1;</code>
@@ -1722,13 +1722,13 @@ public final class TextStream extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The codec for this text stream. The default is `"webvtt"`.
+     * The codec for this text stream. The default is `webvtt`.
      * Supported text codecs:
-     * - 'srt'
-     * - 'ttml'
-     * - 'cea608'
-     * - 'cea708'
-     * - 'webvtt'
+     * - `srt`
+     * - `ttml`
+     * - `cea608`
+     * - `cea708`
+     * - `webvtt`
      * </pre>
      *
      * <code>string codec = 1;</code>

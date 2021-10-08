@@ -29,7 +29,7 @@ public interface JobTemplateOrBuilder
    * <pre>
    * The resource name of the job template.
    * Format:
-   * `projects/{project}/locations/{location}/jobTemplates/{job_template}`
+   * `projects/{project_number}/locations/{location}/jobTemplates/{job_template}`
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -43,7 +43,7 @@ public interface JobTemplateOrBuilder
    * <pre>
    * The resource name of the job template.
    * Format:
-   * `projects/{project}/locations/{location}/jobTemplates/{job_template}`
+   * `projects/{project_number}/locations/{location}/jobTemplates/{job_template}`
    * </pre>
    *
    * <code>string name = 1;</code>

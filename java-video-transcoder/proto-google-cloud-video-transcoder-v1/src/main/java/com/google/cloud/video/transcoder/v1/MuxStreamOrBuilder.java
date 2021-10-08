@@ -28,7 +28,7 @@ public interface MuxStreamOrBuilder
    *
    * <pre>
    * A unique key for this multiplexed stream. HLS media manifests will be
-   * named `MuxStream.key` with the `".m3u8"` extension suffix.
+   * named `MuxStream.key` with the `.m3u8` extension suffix.
    * </pre>
    *
    * <code>string key = 1;</code>
@@ -41,7 +41,7 @@ public interface MuxStreamOrBuilder
    *
    * <pre>
    * A unique key for this multiplexed stream. HLS media manifests will be
-   * named `MuxStream.key` with the `".m3u8"` extension suffix.
+   * named `MuxStream.key` with the `.m3u8` extension suffix.
    * </pre>
    *
    * <code>string key = 1;</code>
@@ -57,7 +57,7 @@ public interface MuxStreamOrBuilder
    * The name of the generated file. The default is `MuxStream.key` with the
    * extension suffix corresponding to the `MuxStream.container`.
    * Individual segments also have an incremental 10-digit zero-padded suffix
-   * starting from 0 before the extension, such as `"mux_stream0000000123.ts"`.
+   * starting from 0 before the extension, such as `mux_stream0000000123.ts`.
    * </pre>
    *
    * <code>string file_name = 2;</code>
@@ -72,7 +72,7 @@ public interface MuxStreamOrBuilder
    * The name of the generated file. The default is `MuxStream.key` with the
    * extension suffix corresponding to the `MuxStream.container`.
    * Individual segments also have an incremental 10-digit zero-padded suffix
-   * starting from 0 before the extension, such as `"mux_stream0000000123.ts"`.
+   * starting from 0 before the extension, such as `mux_stream0000000123.ts`.
    * </pre>
    *
    * <code>string file_name = 2;</code>
@@ -85,12 +85,12 @@ public interface MuxStreamOrBuilder
    *
    *
    * <pre>
-   * The container format. The default is `"mp4"`
+   * The container format. The default is `mp4`
    * Supported container formats:
-   * - 'ts'
-   * - 'fmp4'- the corresponding file extension is `".m4s"`
-   * - 'mp4'
-   * - 'vtt'
+   * - `ts`
+   * - `fmp4`- the corresponding file extension is `.m4s`
+   * - `mp4`
+   * - `vtt`
    * </pre>
    *
    * <code>string container = 3;</code>
@@ -102,12 +102,12 @@ public interface MuxStreamOrBuilder
    *
    *
    * <pre>
-   * The container format. The default is `"mp4"`
+   * The container format. The default is `mp4`
    * Supported container formats:
-   * - 'ts'
-   * - 'fmp4'- the corresponding file extension is `".m4s"`
-   * - 'mp4'
-   * - 'vtt'
+   * - `ts`
+   * - `fmp4`- the corresponding file extension is `.m4s`
+   * - `mp4`
+   * - `vtt`
    * </pre>
    *
    * <code>string container = 3;</code>
@@ -171,7 +171,7 @@ public interface MuxStreamOrBuilder
    *
    *
    * <pre>
-   * Segment settings for `"ts"`, `"fmp4"` and `"vtt"`.
+   * Segment settings for `ts`, `fmp4` and `vtt`.
    * </pre>
    *
    * <code>.google.cloud.video.transcoder.v1.SegmentSettings segment_settings = 5;</code>
@@ -183,7 +183,7 @@ public interface MuxStreamOrBuilder
    *
    *
    * <pre>
-   * Segment settings for `"ts"`, `"fmp4"` and `"vtt"`.
+   * Segment settings for `ts`, `fmp4` and `vtt`.
    * </pre>
    *
    * <code>.google.cloud.video.transcoder.v1.SegmentSettings segment_settings = 5;</code>
@@ -195,45 +195,10 @@ public interface MuxStreamOrBuilder
    *
    *
    * <pre>
-   * Segment settings for `"ts"`, `"fmp4"` and `"vtt"`.
+   * Segment settings for `ts`, `fmp4` and `vtt`.
    * </pre>
    *
    * <code>.google.cloud.video.transcoder.v1.SegmentSettings segment_settings = 5;</code>
    */
   com.google.cloud.video.transcoder.v1.SegmentSettingsOrBuilder getSegmentSettingsOrBuilder();
-
-  /**
-   *
-   *
-   * <pre>
-   * Encryption settings.
-   * </pre>
-   *
-   * <code>.google.cloud.video.transcoder.v1.Encryption encryption = 6;</code>
-   *
-   * @return Whether the encryption field is set.
-   */
-  boolean hasEncryption();
-  /**
-   *
-   *
-   * <pre>
-   * Encryption settings.
-   * </pre>
-   *
-   * <code>.google.cloud.video.transcoder.v1.Encryption encryption = 6;</code>
-   *
-   * @return The encryption.
-   */
-  com.google.cloud.video.transcoder.v1.Encryption getEncryption();
-  /**
-   *
-   *
-   * <pre>
-   * Encryption settings.
-   * </pre>
-   *
-   * <code>.google.cloud.video.transcoder.v1.Encryption encryption = 6;</code>
-   */
-  com.google.cloud.video.transcoder.v1.EncryptionOrBuilder getEncryptionOrBuilder();
 }

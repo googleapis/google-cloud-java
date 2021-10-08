@@ -16,4 +16,33 @@
     <className>com/google/cloud/video/transcoder/v1/*OrBuilder</className>
     <method>boolean has*(*)</method>
   </difference>
+  <difference>
+    <differenceType>8001</differenceType>
+    <className>com/google/cloud/video/transcoder/v1/Encryption*</className>
+  </difference>
+  <difference>
+    <differenceType>6011</differenceType>
+    <className>com/google/cloud/video/transcoder/v1/MuxStream</className>
+    <field>ENCRYPTION_FIELD_NUMBER</field>
+  </difference>
+  <difference>
+    <differenceType>7002</differenceType>
+    <className>com/google/cloud/video/transcoder/v1/MuxStream</className>
+    <method>*Encryption()</method>
+  </difference>
+  <difference>
+    <differenceType>7002</differenceType>
+    <className>com/google/cloud/video/transcoder/v1/MuxStream</className>
+    <method>*EncryptionOrBuilder()</method>
+  </difference>
+  <difference>
+    <differenceType>7002</differenceType>
+    <className>com/google/cloud/video/transcoder/v1/MuxStream*Builder</className>
+    <method>*Encryption(*)</method>
+  </difference>
+  <difference>
+    <differenceType>7002</differenceType>
+    <className>com/google/cloud/video/transcoder/v1/MuxStream*Builder</className>
+    <method>*Encryption*Builder(*)</method>
+  </difference>
 </differences>

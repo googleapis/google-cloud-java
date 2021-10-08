@@ -22,7 +22,7 @@ package com.google.cloud.video.transcoder.v1;
  *
  *
  * <pre>
- * Segment settings for `"ts"`, `"fmp4"` and `"vtt"`.
+ * Segment settings for `ts`, `fmp4` and `vtt`.
  * </pre>
  *
  * Protobuf type {@code google.cloud.video.transcoder.v1.SegmentSettings}
@@ -128,7 +128,7 @@ public final class SegmentSettings extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Duration of the segments in seconds. The default is `"6.0s"`. Note that
+   * Duration of the segments in seconds. The default is `6.0s`. Note that
    * `segmentDuration` must be greater than or equal to
    * [`gopDuration`](#videostream), and `segmentDuration` must be divisible by
    * [`gopDuration`](#videostream).
@@ -146,7 +146,7 @@ public final class SegmentSettings extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Duration of the segments in seconds. The default is `"6.0s"`. Note that
+   * Duration of the segments in seconds. The default is `6.0s`. Note that
    * `segmentDuration` must be greater than or equal to
    * [`gopDuration`](#videostream), and `segmentDuration` must be divisible by
    * [`gopDuration`](#videostream).
@@ -166,7 +166,7 @@ public final class SegmentSettings extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Duration of the segments in seconds. The default is `"6.0s"`. Note that
+   * Duration of the segments in seconds. The default is `6.0s`. Note that
    * `segmentDuration` must be greater than or equal to
    * [`gopDuration`](#videostream), and `segmentDuration` must be divisible by
    * [`gopDuration`](#videostream).
@@ -374,7 +374,7 @@ public final class SegmentSettings extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Segment settings for `"ts"`, `"fmp4"` and `"vtt"`.
+   * Segment settings for `ts`, `fmp4` and `vtt`.
    * </pre>
    *
    * Protobuf type {@code google.cloud.video.transcoder.v1.SegmentSettings}
@@ -552,7 +552,7 @@ public final class SegmentSettings extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Duration of the segments in seconds. The default is `"6.0s"`. Note that
+     * Duration of the segments in seconds. The default is `6.0s`. Note that
      * `segmentDuration` must be greater than or equal to
      * [`gopDuration`](#videostream), and `segmentDuration` must be divisible by
      * [`gopDuration`](#videostream).
@@ -569,7 +569,7 @@ public final class SegmentSettings extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Duration of the segments in seconds. The default is `"6.0s"`. Note that
+     * Duration of the segments in seconds. The default is `6.0s`. Note that
      * `segmentDuration` must be greater than or equal to
      * [`gopDuration`](#videostream), and `segmentDuration` must be divisible by
      * [`gopDuration`](#videostream).
@@ -592,7 +592,7 @@ public final class SegmentSettings extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Duration of the segments in seconds. The default is `"6.0s"`. Note that
+     * Duration of the segments in seconds. The default is `6.0s`. Note that
      * `segmentDuration` must be greater than or equal to
      * [`gopDuration`](#videostream), and `segmentDuration` must be divisible by
      * [`gopDuration`](#videostream).
@@ -617,7 +617,7 @@ public final class SegmentSettings extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Duration of the segments in seconds. The default is `"6.0s"`. Note that
+     * Duration of the segments in seconds. The default is `6.0s`. Note that
      * `segmentDuration` must be greater than or equal to
      * [`gopDuration`](#videostream), and `segmentDuration` must be divisible by
      * [`gopDuration`](#videostream).
@@ -639,7 +639,7 @@ public final class SegmentSettings extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Duration of the segments in seconds. The default is `"6.0s"`. Note that
+     * Duration of the segments in seconds. The default is `6.0s`. Note that
      * `segmentDuration` must be greater than or equal to
      * [`gopDuration`](#videostream), and `segmentDuration` must be divisible by
      * [`gopDuration`](#videostream).
@@ -668,7 +668,7 @@ public final class SegmentSettings extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Duration of the segments in seconds. The default is `"6.0s"`. Note that
+     * Duration of the segments in seconds. The default is `6.0s`. Note that
      * `segmentDuration` must be greater than or equal to
      * [`gopDuration`](#videostream), and `segmentDuration` must be divisible by
      * [`gopDuration`](#videostream).
@@ -691,7 +691,7 @@ public final class SegmentSettings extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Duration of the segments in seconds. The default is `"6.0s"`. Note that
+     * Duration of the segments in seconds. The default is `6.0s`. Note that
      * `segmentDuration` must be greater than or equal to
      * [`gopDuration`](#videostream), and `segmentDuration` must be divisible by
      * [`gopDuration`](#videostream).
@@ -708,7 +708,7 @@ public final class SegmentSettings extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Duration of the segments in seconds. The default is `"6.0s"`. Note that
+     * Duration of the segments in seconds. The default is `6.0s`. Note that
      * `segmentDuration` must be greater than or equal to
      * [`gopDuration`](#videostream), and `segmentDuration` must be divisible by
      * [`gopDuration`](#videostream).
@@ -729,7 +729,7 @@ public final class SegmentSettings extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Duration of the segments in seconds. The default is `"6.0s"`. Note that
+     * Duration of the segments in seconds. The default is `6.0s`. Note that
      * `segmentDuration` must be greater than or equal to
      * [`gopDuration`](#videostream), and `segmentDuration` must be divisible by
      * [`gopDuration`](#videostream).

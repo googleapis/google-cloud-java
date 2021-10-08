@@ -229,8 +229,8 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The video bitrate in bits per second. Must be between 1 and
-     * 1,000,000,000.
+     * Required. The video bitrate in bits per second. The minimum value is 1,000.
+     * The maximum value is 800,000,000.
      * </pre>
      *
      * <code>int32 bitrate_bps = 4 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -243,17 +243,17 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Pixel format to use. The default is `"yuv420p"`.
+     * Pixel format to use. The default is `yuv420p`.
      * Supported pixel formats:
-     * - 'yuv420p' pixel format.
-     * - 'yuv422p' pixel format.
-     * - 'yuv444p' pixel format.
-     * - 'yuv420p10' 10-bit HDR pixel format.
-     * - 'yuv422p10' 10-bit HDR pixel format.
-     * - 'yuv444p10' 10-bit HDR pixel format.
-     * - 'yuv420p12' 12-bit HDR pixel format.
-     * - 'yuv422p12' 12-bit HDR pixel format.
-     * - 'yuv444p12' 12-bit HDR pixel format.
+     * - `yuv420p` pixel format
+     * - `yuv422p` pixel format
+     * - `yuv444p` pixel format
+     * - `yuv420p10` 10-bit HDR pixel format
+     * - `yuv422p10` 10-bit HDR pixel format
+     * - `yuv444p10` 10-bit HDR pixel format
+     * - `yuv420p12` 12-bit HDR pixel format
+     * - `yuv422p12` 12-bit HDR pixel format
+     * - `yuv444p12` 12-bit HDR pixel format
      * </pre>
      *
      * <code>string pixel_format = 5;</code>
@@ -265,17 +265,17 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Pixel format to use. The default is `"yuv420p"`.
+     * Pixel format to use. The default is `yuv420p`.
      * Supported pixel formats:
-     * - 'yuv420p' pixel format.
-     * - 'yuv422p' pixel format.
-     * - 'yuv444p' pixel format.
-     * - 'yuv420p10' 10-bit HDR pixel format.
-     * - 'yuv422p10' 10-bit HDR pixel format.
-     * - 'yuv444p10' 10-bit HDR pixel format.
-     * - 'yuv420p12' 12-bit HDR pixel format.
-     * - 'yuv422p12' 12-bit HDR pixel format.
-     * - 'yuv444p12' 12-bit HDR pixel format.
+     * - `yuv420p` pixel format
+     * - `yuv422p` pixel format
+     * - `yuv444p` pixel format
+     * - `yuv420p10` 10-bit HDR pixel format
+     * - `yuv422p10` 10-bit HDR pixel format
+     * - `yuv444p10` 10-bit HDR pixel format
+     * - `yuv420p12` 12-bit HDR pixel format
+     * - `yuv422p12` 12-bit HDR pixel format
+     * - `yuv444p12` 12-bit HDR pixel format
      * </pre>
      *
      * <code>string pixel_format = 5;</code>
@@ -288,10 +288,10 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specify the `rate_control_mode`. The default is `"vbr"`.
+     * Specify the `rate_control_mode`. The default is `vbr`.
      * Supported rate control modes:
-     * - 'vbr' - variable bitrate
-     * - 'crf' - constant rate factor
+     * - `vbr` - variable bitrate
+     * - `crf` - constant rate factor
      * </pre>
      *
      * <code>string rate_control_mode = 6;</code>
@@ -303,10 +303,10 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specify the `rate_control_mode`. The default is `"vbr"`.
+     * Specify the `rate_control_mode`. The default is `vbr`.
      * Supported rate control modes:
-     * - 'vbr' - variable bitrate
-     * - 'crf' - constant rate factor
+     * - `vbr` - variable bitrate
+     * - `crf` - constant rate factor
      * </pre>
      *
      * <code>string rate_control_mode = 6;</code>
@@ -375,7 +375,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Select the GOP size based on the specified duration. The default is
-     * `"3s"`. Note that `gopDuration` must be less than or equal to
+     * `3s`. Note that `gopDuration` must be less than or equal to
      * [`segmentDuration`](#SegmentSettings), and
      * [`segmentDuration`](#SegmentSettings) must be divisible by
      * `gopDuration`.
@@ -391,7 +391,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Select the GOP size based on the specified duration. The default is
-     * `"3s"`. Note that `gopDuration` must be less than or equal to
+     * `3s`. Note that `gopDuration` must be less than or equal to
      * [`segmentDuration`](#SegmentSettings), and
      * [`segmentDuration`](#SegmentSettings) must be divisible by
      * `gopDuration`.
@@ -407,7 +407,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Select the GOP size based on the specified duration. The default is
-     * `"3s"`. Note that `gopDuration` must be less than or equal to
+     * `3s`. Note that `gopDuration` must be less than or equal to
      * [`segmentDuration`](#SegmentSettings), and
      * [`segmentDuration`](#SegmentSettings) must be divisible by
      * `gopDuration`.
@@ -422,7 +422,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Use two-pass encoding strategy to achieve better video quality.
-     * `VideoStream.rate_control_mode` must be `"vbr"`. The default is `false`.
+     * `VideoStream.rate_control_mode` must be `vbr`. The default is `false`.
      * </pre>
      *
      * <code>bool enable_two_pass = 11;</code>
@@ -464,10 +464,10 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The entropy coder to use. The default is `"cabac"`.
+     * The entropy coder to use. The default is `cabac`.
      * Supported entropy coders:
-     * - 'cavlc'
-     * - 'cabac'
+     * - `cavlc`
+     * - `cabac`
      * </pre>
      *
      * <code>string entropy_coder = 14;</code>
@@ -479,10 +479,10 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The entropy coder to use. The default is `"cabac"`.
+     * The entropy coder to use. The default is `cabac`.
      * Supported entropy coders:
-     * - 'cavlc'
-     * - 'cabac'
+     * - `cavlc`
+     * - `cabac`
      * </pre>
      *
      * <code>string entropy_coder = 14;</code>
@@ -545,8 +545,8 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
      * *   `main`
      * *   `high` (default)
      * The available options are
-     * [FFmpeg-compatible](https://trac.ffmpeg.org/wiki/Encode/H.264#Profile){:
-     * class="external" }. Note that certain values for this field may cause the
+     * [FFmpeg-compatible](https://trac.ffmpeg.org/wiki/Encode/H.264#Tune).
+     * Note that certain values for this field may cause the
      * transcoder to override other fields you set in the `H264CodecSettings`
      * message.
      * </pre>
@@ -566,8 +566,8 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
      * *   `main`
      * *   `high` (default)
      * The available options are
-     * [FFmpeg-compatible](https://trac.ffmpeg.org/wiki/Encode/H.264#Profile){:
-     * class="external" }. Note that certain values for this field may cause the
+     * [FFmpeg-compatible](https://trac.ffmpeg.org/wiki/Encode/H.264#Tune).
+     * Note that certain values for this field may cause the
      * transcoder to override other fields you set in the `H264CodecSettings`
      * message.
      * </pre>
@@ -583,8 +583,8 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Enforces the specified codec tune. The available options are
-     * [FFmpeg-compatible](https://trac.ffmpeg.org/wiki/Encode/H.264#Tune){:
-     * class="external" }. Note that certain values for this field may cause the
+     * [FFmpeg-compatible](https://trac.ffmpeg.org/wiki/Encode/H.264#Tune).
+     * Note that certain values for this field may cause the
      * transcoder to override other fields you set in the `H264CodecSettings`
      * message.
      * </pre>
@@ -599,8 +599,8 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Enforces the specified codec tune. The available options are
-     * [FFmpeg-compatible](https://trac.ffmpeg.org/wiki/Encode/H.264#Tune){:
-     * class="external" }. Note that certain values for this field may cause the
+     * [FFmpeg-compatible](https://trac.ffmpeg.org/wiki/Encode/H.264#Tune).
+     * Note that certain values for this field may cause the
      * transcoder to override other fields you set in the `H264CodecSettings`
      * message.
      * </pre>
@@ -617,8 +617,8 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Enforces the specified codec preset. The default is `veryfast`. The
      * available options are
-     * [FFmpeg-compatible](https://trac.ffmpeg.org/wiki/Encode/H.264#Preset){:
-     * class="external" }. Note that certain values for this field may cause the
+     * [FFmpeg-compatible](https://trac.ffmpeg.org/wiki/Encode/H.264#Preset).
+     * Note that certain values for this field may cause the
      * transcoder to override other fields you set in the `H264CodecSettings`
      * message.
      * </pre>
@@ -634,8 +634,8 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Enforces the specified codec preset. The default is `veryfast`. The
      * available options are
-     * [FFmpeg-compatible](https://trac.ffmpeg.org/wiki/Encode/H.264#Preset){:
-     * class="external" }. Note that certain values for this field may cause the
+     * [FFmpeg-compatible](https://trac.ffmpeg.org/wiki/Encode/H.264#Preset).
+     * Note that certain values for this field may cause the
      * transcoder to override other fields you set in the `H264CodecSettings`
      * message.
      * </pre>
@@ -980,8 +980,8 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The video bitrate in bits per second. Must be between 1 and
-     * 1,000,000,000.
+     * Required. The video bitrate in bits per second. The minimum value is 1,000.
+     * The maximum value is 800,000,000.
      * </pre>
      *
      * <code>int32 bitrate_bps = 4 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -999,17 +999,17 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Pixel format to use. The default is `"yuv420p"`.
+     * Pixel format to use. The default is `yuv420p`.
      * Supported pixel formats:
-     * - 'yuv420p' pixel format.
-     * - 'yuv422p' pixel format.
-     * - 'yuv444p' pixel format.
-     * - 'yuv420p10' 10-bit HDR pixel format.
-     * - 'yuv422p10' 10-bit HDR pixel format.
-     * - 'yuv444p10' 10-bit HDR pixel format.
-     * - 'yuv420p12' 12-bit HDR pixel format.
-     * - 'yuv422p12' 12-bit HDR pixel format.
-     * - 'yuv444p12' 12-bit HDR pixel format.
+     * - `yuv420p` pixel format
+     * - `yuv422p` pixel format
+     * - `yuv444p` pixel format
+     * - `yuv420p10` 10-bit HDR pixel format
+     * - `yuv422p10` 10-bit HDR pixel format
+     * - `yuv444p10` 10-bit HDR pixel format
+     * - `yuv420p12` 12-bit HDR pixel format
+     * - `yuv422p12` 12-bit HDR pixel format
+     * - `yuv444p12` 12-bit HDR pixel format
      * </pre>
      *
      * <code>string pixel_format = 5;</code>
@@ -1032,17 +1032,17 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Pixel format to use. The default is `"yuv420p"`.
+     * Pixel format to use. The default is `yuv420p`.
      * Supported pixel formats:
-     * - 'yuv420p' pixel format.
-     * - 'yuv422p' pixel format.
-     * - 'yuv444p' pixel format.
-     * - 'yuv420p10' 10-bit HDR pixel format.
-     * - 'yuv422p10' 10-bit HDR pixel format.
-     * - 'yuv444p10' 10-bit HDR pixel format.
-     * - 'yuv420p12' 12-bit HDR pixel format.
-     * - 'yuv422p12' 12-bit HDR pixel format.
-     * - 'yuv444p12' 12-bit HDR pixel format.
+     * - `yuv420p` pixel format
+     * - `yuv422p` pixel format
+     * - `yuv444p` pixel format
+     * - `yuv420p10` 10-bit HDR pixel format
+     * - `yuv422p10` 10-bit HDR pixel format
+     * - `yuv444p10` 10-bit HDR pixel format
+     * - `yuv420p12` 12-bit HDR pixel format
+     * - `yuv422p12` 12-bit HDR pixel format
+     * - `yuv444p12` 12-bit HDR pixel format
      * </pre>
      *
      * <code>string pixel_format = 5;</code>
@@ -1068,10 +1068,10 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specify the `rate_control_mode`. The default is `"vbr"`.
+     * Specify the `rate_control_mode`. The default is `vbr`.
      * Supported rate control modes:
-     * - 'vbr' - variable bitrate
-     * - 'crf' - constant rate factor
+     * - `vbr` - variable bitrate
+     * - `crf` - constant rate factor
      * </pre>
      *
      * <code>string rate_control_mode = 6;</code>
@@ -1094,10 +1094,10 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specify the `rate_control_mode`. The default is `"vbr"`.
+     * Specify the `rate_control_mode`. The default is `vbr`.
      * Supported rate control modes:
-     * - 'vbr' - variable bitrate
-     * - 'crf' - constant rate factor
+     * - `vbr` - variable bitrate
+     * - `crf` - constant rate factor
      * </pre>
      *
      * <code>string rate_control_mode = 6;</code>
@@ -1198,7 +1198,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Select the GOP size based on the specified duration. The default is
-     * `"3s"`. Note that `gopDuration` must be less than or equal to
+     * `3s`. Note that `gopDuration` must be less than or equal to
      * [`segmentDuration`](#SegmentSettings), and
      * [`segmentDuration`](#SegmentSettings) must be divisible by
      * `gopDuration`.
@@ -1217,7 +1217,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Select the GOP size based on the specified duration. The default is
-     * `"3s"`. Note that `gopDuration` must be less than or equal to
+     * `3s`. Note that `gopDuration` must be less than or equal to
      * [`segmentDuration`](#SegmentSettings), and
      * [`segmentDuration`](#SegmentSettings) must be divisible by
      * `gopDuration`.
@@ -1239,7 +1239,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Select the GOP size based on the specified duration. The default is
-     * `"3s"`. Note that `gopDuration` must be less than or equal to
+     * `3s`. Note that `gopDuration` must be less than or equal to
      * [`segmentDuration`](#SegmentSettings), and
      * [`segmentDuration`](#SegmentSettings) must be divisible by
      * `gopDuration`.
@@ -1262,7 +1262,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Use two-pass encoding strategy to achieve better video quality.
-     * `VideoStream.rate_control_mode` must be `"vbr"`. The default is `false`.
+     * `VideoStream.rate_control_mode` must be `vbr`. The default is `false`.
      * </pre>
      *
      * <code>bool enable_two_pass = 11;</code>
@@ -1319,10 +1319,10 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The entropy coder to use. The default is `"cabac"`.
+     * The entropy coder to use. The default is `cabac`.
      * Supported entropy coders:
-     * - 'cavlc'
-     * - 'cabac'
+     * - `cavlc`
+     * - `cabac`
      * </pre>
      *
      * <code>string entropy_coder = 14;</code>
@@ -1345,10 +1345,10 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The entropy coder to use. The default is `"cabac"`.
+     * The entropy coder to use. The default is `cabac`.
      * Supported entropy coders:
-     * - 'cavlc'
-     * - 'cabac'
+     * - `cavlc`
+     * - `cabac`
      * </pre>
      *
      * <code>string entropy_coder = 14;</code>
@@ -1439,8 +1439,8 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
      * *   `main`
      * *   `high` (default)
      * The available options are
-     * [FFmpeg-compatible](https://trac.ffmpeg.org/wiki/Encode/H.264#Profile){:
-     * class="external" }. Note that certain values for this field may cause the
+     * [FFmpeg-compatible](https://trac.ffmpeg.org/wiki/Encode/H.264#Tune).
+     * Note that certain values for this field may cause the
      * transcoder to override other fields you set in the `H264CodecSettings`
      * message.
      * </pre>
@@ -1471,8 +1471,8 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
      * *   `main`
      * *   `high` (default)
      * The available options are
-     * [FFmpeg-compatible](https://trac.ffmpeg.org/wiki/Encode/H.264#Profile){:
-     * class="external" }. Note that certain values for this field may cause the
+     * [FFmpeg-compatible](https://trac.ffmpeg.org/wiki/Encode/H.264#Tune).
+     * Note that certain values for this field may cause the
      * transcoder to override other fields you set in the `H264CodecSettings`
      * message.
      * </pre>
@@ -1501,8 +1501,8 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Enforces the specified codec tune. The available options are
-     * [FFmpeg-compatible](https://trac.ffmpeg.org/wiki/Encode/H.264#Tune){:
-     * class="external" }. Note that certain values for this field may cause the
+     * [FFmpeg-compatible](https://trac.ffmpeg.org/wiki/Encode/H.264#Tune).
+     * Note that certain values for this field may cause the
      * transcoder to override other fields you set in the `H264CodecSettings`
      * message.
      * </pre>
@@ -1528,8 +1528,8 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Enforces the specified codec tune. The available options are
-     * [FFmpeg-compatible](https://trac.ffmpeg.org/wiki/Encode/H.264#Tune){:
-     * class="external" }. Note that certain values for this field may cause the
+     * [FFmpeg-compatible](https://trac.ffmpeg.org/wiki/Encode/H.264#Tune).
+     * Note that certain values for this field may cause the
      * transcoder to override other fields you set in the `H264CodecSettings`
      * message.
      * </pre>
@@ -1559,8 +1559,8 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Enforces the specified codec preset. The default is `veryfast`. The
      * available options are
-     * [FFmpeg-compatible](https://trac.ffmpeg.org/wiki/Encode/H.264#Preset){:
-     * class="external" }. Note that certain values for this field may cause the
+     * [FFmpeg-compatible](https://trac.ffmpeg.org/wiki/Encode/H.264#Preset).
+     * Note that certain values for this field may cause the
      * transcoder to override other fields you set in the `H264CodecSettings`
      * message.
      * </pre>
@@ -1587,8 +1587,8 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Enforces the specified codec preset. The default is `veryfast`. The
      * available options are
-     * [FFmpeg-compatible](https://trac.ffmpeg.org/wiki/Encode/H.264#Preset){:
-     * class="external" }. Note that certain values for this field may cause the
+     * [FFmpeg-compatible](https://trac.ffmpeg.org/wiki/Encode/H.264#Preset).
+     * Note that certain values for this field may cause the
      * transcoder to override other fields you set in the `H264CodecSettings`
      * message.
      * </pre>
@@ -2482,8 +2482,8 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. The video bitrate in bits per second. Must be between 1 and
-       * 1,000,000,000.
+       * Required. The video bitrate in bits per second. The minimum value is 1,000.
+       * The maximum value is 800,000,000.
        * </pre>
        *
        * <code>int32 bitrate_bps = 4 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -2498,8 +2498,8 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. The video bitrate in bits per second. Must be between 1 and
-       * 1,000,000,000.
+       * Required. The video bitrate in bits per second. The minimum value is 1,000.
+       * The maximum value is 800,000,000.
        * </pre>
        *
        * <code>int32 bitrate_bps = 4 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -2517,8 +2517,8 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. The video bitrate in bits per second. Must be between 1 and
-       * 1,000,000,000.
+       * Required. The video bitrate in bits per second. The minimum value is 1,000.
+       * The maximum value is 800,000,000.
        * </pre>
        *
        * <code>int32 bitrate_bps = 4 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -2537,17 +2537,17 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Pixel format to use. The default is `"yuv420p"`.
+       * Pixel format to use. The default is `yuv420p`.
        * Supported pixel formats:
-       * - 'yuv420p' pixel format.
-       * - 'yuv422p' pixel format.
-       * - 'yuv444p' pixel format.
-       * - 'yuv420p10' 10-bit HDR pixel format.
-       * - 'yuv422p10' 10-bit HDR pixel format.
-       * - 'yuv444p10' 10-bit HDR pixel format.
-       * - 'yuv420p12' 12-bit HDR pixel format.
-       * - 'yuv422p12' 12-bit HDR pixel format.
-       * - 'yuv444p12' 12-bit HDR pixel format.
+       * - `yuv420p` pixel format
+       * - `yuv422p` pixel format
+       * - `yuv444p` pixel format
+       * - `yuv420p10` 10-bit HDR pixel format
+       * - `yuv422p10` 10-bit HDR pixel format
+       * - `yuv444p10` 10-bit HDR pixel format
+       * - `yuv420p12` 12-bit HDR pixel format
+       * - `yuv422p12` 12-bit HDR pixel format
+       * - `yuv444p12` 12-bit HDR pixel format
        * </pre>
        *
        * <code>string pixel_format = 5;</code>
@@ -2569,17 +2569,17 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Pixel format to use. The default is `"yuv420p"`.
+       * Pixel format to use. The default is `yuv420p`.
        * Supported pixel formats:
-       * - 'yuv420p' pixel format.
-       * - 'yuv422p' pixel format.
-       * - 'yuv444p' pixel format.
-       * - 'yuv420p10' 10-bit HDR pixel format.
-       * - 'yuv422p10' 10-bit HDR pixel format.
-       * - 'yuv444p10' 10-bit HDR pixel format.
-       * - 'yuv420p12' 12-bit HDR pixel format.
-       * - 'yuv422p12' 12-bit HDR pixel format.
-       * - 'yuv444p12' 12-bit HDR pixel format.
+       * - `yuv420p` pixel format
+       * - `yuv422p` pixel format
+       * - `yuv444p` pixel format
+       * - `yuv420p10` 10-bit HDR pixel format
+       * - `yuv422p10` 10-bit HDR pixel format
+       * - `yuv444p10` 10-bit HDR pixel format
+       * - `yuv420p12` 12-bit HDR pixel format
+       * - `yuv422p12` 12-bit HDR pixel format
+       * - `yuv444p12` 12-bit HDR pixel format
        * </pre>
        *
        * <code>string pixel_format = 5;</code>
@@ -2601,17 +2601,17 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Pixel format to use. The default is `"yuv420p"`.
+       * Pixel format to use. The default is `yuv420p`.
        * Supported pixel formats:
-       * - 'yuv420p' pixel format.
-       * - 'yuv422p' pixel format.
-       * - 'yuv444p' pixel format.
-       * - 'yuv420p10' 10-bit HDR pixel format.
-       * - 'yuv422p10' 10-bit HDR pixel format.
-       * - 'yuv444p10' 10-bit HDR pixel format.
-       * - 'yuv420p12' 12-bit HDR pixel format.
-       * - 'yuv422p12' 12-bit HDR pixel format.
-       * - 'yuv444p12' 12-bit HDR pixel format.
+       * - `yuv420p` pixel format
+       * - `yuv422p` pixel format
+       * - `yuv444p` pixel format
+       * - `yuv420p10` 10-bit HDR pixel format
+       * - `yuv422p10` 10-bit HDR pixel format
+       * - `yuv444p10` 10-bit HDR pixel format
+       * - `yuv420p12` 12-bit HDR pixel format
+       * - `yuv422p12` 12-bit HDR pixel format
+       * - `yuv444p12` 12-bit HDR pixel format
        * </pre>
        *
        * <code>string pixel_format = 5;</code>
@@ -2632,17 +2632,17 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Pixel format to use. The default is `"yuv420p"`.
+       * Pixel format to use. The default is `yuv420p`.
        * Supported pixel formats:
-       * - 'yuv420p' pixel format.
-       * - 'yuv422p' pixel format.
-       * - 'yuv444p' pixel format.
-       * - 'yuv420p10' 10-bit HDR pixel format.
-       * - 'yuv422p10' 10-bit HDR pixel format.
-       * - 'yuv444p10' 10-bit HDR pixel format.
-       * - 'yuv420p12' 12-bit HDR pixel format.
-       * - 'yuv422p12' 12-bit HDR pixel format.
-       * - 'yuv444p12' 12-bit HDR pixel format.
+       * - `yuv420p` pixel format
+       * - `yuv422p` pixel format
+       * - `yuv444p` pixel format
+       * - `yuv420p10` 10-bit HDR pixel format
+       * - `yuv422p10` 10-bit HDR pixel format
+       * - `yuv444p10` 10-bit HDR pixel format
+       * - `yuv420p12` 12-bit HDR pixel format
+       * - `yuv422p12` 12-bit HDR pixel format
+       * - `yuv444p12` 12-bit HDR pixel format
        * </pre>
        *
        * <code>string pixel_format = 5;</code>
@@ -2659,17 +2659,17 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Pixel format to use. The default is `"yuv420p"`.
+       * Pixel format to use. The default is `yuv420p`.
        * Supported pixel formats:
-       * - 'yuv420p' pixel format.
-       * - 'yuv422p' pixel format.
-       * - 'yuv444p' pixel format.
-       * - 'yuv420p10' 10-bit HDR pixel format.
-       * - 'yuv422p10' 10-bit HDR pixel format.
-       * - 'yuv444p10' 10-bit HDR pixel format.
-       * - 'yuv420p12' 12-bit HDR pixel format.
-       * - 'yuv422p12' 12-bit HDR pixel format.
-       * - 'yuv444p12' 12-bit HDR pixel format.
+       * - `yuv420p` pixel format
+       * - `yuv422p` pixel format
+       * - `yuv444p` pixel format
+       * - `yuv420p10` 10-bit HDR pixel format
+       * - `yuv422p10` 10-bit HDR pixel format
+       * - `yuv444p10` 10-bit HDR pixel format
+       * - `yuv420p12` 12-bit HDR pixel format
+       * - `yuv422p12` 12-bit HDR pixel format
+       * - `yuv444p12` 12-bit HDR pixel format
        * </pre>
        *
        * <code>string pixel_format = 5;</code>
@@ -2693,10 +2693,10 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Specify the `rate_control_mode`. The default is `"vbr"`.
+       * Specify the `rate_control_mode`. The default is `vbr`.
        * Supported rate control modes:
-       * - 'vbr' - variable bitrate
-       * - 'crf' - constant rate factor
+       * - `vbr` - variable bitrate
+       * - `crf` - constant rate factor
        * </pre>
        *
        * <code>string rate_control_mode = 6;</code>
@@ -2718,10 +2718,10 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Specify the `rate_control_mode`. The default is `"vbr"`.
+       * Specify the `rate_control_mode`. The default is `vbr`.
        * Supported rate control modes:
-       * - 'vbr' - variable bitrate
-       * - 'crf' - constant rate factor
+       * - `vbr` - variable bitrate
+       * - `crf` - constant rate factor
        * </pre>
        *
        * <code>string rate_control_mode = 6;</code>
@@ -2743,10 +2743,10 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Specify the `rate_control_mode`. The default is `"vbr"`.
+       * Specify the `rate_control_mode`. The default is `vbr`.
        * Supported rate control modes:
-       * - 'vbr' - variable bitrate
-       * - 'crf' - constant rate factor
+       * - `vbr` - variable bitrate
+       * - `crf` - constant rate factor
        * </pre>
        *
        * <code>string rate_control_mode = 6;</code>
@@ -2767,10 +2767,10 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Specify the `rate_control_mode`. The default is `"vbr"`.
+       * Specify the `rate_control_mode`. The default is `vbr`.
        * Supported rate control modes:
-       * - 'vbr' - variable bitrate
-       * - 'crf' - constant rate factor
+       * - `vbr` - variable bitrate
+       * - `crf` - constant rate factor
        * </pre>
        *
        * <code>string rate_control_mode = 6;</code>
@@ -2787,10 +2787,10 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Specify the `rate_control_mode`. The default is `"vbr"`.
+       * Specify the `rate_control_mode`. The default is `vbr`.
        * Supported rate control modes:
-       * - 'vbr' - variable bitrate
-       * - 'crf' - constant rate factor
+       * - `vbr` - variable bitrate
+       * - `crf` - constant rate factor
        * </pre>
        *
        * <code>string rate_control_mode = 6;</code>
@@ -3002,7 +3002,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Select the GOP size based on the specified duration. The default is
-       * `"3s"`. Note that `gopDuration` must be less than or equal to
+       * `3s`. Note that `gopDuration` must be less than or equal to
        * [`segmentDuration`](#SegmentSettings), and
        * [`segmentDuration`](#SegmentSettings) must be divisible by
        * `gopDuration`.
@@ -3021,7 +3021,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Select the GOP size based on the specified duration. The default is
-       * `"3s"`. Note that `gopDuration` must be less than or equal to
+       * `3s`. Note that `gopDuration` must be less than or equal to
        * [`segmentDuration`](#SegmentSettings), and
        * [`segmentDuration`](#SegmentSettings) must be divisible by
        * `gopDuration`.
@@ -3050,7 +3050,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Select the GOP size based on the specified duration. The default is
-       * `"3s"`. Note that `gopDuration` must be less than or equal to
+       * `3s`. Note that `gopDuration` must be less than or equal to
        * [`segmentDuration`](#SegmentSettings), and
        * [`segmentDuration`](#SegmentSettings) must be divisible by
        * `gopDuration`.
@@ -3076,7 +3076,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Select the GOP size based on the specified duration. The default is
-       * `"3s"`. Note that `gopDuration` must be less than or equal to
+       * `3s`. Note that `gopDuration` must be less than or equal to
        * [`segmentDuration`](#SegmentSettings), and
        * [`segmentDuration`](#SegmentSettings) must be divisible by
        * `gopDuration`.
@@ -3099,7 +3099,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Select the GOP size based on the specified duration. The default is
-       * `"3s"`. Note that `gopDuration` must be less than or equal to
+       * `3s`. Note that `gopDuration` must be less than or equal to
        * [`segmentDuration`](#SegmentSettings), and
        * [`segmentDuration`](#SegmentSettings) must be divisible by
        * `gopDuration`.
@@ -3132,7 +3132,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Select the GOP size based on the specified duration. The default is
-       * `"3s"`. Note that `gopDuration` must be less than or equal to
+       * `3s`. Note that `gopDuration` must be less than or equal to
        * [`segmentDuration`](#SegmentSettings), and
        * [`segmentDuration`](#SegmentSettings) must be divisible by
        * `gopDuration`.
@@ -3161,7 +3161,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Select the GOP size based on the specified duration. The default is
-       * `"3s"`. Note that `gopDuration` must be less than or equal to
+       * `3s`. Note that `gopDuration` must be less than or equal to
        * [`segmentDuration`](#SegmentSettings), and
        * [`segmentDuration`](#SegmentSettings) must be divisible by
        * `gopDuration`.
@@ -3177,7 +3177,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Select the GOP size based on the specified duration. The default is
-       * `"3s"`. Note that `gopDuration` must be less than or equal to
+       * `3s`. Note that `gopDuration` must be less than or equal to
        * [`segmentDuration`](#SegmentSettings), and
        * [`segmentDuration`](#SegmentSettings) must be divisible by
        * `gopDuration`.
@@ -3201,7 +3201,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Select the GOP size based on the specified duration. The default is
-       * `"3s"`. Note that `gopDuration` must be less than or equal to
+       * `3s`. Note that `gopDuration` must be less than or equal to
        * [`segmentDuration`](#SegmentSettings), and
        * [`segmentDuration`](#SegmentSettings) must be divisible by
        * `gopDuration`.
@@ -3238,7 +3238,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Use two-pass encoding strategy to achieve better video quality.
-       * `VideoStream.rate_control_mode` must be `"vbr"`. The default is `false`.
+       * `VideoStream.rate_control_mode` must be `vbr`. The default is `false`.
        * </pre>
        *
        * <code>bool enable_two_pass = 11;</code>
@@ -3254,7 +3254,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Use two-pass encoding strategy to achieve better video quality.
-       * `VideoStream.rate_control_mode` must be `"vbr"`. The default is `false`.
+       * `VideoStream.rate_control_mode` must be `vbr`. The default is `false`.
        * </pre>
        *
        * <code>bool enable_two_pass = 11;</code>
@@ -3273,7 +3273,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Use two-pass encoding strategy to achieve better video quality.
-       * `VideoStream.rate_control_mode` must be `"vbr"`. The default is `false`.
+       * `VideoStream.rate_control_mode` must be `vbr`. The default is `false`.
        * </pre>
        *
        * <code>bool enable_two_pass = 11;</code>
@@ -3405,10 +3405,10 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The entropy coder to use. The default is `"cabac"`.
+       * The entropy coder to use. The default is `cabac`.
        * Supported entropy coders:
-       * - 'cavlc'
-       * - 'cabac'
+       * - `cavlc`
+       * - `cabac`
        * </pre>
        *
        * <code>string entropy_coder = 14;</code>
@@ -3430,10 +3430,10 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The entropy coder to use. The default is `"cabac"`.
+       * The entropy coder to use. The default is `cabac`.
        * Supported entropy coders:
-       * - 'cavlc'
-       * - 'cabac'
+       * - `cavlc`
+       * - `cabac`
        * </pre>
        *
        * <code>string entropy_coder = 14;</code>
@@ -3455,10 +3455,10 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The entropy coder to use. The default is `"cabac"`.
+       * The entropy coder to use. The default is `cabac`.
        * Supported entropy coders:
-       * - 'cavlc'
-       * - 'cabac'
+       * - `cavlc`
+       * - `cabac`
        * </pre>
        *
        * <code>string entropy_coder = 14;</code>
@@ -3479,10 +3479,10 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The entropy coder to use. The default is `"cabac"`.
+       * The entropy coder to use. The default is `cabac`.
        * Supported entropy coders:
-       * - 'cavlc'
-       * - 'cabac'
+       * - `cavlc`
+       * - `cabac`
        * </pre>
        *
        * <code>string entropy_coder = 14;</code>
@@ -3499,10 +3499,10 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The entropy coder to use. The default is `"cabac"`.
+       * The entropy coder to use. The default is `cabac`.
        * Supported entropy coders:
-       * - 'cavlc'
-       * - 'cabac'
+       * - `cavlc`
+       * - `cabac`
        * </pre>
        *
        * <code>string entropy_coder = 14;</code>
@@ -3703,8 +3703,8 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
        * *   `main`
        * *   `high` (default)
        * The available options are
-       * [FFmpeg-compatible](https://trac.ffmpeg.org/wiki/Encode/H.264#Profile){:
-       * class="external" }. Note that certain values for this field may cause the
+       * [FFmpeg-compatible](https://trac.ffmpeg.org/wiki/Encode/H.264#Tune).
+       * Note that certain values for this field may cause the
        * transcoder to override other fields you set in the `H264CodecSettings`
        * message.
        * </pre>
@@ -3734,8 +3734,8 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
        * *   `main`
        * *   `high` (default)
        * The available options are
-       * [FFmpeg-compatible](https://trac.ffmpeg.org/wiki/Encode/H.264#Profile){:
-       * class="external" }. Note that certain values for this field may cause the
+       * [FFmpeg-compatible](https://trac.ffmpeg.org/wiki/Encode/H.264#Tune).
+       * Note that certain values for this field may cause the
        * transcoder to override other fields you set in the `H264CodecSettings`
        * message.
        * </pre>
@@ -3765,8 +3765,8 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
        * *   `main`
        * *   `high` (default)
        * The available options are
-       * [FFmpeg-compatible](https://trac.ffmpeg.org/wiki/Encode/H.264#Profile){:
-       * class="external" }. Note that certain values for this field may cause the
+       * [FFmpeg-compatible](https://trac.ffmpeg.org/wiki/Encode/H.264#Tune).
+       * Note that certain values for this field may cause the
        * transcoder to override other fields you set in the `H264CodecSettings`
        * message.
        * </pre>
@@ -3795,8 +3795,8 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
        * *   `main`
        * *   `high` (default)
        * The available options are
-       * [FFmpeg-compatible](https://trac.ffmpeg.org/wiki/Encode/H.264#Profile){:
-       * class="external" }. Note that certain values for this field may cause the
+       * [FFmpeg-compatible](https://trac.ffmpeg.org/wiki/Encode/H.264#Tune).
+       * Note that certain values for this field may cause the
        * transcoder to override other fields you set in the `H264CodecSettings`
        * message.
        * </pre>
@@ -3821,8 +3821,8 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
        * *   `main`
        * *   `high` (default)
        * The available options are
-       * [FFmpeg-compatible](https://trac.ffmpeg.org/wiki/Encode/H.264#Profile){:
-       * class="external" }. Note that certain values for this field may cause the
+       * [FFmpeg-compatible](https://trac.ffmpeg.org/wiki/Encode/H.264#Tune).
+       * Note that certain values for this field may cause the
        * transcoder to override other fields you set in the `H264CodecSettings`
        * message.
        * </pre>
@@ -3849,8 +3849,8 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Enforces the specified codec tune. The available options are
-       * [FFmpeg-compatible](https://trac.ffmpeg.org/wiki/Encode/H.264#Tune){:
-       * class="external" }. Note that certain values for this field may cause the
+       * [FFmpeg-compatible](https://trac.ffmpeg.org/wiki/Encode/H.264#Tune).
+       * Note that certain values for this field may cause the
        * transcoder to override other fields you set in the `H264CodecSettings`
        * message.
        * </pre>
@@ -3875,8 +3875,8 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Enforces the specified codec tune. The available options are
-       * [FFmpeg-compatible](https://trac.ffmpeg.org/wiki/Encode/H.264#Tune){:
-       * class="external" }. Note that certain values for this field may cause the
+       * [FFmpeg-compatible](https://trac.ffmpeg.org/wiki/Encode/H.264#Tune).
+       * Note that certain values for this field may cause the
        * transcoder to override other fields you set in the `H264CodecSettings`
        * message.
        * </pre>
@@ -3901,8 +3901,8 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Enforces the specified codec tune. The available options are
-       * [FFmpeg-compatible](https://trac.ffmpeg.org/wiki/Encode/H.264#Tune){:
-       * class="external" }. Note that certain values for this field may cause the
+       * [FFmpeg-compatible](https://trac.ffmpeg.org/wiki/Encode/H.264#Tune).
+       * Note that certain values for this field may cause the
        * transcoder to override other fields you set in the `H264CodecSettings`
        * message.
        * </pre>
@@ -3926,8 +3926,8 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Enforces the specified codec tune. The available options are
-       * [FFmpeg-compatible](https://trac.ffmpeg.org/wiki/Encode/H.264#Tune){:
-       * class="external" }. Note that certain values for this field may cause the
+       * [FFmpeg-compatible](https://trac.ffmpeg.org/wiki/Encode/H.264#Tune).
+       * Note that certain values for this field may cause the
        * transcoder to override other fields you set in the `H264CodecSettings`
        * message.
        * </pre>
@@ -3947,8 +3947,8 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Enforces the specified codec tune. The available options are
-       * [FFmpeg-compatible](https://trac.ffmpeg.org/wiki/Encode/H.264#Tune){:
-       * class="external" }. Note that certain values for this field may cause the
+       * [FFmpeg-compatible](https://trac.ffmpeg.org/wiki/Encode/H.264#Tune).
+       * Note that certain values for this field may cause the
        * transcoder to override other fields you set in the `H264CodecSettings`
        * message.
        * </pre>
@@ -3976,8 +3976,8 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * Enforces the specified codec preset. The default is `veryfast`. The
        * available options are
-       * [FFmpeg-compatible](https://trac.ffmpeg.org/wiki/Encode/H.264#Preset){:
-       * class="external" }. Note that certain values for this field may cause the
+       * [FFmpeg-compatible](https://trac.ffmpeg.org/wiki/Encode/H.264#Preset).
+       * Note that certain values for this field may cause the
        * transcoder to override other fields you set in the `H264CodecSettings`
        * message.
        * </pre>
@@ -4003,8 +4003,8 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * Enforces the specified codec preset. The default is `veryfast`. The
        * available options are
-       * [FFmpeg-compatible](https://trac.ffmpeg.org/wiki/Encode/H.264#Preset){:
-       * class="external" }. Note that certain values for this field may cause the
+       * [FFmpeg-compatible](https://trac.ffmpeg.org/wiki/Encode/H.264#Preset).
+       * Note that certain values for this field may cause the
        * transcoder to override other fields you set in the `H264CodecSettings`
        * message.
        * </pre>
@@ -4030,8 +4030,8 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * Enforces the specified codec preset. The default is `veryfast`. The
        * available options are
-       * [FFmpeg-compatible](https://trac.ffmpeg.org/wiki/Encode/H.264#Preset){:
-       * class="external" }. Note that certain values for this field may cause the
+       * [FFmpeg-compatible](https://trac.ffmpeg.org/wiki/Encode/H.264#Preset).
+       * Note that certain values for this field may cause the
        * transcoder to override other fields you set in the `H264CodecSettings`
        * message.
        * </pre>
@@ -4056,8 +4056,8 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * Enforces the specified codec preset. The default is `veryfast`. The
        * available options are
-       * [FFmpeg-compatible](https://trac.ffmpeg.org/wiki/Encode/H.264#Preset){:
-       * class="external" }. Note that certain values for this field may cause the
+       * [FFmpeg-compatible](https://trac.ffmpeg.org/wiki/Encode/H.264#Preset).
+       * Note that certain values for this field may cause the
        * transcoder to override other fields you set in the `H264CodecSettings`
        * message.
        * </pre>
@@ -4078,8 +4078,8 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * Enforces the specified codec preset. The default is `veryfast`. The
        * available options are
-       * [FFmpeg-compatible](https://trac.ffmpeg.org/wiki/Encode/H.264#Preset){:
-       * class="external" }. Note that certain values for this field may cause the
+       * [FFmpeg-compatible](https://trac.ffmpeg.org/wiki/Encode/H.264#Preset).
+       * Note that certain values for this field may cause the
        * transcoder to override other fields you set in the `H264CodecSettings`
        * message.
        * </pre>
@@ -4213,8 +4213,8 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The video bitrate in bits per second. Must be between 1 and
-     * 1,000,000,000.
+     * Required. The video bitrate in bits per second. The minimum value is 1,000.
+     * The maximum value is 800,000,000.
      * </pre>
      *
      * <code>int32 bitrate_bps = 4 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -4227,17 +4227,17 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Pixel format to use. The default is `"yuv420p"`.
+     * Pixel format to use. The default is `yuv420p`.
      * Supported pixel formats:
-     * - 'yuv420p' pixel format.
-     * - 'yuv422p' pixel format.
-     * - 'yuv444p' pixel format.
-     * - 'yuv420p10' 10-bit HDR pixel format.
-     * - 'yuv422p10' 10-bit HDR pixel format.
-     * - 'yuv444p10' 10-bit HDR pixel format.
-     * - 'yuv420p12' 12-bit HDR pixel format.
-     * - 'yuv422p12' 12-bit HDR pixel format.
-     * - 'yuv444p12' 12-bit HDR pixel format.
+     * - `yuv420p` pixel format
+     * - `yuv422p` pixel format
+     * - `yuv444p` pixel format
+     * - `yuv420p10` 10-bit HDR pixel format
+     * - `yuv422p10` 10-bit HDR pixel format
+     * - `yuv444p10` 10-bit HDR pixel format
+     * - `yuv420p12` 12-bit HDR pixel format
+     * - `yuv422p12` 12-bit HDR pixel format
+     * - `yuv444p12` 12-bit HDR pixel format
      * </pre>
      *
      * <code>string pixel_format = 5;</code>
@@ -4249,17 +4249,17 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Pixel format to use. The default is `"yuv420p"`.
+     * Pixel format to use. The default is `yuv420p`.
      * Supported pixel formats:
-     * - 'yuv420p' pixel format.
-     * - 'yuv422p' pixel format.
-     * - 'yuv444p' pixel format.
-     * - 'yuv420p10' 10-bit HDR pixel format.
-     * - 'yuv422p10' 10-bit HDR pixel format.
-     * - 'yuv444p10' 10-bit HDR pixel format.
-     * - 'yuv420p12' 12-bit HDR pixel format.
-     * - 'yuv422p12' 12-bit HDR pixel format.
-     * - 'yuv444p12' 12-bit HDR pixel format.
+     * - `yuv420p` pixel format
+     * - `yuv422p` pixel format
+     * - `yuv444p` pixel format
+     * - `yuv420p10` 10-bit HDR pixel format
+     * - `yuv422p10` 10-bit HDR pixel format
+     * - `yuv444p10` 10-bit HDR pixel format
+     * - `yuv420p12` 12-bit HDR pixel format
+     * - `yuv422p12` 12-bit HDR pixel format
+     * - `yuv444p12` 12-bit HDR pixel format
      * </pre>
      *
      * <code>string pixel_format = 5;</code>
@@ -4272,10 +4272,10 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specify the `rate_control_mode`. The default is `"vbr"`.
+     * Specify the `rate_control_mode`. The default is `vbr`.
      * Supported rate control modes:
-     * - 'vbr' - variable bitrate
-     * - 'crf' - constant rate factor
+     * - `vbr` - variable bitrate
+     * - `crf` - constant rate factor
      * </pre>
      *
      * <code>string rate_control_mode = 6;</code>
@@ -4287,10 +4287,10 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specify the `rate_control_mode`. The default is `"vbr"`.
+     * Specify the `rate_control_mode`. The default is `vbr`.
      * Supported rate control modes:
-     * - 'vbr' - variable bitrate
-     * - 'crf' - constant rate factor
+     * - `vbr` - variable bitrate
+     * - `crf` - constant rate factor
      * </pre>
      *
      * <code>string rate_control_mode = 6;</code>
@@ -4359,7 +4359,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Select the GOP size based on the specified duration. The default is
-     * `"3s"`. Note that `gopDuration` must be less than or equal to
+     * `3s`. Note that `gopDuration` must be less than or equal to
      * [`segmentDuration`](#SegmentSettings), and
      * [`segmentDuration`](#SegmentSettings) must be divisible by
      * `gopDuration`.
@@ -4375,7 +4375,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Select the GOP size based on the specified duration. The default is
-     * `"3s"`. Note that `gopDuration` must be less than or equal to
+     * `3s`. Note that `gopDuration` must be less than or equal to
      * [`segmentDuration`](#SegmentSettings), and
      * [`segmentDuration`](#SegmentSettings) must be divisible by
      * `gopDuration`.
@@ -4391,7 +4391,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Select the GOP size based on the specified duration. The default is
-     * `"3s"`. Note that `gopDuration` must be less than or equal to
+     * `3s`. Note that `gopDuration` must be less than or equal to
      * [`segmentDuration`](#SegmentSettings), and
      * [`segmentDuration`](#SegmentSettings) must be divisible by
      * `gopDuration`.
@@ -4406,7 +4406,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Use two-pass encoding strategy to achieve better video quality.
-     * `VideoStream.rate_control_mode` must be `"vbr"`. The default is `false`.
+     * `VideoStream.rate_control_mode` must be `vbr`. The default is `false`.
      * </pre>
      *
      * <code>bool enable_two_pass = 11;</code>
@@ -4494,27 +4494,27 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Enforces the specified codec profile. The following profiles are
      * supported:
-     * 8bit profiles
-     * *   `main` (default)
-     * *   `main-intra`
-     * *   `mainstillpicture`
-     * 10bit profiles
-     * *   `main10` (default)
-     * *   `main10-intra`
-     * *   `main422-10`
-     * *   `main422-10-intra`
-     * *   `main444-10`
-     * *   `main444-10-intra`
-     * 12bit profiles
-     * *   `main12` (default)
-     * *   `main12-intra`
-     * *   `main422-12`
-     * *   `main422-12-intra`
-     * *   `main444-12`
-     * *   `main444-12-intra`
+     * *   8-bit profiles
+     *     *   `main` (default)
+     *     *   `main-intra`
+     *     *   `mainstillpicture`
+     * *   10-bit profiles
+     *     *   `main10` (default)
+     *     *   `main10-intra`
+     *     *   `main422-10`
+     *     *   `main422-10-intra`
+     *     *   `main444-10`
+     *     *   `main444-10-intra`
+     * *   12-bit profiles
+     *     *   `main12` (default)
+     *     *   `main12-intra`
+     *     *   `main422-12`
+     *     *   `main422-12-intra`
+     *     *   `main444-12`
+     *     *   `main444-12-intra`
      * The available options are
-     * [FFmpeg-compatible](https://x265.readthedocs.io/){:
-     * class="external" }. Note that certain values for this field may cause the
+     * [FFmpeg-compatible](https://x265.readthedocs.io/).
+     * Note that certain values for this field may cause the
      * transcoder to override other fields you set in the `H265CodecSettings`
      * message.
      * </pre>
@@ -4530,27 +4530,27 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Enforces the specified codec profile. The following profiles are
      * supported:
-     * 8bit profiles
-     * *   `main` (default)
-     * *   `main-intra`
-     * *   `mainstillpicture`
-     * 10bit profiles
-     * *   `main10` (default)
-     * *   `main10-intra`
-     * *   `main422-10`
-     * *   `main422-10-intra`
-     * *   `main444-10`
-     * *   `main444-10-intra`
-     * 12bit profiles
-     * *   `main12` (default)
-     * *   `main12-intra`
-     * *   `main422-12`
-     * *   `main422-12-intra`
-     * *   `main444-12`
-     * *   `main444-12-intra`
+     * *   8-bit profiles
+     *     *   `main` (default)
+     *     *   `main-intra`
+     *     *   `mainstillpicture`
+     * *   10-bit profiles
+     *     *   `main10` (default)
+     *     *   `main10-intra`
+     *     *   `main422-10`
+     *     *   `main422-10-intra`
+     *     *   `main444-10`
+     *     *   `main444-10-intra`
+     * *   12-bit profiles
+     *     *   `main12` (default)
+     *     *   `main12-intra`
+     *     *   `main422-12`
+     *     *   `main422-12-intra`
+     *     *   `main444-12`
+     *     *   `main444-12-intra`
      * The available options are
-     * [FFmpeg-compatible](https://x265.readthedocs.io/){:
-     * class="external" }. Note that certain values for this field may cause the
+     * [FFmpeg-compatible](https://x265.readthedocs.io/).
+     * Note that certain values for this field may cause the
      * transcoder to override other fields you set in the `H265CodecSettings`
      * message.
      * </pre>
@@ -4566,8 +4566,8 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Enforces the specified codec tune. The available options are
-     * [FFmpeg-compatible](https://trac.ffmpeg.org/wiki/Encode/H.265){:
-     * class="external" }. Note that certain values for this field may cause the
+     * [FFmpeg-compatible](https://trac.ffmpeg.org/wiki/Encode/H.265).
+     * Note that certain values for this field may cause the
      * transcoder to override other fields you set in the `H265CodecSettings`
      * message.
      * </pre>
@@ -4582,8 +4582,8 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Enforces the specified codec tune. The available options are
-     * [FFmpeg-compatible](https://trac.ffmpeg.org/wiki/Encode/H.265){:
-     * class="external" }. Note that certain values for this field may cause the
+     * [FFmpeg-compatible](https://trac.ffmpeg.org/wiki/Encode/H.265).
+     * Note that certain values for this field may cause the
      * transcoder to override other fields you set in the `H265CodecSettings`
      * message.
      * </pre>
@@ -4600,8 +4600,8 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Enforces the specified codec preset. The default is `veryfast`. The
      * available options are
-     * [FFmpeg-compatible](https://trac.ffmpeg.org/wiki/Encode/H.265){:
-     * class="external" }. Note that certain values for this field may cause the
+     * [FFmpeg-compatible](https://trac.ffmpeg.org/wiki/Encode/H.265).
+     * Note that certain values for this field may cause the
      * transcoder to override other fields you set in the `H265CodecSettings`
      * message.
      * </pre>
@@ -4617,8 +4617,8 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Enforces the specified codec preset. The default is `veryfast`. The
      * available options are
-     * [FFmpeg-compatible](https://trac.ffmpeg.org/wiki/Encode/H.265){:
-     * class="external" }. Note that certain values for this field may cause the
+     * [FFmpeg-compatible](https://trac.ffmpeg.org/wiki/Encode/H.265).
+     * Note that certain values for this field may cause the
      * transcoder to override other fields you set in the `H265CodecSettings`
      * message.
      * </pre>
@@ -4955,8 +4955,8 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The video bitrate in bits per second. Must be between 1 and
-     * 1,000,000,000.
+     * Required. The video bitrate in bits per second. The minimum value is 1,000.
+     * The maximum value is 800,000,000.
      * </pre>
      *
      * <code>int32 bitrate_bps = 4 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -4974,17 +4974,17 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Pixel format to use. The default is `"yuv420p"`.
+     * Pixel format to use. The default is `yuv420p`.
      * Supported pixel formats:
-     * - 'yuv420p' pixel format.
-     * - 'yuv422p' pixel format.
-     * - 'yuv444p' pixel format.
-     * - 'yuv420p10' 10-bit HDR pixel format.
-     * - 'yuv422p10' 10-bit HDR pixel format.
-     * - 'yuv444p10' 10-bit HDR pixel format.
-     * - 'yuv420p12' 12-bit HDR pixel format.
-     * - 'yuv422p12' 12-bit HDR pixel format.
-     * - 'yuv444p12' 12-bit HDR pixel format.
+     * - `yuv420p` pixel format
+     * - `yuv422p` pixel format
+     * - `yuv444p` pixel format
+     * - `yuv420p10` 10-bit HDR pixel format
+     * - `yuv422p10` 10-bit HDR pixel format
+     * - `yuv444p10` 10-bit HDR pixel format
+     * - `yuv420p12` 12-bit HDR pixel format
+     * - `yuv422p12` 12-bit HDR pixel format
+     * - `yuv444p12` 12-bit HDR pixel format
      * </pre>
      *
      * <code>string pixel_format = 5;</code>
@@ -5007,17 +5007,17 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Pixel format to use. The default is `"yuv420p"`.
+     * Pixel format to use. The default is `yuv420p`.
      * Supported pixel formats:
-     * - 'yuv420p' pixel format.
-     * - 'yuv422p' pixel format.
-     * - 'yuv444p' pixel format.
-     * - 'yuv420p10' 10-bit HDR pixel format.
-     * - 'yuv422p10' 10-bit HDR pixel format.
-     * - 'yuv444p10' 10-bit HDR pixel format.
-     * - 'yuv420p12' 12-bit HDR pixel format.
-     * - 'yuv422p12' 12-bit HDR pixel format.
-     * - 'yuv444p12' 12-bit HDR pixel format.
+     * - `yuv420p` pixel format
+     * - `yuv422p` pixel format
+     * - `yuv444p` pixel format
+     * - `yuv420p10` 10-bit HDR pixel format
+     * - `yuv422p10` 10-bit HDR pixel format
+     * - `yuv444p10` 10-bit HDR pixel format
+     * - `yuv420p12` 12-bit HDR pixel format
+     * - `yuv422p12` 12-bit HDR pixel format
+     * - `yuv444p12` 12-bit HDR pixel format
      * </pre>
      *
      * <code>string pixel_format = 5;</code>
@@ -5043,10 +5043,10 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specify the `rate_control_mode`. The default is `"vbr"`.
+     * Specify the `rate_control_mode`. The default is `vbr`.
      * Supported rate control modes:
-     * - 'vbr' - variable bitrate
-     * - 'crf' - constant rate factor
+     * - `vbr` - variable bitrate
+     * - `crf` - constant rate factor
      * </pre>
      *
      * <code>string rate_control_mode = 6;</code>
@@ -5069,10 +5069,10 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specify the `rate_control_mode`. The default is `"vbr"`.
+     * Specify the `rate_control_mode`. The default is `vbr`.
      * Supported rate control modes:
-     * - 'vbr' - variable bitrate
-     * - 'crf' - constant rate factor
+     * - `vbr` - variable bitrate
+     * - `crf` - constant rate factor
      * </pre>
      *
      * <code>string rate_control_mode = 6;</code>
@@ -5173,7 +5173,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Select the GOP size based on the specified duration. The default is
-     * `"3s"`. Note that `gopDuration` must be less than or equal to
+     * `3s`. Note that `gopDuration` must be less than or equal to
      * [`segmentDuration`](#SegmentSettings), and
      * [`segmentDuration`](#SegmentSettings) must be divisible by
      * `gopDuration`.
@@ -5192,7 +5192,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Select the GOP size based on the specified duration. The default is
-     * `"3s"`. Note that `gopDuration` must be less than or equal to
+     * `3s`. Note that `gopDuration` must be less than or equal to
      * [`segmentDuration`](#SegmentSettings), and
      * [`segmentDuration`](#SegmentSettings) must be divisible by
      * `gopDuration`.
@@ -5214,7 +5214,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Select the GOP size based on the specified duration. The default is
-     * `"3s"`. Note that `gopDuration` must be less than or equal to
+     * `3s`. Note that `gopDuration` must be less than or equal to
      * [`segmentDuration`](#SegmentSettings), and
      * [`segmentDuration`](#SegmentSettings) must be divisible by
      * `gopDuration`.
@@ -5237,7 +5237,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Use two-pass encoding strategy to achieve better video quality.
-     * `VideoStream.rate_control_mode` must be `"vbr"`. The default is `false`.
+     * `VideoStream.rate_control_mode` must be `vbr`. The default is `false`.
      * </pre>
      *
      * <code>bool enable_two_pass = 11;</code>
@@ -5355,27 +5355,27 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Enforces the specified codec profile. The following profiles are
      * supported:
-     * 8bit profiles
-     * *   `main` (default)
-     * *   `main-intra`
-     * *   `mainstillpicture`
-     * 10bit profiles
-     * *   `main10` (default)
-     * *   `main10-intra`
-     * *   `main422-10`
-     * *   `main422-10-intra`
-     * *   `main444-10`
-     * *   `main444-10-intra`
-     * 12bit profiles
-     * *   `main12` (default)
-     * *   `main12-intra`
-     * *   `main422-12`
-     * *   `main422-12-intra`
-     * *   `main444-12`
-     * *   `main444-12-intra`
+     * *   8-bit profiles
+     *     *   `main` (default)
+     *     *   `main-intra`
+     *     *   `mainstillpicture`
+     * *   10-bit profiles
+     *     *   `main10` (default)
+     *     *   `main10-intra`
+     *     *   `main422-10`
+     *     *   `main422-10-intra`
+     *     *   `main444-10`
+     *     *   `main444-10-intra`
+     * *   12-bit profiles
+     *     *   `main12` (default)
+     *     *   `main12-intra`
+     *     *   `main422-12`
+     *     *   `main422-12-intra`
+     *     *   `main444-12`
+     *     *   `main444-12-intra`
      * The available options are
-     * [FFmpeg-compatible](https://x265.readthedocs.io/){:
-     * class="external" }. Note that certain values for this field may cause the
+     * [FFmpeg-compatible](https://x265.readthedocs.io/).
+     * Note that certain values for this field may cause the
      * transcoder to override other fields you set in the `H265CodecSettings`
      * message.
      * </pre>
@@ -5402,27 +5402,27 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Enforces the specified codec profile. The following profiles are
      * supported:
-     * 8bit profiles
-     * *   `main` (default)
-     * *   `main-intra`
-     * *   `mainstillpicture`
-     * 10bit profiles
-     * *   `main10` (default)
-     * *   `main10-intra`
-     * *   `main422-10`
-     * *   `main422-10-intra`
-     * *   `main444-10`
-     * *   `main444-10-intra`
-     * 12bit profiles
-     * *   `main12` (default)
-     * *   `main12-intra`
-     * *   `main422-12`
-     * *   `main422-12-intra`
-     * *   `main444-12`
-     * *   `main444-12-intra`
+     * *   8-bit profiles
+     *     *   `main` (default)
+     *     *   `main-intra`
+     *     *   `mainstillpicture`
+     * *   10-bit profiles
+     *     *   `main10` (default)
+     *     *   `main10-intra`
+     *     *   `main422-10`
+     *     *   `main422-10-intra`
+     *     *   `main444-10`
+     *     *   `main444-10-intra`
+     * *   12-bit profiles
+     *     *   `main12` (default)
+     *     *   `main12-intra`
+     *     *   `main422-12`
+     *     *   `main422-12-intra`
+     *     *   `main444-12`
+     *     *   `main444-12-intra`
      * The available options are
-     * [FFmpeg-compatible](https://x265.readthedocs.io/){:
-     * class="external" }. Note that certain values for this field may cause the
+     * [FFmpeg-compatible](https://x265.readthedocs.io/).
+     * Note that certain values for this field may cause the
      * transcoder to override other fields you set in the `H265CodecSettings`
      * message.
      * </pre>
@@ -5451,8 +5451,8 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Enforces the specified codec tune. The available options are
-     * [FFmpeg-compatible](https://trac.ffmpeg.org/wiki/Encode/H.265){:
-     * class="external" }. Note that certain values for this field may cause the
+     * [FFmpeg-compatible](https://trac.ffmpeg.org/wiki/Encode/H.265).
+     * Note that certain values for this field may cause the
      * transcoder to override other fields you set in the `H265CodecSettings`
      * message.
      * </pre>
@@ -5478,8 +5478,8 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Enforces the specified codec tune. The available options are
-     * [FFmpeg-compatible](https://trac.ffmpeg.org/wiki/Encode/H.265){:
-     * class="external" }. Note that certain values for this field may cause the
+     * [FFmpeg-compatible](https://trac.ffmpeg.org/wiki/Encode/H.265).
+     * Note that certain values for this field may cause the
      * transcoder to override other fields you set in the `H265CodecSettings`
      * message.
      * </pre>
@@ -5509,8 +5509,8 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Enforces the specified codec preset. The default is `veryfast`. The
      * available options are
-     * [FFmpeg-compatible](https://trac.ffmpeg.org/wiki/Encode/H.265){:
-     * class="external" }. Note that certain values for this field may cause the
+     * [FFmpeg-compatible](https://trac.ffmpeg.org/wiki/Encode/H.265).
+     * Note that certain values for this field may cause the
      * transcoder to override other fields you set in the `H265CodecSettings`
      * message.
      * </pre>
@@ -5537,8 +5537,8 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Enforces the specified codec preset. The default is `veryfast`. The
      * available options are
-     * [FFmpeg-compatible](https://trac.ffmpeg.org/wiki/Encode/H.265){:
-     * class="external" }. Note that certain values for this field may cause the
+     * [FFmpeg-compatible](https://trac.ffmpeg.org/wiki/Encode/H.265).
+     * Note that certain values for this field may cause the
      * transcoder to override other fields you set in the `H265CodecSettings`
      * message.
      * </pre>
@@ -6416,8 +6416,8 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. The video bitrate in bits per second. Must be between 1 and
-       * 1,000,000,000.
+       * Required. The video bitrate in bits per second. The minimum value is 1,000.
+       * The maximum value is 800,000,000.
        * </pre>
        *
        * <code>int32 bitrate_bps = 4 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -6432,8 +6432,8 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. The video bitrate in bits per second. Must be between 1 and
-       * 1,000,000,000.
+       * Required. The video bitrate in bits per second. The minimum value is 1,000.
+       * The maximum value is 800,000,000.
        * </pre>
        *
        * <code>int32 bitrate_bps = 4 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -6451,8 +6451,8 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. The video bitrate in bits per second. Must be between 1 and
-       * 1,000,000,000.
+       * Required. The video bitrate in bits per second. The minimum value is 1,000.
+       * The maximum value is 800,000,000.
        * </pre>
        *
        * <code>int32 bitrate_bps = 4 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -6471,17 +6471,17 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Pixel format to use. The default is `"yuv420p"`.
+       * Pixel format to use. The default is `yuv420p`.
        * Supported pixel formats:
-       * - 'yuv420p' pixel format.
-       * - 'yuv422p' pixel format.
-       * - 'yuv444p' pixel format.
-       * - 'yuv420p10' 10-bit HDR pixel format.
-       * - 'yuv422p10' 10-bit HDR pixel format.
-       * - 'yuv444p10' 10-bit HDR pixel format.
-       * - 'yuv420p12' 12-bit HDR pixel format.
-       * - 'yuv422p12' 12-bit HDR pixel format.
-       * - 'yuv444p12' 12-bit HDR pixel format.
+       * - `yuv420p` pixel format
+       * - `yuv422p` pixel format
+       * - `yuv444p` pixel format
+       * - `yuv420p10` 10-bit HDR pixel format
+       * - `yuv422p10` 10-bit HDR pixel format
+       * - `yuv444p10` 10-bit HDR pixel format
+       * - `yuv420p12` 12-bit HDR pixel format
+       * - `yuv422p12` 12-bit HDR pixel format
+       * - `yuv444p12` 12-bit HDR pixel format
        * </pre>
        *
        * <code>string pixel_format = 5;</code>
@@ -6503,17 +6503,17 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Pixel format to use. The default is `"yuv420p"`.
+       * Pixel format to use. The default is `yuv420p`.
        * Supported pixel formats:
-       * - 'yuv420p' pixel format.
-       * - 'yuv422p' pixel format.
-       * - 'yuv444p' pixel format.
-       * - 'yuv420p10' 10-bit HDR pixel format.
-       * - 'yuv422p10' 10-bit HDR pixel format.
-       * - 'yuv444p10' 10-bit HDR pixel format.
-       * - 'yuv420p12' 12-bit HDR pixel format.
-       * - 'yuv422p12' 12-bit HDR pixel format.
-       * - 'yuv444p12' 12-bit HDR pixel format.
+       * - `yuv420p` pixel format
+       * - `yuv422p` pixel format
+       * - `yuv444p` pixel format
+       * - `yuv420p10` 10-bit HDR pixel format
+       * - `yuv422p10` 10-bit HDR pixel format
+       * - `yuv444p10` 10-bit HDR pixel format
+       * - `yuv420p12` 12-bit HDR pixel format
+       * - `yuv422p12` 12-bit HDR pixel format
+       * - `yuv444p12` 12-bit HDR pixel format
        * </pre>
        *
        * <code>string pixel_format = 5;</code>
@@ -6535,17 +6535,17 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Pixel format to use. The default is `"yuv420p"`.
+       * Pixel format to use. The default is `yuv420p`.
        * Supported pixel formats:
-       * - 'yuv420p' pixel format.
-       * - 'yuv422p' pixel format.
-       * - 'yuv444p' pixel format.
-       * - 'yuv420p10' 10-bit HDR pixel format.
-       * - 'yuv422p10' 10-bit HDR pixel format.
-       * - 'yuv444p10' 10-bit HDR pixel format.
-       * - 'yuv420p12' 12-bit HDR pixel format.
-       * - 'yuv422p12' 12-bit HDR pixel format.
-       * - 'yuv444p12' 12-bit HDR pixel format.
+       * - `yuv420p` pixel format
+       * - `yuv422p` pixel format
+       * - `yuv444p` pixel format
+       * - `yuv420p10` 10-bit HDR pixel format
+       * - `yuv422p10` 10-bit HDR pixel format
+       * - `yuv444p10` 10-bit HDR pixel format
+       * - `yuv420p12` 12-bit HDR pixel format
+       * - `yuv422p12` 12-bit HDR pixel format
+       * - `yuv444p12` 12-bit HDR pixel format
        * </pre>
        *
        * <code>string pixel_format = 5;</code>
@@ -6566,17 +6566,17 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Pixel format to use. The default is `"yuv420p"`.
+       * Pixel format to use. The default is `yuv420p`.
        * Supported pixel formats:
-       * - 'yuv420p' pixel format.
-       * - 'yuv422p' pixel format.
-       * - 'yuv444p' pixel format.
-       * - 'yuv420p10' 10-bit HDR pixel format.
-       * - 'yuv422p10' 10-bit HDR pixel format.
-       * - 'yuv444p10' 10-bit HDR pixel format.
-       * - 'yuv420p12' 12-bit HDR pixel format.
-       * - 'yuv422p12' 12-bit HDR pixel format.
-       * - 'yuv444p12' 12-bit HDR pixel format.
+       * - `yuv420p` pixel format
+       * - `yuv422p` pixel format
+       * - `yuv444p` pixel format
+       * - `yuv420p10` 10-bit HDR pixel format
+       * - `yuv422p10` 10-bit HDR pixel format
+       * - `yuv444p10` 10-bit HDR pixel format
+       * - `yuv420p12` 12-bit HDR pixel format
+       * - `yuv422p12` 12-bit HDR pixel format
+       * - `yuv444p12` 12-bit HDR pixel format
        * </pre>
        *
        * <code>string pixel_format = 5;</code>
@@ -6593,17 +6593,17 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Pixel format to use. The default is `"yuv420p"`.
+       * Pixel format to use. The default is `yuv420p`.
        * Supported pixel formats:
-       * - 'yuv420p' pixel format.
-       * - 'yuv422p' pixel format.
-       * - 'yuv444p' pixel format.
-       * - 'yuv420p10' 10-bit HDR pixel format.
-       * - 'yuv422p10' 10-bit HDR pixel format.
-       * - 'yuv444p10' 10-bit HDR pixel format.
-       * - 'yuv420p12' 12-bit HDR pixel format.
-       * - 'yuv422p12' 12-bit HDR pixel format.
-       * - 'yuv444p12' 12-bit HDR pixel format.
+       * - `yuv420p` pixel format
+       * - `yuv422p` pixel format
+       * - `yuv444p` pixel format
+       * - `yuv420p10` 10-bit HDR pixel format
+       * - `yuv422p10` 10-bit HDR pixel format
+       * - `yuv444p10` 10-bit HDR pixel format
+       * - `yuv420p12` 12-bit HDR pixel format
+       * - `yuv422p12` 12-bit HDR pixel format
+       * - `yuv444p12` 12-bit HDR pixel format
        * </pre>
        *
        * <code>string pixel_format = 5;</code>
@@ -6627,10 +6627,10 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Specify the `rate_control_mode`. The default is `"vbr"`.
+       * Specify the `rate_control_mode`. The default is `vbr`.
        * Supported rate control modes:
-       * - 'vbr' - variable bitrate
-       * - 'crf' - constant rate factor
+       * - `vbr` - variable bitrate
+       * - `crf` - constant rate factor
        * </pre>
        *
        * <code>string rate_control_mode = 6;</code>
@@ -6652,10 +6652,10 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Specify the `rate_control_mode`. The default is `"vbr"`.
+       * Specify the `rate_control_mode`. The default is `vbr`.
        * Supported rate control modes:
-       * - 'vbr' - variable bitrate
-       * - 'crf' - constant rate factor
+       * - `vbr` - variable bitrate
+       * - `crf` - constant rate factor
        * </pre>
        *
        * <code>string rate_control_mode = 6;</code>
@@ -6677,10 +6677,10 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Specify the `rate_control_mode`. The default is `"vbr"`.
+       * Specify the `rate_control_mode`. The default is `vbr`.
        * Supported rate control modes:
-       * - 'vbr' - variable bitrate
-       * - 'crf' - constant rate factor
+       * - `vbr` - variable bitrate
+       * - `crf` - constant rate factor
        * </pre>
        *
        * <code>string rate_control_mode = 6;</code>
@@ -6701,10 +6701,10 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Specify the `rate_control_mode`. The default is `"vbr"`.
+       * Specify the `rate_control_mode`. The default is `vbr`.
        * Supported rate control modes:
-       * - 'vbr' - variable bitrate
-       * - 'crf' - constant rate factor
+       * - `vbr` - variable bitrate
+       * - `crf` - constant rate factor
        * </pre>
        *
        * <code>string rate_control_mode = 6;</code>
@@ -6721,10 +6721,10 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Specify the `rate_control_mode`. The default is `"vbr"`.
+       * Specify the `rate_control_mode`. The default is `vbr`.
        * Supported rate control modes:
-       * - 'vbr' - variable bitrate
-       * - 'crf' - constant rate factor
+       * - `vbr` - variable bitrate
+       * - `crf` - constant rate factor
        * </pre>
        *
        * <code>string rate_control_mode = 6;</code>
@@ -6936,7 +6936,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Select the GOP size based on the specified duration. The default is
-       * `"3s"`. Note that `gopDuration` must be less than or equal to
+       * `3s`. Note that `gopDuration` must be less than or equal to
        * [`segmentDuration`](#SegmentSettings), and
        * [`segmentDuration`](#SegmentSettings) must be divisible by
        * `gopDuration`.
@@ -6955,7 +6955,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Select the GOP size based on the specified duration. The default is
-       * `"3s"`. Note that `gopDuration` must be less than or equal to
+       * `3s`. Note that `gopDuration` must be less than or equal to
        * [`segmentDuration`](#SegmentSettings), and
        * [`segmentDuration`](#SegmentSettings) must be divisible by
        * `gopDuration`.
@@ -6984,7 +6984,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Select the GOP size based on the specified duration. The default is
-       * `"3s"`. Note that `gopDuration` must be less than or equal to
+       * `3s`. Note that `gopDuration` must be less than or equal to
        * [`segmentDuration`](#SegmentSettings), and
        * [`segmentDuration`](#SegmentSettings) must be divisible by
        * `gopDuration`.
@@ -7010,7 +7010,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Select the GOP size based on the specified duration. The default is
-       * `"3s"`. Note that `gopDuration` must be less than or equal to
+       * `3s`. Note that `gopDuration` must be less than or equal to
        * [`segmentDuration`](#SegmentSettings), and
        * [`segmentDuration`](#SegmentSettings) must be divisible by
        * `gopDuration`.
@@ -7033,7 +7033,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Select the GOP size based on the specified duration. The default is
-       * `"3s"`. Note that `gopDuration` must be less than or equal to
+       * `3s`. Note that `gopDuration` must be less than or equal to
        * [`segmentDuration`](#SegmentSettings), and
        * [`segmentDuration`](#SegmentSettings) must be divisible by
        * `gopDuration`.
@@ -7066,7 +7066,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Select the GOP size based on the specified duration. The default is
-       * `"3s"`. Note that `gopDuration` must be less than or equal to
+       * `3s`. Note that `gopDuration` must be less than or equal to
        * [`segmentDuration`](#SegmentSettings), and
        * [`segmentDuration`](#SegmentSettings) must be divisible by
        * `gopDuration`.
@@ -7095,7 +7095,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Select the GOP size based on the specified duration. The default is
-       * `"3s"`. Note that `gopDuration` must be less than or equal to
+       * `3s`. Note that `gopDuration` must be less than or equal to
        * [`segmentDuration`](#SegmentSettings), and
        * [`segmentDuration`](#SegmentSettings) must be divisible by
        * `gopDuration`.
@@ -7111,7 +7111,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Select the GOP size based on the specified duration. The default is
-       * `"3s"`. Note that `gopDuration` must be less than or equal to
+       * `3s`. Note that `gopDuration` must be less than or equal to
        * [`segmentDuration`](#SegmentSettings), and
        * [`segmentDuration`](#SegmentSettings) must be divisible by
        * `gopDuration`.
@@ -7135,7 +7135,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Select the GOP size based on the specified duration. The default is
-       * `"3s"`. Note that `gopDuration` must be less than or equal to
+       * `3s`. Note that `gopDuration` must be less than or equal to
        * [`segmentDuration`](#SegmentSettings), and
        * [`segmentDuration`](#SegmentSettings) must be divisible by
        * `gopDuration`.
@@ -7172,7 +7172,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Use two-pass encoding strategy to achieve better video quality.
-       * `VideoStream.rate_control_mode` must be `"vbr"`. The default is `false`.
+       * `VideoStream.rate_control_mode` must be `vbr`. The default is `false`.
        * </pre>
        *
        * <code>bool enable_two_pass = 11;</code>
@@ -7188,7 +7188,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Use two-pass encoding strategy to achieve better video quality.
-       * `VideoStream.rate_control_mode` must be `"vbr"`. The default is `false`.
+       * `VideoStream.rate_control_mode` must be `vbr`. The default is `false`.
        * </pre>
        *
        * <code>bool enable_two_pass = 11;</code>
@@ -7207,7 +7207,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Use two-pass encoding strategy to achieve better video quality.
-       * `VideoStream.rate_control_mode` must be `"vbr"`. The default is `false`.
+       * `VideoStream.rate_control_mode` must be `vbr`. The default is `false`.
        * </pre>
        *
        * <code>bool enable_two_pass = 11;</code>
@@ -7512,27 +7512,27 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * Enforces the specified codec profile. The following profiles are
        * supported:
-       * 8bit profiles
-       * *   `main` (default)
-       * *   `main-intra`
-       * *   `mainstillpicture`
-       * 10bit profiles
-       * *   `main10` (default)
-       * *   `main10-intra`
-       * *   `main422-10`
-       * *   `main422-10-intra`
-       * *   `main444-10`
-       * *   `main444-10-intra`
-       * 12bit profiles
-       * *   `main12` (default)
-       * *   `main12-intra`
-       * *   `main422-12`
-       * *   `main422-12-intra`
-       * *   `main444-12`
-       * *   `main444-12-intra`
+       * *   8-bit profiles
+       *     *   `main` (default)
+       *     *   `main-intra`
+       *     *   `mainstillpicture`
+       * *   10-bit profiles
+       *     *   `main10` (default)
+       *     *   `main10-intra`
+       *     *   `main422-10`
+       *     *   `main422-10-intra`
+       *     *   `main444-10`
+       *     *   `main444-10-intra`
+       * *   12-bit profiles
+       *     *   `main12` (default)
+       *     *   `main12-intra`
+       *     *   `main422-12`
+       *     *   `main422-12-intra`
+       *     *   `main444-12`
+       *     *   `main444-12-intra`
        * The available options are
-       * [FFmpeg-compatible](https://x265.readthedocs.io/){:
-       * class="external" }. Note that certain values for this field may cause the
+       * [FFmpeg-compatible](https://x265.readthedocs.io/).
+       * Note that certain values for this field may cause the
        * transcoder to override other fields you set in the `H265CodecSettings`
        * message.
        * </pre>
@@ -7558,27 +7558,27 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * Enforces the specified codec profile. The following profiles are
        * supported:
-       * 8bit profiles
-       * *   `main` (default)
-       * *   `main-intra`
-       * *   `mainstillpicture`
-       * 10bit profiles
-       * *   `main10` (default)
-       * *   `main10-intra`
-       * *   `main422-10`
-       * *   `main422-10-intra`
-       * *   `main444-10`
-       * *   `main444-10-intra`
-       * 12bit profiles
-       * *   `main12` (default)
-       * *   `main12-intra`
-       * *   `main422-12`
-       * *   `main422-12-intra`
-       * *   `main444-12`
-       * *   `main444-12-intra`
+       * *   8-bit profiles
+       *     *   `main` (default)
+       *     *   `main-intra`
+       *     *   `mainstillpicture`
+       * *   10-bit profiles
+       *     *   `main10` (default)
+       *     *   `main10-intra`
+       *     *   `main422-10`
+       *     *   `main422-10-intra`
+       *     *   `main444-10`
+       *     *   `main444-10-intra`
+       * *   12-bit profiles
+       *     *   `main12` (default)
+       *     *   `main12-intra`
+       *     *   `main422-12`
+       *     *   `main422-12-intra`
+       *     *   `main444-12`
+       *     *   `main444-12-intra`
        * The available options are
-       * [FFmpeg-compatible](https://x265.readthedocs.io/){:
-       * class="external" }. Note that certain values for this field may cause the
+       * [FFmpeg-compatible](https://x265.readthedocs.io/).
+       * Note that certain values for this field may cause the
        * transcoder to override other fields you set in the `H265CodecSettings`
        * message.
        * </pre>
@@ -7604,27 +7604,27 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * Enforces the specified codec profile. The following profiles are
        * supported:
-       * 8bit profiles
-       * *   `main` (default)
-       * *   `main-intra`
-       * *   `mainstillpicture`
-       * 10bit profiles
-       * *   `main10` (default)
-       * *   `main10-intra`
-       * *   `main422-10`
-       * *   `main422-10-intra`
-       * *   `main444-10`
-       * *   `main444-10-intra`
-       * 12bit profiles
-       * *   `main12` (default)
-       * *   `main12-intra`
-       * *   `main422-12`
-       * *   `main422-12-intra`
-       * *   `main444-12`
-       * *   `main444-12-intra`
+       * *   8-bit profiles
+       *     *   `main` (default)
+       *     *   `main-intra`
+       *     *   `mainstillpicture`
+       * *   10-bit profiles
+       *     *   `main10` (default)
+       *     *   `main10-intra`
+       *     *   `main422-10`
+       *     *   `main422-10-intra`
+       *     *   `main444-10`
+       *     *   `main444-10-intra`
+       * *   12-bit profiles
+       *     *   `main12` (default)
+       *     *   `main12-intra`
+       *     *   `main422-12`
+       *     *   `main422-12-intra`
+       *     *   `main444-12`
+       *     *   `main444-12-intra`
        * The available options are
-       * [FFmpeg-compatible](https://x265.readthedocs.io/){:
-       * class="external" }. Note that certain values for this field may cause the
+       * [FFmpeg-compatible](https://x265.readthedocs.io/).
+       * Note that certain values for this field may cause the
        * transcoder to override other fields you set in the `H265CodecSettings`
        * message.
        * </pre>
@@ -7649,27 +7649,27 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * Enforces the specified codec profile. The following profiles are
        * supported:
-       * 8bit profiles
-       * *   `main` (default)
-       * *   `main-intra`
-       * *   `mainstillpicture`
-       * 10bit profiles
-       * *   `main10` (default)
-       * *   `main10-intra`
-       * *   `main422-10`
-       * *   `main422-10-intra`
-       * *   `main444-10`
-       * *   `main444-10-intra`
-       * 12bit profiles
-       * *   `main12` (default)
-       * *   `main12-intra`
-       * *   `main422-12`
-       * *   `main422-12-intra`
-       * *   `main444-12`
-       * *   `main444-12-intra`
+       * *   8-bit profiles
+       *     *   `main` (default)
+       *     *   `main-intra`
+       *     *   `mainstillpicture`
+       * *   10-bit profiles
+       *     *   `main10` (default)
+       *     *   `main10-intra`
+       *     *   `main422-10`
+       *     *   `main422-10-intra`
+       *     *   `main444-10`
+       *     *   `main444-10-intra`
+       * *   12-bit profiles
+       *     *   `main12` (default)
+       *     *   `main12-intra`
+       *     *   `main422-12`
+       *     *   `main422-12-intra`
+       *     *   `main444-12`
+       *     *   `main444-12-intra`
        * The available options are
-       * [FFmpeg-compatible](https://x265.readthedocs.io/){:
-       * class="external" }. Note that certain values for this field may cause the
+       * [FFmpeg-compatible](https://x265.readthedocs.io/).
+       * Note that certain values for this field may cause the
        * transcoder to override other fields you set in the `H265CodecSettings`
        * message.
        * </pre>
@@ -7690,27 +7690,27 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * Enforces the specified codec profile. The following profiles are
        * supported:
-       * 8bit profiles
-       * *   `main` (default)
-       * *   `main-intra`
-       * *   `mainstillpicture`
-       * 10bit profiles
-       * *   `main10` (default)
-       * *   `main10-intra`
-       * *   `main422-10`
-       * *   `main422-10-intra`
-       * *   `main444-10`
-       * *   `main444-10-intra`
-       * 12bit profiles
-       * *   `main12` (default)
-       * *   `main12-intra`
-       * *   `main422-12`
-       * *   `main422-12-intra`
-       * *   `main444-12`
-       * *   `main444-12-intra`
+       * *   8-bit profiles
+       *     *   `main` (default)
+       *     *   `main-intra`
+       *     *   `mainstillpicture`
+       * *   10-bit profiles
+       *     *   `main10` (default)
+       *     *   `main10-intra`
+       *     *   `main422-10`
+       *     *   `main422-10-intra`
+       *     *   `main444-10`
+       *     *   `main444-10-intra`
+       * *   12-bit profiles
+       *     *   `main12` (default)
+       *     *   `main12-intra`
+       *     *   `main422-12`
+       *     *   `main422-12-intra`
+       *     *   `main444-12`
+       *     *   `main444-12-intra`
        * The available options are
-       * [FFmpeg-compatible](https://x265.readthedocs.io/){:
-       * class="external" }. Note that certain values for this field may cause the
+       * [FFmpeg-compatible](https://x265.readthedocs.io/).
+       * Note that certain values for this field may cause the
        * transcoder to override other fields you set in the `H265CodecSettings`
        * message.
        * </pre>
@@ -7737,8 +7737,8 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Enforces the specified codec tune. The available options are
-       * [FFmpeg-compatible](https://trac.ffmpeg.org/wiki/Encode/H.265){:
-       * class="external" }. Note that certain values for this field may cause the
+       * [FFmpeg-compatible](https://trac.ffmpeg.org/wiki/Encode/H.265).
+       * Note that certain values for this field may cause the
        * transcoder to override other fields you set in the `H265CodecSettings`
        * message.
        * </pre>
@@ -7763,8 +7763,8 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Enforces the specified codec tune. The available options are
-       * [FFmpeg-compatible](https://trac.ffmpeg.org/wiki/Encode/H.265){:
-       * class="external" }. Note that certain values for this field may cause the
+       * [FFmpeg-compatible](https://trac.ffmpeg.org/wiki/Encode/H.265).
+       * Note that certain values for this field may cause the
        * transcoder to override other fields you set in the `H265CodecSettings`
        * message.
        * </pre>
@@ -7789,8 +7789,8 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Enforces the specified codec tune. The available options are
-       * [FFmpeg-compatible](https://trac.ffmpeg.org/wiki/Encode/H.265){:
-       * class="external" }. Note that certain values for this field may cause the
+       * [FFmpeg-compatible](https://trac.ffmpeg.org/wiki/Encode/H.265).
+       * Note that certain values for this field may cause the
        * transcoder to override other fields you set in the `H265CodecSettings`
        * message.
        * </pre>
@@ -7814,8 +7814,8 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Enforces the specified codec tune. The available options are
-       * [FFmpeg-compatible](https://trac.ffmpeg.org/wiki/Encode/H.265){:
-       * class="external" }. Note that certain values for this field may cause the
+       * [FFmpeg-compatible](https://trac.ffmpeg.org/wiki/Encode/H.265).
+       * Note that certain values for this field may cause the
        * transcoder to override other fields you set in the `H265CodecSettings`
        * message.
        * </pre>
@@ -7835,8 +7835,8 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Enforces the specified codec tune. The available options are
-       * [FFmpeg-compatible](https://trac.ffmpeg.org/wiki/Encode/H.265){:
-       * class="external" }. Note that certain values for this field may cause the
+       * [FFmpeg-compatible](https://trac.ffmpeg.org/wiki/Encode/H.265).
+       * Note that certain values for this field may cause the
        * transcoder to override other fields you set in the `H265CodecSettings`
        * message.
        * </pre>
@@ -7864,8 +7864,8 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * Enforces the specified codec preset. The default is `veryfast`. The
        * available options are
-       * [FFmpeg-compatible](https://trac.ffmpeg.org/wiki/Encode/H.265){:
-       * class="external" }. Note that certain values for this field may cause the
+       * [FFmpeg-compatible](https://trac.ffmpeg.org/wiki/Encode/H.265).
+       * Note that certain values for this field may cause the
        * transcoder to override other fields you set in the `H265CodecSettings`
        * message.
        * </pre>
@@ -7891,8 +7891,8 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * Enforces the specified codec preset. The default is `veryfast`. The
        * available options are
-       * [FFmpeg-compatible](https://trac.ffmpeg.org/wiki/Encode/H.265){:
-       * class="external" }. Note that certain values for this field may cause the
+       * [FFmpeg-compatible](https://trac.ffmpeg.org/wiki/Encode/H.265).
+       * Note that certain values for this field may cause the
        * transcoder to override other fields you set in the `H265CodecSettings`
        * message.
        * </pre>
@@ -7918,8 +7918,8 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * Enforces the specified codec preset. The default is `veryfast`. The
        * available options are
-       * [FFmpeg-compatible](https://trac.ffmpeg.org/wiki/Encode/H.265){:
-       * class="external" }. Note that certain values for this field may cause the
+       * [FFmpeg-compatible](https://trac.ffmpeg.org/wiki/Encode/H.265).
+       * Note that certain values for this field may cause the
        * transcoder to override other fields you set in the `H265CodecSettings`
        * message.
        * </pre>
@@ -7944,8 +7944,8 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * Enforces the specified codec preset. The default is `veryfast`. The
        * available options are
-       * [FFmpeg-compatible](https://trac.ffmpeg.org/wiki/Encode/H.265){:
-       * class="external" }. Note that certain values for this field may cause the
+       * [FFmpeg-compatible](https://trac.ffmpeg.org/wiki/Encode/H.265).
+       * Note that certain values for this field may cause the
        * transcoder to override other fields you set in the `H265CodecSettings`
        * message.
        * </pre>
@@ -7966,8 +7966,8 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * Enforces the specified codec preset. The default is `veryfast`. The
        * available options are
-       * [FFmpeg-compatible](https://trac.ffmpeg.org/wiki/Encode/H.265){:
-       * class="external" }. Note that certain values for this field may cause the
+       * [FFmpeg-compatible](https://trac.ffmpeg.org/wiki/Encode/H.265).
+       * Note that certain values for this field may cause the
        * transcoder to override other fields you set in the `H265CodecSettings`
        * message.
        * </pre>
@@ -8101,8 +8101,8 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The video bitrate in bits per second. Must be between 1 and
-     * 1,000,000,000.
+     * Required. The video bitrate in bits per second. The minimum value is 1,000.
+     * The maximum value is 480,000,000.
      * </pre>
      *
      * <code>int32 bitrate_bps = 4 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -8115,17 +8115,17 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Pixel format to use. The default is `"yuv420p"`.
+     * Pixel format to use. The default is `yuv420p`.
      * Supported pixel formats:
-     * - 'yuv420p' pixel format.
-     * - 'yuv422p' pixel format.
-     * - 'yuv444p' pixel format.
-     * - 'yuv420p10' 10-bit HDR pixel format.
-     * - 'yuv422p10' 10-bit HDR pixel format.
-     * - 'yuv444p10' 10-bit HDR pixel format.
-     * - 'yuv420p12' 12-bit HDR pixel format.
-     * - 'yuv422p12' 12-bit HDR pixel format.
-     * - 'yuv444p12' 12-bit HDR pixel format.
+     * - `yuv420p` pixel format
+     * - `yuv422p` pixel format
+     * - `yuv444p` pixel format
+     * - `yuv420p10` 10-bit HDR pixel format
+     * - `yuv422p10` 10-bit HDR pixel format
+     * - `yuv444p10` 10-bit HDR pixel format
+     * - `yuv420p12` 12-bit HDR pixel format
+     * - `yuv422p12` 12-bit HDR pixel format
+     * - `yuv444p12` 12-bit HDR pixel format
      * </pre>
      *
      * <code>string pixel_format = 5;</code>
@@ -8137,17 +8137,17 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Pixel format to use. The default is `"yuv420p"`.
+     * Pixel format to use. The default is `yuv420p`.
      * Supported pixel formats:
-     * - 'yuv420p' pixel format.
-     * - 'yuv422p' pixel format.
-     * - 'yuv444p' pixel format.
-     * - 'yuv420p10' 10-bit HDR pixel format.
-     * - 'yuv422p10' 10-bit HDR pixel format.
-     * - 'yuv444p10' 10-bit HDR pixel format.
-     * - 'yuv420p12' 12-bit HDR pixel format.
-     * - 'yuv422p12' 12-bit HDR pixel format.
-     * - 'yuv444p12' 12-bit HDR pixel format.
+     * - `yuv420p` pixel format
+     * - `yuv422p` pixel format
+     * - `yuv444p` pixel format
+     * - `yuv420p10` 10-bit HDR pixel format
+     * - `yuv422p10` 10-bit HDR pixel format
+     * - `yuv444p10` 10-bit HDR pixel format
+     * - `yuv420p12` 12-bit HDR pixel format
+     * - `yuv422p12` 12-bit HDR pixel format
+     * - `yuv444p12` 12-bit HDR pixel format
      * </pre>
      *
      * <code>string pixel_format = 5;</code>
@@ -8160,10 +8160,10 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specify the `rate_control_mode`. The default is `"vbr"`.
+     * Specify the `rate_control_mode`. The default is `vbr`.
      * Supported rate control modes:
-     * - 'vbr' - variable bitrate
-     * - 'crf' - constant rate factor
+     * - `vbr` - variable bitrate
+     * - `crf` - constant rate factor
      * </pre>
      *
      * <code>string rate_control_mode = 6;</code>
@@ -8175,10 +8175,10 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specify the `rate_control_mode`. The default is `"vbr"`.
+     * Specify the `rate_control_mode`. The default is `vbr`.
      * Supported rate control modes:
-     * - 'vbr' - variable bitrate
-     * - 'crf' - constant rate factor
+     * - `vbr` - variable bitrate
+     * - `crf` - constant rate factor
      * </pre>
      *
      * <code>string rate_control_mode = 6;</code>
@@ -8233,7 +8233,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Select the GOP size based on the specified duration. The default is
-     * `"3s"`. Note that `gopDuration` must be less than or equal to
+     * `3s`. Note that `gopDuration` must be less than or equal to
      * [`segmentDuration`](#SegmentSettings), and
      * [`segmentDuration`](#SegmentSettings) must be divisible by
      * `gopDuration`.
@@ -8249,7 +8249,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Select the GOP size based on the specified duration. The default is
-     * `"3s"`. Note that `gopDuration` must be less than or equal to
+     * `3s`. Note that `gopDuration` must be less than or equal to
      * [`segmentDuration`](#SegmentSettings), and
      * [`segmentDuration`](#SegmentSettings) must be divisible by
      * `gopDuration`.
@@ -8265,7 +8265,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Select the GOP size based on the specified duration. The default is
-     * `"3s"`. Note that `gopDuration` must be less than or equal to
+     * `3s`. Note that `gopDuration` must be less than or equal to
      * [`segmentDuration`](#SegmentSettings), and
      * [`segmentDuration`](#SegmentSettings) must be divisible by
      * `gopDuration`.
@@ -8286,8 +8286,8 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
      * *   `profile2`
      * *   `profile3`
      * The available options are
-     * [WebM-compatible](https://www.webmproject.org/vp9/profiles/){:
-     * class="external" }. Note that certain values for this field may cause the
+     * [WebM-compatible](https://www.webmproject.org/vp9/profiles/).
+     * Note that certain values for this field may cause the
      * transcoder to override other fields you set in the `Vp9CodecSettings`
      * message.
      * </pre>
@@ -8308,8 +8308,8 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
      * *   `profile2`
      * *   `profile3`
      * The available options are
-     * [WebM-compatible](https://www.webmproject.org/vp9/profiles/){:
-     * class="external" }. Note that certain values for this field may cause the
+     * [WebM-compatible](https://www.webmproject.org/vp9/profiles/).
+     * Note that certain values for this field may cause the
      * transcoder to override other fields you set in the `Vp9CodecSettings`
      * message.
      * </pre>
@@ -8595,8 +8595,8 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The video bitrate in bits per second. Must be between 1 and
-     * 1,000,000,000.
+     * Required. The video bitrate in bits per second. The minimum value is 1,000.
+     * The maximum value is 480,000,000.
      * </pre>
      *
      * <code>int32 bitrate_bps = 4 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -8614,17 +8614,17 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Pixel format to use. The default is `"yuv420p"`.
+     * Pixel format to use. The default is `yuv420p`.
      * Supported pixel formats:
-     * - 'yuv420p' pixel format.
-     * - 'yuv422p' pixel format.
-     * - 'yuv444p' pixel format.
-     * - 'yuv420p10' 10-bit HDR pixel format.
-     * - 'yuv422p10' 10-bit HDR pixel format.
-     * - 'yuv444p10' 10-bit HDR pixel format.
-     * - 'yuv420p12' 12-bit HDR pixel format.
-     * - 'yuv422p12' 12-bit HDR pixel format.
-     * - 'yuv444p12' 12-bit HDR pixel format.
+     * - `yuv420p` pixel format
+     * - `yuv422p` pixel format
+     * - `yuv444p` pixel format
+     * - `yuv420p10` 10-bit HDR pixel format
+     * - `yuv422p10` 10-bit HDR pixel format
+     * - `yuv444p10` 10-bit HDR pixel format
+     * - `yuv420p12` 12-bit HDR pixel format
+     * - `yuv422p12` 12-bit HDR pixel format
+     * - `yuv444p12` 12-bit HDR pixel format
      * </pre>
      *
      * <code>string pixel_format = 5;</code>
@@ -8647,17 +8647,17 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Pixel format to use. The default is `"yuv420p"`.
+     * Pixel format to use. The default is `yuv420p`.
      * Supported pixel formats:
-     * - 'yuv420p' pixel format.
-     * - 'yuv422p' pixel format.
-     * - 'yuv444p' pixel format.
-     * - 'yuv420p10' 10-bit HDR pixel format.
-     * - 'yuv422p10' 10-bit HDR pixel format.
-     * - 'yuv444p10' 10-bit HDR pixel format.
-     * - 'yuv420p12' 12-bit HDR pixel format.
-     * - 'yuv422p12' 12-bit HDR pixel format.
-     * - 'yuv444p12' 12-bit HDR pixel format.
+     * - `yuv420p` pixel format
+     * - `yuv422p` pixel format
+     * - `yuv444p` pixel format
+     * - `yuv420p10` 10-bit HDR pixel format
+     * - `yuv422p10` 10-bit HDR pixel format
+     * - `yuv444p10` 10-bit HDR pixel format
+     * - `yuv420p12` 12-bit HDR pixel format
+     * - `yuv422p12` 12-bit HDR pixel format
+     * - `yuv444p12` 12-bit HDR pixel format
      * </pre>
      *
      * <code>string pixel_format = 5;</code>
@@ -8683,10 +8683,10 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specify the `rate_control_mode`. The default is `"vbr"`.
+     * Specify the `rate_control_mode`. The default is `vbr`.
      * Supported rate control modes:
-     * - 'vbr' - variable bitrate
-     * - 'crf' - constant rate factor
+     * - `vbr` - variable bitrate
+     * - `crf` - constant rate factor
      * </pre>
      *
      * <code>string rate_control_mode = 6;</code>
@@ -8709,10 +8709,10 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specify the `rate_control_mode`. The default is `"vbr"`.
+     * Specify the `rate_control_mode`. The default is `vbr`.
      * Supported rate control modes:
-     * - 'vbr' - variable bitrate
-     * - 'crf' - constant rate factor
+     * - `vbr` - variable bitrate
+     * - `crf` - constant rate factor
      * </pre>
      *
      * <code>string rate_control_mode = 6;</code>
@@ -8794,7 +8794,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Select the GOP size based on the specified duration. The default is
-     * `"3s"`. Note that `gopDuration` must be less than or equal to
+     * `3s`. Note that `gopDuration` must be less than or equal to
      * [`segmentDuration`](#SegmentSettings), and
      * [`segmentDuration`](#SegmentSettings) must be divisible by
      * `gopDuration`.
@@ -8813,7 +8813,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Select the GOP size based on the specified duration. The default is
-     * `"3s"`. Note that `gopDuration` must be less than or equal to
+     * `3s`. Note that `gopDuration` must be less than or equal to
      * [`segmentDuration`](#SegmentSettings), and
      * [`segmentDuration`](#SegmentSettings) must be divisible by
      * `gopDuration`.
@@ -8835,7 +8835,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Select the GOP size based on the specified duration. The default is
-     * `"3s"`. Note that `gopDuration` must be less than or equal to
+     * `3s`. Note that `gopDuration` must be less than or equal to
      * [`segmentDuration`](#SegmentSettings), and
      * [`segmentDuration`](#SegmentSettings) must be divisible by
      * `gopDuration`.
@@ -8864,8 +8864,8 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
      * *   `profile2`
      * *   `profile3`
      * The available options are
-     * [WebM-compatible](https://www.webmproject.org/vp9/profiles/){:
-     * class="external" }. Note that certain values for this field may cause the
+     * [WebM-compatible](https://www.webmproject.org/vp9/profiles/).
+     * Note that certain values for this field may cause the
      * transcoder to override other fields you set in the `Vp9CodecSettings`
      * message.
      * </pre>
@@ -8897,8 +8897,8 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
      * *   `profile2`
      * *   `profile3`
      * The available options are
-     * [WebM-compatible](https://www.webmproject.org/vp9/profiles/){:
-     * class="external" }. Note that certain values for this field may cause the
+     * [WebM-compatible](https://www.webmproject.org/vp9/profiles/).
+     * Note that certain values for this field may cause the
      * transcoder to override other fields you set in the `Vp9CodecSettings`
      * message.
      * </pre>
@@ -9635,8 +9635,8 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. The video bitrate in bits per second. Must be between 1 and
-       * 1,000,000,000.
+       * Required. The video bitrate in bits per second. The minimum value is 1,000.
+       * The maximum value is 480,000,000.
        * </pre>
        *
        * <code>int32 bitrate_bps = 4 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -9651,8 +9651,8 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. The video bitrate in bits per second. Must be between 1 and
-       * 1,000,000,000.
+       * Required. The video bitrate in bits per second. The minimum value is 1,000.
+       * The maximum value is 480,000,000.
        * </pre>
        *
        * <code>int32 bitrate_bps = 4 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -9670,8 +9670,8 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. The video bitrate in bits per second. Must be between 1 and
-       * 1,000,000,000.
+       * Required. The video bitrate in bits per second. The minimum value is 1,000.
+       * The maximum value is 480,000,000.
        * </pre>
        *
        * <code>int32 bitrate_bps = 4 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -9690,17 +9690,17 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Pixel format to use. The default is `"yuv420p"`.
+       * Pixel format to use. The default is `yuv420p`.
        * Supported pixel formats:
-       * - 'yuv420p' pixel format.
-       * - 'yuv422p' pixel format.
-       * - 'yuv444p' pixel format.
-       * - 'yuv420p10' 10-bit HDR pixel format.
-       * - 'yuv422p10' 10-bit HDR pixel format.
-       * - 'yuv444p10' 10-bit HDR pixel format.
-       * - 'yuv420p12' 12-bit HDR pixel format.
-       * - 'yuv422p12' 12-bit HDR pixel format.
-       * - 'yuv444p12' 12-bit HDR pixel format.
+       * - `yuv420p` pixel format
+       * - `yuv422p` pixel format
+       * - `yuv444p` pixel format
+       * - `yuv420p10` 10-bit HDR pixel format
+       * - `yuv422p10` 10-bit HDR pixel format
+       * - `yuv444p10` 10-bit HDR pixel format
+       * - `yuv420p12` 12-bit HDR pixel format
+       * - `yuv422p12` 12-bit HDR pixel format
+       * - `yuv444p12` 12-bit HDR pixel format
        * </pre>
        *
        * <code>string pixel_format = 5;</code>
@@ -9722,17 +9722,17 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Pixel format to use. The default is `"yuv420p"`.
+       * Pixel format to use. The default is `yuv420p`.
        * Supported pixel formats:
-       * - 'yuv420p' pixel format.
-       * - 'yuv422p' pixel format.
-       * - 'yuv444p' pixel format.
-       * - 'yuv420p10' 10-bit HDR pixel format.
-       * - 'yuv422p10' 10-bit HDR pixel format.
-       * - 'yuv444p10' 10-bit HDR pixel format.
-       * - 'yuv420p12' 12-bit HDR pixel format.
-       * - 'yuv422p12' 12-bit HDR pixel format.
-       * - 'yuv444p12' 12-bit HDR pixel format.
+       * - `yuv420p` pixel format
+       * - `yuv422p` pixel format
+       * - `yuv444p` pixel format
+       * - `yuv420p10` 10-bit HDR pixel format
+       * - `yuv422p10` 10-bit HDR pixel format
+       * - `yuv444p10` 10-bit HDR pixel format
+       * - `yuv420p12` 12-bit HDR pixel format
+       * - `yuv422p12` 12-bit HDR pixel format
+       * - `yuv444p12` 12-bit HDR pixel format
        * </pre>
        *
        * <code>string pixel_format = 5;</code>
@@ -9754,17 +9754,17 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Pixel format to use. The default is `"yuv420p"`.
+       * Pixel format to use. The default is `yuv420p`.
        * Supported pixel formats:
-       * - 'yuv420p' pixel format.
-       * - 'yuv422p' pixel format.
-       * - 'yuv444p' pixel format.
-       * - 'yuv420p10' 10-bit HDR pixel format.
-       * - 'yuv422p10' 10-bit HDR pixel format.
-       * - 'yuv444p10' 10-bit HDR pixel format.
-       * - 'yuv420p12' 12-bit HDR pixel format.
-       * - 'yuv422p12' 12-bit HDR pixel format.
-       * - 'yuv444p12' 12-bit HDR pixel format.
+       * - `yuv420p` pixel format
+       * - `yuv422p` pixel format
+       * - `yuv444p` pixel format
+       * - `yuv420p10` 10-bit HDR pixel format
+       * - `yuv422p10` 10-bit HDR pixel format
+       * - `yuv444p10` 10-bit HDR pixel format
+       * - `yuv420p12` 12-bit HDR pixel format
+       * - `yuv422p12` 12-bit HDR pixel format
+       * - `yuv444p12` 12-bit HDR pixel format
        * </pre>
        *
        * <code>string pixel_format = 5;</code>
@@ -9785,17 +9785,17 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Pixel format to use. The default is `"yuv420p"`.
+       * Pixel format to use. The default is `yuv420p`.
        * Supported pixel formats:
-       * - 'yuv420p' pixel format.
-       * - 'yuv422p' pixel format.
-       * - 'yuv444p' pixel format.
-       * - 'yuv420p10' 10-bit HDR pixel format.
-       * - 'yuv422p10' 10-bit HDR pixel format.
-       * - 'yuv444p10' 10-bit HDR pixel format.
-       * - 'yuv420p12' 12-bit HDR pixel format.
-       * - 'yuv422p12' 12-bit HDR pixel format.
-       * - 'yuv444p12' 12-bit HDR pixel format.
+       * - `yuv420p` pixel format
+       * - `yuv422p` pixel format
+       * - `yuv444p` pixel format
+       * - `yuv420p10` 10-bit HDR pixel format
+       * - `yuv422p10` 10-bit HDR pixel format
+       * - `yuv444p10` 10-bit HDR pixel format
+       * - `yuv420p12` 12-bit HDR pixel format
+       * - `yuv422p12` 12-bit HDR pixel format
+       * - `yuv444p12` 12-bit HDR pixel format
        * </pre>
        *
        * <code>string pixel_format = 5;</code>
@@ -9812,17 +9812,17 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Pixel format to use. The default is `"yuv420p"`.
+       * Pixel format to use. The default is `yuv420p`.
        * Supported pixel formats:
-       * - 'yuv420p' pixel format.
-       * - 'yuv422p' pixel format.
-       * - 'yuv444p' pixel format.
-       * - 'yuv420p10' 10-bit HDR pixel format.
-       * - 'yuv422p10' 10-bit HDR pixel format.
-       * - 'yuv444p10' 10-bit HDR pixel format.
-       * - 'yuv420p12' 12-bit HDR pixel format.
-       * - 'yuv422p12' 12-bit HDR pixel format.
-       * - 'yuv444p12' 12-bit HDR pixel format.
+       * - `yuv420p` pixel format
+       * - `yuv422p` pixel format
+       * - `yuv444p` pixel format
+       * - `yuv420p10` 10-bit HDR pixel format
+       * - `yuv422p10` 10-bit HDR pixel format
+       * - `yuv444p10` 10-bit HDR pixel format
+       * - `yuv420p12` 12-bit HDR pixel format
+       * - `yuv422p12` 12-bit HDR pixel format
+       * - `yuv444p12` 12-bit HDR pixel format
        * </pre>
        *
        * <code>string pixel_format = 5;</code>
@@ -9846,10 +9846,10 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Specify the `rate_control_mode`. The default is `"vbr"`.
+       * Specify the `rate_control_mode`. The default is `vbr`.
        * Supported rate control modes:
-       * - 'vbr' - variable bitrate
-       * - 'crf' - constant rate factor
+       * - `vbr` - variable bitrate
+       * - `crf` - constant rate factor
        * </pre>
        *
        * <code>string rate_control_mode = 6;</code>
@@ -9871,10 +9871,10 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Specify the `rate_control_mode`. The default is `"vbr"`.
+       * Specify the `rate_control_mode`. The default is `vbr`.
        * Supported rate control modes:
-       * - 'vbr' - variable bitrate
-       * - 'crf' - constant rate factor
+       * - `vbr` - variable bitrate
+       * - `crf` - constant rate factor
        * </pre>
        *
        * <code>string rate_control_mode = 6;</code>
@@ -9896,10 +9896,10 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Specify the `rate_control_mode`. The default is `"vbr"`.
+       * Specify the `rate_control_mode`. The default is `vbr`.
        * Supported rate control modes:
-       * - 'vbr' - variable bitrate
-       * - 'crf' - constant rate factor
+       * - `vbr` - variable bitrate
+       * - `crf` - constant rate factor
        * </pre>
        *
        * <code>string rate_control_mode = 6;</code>
@@ -9920,10 +9920,10 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Specify the `rate_control_mode`. The default is `"vbr"`.
+       * Specify the `rate_control_mode`. The default is `vbr`.
        * Supported rate control modes:
-       * - 'vbr' - variable bitrate
-       * - 'crf' - constant rate factor
+       * - `vbr` - variable bitrate
+       * - `crf` - constant rate factor
        * </pre>
        *
        * <code>string rate_control_mode = 6;</code>
@@ -9940,10 +9940,10 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Specify the `rate_control_mode`. The default is `"vbr"`.
+       * Specify the `rate_control_mode`. The default is `vbr`.
        * Supported rate control modes:
-       * - 'vbr' - variable bitrate
-       * - 'crf' - constant rate factor
+       * - `vbr` - variable bitrate
+       * - `crf` - constant rate factor
        * </pre>
        *
        * <code>string rate_control_mode = 6;</code>
@@ -10100,7 +10100,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Select the GOP size based on the specified duration. The default is
-       * `"3s"`. Note that `gopDuration` must be less than or equal to
+       * `3s`. Note that `gopDuration` must be less than or equal to
        * [`segmentDuration`](#SegmentSettings), and
        * [`segmentDuration`](#SegmentSettings) must be divisible by
        * `gopDuration`.
@@ -10119,7 +10119,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Select the GOP size based on the specified duration. The default is
-       * `"3s"`. Note that `gopDuration` must be less than or equal to
+       * `3s`. Note that `gopDuration` must be less than or equal to
        * [`segmentDuration`](#SegmentSettings), and
        * [`segmentDuration`](#SegmentSettings) must be divisible by
        * `gopDuration`.
@@ -10148,7 +10148,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Select the GOP size based on the specified duration. The default is
-       * `"3s"`. Note that `gopDuration` must be less than or equal to
+       * `3s`. Note that `gopDuration` must be less than or equal to
        * [`segmentDuration`](#SegmentSettings), and
        * [`segmentDuration`](#SegmentSettings) must be divisible by
        * `gopDuration`.
@@ -10174,7 +10174,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Select the GOP size based on the specified duration. The default is
-       * `"3s"`. Note that `gopDuration` must be less than or equal to
+       * `3s`. Note that `gopDuration` must be less than or equal to
        * [`segmentDuration`](#SegmentSettings), and
        * [`segmentDuration`](#SegmentSettings) must be divisible by
        * `gopDuration`.
@@ -10197,7 +10197,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Select the GOP size based on the specified duration. The default is
-       * `"3s"`. Note that `gopDuration` must be less than or equal to
+       * `3s`. Note that `gopDuration` must be less than or equal to
        * [`segmentDuration`](#SegmentSettings), and
        * [`segmentDuration`](#SegmentSettings) must be divisible by
        * `gopDuration`.
@@ -10230,7 +10230,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Select the GOP size based on the specified duration. The default is
-       * `"3s"`. Note that `gopDuration` must be less than or equal to
+       * `3s`. Note that `gopDuration` must be less than or equal to
        * [`segmentDuration`](#SegmentSettings), and
        * [`segmentDuration`](#SegmentSettings) must be divisible by
        * `gopDuration`.
@@ -10259,7 +10259,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Select the GOP size based on the specified duration. The default is
-       * `"3s"`. Note that `gopDuration` must be less than or equal to
+       * `3s`. Note that `gopDuration` must be less than or equal to
        * [`segmentDuration`](#SegmentSettings), and
        * [`segmentDuration`](#SegmentSettings) must be divisible by
        * `gopDuration`.
@@ -10275,7 +10275,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Select the GOP size based on the specified duration. The default is
-       * `"3s"`. Note that `gopDuration` must be less than or equal to
+       * `3s`. Note that `gopDuration` must be less than or equal to
        * [`segmentDuration`](#SegmentSettings), and
        * [`segmentDuration`](#SegmentSettings) must be divisible by
        * `gopDuration`.
@@ -10299,7 +10299,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Select the GOP size based on the specified duration. The default is
-       * `"3s"`. Note that `gopDuration` must be less than or equal to
+       * `3s`. Note that `gopDuration` must be less than or equal to
        * [`segmentDuration`](#SegmentSettings), and
        * [`segmentDuration`](#SegmentSettings) must be divisible by
        * `gopDuration`.
@@ -10342,8 +10342,8 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
        * *   `profile2`
        * *   `profile3`
        * The available options are
-       * [WebM-compatible](https://www.webmproject.org/vp9/profiles/){:
-       * class="external" }. Note that certain values for this field may cause the
+       * [WebM-compatible](https://www.webmproject.org/vp9/profiles/).
+       * Note that certain values for this field may cause the
        * transcoder to override other fields you set in the `Vp9CodecSettings`
        * message.
        * </pre>
@@ -10374,8 +10374,8 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
        * *   `profile2`
        * *   `profile3`
        * The available options are
-       * [WebM-compatible](https://www.webmproject.org/vp9/profiles/){:
-       * class="external" }. Note that certain values for this field may cause the
+       * [WebM-compatible](https://www.webmproject.org/vp9/profiles/).
+       * Note that certain values for this field may cause the
        * transcoder to override other fields you set in the `Vp9CodecSettings`
        * message.
        * </pre>
@@ -10406,8 +10406,8 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
        * *   `profile2`
        * *   `profile3`
        * The available options are
-       * [WebM-compatible](https://www.webmproject.org/vp9/profiles/){:
-       * class="external" }. Note that certain values for this field may cause the
+       * [WebM-compatible](https://www.webmproject.org/vp9/profiles/).
+       * Note that certain values for this field may cause the
        * transcoder to override other fields you set in the `Vp9CodecSettings`
        * message.
        * </pre>
@@ -10437,8 +10437,8 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
        * *   `profile2`
        * *   `profile3`
        * The available options are
-       * [WebM-compatible](https://www.webmproject.org/vp9/profiles/){:
-       * class="external" }. Note that certain values for this field may cause the
+       * [WebM-compatible](https://www.webmproject.org/vp9/profiles/).
+       * Note that certain values for this field may cause the
        * transcoder to override other fields you set in the `Vp9CodecSettings`
        * message.
        * </pre>
@@ -10464,8 +10464,8 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
        * *   `profile2`
        * *   `profile3`
        * The available options are
-       * [WebM-compatible](https://www.webmproject.org/vp9/profiles/){:
-       * class="external" }. Note that certain values for this field may cause the
+       * [WebM-compatible](https://www.webmproject.org/vp9/profiles/).
+       * Note that certain values for this field may cause the
        * transcoder to override other fields you set in the `Vp9CodecSettings`
        * message.
        * </pre>

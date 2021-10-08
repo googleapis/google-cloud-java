@@ -27,7 +27,7 @@ public interface ManifestOrBuilder
    *
    *
    * <pre>
-   * The name of the generated file. The default is `"manifest"` with the
+   * The name of the generated file. The default is `manifest` with the
    * extension suffix corresponding to the `Manifest.type`.
    * </pre>
    *
@@ -40,7 +40,7 @@ public interface ManifestOrBuilder
    *
    *
    * <pre>
-   * The name of the generated file. The default is `"manifest"` with the
+   * The name of the generated file. The default is `manifest` with the
    * extension suffix corresponding to the `Manifest.type`.
    * </pre>
    *
@@ -54,7 +54,7 @@ public interface ManifestOrBuilder
    *
    *
    * <pre>
-   * Required. Type of the manifest, can be "HLS" or "DASH".
+   * Required. Type of the manifest, can be `HLS` or `DASH`.
    * </pre>
    *
    * <code>
@@ -68,7 +68,7 @@ public interface ManifestOrBuilder
    *
    *
    * <pre>
-   * Required. Type of the manifest, can be "HLS" or "DASH".
+   * Required. Type of the manifest, can be `HLS` or `DASH`.
    * </pre>
    *
    * <code>
