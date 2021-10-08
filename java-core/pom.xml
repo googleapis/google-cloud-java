@@ -157,7 +157,7 @@
     <google.iam.version>1.1.5</google.iam.version>
     <google.auth.version>1.2.0</google.auth.version>
     <google.api.version>1.32.1</google.api.version>
-    <google.http.version>1.40.0</google.http.version>
+    <google.http.version>1.40.1</google.http.version>
     <grpc.version>1.41.0</grpc.version>
     <protobuf.version>3.18.1</protobuf.version>
     <opencensus.version>0.28.0</opencensus.version>
