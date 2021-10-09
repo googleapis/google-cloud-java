@@ -580,7 +580,7 @@ public class SecurityCenterClientTest {
             .build();
     mockSecurityCenter.addResponse(expectedResponse);
 
-    ResourceName resource = ProjectName.of("[PROJECT]");
+    ResourceName resource = SourceName.ofOrganizationSourceName("[ORGANIZATION]", "[SOURCE]");
 
     Policy actualResponse = client.getIamPolicy(resource);
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -602,7 +602,7 @@ public class SecurityCenterClientTest {
     mockSecurityCenter.addException(exception);
 
     try {
-      ResourceName resource = ProjectName.of("[PROJECT]");
+      ResourceName resource = SourceName.ofOrganizationSourceName("[ORGANIZATION]", "[SOURCE]");
       client.getIamPolicy(resource);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -1693,7 +1693,7 @@ public class SecurityCenterClientTest {
             .build();
     mockSecurityCenter.addResponse(expectedResponse);
 
-    ResourceName resource = ProjectName.of("[PROJECT]");
+    ResourceName resource = SourceName.ofOrganizationSourceName("[ORGANIZATION]", "[SOURCE]");
     Policy policy = Policy.newBuilder().build();
 
     Policy actualResponse = client.setIamPolicy(resource, policy);
@@ -1717,7 +1717,7 @@ public class SecurityCenterClientTest {
     mockSecurityCenter.addException(exception);
 
     try {
-      ResourceName resource = ProjectName.of("[PROJECT]");
+      ResourceName resource = SourceName.ofOrganizationSourceName("[ORGANIZATION]", "[SOURCE]");
       Policy policy = Policy.newBuilder().build();
       client.setIamPolicy(resource, policy);
       Assert.fail("No exception raised");
@@ -1775,7 +1775,7 @@ public class SecurityCenterClientTest {
         TestIamPermissionsResponse.newBuilder().addAllPermissions(new ArrayList<String>()).build();
     mockSecurityCenter.addResponse(expectedResponse);
 
-    ResourceName resource = ProjectName.of("[PROJECT]");
+    ResourceName resource = SourceName.ofOrganizationSourceName("[ORGANIZATION]", "[SOURCE]");
     List<String> permissions = new ArrayList<>();
 
     TestIamPermissionsResponse actualResponse = client.testIamPermissions(resource, permissions);
@@ -1799,7 +1799,7 @@ public class SecurityCenterClientTest {
     mockSecurityCenter.addException(exception);
 
     try {
-      ResourceName resource = ProjectName.of("[PROJECT]");
+      ResourceName resource = SourceName.ofOrganizationSourceName("[ORGANIZATION]", "[SOURCE]");
       List<String> permissions = new ArrayList<>();
       client.testIamPermissions(resource, permissions);
       Assert.fail("No exception raised");
