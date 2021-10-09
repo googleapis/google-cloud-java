@@ -65,6 +65,16 @@
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
+        <artifactId>proto-google-cloud-artifact-registry-v1</artifactId>
+        <version>0.4.4-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-artifact-registry-v1:current} -->
+      </dependency>
+      <dependency>
+        <groupId>com.google.api.grpc</groupId>
+        <artifactId>grpc-google-cloud-artifact-registry-v1</artifactId>
+        <version>0.4.4-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-artifact-registry-v1:current} -->
+      </dependency>
+      <dependency>
+        <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-artifact-registry-v1beta2</artifactId>
         <version>0.4.4-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-artifact-registry-v1beta2:current} -->
       </dependency>
@@ -104,7 +114,9 @@
   <modules>
     <module>google-cloud-artifact-registry</module>
     <module>grpc-google-cloud-artifact-registry-v1beta2</module>
+    <module>grpc-google-cloud-artifact-registry-v1</module>
     <module>proto-google-cloud-artifact-registry-v1beta2</module>
+    <module>proto-google-cloud-artifact-registry-v1</module>
     <module>google-cloud-artifact-registry-bom</module>
   </modules>
 
