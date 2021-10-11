@@ -411,7 +411,7 @@ public final class MigrationJob extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The migration job is created, not started and is fully editable.
+     * The migration job is created and not started.
      * </pre>
      *
      * <code>NOT_STARTED = 4;</code>
@@ -574,7 +574,7 @@ public final class MigrationJob extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The migration job is created, not started and is fully editable.
+     * The migration job is created and not started.
      * </pre>
      *
      * <code>NOT_STARTED = 4;</code>
