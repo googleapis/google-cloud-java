@@ -127,6 +127,7 @@ import java.math.BigDecimal;
 import java.nio.ByteBuffer;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.FileSystems;
+import java.time.Instant;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
@@ -1852,6 +1853,40 @@ public class ITBigQueryTest {
     Job job2 = bigquery.getJob(job.getJobId());
     JobStatistics.QueryStatistics statistics = job2.getStatistics();
     assertNotNull(statistics.getQueryPlan());
+  }
+
+  @Test
+  public void testQueryTimeStamp() throws InterruptedException {
+    String query = "SELECT TIMESTAMP '2022-01-24T23:54:25.095574Z'";
+    Instant beforeQueryInstant = Instant.parse("2022-01-24T23:54:25.095574Z");
+    long microsBeforeQuery =
+        TimeUnit.SECONDS.toMicros(beforeQueryInstant.getEpochSecond())
+            + TimeUnit.NANOSECONDS.toMicros(beforeQueryInstant.getNano());
+
+    // Verify that timestamp remains the same when priority is set to INTERACTIVE
+    TableResult result =
+        bigquery.query(
+            QueryJobConfiguration.newBuilder(query)
+                .setDefaultDataset(DatasetId.of(DATASET))
+                .setPriority(QueryJobConfiguration.Priority.INTERACTIVE)
+                .build());
+    for (FieldValueList row : result.getValues()) {
+      FieldValue timeStampCell = row.get(0);
+      long microsAfterQuery = timeStampCell.getTimestampValue();
+      assertEquals(microsBeforeQuery, microsAfterQuery);
+    }
+
+    // Verify that timestamp remains the same without priority set to INTERACTIVE
+    TableResult resultInteractive =
+        bigquery.query(
+            QueryJobConfiguration.newBuilder(query)
+                .setDefaultDataset(DatasetId.of(DATASET))
+                .build());
+    for (FieldValueList row : resultInteractive.getValues()) {
+      FieldValue timeStampCell = row.get(0);
+      long microsAfterQuery = timeStampCell.getTimestampValue();
+      assertEquals(microsBeforeQuery, microsAfterQuery);
+    }
   }
 
   @Test

@@ -25,6 +25,7 @@ import com.google.common.base.MoreObjects;
 import com.google.common.io.BaseEncoding;
 import java.io.Serializable;
 import java.math.BigDecimal;
+import java.math.RoundingMode;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
@@ -183,7 +184,10 @@ public class FieldValue implements Serializable {
     // timestamps are encoded in the format 1408452095.22 where the integer part is seconds since
     // epoch (e.g. 1408452095.22 == 2014-08-19 07:41:35.220 -05:00)
     BigDecimal secondsWithMicro = new BigDecimal(getStringValue());
-    BigDecimal scaled = secondsWithMicro.scaleByPowerOfTen(6);
+    // Rounding the BigDecimal to the nearest whole number before setting the longValue in order to
+    // address TimeStamp rounding issue described in
+    // https://github.com/googleapis/java-bigquery/issues/1644
+    BigDecimal scaled = secondsWithMicro.scaleByPowerOfTen(6).setScale(0, RoundingMode.HALF_UP);
     return scaled.longValue();
   }
 
