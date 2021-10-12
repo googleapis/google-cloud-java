@@ -1,5 +1,25 @@
 # Changelog
 
+## [1.1.0](https://www.github.com/googleapis/java-shared-config/compare/v1.0.3...v1.1.0) (2021-10-12)
+
+
+### Features
+
+* introduce Maven configuration for GraalVM testing ([#314](https://www.github.com/googleapis/java-shared-config/issues/314)) ([28fbeb8](https://www.github.com/googleapis/java-shared-config/commit/28fbeb86c4466a58a05d6933584564dbf3352e79))
+
+
+### Bug Fixes
+
+* update doclet version ([#332](https://www.github.com/googleapis/java-shared-config/issues/332)) ([3fd0350](https://www.github.com/googleapis/java-shared-config/commit/3fd035030e4f0954dd1f62f7b8ea62583685880c))
+
+
+### Dependencies
+
+* update dependency com.puppycrawl.tools:checkstyle to v9.0.1 ([#327](https://www.github.com/googleapis/java-shared-config/issues/327)) ([b6c9b65](https://www.github.com/googleapis/java-shared-config/commit/b6c9b657550db2dee6b36edbb9a6084baee125e2))
+* update dependency org.graalvm.buildtools:junit-platform-native to v0.9.6 ([#330](https://www.github.com/googleapis/java-shared-config/issues/330)) ([271ed7d](https://www.github.com/googleapis/java-shared-config/commit/271ed7dba35623e22fc8a7f7d477e6043e772014))
+* update dependency org.graalvm.buildtools:native-maven-plugin to v0.9.6 ([#331](https://www.github.com/googleapis/java-shared-config/issues/331)) ([4f9ba15](https://www.github.com/googleapis/java-shared-config/commit/4f9ba1551df0a2d4fc8c9acca8a951afbe8cb78a))
+* update dependency org.junit.vintage:junit-vintage-engine to v5.8.1 ([#329](https://www.github.com/googleapis/java-shared-config/issues/329)) ([4a8789e](https://www.github.com/googleapis/java-shared-config/commit/4a8789ee814ba8a3480beecc76c16fd1cb4e5f12))
+
 ### [1.0.3](https://www.github.com/googleapis/java-shared-config/compare/v1.0.2...v1.0.3) (2021-09-21)
 
 
