@@ -394,6 +394,18 @@ public class JsonToProtoMessageTest {
           .setMode(TableFieldSchema.Mode.REPEATED)
           .setName("test_bignumeric_str")
           .build();
+  final TableFieldSchema TEST_INTERVAL =
+      TableFieldSchema.newBuilder()
+          .setType(TableFieldSchema.Type.INTERVAL)
+          .setMode(TableFieldSchema.Mode.NULLABLE)
+          .setName("test_interval")
+          .build();
+  final TableFieldSchema TEST_JSON =
+      TableFieldSchema.newBuilder()
+          .setType(TableFieldSchema.Type.JSON)
+          .setMode(TableFieldSchema.Mode.REPEATED)
+          .setName("test_json")
+          .build();
   private final TableSchema COMPLEX_TABLE_SCHEMA =
       TableSchema.newBuilder()
           .addFields(0, TEST_INT)
@@ -415,6 +427,8 @@ public class JsonToProtoMessageTest {
           .addFields(16, TEST_NUMERIC_STR)
           .addFields(17, TEST_BIGNUMERIC)
           .addFields(18, TEST_BIGNUMERIC_STR)
+          .addFields(19, TEST_INTERVAL)
+          .addFields(20, TEST_JSON)
           .build();
 
   @Test
@@ -743,6 +757,8 @@ public class JsonToProtoMessageTest {
                 BigDecimalByteStringEncoder.encodeToNumericByteString(new BigDecimal("2.3")))
             .addTestBignumericStr(
                 BigDecimalByteStringEncoder.encodeToNumericByteString(new BigDecimal("1.23")))
+            .setTestInterval("0-0 0 0:0:0.000005")
+            .addTestJson("{'a':'b'}")
             .build();
     JSONObject complex_lvl2 = new JSONObject();
     complex_lvl2.put("test_int", 3);
@@ -789,6 +805,8 @@ public class JsonToProtoMessageTest {
         "test_bignumeric",
         BigDecimalByteStringEncoder.encodeToNumericByteString(BigDecimal.valueOf(2.3)));
     json.put("test_bignumeric_str", new JSONArray(new String[] {"1.23"}));
+    json.put("test_interval", "0-0 0 0:0:0.000005");
+    json.put("test_json", new JSONArray(new String[] {"{'a':'b'}"}));
     DynamicMessage protoMsg =
         JsonToProtoMessage.convertJsonToProtoMessage(
             ComplexRoot.getDescriptor(), COMPLEX_TABLE_SCHEMA, json);

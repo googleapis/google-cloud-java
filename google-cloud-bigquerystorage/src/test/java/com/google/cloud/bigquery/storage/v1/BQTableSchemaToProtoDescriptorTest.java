@@ -245,6 +245,18 @@ public class BQTableSchemaToProtoDescriptorTest {
             .setMode(TableFieldSchema.Mode.REPEATED)
             .setName("test_bignumeric_str")
             .build();
+    final TableFieldSchema TEST_INTERVAL =
+        TableFieldSchema.newBuilder()
+            .setType(TableFieldSchema.Type.INTERVAL)
+            .setMode(TableFieldSchema.Mode.NULLABLE)
+            .setName("test_interval")
+            .build();
+    final TableFieldSchema TEST_JSON =
+        TableFieldSchema.newBuilder()
+            .setType(TableFieldSchema.Type.JSON)
+            .setMode(TableFieldSchema.Mode.REPEATED)
+            .setName("test_json")
+            .build();
     final TableSchema tableSchema =
         TableSchema.newBuilder()
             .addFields(0, test_int)
@@ -266,6 +278,8 @@ public class BQTableSchemaToProtoDescriptorTest {
             .addFields(16, TEST_NUMERIC_STR)
             .addFields(17, TEST_BIGNUMERIC)
             .addFields(18, TEST_BIGNUMERIC_STR)
+            .addFields(19, TEST_INTERVAL)
+            .addFields(20, TEST_JSON)
             .build();
     final Descriptor descriptor =
         BQTableSchemaToProtoDescriptor.convertBQTableSchemaToProtoDescriptor(tableSchema);
