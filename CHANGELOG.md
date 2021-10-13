@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.4.0](https://www.github.com/googleapis/java-bigquerystorage/compare/v2.3.3...v2.4.0) (2021-10-12)
+
+
+### Features
+
+* Add INTERVAL and JSON type support to JsonStreamWriter ([#1351](https://www.github.com/googleapis/java-bigquerystorage/issues/1351)) ([f2121a7](https://www.github.com/googleapis/java-bigquerystorage/commit/f2121a796fa04d153124d87bd0d1041a401c0a42))
+
 ### [2.3.3](https://www.github.com/googleapis/java-bigquerystorage/compare/v2.3.2...v2.3.3) (2021-10-05)
 
 
