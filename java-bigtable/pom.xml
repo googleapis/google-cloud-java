@@ -282,7 +282,7 @@
                         <configuration>
                             <doclet>com.microsoft.doclet.DocFxDoclet</doclet>
                             <useStandardDocletOptions>false</useStandardDocletOptions>
-                            <docletPath>${env.KOKORO_GFILE_DIR}/java-docfx-doclet-1.2.1.jar</docletPath>
+                            <docletPath>${env.KOKORO_GFILE_DIR}/java-docfx-doclet-1.3.0.jar</docletPath>
                             <additionalOptions>
                                 -outputpath ${project.build.directory}/docfx-yml
                                 -projectname ${artifactId}
