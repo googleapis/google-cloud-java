@@ -23,13 +23,18 @@ import com.google.api.gax.rpc.BidiStream;
 import com.google.cloud.dialogflow.cx.v3beta1.AudioEncoding;
 import com.google.cloud.dialogflow.cx.v3beta1.AudioInput;
 import com.google.cloud.dialogflow.cx.v3beta1.InputAudioConfig;
+import com.google.cloud.dialogflow.cx.v3beta1.OutputAudioConfig;
+import com.google.cloud.dialogflow.cx.v3beta1.OutputAudioEncoding;
 import com.google.cloud.dialogflow.cx.v3beta1.QueryInput;
 import com.google.cloud.dialogflow.cx.v3beta1.QueryResult;
 import com.google.cloud.dialogflow.cx.v3beta1.SessionName;
 import com.google.cloud.dialogflow.cx.v3beta1.SessionsClient;
 import com.google.cloud.dialogflow.cx.v3beta1.SessionsSettings;
+import com.google.cloud.dialogflow.cx.v3beta1.SsmlVoiceGender;
 import com.google.cloud.dialogflow.cx.v3beta1.StreamingDetectIntentRequest;
 import com.google.cloud.dialogflow.cx.v3beta1.StreamingDetectIntentResponse;
+import com.google.cloud.dialogflow.cx.v3beta1.SynthesizeSpeechConfig;
+import com.google.cloud.dialogflow.cx.v3beta1.VoiceSelectionParams;
 import com.google.protobuf.ByteString;
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -78,11 +83,33 @@ public class DetectIntentStream {
       BidiStream<StreamingDetectIntentRequest, StreamingDetectIntentResponse> bidiStream =
           sessionsClient.streamingDetectIntentCallable().call();
 
+      // Specify sssml name and gender
+      VoiceSelectionParams voiceSelection =
+          // Voices that are available https://cloud.google.com/text-to-speech/docs/voices
+          VoiceSelectionParams.newBuilder()
+              .setName("en-GB-Standard-A")
+              .setSsmlGender(SsmlVoiceGender.SSML_VOICE_GENDER_FEMALE)
+              .build();
+
+      SynthesizeSpeechConfig speechConfig =
+          SynthesizeSpeechConfig.newBuilder().setVoice(voiceSelection).build();
+
+      // Setup audio config
+      OutputAudioConfig audioConfig =
+          // Output enconding explanation
+          // https://cloud.google.com/dialogflow/cx/docs/reference/rpc/google.cloud.dialogflow.cx.v3#outputaudioencoding
+          OutputAudioConfig.newBuilder()
+              .setAudioEncoding(OutputAudioEncoding.OUTPUT_AUDIO_ENCODING_UNSPECIFIED)
+              .setAudioEncodingValue(1)
+              .setSynthesizeSpeechConfig(speechConfig)
+              .build();
+
       // The first request must **only** contain the audio configuration:
       bidiStream.send(
           StreamingDetectIntentRequest.newBuilder()
               .setSession(session.toString())
               .setQueryInput(queryInput)
+              .setOutputAudioConfig(audioConfig)
               .build());
 
       try (FileInputStream audioStream = new FileInputStream(audioFilePath)) {
