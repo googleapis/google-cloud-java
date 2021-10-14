@@ -1003,6 +1003,15 @@ public class EntityTypesClient implements BackgroundResource {
   /**
    * Updates/Creates multiple entity types in the specified agent.
    *
+   * <p>This method is a [long-running
+   * operation](https://cloud.google.com/dialogflow/es/docs/how/long-running-operations). The
+   * returned `Operation` type has the following method-specific fields:
+   *
+   * <p>- `metadata`: An empty [Struct
+   * message](https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#struct)
+   * - `response`:
+   * [BatchUpdateEntityTypesResponse][google.cloud.dialogflow.v2beta1.BatchUpdateEntityTypesResponse]
+   *
    * <p>Note: You should always train an agent prior to sending it queries. See the [training
    * documentation](https://cloud.google.com/dialogflow/es/docs/training).
    *
@@ -1033,6 +1042,15 @@ public class EntityTypesClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Updates/Creates multiple entity types in the specified agent.
+   *
+   * <p>This method is a [long-running
+   * operation](https://cloud.google.com/dialogflow/es/docs/how/long-running-operations). The
+   * returned `Operation` type has the following method-specific fields:
+   *
+   * <p>- `metadata`: An empty [Struct
+   * message](https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#struct)
+   * - `response`:
+   * [BatchUpdateEntityTypesResponse][google.cloud.dialogflow.v2beta1.BatchUpdateEntityTypesResponse]
    *
    * <p>Note: You should always train an agent prior to sending it queries. See the [training
    * documentation](https://cloud.google.com/dialogflow/es/docs/training).
@@ -1065,6 +1083,15 @@ public class EntityTypesClient implements BackgroundResource {
   /**
    * Updates/Creates multiple entity types in the specified agent.
    *
+   * <p>This method is a [long-running
+   * operation](https://cloud.google.com/dialogflow/es/docs/how/long-running-operations). The
+   * returned `Operation` type has the following method-specific fields:
+   *
+   * <p>- `metadata`: An empty [Struct
+   * message](https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#struct)
+   * - `response`:
+   * [BatchUpdateEntityTypesResponse][google.cloud.dialogflow.v2beta1.BatchUpdateEntityTypesResponse]
+   *
    * <p>Note: You should always train an agent prior to sending it queries. See the [training
    * documentation](https://cloud.google.com/dialogflow/es/docs/training).
    *
@@ -1094,6 +1121,15 @@ public class EntityTypesClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes entity types in the specified agent.
+   *
+   * <p>This method is a [long-running
+   * operation](https://cloud.google.com/dialogflow/es/docs/how/long-running-operations). The
+   * returned `Operation` type has the following method-specific fields:
+   *
+   * <p>- `metadata`: An empty [Struct
+   * message](https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#struct)
+   * - `response`: An [Empty
+   * message](https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#empty)
    *
    * <p>Note: You should always train an agent prior to sending it queries. See the [training
    * documentation](https://cloud.google.com/dialogflow/es/docs/training).
@@ -1128,6 +1164,15 @@ public class EntityTypesClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes entity types in the specified agent.
+   *
+   * <p>This method is a [long-running
+   * operation](https://cloud.google.com/dialogflow/es/docs/how/long-running-operations). The
+   * returned `Operation` type has the following method-specific fields:
+   *
+   * <p>- `metadata`: An empty [Struct
+   * message](https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#struct)
+   * - `response`: An [Empty
+   * message](https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#empty)
    *
    * <p>Note: You should always train an agent prior to sending it queries. See the [training
    * documentation](https://cloud.google.com/dialogflow/es/docs/training).
@@ -1164,6 +1209,15 @@ public class EntityTypesClient implements BackgroundResource {
   /**
    * Deletes entity types in the specified agent.
    *
+   * <p>This method is a [long-running
+   * operation](https://cloud.google.com/dialogflow/es/docs/how/long-running-operations). The
+   * returned `Operation` type has the following method-specific fields:
+   *
+   * <p>- `metadata`: An empty [Struct
+   * message](https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#struct)
+   * - `response`: An [Empty
+   * message](https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#empty)
+   *
    * <p>Note: You should always train an agent prior to sending it queries. See the [training
    * documentation](https://cloud.google.com/dialogflow/es/docs/training).
    *
@@ -1192,6 +1246,15 @@ public class EntityTypesClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes entity types in the specified agent.
+   *
+   * <p>This method is a [long-running
+   * operation](https://cloud.google.com/dialogflow/es/docs/how/long-running-operations). The
+   * returned `Operation` type has the following method-specific fields:
+   *
+   * <p>- `metadata`: An empty [Struct
+   * message](https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#struct)
+   * - `response`: An [Empty
+   * message](https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#empty)
    *
    * <p>Note: You should always train an agent prior to sending it queries. See the [training
    * documentation](https://cloud.google.com/dialogflow/es/docs/training).
@@ -1222,6 +1285,15 @@ public class EntityTypesClient implements BackgroundResource {
   /**
    * Deletes entity types in the specified agent.
    *
+   * <p>This method is a [long-running
+   * operation](https://cloud.google.com/dialogflow/es/docs/how/long-running-operations). The
+   * returned `Operation` type has the following method-specific fields:
+   *
+   * <p>- `metadata`: An empty [Struct
+   * message](https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#struct)
+   * - `response`: An [Empty
+   * message](https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#empty)
+   *
    * <p>Note: You should always train an agent prior to sending it queries. See the [training
    * documentation](https://cloud.google.com/dialogflow/es/docs/training).
    *
@@ -1250,6 +1322,15 @@ public class EntityTypesClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates multiple new entities in the specified entity type.
+   *
+   * <p>This method is a [long-running
+   * operation](https://cloud.google.com/dialogflow/es/docs/how/long-running-operations). The
+   * returned `Operation` type has the following method-specific fields:
+   *
+   * <p>- `metadata`: An empty [Struct
+   * message](https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#struct)
+   * - `response`: An [Empty
+   * message](https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#empty)
    *
    * <p>Note: You should always train an agent prior to sending it queries. See the [training
    * documentation](https://cloud.google.com/dialogflow/es/docs/training).
@@ -1285,6 +1366,15 @@ public class EntityTypesClient implements BackgroundResource {
   /**
    * Creates multiple new entities in the specified entity type.
    *
+   * <p>This method is a [long-running
+   * operation](https://cloud.google.com/dialogflow/es/docs/how/long-running-operations). The
+   * returned `Operation` type has the following method-specific fields:
+   *
+   * <p>- `metadata`: An empty [Struct
+   * message](https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#struct)
+   * - `response`: An [Empty
+   * message](https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#empty)
+   *
    * <p>Note: You should always train an agent prior to sending it queries. See the [training
    * documentation](https://cloud.google.com/dialogflow/es/docs/training).
    *
@@ -1316,6 +1406,15 @@ public class EntityTypesClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates multiple new entities in the specified entity type.
+   *
+   * <p>This method is a [long-running
+   * operation](https://cloud.google.com/dialogflow/es/docs/how/long-running-operations). The
+   * returned `Operation` type has the following method-specific fields:
+   *
+   * <p>- `metadata`: An empty [Struct
+   * message](https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#struct)
+   * - `response`: An [Empty
+   * message](https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#empty)
    *
    * <p>Note: You should always train an agent prior to sending it queries. See the [training
    * documentation](https://cloud.google.com/dialogflow/es/docs/training).
@@ -1356,6 +1455,15 @@ public class EntityTypesClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates multiple new entities in the specified entity type.
+   *
+   * <p>This method is a [long-running
+   * operation](https://cloud.google.com/dialogflow/es/docs/how/long-running-operations). The
+   * returned `Operation` type has the following method-specific fields:
+   *
+   * <p>- `metadata`: An empty [Struct
+   * message](https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#struct)
+   * - `response`: An [Empty
+   * message](https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#empty)
    *
    * <p>Note: You should always train an agent prior to sending it queries. See the [training
    * documentation](https://cloud.google.com/dialogflow/es/docs/training).
@@ -1398,6 +1506,15 @@ public class EntityTypesClient implements BackgroundResource {
   /**
    * Creates multiple new entities in the specified entity type.
    *
+   * <p>This method is a [long-running
+   * operation](https://cloud.google.com/dialogflow/es/docs/how/long-running-operations). The
+   * returned `Operation` type has the following method-specific fields:
+   *
+   * <p>- `metadata`: An empty [Struct
+   * message](https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#struct)
+   * - `response`: An [Empty
+   * message](https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#empty)
+   *
    * <p>Note: You should always train an agent prior to sending it queries. See the [training
    * documentation](https://cloud.google.com/dialogflow/es/docs/training).
    *
@@ -1428,6 +1545,15 @@ public class EntityTypesClient implements BackgroundResource {
   /**
    * Creates multiple new entities in the specified entity type.
    *
+   * <p>This method is a [long-running
+   * operation](https://cloud.google.com/dialogflow/es/docs/how/long-running-operations). The
+   * returned `Operation` type has the following method-specific fields:
+   *
+   * <p>- `metadata`: An empty [Struct
+   * message](https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#struct)
+   * - `response`: An [Empty
+   * message](https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#empty)
+   *
    * <p>Note: You should always train an agent prior to sending it queries. See the [training
    * documentation](https://cloud.google.com/dialogflow/es/docs/training).
    *
@@ -1457,6 +1583,15 @@ public class EntityTypesClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates multiple new entities in the specified entity type.
+   *
+   * <p>This method is a [long-running
+   * operation](https://cloud.google.com/dialogflow/es/docs/how/long-running-operations). The
+   * returned `Operation` type has the following method-specific fields:
+   *
+   * <p>- `metadata`: An empty [Struct
+   * message](https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#struct)
+   * - `response`: An [Empty
+   * message](https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#empty)
    *
    * <p>Note: You should always train an agent prior to sending it queries. See the [training
    * documentation](https://cloud.google.com/dialogflow/es/docs/training).
@@ -1491,6 +1626,15 @@ public class EntityTypesClient implements BackgroundResource {
    * <p>Note: You should always train an agent prior to sending it queries. See the [training
    * documentation](https://cloud.google.com/dialogflow/es/docs/training).
    *
+   * <p>This method is a [long-running
+   * operation](https://cloud.google.com/dialogflow/es/docs/how/long-running-operations). The
+   * returned `Operation` type has the following method-specific fields:
+   *
+   * <p>- `metadata`: An empty [Struct
+   * message](https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#struct)
+   * - `response`: An [Empty
+   * message](https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#empty)
+   *
    * <p>Sample code:
    *
    * <pre>{@code
@@ -1526,6 +1670,15 @@ public class EntityTypesClient implements BackgroundResource {
    * <p>Note: You should always train an agent prior to sending it queries. See the [training
    * documentation](https://cloud.google.com/dialogflow/es/docs/training).
    *
+   * <p>This method is a [long-running
+   * operation](https://cloud.google.com/dialogflow/es/docs/how/long-running-operations). The
+   * returned `Operation` type has the following method-specific fields:
+   *
+   * <p>- `metadata`: An empty [Struct
+   * message](https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#struct)
+   * - `response`: An [Empty
+   * message](https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#empty)
+   *
    * <p>Sample code:
    *
    * <pre>{@code
@@ -1558,6 +1711,15 @@ public class EntityTypesClient implements BackgroundResource {
    *
    * <p>Note: You should always train an agent prior to sending it queries. See the [training
    * documentation](https://cloud.google.com/dialogflow/es/docs/training).
+   *
+   * <p>This method is a [long-running
+   * operation](https://cloud.google.com/dialogflow/es/docs/how/long-running-operations). The
+   * returned `Operation` type has the following method-specific fields:
+   *
+   * <p>- `metadata`: An empty [Struct
+   * message](https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#struct)
+   * - `response`: An [Empty
+   * message](https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#empty)
    *
    * <p>Sample code:
    *
@@ -1599,6 +1761,15 @@ public class EntityTypesClient implements BackgroundResource {
    *
    * <p>Note: You should always train an agent prior to sending it queries. See the [training
    * documentation](https://cloud.google.com/dialogflow/es/docs/training).
+   *
+   * <p>This method is a [long-running
+   * operation](https://cloud.google.com/dialogflow/es/docs/how/long-running-operations). The
+   * returned `Operation` type has the following method-specific fields:
+   *
+   * <p>- `metadata`: An empty [Struct
+   * message](https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#struct)
+   * - `response`: An [Empty
+   * message](https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#empty)
    *
    * <p>Sample code:
    *
@@ -1642,6 +1813,15 @@ public class EntityTypesClient implements BackgroundResource {
    * <p>Note: You should always train an agent prior to sending it queries. See the [training
    * documentation](https://cloud.google.com/dialogflow/es/docs/training).
    *
+   * <p>This method is a [long-running
+   * operation](https://cloud.google.com/dialogflow/es/docs/how/long-running-operations). The
+   * returned `Operation` type has the following method-specific fields:
+   *
+   * <p>- `metadata`: An empty [Struct
+   * message](https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#struct)
+   * - `response`: An [Empty
+   * message](https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#empty)
+   *
    * <p>Sample code:
    *
    * <pre>{@code
@@ -1673,6 +1853,15 @@ public class EntityTypesClient implements BackgroundResource {
    *
    * <p>Note: You should always train an agent prior to sending it queries. See the [training
    * documentation](https://cloud.google.com/dialogflow/es/docs/training).
+   *
+   * <p>This method is a [long-running
+   * operation](https://cloud.google.com/dialogflow/es/docs/how/long-running-operations). The
+   * returned `Operation` type has the following method-specific fields:
+   *
+   * <p>- `metadata`: An empty [Struct
+   * message](https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#struct)
+   * - `response`: An [Empty
+   * message](https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#empty)
    *
    * <p>Sample code:
    *
@@ -1706,6 +1895,15 @@ public class EntityTypesClient implements BackgroundResource {
    * <p>Note: You should always train an agent prior to sending it queries. See the [training
    * documentation](https://cloud.google.com/dialogflow/es/docs/training).
    *
+   * <p>This method is a [long-running
+   * operation](https://cloud.google.com/dialogflow/es/docs/how/long-running-operations). The
+   * returned `Operation` type has the following method-specific fields:
+   *
+   * <p>- `metadata`: An empty [Struct
+   * message](https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#struct)
+   * - `response`: An [Empty
+   * message](https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#empty)
+   *
    * <p>Sample code:
    *
    * <pre>{@code
@@ -1732,6 +1930,15 @@ public class EntityTypesClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes entities in the specified entity type.
+   *
+   * <p>This method is a [long-running
+   * operation](https://cloud.google.com/dialogflow/es/docs/how/long-running-operations). The
+   * returned `Operation` type has the following method-specific fields:
+   *
+   * <p>- `metadata`: An empty [Struct
+   * message](https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#struct)
+   * - `response`: An [Empty
+   * message](https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#empty)
    *
    * <p>Note: You should always train an agent prior to sending it queries. See the [training
    * documentation](https://cloud.google.com/dialogflow/es/docs/training).
@@ -1768,6 +1975,15 @@ public class EntityTypesClient implements BackgroundResource {
   /**
    * Deletes entities in the specified entity type.
    *
+   * <p>This method is a [long-running
+   * operation](https://cloud.google.com/dialogflow/es/docs/how/long-running-operations). The
+   * returned `Operation` type has the following method-specific fields:
+   *
+   * <p>- `metadata`: An empty [Struct
+   * message](https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#struct)
+   * - `response`: An [Empty
+   * message](https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#empty)
+   *
    * <p>Note: You should always train an agent prior to sending it queries. See the [training
    * documentation](https://cloud.google.com/dialogflow/es/docs/training).
    *
@@ -1803,6 +2019,15 @@ public class EntityTypesClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes entities in the specified entity type.
+   *
+   * <p>This method is a [long-running
+   * operation](https://cloud.google.com/dialogflow/es/docs/how/long-running-operations). The
+   * returned `Operation` type has the following method-specific fields:
+   *
+   * <p>- `metadata`: An empty [Struct
+   * message](https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#struct)
+   * - `response`: An [Empty
+   * message](https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#empty)
    *
    * <p>Note: You should always train an agent prior to sending it queries. See the [training
    * documentation](https://cloud.google.com/dialogflow/es/docs/training).
@@ -1844,6 +2069,15 @@ public class EntityTypesClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes entities in the specified entity type.
+   *
+   * <p>This method is a [long-running
+   * operation](https://cloud.google.com/dialogflow/es/docs/how/long-running-operations). The
+   * returned `Operation` type has the following method-specific fields:
+   *
+   * <p>- `metadata`: An empty [Struct
+   * message](https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#struct)
+   * - `response`: An [Empty
+   * message](https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#empty)
    *
    * <p>Note: You should always train an agent prior to sending it queries. See the [training
    * documentation](https://cloud.google.com/dialogflow/es/docs/training).
@@ -1887,6 +2121,15 @@ public class EntityTypesClient implements BackgroundResource {
   /**
    * Deletes entities in the specified entity type.
    *
+   * <p>This method is a [long-running
+   * operation](https://cloud.google.com/dialogflow/es/docs/how/long-running-operations). The
+   * returned `Operation` type has the following method-specific fields:
+   *
+   * <p>- `metadata`: An empty [Struct
+   * message](https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#struct)
+   * - `response`: An [Empty
+   * message](https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#empty)
+   *
    * <p>Note: You should always train an agent prior to sending it queries. See the [training
    * documentation](https://cloud.google.com/dialogflow/es/docs/training).
    *
@@ -1917,6 +2160,15 @@ public class EntityTypesClient implements BackgroundResource {
   /**
    * Deletes entities in the specified entity type.
    *
+   * <p>This method is a [long-running
+   * operation](https://cloud.google.com/dialogflow/es/docs/how/long-running-operations). The
+   * returned `Operation` type has the following method-specific fields:
+   *
+   * <p>- `metadata`: An empty [Struct
+   * message](https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#struct)
+   * - `response`: An [Empty
+   * message](https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#empty)
+   *
    * <p>Note: You should always train an agent prior to sending it queries. See the [training
    * documentation](https://cloud.google.com/dialogflow/es/docs/training).
    *
@@ -1946,6 +2198,15 @@ public class EntityTypesClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes entities in the specified entity type.
+   *
+   * <p>This method is a [long-running
+   * operation](https://cloud.google.com/dialogflow/es/docs/how/long-running-operations). The
+   * returned `Operation` type has the following method-specific fields:
+   *
+   * <p>- `metadata`: An empty [Struct
+   * message](https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#struct)
+   * - `response`: An [Empty
+   * message](https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#empty)
    *
    * <p>Note: You should always train an agent prior to sending it queries. See the [training
    * documentation](https://cloud.google.com/dialogflow/es/docs/training).

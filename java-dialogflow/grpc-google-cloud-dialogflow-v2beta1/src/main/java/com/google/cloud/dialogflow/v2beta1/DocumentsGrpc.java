@@ -438,6 +438,11 @@ public final class DocumentsGrpc {
      *
      * <pre>
      * Creates a new document.
+     * This method is a [long-running
+     * operation](https://cloud.google.com/dialogflow/cx/docs/how/long-running-operation).
+     * The returned `Operation` type has the following method-specific fields:
+     * - `metadata`: [KnowledgeOperationMetadata][google.cloud.dialogflow.v2beta1.KnowledgeOperationMetadata]
+     * - `response`: [Document][google.cloud.dialogflow.v2beta1.Document]
      * Note: The `projects.agent.knowledgeBases.documents` resource is deprecated;
      * only use `projects.knowledgeBases.documents`.
      * </pre>
@@ -456,6 +461,11 @@ public final class DocumentsGrpc {
      * Create documents by importing data from external sources.
      * Dialogflow supports up to 350 documents in each request. If you try to
      * import more, Dialogflow will return an error.
+     * This method is a [long-running
+     * operation](https://cloud.google.com/dialogflow/cx/docs/how/long-running-operation).
+     * The returned `Operation` type has the following method-specific fields:
+     * - `metadata`: [KnowledgeOperationMetadata][google.cloud.dialogflow.v2beta1.KnowledgeOperationMetadata]
+     * - `response`: [ImportDocumentsResponse][google.cloud.dialogflow.v2beta1.ImportDocumentsResponse]
      * </pre>
      */
     public void importDocuments(
@@ -470,6 +480,12 @@ public final class DocumentsGrpc {
      *
      * <pre>
      * Deletes the specified document.
+     * This method is a [long-running
+     * operation](https://cloud.google.com/dialogflow/cx/docs/how/long-running-operation).
+     * The returned `Operation` type has the following method-specific fields:
+     * - `metadata`: [KnowledgeOperationMetadata][google.cloud.dialogflow.v2beta1.KnowledgeOperationMetadata]
+     * - `response`: An [Empty
+     *   message](https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#empty)
      * Note: The `projects.agent.knowledgeBases.documents` resource is deprecated;
      * only use `projects.knowledgeBases.documents`.
      * </pre>
@@ -486,6 +502,11 @@ public final class DocumentsGrpc {
      *
      * <pre>
      * Updates the specified document.
+     * This method is a [long-running
+     * operation](https://cloud.google.com/dialogflow/cx/docs/how/long-running-operation).
+     * The returned `Operation` type has the following method-specific fields:
+     * - `metadata`: [KnowledgeOperationMetadata][google.cloud.dialogflow.v2beta1.KnowledgeOperationMetadata]
+     * - `response`: [Document][google.cloud.dialogflow.v2beta1.Document]
      * Note: The `projects.agent.knowledgeBases.documents` resource is deprecated;
      * only use `projects.knowledgeBases.documents`.
      * </pre>
@@ -508,6 +529,11 @@ public final class DocumentsGrpc {
      * Note: If the document source is Google Cloud Storage URI, its metadata will
      * be replaced with the custom metadata from Google Cloud Storage if the
      * `import_gcs_custom_metadata` field is set to true in the request.
+     * This method is a [long-running
+     * operation](https://cloud.google.com/dialogflow/cx/docs/how/long-running-operation).
+     * The returned `Operation` type has the following method-specific fields:
+     * - `metadata`: [KnowledgeOperationMetadata][google.cloud.dialogflow.v2beta1.KnowledgeOperationMetadata]
+     * - `response`: [Document][google.cloud.dialogflow.v2beta1.Document]
      * Note: The `projects.agent.knowledgeBases.documents` resource is deprecated;
      * only use `projects.knowledgeBases.documents`.
      * </pre>
@@ -629,6 +655,11 @@ public final class DocumentsGrpc {
      *
      * <pre>
      * Creates a new document.
+     * This method is a [long-running
+     * operation](https://cloud.google.com/dialogflow/cx/docs/how/long-running-operation).
+     * The returned `Operation` type has the following method-specific fields:
+     * - `metadata`: [KnowledgeOperationMetadata][google.cloud.dialogflow.v2beta1.KnowledgeOperationMetadata]
+     * - `response`: [Document][google.cloud.dialogflow.v2beta1.Document]
      * Note: The `projects.agent.knowledgeBases.documents` resource is deprecated;
      * only use `projects.knowledgeBases.documents`.
      * </pre>
@@ -649,6 +680,11 @@ public final class DocumentsGrpc {
      * Create documents by importing data from external sources.
      * Dialogflow supports up to 350 documents in each request. If you try to
      * import more, Dialogflow will return an error.
+     * This method is a [long-running
+     * operation](https://cloud.google.com/dialogflow/cx/docs/how/long-running-operation).
+     * The returned `Operation` type has the following method-specific fields:
+     * - `metadata`: [KnowledgeOperationMetadata][google.cloud.dialogflow.v2beta1.KnowledgeOperationMetadata]
+     * - `response`: [ImportDocumentsResponse][google.cloud.dialogflow.v2beta1.ImportDocumentsResponse]
      * </pre>
      */
     public void importDocuments(
@@ -665,6 +701,12 @@ public final class DocumentsGrpc {
      *
      * <pre>
      * Deletes the specified document.
+     * This method is a [long-running
+     * operation](https://cloud.google.com/dialogflow/cx/docs/how/long-running-operation).
+     * The returned `Operation` type has the following method-specific fields:
+     * - `metadata`: [KnowledgeOperationMetadata][google.cloud.dialogflow.v2beta1.KnowledgeOperationMetadata]
+     * - `response`: An [Empty
+     *   message](https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#empty)
      * Note: The `projects.agent.knowledgeBases.documents` resource is deprecated;
      * only use `projects.knowledgeBases.documents`.
      * </pre>
@@ -683,6 +725,11 @@ public final class DocumentsGrpc {
      *
      * <pre>
      * Updates the specified document.
+     * This method is a [long-running
+     * operation](https://cloud.google.com/dialogflow/cx/docs/how/long-running-operation).
+     * The returned `Operation` type has the following method-specific fields:
+     * - `metadata`: [KnowledgeOperationMetadata][google.cloud.dialogflow.v2beta1.KnowledgeOperationMetadata]
+     * - `response`: [Document][google.cloud.dialogflow.v2beta1.Document]
      * Note: The `projects.agent.knowledgeBases.documents` resource is deprecated;
      * only use `projects.knowledgeBases.documents`.
      * </pre>
@@ -707,6 +754,11 @@ public final class DocumentsGrpc {
      * Note: If the document source is Google Cloud Storage URI, its metadata will
      * be replaced with the custom metadata from Google Cloud Storage if the
      * `import_gcs_custom_metadata` field is set to true in the request.
+     * This method is a [long-running
+     * operation](https://cloud.google.com/dialogflow/cx/docs/how/long-running-operation).
+     * The returned `Operation` type has the following method-specific fields:
+     * - `metadata`: [KnowledgeOperationMetadata][google.cloud.dialogflow.v2beta1.KnowledgeOperationMetadata]
+     * - `response`: [Document][google.cloud.dialogflow.v2beta1.Document]
      * Note: The `projects.agent.knowledgeBases.documents` resource is deprecated;
      * only use `projects.knowledgeBases.documents`.
      * </pre>
@@ -775,6 +827,11 @@ public final class DocumentsGrpc {
      *
      * <pre>
      * Creates a new document.
+     * This method is a [long-running
+     * operation](https://cloud.google.com/dialogflow/cx/docs/how/long-running-operation).
+     * The returned `Operation` type has the following method-specific fields:
+     * - `metadata`: [KnowledgeOperationMetadata][google.cloud.dialogflow.v2beta1.KnowledgeOperationMetadata]
+     * - `response`: [Document][google.cloud.dialogflow.v2beta1.Document]
      * Note: The `projects.agent.knowledgeBases.documents` resource is deprecated;
      * only use `projects.knowledgeBases.documents`.
      * </pre>
@@ -792,6 +849,11 @@ public final class DocumentsGrpc {
      * Create documents by importing data from external sources.
      * Dialogflow supports up to 350 documents in each request. If you try to
      * import more, Dialogflow will return an error.
+     * This method is a [long-running
+     * operation](https://cloud.google.com/dialogflow/cx/docs/how/long-running-operation).
+     * The returned `Operation` type has the following method-specific fields:
+     * - `metadata`: [KnowledgeOperationMetadata][google.cloud.dialogflow.v2beta1.KnowledgeOperationMetadata]
+     * - `response`: [ImportDocumentsResponse][google.cloud.dialogflow.v2beta1.ImportDocumentsResponse]
      * </pre>
      */
     public com.google.longrunning.Operation importDocuments(
@@ -805,6 +867,12 @@ public final class DocumentsGrpc {
      *
      * <pre>
      * Deletes the specified document.
+     * This method is a [long-running
+     * operation](https://cloud.google.com/dialogflow/cx/docs/how/long-running-operation).
+     * The returned `Operation` type has the following method-specific fields:
+     * - `metadata`: [KnowledgeOperationMetadata][google.cloud.dialogflow.v2beta1.KnowledgeOperationMetadata]
+     * - `response`: An [Empty
+     *   message](https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#empty)
      * Note: The `projects.agent.knowledgeBases.documents` resource is deprecated;
      * only use `projects.knowledgeBases.documents`.
      * </pre>
@@ -820,6 +888,11 @@ public final class DocumentsGrpc {
      *
      * <pre>
      * Updates the specified document.
+     * This method is a [long-running
+     * operation](https://cloud.google.com/dialogflow/cx/docs/how/long-running-operation).
+     * The returned `Operation` type has the following method-specific fields:
+     * - `metadata`: [KnowledgeOperationMetadata][google.cloud.dialogflow.v2beta1.KnowledgeOperationMetadata]
+     * - `response`: [Document][google.cloud.dialogflow.v2beta1.Document]
      * Note: The `projects.agent.knowledgeBases.documents` resource is deprecated;
      * only use `projects.knowledgeBases.documents`.
      * </pre>
@@ -841,6 +914,11 @@ public final class DocumentsGrpc {
      * Note: If the document source is Google Cloud Storage URI, its metadata will
      * be replaced with the custom metadata from Google Cloud Storage if the
      * `import_gcs_custom_metadata` field is set to true in the request.
+     * This method is a [long-running
+     * operation](https://cloud.google.com/dialogflow/cx/docs/how/long-running-operation).
+     * The returned `Operation` type has the following method-specific fields:
+     * - `metadata`: [KnowledgeOperationMetadata][google.cloud.dialogflow.v2beta1.KnowledgeOperationMetadata]
+     * - `response`: [Document][google.cloud.dialogflow.v2beta1.Document]
      * Note: The `projects.agent.knowledgeBases.documents` resource is deprecated;
      * only use `projects.knowledgeBases.documents`.
      * </pre>
@@ -907,6 +985,11 @@ public final class DocumentsGrpc {
      *
      * <pre>
      * Creates a new document.
+     * This method is a [long-running
+     * operation](https://cloud.google.com/dialogflow/cx/docs/how/long-running-operation).
+     * The returned `Operation` type has the following method-specific fields:
+     * - `metadata`: [KnowledgeOperationMetadata][google.cloud.dialogflow.v2beta1.KnowledgeOperationMetadata]
+     * - `response`: [Document][google.cloud.dialogflow.v2beta1.Document]
      * Note: The `projects.agent.knowledgeBases.documents` resource is deprecated;
      * only use `projects.knowledgeBases.documents`.
      * </pre>
@@ -924,6 +1007,11 @@ public final class DocumentsGrpc {
      * Create documents by importing data from external sources.
      * Dialogflow supports up to 350 documents in each request. If you try to
      * import more, Dialogflow will return an error.
+     * This method is a [long-running
+     * operation](https://cloud.google.com/dialogflow/cx/docs/how/long-running-operation).
+     * The returned `Operation` type has the following method-specific fields:
+     * - `metadata`: [KnowledgeOperationMetadata][google.cloud.dialogflow.v2beta1.KnowledgeOperationMetadata]
+     * - `response`: [ImportDocumentsResponse][google.cloud.dialogflow.v2beta1.ImportDocumentsResponse]
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
@@ -937,6 +1025,12 @@ public final class DocumentsGrpc {
      *
      * <pre>
      * Deletes the specified document.
+     * This method is a [long-running
+     * operation](https://cloud.google.com/dialogflow/cx/docs/how/long-running-operation).
+     * The returned `Operation` type has the following method-specific fields:
+     * - `metadata`: [KnowledgeOperationMetadata][google.cloud.dialogflow.v2beta1.KnowledgeOperationMetadata]
+     * - `response`: An [Empty
+     *   message](https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#empty)
      * Note: The `projects.agent.knowledgeBases.documents` resource is deprecated;
      * only use `projects.knowledgeBases.documents`.
      * </pre>
@@ -952,6 +1046,11 @@ public final class DocumentsGrpc {
      *
      * <pre>
      * Updates the specified document.
+     * This method is a [long-running
+     * operation](https://cloud.google.com/dialogflow/cx/docs/how/long-running-operation).
+     * The returned `Operation` type has the following method-specific fields:
+     * - `metadata`: [KnowledgeOperationMetadata][google.cloud.dialogflow.v2beta1.KnowledgeOperationMetadata]
+     * - `response`: [Document][google.cloud.dialogflow.v2beta1.Document]
      * Note: The `projects.agent.knowledgeBases.documents` resource is deprecated;
      * only use `projects.knowledgeBases.documents`.
      * </pre>
@@ -973,6 +1072,11 @@ public final class DocumentsGrpc {
      * Note: If the document source is Google Cloud Storage URI, its metadata will
      * be replaced with the custom metadata from Google Cloud Storage if the
      * `import_gcs_custom_metadata` field is set to true in the request.
+     * This method is a [long-running
+     * operation](https://cloud.google.com/dialogflow/cx/docs/how/long-running-operation).
+     * The returned `Operation` type has the following method-specific fields:
+     * - `metadata`: [KnowledgeOperationMetadata][google.cloud.dialogflow.v2beta1.KnowledgeOperationMetadata]
+     * - `response`: [Document][google.cloud.dialogflow.v2beta1.Document]
      * Note: The `projects.agent.knowledgeBases.documents` resource is deprecated;
      * only use `projects.knowledgeBases.documents`.
      * </pre>

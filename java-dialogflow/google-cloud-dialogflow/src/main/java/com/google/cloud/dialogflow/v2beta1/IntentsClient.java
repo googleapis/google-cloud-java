@@ -1026,6 +1026,15 @@ public class IntentsClient implements BackgroundResource {
   /**
    * Updates/Creates multiple intents in the specified agent.
    *
+   * <p>This method is a [long-running
+   * operation](https://cloud.google.com/dialogflow/es/docs/how/long-running-operations). The
+   * returned `Operation` type has the following method-specific fields:
+   *
+   * <p>- `metadata`: An empty [Struct
+   * message](https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#struct)
+   * - `response`:
+   * [BatchUpdateIntentsResponse][google.cloud.dialogflow.v2beta1.BatchUpdateIntentsResponse]
+   *
    * <p>Note: You should always train an agent prior to sending it queries. See the [training
    * documentation](https://cloud.google.com/dialogflow/es/docs/training).
    *
@@ -1060,6 +1069,15 @@ public class IntentsClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Updates/Creates multiple intents in the specified agent.
+   *
+   * <p>This method is a [long-running
+   * operation](https://cloud.google.com/dialogflow/es/docs/how/long-running-operations). The
+   * returned `Operation` type has the following method-specific fields:
+   *
+   * <p>- `metadata`: An empty [Struct
+   * message](https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#struct)
+   * - `response`:
+   * [BatchUpdateIntentsResponse][google.cloud.dialogflow.v2beta1.BatchUpdateIntentsResponse]
    *
    * <p>Note: You should always train an agent prior to sending it queries. See the [training
    * documentation](https://cloud.google.com/dialogflow/es/docs/training).
@@ -1098,6 +1116,15 @@ public class IntentsClient implements BackgroundResource {
   /**
    * Updates/Creates multiple intents in the specified agent.
    *
+   * <p>This method is a [long-running
+   * operation](https://cloud.google.com/dialogflow/es/docs/how/long-running-operations). The
+   * returned `Operation` type has the following method-specific fields:
+   *
+   * <p>- `metadata`: An empty [Struct
+   * message](https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#struct)
+   * - `response`:
+   * [BatchUpdateIntentsResponse][google.cloud.dialogflow.v2beta1.BatchUpdateIntentsResponse]
+   *
    * <p>Note: You should always train an agent prior to sending it queries. See the [training
    * documentation](https://cloud.google.com/dialogflow/es/docs/training).
    *
@@ -1132,6 +1159,15 @@ public class IntentsClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Updates/Creates multiple intents in the specified agent.
+   *
+   * <p>This method is a [long-running
+   * operation](https://cloud.google.com/dialogflow/es/docs/how/long-running-operations). The
+   * returned `Operation` type has the following method-specific fields:
+   *
+   * <p>- `metadata`: An empty [Struct
+   * message](https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#struct)
+   * - `response`:
+   * [BatchUpdateIntentsResponse][google.cloud.dialogflow.v2beta1.BatchUpdateIntentsResponse]
    *
    * <p>Note: You should always train an agent prior to sending it queries. See the [training
    * documentation](https://cloud.google.com/dialogflow/es/docs/training).
@@ -1170,6 +1206,15 @@ public class IntentsClient implements BackgroundResource {
   /**
    * Updates/Creates multiple intents in the specified agent.
    *
+   * <p>This method is a [long-running
+   * operation](https://cloud.google.com/dialogflow/es/docs/how/long-running-operations). The
+   * returned `Operation` type has the following method-specific fields:
+   *
+   * <p>- `metadata`: An empty [Struct
+   * message](https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#struct)
+   * - `response`:
+   * [BatchUpdateIntentsResponse][google.cloud.dialogflow.v2beta1.BatchUpdateIntentsResponse]
+   *
    * <p>Note: You should always train an agent prior to sending it queries. See the [training
    * documentation](https://cloud.google.com/dialogflow/es/docs/training).
    *
@@ -1199,6 +1244,15 @@ public class IntentsClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Updates/Creates multiple intents in the specified agent.
+   *
+   * <p>This method is a [long-running
+   * operation](https://cloud.google.com/dialogflow/es/docs/how/long-running-operations). The
+   * returned `Operation` type has the following method-specific fields:
+   *
+   * <p>- `metadata`: An empty [Struct
+   * message](https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#struct)
+   * - `response`:
+   * [BatchUpdateIntentsResponse][google.cloud.dialogflow.v2beta1.BatchUpdateIntentsResponse]
    *
    * <p>Note: You should always train an agent prior to sending it queries. See the [training
    * documentation](https://cloud.google.com/dialogflow/es/docs/training).
@@ -1230,6 +1284,15 @@ public class IntentsClient implements BackgroundResource {
   /**
    * Updates/Creates multiple intents in the specified agent.
    *
+   * <p>This method is a [long-running
+   * operation](https://cloud.google.com/dialogflow/es/docs/how/long-running-operations). The
+   * returned `Operation` type has the following method-specific fields:
+   *
+   * <p>- `metadata`: An empty [Struct
+   * message](https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#struct)
+   * - `response`:
+   * [BatchUpdateIntentsResponse][google.cloud.dialogflow.v2beta1.BatchUpdateIntentsResponse]
+   *
    * <p>Note: You should always train an agent prior to sending it queries. See the [training
    * documentation](https://cloud.google.com/dialogflow/es/docs/training).
    *
@@ -1257,6 +1320,15 @@ public class IntentsClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes intents in the specified agent.
+   *
+   * <p>This method is a [long-running
+   * operation](https://cloud.google.com/dialogflow/es/docs/how/long-running-operations). The
+   * returned `Operation` type has the following method-specific fields:
+   *
+   * <p>- `metadata`: An empty [Struct
+   * message](https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#struct)
+   * - `response`: An [Empty
+   * message](https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#empty)
    *
    * <p>Note: You should always train an agent prior to sending it queries. See the [training
    * documentation](https://cloud.google.com/dialogflow/es/docs/training).
@@ -1293,6 +1365,15 @@ public class IntentsClient implements BackgroundResource {
   /**
    * Deletes intents in the specified agent.
    *
+   * <p>This method is a [long-running
+   * operation](https://cloud.google.com/dialogflow/es/docs/how/long-running-operations). The
+   * returned `Operation` type has the following method-specific fields:
+   *
+   * <p>- `metadata`: An empty [Struct
+   * message](https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#struct)
+   * - `response`: An [Empty
+   * message](https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#empty)
+   *
    * <p>Note: You should always train an agent prior to sending it queries. See the [training
    * documentation](https://cloud.google.com/dialogflow/es/docs/training).
    *
@@ -1325,6 +1406,15 @@ public class IntentsClient implements BackgroundResource {
   /**
    * Deletes intents in the specified agent.
    *
+   * <p>This method is a [long-running
+   * operation](https://cloud.google.com/dialogflow/es/docs/how/long-running-operations). The
+   * returned `Operation` type has the following method-specific fields:
+   *
+   * <p>- `metadata`: An empty [Struct
+   * message](https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#struct)
+   * - `response`: An [Empty
+   * message](https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#empty)
+   *
    * <p>Note: You should always train an agent prior to sending it queries. See the [training
    * documentation](https://cloud.google.com/dialogflow/es/docs/training).
    *
@@ -1353,6 +1443,15 @@ public class IntentsClient implements BackgroundResource {
   /**
    * Deletes intents in the specified agent.
    *
+   * <p>This method is a [long-running
+   * operation](https://cloud.google.com/dialogflow/es/docs/how/long-running-operations). The
+   * returned `Operation` type has the following method-specific fields:
+   *
+   * <p>- `metadata`: An empty [Struct
+   * message](https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#struct)
+   * - `response`: An [Empty
+   * message](https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#empty)
+   *
    * <p>Note: You should always train an agent prior to sending it queries. See the [training
    * documentation](https://cloud.google.com/dialogflow/es/docs/training).
    *
@@ -1380,6 +1479,15 @@ public class IntentsClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes intents in the specified agent.
+   *
+   * <p>This method is a [long-running
+   * operation](https://cloud.google.com/dialogflow/es/docs/how/long-running-operations). The
+   * returned `Operation` type has the following method-specific fields:
+   *
+   * <p>- `metadata`: An empty [Struct
+   * message](https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#struct)
+   * - `response`: An [Empty
+   * message](https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#empty)
    *
    * <p>Note: You should always train an agent prior to sending it queries. See the [training
    * documentation](https://cloud.google.com/dialogflow/es/docs/training).
