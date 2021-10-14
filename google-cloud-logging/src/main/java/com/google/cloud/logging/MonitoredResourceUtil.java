@@ -16,9 +16,7 @@
 
 package com.google.cloud.logging;
 
-import com.google.cloud.MetadataConfig;
 import com.google.cloud.MonitoredResource;
-import com.google.cloud.ServiceOptions;
 import com.google.cloud.logging.LogEntry.Builder;
 import com.google.common.base.Strings;
 import com.google.common.collect.ImmutableMultimap;
@@ -38,19 +36,27 @@ import java.util.Map;
  */
 public class MonitoredResourceUtil {
 
+  private static final String APPENGINE_LABEL_PREFIX = "appengine.googleapis.com/";
+  private static final String CLUSTER_NAME_ATTRIBUTE = "instance/attributes/cluster-name";
+  private static final String K8S_POD_NAMESPACE_PATH =
+      "/var/run/secrets/kubernetes.io/serviceaccount/namespace";
+  private static final String FLEX_ENV = "flex";
+  private static final String STD_ENV = "standard";
+
   private enum Label {
-    AppId("app_id"),
     ClusterName("cluster_name"),
+    ConfigurationName("configuration_name"),
     ContainerName("container_name"),
+    Env("env"),
+    FunctionName("function_name"),
     InstanceId("instance_id"),
     InstanceName("instance_name"),
     Location("location"),
     ModuleId("module_id"),
-    NamespaceId("namespace_id"),
     NamespaceName("namespace_name"),
-    PodId("pod_id"),
     PodName("pod_name"),
     ProjectId("project_id"),
+    Region("region"),
     RevisionName("revision_name"),
     ServiceName("service_name"),
     VersionId("version_id"),
@@ -69,9 +75,8 @@ public class MonitoredResourceUtil {
 
   private enum Resource {
     CloudRun("cloud_run_revision"),
-    Container("container"),
-    GaeAppFlex("gae_app_flex"),
-    GaeAppStandard("gae_app_standard"),
+    CloudFunction("cloud_function"),
+    AppEngine("gae_app"),
     GceInstance("gce_instance"),
     K8sContainer("k8s_container"),
     Global("global");
@@ -87,21 +92,17 @@ public class MonitoredResourceUtil {
     }
   }
 
-  private static final String APPENGINE_LABEL_PREFIX = "appengine.googleapis.com/";
-
   private static ImmutableMultimap<String, Label> resourceTypeWithLabels =
       ImmutableMultimap.<String, Label>builder()
+          .putAll(Resource.CloudFunction.getKey(), Label.FunctionName, Label.Region)
           .putAll(
-              Resource.Container.getKey(),
-              Label.ClusterName,
-              Label.ContainerName,
-              Label.InstanceId,
-              Label.NamespaceId,
-              Label.PodId,
-              Label.Zone)
-          .putAll(Resource.CloudRun.getKey(), Label.RevisionName, Label.ServiceName, Label.Location)
-          .putAll(Resource.GaeAppFlex.getKey(), Label.ModuleId, Label.VersionId, Label.Zone)
-          .putAll(Resource.GaeAppStandard.getKey(), Label.ModuleId, Label.VersionId)
+              Resource.CloudRun.getKey(),
+              Label.RevisionName,
+              Label.ServiceName,
+              Label.Location,
+              Label.ConfigurationName)
+          .putAll(
+              Resource.AppEngine.getKey(), Label.ModuleId, Label.VersionId, Label.Zone, Label.Env)
           .putAll(Resource.GceInstance.getKey(), Label.InstanceId, Label.Zone)
           .putAll(
               Resource.K8sContainer.getKey(),
@@ -112,22 +113,45 @@ public class MonitoredResourceUtil {
               Label.ContainerName)
           .build();
 
+  private static Map<String, MonitoredResource> cachedMonitoredResources = new HashMap<>();
+  private static ResourceTypeEnvironmentGetter getter = new ResourceTypeEnvironmentGetterImpl();
+
   private MonitoredResourceUtil() {}
 
-  /* Return a self-configured monitored Resource. */
-  public static MonitoredResource getResource(String projectId, String resourceTypeParam) {
-    String resourceType = resourceTypeParam;
+  /**
+   * Method is intended to assist in testing <code>MonitoredResourceUtil</code> class only.
+   *
+   * @param getter A mocked environment getter for simulated test environments.
+   */
+  protected static void setEnvironmentGetter(ResourceTypeEnvironmentGetter getter) {
+    MonitoredResourceUtil.getter = getter;
+  }
+
+  /**
+   * Build {@link MonitoredResource} based on detected resource type and populate it with labels
+   * following Monitored Resource Types documentation.
+   *
+   * @param projectId A string defining the project id
+   * @param resourceType A custom resource type
+   * @return the created {@link MonitoredResource}
+   * @see <a href="https://cloud.google.com/monitoring/api/resources">Monitored resource Types</a>
+   */
+  public static MonitoredResource getResource(String projectId, String resourceType) {
+    if (projectId == null || projectId.trim().isEmpty()) {
+      projectId = getter.getAttribute("project/project-id");
+    }
+
+    MonitoredResource result = cachedMonitoredResources.get(projectId + "/" + resourceType);
+    if (result != null) {
+      return result;
+    }
+
     if (Strings.isNullOrEmpty(resourceType)) {
-      Resource detectedResourceType = getAutoDetectedResourceType();
+      Resource detectedResourceType = detectResourceType();
       resourceType = detectedResourceType.getKey();
     }
-    // Currently, "gae_app" is the supported logging Resource type, but we distinguish
-    // between "gae_app_flex", "gae_app_standard" to support zone id, instance name logging on flex
-    // VMs.
-    // Hence, "gae_app_flex", "gae_app_standard" are trimmed to "gae_app"
-    String resourceName = resourceType.startsWith("gae_app") ? "gae_app" : resourceType;
     MonitoredResource.Builder builder =
-        MonitoredResource.newBuilder(resourceName).addLabel(Label.ProjectId.getKey(), projectId);
+        MonitoredResource.newBuilder(resourceType).addLabel(Label.ProjectId.getKey(), projectId);
 
     for (Label label : resourceTypeWithLabels.get(resourceType)) {
       String value = getValue(label, resourceType);
@@ -135,7 +159,46 @@ public class MonitoredResourceUtil {
         builder.addLabel(label.getKey(), value);
       }
     }
-    return builder.build();
+    result = builder.build();
+    cachedMonitoredResources.put(projectId + "/" + resourceType, result);
+    return result;
+  }
+
+  /**
+   * Detect monitored Resource type using the following heuristic rules based on the environment and
+   * metadata server.
+   */
+  private static Resource detectResourceType() {
+    // expects supported Google Cloud resource to have access to metadata server
+    if (getter.getAttribute("") == null) {
+      return Resource.Global;
+    }
+
+    if (getter.getEnv("K_SERVICE") != null
+        && getter.getEnv("K_REVISION") != null
+        && getter.getEnv("K_CONFIGURATION") != null) {
+      return Resource.CloudRun;
+    }
+    if (getter.getEnv("GAE_INSTANCE") != null
+        && getter.getEnv("GAE_RUNTIME") != null
+        && getter.getEnv("GAE_SERVICE") != null
+        && getter.getEnv("GAE_VERSION") != null) {
+      return Resource.AppEngine;
+    }
+    if (getter.getEnv("FUNCTION_SIGNATURE_TYPE") != null
+        && getter.getEnv("FUNCTION_TARGET") != null) {
+      return Resource.CloudFunction;
+    }
+    if (getter.getAttribute(CLUSTER_NAME_ATTRIBUTE) != null) {
+      return Resource.K8sContainer;
+    }
+    if (getter.getAttribute("instance/preempted") != null
+        && getter.getAttribute("instance/cpu-platform") != null
+        && getter.getAttribute("instance/attributes/gae_app_bucket") == null) {
+      return Resource.GceInstance;
+    }
+    // other Google Cloud resources (e.g. CloudBuild) might be misdetected
+    return Resource.Global;
   }
 
   /**
@@ -144,135 +207,152 @@ public class MonitoredResourceUtil {
    * @return custom log entry enhancers
    */
   public static List<LoggingEnhancer> getResourceEnhancers() {
-    Resource resourceType = getAutoDetectedResourceType();
+    Resource resourceType = detectResourceType();
     return createEnhancers(resourceType);
   }
 
+  @SuppressWarnings("incomplete-switch")
   private static String getValue(Label label, String resourceType) {
-    String value;
+    String value = "";
+
     switch (label) {
-      case AppId:
-        value = ServiceOptions.getAppEngineAppId();
-        break;
       case ClusterName:
-        value = MetadataConfig.getClusterName();
+        value = getter.getAttribute(CLUSTER_NAME_ATTRIBUTE);
+        break;
+      case ConfigurationName:
+        value = getter.getEnv("K_CONFIGURATION");
         break;
       case ContainerName:
-        if (resourceType.equals("k8s_container")) {
-          String hostName = System.getenv("HOSTNAME");
-          value = hostName.substring(0, hostName.indexOf("-"));
-        } else {
-          value = MetadataConfig.getContainerName();
+        // there is no determenistic way to discover name of container
+        // allow users to define the container name explicitly
+        value = getter.getEnv("CONTAINER_NAME");
+        if (value == null) {
+          value = "";
+        }
+        break;
+      case Env:
+        value = getAppEngineEnvironment();
+        break;
+      case FunctionName:
+      case ServiceName:
+        value = getter.getEnv("K_SERVICE");
+        if (value == null) {
+          value = getter.getEnv("FUNCTION_NAME");
         }
         break;
       case InstanceId:
-        value = MetadataConfig.getInstanceId();
+        value = getter.getAttribute("instance/id");
         break;
       case InstanceName:
-        value = getAppEngineInstanceName();
+        value = getter.getAttribute("instance/name");
         break;
       case Location:
-        value = getCloudRunLocation();
+        if (Resource.CloudFunction.getKey() == resourceType
+            || Resource.CloudRun.getKey() == resourceType) {
+          value = getRegion();
+        } else {
+          value = getZone();
+        }
         break;
       case ModuleId:
-        value = getAppEngineModuleId();
-        break;
-      case NamespaceId:
-        value = MetadataConfig.getNamespaceId();
+        value = getter.getEnv("GAE_SERVICE");
         break;
       case NamespaceName:
-        String filePath = System.getenv("KUBERNETES_NAMESPACE_FILE");
-        if (filePath == null) {
-          filePath = "/var/run/secrets/kubernetes.io/serviceaccount/namespace";
-        }
-        try {
-          value = new String(Files.readAllBytes(Paths.get(filePath)), StandardCharsets.UTF_8);
-        } catch (IOException e) {
-          throw new LoggingException(e, true);
-        }
+        value = getK8sNamespace();
         break;
       case PodName:
-      case PodId:
-        value = System.getenv("HOSTNAME");
+        // there is no determenistic way to discover name of container
+        // by default the pod name is set as pod's hostname
+        // note that hostname can be overriden in pod manifest or at runtime
+        value = getter.getEnv("HOSTNAME");
+        break;
+      case Region:
+        value = getRegion();
         break;
       case RevisionName:
-        value = System.getenv("K_REVISION");
-        break;
-      case ServiceName:
-        value = System.getenv("K_SERVICE");
+        value = getter.getEnv("K_REVISION");
         break;
       case VersionId:
-        value = getAppEngineVersionId();
+        value = getter.getEnv("GAE_VERSION");
         break;
       case Zone:
-        value = MetadataConfig.getZone();
+        value = getZone();
         break;
-      default:
-        value = null;
-        break;
+    }
+
+    return value;
+  }
+
+  /**
+   * Heuristic to discover the namespace name of the current environment. There is no determenistic
+   * way to discover the namespace name of the process. The name is read from the {@link
+   * K8S_POD_NAMESPACE_PATH} when available or read from a user defined environment variable
+   * "NAMESPACE_NAME"
+   *
+   * @return Namespace name or empty string if the name could not be discovered
+   */
+  private static String getK8sNamespace() {
+    String value = "";
+    try {
+      value =
+          new String(Files.readAllBytes(Paths.get(K8S_POD_NAMESPACE_PATH)), StandardCharsets.UTF_8);
+    } catch (IOException e) {
+      // if SA token is not shared the info about namespace is unavailable
+      // allow users to define the namespace name explicitly
+      value = getter.getEnv("NAMESPACE_NAME");
+      if (value == null) {
+        value = "";
+      }
     }
     return value;
   }
 
-  /* Detect monitored Resource type using environment variables, else return global as default. */
-  private static Resource getAutoDetectedResourceType() {
-    if (System.getenv("K_SERVICE") != null
-        && System.getenv("K_REVISION") != null
-        && System.getenv("K_CONFIGURATION") != null
-        && System.getenv("KUBERNETES_SERVICE_HOST") == null) {
-      return Resource.CloudRun;
+  /**
+   * Distinguish between Standard and Flexible GAE environments. There is no indicator of the
+   * environment. The path to the startup-script in the metadata attribute was selected as one of
+   * the new values that explitly mentioning "flex" and cannot be altered by user (e.g. environment
+   * variable). The method assumes that the resource type is already identified as {@link
+   * Resource.AppEngine}.
+   *
+   * @return "flex" {@link String} for the Flexible environment and "standard" for the Standard.
+   */
+  private static String getAppEngineEnvironment() {
+    String value = getter.getAttribute("instance/attributes/startup-script");
+    if (value == "/var/lib/flex/startup_script.sh") {
+      return FLEX_ENV;
     }
-    if (System.getenv("GAE_INSTANCE") != null) {
-      return Resource.GaeAppFlex;
-    }
-    if (System.getenv("KUBERNETES_SERVICE_HOST") != null) {
-      return Resource.K8sContainer;
-    }
-    if (ServiceOptions.getAppEngineAppId() != null) {
-      return Resource.GaeAppStandard;
-    }
-    if (MetadataConfig.getInstanceId() != null) {
-      return Resource.GceInstance;
-    }
-    // default Resource type
-    return Resource.Global;
+    return STD_ENV;
   }
 
-  private static String getAppEngineModuleId() {
-    return System.getenv("GAE_SERVICE");
+  /**
+   * Retrieves a region from the qualified region of 'projects/[PROJECT_NUMBER]/regions/[REGION]'
+   *
+   * @return region string id
+   */
+  private static String getRegion() {
+    String loc = getter.getAttribute("instance/region");
+    return loc.substring(loc.lastIndexOf('/') + 1);
   }
 
-  private static String getAppEngineVersionId() {
-    return System.getenv("GAE_VERSION");
-  }
-
-  private static String getAppEngineInstanceName() {
-    return System.getenv("GAE_INSTANCE");
-  }
-
-  private static String getCloudRunLocation() {
-    String zone = MetadataConfig.getZone();
-    // for Cloud Run managed, the zone is "REGION-1"
-    // So, we need to strip the "-1" to set location to just the region
-    if (zone.endsWith("-1")) return zone.substring(0, zone.length() - 2);
-    else return zone;
+  /**
+   * Retrieves a zone from the qualified zone of 'projects/[PROJECT_NUMBER]/zones/[ZONE]'
+   *
+   * @return zone string id
+   */
+  private static String getZone() {
+    String loc = getter.getAttribute("instance/zone");
+    return loc.substring(loc.lastIndexOf('/') + 1);
   }
 
   private static List<LoggingEnhancer> createEnhancers(Resource resourceType) {
     List<LoggingEnhancer> enhancers = new ArrayList<>(2);
-    switch (resourceType) {
-        // Trace logging enhancer is supported on GAE Flex and Standard.
-      case GaeAppFlex:
+    if (resourceType == Resource.AppEngine) {
+      enhancers.add(new TraceLoggingEnhancer(APPENGINE_LABEL_PREFIX));
+      if (getAppEngineEnvironment() == FLEX_ENV) {
         enhancers.add(
             new LabelLoggingEnhancer(
                 APPENGINE_LABEL_PREFIX, Collections.singletonList(Label.InstanceName)));
-        enhancers.add(new TraceLoggingEnhancer(APPENGINE_LABEL_PREFIX));
-        break;
-      case GaeAppStandard:
-        enhancers.add(new TraceLoggingEnhancer(APPENGINE_LABEL_PREFIX));
-        break;
-      default:
-        break;
+      }
     }
     return enhancers;
   }
@@ -282,7 +362,7 @@ public class MonitoredResourceUtil {
    * MonitoredResource.Builder#addLabel(String, String)} are restricted to a supported set per
    * resource.
    *
-   * @see <a href="https://cloud.google.com/logging/docs/api/v2/resource-list">Logging Labels</a>
+   * @see <a href= "https://cloud.google.com/logging/docs/api/v2/resource-list">Logging Labels</a>
    */
   private static class LabelLoggingEnhancer implements LoggingEnhancer {
 

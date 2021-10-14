@@ -98,6 +98,7 @@ public class LoggingOptions extends ServiceOptions<Logging, LoggingOptions> {
     super(LoggingFactory.class, LoggingRpcFactory.class, builder, new LoggingDefaults());
   }
 
+  @SuppressWarnings("serial")
   private static class LoggingDefaults implements ServiceDefaults<Logging, LoggingOptions> {
 
     @Override

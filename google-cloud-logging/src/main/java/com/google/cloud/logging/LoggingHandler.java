@@ -22,6 +22,7 @@ import com.google.cloud.MonitoredResource;
 import com.google.cloud.logging.Logging.WriteOption;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
+import java.time.Instant;
 import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
@@ -42,14 +43,38 @@ import java.util.logging.SimpleFormatter;
  * Cloud Logging severities:
  *
  * <table summary="Mapping of Java logging level to Cloud Logging severities">
- * <tr><th width="50%">Java Level</th><th>Cloud Logging Severity</th></tr>
- * <tr><td>SEVERE</td><td>ERROR</td></tr>
- * <tr><td>WARNING</td><td>WARNING</td></tr>
- * <tr><td>INFO</td><td>INFO</td></tr>
- * <tr><td>CONFIG</td><td>INFO</td></tr>
- * <tr><td>FINE</td><td>DEBUG</td></tr>
- * <tr><td>FINER</td><td>DEBUG</td></tr>
- * <tr><td>FINEST</td><td>DEBUG</td></tr>
+ * <tr>
+ * <th width="50%">Java Level</th>
+ * <th>Cloud Logging Severity</th>
+ * </tr>
+ * <tr>
+ * <td>SEVERE</td>
+ * <td>ERROR</td>
+ * </tr>
+ * <tr>
+ * <td>WARNING</td>
+ * <td>WARNING</td>
+ * </tr>
+ * <tr>
+ * <td>INFO</td>
+ * <td>INFO</td>
+ * </tr>
+ * <tr>
+ * <td>CONFIG</td>
+ * <td>INFO</td>
+ * </tr>
+ * <tr>
+ * <td>FINE</td>
+ * <td>DEBUG</td>
+ * </tr>
+ * <tr>
+ * <td>FINER</td>
+ * <td>DEBUG</td>
+ * </tr>
+ * <tr>
+ * <td>FINEST</td>
+ * <td>DEBUG</td>
+ * </tr>
  * </table>
  *
  * <p>Original Java logging levels are added as labels (with {@code levelName} and {@code
@@ -94,9 +119,6 @@ import java.util.logging.SimpleFormatter;
  */
 public class LoggingHandler extends Handler {
 
-  private static final String HANDLERS_PROPERTY = "handlers";
-  private static final String ROOT_LOGGER_NAME = "";
-  private static final String[] NO_HANDLERS = new String[0];
   private static final String LEVEL_NAME_KEY = "levelName";
   private static final String LEVEL_VALUE_KEY = "levelValue";
 
@@ -105,8 +127,10 @@ public class LoggingHandler extends Handler {
 
   private volatile Logging logging;
 
-  // Logs with the same severity with the base could be more efficiently sent to Cloud.
-  // Defaults to level of the handler or Level.FINEST if the handler is set to Level.ALL.
+  // Logs with the same severity with the base could be more efficiently sent to
+  // Cloud.
+  // Defaults to level of the handler or Level.FINEST if the handler is set to
+  // Level.ALL.
   // Currently there is no way to modify the base level, see
   // https://github.com/googleapis/google-cloud-java/issues/1740 .
   private final Level baseLevel;
@@ -204,7 +228,8 @@ public class LoggingHandler extends Handler {
 
       this.enhancers.addAll(enhancersParam);
 
-      // In the following line getResourceEnhancers() never returns null (@NotNull attribute)
+      // In the following line getResourceEnhancers() never returns null (@NotNull
+      // attribute)
       List<LoggingEnhancer> loggingEnhancers = MonitoredResourceUtil.getResourceEnhancers();
       this.enhancers.addAll(loggingEnhancers);
     } catch (Exception ex) {
@@ -219,8 +244,10 @@ public class LoggingHandler extends Handler {
     if (!isLoggable(record)) {
       return;
     }
-    // HACK warning: this logger doesn't work like normal loggers; the log calls are issued
-    // from another class instead of by itself, so it can't be configured off like normal
+    // HACK warning: this logger doesn't work like normal loggers; the log calls are
+    // issued
+    // from another class instead of by itself, so it can't be configured off like
+    // normal
     // loggers. We have to check the source class name instead.
     if ("io.netty.handler.codec.http2.Http2FrameLogger".equals(record.getSourceClassName())) {
       return;
@@ -246,7 +273,7 @@ public class LoggingHandler extends Handler {
     Level level = record.getLevel();
     LogEntry.Builder builder =
         LogEntry.newBuilder(Payload.StringPayload.of(payload))
-            .setTimestamp(record.getMillis())
+            .setTimestamp(Instant.ofEpochMilli(record.getMillis()))
             .setSeverity(severityFor(level));
 
     if (!baseLevel.equals(level)) {

@@ -69,7 +69,7 @@ public final class HttpRequest implements Serializable {
         };
 
     private static final StringEnumType<RequestMethod> type =
-        new StringEnumType(RequestMethod.class, CONSTRUCTOR);
+        new StringEnumType<RequestMethod>(RequestMethod.class, CONSTRUCTOR);
 
     public static final RequestMethod GET = type.createAndRegister("GET");
     public static final RequestMethod HEAD = type.createAndRegister("HEAD");

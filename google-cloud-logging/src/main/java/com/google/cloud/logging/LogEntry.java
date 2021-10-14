@@ -277,7 +277,7 @@ public class LogEntry implements Serializable {
      *
      * @see <a href="https://cloud.google.com/logging/docs/view/logs_index">Log Entries and Logs</a>
      */
-    public Builder setPayload(Payload payload) {
+    public Builder setPayload(Payload<?> payload) {
       this.payload = payload;
       return this;
     }
@@ -434,7 +434,7 @@ public class LogEntry implements Serializable {
    * @see <a href="https://cloud.google.com/logging/docs/view/logs_index">Log Entries and Logs</a>
    */
   @SuppressWarnings("unchecked")
-  public <T extends Payload> T getPayload() {
+  public <T extends Payload<?>> T getPayload() {
     return (T) payload;
   }
 
