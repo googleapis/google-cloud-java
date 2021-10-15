@@ -78,6 +78,7 @@ public class QueryJobConfigurationTest {
   private static final Priority PRIORITY = Priority.BATCH;
   private static final boolean ALLOW_LARGE_RESULTS = true;
   private static final boolean USE_QUERY_CACHE = false;
+  private static final boolean CREATE_SESSION = true;
   private static final boolean FLATTEN_RESULTS = true;
   private static final boolean USE_LEGACY_SQL = true;
   private static final Integer MAX_BILLING_TIER = 123;
@@ -119,6 +120,7 @@ public class QueryJobConfigurationTest {
           .setDestinationTable(TABLE_ID)
           .setWriteDisposition(WRITE_DISPOSITION)
           .setPriority(PRIORITY)
+          .setCreateSession(CREATE_SESSION)
           .setFlattenResults(FLATTEN_RESULTS)
           .setUserDefinedFunctions(USER_DEFINED_FUNCTIONS)
           .setDryRun(true)
@@ -238,6 +240,7 @@ public class QueryJobConfigurationTest {
     assertEquals(expected.getCreateDisposition(), value.getCreateDisposition());
     assertEquals(expected.getDefaultDataset(), value.getDefaultDataset());
     assertEquals(expected.getDestinationTable(), value.getDestinationTable());
+    assertEquals(expected.createSession(), value.createSession());
     assertEquals(expected.flattenResults(), value.flattenResults());
     assertEquals(expected.getPriority(), value.getPriority());
     assertEquals(expected.getQuery(), value.getQuery());

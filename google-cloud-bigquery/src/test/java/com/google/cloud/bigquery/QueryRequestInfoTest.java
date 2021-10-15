@@ -74,6 +74,7 @@ public class QueryRequestInfoTest {
   private static final WriteDisposition WRITE_DISPOSITION = WriteDisposition.WRITE_APPEND;
   private static final Priority PRIORITY = Priority.BATCH;
   private static final boolean ALLOW_LARGE_RESULTS = true;
+  private static final boolean CREATE_SESSION = true;
   private static final boolean USE_QUERY_CACHE = false;
   private static final boolean FLATTEN_RESULTS = true;
   private static final boolean USE_LEGACY_SQL = true;
@@ -142,6 +143,7 @@ public class QueryRequestInfoTest {
           .setLabels(LABELS)
           .setConnectionProperties(CONNECTION_PROPERTIES)
           .setPositionalParameters(POSITIONAL_PARAMETER)
+          .setCreateSession(CREATE_SESSION)
           .setMaxResults(100L)
           .build();
   QueryRequestInfo REQUEST_INFO_SUPPORTED = new QueryRequestInfo(QUERY_JOB_CONFIGURATION_SUPPORTED);

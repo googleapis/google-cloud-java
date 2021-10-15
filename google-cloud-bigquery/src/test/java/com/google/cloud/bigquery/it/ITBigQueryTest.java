@@ -2236,6 +2236,39 @@ public class ITBigQueryTest {
   }
 
   @Test
+  public void testQuerySessionSupport() throws InterruptedException {
+    String query = "CREATE TEMPORARY TABLE temptable AS SELECT 17 as foo";
+    QueryJobConfiguration queryJobConfiguration =
+        QueryJobConfiguration.newBuilder(query)
+            .setDefaultDataset(DatasetId.of(DATASET))
+            .setCreateSession(true)
+            .build();
+    Job remoteJob = bigquery.create(JobInfo.of(queryJobConfiguration));
+    remoteJob = remoteJob.waitFor();
+    assertNull(remoteJob.getStatus().getError());
+
+    Job queryJob = bigquery.getJob(remoteJob.getJobId());
+    JobStatistics.QueryStatistics statistics = queryJob.getStatistics();
+    String sessionId = statistics.getSessionInfo().getSessionId();
+    assertNotNull(sessionId);
+
+    String queryTempTable = "SELECT * FROM temptable";
+    ConnectionProperty connectionProperty =
+        ConnectionProperty.newBuilder().setKey("session_id").setValue(sessionId).build();
+    QueryJobConfiguration queryJobConfigurationWithSession =
+        QueryJobConfiguration.newBuilder(queryTempTable)
+            .setDefaultDataset(DatasetId.of(DATASET))
+            .setConnectionProperties(ImmutableList.of(connectionProperty))
+            .build();
+    Job remoteJobWithSession = bigquery.create(JobInfo.of(queryJobConfigurationWithSession));
+    remoteJobWithSession = remoteJobWithSession.waitFor();
+    assertNull(remoteJobWithSession.getStatus().getError());
+    Job queryJobWithSession = bigquery.getJob(remoteJobWithSession.getJobId());
+    JobStatistics.QueryStatistics statisticsWithSession = queryJobWithSession.getStatistics();
+    assertEquals(sessionId, statisticsWithSession.getSessionInfo().getSessionId());
+  }
+
+  @Test
   public void testDmlStatistics() throws InterruptedException {
     String tableName = TABLE_ID_FASTQUERY.getTable();
     // Run a DML statement to UPDATE 2 rows of data
