@@ -1,5 +1,17 @@
 # Changelog
 
+## [2.3.0](https://www.github.com/googleapis/java-bigquery/compare/v2.2.1...v2.3.0) (2021-10-15)
+
+
+### Features
+
+* add session support ([#1652](https://www.github.com/googleapis/java-bigquery/issues/1652)) ([acc6cb8](https://www.github.com/googleapis/java-bigquery/commit/acc6cb8ad318ae41a9a3a00a5942025c14cbe681))
+
+
+### Bug Fixes
+
+* fix timestamp rounding issue ([#1645](https://www.github.com/googleapis/java-bigquery/issues/1645)) ([e60bdff](https://www.github.com/googleapis/java-bigquery/commit/e60bdff9e196a618a59a0544ec93f87b2ec5fc82))
+
 ### [2.2.1](https://www.github.com/googleapis/java-bigquery/compare/v2.2.0...v2.2.1) (2021-10-05)
 
 
