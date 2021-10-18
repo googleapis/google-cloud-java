@@ -1,5 +1,13 @@
 # Changelog
 
+### [3.2.6](https://www.github.com/googleapis/java-asset/compare/v3.2.5...v3.2.6) (2021-10-18)
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-bigquery to v2.3.0 ([#975](https://www.github.com/googleapis/java-asset/issues/975)) ([4add67b](https://www.github.com/googleapis/java-asset/commit/4add67b099580575db006605705e93632c06e309))
+* update dependency com.google.cloud:google-cloud-core to v2.1.8 ([#974](https://www.github.com/googleapis/java-asset/issues/974)) ([a804303](https://www.github.com/googleapis/java-asset/commit/a804303f4ddf61a93b788122464e0226d7fa952a))
+
 ### [3.2.5](https://www.github.com/googleapis/java-asset/compare/v3.2.4...v3.2.5) (2021-10-08)
 
 
