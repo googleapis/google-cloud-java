@@ -19,8 +19,8 @@ package com.example.bigquerystorage;
 import com.google.cloud.bigquery.Field;
 import com.google.cloud.bigquery.Schema;
 import com.google.cloud.bigquery.StandardSQLTypeName;
-import com.google.cloud.bigquery.storage.v1beta2.TableFieldSchema;
-import com.google.cloud.bigquery.storage.v1beta2.TableSchema;
+import com.google.cloud.bigquery.storage.v1.TableFieldSchema;
+import com.google.cloud.bigquery.storage.v1.TableSchema;
 import com.google.common.collect.ImmutableMap;
 
 /** Converts structure from BigQuery client to BigQueryStorage client */

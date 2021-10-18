@@ -20,17 +20,17 @@ package com.example.bigquerystorage;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutureCallback;
 import com.google.api.core.ApiFutures;
-import com.google.cloud.bigquery.storage.v1beta2.AppendRowsResponse;
-import com.google.cloud.bigquery.storage.v1beta2.BQTableSchemaToProtoDescriptor;
-import com.google.cloud.bigquery.storage.v1beta2.BigQueryWriteClient;
-import com.google.cloud.bigquery.storage.v1beta2.CreateWriteStreamRequest;
-import com.google.cloud.bigquery.storage.v1beta2.JsonToProtoMessage;
-import com.google.cloud.bigquery.storage.v1beta2.ProtoRows;
-import com.google.cloud.bigquery.storage.v1beta2.ProtoSchema;
-import com.google.cloud.bigquery.storage.v1beta2.ProtoSchemaConverter;
-import com.google.cloud.bigquery.storage.v1beta2.StreamWriterV2;
-import com.google.cloud.bigquery.storage.v1beta2.TableName;
-import com.google.cloud.bigquery.storage.v1beta2.WriteStream;
+import com.google.cloud.bigquery.storage.v1.AppendRowsResponse;
+import com.google.cloud.bigquery.storage.v1.BQTableSchemaToProtoDescriptor;
+import com.google.cloud.bigquery.storage.v1.BigQueryWriteClient;
+import com.google.cloud.bigquery.storage.v1.CreateWriteStreamRequest;
+import com.google.cloud.bigquery.storage.v1.JsonToProtoMessage;
+import com.google.cloud.bigquery.storage.v1.ProtoRows;
+import com.google.cloud.bigquery.storage.v1.ProtoSchema;
+import com.google.cloud.bigquery.storage.v1.ProtoSchemaConverter;
+import com.google.cloud.bigquery.storage.v1.StreamWriter;
+import com.google.cloud.bigquery.storage.v1.TableName;
+import com.google.cloud.bigquery.storage.v1.WriteStream;
 import com.google.common.util.concurrent.MoreExecutors;
 import com.google.protobuf.Descriptors.Descriptor;
 import com.google.protobuf.Descriptors.DescriptorValidationException;
@@ -161,8 +161,8 @@ public class ParallelWriteCommittedStream {
         BQTableSchemaToProtoDescriptor.convertBQTableSchemaToProtoDescriptor(
             writeStream.getTableSchema());
     ProtoSchema protoSchema = ProtoSchemaConverter.convert(descriptor);
-    try (StreamWriterV2 writer =
-        StreamWriterV2.newBuilder(writeStream.getName())
+    try (StreamWriter writer =
+        StreamWriter.newBuilder(writeStream.getName())
             .setWriterSchema(protoSchema)
             .setTraceId("SAMPLE:parallel_append")
             .build()) {
