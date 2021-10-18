@@ -29,7 +29,7 @@ public interface GetMetadataStoreRequestOrBuilder
    * <pre>
    * Required. The resource name of the MetadataStore to retrieve.
    * Format:
-   * projects/{project}/locations/{location}/metadataStores/{metadatastore}
+   * `projects/{project}/locations/{location}/metadataStores/{metadatastore}`
    * </pre>
    *
    * <code>
@@ -45,7 +45,7 @@ public interface GetMetadataStoreRequestOrBuilder
    * <pre>
    * Required. The resource name of the MetadataStore to retrieve.
    * Format:
-   * projects/{project}/locations/{location}/metadataStores/{metadatastore}
+   * `projects/{project}/locations/{location}/metadataStores/{metadatastore}`
    * </pre>
    *
    * <code>

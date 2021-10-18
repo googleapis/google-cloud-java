@@ -124,7 +124,7 @@ public final class DeleteMetadataStoreRequest extends com.google.protobuf.Genera
    * <pre>
    * Required. The resource name of the MetadataStore to delete.
    * Format:
-   * projects/{project}/locations/{location}/metadataStores/{metadatastore}
+   * `projects/{project}/locations/{location}/metadataStores/{metadatastore}`
    * </pre>
    *
    * <code>
@@ -151,7 +151,7 @@ public final class DeleteMetadataStoreRequest extends com.google.protobuf.Genera
    * <pre>
    * Required. The resource name of the MetadataStore to delete.
    * Format:
-   * projects/{project}/locations/{location}/metadataStores/{metadatastore}
+   * `projects/{project}/locations/{location}/metadataStores/{metadatastore}`
    * </pre>
    *
    * <code>
@@ -536,7 +536,7 @@ public final class DeleteMetadataStoreRequest extends com.google.protobuf.Genera
      * <pre>
      * Required. The resource name of the MetadataStore to delete.
      * Format:
-     * projects/{project}/locations/{location}/metadataStores/{metadatastore}
+     * `projects/{project}/locations/{location}/metadataStores/{metadatastore}`
      * </pre>
      *
      * <code>
@@ -562,7 +562,7 @@ public final class DeleteMetadataStoreRequest extends com.google.protobuf.Genera
      * <pre>
      * Required. The resource name of the MetadataStore to delete.
      * Format:
-     * projects/{project}/locations/{location}/metadataStores/{metadatastore}
+     * `projects/{project}/locations/{location}/metadataStores/{metadatastore}`
      * </pre>
      *
      * <code>
@@ -588,7 +588,7 @@ public final class DeleteMetadataStoreRequest extends com.google.protobuf.Genera
      * <pre>
      * Required. The resource name of the MetadataStore to delete.
      * Format:
-     * projects/{project}/locations/{location}/metadataStores/{metadatastore}
+     * `projects/{project}/locations/{location}/metadataStores/{metadatastore}`
      * </pre>
      *
      * <code>
@@ -613,7 +613,7 @@ public final class DeleteMetadataStoreRequest extends com.google.protobuf.Genera
      * <pre>
      * Required. The resource name of the MetadataStore to delete.
      * Format:
-     * projects/{project}/locations/{location}/metadataStores/{metadatastore}
+     * `projects/{project}/locations/{location}/metadataStores/{metadatastore}`
      * </pre>
      *
      * <code>
@@ -634,7 +634,7 @@ public final class DeleteMetadataStoreRequest extends com.google.protobuf.Genera
      * <pre>
      * Required. The resource name of the MetadataStore to delete.
      * Format:
-     * projects/{project}/locations/{location}/metadataStores/{metadatastore}
+     * `projects/{project}/locations/{location}/metadataStores/{metadatastore}`
      * </pre>
      *
      * <code>

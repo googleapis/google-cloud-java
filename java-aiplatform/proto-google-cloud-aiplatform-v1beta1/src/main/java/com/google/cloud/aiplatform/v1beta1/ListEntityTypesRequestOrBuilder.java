@@ -62,10 +62,10 @@ public interface ListEntityTypesRequestOrBuilder
    * <pre>
    * Lists the EntityTypes that match the filter expression. The following
    * filters are supported:
-   * * `create_time`: Supports =, !=, &lt;, &gt;, &gt;=, and &lt;= comparisons. Values must
-   * be in RFC 3339 format.
-   * * `update_time`: Supports =, !=, &lt;, &gt;, &gt;=, and &lt;= comparisons. Values must
-   * be in RFC 3339 format.
+   * * `create_time`: Supports `=`, `!=`, `&lt;`, `&gt;`, `&gt;=`, and `&lt;=` comparisons.
+   * Values must be in RFC 3339 format.
+   * * `update_time`: Supports `=`, `!=`, `&lt;`, `&gt;`, `&gt;=`, and `&lt;=` comparisons.
+   * Values must be in RFC 3339 format.
    * * `labels`: Supports key-value equality as well as key presence.
    * Examples:
    * * `create_time &gt; &#92;"2020-01-31T15:30:00.000000Z&#92;" OR
@@ -88,10 +88,10 @@ public interface ListEntityTypesRequestOrBuilder
    * <pre>
    * Lists the EntityTypes that match the filter expression. The following
    * filters are supported:
-   * * `create_time`: Supports =, !=, &lt;, &gt;, &gt;=, and &lt;= comparisons. Values must
-   * be in RFC 3339 format.
-   * * `update_time`: Supports =, !=, &lt;, &gt;, &gt;=, and &lt;= comparisons. Values must
-   * be in RFC 3339 format.
+   * * `create_time`: Supports `=`, `!=`, `&lt;`, `&gt;`, `&gt;=`, and `&lt;=` comparisons.
+   * Values must be in RFC 3339 format.
+   * * `update_time`: Supports `=`, `!=`, `&lt;`, `&gt;`, `&gt;=`, and `&lt;=` comparisons.
+   * Values must be in RFC 3339 format.
    * * `labels`: Supports key-value equality as well as key presence.
    * Examples:
    * * `create_time &gt; &#92;"2020-01-31T15:30:00.000000Z&#92;" OR

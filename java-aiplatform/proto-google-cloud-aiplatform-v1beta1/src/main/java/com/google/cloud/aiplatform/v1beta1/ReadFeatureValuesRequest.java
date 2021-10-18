@@ -143,10 +143,10 @@ public final class ReadFeatureValuesRequest extends com.google.protobuf.Generate
    *
    * <pre>
    * Required. The resource name of the EntityType for the entity being read.
-   * Value format: `projects/{project}/locations/{location}/featurestores/
-   * {featurestore}/entityTypes/{entityType}`. For example,
-   * for a machine learning model predicting user clicks on a website, an
-   * EntityType ID could be "user".
+   * Value format:
+   * `projects/{project}/locations/{location}/featurestores/{featurestore}/entityTypes/{entityType}`.
+   * For example, for a machine learning model predicting user clicks on a
+   * website, an EntityType ID could be `user`.
    * </pre>
    *
    * <code>
@@ -172,10 +172,10 @@ public final class ReadFeatureValuesRequest extends com.google.protobuf.Generate
    *
    * <pre>
    * Required. The resource name of the EntityType for the entity being read.
-   * Value format: `projects/{project}/locations/{location}/featurestores/
-   * {featurestore}/entityTypes/{entityType}`. For example,
-   * for a machine learning model predicting user clicks on a website, an
-   * EntityType ID could be "user".
+   * Value format:
+   * `projects/{project}/locations/{location}/featurestores/{featurestore}/entityTypes/{entityType}`.
+   * For example, for a machine learning model predicting user clicks on a
+   * website, an EntityType ID could be `user`.
    * </pre>
    *
    * <code>
@@ -205,7 +205,7 @@ public final class ReadFeatureValuesRequest extends com.google.protobuf.Generate
    * <pre>
    * Required. ID for a specific entity. For example,
    * for a machine learning model predicting user clicks on a website, an entity
-   * ID could be "user_123".
+   * ID could be `user_123`.
    * </pre>
    *
    * <code>string entity_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -230,7 +230,7 @@ public final class ReadFeatureValuesRequest extends com.google.protobuf.Generate
    * <pre>
    * Required. ID for a specific entity. For example,
    * for a machine learning model predicting user clicks on a website, an entity
-   * ID could be "user_123".
+   * ID could be `user_123`.
    * </pre>
    *
    * <code>string entity_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -676,10 +676,10 @@ public final class ReadFeatureValuesRequest extends com.google.protobuf.Generate
      *
      * <pre>
      * Required. The resource name of the EntityType for the entity being read.
-     * Value format: `projects/{project}/locations/{location}/featurestores/
-     * {featurestore}/entityTypes/{entityType}`. For example,
-     * for a machine learning model predicting user clicks on a website, an
-     * EntityType ID could be "user".
+     * Value format:
+     * `projects/{project}/locations/{location}/featurestores/{featurestore}/entityTypes/{entityType}`.
+     * For example, for a machine learning model predicting user clicks on a
+     * website, an EntityType ID could be `user`.
      * </pre>
      *
      * <code>
@@ -704,10 +704,10 @@ public final class ReadFeatureValuesRequest extends com.google.protobuf.Generate
      *
      * <pre>
      * Required. The resource name of the EntityType for the entity being read.
-     * Value format: `projects/{project}/locations/{location}/featurestores/
-     * {featurestore}/entityTypes/{entityType}`. For example,
-     * for a machine learning model predicting user clicks on a website, an
-     * EntityType ID could be "user".
+     * Value format:
+     * `projects/{project}/locations/{location}/featurestores/{featurestore}/entityTypes/{entityType}`.
+     * For example, for a machine learning model predicting user clicks on a
+     * website, an EntityType ID could be `user`.
      * </pre>
      *
      * <code>
@@ -732,10 +732,10 @@ public final class ReadFeatureValuesRequest extends com.google.protobuf.Generate
      *
      * <pre>
      * Required. The resource name of the EntityType for the entity being read.
-     * Value format: `projects/{project}/locations/{location}/featurestores/
-     * {featurestore}/entityTypes/{entityType}`. For example,
-     * for a machine learning model predicting user clicks on a website, an
-     * EntityType ID could be "user".
+     * Value format:
+     * `projects/{project}/locations/{location}/featurestores/{featurestore}/entityTypes/{entityType}`.
+     * For example, for a machine learning model predicting user clicks on a
+     * website, an EntityType ID could be `user`.
      * </pre>
      *
      * <code>
@@ -759,10 +759,10 @@ public final class ReadFeatureValuesRequest extends com.google.protobuf.Generate
      *
      * <pre>
      * Required. The resource name of the EntityType for the entity being read.
-     * Value format: `projects/{project}/locations/{location}/featurestores/
-     * {featurestore}/entityTypes/{entityType}`. For example,
-     * for a machine learning model predicting user clicks on a website, an
-     * EntityType ID could be "user".
+     * Value format:
+     * `projects/{project}/locations/{location}/featurestores/{featurestore}/entityTypes/{entityType}`.
+     * For example, for a machine learning model predicting user clicks on a
+     * website, an EntityType ID could be `user`.
      * </pre>
      *
      * <code>
@@ -782,10 +782,10 @@ public final class ReadFeatureValuesRequest extends com.google.protobuf.Generate
      *
      * <pre>
      * Required. The resource name of the EntityType for the entity being read.
-     * Value format: `projects/{project}/locations/{location}/featurestores/
-     * {featurestore}/entityTypes/{entityType}`. For example,
-     * for a machine learning model predicting user clicks on a website, an
-     * EntityType ID could be "user".
+     * Value format:
+     * `projects/{project}/locations/{location}/featurestores/{featurestore}/entityTypes/{entityType}`.
+     * For example, for a machine learning model predicting user clicks on a
+     * website, an EntityType ID could be `user`.
      * </pre>
      *
      * <code>
@@ -813,7 +813,7 @@ public final class ReadFeatureValuesRequest extends com.google.protobuf.Generate
      * <pre>
      * Required. ID for a specific entity. For example,
      * for a machine learning model predicting user clicks on a website, an entity
-     * ID could be "user_123".
+     * ID could be `user_123`.
      * </pre>
      *
      * <code>string entity_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -837,7 +837,7 @@ public final class ReadFeatureValuesRequest extends com.google.protobuf.Generate
      * <pre>
      * Required. ID for a specific entity. For example,
      * for a machine learning model predicting user clicks on a website, an entity
-     * ID could be "user_123".
+     * ID could be `user_123`.
      * </pre>
      *
      * <code>string entity_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -861,7 +861,7 @@ public final class ReadFeatureValuesRequest extends com.google.protobuf.Generate
      * <pre>
      * Required. ID for a specific entity. For example,
      * for a machine learning model predicting user clicks on a website, an entity
-     * ID could be "user_123".
+     * ID could be `user_123`.
      * </pre>
      *
      * <code>string entity_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -884,7 +884,7 @@ public final class ReadFeatureValuesRequest extends com.google.protobuf.Generate
      * <pre>
      * Required. ID for a specific entity. For example,
      * for a machine learning model predicting user clicks on a website, an entity
-     * ID could be "user_123".
+     * ID could be `user_123`.
      * </pre>
      *
      * <code>string entity_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -903,7 +903,7 @@ public final class ReadFeatureValuesRequest extends com.google.protobuf.Generate
      * <pre>
      * Required. ID for a specific entity. For example,
      * for a machine learning model predicting user clicks on a website, an entity
-     * ID could be "user_123".
+     * ID could be `user_123`.
      * </pre>
      *
      * <code>string entity_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>

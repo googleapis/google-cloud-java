@@ -2987,10 +2987,137 @@ public class TensorboardServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Reads a TensorboardTimeSeries' data. Data is returned in paginated responses. By default, if
-   * the number of data points stored is less than 1000, all data will be returned. Otherwise, 1000
-   * data points will be randomly selected from this time series and returned. This value can be
-   * changed by changing max_data_points.
+   * Reads multiple TensorboardTimeSeries' data. The data point number limit is 1000 for scalars,
+   * 100 for tensors and blob references. If the number of data points stored is less than the
+   * limit, all data will be returned. Otherwise, that limit number of data points will be randomly
+   * selected from this time series and returned.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (TensorboardServiceClient tensorboardServiceClient = TensorboardServiceClient.create()) {
+   *   TensorboardName tensorboard = TensorboardName.of("[PROJECT]", "[LOCATION]", "[TENSORBOARD]");
+   *   BatchReadTensorboardTimeSeriesDataResponse response =
+   *       tensorboardServiceClient.batchReadTensorboardTimeSeriesData(tensorboard);
+   * }
+   * }</pre>
+   *
+   * @param tensorboard Required. The resource name of the Tensorboard containing
+   *     TensorboardTimeSeries to read data from. Format:
+   *     `projects/{project}/locations/{location}/tensorboards/{tensorboard}`. The
+   *     TensorboardTimeSeries referenced by
+   *     [time_series][google.cloud.aiplatform.v1beta1.BatchReadTensorboardTimeSeriesDataRequest.time_series]
+   *     must be sub resources of this Tensorboard.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final BatchReadTensorboardTimeSeriesDataResponse batchReadTensorboardTimeSeriesData(
+      TensorboardName tensorboard) {
+    BatchReadTensorboardTimeSeriesDataRequest request =
+        BatchReadTensorboardTimeSeriesDataRequest.newBuilder()
+            .setTensorboard(tensorboard == null ? null : tensorboard.toString())
+            .build();
+    return batchReadTensorboardTimeSeriesData(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Reads multiple TensorboardTimeSeries' data. The data point number limit is 1000 for scalars,
+   * 100 for tensors and blob references. If the number of data points stored is less than the
+   * limit, all data will be returned. Otherwise, that limit number of data points will be randomly
+   * selected from this time series and returned.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (TensorboardServiceClient tensorboardServiceClient = TensorboardServiceClient.create()) {
+   *   String tensorboard =
+   *       TensorboardName.of("[PROJECT]", "[LOCATION]", "[TENSORBOARD]").toString();
+   *   BatchReadTensorboardTimeSeriesDataResponse response =
+   *       tensorboardServiceClient.batchReadTensorboardTimeSeriesData(tensorboard);
+   * }
+   * }</pre>
+   *
+   * @param tensorboard Required. The resource name of the Tensorboard containing
+   *     TensorboardTimeSeries to read data from. Format:
+   *     `projects/{project}/locations/{location}/tensorboards/{tensorboard}`. The
+   *     TensorboardTimeSeries referenced by
+   *     [time_series][google.cloud.aiplatform.v1beta1.BatchReadTensorboardTimeSeriesDataRequest.time_series]
+   *     must be sub resources of this Tensorboard.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final BatchReadTensorboardTimeSeriesDataResponse batchReadTensorboardTimeSeriesData(
+      String tensorboard) {
+    BatchReadTensorboardTimeSeriesDataRequest request =
+        BatchReadTensorboardTimeSeriesDataRequest.newBuilder().setTensorboard(tensorboard).build();
+    return batchReadTensorboardTimeSeriesData(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Reads multiple TensorboardTimeSeries' data. The data point number limit is 1000 for scalars,
+   * 100 for tensors and blob references. If the number of data points stored is less than the
+   * limit, all data will be returned. Otherwise, that limit number of data points will be randomly
+   * selected from this time series and returned.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (TensorboardServiceClient tensorboardServiceClient = TensorboardServiceClient.create()) {
+   *   BatchReadTensorboardTimeSeriesDataRequest request =
+   *       BatchReadTensorboardTimeSeriesDataRequest.newBuilder()
+   *           .setTensorboard(
+   *               TensorboardName.of("[PROJECT]", "[LOCATION]", "[TENSORBOARD]").toString())
+   *           .addAllTimeSeries(new ArrayList<String>())
+   *           .build();
+   *   BatchReadTensorboardTimeSeriesDataResponse response =
+   *       tensorboardServiceClient.batchReadTensorboardTimeSeriesData(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final BatchReadTensorboardTimeSeriesDataResponse batchReadTensorboardTimeSeriesData(
+      BatchReadTensorboardTimeSeriesDataRequest request) {
+    return batchReadTensorboardTimeSeriesDataCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Reads multiple TensorboardTimeSeries' data. The data point number limit is 1000 for scalars,
+   * 100 for tensors and blob references. If the number of data points stored is less than the
+   * limit, all data will be returned. Otherwise, that limit number of data points will be randomly
+   * selected from this time series and returned.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (TensorboardServiceClient tensorboardServiceClient = TensorboardServiceClient.create()) {
+   *   BatchReadTensorboardTimeSeriesDataRequest request =
+   *       BatchReadTensorboardTimeSeriesDataRequest.newBuilder()
+   *           .setTensorboard(
+   *               TensorboardName.of("[PROJECT]", "[LOCATION]", "[TENSORBOARD]").toString())
+   *           .addAllTimeSeries(new ArrayList<String>())
+   *           .build();
+   *   ApiFuture<BatchReadTensorboardTimeSeriesDataResponse> future =
+   *       tensorboardServiceClient.batchReadTensorboardTimeSeriesDataCallable().futureCall(request);
+   *   // Do something.
+   *   BatchReadTensorboardTimeSeriesDataResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<
+          BatchReadTensorboardTimeSeriesDataRequest, BatchReadTensorboardTimeSeriesDataResponse>
+      batchReadTensorboardTimeSeriesDataCallable() {
+    return stub.batchReadTensorboardTimeSeriesDataCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Reads a TensorboardTimeSeries' data. By default, if the number of data points stored is less
+   * than 1000, all data will be returned. Otherwise, 1000 data points will be randomly selected
+   * from this time series and returned. This value can be changed by changing max_data_points,
+   * which can't be greater than 10k.
    *
    * <p>Sample code:
    *
@@ -3021,10 +3148,10 @@ public class TensorboardServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Reads a TensorboardTimeSeries' data. Data is returned in paginated responses. By default, if
-   * the number of data points stored is less than 1000, all data will be returned. Otherwise, 1000
-   * data points will be randomly selected from this time series and returned. This value can be
-   * changed by changing max_data_points.
+   * Reads a TensorboardTimeSeries' data. By default, if the number of data points stored is less
+   * than 1000, all data will be returned. Otherwise, 1000 data points will be randomly selected
+   * from this time series and returned. This value can be changed by changing max_data_points,
+   * which can't be greater than 10k.
    *
    * <p>Sample code:
    *
@@ -3060,10 +3187,10 @@ public class TensorboardServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Reads a TensorboardTimeSeries' data. Data is returned in paginated responses. By default, if
-   * the number of data points stored is less than 1000, all data will be returned. Otherwise, 1000
-   * data points will be randomly selected from this time series and returned. This value can be
-   * changed by changing max_data_points.
+   * Reads a TensorboardTimeSeries' data. By default, if the number of data points stored is less
+   * than 1000, all data will be returned. Otherwise, 1000 data points will be randomly selected
+   * from this time series and returned. This value can be changed by changing max_data_points,
+   * which can't be greater than 10k.
    *
    * <p>Sample code:
    *
@@ -3098,10 +3225,10 @@ public class TensorboardServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Reads a TensorboardTimeSeries' data. Data is returned in paginated responses. By default, if
-   * the number of data points stored is less than 1000, all data will be returned. Otherwise, 1000
-   * data points will be randomly selected from this time series and returned. This value can be
-   * changed by changing max_data_points.
+   * Reads a TensorboardTimeSeries' data. By default, if the number of data points stored is less
+   * than 1000, all data will be returned. Otherwise, 1000 data points will be randomly selected
+   * from this time series and returned. This value can be changed by changing max_data_points,
+   * which can't be greater than 10k.
    *
    * <p>Sample code:
    *

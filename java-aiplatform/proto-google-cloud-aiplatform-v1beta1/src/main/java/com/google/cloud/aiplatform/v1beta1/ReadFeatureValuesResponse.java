@@ -836,8 +836,7 @@ public final class ReadFeatureValuesResponse extends com.google.protobuf.Generat
      * <pre>
      * The resource name of the EntityType from the
      * [ReadFeatureValuesRequest][google.cloud.aiplatform.v1beta1.ReadFeatureValuesRequest]. Value format:
-     * `projects/{project}/locations/{location}/featurestores/
-     * {featurestore}/entityTypes/{entityType}`.
+     * `projects/{project}/locations/{location}/featurestores/{featurestore}/entityTypes/{entityType}`.
      * </pre>
      *
      * <code>string entity_type = 1 [(.google.api.resource_reference) = { ... }</code>
@@ -851,8 +850,7 @@ public final class ReadFeatureValuesResponse extends com.google.protobuf.Generat
      * <pre>
      * The resource name of the EntityType from the
      * [ReadFeatureValuesRequest][google.cloud.aiplatform.v1beta1.ReadFeatureValuesRequest]. Value format:
-     * `projects/{project}/locations/{location}/featurestores/
-     * {featurestore}/entityTypes/{entityType}`.
+     * `projects/{project}/locations/{location}/featurestores/{featurestore}/entityTypes/{entityType}`.
      * </pre>
      *
      * <code>string entity_type = 1 [(.google.api.resource_reference) = { ... }</code>
@@ -1057,8 +1055,7 @@ public final class ReadFeatureValuesResponse extends com.google.protobuf.Generat
      * <pre>
      * The resource name of the EntityType from the
      * [ReadFeatureValuesRequest][google.cloud.aiplatform.v1beta1.ReadFeatureValuesRequest]. Value format:
-     * `projects/{project}/locations/{location}/featurestores/
-     * {featurestore}/entityTypes/{entityType}`.
+     * `projects/{project}/locations/{location}/featurestores/{featurestore}/entityTypes/{entityType}`.
      * </pre>
      *
      * <code>string entity_type = 1 [(.google.api.resource_reference) = { ... }</code>
@@ -1083,8 +1080,7 @@ public final class ReadFeatureValuesResponse extends com.google.protobuf.Generat
      * <pre>
      * The resource name of the EntityType from the
      * [ReadFeatureValuesRequest][google.cloud.aiplatform.v1beta1.ReadFeatureValuesRequest]. Value format:
-     * `projects/{project}/locations/{location}/featurestores/
-     * {featurestore}/entityTypes/{entityType}`.
+     * `projects/{project}/locations/{location}/featurestores/{featurestore}/entityTypes/{entityType}`.
      * </pre>
      *
      * <code>string entity_type = 1 [(.google.api.resource_reference) = { ... }</code>
@@ -1596,8 +1592,7 @@ public final class ReadFeatureValuesResponse extends com.google.protobuf.Generat
        * <pre>
        * The resource name of the EntityType from the
        * [ReadFeatureValuesRequest][google.cloud.aiplatform.v1beta1.ReadFeatureValuesRequest]. Value format:
-       * `projects/{project}/locations/{location}/featurestores/
-       * {featurestore}/entityTypes/{entityType}`.
+       * `projects/{project}/locations/{location}/featurestores/{featurestore}/entityTypes/{entityType}`.
        * </pre>
        *
        * <code>string entity_type = 1 [(.google.api.resource_reference) = { ... }</code>
@@ -1621,8 +1616,7 @@ public final class ReadFeatureValuesResponse extends com.google.protobuf.Generat
        * <pre>
        * The resource name of the EntityType from the
        * [ReadFeatureValuesRequest][google.cloud.aiplatform.v1beta1.ReadFeatureValuesRequest]. Value format:
-       * `projects/{project}/locations/{location}/featurestores/
-       * {featurestore}/entityTypes/{entityType}`.
+       * `projects/{project}/locations/{location}/featurestores/{featurestore}/entityTypes/{entityType}`.
        * </pre>
        *
        * <code>string entity_type = 1 [(.google.api.resource_reference) = { ... }</code>
@@ -1646,8 +1640,7 @@ public final class ReadFeatureValuesResponse extends com.google.protobuf.Generat
        * <pre>
        * The resource name of the EntityType from the
        * [ReadFeatureValuesRequest][google.cloud.aiplatform.v1beta1.ReadFeatureValuesRequest]. Value format:
-       * `projects/{project}/locations/{location}/featurestores/
-       * {featurestore}/entityTypes/{entityType}`.
+       * `projects/{project}/locations/{location}/featurestores/{featurestore}/entityTypes/{entityType}`.
        * </pre>
        *
        * <code>string entity_type = 1 [(.google.api.resource_reference) = { ... }</code>
@@ -1670,8 +1663,7 @@ public final class ReadFeatureValuesResponse extends com.google.protobuf.Generat
        * <pre>
        * The resource name of the EntityType from the
        * [ReadFeatureValuesRequest][google.cloud.aiplatform.v1beta1.ReadFeatureValuesRequest]. Value format:
-       * `projects/{project}/locations/{location}/featurestores/
-       * {featurestore}/entityTypes/{entityType}`.
+       * `projects/{project}/locations/{location}/featurestores/{featurestore}/entityTypes/{entityType}`.
        * </pre>
        *
        * <code>string entity_type = 1 [(.google.api.resource_reference) = { ... }</code>
@@ -1690,8 +1682,7 @@ public final class ReadFeatureValuesResponse extends com.google.protobuf.Generat
        * <pre>
        * The resource name of the EntityType from the
        * [ReadFeatureValuesRequest][google.cloud.aiplatform.v1beta1.ReadFeatureValuesRequest]. Value format:
-       * `projects/{project}/locations/{location}/featurestores/
-       * {featurestore}/entityTypes/{entityType}`.
+       * `projects/{project}/locations/{location}/featurestores/{featurestore}/entityTypes/{entityType}`.
        * </pre>
        *
        * <code>string entity_type = 1 [(.google.api.resource_reference) = { ... }</code>

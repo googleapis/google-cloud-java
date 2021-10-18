@@ -29,7 +29,7 @@ public interface GetMetadataSchemaRequestOrBuilder
    * <pre>
    * Required. The resource name of the MetadataSchema to retrieve.
    * Format:
-   * projects/{project}/locations/{location}/metadataStores/{metadatastore}/metadataSchemas/{metadataschema}
+   * `projects/{project}/locations/{location}/metadataStores/{metadatastore}/metadataSchemas/{metadataschema}`
    * </pre>
    *
    * <code>
@@ -45,7 +45,7 @@ public interface GetMetadataSchemaRequestOrBuilder
    * <pre>
    * Required. The resource name of the MetadataSchema to retrieve.
    * Format:
-   * projects/{project}/locations/{location}/metadataStores/{metadatastore}/metadataSchemas/{metadataschema}
+   * `projects/{project}/locations/{location}/metadataStores/{metadatastore}/metadataSchemas/{metadataschema}`
    * </pre>
    *
    * <code>

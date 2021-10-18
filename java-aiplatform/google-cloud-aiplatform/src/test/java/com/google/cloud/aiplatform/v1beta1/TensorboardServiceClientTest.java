@@ -2078,6 +2078,86 @@ public class TensorboardServiceClientTest {
   }
 
   @Test
+  public void batchReadTensorboardTimeSeriesDataTest() throws Exception {
+    BatchReadTensorboardTimeSeriesDataResponse expectedResponse =
+        BatchReadTensorboardTimeSeriesDataResponse.newBuilder()
+            .addAllTimeSeriesData(new ArrayList<TimeSeriesData>())
+            .build();
+    mockTensorboardService.addResponse(expectedResponse);
+
+    TensorboardName tensorboard = TensorboardName.of("[PROJECT]", "[LOCATION]", "[TENSORBOARD]");
+
+    BatchReadTensorboardTimeSeriesDataResponse actualResponse =
+        client.batchReadTensorboardTimeSeriesData(tensorboard);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockTensorboardService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    BatchReadTensorboardTimeSeriesDataRequest actualRequest =
+        ((BatchReadTensorboardTimeSeriesDataRequest) actualRequests.get(0));
+
+    Assert.assertEquals(tensorboard.toString(), actualRequest.getTensorboard());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void batchReadTensorboardTimeSeriesDataExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockTensorboardService.addException(exception);
+
+    try {
+      TensorboardName tensorboard = TensorboardName.of("[PROJECT]", "[LOCATION]", "[TENSORBOARD]");
+      client.batchReadTensorboardTimeSeriesData(tensorboard);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void batchReadTensorboardTimeSeriesDataTest2() throws Exception {
+    BatchReadTensorboardTimeSeriesDataResponse expectedResponse =
+        BatchReadTensorboardTimeSeriesDataResponse.newBuilder()
+            .addAllTimeSeriesData(new ArrayList<TimeSeriesData>())
+            .build();
+    mockTensorboardService.addResponse(expectedResponse);
+
+    String tensorboard = "tensorboard-266431955";
+
+    BatchReadTensorboardTimeSeriesDataResponse actualResponse =
+        client.batchReadTensorboardTimeSeriesData(tensorboard);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockTensorboardService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    BatchReadTensorboardTimeSeriesDataRequest actualRequest =
+        ((BatchReadTensorboardTimeSeriesDataRequest) actualRequests.get(0));
+
+    Assert.assertEquals(tensorboard, actualRequest.getTensorboard());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void batchReadTensorboardTimeSeriesDataExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockTensorboardService.addException(exception);
+
+    try {
+      String tensorboard = "tensorboard-266431955";
+      client.batchReadTensorboardTimeSeriesData(tensorboard);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
   public void readTensorboardTimeSeriesDataTest() throws Exception {
     ReadTensorboardTimeSeriesDataResponse expectedResponse =
         ReadTensorboardTimeSeriesDataResponse.newBuilder()

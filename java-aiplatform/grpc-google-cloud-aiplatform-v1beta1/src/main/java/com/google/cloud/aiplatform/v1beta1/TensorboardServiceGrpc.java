@@ -1154,6 +1154,64 @@ public final class TensorboardServiceGrpc {
   }
 
   private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.aiplatform.v1beta1.BatchReadTensorboardTimeSeriesDataRequest,
+          com.google.cloud.aiplatform.v1beta1.BatchReadTensorboardTimeSeriesDataResponse>
+      getBatchReadTensorboardTimeSeriesDataMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "BatchReadTensorboardTimeSeriesData",
+      requestType =
+          com.google.cloud.aiplatform.v1beta1.BatchReadTensorboardTimeSeriesDataRequest.class,
+      responseType =
+          com.google.cloud.aiplatform.v1beta1.BatchReadTensorboardTimeSeriesDataResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.aiplatform.v1beta1.BatchReadTensorboardTimeSeriesDataRequest,
+          com.google.cloud.aiplatform.v1beta1.BatchReadTensorboardTimeSeriesDataResponse>
+      getBatchReadTensorboardTimeSeriesDataMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.aiplatform.v1beta1.BatchReadTensorboardTimeSeriesDataRequest,
+            com.google.cloud.aiplatform.v1beta1.BatchReadTensorboardTimeSeriesDataResponse>
+        getBatchReadTensorboardTimeSeriesDataMethod;
+    if ((getBatchReadTensorboardTimeSeriesDataMethod =
+            TensorboardServiceGrpc.getBatchReadTensorboardTimeSeriesDataMethod)
+        == null) {
+      synchronized (TensorboardServiceGrpc.class) {
+        if ((getBatchReadTensorboardTimeSeriesDataMethod =
+                TensorboardServiceGrpc.getBatchReadTensorboardTimeSeriesDataMethod)
+            == null) {
+          TensorboardServiceGrpc.getBatchReadTensorboardTimeSeriesDataMethod =
+              getBatchReadTensorboardTimeSeriesDataMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.aiplatform.v1beta1
+                              .BatchReadTensorboardTimeSeriesDataRequest,
+                          com.google.cloud.aiplatform.v1beta1
+                              .BatchReadTensorboardTimeSeriesDataResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(
+                              SERVICE_NAME, "BatchReadTensorboardTimeSeriesData"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.aiplatform.v1beta1
+                                  .BatchReadTensorboardTimeSeriesDataRequest.getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.aiplatform.v1beta1
+                                  .BatchReadTensorboardTimeSeriesDataResponse.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new TensorboardServiceMethodDescriptorSupplier(
+                              "BatchReadTensorboardTimeSeriesData"))
+                      .build();
+        }
+      }
+    }
+    return getBatchReadTensorboardTimeSeriesDataMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.aiplatform.v1beta1.ReadTensorboardTimeSeriesDataRequest,
           com.google.cloud.aiplatform.v1beta1.ReadTensorboardTimeSeriesDataResponse>
       getReadTensorboardTimeSeriesDataMethod;
@@ -1802,11 +1860,31 @@ public final class TensorboardServiceGrpc {
      *
      *
      * <pre>
-     * Reads a TensorboardTimeSeries' data. Data is returned in paginated
-     * responses. By default, if the number of data points stored is less than
-     * 1000, all data will be returned. Otherwise, 1000 data points will be
-     * randomly selected from this time series and returned. This value can be
-     * changed by changing max_data_points.
+     * Reads multiple TensorboardTimeSeries' data. The data point number limit is
+     * 1000 for scalars, 100 for tensors and blob references. If the number of
+     * data points stored is less than the limit, all data will be returned.
+     * Otherwise, that limit number of data points will be randomly selected from
+     * this time series and returned.
+     * </pre>
+     */
+    public void batchReadTensorboardTimeSeriesData(
+        com.google.cloud.aiplatform.v1beta1.BatchReadTensorboardTimeSeriesDataRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.cloud.aiplatform.v1beta1.BatchReadTensorboardTimeSeriesDataResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getBatchReadTensorboardTimeSeriesDataMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Reads a TensorboardTimeSeries' data. By default, if the number of data
+     * points stored is less than 1000, all data will be returned. Otherwise, 1000
+     * data points will be randomly selected from this time series and returned.
+     * This value can be changed by changing max_data_points, which can't be
+     * greater than 10k.
      * </pre>
      */
     public void readTensorboardTimeSeriesData(
@@ -2043,6 +2121,14 @@ public final class TensorboardServiceGrpc {
                       com.google.cloud.aiplatform.v1beta1.DeleteTensorboardTimeSeriesRequest,
                       com.google.longrunning.Operation>(
                       this, METHODID_DELETE_TENSORBOARD_TIME_SERIES)))
+          .addMethod(
+              getBatchReadTensorboardTimeSeriesDataMethod(),
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.cloud.aiplatform.v1beta1.BatchReadTensorboardTimeSeriesDataRequest,
+                      com.google.cloud.aiplatform.v1beta1
+                          .BatchReadTensorboardTimeSeriesDataResponse>(
+                      this, METHODID_BATCH_READ_TENSORBOARD_TIME_SERIES_DATA)))
           .addMethod(
               getReadTensorboardTimeSeriesDataMethod(),
               io.grpc.stub.ServerCalls.asyncUnaryCall(
@@ -2477,11 +2563,33 @@ public final class TensorboardServiceGrpc {
      *
      *
      * <pre>
-     * Reads a TensorboardTimeSeries' data. Data is returned in paginated
-     * responses. By default, if the number of data points stored is less than
-     * 1000, all data will be returned. Otherwise, 1000 data points will be
-     * randomly selected from this time series and returned. This value can be
-     * changed by changing max_data_points.
+     * Reads multiple TensorboardTimeSeries' data. The data point number limit is
+     * 1000 for scalars, 100 for tensors and blob references. If the number of
+     * data points stored is less than the limit, all data will be returned.
+     * Otherwise, that limit number of data points will be randomly selected from
+     * this time series and returned.
+     * </pre>
+     */
+    public void batchReadTensorboardTimeSeriesData(
+        com.google.cloud.aiplatform.v1beta1.BatchReadTensorboardTimeSeriesDataRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.cloud.aiplatform.v1beta1.BatchReadTensorboardTimeSeriesDataResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getBatchReadTensorboardTimeSeriesDataMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Reads a TensorboardTimeSeries' data. By default, if the number of data
+     * points stored is less than 1000, all data will be returned. Otherwise, 1000
+     * data points will be randomly selected from this time series and returned.
+     * This value can be changed by changing max_data_points, which can't be
+     * greater than 10k.
      * </pre>
      */
     public void readTensorboardTimeSeriesData(
@@ -2890,11 +2998,29 @@ public final class TensorboardServiceGrpc {
      *
      *
      * <pre>
-     * Reads a TensorboardTimeSeries' data. Data is returned in paginated
-     * responses. By default, if the number of data points stored is less than
-     * 1000, all data will be returned. Otherwise, 1000 data points will be
-     * randomly selected from this time series and returned. This value can be
-     * changed by changing max_data_points.
+     * Reads multiple TensorboardTimeSeries' data. The data point number limit is
+     * 1000 for scalars, 100 for tensors and blob references. If the number of
+     * data points stored is less than the limit, all data will be returned.
+     * Otherwise, that limit number of data points will be randomly selected from
+     * this time series and returned.
+     * </pre>
+     */
+    public com.google.cloud.aiplatform.v1beta1.BatchReadTensorboardTimeSeriesDataResponse
+        batchReadTensorboardTimeSeriesData(
+            com.google.cloud.aiplatform.v1beta1.BatchReadTensorboardTimeSeriesDataRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getBatchReadTensorboardTimeSeriesDataMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Reads a TensorboardTimeSeries' data. By default, if the number of data
+     * points stored is less than 1000, all data will be returned. Otherwise, 1000
+     * data points will be randomly selected from this time series and returned.
+     * This value can be changed by changing max_data_points, which can't be
+     * greater than 10k.
      * </pre>
      */
     public com.google.cloud.aiplatform.v1beta1.ReadTensorboardTimeSeriesDataResponse
@@ -3311,11 +3437,31 @@ public final class TensorboardServiceGrpc {
      *
      *
      * <pre>
-     * Reads a TensorboardTimeSeries' data. Data is returned in paginated
-     * responses. By default, if the number of data points stored is less than
-     * 1000, all data will be returned. Otherwise, 1000 data points will be
-     * randomly selected from this time series and returned. This value can be
-     * changed by changing max_data_points.
+     * Reads multiple TensorboardTimeSeries' data. The data point number limit is
+     * 1000 for scalars, 100 for tensors and blob references. If the number of
+     * data points stored is less than the limit, all data will be returned.
+     * Otherwise, that limit number of data points will be randomly selected from
+     * this time series and returned.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.aiplatform.v1beta1.BatchReadTensorboardTimeSeriesDataResponse>
+        batchReadTensorboardTimeSeriesData(
+            com.google.cloud.aiplatform.v1beta1.BatchReadTensorboardTimeSeriesDataRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getBatchReadTensorboardTimeSeriesDataMethod(), getCallOptions()),
+          request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Reads a TensorboardTimeSeries' data. By default, if the number of data
+     * points stored is less than 1000, all data will be returned. Otherwise, 1000
+     * data points will be randomly selected from this time series and returned.
+     * This value can be changed by changing max_data_points, which can't be
+     * greater than 10k.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -3402,11 +3548,12 @@ public final class TensorboardServiceGrpc {
   private static final int METHODID_UPDATE_TENSORBOARD_TIME_SERIES = 19;
   private static final int METHODID_LIST_TENSORBOARD_TIME_SERIES = 20;
   private static final int METHODID_DELETE_TENSORBOARD_TIME_SERIES = 21;
-  private static final int METHODID_READ_TENSORBOARD_TIME_SERIES_DATA = 22;
-  private static final int METHODID_READ_TENSORBOARD_BLOB_DATA = 23;
-  private static final int METHODID_WRITE_TENSORBOARD_EXPERIMENT_DATA = 24;
-  private static final int METHODID_WRITE_TENSORBOARD_RUN_DATA = 25;
-  private static final int METHODID_EXPORT_TENSORBOARD_TIME_SERIES_DATA = 26;
+  private static final int METHODID_BATCH_READ_TENSORBOARD_TIME_SERIES_DATA = 22;
+  private static final int METHODID_READ_TENSORBOARD_TIME_SERIES_DATA = 23;
+  private static final int METHODID_READ_TENSORBOARD_BLOB_DATA = 24;
+  private static final int METHODID_WRITE_TENSORBOARD_EXPERIMENT_DATA = 25;
+  private static final int METHODID_WRITE_TENSORBOARD_RUN_DATA = 26;
+  private static final int METHODID_EXPORT_TENSORBOARD_TIME_SERIES_DATA = 27;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -3563,6 +3710,15 @@ public final class TensorboardServiceGrpc {
               (com.google.cloud.aiplatform.v1beta1.DeleteTensorboardTimeSeriesRequest) request,
               (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
           break;
+        case METHODID_BATCH_READ_TENSORBOARD_TIME_SERIES_DATA:
+          serviceImpl.batchReadTensorboardTimeSeriesData(
+              (com.google.cloud.aiplatform.v1beta1.BatchReadTensorboardTimeSeriesDataRequest)
+                  request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.cloud.aiplatform.v1beta1
+                          .BatchReadTensorboardTimeSeriesDataResponse>)
+                  responseObserver);
+          break;
         case METHODID_READ_TENSORBOARD_TIME_SERIES_DATA:
           serviceImpl.readTensorboardTimeSeriesData(
               (com.google.cloud.aiplatform.v1beta1.ReadTensorboardTimeSeriesDataRequest) request,
@@ -3684,6 +3840,7 @@ public final class TensorboardServiceGrpc {
                       .addMethod(getUpdateTensorboardTimeSeriesMethod())
                       .addMethod(getListTensorboardTimeSeriesMethod())
                       .addMethod(getDeleteTensorboardTimeSeriesMethod())
+                      .addMethod(getBatchReadTensorboardTimeSeriesDataMethod())
                       .addMethod(getReadTensorboardTimeSeriesDataMethod())
                       .addMethod(getReadTensorboardBlobDataMethod())
                       .addMethod(getWriteTensorboardExperimentDataMethod())

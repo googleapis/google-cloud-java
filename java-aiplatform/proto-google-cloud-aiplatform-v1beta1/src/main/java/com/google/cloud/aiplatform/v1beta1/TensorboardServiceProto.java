@@ -148,6 +148,14 @@ public final class TensorboardServiceProto {
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_aiplatform_v1beta1_DeleteTensorboardTimeSeriesRequest_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_aiplatform_v1beta1_BatchReadTensorboardTimeSeriesDataRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_aiplatform_v1beta1_BatchReadTensorboardTimeSeriesDataRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_aiplatform_v1beta1_BatchReadTensorboardTimeSeriesDataResponse_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_aiplatform_v1beta1_BatchReadTensorboardTimeSeriesDataResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_aiplatform_v1beta1_ReadTensorboardTimeSeriesDataRequest_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_aiplatform_v1beta1_ReadTensorboardTimeSeriesDataRequest_fieldAccessorTable;
@@ -328,239 +336,255 @@ public final class TensorboardServiceProto {
           + "rboardTimeSeriesB\003\340A\002\"k\n\"DeleteTensorboa"
           + "rdTimeSeriesRequest\022E\n\004name\030\001 \001(\tB7\340A\002\372A"
           + "1\n/aiplatform.googleapis.com/Tensorboard"
-          + "TimeSeries\"\251\001\n$ReadTensorboardTimeSeries"
-          + "DataRequest\022X\n\027tensorboard_time_series\030\001"
-          + " \001(\tB7\340A\002\372A1\n/aiplatform.googleapis.com/"
-          + "TensorboardTimeSeries\022\027\n\017max_data_points"
-          + "\030\002 \001(\005\022\016\n\006filter\030\003 \001(\t\"r\n%ReadTensorboar"
-          + "dTimeSeriesDataResponse\022I\n\020time_series_d"
-          + "ata\030\001 \001(\0132/.google.cloud.aiplatform.v1be"
-          + "ta1.TimeSeriesData\"\347\001\n%WriteTensorboardE"
-          + "xperimentDataRequest\022W\n\026tensorboard_expe"
-          + "riment\030\001 \001(\tB7\340A\002\372A1\n/aiplatform.googlea"
-          + "pis.com/TensorboardExperiment\022e\n\027write_r"
-          + "un_data_requests\030\002 \003(\0132?.google.cloud.ai"
-          + "platform.v1beta1.WriteTensorboardRunData"
-          + "RequestB\003\340A\002\"(\n&WriteTensorboardExperime"
-          + "ntDataResponse\"\273\001\n\036WriteTensorboardRunDa"
-          + "taRequest\022I\n\017tensorboard_run\030\001 \001(\tB0\340A\002\372"
-          + "A*\n(aiplatform.googleapis.com/Tensorboar"
-          + "dRun\022N\n\020time_series_data\030\002 \003(\0132/.google."
-          + "cloud.aiplatform.v1beta1.TimeSeriesDataB"
-          + "\003\340A\002\"!\n\037WriteTensorboardRunDataResponse\""
-          + "\313\001\n&ExportTensorboardTimeSeriesDataReque"
-          + "st\022X\n\027tensorboard_time_series\030\001 \001(\tB7\340A\002"
-          + "\372A1\n/aiplatform.googleapis.com/Tensorboa"
-          + "rdTimeSeries\022\016\n\006filter\030\002 \001(\t\022\021\n\tpage_siz"
-          + "e\030\003 \001(\005\022\022\n\npage_token\030\004 \001(\t\022\020\n\010order_by\030"
-          + "\005 \001(\t\"\231\001\n\'ExportTensorboardTimeSeriesDat"
-          + "aResponse\022U\n\027time_series_data_points\030\001 \003"
-          + "(\01324.google.cloud.aiplatform.v1beta1.Tim"
-          + "eSeriesDataPoint\022\027\n\017next_page_token\030\002 \001("
-          + "\t\"y\n\"CreateTensorboardOperationMetadata\022"
-          + "S\n\020generic_metadata\030\001 \001(\01329.google.cloud"
-          + ".aiplatform.v1beta1.GenericOperationMeta"
-          + "data\"y\n\"UpdateTensorboardOperationMetada"
-          + "ta\022S\n\020generic_metadata\030\001 \001(\01329.google.cl"
-          + "oud.aiplatform.v1beta1.GenericOperationM"
-          + "etadata2\325;\n\022TensorboardService\022\203\002\n\021Creat"
-          + "eTensorboard\0229.google.cloud.aiplatform.v"
-          + "1beta1.CreateTensorboardRequest\032\035.google"
-          + ".longrunning.Operation\"\223\001\202\323\344\223\002D\"5/v1beta"
-          + "1/{parent=projects/*/locations/*}/tensor"
-          + "boards:\013tensorboard\332A\022parent,tensorboard"
-          + "\312A1\n\013Tensorboard\022\"CreateTensorboardOpera"
-          + "tionMetadata\022\274\001\n\016GetTensorboard\0226.google"
-          + ".cloud.aiplatform.v1beta1.GetTensorboard"
-          + "Request\032,.google.cloud.aiplatform.v1beta"
-          + "1.Tensorboard\"D\202\323\344\223\0027\0225/v1beta1/{name=pr"
-          + "ojects/*/locations/*/tensorboards/*}\332A\004n"
-          + "ame\022\224\002\n\021UpdateTensorboard\0229.google.cloud"
-          + ".aiplatform.v1beta1.UpdateTensorboardReq"
-          + "uest\032\035.google.longrunning.Operation\"\244\001\202\323"
-          + "\344\223\002P2A/v1beta1/{tensorboard.name=project"
-          + "s/*/locations/*/tensorboards/*}:\013tensorb"
-          + "oard\332A\027tensorboard,update_mask\312A1\n\013Tenso"
-          + "rboard\022\"UpdateTensorboardOperationMetada"
-          + "ta\022\317\001\n\020ListTensorboards\0228.google.cloud.a"
-          + "iplatform.v1beta1.ListTensorboardsReques"
-          + "t\0329.google.cloud.aiplatform.v1beta1.List"
-          + "TensorboardsResponse\"F\202\323\344\223\0027\0225/v1beta1/{"
-          + "parent=projects/*/locations/*}/tensorboa"
-          + "rds\332A\006parent\022\346\001\n\021DeleteTensorboard\0229.goo"
-          + "gle.cloud.aiplatform.v1beta1.DeleteTenso"
-          + "rboardRequest\032\035.google.longrunning.Opera"
-          + "tion\"w\202\323\344\223\0027*5/v1beta1/{name=projects/*/"
-          + "locations/*/tensorboards/*}\332A\004name\312A0\n\025g"
-          + "oogle.protobuf.Empty\022\027DeleteOperationMet"
-          + "adata\022\272\002\n\033CreateTensorboardExperiment\022C."
-          + "google.cloud.aiplatform.v1beta1.CreateTe"
-          + "nsorboardExperimentRequest\0326.google.clou"
-          + "d.aiplatform.v1beta1.TensorboardExperime"
-          + "nt\"\235\001\202\323\344\223\002]\"C/v1beta1/{parent=projects/*"
-          + "/locations/*/tensorboards/*}/experiments"
-          + ":\026tensorboard_experiment\332A7parent,tensor"
-          + "board_experiment,tensorboard_experiment_"
-          + "id\022\350\001\n\030GetTensorboardExperiment\022@.google"
-          + ".cloud.aiplatform.v1beta1.GetTensorboard"
-          + "ExperimentRequest\0326.google.cloud.aiplatf"
-          + "orm.v1beta1.TensorboardExperiment\"R\202\323\344\223\002"
-          + "E\022C/v1beta1/{name=projects/*/locations/*"
-          + "/tensorboards/*/experiments/*}\332A\004name\022\274\002"
-          + "\n\033UpdateTensorboardExperiment\022C.google.c"
-          + "loud.aiplatform.v1beta1.UpdateTensorboar"
-          + "dExperimentRequest\0326.google.cloud.aiplat"
-          + "form.v1beta1.TensorboardExperiment\"\237\001\202\323\344"
-          + "\223\002t2Z/v1beta1/{tensorboard_experiment.na"
-          + "me=projects/*/locations/*/tensorboards/*"
-          + "/experiments/*}:\026tensorboard_experiment\332"
-          + "A\"tensorboard_experiment,update_mask\022\373\001\n"
-          + "\032ListTensorboardExperiments\022B.google.clo"
-          + "ud.aiplatform.v1beta1.ListTensorboardExp"
-          + "erimentsRequest\032C.google.cloud.aiplatfor"
-          + "m.v1beta1.ListTensorboardExperimentsResp"
-          + "onse\"T\202\323\344\223\002E\022C/v1beta1/{parent=projects/"
-          + "*/locations/*/tensorboards/*}/experiment"
-          + "s\332A\006parent\022\211\002\n\033DeleteTensorboardExperime"
-          + "nt\022C.google.cloud.aiplatform.v1beta1.Del"
-          + "eteTensorboardExperimentRequest\032\035.google"
-          + ".longrunning.Operation\"\205\001\202\323\344\223\002E*C/v1beta"
-          + "1/{name=projects/*/locations/*/tensorboa"
-          + "rds/*/experiments/*}\332A\004name\312A0\n\025google.p"
-          + "rotobuf.Empty\022\027DeleteOperationMetadata\022\227"
-          + "\002\n\024CreateTensorboardRun\022<.google.cloud.a"
-          + "iplatform.v1beta1.CreateTensorboardRunRe"
-          + "quest\032/.google.cloud.aiplatform.v1beta1."
-          + "TensorboardRun\"\217\001\202\323\344\223\002]\"J/v1beta1/{paren"
-          + "t=projects/*/locations/*/tensorboards/*/"
-          + "experiments/*}/runs:\017tensorboard_run\332A)p"
-          + "arent,tensorboard_run,tensorboard_run_id"
-          + "\022\232\002\n\032BatchCreateTensorboardRuns\022B.google"
-          + ".cloud.aiplatform.v1beta1.BatchCreateTen"
-          + "sorboardRunsRequest\032C.google.cloud.aipla"
-          + "tform.v1beta1.BatchCreateTensorboardRuns"
-          + "Response\"s\202\323\344\223\002[\"V/v1beta1/{parent=proje"
+          + "TimeSeries\"\275\001\n)BatchReadTensorboardTimeS"
+          + "eriesDataRequest\022B\n\013tensorboard\030\001 \001(\tB-\340"
+          + "A\002\372A\'\n%aiplatform.googleapis.com/Tensorb"
+          + "oard\022L\n\013time_series\030\002 \003(\tB7\340A\002\372A1\n/aipla"
+          + "tform.googleapis.com/TensorboardTimeSeri"
+          + "es\"w\n*BatchReadTensorboardTimeSeriesData"
+          + "Response\022I\n\020time_series_data\030\001 \003(\0132/.goo"
+          + "gle.cloud.aiplatform.v1beta1.TimeSeriesD"
+          + "ata\"\251\001\n$ReadTensorboardTimeSeriesDataReq"
+          + "uest\022X\n\027tensorboard_time_series\030\001 \001(\tB7\340"
+          + "A\002\372A1\n/aiplatform.googleapis.com/Tensorb"
+          + "oardTimeSeries\022\027\n\017max_data_points\030\002 \001(\005\022"
+          + "\016\n\006filter\030\003 \001(\t\"r\n%ReadTensorboardTimeSe"
+          + "riesDataResponse\022I\n\020time_series_data\030\001 \001"
+          + "(\0132/.google.cloud.aiplatform.v1beta1.Tim"
+          + "eSeriesData\"\347\001\n%WriteTensorboardExperime"
+          + "ntDataRequest\022W\n\026tensorboard_experiment\030"
+          + "\001 \001(\tB7\340A\002\372A1\n/aiplatform.googleapis.com"
+          + "/TensorboardExperiment\022e\n\027write_run_data"
+          + "_requests\030\002 \003(\0132?.google.cloud.aiplatfor"
+          + "m.v1beta1.WriteTensorboardRunDataRequest"
+          + "B\003\340A\002\"(\n&WriteTensorboardExperimentDataR"
+          + "esponse\"\273\001\n\036WriteTensorboardRunDataReque"
+          + "st\022I\n\017tensorboard_run\030\001 \001(\tB0\340A\002\372A*\n(aip"
+          + "latform.googleapis.com/TensorboardRun\022N\n"
+          + "\020time_series_data\030\002 \003(\0132/.google.cloud.a"
+          + "iplatform.v1beta1.TimeSeriesDataB\003\340A\002\"!\n"
+          + "\037WriteTensorboardRunDataResponse\"\313\001\n&Exp"
+          + "ortTensorboardTimeSeriesDataRequest\022X\n\027t"
+          + "ensorboard_time_series\030\001 \001(\tB7\340A\002\372A1\n/ai"
+          + "platform.googleapis.com/TensorboardTimeS"
+          + "eries\022\016\n\006filter\030\002 \001(\t\022\021\n\tpage_size\030\003 \001(\005"
+          + "\022\022\n\npage_token\030\004 \001(\t\022\020\n\010order_by\030\005 \001(\t\"\231"
+          + "\001\n\'ExportTensorboardTimeSeriesDataRespon"
+          + "se\022U\n\027time_series_data_points\030\001 \003(\01324.go"
+          + "ogle.cloud.aiplatform.v1beta1.TimeSeries"
+          + "DataPoint\022\027\n\017next_page_token\030\002 \001(\t\"y\n\"Cr"
+          + "eateTensorboardOperationMetadata\022S\n\020gene"
+          + "ric_metadata\030\001 \001(\01329.google.cloud.aiplat"
+          + "form.v1beta1.GenericOperationMetadata\"y\n"
+          + "\"UpdateTensorboardOperationMetadata\022S\n\020g"
+          + "eneric_metadata\030\001 \001(\01329.google.cloud.aip"
+          + "latform.v1beta1.GenericOperationMetadata"
+          + "2\223>\n\022TensorboardService\022\203\002\n\021CreateTensor"
+          + "board\0229.google.cloud.aiplatform.v1beta1."
+          + "CreateTensorboardRequest\032\035.google.longru"
+          + "nning.Operation\"\223\001\202\323\344\223\002D\"5/v1beta1/{pare"
+          + "nt=projects/*/locations/*}/tensorboards:"
+          + "\013tensorboard\332A\022parent,tensorboard\312A1\n\013Te"
+          + "nsorboard\022\"CreateTensorboardOperationMet"
+          + "adata\022\274\001\n\016GetTensorboard\0226.google.cloud."
+          + "aiplatform.v1beta1.GetTensorboardRequest"
+          + "\032,.google.cloud.aiplatform.v1beta1.Tenso"
+          + "rboard\"D\202\323\344\223\0027\0225/v1beta1/{name=projects/"
+          + "*/locations/*/tensorboards/*}\332A\004name\022\224\002\n"
+          + "\021UpdateTensorboard\0229.google.cloud.aiplat"
+          + "form.v1beta1.UpdateTensorboardRequest\032\035."
+          + "google.longrunning.Operation\"\244\001\202\323\344\223\002P2A/"
+          + "v1beta1/{tensorboard.name=projects/*/loc"
+          + "ations/*/tensorboards/*}:\013tensorboard\332A\027"
+          + "tensorboard,update_mask\312A1\n\013Tensorboard\022"
+          + "\"UpdateTensorboardOperationMetadata\022\317\001\n\020"
+          + "ListTensorboards\0228.google.cloud.aiplatfo"
+          + "rm.v1beta1.ListTensorboardsRequest\0329.goo"
+          + "gle.cloud.aiplatform.v1beta1.ListTensorb"
+          + "oardsResponse\"F\202\323\344\223\0027\0225/v1beta1/{parent="
+          + "projects/*/locations/*}/tensorboards\332A\006p"
+          + "arent\022\346\001\n\021DeleteTensorboard\0229.google.clo"
+          + "ud.aiplatform.v1beta1.DeleteTensorboardR"
+          + "equest\032\035.google.longrunning.Operation\"w\202"
+          + "\323\344\223\0027*5/v1beta1/{name=projects/*/locatio"
+          + "ns/*/tensorboards/*}\332A\004name\312A0\n\025google.p"
+          + "rotobuf.Empty\022\027DeleteOperationMetadata\022\272"
+          + "\002\n\033CreateTensorboardExperiment\022C.google."
+          + "cloud.aiplatform.v1beta1.CreateTensorboa"
+          + "rdExperimentRequest\0326.google.cloud.aipla"
+          + "tform.v1beta1.TensorboardExperiment\"\235\001\202\323"
+          + "\344\223\002]\"C/v1beta1/{parent=projects/*/locati"
+          + "ons/*/tensorboards/*}/experiments:\026tenso"
+          + "rboard_experiment\332A7parent,tensorboard_e"
+          + "xperiment,tensorboard_experiment_id\022\350\001\n\030"
+          + "GetTensorboardExperiment\022@.google.cloud."
+          + "aiplatform.v1beta1.GetTensorboardExperim"
+          + "entRequest\0326.google.cloud.aiplatform.v1b"
+          + "eta1.TensorboardExperiment\"R\202\323\344\223\002E\022C/v1b"
+          + "eta1/{name=projects/*/locations/*/tensor"
+          + "boards/*/experiments/*}\332A\004name\022\274\002\n\033Updat"
+          + "eTensorboardExperiment\022C.google.cloud.ai"
+          + "platform.v1beta1.UpdateTensorboardExperi"
+          + "mentRequest\0326.google.cloud.aiplatform.v1"
+          + "beta1.TensorboardExperiment\"\237\001\202\323\344\223\002t2Z/v"
+          + "1beta1/{tensorboard_experiment.name=proj"
+          + "ects/*/locations/*/tensorboards/*/experi"
+          + "ments/*}:\026tensorboard_experiment\332A\"tenso"
+          + "rboard_experiment,update_mask\022\373\001\n\032ListTe"
+          + "nsorboardExperiments\022B.google.cloud.aipl"
+          + "atform.v1beta1.ListTensorboardExperiment"
+          + "sRequest\032C.google.cloud.aiplatform.v1bet"
+          + "a1.ListTensorboardExperimentsResponse\"T\202"
+          + "\323\344\223\002E\022C/v1beta1/{parent=projects/*/locat"
+          + "ions/*/tensorboards/*}/experiments\332A\006par"
+          + "ent\022\211\002\n\033DeleteTensorboardExperiment\022C.go"
+          + "ogle.cloud.aiplatform.v1beta1.DeleteTens"
+          + "orboardExperimentRequest\032\035.google.longru"
+          + "nning.Operation\"\205\001\202\323\344\223\002E*C/v1beta1/{name"
+          + "=projects/*/locations/*/tensorboards/*/e"
+          + "xperiments/*}\332A\004name\312A0\n\025google.protobuf"
+          + ".Empty\022\027DeleteOperationMetadata\022\227\002\n\024Crea"
+          + "teTensorboardRun\022<.google.cloud.aiplatfo"
+          + "rm.v1beta1.CreateTensorboardRunRequest\032/"
+          + ".google.cloud.aiplatform.v1beta1.Tensorb"
+          + "oardRun\"\217\001\202\323\344\223\002]\"J/v1beta1/{parent=proje"
           + "cts/*/locations/*/tensorboards/*/experim"
-          + "ents/*}/runs:batchCreate:\001*\332A\017parent,req"
-          + "uests\022\332\001\n\021GetTensorboardRun\0229.google.clo"
-          + "ud.aiplatform.v1beta1.GetTensorboardRunR"
-          + "equest\032/.google.cloud.aiplatform.v1beta1"
-          + ".TensorboardRun\"Y\202\323\344\223\002L\022J/v1beta1/{name="
-          + "projects/*/locations/*/tensorboards/*/ex"
-          + "periments/*/runs/*}\332A\004name\022\231\002\n\024UpdateTen"
-          + "sorboardRun\022<.google.cloud.aiplatform.v1"
-          + "beta1.UpdateTensorboardRunRequest\032/.goog"
-          + "le.cloud.aiplatform.v1beta1.TensorboardR"
-          + "un\"\221\001\202\323\344\223\002m2Z/v1beta1/{tensorboard_run.n"
-          + "ame=projects/*/locations/*/tensorboards/"
-          + "*/experiments/*/runs/*}:\017tensorboard_run"
-          + "\332A\033tensorboard_run,update_mask\022\355\001\n\023ListT"
-          + "ensorboardRuns\022;.google.cloud.aiplatform"
-          + ".v1beta1.ListTensorboardRunsRequest\032<.go"
-          + "ogle.cloud.aiplatform.v1beta1.ListTensor"
-          + "boardRunsResponse\"[\202\323\344\223\002L\022J/v1beta1/{par"
-          + "ent=projects/*/locations/*/tensorboards/"
-          + "*/experiments/*}/runs\332A\006parent\022\202\002\n\024Delet"
-          + "eTensorboardRun\022<.google.cloud.aiplatfor"
-          + "m.v1beta1.DeleteTensorboardRunRequest\032\035."
-          + "google.longrunning.Operation\"\214\001\202\323\344\223\002L*J/"
-          + "v1beta1/{name=projects/*/locations/*/ten"
-          + "sorboards/*/experiments/*/runs/*}\332A\004name"
-          + "\312A0\n\025google.protobuf.Empty\022\027DeleteOperat"
-          + "ionMetadata\022\272\002\n BatchCreateTensorboardTi"
-          + "meSeries\022H.google.cloud.aiplatform.v1bet"
-          + "a1.BatchCreateTensorboardTimeSeriesReque"
-          + "st\032I.google.cloud.aiplatform.v1beta1.Bat"
-          + "chCreateTensorboardTimeSeriesResponse\"\200\001"
-          + "\202\323\344\223\002h\"c/v1beta1/{parent=projects/*/loca"
-          + "tions/*/tensorboards/*/experiments/*}/ru"
-          + "ns/*/timeSeries:batchCreate:\001*\332A\017parent,"
-          + "requests\022\266\002\n\033CreateTensorboardTimeSeries"
-          + "\022C.google.cloud.aiplatform.v1beta1.Creat"
-          + "eTensorboardTimeSeriesRequest\0326.google.c"
-          + "loud.aiplatform.v1beta1.TensorboardTimeS"
-          + "eries\"\231\001\202\323\344\223\002r\"W/v1beta1/{parent=project"
+          + "ents/*}/runs:\017tensorboard_run\332A)parent,t"
+          + "ensorboard_run,tensorboard_run_id\022\232\002\n\032Ba"
+          + "tchCreateTensorboardRuns\022B.google.cloud."
+          + "aiplatform.v1beta1.BatchCreateTensorboar"
+          + "dRunsRequest\032C.google.cloud.aiplatform.v"
+          + "1beta1.BatchCreateTensorboardRunsRespons"
+          + "e\"s\202\323\344\223\002[\"V/v1beta1/{parent=projects/*/l"
+          + "ocations/*/tensorboards/*/experiments/*}"
+          + "/runs:batchCreate:\001*\332A\017parent,requests\022\332"
+          + "\001\n\021GetTensorboardRun\0229.google.cloud.aipl"
+          + "atform.v1beta1.GetTensorboardRunRequest\032"
+          + "/.google.cloud.aiplatform.v1beta1.Tensor"
+          + "boardRun\"Y\202\323\344\223\002L\022J/v1beta1/{name=project"
           + "s/*/locations/*/tensorboards/*/experimen"
-          + "ts/*/runs/*}/timeSeries:\027tensorboard_tim"
-          + "e_series\332A\036parent,tensorboard_time_serie"
-          + "s\022\374\001\n\030GetTensorboardTimeSeries\022@.google."
-          + "cloud.aiplatform.v1beta1.GetTensorboardT"
-          + "imeSeriesRequest\0326.google.cloud.aiplatfo"
-          + "rm.v1beta1.TensorboardTimeSeries\"f\202\323\344\223\002Y"
-          + "\022W/v1beta1/{name=projects/*/locations/*/"
-          + "tensorboards/*/experiments/*/runs/*/time"
-          + "Series/*}\332A\004name\022\324\002\n\033UpdateTensorboardTi"
-          + "meSeries\022C.google.cloud.aiplatform.v1bet"
-          + "a1.UpdateTensorboardTimeSeriesRequest\0326."
-          + "google.cloud.aiplatform.v1beta1.Tensorbo"
-          + "ardTimeSeries\"\267\001\202\323\344\223\002\212\0012o/v1beta1/{tenso"
-          + "rboard_time_series.name=projects/*/locat"
-          + "ions/*/tensorboards/*/experiments/*/runs"
-          + "/*/timeSeries/*}:\027tensorboard_time_serie"
-          + "s\332A#tensorboard_time_series,update_mask\022"
-          + "\214\002\n\031ListTensorboardTimeSeries\022A.google.c"
-          + "loud.aiplatform.v1beta1.ListTensorboardT"
-          + "imeSeriesRequest\032B.google.cloud.aiplatfo"
-          + "rm.v1beta1.ListTensorboardTimeSeriesResp"
-          + "onse\"h\202\323\344\223\002Y\022W/v1beta1/{parent=projects/"
-          + "*/locations/*/tensorboards/*/experiments"
-          + "/*/runs/*}/timeSeries\332A\006parent\022\235\002\n\033Delet"
-          + "eTensorboardTimeSeries\022C.google.cloud.ai"
-          + "platform.v1beta1.DeleteTensorboardTimeSe"
-          + "riesRequest\032\035.google.longrunning.Operati"
-          + "on\"\231\001\202\323\344\223\002Y*W/v1beta1/{name=projects/*/l"
-          + "ocations/*/tensorboards/*/experiments/*/"
-          + "runs/*/timeSeries/*}\332A\004name\312A0\n\025google.p"
-          + "rotobuf.Empty\022\027DeleteOperationMetadata\022\302"
-          + "\002\n\035ReadTensorboardTimeSeriesData\022E.googl"
-          + "e.cloud.aiplatform.v1beta1.ReadTensorboa"
-          + "rdTimeSeriesDataRequest\032F.google.cloud.a"
-          + "iplatform.v1beta1.ReadTensorboardTimeSer"
-          + "iesDataResponse\"\221\001\202\323\344\223\002q\022o/v1beta1/{tens"
-          + "orboard_time_series=projects/*/locations"
-          + "/*/tensorboards/*/experiments/*/runs/*/t"
-          + "imeSeries/*}:read\332A\027tensorboard_time_ser"
-          + "ies\022\242\002\n\027ReadTensorboardBlobData\022?.google"
-          + ".cloud.aiplatform.v1beta1.ReadTensorboar"
-          + "dBlobDataRequest\032@.google.cloud.aiplatfo"
-          + "rm.v1beta1.ReadTensorboardBlobDataRespon"
-          + "se\"\201\001\202\323\344\223\002m\022k/v1beta1/{time_series=proje"
-          + "cts/*/locations/*/tensorboards/*/experim"
-          + "ents/*/runs/*/timeSeries/*}:readBlobData"
-          + "\332A\013time_series0\001\022\313\002\n\036WriteTensorboardExp"
-          + "erimentData\022F.google.cloud.aiplatform.v1"
-          + "beta1.WriteTensorboardExperimentDataRequ"
-          + "est\032G.google.cloud.aiplatform.v1beta1.Wr"
-          + "iteTensorboardExperimentDataResponse\"\227\001\202"
-          + "\323\344\223\002`\"[/v1beta1/{tensorboard_experiment="
-          + "projects/*/locations/*/tensorboards/*/ex"
-          + "periments/*}:write:\001*\332A.tensorboard_expe"
-          + "riment,write_run_data_requests\022\250\002\n\027Write"
-          + "TensorboardRunData\022?.google.cloud.aiplat"
-          + "form.v1beta1.WriteTensorboardRunDataRequ"
-          + "est\032@.google.cloud.aiplatform.v1beta1.Wr"
-          + "iteTensorboardRunDataResponse\"\211\001\202\323\344\223\002`\"["
-          + "/v1beta1/{tensorboard_run=projects/*/loc"
+          + "ts/*/runs/*}\332A\004name\022\231\002\n\024UpdateTensorboar"
+          + "dRun\022<.google.cloud.aiplatform.v1beta1.U"
+          + "pdateTensorboardRunRequest\032/.google.clou"
+          + "d.aiplatform.v1beta1.TensorboardRun\"\221\001\202\323"
+          + "\344\223\002m2Z/v1beta1/{tensorboard_run.name=pro"
+          + "jects/*/locations/*/tensorboards/*/exper"
+          + "iments/*/runs/*}:\017tensorboard_run\332A\033tens"
+          + "orboard_run,update_mask\022\355\001\n\023ListTensorbo"
+          + "ardRuns\022;.google.cloud.aiplatform.v1beta"
+          + "1.ListTensorboardRunsRequest\032<.google.cl"
+          + "oud.aiplatform.v1beta1.ListTensorboardRu"
+          + "nsResponse\"[\202\323\344\223\002L\022J/v1beta1/{parent=pro"
+          + "jects/*/locations/*/tensorboards/*/exper"
+          + "iments/*}/runs\332A\006parent\022\202\002\n\024DeleteTensor"
+          + "boardRun\022<.google.cloud.aiplatform.v1bet"
+          + "a1.DeleteTensorboardRunRequest\032\035.google."
+          + "longrunning.Operation\"\214\001\202\323\344\223\002L*J/v1beta1"
+          + "/{name=projects/*/locations/*/tensorboar"
+          + "ds/*/experiments/*/runs/*}\332A\004name\312A0\n\025go"
+          + "ogle.protobuf.Empty\022\027DeleteOperationMeta"
+          + "data\022\272\002\n BatchCreateTensorboardTimeSerie"
+          + "s\022H.google.cloud.aiplatform.v1beta1.Batc"
+          + "hCreateTensorboardTimeSeriesRequest\032I.go"
+          + "ogle.cloud.aiplatform.v1beta1.BatchCreat"
+          + "eTensorboardTimeSeriesResponse\"\200\001\202\323\344\223\002h\""
+          + "c/v1beta1/{parent=projects/*/locations/*"
+          + "/tensorboards/*/experiments/*}/runs/*/ti"
+          + "meSeries:batchCreate:\001*\332A\017parent,request"
+          + "s\022\266\002\n\033CreateTensorboardTimeSeries\022C.goog"
+          + "le.cloud.aiplatform.v1beta1.CreateTensor"
+          + "boardTimeSeriesRequest\0326.google.cloud.ai"
+          + "platform.v1beta1.TensorboardTimeSeries\"\231"
+          + "\001\202\323\344\223\002r\"W/v1beta1/{parent=projects/*/loc"
           + "ations/*/tensorboards/*/experiments/*/ru"
-          + "ns/*}:write:\001*\332A tensorboard_run,time_se"
-          + "ries_data\022\344\002\n\037ExportTensorboardTimeSerie"
-          + "sData\022G.google.cloud.aiplatform.v1beta1."
-          + "ExportTensorboardTimeSeriesDataRequest\032H"
-          + ".google.cloud.aiplatform.v1beta1.ExportT"
-          + "ensorboardTimeSeriesDataResponse\"\255\001\202\323\344\223\002"
-          + "\214\001\"\206\001/v1beta1/{tensorboard_time_series=p"
-          + "rojects/*/locations/*/tensorboards/*/exp"
-          + "eriments/*/runs/*/timeSeries/*}:exportTe"
-          + "nsorboardTimeSeries:\001*\332A\027tensorboard_tim"
-          + "e_series\032M\312A\031aiplatform.googleapis.com\322A"
-          + ".https://www.googleapis.com/auth/cloud-p"
-          + "latformB\364\001\n#com.google.cloud.aiplatform."
-          + "v1beta1B\027TensorboardServiceProtoP\001ZIgoog"
-          + "le.golang.org/genproto/googleapis/cloud/"
-          + "aiplatform/v1beta1;aiplatform\252\002\037Google.C"
-          + "loud.AIPlatform.V1Beta1\312\002\037Google\\Cloud\\A"
-          + "IPlatform\\V1beta1\352\002\"Google::Cloud::AIPla"
-          + "tform::V1beta1b\006proto3"
+          + "ns/*}/timeSeries:\027tensorboard_time_serie"
+          + "s\332A\036parent,tensorboard_time_series\022\374\001\n\030G"
+          + "etTensorboardTimeSeries\022@.google.cloud.a"
+          + "iplatform.v1beta1.GetTensorboardTimeSeri"
+          + "esRequest\0326.google.cloud.aiplatform.v1be"
+          + "ta1.TensorboardTimeSeries\"f\202\323\344\223\002Y\022W/v1be"
+          + "ta1/{name=projects/*/locations/*/tensorb"
+          + "oards/*/experiments/*/runs/*/timeSeries/"
+          + "*}\332A\004name\022\324\002\n\033UpdateTensorboardTimeSerie"
+          + "s\022C.google.cloud.aiplatform.v1beta1.Upda"
+          + "teTensorboardTimeSeriesRequest\0326.google."
+          + "cloud.aiplatform.v1beta1.TensorboardTime"
+          + "Series\"\267\001\202\323\344\223\002\212\0012o/v1beta1/{tensorboard_"
+          + "time_series.name=projects/*/locations/*/"
+          + "tensorboards/*/experiments/*/runs/*/time"
+          + "Series/*}:\027tensorboard_time_series\332A#ten"
+          + "sorboard_time_series,update_mask\022\214\002\n\031Lis"
+          + "tTensorboardTimeSeries\022A.google.cloud.ai"
+          + "platform.v1beta1.ListTensorboardTimeSeri"
+          + "esRequest\032B.google.cloud.aiplatform.v1be"
+          + "ta1.ListTensorboardTimeSeriesResponse\"h\202"
+          + "\323\344\223\002Y\022W/v1beta1/{parent=projects/*/locat"
+          + "ions/*/tensorboards/*/experiments/*/runs"
+          + "/*}/timeSeries\332A\006parent\022\235\002\n\033DeleteTensor"
+          + "boardTimeSeries\022C.google.cloud.aiplatfor"
+          + "m.v1beta1.DeleteTensorboardTimeSeriesReq"
+          + "uest\032\035.google.longrunning.Operation\"\231\001\202\323"
+          + "\344\223\002Y*W/v1beta1/{name=projects/*/location"
+          + "s/*/tensorboards/*/experiments/*/runs/*/"
+          + "timeSeries/*}\332A\004name\312A0\n\025google.protobuf"
+          + ".Empty\022\027DeleteOperationMetadata\022\273\002\n\"Batc"
+          + "hReadTensorboardTimeSeriesData\022J.google."
+          + "cloud.aiplatform.v1beta1.BatchReadTensor"
+          + "boardTimeSeriesDataRequest\032K.google.clou"
+          + "d.aiplatform.v1beta1.BatchReadTensorboar"
+          + "dTimeSeriesDataResponse\"|\202\323\344\223\002h\022f/v1beta"
+          + "1/{tensorboard=projects/*/locations/*/te"
+          + "nsorboards/*}/experiments/*/runs/*/timeS"
+          + "eries:batchRead\332A\013tensorboard\022\302\002\n\035ReadTe"
+          + "nsorboardTimeSeriesData\022E.google.cloud.a"
+          + "iplatform.v1beta1.ReadTensorboardTimeSer"
+          + "iesDataRequest\032F.google.cloud.aiplatform"
+          + ".v1beta1.ReadTensorboardTimeSeriesDataRe"
+          + "sponse\"\221\001\202\323\344\223\002q\022o/v1beta1/{tensorboard_t"
+          + "ime_series=projects/*/locations/*/tensor"
+          + "boards/*/experiments/*/runs/*/timeSeries"
+          + "/*}:read\332A\027tensorboard_time_series\022\242\002\n\027R"
+          + "eadTensorboardBlobData\022?.google.cloud.ai"
+          + "platform.v1beta1.ReadTensorboardBlobData"
+          + "Request\032@.google.cloud.aiplatform.v1beta"
+          + "1.ReadTensorboardBlobDataResponse\"\201\001\202\323\344\223"
+          + "\002m\022k/v1beta1/{time_series=projects/*/loc"
+          + "ations/*/tensorboards/*/experiments/*/ru"
+          + "ns/*/timeSeries/*}:readBlobData\332A\013time_s"
+          + "eries0\001\022\313\002\n\036WriteTensorboardExperimentDa"
+          + "ta\022F.google.cloud.aiplatform.v1beta1.Wri"
+          + "teTensorboardExperimentDataRequest\032G.goo"
+          + "gle.cloud.aiplatform.v1beta1.WriteTensor"
+          + "boardExperimentDataResponse\"\227\001\202\323\344\223\002`\"[/v"
+          + "1beta1/{tensorboard_experiment=projects/"
+          + "*/locations/*/tensorboards/*/experiments"
+          + "/*}:write:\001*\332A.tensorboard_experiment,wr"
+          + "ite_run_data_requests\022\250\002\n\027WriteTensorboa"
+          + "rdRunData\022?.google.cloud.aiplatform.v1be"
+          + "ta1.WriteTensorboardRunDataRequest\032@.goo"
+          + "gle.cloud.aiplatform.v1beta1.WriteTensor"
+          + "boardRunDataResponse\"\211\001\202\323\344\223\002`\"[/v1beta1/"
+          + "{tensorboard_run=projects/*/locations/*/"
+          + "tensorboards/*/experiments/*/runs/*}:wri"
+          + "te:\001*\332A tensorboard_run,time_series_data"
+          + "\022\344\002\n\037ExportTensorboardTimeSeriesData\022G.g"
+          + "oogle.cloud.aiplatform.v1beta1.ExportTen"
+          + "sorboardTimeSeriesDataRequest\032H.google.c"
+          + "loud.aiplatform.v1beta1.ExportTensorboar"
+          + "dTimeSeriesDataResponse\"\255\001\202\323\344\223\002\214\001\"\206\001/v1b"
+          + "eta1/{tensorboard_time_series=projects/*"
+          + "/locations/*/tensorboards/*/experiments/"
+          + "*/runs/*/timeSeries/*}:exportTensorboard"
+          + "TimeSeries:\001*\332A\027tensorboard_time_series\032"
+          + "M\312A\031aiplatform.googleapis.com\322A.https://"
+          + "www.googleapis.com/auth/cloud-platformB\364"
+          + "\001\n#com.google.cloud.aiplatform.v1beta1B\027"
+          + "TensorboardServiceProtoP\001ZIgoogle.golang"
+          + ".org/genproto/googleapis/cloud/aiplatfor"
+          + "m/v1beta1;aiplatform\252\002\037Google.Cloud.AIPl"
+          + "atform.V1Beta1\312\002\037Google\\Cloud\\AIPlatform"
+          + "\\V1beta1\352\002\"Google::Cloud::AIPlatform::V1"
+          + "beta1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -819,8 +843,24 @@ public final class TensorboardServiceProto {
             new java.lang.String[] {
               "Name",
             });
-    internal_static_google_cloud_aiplatform_v1beta1_ReadTensorboardTimeSeriesDataRequest_descriptor =
+    internal_static_google_cloud_aiplatform_v1beta1_BatchReadTensorboardTimeSeriesDataRequest_descriptor =
         getDescriptor().getMessageTypes().get(30);
+    internal_static_google_cloud_aiplatform_v1beta1_BatchReadTensorboardTimeSeriesDataRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_aiplatform_v1beta1_BatchReadTensorboardTimeSeriesDataRequest_descriptor,
+            new java.lang.String[] {
+              "Tensorboard", "TimeSeries",
+            });
+    internal_static_google_cloud_aiplatform_v1beta1_BatchReadTensorboardTimeSeriesDataResponse_descriptor =
+        getDescriptor().getMessageTypes().get(31);
+    internal_static_google_cloud_aiplatform_v1beta1_BatchReadTensorboardTimeSeriesDataResponse_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_aiplatform_v1beta1_BatchReadTensorboardTimeSeriesDataResponse_descriptor,
+            new java.lang.String[] {
+              "TimeSeriesData",
+            });
+    internal_static_google_cloud_aiplatform_v1beta1_ReadTensorboardTimeSeriesDataRequest_descriptor =
+        getDescriptor().getMessageTypes().get(32);
     internal_static_google_cloud_aiplatform_v1beta1_ReadTensorboardTimeSeriesDataRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1beta1_ReadTensorboardTimeSeriesDataRequest_descriptor,
@@ -828,7 +868,7 @@ public final class TensorboardServiceProto {
               "TensorboardTimeSeries", "MaxDataPoints", "Filter",
             });
     internal_static_google_cloud_aiplatform_v1beta1_ReadTensorboardTimeSeriesDataResponse_descriptor =
-        getDescriptor().getMessageTypes().get(31);
+        getDescriptor().getMessageTypes().get(33);
     internal_static_google_cloud_aiplatform_v1beta1_ReadTensorboardTimeSeriesDataResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1beta1_ReadTensorboardTimeSeriesDataResponse_descriptor,
@@ -836,7 +876,7 @@ public final class TensorboardServiceProto {
               "TimeSeriesData",
             });
     internal_static_google_cloud_aiplatform_v1beta1_WriteTensorboardExperimentDataRequest_descriptor =
-        getDescriptor().getMessageTypes().get(32);
+        getDescriptor().getMessageTypes().get(34);
     internal_static_google_cloud_aiplatform_v1beta1_WriteTensorboardExperimentDataRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1beta1_WriteTensorboardExperimentDataRequest_descriptor,
@@ -844,13 +884,13 @@ public final class TensorboardServiceProto {
               "TensorboardExperiment", "WriteRunDataRequests",
             });
     internal_static_google_cloud_aiplatform_v1beta1_WriteTensorboardExperimentDataResponse_descriptor =
-        getDescriptor().getMessageTypes().get(33);
+        getDescriptor().getMessageTypes().get(35);
     internal_static_google_cloud_aiplatform_v1beta1_WriteTensorboardExperimentDataResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1beta1_WriteTensorboardExperimentDataResponse_descriptor,
             new java.lang.String[] {});
     internal_static_google_cloud_aiplatform_v1beta1_WriteTensorboardRunDataRequest_descriptor =
-        getDescriptor().getMessageTypes().get(34);
+        getDescriptor().getMessageTypes().get(36);
     internal_static_google_cloud_aiplatform_v1beta1_WriteTensorboardRunDataRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1beta1_WriteTensorboardRunDataRequest_descriptor,
@@ -858,13 +898,13 @@ public final class TensorboardServiceProto {
               "TensorboardRun", "TimeSeriesData",
             });
     internal_static_google_cloud_aiplatform_v1beta1_WriteTensorboardRunDataResponse_descriptor =
-        getDescriptor().getMessageTypes().get(35);
+        getDescriptor().getMessageTypes().get(37);
     internal_static_google_cloud_aiplatform_v1beta1_WriteTensorboardRunDataResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1beta1_WriteTensorboardRunDataResponse_descriptor,
             new java.lang.String[] {});
     internal_static_google_cloud_aiplatform_v1beta1_ExportTensorboardTimeSeriesDataRequest_descriptor =
-        getDescriptor().getMessageTypes().get(36);
+        getDescriptor().getMessageTypes().get(38);
     internal_static_google_cloud_aiplatform_v1beta1_ExportTensorboardTimeSeriesDataRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1beta1_ExportTensorboardTimeSeriesDataRequest_descriptor,
@@ -872,7 +912,7 @@ public final class TensorboardServiceProto {
               "TensorboardTimeSeries", "Filter", "PageSize", "PageToken", "OrderBy",
             });
     internal_static_google_cloud_aiplatform_v1beta1_ExportTensorboardTimeSeriesDataResponse_descriptor =
-        getDescriptor().getMessageTypes().get(37);
+        getDescriptor().getMessageTypes().get(39);
     internal_static_google_cloud_aiplatform_v1beta1_ExportTensorboardTimeSeriesDataResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1beta1_ExportTensorboardTimeSeriesDataResponse_descriptor,
@@ -880,7 +920,7 @@ public final class TensorboardServiceProto {
               "TimeSeriesDataPoints", "NextPageToken",
             });
     internal_static_google_cloud_aiplatform_v1beta1_CreateTensorboardOperationMetadata_descriptor =
-        getDescriptor().getMessageTypes().get(38);
+        getDescriptor().getMessageTypes().get(40);
     internal_static_google_cloud_aiplatform_v1beta1_CreateTensorboardOperationMetadata_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1beta1_CreateTensorboardOperationMetadata_descriptor,
@@ -888,7 +928,7 @@ public final class TensorboardServiceProto {
               "GenericMetadata",
             });
     internal_static_google_cloud_aiplatform_v1beta1_UpdateTensorboardOperationMetadata_descriptor =
-        getDescriptor().getMessageTypes().get(39);
+        getDescriptor().getMessageTypes().get(41);
     internal_static_google_cloud_aiplatform_v1beta1_UpdateTensorboardOperationMetadata_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1beta1_UpdateTensorboardOperationMetadata_descriptor,

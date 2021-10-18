@@ -119,7 +119,7 @@ public final class GetMetadataStoreRequest extends com.google.protobuf.Generated
    * <pre>
    * Required. The resource name of the MetadataStore to retrieve.
    * Format:
-   * projects/{project}/locations/{location}/metadataStores/{metadatastore}
+   * `projects/{project}/locations/{location}/metadataStores/{metadatastore}`
    * </pre>
    *
    * <code>
@@ -146,7 +146,7 @@ public final class GetMetadataStoreRequest extends com.google.protobuf.Generated
    * <pre>
    * Required. The resource name of the MetadataStore to retrieve.
    * Format:
-   * projects/{project}/locations/{location}/metadataStores/{metadatastore}
+   * `projects/{project}/locations/{location}/metadataStores/{metadatastore}`
    * </pre>
    *
    * <code>
@@ -494,7 +494,7 @@ public final class GetMetadataStoreRequest extends com.google.protobuf.Generated
      * <pre>
      * Required. The resource name of the MetadataStore to retrieve.
      * Format:
-     * projects/{project}/locations/{location}/metadataStores/{metadatastore}
+     * `projects/{project}/locations/{location}/metadataStores/{metadatastore}`
      * </pre>
      *
      * <code>
@@ -520,7 +520,7 @@ public final class GetMetadataStoreRequest extends com.google.protobuf.Generated
      * <pre>
      * Required. The resource name of the MetadataStore to retrieve.
      * Format:
-     * projects/{project}/locations/{location}/metadataStores/{metadatastore}
+     * `projects/{project}/locations/{location}/metadataStores/{metadatastore}`
      * </pre>
      *
      * <code>
@@ -546,7 +546,7 @@ public final class GetMetadataStoreRequest extends com.google.protobuf.Generated
      * <pre>
      * Required. The resource name of the MetadataStore to retrieve.
      * Format:
-     * projects/{project}/locations/{location}/metadataStores/{metadatastore}
+     * `projects/{project}/locations/{location}/metadataStores/{metadatastore}`
      * </pre>
      *
      * <code>
@@ -571,7 +571,7 @@ public final class GetMetadataStoreRequest extends com.google.protobuf.Generated
      * <pre>
      * Required. The resource name of the MetadataStore to retrieve.
      * Format:
-     * projects/{project}/locations/{location}/metadataStores/{metadatastore}
+     * `projects/{project}/locations/{location}/metadataStores/{metadatastore}`
      * </pre>
      *
      * <code>
@@ -592,7 +592,7 @@ public final class GetMetadataStoreRequest extends com.google.protobuf.Generated
      * <pre>
      * Required. The resource name of the MetadataStore to retrieve.
      * Format:
-     * projects/{project}/locations/{location}/metadataStores/{metadatastore}
+     * `projects/{project}/locations/{location}/metadataStores/{metadatastore}`
      * </pre>
      *
      * <code>

@@ -345,6 +345,78 @@ public interface PipelineTaskDetailOrBuilder
    *
    *
    * <pre>
+   * Output only. A list of task status. This field keeps a record of task status evolving
+   * over time.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.aiplatform.v1beta1.PipelineTaskDetail.PipelineTaskStatus pipeline_task_status = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  java.util.List<com.google.cloud.aiplatform.v1beta1.PipelineTaskDetail.PipelineTaskStatus>
+      getPipelineTaskStatusList();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. A list of task status. This field keeps a record of task status evolving
+   * over time.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.aiplatform.v1beta1.PipelineTaskDetail.PipelineTaskStatus pipeline_task_status = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.cloud.aiplatform.v1beta1.PipelineTaskDetail.PipelineTaskStatus getPipelineTaskStatus(
+      int index);
+  /**
+   *
+   *
+   * <pre>
+   * Output only. A list of task status. This field keeps a record of task status evolving
+   * over time.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.aiplatform.v1beta1.PipelineTaskDetail.PipelineTaskStatus pipeline_task_status = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  int getPipelineTaskStatusCount();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. A list of task status. This field keeps a record of task status evolving
+   * over time.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.aiplatform.v1beta1.PipelineTaskDetail.PipelineTaskStatus pipeline_task_status = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  java.util.List<
+          ? extends
+              com.google.cloud.aiplatform.v1beta1.PipelineTaskDetail.PipelineTaskStatusOrBuilder>
+      getPipelineTaskStatusOrBuilderList();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. A list of task status. This field keeps a record of task status evolving
+   * over time.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.aiplatform.v1beta1.PipelineTaskDetail.PipelineTaskStatus pipeline_task_status = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.cloud.aiplatform.v1beta1.PipelineTaskDetail.PipelineTaskStatusOrBuilder
+      getPipelineTaskStatusOrBuilder(int index);
+
+  /**
+   *
+   *
+   * <pre>
    * Output only. The runtime input artifacts of the task.
    * </pre>
    *

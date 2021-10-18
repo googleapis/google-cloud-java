@@ -183,6 +183,44 @@ public interface ExplanationParametersOrBuilder
    *
    *
    * <pre>
+   * Similarity explainability that returns the nearest neighbors from the
+   * provided dataset.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.Similarity similarity = 7;</code>
+   *
+   * @return Whether the similarity field is set.
+   */
+  boolean hasSimilarity();
+  /**
+   *
+   *
+   * <pre>
+   * Similarity explainability that returns the nearest neighbors from the
+   * provided dataset.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.Similarity similarity = 7;</code>
+   *
+   * @return The similarity.
+   */
+  com.google.cloud.aiplatform.v1beta1.Similarity getSimilarity();
+  /**
+   *
+   *
+   * <pre>
+   * Similarity explainability that returns the nearest neighbors from the
+   * provided dataset.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.Similarity similarity = 7;</code>
+   */
+  com.google.cloud.aiplatform.v1beta1.SimilarityOrBuilder getSimilarityOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * If populated, returns attributions for top K indices of outputs
    * (defaults to 1). Only applies to Models that predicts more than one outputs
    * (e,g, multi-class Models). When set to -1, returns explanations for all

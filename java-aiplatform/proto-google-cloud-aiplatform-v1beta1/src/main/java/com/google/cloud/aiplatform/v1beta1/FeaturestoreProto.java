@@ -54,7 +54,7 @@ public final class FeaturestoreProto {
           + "google/api/resource.proto\0325google/cloud/"
           + "aiplatform/v1beta1/encryption_spec.proto"
           + "\032\037google/protobuf/timestamp.proto\032\034googl"
-          + "e/api/annotations.proto\"\255\005\n\014Featurestore"
+          + "e/api/annotations.proto\"\374\005\n\014Featurestore"
           + "\022\021\n\004name\030\001 \001(\tB\003\340A\003\0224\n\013create_time\030\003 \001(\013"
           + "2\032.google.protobuf.TimestampB\003\340A\003\0224\n\013upd"
           + "ate_time\030\004 \001(\0132\032.google.protobuf.Timesta"
@@ -65,19 +65,21 @@ public final class FeaturestoreProto {
           + "orm.v1beta1.Featurestore.OnlineServingCo"
           + "nfigB\003\340A\002\022G\n\005state\030\010 \001(\01623.google.cloud."
           + "aiplatform.v1beta1.Featurestore.StateB\003\340"
-          + "A\003\032/\n\023OnlineServingConfig\022\030\n\020fixed_node_"
-          + "count\030\002 \001(\005\032-\n\013LabelsEntry\022\013\n\003key\030\001 \001(\t\022"
-          + "\r\n\005value\030\002 \001(\t:\0028\001\"8\n\005State\022\025\n\021STATE_UNS"
-          + "PECIFIED\020\000\022\n\n\006STABLE\020\001\022\014\n\010UPDATING\020\002:q\352A"
-          + "n\n&aiplatform.googleapis.com/Featurestor"
-          + "e\022Dprojects/{project}/locations/{locatio"
-          + "n}/featurestores/{featurestore}B\356\001\n#com."
-          + "google.cloud.aiplatform.v1beta1B\021Feature"
-          + "storeProtoP\001ZIgoogle.golang.org/genproto"
-          + "/googleapis/cloud/aiplatform/v1beta1;aip"
-          + "latform\252\002\037Google.Cloud.AIPlatform.V1Beta"
-          + "1\312\002\037Google\\Cloud\\AIPlatform\\V1beta1\352\002\"Go"
-          + "ogle::Cloud::AIPlatform::V1beta1b\006proto3"
+          + "A\003\022M\n\017encryption_spec\030\n \001(\0132/.google.clo"
+          + "ud.aiplatform.v1beta1.EncryptionSpecB\003\340A"
+          + "\001\032/\n\023OnlineServingConfig\022\030\n\020fixed_node_c"
+          + "ount\030\002 \001(\005\032-\n\013LabelsEntry\022\013\n\003key\030\001 \001(\t\022\r"
+          + "\n\005value\030\002 \001(\t:\0028\001\"8\n\005State\022\025\n\021STATE_UNSP"
+          + "ECIFIED\020\000\022\n\n\006STABLE\020\001\022\014\n\010UPDATING\020\002:q\352An"
+          + "\n&aiplatform.googleapis.com/Featurestore"
+          + "\022Dprojects/{project}/locations/{location"
+          + "}/featurestores/{featurestore}B\356\001\n#com.g"
+          + "oogle.cloud.aiplatform.v1beta1B\021Features"
+          + "toreProtoP\001ZIgoogle.golang.org/genproto/"
+          + "googleapis/cloud/aiplatform/v1beta1;aipl"
+          + "atform\252\002\037Google.Cloud.AIPlatform.V1Beta1"
+          + "\312\002\037Google\\Cloud\\AIPlatform\\V1beta1\352\002\"Goo"
+          + "gle::Cloud::AIPlatform::V1beta1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -95,7 +97,14 @@ public final class FeaturestoreProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1beta1_Featurestore_descriptor,
             new java.lang.String[] {
-              "Name", "CreateTime", "UpdateTime", "Etag", "Labels", "OnlineServingConfig", "State",
+              "Name",
+              "CreateTime",
+              "UpdateTime",
+              "Etag",
+              "Labels",
+              "OnlineServingConfig",
+              "State",
+              "EncryptionSpec",
             });
     internal_static_google_cloud_aiplatform_v1beta1_Featurestore_OnlineServingConfig_descriptor =
         internal_static_google_cloud_aiplatform_v1beta1_Featurestore_descriptor

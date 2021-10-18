@@ -132,7 +132,7 @@ public final class ListMetadataStoresRequest extends com.google.protobuf.Generat
    * <pre>
    * Required. The Location whose MetadataStores should be listed.
    * Format:
-   * projects/{project}/locations/{location}
+   * `projects/{project}/locations/{location}`
    * </pre>
    *
    * <code>
@@ -159,7 +159,7 @@ public final class ListMetadataStoresRequest extends com.google.protobuf.Generat
    * <pre>
    * Required. The Location whose MetadataStores should be listed.
    * Format:
-   * projects/{project}/locations/{location}
+   * `projects/{project}/locations/{location}`
    * </pre>
    *
    * <code>
@@ -620,7 +620,7 @@ public final class ListMetadataStoresRequest extends com.google.protobuf.Generat
      * <pre>
      * Required. The Location whose MetadataStores should be listed.
      * Format:
-     * projects/{project}/locations/{location}
+     * `projects/{project}/locations/{location}`
      * </pre>
      *
      * <code>
@@ -646,7 +646,7 @@ public final class ListMetadataStoresRequest extends com.google.protobuf.Generat
      * <pre>
      * Required. The Location whose MetadataStores should be listed.
      * Format:
-     * projects/{project}/locations/{location}
+     * `projects/{project}/locations/{location}`
      * </pre>
      *
      * <code>
@@ -672,7 +672,7 @@ public final class ListMetadataStoresRequest extends com.google.protobuf.Generat
      * <pre>
      * Required. The Location whose MetadataStores should be listed.
      * Format:
-     * projects/{project}/locations/{location}
+     * `projects/{project}/locations/{location}`
      * </pre>
      *
      * <code>
@@ -697,7 +697,7 @@ public final class ListMetadataStoresRequest extends com.google.protobuf.Generat
      * <pre>
      * Required. The Location whose MetadataStores should be listed.
      * Format:
-     * projects/{project}/locations/{location}
+     * `projects/{project}/locations/{location}`
      * </pre>
      *
      * <code>
@@ -718,7 +718,7 @@ public final class ListMetadataStoresRequest extends com.google.protobuf.Generat
      * <pre>
      * Required. The Location whose MetadataStores should be listed.
      * Format:
-     * projects/{project}/locations/{location}
+     * `projects/{project}/locations/{location}`
      * </pre>
      *
      * <code>

@@ -337,6 +337,11 @@ public final class ModelDeploymentMonitoringJob extends com.google.protobuf.Gene
 
               break;
             }
+          case 176:
+            {
+              enableMonitoringPipelineLogs_ = input.readBool();
+              break;
+            }
           case 186:
             {
               com.google.rpc.Status.Builder subBuilder = null;
@@ -1818,6 +1823,26 @@ public final class ModelDeploymentMonitoringJob extends com.google.protobuf.Gene
     return getEncryptionSpec();
   }
 
+  public static final int ENABLE_MONITORING_PIPELINE_LOGS_FIELD_NUMBER = 22;
+  private boolean enableMonitoringPipelineLogs_;
+  /**
+   *
+   *
+   * <pre>
+   * If true, the scheduled monitoring pipeline status logs are sent to
+   * Google Cloud Logging. Please note the logs incur cost, which are subject to
+   * [Cloud Logging pricing](https://cloud.google.com/logging#pricing).
+   * </pre>
+   *
+   * <code>bool enable_monitoring_pipeline_logs = 22;</code>
+   *
+   * @return The enableMonitoringPipelineLogs.
+   */
+  @java.lang.Override
+  public boolean getEnableMonitoringPipelineLogs() {
+    return enableMonitoringPipelineLogs_;
+  }
+
   public static final int ERROR_FIELD_NUMBER = 23;
   private com.google.rpc.Status error_;
   /**
@@ -1943,6 +1968,9 @@ public final class ModelDeploymentMonitoringJob extends com.google.protobuf.Gene
     if (encryptionSpec_ != null) {
       output.writeMessage(21, getEncryptionSpec());
     }
+    if (enableMonitoringPipelineLogs_ != false) {
+      output.writeBool(22, enableMonitoringPipelineLogs_);
+    }
     if (error_ != null) {
       output.writeMessage(23, getError());
     }
@@ -2037,6 +2065,10 @@ public final class ModelDeploymentMonitoringJob extends com.google.protobuf.Gene
     if (encryptionSpec_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(21, getEncryptionSpec());
     }
+    if (enableMonitoringPipelineLogs_ != false) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeBoolSize(22, enableMonitoringPipelineLogs_);
+    }
     if (error_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(23, getError());
     }
@@ -2111,6 +2143,7 @@ public final class ModelDeploymentMonitoringJob extends com.google.protobuf.Gene
     if (hasEncryptionSpec()) {
       if (!getEncryptionSpec().equals(other.getEncryptionSpec())) return false;
     }
+    if (getEnableMonitoringPipelineLogs() != other.getEnableMonitoringPipelineLogs()) return false;
     if (hasError() != other.hasError()) return false;
     if (hasError()) {
       if (!getError().equals(other.getError())) return false;
@@ -2192,6 +2225,9 @@ public final class ModelDeploymentMonitoringJob extends com.google.protobuf.Gene
       hash = (37 * hash) + ENCRYPTION_SPEC_FIELD_NUMBER;
       hash = (53 * hash) + getEncryptionSpec().hashCode();
     }
+    hash = (37 * hash) + ENABLE_MONITORING_PIPELINE_LOGS_FIELD_NUMBER;
+    hash =
+        (53 * hash) + com.google.protobuf.Internal.hashBoolean(getEnableMonitoringPipelineLogs());
     if (hasError()) {
       hash = (37 * hash) + ERROR_FIELD_NUMBER;
       hash = (53 * hash) + getError().hashCode();
@@ -2454,6 +2490,8 @@ public final class ModelDeploymentMonitoringJob extends com.google.protobuf.Gene
         encryptionSpec_ = null;
         encryptionSpecBuilder_ = null;
       }
+      enableMonitoringPipelineLogs_ = false;
+
       if (errorBuilder_ == null) {
         error_ = null;
       } else {
@@ -2570,6 +2608,7 @@ public final class ModelDeploymentMonitoringJob extends com.google.protobuf.Gene
       } else {
         result.encryptionSpec_ = encryptionSpecBuilder_.build();
       }
+      result.enableMonitoringPipelineLogs_ = enableMonitoringPipelineLogs_;
       if (errorBuilder_ == null) {
         result.error_ = error_;
       } else {
@@ -2742,6 +2781,9 @@ public final class ModelDeploymentMonitoringJob extends com.google.protobuf.Gene
       }
       if (other.hasEncryptionSpec()) {
         mergeEncryptionSpec(other.getEncryptionSpec());
+      }
+      if (other.getEnableMonitoringPipelineLogs() != false) {
+        setEnableMonitoringPipelineLogs(other.getEnableMonitoringPipelineLogs());
       }
       if (other.hasError()) {
         mergeError(other.getError());
@@ -6822,6 +6864,64 @@ public final class ModelDeploymentMonitoringJob extends com.google.protobuf.Gene
         encryptionSpec_ = null;
       }
       return encryptionSpecBuilder_;
+    }
+
+    private boolean enableMonitoringPipelineLogs_;
+    /**
+     *
+     *
+     * <pre>
+     * If true, the scheduled monitoring pipeline status logs are sent to
+     * Google Cloud Logging. Please note the logs incur cost, which are subject to
+     * [Cloud Logging pricing](https://cloud.google.com/logging#pricing).
+     * </pre>
+     *
+     * <code>bool enable_monitoring_pipeline_logs = 22;</code>
+     *
+     * @return The enableMonitoringPipelineLogs.
+     */
+    @java.lang.Override
+    public boolean getEnableMonitoringPipelineLogs() {
+      return enableMonitoringPipelineLogs_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If true, the scheduled monitoring pipeline status logs are sent to
+     * Google Cloud Logging. Please note the logs incur cost, which are subject to
+     * [Cloud Logging pricing](https://cloud.google.com/logging#pricing).
+     * </pre>
+     *
+     * <code>bool enable_monitoring_pipeline_logs = 22;</code>
+     *
+     * @param value The enableMonitoringPipelineLogs to set.
+     * @return This builder for chaining.
+     */
+    public Builder setEnableMonitoringPipelineLogs(boolean value) {
+
+      enableMonitoringPipelineLogs_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If true, the scheduled monitoring pipeline status logs are sent to
+     * Google Cloud Logging. Please note the logs incur cost, which are subject to
+     * [Cloud Logging pricing](https://cloud.google.com/logging#pricing).
+     * </pre>
+     *
+     * <code>bool enable_monitoring_pipeline_logs = 22;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearEnableMonitoringPipelineLogs() {
+
+      enableMonitoringPipelineLogs_ = false;
+      onChanged();
+      return this;
     }
 
     private com.google.rpc.Status error_;

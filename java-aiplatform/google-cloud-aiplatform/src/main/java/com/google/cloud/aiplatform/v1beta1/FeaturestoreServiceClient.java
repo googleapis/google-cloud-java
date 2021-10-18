@@ -727,6 +727,65 @@ public class FeaturestoreServiceClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (FeaturestoreServiceClient featurestoreServiceClient = FeaturestoreServiceClient.create()) {
+   *   FeaturestoreName name = FeaturestoreName.of("[PROJECT]", "[LOCATION]", "[FEATURESTORE]");
+   *   boolean force = true;
+   *   featurestoreServiceClient.deleteFeaturestoreAsync(name, force).get();
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the Featurestore to be deleted. Format:
+   *     `projects/{project}/locations/{location}/featurestores/{featurestore}`
+   * @param force If set to true, any EntityTypes and Features for this Featurestore will also be
+   *     deleted. (Otherwise, the request will only work if the Featurestore has no EntityTypes.)
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Empty, DeleteOperationMetadata> deleteFeaturestoreAsync(
+      FeaturestoreName name, boolean force) {
+    DeleteFeaturestoreRequest request =
+        DeleteFeaturestoreRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .setForce(force)
+            .build();
+    return deleteFeaturestoreAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a single Featurestore. The Featurestore must not contain any EntityTypes or `force`
+   * must be set to true for the request to succeed.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (FeaturestoreServiceClient featurestoreServiceClient = FeaturestoreServiceClient.create()) {
+   *   String name = FeaturestoreName.of("[PROJECT]", "[LOCATION]", "[FEATURESTORE]").toString();
+   *   boolean force = true;
+   *   featurestoreServiceClient.deleteFeaturestoreAsync(name, force).get();
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the Featurestore to be deleted. Format:
+   *     `projects/{project}/locations/{location}/featurestores/{featurestore}`
+   * @param force If set to true, any EntityTypes and Features for this Featurestore will also be
+   *     deleted. (Otherwise, the request will only work if the Featurestore has no EntityTypes.)
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Empty, DeleteOperationMetadata> deleteFeaturestoreAsync(
+      String name, boolean force) {
+    DeleteFeaturestoreRequest request =
+        DeleteFeaturestoreRequest.newBuilder().setName(name).setForce(force).build();
+    return deleteFeaturestoreAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a single Featurestore. The Featurestore must not contain any EntityTypes or `force`
+   * must be set to true for the request to succeed.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (FeaturestoreServiceClient featurestoreServiceClient = FeaturestoreServiceClient.create()) {
    *   DeleteFeaturestoreRequest request =
    *       DeleteFeaturestoreRequest.newBuilder()
    *           .setName(FeaturestoreName.of("[PROJECT]", "[LOCATION]", "[FEATURESTORE]").toString())
@@ -1321,6 +1380,68 @@ public class FeaturestoreServiceClient implements BackgroundResource {
    */
   public final OperationFuture<Empty, DeleteOperationMetadata> deleteEntityTypeAsync(String name) {
     DeleteEntityTypeRequest request = DeleteEntityTypeRequest.newBuilder().setName(name).build();
+    return deleteEntityTypeAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a single EntityType. The EntityType must not have any Features or `force` must be set
+   * to true for the request to succeed.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (FeaturestoreServiceClient featurestoreServiceClient = FeaturestoreServiceClient.create()) {
+   *   EntityTypeName name =
+   *       EntityTypeName.of("[PROJECT]", "[LOCATION]", "[FEATURESTORE]", "[ENTITY_TYPE]");
+   *   boolean force = true;
+   *   featurestoreServiceClient.deleteEntityTypeAsync(name, force).get();
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the EntityType to be deleted. Format:
+   *     `projects/{project}/locations/{location}/featurestores/{featurestore}/entityTypes/{entity_type}`
+   * @param force If set to true, any Features for this EntityType will also be deleted. (Otherwise,
+   *     the request will only work if the EntityType has no Features.)
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Empty, DeleteOperationMetadata> deleteEntityTypeAsync(
+      EntityTypeName name, boolean force) {
+    DeleteEntityTypeRequest request =
+        DeleteEntityTypeRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .setForce(force)
+            .build();
+    return deleteEntityTypeAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a single EntityType. The EntityType must not have any Features or `force` must be set
+   * to true for the request to succeed.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (FeaturestoreServiceClient featurestoreServiceClient = FeaturestoreServiceClient.create()) {
+   *   String name =
+   *       EntityTypeName.of("[PROJECT]", "[LOCATION]", "[FEATURESTORE]", "[ENTITY_TYPE]")
+   *           .toString();
+   *   boolean force = true;
+   *   featurestoreServiceClient.deleteEntityTypeAsync(name, force).get();
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the EntityType to be deleted. Format:
+   *     `projects/{project}/locations/{location}/featurestores/{featurestore}/entityTypes/{entity_type}`
+   * @param force If set to true, any Features for this EntityType will also be deleted. (Otherwise,
+   *     the request will only work if the EntityType has no Features.)
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Empty, DeleteOperationMetadata> deleteEntityTypeAsync(
+      String name, boolean force) {
+    DeleteEntityTypeRequest request =
+        DeleteEntityTypeRequest.newBuilder().setName(name).setForce(force).build();
     return deleteEntityTypeAsync(request);
   }
 
@@ -2771,6 +2892,165 @@ public class FeaturestoreServiceClient implements BackgroundResource {
   public final SearchFeaturesPagedResponse searchFeatures(String location) {
     SearchFeaturesRequest request =
         SearchFeaturesRequest.newBuilder().setLocation(location).build();
+    return searchFeatures(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Searches Features matching a query in a given project.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (FeaturestoreServiceClient featurestoreServiceClient = FeaturestoreServiceClient.create()) {
+   *   LocationName location = LocationName.of("[PROJECT]", "[LOCATION]");
+   *   String query = "query107944136";
+   *   for (Feature element :
+   *       featurestoreServiceClient.searchFeatures(location, query).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param location Required. The resource name of the Location to search Features. Format:
+   *     `projects/{project}/locations/{location}`
+   * @param query Query string that is a conjunction of field-restricted queries and/or
+   *     field-restricted filters. Field-restricted queries and filters can be combined using `AND`
+   *     to form a conjunction.
+   *     <p>A field query is in the form FIELD:QUERY. This implicitly checks if QUERY exists as a
+   *     substring within Feature's FIELD. The QUERY and the FIELD are converted to a sequence of
+   *     words (i.e. tokens) for comparison. This is done by:
+   *     <p>&#42; Removing leading/trailing whitespace and tokenizing the search value. Characters
+   *     that are not one of alphanumeric `[a-zA-Z0-9]`, underscore `_`, or asterisk `&#42;` are
+   *     treated as delimiters for tokens. `&#42;` is treated as a wildcard that matches characters
+   *     within a token. &#42; Ignoring case. &#42; Prepending an asterisk to the first and
+   *     appending an asterisk to the last token in QUERY.
+   *     <p>A QUERY must be either a singular token or a phrase. A phrase is one or multiple words
+   *     enclosed in double quotation marks ("). With phrases, the order of the words is important.
+   *     Words in the phrase must be matching in order and consecutively.
+   *     <p>Supported FIELDs for field-restricted queries:
+   *     <ul>
+   *       <li>`feature_id`
+   *       <li>`description`
+   *       <li>`entity_type_id`
+   *     </ul>
+   *     <p>Examples:
+   *     <ul>
+   *       <li>`feature_id: foo` --&gt; Matches a Feature with ID containing the substring `foo`
+   *           (eg. `foo`, `foofeature`, `barfoo`).
+   *       <li>`feature_id: foo&#42;feature` --&gt; Matches a Feature with ID containing the
+   *           substring `foo&#42;feature` (eg. `foobarfeature`).
+   *       <li>`feature_id: foo AND description: bar` --&gt; Matches a Feature with ID containing
+   *           the substring `foo` and description containing the substring `bar`.
+   *     </ul>
+   *     <p>Besides field queries, the following exact-match filters are supported. The exact-match
+   *     filters do not support wildcards. Unlike field-restricted queries, exact-match filters are
+   *     case-sensitive.
+   *     <ul>
+   *       <li>`feature_id`: Supports = comparisons.
+   *       <li>`description`: Supports = comparisons. Multi-token filters should be enclosed in
+   *           quotes.
+   *       <li>`entity_type_id`: Supports = comparisons.
+   *       <li>`value_type`: Supports = and != comparisons.
+   *       <li>`labels`: Supports key-value equality as well as key presence.
+   *       <li>`featurestore_id`: Supports = comparisons.
+   *     </ul>
+   *     <p>Examples:
+   *     <ul>
+   *       <li>`description = "foo bar"` --&gt; Any Feature with description exactly equal to `foo
+   *           bar`
+   *       <li>`value_type = DOUBLE` --&gt; Features whose type is DOUBLE.
+   *       <li>`labels.active = yes AND labels.env = prod` --&gt; Features having both (active: yes)
+   *           and (env: prod) labels.
+   *       <li>`labels.env: &#42;` --&gt; Any Feature which has a label with `env` as the key.
+   *     </ul>
+   *
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final SearchFeaturesPagedResponse searchFeatures(LocationName location, String query) {
+    SearchFeaturesRequest request =
+        SearchFeaturesRequest.newBuilder()
+            .setLocation(location == null ? null : location.toString())
+            .setQuery(query)
+            .build();
+    return searchFeatures(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Searches Features matching a query in a given project.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (FeaturestoreServiceClient featurestoreServiceClient = FeaturestoreServiceClient.create()) {
+   *   String location = LocationName.of("[PROJECT]", "[LOCATION]").toString();
+   *   String query = "query107944136";
+   *   for (Feature element :
+   *       featurestoreServiceClient.searchFeatures(location, query).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param location Required. The resource name of the Location to search Features. Format:
+   *     `projects/{project}/locations/{location}`
+   * @param query Query string that is a conjunction of field-restricted queries and/or
+   *     field-restricted filters. Field-restricted queries and filters can be combined using `AND`
+   *     to form a conjunction.
+   *     <p>A field query is in the form FIELD:QUERY. This implicitly checks if QUERY exists as a
+   *     substring within Feature's FIELD. The QUERY and the FIELD are converted to a sequence of
+   *     words (i.e. tokens) for comparison. This is done by:
+   *     <p>&#42; Removing leading/trailing whitespace and tokenizing the search value. Characters
+   *     that are not one of alphanumeric `[a-zA-Z0-9]`, underscore `_`, or asterisk `&#42;` are
+   *     treated as delimiters for tokens. `&#42;` is treated as a wildcard that matches characters
+   *     within a token. &#42; Ignoring case. &#42; Prepending an asterisk to the first and
+   *     appending an asterisk to the last token in QUERY.
+   *     <p>A QUERY must be either a singular token or a phrase. A phrase is one or multiple words
+   *     enclosed in double quotation marks ("). With phrases, the order of the words is important.
+   *     Words in the phrase must be matching in order and consecutively.
+   *     <p>Supported FIELDs for field-restricted queries:
+   *     <ul>
+   *       <li>`feature_id`
+   *       <li>`description`
+   *       <li>`entity_type_id`
+   *     </ul>
+   *     <p>Examples:
+   *     <ul>
+   *       <li>`feature_id: foo` --&gt; Matches a Feature with ID containing the substring `foo`
+   *           (eg. `foo`, `foofeature`, `barfoo`).
+   *       <li>`feature_id: foo&#42;feature` --&gt; Matches a Feature with ID containing the
+   *           substring `foo&#42;feature` (eg. `foobarfeature`).
+   *       <li>`feature_id: foo AND description: bar` --&gt; Matches a Feature with ID containing
+   *           the substring `foo` and description containing the substring `bar`.
+   *     </ul>
+   *     <p>Besides field queries, the following exact-match filters are supported. The exact-match
+   *     filters do not support wildcards. Unlike field-restricted queries, exact-match filters are
+   *     case-sensitive.
+   *     <ul>
+   *       <li>`feature_id`: Supports = comparisons.
+   *       <li>`description`: Supports = comparisons. Multi-token filters should be enclosed in
+   *           quotes.
+   *       <li>`entity_type_id`: Supports = comparisons.
+   *       <li>`value_type`: Supports = and != comparisons.
+   *       <li>`labels`: Supports key-value equality as well as key presence.
+   *       <li>`featurestore_id`: Supports = comparisons.
+   *     </ul>
+   *     <p>Examples:
+   *     <ul>
+   *       <li>`description = "foo bar"` --&gt; Any Feature with description exactly equal to `foo
+   *           bar`
+   *       <li>`value_type = DOUBLE` --&gt; Features whose type is DOUBLE.
+   *       <li>`labels.active = yes AND labels.env = prod` --&gt; Features having both (active: yes)
+   *           and (env: prod) labels.
+   *       <li>`labels.env: &#42;` --&gt; Any Feature which has a label with `env` as the key.
+   *     </ul>
+   *
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final SearchFeaturesPagedResponse searchFeatures(String location, String query) {
+    SearchFeaturesRequest request =
+        SearchFeaturesRequest.newBuilder().setLocation(location).setQuery(query).build();
     return searchFeatures(request);
   }
 

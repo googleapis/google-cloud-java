@@ -165,6 +165,23 @@
  *   SpecialistPool response = specialistPoolServiceClient.getSpecialistPool(name);
  * }
  * }</pre>
+ *
+ * <p>======================= VizierServiceClient =======================
+ *
+ * <p>Service Description: Vertex Vizier API.
+ *
+ * <p>Vizier service is a GCP service to solve blackbox optimization problems, such as tuning
+ * machine learning hyperparameters and searching over deep learning architectures.
+ *
+ * <p>Sample for VizierServiceClient:
+ *
+ * <pre>{@code
+ * try (VizierServiceClient vizierServiceClient = VizierServiceClient.create()) {
+ *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+ *   Study study = Study.newBuilder().build();
+ *   Study response = vizierServiceClient.createStudy(parent, study);
+ * }
+ * }</pre>
  */
 @Generated("by gapic-generator-java")
 package com.google.cloud.aiplatform.v1;

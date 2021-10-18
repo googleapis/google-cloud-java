@@ -40,6 +40,8 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
   private PredictResponse() {
     predictions_ = java.util.Collections.emptyList();
     deployedModelId_ = "";
+    model_ = "";
+    modelDisplayName_ = "";
   }
 
   @java.lang.Override
@@ -87,6 +89,20 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
               java.lang.String s = input.readStringRequireUtf8();
 
               deployedModelId_ = s;
+              break;
+            }
+          case 26:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              model_ = s;
+              break;
+            }
+          case 34:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              modelDisplayName_ = s;
               break;
             }
           default:
@@ -264,6 +280,112 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
     }
   }
 
+  public static final int MODEL_FIELD_NUMBER = 3;
+  private volatile java.lang.Object model_;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The name of the Model this DeployedModel, that served this prediction, was
+   * created from.
+   * </pre>
+   *
+   * <code>
+   * string model = 3 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The model.
+   */
+  @java.lang.Override
+  public java.lang.String getModel() {
+    java.lang.Object ref = model_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      model_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The name of the Model this DeployedModel, that served this prediction, was
+   * created from.
+   * </pre>
+   *
+   * <code>
+   * string model = 3 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The bytes for model.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getModelBytes() {
+    java.lang.Object ref = model_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      model_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int MODEL_DISPLAY_NAME_FIELD_NUMBER = 4;
+  private volatile java.lang.Object modelDisplayName_;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The [display name][google.cloud.aiplatform.v1beta1.Model.display_name] of the Model this DeployedModel,
+   * that served this prediction, was created from.
+   * </pre>
+   *
+   * <code>string model_display_name = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The modelDisplayName.
+   */
+  @java.lang.Override
+  public java.lang.String getModelDisplayName() {
+    java.lang.Object ref = modelDisplayName_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      modelDisplayName_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The [display name][google.cloud.aiplatform.v1beta1.Model.display_name] of the Model this DeployedModel,
+   * that served this prediction, was created from.
+   * </pre>
+   *
+   * <code>string model_display_name = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The bytes for modelDisplayName.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getModelDisplayNameBytes() {
+    java.lang.Object ref = modelDisplayName_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      modelDisplayName_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -284,6 +406,12 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
     if (!getDeployedModelIdBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, deployedModelId_);
     }
+    if (!getModelBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, model_);
+    }
+    if (!getModelDisplayNameBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 4, modelDisplayName_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -298,6 +426,12 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
     }
     if (!getDeployedModelIdBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, deployedModelId_);
+    }
+    if (!getModelBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, model_);
+    }
+    if (!getModelDisplayNameBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, modelDisplayName_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -317,6 +451,8 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
 
     if (!getPredictionsList().equals(other.getPredictionsList())) return false;
     if (!getDeployedModelId().equals(other.getDeployedModelId())) return false;
+    if (!getModel().equals(other.getModel())) return false;
+    if (!getModelDisplayName().equals(other.getModelDisplayName())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -334,6 +470,10 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
     }
     hash = (37 * hash) + DEPLOYED_MODEL_ID_FIELD_NUMBER;
     hash = (53 * hash) + getDeployedModelId().hashCode();
+    hash = (37 * hash) + MODEL_FIELD_NUMBER;
+    hash = (53 * hash) + getModel().hashCode();
+    hash = (37 * hash) + MODEL_DISPLAY_NAME_FIELD_NUMBER;
+    hash = (53 * hash) + getModelDisplayName().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -489,6 +629,10 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
       }
       deployedModelId_ = "";
 
+      model_ = "";
+
+      modelDisplayName_ = "";
+
       return this;
     }
 
@@ -527,6 +671,8 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
         result.predictions_ = predictionsBuilder_.build();
       }
       result.deployedModelId_ = deployedModelId_;
+      result.model_ = model_;
+      result.modelDisplayName_ = modelDisplayName_;
       onBuilt();
       return result;
     }
@@ -606,6 +752,14 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
       }
       if (!other.getDeployedModelId().isEmpty()) {
         deployedModelId_ = other.deployedModelId_;
+        onChanged();
+      }
+      if (!other.getModel().isEmpty()) {
+        model_ = other.model_;
+        onChanged();
+      }
+      if (!other.getModelDisplayName().isEmpty()) {
+        modelDisplayName_ = other.modelDisplayName_;
         onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
@@ -1160,6 +1314,238 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
       checkByteStringIsUtf8(value);
 
       deployedModelId_ = value;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object model_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The name of the Model this DeployedModel, that served this prediction, was
+     * created from.
+     * </pre>
+     *
+     * <code>
+     * string model = 3 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return The model.
+     */
+    public java.lang.String getModel() {
+      java.lang.Object ref = model_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        model_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The name of the Model this DeployedModel, that served this prediction, was
+     * created from.
+     * </pre>
+     *
+     * <code>
+     * string model = 3 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return The bytes for model.
+     */
+    public com.google.protobuf.ByteString getModelBytes() {
+      java.lang.Object ref = model_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        model_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The name of the Model this DeployedModel, that served this prediction, was
+     * created from.
+     * </pre>
+     *
+     * <code>
+     * string model = 3 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @param value The model to set.
+     * @return This builder for chaining.
+     */
+    public Builder setModel(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+
+      model_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The name of the Model this DeployedModel, that served this prediction, was
+     * created from.
+     * </pre>
+     *
+     * <code>
+     * string model = 3 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearModel() {
+
+      model_ = getDefaultInstance().getModel();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The name of the Model this DeployedModel, that served this prediction, was
+     * created from.
+     * </pre>
+     *
+     * <code>
+     * string model = 3 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @param value The bytes for model to set.
+     * @return This builder for chaining.
+     */
+    public Builder setModelBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
+      model_ = value;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object modelDisplayName_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The [display name][google.cloud.aiplatform.v1beta1.Model.display_name] of the Model this DeployedModel,
+     * that served this prediction, was created from.
+     * </pre>
+     *
+     * <code>string model_display_name = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The modelDisplayName.
+     */
+    public java.lang.String getModelDisplayName() {
+      java.lang.Object ref = modelDisplayName_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        modelDisplayName_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The [display name][google.cloud.aiplatform.v1beta1.Model.display_name] of the Model this DeployedModel,
+     * that served this prediction, was created from.
+     * </pre>
+     *
+     * <code>string model_display_name = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The bytes for modelDisplayName.
+     */
+    public com.google.protobuf.ByteString getModelDisplayNameBytes() {
+      java.lang.Object ref = modelDisplayName_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        modelDisplayName_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The [display name][google.cloud.aiplatform.v1beta1.Model.display_name] of the Model this DeployedModel,
+     * that served this prediction, was created from.
+     * </pre>
+     *
+     * <code>string model_display_name = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The modelDisplayName to set.
+     * @return This builder for chaining.
+     */
+    public Builder setModelDisplayName(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+
+      modelDisplayName_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The [display name][google.cloud.aiplatform.v1beta1.Model.display_name] of the Model this DeployedModel,
+     * that served this prediction, was created from.
+     * </pre>
+     *
+     * <code>string model_display_name = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearModelDisplayName() {
+
+      modelDisplayName_ = getDefaultInstance().getModelDisplayName();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The [display name][google.cloud.aiplatform.v1beta1.Model.display_name] of the Model this DeployedModel,
+     * that served this prediction, was created from.
+     * </pre>
+     *
+     * <code>string model_display_name = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The bytes for modelDisplayName to set.
+     * @return This builder for chaining.
+     */
+    public Builder setModelDisplayNameBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
+      modelDisplayName_ = value;
       onChanged();
       return this;
     }

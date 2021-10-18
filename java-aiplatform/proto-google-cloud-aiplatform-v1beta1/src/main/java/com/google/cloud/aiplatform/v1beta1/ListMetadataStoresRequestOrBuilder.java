@@ -29,7 +29,7 @@ public interface ListMetadataStoresRequestOrBuilder
    * <pre>
    * Required. The Location whose MetadataStores should be listed.
    * Format:
-   * projects/{project}/locations/{location}
+   * `projects/{project}/locations/{location}`
    * </pre>
    *
    * <code>
@@ -45,7 +45,7 @@ public interface ListMetadataStoresRequestOrBuilder
    * <pre>
    * Required. The Location whose MetadataStores should be listed.
    * Format:
-   * projects/{project}/locations/{location}
+   * `projects/{project}/locations/{location}`
    * </pre>
    *
    * <code>

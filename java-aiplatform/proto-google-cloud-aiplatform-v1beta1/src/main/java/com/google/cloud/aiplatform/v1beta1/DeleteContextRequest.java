@@ -132,7 +132,7 @@ public final class DeleteContextRequest extends com.google.protobuf.GeneratedMes
    * <pre>
    * Required. The resource name of the Context to delete.
    * Format:
-   * projects/{project}/locations/{location}/metadataStores/{metadatastore}/contexts/{context}
+   * `projects/{project}/locations/{location}/metadataStores/{metadatastore}/contexts/{context}`
    * </pre>
    *
    * <code>
@@ -159,7 +159,7 @@ public final class DeleteContextRequest extends com.google.protobuf.GeneratedMes
    * <pre>
    * Required. The resource name of the Context to delete.
    * Format:
-   * projects/{project}/locations/{location}/metadataStores/{metadatastore}/contexts/{context}
+   * `projects/{project}/locations/{location}/metadataStores/{metadatastore}/contexts/{context}`
    * </pre>
    *
    * <code>
@@ -610,7 +610,7 @@ public final class DeleteContextRequest extends com.google.protobuf.GeneratedMes
      * <pre>
      * Required. The resource name of the Context to delete.
      * Format:
-     * projects/{project}/locations/{location}/metadataStores/{metadatastore}/contexts/{context}
+     * `projects/{project}/locations/{location}/metadataStores/{metadatastore}/contexts/{context}`
      * </pre>
      *
      * <code>
@@ -636,7 +636,7 @@ public final class DeleteContextRequest extends com.google.protobuf.GeneratedMes
      * <pre>
      * Required. The resource name of the Context to delete.
      * Format:
-     * projects/{project}/locations/{location}/metadataStores/{metadatastore}/contexts/{context}
+     * `projects/{project}/locations/{location}/metadataStores/{metadatastore}/contexts/{context}`
      * </pre>
      *
      * <code>
@@ -662,7 +662,7 @@ public final class DeleteContextRequest extends com.google.protobuf.GeneratedMes
      * <pre>
      * Required. The resource name of the Context to delete.
      * Format:
-     * projects/{project}/locations/{location}/metadataStores/{metadatastore}/contexts/{context}
+     * `projects/{project}/locations/{location}/metadataStores/{metadatastore}/contexts/{context}`
      * </pre>
      *
      * <code>
@@ -687,7 +687,7 @@ public final class DeleteContextRequest extends com.google.protobuf.GeneratedMes
      * <pre>
      * Required. The resource name of the Context to delete.
      * Format:
-     * projects/{project}/locations/{location}/metadataStores/{metadatastore}/contexts/{context}
+     * `projects/{project}/locations/{location}/metadataStores/{metadatastore}/contexts/{context}`
      * </pre>
      *
      * <code>
@@ -708,7 +708,7 @@ public final class DeleteContextRequest extends com.google.protobuf.GeneratedMes
      * <pre>
      * Required. The resource name of the Context to delete.
      * Format:
-     * projects/{project}/locations/{location}/metadataStores/{metadatastore}/contexts/{context}
+     * `projects/{project}/locations/{location}/metadataStores/{metadatastore}/contexts/{context}`
      * </pre>
      *
      * <code>

@@ -123,7 +123,7 @@ public final class QueryExecutionInputsAndOutputsRequest
    * Required. The resource name of the Execution whose input and output Artifacts should
    * be retrieved as a LineageSubgraph.
    * Format:
-   * projects/{project}/locations/{location}/metadataStores/{metadatastore}/executions/{execution}
+   * `projects/{project}/locations/{location}/metadataStores/{metadatastore}/executions/{execution}`
    * </pre>
    *
    * <code>
@@ -151,7 +151,7 @@ public final class QueryExecutionInputsAndOutputsRequest
    * Required. The resource name of the Execution whose input and output Artifacts should
    * be retrieved as a LineageSubgraph.
    * Format:
-   * projects/{project}/locations/{location}/metadataStores/{metadatastore}/executions/{execution}
+   * `projects/{project}/locations/{location}/metadataStores/{metadatastore}/executions/{execution}`
    * </pre>
    *
    * <code>
@@ -514,7 +514,7 @@ public final class QueryExecutionInputsAndOutputsRequest
      * Required. The resource name of the Execution whose input and output Artifacts should
      * be retrieved as a LineageSubgraph.
      * Format:
-     * projects/{project}/locations/{location}/metadataStores/{metadatastore}/executions/{execution}
+     * `projects/{project}/locations/{location}/metadataStores/{metadatastore}/executions/{execution}`
      * </pre>
      *
      * <code>
@@ -541,7 +541,7 @@ public final class QueryExecutionInputsAndOutputsRequest
      * Required. The resource name of the Execution whose input and output Artifacts should
      * be retrieved as a LineageSubgraph.
      * Format:
-     * projects/{project}/locations/{location}/metadataStores/{metadatastore}/executions/{execution}
+     * `projects/{project}/locations/{location}/metadataStores/{metadatastore}/executions/{execution}`
      * </pre>
      *
      * <code>
@@ -568,7 +568,7 @@ public final class QueryExecutionInputsAndOutputsRequest
      * Required. The resource name of the Execution whose input and output Artifacts should
      * be retrieved as a LineageSubgraph.
      * Format:
-     * projects/{project}/locations/{location}/metadataStores/{metadatastore}/executions/{execution}
+     * `projects/{project}/locations/{location}/metadataStores/{metadatastore}/executions/{execution}`
      * </pre>
      *
      * <code>
@@ -594,7 +594,7 @@ public final class QueryExecutionInputsAndOutputsRequest
      * Required. The resource name of the Execution whose input and output Artifacts should
      * be retrieved as a LineageSubgraph.
      * Format:
-     * projects/{project}/locations/{location}/metadataStores/{metadatastore}/executions/{execution}
+     * `projects/{project}/locations/{location}/metadataStores/{metadatastore}/executions/{execution}`
      * </pre>
      *
      * <code>
@@ -616,7 +616,7 @@ public final class QueryExecutionInputsAndOutputsRequest
      * Required. The resource name of the Execution whose input and output Artifacts should
      * be retrieved as a LineageSubgraph.
      * Format:
-     * projects/{project}/locations/{location}/metadataStores/{metadatastore}/executions/{execution}
+     * `projects/{project}/locations/{location}/metadataStores/{metadatastore}/executions/{execution}`
      * </pre>
      *
      * <code>

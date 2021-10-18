@@ -119,7 +119,7 @@ public final class GetArtifactRequest extends com.google.protobuf.GeneratedMessa
    * <pre>
    * Required. The resource name of the Artifact to retrieve.
    * Format:
-   * projects/{project}/locations/{location}/metadataStores/{metadatastore}/artifacts/{artifact}
+   * `projects/{project}/locations/{location}/metadataStores/{metadatastore}/artifacts/{artifact}`
    * </pre>
    *
    * <code>
@@ -146,7 +146,7 @@ public final class GetArtifactRequest extends com.google.protobuf.GeneratedMessa
    * <pre>
    * Required. The resource name of the Artifact to retrieve.
    * Format:
-   * projects/{project}/locations/{location}/metadataStores/{metadatastore}/artifacts/{artifact}
+   * `projects/{project}/locations/{location}/metadataStores/{metadatastore}/artifacts/{artifact}`
    * </pre>
    *
    * <code>
@@ -494,7 +494,7 @@ public final class GetArtifactRequest extends com.google.protobuf.GeneratedMessa
      * <pre>
      * Required. The resource name of the Artifact to retrieve.
      * Format:
-     * projects/{project}/locations/{location}/metadataStores/{metadatastore}/artifacts/{artifact}
+     * `projects/{project}/locations/{location}/metadataStores/{metadatastore}/artifacts/{artifact}`
      * </pre>
      *
      * <code>
@@ -520,7 +520,7 @@ public final class GetArtifactRequest extends com.google.protobuf.GeneratedMessa
      * <pre>
      * Required. The resource name of the Artifact to retrieve.
      * Format:
-     * projects/{project}/locations/{location}/metadataStores/{metadatastore}/artifacts/{artifact}
+     * `projects/{project}/locations/{location}/metadataStores/{metadatastore}/artifacts/{artifact}`
      * </pre>
      *
      * <code>
@@ -546,7 +546,7 @@ public final class GetArtifactRequest extends com.google.protobuf.GeneratedMessa
      * <pre>
      * Required. The resource name of the Artifact to retrieve.
      * Format:
-     * projects/{project}/locations/{location}/metadataStores/{metadatastore}/artifacts/{artifact}
+     * `projects/{project}/locations/{location}/metadataStores/{metadatastore}/artifacts/{artifact}`
      * </pre>
      *
      * <code>
@@ -571,7 +571,7 @@ public final class GetArtifactRequest extends com.google.protobuf.GeneratedMessa
      * <pre>
      * Required. The resource name of the Artifact to retrieve.
      * Format:
-     * projects/{project}/locations/{location}/metadataStores/{metadatastore}/artifacts/{artifact}
+     * `projects/{project}/locations/{location}/metadataStores/{metadatastore}/artifacts/{artifact}`
      * </pre>
      *
      * <code>
@@ -592,7 +592,7 @@ public final class GetArtifactRequest extends com.google.protobuf.GeneratedMessa
      * <pre>
      * Required. The resource name of the Artifact to retrieve.
      * Format:
-     * projects/{project}/locations/{location}/metadataStores/{metadatastore}/artifacts/{artifact}
+     * `projects/{project}/locations/{location}/metadataStores/{metadatastore}/artifacts/{artifact}`
      * </pre>
      *
      * <code>

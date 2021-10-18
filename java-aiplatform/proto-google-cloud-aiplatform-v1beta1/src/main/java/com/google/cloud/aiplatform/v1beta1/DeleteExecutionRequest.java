@@ -127,7 +127,7 @@ public final class DeleteExecutionRequest extends com.google.protobuf.GeneratedM
    * <pre>
    * Required. The resource name of the Execution to delete.
    * Format:
-   * projects/{project}/locations/{location}/metadataStores/{metadatastore}/executions/{execution}
+   * `projects/{project}/locations/{location}/metadataStores/{metadatastore}/executions/{execution}`
    * </pre>
    *
    * <code>
@@ -154,7 +154,7 @@ public final class DeleteExecutionRequest extends com.google.protobuf.GeneratedM
    * <pre>
    * Required. The resource name of the Execution to delete.
    * Format:
-   * projects/{project}/locations/{location}/metadataStores/{metadatastore}/executions/{execution}
+   * `projects/{project}/locations/{location}/metadataStores/{metadatastore}/executions/{execution}`
    * </pre>
    *
    * <code>
@@ -571,7 +571,7 @@ public final class DeleteExecutionRequest extends com.google.protobuf.GeneratedM
      * <pre>
      * Required. The resource name of the Execution to delete.
      * Format:
-     * projects/{project}/locations/{location}/metadataStores/{metadatastore}/executions/{execution}
+     * `projects/{project}/locations/{location}/metadataStores/{metadatastore}/executions/{execution}`
      * </pre>
      *
      * <code>
@@ -597,7 +597,7 @@ public final class DeleteExecutionRequest extends com.google.protobuf.GeneratedM
      * <pre>
      * Required. The resource name of the Execution to delete.
      * Format:
-     * projects/{project}/locations/{location}/metadataStores/{metadatastore}/executions/{execution}
+     * `projects/{project}/locations/{location}/metadataStores/{metadatastore}/executions/{execution}`
      * </pre>
      *
      * <code>
@@ -623,7 +623,7 @@ public final class DeleteExecutionRequest extends com.google.protobuf.GeneratedM
      * <pre>
      * Required. The resource name of the Execution to delete.
      * Format:
-     * projects/{project}/locations/{location}/metadataStores/{metadatastore}/executions/{execution}
+     * `projects/{project}/locations/{location}/metadataStores/{metadatastore}/executions/{execution}`
      * </pre>
      *
      * <code>
@@ -648,7 +648,7 @@ public final class DeleteExecutionRequest extends com.google.protobuf.GeneratedM
      * <pre>
      * Required. The resource name of the Execution to delete.
      * Format:
-     * projects/{project}/locations/{location}/metadataStores/{metadatastore}/executions/{execution}
+     * `projects/{project}/locations/{location}/metadataStores/{metadatastore}/executions/{execution}`
      * </pre>
      *
      * <code>
@@ -669,7 +669,7 @@ public final class DeleteExecutionRequest extends com.google.protobuf.GeneratedM
      * <pre>
      * Required. The resource name of the Execution to delete.
      * Format:
-     * projects/{project}/locations/{location}/metadataStores/{metadatastore}/executions/{execution}
+     * `projects/{project}/locations/{location}/metadataStores/{metadatastore}/executions/{execution}`
      * </pre>
      *
      * <code>

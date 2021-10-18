@@ -30,7 +30,7 @@ public interface AddContextArtifactsAndExecutionsRequestOrBuilder
    * Required. The resource name of the Context that the Artifacts and Executions
    * belong to.
    * Format:
-   * projects/{project}/locations/{location}/metadataStores/{metadatastore}/contexts/{context}
+   * `projects/{project}/locations/{location}/metadataStores/{metadatastore}/contexts/{context}`
    * </pre>
    *
    * <code>
@@ -47,7 +47,7 @@ public interface AddContextArtifactsAndExecutionsRequestOrBuilder
    * Required. The resource name of the Context that the Artifacts and Executions
    * belong to.
    * Format:
-   * projects/{project}/locations/{location}/metadataStores/{metadatastore}/contexts/{context}
+   * `projects/{project}/locations/{location}/metadataStores/{metadatastore}/contexts/{context}`
    * </pre>
    *
    * <code>
@@ -64,7 +64,7 @@ public interface AddContextArtifactsAndExecutionsRequestOrBuilder
    * <pre>
    * The resource names of the Artifacts to attribute to the Context.
    * Format:
-   * projects/{project}/locations/{location}/metadataStores/{metadatastore}/artifacts/{artifact}
+   * `projects/{project}/locations/{location}/metadataStores/{metadatastore}/artifacts/{artifact}`
    * </pre>
    *
    * <code>repeated string artifacts = 2 [(.google.api.resource_reference) = { ... }</code>
@@ -78,7 +78,7 @@ public interface AddContextArtifactsAndExecutionsRequestOrBuilder
    * <pre>
    * The resource names of the Artifacts to attribute to the Context.
    * Format:
-   * projects/{project}/locations/{location}/metadataStores/{metadatastore}/artifacts/{artifact}
+   * `projects/{project}/locations/{location}/metadataStores/{metadatastore}/artifacts/{artifact}`
    * </pre>
    *
    * <code>repeated string artifacts = 2 [(.google.api.resource_reference) = { ... }</code>
@@ -92,7 +92,7 @@ public interface AddContextArtifactsAndExecutionsRequestOrBuilder
    * <pre>
    * The resource names of the Artifacts to attribute to the Context.
    * Format:
-   * projects/{project}/locations/{location}/metadataStores/{metadatastore}/artifacts/{artifact}
+   * `projects/{project}/locations/{location}/metadataStores/{metadatastore}/artifacts/{artifact}`
    * </pre>
    *
    * <code>repeated string artifacts = 2 [(.google.api.resource_reference) = { ... }</code>
@@ -107,7 +107,7 @@ public interface AddContextArtifactsAndExecutionsRequestOrBuilder
    * <pre>
    * The resource names of the Artifacts to attribute to the Context.
    * Format:
-   * projects/{project}/locations/{location}/metadataStores/{metadatastore}/artifacts/{artifact}
+   * `projects/{project}/locations/{location}/metadataStores/{metadatastore}/artifacts/{artifact}`
    * </pre>
    *
    * <code>repeated string artifacts = 2 [(.google.api.resource_reference) = { ... }</code>
@@ -124,7 +124,7 @@ public interface AddContextArtifactsAndExecutionsRequestOrBuilder
    * The resource names of the Executions to associate with the
    * Context.
    * Format:
-   * projects/{project}/locations/{location}/metadataStores/{metadatastore}/executions/{execution}
+   * `projects/{project}/locations/{location}/metadataStores/{metadatastore}/executions/{execution}`
    * </pre>
    *
    * <code>repeated string executions = 3 [(.google.api.resource_reference) = { ... }</code>
@@ -139,7 +139,7 @@ public interface AddContextArtifactsAndExecutionsRequestOrBuilder
    * The resource names of the Executions to associate with the
    * Context.
    * Format:
-   * projects/{project}/locations/{location}/metadataStores/{metadatastore}/executions/{execution}
+   * `projects/{project}/locations/{location}/metadataStores/{metadatastore}/executions/{execution}`
    * </pre>
    *
    * <code>repeated string executions = 3 [(.google.api.resource_reference) = { ... }</code>
@@ -154,7 +154,7 @@ public interface AddContextArtifactsAndExecutionsRequestOrBuilder
    * The resource names of the Executions to associate with the
    * Context.
    * Format:
-   * projects/{project}/locations/{location}/metadataStores/{metadatastore}/executions/{execution}
+   * `projects/{project}/locations/{location}/metadataStores/{metadatastore}/executions/{execution}`
    * </pre>
    *
    * <code>repeated string executions = 3 [(.google.api.resource_reference) = { ... }</code>
@@ -170,7 +170,7 @@ public interface AddContextArtifactsAndExecutionsRequestOrBuilder
    * The resource names of the Executions to associate with the
    * Context.
    * Format:
-   * projects/{project}/locations/{location}/metadataStores/{metadatastore}/executions/{execution}
+   * `projects/{project}/locations/{location}/metadataStores/{metadatastore}/executions/{execution}`
    * </pre>
    *
    * <code>repeated string executions = 3 [(.google.api.resource_reference) = { ... }</code>

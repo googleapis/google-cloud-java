@@ -119,7 +119,7 @@ public final class GetMetadataSchemaRequest extends com.google.protobuf.Generate
    * <pre>
    * Required. The resource name of the MetadataSchema to retrieve.
    * Format:
-   * projects/{project}/locations/{location}/metadataStores/{metadatastore}/metadataSchemas/{metadataschema}
+   * `projects/{project}/locations/{location}/metadataStores/{metadatastore}/metadataSchemas/{metadataschema}`
    * </pre>
    *
    * <code>
@@ -146,7 +146,7 @@ public final class GetMetadataSchemaRequest extends com.google.protobuf.Generate
    * <pre>
    * Required. The resource name of the MetadataSchema to retrieve.
    * Format:
-   * projects/{project}/locations/{location}/metadataStores/{metadatastore}/metadataSchemas/{metadataschema}
+   * `projects/{project}/locations/{location}/metadataStores/{metadatastore}/metadataSchemas/{metadataschema}`
    * </pre>
    *
    * <code>
@@ -496,7 +496,7 @@ public final class GetMetadataSchemaRequest extends com.google.protobuf.Generate
      * <pre>
      * Required. The resource name of the MetadataSchema to retrieve.
      * Format:
-     * projects/{project}/locations/{location}/metadataStores/{metadatastore}/metadataSchemas/{metadataschema}
+     * `projects/{project}/locations/{location}/metadataStores/{metadatastore}/metadataSchemas/{metadataschema}`
      * </pre>
      *
      * <code>
@@ -522,7 +522,7 @@ public final class GetMetadataSchemaRequest extends com.google.protobuf.Generate
      * <pre>
      * Required. The resource name of the MetadataSchema to retrieve.
      * Format:
-     * projects/{project}/locations/{location}/metadataStores/{metadatastore}/metadataSchemas/{metadataschema}
+     * `projects/{project}/locations/{location}/metadataStores/{metadatastore}/metadataSchemas/{metadataschema}`
      * </pre>
      *
      * <code>
@@ -548,7 +548,7 @@ public final class GetMetadataSchemaRequest extends com.google.protobuf.Generate
      * <pre>
      * Required. The resource name of the MetadataSchema to retrieve.
      * Format:
-     * projects/{project}/locations/{location}/metadataStores/{metadatastore}/metadataSchemas/{metadataschema}
+     * `projects/{project}/locations/{location}/metadataStores/{metadatastore}/metadataSchemas/{metadataschema}`
      * </pre>
      *
      * <code>
@@ -573,7 +573,7 @@ public final class GetMetadataSchemaRequest extends com.google.protobuf.Generate
      * <pre>
      * Required. The resource name of the MetadataSchema to retrieve.
      * Format:
-     * projects/{project}/locations/{location}/metadataStores/{metadatastore}/metadataSchemas/{metadataschema}
+     * `projects/{project}/locations/{location}/metadataStores/{metadatastore}/metadataSchemas/{metadataschema}`
      * </pre>
      *
      * <code>
@@ -594,7 +594,7 @@ public final class GetMetadataSchemaRequest extends com.google.protobuf.Generate
      * <pre>
      * Required. The resource name of the MetadataSchema to retrieve.
      * Format:
-     * projects/{project}/locations/{location}/metadataStores/{metadatastore}/metadataSchemas/{metadataschema}
+     * `projects/{project}/locations/{location}/metadataStores/{metadatastore}/metadataSchemas/{metadataschema}`
      * </pre>
      *
      * <code>

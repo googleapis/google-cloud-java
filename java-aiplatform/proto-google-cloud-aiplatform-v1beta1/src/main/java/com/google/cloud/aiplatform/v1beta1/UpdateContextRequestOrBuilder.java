@@ -31,7 +31,7 @@ public interface UpdateContextRequestOrBuilder
    * The Context's [Context.name][google.cloud.aiplatform.v1beta1.Context.name] field is used to identify the Context to be
    * updated.
    * Format:
-   * projects/{project}/locations/{location}/metadataStores/{metadatastore}/contexts/{context}
+   * `projects/{project}/locations/{location}/metadataStores/{metadatastore}/contexts/{context}`
    * </pre>
    *
    * <code>
@@ -49,7 +49,7 @@ public interface UpdateContextRequestOrBuilder
    * The Context's [Context.name][google.cloud.aiplatform.v1beta1.Context.name] field is used to identify the Context to be
    * updated.
    * Format:
-   * projects/{project}/locations/{location}/metadataStores/{metadatastore}/contexts/{context}
+   * `projects/{project}/locations/{location}/metadataStores/{metadatastore}/contexts/{context}`
    * </pre>
    *
    * <code>
@@ -67,7 +67,7 @@ public interface UpdateContextRequestOrBuilder
    * The Context's [Context.name][google.cloud.aiplatform.v1beta1.Context.name] field is used to identify the Context to be
    * updated.
    * Format:
-   * projects/{project}/locations/{location}/metadataStores/{metadatastore}/contexts/{context}
+   * `projects/{project}/locations/{location}/metadataStores/{metadatastore}/contexts/{context}`
    * </pre>
    *
    * <code>

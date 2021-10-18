@@ -317,4 +317,48 @@ public interface FeaturestoreOrBuilder
    * @return The state.
    */
   com.google.cloud.aiplatform.v1beta1.Featurestore.State getState();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Customer-managed encryption key spec for data storage. If set, both of the
+   * online and offline data storage will be secured by this key.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.EncryptionSpec encryption_spec = 10 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the encryptionSpec field is set.
+   */
+  boolean hasEncryptionSpec();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Customer-managed encryption key spec for data storage. If set, both of the
+   * online and offline data storage will be secured by this key.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.EncryptionSpec encryption_spec = 10 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The encryptionSpec.
+   */
+  com.google.cloud.aiplatform.v1beta1.EncryptionSpec getEncryptionSpec();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Customer-managed encryption key spec for data storage. If set, both of the
+   * online and offline data storage will be secured by this key.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.EncryptionSpec encryption_spec = 10 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.aiplatform.v1beta1.EncryptionSpecOrBuilder getEncryptionSpecOrBuilder();
 }

@@ -110,13 +110,13 @@
               "methods": ["createFeaturestoreAsync", "createFeaturestoreAsync", "createFeaturestoreAsync", "createFeaturestoreOperationCallable", "createFeaturestoreCallable"]
             },
             "DeleteEntityType": {
-              "methods": ["deleteEntityTypeAsync", "deleteEntityTypeAsync", "deleteEntityTypeAsync", "deleteEntityTypeOperationCallable", "deleteEntityTypeCallable"]
+              "methods": ["deleteEntityTypeAsync", "deleteEntityTypeAsync", "deleteEntityTypeAsync", "deleteEntityTypeAsync", "deleteEntityTypeAsync", "deleteEntityTypeOperationCallable", "deleteEntityTypeCallable"]
             },
             "DeleteFeature": {
               "methods": ["deleteFeatureAsync", "deleteFeatureAsync", "deleteFeatureAsync", "deleteFeatureOperationCallable", "deleteFeatureCallable"]
             },
             "DeleteFeaturestore": {
-              "methods": ["deleteFeaturestoreAsync", "deleteFeaturestoreAsync", "deleteFeaturestoreAsync", "deleteFeaturestoreOperationCallable", "deleteFeaturestoreCallable"]
+              "methods": ["deleteFeaturestoreAsync", "deleteFeaturestoreAsync", "deleteFeaturestoreAsync", "deleteFeaturestoreAsync", "deleteFeaturestoreAsync", "deleteFeaturestoreOperationCallable", "deleteFeaturestoreCallable"]
             },
             "ExportFeatureValues": {
               "methods": ["exportFeatureValuesAsync", "exportFeatureValuesAsync", "exportFeatureValuesAsync", "exportFeatureValuesOperationCallable", "exportFeatureValuesCallable"]
@@ -143,7 +143,7 @@
               "methods": ["listFeaturestores", "listFeaturestores", "listFeaturestores", "listFeaturestoresPagedCallable", "listFeaturestoresCallable"]
             },
             "SearchFeatures": {
-              "methods": ["searchFeatures", "searchFeatures", "searchFeatures", "searchFeaturesPagedCallable", "searchFeaturesCallable"]
+              "methods": ["searchFeatures", "searchFeatures", "searchFeatures", "searchFeatures", "searchFeatures", "searchFeaturesPagedCallable", "searchFeaturesCallable"]
             },
             "UpdateEntityType": {
               "methods": ["updateEntityType", "updateEntityType", "updateEntityTypeCallable"]
@@ -552,6 +552,9 @@
             },
             "BatchCreateTensorboardTimeSeries": {
               "methods": ["batchCreateTensorboardTimeSeries", "batchCreateTensorboardTimeSeries", "batchCreateTensorboardTimeSeries", "batchCreateTensorboardTimeSeriesCallable"]
+            },
+            "BatchReadTensorboardTimeSeriesData": {
+              "methods": ["batchReadTensorboardTimeSeriesData", "batchReadTensorboardTimeSeriesData", "batchReadTensorboardTimeSeriesData", "batchReadTensorboardTimeSeriesDataCallable"]
             },
             "CreateTensorboard": {
               "methods": ["createTensorboardAsync", "createTensorboardAsync", "createTensorboardAsync", "createTensorboardOperationCallable", "createTensorboardCallable"]

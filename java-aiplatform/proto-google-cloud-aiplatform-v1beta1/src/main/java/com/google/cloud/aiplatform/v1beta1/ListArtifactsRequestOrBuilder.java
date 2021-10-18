@@ -29,7 +29,7 @@ public interface ListArtifactsRequestOrBuilder
    * <pre>
    * Required. The MetadataStore whose Artifacts should be listed.
    * Format:
-   * projects/{project}/locations/{location}/metadataStores/{metadatastore}
+   * `projects/{project}/locations/{location}/metadataStores/{metadatastore}`
    * </pre>
    *
    * <code>
@@ -45,7 +45,7 @@ public interface ListArtifactsRequestOrBuilder
    * <pre>
    * Required. The MetadataStore whose Artifacts should be listed.
    * Format:
-   * projects/{project}/locations/{location}/metadataStores/{metadatastore}
+   * `projects/{project}/locations/{location}/metadataStores/{metadatastore}`
    * </pre>
    *
    * <code>

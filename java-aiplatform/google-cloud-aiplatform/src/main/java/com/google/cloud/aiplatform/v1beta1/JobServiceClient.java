@@ -3231,7 +3231,23 @@ public class JobServiceClient implements BackgroundResource {
    *
    * @param modelDeploymentMonitoringJob Required. The model monitoring configuration which replaces
    *     the resource on the server.
-   * @param updateMask Required. The update mask applies to the resource.
+   * @param updateMask Required. The update mask is used to specify the fields to be overwritten in
+   *     the ModelDeploymentMonitoringJob resource by the update. The fields specified in the
+   *     update_mask are relative to the resource, not the full request. A field will be overwritten
+   *     if it is in the mask. If the user does not provide a mask then only the non-empty fields
+   *     present in the request will be overwritten. Set the update_mask to `&#42;` to override all
+   *     fields. For the objective config, the user can either provide the update mask for
+   *     model_deployment_monitoring_objective_configs or any combination of its nested fields, such
+   *     as: model_deployment_monitoring_objective_configs.objective_config.training_dataset.
+   *     <p>Updatable fields:
+   *     <p>&#42; `display_name` &#42; `model_deployment_monitoring_schedule_config` &#42;
+   *     `model_monitoring_alert_config` &#42; `logging_sampling_strategy` &#42; `labels` &#42;
+   *     `log_ttl` &#42; `enable_monitoring_pipeline_logs` . and &#42;
+   *     `model_deployment_monitoring_objective_configs` . or &#42;
+   *     `model_deployment_monitoring_objective_configs.objective_config.training_dataset` &#42;
+   *     `model_deployment_monitoring_objective_configs.objective_config.training_prediction_skew_detection_config`
+   *     &#42;
+   *     `model_deployment_monitoring_objective_configs.objective_config.prediction_drift_detection_config`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<

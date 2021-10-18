@@ -140,7 +140,7 @@ public final class ListArtifactsRequest extends com.google.protobuf.GeneratedMes
    * <pre>
    * Required. The MetadataStore whose Artifacts should be listed.
    * Format:
-   * projects/{project}/locations/{location}/metadataStores/{metadatastore}
+   * `projects/{project}/locations/{location}/metadataStores/{metadatastore}`
    * </pre>
    *
    * <code>
@@ -167,7 +167,7 @@ public final class ListArtifactsRequest extends com.google.protobuf.GeneratedMes
    * <pre>
    * Required. The MetadataStore whose Artifacts should be listed.
    * Format:
-   * projects/{project}/locations/{location}/metadataStores/{metadatastore}
+   * `projects/{project}/locations/{location}/metadataStores/{metadatastore}`
    * </pre>
    *
    * <code>
@@ -733,7 +733,7 @@ public final class ListArtifactsRequest extends com.google.protobuf.GeneratedMes
      * <pre>
      * Required. The MetadataStore whose Artifacts should be listed.
      * Format:
-     * projects/{project}/locations/{location}/metadataStores/{metadatastore}
+     * `projects/{project}/locations/{location}/metadataStores/{metadatastore}`
      * </pre>
      *
      * <code>
@@ -759,7 +759,7 @@ public final class ListArtifactsRequest extends com.google.protobuf.GeneratedMes
      * <pre>
      * Required. The MetadataStore whose Artifacts should be listed.
      * Format:
-     * projects/{project}/locations/{location}/metadataStores/{metadatastore}
+     * `projects/{project}/locations/{location}/metadataStores/{metadatastore}`
      * </pre>
      *
      * <code>
@@ -785,7 +785,7 @@ public final class ListArtifactsRequest extends com.google.protobuf.GeneratedMes
      * <pre>
      * Required. The MetadataStore whose Artifacts should be listed.
      * Format:
-     * projects/{project}/locations/{location}/metadataStores/{metadatastore}
+     * `projects/{project}/locations/{location}/metadataStores/{metadatastore}`
      * </pre>
      *
      * <code>
@@ -810,7 +810,7 @@ public final class ListArtifactsRequest extends com.google.protobuf.GeneratedMes
      * <pre>
      * Required. The MetadataStore whose Artifacts should be listed.
      * Format:
-     * projects/{project}/locations/{location}/metadataStores/{metadatastore}
+     * `projects/{project}/locations/{location}/metadataStores/{metadatastore}`
      * </pre>
      *
      * <code>
@@ -831,7 +831,7 @@ public final class ListArtifactsRequest extends com.google.protobuf.GeneratedMes
      * <pre>
      * Required. The MetadataStore whose Artifacts should be listed.
      * Format:
-     * projects/{project}/locations/{location}/metadataStores/{metadatastore}
+     * `projects/{project}/locations/{location}/metadataStores/{metadatastore}`
      * </pre>
      *
      * <code>

@@ -355,6 +355,60 @@
           }
         }
       }
+    },
+    "VizierService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "VizierServiceClient",
+          "rpcs": {
+            "AddTrialMeasurement": {
+              "methods": ["addTrialMeasurement", "addTrialMeasurementCallable"]
+            },
+            "CheckTrialEarlyStoppingState": {
+              "methods": ["checkTrialEarlyStoppingStateAsync", "checkTrialEarlyStoppingStateOperationCallable", "checkTrialEarlyStoppingStateCallable"]
+            },
+            "CompleteTrial": {
+              "methods": ["completeTrial", "completeTrialCallable"]
+            },
+            "CreateStudy": {
+              "methods": ["createStudy", "createStudy", "createStudy", "createStudyCallable"]
+            },
+            "CreateTrial": {
+              "methods": ["createTrial", "createTrial", "createTrial", "createTrialCallable"]
+            },
+            "DeleteStudy": {
+              "methods": ["deleteStudy", "deleteStudy", "deleteStudy", "deleteStudyCallable"]
+            },
+            "DeleteTrial": {
+              "methods": ["deleteTrial", "deleteTrial", "deleteTrial", "deleteTrialCallable"]
+            },
+            "GetStudy": {
+              "methods": ["getStudy", "getStudy", "getStudy", "getStudyCallable"]
+            },
+            "GetTrial": {
+              "methods": ["getTrial", "getTrial", "getTrial", "getTrialCallable"]
+            },
+            "ListOptimalTrials": {
+              "methods": ["listOptimalTrials", "listOptimalTrials", "listOptimalTrials", "listOptimalTrialsCallable"]
+            },
+            "ListStudies": {
+              "methods": ["listStudies", "listStudies", "listStudies", "listStudiesPagedCallable", "listStudiesCallable"]
+            },
+            "ListTrials": {
+              "methods": ["listTrials", "listTrials", "listTrials", "listTrialsPagedCallable", "listTrialsCallable"]
+            },
+            "LookupStudy": {
+              "methods": ["lookupStudy", "lookupStudy", "lookupStudy", "lookupStudyCallable"]
+            },
+            "StopTrial": {
+              "methods": ["stopTrial", "stopTrialCallable"]
+            },
+            "SuggestTrials": {
+              "methods": ["suggestTrialsAsync", "suggestTrialsOperationCallable", "suggestTrialsCallable"]
+            }
+          }
+        }
+      }
     }
   }
 }

@@ -53,6 +53,8 @@ import com.google.cloud.aiplatform.v1beta1.BatchCreateTensorboardRunsRequest;
 import com.google.cloud.aiplatform.v1beta1.BatchCreateTensorboardRunsResponse;
 import com.google.cloud.aiplatform.v1beta1.BatchCreateTensorboardTimeSeriesRequest;
 import com.google.cloud.aiplatform.v1beta1.BatchCreateTensorboardTimeSeriesResponse;
+import com.google.cloud.aiplatform.v1beta1.BatchReadTensorboardTimeSeriesDataRequest;
+import com.google.cloud.aiplatform.v1beta1.BatchReadTensorboardTimeSeriesDataResponse;
 import com.google.cloud.aiplatform.v1beta1.CreateTensorboardExperimentRequest;
 import com.google.cloud.aiplatform.v1beta1.CreateTensorboardOperationMetadata;
 import com.google.cloud.aiplatform.v1beta1.CreateTensorboardRequest;
@@ -212,6 +214,9 @@ public class TensorboardServiceStubSettings extends StubSettings<TensorboardServ
   private final OperationCallSettings<
           DeleteTensorboardTimeSeriesRequest, Empty, DeleteOperationMetadata>
       deleteTensorboardTimeSeriesOperationSettings;
+  private final UnaryCallSettings<
+          BatchReadTensorboardTimeSeriesDataRequest, BatchReadTensorboardTimeSeriesDataResponse>
+      batchReadTensorboardTimeSeriesDataSettings;
   private final UnaryCallSettings<
           ReadTensorboardTimeSeriesDataRequest, ReadTensorboardTimeSeriesDataResponse>
       readTensorboardTimeSeriesDataSettings;
@@ -758,6 +763,13 @@ public class TensorboardServiceStubSettings extends StubSettings<TensorboardServ
     return deleteTensorboardTimeSeriesOperationSettings;
   }
 
+  /** Returns the object with the settings used for calls to batchReadTensorboardTimeSeriesData. */
+  public UnaryCallSettings<
+          BatchReadTensorboardTimeSeriesDataRequest, BatchReadTensorboardTimeSeriesDataResponse>
+      batchReadTensorboardTimeSeriesDataSettings() {
+    return batchReadTensorboardTimeSeriesDataSettings;
+  }
+
   /** Returns the object with the settings used for calls to readTensorboardTimeSeriesData. */
   public UnaryCallSettings<
           ReadTensorboardTimeSeriesDataRequest, ReadTensorboardTimeSeriesDataResponse>
@@ -913,6 +925,8 @@ public class TensorboardServiceStubSettings extends StubSettings<TensorboardServ
         settingsBuilder.deleteTensorboardTimeSeriesSettings().build();
     deleteTensorboardTimeSeriesOperationSettings =
         settingsBuilder.deleteTensorboardTimeSeriesOperationSettings().build();
+    batchReadTensorboardTimeSeriesDataSettings =
+        settingsBuilder.batchReadTensorboardTimeSeriesDataSettings().build();
     readTensorboardTimeSeriesDataSettings =
         settingsBuilder.readTensorboardTimeSeriesDataSettings().build();
     readTensorboardBlobDataSettings = settingsBuilder.readTensorboardBlobDataSettings().build();
@@ -1006,6 +1020,9 @@ public class TensorboardServiceStubSettings extends StubSettings<TensorboardServ
             DeleteTensorboardTimeSeriesRequest, Empty, DeleteOperationMetadata>
         deleteTensorboardTimeSeriesOperationSettings;
     private final UnaryCallSettings.Builder<
+            BatchReadTensorboardTimeSeriesDataRequest, BatchReadTensorboardTimeSeriesDataResponse>
+        batchReadTensorboardTimeSeriesDataSettings;
+    private final UnaryCallSettings.Builder<
             ReadTensorboardTimeSeriesDataRequest, ReadTensorboardTimeSeriesDataResponse>
         readTensorboardTimeSeriesDataSettings;
     private final ServerStreamingCallSettings.Builder<
@@ -1080,6 +1097,7 @@ public class TensorboardServiceStubSettings extends StubSettings<TensorboardServ
           PagedCallSettings.newBuilder(LIST_TENSORBOARD_TIME_SERIES_PAGE_STR_FACT);
       deleteTensorboardTimeSeriesSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       deleteTensorboardTimeSeriesOperationSettings = OperationCallSettings.newBuilder();
+      batchReadTensorboardTimeSeriesDataSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       readTensorboardTimeSeriesDataSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       readTensorboardBlobDataSettings = ServerStreamingCallSettings.newBuilder();
       writeTensorboardExperimentDataSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
@@ -1111,6 +1129,7 @@ public class TensorboardServiceStubSettings extends StubSettings<TensorboardServ
               updateTensorboardTimeSeriesSettings,
               listTensorboardTimeSeriesSettings,
               deleteTensorboardTimeSeriesSettings,
+              batchReadTensorboardTimeSeriesDataSettings,
               readTensorboardTimeSeriesDataSettings,
               writeTensorboardExperimentDataSettings,
               writeTensorboardRunDataSettings,
@@ -1159,6 +1178,8 @@ public class TensorboardServiceStubSettings extends StubSettings<TensorboardServ
           settings.deleteTensorboardTimeSeriesSettings.toBuilder();
       deleteTensorboardTimeSeriesOperationSettings =
           settings.deleteTensorboardTimeSeriesOperationSettings.toBuilder();
+      batchReadTensorboardTimeSeriesDataSettings =
+          settings.batchReadTensorboardTimeSeriesDataSettings.toBuilder();
       readTensorboardTimeSeriesDataSettings =
           settings.readTensorboardTimeSeriesDataSettings.toBuilder();
       readTensorboardBlobDataSettings = settings.readTensorboardBlobDataSettings.toBuilder();
@@ -1192,6 +1213,7 @@ public class TensorboardServiceStubSettings extends StubSettings<TensorboardServ
               updateTensorboardTimeSeriesSettings,
               listTensorboardTimeSeriesSettings,
               deleteTensorboardTimeSeriesSettings,
+              batchReadTensorboardTimeSeriesDataSettings,
               readTensorboardTimeSeriesDataSettings,
               writeTensorboardExperimentDataSettings,
               writeTensorboardRunDataSettings,
@@ -1319,6 +1341,11 @@ public class TensorboardServiceStubSettings extends StubSettings<TensorboardServ
 
       builder
           .deleteTensorboardTimeSeriesSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .batchReadTensorboardTimeSeriesDataSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
 
@@ -1707,6 +1734,15 @@ public class TensorboardServiceStubSettings extends StubSettings<TensorboardServ
             DeleteTensorboardTimeSeriesRequest, Empty, DeleteOperationMetadata>
         deleteTensorboardTimeSeriesOperationSettings() {
       return deleteTensorboardTimeSeriesOperationSettings;
+    }
+
+    /**
+     * Returns the builder for the settings used for calls to batchReadTensorboardTimeSeriesData.
+     */
+    public UnaryCallSettings.Builder<
+            BatchReadTensorboardTimeSeriesDataRequest, BatchReadTensorboardTimeSeriesDataResponse>
+        batchReadTensorboardTimeSeriesDataSettings() {
+      return batchReadTensorboardTimeSeriesDataSettings;
     }
 
     /** Returns the builder for the settings used for calls to readTensorboardTimeSeriesData. */

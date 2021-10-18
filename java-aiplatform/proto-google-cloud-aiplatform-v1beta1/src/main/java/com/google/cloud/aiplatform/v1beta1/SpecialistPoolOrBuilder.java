@@ -201,4 +201,55 @@ public interface SpecialistPoolOrBuilder
    * @return The bytes of the pendingDataLabelingJobs at the given index.
    */
   com.google.protobuf.ByteString getPendingDataLabelingJobsBytes(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * The email addresses of workers in the SpecialistPool.
+   * </pre>
+   *
+   * <code>repeated string specialist_worker_emails = 7;</code>
+   *
+   * @return A list containing the specialistWorkerEmails.
+   */
+  java.util.List<java.lang.String> getSpecialistWorkerEmailsList();
+  /**
+   *
+   *
+   * <pre>
+   * The email addresses of workers in the SpecialistPool.
+   * </pre>
+   *
+   * <code>repeated string specialist_worker_emails = 7;</code>
+   *
+   * @return The count of specialistWorkerEmails.
+   */
+  int getSpecialistWorkerEmailsCount();
+  /**
+   *
+   *
+   * <pre>
+   * The email addresses of workers in the SpecialistPool.
+   * </pre>
+   *
+   * <code>repeated string specialist_worker_emails = 7;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The specialistWorkerEmails at the given index.
+   */
+  java.lang.String getSpecialistWorkerEmails(int index);
+  /**
+   *
+   *
+   * <pre>
+   * The email addresses of workers in the SpecialistPool.
+   * </pre>
+   *
+   * <code>repeated string specialist_worker_emails = 7;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the specialistWorkerEmails at the given index.
+   */
+  com.google.protobuf.ByteString getSpecialistWorkerEmailsBytes(int index);
 }

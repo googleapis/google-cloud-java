@@ -134,7 +134,7 @@ public final class AddContextChildrenRequest extends com.google.protobuf.Generat
    * <pre>
    * Required. The resource name of the parent Context.
    * Format:
-   * projects/{project}/locations/{location}/metadataStores/{metadatastore}/contexts/{context}
+   * `projects/{project}/locations/{location}/metadataStores/{metadatastore}/contexts/{context}`
    * </pre>
    *
    * <code>
@@ -161,7 +161,7 @@ public final class AddContextChildrenRequest extends com.google.protobuf.Generat
    * <pre>
    * Required. The resource name of the parent Context.
    * Format:
-   * projects/{project}/locations/{location}/metadataStores/{metadatastore}/contexts/{context}
+   * `projects/{project}/locations/{location}/metadataStores/{metadatastore}/contexts/{context}`
    * </pre>
    *
    * <code>
@@ -609,7 +609,7 @@ public final class AddContextChildrenRequest extends com.google.protobuf.Generat
      * <pre>
      * Required. The resource name of the parent Context.
      * Format:
-     * projects/{project}/locations/{location}/metadataStores/{metadatastore}/contexts/{context}
+     * `projects/{project}/locations/{location}/metadataStores/{metadatastore}/contexts/{context}`
      * </pre>
      *
      * <code>
@@ -635,7 +635,7 @@ public final class AddContextChildrenRequest extends com.google.protobuf.Generat
      * <pre>
      * Required. The resource name of the parent Context.
      * Format:
-     * projects/{project}/locations/{location}/metadataStores/{metadatastore}/contexts/{context}
+     * `projects/{project}/locations/{location}/metadataStores/{metadatastore}/contexts/{context}`
      * </pre>
      *
      * <code>
@@ -661,7 +661,7 @@ public final class AddContextChildrenRequest extends com.google.protobuf.Generat
      * <pre>
      * Required. The resource name of the parent Context.
      * Format:
-     * projects/{project}/locations/{location}/metadataStores/{metadatastore}/contexts/{context}
+     * `projects/{project}/locations/{location}/metadataStores/{metadatastore}/contexts/{context}`
      * </pre>
      *
      * <code>
@@ -686,7 +686,7 @@ public final class AddContextChildrenRequest extends com.google.protobuf.Generat
      * <pre>
      * Required. The resource name of the parent Context.
      * Format:
-     * projects/{project}/locations/{location}/metadataStores/{metadatastore}/contexts/{context}
+     * `projects/{project}/locations/{location}/metadataStores/{metadatastore}/contexts/{context}`
      * </pre>
      *
      * <code>
@@ -707,7 +707,7 @@ public final class AddContextChildrenRequest extends com.google.protobuf.Generat
      * <pre>
      * Required. The resource name of the parent Context.
      * Format:
-     * projects/{project}/locations/{location}/metadataStores/{metadatastore}/contexts/{context}
+     * `projects/{project}/locations/{location}/metadataStores/{metadatastore}/contexts/{context}`
      * </pre>
      *
      * <code>

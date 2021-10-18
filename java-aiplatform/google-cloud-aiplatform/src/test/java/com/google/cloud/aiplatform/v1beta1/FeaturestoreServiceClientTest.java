@@ -100,6 +100,7 @@ public class FeaturestoreServiceClientTest {
             .setEtag("etag3123477")
             .putAllLabels(new HashMap<String, String>())
             .setOnlineServingConfig(Featurestore.OnlineServingConfig.newBuilder().build())
+            .setEncryptionSpec(EncryptionSpec.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -154,6 +155,7 @@ public class FeaturestoreServiceClientTest {
             .setEtag("etag3123477")
             .putAllLabels(new HashMap<String, String>())
             .setOnlineServingConfig(Featurestore.OnlineServingConfig.newBuilder().build())
+            .setEncryptionSpec(EncryptionSpec.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -208,6 +210,7 @@ public class FeaturestoreServiceClientTest {
             .setEtag("etag3123477")
             .putAllLabels(new HashMap<String, String>())
             .setOnlineServingConfig(Featurestore.OnlineServingConfig.newBuilder().build())
+            .setEncryptionSpec(EncryptionSpec.newBuilder().build())
             .build();
     mockFeaturestoreService.addResponse(expectedResponse);
 
@@ -251,6 +254,7 @@ public class FeaturestoreServiceClientTest {
             .setEtag("etag3123477")
             .putAllLabels(new HashMap<String, String>())
             .setOnlineServingConfig(Featurestore.OnlineServingConfig.newBuilder().build())
+            .setEncryptionSpec(EncryptionSpec.newBuilder().build())
             .build();
     mockFeaturestoreService.addResponse(expectedResponse);
 
@@ -382,6 +386,7 @@ public class FeaturestoreServiceClientTest {
             .setEtag("etag3123477")
             .putAllLabels(new HashMap<String, String>())
             .setOnlineServingConfig(Featurestore.OnlineServingConfig.newBuilder().build())
+            .setEncryptionSpec(EncryptionSpec.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -502,6 +507,96 @@ public class FeaturestoreServiceClientTest {
     try {
       String name = "name3373707";
       client.deleteFeaturestoreAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void deleteFeaturestoreTest3() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("deleteFeaturestoreTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockFeaturestoreService.addResponse(resultOperation);
+
+    FeaturestoreName name = FeaturestoreName.of("[PROJECT]", "[LOCATION]", "[FEATURESTORE]");
+    boolean force = true;
+
+    client.deleteFeaturestoreAsync(name, force).get();
+
+    List<AbstractMessage> actualRequests = mockFeaturestoreService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DeleteFeaturestoreRequest actualRequest = ((DeleteFeaturestoreRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertEquals(force, actualRequest.getForce());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void deleteFeaturestoreExceptionTest3() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockFeaturestoreService.addException(exception);
+
+    try {
+      FeaturestoreName name = FeaturestoreName.of("[PROJECT]", "[LOCATION]", "[FEATURESTORE]");
+      boolean force = true;
+      client.deleteFeaturestoreAsync(name, force).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void deleteFeaturestoreTest4() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("deleteFeaturestoreTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockFeaturestoreService.addResponse(resultOperation);
+
+    String name = "name3373707";
+    boolean force = true;
+
+    client.deleteFeaturestoreAsync(name, force).get();
+
+    List<AbstractMessage> actualRequests = mockFeaturestoreService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DeleteFeaturestoreRequest actualRequest = ((DeleteFeaturestoreRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertEquals(force, actualRequest.getForce());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void deleteFeaturestoreExceptionTest4() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockFeaturestoreService.addException(exception);
+
+    try {
+      String name = "name3373707";
+      boolean force = true;
+      client.deleteFeaturestoreAsync(name, force).get();
       Assert.fail("No exception raised");
     } catch (ExecutionException e) {
       Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
@@ -933,6 +1028,98 @@ public class FeaturestoreServiceClientTest {
     try {
       String name = "name3373707";
       client.deleteEntityTypeAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void deleteEntityTypeTest3() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("deleteEntityTypeTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockFeaturestoreService.addResponse(resultOperation);
+
+    EntityTypeName name =
+        EntityTypeName.of("[PROJECT]", "[LOCATION]", "[FEATURESTORE]", "[ENTITY_TYPE]");
+    boolean force = true;
+
+    client.deleteEntityTypeAsync(name, force).get();
+
+    List<AbstractMessage> actualRequests = mockFeaturestoreService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DeleteEntityTypeRequest actualRequest = ((DeleteEntityTypeRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertEquals(force, actualRequest.getForce());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void deleteEntityTypeExceptionTest3() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockFeaturestoreService.addException(exception);
+
+    try {
+      EntityTypeName name =
+          EntityTypeName.of("[PROJECT]", "[LOCATION]", "[FEATURESTORE]", "[ENTITY_TYPE]");
+      boolean force = true;
+      client.deleteEntityTypeAsync(name, force).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void deleteEntityTypeTest4() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("deleteEntityTypeTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockFeaturestoreService.addResponse(resultOperation);
+
+    String name = "name3373707";
+    boolean force = true;
+
+    client.deleteEntityTypeAsync(name, force).get();
+
+    List<AbstractMessage> actualRequests = mockFeaturestoreService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DeleteEntityTypeRequest actualRequest = ((DeleteEntityTypeRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertEquals(force, actualRequest.getForce());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void deleteEntityTypeExceptionTest4() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockFeaturestoreService.addException(exception);
+
+    try {
+      String name = "name3373707";
+      boolean force = true;
+      client.deleteEntityTypeAsync(name, force).get();
       Assert.fail("No exception raised");
     } catch (ExecutionException e) {
       Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
@@ -1846,6 +2033,100 @@ public class FeaturestoreServiceClientTest {
     try {
       String location = "location1901043637";
       client.searchFeatures(location);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void searchFeaturesTest3() throws Exception {
+    Feature responsesElement = Feature.newBuilder().build();
+    SearchFeaturesResponse expectedResponse =
+        SearchFeaturesResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllFeatures(Arrays.asList(responsesElement))
+            .build();
+    mockFeaturestoreService.addResponse(expectedResponse);
+
+    LocationName location = LocationName.of("[PROJECT]", "[LOCATION]");
+    String query = "query107944136";
+
+    SearchFeaturesPagedResponse pagedListResponse = client.searchFeatures(location, query);
+
+    List<Feature> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getFeaturesList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockFeaturestoreService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    SearchFeaturesRequest actualRequest = ((SearchFeaturesRequest) actualRequests.get(0));
+
+    Assert.assertEquals(location.toString(), actualRequest.getLocation());
+    Assert.assertEquals(query, actualRequest.getQuery());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void searchFeaturesExceptionTest3() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockFeaturestoreService.addException(exception);
+
+    try {
+      LocationName location = LocationName.of("[PROJECT]", "[LOCATION]");
+      String query = "query107944136";
+      client.searchFeatures(location, query);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void searchFeaturesTest4() throws Exception {
+    Feature responsesElement = Feature.newBuilder().build();
+    SearchFeaturesResponse expectedResponse =
+        SearchFeaturesResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllFeatures(Arrays.asList(responsesElement))
+            .build();
+    mockFeaturestoreService.addResponse(expectedResponse);
+
+    String location = "location1901043637";
+    String query = "query107944136";
+
+    SearchFeaturesPagedResponse pagedListResponse = client.searchFeatures(location, query);
+
+    List<Feature> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getFeaturesList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockFeaturestoreService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    SearchFeaturesRequest actualRequest = ((SearchFeaturesRequest) actualRequests.get(0));
+
+    Assert.assertEquals(location, actualRequest.getLocation());
+    Assert.assertEquals(query, actualRequest.getQuery());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void searchFeaturesExceptionTest4() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockFeaturestoreService.addException(exception);
+
+    try {
+      String location = "location1901043637";
+      String query = "query107944136";
+      client.searchFeatures(location, query);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.

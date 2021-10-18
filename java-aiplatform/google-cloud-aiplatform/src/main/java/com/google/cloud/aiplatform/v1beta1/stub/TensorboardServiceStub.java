@@ -31,6 +31,8 @@ import com.google.cloud.aiplatform.v1beta1.BatchCreateTensorboardRunsRequest;
 import com.google.cloud.aiplatform.v1beta1.BatchCreateTensorboardRunsResponse;
 import com.google.cloud.aiplatform.v1beta1.BatchCreateTensorboardTimeSeriesRequest;
 import com.google.cloud.aiplatform.v1beta1.BatchCreateTensorboardTimeSeriesResponse;
+import com.google.cloud.aiplatform.v1beta1.BatchReadTensorboardTimeSeriesDataRequest;
+import com.google.cloud.aiplatform.v1beta1.BatchReadTensorboardTimeSeriesDataResponse;
 import com.google.cloud.aiplatform.v1beta1.CreateTensorboardExperimentRequest;
 import com.google.cloud.aiplatform.v1beta1.CreateTensorboardOperationMetadata;
 import com.google.cloud.aiplatform.v1beta1.CreateTensorboardRequest;
@@ -261,6 +263,13 @@ public abstract class TensorboardServiceStub implements BackgroundResource {
       deleteTensorboardTimeSeriesCallable() {
     throw new UnsupportedOperationException(
         "Not implemented: deleteTensorboardTimeSeriesCallable()");
+  }
+
+  public UnaryCallable<
+          BatchReadTensorboardTimeSeriesDataRequest, BatchReadTensorboardTimeSeriesDataResponse>
+      batchReadTensorboardTimeSeriesDataCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: batchReadTensorboardTimeSeriesDataCallable()");
   }
 
   public UnaryCallable<ReadTensorboardTimeSeriesDataRequest, ReadTensorboardTimeSeriesDataResponse>

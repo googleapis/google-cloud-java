@@ -132,7 +132,7 @@ public final class PurgeContextsRequest extends com.google.protobuf.GeneratedMes
    * <pre>
    * Required. The metadata store to purge Contexts from.
    * Format:
-   * projects/{project}/locations/{location}/metadataStores/{metadatastore}
+   * `projects/{project}/locations/{location}/metadataStores/{metadatastore}`
    * </pre>
    *
    * <code>
@@ -159,7 +159,7 @@ public final class PurgeContextsRequest extends com.google.protobuf.GeneratedMes
    * <pre>
    * Required. The metadata store to purge Contexts from.
    * Format:
-   * projects/{project}/locations/{location}/metadataStores/{metadatastore}
+   * `projects/{project}/locations/{location}/metadataStores/{metadatastore}`
    * </pre>
    *
    * <code>
@@ -188,7 +188,7 @@ public final class PurgeContextsRequest extends com.google.protobuf.GeneratedMes
    *
    * <pre>
    * Required. A required filter matching the Contexts to be purged.
-   * E.g., update_time &lt;= 2020-11-19T11:30:00-04:00.
+   * E.g., `update_time &lt;= 2020-11-19T11:30:00-04:00`.
    * </pre>
    *
    * <code>string filter = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -212,7 +212,7 @@ public final class PurgeContextsRequest extends com.google.protobuf.GeneratedMes
    *
    * <pre>
    * Required. A required filter matching the Contexts to be purged.
-   * E.g., update_time &lt;= 2020-11-19T11:30:00-04:00.
+   * E.g., `update_time &lt;= 2020-11-19T11:30:00-04:00`.
    * </pre>
    *
    * <code>string filter = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -609,7 +609,7 @@ public final class PurgeContextsRequest extends com.google.protobuf.GeneratedMes
      * <pre>
      * Required. The metadata store to purge Contexts from.
      * Format:
-     * projects/{project}/locations/{location}/metadataStores/{metadatastore}
+     * `projects/{project}/locations/{location}/metadataStores/{metadatastore}`
      * </pre>
      *
      * <code>
@@ -635,7 +635,7 @@ public final class PurgeContextsRequest extends com.google.protobuf.GeneratedMes
      * <pre>
      * Required. The metadata store to purge Contexts from.
      * Format:
-     * projects/{project}/locations/{location}/metadataStores/{metadatastore}
+     * `projects/{project}/locations/{location}/metadataStores/{metadatastore}`
      * </pre>
      *
      * <code>
@@ -661,7 +661,7 @@ public final class PurgeContextsRequest extends com.google.protobuf.GeneratedMes
      * <pre>
      * Required. The metadata store to purge Contexts from.
      * Format:
-     * projects/{project}/locations/{location}/metadataStores/{metadatastore}
+     * `projects/{project}/locations/{location}/metadataStores/{metadatastore}`
      * </pre>
      *
      * <code>
@@ -686,7 +686,7 @@ public final class PurgeContextsRequest extends com.google.protobuf.GeneratedMes
      * <pre>
      * Required. The metadata store to purge Contexts from.
      * Format:
-     * projects/{project}/locations/{location}/metadataStores/{metadatastore}
+     * `projects/{project}/locations/{location}/metadataStores/{metadatastore}`
      * </pre>
      *
      * <code>
@@ -707,7 +707,7 @@ public final class PurgeContextsRequest extends com.google.protobuf.GeneratedMes
      * <pre>
      * Required. The metadata store to purge Contexts from.
      * Format:
-     * projects/{project}/locations/{location}/metadataStores/{metadatastore}
+     * `projects/{project}/locations/{location}/metadataStores/{metadatastore}`
      * </pre>
      *
      * <code>
@@ -734,7 +734,7 @@ public final class PurgeContextsRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Required. A required filter matching the Contexts to be purged.
-     * E.g., update_time &lt;= 2020-11-19T11:30:00-04:00.
+     * E.g., `update_time &lt;= 2020-11-19T11:30:00-04:00`.
      * </pre>
      *
      * <code>string filter = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -757,7 +757,7 @@ public final class PurgeContextsRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Required. A required filter matching the Contexts to be purged.
-     * E.g., update_time &lt;= 2020-11-19T11:30:00-04:00.
+     * E.g., `update_time &lt;= 2020-11-19T11:30:00-04:00`.
      * </pre>
      *
      * <code>string filter = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -780,7 +780,7 @@ public final class PurgeContextsRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Required. A required filter matching the Contexts to be purged.
-     * E.g., update_time &lt;= 2020-11-19T11:30:00-04:00.
+     * E.g., `update_time &lt;= 2020-11-19T11:30:00-04:00`.
      * </pre>
      *
      * <code>string filter = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -802,7 +802,7 @@ public final class PurgeContextsRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Required. A required filter matching the Contexts to be purged.
-     * E.g., update_time &lt;= 2020-11-19T11:30:00-04:00.
+     * E.g., `update_time &lt;= 2020-11-19T11:30:00-04:00`.
      * </pre>
      *
      * <code>string filter = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -820,7 +820,7 @@ public final class PurgeContextsRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Required. A required filter matching the Contexts to be purged.
-     * E.g., update_time &lt;= 2020-11-19T11:30:00-04:00.
+     * E.g., `update_time &lt;= 2020-11-19T11:30:00-04:00`.
      * </pre>
      *
      * <code>string filter = 2 [(.google.api.field_behavior) = REQUIRED];</code>

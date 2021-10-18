@@ -905,6 +905,21 @@ public interface ModelDeploymentMonitoringJobOrBuilder
    *
    *
    * <pre>
+   * If true, the scheduled monitoring pipeline status logs are sent to
+   * Google Cloud Logging. Please note the logs incur cost, which are subject to
+   * [Cloud Logging pricing](https://cloud.google.com/logging#pricing).
+   * </pre>
+   *
+   * <code>bool enable_monitoring_pipeline_logs = 22;</code>
+   *
+   * @return The enableMonitoringPipelineLogs.
+   */
+  boolean getEnableMonitoringPipelineLogs();
+
+  /**
+   *
+   *
+   * <pre>
    * Output only. Only populated when the job's state is `JOB_STATE_FAILED` or
    * `JOB_STATE_CANCELLED`.
    * </pre>

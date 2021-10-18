@@ -533,6 +533,28 @@ public class MockTensorboardServiceImpl extends TensorboardServiceImplBase {
   }
 
   @Override
+  public void batchReadTensorboardTimeSeriesData(
+      BatchReadTensorboardTimeSeriesDataRequest request,
+      StreamObserver<BatchReadTensorboardTimeSeriesDataResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof BatchReadTensorboardTimeSeriesDataResponse) {
+      requests.add(request);
+      responseObserver.onNext(((BatchReadTensorboardTimeSeriesDataResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method BatchReadTensorboardTimeSeriesData, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  BatchReadTensorboardTimeSeriesDataResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
   public void readTensorboardTimeSeriesData(
       ReadTensorboardTimeSeriesDataRequest request,
       StreamObserver<ReadTensorboardTimeSeriesDataResponse> responseObserver) {

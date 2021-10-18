@@ -29,7 +29,7 @@ public interface GetExecutionRequestOrBuilder
    * <pre>
    * Required. The resource name of the Execution to retrieve.
    * Format:
-   * projects/{project}/locations/{location}/metadataStores/{metadatastore}/executions/{execution}
+   * `projects/{project}/locations/{location}/metadataStores/{metadatastore}/executions/{execution}`
    * </pre>
    *
    * <code>
@@ -45,7 +45,7 @@ public interface GetExecutionRequestOrBuilder
    * <pre>
    * Required. The resource name of the Execution to retrieve.
    * Format:
-   * projects/{project}/locations/{location}/metadataStores/{metadatastore}/executions/{execution}
+   * `projects/{project}/locations/{location}/metadataStores/{metadatastore}/executions/{execution}`
    * </pre>
    *
    * <code>

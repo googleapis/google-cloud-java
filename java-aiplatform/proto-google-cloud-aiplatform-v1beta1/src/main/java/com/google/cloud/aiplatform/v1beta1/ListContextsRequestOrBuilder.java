@@ -29,7 +29,7 @@ public interface ListContextsRequestOrBuilder
    * <pre>
    * Required. The MetadataStore whose Contexts should be listed.
    * Format:
-   * projects/{project}/locations/{location}/metadataStores/{metadatastore}
+   * `projects/{project}/locations/{location}/metadataStores/{metadatastore}`
    * </pre>
    *
    * <code>
@@ -45,7 +45,7 @@ public interface ListContextsRequestOrBuilder
    * <pre>
    * Required. The MetadataStore whose Contexts should be listed.
    * Format:
-   * projects/{project}/locations/{location}/metadataStores/{metadatastore}
+   * `projects/{project}/locations/{location}/metadataStores/{metadatastore}`
    * </pre>
    *
    * <code>

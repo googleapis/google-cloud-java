@@ -127,7 +127,7 @@ public final class DeleteArtifactRequest extends com.google.protobuf.GeneratedMe
    * <pre>
    * Required. The resource name of the Artifact to delete.
    * Format:
-   * projects/{project}/locations/{location}/metadataStores/{metadatastore}/artifacts/{artifact}
+   * `projects/{project}/locations/{location}/metadataStores/{metadatastore}/artifacts/{artifact}`
    * </pre>
    *
    * <code>
@@ -154,7 +154,7 @@ public final class DeleteArtifactRequest extends com.google.protobuf.GeneratedMe
    * <pre>
    * Required. The resource name of the Artifact to delete.
    * Format:
-   * projects/{project}/locations/{location}/metadataStores/{metadatastore}/artifacts/{artifact}
+   * `projects/{project}/locations/{location}/metadataStores/{metadatastore}/artifacts/{artifact}`
    * </pre>
    *
    * <code>
@@ -571,7 +571,7 @@ public final class DeleteArtifactRequest extends com.google.protobuf.GeneratedMe
      * <pre>
      * Required. The resource name of the Artifact to delete.
      * Format:
-     * projects/{project}/locations/{location}/metadataStores/{metadatastore}/artifacts/{artifact}
+     * `projects/{project}/locations/{location}/metadataStores/{metadatastore}/artifacts/{artifact}`
      * </pre>
      *
      * <code>
@@ -597,7 +597,7 @@ public final class DeleteArtifactRequest extends com.google.protobuf.GeneratedMe
      * <pre>
      * Required. The resource name of the Artifact to delete.
      * Format:
-     * projects/{project}/locations/{location}/metadataStores/{metadatastore}/artifacts/{artifact}
+     * `projects/{project}/locations/{location}/metadataStores/{metadatastore}/artifacts/{artifact}`
      * </pre>
      *
      * <code>
@@ -623,7 +623,7 @@ public final class DeleteArtifactRequest extends com.google.protobuf.GeneratedMe
      * <pre>
      * Required. The resource name of the Artifact to delete.
      * Format:
-     * projects/{project}/locations/{location}/metadataStores/{metadatastore}/artifacts/{artifact}
+     * `projects/{project}/locations/{location}/metadataStores/{metadatastore}/artifacts/{artifact}`
      * </pre>
      *
      * <code>
@@ -648,7 +648,7 @@ public final class DeleteArtifactRequest extends com.google.protobuf.GeneratedMe
      * <pre>
      * Required. The resource name of the Artifact to delete.
      * Format:
-     * projects/{project}/locations/{location}/metadataStores/{metadatastore}/artifacts/{artifact}
+     * `projects/{project}/locations/{location}/metadataStores/{metadatastore}/artifacts/{artifact}`
      * </pre>
      *
      * <code>
@@ -669,7 +669,7 @@ public final class DeleteArtifactRequest extends com.google.protobuf.GeneratedMe
      * <pre>
      * Required. The resource name of the Artifact to delete.
      * Format:
-     * projects/{project}/locations/{location}/metadataStores/{metadatastore}/artifacts/{artifact}
+     * `projects/{project}/locations/{location}/metadataStores/{metadatastore}/artifacts/{artifact}`
      * </pre>
      *
      * <code>

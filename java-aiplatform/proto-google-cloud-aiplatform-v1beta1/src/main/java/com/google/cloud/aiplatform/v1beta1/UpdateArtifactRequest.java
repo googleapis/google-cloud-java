@@ -148,7 +148,7 @@ public final class UpdateArtifactRequest extends com.google.protobuf.GeneratedMe
    * The Artifact's [Artifact.name][google.cloud.aiplatform.v1beta1.Artifact.name] field is used to identify the Artifact to
    * be updated.
    * Format:
-   * projects/{project}/locations/{location}/metadataStores/{metadatastore}/artifacts/{artifact}
+   * `projects/{project}/locations/{location}/metadataStores/{metadatastore}/artifacts/{artifact}`
    * </pre>
    *
    * <code>
@@ -169,7 +169,7 @@ public final class UpdateArtifactRequest extends com.google.protobuf.GeneratedMe
    * The Artifact's [Artifact.name][google.cloud.aiplatform.v1beta1.Artifact.name] field is used to identify the Artifact to
    * be updated.
    * Format:
-   * projects/{project}/locations/{location}/metadataStores/{metadatastore}/artifacts/{artifact}
+   * `projects/{project}/locations/{location}/metadataStores/{metadatastore}/artifacts/{artifact}`
    * </pre>
    *
    * <code>
@@ -192,7 +192,7 @@ public final class UpdateArtifactRequest extends com.google.protobuf.GeneratedMe
    * The Artifact's [Artifact.name][google.cloud.aiplatform.v1beta1.Artifact.name] field is used to identify the Artifact to
    * be updated.
    * Format:
-   * projects/{project}/locations/{location}/metadataStores/{metadatastore}/artifacts/{artifact}
+   * `projects/{project}/locations/{location}/metadataStores/{metadatastore}/artifacts/{artifact}`
    * </pre>
    *
    * <code>
@@ -663,7 +663,7 @@ public final class UpdateArtifactRequest extends com.google.protobuf.GeneratedMe
      * The Artifact's [Artifact.name][google.cloud.aiplatform.v1beta1.Artifact.name] field is used to identify the Artifact to
      * be updated.
      * Format:
-     * projects/{project}/locations/{location}/metadataStores/{metadatastore}/artifacts/{artifact}
+     * `projects/{project}/locations/{location}/metadataStores/{metadatastore}/artifacts/{artifact}`
      * </pre>
      *
      * <code>
@@ -683,7 +683,7 @@ public final class UpdateArtifactRequest extends com.google.protobuf.GeneratedMe
      * The Artifact's [Artifact.name][google.cloud.aiplatform.v1beta1.Artifact.name] field is used to identify the Artifact to
      * be updated.
      * Format:
-     * projects/{project}/locations/{location}/metadataStores/{metadatastore}/artifacts/{artifact}
+     * `projects/{project}/locations/{location}/metadataStores/{metadatastore}/artifacts/{artifact}`
      * </pre>
      *
      * <code>
@@ -709,7 +709,7 @@ public final class UpdateArtifactRequest extends com.google.protobuf.GeneratedMe
      * The Artifact's [Artifact.name][google.cloud.aiplatform.v1beta1.Artifact.name] field is used to identify the Artifact to
      * be updated.
      * Format:
-     * projects/{project}/locations/{location}/metadataStores/{metadatastore}/artifacts/{artifact}
+     * `projects/{project}/locations/{location}/metadataStores/{metadatastore}/artifacts/{artifact}`
      * </pre>
      *
      * <code>
@@ -737,7 +737,7 @@ public final class UpdateArtifactRequest extends com.google.protobuf.GeneratedMe
      * The Artifact's [Artifact.name][google.cloud.aiplatform.v1beta1.Artifact.name] field is used to identify the Artifact to
      * be updated.
      * Format:
-     * projects/{project}/locations/{location}/metadataStores/{metadatastore}/artifacts/{artifact}
+     * `projects/{project}/locations/{location}/metadataStores/{metadatastore}/artifacts/{artifact}`
      * </pre>
      *
      * <code>
@@ -763,7 +763,7 @@ public final class UpdateArtifactRequest extends com.google.protobuf.GeneratedMe
      * The Artifact's [Artifact.name][google.cloud.aiplatform.v1beta1.Artifact.name] field is used to identify the Artifact to
      * be updated.
      * Format:
-     * projects/{project}/locations/{location}/metadataStores/{metadatastore}/artifacts/{artifact}
+     * `projects/{project}/locations/{location}/metadataStores/{metadatastore}/artifacts/{artifact}`
      * </pre>
      *
      * <code>
@@ -795,7 +795,7 @@ public final class UpdateArtifactRequest extends com.google.protobuf.GeneratedMe
      * The Artifact's [Artifact.name][google.cloud.aiplatform.v1beta1.Artifact.name] field is used to identify the Artifact to
      * be updated.
      * Format:
-     * projects/{project}/locations/{location}/metadataStores/{metadatastore}/artifacts/{artifact}
+     * `projects/{project}/locations/{location}/metadataStores/{metadatastore}/artifacts/{artifact}`
      * </pre>
      *
      * <code>
@@ -821,7 +821,7 @@ public final class UpdateArtifactRequest extends com.google.protobuf.GeneratedMe
      * The Artifact's [Artifact.name][google.cloud.aiplatform.v1beta1.Artifact.name] field is used to identify the Artifact to
      * be updated.
      * Format:
-     * projects/{project}/locations/{location}/metadataStores/{metadatastore}/artifacts/{artifact}
+     * `projects/{project}/locations/{location}/metadataStores/{metadatastore}/artifacts/{artifact}`
      * </pre>
      *
      * <code>
@@ -841,7 +841,7 @@ public final class UpdateArtifactRequest extends com.google.protobuf.GeneratedMe
      * The Artifact's [Artifact.name][google.cloud.aiplatform.v1beta1.Artifact.name] field is used to identify the Artifact to
      * be updated.
      * Format:
-     * projects/{project}/locations/{location}/metadataStores/{metadatastore}/artifacts/{artifact}
+     * `projects/{project}/locations/{location}/metadataStores/{metadatastore}/artifacts/{artifact}`
      * </pre>
      *
      * <code>
@@ -865,7 +865,7 @@ public final class UpdateArtifactRequest extends com.google.protobuf.GeneratedMe
      * The Artifact's [Artifact.name][google.cloud.aiplatform.v1beta1.Artifact.name] field is used to identify the Artifact to
      * be updated.
      * Format:
-     * projects/{project}/locations/{location}/metadataStores/{metadatastore}/artifacts/{artifact}
+     * `projects/{project}/locations/{location}/metadataStores/{metadatastore}/artifacts/{artifact}`
      * </pre>
      *
      * <code>

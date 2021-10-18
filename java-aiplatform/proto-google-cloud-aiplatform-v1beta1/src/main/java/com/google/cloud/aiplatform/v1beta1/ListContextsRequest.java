@@ -140,7 +140,7 @@ public final class ListContextsRequest extends com.google.protobuf.GeneratedMess
    * <pre>
    * Required. The MetadataStore whose Contexts should be listed.
    * Format:
-   * projects/{project}/locations/{location}/metadataStores/{metadatastore}
+   * `projects/{project}/locations/{location}/metadataStores/{metadatastore}`
    * </pre>
    *
    * <code>
@@ -167,7 +167,7 @@ public final class ListContextsRequest extends com.google.protobuf.GeneratedMess
    * <pre>
    * Required. The MetadataStore whose Contexts should be listed.
    * Format:
-   * projects/{project}/locations/{location}/metadataStores/{metadatastore}
+   * `projects/{project}/locations/{location}/metadataStores/{metadatastore}`
    * </pre>
    *
    * <code>
@@ -739,7 +739,7 @@ public final class ListContextsRequest extends com.google.protobuf.GeneratedMess
      * <pre>
      * Required. The MetadataStore whose Contexts should be listed.
      * Format:
-     * projects/{project}/locations/{location}/metadataStores/{metadatastore}
+     * `projects/{project}/locations/{location}/metadataStores/{metadatastore}`
      * </pre>
      *
      * <code>
@@ -765,7 +765,7 @@ public final class ListContextsRequest extends com.google.protobuf.GeneratedMess
      * <pre>
      * Required. The MetadataStore whose Contexts should be listed.
      * Format:
-     * projects/{project}/locations/{location}/metadataStores/{metadatastore}
+     * `projects/{project}/locations/{location}/metadataStores/{metadatastore}`
      * </pre>
      *
      * <code>
@@ -791,7 +791,7 @@ public final class ListContextsRequest extends com.google.protobuf.GeneratedMess
      * <pre>
      * Required. The MetadataStore whose Contexts should be listed.
      * Format:
-     * projects/{project}/locations/{location}/metadataStores/{metadatastore}
+     * `projects/{project}/locations/{location}/metadataStores/{metadatastore}`
      * </pre>
      *
      * <code>
@@ -816,7 +816,7 @@ public final class ListContextsRequest extends com.google.protobuf.GeneratedMess
      * <pre>
      * Required. The MetadataStore whose Contexts should be listed.
      * Format:
-     * projects/{project}/locations/{location}/metadataStores/{metadatastore}
+     * `projects/{project}/locations/{location}/metadataStores/{metadatastore}`
      * </pre>
      *
      * <code>
@@ -837,7 +837,7 @@ public final class ListContextsRequest extends com.google.protobuf.GeneratedMess
      * <pre>
      * Required. The MetadataStore whose Contexts should be listed.
      * Format:
-     * projects/{project}/locations/{location}/metadataStores/{metadatastore}
+     * `projects/{project}/locations/{location}/metadataStores/{metadatastore}`
      * </pre>
      *
      * <code>

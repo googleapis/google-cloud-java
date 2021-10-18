@@ -597,7 +597,8 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. The default monitoring configuration for all Features under this
+   * Optional. The default monitoring configuration for all Features with value type
+   * ([Feature.ValueType][google.cloud.aiplatform.v1beta1.Feature.ValueType]) BOOL, STRING, DOUBLE or INT64 under this
    * EntityType.
    * If this is populated with
    * [FeaturestoreMonitoringConfig.monitoring_interval] specified, snapshot
@@ -619,7 +620,8 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. The default monitoring configuration for all Features under this
+   * Optional. The default monitoring configuration for all Features with value type
+   * ([Feature.ValueType][google.cloud.aiplatform.v1beta1.Feature.ValueType]) BOOL, STRING, DOUBLE or INT64 under this
    * EntityType.
    * If this is populated with
    * [FeaturestoreMonitoringConfig.monitoring_interval] specified, snapshot
@@ -643,7 +645,8 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. The default monitoring configuration for all Features under this
+   * Optional. The default monitoring configuration for all Features with value type
+   * ([Feature.ValueType][google.cloud.aiplatform.v1beta1.Feature.ValueType]) BOOL, STRING, DOUBLE or INT64 under this
    * EntityType.
    * If this is populated with
    * [FeaturestoreMonitoringConfig.monitoring_interval] specified, snapshot
@@ -2117,7 +2120,8 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The default monitoring configuration for all Features under this
+     * Optional. The default monitoring configuration for all Features with value type
+     * ([Feature.ValueType][google.cloud.aiplatform.v1beta1.Feature.ValueType]) BOOL, STRING, DOUBLE or INT64 under this
      * EntityType.
      * If this is populated with
      * [FeaturestoreMonitoringConfig.monitoring_interval] specified, snapshot
@@ -2138,7 +2142,8 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The default monitoring configuration for all Features under this
+     * Optional. The default monitoring configuration for all Features with value type
+     * ([Feature.ValueType][google.cloud.aiplatform.v1beta1.Feature.ValueType]) BOOL, STRING, DOUBLE or INT64 under this
      * EntityType.
      * If this is populated with
      * [FeaturestoreMonitoringConfig.monitoring_interval] specified, snapshot
@@ -2165,7 +2170,8 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The default monitoring configuration for all Features under this
+     * Optional. The default monitoring configuration for all Features with value type
+     * ([Feature.ValueType][google.cloud.aiplatform.v1beta1.Feature.ValueType]) BOOL, STRING, DOUBLE or INT64 under this
      * EntityType.
      * If this is populated with
      * [FeaturestoreMonitoringConfig.monitoring_interval] specified, snapshot
@@ -2195,7 +2201,8 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The default monitoring configuration for all Features under this
+     * Optional. The default monitoring configuration for all Features with value type
+     * ([Feature.ValueType][google.cloud.aiplatform.v1beta1.Feature.ValueType]) BOOL, STRING, DOUBLE or INT64 under this
      * EntityType.
      * If this is populated with
      * [FeaturestoreMonitoringConfig.monitoring_interval] specified, snapshot
@@ -2222,7 +2229,8 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The default monitoring configuration for all Features under this
+     * Optional. The default monitoring configuration for all Features with value type
+     * ([Feature.ValueType][google.cloud.aiplatform.v1beta1.Feature.ValueType]) BOOL, STRING, DOUBLE or INT64 under this
      * EntityType.
      * If this is populated with
      * [FeaturestoreMonitoringConfig.monitoring_interval] specified, snapshot
@@ -2257,7 +2265,8 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The default monitoring configuration for all Features under this
+     * Optional. The default monitoring configuration for all Features with value type
+     * ([Feature.ValueType][google.cloud.aiplatform.v1beta1.Feature.ValueType]) BOOL, STRING, DOUBLE or INT64 under this
      * EntityType.
      * If this is populated with
      * [FeaturestoreMonitoringConfig.monitoring_interval] specified, snapshot
@@ -2284,7 +2293,8 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The default monitoring configuration for all Features under this
+     * Optional. The default monitoring configuration for all Features with value type
+     * ([Feature.ValueType][google.cloud.aiplatform.v1beta1.Feature.ValueType]) BOOL, STRING, DOUBLE or INT64 under this
      * EntityType.
      * If this is populated with
      * [FeaturestoreMonitoringConfig.monitoring_interval] specified, snapshot
@@ -2306,7 +2316,8 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The default monitoring configuration for all Features under this
+     * Optional. The default monitoring configuration for all Features with value type
+     * ([Feature.ValueType][google.cloud.aiplatform.v1beta1.Feature.ValueType]) BOOL, STRING, DOUBLE or INT64 under this
      * EntityType.
      * If this is populated with
      * [FeaturestoreMonitoringConfig.monitoring_interval] specified, snapshot
@@ -2332,7 +2343,8 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The default monitoring configuration for all Features under this
+     * Optional. The default monitoring configuration for all Features with value type
+     * ([Feature.ValueType][google.cloud.aiplatform.v1beta1.Feature.ValueType]) BOOL, STRING, DOUBLE or INT64 under this
      * EntityType.
      * If this is populated with
      * [FeaturestoreMonitoringConfig.monitoring_interval] specified, snapshot

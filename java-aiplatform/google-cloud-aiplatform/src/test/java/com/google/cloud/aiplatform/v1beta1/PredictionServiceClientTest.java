@@ -86,6 +86,8 @@ public class PredictionServiceClientTest {
         PredictResponse.newBuilder()
             .addAllPredictions(new ArrayList<Value>())
             .setDeployedModelId("deployedModelId-1817547906")
+            .setModel(ModelName.of("[PROJECT]", "[LOCATION]", "[MODEL]").toString())
+            .setModelDisplayName("modelDisplayName1578770308")
             .build();
     mockPredictionService.addResponse(expectedResponse);
 
@@ -131,6 +133,8 @@ public class PredictionServiceClientTest {
         PredictResponse.newBuilder()
             .addAllPredictions(new ArrayList<Value>())
             .setDeployedModelId("deployedModelId-1817547906")
+            .setModel(ModelName.of("[PROJECT]", "[LOCATION]", "[MODEL]").toString())
+            .setModelDisplayName("modelDisplayName1578770308")
             .build();
     mockPredictionService.addResponse(expectedResponse);
 
