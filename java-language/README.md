@@ -134,14 +134,14 @@ In [AnalyzeSentiment.java](https://github.com/googleapis/google-cloud-java/blob/
 
 ## Samples
 
-Samples are in the [`samples/`](https://github.com/googleapis/java-language/tree/master/samples) directory.
+Samples are in the [`samples/`](https://github.com/googleapis/java-language/tree/main/samples) directory.
 
 | Sample                      | Source Code                       | Try it |
 | --------------------------- | --------------------------------- | ------ |
-| Analyze Beta | [source code](https://github.com/googleapis/java-language/blob/master/samples/snippets/src/main/java/beta/example/language/AnalyzeBeta.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-language&page=editor&open_in_editor=samples/snippets/src/main/java/beta/example/language/AnalyzeBeta.java) |
-| Analyze | [source code](https://github.com/googleapis/java-language/blob/master/samples/snippets/src/main/java/com/example/language/Analyze.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-language&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/language/Analyze.java) |
-| Quickstart Sample | [source code](https://github.com/googleapis/java-language/blob/master/samples/snippets/src/main/java/com/example/language/QuickstartSample.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-language&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/language/QuickstartSample.java) |
-| Set Endpoint | [source code](https://github.com/googleapis/java-language/blob/master/samples/snippets/src/main/java/com/example/language/SetEndpoint.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-language&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/language/SetEndpoint.java) |
+| Analyze Beta | [source code](https://github.com/googleapis/java-language/blob/main/samples/snippets/src/main/java/beta/example/language/AnalyzeBeta.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-language&page=editor&open_in_editor=samples/snippets/src/main/java/beta/example/language/AnalyzeBeta.java) |
+| Analyze | [source code](https://github.com/googleapis/java-language/blob/main/samples/snippets/src/main/java/com/example/language/Analyze.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-language&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/language/Analyze.java) |
+| Quickstart Sample | [source code](https://github.com/googleapis/java-language/blob/main/samples/snippets/src/main/java/com/example/language/QuickstartSample.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-language&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/language/QuickstartSample.java) |
+| Set Endpoint | [source code](https://github.com/googleapis/java-language/blob/main/samples/snippets/src/main/java/com/example/language/SetEndpoint.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-language&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/language/SetEndpoint.java) |
 
 
 
@@ -254,10 +254,10 @@ Java is a registered trademark of Oracle and/or its affiliates.
 [developer-console]: https://console.developers.google.com/
 [create-project]: https://cloud.google.com/resource-manager/docs/creating-managing-projects
 [cloud-sdk]: https://cloud.google.com/sdk/
-[troubleshooting]: https://github.com/googleapis/google-cloud-common/blob/master/troubleshooting/readme.md#troubleshooting
-[contributing]: https://github.com/googleapis/java-language/blob/master/CONTRIBUTING.md
-[code-of-conduct]: https://github.com/googleapis/java-language/blob/master/CODE_OF_CONDUCT.md#contributor-code-of-conduct
-[license]: https://github.com/googleapis/java-language/blob/master/LICENSE
+[troubleshooting]: https://github.com/googleapis/google-cloud-common/blob/main/troubleshooting/readme.md#troubleshooting
+[contributing]: https://github.com/googleapis/java-language/blob/main/CONTRIBUTING.md
+[code-of-conduct]: https://github.com/googleapis/java-language/blob/main/CODE_OF_CONDUCT.md#contributor-code-of-conduct
+[license]: https://github.com/googleapis/java-language/blob/main/LICENSE
 [enable-billing]: https://cloud.google.com/apis/docs/getting-started#enabling_billing
 [enable-api]: https://console.cloud.google.com/flows/enableapi?apiid=language.googleapis.com
 [libraries-bom]: https://github.com/GoogleCloudPlatform/cloud-opensource-java/wiki/The-Google-Cloud-Platform-Libraries-BOM
