@@ -229,6 +229,7 @@ public class JsonToProtoMessage {
               }
             }
             protoMsg.setField(fieldDescriptor, bytes);
+            return;
           } catch (JSONException e) {
             throw new IllegalArgumentException(
                 String.format("Error: " + currentScope + "could not be converted to byte[]."));

@@ -60,7 +60,10 @@ public class JsonToProtoMessageTest {
           .put(
               BytesType.getDescriptor(),
               new Message[] {
-                BytesType.newBuilder().setTestFieldType(ByteString.copyFromUtf8("test")).build()
+                BytesType.newBuilder().setTestFieldType(ByteString.copyFromUtf8("test")).build(),
+                BytesType.newBuilder()
+                    .setTestFieldType(ByteString.copyFrom(new byte[] {1, 2, 3}))
+                    .build()
               })
           .put(
               Int64Type.getDescriptor(),
@@ -600,7 +603,8 @@ public class JsonToProtoMessageTest {
               e.getMessage());
         }
       }
-      if (entry.getKey() == Int64Type.getDescriptor()) {
+      if (entry.getKey() == Int64Type.getDescriptor()
+          || entry.getKey() == BytesType.getDescriptor()) {
         assertEquals(entry.getKey().getFullName(), 2, success);
       } else {
         assertEquals(entry.getKey().getFullName(), 1, success);
