@@ -42,6 +42,7 @@ public class ErrorsTest {
         Errors.isRetryableInternalStatus(
             Status.INTERNAL.withDescription(
                 "RST_STREAM closed stream. HTTP/2 error code: INTERNAL_ERROR")));
+    assertTrue(Errors.isRetryableInternalStatus(Status.INTERNAL.withDescription("Rst Stream")));
   }
 
   @Test

@@ -74,6 +74,7 @@ public class Errors {
         && description != null
         && (description.contains("Received unexpected EOS ")
             || description.contains(" Rst ")
+            || description.contains("Rst Stream")
             || description.contains("RST_STREAM")
             || description.contains("Connection closed with unknown cause")
             || description.contains("HTTP/2 error code: INTERNAL_ERROR"));
