@@ -64,10 +64,12 @@
     <opencensus.version>0.28.0</opencensus.version>
     <findbugs.version>3.0.2</findbugs.version>
     <errorprone.version>2.9.0</errorprone.version>
-    <jackson.version>2.12.5</jackson.version>
+    <jackson.version>2.13.0</jackson.version>
     <codec.version>1.15</codec.version>
     <httpcomponents.httpcore.version>4.4.14</httpcomponents.httpcore.version>
     <httpcomponents.httpclient.version>4.5.13</httpcomponents.httpclient.version>
+    <!-- ensure checker-qual version matches what Guava uses -->
+    <checker-qual.version>3.12.0</checker-qual.version>
   </properties>
 
   <dependencyManagement>
@@ -96,6 +98,7 @@
         <groupId>javax.annotation</groupId>
         <artifactId>javax.annotation-api</artifactId>
         <version>${javax.annotations.version}</version>
+        <scope>compile</scope>
       </dependency>
       <dependency>
         <groupId>org.codehaus.mojo</groupId>
@@ -165,6 +168,11 @@
         <groupId>io.opencensus</groupId>
         <artifactId>opencensus-impl-core</artifactId>
         <version>${opencensus.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.checkerframework</groupId>
+        <artifactId>checker-qual</artifactId>
+        <version>${checker-qual.version}</version>
       </dependency>
     </dependencies>
   </dependencyManagement>
