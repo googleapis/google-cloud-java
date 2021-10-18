@@ -1,5 +1,21 @@
 # Changelog
 
+## [2.4.0](https://www.github.com/googleapis/java-shared-dependencies/compare/2.3.0...v2.4.0) (2021-10-18)
+
+
+### Dependencies
+
+* update dependency com.fasterxml.jackson:jackson-bom to v2.13.0 ([dba11b5](https://www.github.com/googleapis/java-shared-dependencies/commit/dba11b5fe14d39cdd62357e7bb1b82831c481150))
+* update dependency com.google.api-client:google-api-client-bom to v1.32.2 ([dba11b5](https://www.github.com/googleapis/java-shared-dependencies/commit/dba11b5fe14d39cdd62357e7bb1b82831c481150))
+* update dependency com.google.api:api-common to v2.0.5 ([dba11b5](https://www.github.com/googleapis/java-shared-dependencies/commit/dba11b5fe14d39cdd62357e7bb1b82831c481150))
+* update dependency com.google.auth:google-auth-library-bom to v1.2.1 ([dba11b5](https://www.github.com/googleapis/java-shared-dependencies/commit/dba11b5fe14d39cdd62357e7bb1b82831c481150))
+* update dependency com.google.guava:guava-bom to v31 ([#498](https://www.github.com/googleapis/java-shared-dependencies/issues/498)) ([dba11b5](https://www.github.com/googleapis/java-shared-dependencies/commit/dba11b5fe14d39cdd62357e7bb1b82831c481150))
+* update dependency com.google.http-client:google-http-client-bom to v1.40.1 ([dba11b5](https://www.github.com/googleapis/java-shared-dependencies/commit/dba11b5fe14d39cdd62357e7bb1b82831c481150))
+* update dependency com.google.protobuf:protobuf-bom to v3.18.1 ([#494](https://www.github.com/googleapis/java-shared-dependencies/issues/494)) ([a30e376](https://www.github.com/googleapis/java-shared-dependencies/commit/a30e3762b5fb0e2d31304d211c12eb2c1320f0c1))
+* update dependency io.grpc:grpc-bom to v1.41.0 ([#482](https://www.github.com/googleapis/java-shared-dependencies/issues/482)) ([8a7d227](https://www.github.com/googleapis/java-shared-dependencies/commit/8a7d227f2a1dab9ff23d247a4e6131c817804c36))
+* update gax.version to v2.6.1 ([dba11b5](https://www.github.com/googleapis/java-shared-dependencies/commit/dba11b5fe14d39cdd62357e7bb1b82831c481150))
+* update iam.version to v1.1.6 ([#485](https://www.github.com/googleapis/java-shared-dependencies/issues/485)) ([cef7e09](https://www.github.com/googleapis/java-shared-dependencies/commit/cef7e090bbc2e3ae775fa83505f98df286ba7d42))
+
 ## [2.3.0](https://www.github.com/googleapis/java-shared-dependencies/compare/2.2.1...v2.3.0) (2021-09-22)
 
 
