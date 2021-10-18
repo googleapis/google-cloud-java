@@ -307,7 +307,7 @@ public class StreamWriterV2 implements AutoCloseable {
     } finally {
       this.lock.unlock();
     }
-    log.info("Waiting for append thread to finish. Stream: " + streamName);
+    log.fine("Waiting for append thread to finish. Stream: " + streamName);
     try {
       appendThread.join();
       log.info("User close complete. Stream: " + streamName);
@@ -366,17 +366,17 @@ public class StreamWriterV2 implements AutoCloseable {
       }
     }
 
-    log.info("Cleanup starts. Stream: " + streamName);
+    log.fine("Cleanup starts. Stream: " + streamName);
     // At this point, the waiting queue is drained, so no more requests.
     // We can close the stream connection and handle the remaining inflight requests.
     this.streamConnection.close();
     waitForDoneCallback();
 
     // At this point, there cannot be more callback. It is safe to clean up all inflight requests.
-    log.info(
+    log.fine(
         "Stream connection is fully closed. Cleaning up inflight requests. Stream: " + streamName);
     cleanupInflightRequests();
-    log.info("Append thread is done. Stream: " + streamName);
+    log.fine("Append thread is done. Stream: " + streamName);
   }
 
   /*
@@ -396,7 +396,7 @@ public class StreamWriterV2 implements AutoCloseable {
   }
 
   private void waitForDoneCallback() {
-    log.info("Waiting for done callback from stream connection. Stream: " + streamName);
+    log.fine("Waiting for done callback from stream connection. Stream: " + streamName);
     while (true) {
       this.lock.lock();
       try {
@@ -441,7 +441,7 @@ public class StreamWriterV2 implements AutoCloseable {
     } finally {
       this.lock.unlock();
     }
-    log.info(
+    log.fine(
         "Cleaning "
             + localQueue.size()
             + " inflight requests with error: "
@@ -471,7 +471,7 @@ public class StreamWriterV2 implements AutoCloseable {
   }
 
   private void doneCallback(Throwable finalStatus) {
-    log.info(
+    log.fine(
         "Received done callback. Stream: "
             + streamName
             + " Final status: "
