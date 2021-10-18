@@ -2050,6 +2050,7 @@ public class JobServiceClientTest {
             .setNextScheduleTime(Timestamp.newBuilder().build())
             .setStatsAnomaliesBaseDirectory(GcsDestination.newBuilder().build())
             .setEncryptionSpec(EncryptionSpec.newBuilder().build())
+            .setEnableMonitoringPipelineLogs(true)
             .setError(Status.newBuilder().build())
             .build();
     mockJobService.addResponse(expectedResponse);
@@ -2120,6 +2121,7 @@ public class JobServiceClientTest {
             .setNextScheduleTime(Timestamp.newBuilder().build())
             .setStatsAnomaliesBaseDirectory(GcsDestination.newBuilder().build())
             .setEncryptionSpec(EncryptionSpec.newBuilder().build())
+            .setEnableMonitoringPipelineLogs(true)
             .setError(Status.newBuilder().build())
             .build();
     mockJobService.addResponse(expectedResponse);
@@ -2302,6 +2304,7 @@ public class JobServiceClientTest {
             .setNextScheduleTime(Timestamp.newBuilder().build())
             .setStatsAnomaliesBaseDirectory(GcsDestination.newBuilder().build())
             .setEncryptionSpec(EncryptionSpec.newBuilder().build())
+            .setEnableMonitoringPipelineLogs(true)
             .setError(Status.newBuilder().build())
             .build();
     mockJobService.addResponse(expectedResponse);
@@ -2369,6 +2372,7 @@ public class JobServiceClientTest {
             .setNextScheduleTime(Timestamp.newBuilder().build())
             .setStatsAnomaliesBaseDirectory(GcsDestination.newBuilder().build())
             .setEncryptionSpec(EncryptionSpec.newBuilder().build())
+            .setEnableMonitoringPipelineLogs(true)
             .setError(Status.newBuilder().build())
             .build();
     mockJobService.addResponse(expectedResponse);
@@ -2530,6 +2534,7 @@ public class JobServiceClientTest {
             .setNextScheduleTime(Timestamp.newBuilder().build())
             .setStatsAnomaliesBaseDirectory(GcsDestination.newBuilder().build())
             .setEncryptionSpec(EncryptionSpec.newBuilder().build())
+            .setEnableMonitoringPipelineLogs(true)
             .setError(Status.newBuilder().build())
             .build();
     Operation resultOperation =

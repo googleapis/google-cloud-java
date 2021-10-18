@@ -61,6 +61,10 @@ public interface ListPipelineJobsRequestOrBuilder
    * Lists the PipelineJobs that match the filter expression. The following
    * fields are supported:
    * * `pipeline_name`: Supports `=` and `!=` comparisons.
+   * * `display_name`: Supports `=`, `!=` comparisons, and `:` wildcard.
+   * * `pipeline_job_user_id`: Supports `=`, `!=` comparisons, and `:` wildcard.
+   *  for example, can check if pipeline's display_name contains *step* by doing
+   *   display_name:&#92;"*step*&#92;"
    * * `create_time`: Supports `=`, `!=`, `&lt;`, `&gt;`, `&lt;=`, and `&gt;=` comparisons.
    *   Values must be in RFC 3339 format.
    * * `update_time`: Supports `=`, `!=`, `&lt;`, `&gt;`, `&lt;=`, and `&gt;=` comparisons.
@@ -93,6 +97,10 @@ public interface ListPipelineJobsRequestOrBuilder
    * Lists the PipelineJobs that match the filter expression. The following
    * fields are supported:
    * * `pipeline_name`: Supports `=` and `!=` comparisons.
+   * * `display_name`: Supports `=`, `!=` comparisons, and `:` wildcard.
+   * * `pipeline_job_user_id`: Supports `=`, `!=` comparisons, and `:` wildcard.
+   *  for example, can check if pipeline's display_name contains *step* by doing
+   *   display_name:&#92;"*step*&#92;"
    * * `create_time`: Supports `=`, `!=`, `&lt;`, `&gt;`, `&lt;=`, and `&gt;=` comparisons.
    *   Values must be in RFC 3339 format.
    * * `update_time`: Supports `=`, `!=`, `&lt;`, `&gt;`, `&lt;=`, and `&gt;=` comparisons.
@@ -162,4 +170,51 @@ public interface ListPipelineJobsRequestOrBuilder
    * @return The bytes for pageToken.
    */
   com.google.protobuf.ByteString getPageTokenBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * A comma-separated list of fields to order by. The default sort order is in
+   * ascending order. Use "desc" after a field name for descending. You can have
+   * multiple order_by fields provided e.g. "create_time desc, end_time",
+   * "end_time, start_time, update_time" For example, using "create_time desc,
+   * end_time" will order results by create time in descending order, and if
+   * there are multiple jobs having the same create time, order them by the end
+   * time in ascending order. if order_by is not specified, it will order by
+   * default order is create time in descending order. Supported fields:
+   *   * `create_time`
+   *   * `update_time`
+   *   * `end_time`
+   *   * `start_time`
+   * </pre>
+   *
+   * <code>string order_by = 6;</code>
+   *
+   * @return The orderBy.
+   */
+  java.lang.String getOrderBy();
+  /**
+   *
+   *
+   * <pre>
+   * A comma-separated list of fields to order by. The default sort order is in
+   * ascending order. Use "desc" after a field name for descending. You can have
+   * multiple order_by fields provided e.g. "create_time desc, end_time",
+   * "end_time, start_time, update_time" For example, using "create_time desc,
+   * end_time" will order results by create time in descending order, and if
+   * there are multiple jobs having the same create time, order them by the end
+   * time in ascending order. if order_by is not specified, it will order by
+   * default order is create time in descending order. Supported fields:
+   *   * `create_time`
+   *   * `update_time`
+   *   * `end_time`
+   *   * `start_time`
+   * </pre>
+   *
+   * <code>string order_by = 6;</code>
+   *
+   * @return The bytes for orderBy.
+   */
+  com.google.protobuf.ByteString getOrderByBytes();
 }

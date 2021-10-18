@@ -1620,7 +1620,6 @@ public final class ExportModelRequest extends com.google.protobuf.GeneratedMessa
    *
    * <pre>
    * Required. The resource name of the Model to export.
-   * Format: `projects/{project}/locations/{location}/models/{model}`
    * </pre>
    *
    * <code>
@@ -1646,7 +1645,6 @@ public final class ExportModelRequest extends com.google.protobuf.GeneratedMessa
    *
    * <pre>
    * Required. The resource name of the Model to export.
-   * Format: `projects/{project}/locations/{location}/models/{model}`
    * </pre>
    *
    * <code>
@@ -2075,7 +2073,6 @@ public final class ExportModelRequest extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Required. The resource name of the Model to export.
-     * Format: `projects/{project}/locations/{location}/models/{model}`
      * </pre>
      *
      * <code>
@@ -2100,7 +2097,6 @@ public final class ExportModelRequest extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Required. The resource name of the Model to export.
-     * Format: `projects/{project}/locations/{location}/models/{model}`
      * </pre>
      *
      * <code>
@@ -2125,7 +2121,6 @@ public final class ExportModelRequest extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Required. The resource name of the Model to export.
-     * Format: `projects/{project}/locations/{location}/models/{model}`
      * </pre>
      *
      * <code>
@@ -2149,7 +2144,6 @@ public final class ExportModelRequest extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Required. The resource name of the Model to export.
-     * Format: `projects/{project}/locations/{location}/models/{model}`
      * </pre>
      *
      * <code>
@@ -2169,7 +2163,6 @@ public final class ExportModelRequest extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Required. The resource name of the Model to export.
-     * Format: `projects/{project}/locations/{location}/models/{model}`
      * </pre>
      *
      * <code>

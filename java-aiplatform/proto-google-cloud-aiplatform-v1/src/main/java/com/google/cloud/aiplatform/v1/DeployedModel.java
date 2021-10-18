@@ -177,6 +177,22 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
               enableAccessLogging_ = input.readBool();
               break;
             }
+          case 114:
+            {
+              com.google.cloud.aiplatform.v1.PrivateEndpoints.Builder subBuilder = null;
+              if (privateEndpoints_ != null) {
+                subBuilder = privateEndpoints_.toBuilder();
+              }
+              privateEndpoints_ =
+                  input.readMessage(
+                      com.google.cloud.aiplatform.v1.PrivateEndpoints.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(privateEndpoints_);
+                privateEndpoints_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
           case 120:
             {
               disableContainerLogging_ = input.readBool();
@@ -750,6 +766,66 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
     return enableAccessLogging_;
   }
 
+  public static final int PRIVATE_ENDPOINTS_FIELD_NUMBER = 14;
+  private com.google.cloud.aiplatform.v1.PrivateEndpoints privateEndpoints_;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Provide paths for users to send predict/explain/health requests directly to
+   * the deployed model services running on Cloud via private services access.
+   * This field is populated if [network][google.cloud.aiplatform.v1.Endpoint.network] is configured.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1.PrivateEndpoints private_endpoints = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the privateEndpoints field is set.
+   */
+  @java.lang.Override
+  public boolean hasPrivateEndpoints() {
+    return privateEndpoints_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Provide paths for users to send predict/explain/health requests directly to
+   * the deployed model services running on Cloud via private services access.
+   * This field is populated if [network][google.cloud.aiplatform.v1.Endpoint.network] is configured.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1.PrivateEndpoints private_endpoints = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The privateEndpoints.
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1.PrivateEndpoints getPrivateEndpoints() {
+    return privateEndpoints_ == null
+        ? com.google.cloud.aiplatform.v1.PrivateEndpoints.getDefaultInstance()
+        : privateEndpoints_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Provide paths for users to send predict/explain/health requests directly to
+   * the deployed model services running on Cloud via private services access.
+   * This field is populated if [network][google.cloud.aiplatform.v1.Endpoint.network] is configured.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1.PrivateEndpoints private_endpoints = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1.PrivateEndpointsOrBuilder getPrivateEndpointsOrBuilder() {
+    return getPrivateEndpoints();
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -792,6 +868,9 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
     }
     if (enableAccessLogging_ != false) {
       output.writeBool(13, enableAccessLogging_);
+    }
+    if (privateEndpoints_ != null) {
+      output.writeMessage(14, getPrivateEndpoints());
     }
     if (disableContainerLogging_ != false) {
       output.writeBool(15, disableContainerLogging_);
@@ -836,6 +915,9 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
     if (enableAccessLogging_ != false) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(13, enableAccessLogging_);
     }
+    if (privateEndpoints_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(14, getPrivateEndpoints());
+    }
     if (disableContainerLogging_ != false) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(15, disableContainerLogging_);
     }
@@ -869,6 +951,10 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
     if (!getServiceAccount().equals(other.getServiceAccount())) return false;
     if (getDisableContainerLogging() != other.getDisableContainerLogging()) return false;
     if (getEnableAccessLogging() != other.getEnableAccessLogging()) return false;
+    if (hasPrivateEndpoints() != other.hasPrivateEndpoints()) return false;
+    if (hasPrivateEndpoints()) {
+      if (!getPrivateEndpoints().equals(other.getPrivateEndpoints())) return false;
+    }
     if (!getPredictionResourcesCase().equals(other.getPredictionResourcesCase())) return false;
     switch (predictionResourcesCase_) {
       case 7:
@@ -911,6 +997,10 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getDisableContainerLogging());
     hash = (37 * hash) + ENABLE_ACCESS_LOGGING_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getEnableAccessLogging());
+    if (hasPrivateEndpoints()) {
+      hash = (37 * hash) + PRIVATE_ENDPOINTS_FIELD_NUMBER;
+      hash = (53 * hash) + getPrivateEndpoints().hashCode();
+    }
     switch (predictionResourcesCase_) {
       case 7:
         hash = (37 * hash) + DEDICATED_RESOURCES_FIELD_NUMBER;
@@ -1092,6 +1182,12 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
 
       enableAccessLogging_ = false;
 
+      if (privateEndpointsBuilder_ == null) {
+        privateEndpoints_ = null;
+      } else {
+        privateEndpoints_ = null;
+        privateEndpointsBuilder_ = null;
+      }
       predictionResourcesCase_ = 0;
       predictionResources_ = null;
       return this;
@@ -1151,6 +1247,11 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
       result.serviceAccount_ = serviceAccount_;
       result.disableContainerLogging_ = disableContainerLogging_;
       result.enableAccessLogging_ = enableAccessLogging_;
+      if (privateEndpointsBuilder_ == null) {
+        result.privateEndpoints_ = privateEndpoints_;
+      } else {
+        result.privateEndpoints_ = privateEndpointsBuilder_.build();
+      }
       result.predictionResourcesCase_ = predictionResourcesCase_;
       onBuilt();
       return result;
@@ -1228,6 +1329,9 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.getEnableAccessLogging() != false) {
         setEnableAccessLogging(other.getEnableAccessLogging());
+      }
+      if (other.hasPrivateEndpoints()) {
+        mergePrivateEndpoints(other.getPrivateEndpoints());
       }
       switch (other.getPredictionResourcesCase()) {
         case DEDICATED_RESOURCES:
@@ -2782,6 +2886,228 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
       enableAccessLogging_ = false;
       onChanged();
       return this;
+    }
+
+    private com.google.cloud.aiplatform.v1.PrivateEndpoints privateEndpoints_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.aiplatform.v1.PrivateEndpoints,
+            com.google.cloud.aiplatform.v1.PrivateEndpoints.Builder,
+            com.google.cloud.aiplatform.v1.PrivateEndpointsOrBuilder>
+        privateEndpointsBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Provide paths for users to send predict/explain/health requests directly to
+     * the deployed model services running on Cloud via private services access.
+     * This field is populated if [network][google.cloud.aiplatform.v1.Endpoint.network] is configured.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.PrivateEndpoints private_endpoints = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the privateEndpoints field is set.
+     */
+    public boolean hasPrivateEndpoints() {
+      return privateEndpointsBuilder_ != null || privateEndpoints_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Provide paths for users to send predict/explain/health requests directly to
+     * the deployed model services running on Cloud via private services access.
+     * This field is populated if [network][google.cloud.aiplatform.v1.Endpoint.network] is configured.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.PrivateEndpoints private_endpoints = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The privateEndpoints.
+     */
+    public com.google.cloud.aiplatform.v1.PrivateEndpoints getPrivateEndpoints() {
+      if (privateEndpointsBuilder_ == null) {
+        return privateEndpoints_ == null
+            ? com.google.cloud.aiplatform.v1.PrivateEndpoints.getDefaultInstance()
+            : privateEndpoints_;
+      } else {
+        return privateEndpointsBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Provide paths for users to send predict/explain/health requests directly to
+     * the deployed model services running on Cloud via private services access.
+     * This field is populated if [network][google.cloud.aiplatform.v1.Endpoint.network] is configured.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.PrivateEndpoints private_endpoints = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setPrivateEndpoints(com.google.cloud.aiplatform.v1.PrivateEndpoints value) {
+      if (privateEndpointsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        privateEndpoints_ = value;
+        onChanged();
+      } else {
+        privateEndpointsBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Provide paths for users to send predict/explain/health requests directly to
+     * the deployed model services running on Cloud via private services access.
+     * This field is populated if [network][google.cloud.aiplatform.v1.Endpoint.network] is configured.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.PrivateEndpoints private_endpoints = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setPrivateEndpoints(
+        com.google.cloud.aiplatform.v1.PrivateEndpoints.Builder builderForValue) {
+      if (privateEndpointsBuilder_ == null) {
+        privateEndpoints_ = builderForValue.build();
+        onChanged();
+      } else {
+        privateEndpointsBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Provide paths for users to send predict/explain/health requests directly to
+     * the deployed model services running on Cloud via private services access.
+     * This field is populated if [network][google.cloud.aiplatform.v1.Endpoint.network] is configured.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.PrivateEndpoints private_endpoints = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder mergePrivateEndpoints(com.google.cloud.aiplatform.v1.PrivateEndpoints value) {
+      if (privateEndpointsBuilder_ == null) {
+        if (privateEndpoints_ != null) {
+          privateEndpoints_ =
+              com.google.cloud.aiplatform.v1.PrivateEndpoints.newBuilder(privateEndpoints_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          privateEndpoints_ = value;
+        }
+        onChanged();
+      } else {
+        privateEndpointsBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Provide paths for users to send predict/explain/health requests directly to
+     * the deployed model services running on Cloud via private services access.
+     * This field is populated if [network][google.cloud.aiplatform.v1.Endpoint.network] is configured.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.PrivateEndpoints private_endpoints = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder clearPrivateEndpoints() {
+      if (privateEndpointsBuilder_ == null) {
+        privateEndpoints_ = null;
+        onChanged();
+      } else {
+        privateEndpoints_ = null;
+        privateEndpointsBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Provide paths for users to send predict/explain/health requests directly to
+     * the deployed model services running on Cloud via private services access.
+     * This field is populated if [network][google.cloud.aiplatform.v1.Endpoint.network] is configured.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.PrivateEndpoints private_endpoints = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1.PrivateEndpoints.Builder getPrivateEndpointsBuilder() {
+
+      onChanged();
+      return getPrivateEndpointsFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Provide paths for users to send predict/explain/health requests directly to
+     * the deployed model services running on Cloud via private services access.
+     * This field is populated if [network][google.cloud.aiplatform.v1.Endpoint.network] is configured.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.PrivateEndpoints private_endpoints = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1.PrivateEndpointsOrBuilder getPrivateEndpointsOrBuilder() {
+      if (privateEndpointsBuilder_ != null) {
+        return privateEndpointsBuilder_.getMessageOrBuilder();
+      } else {
+        return privateEndpoints_ == null
+            ? com.google.cloud.aiplatform.v1.PrivateEndpoints.getDefaultInstance()
+            : privateEndpoints_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Provide paths for users to send predict/explain/health requests directly to
+     * the deployed model services running on Cloud via private services access.
+     * This field is populated if [network][google.cloud.aiplatform.v1.Endpoint.network] is configured.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.PrivateEndpoints private_endpoints = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.aiplatform.v1.PrivateEndpoints,
+            com.google.cloud.aiplatform.v1.PrivateEndpoints.Builder,
+            com.google.cloud.aiplatform.v1.PrivateEndpointsOrBuilder>
+        getPrivateEndpointsFieldBuilder() {
+      if (privateEndpointsBuilder_ == null) {
+        privateEndpointsBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.aiplatform.v1.PrivateEndpoints,
+                com.google.cloud.aiplatform.v1.PrivateEndpoints.Builder,
+                com.google.cloud.aiplatform.v1.PrivateEndpointsOrBuilder>(
+                getPrivateEndpoints(), getParentForChildren(), isClean());
+        privateEndpoints_ = null;
+      }
+      return privateEndpointsBuilder_;
     }
 
     @java.lang.Override

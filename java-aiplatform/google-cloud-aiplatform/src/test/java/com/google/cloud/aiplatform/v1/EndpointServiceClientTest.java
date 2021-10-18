@@ -102,6 +102,7 @@ public class EndpointServiceClientTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .setEncryptionSpec(EncryptionSpec.newBuilder().build())
+            .setNetwork("network1843485230")
             .setModelDeploymentMonitoringJob(
                 ModelDeploymentMonitoringJobName.of(
                         "[PROJECT]", "[LOCATION]", "[MODEL_DEPLOYMENT_MONITORING_JOB]")
@@ -164,6 +165,7 @@ public class EndpointServiceClientTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .setEncryptionSpec(EncryptionSpec.newBuilder().build())
+            .setNetwork("network1843485230")
             .setModelDeploymentMonitoringJob(
                 ModelDeploymentMonitoringJobName.of(
                         "[PROJECT]", "[LOCATION]", "[MODEL_DEPLOYMENT_MONITORING_JOB]")
@@ -226,6 +228,7 @@ public class EndpointServiceClientTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .setEncryptionSpec(EncryptionSpec.newBuilder().build())
+            .setNetwork("network1843485230")
             .setModelDeploymentMonitoringJob(
                 ModelDeploymentMonitoringJobName.of(
                         "[PROJECT]", "[LOCATION]", "[MODEL_DEPLOYMENT_MONITORING_JOB]")
@@ -277,6 +280,7 @@ public class EndpointServiceClientTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .setEncryptionSpec(EncryptionSpec.newBuilder().build())
+            .setNetwork("network1843485230")
             .setModelDeploymentMonitoringJob(
                 ModelDeploymentMonitoringJobName.of(
                         "[PROJECT]", "[LOCATION]", "[MODEL_DEPLOYMENT_MONITORING_JOB]")
@@ -416,6 +420,7 @@ public class EndpointServiceClientTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .setEncryptionSpec(EncryptionSpec.newBuilder().build())
+            .setNetwork("network1843485230")
             .setModelDeploymentMonitoringJob(
                 ModelDeploymentMonitoringJobName.of(
                         "[PROJECT]", "[LOCATION]", "[MODEL_DEPLOYMENT_MONITORING_JOB]")

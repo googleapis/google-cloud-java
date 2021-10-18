@@ -346,6 +346,53 @@ public interface DeployedModelOrBuilder
    */
   boolean getEnableAccessLogging();
 
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Provide paths for users to send predict/explain/health requests directly to
+   * the deployed model services running on Cloud via private services access.
+   * This field is populated if [network][google.cloud.aiplatform.v1.Endpoint.network] is configured.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1.PrivateEndpoints private_endpoints = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the privateEndpoints field is set.
+   */
+  boolean hasPrivateEndpoints();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Provide paths for users to send predict/explain/health requests directly to
+   * the deployed model services running on Cloud via private services access.
+   * This field is populated if [network][google.cloud.aiplatform.v1.Endpoint.network] is configured.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1.PrivateEndpoints private_endpoints = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The privateEndpoints.
+   */
+  com.google.cloud.aiplatform.v1.PrivateEndpoints getPrivateEndpoints();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Provide paths for users to send predict/explain/health requests directly to
+   * the deployed model services running on Cloud via private services access.
+   * This field is populated if [network][google.cloud.aiplatform.v1.Endpoint.network] is configured.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1.PrivateEndpoints private_endpoints = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.cloud.aiplatform.v1.PrivateEndpointsOrBuilder getPrivateEndpointsOrBuilder();
+
   public com.google.cloud.aiplatform.v1.DeployedModel.PredictionResourcesCase
       getPredictionResourcesCase();
 }

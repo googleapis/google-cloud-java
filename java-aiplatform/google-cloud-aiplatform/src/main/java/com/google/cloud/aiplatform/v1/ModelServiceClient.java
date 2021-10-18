@@ -599,8 +599,9 @@ public class ModelServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Deletes a Model. Note: Model can only be deleted if there are no DeployedModels created from
-   * it.
+   * Deletes a Model.
+   *
+   * <p>Model can only be deleted if there are no [DeployedModels][] created from it.
    *
    * <p>Sample code:
    *
@@ -623,8 +624,9 @@ public class ModelServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Deletes a Model. Note: Model can only be deleted if there are no DeployedModels created from
-   * it.
+   * Deletes a Model.
+   *
+   * <p>Model can only be deleted if there are no [DeployedModels][] created from it.
    *
    * <p>Sample code:
    *
@@ -646,8 +648,9 @@ public class ModelServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Deletes a Model. Note: Model can only be deleted if there are no DeployedModels created from
-   * it.
+   * Deletes a Model.
+   *
+   * <p>Model can only be deleted if there are no [DeployedModels][] created from it.
    *
    * <p>Sample code:
    *
@@ -671,8 +674,9 @@ public class ModelServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Deletes a Model. Note: Model can only be deleted if there are no DeployedModels created from
-   * it.
+   * Deletes a Model.
+   *
+   * <p>Model can only be deleted if there are no [DeployedModels][] created from it.
    *
    * <p>Sample code:
    *
@@ -696,8 +700,9 @@ public class ModelServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Deletes a Model. Note: Model can only be deleted if there are no DeployedModels created from
-   * it.
+   * Deletes a Model.
+   *
+   * <p>Model can only be deleted if there are no [DeployedModels][] created from it.
    *
    * <p>Sample code:
    *
@@ -734,8 +739,7 @@ public class ModelServiceClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param name Required. The resource name of the Model to export. Format:
-   *     `projects/{project}/locations/{location}/models/{model}`
+   * @param name Required. The resource name of the Model to export.
    * @param outputConfig Required. The desired output location and configuration.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -766,8 +770,7 @@ public class ModelServiceClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param name Required. The resource name of the Model to export. Format:
-   *     `projects/{project}/locations/{location}/models/{model}`
+   * @param name Required. The resource name of the Model to export.
    * @param outputConfig Required. The desired output location and configuration.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */

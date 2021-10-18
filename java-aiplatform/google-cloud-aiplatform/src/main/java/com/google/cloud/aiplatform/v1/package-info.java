@@ -44,6 +44,35 @@
  * }
  * }</pre>
  *
+ * <p>======================= FeaturestoreOnlineServingServiceClient =======================
+ *
+ * <p>Service Description: A service for serving online feature values.
+ *
+ * <p>Sample for FeaturestoreOnlineServingServiceClient:
+ *
+ * <pre>{@code
+ * try (FeaturestoreOnlineServingServiceClient featurestoreOnlineServingServiceClient =
+ *     FeaturestoreOnlineServingServiceClient.create()) {
+ *   EntityTypeName entityType =
+ *       EntityTypeName.of("[PROJECT]", "[LOCATION]", "[FEATURESTORE]", "[ENTITY_TYPE]");
+ *   ReadFeatureValuesResponse response =
+ *       featurestoreOnlineServingServiceClient.readFeatureValues(entityType);
+ * }
+ * }</pre>
+ *
+ * <p>======================= FeaturestoreServiceClient =======================
+ *
+ * <p>Service Description: The service that handles CRUD and List for resources for Featurestore.
+ *
+ * <p>Sample for FeaturestoreServiceClient:
+ *
+ * <pre>{@code
+ * try (FeaturestoreServiceClient featurestoreServiceClient = FeaturestoreServiceClient.create()) {
+ *   FeaturestoreName name = FeaturestoreName.of("[PROJECT]", "[LOCATION]", "[FEATURESTORE]");
+ *   Featurestore response = featurestoreServiceClient.getFeaturestore(name);
+ * }
+ * }</pre>
+ *
  * <p>======================= IndexEndpointServiceClient =======================
  *
  * <p>Service Description: A service for managing Vertex AI's IndexEndpoints.
@@ -82,6 +111,19 @@
  *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
  *   CustomJob customJob = CustomJob.newBuilder().build();
  *   CustomJob response = jobServiceClient.createCustomJob(parent, customJob);
+ * }
+ * }</pre>
+ *
+ * <p>======================= MetadataServiceClient =======================
+ *
+ * <p>Service Description: Service for reading and writing metadata entries.
+ *
+ * <p>Sample for MetadataServiceClient:
+ *
+ * <pre>{@code
+ * try (MetadataServiceClient metadataServiceClient = MetadataServiceClient.create()) {
+ *   MetadataStoreName name = MetadataStoreName.of("[PROJECT]", "[LOCATION]", "[METADATA_STORE]");
+ *   MetadataStore response = metadataServiceClient.getMetadataStore(name);
  * }
  * }</pre>
  *

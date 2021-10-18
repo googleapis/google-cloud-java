@@ -118,4 +118,62 @@ public interface PredictResponseOrBuilder
    * @return The bytes for deployedModelId.
    */
   com.google.protobuf.ByteString getDeployedModelIdBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The resource name of the Model which is deployed as the DeployedModel that
+   * this prediction hits.
+   * </pre>
+   *
+   * <code>
+   * string model = 3 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The model.
+   */
+  java.lang.String getModel();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The resource name of the Model which is deployed as the DeployedModel that
+   * this prediction hits.
+   * </pre>
+   *
+   * <code>
+   * string model = 3 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The bytes for model.
+   */
+  com.google.protobuf.ByteString getModelBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The [display name][google.cloud.aiplatform.v1.Model.display_name] of the Model which is deployed as
+   * the DeployedModel that this prediction hits.
+   * </pre>
+   *
+   * <code>string model_display_name = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The modelDisplayName.
+   */
+  java.lang.String getModelDisplayName();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The [display name][google.cloud.aiplatform.v1.Model.display_name] of the Model which is deployed as
+   * the DeployedModel that this prediction hits.
+   * </pre>
+   *
+   * <code>string model_display_name = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The bytes for modelDisplayName.
+   */
+  com.google.protobuf.ByteString getModelDisplayNameBytes();
 }

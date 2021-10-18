@@ -44,6 +44,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
     description_ = "";
     deployedModels_ = java.util.Collections.emptyList();
     etag_ = "";
+    network_ = "";
     modelDeploymentMonitoringJob_ = "";
   }
 
@@ -189,6 +190,13 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
                 encryptionSpec_ = subBuilder.buildPartial();
               }
 
+              break;
+            }
+          case 106:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              network_ = s;
               break;
             }
           case 114:
@@ -926,6 +934,71 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
     return getEncryptionSpec();
   }
 
+  public static final int NETWORK_FIELD_NUMBER = 13;
+  private volatile java.lang.Object network_;
+  /**
+   *
+   *
+   * <pre>
+   * The full name of the Google Compute Engine
+   * [network](https://cloud.google.com//compute/docs/networks-and-firewalls#networks)
+   * to which the Endpoint should be peered.
+   * Private services access must already be configured for the network. If left
+   * unspecified, the Endpoint is not peered with any network.
+   * [Format](https://cloud.google.com/compute/docs/reference/rest/v1/networks/insert):
+   * `projects/{project}/global/networks/{network}`.
+   * Where `{project}` is a project number, as in `12345`, and `{network}` is
+   * network name.
+   * </pre>
+   *
+   * <code>string network = 13 [(.google.api.resource_reference) = { ... }</code>
+   *
+   * @return The network.
+   */
+  @java.lang.Override
+  public java.lang.String getNetwork() {
+    java.lang.Object ref = network_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      network_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The full name of the Google Compute Engine
+   * [network](https://cloud.google.com//compute/docs/networks-and-firewalls#networks)
+   * to which the Endpoint should be peered.
+   * Private services access must already be configured for the network. If left
+   * unspecified, the Endpoint is not peered with any network.
+   * [Format](https://cloud.google.com/compute/docs/reference/rest/v1/networks/insert):
+   * `projects/{project}/global/networks/{network}`.
+   * Where `{project}` is a project number, as in `12345`, and `{network}` is
+   * network name.
+   * </pre>
+   *
+   * <code>string network = 13 [(.google.api.resource_reference) = { ... }</code>
+   *
+   * @return The bytes for network.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getNetworkBytes() {
+    java.lang.Object ref = network_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      network_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   public static final int MODEL_DEPLOYMENT_MONITORING_JOB_FIELD_NUMBER = 14;
   private volatile java.lang.Object modelDeploymentMonitoringJob_;
   /**
@@ -1027,6 +1100,9 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
     if (encryptionSpec_ != null) {
       output.writeMessage(10, getEncryptionSpec());
     }
+    if (!getNetworkBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 13, network_);
+    }
     if (!getModelDeploymentMonitoringJobBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 14, modelDeploymentMonitoringJob_);
     }
@@ -1083,6 +1159,9 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
     if (encryptionSpec_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(10, getEncryptionSpec());
     }
+    if (!getNetworkBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(13, network_);
+    }
     if (!getModelDeploymentMonitoringJobBytes().isEmpty()) {
       size +=
           com.google.protobuf.GeneratedMessageV3.computeStringSize(
@@ -1122,6 +1201,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
     if (hasEncryptionSpec()) {
       if (!getEncryptionSpec().equals(other.getEncryptionSpec())) return false;
     }
+    if (!getNetwork().equals(other.getNetwork())) return false;
     if (!getModelDeploymentMonitoringJob().equals(other.getModelDeploymentMonitoringJob()))
       return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
@@ -1167,6 +1247,8 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
       hash = (37 * hash) + ENCRYPTION_SPEC_FIELD_NUMBER;
       hash = (53 * hash) + getEncryptionSpec().hashCode();
     }
+    hash = (37 * hash) + NETWORK_FIELD_NUMBER;
+    hash = (53 * hash) + getNetwork().hashCode();
     hash = (37 * hash) + MODEL_DEPLOYMENT_MONITORING_JOB_FIELD_NUMBER;
     hash = (53 * hash) + getModelDeploymentMonitoringJob().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
@@ -1375,6 +1457,8 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
         encryptionSpec_ = null;
         encryptionSpecBuilder_ = null;
       }
+      network_ = "";
+
       modelDeploymentMonitoringJob_ = "";
 
       return this;
@@ -1437,6 +1521,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
       } else {
         result.encryptionSpec_ = encryptionSpecBuilder_.build();
       }
+      result.network_ = network_;
       result.modelDeploymentMonitoringJob_ = modelDeploymentMonitoringJob_;
       onBuilt();
       return result;
@@ -1540,6 +1625,10 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.hasEncryptionSpec()) {
         mergeEncryptionSpec(other.getEncryptionSpec());
+      }
+      if (!other.getNetwork().isEmpty()) {
+        network_ = other.network_;
+        onChanged();
       }
       if (!other.getModelDeploymentMonitoringJob().isEmpty()) {
         modelDeploymentMonitoringJob_ = other.modelDeploymentMonitoringJob_;
@@ -3427,6 +3516,152 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
         encryptionSpec_ = null;
       }
       return encryptionSpecBuilder_;
+    }
+
+    private java.lang.Object network_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * The full name of the Google Compute Engine
+     * [network](https://cloud.google.com//compute/docs/networks-and-firewalls#networks)
+     * to which the Endpoint should be peered.
+     * Private services access must already be configured for the network. If left
+     * unspecified, the Endpoint is not peered with any network.
+     * [Format](https://cloud.google.com/compute/docs/reference/rest/v1/networks/insert):
+     * `projects/{project}/global/networks/{network}`.
+     * Where `{project}` is a project number, as in `12345`, and `{network}` is
+     * network name.
+     * </pre>
+     *
+     * <code>string network = 13 [(.google.api.resource_reference) = { ... }</code>
+     *
+     * @return The network.
+     */
+    public java.lang.String getNetwork() {
+      java.lang.Object ref = network_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        network_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The full name of the Google Compute Engine
+     * [network](https://cloud.google.com//compute/docs/networks-and-firewalls#networks)
+     * to which the Endpoint should be peered.
+     * Private services access must already be configured for the network. If left
+     * unspecified, the Endpoint is not peered with any network.
+     * [Format](https://cloud.google.com/compute/docs/reference/rest/v1/networks/insert):
+     * `projects/{project}/global/networks/{network}`.
+     * Where `{project}` is a project number, as in `12345`, and `{network}` is
+     * network name.
+     * </pre>
+     *
+     * <code>string network = 13 [(.google.api.resource_reference) = { ... }</code>
+     *
+     * @return The bytes for network.
+     */
+    public com.google.protobuf.ByteString getNetworkBytes() {
+      java.lang.Object ref = network_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        network_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The full name of the Google Compute Engine
+     * [network](https://cloud.google.com//compute/docs/networks-and-firewalls#networks)
+     * to which the Endpoint should be peered.
+     * Private services access must already be configured for the network. If left
+     * unspecified, the Endpoint is not peered with any network.
+     * [Format](https://cloud.google.com/compute/docs/reference/rest/v1/networks/insert):
+     * `projects/{project}/global/networks/{network}`.
+     * Where `{project}` is a project number, as in `12345`, and `{network}` is
+     * network name.
+     * </pre>
+     *
+     * <code>string network = 13 [(.google.api.resource_reference) = { ... }</code>
+     *
+     * @param value The network to set.
+     * @return This builder for chaining.
+     */
+    public Builder setNetwork(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+
+      network_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The full name of the Google Compute Engine
+     * [network](https://cloud.google.com//compute/docs/networks-and-firewalls#networks)
+     * to which the Endpoint should be peered.
+     * Private services access must already be configured for the network. If left
+     * unspecified, the Endpoint is not peered with any network.
+     * [Format](https://cloud.google.com/compute/docs/reference/rest/v1/networks/insert):
+     * `projects/{project}/global/networks/{network}`.
+     * Where `{project}` is a project number, as in `12345`, and `{network}` is
+     * network name.
+     * </pre>
+     *
+     * <code>string network = 13 [(.google.api.resource_reference) = { ... }</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearNetwork() {
+
+      network_ = getDefaultInstance().getNetwork();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The full name of the Google Compute Engine
+     * [network](https://cloud.google.com//compute/docs/networks-and-firewalls#networks)
+     * to which the Endpoint should be peered.
+     * Private services access must already be configured for the network. If left
+     * unspecified, the Endpoint is not peered with any network.
+     * [Format](https://cloud.google.com/compute/docs/reference/rest/v1/networks/insert):
+     * `projects/{project}/global/networks/{network}`.
+     * Where `{project}` is a project number, as in `12345`, and `{network}` is
+     * network name.
+     * </pre>
+     *
+     * <code>string network = 13 [(.google.api.resource_reference) = { ... }</code>
+     *
+     * @param value The bytes for network to set.
+     * @return This builder for chaining.
+     */
+    public Builder setNetworkBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
+      network_ = value;
+      onChanged();
+      return this;
     }
 
     private java.lang.Object modelDeploymentMonitoringJob_ = "";

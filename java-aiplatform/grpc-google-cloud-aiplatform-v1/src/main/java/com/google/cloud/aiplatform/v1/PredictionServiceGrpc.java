@@ -232,7 +232,12 @@ public final class PredictionServiceGrpc {
      *
      *
      * <pre>
-     * Perform an online prediction with arbitrary http payload.
+     * Perform an online prediction with an arbitrary HTTP payload.
+     * The response includes the following HTTP headers:
+     * * `X-Vertex-AI-Endpoint-Id`: ID of the [Endpoint][google.cloud.aiplatform.v1.Endpoint] that served this
+     * prediction.
+     * * `X-Vertex-AI-Deployed-Model-Id`: ID of the Endpoint's [DeployedModel][google.cloud.aiplatform.v1.DeployedModel]
+     * that served this prediction.
      * </pre>
      */
     public void rawPredict(
@@ -326,7 +331,12 @@ public final class PredictionServiceGrpc {
      *
      *
      * <pre>
-     * Perform an online prediction with arbitrary http payload.
+     * Perform an online prediction with an arbitrary HTTP payload.
+     * The response includes the following HTTP headers:
+     * * `X-Vertex-AI-Endpoint-Id`: ID of the [Endpoint][google.cloud.aiplatform.v1.Endpoint] that served this
+     * prediction.
+     * * `X-Vertex-AI-Deployed-Model-Id`: ID of the Endpoint's [DeployedModel][google.cloud.aiplatform.v1.DeployedModel]
+     * that served this prediction.
      * </pre>
      */
     public void rawPredict(
@@ -397,7 +407,12 @@ public final class PredictionServiceGrpc {
      *
      *
      * <pre>
-     * Perform an online prediction with arbitrary http payload.
+     * Perform an online prediction with an arbitrary HTTP payload.
+     * The response includes the following HTTP headers:
+     * * `X-Vertex-AI-Endpoint-Id`: ID of the [Endpoint][google.cloud.aiplatform.v1.Endpoint] that served this
+     * prediction.
+     * * `X-Vertex-AI-Deployed-Model-Id`: ID of the Endpoint's [DeployedModel][google.cloud.aiplatform.v1.DeployedModel]
+     * that served this prediction.
      * </pre>
      */
     public com.google.api.HttpBody rawPredict(
@@ -465,7 +480,12 @@ public final class PredictionServiceGrpc {
      *
      *
      * <pre>
-     * Perform an online prediction with arbitrary http payload.
+     * Perform an online prediction with an arbitrary HTTP payload.
+     * The response includes the following HTTP headers:
+     * * `X-Vertex-AI-Endpoint-Id`: ID of the [Endpoint][google.cloud.aiplatform.v1.Endpoint] that served this
+     * prediction.
+     * * `X-Vertex-AI-Deployed-Model-Id`: ID of the Endpoint's [DeployedModel][google.cloud.aiplatform.v1.DeployedModel]
+     * that served this prediction.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.api.HttpBody> rawPredict(

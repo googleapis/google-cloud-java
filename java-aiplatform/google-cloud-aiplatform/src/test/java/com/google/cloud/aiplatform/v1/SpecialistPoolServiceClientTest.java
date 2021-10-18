@@ -96,6 +96,7 @@ public class SpecialistPoolServiceClientTest {
             .setSpecialistManagersCount(-984151356)
             .addAllSpecialistManagerEmails(new ArrayList<String>())
             .addAllPendingDataLabelingJobs(new ArrayList<String>())
+            .addAllSpecialistWorkerEmails(new ArrayList<String>())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -151,6 +152,7 @@ public class SpecialistPoolServiceClientTest {
             .setSpecialistManagersCount(-984151356)
             .addAllSpecialistManagerEmails(new ArrayList<String>())
             .addAllPendingDataLabelingJobs(new ArrayList<String>())
+            .addAllSpecialistWorkerEmails(new ArrayList<String>())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -206,6 +208,7 @@ public class SpecialistPoolServiceClientTest {
             .setSpecialistManagersCount(-984151356)
             .addAllSpecialistManagerEmails(new ArrayList<String>())
             .addAllPendingDataLabelingJobs(new ArrayList<String>())
+            .addAllSpecialistWorkerEmails(new ArrayList<String>())
             .build();
     mockSpecialistPoolService.addResponse(expectedResponse);
 
@@ -250,6 +253,7 @@ public class SpecialistPoolServiceClientTest {
             .setSpecialistManagersCount(-984151356)
             .addAllSpecialistManagerEmails(new ArrayList<String>())
             .addAllPendingDataLabelingJobs(new ArrayList<String>())
+            .addAllSpecialistWorkerEmails(new ArrayList<String>())
             .build();
     mockSpecialistPoolService.addResponse(expectedResponse);
 
@@ -468,6 +472,7 @@ public class SpecialistPoolServiceClientTest {
             .setSpecialistManagersCount(-984151356)
             .addAllSpecialistManagerEmails(new ArrayList<String>())
             .addAllPendingDataLabelingJobs(new ArrayList<String>())
+            .addAllSpecialistWorkerEmails(new ArrayList<String>())
             .build();
     Operation resultOperation =
         Operation.newBuilder()

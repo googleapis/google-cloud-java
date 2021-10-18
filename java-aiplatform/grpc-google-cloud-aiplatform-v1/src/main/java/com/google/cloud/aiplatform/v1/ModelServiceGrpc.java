@@ -595,7 +595,7 @@ public final class ModelServiceGrpc {
      *
      * <pre>
      * Deletes a Model.
-     * Note: Model can only be deleted if there are no DeployedModels created
+     * Model can only be deleted if there are no [DeployedModels][] created
      * from it.
      * </pre>
      */
@@ -839,7 +839,7 @@ public final class ModelServiceGrpc {
      *
      * <pre>
      * Deletes a Model.
-     * Note: Model can only be deleted if there are no DeployedModels created
+     * Model can only be deleted if there are no [DeployedModels][] created
      * from it.
      * </pre>
      */
@@ -1016,7 +1016,7 @@ public final class ModelServiceGrpc {
      *
      * <pre>
      * Deletes a Model.
-     * Note: Model can only be deleted if there are no DeployedModels created
+     * Model can only be deleted if there are no [DeployedModels][] created
      * from it.
      * </pre>
      */
@@ -1172,7 +1172,7 @@ public final class ModelServiceGrpc {
      *
      * <pre>
      * Deletes a Model.
-     * Note: Model can only be deleted if there are no DeployedModels created
+     * Model can only be deleted if there are no [DeployedModels][] created
      * from it.
      * </pre>
      */
