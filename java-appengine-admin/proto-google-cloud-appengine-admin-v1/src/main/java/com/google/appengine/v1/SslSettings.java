@@ -475,7 +475,7 @@ public final class SslSettings extends com.google.protobuf.GeneratedMessageV3
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getCertificateIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(certificateId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, certificateId_);
     }
     if (sslManagementType_
@@ -483,7 +483,7 @@ public final class SslSettings extends com.google.protobuf.GeneratedMessageV3
             .getNumber()) {
       output.writeEnum(3, sslManagementType_);
     }
-    if (!getPendingManagedCertificateIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(pendingManagedCertificateId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 4, pendingManagedCertificateId_);
     }
     unknownFields.writeTo(output);
@@ -495,7 +495,7 @@ public final class SslSettings extends com.google.protobuf.GeneratedMessageV3
     if (size != -1) return size;
 
     size = 0;
-    if (!getCertificateIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(certificateId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, certificateId_);
     }
     if (sslManagementType_
@@ -503,7 +503,7 @@ public final class SslSettings extends com.google.protobuf.GeneratedMessageV3
             .getNumber()) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(3, sslManagementType_);
     }
-    if (!getPendingManagedCertificateIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(pendingManagedCertificateId_)) {
       size +=
           com.google.protobuf.GeneratedMessageV3.computeStringSize(4, pendingManagedCertificateId_);
     }

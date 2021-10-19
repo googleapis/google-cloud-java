@@ -177,7 +177,7 @@ public final class CreateVersionMetadataV1 extends com.google.protobuf.Generated
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getCloudBuildIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(cloudBuildId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, cloudBuildId_);
     }
     unknownFields.writeTo(output);
@@ -189,7 +189,7 @@ public final class CreateVersionMetadataV1 extends com.google.protobuf.Generated
     if (size != -1) return size;
 
     size = 0;
-    if (!getCloudBuildIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(cloudBuildId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, cloudBuildId_);
     }
     size += unknownFields.getSerializedSize();

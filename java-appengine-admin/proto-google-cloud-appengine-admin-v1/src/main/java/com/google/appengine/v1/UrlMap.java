@@ -830,7 +830,7 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getUrlRegexBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(urlRegex_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, urlRegex_);
     }
     if (handlerTypeCase_ == 2) {
@@ -867,7 +867,7 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
     if (size != -1) return size;
 
     size = 0;
-    if (!getUrlRegexBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(urlRegex_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, urlRegex_);
     }
     if (handlerTypeCase_ == 2) {

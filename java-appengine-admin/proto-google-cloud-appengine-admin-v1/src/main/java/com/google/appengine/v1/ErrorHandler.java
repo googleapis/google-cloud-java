@@ -492,10 +492,10 @@ public final class ErrorHandler extends com.google.protobuf.GeneratedMessageV3
         != com.google.appengine.v1.ErrorHandler.ErrorCode.ERROR_CODE_UNSPECIFIED.getNumber()) {
       output.writeEnum(1, errorCode_);
     }
-    if (!getStaticFileBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(staticFile_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, staticFile_);
     }
-    if (!getMimeTypeBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(mimeType_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, mimeType_);
     }
     unknownFields.writeTo(output);
@@ -511,10 +511,10 @@ public final class ErrorHandler extends com.google.protobuf.GeneratedMessageV3
         != com.google.appengine.v1.ErrorHandler.ErrorCode.ERROR_CODE_UNSPECIFIED.getNumber()) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(1, errorCode_);
     }
-    if (!getStaticFileBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(staticFile_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, staticFile_);
     }
-    if (!getMimeTypeBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(mimeType_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, mimeType_);
     }
     size += unknownFields.getSerializedSize();

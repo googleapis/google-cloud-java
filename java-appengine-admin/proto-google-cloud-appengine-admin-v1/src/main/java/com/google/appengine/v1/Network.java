@@ -433,13 +433,13 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
     for (int i = 0; i < forwardedPorts_.size(); i++) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, forwardedPorts_.getRaw(i));
     }
-    if (!getInstanceTagBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(instanceTag_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, instanceTag_);
     }
-    if (!getNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, name_);
     }
-    if (!getSubnetworkNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(subnetworkName_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 4, subnetworkName_);
     }
     if (sessionAffinity_ != false) {
@@ -462,13 +462,13 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
       size += dataSize;
       size += 1 * getForwardedPortsList().size();
     }
-    if (!getInstanceTagBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(instanceTag_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, instanceTag_);
     }
-    if (!getNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, name_);
     }
-    if (!getSubnetworkNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(subnetworkName_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, subnetworkName_);
     }
     if (sessionAffinity_ != false) {

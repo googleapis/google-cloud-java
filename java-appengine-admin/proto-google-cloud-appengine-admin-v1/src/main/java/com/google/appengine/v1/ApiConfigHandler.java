@@ -375,13 +375,13 @@ public final class ApiConfigHandler extends com.google.protobuf.GeneratedMessage
     if (login_ != com.google.appengine.v1.LoginRequirement.LOGIN_UNSPECIFIED.getNumber()) {
       output.writeEnum(2, login_);
     }
-    if (!getScriptBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(script_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, script_);
     }
     if (securityLevel_ != com.google.appengine.v1.SecurityLevel.SECURE_UNSPECIFIED.getNumber()) {
       output.writeEnum(4, securityLevel_);
     }
-    if (!getUrlBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(url_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 5, url_);
     }
     unknownFields.writeTo(output);
@@ -400,13 +400,13 @@ public final class ApiConfigHandler extends com.google.protobuf.GeneratedMessage
     if (login_ != com.google.appengine.v1.LoginRequirement.LOGIN_UNSPECIFIED.getNumber()) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(2, login_);
     }
-    if (!getScriptBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(script_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, script_);
     }
     if (securityLevel_ != com.google.appengine.v1.SecurityLevel.SECURE_UNSPECIFIED.getNumber()) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(4, securityLevel_);
     }
-    if (!getUrlBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(url_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, url_);
     }
     size += unknownFields.getSerializedSize();

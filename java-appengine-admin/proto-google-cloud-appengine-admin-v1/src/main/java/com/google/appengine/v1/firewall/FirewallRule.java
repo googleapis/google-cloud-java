@@ -471,10 +471,10 @@ public final class FirewallRule extends com.google.protobuf.GeneratedMessageV3
         != com.google.appengine.v1.firewall.FirewallRule.Action.UNSPECIFIED_ACTION.getNumber()) {
       output.writeEnum(2, action_);
     }
-    if (!getSourceRangeBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(sourceRange_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, sourceRange_);
     }
-    if (!getDescriptionBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(description_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 4, description_);
     }
     unknownFields.writeTo(output);
@@ -493,10 +493,10 @@ public final class FirewallRule extends com.google.protobuf.GeneratedMessageV3
         != com.google.appengine.v1.firewall.FirewallRule.Action.UNSPECIFIED_ACTION.getNumber()) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(2, action_);
     }
-    if (!getSourceRangeBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(sourceRange_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, sourceRange_);
     }
-    if (!getDescriptionBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(description_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, description_);
     }
     size += unknownFields.getSerializedSize();

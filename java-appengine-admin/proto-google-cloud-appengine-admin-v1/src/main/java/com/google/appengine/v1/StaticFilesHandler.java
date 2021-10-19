@@ -543,15 +543,15 @@ public final class StaticFilesHandler extends com.google.protobuf.GeneratedMessa
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getPathBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(path_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, path_);
     }
-    if (!getUploadPathRegexBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(uploadPathRegex_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, uploadPathRegex_);
     }
     com.google.protobuf.GeneratedMessageV3.serializeStringMapTo(
         output, internalGetHttpHeaders(), HttpHeadersDefaultEntryHolder.defaultEntry, 3);
-    if (!getMimeTypeBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(mimeType_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 4, mimeType_);
     }
     if (expiration_ != null) {
@@ -572,10 +572,10 @@ public final class StaticFilesHandler extends com.google.protobuf.GeneratedMessa
     if (size != -1) return size;
 
     size = 0;
-    if (!getPathBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(path_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, path_);
     }
-    if (!getUploadPathRegexBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(uploadPathRegex_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, uploadPathRegex_);
     }
     for (java.util.Map.Entry<java.lang.String, java.lang.String> entry :
@@ -588,7 +588,7 @@ public final class StaticFilesHandler extends com.google.protobuf.GeneratedMessa
               .build();
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(3, httpHeaders__);
     }
-    if (!getMimeTypeBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(mimeType_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, mimeType_);
     }
     if (expiration_ != null) {

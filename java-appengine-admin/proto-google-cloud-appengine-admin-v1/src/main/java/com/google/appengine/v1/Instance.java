@@ -1687,25 +1687,25 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name_);
     }
-    if (!getIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(id_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, id_);
     }
-    if (!getAppEngineReleaseBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(appEngineRelease_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, appEngineRelease_);
     }
     if (availability_ != com.google.appengine.v1.Instance.Availability.UNSPECIFIED.getNumber()) {
       output.writeEnum(4, availability_);
     }
-    if (!getVmNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(vmName_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 5, vmName_);
     }
-    if (!getVmZoneNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(vmZoneName_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 6, vmZoneName_);
     }
-    if (!getVmIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(vmId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 7, vmId_);
     }
     if (startTime_ != null) {
@@ -1726,13 +1726,13 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     if (memoryUsage_ != 0L) {
       output.writeInt64(13, memoryUsage_);
     }
-    if (!getVmStatusBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(vmStatus_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 14, vmStatus_);
     }
     if (vmDebugEnabled_ != false) {
       output.writeBool(15, vmDebugEnabled_);
     }
-    if (!getVmIpBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(vmIp_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 16, vmIp_);
     }
     if (vmLiveness_
@@ -1749,25 +1749,25 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     if (size != -1) return size;
 
     size = 0;
-    if (!getNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, name_);
     }
-    if (!getIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(id_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, id_);
     }
-    if (!getAppEngineReleaseBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(appEngineRelease_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, appEngineRelease_);
     }
     if (availability_ != com.google.appengine.v1.Instance.Availability.UNSPECIFIED.getNumber()) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(4, availability_);
     }
-    if (!getVmNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(vmName_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, vmName_);
     }
-    if (!getVmZoneNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(vmZoneName_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, vmZoneName_);
     }
-    if (!getVmIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(vmId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, vmId_);
     }
     if (startTime_ != null) {
@@ -1788,13 +1788,13 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     if (memoryUsage_ != 0L) {
       size += com.google.protobuf.CodedOutputStream.computeInt64Size(13, memoryUsage_);
     }
-    if (!getVmStatusBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(vmStatus_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(14, vmStatus_);
     }
     if (vmDebugEnabled_ != false) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(15, vmDebugEnabled_);
     }
-    if (!getVmIpBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(vmIp_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(16, vmIp_);
     }
     if (vmLiveness_
