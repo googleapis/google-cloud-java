@@ -1,5 +1,12 @@
 # Changelog
 
+### [3.0.8](https://www.github.com/googleapis/java-monitoring/compare/v3.0.7...v3.0.8) (2021-10-19)
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.4.0 ([#702](https://www.github.com/googleapis/java-monitoring/issues/702)) ([61fb443](https://www.github.com/googleapis/java-monitoring/commit/61fb443625368228cadda3b8c772f16322e533ca))
+
 ### [3.0.7](https://www.github.com/googleapis/java-monitoring/compare/v3.0.6...v3.0.7) (2021-10-06)
 
 
