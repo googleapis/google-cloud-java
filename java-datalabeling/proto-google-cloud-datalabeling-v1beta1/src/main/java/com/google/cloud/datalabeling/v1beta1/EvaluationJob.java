@@ -979,10 +979,10 @@ public final class EvaluationJob extends com.google.protobuf.GeneratedMessageV3
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name_);
     }
-    if (!getDescriptionBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(description_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, description_);
     }
     if (state_
@@ -990,16 +990,16 @@ public final class EvaluationJob extends com.google.protobuf.GeneratedMessageV3
             .getNumber()) {
       output.writeEnum(3, state_);
     }
-    if (!getScheduleBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(schedule_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 4, schedule_);
     }
-    if (!getModelVersionBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(modelVersion_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 5, modelVersion_);
     }
     if (evaluationJobConfig_ != null) {
       output.writeMessage(6, getEvaluationJobConfig());
     }
-    if (!getAnnotationSpecSetBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(annotationSpecSet_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 7, annotationSpecSet_);
     }
     if (labelMissingGroundTruth_ != false) {
@@ -1020,10 +1020,10 @@ public final class EvaluationJob extends com.google.protobuf.GeneratedMessageV3
     if (size != -1) return size;
 
     size = 0;
-    if (!getNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, name_);
     }
-    if (!getDescriptionBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(description_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, description_);
     }
     if (state_
@@ -1031,16 +1031,16 @@ public final class EvaluationJob extends com.google.protobuf.GeneratedMessageV3
             .getNumber()) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(3, state_);
     }
-    if (!getScheduleBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(schedule_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, schedule_);
     }
-    if (!getModelVersionBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(modelVersion_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, modelVersion_);
     }
     if (evaluationJobConfig_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(6, getEvaluationJobConfig());
     }
-    if (!getAnnotationSpecSetBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(annotationSpecSet_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, annotationSpecSet_);
     }
     if (labelMissingGroundTruth_ != false) {

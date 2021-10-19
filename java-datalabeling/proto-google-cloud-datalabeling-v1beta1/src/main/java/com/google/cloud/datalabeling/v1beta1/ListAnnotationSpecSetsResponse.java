@@ -274,7 +274,7 @@ public final class ListAnnotationSpecSetsResponse extends com.google.protobuf.Ge
     for (int i = 0; i < annotationSpecSets_.size(); i++) {
       output.writeMessage(1, annotationSpecSets_.get(i));
     }
-    if (!getNextPageTokenBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(nextPageToken_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, nextPageToken_);
     }
     unknownFields.writeTo(output);
@@ -290,7 +290,7 @@ public final class ListAnnotationSpecSetsResponse extends com.google.protobuf.Ge
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(1, annotationSpecSets_.get(i));
     }
-    if (!getNextPageTokenBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(nextPageToken_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, nextPageToken_);
     }
     size += unknownFields.getSerializedSize();

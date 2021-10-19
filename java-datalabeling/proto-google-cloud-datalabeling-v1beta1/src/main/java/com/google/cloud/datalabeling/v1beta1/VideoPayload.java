@@ -400,10 +400,10 @@ public final class VideoPayload extends com.google.protobuf.GeneratedMessageV3
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getMimeTypeBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(mimeType_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, mimeType_);
     }
-    if (!getVideoUriBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(videoUri_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, videoUri_);
     }
     for (int i = 0; i < videoThumbnails_.size(); i++) {
@@ -412,7 +412,7 @@ public final class VideoPayload extends com.google.protobuf.GeneratedMessageV3
     if (frameRate_ != 0F) {
       output.writeFloat(4, frameRate_);
     }
-    if (!getSignedUriBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(signedUri_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 5, signedUri_);
     }
     unknownFields.writeTo(output);
@@ -424,10 +424,10 @@ public final class VideoPayload extends com.google.protobuf.GeneratedMessageV3
     if (size != -1) return size;
 
     size = 0;
-    if (!getMimeTypeBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(mimeType_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, mimeType_);
     }
-    if (!getVideoUriBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(videoUri_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, videoUri_);
     }
     for (int i = 0; i < videoThumbnails_.size(); i++) {
@@ -436,7 +436,7 @@ public final class VideoPayload extends com.google.protobuf.GeneratedMessageV3
     if (frameRate_ != 0F) {
       size += com.google.protobuf.CodedOutputStream.computeFloatSize(4, frameRate_);
     }
-    if (!getSignedUriBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(signedUri_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, signedUri_);
     }
     size += unknownFields.getSerializedSize();

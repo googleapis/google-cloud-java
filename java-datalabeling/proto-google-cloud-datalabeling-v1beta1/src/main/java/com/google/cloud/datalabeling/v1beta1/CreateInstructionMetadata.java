@@ -331,7 +331,7 @@ public final class CreateInstructionMetadata extends com.google.protobuf.Generat
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getInstructionBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(instruction_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, instruction_);
     }
     for (int i = 0; i < partialFailures_.size(); i++) {
@@ -349,7 +349,7 @@ public final class CreateInstructionMetadata extends com.google.protobuf.Generat
     if (size != -1) return size;
 
     size = 0;
-    if (!getInstructionBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(instruction_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, instruction_);
     }
     for (int i = 0; i < partialFailures_.size(); i++) {

@@ -360,7 +360,7 @@ public final class ImageSegmentationAnnotation extends com.google.protobuf.Gener
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
     com.google.protobuf.GeneratedMessageV3.serializeStringMapTo(
         output, internalGetAnnotationColors(), AnnotationColorsDefaultEntryHolder.defaultEntry, 1);
-    if (!getMimeTypeBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(mimeType_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, mimeType_);
     }
     if (!imageBytes_.isEmpty()) {
@@ -387,7 +387,7 @@ public final class ImageSegmentationAnnotation extends com.google.protobuf.Gener
                   .build();
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, annotationColors__);
     }
-    if (!getMimeTypeBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(mimeType_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, mimeType_);
     }
     if (!imageBytes_.isEmpty()) {

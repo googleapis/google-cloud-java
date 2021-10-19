@@ -436,19 +436,19 @@ public final class ExportDataRequest extends com.google.protobuf.GeneratedMessag
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name_);
     }
-    if (!getAnnotatedDatasetBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(annotatedDataset_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, annotatedDataset_);
     }
-    if (!getFilterBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(filter_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, filter_);
     }
     if (outputConfig_ != null) {
       output.writeMessage(4, getOutputConfig());
     }
-    if (!getUserEmailAddressBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(userEmailAddress_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 5, userEmailAddress_);
     }
     unknownFields.writeTo(output);
@@ -460,19 +460,19 @@ public final class ExportDataRequest extends com.google.protobuf.GeneratedMessag
     if (size != -1) return size;
 
     size = 0;
-    if (!getNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, name_);
     }
-    if (!getAnnotatedDatasetBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(annotatedDataset_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, annotatedDataset_);
     }
-    if (!getFilterBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(filter_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, filter_);
     }
     if (outputConfig_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(4, getOutputConfig());
     }
-    if (!getUserEmailAddressBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(userEmailAddress_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, userEmailAddress_);
     }
     size += unknownFields.getSerializedSize();

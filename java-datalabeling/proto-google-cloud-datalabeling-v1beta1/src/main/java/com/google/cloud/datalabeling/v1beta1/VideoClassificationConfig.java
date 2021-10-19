@@ -361,7 +361,7 @@ public final class VideoClassificationConfig extends com.google.protobuf.Generat
 
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-      if (!getAnnotationSpecSetBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(annotationSpecSet_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, annotationSpecSet_);
       }
       if (allowMultiLabel_ != false) {
@@ -376,7 +376,7 @@ public final class VideoClassificationConfig extends com.google.protobuf.Generat
       if (size != -1) return size;
 
       size = 0;
-      if (!getAnnotationSpecSetBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(annotationSpecSet_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, annotationSpecSet_);
       }
       if (allowMultiLabel_ != false) {

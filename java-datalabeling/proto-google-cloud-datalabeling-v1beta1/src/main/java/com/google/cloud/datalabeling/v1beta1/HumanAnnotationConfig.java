@@ -671,19 +671,19 @@ public final class HumanAnnotationConfig extends com.google.protobuf.GeneratedMe
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getInstructionBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(instruction_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, instruction_);
     }
-    if (!getAnnotatedDatasetDisplayNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(annotatedDatasetDisplayName_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, annotatedDatasetDisplayName_);
     }
-    if (!getAnnotatedDatasetDescriptionBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(annotatedDatasetDescription_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, annotatedDatasetDescription_);
     }
-    if (!getLabelGroupBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(labelGroup_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 4, labelGroup_);
     }
-    if (!getLanguageCodeBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(languageCode_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 5, languageCode_);
     }
     if (replicaCount_ != 0) {
@@ -695,7 +695,7 @@ public final class HumanAnnotationConfig extends com.google.protobuf.GeneratedMe
     for (int i = 0; i < contributorEmails_.size(); i++) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 9, contributorEmails_.getRaw(i));
     }
-    if (!getUserEmailAddressBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(userEmailAddress_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 10, userEmailAddress_);
     }
     unknownFields.writeTo(output);
@@ -707,21 +707,21 @@ public final class HumanAnnotationConfig extends com.google.protobuf.GeneratedMe
     if (size != -1) return size;
 
     size = 0;
-    if (!getInstructionBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(instruction_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, instruction_);
     }
-    if (!getAnnotatedDatasetDisplayNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(annotatedDatasetDisplayName_)) {
       size +=
           com.google.protobuf.GeneratedMessageV3.computeStringSize(2, annotatedDatasetDisplayName_);
     }
-    if (!getAnnotatedDatasetDescriptionBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(annotatedDatasetDescription_)) {
       size +=
           com.google.protobuf.GeneratedMessageV3.computeStringSize(3, annotatedDatasetDescription_);
     }
-    if (!getLabelGroupBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(labelGroup_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, labelGroup_);
     }
-    if (!getLanguageCodeBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(languageCode_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, languageCode_);
     }
     if (replicaCount_ != 0) {
@@ -738,7 +738,7 @@ public final class HumanAnnotationConfig extends com.google.protobuf.GeneratedMe
       size += dataSize;
       size += 1 * getContributorEmailsList().size();
     }
-    if (!getUserEmailAddressBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(userEmailAddress_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(10, userEmailAddress_);
     }
     size += unknownFields.getSerializedSize();

@@ -273,7 +273,7 @@ public final class TextClassificationConfig extends com.google.protobuf.Generate
     if (allowMultiLabel_ != false) {
       output.writeBool(1, allowMultiLabel_);
     }
-    if (!getAnnotationSpecSetBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(annotationSpecSet_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, annotationSpecSet_);
     }
     if (sentimentConfig_ != null) {
@@ -291,7 +291,7 @@ public final class TextClassificationConfig extends com.google.protobuf.Generate
     if (allowMultiLabel_ != false) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(1, allowMultiLabel_);
     }
-    if (!getAnnotationSpecSetBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(annotationSpecSet_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, annotationSpecSet_);
     }
     if (sentimentConfig_ != null) {
