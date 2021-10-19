@@ -40,7 +40,7 @@
  *
  * <pre>{@code
  * try (ArtifactRegistryClient artifactRegistryClient = ArtifactRegistryClient.create()) {
- *   LocationName name = LocationName.of("[PROJECT]", "[LOCATION]");
+ *   RepositoryName name = RepositoryName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]");
  *   Repository response = artifactRegistryClient.getRepository(name);
  * }
  * }</pre>

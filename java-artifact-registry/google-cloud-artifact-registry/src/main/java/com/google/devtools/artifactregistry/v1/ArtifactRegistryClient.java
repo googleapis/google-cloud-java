@@ -55,7 +55,7 @@ import javax.annotation.Generated;
  *
  * <pre>{@code
  * try (ArtifactRegistryClient artifactRegistryClient = ArtifactRegistryClient.create()) {
- *   LocationName name = LocationName.of("[PROJECT]", "[LOCATION]");
+ *   RepositoryName name = RepositoryName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]");
  *   Repository response = artifactRegistryClient.getRepository(name);
  * }
  * }</pre>
@@ -424,7 +424,7 @@ public class ArtifactRegistryClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (ArtifactRegistryClient artifactRegistryClient = ArtifactRegistryClient.create()) {
-   *   LocationName name = LocationName.of("[PROJECT]", "[LOCATION]");
+   *   RepositoryName name = RepositoryName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]");
    *   Repository response = artifactRegistryClient.getRepository(name);
    * }
    * }</pre>
@@ -432,7 +432,7 @@ public class ArtifactRegistryClient implements BackgroundResource {
    * @param name Required. The name of the repository to retrieve.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Repository getRepository(LocationName name) {
+  public final Repository getRepository(RepositoryName name) {
     GetRepositoryRequest request =
         GetRepositoryRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getRepository(request);

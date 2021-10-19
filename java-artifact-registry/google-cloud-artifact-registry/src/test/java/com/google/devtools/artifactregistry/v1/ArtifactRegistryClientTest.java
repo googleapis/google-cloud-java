@@ -226,7 +226,7 @@ public class ArtifactRegistryClientTest {
             .build();
     mockArtifactRegistry.addResponse(expectedResponse);
 
-    LocationName name = LocationName.of("[PROJECT]", "[LOCATION]");
+    RepositoryName name = RepositoryName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]");
 
     Repository actualResponse = client.getRepository(name);
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -248,7 +248,7 @@ public class ArtifactRegistryClientTest {
     mockArtifactRegistry.addException(exception);
 
     try {
-      LocationName name = LocationName.of("[PROJECT]", "[LOCATION]");
+      RepositoryName name = RepositoryName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]");
       client.getRepository(name);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {

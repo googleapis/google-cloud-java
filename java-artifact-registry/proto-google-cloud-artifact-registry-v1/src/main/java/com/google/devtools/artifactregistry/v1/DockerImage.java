@@ -556,10 +556,10 @@ public final class DockerImage extends com.google.protobuf.GeneratedMessageV3
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name_);
     }
-    if (!getUriBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(uri_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, uri_);
     }
     for (int i = 0; i < tags_.size(); i++) {
@@ -571,7 +571,7 @@ public final class DockerImage extends com.google.protobuf.GeneratedMessageV3
     if (uploadTime_ != null) {
       output.writeMessage(5, getUploadTime());
     }
-    if (!getMediaTypeBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(mediaType_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 6, mediaType_);
     }
     if (buildTime_ != null) {
@@ -586,10 +586,10 @@ public final class DockerImage extends com.google.protobuf.GeneratedMessageV3
     if (size != -1) return size;
 
     size = 0;
-    if (!getNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, name_);
     }
-    if (!getUriBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(uri_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, uri_);
     }
     {
@@ -606,7 +606,7 @@ public final class DockerImage extends com.google.protobuf.GeneratedMessageV3
     if (uploadTime_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(5, getUploadTime());
     }
-    if (!getMediaTypeBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(mediaType_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, mediaType_);
     }
     if (buildTime_ != null) {

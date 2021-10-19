@@ -83,7 +83,7 @@ public final class RepositoryProto {
           + "epositories\030\001 \003(\0132/.google.devtools.arti"
           + "factregistry.v1.Repository\022\027\n\017next_page_"
           + "token\030\002 \001(\t\"X\n\024GetRepositoryRequest\022@\n\004n"
-          + "ame\030\001 \001(\tB2\340A\002\372A,\022*artifactregistry.goog"
+          + "ame\030\001 \001(\tB2\340A\002\372A,\n*artifactregistry.goog"
           + "leapis.com/RepositoryB\375\001\n\'com.google.dev"
           + "tools.artifactregistry.v1B\017RepositoryPro"
           + "toP\001ZSgoogle.golang.org/genproto/googlea"
