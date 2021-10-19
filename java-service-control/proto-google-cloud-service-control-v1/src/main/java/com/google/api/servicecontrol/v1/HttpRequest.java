@@ -766,10 +766,10 @@ public final class HttpRequest extends com.google.protobuf.GeneratedMessageV3
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getRequestMethodBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(requestMethod_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, requestMethod_);
     }
-    if (!getRequestUrlBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(requestUrl_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, requestUrl_);
     }
     if (requestSize_ != 0L) {
@@ -781,13 +781,13 @@ public final class HttpRequest extends com.google.protobuf.GeneratedMessageV3
     if (responseSize_ != 0L) {
       output.writeInt64(5, responseSize_);
     }
-    if (!getUserAgentBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(userAgent_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 6, userAgent_);
     }
-    if (!getRemoteIpBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(remoteIp_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 7, remoteIp_);
     }
-    if (!getRefererBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(referer_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 8, referer_);
     }
     if (cacheHit_ != false) {
@@ -802,13 +802,13 @@ public final class HttpRequest extends com.google.protobuf.GeneratedMessageV3
     if (cacheFillBytes_ != 0L) {
       output.writeInt64(12, cacheFillBytes_);
     }
-    if (!getServerIpBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(serverIp_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 13, serverIp_);
     }
     if (latency_ != null) {
       output.writeMessage(14, getLatency());
     }
-    if (!getProtocolBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(protocol_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 15, protocol_);
     }
     unknownFields.writeTo(output);
@@ -820,10 +820,10 @@ public final class HttpRequest extends com.google.protobuf.GeneratedMessageV3
     if (size != -1) return size;
 
     size = 0;
-    if (!getRequestMethodBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(requestMethod_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, requestMethod_);
     }
-    if (!getRequestUrlBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(requestUrl_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, requestUrl_);
     }
     if (requestSize_ != 0L) {
@@ -835,13 +835,13 @@ public final class HttpRequest extends com.google.protobuf.GeneratedMessageV3
     if (responseSize_ != 0L) {
       size += com.google.protobuf.CodedOutputStream.computeInt64Size(5, responseSize_);
     }
-    if (!getUserAgentBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(userAgent_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, userAgent_);
     }
-    if (!getRemoteIpBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(remoteIp_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, remoteIp_);
     }
-    if (!getRefererBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(referer_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, referer_);
     }
     if (cacheHit_ != false) {
@@ -858,13 +858,13 @@ public final class HttpRequest extends com.google.protobuf.GeneratedMessageV3
     if (cacheFillBytes_ != 0L) {
       size += com.google.protobuf.CodedOutputStream.computeInt64Size(12, cacheFillBytes_);
     }
-    if (!getServerIpBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(serverIp_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(13, serverIp_);
     }
     if (latency_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(14, getLatency());
     }
-    if (!getProtocolBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(protocol_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(15, protocol_);
     }
     size += unknownFields.getSerializedSize();

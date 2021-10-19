@@ -434,7 +434,7 @@ public final class ReportResponse extends com.google.protobuf.GeneratedMessageV3
 
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-      if (!getOperationIdBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(operationId_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, operationId_);
       }
       if (status_ != null) {
@@ -449,7 +449,7 @@ public final class ReportResponse extends com.google.protobuf.GeneratedMessageV3
       if (size != -1) return size;
 
       size = 0;
-      if (!getOperationIdBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(operationId_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, operationId_);
       }
       if (status_ != null) {
@@ -1378,10 +1378,10 @@ public final class ReportResponse extends com.google.protobuf.GeneratedMessageV3
     for (int i = 0; i < reportErrors_.size(); i++) {
       output.writeMessage(1, reportErrors_.get(i));
     }
-    if (!getServiceConfigIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(serviceConfigId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, serviceConfigId_);
     }
-    if (!getServiceRolloutIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(serviceRolloutId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 4, serviceRolloutId_);
     }
     unknownFields.writeTo(output);
@@ -1396,10 +1396,10 @@ public final class ReportResponse extends com.google.protobuf.GeneratedMessageV3
     for (int i = 0; i < reportErrors_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, reportErrors_.get(i));
     }
-    if (!getServiceConfigIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(serviceConfigId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, serviceConfigId_);
     }
-    if (!getServiceRolloutIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(serviceRolloutId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, serviceRolloutId_);
     }
     size += unknownFields.getSerializedSize();
