@@ -236,10 +236,10 @@ public final class RetrieveRegisterParametersRequest extends com.google.protobuf
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getDomainNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(domainName_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, domainName_);
     }
-    if (!getLocationBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(location_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, location_);
     }
     unknownFields.writeTo(output);
@@ -251,10 +251,10 @@ public final class RetrieveRegisterParametersRequest extends com.google.protobuf
     if (size != -1) return size;
 
     size = 0;
-    if (!getDomainNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(domainName_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, domainName_);
     }
-    if (!getLocationBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(location_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, location_);
     }
     size += unknownFields.getSerializedSize();

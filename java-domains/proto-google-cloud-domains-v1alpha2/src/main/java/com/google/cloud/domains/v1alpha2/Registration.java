@@ -1547,10 +1547,10 @@ public final class Registration extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
     getSerializedSize();
-    if (!getNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name_);
     }
-    if (!getDomainNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(domainName_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, domainName_);
     }
     if (createTime_ != null) {
@@ -1600,10 +1600,10 @@ public final class Registration extends com.google.protobuf.GeneratedMessageV3
     if (size != -1) return size;
 
     size = 0;
-    if (!getNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, name_);
     }
-    if (!getDomainNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(domainName_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, domainName_);
     }
     if (createTime_ != null) {

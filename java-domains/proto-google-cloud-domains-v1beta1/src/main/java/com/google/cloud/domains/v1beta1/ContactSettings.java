@@ -636,13 +636,13 @@ public final class ContactSettings extends com.google.protobuf.GeneratedMessageV
       if (postalAddress_ != null) {
         output.writeMessage(1, getPostalAddress());
       }
-      if (!getEmailBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(email_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, email_);
       }
-      if (!getPhoneNumberBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(phoneNumber_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 3, phoneNumber_);
       }
-      if (!getFaxNumberBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(faxNumber_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 4, faxNumber_);
       }
       unknownFields.writeTo(output);
@@ -657,13 +657,13 @@ public final class ContactSettings extends com.google.protobuf.GeneratedMessageV
       if (postalAddress_ != null) {
         size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, getPostalAddress());
       }
-      if (!getEmailBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(email_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, email_);
       }
-      if (!getPhoneNumberBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(phoneNumber_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, phoneNumber_);
       }
-      if (!getFaxNumberBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(faxNumber_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, faxNumber_);
       }
       size += unknownFields.getSerializedSize();
