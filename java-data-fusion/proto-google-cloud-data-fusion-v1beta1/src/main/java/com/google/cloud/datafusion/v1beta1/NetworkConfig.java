@@ -246,10 +246,10 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getNetworkBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(network_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, network_);
     }
-    if (!getIpAllocationBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(ipAllocation_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, ipAllocation_);
     }
     unknownFields.writeTo(output);
@@ -261,10 +261,10 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
     if (size != -1) return size;
 
     size = 0;
-    if (!getNetworkBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(network_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, network_);
     }
-    if (!getIpAllocationBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(ipAllocation_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, ipAllocation_);
     }
     size += unknownFields.getSerializedSize();
