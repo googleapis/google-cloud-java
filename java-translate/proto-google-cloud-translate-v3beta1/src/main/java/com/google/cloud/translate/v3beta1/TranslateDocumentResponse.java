@@ -400,7 +400,7 @@ public final class TranslateDocumentResponse extends com.google.protobuf.Generat
     if (glossaryDocumentTranslation_ != null) {
       output.writeMessage(2, getGlossaryDocumentTranslation());
     }
-    if (!getModelBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(model_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, model_);
     }
     if (glossaryConfig_ != null) {
@@ -423,7 +423,7 @@ public final class TranslateDocumentResponse extends com.google.protobuf.Generat
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               2, getGlossaryDocumentTranslation());
     }
-    if (!getModelBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(model_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, model_);
     }
     if (glossaryConfig_ != null) {

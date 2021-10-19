@@ -354,7 +354,7 @@ public final class DocumentInputConfig extends com.google.protobuf.GeneratedMess
     if (sourceCase_ == 2) {
       output.writeMessage(2, (com.google.cloud.translate.v3.GcsSource) source_);
     }
-    if (!getMimeTypeBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(mimeType_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 4, mimeType_);
     }
     unknownFields.writeTo(output);
@@ -376,7 +376,7 @@ public final class DocumentInputConfig extends com.google.protobuf.GeneratedMess
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               2, (com.google.cloud.translate.v3.GcsSource) source_);
     }
-    if (!getMimeTypeBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(mimeType_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, mimeType_);
     }
     size += unknownFields.getSerializedSize();

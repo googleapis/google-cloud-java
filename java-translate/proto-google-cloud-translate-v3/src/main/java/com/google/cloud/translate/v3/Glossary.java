@@ -479,10 +479,10 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
 
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-      if (!getSourceLanguageCodeBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(sourceLanguageCode_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, sourceLanguageCode_);
       }
-      if (!getTargetLanguageCodeBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(targetLanguageCode_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, targetLanguageCode_);
       }
       unknownFields.writeTo(output);
@@ -494,10 +494,10 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
       if (size != -1) return size;
 
       size = 0;
-      if (!getSourceLanguageCodeBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(sourceLanguageCode_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, sourceLanguageCode_);
       }
-      if (!getTargetLanguageCodeBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(targetLanguageCode_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, targetLanguageCode_);
       }
       size += unknownFields.getSerializedSize();
@@ -2275,7 +2275,7 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name_);
     }
     if (languagesCase_ == 3) {
@@ -2305,7 +2305,7 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
     if (size != -1) return size;
 
     size = 0;
-    if (!getNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, name_);
     }
     if (languagesCase_ == 3) {

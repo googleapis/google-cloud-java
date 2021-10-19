@@ -585,13 +585,13 @@ public final class DetectLanguageRequest extends com.google.protobuf.GeneratedMe
     if (sourceCase_ == 1) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, source_);
     }
-    if (!getMimeTypeBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(mimeType_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, mimeType_);
     }
-    if (!getModelBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(model_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 4, model_);
     }
-    if (!getParentBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(parent_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 5, parent_);
     }
     com.google.protobuf.GeneratedMessageV3.serializeStringMapTo(
@@ -608,13 +608,13 @@ public final class DetectLanguageRequest extends com.google.protobuf.GeneratedMe
     if (sourceCase_ == 1) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, source_);
     }
-    if (!getMimeTypeBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(mimeType_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, mimeType_);
     }
-    if (!getModelBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(model_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, model_);
     }
-    if (!getParentBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(parent_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, parent_);
     }
     for (java.util.Map.Entry<java.lang.String, java.lang.String> entry :

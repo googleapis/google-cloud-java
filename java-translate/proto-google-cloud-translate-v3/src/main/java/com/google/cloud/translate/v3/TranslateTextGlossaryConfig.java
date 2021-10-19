@@ -205,7 +205,7 @@ public final class TranslateTextGlossaryConfig extends com.google.protobuf.Gener
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getGlossaryBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(glossary_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, glossary_);
     }
     if (ignoreCase_ != false) {
@@ -220,7 +220,7 @@ public final class TranslateTextGlossaryConfig extends com.google.protobuf.Gener
     if (size != -1) return size;
 
     size = 0;
-    if (!getGlossaryBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(glossary_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, glossary_);
     }
     if (ignoreCase_ != false) {
