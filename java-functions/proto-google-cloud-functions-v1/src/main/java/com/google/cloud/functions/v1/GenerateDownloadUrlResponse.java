@@ -176,7 +176,7 @@ public final class GenerateDownloadUrlResponse extends com.google.protobuf.Gener
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getDownloadUrlBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(downloadUrl_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, downloadUrl_);
     }
     unknownFields.writeTo(output);
@@ -188,7 +188,7 @@ public final class GenerateDownloadUrlResponse extends com.google.protobuf.Gener
     if (size != -1) return size;
 
     size = 0;
-    if (!getDownloadUrlBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(downloadUrl_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, downloadUrl_);
     }
     size += unknownFields.getSerializedSize();

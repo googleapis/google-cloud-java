@@ -409,13 +409,13 @@ public final class EventTrigger extends com.google.protobuf.GeneratedMessageV3
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getEventTypeBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(eventType_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, eventType_);
     }
-    if (!getResourceBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(resource_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, resource_);
     }
-    if (!getServiceBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(service_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, service_);
     }
     if (failurePolicy_ != null) {
@@ -430,13 +430,13 @@ public final class EventTrigger extends com.google.protobuf.GeneratedMessageV3
     if (size != -1) return size;
 
     size = 0;
-    if (!getEventTypeBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(eventType_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, eventType_);
     }
-    if (!getResourceBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(resource_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, resource_);
     }
-    if (!getServiceBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(service_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, service_);
     }
     if (failurePolicy_ != null) {

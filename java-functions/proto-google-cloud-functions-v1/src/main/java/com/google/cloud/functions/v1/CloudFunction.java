@@ -2051,10 +2051,10 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name_);
     }
-    if (!getDescriptionBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(description_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, description_);
     }
     if (sourceCodeCase_ == 3) {
@@ -2074,7 +2074,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
             .getNumber()) {
       output.writeEnum(7, status_);
     }
-    if (!getEntryPointBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(entryPoint_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 8, entryPoint_);
     }
     if (timeout_ != null) {
@@ -2083,7 +2083,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
     if (availableMemoryMb_ != 0) {
       output.writeInt32(10, availableMemoryMb_);
     }
-    if (!getServiceAccountEmailBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(serviceAccountEmail_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 11, serviceAccountEmail_);
     }
     if (updateTime_ != null) {
@@ -2102,16 +2102,16 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
         internalGetEnvironmentVariables(),
         EnvironmentVariablesDefaultEntryHolder.defaultEntry,
         17);
-    if (!getNetworkBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(network_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 18, network_);
     }
-    if (!getRuntimeBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(runtime_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 19, runtime_);
     }
     if (maxInstances_ != 0) {
       output.writeInt32(20, maxInstances_);
     }
-    if (!getVpcConnectorBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(vpcConnector_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 22, vpcConnector_);
     }
     if (vpcConnectorEgressSettings_
@@ -2125,7 +2125,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
             .getNumber()) {
       output.writeEnum(24, ingressSettings_);
     }
-    if (!getBuildIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(buildId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 27, buildId_);
     }
     unknownFields.writeTo(output);
@@ -2137,10 +2137,10 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
     if (size != -1) return size;
 
     size = 0;
-    if (!getNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, name_);
     }
-    if (!getDescriptionBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(description_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, description_);
     }
     if (sourceCodeCase_ == 3) {
@@ -2166,7 +2166,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
             .getNumber()) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(7, status_);
     }
-    if (!getEntryPointBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(entryPoint_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, entryPoint_);
     }
     if (timeout_ != null) {
@@ -2175,7 +2175,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
     if (availableMemoryMb_ != 0) {
       size += com.google.protobuf.CodedOutputStream.computeInt32Size(10, availableMemoryMb_);
     }
-    if (!getServiceAccountEmailBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(serviceAccountEmail_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(11, serviceAccountEmail_);
     }
     if (updateTime_ != null) {
@@ -2207,16 +2207,16 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
               .build();
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(17, environmentVariables__);
     }
-    if (!getNetworkBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(network_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(18, network_);
     }
-    if (!getRuntimeBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(runtime_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(19, runtime_);
     }
     if (maxInstances_ != 0) {
       size += com.google.protobuf.CodedOutputStream.computeInt32Size(20, maxInstances_);
     }
-    if (!getVpcConnectorBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(vpcConnector_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(22, vpcConnector_);
     }
     if (vpcConnectorEgressSettings_
@@ -2231,7 +2231,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
             .getNumber()) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(24, ingressSettings_);
     }
-    if (!getBuildIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(buildId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(27, buildId_);
     }
     size += unknownFields.getSerializedSize();
