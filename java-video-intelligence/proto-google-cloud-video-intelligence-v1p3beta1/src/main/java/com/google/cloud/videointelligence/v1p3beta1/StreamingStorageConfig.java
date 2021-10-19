@@ -218,7 +218,7 @@ public final class StreamingStorageConfig extends com.google.protobuf.GeneratedM
     if (enableStorageAnnotationResult_ != false) {
       output.writeBool(1, enableStorageAnnotationResult_);
     }
-    if (!getAnnotationResultStorageDirectoryBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(annotationResultStorageDirectory_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(
           output, 3, annotationResultStorageDirectory_);
     }
@@ -235,7 +235,7 @@ public final class StreamingStorageConfig extends com.google.protobuf.GeneratedM
       size +=
           com.google.protobuf.CodedOutputStream.computeBoolSize(1, enableStorageAnnotationResult_);
     }
-    if (!getAnnotationResultStorageDirectoryBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(annotationResultStorageDirectory_)) {
       size +=
           com.google.protobuf.GeneratedMessageV3.computeStringSize(
               3, annotationResultStorageDirectory_);

@@ -552,7 +552,7 @@ public final class ObjectTrackingAnnotation extends com.google.protobuf.Generate
     if (trackInfoCase_ == 5) {
       output.writeInt64(5, (long) ((java.lang.Long) trackInfo_));
     }
-    if (!getVersionBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(version_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 6, version_);
     }
     unknownFields.writeTo(output);
@@ -583,7 +583,7 @@ public final class ObjectTrackingAnnotation extends com.google.protobuf.Generate
           com.google.protobuf.CodedOutputStream.computeInt64Size(
               5, (long) ((java.lang.Long) trackInfo_));
     }
-    if (!getVersionBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(version_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, version_);
     }
     size += unknownFields.getSerializedSize();

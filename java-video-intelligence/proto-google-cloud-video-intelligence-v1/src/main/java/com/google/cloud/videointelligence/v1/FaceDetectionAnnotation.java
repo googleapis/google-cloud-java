@@ -289,7 +289,7 @@ public final class FaceDetectionAnnotation extends com.google.protobuf.Generated
     if (!thumbnail_.isEmpty()) {
       output.writeBytes(4, thumbnail_);
     }
-    if (!getVersionBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(version_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 5, version_);
     }
     unknownFields.writeTo(output);
@@ -307,7 +307,7 @@ public final class FaceDetectionAnnotation extends com.google.protobuf.Generated
     if (!thumbnail_.isEmpty()) {
       size += com.google.protobuf.CodedOutputStream.computeBytesSize(4, thumbnail_);
     }
-    if (!getVersionBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(version_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, version_);
     }
     size += unknownFields.getSerializedSize();

@@ -180,7 +180,7 @@ public final class StreamingAutomlObjectTrackingConfig
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getModelNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(modelName_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, modelName_);
     }
     unknownFields.writeTo(output);
@@ -192,7 +192,7 @@ public final class StreamingAutomlObjectTrackingConfig
     if (size != -1) return size;
 
     size = 0;
-    if (!getModelNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(modelName_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, modelName_);
     }
     size += unknownFields.getSerializedSize();

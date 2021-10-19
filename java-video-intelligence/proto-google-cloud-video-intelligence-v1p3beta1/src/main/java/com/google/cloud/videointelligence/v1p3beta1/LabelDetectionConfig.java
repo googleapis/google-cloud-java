@@ -321,7 +321,7 @@ public final class LabelDetectionConfig extends com.google.protobuf.GeneratedMes
     if (stationaryCamera_ != false) {
       output.writeBool(2, stationaryCamera_);
     }
-    if (!getModelBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(model_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, model_);
     }
     if (frameConfidenceThreshold_ != 0F) {
@@ -348,7 +348,7 @@ public final class LabelDetectionConfig extends com.google.protobuf.GeneratedMes
     if (stationaryCamera_ != false) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(2, stationaryCamera_);
     }
-    if (!getModelBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(model_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, model_);
     }
     if (frameConfidenceThreshold_ != 0F) {

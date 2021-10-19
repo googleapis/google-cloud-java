@@ -524,7 +524,7 @@ public final class SpeechTranscriptionConfig extends com.google.protobuf.Generat
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
     getSerializedSize();
-    if (!getLanguageCodeBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(languageCode_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, languageCode_);
     }
     if (maxAlternatives_ != 0) {
@@ -564,7 +564,7 @@ public final class SpeechTranscriptionConfig extends com.google.protobuf.Generat
     if (size != -1) return size;
 
     size = 0;
-    if (!getLanguageCodeBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(languageCode_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, languageCode_);
     }
     if (maxAlternatives_ != 0) {

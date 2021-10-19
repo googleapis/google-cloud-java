@@ -269,7 +269,7 @@ public final class TextDetectionConfig extends com.google.protobuf.GeneratedMess
     for (int i = 0; i < languageHints_.size(); i++) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, languageHints_.getRaw(i));
     }
-    if (!getModelBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(model_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, model_);
     }
     unknownFields.writeTo(output);
@@ -289,7 +289,7 @@ public final class TextDetectionConfig extends com.google.protobuf.GeneratedMess
       size += dataSize;
       size += 1 * getLanguageHintsList().size();
     }
-    if (!getModelBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(model_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, model_);
     }
     size += unknownFields.getSerializedSize();

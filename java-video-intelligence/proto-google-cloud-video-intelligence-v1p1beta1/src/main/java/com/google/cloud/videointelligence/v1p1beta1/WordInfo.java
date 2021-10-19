@@ -322,7 +322,7 @@ public final class WordInfo extends com.google.protobuf.GeneratedMessageV3
     if (endTime_ != null) {
       output.writeMessage(2, getEndTime());
     }
-    if (!getWordBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(word_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, word_);
     }
     unknownFields.writeTo(output);
@@ -340,7 +340,7 @@ public final class WordInfo extends com.google.protobuf.GeneratedMessageV3
     if (endTime_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, getEndTime());
     }
-    if (!getWordBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(word_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, word_);
     }
     size += unknownFields.getSerializedSize();
