@@ -1,5 +1,12 @@
 # Changelog
 
+### [2.1.2](https://www.github.com/googleapis/java-contact-center-insights/compare/v2.1.1...v2.1.2) (2021-10-19)
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.4.0 ([#115](https://www.github.com/googleapis/java-contact-center-insights/issues/115)) ([64963a9](https://www.github.com/googleapis/java-contact-center-insights/commit/64963a98113e348587f615cf4230404d91c0f85e))
+
 ### [2.1.1](https://www.github.com/googleapis/java-contact-center-insights/compare/v2.1.0...v2.1.1) (2021-10-06)
 
 
