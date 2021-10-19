@@ -429,10 +429,10 @@ public final class TranscriptNormalization extends com.google.protobuf.Generated
 
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-      if (!getSearchBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(search_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, search_);
       }
-      if (!getReplaceBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(replace_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, replace_);
       }
       if (caseSensitive_ != false) {
@@ -447,10 +447,10 @@ public final class TranscriptNormalization extends com.google.protobuf.Generated
       if (size != -1) return size;
 
       size = 0;
-      if (!getSearchBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(search_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, search_);
       }
-      if (!getReplaceBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(replace_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, replace_);
       }
       if (caseSensitive_ != false) {

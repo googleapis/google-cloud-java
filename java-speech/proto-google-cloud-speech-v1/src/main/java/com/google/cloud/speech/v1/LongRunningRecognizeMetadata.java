@@ -335,7 +335,7 @@ public final class LongRunningRecognizeMetadata extends com.google.protobuf.Gene
     if (lastUpdateTime_ != null) {
       output.writeMessage(3, getLastUpdateTime());
     }
-    if (!getUriBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(uri_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 4, uri_);
     }
     unknownFields.writeTo(output);
@@ -356,7 +356,7 @@ public final class LongRunningRecognizeMetadata extends com.google.protobuf.Gene
     if (lastUpdateTime_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(3, getLastUpdateTime());
     }
-    if (!getUriBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(uri_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, uri_);
     }
     size += unknownFields.getSerializedSize();

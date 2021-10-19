@@ -1449,13 +1449,13 @@ public final class RecognitionMetadata extends com.google.protobuf.GeneratedMess
             .getNumber()) {
       output.writeEnum(6, recordingDeviceType_);
     }
-    if (!getRecordingDeviceNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(recordingDeviceName_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 7, recordingDeviceName_);
     }
-    if (!getOriginalMimeTypeBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(originalMimeType_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 8, originalMimeType_);
     }
-    if (!getAudioTopicBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(audioTopic_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 10, audioTopic_);
     }
     unknownFields.writeTo(output);
@@ -1494,13 +1494,13 @@ public final class RecognitionMetadata extends com.google.protobuf.GeneratedMess
             .getNumber()) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(6, recordingDeviceType_);
     }
-    if (!getRecordingDeviceNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(recordingDeviceName_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, recordingDeviceName_);
     }
-    if (!getOriginalMimeTypeBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(originalMimeType_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, originalMimeType_);
     }
-    if (!getAudioTopicBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(audioTopic_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(10, audioTopic_);
     }
     size += unknownFields.getSerializedSize();

@@ -1165,7 +1165,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
     if (sampleRateHertz_ != 0) {
       output.writeInt32(2, sampleRateHertz_);
     }
-    if (!getLanguageCodeBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(languageCode_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, languageCode_);
     }
     if (maxAlternatives_ != 0) {
@@ -1192,7 +1192,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
     if (enableSeparateRecognitionPerChannel_ != false) {
       output.writeBool(12, enableSeparateRecognitionPerChannel_);
     }
-    if (!getModelBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(model_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 13, model_);
     }
     if (useEnhanced_ != false) {
@@ -1218,7 +1218,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
     if (sampleRateHertz_ != 0) {
       size += com.google.protobuf.CodedOutputStream.computeInt32Size(2, sampleRateHertz_);
     }
-    if (!getLanguageCodeBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(languageCode_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, languageCode_);
     }
     if (maxAlternatives_ != 0) {
@@ -1248,7 +1248,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
           com.google.protobuf.CodedOutputStream.computeBoolSize(
               12, enableSeparateRecognitionPerChannel_);
     }
-    if (!getModelBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(model_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(13, model_);
     }
     if (useEnhanced_ != false) {
