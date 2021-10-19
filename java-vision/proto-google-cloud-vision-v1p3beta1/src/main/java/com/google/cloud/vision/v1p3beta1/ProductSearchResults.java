@@ -489,10 +489,10 @@ public final class ProductSearchResults extends com.google.protobuf.GeneratedMes
 
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-      if (!getProductIdBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(productId_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, productId_);
       }
-      if (!getImageUriBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(imageUri_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, imageUri_);
       }
       if (score_ != 0F) {
@@ -507,10 +507,10 @@ public final class ProductSearchResults extends com.google.protobuf.GeneratedMes
       if (size != -1) return size;
 
       size = 0;
-      if (!getProductIdBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(productId_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, productId_);
       }
-      if (!getImageUriBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(imageUri_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, imageUri_);
       }
       if (score_ != 0F) {
@@ -1513,7 +1513,7 @@ public final class ProductSearchResults extends com.google.protobuf.GeneratedMes
       if (score_ != 0F) {
         output.writeFloat(2, score_);
       }
-      if (!getImageBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(image_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 3, image_);
       }
       unknownFields.writeTo(output);
@@ -1531,7 +1531,7 @@ public final class ProductSearchResults extends com.google.protobuf.GeneratedMes
       if (score_ != 0F) {
         size += com.google.protobuf.CodedOutputStream.computeFloatSize(2, score_);
       }
-      if (!getImageBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(image_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, image_);
       }
       size += unknownFields.getSerializedSize();
@@ -2594,7 +2594,7 @@ public final class ProductSearchResults extends com.google.protobuf.GeneratedMes
     for (int i = 0; i < products_.size(); i++) {
       output.writeMessage(3, products_.get(i));
     }
-    if (!getProductCategoryBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(productCategory_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 4, productCategory_);
     }
     for (int i = 0; i < results_.size(); i++) {
@@ -2621,7 +2621,7 @@ public final class ProductSearchResults extends com.google.protobuf.GeneratedMes
     for (int i = 0; i < products_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(3, products_.get(i));
     }
-    if (!getProductCategoryBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(productCategory_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, productCategory_);
     }
     for (int i = 0; i < results_.size(); i++) {

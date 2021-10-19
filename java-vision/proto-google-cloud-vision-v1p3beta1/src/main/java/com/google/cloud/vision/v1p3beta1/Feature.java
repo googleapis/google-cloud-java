@@ -641,7 +641,7 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
     if (maxResults_ != 0) {
       output.writeInt32(2, maxResults_);
     }
-    if (!getModelBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(model_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, model_);
     }
     unknownFields.writeTo(output);
@@ -659,7 +659,7 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
     if (maxResults_ != 0) {
       size += com.google.protobuf.CodedOutputStream.computeInt32Size(2, maxResults_);
     }
-    if (!getModelBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(model_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, model_);
     }
     size += unknownFields.getSerializedSize();

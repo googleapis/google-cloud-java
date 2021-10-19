@@ -259,10 +259,10 @@ public final class ImageSource extends com.google.protobuf.GeneratedMessageV3
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getGcsImageUriBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(gcsImageUri_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, gcsImageUri_);
     }
-    if (!getImageUriBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(imageUri_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, imageUri_);
     }
     unknownFields.writeTo(output);
@@ -274,10 +274,10 @@ public final class ImageSource extends com.google.protobuf.GeneratedMessageV3
     if (size != -1) return size;
 
     size = 0;
-    if (!getGcsImageUriBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(gcsImageUri_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, gcsImageUri_);
     }
-    if (!getImageUriBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(imageUri_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, imageUri_);
     }
     size += unknownFields.getSerializedSize();

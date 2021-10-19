@@ -364,7 +364,7 @@ public final class TextAnnotation extends com.google.protobuf.GeneratedMessageV3
 
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-      if (!getLanguageCodeBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(languageCode_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, languageCode_);
       }
       if (confidence_ != 0F) {
@@ -379,7 +379,7 @@ public final class TextAnnotation extends com.google.protobuf.GeneratedMessageV3
       if (size != -1) return size;
 
       size = 0;
-      if (!getLanguageCodeBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(languageCode_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, languageCode_);
       }
       if (confidence_ != 0F) {
@@ -3460,7 +3460,7 @@ public final class TextAnnotation extends com.google.protobuf.GeneratedMessageV3
     for (int i = 0; i < pages_.size(); i++) {
       output.writeMessage(1, pages_.get(i));
     }
-    if (!getTextBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(text_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, text_);
     }
     unknownFields.writeTo(output);
@@ -3475,7 +3475,7 @@ public final class TextAnnotation extends com.google.protobuf.GeneratedMessageV3
     for (int i = 0; i < pages_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, pages_.get(i));
     }
-    if (!getTextBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(text_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, text_);
     }
     size += unknownFields.getSerializedSize();

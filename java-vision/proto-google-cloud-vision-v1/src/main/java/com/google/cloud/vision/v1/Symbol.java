@@ -374,7 +374,7 @@ public final class Symbol extends com.google.protobuf.GeneratedMessageV3
     if (boundingBox_ != null) {
       output.writeMessage(2, getBoundingBox());
     }
-    if (!getTextBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(text_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, text_);
     }
     if (confidence_ != 0F) {
@@ -395,7 +395,7 @@ public final class Symbol extends com.google.protobuf.GeneratedMessageV3
     if (boundingBox_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, getBoundingBox());
     }
-    if (!getTextBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(text_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, text_);
     }
     if (confidence_ != 0F) {

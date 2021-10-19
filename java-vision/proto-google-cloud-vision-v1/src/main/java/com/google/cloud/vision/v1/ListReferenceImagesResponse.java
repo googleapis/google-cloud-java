@@ -289,7 +289,7 @@ public final class ListReferenceImagesResponse extends com.google.protobuf.Gener
     if (pageSize_ != 0) {
       output.writeInt32(2, pageSize_);
     }
-    if (!getNextPageTokenBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(nextPageToken_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, nextPageToken_);
     }
     unknownFields.writeTo(output);
@@ -307,7 +307,7 @@ public final class ListReferenceImagesResponse extends com.google.protobuf.Gener
     if (pageSize_ != 0) {
       size += com.google.protobuf.CodedOutputStream.computeInt32Size(2, pageSize_);
     }
-    if (!getNextPageTokenBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(nextPageToken_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, nextPageToken_);
     }
     size += unknownFields.getSerializedSize();

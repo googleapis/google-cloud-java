@@ -243,7 +243,7 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
     if (gcsSource_ != null) {
       output.writeMessage(1, getGcsSource());
     }
-    if (!getMimeTypeBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(mimeType_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, mimeType_);
     }
     unknownFields.writeTo(output);
@@ -258,7 +258,7 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
     if (gcsSource_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, getGcsSource());
     }
-    if (!getMimeTypeBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(mimeType_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, mimeType_);
     }
     size += unknownFields.getSerializedSize();

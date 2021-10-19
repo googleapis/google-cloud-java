@@ -315,13 +315,13 @@ public final class CreateProductRequest extends com.google.protobuf.GeneratedMes
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getParentBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(parent_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, parent_);
     }
     if (product_ != null) {
       output.writeMessage(2, getProduct());
     }
-    if (!getProductIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(productId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, productId_);
     }
     unknownFields.writeTo(output);
@@ -333,13 +333,13 @@ public final class CreateProductRequest extends com.google.protobuf.GeneratedMes
     if (size != -1) return size;
 
     size = 0;
-    if (!getParentBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(parent_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, parent_);
     }
     if (product_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, getProduct());
     }
-    if (!getProductIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(productId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, productId_);
     }
     size += unknownFields.getSerializedSize();

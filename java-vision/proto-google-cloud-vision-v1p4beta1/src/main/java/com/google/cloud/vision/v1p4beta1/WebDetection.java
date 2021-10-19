@@ -518,13 +518,13 @@ public final class WebDetection extends com.google.protobuf.GeneratedMessageV3
 
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-      if (!getEntityIdBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(entityId_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, entityId_);
       }
       if (score_ != 0F) {
         output.writeFloat(2, score_);
       }
-      if (!getDescriptionBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(description_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 3, description_);
       }
       unknownFields.writeTo(output);
@@ -536,13 +536,13 @@ public final class WebDetection extends com.google.protobuf.GeneratedMessageV3
       if (size != -1) return size;
 
       size = 0;
-      if (!getEntityIdBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(entityId_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, entityId_);
       }
       if (score_ != 0F) {
         size += com.google.protobuf.CodedOutputStream.computeFloatSize(2, score_);
       }
-      if (!getDescriptionBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(description_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, description_);
       }
       size += unknownFields.getSerializedSize();
@@ -1400,7 +1400,7 @@ public final class WebDetection extends com.google.protobuf.GeneratedMessageV3
 
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-      if (!getUrlBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(url_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, url_);
       }
       if (score_ != 0F) {
@@ -1415,7 +1415,7 @@ public final class WebDetection extends com.google.protobuf.GeneratedMessageV3
       if (size != -1) return size;
 
       size = 0;
-      if (!getUrlBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(url_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, url_);
       }
       if (score_ != 0F) {
@@ -2602,13 +2602,13 @@ public final class WebDetection extends com.google.protobuf.GeneratedMessageV3
 
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-      if (!getUrlBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(url_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, url_);
       }
       if (score_ != 0F) {
         output.writeFloat(2, score_);
       }
-      if (!getPageTitleBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(pageTitle_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 3, pageTitle_);
       }
       for (int i = 0; i < fullMatchingImages_.size(); i++) {
@@ -2626,13 +2626,13 @@ public final class WebDetection extends com.google.protobuf.GeneratedMessageV3
       if (size != -1) return size;
 
       size = 0;
-      if (!getUrlBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(url_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, url_);
       }
       if (score_ != 0F) {
         size += com.google.protobuf.CodedOutputStream.computeFloatSize(2, score_);
       }
-      if (!getPageTitleBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(pageTitle_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, pageTitle_);
       }
       for (int i = 0; i < fullMatchingImages_.size(); i++) {
@@ -4537,10 +4537,10 @@ public final class WebDetection extends com.google.protobuf.GeneratedMessageV3
 
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-      if (!getLabelBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(label_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, label_);
       }
-      if (!getLanguageCodeBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(languageCode_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, languageCode_);
       }
       unknownFields.writeTo(output);
@@ -4552,10 +4552,10 @@ public final class WebDetection extends com.google.protobuf.GeneratedMessageV3
       if (size != -1) return size;
 
       size = 0;
-      if (!getLabelBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(label_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, label_);
       }
-      if (!getLanguageCodeBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(languageCode_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, languageCode_);
       }
       size += unknownFields.getSerializedSize();

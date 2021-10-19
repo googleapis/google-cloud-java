@@ -263,7 +263,7 @@ public final class ImportProductSetsGcsSource extends com.google.protobuf.Genera
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getCsvFileUriBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(csvFileUri_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, csvFileUri_);
     }
     unknownFields.writeTo(output);
@@ -275,7 +275,7 @@ public final class ImportProductSetsGcsSource extends com.google.protobuf.Genera
     if (size != -1) return size;
 
     size = 0;
-    if (!getCsvFileUriBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(csvFileUri_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, csvFileUri_);
     }
     size += unknownFields.getSerializedSize();

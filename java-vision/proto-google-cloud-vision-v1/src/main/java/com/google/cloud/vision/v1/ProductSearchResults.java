@@ -486,7 +486,7 @@ public final class ProductSearchResults extends com.google.protobuf.GeneratedMes
       if (score_ != 0F) {
         output.writeFloat(2, score_);
       }
-      if (!getImageBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(image_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 3, image_);
       }
       unknownFields.writeTo(output);
@@ -504,7 +504,7 @@ public final class ProductSearchResults extends com.google.protobuf.GeneratedMes
       if (score_ != 0F) {
         size += com.google.protobuf.CodedOutputStream.computeFloatSize(2, score_);
       }
-      if (!getImageBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(image_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, image_);
       }
       size += unknownFields.getSerializedSize();
@@ -1630,13 +1630,13 @@ public final class ProductSearchResults extends com.google.protobuf.GeneratedMes
 
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-      if (!getMidBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(mid_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, mid_);
       }
-      if (!getLanguageCodeBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(languageCode_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, languageCode_);
       }
-      if (!getNameBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 3, name_);
       }
       if (score_ != 0F) {
@@ -1651,13 +1651,13 @@ public final class ProductSearchResults extends com.google.protobuf.GeneratedMes
       if (size != -1) return size;
 
       size = 0;
-      if (!getMidBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(mid_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, mid_);
       }
-      if (!getLanguageCodeBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(languageCode_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, languageCode_);
       }
-      if (!getNameBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, name_);
       }
       if (score_ != 0F) {
