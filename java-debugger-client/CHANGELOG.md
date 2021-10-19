@@ -1,5 +1,12 @@
 # Changelog
 
+### [1.1.3](https://www.github.com/googleapis/java-debugger-client/compare/v1.1.2...v1.1.3) (2021-10-19)
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.4.0 ([#87](https://www.github.com/googleapis/java-debugger-client/issues/87)) ([d9b92e8](https://www.github.com/googleapis/java-debugger-client/commit/d9b92e865a0d5f255b787775f5d5f33074221d0d))
+
 ### [1.1.2](https://www.github.com/googleapis/java-debugger-client/compare/v1.1.1...v1.1.2) (2021-09-22)
 
 
