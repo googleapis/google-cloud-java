@@ -279,13 +279,13 @@ public final class RouterApplianceInstance extends com.google.protobuf.Generated
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getVirtualMachineBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(virtualMachine_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, virtualMachine_);
     }
-    if (!getNetworkInterfaceBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(networkInterface_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, networkInterface_);
     }
-    if (!getIpAddressBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(ipAddress_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, ipAddress_);
     }
     unknownFields.writeTo(output);
@@ -297,13 +297,13 @@ public final class RouterApplianceInstance extends com.google.protobuf.Generated
     if (size != -1) return size;
 
     size = 0;
-    if (!getVirtualMachineBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(virtualMachine_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, virtualMachine_);
     }
-    if (!getNetworkInterfaceBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(networkInterface_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, networkInterface_);
     }
-    if (!getIpAddressBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(ipAddress_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, ipAddress_);
     }
     size += unknownFields.getSerializedSize();
