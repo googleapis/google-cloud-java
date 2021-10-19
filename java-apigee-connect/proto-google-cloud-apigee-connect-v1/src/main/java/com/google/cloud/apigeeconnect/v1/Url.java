@@ -280,10 +280,10 @@ public final class Url extends com.google.protobuf.GeneratedMessageV3
     if (scheme_ != com.google.cloud.apigeeconnect.v1.Scheme.SCHEME_UNSPECIFIED.getNumber()) {
       output.writeEnum(1, scheme_);
     }
-    if (!getHostBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(host_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, host_);
     }
-    if (!getPathBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(path_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, path_);
     }
     unknownFields.writeTo(output);
@@ -298,10 +298,10 @@ public final class Url extends com.google.protobuf.GeneratedMessageV3
     if (scheme_ != com.google.cloud.apigeeconnect.v1.Scheme.SCHEME_UNSPECIFIED.getNumber()) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(1, scheme_);
     }
-    if (!getHostBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(host_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, host_);
     }
-    if (!getPathBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(path_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, path_);
     }
     size += unknownFields.getSerializedSize();
