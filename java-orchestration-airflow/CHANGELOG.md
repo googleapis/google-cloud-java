@@ -1,5 +1,12 @@
 # Changelog
 
+### [0.3.1](https://www.github.com/googleapis/java-orchestration-airflow/compare/v0.3.0...v0.3.1) (2021-10-19)
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.4.0 ([#81](https://www.github.com/googleapis/java-orchestration-airflow/issues/81)) ([9501ea1](https://www.github.com/googleapis/java-orchestration-airflow/commit/9501ea14072488eedea408b11ff4b77ecf63de02))
+
 ## [0.3.0](https://www.github.com/googleapis/java-orchestration-airflow/compare/v0.2.0...v0.3.0) (2021-09-27)
 
 
