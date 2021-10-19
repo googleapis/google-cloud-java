@@ -1,5 +1,12 @@
 # Changelog
 
+### [2.1.3](https://www.github.com/googleapis/java-vpcaccess/compare/v2.1.2...v2.1.3) (2021-10-19)
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.4.0 ([#99](https://www.github.com/googleapis/java-vpcaccess/issues/99)) ([55481b0](https://www.github.com/googleapis/java-vpcaccess/commit/55481b006fcf1af3f4f20d71be729fac9b06dc32))
+
 ### [2.1.2](https://www.github.com/googleapis/java-vpcaccess/compare/v2.1.1...v2.1.2) (2021-09-22)
 
 
