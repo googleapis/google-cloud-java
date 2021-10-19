@@ -702,19 +702,19 @@ public final class CloudIdentityInfo extends com.google.protobuf.GeneratedMessag
     if (isDomainVerified_ != false) {
       output.writeBool(4, isDomainVerified_);
     }
-    if (!getAlternateEmailBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(alternateEmail_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 6, alternateEmail_);
     }
-    if (!getPhoneNumberBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(phoneNumber_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 7, phoneNumber_);
     }
-    if (!getLanguageCodeBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(languageCode_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 8, languageCode_);
     }
-    if (!getPrimaryDomainBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(primaryDomain_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 9, primaryDomain_);
     }
-    if (!getAdminConsoleUriBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(adminConsoleUri_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 10, adminConsoleUri_);
     }
     if (eduData_ != null) {
@@ -737,19 +737,19 @@ public final class CloudIdentityInfo extends com.google.protobuf.GeneratedMessag
     if (isDomainVerified_ != false) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(4, isDomainVerified_);
     }
-    if (!getAlternateEmailBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(alternateEmail_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, alternateEmail_);
     }
-    if (!getPhoneNumberBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(phoneNumber_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, phoneNumber_);
     }
-    if (!getLanguageCodeBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(languageCode_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, languageCode_);
     }
-    if (!getPrimaryDomainBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(primaryDomain_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(9, primaryDomain_);
     }
-    if (!getAdminConsoleUriBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(adminConsoleUri_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(10, adminConsoleUri_);
     }
     if (eduData_ != null) {

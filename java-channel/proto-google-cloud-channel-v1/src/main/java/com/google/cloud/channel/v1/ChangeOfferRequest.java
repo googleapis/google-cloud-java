@@ -466,19 +466,19 @@ public final class ChangeOfferRequest extends com.google.protobuf.GeneratedMessa
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name_);
     }
-    if (!getOfferBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(offer_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, offer_);
     }
     for (int i = 0; i < parameters_.size(); i++) {
       output.writeMessage(3, parameters_.get(i));
     }
-    if (!getPurchaseOrderIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(purchaseOrderId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 5, purchaseOrderId_);
     }
-    if (!getRequestIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(requestId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 6, requestId_);
     }
     unknownFields.writeTo(output);
@@ -490,19 +490,19 @@ public final class ChangeOfferRequest extends com.google.protobuf.GeneratedMessa
     if (size != -1) return size;
 
     size = 0;
-    if (!getNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, name_);
     }
-    if (!getOfferBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(offer_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, offer_);
     }
     for (int i = 0; i < parameters_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(3, parameters_.get(i));
     }
-    if (!getPurchaseOrderIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(purchaseOrderId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, purchaseOrderId_);
     }
-    if (!getRequestIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(requestId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, requestId_);
     }
     size += unknownFields.getSerializedSize();

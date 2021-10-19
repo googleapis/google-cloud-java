@@ -425,7 +425,7 @@ public final class TransferEligibility extends com.google.protobuf.GeneratedMess
     if (isEligible_ != false) {
       output.writeBool(1, isEligible_);
     }
-    if (!getDescriptionBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(description_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, description_);
     }
     if (ineligibilityReason_
@@ -444,7 +444,7 @@ public final class TransferEligibility extends com.google.protobuf.GeneratedMess
     if (isEligible_ != false) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(1, isEligible_);
     }
-    if (!getDescriptionBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(description_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, description_);
     }
     if (ineligibilityReason_

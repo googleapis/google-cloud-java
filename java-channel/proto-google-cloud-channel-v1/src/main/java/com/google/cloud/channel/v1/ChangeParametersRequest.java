@@ -403,16 +403,16 @@ public final class ChangeParametersRequest extends com.google.protobuf.Generated
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name_);
     }
     for (int i = 0; i < parameters_.size(); i++) {
       output.writeMessage(2, parameters_.get(i));
     }
-    if (!getRequestIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(requestId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 4, requestId_);
     }
-    if (!getPurchaseOrderIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(purchaseOrderId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 5, purchaseOrderId_);
     }
     unknownFields.writeTo(output);
@@ -424,16 +424,16 @@ public final class ChangeParametersRequest extends com.google.protobuf.Generated
     if (size != -1) return size;
 
     size = 0;
-    if (!getNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, name_);
     }
     for (int i = 0; i < parameters_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, parameters_.get(i));
     }
-    if (!getRequestIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(requestId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, requestId_);
     }
-    if (!getPurchaseOrderIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(purchaseOrderId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, purchaseOrderId_);
     }
     size += unknownFields.getSerializedSize();

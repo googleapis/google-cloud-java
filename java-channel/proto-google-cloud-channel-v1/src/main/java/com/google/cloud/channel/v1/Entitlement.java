@@ -1373,7 +1373,7 @@ public final class Entitlement extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
     getSerializedSize();
-    if (!getNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name_);
     }
     if (createTime_ != null) {
@@ -1382,7 +1382,7 @@ public final class Entitlement extends com.google.protobuf.GeneratedMessageV3
     if (updateTime_ != null) {
       output.writeMessage(6, getUpdateTime());
     }
-    if (!getOfferBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(offer_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 8, offer_);
     }
     if (commitmentSettings_ != null) {
@@ -1403,7 +1403,7 @@ public final class Entitlement extends com.google.protobuf.GeneratedMessageV3
     for (int i = 0; i < suspensionReasons_.size(); i++) {
       output.writeEnumNoTag(suspensionReasons_.get(i));
     }
-    if (!getPurchaseOrderIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(purchaseOrderId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 19, purchaseOrderId_);
     }
     if (trialSettings_ != null) {
@@ -1424,7 +1424,7 @@ public final class Entitlement extends com.google.protobuf.GeneratedMessageV3
     if (size != -1) return size;
 
     size = 0;
-    if (!getNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, name_);
     }
     if (createTime_ != null) {
@@ -1433,7 +1433,7 @@ public final class Entitlement extends com.google.protobuf.GeneratedMessageV3
     if (updateTime_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(6, getUpdateTime());
     }
-    if (!getOfferBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(offer_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, offer_);
     }
     if (commitmentSettings_ != null) {
@@ -1460,7 +1460,7 @@ public final class Entitlement extends com.google.protobuf.GeneratedMessageV3
       }
       suspensionReasonsMemoizedSerializedSize = dataSize;
     }
-    if (!getPurchaseOrderIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(purchaseOrderId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(19, purchaseOrderId_);
     }
     if (trialSettings_ != null) {

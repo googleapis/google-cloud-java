@@ -696,7 +696,7 @@ public final class EduData extends com.google.protobuf.GeneratedMessageV3
             .getNumber()) {
       output.writeEnum(2, instituteSize_);
     }
-    if (!getWebsiteBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(website_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, website_);
     }
     unknownFields.writeTo(output);
@@ -718,7 +718,7 @@ public final class EduData extends com.google.protobuf.GeneratedMessageV3
             .getNumber()) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(2, instituteSize_);
     }
-    if (!getWebsiteBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(website_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, website_);
     }
     size += unknownFields.getSerializedSize();

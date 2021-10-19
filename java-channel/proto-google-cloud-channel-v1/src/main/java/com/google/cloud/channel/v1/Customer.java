@@ -879,10 +879,10 @@ public final class Customer extends com.google.protobuf.GeneratedMessageV3
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name_);
     }
-    if (!getOrgDisplayNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(orgDisplayName_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, orgDisplayName_);
     }
     if (orgPostalAddress_ != null) {
@@ -891,10 +891,10 @@ public final class Customer extends com.google.protobuf.GeneratedMessageV3
     if (primaryContactInfo_ != null) {
       output.writeMessage(4, getPrimaryContactInfo());
     }
-    if (!getAlternateEmailBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(alternateEmail_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 5, alternateEmail_);
     }
-    if (!getDomainBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(domain_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 6, domain_);
     }
     if (createTime_ != null) {
@@ -903,16 +903,16 @@ public final class Customer extends com.google.protobuf.GeneratedMessageV3
     if (updateTime_ != null) {
       output.writeMessage(8, getUpdateTime());
     }
-    if (!getCloudIdentityIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(cloudIdentityId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 9, cloudIdentityId_);
     }
-    if (!getLanguageCodeBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(languageCode_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 10, languageCode_);
     }
     if (cloudIdentityInfo_ != null) {
       output.writeMessage(12, getCloudIdentityInfo());
     }
-    if (!getChannelPartnerIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(channelPartnerId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 13, channelPartnerId_);
     }
     unknownFields.writeTo(output);
@@ -924,10 +924,10 @@ public final class Customer extends com.google.protobuf.GeneratedMessageV3
     if (size != -1) return size;
 
     size = 0;
-    if (!getNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, name_);
     }
-    if (!getOrgDisplayNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(orgDisplayName_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, orgDisplayName_);
     }
     if (orgPostalAddress_ != null) {
@@ -936,10 +936,10 @@ public final class Customer extends com.google.protobuf.GeneratedMessageV3
     if (primaryContactInfo_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(4, getPrimaryContactInfo());
     }
-    if (!getAlternateEmailBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(alternateEmail_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, alternateEmail_);
     }
-    if (!getDomainBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(domain_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, domain_);
     }
     if (createTime_ != null) {
@@ -948,16 +948,16 @@ public final class Customer extends com.google.protobuf.GeneratedMessageV3
     if (updateTime_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(8, getUpdateTime());
     }
-    if (!getCloudIdentityIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(cloudIdentityId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(9, cloudIdentityId_);
     }
-    if (!getLanguageCodeBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(languageCode_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(10, languageCode_);
     }
     if (cloudIdentityInfo_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(12, getCloudIdentityInfo());
     }
-    if (!getChannelPartnerIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(channelPartnerId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(13, channelPartnerId_);
     }
     size += unknownFields.getSerializedSize();

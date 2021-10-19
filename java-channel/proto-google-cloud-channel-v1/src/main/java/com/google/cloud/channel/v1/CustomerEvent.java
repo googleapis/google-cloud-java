@@ -377,7 +377,7 @@ public final class CustomerEvent extends com.google.protobuf.GeneratedMessageV3
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getCustomerBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(customer_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, customer_);
     }
     if (eventType_ != com.google.cloud.channel.v1.CustomerEvent.Type.TYPE_UNSPECIFIED.getNumber()) {
@@ -392,7 +392,7 @@ public final class CustomerEvent extends com.google.protobuf.GeneratedMessageV3
     if (size != -1) return size;
 
     size = 0;
-    if (!getCustomerBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(customer_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, customer_);
     }
     if (eventType_ != com.google.cloud.channel.v1.CustomerEvent.Type.TYPE_UNSPECIFIED.getNumber()) {

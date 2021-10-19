@@ -174,7 +174,7 @@ public final class AssociationInfo extends com.google.protobuf.GeneratedMessageV
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getBaseEntitlementBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(baseEntitlement_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, baseEntitlement_);
     }
     unknownFields.writeTo(output);
@@ -186,7 +186,7 @@ public final class AssociationInfo extends com.google.protobuf.GeneratedMessageV
     if (size != -1) return size;
 
     size = 0;
-    if (!getBaseEntitlementBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(baseEntitlement_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, baseEntitlement_);
     }
     size += unknownFields.getSerializedSize();

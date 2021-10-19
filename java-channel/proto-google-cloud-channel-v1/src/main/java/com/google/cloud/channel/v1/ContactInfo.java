@@ -465,22 +465,22 @@ public final class ContactInfo extends com.google.protobuf.GeneratedMessageV3
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getFirstNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(firstName_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, firstName_);
     }
-    if (!getLastNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(lastName_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, lastName_);
     }
-    if (!getDisplayNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(displayName_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 4, displayName_);
     }
-    if (!getEmailBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(email_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 5, email_);
     }
-    if (!getTitleBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(title_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 6, title_);
     }
-    if (!getPhoneBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(phone_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 7, phone_);
     }
     unknownFields.writeTo(output);
@@ -492,22 +492,22 @@ public final class ContactInfo extends com.google.protobuf.GeneratedMessageV3
     if (size != -1) return size;
 
     size = 0;
-    if (!getFirstNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(firstName_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, firstName_);
     }
-    if (!getLastNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(lastName_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, lastName_);
     }
-    if (!getDisplayNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(displayName_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, displayName_);
     }
-    if (!getEmailBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(email_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, email_);
     }
-    if (!getTitleBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(title_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, title_);
     }
-    if (!getPhoneBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(phone_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, phone_);
     }
     size += unknownFields.getSerializedSize();

@@ -603,22 +603,22 @@ public final class ListTransferableSkusRequest extends com.google.protobuf.Gener
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getParentBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(parent_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, parent_);
     }
     if (pageSize_ != 0) {
       output.writeInt32(2, pageSize_);
     }
-    if (!getPageTokenBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(pageToken_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, pageToken_);
     }
     if (transferredCustomerIdentityCase_ == 4) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 4, transferredCustomerIdentity_);
     }
-    if (!getAuthTokenBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(authToken_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 5, authToken_);
     }
-    if (!getLanguageCodeBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(languageCode_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 6, languageCode_);
     }
     if (transferredCustomerIdentityCase_ == 7) {
@@ -633,23 +633,23 @@ public final class ListTransferableSkusRequest extends com.google.protobuf.Gener
     if (size != -1) return size;
 
     size = 0;
-    if (!getParentBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(parent_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, parent_);
     }
     if (pageSize_ != 0) {
       size += com.google.protobuf.CodedOutputStream.computeInt32Size(2, pageSize_);
     }
-    if (!getPageTokenBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(pageToken_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, pageToken_);
     }
     if (transferredCustomerIdentityCase_ == 4) {
       size +=
           com.google.protobuf.GeneratedMessageV3.computeStringSize(4, transferredCustomerIdentity_);
     }
-    if (!getAuthTokenBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(authToken_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, authToken_);
     }
-    if (!getLanguageCodeBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(languageCode_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, languageCode_);
     }
     if (transferredCustomerIdentityCase_ == 7) {

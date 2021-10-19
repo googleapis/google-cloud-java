@@ -421,7 +421,7 @@ public final class Plan extends com.google.protobuf.GeneratedMessageV3
     if (trialPeriod_ != null) {
       output.writeMessage(4, getTrialPeriod());
     }
-    if (!getBillingAccountBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(billingAccount_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 5, billingAccount_);
     }
     unknownFields.writeTo(output);
@@ -447,7 +447,7 @@ public final class Plan extends com.google.protobuf.GeneratedMessageV3
     if (trialPeriod_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(4, getTrialPeriod());
     }
-    if (!getBillingAccountBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(billingAccount_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, billingAccount_);
     }
     size += unknownFields.getSerializedSize();
