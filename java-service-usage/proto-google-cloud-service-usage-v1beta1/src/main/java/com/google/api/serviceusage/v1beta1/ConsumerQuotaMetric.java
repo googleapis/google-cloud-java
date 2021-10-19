@@ -589,19 +589,19 @@ public final class ConsumerQuotaMetric extends com.google.protobuf.GeneratedMess
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name_);
     }
-    if (!getDisplayNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(displayName_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, displayName_);
     }
     for (int i = 0; i < consumerQuotaLimits_.size(); i++) {
       output.writeMessage(3, consumerQuotaLimits_.get(i));
     }
-    if (!getMetricBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(metric_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 4, metric_);
     }
-    if (!getUnitBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(unit_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 5, unit_);
     }
     for (int i = 0; i < descendantConsumerQuotaLimits_.size(); i++) {
@@ -616,20 +616,20 @@ public final class ConsumerQuotaMetric extends com.google.protobuf.GeneratedMess
     if (size != -1) return size;
 
     size = 0;
-    if (!getNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, name_);
     }
-    if (!getDisplayNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(displayName_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, displayName_);
     }
     for (int i = 0; i < consumerQuotaLimits_.size(); i++) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(3, consumerQuotaLimits_.get(i));
     }
-    if (!getMetricBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(metric_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, metric_);
     }
-    if (!getUnitBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(unit_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, unit_);
     }
     for (int i = 0; i < descendantConsumerQuotaLimits_.size(); i++) {

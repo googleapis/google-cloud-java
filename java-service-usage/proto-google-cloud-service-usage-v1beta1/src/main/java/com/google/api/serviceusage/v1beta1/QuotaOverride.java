@@ -595,7 +595,7 @@ public final class QuotaOverride extends com.google.protobuf.GeneratedMessageV3
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name_);
     }
     if (overrideValue_ != 0L) {
@@ -603,13 +603,13 @@ public final class QuotaOverride extends com.google.protobuf.GeneratedMessageV3
     }
     com.google.protobuf.GeneratedMessageV3.serializeStringMapTo(
         output, internalGetDimensions(), DimensionsDefaultEntryHolder.defaultEntry, 3);
-    if (!getMetricBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(metric_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 4, metric_);
     }
-    if (!getUnitBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(unit_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 5, unit_);
     }
-    if (!getAdminOverrideAncestorBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(adminOverrideAncestor_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 6, adminOverrideAncestor_);
     }
     unknownFields.writeTo(output);
@@ -621,7 +621,7 @@ public final class QuotaOverride extends com.google.protobuf.GeneratedMessageV3
     if (size != -1) return size;
 
     size = 0;
-    if (!getNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, name_);
     }
     if (overrideValue_ != 0L) {
@@ -637,13 +637,13 @@ public final class QuotaOverride extends com.google.protobuf.GeneratedMessageV3
               .build();
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(3, dimensions__);
     }
-    if (!getMetricBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(metric_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, metric_);
     }
-    if (!getUnitBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(unit_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, unit_);
     }
-    if (!getAdminOverrideAncestorBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(adminOverrideAncestor_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, adminOverrideAncestor_);
     }
     size += unknownFields.getSerializedSize();

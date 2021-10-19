@@ -409,10 +409,10 @@ public final class BatchEnableServicesResponse extends com.google.protobuf.Gener
 
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-      if (!getServiceIdBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(serviceId_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, serviceId_);
       }
-      if (!getErrorMessageBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(errorMessage_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, errorMessage_);
       }
       unknownFields.writeTo(output);
@@ -424,10 +424,10 @@ public final class BatchEnableServicesResponse extends com.google.protobuf.Gener
       if (size != -1) return size;
 
       size = 0;
-      if (!getServiceIdBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(serviceId_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, serviceId_);
       }
-      if (!getErrorMessageBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(errorMessage_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, errorMessage_);
       }
       size += unknownFields.getSerializedSize();
