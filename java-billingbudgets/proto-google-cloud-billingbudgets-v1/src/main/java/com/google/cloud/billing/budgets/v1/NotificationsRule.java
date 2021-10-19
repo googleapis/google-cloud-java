@@ -400,10 +400,10 @@ public final class NotificationsRule extends com.google.protobuf.GeneratedMessag
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getPubsubTopicBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(pubsubTopic_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, pubsubTopic_);
     }
-    if (!getSchemaVersionBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(schemaVersion_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, schemaVersion_);
     }
     for (int i = 0; i < monitoringNotificationChannels_.size(); i++) {
@@ -422,10 +422,10 @@ public final class NotificationsRule extends com.google.protobuf.GeneratedMessag
     if (size != -1) return size;
 
     size = 0;
-    if (!getPubsubTopicBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(pubsubTopic_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, pubsubTopic_);
     }
-    if (!getSchemaVersionBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(schemaVersion_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, schemaVersion_);
     }
     {
