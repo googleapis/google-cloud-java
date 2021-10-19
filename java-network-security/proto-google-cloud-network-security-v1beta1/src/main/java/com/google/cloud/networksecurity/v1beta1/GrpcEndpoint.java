@@ -176,7 +176,7 @@ public final class GrpcEndpoint extends com.google.protobuf.GeneratedMessageV3
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getTargetUriBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(targetUri_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, targetUri_);
     }
     unknownFields.writeTo(output);
@@ -188,7 +188,7 @@ public final class GrpcEndpoint extends com.google.protobuf.GeneratedMessageV3
     if (size != -1) return size;
 
     size = 0;
-    if (!getTargetUriBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(targetUri_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, targetUri_);
     }
     size += unknownFields.getSerializedSize();
