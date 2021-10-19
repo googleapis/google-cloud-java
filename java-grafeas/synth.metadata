@@ -4,7 +4,7 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/java-grafeas.git",
-        "sha": "1df9288002392156e9bf868324a31d7da03d99a1"
+        "sha": "4a7ca6a541f3c9249ddb5c3eb4f7244ef2536503"
       }
     },
     {
@@ -19,7 +19,7 @@
       "git": {
         "name": "synthtool",
         "remote": "https://github.com/googleapis/synthtool.git",
-        "sha": "a4be3384ccb92364795d981f2863f6986fcee620"
+        "sha": "d45942be8066ad57bd0509f4a16e1fac78ecc50f"
       }
     }
   ],
@@ -70,6 +70,7 @@
     ".kokoro/presubmit/clirr.cfg",
     ".kokoro/presubmit/common.cfg",
     ".kokoro/presubmit/dependencies.cfg",
+    ".kokoro/presubmit/graalvm-native.cfg",
     ".kokoro/presubmit/integration.cfg",
     ".kokoro/presubmit/java11.cfg",
     ".kokoro/presubmit/java7.cfg",
