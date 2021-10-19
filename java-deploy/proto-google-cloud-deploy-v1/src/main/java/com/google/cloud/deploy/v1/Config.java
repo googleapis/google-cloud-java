@@ -330,13 +330,13 @@ public final class Config extends com.google.protobuf.GeneratedMessageV3
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name_);
     }
     for (int i = 0; i < supportedVersions_.size(); i++) {
       output.writeMessage(2, supportedVersions_.get(i));
     }
-    if (!getDefaultSkaffoldVersionBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(defaultSkaffoldVersion_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, defaultSkaffoldVersion_);
     }
     unknownFields.writeTo(output);
@@ -348,14 +348,14 @@ public final class Config extends com.google.protobuf.GeneratedMessageV3
     if (size != -1) return size;
 
     size = 0;
-    if (!getNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, name_);
     }
     for (int i = 0; i < supportedVersions_.size(); i++) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(2, supportedVersions_.get(i));
     }
-    if (!getDefaultSkaffoldVersionBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(defaultSkaffoldVersion_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, defaultSkaffoldVersion_);
     }
     size += unknownFields.getSerializedSize();

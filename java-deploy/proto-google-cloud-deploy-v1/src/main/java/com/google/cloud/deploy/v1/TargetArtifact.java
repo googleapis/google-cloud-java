@@ -358,10 +358,10 @@ public final class TargetArtifact extends com.google.protobuf.GeneratedMessageV3
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getSkaffoldConfigPathBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(skaffoldConfigPath_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, skaffoldConfigPath_);
     }
-    if (!getManifestPathBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(manifestPath_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, manifestPath_);
     }
     if (uriCase_ == 4) {
@@ -376,10 +376,10 @@ public final class TargetArtifact extends com.google.protobuf.GeneratedMessageV3
     if (size != -1) return size;
 
     size = 0;
-    if (!getSkaffoldConfigPathBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(skaffoldConfigPath_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, skaffoldConfigPath_);
     }
-    if (!getManifestPathBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(manifestPath_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, manifestPath_);
     }
     if (uriCase_ == 4) {

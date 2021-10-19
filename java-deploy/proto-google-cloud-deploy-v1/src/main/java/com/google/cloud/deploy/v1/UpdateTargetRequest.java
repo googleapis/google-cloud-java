@@ -388,7 +388,7 @@ public final class UpdateTargetRequest extends com.google.protobuf.GeneratedMess
     if (target_ != null) {
       output.writeMessage(2, getTarget());
     }
-    if (!getRequestIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(requestId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, requestId_);
     }
     if (allowMissing_ != false) {
@@ -412,7 +412,7 @@ public final class UpdateTargetRequest extends com.google.protobuf.GeneratedMess
     if (target_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, getTarget());
     }
-    if (!getRequestIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(requestId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, requestId_);
     }
     if (allowMissing_ != false) {

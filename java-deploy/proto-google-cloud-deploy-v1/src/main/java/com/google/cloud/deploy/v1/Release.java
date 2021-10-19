@@ -989,7 +989,7 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
 
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-      if (!getRenderingBuildBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(renderingBuild_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, renderingBuild_);
       }
       if (renderingState_
@@ -1007,7 +1007,7 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
       if (size != -1) return size;
 
       size = 0;
-      if (!getRenderingBuildBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(renderingBuild_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, renderingBuild_);
       }
       if (renderingState_
@@ -2844,13 +2844,13 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name_);
     }
-    if (!getUidBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(uid_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, uid_);
     }
-    if (!getDescriptionBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(description_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, description_);
     }
     com.google.protobuf.GeneratedMessageV3.serializeStringMapTo(
@@ -2866,7 +2866,7 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
     if (renderEndTime_ != null) {
       output.writeMessage(8, getRenderEndTime());
     }
-    if (!getSkaffoldConfigPathBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(skaffoldConfigPath_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 9, skaffoldConfigPath_);
     }
     for (int i = 0; i < buildArtifacts_.size(); i++) {
@@ -2882,13 +2882,13 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
         != com.google.cloud.deploy.v1.Release.RenderState.RENDER_STATE_UNSPECIFIED.getNumber()) {
       output.writeEnum(13, renderState_);
     }
-    if (!getEtagBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(etag_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 16, etag_);
     }
-    if (!getSkaffoldConfigUriBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(skaffoldConfigUri_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 17, skaffoldConfigUri_);
     }
-    if (!getSkaffoldVersionBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(skaffoldVersion_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 19, skaffoldVersion_);
     }
     com.google.protobuf.GeneratedMessageV3.serializeStringMapTo(
@@ -2904,13 +2904,13 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
     if (size != -1) return size;
 
     size = 0;
-    if (!getNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, name_);
     }
-    if (!getUidBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(uid_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, uid_);
     }
-    if (!getDescriptionBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(description_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, description_);
     }
     for (java.util.Map.Entry<java.lang.String, java.lang.String> entry :
@@ -2942,7 +2942,7 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
     if (renderEndTime_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(8, getRenderEndTime());
     }
-    if (!getSkaffoldConfigPathBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(skaffoldConfigPath_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(9, skaffoldConfigPath_);
     }
     for (int i = 0; i < buildArtifacts_.size(); i++) {
@@ -2960,13 +2960,13 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
         != com.google.cloud.deploy.v1.Release.RenderState.RENDER_STATE_UNSPECIFIED.getNumber()) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(13, renderState_);
     }
-    if (!getEtagBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(etag_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(16, etag_);
     }
-    if (!getSkaffoldConfigUriBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(skaffoldConfigUri_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(17, skaffoldConfigUri_);
     }
-    if (!getSkaffoldVersionBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(skaffoldVersion_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(19, skaffoldVersion_);
     }
     for (java.util.Map.Entry<java.lang.String, com.google.cloud.deploy.v1.TargetArtifact> entry :

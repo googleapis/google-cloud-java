@@ -304,13 +304,13 @@ public final class PrivatePool extends com.google.protobuf.GeneratedMessageV3
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getWorkerPoolBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(workerPool_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, workerPool_);
     }
-    if (!getServiceAccountBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(serviceAccount_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, serviceAccount_);
     }
-    if (!getArtifactStorageBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(artifactStorage_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, artifactStorage_);
     }
     unknownFields.writeTo(output);
@@ -322,13 +322,13 @@ public final class PrivatePool extends com.google.protobuf.GeneratedMessageV3
     if (size != -1) return size;
 
     size = 0;
-    if (!getWorkerPoolBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(workerPool_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, workerPool_);
     }
-    if (!getServiceAccountBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(serviceAccount_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, serviceAccount_);
     }
-    if (!getArtifactStorageBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(artifactStorage_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, artifactStorage_);
     }
     size += unknownFields.getSerializedSize();

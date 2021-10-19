@@ -394,7 +394,7 @@ public final class UpdateDeliveryPipelineRequest extends com.google.protobuf.Gen
     if (deliveryPipeline_ != null) {
       output.writeMessage(2, getDeliveryPipeline());
     }
-    if (!getRequestIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(requestId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, requestId_);
     }
     if (allowMissing_ != false) {
@@ -418,7 +418,7 @@ public final class UpdateDeliveryPipelineRequest extends com.google.protobuf.Gen
     if (deliveryPipeline_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, getDeliveryPipeline());
     }
-    if (!getRequestIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(requestId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, requestId_);
     }
     if (allowMissing_ != false) {
