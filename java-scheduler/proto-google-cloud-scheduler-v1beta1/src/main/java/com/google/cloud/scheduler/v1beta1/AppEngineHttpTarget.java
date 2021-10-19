@@ -552,7 +552,7 @@ public final class AppEngineHttpTarget extends com.google.protobuf.GeneratedMess
     if (appEngineRouting_ != null) {
       output.writeMessage(2, getAppEngineRouting());
     }
-    if (!getRelativeUriBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(relativeUri_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, relativeUri_);
     }
     com.google.protobuf.GeneratedMessageV3.serializeStringMapTo(
@@ -576,7 +576,7 @@ public final class AppEngineHttpTarget extends com.google.protobuf.GeneratedMess
     if (appEngineRouting_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, getAppEngineRouting());
     }
-    if (!getRelativeUriBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(relativeUri_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, relativeUri_);
     }
     for (java.util.Map.Entry<java.lang.String, java.lang.String> entry :
