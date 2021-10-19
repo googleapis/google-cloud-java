@@ -58,7 +58,7 @@ public interface RuntimeSoftwareConfigOrBuilder
    * Default: True
    * </pre>
    *
-   * <code>bool enable_health_monitoring = 2;</code>
+   * <code>optional bool enable_health_monitoring = 2;</code>
    *
    * @return Whether the enableHealthMonitoring field is set.
    */
@@ -71,7 +71,7 @@ public interface RuntimeSoftwareConfigOrBuilder
    * Default: True
    * </pre>
    *
-   * <code>bool enable_health_monitoring = 2;</code>
+   * <code>optional bool enable_health_monitoring = 2;</code>
    *
    * @return The enableHealthMonitoring.
    */
@@ -85,7 +85,7 @@ public interface RuntimeSoftwareConfigOrBuilder
    * Default: True
    * </pre>
    *
-   * <code>bool idle_shutdown = 3;</code>
+   * <code>optional bool idle_shutdown = 3;</code>
    *
    * @return Whether the idleShutdown field is set.
    */
@@ -98,7 +98,7 @@ public interface RuntimeSoftwareConfigOrBuilder
    * Default: True
    * </pre>
    *
-   * <code>bool idle_shutdown = 3;</code>
+   * <code>optional bool idle_shutdown = 3;</code>
    *
    * @return The idleShutdown.
    */

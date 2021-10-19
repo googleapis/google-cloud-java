@@ -426,10 +426,10 @@ public final class RuntimeAccessConfig extends com.google.protobuf.GeneratedMess
             .getNumber()) {
       output.writeEnum(1, accessType_);
     }
-    if (!getRuntimeOwnerBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(runtimeOwner_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, runtimeOwner_);
     }
-    if (!getProxyUriBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(proxyUri_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, proxyUri_);
     }
     unknownFields.writeTo(output);
@@ -447,10 +447,10 @@ public final class RuntimeAccessConfig extends com.google.protobuf.GeneratedMess
             .getNumber()) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(1, accessType_);
     }
-    if (!getRuntimeOwnerBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(runtimeOwner_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, runtimeOwner_);
     }
-    if (!getProxyUriBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(proxyUri_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, proxyUri_);
     }
     size += unknownFields.getSerializedSize();

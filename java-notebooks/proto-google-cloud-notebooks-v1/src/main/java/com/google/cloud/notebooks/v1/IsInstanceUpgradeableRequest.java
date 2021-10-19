@@ -176,7 +176,7 @@ public final class IsInstanceUpgradeableRequest extends com.google.protobuf.Gene
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getNotebookInstanceBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(notebookInstance_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, notebookInstance_);
     }
     unknownFields.writeTo(output);
@@ -188,7 +188,7 @@ public final class IsInstanceUpgradeableRequest extends com.google.protobuf.Gene
     if (size != -1) return size;
 
     size = 0;
-    if (!getNotebookInstanceBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(notebookInstance_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, notebookInstance_);
     }
     size += unknownFields.getSerializedSize();
