@@ -10320,10 +10320,10 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
 
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-      if (!getCaCertificateAccessUrlBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(caCertificateAccessUrl_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, caCertificateAccessUrl_);
       }
-      if (!getCrlAccessUrlBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(crlAccessUrl_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, crlAccessUrl_);
       }
       unknownFields.writeTo(output);
@@ -10335,11 +10335,11 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
       if (size != -1) return size;
 
       size = 0;
-      if (!getCaCertificateAccessUrlBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(caCertificateAccessUrl_)) {
         size +=
             com.google.protobuf.GeneratedMessageV3.computeStringSize(1, caCertificateAccessUrl_);
       }
-      if (!getCrlAccessUrlBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(crlAccessUrl_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, crlAccessUrl_);
       }
       size += unknownFields.getSerializedSize();
@@ -13206,7 +13206,7 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name_);
     }
     if (type_
@@ -13245,7 +13245,7 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
     for (int i = 0; i < caCertificateDescriptions_.size(); i++) {
       output.writeMessage(12, caCertificateDescriptions_.get(i));
     }
-    if (!getGcsBucketBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(gcsBucket_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 13, gcsBucket_);
     }
     if (accessUrls_ != null) {
@@ -13274,7 +13274,7 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
     if (size != -1) return size;
 
     size = 0;
-    if (!getNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, name_);
     }
     if (type_
@@ -13320,7 +13320,7 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               12, caCertificateDescriptions_.get(i));
     }
-    if (!getGcsBucketBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(gcsBucket_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(13, gcsBucket_);
     }
     if (accessUrls_ != null) {

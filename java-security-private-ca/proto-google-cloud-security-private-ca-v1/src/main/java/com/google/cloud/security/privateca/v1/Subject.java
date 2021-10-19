@@ -574,28 +574,28 @@ public final class Subject extends com.google.protobuf.GeneratedMessageV3
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getCommonNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(commonName_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, commonName_);
     }
-    if (!getCountryCodeBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(countryCode_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, countryCode_);
     }
-    if (!getOrganizationBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(organization_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, organization_);
     }
-    if (!getOrganizationalUnitBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(organizationalUnit_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 4, organizationalUnit_);
     }
-    if (!getLocalityBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(locality_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 5, locality_);
     }
-    if (!getProvinceBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(province_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 6, province_);
     }
-    if (!getStreetAddressBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(streetAddress_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 7, streetAddress_);
     }
-    if (!getPostalCodeBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(postalCode_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 8, postalCode_);
     }
     unknownFields.writeTo(output);
@@ -607,28 +607,28 @@ public final class Subject extends com.google.protobuf.GeneratedMessageV3
     if (size != -1) return size;
 
     size = 0;
-    if (!getCommonNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(commonName_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, commonName_);
     }
-    if (!getCountryCodeBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(countryCode_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, countryCode_);
     }
-    if (!getOrganizationBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(organization_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, organization_);
     }
-    if (!getOrganizationalUnitBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(organizationalUnit_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, organizationalUnit_);
     }
-    if (!getLocalityBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(locality_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, locality_);
     }
-    if (!getProvinceBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(province_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, province_);
     }
-    if (!getStreetAddressBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(streetAddress_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, streetAddress_);
     }
-    if (!getPostalCodeBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(postalCode_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, postalCode_);
     }
     size += unknownFields.getSerializedSize();

@@ -179,7 +179,7 @@ public final class FetchCertificateAuthorityCsrResponse
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getPemCsrBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(pemCsr_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, pemCsr_);
     }
     unknownFields.writeTo(output);
@@ -191,7 +191,7 @@ public final class FetchCertificateAuthorityCsrResponse
     if (size != -1) return size;
 
     size = 0;
-    if (!getPemCsrBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(pemCsr_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, pemCsr_);
     }
     size += unknownFields.getSerializedSize();

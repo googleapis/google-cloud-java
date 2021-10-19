@@ -722,10 +722,10 @@ public final class CertificateRevocationList extends com.google.protobuf.Generat
 
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-      if (!getCertificateBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(certificate_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, certificate_);
       }
-      if (!getHexSerialNumberBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(hexSerialNumber_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, hexSerialNumber_);
       }
       if (revocationReason_
@@ -743,10 +743,10 @@ public final class CertificateRevocationList extends com.google.protobuf.Generat
       if (size != -1) return size;
 
       size = 0;
-      if (!getCertificateBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(certificate_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, certificate_);
       }
-      if (!getHexSerialNumberBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(hexSerialNumber_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, hexSerialNumber_);
       }
       if (revocationReason_
@@ -2007,7 +2007,7 @@ public final class CertificateRevocationList extends com.google.protobuf.Generat
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name_);
     }
     if (sequenceNumber_ != 0L) {
@@ -2016,10 +2016,10 @@ public final class CertificateRevocationList extends com.google.protobuf.Generat
     for (int i = 0; i < revokedCertificates_.size(); i++) {
       output.writeMessage(3, revokedCertificates_.get(i));
     }
-    if (!getPemCrlBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(pemCrl_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 4, pemCrl_);
     }
-    if (!getAccessUrlBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(accessUrl_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 5, accessUrl_);
     }
     if (state_
@@ -2045,7 +2045,7 @@ public final class CertificateRevocationList extends com.google.protobuf.Generat
     if (size != -1) return size;
 
     size = 0;
-    if (!getNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, name_);
     }
     if (sequenceNumber_ != 0L) {
@@ -2055,10 +2055,10 @@ public final class CertificateRevocationList extends com.google.protobuf.Generat
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(3, revokedCertificates_.get(i));
     }
-    if (!getPemCrlBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(pemCrl_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, pemCrl_);
     }
-    if (!getAccessUrlBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(accessUrl_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, accessUrl_);
     }
     if (state_

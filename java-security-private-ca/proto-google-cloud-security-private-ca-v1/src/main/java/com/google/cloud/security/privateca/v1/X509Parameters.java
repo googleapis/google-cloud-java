@@ -200,7 +200,7 @@ public final class X509Parameters extends com.google.protobuf.GeneratedMessageV3
      * value is missing, the extension will be omitted from the CA certificate.
      * </pre>
      *
-     * <code>bool is_ca = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>optional bool is_ca = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return Whether the isCa field is set.
      */
@@ -213,7 +213,7 @@ public final class X509Parameters extends com.google.protobuf.GeneratedMessageV3
      * value is missing, the extension will be omitted from the CA certificate.
      * </pre>
      *
-     * <code>bool is_ca = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>optional bool is_ca = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The isCa.
      */
@@ -231,7 +231,8 @@ public final class X509Parameters extends com.google.protobuf.GeneratedMessageV3
      * CA certificate.
      * </pre>
      *
-     * <code>int32 max_issuer_path_length = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>optional int32 max_issuer_path_length = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return Whether the maxIssuerPathLength field is set.
      */
@@ -248,7 +249,8 @@ public final class X509Parameters extends com.google.protobuf.GeneratedMessageV3
      * CA certificate.
      * </pre>
      *
-     * <code>int32 max_issuer_path_length = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>optional int32 max_issuer_path_length = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return The maxIssuerPathLength.
      */
@@ -362,7 +364,7 @@ public final class X509Parameters extends com.google.protobuf.GeneratedMessageV3
      * value is missing, the extension will be omitted from the CA certificate.
      * </pre>
      *
-     * <code>bool is_ca = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>optional bool is_ca = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return Whether the isCa field is set.
      */
@@ -378,7 +380,7 @@ public final class X509Parameters extends com.google.protobuf.GeneratedMessageV3
      * value is missing, the extension will be omitted from the CA certificate.
      * </pre>
      *
-     * <code>bool is_ca = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>optional bool is_ca = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The isCa.
      */
@@ -401,7 +403,8 @@ public final class X509Parameters extends com.google.protobuf.GeneratedMessageV3
      * CA certificate.
      * </pre>
      *
-     * <code>int32 max_issuer_path_length = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>optional int32 max_issuer_path_length = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return Whether the maxIssuerPathLength field is set.
      */
@@ -421,7 +424,8 @@ public final class X509Parameters extends com.google.protobuf.GeneratedMessageV3
      * CA certificate.
      * </pre>
      *
-     * <code>int32 max_issuer_path_length = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>optional int32 max_issuer_path_length = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return The maxIssuerPathLength.
      */
@@ -803,7 +807,7 @@ public final class X509Parameters extends com.google.protobuf.GeneratedMessageV3
        * value is missing, the extension will be omitted from the CA certificate.
        * </pre>
        *
-       * <code>bool is_ca = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+       * <code>optional bool is_ca = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @return Whether the isCa field is set.
        */
@@ -819,7 +823,7 @@ public final class X509Parameters extends com.google.protobuf.GeneratedMessageV3
        * value is missing, the extension will be omitted from the CA certificate.
        * </pre>
        *
-       * <code>bool is_ca = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+       * <code>optional bool is_ca = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @return The isCa.
        */
@@ -835,7 +839,7 @@ public final class X509Parameters extends com.google.protobuf.GeneratedMessageV3
        * value is missing, the extension will be omitted from the CA certificate.
        * </pre>
        *
-       * <code>bool is_ca = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+       * <code>optional bool is_ca = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @param value The isCa to set.
        * @return This builder for chaining.
@@ -854,7 +858,7 @@ public final class X509Parameters extends com.google.protobuf.GeneratedMessageV3
        * value is missing, the extension will be omitted from the CA certificate.
        * </pre>
        *
-       * <code>bool is_ca = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+       * <code>optional bool is_ca = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @return This builder for chaining.
        */
@@ -878,7 +882,8 @@ public final class X509Parameters extends com.google.protobuf.GeneratedMessageV3
        * CA certificate.
        * </pre>
        *
-       * <code>int32 max_issuer_path_length = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+       * <code>optional int32 max_issuer_path_length = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
        *
        * @return Whether the maxIssuerPathLength field is set.
        */
@@ -898,7 +903,8 @@ public final class X509Parameters extends com.google.protobuf.GeneratedMessageV3
        * CA certificate.
        * </pre>
        *
-       * <code>int32 max_issuer_path_length = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+       * <code>optional int32 max_issuer_path_length = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
        *
        * @return The maxIssuerPathLength.
        */
@@ -918,7 +924,8 @@ public final class X509Parameters extends com.google.protobuf.GeneratedMessageV3
        * CA certificate.
        * </pre>
        *
-       * <code>int32 max_issuer_path_length = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+       * <code>optional int32 max_issuer_path_length = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
        *
        * @param value The maxIssuerPathLength to set.
        * @return This builder for chaining.
@@ -941,7 +948,8 @@ public final class X509Parameters extends com.google.protobuf.GeneratedMessageV3
        * CA certificate.
        * </pre>
        *
-       * <code>int32 max_issuer_path_length = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+       * <code>optional int32 max_issuer_path_length = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
        *
        * @return This builder for chaining.
        */

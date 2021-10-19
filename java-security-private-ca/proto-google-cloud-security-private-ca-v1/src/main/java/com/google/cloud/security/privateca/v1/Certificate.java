@@ -2144,7 +2144,7 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name_);
     }
     if (certificateConfigCase_ == 2) {
@@ -2154,13 +2154,13 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
       output.writeMessage(
           3, (com.google.cloud.security.privateca.v1.CertificateConfig) certificateConfig_);
     }
-    if (!getIssuerCertificateAuthorityBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(issuerCertificateAuthority_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 4, issuerCertificateAuthority_);
     }
     if (lifetime_ != null) {
       output.writeMessage(5, getLifetime());
     }
-    if (!getCertificateTemplateBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(certificateTemplate_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 6, certificateTemplate_);
     }
     if (subjectMode_
@@ -2172,7 +2172,7 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
     if (revocationDetails_ != null) {
       output.writeMessage(8, getRevocationDetails());
     }
-    if (!getPemCertificateBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(pemCertificate_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 9, pemCertificate_);
     }
     if (certificateDescription_ != null) {
@@ -2199,7 +2199,7 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
     if (size != -1) return size;
 
     size = 0;
-    if (!getNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, name_);
     }
     if (certificateConfigCase_ == 2) {
@@ -2210,14 +2210,14 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               3, (com.google.cloud.security.privateca.v1.CertificateConfig) certificateConfig_);
     }
-    if (!getIssuerCertificateAuthorityBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(issuerCertificateAuthority_)) {
       size +=
           com.google.protobuf.GeneratedMessageV3.computeStringSize(4, issuerCertificateAuthority_);
     }
     if (lifetime_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(5, getLifetime());
     }
-    if (!getCertificateTemplateBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(certificateTemplate_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, certificateTemplate_);
     }
     if (subjectMode_
@@ -2229,7 +2229,7 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
     if (revocationDetails_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(8, getRevocationDetails());
     }
-    if (!getPemCertificateBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(pemCertificate_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(9, pemCertificate_);
     }
     if (certificateDescription_ != null) {

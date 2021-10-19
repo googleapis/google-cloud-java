@@ -343,7 +343,7 @@ public final class UpdateCertificateRevocationListRequest
     if (updateMask_ != null) {
       output.writeMessage(2, getUpdateMask());
     }
-    if (!getRequestIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(requestId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, requestId_);
     }
     unknownFields.writeTo(output);
@@ -363,7 +363,7 @@ public final class UpdateCertificateRevocationListRequest
     if (updateMask_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, getUpdateMask());
     }
-    if (!getRequestIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(requestId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, requestId_);
     }
     size += unknownFields.getSerializedSize();
