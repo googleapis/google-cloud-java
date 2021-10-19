@@ -687,10 +687,10 @@ public final class Connector extends com.google.protobuf.GeneratedMessageV3
 
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-      if (!getNameBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name_);
       }
-      if (!getProjectIdBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(projectId_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, projectId_);
       }
       unknownFields.writeTo(output);
@@ -702,10 +702,10 @@ public final class Connector extends com.google.protobuf.GeneratedMessageV3
       if (size != -1) return size;
 
       size = 0;
-      if (!getNameBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, name_);
       }
-      if (!getProjectIdBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(projectId_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, projectId_);
       }
       size += unknownFields.getSerializedSize();
@@ -1651,13 +1651,13 @@ public final class Connector extends com.google.protobuf.GeneratedMessageV3
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name_);
     }
-    if (!getNetworkBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(network_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, network_);
     }
-    if (!getIpCidrRangeBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(ipCidrRange_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, ipCidrRange_);
     }
     if (state_ != com.google.cloud.vpcaccess.v1.Connector.State.STATE_UNSPECIFIED.getNumber()) {
@@ -1684,13 +1684,13 @@ public final class Connector extends com.google.protobuf.GeneratedMessageV3
     if (size != -1) return size;
 
     size = 0;
-    if (!getNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, name_);
     }
-    if (!getNetworkBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(network_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, network_);
     }
-    if (!getIpCidrRangeBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(ipCidrRange_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, ipCidrRange_);
     }
     if (state_ != com.google.cloud.vpcaccess.v1.Connector.State.STATE_UNSPECIFIED.getNumber()) {
