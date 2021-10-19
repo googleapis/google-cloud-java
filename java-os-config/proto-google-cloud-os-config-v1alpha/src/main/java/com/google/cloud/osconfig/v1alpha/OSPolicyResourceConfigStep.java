@@ -651,7 +651,7 @@ public final class OSPolicyResourceConfigStep extends com.google.protobuf.Genera
             .getNumber()) {
       output.writeEnum(2, outcome_);
     }
-    if (!getErrorMessageBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(errorMessage_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, errorMessage_);
     }
     unknownFields.writeTo(output);
@@ -673,7 +673,7 @@ public final class OSPolicyResourceConfigStep extends com.google.protobuf.Genera
             .getNumber()) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(2, outcome_);
     }
-    if (!getErrorMessageBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(errorMessage_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, errorMessage_);
     }
     size += unknownFields.getSerializedSize();

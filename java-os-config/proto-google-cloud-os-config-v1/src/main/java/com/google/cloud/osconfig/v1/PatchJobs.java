@@ -857,10 +857,10 @@ public final class PatchJobs {
 
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-      if (!getParentBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(parent_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, parent_);
       }
-      if (!getDescriptionBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(description_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, description_);
       }
       if (patchConfig_ != null) {
@@ -875,7 +875,7 @@ public final class PatchJobs {
       if (instanceFilter_ != null) {
         output.writeMessage(7, getInstanceFilter());
       }
-      if (!getDisplayNameBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(displayName_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 8, displayName_);
       }
       if (rollout_ != null) {
@@ -890,10 +890,10 @@ public final class PatchJobs {
       if (size != -1) return size;
 
       size = 0;
-      if (!getParentBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(parent_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, parent_);
       }
-      if (!getDescriptionBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(description_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, description_);
       }
       if (patchConfig_ != null) {
@@ -908,7 +908,7 @@ public final class PatchJobs {
       if (instanceFilter_ != null) {
         size += com.google.protobuf.CodedOutputStream.computeMessageSize(7, getInstanceFilter());
       }
-      if (!getDisplayNameBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(displayName_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, displayName_);
       }
       if (rollout_ != null) {
@@ -2754,7 +2754,7 @@ public final class PatchJobs {
 
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-      if (!getNameBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name_);
       }
       unknownFields.writeTo(output);
@@ -2766,7 +2766,7 @@ public final class PatchJobs {
       if (size != -1) return size;
 
       size = 0;
-      if (!getNameBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, name_);
       }
       size += unknownFields.getSerializedSize();
@@ -3644,16 +3644,16 @@ public final class PatchJobs {
 
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-      if (!getParentBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(parent_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, parent_);
       }
       if (pageSize_ != 0) {
         output.writeInt32(2, pageSize_);
       }
-      if (!getPageTokenBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(pageToken_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 3, pageToken_);
       }
-      if (!getFilterBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(filter_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 4, filter_);
       }
       unknownFields.writeTo(output);
@@ -3665,16 +3665,16 @@ public final class PatchJobs {
       if (size != -1) return size;
 
       size = 0;
-      if (!getParentBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(parent_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, parent_);
       }
       if (pageSize_ != 0) {
         size += com.google.protobuf.CodedOutputStream.computeInt32Size(2, pageSize_);
       }
-      if (!getPageTokenBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(pageToken_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, pageToken_);
       }
-      if (!getFilterBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(filter_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, filter_);
       }
       size += unknownFields.getSerializedSize();
@@ -4837,7 +4837,7 @@ public final class PatchJobs {
       for (int i = 0; i < patchJobInstanceDetails_.size(); i++) {
         output.writeMessage(1, patchJobInstanceDetails_.get(i));
       }
-      if (!getNextPageTokenBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(nextPageToken_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, nextPageToken_);
       }
       unknownFields.writeTo(output);
@@ -4854,7 +4854,7 @@ public final class PatchJobs {
             com.google.protobuf.CodedOutputStream.computeMessageSize(
                 1, patchJobInstanceDetails_.get(i));
       }
-      if (!getNextPageTokenBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(nextPageToken_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, nextPageToken_);
       }
       size += unknownFields.getSerializedSize();
@@ -6261,10 +6261,10 @@ public final class PatchJobs {
 
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-      if (!getNameBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name_);
       }
-      if (!getInstanceSystemIdBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(instanceSystemId_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, instanceSystemId_);
       }
       if (state_
@@ -6272,7 +6272,7 @@ public final class PatchJobs {
               .getNumber()) {
         output.writeEnum(3, state_);
       }
-      if (!getFailureReasonBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(failureReason_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 4, failureReason_);
       }
       if (attemptCount_ != 0L) {
@@ -6287,10 +6287,10 @@ public final class PatchJobs {
       if (size != -1) return size;
 
       size = 0;
-      if (!getNameBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, name_);
       }
-      if (!getInstanceSystemIdBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(instanceSystemId_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, instanceSystemId_);
       }
       if (state_
@@ -6298,7 +6298,7 @@ public final class PatchJobs {
               .getNumber()) {
         size += com.google.protobuf.CodedOutputStream.computeEnumSize(3, state_);
       }
-      if (!getFailureReasonBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(failureReason_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, failureReason_);
       }
       if (attemptCount_ != 0L) {
@@ -7572,16 +7572,16 @@ public final class PatchJobs {
 
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-      if (!getParentBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(parent_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, parent_);
       }
       if (pageSize_ != 0) {
         output.writeInt32(2, pageSize_);
       }
-      if (!getPageTokenBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(pageToken_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 3, pageToken_);
       }
-      if (!getFilterBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(filter_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 4, filter_);
       }
       unknownFields.writeTo(output);
@@ -7593,16 +7593,16 @@ public final class PatchJobs {
       if (size != -1) return size;
 
       size = 0;
-      if (!getParentBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(parent_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, parent_);
       }
       if (pageSize_ != 0) {
         size += com.google.protobuf.CodedOutputStream.computeInt32Size(2, pageSize_);
       }
-      if (!getPageTokenBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(pageToken_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, pageToken_);
       }
-      if (!getFilterBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(filter_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, filter_);
       }
       size += unknownFields.getSerializedSize();
@@ -8708,7 +8708,7 @@ public final class PatchJobs {
       for (int i = 0; i < patchJobs_.size(); i++) {
         output.writeMessage(1, patchJobs_.get(i));
       }
-      if (!getNextPageTokenBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(nextPageToken_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, nextPageToken_);
       }
       unknownFields.writeTo(output);
@@ -8723,7 +8723,7 @@ public final class PatchJobs {
       for (int i = 0; i < patchJobs_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, patchJobs_.get(i));
       }
-      if (!getNextPageTokenBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(nextPageToken_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, nextPageToken_);
       }
       size += unknownFields.getSerializedSize();
@@ -13323,10 +13323,10 @@ public final class PatchJobs {
 
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-      if (!getNameBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name_);
       }
-      if (!getDescriptionBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(description_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, description_);
       }
       if (createTime_ != null) {
@@ -13351,7 +13351,7 @@ public final class PatchJobs {
       if (dryRun_ != false) {
         output.writeBool(10, dryRun_);
       }
-      if (!getErrorMessageBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(errorMessage_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 11, errorMessage_);
       }
       if (percentComplete_ != 0D) {
@@ -13360,10 +13360,10 @@ public final class PatchJobs {
       if (instanceFilter_ != null) {
         output.writeMessage(13, getInstanceFilter());
       }
-      if (!getDisplayNameBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(displayName_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 14, displayName_);
       }
-      if (!getPatchDeploymentBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(patchDeployment_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 15, patchDeployment_);
       }
       if (rollout_ != null) {
@@ -13378,10 +13378,10 @@ public final class PatchJobs {
       if (size != -1) return size;
 
       size = 0;
-      if (!getNameBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, name_);
       }
-      if (!getDescriptionBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(description_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, description_);
       }
       if (createTime_ != null) {
@@ -13408,7 +13408,7 @@ public final class PatchJobs {
       if (dryRun_ != false) {
         size += com.google.protobuf.CodedOutputStream.computeBoolSize(10, dryRun_);
       }
-      if (!getErrorMessageBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(errorMessage_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(11, errorMessage_);
       }
       if (percentComplete_ != 0D) {
@@ -13417,10 +13417,10 @@ public final class PatchJobs {
       if (instanceFilter_ != null) {
         size += com.google.protobuf.CodedOutputStream.computeMessageSize(13, getInstanceFilter());
       }
-      if (!getDisplayNameBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(displayName_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(14, displayName_);
       }
-      if (!getPatchDeploymentBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(patchDeployment_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(15, patchDeployment_);
       }
       if (rollout_ != null) {
@@ -20273,7 +20273,7 @@ public final class PatchJobs {
 
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-      if (!getNameBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name_);
       }
       unknownFields.writeTo(output);
@@ -20285,7 +20285,7 @@ public final class PatchJobs {
       if (size != -1) return size;
 
       size = 0;
-      if (!getNameBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, name_);
       }
       size += unknownFields.getSerializedSize();
@@ -31399,10 +31399,10 @@ public final class PatchJobs {
 
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-      if (!getBucketBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(bucket_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, bucket_);
       }
-      if (!getObjectBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(object_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, object_);
       }
       if (generationNumber_ != 0L) {
@@ -31417,10 +31417,10 @@ public final class PatchJobs {
       if (size != -1) return size;
 
       size = 0;
-      if (!getBucketBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(bucket_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, bucket_);
       }
-      if (!getObjectBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(object_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, object_);
       }
       if (generationNumber_ != 0L) {
