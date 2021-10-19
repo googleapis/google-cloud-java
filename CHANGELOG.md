@@ -1,5 +1,23 @@
 # Changelog
 
+### [2.4.1](https://www.github.com/googleapis/java-bigquerystorage/compare/v2.4.0...v2.4.1) (2021-10-19)
+
+
+### Bug Fixes
+
+* remove excessive StreamWriter info logging ([#1359](https://www.github.com/googleapis/java-bigquerystorage/issues/1359)) ([0d27d5a](https://www.github.com/googleapis/java-bigquerystorage/commit/0d27d5a10ad62d506a646dcbf0a196e1d57740b0))
+
+
+### Documentation
+
+* **samples:** Update samples to v1 ([#1364](https://www.github.com/googleapis/java-bigquerystorage/issues/1364)) ([b705783](https://www.github.com/googleapis/java-bigquerystorage/commit/b705783d5939c1df96dc565cb763365e1989adb6))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-bigquery to v2.3.0 ([#1361](https://www.github.com/googleapis/java-bigquerystorage/issues/1361)) ([c8f0051](https://www.github.com/googleapis/java-bigquerystorage/commit/c8f00517a385461a2816afe7b95f8d5347e2fc10))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.4.0 ([#1365](https://www.github.com/googleapis/java-bigquerystorage/issues/1365)) ([69e96aa](https://www.github.com/googleapis/java-bigquerystorage/commit/69e96aaf8f13bd4887ec34af8db2bb5bf740282f))
+
 ## [2.4.0](https://www.github.com/googleapis/java-bigquerystorage/compare/v2.3.3...v2.4.0) (2021-10-12)
 
 
