@@ -418,19 +418,19 @@ public final class TranslateSpeechConfig extends com.google.protobuf.GeneratedMe
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getAudioEncodingBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(audioEncoding_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, audioEncoding_);
     }
-    if (!getSourceLanguageCodeBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(sourceLanguageCode_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, sourceLanguageCode_);
     }
-    if (!getTargetLanguageCodeBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(targetLanguageCode_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, targetLanguageCode_);
     }
     if (sampleRateHertz_ != 0) {
       output.writeInt32(4, sampleRateHertz_);
     }
-    if (!getModelBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(model_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 5, model_);
     }
     unknownFields.writeTo(output);
@@ -442,19 +442,19 @@ public final class TranslateSpeechConfig extends com.google.protobuf.GeneratedMe
     if (size != -1) return size;
 
     size = 0;
-    if (!getAudioEncodingBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(audioEncoding_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, audioEncoding_);
     }
-    if (!getSourceLanguageCodeBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(sourceLanguageCode_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, sourceLanguageCode_);
     }
-    if (!getTargetLanguageCodeBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(targetLanguageCode_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, targetLanguageCode_);
     }
     if (sampleRateHertz_ != 0) {
       size += com.google.protobuf.CodedOutputStream.computeInt32Size(4, sampleRateHertz_);
     }
-    if (!getModelBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(model_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, model_);
     }
     size += unknownFields.getSerializedSize();
