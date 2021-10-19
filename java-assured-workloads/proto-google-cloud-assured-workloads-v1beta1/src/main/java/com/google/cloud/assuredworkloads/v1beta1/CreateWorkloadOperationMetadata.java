@@ -461,10 +461,10 @@ public final class CreateWorkloadOperationMetadata extends com.google.protobuf.G
     if (createTime_ != null) {
       output.writeMessage(1, getCreateTime());
     }
-    if (!getDisplayNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(displayName_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, displayName_);
     }
-    if (!getParentBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(parent_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, parent_);
     }
     if (complianceRegime_
@@ -488,10 +488,10 @@ public final class CreateWorkloadOperationMetadata extends com.google.protobuf.G
     if (createTime_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, getCreateTime());
     }
-    if (!getDisplayNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(displayName_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, displayName_);
     }
-    if (!getParentBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(parent_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, parent_);
     }
     if (complianceRegime_
