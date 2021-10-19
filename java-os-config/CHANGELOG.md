@@ -1,5 +1,12 @@
 # Changelog
 
+### [2.2.2](https://www.github.com/googleapis/java-os-config/compare/v2.2.1...v2.2.2) (2021-10-19)
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.4.0 ([#384](https://www.github.com/googleapis/java-os-config/issues/384)) ([c00fdcd](https://www.github.com/googleapis/java-os-config/commit/c00fdcd95abda2c9f2b78b5e2e1f6a69882e8bc5))
+
 ### [2.2.1](https://www.github.com/googleapis/java-os-config/compare/v2.2.0...v2.2.1) (2021-09-22)
 
 
