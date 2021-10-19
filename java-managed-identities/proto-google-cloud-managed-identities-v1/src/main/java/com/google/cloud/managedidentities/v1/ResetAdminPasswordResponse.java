@@ -175,7 +175,7 @@ public final class ResetAdminPasswordResponse extends com.google.protobuf.Genera
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getPasswordBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(password_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, password_);
     }
     unknownFields.writeTo(output);
@@ -187,7 +187,7 @@ public final class ResetAdminPasswordResponse extends com.google.protobuf.Genera
     if (size != -1) return size;
 
     size = 0;
-    if (!getPasswordBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(password_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, password_);
     }
     size += unknownFields.getSerializedSize();
