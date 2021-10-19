@@ -179,7 +179,7 @@ public final class CustomerManagedEncryptionStatus extends com.google.protobuf.G
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getKmsKeyVersionNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(kmsKeyVersionName_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, kmsKeyVersionName_);
     }
     unknownFields.writeTo(output);
@@ -191,7 +191,7 @@ public final class CustomerManagedEncryptionStatus extends com.google.protobuf.G
     if (size != -1) return size;
 
     size = 0;
-    if (!getKmsKeyVersionNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(kmsKeyVersionName_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, kmsKeyVersionName_);
     }
     size += unknownFields.getSerializedSize();
