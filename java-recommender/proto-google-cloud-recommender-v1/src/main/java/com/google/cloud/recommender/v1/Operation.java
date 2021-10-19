@@ -1034,22 +1034,22 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getActionBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(action_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, action_);
     }
-    if (!getResourceTypeBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(resourceType_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, resourceType_);
     }
-    if (!getResourceBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(resource_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, resource_);
     }
-    if (!getPathBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(path_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 4, path_);
     }
-    if (!getSourceResourceBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(sourceResource_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 5, sourceResource_);
     }
-    if (!getSourcePathBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(sourcePath_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 6, sourcePath_);
     }
     if (pathValueCase_ == 7) {
@@ -1074,22 +1074,22 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
     if (size != -1) return size;
 
     size = 0;
-    if (!getActionBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(action_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, action_);
     }
-    if (!getResourceTypeBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(resourceType_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, resourceType_);
     }
-    if (!getResourceBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(resource_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, resource_);
     }
-    if (!getPathBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(path_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, path_);
     }
-    if (!getSourceResourceBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(sourceResource_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, sourceResource_);
     }
-    if (!getSourcePathBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(sourcePath_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, sourcePath_);
     }
     if (pathValueCase_ == 7) {

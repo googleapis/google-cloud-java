@@ -426,7 +426,7 @@ public final class Recommendation extends com.google.protobuf.GeneratedMessageV3
 
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-      if (!getInsightBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(insight_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, insight_);
       }
       unknownFields.writeTo(output);
@@ -438,7 +438,7 @@ public final class Recommendation extends com.google.protobuf.GeneratedMessageV3
       if (size != -1) return size;
 
       size = 0;
-      if (!getInsightBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(insight_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, insight_);
       }
       size += unknownFields.getSerializedSize();
@@ -1496,10 +1496,10 @@ public final class Recommendation extends com.google.protobuf.GeneratedMessageV3
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name_);
     }
-    if (!getDescriptionBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(description_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, description_);
     }
     if (lastRefreshTime_ != null) {
@@ -1517,10 +1517,10 @@ public final class Recommendation extends com.google.protobuf.GeneratedMessageV3
     if (stateInfo_ != null) {
       output.writeMessage(10, getStateInfo());
     }
-    if (!getEtagBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(etag_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 11, etag_);
     }
-    if (!getRecommenderSubtypeBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(recommenderSubtype_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 12, recommenderSubtype_);
     }
     for (int i = 0; i < associatedInsights_.size(); i++) {
@@ -1535,10 +1535,10 @@ public final class Recommendation extends com.google.protobuf.GeneratedMessageV3
     if (size != -1) return size;
 
     size = 0;
-    if (!getNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, name_);
     }
-    if (!getDescriptionBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(description_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, description_);
     }
     if (lastRefreshTime_ != null) {
@@ -1556,10 +1556,10 @@ public final class Recommendation extends com.google.protobuf.GeneratedMessageV3
     if (stateInfo_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(10, getStateInfo());
     }
-    if (!getEtagBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(etag_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(11, etag_);
     }
-    if (!getRecommenderSubtypeBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(recommenderSubtype_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(12, recommenderSubtype_);
     }
     for (int i = 0; i < associatedInsights_.size(); i++) {
