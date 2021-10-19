@@ -475,13 +475,13 @@ public final class Error extends com.google.protobuf.GeneratedMessageV3
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getReasonBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(reason_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, reason_);
     }
-    if (!getErrorUuidBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(errorUuid_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, errorUuid_);
     }
-    if (!getMessageBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(message_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, message_);
     }
     if (errorTime_ != null) {
@@ -498,13 +498,13 @@ public final class Error extends com.google.protobuf.GeneratedMessageV3
     if (size != -1) return size;
 
     size = 0;
-    if (!getReasonBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(reason_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, reason_);
     }
-    if (!getErrorUuidBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(errorUuid_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, errorUuid_);
     }
-    if (!getMessageBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(message_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, message_);
     }
     if (errorTime_ != null) {

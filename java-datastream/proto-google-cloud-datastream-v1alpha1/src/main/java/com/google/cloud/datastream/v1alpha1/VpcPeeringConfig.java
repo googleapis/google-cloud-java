@@ -232,10 +232,10 @@ public final class VpcPeeringConfig extends com.google.protobuf.GeneratedMessage
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getVpcNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(vpcName_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, vpcName_);
     }
-    if (!getSubnetBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(subnet_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, subnet_);
     }
     unknownFields.writeTo(output);
@@ -247,10 +247,10 @@ public final class VpcPeeringConfig extends com.google.protobuf.GeneratedMessage
     if (size != -1) return size;
 
     size = 0;
-    if (!getVpcNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(vpcName_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, vpcName_);
     }
-    if (!getSubnetBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(subnet_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, subnet_);
     }
     size += unknownFields.getSerializedSize();

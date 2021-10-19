@@ -537,7 +537,7 @@ public final class Validation extends com.google.protobuf.GeneratedMessageV3
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getDescriptionBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(description_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, description_);
     }
     if (status_
@@ -547,7 +547,7 @@ public final class Validation extends com.google.protobuf.GeneratedMessageV3
     for (int i = 0; i < message_.size(); i++) {
       output.writeMessage(3, message_.get(i));
     }
-    if (!getCodeBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(code_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 4, code_);
     }
     unknownFields.writeTo(output);
@@ -559,7 +559,7 @@ public final class Validation extends com.google.protobuf.GeneratedMessageV3
     if (size != -1) return size;
 
     size = 0;
-    if (!getDescriptionBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(description_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, description_);
     }
     if (status_
@@ -569,7 +569,7 @@ public final class Validation extends com.google.protobuf.GeneratedMessageV3
     for (int i = 0; i < message_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(3, message_.get(i));
     }
-    if (!getCodeBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(code_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, code_);
     }
     size += unknownFields.getSerializedSize();

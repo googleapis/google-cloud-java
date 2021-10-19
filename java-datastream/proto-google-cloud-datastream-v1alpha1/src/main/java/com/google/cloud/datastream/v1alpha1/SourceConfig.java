@@ -367,7 +367,7 @@ public final class SourceConfig extends com.google.protobuf.GeneratedMessageV3
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getSourceConnectionProfileNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(sourceConnectionProfileName_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, sourceConnectionProfileName_);
     }
     if (sourceStreamConfigCase_ == 100) {
@@ -387,7 +387,7 @@ public final class SourceConfig extends com.google.protobuf.GeneratedMessageV3
     if (size != -1) return size;
 
     size = 0;
-    if (!getSourceConnectionProfileNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(sourceConnectionProfileName_)) {
       size +=
           com.google.protobuf.GeneratedMessageV3.computeStringSize(1, sourceConnectionProfileName_);
     }

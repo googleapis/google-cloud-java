@@ -382,16 +382,16 @@ public final class CreateRouteRequest extends com.google.protobuf.GeneratedMessa
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getParentBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(parent_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, parent_);
     }
-    if (!getRouteIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(routeId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, routeId_);
     }
     if (route_ != null) {
       output.writeMessage(3, getRoute());
     }
-    if (!getRequestIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(requestId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 4, requestId_);
     }
     unknownFields.writeTo(output);
@@ -403,16 +403,16 @@ public final class CreateRouteRequest extends com.google.protobuf.GeneratedMessa
     if (size != -1) return size;
 
     size = 0;
-    if (!getParentBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(parent_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, parent_);
     }
-    if (!getRouteIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(routeId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, routeId_);
     }
     if (route_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(3, getRoute());
     }
-    if (!getRequestIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(requestId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, requestId_);
     }
     size += unknownFields.getSerializedSize();

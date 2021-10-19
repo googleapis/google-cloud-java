@@ -455,10 +455,10 @@ public final class ForwardSshTunnelConnectivity extends com.google.protobuf.Gene
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getHostnameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(hostname_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, hostname_);
     }
-    if (!getUsernameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(username_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, username_);
     }
     if (port_ != 0) {
@@ -479,10 +479,10 @@ public final class ForwardSshTunnelConnectivity extends com.google.protobuf.Gene
     if (size != -1) return size;
 
     size = 0;
-    if (!getHostnameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(hostname_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, hostname_);
     }
-    if (!getUsernameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(username_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, username_);
     }
     if (port_ != 0) {

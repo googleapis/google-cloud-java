@@ -385,7 +385,7 @@ public final class UpdateStreamRequest extends com.google.protobuf.GeneratedMess
     if (stream_ != null) {
       output.writeMessage(2, getStream());
     }
-    if (!getRequestIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(requestId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, requestId_);
     }
     if (validateOnly_ != false) {
@@ -409,7 +409,7 @@ public final class UpdateStreamRequest extends com.google.protobuf.GeneratedMess
     if (stream_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, getStream());
     }
-    if (!getRequestIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(requestId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, requestId_);
     }
     if (validateOnly_ != false) {

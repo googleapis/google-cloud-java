@@ -367,19 +367,19 @@ public final class MysqlSslConfig extends com.google.protobuf.GeneratedMessageV3
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getClientKeyBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(clientKey_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 11, clientKey_);
     }
     if (clientKeySet_ != false) {
       output.writeBool(12, clientKeySet_);
     }
-    if (!getClientCertificateBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(clientCertificate_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 13, clientCertificate_);
     }
     if (clientCertificateSet_ != false) {
       output.writeBool(14, clientCertificateSet_);
     }
-    if (!getCaCertificateBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(caCertificate_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 15, caCertificate_);
     }
     if (caCertificateSet_ != false) {
@@ -394,19 +394,19 @@ public final class MysqlSslConfig extends com.google.protobuf.GeneratedMessageV3
     if (size != -1) return size;
 
     size = 0;
-    if (!getClientKeyBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(clientKey_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(11, clientKey_);
     }
     if (clientKeySet_ != false) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(12, clientKeySet_);
     }
-    if (!getClientCertificateBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(clientCertificate_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(13, clientCertificate_);
     }
     if (clientCertificateSet_ != false) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(14, clientCertificateSet_);
     }
-    if (!getCaCertificateBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(caCertificate_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(15, caCertificate_);
     }
     if (caCertificateSet_ != false) {
