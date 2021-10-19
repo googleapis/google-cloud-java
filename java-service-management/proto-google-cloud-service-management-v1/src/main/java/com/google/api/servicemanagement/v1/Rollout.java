@@ -2258,13 +2258,13 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getRolloutIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(rolloutId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, rolloutId_);
     }
     if (createTime_ != null) {
       output.writeMessage(2, getCreateTime());
     }
-    if (!getCreatedByBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(createdBy_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, createdBy_);
     }
     if (status_
@@ -2276,7 +2276,7 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
       output.writeMessage(
           5, (com.google.api.servicemanagement.v1.Rollout.TrafficPercentStrategy) strategy_);
     }
-    if (!getServiceNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(serviceName_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 8, serviceName_);
     }
     if (strategyCase_ == 200) {
@@ -2292,13 +2292,13 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
     if (size != -1) return size;
 
     size = 0;
-    if (!getRolloutIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(rolloutId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, rolloutId_);
     }
     if (createTime_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, getCreateTime());
     }
-    if (!getCreatedByBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(createdBy_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, createdBy_);
     }
     if (status_
@@ -2311,7 +2311,7 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               5, (com.google.api.servicemanagement.v1.Rollout.TrafficPercentStrategy) strategy_);
     }
-    if (!getServiceNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(serviceName_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, serviceName_);
     }
     if (strategyCase_ == 200) {

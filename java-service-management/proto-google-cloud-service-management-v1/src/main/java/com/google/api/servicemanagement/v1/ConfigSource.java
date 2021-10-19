@@ -272,7 +272,7 @@ public final class ConfigSource extends com.google.protobuf.GeneratedMessageV3
     for (int i = 0; i < files_.size(); i++) {
       output.writeMessage(2, files_.get(i));
     }
-    if (!getIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(id_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 5, id_);
     }
     unknownFields.writeTo(output);
@@ -287,7 +287,7 @@ public final class ConfigSource extends com.google.protobuf.GeneratedMessageV3
     for (int i = 0; i < files_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, files_.get(i));
     }
-    if (!getIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(id_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, id_);
     }
     size += unknownFields.getSerializedSize();

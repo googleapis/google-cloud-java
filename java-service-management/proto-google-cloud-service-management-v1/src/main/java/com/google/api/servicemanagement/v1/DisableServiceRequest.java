@@ -245,10 +245,10 @@ public final class DisableServiceRequest extends com.google.protobuf.GeneratedMe
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getServiceNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(serviceName_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, serviceName_);
     }
-    if (!getConsumerIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(consumerId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, consumerId_);
     }
     unknownFields.writeTo(output);
@@ -260,10 +260,10 @@ public final class DisableServiceRequest extends com.google.protobuf.GeneratedMe
     if (size != -1) return size;
 
     size = 0;
-    if (!getServiceNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(serviceName_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, serviceName_);
     }
-    if (!getConsumerIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(consumerId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, consumerId_);
     }
     size += unknownFields.getSerializedSize();

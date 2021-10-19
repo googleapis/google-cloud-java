@@ -328,16 +328,16 @@ public final class ListServiceRolloutsRequest extends com.google.protobuf.Genera
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getServiceNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(serviceName_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, serviceName_);
     }
-    if (!getPageTokenBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(pageToken_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, pageToken_);
     }
     if (pageSize_ != 0) {
       output.writeInt32(3, pageSize_);
     }
-    if (!getFilterBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(filter_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 4, filter_);
     }
     unknownFields.writeTo(output);
@@ -349,16 +349,16 @@ public final class ListServiceRolloutsRequest extends com.google.protobuf.Genera
     if (size != -1) return size;
 
     size = 0;
-    if (!getServiceNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(serviceName_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, serviceName_);
     }
-    if (!getPageTokenBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(pageToken_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, pageToken_);
     }
     if (pageSize_ != 0) {
       size += com.google.protobuf.CodedOutputStream.computeInt32Size(3, pageSize_);
     }
-    if (!getFilterBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(filter_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, filter_);
     }
     size += unknownFields.getSerializedSize();

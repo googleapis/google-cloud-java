@@ -420,10 +420,10 @@ public final class GetServiceConfigRequest extends com.google.protobuf.Generated
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getServiceNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(serviceName_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, serviceName_);
     }
-    if (!getConfigIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(configId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, configId_);
     }
     if (view_
@@ -440,10 +440,10 @@ public final class GetServiceConfigRequest extends com.google.protobuf.Generated
     if (size != -1) return size;
 
     size = 0;
-    if (!getServiceNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(serviceName_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, serviceName_);
     }
-    if (!getConfigIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(configId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, configId_);
     }
     if (view_
