@@ -381,7 +381,7 @@ public final class CreateProfileRequest extends com.google.protobuf.GeneratedMes
     for (int i = 0; i < profileType_.size(); i++) {
       output.writeEnumNoTag(profileType_.get(i));
     }
-    if (!getParentBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(parent_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 4, parent_);
     }
     unknownFields.writeTo(output);
@@ -408,7 +408,7 @@ public final class CreateProfileRequest extends com.google.protobuf.GeneratedMes
       }
       profileTypeMemoizedSerializedSize = dataSize;
     }
-    if (!getParentBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(parent_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, parent_);
     }
     size += unknownFields.getSerializedSize();
