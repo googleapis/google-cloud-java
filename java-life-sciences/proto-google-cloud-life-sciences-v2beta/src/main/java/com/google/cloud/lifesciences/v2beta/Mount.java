@@ -254,10 +254,10 @@ public final class Mount extends com.google.protobuf.GeneratedMessageV3
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getDiskBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(disk_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, disk_);
     }
-    if (!getPathBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(path_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, path_);
     }
     if (readOnly_ != false) {
@@ -272,10 +272,10 @@ public final class Mount extends com.google.protobuf.GeneratedMessageV3
     if (size != -1) return size;
 
     size = 0;
-    if (!getDiskBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(disk_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, disk_);
     }
-    if (!getPathBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(path_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, path_);
     }
     if (readOnly_ != false) {

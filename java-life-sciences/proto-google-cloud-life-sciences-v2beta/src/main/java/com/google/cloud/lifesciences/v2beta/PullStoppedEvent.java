@@ -174,7 +174,7 @@ public final class PullStoppedEvent extends com.google.protobuf.GeneratedMessage
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getImageUriBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(imageUri_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, imageUri_);
     }
     unknownFields.writeTo(output);
@@ -186,7 +186,7 @@ public final class PullStoppedEvent extends com.google.protobuf.GeneratedMessage
     if (size != -1) return size;
 
     size = 0;
-    if (!getImageUriBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(imageUri_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, imageUri_);
     }
     size += unknownFields.getSerializedSize();

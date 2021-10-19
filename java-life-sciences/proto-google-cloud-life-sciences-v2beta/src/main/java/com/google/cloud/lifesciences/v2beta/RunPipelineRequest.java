@@ -453,10 +453,10 @@ public final class RunPipelineRequest extends com.google.protobuf.GeneratedMessa
     }
     com.google.protobuf.GeneratedMessageV3.serializeStringMapTo(
         output, internalGetLabels(), LabelsDefaultEntryHolder.defaultEntry, 2);
-    if (!getPubSubTopicBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(pubSubTopic_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, pubSubTopic_);
     }
-    if (!getParentBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(parent_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 4, parent_);
     }
     unknownFields.writeTo(output);
@@ -481,10 +481,10 @@ public final class RunPipelineRequest extends com.google.protobuf.GeneratedMessa
               .build();
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, labels__);
     }
-    if (!getPubSubTopicBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(pubSubTopic_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, pubSubTopic_);
     }
-    if (!getParentBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(parent_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, parent_);
     }
     size += unknownFields.getSerializedSize();

@@ -1116,7 +1116,7 @@ public final class VirtualMachine extends com.google.protobuf.GeneratedMessageV3
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getMachineTypeBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(machineType_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, machineType_);
     }
     if (preemptible_ != false) {
@@ -1139,13 +1139,13 @@ public final class VirtualMachine extends com.google.protobuf.GeneratedMessageV3
     if (bootDiskSizeGb_ != 0) {
       output.writeInt32(8, bootDiskSizeGb_);
     }
-    if (!getCpuPlatformBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(cpuPlatform_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 9, cpuPlatform_);
     }
-    if (!getBootImageBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(bootImage_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 10, bootImage_);
     }
-    if (!getNvidiaDriverVersionBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(nvidiaDriverVersion_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 11, nvidiaDriverVersion_);
     }
     if (enableStackdriverMonitoring_ != false) {
@@ -1166,7 +1166,7 @@ public final class VirtualMachine extends com.google.protobuf.GeneratedMessageV3
     if (size != -1) return size;
 
     size = 0;
-    if (!getMachineTypeBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(machineType_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, machineType_);
     }
     if (preemptible_ != false) {
@@ -1197,13 +1197,13 @@ public final class VirtualMachine extends com.google.protobuf.GeneratedMessageV3
     if (bootDiskSizeGb_ != 0) {
       size += com.google.protobuf.CodedOutputStream.computeInt32Size(8, bootDiskSizeGb_);
     }
-    if (!getCpuPlatformBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(cpuPlatform_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(9, cpuPlatform_);
     }
-    if (!getBootImageBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(bootImage_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(10, bootImage_);
     }
-    if (!getNvidiaDriverVersionBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(nvidiaDriverVersion_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(11, nvidiaDriverVersion_);
     }
     if (enableStackdriverMonitoring_ != false) {

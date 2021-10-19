@@ -289,13 +289,13 @@ public final class WorkerAssignedEvent extends com.google.protobuf.GeneratedMess
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getZoneBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(zone_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, zone_);
     }
-    if (!getInstanceBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(instance_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, instance_);
     }
-    if (!getMachineTypeBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(machineType_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, machineType_);
     }
     unknownFields.writeTo(output);
@@ -307,13 +307,13 @@ public final class WorkerAssignedEvent extends com.google.protobuf.GeneratedMess
     if (size != -1) return size;
 
     size = 0;
-    if (!getZoneBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(zone_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, zone_);
     }
-    if (!getInstanceBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(instance_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, instance_);
     }
-    if (!getMachineTypeBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(machineType_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, machineType_);
     }
     size += unknownFields.getSerializedSize();

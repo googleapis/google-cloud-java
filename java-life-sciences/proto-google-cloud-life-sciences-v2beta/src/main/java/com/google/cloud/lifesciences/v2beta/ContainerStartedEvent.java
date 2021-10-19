@@ -337,7 +337,7 @@ public final class ContainerStartedEvent extends com.google.protobuf.GeneratedMe
     }
     com.google.protobuf.GeneratedMessageV3.serializeIntegerMapTo(
         output, internalGetPortMappings(), PortMappingsDefaultEntryHolder.defaultEntry, 2);
-    if (!getIpAddressBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(ipAddress_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, ipAddress_);
     }
     unknownFields.writeTo(output);
@@ -362,7 +362,7 @@ public final class ContainerStartedEvent extends com.google.protobuf.GeneratedMe
               .build();
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, portMappings__);
     }
-    if (!getIpAddressBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(ipAddress_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, ipAddress_);
     }
     size += unknownFields.getSerializedSize();

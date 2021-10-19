@@ -1399,21 +1399,21 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getContainerNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(containerName_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, containerName_);
     }
-    if (!getImageUriBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(imageUri_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, imageUri_);
     }
     for (int i = 0; i < commands_.size(); i++) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, commands_.getRaw(i));
     }
-    if (!getEntrypointBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(entrypoint_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 4, entrypoint_);
     }
     com.google.protobuf.GeneratedMessageV3.serializeStringMapTo(
         output, internalGetEnvironment(), EnvironmentDefaultEntryHolder.defaultEntry, 5);
-    if (!getPidNamespaceBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(pidNamespace_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 6, pidNamespace_);
     }
     com.google.protobuf.GeneratedMessageV3.serializeIntegerMapTo(
@@ -1462,10 +1462,10 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
     if (size != -1) return size;
 
     size = 0;
-    if (!getContainerNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(containerName_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, containerName_);
     }
-    if (!getImageUriBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(imageUri_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, imageUri_);
     }
     {
@@ -1476,7 +1476,7 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
       size += dataSize;
       size += 1 * getCommandsList().size();
     }
-    if (!getEntrypointBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(entrypoint_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, entrypoint_);
     }
     for (java.util.Map.Entry<java.lang.String, java.lang.String> entry :
@@ -1489,7 +1489,7 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
               .build();
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(5, environment__);
     }
-    if (!getPidNamespaceBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(pidNamespace_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, pidNamespace_);
     }
     for (java.util.Map.Entry<java.lang.Integer, java.lang.Integer> entry :
