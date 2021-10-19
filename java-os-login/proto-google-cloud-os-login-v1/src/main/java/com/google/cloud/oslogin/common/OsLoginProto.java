@@ -1054,7 +1054,7 @@ public final class OsLoginProto {
       if (primary_ != false) {
         output.writeBool(1, primary_);
       }
-      if (!getUsernameBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(username_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, username_);
       }
       if (uid_ != 0L) {
@@ -1063,19 +1063,19 @@ public final class OsLoginProto {
       if (gid_ != 0L) {
         output.writeInt64(4, gid_);
       }
-      if (!getHomeDirectoryBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(homeDirectory_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 5, homeDirectory_);
       }
-      if (!getShellBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(shell_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 6, shell_);
       }
-      if (!getGecosBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(gecos_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 7, gecos_);
       }
-      if (!getSystemIdBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(systemId_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 8, systemId_);
       }
-      if (!getAccountIdBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(accountId_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 9, accountId_);
       }
       if (operatingSystemType_
@@ -1084,7 +1084,7 @@ public final class OsLoginProto {
               .getNumber()) {
         output.writeEnum(10, operatingSystemType_);
       }
-      if (!getNameBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 11, name_);
       }
       unknownFields.writeTo(output);
@@ -1099,7 +1099,7 @@ public final class OsLoginProto {
       if (primary_ != false) {
         size += com.google.protobuf.CodedOutputStream.computeBoolSize(1, primary_);
       }
-      if (!getUsernameBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(username_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, username_);
       }
       if (uid_ != 0L) {
@@ -1108,19 +1108,19 @@ public final class OsLoginProto {
       if (gid_ != 0L) {
         size += com.google.protobuf.CodedOutputStream.computeInt64Size(4, gid_);
       }
-      if (!getHomeDirectoryBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(homeDirectory_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, homeDirectory_);
       }
-      if (!getShellBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(shell_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, shell_);
       }
-      if (!getGecosBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(gecos_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, gecos_);
       }
-      if (!getSystemIdBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(systemId_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, systemId_);
       }
-      if (!getAccountIdBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(accountId_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(9, accountId_);
       }
       if (operatingSystemType_
@@ -1129,7 +1129,7 @@ public final class OsLoginProto {
               .getNumber()) {
         size += com.google.protobuf.CodedOutputStream.computeEnumSize(10, operatingSystemType_);
       }
-      if (!getNameBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(11, name_);
       }
       size += unknownFields.getSerializedSize();
@@ -2967,16 +2967,16 @@ public final class OsLoginProto {
 
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-      if (!getKeyBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(key_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, key_);
       }
       if (expirationTimeUsec_ != 0L) {
         output.writeInt64(2, expirationTimeUsec_);
       }
-      if (!getFingerprintBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(fingerprint_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 3, fingerprint_);
       }
-      if (!getNameBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 4, name_);
       }
       unknownFields.writeTo(output);
@@ -2988,16 +2988,16 @@ public final class OsLoginProto {
       if (size != -1) return size;
 
       size = 0;
-      if (!getKeyBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(key_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, key_);
       }
       if (expirationTimeUsec_ != 0L) {
         size += com.google.protobuf.CodedOutputStream.computeInt64Size(2, expirationTimeUsec_);
       }
-      if (!getFingerprintBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(fingerprint_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, fingerprint_);
       }
-      if (!getNameBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, name_);
       }
       size += unknownFields.getSerializedSize();
