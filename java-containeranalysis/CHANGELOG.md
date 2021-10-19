@@ -1,5 +1,12 @@
 # Changelog
 
+### [2.1.9](https://www.github.com/googleapis/java-containeranalysis/compare/v2.1.8...v2.1.9) (2021-10-19)
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.4.0 ([#734](https://www.github.com/googleapis/java-containeranalysis/issues/734)) ([7886f2b](https://www.github.com/googleapis/java-containeranalysis/commit/7886f2b6bd10afe5118ae6b10d6495e3d86d1222))
+
 ### [2.1.8](https://www.github.com/googleapis/java-containeranalysis/compare/v2.1.7...v2.1.8) (2021-10-06)
 
 
