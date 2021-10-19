@@ -1068,10 +1068,10 @@ public final class ConnectivityTest extends com.google.protobuf.GeneratedMessage
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name_);
     }
-    if (!getDescriptionBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(description_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, description_);
     }
     if (source_ != null) {
@@ -1080,13 +1080,13 @@ public final class ConnectivityTest extends com.google.protobuf.GeneratedMessage
     if (destination_ != null) {
       output.writeMessage(4, getDestination());
     }
-    if (!getProtocolBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(protocol_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 5, protocol_);
     }
     for (int i = 0; i < relatedProjects_.size(); i++) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 6, relatedProjects_.getRaw(i));
     }
-    if (!getDisplayNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(displayName_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 7, displayName_);
     }
     com.google.protobuf.GeneratedMessageV3.serializeStringMapTo(
@@ -1112,10 +1112,10 @@ public final class ConnectivityTest extends com.google.protobuf.GeneratedMessage
     if (size != -1) return size;
 
     size = 0;
-    if (!getNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, name_);
     }
-    if (!getDescriptionBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(description_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, description_);
     }
     if (source_ != null) {
@@ -1124,7 +1124,7 @@ public final class ConnectivityTest extends com.google.protobuf.GeneratedMessage
     if (destination_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(4, getDestination());
     }
-    if (!getProtocolBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(protocol_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, protocol_);
     }
     {
@@ -1135,7 +1135,7 @@ public final class ConnectivityTest extends com.google.protobuf.GeneratedMessage
       size += dataSize;
       size += 1 * getRelatedProjectsList().size();
     }
-    if (!getDisplayNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(displayName_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, displayName_);
     }
     for (java.util.Map.Entry<java.lang.String, java.lang.String> entry :

@@ -893,22 +893,22 @@ public final class FirewallInfo extends com.google.protobuf.GeneratedMessageV3
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getDisplayNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(displayName_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, displayName_);
     }
-    if (!getUriBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(uri_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, uri_);
     }
-    if (!getDirectionBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(direction_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, direction_);
     }
-    if (!getActionBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(action_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 4, action_);
     }
     if (priority_ != 0) {
       output.writeInt32(5, priority_);
     }
-    if (!getNetworkUriBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(networkUri_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 6, networkUri_);
     }
     for (int i = 0; i < targetTags_.size(); i++) {
@@ -918,7 +918,7 @@ public final class FirewallInfo extends com.google.protobuf.GeneratedMessageV3
       com.google.protobuf.GeneratedMessageV3.writeString(
           output, 8, targetServiceAccounts_.getRaw(i));
     }
-    if (!getPolicyBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(policy_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 9, policy_);
     }
     if (firewallRuleType_
@@ -936,22 +936,22 @@ public final class FirewallInfo extends com.google.protobuf.GeneratedMessageV3
     if (size != -1) return size;
 
     size = 0;
-    if (!getDisplayNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(displayName_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, displayName_);
     }
-    if (!getUriBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(uri_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, uri_);
     }
-    if (!getDirectionBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(direction_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, direction_);
     }
-    if (!getActionBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(action_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, action_);
     }
     if (priority_ != 0) {
       size += com.google.protobuf.CodedOutputStream.computeInt32Size(5, priority_);
     }
-    if (!getNetworkUriBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(networkUri_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, networkUri_);
     }
     {
@@ -970,7 +970,7 @@ public final class FirewallInfo extends com.google.protobuf.GeneratedMessageV3
       size += dataSize;
       size += 1 * getTargetServiceAccountsList().size();
     }
-    if (!getPolicyBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(policy_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(9, policy_);
     }
     if (firewallRuleType_

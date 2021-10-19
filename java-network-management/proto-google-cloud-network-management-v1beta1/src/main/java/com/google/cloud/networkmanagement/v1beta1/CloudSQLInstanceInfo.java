@@ -461,22 +461,22 @@ public final class CloudSQLInstanceInfo extends com.google.protobuf.GeneratedMes
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getDisplayNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(displayName_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, displayName_);
     }
-    if (!getUriBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(uri_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, uri_);
     }
-    if (!getNetworkUriBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(networkUri_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 4, networkUri_);
     }
-    if (!getInternalIpBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(internalIp_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 5, internalIp_);
     }
-    if (!getExternalIpBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(externalIp_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 6, externalIp_);
     }
-    if (!getRegionBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(region_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 7, region_);
     }
     unknownFields.writeTo(output);
@@ -488,22 +488,22 @@ public final class CloudSQLInstanceInfo extends com.google.protobuf.GeneratedMes
     if (size != -1) return size;
 
     size = 0;
-    if (!getDisplayNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(displayName_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, displayName_);
     }
-    if (!getUriBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(uri_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, uri_);
     }
-    if (!getNetworkUriBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(networkUri_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, networkUri_);
     }
-    if (!getInternalIpBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(internalIp_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, internalIp_);
     }
-    if (!getExternalIpBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(externalIp_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, externalIp_);
     }
-    if (!getRegionBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(region_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, region_);
     }
     size += unknownFields.getSerializedSize();

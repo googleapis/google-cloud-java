@@ -1191,19 +1191,19 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getDisplayNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(displayName_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, displayName_);
     }
-    if (!getUriBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(uri_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, uri_);
     }
-    if (!getDestIpRangeBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(destIpRange_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, destIpRange_);
     }
-    if (!getNextHopBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(nextHop_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 4, nextHop_);
     }
-    if (!getNetworkUriBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(networkUri_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 5, networkUri_);
     }
     if (priority_ != 0) {
@@ -1232,19 +1232,19 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
     if (size != -1) return size;
 
     size = 0;
-    if (!getDisplayNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(displayName_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, displayName_);
     }
-    if (!getUriBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(uri_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, uri_);
     }
-    if (!getDestIpRangeBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(destIpRange_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, destIpRange_);
     }
-    if (!getNextHopBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(nextHop_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, nextHop_);
     }
-    if (!getNetworkUriBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(networkUri_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, networkUri_);
     }
     if (priority_ != 0) {

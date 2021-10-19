@@ -812,7 +812,7 @@ public final class LoadBalancerInfo extends com.google.protobuf.GeneratedMessage
             .getNumber()) {
       output.writeEnum(1, loadBalancerType_);
     }
-    if (!getHealthCheckUriBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(healthCheckUri_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, healthCheckUri_);
     }
     for (int i = 0; i < backends_.size(); i++) {
@@ -824,7 +824,7 @@ public final class LoadBalancerInfo extends com.google.protobuf.GeneratedMessage
             .getNumber()) {
       output.writeEnum(4, backendType_);
     }
-    if (!getBackendUriBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(backendUri_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 5, backendUri_);
     }
     unknownFields.writeTo(output);
@@ -842,7 +842,7 @@ public final class LoadBalancerInfo extends com.google.protobuf.GeneratedMessage
             .getNumber()) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(1, loadBalancerType_);
     }
-    if (!getHealthCheckUriBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(healthCheckUri_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, healthCheckUri_);
     }
     for (int i = 0; i < backends_.size(); i++) {
@@ -854,7 +854,7 @@ public final class LoadBalancerInfo extends com.google.protobuf.GeneratedMessage
             .getNumber()) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(4, backendType_);
     }
-    if (!getBackendUriBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(backendUri_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, backendUri_);
     }
     size += unknownFields.getSerializedSize();

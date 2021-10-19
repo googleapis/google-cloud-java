@@ -343,7 +343,7 @@ public final class ListConnectivityTestsResponse extends com.google.protobuf.Gen
     for (int i = 0; i < resources_.size(); i++) {
       output.writeMessage(1, resources_.get(i));
     }
-    if (!getNextPageTokenBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(nextPageToken_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, nextPageToken_);
     }
     for (int i = 0; i < unreachable_.size(); i++) {
@@ -361,7 +361,7 @@ public final class ListConnectivityTestsResponse extends com.google.protobuf.Gen
     for (int i = 0; i < resources_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, resources_.get(i));
     }
-    if (!getNextPageTokenBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(nextPageToken_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, nextPageToken_);
     }
     {

@@ -803,28 +803,28 @@ public final class VpnTunnelInfo extends com.google.protobuf.GeneratedMessageV3
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getDisplayNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(displayName_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, displayName_);
     }
-    if (!getUriBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(uri_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, uri_);
     }
-    if (!getSourceGatewayBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(sourceGateway_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, sourceGateway_);
     }
-    if (!getRemoteGatewayBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(remoteGateway_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 4, remoteGateway_);
     }
-    if (!getRemoteGatewayIpBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(remoteGatewayIp_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 5, remoteGatewayIp_);
     }
-    if (!getSourceGatewayIpBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(sourceGatewayIp_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 6, sourceGatewayIp_);
     }
-    if (!getNetworkUriBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(networkUri_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 7, networkUri_);
     }
-    if (!getRegionBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(region_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 8, region_);
     }
     if (routingType_
@@ -842,28 +842,28 @@ public final class VpnTunnelInfo extends com.google.protobuf.GeneratedMessageV3
     if (size != -1) return size;
 
     size = 0;
-    if (!getDisplayNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(displayName_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, displayName_);
     }
-    if (!getUriBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(uri_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, uri_);
     }
-    if (!getSourceGatewayBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(sourceGateway_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, sourceGateway_);
     }
-    if (!getRemoteGatewayBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(remoteGateway_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, remoteGateway_);
     }
-    if (!getRemoteGatewayIpBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(remoteGatewayIp_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, remoteGatewayIp_);
     }
-    if (!getSourceGatewayIpBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(sourceGatewayIp_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, sourceGatewayIp_);
     }
-    if (!getNetworkUriBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(networkUri_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, networkUri_);
     }
-    if (!getRegionBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(region_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, region_);
     }
     if (routingType_

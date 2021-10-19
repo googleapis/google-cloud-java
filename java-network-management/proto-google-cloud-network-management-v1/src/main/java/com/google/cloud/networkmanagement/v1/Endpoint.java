@@ -721,16 +721,16 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getIpAddressBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(ipAddress_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, ipAddress_);
     }
     if (port_ != 0) {
       output.writeInt32(2, port_);
     }
-    if (!getInstanceBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(instance_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, instance_);
     }
-    if (!getNetworkBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(network_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 4, network_);
     }
     if (networkType_
@@ -738,13 +738,13 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
             .getNumber()) {
       output.writeEnum(5, networkType_);
     }
-    if (!getProjectIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(projectId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 6, projectId_);
     }
-    if (!getGkeMasterClusterBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(gkeMasterCluster_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 7, gkeMasterCluster_);
     }
-    if (!getCloudSqlInstanceBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(cloudSqlInstance_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 8, cloudSqlInstance_);
     }
     unknownFields.writeTo(output);
@@ -756,16 +756,16 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
     if (size != -1) return size;
 
     size = 0;
-    if (!getIpAddressBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(ipAddress_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, ipAddress_);
     }
     if (port_ != 0) {
       size += com.google.protobuf.CodedOutputStream.computeInt32Size(2, port_);
     }
-    if (!getInstanceBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(instance_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, instance_);
     }
-    if (!getNetworkBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(network_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, network_);
     }
     if (networkType_
@@ -773,13 +773,13 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
             .getNumber()) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(5, networkType_);
     }
-    if (!getProjectIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(projectId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, projectId_);
     }
-    if (!getGkeMasterClusterBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(gkeMasterCluster_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, gkeMasterCluster_);
     }
-    if (!getCloudSqlInstanceBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(cloudSqlInstance_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, cloudSqlInstance_);
     }
     size += unknownFields.getSerializedSize();

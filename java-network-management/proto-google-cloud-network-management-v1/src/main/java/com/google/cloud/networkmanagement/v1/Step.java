@@ -2061,7 +2061,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getDescriptionBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(description_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, description_);
     }
     if (state_ != com.google.cloud.networkmanagement.v1.Step.State.STATE_UNSPECIFIED.getNumber()) {
@@ -2070,7 +2070,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
     if (causesDrop_ != false) {
       output.writeBool(3, causesDrop_);
     }
-    if (!getProjectIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(projectId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 4, projectId_);
     }
     if (stepInfoCase_ == 5) {
@@ -2128,7 +2128,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
     if (size != -1) return size;
 
     size = 0;
-    if (!getDescriptionBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(description_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, description_);
     }
     if (state_ != com.google.cloud.networkmanagement.v1.Step.State.STATE_UNSPECIFIED.getNumber()) {
@@ -2137,7 +2137,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
     if (causesDrop_ != false) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(3, causesDrop_);
     }
-    if (!getProjectIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(projectId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, projectId_);
     }
     if (stepInfoCase_ == 5) {
