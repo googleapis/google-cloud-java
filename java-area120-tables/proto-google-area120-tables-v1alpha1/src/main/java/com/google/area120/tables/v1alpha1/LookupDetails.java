@@ -232,10 +232,10 @@ public final class LookupDetails extends com.google.protobuf.GeneratedMessageV3
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getRelationshipColumnBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(relationshipColumn_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, relationshipColumn_);
     }
-    if (!getRelationshipColumnIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(relationshipColumnId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, relationshipColumnId_);
     }
     unknownFields.writeTo(output);
@@ -247,10 +247,10 @@ public final class LookupDetails extends com.google.protobuf.GeneratedMessageV3
     if (size != -1) return size;
 
     size = 0;
-    if (!getRelationshipColumnBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(relationshipColumn_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, relationshipColumn_);
     }
-    if (!getRelationshipColumnIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(relationshipColumnId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, relationshipColumnId_);
     }
     size += unknownFields.getSerializedSize();
