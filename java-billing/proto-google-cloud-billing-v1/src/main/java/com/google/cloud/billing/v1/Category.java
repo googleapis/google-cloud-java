@@ -351,16 +351,16 @@ public final class Category extends com.google.protobuf.GeneratedMessageV3
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getServiceDisplayNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(serviceDisplayName_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, serviceDisplayName_);
     }
-    if (!getResourceFamilyBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(resourceFamily_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, resourceFamily_);
     }
-    if (!getResourceGroupBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(resourceGroup_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, resourceGroup_);
     }
-    if (!getUsageTypeBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(usageType_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 4, usageType_);
     }
     unknownFields.writeTo(output);
@@ -372,16 +372,16 @@ public final class Category extends com.google.protobuf.GeneratedMessageV3
     if (size != -1) return size;
 
     size = 0;
-    if (!getServiceDisplayNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(serviceDisplayName_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, serviceDisplayName_);
     }
-    if (!getResourceFamilyBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(resourceFamily_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, resourceFamily_);
     }
-    if (!getResourceGroupBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(resourceGroup_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, resourceGroup_);
     }
-    if (!getUsageTypeBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(usageType_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, usageType_);
     }
     size += unknownFields.getSerializedSize();

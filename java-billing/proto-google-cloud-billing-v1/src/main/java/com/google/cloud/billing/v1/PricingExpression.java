@@ -1395,7 +1395,7 @@ public final class PricingExpression extends com.google.protobuf.GeneratedMessag
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getUsageUnitBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(usageUnit_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, usageUnit_);
     }
     if (displayQuantity_ != 0D) {
@@ -1404,13 +1404,13 @@ public final class PricingExpression extends com.google.protobuf.GeneratedMessag
     for (int i = 0; i < tieredRates_.size(); i++) {
       output.writeMessage(3, tieredRates_.get(i));
     }
-    if (!getUsageUnitDescriptionBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(usageUnitDescription_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 4, usageUnitDescription_);
     }
-    if (!getBaseUnitBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(baseUnit_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 5, baseUnit_);
     }
-    if (!getBaseUnitDescriptionBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(baseUnitDescription_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 6, baseUnitDescription_);
     }
     if (baseUnitConversionFactor_ != 0D) {
@@ -1425,7 +1425,7 @@ public final class PricingExpression extends com.google.protobuf.GeneratedMessag
     if (size != -1) return size;
 
     size = 0;
-    if (!getUsageUnitBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(usageUnit_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, usageUnit_);
     }
     if (displayQuantity_ != 0D) {
@@ -1434,13 +1434,13 @@ public final class PricingExpression extends com.google.protobuf.GeneratedMessag
     for (int i = 0; i < tieredRates_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(3, tieredRates_.get(i));
     }
-    if (!getUsageUnitDescriptionBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(usageUnitDescription_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, usageUnitDescription_);
     }
-    if (!getBaseUnitBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(baseUnit_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, baseUnit_);
     }
-    if (!getBaseUnitDescriptionBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(baseUnitDescription_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, baseUnitDescription_);
     }
     if (baseUnitConversionFactor_ != 0D) {

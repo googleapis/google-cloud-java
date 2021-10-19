@@ -204,7 +204,7 @@ public final class ListServicesRequest extends com.google.protobuf.GeneratedMess
     if (pageSize_ != 0) {
       output.writeInt32(1, pageSize_);
     }
-    if (!getPageTokenBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(pageToken_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, pageToken_);
     }
     unknownFields.writeTo(output);
@@ -219,7 +219,7 @@ public final class ListServicesRequest extends com.google.protobuf.GeneratedMess
     if (pageSize_ != 0) {
       size += com.google.protobuf.CodedOutputStream.computeInt32Size(1, pageSize_);
     }
-    if (!getPageTokenBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(pageToken_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, pageToken_);
     }
     size += unknownFields.getSerializedSize();

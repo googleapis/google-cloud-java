@@ -415,7 +415,7 @@ public final class PricingInfo extends com.google.protobuf.GeneratedMessageV3
     if (effectiveTime_ != null) {
       output.writeMessage(1, getEffectiveTime());
     }
-    if (!getSummaryBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(summary_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, summary_);
     }
     if (pricingExpression_ != null) {
@@ -439,7 +439,7 @@ public final class PricingInfo extends com.google.protobuf.GeneratedMessageV3
     if (effectiveTime_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, getEffectiveTime());
     }
-    if (!getSummaryBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(summary_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, summary_);
     }
     if (pricingExpression_ != null) {
