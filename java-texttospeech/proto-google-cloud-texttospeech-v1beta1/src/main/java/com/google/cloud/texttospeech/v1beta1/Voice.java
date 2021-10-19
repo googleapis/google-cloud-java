@@ -330,7 +330,7 @@ public final class Voice extends com.google.protobuf.GeneratedMessageV3
     for (int i = 0; i < languageCodes_.size(); i++) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, languageCodes_.getRaw(i));
     }
-    if (!getNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, name_);
     }
     if (ssmlGender_
@@ -358,7 +358,7 @@ public final class Voice extends com.google.protobuf.GeneratedMessageV3
       size += dataSize;
       size += 1 * getLanguageCodesList().size();
     }
-    if (!getNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, name_);
     }
     if (ssmlGender_
