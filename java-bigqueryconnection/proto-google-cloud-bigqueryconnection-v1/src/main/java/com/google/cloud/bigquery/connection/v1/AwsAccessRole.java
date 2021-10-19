@@ -236,10 +236,10 @@ public final class AwsAccessRole extends com.google.protobuf.GeneratedMessageV3
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getIamRoleIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(iamRoleId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, iamRoleId_);
     }
-    if (!getIdentityBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(identity_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, identity_);
     }
     unknownFields.writeTo(output);
@@ -251,10 +251,10 @@ public final class AwsAccessRole extends com.google.protobuf.GeneratedMessageV3
     if (size != -1) return size;
 
     size = 0;
-    if (!getIamRoleIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(iamRoleId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, iamRoleId_);
     }
-    if (!getIdentityBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(identity_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, identity_);
     }
     size += unknownFields.getSerializedSize();
