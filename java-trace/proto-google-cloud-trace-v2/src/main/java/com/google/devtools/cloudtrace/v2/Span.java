@@ -7233,10 +7233,10 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
 
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-      if (!getTraceIdBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(traceId_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, traceId_);
       }
-      if (!getSpanIdBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(spanId_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, spanId_);
       }
       if (type_ != com.google.devtools.cloudtrace.v2.Span.Link.Type.TYPE_UNSPECIFIED.getNumber()) {
@@ -7254,10 +7254,10 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
       if (size != -1) return size;
 
       size = 0;
-      if (!getTraceIdBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(traceId_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, traceId_);
       }
-      if (!getSpanIdBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(spanId_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, spanId_);
       }
       if (type_ != com.google.devtools.cloudtrace.v2.Span.Link.Type.TYPE_UNSPECIFIED.getNumber()) {
@@ -10013,13 +10013,13 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name_);
     }
-    if (!getSpanIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(spanId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, spanId_);
     }
-    if (!getParentSpanIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(parentSpanId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, parentSpanId_);
     }
     if (displayName_ != null) {
@@ -10065,13 +10065,13 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
     if (size != -1) return size;
 
     size = 0;
-    if (!getNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, name_);
     }
-    if (!getSpanIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(spanId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, spanId_);
     }
-    if (!getParentSpanIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(parentSpanId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, parentSpanId_);
     }
     if (displayName_ != null) {
