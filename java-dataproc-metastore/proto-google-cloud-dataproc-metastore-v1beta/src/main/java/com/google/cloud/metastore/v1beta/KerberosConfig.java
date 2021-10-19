@@ -309,10 +309,10 @@ public final class KerberosConfig extends com.google.protobuf.GeneratedMessageV3
     if (keytab_ != null) {
       output.writeMessage(1, getKeytab());
     }
-    if (!getPrincipalBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(principal_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, principal_);
     }
-    if (!getKrb5ConfigGcsUriBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(krb5ConfigGcsUri_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, krb5ConfigGcsUri_);
     }
     unknownFields.writeTo(output);
@@ -327,10 +327,10 @@ public final class KerberosConfig extends com.google.protobuf.GeneratedMessageV3
     if (keytab_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, getKeytab());
     }
-    if (!getPrincipalBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(principal_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, principal_);
     }
-    if (!getKrb5ConfigGcsUriBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(krb5ConfigGcsUri_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, krb5ConfigGcsUri_);
     }
     size += unknownFields.getSerializedSize();

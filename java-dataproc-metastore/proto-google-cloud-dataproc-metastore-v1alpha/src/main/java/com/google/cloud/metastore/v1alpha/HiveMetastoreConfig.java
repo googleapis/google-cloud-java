@@ -390,7 +390,7 @@ public final class HiveMetastoreConfig extends com.google.protobuf.GeneratedMess
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getVersionBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(version_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, version_);
     }
     com.google.protobuf.GeneratedMessageV3.serializeStringMapTo(
@@ -407,7 +407,7 @@ public final class HiveMetastoreConfig extends com.google.protobuf.GeneratedMess
     if (size != -1) return size;
 
     size = 0;
-    if (!getVersionBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(version_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, version_);
     }
     for (java.util.Map.Entry<java.lang.String, java.lang.String> entry :

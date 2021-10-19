@@ -832,14 +832,14 @@ public final class Restore extends com.google.protobuf.GeneratedMessageV3
     if (state_ != com.google.cloud.metastore.v1.Restore.State.STATE_UNSPECIFIED.getNumber()) {
       output.writeEnum(3, state_);
     }
-    if (!getBackupBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(backup_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 4, backup_);
     }
     if (type_
         != com.google.cloud.metastore.v1.Restore.RestoreType.RESTORE_TYPE_UNSPECIFIED.getNumber()) {
       output.writeEnum(5, type_);
     }
-    if (!getDetailsBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(details_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 6, details_);
     }
     unknownFields.writeTo(output);
@@ -860,14 +860,14 @@ public final class Restore extends com.google.protobuf.GeneratedMessageV3
     if (state_ != com.google.cloud.metastore.v1.Restore.State.STATE_UNSPECIFIED.getNumber()) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(3, state_);
     }
-    if (!getBackupBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(backup_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, backup_);
     }
     if (type_
         != com.google.cloud.metastore.v1.Restore.RestoreType.RESTORE_TYPE_UNSPECIFIED.getNumber()) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(5, type_);
     }
-    if (!getDetailsBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(details_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, details_);
     }
     size += unknownFields.getSerializedSize();

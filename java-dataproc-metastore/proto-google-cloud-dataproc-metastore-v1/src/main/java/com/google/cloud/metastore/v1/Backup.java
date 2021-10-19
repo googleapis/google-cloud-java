@@ -782,7 +782,7 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name_);
     }
     if (createTime_ != null) {
@@ -797,7 +797,7 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
     if (serviceRevision_ != null) {
       output.writeMessage(5, getServiceRevision());
     }
-    if (!getDescriptionBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(description_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 6, description_);
     }
     for (int i = 0; i < restoringServices_.size(); i++) {
@@ -812,7 +812,7 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
     if (size != -1) return size;
 
     size = 0;
-    if (!getNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, name_);
     }
     if (createTime_ != null) {
@@ -827,7 +827,7 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
     if (serviceRevision_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(5, getServiceRevision());
     }
-    if (!getDescriptionBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(description_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, description_);
     }
     {

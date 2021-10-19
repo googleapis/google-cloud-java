@@ -1748,7 +1748,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name_);
     }
     if (createTime_ != null) {
@@ -1762,10 +1762,10 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
     if (metastoreConfigCase_ == 5) {
       output.writeMessage(5, (com.google.cloud.metastore.v1.HiveMetastoreConfig) metastoreConfig_);
     }
-    if (!getNetworkBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(network_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 7, network_);
     }
-    if (!getEndpointUriBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(endpointUri_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 8, endpointUri_);
     }
     if (port_ != 0) {
@@ -1774,10 +1774,10 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
     if (state_ != com.google.cloud.metastore.v1.Service.State.STATE_UNSPECIFIED.getNumber()) {
       output.writeEnum(10, state_);
     }
-    if (!getStateMessageBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(stateMessage_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 11, stateMessage_);
     }
-    if (!getArtifactGcsUriBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(artifactGcsUri_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 12, artifactGcsUri_);
     }
     if (tier_ != com.google.cloud.metastore.v1.Service.Tier.TIER_UNSPECIFIED.getNumber()) {
@@ -1786,7 +1786,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
     if (maintenanceWindow_ != null) {
       output.writeMessage(15, getMaintenanceWindow());
     }
-    if (!getUidBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(uid_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 16, uid_);
     }
     if (metadataManagementActivity_ != null) {
@@ -1806,7 +1806,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
     if (size != -1) return size;
 
     size = 0;
-    if (!getNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, name_);
     }
     if (createTime_ != null) {
@@ -1830,10 +1830,10 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               5, (com.google.cloud.metastore.v1.HiveMetastoreConfig) metastoreConfig_);
     }
-    if (!getNetworkBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(network_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, network_);
     }
-    if (!getEndpointUriBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(endpointUri_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, endpointUri_);
     }
     if (port_ != 0) {
@@ -1842,10 +1842,10 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
     if (state_ != com.google.cloud.metastore.v1.Service.State.STATE_UNSPECIFIED.getNumber()) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(10, state_);
     }
-    if (!getStateMessageBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(stateMessage_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(11, stateMessage_);
     }
-    if (!getArtifactGcsUriBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(artifactGcsUri_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(12, artifactGcsUri_);
     }
     if (tier_ != com.google.cloud.metastore.v1.Service.Tier.TIER_UNSPECIFIED.getNumber()) {
@@ -1854,7 +1854,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
     if (maintenanceWindow_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(15, getMaintenanceWindow());
     }
-    if (!getUidBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(uid_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(16, uid_);
     }
     if (metadataManagementActivity_ != null) {

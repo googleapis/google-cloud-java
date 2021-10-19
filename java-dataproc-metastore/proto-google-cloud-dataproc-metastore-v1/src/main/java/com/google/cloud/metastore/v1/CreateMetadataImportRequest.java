@@ -398,16 +398,16 @@ public final class CreateMetadataImportRequest extends com.google.protobuf.Gener
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getParentBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(parent_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, parent_);
     }
-    if (!getMetadataImportIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(metadataImportId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, metadataImportId_);
     }
     if (metadataImport_ != null) {
       output.writeMessage(3, getMetadataImport());
     }
-    if (!getRequestIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(requestId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 4, requestId_);
     }
     unknownFields.writeTo(output);
@@ -419,16 +419,16 @@ public final class CreateMetadataImportRequest extends com.google.protobuf.Gener
     if (size != -1) return size;
 
     size = 0;
-    if (!getParentBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(parent_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, parent_);
     }
-    if (!getMetadataImportIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(metadataImportId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, metadataImportId_);
     }
     if (metadataImport_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(3, getMetadataImport());
     }
-    if (!getRequestIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(requestId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, requestId_);
     }
     size += unknownFields.getSerializedSize();
