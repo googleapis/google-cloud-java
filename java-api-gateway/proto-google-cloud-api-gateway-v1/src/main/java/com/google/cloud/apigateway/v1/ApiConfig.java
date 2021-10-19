@@ -725,7 +725,7 @@ public final class ApiConfig extends com.google.protobuf.GeneratedMessageV3
 
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-      if (!getPathBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(path_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, path_);
       }
       if (!contents_.isEmpty()) {
@@ -740,7 +740,7 @@ public final class ApiConfig extends com.google.protobuf.GeneratedMessageV3
       if (size != -1) return size;
 
       size = 0;
-      if (!getPathBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(path_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, path_);
       }
       if (!contents_.isEmpty()) {
@@ -4356,7 +4356,7 @@ public final class ApiConfig extends com.google.protobuf.GeneratedMessageV3
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name_);
     }
     if (createTime_ != null) {
@@ -4367,7 +4367,7 @@ public final class ApiConfig extends com.google.protobuf.GeneratedMessageV3
     }
     com.google.protobuf.GeneratedMessageV3.serializeStringMapTo(
         output, internalGetLabels(), LabelsDefaultEntryHolder.defaultEntry, 4);
-    if (!getDisplayNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(displayName_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 5, displayName_);
     }
     if (state_ != com.google.cloud.apigateway.v1.ApiConfig.State.STATE_UNSPECIFIED.getNumber()) {
@@ -4382,10 +4382,10 @@ public final class ApiConfig extends com.google.protobuf.GeneratedMessageV3
     for (int i = 0; i < managedServiceConfigs_.size(); i++) {
       output.writeMessage(11, managedServiceConfigs_.get(i));
     }
-    if (!getServiceConfigIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(serviceConfigId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 12, serviceConfigId_);
     }
-    if (!getGatewayServiceAccountBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(gatewayServiceAccount_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 14, gatewayServiceAccount_);
     }
     unknownFields.writeTo(output);
@@ -4397,7 +4397,7 @@ public final class ApiConfig extends com.google.protobuf.GeneratedMessageV3
     if (size != -1) return size;
 
     size = 0;
-    if (!getNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, name_);
     }
     if (createTime_ != null) {
@@ -4416,7 +4416,7 @@ public final class ApiConfig extends com.google.protobuf.GeneratedMessageV3
               .build();
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(4, labels__);
     }
-    if (!getDisplayNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(displayName_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, displayName_);
     }
     if (state_ != com.google.cloud.apigateway.v1.ApiConfig.State.STATE_UNSPECIFIED.getNumber()) {
@@ -4433,10 +4433,10 @@ public final class ApiConfig extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               11, managedServiceConfigs_.get(i));
     }
-    if (!getServiceConfigIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(serviceConfigId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(12, serviceConfigId_);
     }
-    if (!getGatewayServiceAccountBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(gatewayServiceAccount_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(14, gatewayServiceAccount_);
     }
     size += unknownFields.getSerializedSize();
