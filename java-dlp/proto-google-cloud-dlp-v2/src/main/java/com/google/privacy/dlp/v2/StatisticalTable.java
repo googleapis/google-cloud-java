@@ -454,7 +454,7 @@ public final class StatisticalTable extends com.google.protobuf.GeneratedMessage
       if (field_ != null) {
         output.writeMessage(1, getField());
       }
-      if (!getCustomTagBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(customTag_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, customTag_);
       }
       unknownFields.writeTo(output);
@@ -469,7 +469,7 @@ public final class StatisticalTable extends com.google.protobuf.GeneratedMessage
       if (field_ != null) {
         size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, getField());
       }
-      if (!getCustomTagBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(customTag_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, customTag_);
       }
       size += unknownFields.getSerializedSize();

@@ -7543,7 +7543,7 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
           if (field_ != null) {
             output.writeMessage(1, getField());
           }
-          if (!getCustomTagBytes().isEmpty()) {
+          if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(customTag_)) {
             com.google.protobuf.GeneratedMessageV3.writeString(output, 2, customTag_);
           }
           unknownFields.writeTo(output);
@@ -7558,7 +7558,7 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
           if (field_ != null) {
             size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, getField());
           }
-          if (!getCustomTagBytes().isEmpty()) {
+          if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(customTag_)) {
             size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, customTag_);
           }
           size += unknownFields.getSerializedSize();
@@ -10116,7 +10116,7 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
       for (int i = 0; i < quasiIds_.size(); i++) {
         output.writeMessage(1, quasiIds_.get(i));
       }
-      if (!getRegionCodeBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(regionCode_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, regionCode_);
       }
       for (int i = 0; i < auxiliaryTables_.size(); i++) {
@@ -10134,7 +10134,7 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
       for (int i = 0; i < quasiIds_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, quasiIds_.get(i));
       }
-      if (!getRegionCodeBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(regionCode_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, regionCode_);
       }
       for (int i = 0; i < auxiliaryTables_.size(); i++) {
@@ -12137,7 +12137,7 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
       for (int i = 0; i < quasiIds_.size(); i++) {
         output.writeMessage(1, quasiIds_.get(i));
       }
-      if (!getRegionCodeBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(regionCode_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, regionCode_);
       }
       for (int i = 0; i < auxiliaryTables_.size(); i++) {
@@ -12155,7 +12155,7 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
       for (int i = 0; i < quasiIds_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, quasiIds_.get(i));
       }
-      if (!getRegionCodeBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(regionCode_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, regionCode_);
       }
       for (int i = 0; i < auxiliaryTables_.size(); i++) {

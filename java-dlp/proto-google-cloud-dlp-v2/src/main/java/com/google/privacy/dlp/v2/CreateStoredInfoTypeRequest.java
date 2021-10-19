@@ -398,16 +398,16 @@ public final class CreateStoredInfoTypeRequest extends com.google.protobuf.Gener
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getParentBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(parent_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, parent_);
     }
     if (config_ != null) {
       output.writeMessage(2, getConfig());
     }
-    if (!getStoredInfoTypeIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(storedInfoTypeId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, storedInfoTypeId_);
     }
-    if (!getLocationIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(locationId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 4, locationId_);
     }
     unknownFields.writeTo(output);
@@ -419,16 +419,16 @@ public final class CreateStoredInfoTypeRequest extends com.google.protobuf.Gener
     if (size != -1) return size;
 
     size = 0;
-    if (!getParentBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(parent_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, parent_);
     }
     if (config_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, getConfig());
     }
-    if (!getStoredInfoTypeIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(storedInfoTypeId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, storedInfoTypeId_);
     }
-    if (!getLocationIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(locationId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, locationId_);
     }
     size += unknownFields.getSerializedSize();

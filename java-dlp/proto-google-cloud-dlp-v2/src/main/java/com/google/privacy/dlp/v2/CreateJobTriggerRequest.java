@@ -390,16 +390,16 @@ public final class CreateJobTriggerRequest extends com.google.protobuf.Generated
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getParentBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(parent_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, parent_);
     }
     if (jobTrigger_ != null) {
       output.writeMessage(2, getJobTrigger());
     }
-    if (!getTriggerIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(triggerId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, triggerId_);
     }
-    if (!getLocationIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(locationId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 4, locationId_);
     }
     unknownFields.writeTo(output);
@@ -411,16 +411,16 @@ public final class CreateJobTriggerRequest extends com.google.protobuf.Generated
     if (size != -1) return size;
 
     size = 0;
-    if (!getParentBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(parent_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, parent_);
     }
     if (jobTrigger_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, getJobTrigger());
     }
-    if (!getTriggerIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(triggerId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, triggerId_);
     }
-    if (!getLocationIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(locationId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, locationId_);
     }
     size += unknownFields.getSerializedSize();

@@ -932,7 +932,7 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getQuoteBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(quote_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, quote_);
     }
     if (infoType_ != null) {
@@ -950,10 +950,10 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
     if (quoteInfo_ != null) {
       output.writeMessage(7, getQuoteInfo());
     }
-    if (!getResourceNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(resourceName_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 8, resourceName_);
     }
-    if (!getTriggerNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(triggerName_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 9, triggerName_);
     }
     com.google.protobuf.GeneratedMessageV3.serializeStringMapTo(
@@ -961,10 +961,10 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
     if (jobCreateTime_ != null) {
       output.writeMessage(11, getJobCreateTime());
     }
-    if (!getJobNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(jobName_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 13, jobName_);
     }
-    if (!getNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 14, name_);
     }
     unknownFields.writeTo(output);
@@ -976,7 +976,7 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
     if (size != -1) return size;
 
     size = 0;
-    if (!getQuoteBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(quote_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, quote_);
     }
     if (infoType_ != null) {
@@ -994,10 +994,10 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
     if (quoteInfo_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(7, getQuoteInfo());
     }
-    if (!getResourceNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(resourceName_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, resourceName_);
     }
-    if (!getTriggerNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(triggerName_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(9, triggerName_);
     }
     for (java.util.Map.Entry<java.lang.String, java.lang.String> entry :
@@ -1013,10 +1013,10 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
     if (jobCreateTime_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(11, getJobCreateTime());
     }
-    if (!getJobNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(jobName_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(13, jobName_);
     }
-    if (!getNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(14, name_);
     }
     size += unknownFields.getSerializedSize();

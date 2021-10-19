@@ -235,10 +235,10 @@ public final class PartitionId extends com.google.protobuf.GeneratedMessageV3
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getProjectIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(projectId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, projectId_);
     }
-    if (!getNamespaceIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(namespaceId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 4, namespaceId_);
     }
     unknownFields.writeTo(output);
@@ -250,10 +250,10 @@ public final class PartitionId extends com.google.protobuf.GeneratedMessageV3
     if (size != -1) return size;
 
     size = 0;
-    if (!getProjectIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(projectId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, projectId_);
     }
-    if (!getNamespaceIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(namespaceId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, namespaceId_);
     }
     size += unknownFields.getSerializedSize();

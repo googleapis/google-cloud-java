@@ -675,7 +675,7 @@ public final class TransformationSummary extends com.google.protobuf.GeneratedMe
               .getNumber()) {
         output.writeEnum(2, code_);
       }
-      if (!getDetailsBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(details_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 3, details_);
       }
       unknownFields.writeTo(output);
@@ -696,7 +696,7 @@ public final class TransformationSummary extends com.google.protobuf.GeneratedMe
               .getNumber()) {
         size += com.google.protobuf.CodedOutputStream.computeEnumSize(2, code_);
       }
-      if (!getDetailsBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(details_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, details_);
       }
       size += unknownFields.getSerializedSize();
