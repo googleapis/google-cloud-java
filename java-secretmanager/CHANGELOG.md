@@ -1,5 +1,12 @@
 # Changelog
 
+### [2.0.4](https://www.github.com/googleapis/java-secretmanager/compare/v2.0.3...v2.0.4) (2021-10-19)
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.4.0 ([#626](https://www.github.com/googleapis/java-secretmanager/issues/626)) ([2c7b4c4](https://www.github.com/googleapis/java-secretmanager/commit/2c7b4c45c6df9fb5aa3dc03f2c6788263f625030))
+
 ### [2.0.3](https://www.github.com/googleapis/java-secretmanager/compare/v2.0.2...v2.0.3) (2021-10-06)
 
 
