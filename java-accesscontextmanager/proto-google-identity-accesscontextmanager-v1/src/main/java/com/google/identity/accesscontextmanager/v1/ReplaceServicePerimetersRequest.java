@@ -384,13 +384,13 @@ public final class ReplaceServicePerimetersRequest extends com.google.protobuf.G
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getParentBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(parent_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, parent_);
     }
     for (int i = 0; i < servicePerimeters_.size(); i++) {
       output.writeMessage(2, servicePerimeters_.get(i));
     }
-    if (!getEtagBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(etag_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, etag_);
     }
     unknownFields.writeTo(output);
@@ -402,14 +402,14 @@ public final class ReplaceServicePerimetersRequest extends com.google.protobuf.G
     if (size != -1) return size;
 
     size = 0;
-    if (!getParentBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(parent_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, parent_);
     }
     for (int i = 0; i < servicePerimeters_.size(); i++) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(2, servicePerimeters_.get(i));
     }
-    if (!getEtagBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(etag_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, etag_);
     }
     size += unknownFields.getSerializedSize();

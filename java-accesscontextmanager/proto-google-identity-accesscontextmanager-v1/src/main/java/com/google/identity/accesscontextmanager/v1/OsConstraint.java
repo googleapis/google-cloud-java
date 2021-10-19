@@ -254,7 +254,7 @@ public final class OsConstraint extends com.google.protobuf.GeneratedMessageV3
         != com.google.identity.accesscontextmanager.type.OsType.OS_UNSPECIFIED.getNumber()) {
       output.writeEnum(1, osType_);
     }
-    if (!getMinimumVersionBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(minimumVersion_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, minimumVersion_);
     }
     if (requireVerifiedChromeOs_ != false) {
@@ -273,7 +273,7 @@ public final class OsConstraint extends com.google.protobuf.GeneratedMessageV3
         != com.google.identity.accesscontextmanager.type.OsType.OS_UNSPECIFIED.getNumber()) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(1, osType_);
     }
-    if (!getMinimumVersionBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(minimumVersion_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, minimumVersion_);
     }
     if (requireVerifiedChromeOs_ != false) {
