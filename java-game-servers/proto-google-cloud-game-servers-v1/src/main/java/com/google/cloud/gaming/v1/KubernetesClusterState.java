@@ -755,10 +755,10 @@ public final class KubernetesClusterState extends com.google.protobuf.GeneratedM
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getAgonesVersionInstalledBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(agonesVersionInstalled_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, agonesVersionInstalled_);
     }
-    if (!getKubernetesVersionInstalledBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(kubernetesVersionInstalled_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, kubernetesVersionInstalled_);
     }
     if (installationState_
@@ -767,13 +767,13 @@ public final class KubernetesClusterState extends com.google.protobuf.GeneratedM
             .getNumber()) {
       output.writeEnum(3, installationState_);
     }
-    if (!getVersionInstalledErrorMessageBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(versionInstalledErrorMessage_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 4, versionInstalledErrorMessage_);
     }
-    if (!getProviderBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(provider_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 5, provider_);
     }
-    if (!getAgonesVersionTargetedBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(agonesVersionTargeted_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 6, agonesVersionTargeted_);
     }
     unknownFields.writeTo(output);
@@ -785,10 +785,10 @@ public final class KubernetesClusterState extends com.google.protobuf.GeneratedM
     if (size != -1) return size;
 
     size = 0;
-    if (!getAgonesVersionInstalledBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(agonesVersionInstalled_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, agonesVersionInstalled_);
     }
-    if (!getKubernetesVersionInstalledBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(kubernetesVersionInstalled_)) {
       size +=
           com.google.protobuf.GeneratedMessageV3.computeStringSize(2, kubernetesVersionInstalled_);
     }
@@ -798,15 +798,15 @@ public final class KubernetesClusterState extends com.google.protobuf.GeneratedM
             .getNumber()) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(3, installationState_);
     }
-    if (!getVersionInstalledErrorMessageBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(versionInstalledErrorMessage_)) {
       size +=
           com.google.protobuf.GeneratedMessageV3.computeStringSize(
               4, versionInstalledErrorMessage_);
     }
-    if (!getProviderBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(provider_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, provider_);
     }
-    if (!getAgonesVersionTargetedBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(agonesVersionTargeted_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, agonesVersionTargeted_);
     }
     size += unknownFields.getSerializedSize();

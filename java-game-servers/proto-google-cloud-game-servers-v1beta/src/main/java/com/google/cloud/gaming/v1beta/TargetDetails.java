@@ -641,7 +641,7 @@ public final class TargetDetails extends com.google.protobuf.GeneratedMessageV3
 
       @java.lang.Override
       public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-        if (!getNameBytes().isEmpty()) {
+        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
           com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name_);
         }
         if (specSource_ != null) {
@@ -656,7 +656,7 @@ public final class TargetDetails extends com.google.protobuf.GeneratedMessageV3
         if (size != -1) return size;
 
         size = 0;
-        if (!getNameBytes().isEmpty()) {
+        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
           size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, name_);
         }
         if (specSource_ != null) {
@@ -1656,7 +1656,7 @@ public final class TargetDetails extends com.google.protobuf.GeneratedMessageV3
 
       @java.lang.Override
       public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-        if (!getNameBytes().isEmpty()) {
+        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
           com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name_);
         }
         if (specSource_ != null) {
@@ -1671,7 +1671,7 @@ public final class TargetDetails extends com.google.protobuf.GeneratedMessageV3
         if (size != -1) return size;
 
         size = 0;
-        if (!getNameBytes().isEmpty()) {
+        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
           size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, name_);
         }
         if (specSource_ != null) {
@@ -3566,10 +3566,10 @@ public final class TargetDetails extends com.google.protobuf.GeneratedMessageV3
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getGameServerClusterNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(gameServerClusterName_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, gameServerClusterName_);
     }
-    if (!getGameServerDeploymentNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(gameServerDeploymentName_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, gameServerDeploymentName_);
     }
     for (int i = 0; i < fleetDetails_.size(); i++) {
@@ -3584,10 +3584,10 @@ public final class TargetDetails extends com.google.protobuf.GeneratedMessageV3
     if (size != -1) return size;
 
     size = 0;
-    if (!getGameServerClusterNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(gameServerClusterName_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, gameServerClusterName_);
     }
-    if (!getGameServerDeploymentNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(gameServerDeploymentName_)) {
       size +=
           com.google.protobuf.GeneratedMessageV3.computeStringSize(2, gameServerDeploymentName_);
     }

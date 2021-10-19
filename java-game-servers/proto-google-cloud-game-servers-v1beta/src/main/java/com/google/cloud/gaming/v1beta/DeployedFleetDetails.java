@@ -1574,10 +1574,10 @@ public final class DeployedFleetDetails extends com.google.protobuf.GeneratedMes
 
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-      if (!getFleetBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(fleet_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, fleet_);
       }
-      if (!getFleetSpecBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(fleetSpec_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, fleetSpec_);
       }
       if (specSource_ != null) {
@@ -1595,10 +1595,10 @@ public final class DeployedFleetDetails extends com.google.protobuf.GeneratedMes
       if (size != -1) return size;
 
       size = 0;
-      if (!getFleetBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(fleet_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, fleet_);
       }
-      if (!getFleetSpecBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(fleetSpec_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, fleetSpec_);
       }
       if (specSource_ != null) {
@@ -3034,10 +3034,10 @@ public final class DeployedFleetDetails extends com.google.protobuf.GeneratedMes
 
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-      if (!getAutoscalerBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(autoscaler_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, autoscaler_);
       }
-      if (!getFleetAutoscalerSpecBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(fleetAutoscalerSpec_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 3, fleetAutoscalerSpec_);
       }
       if (specSource_ != null) {
@@ -3052,10 +3052,10 @@ public final class DeployedFleetDetails extends com.google.protobuf.GeneratedMes
       if (size != -1) return size;
 
       size = 0;
-      if (!getAutoscalerBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(autoscaler_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, autoscaler_);
       }
-      if (!getFleetAutoscalerSpecBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(fleetAutoscalerSpec_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, fleetAutoscalerSpec_);
       }
       if (specSource_ != null) {

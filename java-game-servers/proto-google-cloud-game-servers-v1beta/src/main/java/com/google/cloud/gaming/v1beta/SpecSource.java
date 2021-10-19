@@ -235,10 +235,10 @@ public final class SpecSource extends com.google.protobuf.GeneratedMessageV3
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getGameServerConfigNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(gameServerConfigName_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, gameServerConfigName_);
     }
-    if (!getNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, name_);
     }
     unknownFields.writeTo(output);
@@ -250,10 +250,10 @@ public final class SpecSource extends com.google.protobuf.GeneratedMessageV3
     if (size != -1) return size;
 
     size = 0;
-    if (!getGameServerConfigNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(gameServerConfigName_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, gameServerConfigName_);
     }
-    if (!getNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, name_);
     }
     size += unknownFields.getSerializedSize();
