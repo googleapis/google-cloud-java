@@ -1,5 +1,12 @@
 # Changelog
 
+### [2.1.6](https://www.github.com/googleapis/java-automl/compare/v2.1.5...v2.1.6) (2021-10-19)
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-storage to v2.1.9 ([#942](https://www.github.com/googleapis/java-automl/issues/942)) ([2e5a347](https://www.github.com/googleapis/java-automl/commit/2e5a34753dd14f84b39fb9b3a2151429e34eddc6))
+
 ### [2.1.5](https://www.github.com/googleapis/java-automl/compare/v2.1.4...v2.1.5) (2021-10-19)
 
 
