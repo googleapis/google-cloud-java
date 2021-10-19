@@ -1165,13 +1165,13 @@ public final class DataSourceParameter extends com.google.protobuf.GeneratedMess
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getParamIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(paramId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, paramId_);
     }
-    if (!getDisplayNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(displayName_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, displayName_);
     }
-    if (!getDescriptionBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(description_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, description_);
     }
     if (type_
@@ -1185,7 +1185,7 @@ public final class DataSourceParameter extends com.google.protobuf.GeneratedMess
     if (repeated_ != false) {
       output.writeBool(6, repeated_);
     }
-    if (!getValidationRegexBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(validationRegex_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 7, validationRegex_);
     }
     for (int i = 0; i < allowedValues_.size(); i++) {
@@ -1200,10 +1200,10 @@ public final class DataSourceParameter extends com.google.protobuf.GeneratedMess
     for (int i = 0; i < fields_.size(); i++) {
       output.writeMessage(11, fields_.get(i));
     }
-    if (!getValidationDescriptionBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(validationDescription_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 12, validationDescription_);
     }
-    if (!getValidationHelpUrlBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(validationHelpUrl_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 13, validationHelpUrl_);
     }
     if (immutable_ != false) {
@@ -1224,13 +1224,13 @@ public final class DataSourceParameter extends com.google.protobuf.GeneratedMess
     if (size != -1) return size;
 
     size = 0;
-    if (!getParamIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(paramId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, paramId_);
     }
-    if (!getDisplayNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(displayName_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, displayName_);
     }
-    if (!getDescriptionBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(description_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, description_);
     }
     if (type_
@@ -1244,7 +1244,7 @@ public final class DataSourceParameter extends com.google.protobuf.GeneratedMess
     if (repeated_ != false) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(6, repeated_);
     }
-    if (!getValidationRegexBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(validationRegex_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, validationRegex_);
     }
     {
@@ -1264,10 +1264,10 @@ public final class DataSourceParameter extends com.google.protobuf.GeneratedMess
     for (int i = 0; i < fields_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(11, fields_.get(i));
     }
-    if (!getValidationDescriptionBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(validationDescription_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(12, validationDescription_);
     }
-    if (!getValidationHelpUrlBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(validationHelpUrl_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(13, validationHelpUrl_);
     }
     if (immutable_ != false) {

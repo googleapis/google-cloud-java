@@ -593,7 +593,7 @@ public final class ListTransferRunsRequest extends com.google.protobuf.Generated
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
     getSerializedSize();
-    if (!getParentBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(parent_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, parent_);
     }
     if (getStatesList().size() > 0) {
@@ -603,7 +603,7 @@ public final class ListTransferRunsRequest extends com.google.protobuf.Generated
     for (int i = 0; i < states_.size(); i++) {
       output.writeEnumNoTag(states_.get(i));
     }
-    if (!getPageTokenBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(pageToken_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, pageToken_);
     }
     if (pageSize_ != 0) {
@@ -624,7 +624,7 @@ public final class ListTransferRunsRequest extends com.google.protobuf.Generated
     if (size != -1) return size;
 
     size = 0;
-    if (!getParentBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(parent_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, parent_);
     }
     {
@@ -639,7 +639,7 @@ public final class ListTransferRunsRequest extends com.google.protobuf.Generated
       }
       statesMemoizedSerializedSize = dataSize;
     }
-    if (!getPageTokenBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(pageToken_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, pageToken_);
     }
     if (pageSize_ != 0) {

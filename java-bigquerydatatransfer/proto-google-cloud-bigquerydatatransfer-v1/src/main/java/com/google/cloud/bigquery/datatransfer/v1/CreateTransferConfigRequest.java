@@ -476,19 +476,19 @@ public final class CreateTransferConfigRequest extends com.google.protobuf.Gener
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getParentBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(parent_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, parent_);
     }
     if (transferConfig_ != null) {
       output.writeMessage(2, getTransferConfig());
     }
-    if (!getAuthorizationCodeBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(authorizationCode_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, authorizationCode_);
     }
-    if (!getVersionInfoBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(versionInfo_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 5, versionInfo_);
     }
-    if (!getServiceAccountNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(serviceAccountName_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 6, serviceAccountName_);
     }
     unknownFields.writeTo(output);
@@ -500,19 +500,19 @@ public final class CreateTransferConfigRequest extends com.google.protobuf.Gener
     if (size != -1) return size;
 
     size = 0;
-    if (!getParentBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(parent_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, parent_);
     }
     if (transferConfig_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, getTransferConfig());
     }
-    if (!getAuthorizationCodeBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(authorizationCode_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, authorizationCode_);
     }
-    if (!getVersionInfoBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(versionInfo_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, versionInfo_);
     }
-    if (!getServiceAccountNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(serviceAccountName_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, serviceAccountName_);
     }
     size += unknownFields.getSerializedSize();

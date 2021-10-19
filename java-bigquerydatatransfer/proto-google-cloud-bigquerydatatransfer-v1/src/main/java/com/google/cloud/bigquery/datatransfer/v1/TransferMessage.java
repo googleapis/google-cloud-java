@@ -476,7 +476,7 @@ public final class TransferMessage extends com.google.protobuf.GeneratedMessageV
             .getNumber()) {
       output.writeEnum(2, severity_);
     }
-    if (!getMessageTextBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(messageText_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, messageText_);
     }
     unknownFields.writeTo(output);
@@ -497,7 +497,7 @@ public final class TransferMessage extends com.google.protobuf.GeneratedMessageV
             .getNumber()) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(2, severity_);
     }
-    if (!getMessageTextBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(messageText_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, messageText_);
     }
     size += unknownFields.getSerializedSize();
