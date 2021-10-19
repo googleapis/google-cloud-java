@@ -268,10 +268,10 @@ public final class CheckUpgradeRequest extends com.google.protobuf.GeneratedMess
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getEnvironmentBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(environment_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, environment_);
     }
-    if (!getImageVersionBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(imageVersion_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, imageVersion_);
     }
     unknownFields.writeTo(output);
@@ -283,10 +283,10 @@ public final class CheckUpgradeRequest extends com.google.protobuf.GeneratedMess
     if (size != -1) return size;
 
     size = 0;
-    if (!getEnvironmentBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(environment_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, environment_);
     }
-    if (!getImageVersionBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(imageVersion_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, imageVersion_);
     }
     size += unknownFields.getSerializedSize();

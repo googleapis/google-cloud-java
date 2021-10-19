@@ -271,10 +271,10 @@ public final class PrivateClusterConfig extends com.google.protobuf.GeneratedMes
     if (enablePrivateEndpoint_ != false) {
       output.writeBool(1, enablePrivateEndpoint_);
     }
-    if (!getMasterIpv4CidrBlockBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(masterIpv4CidrBlock_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, masterIpv4CidrBlock_);
     }
-    if (!getMasterIpv4ReservedRangeBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(masterIpv4ReservedRange_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, masterIpv4ReservedRange_);
     }
     unknownFields.writeTo(output);
@@ -289,10 +289,10 @@ public final class PrivateClusterConfig extends com.google.protobuf.GeneratedMes
     if (enablePrivateEndpoint_ != false) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(1, enablePrivateEndpoint_);
     }
-    if (!getMasterIpv4CidrBlockBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(masterIpv4CidrBlock_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, masterIpv4CidrBlock_);
     }
-    if (!getMasterIpv4ReservedRangeBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(masterIpv4ReservedRange_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, masterIpv4ReservedRange_);
     }
     size += unknownFields.getSerializedSize();

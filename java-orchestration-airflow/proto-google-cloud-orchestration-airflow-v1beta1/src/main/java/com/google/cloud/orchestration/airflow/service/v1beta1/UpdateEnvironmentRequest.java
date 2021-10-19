@@ -671,7 +671,7 @@ public final class UpdateEnvironmentRequest extends com.google.protobuf.Generate
     if (environment_ != null) {
       output.writeMessage(1, getEnvironment());
     }
-    if (!getNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, name_);
     }
     if (updateMask_ != null) {
@@ -689,7 +689,7 @@ public final class UpdateEnvironmentRequest extends com.google.protobuf.Generate
     if (environment_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, getEnvironment());
     }
-    if (!getNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, name_);
     }
     if (updateMask_ != null) {

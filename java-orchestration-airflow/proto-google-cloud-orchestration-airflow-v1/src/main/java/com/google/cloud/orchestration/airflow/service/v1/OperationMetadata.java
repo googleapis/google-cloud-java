@@ -883,10 +883,10 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
             .getNumber()) {
       output.writeEnum(2, operationType_);
     }
-    if (!getResourceBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(resource_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, resource_);
     }
-    if (!getResourceUuidBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(resourceUuid_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 4, resourceUuid_);
     }
     if (createTime_ != null) {
@@ -915,10 +915,10 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
             .getNumber()) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(2, operationType_);
     }
-    if (!getResourceBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(resource_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, resource_);
     }
-    if (!getResourceUuidBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(resourceUuid_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, resourceUuid_);
     }
     if (createTime_ != null) {

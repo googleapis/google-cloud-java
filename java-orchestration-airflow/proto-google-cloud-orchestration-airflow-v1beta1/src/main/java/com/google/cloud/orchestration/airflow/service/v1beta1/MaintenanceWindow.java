@@ -325,7 +325,7 @@ public final class MaintenanceWindow extends com.google.protobuf.GeneratedMessag
     if (endTime_ != null) {
       output.writeMessage(2, getEndTime());
     }
-    if (!getRecurrenceBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(recurrence_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, recurrence_);
     }
     unknownFields.writeTo(output);
@@ -343,7 +343,7 @@ public final class MaintenanceWindow extends com.google.protobuf.GeneratedMessag
     if (endTime_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, getEndTime());
     }
-    if (!getRecurrenceBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(recurrence_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, recurrence_);
     }
     size += unknownFields.getSerializedSize();

@@ -545,20 +545,21 @@ public final class PrivateEnvironmentConfig extends com.google.protobuf.Generate
     if (privateClusterConfig_ != null) {
       output.writeMessage(2, getPrivateClusterConfig());
     }
-    if (!getWebServerIpv4CidrBlockBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(webServerIpv4CidrBlock_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, webServerIpv4CidrBlock_);
     }
-    if (!getCloudSqlIpv4CidrBlockBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(cloudSqlIpv4CidrBlock_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 4, cloudSqlIpv4CidrBlock_);
     }
-    if (!getWebServerIpv4ReservedRangeBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(webServerIpv4ReservedRange_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 5, webServerIpv4ReservedRange_);
     }
-    if (!getCloudComposerNetworkIpv4CidrBlockBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(cloudComposerNetworkIpv4CidrBlock_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(
           output, 7, cloudComposerNetworkIpv4CidrBlock_);
     }
-    if (!getCloudComposerNetworkIpv4ReservedRangeBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(
+        cloudComposerNetworkIpv4ReservedRange_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(
           output, 8, cloudComposerNetworkIpv4ReservedRange_);
     }
@@ -578,22 +579,23 @@ public final class PrivateEnvironmentConfig extends com.google.protobuf.Generate
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(2, getPrivateClusterConfig());
     }
-    if (!getWebServerIpv4CidrBlockBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(webServerIpv4CidrBlock_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, webServerIpv4CidrBlock_);
     }
-    if (!getCloudSqlIpv4CidrBlockBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(cloudSqlIpv4CidrBlock_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, cloudSqlIpv4CidrBlock_);
     }
-    if (!getWebServerIpv4ReservedRangeBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(webServerIpv4ReservedRange_)) {
       size +=
           com.google.protobuf.GeneratedMessageV3.computeStringSize(5, webServerIpv4ReservedRange_);
     }
-    if (!getCloudComposerNetworkIpv4CidrBlockBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(cloudComposerNetworkIpv4CidrBlock_)) {
       size +=
           com.google.protobuf.GeneratedMessageV3.computeStringSize(
               7, cloudComposerNetworkIpv4CidrBlock_);
     }
-    if (!getCloudComposerNetworkIpv4ReservedRangeBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(
+        cloudComposerNetworkIpv4ReservedRange_)) {
       size +=
           com.google.protobuf.GeneratedMessageV3.computeStringSize(
               8, cloudComposerNetworkIpv4ReservedRange_);

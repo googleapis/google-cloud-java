@@ -436,16 +436,16 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
     if (useIpAliases_ != false) {
       output.writeBool(1, useIpAliases_);
     }
-    if (!getClusterSecondaryRangeNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(clusterSecondaryRangeName_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, clusterSecondaryRangeName_);
     }
-    if (!getServicesSecondaryRangeNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(servicesSecondaryRangeName_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, servicesSecondaryRangeName_);
     }
-    if (!getClusterIpv4CidrBlockBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(clusterIpv4CidrBlock_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 4, clusterIpv4CidrBlock_);
     }
-    if (!getServicesIpv4CidrBlockBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(servicesIpv4CidrBlock_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 5, servicesIpv4CidrBlock_);
     }
     unknownFields.writeTo(output);
@@ -460,18 +460,18 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
     if (useIpAliases_ != false) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(1, useIpAliases_);
     }
-    if (!getClusterSecondaryRangeNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(clusterSecondaryRangeName_)) {
       size +=
           com.google.protobuf.GeneratedMessageV3.computeStringSize(2, clusterSecondaryRangeName_);
     }
-    if (!getServicesSecondaryRangeNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(servicesSecondaryRangeName_)) {
       size +=
           com.google.protobuf.GeneratedMessageV3.computeStringSize(3, servicesSecondaryRangeName_);
     }
-    if (!getClusterIpv4CidrBlockBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(clusterIpv4CidrBlock_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, clusterIpv4CidrBlock_);
     }
-    if (!getServicesIpv4CidrBlockBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(servicesIpv4CidrBlock_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, servicesIpv4CidrBlock_);
     }
     size += unknownFields.getSerializedSize();

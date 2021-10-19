@@ -640,10 +640,10 @@ public final class CheckUpgradeResponse extends com.google.protobuf.GeneratedMes
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getBuildLogUriBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(buildLogUri_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, buildLogUri_);
     }
-    if (!getPypiConflictBuildLogExtractBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(pypiConflictBuildLogExtract_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, pypiConflictBuildLogExtract_);
     }
     if (containsPypiModulesConflict_
@@ -652,7 +652,7 @@ public final class CheckUpgradeResponse extends com.google.protobuf.GeneratedMes
             .getNumber()) {
       output.writeEnum(4, containsPypiModulesConflict_);
     }
-    if (!getImageVersionBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(imageVersion_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 5, imageVersion_);
     }
     com.google.protobuf.GeneratedMessageV3.serializeStringMapTo(
@@ -666,10 +666,10 @@ public final class CheckUpgradeResponse extends com.google.protobuf.GeneratedMes
     if (size != -1) return size;
 
     size = 0;
-    if (!getBuildLogUriBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(buildLogUri_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, buildLogUri_);
     }
-    if (!getPypiConflictBuildLogExtractBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(pypiConflictBuildLogExtract_)) {
       size +=
           com.google.protobuf.GeneratedMessageV3.computeStringSize(3, pypiConflictBuildLogExtract_);
     }
@@ -680,7 +680,7 @@ public final class CheckUpgradeResponse extends com.google.protobuf.GeneratedMes
       size +=
           com.google.protobuf.CodedOutputStream.computeEnumSize(4, containsPypiModulesConflict_);
     }
-    if (!getImageVersionBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(imageVersion_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, imageVersion_);
     }
     for (java.util.Map.Entry<java.lang.String, java.lang.String> entry :
