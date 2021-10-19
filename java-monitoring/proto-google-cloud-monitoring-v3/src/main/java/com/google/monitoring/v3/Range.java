@@ -22,9 +22,7 @@ package com.google.monitoring.v3;
  *
  *
  * <pre>
- * Range of numerical values, inclusive of `min` and exclusive of `max`. If the
- * open range "&lt; range.max" is desired, set `range.min = -infinity`. If the open
- * range "&gt;= range.min" is desired, set `range.max = infinity`.
+ * Range of numerical values within `min` and `max`.
  * </pre>
  *
  * Protobuf type {@code google.monitoring.v3.Range}
@@ -325,9 +323,7 @@ public final class Range extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Range of numerical values, inclusive of `min` and exclusive of `max`. If the
-   * open range "&lt; range.max" is desired, set `range.min = -infinity`. If the open
-   * range "&gt;= range.min" is desired, set `range.max = infinity`.
+   * Range of numerical values within `min` and `max`.
    * </pre>
    *
    * Protobuf type {@code google.monitoring.v3.Range}

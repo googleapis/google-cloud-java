@@ -146,7 +146,8 @@ public final class ListAlertPoliciesRequest extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * Required. The project whose alert policies are to be listed. The format is:
+   * Required. The [project](https://cloud.google.com/monitoring/api/v3#project_name)
+   * whose alert policies are to be listed. The format is:
    *     projects/[PROJECT_ID_OR_NUMBER]
    * Note that this field names the parent container in which the alerting
    * policies to be listed are stored. To retrieve a single alerting policy
@@ -177,7 +178,8 @@ public final class ListAlertPoliciesRequest extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * Required. The project whose alert policies are to be listed. The format is:
+   * Required. The [project](https://cloud.google.com/monitoring/api/v3#project_name)
+   * whose alert policies are to be listed. The format is:
    *     projects/[PROJECT_ID_OR_NUMBER]
    * Note that this field names the parent container in which the alerting
    * policies to be listed are stored. To retrieve a single alerting policy
@@ -405,16 +407,16 @@ public final class ListAlertPoliciesRequest extends com.google.protobuf.Generate
     if (pageSize_ != 0) {
       output.writeInt32(2, pageSize_);
     }
-    if (!getPageTokenBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(pageToken_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, pageToken_);
     }
-    if (!getNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 4, name_);
     }
-    if (!getFilterBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(filter_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 5, filter_);
     }
-    if (!getOrderByBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(orderBy_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 6, orderBy_);
     }
     unknownFields.writeTo(output);
@@ -429,16 +431,16 @@ public final class ListAlertPoliciesRequest extends com.google.protobuf.Generate
     if (pageSize_ != 0) {
       size += com.google.protobuf.CodedOutputStream.computeInt32Size(2, pageSize_);
     }
-    if (!getPageTokenBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(pageToken_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, pageToken_);
     }
-    if (!getNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, name_);
     }
-    if (!getFilterBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(filter_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, filter_);
     }
-    if (!getOrderByBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(orderBy_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, orderBy_);
     }
     size += unknownFields.getSerializedSize();
@@ -774,7 +776,8 @@ public final class ListAlertPoliciesRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Required. The project whose alert policies are to be listed. The format is:
+     * Required. The [project](https://cloud.google.com/monitoring/api/v3#project_name)
+     * whose alert policies are to be listed. The format is:
      *     projects/[PROJECT_ID_OR_NUMBER]
      * Note that this field names the parent container in which the alerting
      * policies to be listed are stored. To retrieve a single alerting policy
@@ -804,7 +807,8 @@ public final class ListAlertPoliciesRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Required. The project whose alert policies are to be listed. The format is:
+     * Required. The [project](https://cloud.google.com/monitoring/api/v3#project_name)
+     * whose alert policies are to be listed. The format is:
      *     projects/[PROJECT_ID_OR_NUMBER]
      * Note that this field names the parent container in which the alerting
      * policies to be listed are stored. To retrieve a single alerting policy
@@ -834,7 +838,8 @@ public final class ListAlertPoliciesRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Required. The project whose alert policies are to be listed. The format is:
+     * Required. The [project](https://cloud.google.com/monitoring/api/v3#project_name)
+     * whose alert policies are to be listed. The format is:
      *     projects/[PROJECT_ID_OR_NUMBER]
      * Note that this field names the parent container in which the alerting
      * policies to be listed are stored. To retrieve a single alerting policy
@@ -863,7 +868,8 @@ public final class ListAlertPoliciesRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Required. The project whose alert policies are to be listed. The format is:
+     * Required. The [project](https://cloud.google.com/monitoring/api/v3#project_name)
+     * whose alert policies are to be listed. The format is:
      *     projects/[PROJECT_ID_OR_NUMBER]
      * Note that this field names the parent container in which the alerting
      * policies to be listed are stored. To retrieve a single alerting policy
@@ -888,7 +894,8 @@ public final class ListAlertPoliciesRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Required. The project whose alert policies are to be listed. The format is:
+     * Required. The [project](https://cloud.google.com/monitoring/api/v3#project_name)
+     * whose alert policies are to be listed. The format is:
      *     projects/[PROJECT_ID_OR_NUMBER]
      * Note that this field names the parent container in which the alerting
      * policies to be listed are stored. To retrieve a single alerting policy

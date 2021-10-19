@@ -190,7 +190,9 @@ public class ServiceMonitoringServiceClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. Resource name of the parent workspace. The format is:
+   * @param parent Required. Resource
+   *     [name](https://cloud.google.com/monitoring/api/v3#project_name) of the parent workspace.
+   *     The format is:
    *     <p>projects/[PROJECT_ID_OR_NUMBER]
    * @param service Required. The `Service` to create.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -219,7 +221,9 @@ public class ServiceMonitoringServiceClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. Resource name of the parent workspace. The format is:
+   * @param parent Required. Resource
+   *     [name](https://cloud.google.com/monitoring/api/v3#project_name) of the parent workspace.
+   *     The format is:
    *     <p>projects/[PROJECT_ID_OR_NUMBER]
    * @param service Required. The `Service` to create.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -248,7 +252,9 @@ public class ServiceMonitoringServiceClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. Resource name of the parent workspace. The format is:
+   * @param parent Required. Resource
+   *     [name](https://cloud.google.com/monitoring/api/v3#project_name) of the parent workspace.
+   *     The format is:
    *     <p>projects/[PROJECT_ID_OR_NUMBER]
    * @param service Required. The `Service` to create.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -277,7 +283,9 @@ public class ServiceMonitoringServiceClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. Resource name of the parent workspace. The format is:
+   * @param parent Required. Resource
+   *     [name](https://cloud.google.com/monitoring/api/v3#project_name) of the parent workspace.
+   *     The format is:
    *     <p>projects/[PROJECT_ID_OR_NUMBER]
    * @param service Required. The `Service` to create.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -452,7 +460,8 @@ public class ServiceMonitoringServiceClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. Resource name of the parent containing the listed services, either a
-   *     project or a Monitoring Workspace. The formats are:
+   *     [project](https://cloud.google.com/monitoring/api/v3#project_name) or a Monitoring
+   *     Workspace. The formats are:
    *     <p>projects/[PROJECT_ID_OR_NUMBER] workspaces/[HOST_PROJECT_ID_OR_NUMBER]
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -481,7 +490,8 @@ public class ServiceMonitoringServiceClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. Resource name of the parent containing the listed services, either a
-   *     project or a Monitoring Workspace. The formats are:
+   *     [project](https://cloud.google.com/monitoring/api/v3#project_name) or a Monitoring
+   *     Workspace. The formats are:
    *     <p>projects/[PROJECT_ID_OR_NUMBER] workspaces/[HOST_PROJECT_ID_OR_NUMBER]
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -510,7 +520,8 @@ public class ServiceMonitoringServiceClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. Resource name of the parent containing the listed services, either a
-   *     project or a Monitoring Workspace. The formats are:
+   *     [project](https://cloud.google.com/monitoring/api/v3#project_name) or a Monitoring
+   *     Workspace. The formats are:
    *     <p>projects/[PROJECT_ID_OR_NUMBER] workspaces/[HOST_PROJECT_ID_OR_NUMBER]
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -539,7 +550,8 @@ public class ServiceMonitoringServiceClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. Resource name of the parent containing the listed services, either a
-   *     project or a Monitoring Workspace. The formats are:
+   *     [project](https://cloud.google.com/monitoring/api/v3#project_name) or a Monitoring
+   *     Workspace. The formats are:
    *     <p>projects/[PROJECT_ID_OR_NUMBER] workspaces/[HOST_PROJECT_ID_OR_NUMBER]
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */

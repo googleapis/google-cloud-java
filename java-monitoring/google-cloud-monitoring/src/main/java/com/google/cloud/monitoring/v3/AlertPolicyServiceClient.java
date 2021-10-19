@@ -183,7 +183,8 @@ public class AlertPolicyServiceClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param name Required. The project whose alert policies are to be listed. The format is:
+   * @param name Required. The [project](https://cloud.google.com/monitoring/api/v3#project_name)
+   *     whose alert policies are to be listed. The format is:
    *     <p>projects/[PROJECT_ID_OR_NUMBER]
    *     <p>Note that this field names the parent container in which the alerting policies to be
    *     listed are stored. To retrieve a single alerting policy by name, use the
@@ -214,7 +215,8 @@ public class AlertPolicyServiceClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param name Required. The project whose alert policies are to be listed. The format is:
+   * @param name Required. The [project](https://cloud.google.com/monitoring/api/v3#project_name)
+   *     whose alert policies are to be listed. The format is:
    *     <p>projects/[PROJECT_ID_OR_NUMBER]
    *     <p>Note that this field names the parent container in which the alerting policies to be
    *     listed are stored. To retrieve a single alerting policy by name, use the
@@ -245,7 +247,8 @@ public class AlertPolicyServiceClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param name Required. The project whose alert policies are to be listed. The format is:
+   * @param name Required. The [project](https://cloud.google.com/monitoring/api/v3#project_name)
+   *     whose alert policies are to be listed. The format is:
    *     <p>projects/[PROJECT_ID_OR_NUMBER]
    *     <p>Note that this field names the parent container in which the alerting policies to be
    *     listed are stored. To retrieve a single alerting policy by name, use the
@@ -277,7 +280,8 @@ public class AlertPolicyServiceClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param name Required. The project whose alert policies are to be listed. The format is:
+   * @param name Required. The [project](https://cloud.google.com/monitoring/api/v3#project_name)
+   *     whose alert policies are to be listed. The format is:
    *     <p>projects/[PROJECT_ID_OR_NUMBER]
    *     <p>Note that this field names the parent container in which the alerting policies to be
    *     listed are stored. To retrieve a single alerting policy by name, use the
@@ -503,7 +507,8 @@ public class AlertPolicyServiceClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param name Required. The project in which to create the alerting policy. The format is:
+   * @param name Required. The [project](https://cloud.google.com/monitoring/api/v3#project_name) in
+   *     which to create the alerting policy. The format is:
    *     <p>projects/[PROJECT_ID_OR_NUMBER]
    *     <p>Note that this field names the parent container in which the alerting policy will be
    *     written, not the name of the created policy. |name| must be a host project of a workspace,
@@ -539,7 +544,8 @@ public class AlertPolicyServiceClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param name Required. The project in which to create the alerting policy. The format is:
+   * @param name Required. The [project](https://cloud.google.com/monitoring/api/v3#project_name) in
+   *     which to create the alerting policy. The format is:
    *     <p>projects/[PROJECT_ID_OR_NUMBER]
    *     <p>Note that this field names the parent container in which the alerting policy will be
    *     written, not the name of the created policy. |name| must be a host project of a workspace,
@@ -575,7 +581,8 @@ public class AlertPolicyServiceClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param name Required. The project in which to create the alerting policy. The format is:
+   * @param name Required. The [project](https://cloud.google.com/monitoring/api/v3#project_name) in
+   *     which to create the alerting policy. The format is:
    *     <p>projects/[PROJECT_ID_OR_NUMBER]
    *     <p>Note that this field names the parent container in which the alerting policy will be
    *     written, not the name of the created policy. |name| must be a host project of a workspace,
@@ -612,7 +619,8 @@ public class AlertPolicyServiceClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param name Required. The project in which to create the alerting policy. The format is:
+   * @param name Required. The [project](https://cloud.google.com/monitoring/api/v3#project_name) in
+   *     which to create the alerting policy. The format is:
    *     <p>projects/[PROJECT_ID_OR_NUMBER]
    *     <p>Note that this field names the parent container in which the alerting policy will be
    *     written, not the name of the created policy. |name| must be a host project of a workspace,

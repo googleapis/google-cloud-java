@@ -132,6 +132,7 @@ public class MetricServiceStubSettings extends StubSettings<MetricServiceStubSet
           ListTimeSeriesRequest, ListTimeSeriesResponse, ListTimeSeriesPagedResponse>
       listTimeSeriesSettings;
   private final UnaryCallSettings<CreateTimeSeriesRequest, Empty> createTimeSeriesSettings;
+  private final UnaryCallSettings<CreateTimeSeriesRequest, Empty> createServiceTimeSeriesSettings;
 
   private static final PagedListDescriptor<
           ListMonitoredResourceDescriptorsRequest,
@@ -388,6 +389,11 @@ public class MetricServiceStubSettings extends StubSettings<MetricServiceStubSet
     return createTimeSeriesSettings;
   }
 
+  /** Returns the object with the settings used for calls to createServiceTimeSeries. */
+  public UnaryCallSettings<CreateTimeSeriesRequest, Empty> createServiceTimeSeriesSettings() {
+    return createServiceTimeSeriesSettings;
+  }
+
   @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public MetricServiceStub createStub() throws IOException {
     if (getTransportChannelProvider()
@@ -474,6 +480,7 @@ public class MetricServiceStubSettings extends StubSettings<MetricServiceStubSet
     deleteMetricDescriptorSettings = settingsBuilder.deleteMetricDescriptorSettings().build();
     listTimeSeriesSettings = settingsBuilder.listTimeSeriesSettings().build();
     createTimeSeriesSettings = settingsBuilder.createTimeSeriesSettings().build();
+    createServiceTimeSeriesSettings = settingsBuilder.createServiceTimeSeriesSettings().build();
   }
 
   /** Builder for MetricServiceStubSettings. */
@@ -503,6 +510,8 @@ public class MetricServiceStubSettings extends StubSettings<MetricServiceStubSet
         listTimeSeriesSettings;
     private final UnaryCallSettings.Builder<CreateTimeSeriesRequest, Empty>
         createTimeSeriesSettings;
+    private final UnaryCallSettings.Builder<CreateTimeSeriesRequest, Empty>
+        createServiceTimeSeriesSettings;
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
 
@@ -510,12 +519,14 @@ public class MetricServiceStubSettings extends StubSettings<MetricServiceStubSet
       ImmutableMap.Builder<String, ImmutableSet<StatusCode.Code>> definitions =
           ImmutableMap.builder();
       definitions.put(
-          "retry_policy_9_codes",
-          ImmutableSet.copyOf(
-              Lists.<StatusCode.Code>newArrayList(
-                  StatusCode.Code.DEADLINE_EXCEEDED, StatusCode.Code.UNAVAILABLE)));
+          "retry_policy_10_codes",
+          ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList(StatusCode.Code.UNAVAILABLE)));
       definitions.put(
-          "no_retry_3_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
+          "no_retry_4_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
+      definitions.put(
+          "retry_policy_11_codes",
+          ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList(StatusCode.Code.UNAVAILABLE)));
+      definitions.put("no_retry_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
       RETRYABLE_CODE_DEFINITIONS = definitions.build();
     }
 
@@ -534,7 +545,7 @@ public class MetricServiceStubSettings extends StubSettings<MetricServiceStubSet
               .setMaxRpcTimeout(Duration.ofMillis(30000L))
               .setTotalTimeout(Duration.ofMillis(30000L))
               .build();
-      definitions.put("retry_policy_9_params", settings);
+      definitions.put("retry_policy_10_params", settings);
       settings =
           RetrySettings.newBuilder()
               .setInitialRpcTimeout(Duration.ofMillis(12000L))
@@ -542,7 +553,20 @@ public class MetricServiceStubSettings extends StubSettings<MetricServiceStubSet
               .setMaxRpcTimeout(Duration.ofMillis(12000L))
               .setTotalTimeout(Duration.ofMillis(12000L))
               .build();
-      definitions.put("no_retry_3_params", settings);
+      definitions.put("no_retry_4_params", settings);
+      settings =
+          RetrySettings.newBuilder()
+              .setInitialRetryDelay(Duration.ofMillis(100L))
+              .setRetryDelayMultiplier(1.3)
+              .setMaxRetryDelay(Duration.ofMillis(30000L))
+              .setInitialRpcTimeout(Duration.ofMillis(90000L))
+              .setRpcTimeoutMultiplier(1.0)
+              .setMaxRpcTimeout(Duration.ofMillis(90000L))
+              .setTotalTimeout(Duration.ofMillis(90000L))
+              .build();
+      definitions.put("retry_policy_11_params", settings);
+      settings = RetrySettings.newBuilder().setRpcTimeoutMultiplier(1.0).build();
+      definitions.put("no_retry_params", settings);
       RETRY_PARAM_DEFINITIONS = definitions.build();
     }
 
@@ -563,6 +587,7 @@ public class MetricServiceStubSettings extends StubSettings<MetricServiceStubSet
       deleteMetricDescriptorSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       listTimeSeriesSettings = PagedCallSettings.newBuilder(LIST_TIME_SERIES_PAGE_STR_FACT);
       createTimeSeriesSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      createServiceTimeSeriesSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -573,7 +598,8 @@ public class MetricServiceStubSettings extends StubSettings<MetricServiceStubSet
               createMetricDescriptorSettings,
               deleteMetricDescriptorSettings,
               listTimeSeriesSettings,
-              createTimeSeriesSettings);
+              createTimeSeriesSettings,
+              createServiceTimeSeriesSettings);
       initDefaults(this);
     }
 
@@ -590,6 +616,7 @@ public class MetricServiceStubSettings extends StubSettings<MetricServiceStubSet
       deleteMetricDescriptorSettings = settings.deleteMetricDescriptorSettings.toBuilder();
       listTimeSeriesSettings = settings.listTimeSeriesSettings.toBuilder();
       createTimeSeriesSettings = settings.createTimeSeriesSettings.toBuilder();
+      createServiceTimeSeriesSettings = settings.createServiceTimeSeriesSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -600,7 +627,8 @@ public class MetricServiceStubSettings extends StubSettings<MetricServiceStubSet
               createMetricDescriptorSettings,
               deleteMetricDescriptorSettings,
               listTimeSeriesSettings,
-              createTimeSeriesSettings);
+              createTimeSeriesSettings,
+              createServiceTimeSeriesSettings);
     }
 
     private static Builder createDefault() {
@@ -619,43 +647,48 @@ public class MetricServiceStubSettings extends StubSettings<MetricServiceStubSet
     private static Builder initDefaults(Builder builder) {
       builder
           .listMonitoredResourceDescriptorsSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_9_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_9_params"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_10_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_10_params"));
 
       builder
           .getMonitoredResourceDescriptorSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_9_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_9_params"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_10_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_10_params"));
 
       builder
           .listMetricDescriptorsSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_9_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_9_params"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_10_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_10_params"));
 
       builder
           .getMetricDescriptorSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_9_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_9_params"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_10_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_10_params"));
 
       builder
           .createMetricDescriptorSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_3_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_3_params"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_4_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_4_params"));
 
       builder
           .deleteMetricDescriptorSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_9_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_9_params"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_10_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_10_params"));
 
       builder
           .listTimeSeriesSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_9_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_9_params"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_11_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_11_params"));
 
       builder
           .createTimeSeriesSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_3_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_3_params"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_4_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_4_params"));
+
+      builder
+          .createServiceTimeSeriesSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
 
       return builder;
     }
@@ -728,6 +761,12 @@ public class MetricServiceStubSettings extends StubSettings<MetricServiceStubSet
     /** Returns the builder for the settings used for calls to createTimeSeries. */
     public UnaryCallSettings.Builder<CreateTimeSeriesRequest, Empty> createTimeSeriesSettings() {
       return createTimeSeriesSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to createServiceTimeSeries. */
+    public UnaryCallSettings.Builder<CreateTimeSeriesRequest, Empty>
+        createServiceTimeSeriesSettings() {
+      return createServiceTimeSeriesSettings;
     }
 
     @Override

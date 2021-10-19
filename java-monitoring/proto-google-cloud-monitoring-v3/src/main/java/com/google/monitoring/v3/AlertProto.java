@@ -52,9 +52,25 @@ public final class AlertProto {
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_monitoring_v3_AlertPolicy_Condition_MetricAbsence_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_monitoring_v3_AlertPolicy_Condition_LogMatch_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_monitoring_v3_AlertPolicy_Condition_LogMatch_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_monitoring_v3_AlertPolicy_Condition_LogMatch_LabelExtractorsEntry_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_monitoring_v3_AlertPolicy_Condition_LogMatch_LabelExtractorsEntry_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_monitoring_v3_AlertPolicy_Condition_MonitoringQueryLanguageCondition_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_monitoring_v3_AlertPolicy_Condition_MonitoringQueryLanguageCondition_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_monitoring_v3_AlertPolicy_AlertStrategy_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_monitoring_v3_AlertPolicy_AlertStrategy_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_monitoring_v3_AlertPolicy_AlertStrategy_NotificationRateLimit_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_monitoring_v3_AlertPolicy_AlertStrategy_NotificationRateLimit_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_monitoring_v3_AlertPolicy_UserLabelsEntry_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -75,7 +91,7 @@ public final class AlertProto {
           + "monitoring/v3/mutation_record.proto\032\036goo"
           + "gle/protobuf/duration.proto\032\036google/prot"
           + "obuf/wrappers.proto\032\027google/rpc/status.p"
-          + "roto\"\227\023\n\013AlertPolicy\022\014\n\004name\030\001 \001(\t\022\024\n\014di"
+          + "roto\"\264\027\n\013AlertPolicy\022\014\n\004name\030\001 \001(\t\022\024\n\014di"
           + "splay_name\030\002 \001(\t\022F\n\rdocumentation\030\r \001(\0132"
           + "/.google.monitoring.v3.AlertPolicy.Docum"
           + "entation\022F\n\013user_labels\030\020 \003(\01321.google.m"
@@ -89,14 +105,18 @@ public final class AlertProto {
           + "channels\030\016 \003(\t\022=\n\017creation_record\030\n \001(\0132"
           + "$.google.monitoring.v3.MutationRecord\022=\n"
           + "\017mutation_record\030\013 \001(\0132$.google.monitori"
-          + "ng.v3.MutationRecord\0323\n\rDocumentation\022\017\n"
-          + "\007content\030\001 \001(\t\022\021\n\tmime_type\030\002 \001(\t\032\300\013\n\tCo"
-          + "ndition\022\014\n\004name\030\014 \001(\t\022\024\n\014display_name\030\006 "
-          + "\001(\t\022Z\n\023condition_threshold\030\001 \001(\0132;.googl"
-          + "e.monitoring.v3.AlertPolicy.Condition.Me"
-          + "tricThresholdH\000\022U\n\020condition_absent\030\002 \001("
-          + "\01329.google.monitoring.v3.AlertPolicy.Con"
-          + "dition.MetricAbsenceH\000\022{\n#condition_moni"
+          + "ng.v3.MutationRecord\022G\n\016alert_strategy\030\025"
+          + " \001(\0132/.google.monitoring.v3.AlertPolicy."
+          + "AlertStrategy\0323\n\rDocumentation\022\017\n\007conten"
+          + "t\030\001 \001(\t\022\021\n\tmime_type\030\002 \001(\t\032\326\r\n\tCondition"
+          + "\022\014\n\004name\030\014 \001(\t\022\024\n\014display_name\030\006 \001(\t\022Z\n\023"
+          + "condition_threshold\030\001 \001(\0132;.google.monit"
+          + "oring.v3.AlertPolicy.Condition.MetricThr"
+          + "esholdH\000\022U\n\020condition_absent\030\002 \001(\01329.goo"
+          + "gle.monitoring.v3.AlertPolicy.Condition."
+          + "MetricAbsenceH\000\022U\n\025condition_matched_log"
+          + "\030\024 \001(\01324.google.monitoring.v3.AlertPolic"
+          + "y.Condition.LogMatchH\000\022{\n#condition_moni"
           + "toring_query_language\030\023 \001(\0132L.google.mon"
           + "itoring.v3.AlertPolicy.Condition.Monitor"
           + "ingQueryLanguageConditionH\000\0325\n\007Trigger\022\017"
@@ -116,32 +136,42 @@ public final class AlertProto {
           + "Aggregation\022+\n\010duration\030\002 \001(\0132\031.google.p"
           + "rotobuf.Duration\022D\n\007trigger\030\003 \001(\01323.goog"
           + "le.monitoring.v3.AlertPolicy.Condition.T"
-          + "rigger\032\244\001\n MonitoringQueryLanguageCondit"
-          + "ion\022\r\n\005query\030\001 \001(\t\022+\n\010duration\030\002 \001(\0132\031.g"
-          + "oogle.protobuf.Duration\022D\n\007trigger\030\003 \001(\013"
-          + "23.google.monitoring.v3.AlertPolicy.Cond"
-          + "ition.Trigger:\227\002\352A\223\002\n.monitoring.googlea"
-          + "pis.com/AlertPolicyCondition\022Fprojects/{"
-          + "project}/alertPolicies/{alert_policy}/co"
-          + "nditions/{condition}\022Porganizations/{org"
-          + "anization}/alertPolicies/{alert_policy}/"
-          + "conditions/{condition}\022Dfolders/{folder}"
-          + "/alertPolicies/{alert_policy}/conditions"
-          + "/{condition}\022\001*B\013\n\tcondition\0321\n\017UserLabe"
-          + "lsEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\""
-          + "a\n\025ConditionCombinerType\022\027\n\023COMBINE_UNSP"
-          + "ECIFIED\020\000\022\007\n\003AND\020\001\022\006\n\002OR\020\002\022\036\n\032AND_WITH_M"
-          + "ATCHING_RESOURCE\020\003:\311\001\352A\305\001\n%monitoring.go"
-          + "ogleapis.com/AlertPolicy\022/projects/{proj"
-          + "ect}/alertPolicies/{alert_policy}\0229organ"
-          + "izations/{organization}/alertPolicies/{a"
-          + "lert_policy}\022-folders/{folder}/alertPoli"
-          + "cies/{alert_policy}\022\001*B\302\001\n\030com.google.mo"
-          + "nitoring.v3B\nAlertProtoP\001Z>google.golang"
-          + ".org/genproto/googleapis/monitoring/v3;m"
-          + "onitoring\252\002\032Google.Cloud.Monitoring.V3\312\002"
-          + "\032Google\\Cloud\\Monitoring\\V3\352\002\035Google::Cl"
-          + "oud::Monitoring::V3b\006proto3"
+          + "rigger\032\274\001\n\010LogMatch\022\023\n\006filter\030\001 \001(\tB\003\340A\002"
+          + "\022c\n\020label_extractors\030\002 \003(\0132I.google.moni"
+          + "toring.v3.AlertPolicy.Condition.LogMatch"
+          + ".LabelExtractorsEntry\0326\n\024LabelExtractors"
+          + "Entry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\032\244\001"
+          + "\n MonitoringQueryLanguageCondition\022\r\n\005qu"
+          + "ery\030\001 \001(\t\022+\n\010duration\030\002 \001(\0132\031.google.pro"
+          + "tobuf.Duration\022D\n\007trigger\030\003 \001(\01323.google"
+          + ".monitoring.v3.AlertPolicy.Condition.Tri"
+          + "gger:\227\002\352A\223\002\n.monitoring.googleapis.com/A"
+          + "lertPolicyCondition\022Fprojects/{project}/"
+          + "alertPolicies/{alert_policy}/conditions/"
+          + "{condition}\022Porganizations/{organization"
+          + "}/alertPolicies/{alert_policy}/condition"
+          + "s/{condition}\022Dfolders/{folder}/alertPol"
+          + "icies/{alert_policy}/conditions/{conditi"
+          + "on}\022\001*B\013\n\tcondition\032\273\001\n\rAlertStrategy\022f\n"
+          + "\027notification_rate_limit\030\001 \001(\0132E.google."
+          + "monitoring.v3.AlertPolicy.AlertStrategy."
+          + "NotificationRateLimit\032B\n\025NotificationRat"
+          + "eLimit\022)\n\006period\030\001 \001(\0132\031.google.protobuf"
+          + ".Duration\0321\n\017UserLabelsEntry\022\013\n\003key\030\001 \001("
+          + "\t\022\r\n\005value\030\002 \001(\t:\0028\001\"a\n\025ConditionCombine"
+          + "rType\022\027\n\023COMBINE_UNSPECIFIED\020\000\022\007\n\003AND\020\001\022"
+          + "\006\n\002OR\020\002\022\036\n\032AND_WITH_MATCHING_RESOURCE\020\003:"
+          + "\311\001\352A\305\001\n%monitoring.googleapis.com/AlertP"
+          + "olicy\022/projects/{project}/alertPolicies/"
+          + "{alert_policy}\0229organizations/{organizat"
+          + "ion}/alertPolicies/{alert_policy}\022-folde"
+          + "rs/{folder}/alertPolicies/{alert_policy}"
+          + "\022\001*B\302\001\n\030com.google.monitoring.v3B\nAlertP"
+          + "rotoP\001Z>google.golang.org/genproto/googl"
+          + "eapis/monitoring/v3;monitoring\252\002\032Google."
+          + "Cloud.Monitoring.V3\312\002\032Google\\Cloud\\Monit"
+          + "oring\\V3\352\002\035Google::Cloud::Monitoring::V3"
+          + "b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -172,6 +202,7 @@ public final class AlertProto {
               "NotificationChannels",
               "CreationRecord",
               "MutationRecord",
+              "AlertStrategy",
             });
     internal_static_google_monitoring_v3_AlertPolicy_Documentation_descriptor =
         internal_static_google_monitoring_v3_AlertPolicy_descriptor.getNestedTypes().get(0);
@@ -191,6 +222,7 @@ public final class AlertProto {
               "DisplayName",
               "ConditionThreshold",
               "ConditionAbsent",
+              "ConditionMatchedLog",
               "ConditionMonitoringQueryLanguage",
               "Condition",
             });
@@ -231,18 +263,56 @@ public final class AlertProto {
             new java.lang.String[] {
               "Filter", "Aggregations", "Duration", "Trigger",
             });
-    internal_static_google_monitoring_v3_AlertPolicy_Condition_MonitoringQueryLanguageCondition_descriptor =
+    internal_static_google_monitoring_v3_AlertPolicy_Condition_LogMatch_descriptor =
         internal_static_google_monitoring_v3_AlertPolicy_Condition_descriptor
             .getNestedTypes()
             .get(3);
+    internal_static_google_monitoring_v3_AlertPolicy_Condition_LogMatch_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_monitoring_v3_AlertPolicy_Condition_LogMatch_descriptor,
+            new java.lang.String[] {
+              "Filter", "LabelExtractors",
+            });
+    internal_static_google_monitoring_v3_AlertPolicy_Condition_LogMatch_LabelExtractorsEntry_descriptor =
+        internal_static_google_monitoring_v3_AlertPolicy_Condition_LogMatch_descriptor
+            .getNestedTypes()
+            .get(0);
+    internal_static_google_monitoring_v3_AlertPolicy_Condition_LogMatch_LabelExtractorsEntry_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_monitoring_v3_AlertPolicy_Condition_LogMatch_LabelExtractorsEntry_descriptor,
+            new java.lang.String[] {
+              "Key", "Value",
+            });
+    internal_static_google_monitoring_v3_AlertPolicy_Condition_MonitoringQueryLanguageCondition_descriptor =
+        internal_static_google_monitoring_v3_AlertPolicy_Condition_descriptor
+            .getNestedTypes()
+            .get(4);
     internal_static_google_monitoring_v3_AlertPolicy_Condition_MonitoringQueryLanguageCondition_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_monitoring_v3_AlertPolicy_Condition_MonitoringQueryLanguageCondition_descriptor,
             new java.lang.String[] {
               "Query", "Duration", "Trigger",
             });
-    internal_static_google_monitoring_v3_AlertPolicy_UserLabelsEntry_descriptor =
+    internal_static_google_monitoring_v3_AlertPolicy_AlertStrategy_descriptor =
         internal_static_google_monitoring_v3_AlertPolicy_descriptor.getNestedTypes().get(2);
+    internal_static_google_monitoring_v3_AlertPolicy_AlertStrategy_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_monitoring_v3_AlertPolicy_AlertStrategy_descriptor,
+            new java.lang.String[] {
+              "NotificationRateLimit",
+            });
+    internal_static_google_monitoring_v3_AlertPolicy_AlertStrategy_NotificationRateLimit_descriptor =
+        internal_static_google_monitoring_v3_AlertPolicy_AlertStrategy_descriptor
+            .getNestedTypes()
+            .get(0);
+    internal_static_google_monitoring_v3_AlertPolicy_AlertStrategy_NotificationRateLimit_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_monitoring_v3_AlertPolicy_AlertStrategy_NotificationRateLimit_descriptor,
+            new java.lang.String[] {
+              "Period",
+            });
+    internal_static_google_monitoring_v3_AlertPolicy_UserLabelsEntry_descriptor =
+        internal_static_google_monitoring_v3_AlertPolicy_descriptor.getNestedTypes().get(3);
     internal_static_google_monitoring_v3_AlertPolicy_UserLabelsEntry_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_monitoring_v3_AlertPolicy_UserLabelsEntry_descriptor,

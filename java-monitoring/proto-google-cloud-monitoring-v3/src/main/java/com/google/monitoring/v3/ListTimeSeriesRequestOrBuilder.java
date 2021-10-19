@@ -27,8 +27,8 @@ public interface ListTimeSeriesRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The project, organization or folder on which to execute the request. The
-   * format is:
+   * Required. The [project](https://cloud.google.com/monitoring/api/v3#project_name),
+   * organization or folder on which to execute the request. The format is:
    *     projects/[PROJECT_ID_OR_NUMBER]
    *     organizations/[ORGANIZATION_ID]
    *     folders/[FOLDER_ID]
@@ -45,8 +45,8 @@ public interface ListTimeSeriesRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The project, organization or folder on which to execute the request. The
-   * format is:
+   * Required. The [project](https://cloud.google.com/monitoring/api/v3#project_name),
+   * organization or folder on which to execute the request. The format is:
    *     projects/[PROJECT_ID_OR_NUMBER]
    *     organizations/[ORGANIZATION_ID]
    *     folders/[FOLDER_ID]

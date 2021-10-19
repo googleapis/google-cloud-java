@@ -313,13 +313,13 @@ public final class TimeSeriesRatio extends com.google.protobuf.GeneratedMessageV
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getGoodServiceFilterBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(goodServiceFilter_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 4, goodServiceFilter_);
     }
-    if (!getBadServiceFilterBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(badServiceFilter_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 5, badServiceFilter_);
     }
-    if (!getTotalServiceFilterBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(totalServiceFilter_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 6, totalServiceFilter_);
     }
     unknownFields.writeTo(output);
@@ -331,13 +331,13 @@ public final class TimeSeriesRatio extends com.google.protobuf.GeneratedMessageV
     if (size != -1) return size;
 
     size = 0;
-    if (!getGoodServiceFilterBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(goodServiceFilter_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, goodServiceFilter_);
     }
-    if (!getBadServiceFilterBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(badServiceFilter_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, badServiceFilter_);
     }
-    if (!getTotalServiceFilterBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(totalServiceFilter_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, totalServiceFilter_);
     }
     size += unknownFields.getSerializedSize();

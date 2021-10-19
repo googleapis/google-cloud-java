@@ -287,6 +287,7 @@ public class AlertPolicyServiceClientTest {
             .addAllNotificationChannels(new ArrayList<String>())
             .setCreationRecord(MutationRecord.newBuilder().build())
             .setMutationRecord(MutationRecord.newBuilder().build())
+            .setAlertStrategy(AlertPolicy.AlertStrategy.newBuilder().build())
             .build();
     mockAlertPolicyService.addResponse(expectedResponse);
 
@@ -336,6 +337,7 @@ public class AlertPolicyServiceClientTest {
             .addAllNotificationChannels(new ArrayList<String>())
             .setCreationRecord(MutationRecord.newBuilder().build())
             .setMutationRecord(MutationRecord.newBuilder().build())
+            .setAlertStrategy(AlertPolicy.AlertStrategy.newBuilder().build())
             .build();
     mockAlertPolicyService.addResponse(expectedResponse);
 
@@ -384,6 +386,7 @@ public class AlertPolicyServiceClientTest {
             .addAllNotificationChannels(new ArrayList<String>())
             .setCreationRecord(MutationRecord.newBuilder().build())
             .setMutationRecord(MutationRecord.newBuilder().build())
+            .setAlertStrategy(AlertPolicy.AlertStrategy.newBuilder().build())
             .build();
     mockAlertPolicyService.addResponse(expectedResponse);
 
@@ -435,6 +438,7 @@ public class AlertPolicyServiceClientTest {
             .addAllNotificationChannels(new ArrayList<String>())
             .setCreationRecord(MutationRecord.newBuilder().build())
             .setMutationRecord(MutationRecord.newBuilder().build())
+            .setAlertStrategy(AlertPolicy.AlertStrategy.newBuilder().build())
             .build();
     mockAlertPolicyService.addResponse(expectedResponse);
 
@@ -486,6 +490,7 @@ public class AlertPolicyServiceClientTest {
             .addAllNotificationChannels(new ArrayList<String>())
             .setCreationRecord(MutationRecord.newBuilder().build())
             .setMutationRecord(MutationRecord.newBuilder().build())
+            .setAlertStrategy(AlertPolicy.AlertStrategy.newBuilder().build())
             .build();
     mockAlertPolicyService.addResponse(expectedResponse);
 
@@ -537,6 +542,7 @@ public class AlertPolicyServiceClientTest {
             .addAllNotificationChannels(new ArrayList<String>())
             .setCreationRecord(MutationRecord.newBuilder().build())
             .setMutationRecord(MutationRecord.newBuilder().build())
+            .setAlertStrategy(AlertPolicy.AlertStrategy.newBuilder().build())
             .build();
     mockAlertPolicyService.addResponse(expectedResponse);
 
@@ -657,6 +663,7 @@ public class AlertPolicyServiceClientTest {
             .addAllNotificationChannels(new ArrayList<String>())
             .setCreationRecord(MutationRecord.newBuilder().build())
             .setMutationRecord(MutationRecord.newBuilder().build())
+            .setAlertStrategy(AlertPolicy.AlertStrategy.newBuilder().build())
             .build();
     mockAlertPolicyService.addResponse(expectedResponse);
 

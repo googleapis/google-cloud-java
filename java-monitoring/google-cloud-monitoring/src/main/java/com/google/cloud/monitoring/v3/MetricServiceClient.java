@@ -188,7 +188,8 @@ public class MetricServiceClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param name Required. The project on which to execute the request. The format is:
+   * @param name Required. The [project](https://cloud.google.com/monitoring/api/v3#project_name) on
+   *     which to execute the request. The format is:
    *     <p>projects/[PROJECT_ID_OR_NUMBER]
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -218,7 +219,8 @@ public class MetricServiceClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param name Required. The project on which to execute the request. The format is:
+   * @param name Required. The [project](https://cloud.google.com/monitoring/api/v3#project_name) on
+   *     which to execute the request. The format is:
    *     <p>projects/[PROJECT_ID_OR_NUMBER]
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -248,7 +250,8 @@ public class MetricServiceClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param name Required. The project on which to execute the request. The format is:
+   * @param name Required. The [project](https://cloud.google.com/monitoring/api/v3#project_name) on
+   *     which to execute the request. The format is:
    *     <p>projects/[PROJECT_ID_OR_NUMBER]
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -281,7 +284,8 @@ public class MetricServiceClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param name Required. The project on which to execute the request. The format is:
+   * @param name Required. The [project](https://cloud.google.com/monitoring/api/v3#project_name) on
+   *     which to execute the request. The format is:
    *     <p>projects/[PROJECT_ID_OR_NUMBER]
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -530,7 +534,8 @@ public class MetricServiceClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param name Required. The project on which to execute the request. The format is:
+   * @param name Required. The [project](https://cloud.google.com/monitoring/api/v3#project_name) on
+   *     which to execute the request. The format is:
    *     <p>projects/[PROJECT_ID_OR_NUMBER]
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -558,7 +563,8 @@ public class MetricServiceClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param name Required. The project on which to execute the request. The format is:
+   * @param name Required. The [project](https://cloud.google.com/monitoring/api/v3#project_name) on
+   *     which to execute the request. The format is:
    *     <p>projects/[PROJECT_ID_OR_NUMBER]
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -586,7 +592,8 @@ public class MetricServiceClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param name Required. The project on which to execute the request. The format is:
+   * @param name Required. The [project](https://cloud.google.com/monitoring/api/v3#project_name) on
+   *     which to execute the request. The format is:
    *     <p>projects/[PROJECT_ID_OR_NUMBER]
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -616,7 +623,8 @@ public class MetricServiceClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param name Required. The project on which to execute the request. The format is:
+   * @param name Required. The [project](https://cloud.google.com/monitoring/api/v3#project_name) on
+   *     which to execute the request. The format is:
    *     <p>projects/[PROJECT_ID_OR_NUMBER]
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -840,7 +848,8 @@ public class MetricServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Creates a new metric descriptor. User-created metric descriptors define [custom
+   * Creates a new metric descriptor. The creation is executed asynchronously and callers may check
+   * the returned operation to track its progress. User-created metric descriptors define [custom
    * metrics](https://cloud.google.com/monitoring/custom-metrics).
    *
    * <p>Sample code:
@@ -854,8 +863,8 @@ public class MetricServiceClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param name Required. The project on which to execute the request. The format is:
-   *     <p>projects/[PROJECT_ID_OR_NUMBER]
+   * @param name Required. The [project](https://cloud.google.com/monitoring/api/v3#project_name) on
+   *     which to execute the request. The format is: 4 projects/[PROJECT_ID_OR_NUMBER]
    * @param metricDescriptor Required. The new [custom
    *     metric](https://cloud.google.com/monitoring/custom-metrics) descriptor.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -872,7 +881,8 @@ public class MetricServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Creates a new metric descriptor. User-created metric descriptors define [custom
+   * Creates a new metric descriptor. The creation is executed asynchronously and callers may check
+   * the returned operation to track its progress. User-created metric descriptors define [custom
    * metrics](https://cloud.google.com/monitoring/custom-metrics).
    *
    * <p>Sample code:
@@ -886,8 +896,8 @@ public class MetricServiceClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param name Required. The project on which to execute the request. The format is:
-   *     <p>projects/[PROJECT_ID_OR_NUMBER]
+   * @param name Required. The [project](https://cloud.google.com/monitoring/api/v3#project_name) on
+   *     which to execute the request. The format is: 4 projects/[PROJECT_ID_OR_NUMBER]
    * @param metricDescriptor Required. The new [custom
    *     metric](https://cloud.google.com/monitoring/custom-metrics) descriptor.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -904,7 +914,8 @@ public class MetricServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Creates a new metric descriptor. User-created metric descriptors define [custom
+   * Creates a new metric descriptor. The creation is executed asynchronously and callers may check
+   * the returned operation to track its progress. User-created metric descriptors define [custom
    * metrics](https://cloud.google.com/monitoring/custom-metrics).
    *
    * <p>Sample code:
@@ -918,8 +929,8 @@ public class MetricServiceClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param name Required. The project on which to execute the request. The format is:
-   *     <p>projects/[PROJECT_ID_OR_NUMBER]
+   * @param name Required. The [project](https://cloud.google.com/monitoring/api/v3#project_name) on
+   *     which to execute the request. The format is: 4 projects/[PROJECT_ID_OR_NUMBER]
    * @param metricDescriptor Required. The new [custom
    *     metric](https://cloud.google.com/monitoring/custom-metrics) descriptor.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -936,7 +947,8 @@ public class MetricServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Creates a new metric descriptor. User-created metric descriptors define [custom
+   * Creates a new metric descriptor. The creation is executed asynchronously and callers may check
+   * the returned operation to track its progress. User-created metric descriptors define [custom
    * metrics](https://cloud.google.com/monitoring/custom-metrics).
    *
    * <p>Sample code:
@@ -952,8 +964,8 @@ public class MetricServiceClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param name Required. The project on which to execute the request. The format is:
-   *     <p>projects/[PROJECT_ID_OR_NUMBER]
+   * @param name Required. The [project](https://cloud.google.com/monitoring/api/v3#project_name) on
+   *     which to execute the request. The format is: 4 projects/[PROJECT_ID_OR_NUMBER]
    * @param metricDescriptor Required. The new [custom
    *     metric](https://cloud.google.com/monitoring/custom-metrics) descriptor.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -970,7 +982,8 @@ public class MetricServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Creates a new metric descriptor. User-created metric descriptors define [custom
+   * Creates a new metric descriptor. The creation is executed asynchronously and callers may check
+   * the returned operation to track its progress. User-created metric descriptors define [custom
    * metrics](https://cloud.google.com/monitoring/custom-metrics).
    *
    * <p>Sample code:
@@ -998,7 +1011,8 @@ public class MetricServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Creates a new metric descriptor. User-created metric descriptors define [custom
+   * Creates a new metric descriptor. The creation is executed asynchronously and callers may check
+   * the returned operation to track its progress. User-created metric descriptors define [custom
    * metrics](https://cloud.google.com/monitoring/custom-metrics).
    *
    * <p>Sample code:
@@ -1154,8 +1168,8 @@ public class MetricServiceClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param name Required. The project, organization or folder on which to execute the request. The
-   *     format is:
+   * @param name Required. The [project](https://cloud.google.com/monitoring/api/v3#project_name),
+   *     organization or folder on which to execute the request. The format is:
    *     <p>projects/[PROJECT_ID_OR_NUMBER] organizations/[ORGANIZATION_ID] folders/[FOLDER_ID]
    * @param filter Required. A [monitoring
    *     filter](https://cloud.google.com/monitoring/api/v3/filters) that specifies which time
@@ -1202,8 +1216,8 @@ public class MetricServiceClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param name Required. The project, organization or folder on which to execute the request. The
-   *     format is:
+   * @param name Required. The [project](https://cloud.google.com/monitoring/api/v3#project_name),
+   *     organization or folder on which to execute the request. The format is:
    *     <p>projects/[PROJECT_ID_OR_NUMBER] organizations/[ORGANIZATION_ID] folders/[FOLDER_ID]
    * @param filter Required. A [monitoring
    *     filter](https://cloud.google.com/monitoring/api/v3/filters) that specifies which time
@@ -1250,8 +1264,8 @@ public class MetricServiceClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param name Required. The project, organization or folder on which to execute the request. The
-   *     format is:
+   * @param name Required. The [project](https://cloud.google.com/monitoring/api/v3#project_name),
+   *     organization or folder on which to execute the request. The format is:
    *     <p>projects/[PROJECT_ID_OR_NUMBER] organizations/[ORGANIZATION_ID] folders/[FOLDER_ID]
    * @param filter Required. A [monitoring
    *     filter](https://cloud.google.com/monitoring/api/v3/filters) that specifies which time
@@ -1298,8 +1312,8 @@ public class MetricServiceClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param name Required. The project, organization or folder on which to execute the request. The
-   *     format is:
+   * @param name Required. The [project](https://cloud.google.com/monitoring/api/v3#project_name),
+   *     organization or folder on which to execute the request. The format is:
    *     <p>projects/[PROJECT_ID_OR_NUMBER] organizations/[ORGANIZATION_ID] folders/[FOLDER_ID]
    * @param filter Required. A [monitoring
    *     filter](https://cloud.google.com/monitoring/api/v3/filters) that specifies which time
@@ -1451,7 +1465,8 @@ public class MetricServiceClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param name Required. The project on which to execute the request. The format is:
+   * @param name Required. The [project](https://cloud.google.com/monitoring/api/v3#project_name) on
+   *     which to execute the request. The format is:
    *     <p>projects/[PROJECT_ID_OR_NUMBER]
    * @param timeSeries Required. The new data to be added to a list of time series. Adds at most one
    *     data point to each of several time series. The new data point must be more recent than any
@@ -1485,7 +1500,8 @@ public class MetricServiceClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param name Required. The project on which to execute the request. The format is:
+   * @param name Required. The [project](https://cloud.google.com/monitoring/api/v3#project_name) on
+   *     which to execute the request. The format is:
    *     <p>projects/[PROJECT_ID_OR_NUMBER]
    * @param timeSeries Required. The new data to be added to a list of time series. Adds at most one
    *     data point to each of several time series. The new data point must be more recent than any
@@ -1549,6 +1565,137 @@ public class MetricServiceClient implements BackgroundResource {
    */
   public final UnaryCallable<CreateTimeSeriesRequest, Empty> createTimeSeriesCallable() {
     return stub.createTimeSeriesCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates or adds data to one or more service time series. A service time series is a time series
+   * for a metric from a Google Cloud service. The response is empty if all time series in the
+   * request were written. If any time series could not be written, a corresponding failure message
+   * is included in the error response. This endpoint rejects writes to user-defined metrics. This
+   * method is only for use by Google Cloud services. Use
+   * [projects.timeSeries.create][google.monitoring.v3.MetricService.CreateTimeSeries] instead.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (MetricServiceClient metricServiceClient = MetricServiceClient.create()) {
+   *   ProjectName name = ProjectName.of("[PROJECT]");
+   *   List<TimeSeries> timeSeries = new ArrayList<>();
+   *   metricServiceClient.createServiceTimeSeries(name, timeSeries);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The [project](https://cloud.google.com/monitoring/api/v3#project_name) on
+   *     which to execute the request. The format is:
+   *     <p>projects/[PROJECT_ID_OR_NUMBER]
+   * @param timeSeries Required. The new data to be added to a list of time series. Adds at most one
+   *     data point to each of several time series. The new data point must be more recent than any
+   *     other point in its time series. Each `TimeSeries` value must fully specify a unique time
+   *     series by supplying all label values for the metric and the monitored resource.
+   *     <p>The maximum number of `TimeSeries` objects per `Create` request is 200.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void createServiceTimeSeries(ProjectName name, List<TimeSeries> timeSeries) {
+    CreateTimeSeriesRequest request =
+        CreateTimeSeriesRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .addAllTimeSeries(timeSeries)
+            .build();
+    createServiceTimeSeries(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates or adds data to one or more service time series. A service time series is a time series
+   * for a metric from a Google Cloud service. The response is empty if all time series in the
+   * request were written. If any time series could not be written, a corresponding failure message
+   * is included in the error response. This endpoint rejects writes to user-defined metrics. This
+   * method is only for use by Google Cloud services. Use
+   * [projects.timeSeries.create][google.monitoring.v3.MetricService.CreateTimeSeries] instead.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (MetricServiceClient metricServiceClient = MetricServiceClient.create()) {
+   *   String name = ProjectName.of("[PROJECT]").toString();
+   *   List<TimeSeries> timeSeries = new ArrayList<>();
+   *   metricServiceClient.createServiceTimeSeries(name, timeSeries);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The [project](https://cloud.google.com/monitoring/api/v3#project_name) on
+   *     which to execute the request. The format is:
+   *     <p>projects/[PROJECT_ID_OR_NUMBER]
+   * @param timeSeries Required. The new data to be added to a list of time series. Adds at most one
+   *     data point to each of several time series. The new data point must be more recent than any
+   *     other point in its time series. Each `TimeSeries` value must fully specify a unique time
+   *     series by supplying all label values for the metric and the monitored resource.
+   *     <p>The maximum number of `TimeSeries` objects per `Create` request is 200.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void createServiceTimeSeries(String name, List<TimeSeries> timeSeries) {
+    CreateTimeSeriesRequest request =
+        CreateTimeSeriesRequest.newBuilder().setName(name).addAllTimeSeries(timeSeries).build();
+    createServiceTimeSeries(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates or adds data to one or more service time series. A service time series is a time series
+   * for a metric from a Google Cloud service. The response is empty if all time series in the
+   * request were written. If any time series could not be written, a corresponding failure message
+   * is included in the error response. This endpoint rejects writes to user-defined metrics. This
+   * method is only for use by Google Cloud services. Use
+   * [projects.timeSeries.create][google.monitoring.v3.MetricService.CreateTimeSeries] instead.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (MetricServiceClient metricServiceClient = MetricServiceClient.create()) {
+   *   CreateTimeSeriesRequest request =
+   *       CreateTimeSeriesRequest.newBuilder()
+   *           .setName(ProjectName.of("[PROJECT]").toString())
+   *           .addAllTimeSeries(new ArrayList<TimeSeries>())
+   *           .build();
+   *   metricServiceClient.createServiceTimeSeries(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void createServiceTimeSeries(CreateTimeSeriesRequest request) {
+    createServiceTimeSeriesCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates or adds data to one or more service time series. A service time series is a time series
+   * for a metric from a Google Cloud service. The response is empty if all time series in the
+   * request were written. If any time series could not be written, a corresponding failure message
+   * is included in the error response. This endpoint rejects writes to user-defined metrics. This
+   * method is only for use by Google Cloud services. Use
+   * [projects.timeSeries.create][google.monitoring.v3.MetricService.CreateTimeSeries] instead.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (MetricServiceClient metricServiceClient = MetricServiceClient.create()) {
+   *   CreateTimeSeriesRequest request =
+   *       CreateTimeSeriesRequest.newBuilder()
+   *           .setName(ProjectName.of("[PROJECT]").toString())
+   *           .addAllTimeSeries(new ArrayList<TimeSeries>())
+   *           .build();
+   *   ApiFuture<Empty> future =
+   *       metricServiceClient.createServiceTimeSeriesCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<CreateTimeSeriesRequest, Empty> createServiceTimeSeriesCallable() {
+    return stub.createServiceTimeSeriesCallable();
   }
 
   @Override

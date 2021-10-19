@@ -1219,4 +1219,78 @@ public class MetricServiceClientTest {
       // Expected exception.
     }
   }
+
+  @Test
+  public void createServiceTimeSeriesTest() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    mockMetricService.addResponse(expectedResponse);
+
+    ProjectName name = ProjectName.of("[PROJECT]");
+    List<TimeSeries> timeSeries = new ArrayList<>();
+
+    client.createServiceTimeSeries(name, timeSeries);
+
+    List<AbstractMessage> actualRequests = mockMetricService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    CreateTimeSeriesRequest actualRequest = ((CreateTimeSeriesRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertEquals(timeSeries, actualRequest.getTimeSeriesList());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void createServiceTimeSeriesExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockMetricService.addException(exception);
+
+    try {
+      ProjectName name = ProjectName.of("[PROJECT]");
+      List<TimeSeries> timeSeries = new ArrayList<>();
+      client.createServiceTimeSeries(name, timeSeries);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void createServiceTimeSeriesTest2() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    mockMetricService.addResponse(expectedResponse);
+
+    String name = "name3373707";
+    List<TimeSeries> timeSeries = new ArrayList<>();
+
+    client.createServiceTimeSeries(name, timeSeries);
+
+    List<AbstractMessage> actualRequests = mockMetricService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    CreateTimeSeriesRequest actualRequest = ((CreateTimeSeriesRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertEquals(timeSeries, actualRequest.getTimeSeriesList());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void createServiceTimeSeriesExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockMetricService.addException(exception);
+
+    try {
+      String name = "name3373707";
+      List<TimeSeries> timeSeries = new ArrayList<>();
+      client.createServiceTimeSeries(name, timeSeries);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
 }

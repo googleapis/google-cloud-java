@@ -319,13 +319,13 @@ public final class CreateServiceLevelObjectiveRequest extends com.google.protobu
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getParentBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(parent_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, parent_);
     }
     if (serviceLevelObjective_ != null) {
       output.writeMessage(2, getServiceLevelObjective());
     }
-    if (!getServiceLevelObjectiveIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(serviceLevelObjectiveId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, serviceLevelObjectiveId_);
     }
     unknownFields.writeTo(output);
@@ -337,14 +337,14 @@ public final class CreateServiceLevelObjectiveRequest extends com.google.protobu
     if (size != -1) return size;
 
     size = 0;
-    if (!getParentBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(parent_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, parent_);
     }
     if (serviceLevelObjective_ != null) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(2, getServiceLevelObjective());
     }
-    if (!getServiceLevelObjectiveIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(serviceLevelObjectiveId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, serviceLevelObjectiveId_);
     }
     size += unknownFields.getSerializedSize();

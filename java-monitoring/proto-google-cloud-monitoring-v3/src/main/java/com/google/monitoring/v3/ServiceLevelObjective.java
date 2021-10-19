@@ -66,6 +66,7 @@ public final class ServiceLevelObjective extends com.google.protobuf.GeneratedMe
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
+    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -132,6 +133,21 @@ public final class ServiceLevelObjective extends com.google.protobuf.GeneratedMe
               displayName_ = s;
               break;
             }
+          case 98:
+            {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                userLabels_ =
+                    com.google.protobuf.MapField.newMapField(
+                        UserLabelsDefaultEntryHolder.defaultEntry);
+                mutable_bitField0_ |= 0x00000001;
+              }
+              com.google.protobuf.MapEntry<java.lang.String, java.lang.String> userLabels__ =
+                  input.readMessage(
+                      UserLabelsDefaultEntryHolder.defaultEntry.getParserForType(),
+                      extensionRegistry);
+              userLabels_.getMutableMap().put(userLabels__.getKey(), userLabels__.getValue());
+              break;
+            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -154,6 +170,17 @@ public final class ServiceLevelObjective extends com.google.protobuf.GeneratedMe
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.monitoring.v3.ServiceMonitoringProto
         .internal_static_google_monitoring_v3_ServiceLevelObjective_descriptor;
+  }
+
+  @SuppressWarnings({"rawtypes"})
+  @java.lang.Override
+  protected com.google.protobuf.MapField internalGetMapField(int number) {
+    switch (number) {
+      case 12:
+        return internalGetUserLabels();
+      default:
+        throw new RuntimeException("Invalid map field number: " + number);
+    }
   }
 
   @java.lang.Override
@@ -669,6 +696,125 @@ public final class ServiceLevelObjective extends com.google.protobuf.GeneratedMe
     return com.google.type.CalendarPeriod.CALENDAR_PERIOD_UNSPECIFIED;
   }
 
+  public static final int USER_LABELS_FIELD_NUMBER = 12;
+
+  private static final class UserLabelsDefaultEntryHolder {
+    static final com.google.protobuf.MapEntry<java.lang.String, java.lang.String> defaultEntry =
+        com.google.protobuf.MapEntry.<java.lang.String, java.lang.String>newDefaultInstance(
+            com.google.monitoring.v3.ServiceMonitoringProto
+                .internal_static_google_monitoring_v3_ServiceLevelObjective_UserLabelsEntry_descriptor,
+            com.google.protobuf.WireFormat.FieldType.STRING,
+            "",
+            com.google.protobuf.WireFormat.FieldType.STRING,
+            "");
+  }
+
+  private com.google.protobuf.MapField<java.lang.String, java.lang.String> userLabels_;
+
+  private com.google.protobuf.MapField<java.lang.String, java.lang.String> internalGetUserLabels() {
+    if (userLabels_ == null) {
+      return com.google.protobuf.MapField.emptyMapField(UserLabelsDefaultEntryHolder.defaultEntry);
+    }
+    return userLabels_;
+  }
+
+  public int getUserLabelsCount() {
+    return internalGetUserLabels().getMap().size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Labels which have been used to annotate the service-level objective. Label
+   * keys must start with a letter. Label keys and values may contain lowercase
+   * letters, numbers, underscores, and dashes. Label keys and values have a
+   * maximum length of 63 characters, and must be less than 128 bytes in size.
+   * Up to 64 label entries may be stored. For labels which do not have a
+   * semantic value, the empty string may be supplied for the label value.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; user_labels = 12;</code>
+   */
+  @java.lang.Override
+  public boolean containsUserLabels(java.lang.String key) {
+    if (key == null) {
+      throw new java.lang.NullPointerException();
+    }
+    return internalGetUserLabels().getMap().containsKey(key);
+  }
+  /** Use {@link #getUserLabelsMap()} instead. */
+  @java.lang.Override
+  @java.lang.Deprecated
+  public java.util.Map<java.lang.String, java.lang.String> getUserLabels() {
+    return getUserLabelsMap();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Labels which have been used to annotate the service-level objective. Label
+   * keys must start with a letter. Label keys and values may contain lowercase
+   * letters, numbers, underscores, and dashes. Label keys and values have a
+   * maximum length of 63 characters, and must be less than 128 bytes in size.
+   * Up to 64 label entries may be stored. For labels which do not have a
+   * semantic value, the empty string may be supplied for the label value.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; user_labels = 12;</code>
+   */
+  @java.lang.Override
+  public java.util.Map<java.lang.String, java.lang.String> getUserLabelsMap() {
+    return internalGetUserLabels().getMap();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Labels which have been used to annotate the service-level objective. Label
+   * keys must start with a letter. Label keys and values may contain lowercase
+   * letters, numbers, underscores, and dashes. Label keys and values have a
+   * maximum length of 63 characters, and must be less than 128 bytes in size.
+   * Up to 64 label entries may be stored. For labels which do not have a
+   * semantic value, the empty string may be supplied for the label value.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; user_labels = 12;</code>
+   */
+  @java.lang.Override
+  public java.lang.String getUserLabelsOrDefault(
+      java.lang.String key, java.lang.String defaultValue) {
+    if (key == null) {
+      throw new java.lang.NullPointerException();
+    }
+    java.util.Map<java.lang.String, java.lang.String> map = internalGetUserLabels().getMap();
+    return map.containsKey(key) ? map.get(key) : defaultValue;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Labels which have been used to annotate the service-level objective. Label
+   * keys must start with a letter. Label keys and values may contain lowercase
+   * letters, numbers, underscores, and dashes. Label keys and values have a
+   * maximum length of 63 characters, and must be less than 128 bytes in size.
+   * Up to 64 label entries may be stored. For labels which do not have a
+   * semantic value, the empty string may be supplied for the label value.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; user_labels = 12;</code>
+   */
+  @java.lang.Override
+  public java.lang.String getUserLabelsOrThrow(java.lang.String key) {
+    if (key == null) {
+      throw new java.lang.NullPointerException();
+    }
+    java.util.Map<java.lang.String, java.lang.String> map = internalGetUserLabels().getMap();
+    if (!map.containsKey(key)) {
+      throw new java.lang.IllegalArgumentException();
+    }
+    return map.get(key);
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -683,7 +829,7 @@ public final class ServiceLevelObjective extends com.google.protobuf.GeneratedMe
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name_);
     }
     if (serviceLevelIndicator_ != null) {
@@ -698,9 +844,11 @@ public final class ServiceLevelObjective extends com.google.protobuf.GeneratedMe
     if (periodCase_ == 6) {
       output.writeEnum(6, ((java.lang.Integer) period_));
     }
-    if (!getDisplayNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(displayName_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 11, displayName_);
     }
+    com.google.protobuf.GeneratedMessageV3.serializeStringMapTo(
+        output, internalGetUserLabels(), UserLabelsDefaultEntryHolder.defaultEntry, 12);
     unknownFields.writeTo(output);
   }
 
@@ -710,7 +858,7 @@ public final class ServiceLevelObjective extends com.google.protobuf.GeneratedMe
     if (size != -1) return size;
 
     size = 0;
-    if (!getNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, name_);
     }
     if (serviceLevelIndicator_ != null) {
@@ -729,8 +877,18 @@ public final class ServiceLevelObjective extends com.google.protobuf.GeneratedMe
       size +=
           com.google.protobuf.CodedOutputStream.computeEnumSize(6, ((java.lang.Integer) period_));
     }
-    if (!getDisplayNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(displayName_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(11, displayName_);
+    }
+    for (java.util.Map.Entry<java.lang.String, java.lang.String> entry :
+        internalGetUserLabels().getMap().entrySet()) {
+      com.google.protobuf.MapEntry<java.lang.String, java.lang.String> userLabels__ =
+          UserLabelsDefaultEntryHolder.defaultEntry
+              .newBuilderForType()
+              .setKey(entry.getKey())
+              .setValue(entry.getValue())
+              .build();
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(12, userLabels__);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -756,6 +914,7 @@ public final class ServiceLevelObjective extends com.google.protobuf.GeneratedMe
     }
     if (java.lang.Double.doubleToLongBits(getGoal())
         != java.lang.Double.doubleToLongBits(other.getGoal())) return false;
+    if (!internalGetUserLabels().equals(other.internalGetUserLabels())) return false;
     if (!getPeriodCase().equals(other.getPeriodCase())) return false;
     switch (periodCase_) {
       case 5:
@@ -790,6 +949,10 @@ public final class ServiceLevelObjective extends com.google.protobuf.GeneratedMe
     hash =
         (53 * hash)
             + com.google.protobuf.Internal.hashLong(java.lang.Double.doubleToLongBits(getGoal()));
+    if (!internalGetUserLabels().getMap().isEmpty()) {
+      hash = (37 * hash) + USER_LABELS_FIELD_NUMBER;
+      hash = (53 * hash) + internalGetUserLabels().hashCode();
+    }
     switch (periodCase_) {
       case 5:
         hash = (37 * hash) + ROLLING_PERIOD_FIELD_NUMBER;
@@ -925,6 +1088,26 @@ public final class ServiceLevelObjective extends com.google.protobuf.GeneratedMe
           .internal_static_google_monitoring_v3_ServiceLevelObjective_descriptor;
     }
 
+    @SuppressWarnings({"rawtypes"})
+    protected com.google.protobuf.MapField internalGetMapField(int number) {
+      switch (number) {
+        case 12:
+          return internalGetUserLabels();
+        default:
+          throw new RuntimeException("Invalid map field number: " + number);
+      }
+    }
+
+    @SuppressWarnings({"rawtypes"})
+    protected com.google.protobuf.MapField internalGetMutableMapField(int number) {
+      switch (number) {
+        case 12:
+          return internalGetMutableUserLabels();
+        default:
+          throw new RuntimeException("Invalid map field number: " + number);
+      }
+    }
+
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
@@ -964,6 +1147,7 @@ public final class ServiceLevelObjective extends com.google.protobuf.GeneratedMe
       }
       goal_ = 0D;
 
+      internalGetMutableUserLabels().clear();
       periodCase_ = 0;
       period_ = null;
       return this;
@@ -993,6 +1177,7 @@ public final class ServiceLevelObjective extends com.google.protobuf.GeneratedMe
     public com.google.monitoring.v3.ServiceLevelObjective buildPartial() {
       com.google.monitoring.v3.ServiceLevelObjective result =
           new com.google.monitoring.v3.ServiceLevelObjective(this);
+      int from_bitField0_ = bitField0_;
       result.name_ = name_;
       result.displayName_ = displayName_;
       if (serviceLevelIndicatorBuilder_ == null) {
@@ -1011,6 +1196,8 @@ public final class ServiceLevelObjective extends com.google.protobuf.GeneratedMe
       if (periodCase_ == 6) {
         result.period_ = period_;
       }
+      result.userLabels_ = internalGetUserLabels();
+      result.userLabels_.makeImmutable();
       result.periodCase_ = periodCase_;
       onBuilt();
       return result;
@@ -1075,6 +1262,7 @@ public final class ServiceLevelObjective extends com.google.protobuf.GeneratedMe
       if (other.getGoal() != 0D) {
         setGoal(other.getGoal());
       }
+      internalGetMutableUserLabels().mergeFrom(other.internalGetUserLabels());
       switch (other.getPeriodCase()) {
         case ROLLING_PERIOD:
           {
@@ -1133,6 +1321,8 @@ public final class ServiceLevelObjective extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object name_ = "";
     /**
@@ -1948,6 +2138,201 @@ public final class ServiceLevelObjective extends com.google.protobuf.GeneratedMe
         period_ = null;
         onChanged();
       }
+      return this;
+    }
+
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String> userLabels_;
+
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+        internalGetUserLabels() {
+      if (userLabels_ == null) {
+        return com.google.protobuf.MapField.emptyMapField(
+            UserLabelsDefaultEntryHolder.defaultEntry);
+      }
+      return userLabels_;
+    }
+
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+        internalGetMutableUserLabels() {
+      onChanged();
+      ;
+      if (userLabels_ == null) {
+        userLabels_ =
+            com.google.protobuf.MapField.newMapField(UserLabelsDefaultEntryHolder.defaultEntry);
+      }
+      if (!userLabels_.isMutable()) {
+        userLabels_ = userLabels_.copy();
+      }
+      return userLabels_;
+    }
+
+    public int getUserLabelsCount() {
+      return internalGetUserLabels().getMap().size();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Labels which have been used to annotate the service-level objective. Label
+     * keys must start with a letter. Label keys and values may contain lowercase
+     * letters, numbers, underscores, and dashes. Label keys and values have a
+     * maximum length of 63 characters, and must be less than 128 bytes in size.
+     * Up to 64 label entries may be stored. For labels which do not have a
+     * semantic value, the empty string may be supplied for the label value.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; user_labels = 12;</code>
+     */
+    @java.lang.Override
+    public boolean containsUserLabels(java.lang.String key) {
+      if (key == null) {
+        throw new java.lang.NullPointerException();
+      }
+      return internalGetUserLabels().getMap().containsKey(key);
+    }
+    /** Use {@link #getUserLabelsMap()} instead. */
+    @java.lang.Override
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, java.lang.String> getUserLabels() {
+      return getUserLabelsMap();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Labels which have been used to annotate the service-level objective. Label
+     * keys must start with a letter. Label keys and values may contain lowercase
+     * letters, numbers, underscores, and dashes. Label keys and values have a
+     * maximum length of 63 characters, and must be less than 128 bytes in size.
+     * Up to 64 label entries may be stored. For labels which do not have a
+     * semantic value, the empty string may be supplied for the label value.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; user_labels = 12;</code>
+     */
+    @java.lang.Override
+    public java.util.Map<java.lang.String, java.lang.String> getUserLabelsMap() {
+      return internalGetUserLabels().getMap();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Labels which have been used to annotate the service-level objective. Label
+     * keys must start with a letter. Label keys and values may contain lowercase
+     * letters, numbers, underscores, and dashes. Label keys and values have a
+     * maximum length of 63 characters, and must be less than 128 bytes in size.
+     * Up to 64 label entries may be stored. For labels which do not have a
+     * semantic value, the empty string may be supplied for the label value.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; user_labels = 12;</code>
+     */
+    @java.lang.Override
+    public java.lang.String getUserLabelsOrDefault(
+        java.lang.String key, java.lang.String defaultValue) {
+      if (key == null) {
+        throw new java.lang.NullPointerException();
+      }
+      java.util.Map<java.lang.String, java.lang.String> map = internalGetUserLabels().getMap();
+      return map.containsKey(key) ? map.get(key) : defaultValue;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Labels which have been used to annotate the service-level objective. Label
+     * keys must start with a letter. Label keys and values may contain lowercase
+     * letters, numbers, underscores, and dashes. Label keys and values have a
+     * maximum length of 63 characters, and must be less than 128 bytes in size.
+     * Up to 64 label entries may be stored. For labels which do not have a
+     * semantic value, the empty string may be supplied for the label value.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; user_labels = 12;</code>
+     */
+    @java.lang.Override
+    public java.lang.String getUserLabelsOrThrow(java.lang.String key) {
+      if (key == null) {
+        throw new java.lang.NullPointerException();
+      }
+      java.util.Map<java.lang.String, java.lang.String> map = internalGetUserLabels().getMap();
+      if (!map.containsKey(key)) {
+        throw new java.lang.IllegalArgumentException();
+      }
+      return map.get(key);
+    }
+
+    public Builder clearUserLabels() {
+      internalGetMutableUserLabels().getMutableMap().clear();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Labels which have been used to annotate the service-level objective. Label
+     * keys must start with a letter. Label keys and values may contain lowercase
+     * letters, numbers, underscores, and dashes. Label keys and values have a
+     * maximum length of 63 characters, and must be less than 128 bytes in size.
+     * Up to 64 label entries may be stored. For labels which do not have a
+     * semantic value, the empty string may be supplied for the label value.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; user_labels = 12;</code>
+     */
+    public Builder removeUserLabels(java.lang.String key) {
+      if (key == null) {
+        throw new java.lang.NullPointerException();
+      }
+      internalGetMutableUserLabels().getMutableMap().remove(key);
+      return this;
+    }
+    /** Use alternate mutation accessors instead. */
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, java.lang.String> getMutableUserLabels() {
+      return internalGetMutableUserLabels().getMutableMap();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Labels which have been used to annotate the service-level objective. Label
+     * keys must start with a letter. Label keys and values may contain lowercase
+     * letters, numbers, underscores, and dashes. Label keys and values have a
+     * maximum length of 63 characters, and must be less than 128 bytes in size.
+     * Up to 64 label entries may be stored. For labels which do not have a
+     * semantic value, the empty string may be supplied for the label value.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; user_labels = 12;</code>
+     */
+    public Builder putUserLabels(java.lang.String key, java.lang.String value) {
+      if (key == null) {
+        throw new java.lang.NullPointerException();
+      }
+      if (value == null) {
+        throw new java.lang.NullPointerException();
+      }
+      internalGetMutableUserLabels().getMutableMap().put(key, value);
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Labels which have been used to annotate the service-level objective. Label
+     * keys must start with a letter. Label keys and values may contain lowercase
+     * letters, numbers, underscores, and dashes. Label keys and values have a
+     * maximum length of 63 characters, and must be less than 128 bytes in size.
+     * Up to 64 label entries may be stored. For labels which do not have a
+     * semantic value, the empty string may be supplied for the label value.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; user_labels = 12;</code>
+     */
+    public Builder putAllUserLabels(java.util.Map<java.lang.String, java.lang.String> values) {
+      internalGetMutableUserLabels().getMutableMap().putAll(values);
       return this;
     }
 

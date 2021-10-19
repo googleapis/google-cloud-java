@@ -188,8 +188,8 @@ public class UptimeCheckServiceClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. The project whose Uptime check configurations are listed. The format
-   *     is:
+   * @param parent Required. The [project](https://cloud.google.com/monitoring/api/v3#project_name)
+   *     whose Uptime check configurations are listed. The format is:
    *     <p>projects/[PROJECT_ID_OR_NUMBER]
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -218,8 +218,8 @@ public class UptimeCheckServiceClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. The project whose Uptime check configurations are listed. The format
-   *     is:
+   * @param parent Required. The [project](https://cloud.google.com/monitoring/api/v3#project_name)
+   *     whose Uptime check configurations are listed. The format is:
    *     <p>projects/[PROJECT_ID_OR_NUMBER]
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -248,8 +248,8 @@ public class UptimeCheckServiceClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. The project whose Uptime check configurations are listed. The format
-   *     is:
+   * @param parent Required. The [project](https://cloud.google.com/monitoring/api/v3#project_name)
+   *     whose Uptime check configurations are listed. The format is:
    *     <p>projects/[PROJECT_ID_OR_NUMBER]
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -280,8 +280,8 @@ public class UptimeCheckServiceClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. The project whose Uptime check configurations are listed. The format
-   *     is:
+   * @param parent Required. The [project](https://cloud.google.com/monitoring/api/v3#project_name)
+   *     whose Uptime check configurations are listed. The format is:
    *     <p>projects/[PROJECT_ID_OR_NUMBER]
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -515,7 +515,8 @@ public class UptimeCheckServiceClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. The project in which to create the Uptime check. The format is:
+   * @param parent Required. The [project](https://cloud.google.com/monitoring/api/v3#project_name)
+   *     in which to create the Uptime check. The format is:
    *     <p>projects/[PROJECT_ID_OR_NUMBER]
    * @param uptimeCheckConfig Required. The new Uptime check configuration.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -545,7 +546,8 @@ public class UptimeCheckServiceClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. The project in which to create the Uptime check. The format is:
+   * @param parent Required. The [project](https://cloud.google.com/monitoring/api/v3#project_name)
+   *     in which to create the Uptime check. The format is:
    *     <p>projects/[PROJECT_ID_OR_NUMBER]
    * @param uptimeCheckConfig Required. The new Uptime check configuration.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -575,7 +577,8 @@ public class UptimeCheckServiceClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. The project in which to create the Uptime check. The format is:
+   * @param parent Required. The [project](https://cloud.google.com/monitoring/api/v3#project_name)
+   *     in which to create the Uptime check. The format is:
    *     <p>projects/[PROJECT_ID_OR_NUMBER]
    * @param uptimeCheckConfig Required. The new Uptime check configuration.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -607,7 +610,8 @@ public class UptimeCheckServiceClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. The project in which to create the Uptime check. The format is:
+   * @param parent Required. The [project](https://cloud.google.com/monitoring/api/v3#project_name)
+   *     in which to create the Uptime check. The format is:
    *     <p>projects/[PROJECT_ID_OR_NUMBER]
    * @param uptimeCheckConfig Required. The new Uptime check configuration.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails

@@ -210,7 +210,7 @@ public final class ListUptimeCheckIpsRequest extends com.google.protobuf.Generat
     if (pageSize_ != 0) {
       output.writeInt32(2, pageSize_);
     }
-    if (!getPageTokenBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(pageToken_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, pageToken_);
     }
     unknownFields.writeTo(output);
@@ -225,7 +225,7 @@ public final class ListUptimeCheckIpsRequest extends com.google.protobuf.Generat
     if (pageSize_ != 0) {
       size += com.google.protobuf.CodedOutputStream.computeInt32Size(2, pageSize_);
     }
-    if (!getPageTokenBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(pageToken_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, pageToken_);
     }
     size += unknownFields.getSerializedSize();

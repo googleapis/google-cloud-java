@@ -267,7 +267,7 @@ public final class QueryErrorList extends com.google.protobuf.GeneratedMessageV3
     for (int i = 0; i < errors_.size(); i++) {
       output.writeMessage(1, errors_.get(i));
     }
-    if (!getErrorSummaryBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(errorSummary_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, errorSummary_);
     }
     unknownFields.writeTo(output);
@@ -282,7 +282,7 @@ public final class QueryErrorList extends com.google.protobuf.GeneratedMessageV3
     for (int i = 0; i < errors_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, errors_.get(i));
     }
-    if (!getErrorSummaryBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(errorSummary_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, errorSummary_);
     }
     size += unknownFields.getSerializedSize();

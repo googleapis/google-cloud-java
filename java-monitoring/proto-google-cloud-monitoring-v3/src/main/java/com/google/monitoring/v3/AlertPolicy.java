@@ -214,6 +214,23 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
 
               break;
             }
+          case 170:
+            {
+              com.google.monitoring.v3.AlertPolicy.AlertStrategy.Builder subBuilder = null;
+              if (alertStrategy_ != null) {
+                subBuilder = alertStrategy_.toBuilder();
+              }
+              alertStrategy_ =
+                  input.readMessage(
+                      com.google.monitoring.v3.AlertPolicy.AlertStrategy.parser(),
+                      extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(alertStrategy_);
+                alertStrategy_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -748,10 +765,10 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
 
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-      if (!getContentBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(content_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, content_);
       }
-      if (!getMimeTypeBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(mimeType_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, mimeType_);
       }
       unknownFields.writeTo(output);
@@ -763,10 +780,10 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
       if (size != -1) return size;
 
       size = 0;
-      if (!getContentBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(content_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, content_);
       }
-      if (!getMimeTypeBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(mimeType_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, mimeType_);
       }
       size += unknownFields.getSerializedSize();
@@ -1541,6 +1558,45 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
+     * A condition that checks for log messages matching given constraints. If
+     * set, no other conditions can be present.
+     * </pre>
+     *
+     * <code>.google.monitoring.v3.AlertPolicy.Condition.LogMatch condition_matched_log = 20;</code>
+     *
+     * @return Whether the conditionMatchedLog field is set.
+     */
+    boolean hasConditionMatchedLog();
+    /**
+     *
+     *
+     * <pre>
+     * A condition that checks for log messages matching given constraints. If
+     * set, no other conditions can be present.
+     * </pre>
+     *
+     * <code>.google.monitoring.v3.AlertPolicy.Condition.LogMatch condition_matched_log = 20;</code>
+     *
+     * @return The conditionMatchedLog.
+     */
+    com.google.monitoring.v3.AlertPolicy.Condition.LogMatch getConditionMatchedLog();
+    /**
+     *
+     *
+     * <pre>
+     * A condition that checks for log messages matching given constraints. If
+     * set, no other conditions can be present.
+     * </pre>
+     *
+     * <code>.google.monitoring.v3.AlertPolicy.Condition.LogMatch condition_matched_log = 20;</code>
+     */
+    com.google.monitoring.v3.AlertPolicy.Condition.LogMatchOrBuilder
+        getConditionMatchedLogOrBuilder();
+
+    /**
+     *
+     *
+     * <pre>
      * A condition that uses the Monitoring Query Language to define
      * alerts.
      * </pre>
@@ -1721,6 +1777,26 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
                   condition_ = subBuilder.buildPartial();
                 }
                 conditionCase_ = 19;
+                break;
+              }
+            case 162:
+              {
+                com.google.monitoring.v3.AlertPolicy.Condition.LogMatch.Builder subBuilder = null;
+                if (conditionCase_ == 20) {
+                  subBuilder =
+                      ((com.google.monitoring.v3.AlertPolicy.Condition.LogMatch) condition_)
+                          .toBuilder();
+                }
+                condition_ =
+                    input.readMessage(
+                        com.google.monitoring.v3.AlertPolicy.Condition.LogMatch.parser(),
+                        extensionRegistry);
+                if (subBuilder != null) {
+                  subBuilder.mergeFrom(
+                      (com.google.monitoring.v3.AlertPolicy.Condition.LogMatch) condition_);
+                  condition_ = subBuilder.buildPartial();
+                }
+                conditionCase_ = 20;
                 break;
               }
             default:
@@ -2679,7 +2755,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
        * well as how to combine the retrieved time series together (such as
        * when aggregating multiple streams on each resource to a single
        * stream for each resource or when aggregating streams across all
-       * members of a group of resrouces). Multiple aggregations
+       * members of a group of resources). Multiple aggregations
        * are applied in the order specified.
        * This field is similar to the one in the [`ListTimeSeries`
        * request](https://cloud.google.com/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list).
@@ -2698,7 +2774,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
        * well as how to combine the retrieved time series together (such as
        * when aggregating multiple streams on each resource to a single
        * stream for each resource or when aggregating streams across all
-       * members of a group of resrouces). Multiple aggregations
+       * members of a group of resources). Multiple aggregations
        * are applied in the order specified.
        * This field is similar to the one in the [`ListTimeSeries`
        * request](https://cloud.google.com/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list).
@@ -2717,7 +2793,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
        * well as how to combine the retrieved time series together (such as
        * when aggregating multiple streams on each resource to a single
        * stream for each resource or when aggregating streams across all
-       * members of a group of resrouces). Multiple aggregations
+       * members of a group of resources). Multiple aggregations
        * are applied in the order specified.
        * This field is similar to the one in the [`ListTimeSeries`
        * request](https://cloud.google.com/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list).
@@ -2736,7 +2812,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
        * well as how to combine the retrieved time series together (such as
        * when aggregating multiple streams on each resource to a single
        * stream for each resource or when aggregating streams across all
-       * members of a group of resrouces). Multiple aggregations
+       * members of a group of resources). Multiple aggregations
        * are applied in the order specified.
        * This field is similar to the one in the [`ListTimeSeries`
        * request](https://cloud.google.com/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list).
@@ -2756,7 +2832,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
        * well as how to combine the retrieved time series together (such as
        * when aggregating multiple streams on each resource to a single
        * stream for each resource or when aggregating streams across all
-       * members of a group of resrouces). Multiple aggregations
+       * members of a group of resources). Multiple aggregations
        * are applied in the order specified.
        * This field is similar to the one in the [`ListTimeSeries`
        * request](https://cloud.google.com/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list).
@@ -3313,7 +3389,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
        * well as how to combine the retrieved time series together (such as
        * when aggregating multiple streams on each resource to a single
        * stream for each resource or when aggregating streams across all
-       * members of a group of resrouces). Multiple aggregations
+       * members of a group of resources). Multiple aggregations
        * are applied in the order specified.
        * This field is similar to the one in the [`ListTimeSeries`
        * request](https://cloud.google.com/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list).
@@ -3335,7 +3411,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
        * well as how to combine the retrieved time series together (such as
        * when aggregating multiple streams on each resource to a single
        * stream for each resource or when aggregating streams across all
-       * members of a group of resrouces). Multiple aggregations
+       * members of a group of resources). Multiple aggregations
        * are applied in the order specified.
        * This field is similar to the one in the [`ListTimeSeries`
        * request](https://cloud.google.com/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list).
@@ -3358,7 +3434,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
        * well as how to combine the retrieved time series together (such as
        * when aggregating multiple streams on each resource to a single
        * stream for each resource or when aggregating streams across all
-       * members of a group of resrouces). Multiple aggregations
+       * members of a group of resources). Multiple aggregations
        * are applied in the order specified.
        * This field is similar to the one in the [`ListTimeSeries`
        * request](https://cloud.google.com/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list).
@@ -3380,7 +3456,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
        * well as how to combine the retrieved time series together (such as
        * when aggregating multiple streams on each resource to a single
        * stream for each resource or when aggregating streams across all
-       * members of a group of resrouces). Multiple aggregations
+       * members of a group of resources). Multiple aggregations
        * are applied in the order specified.
        * This field is similar to the one in the [`ListTimeSeries`
        * request](https://cloud.google.com/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list).
@@ -3402,7 +3478,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
        * well as how to combine the retrieved time series together (such as
        * when aggregating multiple streams on each resource to a single
        * stream for each resource or when aggregating streams across all
-       * members of a group of resrouces). Multiple aggregations
+       * members of a group of resources). Multiple aggregations
        * are applied in the order specified.
        * This field is similar to the one in the [`ListTimeSeries`
        * request](https://cloud.google.com/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list).
@@ -3802,7 +3878,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
 
       @java.lang.Override
       public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-        if (!getFilterBytes().isEmpty()) {
+        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(filter_)) {
           com.google.protobuf.GeneratedMessageV3.writeString(output, 2, filter_);
         }
         if (comparison_
@@ -3821,7 +3897,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
         for (int i = 0; i < aggregations_.size(); i++) {
           output.writeMessage(8, aggregations_.get(i));
         }
-        if (!getDenominatorFilterBytes().isEmpty()) {
+        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(denominatorFilter_)) {
           com.google.protobuf.GeneratedMessageV3.writeString(output, 9, denominatorFilter_);
         }
         for (int i = 0; i < denominatorAggregations_.size(); i++) {
@@ -3836,7 +3912,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
         if (size != -1) return size;
 
         size = 0;
-        if (!getFilterBytes().isEmpty()) {
+        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(filter_)) {
           size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, filter_);
         }
         if (comparison_
@@ -3855,7 +3931,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
         for (int i = 0; i < aggregations_.size(); i++) {
           size += com.google.protobuf.CodedOutputStream.computeMessageSize(8, aggregations_.get(i));
         }
-        if (!getDenominatorFilterBytes().isEmpty()) {
+        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(denominatorFilter_)) {
           size += com.google.protobuf.GeneratedMessageV3.computeStringSize(9, denominatorFilter_);
         }
         for (int i = 0; i < denominatorAggregations_.size(); i++) {
@@ -4516,7 +4592,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
          * well as how to combine the retrieved time series together (such as
          * when aggregating multiple streams on each resource to a single
          * stream for each resource or when aggregating streams across all
-         * members of a group of resrouces). Multiple aggregations
+         * members of a group of resources). Multiple aggregations
          * are applied in the order specified.
          * This field is similar to the one in the [`ListTimeSeries`
          * request](https://cloud.google.com/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list).
@@ -4541,7 +4617,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
          * well as how to combine the retrieved time series together (such as
          * when aggregating multiple streams on each resource to a single
          * stream for each resource or when aggregating streams across all
-         * members of a group of resrouces). Multiple aggregations
+         * members of a group of resources). Multiple aggregations
          * are applied in the order specified.
          * This field is similar to the one in the [`ListTimeSeries`
          * request](https://cloud.google.com/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list).
@@ -4566,7 +4642,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
          * well as how to combine the retrieved time series together (such as
          * when aggregating multiple streams on each resource to a single
          * stream for each resource or when aggregating streams across all
-         * members of a group of resrouces). Multiple aggregations
+         * members of a group of resources). Multiple aggregations
          * are applied in the order specified.
          * This field is similar to the one in the [`ListTimeSeries`
          * request](https://cloud.google.com/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list).
@@ -4591,7 +4667,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
          * well as how to combine the retrieved time series together (such as
          * when aggregating multiple streams on each resource to a single
          * stream for each resource or when aggregating streams across all
-         * members of a group of resrouces). Multiple aggregations
+         * members of a group of resources). Multiple aggregations
          * are applied in the order specified.
          * This field is similar to the one in the [`ListTimeSeries`
          * request](https://cloud.google.com/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list).
@@ -4622,7 +4698,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
          * well as how to combine the retrieved time series together (such as
          * when aggregating multiple streams on each resource to a single
          * stream for each resource or when aggregating streams across all
-         * members of a group of resrouces). Multiple aggregations
+         * members of a group of resources). Multiple aggregations
          * are applied in the order specified.
          * This field is similar to the one in the [`ListTimeSeries`
          * request](https://cloud.google.com/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list).
@@ -4651,7 +4727,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
          * well as how to combine the retrieved time series together (such as
          * when aggregating multiple streams on each resource to a single
          * stream for each resource or when aggregating streams across all
-         * members of a group of resrouces). Multiple aggregations
+         * members of a group of resources). Multiple aggregations
          * are applied in the order specified.
          * This field is similar to the one in the [`ListTimeSeries`
          * request](https://cloud.google.com/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list).
@@ -4682,7 +4758,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
          * well as how to combine the retrieved time series together (such as
          * when aggregating multiple streams on each resource to a single
          * stream for each resource or when aggregating streams across all
-         * members of a group of resrouces). Multiple aggregations
+         * members of a group of resources). Multiple aggregations
          * are applied in the order specified.
          * This field is similar to the one in the [`ListTimeSeries`
          * request](https://cloud.google.com/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list).
@@ -4713,7 +4789,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
          * well as how to combine the retrieved time series together (such as
          * when aggregating multiple streams on each resource to a single
          * stream for each resource or when aggregating streams across all
-         * members of a group of resrouces). Multiple aggregations
+         * members of a group of resources). Multiple aggregations
          * are applied in the order specified.
          * This field is similar to the one in the [`ListTimeSeries`
          * request](https://cloud.google.com/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list).
@@ -4742,7 +4818,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
          * well as how to combine the retrieved time series together (such as
          * when aggregating multiple streams on each resource to a single
          * stream for each resource or when aggregating streams across all
-         * members of a group of resrouces). Multiple aggregations
+         * members of a group of resources). Multiple aggregations
          * are applied in the order specified.
          * This field is similar to the one in the [`ListTimeSeries`
          * request](https://cloud.google.com/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list).
@@ -4771,7 +4847,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
          * well as how to combine the retrieved time series together (such as
          * when aggregating multiple streams on each resource to a single
          * stream for each resource or when aggregating streams across all
-         * members of a group of resrouces). Multiple aggregations
+         * members of a group of resources). Multiple aggregations
          * are applied in the order specified.
          * This field is similar to the one in the [`ListTimeSeries`
          * request](https://cloud.google.com/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list).
@@ -4800,7 +4876,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
          * well as how to combine the retrieved time series together (such as
          * when aggregating multiple streams on each resource to a single
          * stream for each resource or when aggregating streams across all
-         * members of a group of resrouces). Multiple aggregations
+         * members of a group of resources). Multiple aggregations
          * are applied in the order specified.
          * This field is similar to the one in the [`ListTimeSeries`
          * request](https://cloud.google.com/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list).
@@ -4828,7 +4904,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
          * well as how to combine the retrieved time series together (such as
          * when aggregating multiple streams on each resource to a single
          * stream for each resource or when aggregating streams across all
-         * members of a group of resrouces). Multiple aggregations
+         * members of a group of resources). Multiple aggregations
          * are applied in the order specified.
          * This field is similar to the one in the [`ListTimeSeries`
          * request](https://cloud.google.com/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list).
@@ -4856,7 +4932,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
          * well as how to combine the retrieved time series together (such as
          * when aggregating multiple streams on each resource to a single
          * stream for each resource or when aggregating streams across all
-         * members of a group of resrouces). Multiple aggregations
+         * members of a group of resources). Multiple aggregations
          * are applied in the order specified.
          * This field is similar to the one in the [`ListTimeSeries`
          * request](https://cloud.google.com/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list).
@@ -4877,7 +4953,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
          * well as how to combine the retrieved time series together (such as
          * when aggregating multiple streams on each resource to a single
          * stream for each resource or when aggregating streams across all
-         * members of a group of resrouces). Multiple aggregations
+         * members of a group of resources). Multiple aggregations
          * are applied in the order specified.
          * This field is similar to the one in the [`ListTimeSeries`
          * request](https://cloud.google.com/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list).
@@ -4902,7 +4978,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
          * well as how to combine the retrieved time series together (such as
          * when aggregating multiple streams on each resource to a single
          * stream for each resource or when aggregating streams across all
-         * members of a group of resrouces). Multiple aggregations
+         * members of a group of resources). Multiple aggregations
          * are applied in the order specified.
          * This field is similar to the one in the [`ListTimeSeries`
          * request](https://cloud.google.com/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list).
@@ -4928,7 +5004,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
          * well as how to combine the retrieved time series together (such as
          * when aggregating multiple streams on each resource to a single
          * stream for each resource or when aggregating streams across all
-         * members of a group of resrouces). Multiple aggregations
+         * members of a group of resources). Multiple aggregations
          * are applied in the order specified.
          * This field is similar to the one in the [`ListTimeSeries`
          * request](https://cloud.google.com/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list).
@@ -4950,7 +5026,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
          * well as how to combine the retrieved time series together (such as
          * when aggregating multiple streams on each resource to a single
          * stream for each resource or when aggregating streams across all
-         * members of a group of resrouces). Multiple aggregations
+         * members of a group of resources). Multiple aggregations
          * are applied in the order specified.
          * This field is similar to the one in the [`ListTimeSeries`
          * request](https://cloud.google.com/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list).
@@ -4972,7 +5048,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
          * well as how to combine the retrieved time series together (such as
          * when aggregating multiple streams on each resource to a single
          * stream for each resource or when aggregating streams across all
-         * members of a group of resrouces). Multiple aggregations
+         * members of a group of resources). Multiple aggregations
          * are applied in the order specified.
          * This field is similar to the one in the [`ListTimeSeries`
          * request](https://cloud.google.com/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list).
@@ -6424,7 +6500,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
        * well as how to combine the retrieved time series together (such as
        * when aggregating multiple streams on each resource to a single
        * stream for each resource or when aggregating streams across all
-       * members of a group of resrouces). Multiple aggregations
+       * members of a group of resources). Multiple aggregations
        * are applied in the order specified.
        * This field is similar to the one in the [`ListTimeSeries`
        * request](https://cloud.google.com/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list).
@@ -6443,7 +6519,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
        * well as how to combine the retrieved time series together (such as
        * when aggregating multiple streams on each resource to a single
        * stream for each resource or when aggregating streams across all
-       * members of a group of resrouces). Multiple aggregations
+       * members of a group of resources). Multiple aggregations
        * are applied in the order specified.
        * This field is similar to the one in the [`ListTimeSeries`
        * request](https://cloud.google.com/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list).
@@ -6462,7 +6538,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
        * well as how to combine the retrieved time series together (such as
        * when aggregating multiple streams on each resource to a single
        * stream for each resource or when aggregating streams across all
-       * members of a group of resrouces). Multiple aggregations
+       * members of a group of resources). Multiple aggregations
        * are applied in the order specified.
        * This field is similar to the one in the [`ListTimeSeries`
        * request](https://cloud.google.com/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list).
@@ -6481,7 +6557,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
        * well as how to combine the retrieved time series together (such as
        * when aggregating multiple streams on each resource to a single
        * stream for each resource or when aggregating streams across all
-       * members of a group of resrouces). Multiple aggregations
+       * members of a group of resources). Multiple aggregations
        * are applied in the order specified.
        * This field is similar to the one in the [`ListTimeSeries`
        * request](https://cloud.google.com/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list).
@@ -6501,7 +6577,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
        * well as how to combine the retrieved time series together (such as
        * when aggregating multiple streams on each resource to a single
        * stream for each resource or when aggregating streams across all
-       * members of a group of resrouces). Multiple aggregations
+       * members of a group of resources). Multiple aggregations
        * are applied in the order specified.
        * This field is similar to the one in the [`ListTimeSeries`
        * request](https://cloud.google.com/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list).
@@ -6831,7 +6907,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
        * well as how to combine the retrieved time series together (such as
        * when aggregating multiple streams on each resource to a single
        * stream for each resource or when aggregating streams across all
-       * members of a group of resrouces). Multiple aggregations
+       * members of a group of resources). Multiple aggregations
        * are applied in the order specified.
        * This field is similar to the one in the [`ListTimeSeries`
        * request](https://cloud.google.com/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list).
@@ -6853,7 +6929,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
        * well as how to combine the retrieved time series together (such as
        * when aggregating multiple streams on each resource to a single
        * stream for each resource or when aggregating streams across all
-       * members of a group of resrouces). Multiple aggregations
+       * members of a group of resources). Multiple aggregations
        * are applied in the order specified.
        * This field is similar to the one in the [`ListTimeSeries`
        * request](https://cloud.google.com/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list).
@@ -6876,7 +6952,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
        * well as how to combine the retrieved time series together (such as
        * when aggregating multiple streams on each resource to a single
        * stream for each resource or when aggregating streams across all
-       * members of a group of resrouces). Multiple aggregations
+       * members of a group of resources). Multiple aggregations
        * are applied in the order specified.
        * This field is similar to the one in the [`ListTimeSeries`
        * request](https://cloud.google.com/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list).
@@ -6898,7 +6974,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
        * well as how to combine the retrieved time series together (such as
        * when aggregating multiple streams on each resource to a single
        * stream for each resource or when aggregating streams across all
-       * members of a group of resrouces). Multiple aggregations
+       * members of a group of resources). Multiple aggregations
        * are applied in the order specified.
        * This field is similar to the one in the [`ListTimeSeries`
        * request](https://cloud.google.com/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list).
@@ -6920,7 +6996,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
        * well as how to combine the retrieved time series together (such as
        * when aggregating multiple streams on each resource to a single
        * stream for each resource or when aggregating streams across all
-       * members of a group of resrouces). Multiple aggregations
+       * members of a group of resources). Multiple aggregations
        * are applied in the order specified.
        * This field is similar to the one in the [`ListTimeSeries`
        * request](https://cloud.google.com/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list).
@@ -7070,7 +7146,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
 
       @java.lang.Override
       public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-        if (!getFilterBytes().isEmpty()) {
+        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(filter_)) {
           com.google.protobuf.GeneratedMessageV3.writeString(output, 1, filter_);
         }
         if (duration_ != null) {
@@ -7091,7 +7167,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
         if (size != -1) return size;
 
         size = 0;
-        if (!getFilterBytes().isEmpty()) {
+        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(filter_)) {
           size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, filter_);
         }
         if (duration_ != null) {
@@ -7672,7 +7748,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
          * well as how to combine the retrieved time series together (such as
          * when aggregating multiple streams on each resource to a single
          * stream for each resource or when aggregating streams across all
-         * members of a group of resrouces). Multiple aggregations
+         * members of a group of resources). Multiple aggregations
          * are applied in the order specified.
          * This field is similar to the one in the [`ListTimeSeries`
          * request](https://cloud.google.com/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list).
@@ -7697,7 +7773,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
          * well as how to combine the retrieved time series together (such as
          * when aggregating multiple streams on each resource to a single
          * stream for each resource or when aggregating streams across all
-         * members of a group of resrouces). Multiple aggregations
+         * members of a group of resources). Multiple aggregations
          * are applied in the order specified.
          * This field is similar to the one in the [`ListTimeSeries`
          * request](https://cloud.google.com/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list).
@@ -7722,7 +7798,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
          * well as how to combine the retrieved time series together (such as
          * when aggregating multiple streams on each resource to a single
          * stream for each resource or when aggregating streams across all
-         * members of a group of resrouces). Multiple aggregations
+         * members of a group of resources). Multiple aggregations
          * are applied in the order specified.
          * This field is similar to the one in the [`ListTimeSeries`
          * request](https://cloud.google.com/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list).
@@ -7747,7 +7823,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
          * well as how to combine the retrieved time series together (such as
          * when aggregating multiple streams on each resource to a single
          * stream for each resource or when aggregating streams across all
-         * members of a group of resrouces). Multiple aggregations
+         * members of a group of resources). Multiple aggregations
          * are applied in the order specified.
          * This field is similar to the one in the [`ListTimeSeries`
          * request](https://cloud.google.com/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list).
@@ -7778,7 +7854,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
          * well as how to combine the retrieved time series together (such as
          * when aggregating multiple streams on each resource to a single
          * stream for each resource or when aggregating streams across all
-         * members of a group of resrouces). Multiple aggregations
+         * members of a group of resources). Multiple aggregations
          * are applied in the order specified.
          * This field is similar to the one in the [`ListTimeSeries`
          * request](https://cloud.google.com/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list).
@@ -7807,7 +7883,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
          * well as how to combine the retrieved time series together (such as
          * when aggregating multiple streams on each resource to a single
          * stream for each resource or when aggregating streams across all
-         * members of a group of resrouces). Multiple aggregations
+         * members of a group of resources). Multiple aggregations
          * are applied in the order specified.
          * This field is similar to the one in the [`ListTimeSeries`
          * request](https://cloud.google.com/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list).
@@ -7838,7 +7914,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
          * well as how to combine the retrieved time series together (such as
          * when aggregating multiple streams on each resource to a single
          * stream for each resource or when aggregating streams across all
-         * members of a group of resrouces). Multiple aggregations
+         * members of a group of resources). Multiple aggregations
          * are applied in the order specified.
          * This field is similar to the one in the [`ListTimeSeries`
          * request](https://cloud.google.com/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list).
@@ -7869,7 +7945,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
          * well as how to combine the retrieved time series together (such as
          * when aggregating multiple streams on each resource to a single
          * stream for each resource or when aggregating streams across all
-         * members of a group of resrouces). Multiple aggregations
+         * members of a group of resources). Multiple aggregations
          * are applied in the order specified.
          * This field is similar to the one in the [`ListTimeSeries`
          * request](https://cloud.google.com/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list).
@@ -7898,7 +7974,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
          * well as how to combine the retrieved time series together (such as
          * when aggregating multiple streams on each resource to a single
          * stream for each resource or when aggregating streams across all
-         * members of a group of resrouces). Multiple aggregations
+         * members of a group of resources). Multiple aggregations
          * are applied in the order specified.
          * This field is similar to the one in the [`ListTimeSeries`
          * request](https://cloud.google.com/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list).
@@ -7927,7 +8003,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
          * well as how to combine the retrieved time series together (such as
          * when aggregating multiple streams on each resource to a single
          * stream for each resource or when aggregating streams across all
-         * members of a group of resrouces). Multiple aggregations
+         * members of a group of resources). Multiple aggregations
          * are applied in the order specified.
          * This field is similar to the one in the [`ListTimeSeries`
          * request](https://cloud.google.com/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list).
@@ -7956,7 +8032,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
          * well as how to combine the retrieved time series together (such as
          * when aggregating multiple streams on each resource to a single
          * stream for each resource or when aggregating streams across all
-         * members of a group of resrouces). Multiple aggregations
+         * members of a group of resources). Multiple aggregations
          * are applied in the order specified.
          * This field is similar to the one in the [`ListTimeSeries`
          * request](https://cloud.google.com/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list).
@@ -7984,7 +8060,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
          * well as how to combine the retrieved time series together (such as
          * when aggregating multiple streams on each resource to a single
          * stream for each resource or when aggregating streams across all
-         * members of a group of resrouces). Multiple aggregations
+         * members of a group of resources). Multiple aggregations
          * are applied in the order specified.
          * This field is similar to the one in the [`ListTimeSeries`
          * request](https://cloud.google.com/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list).
@@ -8012,7 +8088,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
          * well as how to combine the retrieved time series together (such as
          * when aggregating multiple streams on each resource to a single
          * stream for each resource or when aggregating streams across all
-         * members of a group of resrouces). Multiple aggregations
+         * members of a group of resources). Multiple aggregations
          * are applied in the order specified.
          * This field is similar to the one in the [`ListTimeSeries`
          * request](https://cloud.google.com/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list).
@@ -8033,7 +8109,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
          * well as how to combine the retrieved time series together (such as
          * when aggregating multiple streams on each resource to a single
          * stream for each resource or when aggregating streams across all
-         * members of a group of resrouces). Multiple aggregations
+         * members of a group of resources). Multiple aggregations
          * are applied in the order specified.
          * This field is similar to the one in the [`ListTimeSeries`
          * request](https://cloud.google.com/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list).
@@ -8058,7 +8134,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
          * well as how to combine the retrieved time series together (such as
          * when aggregating multiple streams on each resource to a single
          * stream for each resource or when aggregating streams across all
-         * members of a group of resrouces). Multiple aggregations
+         * members of a group of resources). Multiple aggregations
          * are applied in the order specified.
          * This field is similar to the one in the [`ListTimeSeries`
          * request](https://cloud.google.com/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list).
@@ -8084,7 +8160,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
          * well as how to combine the retrieved time series together (such as
          * when aggregating multiple streams on each resource to a single
          * stream for each resource or when aggregating streams across all
-         * members of a group of resrouces). Multiple aggregations
+         * members of a group of resources). Multiple aggregations
          * are applied in the order specified.
          * This field is similar to the one in the [`ListTimeSeries`
          * request](https://cloud.google.com/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list).
@@ -8106,7 +8182,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
          * well as how to combine the retrieved time series together (such as
          * when aggregating multiple streams on each resource to a single
          * stream for each resource or when aggregating streams across all
-         * members of a group of resrouces). Multiple aggregations
+         * members of a group of resources). Multiple aggregations
          * are applied in the order specified.
          * This field is similar to the one in the [`ListTimeSeries`
          * request](https://cloud.google.com/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list).
@@ -8128,7 +8204,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
          * well as how to combine the retrieved time series together (such as
          * when aggregating multiple streams on each resource to a single
          * stream for each resource or when aggregating streams across all
-         * members of a group of resrouces). Multiple aggregations
+         * members of a group of resources). Multiple aggregations
          * are applied in the order specified.
          * This field is similar to the one in the [`ListTimeSeries`
          * request](https://cloud.google.com/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list).
@@ -8671,6 +8747,1227 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
       }
     }
 
+    public interface LogMatchOrBuilder
+        extends
+        // @@protoc_insertion_point(interface_extends:google.monitoring.v3.AlertPolicy.Condition.LogMatch)
+        com.google.protobuf.MessageOrBuilder {
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. A logs-based filter. See [Advanced Logs
+       * Queries](https://cloud.google.com/logging/docs/view/advanced-queries)
+       * for how this filter should be constructed.
+       * </pre>
+       *
+       * <code>string filter = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return The filter.
+       */
+      java.lang.String getFilter();
+      /**
+       *
+       *
+       * <pre>
+       * Required. A logs-based filter. See [Advanced Logs
+       * Queries](https://cloud.google.com/logging/docs/view/advanced-queries)
+       * for how this filter should be constructed.
+       * </pre>
+       *
+       * <code>string filter = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return The bytes for filter.
+       */
+      com.google.protobuf.ByteString getFilterBytes();
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. A map from a label key to an extractor expression, which is
+       * used to extract the value for this label key. Each entry in this map is
+       * a specification for how data should be extracted from log entries that
+       * match `filter`. Each combination of extracted values is treated as a
+       * separate rule for the purposes of triggering notifications. Label keys
+       * and corresponding values can be used in notifications generated by this
+       * condition.
+       * Please see [the documentation on logs-based metric
+       * `valueExtractor`s](https://cloud.google.com/logging/docs/reference/v2/rest/v2/projects.metrics#LogMetric.FIELDS.value_extractor)
+       * for syntax and examples.
+       * </pre>
+       *
+       * <code>map&lt;string, string&gt; label_extractors = 2;</code>
+       */
+      int getLabelExtractorsCount();
+      /**
+       *
+       *
+       * <pre>
+       * Optional. A map from a label key to an extractor expression, which is
+       * used to extract the value for this label key. Each entry in this map is
+       * a specification for how data should be extracted from log entries that
+       * match `filter`. Each combination of extracted values is treated as a
+       * separate rule for the purposes of triggering notifications. Label keys
+       * and corresponding values can be used in notifications generated by this
+       * condition.
+       * Please see [the documentation on logs-based metric
+       * `valueExtractor`s](https://cloud.google.com/logging/docs/reference/v2/rest/v2/projects.metrics#LogMetric.FIELDS.value_extractor)
+       * for syntax and examples.
+       * </pre>
+       *
+       * <code>map&lt;string, string&gt; label_extractors = 2;</code>
+       */
+      boolean containsLabelExtractors(java.lang.String key);
+      /** Use {@link #getLabelExtractorsMap()} instead. */
+      @java.lang.Deprecated
+      java.util.Map<java.lang.String, java.lang.String> getLabelExtractors();
+      /**
+       *
+       *
+       * <pre>
+       * Optional. A map from a label key to an extractor expression, which is
+       * used to extract the value for this label key. Each entry in this map is
+       * a specification for how data should be extracted from log entries that
+       * match `filter`. Each combination of extracted values is treated as a
+       * separate rule for the purposes of triggering notifications. Label keys
+       * and corresponding values can be used in notifications generated by this
+       * condition.
+       * Please see [the documentation on logs-based metric
+       * `valueExtractor`s](https://cloud.google.com/logging/docs/reference/v2/rest/v2/projects.metrics#LogMetric.FIELDS.value_extractor)
+       * for syntax and examples.
+       * </pre>
+       *
+       * <code>map&lt;string, string&gt; label_extractors = 2;</code>
+       */
+      java.util.Map<java.lang.String, java.lang.String> getLabelExtractorsMap();
+      /**
+       *
+       *
+       * <pre>
+       * Optional. A map from a label key to an extractor expression, which is
+       * used to extract the value for this label key. Each entry in this map is
+       * a specification for how data should be extracted from log entries that
+       * match `filter`. Each combination of extracted values is treated as a
+       * separate rule for the purposes of triggering notifications. Label keys
+       * and corresponding values can be used in notifications generated by this
+       * condition.
+       * Please see [the documentation on logs-based metric
+       * `valueExtractor`s](https://cloud.google.com/logging/docs/reference/v2/rest/v2/projects.metrics#LogMetric.FIELDS.value_extractor)
+       * for syntax and examples.
+       * </pre>
+       *
+       * <code>map&lt;string, string&gt; label_extractors = 2;</code>
+       */
+      java.lang.String getLabelExtractorsOrDefault(
+          java.lang.String key, java.lang.String defaultValue);
+      /**
+       *
+       *
+       * <pre>
+       * Optional. A map from a label key to an extractor expression, which is
+       * used to extract the value for this label key. Each entry in this map is
+       * a specification for how data should be extracted from log entries that
+       * match `filter`. Each combination of extracted values is treated as a
+       * separate rule for the purposes of triggering notifications. Label keys
+       * and corresponding values can be used in notifications generated by this
+       * condition.
+       * Please see [the documentation on logs-based metric
+       * `valueExtractor`s](https://cloud.google.com/logging/docs/reference/v2/rest/v2/projects.metrics#LogMetric.FIELDS.value_extractor)
+       * for syntax and examples.
+       * </pre>
+       *
+       * <code>map&lt;string, string&gt; label_extractors = 2;</code>
+       */
+      java.lang.String getLabelExtractorsOrThrow(java.lang.String key);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A condition type that checks whether a log message in the [scoping
+     * project](https://cloud.google.com/monitoring/api/v3#project_name)
+     * satisfies the given filter. Logs from other projects in the metrics
+     * scope are not evaluated.
+     * </pre>
+     *
+     * Protobuf type {@code google.monitoring.v3.AlertPolicy.Condition.LogMatch}
+     */
+    public static final class LogMatch extends com.google.protobuf.GeneratedMessageV3
+        implements
+        // @@protoc_insertion_point(message_implements:google.monitoring.v3.AlertPolicy.Condition.LogMatch)
+        LogMatchOrBuilder {
+      private static final long serialVersionUID = 0L;
+      // Use LogMatch.newBuilder() to construct.
+      private LogMatch(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+        super(builder);
+      }
+
+      private LogMatch() {
+        filter_ = "";
+      }
+
+      @java.lang.Override
+      @SuppressWarnings({"unused"})
+      protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+        return new LogMatch();
+      }
+
+      @java.lang.Override
+      public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+        return this.unknownFields;
+      }
+
+      private LogMatch(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        this();
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        int mutable_bitField0_ = 0;
+        com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+            com.google.protobuf.UnknownFieldSet.newBuilder();
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  java.lang.String s = input.readStringRequireUtf8();
+
+                  filter_ = s;
+                  break;
+                }
+              case 18:
+                {
+                  if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                    labelExtractors_ =
+                        com.google.protobuf.MapField.newMapField(
+                            LabelExtractorsDefaultEntryHolder.defaultEntry);
+                    mutable_bitField0_ |= 0x00000001;
+                  }
+                  com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
+                      labelExtractors__ =
+                          input.readMessage(
+                              LabelExtractorsDefaultEntryHolder.defaultEntry.getParserForType(),
+                              extensionRegistry);
+                  labelExtractors_
+                      .getMutableMap()
+                      .put(labelExtractors__.getKey(), labelExtractors__.getValue());
+                  break;
+                }
+              default:
+                {
+                  if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
+                    done = true;
+                  }
+                  break;
+                }
+            }
+          }
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(this);
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(this);
+        } finally {
+          this.unknownFields = unknownFields.build();
+          makeExtensionsImmutable();
+        }
+      }
+
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.monitoring.v3.AlertProto
+            .internal_static_google_monitoring_v3_AlertPolicy_Condition_LogMatch_descriptor;
+      }
+
+      @SuppressWarnings({"rawtypes"})
+      @java.lang.Override
+      protected com.google.protobuf.MapField internalGetMapField(int number) {
+        switch (number) {
+          case 2:
+            return internalGetLabelExtractors();
+          default:
+            throw new RuntimeException("Invalid map field number: " + number);
+        }
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.monitoring.v3.AlertProto
+            .internal_static_google_monitoring_v3_AlertPolicy_Condition_LogMatch_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.monitoring.v3.AlertPolicy.Condition.LogMatch.class,
+                com.google.monitoring.v3.AlertPolicy.Condition.LogMatch.Builder.class);
+      }
+
+      public static final int FILTER_FIELD_NUMBER = 1;
+      private volatile java.lang.Object filter_;
+      /**
+       *
+       *
+       * <pre>
+       * Required. A logs-based filter. See [Advanced Logs
+       * Queries](https://cloud.google.com/logging/docs/view/advanced-queries)
+       * for how this filter should be constructed.
+       * </pre>
+       *
+       * <code>string filter = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return The filter.
+       */
+      @java.lang.Override
+      public java.lang.String getFilter() {
+        java.lang.Object ref = filter_;
+        if (ref instanceof java.lang.String) {
+          return (java.lang.String) ref;
+        } else {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          filter_ = s;
+          return s;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. A logs-based filter. See [Advanced Logs
+       * Queries](https://cloud.google.com/logging/docs/view/advanced-queries)
+       * for how this filter should be constructed.
+       * </pre>
+       *
+       * <code>string filter = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return The bytes for filter.
+       */
+      @java.lang.Override
+      public com.google.protobuf.ByteString getFilterBytes() {
+        java.lang.Object ref = filter_;
+        if (ref instanceof java.lang.String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          filter_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      public static final int LABEL_EXTRACTORS_FIELD_NUMBER = 2;
+
+      private static final class LabelExtractorsDefaultEntryHolder {
+        static final com.google.protobuf.MapEntry<java.lang.String, java.lang.String> defaultEntry =
+            com.google.protobuf.MapEntry.<java.lang.String, java.lang.String>newDefaultInstance(
+                com.google.monitoring.v3.AlertProto
+                    .internal_static_google_monitoring_v3_AlertPolicy_Condition_LogMatch_LabelExtractorsEntry_descriptor,
+                com.google.protobuf.WireFormat.FieldType.STRING,
+                "",
+                com.google.protobuf.WireFormat.FieldType.STRING,
+                "");
+      }
+
+      private com.google.protobuf.MapField<java.lang.String, java.lang.String> labelExtractors_;
+
+      private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+          internalGetLabelExtractors() {
+        if (labelExtractors_ == null) {
+          return com.google.protobuf.MapField.emptyMapField(
+              LabelExtractorsDefaultEntryHolder.defaultEntry);
+        }
+        return labelExtractors_;
+      }
+
+      public int getLabelExtractorsCount() {
+        return internalGetLabelExtractors().getMap().size();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. A map from a label key to an extractor expression, which is
+       * used to extract the value for this label key. Each entry in this map is
+       * a specification for how data should be extracted from log entries that
+       * match `filter`. Each combination of extracted values is treated as a
+       * separate rule for the purposes of triggering notifications. Label keys
+       * and corresponding values can be used in notifications generated by this
+       * condition.
+       * Please see [the documentation on logs-based metric
+       * `valueExtractor`s](https://cloud.google.com/logging/docs/reference/v2/rest/v2/projects.metrics#LogMetric.FIELDS.value_extractor)
+       * for syntax and examples.
+       * </pre>
+       *
+       * <code>map&lt;string, string&gt; label_extractors = 2;</code>
+       */
+      @java.lang.Override
+      public boolean containsLabelExtractors(java.lang.String key) {
+        if (key == null) {
+          throw new java.lang.NullPointerException();
+        }
+        return internalGetLabelExtractors().getMap().containsKey(key);
+      }
+      /** Use {@link #getLabelExtractorsMap()} instead. */
+      @java.lang.Override
+      @java.lang.Deprecated
+      public java.util.Map<java.lang.String, java.lang.String> getLabelExtractors() {
+        return getLabelExtractorsMap();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. A map from a label key to an extractor expression, which is
+       * used to extract the value for this label key. Each entry in this map is
+       * a specification for how data should be extracted from log entries that
+       * match `filter`. Each combination of extracted values is treated as a
+       * separate rule for the purposes of triggering notifications. Label keys
+       * and corresponding values can be used in notifications generated by this
+       * condition.
+       * Please see [the documentation on logs-based metric
+       * `valueExtractor`s](https://cloud.google.com/logging/docs/reference/v2/rest/v2/projects.metrics#LogMetric.FIELDS.value_extractor)
+       * for syntax and examples.
+       * </pre>
+       *
+       * <code>map&lt;string, string&gt; label_extractors = 2;</code>
+       */
+      @java.lang.Override
+      public java.util.Map<java.lang.String, java.lang.String> getLabelExtractorsMap() {
+        return internalGetLabelExtractors().getMap();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. A map from a label key to an extractor expression, which is
+       * used to extract the value for this label key. Each entry in this map is
+       * a specification for how data should be extracted from log entries that
+       * match `filter`. Each combination of extracted values is treated as a
+       * separate rule for the purposes of triggering notifications. Label keys
+       * and corresponding values can be used in notifications generated by this
+       * condition.
+       * Please see [the documentation on logs-based metric
+       * `valueExtractor`s](https://cloud.google.com/logging/docs/reference/v2/rest/v2/projects.metrics#LogMetric.FIELDS.value_extractor)
+       * for syntax and examples.
+       * </pre>
+       *
+       * <code>map&lt;string, string&gt; label_extractors = 2;</code>
+       */
+      @java.lang.Override
+      public java.lang.String getLabelExtractorsOrDefault(
+          java.lang.String key, java.lang.String defaultValue) {
+        if (key == null) {
+          throw new java.lang.NullPointerException();
+        }
+        java.util.Map<java.lang.String, java.lang.String> map =
+            internalGetLabelExtractors().getMap();
+        return map.containsKey(key) ? map.get(key) : defaultValue;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. A map from a label key to an extractor expression, which is
+       * used to extract the value for this label key. Each entry in this map is
+       * a specification for how data should be extracted from log entries that
+       * match `filter`. Each combination of extracted values is treated as a
+       * separate rule for the purposes of triggering notifications. Label keys
+       * and corresponding values can be used in notifications generated by this
+       * condition.
+       * Please see [the documentation on logs-based metric
+       * `valueExtractor`s](https://cloud.google.com/logging/docs/reference/v2/rest/v2/projects.metrics#LogMetric.FIELDS.value_extractor)
+       * for syntax and examples.
+       * </pre>
+       *
+       * <code>map&lt;string, string&gt; label_extractors = 2;</code>
+       */
+      @java.lang.Override
+      public java.lang.String getLabelExtractorsOrThrow(java.lang.String key) {
+        if (key == null) {
+          throw new java.lang.NullPointerException();
+        }
+        java.util.Map<java.lang.String, java.lang.String> map =
+            internalGetLabelExtractors().getMap();
+        if (!map.containsKey(key)) {
+          throw new java.lang.IllegalArgumentException();
+        }
+        return map.get(key);
+      }
+
+      private byte memoizedIsInitialized = -1;
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        byte isInitialized = memoizedIsInitialized;
+        if (isInitialized == 1) return true;
+        if (isInitialized == 0) return false;
+
+        memoizedIsInitialized = 1;
+        return true;
+      }
+
+      @java.lang.Override
+      public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(filter_)) {
+          com.google.protobuf.GeneratedMessageV3.writeString(output, 1, filter_);
+        }
+        com.google.protobuf.GeneratedMessageV3.serializeStringMapTo(
+            output,
+            internalGetLabelExtractors(),
+            LabelExtractorsDefaultEntryHolder.defaultEntry,
+            2);
+        unknownFields.writeTo(output);
+      }
+
+      @java.lang.Override
+      public int getSerializedSize() {
+        int size = memoizedSize;
+        if (size != -1) return size;
+
+        size = 0;
+        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(filter_)) {
+          size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, filter_);
+        }
+        for (java.util.Map.Entry<java.lang.String, java.lang.String> entry :
+            internalGetLabelExtractors().getMap().entrySet()) {
+          com.google.protobuf.MapEntry<java.lang.String, java.lang.String> labelExtractors__ =
+              LabelExtractorsDefaultEntryHolder.defaultEntry
+                  .newBuilderForType()
+                  .setKey(entry.getKey())
+                  .setValue(entry.getValue())
+                  .build();
+          size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, labelExtractors__);
+        }
+        size += unknownFields.getSerializedSize();
+        memoizedSize = size;
+        return size;
+      }
+
+      @java.lang.Override
+      public boolean equals(final java.lang.Object obj) {
+        if (obj == this) {
+          return true;
+        }
+        if (!(obj instanceof com.google.monitoring.v3.AlertPolicy.Condition.LogMatch)) {
+          return super.equals(obj);
+        }
+        com.google.monitoring.v3.AlertPolicy.Condition.LogMatch other =
+            (com.google.monitoring.v3.AlertPolicy.Condition.LogMatch) obj;
+
+        if (!getFilter().equals(other.getFilter())) return false;
+        if (!internalGetLabelExtractors().equals(other.internalGetLabelExtractors())) return false;
+        if (!unknownFields.equals(other.unknownFields)) return false;
+        return true;
+      }
+
+      @java.lang.Override
+      public int hashCode() {
+        if (memoizedHashCode != 0) {
+          return memoizedHashCode;
+        }
+        int hash = 41;
+        hash = (19 * hash) + getDescriptor().hashCode();
+        hash = (37 * hash) + FILTER_FIELD_NUMBER;
+        hash = (53 * hash) + getFilter().hashCode();
+        if (!internalGetLabelExtractors().getMap().isEmpty()) {
+          hash = (37 * hash) + LABEL_EXTRACTORS_FIELD_NUMBER;
+          hash = (53 * hash) + internalGetLabelExtractors().hashCode();
+        }
+        hash = (29 * hash) + unknownFields.hashCode();
+        memoizedHashCode = hash;
+        return hash;
+      }
+
+      public static com.google.monitoring.v3.AlertPolicy.Condition.LogMatch parseFrom(
+          java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.monitoring.v3.AlertPolicy.Condition.LogMatch parseFrom(
+          java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.monitoring.v3.AlertPolicy.Condition.LogMatch parseFrom(
+          com.google.protobuf.ByteString data)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.monitoring.v3.AlertPolicy.Condition.LogMatch parseFrom(
+          com.google.protobuf.ByteString data,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.monitoring.v3.AlertPolicy.Condition.LogMatch parseFrom(byte[] data)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.monitoring.v3.AlertPolicy.Condition.LogMatch parseFrom(
+          byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.monitoring.v3.AlertPolicy.Condition.LogMatch parseFrom(
+          java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.monitoring.v3.AlertPolicy.Condition.LogMatch parseFrom(
+          java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.monitoring.v3.AlertPolicy.Condition.LogMatch parseDelimitedFrom(
+          java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+      }
+
+      public static com.google.monitoring.v3.AlertPolicy.Condition.LogMatch parseDelimitedFrom(
+          java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.monitoring.v3.AlertPolicy.Condition.LogMatch parseFrom(
+          com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.monitoring.v3.AlertPolicy.Condition.LogMatch parseFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      @java.lang.Override
+      public Builder newBuilderForType() {
+        return newBuilder();
+      }
+
+      public static Builder newBuilder() {
+        return DEFAULT_INSTANCE.toBuilder();
+      }
+
+      public static Builder newBuilder(
+          com.google.monitoring.v3.AlertPolicy.Condition.LogMatch prototype) {
+        return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+      }
+
+      @java.lang.Override
+      public Builder toBuilder() {
+        return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+      }
+
+      @java.lang.Override
+      protected Builder newBuilderForType(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        Builder builder = new Builder(parent);
+        return builder;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A condition type that checks whether a log message in the [scoping
+       * project](https://cloud.google.com/monitoring/api/v3#project_name)
+       * satisfies the given filter. Logs from other projects in the metrics
+       * scope are not evaluated.
+       * </pre>
+       *
+       * Protobuf type {@code google.monitoring.v3.AlertPolicy.Condition.LogMatch}
+       */
+      public static final class Builder
+          extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+          implements
+          // @@protoc_insertion_point(builder_implements:google.monitoring.v3.AlertPolicy.Condition.LogMatch)
+          com.google.monitoring.v3.AlertPolicy.Condition.LogMatchOrBuilder {
+        public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+          return com.google.monitoring.v3.AlertProto
+              .internal_static_google_monitoring_v3_AlertPolicy_Condition_LogMatch_descriptor;
+        }
+
+        @SuppressWarnings({"rawtypes"})
+        protected com.google.protobuf.MapField internalGetMapField(int number) {
+          switch (number) {
+            case 2:
+              return internalGetLabelExtractors();
+            default:
+              throw new RuntimeException("Invalid map field number: " + number);
+          }
+        }
+
+        @SuppressWarnings({"rawtypes"})
+        protected com.google.protobuf.MapField internalGetMutableMapField(int number) {
+          switch (number) {
+            case 2:
+              return internalGetMutableLabelExtractors();
+            default:
+              throw new RuntimeException("Invalid map field number: " + number);
+          }
+        }
+
+        @java.lang.Override
+        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+          return com.google.monitoring.v3.AlertProto
+              .internal_static_google_monitoring_v3_AlertPolicy_Condition_LogMatch_fieldAccessorTable
+              .ensureFieldAccessorsInitialized(
+                  com.google.monitoring.v3.AlertPolicy.Condition.LogMatch.class,
+                  com.google.monitoring.v3.AlertPolicy.Condition.LogMatch.Builder.class);
+        }
+
+        // Construct using com.google.monitoring.v3.AlertPolicy.Condition.LogMatch.newBuilder()
+        private Builder() {
+          maybeForceBuilderInitialization();
+        }
+
+        private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+          super(parent);
+          maybeForceBuilderInitialization();
+        }
+
+        private void maybeForceBuilderInitialization() {
+          if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
+        }
+
+        @java.lang.Override
+        public Builder clear() {
+          super.clear();
+          filter_ = "";
+
+          internalGetMutableLabelExtractors().clear();
+          return this;
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+          return com.google.monitoring.v3.AlertProto
+              .internal_static_google_monitoring_v3_AlertPolicy_Condition_LogMatch_descriptor;
+        }
+
+        @java.lang.Override
+        public com.google.monitoring.v3.AlertPolicy.Condition.LogMatch getDefaultInstanceForType() {
+          return com.google.monitoring.v3.AlertPolicy.Condition.LogMatch.getDefaultInstance();
+        }
+
+        @java.lang.Override
+        public com.google.monitoring.v3.AlertPolicy.Condition.LogMatch build() {
+          com.google.monitoring.v3.AlertPolicy.Condition.LogMatch result = buildPartial();
+          if (!result.isInitialized()) {
+            throw newUninitializedMessageException(result);
+          }
+          return result;
+        }
+
+        @java.lang.Override
+        public com.google.monitoring.v3.AlertPolicy.Condition.LogMatch buildPartial() {
+          com.google.monitoring.v3.AlertPolicy.Condition.LogMatch result =
+              new com.google.monitoring.v3.AlertPolicy.Condition.LogMatch(this);
+          int from_bitField0_ = bitField0_;
+          result.filter_ = filter_;
+          result.labelExtractors_ = internalGetLabelExtractors();
+          result.labelExtractors_.makeImmutable();
+          onBuilt();
+          return result;
+        }
+
+        @java.lang.Override
+        public Builder clone() {
+          return super.clone();
+        }
+
+        @java.lang.Override
+        public Builder setField(
+            com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+          return super.setField(field, value);
+        }
+
+        @java.lang.Override
+        public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+          return super.clearField(field);
+        }
+
+        @java.lang.Override
+        public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+          return super.clearOneof(oneof);
+        }
+
+        @java.lang.Override
+        public Builder setRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            int index,
+            java.lang.Object value) {
+          return super.setRepeatedField(field, index, value);
+        }
+
+        @java.lang.Override
+        public Builder addRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+          return super.addRepeatedField(field, value);
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(com.google.protobuf.Message other) {
+          if (other instanceof com.google.monitoring.v3.AlertPolicy.Condition.LogMatch) {
+            return mergeFrom((com.google.monitoring.v3.AlertPolicy.Condition.LogMatch) other);
+          } else {
+            super.mergeFrom(other);
+            return this;
+          }
+        }
+
+        public Builder mergeFrom(com.google.monitoring.v3.AlertPolicy.Condition.LogMatch other) {
+          if (other == com.google.monitoring.v3.AlertPolicy.Condition.LogMatch.getDefaultInstance())
+            return this;
+          if (!other.getFilter().isEmpty()) {
+            filter_ = other.filter_;
+            onChanged();
+          }
+          internalGetMutableLabelExtractors().mergeFrom(other.internalGetLabelExtractors());
+          this.mergeUnknownFields(other.unknownFields);
+          onChanged();
+          return this;
+        }
+
+        @java.lang.Override
+        public final boolean isInitialized() {
+          return true;
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+          com.google.monitoring.v3.AlertPolicy.Condition.LogMatch parsedMessage = null;
+          try {
+            parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            parsedMessage =
+                (com.google.monitoring.v3.AlertPolicy.Condition.LogMatch) e.getUnfinishedMessage();
+            throw e.unwrapIOException();
+          } finally {
+            if (parsedMessage != null) {
+              mergeFrom(parsedMessage);
+            }
+          }
+          return this;
+        }
+
+        private int bitField0_;
+
+        private java.lang.Object filter_ = "";
+        /**
+         *
+         *
+         * <pre>
+         * Required. A logs-based filter. See [Advanced Logs
+         * Queries](https://cloud.google.com/logging/docs/view/advanced-queries)
+         * for how this filter should be constructed.
+         * </pre>
+         *
+         * <code>string filter = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+         *
+         * @return The filter.
+         */
+        public java.lang.String getFilter() {
+          java.lang.Object ref = filter_;
+          if (!(ref instanceof java.lang.String)) {
+            com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+            java.lang.String s = bs.toStringUtf8();
+            filter_ = s;
+            return s;
+          } else {
+            return (java.lang.String) ref;
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Required. A logs-based filter. See [Advanced Logs
+         * Queries](https://cloud.google.com/logging/docs/view/advanced-queries)
+         * for how this filter should be constructed.
+         * </pre>
+         *
+         * <code>string filter = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+         *
+         * @return The bytes for filter.
+         */
+        public com.google.protobuf.ByteString getFilterBytes() {
+          java.lang.Object ref = filter_;
+          if (ref instanceof String) {
+            com.google.protobuf.ByteString b =
+                com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+            filter_ = b;
+            return b;
+          } else {
+            return (com.google.protobuf.ByteString) ref;
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Required. A logs-based filter. See [Advanced Logs
+         * Queries](https://cloud.google.com/logging/docs/view/advanced-queries)
+         * for how this filter should be constructed.
+         * </pre>
+         *
+         * <code>string filter = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+         *
+         * @param value The filter to set.
+         * @return This builder for chaining.
+         */
+        public Builder setFilter(java.lang.String value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+
+          filter_ = value;
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Required. A logs-based filter. See [Advanced Logs
+         * Queries](https://cloud.google.com/logging/docs/view/advanced-queries)
+         * for how this filter should be constructed.
+         * </pre>
+         *
+         * <code>string filter = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearFilter() {
+
+          filter_ = getDefaultInstance().getFilter();
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Required. A logs-based filter. See [Advanced Logs
+         * Queries](https://cloud.google.com/logging/docs/view/advanced-queries)
+         * for how this filter should be constructed.
+         * </pre>
+         *
+         * <code>string filter = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+         *
+         * @param value The bytes for filter to set.
+         * @return This builder for chaining.
+         */
+        public Builder setFilterBytes(com.google.protobuf.ByteString value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          checkByteStringIsUtf8(value);
+
+          filter_ = value;
+          onChanged();
+          return this;
+        }
+
+        private com.google.protobuf.MapField<java.lang.String, java.lang.String> labelExtractors_;
+
+        private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+            internalGetLabelExtractors() {
+          if (labelExtractors_ == null) {
+            return com.google.protobuf.MapField.emptyMapField(
+                LabelExtractorsDefaultEntryHolder.defaultEntry);
+          }
+          return labelExtractors_;
+        }
+
+        private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+            internalGetMutableLabelExtractors() {
+          onChanged();
+          ;
+          if (labelExtractors_ == null) {
+            labelExtractors_ =
+                com.google.protobuf.MapField.newMapField(
+                    LabelExtractorsDefaultEntryHolder.defaultEntry);
+          }
+          if (!labelExtractors_.isMutable()) {
+            labelExtractors_ = labelExtractors_.copy();
+          }
+          return labelExtractors_;
+        }
+
+        public int getLabelExtractorsCount() {
+          return internalGetLabelExtractors().getMap().size();
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Optional. A map from a label key to an extractor expression, which is
+         * used to extract the value for this label key. Each entry in this map is
+         * a specification for how data should be extracted from log entries that
+         * match `filter`. Each combination of extracted values is treated as a
+         * separate rule for the purposes of triggering notifications. Label keys
+         * and corresponding values can be used in notifications generated by this
+         * condition.
+         * Please see [the documentation on logs-based metric
+         * `valueExtractor`s](https://cloud.google.com/logging/docs/reference/v2/rest/v2/projects.metrics#LogMetric.FIELDS.value_extractor)
+         * for syntax and examples.
+         * </pre>
+         *
+         * <code>map&lt;string, string&gt; label_extractors = 2;</code>
+         */
+        @java.lang.Override
+        public boolean containsLabelExtractors(java.lang.String key) {
+          if (key == null) {
+            throw new java.lang.NullPointerException();
+          }
+          return internalGetLabelExtractors().getMap().containsKey(key);
+        }
+        /** Use {@link #getLabelExtractorsMap()} instead. */
+        @java.lang.Override
+        @java.lang.Deprecated
+        public java.util.Map<java.lang.String, java.lang.String> getLabelExtractors() {
+          return getLabelExtractorsMap();
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Optional. A map from a label key to an extractor expression, which is
+         * used to extract the value for this label key. Each entry in this map is
+         * a specification for how data should be extracted from log entries that
+         * match `filter`. Each combination of extracted values is treated as a
+         * separate rule for the purposes of triggering notifications. Label keys
+         * and corresponding values can be used in notifications generated by this
+         * condition.
+         * Please see [the documentation on logs-based metric
+         * `valueExtractor`s](https://cloud.google.com/logging/docs/reference/v2/rest/v2/projects.metrics#LogMetric.FIELDS.value_extractor)
+         * for syntax and examples.
+         * </pre>
+         *
+         * <code>map&lt;string, string&gt; label_extractors = 2;</code>
+         */
+        @java.lang.Override
+        public java.util.Map<java.lang.String, java.lang.String> getLabelExtractorsMap() {
+          return internalGetLabelExtractors().getMap();
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Optional. A map from a label key to an extractor expression, which is
+         * used to extract the value for this label key. Each entry in this map is
+         * a specification for how data should be extracted from log entries that
+         * match `filter`. Each combination of extracted values is treated as a
+         * separate rule for the purposes of triggering notifications. Label keys
+         * and corresponding values can be used in notifications generated by this
+         * condition.
+         * Please see [the documentation on logs-based metric
+         * `valueExtractor`s](https://cloud.google.com/logging/docs/reference/v2/rest/v2/projects.metrics#LogMetric.FIELDS.value_extractor)
+         * for syntax and examples.
+         * </pre>
+         *
+         * <code>map&lt;string, string&gt; label_extractors = 2;</code>
+         */
+        @java.lang.Override
+        public java.lang.String getLabelExtractorsOrDefault(
+            java.lang.String key, java.lang.String defaultValue) {
+          if (key == null) {
+            throw new java.lang.NullPointerException();
+          }
+          java.util.Map<java.lang.String, java.lang.String> map =
+              internalGetLabelExtractors().getMap();
+          return map.containsKey(key) ? map.get(key) : defaultValue;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Optional. A map from a label key to an extractor expression, which is
+         * used to extract the value for this label key. Each entry in this map is
+         * a specification for how data should be extracted from log entries that
+         * match `filter`. Each combination of extracted values is treated as a
+         * separate rule for the purposes of triggering notifications. Label keys
+         * and corresponding values can be used in notifications generated by this
+         * condition.
+         * Please see [the documentation on logs-based metric
+         * `valueExtractor`s](https://cloud.google.com/logging/docs/reference/v2/rest/v2/projects.metrics#LogMetric.FIELDS.value_extractor)
+         * for syntax and examples.
+         * </pre>
+         *
+         * <code>map&lt;string, string&gt; label_extractors = 2;</code>
+         */
+        @java.lang.Override
+        public java.lang.String getLabelExtractorsOrThrow(java.lang.String key) {
+          if (key == null) {
+            throw new java.lang.NullPointerException();
+          }
+          java.util.Map<java.lang.String, java.lang.String> map =
+              internalGetLabelExtractors().getMap();
+          if (!map.containsKey(key)) {
+            throw new java.lang.IllegalArgumentException();
+          }
+          return map.get(key);
+        }
+
+        public Builder clearLabelExtractors() {
+          internalGetMutableLabelExtractors().getMutableMap().clear();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Optional. A map from a label key to an extractor expression, which is
+         * used to extract the value for this label key. Each entry in this map is
+         * a specification for how data should be extracted from log entries that
+         * match `filter`. Each combination of extracted values is treated as a
+         * separate rule for the purposes of triggering notifications. Label keys
+         * and corresponding values can be used in notifications generated by this
+         * condition.
+         * Please see [the documentation on logs-based metric
+         * `valueExtractor`s](https://cloud.google.com/logging/docs/reference/v2/rest/v2/projects.metrics#LogMetric.FIELDS.value_extractor)
+         * for syntax and examples.
+         * </pre>
+         *
+         * <code>map&lt;string, string&gt; label_extractors = 2;</code>
+         */
+        public Builder removeLabelExtractors(java.lang.String key) {
+          if (key == null) {
+            throw new java.lang.NullPointerException();
+          }
+          internalGetMutableLabelExtractors().getMutableMap().remove(key);
+          return this;
+        }
+        /** Use alternate mutation accessors instead. */
+        @java.lang.Deprecated
+        public java.util.Map<java.lang.String, java.lang.String> getMutableLabelExtractors() {
+          return internalGetMutableLabelExtractors().getMutableMap();
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Optional. A map from a label key to an extractor expression, which is
+         * used to extract the value for this label key. Each entry in this map is
+         * a specification for how data should be extracted from log entries that
+         * match `filter`. Each combination of extracted values is treated as a
+         * separate rule for the purposes of triggering notifications. Label keys
+         * and corresponding values can be used in notifications generated by this
+         * condition.
+         * Please see [the documentation on logs-based metric
+         * `valueExtractor`s](https://cloud.google.com/logging/docs/reference/v2/rest/v2/projects.metrics#LogMetric.FIELDS.value_extractor)
+         * for syntax and examples.
+         * </pre>
+         *
+         * <code>map&lt;string, string&gt; label_extractors = 2;</code>
+         */
+        public Builder putLabelExtractors(java.lang.String key, java.lang.String value) {
+          if (key == null) {
+            throw new java.lang.NullPointerException();
+          }
+          if (value == null) {
+            throw new java.lang.NullPointerException();
+          }
+          internalGetMutableLabelExtractors().getMutableMap().put(key, value);
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Optional. A map from a label key to an extractor expression, which is
+         * used to extract the value for this label key. Each entry in this map is
+         * a specification for how data should be extracted from log entries that
+         * match `filter`. Each combination of extracted values is treated as a
+         * separate rule for the purposes of triggering notifications. Label keys
+         * and corresponding values can be used in notifications generated by this
+         * condition.
+         * Please see [the documentation on logs-based metric
+         * `valueExtractor`s](https://cloud.google.com/logging/docs/reference/v2/rest/v2/projects.metrics#LogMetric.FIELDS.value_extractor)
+         * for syntax and examples.
+         * </pre>
+         *
+         * <code>map&lt;string, string&gt; label_extractors = 2;</code>
+         */
+        public Builder putAllLabelExtractors(
+            java.util.Map<java.lang.String, java.lang.String> values) {
+          internalGetMutableLabelExtractors().getMutableMap().putAll(values);
+          return this;
+        }
+
+        @java.lang.Override
+        public final Builder setUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.setUnknownFields(unknownFields);
+        }
+
+        @java.lang.Override
+        public final Builder mergeUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.mergeUnknownFields(unknownFields);
+        }
+
+        // @@protoc_insertion_point(builder_scope:google.monitoring.v3.AlertPolicy.Condition.LogMatch)
+      }
+
+      // @@protoc_insertion_point(class_scope:google.monitoring.v3.AlertPolicy.Condition.LogMatch)
+      private static final com.google.monitoring.v3.AlertPolicy.Condition.LogMatch DEFAULT_INSTANCE;
+
+      static {
+        DEFAULT_INSTANCE = new com.google.monitoring.v3.AlertPolicy.Condition.LogMatch();
+      }
+
+      public static com.google.monitoring.v3.AlertPolicy.Condition.LogMatch getDefaultInstance() {
+        return DEFAULT_INSTANCE;
+      }
+
+      private static final com.google.protobuf.Parser<LogMatch> PARSER =
+          new com.google.protobuf.AbstractParser<LogMatch>() {
+            @java.lang.Override
+            public LogMatch parsePartialFrom(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+              return new LogMatch(input, extensionRegistry);
+            }
+          };
+
+      public static com.google.protobuf.Parser<LogMatch> parser() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Parser<LogMatch> getParserForType() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.monitoring.v3.AlertPolicy.Condition.LogMatch getDefaultInstanceForType() {
+        return DEFAULT_INSTANCE;
+      }
+    }
+
     public interface MonitoringQueryLanguageConditionOrBuilder
         extends
         // @@protoc_insertion_point(interface_extends:google.monitoring.v3.AlertPolicy.Condition.MonitoringQueryLanguageCondition)
@@ -9148,7 +10445,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
 
       @java.lang.Override
       public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-        if (!getQueryBytes().isEmpty()) {
+        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(query_)) {
           com.google.protobuf.GeneratedMessageV3.writeString(output, 1, query_);
         }
         if (duration_ != null) {
@@ -9166,7 +10463,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
         if (size != -1) return size;
 
         size = 0;
-        if (!getQueryBytes().isEmpty()) {
+        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(query_)) {
           size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, query_);
         }
         if (duration_ != null) {
@@ -10218,6 +11515,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.AbstractMessage.InternalOneOfEnum {
       CONDITION_THRESHOLD(1),
       CONDITION_ABSENT(2),
+      CONDITION_MATCHED_LOG(20),
       CONDITION_MONITORING_QUERY_LANGUAGE(19),
       CONDITION_NOT_SET(0);
       private final int value;
@@ -10241,6 +11539,8 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
             return CONDITION_THRESHOLD;
           case 2:
             return CONDITION_ABSENT;
+          case 20:
+            return CONDITION_MATCHED_LOG;
           case 19:
             return CONDITION_MONITORING_QUERY_LANGUAGE;
           case 0:
@@ -10509,6 +11809,61 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
       return com.google.monitoring.v3.AlertPolicy.Condition.MetricAbsence.getDefaultInstance();
     }
 
+    public static final int CONDITION_MATCHED_LOG_FIELD_NUMBER = 20;
+    /**
+     *
+     *
+     * <pre>
+     * A condition that checks for log messages matching given constraints. If
+     * set, no other conditions can be present.
+     * </pre>
+     *
+     * <code>.google.monitoring.v3.AlertPolicy.Condition.LogMatch condition_matched_log = 20;</code>
+     *
+     * @return Whether the conditionMatchedLog field is set.
+     */
+    @java.lang.Override
+    public boolean hasConditionMatchedLog() {
+      return conditionCase_ == 20;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A condition that checks for log messages matching given constraints. If
+     * set, no other conditions can be present.
+     * </pre>
+     *
+     * <code>.google.monitoring.v3.AlertPolicy.Condition.LogMatch condition_matched_log = 20;</code>
+     *
+     * @return The conditionMatchedLog.
+     */
+    @java.lang.Override
+    public com.google.monitoring.v3.AlertPolicy.Condition.LogMatch getConditionMatchedLog() {
+      if (conditionCase_ == 20) {
+        return (com.google.monitoring.v3.AlertPolicy.Condition.LogMatch) condition_;
+      }
+      return com.google.monitoring.v3.AlertPolicy.Condition.LogMatch.getDefaultInstance();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A condition that checks for log messages matching given constraints. If
+     * set, no other conditions can be present.
+     * </pre>
+     *
+     * <code>.google.monitoring.v3.AlertPolicy.Condition.LogMatch condition_matched_log = 20;</code>
+     */
+    @java.lang.Override
+    public com.google.monitoring.v3.AlertPolicy.Condition.LogMatchOrBuilder
+        getConditionMatchedLogOrBuilder() {
+      if (conditionCase_ == 20) {
+        return (com.google.monitoring.v3.AlertPolicy.Condition.LogMatch) condition_;
+      }
+      return com.google.monitoring.v3.AlertPolicy.Condition.LogMatch.getDefaultInstance();
+    }
+
     public static final int CONDITION_MONITORING_QUERY_LANGUAGE_FIELD_NUMBER = 19;
     /**
      *
@@ -10597,10 +11952,10 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
         output.writeMessage(
             2, (com.google.monitoring.v3.AlertPolicy.Condition.MetricAbsence) condition_);
       }
-      if (!getDisplayNameBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(displayName_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 6, displayName_);
       }
-      if (!getNameBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 12, name_);
       }
       if (conditionCase_ == 19) {
@@ -10608,6 +11963,10 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
             19,
             (com.google.monitoring.v3.AlertPolicy.Condition.MonitoringQueryLanguageCondition)
                 condition_);
+      }
+      if (conditionCase_ == 20) {
+        output.writeMessage(
+            20, (com.google.monitoring.v3.AlertPolicy.Condition.LogMatch) condition_);
       }
       unknownFields.writeTo(output);
     }
@@ -10628,10 +11987,10 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.CodedOutputStream.computeMessageSize(
                 2, (com.google.monitoring.v3.AlertPolicy.Condition.MetricAbsence) condition_);
       }
-      if (!getDisplayNameBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(displayName_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, displayName_);
       }
-      if (!getNameBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(12, name_);
       }
       if (conditionCase_ == 19) {
@@ -10640,6 +11999,11 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
                 19,
                 (com.google.monitoring.v3.AlertPolicy.Condition.MonitoringQueryLanguageCondition)
                     condition_);
+      }
+      if (conditionCase_ == 20) {
+        size +=
+            com.google.protobuf.CodedOutputStream.computeMessageSize(
+                20, (com.google.monitoring.v3.AlertPolicy.Condition.LogMatch) condition_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -10666,6 +12030,9 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
           break;
         case 2:
           if (!getConditionAbsent().equals(other.getConditionAbsent())) return false;
+          break;
+        case 20:
+          if (!getConditionMatchedLog().equals(other.getConditionMatchedLog())) return false;
           break;
         case 19:
           if (!getConditionMonitoringQueryLanguage()
@@ -10697,6 +12064,10 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
         case 2:
           hash = (37 * hash) + CONDITION_ABSENT_FIELD_NUMBER;
           hash = (53 * hash) + getConditionAbsent().hashCode();
+          break;
+        case 20:
+          hash = (37 * hash) + CONDITION_MATCHED_LOG_FIELD_NUMBER;
+          hash = (53 * hash) + getConditionMatchedLog().hashCode();
           break;
         case 19:
           hash = (37 * hash) + CONDITION_MONITORING_QUERY_LANGUAGE_FIELD_NUMBER;
@@ -10903,6 +12274,13 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
             result.condition_ = conditionAbsentBuilder_.build();
           }
         }
+        if (conditionCase_ == 20) {
+          if (conditionMatchedLogBuilder_ == null) {
+            result.condition_ = condition_;
+          } else {
+            result.condition_ = conditionMatchedLogBuilder_.build();
+          }
+        }
         if (conditionCase_ == 19) {
           if (conditionMonitoringQueryLanguageBuilder_ == null) {
             result.condition_ = condition_;
@@ -10980,6 +12358,11 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
           case CONDITION_ABSENT:
             {
               mergeConditionAbsent(other.getConditionAbsent());
+              break;
+            }
+          case CONDITION_MATCHED_LOG:
+            {
+              mergeConditionMatchedLog(other.getConditionMatchedLog());
               break;
             }
           case CONDITION_MONITORING_QUERY_LANGUAGE:
@@ -11816,6 +13199,239 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
       }
 
       private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.monitoring.v3.AlertPolicy.Condition.LogMatch,
+              com.google.monitoring.v3.AlertPolicy.Condition.LogMatch.Builder,
+              com.google.monitoring.v3.AlertPolicy.Condition.LogMatchOrBuilder>
+          conditionMatchedLogBuilder_;
+      /**
+       *
+       *
+       * <pre>
+       * A condition that checks for log messages matching given constraints. If
+       * set, no other conditions can be present.
+       * </pre>
+       *
+       * <code>.google.monitoring.v3.AlertPolicy.Condition.LogMatch condition_matched_log = 20;
+       * </code>
+       *
+       * @return Whether the conditionMatchedLog field is set.
+       */
+      @java.lang.Override
+      public boolean hasConditionMatchedLog() {
+        return conditionCase_ == 20;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A condition that checks for log messages matching given constraints. If
+       * set, no other conditions can be present.
+       * </pre>
+       *
+       * <code>.google.monitoring.v3.AlertPolicy.Condition.LogMatch condition_matched_log = 20;
+       * </code>
+       *
+       * @return The conditionMatchedLog.
+       */
+      @java.lang.Override
+      public com.google.monitoring.v3.AlertPolicy.Condition.LogMatch getConditionMatchedLog() {
+        if (conditionMatchedLogBuilder_ == null) {
+          if (conditionCase_ == 20) {
+            return (com.google.monitoring.v3.AlertPolicy.Condition.LogMatch) condition_;
+          }
+          return com.google.monitoring.v3.AlertPolicy.Condition.LogMatch.getDefaultInstance();
+        } else {
+          if (conditionCase_ == 20) {
+            return conditionMatchedLogBuilder_.getMessage();
+          }
+          return com.google.monitoring.v3.AlertPolicy.Condition.LogMatch.getDefaultInstance();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A condition that checks for log messages matching given constraints. If
+       * set, no other conditions can be present.
+       * </pre>
+       *
+       * <code>.google.monitoring.v3.AlertPolicy.Condition.LogMatch condition_matched_log = 20;
+       * </code>
+       */
+      public Builder setConditionMatchedLog(
+          com.google.monitoring.v3.AlertPolicy.Condition.LogMatch value) {
+        if (conditionMatchedLogBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          condition_ = value;
+          onChanged();
+        } else {
+          conditionMatchedLogBuilder_.setMessage(value);
+        }
+        conditionCase_ = 20;
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A condition that checks for log messages matching given constraints. If
+       * set, no other conditions can be present.
+       * </pre>
+       *
+       * <code>.google.monitoring.v3.AlertPolicy.Condition.LogMatch condition_matched_log = 20;
+       * </code>
+       */
+      public Builder setConditionMatchedLog(
+          com.google.monitoring.v3.AlertPolicy.Condition.LogMatch.Builder builderForValue) {
+        if (conditionMatchedLogBuilder_ == null) {
+          condition_ = builderForValue.build();
+          onChanged();
+        } else {
+          conditionMatchedLogBuilder_.setMessage(builderForValue.build());
+        }
+        conditionCase_ = 20;
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A condition that checks for log messages matching given constraints. If
+       * set, no other conditions can be present.
+       * </pre>
+       *
+       * <code>.google.monitoring.v3.AlertPolicy.Condition.LogMatch condition_matched_log = 20;
+       * </code>
+       */
+      public Builder mergeConditionMatchedLog(
+          com.google.monitoring.v3.AlertPolicy.Condition.LogMatch value) {
+        if (conditionMatchedLogBuilder_ == null) {
+          if (conditionCase_ == 20
+              && condition_
+                  != com.google.monitoring.v3.AlertPolicy.Condition.LogMatch.getDefaultInstance()) {
+            condition_ =
+                com.google.monitoring.v3.AlertPolicy.Condition.LogMatch.newBuilder(
+                        (com.google.monitoring.v3.AlertPolicy.Condition.LogMatch) condition_)
+                    .mergeFrom(value)
+                    .buildPartial();
+          } else {
+            condition_ = value;
+          }
+          onChanged();
+        } else {
+          if (conditionCase_ == 20) {
+            conditionMatchedLogBuilder_.mergeFrom(value);
+          }
+          conditionMatchedLogBuilder_.setMessage(value);
+        }
+        conditionCase_ = 20;
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A condition that checks for log messages matching given constraints. If
+       * set, no other conditions can be present.
+       * </pre>
+       *
+       * <code>.google.monitoring.v3.AlertPolicy.Condition.LogMatch condition_matched_log = 20;
+       * </code>
+       */
+      public Builder clearConditionMatchedLog() {
+        if (conditionMatchedLogBuilder_ == null) {
+          if (conditionCase_ == 20) {
+            conditionCase_ = 0;
+            condition_ = null;
+            onChanged();
+          }
+        } else {
+          if (conditionCase_ == 20) {
+            conditionCase_ = 0;
+            condition_ = null;
+          }
+          conditionMatchedLogBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A condition that checks for log messages matching given constraints. If
+       * set, no other conditions can be present.
+       * </pre>
+       *
+       * <code>.google.monitoring.v3.AlertPolicy.Condition.LogMatch condition_matched_log = 20;
+       * </code>
+       */
+      public com.google.monitoring.v3.AlertPolicy.Condition.LogMatch.Builder
+          getConditionMatchedLogBuilder() {
+        return getConditionMatchedLogFieldBuilder().getBuilder();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A condition that checks for log messages matching given constraints. If
+       * set, no other conditions can be present.
+       * </pre>
+       *
+       * <code>.google.monitoring.v3.AlertPolicy.Condition.LogMatch condition_matched_log = 20;
+       * </code>
+       */
+      @java.lang.Override
+      public com.google.monitoring.v3.AlertPolicy.Condition.LogMatchOrBuilder
+          getConditionMatchedLogOrBuilder() {
+        if ((conditionCase_ == 20) && (conditionMatchedLogBuilder_ != null)) {
+          return conditionMatchedLogBuilder_.getMessageOrBuilder();
+        } else {
+          if (conditionCase_ == 20) {
+            return (com.google.monitoring.v3.AlertPolicy.Condition.LogMatch) condition_;
+          }
+          return com.google.monitoring.v3.AlertPolicy.Condition.LogMatch.getDefaultInstance();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A condition that checks for log messages matching given constraints. If
+       * set, no other conditions can be present.
+       * </pre>
+       *
+       * <code>.google.monitoring.v3.AlertPolicy.Condition.LogMatch condition_matched_log = 20;
+       * </code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.monitoring.v3.AlertPolicy.Condition.LogMatch,
+              com.google.monitoring.v3.AlertPolicy.Condition.LogMatch.Builder,
+              com.google.monitoring.v3.AlertPolicy.Condition.LogMatchOrBuilder>
+          getConditionMatchedLogFieldBuilder() {
+        if (conditionMatchedLogBuilder_ == null) {
+          if (!(conditionCase_ == 20)) {
+            condition_ =
+                com.google.monitoring.v3.AlertPolicy.Condition.LogMatch.getDefaultInstance();
+          }
+          conditionMatchedLogBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.monitoring.v3.AlertPolicy.Condition.LogMatch,
+                  com.google.monitoring.v3.AlertPolicy.Condition.LogMatch.Builder,
+                  com.google.monitoring.v3.AlertPolicy.Condition.LogMatchOrBuilder>(
+                  (com.google.monitoring.v3.AlertPolicy.Condition.LogMatch) condition_,
+                  getParentForChildren(),
+                  isClean());
+          condition_ = null;
+        }
+        conditionCase_ = 20;
+        onChanged();
+        ;
+        return conditionMatchedLogBuilder_;
+      }
+
+      private com.google.protobuf.SingleFieldBuilderV3<
               com.google.monitoring.v3.AlertPolicy.Condition.MonitoringQueryLanguageCondition,
               com.google.monitoring.v3.AlertPolicy.Condition.MonitoringQueryLanguageCondition
                   .Builder,
@@ -12129,6 +13745,1614 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
+  public interface AlertStrategyOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.monitoring.v3.AlertPolicy.AlertStrategy)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * Required for alert policies with a `LogMatch` condition.
+     * This limit is not implemented for alert policies that are not log-based.
+     * </pre>
+     *
+     * <code>
+     * .google.monitoring.v3.AlertPolicy.AlertStrategy.NotificationRateLimit notification_rate_limit = 1;
+     * </code>
+     *
+     * @return Whether the notificationRateLimit field is set.
+     */
+    boolean hasNotificationRateLimit();
+    /**
+     *
+     *
+     * <pre>
+     * Required for alert policies with a `LogMatch` condition.
+     * This limit is not implemented for alert policies that are not log-based.
+     * </pre>
+     *
+     * <code>
+     * .google.monitoring.v3.AlertPolicy.AlertStrategy.NotificationRateLimit notification_rate_limit = 1;
+     * </code>
+     *
+     * @return The notificationRateLimit.
+     */
+    com.google.monitoring.v3.AlertPolicy.AlertStrategy.NotificationRateLimit
+        getNotificationRateLimit();
+    /**
+     *
+     *
+     * <pre>
+     * Required for alert policies with a `LogMatch` condition.
+     * This limit is not implemented for alert policies that are not log-based.
+     * </pre>
+     *
+     * <code>
+     * .google.monitoring.v3.AlertPolicy.AlertStrategy.NotificationRateLimit notification_rate_limit = 1;
+     * </code>
+     */
+    com.google.monitoring.v3.AlertPolicy.AlertStrategy.NotificationRateLimitOrBuilder
+        getNotificationRateLimitOrBuilder();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Control over how the notification channels in `notification_channels`
+   * are notified when this alert fires.
+   * </pre>
+   *
+   * Protobuf type {@code google.monitoring.v3.AlertPolicy.AlertStrategy}
+   */
+  public static final class AlertStrategy extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.monitoring.v3.AlertPolicy.AlertStrategy)
+      AlertStrategyOrBuilder {
+    private static final long serialVersionUID = 0L;
+    // Use AlertStrategy.newBuilder() to construct.
+    private AlertStrategy(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private AlertStrategy() {}
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new AlertStrategy();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+      return this.unknownFields;
+    }
+
+    private AlertStrategy(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10:
+              {
+                com.google.monitoring.v3.AlertPolicy.AlertStrategy.NotificationRateLimit.Builder
+                    subBuilder = null;
+                if (notificationRateLimit_ != null) {
+                  subBuilder = notificationRateLimit_.toBuilder();
+                }
+                notificationRateLimit_ =
+                    input.readMessage(
+                        com.google.monitoring.v3.AlertPolicy.AlertStrategy.NotificationRateLimit
+                            .parser(),
+                        extensionRegistry);
+                if (subBuilder != null) {
+                  subBuilder.mergeFrom(notificationRateLimit_);
+                  notificationRateLimit_ = subBuilder.buildPartial();
+                }
+
+                break;
+              }
+            default:
+              {
+                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
+                  done = true;
+                }
+                break;
+              }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.monitoring.v3.AlertProto
+          .internal_static_google_monitoring_v3_AlertPolicy_AlertStrategy_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.monitoring.v3.AlertProto
+          .internal_static_google_monitoring_v3_AlertPolicy_AlertStrategy_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.monitoring.v3.AlertPolicy.AlertStrategy.class,
+              com.google.monitoring.v3.AlertPolicy.AlertStrategy.Builder.class);
+    }
+
+    public interface NotificationRateLimitOrBuilder
+        extends
+        // @@protoc_insertion_point(interface_extends:google.monitoring.v3.AlertPolicy.AlertStrategy.NotificationRateLimit)
+        com.google.protobuf.MessageOrBuilder {
+
+      /**
+       *
+       *
+       * <pre>
+       * Not more than one notification per `period`.
+       * </pre>
+       *
+       * <code>.google.protobuf.Duration period = 1;</code>
+       *
+       * @return Whether the period field is set.
+       */
+      boolean hasPeriod();
+      /**
+       *
+       *
+       * <pre>
+       * Not more than one notification per `period`.
+       * </pre>
+       *
+       * <code>.google.protobuf.Duration period = 1;</code>
+       *
+       * @return The period.
+       */
+      com.google.protobuf.Duration getPeriod();
+      /**
+       *
+       *
+       * <pre>
+       * Not more than one notification per `period`.
+       * </pre>
+       *
+       * <code>.google.protobuf.Duration period = 1;</code>
+       */
+      com.google.protobuf.DurationOrBuilder getPeriodOrBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Control over the rate of notifications sent to this alert policy's
+     * notification channels.
+     * </pre>
+     *
+     * Protobuf type {@code google.monitoring.v3.AlertPolicy.AlertStrategy.NotificationRateLimit}
+     */
+    public static final class NotificationRateLimit extends com.google.protobuf.GeneratedMessageV3
+        implements
+        // @@protoc_insertion_point(message_implements:google.monitoring.v3.AlertPolicy.AlertStrategy.NotificationRateLimit)
+        NotificationRateLimitOrBuilder {
+      private static final long serialVersionUID = 0L;
+      // Use NotificationRateLimit.newBuilder() to construct.
+      private NotificationRateLimit(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+        super(builder);
+      }
+
+      private NotificationRateLimit() {}
+
+      @java.lang.Override
+      @SuppressWarnings({"unused"})
+      protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+        return new NotificationRateLimit();
+      }
+
+      @java.lang.Override
+      public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+        return this.unknownFields;
+      }
+
+      private NotificationRateLimit(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        this();
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+            com.google.protobuf.UnknownFieldSet.newBuilder();
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  com.google.protobuf.Duration.Builder subBuilder = null;
+                  if (period_ != null) {
+                    subBuilder = period_.toBuilder();
+                  }
+                  period_ =
+                      input.readMessage(com.google.protobuf.Duration.parser(), extensionRegistry);
+                  if (subBuilder != null) {
+                    subBuilder.mergeFrom(period_);
+                    period_ = subBuilder.buildPartial();
+                  }
+
+                  break;
+                }
+              default:
+                {
+                  if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
+                    done = true;
+                  }
+                  break;
+                }
+            }
+          }
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(this);
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(this);
+        } finally {
+          this.unknownFields = unknownFields.build();
+          makeExtensionsImmutable();
+        }
+      }
+
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.monitoring.v3.AlertProto
+            .internal_static_google_monitoring_v3_AlertPolicy_AlertStrategy_NotificationRateLimit_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.monitoring.v3.AlertProto
+            .internal_static_google_monitoring_v3_AlertPolicy_AlertStrategy_NotificationRateLimit_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.monitoring.v3.AlertPolicy.AlertStrategy.NotificationRateLimit.class,
+                com.google.monitoring.v3.AlertPolicy.AlertStrategy.NotificationRateLimit.Builder
+                    .class);
+      }
+
+      public static final int PERIOD_FIELD_NUMBER = 1;
+      private com.google.protobuf.Duration period_;
+      /**
+       *
+       *
+       * <pre>
+       * Not more than one notification per `period`.
+       * </pre>
+       *
+       * <code>.google.protobuf.Duration period = 1;</code>
+       *
+       * @return Whether the period field is set.
+       */
+      @java.lang.Override
+      public boolean hasPeriod() {
+        return period_ != null;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Not more than one notification per `period`.
+       * </pre>
+       *
+       * <code>.google.protobuf.Duration period = 1;</code>
+       *
+       * @return The period.
+       */
+      @java.lang.Override
+      public com.google.protobuf.Duration getPeriod() {
+        return period_ == null ? com.google.protobuf.Duration.getDefaultInstance() : period_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Not more than one notification per `period`.
+       * </pre>
+       *
+       * <code>.google.protobuf.Duration period = 1;</code>
+       */
+      @java.lang.Override
+      public com.google.protobuf.DurationOrBuilder getPeriodOrBuilder() {
+        return getPeriod();
+      }
+
+      private byte memoizedIsInitialized = -1;
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        byte isInitialized = memoizedIsInitialized;
+        if (isInitialized == 1) return true;
+        if (isInitialized == 0) return false;
+
+        memoizedIsInitialized = 1;
+        return true;
+      }
+
+      @java.lang.Override
+      public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+        if (period_ != null) {
+          output.writeMessage(1, getPeriod());
+        }
+        unknownFields.writeTo(output);
+      }
+
+      @java.lang.Override
+      public int getSerializedSize() {
+        int size = memoizedSize;
+        if (size != -1) return size;
+
+        size = 0;
+        if (period_ != null) {
+          size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, getPeriod());
+        }
+        size += unknownFields.getSerializedSize();
+        memoizedSize = size;
+        return size;
+      }
+
+      @java.lang.Override
+      public boolean equals(final java.lang.Object obj) {
+        if (obj == this) {
+          return true;
+        }
+        if (!(obj
+            instanceof com.google.monitoring.v3.AlertPolicy.AlertStrategy.NotificationRateLimit)) {
+          return super.equals(obj);
+        }
+        com.google.monitoring.v3.AlertPolicy.AlertStrategy.NotificationRateLimit other =
+            (com.google.monitoring.v3.AlertPolicy.AlertStrategy.NotificationRateLimit) obj;
+
+        if (hasPeriod() != other.hasPeriod()) return false;
+        if (hasPeriod()) {
+          if (!getPeriod().equals(other.getPeriod())) return false;
+        }
+        if (!unknownFields.equals(other.unknownFields)) return false;
+        return true;
+      }
+
+      @java.lang.Override
+      public int hashCode() {
+        if (memoizedHashCode != 0) {
+          return memoizedHashCode;
+        }
+        int hash = 41;
+        hash = (19 * hash) + getDescriptor().hashCode();
+        if (hasPeriod()) {
+          hash = (37 * hash) + PERIOD_FIELD_NUMBER;
+          hash = (53 * hash) + getPeriod().hashCode();
+        }
+        hash = (29 * hash) + unknownFields.hashCode();
+        memoizedHashCode = hash;
+        return hash;
+      }
+
+      public static com.google.monitoring.v3.AlertPolicy.AlertStrategy.NotificationRateLimit
+          parseFrom(java.nio.ByteBuffer data)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.monitoring.v3.AlertPolicy.AlertStrategy.NotificationRateLimit
+          parseFrom(
+              java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.monitoring.v3.AlertPolicy.AlertStrategy.NotificationRateLimit
+          parseFrom(com.google.protobuf.ByteString data)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.monitoring.v3.AlertPolicy.AlertStrategy.NotificationRateLimit
+          parseFrom(
+              com.google.protobuf.ByteString data,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.monitoring.v3.AlertPolicy.AlertStrategy.NotificationRateLimit
+          parseFrom(byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.monitoring.v3.AlertPolicy.AlertStrategy.NotificationRateLimit
+          parseFrom(byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.monitoring.v3.AlertPolicy.AlertStrategy.NotificationRateLimit
+          parseFrom(java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.monitoring.v3.AlertPolicy.AlertStrategy.NotificationRateLimit
+          parseFrom(
+              java.io.InputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.monitoring.v3.AlertPolicy.AlertStrategy.NotificationRateLimit
+          parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+      }
+
+      public static com.google.monitoring.v3.AlertPolicy.AlertStrategy.NotificationRateLimit
+          parseDelimitedFrom(
+              java.io.InputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.monitoring.v3.AlertPolicy.AlertStrategy.NotificationRateLimit
+          parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.monitoring.v3.AlertPolicy.AlertStrategy.NotificationRateLimit
+          parseFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      @java.lang.Override
+      public Builder newBuilderForType() {
+        return newBuilder();
+      }
+
+      public static Builder newBuilder() {
+        return DEFAULT_INSTANCE.toBuilder();
+      }
+
+      public static Builder newBuilder(
+          com.google.monitoring.v3.AlertPolicy.AlertStrategy.NotificationRateLimit prototype) {
+        return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+      }
+
+      @java.lang.Override
+      public Builder toBuilder() {
+        return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+      }
+
+      @java.lang.Override
+      protected Builder newBuilderForType(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        Builder builder = new Builder(parent);
+        return builder;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Control over the rate of notifications sent to this alert policy's
+       * notification channels.
+       * </pre>
+       *
+       * Protobuf type {@code google.monitoring.v3.AlertPolicy.AlertStrategy.NotificationRateLimit}
+       */
+      public static final class Builder
+          extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+          implements
+          // @@protoc_insertion_point(builder_implements:google.monitoring.v3.AlertPolicy.AlertStrategy.NotificationRateLimit)
+          com.google.monitoring.v3.AlertPolicy.AlertStrategy.NotificationRateLimitOrBuilder {
+        public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+          return com.google.monitoring.v3.AlertProto
+              .internal_static_google_monitoring_v3_AlertPolicy_AlertStrategy_NotificationRateLimit_descriptor;
+        }
+
+        @java.lang.Override
+        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+          return com.google.monitoring.v3.AlertProto
+              .internal_static_google_monitoring_v3_AlertPolicy_AlertStrategy_NotificationRateLimit_fieldAccessorTable
+              .ensureFieldAccessorsInitialized(
+                  com.google.monitoring.v3.AlertPolicy.AlertStrategy.NotificationRateLimit.class,
+                  com.google.monitoring.v3.AlertPolicy.AlertStrategy.NotificationRateLimit.Builder
+                      .class);
+        }
+
+        // Construct using
+        // com.google.monitoring.v3.AlertPolicy.AlertStrategy.NotificationRateLimit.newBuilder()
+        private Builder() {
+          maybeForceBuilderInitialization();
+        }
+
+        private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+          super(parent);
+          maybeForceBuilderInitialization();
+        }
+
+        private void maybeForceBuilderInitialization() {
+          if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
+        }
+
+        @java.lang.Override
+        public Builder clear() {
+          super.clear();
+          if (periodBuilder_ == null) {
+            period_ = null;
+          } else {
+            period_ = null;
+            periodBuilder_ = null;
+          }
+          return this;
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+          return com.google.monitoring.v3.AlertProto
+              .internal_static_google_monitoring_v3_AlertPolicy_AlertStrategy_NotificationRateLimit_descriptor;
+        }
+
+        @java.lang.Override
+        public com.google.monitoring.v3.AlertPolicy.AlertStrategy.NotificationRateLimit
+            getDefaultInstanceForType() {
+          return com.google.monitoring.v3.AlertPolicy.AlertStrategy.NotificationRateLimit
+              .getDefaultInstance();
+        }
+
+        @java.lang.Override
+        public com.google.monitoring.v3.AlertPolicy.AlertStrategy.NotificationRateLimit build() {
+          com.google.monitoring.v3.AlertPolicy.AlertStrategy.NotificationRateLimit result =
+              buildPartial();
+          if (!result.isInitialized()) {
+            throw newUninitializedMessageException(result);
+          }
+          return result;
+        }
+
+        @java.lang.Override
+        public com.google.monitoring.v3.AlertPolicy.AlertStrategy.NotificationRateLimit
+            buildPartial() {
+          com.google.monitoring.v3.AlertPolicy.AlertStrategy.NotificationRateLimit result =
+              new com.google.monitoring.v3.AlertPolicy.AlertStrategy.NotificationRateLimit(this);
+          if (periodBuilder_ == null) {
+            result.period_ = period_;
+          } else {
+            result.period_ = periodBuilder_.build();
+          }
+          onBuilt();
+          return result;
+        }
+
+        @java.lang.Override
+        public Builder clone() {
+          return super.clone();
+        }
+
+        @java.lang.Override
+        public Builder setField(
+            com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+          return super.setField(field, value);
+        }
+
+        @java.lang.Override
+        public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+          return super.clearField(field);
+        }
+
+        @java.lang.Override
+        public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+          return super.clearOneof(oneof);
+        }
+
+        @java.lang.Override
+        public Builder setRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            int index,
+            java.lang.Object value) {
+          return super.setRepeatedField(field, index, value);
+        }
+
+        @java.lang.Override
+        public Builder addRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+          return super.addRepeatedField(field, value);
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(com.google.protobuf.Message other) {
+          if (other
+              instanceof com.google.monitoring.v3.AlertPolicy.AlertStrategy.NotificationRateLimit) {
+            return mergeFrom(
+                (com.google.monitoring.v3.AlertPolicy.AlertStrategy.NotificationRateLimit) other);
+          } else {
+            super.mergeFrom(other);
+            return this;
+          }
+        }
+
+        public Builder mergeFrom(
+            com.google.monitoring.v3.AlertPolicy.AlertStrategy.NotificationRateLimit other) {
+          if (other
+              == com.google.monitoring.v3.AlertPolicy.AlertStrategy.NotificationRateLimit
+                  .getDefaultInstance()) return this;
+          if (other.hasPeriod()) {
+            mergePeriod(other.getPeriod());
+          }
+          this.mergeUnknownFields(other.unknownFields);
+          onChanged();
+          return this;
+        }
+
+        @java.lang.Override
+        public final boolean isInitialized() {
+          return true;
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+          com.google.monitoring.v3.AlertPolicy.AlertStrategy.NotificationRateLimit parsedMessage =
+              null;
+          try {
+            parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            parsedMessage =
+                (com.google.monitoring.v3.AlertPolicy.AlertStrategy.NotificationRateLimit)
+                    e.getUnfinishedMessage();
+            throw e.unwrapIOException();
+          } finally {
+            if (parsedMessage != null) {
+              mergeFrom(parsedMessage);
+            }
+          }
+          return this;
+        }
+
+        private com.google.protobuf.Duration period_;
+        private com.google.protobuf.SingleFieldBuilderV3<
+                com.google.protobuf.Duration,
+                com.google.protobuf.Duration.Builder,
+                com.google.protobuf.DurationOrBuilder>
+            periodBuilder_;
+        /**
+         *
+         *
+         * <pre>
+         * Not more than one notification per `period`.
+         * </pre>
+         *
+         * <code>.google.protobuf.Duration period = 1;</code>
+         *
+         * @return Whether the period field is set.
+         */
+        public boolean hasPeriod() {
+          return periodBuilder_ != null || period_ != null;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Not more than one notification per `period`.
+         * </pre>
+         *
+         * <code>.google.protobuf.Duration period = 1;</code>
+         *
+         * @return The period.
+         */
+        public com.google.protobuf.Duration getPeriod() {
+          if (periodBuilder_ == null) {
+            return period_ == null ? com.google.protobuf.Duration.getDefaultInstance() : period_;
+          } else {
+            return periodBuilder_.getMessage();
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Not more than one notification per `period`.
+         * </pre>
+         *
+         * <code>.google.protobuf.Duration period = 1;</code>
+         */
+        public Builder setPeriod(com.google.protobuf.Duration value) {
+          if (periodBuilder_ == null) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            period_ = value;
+            onChanged();
+          } else {
+            periodBuilder_.setMessage(value);
+          }
+
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Not more than one notification per `period`.
+         * </pre>
+         *
+         * <code>.google.protobuf.Duration period = 1;</code>
+         */
+        public Builder setPeriod(com.google.protobuf.Duration.Builder builderForValue) {
+          if (periodBuilder_ == null) {
+            period_ = builderForValue.build();
+            onChanged();
+          } else {
+            periodBuilder_.setMessage(builderForValue.build());
+          }
+
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Not more than one notification per `period`.
+         * </pre>
+         *
+         * <code>.google.protobuf.Duration period = 1;</code>
+         */
+        public Builder mergePeriod(com.google.protobuf.Duration value) {
+          if (periodBuilder_ == null) {
+            if (period_ != null) {
+              period_ =
+                  com.google.protobuf.Duration.newBuilder(period_).mergeFrom(value).buildPartial();
+            } else {
+              period_ = value;
+            }
+            onChanged();
+          } else {
+            periodBuilder_.mergeFrom(value);
+          }
+
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Not more than one notification per `period`.
+         * </pre>
+         *
+         * <code>.google.protobuf.Duration period = 1;</code>
+         */
+        public Builder clearPeriod() {
+          if (periodBuilder_ == null) {
+            period_ = null;
+            onChanged();
+          } else {
+            period_ = null;
+            periodBuilder_ = null;
+          }
+
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Not more than one notification per `period`.
+         * </pre>
+         *
+         * <code>.google.protobuf.Duration period = 1;</code>
+         */
+        public com.google.protobuf.Duration.Builder getPeriodBuilder() {
+
+          onChanged();
+          return getPeriodFieldBuilder().getBuilder();
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Not more than one notification per `period`.
+         * </pre>
+         *
+         * <code>.google.protobuf.Duration period = 1;</code>
+         */
+        public com.google.protobuf.DurationOrBuilder getPeriodOrBuilder() {
+          if (periodBuilder_ != null) {
+            return periodBuilder_.getMessageOrBuilder();
+          } else {
+            return period_ == null ? com.google.protobuf.Duration.getDefaultInstance() : period_;
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Not more than one notification per `period`.
+         * </pre>
+         *
+         * <code>.google.protobuf.Duration period = 1;</code>
+         */
+        private com.google.protobuf.SingleFieldBuilderV3<
+                com.google.protobuf.Duration,
+                com.google.protobuf.Duration.Builder,
+                com.google.protobuf.DurationOrBuilder>
+            getPeriodFieldBuilder() {
+          if (periodBuilder_ == null) {
+            periodBuilder_ =
+                new com.google.protobuf.SingleFieldBuilderV3<
+                    com.google.protobuf.Duration,
+                    com.google.protobuf.Duration.Builder,
+                    com.google.protobuf.DurationOrBuilder>(
+                    getPeriod(), getParentForChildren(), isClean());
+            period_ = null;
+          }
+          return periodBuilder_;
+        }
+
+        @java.lang.Override
+        public final Builder setUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.setUnknownFields(unknownFields);
+        }
+
+        @java.lang.Override
+        public final Builder mergeUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.mergeUnknownFields(unknownFields);
+        }
+
+        // @@protoc_insertion_point(builder_scope:google.monitoring.v3.AlertPolicy.AlertStrategy.NotificationRateLimit)
+      }
+
+      // @@protoc_insertion_point(class_scope:google.monitoring.v3.AlertPolicy.AlertStrategy.NotificationRateLimit)
+      private static final com.google.monitoring.v3.AlertPolicy.AlertStrategy.NotificationRateLimit
+          DEFAULT_INSTANCE;
+
+      static {
+        DEFAULT_INSTANCE =
+            new com.google.monitoring.v3.AlertPolicy.AlertStrategy.NotificationRateLimit();
+      }
+
+      public static com.google.monitoring.v3.AlertPolicy.AlertStrategy.NotificationRateLimit
+          getDefaultInstance() {
+        return DEFAULT_INSTANCE;
+      }
+
+      private static final com.google.protobuf.Parser<NotificationRateLimit> PARSER =
+          new com.google.protobuf.AbstractParser<NotificationRateLimit>() {
+            @java.lang.Override
+            public NotificationRateLimit parsePartialFrom(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+              return new NotificationRateLimit(input, extensionRegistry);
+            }
+          };
+
+      public static com.google.protobuf.Parser<NotificationRateLimit> parser() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Parser<NotificationRateLimit> getParserForType() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.monitoring.v3.AlertPolicy.AlertStrategy.NotificationRateLimit
+          getDefaultInstanceForType() {
+        return DEFAULT_INSTANCE;
+      }
+    }
+
+    public static final int NOTIFICATION_RATE_LIMIT_FIELD_NUMBER = 1;
+    private com.google.monitoring.v3.AlertPolicy.AlertStrategy.NotificationRateLimit
+        notificationRateLimit_;
+    /**
+     *
+     *
+     * <pre>
+     * Required for alert policies with a `LogMatch` condition.
+     * This limit is not implemented for alert policies that are not log-based.
+     * </pre>
+     *
+     * <code>
+     * .google.monitoring.v3.AlertPolicy.AlertStrategy.NotificationRateLimit notification_rate_limit = 1;
+     * </code>
+     *
+     * @return Whether the notificationRateLimit field is set.
+     */
+    @java.lang.Override
+    public boolean hasNotificationRateLimit() {
+      return notificationRateLimit_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Required for alert policies with a `LogMatch` condition.
+     * This limit is not implemented for alert policies that are not log-based.
+     * </pre>
+     *
+     * <code>
+     * .google.monitoring.v3.AlertPolicy.AlertStrategy.NotificationRateLimit notification_rate_limit = 1;
+     * </code>
+     *
+     * @return The notificationRateLimit.
+     */
+    @java.lang.Override
+    public com.google.monitoring.v3.AlertPolicy.AlertStrategy.NotificationRateLimit
+        getNotificationRateLimit() {
+      return notificationRateLimit_ == null
+          ? com.google.monitoring.v3.AlertPolicy.AlertStrategy.NotificationRateLimit
+              .getDefaultInstance()
+          : notificationRateLimit_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Required for alert policies with a `LogMatch` condition.
+     * This limit is not implemented for alert policies that are not log-based.
+     * </pre>
+     *
+     * <code>
+     * .google.monitoring.v3.AlertPolicy.AlertStrategy.NotificationRateLimit notification_rate_limit = 1;
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.monitoring.v3.AlertPolicy.AlertStrategy.NotificationRateLimitOrBuilder
+        getNotificationRateLimitOrBuilder() {
+      return getNotificationRateLimit();
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (notificationRateLimit_ != null) {
+        output.writeMessage(1, getNotificationRateLimit());
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (notificationRateLimit_ != null) {
+        size +=
+            com.google.protobuf.CodedOutputStream.computeMessageSize(1, getNotificationRateLimit());
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.monitoring.v3.AlertPolicy.AlertStrategy)) {
+        return super.equals(obj);
+      }
+      com.google.monitoring.v3.AlertPolicy.AlertStrategy other =
+          (com.google.monitoring.v3.AlertPolicy.AlertStrategy) obj;
+
+      if (hasNotificationRateLimit() != other.hasNotificationRateLimit()) return false;
+      if (hasNotificationRateLimit()) {
+        if (!getNotificationRateLimit().equals(other.getNotificationRateLimit())) return false;
+      }
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (hasNotificationRateLimit()) {
+        hash = (37 * hash) + NOTIFICATION_RATE_LIMIT_FIELD_NUMBER;
+        hash = (53 * hash) + getNotificationRateLimit().hashCode();
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.monitoring.v3.AlertPolicy.AlertStrategy parseFrom(
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.monitoring.v3.AlertPolicy.AlertStrategy parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.monitoring.v3.AlertPolicy.AlertStrategy parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.monitoring.v3.AlertPolicy.AlertStrategy parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.monitoring.v3.AlertPolicy.AlertStrategy parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.monitoring.v3.AlertPolicy.AlertStrategy parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.monitoring.v3.AlertPolicy.AlertStrategy parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.monitoring.v3.AlertPolicy.AlertStrategy parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.monitoring.v3.AlertPolicy.AlertStrategy parseDelimitedFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.monitoring.v3.AlertPolicy.AlertStrategy parseDelimitedFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.monitoring.v3.AlertPolicy.AlertStrategy parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.monitoring.v3.AlertPolicy.AlertStrategy parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(com.google.monitoring.v3.AlertPolicy.AlertStrategy prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Control over how the notification channels in `notification_channels`
+     * are notified when this alert fires.
+     * </pre>
+     *
+     * Protobuf type {@code google.monitoring.v3.AlertPolicy.AlertStrategy}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.monitoring.v3.AlertPolicy.AlertStrategy)
+        com.google.monitoring.v3.AlertPolicy.AlertStrategyOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.monitoring.v3.AlertProto
+            .internal_static_google_monitoring_v3_AlertPolicy_AlertStrategy_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.monitoring.v3.AlertProto
+            .internal_static_google_monitoring_v3_AlertPolicy_AlertStrategy_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.monitoring.v3.AlertPolicy.AlertStrategy.class,
+                com.google.monitoring.v3.AlertPolicy.AlertStrategy.Builder.class);
+      }
+
+      // Construct using com.google.monitoring.v3.AlertPolicy.AlertStrategy.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        if (notificationRateLimitBuilder_ == null) {
+          notificationRateLimit_ = null;
+        } else {
+          notificationRateLimit_ = null;
+          notificationRateLimitBuilder_ = null;
+        }
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.monitoring.v3.AlertProto
+            .internal_static_google_monitoring_v3_AlertPolicy_AlertStrategy_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.monitoring.v3.AlertPolicy.AlertStrategy getDefaultInstanceForType() {
+        return com.google.monitoring.v3.AlertPolicy.AlertStrategy.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.monitoring.v3.AlertPolicy.AlertStrategy build() {
+        com.google.monitoring.v3.AlertPolicy.AlertStrategy result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.monitoring.v3.AlertPolicy.AlertStrategy buildPartial() {
+        com.google.monitoring.v3.AlertPolicy.AlertStrategy result =
+            new com.google.monitoring.v3.AlertPolicy.AlertStrategy(this);
+        if (notificationRateLimitBuilder_ == null) {
+          result.notificationRateLimit_ = notificationRateLimit_;
+        } else {
+          result.notificationRateLimit_ = notificationRateLimitBuilder_.build();
+        }
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.google.monitoring.v3.AlertPolicy.AlertStrategy) {
+          return mergeFrom((com.google.monitoring.v3.AlertPolicy.AlertStrategy) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.google.monitoring.v3.AlertPolicy.AlertStrategy other) {
+        if (other == com.google.monitoring.v3.AlertPolicy.AlertStrategy.getDefaultInstance())
+          return this;
+        if (other.hasNotificationRateLimit()) {
+          mergeNotificationRateLimit(other.getNotificationRateLimit());
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.google.monitoring.v3.AlertPolicy.AlertStrategy parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage =
+              (com.google.monitoring.v3.AlertPolicy.AlertStrategy) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private com.google.monitoring.v3.AlertPolicy.AlertStrategy.NotificationRateLimit
+          notificationRateLimit_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.monitoring.v3.AlertPolicy.AlertStrategy.NotificationRateLimit,
+              com.google.monitoring.v3.AlertPolicy.AlertStrategy.NotificationRateLimit.Builder,
+              com.google.monitoring.v3.AlertPolicy.AlertStrategy.NotificationRateLimitOrBuilder>
+          notificationRateLimitBuilder_;
+      /**
+       *
+       *
+       * <pre>
+       * Required for alert policies with a `LogMatch` condition.
+       * This limit is not implemented for alert policies that are not log-based.
+       * </pre>
+       *
+       * <code>
+       * .google.monitoring.v3.AlertPolicy.AlertStrategy.NotificationRateLimit notification_rate_limit = 1;
+       * </code>
+       *
+       * @return Whether the notificationRateLimit field is set.
+       */
+      public boolean hasNotificationRateLimit() {
+        return notificationRateLimitBuilder_ != null || notificationRateLimit_ != null;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required for alert policies with a `LogMatch` condition.
+       * This limit is not implemented for alert policies that are not log-based.
+       * </pre>
+       *
+       * <code>
+       * .google.monitoring.v3.AlertPolicy.AlertStrategy.NotificationRateLimit notification_rate_limit = 1;
+       * </code>
+       *
+       * @return The notificationRateLimit.
+       */
+      public com.google.monitoring.v3.AlertPolicy.AlertStrategy.NotificationRateLimit
+          getNotificationRateLimit() {
+        if (notificationRateLimitBuilder_ == null) {
+          return notificationRateLimit_ == null
+              ? com.google.monitoring.v3.AlertPolicy.AlertStrategy.NotificationRateLimit
+                  .getDefaultInstance()
+              : notificationRateLimit_;
+        } else {
+          return notificationRateLimitBuilder_.getMessage();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required for alert policies with a `LogMatch` condition.
+       * This limit is not implemented for alert policies that are not log-based.
+       * </pre>
+       *
+       * <code>
+       * .google.monitoring.v3.AlertPolicy.AlertStrategy.NotificationRateLimit notification_rate_limit = 1;
+       * </code>
+       */
+      public Builder setNotificationRateLimit(
+          com.google.monitoring.v3.AlertPolicy.AlertStrategy.NotificationRateLimit value) {
+        if (notificationRateLimitBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          notificationRateLimit_ = value;
+          onChanged();
+        } else {
+          notificationRateLimitBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required for alert policies with a `LogMatch` condition.
+       * This limit is not implemented for alert policies that are not log-based.
+       * </pre>
+       *
+       * <code>
+       * .google.monitoring.v3.AlertPolicy.AlertStrategy.NotificationRateLimit notification_rate_limit = 1;
+       * </code>
+       */
+      public Builder setNotificationRateLimit(
+          com.google.monitoring.v3.AlertPolicy.AlertStrategy.NotificationRateLimit.Builder
+              builderForValue) {
+        if (notificationRateLimitBuilder_ == null) {
+          notificationRateLimit_ = builderForValue.build();
+          onChanged();
+        } else {
+          notificationRateLimitBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required for alert policies with a `LogMatch` condition.
+       * This limit is not implemented for alert policies that are not log-based.
+       * </pre>
+       *
+       * <code>
+       * .google.monitoring.v3.AlertPolicy.AlertStrategy.NotificationRateLimit notification_rate_limit = 1;
+       * </code>
+       */
+      public Builder mergeNotificationRateLimit(
+          com.google.monitoring.v3.AlertPolicy.AlertStrategy.NotificationRateLimit value) {
+        if (notificationRateLimitBuilder_ == null) {
+          if (notificationRateLimit_ != null) {
+            notificationRateLimit_ =
+                com.google.monitoring.v3.AlertPolicy.AlertStrategy.NotificationRateLimit.newBuilder(
+                        notificationRateLimit_)
+                    .mergeFrom(value)
+                    .buildPartial();
+          } else {
+            notificationRateLimit_ = value;
+          }
+          onChanged();
+        } else {
+          notificationRateLimitBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required for alert policies with a `LogMatch` condition.
+       * This limit is not implemented for alert policies that are not log-based.
+       * </pre>
+       *
+       * <code>
+       * .google.monitoring.v3.AlertPolicy.AlertStrategy.NotificationRateLimit notification_rate_limit = 1;
+       * </code>
+       */
+      public Builder clearNotificationRateLimit() {
+        if (notificationRateLimitBuilder_ == null) {
+          notificationRateLimit_ = null;
+          onChanged();
+        } else {
+          notificationRateLimit_ = null;
+          notificationRateLimitBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required for alert policies with a `LogMatch` condition.
+       * This limit is not implemented for alert policies that are not log-based.
+       * </pre>
+       *
+       * <code>
+       * .google.monitoring.v3.AlertPolicy.AlertStrategy.NotificationRateLimit notification_rate_limit = 1;
+       * </code>
+       */
+      public com.google.monitoring.v3.AlertPolicy.AlertStrategy.NotificationRateLimit.Builder
+          getNotificationRateLimitBuilder() {
+
+        onChanged();
+        return getNotificationRateLimitFieldBuilder().getBuilder();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required for alert policies with a `LogMatch` condition.
+       * This limit is not implemented for alert policies that are not log-based.
+       * </pre>
+       *
+       * <code>
+       * .google.monitoring.v3.AlertPolicy.AlertStrategy.NotificationRateLimit notification_rate_limit = 1;
+       * </code>
+       */
+      public com.google.monitoring.v3.AlertPolicy.AlertStrategy.NotificationRateLimitOrBuilder
+          getNotificationRateLimitOrBuilder() {
+        if (notificationRateLimitBuilder_ != null) {
+          return notificationRateLimitBuilder_.getMessageOrBuilder();
+        } else {
+          return notificationRateLimit_ == null
+              ? com.google.monitoring.v3.AlertPolicy.AlertStrategy.NotificationRateLimit
+                  .getDefaultInstance()
+              : notificationRateLimit_;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required for alert policies with a `LogMatch` condition.
+       * This limit is not implemented for alert policies that are not log-based.
+       * </pre>
+       *
+       * <code>
+       * .google.monitoring.v3.AlertPolicy.AlertStrategy.NotificationRateLimit notification_rate_limit = 1;
+       * </code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.monitoring.v3.AlertPolicy.AlertStrategy.NotificationRateLimit,
+              com.google.monitoring.v3.AlertPolicy.AlertStrategy.NotificationRateLimit.Builder,
+              com.google.monitoring.v3.AlertPolicy.AlertStrategy.NotificationRateLimitOrBuilder>
+          getNotificationRateLimitFieldBuilder() {
+        if (notificationRateLimitBuilder_ == null) {
+          notificationRateLimitBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.monitoring.v3.AlertPolicy.AlertStrategy.NotificationRateLimit,
+                  com.google.monitoring.v3.AlertPolicy.AlertStrategy.NotificationRateLimit.Builder,
+                  com.google.monitoring.v3.AlertPolicy.AlertStrategy
+                      .NotificationRateLimitOrBuilder>(
+                  getNotificationRateLimit(), getParentForChildren(), isClean());
+          notificationRateLimit_ = null;
+        }
+        return notificationRateLimitBuilder_;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.monitoring.v3.AlertPolicy.AlertStrategy)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.monitoring.v3.AlertPolicy.AlertStrategy)
+    private static final com.google.monitoring.v3.AlertPolicy.AlertStrategy DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new com.google.monitoring.v3.AlertPolicy.AlertStrategy();
+    }
+
+    public static com.google.monitoring.v3.AlertPolicy.AlertStrategy getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<AlertStrategy> PARSER =
+        new com.google.protobuf.AbstractParser<AlertStrategy>() {
+          @java.lang.Override
+          public AlertStrategy parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            return new AlertStrategy(input, extensionRegistry);
+          }
+        };
+
+    public static com.google.protobuf.Parser<AlertStrategy> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<AlertStrategy> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.monitoring.v3.AlertPolicy.AlertStrategy getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
   public static final int NAME_FIELD_NUMBER = 1;
   private volatile java.lang.Object name_;
   /**
@@ -12139,7 +15363,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
    * format is:
    *     projects/[PROJECT_ID_OR_NUMBER]/alertPolicies/[ALERT_POLICY_ID]
    * `[ALERT_POLICY_ID]` is assigned by Stackdriver Monitoring when the policy
-   * is created.  When calling the
+   * is created. When calling the
    * [alertPolicies.create][google.monitoring.v3.AlertPolicyService.CreateAlertPolicy]
    * method, do not include the `name` field in the alerting policy passed as
    * part of the request.
@@ -12169,7 +15393,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
    * format is:
    *     projects/[PROJECT_ID_OR_NUMBER]/alertPolicies/[ALERT_POLICY_ID]
    * `[ALERT_POLICY_ID]` is assigned by Stackdriver Monitoring when the policy
-   * is created.  When calling the
+   * is created. When calling the
    * [alertPolicies.create][google.monitoring.v3.AlertPolicyService.CreateAlertPolicy]
    * method, do not include the `name` field in the alerting policy passed as
    * part of the request.
@@ -12866,6 +16090,54 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
     return getMutationRecord();
   }
 
+  public static final int ALERT_STRATEGY_FIELD_NUMBER = 21;
+  private com.google.monitoring.v3.AlertPolicy.AlertStrategy alertStrategy_;
+  /**
+   *
+   *
+   * <pre>
+   * Control over how this alert policy's notification channels are notified.
+   * </pre>
+   *
+   * <code>.google.monitoring.v3.AlertPolicy.AlertStrategy alert_strategy = 21;</code>
+   *
+   * @return Whether the alertStrategy field is set.
+   */
+  @java.lang.Override
+  public boolean hasAlertStrategy() {
+    return alertStrategy_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Control over how this alert policy's notification channels are notified.
+   * </pre>
+   *
+   * <code>.google.monitoring.v3.AlertPolicy.AlertStrategy alert_strategy = 21;</code>
+   *
+   * @return The alertStrategy.
+   */
+  @java.lang.Override
+  public com.google.monitoring.v3.AlertPolicy.AlertStrategy getAlertStrategy() {
+    return alertStrategy_ == null
+        ? com.google.monitoring.v3.AlertPolicy.AlertStrategy.getDefaultInstance()
+        : alertStrategy_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Control over how this alert policy's notification channels are notified.
+   * </pre>
+   *
+   * <code>.google.monitoring.v3.AlertPolicy.AlertStrategy alert_strategy = 21;</code>
+   */
+  @java.lang.Override
+  public com.google.monitoring.v3.AlertPolicy.AlertStrategyOrBuilder getAlertStrategyOrBuilder() {
+    return getAlertStrategy();
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -12880,10 +16152,10 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name_);
     }
-    if (!getDisplayNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(displayName_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, displayName_);
     }
     if (combiner_
@@ -12915,6 +16187,9 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
     if (validity_ != null) {
       output.writeMessage(18, getValidity());
     }
+    if (alertStrategy_ != null) {
+      output.writeMessage(21, getAlertStrategy());
+    }
     unknownFields.writeTo(output);
   }
 
@@ -12924,10 +16199,10 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
     if (size != -1) return size;
 
     size = 0;
-    if (!getNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, name_);
     }
-    if (!getDisplayNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(displayName_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, displayName_);
     }
     if (combiner_
@@ -12971,6 +16246,9 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
     if (validity_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(18, getValidity());
     }
+    if (alertStrategy_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(21, getAlertStrategy());
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -13011,6 +16289,10 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
     if (hasMutationRecord() != other.hasMutationRecord()) return false;
     if (hasMutationRecord()) {
       if (!getMutationRecord().equals(other.getMutationRecord())) return false;
+    }
+    if (hasAlertStrategy() != other.hasAlertStrategy()) return false;
+    if (hasAlertStrategy()) {
+      if (!getAlertStrategy().equals(other.getAlertStrategy())) return false;
     }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
@@ -13060,6 +16342,10 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
     if (hasMutationRecord()) {
       hash = (37 * hash) + MUTATION_RECORD_FIELD_NUMBER;
       hash = (53 * hash) + getMutationRecord().hashCode();
+    }
+    if (hasAlertStrategy()) {
+      hash = (37 * hash) + ALERT_STRATEGY_FIELD_NUMBER;
+      hash = (53 * hash) + getAlertStrategy().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -13275,6 +16561,12 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
         mutationRecord_ = null;
         mutationRecordBuilder_ = null;
       }
+      if (alertStrategyBuilder_ == null) {
+        alertStrategy_ = null;
+      } else {
+        alertStrategy_ = null;
+        alertStrategyBuilder_ = null;
+      }
       return this;
     }
 
@@ -13345,6 +16637,11 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
         result.mutationRecord_ = mutationRecord_;
       } else {
         result.mutationRecord_ = mutationRecordBuilder_.build();
+      }
+      if (alertStrategyBuilder_ == null) {
+        result.alertStrategy_ = alertStrategy_;
+      } else {
+        result.alertStrategy_ = alertStrategyBuilder_.build();
       }
       onBuilt();
       return result;
@@ -13459,6 +16756,9 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
       if (other.hasMutationRecord()) {
         mergeMutationRecord(other.getMutationRecord());
       }
+      if (other.hasAlertStrategy()) {
+        mergeAlertStrategy(other.getAlertStrategy());
+      }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
@@ -13499,7 +16799,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
      * format is:
      *     projects/[PROJECT_ID_OR_NUMBER]/alertPolicies/[ALERT_POLICY_ID]
      * `[ALERT_POLICY_ID]` is assigned by Stackdriver Monitoring when the policy
-     * is created.  When calling the
+     * is created. When calling the
      * [alertPolicies.create][google.monitoring.v3.AlertPolicyService.CreateAlertPolicy]
      * method, do not include the `name` field in the alerting policy passed as
      * part of the request.
@@ -13528,7 +16828,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
      * format is:
      *     projects/[PROJECT_ID_OR_NUMBER]/alertPolicies/[ALERT_POLICY_ID]
      * `[ALERT_POLICY_ID]` is assigned by Stackdriver Monitoring when the policy
-     * is created.  When calling the
+     * is created. When calling the
      * [alertPolicies.create][google.monitoring.v3.AlertPolicyService.CreateAlertPolicy]
      * method, do not include the `name` field in the alerting policy passed as
      * part of the request.
@@ -13557,7 +16857,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
      * format is:
      *     projects/[PROJECT_ID_OR_NUMBER]/alertPolicies/[ALERT_POLICY_ID]
      * `[ALERT_POLICY_ID]` is assigned by Stackdriver Monitoring when the policy
-     * is created.  When calling the
+     * is created. When calling the
      * [alertPolicies.create][google.monitoring.v3.AlertPolicyService.CreateAlertPolicy]
      * method, do not include the `name` field in the alerting policy passed as
      * part of the request.
@@ -13585,7 +16885,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
      * format is:
      *     projects/[PROJECT_ID_OR_NUMBER]/alertPolicies/[ALERT_POLICY_ID]
      * `[ALERT_POLICY_ID]` is assigned by Stackdriver Monitoring when the policy
-     * is created.  When calling the
+     * is created. When calling the
      * [alertPolicies.create][google.monitoring.v3.AlertPolicyService.CreateAlertPolicy]
      * method, do not include the `name` field in the alerting policy passed as
      * part of the request.
@@ -13609,7 +16909,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
      * format is:
      *     projects/[PROJECT_ID_OR_NUMBER]/alertPolicies/[ALERT_POLICY_ID]
      * `[ALERT_POLICY_ID]` is assigned by Stackdriver Monitoring when the policy
-     * is created.  When calling the
+     * is created. When calling the
      * [alertPolicies.create][google.monitoring.v3.AlertPolicyService.CreateAlertPolicy]
      * method, do not include the `name` field in the alerting policy passed as
      * part of the request.
@@ -15744,6 +19044,192 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
         mutationRecord_ = null;
       }
       return mutationRecordBuilder_;
+    }
+
+    private com.google.monitoring.v3.AlertPolicy.AlertStrategy alertStrategy_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.monitoring.v3.AlertPolicy.AlertStrategy,
+            com.google.monitoring.v3.AlertPolicy.AlertStrategy.Builder,
+            com.google.monitoring.v3.AlertPolicy.AlertStrategyOrBuilder>
+        alertStrategyBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Control over how this alert policy's notification channels are notified.
+     * </pre>
+     *
+     * <code>.google.monitoring.v3.AlertPolicy.AlertStrategy alert_strategy = 21;</code>
+     *
+     * @return Whether the alertStrategy field is set.
+     */
+    public boolean hasAlertStrategy() {
+      return alertStrategyBuilder_ != null || alertStrategy_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Control over how this alert policy's notification channels are notified.
+     * </pre>
+     *
+     * <code>.google.monitoring.v3.AlertPolicy.AlertStrategy alert_strategy = 21;</code>
+     *
+     * @return The alertStrategy.
+     */
+    public com.google.monitoring.v3.AlertPolicy.AlertStrategy getAlertStrategy() {
+      if (alertStrategyBuilder_ == null) {
+        return alertStrategy_ == null
+            ? com.google.monitoring.v3.AlertPolicy.AlertStrategy.getDefaultInstance()
+            : alertStrategy_;
+      } else {
+        return alertStrategyBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Control over how this alert policy's notification channels are notified.
+     * </pre>
+     *
+     * <code>.google.monitoring.v3.AlertPolicy.AlertStrategy alert_strategy = 21;</code>
+     */
+    public Builder setAlertStrategy(com.google.monitoring.v3.AlertPolicy.AlertStrategy value) {
+      if (alertStrategyBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        alertStrategy_ = value;
+        onChanged();
+      } else {
+        alertStrategyBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Control over how this alert policy's notification channels are notified.
+     * </pre>
+     *
+     * <code>.google.monitoring.v3.AlertPolicy.AlertStrategy alert_strategy = 21;</code>
+     */
+    public Builder setAlertStrategy(
+        com.google.monitoring.v3.AlertPolicy.AlertStrategy.Builder builderForValue) {
+      if (alertStrategyBuilder_ == null) {
+        alertStrategy_ = builderForValue.build();
+        onChanged();
+      } else {
+        alertStrategyBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Control over how this alert policy's notification channels are notified.
+     * </pre>
+     *
+     * <code>.google.monitoring.v3.AlertPolicy.AlertStrategy alert_strategy = 21;</code>
+     */
+    public Builder mergeAlertStrategy(com.google.monitoring.v3.AlertPolicy.AlertStrategy value) {
+      if (alertStrategyBuilder_ == null) {
+        if (alertStrategy_ != null) {
+          alertStrategy_ =
+              com.google.monitoring.v3.AlertPolicy.AlertStrategy.newBuilder(alertStrategy_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          alertStrategy_ = value;
+        }
+        onChanged();
+      } else {
+        alertStrategyBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Control over how this alert policy's notification channels are notified.
+     * </pre>
+     *
+     * <code>.google.monitoring.v3.AlertPolicy.AlertStrategy alert_strategy = 21;</code>
+     */
+    public Builder clearAlertStrategy() {
+      if (alertStrategyBuilder_ == null) {
+        alertStrategy_ = null;
+        onChanged();
+      } else {
+        alertStrategy_ = null;
+        alertStrategyBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Control over how this alert policy's notification channels are notified.
+     * </pre>
+     *
+     * <code>.google.monitoring.v3.AlertPolicy.AlertStrategy alert_strategy = 21;</code>
+     */
+    public com.google.monitoring.v3.AlertPolicy.AlertStrategy.Builder getAlertStrategyBuilder() {
+
+      onChanged();
+      return getAlertStrategyFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Control over how this alert policy's notification channels are notified.
+     * </pre>
+     *
+     * <code>.google.monitoring.v3.AlertPolicy.AlertStrategy alert_strategy = 21;</code>
+     */
+    public com.google.monitoring.v3.AlertPolicy.AlertStrategyOrBuilder getAlertStrategyOrBuilder() {
+      if (alertStrategyBuilder_ != null) {
+        return alertStrategyBuilder_.getMessageOrBuilder();
+      } else {
+        return alertStrategy_ == null
+            ? com.google.monitoring.v3.AlertPolicy.AlertStrategy.getDefaultInstance()
+            : alertStrategy_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Control over how this alert policy's notification channels are notified.
+     * </pre>
+     *
+     * <code>.google.monitoring.v3.AlertPolicy.AlertStrategy alert_strategy = 21;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.monitoring.v3.AlertPolicy.AlertStrategy,
+            com.google.monitoring.v3.AlertPolicy.AlertStrategy.Builder,
+            com.google.monitoring.v3.AlertPolicy.AlertStrategyOrBuilder>
+        getAlertStrategyFieldBuilder() {
+      if (alertStrategyBuilder_ == null) {
+        alertStrategyBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.monitoring.v3.AlertPolicy.AlertStrategy,
+                com.google.monitoring.v3.AlertPolicy.AlertStrategy.Builder,
+                com.google.monitoring.v3.AlertPolicy.AlertStrategyOrBuilder>(
+                getAlertStrategy(), getParentForChildren(), isClean());
+        alertStrategy_ = null;
+      }
+      return alertStrategyBuilder_;
     }
 
     @java.lang.Override

@@ -341,8 +341,8 @@ public final class ListTimeSeriesRequest extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Required. The project, organization or folder on which to execute the request. The
-   * format is:
+   * Required. The [project](https://cloud.google.com/monitoring/api/v3#project_name),
+   * organization or folder on which to execute the request. The format is:
    *     projects/[PROJECT_ID_OR_NUMBER]
    *     organizations/[ORGANIZATION_ID]
    *     folders/[FOLDER_ID]
@@ -370,8 +370,8 @@ public final class ListTimeSeriesRequest extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Required. The project, organization or folder on which to execute the request. The
-   * format is:
+   * Required. The [project](https://cloud.google.com/monitoring/api/v3#project_name),
+   * organization or folder on which to execute the request. The format is:
    *     projects/[PROJECT_ID_OR_NUMBER]
    *     organizations/[ORGANIZATION_ID]
    *     folders/[FOLDER_ID]
@@ -805,7 +805,7 @@ public final class ListTimeSeriesRequest extends com.google.protobuf.GeneratedMe
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getFilterBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(filter_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, filter_);
     }
     if (interval_ != null) {
@@ -814,7 +814,7 @@ public final class ListTimeSeriesRequest extends com.google.protobuf.GeneratedMe
     if (aggregation_ != null) {
       output.writeMessage(5, getAggregation());
     }
-    if (!getOrderByBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(orderBy_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 6, orderBy_);
     }
     if (view_ != com.google.monitoring.v3.ListTimeSeriesRequest.TimeSeriesView.FULL.getNumber()) {
@@ -823,10 +823,10 @@ public final class ListTimeSeriesRequest extends com.google.protobuf.GeneratedMe
     if (pageSize_ != 0) {
       output.writeInt32(8, pageSize_);
     }
-    if (!getPageTokenBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(pageToken_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 9, pageToken_);
     }
-    if (!getNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 10, name_);
     }
     if (secondaryAggregation_ != null) {
@@ -841,7 +841,7 @@ public final class ListTimeSeriesRequest extends com.google.protobuf.GeneratedMe
     if (size != -1) return size;
 
     size = 0;
-    if (!getFilterBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(filter_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, filter_);
     }
     if (interval_ != null) {
@@ -850,7 +850,7 @@ public final class ListTimeSeriesRequest extends com.google.protobuf.GeneratedMe
     if (aggregation_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(5, getAggregation());
     }
-    if (!getOrderByBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(orderBy_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, orderBy_);
     }
     if (view_ != com.google.monitoring.v3.ListTimeSeriesRequest.TimeSeriesView.FULL.getNumber()) {
@@ -859,10 +859,10 @@ public final class ListTimeSeriesRequest extends com.google.protobuf.GeneratedMe
     if (pageSize_ != 0) {
       size += com.google.protobuf.CodedOutputStream.computeInt32Size(8, pageSize_);
     }
-    if (!getPageTokenBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(pageToken_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(9, pageToken_);
     }
-    if (!getNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(10, name_);
     }
     if (secondaryAggregation_ != null) {
@@ -1275,8 +1275,8 @@ public final class ListTimeSeriesRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Required. The project, organization or folder on which to execute the request. The
-     * format is:
+     * Required. The [project](https://cloud.google.com/monitoring/api/v3#project_name),
+     * organization or folder on which to execute the request. The format is:
      *     projects/[PROJECT_ID_OR_NUMBER]
      *     organizations/[ORGANIZATION_ID]
      *     folders/[FOLDER_ID]
@@ -1303,8 +1303,8 @@ public final class ListTimeSeriesRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Required. The project, organization or folder on which to execute the request. The
-     * format is:
+     * Required. The [project](https://cloud.google.com/monitoring/api/v3#project_name),
+     * organization or folder on which to execute the request. The format is:
      *     projects/[PROJECT_ID_OR_NUMBER]
      *     organizations/[ORGANIZATION_ID]
      *     folders/[FOLDER_ID]
@@ -1331,8 +1331,8 @@ public final class ListTimeSeriesRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Required. The project, organization or folder on which to execute the request. The
-     * format is:
+     * Required. The [project](https://cloud.google.com/monitoring/api/v3#project_name),
+     * organization or folder on which to execute the request. The format is:
      *     projects/[PROJECT_ID_OR_NUMBER]
      *     organizations/[ORGANIZATION_ID]
      *     folders/[FOLDER_ID]
@@ -1358,8 +1358,8 @@ public final class ListTimeSeriesRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Required. The project, organization or folder on which to execute the request. The
-     * format is:
+     * Required. The [project](https://cloud.google.com/monitoring/api/v3#project_name),
+     * organization or folder on which to execute the request. The format is:
      *     projects/[PROJECT_ID_OR_NUMBER]
      *     organizations/[ORGANIZATION_ID]
      *     folders/[FOLDER_ID]
@@ -1381,8 +1381,8 @@ public final class ListTimeSeriesRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Required. The project, organization or folder on which to execute the request. The
-     * format is:
+     * Required. The [project](https://cloud.google.com/monitoring/api/v3#project_name),
+     * organization or folder on which to execute the request. The format is:
      *     projects/[PROJECT_ID_OR_NUMBER]
      *     organizations/[ORGANIZATION_ID]
      *     folders/[FOLDER_ID]

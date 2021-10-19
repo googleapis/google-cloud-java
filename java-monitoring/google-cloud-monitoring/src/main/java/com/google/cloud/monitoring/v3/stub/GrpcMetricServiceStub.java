@@ -149,6 +149,16 @@ public class GrpcMetricServiceStub extends MetricServiceStub {
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
               .build();
 
+  private static final MethodDescriptor<CreateTimeSeriesRequest, Empty>
+      createServiceTimeSeriesMethodDescriptor =
+          MethodDescriptor.<CreateTimeSeriesRequest, Empty>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.monitoring.v3.MetricService/CreateServiceTimeSeries")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(CreateTimeSeriesRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .build();
+
   private final UnaryCallable<
           ListMonitoredResourceDescriptorsRequest, ListMonitoredResourceDescriptorsResponse>
       listMonitoredResourceDescriptorsCallable;
@@ -170,6 +180,7 @@ public class GrpcMetricServiceStub extends MetricServiceStub {
   private final UnaryCallable<ListTimeSeriesRequest, ListTimeSeriesPagedResponse>
       listTimeSeriesPagedCallable;
   private final UnaryCallable<CreateTimeSeriesRequest, Empty> createTimeSeriesCallable;
+  private final UnaryCallable<CreateTimeSeriesRequest, Empty> createServiceTimeSeriesCallable;
 
   private final BackgroundResource backgroundResources;
   private final GrpcOperationsStub operationsStub;
@@ -304,6 +315,16 @@ public class GrpcMetricServiceStub extends MetricServiceStub {
                   return params.build();
                 })
             .build();
+    GrpcCallSettings<CreateTimeSeriesRequest, Empty> createServiceTimeSeriesTransportSettings =
+        GrpcCallSettings.<CreateTimeSeriesRequest, Empty>newBuilder()
+            .setMethodDescriptor(createServiceTimeSeriesMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  return params.build();
+                })
+            .build();
 
     this.listMonitoredResourceDescriptorsCallable =
         callableFactory.createUnaryCallable(
@@ -354,6 +375,11 @@ public class GrpcMetricServiceStub extends MetricServiceStub {
     this.createTimeSeriesCallable =
         callableFactory.createUnaryCallable(
             createTimeSeriesTransportSettings, settings.createTimeSeriesSettings(), clientContext);
+    this.createServiceTimeSeriesCallable =
+        callableFactory.createUnaryCallable(
+            createServiceTimeSeriesTransportSettings,
+            settings.createServiceTimeSeriesSettings(),
+            clientContext);
 
     this.backgroundResources =
         new BackgroundResourceAggregation(clientContext.getBackgroundResources());
@@ -425,6 +451,11 @@ public class GrpcMetricServiceStub extends MetricServiceStub {
   @Override
   public UnaryCallable<CreateTimeSeriesRequest, Empty> createTimeSeriesCallable() {
     return createTimeSeriesCallable;
+  }
+
+  @Override
+  public UnaryCallable<CreateTimeSeriesRequest, Empty> createServiceTimeSeriesCallable() {
+    return createServiceTimeSeriesCallable;
   }
 
   @Override

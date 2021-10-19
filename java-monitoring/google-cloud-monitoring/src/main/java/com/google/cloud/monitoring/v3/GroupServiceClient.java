@@ -183,7 +183,8 @@ public class GroupServiceClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param name Required. The project whose groups are to be listed. The format is:
+   * @param name Required. The [project](https://cloud.google.com/monitoring/api/v3#project_name)
+   *     whose groups are to be listed. The format is:
    *     <p>projects/[PROJECT_ID_OR_NUMBER]
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -208,7 +209,8 @@ public class GroupServiceClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param name Required. The project whose groups are to be listed. The format is:
+   * @param name Required. The [project](https://cloud.google.com/monitoring/api/v3#project_name)
+   *     whose groups are to be listed. The format is:
    *     <p>projects/[PROJECT_ID_OR_NUMBER]
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -233,7 +235,8 @@ public class GroupServiceClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param name Required. The project whose groups are to be listed. The format is:
+   * @param name Required. The [project](https://cloud.google.com/monitoring/api/v3#project_name)
+   *     whose groups are to be listed. The format is:
    *     <p>projects/[PROJECT_ID_OR_NUMBER]
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -258,7 +261,8 @@ public class GroupServiceClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param name Required. The project whose groups are to be listed. The format is:
+   * @param name Required. The [project](https://cloud.google.com/monitoring/api/v3#project_name)
+   *     whose groups are to be listed. The format is:
    *     <p>projects/[PROJECT_ID_OR_NUMBER]
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -457,7 +461,8 @@ public class GroupServiceClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param name Required. The project in which to create the group. The format is:
+   * @param name Required. The [project](https://cloud.google.com/monitoring/api/v3#project_name) in
+   *     which to create the group. The format is:
    *     <p>projects/[PROJECT_ID_OR_NUMBER]
    * @param group Required. A group definition. It is an error to define the `name` field because
    *     the system assigns the name.
@@ -486,7 +491,8 @@ public class GroupServiceClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param name Required. The project in which to create the group. The format is:
+   * @param name Required. The [project](https://cloud.google.com/monitoring/api/v3#project_name) in
+   *     which to create the group. The format is:
    *     <p>projects/[PROJECT_ID_OR_NUMBER]
    * @param group Required. A group definition. It is an error to define the `name` field because
    *     the system assigns the name.
@@ -515,7 +521,8 @@ public class GroupServiceClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param name Required. The project in which to create the group. The format is:
+   * @param name Required. The [project](https://cloud.google.com/monitoring/api/v3#project_name) in
+   *     which to create the group. The format is:
    *     <p>projects/[PROJECT_ID_OR_NUMBER]
    * @param group Required. A group definition. It is an error to define the `name` field because
    *     the system assigns the name.
@@ -544,7 +551,8 @@ public class GroupServiceClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param name Required. The project in which to create the group. The format is:
+   * @param name Required. The [project](https://cloud.google.com/monitoring/api/v3#project_name) in
+   *     which to create the group. The format is:
    *     <p>projects/[PROJECT_ID_OR_NUMBER]
    * @param group Required. A group definition. It is an error to define the `name` field because
    *     the system assigns the name.

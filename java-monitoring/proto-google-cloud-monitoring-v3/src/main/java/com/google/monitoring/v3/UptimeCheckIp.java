@@ -291,10 +291,10 @@ public final class UptimeCheckIp extends com.google.protobuf.GeneratedMessageV3
     if (region_ != com.google.monitoring.v3.UptimeCheckRegion.REGION_UNSPECIFIED.getNumber()) {
       output.writeEnum(1, region_);
     }
-    if (!getLocationBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(location_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, location_);
     }
-    if (!getIpAddressBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(ipAddress_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, ipAddress_);
     }
     unknownFields.writeTo(output);
@@ -309,10 +309,10 @@ public final class UptimeCheckIp extends com.google.protobuf.GeneratedMessageV3
     if (region_ != com.google.monitoring.v3.UptimeCheckRegion.REGION_UNSPECIFIED.getNumber()) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(1, region_);
     }
-    if (!getLocationBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(location_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, location_);
     }
-    if (!getIpAddressBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(ipAddress_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, ipAddress_);
     }
     size += unknownFields.getSerializedSize();

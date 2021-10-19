@@ -64,6 +64,9 @@
             "CreateMetricDescriptor": {
               "methods": ["createMetricDescriptor", "createMetricDescriptor", "createMetricDescriptor", "createMetricDescriptor", "createMetricDescriptor", "createMetricDescriptorCallable"]
             },
+            "CreateServiceTimeSeries": {
+              "methods": ["createServiceTimeSeries", "createServiceTimeSeries", "createServiceTimeSeries", "createServiceTimeSeriesCallable"]
+            },
             "CreateTimeSeries": {
               "methods": ["createTimeSeries", "createTimeSeries", "createTimeSeries", "createTimeSeriesCallable"]
             },

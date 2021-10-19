@@ -444,12 +444,10 @@ public class ServiceMonitoringServiceStubSettings
       ImmutableMap.Builder<String, ImmutableSet<StatusCode.Code>> definitions =
           ImmutableMap.builder();
       definitions.put(
-          "no_retry_5_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
+          "no_retry_6_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
       definitions.put(
-          "retry_policy_6_codes",
-          ImmutableSet.copyOf(
-              Lists.<StatusCode.Code>newArrayList(
-                  StatusCode.Code.DEADLINE_EXCEEDED, StatusCode.Code.UNAVAILABLE)));
+          "retry_policy_7_codes",
+          ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList(StatusCode.Code.UNAVAILABLE)));
       RETRYABLE_CODE_DEFINITIONS = definitions.build();
     }
 
@@ -465,7 +463,7 @@ public class ServiceMonitoringServiceStubSettings
               .setMaxRpcTimeout(Duration.ofMillis(30000L))
               .setTotalTimeout(Duration.ofMillis(30000L))
               .build();
-      definitions.put("no_retry_5_params", settings);
+      definitions.put("no_retry_6_params", settings);
       settings =
           RetrySettings.newBuilder()
               .setInitialRetryDelay(Duration.ofMillis(100L))
@@ -476,7 +474,7 @@ public class ServiceMonitoringServiceStubSettings
               .setMaxRpcTimeout(Duration.ofMillis(30000L))
               .setTotalTimeout(Duration.ofMillis(30000L))
               .build();
-      definitions.put("retry_policy_6_params", settings);
+      definitions.put("retry_policy_7_params", settings);
       RETRY_PARAM_DEFINITIONS = definitions.build();
     }
 
@@ -561,53 +559,53 @@ public class ServiceMonitoringServiceStubSettings
     private static Builder initDefaults(Builder builder) {
       builder
           .createServiceSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_5_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_5_params"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_6_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_6_params"));
 
       builder
           .getServiceSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_6_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_6_params"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_7_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_7_params"));
 
       builder
           .listServicesSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_6_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_6_params"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_7_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_7_params"));
 
       builder
           .updateServiceSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_5_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_5_params"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_6_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_6_params"));
 
       builder
           .deleteServiceSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_6_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_6_params"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_7_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_7_params"));
 
       builder
           .createServiceLevelObjectiveSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_5_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_5_params"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_6_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_6_params"));
 
       builder
           .getServiceLevelObjectiveSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_6_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_6_params"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_7_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_7_params"));
 
       builder
           .listServiceLevelObjectivesSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_6_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_6_params"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_7_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_7_params"));
 
       builder
           .updateServiceLevelObjectiveSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_5_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_5_params"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_6_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_6_params"));
 
       builder
           .deleteServiceLevelObjectiveSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_6_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_6_params"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_7_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_7_params"));
 
       return builder;
     }

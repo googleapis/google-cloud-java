@@ -27,7 +27,8 @@ public interface ListGroupsRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The project whose groups are to be listed. The format is:
+   * Required. The [project](https://cloud.google.com/monitoring/api/v3#project_name)
+   * whose groups are to be listed. The format is:
    *     projects/[PROJECT_ID_OR_NUMBER]
    * </pre>
    *
@@ -42,7 +43,8 @@ public interface ListGroupsRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The project whose groups are to be listed. The format is:
+   * Required. The [project](https://cloud.google.com/monitoring/api/v3#project_name)
+   * whose groups are to be listed. The format is:
    *     projects/[PROJECT_ID_OR_NUMBER]
    * </pre>
    *

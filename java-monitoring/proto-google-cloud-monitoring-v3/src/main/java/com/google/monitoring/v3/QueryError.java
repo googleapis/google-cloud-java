@@ -242,7 +242,7 @@ public final class QueryError extends com.google.protobuf.GeneratedMessageV3
     if (locator_ != null) {
       output.writeMessage(1, getLocator());
     }
-    if (!getMessageBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(message_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, message_);
     }
     unknownFields.writeTo(output);
@@ -257,7 +257,7 @@ public final class QueryError extends com.google.protobuf.GeneratedMessageV3
     if (locator_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, getLocator());
     }
-    if (!getMessageBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(message_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, message_);
     }
     size += unknownFields.getSerializedSize();

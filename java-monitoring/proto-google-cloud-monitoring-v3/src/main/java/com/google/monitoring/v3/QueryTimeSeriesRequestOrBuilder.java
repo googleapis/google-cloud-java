@@ -27,11 +27,12 @@ public interface QueryTimeSeriesRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The project on which to execute the request. The format is:
+   * Required. The [project](https://cloud.google.com/monitoring/api/v3#project_name) on
+   * which to execute the request. The format is:
    *     projects/[PROJECT_ID_OR_NUMBER]
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The name.
    */
@@ -40,11 +41,12 @@ public interface QueryTimeSeriesRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The project on which to execute the request. The format is:
+   * Required. The [project](https://cloud.google.com/monitoring/api/v3#project_name) on
+   * which to execute the request. The format is:
    *     projects/[PROJECT_ID_OR_NUMBER]
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The bytes for name.
    */
@@ -59,7 +61,7 @@ public interface QueryTimeSeriesRequestOrBuilder
    * The default time zone is in UTC.
    * </pre>
    *
-   * <code>string query = 7;</code>
+   * <code>string query = 7 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The query.
    */
@@ -73,7 +75,7 @@ public interface QueryTimeSeriesRequestOrBuilder
    * The default time zone is in UTC.
    * </pre>
    *
-   * <code>string query = 7;</code>
+   * <code>string query = 7 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The bytes for query.
    */

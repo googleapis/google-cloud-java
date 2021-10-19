@@ -134,7 +134,8 @@ public final class CreateNotificationChannelRequest extends com.google.protobuf.
    *
    *
    * <pre>
-   * Required. The project on which to execute the request. The format is:
+   * Required. The [project](https://cloud.google.com/monitoring/api/v3#project_name) on
+   * which to execute the request. The format is:
    *     projects/[PROJECT_ID_OR_NUMBER]
    * This names the container into which the channel will be
    * written, this does not name the newly created channel. The resulting
@@ -164,7 +165,8 @@ public final class CreateNotificationChannelRequest extends com.google.protobuf.
    *
    *
    * <pre>
-   * Required. The project on which to execute the request. The format is:
+   * Required. The [project](https://cloud.google.com/monitoring/api/v3#project_name) on
+   * which to execute the request. The format is:
    *     projects/[PROJECT_ID_OR_NUMBER]
    * This names the container into which the channel will be
    * written, this does not name the newly created channel. The resulting
@@ -262,7 +264,7 @@ public final class CreateNotificationChannelRequest extends com.google.protobuf.
     if (notificationChannel_ != null) {
       output.writeMessage(2, getNotificationChannel());
     }
-    if (!getNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, name_);
     }
     unknownFields.writeTo(output);
@@ -277,7 +279,7 @@ public final class CreateNotificationChannelRequest extends com.google.protobuf.
     if (notificationChannel_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, getNotificationChannel());
     }
-    if (!getNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, name_);
     }
     size += unknownFields.getSerializedSize();
@@ -597,7 +599,8 @@ public final class CreateNotificationChannelRequest extends com.google.protobuf.
      *
      *
      * <pre>
-     * Required. The project on which to execute the request. The format is:
+     * Required. The [project](https://cloud.google.com/monitoring/api/v3#project_name) on
+     * which to execute the request. The format is:
      *     projects/[PROJECT_ID_OR_NUMBER]
      * This names the container into which the channel will be
      * written, this does not name the newly created channel. The resulting
@@ -626,7 +629,8 @@ public final class CreateNotificationChannelRequest extends com.google.protobuf.
      *
      *
      * <pre>
-     * Required. The project on which to execute the request. The format is:
+     * Required. The [project](https://cloud.google.com/monitoring/api/v3#project_name) on
+     * which to execute the request. The format is:
      *     projects/[PROJECT_ID_OR_NUMBER]
      * This names the container into which the channel will be
      * written, this does not name the newly created channel. The resulting
@@ -655,7 +659,8 @@ public final class CreateNotificationChannelRequest extends com.google.protobuf.
      *
      *
      * <pre>
-     * Required. The project on which to execute the request. The format is:
+     * Required. The [project](https://cloud.google.com/monitoring/api/v3#project_name) on
+     * which to execute the request. The format is:
      *     projects/[PROJECT_ID_OR_NUMBER]
      * This names the container into which the channel will be
      * written, this does not name the newly created channel. The resulting
@@ -683,7 +688,8 @@ public final class CreateNotificationChannelRequest extends com.google.protobuf.
      *
      *
      * <pre>
-     * Required. The project on which to execute the request. The format is:
+     * Required. The [project](https://cloud.google.com/monitoring/api/v3#project_name) on
+     * which to execute the request. The format is:
      *     projects/[PROJECT_ID_OR_NUMBER]
      * This names the container into which the channel will be
      * written, this does not name the newly created channel. The resulting
@@ -707,7 +713,8 @@ public final class CreateNotificationChannelRequest extends com.google.protobuf.
      *
      *
      * <pre>
-     * Required. The project on which to execute the request. The format is:
+     * Required. The [project](https://cloud.google.com/monitoring/api/v3#project_name) on
+     * which to execute the request. The format is:
      *     projects/[PROJECT_ID_OR_NUMBER]
      * This names the container into which the channel will be
      * written, this does not name the newly created channel. The resulting

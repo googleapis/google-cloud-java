@@ -246,7 +246,9 @@ public final class TimeSeries extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The associated monitored resource.  Custom metrics can use only certain
-   * monitored resource types in their time series data.
+   * monitored resource types in their time series data. For more information,
+   * see [Monitored resources for custom
+   * metrics](https://cloud.google.com/monitoring/custom-metrics/creating-metrics#custom-metric-resources).
    * </pre>
    *
    * <code>.google.api.MonitoredResource resource = 2;</code>
@@ -262,7 +264,9 @@ public final class TimeSeries extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The associated monitored resource.  Custom metrics can use only certain
-   * monitored resource types in their time series data.
+   * monitored resource types in their time series data. For more information,
+   * see [Monitored resources for custom
+   * metrics](https://cloud.google.com/monitoring/custom-metrics/creating-metrics#custom-metric-resources).
    * </pre>
    *
    * <code>.google.api.MonitoredResource resource = 2;</code>
@@ -278,7 +282,9 @@ public final class TimeSeries extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The associated monitored resource.  Custom metrics can use only certain
-   * monitored resource types in their time series data.
+   * monitored resource types in their time series data. For more information,
+   * see [Monitored resources for custom
+   * metrics](https://cloud.google.com/monitoring/custom-metrics/creating-metrics#custom-metric-resources).
    * </pre>
    *
    * <code>.google.api.MonitoredResource resource = 2;</code>
@@ -622,7 +628,7 @@ public final class TimeSeries extends com.google.protobuf.GeneratedMessageV3
     if (metadata_ != null) {
       output.writeMessage(7, getMetadata());
     }
-    if (!getUnitBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(unit_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 8, unit_);
     }
     unknownFields.writeTo(output);
@@ -654,7 +660,7 @@ public final class TimeSeries extends com.google.protobuf.GeneratedMessageV3
     if (metadata_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(7, getMetadata());
     }
-    if (!getUnitBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(unit_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, unit_);
     }
     size += unknownFields.getSerializedSize();
@@ -1273,7 +1279,9 @@ public final class TimeSeries extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The associated monitored resource.  Custom metrics can use only certain
-     * monitored resource types in their time series data.
+     * monitored resource types in their time series data. For more information,
+     * see [Monitored resources for custom
+     * metrics](https://cloud.google.com/monitoring/custom-metrics/creating-metrics#custom-metric-resources).
      * </pre>
      *
      * <code>.google.api.MonitoredResource resource = 2;</code>
@@ -1288,7 +1296,9 @@ public final class TimeSeries extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The associated monitored resource.  Custom metrics can use only certain
-     * monitored resource types in their time series data.
+     * monitored resource types in their time series data. For more information,
+     * see [Monitored resources for custom
+     * metrics](https://cloud.google.com/monitoring/custom-metrics/creating-metrics#custom-metric-resources).
      * </pre>
      *
      * <code>.google.api.MonitoredResource resource = 2;</code>
@@ -1309,7 +1319,9 @@ public final class TimeSeries extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The associated monitored resource.  Custom metrics can use only certain
-     * monitored resource types in their time series data.
+     * monitored resource types in their time series data. For more information,
+     * see [Monitored resources for custom
+     * metrics](https://cloud.google.com/monitoring/custom-metrics/creating-metrics#custom-metric-resources).
      * </pre>
      *
      * <code>.google.api.MonitoredResource resource = 2;</code>
@@ -1332,7 +1344,9 @@ public final class TimeSeries extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The associated monitored resource.  Custom metrics can use only certain
-     * monitored resource types in their time series data.
+     * monitored resource types in their time series data. For more information,
+     * see [Monitored resources for custom
+     * metrics](https://cloud.google.com/monitoring/custom-metrics/creating-metrics#custom-metric-resources).
      * </pre>
      *
      * <code>.google.api.MonitoredResource resource = 2;</code>
@@ -1352,7 +1366,9 @@ public final class TimeSeries extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The associated monitored resource.  Custom metrics can use only certain
-     * monitored resource types in their time series data.
+     * monitored resource types in their time series data. For more information,
+     * see [Monitored resources for custom
+     * metrics](https://cloud.google.com/monitoring/custom-metrics/creating-metrics#custom-metric-resources).
      * </pre>
      *
      * <code>.google.api.MonitoredResource resource = 2;</code>
@@ -1379,7 +1395,9 @@ public final class TimeSeries extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The associated monitored resource.  Custom metrics can use only certain
-     * monitored resource types in their time series data.
+     * monitored resource types in their time series data. For more information,
+     * see [Monitored resources for custom
+     * metrics](https://cloud.google.com/monitoring/custom-metrics/creating-metrics#custom-metric-resources).
      * </pre>
      *
      * <code>.google.api.MonitoredResource resource = 2;</code>
@@ -1400,7 +1418,9 @@ public final class TimeSeries extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The associated monitored resource.  Custom metrics can use only certain
-     * monitored resource types in their time series data.
+     * monitored resource types in their time series data. For more information,
+     * see [Monitored resources for custom
+     * metrics](https://cloud.google.com/monitoring/custom-metrics/creating-metrics#custom-metric-resources).
      * </pre>
      *
      * <code>.google.api.MonitoredResource resource = 2;</code>
@@ -1415,7 +1435,9 @@ public final class TimeSeries extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The associated monitored resource.  Custom metrics can use only certain
-     * monitored resource types in their time series data.
+     * monitored resource types in their time series data. For more information,
+     * see [Monitored resources for custom
+     * metrics](https://cloud.google.com/monitoring/custom-metrics/creating-metrics#custom-metric-resources).
      * </pre>
      *
      * <code>.google.api.MonitoredResource resource = 2;</code>
@@ -1434,7 +1456,9 @@ public final class TimeSeries extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The associated monitored resource.  Custom metrics can use only certain
-     * monitored resource types in their time series data.
+     * monitored resource types in their time series data. For more information,
+     * see [Monitored resources for custom
+     * metrics](https://cloud.google.com/monitoring/custom-metrics/creating-metrics#custom-metric-resources).
      * </pre>
      *
      * <code>.google.api.MonitoredResource resource = 2;</code>

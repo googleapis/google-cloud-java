@@ -199,8 +199,9 @@ public class NotificationChannelServiceClient implements BackgroundResource {
    * @param name Required. The REST resource name of the parent from which to retrieve the
    *     notification channel descriptors. The expected syntax is:
    *     <p>projects/[PROJECT_ID_OR_NUMBER]
-   *     <p>Note that this names the parent container in which to look for the descriptors; to
-   *     retrieve a single descriptor by name, use the
+   *     <p>Note that this [names](https://cloud.google.com/monitoring/api/v3#project_name) the
+   *     parent container in which to look for the descriptors; to retrieve a single descriptor by
+   *     name, use the
    *     [GetNotificationChannelDescriptor][google.monitoring.v3.NotificationChannelService.GetNotificationChannelDescriptor]
    *     operation, instead.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -235,8 +236,9 @@ public class NotificationChannelServiceClient implements BackgroundResource {
    * @param name Required. The REST resource name of the parent from which to retrieve the
    *     notification channel descriptors. The expected syntax is:
    *     <p>projects/[PROJECT_ID_OR_NUMBER]
-   *     <p>Note that this names the parent container in which to look for the descriptors; to
-   *     retrieve a single descriptor by name, use the
+   *     <p>Note that this [names](https://cloud.google.com/monitoring/api/v3#project_name) the
+   *     parent container in which to look for the descriptors; to retrieve a single descriptor by
+   *     name, use the
    *     [GetNotificationChannelDescriptor][google.monitoring.v3.NotificationChannelService.GetNotificationChannelDescriptor]
    *     operation, instead.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -271,8 +273,9 @@ public class NotificationChannelServiceClient implements BackgroundResource {
    * @param name Required. The REST resource name of the parent from which to retrieve the
    *     notification channel descriptors. The expected syntax is:
    *     <p>projects/[PROJECT_ID_OR_NUMBER]
-   *     <p>Note that this names the parent container in which to look for the descriptors; to
-   *     retrieve a single descriptor by name, use the
+   *     <p>Note that this [names](https://cloud.google.com/monitoring/api/v3#project_name) the
+   *     parent container in which to look for the descriptors; to retrieve a single descriptor by
+   *     name, use the
    *     [GetNotificationChannelDescriptor][google.monitoring.v3.NotificationChannelService.GetNotificationChannelDescriptor]
    *     operation, instead.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -310,8 +313,9 @@ public class NotificationChannelServiceClient implements BackgroundResource {
    * @param name Required. The REST resource name of the parent from which to retrieve the
    *     notification channel descriptors. The expected syntax is:
    *     <p>projects/[PROJECT_ID_OR_NUMBER]
-   *     <p>Note that this names the parent container in which to look for the descriptors; to
-   *     retrieve a single descriptor by name, use the
+   *     <p>Note that this [names](https://cloud.google.com/monitoring/api/v3#project_name) the
+   *     parent container in which to look for the descriptors; to retrieve a single descriptor by
+   *     name, use the
    *     [GetNotificationChannelDescriptor][google.monitoring.v3.NotificationChannelService.GetNotificationChannelDescriptor]
    *     operation, instead.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -577,7 +581,8 @@ public class NotificationChannelServiceClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param name Required. The project on which to execute the request. The format is:
+   * @param name Required. The [project](https://cloud.google.com/monitoring/api/v3#project_name) on
+   *     which to execute the request. The format is:
    *     <p>projects/[PROJECT_ID_OR_NUMBER]
    *     <p>This names the container in which to look for the notification channels; it does not
    *     name a specific channel. To query a specific channel by REST resource name, use the
@@ -610,7 +615,8 @@ public class NotificationChannelServiceClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param name Required. The project on which to execute the request. The format is:
+   * @param name Required. The [project](https://cloud.google.com/monitoring/api/v3#project_name) on
+   *     which to execute the request. The format is:
    *     <p>projects/[PROJECT_ID_OR_NUMBER]
    *     <p>This names the container in which to look for the notification channels; it does not
    *     name a specific channel. To query a specific channel by REST resource name, use the
@@ -644,7 +650,8 @@ public class NotificationChannelServiceClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param name Required. The project on which to execute the request. The format is:
+   * @param name Required. The [project](https://cloud.google.com/monitoring/api/v3#project_name) on
+   *     which to execute the request. The format is:
    *     <p>projects/[PROJECT_ID_OR_NUMBER]
    *     <p>This names the container in which to look for the notification channels; it does not
    *     name a specific channel. To query a specific channel by REST resource name, use the
@@ -680,7 +687,8 @@ public class NotificationChannelServiceClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param name Required. The project on which to execute the request. The format is:
+   * @param name Required. The [project](https://cloud.google.com/monitoring/api/v3#project_name) on
+   *     which to execute the request. The format is:
    *     <p>projects/[PROJECT_ID_OR_NUMBER]
    *     <p>This names the container in which to look for the notification channels; it does not
    *     name a specific channel. To query a specific channel by REST resource name, use the
@@ -946,7 +954,8 @@ public class NotificationChannelServiceClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param name Required. The project on which to execute the request. The format is:
+   * @param name Required. The [project](https://cloud.google.com/monitoring/api/v3#project_name) on
+   *     which to execute the request. The format is:
    *     <p>projects/[PROJECT_ID_OR_NUMBER]
    *     <p>This names the container into which the channel will be written, this does not name the
    *     newly created channel. The resulting channel's name will have a normalized version of this
@@ -982,7 +991,8 @@ public class NotificationChannelServiceClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param name Required. The project on which to execute the request. The format is:
+   * @param name Required. The [project](https://cloud.google.com/monitoring/api/v3#project_name) on
+   *     which to execute the request. The format is:
    *     <p>projects/[PROJECT_ID_OR_NUMBER]
    *     <p>This names the container into which the channel will be written, this does not name the
    *     newly created channel. The resulting channel's name will have a normalized version of this
@@ -1018,7 +1028,8 @@ public class NotificationChannelServiceClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param name Required. The project on which to execute the request. The format is:
+   * @param name Required. The [project](https://cloud.google.com/monitoring/api/v3#project_name) on
+   *     which to execute the request. The format is:
    *     <p>projects/[PROJECT_ID_OR_NUMBER]
    *     <p>This names the container into which the channel will be written, this does not name the
    *     newly created channel. The resulting channel's name will have a normalized version of this
@@ -1057,7 +1068,8 @@ public class NotificationChannelServiceClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param name Required. The project on which to execute the request. The format is:
+   * @param name Required. The [project](https://cloud.google.com/monitoring/api/v3#project_name) on
+   *     which to execute the request. The format is:
    *     <p>projects/[PROJECT_ID_OR_NUMBER]
    *     <p>This names the container into which the channel will be written, this does not name the
    *     newly created channel. The resulting channel's name will have a normalized version of this

@@ -135,8 +135,10 @@ public final class ListNotificationChannelDescriptorsRequest
    * Required. The REST resource name of the parent from which to retrieve
    * the notification channel descriptors. The expected syntax is:
    *     projects/[PROJECT_ID_OR_NUMBER]
-   * Note that this names the parent container in which to look for the
-   * descriptors; to retrieve a single descriptor by name, use the
+   * Note that this
+   * [names](https://cloud.google.com/monitoring/api/v3#project_name) the parent
+   * container in which to look for the descriptors; to retrieve a single
+   * descriptor by name, use the
    * [GetNotificationChannelDescriptor][google.monitoring.v3.NotificationChannelService.GetNotificationChannelDescriptor]
    * operation, instead.
    * </pre>
@@ -166,8 +168,10 @@ public final class ListNotificationChannelDescriptorsRequest
    * Required. The REST resource name of the parent from which to retrieve
    * the notification channel descriptors. The expected syntax is:
    *     projects/[PROJECT_ID_OR_NUMBER]
-   * Note that this names the parent container in which to look for the
-   * descriptors; to retrieve a single descriptor by name, use the
+   * Note that this
+   * [names](https://cloud.google.com/monitoring/api/v3#project_name) the parent
+   * container in which to look for the descriptors; to retrieve a single
+   * descriptor by name, use the
    * [GetNotificationChannelDescriptor][google.monitoring.v3.NotificationChannelService.GetNotificationChannelDescriptor]
    * operation, instead.
    * </pre>
@@ -281,10 +285,10 @@ public final class ListNotificationChannelDescriptorsRequest
     if (pageSize_ != 0) {
       output.writeInt32(2, pageSize_);
     }
-    if (!getPageTokenBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(pageToken_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, pageToken_);
     }
-    if (!getNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 4, name_);
     }
     unknownFields.writeTo(output);
@@ -299,10 +303,10 @@ public final class ListNotificationChannelDescriptorsRequest
     if (pageSize_ != 0) {
       size += com.google.protobuf.CodedOutputStream.computeInt32Size(2, pageSize_);
     }
-    if (!getPageTokenBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(pageToken_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, pageToken_);
     }
-    if (!getNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, name_);
     }
     size += unknownFields.getSerializedSize();
@@ -630,8 +634,10 @@ public final class ListNotificationChannelDescriptorsRequest
      * Required. The REST resource name of the parent from which to retrieve
      * the notification channel descriptors. The expected syntax is:
      *     projects/[PROJECT_ID_OR_NUMBER]
-     * Note that this names the parent container in which to look for the
-     * descriptors; to retrieve a single descriptor by name, use the
+     * Note that this
+     * [names](https://cloud.google.com/monitoring/api/v3#project_name) the parent
+     * container in which to look for the descriptors; to retrieve a single
+     * descriptor by name, use the
      * [GetNotificationChannelDescriptor][google.monitoring.v3.NotificationChannelService.GetNotificationChannelDescriptor]
      * operation, instead.
      * </pre>
@@ -660,8 +666,10 @@ public final class ListNotificationChannelDescriptorsRequest
      * Required. The REST resource name of the parent from which to retrieve
      * the notification channel descriptors. The expected syntax is:
      *     projects/[PROJECT_ID_OR_NUMBER]
-     * Note that this names the parent container in which to look for the
-     * descriptors; to retrieve a single descriptor by name, use the
+     * Note that this
+     * [names](https://cloud.google.com/monitoring/api/v3#project_name) the parent
+     * container in which to look for the descriptors; to retrieve a single
+     * descriptor by name, use the
      * [GetNotificationChannelDescriptor][google.monitoring.v3.NotificationChannelService.GetNotificationChannelDescriptor]
      * operation, instead.
      * </pre>
@@ -690,8 +698,10 @@ public final class ListNotificationChannelDescriptorsRequest
      * Required. The REST resource name of the parent from which to retrieve
      * the notification channel descriptors. The expected syntax is:
      *     projects/[PROJECT_ID_OR_NUMBER]
-     * Note that this names the parent container in which to look for the
-     * descriptors; to retrieve a single descriptor by name, use the
+     * Note that this
+     * [names](https://cloud.google.com/monitoring/api/v3#project_name) the parent
+     * container in which to look for the descriptors; to retrieve a single
+     * descriptor by name, use the
      * [GetNotificationChannelDescriptor][google.monitoring.v3.NotificationChannelService.GetNotificationChannelDescriptor]
      * operation, instead.
      * </pre>
@@ -719,8 +729,10 @@ public final class ListNotificationChannelDescriptorsRequest
      * Required. The REST resource name of the parent from which to retrieve
      * the notification channel descriptors. The expected syntax is:
      *     projects/[PROJECT_ID_OR_NUMBER]
-     * Note that this names the parent container in which to look for the
-     * descriptors; to retrieve a single descriptor by name, use the
+     * Note that this
+     * [names](https://cloud.google.com/monitoring/api/v3#project_name) the parent
+     * container in which to look for the descriptors; to retrieve a single
+     * descriptor by name, use the
      * [GetNotificationChannelDescriptor][google.monitoring.v3.NotificationChannelService.GetNotificationChannelDescriptor]
      * operation, instead.
      * </pre>
@@ -744,8 +756,10 @@ public final class ListNotificationChannelDescriptorsRequest
      * Required. The REST resource name of the parent from which to retrieve
      * the notification channel descriptors. The expected syntax is:
      *     projects/[PROJECT_ID_OR_NUMBER]
-     * Note that this names the parent container in which to look for the
-     * descriptors; to retrieve a single descriptor by name, use the
+     * Note that this
+     * [names](https://cloud.google.com/monitoring/api/v3#project_name) the parent
+     * container in which to look for the descriptors; to retrieve a single
+     * descriptor by name, use the
      * [GetNotificationChannelDescriptor][google.monitoring.v3.NotificationChannelService.GetNotificationChannelDescriptor]
      * operation, instead.
      * </pre>

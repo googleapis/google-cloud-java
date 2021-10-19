@@ -301,10 +301,8 @@ public class AlertPolicyServiceStubSettings extends StubSettings<AlertPolicyServ
       ImmutableMap.Builder<String, ImmutableSet<StatusCode.Code>> definitions =
           ImmutableMap.builder();
       definitions.put(
-          "retry_policy_8_codes",
-          ImmutableSet.copyOf(
-              Lists.<StatusCode.Code>newArrayList(
-                  StatusCode.Code.DEADLINE_EXCEEDED, StatusCode.Code.UNAVAILABLE)));
+          "retry_policy_9_codes",
+          ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList(StatusCode.Code.UNAVAILABLE)));
       definitions.put(
           "no_retry_0_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
       RETRYABLE_CODE_DEFINITIONS = definitions.build();
@@ -325,7 +323,7 @@ public class AlertPolicyServiceStubSettings extends StubSettings<AlertPolicyServ
               .setMaxRpcTimeout(Duration.ofMillis(30000L))
               .setTotalTimeout(Duration.ofMillis(30000L))
               .build();
-      definitions.put("retry_policy_8_params", settings);
+      definitions.put("retry_policy_9_params", settings);
       settings =
           RetrySettings.newBuilder()
               .setInitialRpcTimeout(Duration.ofMillis(30000L))
@@ -394,13 +392,13 @@ public class AlertPolicyServiceStubSettings extends StubSettings<AlertPolicyServ
     private static Builder initDefaults(Builder builder) {
       builder
           .listAlertPoliciesSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_8_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_8_params"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_9_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_9_params"));
 
       builder
           .getAlertPolicySettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_8_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_8_params"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_9_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_9_params"));
 
       builder
           .createAlertPolicySettings()
@@ -409,8 +407,8 @@ public class AlertPolicyServiceStubSettings extends StubSettings<AlertPolicyServ
 
       builder
           .deleteAlertPolicySettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_8_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_8_params"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_9_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_9_params"));
 
       builder
           .updateAlertPolicySettings()

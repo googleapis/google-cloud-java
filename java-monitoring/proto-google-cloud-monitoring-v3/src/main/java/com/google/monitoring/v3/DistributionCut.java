@@ -25,8 +25,8 @@ package com.google.monitoring.v3;
  * A `DistributionCut` defines a `TimeSeries` and thresholds used for measuring
  * good service and total service. The `TimeSeries` must have `ValueType =
  * DISTRIBUTION` and `MetricKind = DELTA` or `MetricKind = CUMULATIVE`. The
- * computed `good_service` will be the count of values x in the `Distribution`
- * such that `range.min &lt;= x &lt; range.max`.
+ * computed `good_service` will be the estimated count of values in the
+ * `Distribution` that fall within the specified `min` and `max`.
  * </pre>
  *
  * Protobuf type {@code google.monitoring.v3.DistributionCut}
@@ -246,7 +246,7 @@ public final class DistributionCut extends com.google.protobuf.GeneratedMessageV
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getDistributionFilterBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(distributionFilter_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 4, distributionFilter_);
     }
     if (range_ != null) {
@@ -261,7 +261,7 @@ public final class DistributionCut extends com.google.protobuf.GeneratedMessageV
     if (size != -1) return size;
 
     size = 0;
-    if (!getDistributionFilterBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(distributionFilter_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, distributionFilter_);
     }
     if (range_ != null) {
@@ -411,8 +411,8 @@ public final class DistributionCut extends com.google.protobuf.GeneratedMessageV
    * A `DistributionCut` defines a `TimeSeries` and thresholds used for measuring
    * good service and total service. The `TimeSeries` must have `ValueType =
    * DISTRIBUTION` and `MetricKind = DELTA` or `MetricKind = CUMULATIVE`. The
-   * computed `good_service` will be the count of values x in the `Distribution`
-   * such that `range.min &lt;= x &lt; range.max`.
+   * computed `good_service` will be the estimated count of values in the
+   * `Distribution` that fall within the specified `min` and `max`.
    * </pre>
    *
    * Protobuf type {@code google.monitoring.v3.DistributionCut}

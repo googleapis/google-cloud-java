@@ -52,6 +52,7 @@ import com.google.protobuf.Empty;
 import io.grpc.StatusRuntimeException;
 import java.io.IOException;
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.List;
 import java.util.UUID;
 import javax.annotation.Generated;
@@ -108,6 +109,7 @@ public class ServiceMonitoringServiceClientTest {
             .setName(ServiceName.ofProjectServiceName("[PROJECT]", "[SERVICE]").toString())
             .setDisplayName("displayName1714148973")
             .setTelemetry(Service.Telemetry.newBuilder().build())
+            .putAllUserLabels(new HashMap<String, String>())
             .build();
     mockServiceMonitoringService.addResponse(expectedResponse);
 
@@ -151,6 +153,7 @@ public class ServiceMonitoringServiceClientTest {
             .setName(ServiceName.ofProjectServiceName("[PROJECT]", "[SERVICE]").toString())
             .setDisplayName("displayName1714148973")
             .setTelemetry(Service.Telemetry.newBuilder().build())
+            .putAllUserLabels(new HashMap<String, String>())
             .build();
     mockServiceMonitoringService.addResponse(expectedResponse);
 
@@ -194,6 +197,7 @@ public class ServiceMonitoringServiceClientTest {
             .setName(ServiceName.ofProjectServiceName("[PROJECT]", "[SERVICE]").toString())
             .setDisplayName("displayName1714148973")
             .setTelemetry(Service.Telemetry.newBuilder().build())
+            .putAllUserLabels(new HashMap<String, String>())
             .build();
     mockServiceMonitoringService.addResponse(expectedResponse);
 
@@ -237,6 +241,7 @@ public class ServiceMonitoringServiceClientTest {
             .setName(ServiceName.ofProjectServiceName("[PROJECT]", "[SERVICE]").toString())
             .setDisplayName("displayName1714148973")
             .setTelemetry(Service.Telemetry.newBuilder().build())
+            .putAllUserLabels(new HashMap<String, String>())
             .build();
     mockServiceMonitoringService.addResponse(expectedResponse);
 
@@ -280,6 +285,7 @@ public class ServiceMonitoringServiceClientTest {
             .setName(ServiceName.ofProjectServiceName("[PROJECT]", "[SERVICE]").toString())
             .setDisplayName("displayName1714148973")
             .setTelemetry(Service.Telemetry.newBuilder().build())
+            .putAllUserLabels(new HashMap<String, String>())
             .build();
     mockServiceMonitoringService.addResponse(expectedResponse);
 
@@ -320,6 +326,7 @@ public class ServiceMonitoringServiceClientTest {
             .setName(ServiceName.ofProjectServiceName("[PROJECT]", "[SERVICE]").toString())
             .setDisplayName("displayName1714148973")
             .setTelemetry(Service.Telemetry.newBuilder().build())
+            .putAllUserLabels(new HashMap<String, String>())
             .build();
     mockServiceMonitoringService.addResponse(expectedResponse);
 
@@ -536,6 +543,7 @@ public class ServiceMonitoringServiceClientTest {
             .setName(ServiceName.ofProjectServiceName("[PROJECT]", "[SERVICE]").toString())
             .setDisplayName("displayName1714148973")
             .setTelemetry(Service.Telemetry.newBuilder().build())
+            .putAllUserLabels(new HashMap<String, String>())
             .build();
     mockServiceMonitoringService.addResponse(expectedResponse);
 
@@ -648,6 +656,7 @@ public class ServiceMonitoringServiceClientTest {
             .setDisplayName("displayName1714148973")
             .setServiceLevelIndicator(ServiceLevelIndicator.newBuilder().build())
             .setGoal(3178259)
+            .putAllUserLabels(new HashMap<String, String>())
             .build();
     mockServiceMonitoringService.addResponse(expectedResponse);
 
@@ -697,6 +706,7 @@ public class ServiceMonitoringServiceClientTest {
             .setDisplayName("displayName1714148973")
             .setServiceLevelIndicator(ServiceLevelIndicator.newBuilder().build())
             .setGoal(3178259)
+            .putAllUserLabels(new HashMap<String, String>())
             .build();
     mockServiceMonitoringService.addResponse(expectedResponse);
 
@@ -746,6 +756,7 @@ public class ServiceMonitoringServiceClientTest {
             .setDisplayName("displayName1714148973")
             .setServiceLevelIndicator(ServiceLevelIndicator.newBuilder().build())
             .setGoal(3178259)
+            .putAllUserLabels(new HashMap<String, String>())
             .build();
     mockServiceMonitoringService.addResponse(expectedResponse);
 
@@ -795,6 +806,7 @@ public class ServiceMonitoringServiceClientTest {
             .setDisplayName("displayName1714148973")
             .setServiceLevelIndicator(ServiceLevelIndicator.newBuilder().build())
             .setGoal(3178259)
+            .putAllUserLabels(new HashMap<String, String>())
             .build();
     mockServiceMonitoringService.addResponse(expectedResponse);
 
@@ -932,6 +944,7 @@ public class ServiceMonitoringServiceClientTest {
             .setDisplayName("displayName1714148973")
             .setServiceLevelIndicator(ServiceLevelIndicator.newBuilder().build())
             .setGoal(3178259)
+            .putAllUserLabels(new HashMap<String, String>())
             .build();
     mockServiceMonitoringService.addResponse(expectedResponse);
 

@@ -1582,7 +1582,7 @@ public final class WindowsBasedSli extends com.google.protobuf.GeneratedMessageV
    *
    * <pre>
    * A `MetricRange` is used when each window is good when the value x of a
-   * single `TimeSeries` satisfies `range.min &lt;= x &lt; range.max`. The provided
+   * single `TimeSeries` satisfies `range.min &lt;= x &lt;= range.max`. The provided
    * `TimeSeries` must have `ValueType = INT64` or `ValueType = DOUBLE` and
    * `MetricKind = GAUGE`.
    * </pre>
@@ -1802,7 +1802,7 @@ public final class WindowsBasedSli extends com.google.protobuf.GeneratedMessageV
 
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-      if (!getTimeSeriesBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(timeSeries_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, timeSeries_);
       }
       if (range_ != null) {
@@ -1817,7 +1817,7 @@ public final class WindowsBasedSli extends com.google.protobuf.GeneratedMessageV
       if (size != -1) return size;
 
       size = 0;
-      if (!getTimeSeriesBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(timeSeries_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, timeSeries_);
       }
       if (range_ != null) {
@@ -1968,7 +1968,7 @@ public final class WindowsBasedSli extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * A `MetricRange` is used when each window is good when the value x of a
-     * single `TimeSeries` satisfies `range.min &lt;= x &lt; range.max`. The provided
+     * single `TimeSeries` satisfies `range.min &lt;= x &lt;= range.max`. The provided
      * `TimeSeries` must have `ValueType = INT64` or `ValueType = DOUBLE` and
      * `MetricKind = GAUGE`.
      * </pre>

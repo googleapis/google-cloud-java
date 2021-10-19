@@ -140,7 +140,8 @@ public final class CreateServiceRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Required. Resource name of the parent workspace. The format is:
+   * Required. Resource [name](https://cloud.google.com/monitoring/api/v3#project_name) of
+   * the parent workspace. The format is:
    *     projects/[PROJECT_ID_OR_NUMBER]
    * </pre>
    *
@@ -166,7 +167,8 @@ public final class CreateServiceRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Required. Resource name of the parent workspace. The format is:
+   * Required. Resource [name](https://cloud.google.com/monitoring/api/v3#project_name) of
+   * the parent workspace. The format is:
    *     projects/[PROJECT_ID_OR_NUMBER]
    * </pre>
    *
@@ -303,13 +305,13 @@ public final class CreateServiceRequest extends com.google.protobuf.GeneratedMes
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getParentBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(parent_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, parent_);
     }
     if (service_ != null) {
       output.writeMessage(2, getService());
     }
-    if (!getServiceIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(serviceId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, serviceId_);
     }
     unknownFields.writeTo(output);
@@ -321,13 +323,13 @@ public final class CreateServiceRequest extends com.google.protobuf.GeneratedMes
     if (size != -1) return size;
 
     size = 0;
-    if (!getParentBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(parent_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, parent_);
     }
     if (service_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, getService());
     }
-    if (!getServiceIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(serviceId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, serviceId_);
     }
     size += unknownFields.getSerializedSize();
@@ -654,7 +656,8 @@ public final class CreateServiceRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Required. Resource name of the parent workspace. The format is:
+     * Required. Resource [name](https://cloud.google.com/monitoring/api/v3#project_name) of
+     * the parent workspace. The format is:
      *     projects/[PROJECT_ID_OR_NUMBER]
      * </pre>
      *
@@ -679,7 +682,8 @@ public final class CreateServiceRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Required. Resource name of the parent workspace. The format is:
+     * Required. Resource [name](https://cloud.google.com/monitoring/api/v3#project_name) of
+     * the parent workspace. The format is:
      *     projects/[PROJECT_ID_OR_NUMBER]
      * </pre>
      *
@@ -704,7 +708,8 @@ public final class CreateServiceRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Required. Resource name of the parent workspace. The format is:
+     * Required. Resource [name](https://cloud.google.com/monitoring/api/v3#project_name) of
+     * the parent workspace. The format is:
      *     projects/[PROJECT_ID_OR_NUMBER]
      * </pre>
      *
@@ -728,7 +733,8 @@ public final class CreateServiceRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Required. Resource name of the parent workspace. The format is:
+     * Required. Resource [name](https://cloud.google.com/monitoring/api/v3#project_name) of
+     * the parent workspace. The format is:
      *     projects/[PROJECT_ID_OR_NUMBER]
      * </pre>
      *
@@ -748,7 +754,8 @@ public final class CreateServiceRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Required. Resource name of the parent workspace. The format is:
+     * Required. Resource [name](https://cloud.google.com/monitoring/api/v3#project_name) of
+     * the parent workspace. The format is:
      *     projects/[PROJECT_ID_OR_NUMBER]
      * </pre>
      *

@@ -327,5 +327,84 @@ public interface ServiceOrBuilder
    */
   com.google.monitoring.v3.Service.TelemetryOrBuilder getTelemetryOrBuilder();
 
+  /**
+   *
+   *
+   * <pre>
+   * Labels which have been used to annotate the service. Label keys must start
+   * with a letter. Label keys and values may contain lowercase letters,
+   * numbers, underscores, and dashes. Label keys and values have a maximum
+   * length of 63 characters, and must be less than 128 bytes in size. Up to 64
+   * label entries may be stored. For labels which do not have a semantic value,
+   * the empty string may be supplied for the label value.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; user_labels = 14;</code>
+   */
+  int getUserLabelsCount();
+  /**
+   *
+   *
+   * <pre>
+   * Labels which have been used to annotate the service. Label keys must start
+   * with a letter. Label keys and values may contain lowercase letters,
+   * numbers, underscores, and dashes. Label keys and values have a maximum
+   * length of 63 characters, and must be less than 128 bytes in size. Up to 64
+   * label entries may be stored. For labels which do not have a semantic value,
+   * the empty string may be supplied for the label value.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; user_labels = 14;</code>
+   */
+  boolean containsUserLabels(java.lang.String key);
+  /** Use {@link #getUserLabelsMap()} instead. */
+  @java.lang.Deprecated
+  java.util.Map<java.lang.String, java.lang.String> getUserLabels();
+  /**
+   *
+   *
+   * <pre>
+   * Labels which have been used to annotate the service. Label keys must start
+   * with a letter. Label keys and values may contain lowercase letters,
+   * numbers, underscores, and dashes. Label keys and values have a maximum
+   * length of 63 characters, and must be less than 128 bytes in size. Up to 64
+   * label entries may be stored. For labels which do not have a semantic value,
+   * the empty string may be supplied for the label value.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; user_labels = 14;</code>
+   */
+  java.util.Map<java.lang.String, java.lang.String> getUserLabelsMap();
+  /**
+   *
+   *
+   * <pre>
+   * Labels which have been used to annotate the service. Label keys must start
+   * with a letter. Label keys and values may contain lowercase letters,
+   * numbers, underscores, and dashes. Label keys and values have a maximum
+   * length of 63 characters, and must be less than 128 bytes in size. Up to 64
+   * label entries may be stored. For labels which do not have a semantic value,
+   * the empty string may be supplied for the label value.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; user_labels = 14;</code>
+   */
+  java.lang.String getUserLabelsOrDefault(java.lang.String key, java.lang.String defaultValue);
+  /**
+   *
+   *
+   * <pre>
+   * Labels which have been used to annotate the service. Label keys must start
+   * with a letter. Label keys and values may contain lowercase letters,
+   * numbers, underscores, and dashes. Label keys and values have a maximum
+   * length of 63 characters, and must be less than 128 bytes in size. Up to 64
+   * label entries may be stored. For labels which do not have a semantic value,
+   * the empty string may be supplied for the label value.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; user_labels = 14;</code>
+   */
+  java.lang.String getUserLabelsOrThrow(java.lang.String key);
+
   public com.google.monitoring.v3.Service.IdentifierCase getIdentifierCase();
 }

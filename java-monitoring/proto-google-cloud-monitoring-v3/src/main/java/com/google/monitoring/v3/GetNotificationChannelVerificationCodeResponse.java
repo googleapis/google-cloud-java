@@ -249,7 +249,7 @@ public final class GetNotificationChannelVerificationCodeResponse
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getCodeBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(code_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, code_);
     }
     if (expireTime_ != null) {
@@ -264,7 +264,7 @@ public final class GetNotificationChannelVerificationCodeResponse
     if (size != -1) return size;
 
     size = 0;
-    if (!getCodeBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(code_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, code_);
     }
     if (expireTime_ != null) {

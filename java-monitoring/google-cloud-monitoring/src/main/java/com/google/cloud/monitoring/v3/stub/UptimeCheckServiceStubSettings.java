@@ -403,12 +403,10 @@ public class UptimeCheckServiceStubSettings extends StubSettings<UptimeCheckServ
       ImmutableMap.Builder<String, ImmutableSet<StatusCode.Code>> definitions =
           ImmutableMap.builder();
       definitions.put(
-          "retry_policy_7_codes",
-          ImmutableSet.copyOf(
-              Lists.<StatusCode.Code>newArrayList(
-                  StatusCode.Code.DEADLINE_EXCEEDED, StatusCode.Code.UNAVAILABLE)));
+          "retry_policy_8_codes",
+          ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList(StatusCode.Code.UNAVAILABLE)));
       definitions.put(
-          "no_retry_11_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
+          "no_retry_13_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
       RETRYABLE_CODE_DEFINITIONS = definitions.build();
     }
 
@@ -427,7 +425,7 @@ public class UptimeCheckServiceStubSettings extends StubSettings<UptimeCheckServ
               .setMaxRpcTimeout(Duration.ofMillis(30000L))
               .setTotalTimeout(Duration.ofMillis(30000L))
               .build();
-      definitions.put("retry_policy_7_params", settings);
+      definitions.put("retry_policy_8_params", settings);
       settings =
           RetrySettings.newBuilder()
               .setInitialRpcTimeout(Duration.ofMillis(30000L))
@@ -435,7 +433,7 @@ public class UptimeCheckServiceStubSettings extends StubSettings<UptimeCheckServ
               .setMaxRpcTimeout(Duration.ofMillis(30000L))
               .setTotalTimeout(Duration.ofMillis(30000L))
               .build();
-      definitions.put("no_retry_11_params", settings);
+      definitions.put("no_retry_13_params", settings);
       RETRY_PARAM_DEFINITIONS = definitions.build();
     }
 
@@ -502,33 +500,33 @@ public class UptimeCheckServiceStubSettings extends StubSettings<UptimeCheckServ
     private static Builder initDefaults(Builder builder) {
       builder
           .listUptimeCheckConfigsSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_7_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_7_params"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_8_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_8_params"));
 
       builder
           .getUptimeCheckConfigSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_7_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_7_params"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_8_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_8_params"));
 
       builder
           .createUptimeCheckConfigSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_11_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_11_params"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_13_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_13_params"));
 
       builder
           .updateUptimeCheckConfigSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_11_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_11_params"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_13_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_13_params"));
 
       builder
           .deleteUptimeCheckConfigSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_7_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_7_params"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_8_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_8_params"));
 
       builder
           .listUptimeCheckIpsSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_7_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_7_params"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_8_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_8_params"));
 
       return builder;
     }

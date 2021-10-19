@@ -133,7 +133,8 @@ public final class CreateTimeSeriesRequest extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * Required. The project on which to execute the request. The format is:
+   * Required. The [project](https://cloud.google.com/monitoring/api/v3#project_name) on
+   * which to execute the request. The format is:
    *     projects/[PROJECT_ID_OR_NUMBER]
    * </pre>
    *
@@ -159,7 +160,8 @@ public final class CreateTimeSeriesRequest extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * Required. The project on which to execute the request. The format is:
+   * Required. The [project](https://cloud.google.com/monitoring/api/v3#project_name) on
+   * which to execute the request. The format is:
    *     projects/[PROJECT_ID_OR_NUMBER]
    * </pre>
    *
@@ -303,7 +305,7 @@ public final class CreateTimeSeriesRequest extends com.google.protobuf.Generated
     for (int i = 0; i < timeSeries_.size(); i++) {
       output.writeMessage(2, timeSeries_.get(i));
     }
-    if (!getNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, name_);
     }
     unknownFields.writeTo(output);
@@ -318,7 +320,7 @@ public final class CreateTimeSeriesRequest extends com.google.protobuf.Generated
     for (int i = 0; i < timeSeries_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, timeSeries_.get(i));
     }
-    if (!getNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, name_);
     }
     size += unknownFields.getSerializedSize();
@@ -666,7 +668,8 @@ public final class CreateTimeSeriesRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Required. The project on which to execute the request. The format is:
+     * Required. The [project](https://cloud.google.com/monitoring/api/v3#project_name) on
+     * which to execute the request. The format is:
      *     projects/[PROJECT_ID_OR_NUMBER]
      * </pre>
      *
@@ -691,7 +694,8 @@ public final class CreateTimeSeriesRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Required. The project on which to execute the request. The format is:
+     * Required. The [project](https://cloud.google.com/monitoring/api/v3#project_name) on
+     * which to execute the request. The format is:
      *     projects/[PROJECT_ID_OR_NUMBER]
      * </pre>
      *
@@ -716,7 +720,8 @@ public final class CreateTimeSeriesRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Required. The project on which to execute the request. The format is:
+     * Required. The [project](https://cloud.google.com/monitoring/api/v3#project_name) on
+     * which to execute the request. The format is:
      *     projects/[PROJECT_ID_OR_NUMBER]
      * </pre>
      *
@@ -740,7 +745,8 @@ public final class CreateTimeSeriesRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Required. The project on which to execute the request. The format is:
+     * Required. The [project](https://cloud.google.com/monitoring/api/v3#project_name) on
+     * which to execute the request. The format is:
      *     projects/[PROJECT_ID_OR_NUMBER]
      * </pre>
      *
@@ -760,7 +766,8 @@ public final class CreateTimeSeriesRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Required. The project on which to execute the request. The format is:
+     * Required. The [project](https://cloud.google.com/monitoring/api/v3#project_name) on
+     * which to execute the request. The format is:
      *     projects/[PROJECT_ID_OR_NUMBER]
      * </pre>
      *

@@ -557,7 +557,7 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
 
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-      if (!getGroupIdBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(groupId_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, groupId_);
       }
       if (resourceType_
@@ -573,7 +573,7 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
       if (size != -1) return size;
 
       size = 0;
-      if (!getGroupIdBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(groupId_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, groupId_);
       }
       if (resourceType_
@@ -2217,10 +2217,10 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
 
       @java.lang.Override
       public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-        if (!getUsernameBytes().isEmpty()) {
+        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(username_)) {
           com.google.protobuf.GeneratedMessageV3.writeString(output, 1, username_);
         }
-        if (!getPasswordBytes().isEmpty()) {
+        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(password_)) {
           com.google.protobuf.GeneratedMessageV3.writeString(output, 2, password_);
         }
         unknownFields.writeTo(output);
@@ -2232,10 +2232,10 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
         if (size != -1) return size;
 
         size = 0;
-        if (!getUsernameBytes().isEmpty()) {
+        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(username_)) {
           size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, username_);
         }
-        if (!getPasswordBytes().isEmpty()) {
+        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(password_)) {
           size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, password_);
         }
         size += unknownFields.getSerializedSize();
@@ -3294,7 +3294,7 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
       if (useSsl_ != false) {
         output.writeBool(1, useSsl_);
       }
-      if (!getPathBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(path_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, path_);
       }
       if (port_ != 0) {
@@ -3336,7 +3336,7 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
       if (useSsl_ != false) {
         size += com.google.protobuf.CodedOutputStream.computeBoolSize(1, useSsl_);
       }
-      if (!getPathBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(path_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, path_);
       }
       if (port_ != 0) {
@@ -5723,6 +5723,7 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
        * <pre>
        * Selects regular-expression matching. The match succeeds of the output
        * matches the regular expression specified in the `content` string.
+       * Regex matching is only supported for HTTP/HTTPS checks.
        * </pre>
        *
        * <code>MATCHES_REGEX = 3;</code>
@@ -5734,7 +5735,8 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
        * <pre>
        * Selects negation of regular-expression matching. The match succeeds if
        * the output does _NOT_ match the regular expression specified in the
-       * `content` string.
+       * `content` string. Regex matching is only supported for HTTP/HTTPS
+       * checks.
        * </pre>
        *
        * <code>NOT_MATCHES_REGEX = 4;</code>
@@ -5785,6 +5787,7 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
        * <pre>
        * Selects regular-expression matching. The match succeeds of the output
        * matches the regular expression specified in the `content` string.
+       * Regex matching is only supported for HTTP/HTTPS checks.
        * </pre>
        *
        * <code>MATCHES_REGEX = 3;</code>
@@ -5796,7 +5799,8 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
        * <pre>
        * Selects negation of regular-expression matching. The match succeeds if
        * the output does _NOT_ match the regular expression specified in the
-       * `content` string.
+       * `content` string. Regex matching is only supported for HTTP/HTTPS
+       * checks.
        * </pre>
        *
        * <code>NOT_MATCHES_REGEX = 4;</code>
@@ -6007,7 +6011,7 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
 
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-      if (!getContentBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(content_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, content_);
       }
       if (matcher_
@@ -6025,7 +6029,7 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
       if (size != -1) return size;
 
       size = 0;
-      if (!getContentBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(content_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, content_);
       }
       if (matcher_
@@ -6832,12 +6836,13 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
    * The [monitored
    * resource](https://cloud.google.com/monitoring/api/resources) associated
    * with the configuration.
-   * The following monitored resource types are supported for Uptime checks:
+   * The following monitored resource types are valid for this field:
    *   `uptime_url`,
    *   `gce_instance`,
    *   `gae_app`,
    *   `aws_ec2_instance`,
    *   `aws_elb_load_balancer`
+   *   `k8s_service`
    * </pre>
    *
    * <code>.google.api.MonitoredResource monitored_resource = 3;</code>
@@ -6855,12 +6860,13 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
    * The [monitored
    * resource](https://cloud.google.com/monitoring/api/resources) associated
    * with the configuration.
-   * The following monitored resource types are supported for Uptime checks:
+   * The following monitored resource types are valid for this field:
    *   `uptime_url`,
    *   `gce_instance`,
    *   `gae_app`,
    *   `aws_ec2_instance`,
    *   `aws_elb_load_balancer`
+   *   `k8s_service`
    * </pre>
    *
    * <code>.google.api.MonitoredResource monitored_resource = 3;</code>
@@ -6881,12 +6887,13 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
    * The [monitored
    * resource](https://cloud.google.com/monitoring/api/resources) associated
    * with the configuration.
-   * The following monitored resource types are supported for Uptime checks:
+   * The following monitored resource types are valid for this field:
    *   `uptime_url`,
    *   `gce_instance`,
    *   `gae_app`,
    *   `aws_ec2_instance`,
    *   `aws_elb_load_balancer`
+   *   `k8s_service`
    * </pre>
    *
    * <code>.google.api.MonitoredResource monitored_resource = 3;</code>
@@ -7509,10 +7516,10 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
     getSerializedSize();
-    if (!getNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name_);
     }
-    if (!getDisplayNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(displayName_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, displayName_);
     }
     if (resourceCase_ == 3) {
@@ -7560,10 +7567,10 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
     if (size != -1) return size;
 
     size = 0;
-    if (!getNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, name_);
     }
-    if (!getDisplayNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(displayName_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, displayName_);
     }
     if (resourceCase_ == 3) {
@@ -8492,12 +8499,13 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
      * The [monitored
      * resource](https://cloud.google.com/monitoring/api/resources) associated
      * with the configuration.
-     * The following monitored resource types are supported for Uptime checks:
+     * The following monitored resource types are valid for this field:
      *   `uptime_url`,
      *   `gce_instance`,
      *   `gae_app`,
      *   `aws_ec2_instance`,
      *   `aws_elb_load_balancer`
+     *   `k8s_service`
      * </pre>
      *
      * <code>.google.api.MonitoredResource monitored_resource = 3;</code>
@@ -8515,12 +8523,13 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
      * The [monitored
      * resource](https://cloud.google.com/monitoring/api/resources) associated
      * with the configuration.
-     * The following monitored resource types are supported for Uptime checks:
+     * The following monitored resource types are valid for this field:
      *   `uptime_url`,
      *   `gce_instance`,
      *   `gae_app`,
      *   `aws_ec2_instance`,
      *   `aws_elb_load_balancer`
+     *   `k8s_service`
      * </pre>
      *
      * <code>.google.api.MonitoredResource monitored_resource = 3;</code>
@@ -8548,12 +8557,13 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
      * The [monitored
      * resource](https://cloud.google.com/monitoring/api/resources) associated
      * with the configuration.
-     * The following monitored resource types are supported for Uptime checks:
+     * The following monitored resource types are valid for this field:
      *   `uptime_url`,
      *   `gce_instance`,
      *   `gae_app`,
      *   `aws_ec2_instance`,
      *   `aws_elb_load_balancer`
+     *   `k8s_service`
      * </pre>
      *
      * <code>.google.api.MonitoredResource monitored_resource = 3;</code>
@@ -8578,12 +8588,13 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
      * The [monitored
      * resource](https://cloud.google.com/monitoring/api/resources) associated
      * with the configuration.
-     * The following monitored resource types are supported for Uptime checks:
+     * The following monitored resource types are valid for this field:
      *   `uptime_url`,
      *   `gce_instance`,
      *   `gae_app`,
      *   `aws_ec2_instance`,
      *   `aws_elb_load_balancer`
+     *   `k8s_service`
      * </pre>
      *
      * <code>.google.api.MonitoredResource monitored_resource = 3;</code>
@@ -8605,12 +8616,13 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
      * The [monitored
      * resource](https://cloud.google.com/monitoring/api/resources) associated
      * with the configuration.
-     * The following monitored resource types are supported for Uptime checks:
+     * The following monitored resource types are valid for this field:
      *   `uptime_url`,
      *   `gce_instance`,
      *   `gae_app`,
      *   `aws_ec2_instance`,
      *   `aws_elb_load_balancer`
+     *   `k8s_service`
      * </pre>
      *
      * <code>.google.api.MonitoredResource monitored_resource = 3;</code>
@@ -8644,12 +8656,13 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
      * The [monitored
      * resource](https://cloud.google.com/monitoring/api/resources) associated
      * with the configuration.
-     * The following monitored resource types are supported for Uptime checks:
+     * The following monitored resource types are valid for this field:
      *   `uptime_url`,
      *   `gce_instance`,
      *   `gae_app`,
      *   `aws_ec2_instance`,
      *   `aws_elb_load_balancer`
+     *   `k8s_service`
      * </pre>
      *
      * <code>.google.api.MonitoredResource monitored_resource = 3;</code>
@@ -8677,12 +8690,13 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
      * The [monitored
      * resource](https://cloud.google.com/monitoring/api/resources) associated
      * with the configuration.
-     * The following monitored resource types are supported for Uptime checks:
+     * The following monitored resource types are valid for this field:
      *   `uptime_url`,
      *   `gce_instance`,
      *   `gae_app`,
      *   `aws_ec2_instance`,
      *   `aws_elb_load_balancer`
+     *   `k8s_service`
      * </pre>
      *
      * <code>.google.api.MonitoredResource monitored_resource = 3;</code>
@@ -8697,12 +8711,13 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
      * The [monitored
      * resource](https://cloud.google.com/monitoring/api/resources) associated
      * with the configuration.
-     * The following monitored resource types are supported for Uptime checks:
+     * The following monitored resource types are valid for this field:
      *   `uptime_url`,
      *   `gce_instance`,
      *   `gae_app`,
      *   `aws_ec2_instance`,
      *   `aws_elb_load_balancer`
+     *   `k8s_service`
      * </pre>
      *
      * <code>.google.api.MonitoredResource monitored_resource = 3;</code>
@@ -8725,12 +8740,13 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
      * The [monitored
      * resource](https://cloud.google.com/monitoring/api/resources) associated
      * with the configuration.
-     * The following monitored resource types are supported for Uptime checks:
+     * The following monitored resource types are valid for this field:
      *   `uptime_url`,
      *   `gce_instance`,
      *   `gae_app`,
      *   `aws_ec2_instance`,
      *   `aws_elb_load_balancer`
+     *   `k8s_service`
      * </pre>
      *
      * <code>.google.api.MonitoredResource monitored_resource = 3;</code>
