@@ -383,7 +383,7 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
         != com.google.cloud.datacatalog.v1.DataSource.Service.SERVICE_UNSPECIFIED.getNumber()) {
       output.writeEnum(1, service_);
     }
-    if (!getResourceBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(resource_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, resource_);
     }
     unknownFields.writeTo(output);
@@ -399,7 +399,7 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
         != com.google.cloud.datacatalog.v1.DataSource.Service.SERVICE_UNSPECIFIED.getNumber()) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(1, service_);
     }
-    if (!getResourceBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(resource_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, resource_);
     }
     size += unknownFields.getSerializedSize();

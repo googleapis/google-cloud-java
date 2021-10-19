@@ -314,13 +314,13 @@ public final class CreateTagTemplateRequest extends com.google.protobuf.Generate
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getParentBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(parent_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, parent_);
     }
     if (tagTemplate_ != null) {
       output.writeMessage(2, getTagTemplate());
     }
-    if (!getTagTemplateIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(tagTemplateId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, tagTemplateId_);
     }
     unknownFields.writeTo(output);
@@ -332,13 +332,13 @@ public final class CreateTagTemplateRequest extends com.google.protobuf.Generate
     if (size != -1) return size;
 
     size = 0;
-    if (!getParentBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(parent_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, parent_);
     }
     if (tagTemplate_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, getTagTemplate());
     }
-    if (!getTagTemplateIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(tagTemplateId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, tagTemplateId_);
     }
     size += unknownFields.getSerializedSize();
