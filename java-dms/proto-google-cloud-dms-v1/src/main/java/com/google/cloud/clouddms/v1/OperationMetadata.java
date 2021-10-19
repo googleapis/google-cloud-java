@@ -505,19 +505,19 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
     if (endTime_ != null) {
       output.writeMessage(2, getEndTime());
     }
-    if (!getTargetBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(target_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, target_);
     }
-    if (!getVerbBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(verb_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 4, verb_);
     }
-    if (!getStatusMessageBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(statusMessage_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 5, statusMessage_);
     }
     if (requestedCancellation_ != false) {
       output.writeBool(6, requestedCancellation_);
     }
-    if (!getApiVersionBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(apiVersion_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 7, apiVersion_);
     }
     unknownFields.writeTo(output);
@@ -535,19 +535,19 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
     if (endTime_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, getEndTime());
     }
-    if (!getTargetBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(target_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, target_);
     }
-    if (!getVerbBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(verb_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, verb_);
     }
-    if (!getStatusMessageBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(statusMessage_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, statusMessage_);
     }
     if (requestedCancellation_ != false) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(6, requestedCancellation_);
     }
-    if (!getApiVersionBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(apiVersion_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, apiVersion_);
     }
     size += unknownFields.getSerializedSize();

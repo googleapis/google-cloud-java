@@ -466,16 +466,16 @@ public final class PostgreSqlConnectionProfile extends com.google.protobuf.Gener
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getHostBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(host_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, host_);
     }
     if (port_ != 0) {
       output.writeInt32(2, port_);
     }
-    if (!getUsernameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(username_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, username_);
     }
-    if (!getPasswordBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(password_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 4, password_);
     }
     if (passwordSet_ != false) {
@@ -484,7 +484,7 @@ public final class PostgreSqlConnectionProfile extends com.google.protobuf.Gener
     if (ssl_ != null) {
       output.writeMessage(6, getSsl());
     }
-    if (!getCloudSqlIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(cloudSqlId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 7, cloudSqlId_);
     }
     unknownFields.writeTo(output);
@@ -496,16 +496,16 @@ public final class PostgreSqlConnectionProfile extends com.google.protobuf.Gener
     if (size != -1) return size;
 
     size = 0;
-    if (!getHostBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(host_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, host_);
     }
     if (port_ != 0) {
       size += com.google.protobuf.CodedOutputStream.computeInt32Size(2, port_);
     }
-    if (!getUsernameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(username_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, username_);
     }
-    if (!getPasswordBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(password_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, password_);
     }
     if (passwordSet_ != false) {
@@ -514,7 +514,7 @@ public final class PostgreSqlConnectionProfile extends com.google.protobuf.Gener
     if (ssl_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(6, getSsl());
     }
-    if (!getCloudSqlIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(cloudSqlId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, cloudSqlId_);
     }
     size += unknownFields.getSerializedSize();

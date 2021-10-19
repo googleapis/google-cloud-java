@@ -321,16 +321,16 @@ public final class ReverseSshConnectivity extends com.google.protobuf.GeneratedM
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getVmIpBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(vmIp_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, vmIp_);
     }
     if (vmPort_ != 0) {
       output.writeInt32(2, vmPort_);
     }
-    if (!getVmBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(vm_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, vm_);
     }
-    if (!getVpcBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(vpc_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 4, vpc_);
     }
     unknownFields.writeTo(output);
@@ -342,16 +342,16 @@ public final class ReverseSshConnectivity extends com.google.protobuf.GeneratedM
     if (size != -1) return size;
 
     size = 0;
-    if (!getVmIpBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(vmIp_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, vmIp_);
     }
     if (vmPort_ != 0) {
       size += com.google.protobuf.CodedOutputStream.computeInt32Size(2, vmPort_);
     }
-    if (!getVmBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(vm_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, vm_);
     }
-    if (!getVpcBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(vpc_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, vpc_);
     }
     size += unknownFields.getSerializedSize();

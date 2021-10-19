@@ -516,13 +516,13 @@ public final class SslConfig extends com.google.protobuf.GeneratedMessageV3
     if (type_ != com.google.cloud.clouddms.v1.SslConfig.SslType.SSL_TYPE_UNSPECIFIED.getNumber()) {
       output.writeEnum(1, type_);
     }
-    if (!getClientKeyBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(clientKey_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, clientKey_);
     }
-    if (!getClientCertificateBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(clientCertificate_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, clientCertificate_);
     }
-    if (!getCaCertificateBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(caCertificate_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 4, caCertificate_);
     }
     unknownFields.writeTo(output);
@@ -537,13 +537,13 @@ public final class SslConfig extends com.google.protobuf.GeneratedMessageV3
     if (type_ != com.google.cloud.clouddms.v1.SslConfig.SslType.SSL_TYPE_UNSPECIFIED.getNumber()) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(1, type_);
     }
-    if (!getClientKeyBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(clientKey_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, clientKey_);
     }
-    if (!getClientCertificateBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(clientCertificate_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, clientCertificate_);
     }
-    if (!getCaCertificateBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(caCertificate_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, caCertificate_);
     }
     size += unknownFields.getSerializedSize();

@@ -2231,7 +2231,7 @@ public final class MigrationJob extends com.google.protobuf.GeneratedMessageV3
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name_);
     }
     if (createTime_ != null) {
@@ -2242,7 +2242,7 @@ public final class MigrationJob extends com.google.protobuf.GeneratedMessageV3
     }
     com.google.protobuf.GeneratedMessageV3.serializeStringMapTo(
         output, internalGetLabels(), LabelsDefaultEntryHolder.defaultEntry, 4);
-    if (!getDisplayNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(displayName_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 5, displayName_);
     }
     if (state_ != com.google.cloud.clouddms.v1.MigrationJob.State.STATE_UNSPECIFIED.getNumber()) {
@@ -2254,13 +2254,13 @@ public final class MigrationJob extends com.google.protobuf.GeneratedMessageV3
     if (type_ != com.google.cloud.clouddms.v1.MigrationJob.Type.TYPE_UNSPECIFIED.getNumber()) {
       output.writeEnum(8, type_);
     }
-    if (!getDumpPathBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(dumpPath_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 9, dumpPath_);
     }
-    if (!getSourceBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(source_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 10, source_);
     }
-    if (!getDestinationBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(destination_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 11, destination_);
     }
     if (duration_ != null) {
@@ -2296,7 +2296,7 @@ public final class MigrationJob extends com.google.protobuf.GeneratedMessageV3
     if (size != -1) return size;
 
     size = 0;
-    if (!getNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, name_);
     }
     if (createTime_ != null) {
@@ -2315,7 +2315,7 @@ public final class MigrationJob extends com.google.protobuf.GeneratedMessageV3
               .build();
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(4, labels__);
     }
-    if (!getDisplayNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(displayName_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, displayName_);
     }
     if (state_ != com.google.cloud.clouddms.v1.MigrationJob.State.STATE_UNSPECIFIED.getNumber()) {
@@ -2327,13 +2327,13 @@ public final class MigrationJob extends com.google.protobuf.GeneratedMessageV3
     if (type_ != com.google.cloud.clouddms.v1.MigrationJob.Type.TYPE_UNSPECIFIED.getNumber()) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(8, type_);
     }
-    if (!getDumpPathBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(dumpPath_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(9, dumpPath_);
     }
-    if (!getSourceBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(source_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(10, source_);
     }
-    if (!getDestinationBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(destination_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(11, destination_);
     }
     if (duration_ != null) {
