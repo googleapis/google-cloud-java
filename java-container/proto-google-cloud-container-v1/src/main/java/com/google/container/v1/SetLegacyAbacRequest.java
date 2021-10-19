@@ -389,19 +389,19 @@ public final class SetLegacyAbacRequest extends com.google.protobuf.GeneratedMes
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getProjectIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(projectId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, projectId_);
     }
-    if (!getZoneBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(zone_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, zone_);
     }
-    if (!getClusterIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(clusterId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, clusterId_);
     }
     if (enabled_ != false) {
       output.writeBool(4, enabled_);
     }
-    if (!getNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 6, name_);
     }
     unknownFields.writeTo(output);
@@ -413,19 +413,19 @@ public final class SetLegacyAbacRequest extends com.google.protobuf.GeneratedMes
     if (size != -1) return size;
 
     size = 0;
-    if (!getProjectIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(projectId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, projectId_);
     }
-    if (!getZoneBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(zone_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, zone_);
     }
-    if (!getClusterIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(clusterId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, clusterId_);
     }
     if (enabled_ != false) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(4, enabled_);
     }
-    if (!getNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, name_);
     }
     size += unknownFields.getSerializedSize();

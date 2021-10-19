@@ -2254,7 +2254,7 @@ public interface ClusterOrBuilder
    * overridden if specified on the specific NodePool object.
    * </pre>
    *
-   * <code>.google.container.v1beta1.NodePoolDefaults node_pool_defaults = 131;</code>
+   * <code>optional .google.container.v1beta1.NodePoolDefaults node_pool_defaults = 131;</code>
    *
    * @return Whether the nodePoolDefaults field is set.
    */
@@ -2267,7 +2267,7 @@ public interface ClusterOrBuilder
    * overridden if specified on the specific NodePool object.
    * </pre>
    *
-   * <code>.google.container.v1beta1.NodePoolDefaults node_pool_defaults = 131;</code>
+   * <code>optional .google.container.v1beta1.NodePoolDefaults node_pool_defaults = 131;</code>
    *
    * @return The nodePoolDefaults.
    */
@@ -2280,7 +2280,7 @@ public interface ClusterOrBuilder
    * overridden if specified on the specific NodePool object.
    * </pre>
    *
-   * <code>.google.container.v1beta1.NodePoolDefaults node_pool_defaults = 131;</code>
+   * <code>optional .google.container.v1beta1.NodePoolDefaults node_pool_defaults = 131;</code>
    */
   com.google.container.v1beta1.NodePoolDefaultsOrBuilder getNodePoolDefaultsOrBuilder();
 

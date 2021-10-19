@@ -461,19 +461,19 @@ public final class SetLocationsRequest extends com.google.protobuf.GeneratedMess
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getProjectIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(projectId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, projectId_);
     }
-    if (!getZoneBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(zone_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, zone_);
     }
-    if (!getClusterIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(clusterId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, clusterId_);
     }
     for (int i = 0; i < locations_.size(); i++) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 4, locations_.getRaw(i));
     }
-    if (!getNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 6, name_);
     }
     unknownFields.writeTo(output);
@@ -485,13 +485,13 @@ public final class SetLocationsRequest extends com.google.protobuf.GeneratedMess
     if (size != -1) return size;
 
     size = 0;
-    if (!getProjectIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(projectId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, projectId_);
     }
-    if (!getZoneBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(zone_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, zone_);
     }
-    if (!getClusterIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(clusterId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, clusterId_);
     }
     {
@@ -502,7 +502,7 @@ public final class SetLocationsRequest extends com.google.protobuf.GeneratedMess
       size += dataSize;
       size += 1 * getLocationsList().size();
     }
-    if (!getNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, name_);
     }
     size += unknownFields.getSerializedSize();

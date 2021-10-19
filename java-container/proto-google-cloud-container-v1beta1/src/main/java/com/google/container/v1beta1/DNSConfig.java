@@ -584,7 +584,7 @@ public final class DNSConfig extends com.google.protobuf.GeneratedMessageV3
         != com.google.container.v1beta1.DNSConfig.DNSScope.DNS_SCOPE_UNSPECIFIED.getNumber()) {
       output.writeEnum(2, clusterDnsScope_);
     }
-    if (!getClusterDnsDomainBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(clusterDnsDomain_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, clusterDnsDomain_);
     }
     unknownFields.writeTo(output);
@@ -604,7 +604,7 @@ public final class DNSConfig extends com.google.protobuf.GeneratedMessageV3
         != com.google.container.v1beta1.DNSConfig.DNSScope.DNS_SCOPE_UNSPECIFIED.getNumber()) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(2, clusterDnsScope_);
     }
-    if (!getClusterDnsDomainBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(clusterDnsDomain_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, clusterDnsDomain_);
     }
     size += unknownFields.getSerializedSize();

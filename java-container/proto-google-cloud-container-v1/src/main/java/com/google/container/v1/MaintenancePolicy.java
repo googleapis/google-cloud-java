@@ -249,7 +249,7 @@ public final class MaintenancePolicy extends com.google.protobuf.GeneratedMessag
     if (window_ != null) {
       output.writeMessage(1, getWindow());
     }
-    if (!getResourceVersionBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(resourceVersion_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, resourceVersion_);
     }
     unknownFields.writeTo(output);
@@ -264,7 +264,7 @@ public final class MaintenancePolicy extends com.google.protobuf.GeneratedMessag
     if (window_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, getWindow());
     }
-    if (!getResourceVersionBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(resourceVersion_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, resourceVersion_);
     }
     size += unknownFields.getSerializedSize();

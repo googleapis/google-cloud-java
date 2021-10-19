@@ -511,22 +511,22 @@ public final class MasterAuth extends com.google.protobuf.GeneratedMessageV3
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getUsernameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(username_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, username_);
     }
-    if (!getPasswordBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(password_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, password_);
     }
     if (clientCertificateConfig_ != null) {
       output.writeMessage(3, getClientCertificateConfig());
     }
-    if (!getClusterCaCertificateBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(clusterCaCertificate_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 100, clusterCaCertificate_);
     }
-    if (!getClientCertificateBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(clientCertificate_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 101, clientCertificate_);
     }
-    if (!getClientKeyBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(clientKey_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 102, clientKey_);
     }
     unknownFields.writeTo(output);
@@ -538,23 +538,23 @@ public final class MasterAuth extends com.google.protobuf.GeneratedMessageV3
     if (size != -1) return size;
 
     size = 0;
-    if (!getUsernameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(username_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, username_);
     }
-    if (!getPasswordBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(password_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, password_);
     }
     if (clientCertificateConfig_ != null) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(3, getClientCertificateConfig());
     }
-    if (!getClusterCaCertificateBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(clusterCaCertificate_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(100, clusterCaCertificate_);
     }
-    if (!getClientCertificateBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(clientCertificate_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(101, clientCertificate_);
     }
-    if (!getClientKeyBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(clientKey_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(102, clientKey_);
     }
     size += unknownFields.getSerializedSize();

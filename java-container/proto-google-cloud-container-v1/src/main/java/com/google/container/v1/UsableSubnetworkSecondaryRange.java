@@ -491,10 +491,10 @@ public final class UsableSubnetworkSecondaryRange extends com.google.protobuf.Ge
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getRangeNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(rangeName_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, rangeName_);
     }
-    if (!getIpCidrRangeBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(ipCidrRange_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, ipCidrRange_);
     }
     if (status_
@@ -510,10 +510,10 @@ public final class UsableSubnetworkSecondaryRange extends com.google.protobuf.Ge
     if (size != -1) return size;
 
     size = 0;
-    if (!getRangeNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(rangeName_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, rangeName_);
     }
-    if (!getIpCidrRangeBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(ipCidrRange_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, ipCidrRange_);
     }
     if (status_

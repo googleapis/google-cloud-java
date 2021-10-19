@@ -226,7 +226,7 @@ public final class TpuConfig extends com.google.protobuf.GeneratedMessageV3
     if (useServiceNetworking_ != false) {
       output.writeBool(2, useServiceNetworking_);
     }
-    if (!getIpv4CidrBlockBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(ipv4CidrBlock_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, ipv4CidrBlock_);
     }
     unknownFields.writeTo(output);
@@ -244,7 +244,7 @@ public final class TpuConfig extends com.google.protobuf.GeneratedMessageV3
     if (useServiceNetworking_ != false) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(2, useServiceNetworking_);
     }
-    if (!getIpv4CidrBlockBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(ipv4CidrBlock_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, ipv4CidrBlock_);
     }
     size += unknownFields.getSerializedSize();

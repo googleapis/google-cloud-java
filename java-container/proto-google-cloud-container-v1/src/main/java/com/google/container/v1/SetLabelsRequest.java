@@ -568,21 +568,21 @@ public final class SetLabelsRequest extends com.google.protobuf.GeneratedMessage
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getProjectIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(projectId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, projectId_);
     }
-    if (!getZoneBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(zone_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, zone_);
     }
-    if (!getClusterIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(clusterId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, clusterId_);
     }
     com.google.protobuf.GeneratedMessageV3.serializeStringMapTo(
         output, internalGetResourceLabels(), ResourceLabelsDefaultEntryHolder.defaultEntry, 4);
-    if (!getLabelFingerprintBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(labelFingerprint_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 5, labelFingerprint_);
     }
-    if (!getNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 7, name_);
     }
     unknownFields.writeTo(output);
@@ -594,13 +594,13 @@ public final class SetLabelsRequest extends com.google.protobuf.GeneratedMessage
     if (size != -1) return size;
 
     size = 0;
-    if (!getProjectIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(projectId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, projectId_);
     }
-    if (!getZoneBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(zone_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, zone_);
     }
-    if (!getClusterIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(clusterId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, clusterId_);
     }
     for (java.util.Map.Entry<java.lang.String, java.lang.String> entry :
@@ -613,10 +613,10 @@ public final class SetLabelsRequest extends com.google.protobuf.GeneratedMessage
               .build();
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(4, resourceLabels__);
     }
-    if (!getLabelFingerprintBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(labelFingerprint_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, labelFingerprint_);
     }
-    if (!getNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, name_);
     }
     size += unknownFields.getSerializedSize();

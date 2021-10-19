@@ -479,16 +479,16 @@ public final class PrivateClusterConfig extends com.google.protobuf.GeneratedMes
     if (enablePrivateEndpoint_ != false) {
       output.writeBool(2, enablePrivateEndpoint_);
     }
-    if (!getMasterIpv4CidrBlockBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(masterIpv4CidrBlock_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, masterIpv4CidrBlock_);
     }
-    if (!getPrivateEndpointBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(privateEndpoint_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 4, privateEndpoint_);
     }
-    if (!getPublicEndpointBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(publicEndpoint_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 5, publicEndpoint_);
     }
-    if (!getPeeringNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(peeringName_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 7, peeringName_);
     }
     if (masterGlobalAccessConfig_ != null) {
@@ -509,16 +509,16 @@ public final class PrivateClusterConfig extends com.google.protobuf.GeneratedMes
     if (enablePrivateEndpoint_ != false) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(2, enablePrivateEndpoint_);
     }
-    if (!getMasterIpv4CidrBlockBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(masterIpv4CidrBlock_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, masterIpv4CidrBlock_);
     }
-    if (!getPrivateEndpointBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(privateEndpoint_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, privateEndpoint_);
     }
-    if (!getPublicEndpointBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(publicEndpoint_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, publicEndpoint_);
     }
-    if (!getPeeringNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(peeringName_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, peeringName_);
     }
     if (masterGlobalAccessConfig_ != null) {

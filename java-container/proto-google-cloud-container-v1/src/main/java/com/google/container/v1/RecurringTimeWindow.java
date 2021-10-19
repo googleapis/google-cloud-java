@@ -288,7 +288,7 @@ public final class RecurringTimeWindow extends com.google.protobuf.GeneratedMess
     if (window_ != null) {
       output.writeMessage(1, getWindow());
     }
-    if (!getRecurrenceBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(recurrence_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, recurrence_);
     }
     unknownFields.writeTo(output);
@@ -303,7 +303,7 @@ public final class RecurringTimeWindow extends com.google.protobuf.GeneratedMess
     if (window_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, getWindow());
     }
-    if (!getRecurrenceBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(recurrence_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, recurrence_);
     }
     size += unknownFields.getSerializedSize();

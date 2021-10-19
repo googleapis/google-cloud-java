@@ -1937,7 +1937,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getMachineTypeBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(machineType_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, machineType_);
     }
     if (diskSizeGb_ != 0) {
@@ -1948,7 +1948,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
     }
     com.google.protobuf.GeneratedMessageV3.serializeStringMapTo(
         output, internalGetMetadata(), MetadataDefaultEntryHolder.defaultEntry, 4);
-    if (!getImageTypeBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(imageType_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 5, imageType_);
     }
     com.google.protobuf.GeneratedMessageV3.serializeStringMapTo(
@@ -1959,7 +1959,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
     for (int i = 0; i < tags_.size(); i++) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 8, tags_.getRaw(i));
     }
-    if (!getServiceAccountBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(serviceAccount_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 9, serviceAccount_);
     }
     if (preemptible_ != false) {
@@ -1968,10 +1968,10 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
     for (int i = 0; i < accelerators_.size(); i++) {
       output.writeMessage(11, accelerators_.get(i));
     }
-    if (!getDiskTypeBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(diskType_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 12, diskType_);
     }
-    if (!getMinCpuPlatformBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(minCpuPlatform_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 13, minCpuPlatform_);
     }
     if (workloadMetadataConfig_ != null) {
@@ -1983,7 +1983,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
     if (sandboxConfig_ != null) {
       output.writeMessage(17, getSandboxConfig());
     }
-    if (!getNodeGroupBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(nodeGroup_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 18, nodeGroup_);
     }
     if (reservationAffinity_ != null) {
@@ -1998,7 +1998,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
     if (kubeletConfig_ != null) {
       output.writeMessage(22, getKubeletConfig());
     }
-    if (!getBootDiskKmsKeyBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(bootDiskKmsKey_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 23, bootDiskKmsKey_);
     }
     if (ephemeralStorageConfig_ != null) {
@@ -2016,7 +2016,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
     if (size != -1) return size;
 
     size = 0;
-    if (!getMachineTypeBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(machineType_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, machineType_);
     }
     if (diskSizeGb_ != 0) {
@@ -2040,7 +2040,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
               .build();
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(4, metadata__);
     }
-    if (!getImageTypeBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(imageType_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, imageType_);
     }
     for (java.util.Map.Entry<java.lang.String, java.lang.String> entry :
@@ -2064,7 +2064,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
       size += dataSize;
       size += 1 * getTagsList().size();
     }
-    if (!getServiceAccountBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(serviceAccount_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(9, serviceAccount_);
     }
     if (preemptible_ != false) {
@@ -2073,10 +2073,10 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
     for (int i = 0; i < accelerators_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(11, accelerators_.get(i));
     }
-    if (!getDiskTypeBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(diskType_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(12, diskType_);
     }
-    if (!getMinCpuPlatformBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(minCpuPlatform_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(13, minCpuPlatform_);
     }
     if (workloadMetadataConfig_ != null) {
@@ -2089,7 +2089,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
     if (sandboxConfig_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(17, getSandboxConfig());
     }
-    if (!getNodeGroupBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(nodeGroup_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(18, nodeGroup_);
     }
     if (reservationAffinity_ != null) {
@@ -2106,7 +2106,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
     if (kubeletConfig_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(22, getKubeletConfig());
     }
-    if (!getBootDiskKmsKeyBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(bootDiskKmsKey_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(23, bootDiskKmsKey_);
     }
     if (ephemeralStorageConfig_ != null) {

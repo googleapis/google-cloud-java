@@ -877,34 +877,34 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
     if (createSubnetwork_ != false) {
       output.writeBool(2, createSubnetwork_);
     }
-    if (!getSubnetworkNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(subnetworkName_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, subnetworkName_);
     }
-    if (!getClusterIpv4CidrBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(clusterIpv4Cidr_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 4, clusterIpv4Cidr_);
     }
-    if (!getNodeIpv4CidrBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(nodeIpv4Cidr_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 5, nodeIpv4Cidr_);
     }
-    if (!getServicesIpv4CidrBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(servicesIpv4Cidr_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 6, servicesIpv4Cidr_);
     }
-    if (!getClusterSecondaryRangeNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(clusterSecondaryRangeName_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 7, clusterSecondaryRangeName_);
     }
-    if (!getServicesSecondaryRangeNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(servicesSecondaryRangeName_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 8, servicesSecondaryRangeName_);
     }
-    if (!getClusterIpv4CidrBlockBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(clusterIpv4CidrBlock_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 9, clusterIpv4CidrBlock_);
     }
-    if (!getNodeIpv4CidrBlockBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(nodeIpv4CidrBlock_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 10, nodeIpv4CidrBlock_);
     }
-    if (!getServicesIpv4CidrBlockBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(servicesIpv4CidrBlock_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 11, servicesIpv4CidrBlock_);
     }
-    if (!getTpuIpv4CidrBlockBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(tpuIpv4CidrBlock_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 13, tpuIpv4CidrBlock_);
     }
     if (useRoutes_ != false) {
@@ -925,36 +925,36 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
     if (createSubnetwork_ != false) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(2, createSubnetwork_);
     }
-    if (!getSubnetworkNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(subnetworkName_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, subnetworkName_);
     }
-    if (!getClusterIpv4CidrBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(clusterIpv4Cidr_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, clusterIpv4Cidr_);
     }
-    if (!getNodeIpv4CidrBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(nodeIpv4Cidr_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, nodeIpv4Cidr_);
     }
-    if (!getServicesIpv4CidrBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(servicesIpv4Cidr_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, servicesIpv4Cidr_);
     }
-    if (!getClusterSecondaryRangeNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(clusterSecondaryRangeName_)) {
       size +=
           com.google.protobuf.GeneratedMessageV3.computeStringSize(7, clusterSecondaryRangeName_);
     }
-    if (!getServicesSecondaryRangeNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(servicesSecondaryRangeName_)) {
       size +=
           com.google.protobuf.GeneratedMessageV3.computeStringSize(8, servicesSecondaryRangeName_);
     }
-    if (!getClusterIpv4CidrBlockBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(clusterIpv4CidrBlock_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(9, clusterIpv4CidrBlock_);
     }
-    if (!getNodeIpv4CidrBlockBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(nodeIpv4CidrBlock_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(10, nodeIpv4CidrBlock_);
     }
-    if (!getServicesIpv4CidrBlockBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(servicesIpv4CidrBlock_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(11, servicesIpv4CidrBlock_);
     }
-    if (!getTpuIpv4CidrBlockBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(tpuIpv4CidrBlock_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(13, tpuIpv4CidrBlock_);
     }
     if (useRoutes_ != false) {

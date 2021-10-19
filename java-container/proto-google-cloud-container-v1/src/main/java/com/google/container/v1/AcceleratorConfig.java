@@ -202,7 +202,7 @@ public final class AcceleratorConfig extends com.google.protobuf.GeneratedMessag
     if (acceleratorCount_ != 0L) {
       output.writeInt64(1, acceleratorCount_);
     }
-    if (!getAcceleratorTypeBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(acceleratorType_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, acceleratorType_);
     }
     unknownFields.writeTo(output);
@@ -217,7 +217,7 @@ public final class AcceleratorConfig extends com.google.protobuf.GeneratedMessag
     if (acceleratorCount_ != 0L) {
       size += com.google.protobuf.CodedOutputStream.computeInt64Size(1, acceleratorCount_);
     }
-    if (!getAcceleratorTypeBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(acceleratorType_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, acceleratorType_);
     }
     size += unknownFields.getSerializedSize();

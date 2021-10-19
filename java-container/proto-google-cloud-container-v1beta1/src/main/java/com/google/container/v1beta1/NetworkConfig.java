@@ -595,10 +595,10 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getNetworkBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(network_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, network_);
     }
-    if (!getSubnetworkBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(subnetwork_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, subnetwork_);
     }
     if (enableIntraNodeVisibility_ != false) {
@@ -636,10 +636,10 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
     if (size != -1) return size;
 
     size = 0;
-    if (!getNetworkBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(network_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, network_);
     }
-    if (!getSubnetworkBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(subnetwork_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, subnetwork_);
     }
     if (enableIntraNodeVisibility_ != false) {

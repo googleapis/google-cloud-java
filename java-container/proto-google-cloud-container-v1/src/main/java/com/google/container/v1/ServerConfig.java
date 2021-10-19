@@ -565,7 +565,7 @@ public final class ServerConfig extends com.google.protobuf.GeneratedMessageV3
       if (channel_ != com.google.container.v1.ReleaseChannel.Channel.UNSPECIFIED.getNumber()) {
         output.writeEnum(1, channel_);
       }
-      if (!getDefaultVersionBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(defaultVersion_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, defaultVersion_);
       }
       for (int i = 0; i < validVersions_.size(); i++) {
@@ -583,7 +583,7 @@ public final class ServerConfig extends com.google.protobuf.GeneratedMessageV3
       if (channel_ != com.google.container.v1.ReleaseChannel.Channel.UNSPECIFIED.getNumber()) {
         size += com.google.protobuf.CodedOutputStream.computeEnumSize(1, channel_);
       }
-      if (!getDefaultVersionBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(defaultVersion_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, defaultVersion_);
       }
       {
@@ -1708,13 +1708,13 @@ public final class ServerConfig extends com.google.protobuf.GeneratedMessageV3
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getDefaultClusterVersionBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(defaultClusterVersion_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, defaultClusterVersion_);
     }
     for (int i = 0; i < validNodeVersions_.size(); i++) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, validNodeVersions_.getRaw(i));
     }
-    if (!getDefaultImageTypeBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(defaultImageType_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 4, defaultImageType_);
     }
     for (int i = 0; i < validImageTypes_.size(); i++) {
@@ -1735,7 +1735,7 @@ public final class ServerConfig extends com.google.protobuf.GeneratedMessageV3
     if (size != -1) return size;
 
     size = 0;
-    if (!getDefaultClusterVersionBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(defaultClusterVersion_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, defaultClusterVersion_);
     }
     {
@@ -1746,7 +1746,7 @@ public final class ServerConfig extends com.google.protobuf.GeneratedMessageV3
       size += dataSize;
       size += 1 * getValidNodeVersionsList().size();
     }
-    if (!getDefaultImageTypeBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(defaultImageType_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, defaultImageType_);
     }
     {

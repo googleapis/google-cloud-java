@@ -348,7 +348,7 @@ public final class NotificationConfig extends com.google.protobuf.GeneratedMessa
       if (enabled_ != false) {
         output.writeBool(1, enabled_);
       }
-      if (!getTopicBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(topic_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, topic_);
       }
       unknownFields.writeTo(output);
@@ -363,7 +363,7 @@ public final class NotificationConfig extends com.google.protobuf.GeneratedMessa
       if (enabled_ != false) {
         size += com.google.protobuf.CodedOutputStream.computeBoolSize(1, enabled_);
       }
-      if (!getTopicBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(topic_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, topic_);
       }
       size += unknownFields.getSerializedSize();

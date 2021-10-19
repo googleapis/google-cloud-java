@@ -379,7 +379,7 @@ public final class DatabaseEncryption extends com.google.protobuf.GeneratedMessa
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getKeyNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(keyName_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, keyName_);
     }
     if (state_ != com.google.container.v1.DatabaseEncryption.State.UNKNOWN.getNumber()) {
@@ -394,7 +394,7 @@ public final class DatabaseEncryption extends com.google.protobuf.GeneratedMessa
     if (size != -1) return size;
 
     size = 0;
-    if (!getKeyNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(keyName_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, keyName_);
     }
     if (state_ != com.google.container.v1.DatabaseEncryption.State.UNKNOWN.getNumber()) {
