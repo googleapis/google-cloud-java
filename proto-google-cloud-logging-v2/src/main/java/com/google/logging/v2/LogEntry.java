@@ -1337,7 +1337,7 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
     if (payloadCase_ == 3) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, payload_);
     }
-    if (!getInsertIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(insertId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 4, insertId_);
     }
     if (payloadCase_ == 6) {
@@ -1357,13 +1357,13 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
     }
     com.google.protobuf.GeneratedMessageV3.serializeStringMapTo(
         output, internalGetLabels(), LabelsDefaultEntryHolder.defaultEntry, 11);
-    if (!getLogNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(logName_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 12, logName_);
     }
     if (operation_ != null) {
       output.writeMessage(15, getOperation());
     }
-    if (!getTraceBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(trace_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 22, trace_);
     }
     if (sourceLocation_ != null) {
@@ -1372,7 +1372,7 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
     if (receiveTimestamp_ != null) {
       output.writeMessage(24, getReceiveTimestamp());
     }
-    if (!getSpanIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(spanId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 27, spanId_);
     }
     if (traceSampled_ != false) {
@@ -1395,7 +1395,7 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
     if (payloadCase_ == 3) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, payload_);
     }
-    if (!getInsertIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(insertId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, insertId_);
     }
     if (payloadCase_ == 6) {
@@ -1425,13 +1425,13 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
               .build();
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(11, labels__);
     }
-    if (!getLogNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(logName_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(12, logName_);
     }
     if (operation_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(15, getOperation());
     }
-    if (!getTraceBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(trace_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(22, trace_);
     }
     if (sourceLocation_ != null) {
@@ -1440,7 +1440,7 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
     if (receiveTimestamp_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(24, getReceiveTimestamp());
     }
-    if (!getSpanIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(spanId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(27, spanId_);
     }
     if (traceSampled_ != false) {

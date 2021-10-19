@@ -1082,20 +1082,20 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name_);
     }
-    if (!getDestinationBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(destination_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, destination_);
     }
-    if (!getFilterBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(filter_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 5, filter_);
     }
     if (outputVersionFormat_
         != com.google.logging.v2.LogSink.VersionFormat.VERSION_FORMAT_UNSPECIFIED.getNumber()) {
       output.writeEnum(6, outputVersionFormat_);
     }
-    if (!getWriterIdentityBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(writerIdentity_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 8, writerIdentity_);
     }
     if (includeChildren_ != false) {
@@ -1113,7 +1113,7 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
     for (int i = 0; i < exclusions_.size(); i++) {
       output.writeMessage(16, exclusions_.get(i));
     }
-    if (!getDescriptionBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(description_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 18, description_);
     }
     if (disabled_ != false) {
@@ -1128,20 +1128,20 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
     if (size != -1) return size;
 
     size = 0;
-    if (!getNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, name_);
     }
-    if (!getDestinationBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(destination_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, destination_);
     }
-    if (!getFilterBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(filter_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, filter_);
     }
     if (outputVersionFormat_
         != com.google.logging.v2.LogSink.VersionFormat.VERSION_FORMAT_UNSPECIFIED.getNumber()) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(6, outputVersionFormat_);
     }
-    if (!getWriterIdentityBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(writerIdentity_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, writerIdentity_);
     }
     if (includeChildren_ != false) {
@@ -1161,7 +1161,7 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
     for (int i = 0; i < exclusions_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(16, exclusions_.get(i));
     }
-    if (!getDescriptionBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(description_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(18, description_);
     }
     if (disabled_ != false) {

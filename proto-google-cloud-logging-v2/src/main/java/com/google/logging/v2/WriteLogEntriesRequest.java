@@ -661,7 +661,7 @@ public final class WriteLogEntriesRequest extends com.google.protobuf.GeneratedM
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getLogNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(logName_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, logName_);
     }
     if (resource_ != null) {
@@ -687,7 +687,7 @@ public final class WriteLogEntriesRequest extends com.google.protobuf.GeneratedM
     if (size != -1) return size;
 
     size = 0;
-    if (!getLogNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(logName_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, logName_);
     }
     if (resource_ != null) {

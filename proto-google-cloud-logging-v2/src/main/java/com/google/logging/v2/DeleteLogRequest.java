@@ -196,7 +196,7 @@ public final class DeleteLogRequest extends com.google.protobuf.GeneratedMessage
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getLogNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(logName_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, logName_);
     }
     unknownFields.writeTo(output);
@@ -208,7 +208,7 @@ public final class DeleteLogRequest extends com.google.protobuf.GeneratedMessage
     if (size != -1) return size;
 
     size = 0;
-    if (!getLogNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(logName_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, logName_);
     }
     size += unknownFields.getSerializedSize();
