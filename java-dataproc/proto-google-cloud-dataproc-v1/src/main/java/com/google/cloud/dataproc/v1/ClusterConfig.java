@@ -343,10 +343,10 @@ public final class ClusterConfig extends com.google.protobuf.GeneratedMessageV3
    * ASIA, or EU) for your cluster's staging bucket according to the
    * Compute Engine zone where your cluster is deployed, and then create
    * and manage this project-level, per-location bucket (see
-   * [Dataproc staging
-   * bucket](https://cloud.google.com/dataproc/docs/concepts/configuring-clusters/staging-bucket)).
-   * **This field requires a Cloud Storage bucket name, not a URI to a Cloud
-   * Storage bucket.**
+   * [Dataproc staging and temp
+   * buckets](https://cloud.google.com/dataproc/docs/concepts/configuring-clusters/staging-bucket)).
+   * **This field requires a Cloud Storage bucket name, not a `gs://...` URI to
+   * a Cloud Storage bucket.**
    * </pre>
    *
    * <code>string config_bucket = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -376,10 +376,10 @@ public final class ClusterConfig extends com.google.protobuf.GeneratedMessageV3
    * ASIA, or EU) for your cluster's staging bucket according to the
    * Compute Engine zone where your cluster is deployed, and then create
    * and manage this project-level, per-location bucket (see
-   * [Dataproc staging
-   * bucket](https://cloud.google.com/dataproc/docs/concepts/configuring-clusters/staging-bucket)).
-   * **This field requires a Cloud Storage bucket name, not a URI to a Cloud
-   * Storage bucket.**
+   * [Dataproc staging and temp
+   * buckets](https://cloud.google.com/dataproc/docs/concepts/configuring-clusters/staging-bucket)).
+   * **This field requires a Cloud Storage bucket name, not a `gs://...` URI to
+   * a Cloud Storage bucket.**
    * </pre>
    *
    * <code>string config_bucket = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -413,9 +413,11 @@ public final class ClusterConfig extends com.google.protobuf.GeneratedMessageV3
    * Compute Engine zone where your cluster is deployed, and then create
    * and manage this project-level, per-location bucket. The default bucket has
    * a TTL of 90 days, but you can use any TTL (or none) if you specify a
-   * bucket.
-   * **This field requires a Cloud Storage bucket name, not a URI to a Cloud
-   * Storage bucket.**
+   * bucket (see
+   * [Dataproc staging and temp
+   * buckets](https://cloud.google.com/dataproc/docs/concepts/configuring-clusters/staging-bucket)).
+   * **This field requires a Cloud Storage bucket name, not a `gs://...` URI to
+   * a Cloud Storage bucket.**
    * </pre>
    *
    * <code>string temp_bucket = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -446,9 +448,11 @@ public final class ClusterConfig extends com.google.protobuf.GeneratedMessageV3
    * Compute Engine zone where your cluster is deployed, and then create
    * and manage this project-level, per-location bucket. The default bucket has
    * a TTL of 90 days, but you can use any TTL (or none) if you specify a
-   * bucket.
-   * **This field requires a Cloud Storage bucket name, not a URI to a Cloud
-   * Storage bucket.**
+   * bucket (see
+   * [Dataproc staging and temp
+   * buckets](https://cloud.google.com/dataproc/docs/concepts/configuring-clusters/staging-bucket)).
+   * **This field requires a Cloud Storage bucket name, not a `gs://...` URI to
+   * a Cloud Storage bucket.**
    * </pre>
    *
    * <code>string temp_bucket = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -532,7 +536,7 @@ public final class ClusterConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Optional. The Compute Engine config settings for
-   * the master instance in a cluster.
+   * the cluster's master instance.
    * </pre>
    *
    * <code>
@@ -550,7 +554,7 @@ public final class ClusterConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Optional. The Compute Engine config settings for
-   * the master instance in a cluster.
+   * the cluster's master instance.
    * </pre>
    *
    * <code>
@@ -570,7 +574,7 @@ public final class ClusterConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Optional. The Compute Engine config settings for
-   * the master instance in a cluster.
+   * the cluster's master instance.
    * </pre>
    *
    * <code>
@@ -589,7 +593,7 @@ public final class ClusterConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Optional. The Compute Engine config settings for
-   * worker instances in a cluster.
+   * the cluster's worker instances.
    * </pre>
    *
    * <code>
@@ -607,7 +611,7 @@ public final class ClusterConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Optional. The Compute Engine config settings for
-   * worker instances in a cluster.
+   * the cluster's worker instances.
    * </pre>
    *
    * <code>
@@ -627,7 +631,7 @@ public final class ClusterConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Optional. The Compute Engine config settings for
-   * worker instances in a cluster.
+   * the cluster's worker instances.
    * </pre>
    *
    * <code>
@@ -646,7 +650,7 @@ public final class ClusterConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Optional. The Compute Engine config settings for
-   * additional worker instances in a cluster.
+   * a cluster's secondary worker instances
    * </pre>
    *
    * <code>
@@ -664,7 +668,7 @@ public final class ClusterConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Optional. The Compute Engine config settings for
-   * additional worker instances in a cluster.
+   * a cluster's secondary worker instances
    * </pre>
    *
    * <code>
@@ -684,7 +688,7 @@ public final class ClusterConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Optional. The Compute Engine config settings for
-   * additional worker instances in a cluster.
+   * a cluster's secondary worker instances
    * </pre>
    *
    * <code>
@@ -703,7 +707,7 @@ public final class ClusterConfig extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. The config settings for software inside the cluster.
+   * Optional. The config settings for cluster software.
    * </pre>
    *
    * <code>
@@ -720,7 +724,7 @@ public final class ClusterConfig extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. The config settings for software inside the cluster.
+   * Optional. The config settings for cluster software.
    * </pre>
    *
    * <code>
@@ -739,7 +743,7 @@ public final class ClusterConfig extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. The config settings for software inside the cluster.
+   * Optional. The config settings for cluster software.
    * </pre>
    *
    * <code>
@@ -1292,10 +1296,10 @@ public final class ClusterConfig extends com.google.protobuf.GeneratedMessageV3
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getConfigBucketBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(configBucket_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, configBucket_);
     }
-    if (!getTempBucketBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(tempBucket_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, tempBucket_);
     }
     if (gceClusterConfig_ != null) {
@@ -1346,10 +1350,10 @@ public final class ClusterConfig extends com.google.protobuf.GeneratedMessageV3
     if (size != -1) return size;
 
     size = 0;
-    if (!getConfigBucketBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(configBucket_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, configBucket_);
     }
-    if (!getTempBucketBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(tempBucket_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, tempBucket_);
     }
     if (gceClusterConfig_ != null) {
@@ -2019,10 +2023,10 @@ public final class ClusterConfig extends com.google.protobuf.GeneratedMessageV3
      * ASIA, or EU) for your cluster's staging bucket according to the
      * Compute Engine zone where your cluster is deployed, and then create
      * and manage this project-level, per-location bucket (see
-     * [Dataproc staging
-     * bucket](https://cloud.google.com/dataproc/docs/concepts/configuring-clusters/staging-bucket)).
-     * **This field requires a Cloud Storage bucket name, not a URI to a Cloud
-     * Storage bucket.**
+     * [Dataproc staging and temp
+     * buckets](https://cloud.google.com/dataproc/docs/concepts/configuring-clusters/staging-bucket)).
+     * **This field requires a Cloud Storage bucket name, not a `gs://...` URI to
+     * a Cloud Storage bucket.**
      * </pre>
      *
      * <code>string config_bucket = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2051,10 +2055,10 @@ public final class ClusterConfig extends com.google.protobuf.GeneratedMessageV3
      * ASIA, or EU) for your cluster's staging bucket according to the
      * Compute Engine zone where your cluster is deployed, and then create
      * and manage this project-level, per-location bucket (see
-     * [Dataproc staging
-     * bucket](https://cloud.google.com/dataproc/docs/concepts/configuring-clusters/staging-bucket)).
-     * **This field requires a Cloud Storage bucket name, not a URI to a Cloud
-     * Storage bucket.**
+     * [Dataproc staging and temp
+     * buckets](https://cloud.google.com/dataproc/docs/concepts/configuring-clusters/staging-bucket)).
+     * **This field requires a Cloud Storage bucket name, not a `gs://...` URI to
+     * a Cloud Storage bucket.**
      * </pre>
      *
      * <code>string config_bucket = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2083,10 +2087,10 @@ public final class ClusterConfig extends com.google.protobuf.GeneratedMessageV3
      * ASIA, or EU) for your cluster's staging bucket according to the
      * Compute Engine zone where your cluster is deployed, and then create
      * and manage this project-level, per-location bucket (see
-     * [Dataproc staging
-     * bucket](https://cloud.google.com/dataproc/docs/concepts/configuring-clusters/staging-bucket)).
-     * **This field requires a Cloud Storage bucket name, not a URI to a Cloud
-     * Storage bucket.**
+     * [Dataproc staging and temp
+     * buckets](https://cloud.google.com/dataproc/docs/concepts/configuring-clusters/staging-bucket)).
+     * **This field requires a Cloud Storage bucket name, not a `gs://...` URI to
+     * a Cloud Storage bucket.**
      * </pre>
      *
      * <code>string config_bucket = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2114,10 +2118,10 @@ public final class ClusterConfig extends com.google.protobuf.GeneratedMessageV3
      * ASIA, or EU) for your cluster's staging bucket according to the
      * Compute Engine zone where your cluster is deployed, and then create
      * and manage this project-level, per-location bucket (see
-     * [Dataproc staging
-     * bucket](https://cloud.google.com/dataproc/docs/concepts/configuring-clusters/staging-bucket)).
-     * **This field requires a Cloud Storage bucket name, not a URI to a Cloud
-     * Storage bucket.**
+     * [Dataproc staging and temp
+     * buckets](https://cloud.google.com/dataproc/docs/concepts/configuring-clusters/staging-bucket)).
+     * **This field requires a Cloud Storage bucket name, not a `gs://...` URI to
+     * a Cloud Storage bucket.**
      * </pre>
      *
      * <code>string config_bucket = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2141,10 +2145,10 @@ public final class ClusterConfig extends com.google.protobuf.GeneratedMessageV3
      * ASIA, or EU) for your cluster's staging bucket according to the
      * Compute Engine zone where your cluster is deployed, and then create
      * and manage this project-level, per-location bucket (see
-     * [Dataproc staging
-     * bucket](https://cloud.google.com/dataproc/docs/concepts/configuring-clusters/staging-bucket)).
-     * **This field requires a Cloud Storage bucket name, not a URI to a Cloud
-     * Storage bucket.**
+     * [Dataproc staging and temp
+     * buckets](https://cloud.google.com/dataproc/docs/concepts/configuring-clusters/staging-bucket)).
+     * **This field requires a Cloud Storage bucket name, not a `gs://...` URI to
+     * a Cloud Storage bucket.**
      * </pre>
      *
      * <code>string config_bucket = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2176,9 +2180,11 @@ public final class ClusterConfig extends com.google.protobuf.GeneratedMessageV3
      * Compute Engine zone where your cluster is deployed, and then create
      * and manage this project-level, per-location bucket. The default bucket has
      * a TTL of 90 days, but you can use any TTL (or none) if you specify a
-     * bucket.
-     * **This field requires a Cloud Storage bucket name, not a URI to a Cloud
-     * Storage bucket.**
+     * bucket (see
+     * [Dataproc staging and temp
+     * buckets](https://cloud.google.com/dataproc/docs/concepts/configuring-clusters/staging-bucket)).
+     * **This field requires a Cloud Storage bucket name, not a `gs://...` URI to
+     * a Cloud Storage bucket.**
      * </pre>
      *
      * <code>string temp_bucket = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2208,9 +2214,11 @@ public final class ClusterConfig extends com.google.protobuf.GeneratedMessageV3
      * Compute Engine zone where your cluster is deployed, and then create
      * and manage this project-level, per-location bucket. The default bucket has
      * a TTL of 90 days, but you can use any TTL (or none) if you specify a
-     * bucket.
-     * **This field requires a Cloud Storage bucket name, not a URI to a Cloud
-     * Storage bucket.**
+     * bucket (see
+     * [Dataproc staging and temp
+     * buckets](https://cloud.google.com/dataproc/docs/concepts/configuring-clusters/staging-bucket)).
+     * **This field requires a Cloud Storage bucket name, not a `gs://...` URI to
+     * a Cloud Storage bucket.**
      * </pre>
      *
      * <code>string temp_bucket = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2240,9 +2248,11 @@ public final class ClusterConfig extends com.google.protobuf.GeneratedMessageV3
      * Compute Engine zone where your cluster is deployed, and then create
      * and manage this project-level, per-location bucket. The default bucket has
      * a TTL of 90 days, but you can use any TTL (or none) if you specify a
-     * bucket.
-     * **This field requires a Cloud Storage bucket name, not a URI to a Cloud
-     * Storage bucket.**
+     * bucket (see
+     * [Dataproc staging and temp
+     * buckets](https://cloud.google.com/dataproc/docs/concepts/configuring-clusters/staging-bucket)).
+     * **This field requires a Cloud Storage bucket name, not a `gs://...` URI to
+     * a Cloud Storage bucket.**
      * </pre>
      *
      * <code>string temp_bucket = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2271,9 +2281,11 @@ public final class ClusterConfig extends com.google.protobuf.GeneratedMessageV3
      * Compute Engine zone where your cluster is deployed, and then create
      * and manage this project-level, per-location bucket. The default bucket has
      * a TTL of 90 days, but you can use any TTL (or none) if you specify a
-     * bucket.
-     * **This field requires a Cloud Storage bucket name, not a URI to a Cloud
-     * Storage bucket.**
+     * bucket (see
+     * [Dataproc staging and temp
+     * buckets](https://cloud.google.com/dataproc/docs/concepts/configuring-clusters/staging-bucket)).
+     * **This field requires a Cloud Storage bucket name, not a `gs://...` URI to
+     * a Cloud Storage bucket.**
      * </pre>
      *
      * <code>string temp_bucket = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2298,9 +2310,11 @@ public final class ClusterConfig extends com.google.protobuf.GeneratedMessageV3
      * Compute Engine zone where your cluster is deployed, and then create
      * and manage this project-level, per-location bucket. The default bucket has
      * a TTL of 90 days, but you can use any TTL (or none) if you specify a
-     * bucket.
-     * **This field requires a Cloud Storage bucket name, not a URI to a Cloud
-     * Storage bucket.**
+     * bucket (see
+     * [Dataproc staging and temp
+     * buckets](https://cloud.google.com/dataproc/docs/concepts/configuring-clusters/staging-bucket)).
+     * **This field requires a Cloud Storage bucket name, not a `gs://...` URI to
+     * a Cloud Storage bucket.**
      * </pre>
      *
      * <code>string temp_bucket = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2543,7 +2557,7 @@ public final class ClusterConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. The Compute Engine config settings for
-     * the master instance in a cluster.
+     * the cluster's master instance.
      * </pre>
      *
      * <code>
@@ -2560,7 +2574,7 @@ public final class ClusterConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. The Compute Engine config settings for
-     * the master instance in a cluster.
+     * the cluster's master instance.
      * </pre>
      *
      * <code>
@@ -2583,7 +2597,7 @@ public final class ClusterConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. The Compute Engine config settings for
-     * the master instance in a cluster.
+     * the cluster's master instance.
      * </pre>
      *
      * <code>
@@ -2608,7 +2622,7 @@ public final class ClusterConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. The Compute Engine config settings for
-     * the master instance in a cluster.
+     * the cluster's master instance.
      * </pre>
      *
      * <code>
@@ -2631,7 +2645,7 @@ public final class ClusterConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. The Compute Engine config settings for
-     * the master instance in a cluster.
+     * the cluster's master instance.
      * </pre>
      *
      * <code>
@@ -2660,7 +2674,7 @@ public final class ClusterConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. The Compute Engine config settings for
-     * the master instance in a cluster.
+     * the cluster's master instance.
      * </pre>
      *
      * <code>
@@ -2683,7 +2697,7 @@ public final class ClusterConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. The Compute Engine config settings for
-     * the master instance in a cluster.
+     * the cluster's master instance.
      * </pre>
      *
      * <code>
@@ -2700,7 +2714,7 @@ public final class ClusterConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. The Compute Engine config settings for
-     * the master instance in a cluster.
+     * the cluster's master instance.
      * </pre>
      *
      * <code>
@@ -2721,7 +2735,7 @@ public final class ClusterConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. The Compute Engine config settings for
-     * the master instance in a cluster.
+     * the cluster's master instance.
      * </pre>
      *
      * <code>
@@ -2756,7 +2770,7 @@ public final class ClusterConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. The Compute Engine config settings for
-     * worker instances in a cluster.
+     * the cluster's worker instances.
      * </pre>
      *
      * <code>
@@ -2773,7 +2787,7 @@ public final class ClusterConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. The Compute Engine config settings for
-     * worker instances in a cluster.
+     * the cluster's worker instances.
      * </pre>
      *
      * <code>
@@ -2796,7 +2810,7 @@ public final class ClusterConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. The Compute Engine config settings for
-     * worker instances in a cluster.
+     * the cluster's worker instances.
      * </pre>
      *
      * <code>
@@ -2821,7 +2835,7 @@ public final class ClusterConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. The Compute Engine config settings for
-     * worker instances in a cluster.
+     * the cluster's worker instances.
      * </pre>
      *
      * <code>
@@ -2844,7 +2858,7 @@ public final class ClusterConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. The Compute Engine config settings for
-     * worker instances in a cluster.
+     * the cluster's worker instances.
      * </pre>
      *
      * <code>
@@ -2873,7 +2887,7 @@ public final class ClusterConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. The Compute Engine config settings for
-     * worker instances in a cluster.
+     * the cluster's worker instances.
      * </pre>
      *
      * <code>
@@ -2896,7 +2910,7 @@ public final class ClusterConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. The Compute Engine config settings for
-     * worker instances in a cluster.
+     * the cluster's worker instances.
      * </pre>
      *
      * <code>
@@ -2913,7 +2927,7 @@ public final class ClusterConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. The Compute Engine config settings for
-     * worker instances in a cluster.
+     * the cluster's worker instances.
      * </pre>
      *
      * <code>
@@ -2934,7 +2948,7 @@ public final class ClusterConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. The Compute Engine config settings for
-     * worker instances in a cluster.
+     * the cluster's worker instances.
      * </pre>
      *
      * <code>
@@ -2969,7 +2983,7 @@ public final class ClusterConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. The Compute Engine config settings for
-     * additional worker instances in a cluster.
+     * a cluster's secondary worker instances
      * </pre>
      *
      * <code>
@@ -2986,7 +3000,7 @@ public final class ClusterConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. The Compute Engine config settings for
-     * additional worker instances in a cluster.
+     * a cluster's secondary worker instances
      * </pre>
      *
      * <code>
@@ -3009,7 +3023,7 @@ public final class ClusterConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. The Compute Engine config settings for
-     * additional worker instances in a cluster.
+     * a cluster's secondary worker instances
      * </pre>
      *
      * <code>
@@ -3035,7 +3049,7 @@ public final class ClusterConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. The Compute Engine config settings for
-     * additional worker instances in a cluster.
+     * a cluster's secondary worker instances
      * </pre>
      *
      * <code>
@@ -3058,7 +3072,7 @@ public final class ClusterConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. The Compute Engine config settings for
-     * additional worker instances in a cluster.
+     * a cluster's secondary worker instances
      * </pre>
      *
      * <code>
@@ -3088,7 +3102,7 @@ public final class ClusterConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. The Compute Engine config settings for
-     * additional worker instances in a cluster.
+     * a cluster's secondary worker instances
      * </pre>
      *
      * <code>
@@ -3111,7 +3125,7 @@ public final class ClusterConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. The Compute Engine config settings for
-     * additional worker instances in a cluster.
+     * a cluster's secondary worker instances
      * </pre>
      *
      * <code>
@@ -3129,7 +3143,7 @@ public final class ClusterConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. The Compute Engine config settings for
-     * additional worker instances in a cluster.
+     * a cluster's secondary worker instances
      * </pre>
      *
      * <code>
@@ -3151,7 +3165,7 @@ public final class ClusterConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. The Compute Engine config settings for
-     * additional worker instances in a cluster.
+     * a cluster's secondary worker instances
      * </pre>
      *
      * <code>
@@ -3185,7 +3199,7 @@ public final class ClusterConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The config settings for software inside the cluster.
+     * Optional. The config settings for cluster software.
      * </pre>
      *
      * <code>
@@ -3201,7 +3215,7 @@ public final class ClusterConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The config settings for software inside the cluster.
+     * Optional. The config settings for cluster software.
      * </pre>
      *
      * <code>
@@ -3223,7 +3237,7 @@ public final class ClusterConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The config settings for software inside the cluster.
+     * Optional. The config settings for cluster software.
      * </pre>
      *
      * <code>
@@ -3247,7 +3261,7 @@ public final class ClusterConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The config settings for software inside the cluster.
+     * Optional. The config settings for cluster software.
      * </pre>
      *
      * <code>
@@ -3269,7 +3283,7 @@ public final class ClusterConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The config settings for software inside the cluster.
+     * Optional. The config settings for cluster software.
      * </pre>
      *
      * <code>
@@ -3297,7 +3311,7 @@ public final class ClusterConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The config settings for software inside the cluster.
+     * Optional. The config settings for cluster software.
      * </pre>
      *
      * <code>
@@ -3319,7 +3333,7 @@ public final class ClusterConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The config settings for software inside the cluster.
+     * Optional. The config settings for cluster software.
      * </pre>
      *
      * <code>
@@ -3335,7 +3349,7 @@ public final class ClusterConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The config settings for software inside the cluster.
+     * Optional. The config settings for cluster software.
      * </pre>
      *
      * <code>
@@ -3355,7 +3369,7 @@ public final class ClusterConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The config settings for software inside the cluster.
+     * Optional. The config settings for cluster software.
      * </pre>
      *
      * <code>

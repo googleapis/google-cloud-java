@@ -688,7 +688,7 @@ public final class PrestoJob extends com.google.protobuf.GeneratedMessageV3
     if (continueOnFailure_ != false) {
       output.writeBool(3, continueOnFailure_);
     }
-    if (!getOutputFormatBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(outputFormat_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 4, outputFormat_);
     }
     for (int i = 0; i < clientTags_.size(); i++) {
@@ -719,7 +719,7 @@ public final class PrestoJob extends com.google.protobuf.GeneratedMessageV3
     if (continueOnFailure_ != false) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(3, continueOnFailure_);
     }
-    if (!getOutputFormatBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(outputFormat_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, outputFormat_);
     }
     {

@@ -200,5 +200,89 @@ public interface AutoscalingPolicyOrBuilder
   com.google.cloud.dataproc.v1.InstanceGroupAutoscalingPolicyConfigOrBuilder
       getSecondaryWorkerConfigOrBuilder();
 
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The labels to associate with this autoscaling policy.
+   * Label **keys** must contain 1 to 63 characters, and must conform to
+   * [RFC 1035](https://www.ietf.org/rfc/rfc1035.txt).
+   * Label **values** may be empty, but, if present, must contain 1 to 63
+   * characters, and must conform to [RFC
+   * 1035](https://www.ietf.org/rfc/rfc1035.txt). No more than 32 labels can be
+   * associated with an autoscaling policy.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; labels = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+   */
+  int getLabelsCount();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The labels to associate with this autoscaling policy.
+   * Label **keys** must contain 1 to 63 characters, and must conform to
+   * [RFC 1035](https://www.ietf.org/rfc/rfc1035.txt).
+   * Label **values** may be empty, but, if present, must contain 1 to 63
+   * characters, and must conform to [RFC
+   * 1035](https://www.ietf.org/rfc/rfc1035.txt). No more than 32 labels can be
+   * associated with an autoscaling policy.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; labels = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+   */
+  boolean containsLabels(java.lang.String key);
+  /** Use {@link #getLabelsMap()} instead. */
+  @java.lang.Deprecated
+  java.util.Map<java.lang.String, java.lang.String> getLabels();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The labels to associate with this autoscaling policy.
+   * Label **keys** must contain 1 to 63 characters, and must conform to
+   * [RFC 1035](https://www.ietf.org/rfc/rfc1035.txt).
+   * Label **values** may be empty, but, if present, must contain 1 to 63
+   * characters, and must conform to [RFC
+   * 1035](https://www.ietf.org/rfc/rfc1035.txt). No more than 32 labels can be
+   * associated with an autoscaling policy.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; labels = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+   */
+  java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The labels to associate with this autoscaling policy.
+   * Label **keys** must contain 1 to 63 characters, and must conform to
+   * [RFC 1035](https://www.ietf.org/rfc/rfc1035.txt).
+   * Label **values** may be empty, but, if present, must contain 1 to 63
+   * characters, and must conform to [RFC
+   * 1035](https://www.ietf.org/rfc/rfc1035.txt). No more than 32 labels can be
+   * associated with an autoscaling policy.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; labels = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+   */
+  java.lang.String getLabelsOrDefault(java.lang.String key, java.lang.String defaultValue);
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The labels to associate with this autoscaling policy.
+   * Label **keys** must contain 1 to 63 characters, and must conform to
+   * [RFC 1035](https://www.ietf.org/rfc/rfc1035.txt).
+   * Label **values** may be empty, but, if present, must contain 1 to 63
+   * characters, and must conform to [RFC
+   * 1035](https://www.ietf.org/rfc/rfc1035.txt). No more than 32 labels can be
+   * associated with an autoscaling policy.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; labels = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+   */
+  java.lang.String getLabelsOrThrow(java.lang.String key);
+
   public com.google.cloud.dataproc.v1.AutoscalingPolicy.AlgorithmCase getAlgorithmCase();
 }

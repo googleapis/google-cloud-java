@@ -1582,8 +1582,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Indicates whether the job is completed. If the value is
-   * `false`, the job is still in progress. If `true`, the job is completed, and
+   * Output only. Indicates whether the job is completed. If the value is `false`,
+   * the job is still in progress. If `true`, the job is completed, and
    * `status.state` field will indicate if it was successful, failed,
    * or cancelled.
    * </pre>
@@ -1644,10 +1644,10 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
     for (int i = 0; i < statusHistory_.size(); i++) {
       output.writeMessage(13, statusHistory_.get(i));
     }
-    if (!getDriverControlFilesUriBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(driverControlFilesUri_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 15, driverControlFilesUri_);
     }
-    if (!getDriverOutputResourceUriBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(driverOutputResourceUri_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 17, driverOutputResourceUri_);
     }
     com.google.protobuf.GeneratedMessageV3.serializeStringMapTo(
@@ -1658,7 +1658,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
     if (typeJobCase_ == 21) {
       output.writeMessage(21, (com.google.cloud.dataproc.v1.SparkRJob) typeJob_);
     }
-    if (!getJobUuidBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(jobUuid_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 22, jobUuid_);
     }
     if (typeJobCase_ == 23) {
@@ -1721,10 +1721,10 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
     for (int i = 0; i < statusHistory_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(13, statusHistory_.get(i));
     }
-    if (!getDriverControlFilesUriBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(driverControlFilesUri_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(15, driverControlFilesUri_);
     }
-    if (!getDriverOutputResourceUriBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(driverOutputResourceUri_)) {
       size +=
           com.google.protobuf.GeneratedMessageV3.computeStringSize(17, driverOutputResourceUri_);
     }
@@ -1746,7 +1746,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               21, (com.google.cloud.dataproc.v1.SparkRJob) typeJob_);
     }
-    if (!getJobUuidBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(jobUuid_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(22, jobUuid_);
     }
     if (typeJobCase_ == 23) {
@@ -6513,8 +6513,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Indicates whether the job is completed. If the value is
-     * `false`, the job is still in progress. If `true`, the job is completed, and
+     * Output only. Indicates whether the job is completed. If the value is `false`,
+     * the job is still in progress. If `true`, the job is completed, and
      * `status.state` field will indicate if it was successful, failed,
      * or cancelled.
      * </pre>
@@ -6531,8 +6531,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Indicates whether the job is completed. If the value is
-     * `false`, the job is still in progress. If `true`, the job is completed, and
+     * Output only. Indicates whether the job is completed. If the value is `false`,
+     * the job is still in progress. If `true`, the job is completed, and
      * `status.state` field will indicate if it was successful, failed,
      * or cancelled.
      * </pre>
@@ -6552,8 +6552,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Indicates whether the job is completed. If the value is
-     * `false`, the job is still in progress. If `true`, the job is completed, and
+     * Output only. Indicates whether the job is completed. If the value is `false`,
+     * the job is still in progress. If `true`, the job is completed, and
      * `status.state` field will indicate if it was successful, failed,
      * or cancelled.
      * </pre>

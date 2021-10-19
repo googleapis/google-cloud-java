@@ -41,6 +41,7 @@ public final class CreateClusterRequest extends com.google.protobuf.GeneratedMes
     projectId_ = "";
     region_ = "";
     requestId_ = "";
+    actionOnFailedPrimaryWorkers_ = 0;
   }
 
   @java.lang.Override
@@ -107,6 +108,13 @@ public final class CreateClusterRequest extends com.google.protobuf.GeneratedMes
               java.lang.String s = input.readStringRequireUtf8();
 
               requestId_ = s;
+              break;
+            }
+          case 40:
+            {
+              int rawValue = input.readEnum();
+
+              actionOnFailedPrimaryWorkers_ = rawValue;
               break;
             }
           default:
@@ -298,14 +306,14 @@ public final class CreateClusterRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Optional. A unique id used to identify the request. If the server receives two
+   * Optional. A unique ID used to identify the request. If the server receives two
    * [CreateClusterRequest](https://cloud.google.com/dataproc/docs/reference/rpc/google.cloud.dataproc.v1#google.cloud.dataproc.v1.CreateClusterRequest)s
    * with the same id, then the second request will be ignored and the
    * first [google.longrunning.Operation][google.longrunning.Operation] created and stored in the backend
    * is returned.
    * It is recommended to always set this value to a
    * [UUID](https://en.wikipedia.org/wiki/Universally_unique_identifier).
-   * The id must contain only letters (a-z, A-Z), numbers (0-9),
+   * The ID must contain only letters (a-z, A-Z), numbers (0-9),
    * underscores (_), and hyphens (-). The maximum length is 40 characters.
    * </pre>
    *
@@ -329,14 +337,14 @@ public final class CreateClusterRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Optional. A unique id used to identify the request. If the server receives two
+   * Optional. A unique ID used to identify the request. If the server receives two
    * [CreateClusterRequest](https://cloud.google.com/dataproc/docs/reference/rpc/google.cloud.dataproc.v1#google.cloud.dataproc.v1.CreateClusterRequest)s
    * with the same id, then the second request will be ignored and the
    * first [google.longrunning.Operation][google.longrunning.Operation] created and stored in the backend
    * is returned.
    * It is recommended to always set this value to a
    * [UUID](https://en.wikipedia.org/wiki/Universally_unique_identifier).
-   * The id must contain only letters (a-z, A-Z), numbers (0-9),
+   * The ID must contain only letters (a-z, A-Z), numbers (0-9),
    * underscores (_), and hyphens (-). The maximum length is 40 characters.
    * </pre>
    *
@@ -357,6 +365,46 @@ public final class CreateClusterRequest extends com.google.protobuf.GeneratedMes
     }
   }
 
+  public static final int ACTION_ON_FAILED_PRIMARY_WORKERS_FIELD_NUMBER = 5;
+  private int actionOnFailedPrimaryWorkers_;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Failure action when primary worker creation fails.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataproc.v1.FailureAction action_on_failed_primary_workers = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for actionOnFailedPrimaryWorkers.
+   */
+  @java.lang.Override
+  public int getActionOnFailedPrimaryWorkersValue() {
+    return actionOnFailedPrimaryWorkers_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Failure action when primary worker creation fails.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataproc.v1.FailureAction action_on_failed_primary_workers = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The actionOnFailedPrimaryWorkers.
+   */
+  @java.lang.Override
+  public com.google.cloud.dataproc.v1.FailureAction getActionOnFailedPrimaryWorkers() {
+    @SuppressWarnings("deprecation")
+    com.google.cloud.dataproc.v1.FailureAction result =
+        com.google.cloud.dataproc.v1.FailureAction.valueOf(actionOnFailedPrimaryWorkers_);
+    return result == null ? com.google.cloud.dataproc.v1.FailureAction.UNRECOGNIZED : result;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -371,17 +419,21 @@ public final class CreateClusterRequest extends com.google.protobuf.GeneratedMes
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getProjectIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(projectId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, projectId_);
     }
     if (cluster_ != null) {
       output.writeMessage(2, getCluster());
     }
-    if (!getRegionBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(region_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, region_);
     }
-    if (!getRequestIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(requestId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 4, requestId_);
+    }
+    if (actionOnFailedPrimaryWorkers_
+        != com.google.cloud.dataproc.v1.FailureAction.FAILURE_ACTION_UNSPECIFIED.getNumber()) {
+      output.writeEnum(5, actionOnFailedPrimaryWorkers_);
     }
     unknownFields.writeTo(output);
   }
@@ -392,17 +444,22 @@ public final class CreateClusterRequest extends com.google.protobuf.GeneratedMes
     if (size != -1) return size;
 
     size = 0;
-    if (!getProjectIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(projectId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, projectId_);
     }
     if (cluster_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, getCluster());
     }
-    if (!getRegionBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(region_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, region_);
     }
-    if (!getRequestIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(requestId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, requestId_);
+    }
+    if (actionOnFailedPrimaryWorkers_
+        != com.google.cloud.dataproc.v1.FailureAction.FAILURE_ACTION_UNSPECIFIED.getNumber()) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeEnumSize(5, actionOnFailedPrimaryWorkers_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -427,6 +484,7 @@ public final class CreateClusterRequest extends com.google.protobuf.GeneratedMes
       if (!getCluster().equals(other.getCluster())) return false;
     }
     if (!getRequestId().equals(other.getRequestId())) return false;
+    if (actionOnFailedPrimaryWorkers_ != other.actionOnFailedPrimaryWorkers_) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -448,6 +506,8 @@ public final class CreateClusterRequest extends com.google.protobuf.GeneratedMes
     }
     hash = (37 * hash) + REQUEST_ID_FIELD_NUMBER;
     hash = (53 * hash) + getRequestId().hashCode();
+    hash = (37 * hash) + ACTION_ON_FAILED_PRIMARY_WORKERS_FIELD_NUMBER;
+    hash = (53 * hash) + actionOnFailedPrimaryWorkers_;
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -605,6 +665,8 @@ public final class CreateClusterRequest extends com.google.protobuf.GeneratedMes
       }
       requestId_ = "";
 
+      actionOnFailedPrimaryWorkers_ = 0;
+
       return this;
     }
 
@@ -640,6 +702,7 @@ public final class CreateClusterRequest extends com.google.protobuf.GeneratedMes
         result.cluster_ = clusterBuilder_.build();
       }
       result.requestId_ = requestId_;
+      result.actionOnFailedPrimaryWorkers_ = actionOnFailedPrimaryWorkers_;
       onBuilt();
       return result;
     }
@@ -704,6 +767,9 @@ public final class CreateClusterRequest extends com.google.protobuf.GeneratedMes
       if (!other.getRequestId().isEmpty()) {
         requestId_ = other.requestId_;
         onChanged();
+      }
+      if (other.actionOnFailedPrimaryWorkers_ != 0) {
+        setActionOnFailedPrimaryWorkersValue(other.getActionOnFailedPrimaryWorkersValue());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -1160,14 +1226,14 @@ public final class CreateClusterRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Optional. A unique id used to identify the request. If the server receives two
+     * Optional. A unique ID used to identify the request. If the server receives two
      * [CreateClusterRequest](https://cloud.google.com/dataproc/docs/reference/rpc/google.cloud.dataproc.v1#google.cloud.dataproc.v1.CreateClusterRequest)s
      * with the same id, then the second request will be ignored and the
      * first [google.longrunning.Operation][google.longrunning.Operation] created and stored in the backend
      * is returned.
      * It is recommended to always set this value to a
      * [UUID](https://en.wikipedia.org/wiki/Universally_unique_identifier).
-     * The id must contain only letters (a-z, A-Z), numbers (0-9),
+     * The ID must contain only letters (a-z, A-Z), numbers (0-9),
      * underscores (_), and hyphens (-). The maximum length is 40 characters.
      * </pre>
      *
@@ -1190,14 +1256,14 @@ public final class CreateClusterRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Optional. A unique id used to identify the request. If the server receives two
+     * Optional. A unique ID used to identify the request. If the server receives two
      * [CreateClusterRequest](https://cloud.google.com/dataproc/docs/reference/rpc/google.cloud.dataproc.v1#google.cloud.dataproc.v1.CreateClusterRequest)s
      * with the same id, then the second request will be ignored and the
      * first [google.longrunning.Operation][google.longrunning.Operation] created and stored in the backend
      * is returned.
      * It is recommended to always set this value to a
      * [UUID](https://en.wikipedia.org/wiki/Universally_unique_identifier).
-     * The id must contain only letters (a-z, A-Z), numbers (0-9),
+     * The ID must contain only letters (a-z, A-Z), numbers (0-9),
      * underscores (_), and hyphens (-). The maximum length is 40 characters.
      * </pre>
      *
@@ -1220,14 +1286,14 @@ public final class CreateClusterRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Optional. A unique id used to identify the request. If the server receives two
+     * Optional. A unique ID used to identify the request. If the server receives two
      * [CreateClusterRequest](https://cloud.google.com/dataproc/docs/reference/rpc/google.cloud.dataproc.v1#google.cloud.dataproc.v1.CreateClusterRequest)s
      * with the same id, then the second request will be ignored and the
      * first [google.longrunning.Operation][google.longrunning.Operation] created and stored in the backend
      * is returned.
      * It is recommended to always set this value to a
      * [UUID](https://en.wikipedia.org/wiki/Universally_unique_identifier).
-     * The id must contain only letters (a-z, A-Z), numbers (0-9),
+     * The ID must contain only letters (a-z, A-Z), numbers (0-9),
      * underscores (_), and hyphens (-). The maximum length is 40 characters.
      * </pre>
      *
@@ -1249,14 +1315,14 @@ public final class CreateClusterRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Optional. A unique id used to identify the request. If the server receives two
+     * Optional. A unique ID used to identify the request. If the server receives two
      * [CreateClusterRequest](https://cloud.google.com/dataproc/docs/reference/rpc/google.cloud.dataproc.v1#google.cloud.dataproc.v1.CreateClusterRequest)s
      * with the same id, then the second request will be ignored and the
      * first [google.longrunning.Operation][google.longrunning.Operation] created and stored in the backend
      * is returned.
      * It is recommended to always set this value to a
      * [UUID](https://en.wikipedia.org/wiki/Universally_unique_identifier).
-     * The id must contain only letters (a-z, A-Z), numbers (0-9),
+     * The ID must contain only letters (a-z, A-Z), numbers (0-9),
      * underscores (_), and hyphens (-). The maximum length is 40 characters.
      * </pre>
      *
@@ -1274,14 +1340,14 @@ public final class CreateClusterRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Optional. A unique id used to identify the request. If the server receives two
+     * Optional. A unique ID used to identify the request. If the server receives two
      * [CreateClusterRequest](https://cloud.google.com/dataproc/docs/reference/rpc/google.cloud.dataproc.v1#google.cloud.dataproc.v1.CreateClusterRequest)s
      * with the same id, then the second request will be ignored and the
      * first [google.longrunning.Operation][google.longrunning.Operation] created and stored in the backend
      * is returned.
      * It is recommended to always set this value to a
      * [UUID](https://en.wikipedia.org/wiki/Universally_unique_identifier).
-     * The id must contain only letters (a-z, A-Z), numbers (0-9),
+     * The ID must contain only letters (a-z, A-Z), numbers (0-9),
      * underscores (_), and hyphens (-). The maximum length is 40 characters.
      * </pre>
      *
@@ -1297,6 +1363,108 @@ public final class CreateClusterRequest extends com.google.protobuf.GeneratedMes
       checkByteStringIsUtf8(value);
 
       requestId_ = value;
+      onChanged();
+      return this;
+    }
+
+    private int actionOnFailedPrimaryWorkers_ = 0;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Failure action when primary worker creation fails.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataproc.v1.FailureAction action_on_failed_primary_workers = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for actionOnFailedPrimaryWorkers.
+     */
+    @java.lang.Override
+    public int getActionOnFailedPrimaryWorkersValue() {
+      return actionOnFailedPrimaryWorkers_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Failure action when primary worker creation fails.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataproc.v1.FailureAction action_on_failed_primary_workers = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The enum numeric value on the wire for actionOnFailedPrimaryWorkers to set.
+     * @return This builder for chaining.
+     */
+    public Builder setActionOnFailedPrimaryWorkersValue(int value) {
+
+      actionOnFailedPrimaryWorkers_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Failure action when primary worker creation fails.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataproc.v1.FailureAction action_on_failed_primary_workers = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The actionOnFailedPrimaryWorkers.
+     */
+    @java.lang.Override
+    public com.google.cloud.dataproc.v1.FailureAction getActionOnFailedPrimaryWorkers() {
+      @SuppressWarnings("deprecation")
+      com.google.cloud.dataproc.v1.FailureAction result =
+          com.google.cloud.dataproc.v1.FailureAction.valueOf(actionOnFailedPrimaryWorkers_);
+      return result == null ? com.google.cloud.dataproc.v1.FailureAction.UNRECOGNIZED : result;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Failure action when primary worker creation fails.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataproc.v1.FailureAction action_on_failed_primary_workers = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The actionOnFailedPrimaryWorkers to set.
+     * @return This builder for chaining.
+     */
+    public Builder setActionOnFailedPrimaryWorkers(
+        com.google.cloud.dataproc.v1.FailureAction value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+
+      actionOnFailedPrimaryWorkers_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Failure action when primary worker creation fails.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataproc.v1.FailureAction action_on_failed_primary_workers = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearActionOnFailedPrimaryWorkers() {
+
+      actionOnFailedPrimaryWorkers_ = 0;
       onChanged();
       return this;
     }

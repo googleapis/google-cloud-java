@@ -369,8 +369,8 @@ public final class OrderedJob extends com.google.protobuf.GeneratedMessageV3
    * within the template.
    * The step id is used as prefix for job id, as job
    * `goog-dataproc-workflow-step-id` label, and in
-   * [prerequisiteStepIds][google.cloud.dataproc.v1.OrderedJob.prerequisite_step_ids]
-   * field from other steps.
+   * [prerequisiteStepIds][google.cloud.dataproc.v1.OrderedJob.prerequisite_step_ids] field from other
+   * steps.
    * The id must contain only letters (a-z, A-Z), numbers (0-9),
    * underscores (_), and hyphens (-). Cannot begin or end with underscore
    * or hyphen. Must consist of between 3 and 50 characters.
@@ -400,8 +400,8 @@ public final class OrderedJob extends com.google.protobuf.GeneratedMessageV3
    * within the template.
    * The step id is used as prefix for job id, as job
    * `goog-dataproc-workflow-step-id` label, and in
-   * [prerequisiteStepIds][google.cloud.dataproc.v1.OrderedJob.prerequisite_step_ids]
-   * field from other steps.
+   * [prerequisiteStepIds][google.cloud.dataproc.v1.OrderedJob.prerequisite_step_ids] field from other
+   * steps.
    * The id must contain only letters (a-z, A-Z), numbers (0-9),
    * underscores (_), and hyphens (-). Cannot begin or end with underscore
    * or hyphen. Must consist of between 3 and 50 characters.
@@ -1133,7 +1133,7 @@ public final class OrderedJob extends com.google.protobuf.GeneratedMessageV3
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getStepIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(stepId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, stepId_);
     }
     if (jobTypeCase_ == 2) {
@@ -1178,7 +1178,7 @@ public final class OrderedJob extends com.google.protobuf.GeneratedMessageV3
     if (size != -1) return size;
 
     size = 0;
-    if (!getStepIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(stepId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, stepId_);
     }
     if (jobTypeCase_ == 2) {
@@ -1797,8 +1797,8 @@ public final class OrderedJob extends com.google.protobuf.GeneratedMessageV3
      * within the template.
      * The step id is used as prefix for job id, as job
      * `goog-dataproc-workflow-step-id` label, and in
-     * [prerequisiteStepIds][google.cloud.dataproc.v1.OrderedJob.prerequisite_step_ids]
-     * field from other steps.
+     * [prerequisiteStepIds][google.cloud.dataproc.v1.OrderedJob.prerequisite_step_ids] field from other
+     * steps.
      * The id must contain only letters (a-z, A-Z), numbers (0-9),
      * underscores (_), and hyphens (-). Cannot begin or end with underscore
      * or hyphen. Must consist of between 3 and 50 characters.
@@ -1827,8 +1827,8 @@ public final class OrderedJob extends com.google.protobuf.GeneratedMessageV3
      * within the template.
      * The step id is used as prefix for job id, as job
      * `goog-dataproc-workflow-step-id` label, and in
-     * [prerequisiteStepIds][google.cloud.dataproc.v1.OrderedJob.prerequisite_step_ids]
-     * field from other steps.
+     * [prerequisiteStepIds][google.cloud.dataproc.v1.OrderedJob.prerequisite_step_ids] field from other
+     * steps.
      * The id must contain only letters (a-z, A-Z), numbers (0-9),
      * underscores (_), and hyphens (-). Cannot begin or end with underscore
      * or hyphen. Must consist of between 3 and 50 characters.
@@ -1857,8 +1857,8 @@ public final class OrderedJob extends com.google.protobuf.GeneratedMessageV3
      * within the template.
      * The step id is used as prefix for job id, as job
      * `goog-dataproc-workflow-step-id` label, and in
-     * [prerequisiteStepIds][google.cloud.dataproc.v1.OrderedJob.prerequisite_step_ids]
-     * field from other steps.
+     * [prerequisiteStepIds][google.cloud.dataproc.v1.OrderedJob.prerequisite_step_ids] field from other
+     * steps.
      * The id must contain only letters (a-z, A-Z), numbers (0-9),
      * underscores (_), and hyphens (-). Cannot begin or end with underscore
      * or hyphen. Must consist of between 3 and 50 characters.
@@ -1886,8 +1886,8 @@ public final class OrderedJob extends com.google.protobuf.GeneratedMessageV3
      * within the template.
      * The step id is used as prefix for job id, as job
      * `goog-dataproc-workflow-step-id` label, and in
-     * [prerequisiteStepIds][google.cloud.dataproc.v1.OrderedJob.prerequisite_step_ids]
-     * field from other steps.
+     * [prerequisiteStepIds][google.cloud.dataproc.v1.OrderedJob.prerequisite_step_ids] field from other
+     * steps.
      * The id must contain only letters (a-z, A-Z), numbers (0-9),
      * underscores (_), and hyphens (-). Cannot begin or end with underscore
      * or hyphen. Must consist of between 3 and 50 characters.
@@ -1911,8 +1911,8 @@ public final class OrderedJob extends com.google.protobuf.GeneratedMessageV3
      * within the template.
      * The step id is used as prefix for job id, as job
      * `goog-dataproc-workflow-step-id` label, and in
-     * [prerequisiteStepIds][google.cloud.dataproc.v1.OrderedJob.prerequisite_step_ids]
-     * field from other steps.
+     * [prerequisiteStepIds][google.cloud.dataproc.v1.OrderedJob.prerequisite_step_ids] field from other
+     * steps.
      * The id must contain only letters (a-z, A-Z), numbers (0-9),
      * underscores (_), and hyphens (-). Cannot begin or end with underscore
      * or hyphen. Must consist of between 3 and 50 characters.

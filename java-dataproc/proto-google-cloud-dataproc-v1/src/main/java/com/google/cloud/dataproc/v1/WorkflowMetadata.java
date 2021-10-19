@@ -1056,8 +1056,8 @@ public final class WorkflowMetadata extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Output only. The timeout duration for the DAG of jobs, expressed in seconds
-   * (see [JSON representation of
+   * Output only. The timeout duration for the DAG of jobs, expressed in seconds (see
+   * [JSON representation of
    * duration](https://developers.google.com/protocol-buffers/docs/proto3#json)).
    * </pre>
    *
@@ -1074,8 +1074,8 @@ public final class WorkflowMetadata extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Output only. The timeout duration for the DAG of jobs, expressed in seconds
-   * (see [JSON representation of
+   * Output only. The timeout duration for the DAG of jobs, expressed in seconds (see
+   * [JSON representation of
    * duration](https://developers.google.com/protocol-buffers/docs/proto3#json)).
    * </pre>
    *
@@ -1092,8 +1092,8 @@ public final class WorkflowMetadata extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Output only. The timeout duration for the DAG of jobs, expressed in seconds
-   * (see [JSON representation of
+   * Output only. The timeout duration for the DAG of jobs, expressed in seconds (see
+   * [JSON representation of
    * duration](https://developers.google.com/protocol-buffers/docs/proto3#json)).
    * </pre>
    *
@@ -1111,9 +1111,8 @@ public final class WorkflowMetadata extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Output only. DAG start time, only set for workflows with
-   * [dag_timeout][google.cloud.dataproc.v1.WorkflowMetadata.dag_timeout] when
-   * DAG begins.
+   * Output only. DAG start time, only set for workflows with [dag_timeout][google.cloud.dataproc.v1.WorkflowMetadata.dag_timeout] when DAG
+   * begins.
    * </pre>
    *
    * <code>
@@ -1130,9 +1129,8 @@ public final class WorkflowMetadata extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Output only. DAG start time, only set for workflows with
-   * [dag_timeout][google.cloud.dataproc.v1.WorkflowMetadata.dag_timeout] when
-   * DAG begins.
+   * Output only. DAG start time, only set for workflows with [dag_timeout][google.cloud.dataproc.v1.WorkflowMetadata.dag_timeout] when DAG
+   * begins.
    * </pre>
    *
    * <code>
@@ -1151,9 +1149,8 @@ public final class WorkflowMetadata extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Output only. DAG start time, only set for workflows with
-   * [dag_timeout][google.cloud.dataproc.v1.WorkflowMetadata.dag_timeout] when
-   * DAG begins.
+   * Output only. DAG start time, only set for workflows with [dag_timeout][google.cloud.dataproc.v1.WorkflowMetadata.dag_timeout] when DAG
+   * begins.
    * </pre>
    *
    * <code>
@@ -1171,9 +1168,7 @@ public final class WorkflowMetadata extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Output only. DAG end time, only set for workflows with
-   * [dag_timeout][google.cloud.dataproc.v1.WorkflowMetadata.dag_timeout] when
-   * DAG ends.
+   * Output only. DAG end time, only set for workflows with [dag_timeout][google.cloud.dataproc.v1.WorkflowMetadata.dag_timeout] when DAG ends.
    * </pre>
    *
    * <code>
@@ -1190,9 +1185,7 @@ public final class WorkflowMetadata extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Output only. DAG end time, only set for workflows with
-   * [dag_timeout][google.cloud.dataproc.v1.WorkflowMetadata.dag_timeout] when
-   * DAG ends.
+   * Output only. DAG end time, only set for workflows with [dag_timeout][google.cloud.dataproc.v1.WorkflowMetadata.dag_timeout] when DAG ends.
    * </pre>
    *
    * <code>
@@ -1209,9 +1202,7 @@ public final class WorkflowMetadata extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Output only. DAG end time, only set for workflows with
-   * [dag_timeout][google.cloud.dataproc.v1.WorkflowMetadata.dag_timeout] when
-   * DAG ends.
+   * Output only. DAG end time, only set for workflows with [dag_timeout][google.cloud.dataproc.v1.WorkflowMetadata.dag_timeout] when DAG ends.
    * </pre>
    *
    * <code>
@@ -1237,7 +1228,7 @@ public final class WorkflowMetadata extends com.google.protobuf.GeneratedMessage
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getTemplateBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(template_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, template_);
     }
     if (version_ != 0) {
@@ -1255,7 +1246,7 @@ public final class WorkflowMetadata extends com.google.protobuf.GeneratedMessage
     if (state_ != com.google.cloud.dataproc.v1.WorkflowMetadata.State.UNKNOWN.getNumber()) {
       output.writeEnum(6, state_);
     }
-    if (!getClusterNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(clusterName_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 7, clusterName_);
     }
     com.google.protobuf.GeneratedMessageV3.serializeStringMapTo(
@@ -1266,7 +1257,7 @@ public final class WorkflowMetadata extends com.google.protobuf.GeneratedMessage
     if (endTime_ != null) {
       output.writeMessage(10, getEndTime());
     }
-    if (!getClusterUuidBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(clusterUuid_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 11, clusterUuid_);
     }
     if (dagTimeout_ != null) {
@@ -1287,7 +1278,7 @@ public final class WorkflowMetadata extends com.google.protobuf.GeneratedMessage
     if (size != -1) return size;
 
     size = 0;
-    if (!getTemplateBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(template_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, template_);
     }
     if (version_ != 0) {
@@ -1305,7 +1296,7 @@ public final class WorkflowMetadata extends com.google.protobuf.GeneratedMessage
     if (state_ != com.google.cloud.dataproc.v1.WorkflowMetadata.State.UNKNOWN.getNumber()) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(6, state_);
     }
-    if (!getClusterNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(clusterName_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, clusterName_);
     }
     for (java.util.Map.Entry<java.lang.String, java.lang.String> entry :
@@ -1324,7 +1315,7 @@ public final class WorkflowMetadata extends com.google.protobuf.GeneratedMessage
     if (endTime_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(10, getEndTime());
     }
-    if (!getClusterUuidBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(clusterUuid_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(11, clusterUuid_);
     }
     if (dagTimeout_ != null) {
@@ -3537,8 +3528,8 @@ public final class WorkflowMetadata extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. The timeout duration for the DAG of jobs, expressed in seconds
-     * (see [JSON representation of
+     * Output only. The timeout duration for the DAG of jobs, expressed in seconds (see
+     * [JSON representation of
      * duration](https://developers.google.com/protocol-buffers/docs/proto3#json)).
      * </pre>
      *
@@ -3555,8 +3546,8 @@ public final class WorkflowMetadata extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. The timeout duration for the DAG of jobs, expressed in seconds
-     * (see [JSON representation of
+     * Output only. The timeout duration for the DAG of jobs, expressed in seconds (see
+     * [JSON representation of
      * duration](https://developers.google.com/protocol-buffers/docs/proto3#json)).
      * </pre>
      *
@@ -3579,8 +3570,8 @@ public final class WorkflowMetadata extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. The timeout duration for the DAG of jobs, expressed in seconds
-     * (see [JSON representation of
+     * Output only. The timeout duration for the DAG of jobs, expressed in seconds (see
+     * [JSON representation of
      * duration](https://developers.google.com/protocol-buffers/docs/proto3#json)).
      * </pre>
      *
@@ -3605,8 +3596,8 @@ public final class WorkflowMetadata extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. The timeout duration for the DAG of jobs, expressed in seconds
-     * (see [JSON representation of
+     * Output only. The timeout duration for the DAG of jobs, expressed in seconds (see
+     * [JSON representation of
      * duration](https://developers.google.com/protocol-buffers/docs/proto3#json)).
      * </pre>
      *
@@ -3628,8 +3619,8 @@ public final class WorkflowMetadata extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. The timeout duration for the DAG of jobs, expressed in seconds
-     * (see [JSON representation of
+     * Output only. The timeout duration for the DAG of jobs, expressed in seconds (see
+     * [JSON representation of
      * duration](https://developers.google.com/protocol-buffers/docs/proto3#json)).
      * </pre>
      *
@@ -3656,8 +3647,8 @@ public final class WorkflowMetadata extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. The timeout duration for the DAG of jobs, expressed in seconds
-     * (see [JSON representation of
+     * Output only. The timeout duration for the DAG of jobs, expressed in seconds (see
+     * [JSON representation of
      * duration](https://developers.google.com/protocol-buffers/docs/proto3#json)).
      * </pre>
      *
@@ -3680,8 +3671,8 @@ public final class WorkflowMetadata extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. The timeout duration for the DAG of jobs, expressed in seconds
-     * (see [JSON representation of
+     * Output only. The timeout duration for the DAG of jobs, expressed in seconds (see
+     * [JSON representation of
      * duration](https://developers.google.com/protocol-buffers/docs/proto3#json)).
      * </pre>
      *
@@ -3698,8 +3689,8 @@ public final class WorkflowMetadata extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. The timeout duration for the DAG of jobs, expressed in seconds
-     * (see [JSON representation of
+     * Output only. The timeout duration for the DAG of jobs, expressed in seconds (see
+     * [JSON representation of
      * duration](https://developers.google.com/protocol-buffers/docs/proto3#json)).
      * </pre>
      *
@@ -3720,8 +3711,8 @@ public final class WorkflowMetadata extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. The timeout duration for the DAG of jobs, expressed in seconds
-     * (see [JSON representation of
+     * Output only. The timeout duration for the DAG of jobs, expressed in seconds (see
+     * [JSON representation of
      * duration](https://developers.google.com/protocol-buffers/docs/proto3#json)).
      * </pre>
      *
@@ -3756,9 +3747,8 @@ public final class WorkflowMetadata extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. DAG start time, only set for workflows with
-     * [dag_timeout][google.cloud.dataproc.v1.WorkflowMetadata.dag_timeout] when
-     * DAG begins.
+     * Output only. DAG start time, only set for workflows with [dag_timeout][google.cloud.dataproc.v1.WorkflowMetadata.dag_timeout] when DAG
+     * begins.
      * </pre>
      *
      * <code>
@@ -3774,9 +3764,8 @@ public final class WorkflowMetadata extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. DAG start time, only set for workflows with
-     * [dag_timeout][google.cloud.dataproc.v1.WorkflowMetadata.dag_timeout] when
-     * DAG begins.
+     * Output only. DAG start time, only set for workflows with [dag_timeout][google.cloud.dataproc.v1.WorkflowMetadata.dag_timeout] when DAG
+     * begins.
      * </pre>
      *
      * <code>
@@ -3798,9 +3787,8 @@ public final class WorkflowMetadata extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. DAG start time, only set for workflows with
-     * [dag_timeout][google.cloud.dataproc.v1.WorkflowMetadata.dag_timeout] when
-     * DAG begins.
+     * Output only. DAG start time, only set for workflows with [dag_timeout][google.cloud.dataproc.v1.WorkflowMetadata.dag_timeout] when DAG
+     * begins.
      * </pre>
      *
      * <code>
@@ -3824,9 +3812,8 @@ public final class WorkflowMetadata extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. DAG start time, only set for workflows with
-     * [dag_timeout][google.cloud.dataproc.v1.WorkflowMetadata.dag_timeout] when
-     * DAG begins.
+     * Output only. DAG start time, only set for workflows with [dag_timeout][google.cloud.dataproc.v1.WorkflowMetadata.dag_timeout] when DAG
+     * begins.
      * </pre>
      *
      * <code>
@@ -3847,9 +3834,8 @@ public final class WorkflowMetadata extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. DAG start time, only set for workflows with
-     * [dag_timeout][google.cloud.dataproc.v1.WorkflowMetadata.dag_timeout] when
-     * DAG begins.
+     * Output only. DAG start time, only set for workflows with [dag_timeout][google.cloud.dataproc.v1.WorkflowMetadata.dag_timeout] when DAG
+     * begins.
      * </pre>
      *
      * <code>
@@ -3877,9 +3863,8 @@ public final class WorkflowMetadata extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. DAG start time, only set for workflows with
-     * [dag_timeout][google.cloud.dataproc.v1.WorkflowMetadata.dag_timeout] when
-     * DAG begins.
+     * Output only. DAG start time, only set for workflows with [dag_timeout][google.cloud.dataproc.v1.WorkflowMetadata.dag_timeout] when DAG
+     * begins.
      * </pre>
      *
      * <code>
@@ -3901,9 +3886,8 @@ public final class WorkflowMetadata extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. DAG start time, only set for workflows with
-     * [dag_timeout][google.cloud.dataproc.v1.WorkflowMetadata.dag_timeout] when
-     * DAG begins.
+     * Output only. DAG start time, only set for workflows with [dag_timeout][google.cloud.dataproc.v1.WorkflowMetadata.dag_timeout] when DAG
+     * begins.
      * </pre>
      *
      * <code>
@@ -3919,9 +3903,8 @@ public final class WorkflowMetadata extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. DAG start time, only set for workflows with
-     * [dag_timeout][google.cloud.dataproc.v1.WorkflowMetadata.dag_timeout] when
-     * DAG begins.
+     * Output only. DAG start time, only set for workflows with [dag_timeout][google.cloud.dataproc.v1.WorkflowMetadata.dag_timeout] when DAG
+     * begins.
      * </pre>
      *
      * <code>
@@ -3941,9 +3924,8 @@ public final class WorkflowMetadata extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. DAG start time, only set for workflows with
-     * [dag_timeout][google.cloud.dataproc.v1.WorkflowMetadata.dag_timeout] when
-     * DAG begins.
+     * Output only. DAG start time, only set for workflows with [dag_timeout][google.cloud.dataproc.v1.WorkflowMetadata.dag_timeout] when DAG
+     * begins.
      * </pre>
      *
      * <code>
@@ -3977,9 +3959,7 @@ public final class WorkflowMetadata extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. DAG end time, only set for workflows with
-     * [dag_timeout][google.cloud.dataproc.v1.WorkflowMetadata.dag_timeout] when
-     * DAG ends.
+     * Output only. DAG end time, only set for workflows with [dag_timeout][google.cloud.dataproc.v1.WorkflowMetadata.dag_timeout] when DAG ends.
      * </pre>
      *
      * <code>
@@ -3995,9 +3975,7 @@ public final class WorkflowMetadata extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. DAG end time, only set for workflows with
-     * [dag_timeout][google.cloud.dataproc.v1.WorkflowMetadata.dag_timeout] when
-     * DAG ends.
+     * Output only. DAG end time, only set for workflows with [dag_timeout][google.cloud.dataproc.v1.WorkflowMetadata.dag_timeout] when DAG ends.
      * </pre>
      *
      * <code>
@@ -4019,9 +3997,7 @@ public final class WorkflowMetadata extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. DAG end time, only set for workflows with
-     * [dag_timeout][google.cloud.dataproc.v1.WorkflowMetadata.dag_timeout] when
-     * DAG ends.
+     * Output only. DAG end time, only set for workflows with [dag_timeout][google.cloud.dataproc.v1.WorkflowMetadata.dag_timeout] when DAG ends.
      * </pre>
      *
      * <code>
@@ -4045,9 +4021,7 @@ public final class WorkflowMetadata extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. DAG end time, only set for workflows with
-     * [dag_timeout][google.cloud.dataproc.v1.WorkflowMetadata.dag_timeout] when
-     * DAG ends.
+     * Output only. DAG end time, only set for workflows with [dag_timeout][google.cloud.dataproc.v1.WorkflowMetadata.dag_timeout] when DAG ends.
      * </pre>
      *
      * <code>
@@ -4068,9 +4042,7 @@ public final class WorkflowMetadata extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. DAG end time, only set for workflows with
-     * [dag_timeout][google.cloud.dataproc.v1.WorkflowMetadata.dag_timeout] when
-     * DAG ends.
+     * Output only. DAG end time, only set for workflows with [dag_timeout][google.cloud.dataproc.v1.WorkflowMetadata.dag_timeout] when DAG ends.
      * </pre>
      *
      * <code>
@@ -4096,9 +4068,7 @@ public final class WorkflowMetadata extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. DAG end time, only set for workflows with
-     * [dag_timeout][google.cloud.dataproc.v1.WorkflowMetadata.dag_timeout] when
-     * DAG ends.
+     * Output only. DAG end time, only set for workflows with [dag_timeout][google.cloud.dataproc.v1.WorkflowMetadata.dag_timeout] when DAG ends.
      * </pre>
      *
      * <code>
@@ -4120,9 +4090,7 @@ public final class WorkflowMetadata extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. DAG end time, only set for workflows with
-     * [dag_timeout][google.cloud.dataproc.v1.WorkflowMetadata.dag_timeout] when
-     * DAG ends.
+     * Output only. DAG end time, only set for workflows with [dag_timeout][google.cloud.dataproc.v1.WorkflowMetadata.dag_timeout] when DAG ends.
      * </pre>
      *
      * <code>
@@ -4138,9 +4106,7 @@ public final class WorkflowMetadata extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. DAG end time, only set for workflows with
-     * [dag_timeout][google.cloud.dataproc.v1.WorkflowMetadata.dag_timeout] when
-     * DAG ends.
+     * Output only. DAG end time, only set for workflows with [dag_timeout][google.cloud.dataproc.v1.WorkflowMetadata.dag_timeout] when DAG ends.
      * </pre>
      *
      * <code>
@@ -4160,9 +4126,7 @@ public final class WorkflowMetadata extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. DAG end time, only set for workflows with
-     * [dag_timeout][google.cloud.dataproc.v1.WorkflowMetadata.dag_timeout] when
-     * DAG ends.
+     * Output only. DAG end time, only set for workflows with [dag_timeout][google.cloud.dataproc.v1.WorkflowMetadata.dag_timeout] when DAG ends.
      * </pre>
      *
      * <code>

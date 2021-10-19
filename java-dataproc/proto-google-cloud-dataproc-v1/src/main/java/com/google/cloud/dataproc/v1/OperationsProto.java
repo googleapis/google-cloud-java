@@ -28,6 +28,14 @@ public final class OperationsProto {
   }
 
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_dataproc_v1_BatchOperationMetadata_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_dataproc_v1_BatchOperationMetadata_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_dataproc_v1_BatchOperationMetadata_LabelsEntry_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_dataproc_v1_BatchOperationMetadata_LabelsEntry_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_dataproc_v1_ClusterOperationStatus_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_dataproc_v1_ClusterOperationStatus_fieldAccessorTable;
@@ -51,29 +59,40 @@ public final class OperationsProto {
       "\n)google/cloud/dataproc/v1/operations.pr"
           + "oto\022\030google.cloud.dataproc.v1\032\037google/ap"
           + "i/field_behavior.proto\032\037google/protobuf/"
-          + "timestamp.proto\032\034google/api/annotations."
-          + "proto\"\211\002\n\026ClusterOperationStatus\022J\n\005stat"
-          + "e\030\001 \001(\01626.google.cloud.dataproc.v1.Clust"
-          + "erOperationStatus.StateB\003\340A\003\022\030\n\013inner_st"
-          + "ate\030\002 \001(\tB\003\340A\003\022\024\n\007details\030\003 \001(\tB\003\340A\003\0229\n\020"
-          + "state_start_time\030\004 \001(\0132\032.google.protobuf"
-          + ".TimestampB\003\340A\003\"8\n\005State\022\013\n\007UNKNOWN\020\000\022\013\n"
-          + "\007PENDING\020\001\022\013\n\007RUNNING\020\002\022\010\n\004DONE\020\003\"\270\003\n\030Cl"
-          + "usterOperationMetadata\022\031\n\014cluster_name\030\007"
-          + " \001(\tB\003\340A\003\022\031\n\014cluster_uuid\030\010 \001(\tB\003\340A\003\022E\n\006"
-          + "status\030\t \001(\01320.google.cloud.dataproc.v1."
-          + "ClusterOperationStatusB\003\340A\003\022M\n\016status_hi"
-          + "story\030\n \003(\01320.google.cloud.dataproc.v1.C"
-          + "lusterOperationStatusB\003\340A\003\022\033\n\016operation_"
-          + "type\030\013 \001(\tB\003\340A\003\022\030\n\013description\030\014 \001(\tB\003\340A"
-          + "\003\022S\n\006labels\030\r \003(\0132>.google.cloud.datapro"
-          + "c.v1.ClusterOperationMetadata.LabelsEntr"
-          + "yB\003\340A\003\022\025\n\010warnings\030\016 \003(\tB\003\340A\003\032-\n\013LabelsE"
-          + "ntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001Bs\n\034"
-          + "com.google.cloud.dataproc.v1B\017Operations"
-          + "ProtoP\001Z@google.golang.org/genproto/goog"
-          + "leapis/cloud/dataproc/v1;dataprocb\006proto"
-          + "3"
+          + "timestamp.proto\"\343\003\n\026BatchOperationMetada"
+          + "ta\022\r\n\005batch\030\001 \001(\t\022\022\n\nbatch_uuid\030\002 \001(\t\022/\n"
+          + "\013create_time\030\003 \001(\0132\032.google.protobuf.Tim"
+          + "estamp\022-\n\tdone_time\030\004 \001(\0132\032.google.proto"
+          + "buf.Timestamp\022[\n\016operation_type\030\006 \001(\0162C."
+          + "google.cloud.dataproc.v1.BatchOperationM"
+          + "etadata.BatchOperationType\022\023\n\013descriptio"
+          + "n\030\007 \001(\t\022L\n\006labels\030\010 \003(\0132<.google.cloud.d"
+          + "ataproc.v1.BatchOperationMetadata.Labels"
+          + "Entry\022\020\n\010warnings\030\t \003(\t\032-\n\013LabelsEntry\022\013"
+          + "\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"E\n\022BatchO"
+          + "perationType\022$\n BATCH_OPERATION_TYPE_UNS"
+          + "PECIFIED\020\000\022\t\n\005BATCH\020\001\"\211\002\n\026ClusterOperati"
+          + "onStatus\022J\n\005state\030\001 \001(\01626.google.cloud.d"
+          + "ataproc.v1.ClusterOperationStatus.StateB"
+          + "\003\340A\003\022\030\n\013inner_state\030\002 \001(\tB\003\340A\003\022\024\n\007detail"
+          + "s\030\003 \001(\tB\003\340A\003\0229\n\020state_start_time\030\004 \001(\0132\032"
+          + ".google.protobuf.TimestampB\003\340A\003\"8\n\005State"
+          + "\022\013\n\007UNKNOWN\020\000\022\013\n\007PENDING\020\001\022\013\n\007RUNNING\020\002\022"
+          + "\010\n\004DONE\020\003\"\270\003\n\030ClusterOperationMetadata\022\031"
+          + "\n\014cluster_name\030\007 \001(\tB\003\340A\003\022\031\n\014cluster_uui"
+          + "d\030\010 \001(\tB\003\340A\003\022E\n\006status\030\t \001(\01320.google.cl"
+          + "oud.dataproc.v1.ClusterOperationStatusB\003"
+          + "\340A\003\022M\n\016status_history\030\n \003(\01320.google.clo"
+          + "ud.dataproc.v1.ClusterOperationStatusB\003\340"
+          + "A\003\022\033\n\016operation_type\030\013 \001(\tB\003\340A\003\022\030\n\013descr"
+          + "iption\030\014 \001(\tB\003\340A\003\022S\n\006labels\030\r \003(\0132>.goog"
+          + "le.cloud.dataproc.v1.ClusterOperationMet"
+          + "adata.LabelsEntryB\003\340A\003\022\025\n\010warnings\030\016 \003(\t"
+          + "B\003\340A\003\032-\n\013LabelsEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005val"
+          + "ue\030\002 \001(\t:\0028\001Bs\n\034com.google.cloud.datapro"
+          + "c.v1B\017OperationsProtoP\001Z@google.golang.o"
+          + "rg/genproto/googleapis/cloud/dataproc/v1"
+          + ";dataprocb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -81,10 +100,34 @@ public final class OperationsProto {
             new com.google.protobuf.Descriptors.FileDescriptor[] {
               com.google.api.FieldBehaviorProto.getDescriptor(),
               com.google.protobuf.TimestampProto.getDescriptor(),
-              com.google.api.AnnotationsProto.getDescriptor(),
+            });
+    internal_static_google_cloud_dataproc_v1_BatchOperationMetadata_descriptor =
+        getDescriptor().getMessageTypes().get(0);
+    internal_static_google_cloud_dataproc_v1_BatchOperationMetadata_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_dataproc_v1_BatchOperationMetadata_descriptor,
+            new java.lang.String[] {
+              "Batch",
+              "BatchUuid",
+              "CreateTime",
+              "DoneTime",
+              "OperationType",
+              "Description",
+              "Labels",
+              "Warnings",
+            });
+    internal_static_google_cloud_dataproc_v1_BatchOperationMetadata_LabelsEntry_descriptor =
+        internal_static_google_cloud_dataproc_v1_BatchOperationMetadata_descriptor
+            .getNestedTypes()
+            .get(0);
+    internal_static_google_cloud_dataproc_v1_BatchOperationMetadata_LabelsEntry_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_dataproc_v1_BatchOperationMetadata_LabelsEntry_descriptor,
+            new java.lang.String[] {
+              "Key", "Value",
             });
     internal_static_google_cloud_dataproc_v1_ClusterOperationStatus_descriptor =
-        getDescriptor().getMessageTypes().get(0);
+        getDescriptor().getMessageTypes().get(1);
     internal_static_google_cloud_dataproc_v1_ClusterOperationStatus_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_dataproc_v1_ClusterOperationStatus_descriptor,
@@ -92,7 +135,7 @@ public final class OperationsProto {
               "State", "InnerState", "Details", "StateStartTime",
             });
     internal_static_google_cloud_dataproc_v1_ClusterOperationMetadata_descriptor =
-        getDescriptor().getMessageTypes().get(1);
+        getDescriptor().getMessageTypes().get(2);
     internal_static_google_cloud_dataproc_v1_ClusterOperationMetadata_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_dataproc_v1_ClusterOperationMetadata_descriptor,
@@ -123,7 +166,6 @@ public final class OperationsProto {
         descriptor, registry);
     com.google.api.FieldBehaviorProto.getDescriptor();
     com.google.protobuf.TimestampProto.getDescriptor();
-    com.google.api.AnnotationsProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

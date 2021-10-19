@@ -220,6 +220,7 @@ public class ClusterControllerClient implements BackgroundResource {
    *           .setRegion("region-934795532")
    *           .setCluster(Cluster.newBuilder().build())
    *           .setRequestId("requestId693933066")
+   *           .setActionOnFailedPrimaryWorkers(FailureAction.forNumber(0))
    *           .build();
    *   Cluster response = clusterControllerClient.createClusterAsync(request).get();
    * }
@@ -249,6 +250,7 @@ public class ClusterControllerClient implements BackgroundResource {
    *           .setRegion("region-934795532")
    *           .setCluster(Cluster.newBuilder().build())
    *           .setRequestId("requestId693933066")
+   *           .setActionOnFailedPrimaryWorkers(FailureAction.forNumber(0))
    *           .build();
    *   OperationFuture<Cluster, ClusterOperationMetadata> future =
    *       clusterControllerClient.createClusterOperationCallable().futureCall(request);
@@ -278,6 +280,7 @@ public class ClusterControllerClient implements BackgroundResource {
    *           .setRegion("region-934795532")
    *           .setCluster(Cluster.newBuilder().build())
    *           .setRequestId("requestId693933066")
+   *           .setActionOnFailedPrimaryWorkers(FailureAction.forNumber(0))
    *           .build();
    *   ApiFuture<Operation> future =
    *       clusterControllerClient.createClusterCallable().futureCall(request);
@@ -295,6 +298,8 @@ public class ClusterControllerClient implements BackgroundResource {
    * Updates a cluster in a project. The returned
    * [Operation.metadata][google.longrunning.Operation.metadata] will be
    * [ClusterOperationMetadata](https://cloud.google.com/dataproc/docs/reference/rpc/google.cloud.dataproc.v1#clusteroperationmetadata).
+   * The cluster must be in a [`RUNNING`][google.cloud.dataproc.v1.ClusterStatus.State] state or an
+   * error is returned.
    *
    * <p>Sample code:
    *
@@ -357,6 +362,8 @@ public class ClusterControllerClient implements BackgroundResource {
    * Updates a cluster in a project. The returned
    * [Operation.metadata][google.longrunning.Operation.metadata] will be
    * [ClusterOperationMetadata](https://cloud.google.com/dataproc/docs/reference/rpc/google.cloud.dataproc.v1#clusteroperationmetadata).
+   * The cluster must be in a [`RUNNING`][google.cloud.dataproc.v1.ClusterStatus.State] state or an
+   * error is returned.
    *
    * <p>Sample code:
    *
@@ -389,6 +396,8 @@ public class ClusterControllerClient implements BackgroundResource {
    * Updates a cluster in a project. The returned
    * [Operation.metadata][google.longrunning.Operation.metadata] will be
    * [ClusterOperationMetadata](https://cloud.google.com/dataproc/docs/reference/rpc/google.cloud.dataproc.v1#clusteroperationmetadata).
+   * The cluster must be in a [`RUNNING`][google.cloud.dataproc.v1.ClusterStatus.State] state or an
+   * error is returned.
    *
    * <p>Sample code:
    *
@@ -421,6 +430,8 @@ public class ClusterControllerClient implements BackgroundResource {
    * Updates a cluster in a project. The returned
    * [Operation.metadata][google.longrunning.Operation.metadata] will be
    * [ClusterOperationMetadata](https://cloud.google.com/dataproc/docs/reference/rpc/google.cloud.dataproc.v1#clusteroperationmetadata).
+   * The cluster must be in a [`RUNNING`][google.cloud.dataproc.v1.ClusterStatus.State] state or an
+   * error is returned.
    *
    * <p>Sample code:
    *

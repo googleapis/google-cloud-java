@@ -23,7 +23,6 @@ package com.google.cloud.dataproc.v1;
  *
  * <pre>
  * Cluster components that can be activated.
- * Next ID: 16.
  * </pre>
  *
  * Protobuf enum {@code google.cloud.dataproc.v1.Component}

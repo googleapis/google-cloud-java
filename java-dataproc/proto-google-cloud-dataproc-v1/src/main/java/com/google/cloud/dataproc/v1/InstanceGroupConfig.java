@@ -944,10 +944,10 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
     for (int i = 0; i < instanceNames_.size(); i++) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, instanceNames_.getRaw(i));
     }
-    if (!getImageUriBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(imageUri_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, imageUri_);
     }
-    if (!getMachineTypeUriBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(machineTypeUri_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 4, machineTypeUri_);
     }
     if (diskConfig_ != null) {
@@ -962,7 +962,7 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
     for (int i = 0; i < accelerators_.size(); i++) {
       output.writeMessage(8, accelerators_.get(i));
     }
-    if (!getMinCpuPlatformBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(minCpuPlatform_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 9, minCpuPlatform_);
     }
     if (preemptibility_
@@ -991,10 +991,10 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
       size += dataSize;
       size += 1 * getInstanceNamesList().size();
     }
-    if (!getImageUriBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(imageUri_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, imageUri_);
     }
-    if (!getMachineTypeUriBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(machineTypeUri_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, machineTypeUri_);
     }
     if (diskConfig_ != null) {
@@ -1009,7 +1009,7 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
     for (int i = 0; i < accelerators_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(8, accelerators_.get(i));
     }
-    if (!getMinCpuPlatformBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(minCpuPlatform_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(9, minCpuPlatform_);
     }
     if (preemptibility_

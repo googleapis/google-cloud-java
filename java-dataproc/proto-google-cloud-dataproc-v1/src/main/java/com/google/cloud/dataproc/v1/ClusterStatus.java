@@ -196,6 +196,17 @@ public final class ClusterStatus extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
+     * The cluster has encountered an error while being updated. Jobs can
+     * be submitted to the cluster, but the cluster cannot be updated.
+     * </pre>
+     *
+     * <code>ERROR_DUE_TO_UPDATE = 9;</code>
+     */
+    ERROR_DUE_TO_UPDATE(9),
+    /**
+     *
+     *
+     * <pre>
      * The cluster is being deleted. It cannot be used.
      * </pre>
      *
@@ -289,6 +300,17 @@ public final class ClusterStatus extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
+     * The cluster has encountered an error while being updated. Jobs can
+     * be submitted to the cluster, but the cluster cannot be updated.
+     * </pre>
+     *
+     * <code>ERROR_DUE_TO_UPDATE = 9;</code>
+     */
+    public static final int ERROR_DUE_TO_UPDATE_VALUE = 9;
+    /**
+     *
+     *
+     * <pre>
      * The cluster is being deleted. It cannot be used.
      * </pre>
      *
@@ -368,6 +390,8 @@ public final class ClusterStatus extends com.google.protobuf.GeneratedMessageV3
           return RUNNING;
         case 3:
           return ERROR;
+        case 9:
+          return ERROR_DUE_TO_UPDATE;
         case 4:
           return DELETING;
         case 5:
@@ -809,7 +833,7 @@ public final class ClusterStatus extends com.google.protobuf.GeneratedMessageV3
     if (state_ != com.google.cloud.dataproc.v1.ClusterStatus.State.UNKNOWN.getNumber()) {
       output.writeEnum(1, state_);
     }
-    if (!getDetailBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(detail_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, detail_);
     }
     if (stateStartTime_ != null) {
@@ -830,7 +854,7 @@ public final class ClusterStatus extends com.google.protobuf.GeneratedMessageV3
     if (state_ != com.google.cloud.dataproc.v1.ClusterStatus.State.UNKNOWN.getNumber()) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(1, state_);
     }
-    if (!getDetailBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(detail_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, detail_);
     }
     if (stateStartTime_ != null) {

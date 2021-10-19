@@ -716,10 +716,10 @@ public final class ClusterOperationMetadata extends com.google.protobuf.Generate
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getClusterNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(clusterName_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 7, clusterName_);
     }
-    if (!getClusterUuidBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(clusterUuid_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 8, clusterUuid_);
     }
     if (status_ != null) {
@@ -728,10 +728,10 @@ public final class ClusterOperationMetadata extends com.google.protobuf.Generate
     for (int i = 0; i < statusHistory_.size(); i++) {
       output.writeMessage(10, statusHistory_.get(i));
     }
-    if (!getOperationTypeBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(operationType_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 11, operationType_);
     }
-    if (!getDescriptionBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(description_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 12, description_);
     }
     com.google.protobuf.GeneratedMessageV3.serializeStringMapTo(
@@ -748,10 +748,10 @@ public final class ClusterOperationMetadata extends com.google.protobuf.Generate
     if (size != -1) return size;
 
     size = 0;
-    if (!getClusterNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(clusterName_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, clusterName_);
     }
-    if (!getClusterUuidBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(clusterUuid_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, clusterUuid_);
     }
     if (status_ != null) {
@@ -760,10 +760,10 @@ public final class ClusterOperationMetadata extends com.google.protobuf.Generate
     for (int i = 0; i < statusHistory_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(10, statusHistory_.get(i));
     }
-    if (!getOperationTypeBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(operationType_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(11, operationType_);
     }
-    if (!getDescriptionBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(description_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(12, description_);
     }
     for (java.util.Map.Entry<java.lang.String, java.lang.String> entry :

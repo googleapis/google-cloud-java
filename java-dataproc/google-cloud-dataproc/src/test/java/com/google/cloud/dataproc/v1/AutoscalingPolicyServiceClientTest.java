@@ -31,6 +31,7 @@ import com.google.protobuf.Empty;
 import io.grpc.StatusRuntimeException;
 import java.io.IOException;
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.List;
 import java.util.UUID;
 import javax.annotation.Generated;
@@ -91,6 +92,7 @@ public class AutoscalingPolicyServiceClientTest {
                     .toString())
             .setWorkerConfig(InstanceGroupAutoscalingPolicyConfig.newBuilder().build())
             .setSecondaryWorkerConfig(InstanceGroupAutoscalingPolicyConfig.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
             .build();
     mockAutoscalingPolicyService.addResponse(expectedResponse);
 
@@ -139,6 +141,7 @@ public class AutoscalingPolicyServiceClientTest {
                     .toString())
             .setWorkerConfig(InstanceGroupAutoscalingPolicyConfig.newBuilder().build())
             .setSecondaryWorkerConfig(InstanceGroupAutoscalingPolicyConfig.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
             .build();
     mockAutoscalingPolicyService.addResponse(expectedResponse);
 
@@ -187,6 +190,7 @@ public class AutoscalingPolicyServiceClientTest {
                     .toString())
             .setWorkerConfig(InstanceGroupAutoscalingPolicyConfig.newBuilder().build())
             .setSecondaryWorkerConfig(InstanceGroupAutoscalingPolicyConfig.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
             .build();
     mockAutoscalingPolicyService.addResponse(expectedResponse);
 
@@ -235,6 +239,7 @@ public class AutoscalingPolicyServiceClientTest {
                     .toString())
             .setWorkerConfig(InstanceGroupAutoscalingPolicyConfig.newBuilder().build())
             .setSecondaryWorkerConfig(InstanceGroupAutoscalingPolicyConfig.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
             .build();
     mockAutoscalingPolicyService.addResponse(expectedResponse);
 
@@ -280,6 +285,7 @@ public class AutoscalingPolicyServiceClientTest {
                     .toString())
             .setWorkerConfig(InstanceGroupAutoscalingPolicyConfig.newBuilder().build())
             .setSecondaryWorkerConfig(InstanceGroupAutoscalingPolicyConfig.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
             .build();
     mockAutoscalingPolicyService.addResponse(expectedResponse);
 
@@ -329,6 +335,7 @@ public class AutoscalingPolicyServiceClientTest {
                     .toString())
             .setWorkerConfig(InstanceGroupAutoscalingPolicyConfig.newBuilder().build())
             .setSecondaryWorkerConfig(InstanceGroupAutoscalingPolicyConfig.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
             .build();
     mockAutoscalingPolicyService.addResponse(expectedResponse);
 

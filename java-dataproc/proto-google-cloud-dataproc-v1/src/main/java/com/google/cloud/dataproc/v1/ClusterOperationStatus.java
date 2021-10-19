@@ -534,10 +534,10 @@ public final class ClusterOperationStatus extends com.google.protobuf.GeneratedM
     if (state_ != com.google.cloud.dataproc.v1.ClusterOperationStatus.State.UNKNOWN.getNumber()) {
       output.writeEnum(1, state_);
     }
-    if (!getInnerStateBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(innerState_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, innerState_);
     }
-    if (!getDetailsBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(details_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, details_);
     }
     if (stateStartTime_ != null) {
@@ -555,10 +555,10 @@ public final class ClusterOperationStatus extends com.google.protobuf.GeneratedM
     if (state_ != com.google.cloud.dataproc.v1.ClusterOperationStatus.State.UNKNOWN.getNumber()) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(1, state_);
     }
-    if (!getInnerStateBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(innerState_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, innerState_);
     }
-    if (!getDetailsBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(details_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, details_);
     }
     if (stateStartTime_ != null) {

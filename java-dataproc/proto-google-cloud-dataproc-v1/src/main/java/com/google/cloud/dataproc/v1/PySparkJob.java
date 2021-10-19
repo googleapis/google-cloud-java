@@ -794,7 +794,7 @@ public final class PySparkJob extends com.google.protobuf.GeneratedMessageV3
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getMainPythonFileUriBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(mainPythonFileUri_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, mainPythonFileUri_);
     }
     for (int i = 0; i < args_.size(); i++) {
@@ -826,7 +826,7 @@ public final class PySparkJob extends com.google.protobuf.GeneratedMessageV3
     if (size != -1) return size;
 
     size = 0;
-    if (!getMainPythonFileUriBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(mainPythonFileUri_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, mainPythonFileUri_);
     }
     {

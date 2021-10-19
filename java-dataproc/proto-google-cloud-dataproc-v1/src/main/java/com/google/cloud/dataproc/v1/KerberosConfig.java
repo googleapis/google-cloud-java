@@ -954,47 +954,47 @@ public final class KerberosConfig extends com.google.protobuf.GeneratedMessageV3
     if (enableKerberos_ != false) {
       output.writeBool(1, enableKerberos_);
     }
-    if (!getRootPrincipalPasswordUriBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(rootPrincipalPasswordUri_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, rootPrincipalPasswordUri_);
     }
-    if (!getKmsKeyUriBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(kmsKeyUri_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, kmsKeyUri_);
     }
-    if (!getKeystoreUriBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(keystoreUri_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 4, keystoreUri_);
     }
-    if (!getTruststoreUriBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(truststoreUri_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 5, truststoreUri_);
     }
-    if (!getKeystorePasswordUriBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(keystorePasswordUri_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 6, keystorePasswordUri_);
     }
-    if (!getKeyPasswordUriBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(keyPasswordUri_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 7, keyPasswordUri_);
     }
-    if (!getTruststorePasswordUriBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(truststorePasswordUri_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 8, truststorePasswordUri_);
     }
-    if (!getCrossRealmTrustRealmBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(crossRealmTrustRealm_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 9, crossRealmTrustRealm_);
     }
-    if (!getCrossRealmTrustKdcBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(crossRealmTrustKdc_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 10, crossRealmTrustKdc_);
     }
-    if (!getCrossRealmTrustAdminServerBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(crossRealmTrustAdminServer_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 11, crossRealmTrustAdminServer_);
     }
-    if (!getCrossRealmTrustSharedPasswordUriBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(crossRealmTrustSharedPasswordUri_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(
           output, 12, crossRealmTrustSharedPasswordUri_);
     }
-    if (!getKdcDbKeyUriBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(kdcDbKeyUri_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 13, kdcDbKeyUri_);
     }
     if (tgtLifetimeHours_ != 0) {
       output.writeInt32(14, tgtLifetimeHours_);
     }
-    if (!getRealmBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(realm_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 15, realm_);
     }
     unknownFields.writeTo(output);
@@ -1009,50 +1009,50 @@ public final class KerberosConfig extends com.google.protobuf.GeneratedMessageV3
     if (enableKerberos_ != false) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(1, enableKerberos_);
     }
-    if (!getRootPrincipalPasswordUriBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(rootPrincipalPasswordUri_)) {
       size +=
           com.google.protobuf.GeneratedMessageV3.computeStringSize(2, rootPrincipalPasswordUri_);
     }
-    if (!getKmsKeyUriBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(kmsKeyUri_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, kmsKeyUri_);
     }
-    if (!getKeystoreUriBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(keystoreUri_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, keystoreUri_);
     }
-    if (!getTruststoreUriBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(truststoreUri_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, truststoreUri_);
     }
-    if (!getKeystorePasswordUriBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(keystorePasswordUri_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, keystorePasswordUri_);
     }
-    if (!getKeyPasswordUriBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(keyPasswordUri_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, keyPasswordUri_);
     }
-    if (!getTruststorePasswordUriBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(truststorePasswordUri_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, truststorePasswordUri_);
     }
-    if (!getCrossRealmTrustRealmBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(crossRealmTrustRealm_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(9, crossRealmTrustRealm_);
     }
-    if (!getCrossRealmTrustKdcBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(crossRealmTrustKdc_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(10, crossRealmTrustKdc_);
     }
-    if (!getCrossRealmTrustAdminServerBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(crossRealmTrustAdminServer_)) {
       size +=
           com.google.protobuf.GeneratedMessageV3.computeStringSize(11, crossRealmTrustAdminServer_);
     }
-    if (!getCrossRealmTrustSharedPasswordUriBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(crossRealmTrustSharedPasswordUri_)) {
       size +=
           com.google.protobuf.GeneratedMessageV3.computeStringSize(
               12, crossRealmTrustSharedPasswordUri_);
     }
-    if (!getKdcDbKeyUriBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(kdcDbKeyUri_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(13, kdcDbKeyUri_);
     }
     if (tgtLifetimeHours_ != 0) {
       size += com.google.protobuf.CodedOutputStream.computeInt32Size(14, tgtLifetimeHours_);
     }
-    if (!getRealmBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(realm_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(15, realm_);
     }
     size += unknownFields.getSerializedSize();

@@ -202,6 +202,23 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
 
               break;
             }
+          case 122:
+            {
+              com.google.cloud.dataproc.v1.ConfidentialInstanceConfig.Builder subBuilder = null;
+              if (confidentialInstanceConfig_ != null) {
+                subBuilder = confidentialInstanceConfig_.toBuilder();
+              }
+              confidentialInstanceConfig_ =
+                  input.readMessage(
+                      com.google.cloud.dataproc.v1.ConfidentialInstanceConfig.parser(),
+                      extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(confidentialInstanceConfig_);
+                confidentialInstanceConfig_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -1218,6 +1235,64 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
     return getShieldedInstanceConfig();
   }
 
+  public static final int CONFIDENTIAL_INSTANCE_CONFIG_FIELD_NUMBER = 15;
+  private com.google.cloud.dataproc.v1.ConfidentialInstanceConfig confidentialInstanceConfig_;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Confidential Instance Config for clusters using [Confidential
+   * VMs](https://cloud.google.com/compute/confidential-vm/docs).
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataproc.v1.ConfidentialInstanceConfig confidential_instance_config = 15 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the confidentialInstanceConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasConfidentialInstanceConfig() {
+    return confidentialInstanceConfig_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Confidential Instance Config for clusters using [Confidential
+   * VMs](https://cloud.google.com/compute/confidential-vm/docs).
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataproc.v1.ConfidentialInstanceConfig confidential_instance_config = 15 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The confidentialInstanceConfig.
+   */
+  @java.lang.Override
+  public com.google.cloud.dataproc.v1.ConfidentialInstanceConfig getConfidentialInstanceConfig() {
+    return confidentialInstanceConfig_ == null
+        ? com.google.cloud.dataproc.v1.ConfidentialInstanceConfig.getDefaultInstance()
+        : confidentialInstanceConfig_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Confidential Instance Config for clusters using [Confidential
+   * VMs](https://cloud.google.com/compute/confidential-vm/docs).
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataproc.v1.ConfidentialInstanceConfig confidential_instance_config = 15 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.dataproc.v1.ConfidentialInstanceConfigOrBuilder
+      getConfidentialInstanceConfigOrBuilder() {
+    return getConfidentialInstanceConfig();
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -1232,10 +1307,10 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getZoneUriBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(zoneUri_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, zoneUri_);
     }
-    if (!getNetworkUriBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(networkUri_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, networkUri_);
     }
     for (int i = 0; i < serviceAccountScopes_.size(); i++) {
@@ -1247,13 +1322,13 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
     }
     com.google.protobuf.GeneratedMessageV3.serializeStringMapTo(
         output, internalGetMetadata(), MetadataDefaultEntryHolder.defaultEntry, 5);
-    if (!getSubnetworkUriBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(subnetworkUri_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 6, subnetworkUri_);
     }
     if (internalIpOnly_ != false) {
       output.writeBool(7, internalIpOnly_);
     }
-    if (!getServiceAccountBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(serviceAccount_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 8, serviceAccount_);
     }
     if (reservationAffinity_ != null) {
@@ -1271,6 +1346,9 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
     if (shieldedInstanceConfig_ != null) {
       output.writeMessage(14, getShieldedInstanceConfig());
     }
+    if (confidentialInstanceConfig_ != null) {
+      output.writeMessage(15, getConfidentialInstanceConfig());
+    }
     unknownFields.writeTo(output);
   }
 
@@ -1280,10 +1358,10 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
     if (size != -1) return size;
 
     size = 0;
-    if (!getZoneUriBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(zoneUri_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, zoneUri_);
     }
-    if (!getNetworkUriBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(networkUri_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, networkUri_);
     }
     {
@@ -1312,13 +1390,13 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
               .build();
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(5, metadata__);
     }
-    if (!getSubnetworkUriBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(subnetworkUri_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, subnetworkUri_);
     }
     if (internalIpOnly_ != false) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(7, internalIpOnly_);
     }
-    if (!getServiceAccountBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(serviceAccount_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, serviceAccount_);
     }
     if (reservationAffinity_ != null) {
@@ -1337,6 +1415,11 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
     if (shieldedInstanceConfig_ != null) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(14, getShieldedInstanceConfig());
+    }
+    if (confidentialInstanceConfig_ != null) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              15, getConfidentialInstanceConfig());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -1374,6 +1457,11 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
     if (hasShieldedInstanceConfig() != other.hasShieldedInstanceConfig()) return false;
     if (hasShieldedInstanceConfig()) {
       if (!getShieldedInstanceConfig().equals(other.getShieldedInstanceConfig())) return false;
+    }
+    if (hasConfidentialInstanceConfig() != other.hasConfidentialInstanceConfig()) return false;
+    if (hasConfidentialInstanceConfig()) {
+      if (!getConfidentialInstanceConfig().equals(other.getConfidentialInstanceConfig()))
+        return false;
     }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
@@ -1421,6 +1509,10 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
     if (hasShieldedInstanceConfig()) {
       hash = (37 * hash) + SHIELDED_INSTANCE_CONFIG_FIELD_NUMBER;
       hash = (53 * hash) + getShieldedInstanceConfig().hashCode();
+    }
+    if (hasConfidentialInstanceConfig()) {
+      hash = (37 * hash) + CONFIDENTIAL_INSTANCE_CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + getConfidentialInstanceConfig().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -1623,6 +1715,12 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
         shieldedInstanceConfig_ = null;
         shieldedInstanceConfigBuilder_ = null;
       }
+      if (confidentialInstanceConfigBuilder_ == null) {
+        confidentialInstanceConfig_ = null;
+      } else {
+        confidentialInstanceConfig_ = null;
+        confidentialInstanceConfigBuilder_ = null;
+      }
       return this;
     }
 
@@ -1683,6 +1781,11 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
         result.shieldedInstanceConfig_ = shieldedInstanceConfig_;
       } else {
         result.shieldedInstanceConfig_ = shieldedInstanceConfigBuilder_.build();
+      }
+      if (confidentialInstanceConfigBuilder_ == null) {
+        result.confidentialInstanceConfig_ = confidentialInstanceConfig_;
+      } else {
+        result.confidentialInstanceConfig_ = confidentialInstanceConfigBuilder_.build();
       }
       onBuilt();
       return result;
@@ -1784,6 +1887,9 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
       }
       if (other.hasShieldedInstanceConfig()) {
         mergeShieldedInstanceConfig(other.getShieldedInstanceConfig());
+      }
+      if (other.hasConfidentialInstanceConfig()) {
+        mergeConfidentialInstanceConfig(other.getConfidentialInstanceConfig());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -3811,6 +3917,224 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
         shieldedInstanceConfig_ = null;
       }
       return shieldedInstanceConfigBuilder_;
+    }
+
+    private com.google.cloud.dataproc.v1.ConfidentialInstanceConfig confidentialInstanceConfig_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.dataproc.v1.ConfidentialInstanceConfig,
+            com.google.cloud.dataproc.v1.ConfidentialInstanceConfig.Builder,
+            com.google.cloud.dataproc.v1.ConfidentialInstanceConfigOrBuilder>
+        confidentialInstanceConfigBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Confidential Instance Config for clusters using [Confidential
+     * VMs](https://cloud.google.com/compute/confidential-vm/docs).
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataproc.v1.ConfidentialInstanceConfig confidential_instance_config = 15 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the confidentialInstanceConfig field is set.
+     */
+    public boolean hasConfidentialInstanceConfig() {
+      return confidentialInstanceConfigBuilder_ != null || confidentialInstanceConfig_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Confidential Instance Config for clusters using [Confidential
+     * VMs](https://cloud.google.com/compute/confidential-vm/docs).
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataproc.v1.ConfidentialInstanceConfig confidential_instance_config = 15 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The confidentialInstanceConfig.
+     */
+    public com.google.cloud.dataproc.v1.ConfidentialInstanceConfig getConfidentialInstanceConfig() {
+      if (confidentialInstanceConfigBuilder_ == null) {
+        return confidentialInstanceConfig_ == null
+            ? com.google.cloud.dataproc.v1.ConfidentialInstanceConfig.getDefaultInstance()
+            : confidentialInstanceConfig_;
+      } else {
+        return confidentialInstanceConfigBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Confidential Instance Config for clusters using [Confidential
+     * VMs](https://cloud.google.com/compute/confidential-vm/docs).
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataproc.v1.ConfidentialInstanceConfig confidential_instance_config = 15 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setConfidentialInstanceConfig(
+        com.google.cloud.dataproc.v1.ConfidentialInstanceConfig value) {
+      if (confidentialInstanceConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        confidentialInstanceConfig_ = value;
+        onChanged();
+      } else {
+        confidentialInstanceConfigBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Confidential Instance Config for clusters using [Confidential
+     * VMs](https://cloud.google.com/compute/confidential-vm/docs).
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataproc.v1.ConfidentialInstanceConfig confidential_instance_config = 15 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setConfidentialInstanceConfig(
+        com.google.cloud.dataproc.v1.ConfidentialInstanceConfig.Builder builderForValue) {
+      if (confidentialInstanceConfigBuilder_ == null) {
+        confidentialInstanceConfig_ = builderForValue.build();
+        onChanged();
+      } else {
+        confidentialInstanceConfigBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Confidential Instance Config for clusters using [Confidential
+     * VMs](https://cloud.google.com/compute/confidential-vm/docs).
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataproc.v1.ConfidentialInstanceConfig confidential_instance_config = 15 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeConfidentialInstanceConfig(
+        com.google.cloud.dataproc.v1.ConfidentialInstanceConfig value) {
+      if (confidentialInstanceConfigBuilder_ == null) {
+        if (confidentialInstanceConfig_ != null) {
+          confidentialInstanceConfig_ =
+              com.google.cloud.dataproc.v1.ConfidentialInstanceConfig.newBuilder(
+                      confidentialInstanceConfig_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          confidentialInstanceConfig_ = value;
+        }
+        onChanged();
+      } else {
+        confidentialInstanceConfigBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Confidential Instance Config for clusters using [Confidential
+     * VMs](https://cloud.google.com/compute/confidential-vm/docs).
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataproc.v1.ConfidentialInstanceConfig confidential_instance_config = 15 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearConfidentialInstanceConfig() {
+      if (confidentialInstanceConfigBuilder_ == null) {
+        confidentialInstanceConfig_ = null;
+        onChanged();
+      } else {
+        confidentialInstanceConfig_ = null;
+        confidentialInstanceConfigBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Confidential Instance Config for clusters using [Confidential
+     * VMs](https://cloud.google.com/compute/confidential-vm/docs).
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataproc.v1.ConfidentialInstanceConfig confidential_instance_config = 15 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.dataproc.v1.ConfidentialInstanceConfig.Builder
+        getConfidentialInstanceConfigBuilder() {
+
+      onChanged();
+      return getConfidentialInstanceConfigFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Confidential Instance Config for clusters using [Confidential
+     * VMs](https://cloud.google.com/compute/confidential-vm/docs).
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataproc.v1.ConfidentialInstanceConfig confidential_instance_config = 15 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.dataproc.v1.ConfidentialInstanceConfigOrBuilder
+        getConfidentialInstanceConfigOrBuilder() {
+      if (confidentialInstanceConfigBuilder_ != null) {
+        return confidentialInstanceConfigBuilder_.getMessageOrBuilder();
+      } else {
+        return confidentialInstanceConfig_ == null
+            ? com.google.cloud.dataproc.v1.ConfidentialInstanceConfig.getDefaultInstance()
+            : confidentialInstanceConfig_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Confidential Instance Config for clusters using [Confidential
+     * VMs](https://cloud.google.com/compute/confidential-vm/docs).
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataproc.v1.ConfidentialInstanceConfig confidential_instance_config = 15 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.dataproc.v1.ConfidentialInstanceConfig,
+            com.google.cloud.dataproc.v1.ConfidentialInstanceConfig.Builder,
+            com.google.cloud.dataproc.v1.ConfidentialInstanceConfigOrBuilder>
+        getConfidentialInstanceConfigFieldBuilder() {
+      if (confidentialInstanceConfigBuilder_ == null) {
+        confidentialInstanceConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.dataproc.v1.ConfidentialInstanceConfig,
+                com.google.cloud.dataproc.v1.ConfidentialInstanceConfig.Builder,
+                com.google.cloud.dataproc.v1.ConfidentialInstanceConfigOrBuilder>(
+                getConfidentialInstanceConfig(), getParentForChildren(), isClean());
+        confidentialInstanceConfig_ = null;
+      }
+      return confidentialInstanceConfigBuilder_;
     }
 
     @java.lang.Override

@@ -23,7 +23,7 @@ package com.google.cloud.dataproc.v1;
  *
  * <pre>
  * Describes the identifying information, config, and status of
- * a cluster of Compute Engine instances.
+ * a Dataproc cluster
  * </pre>
  *
  * Protobuf type {@code google.cloud.dataproc.v1.Cluster}
@@ -754,10 +754,10 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getProjectIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(projectId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, projectId_);
     }
-    if (!getClusterNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(clusterName_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, clusterName_);
     }
     if (config_ != null) {
@@ -766,7 +766,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
     if (status_ != null) {
       output.writeMessage(4, getStatus());
     }
-    if (!getClusterUuidBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(clusterUuid_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 6, clusterUuid_);
     }
     for (int i = 0; i < statusHistory_.size(); i++) {
@@ -786,10 +786,10 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
     if (size != -1) return size;
 
     size = 0;
-    if (!getProjectIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(projectId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, projectId_);
     }
-    if (!getClusterNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(clusterName_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, clusterName_);
     }
     if (config_ != null) {
@@ -798,7 +798,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
     if (status_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(4, getStatus());
     }
-    if (!getClusterUuidBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(clusterUuid_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, clusterUuid_);
     }
     for (int i = 0; i < statusHistory_.size(); i++) {
@@ -990,7 +990,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Describes the identifying information, config, and status of
-   * a cluster of Compute Engine instances.
+   * a Dataproc cluster
    * </pre>
    *
    * Protobuf type {@code google.cloud.dataproc.v1.Cluster}

@@ -27,6 +27,39 @@ public final class SharedProto {
     registerAllExtensions((com.google.protobuf.ExtensionRegistryLite) registry);
   }
 
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_dataproc_v1_RuntimeConfig_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_dataproc_v1_RuntimeConfig_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_dataproc_v1_RuntimeConfig_PropertiesEntry_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_dataproc_v1_RuntimeConfig_PropertiesEntry_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_dataproc_v1_EnvironmentConfig_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_dataproc_v1_EnvironmentConfig_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_dataproc_v1_ExecutionConfig_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_dataproc_v1_ExecutionConfig_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_dataproc_v1_SparkHistoryServerConfig_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_dataproc_v1_SparkHistoryServerConfig_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_dataproc_v1_PeripheralsConfig_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_dataproc_v1_PeripheralsConfig_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_dataproc_v1_RuntimeInfo_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_dataproc_v1_RuntimeInfo_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_dataproc_v1_RuntimeInfo_EndpointsEntry_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_dataproc_v1_RuntimeInfo_EndpointsEntry_fieldAccessorTable;
+
   public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
     return descriptor;
   }
@@ -36,26 +69,115 @@ public final class SharedProto {
   static {
     java.lang.String[] descriptorData = {
       "\n%google/cloud/dataproc/v1/shared.proto\022"
-          + "\030google.cloud.dataproc.v1\032\034google/api/an"
-          + "notations.proto\032\037google/api/field_behavi"
-          + "or.proto*\277\001\n\tComponent\022\031\n\025COMPONENT_UNSP"
+          + "\030google.cloud.dataproc.v1\032\037google/api/fi"
+          + "eld_behavior.proto\"\224\001\n\rRuntimeConfig\022P\n\n"
+          + "properties\030\003 \003(\01327.google.cloud.dataproc"
+          + ".v1.RuntimeConfig.PropertiesEntryB\003\340A\001\0321"
+          + "\n\017PropertiesEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030"
+          + "\002 \001(\t:\0028\001\"\253\001\n\021EnvironmentConfig\022H\n\020execu"
+          + "tion_config\030\001 \001(\0132).google.cloud.datapro"
+          + "c.v1.ExecutionConfigB\003\340A\001\022L\n\022peripherals"
+          + "_config\030\002 \001(\0132+.google.cloud.dataproc.v1"
+          + ".PeripheralsConfigB\003\340A\001\"\246\001\n\017ExecutionCon"
+          + "fig\022\034\n\017service_account\030\002 \001(\tB\003\340A\001\022\032\n\013net"
+          + "work_uri\030\004 \001(\tB\003\340A\001H\000\022\035\n\016subnetwork_uri\030"
+          + "\005 \001(\tB\003\340A\001H\000\022\031\n\014network_tags\030\006 \003(\tB\003\340A\001\022"
+          + "\024\n\007kms_key\030\007 \001(\tB\003\340A\001B\t\n\007network\"9\n\030Spar"
+          + "kHistoryServerConfig\022\035\n\020dataproc_cluster"
+          + "\030\001 \001(\tB\003\340A\001\"\221\001\n\021PeripheralsConfig\022\036\n\021met"
+          + "astore_service\030\001 \001(\tB\003\340A\001\022\\\n\033spark_histo"
+          + "ry_server_config\030\002 \001(\01322.google.cloud.da"
+          + "taproc.v1.SparkHistoryServerConfigB\003\340A\001\""
+          + "\246\001\n\013RuntimeInfo\022L\n\tendpoints\030\001 \003(\01324.goo"
+          + "gle.cloud.dataproc.v1.RuntimeInfo.Endpoi"
+          + "ntsEntryB\003\340A\003\022\027\n\noutput_uri\030\002 \001(\tB\003\340A\003\0320"
+          + "\n\016EndpointsEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002"
+          + " \001(\t:\0028\001*\277\001\n\tComponent\022\031\n\025COMPONENT_UNSP"
           + "ECIFIED\020\000\022\014\n\010ANACONDA\020\005\022\n\n\006DOCKER\020\r\022\t\n\005D"
           + "RUID\020\t\022\t\n\005FLINK\020\016\022\t\n\005HBASE\020\013\022\020\n\014HIVE_WEB"
           + "HCAT\020\003\022\013\n\007JUPYTER\020\001\022\n\n\006PRESTO\020\006\022\n\n\006RANGE"
           + "R\020\014\022\010\n\004SOLR\020\n\022\014\n\010ZEPPELIN\020\004\022\r\n\tZOOKEEPER"
-          + "\020\010Bo\n\034com.google.cloud.dataproc.v1B\013Shar"
-          + "edProtoP\001Z@google.golang.org/genproto/go"
-          + "ogleapis/cloud/dataproc/v1;dataprocb\006pro"
-          + "to3"
+          + "\020\010*J\n\rFailureAction\022\036\n\032FAILURE_ACTION_UN"
+          + "SPECIFIED\020\000\022\r\n\tNO_ACTION\020\001\022\n\n\006DELETE\020\002Bo"
+          + "\n\034com.google.cloud.dataproc.v1B\013SharedPr"
+          + "otoP\001Z@google.golang.org/genproto/google"
+          + "apis/cloud/dataproc/v1;dataprocb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
             descriptorData,
             new com.google.protobuf.Descriptors.FileDescriptor[] {
-              com.google.api.AnnotationsProto.getDescriptor(),
               com.google.api.FieldBehaviorProto.getDescriptor(),
             });
-    com.google.api.AnnotationsProto.getDescriptor();
+    internal_static_google_cloud_dataproc_v1_RuntimeConfig_descriptor =
+        getDescriptor().getMessageTypes().get(0);
+    internal_static_google_cloud_dataproc_v1_RuntimeConfig_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_dataproc_v1_RuntimeConfig_descriptor,
+            new java.lang.String[] {
+              "Properties",
+            });
+    internal_static_google_cloud_dataproc_v1_RuntimeConfig_PropertiesEntry_descriptor =
+        internal_static_google_cloud_dataproc_v1_RuntimeConfig_descriptor.getNestedTypes().get(0);
+    internal_static_google_cloud_dataproc_v1_RuntimeConfig_PropertiesEntry_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_dataproc_v1_RuntimeConfig_PropertiesEntry_descriptor,
+            new java.lang.String[] {
+              "Key", "Value",
+            });
+    internal_static_google_cloud_dataproc_v1_EnvironmentConfig_descriptor =
+        getDescriptor().getMessageTypes().get(1);
+    internal_static_google_cloud_dataproc_v1_EnvironmentConfig_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_dataproc_v1_EnvironmentConfig_descriptor,
+            new java.lang.String[] {
+              "ExecutionConfig", "PeripheralsConfig",
+            });
+    internal_static_google_cloud_dataproc_v1_ExecutionConfig_descriptor =
+        getDescriptor().getMessageTypes().get(2);
+    internal_static_google_cloud_dataproc_v1_ExecutionConfig_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_dataproc_v1_ExecutionConfig_descriptor,
+            new java.lang.String[] {
+              "ServiceAccount", "NetworkUri", "SubnetworkUri", "NetworkTags", "KmsKey", "Network",
+            });
+    internal_static_google_cloud_dataproc_v1_SparkHistoryServerConfig_descriptor =
+        getDescriptor().getMessageTypes().get(3);
+    internal_static_google_cloud_dataproc_v1_SparkHistoryServerConfig_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_dataproc_v1_SparkHistoryServerConfig_descriptor,
+            new java.lang.String[] {
+              "DataprocCluster",
+            });
+    internal_static_google_cloud_dataproc_v1_PeripheralsConfig_descriptor =
+        getDescriptor().getMessageTypes().get(4);
+    internal_static_google_cloud_dataproc_v1_PeripheralsConfig_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_dataproc_v1_PeripheralsConfig_descriptor,
+            new java.lang.String[] {
+              "MetastoreService", "SparkHistoryServerConfig",
+            });
+    internal_static_google_cloud_dataproc_v1_RuntimeInfo_descriptor =
+        getDescriptor().getMessageTypes().get(5);
+    internal_static_google_cloud_dataproc_v1_RuntimeInfo_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_dataproc_v1_RuntimeInfo_descriptor,
+            new java.lang.String[] {
+              "Endpoints", "OutputUri",
+            });
+    internal_static_google_cloud_dataproc_v1_RuntimeInfo_EndpointsEntry_descriptor =
+        internal_static_google_cloud_dataproc_v1_RuntimeInfo_descriptor.getNestedTypes().get(0);
+    internal_static_google_cloud_dataproc_v1_RuntimeInfo_EndpointsEntry_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_dataproc_v1_RuntimeInfo_EndpointsEntry_descriptor,
+            new java.lang.String[] {
+              "Key", "Value",
+            });
+    com.google.protobuf.ExtensionRegistry registry =
+        com.google.protobuf.ExtensionRegistry.newInstance();
+    registry.add(com.google.api.FieldBehaviorProto.fieldBehavior);
+    com.google.protobuf.Descriptors.FileDescriptor.internalUpdateFileDescriptor(
+        descriptor, registry);
     com.google.api.FieldBehaviorProto.getDescriptor();
   }
 
