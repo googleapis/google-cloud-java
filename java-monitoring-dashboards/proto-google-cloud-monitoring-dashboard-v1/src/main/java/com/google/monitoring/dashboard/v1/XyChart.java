@@ -947,7 +947,7 @@ public final class XyChart extends com.google.protobuf.GeneratedMessageV3
               .getNumber()) {
         output.writeEnum(2, plotType_);
       }
-      if (!getLegendTemplateBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(legendTemplate_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 3, legendTemplate_);
       }
       if (minAlignmentPeriod_ != null) {
@@ -970,7 +970,7 @@ public final class XyChart extends com.google.protobuf.GeneratedMessageV3
               .getNumber()) {
         size += com.google.protobuf.CodedOutputStream.computeEnumSize(2, plotType_);
       }
-      if (!getLegendTemplateBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(legendTemplate_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, legendTemplate_);
       }
       if (minAlignmentPeriod_ != null) {
@@ -2456,7 +2456,7 @@ public final class XyChart extends com.google.protobuf.GeneratedMessageV3
 
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-      if (!getLabelBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(label_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, label_);
       }
       if (scale_
@@ -2472,7 +2472,7 @@ public final class XyChart extends com.google.protobuf.GeneratedMessageV3
       if (size != -1) return size;
 
       size = 0;
-      if (!getLabelBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(label_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, label_);
       }
       if (scale_
