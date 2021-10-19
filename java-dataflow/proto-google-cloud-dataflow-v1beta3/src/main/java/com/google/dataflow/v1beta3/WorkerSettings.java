@@ -451,22 +451,22 @@ public final class WorkerSettings extends com.google.protobuf.GeneratedMessageV3
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getBaseUrlBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(baseUrl_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, baseUrl_);
     }
     if (reportingEnabled_ != false) {
       output.writeBool(2, reportingEnabled_);
     }
-    if (!getServicePathBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(servicePath_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, servicePath_);
     }
-    if (!getShuffleServicePathBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(shuffleServicePath_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 4, shuffleServicePath_);
     }
-    if (!getWorkerIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(workerId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 5, workerId_);
     }
-    if (!getTempStoragePrefixBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(tempStoragePrefix_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 6, tempStoragePrefix_);
     }
     unknownFields.writeTo(output);
@@ -478,22 +478,22 @@ public final class WorkerSettings extends com.google.protobuf.GeneratedMessageV3
     if (size != -1) return size;
 
     size = 0;
-    if (!getBaseUrlBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(baseUrl_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, baseUrl_);
     }
     if (reportingEnabled_ != false) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(2, reportingEnabled_);
     }
-    if (!getServicePathBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(servicePath_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, servicePath_);
     }
-    if (!getShuffleServicePathBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(shuffleServicePath_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, shuffleServicePath_);
     }
-    if (!getWorkerIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(workerId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, workerId_);
     }
-    if (!getTempStoragePrefixBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(tempStoragePrefix_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, tempStoragePrefix_);
     }
     size += unknownFields.getSerializedSize();

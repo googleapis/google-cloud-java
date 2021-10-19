@@ -482,10 +482,10 @@ public final class SdkVersion extends com.google.protobuf.GeneratedMessageV3
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getVersionBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(version_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, version_);
     }
-    if (!getVersionDisplayNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(versionDisplayName_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, versionDisplayName_);
     }
     if (sdkSupportStatus_
@@ -501,10 +501,10 @@ public final class SdkVersion extends com.google.protobuf.GeneratedMessageV3
     if (size != -1) return size;
 
     size = 0;
-    if (!getVersionBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(version_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, version_);
     }
-    if (!getVersionDisplayNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(versionDisplayName_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, versionDisplayName_);
     }
     if (sdkSupportStatus_

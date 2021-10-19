@@ -643,7 +643,7 @@ public final class AutoscalingEvent extends com.google.protobuf.GeneratedMessage
     if (time_ != null) {
       output.writeMessage(5, getTime());
     }
-    if (!getWorkerPoolBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(workerPool_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 7, workerPool_);
     }
     unknownFields.writeTo(output);
@@ -672,7 +672,7 @@ public final class AutoscalingEvent extends com.google.protobuf.GeneratedMessage
     if (time_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(5, getTime());
     }
-    if (!getWorkerPoolBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(workerPool_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, workerPool_);
     }
     size += unknownFields.getSerializedSize();

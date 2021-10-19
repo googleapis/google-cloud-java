@@ -197,7 +197,7 @@ public final class StateFamilyConfig extends com.google.protobuf.GeneratedMessag
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getStateFamilyBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(stateFamily_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, stateFamily_);
     }
     if (isRead_ != false) {
@@ -212,7 +212,7 @@ public final class StateFamilyConfig extends com.google.protobuf.GeneratedMessag
     if (size != -1) return size;
 
     size = 0;
-    if (!getStateFamilyBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(stateFamily_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, stateFamily_);
     }
     if (isRead_ != false) {

@@ -231,10 +231,10 @@ public final class DatastoreIODetails extends com.google.protobuf.GeneratedMessa
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getNamespaceBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(namespace_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, namespace_);
     }
-    if (!getProjectIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(projectId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, projectId_);
     }
     unknownFields.writeTo(output);
@@ -246,10 +246,10 @@ public final class DatastoreIODetails extends com.google.protobuf.GeneratedMessa
     if (size != -1) return size;
 
     size = 0;
-    if (!getNamespaceBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(namespace_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, namespace_);
     }
-    if (!getProjectIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(projectId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, projectId_);
     }
     size += unknownFields.getSerializedSize();

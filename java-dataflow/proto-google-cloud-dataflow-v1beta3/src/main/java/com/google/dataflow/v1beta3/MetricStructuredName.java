@@ -374,10 +374,10 @@ public final class MetricStructuredName extends com.google.protobuf.GeneratedMes
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getOriginBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(origin_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, origin_);
     }
-    if (!getNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, name_);
     }
     com.google.protobuf.GeneratedMessageV3.serializeStringMapTo(
@@ -391,10 +391,10 @@ public final class MetricStructuredName extends com.google.protobuf.GeneratedMes
     if (size != -1) return size;
 
     size = 0;
-    if (!getOriginBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(origin_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, origin_);
     }
-    if (!getNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, name_);
     }
     for (java.util.Map.Entry<java.lang.String, java.lang.String> entry :

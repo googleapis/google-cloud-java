@@ -459,22 +459,22 @@ public final class PubsubLocation extends com.google.protobuf.GeneratedMessageV3
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getTopicBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(topic_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, topic_);
     }
-    if (!getSubscriptionBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(subscription_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, subscription_);
     }
-    if (!getTimestampLabelBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(timestampLabel_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, timestampLabel_);
     }
-    if (!getIdLabelBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(idLabel_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 4, idLabel_);
     }
     if (dropLateData_ != false) {
       output.writeBool(5, dropLateData_);
     }
-    if (!getTrackingSubscriptionBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(trackingSubscription_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 6, trackingSubscription_);
     }
     if (withAttributes_ != false) {
@@ -489,22 +489,22 @@ public final class PubsubLocation extends com.google.protobuf.GeneratedMessageV3
     if (size != -1) return size;
 
     size = 0;
-    if (!getTopicBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(topic_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, topic_);
     }
-    if (!getSubscriptionBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(subscription_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, subscription_);
     }
-    if (!getTimestampLabelBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(timestampLabel_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, timestampLabel_);
     }
-    if (!getIdLabelBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(idLabel_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, idLabel_);
     }
     if (dropLateData_ != false) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(5, dropLateData_);
     }
-    if (!getTrackingSubscriptionBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(trackingSubscription_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, trackingSubscription_);
     }
     if (withAttributes_ != false) {

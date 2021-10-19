@@ -530,7 +530,7 @@ public final class LaunchTemplateRequest extends com.google.protobuf.GeneratedMe
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getProjectIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(projectId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, projectId_);
     }
     if (validateOnly_ != false) {
@@ -542,7 +542,7 @@ public final class LaunchTemplateRequest extends com.google.protobuf.GeneratedMe
     if (launchParameters_ != null) {
       output.writeMessage(4, getLaunchParameters());
     }
-    if (!getLocationBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(location_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 5, location_);
     }
     if (templateCase_ == 6) {
@@ -557,7 +557,7 @@ public final class LaunchTemplateRequest extends com.google.protobuf.GeneratedMe
     if (size != -1) return size;
 
     size = 0;
-    if (!getProjectIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(projectId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, projectId_);
     }
     if (validateOnly_ != false) {
@@ -569,7 +569,7 @@ public final class LaunchTemplateRequest extends com.google.protobuf.GeneratedMe
     if (launchParameters_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(4, getLaunchParameters());
     }
-    if (!getLocationBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(location_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, location_);
     }
     if (templateCase_ == 6) {

@@ -609,7 +609,7 @@ public final class CreateJobFromTemplateRequest extends com.google.protobuf.Gene
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getProjectIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(projectId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, projectId_);
     }
     if (templateCase_ == 2) {
@@ -617,13 +617,13 @@ public final class CreateJobFromTemplateRequest extends com.google.protobuf.Gene
     }
     com.google.protobuf.GeneratedMessageV3.serializeStringMapTo(
         output, internalGetParameters(), ParametersDefaultEntryHolder.defaultEntry, 3);
-    if (!getJobNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(jobName_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 4, jobName_);
     }
     if (environment_ != null) {
       output.writeMessage(5, getEnvironment());
     }
-    if (!getLocationBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(location_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 6, location_);
     }
     unknownFields.writeTo(output);
@@ -635,7 +635,7 @@ public final class CreateJobFromTemplateRequest extends com.google.protobuf.Gene
     if (size != -1) return size;
 
     size = 0;
-    if (!getProjectIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(projectId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, projectId_);
     }
     if (templateCase_ == 2) {
@@ -651,13 +651,13 @@ public final class CreateJobFromTemplateRequest extends com.google.protobuf.Gene
               .build();
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(3, parameters__);
     }
-    if (!getJobNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(jobName_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, jobName_);
     }
     if (environment_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(5, getEnvironment());
     }
-    if (!getLocationBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(location_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, location_);
     }
     size += unknownFields.getSerializedSize();

@@ -285,10 +285,10 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
     if (sizeGb_ != 0) {
       output.writeInt32(1, sizeGb_);
     }
-    if (!getDiskTypeBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(diskType_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, diskType_);
     }
-    if (!getMountPointBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(mountPoint_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, mountPoint_);
     }
     unknownFields.writeTo(output);
@@ -303,10 +303,10 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
     if (sizeGb_ != 0) {
       size += com.google.protobuf.CodedOutputStream.computeInt32Size(1, sizeGb_);
     }
-    if (!getDiskTypeBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(diskType_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, diskType_);
     }
-    if (!getMountPointBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(mountPoint_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, mountPoint_);
     }
     size += unknownFields.getSerializedSize();

@@ -1494,7 +1494,7 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessageV3
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getKindBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(kind_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, kind_);
     }
     if (numWorkers_ != 0) {
@@ -1507,7 +1507,7 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessageV3
         != com.google.dataflow.v1beta3.DefaultPackageSet.DEFAULT_PACKAGE_SET_UNKNOWN.getNumber()) {
       output.writeEnum(4, defaultPackageSet_);
     }
-    if (!getMachineTypeBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(machineType_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 5, machineType_);
     }
     if (teardownPolicy_
@@ -1517,16 +1517,16 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessageV3
     if (diskSizeGb_ != 0) {
       output.writeInt32(7, diskSizeGb_);
     }
-    if (!getDiskSourceImageBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(diskSourceImage_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 8, diskSourceImage_);
     }
-    if (!getZoneBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(zone_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 9, zone_);
     }
     if (taskrunnerSettings_ != null) {
       output.writeMessage(10, getTaskrunnerSettings());
     }
-    if (!getOnHostMaintenanceBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(onHostMaintenance_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 11, onHostMaintenance_);
     }
     for (int i = 0; i < dataDisks_.size(); i++) {
@@ -1540,16 +1540,16 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessageV3
     if (poolArgs_ != null) {
       output.writeMessage(15, getPoolArgs());
     }
-    if (!getDiskTypeBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(diskType_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 16, diskType_);
     }
-    if (!getNetworkBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(network_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 17, network_);
     }
-    if (!getWorkerHarnessContainerImageBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(workerHarnessContainerImage_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 18, workerHarnessContainerImage_);
     }
-    if (!getSubnetworkBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(subnetwork_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 19, subnetwork_);
     }
     if (numThreadsPerWorker_ != 0) {
@@ -1572,7 +1572,7 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessageV3
     if (size != -1) return size;
 
     size = 0;
-    if (!getKindBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(kind_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, kind_);
     }
     if (numWorkers_ != 0) {
@@ -1585,7 +1585,7 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessageV3
         != com.google.dataflow.v1beta3.DefaultPackageSet.DEFAULT_PACKAGE_SET_UNKNOWN.getNumber()) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(4, defaultPackageSet_);
     }
-    if (!getMachineTypeBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(machineType_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, machineType_);
     }
     if (teardownPolicy_
@@ -1595,16 +1595,16 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessageV3
     if (diskSizeGb_ != 0) {
       size += com.google.protobuf.CodedOutputStream.computeInt32Size(7, diskSizeGb_);
     }
-    if (!getDiskSourceImageBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(diskSourceImage_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, diskSourceImage_);
     }
-    if (!getZoneBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(zone_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(9, zone_);
     }
     if (taskrunnerSettings_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(10, getTaskrunnerSettings());
     }
-    if (!getOnHostMaintenanceBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(onHostMaintenance_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(11, onHostMaintenance_);
     }
     for (int i = 0; i < dataDisks_.size(); i++) {
@@ -1627,18 +1627,18 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessageV3
     if (poolArgs_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(15, getPoolArgs());
     }
-    if (!getDiskTypeBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(diskType_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(16, diskType_);
     }
-    if (!getNetworkBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(network_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(17, network_);
     }
-    if (!getWorkerHarnessContainerImageBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(workerHarnessContainerImage_)) {
       size +=
           com.google.protobuf.GeneratedMessageV3.computeStringSize(
               18, workerHarnessContainerImage_);
     }
-    if (!getSubnetworkBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(subnetwork_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(19, subnetwork_);
     }
     if (numThreadsPerWorker_ != 0) {

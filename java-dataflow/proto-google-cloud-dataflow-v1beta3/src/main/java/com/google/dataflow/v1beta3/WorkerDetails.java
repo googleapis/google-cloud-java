@@ -259,7 +259,7 @@ public final class WorkerDetails extends com.google.protobuf.GeneratedMessageV3
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getWorkerNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(workerName_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, workerName_);
     }
     for (int i = 0; i < workItems_.size(); i++) {
@@ -274,7 +274,7 @@ public final class WorkerDetails extends com.google.protobuf.GeneratedMessageV3
     if (size != -1) return size;
 
     size = 0;
-    if (!getWorkerNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(workerName_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, workerName_);
     }
     for (int i = 0; i < workItems_.size(); i++) {

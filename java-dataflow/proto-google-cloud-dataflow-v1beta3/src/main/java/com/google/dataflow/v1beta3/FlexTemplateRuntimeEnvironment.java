@@ -1193,26 +1193,26 @@ public final class FlexTemplateRuntimeEnvironment extends com.google.protobuf.Ge
     if (maxWorkers_ != 0) {
       output.writeInt32(2, maxWorkers_);
     }
-    if (!getZoneBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(zone_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, zone_);
     }
-    if (!getServiceAccountEmailBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(serviceAccountEmail_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 4, serviceAccountEmail_);
     }
-    if (!getTempLocationBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(tempLocation_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 5, tempLocation_);
     }
-    if (!getMachineTypeBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(machineType_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 6, machineType_);
     }
     for (int i = 0; i < additionalExperiments_.size(); i++) {
       com.google.protobuf.GeneratedMessageV3.writeString(
           output, 7, additionalExperiments_.getRaw(i));
     }
-    if (!getNetworkBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(network_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 8, network_);
     }
-    if (!getSubnetworkBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(subnetwork_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 9, subnetwork_);
     }
     com.google.protobuf.GeneratedMessageV3.serializeStringMapTo(
@@ -1220,7 +1220,7 @@ public final class FlexTemplateRuntimeEnvironment extends com.google.protobuf.Ge
         internalGetAdditionalUserLabels(),
         AdditionalUserLabelsDefaultEntryHolder.defaultEntry,
         10);
-    if (!getKmsKeyNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(kmsKeyName_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 11, kmsKeyName_);
     }
     if (ipConfiguration_
@@ -1228,10 +1228,10 @@ public final class FlexTemplateRuntimeEnvironment extends com.google.protobuf.Ge
             .getNumber()) {
       output.writeEnum(12, ipConfiguration_);
     }
-    if (!getWorkerRegionBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(workerRegion_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 13, workerRegion_);
     }
-    if (!getWorkerZoneBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(workerZone_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 14, workerZone_);
     }
     if (enableStreamingEngine_ != false) {
@@ -1241,10 +1241,10 @@ public final class FlexTemplateRuntimeEnvironment extends com.google.protobuf.Ge
         != com.google.dataflow.v1beta3.FlexResourceSchedulingGoal.FLEXRS_UNSPECIFIED.getNumber()) {
       output.writeEnum(16, flexrsGoal_);
     }
-    if (!getStagingLocationBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(stagingLocation_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 17, stagingLocation_);
     }
-    if (!getSdkContainerImageBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(sdkContainerImage_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 18, sdkContainerImage_);
     }
     unknownFields.writeTo(output);
@@ -1262,16 +1262,16 @@ public final class FlexTemplateRuntimeEnvironment extends com.google.protobuf.Ge
     if (maxWorkers_ != 0) {
       size += com.google.protobuf.CodedOutputStream.computeInt32Size(2, maxWorkers_);
     }
-    if (!getZoneBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(zone_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, zone_);
     }
-    if (!getServiceAccountEmailBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(serviceAccountEmail_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, serviceAccountEmail_);
     }
-    if (!getTempLocationBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(tempLocation_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, tempLocation_);
     }
-    if (!getMachineTypeBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(machineType_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, machineType_);
     }
     {
@@ -1282,10 +1282,10 @@ public final class FlexTemplateRuntimeEnvironment extends com.google.protobuf.Ge
       size += dataSize;
       size += 1 * getAdditionalExperimentsList().size();
     }
-    if (!getNetworkBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(network_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, network_);
     }
-    if (!getSubnetworkBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(subnetwork_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(9, subnetwork_);
     }
     for (java.util.Map.Entry<java.lang.String, java.lang.String> entry :
@@ -1298,7 +1298,7 @@ public final class FlexTemplateRuntimeEnvironment extends com.google.protobuf.Ge
               .build();
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(10, additionalUserLabels__);
     }
-    if (!getKmsKeyNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(kmsKeyName_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(11, kmsKeyName_);
     }
     if (ipConfiguration_
@@ -1306,10 +1306,10 @@ public final class FlexTemplateRuntimeEnvironment extends com.google.protobuf.Ge
             .getNumber()) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(12, ipConfiguration_);
     }
-    if (!getWorkerRegionBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(workerRegion_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(13, workerRegion_);
     }
-    if (!getWorkerZoneBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(workerZone_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(14, workerZone_);
     }
     if (enableStreamingEngine_ != false) {
@@ -1319,10 +1319,10 @@ public final class FlexTemplateRuntimeEnvironment extends com.google.protobuf.Ge
         != com.google.dataflow.v1beta3.FlexResourceSchedulingGoal.FLEXRS_UNSPECIFIED.getNumber()) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(16, flexrsGoal_);
     }
-    if (!getStagingLocationBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(stagingLocation_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(17, stagingLocation_);
     }
-    if (!getSdkContainerImageBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(sdkContainerImage_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(18, sdkContainerImage_);
     }
     size += unknownFields.getSerializedSize();

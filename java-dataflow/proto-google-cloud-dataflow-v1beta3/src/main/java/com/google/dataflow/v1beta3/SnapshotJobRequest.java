@@ -428,22 +428,22 @@ public final class SnapshotJobRequest extends com.google.protobuf.GeneratedMessa
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getProjectIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(projectId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, projectId_);
     }
-    if (!getJobIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(jobId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, jobId_);
     }
     if (ttl_ != null) {
       output.writeMessage(3, getTtl());
     }
-    if (!getLocationBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(location_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 4, location_);
     }
     if (snapshotSources_ != false) {
       output.writeBool(5, snapshotSources_);
     }
-    if (!getDescriptionBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(description_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 6, description_);
     }
     unknownFields.writeTo(output);
@@ -455,22 +455,22 @@ public final class SnapshotJobRequest extends com.google.protobuf.GeneratedMessa
     if (size != -1) return size;
 
     size = 0;
-    if (!getProjectIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(projectId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, projectId_);
     }
-    if (!getJobIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(jobId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, jobId_);
     }
     if (ttl_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(3, getTtl());
     }
-    if (!getLocationBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(location_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, location_);
     }
     if (snapshotSources_ != false) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(5, snapshotSources_);
     }
-    if (!getDescriptionBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(description_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, description_);
     }
     size += unknownFields.getSerializedSize();

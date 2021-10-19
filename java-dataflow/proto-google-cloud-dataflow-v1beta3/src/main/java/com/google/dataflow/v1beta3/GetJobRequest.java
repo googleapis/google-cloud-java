@@ -335,16 +335,16 @@ public final class GetJobRequest extends com.google.protobuf.GeneratedMessageV3
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getProjectIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(projectId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, projectId_);
     }
-    if (!getJobIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(jobId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, jobId_);
     }
     if (view_ != com.google.dataflow.v1beta3.JobView.JOB_VIEW_UNKNOWN.getNumber()) {
       output.writeEnum(3, view_);
     }
-    if (!getLocationBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(location_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 4, location_);
     }
     unknownFields.writeTo(output);
@@ -356,16 +356,16 @@ public final class GetJobRequest extends com.google.protobuf.GeneratedMessageV3
     if (size != -1) return size;
 
     size = 0;
-    if (!getProjectIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(projectId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, projectId_);
     }
-    if (!getJobIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(jobId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, jobId_);
     }
     if (view_ != com.google.dataflow.v1beta3.JobView.JOB_VIEW_UNKNOWN.getNumber()) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(3, view_);
     }
-    if (!getLocationBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(location_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, location_);
     }
     size += unknownFields.getSerializedSize();

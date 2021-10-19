@@ -260,13 +260,13 @@ public final class SdkHarnessContainerImage extends com.google.protobuf.Generate
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getContainerImageBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(containerImage_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, containerImage_);
     }
     if (useSingleCorePerContainer_ != false) {
       output.writeBool(2, useSingleCorePerContainer_);
     }
-    if (!getEnvironmentIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(environmentId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, environmentId_);
     }
     unknownFields.writeTo(output);
@@ -278,13 +278,13 @@ public final class SdkHarnessContainerImage extends com.google.protobuf.Generate
     if (size != -1) return size;
 
     size = 0;
-    if (!getContainerImageBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(containerImage_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, containerImage_);
     }
     if (useSingleCorePerContainer_ != false) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(2, useSingleCorePerContainer_);
     }
-    if (!getEnvironmentIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(environmentId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, environmentId_);
     }
     size += unknownFields.getSerializedSize();

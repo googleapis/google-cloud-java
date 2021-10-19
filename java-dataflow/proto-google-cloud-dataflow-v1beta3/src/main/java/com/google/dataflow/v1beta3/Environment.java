@@ -1247,10 +1247,10 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getTempStoragePrefixBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(tempStoragePrefix_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, tempStoragePrefix_);
     }
-    if (!getClusterManagerApiServiceBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(clusterManagerApiService_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, clusterManagerApiService_);
     }
     for (int i = 0; i < experiments_.size(); i++) {
@@ -1265,7 +1265,7 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
     if (version_ != null) {
       output.writeMessage(6, getVersion());
     }
-    if (!getDatasetBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(dataset_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 7, dataset_);
     }
     if (sdkPipelineOptions_ != null) {
@@ -1274,20 +1274,20 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
     if (internalExperiments_ != null) {
       output.writeMessage(9, getInternalExperiments());
     }
-    if (!getServiceAccountEmailBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(serviceAccountEmail_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 10, serviceAccountEmail_);
     }
     if (flexResourceSchedulingGoal_
         != com.google.dataflow.v1beta3.FlexResourceSchedulingGoal.FLEXRS_UNSPECIFIED.getNumber()) {
       output.writeEnum(11, flexResourceSchedulingGoal_);
     }
-    if (!getServiceKmsKeyNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(serviceKmsKeyName_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 12, serviceKmsKeyName_);
     }
-    if (!getWorkerRegionBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(workerRegion_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 13, workerRegion_);
     }
-    if (!getWorkerZoneBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(workerZone_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 14, workerZone_);
     }
     if (shuffleMode_
@@ -1309,10 +1309,10 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
     if (size != -1) return size;
 
     size = 0;
-    if (!getTempStoragePrefixBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(tempStoragePrefix_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, tempStoragePrefix_);
     }
-    if (!getClusterManagerApiServiceBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(clusterManagerApiService_)) {
       size +=
           com.google.protobuf.GeneratedMessageV3.computeStringSize(2, clusterManagerApiService_);
     }
@@ -1333,7 +1333,7 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
     if (version_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(6, getVersion());
     }
-    if (!getDatasetBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(dataset_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, dataset_);
     }
     if (sdkPipelineOptions_ != null) {
@@ -1342,7 +1342,7 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
     if (internalExperiments_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(9, getInternalExperiments());
     }
-    if (!getServiceAccountEmailBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(serviceAccountEmail_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(10, serviceAccountEmail_);
     }
     if (flexResourceSchedulingGoal_
@@ -1350,13 +1350,13 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
       size +=
           com.google.protobuf.CodedOutputStream.computeEnumSize(11, flexResourceSchedulingGoal_);
     }
-    if (!getServiceKmsKeyNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(serviceKmsKeyName_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(12, serviceKmsKeyName_);
     }
-    if (!getWorkerRegionBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(workerRegion_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(13, workerRegion_);
     }
-    if (!getWorkerZoneBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(workerZone_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(14, workerZone_);
     }
     if (shuffleMode_

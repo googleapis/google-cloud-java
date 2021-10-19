@@ -802,7 +802,7 @@ public final class MetricUpdate extends com.google.protobuf.GeneratedMessageV3
     if (name_ != null) {
       output.writeMessage(1, getName());
     }
-    if (!getKindBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(kind_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, kind_);
     }
     if (cumulative_ != false) {
@@ -844,7 +844,7 @@ public final class MetricUpdate extends com.google.protobuf.GeneratedMessageV3
     if (name_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, getName());
     }
-    if (!getKindBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(kind_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, kind_);
     }
     if (cumulative_ != false) {

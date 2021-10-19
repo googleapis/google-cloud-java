@@ -515,7 +515,7 @@ public final class LaunchTemplateParameters extends com.google.protobuf.Generate
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getJobNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(jobName_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, jobName_);
     }
     com.google.protobuf.GeneratedMessageV3.serializeStringMapTo(
@@ -540,7 +540,7 @@ public final class LaunchTemplateParameters extends com.google.protobuf.Generate
     if (size != -1) return size;
 
     size = 0;
-    if (!getJobNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(jobName_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, jobName_);
     }
     for (java.util.Map.Entry<java.lang.String, java.lang.String> entry :

@@ -601,7 +601,7 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getProjectIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(projectId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, projectId_);
     }
     if (view_ != com.google.dataflow.v1beta3.JobView.JOB_VIEW_UNKNOWN.getNumber()) {
@@ -610,13 +610,13 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
     if (pageSize_ != 0) {
       output.writeInt32(3, pageSize_);
     }
-    if (!getPageTokenBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(pageToken_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 4, pageToken_);
     }
     if (filter_ != com.google.dataflow.v1beta3.ListJobsRequest.Filter.UNKNOWN.getNumber()) {
       output.writeEnum(5, filter_);
     }
-    if (!getLocationBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(location_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 17, location_);
     }
     unknownFields.writeTo(output);
@@ -628,7 +628,7 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
     if (size != -1) return size;
 
     size = 0;
-    if (!getProjectIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(projectId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, projectId_);
     }
     if (view_ != com.google.dataflow.v1beta3.JobView.JOB_VIEW_UNKNOWN.getNumber()) {
@@ -637,13 +637,13 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
     if (pageSize_ != 0) {
       size += com.google.protobuf.CodedOutputStream.computeInt32Size(3, pageSize_);
     }
-    if (!getPageTokenBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(pageToken_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, pageToken_);
     }
     if (filter_ != com.google.dataflow.v1beta3.ListJobsRequest.Filter.UNKNOWN.getNumber()) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(5, filter_);
     }
-    if (!getLocationBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(location_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(17, location_);
     }
     size += unknownFields.getSerializedSize();

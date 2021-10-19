@@ -348,7 +348,7 @@ public final class ListJobMessagesResponse extends com.google.protobuf.Generated
     for (int i = 0; i < jobMessages_.size(); i++) {
       output.writeMessage(1, jobMessages_.get(i));
     }
-    if (!getNextPageTokenBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(nextPageToken_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, nextPageToken_);
     }
     for (int i = 0; i < autoscalingEvents_.size(); i++) {
@@ -366,7 +366,7 @@ public final class ListJobMessagesResponse extends com.google.protobuf.Generated
     for (int i = 0; i < jobMessages_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, jobMessages_.get(i));
     }
-    if (!getNextPageTokenBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(nextPageToken_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, nextPageToken_);
     }
     for (int i = 0; i < autoscalingEvents_.size(); i++) {
