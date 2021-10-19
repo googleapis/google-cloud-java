@@ -11,7 +11,7 @@
           "libraryClient": "TranslationServiceClient",
           "rpcs": {
             "BatchTranslateDocument": {
-              "methods": ["batchTranslateDocumentAsync", "batchTranslateDocumentOperationCallable", "batchTranslateDocumentCallable"]
+              "methods": ["batchTranslateDocumentAsync", "batchTranslateDocumentAsync", "batchTranslateDocumentAsync", "batchTranslateDocumentOperationCallable", "batchTranslateDocumentCallable"]
             },
             "BatchTranslateText": {
               "methods": ["batchTranslateTextAsync", "batchTranslateTextOperationCallable", "batchTranslateTextCallable"]

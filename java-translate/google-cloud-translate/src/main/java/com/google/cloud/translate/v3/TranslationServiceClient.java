@@ -927,6 +927,130 @@ public class TranslationServiceClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (TranslationServiceClient translationServiceClient = TranslationServiceClient.create()) {
+   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+   *   String sourceLanguageCode = "sourceLanguageCode1645917472";
+   *   List<String> targetLanguageCodes = new ArrayList<>();
+   *   List<BatchDocumentInputConfig> inputConfigs = new ArrayList<>();
+   *   BatchDocumentOutputConfig outputConfig = BatchDocumentOutputConfig.newBuilder().build();
+   *   BatchTranslateDocumentResponse response =
+   *       translationServiceClient
+   *           .batchTranslateDocumentAsync(
+   *               parent, sourceLanguageCode, targetLanguageCodes, inputConfigs, outputConfig)
+   *           .get();
+   * }
+   * }</pre>
+   *
+   * @param parent Required. Location to make a regional call.
+   *     <p>Format: `projects/{project-number-or-id}/locations/{location-id}`.
+   *     <p>The `global` location is not supported for batch translation.
+   *     <p>Only AutoML Translation models or glossaries within the same region (have the same
+   *     location-id) can be used, otherwise an INVALID_ARGUMENT (400) error is returned.
+   * @param sourceLanguageCode Required. The BCP-47 language code of the input document if known,
+   *     for example, "en-US" or "sr-Latn". Supported language codes are listed in Language Support
+   *     (https://cloud.google.com/translate/docs/languages).
+   * @param targetLanguageCodes Required. The BCP-47 language code to use for translation of the
+   *     input document. Specify up to 10 language codes here.
+   * @param inputConfigs Required. Input configurations. The total number of files matched should be
+   *     &lt;= 100. The total content size to translate should be &lt;= 100M Unicode codepoints. The
+   *     files must use UTF-8 encoding.
+   * @param outputConfig Required. Output configuration. If 2 input configs match to the same file
+   *     (that is, same input path), we don't generate output for duplicate inputs.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<BatchTranslateDocumentResponse, BatchTranslateDocumentMetadata>
+      batchTranslateDocumentAsync(
+          LocationName parent,
+          String sourceLanguageCode,
+          List<String> targetLanguageCodes,
+          List<BatchDocumentInputConfig> inputConfigs,
+          BatchDocumentOutputConfig outputConfig) {
+    BatchTranslateDocumentRequest request =
+        BatchTranslateDocumentRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .setSourceLanguageCode(sourceLanguageCode)
+            .addAllTargetLanguageCodes(targetLanguageCodes)
+            .addAllInputConfigs(inputConfigs)
+            .setOutputConfig(outputConfig)
+            .build();
+    return batchTranslateDocumentAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Translates a large volume of document in asynchronous batch mode. This function provides
+   * real-time output as the inputs are being processed. If caller cancels a request, the partial
+   * results (for an input file, it's all or nothing) may still be available on the specified output
+   * location.
+   *
+   * <p>This call returns immediately and you can use google.longrunning.Operation.name to poll the
+   * status of the call.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (TranslationServiceClient translationServiceClient = TranslationServiceClient.create()) {
+   *   String parent = LocationName.of("[PROJECT]", "[LOCATION]").toString();
+   *   String sourceLanguageCode = "sourceLanguageCode1645917472";
+   *   List<String> targetLanguageCodes = new ArrayList<>();
+   *   List<BatchDocumentInputConfig> inputConfigs = new ArrayList<>();
+   *   BatchDocumentOutputConfig outputConfig = BatchDocumentOutputConfig.newBuilder().build();
+   *   BatchTranslateDocumentResponse response =
+   *       translationServiceClient
+   *           .batchTranslateDocumentAsync(
+   *               parent, sourceLanguageCode, targetLanguageCodes, inputConfigs, outputConfig)
+   *           .get();
+   * }
+   * }</pre>
+   *
+   * @param parent Required. Location to make a regional call.
+   *     <p>Format: `projects/{project-number-or-id}/locations/{location-id}`.
+   *     <p>The `global` location is not supported for batch translation.
+   *     <p>Only AutoML Translation models or glossaries within the same region (have the same
+   *     location-id) can be used, otherwise an INVALID_ARGUMENT (400) error is returned.
+   * @param sourceLanguageCode Required. The BCP-47 language code of the input document if known,
+   *     for example, "en-US" or "sr-Latn". Supported language codes are listed in Language Support
+   *     (https://cloud.google.com/translate/docs/languages).
+   * @param targetLanguageCodes Required. The BCP-47 language code to use for translation of the
+   *     input document. Specify up to 10 language codes here.
+   * @param inputConfigs Required. Input configurations. The total number of files matched should be
+   *     &lt;= 100. The total content size to translate should be &lt;= 100M Unicode codepoints. The
+   *     files must use UTF-8 encoding.
+   * @param outputConfig Required. Output configuration. If 2 input configs match to the same file
+   *     (that is, same input path), we don't generate output for duplicate inputs.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<BatchTranslateDocumentResponse, BatchTranslateDocumentMetadata>
+      batchTranslateDocumentAsync(
+          String parent,
+          String sourceLanguageCode,
+          List<String> targetLanguageCodes,
+          List<BatchDocumentInputConfig> inputConfigs,
+          BatchDocumentOutputConfig outputConfig) {
+    BatchTranslateDocumentRequest request =
+        BatchTranslateDocumentRequest.newBuilder()
+            .setParent(parent)
+            .setSourceLanguageCode(sourceLanguageCode)
+            .addAllTargetLanguageCodes(targetLanguageCodes)
+            .addAllInputConfigs(inputConfigs)
+            .setOutputConfig(outputConfig)
+            .build();
+    return batchTranslateDocumentAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Translates a large volume of document in asynchronous batch mode. This function provides
+   * real-time output as the inputs are being processed. If caller cancels a request, the partial
+   * results (for an input file, it's all or nothing) may still be available on the specified output
+   * location.
+   *
+   * <p>This call returns immediately and you can use google.longrunning.Operation.name to poll the
+   * status of the call.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (TranslationServiceClient translationServiceClient = TranslationServiceClient.create()) {
    *   BatchTranslateDocumentRequest request =
    *       BatchTranslateDocumentRequest.newBuilder()
    *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
