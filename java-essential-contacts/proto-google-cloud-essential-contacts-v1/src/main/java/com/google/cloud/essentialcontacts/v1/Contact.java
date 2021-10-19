@@ -566,10 +566,10 @@ public final class Contact extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
     getSerializedSize();
-    if (!getNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name_);
     }
-    if (!getEmailBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(email_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, email_);
     }
     if (getNotificationCategorySubscriptionsList().size() > 0) {
@@ -579,7 +579,7 @@ public final class Contact extends com.google.protobuf.GeneratedMessageV3
     for (int i = 0; i < notificationCategorySubscriptions_.size(); i++) {
       output.writeEnumNoTag(notificationCategorySubscriptions_.get(i));
     }
-    if (!getLanguageTagBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(languageTag_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 4, languageTag_);
     }
     if (validationState_
@@ -599,10 +599,10 @@ public final class Contact extends com.google.protobuf.GeneratedMessageV3
     if (size != -1) return size;
 
     size = 0;
-    if (!getNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, name_);
     }
-    if (!getEmailBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(email_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, email_);
     }
     {
@@ -619,7 +619,7 @@ public final class Contact extends com.google.protobuf.GeneratedMessageV3
       }
       notificationCategorySubscriptionsMemoizedSerializedSize = dataSize;
     }
-    if (!getLanguageTagBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(languageTag_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, languageTag_);
     }
     if (validationState_
