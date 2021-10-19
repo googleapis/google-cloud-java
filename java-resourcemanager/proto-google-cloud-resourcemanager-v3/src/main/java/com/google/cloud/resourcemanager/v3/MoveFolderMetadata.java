@@ -288,13 +288,13 @@ public final class MoveFolderMetadata extends com.google.protobuf.GeneratedMessa
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getDisplayNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(displayName_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, displayName_);
     }
-    if (!getSourceParentBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(sourceParent_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, sourceParent_);
     }
-    if (!getDestinationParentBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(destinationParent_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, destinationParent_);
     }
     unknownFields.writeTo(output);
@@ -306,13 +306,13 @@ public final class MoveFolderMetadata extends com.google.protobuf.GeneratedMessa
     if (size != -1) return size;
 
     size = 0;
-    if (!getDisplayNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(displayName_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, displayName_);
     }
-    if (!getSourceParentBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(sourceParent_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, sourceParent_);
     }
-    if (!getDestinationParentBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(destinationParent_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, destinationParent_);
     }
     size += unknownFields.getSerializedSize();
