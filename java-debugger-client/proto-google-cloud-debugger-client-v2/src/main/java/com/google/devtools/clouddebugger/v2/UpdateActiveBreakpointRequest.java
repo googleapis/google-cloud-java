@@ -250,7 +250,7 @@ public final class UpdateActiveBreakpointRequest extends com.google.protobuf.Gen
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getDebuggeeIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(debuggeeId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, debuggeeId_);
     }
     if (breakpoint_ != null) {
@@ -265,7 +265,7 @@ public final class UpdateActiveBreakpointRequest extends com.google.protobuf.Gen
     if (size != -1) return size;
 
     size = 0;
-    if (!getDebuggeeIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(debuggeeId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, debuggeeId_);
     }
     if (breakpoint_ != null) {

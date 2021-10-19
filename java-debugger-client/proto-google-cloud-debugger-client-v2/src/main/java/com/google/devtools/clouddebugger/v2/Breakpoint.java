@@ -1618,13 +1618,13 @@ public final class Breakpoint extends com.google.protobuf.GeneratedMessageV3
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(id_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, id_);
     }
     if (location_ != null) {
       output.writeMessage(2, getLocation());
     }
-    if (!getConditionBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(condition_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, condition_);
     }
     for (int i = 0; i < expressions_.size(); i++) {
@@ -1654,13 +1654,13 @@ public final class Breakpoint extends com.google.protobuf.GeneratedMessageV3
     if (action_ != com.google.devtools.clouddebugger.v2.Breakpoint.Action.CAPTURE.getNumber()) {
       output.writeEnum(13, action_);
     }
-    if (!getLogMessageFormatBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(logMessageFormat_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 14, logMessageFormat_);
     }
     if (logLevel_ != com.google.devtools.clouddebugger.v2.Breakpoint.LogLevel.INFO.getNumber()) {
       output.writeEnum(15, logLevel_);
     }
-    if (!getUserEmailBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(userEmail_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 16, userEmail_);
     }
     com.google.protobuf.GeneratedMessageV3.serializeStringMapTo(
@@ -1674,13 +1674,13 @@ public final class Breakpoint extends com.google.protobuf.GeneratedMessageV3
     if (size != -1) return size;
 
     size = 0;
-    if (!getIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(id_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, id_);
     }
     if (location_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, getLocation());
     }
-    if (!getConditionBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(condition_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, condition_);
     }
     {
@@ -1716,13 +1716,13 @@ public final class Breakpoint extends com.google.protobuf.GeneratedMessageV3
     if (action_ != com.google.devtools.clouddebugger.v2.Breakpoint.Action.CAPTURE.getNumber()) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(13, action_);
     }
-    if (!getLogMessageFormatBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(logMessageFormat_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(14, logMessageFormat_);
     }
     if (logLevel_ != com.google.devtools.clouddebugger.v2.Breakpoint.LogLevel.INFO.getNumber()) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(15, logLevel_);
     }
-    if (!getUserEmailBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(userEmail_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(16, userEmail_);
     }
     for (java.util.Map.Entry<java.lang.String, java.lang.String> entry :

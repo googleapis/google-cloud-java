@@ -306,13 +306,13 @@ public final class SetBreakpointRequest extends com.google.protobuf.GeneratedMes
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getDebuggeeIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(debuggeeId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, debuggeeId_);
     }
     if (breakpoint_ != null) {
       output.writeMessage(2, getBreakpoint());
     }
-    if (!getClientVersionBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(clientVersion_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 4, clientVersion_);
     }
     unknownFields.writeTo(output);
@@ -324,13 +324,13 @@ public final class SetBreakpointRequest extends com.google.protobuf.GeneratedMes
     if (size != -1) return size;
 
     size = 0;
-    if (!getDebuggeeIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(debuggeeId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, debuggeeId_);
     }
     if (breakpoint_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, getBreakpoint());
     }
-    if (!getClientVersionBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(clientVersion_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, clientVersion_);
     }
     size += unknownFields.getSerializedSize();

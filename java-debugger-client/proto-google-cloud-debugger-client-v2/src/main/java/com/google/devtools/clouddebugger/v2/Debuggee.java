@@ -871,22 +871,22 @@ public final class Debuggee extends com.google.protobuf.GeneratedMessageV3
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(id_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, id_);
     }
-    if (!getProjectBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(project_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, project_);
     }
-    if (!getUniquifierBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(uniquifier_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, uniquifier_);
     }
-    if (!getDescriptionBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(description_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 4, description_);
     }
     if (isInactive_ != false) {
       output.writeBool(5, isInactive_);
     }
-    if (!getAgentVersionBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(agentVersion_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 6, agentVersion_);
     }
     if (isDisabled_ != false) {
@@ -912,22 +912,22 @@ public final class Debuggee extends com.google.protobuf.GeneratedMessageV3
     if (size != -1) return size;
 
     size = 0;
-    if (!getIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(id_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, id_);
     }
-    if (!getProjectBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(project_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, project_);
     }
-    if (!getUniquifierBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(uniquifier_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, uniquifier_);
     }
-    if (!getDescriptionBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(description_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, description_);
     }
     if (isInactive_ != false) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(5, isInactive_);
     }
-    if (!getAgentVersionBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(agentVersion_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, agentVersion_);
     }
     if (isDisabled_ != false) {

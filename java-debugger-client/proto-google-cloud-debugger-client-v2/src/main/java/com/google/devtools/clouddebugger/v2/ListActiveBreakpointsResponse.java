@@ -296,7 +296,7 @@ public final class ListActiveBreakpointsResponse extends com.google.protobuf.Gen
     for (int i = 0; i < breakpoints_.size(); i++) {
       output.writeMessage(1, breakpoints_.get(i));
     }
-    if (!getNextWaitTokenBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(nextWaitToken_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, nextWaitToken_);
     }
     if (waitExpired_ != false) {
@@ -314,7 +314,7 @@ public final class ListActiveBreakpointsResponse extends com.google.protobuf.Gen
     for (int i = 0; i < breakpoints_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, breakpoints_.get(i));
     }
-    if (!getNextWaitTokenBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(nextWaitToken_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, nextWaitToken_);
     }
     if (waitExpired_ != false) {
