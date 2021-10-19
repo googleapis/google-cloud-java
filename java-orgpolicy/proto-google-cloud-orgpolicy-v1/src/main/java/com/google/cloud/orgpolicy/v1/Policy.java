@@ -1131,7 +1131,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
               .getNumber()) {
         output.writeEnum(3, allValues_);
       }
-      if (!getSuggestedValueBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(suggestedValue_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 4, suggestedValue_);
       }
       if (inheritFromParent_ != false) {
@@ -1167,7 +1167,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
               .getNumber()) {
         size += com.google.protobuf.CodedOutputStream.computeEnumSize(3, allValues_);
       }
-      if (!getSuggestedValueBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(suggestedValue_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, suggestedValue_);
       }
       if (inheritFromParent_ != false) {
@@ -4061,7 +4061,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
     if (version_ != 0) {
       output.writeInt32(1, version_);
     }
-    if (!getConstraintBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(constraint_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, constraint_);
     }
     if (!etag_.isEmpty()) {
@@ -4091,7 +4091,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
     if (version_ != 0) {
       size += com.google.protobuf.CodedOutputStream.computeInt32Size(1, version_);
     }
-    if (!getConstraintBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(constraint_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, constraint_);
     }
     if (!etag_.isEmpty()) {
