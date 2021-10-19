@@ -204,7 +204,7 @@ public final class ResourceOptions extends com.google.protobuf.GeneratedMessageV
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getConnectVersionBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(connectVersion_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, connectVersion_);
     }
     if (v1Beta1Crd_ != false) {
@@ -219,7 +219,7 @@ public final class ResourceOptions extends com.google.protobuf.GeneratedMessageV
     if (size != -1) return size;
 
     size = 0;
-    if (!getConnectVersionBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(connectVersion_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, connectVersion_);
     }
     if (v1Beta1Crd_ != false) {

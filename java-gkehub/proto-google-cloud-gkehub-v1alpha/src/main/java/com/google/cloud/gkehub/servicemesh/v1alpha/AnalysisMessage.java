@@ -407,7 +407,7 @@ public final class AnalysisMessage extends com.google.protobuf.GeneratedMessageV
     if (messageBase_ != null) {
       output.writeMessage(1, getMessageBase());
     }
-    if (!getDescriptionBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(description_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, description_);
     }
     for (int i = 0; i < resourcePaths_.size(); i++) {
@@ -428,7 +428,7 @@ public final class AnalysisMessage extends com.google.protobuf.GeneratedMessageV
     if (messageBase_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, getMessageBase());
     }
-    if (!getDescriptionBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(description_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, description_);
     }
     {

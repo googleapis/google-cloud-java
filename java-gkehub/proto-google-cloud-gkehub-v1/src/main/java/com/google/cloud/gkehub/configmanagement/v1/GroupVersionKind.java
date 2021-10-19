@@ -288,13 +288,13 @@ public final class GroupVersionKind extends com.google.protobuf.GeneratedMessage
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getGroupBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(group_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, group_);
     }
-    if (!getVersionBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(version_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, version_);
     }
-    if (!getKindBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(kind_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, kind_);
     }
     unknownFields.writeTo(output);
@@ -306,13 +306,13 @@ public final class GroupVersionKind extends com.google.protobuf.GeneratedMessage
     if (size != -1) return size;
 
     size = 0;
-    if (!getGroupBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(group_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, group_);
     }
-    if (!getVersionBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(version_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, version_);
     }
-    if (!getKindBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(kind_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, kind_);
     }
     size += unknownFields.getSerializedSize();

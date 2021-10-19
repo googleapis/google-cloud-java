@@ -384,10 +384,10 @@ public final class KubernetesMetadata extends com.google.protobuf.GeneratedMessa
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getKubernetesApiServerVersionBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(kubernetesApiServerVersion_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, kubernetesApiServerVersion_);
     }
-    if (!getNodeProviderIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(nodeProviderId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, nodeProviderId_);
     }
     if (nodeCount_ != 0) {
@@ -411,11 +411,11 @@ public final class KubernetesMetadata extends com.google.protobuf.GeneratedMessa
     if (size != -1) return size;
 
     size = 0;
-    if (!getKubernetesApiServerVersionBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(kubernetesApiServerVersion_)) {
       size +=
           com.google.protobuf.GeneratedMessageV3.computeStringSize(1, kubernetesApiServerVersion_);
     }
-    if (!getNodeProviderIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(nodeProviderId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, nodeProviderId_);
     }
     if (nodeCount_ != 0) {

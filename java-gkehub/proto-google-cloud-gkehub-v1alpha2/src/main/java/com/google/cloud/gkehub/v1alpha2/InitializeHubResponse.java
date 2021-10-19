@@ -237,10 +237,10 @@ public final class InitializeHubResponse extends com.google.protobuf.GeneratedMe
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getServiceIdentityBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(serviceIdentity_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, serviceIdentity_);
     }
-    if (!getWorkloadIdentityPoolBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(workloadIdentityPool_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, workloadIdentityPool_);
     }
     unknownFields.writeTo(output);
@@ -252,10 +252,10 @@ public final class InitializeHubResponse extends com.google.protobuf.GeneratedMe
     if (size != -1) return size;
 
     size = 0;
-    if (!getServiceIdentityBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(serviceIdentity_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, serviceIdentity_);
     }
-    if (!getWorkloadIdentityPoolBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(workloadIdentityPool_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, workloadIdentityPool_);
     }
     size += unknownFields.getSerializedSize();

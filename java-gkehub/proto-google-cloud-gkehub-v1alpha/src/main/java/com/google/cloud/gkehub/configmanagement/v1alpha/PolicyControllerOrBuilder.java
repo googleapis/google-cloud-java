@@ -45,7 +45,7 @@ public interface PolicyControllerOrBuilder
    * Installs the default template library along with Policy Controller.
    * </pre>
    *
-   * <code>bool template_library_installed = 2;</code>
+   * <code>optional bool template_library_installed = 2;</code>
    *
    * @return Whether the templateLibraryInstalled field is set.
    */
@@ -57,7 +57,7 @@ public interface PolicyControllerOrBuilder
    * Installs the default template library along with Policy Controller.
    * </pre>
    *
-   * <code>bool template_library_installed = 2;</code>
+   * <code>optional bool template_library_installed = 2;</code>
    *
    * @return The templateLibraryInstalled.
    */
@@ -71,7 +71,7 @@ public interface PolicyControllerOrBuilder
    * When set to 0, this disables audit functionality altogether.
    * </pre>
    *
-   * <code>int64 audit_interval_seconds = 3;</code>
+   * <code>optional int64 audit_interval_seconds = 3;</code>
    *
    * @return Whether the auditIntervalSeconds field is set.
    */
@@ -84,7 +84,7 @@ public interface PolicyControllerOrBuilder
    * When set to 0, this disables audit functionality altogether.
    * </pre>
    *
-   * <code>int64 audit_interval_seconds = 3;</code>
+   * <code>optional int64 audit_interval_seconds = 3;</code>
    *
    * @return The auditIntervalSeconds.
    */

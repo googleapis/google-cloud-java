@@ -459,22 +459,22 @@ public final class ConfigSyncVersion extends com.google.protobuf.GeneratedMessag
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getImporterBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(importer_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, importer_);
     }
-    if (!getSyncerBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(syncer_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, syncer_);
     }
-    if (!getGitSyncBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(gitSync_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, gitSync_);
     }
-    if (!getMonitorBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(monitor_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 4, monitor_);
     }
-    if (!getReconcilerManagerBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(reconcilerManager_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 5, reconcilerManager_);
     }
-    if (!getRootReconcilerBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(rootReconciler_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 6, rootReconciler_);
     }
     unknownFields.writeTo(output);
@@ -486,22 +486,22 @@ public final class ConfigSyncVersion extends com.google.protobuf.GeneratedMessag
     if (size != -1) return size;
 
     size = 0;
-    if (!getImporterBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(importer_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, importer_);
     }
-    if (!getSyncerBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(syncer_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, syncer_);
     }
-    if (!getGitSyncBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(gitSync_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, gitSync_);
     }
-    if (!getMonitorBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(monitor_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, monitor_);
     }
-    if (!getReconcilerManagerBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(reconcilerManager_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, reconcilerManager_);
     }
-    if (!getRootReconcilerBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(rootReconciler_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, rootReconciler_);
     }
     size += unknownFields.getSerializedSize();

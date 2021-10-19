@@ -543,28 +543,28 @@ public final class GitConfig extends com.google.protobuf.GeneratedMessageV3
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getSyncRepoBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(syncRepo_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, syncRepo_);
     }
-    if (!getSyncBranchBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(syncBranch_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, syncBranch_);
     }
-    if (!getPolicyDirBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(policyDir_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, policyDir_);
     }
     if (syncWaitSecs_ != 0L) {
       output.writeInt64(4, syncWaitSecs_);
     }
-    if (!getSyncRevBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(syncRev_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 5, syncRev_);
     }
-    if (!getSecretTypeBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(secretType_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 6, secretType_);
     }
-    if (!getHttpsProxyBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(httpsProxy_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 7, httpsProxy_);
     }
-    if (!getGcpServiceAccountEmailBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(gcpServiceAccountEmail_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 8, gcpServiceAccountEmail_);
     }
     unknownFields.writeTo(output);
@@ -576,28 +576,28 @@ public final class GitConfig extends com.google.protobuf.GeneratedMessageV3
     if (size != -1) return size;
 
     size = 0;
-    if (!getSyncRepoBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(syncRepo_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, syncRepo_);
     }
-    if (!getSyncBranchBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(syncBranch_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, syncBranch_);
     }
-    if (!getPolicyDirBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(policyDir_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, policyDir_);
     }
     if (syncWaitSecs_ != 0L) {
       size += com.google.protobuf.CodedOutputStream.computeInt64Size(4, syncWaitSecs_);
     }
-    if (!getSyncRevBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(syncRev_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, syncRev_);
     }
-    if (!getSecretTypeBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(secretType_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, secretType_);
     }
-    if (!getHttpsProxyBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(httpsProxy_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, httpsProxy_);
     }
-    if (!getGcpServiceAccountEmailBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(gcpServiceAccountEmail_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, gcpServiceAccountEmail_);
     }
     size += unknownFields.getSerializedSize();

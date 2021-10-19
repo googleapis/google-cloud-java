@@ -609,10 +609,10 @@ public final class AnalysisMessageBase extends com.google.protobuf.GeneratedMess
 
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-      if (!getDisplayNameBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(displayName_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, displayName_);
       }
-      if (!getCodeBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(code_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, code_);
       }
       unknownFields.writeTo(output);
@@ -624,10 +624,10 @@ public final class AnalysisMessageBase extends com.google.protobuf.GeneratedMess
       if (size != -1) return size;
 
       size = 0;
-      if (!getDisplayNameBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(displayName_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, displayName_);
       }
-      if (!getCodeBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(code_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, code_);
       }
       size += unknownFields.getSerializedSize();
@@ -1394,7 +1394,7 @@ public final class AnalysisMessageBase extends com.google.protobuf.GeneratedMess
             .getNumber()) {
       output.writeEnum(2, level_);
     }
-    if (!getDocumentationUrlBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(documentationUrl_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, documentationUrl_);
     }
     unknownFields.writeTo(output);
@@ -1414,7 +1414,7 @@ public final class AnalysisMessageBase extends com.google.protobuf.GeneratedMess
             .getNumber()) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(2, level_);
     }
-    if (!getDocumentationUrlBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(documentationUrl_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, documentationUrl_);
     }
     size += unknownFields.getSerializedSize();

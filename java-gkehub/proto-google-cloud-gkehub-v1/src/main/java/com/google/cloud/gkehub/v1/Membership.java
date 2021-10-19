@@ -1031,12 +1031,12 @@ public final class Membership extends com.google.protobuf.GeneratedMessageV3
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name_);
     }
     com.google.protobuf.GeneratedMessageV3.serializeStringMapTo(
         output, internalGetLabels(), LabelsDefaultEntryHolder.defaultEntry, 2);
-    if (!getDescriptionBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(description_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, description_);
     }
     if (typeCase_ == 4) {
@@ -1054,13 +1054,13 @@ public final class Membership extends com.google.protobuf.GeneratedMessageV3
     if (deleteTime_ != null) {
       output.writeMessage(8, getDeleteTime());
     }
-    if (!getExternalIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(externalId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 9, externalId_);
     }
     if (lastConnectionTime_ != null) {
       output.writeMessage(10, getLastConnectionTime());
     }
-    if (!getUniqueIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(uniqueId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 11, uniqueId_);
     }
     if (authority_ != null) {
@@ -1075,7 +1075,7 @@ public final class Membership extends com.google.protobuf.GeneratedMessageV3
     if (size != -1) return size;
 
     size = 0;
-    if (!getNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, name_);
     }
     for (java.util.Map.Entry<java.lang.String, java.lang.String> entry :
@@ -1088,7 +1088,7 @@ public final class Membership extends com.google.protobuf.GeneratedMessageV3
               .build();
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, labels__);
     }
-    if (!getDescriptionBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(description_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, description_);
     }
     if (typeCase_ == 4) {
@@ -1108,13 +1108,13 @@ public final class Membership extends com.google.protobuf.GeneratedMessageV3
     if (deleteTime_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(8, getDeleteTime());
     }
-    if (!getExternalIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(externalId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(9, externalId_);
     }
     if (lastConnectionTime_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(10, getLastConnectionTime());
     }
-    if (!getUniqueIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(uniqueId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(11, uniqueId_);
     }
     if (authority_ != null) {

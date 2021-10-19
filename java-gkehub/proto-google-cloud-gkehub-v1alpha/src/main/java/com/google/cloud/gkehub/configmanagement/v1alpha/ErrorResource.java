@@ -355,13 +355,13 @@ public final class ErrorResource extends com.google.protobuf.GeneratedMessageV3
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getSourcePathBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(sourcePath_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, sourcePath_);
     }
-    if (!getResourceNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(resourceName_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, resourceName_);
     }
-    if (!getResourceNamespaceBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(resourceNamespace_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, resourceNamespace_);
     }
     if (resourceGvk_ != null) {
@@ -376,13 +376,13 @@ public final class ErrorResource extends com.google.protobuf.GeneratedMessageV3
     if (size != -1) return size;
 
     size = 0;
-    if (!getSourcePathBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(sourcePath_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, sourcePath_);
     }
-    if (!getResourceNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(resourceName_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, resourceName_);
     }
-    if (!getResourceNamespaceBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(resourceNamespace_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, resourceNamespace_);
     }
     if (resourceGvk_ != null) {

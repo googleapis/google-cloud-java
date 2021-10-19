@@ -201,7 +201,7 @@ public final class ResourceManifest extends com.google.protobuf.GeneratedMessage
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getManifestBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(manifest_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, manifest_);
     }
     if (clusterScoped_ != false) {
@@ -216,7 +216,7 @@ public final class ResourceManifest extends com.google.protobuf.GeneratedMessage
     if (size != -1) return size;
 
     size = 0;
-    if (!getManifestBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(manifest_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, manifest_);
     }
     if (clusterScoped_ != false) {

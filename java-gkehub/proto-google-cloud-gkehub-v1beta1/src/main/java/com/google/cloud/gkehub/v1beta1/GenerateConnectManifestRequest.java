@@ -413,19 +413,19 @@ public final class GenerateConnectManifestRequest extends com.google.protobuf.Ge
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name_);
     }
     if (connectAgent_ != null) {
       output.writeMessage(2, getConnectAgent());
     }
-    if (!getVersionBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(version_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, version_);
     }
     if (isUpgrade_ != false) {
       output.writeBool(4, isUpgrade_);
     }
-    if (!getRegistryBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(registry_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 5, registry_);
     }
     if (!imagePullSecretContent_.isEmpty()) {
@@ -440,19 +440,19 @@ public final class GenerateConnectManifestRequest extends com.google.protobuf.Ge
     if (size != -1) return size;
 
     size = 0;
-    if (!getNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, name_);
     }
     if (connectAgent_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, getConnectAgent());
     }
-    if (!getVersionBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(version_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, version_);
     }
     if (isUpgrade_ != false) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(4, isUpgrade_);
     }
-    if (!getRegistryBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(registry_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, registry_);
     }
     if (!imagePullSecretContent_.isEmpty()) {

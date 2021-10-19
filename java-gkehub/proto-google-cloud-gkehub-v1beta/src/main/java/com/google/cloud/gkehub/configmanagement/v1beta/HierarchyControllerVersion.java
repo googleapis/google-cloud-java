@@ -232,10 +232,10 @@ public final class HierarchyControllerVersion extends com.google.protobuf.Genera
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getHncBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(hnc_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, hnc_);
     }
-    if (!getExtensionBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(extension_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, extension_);
     }
     unknownFields.writeTo(output);
@@ -247,10 +247,10 @@ public final class HierarchyControllerVersion extends com.google.protobuf.Genera
     if (size != -1) return size;
 
     size = 0;
-    if (!getHncBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(hnc_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, hnc_);
     }
-    if (!getExtensionBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(extension_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, extension_);
     }
     size += unknownFields.getSerializedSize();

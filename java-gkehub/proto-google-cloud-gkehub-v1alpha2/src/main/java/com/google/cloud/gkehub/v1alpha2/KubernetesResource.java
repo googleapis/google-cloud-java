@@ -508,7 +508,7 @@ public final class KubernetesResource extends com.google.protobuf.GeneratedMessa
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getMembershipCrManifestBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(membershipCrManifest_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, membershipCrManifest_);
     }
     for (int i = 0; i < membershipResources_.size(); i++) {
@@ -529,7 +529,7 @@ public final class KubernetesResource extends com.google.protobuf.GeneratedMessa
     if (size != -1) return size;
 
     size = 0;
-    if (!getMembershipCrManifestBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(membershipCrManifest_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, membershipCrManifest_);
     }
     for (int i = 0; i < membershipResources_.size(); i++) {
