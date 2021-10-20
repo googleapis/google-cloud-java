@@ -1892,22 +1892,22 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name_);
     }
-    if (!getAssetTypeBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(assetType_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, assetType_);
     }
-    if (!getProjectBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(project_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, project_);
     }
-    if (!getDisplayNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(displayName_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 4, displayName_);
     }
-    if (!getDescriptionBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(description_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 5, description_);
     }
-    if (!getLocationBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(location_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 6, location_);
     }
     com.google.protobuf.GeneratedMessageV3.serializeStringMapTo(
@@ -1918,7 +1918,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
     if (additionalAttributes_ != null) {
       output.writeMessage(9, getAdditionalAttributes());
     }
-    if (!getKmsKeyBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(kmsKey_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 10, kmsKey_);
     }
     if (createTime_ != null) {
@@ -1927,7 +1927,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
     if (updateTime_ != null) {
       output.writeMessage(12, getUpdateTime());
     }
-    if (!getStateBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(state_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 13, state_);
     }
     for (int i = 0; i < versionedResources_.size(); i++) {
@@ -1936,10 +1936,10 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
     for (int i = 0; i < folders_.size(); i++) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 17, folders_.getRaw(i));
     }
-    if (!getOrganizationBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(organization_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 18, organization_);
     }
-    if (!getParentFullResourceNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(parentFullResourceName_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 19, parentFullResourceName_);
     }
     for (int i = 0; i < attachedResources_.size(); i++) {
@@ -1947,7 +1947,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
     }
     com.google.protobuf.GeneratedMessageV3.serializeStringMapTo(
         output, internalGetRelationships(), RelationshipsDefaultEntryHolder.defaultEntry, 21);
-    if (!getParentAssetTypeBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(parentAssetType_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 103, parentAssetType_);
     }
     unknownFields.writeTo(output);
@@ -1959,22 +1959,22 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
     if (size != -1) return size;
 
     size = 0;
-    if (!getNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, name_);
     }
-    if (!getAssetTypeBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(assetType_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, assetType_);
     }
-    if (!getProjectBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(project_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, project_);
     }
-    if (!getDisplayNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(displayName_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, displayName_);
     }
-    if (!getDescriptionBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(description_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, description_);
     }
-    if (!getLocationBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(location_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, location_);
     }
     for (java.util.Map.Entry<java.lang.String, java.lang.String> entry :
@@ -1999,7 +1999,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(9, getAdditionalAttributes());
     }
-    if (!getKmsKeyBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(kmsKey_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(10, kmsKey_);
     }
     if (createTime_ != null) {
@@ -2008,7 +2008,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
     if (updateTime_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(12, getUpdateTime());
     }
-    if (!getStateBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(state_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(13, state_);
     }
     for (int i = 0; i < versionedResources_.size(); i++) {
@@ -2023,10 +2023,10 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
       size += dataSize;
       size += 2 * getFoldersList().size();
     }
-    if (!getOrganizationBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(organization_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(18, organization_);
     }
-    if (!getParentFullResourceNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(parentFullResourceName_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(19, parentFullResourceName_);
     }
     for (int i = 0; i < attachedResources_.size(); i++) {
@@ -2044,7 +2044,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
                   .build();
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(21, relationships__);
     }
-    if (!getParentAssetTypeBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(parentAssetType_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(103, parentAssetType_);
     }
     size += unknownFields.getSerializedSize();

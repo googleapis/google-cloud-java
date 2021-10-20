@@ -2508,10 +2508,10 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getResourceBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(resource_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, resource_);
     }
-    if (!getProjectBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(project_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, project_);
     }
     if (policy_ != null) {
@@ -2520,13 +2520,13 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
     if (explanation_ != null) {
       output.writeMessage(4, getExplanation());
     }
-    if (!getAssetTypeBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(assetType_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 5, assetType_);
     }
     for (int i = 0; i < folders_.size(); i++) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 6, folders_.getRaw(i));
     }
-    if (!getOrganizationBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(organization_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 7, organization_);
     }
     unknownFields.writeTo(output);
@@ -2538,10 +2538,10 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
     if (size != -1) return size;
 
     size = 0;
-    if (!getResourceBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(resource_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, resource_);
     }
-    if (!getProjectBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(project_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, project_);
     }
     if (policy_ != null) {
@@ -2550,7 +2550,7 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
     if (explanation_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(4, getExplanation());
     }
-    if (!getAssetTypeBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(assetType_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, assetType_);
     }
     {
@@ -2561,7 +2561,7 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
       size += dataSize;
       size += 1 * getFoldersList().size();
     }
-    if (!getOrganizationBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(organization_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, organization_);
     }
     size += unknownFields.getSerializedSize();

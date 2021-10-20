@@ -231,7 +231,7 @@ public final class IamPolicyAnalysisState extends com.google.protobuf.GeneratedM
     if (code_ != com.google.rpc.Code.OK.getNumber()) {
       output.writeEnum(1, code_);
     }
-    if (!getCauseBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(cause_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, cause_);
     }
     unknownFields.writeTo(output);
@@ -246,7 +246,7 @@ public final class IamPolicyAnalysisState extends com.google.protobuf.GeneratedM
     if (code_ != com.google.rpc.Code.OK.getNumber()) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(1, code_);
     }
-    if (!getCauseBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(cause_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, cause_);
     }
     size += unknownFields.getSerializedSize();

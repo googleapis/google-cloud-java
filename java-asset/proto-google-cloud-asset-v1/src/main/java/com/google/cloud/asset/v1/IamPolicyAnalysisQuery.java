@@ -400,7 +400,7 @@ public final class IamPolicyAnalysisQuery extends com.google.protobuf.GeneratedM
 
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-      if (!getFullResourceNameBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(fullResourceName_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, fullResourceName_);
       }
       unknownFields.writeTo(output);
@@ -412,7 +412,7 @@ public final class IamPolicyAnalysisQuery extends com.google.protobuf.GeneratedM
       if (size != -1) return size;
 
       size = 0;
-      if (!getFullResourceNameBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(fullResourceName_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, fullResourceName_);
       }
       size += unknownFields.getSerializedSize();
@@ -1119,7 +1119,7 @@ public final class IamPolicyAnalysisQuery extends com.google.protobuf.GeneratedM
 
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-      if (!getIdentityBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(identity_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, identity_);
       }
       unknownFields.writeTo(output);
@@ -1131,7 +1131,7 @@ public final class IamPolicyAnalysisQuery extends com.google.protobuf.GeneratedM
       if (size != -1) return size;
 
       size = 0;
-      if (!getIdentityBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(identity_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, identity_);
       }
       size += unknownFields.getSerializedSize();
@@ -5349,7 +5349,7 @@ public final class IamPolicyAnalysisQuery extends com.google.protobuf.GeneratedM
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getScopeBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(scope_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, scope_);
     }
     if (resourceSelector_ != null) {
@@ -5376,7 +5376,7 @@ public final class IamPolicyAnalysisQuery extends com.google.protobuf.GeneratedM
     if (size != -1) return size;
 
     size = 0;
-    if (!getScopeBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(scope_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, scope_);
     }
     if (resourceSelector_ != null) {

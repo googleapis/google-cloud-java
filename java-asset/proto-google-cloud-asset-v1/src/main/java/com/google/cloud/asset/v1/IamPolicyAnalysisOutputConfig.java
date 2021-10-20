@@ -364,7 +364,7 @@ public final class IamPolicyAnalysisOutputConfig extends com.google.protobuf.Gen
 
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-      if (!getUriBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(uri_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, uri_);
       }
       unknownFields.writeTo(output);
@@ -376,7 +376,7 @@ public final class IamPolicyAnalysisOutputConfig extends com.google.protobuf.Gen
       if (size != -1) return size;
 
       size = 0;
-      if (!getUriBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(uri_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, uri_);
       }
       size += unknownFields.getSerializedSize();
@@ -1537,10 +1537,10 @@ public final class IamPolicyAnalysisOutputConfig extends com.google.protobuf.Gen
 
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-      if (!getDatasetBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(dataset_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, dataset_);
       }
-      if (!getTablePrefixBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(tablePrefix_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, tablePrefix_);
       }
       if (partitionKey_
@@ -1549,7 +1549,7 @@ public final class IamPolicyAnalysisOutputConfig extends com.google.protobuf.Gen
               .getNumber()) {
         output.writeEnum(3, partitionKey_);
       }
-      if (!getWriteDispositionBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(writeDisposition_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 4, writeDisposition_);
       }
       unknownFields.writeTo(output);
@@ -1561,10 +1561,10 @@ public final class IamPolicyAnalysisOutputConfig extends com.google.protobuf.Gen
       if (size != -1) return size;
 
       size = 0;
-      if (!getDatasetBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(dataset_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, dataset_);
       }
-      if (!getTablePrefixBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(tablePrefix_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, tablePrefix_);
       }
       if (partitionKey_
@@ -1573,7 +1573,7 @@ public final class IamPolicyAnalysisOutputConfig extends com.google.protobuf.Gen
               .getNumber()) {
         size += com.google.protobuf.CodedOutputStream.computeEnumSize(3, partitionKey_);
       }
-      if (!getWriteDispositionBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(writeDisposition_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, writeDisposition_);
       }
       size += unknownFields.getSerializedSize();
