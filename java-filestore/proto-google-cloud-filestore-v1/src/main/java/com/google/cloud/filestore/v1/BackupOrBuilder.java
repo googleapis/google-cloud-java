@@ -215,8 +215,8 @@ public interface BackupOrBuilder
    *
    *
    * <pre>
-   * Output only. The size of the storage used by the backup. As backups share storage,
-   * this number is expected to change with backup creation/deletion.
+   * Output only. The size of the storage used by the backup. As backups share
+   * storage, this number is expected to change with backup creation/deletion.
    * </pre>
    *
    * <code>int64 storage_bytes = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -285,8 +285,8 @@ public interface BackupOrBuilder
    *
    *
    * <pre>
-   * Output only. The service tier of the source Cloud Filestore instance that this backup
-   * is created from.
+   * Output only. The service tier of the source Cloud Filestore instance that
+   * this backup is created from.
    * </pre>
    *
    * <code>
@@ -300,8 +300,8 @@ public interface BackupOrBuilder
    *
    *
    * <pre>
-   * Output only. The service tier of the source Cloud Filestore instance that this backup
-   * is created from.
+   * Output only. The service tier of the source Cloud Filestore instance that
+   * this backup is created from.
    * </pre>
    *
    * <code>
@@ -316,9 +316,9 @@ public interface BackupOrBuilder
    *
    *
    * <pre>
-   * Output only. Amount of bytes that will be downloaded if the backup is restored. This
-   * may be different than storage bytes, since sequential backups of the same
-   * disk will share storage.
+   * Output only. Amount of bytes that will be downloaded if the backup is
+   * restored. This may be different than storage bytes, since sequential
+   * backups of the same disk will share storage.
    * </pre>
    *
    * <code>int64 download_bytes = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>

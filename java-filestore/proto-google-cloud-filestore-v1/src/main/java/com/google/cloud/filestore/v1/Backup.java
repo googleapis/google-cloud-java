@@ -737,8 +737,8 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. The size of the storage used by the backup. As backups share storage,
-   * this number is expected to change with backup creation/deletion.
+   * Output only. The size of the storage used by the backup. As backups share
+   * storage, this number is expected to change with backup creation/deletion.
    * </pre>
    *
    * <code>int64 storage_bytes = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -860,8 +860,8 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. The service tier of the source Cloud Filestore instance that this backup
-   * is created from.
+   * Output only. The service tier of the source Cloud Filestore instance that
+   * this backup is created from.
    * </pre>
    *
    * <code>
@@ -878,8 +878,8 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. The service tier of the source Cloud Filestore instance that this backup
-   * is created from.
+   * Output only. The service tier of the source Cloud Filestore instance that
+   * this backup is created from.
    * </pre>
    *
    * <code>
@@ -902,9 +902,9 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Amount of bytes that will be downloaded if the backup is restored. This
-   * may be different than storage bytes, since sequential backups of the same
-   * disk will share storage.
+   * Output only. Amount of bytes that will be downloaded if the backup is
+   * restored. This may be different than storage bytes, since sequential
+   * backups of the same disk will share storage.
    * </pre>
    *
    * <code>int64 download_bytes = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -984,10 +984,10 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name_);
     }
-    if (!getDescriptionBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(description_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, description_);
     }
     if (state_ != com.google.cloud.filestore.v1.Backup.State.STATE_UNSPECIFIED.getNumber()) {
@@ -1004,10 +1004,10 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
     if (storageBytes_ != 0L) {
       output.writeInt64(7, storageBytes_);
     }
-    if (!getSourceInstanceBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(sourceInstance_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 8, sourceInstance_);
     }
-    if (!getSourceFileShareBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(sourceFileShare_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 9, sourceFileShare_);
     }
     if (sourceInstanceTier_
@@ -1029,10 +1029,10 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
     if (size != -1) return size;
 
     size = 0;
-    if (!getNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, name_);
     }
-    if (!getDescriptionBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(description_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, description_);
     }
     if (state_ != com.google.cloud.filestore.v1.Backup.State.STATE_UNSPECIFIED.getNumber()) {
@@ -1057,10 +1057,10 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
     if (storageBytes_ != 0L) {
       size += com.google.protobuf.CodedOutputStream.computeInt64Size(7, storageBytes_);
     }
-    if (!getSourceInstanceBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(sourceInstance_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, sourceInstance_);
     }
-    if (!getSourceFileShareBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(sourceFileShare_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(9, sourceFileShare_);
     }
     if (sourceInstanceTier_
@@ -2246,8 +2246,8 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The size of the storage used by the backup. As backups share storage,
-     * this number is expected to change with backup creation/deletion.
+     * Output only. The size of the storage used by the backup. As backups share
+     * storage, this number is expected to change with backup creation/deletion.
      * </pre>
      *
      * <code>int64 storage_bytes = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -2262,8 +2262,8 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The size of the storage used by the backup. As backups share storage,
-     * this number is expected to change with backup creation/deletion.
+     * Output only. The size of the storage used by the backup. As backups share
+     * storage, this number is expected to change with backup creation/deletion.
      * </pre>
      *
      * <code>int64 storage_bytes = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -2281,8 +2281,8 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The size of the storage used by the backup. As backups share storage,
-     * this number is expected to change with backup creation/deletion.
+     * Output only. The size of the storage used by the backup. As backups share
+     * storage, this number is expected to change with backup creation/deletion.
      * </pre>
      *
      * <code>int64 storage_bytes = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -2528,8 +2528,8 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The service tier of the source Cloud Filestore instance that this backup
-     * is created from.
+     * Output only. The service tier of the source Cloud Filestore instance that
+     * this backup is created from.
      * </pre>
      *
      * <code>
@@ -2546,8 +2546,8 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The service tier of the source Cloud Filestore instance that this backup
-     * is created from.
+     * Output only. The service tier of the source Cloud Filestore instance that
+     * this backup is created from.
      * </pre>
      *
      * <code>
@@ -2567,8 +2567,8 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The service tier of the source Cloud Filestore instance that this backup
-     * is created from.
+     * Output only. The service tier of the source Cloud Filestore instance that
+     * this backup is created from.
      * </pre>
      *
      * <code>
@@ -2588,8 +2588,8 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The service tier of the source Cloud Filestore instance that this backup
-     * is created from.
+     * Output only. The service tier of the source Cloud Filestore instance that
+     * this backup is created from.
      * </pre>
      *
      * <code>
@@ -2612,8 +2612,8 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The service tier of the source Cloud Filestore instance that this backup
-     * is created from.
+     * Output only. The service tier of the source Cloud Filestore instance that
+     * this backup is created from.
      * </pre>
      *
      * <code>
@@ -2634,9 +2634,9 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Amount of bytes that will be downloaded if the backup is restored. This
-     * may be different than storage bytes, since sequential backups of the same
-     * disk will share storage.
+     * Output only. Amount of bytes that will be downloaded if the backup is
+     * restored. This may be different than storage bytes, since sequential
+     * backups of the same disk will share storage.
      * </pre>
      *
      * <code>int64 download_bytes = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -2651,9 +2651,9 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Amount of bytes that will be downloaded if the backup is restored. This
-     * may be different than storage bytes, since sequential backups of the same
-     * disk will share storage.
+     * Output only. Amount of bytes that will be downloaded if the backup is
+     * restored. This may be different than storage bytes, since sequential
+     * backups of the same disk will share storage.
      * </pre>
      *
      * <code>int64 download_bytes = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -2671,9 +2671,9 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Amount of bytes that will be downloaded if the backup is restored. This
-     * may be different than storage bytes, since sequential backups of the same
-     * disk will share storage.
+     * Output only. Amount of bytes that will be downloaded if the backup is
+     * restored. This may be different than storage bytes, since sequential
+     * backups of the same disk will share storage.
      * </pre>
      *
      * <code>int64 download_bytes = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>

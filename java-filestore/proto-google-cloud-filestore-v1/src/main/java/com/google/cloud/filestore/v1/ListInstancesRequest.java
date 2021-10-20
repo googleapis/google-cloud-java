@@ -146,9 +146,9 @@ public final class ListInstancesRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Required. The project and location for which to retrieve instance information,
-   * in the format `projects/{project_id}/locations/{location}`. In Cloud
-   * Filestore, locations map to GCP zones, for example **us-west1-b**. To
+   * Required. The project and location for which to retrieve instance
+   * information, in the format `projects/{project_id}/locations/{location}`. In
+   * Cloud Filestore, locations map to GCP zones, for example **us-west1-b**. To
    * retrieve instance information for all locations, use "-" for the
    * `{location}` value.
    * </pre>
@@ -175,9 +175,9 @@ public final class ListInstancesRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Required. The project and location for which to retrieve instance information,
-   * in the format `projects/{project_id}/locations/{location}`. In Cloud
-   * Filestore, locations map to GCP zones, for example **us-west1-b**. To
+   * Required. The project and location for which to retrieve instance
+   * information, in the format `projects/{project_id}/locations/{location}`. In
+   * Cloud Filestore, locations map to GCP zones, for example **us-west1-b**. To
    * retrieve instance information for all locations, use "-" for the
    * `{location}` value.
    * </pre>
@@ -382,19 +382,19 @@ public final class ListInstancesRequest extends com.google.protobuf.GeneratedMes
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getParentBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(parent_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, parent_);
     }
     if (pageSize_ != 0) {
       output.writeInt32(2, pageSize_);
     }
-    if (!getPageTokenBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(pageToken_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, pageToken_);
     }
-    if (!getOrderByBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(orderBy_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 4, orderBy_);
     }
-    if (!getFilterBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(filter_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 5, filter_);
     }
     unknownFields.writeTo(output);
@@ -406,19 +406,19 @@ public final class ListInstancesRequest extends com.google.protobuf.GeneratedMes
     if (size != -1) return size;
 
     size = 0;
-    if (!getParentBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(parent_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, parent_);
     }
     if (pageSize_ != 0) {
       size += com.google.protobuf.CodedOutputStream.computeInt32Size(2, pageSize_);
     }
-    if (!getPageTokenBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(pageToken_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, pageToken_);
     }
-    if (!getOrderByBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(orderBy_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, orderBy_);
     }
-    if (!getFilterBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(filter_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, filter_);
     }
     size += unknownFields.getSerializedSize();
@@ -754,9 +754,9 @@ public final class ListInstancesRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Required. The project and location for which to retrieve instance information,
-     * in the format `projects/{project_id}/locations/{location}`. In Cloud
-     * Filestore, locations map to GCP zones, for example **us-west1-b**. To
+     * Required. The project and location for which to retrieve instance
+     * information, in the format `projects/{project_id}/locations/{location}`. In
+     * Cloud Filestore, locations map to GCP zones, for example **us-west1-b**. To
      * retrieve instance information for all locations, use "-" for the
      * `{location}` value.
      * </pre>
@@ -782,9 +782,9 @@ public final class ListInstancesRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Required. The project and location for which to retrieve instance information,
-     * in the format `projects/{project_id}/locations/{location}`. In Cloud
-     * Filestore, locations map to GCP zones, for example **us-west1-b**. To
+     * Required. The project and location for which to retrieve instance
+     * information, in the format `projects/{project_id}/locations/{location}`. In
+     * Cloud Filestore, locations map to GCP zones, for example **us-west1-b**. To
      * retrieve instance information for all locations, use "-" for the
      * `{location}` value.
      * </pre>
@@ -810,9 +810,9 @@ public final class ListInstancesRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Required. The project and location for which to retrieve instance information,
-     * in the format `projects/{project_id}/locations/{location}`. In Cloud
-     * Filestore, locations map to GCP zones, for example **us-west1-b**. To
+     * Required. The project and location for which to retrieve instance
+     * information, in the format `projects/{project_id}/locations/{location}`. In
+     * Cloud Filestore, locations map to GCP zones, for example **us-west1-b**. To
      * retrieve instance information for all locations, use "-" for the
      * `{location}` value.
      * </pre>
@@ -837,9 +837,9 @@ public final class ListInstancesRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Required. The project and location for which to retrieve instance information,
-     * in the format `projects/{project_id}/locations/{location}`. In Cloud
-     * Filestore, locations map to GCP zones, for example **us-west1-b**. To
+     * Required. The project and location for which to retrieve instance
+     * information, in the format `projects/{project_id}/locations/{location}`. In
+     * Cloud Filestore, locations map to GCP zones, for example **us-west1-b**. To
      * retrieve instance information for all locations, use "-" for the
      * `{location}` value.
      * </pre>
@@ -860,9 +860,9 @@ public final class ListInstancesRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Required. The project and location for which to retrieve instance information,
-     * in the format `projects/{project_id}/locations/{location}`. In Cloud
-     * Filestore, locations map to GCP zones, for example **us-west1-b**. To
+     * Required. The project and location for which to retrieve instance
+     * information, in the format `projects/{project_id}/locations/{location}`. In
+     * Cloud Filestore, locations map to GCP zones, for example **us-west1-b**. To
      * retrieve instance information for all locations, use "-" for the
      * `{location}` value.
      * </pre>

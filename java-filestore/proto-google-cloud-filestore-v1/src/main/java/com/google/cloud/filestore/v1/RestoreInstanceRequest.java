@@ -232,8 +232,8 @@ public final class RestoreInstanceRequest extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * Required. Name of the file share in the Cloud Filestore instance that the backup
-   * is being restored to.
+   * Required. Name of the file share in the Cloud Filestore instance that the
+   * backup is being restored to.
    * </pre>
    *
    * <code>string file_share = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -256,8 +256,8 @@ public final class RestoreInstanceRequest extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * Required. Name of the file share in the Cloud Filestore instance that the backup
-   * is being restored to.
+   * Required. Name of the file share in the Cloud Filestore instance that the
+   * backup is being restored to.
    * </pre>
    *
    * <code>string file_share = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -364,10 +364,10 @@ public final class RestoreInstanceRequest extends com.google.protobuf.GeneratedM
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name_);
     }
-    if (!getFileShareBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(fileShare_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, fileShare_);
     }
     if (sourceCase_ == 3) {
@@ -382,10 +382,10 @@ public final class RestoreInstanceRequest extends com.google.protobuf.GeneratedM
     if (size != -1) return size;
 
     size = 0;
-    if (!getNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, name_);
     }
-    if (!getFileShareBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(fileShare_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, fileShare_);
     }
     if (sourceCase_ == 3) {
@@ -866,8 +866,8 @@ public final class RestoreInstanceRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Required. Name of the file share in the Cloud Filestore instance that the backup
-     * is being restored to.
+     * Required. Name of the file share in the Cloud Filestore instance that the
+     * backup is being restored to.
      * </pre>
      *
      * <code>string file_share = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -889,8 +889,8 @@ public final class RestoreInstanceRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Required. Name of the file share in the Cloud Filestore instance that the backup
-     * is being restored to.
+     * Required. Name of the file share in the Cloud Filestore instance that the
+     * backup is being restored to.
      * </pre>
      *
      * <code>string file_share = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -912,8 +912,8 @@ public final class RestoreInstanceRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Required. Name of the file share in the Cloud Filestore instance that the backup
-     * is being restored to.
+     * Required. Name of the file share in the Cloud Filestore instance that the
+     * backup is being restored to.
      * </pre>
      *
      * <code>string file_share = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -934,8 +934,8 @@ public final class RestoreInstanceRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Required. Name of the file share in the Cloud Filestore instance that the backup
-     * is being restored to.
+     * Required. Name of the file share in the Cloud Filestore instance that the
+     * backup is being restored to.
      * </pre>
      *
      * <code>string file_share = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -952,8 +952,8 @@ public final class RestoreInstanceRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Required. Name of the file share in the Cloud Filestore instance that the backup
-     * is being restored to.
+     * Required. Name of the file share in the Cloud Filestore instance that the
+     * backup is being restored to.
      * </pre>
      *
      * <code>string file_share = 2 [(.google.api.field_behavior) = REQUIRED];</code>
