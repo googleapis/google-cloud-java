@@ -1,5 +1,17 @@
 # Changelog
 
+## [3.3.0](https://www.github.com/googleapis/java-logging/compare/v3.2.0...v3.3.0) (2021-10-20)
+
+
+### Features
+
+* implement revised version of the monitored resource type discovery and metadata population ([#708](https://www.github.com/googleapis/java-logging/issues/708)) ([0592c96](https://www.github.com/googleapis/java-logging/commit/0592c96bc697a983f521c7ac51df53661c801975))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.4.0 ([#714](https://www.github.com/googleapis/java-logging/issues/714)) ([6ba9df7](https://www.github.com/googleapis/java-logging/commit/6ba9df7e0f36ea4c41d8bd45a67fa671c41d9db6))
+
 ## [3.2.0](https://www.github.com/googleapis/java-logging/compare/v3.1.2...v3.2.0) (2021-09-27)
 
 
