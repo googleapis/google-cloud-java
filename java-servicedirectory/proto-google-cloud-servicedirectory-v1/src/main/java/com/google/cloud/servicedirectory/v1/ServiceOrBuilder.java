@@ -28,7 +28,7 @@ public interface ServiceOrBuilder
    *
    * <pre>
    * Immutable. The resource name for the service in the format
-   * 'projects/&#42;&#47;locations/&#42;&#47;namespaces/&#42;&#47;services/&#42;'.
+   * `projects/&#42;&#47;locations/&#42;&#47;namespaces/&#42;&#47;services/&#42;`.
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -41,7 +41,7 @@ public interface ServiceOrBuilder
    *
    * <pre>
    * Immutable. The resource name for the service in the format
-   * 'projects/&#42;&#47;locations/&#42;&#47;namespaces/&#42;&#47;services/&#42;'.
+   * `projects/&#42;&#47;locations/&#42;&#47;namespaces/&#42;&#47;services/&#42;`.
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = IMMUTABLE];</code>
