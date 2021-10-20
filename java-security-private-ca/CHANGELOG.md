@@ -1,5 +1,17 @@
 # Changelog
 
+## [2.2.0](https://www.github.com/googleapis/java-security-private-ca/compare/v2.1.2...v2.2.0) (2021-10-19)
+
+
+### Features
+
+* **privateca:** add IAMPolicy & Locations mix-in support ([#292](https://www.github.com/googleapis/java-security-private-ca/issues/292)) ([8c7518b](https://www.github.com/googleapis/java-security-private-ca/commit/8c7518be77abcdffdb35ead995aaa34d780c1464))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.4.0 ([#299](https://www.github.com/googleapis/java-security-private-ca/issues/299)) ([be7a5b2](https://www.github.com/googleapis/java-security-private-ca/commit/be7a5b2eb3e9b6886ed63bc182c3e2f9d780f223))
+
 ### [2.1.2](https://www.github.com/googleapis/java-security-private-ca/compare/v2.1.1...v2.1.2) (2021-09-23)
 
 
