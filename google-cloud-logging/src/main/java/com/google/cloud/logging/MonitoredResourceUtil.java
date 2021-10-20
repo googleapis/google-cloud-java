@@ -20,10 +20,6 @@ import com.google.cloud.MonitoredResource;
 import com.google.cloud.logging.LogEntry.Builder;
 import com.google.common.base.Strings;
 import com.google.common.collect.ImmutableMultimap;
-import java.io.IOException;
-import java.nio.charset.StandardCharsets;
-import java.nio.file.Files;
-import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
@@ -37,13 +33,8 @@ import java.util.Map;
 public class MonitoredResourceUtil {
 
   private static final String APPENGINE_LABEL_PREFIX = "appengine.googleapis.com/";
-  private static final String CLUSTER_NAME_ATTRIBUTE = "instance/attributes/cluster-name";
-  private static final String K8S_POD_NAMESPACE_PATH =
-      "/var/run/secrets/kubernetes.io/serviceaccount/namespace";
-  private static final String FLEX_ENV = "flex";
-  private static final String STD_ENV = "standard";
 
-  private enum Label {
+  protected enum Label {
     ClusterName("cluster_name"),
     ConfigurationName("configuration_name"),
     ContainerName("container_name"),
@@ -51,7 +42,8 @@ public class MonitoredResourceUtil {
     FunctionName("function_name"),
     InstanceId("instance_id"),
     InstanceName("instance_name"),
-    Location("location"),
+    CloudRunLocation("location"),
+    GKELocation("location"),
     ModuleId("module_id"),
     NamespaceName("namespace_name"),
     PodName("pod_name"),
@@ -92,29 +84,30 @@ public class MonitoredResourceUtil {
     }
   }
 
-  private static ImmutableMultimap<String, Label> resourceTypeWithLabels =
+  private static final ImmutableMultimap<String, Label> resourceTypeWithLabels =
       ImmutableMultimap.<String, Label>builder()
           .putAll(Resource.CloudFunction.getKey(), Label.FunctionName, Label.Region)
           .putAll(
               Resource.CloudRun.getKey(),
               Label.RevisionName,
               Label.ServiceName,
-              Label.Location,
+              Label.CloudRunLocation,
               Label.ConfigurationName)
           .putAll(
               Resource.AppEngine.getKey(), Label.ModuleId, Label.VersionId, Label.Zone, Label.Env)
           .putAll(Resource.GceInstance.getKey(), Label.InstanceId, Label.Zone)
           .putAll(
               Resource.K8sContainer.getKey(),
-              Label.Location,
+              Label.GKELocation,
               Label.ClusterName,
               Label.NamespaceName,
               Label.PodName,
               Label.ContainerName)
           .build();
 
-  private static Map<String, MonitoredResource> cachedMonitoredResources = new HashMap<>();
+  private static final Map<String, MonitoredResource> cachedMonitoredResources = new HashMap<>();
   private static ResourceTypeEnvironmentGetter getter = new ResourceTypeEnvironmentGetterImpl();
+  private static MetadataLoader metadataLoader = new MetadataLoader(getter);
 
   private MonitoredResourceUtil() {}
 
@@ -125,6 +118,7 @@ public class MonitoredResourceUtil {
    */
   protected static void setEnvironmentGetter(ResourceTypeEnvironmentGetter getter) {
     MonitoredResourceUtil.getter = getter;
+    MonitoredResourceUtil.metadataLoader = new MetadataLoader(getter);
   }
 
   /**
@@ -138,7 +132,7 @@ public class MonitoredResourceUtil {
    */
   public static MonitoredResource getResource(String projectId, String resourceType) {
     if (projectId == null || projectId.trim().isEmpty()) {
-      projectId = getter.getAttribute("project/project-id");
+      projectId = metadataLoader.getValue(Label.ProjectId);
     }
 
     MonitoredResource result = cachedMonitoredResources.get(projectId + "/" + resourceType);
@@ -154,7 +148,7 @@ public class MonitoredResourceUtil {
         MonitoredResource.newBuilder(resourceType).addLabel(Label.ProjectId.getKey(), projectId);
 
     for (Label label : resourceTypeWithLabels.get(resourceType)) {
-      String value = getValue(label, resourceType);
+      String value = metadataLoader.getValue(label);
       if (value != null) {
         builder.addLabel(label.getKey(), value);
       }
@@ -189,7 +183,7 @@ public class MonitoredResourceUtil {
         && getter.getEnv("FUNCTION_TARGET") != null) {
       return Resource.CloudFunction;
     }
-    if (getter.getAttribute(CLUSTER_NAME_ATTRIBUTE) != null) {
+    if (getter.getAttribute("instance/attributes/cluster-name") != null) {
       return Resource.K8sContainer;
     }
     if (getter.getAttribute("instance/preempted") != null
@@ -211,144 +205,11 @@ public class MonitoredResourceUtil {
     return createEnhancers(resourceType);
   }
 
-  @SuppressWarnings("incomplete-switch")
-  private static String getValue(Label label, String resourceType) {
-    String value = "";
-
-    switch (label) {
-      case ClusterName:
-        value = getter.getAttribute(CLUSTER_NAME_ATTRIBUTE);
-        break;
-      case ConfigurationName:
-        value = getter.getEnv("K_CONFIGURATION");
-        break;
-      case ContainerName:
-        // there is no determenistic way to discover name of container
-        // allow users to define the container name explicitly
-        value = getter.getEnv("CONTAINER_NAME");
-        if (value == null) {
-          value = "";
-        }
-        break;
-      case Env:
-        value = getAppEngineEnvironment();
-        break;
-      case FunctionName:
-      case ServiceName:
-        value = getter.getEnv("K_SERVICE");
-        if (value == null) {
-          value = getter.getEnv("FUNCTION_NAME");
-        }
-        break;
-      case InstanceId:
-        value = getter.getAttribute("instance/id");
-        break;
-      case InstanceName:
-        value = getter.getAttribute("instance/name");
-        break;
-      case Location:
-        if (Resource.CloudFunction.getKey() == resourceType
-            || Resource.CloudRun.getKey() == resourceType) {
-          value = getRegion();
-        } else {
-          value = getZone();
-        }
-        break;
-      case ModuleId:
-        value = getter.getEnv("GAE_SERVICE");
-        break;
-      case NamespaceName:
-        value = getK8sNamespace();
-        break;
-      case PodName:
-        // there is no determenistic way to discover name of container
-        // by default the pod name is set as pod's hostname
-        // note that hostname can be overriden in pod manifest or at runtime
-        value = getter.getEnv("HOSTNAME");
-        break;
-      case Region:
-        value = getRegion();
-        break;
-      case RevisionName:
-        value = getter.getEnv("K_REVISION");
-        break;
-      case VersionId:
-        value = getter.getEnv("GAE_VERSION");
-        break;
-      case Zone:
-        value = getZone();
-        break;
-    }
-
-    return value;
-  }
-
-  /**
-   * Heuristic to discover the namespace name of the current environment. There is no determenistic
-   * way to discover the namespace name of the process. The name is read from the {@link
-   * K8S_POD_NAMESPACE_PATH} when available or read from a user defined environment variable
-   * "NAMESPACE_NAME"
-   *
-   * @return Namespace name or empty string if the name could not be discovered
-   */
-  private static String getK8sNamespace() {
-    String value = "";
-    try {
-      value =
-          new String(Files.readAllBytes(Paths.get(K8S_POD_NAMESPACE_PATH)), StandardCharsets.UTF_8);
-    } catch (IOException e) {
-      // if SA token is not shared the info about namespace is unavailable
-      // allow users to define the namespace name explicitly
-      value = getter.getEnv("NAMESPACE_NAME");
-      if (value == null) {
-        value = "";
-      }
-    }
-    return value;
-  }
-
-  /**
-   * Distinguish between Standard and Flexible GAE environments. There is no indicator of the
-   * environment. The path to the startup-script in the metadata attribute was selected as one of
-   * the new values that explitly mentioning "flex" and cannot be altered by user (e.g. environment
-   * variable). The method assumes that the resource type is already identified as {@link
-   * Resource.AppEngine}.
-   *
-   * @return "flex" {@link String} for the Flexible environment and "standard" for the Standard.
-   */
-  private static String getAppEngineEnvironment() {
-    String value = getter.getAttribute("instance/attributes/startup-script");
-    if (value == "/var/lib/flex/startup_script.sh") {
-      return FLEX_ENV;
-    }
-    return STD_ENV;
-  }
-
-  /**
-   * Retrieves a region from the qualified region of 'projects/[PROJECT_NUMBER]/regions/[REGION]'
-   *
-   * @return region string id
-   */
-  private static String getRegion() {
-    String loc = getter.getAttribute("instance/region");
-    return loc.substring(loc.lastIndexOf('/') + 1);
-  }
-
-  /**
-   * Retrieves a zone from the qualified zone of 'projects/[PROJECT_NUMBER]/zones/[ZONE]'
-   *
-   * @return zone string id
-   */
-  private static String getZone() {
-    String loc = getter.getAttribute("instance/zone");
-    return loc.substring(loc.lastIndexOf('/') + 1);
-  }
-
   private static List<LoggingEnhancer> createEnhancers(Resource resourceType) {
     List<LoggingEnhancer> enhancers = new ArrayList<>(2);
     if (resourceType == Resource.AppEngine) {
       enhancers.add(new TraceLoggingEnhancer(APPENGINE_LABEL_PREFIX));
-      if (getAppEngineEnvironment() == FLEX_ENV) {
+      if (metadataLoader.getValue(Label.Env) == MetadataLoader.ENV_FLEXIBLE) {
         enhancers.add(
             new LabelLoggingEnhancer(
                 APPENGINE_LABEL_PREFIX, Collections.singletonList(Label.InstanceName)));
@@ -374,7 +235,7 @@ public class MonitoredResourceUtil {
         for (Label labelName : labelNames) {
           String fullLabelName =
               (prefix != null) ? prefix + labelName.getKey() : labelName.getKey();
-          String labelValue = MonitoredResourceUtil.getValue(labelName, fullLabelName);
+          String labelValue = metadataLoader.getValue(labelName);
           if (labelValue != null) {
             labels.put(fullLabelName, labelValue);
           }
