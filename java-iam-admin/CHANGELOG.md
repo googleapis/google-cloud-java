@@ -1,5 +1,12 @@
 # Changelog
 
+### [0.1.1](https://www.github.com/googleapis/java-iam-admin/compare/v0.1.0...v0.1.1) (2021-10-20)
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.4.0 ([#18](https://www.github.com/googleapis/java-iam-admin/issues/18)) ([181884f](https://www.github.com/googleapis/java-iam-admin/commit/181884fcd1c8c9623f91743bdc3a9132fc3fb7f6))
+
 ## 0.1.0 (2021-09-30)
 
 
