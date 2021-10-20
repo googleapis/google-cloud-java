@@ -20,6 +20,7 @@ import static com.google.common.truth.Truth.assertThat;
 import com.google.bigtable.admin.v2.AppProfile.SingleClusterRouting;
 import com.google.bigtable.admin.v2.AppProfileName;
 import com.google.cloud.bigtable.admin.v2.models.AppProfile.SingleClusterRoutingPolicy;
+import com.google.common.collect.ImmutableList;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
@@ -46,6 +47,46 @@ public class AppProfileTest {
     assertThat(profile.getId()).isEqualTo("my-profile");
     assertThat(profile.getDescription()).isEqualTo("my description");
     assertThat(profile.getPolicy()).isEqualTo(SingleClusterRoutingPolicy.of("my-cluster", true));
+  }
+
+  @Test
+  public void testFromProtoWithMultiCluster() {
+    AppProfile profile =
+        AppProfile.fromProto(
+            com.google.bigtable.admin.v2.AppProfile.newBuilder()
+                .setName(AppProfileName.of("my-project", "my-instance", "my-profile").toString())
+                .setDescription("my description")
+                .setMultiClusterRoutingUseAny(
+                    com.google.bigtable.admin.v2.AppProfile.MultiClusterRoutingUseAny.newBuilder()
+                        .build())
+                .setEtag("my-etag")
+                .build());
+
+    assertThat(profile.getInstanceId()).isEqualTo("my-instance");
+    assertThat(profile.getId()).isEqualTo("my-profile");
+    assertThat(profile.getDescription()).isEqualTo("my description");
+    assertThat(profile.getPolicy()).isEqualTo(AppProfile.MultiClusterRoutingPolicy.of());
+  }
+
+  @Test
+  public void testFromProtoWithMultiClusterWithIds() {
+    AppProfile profile =
+        AppProfile.fromProto(
+            com.google.bigtable.admin.v2.AppProfile.newBuilder()
+                .setName(AppProfileName.of("my-project", "my-instance", "my-profile").toString())
+                .setDescription("my description")
+                .setMultiClusterRoutingUseAny(
+                    com.google.bigtable.admin.v2.AppProfile.MultiClusterRoutingUseAny.newBuilder()
+                        .addAllClusterIds(ImmutableList.of("cluster-id-1", "cluster-id-2"))
+                        .build())
+                .setEtag("my-etag")
+                .build());
+
+    assertThat(profile.getInstanceId()).isEqualTo("my-instance");
+    assertThat(profile.getId()).isEqualTo("my-profile");
+    assertThat(profile.getDescription()).isEqualTo("my description");
+    assertThat(profile.getPolicy())
+        .isEqualTo(AppProfile.MultiClusterRoutingPolicy.of("cluster-id-1", "cluster-id-2"));
   }
 
   @Test

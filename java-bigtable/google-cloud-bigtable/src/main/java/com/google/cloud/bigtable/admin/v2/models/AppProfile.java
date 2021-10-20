@@ -22,6 +22,8 @@ import com.google.common.base.Objects;
 import com.google.common.base.Preconditions;
 import com.google.common.base.Verify;
 import com.google.common.base.VerifyException;
+import com.google.common.collect.ImmutableSet;
+import java.util.Set;
 import javax.annotation.Nonnull;
 
 /**
@@ -64,7 +66,8 @@ public final class AppProfile {
   @SuppressWarnings("WeakerAccess")
   public RoutingPolicy getPolicy() {
     if (proto.hasMultiClusterRoutingUseAny()) {
-      return MultiClusterRoutingPolicy.of();
+      return MultiClusterRoutingPolicy.of(
+          ImmutableSet.copyOf(proto.getMultiClusterRoutingUseAny().getClusterIdsList()));
     } else if (proto.hasSingleClusterRouting()) {
       return new SingleClusterRoutingPolicy(proto.getSingleClusterRouting());
     } else {
@@ -226,15 +229,42 @@ public final class AppProfile {
    * available cluster.
    */
   public static class MultiClusterRoutingPolicy implements RoutingPolicy {
-    private static final MultiClusterRoutingUseAny proto =
-        MultiClusterRoutingUseAny.getDefaultInstance();
+    private final MultiClusterRoutingUseAny proto;
 
     /** Creates a new instance of {@link MultiClusterRoutingPolicy}. */
     public static MultiClusterRoutingPolicy of() {
-      return new MultiClusterRoutingPolicy();
+      return new MultiClusterRoutingPolicy(MultiClusterRoutingUseAny.getDefaultInstance());
     }
 
-    private MultiClusterRoutingPolicy() {}
+    /**
+     * Creates a new instance of {@link MultiClusterRoutingPolicy} with specified cluster ids to
+     * route to.
+     */
+    public static MultiClusterRoutingPolicy of(String... clusterIds) {
+      return of(ImmutableSet.copyOf(clusterIds));
+    }
+
+    /**
+     * Creates a new instance of {@link MultiClusterRoutingPolicy} with specified cluster ids to
+     * route to.
+     */
+    public static MultiClusterRoutingPolicy of(Set<String> clusterIds) {
+      return new MultiClusterRoutingPolicy(
+          MultiClusterRoutingUseAny.newBuilder().addAllClusterIds(clusterIds).build());
+    }
+
+    /*
+     * Returns the set of clusters to route to. The order is ignored; clusters will be
+     * tried in order of distance. If empty, all clusters are eligible.
+     */
+    public Set<String> getClusterIds() {
+      return ImmutableSet.copyOf(proto.getClusterIdsList());
+    }
+
+    private MultiClusterRoutingPolicy(
+        com.google.bigtable.admin.v2.AppProfile.MultiClusterRoutingUseAny proto) {
+      this.proto = proto;
+    }
 
     /**
      * Creates the request protobuf. This method is considered an internal implementation detail and
@@ -253,8 +283,8 @@ public final class AppProfile {
       if (o == null || getClass() != o.getClass()) {
         return false;
       }
-
-      return true;
+      MultiClusterRoutingPolicy that = (MultiClusterRoutingPolicy) o;
+      return Objects.equal(proto, that.proto);
     }
 
     @Override

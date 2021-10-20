@@ -97,6 +97,99 @@ public class BigtableInstanceAdminClientIT {
   }
 
   @Test
+  public void appProfileTestMultiClusterWithIds() {
+    String newInstanceId = prefixGenerator.newPrefix();
+    String newClusterId = newInstanceId + "-c1";
+    String newClusterId2 = newInstanceId + "-c2";
+
+    client.createInstance(
+        CreateInstanceRequest.of(newInstanceId)
+            .addCluster(newClusterId, testEnvRule.env().getPrimaryZone(), 1, StorageType.SSD)
+            .addCluster(newClusterId2, testEnvRule.env().getSecondaryZone(), 1, StorageType.SSD)
+            .setDisplayName("Multi-Cluster-Instance-Test")
+            .addLabel("state", "readytodelete")
+            .setType(Type.PRODUCTION));
+
+    try {
+      assertThat(client.exists(newInstanceId)).isTrue();
+
+      String testAppProfile = "test-app-profile";
+
+      CreateAppProfileRequest request =
+          CreateAppProfileRequest.of(newInstanceId, testAppProfile)
+              .setRoutingPolicy(AppProfile.MultiClusterRoutingPolicy.of(newClusterId))
+              .setDescription("This is to test app profile");
+
+      AppProfile newlyCreatedAppProfile = client.createAppProfile(request);
+
+      AppProfile updated =
+          client.updateAppProfile(
+              UpdateAppProfileRequest.of(newlyCreatedAppProfile).setDescription("new description"));
+
+      AppProfile freshAppProfile = client.getAppProfile(newInstanceId, testAppProfile);
+      assertThat(freshAppProfile.getDescription()).isEqualTo(updated.getDescription());
+
+      AppProfile.MultiClusterRoutingPolicy freshAppProfilePolicy =
+          (AppProfile.MultiClusterRoutingPolicy) freshAppProfile.getPolicy();
+      AppProfile.MultiClusterRoutingPolicy updatedAppProfilePolicy =
+          (AppProfile.MultiClusterRoutingPolicy) updated.getPolicy();
+
+      assertThat(freshAppProfilePolicy.getClusterIds()).containsExactly(newClusterId);
+      assertThat(freshAppProfilePolicy.getClusterIds())
+          .isEqualTo(updatedAppProfilePolicy.getClusterIds());
+      assertThat(freshAppProfilePolicy).isEqualTo(updatedAppProfilePolicy);
+
+      assertThat(client.listAppProfiles(newInstanceId)).contains(freshAppProfile);
+
+      // update again with routing policy
+      AppProfile updated2 =
+          client.updateAppProfile(
+              UpdateAppProfileRequest.of(updated)
+                  .setRoutingPolicy(AppProfile.MultiClusterRoutingPolicy.of(newClusterId2)));
+
+      AppProfile freshAppProfile2 = client.getAppProfile(newInstanceId, testAppProfile);
+      assertThat(freshAppProfile2.getDescription()).isEqualTo(updated2.getDescription());
+
+      AppProfile.MultiClusterRoutingPolicy freshAppProfilePolicy2 =
+          (AppProfile.MultiClusterRoutingPolicy) freshAppProfile2.getPolicy();
+      AppProfile.MultiClusterRoutingPolicy updatedAppProfilePolicy2 =
+          (AppProfile.MultiClusterRoutingPolicy) updated2.getPolicy();
+
+      assertThat(freshAppProfilePolicy2.getClusterIds()).containsExactly(newClusterId2);
+      assertThat(freshAppProfilePolicy2.getClusterIds())
+          .isEqualTo(updatedAppProfilePolicy2.getClusterIds());
+      assertThat(freshAppProfilePolicy2).isEqualTo(updatedAppProfilePolicy2);
+
+      assertThat(client.listAppProfiles(newInstanceId)).contains(freshAppProfile2);
+
+      // update to single routing policy
+      AppProfile updated3 =
+          client.updateAppProfile(
+              UpdateAppProfileRequest.of(updated)
+                  .setRoutingPolicy(AppProfile.SingleClusterRoutingPolicy.of(newClusterId)));
+
+      AppProfile freshAppProfile3 = client.getAppProfile(newInstanceId, testAppProfile);
+      assertThat(freshAppProfile3.getDescription()).isEqualTo(updated3.getDescription());
+
+      AppProfile.SingleClusterRoutingPolicy freshAppProfilePolicy3 =
+          (AppProfile.SingleClusterRoutingPolicy) freshAppProfile3.getPolicy();
+      AppProfile.SingleClusterRoutingPolicy updatedAppProfilePolicy3 =
+          (AppProfile.SingleClusterRoutingPolicy) updated3.getPolicy();
+
+      assertThat(freshAppProfilePolicy3.getClusterId()).isEqualTo(newClusterId);
+      assertThat(freshAppProfilePolicy3.getClusterId())
+          .isEqualTo(updatedAppProfilePolicy3.getClusterId());
+      assertThat(freshAppProfilePolicy3).isEqualTo(updatedAppProfilePolicy3);
+
+      assertThat(client.listAppProfiles(newInstanceId)).contains(freshAppProfile3);
+    } finally {
+      if (client.exists(newInstanceId)) {
+        client.deleteInstance(newInstanceId);
+      }
+    }
+  }
+
+  @Test
   public void iamUpdateTest() {
     Policy policy = client.getIamPolicy(instanceId);
     assertThat(policy).isNotNull();
