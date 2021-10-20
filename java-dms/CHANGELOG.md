@@ -1,5 +1,17 @@
 # Changelog
 
+### [2.1.3](https://www.github.com/googleapis/java-dms/compare/v2.1.2...v2.1.3) (2021-10-19)
+
+
+### Documentation
+
+* Fix NOT_STARTED state documentation in MigrationJob resource ([#123](https://www.github.com/googleapis/java-dms/issues/123)) ([6f42d60](https://www.github.com/googleapis/java-dms/commit/6f42d60f2352551f01265471702cd8df7050e52c))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.4.0 ([#128](https://www.github.com/googleapis/java-dms/issues/128)) ([9223e35](https://www.github.com/googleapis/java-dms/commit/9223e35942c33d1997ff580705f20e4c1bf81cfc))
+
 ### [2.1.2](https://www.github.com/googleapis/java-dms/compare/v2.1.1...v2.1.2) (2021-09-22)
 
 
