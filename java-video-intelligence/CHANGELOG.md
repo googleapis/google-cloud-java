@@ -1,5 +1,22 @@
 # Changelog
 
+### [2.0.10](https://www.github.com/googleapis/java-video-intelligence/compare/v2.0.9...v2.0.10) (2021-10-19)
+
+
+### Bug Fixes
+
+* **ruby:** Fix Ruby namespace for videointelligence/v1p3beta1 ([#700](https://www.github.com/googleapis/java-video-intelligence/issues/700)) ([6e62409](https://www.github.com/googleapis/java-video-intelligence/commit/6e6240941f7afe794e2e50a391e27d9bff90c972))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-core to v2.1.8 ([#717](https://www.github.com/googleapis/java-video-intelligence/issues/717)) ([7dca2d0](https://www.github.com/googleapis/java-video-intelligence/commit/7dca2d0146dd9a6492c6fda9553f8780784996a0))
+* update dependency com.google.cloud:google-cloud-core to v2.2.0 ([#720](https://www.github.com/googleapis/java-video-intelligence/issues/720)) ([9494dfe](https://www.github.com/googleapis/java-video-intelligence/commit/9494dfef186a743ed988c1418e406467d184585e))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.4.0 ([#721](https://www.github.com/googleapis/java-video-intelligence/issues/721)) ([b5a40fc](https://www.github.com/googleapis/java-video-intelligence/commit/b5a40fc383c6f66613a159e02767c314b6ffb66c))
+* update dependency com.google.cloud:google-cloud-storage to v2.1.7 ([#709](https://www.github.com/googleapis/java-video-intelligence/issues/709)) ([139ee0a](https://www.github.com/googleapis/java-video-intelligence/commit/139ee0a94951cee14ad78ae470ea35b09be073ab))
+* update dependency com.google.cloud:google-cloud-storage to v2.1.8 ([#719](https://www.github.com/googleapis/java-video-intelligence/issues/719)) ([b111727](https://www.github.com/googleapis/java-video-intelligence/commit/b1117271372021a882511dc50617f640ef94e3b1))
+* update dependency com.google.cloud:google-cloud-storage to v2.1.9 ([#722](https://www.github.com/googleapis/java-video-intelligence/issues/722)) ([c45eeed](https://www.github.com/googleapis/java-video-intelligence/commit/c45eeed409c85cbe10e169ee969c35835ad1a0cc))
+
 ### [2.0.9](https://www.github.com/googleapis/java-video-intelligence/compare/v2.0.8...v2.0.9) (2021-10-05)
 
 
