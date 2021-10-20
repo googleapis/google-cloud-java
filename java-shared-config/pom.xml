@@ -800,7 +800,8 @@
         <dependency>
           <groupId>org.graalvm.buildtools</groupId>
           <artifactId>junit-platform-native</artifactId>
-          <version>0.9.6</version>
+          <!-- Using older version; upgrade to latest once issues are resolved. See #336 -->
+          <version>0.9.5</version>
           <scope>test</scope>
         </dependency>
       </dependencies>
@@ -821,7 +822,8 @@
           <plugin>
             <groupId>org.graalvm.buildtools</groupId>
             <artifactId>native-maven-plugin</artifactId>
-            <version>0.9.6</version>
+            <!-- Using older version; upgrade to latest once issues are resolved. See #336. -->
+            <version>0.9.5</version>
             <executions>
               <execution>
                 <id>test-native</id>
