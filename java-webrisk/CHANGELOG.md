@@ -1,5 +1,12 @@
 # Changelog
 
+### [2.0.6](https://www.github.com/googleapis/java-webrisk/compare/v2.0.5...v2.0.6) (2021-10-20)
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.4.0 ([#557](https://www.github.com/googleapis/java-webrisk/issues/557)) ([84250f7](https://www.github.com/googleapis/java-webrisk/commit/84250f7b4b34b4bf6877083e7999056fbd2ba8a7))
+
 ### [2.0.5](https://www.github.com/googleapis/java-webrisk/compare/v2.0.4...v2.0.5) (2021-09-22)
 
 
