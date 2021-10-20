@@ -1,5 +1,19 @@
 # Changelog
 
+### [2.1.3](https://www.github.com/googleapis/java-workflows/compare/v2.1.2...v2.1.3) (2021-10-20)
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.4.0 ([#361](https://www.github.com/googleapis/java-workflows/issues/361)) ([cf16a48](https://www.github.com/googleapis/java-workflows/commit/cf16a48f6bfc2dce29b061ab4ee74c4880008240))
+
+
+### Documentation
+
+* clarified format and semantics of service_account field ([fc2ba14](https://www.github.com/googleapis/java-workflows/commit/fc2ba141706b1aff0a089eec9050e1b71d5cd65d))
+* clarified when revision_id of a workflow is updated ([#362](https://www.github.com/googleapis/java-workflows/issues/362)) ([fc2ba14](https://www.github.com/googleapis/java-workflows/commit/fc2ba141706b1aff0a089eec9050e1b71d5cd65d))
+* documented expanded workflow size limit ([fc2ba14](https://www.github.com/googleapis/java-workflows/commit/fc2ba141706b1aff0a089eec9050e1b71d5cd65d))
+
 ### [2.1.2](https://www.github.com/googleapis/java-workflows/compare/v2.1.1...v2.1.2) (2021-09-22)
 
 
