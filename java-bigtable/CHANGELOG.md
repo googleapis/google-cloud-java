@@ -1,5 +1,22 @@
 # Changelog
 
+## [2.2.0](https://www.github.com/googleapis/java-bigtable/compare/v2.1.4...v2.2.0) (2021-10-20)
+
+
+### Features
+
+* app profile multi cluster routing support with specified cluster ids ([#961](https://www.github.com/googleapis/java-bigtable/issues/961)) ([f4c5c32](https://www.github.com/googleapis/java-bigtable/commit/f4c5c32c05d244a9ce7c3a4386ba9396c65f227e))
+
+
+### Bug Fixes
+
+* fix typo in rst stream message ([#1029](https://www.github.com/googleapis/java-bigtable/issues/1029)) ([50e6860](https://www.github.com/googleapis/java-bigtable/commit/50e686094c316560864c30a0295b3ed3f655c765))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.4.0 ([#1038](https://www.github.com/googleapis/java-bigtable/issues/1038)) ([d3efb29](https://www.github.com/googleapis/java-bigtable/commit/d3efb29df8461caddd3917fc42afa50961723a7d))
+
 ### [2.1.4](https://www.github.com/googleapis/java-bigtable/compare/v2.1.3...v2.1.4) (2021-09-22)
 
 
