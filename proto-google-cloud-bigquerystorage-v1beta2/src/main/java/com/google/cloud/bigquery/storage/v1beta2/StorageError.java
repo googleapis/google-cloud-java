@@ -541,10 +541,10 @@ public final class StorageError extends com.google.protobuf.GeneratedMessageV3
             .getNumber()) {
       output.writeEnum(1, code_);
     }
-    if (!getEntityBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(entity_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, entity_);
     }
-    if (!getErrorMessageBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(errorMessage_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, errorMessage_);
     }
     unknownFields.writeTo(output);
@@ -562,10 +562,10 @@ public final class StorageError extends com.google.protobuf.GeneratedMessageV3
             .getNumber()) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(1, code_);
     }
-    if (!getEntityBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(entity_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, entity_);
     }
-    if (!getErrorMessageBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(errorMessage_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, errorMessage_);
     }
     size += unknownFields.getSerializedSize();

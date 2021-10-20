@@ -391,7 +391,7 @@ public final class ReadOptions {
       for (int i = 0; i < selectedFields_.size(); i++) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, selectedFields_.getRaw(i));
       }
-      if (!getRowRestrictionBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(rowRestriction_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, rowRestriction_);
       }
       unknownFields.writeTo(output);
@@ -411,7 +411,7 @@ public final class ReadOptions {
         size += dataSize;
         size += 1 * getSelectedFieldsList().size();
       }
-      if (!getRowRestrictionBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(rowRestriction_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, rowRestriction_);
       }
       size += unknownFields.getSerializedSize();
