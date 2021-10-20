@@ -1,5 +1,26 @@
 # Changelog
 
+## [3.1.0](https://www.github.com/googleapis/java-monitoring/compare/v3.0.8...v3.1.0) (2021-10-19)
+
+
+### Features
+
+* add CreateServiceTimeSeries RPC ([bdfc556](https://www.github.com/googleapis/java-monitoring/commit/bdfc5568896b8e79c37308a701249bd0414377d0))
+* Added support for logs-based alerts: https://cloud.google.com/logging/docs/alerting/log-based-alerts ([bdfc556](https://www.github.com/googleapis/java-monitoring/commit/bdfc5568896b8e79c37308a701249bd0414377d0))
+* Added support for user-defined labels on cloud monitoring's Service and ServiceLevelObjective objects ([#663](https://www.github.com/googleapis/java-monitoring/issues/663)) ([bdfc556](https://www.github.com/googleapis/java-monitoring/commit/bdfc5568896b8e79c37308a701249bd0414377d0))
+* Introduce Native Image testing build script changes ([#701](https://www.github.com/googleapis/java-monitoring/issues/701)) ([706b654](https://www.github.com/googleapis/java-monitoring/commit/706b654e08cec92079944708b80b7e2b61de393e))
+
+
+### Bug Fixes
+
+* mark required fields in QueryTimeSeriesRequest as required ([bdfc556](https://www.github.com/googleapis/java-monitoring/commit/bdfc5568896b8e79c37308a701249bd0414377d0))
+* Reintroduce deprecated field/enum for backward compatibility ([bdfc556](https://www.github.com/googleapis/java-monitoring/commit/bdfc5568896b8e79c37308a701249bd0414377d0))
+
+
+### Documentation
+
+* fix typo in alert.proto ([bdfc556](https://www.github.com/googleapis/java-monitoring/commit/bdfc5568896b8e79c37308a701249bd0414377d0))
+
 ### [3.0.8](https://www.github.com/googleapis/java-monitoring/compare/v3.0.7...v3.0.8) (2021-10-19)
 
 
