@@ -1,8 +1,8 @@
 # Format:
 # module:released-version:current-version
 
-google-cloud-workflow-executions:2.0.6:2.0.6
-grpc-google-cloud-workflow-executions-v1beta:0.4.6:0.4.6
-grpc-google-cloud-workflow-executions-v1:2.0.6:2.0.6
-proto-google-cloud-workflow-executions-v1beta:0.4.6:0.4.6
-proto-google-cloud-workflow-executions-v1:2.0.6:2.0.6
+google-cloud-workflow-executions:2.0.6:2.0.7-SNAPSHOT
+grpc-google-cloud-workflow-executions-v1beta:0.4.6:0.4.7-SNAPSHOT
+grpc-google-cloud-workflow-executions-v1:2.0.6:2.0.7-SNAPSHOT
+proto-google-cloud-workflow-executions-v1beta:0.4.6:0.4.7-SNAPSHOT
+proto-google-cloud-workflow-executions-v1:2.0.6:2.0.7-SNAPSHOT
