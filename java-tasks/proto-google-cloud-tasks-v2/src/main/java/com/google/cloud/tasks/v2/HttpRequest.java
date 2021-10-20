@@ -698,7 +698,7 @@ public final class HttpRequest extends com.google.protobuf.GeneratedMessageV3
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getUrlBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(url_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, url_);
     }
     if (httpMethod_ != com.google.cloud.tasks.v2.HttpMethod.HTTP_METHOD_UNSPECIFIED.getNumber()) {
@@ -724,7 +724,7 @@ public final class HttpRequest extends com.google.protobuf.GeneratedMessageV3
     if (size != -1) return size;
 
     size = 0;
-    if (!getUrlBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(url_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, url_);
     }
     if (httpMethod_ != com.google.cloud.tasks.v2.HttpMethod.HTTP_METHOD_UNSPECIFIED.getNumber()) {
