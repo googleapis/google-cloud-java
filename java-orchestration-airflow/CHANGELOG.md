@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.0](https://www.github.com/googleapis/java-orchestration-airflow/compare/v0.3.1...v1.0.0) (2021-10-20)
+
+
+### Bug Fixes
+
+* library should released as 1.0.0 ([#85](https://www.github.com/googleapis/java-orchestration-airflow/issues/85)) ([d15aea9](https://www.github.com/googleapis/java-orchestration-airflow/commit/d15aea9e75cc1efe8fdc05ee42260adb4312d28b))
+
 ### [0.3.1](https://www.github.com/googleapis/java-orchestration-airflow/compare/v0.3.0...v0.3.1) (2021-10-19)
 
 
