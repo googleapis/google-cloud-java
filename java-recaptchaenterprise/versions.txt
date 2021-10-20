@@ -1,8 +1,8 @@
 # Format:
 # module:released-version:current-version
 
-google-cloud-recaptchaenterprise:2.2.3:2.2.3
-grpc-google-cloud-recaptchaenterprise-v1:2.2.3:2.2.3
-grpc-google-cloud-recaptchaenterprise-v1beta1:0.37.3:0.37.3
-proto-google-cloud-recaptchaenterprise-v1:2.2.3:2.2.3
-proto-google-cloud-recaptchaenterprise-v1beta1:0.37.3:0.37.3
+google-cloud-recaptchaenterprise:2.2.3:2.2.4-SNAPSHOT
+grpc-google-cloud-recaptchaenterprise-v1:2.2.3:2.2.4-SNAPSHOT
+grpc-google-cloud-recaptchaenterprise-v1beta1:0.37.3:0.37.4-SNAPSHOT
+proto-google-cloud-recaptchaenterprise-v1:2.2.3:2.2.4-SNAPSHOT
+proto-google-cloud-recaptchaenterprise-v1beta1:0.37.3:0.37.4-SNAPSHOT
