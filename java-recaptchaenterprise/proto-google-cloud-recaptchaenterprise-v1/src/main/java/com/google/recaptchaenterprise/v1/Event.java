@@ -404,19 +404,19 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getTokenBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(token_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, token_);
     }
-    if (!getSiteKeyBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(siteKey_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, siteKey_);
     }
-    if (!getUserAgentBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(userAgent_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, userAgent_);
     }
-    if (!getUserIpAddressBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(userIpAddress_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 4, userIpAddress_);
     }
-    if (!getExpectedActionBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(expectedAction_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 5, expectedAction_);
     }
     unknownFields.writeTo(output);
@@ -428,19 +428,19 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
     if (size != -1) return size;
 
     size = 0;
-    if (!getTokenBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(token_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, token_);
     }
-    if (!getSiteKeyBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(siteKey_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, siteKey_);
     }
-    if (!getUserAgentBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(userAgent_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, userAgent_);
     }
-    if (!getUserIpAddressBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(userIpAddress_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, userIpAddress_);
     }
-    if (!getExpectedActionBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(expectedAction_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, expectedAction_);
     }
     size += unknownFields.getSerializedSize();

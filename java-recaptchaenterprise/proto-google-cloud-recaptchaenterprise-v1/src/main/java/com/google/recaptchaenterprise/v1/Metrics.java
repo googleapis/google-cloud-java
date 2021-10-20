@@ -441,7 +441,7 @@ public final class Metrics extends com.google.protobuf.GeneratedMessageV3
     for (int i = 0; i < challengeMetrics_.size(); i++) {
       output.writeMessage(3, challengeMetrics_.get(i));
     }
-    if (!getNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 4, name_);
     }
     unknownFields.writeTo(output);
@@ -462,7 +462,7 @@ public final class Metrics extends com.google.protobuf.GeneratedMessageV3
     for (int i = 0; i < challengeMetrics_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(3, challengeMetrics_.get(i));
     }
-    if (!getNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, name_);
     }
     size += unknownFields.getSerializedSize();
