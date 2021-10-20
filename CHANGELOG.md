@@ -1,5 +1,12 @@
 # Changelog
 
+### [2.1.3](https://www.github.com/googleapis/java-datastore/compare/v2.1.2...v2.1.3) (2021-10-20)
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.4.0 ([#559](https://www.github.com/googleapis/java-datastore/issues/559)) ([9d9afee](https://www.github.com/googleapis/java-datastore/commit/9d9afee9a6242c4670326ff1d091af48da26c459))
+
 ### [2.1.2](https://www.github.com/googleapis/java-datastore/compare/v2.1.1...v2.1.2) (2021-09-22)
 
 
