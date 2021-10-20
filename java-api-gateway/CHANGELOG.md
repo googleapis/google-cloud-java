@@ -1,5 +1,12 @@
 # Changelog
 
+### [2.1.4](https://www.github.com/googleapis/java-api-gateway/compare/v2.1.3...v2.1.4) (2021-10-20)
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.4.0 ([#159](https://www.github.com/googleapis/java-api-gateway/issues/159)) ([a3ee7b5](https://www.github.com/googleapis/java-api-gateway/commit/a3ee7b56e2c80f415d6352a98480b7cb2d9a4bbf))
+
 ### [2.1.3](https://www.github.com/googleapis/java-api-gateway/compare/v2.1.2...v2.1.3) (2021-09-22)
 
 
