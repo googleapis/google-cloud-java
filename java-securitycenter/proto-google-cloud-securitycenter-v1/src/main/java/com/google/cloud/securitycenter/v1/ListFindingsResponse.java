@@ -1292,19 +1292,19 @@ public final class ListFindingsResponse extends com.google.protobuf.GeneratedMes
 
       @java.lang.Override
       public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-        if (!getNameBytes().isEmpty()) {
+        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
           com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name_);
         }
-        if (!getProjectNameBytes().isEmpty()) {
+        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(projectName_)) {
           com.google.protobuf.GeneratedMessageV3.writeString(output, 2, projectName_);
         }
-        if (!getProjectDisplayNameBytes().isEmpty()) {
+        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(projectDisplayName_)) {
           com.google.protobuf.GeneratedMessageV3.writeString(output, 3, projectDisplayName_);
         }
-        if (!getParentNameBytes().isEmpty()) {
+        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(parentName_)) {
           com.google.protobuf.GeneratedMessageV3.writeString(output, 4, parentName_);
         }
-        if (!getParentDisplayNameBytes().isEmpty()) {
+        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(parentDisplayName_)) {
           com.google.protobuf.GeneratedMessageV3.writeString(output, 5, parentDisplayName_);
         }
         for (int i = 0; i < folders_.size(); i++) {
@@ -1319,19 +1319,19 @@ public final class ListFindingsResponse extends com.google.protobuf.GeneratedMes
         if (size != -1) return size;
 
         size = 0;
-        if (!getNameBytes().isEmpty()) {
+        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
           size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, name_);
         }
-        if (!getProjectNameBytes().isEmpty()) {
+        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(projectName_)) {
           size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, projectName_);
         }
-        if (!getProjectDisplayNameBytes().isEmpty()) {
+        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(projectDisplayName_)) {
           size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, projectDisplayName_);
         }
-        if (!getParentNameBytes().isEmpty()) {
+        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(parentName_)) {
           size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, parentName_);
         }
-        if (!getParentDisplayNameBytes().isEmpty()) {
+        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(parentDisplayName_)) {
           size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, parentDisplayName_);
         }
         for (int i = 0; i < folders_.size(); i++) {
@@ -4103,7 +4103,7 @@ public final class ListFindingsResponse extends com.google.protobuf.GeneratedMes
     if (readTime_ != null) {
       output.writeMessage(2, getReadTime());
     }
-    if (!getNextPageTokenBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(nextPageToken_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, nextPageToken_);
     }
     if (totalSize_ != 0) {
@@ -4125,7 +4125,7 @@ public final class ListFindingsResponse extends com.google.protobuf.GeneratedMes
     if (readTime_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, getReadTime());
     }
-    if (!getNextPageTokenBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(nextPageToken_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, nextPageToken_);
     }
     if (totalSize_ != 0) {

@@ -1569,7 +1569,7 @@ public final class ListAssetsResponse extends com.google.protobuf.GeneratedMessa
     if (readTime_ != null) {
       output.writeMessage(2, getReadTime());
     }
-    if (!getNextPageTokenBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(nextPageToken_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, nextPageToken_);
     }
     if (totalSize_ != 0) {
@@ -1591,7 +1591,7 @@ public final class ListAssetsResponse extends com.google.protobuf.GeneratedMessa
     if (readTime_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, getReadTime());
     }
-    if (!getNextPageTokenBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(nextPageToken_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, nextPageToken_);
     }
     if (totalSize_ != 0) {

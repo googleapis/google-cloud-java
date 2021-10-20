@@ -319,10 +319,10 @@ public final class CreateNotificationConfigRequest extends com.google.protobuf.G
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getParentBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(parent_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, parent_);
     }
-    if (!getConfigIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(configId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, configId_);
     }
     if (notificationConfig_ != null) {
@@ -337,10 +337,10 @@ public final class CreateNotificationConfigRequest extends com.google.protobuf.G
     if (size != -1) return size;
 
     size = 0;
-    if (!getParentBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(parent_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, parent_);
     }
-    if (!getConfigIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(configId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, configId_);
     }
     if (notificationConfig_ != null) {

@@ -800,16 +800,16 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
 
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-      if (!getResourceNameBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(resourceName_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, resourceName_);
       }
-      if (!getResourceTypeBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(resourceType_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, resourceType_);
       }
-      if (!getResourceParentBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(resourceParent_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 3, resourceParent_);
       }
-      if (!getResourceProjectBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(resourceProject_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 4, resourceProject_);
       }
       for (int i = 0; i < resourceOwners_.size(); i++) {
@@ -824,16 +824,16 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
       if (size != -1) return size;
 
       size = 0;
-      if (!getResourceNameBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(resourceName_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, resourceName_);
       }
-      if (!getResourceTypeBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(resourceType_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, resourceType_);
       }
-      if (!getResourceParentBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(resourceParent_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, resourceParent_);
       }
-      if (!getResourceProjectBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(resourceProject_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, resourceProject_);
       }
       {
@@ -2276,7 +2276,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name_);
     }
     if (securityCenterProperties_ != null) {
@@ -2305,7 +2305,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
     if (size != -1) return size;
 
     size = 0;
-    if (!getNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, name_);
     }
     if (securityCenterProperties_ != null) {

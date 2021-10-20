@@ -1790,22 +1790,22 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name_);
     }
-    if (!getParentBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(parent_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, parent_);
     }
-    if (!getResourceNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(resourceName_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, resourceName_);
     }
     if (state_ != com.google.cloud.securitycenter.v1.Finding.State.STATE_UNSPECIFIED.getNumber()) {
       output.writeEnum(4, state_);
     }
-    if (!getCategoryBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(category_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 5, category_);
     }
-    if (!getExternalUriBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(externalUri_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 6, externalUri_);
     }
     com.google.protobuf.GeneratedMessageV3.serializeStringMapTo(
@@ -1823,7 +1823,7 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
         != com.google.cloud.securitycenter.v1.Finding.Severity.SEVERITY_UNSPECIFIED.getNumber()) {
       output.writeEnum(12, severity_);
     }
-    if (!getCanonicalNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(canonicalName_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 14, canonicalName_);
     }
     if (findingClass_
@@ -1846,22 +1846,22 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
     if (size != -1) return size;
 
     size = 0;
-    if (!getNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, name_);
     }
-    if (!getParentBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(parent_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, parent_);
     }
-    if (!getResourceNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(resourceName_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, resourceName_);
     }
     if (state_ != com.google.cloud.securitycenter.v1.Finding.State.STATE_UNSPECIFIED.getNumber()) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(4, state_);
     }
-    if (!getCategoryBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(category_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, category_);
     }
-    if (!getExternalUriBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(externalUri_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, externalUri_);
     }
     for (java.util.Map.Entry<java.lang.String, com.google.protobuf.Value> entry :
@@ -1887,7 +1887,7 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
         != com.google.cloud.securitycenter.v1.Finding.Severity.SEVERITY_UNSPECIFIED.getNumber()) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(12, severity_);
     }
-    if (!getCanonicalNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(canonicalName_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(14, canonicalName_);
     }
     if (findingClass_
