@@ -330,7 +330,7 @@ public final class UpdateFlowRequest extends com.google.protobuf.GeneratedMessag
     if (updateMask_ != null) {
       output.writeMessage(2, getUpdateMask());
     }
-    if (!getLanguageCodeBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(languageCode_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, languageCode_);
     }
     unknownFields.writeTo(output);
@@ -348,7 +348,7 @@ public final class UpdateFlowRequest extends com.google.protobuf.GeneratedMessag
     if (updateMask_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, getUpdateMask());
     }
-    if (!getLanguageCodeBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(languageCode_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, languageCode_);
     }
     size += unknownFields.getSerializedSize();

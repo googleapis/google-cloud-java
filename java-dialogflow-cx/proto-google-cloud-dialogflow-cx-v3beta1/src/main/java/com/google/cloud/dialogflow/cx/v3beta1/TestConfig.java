@@ -257,7 +257,7 @@ public final class TestConfig extends com.google.protobuf.GeneratedMessageV3
     for (int i = 0; i < trackingParameters_.size(); i++) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, trackingParameters_.getRaw(i));
     }
-    if (!getFlowBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(flow_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, flow_);
     }
     unknownFields.writeTo(output);
@@ -277,7 +277,7 @@ public final class TestConfig extends com.google.protobuf.GeneratedMessageV3
       size += dataSize;
       size += 1 * getTrackingParametersList().size();
     }
-    if (!getFlowBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(flow_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, flow_);
     }
     size += unknownFields.getSerializedSize();

@@ -283,7 +283,7 @@ public final class ListContinuousTestResultsResponse extends com.google.protobuf
     for (int i = 0; i < continuousTestResults_.size(); i++) {
       output.writeMessage(1, continuousTestResults_.get(i));
     }
-    if (!getNextPageTokenBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(nextPageToken_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, nextPageToken_);
     }
     unknownFields.writeTo(output);
@@ -300,7 +300,7 @@ public final class ListContinuousTestResultsResponse extends com.google.protobuf
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               1, continuousTestResults_.get(i));
     }
-    if (!getNextPageTokenBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(nextPageToken_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, nextPageToken_);
     }
     size += unknownFields.getSerializedSize();

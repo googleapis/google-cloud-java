@@ -417,7 +417,7 @@ public final class CalculateCoverageRequest extends com.google.protobuf.Generate
             .getNumber()) {
       output.writeEnum(2, type_);
     }
-    if (!getAgentBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(agent_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, agent_);
     }
     unknownFields.writeTo(output);
@@ -435,7 +435,7 @@ public final class CalculateCoverageRequest extends com.google.protobuf.Generate
             .getNumber()) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(2, type_);
     }
-    if (!getAgentBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(agent_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, agent_);
     }
     size += unknownFields.getSerializedSize();

@@ -26,7 +26,7 @@ package com.google.cloud.dialogflow.cx.v3;
  * [Sessions.StreamingDetectIntent][google.cloud.dialogflow.cx.v3.Sessions.StreamingDetectIntent] method.
  * Multiple request messages should be sent in order:
  * 1.  The first message must contain
- * [session][google.cloud.dialogflow.cx.v3.StreamingDetectIntentRequest.session],
+ *     [session][google.cloud.dialogflow.cx.v3.StreamingDetectIntentRequest.session],
  *     [query_input][google.cloud.dialogflow.cx.v3.StreamingDetectIntentRequest.query_input] plus optionally
  *     [query_params][google.cloud.dialogflow.cx.v3.StreamingDetectIntentRequest.query_params]. If the client
  *     wants to receive an audio response, it should also contain
@@ -450,7 +450,7 @@ public final class StreamingDetectIntentRequest extends com.google.protobuf.Gene
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getSessionBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(session_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, session_);
     }
     if (queryParams_ != null) {
@@ -474,7 +474,7 @@ public final class StreamingDetectIntentRequest extends com.google.protobuf.Gene
     if (size != -1) return size;
 
     size = 0;
-    if (!getSessionBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(session_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, session_);
     }
     if (queryParams_ != null) {
@@ -655,7 +655,7 @@ public final class StreamingDetectIntentRequest extends com.google.protobuf.Gene
    * [Sessions.StreamingDetectIntent][google.cloud.dialogflow.cx.v3.Sessions.StreamingDetectIntent] method.
    * Multiple request messages should be sent in order:
    * 1.  The first message must contain
-   * [session][google.cloud.dialogflow.cx.v3.StreamingDetectIntentRequest.session],
+   *     [session][google.cloud.dialogflow.cx.v3.StreamingDetectIntentRequest.session],
    *     [query_input][google.cloud.dialogflow.cx.v3.StreamingDetectIntentRequest.query_input] plus optionally
    *     [query_params][google.cloud.dialogflow.cx.v3.StreamingDetectIntentRequest.query_params]. If the client
    *     wants to receive an audio response, it should also contain

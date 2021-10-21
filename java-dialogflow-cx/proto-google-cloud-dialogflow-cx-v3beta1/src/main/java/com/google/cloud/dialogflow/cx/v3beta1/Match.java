@@ -732,7 +732,7 @@ public final class Match extends com.google.protobuf.GeneratedMessageV3
     if (parameters_ != null) {
       output.writeMessage(2, getParameters());
     }
-    if (!getResolvedInputBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(resolvedInput_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, resolvedInput_);
     }
     if (matchType_
@@ -743,7 +743,7 @@ public final class Match extends com.google.protobuf.GeneratedMessageV3
     if (confidence_ != 0F) {
       output.writeFloat(5, confidence_);
     }
-    if (!getEventBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(event_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 6, event_);
     }
     unknownFields.writeTo(output);
@@ -761,7 +761,7 @@ public final class Match extends com.google.protobuf.GeneratedMessageV3
     if (parameters_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, getParameters());
     }
-    if (!getResolvedInputBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(resolvedInput_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, resolvedInput_);
     }
     if (matchType_
@@ -772,7 +772,7 @@ public final class Match extends com.google.protobuf.GeneratedMessageV3
     if (confidence_ != 0F) {
       size += com.google.protobuf.CodedOutputStream.computeFloatSize(5, confidence_);
     }
-    if (!getEventBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(event_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, event_);
     }
     size += unknownFields.getSerializedSize();

@@ -581,7 +581,7 @@ public final class QueryInput extends com.google.protobuf.GeneratedMessageV3
     if (inputCase_ == 3) {
       output.writeMessage(3, (com.google.cloud.dialogflow.cx.v3.IntentInput) input_);
     }
-    if (!getLanguageCodeBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(languageCode_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 4, languageCode_);
     }
     if (inputCase_ == 5) {
@@ -612,7 +612,7 @@ public final class QueryInput extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               3, (com.google.cloud.dialogflow.cx.v3.IntentInput) input_);
     }
-    if (!getLanguageCodeBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(languageCode_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, languageCode_);
     }
     if (inputCase_ == 5) {

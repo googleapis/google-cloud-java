@@ -472,7 +472,7 @@ public final class RolloutConfig extends com.google.protobuf.GeneratedMessageV3
 
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-      if (!getDisplayNameBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(displayName_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, displayName_);
       }
       if (trafficPercent_ != 0) {
@@ -490,7 +490,7 @@ public final class RolloutConfig extends com.google.protobuf.GeneratedMessageV3
       if (size != -1) return size;
 
       size = 0;
-      if (!getDisplayNameBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(displayName_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, displayName_);
       }
       if (trafficPercent_ != 0) {
@@ -1464,10 +1464,10 @@ public final class RolloutConfig extends com.google.protobuf.GeneratedMessageV3
     for (int i = 0; i < rolloutSteps_.size(); i++) {
       output.writeMessage(1, rolloutSteps_.get(i));
     }
-    if (!getRolloutConditionBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(rolloutCondition_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, rolloutCondition_);
     }
-    if (!getFailureConditionBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(failureCondition_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, failureCondition_);
     }
     unknownFields.writeTo(output);
@@ -1482,10 +1482,10 @@ public final class RolloutConfig extends com.google.protobuf.GeneratedMessageV3
     for (int i = 0; i < rolloutSteps_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, rolloutSteps_.get(i));
     }
-    if (!getRolloutConditionBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(rolloutCondition_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, rolloutCondition_);
     }
-    if (!getFailureConditionBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(failureCondition_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, failureCondition_);
     }
     size += unknownFields.getSerializedSize();

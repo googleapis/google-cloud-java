@@ -735,7 +735,7 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
             .getNumber()) {
       output.writeEnum(1, messageType_);
     }
-    if (!getTranscriptBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(transcript_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, transcript_);
     }
     if (isFinal_ != false) {
@@ -753,7 +753,7 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
     if (speechEndOffset_ != null) {
       output.writeMessage(8, getSpeechEndOffset());
     }
-    if (!getLanguageCodeBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(languageCode_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 10, languageCode_);
     }
     unknownFields.writeTo(output);
@@ -771,7 +771,7 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
             .getNumber()) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(1, messageType_);
     }
-    if (!getTranscriptBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(transcript_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, transcript_);
     }
     if (isFinal_ != false) {
@@ -789,7 +789,7 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
     if (speechEndOffset_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(8, getSpeechEndOffset());
     }
-    if (!getLanguageCodeBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(languageCode_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(10, languageCode_);
     }
     size += unknownFields.getSerializedSize();

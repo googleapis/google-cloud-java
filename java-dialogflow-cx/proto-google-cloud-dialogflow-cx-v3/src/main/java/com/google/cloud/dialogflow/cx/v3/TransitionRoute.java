@@ -606,10 +606,10 @@ public final class TransitionRoute extends com.google.protobuf.GeneratedMessageV
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getIntentBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(intent_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, intent_);
     }
-    if (!getConditionBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(condition_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, condition_);
     }
     if (triggerFulfillment_ != null) {
@@ -621,7 +621,7 @@ public final class TransitionRoute extends com.google.protobuf.GeneratedMessageV
     if (targetCase_ == 5) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 5, target_);
     }
-    if (!getNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 6, name_);
     }
     unknownFields.writeTo(output);
@@ -633,10 +633,10 @@ public final class TransitionRoute extends com.google.protobuf.GeneratedMessageV
     if (size != -1) return size;
 
     size = 0;
-    if (!getIntentBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(intent_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, intent_);
     }
-    if (!getConditionBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(condition_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, condition_);
     }
     if (triggerFulfillment_ != null) {
@@ -648,7 +648,7 @@ public final class TransitionRoute extends com.google.protobuf.GeneratedMessageV
     if (targetCase_ == 5) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, target_);
     }
-    if (!getNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, name_);
     }
     size += unknownFields.getSerializedSize();

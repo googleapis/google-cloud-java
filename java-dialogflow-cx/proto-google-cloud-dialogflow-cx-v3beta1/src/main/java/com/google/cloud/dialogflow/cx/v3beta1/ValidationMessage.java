@@ -1033,7 +1033,7 @@ public final class ValidationMessage extends com.google.protobuf.GeneratedMessag
             .getNumber()) {
       output.writeEnum(3, severity_);
     }
-    if (!getDetailBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(detail_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 4, detail_);
     }
     for (int i = 0; i < resourceNames_.size(); i++) {
@@ -1067,7 +1067,7 @@ public final class ValidationMessage extends com.google.protobuf.GeneratedMessag
             .getNumber()) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(3, severity_);
     }
-    if (!getDetailBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(detail_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, detail_);
     }
     for (int i = 0; i < resourceNames_.size(); i++) {

@@ -467,7 +467,7 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
 
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-      if (!getParameterBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(parameter_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, parameter_);
       }
       if (value_ != null) {
@@ -482,7 +482,7 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
       if (size != -1) return size;
 
       size = 0;
-      if (!getParameterBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(parameter_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, parameter_);
       }
       if (value_ != null) {
@@ -3026,7 +3026,7 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
 
       @java.lang.Override
       public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-        if (!getConditionBytes().isEmpty()) {
+        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(condition_)) {
           com.google.protobuf.GeneratedMessageV3.writeString(output, 1, condition_);
         }
         for (int i = 0; i < caseContent_.size(); i++) {
@@ -3041,7 +3041,7 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
         if (size != -1) return size;
 
         size = 0;
-        if (!getConditionBytes().isEmpty()) {
+        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(condition_)) {
           size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, condition_);
         }
         for (int i = 0; i < caseContent_.size(); i++) {
@@ -5309,10 +5309,10 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
     for (int i = 0; i < messages_.size(); i++) {
       output.writeMessage(1, messages_.get(i));
     }
-    if (!getWebhookBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(webhook_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, webhook_);
     }
-    if (!getTagBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(tag_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, tag_);
     }
     for (int i = 0; i < setParameterActions_.size(); i++) {
@@ -5336,10 +5336,10 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
     for (int i = 0; i < messages_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, messages_.get(i));
     }
-    if (!getWebhookBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(webhook_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, webhook_);
     }
-    if (!getTagBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(tag_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, tag_);
     }
     for (int i = 0; i < setParameterActions_.size(); i++) {

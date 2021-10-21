@@ -324,7 +324,7 @@ public final class UpdateEntityTypeRequest extends com.google.protobuf.Generated
     if (entityType_ != null) {
       output.writeMessage(1, getEntityType());
     }
-    if (!getLanguageCodeBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(languageCode_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, languageCode_);
     }
     if (updateMask_ != null) {
@@ -342,7 +342,7 @@ public final class UpdateEntityTypeRequest extends com.google.protobuf.Generated
     if (entityType_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, getEntityType());
     }
-    if (!getLanguageCodeBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(languageCode_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, languageCode_);
     }
     if (updateMask_ != null) {

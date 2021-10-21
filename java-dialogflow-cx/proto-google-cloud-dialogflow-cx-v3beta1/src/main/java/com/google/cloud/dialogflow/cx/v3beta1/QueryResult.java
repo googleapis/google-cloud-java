@@ -1403,7 +1403,7 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
     if (queryCase_ == 1) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, query_);
     }
-    if (!getLanguageCodeBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(languageCode_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, languageCode_);
     }
     if (parameters_ != null) {
@@ -1460,7 +1460,7 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
     if (queryCase_ == 1) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, query_);
     }
-    if (!getLanguageCodeBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(languageCode_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, languageCode_);
     }
     if (parameters_ != null) {

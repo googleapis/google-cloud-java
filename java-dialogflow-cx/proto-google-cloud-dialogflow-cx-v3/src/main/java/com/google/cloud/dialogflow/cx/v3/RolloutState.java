@@ -258,7 +258,7 @@ public final class RolloutState extends com.google.protobuf.GeneratedMessageV3
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getStepBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(step_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, step_);
     }
     if (startTime_ != null) {
@@ -276,7 +276,7 @@ public final class RolloutState extends com.google.protobuf.GeneratedMessageV3
     if (size != -1) return size;
 
     size = 0;
-    if (!getStepBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(step_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, step_);
     }
     if (startTime_ != null) {
