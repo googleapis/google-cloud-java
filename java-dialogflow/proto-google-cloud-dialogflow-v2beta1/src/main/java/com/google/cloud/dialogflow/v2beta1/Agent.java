@@ -1293,26 +1293,26 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getParentBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(parent_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, parent_);
     }
-    if (!getDisplayNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(displayName_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, displayName_);
     }
-    if (!getDefaultLanguageCodeBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(defaultLanguageCode_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, defaultLanguageCode_);
     }
     for (int i = 0; i < supportedLanguageCodes_.size(); i++) {
       com.google.protobuf.GeneratedMessageV3.writeString(
           output, 4, supportedLanguageCodes_.getRaw(i));
     }
-    if (!getTimeZoneBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(timeZone_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 5, timeZone_);
     }
-    if (!getDescriptionBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(description_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 6, description_);
     }
-    if (!getAvatarUriBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(avatarUri_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 7, avatarUri_);
     }
     if (enableLogging_ != false) {
@@ -1342,13 +1342,13 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
     if (size != -1) return size;
 
     size = 0;
-    if (!getParentBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(parent_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, parent_);
     }
-    if (!getDisplayNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(displayName_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, displayName_);
     }
-    if (!getDefaultLanguageCodeBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(defaultLanguageCode_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, defaultLanguageCode_);
     }
     {
@@ -1359,13 +1359,13 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
       size += dataSize;
       size += 1 * getSupportedLanguageCodesList().size();
     }
-    if (!getTimeZoneBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(timeZone_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, timeZone_);
     }
-    if (!getDescriptionBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(description_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, description_);
     }
-    if (!getAvatarUriBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(avatarUri_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, avatarUri_);
     }
     if (enableLogging_ != false) {

@@ -901,10 +901,10 @@ public final class ConversationProfile extends com.google.protobuf.GeneratedMess
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name_);
     }
-    if (!getDisplayNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(displayName_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, displayName_);
     }
     if (automatedAgentConfig_ != null) {
@@ -928,7 +928,7 @@ public final class ConversationProfile extends com.google.protobuf.GeneratedMess
     if (sttConfig_ != null) {
       output.writeMessage(9, getSttConfig());
     }
-    if (!getLanguageCodeBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(languageCode_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 10, languageCode_);
     }
     if (createTime_ != null) {
@@ -946,10 +946,10 @@ public final class ConversationProfile extends com.google.protobuf.GeneratedMess
     if (size != -1) return size;
 
     size = 0;
-    if (!getNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, name_);
     }
-    if (!getDisplayNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(displayName_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, displayName_);
     }
     if (automatedAgentConfig_ != null) {
@@ -979,7 +979,7 @@ public final class ConversationProfile extends com.google.protobuf.GeneratedMess
     if (sttConfig_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(9, getSttConfig());
     }
-    if (!getLanguageCodeBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(languageCode_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(10, languageCode_);
     }
     if (createTime_ != null) {

@@ -644,7 +644,7 @@ public final class ConversationEvent extends com.google.protobuf.GeneratedMessag
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getConversationBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(conversation_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, conversation_);
     }
     if (type_
@@ -666,7 +666,7 @@ public final class ConversationEvent extends com.google.protobuf.GeneratedMessag
     if (size != -1) return size;
 
     size = 0;
-    if (!getConversationBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(conversation_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, conversation_);
     }
     if (type_

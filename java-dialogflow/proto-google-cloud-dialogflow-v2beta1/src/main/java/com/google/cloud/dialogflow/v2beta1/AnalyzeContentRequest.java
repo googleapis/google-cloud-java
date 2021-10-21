@@ -663,7 +663,7 @@ public final class AnalyzeContentRequest extends com.google.protobuf.GeneratedMe
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getParticipantBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(participant_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, participant_);
     }
     if (replyAudioConfig_ != null) {
@@ -681,7 +681,7 @@ public final class AnalyzeContentRequest extends com.google.protobuf.GeneratedMe
     if (messageSendTime_ != null) {
       output.writeMessage(10, getMessageSendTime());
     }
-    if (!getRequestIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(requestId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 11, requestId_);
     }
     unknownFields.writeTo(output);
@@ -693,7 +693,7 @@ public final class AnalyzeContentRequest extends com.google.protobuf.GeneratedMe
     if (size != -1) return size;
 
     size = 0;
-    if (!getParticipantBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(participant_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, participant_);
     }
     if (replyAudioConfig_ != null) {
@@ -715,7 +715,7 @@ public final class AnalyzeContentRequest extends com.google.protobuf.GeneratedMe
     if (messageSendTime_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(10, getMessageSendTime());
     }
-    if (!getRequestIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(requestId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(11, requestId_);
     }
     size += unknownFields.getSerializedSize();

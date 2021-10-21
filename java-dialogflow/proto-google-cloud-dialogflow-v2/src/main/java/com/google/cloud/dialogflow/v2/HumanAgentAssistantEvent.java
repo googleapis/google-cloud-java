@@ -326,10 +326,10 @@ public final class HumanAgentAssistantEvent extends com.google.protobuf.Generate
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getConversationBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(conversation_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, conversation_);
     }
-    if (!getParticipantBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(participant_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, participant_);
     }
     for (int i = 0; i < suggestionResults_.size(); i++) {
@@ -344,10 +344,10 @@ public final class HumanAgentAssistantEvent extends com.google.protobuf.Generate
     if (size != -1) return size;
 
     size = 0;
-    if (!getConversationBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(conversation_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, conversation_);
     }
-    if (!getParticipantBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(participant_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, participant_);
     }
     for (int i = 0; i < suggestionResults_.size(); i++) {

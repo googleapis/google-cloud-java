@@ -452,7 +452,7 @@ public final class ImportDocumentTemplate extends com.google.protobuf.GeneratedM
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
     getSerializedSize();
-    if (!getMimeTypeBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(mimeType_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, mimeType_);
     }
     if (getKnowledgeTypesList().size() > 0) {
@@ -473,7 +473,7 @@ public final class ImportDocumentTemplate extends com.google.protobuf.GeneratedM
     if (size != -1) return size;
 
     size = 0;
-    if (!getMimeTypeBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(mimeType_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, mimeType_);
     }
     {

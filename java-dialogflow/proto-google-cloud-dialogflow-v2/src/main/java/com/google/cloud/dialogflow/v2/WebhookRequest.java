@@ -384,7 +384,7 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getResponseIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(responseId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, responseId_);
     }
     if (queryResult_ != null) {
@@ -393,7 +393,7 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
     if (originalDetectIntentRequest_ != null) {
       output.writeMessage(3, getOriginalDetectIntentRequest());
     }
-    if (!getSessionBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(session_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 4, session_);
     }
     unknownFields.writeTo(output);
@@ -405,7 +405,7 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
     if (size != -1) return size;
 
     size = 0;
-    if (!getResponseIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(responseId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, responseId_);
     }
     if (queryResult_ != null) {
@@ -416,7 +416,7 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               3, getOriginalDetectIntentRequest());
     }
-    if (!getSessionBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(session_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, session_);
     }
     size += unknownFields.getSerializedSize();

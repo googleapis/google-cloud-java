@@ -510,21 +510,21 @@ public final class FaqAnswer extends com.google.protobuf.GeneratedMessageV3
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getAnswerBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(answer_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, answer_);
     }
     if (confidence_ != 0F) {
       output.writeFloat(2, confidence_);
     }
-    if (!getQuestionBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(question_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, question_);
     }
-    if (!getSourceBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(source_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 4, source_);
     }
     com.google.protobuf.GeneratedMessageV3.serializeStringMapTo(
         output, internalGetMetadata(), MetadataDefaultEntryHolder.defaultEntry, 5);
-    if (!getAnswerRecordBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(answerRecord_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 6, answerRecord_);
     }
     unknownFields.writeTo(output);
@@ -536,16 +536,16 @@ public final class FaqAnswer extends com.google.protobuf.GeneratedMessageV3
     if (size != -1) return size;
 
     size = 0;
-    if (!getAnswerBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(answer_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, answer_);
     }
     if (confidence_ != 0F) {
       size += com.google.protobuf.CodedOutputStream.computeFloatSize(2, confidence_);
     }
-    if (!getQuestionBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(question_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, question_);
     }
-    if (!getSourceBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(source_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, source_);
     }
     for (java.util.Map.Entry<java.lang.String, java.lang.String> entry :
@@ -558,7 +558,7 @@ public final class FaqAnswer extends com.google.protobuf.GeneratedMessageV3
               .build();
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(5, metadata__);
     }
-    if (!getAnswerRecordBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(answerRecord_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, answerRecord_);
     }
     size += unknownFields.getSerializedSize();

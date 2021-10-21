@@ -553,7 +553,7 @@ public final class ValidationError extends com.google.protobuf.GeneratedMessageV
     for (int i = 0; i < entries_.size(); i++) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, entries_.getRaw(i));
     }
-    if (!getErrorMessageBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(errorMessage_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 4, errorMessage_);
     }
     unknownFields.writeTo(output);
@@ -578,7 +578,7 @@ public final class ValidationError extends com.google.protobuf.GeneratedMessageV
       size += dataSize;
       size += 1 * getEntriesList().size();
     }
-    if (!getErrorMessageBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(errorMessage_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, errorMessage_);
     }
     size += unknownFields.getSerializedSize();

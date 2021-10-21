@@ -261,13 +261,13 @@ public final class SmartReplyAnswer extends com.google.protobuf.GeneratedMessage
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getReplyBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(reply_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, reply_);
     }
     if (confidence_ != 0F) {
       output.writeFloat(2, confidence_);
     }
-    if (!getAnswerRecordBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(answerRecord_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, answerRecord_);
     }
     unknownFields.writeTo(output);
@@ -279,13 +279,13 @@ public final class SmartReplyAnswer extends com.google.protobuf.GeneratedMessage
     if (size != -1) return size;
 
     size = 0;
-    if (!getReplyBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(reply_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, reply_);
     }
     if (confidence_ != 0F) {
       size += com.google.protobuf.CodedOutputStream.computeFloatSize(2, confidence_);
     }
-    if (!getAnswerRecordBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(answerRecord_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, answerRecord_);
     }
     size += unknownFields.getSerializedSize();

@@ -763,7 +763,7 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getTimeZoneBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(timeZone_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, timeZone_);
     }
     if (geoLocation_ != null) {
@@ -795,7 +795,7 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
     if (size != -1) return size;
 
     size = 0;
-    if (!getTimeZoneBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(timeZone_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, timeZone_);
     }
     if (geoLocation_ != null) {

@@ -1024,7 +1024,7 @@ public final class AgentAssistantFeedback extends com.google.protobuf.GeneratedM
       if (submitTimestamp_ != null) {
         output.writeMessage(2, getSubmitTimestamp());
       }
-      if (!getSummaryTextBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(summaryText_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 3, summaryText_);
       }
       unknownFields.writeTo(output);
@@ -1042,7 +1042,7 @@ public final class AgentAssistantFeedback extends com.google.protobuf.GeneratedM
       if (submitTimestamp_ != null) {
         size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, getSubmitTimestamp());
       }
-      if (!getSummaryTextBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(summaryText_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, summaryText_);
       }
       size += unknownFields.getSerializedSize();

@@ -523,10 +523,10 @@ public final class ArticleAnswer extends com.google.protobuf.GeneratedMessageV3
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getTitleBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(title_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, title_);
     }
-    if (!getUriBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(uri_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, uri_);
     }
     for (int i = 0; i < snippets_.size(); i++) {
@@ -537,7 +537,7 @@ public final class ArticleAnswer extends com.google.protobuf.GeneratedMessageV3
     }
     com.google.protobuf.GeneratedMessageV3.serializeStringMapTo(
         output, internalGetMetadata(), MetadataDefaultEntryHolder.defaultEntry, 5);
-    if (!getAnswerRecordBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(answerRecord_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 6, answerRecord_);
     }
     unknownFields.writeTo(output);
@@ -549,10 +549,10 @@ public final class ArticleAnswer extends com.google.protobuf.GeneratedMessageV3
     if (size != -1) return size;
 
     size = 0;
-    if (!getTitleBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(title_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, title_);
     }
-    if (!getUriBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(uri_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, uri_);
     }
     {
@@ -576,7 +576,7 @@ public final class ArticleAnswer extends com.google.protobuf.GeneratedMessageV3
               .build();
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(5, metadata__);
     }
-    if (!getAnswerRecordBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(answerRecord_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, answerRecord_);
     }
     size += unknownFields.getSerializedSize();

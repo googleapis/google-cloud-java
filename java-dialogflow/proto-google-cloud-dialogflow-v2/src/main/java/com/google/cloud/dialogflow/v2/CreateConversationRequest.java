@@ -323,13 +323,13 @@ public final class CreateConversationRequest extends com.google.protobuf.Generat
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getParentBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(parent_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, parent_);
     }
     if (conversation_ != null) {
       output.writeMessage(2, getConversation());
     }
-    if (!getConversationIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(conversationId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, conversationId_);
     }
     unknownFields.writeTo(output);
@@ -341,13 +341,13 @@ public final class CreateConversationRequest extends com.google.protobuf.Generat
     if (size != -1) return size;
 
     size = 0;
-    if (!getParentBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(parent_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, parent_);
     }
     if (conversation_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, getConversation());
     }
-    if (!getConversationIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(conversationId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, conversationId_);
     }
     size += unknownFields.getSerializedSize();

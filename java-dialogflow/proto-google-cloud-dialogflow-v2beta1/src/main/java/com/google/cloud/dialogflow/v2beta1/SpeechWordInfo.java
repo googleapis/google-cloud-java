@@ -342,7 +342,7 @@ public final class SpeechWordInfo extends com.google.protobuf.GeneratedMessageV3
     if (endOffset_ != null) {
       output.writeMessage(2, getEndOffset());
     }
-    if (!getWordBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(word_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, word_);
     }
     if (confidence_ != 0F) {
@@ -363,7 +363,7 @@ public final class SpeechWordInfo extends com.google.protobuf.GeneratedMessageV3
     if (endOffset_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, getEndOffset());
     }
-    if (!getWordBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(word_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, word_);
     }
     if (confidence_ != 0F) {

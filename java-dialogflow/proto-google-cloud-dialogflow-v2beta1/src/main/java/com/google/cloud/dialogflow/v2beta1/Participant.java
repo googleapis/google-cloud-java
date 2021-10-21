@@ -510,14 +510,14 @@ public final class Participant extends com.google.protobuf.GeneratedMessageV3
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name_);
     }
     if (role_
         != com.google.cloud.dialogflow.v2beta1.Participant.Role.ROLE_UNSPECIFIED.getNumber()) {
       output.writeEnum(2, role_);
     }
-    if (!getObfuscatedExternalUserIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(obfuscatedExternalUserId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 7, obfuscatedExternalUserId_);
     }
     unknownFields.writeTo(output);
@@ -529,14 +529,14 @@ public final class Participant extends com.google.protobuf.GeneratedMessageV3
     if (size != -1) return size;
 
     size = 0;
-    if (!getNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, name_);
     }
     if (role_
         != com.google.cloud.dialogflow.v2beta1.Participant.Role.ROLE_UNSPECIFIED.getNumber()) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(2, role_);
     }
-    if (!getObfuscatedExternalUserIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(obfuscatedExternalUserId_)) {
       size +=
           com.google.protobuf.GeneratedMessageV3.computeStringSize(7, obfuscatedExternalUserId_);
     }

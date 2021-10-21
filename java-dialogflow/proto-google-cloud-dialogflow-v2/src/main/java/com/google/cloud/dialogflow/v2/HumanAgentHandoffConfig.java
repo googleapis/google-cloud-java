@@ -347,7 +347,7 @@ public final class HumanAgentHandoffConfig extends com.google.protobuf.Generated
 
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-      if (!getAccountNumberBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(accountNumber_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, accountNumber_);
       }
       unknownFields.writeTo(output);
@@ -359,7 +359,7 @@ public final class HumanAgentHandoffConfig extends com.google.protobuf.Generated
       if (size != -1) return size;
 
       size = 0;
-      if (!getAccountNumberBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(accountNumber_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, accountNumber_);
       }
       size += unknownFields.getSerializedSize();
@@ -1284,16 +1284,16 @@ public final class HumanAgentHandoffConfig extends com.google.protobuf.Generated
 
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-      if (!getOrganizationIdBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(organizationId_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, organizationId_);
       }
-      if (!getDeploymentIdBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(deploymentId_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, deploymentId_);
       }
-      if (!getButtonIdBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(buttonId_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 3, buttonId_);
       }
-      if (!getEndpointDomainBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(endpointDomain_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 4, endpointDomain_);
       }
       unknownFields.writeTo(output);
@@ -1305,16 +1305,16 @@ public final class HumanAgentHandoffConfig extends com.google.protobuf.Generated
       if (size != -1) return size;
 
       size = 0;
-      if (!getOrganizationIdBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(organizationId_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, organizationId_);
       }
-      if (!getDeploymentIdBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(deploymentId_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, deploymentId_);
       }
-      if (!getButtonIdBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(buttonId_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, buttonId_);
       }
-      if (!getEndpointDomainBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(endpointDomain_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, endpointDomain_);
       }
       size += unknownFields.getSerializedSize();
