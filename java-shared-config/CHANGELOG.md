@@ -1,5 +1,17 @@
 # Changelog
 
+## [1.2.0](https://www.github.com/googleapis/java-shared-config/compare/v1.1.0...v1.2.0) (2021-10-21)
+
+
+### Features
+
+* Introduce Native Image testing build script changes ([#1240](https://www.github.com/googleapis/java-shared-config/issues/1240)) ([#334](https://www.github.com/googleapis/java-shared-config/issues/334)) ([4643cf1](https://www.github.com/googleapis/java-shared-config/commit/4643cf15be0b37fa8fa905d544d438cda7ef2ecd))
+
+
+### Bug Fixes
+
+* **java:** downgrade native maven plugin version ([#335](https://www.github.com/googleapis/java-shared-config/issues/335)) ([5834284](https://www.github.com/googleapis/java-shared-config/commit/5834284176fb34713d10082ce04f3b6abba85ad8))
+
 ## [1.1.0](https://www.github.com/googleapis/java-shared-config/compare/v1.0.3...v1.1.0) (2021-10-12)
 
 
