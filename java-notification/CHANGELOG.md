@@ -1,5 +1,19 @@
 # Changelog
 
+### [0.122.13](https://www.github.com/googleapis/java-notification/compare/v0.122.12...v0.122.13) (2021-10-21)
+
+
+### Dependencies
+
+* update dependency com.google.apis:google-api-services-storage to v1-rev20210918-1.32.1 ([#436](https://www.github.com/googleapis/java-notification/issues/436)) ([a7589f0](https://www.github.com/googleapis/java-notification/commit/a7589f005436be3c4c4f43c1574a4186e0129b9c))
+* update dependency com.google.cloud:google-cloud-pubsub-bom to v1.114.5 ([#442](https://www.github.com/googleapis/java-notification/issues/442)) ([b3e6443](https://www.github.com/googleapis/java-notification/commit/b3e6443d6466ee78a7f83c69497f2890a723a8f0))
+* update dependency com.google.cloud:google-cloud-pubsub-bom to v1.114.6 ([#446](https://www.github.com/googleapis/java-notification/issues/446)) ([e0ace2d](https://www.github.com/googleapis/java-notification/commit/e0ace2ddbd80839d7b2ac5d43e714fe86bd7238e))
+* update dependency com.google.cloud:google-cloud-pubsub-bom to v1.114.7 ([#450](https://www.github.com/googleapis/java-notification/issues/450)) ([476ee77](https://www.github.com/googleapis/java-notification/commit/476ee773f5aa046632a331d4d2c3f8d996b0d84b))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.4.0 ([#452](https://www.github.com/googleapis/java-notification/issues/452)) ([a964fa2](https://www.github.com/googleapis/java-notification/commit/a964fa2bf48e8322d9a1af7f2a58465dcf84e5ac))
+* update dependency com.google.cloud:google-cloud-storage to v2.1.6 ([#437](https://www.github.com/googleapis/java-notification/issues/437)) ([bb53678](https://www.github.com/googleapis/java-notification/commit/bb53678942ba32937031bb63eb704baa6d109bba))
+* update dependency com.google.cloud:google-cloud-storage to v2.1.7 ([#445](https://www.github.com/googleapis/java-notification/issues/445)) ([2c2a92f](https://www.github.com/googleapis/java-notification/commit/2c2a92febd94c0167e4b4faba713a69467908592))
+* update dependency com.google.cloud:google-cloud-storage to v2.1.9 ([#451](https://www.github.com/googleapis/java-notification/issues/451)) ([36a35a2](https://www.github.com/googleapis/java-notification/commit/36a35a21254c24ddbe1fc360a713dd4c8cf02230))
+
 ### [0.122.12](https://www.github.com/googleapis/java-notification/compare/v0.122.11...v0.122.12) (2021-09-24)
 
 
