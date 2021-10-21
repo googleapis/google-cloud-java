@@ -33,6 +33,19 @@
  * }
  * }</pre>
  *
+ * <p>======================= BatchControllerClient =======================
+ *
+ * <p>Service Description: The BatchController provides methods to manage batch workloads.
+ *
+ * <p>Sample for BatchControllerClient:
+ *
+ * <pre>{@code
+ * try (BatchControllerClient batchControllerClient = BatchControllerClient.create()) {
+ *   BatchName name = BatchName.of("[PROJECT]", "[LOCATION]", "[BATCH]");
+ *   Batch response = batchControllerClient.getBatch(name);
+ * }
+ * }</pre>
+ *
  * <p>======================= ClusterControllerClient =======================
  *
  * <p>Service Description: The ClusterControllerService provides methods to manage clusters of

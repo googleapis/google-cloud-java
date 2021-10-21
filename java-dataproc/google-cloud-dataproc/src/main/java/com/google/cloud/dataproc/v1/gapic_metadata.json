@@ -29,6 +29,27 @@
         }
       }
     },
+    "BatchController": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "BatchControllerClient",
+          "rpcs": {
+            "CreateBatch": {
+              "methods": ["createBatchAsync", "createBatchAsync", "createBatchAsync", "createBatchOperationCallable", "createBatchCallable"]
+            },
+            "DeleteBatch": {
+              "methods": ["deleteBatch", "deleteBatch", "deleteBatch", "deleteBatchCallable"]
+            },
+            "GetBatch": {
+              "methods": ["getBatch", "getBatch", "getBatch", "getBatchCallable"]
+            },
+            "ListBatches": {
+              "methods": ["listBatches", "listBatches", "listBatches", "listBatchesPagedCallable", "listBatchesCallable"]
+            }
+          }
+        }
+      }
+    },
     "ClusterController": {
       "clients": {
         "grpc": {
