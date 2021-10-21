@@ -55,7 +55,7 @@ If you are using Maven without BOM, add this to your dependencies:
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-bigquery</artifactId>
-  <version>2.3.1</version>
+  <version>2.3.2</version>
 </dependency>
 <dependency>
   <groupId>com.google.cloud</groupId>
@@ -75,13 +75,13 @@ implementation 'com.google.cloud:google-cloud-automl'
 If you are using Gradle without BOM, add this to your dependencies
 
 ```Groovy
-implementation 'com.google.cloud:google-cloud-automl:2.1.6'
+implementation 'com.google.cloud:google-cloud-automl:2.1.7'
 ```
 
 If you are using SBT, add this to your dependencies
 
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-automl" % "2.1.6"
+libraryDependencies += "com.google.cloud" % "google-cloud-automl" % "2.1.7"
 ```
 
 ## Authentication
