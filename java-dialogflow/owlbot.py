@@ -19,75 +19,76 @@ from synthtool.languages import java
 for library in s.get_staging_dirs():
     # put any special-case replacements here
     # TODO: remove this for the next major version bump
-    s.replace(
-        'owl-bot-staging/v2beta1/proto-google-cloud-dialogflow-v2beta1/src/main/java/com/google/cloud/dialogflow/v2beta1/AgentName.java',
-        'public static String formatProjectName',
-        'public static String formatProjectAgentName'
-    )
-    s.replace(
-        'owl-bot-staging/v2beta1/proto-google-cloud-dialogflow-v2beta1/src/main/java/com/google/cloud/dialogflow/v2beta1/AgentName.java',
-        'public static String formatProjectLocationName',
-        'public static String formatProjectLocationAgentName'
-    )
-    s.replace(
-        'owl-bot-staging/v2beta1/proto-google-cloud-dialogflow-v2beta1/src/main/java/com/google/cloud/dialogflow/v2beta1/AgentName.java',
-        'ProjectBuilder',
-        'ProjectAgentBuilder'
-    )
-    s.replace(
-        'owl-bot-staging/v2beta1/proto-google-cloud-dialogflow-v2beta1/src/main/java/com/google/cloud/dialogflow/v2beta1/AgentName.java',
-        'ProjectLocationBuilder',
-        'ProjectLocationAgentBuilder'
-    )
+    if 'formatProjectAgentName' not in open('owl-bot-staging/v2beta1/proto-google-cloud-dialogflow-v2beta1/src/main/java/com/google/cloud/dialogflow/v2beta1/AgentName.java').read():
+        s.replace(
+            'owl-bot-staging/v2beta1/proto-google-cloud-dialogflow-v2beta1/src/main/java/com/google/cloud/dialogflow/v2beta1/AgentName.java',
+            'public static String formatProjectName',
+            'public static String formatProjectAgentName'
+        )
+        s.replace(
+            'owl-bot-staging/v2beta1/proto-google-cloud-dialogflow-v2beta1/src/main/java/com/google/cloud/dialogflow/v2beta1/AgentName.java',
+            'public static String formatProjectLocationName',
+            'public static String formatProjectLocationAgentName'
+        )
+        s.replace(
+            'owl-bot-staging/v2beta1/proto-google-cloud-dialogflow-v2beta1/src/main/java/com/google/cloud/dialogflow/v2beta1/AgentName.java',
+            'ProjectBuilder',
+            'ProjectAgentBuilder'
+        )
+        s.replace(
+            'owl-bot-staging/v2beta1/proto-google-cloud-dialogflow-v2beta1/src/main/java/com/google/cloud/dialogflow/v2beta1/AgentName.java',
+            'ProjectLocationBuilder',
+            'ProjectLocationAgentBuilder'
+        )
 
-    DEPRECATION_JAVADOC = """Please use {{@link #{new_method}()}} instead"""
+        DEPRECATION_JAVADOC = """Please use {{@link #{new_method}()}} instead"""
 
 
-    java.copy_and_rename_method(
-        'owl-bot-staging/v2beta1/proto-google-cloud-dialogflow-v2beta1/src/main/java/com/google/cloud/dialogflow/v2beta1/AgentName.java',
-        'public static AgentName ofProjectName(String project)',
-        'ofProjectName',
-        'ofProjectAgentName'
-    )
-    java.deprecate_method(
-        'owl-bot-staging/v2beta1/proto-google-cloud-dialogflow-v2beta1/src/main/java/com/google/cloud/dialogflow/v2beta1/AgentName.java',
-        'public static AgentName ofProjectAgentName(String project)',
-        DEPRECATION_JAVADOC.format(new_method='ofProjectName')
-    )
-    s.replace(
-        'owl-bot-staging/v2beta1/proto-google-cloud-dialogflow-v2beta1/src/main/java/com/google/cloud/dialogflow/v2beta1/AgentName.java',
-        'return ofProjectName',
-        'return ofProjectAgentName'
-    )
-    s.replace(
-        'owl-bot-staging/v2beta1/proto-google-cloud-dialogflow-v2beta1/src/main/java/com/google/cloud/dialogflow/v2beta1/AgentName.java',
-        'return ofProjectLocationName',
-        'return ofProjectLocationAgentName'
-    )
-    java.copy_and_rename_method(
-        'owl-bot-staging/v2beta1/proto-google-cloud-dialogflow-v2beta1/src/main/java/com/google/cloud/dialogflow/v2beta1/AgentName.java',
-        'public static AgentName ofProjectLocationName(String project, String location)',
-        'ofProjectLocationName',
-        'ofProjectLocationAgentName'
-    )
-    java.deprecate_method(
-        'owl-bot-staging/v2beta1/proto-google-cloud-dialogflow-v2beta1/src/main/java/com/google/cloud/dialogflow/v2beta1/AgentName.java',
-        'public static AgentName ofProjectLocationAgentName(String project, String location)',
-        DEPRECATION_JAVADOC.format(new_method='ofProjectLocationName')
-    )
+        java.copy_and_rename_method(
+            'owl-bot-staging/v2beta1/proto-google-cloud-dialogflow-v2beta1/src/main/java/com/google/cloud/dialogflow/v2beta1/AgentName.java',
+            'public static AgentName ofProjectName(String project)',
+            'ofProjectName',
+            'ofProjectAgentName'
+        )
+        java.deprecate_method(
+            'owl-bot-staging/v2beta1/proto-google-cloud-dialogflow-v2beta1/src/main/java/com/google/cloud/dialogflow/v2beta1/AgentName.java',
+            'public static AgentName ofProjectAgentName(String project)',
+            DEPRECATION_JAVADOC.format(new_method='ofProjectName')
+        )
+        s.replace(
+            'owl-bot-staging/v2beta1/proto-google-cloud-dialogflow-v2beta1/src/main/java/com/google/cloud/dialogflow/v2beta1/AgentName.java',
+            'return ofProjectName',
+            'return ofProjectAgentName'
+        )
+        s.replace(
+            'owl-bot-staging/v2beta1/proto-google-cloud-dialogflow-v2beta1/src/main/java/com/google/cloud/dialogflow/v2beta1/AgentName.java',
+            'return ofProjectLocationName',
+            'return ofProjectLocationAgentName'
+        )
+        java.copy_and_rename_method(
+            'owl-bot-staging/v2beta1/proto-google-cloud-dialogflow-v2beta1/src/main/java/com/google/cloud/dialogflow/v2beta1/AgentName.java',
+            'public static AgentName ofProjectLocationName(String project, String location)',
+            'ofProjectLocationName',
+            'ofProjectLocationAgentName'
+        )
+        java.deprecate_method(
+            'owl-bot-staging/v2beta1/proto-google-cloud-dialogflow-v2beta1/src/main/java/com/google/cloud/dialogflow/v2beta1/AgentName.java',
+            'public static AgentName ofProjectLocationAgentName(String project, String location)',
+            DEPRECATION_JAVADOC.format(new_method='ofProjectLocationName')
+        )
 
-    s.replace(
-        [
-            'owl-bot-staging/v2beta1/google-cloud-dialogflow/src/test/java/com/google/cloud/dialogflow/v2beta1/AgentsClientTest.java',
-            'owl-bot-staging/v2beta1/google-cloud-dialogflow/src/test/java/com/google/cloud/dialogflow/v2beta1/EnvironmentsClientTest.java',
-            'owl-bot-staging/v2beta1/google-cloud-dialogflow/src/test/java/com/google/cloud/dialogflow/v2beta1/EntityTypesClientTest.java',
-            'owl-bot-staging/v2beta1/google-cloud-dialogflow/src/test/java/com/google/cloud/dialogflow/v2beta1/IntentsClientTest.java',
-            'owl-bot-staging/v2beta1/google-cloud-dialogflow/src/test/java/com/google/cloud/dialogflow/v2beta1/VersionsClientTest.java'
+        s.replace(
+            [
+                'owl-bot-staging/v2beta1/google-cloud-dialogflow/src/test/java/com/google/cloud/dialogflow/v2beta1/AgentsClientTest.java',
+                'owl-bot-staging/v2beta1/google-cloud-dialogflow/src/test/java/com/google/cloud/dialogflow/v2beta1/EnvironmentsClientTest.java',
+                'owl-bot-staging/v2beta1/google-cloud-dialogflow/src/test/java/com/google/cloud/dialogflow/v2beta1/EntityTypesClientTest.java',
+                'owl-bot-staging/v2beta1/google-cloud-dialogflow/src/test/java/com/google/cloud/dialogflow/v2beta1/IntentsClientTest.java',
+                'owl-bot-staging/v2beta1/google-cloud-dialogflow/src/test/java/com/google/cloud/dialogflow/v2beta1/VersionsClientTest.java'
 
-        ],
-        'ofProjectName',
-        'ofProjectAgentName'
-    )
+            ],
+            'ofProjectName',
+            'ofProjectAgentName'
+        )
     s.move(library)
 
 s.remove_staging_dirs()
