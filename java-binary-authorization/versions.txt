@@ -3,4 +3,6 @@
 
 google-cloud-binary-authorization:0.3.3:0.3.4-SNAPSHOT
 grpc-google-cloud-binary-authorization-v1beta1:0.3.3:0.3.4-SNAPSHOT
+grpc-google-cloud-binary-authorization-v1:0.3.3:0.3.4-SNAPSHOT
 proto-google-cloud-binary-authorization-v1beta1:0.3.3:0.3.4-SNAPSHOT
+proto-google-cloud-binary-authorization-v1:0.3.3:0.3.4-SNAPSHOT

@@ -44,6 +44,10 @@
 
     <dependency>
       <groupId>com.google.api.grpc</groupId>
+      <artifactId>proto-google-cloud-binary-authorization-v1</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>com.google.api.grpc</groupId>
       <artifactId>proto-google-cloud-binary-authorization-v1beta1</artifactId>
     </dependency>
     <dependency>
@@ -63,6 +67,11 @@
       <artifactId>threetenbp</artifactId>
     </dependency>
 
+    <dependency>
+      <groupId>io.grafeas</groupId>
+      <artifactId>grafeas</artifactId>
+    </dependency>
+
     <!-- Test dependencies -->
     <dependency>
       <groupId>junit</groupId>
@@ -74,6 +83,11 @@
     <dependency>
       <groupId>com.google.api.grpc</groupId>
       <artifactId>grpc-google-cloud-binary-authorization-v1beta1</artifactId>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>com.google.api.grpc</groupId>
+      <artifactId>grpc-google-cloud-binary-authorization-v1</artifactId>
       <scope>test</scope>
     </dependency>
     <!-- Need testing utility classes for generated gRPC clients tests -->
