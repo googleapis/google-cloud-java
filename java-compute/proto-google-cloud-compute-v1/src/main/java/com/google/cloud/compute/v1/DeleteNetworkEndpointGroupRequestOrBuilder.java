@@ -57,7 +57,9 @@ public interface DeleteNetworkEndpointGroupRequestOrBuilder
    * Project ID for this request.
    * </pre>
    *
-   * <code>string project = 227560217 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>
+   * string project = 227560217 [(.google.api.field_behavior) = REQUIRED, (.google.cloud.operation_request_field) = "project"];
+   * </code>
    *
    * @return The project.
    */
@@ -69,7 +71,9 @@ public interface DeleteNetworkEndpointGroupRequestOrBuilder
    * Project ID for this request.
    * </pre>
    *
-   * <code>string project = 227560217 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>
+   * string project = 227560217 [(.google.api.field_behavior) = REQUIRED, (.google.cloud.operation_request_field) = "project"];
+   * </code>
    *
    * @return The bytes for project.
    */
@@ -125,7 +129,9 @@ public interface DeleteNetworkEndpointGroupRequestOrBuilder
    * The name of the zone where the network endpoint group is located. It should comply with RFC1035.
    * </pre>
    *
-   * <code>string zone = 3744684 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>
+   * string zone = 3744684 [(.google.api.field_behavior) = REQUIRED, (.google.cloud.operation_request_field) = "zone"];
+   * </code>
    *
    * @return The zone.
    */
@@ -137,7 +143,9 @@ public interface DeleteNetworkEndpointGroupRequestOrBuilder
    * The name of the zone where the network endpoint group is located. It should comply with RFC1035.
    * </pre>
    *
-   * <code>string zone = 3744684 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>
+   * string zone = 3744684 [(.google.api.field_behavior) = REQUIRED, (.google.cloud.operation_request_field) = "zone"];
+   * </code>
    *
    * @return The bytes for zone.
    */

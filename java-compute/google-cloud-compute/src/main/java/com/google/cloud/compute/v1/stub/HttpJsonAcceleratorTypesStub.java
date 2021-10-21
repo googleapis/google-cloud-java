@@ -25,7 +25,6 @@ import com.google.api.core.InternalApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.httpjson.ApiMethodDescriptor;
-import com.google.api.gax.httpjson.FieldsExtractor;
 import com.google.api.gax.httpjson.HttpJsonCallSettings;
 import com.google.api.gax.httpjson.HttpJsonStubCallableFactory;
 import com.google.api.gax.httpjson.ProtoMessageRequestFormatter;
@@ -67,61 +66,44 @@ public class HttpJsonAcceleratorTypesStub extends AcceleratorTypesStub {
                   ProtoMessageRequestFormatter.<AggregatedListAcceleratorTypesRequest>newBuilder()
                       .setPath(
                           "/compute/v1/projects/{project}/aggregated/acceleratorTypes",
-                          new FieldsExtractor<
-                              AggregatedListAcceleratorTypesRequest, Map<String, String>>() {
-                            @Override
-                            public Map<String, String> extract(
-                                AggregatedListAcceleratorTypesRequest request) {
-                              Map<String, String> fields = new HashMap<>();
-                              ProtoRestSerializer<AggregatedListAcceleratorTypesRequest>
-                                  serializer = ProtoRestSerializer.create();
-                              serializer.putPathParam(fields, "project", request.getProject());
-                              return fields;
-                            }
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<AggregatedListAcceleratorTypesRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "project", request.getProject());
+                            return fields;
                           })
                       .setQueryParamsExtractor(
-                          new FieldsExtractor<
-                              AggregatedListAcceleratorTypesRequest, Map<String, List<String>>>() {
-                            @Override
-                            public Map<String, List<String>> extract(
-                                AggregatedListAcceleratorTypesRequest request) {
-                              Map<String, List<String>> fields = new HashMap<>();
-                              ProtoRestSerializer<AggregatedListAcceleratorTypesRequest>
-                                  serializer = ProtoRestSerializer.create();
-                              if (request.hasFilter()) {
-                                serializer.putQueryParam(fields, "filter", request.getFilter());
-                              }
-                              if (request.hasIncludeAllScopes()) {
-                                serializer.putQueryParam(
-                                    fields, "includeAllScopes", request.getIncludeAllScopes());
-                              }
-                              if (request.hasMaxResults()) {
-                                serializer.putQueryParam(
-                                    fields, "maxResults", request.getMaxResults());
-                              }
-                              if (request.hasOrderBy()) {
-                                serializer.putQueryParam(fields, "orderBy", request.getOrderBy());
-                              }
-                              if (request.hasPageToken()) {
-                                serializer.putQueryParam(
-                                    fields, "pageToken", request.getPageToken());
-                              }
-                              if (request.hasReturnPartialSuccess()) {
-                                serializer.putQueryParam(
-                                    fields,
-                                    "returnPartialSuccess",
-                                    request.getReturnPartialSuccess());
-                              }
-                              return fields;
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<AggregatedListAcceleratorTypesRequest> serializer =
+                                ProtoRestSerializer.create();
+                            if (request.hasFilter()) {
+                              serializer.putQueryParam(fields, "filter", request.getFilter());
                             }
-                          })
-                      .setRequestBodyExtractor(
-                          new FieldsExtractor<AggregatedListAcceleratorTypesRequest, String>() {
-                            @Override
-                            public String extract(AggregatedListAcceleratorTypesRequest request) {
-                              return null;
+                            if (request.hasIncludeAllScopes()) {
+                              serializer.putQueryParam(
+                                  fields, "includeAllScopes", request.getIncludeAllScopes());
                             }
+                            if (request.hasMaxResults()) {
+                              serializer.putQueryParam(
+                                  fields, "maxResults", request.getMaxResults());
+                            }
+                            if (request.hasOrderBy()) {
+                              serializer.putQueryParam(fields, "orderBy", request.getOrderBy());
+                            }
+                            if (request.hasPageToken()) {
+                              serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            }
+                            if (request.hasReturnPartialSuccess()) {
+                              serializer.putQueryParam(
+                                  fields,
+                                  "returnPartialSuccess",
+                                  request.getReturnPartialSuccess());
+                            }
+                            return fields;
                           })
+                      .setRequestBodyExtractor(request -> null)
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<AcceleratorTypeAggregatedList>newBuilder()
@@ -138,38 +120,24 @@ public class HttpJsonAcceleratorTypesStub extends AcceleratorTypesStub {
                   ProtoMessageRequestFormatter.<GetAcceleratorTypeRequest>newBuilder()
                       .setPath(
                           "/compute/v1/projects/{project}/zones/{zone}/acceleratorTypes/{acceleratorType}",
-                          new FieldsExtractor<GetAcceleratorTypeRequest, Map<String, String>>() {
-                            @Override
-                            public Map<String, String> extract(GetAcceleratorTypeRequest request) {
-                              Map<String, String> fields = new HashMap<>();
-                              ProtoRestSerializer<GetAcceleratorTypeRequest> serializer =
-                                  ProtoRestSerializer.create();
-                              serializer.putPathParam(
-                                  fields, "acceleratorType", request.getAcceleratorType());
-                              serializer.putPathParam(fields, "project", request.getProject());
-                              serializer.putPathParam(fields, "zone", request.getZone());
-                              return fields;
-                            }
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<GetAcceleratorTypeRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(
+                                fields, "acceleratorType", request.getAcceleratorType());
+                            serializer.putPathParam(fields, "project", request.getProject());
+                            serializer.putPathParam(fields, "zone", request.getZone());
+                            return fields;
                           })
                       .setQueryParamsExtractor(
-                          new FieldsExtractor<
-                              GetAcceleratorTypeRequest, Map<String, List<String>>>() {
-                            @Override
-                            public Map<String, List<String>> extract(
-                                GetAcceleratorTypeRequest request) {
-                              Map<String, List<String>> fields = new HashMap<>();
-                              ProtoRestSerializer<GetAcceleratorTypeRequest> serializer =
-                                  ProtoRestSerializer.create();
-                              return fields;
-                            }
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<GetAcceleratorTypeRequest> serializer =
+                                ProtoRestSerializer.create();
+                            return fields;
                           })
-                      .setRequestBodyExtractor(
-                          new FieldsExtractor<GetAcceleratorTypeRequest, String>() {
-                            @Override
-                            public String extract(GetAcceleratorTypeRequest request) {
-                              return null;
-                            }
-                          })
+                      .setRequestBodyExtractor(request -> null)
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<AcceleratorType>newBuilder()
@@ -186,57 +154,41 @@ public class HttpJsonAcceleratorTypesStub extends AcceleratorTypesStub {
                   ProtoMessageRequestFormatter.<ListAcceleratorTypesRequest>newBuilder()
                       .setPath(
                           "/compute/v1/projects/{project}/zones/{zone}/acceleratorTypes",
-                          new FieldsExtractor<ListAcceleratorTypesRequest, Map<String, String>>() {
-                            @Override
-                            public Map<String, String> extract(
-                                ListAcceleratorTypesRequest request) {
-                              Map<String, String> fields = new HashMap<>();
-                              ProtoRestSerializer<ListAcceleratorTypesRequest> serializer =
-                                  ProtoRestSerializer.create();
-                              serializer.putPathParam(fields, "project", request.getProject());
-                              serializer.putPathParam(fields, "zone", request.getZone());
-                              return fields;
-                            }
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<ListAcceleratorTypesRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "project", request.getProject());
+                            serializer.putPathParam(fields, "zone", request.getZone());
+                            return fields;
                           })
                       .setQueryParamsExtractor(
-                          new FieldsExtractor<
-                              ListAcceleratorTypesRequest, Map<String, List<String>>>() {
-                            @Override
-                            public Map<String, List<String>> extract(
-                                ListAcceleratorTypesRequest request) {
-                              Map<String, List<String>> fields = new HashMap<>();
-                              ProtoRestSerializer<ListAcceleratorTypesRequest> serializer =
-                                  ProtoRestSerializer.create();
-                              if (request.hasFilter()) {
-                                serializer.putQueryParam(fields, "filter", request.getFilter());
-                              }
-                              if (request.hasMaxResults()) {
-                                serializer.putQueryParam(
-                                    fields, "maxResults", request.getMaxResults());
-                              }
-                              if (request.hasOrderBy()) {
-                                serializer.putQueryParam(fields, "orderBy", request.getOrderBy());
-                              }
-                              if (request.hasPageToken()) {
-                                serializer.putQueryParam(
-                                    fields, "pageToken", request.getPageToken());
-                              }
-                              if (request.hasReturnPartialSuccess()) {
-                                serializer.putQueryParam(
-                                    fields,
-                                    "returnPartialSuccess",
-                                    request.getReturnPartialSuccess());
-                              }
-                              return fields;
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<ListAcceleratorTypesRequest> serializer =
+                                ProtoRestSerializer.create();
+                            if (request.hasFilter()) {
+                              serializer.putQueryParam(fields, "filter", request.getFilter());
                             }
-                          })
-                      .setRequestBodyExtractor(
-                          new FieldsExtractor<ListAcceleratorTypesRequest, String>() {
-                            @Override
-                            public String extract(ListAcceleratorTypesRequest request) {
-                              return null;
+                            if (request.hasMaxResults()) {
+                              serializer.putQueryParam(
+                                  fields, "maxResults", request.getMaxResults());
                             }
+                            if (request.hasOrderBy()) {
+                              serializer.putQueryParam(fields, "orderBy", request.getOrderBy());
+                            }
+                            if (request.hasPageToken()) {
+                              serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            }
+                            if (request.hasReturnPartialSuccess()) {
+                              serializer.putQueryParam(
+                                  fields,
+                                  "returnPartialSuccess",
+                                  request.getReturnPartialSuccess());
+                            }
+                            return fields;
                           })
+                      .setRequestBodyExtractor(request -> null)
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<AcceleratorTypeList>newBuilder()
@@ -367,7 +319,13 @@ public class HttpJsonAcceleratorTypesStub extends AcceleratorTypesStub {
 
   @Override
   public final void close() {
-    shutdown();
+    try {
+      backgroundResources.close();
+    } catch (RuntimeException e) {
+      throw e;
+    } catch (Exception e) {
+      throw new IllegalStateException("Failed to close resource", e);
+    }
   }
 
   @Override

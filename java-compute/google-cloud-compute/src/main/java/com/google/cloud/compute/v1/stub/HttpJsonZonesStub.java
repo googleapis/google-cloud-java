@@ -24,7 +24,6 @@ import com.google.api.core.InternalApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.httpjson.ApiMethodDescriptor;
-import com.google.api.gax.httpjson.FieldsExtractor;
 import com.google.api.gax.httpjson.HttpJsonCallSettings;
 import com.google.api.gax.httpjson.HttpJsonStubCallableFactory;
 import com.google.api.gax.httpjson.ProtoMessageRequestFormatter;
@@ -61,34 +60,22 @@ public class HttpJsonZonesStub extends ZonesStub {
               ProtoMessageRequestFormatter.<GetZoneRequest>newBuilder()
                   .setPath(
                       "/compute/v1/projects/{project}/zones/{zone}",
-                      new FieldsExtractor<GetZoneRequest, Map<String, String>>() {
-                        @Override
-                        public Map<String, String> extract(GetZoneRequest request) {
-                          Map<String, String> fields = new HashMap<>();
-                          ProtoRestSerializer<GetZoneRequest> serializer =
-                              ProtoRestSerializer.create();
-                          serializer.putPathParam(fields, "project", request.getProject());
-                          serializer.putPathParam(fields, "zone", request.getZone());
-                          return fields;
-                        }
+                      request -> {
+                        Map<String, String> fields = new HashMap<>();
+                        ProtoRestSerializer<GetZoneRequest> serializer =
+                            ProtoRestSerializer.create();
+                        serializer.putPathParam(fields, "project", request.getProject());
+                        serializer.putPathParam(fields, "zone", request.getZone());
+                        return fields;
                       })
                   .setQueryParamsExtractor(
-                      new FieldsExtractor<GetZoneRequest, Map<String, List<String>>>() {
-                        @Override
-                        public Map<String, List<String>> extract(GetZoneRequest request) {
-                          Map<String, List<String>> fields = new HashMap<>();
-                          ProtoRestSerializer<GetZoneRequest> serializer =
-                              ProtoRestSerializer.create();
-                          return fields;
-                        }
+                      request -> {
+                        Map<String, List<String>> fields = new HashMap<>();
+                        ProtoRestSerializer<GetZoneRequest> serializer =
+                            ProtoRestSerializer.create();
+                        return fields;
                       })
-                  .setRequestBodyExtractor(
-                      new FieldsExtractor<GetZoneRequest, String>() {
-                        @Override
-                        public String extract(GetZoneRequest request) {
-                          return null;
-                        }
-                      })
+                  .setRequestBodyExtractor(request -> null)
                   .build())
           .setResponseParser(
               ProtoMessageResponseParser.<Zone>newBuilder()
@@ -104,49 +91,37 @@ public class HttpJsonZonesStub extends ZonesStub {
               ProtoMessageRequestFormatter.<ListZonesRequest>newBuilder()
                   .setPath(
                       "/compute/v1/projects/{project}/zones",
-                      new FieldsExtractor<ListZonesRequest, Map<String, String>>() {
-                        @Override
-                        public Map<String, String> extract(ListZonesRequest request) {
-                          Map<String, String> fields = new HashMap<>();
-                          ProtoRestSerializer<ListZonesRequest> serializer =
-                              ProtoRestSerializer.create();
-                          serializer.putPathParam(fields, "project", request.getProject());
-                          return fields;
-                        }
+                      request -> {
+                        Map<String, String> fields = new HashMap<>();
+                        ProtoRestSerializer<ListZonesRequest> serializer =
+                            ProtoRestSerializer.create();
+                        serializer.putPathParam(fields, "project", request.getProject());
+                        return fields;
                       })
                   .setQueryParamsExtractor(
-                      new FieldsExtractor<ListZonesRequest, Map<String, List<String>>>() {
-                        @Override
-                        public Map<String, List<String>> extract(ListZonesRequest request) {
-                          Map<String, List<String>> fields = new HashMap<>();
-                          ProtoRestSerializer<ListZonesRequest> serializer =
-                              ProtoRestSerializer.create();
-                          if (request.hasFilter()) {
-                            serializer.putQueryParam(fields, "filter", request.getFilter());
-                          }
-                          if (request.hasMaxResults()) {
-                            serializer.putQueryParam(fields, "maxResults", request.getMaxResults());
-                          }
-                          if (request.hasOrderBy()) {
-                            serializer.putQueryParam(fields, "orderBy", request.getOrderBy());
-                          }
-                          if (request.hasPageToken()) {
-                            serializer.putQueryParam(fields, "pageToken", request.getPageToken());
-                          }
-                          if (request.hasReturnPartialSuccess()) {
-                            serializer.putQueryParam(
-                                fields, "returnPartialSuccess", request.getReturnPartialSuccess());
-                          }
-                          return fields;
+                      request -> {
+                        Map<String, List<String>> fields = new HashMap<>();
+                        ProtoRestSerializer<ListZonesRequest> serializer =
+                            ProtoRestSerializer.create();
+                        if (request.hasFilter()) {
+                          serializer.putQueryParam(fields, "filter", request.getFilter());
                         }
-                      })
-                  .setRequestBodyExtractor(
-                      new FieldsExtractor<ListZonesRequest, String>() {
-                        @Override
-                        public String extract(ListZonesRequest request) {
-                          return null;
+                        if (request.hasMaxResults()) {
+                          serializer.putQueryParam(fields, "maxResults", request.getMaxResults());
                         }
+                        if (request.hasOrderBy()) {
+                          serializer.putQueryParam(fields, "orderBy", request.getOrderBy());
+                        }
+                        if (request.hasPageToken()) {
+                          serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                        }
+                        if (request.hasReturnPartialSuccess()) {
+                          serializer.putQueryParam(
+                              fields, "returnPartialSuccess", request.getReturnPartialSuccess());
+                        }
+                        return fields;
                       })
+                  .setRequestBodyExtractor(request -> null)
                   .build())
           .setResponseParser(
               ProtoMessageResponseParser.<ZoneList>newBuilder()
@@ -245,7 +220,13 @@ public class HttpJsonZonesStub extends ZonesStub {
 
   @Override
   public final void close() {
-    shutdown();
+    try {
+      backgroundResources.close();
+    } catch (RuntimeException e) {
+      throw e;
+    } catch (Exception e) {
+      throw new IllegalStateException("Failed to close resource", e);
+    }
   }
 
   @Override

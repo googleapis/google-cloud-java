@@ -25,7 +25,6 @@ import com.google.api.core.InternalApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.httpjson.ApiMethodDescriptor;
-import com.google.api.gax.httpjson.FieldsExtractor;
 import com.google.api.gax.httpjson.HttpJsonCallSettings;
 import com.google.api.gax.httpjson.HttpJsonStubCallableFactory;
 import com.google.api.gax.httpjson.ProtoMessageRequestFormatter;
@@ -73,64 +72,44 @@ public class HttpJsonInterconnectAttachmentsStub extends InterconnectAttachments
                       .<AggregatedListInterconnectAttachmentsRequest>newBuilder()
                       .setPath(
                           "/compute/v1/projects/{project}/aggregated/interconnectAttachments",
-                          new FieldsExtractor<
-                              AggregatedListInterconnectAttachmentsRequest, Map<String, String>>() {
-                            @Override
-                            public Map<String, String> extract(
-                                AggregatedListInterconnectAttachmentsRequest request) {
-                              Map<String, String> fields = new HashMap<>();
-                              ProtoRestSerializer<AggregatedListInterconnectAttachmentsRequest>
-                                  serializer = ProtoRestSerializer.create();
-                              serializer.putPathParam(fields, "project", request.getProject());
-                              return fields;
-                            }
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<AggregatedListInterconnectAttachmentsRequest>
+                                serializer = ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "project", request.getProject());
+                            return fields;
                           })
                       .setQueryParamsExtractor(
-                          new FieldsExtractor<
-                              AggregatedListInterconnectAttachmentsRequest,
-                              Map<String, List<String>>>() {
-                            @Override
-                            public Map<String, List<String>> extract(
-                                AggregatedListInterconnectAttachmentsRequest request) {
-                              Map<String, List<String>> fields = new HashMap<>();
-                              ProtoRestSerializer<AggregatedListInterconnectAttachmentsRequest>
-                                  serializer = ProtoRestSerializer.create();
-                              if (request.hasFilter()) {
-                                serializer.putQueryParam(fields, "filter", request.getFilter());
-                              }
-                              if (request.hasIncludeAllScopes()) {
-                                serializer.putQueryParam(
-                                    fields, "includeAllScopes", request.getIncludeAllScopes());
-                              }
-                              if (request.hasMaxResults()) {
-                                serializer.putQueryParam(
-                                    fields, "maxResults", request.getMaxResults());
-                              }
-                              if (request.hasOrderBy()) {
-                                serializer.putQueryParam(fields, "orderBy", request.getOrderBy());
-                              }
-                              if (request.hasPageToken()) {
-                                serializer.putQueryParam(
-                                    fields, "pageToken", request.getPageToken());
-                              }
-                              if (request.hasReturnPartialSuccess()) {
-                                serializer.putQueryParam(
-                                    fields,
-                                    "returnPartialSuccess",
-                                    request.getReturnPartialSuccess());
-                              }
-                              return fields;
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<AggregatedListInterconnectAttachmentsRequest>
+                                serializer = ProtoRestSerializer.create();
+                            if (request.hasFilter()) {
+                              serializer.putQueryParam(fields, "filter", request.getFilter());
                             }
-                          })
-                      .setRequestBodyExtractor(
-                          new FieldsExtractor<
-                              AggregatedListInterconnectAttachmentsRequest, String>() {
-                            @Override
-                            public String extract(
-                                AggregatedListInterconnectAttachmentsRequest request) {
-                              return null;
+                            if (request.hasIncludeAllScopes()) {
+                              serializer.putQueryParam(
+                                  fields, "includeAllScopes", request.getIncludeAllScopes());
                             }
+                            if (request.hasMaxResults()) {
+                              serializer.putQueryParam(
+                                  fields, "maxResults", request.getMaxResults());
+                            }
+                            if (request.hasOrderBy()) {
+                              serializer.putQueryParam(fields, "orderBy", request.getOrderBy());
+                            }
+                            if (request.hasPageToken()) {
+                              serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            }
+                            if (request.hasReturnPartialSuccess()) {
+                              serializer.putQueryParam(
+                                  fields,
+                                  "returnPartialSuccess",
+                                  request.getReturnPartialSuccess());
+                            }
+                            return fields;
                           })
+                      .setRequestBodyExtractor(request -> null)
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<InterconnectAttachmentAggregatedList>newBuilder()
@@ -147,46 +126,29 @@ public class HttpJsonInterconnectAttachmentsStub extends InterconnectAttachments
                   ProtoMessageRequestFormatter.<DeleteInterconnectAttachmentRequest>newBuilder()
                       .setPath(
                           "/compute/v1/projects/{project}/regions/{region}/interconnectAttachments/{interconnectAttachment}",
-                          new FieldsExtractor<
-                              DeleteInterconnectAttachmentRequest, Map<String, String>>() {
-                            @Override
-                            public Map<String, String> extract(
-                                DeleteInterconnectAttachmentRequest request) {
-                              Map<String, String> fields = new HashMap<>();
-                              ProtoRestSerializer<DeleteInterconnectAttachmentRequest> serializer =
-                                  ProtoRestSerializer.create();
-                              serializer.putPathParam(
-                                  fields,
-                                  "interconnectAttachment",
-                                  request.getInterconnectAttachment());
-                              serializer.putPathParam(fields, "project", request.getProject());
-                              serializer.putPathParam(fields, "region", request.getRegion());
-                              return fields;
-                            }
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<DeleteInterconnectAttachmentRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(
+                                fields,
+                                "interconnectAttachment",
+                                request.getInterconnectAttachment());
+                            serializer.putPathParam(fields, "project", request.getProject());
+                            serializer.putPathParam(fields, "region", request.getRegion());
+                            return fields;
                           })
                       .setQueryParamsExtractor(
-                          new FieldsExtractor<
-                              DeleteInterconnectAttachmentRequest, Map<String, List<String>>>() {
-                            @Override
-                            public Map<String, List<String>> extract(
-                                DeleteInterconnectAttachmentRequest request) {
-                              Map<String, List<String>> fields = new HashMap<>();
-                              ProtoRestSerializer<DeleteInterconnectAttachmentRequest> serializer =
-                                  ProtoRestSerializer.create();
-                              if (request.hasRequestId()) {
-                                serializer.putQueryParam(
-                                    fields, "requestId", request.getRequestId());
-                              }
-                              return fields;
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<DeleteInterconnectAttachmentRequest> serializer =
+                                ProtoRestSerializer.create();
+                            if (request.hasRequestId()) {
+                              serializer.putQueryParam(fields, "requestId", request.getRequestId());
                             }
+                            return fields;
                           })
-                      .setRequestBodyExtractor(
-                          new FieldsExtractor<DeleteInterconnectAttachmentRequest, String>() {
-                            @Override
-                            public String extract(DeleteInterconnectAttachmentRequest request) {
-                              return null;
-                            }
-                          })
+                      .setRequestBodyExtractor(request -> null)
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -203,42 +165,26 @@ public class HttpJsonInterconnectAttachmentsStub extends InterconnectAttachments
                   ProtoMessageRequestFormatter.<GetInterconnectAttachmentRequest>newBuilder()
                       .setPath(
                           "/compute/v1/projects/{project}/regions/{region}/interconnectAttachments/{interconnectAttachment}",
-                          new FieldsExtractor<
-                              GetInterconnectAttachmentRequest, Map<String, String>>() {
-                            @Override
-                            public Map<String, String> extract(
-                                GetInterconnectAttachmentRequest request) {
-                              Map<String, String> fields = new HashMap<>();
-                              ProtoRestSerializer<GetInterconnectAttachmentRequest> serializer =
-                                  ProtoRestSerializer.create();
-                              serializer.putPathParam(
-                                  fields,
-                                  "interconnectAttachment",
-                                  request.getInterconnectAttachment());
-                              serializer.putPathParam(fields, "project", request.getProject());
-                              serializer.putPathParam(fields, "region", request.getRegion());
-                              return fields;
-                            }
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<GetInterconnectAttachmentRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(
+                                fields,
+                                "interconnectAttachment",
+                                request.getInterconnectAttachment());
+                            serializer.putPathParam(fields, "project", request.getProject());
+                            serializer.putPathParam(fields, "region", request.getRegion());
+                            return fields;
                           })
                       .setQueryParamsExtractor(
-                          new FieldsExtractor<
-                              GetInterconnectAttachmentRequest, Map<String, List<String>>>() {
-                            @Override
-                            public Map<String, List<String>> extract(
-                                GetInterconnectAttachmentRequest request) {
-                              Map<String, List<String>> fields = new HashMap<>();
-                              ProtoRestSerializer<GetInterconnectAttachmentRequest> serializer =
-                                  ProtoRestSerializer.create();
-                              return fields;
-                            }
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<GetInterconnectAttachmentRequest> serializer =
+                                ProtoRestSerializer.create();
+                            return fields;
                           })
-                      .setRequestBodyExtractor(
-                          new FieldsExtractor<GetInterconnectAttachmentRequest, String>() {
-                            @Override
-                            public String extract(GetInterconnectAttachmentRequest request) {
-                              return null;
-                            }
-                          })
+                      .setRequestBodyExtractor(request -> null)
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<InterconnectAttachment>newBuilder()
@@ -255,49 +201,34 @@ public class HttpJsonInterconnectAttachmentsStub extends InterconnectAttachments
                   ProtoMessageRequestFormatter.<InsertInterconnectAttachmentRequest>newBuilder()
                       .setPath(
                           "/compute/v1/projects/{project}/regions/{region}/interconnectAttachments",
-                          new FieldsExtractor<
-                              InsertInterconnectAttachmentRequest, Map<String, String>>() {
-                            @Override
-                            public Map<String, String> extract(
-                                InsertInterconnectAttachmentRequest request) {
-                              Map<String, String> fields = new HashMap<>();
-                              ProtoRestSerializer<InsertInterconnectAttachmentRequest> serializer =
-                                  ProtoRestSerializer.create();
-                              serializer.putPathParam(fields, "project", request.getProject());
-                              serializer.putPathParam(fields, "region", request.getRegion());
-                              return fields;
-                            }
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<InsertInterconnectAttachmentRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "project", request.getProject());
+                            serializer.putPathParam(fields, "region", request.getRegion());
+                            return fields;
                           })
                       .setQueryParamsExtractor(
-                          new FieldsExtractor<
-                              InsertInterconnectAttachmentRequest, Map<String, List<String>>>() {
-                            @Override
-                            public Map<String, List<String>> extract(
-                                InsertInterconnectAttachmentRequest request) {
-                              Map<String, List<String>> fields = new HashMap<>();
-                              ProtoRestSerializer<InsertInterconnectAttachmentRequest> serializer =
-                                  ProtoRestSerializer.create();
-                              if (request.hasRequestId()) {
-                                serializer.putQueryParam(
-                                    fields, "requestId", request.getRequestId());
-                              }
-                              if (request.hasValidateOnly()) {
-                                serializer.putQueryParam(
-                                    fields, "validateOnly", request.getValidateOnly());
-                              }
-                              return fields;
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<InsertInterconnectAttachmentRequest> serializer =
+                                ProtoRestSerializer.create();
+                            if (request.hasRequestId()) {
+                              serializer.putQueryParam(fields, "requestId", request.getRequestId());
                             }
+                            if (request.hasValidateOnly()) {
+                              serializer.putQueryParam(
+                                  fields, "validateOnly", request.getValidateOnly());
+                            }
+                            return fields;
                           })
                       .setRequestBodyExtractor(
-                          new FieldsExtractor<InsertInterconnectAttachmentRequest, String>() {
-                            @Override
-                            public String extract(InsertInterconnectAttachmentRequest request) {
-                              return ProtoRestSerializer.create()
+                          request ->
+                              ProtoRestSerializer.create()
                                   .toBody(
                                       "interconnectAttachmentResource",
-                                      request.getInterconnectAttachmentResource());
-                            }
-                          })
+                                      request.getInterconnectAttachmentResource()))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -316,58 +247,41 @@ public class HttpJsonInterconnectAttachmentsStub extends InterconnectAttachments
                   ProtoMessageRequestFormatter.<ListInterconnectAttachmentsRequest>newBuilder()
                       .setPath(
                           "/compute/v1/projects/{project}/regions/{region}/interconnectAttachments",
-                          new FieldsExtractor<
-                              ListInterconnectAttachmentsRequest, Map<String, String>>() {
-                            @Override
-                            public Map<String, String> extract(
-                                ListInterconnectAttachmentsRequest request) {
-                              Map<String, String> fields = new HashMap<>();
-                              ProtoRestSerializer<ListInterconnectAttachmentsRequest> serializer =
-                                  ProtoRestSerializer.create();
-                              serializer.putPathParam(fields, "project", request.getProject());
-                              serializer.putPathParam(fields, "region", request.getRegion());
-                              return fields;
-                            }
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<ListInterconnectAttachmentsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "project", request.getProject());
+                            serializer.putPathParam(fields, "region", request.getRegion());
+                            return fields;
                           })
                       .setQueryParamsExtractor(
-                          new FieldsExtractor<
-                              ListInterconnectAttachmentsRequest, Map<String, List<String>>>() {
-                            @Override
-                            public Map<String, List<String>> extract(
-                                ListInterconnectAttachmentsRequest request) {
-                              Map<String, List<String>> fields = new HashMap<>();
-                              ProtoRestSerializer<ListInterconnectAttachmentsRequest> serializer =
-                                  ProtoRestSerializer.create();
-                              if (request.hasFilter()) {
-                                serializer.putQueryParam(fields, "filter", request.getFilter());
-                              }
-                              if (request.hasMaxResults()) {
-                                serializer.putQueryParam(
-                                    fields, "maxResults", request.getMaxResults());
-                              }
-                              if (request.hasOrderBy()) {
-                                serializer.putQueryParam(fields, "orderBy", request.getOrderBy());
-                              }
-                              if (request.hasPageToken()) {
-                                serializer.putQueryParam(
-                                    fields, "pageToken", request.getPageToken());
-                              }
-                              if (request.hasReturnPartialSuccess()) {
-                                serializer.putQueryParam(
-                                    fields,
-                                    "returnPartialSuccess",
-                                    request.getReturnPartialSuccess());
-                              }
-                              return fields;
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<ListInterconnectAttachmentsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            if (request.hasFilter()) {
+                              serializer.putQueryParam(fields, "filter", request.getFilter());
                             }
-                          })
-                      .setRequestBodyExtractor(
-                          new FieldsExtractor<ListInterconnectAttachmentsRequest, String>() {
-                            @Override
-                            public String extract(ListInterconnectAttachmentsRequest request) {
-                              return null;
+                            if (request.hasMaxResults()) {
+                              serializer.putQueryParam(
+                                  fields, "maxResults", request.getMaxResults());
                             }
+                            if (request.hasOrderBy()) {
+                              serializer.putQueryParam(fields, "orderBy", request.getOrderBy());
+                            }
+                            if (request.hasPageToken()) {
+                              serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            }
+                            if (request.hasReturnPartialSuccess()) {
+                              serializer.putQueryParam(
+                                  fields,
+                                  "returnPartialSuccess",
+                                  request.getReturnPartialSuccess());
+                            }
+                            return fields;
                           })
+                      .setRequestBodyExtractor(request -> null)
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<InterconnectAttachmentList>newBuilder()
@@ -384,49 +298,34 @@ public class HttpJsonInterconnectAttachmentsStub extends InterconnectAttachments
                   ProtoMessageRequestFormatter.<PatchInterconnectAttachmentRequest>newBuilder()
                       .setPath(
                           "/compute/v1/projects/{project}/regions/{region}/interconnectAttachments/{interconnectAttachment}",
-                          new FieldsExtractor<
-                              PatchInterconnectAttachmentRequest, Map<String, String>>() {
-                            @Override
-                            public Map<String, String> extract(
-                                PatchInterconnectAttachmentRequest request) {
-                              Map<String, String> fields = new HashMap<>();
-                              ProtoRestSerializer<PatchInterconnectAttachmentRequest> serializer =
-                                  ProtoRestSerializer.create();
-                              serializer.putPathParam(
-                                  fields,
-                                  "interconnectAttachment",
-                                  request.getInterconnectAttachment());
-                              serializer.putPathParam(fields, "project", request.getProject());
-                              serializer.putPathParam(fields, "region", request.getRegion());
-                              return fields;
-                            }
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<PatchInterconnectAttachmentRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(
+                                fields,
+                                "interconnectAttachment",
+                                request.getInterconnectAttachment());
+                            serializer.putPathParam(fields, "project", request.getProject());
+                            serializer.putPathParam(fields, "region", request.getRegion());
+                            return fields;
                           })
                       .setQueryParamsExtractor(
-                          new FieldsExtractor<
-                              PatchInterconnectAttachmentRequest, Map<String, List<String>>>() {
-                            @Override
-                            public Map<String, List<String>> extract(
-                                PatchInterconnectAttachmentRequest request) {
-                              Map<String, List<String>> fields = new HashMap<>();
-                              ProtoRestSerializer<PatchInterconnectAttachmentRequest> serializer =
-                                  ProtoRestSerializer.create();
-                              if (request.hasRequestId()) {
-                                serializer.putQueryParam(
-                                    fields, "requestId", request.getRequestId());
-                              }
-                              return fields;
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<PatchInterconnectAttachmentRequest> serializer =
+                                ProtoRestSerializer.create();
+                            if (request.hasRequestId()) {
+                              serializer.putQueryParam(fields, "requestId", request.getRequestId());
                             }
+                            return fields;
                           })
                       .setRequestBodyExtractor(
-                          new FieldsExtractor<PatchInterconnectAttachmentRequest, String>() {
-                            @Override
-                            public String extract(PatchInterconnectAttachmentRequest request) {
-                              return ProtoRestSerializer.create()
+                          request ->
+                              ProtoRestSerializer.create()
                                   .toBody(
                                       "interconnectAttachmentResource",
-                                      request.getInterconnectAttachmentResource());
-                            }
-                          })
+                                      request.getInterconnectAttachmentResource()))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -613,7 +512,13 @@ public class HttpJsonInterconnectAttachmentsStub extends InterconnectAttachments
 
   @Override
   public final void close() {
-    shutdown();
+    try {
+      backgroundResources.close();
+    } catch (RuntimeException e) {
+      throw e;
+    } catch (Exception e) {
+      throw new IllegalStateException("Failed to close resource", e);
+    }
   }
 
   @Override

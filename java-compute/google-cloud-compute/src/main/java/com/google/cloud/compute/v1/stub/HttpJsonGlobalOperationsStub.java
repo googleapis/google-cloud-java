@@ -25,7 +25,6 @@ import com.google.api.core.InternalApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.httpjson.ApiMethodDescriptor;
-import com.google.api.gax.httpjson.FieldsExtractor;
 import com.google.api.gax.httpjson.HttpJsonCallSettings;
 import com.google.api.gax.httpjson.HttpJsonStubCallableFactory;
 import com.google.api.gax.httpjson.ProtoMessageRequestFormatter;
@@ -70,61 +69,44 @@ public class HttpJsonGlobalOperationsStub extends GlobalOperationsStub {
                   ProtoMessageRequestFormatter.<AggregatedListGlobalOperationsRequest>newBuilder()
                       .setPath(
                           "/compute/v1/projects/{project}/aggregated/operations",
-                          new FieldsExtractor<
-                              AggregatedListGlobalOperationsRequest, Map<String, String>>() {
-                            @Override
-                            public Map<String, String> extract(
-                                AggregatedListGlobalOperationsRequest request) {
-                              Map<String, String> fields = new HashMap<>();
-                              ProtoRestSerializer<AggregatedListGlobalOperationsRequest>
-                                  serializer = ProtoRestSerializer.create();
-                              serializer.putPathParam(fields, "project", request.getProject());
-                              return fields;
-                            }
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<AggregatedListGlobalOperationsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "project", request.getProject());
+                            return fields;
                           })
                       .setQueryParamsExtractor(
-                          new FieldsExtractor<
-                              AggregatedListGlobalOperationsRequest, Map<String, List<String>>>() {
-                            @Override
-                            public Map<String, List<String>> extract(
-                                AggregatedListGlobalOperationsRequest request) {
-                              Map<String, List<String>> fields = new HashMap<>();
-                              ProtoRestSerializer<AggregatedListGlobalOperationsRequest>
-                                  serializer = ProtoRestSerializer.create();
-                              if (request.hasFilter()) {
-                                serializer.putQueryParam(fields, "filter", request.getFilter());
-                              }
-                              if (request.hasIncludeAllScopes()) {
-                                serializer.putQueryParam(
-                                    fields, "includeAllScopes", request.getIncludeAllScopes());
-                              }
-                              if (request.hasMaxResults()) {
-                                serializer.putQueryParam(
-                                    fields, "maxResults", request.getMaxResults());
-                              }
-                              if (request.hasOrderBy()) {
-                                serializer.putQueryParam(fields, "orderBy", request.getOrderBy());
-                              }
-                              if (request.hasPageToken()) {
-                                serializer.putQueryParam(
-                                    fields, "pageToken", request.getPageToken());
-                              }
-                              if (request.hasReturnPartialSuccess()) {
-                                serializer.putQueryParam(
-                                    fields,
-                                    "returnPartialSuccess",
-                                    request.getReturnPartialSuccess());
-                              }
-                              return fields;
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<AggregatedListGlobalOperationsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            if (request.hasFilter()) {
+                              serializer.putQueryParam(fields, "filter", request.getFilter());
                             }
-                          })
-                      .setRequestBodyExtractor(
-                          new FieldsExtractor<AggregatedListGlobalOperationsRequest, String>() {
-                            @Override
-                            public String extract(AggregatedListGlobalOperationsRequest request) {
-                              return null;
+                            if (request.hasIncludeAllScopes()) {
+                              serializer.putQueryParam(
+                                  fields, "includeAllScopes", request.getIncludeAllScopes());
                             }
+                            if (request.hasMaxResults()) {
+                              serializer.putQueryParam(
+                                  fields, "maxResults", request.getMaxResults());
+                            }
+                            if (request.hasOrderBy()) {
+                              serializer.putQueryParam(fields, "orderBy", request.getOrderBy());
+                            }
+                            if (request.hasPageToken()) {
+                              serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            }
+                            if (request.hasReturnPartialSuccess()) {
+                              serializer.putQueryParam(
+                                  fields,
+                                  "returnPartialSuccess",
+                                  request.getReturnPartialSuccess());
+                            }
+                            return fields;
                           })
+                      .setRequestBodyExtractor(request -> null)
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<OperationAggregatedList>newBuilder()
@@ -143,37 +125,22 @@ public class HttpJsonGlobalOperationsStub extends GlobalOperationsStub {
                   ProtoMessageRequestFormatter.<DeleteGlobalOperationRequest>newBuilder()
                       .setPath(
                           "/compute/v1/projects/{project}/global/operations/{operation}",
-                          new FieldsExtractor<DeleteGlobalOperationRequest, Map<String, String>>() {
-                            @Override
-                            public Map<String, String> extract(
-                                DeleteGlobalOperationRequest request) {
-                              Map<String, String> fields = new HashMap<>();
-                              ProtoRestSerializer<DeleteGlobalOperationRequest> serializer =
-                                  ProtoRestSerializer.create();
-                              serializer.putPathParam(fields, "operation", request.getOperation());
-                              serializer.putPathParam(fields, "project", request.getProject());
-                              return fields;
-                            }
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<DeleteGlobalOperationRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "operation", request.getOperation());
+                            serializer.putPathParam(fields, "project", request.getProject());
+                            return fields;
                           })
                       .setQueryParamsExtractor(
-                          new FieldsExtractor<
-                              DeleteGlobalOperationRequest, Map<String, List<String>>>() {
-                            @Override
-                            public Map<String, List<String>> extract(
-                                DeleteGlobalOperationRequest request) {
-                              Map<String, List<String>> fields = new HashMap<>();
-                              ProtoRestSerializer<DeleteGlobalOperationRequest> serializer =
-                                  ProtoRestSerializer.create();
-                              return fields;
-                            }
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<DeleteGlobalOperationRequest> serializer =
+                                ProtoRestSerializer.create();
+                            return fields;
                           })
-                      .setRequestBodyExtractor(
-                          new FieldsExtractor<DeleteGlobalOperationRequest, String>() {
-                            @Override
-                            public String extract(DeleteGlobalOperationRequest request) {
-                              return null;
-                            }
-                          })
+                      .setRequestBodyExtractor(request -> null)
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<DeleteGlobalOperationResponse>newBuilder()
@@ -190,36 +157,22 @@ public class HttpJsonGlobalOperationsStub extends GlobalOperationsStub {
                   ProtoMessageRequestFormatter.<GetGlobalOperationRequest>newBuilder()
                       .setPath(
                           "/compute/v1/projects/{project}/global/operations/{operation}",
-                          new FieldsExtractor<GetGlobalOperationRequest, Map<String, String>>() {
-                            @Override
-                            public Map<String, String> extract(GetGlobalOperationRequest request) {
-                              Map<String, String> fields = new HashMap<>();
-                              ProtoRestSerializer<GetGlobalOperationRequest> serializer =
-                                  ProtoRestSerializer.create();
-                              serializer.putPathParam(fields, "operation", request.getOperation());
-                              serializer.putPathParam(fields, "project", request.getProject());
-                              return fields;
-                            }
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<GetGlobalOperationRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "operation", request.getOperation());
+                            serializer.putPathParam(fields, "project", request.getProject());
+                            return fields;
                           })
                       .setQueryParamsExtractor(
-                          new FieldsExtractor<
-                              GetGlobalOperationRequest, Map<String, List<String>>>() {
-                            @Override
-                            public Map<String, List<String>> extract(
-                                GetGlobalOperationRequest request) {
-                              Map<String, List<String>> fields = new HashMap<>();
-                              ProtoRestSerializer<GetGlobalOperationRequest> serializer =
-                                  ProtoRestSerializer.create();
-                              return fields;
-                            }
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<GetGlobalOperationRequest> serializer =
+                                ProtoRestSerializer.create();
+                            return fields;
                           })
-                      .setRequestBodyExtractor(
-                          new FieldsExtractor<GetGlobalOperationRequest, String>() {
-                            @Override
-                            public String extract(GetGlobalOperationRequest request) {
-                              return null;
-                            }
-                          })
+                      .setRequestBodyExtractor(request -> null)
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -236,56 +189,40 @@ public class HttpJsonGlobalOperationsStub extends GlobalOperationsStub {
                   ProtoMessageRequestFormatter.<ListGlobalOperationsRequest>newBuilder()
                       .setPath(
                           "/compute/v1/projects/{project}/global/operations",
-                          new FieldsExtractor<ListGlobalOperationsRequest, Map<String, String>>() {
-                            @Override
-                            public Map<String, String> extract(
-                                ListGlobalOperationsRequest request) {
-                              Map<String, String> fields = new HashMap<>();
-                              ProtoRestSerializer<ListGlobalOperationsRequest> serializer =
-                                  ProtoRestSerializer.create();
-                              serializer.putPathParam(fields, "project", request.getProject());
-                              return fields;
-                            }
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<ListGlobalOperationsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "project", request.getProject());
+                            return fields;
                           })
                       .setQueryParamsExtractor(
-                          new FieldsExtractor<
-                              ListGlobalOperationsRequest, Map<String, List<String>>>() {
-                            @Override
-                            public Map<String, List<String>> extract(
-                                ListGlobalOperationsRequest request) {
-                              Map<String, List<String>> fields = new HashMap<>();
-                              ProtoRestSerializer<ListGlobalOperationsRequest> serializer =
-                                  ProtoRestSerializer.create();
-                              if (request.hasFilter()) {
-                                serializer.putQueryParam(fields, "filter", request.getFilter());
-                              }
-                              if (request.hasMaxResults()) {
-                                serializer.putQueryParam(
-                                    fields, "maxResults", request.getMaxResults());
-                              }
-                              if (request.hasOrderBy()) {
-                                serializer.putQueryParam(fields, "orderBy", request.getOrderBy());
-                              }
-                              if (request.hasPageToken()) {
-                                serializer.putQueryParam(
-                                    fields, "pageToken", request.getPageToken());
-                              }
-                              if (request.hasReturnPartialSuccess()) {
-                                serializer.putQueryParam(
-                                    fields,
-                                    "returnPartialSuccess",
-                                    request.getReturnPartialSuccess());
-                              }
-                              return fields;
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<ListGlobalOperationsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            if (request.hasFilter()) {
+                              serializer.putQueryParam(fields, "filter", request.getFilter());
                             }
-                          })
-                      .setRequestBodyExtractor(
-                          new FieldsExtractor<ListGlobalOperationsRequest, String>() {
-                            @Override
-                            public String extract(ListGlobalOperationsRequest request) {
-                              return null;
+                            if (request.hasMaxResults()) {
+                              serializer.putQueryParam(
+                                  fields, "maxResults", request.getMaxResults());
                             }
+                            if (request.hasOrderBy()) {
+                              serializer.putQueryParam(fields, "orderBy", request.getOrderBy());
+                            }
+                            if (request.hasPageToken()) {
+                              serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            }
+                            if (request.hasReturnPartialSuccess()) {
+                              serializer.putQueryParam(
+                                  fields,
+                                  "returnPartialSuccess",
+                                  request.getReturnPartialSuccess());
+                            }
+                            return fields;
                           })
+                      .setRequestBodyExtractor(request -> null)
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<OperationList>newBuilder()
@@ -302,36 +239,22 @@ public class HttpJsonGlobalOperationsStub extends GlobalOperationsStub {
                   ProtoMessageRequestFormatter.<WaitGlobalOperationRequest>newBuilder()
                       .setPath(
                           "/compute/v1/projects/{project}/global/operations/{operation}/wait",
-                          new FieldsExtractor<WaitGlobalOperationRequest, Map<String, String>>() {
-                            @Override
-                            public Map<String, String> extract(WaitGlobalOperationRequest request) {
-                              Map<String, String> fields = new HashMap<>();
-                              ProtoRestSerializer<WaitGlobalOperationRequest> serializer =
-                                  ProtoRestSerializer.create();
-                              serializer.putPathParam(fields, "operation", request.getOperation());
-                              serializer.putPathParam(fields, "project", request.getProject());
-                              return fields;
-                            }
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<WaitGlobalOperationRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "operation", request.getOperation());
+                            serializer.putPathParam(fields, "project", request.getProject());
+                            return fields;
                           })
                       .setQueryParamsExtractor(
-                          new FieldsExtractor<
-                              WaitGlobalOperationRequest, Map<String, List<String>>>() {
-                            @Override
-                            public Map<String, List<String>> extract(
-                                WaitGlobalOperationRequest request) {
-                              Map<String, List<String>> fields = new HashMap<>();
-                              ProtoRestSerializer<WaitGlobalOperationRequest> serializer =
-                                  ProtoRestSerializer.create();
-                              return fields;
-                            }
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<WaitGlobalOperationRequest> serializer =
+                                ProtoRestSerializer.create();
+                            return fields;
                           })
-                      .setRequestBodyExtractor(
-                          new FieldsExtractor<WaitGlobalOperationRequest, String>() {
-                            @Override
-                            public String extract(WaitGlobalOperationRequest request) {
-                              return null;
-                            }
-                          })
+                      .setRequestBodyExtractor(request -> null)
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -494,7 +417,13 @@ public class HttpJsonGlobalOperationsStub extends GlobalOperationsStub {
 
   @Override
   public final void close() {
-    shutdown();
+    try {
+      backgroundResources.close();
+    } catch (RuntimeException e) {
+      throw e;
+    } catch (Exception e) {
+      throw new IllegalStateException("Failed to close resource", e);
+    }
   }
 
   @Override

@@ -24,7 +24,6 @@ import com.google.api.core.InternalApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.httpjson.ApiMethodDescriptor;
-import com.google.api.gax.httpjson.FieldsExtractor;
 import com.google.api.gax.httpjson.HttpJsonCallSettings;
 import com.google.api.gax.httpjson.HttpJsonStubCallableFactory;
 import com.google.api.gax.httpjson.ProtoMessageRequestFormatter;
@@ -68,43 +67,26 @@ public class HttpJsonGlobalForwardingRulesStub extends GlobalForwardingRulesStub
                   ProtoMessageRequestFormatter.<DeleteGlobalForwardingRuleRequest>newBuilder()
                       .setPath(
                           "/compute/v1/projects/{project}/global/forwardingRules/{forwardingRule}",
-                          new FieldsExtractor<
-                              DeleteGlobalForwardingRuleRequest, Map<String, String>>() {
-                            @Override
-                            public Map<String, String> extract(
-                                DeleteGlobalForwardingRuleRequest request) {
-                              Map<String, String> fields = new HashMap<>();
-                              ProtoRestSerializer<DeleteGlobalForwardingRuleRequest> serializer =
-                                  ProtoRestSerializer.create();
-                              serializer.putPathParam(
-                                  fields, "forwardingRule", request.getForwardingRule());
-                              serializer.putPathParam(fields, "project", request.getProject());
-                              return fields;
-                            }
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<DeleteGlobalForwardingRuleRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(
+                                fields, "forwardingRule", request.getForwardingRule());
+                            serializer.putPathParam(fields, "project", request.getProject());
+                            return fields;
                           })
                       .setQueryParamsExtractor(
-                          new FieldsExtractor<
-                              DeleteGlobalForwardingRuleRequest, Map<String, List<String>>>() {
-                            @Override
-                            public Map<String, List<String>> extract(
-                                DeleteGlobalForwardingRuleRequest request) {
-                              Map<String, List<String>> fields = new HashMap<>();
-                              ProtoRestSerializer<DeleteGlobalForwardingRuleRequest> serializer =
-                                  ProtoRestSerializer.create();
-                              if (request.hasRequestId()) {
-                                serializer.putQueryParam(
-                                    fields, "requestId", request.getRequestId());
-                              }
-                              return fields;
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<DeleteGlobalForwardingRuleRequest> serializer =
+                                ProtoRestSerializer.create();
+                            if (request.hasRequestId()) {
+                              serializer.putQueryParam(fields, "requestId", request.getRequestId());
                             }
+                            return fields;
                           })
-                      .setRequestBodyExtractor(
-                          new FieldsExtractor<DeleteGlobalForwardingRuleRequest, String>() {
-                            @Override
-                            public String extract(DeleteGlobalForwardingRuleRequest request) {
-                              return null;
-                            }
-                          })
+                      .setRequestBodyExtractor(request -> null)
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -121,39 +103,23 @@ public class HttpJsonGlobalForwardingRulesStub extends GlobalForwardingRulesStub
                   ProtoMessageRequestFormatter.<GetGlobalForwardingRuleRequest>newBuilder()
                       .setPath(
                           "/compute/v1/projects/{project}/global/forwardingRules/{forwardingRule}",
-                          new FieldsExtractor<
-                              GetGlobalForwardingRuleRequest, Map<String, String>>() {
-                            @Override
-                            public Map<String, String> extract(
-                                GetGlobalForwardingRuleRequest request) {
-                              Map<String, String> fields = new HashMap<>();
-                              ProtoRestSerializer<GetGlobalForwardingRuleRequest> serializer =
-                                  ProtoRestSerializer.create();
-                              serializer.putPathParam(
-                                  fields, "forwardingRule", request.getForwardingRule());
-                              serializer.putPathParam(fields, "project", request.getProject());
-                              return fields;
-                            }
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<GetGlobalForwardingRuleRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(
+                                fields, "forwardingRule", request.getForwardingRule());
+                            serializer.putPathParam(fields, "project", request.getProject());
+                            return fields;
                           })
                       .setQueryParamsExtractor(
-                          new FieldsExtractor<
-                              GetGlobalForwardingRuleRequest, Map<String, List<String>>>() {
-                            @Override
-                            public Map<String, List<String>> extract(
-                                GetGlobalForwardingRuleRequest request) {
-                              Map<String, List<String>> fields = new HashMap<>();
-                              ProtoRestSerializer<GetGlobalForwardingRuleRequest> serializer =
-                                  ProtoRestSerializer.create();
-                              return fields;
-                            }
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<GetGlobalForwardingRuleRequest> serializer =
+                                ProtoRestSerializer.create();
+                            return fields;
                           })
-                      .setRequestBodyExtractor(
-                          new FieldsExtractor<GetGlobalForwardingRuleRequest, String>() {
-                            @Override
-                            public String extract(GetGlobalForwardingRuleRequest request) {
-                              return null;
-                            }
-                          })
+                      .setRequestBodyExtractor(request -> null)
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<ForwardingRule>newBuilder()
@@ -170,44 +136,29 @@ public class HttpJsonGlobalForwardingRulesStub extends GlobalForwardingRulesStub
                   ProtoMessageRequestFormatter.<InsertGlobalForwardingRuleRequest>newBuilder()
                       .setPath(
                           "/compute/v1/projects/{project}/global/forwardingRules",
-                          new FieldsExtractor<
-                              InsertGlobalForwardingRuleRequest, Map<String, String>>() {
-                            @Override
-                            public Map<String, String> extract(
-                                InsertGlobalForwardingRuleRequest request) {
-                              Map<String, String> fields = new HashMap<>();
-                              ProtoRestSerializer<InsertGlobalForwardingRuleRequest> serializer =
-                                  ProtoRestSerializer.create();
-                              serializer.putPathParam(fields, "project", request.getProject());
-                              return fields;
-                            }
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<InsertGlobalForwardingRuleRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "project", request.getProject());
+                            return fields;
                           })
                       .setQueryParamsExtractor(
-                          new FieldsExtractor<
-                              InsertGlobalForwardingRuleRequest, Map<String, List<String>>>() {
-                            @Override
-                            public Map<String, List<String>> extract(
-                                InsertGlobalForwardingRuleRequest request) {
-                              Map<String, List<String>> fields = new HashMap<>();
-                              ProtoRestSerializer<InsertGlobalForwardingRuleRequest> serializer =
-                                  ProtoRestSerializer.create();
-                              if (request.hasRequestId()) {
-                                serializer.putQueryParam(
-                                    fields, "requestId", request.getRequestId());
-                              }
-                              return fields;
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<InsertGlobalForwardingRuleRequest> serializer =
+                                ProtoRestSerializer.create();
+                            if (request.hasRequestId()) {
+                              serializer.putQueryParam(fields, "requestId", request.getRequestId());
                             }
+                            return fields;
                           })
                       .setRequestBodyExtractor(
-                          new FieldsExtractor<InsertGlobalForwardingRuleRequest, String>() {
-                            @Override
-                            public String extract(InsertGlobalForwardingRuleRequest request) {
-                              return ProtoRestSerializer.create()
+                          request ->
+                              ProtoRestSerializer.create()
                                   .toBody(
                                       "forwardingRuleResource",
-                                      request.getForwardingRuleResource());
-                            }
-                          })
+                                      request.getForwardingRuleResource()))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -224,57 +175,40 @@ public class HttpJsonGlobalForwardingRulesStub extends GlobalForwardingRulesStub
                   ProtoMessageRequestFormatter.<ListGlobalForwardingRulesRequest>newBuilder()
                       .setPath(
                           "/compute/v1/projects/{project}/global/forwardingRules",
-                          new FieldsExtractor<
-                              ListGlobalForwardingRulesRequest, Map<String, String>>() {
-                            @Override
-                            public Map<String, String> extract(
-                                ListGlobalForwardingRulesRequest request) {
-                              Map<String, String> fields = new HashMap<>();
-                              ProtoRestSerializer<ListGlobalForwardingRulesRequest> serializer =
-                                  ProtoRestSerializer.create();
-                              serializer.putPathParam(fields, "project", request.getProject());
-                              return fields;
-                            }
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<ListGlobalForwardingRulesRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "project", request.getProject());
+                            return fields;
                           })
                       .setQueryParamsExtractor(
-                          new FieldsExtractor<
-                              ListGlobalForwardingRulesRequest, Map<String, List<String>>>() {
-                            @Override
-                            public Map<String, List<String>> extract(
-                                ListGlobalForwardingRulesRequest request) {
-                              Map<String, List<String>> fields = new HashMap<>();
-                              ProtoRestSerializer<ListGlobalForwardingRulesRequest> serializer =
-                                  ProtoRestSerializer.create();
-                              if (request.hasFilter()) {
-                                serializer.putQueryParam(fields, "filter", request.getFilter());
-                              }
-                              if (request.hasMaxResults()) {
-                                serializer.putQueryParam(
-                                    fields, "maxResults", request.getMaxResults());
-                              }
-                              if (request.hasOrderBy()) {
-                                serializer.putQueryParam(fields, "orderBy", request.getOrderBy());
-                              }
-                              if (request.hasPageToken()) {
-                                serializer.putQueryParam(
-                                    fields, "pageToken", request.getPageToken());
-                              }
-                              if (request.hasReturnPartialSuccess()) {
-                                serializer.putQueryParam(
-                                    fields,
-                                    "returnPartialSuccess",
-                                    request.getReturnPartialSuccess());
-                              }
-                              return fields;
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<ListGlobalForwardingRulesRequest> serializer =
+                                ProtoRestSerializer.create();
+                            if (request.hasFilter()) {
+                              serializer.putQueryParam(fields, "filter", request.getFilter());
                             }
-                          })
-                      .setRequestBodyExtractor(
-                          new FieldsExtractor<ListGlobalForwardingRulesRequest, String>() {
-                            @Override
-                            public String extract(ListGlobalForwardingRulesRequest request) {
-                              return null;
+                            if (request.hasMaxResults()) {
+                              serializer.putQueryParam(
+                                  fields, "maxResults", request.getMaxResults());
                             }
+                            if (request.hasOrderBy()) {
+                              serializer.putQueryParam(fields, "orderBy", request.getOrderBy());
+                            }
+                            if (request.hasPageToken()) {
+                              serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            }
+                            if (request.hasReturnPartialSuccess()) {
+                              serializer.putQueryParam(
+                                  fields,
+                                  "returnPartialSuccess",
+                                  request.getReturnPartialSuccess());
+                            }
+                            return fields;
                           })
+                      .setRequestBodyExtractor(request -> null)
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<ForwardingRuleList>newBuilder()
@@ -291,46 +225,31 @@ public class HttpJsonGlobalForwardingRulesStub extends GlobalForwardingRulesStub
                   ProtoMessageRequestFormatter.<PatchGlobalForwardingRuleRequest>newBuilder()
                       .setPath(
                           "/compute/v1/projects/{project}/global/forwardingRules/{forwardingRule}",
-                          new FieldsExtractor<
-                              PatchGlobalForwardingRuleRequest, Map<String, String>>() {
-                            @Override
-                            public Map<String, String> extract(
-                                PatchGlobalForwardingRuleRequest request) {
-                              Map<String, String> fields = new HashMap<>();
-                              ProtoRestSerializer<PatchGlobalForwardingRuleRequest> serializer =
-                                  ProtoRestSerializer.create();
-                              serializer.putPathParam(
-                                  fields, "forwardingRule", request.getForwardingRule());
-                              serializer.putPathParam(fields, "project", request.getProject());
-                              return fields;
-                            }
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<PatchGlobalForwardingRuleRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(
+                                fields, "forwardingRule", request.getForwardingRule());
+                            serializer.putPathParam(fields, "project", request.getProject());
+                            return fields;
                           })
                       .setQueryParamsExtractor(
-                          new FieldsExtractor<
-                              PatchGlobalForwardingRuleRequest, Map<String, List<String>>>() {
-                            @Override
-                            public Map<String, List<String>> extract(
-                                PatchGlobalForwardingRuleRequest request) {
-                              Map<String, List<String>> fields = new HashMap<>();
-                              ProtoRestSerializer<PatchGlobalForwardingRuleRequest> serializer =
-                                  ProtoRestSerializer.create();
-                              if (request.hasRequestId()) {
-                                serializer.putQueryParam(
-                                    fields, "requestId", request.getRequestId());
-                              }
-                              return fields;
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<PatchGlobalForwardingRuleRequest> serializer =
+                                ProtoRestSerializer.create();
+                            if (request.hasRequestId()) {
+                              serializer.putQueryParam(fields, "requestId", request.getRequestId());
                             }
+                            return fields;
                           })
                       .setRequestBodyExtractor(
-                          new FieldsExtractor<PatchGlobalForwardingRuleRequest, String>() {
-                            @Override
-                            public String extract(PatchGlobalForwardingRuleRequest request) {
-                              return ProtoRestSerializer.create()
+                          request ->
+                              ProtoRestSerializer.create()
                                   .toBody(
                                       "forwardingRuleResource",
-                                      request.getForwardingRuleResource());
-                            }
-                          })
+                                      request.getForwardingRuleResource()))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -347,41 +266,27 @@ public class HttpJsonGlobalForwardingRulesStub extends GlobalForwardingRulesStub
                   ProtoMessageRequestFormatter.<SetLabelsGlobalForwardingRuleRequest>newBuilder()
                       .setPath(
                           "/compute/v1/projects/{project}/global/forwardingRules/{resource}/setLabels",
-                          new FieldsExtractor<
-                              SetLabelsGlobalForwardingRuleRequest, Map<String, String>>() {
-                            @Override
-                            public Map<String, String> extract(
-                                SetLabelsGlobalForwardingRuleRequest request) {
-                              Map<String, String> fields = new HashMap<>();
-                              ProtoRestSerializer<SetLabelsGlobalForwardingRuleRequest> serializer =
-                                  ProtoRestSerializer.create();
-                              serializer.putPathParam(fields, "project", request.getProject());
-                              serializer.putPathParam(fields, "resource", request.getResource());
-                              return fields;
-                            }
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<SetLabelsGlobalForwardingRuleRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "project", request.getProject());
+                            serializer.putPathParam(fields, "resource", request.getResource());
+                            return fields;
                           })
                       .setQueryParamsExtractor(
-                          new FieldsExtractor<
-                              SetLabelsGlobalForwardingRuleRequest, Map<String, List<String>>>() {
-                            @Override
-                            public Map<String, List<String>> extract(
-                                SetLabelsGlobalForwardingRuleRequest request) {
-                              Map<String, List<String>> fields = new HashMap<>();
-                              ProtoRestSerializer<SetLabelsGlobalForwardingRuleRequest> serializer =
-                                  ProtoRestSerializer.create();
-                              return fields;
-                            }
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<SetLabelsGlobalForwardingRuleRequest> serializer =
+                                ProtoRestSerializer.create();
+                            return fields;
                           })
                       .setRequestBodyExtractor(
-                          new FieldsExtractor<SetLabelsGlobalForwardingRuleRequest, String>() {
-                            @Override
-                            public String extract(SetLabelsGlobalForwardingRuleRequest request) {
-                              return ProtoRestSerializer.create()
+                          request ->
+                              ProtoRestSerializer.create()
                                   .toBody(
                                       "globalSetLabelsRequestResource",
-                                      request.getGlobalSetLabelsRequestResource());
-                            }
-                          })
+                                      request.getGlobalSetLabelsRequestResource()))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -398,46 +303,31 @@ public class HttpJsonGlobalForwardingRulesStub extends GlobalForwardingRulesStub
                   ProtoMessageRequestFormatter.<SetTargetGlobalForwardingRuleRequest>newBuilder()
                       .setPath(
                           "/compute/v1/projects/{project}/global/forwardingRules/{forwardingRule}/setTarget",
-                          new FieldsExtractor<
-                              SetTargetGlobalForwardingRuleRequest, Map<String, String>>() {
-                            @Override
-                            public Map<String, String> extract(
-                                SetTargetGlobalForwardingRuleRequest request) {
-                              Map<String, String> fields = new HashMap<>();
-                              ProtoRestSerializer<SetTargetGlobalForwardingRuleRequest> serializer =
-                                  ProtoRestSerializer.create();
-                              serializer.putPathParam(
-                                  fields, "forwardingRule", request.getForwardingRule());
-                              serializer.putPathParam(fields, "project", request.getProject());
-                              return fields;
-                            }
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<SetTargetGlobalForwardingRuleRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(
+                                fields, "forwardingRule", request.getForwardingRule());
+                            serializer.putPathParam(fields, "project", request.getProject());
+                            return fields;
                           })
                       .setQueryParamsExtractor(
-                          new FieldsExtractor<
-                              SetTargetGlobalForwardingRuleRequest, Map<String, List<String>>>() {
-                            @Override
-                            public Map<String, List<String>> extract(
-                                SetTargetGlobalForwardingRuleRequest request) {
-                              Map<String, List<String>> fields = new HashMap<>();
-                              ProtoRestSerializer<SetTargetGlobalForwardingRuleRequest> serializer =
-                                  ProtoRestSerializer.create();
-                              if (request.hasRequestId()) {
-                                serializer.putQueryParam(
-                                    fields, "requestId", request.getRequestId());
-                              }
-                              return fields;
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<SetTargetGlobalForwardingRuleRequest> serializer =
+                                ProtoRestSerializer.create();
+                            if (request.hasRequestId()) {
+                              serializer.putQueryParam(fields, "requestId", request.getRequestId());
                             }
+                            return fields;
                           })
                       .setRequestBodyExtractor(
-                          new FieldsExtractor<SetTargetGlobalForwardingRuleRequest, String>() {
-                            @Override
-                            public String extract(SetTargetGlobalForwardingRuleRequest request) {
-                              return ProtoRestSerializer.create()
+                          request ->
+                              ProtoRestSerializer.create()
                                   .toBody(
                                       "targetReferenceResource",
-                                      request.getTargetReferenceResource());
-                            }
-                          })
+                                      request.getTargetReferenceResource()))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -613,7 +503,13 @@ public class HttpJsonGlobalForwardingRulesStub extends GlobalForwardingRulesStub
 
   @Override
   public final void close() {
-    shutdown();
+    try {
+      backgroundResources.close();
+    } catch (RuntimeException e) {
+      throw e;
+    } catch (Exception e) {
+      throw new IllegalStateException("Failed to close resource", e);
+    }
   }
 
   @Override

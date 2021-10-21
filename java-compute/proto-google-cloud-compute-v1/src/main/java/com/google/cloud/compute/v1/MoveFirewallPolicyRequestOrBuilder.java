@@ -55,7 +55,8 @@ public interface MoveFirewallPolicyRequestOrBuilder
    * The new parent of the firewall policy.
    * </pre>
    *
-   * <code>string parent_id = 459714768;</code>
+   * <code>string parent_id = 459714768 [(.google.cloud.operation_request_field) = "parent_id"];
+   * </code>
    *
    * @return Whether the parentId field is set.
    */
@@ -67,7 +68,8 @@ public interface MoveFirewallPolicyRequestOrBuilder
    * The new parent of the firewall policy.
    * </pre>
    *
-   * <code>string parent_id = 459714768;</code>
+   * <code>string parent_id = 459714768 [(.google.cloud.operation_request_field) = "parent_id"];
+   * </code>
    *
    * @return The parentId.
    */
@@ -79,7 +81,8 @@ public interface MoveFirewallPolicyRequestOrBuilder
    * The new parent of the firewall policy.
    * </pre>
    *
-   * <code>string parent_id = 459714768;</code>
+   * <code>string parent_id = 459714768 [(.google.cloud.operation_request_field) = "parent_id"];
+   * </code>
    *
    * @return The bytes for parentId.
    */

@@ -25,7 +25,6 @@ import com.google.api.core.InternalApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.httpjson.ApiMethodDescriptor;
-import com.google.api.gax.httpjson.FieldsExtractor;
 import com.google.api.gax.httpjson.HttpJsonCallSettings;
 import com.google.api.gax.httpjson.HttpJsonStubCallableFactory;
 import com.google.api.gax.httpjson.ProtoMessageRequestFormatter;
@@ -75,45 +74,30 @@ public class HttpJsonBackendServicesStub extends BackendServicesStub {
                   ProtoMessageRequestFormatter.<AddSignedUrlKeyBackendServiceRequest>newBuilder()
                       .setPath(
                           "/compute/v1/projects/{project}/global/backendServices/{backendService}/addSignedUrlKey",
-                          new FieldsExtractor<
-                              AddSignedUrlKeyBackendServiceRequest, Map<String, String>>() {
-                            @Override
-                            public Map<String, String> extract(
-                                AddSignedUrlKeyBackendServiceRequest request) {
-                              Map<String, String> fields = new HashMap<>();
-                              ProtoRestSerializer<AddSignedUrlKeyBackendServiceRequest> serializer =
-                                  ProtoRestSerializer.create();
-                              serializer.putPathParam(
-                                  fields, "backendService", request.getBackendService());
-                              serializer.putPathParam(fields, "project", request.getProject());
-                              return fields;
-                            }
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<AddSignedUrlKeyBackendServiceRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(
+                                fields, "backendService", request.getBackendService());
+                            serializer.putPathParam(fields, "project", request.getProject());
+                            return fields;
                           })
                       .setQueryParamsExtractor(
-                          new FieldsExtractor<
-                              AddSignedUrlKeyBackendServiceRequest, Map<String, List<String>>>() {
-                            @Override
-                            public Map<String, List<String>> extract(
-                                AddSignedUrlKeyBackendServiceRequest request) {
-                              Map<String, List<String>> fields = new HashMap<>();
-                              ProtoRestSerializer<AddSignedUrlKeyBackendServiceRequest> serializer =
-                                  ProtoRestSerializer.create();
-                              if (request.hasRequestId()) {
-                                serializer.putQueryParam(
-                                    fields, "requestId", request.getRequestId());
-                              }
-                              return fields;
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<AddSignedUrlKeyBackendServiceRequest> serializer =
+                                ProtoRestSerializer.create();
+                            if (request.hasRequestId()) {
+                              serializer.putQueryParam(fields, "requestId", request.getRequestId());
                             }
+                            return fields;
                           })
                       .setRequestBodyExtractor(
-                          new FieldsExtractor<AddSignedUrlKeyBackendServiceRequest, String>() {
-                            @Override
-                            public String extract(AddSignedUrlKeyBackendServiceRequest request) {
-                              return ProtoRestSerializer.create()
+                          request ->
+                              ProtoRestSerializer.create()
                                   .toBody(
-                                      "signedUrlKeyResource", request.getSignedUrlKeyResource());
-                            }
-                          })
+                                      "signedUrlKeyResource", request.getSignedUrlKeyResource()))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -132,61 +116,44 @@ public class HttpJsonBackendServicesStub extends BackendServicesStub {
                   ProtoMessageRequestFormatter.<AggregatedListBackendServicesRequest>newBuilder()
                       .setPath(
                           "/compute/v1/projects/{project}/aggregated/backendServices",
-                          new FieldsExtractor<
-                              AggregatedListBackendServicesRequest, Map<String, String>>() {
-                            @Override
-                            public Map<String, String> extract(
-                                AggregatedListBackendServicesRequest request) {
-                              Map<String, String> fields = new HashMap<>();
-                              ProtoRestSerializer<AggregatedListBackendServicesRequest> serializer =
-                                  ProtoRestSerializer.create();
-                              serializer.putPathParam(fields, "project", request.getProject());
-                              return fields;
-                            }
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<AggregatedListBackendServicesRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "project", request.getProject());
+                            return fields;
                           })
                       .setQueryParamsExtractor(
-                          new FieldsExtractor<
-                              AggregatedListBackendServicesRequest, Map<String, List<String>>>() {
-                            @Override
-                            public Map<String, List<String>> extract(
-                                AggregatedListBackendServicesRequest request) {
-                              Map<String, List<String>> fields = new HashMap<>();
-                              ProtoRestSerializer<AggregatedListBackendServicesRequest> serializer =
-                                  ProtoRestSerializer.create();
-                              if (request.hasFilter()) {
-                                serializer.putQueryParam(fields, "filter", request.getFilter());
-                              }
-                              if (request.hasIncludeAllScopes()) {
-                                serializer.putQueryParam(
-                                    fields, "includeAllScopes", request.getIncludeAllScopes());
-                              }
-                              if (request.hasMaxResults()) {
-                                serializer.putQueryParam(
-                                    fields, "maxResults", request.getMaxResults());
-                              }
-                              if (request.hasOrderBy()) {
-                                serializer.putQueryParam(fields, "orderBy", request.getOrderBy());
-                              }
-                              if (request.hasPageToken()) {
-                                serializer.putQueryParam(
-                                    fields, "pageToken", request.getPageToken());
-                              }
-                              if (request.hasReturnPartialSuccess()) {
-                                serializer.putQueryParam(
-                                    fields,
-                                    "returnPartialSuccess",
-                                    request.getReturnPartialSuccess());
-                              }
-                              return fields;
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<AggregatedListBackendServicesRequest> serializer =
+                                ProtoRestSerializer.create();
+                            if (request.hasFilter()) {
+                              serializer.putQueryParam(fields, "filter", request.getFilter());
                             }
-                          })
-                      .setRequestBodyExtractor(
-                          new FieldsExtractor<AggregatedListBackendServicesRequest, String>() {
-                            @Override
-                            public String extract(AggregatedListBackendServicesRequest request) {
-                              return null;
+                            if (request.hasIncludeAllScopes()) {
+                              serializer.putQueryParam(
+                                  fields, "includeAllScopes", request.getIncludeAllScopes());
                             }
+                            if (request.hasMaxResults()) {
+                              serializer.putQueryParam(
+                                  fields, "maxResults", request.getMaxResults());
+                            }
+                            if (request.hasOrderBy()) {
+                              serializer.putQueryParam(fields, "orderBy", request.getOrderBy());
+                            }
+                            if (request.hasPageToken()) {
+                              serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            }
+                            if (request.hasReturnPartialSuccess()) {
+                              serializer.putQueryParam(
+                                  fields,
+                                  "returnPartialSuccess",
+                                  request.getReturnPartialSuccess());
+                            }
+                            return fields;
                           })
+                      .setRequestBodyExtractor(request -> null)
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<BackendServiceAggregatedList>newBuilder()
@@ -203,42 +170,26 @@ public class HttpJsonBackendServicesStub extends BackendServicesStub {
                   ProtoMessageRequestFormatter.<DeleteBackendServiceRequest>newBuilder()
                       .setPath(
                           "/compute/v1/projects/{project}/global/backendServices/{backendService}",
-                          new FieldsExtractor<DeleteBackendServiceRequest, Map<String, String>>() {
-                            @Override
-                            public Map<String, String> extract(
-                                DeleteBackendServiceRequest request) {
-                              Map<String, String> fields = new HashMap<>();
-                              ProtoRestSerializer<DeleteBackendServiceRequest> serializer =
-                                  ProtoRestSerializer.create();
-                              serializer.putPathParam(
-                                  fields, "backendService", request.getBackendService());
-                              serializer.putPathParam(fields, "project", request.getProject());
-                              return fields;
-                            }
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<DeleteBackendServiceRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(
+                                fields, "backendService", request.getBackendService());
+                            serializer.putPathParam(fields, "project", request.getProject());
+                            return fields;
                           })
                       .setQueryParamsExtractor(
-                          new FieldsExtractor<
-                              DeleteBackendServiceRequest, Map<String, List<String>>>() {
-                            @Override
-                            public Map<String, List<String>> extract(
-                                DeleteBackendServiceRequest request) {
-                              Map<String, List<String>> fields = new HashMap<>();
-                              ProtoRestSerializer<DeleteBackendServiceRequest> serializer =
-                                  ProtoRestSerializer.create();
-                              if (request.hasRequestId()) {
-                                serializer.putQueryParam(
-                                    fields, "requestId", request.getRequestId());
-                              }
-                              return fields;
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<DeleteBackendServiceRequest> serializer =
+                                ProtoRestSerializer.create();
+                            if (request.hasRequestId()) {
+                              serializer.putQueryParam(fields, "requestId", request.getRequestId());
                             }
+                            return fields;
                           })
-                      .setRequestBodyExtractor(
-                          new FieldsExtractor<DeleteBackendServiceRequest, String>() {
-                            @Override
-                            public String extract(DeleteBackendServiceRequest request) {
-                              return null;
-                            }
-                          })
+                      .setRequestBodyExtractor(request -> null)
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -255,45 +206,27 @@ public class HttpJsonBackendServicesStub extends BackendServicesStub {
                   ProtoMessageRequestFormatter.<DeleteSignedUrlKeyBackendServiceRequest>newBuilder()
                       .setPath(
                           "/compute/v1/projects/{project}/global/backendServices/{backendService}/deleteSignedUrlKey",
-                          new FieldsExtractor<
-                              DeleteSignedUrlKeyBackendServiceRequest, Map<String, String>>() {
-                            @Override
-                            public Map<String, String> extract(
-                                DeleteSignedUrlKeyBackendServiceRequest request) {
-                              Map<String, String> fields = new HashMap<>();
-                              ProtoRestSerializer<DeleteSignedUrlKeyBackendServiceRequest>
-                                  serializer = ProtoRestSerializer.create();
-                              serializer.putPathParam(
-                                  fields, "backendService", request.getBackendService());
-                              serializer.putPathParam(fields, "project", request.getProject());
-                              return fields;
-                            }
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<DeleteSignedUrlKeyBackendServiceRequest>
+                                serializer = ProtoRestSerializer.create();
+                            serializer.putPathParam(
+                                fields, "backendService", request.getBackendService());
+                            serializer.putPathParam(fields, "project", request.getProject());
+                            return fields;
                           })
                       .setQueryParamsExtractor(
-                          new FieldsExtractor<
-                              DeleteSignedUrlKeyBackendServiceRequest,
-                              Map<String, List<String>>>() {
-                            @Override
-                            public Map<String, List<String>> extract(
-                                DeleteSignedUrlKeyBackendServiceRequest request) {
-                              Map<String, List<String>> fields = new HashMap<>();
-                              ProtoRestSerializer<DeleteSignedUrlKeyBackendServiceRequest>
-                                  serializer = ProtoRestSerializer.create();
-                              serializer.putQueryParam(fields, "keyName", request.getKeyName());
-                              if (request.hasRequestId()) {
-                                serializer.putQueryParam(
-                                    fields, "requestId", request.getRequestId());
-                              }
-                              return fields;
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<DeleteSignedUrlKeyBackendServiceRequest>
+                                serializer = ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "keyName", request.getKeyName());
+                            if (request.hasRequestId()) {
+                              serializer.putQueryParam(fields, "requestId", request.getRequestId());
                             }
+                            return fields;
                           })
-                      .setRequestBodyExtractor(
-                          new FieldsExtractor<DeleteSignedUrlKeyBackendServiceRequest, String>() {
-                            @Override
-                            public String extract(DeleteSignedUrlKeyBackendServiceRequest request) {
-                              return null;
-                            }
-                          })
+                      .setRequestBodyExtractor(request -> null)
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -310,37 +243,23 @@ public class HttpJsonBackendServicesStub extends BackendServicesStub {
                   ProtoMessageRequestFormatter.<GetBackendServiceRequest>newBuilder()
                       .setPath(
                           "/compute/v1/projects/{project}/global/backendServices/{backendService}",
-                          new FieldsExtractor<GetBackendServiceRequest, Map<String, String>>() {
-                            @Override
-                            public Map<String, String> extract(GetBackendServiceRequest request) {
-                              Map<String, String> fields = new HashMap<>();
-                              ProtoRestSerializer<GetBackendServiceRequest> serializer =
-                                  ProtoRestSerializer.create();
-                              serializer.putPathParam(
-                                  fields, "backendService", request.getBackendService());
-                              serializer.putPathParam(fields, "project", request.getProject());
-                              return fields;
-                            }
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<GetBackendServiceRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(
+                                fields, "backendService", request.getBackendService());
+                            serializer.putPathParam(fields, "project", request.getProject());
+                            return fields;
                           })
                       .setQueryParamsExtractor(
-                          new FieldsExtractor<
-                              GetBackendServiceRequest, Map<String, List<String>>>() {
-                            @Override
-                            public Map<String, List<String>> extract(
-                                GetBackendServiceRequest request) {
-                              Map<String, List<String>> fields = new HashMap<>();
-                              ProtoRestSerializer<GetBackendServiceRequest> serializer =
-                                  ProtoRestSerializer.create();
-                              return fields;
-                            }
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<GetBackendServiceRequest> serializer =
+                                ProtoRestSerializer.create();
+                            return fields;
                           })
-                      .setRequestBodyExtractor(
-                          new FieldsExtractor<GetBackendServiceRequest, String>() {
-                            @Override
-                            public String extract(GetBackendServiceRequest request) {
-                              return null;
-                            }
-                          })
+                      .setRequestBodyExtractor(request -> null)
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<BackendService>newBuilder()
@@ -359,42 +278,28 @@ public class HttpJsonBackendServicesStub extends BackendServicesStub {
                   ProtoMessageRequestFormatter.<GetHealthBackendServiceRequest>newBuilder()
                       .setPath(
                           "/compute/v1/projects/{project}/global/backendServices/{backendService}/getHealth",
-                          new FieldsExtractor<
-                              GetHealthBackendServiceRequest, Map<String, String>>() {
-                            @Override
-                            public Map<String, String> extract(
-                                GetHealthBackendServiceRequest request) {
-                              Map<String, String> fields = new HashMap<>();
-                              ProtoRestSerializer<GetHealthBackendServiceRequest> serializer =
-                                  ProtoRestSerializer.create();
-                              serializer.putPathParam(
-                                  fields, "backendService", request.getBackendService());
-                              serializer.putPathParam(fields, "project", request.getProject());
-                              return fields;
-                            }
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<GetHealthBackendServiceRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(
+                                fields, "backendService", request.getBackendService());
+                            serializer.putPathParam(fields, "project", request.getProject());
+                            return fields;
                           })
                       .setQueryParamsExtractor(
-                          new FieldsExtractor<
-                              GetHealthBackendServiceRequest, Map<String, List<String>>>() {
-                            @Override
-                            public Map<String, List<String>> extract(
-                                GetHealthBackendServiceRequest request) {
-                              Map<String, List<String>> fields = new HashMap<>();
-                              ProtoRestSerializer<GetHealthBackendServiceRequest> serializer =
-                                  ProtoRestSerializer.create();
-                              return fields;
-                            }
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<GetHealthBackendServiceRequest> serializer =
+                                ProtoRestSerializer.create();
+                            return fields;
                           })
                       .setRequestBodyExtractor(
-                          new FieldsExtractor<GetHealthBackendServiceRequest, String>() {
-                            @Override
-                            public String extract(GetHealthBackendServiceRequest request) {
-                              return ProtoRestSerializer.create()
+                          request ->
+                              ProtoRestSerializer.create()
                                   .toBody(
                                       "resourceGroupReferenceResource",
-                                      request.getResourceGroupReferenceResource());
-                            }
-                          })
+                                      request.getResourceGroupReferenceResource()))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<BackendServiceGroupHealth>newBuilder()
@@ -411,43 +316,29 @@ public class HttpJsonBackendServicesStub extends BackendServicesStub {
                   ProtoMessageRequestFormatter.<InsertBackendServiceRequest>newBuilder()
                       .setPath(
                           "/compute/v1/projects/{project}/global/backendServices",
-                          new FieldsExtractor<InsertBackendServiceRequest, Map<String, String>>() {
-                            @Override
-                            public Map<String, String> extract(
-                                InsertBackendServiceRequest request) {
-                              Map<String, String> fields = new HashMap<>();
-                              ProtoRestSerializer<InsertBackendServiceRequest> serializer =
-                                  ProtoRestSerializer.create();
-                              serializer.putPathParam(fields, "project", request.getProject());
-                              return fields;
-                            }
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<InsertBackendServiceRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "project", request.getProject());
+                            return fields;
                           })
                       .setQueryParamsExtractor(
-                          new FieldsExtractor<
-                              InsertBackendServiceRequest, Map<String, List<String>>>() {
-                            @Override
-                            public Map<String, List<String>> extract(
-                                InsertBackendServiceRequest request) {
-                              Map<String, List<String>> fields = new HashMap<>();
-                              ProtoRestSerializer<InsertBackendServiceRequest> serializer =
-                                  ProtoRestSerializer.create();
-                              if (request.hasRequestId()) {
-                                serializer.putQueryParam(
-                                    fields, "requestId", request.getRequestId());
-                              }
-                              return fields;
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<InsertBackendServiceRequest> serializer =
+                                ProtoRestSerializer.create();
+                            if (request.hasRequestId()) {
+                              serializer.putQueryParam(fields, "requestId", request.getRequestId());
                             }
+                            return fields;
                           })
                       .setRequestBodyExtractor(
-                          new FieldsExtractor<InsertBackendServiceRequest, String>() {
-                            @Override
-                            public String extract(InsertBackendServiceRequest request) {
-                              return ProtoRestSerializer.create()
+                          request ->
+                              ProtoRestSerializer.create()
                                   .toBody(
                                       "backendServiceResource",
-                                      request.getBackendServiceResource());
-                            }
-                          })
+                                      request.getBackendServiceResource()))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -464,55 +355,40 @@ public class HttpJsonBackendServicesStub extends BackendServicesStub {
                   ProtoMessageRequestFormatter.<ListBackendServicesRequest>newBuilder()
                       .setPath(
                           "/compute/v1/projects/{project}/global/backendServices",
-                          new FieldsExtractor<ListBackendServicesRequest, Map<String, String>>() {
-                            @Override
-                            public Map<String, String> extract(ListBackendServicesRequest request) {
-                              Map<String, String> fields = new HashMap<>();
-                              ProtoRestSerializer<ListBackendServicesRequest> serializer =
-                                  ProtoRestSerializer.create();
-                              serializer.putPathParam(fields, "project", request.getProject());
-                              return fields;
-                            }
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<ListBackendServicesRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "project", request.getProject());
+                            return fields;
                           })
                       .setQueryParamsExtractor(
-                          new FieldsExtractor<
-                              ListBackendServicesRequest, Map<String, List<String>>>() {
-                            @Override
-                            public Map<String, List<String>> extract(
-                                ListBackendServicesRequest request) {
-                              Map<String, List<String>> fields = new HashMap<>();
-                              ProtoRestSerializer<ListBackendServicesRequest> serializer =
-                                  ProtoRestSerializer.create();
-                              if (request.hasFilter()) {
-                                serializer.putQueryParam(fields, "filter", request.getFilter());
-                              }
-                              if (request.hasMaxResults()) {
-                                serializer.putQueryParam(
-                                    fields, "maxResults", request.getMaxResults());
-                              }
-                              if (request.hasOrderBy()) {
-                                serializer.putQueryParam(fields, "orderBy", request.getOrderBy());
-                              }
-                              if (request.hasPageToken()) {
-                                serializer.putQueryParam(
-                                    fields, "pageToken", request.getPageToken());
-                              }
-                              if (request.hasReturnPartialSuccess()) {
-                                serializer.putQueryParam(
-                                    fields,
-                                    "returnPartialSuccess",
-                                    request.getReturnPartialSuccess());
-                              }
-                              return fields;
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<ListBackendServicesRequest> serializer =
+                                ProtoRestSerializer.create();
+                            if (request.hasFilter()) {
+                              serializer.putQueryParam(fields, "filter", request.getFilter());
                             }
-                          })
-                      .setRequestBodyExtractor(
-                          new FieldsExtractor<ListBackendServicesRequest, String>() {
-                            @Override
-                            public String extract(ListBackendServicesRequest request) {
-                              return null;
+                            if (request.hasMaxResults()) {
+                              serializer.putQueryParam(
+                                  fields, "maxResults", request.getMaxResults());
                             }
+                            if (request.hasOrderBy()) {
+                              serializer.putQueryParam(fields, "orderBy", request.getOrderBy());
+                            }
+                            if (request.hasPageToken()) {
+                              serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            }
+                            if (request.hasReturnPartialSuccess()) {
+                              serializer.putQueryParam(
+                                  fields,
+                                  "returnPartialSuccess",
+                                  request.getReturnPartialSuccess());
+                            }
+                            return fields;
                           })
+                      .setRequestBodyExtractor(request -> null)
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<BackendServiceList>newBuilder()
@@ -529,44 +405,31 @@ public class HttpJsonBackendServicesStub extends BackendServicesStub {
                   ProtoMessageRequestFormatter.<PatchBackendServiceRequest>newBuilder()
                       .setPath(
                           "/compute/v1/projects/{project}/global/backendServices/{backendService}",
-                          new FieldsExtractor<PatchBackendServiceRequest, Map<String, String>>() {
-                            @Override
-                            public Map<String, String> extract(PatchBackendServiceRequest request) {
-                              Map<String, String> fields = new HashMap<>();
-                              ProtoRestSerializer<PatchBackendServiceRequest> serializer =
-                                  ProtoRestSerializer.create();
-                              serializer.putPathParam(
-                                  fields, "backendService", request.getBackendService());
-                              serializer.putPathParam(fields, "project", request.getProject());
-                              return fields;
-                            }
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<PatchBackendServiceRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(
+                                fields, "backendService", request.getBackendService());
+                            serializer.putPathParam(fields, "project", request.getProject());
+                            return fields;
                           })
                       .setQueryParamsExtractor(
-                          new FieldsExtractor<
-                              PatchBackendServiceRequest, Map<String, List<String>>>() {
-                            @Override
-                            public Map<String, List<String>> extract(
-                                PatchBackendServiceRequest request) {
-                              Map<String, List<String>> fields = new HashMap<>();
-                              ProtoRestSerializer<PatchBackendServiceRequest> serializer =
-                                  ProtoRestSerializer.create();
-                              if (request.hasRequestId()) {
-                                serializer.putQueryParam(
-                                    fields, "requestId", request.getRequestId());
-                              }
-                              return fields;
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<PatchBackendServiceRequest> serializer =
+                                ProtoRestSerializer.create();
+                            if (request.hasRequestId()) {
+                              serializer.putQueryParam(fields, "requestId", request.getRequestId());
                             }
+                            return fields;
                           })
                       .setRequestBodyExtractor(
-                          new FieldsExtractor<PatchBackendServiceRequest, String>() {
-                            @Override
-                            public String extract(PatchBackendServiceRequest request) {
-                              return ProtoRestSerializer.create()
+                          request ->
+                              ProtoRestSerializer.create()
                                   .toBody(
                                       "backendServiceResource",
-                                      request.getBackendServiceResource());
-                            }
-                          })
+                                      request.getBackendServiceResource()))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -583,46 +446,31 @@ public class HttpJsonBackendServicesStub extends BackendServicesStub {
                   ProtoMessageRequestFormatter.<SetSecurityPolicyBackendServiceRequest>newBuilder()
                       .setPath(
                           "/compute/v1/projects/{project}/global/backendServices/{backendService}/setSecurityPolicy",
-                          new FieldsExtractor<
-                              SetSecurityPolicyBackendServiceRequest, Map<String, String>>() {
-                            @Override
-                            public Map<String, String> extract(
-                                SetSecurityPolicyBackendServiceRequest request) {
-                              Map<String, String> fields = new HashMap<>();
-                              ProtoRestSerializer<SetSecurityPolicyBackendServiceRequest>
-                                  serializer = ProtoRestSerializer.create();
-                              serializer.putPathParam(
-                                  fields, "backendService", request.getBackendService());
-                              serializer.putPathParam(fields, "project", request.getProject());
-                              return fields;
-                            }
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<SetSecurityPolicyBackendServiceRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(
+                                fields, "backendService", request.getBackendService());
+                            serializer.putPathParam(fields, "project", request.getProject());
+                            return fields;
                           })
                       .setQueryParamsExtractor(
-                          new FieldsExtractor<
-                              SetSecurityPolicyBackendServiceRequest, Map<String, List<String>>>() {
-                            @Override
-                            public Map<String, List<String>> extract(
-                                SetSecurityPolicyBackendServiceRequest request) {
-                              Map<String, List<String>> fields = new HashMap<>();
-                              ProtoRestSerializer<SetSecurityPolicyBackendServiceRequest>
-                                  serializer = ProtoRestSerializer.create();
-                              if (request.hasRequestId()) {
-                                serializer.putQueryParam(
-                                    fields, "requestId", request.getRequestId());
-                              }
-                              return fields;
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<SetSecurityPolicyBackendServiceRequest> serializer =
+                                ProtoRestSerializer.create();
+                            if (request.hasRequestId()) {
+                              serializer.putQueryParam(fields, "requestId", request.getRequestId());
                             }
+                            return fields;
                           })
                       .setRequestBodyExtractor(
-                          new FieldsExtractor<SetSecurityPolicyBackendServiceRequest, String>() {
-                            @Override
-                            public String extract(SetSecurityPolicyBackendServiceRequest request) {
-                              return ProtoRestSerializer.create()
+                          request ->
+                              ProtoRestSerializer.create()
                                   .toBody(
                                       "securityPolicyReferenceResource",
-                                      request.getSecurityPolicyReferenceResource());
-                            }
-                          })
+                                      request.getSecurityPolicyReferenceResource()))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -639,45 +487,31 @@ public class HttpJsonBackendServicesStub extends BackendServicesStub {
                   ProtoMessageRequestFormatter.<UpdateBackendServiceRequest>newBuilder()
                       .setPath(
                           "/compute/v1/projects/{project}/global/backendServices/{backendService}",
-                          new FieldsExtractor<UpdateBackendServiceRequest, Map<String, String>>() {
-                            @Override
-                            public Map<String, String> extract(
-                                UpdateBackendServiceRequest request) {
-                              Map<String, String> fields = new HashMap<>();
-                              ProtoRestSerializer<UpdateBackendServiceRequest> serializer =
-                                  ProtoRestSerializer.create();
-                              serializer.putPathParam(
-                                  fields, "backendService", request.getBackendService());
-                              serializer.putPathParam(fields, "project", request.getProject());
-                              return fields;
-                            }
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<UpdateBackendServiceRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(
+                                fields, "backendService", request.getBackendService());
+                            serializer.putPathParam(fields, "project", request.getProject());
+                            return fields;
                           })
                       .setQueryParamsExtractor(
-                          new FieldsExtractor<
-                              UpdateBackendServiceRequest, Map<String, List<String>>>() {
-                            @Override
-                            public Map<String, List<String>> extract(
-                                UpdateBackendServiceRequest request) {
-                              Map<String, List<String>> fields = new HashMap<>();
-                              ProtoRestSerializer<UpdateBackendServiceRequest> serializer =
-                                  ProtoRestSerializer.create();
-                              if (request.hasRequestId()) {
-                                serializer.putQueryParam(
-                                    fields, "requestId", request.getRequestId());
-                              }
-                              return fields;
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<UpdateBackendServiceRequest> serializer =
+                                ProtoRestSerializer.create();
+                            if (request.hasRequestId()) {
+                              serializer.putQueryParam(fields, "requestId", request.getRequestId());
                             }
+                            return fields;
                           })
                       .setRequestBodyExtractor(
-                          new FieldsExtractor<UpdateBackendServiceRequest, String>() {
-                            @Override
-                            public String extract(UpdateBackendServiceRequest request) {
-                              return ProtoRestSerializer.create()
+                          request ->
+                              ProtoRestSerializer.create()
                                   .toBody(
                                       "backendServiceResource",
-                                      request.getBackendServiceResource());
-                            }
-                          })
+                                      request.getBackendServiceResource()))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -936,7 +770,13 @@ public class HttpJsonBackendServicesStub extends BackendServicesStub {
 
   @Override
   public final void close() {
-    shutdown();
+    try {
+      backgroundResources.close();
+    } catch (RuntimeException e) {
+      throw e;
+    } catch (Exception e) {
+      throw new IllegalStateException("Failed to close resource", e);
+    }
   }
 
   @Override

@@ -153,7 +153,9 @@ public final class InsertRouterRequest extends com.google.protobuf.GeneratedMess
    * Project ID for this request.
    * </pre>
    *
-   * <code>string project = 227560217 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>
+   * string project = 227560217 [(.google.api.field_behavior) = REQUIRED, (.google.cloud.operation_request_field) = "project"];
+   * </code>
    *
    * @return The project.
    */
@@ -176,7 +178,9 @@ public final class InsertRouterRequest extends com.google.protobuf.GeneratedMess
    * Project ID for this request.
    * </pre>
    *
-   * <code>string project = 227560217 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>
+   * string project = 227560217 [(.google.api.field_behavior) = REQUIRED, (.google.cloud.operation_request_field) = "project"];
+   * </code>
    *
    * @return The bytes for project.
    */
@@ -202,7 +206,9 @@ public final class InsertRouterRequest extends com.google.protobuf.GeneratedMess
    * Name of the region for this request.
    * </pre>
    *
-   * <code>string region = 138946292 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>
+   * string region = 138946292 [(.google.api.field_behavior) = REQUIRED, (.google.cloud.operation_request_field) = "region"];
+   * </code>
    *
    * @return The region.
    */
@@ -225,7 +231,9 @@ public final class InsertRouterRequest extends com.google.protobuf.GeneratedMess
    * Name of the region for this request.
    * </pre>
    *
-   * <code>string region = 138946292 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>
+   * string region = 138946292 [(.google.api.field_behavior) = REQUIRED, (.google.cloud.operation_request_field) = "region"];
+   * </code>
    *
    * @return The bytes for region.
    */
@@ -766,7 +774,9 @@ public final class InsertRouterRequest extends com.google.protobuf.GeneratedMess
      * Project ID for this request.
      * </pre>
      *
-     * <code>string project = 227560217 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>
+     * string project = 227560217 [(.google.api.field_behavior) = REQUIRED, (.google.cloud.operation_request_field) = "project"];
+     * </code>
      *
      * @return The project.
      */
@@ -788,7 +798,9 @@ public final class InsertRouterRequest extends com.google.protobuf.GeneratedMess
      * Project ID for this request.
      * </pre>
      *
-     * <code>string project = 227560217 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>
+     * string project = 227560217 [(.google.api.field_behavior) = REQUIRED, (.google.cloud.operation_request_field) = "project"];
+     * </code>
      *
      * @return The bytes for project.
      */
@@ -810,7 +822,9 @@ public final class InsertRouterRequest extends com.google.protobuf.GeneratedMess
      * Project ID for this request.
      * </pre>
      *
-     * <code>string project = 227560217 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>
+     * string project = 227560217 [(.google.api.field_behavior) = REQUIRED, (.google.cloud.operation_request_field) = "project"];
+     * </code>
      *
      * @param value The project to set.
      * @return This builder for chaining.
@@ -831,7 +845,9 @@ public final class InsertRouterRequest extends com.google.protobuf.GeneratedMess
      * Project ID for this request.
      * </pre>
      *
-     * <code>string project = 227560217 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>
+     * string project = 227560217 [(.google.api.field_behavior) = REQUIRED, (.google.cloud.operation_request_field) = "project"];
+     * </code>
      *
      * @return This builder for chaining.
      */
@@ -848,7 +864,9 @@ public final class InsertRouterRequest extends com.google.protobuf.GeneratedMess
      * Project ID for this request.
      * </pre>
      *
-     * <code>string project = 227560217 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>
+     * string project = 227560217 [(.google.api.field_behavior) = REQUIRED, (.google.cloud.operation_request_field) = "project"];
+     * </code>
      *
      * @param value The bytes for project to set.
      * @return This builder for chaining.
@@ -872,7 +890,9 @@ public final class InsertRouterRequest extends com.google.protobuf.GeneratedMess
      * Name of the region for this request.
      * </pre>
      *
-     * <code>string region = 138946292 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>
+     * string region = 138946292 [(.google.api.field_behavior) = REQUIRED, (.google.cloud.operation_request_field) = "region"];
+     * </code>
      *
      * @return The region.
      */
@@ -894,7 +914,9 @@ public final class InsertRouterRequest extends com.google.protobuf.GeneratedMess
      * Name of the region for this request.
      * </pre>
      *
-     * <code>string region = 138946292 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>
+     * string region = 138946292 [(.google.api.field_behavior) = REQUIRED, (.google.cloud.operation_request_field) = "region"];
+     * </code>
      *
      * @return The bytes for region.
      */
@@ -916,7 +938,9 @@ public final class InsertRouterRequest extends com.google.protobuf.GeneratedMess
      * Name of the region for this request.
      * </pre>
      *
-     * <code>string region = 138946292 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>
+     * string region = 138946292 [(.google.api.field_behavior) = REQUIRED, (.google.cloud.operation_request_field) = "region"];
+     * </code>
      *
      * @param value The region to set.
      * @return This builder for chaining.
@@ -937,7 +961,9 @@ public final class InsertRouterRequest extends com.google.protobuf.GeneratedMess
      * Name of the region for this request.
      * </pre>
      *
-     * <code>string region = 138946292 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>
+     * string region = 138946292 [(.google.api.field_behavior) = REQUIRED, (.google.cloud.operation_request_field) = "region"];
+     * </code>
      *
      * @return This builder for chaining.
      */
@@ -954,7 +980,9 @@ public final class InsertRouterRequest extends com.google.protobuf.GeneratedMess
      * Name of the region for this request.
      * </pre>
      *
-     * <code>string region = 138946292 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>
+     * string region = 138946292 [(.google.api.field_behavior) = REQUIRED, (.google.cloud.operation_request_field) = "region"];
+     * </code>
      *
      * @param value The bytes for region to set.
      * @return This builder for chaining.

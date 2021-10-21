@@ -25,7 +25,6 @@ import com.google.api.core.InternalApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.httpjson.ApiMethodDescriptor;
-import com.google.api.gax.httpjson.FieldsExtractor;
 import com.google.api.gax.httpjson.HttpJsonCallSettings;
 import com.google.api.gax.httpjson.HttpJsonStubCallableFactory;
 import com.google.api.gax.httpjson.ProtoMessageRequestFormatter;
@@ -65,61 +64,44 @@ public class HttpJsonNodeTypesStub extends NodeTypesStub {
                   ProtoMessageRequestFormatter.<AggregatedListNodeTypesRequest>newBuilder()
                       .setPath(
                           "/compute/v1/projects/{project}/aggregated/nodeTypes",
-                          new FieldsExtractor<
-                              AggregatedListNodeTypesRequest, Map<String, String>>() {
-                            @Override
-                            public Map<String, String> extract(
-                                AggregatedListNodeTypesRequest request) {
-                              Map<String, String> fields = new HashMap<>();
-                              ProtoRestSerializer<AggregatedListNodeTypesRequest> serializer =
-                                  ProtoRestSerializer.create();
-                              serializer.putPathParam(fields, "project", request.getProject());
-                              return fields;
-                            }
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<AggregatedListNodeTypesRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "project", request.getProject());
+                            return fields;
                           })
                       .setQueryParamsExtractor(
-                          new FieldsExtractor<
-                              AggregatedListNodeTypesRequest, Map<String, List<String>>>() {
-                            @Override
-                            public Map<String, List<String>> extract(
-                                AggregatedListNodeTypesRequest request) {
-                              Map<String, List<String>> fields = new HashMap<>();
-                              ProtoRestSerializer<AggregatedListNodeTypesRequest> serializer =
-                                  ProtoRestSerializer.create();
-                              if (request.hasFilter()) {
-                                serializer.putQueryParam(fields, "filter", request.getFilter());
-                              }
-                              if (request.hasIncludeAllScopes()) {
-                                serializer.putQueryParam(
-                                    fields, "includeAllScopes", request.getIncludeAllScopes());
-                              }
-                              if (request.hasMaxResults()) {
-                                serializer.putQueryParam(
-                                    fields, "maxResults", request.getMaxResults());
-                              }
-                              if (request.hasOrderBy()) {
-                                serializer.putQueryParam(fields, "orderBy", request.getOrderBy());
-                              }
-                              if (request.hasPageToken()) {
-                                serializer.putQueryParam(
-                                    fields, "pageToken", request.getPageToken());
-                              }
-                              if (request.hasReturnPartialSuccess()) {
-                                serializer.putQueryParam(
-                                    fields,
-                                    "returnPartialSuccess",
-                                    request.getReturnPartialSuccess());
-                              }
-                              return fields;
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<AggregatedListNodeTypesRequest> serializer =
+                                ProtoRestSerializer.create();
+                            if (request.hasFilter()) {
+                              serializer.putQueryParam(fields, "filter", request.getFilter());
                             }
-                          })
-                      .setRequestBodyExtractor(
-                          new FieldsExtractor<AggregatedListNodeTypesRequest, String>() {
-                            @Override
-                            public String extract(AggregatedListNodeTypesRequest request) {
-                              return null;
+                            if (request.hasIncludeAllScopes()) {
+                              serializer.putQueryParam(
+                                  fields, "includeAllScopes", request.getIncludeAllScopes());
                             }
+                            if (request.hasMaxResults()) {
+                              serializer.putQueryParam(
+                                  fields, "maxResults", request.getMaxResults());
+                            }
+                            if (request.hasOrderBy()) {
+                              serializer.putQueryParam(fields, "orderBy", request.getOrderBy());
+                            }
+                            if (request.hasPageToken()) {
+                              serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            }
+                            if (request.hasReturnPartialSuccess()) {
+                              serializer.putQueryParam(
+                                  fields,
+                                  "returnPartialSuccess",
+                                  request.getReturnPartialSuccess());
+                            }
+                            return fields;
                           })
+                      .setRequestBodyExtractor(request -> null)
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<NodeTypeAggregatedList>newBuilder()
@@ -135,35 +117,23 @@ public class HttpJsonNodeTypesStub extends NodeTypesStub {
               ProtoMessageRequestFormatter.<GetNodeTypeRequest>newBuilder()
                   .setPath(
                       "/compute/v1/projects/{project}/zones/{zone}/nodeTypes/{nodeType}",
-                      new FieldsExtractor<GetNodeTypeRequest, Map<String, String>>() {
-                        @Override
-                        public Map<String, String> extract(GetNodeTypeRequest request) {
-                          Map<String, String> fields = new HashMap<>();
-                          ProtoRestSerializer<GetNodeTypeRequest> serializer =
-                              ProtoRestSerializer.create();
-                          serializer.putPathParam(fields, "nodeType", request.getNodeType());
-                          serializer.putPathParam(fields, "project", request.getProject());
-                          serializer.putPathParam(fields, "zone", request.getZone());
-                          return fields;
-                        }
+                      request -> {
+                        Map<String, String> fields = new HashMap<>();
+                        ProtoRestSerializer<GetNodeTypeRequest> serializer =
+                            ProtoRestSerializer.create();
+                        serializer.putPathParam(fields, "nodeType", request.getNodeType());
+                        serializer.putPathParam(fields, "project", request.getProject());
+                        serializer.putPathParam(fields, "zone", request.getZone());
+                        return fields;
                       })
                   .setQueryParamsExtractor(
-                      new FieldsExtractor<GetNodeTypeRequest, Map<String, List<String>>>() {
-                        @Override
-                        public Map<String, List<String>> extract(GetNodeTypeRequest request) {
-                          Map<String, List<String>> fields = new HashMap<>();
-                          ProtoRestSerializer<GetNodeTypeRequest> serializer =
-                              ProtoRestSerializer.create();
-                          return fields;
-                        }
+                      request -> {
+                        Map<String, List<String>> fields = new HashMap<>();
+                        ProtoRestSerializer<GetNodeTypeRequest> serializer =
+                            ProtoRestSerializer.create();
+                        return fields;
                       })
-                  .setRequestBodyExtractor(
-                      new FieldsExtractor<GetNodeTypeRequest, String>() {
-                        @Override
-                        public String extract(GetNodeTypeRequest request) {
-                          return null;
-                        }
-                      })
+                  .setRequestBodyExtractor(request -> null)
                   .build())
           .setResponseParser(
               ProtoMessageResponseParser.<NodeType>newBuilder()
@@ -180,54 +150,41 @@ public class HttpJsonNodeTypesStub extends NodeTypesStub {
                   ProtoMessageRequestFormatter.<ListNodeTypesRequest>newBuilder()
                       .setPath(
                           "/compute/v1/projects/{project}/zones/{zone}/nodeTypes",
-                          new FieldsExtractor<ListNodeTypesRequest, Map<String, String>>() {
-                            @Override
-                            public Map<String, String> extract(ListNodeTypesRequest request) {
-                              Map<String, String> fields = new HashMap<>();
-                              ProtoRestSerializer<ListNodeTypesRequest> serializer =
-                                  ProtoRestSerializer.create();
-                              serializer.putPathParam(fields, "project", request.getProject());
-                              serializer.putPathParam(fields, "zone", request.getZone());
-                              return fields;
-                            }
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<ListNodeTypesRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "project", request.getProject());
+                            serializer.putPathParam(fields, "zone", request.getZone());
+                            return fields;
                           })
                       .setQueryParamsExtractor(
-                          new FieldsExtractor<ListNodeTypesRequest, Map<String, List<String>>>() {
-                            @Override
-                            public Map<String, List<String>> extract(ListNodeTypesRequest request) {
-                              Map<String, List<String>> fields = new HashMap<>();
-                              ProtoRestSerializer<ListNodeTypesRequest> serializer =
-                                  ProtoRestSerializer.create();
-                              if (request.hasFilter()) {
-                                serializer.putQueryParam(fields, "filter", request.getFilter());
-                              }
-                              if (request.hasMaxResults()) {
-                                serializer.putQueryParam(
-                                    fields, "maxResults", request.getMaxResults());
-                              }
-                              if (request.hasOrderBy()) {
-                                serializer.putQueryParam(fields, "orderBy", request.getOrderBy());
-                              }
-                              if (request.hasPageToken()) {
-                                serializer.putQueryParam(
-                                    fields, "pageToken", request.getPageToken());
-                              }
-                              if (request.hasReturnPartialSuccess()) {
-                                serializer.putQueryParam(
-                                    fields,
-                                    "returnPartialSuccess",
-                                    request.getReturnPartialSuccess());
-                              }
-                              return fields;
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<ListNodeTypesRequest> serializer =
+                                ProtoRestSerializer.create();
+                            if (request.hasFilter()) {
+                              serializer.putQueryParam(fields, "filter", request.getFilter());
                             }
-                          })
-                      .setRequestBodyExtractor(
-                          new FieldsExtractor<ListNodeTypesRequest, String>() {
-                            @Override
-                            public String extract(ListNodeTypesRequest request) {
-                              return null;
+                            if (request.hasMaxResults()) {
+                              serializer.putQueryParam(
+                                  fields, "maxResults", request.getMaxResults());
                             }
+                            if (request.hasOrderBy()) {
+                              serializer.putQueryParam(fields, "orderBy", request.getOrderBy());
+                            }
+                            if (request.hasPageToken()) {
+                              serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            }
+                            if (request.hasReturnPartialSuccess()) {
+                              serializer.putQueryParam(
+                                  fields,
+                                  "returnPartialSuccess",
+                                  request.getReturnPartialSuccess());
+                            }
+                            return fields;
                           })
+                      .setRequestBodyExtractor(request -> null)
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<NodeTypeList>newBuilder()
@@ -356,7 +313,13 @@ public class HttpJsonNodeTypesStub extends NodeTypesStub {
 
   @Override
   public final void close() {
-    shutdown();
+    try {
+      backgroundResources.close();
+    } catch (RuntimeException e) {
+      throw e;
+    } catch (Exception e) {
+      throw new IllegalStateException("Failed to close resource", e);
+    }
   }
 
   @Override

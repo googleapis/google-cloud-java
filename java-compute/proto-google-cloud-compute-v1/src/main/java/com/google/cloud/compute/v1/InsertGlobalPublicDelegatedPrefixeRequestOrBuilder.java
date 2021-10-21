@@ -30,7 +30,9 @@ public interface InsertGlobalPublicDelegatedPrefixeRequestOrBuilder
    * Project ID for this request.
    * </pre>
    *
-   * <code>string project = 227560217 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>
+   * string project = 227560217 [(.google.api.field_behavior) = REQUIRED, (.google.cloud.operation_request_field) = "project"];
+   * </code>
    *
    * @return The project.
    */
@@ -42,7 +44,9 @@ public interface InsertGlobalPublicDelegatedPrefixeRequestOrBuilder
    * Project ID for this request.
    * </pre>
    *
-   * <code>string project = 227560217 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>
+   * string project = 227560217 [(.google.api.field_behavior) = REQUIRED, (.google.cloud.operation_request_field) = "project"];
+   * </code>
    *
    * @return The bytes for project.
    */

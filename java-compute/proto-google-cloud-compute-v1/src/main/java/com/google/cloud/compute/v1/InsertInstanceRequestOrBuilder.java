@@ -71,7 +71,9 @@ public interface InsertInstanceRequestOrBuilder
    * Project ID for this request.
    * </pre>
    *
-   * <code>string project = 227560217 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>
+   * string project = 227560217 [(.google.api.field_behavior) = REQUIRED, (.google.cloud.operation_request_field) = "project"];
+   * </code>
    *
    * @return The project.
    */
@@ -83,7 +85,9 @@ public interface InsertInstanceRequestOrBuilder
    * Project ID for this request.
    * </pre>
    *
-   * <code>string project = 227560217 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>
+   * string project = 227560217 [(.google.api.field_behavior) = REQUIRED, (.google.cloud.operation_request_field) = "project"];
+   * </code>
    *
    * @return The bytes for project.
    */
@@ -188,7 +192,9 @@ public interface InsertInstanceRequestOrBuilder
    * The name of the zone for this request.
    * </pre>
    *
-   * <code>string zone = 3744684 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>
+   * string zone = 3744684 [(.google.api.field_behavior) = REQUIRED, (.google.cloud.operation_request_field) = "zone"];
+   * </code>
    *
    * @return The zone.
    */
@@ -200,7 +206,9 @@ public interface InsertInstanceRequestOrBuilder
    * The name of the zone for this request.
    * </pre>
    *
-   * <code>string zone = 3744684 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>
+   * string zone = 3744684 [(.google.api.field_behavior) = REQUIRED, (.google.cloud.operation_request_field) = "zone"];
+   * </code>
    *
    * @return The bytes for zone.
    */

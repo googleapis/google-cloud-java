@@ -25,7 +25,6 @@ import com.google.api.core.InternalApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.httpjson.ApiMethodDescriptor;
-import com.google.api.gax.httpjson.FieldsExtractor;
 import com.google.api.gax.httpjson.HttpJsonCallSettings;
 import com.google.api.gax.httpjson.HttpJsonStubCallableFactory;
 import com.google.api.gax.httpjson.ProtoMessageRequestFormatter;
@@ -75,47 +74,31 @@ public class HttpJsonTargetPoolsStub extends TargetPoolsStub {
                   ProtoMessageRequestFormatter.<AddHealthCheckTargetPoolRequest>newBuilder()
                       .setPath(
                           "/compute/v1/projects/{project}/regions/{region}/targetPools/{targetPool}/addHealthCheck",
-                          new FieldsExtractor<
-                              AddHealthCheckTargetPoolRequest, Map<String, String>>() {
-                            @Override
-                            public Map<String, String> extract(
-                                AddHealthCheckTargetPoolRequest request) {
-                              Map<String, String> fields = new HashMap<>();
-                              ProtoRestSerializer<AddHealthCheckTargetPoolRequest> serializer =
-                                  ProtoRestSerializer.create();
-                              serializer.putPathParam(fields, "project", request.getProject());
-                              serializer.putPathParam(fields, "region", request.getRegion());
-                              serializer.putPathParam(
-                                  fields, "targetPool", request.getTargetPool());
-                              return fields;
-                            }
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<AddHealthCheckTargetPoolRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "project", request.getProject());
+                            serializer.putPathParam(fields, "region", request.getRegion());
+                            serializer.putPathParam(fields, "targetPool", request.getTargetPool());
+                            return fields;
                           })
                       .setQueryParamsExtractor(
-                          new FieldsExtractor<
-                              AddHealthCheckTargetPoolRequest, Map<String, List<String>>>() {
-                            @Override
-                            public Map<String, List<String>> extract(
-                                AddHealthCheckTargetPoolRequest request) {
-                              Map<String, List<String>> fields = new HashMap<>();
-                              ProtoRestSerializer<AddHealthCheckTargetPoolRequest> serializer =
-                                  ProtoRestSerializer.create();
-                              if (request.hasRequestId()) {
-                                serializer.putQueryParam(
-                                    fields, "requestId", request.getRequestId());
-                              }
-                              return fields;
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<AddHealthCheckTargetPoolRequest> serializer =
+                                ProtoRestSerializer.create();
+                            if (request.hasRequestId()) {
+                              serializer.putQueryParam(fields, "requestId", request.getRequestId());
                             }
+                            return fields;
                           })
                       .setRequestBodyExtractor(
-                          new FieldsExtractor<AddHealthCheckTargetPoolRequest, String>() {
-                            @Override
-                            public String extract(AddHealthCheckTargetPoolRequest request) {
-                              return ProtoRestSerializer.create()
+                          request ->
+                              ProtoRestSerializer.create()
                                   .toBody(
                                       "targetPoolsAddHealthCheckRequestResource",
-                                      request.getTargetPoolsAddHealthCheckRequestResource());
-                            }
-                          })
+                                      request.getTargetPoolsAddHealthCheckRequestResource()))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -132,46 +115,31 @@ public class HttpJsonTargetPoolsStub extends TargetPoolsStub {
                   ProtoMessageRequestFormatter.<AddInstanceTargetPoolRequest>newBuilder()
                       .setPath(
                           "/compute/v1/projects/{project}/regions/{region}/targetPools/{targetPool}/addInstance",
-                          new FieldsExtractor<AddInstanceTargetPoolRequest, Map<String, String>>() {
-                            @Override
-                            public Map<String, String> extract(
-                                AddInstanceTargetPoolRequest request) {
-                              Map<String, String> fields = new HashMap<>();
-                              ProtoRestSerializer<AddInstanceTargetPoolRequest> serializer =
-                                  ProtoRestSerializer.create();
-                              serializer.putPathParam(fields, "project", request.getProject());
-                              serializer.putPathParam(fields, "region", request.getRegion());
-                              serializer.putPathParam(
-                                  fields, "targetPool", request.getTargetPool());
-                              return fields;
-                            }
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<AddInstanceTargetPoolRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "project", request.getProject());
+                            serializer.putPathParam(fields, "region", request.getRegion());
+                            serializer.putPathParam(fields, "targetPool", request.getTargetPool());
+                            return fields;
                           })
                       .setQueryParamsExtractor(
-                          new FieldsExtractor<
-                              AddInstanceTargetPoolRequest, Map<String, List<String>>>() {
-                            @Override
-                            public Map<String, List<String>> extract(
-                                AddInstanceTargetPoolRequest request) {
-                              Map<String, List<String>> fields = new HashMap<>();
-                              ProtoRestSerializer<AddInstanceTargetPoolRequest> serializer =
-                                  ProtoRestSerializer.create();
-                              if (request.hasRequestId()) {
-                                serializer.putQueryParam(
-                                    fields, "requestId", request.getRequestId());
-                              }
-                              return fields;
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<AddInstanceTargetPoolRequest> serializer =
+                                ProtoRestSerializer.create();
+                            if (request.hasRequestId()) {
+                              serializer.putQueryParam(fields, "requestId", request.getRequestId());
                             }
+                            return fields;
                           })
                       .setRequestBodyExtractor(
-                          new FieldsExtractor<AddInstanceTargetPoolRequest, String>() {
-                            @Override
-                            public String extract(AddInstanceTargetPoolRequest request) {
-                              return ProtoRestSerializer.create()
+                          request ->
+                              ProtoRestSerializer.create()
                                   .toBody(
                                       "targetPoolsAddInstanceRequestResource",
-                                      request.getTargetPoolsAddInstanceRequestResource());
-                            }
-                          })
+                                      request.getTargetPoolsAddInstanceRequestResource()))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -190,61 +158,44 @@ public class HttpJsonTargetPoolsStub extends TargetPoolsStub {
                   ProtoMessageRequestFormatter.<AggregatedListTargetPoolsRequest>newBuilder()
                       .setPath(
                           "/compute/v1/projects/{project}/aggregated/targetPools",
-                          new FieldsExtractor<
-                              AggregatedListTargetPoolsRequest, Map<String, String>>() {
-                            @Override
-                            public Map<String, String> extract(
-                                AggregatedListTargetPoolsRequest request) {
-                              Map<String, String> fields = new HashMap<>();
-                              ProtoRestSerializer<AggregatedListTargetPoolsRequest> serializer =
-                                  ProtoRestSerializer.create();
-                              serializer.putPathParam(fields, "project", request.getProject());
-                              return fields;
-                            }
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<AggregatedListTargetPoolsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "project", request.getProject());
+                            return fields;
                           })
                       .setQueryParamsExtractor(
-                          new FieldsExtractor<
-                              AggregatedListTargetPoolsRequest, Map<String, List<String>>>() {
-                            @Override
-                            public Map<String, List<String>> extract(
-                                AggregatedListTargetPoolsRequest request) {
-                              Map<String, List<String>> fields = new HashMap<>();
-                              ProtoRestSerializer<AggregatedListTargetPoolsRequest> serializer =
-                                  ProtoRestSerializer.create();
-                              if (request.hasFilter()) {
-                                serializer.putQueryParam(fields, "filter", request.getFilter());
-                              }
-                              if (request.hasIncludeAllScopes()) {
-                                serializer.putQueryParam(
-                                    fields, "includeAllScopes", request.getIncludeAllScopes());
-                              }
-                              if (request.hasMaxResults()) {
-                                serializer.putQueryParam(
-                                    fields, "maxResults", request.getMaxResults());
-                              }
-                              if (request.hasOrderBy()) {
-                                serializer.putQueryParam(fields, "orderBy", request.getOrderBy());
-                              }
-                              if (request.hasPageToken()) {
-                                serializer.putQueryParam(
-                                    fields, "pageToken", request.getPageToken());
-                              }
-                              if (request.hasReturnPartialSuccess()) {
-                                serializer.putQueryParam(
-                                    fields,
-                                    "returnPartialSuccess",
-                                    request.getReturnPartialSuccess());
-                              }
-                              return fields;
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<AggregatedListTargetPoolsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            if (request.hasFilter()) {
+                              serializer.putQueryParam(fields, "filter", request.getFilter());
                             }
-                          })
-                      .setRequestBodyExtractor(
-                          new FieldsExtractor<AggregatedListTargetPoolsRequest, String>() {
-                            @Override
-                            public String extract(AggregatedListTargetPoolsRequest request) {
-                              return null;
+                            if (request.hasIncludeAllScopes()) {
+                              serializer.putQueryParam(
+                                  fields, "includeAllScopes", request.getIncludeAllScopes());
                             }
+                            if (request.hasMaxResults()) {
+                              serializer.putQueryParam(
+                                  fields, "maxResults", request.getMaxResults());
+                            }
+                            if (request.hasOrderBy()) {
+                              serializer.putQueryParam(fields, "orderBy", request.getOrderBy());
+                            }
+                            if (request.hasPageToken()) {
+                              serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            }
+                            if (request.hasReturnPartialSuccess()) {
+                              serializer.putQueryParam(
+                                  fields,
+                                  "returnPartialSuccess",
+                                  request.getReturnPartialSuccess());
+                            }
+                            return fields;
                           })
+                      .setRequestBodyExtractor(request -> null)
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<TargetPoolAggregatedList>newBuilder()
@@ -261,42 +212,26 @@ public class HttpJsonTargetPoolsStub extends TargetPoolsStub {
                   ProtoMessageRequestFormatter.<DeleteTargetPoolRequest>newBuilder()
                       .setPath(
                           "/compute/v1/projects/{project}/regions/{region}/targetPools/{targetPool}",
-                          new FieldsExtractor<DeleteTargetPoolRequest, Map<String, String>>() {
-                            @Override
-                            public Map<String, String> extract(DeleteTargetPoolRequest request) {
-                              Map<String, String> fields = new HashMap<>();
-                              ProtoRestSerializer<DeleteTargetPoolRequest> serializer =
-                                  ProtoRestSerializer.create();
-                              serializer.putPathParam(fields, "project", request.getProject());
-                              serializer.putPathParam(fields, "region", request.getRegion());
-                              serializer.putPathParam(
-                                  fields, "targetPool", request.getTargetPool());
-                              return fields;
-                            }
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<DeleteTargetPoolRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "project", request.getProject());
+                            serializer.putPathParam(fields, "region", request.getRegion());
+                            serializer.putPathParam(fields, "targetPool", request.getTargetPool());
+                            return fields;
                           })
                       .setQueryParamsExtractor(
-                          new FieldsExtractor<
-                              DeleteTargetPoolRequest, Map<String, List<String>>>() {
-                            @Override
-                            public Map<String, List<String>> extract(
-                                DeleteTargetPoolRequest request) {
-                              Map<String, List<String>> fields = new HashMap<>();
-                              ProtoRestSerializer<DeleteTargetPoolRequest> serializer =
-                                  ProtoRestSerializer.create();
-                              if (request.hasRequestId()) {
-                                serializer.putQueryParam(
-                                    fields, "requestId", request.getRequestId());
-                              }
-                              return fields;
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<DeleteTargetPoolRequest> serializer =
+                                ProtoRestSerializer.create();
+                            if (request.hasRequestId()) {
+                              serializer.putQueryParam(fields, "requestId", request.getRequestId());
                             }
+                            return fields;
                           })
-                      .setRequestBodyExtractor(
-                          new FieldsExtractor<DeleteTargetPoolRequest, String>() {
-                            @Override
-                            public String extract(DeleteTargetPoolRequest request) {
-                              return null;
-                            }
-                          })
+                      .setRequestBodyExtractor(request -> null)
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -312,35 +247,23 @@ public class HttpJsonTargetPoolsStub extends TargetPoolsStub {
               ProtoMessageRequestFormatter.<GetTargetPoolRequest>newBuilder()
                   .setPath(
                       "/compute/v1/projects/{project}/regions/{region}/targetPools/{targetPool}",
-                      new FieldsExtractor<GetTargetPoolRequest, Map<String, String>>() {
-                        @Override
-                        public Map<String, String> extract(GetTargetPoolRequest request) {
-                          Map<String, String> fields = new HashMap<>();
-                          ProtoRestSerializer<GetTargetPoolRequest> serializer =
-                              ProtoRestSerializer.create();
-                          serializer.putPathParam(fields, "project", request.getProject());
-                          serializer.putPathParam(fields, "region", request.getRegion());
-                          serializer.putPathParam(fields, "targetPool", request.getTargetPool());
-                          return fields;
-                        }
+                      request -> {
+                        Map<String, String> fields = new HashMap<>();
+                        ProtoRestSerializer<GetTargetPoolRequest> serializer =
+                            ProtoRestSerializer.create();
+                        serializer.putPathParam(fields, "project", request.getProject());
+                        serializer.putPathParam(fields, "region", request.getRegion());
+                        serializer.putPathParam(fields, "targetPool", request.getTargetPool());
+                        return fields;
                       })
                   .setQueryParamsExtractor(
-                      new FieldsExtractor<GetTargetPoolRequest, Map<String, List<String>>>() {
-                        @Override
-                        public Map<String, List<String>> extract(GetTargetPoolRequest request) {
-                          Map<String, List<String>> fields = new HashMap<>();
-                          ProtoRestSerializer<GetTargetPoolRequest> serializer =
-                              ProtoRestSerializer.create();
-                          return fields;
-                        }
+                      request -> {
+                        Map<String, List<String>> fields = new HashMap<>();
+                        ProtoRestSerializer<GetTargetPoolRequest> serializer =
+                            ProtoRestSerializer.create();
+                        return fields;
                       })
-                  .setRequestBodyExtractor(
-                      new FieldsExtractor<GetTargetPoolRequest, String>() {
-                        @Override
-                        public String extract(GetTargetPoolRequest request) {
-                          return null;
-                        }
-                      })
+                  .setRequestBodyExtractor(request -> null)
                   .build())
           .setResponseParser(
               ProtoMessageResponseParser.<TargetPool>newBuilder()
@@ -357,41 +280,28 @@ public class HttpJsonTargetPoolsStub extends TargetPoolsStub {
                   ProtoMessageRequestFormatter.<GetHealthTargetPoolRequest>newBuilder()
                       .setPath(
                           "/compute/v1/projects/{project}/regions/{region}/targetPools/{targetPool}/getHealth",
-                          new FieldsExtractor<GetHealthTargetPoolRequest, Map<String, String>>() {
-                            @Override
-                            public Map<String, String> extract(GetHealthTargetPoolRequest request) {
-                              Map<String, String> fields = new HashMap<>();
-                              ProtoRestSerializer<GetHealthTargetPoolRequest> serializer =
-                                  ProtoRestSerializer.create();
-                              serializer.putPathParam(fields, "project", request.getProject());
-                              serializer.putPathParam(fields, "region", request.getRegion());
-                              serializer.putPathParam(
-                                  fields, "targetPool", request.getTargetPool());
-                              return fields;
-                            }
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<GetHealthTargetPoolRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "project", request.getProject());
+                            serializer.putPathParam(fields, "region", request.getRegion());
+                            serializer.putPathParam(fields, "targetPool", request.getTargetPool());
+                            return fields;
                           })
                       .setQueryParamsExtractor(
-                          new FieldsExtractor<
-                              GetHealthTargetPoolRequest, Map<String, List<String>>>() {
-                            @Override
-                            public Map<String, List<String>> extract(
-                                GetHealthTargetPoolRequest request) {
-                              Map<String, List<String>> fields = new HashMap<>();
-                              ProtoRestSerializer<GetHealthTargetPoolRequest> serializer =
-                                  ProtoRestSerializer.create();
-                              return fields;
-                            }
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<GetHealthTargetPoolRequest> serializer =
+                                ProtoRestSerializer.create();
+                            return fields;
                           })
                       .setRequestBodyExtractor(
-                          new FieldsExtractor<GetHealthTargetPoolRequest, String>() {
-                            @Override
-                            public String extract(GetHealthTargetPoolRequest request) {
-                              return ProtoRestSerializer.create()
+                          request ->
+                              ProtoRestSerializer.create()
                                   .toBody(
                                       "instanceReferenceResource",
-                                      request.getInstanceReferenceResource());
-                            }
-                          })
+                                      request.getInstanceReferenceResource()))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<TargetPoolInstanceHealth>newBuilder()
@@ -408,41 +318,28 @@ public class HttpJsonTargetPoolsStub extends TargetPoolsStub {
                   ProtoMessageRequestFormatter.<InsertTargetPoolRequest>newBuilder()
                       .setPath(
                           "/compute/v1/projects/{project}/regions/{region}/targetPools",
-                          new FieldsExtractor<InsertTargetPoolRequest, Map<String, String>>() {
-                            @Override
-                            public Map<String, String> extract(InsertTargetPoolRequest request) {
-                              Map<String, String> fields = new HashMap<>();
-                              ProtoRestSerializer<InsertTargetPoolRequest> serializer =
-                                  ProtoRestSerializer.create();
-                              serializer.putPathParam(fields, "project", request.getProject());
-                              serializer.putPathParam(fields, "region", request.getRegion());
-                              return fields;
-                            }
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<InsertTargetPoolRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "project", request.getProject());
+                            serializer.putPathParam(fields, "region", request.getRegion());
+                            return fields;
                           })
                       .setQueryParamsExtractor(
-                          new FieldsExtractor<
-                              InsertTargetPoolRequest, Map<String, List<String>>>() {
-                            @Override
-                            public Map<String, List<String>> extract(
-                                InsertTargetPoolRequest request) {
-                              Map<String, List<String>> fields = new HashMap<>();
-                              ProtoRestSerializer<InsertTargetPoolRequest> serializer =
-                                  ProtoRestSerializer.create();
-                              if (request.hasRequestId()) {
-                                serializer.putQueryParam(
-                                    fields, "requestId", request.getRequestId());
-                              }
-                              return fields;
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<InsertTargetPoolRequest> serializer =
+                                ProtoRestSerializer.create();
+                            if (request.hasRequestId()) {
+                              serializer.putQueryParam(fields, "requestId", request.getRequestId());
                             }
+                            return fields;
                           })
                       .setRequestBodyExtractor(
-                          new FieldsExtractor<InsertTargetPoolRequest, String>() {
-                            @Override
-                            public String extract(InsertTargetPoolRequest request) {
-                              return ProtoRestSerializer.create()
-                                  .toBody("targetPoolResource", request.getTargetPoolResource());
-                            }
-                          })
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("targetPoolResource", request.getTargetPoolResource()))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -459,55 +356,41 @@ public class HttpJsonTargetPoolsStub extends TargetPoolsStub {
                   ProtoMessageRequestFormatter.<ListTargetPoolsRequest>newBuilder()
                       .setPath(
                           "/compute/v1/projects/{project}/regions/{region}/targetPools",
-                          new FieldsExtractor<ListTargetPoolsRequest, Map<String, String>>() {
-                            @Override
-                            public Map<String, String> extract(ListTargetPoolsRequest request) {
-                              Map<String, String> fields = new HashMap<>();
-                              ProtoRestSerializer<ListTargetPoolsRequest> serializer =
-                                  ProtoRestSerializer.create();
-                              serializer.putPathParam(fields, "project", request.getProject());
-                              serializer.putPathParam(fields, "region", request.getRegion());
-                              return fields;
-                            }
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<ListTargetPoolsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "project", request.getProject());
+                            serializer.putPathParam(fields, "region", request.getRegion());
+                            return fields;
                           })
                       .setQueryParamsExtractor(
-                          new FieldsExtractor<ListTargetPoolsRequest, Map<String, List<String>>>() {
-                            @Override
-                            public Map<String, List<String>> extract(
-                                ListTargetPoolsRequest request) {
-                              Map<String, List<String>> fields = new HashMap<>();
-                              ProtoRestSerializer<ListTargetPoolsRequest> serializer =
-                                  ProtoRestSerializer.create();
-                              if (request.hasFilter()) {
-                                serializer.putQueryParam(fields, "filter", request.getFilter());
-                              }
-                              if (request.hasMaxResults()) {
-                                serializer.putQueryParam(
-                                    fields, "maxResults", request.getMaxResults());
-                              }
-                              if (request.hasOrderBy()) {
-                                serializer.putQueryParam(fields, "orderBy", request.getOrderBy());
-                              }
-                              if (request.hasPageToken()) {
-                                serializer.putQueryParam(
-                                    fields, "pageToken", request.getPageToken());
-                              }
-                              if (request.hasReturnPartialSuccess()) {
-                                serializer.putQueryParam(
-                                    fields,
-                                    "returnPartialSuccess",
-                                    request.getReturnPartialSuccess());
-                              }
-                              return fields;
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<ListTargetPoolsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            if (request.hasFilter()) {
+                              serializer.putQueryParam(fields, "filter", request.getFilter());
                             }
-                          })
-                      .setRequestBodyExtractor(
-                          new FieldsExtractor<ListTargetPoolsRequest, String>() {
-                            @Override
-                            public String extract(ListTargetPoolsRequest request) {
-                              return null;
+                            if (request.hasMaxResults()) {
+                              serializer.putQueryParam(
+                                  fields, "maxResults", request.getMaxResults());
                             }
+                            if (request.hasOrderBy()) {
+                              serializer.putQueryParam(fields, "orderBy", request.getOrderBy());
+                            }
+                            if (request.hasPageToken()) {
+                              serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            }
+                            if (request.hasReturnPartialSuccess()) {
+                              serializer.putQueryParam(
+                                  fields,
+                                  "returnPartialSuccess",
+                                  request.getReturnPartialSuccess());
+                            }
+                            return fields;
                           })
+                      .setRequestBodyExtractor(request -> null)
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<TargetPoolList>newBuilder()
@@ -524,47 +407,31 @@ public class HttpJsonTargetPoolsStub extends TargetPoolsStub {
                   ProtoMessageRequestFormatter.<RemoveHealthCheckTargetPoolRequest>newBuilder()
                       .setPath(
                           "/compute/v1/projects/{project}/regions/{region}/targetPools/{targetPool}/removeHealthCheck",
-                          new FieldsExtractor<
-                              RemoveHealthCheckTargetPoolRequest, Map<String, String>>() {
-                            @Override
-                            public Map<String, String> extract(
-                                RemoveHealthCheckTargetPoolRequest request) {
-                              Map<String, String> fields = new HashMap<>();
-                              ProtoRestSerializer<RemoveHealthCheckTargetPoolRequest> serializer =
-                                  ProtoRestSerializer.create();
-                              serializer.putPathParam(fields, "project", request.getProject());
-                              serializer.putPathParam(fields, "region", request.getRegion());
-                              serializer.putPathParam(
-                                  fields, "targetPool", request.getTargetPool());
-                              return fields;
-                            }
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<RemoveHealthCheckTargetPoolRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "project", request.getProject());
+                            serializer.putPathParam(fields, "region", request.getRegion());
+                            serializer.putPathParam(fields, "targetPool", request.getTargetPool());
+                            return fields;
                           })
                       .setQueryParamsExtractor(
-                          new FieldsExtractor<
-                              RemoveHealthCheckTargetPoolRequest, Map<String, List<String>>>() {
-                            @Override
-                            public Map<String, List<String>> extract(
-                                RemoveHealthCheckTargetPoolRequest request) {
-                              Map<String, List<String>> fields = new HashMap<>();
-                              ProtoRestSerializer<RemoveHealthCheckTargetPoolRequest> serializer =
-                                  ProtoRestSerializer.create();
-                              if (request.hasRequestId()) {
-                                serializer.putQueryParam(
-                                    fields, "requestId", request.getRequestId());
-                              }
-                              return fields;
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<RemoveHealthCheckTargetPoolRequest> serializer =
+                                ProtoRestSerializer.create();
+                            if (request.hasRequestId()) {
+                              serializer.putQueryParam(fields, "requestId", request.getRequestId());
                             }
+                            return fields;
                           })
                       .setRequestBodyExtractor(
-                          new FieldsExtractor<RemoveHealthCheckTargetPoolRequest, String>() {
-                            @Override
-                            public String extract(RemoveHealthCheckTargetPoolRequest request) {
-                              return ProtoRestSerializer.create()
+                          request ->
+                              ProtoRestSerializer.create()
                                   .toBody(
                                       "targetPoolsRemoveHealthCheckRequestResource",
-                                      request.getTargetPoolsRemoveHealthCheckRequestResource());
-                            }
-                          })
+                                      request.getTargetPoolsRemoveHealthCheckRequestResource()))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -581,47 +448,31 @@ public class HttpJsonTargetPoolsStub extends TargetPoolsStub {
                   ProtoMessageRequestFormatter.<RemoveInstanceTargetPoolRequest>newBuilder()
                       .setPath(
                           "/compute/v1/projects/{project}/regions/{region}/targetPools/{targetPool}/removeInstance",
-                          new FieldsExtractor<
-                              RemoveInstanceTargetPoolRequest, Map<String, String>>() {
-                            @Override
-                            public Map<String, String> extract(
-                                RemoveInstanceTargetPoolRequest request) {
-                              Map<String, String> fields = new HashMap<>();
-                              ProtoRestSerializer<RemoveInstanceTargetPoolRequest> serializer =
-                                  ProtoRestSerializer.create();
-                              serializer.putPathParam(fields, "project", request.getProject());
-                              serializer.putPathParam(fields, "region", request.getRegion());
-                              serializer.putPathParam(
-                                  fields, "targetPool", request.getTargetPool());
-                              return fields;
-                            }
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<RemoveInstanceTargetPoolRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "project", request.getProject());
+                            serializer.putPathParam(fields, "region", request.getRegion());
+                            serializer.putPathParam(fields, "targetPool", request.getTargetPool());
+                            return fields;
                           })
                       .setQueryParamsExtractor(
-                          new FieldsExtractor<
-                              RemoveInstanceTargetPoolRequest, Map<String, List<String>>>() {
-                            @Override
-                            public Map<String, List<String>> extract(
-                                RemoveInstanceTargetPoolRequest request) {
-                              Map<String, List<String>> fields = new HashMap<>();
-                              ProtoRestSerializer<RemoveInstanceTargetPoolRequest> serializer =
-                                  ProtoRestSerializer.create();
-                              if (request.hasRequestId()) {
-                                serializer.putQueryParam(
-                                    fields, "requestId", request.getRequestId());
-                              }
-                              return fields;
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<RemoveInstanceTargetPoolRequest> serializer =
+                                ProtoRestSerializer.create();
+                            if (request.hasRequestId()) {
+                              serializer.putQueryParam(fields, "requestId", request.getRequestId());
                             }
+                            return fields;
                           })
                       .setRequestBodyExtractor(
-                          new FieldsExtractor<RemoveInstanceTargetPoolRequest, String>() {
-                            @Override
-                            public String extract(RemoveInstanceTargetPoolRequest request) {
-                              return ProtoRestSerializer.create()
+                          request ->
+                              ProtoRestSerializer.create()
                                   .toBody(
                                       "targetPoolsRemoveInstanceRequestResource",
-                                      request.getTargetPoolsRemoveInstanceRequestResource());
-                            }
-                          })
+                                      request.getTargetPoolsRemoveInstanceRequestResource()))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -638,49 +489,35 @@ public class HttpJsonTargetPoolsStub extends TargetPoolsStub {
                   ProtoMessageRequestFormatter.<SetBackupTargetPoolRequest>newBuilder()
                       .setPath(
                           "/compute/v1/projects/{project}/regions/{region}/targetPools/{targetPool}/setBackup",
-                          new FieldsExtractor<SetBackupTargetPoolRequest, Map<String, String>>() {
-                            @Override
-                            public Map<String, String> extract(SetBackupTargetPoolRequest request) {
-                              Map<String, String> fields = new HashMap<>();
-                              ProtoRestSerializer<SetBackupTargetPoolRequest> serializer =
-                                  ProtoRestSerializer.create();
-                              serializer.putPathParam(fields, "project", request.getProject());
-                              serializer.putPathParam(fields, "region", request.getRegion());
-                              serializer.putPathParam(
-                                  fields, "targetPool", request.getTargetPool());
-                              return fields;
-                            }
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<SetBackupTargetPoolRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "project", request.getProject());
+                            serializer.putPathParam(fields, "region", request.getRegion());
+                            serializer.putPathParam(fields, "targetPool", request.getTargetPool());
+                            return fields;
                           })
                       .setQueryParamsExtractor(
-                          new FieldsExtractor<
-                              SetBackupTargetPoolRequest, Map<String, List<String>>>() {
-                            @Override
-                            public Map<String, List<String>> extract(
-                                SetBackupTargetPoolRequest request) {
-                              Map<String, List<String>> fields = new HashMap<>();
-                              ProtoRestSerializer<SetBackupTargetPoolRequest> serializer =
-                                  ProtoRestSerializer.create();
-                              if (request.hasFailoverRatio()) {
-                                serializer.putQueryParam(
-                                    fields, "failoverRatio", request.getFailoverRatio());
-                              }
-                              if (request.hasRequestId()) {
-                                serializer.putQueryParam(
-                                    fields, "requestId", request.getRequestId());
-                              }
-                              return fields;
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<SetBackupTargetPoolRequest> serializer =
+                                ProtoRestSerializer.create();
+                            if (request.hasFailoverRatio()) {
+                              serializer.putQueryParam(
+                                  fields, "failoverRatio", request.getFailoverRatio());
                             }
+                            if (request.hasRequestId()) {
+                              serializer.putQueryParam(fields, "requestId", request.getRequestId());
+                            }
+                            return fields;
                           })
                       .setRequestBodyExtractor(
-                          new FieldsExtractor<SetBackupTargetPoolRequest, String>() {
-                            @Override
-                            public String extract(SetBackupTargetPoolRequest request) {
-                              return ProtoRestSerializer.create()
+                          request ->
+                              ProtoRestSerializer.create()
                                   .toBody(
                                       "targetReferenceResource",
-                                      request.getTargetReferenceResource());
-                            }
-                          })
+                                      request.getTargetReferenceResource()))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -930,7 +767,13 @@ public class HttpJsonTargetPoolsStub extends TargetPoolsStub {
 
   @Override
   public final void close() {
-    shutdown();
+    try {
+      backgroundResources.close();
+    } catch (RuntimeException e) {
+      throw e;
+    } catch (Exception e) {
+      throw new IllegalStateException("Failed to close resource", e);
+    }
   }
 
   @Override

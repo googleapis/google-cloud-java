@@ -24,7 +24,6 @@ import com.google.api.core.InternalApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.httpjson.ApiMethodDescriptor;
-import com.google.api.gax.httpjson.FieldsExtractor;
 import com.google.api.gax.httpjson.HttpJsonCallSettings;
 import com.google.api.gax.httpjson.HttpJsonStubCallableFactory;
 import com.google.api.gax.httpjson.ProtoMessageRequestFormatter;
@@ -68,43 +67,26 @@ public class HttpJsonExternalVpnGatewaysStub extends ExternalVpnGatewaysStub {
                   ProtoMessageRequestFormatter.<DeleteExternalVpnGatewayRequest>newBuilder()
                       .setPath(
                           "/compute/v1/projects/{project}/global/externalVpnGateways/{externalVpnGateway}",
-                          new FieldsExtractor<
-                              DeleteExternalVpnGatewayRequest, Map<String, String>>() {
-                            @Override
-                            public Map<String, String> extract(
-                                DeleteExternalVpnGatewayRequest request) {
-                              Map<String, String> fields = new HashMap<>();
-                              ProtoRestSerializer<DeleteExternalVpnGatewayRequest> serializer =
-                                  ProtoRestSerializer.create();
-                              serializer.putPathParam(
-                                  fields, "externalVpnGateway", request.getExternalVpnGateway());
-                              serializer.putPathParam(fields, "project", request.getProject());
-                              return fields;
-                            }
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<DeleteExternalVpnGatewayRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(
+                                fields, "externalVpnGateway", request.getExternalVpnGateway());
+                            serializer.putPathParam(fields, "project", request.getProject());
+                            return fields;
                           })
                       .setQueryParamsExtractor(
-                          new FieldsExtractor<
-                              DeleteExternalVpnGatewayRequest, Map<String, List<String>>>() {
-                            @Override
-                            public Map<String, List<String>> extract(
-                                DeleteExternalVpnGatewayRequest request) {
-                              Map<String, List<String>> fields = new HashMap<>();
-                              ProtoRestSerializer<DeleteExternalVpnGatewayRequest> serializer =
-                                  ProtoRestSerializer.create();
-                              if (request.hasRequestId()) {
-                                serializer.putQueryParam(
-                                    fields, "requestId", request.getRequestId());
-                              }
-                              return fields;
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<DeleteExternalVpnGatewayRequest> serializer =
+                                ProtoRestSerializer.create();
+                            if (request.hasRequestId()) {
+                              serializer.putQueryParam(fields, "requestId", request.getRequestId());
                             }
+                            return fields;
                           })
-                      .setRequestBodyExtractor(
-                          new FieldsExtractor<DeleteExternalVpnGatewayRequest, String>() {
-                            @Override
-                            public String extract(DeleteExternalVpnGatewayRequest request) {
-                              return null;
-                            }
-                          })
+                      .setRequestBodyExtractor(request -> null)
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -121,38 +103,23 @@ public class HttpJsonExternalVpnGatewaysStub extends ExternalVpnGatewaysStub {
                   ProtoMessageRequestFormatter.<GetExternalVpnGatewayRequest>newBuilder()
                       .setPath(
                           "/compute/v1/projects/{project}/global/externalVpnGateways/{externalVpnGateway}",
-                          new FieldsExtractor<GetExternalVpnGatewayRequest, Map<String, String>>() {
-                            @Override
-                            public Map<String, String> extract(
-                                GetExternalVpnGatewayRequest request) {
-                              Map<String, String> fields = new HashMap<>();
-                              ProtoRestSerializer<GetExternalVpnGatewayRequest> serializer =
-                                  ProtoRestSerializer.create();
-                              serializer.putPathParam(
-                                  fields, "externalVpnGateway", request.getExternalVpnGateway());
-                              serializer.putPathParam(fields, "project", request.getProject());
-                              return fields;
-                            }
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<GetExternalVpnGatewayRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(
+                                fields, "externalVpnGateway", request.getExternalVpnGateway());
+                            serializer.putPathParam(fields, "project", request.getProject());
+                            return fields;
                           })
                       .setQueryParamsExtractor(
-                          new FieldsExtractor<
-                              GetExternalVpnGatewayRequest, Map<String, List<String>>>() {
-                            @Override
-                            public Map<String, List<String>> extract(
-                                GetExternalVpnGatewayRequest request) {
-                              Map<String, List<String>> fields = new HashMap<>();
-                              ProtoRestSerializer<GetExternalVpnGatewayRequest> serializer =
-                                  ProtoRestSerializer.create();
-                              return fields;
-                            }
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<GetExternalVpnGatewayRequest> serializer =
+                                ProtoRestSerializer.create();
+                            return fields;
                           })
-                      .setRequestBodyExtractor(
-                          new FieldsExtractor<GetExternalVpnGatewayRequest, String>() {
-                            @Override
-                            public String extract(GetExternalVpnGatewayRequest request) {
-                              return null;
-                            }
-                          })
+                      .setRequestBodyExtractor(request -> null)
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<ExternalVpnGateway>newBuilder()
@@ -169,44 +136,29 @@ public class HttpJsonExternalVpnGatewaysStub extends ExternalVpnGatewaysStub {
                   ProtoMessageRequestFormatter.<InsertExternalVpnGatewayRequest>newBuilder()
                       .setPath(
                           "/compute/v1/projects/{project}/global/externalVpnGateways",
-                          new FieldsExtractor<
-                              InsertExternalVpnGatewayRequest, Map<String, String>>() {
-                            @Override
-                            public Map<String, String> extract(
-                                InsertExternalVpnGatewayRequest request) {
-                              Map<String, String> fields = new HashMap<>();
-                              ProtoRestSerializer<InsertExternalVpnGatewayRequest> serializer =
-                                  ProtoRestSerializer.create();
-                              serializer.putPathParam(fields, "project", request.getProject());
-                              return fields;
-                            }
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<InsertExternalVpnGatewayRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "project", request.getProject());
+                            return fields;
                           })
                       .setQueryParamsExtractor(
-                          new FieldsExtractor<
-                              InsertExternalVpnGatewayRequest, Map<String, List<String>>>() {
-                            @Override
-                            public Map<String, List<String>> extract(
-                                InsertExternalVpnGatewayRequest request) {
-                              Map<String, List<String>> fields = new HashMap<>();
-                              ProtoRestSerializer<InsertExternalVpnGatewayRequest> serializer =
-                                  ProtoRestSerializer.create();
-                              if (request.hasRequestId()) {
-                                serializer.putQueryParam(
-                                    fields, "requestId", request.getRequestId());
-                              }
-                              return fields;
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<InsertExternalVpnGatewayRequest> serializer =
+                                ProtoRestSerializer.create();
+                            if (request.hasRequestId()) {
+                              serializer.putQueryParam(fields, "requestId", request.getRequestId());
                             }
+                            return fields;
                           })
                       .setRequestBodyExtractor(
-                          new FieldsExtractor<InsertExternalVpnGatewayRequest, String>() {
-                            @Override
-                            public String extract(InsertExternalVpnGatewayRequest request) {
-                              return ProtoRestSerializer.create()
+                          request ->
+                              ProtoRestSerializer.create()
                                   .toBody(
                                       "externalVpnGatewayResource",
-                                      request.getExternalVpnGatewayResource());
-                            }
-                          })
+                                      request.getExternalVpnGatewayResource()))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -223,57 +175,40 @@ public class HttpJsonExternalVpnGatewaysStub extends ExternalVpnGatewaysStub {
                   ProtoMessageRequestFormatter.<ListExternalVpnGatewaysRequest>newBuilder()
                       .setPath(
                           "/compute/v1/projects/{project}/global/externalVpnGateways",
-                          new FieldsExtractor<
-                              ListExternalVpnGatewaysRequest, Map<String, String>>() {
-                            @Override
-                            public Map<String, String> extract(
-                                ListExternalVpnGatewaysRequest request) {
-                              Map<String, String> fields = new HashMap<>();
-                              ProtoRestSerializer<ListExternalVpnGatewaysRequest> serializer =
-                                  ProtoRestSerializer.create();
-                              serializer.putPathParam(fields, "project", request.getProject());
-                              return fields;
-                            }
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<ListExternalVpnGatewaysRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "project", request.getProject());
+                            return fields;
                           })
                       .setQueryParamsExtractor(
-                          new FieldsExtractor<
-                              ListExternalVpnGatewaysRequest, Map<String, List<String>>>() {
-                            @Override
-                            public Map<String, List<String>> extract(
-                                ListExternalVpnGatewaysRequest request) {
-                              Map<String, List<String>> fields = new HashMap<>();
-                              ProtoRestSerializer<ListExternalVpnGatewaysRequest> serializer =
-                                  ProtoRestSerializer.create();
-                              if (request.hasFilter()) {
-                                serializer.putQueryParam(fields, "filter", request.getFilter());
-                              }
-                              if (request.hasMaxResults()) {
-                                serializer.putQueryParam(
-                                    fields, "maxResults", request.getMaxResults());
-                              }
-                              if (request.hasOrderBy()) {
-                                serializer.putQueryParam(fields, "orderBy", request.getOrderBy());
-                              }
-                              if (request.hasPageToken()) {
-                                serializer.putQueryParam(
-                                    fields, "pageToken", request.getPageToken());
-                              }
-                              if (request.hasReturnPartialSuccess()) {
-                                serializer.putQueryParam(
-                                    fields,
-                                    "returnPartialSuccess",
-                                    request.getReturnPartialSuccess());
-                              }
-                              return fields;
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<ListExternalVpnGatewaysRequest> serializer =
+                                ProtoRestSerializer.create();
+                            if (request.hasFilter()) {
+                              serializer.putQueryParam(fields, "filter", request.getFilter());
                             }
-                          })
-                      .setRequestBodyExtractor(
-                          new FieldsExtractor<ListExternalVpnGatewaysRequest, String>() {
-                            @Override
-                            public String extract(ListExternalVpnGatewaysRequest request) {
-                              return null;
+                            if (request.hasMaxResults()) {
+                              serializer.putQueryParam(
+                                  fields, "maxResults", request.getMaxResults());
                             }
+                            if (request.hasOrderBy()) {
+                              serializer.putQueryParam(fields, "orderBy", request.getOrderBy());
+                            }
+                            if (request.hasPageToken()) {
+                              serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            }
+                            if (request.hasReturnPartialSuccess()) {
+                              serializer.putQueryParam(
+                                  fields,
+                                  "returnPartialSuccess",
+                                  request.getReturnPartialSuccess());
+                            }
+                            return fields;
                           })
+                      .setRequestBodyExtractor(request -> null)
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<ExternalVpnGatewayList>newBuilder()
@@ -290,41 +225,27 @@ public class HttpJsonExternalVpnGatewaysStub extends ExternalVpnGatewaysStub {
                   ProtoMessageRequestFormatter.<SetLabelsExternalVpnGatewayRequest>newBuilder()
                       .setPath(
                           "/compute/v1/projects/{project}/global/externalVpnGateways/{resource}/setLabels",
-                          new FieldsExtractor<
-                              SetLabelsExternalVpnGatewayRequest, Map<String, String>>() {
-                            @Override
-                            public Map<String, String> extract(
-                                SetLabelsExternalVpnGatewayRequest request) {
-                              Map<String, String> fields = new HashMap<>();
-                              ProtoRestSerializer<SetLabelsExternalVpnGatewayRequest> serializer =
-                                  ProtoRestSerializer.create();
-                              serializer.putPathParam(fields, "project", request.getProject());
-                              serializer.putPathParam(fields, "resource", request.getResource());
-                              return fields;
-                            }
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<SetLabelsExternalVpnGatewayRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "project", request.getProject());
+                            serializer.putPathParam(fields, "resource", request.getResource());
+                            return fields;
                           })
                       .setQueryParamsExtractor(
-                          new FieldsExtractor<
-                              SetLabelsExternalVpnGatewayRequest, Map<String, List<String>>>() {
-                            @Override
-                            public Map<String, List<String>> extract(
-                                SetLabelsExternalVpnGatewayRequest request) {
-                              Map<String, List<String>> fields = new HashMap<>();
-                              ProtoRestSerializer<SetLabelsExternalVpnGatewayRequest> serializer =
-                                  ProtoRestSerializer.create();
-                              return fields;
-                            }
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<SetLabelsExternalVpnGatewayRequest> serializer =
+                                ProtoRestSerializer.create();
+                            return fields;
                           })
                       .setRequestBodyExtractor(
-                          new FieldsExtractor<SetLabelsExternalVpnGatewayRequest, String>() {
-                            @Override
-                            public String extract(SetLabelsExternalVpnGatewayRequest request) {
-                              return ProtoRestSerializer.create()
+                          request ->
+                              ProtoRestSerializer.create()
                                   .toBody(
                                       "globalSetLabelsRequestResource",
-                                      request.getGlobalSetLabelsRequestResource());
-                            }
-                          })
+                                      request.getGlobalSetLabelsRequestResource()))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -344,44 +265,27 @@ public class HttpJsonExternalVpnGatewaysStub extends ExternalVpnGatewaysStub {
                       .<TestIamPermissionsExternalVpnGatewayRequest>newBuilder()
                       .setPath(
                           "/compute/v1/projects/{project}/global/externalVpnGateways/{resource}/testIamPermissions",
-                          new FieldsExtractor<
-                              TestIamPermissionsExternalVpnGatewayRequest, Map<String, String>>() {
-                            @Override
-                            public Map<String, String> extract(
-                                TestIamPermissionsExternalVpnGatewayRequest request) {
-                              Map<String, String> fields = new HashMap<>();
-                              ProtoRestSerializer<TestIamPermissionsExternalVpnGatewayRequest>
-                                  serializer = ProtoRestSerializer.create();
-                              serializer.putPathParam(fields, "project", request.getProject());
-                              serializer.putPathParam(fields, "resource", request.getResource());
-                              return fields;
-                            }
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<TestIamPermissionsExternalVpnGatewayRequest>
+                                serializer = ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "project", request.getProject());
+                            serializer.putPathParam(fields, "resource", request.getResource());
+                            return fields;
                           })
                       .setQueryParamsExtractor(
-                          new FieldsExtractor<
-                              TestIamPermissionsExternalVpnGatewayRequest,
-                              Map<String, List<String>>>() {
-                            @Override
-                            public Map<String, List<String>> extract(
-                                TestIamPermissionsExternalVpnGatewayRequest request) {
-                              Map<String, List<String>> fields = new HashMap<>();
-                              ProtoRestSerializer<TestIamPermissionsExternalVpnGatewayRequest>
-                                  serializer = ProtoRestSerializer.create();
-                              return fields;
-                            }
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<TestIamPermissionsExternalVpnGatewayRequest>
+                                serializer = ProtoRestSerializer.create();
+                            return fields;
                           })
                       .setRequestBodyExtractor(
-                          new FieldsExtractor<
-                              TestIamPermissionsExternalVpnGatewayRequest, String>() {
-                            @Override
-                            public String extract(
-                                TestIamPermissionsExternalVpnGatewayRequest request) {
-                              return ProtoRestSerializer.create()
+                          request ->
+                              ProtoRestSerializer.create()
                                   .toBody(
                                       "testPermissionsRequestResource",
-                                      request.getTestPermissionsRequestResource());
-                            }
-                          })
+                                      request.getTestPermissionsRequestResource()))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<TestPermissionsResponse>newBuilder()
@@ -547,7 +451,13 @@ public class HttpJsonExternalVpnGatewaysStub extends ExternalVpnGatewaysStub {
 
   @Override
   public final void close() {
-    shutdown();
+    try {
+      backgroundResources.close();
+    } catch (RuntimeException e) {
+      throw e;
+    } catch (Exception e) {
+      throw new IllegalStateException("Failed to close resource", e);
+    }
   }
 
   @Override

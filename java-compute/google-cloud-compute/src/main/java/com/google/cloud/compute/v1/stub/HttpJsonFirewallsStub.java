@@ -24,7 +24,6 @@ import com.google.api.core.InternalApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.httpjson.ApiMethodDescriptor;
-import com.google.api.gax.httpjson.FieldsExtractor;
 import com.google.api.gax.httpjson.HttpJsonCallSettings;
 import com.google.api.gax.httpjson.HttpJsonStubCallableFactory;
 import com.google.api.gax.httpjson.ProtoMessageRequestFormatter;
@@ -67,39 +66,25 @@ public class HttpJsonFirewallsStub extends FirewallsStub {
                   ProtoMessageRequestFormatter.<DeleteFirewallRequest>newBuilder()
                       .setPath(
                           "/compute/v1/projects/{project}/global/firewalls/{firewall}",
-                          new FieldsExtractor<DeleteFirewallRequest, Map<String, String>>() {
-                            @Override
-                            public Map<String, String> extract(DeleteFirewallRequest request) {
-                              Map<String, String> fields = new HashMap<>();
-                              ProtoRestSerializer<DeleteFirewallRequest> serializer =
-                                  ProtoRestSerializer.create();
-                              serializer.putPathParam(fields, "firewall", request.getFirewall());
-                              serializer.putPathParam(fields, "project", request.getProject());
-                              return fields;
-                            }
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<DeleteFirewallRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "firewall", request.getFirewall());
+                            serializer.putPathParam(fields, "project", request.getProject());
+                            return fields;
                           })
                       .setQueryParamsExtractor(
-                          new FieldsExtractor<DeleteFirewallRequest, Map<String, List<String>>>() {
-                            @Override
-                            public Map<String, List<String>> extract(
-                                DeleteFirewallRequest request) {
-                              Map<String, List<String>> fields = new HashMap<>();
-                              ProtoRestSerializer<DeleteFirewallRequest> serializer =
-                                  ProtoRestSerializer.create();
-                              if (request.hasRequestId()) {
-                                serializer.putQueryParam(
-                                    fields, "requestId", request.getRequestId());
-                              }
-                              return fields;
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<DeleteFirewallRequest> serializer =
+                                ProtoRestSerializer.create();
+                            if (request.hasRequestId()) {
+                              serializer.putQueryParam(fields, "requestId", request.getRequestId());
                             }
+                            return fields;
                           })
-                      .setRequestBodyExtractor(
-                          new FieldsExtractor<DeleteFirewallRequest, String>() {
-                            @Override
-                            public String extract(DeleteFirewallRequest request) {
-                              return null;
-                            }
-                          })
+                      .setRequestBodyExtractor(request -> null)
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -115,34 +100,22 @@ public class HttpJsonFirewallsStub extends FirewallsStub {
               ProtoMessageRequestFormatter.<GetFirewallRequest>newBuilder()
                   .setPath(
                       "/compute/v1/projects/{project}/global/firewalls/{firewall}",
-                      new FieldsExtractor<GetFirewallRequest, Map<String, String>>() {
-                        @Override
-                        public Map<String, String> extract(GetFirewallRequest request) {
-                          Map<String, String> fields = new HashMap<>();
-                          ProtoRestSerializer<GetFirewallRequest> serializer =
-                              ProtoRestSerializer.create();
-                          serializer.putPathParam(fields, "firewall", request.getFirewall());
-                          serializer.putPathParam(fields, "project", request.getProject());
-                          return fields;
-                        }
+                      request -> {
+                        Map<String, String> fields = new HashMap<>();
+                        ProtoRestSerializer<GetFirewallRequest> serializer =
+                            ProtoRestSerializer.create();
+                        serializer.putPathParam(fields, "firewall", request.getFirewall());
+                        serializer.putPathParam(fields, "project", request.getProject());
+                        return fields;
                       })
                   .setQueryParamsExtractor(
-                      new FieldsExtractor<GetFirewallRequest, Map<String, List<String>>>() {
-                        @Override
-                        public Map<String, List<String>> extract(GetFirewallRequest request) {
-                          Map<String, List<String>> fields = new HashMap<>();
-                          ProtoRestSerializer<GetFirewallRequest> serializer =
-                              ProtoRestSerializer.create();
-                          return fields;
-                        }
+                      request -> {
+                        Map<String, List<String>> fields = new HashMap<>();
+                        ProtoRestSerializer<GetFirewallRequest> serializer =
+                            ProtoRestSerializer.create();
+                        return fields;
                       })
-                  .setRequestBodyExtractor(
-                      new FieldsExtractor<GetFirewallRequest, String>() {
-                        @Override
-                        public String extract(GetFirewallRequest request) {
-                          return null;
-                        }
-                      })
+                  .setRequestBodyExtractor(request -> null)
                   .build())
           .setResponseParser(
               ProtoMessageResponseParser.<Firewall>newBuilder()
@@ -159,39 +132,27 @@ public class HttpJsonFirewallsStub extends FirewallsStub {
                   ProtoMessageRequestFormatter.<InsertFirewallRequest>newBuilder()
                       .setPath(
                           "/compute/v1/projects/{project}/global/firewalls",
-                          new FieldsExtractor<InsertFirewallRequest, Map<String, String>>() {
-                            @Override
-                            public Map<String, String> extract(InsertFirewallRequest request) {
-                              Map<String, String> fields = new HashMap<>();
-                              ProtoRestSerializer<InsertFirewallRequest> serializer =
-                                  ProtoRestSerializer.create();
-                              serializer.putPathParam(fields, "project", request.getProject());
-                              return fields;
-                            }
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<InsertFirewallRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "project", request.getProject());
+                            return fields;
                           })
                       .setQueryParamsExtractor(
-                          new FieldsExtractor<InsertFirewallRequest, Map<String, List<String>>>() {
-                            @Override
-                            public Map<String, List<String>> extract(
-                                InsertFirewallRequest request) {
-                              Map<String, List<String>> fields = new HashMap<>();
-                              ProtoRestSerializer<InsertFirewallRequest> serializer =
-                                  ProtoRestSerializer.create();
-                              if (request.hasRequestId()) {
-                                serializer.putQueryParam(
-                                    fields, "requestId", request.getRequestId());
-                              }
-                              return fields;
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<InsertFirewallRequest> serializer =
+                                ProtoRestSerializer.create();
+                            if (request.hasRequestId()) {
+                              serializer.putQueryParam(fields, "requestId", request.getRequestId());
                             }
+                            return fields;
                           })
                       .setRequestBodyExtractor(
-                          new FieldsExtractor<InsertFirewallRequest, String>() {
-                            @Override
-                            public String extract(InsertFirewallRequest request) {
-                              return ProtoRestSerializer.create()
-                                  .toBody("firewallResource", request.getFirewallResource());
-                            }
-                          })
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("firewallResource", request.getFirewallResource()))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -208,53 +169,40 @@ public class HttpJsonFirewallsStub extends FirewallsStub {
                   ProtoMessageRequestFormatter.<ListFirewallsRequest>newBuilder()
                       .setPath(
                           "/compute/v1/projects/{project}/global/firewalls",
-                          new FieldsExtractor<ListFirewallsRequest, Map<String, String>>() {
-                            @Override
-                            public Map<String, String> extract(ListFirewallsRequest request) {
-                              Map<String, String> fields = new HashMap<>();
-                              ProtoRestSerializer<ListFirewallsRequest> serializer =
-                                  ProtoRestSerializer.create();
-                              serializer.putPathParam(fields, "project", request.getProject());
-                              return fields;
-                            }
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<ListFirewallsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "project", request.getProject());
+                            return fields;
                           })
                       .setQueryParamsExtractor(
-                          new FieldsExtractor<ListFirewallsRequest, Map<String, List<String>>>() {
-                            @Override
-                            public Map<String, List<String>> extract(ListFirewallsRequest request) {
-                              Map<String, List<String>> fields = new HashMap<>();
-                              ProtoRestSerializer<ListFirewallsRequest> serializer =
-                                  ProtoRestSerializer.create();
-                              if (request.hasFilter()) {
-                                serializer.putQueryParam(fields, "filter", request.getFilter());
-                              }
-                              if (request.hasMaxResults()) {
-                                serializer.putQueryParam(
-                                    fields, "maxResults", request.getMaxResults());
-                              }
-                              if (request.hasOrderBy()) {
-                                serializer.putQueryParam(fields, "orderBy", request.getOrderBy());
-                              }
-                              if (request.hasPageToken()) {
-                                serializer.putQueryParam(
-                                    fields, "pageToken", request.getPageToken());
-                              }
-                              if (request.hasReturnPartialSuccess()) {
-                                serializer.putQueryParam(
-                                    fields,
-                                    "returnPartialSuccess",
-                                    request.getReturnPartialSuccess());
-                              }
-                              return fields;
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<ListFirewallsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            if (request.hasFilter()) {
+                              serializer.putQueryParam(fields, "filter", request.getFilter());
                             }
-                          })
-                      .setRequestBodyExtractor(
-                          new FieldsExtractor<ListFirewallsRequest, String>() {
-                            @Override
-                            public String extract(ListFirewallsRequest request) {
-                              return null;
+                            if (request.hasMaxResults()) {
+                              serializer.putQueryParam(
+                                  fields, "maxResults", request.getMaxResults());
                             }
+                            if (request.hasOrderBy()) {
+                              serializer.putQueryParam(fields, "orderBy", request.getOrderBy());
+                            }
+                            if (request.hasPageToken()) {
+                              serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            }
+                            if (request.hasReturnPartialSuccess()) {
+                              serializer.putQueryParam(
+                                  fields,
+                                  "returnPartialSuccess",
+                                  request.getReturnPartialSuccess());
+                            }
+                            return fields;
                           })
+                      .setRequestBodyExtractor(request -> null)
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<FirewallList>newBuilder()
@@ -270,38 +218,28 @@ public class HttpJsonFirewallsStub extends FirewallsStub {
               ProtoMessageRequestFormatter.<PatchFirewallRequest>newBuilder()
                   .setPath(
                       "/compute/v1/projects/{project}/global/firewalls/{firewall}",
-                      new FieldsExtractor<PatchFirewallRequest, Map<String, String>>() {
-                        @Override
-                        public Map<String, String> extract(PatchFirewallRequest request) {
-                          Map<String, String> fields = new HashMap<>();
-                          ProtoRestSerializer<PatchFirewallRequest> serializer =
-                              ProtoRestSerializer.create();
-                          serializer.putPathParam(fields, "firewall", request.getFirewall());
-                          serializer.putPathParam(fields, "project", request.getProject());
-                          return fields;
-                        }
+                      request -> {
+                        Map<String, String> fields = new HashMap<>();
+                        ProtoRestSerializer<PatchFirewallRequest> serializer =
+                            ProtoRestSerializer.create();
+                        serializer.putPathParam(fields, "firewall", request.getFirewall());
+                        serializer.putPathParam(fields, "project", request.getProject());
+                        return fields;
                       })
                   .setQueryParamsExtractor(
-                      new FieldsExtractor<PatchFirewallRequest, Map<String, List<String>>>() {
-                        @Override
-                        public Map<String, List<String>> extract(PatchFirewallRequest request) {
-                          Map<String, List<String>> fields = new HashMap<>();
-                          ProtoRestSerializer<PatchFirewallRequest> serializer =
-                              ProtoRestSerializer.create();
-                          if (request.hasRequestId()) {
-                            serializer.putQueryParam(fields, "requestId", request.getRequestId());
-                          }
-                          return fields;
+                      request -> {
+                        Map<String, List<String>> fields = new HashMap<>();
+                        ProtoRestSerializer<PatchFirewallRequest> serializer =
+                            ProtoRestSerializer.create();
+                        if (request.hasRequestId()) {
+                          serializer.putQueryParam(fields, "requestId", request.getRequestId());
                         }
+                        return fields;
                       })
                   .setRequestBodyExtractor(
-                      new FieldsExtractor<PatchFirewallRequest, String>() {
-                        @Override
-                        public String extract(PatchFirewallRequest request) {
-                          return ProtoRestSerializer.create()
-                              .toBody("firewallResource", request.getFirewallResource());
-                        }
-                      })
+                      request ->
+                          ProtoRestSerializer.create()
+                              .toBody("firewallResource", request.getFirewallResource()))
                   .build())
           .setResponseParser(
               ProtoMessageResponseParser.<Operation>newBuilder()
@@ -318,40 +256,28 @@ public class HttpJsonFirewallsStub extends FirewallsStub {
                   ProtoMessageRequestFormatter.<UpdateFirewallRequest>newBuilder()
                       .setPath(
                           "/compute/v1/projects/{project}/global/firewalls/{firewall}",
-                          new FieldsExtractor<UpdateFirewallRequest, Map<String, String>>() {
-                            @Override
-                            public Map<String, String> extract(UpdateFirewallRequest request) {
-                              Map<String, String> fields = new HashMap<>();
-                              ProtoRestSerializer<UpdateFirewallRequest> serializer =
-                                  ProtoRestSerializer.create();
-                              serializer.putPathParam(fields, "firewall", request.getFirewall());
-                              serializer.putPathParam(fields, "project", request.getProject());
-                              return fields;
-                            }
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<UpdateFirewallRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "firewall", request.getFirewall());
+                            serializer.putPathParam(fields, "project", request.getProject());
+                            return fields;
                           })
                       .setQueryParamsExtractor(
-                          new FieldsExtractor<UpdateFirewallRequest, Map<String, List<String>>>() {
-                            @Override
-                            public Map<String, List<String>> extract(
-                                UpdateFirewallRequest request) {
-                              Map<String, List<String>> fields = new HashMap<>();
-                              ProtoRestSerializer<UpdateFirewallRequest> serializer =
-                                  ProtoRestSerializer.create();
-                              if (request.hasRequestId()) {
-                                serializer.putQueryParam(
-                                    fields, "requestId", request.getRequestId());
-                              }
-                              return fields;
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<UpdateFirewallRequest> serializer =
+                                ProtoRestSerializer.create();
+                            if (request.hasRequestId()) {
+                              serializer.putQueryParam(fields, "requestId", request.getRequestId());
                             }
+                            return fields;
                           })
                       .setRequestBodyExtractor(
-                          new FieldsExtractor<UpdateFirewallRequest, String>() {
-                            @Override
-                            public String extract(UpdateFirewallRequest request) {
-                              return ProtoRestSerializer.create()
-                                  .toBody("firewallResource", request.getFirewallResource());
-                            }
-                          })
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("firewallResource", request.getFirewallResource()))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -507,7 +433,13 @@ public class HttpJsonFirewallsStub extends FirewallsStub {
 
   @Override
   public final void close() {
-    shutdown();
+    try {
+      backgroundResources.close();
+    } catch (RuntimeException e) {
+      throw e;
+    } catch (Exception e) {
+      throw new IllegalStateException("Failed to close resource", e);
+    }
   }
 
   @Override

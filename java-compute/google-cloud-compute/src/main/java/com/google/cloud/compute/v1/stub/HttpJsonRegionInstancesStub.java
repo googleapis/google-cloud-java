@@ -22,7 +22,6 @@ import com.google.api.core.InternalApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.httpjson.ApiMethodDescriptor;
-import com.google.api.gax.httpjson.FieldsExtractor;
 import com.google.api.gax.httpjson.HttpJsonCallSettings;
 import com.google.api.gax.httpjson.HttpJsonStubCallableFactory;
 import com.google.api.gax.httpjson.ProtoMessageRequestFormatter;
@@ -58,45 +57,30 @@ public class HttpJsonRegionInstancesStub extends RegionInstancesStub {
                   ProtoMessageRequestFormatter.<BulkInsertRegionInstanceRequest>newBuilder()
                       .setPath(
                           "/compute/v1/projects/{project}/regions/{region}/instances/bulkInsert",
-                          new FieldsExtractor<
-                              BulkInsertRegionInstanceRequest, Map<String, String>>() {
-                            @Override
-                            public Map<String, String> extract(
-                                BulkInsertRegionInstanceRequest request) {
-                              Map<String, String> fields = new HashMap<>();
-                              ProtoRestSerializer<BulkInsertRegionInstanceRequest> serializer =
-                                  ProtoRestSerializer.create();
-                              serializer.putPathParam(fields, "project", request.getProject());
-                              serializer.putPathParam(fields, "region", request.getRegion());
-                              return fields;
-                            }
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<BulkInsertRegionInstanceRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "project", request.getProject());
+                            serializer.putPathParam(fields, "region", request.getRegion());
+                            return fields;
                           })
                       .setQueryParamsExtractor(
-                          new FieldsExtractor<
-                              BulkInsertRegionInstanceRequest, Map<String, List<String>>>() {
-                            @Override
-                            public Map<String, List<String>> extract(
-                                BulkInsertRegionInstanceRequest request) {
-                              Map<String, List<String>> fields = new HashMap<>();
-                              ProtoRestSerializer<BulkInsertRegionInstanceRequest> serializer =
-                                  ProtoRestSerializer.create();
-                              if (request.hasRequestId()) {
-                                serializer.putQueryParam(
-                                    fields, "requestId", request.getRequestId());
-                              }
-                              return fields;
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<BulkInsertRegionInstanceRequest> serializer =
+                                ProtoRestSerializer.create();
+                            if (request.hasRequestId()) {
+                              serializer.putQueryParam(fields, "requestId", request.getRequestId());
                             }
+                            return fields;
                           })
                       .setRequestBodyExtractor(
-                          new FieldsExtractor<BulkInsertRegionInstanceRequest, String>() {
-                            @Override
-                            public String extract(BulkInsertRegionInstanceRequest request) {
-                              return ProtoRestSerializer.create()
+                          request ->
+                              ProtoRestSerializer.create()
                                   .toBody(
                                       "bulkInsertInstanceResourceResource",
-                                      request.getBulkInsertInstanceResourceResource());
-                            }
-                          })
+                                      request.getBulkInsertInstanceResourceResource()))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -175,7 +159,13 @@ public class HttpJsonRegionInstancesStub extends RegionInstancesStub {
 
   @Override
   public final void close() {
-    shutdown();
+    try {
+      backgroundResources.close();
+    } catch (RuntimeException e) {
+      throw e;
+    } catch (Exception e) {
+      throw new IllegalStateException("Failed to close resource", e);
+    }
   }
 
   @Override

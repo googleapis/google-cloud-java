@@ -25,7 +25,6 @@ import com.google.api.core.InternalApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.httpjson.ApiMethodDescriptor;
-import com.google.api.gax.httpjson.FieldsExtractor;
 import com.google.api.gax.httpjson.HttpJsonCallSettings;
 import com.google.api.gax.httpjson.HttpJsonStubCallableFactory;
 import com.google.api.gax.httpjson.ProtoMessageRequestFormatter;
@@ -75,61 +74,44 @@ public class HttpJsonNodeTemplatesStub extends NodeTemplatesStub {
                   ProtoMessageRequestFormatter.<AggregatedListNodeTemplatesRequest>newBuilder()
                       .setPath(
                           "/compute/v1/projects/{project}/aggregated/nodeTemplates",
-                          new FieldsExtractor<
-                              AggregatedListNodeTemplatesRequest, Map<String, String>>() {
-                            @Override
-                            public Map<String, String> extract(
-                                AggregatedListNodeTemplatesRequest request) {
-                              Map<String, String> fields = new HashMap<>();
-                              ProtoRestSerializer<AggregatedListNodeTemplatesRequest> serializer =
-                                  ProtoRestSerializer.create();
-                              serializer.putPathParam(fields, "project", request.getProject());
-                              return fields;
-                            }
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<AggregatedListNodeTemplatesRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "project", request.getProject());
+                            return fields;
                           })
                       .setQueryParamsExtractor(
-                          new FieldsExtractor<
-                              AggregatedListNodeTemplatesRequest, Map<String, List<String>>>() {
-                            @Override
-                            public Map<String, List<String>> extract(
-                                AggregatedListNodeTemplatesRequest request) {
-                              Map<String, List<String>> fields = new HashMap<>();
-                              ProtoRestSerializer<AggregatedListNodeTemplatesRequest> serializer =
-                                  ProtoRestSerializer.create();
-                              if (request.hasFilter()) {
-                                serializer.putQueryParam(fields, "filter", request.getFilter());
-                              }
-                              if (request.hasIncludeAllScopes()) {
-                                serializer.putQueryParam(
-                                    fields, "includeAllScopes", request.getIncludeAllScopes());
-                              }
-                              if (request.hasMaxResults()) {
-                                serializer.putQueryParam(
-                                    fields, "maxResults", request.getMaxResults());
-                              }
-                              if (request.hasOrderBy()) {
-                                serializer.putQueryParam(fields, "orderBy", request.getOrderBy());
-                              }
-                              if (request.hasPageToken()) {
-                                serializer.putQueryParam(
-                                    fields, "pageToken", request.getPageToken());
-                              }
-                              if (request.hasReturnPartialSuccess()) {
-                                serializer.putQueryParam(
-                                    fields,
-                                    "returnPartialSuccess",
-                                    request.getReturnPartialSuccess());
-                              }
-                              return fields;
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<AggregatedListNodeTemplatesRequest> serializer =
+                                ProtoRestSerializer.create();
+                            if (request.hasFilter()) {
+                              serializer.putQueryParam(fields, "filter", request.getFilter());
                             }
-                          })
-                      .setRequestBodyExtractor(
-                          new FieldsExtractor<AggregatedListNodeTemplatesRequest, String>() {
-                            @Override
-                            public String extract(AggregatedListNodeTemplatesRequest request) {
-                              return null;
+                            if (request.hasIncludeAllScopes()) {
+                              serializer.putQueryParam(
+                                  fields, "includeAllScopes", request.getIncludeAllScopes());
                             }
+                            if (request.hasMaxResults()) {
+                              serializer.putQueryParam(
+                                  fields, "maxResults", request.getMaxResults());
+                            }
+                            if (request.hasOrderBy()) {
+                              serializer.putQueryParam(fields, "orderBy", request.getOrderBy());
+                            }
+                            if (request.hasPageToken()) {
+                              serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            }
+                            if (request.hasReturnPartialSuccess()) {
+                              serializer.putQueryParam(
+                                  fields,
+                                  "returnPartialSuccess",
+                                  request.getReturnPartialSuccess());
+                            }
+                            return fields;
                           })
+                      .setRequestBodyExtractor(request -> null)
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<NodeTemplateAggregatedList>newBuilder()
@@ -146,42 +128,27 @@ public class HttpJsonNodeTemplatesStub extends NodeTemplatesStub {
                   ProtoMessageRequestFormatter.<DeleteNodeTemplateRequest>newBuilder()
                       .setPath(
                           "/compute/v1/projects/{project}/regions/{region}/nodeTemplates/{nodeTemplate}",
-                          new FieldsExtractor<DeleteNodeTemplateRequest, Map<String, String>>() {
-                            @Override
-                            public Map<String, String> extract(DeleteNodeTemplateRequest request) {
-                              Map<String, String> fields = new HashMap<>();
-                              ProtoRestSerializer<DeleteNodeTemplateRequest> serializer =
-                                  ProtoRestSerializer.create();
-                              serializer.putPathParam(
-                                  fields, "nodeTemplate", request.getNodeTemplate());
-                              serializer.putPathParam(fields, "project", request.getProject());
-                              serializer.putPathParam(fields, "region", request.getRegion());
-                              return fields;
-                            }
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<DeleteNodeTemplateRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(
+                                fields, "nodeTemplate", request.getNodeTemplate());
+                            serializer.putPathParam(fields, "project", request.getProject());
+                            serializer.putPathParam(fields, "region", request.getRegion());
+                            return fields;
                           })
                       .setQueryParamsExtractor(
-                          new FieldsExtractor<
-                              DeleteNodeTemplateRequest, Map<String, List<String>>>() {
-                            @Override
-                            public Map<String, List<String>> extract(
-                                DeleteNodeTemplateRequest request) {
-                              Map<String, List<String>> fields = new HashMap<>();
-                              ProtoRestSerializer<DeleteNodeTemplateRequest> serializer =
-                                  ProtoRestSerializer.create();
-                              if (request.hasRequestId()) {
-                                serializer.putQueryParam(
-                                    fields, "requestId", request.getRequestId());
-                              }
-                              return fields;
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<DeleteNodeTemplateRequest> serializer =
+                                ProtoRestSerializer.create();
+                            if (request.hasRequestId()) {
+                              serializer.putQueryParam(fields, "requestId", request.getRequestId());
                             }
+                            return fields;
                           })
-                      .setRequestBodyExtractor(
-                          new FieldsExtractor<DeleteNodeTemplateRequest, String>() {
-                            @Override
-                            public String extract(DeleteNodeTemplateRequest request) {
-                              return null;
-                            }
-                          })
+                      .setRequestBodyExtractor(request -> null)
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -198,37 +165,24 @@ public class HttpJsonNodeTemplatesStub extends NodeTemplatesStub {
                   ProtoMessageRequestFormatter.<GetNodeTemplateRequest>newBuilder()
                       .setPath(
                           "/compute/v1/projects/{project}/regions/{region}/nodeTemplates/{nodeTemplate}",
-                          new FieldsExtractor<GetNodeTemplateRequest, Map<String, String>>() {
-                            @Override
-                            public Map<String, String> extract(GetNodeTemplateRequest request) {
-                              Map<String, String> fields = new HashMap<>();
-                              ProtoRestSerializer<GetNodeTemplateRequest> serializer =
-                                  ProtoRestSerializer.create();
-                              serializer.putPathParam(
-                                  fields, "nodeTemplate", request.getNodeTemplate());
-                              serializer.putPathParam(fields, "project", request.getProject());
-                              serializer.putPathParam(fields, "region", request.getRegion());
-                              return fields;
-                            }
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<GetNodeTemplateRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(
+                                fields, "nodeTemplate", request.getNodeTemplate());
+                            serializer.putPathParam(fields, "project", request.getProject());
+                            serializer.putPathParam(fields, "region", request.getRegion());
+                            return fields;
                           })
                       .setQueryParamsExtractor(
-                          new FieldsExtractor<GetNodeTemplateRequest, Map<String, List<String>>>() {
-                            @Override
-                            public Map<String, List<String>> extract(
-                                GetNodeTemplateRequest request) {
-                              Map<String, List<String>> fields = new HashMap<>();
-                              ProtoRestSerializer<GetNodeTemplateRequest> serializer =
-                                  ProtoRestSerializer.create();
-                              return fields;
-                            }
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<GetNodeTemplateRequest> serializer =
+                                ProtoRestSerializer.create();
+                            return fields;
                           })
-                      .setRequestBodyExtractor(
-                          new FieldsExtractor<GetNodeTemplateRequest, String>() {
-                            @Override
-                            public String extract(GetNodeTemplateRequest request) {
-                              return null;
-                            }
-                          })
+                      .setRequestBodyExtractor(request -> null)
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<NodeTemplate>newBuilder()
@@ -245,45 +199,29 @@ public class HttpJsonNodeTemplatesStub extends NodeTemplatesStub {
                   ProtoMessageRequestFormatter.<GetIamPolicyNodeTemplateRequest>newBuilder()
                       .setPath(
                           "/compute/v1/projects/{project}/regions/{region}/nodeTemplates/{resource}/getIamPolicy",
-                          new FieldsExtractor<
-                              GetIamPolicyNodeTemplateRequest, Map<String, String>>() {
-                            @Override
-                            public Map<String, String> extract(
-                                GetIamPolicyNodeTemplateRequest request) {
-                              Map<String, String> fields = new HashMap<>();
-                              ProtoRestSerializer<GetIamPolicyNodeTemplateRequest> serializer =
-                                  ProtoRestSerializer.create();
-                              serializer.putPathParam(fields, "project", request.getProject());
-                              serializer.putPathParam(fields, "region", request.getRegion());
-                              serializer.putPathParam(fields, "resource", request.getResource());
-                              return fields;
-                            }
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<GetIamPolicyNodeTemplateRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "project", request.getProject());
+                            serializer.putPathParam(fields, "region", request.getRegion());
+                            serializer.putPathParam(fields, "resource", request.getResource());
+                            return fields;
                           })
                       .setQueryParamsExtractor(
-                          new FieldsExtractor<
-                              GetIamPolicyNodeTemplateRequest, Map<String, List<String>>>() {
-                            @Override
-                            public Map<String, List<String>> extract(
-                                GetIamPolicyNodeTemplateRequest request) {
-                              Map<String, List<String>> fields = new HashMap<>();
-                              ProtoRestSerializer<GetIamPolicyNodeTemplateRequest> serializer =
-                                  ProtoRestSerializer.create();
-                              if (request.hasOptionsRequestedPolicyVersion()) {
-                                serializer.putQueryParam(
-                                    fields,
-                                    "optionsRequestedPolicyVersion",
-                                    request.getOptionsRequestedPolicyVersion());
-                              }
-                              return fields;
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<GetIamPolicyNodeTemplateRequest> serializer =
+                                ProtoRestSerializer.create();
+                            if (request.hasOptionsRequestedPolicyVersion()) {
+                              serializer.putQueryParam(
+                                  fields,
+                                  "optionsRequestedPolicyVersion",
+                                  request.getOptionsRequestedPolicyVersion());
                             }
+                            return fields;
                           })
-                      .setRequestBodyExtractor(
-                          new FieldsExtractor<GetIamPolicyNodeTemplateRequest, String>() {
-                            @Override
-                            public String extract(GetIamPolicyNodeTemplateRequest request) {
-                              return null;
-                            }
-                          })
+                      .setRequestBodyExtractor(request -> null)
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Policy>newBuilder()
@@ -300,42 +238,29 @@ public class HttpJsonNodeTemplatesStub extends NodeTemplatesStub {
                   ProtoMessageRequestFormatter.<InsertNodeTemplateRequest>newBuilder()
                       .setPath(
                           "/compute/v1/projects/{project}/regions/{region}/nodeTemplates",
-                          new FieldsExtractor<InsertNodeTemplateRequest, Map<String, String>>() {
-                            @Override
-                            public Map<String, String> extract(InsertNodeTemplateRequest request) {
-                              Map<String, String> fields = new HashMap<>();
-                              ProtoRestSerializer<InsertNodeTemplateRequest> serializer =
-                                  ProtoRestSerializer.create();
-                              serializer.putPathParam(fields, "project", request.getProject());
-                              serializer.putPathParam(fields, "region", request.getRegion());
-                              return fields;
-                            }
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<InsertNodeTemplateRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "project", request.getProject());
+                            serializer.putPathParam(fields, "region", request.getRegion());
+                            return fields;
                           })
                       .setQueryParamsExtractor(
-                          new FieldsExtractor<
-                              InsertNodeTemplateRequest, Map<String, List<String>>>() {
-                            @Override
-                            public Map<String, List<String>> extract(
-                                InsertNodeTemplateRequest request) {
-                              Map<String, List<String>> fields = new HashMap<>();
-                              ProtoRestSerializer<InsertNodeTemplateRequest> serializer =
-                                  ProtoRestSerializer.create();
-                              if (request.hasRequestId()) {
-                                serializer.putQueryParam(
-                                    fields, "requestId", request.getRequestId());
-                              }
-                              return fields;
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<InsertNodeTemplateRequest> serializer =
+                                ProtoRestSerializer.create();
+                            if (request.hasRequestId()) {
+                              serializer.putQueryParam(fields, "requestId", request.getRequestId());
                             }
+                            return fields;
                           })
                       .setRequestBodyExtractor(
-                          new FieldsExtractor<InsertNodeTemplateRequest, String>() {
-                            @Override
-                            public String extract(InsertNodeTemplateRequest request) {
-                              return ProtoRestSerializer.create()
+                          request ->
+                              ProtoRestSerializer.create()
                                   .toBody(
-                                      "nodeTemplateResource", request.getNodeTemplateResource());
-                            }
-                          })
+                                      "nodeTemplateResource", request.getNodeTemplateResource()))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -352,56 +277,41 @@ public class HttpJsonNodeTemplatesStub extends NodeTemplatesStub {
                   ProtoMessageRequestFormatter.<ListNodeTemplatesRequest>newBuilder()
                       .setPath(
                           "/compute/v1/projects/{project}/regions/{region}/nodeTemplates",
-                          new FieldsExtractor<ListNodeTemplatesRequest, Map<String, String>>() {
-                            @Override
-                            public Map<String, String> extract(ListNodeTemplatesRequest request) {
-                              Map<String, String> fields = new HashMap<>();
-                              ProtoRestSerializer<ListNodeTemplatesRequest> serializer =
-                                  ProtoRestSerializer.create();
-                              serializer.putPathParam(fields, "project", request.getProject());
-                              serializer.putPathParam(fields, "region", request.getRegion());
-                              return fields;
-                            }
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<ListNodeTemplatesRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "project", request.getProject());
+                            serializer.putPathParam(fields, "region", request.getRegion());
+                            return fields;
                           })
                       .setQueryParamsExtractor(
-                          new FieldsExtractor<
-                              ListNodeTemplatesRequest, Map<String, List<String>>>() {
-                            @Override
-                            public Map<String, List<String>> extract(
-                                ListNodeTemplatesRequest request) {
-                              Map<String, List<String>> fields = new HashMap<>();
-                              ProtoRestSerializer<ListNodeTemplatesRequest> serializer =
-                                  ProtoRestSerializer.create();
-                              if (request.hasFilter()) {
-                                serializer.putQueryParam(fields, "filter", request.getFilter());
-                              }
-                              if (request.hasMaxResults()) {
-                                serializer.putQueryParam(
-                                    fields, "maxResults", request.getMaxResults());
-                              }
-                              if (request.hasOrderBy()) {
-                                serializer.putQueryParam(fields, "orderBy", request.getOrderBy());
-                              }
-                              if (request.hasPageToken()) {
-                                serializer.putQueryParam(
-                                    fields, "pageToken", request.getPageToken());
-                              }
-                              if (request.hasReturnPartialSuccess()) {
-                                serializer.putQueryParam(
-                                    fields,
-                                    "returnPartialSuccess",
-                                    request.getReturnPartialSuccess());
-                              }
-                              return fields;
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<ListNodeTemplatesRequest> serializer =
+                                ProtoRestSerializer.create();
+                            if (request.hasFilter()) {
+                              serializer.putQueryParam(fields, "filter", request.getFilter());
                             }
-                          })
-                      .setRequestBodyExtractor(
-                          new FieldsExtractor<ListNodeTemplatesRequest, String>() {
-                            @Override
-                            public String extract(ListNodeTemplatesRequest request) {
-                              return null;
+                            if (request.hasMaxResults()) {
+                              serializer.putQueryParam(
+                                  fields, "maxResults", request.getMaxResults());
                             }
+                            if (request.hasOrderBy()) {
+                              serializer.putQueryParam(fields, "orderBy", request.getOrderBy());
+                            }
+                            if (request.hasPageToken()) {
+                              serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            }
+                            if (request.hasReturnPartialSuccess()) {
+                              serializer.putQueryParam(
+                                  fields,
+                                  "returnPartialSuccess",
+                                  request.getReturnPartialSuccess());
+                            }
+                            return fields;
                           })
+                      .setRequestBodyExtractor(request -> null)
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<NodeTemplateList>newBuilder()
@@ -418,42 +328,28 @@ public class HttpJsonNodeTemplatesStub extends NodeTemplatesStub {
                   ProtoMessageRequestFormatter.<SetIamPolicyNodeTemplateRequest>newBuilder()
                       .setPath(
                           "/compute/v1/projects/{project}/regions/{region}/nodeTemplates/{resource}/setIamPolicy",
-                          new FieldsExtractor<
-                              SetIamPolicyNodeTemplateRequest, Map<String, String>>() {
-                            @Override
-                            public Map<String, String> extract(
-                                SetIamPolicyNodeTemplateRequest request) {
-                              Map<String, String> fields = new HashMap<>();
-                              ProtoRestSerializer<SetIamPolicyNodeTemplateRequest> serializer =
-                                  ProtoRestSerializer.create();
-                              serializer.putPathParam(fields, "project", request.getProject());
-                              serializer.putPathParam(fields, "region", request.getRegion());
-                              serializer.putPathParam(fields, "resource", request.getResource());
-                              return fields;
-                            }
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<SetIamPolicyNodeTemplateRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "project", request.getProject());
+                            serializer.putPathParam(fields, "region", request.getRegion());
+                            serializer.putPathParam(fields, "resource", request.getResource());
+                            return fields;
                           })
                       .setQueryParamsExtractor(
-                          new FieldsExtractor<
-                              SetIamPolicyNodeTemplateRequest, Map<String, List<String>>>() {
-                            @Override
-                            public Map<String, List<String>> extract(
-                                SetIamPolicyNodeTemplateRequest request) {
-                              Map<String, List<String>> fields = new HashMap<>();
-                              ProtoRestSerializer<SetIamPolicyNodeTemplateRequest> serializer =
-                                  ProtoRestSerializer.create();
-                              return fields;
-                            }
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<SetIamPolicyNodeTemplateRequest> serializer =
+                                ProtoRestSerializer.create();
+                            return fields;
                           })
                       .setRequestBodyExtractor(
-                          new FieldsExtractor<SetIamPolicyNodeTemplateRequest, String>() {
-                            @Override
-                            public String extract(SetIamPolicyNodeTemplateRequest request) {
-                              return ProtoRestSerializer.create()
+                          request ->
+                              ProtoRestSerializer.create()
                                   .toBody(
                                       "regionSetPolicyRequestResource",
-                                      request.getRegionSetPolicyRequestResource());
-                            }
-                          })
+                                      request.getRegionSetPolicyRequestResource()))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Policy>newBuilder()
@@ -472,42 +368,28 @@ public class HttpJsonNodeTemplatesStub extends NodeTemplatesStub {
                   ProtoMessageRequestFormatter.<TestIamPermissionsNodeTemplateRequest>newBuilder()
                       .setPath(
                           "/compute/v1/projects/{project}/regions/{region}/nodeTemplates/{resource}/testIamPermissions",
-                          new FieldsExtractor<
-                              TestIamPermissionsNodeTemplateRequest, Map<String, String>>() {
-                            @Override
-                            public Map<String, String> extract(
-                                TestIamPermissionsNodeTemplateRequest request) {
-                              Map<String, String> fields = new HashMap<>();
-                              ProtoRestSerializer<TestIamPermissionsNodeTemplateRequest>
-                                  serializer = ProtoRestSerializer.create();
-                              serializer.putPathParam(fields, "project", request.getProject());
-                              serializer.putPathParam(fields, "region", request.getRegion());
-                              serializer.putPathParam(fields, "resource", request.getResource());
-                              return fields;
-                            }
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<TestIamPermissionsNodeTemplateRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "project", request.getProject());
+                            serializer.putPathParam(fields, "region", request.getRegion());
+                            serializer.putPathParam(fields, "resource", request.getResource());
+                            return fields;
                           })
                       .setQueryParamsExtractor(
-                          new FieldsExtractor<
-                              TestIamPermissionsNodeTemplateRequest, Map<String, List<String>>>() {
-                            @Override
-                            public Map<String, List<String>> extract(
-                                TestIamPermissionsNodeTemplateRequest request) {
-                              Map<String, List<String>> fields = new HashMap<>();
-                              ProtoRestSerializer<TestIamPermissionsNodeTemplateRequest>
-                                  serializer = ProtoRestSerializer.create();
-                              return fields;
-                            }
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<TestIamPermissionsNodeTemplateRequest> serializer =
+                                ProtoRestSerializer.create();
+                            return fields;
                           })
                       .setRequestBodyExtractor(
-                          new FieldsExtractor<TestIamPermissionsNodeTemplateRequest, String>() {
-                            @Override
-                            public String extract(TestIamPermissionsNodeTemplateRequest request) {
-                              return ProtoRestSerializer.create()
+                          request ->
+                              ProtoRestSerializer.create()
                                   .toBody(
                                       "testPermissionsRequestResource",
-                                      request.getTestPermissionsRequestResource());
-                            }
-                          })
+                                      request.getTestPermissionsRequestResource()))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<TestPermissionsResponse>newBuilder()
@@ -714,7 +596,13 @@ public class HttpJsonNodeTemplatesStub extends NodeTemplatesStub {
 
   @Override
   public final void close() {
-    shutdown();
+    try {
+      backgroundResources.close();
+    } catch (RuntimeException e) {
+      throw e;
+    } catch (Exception e) {
+      throw new IllegalStateException("Failed to close resource", e);
+    }
   }
 
   @Override

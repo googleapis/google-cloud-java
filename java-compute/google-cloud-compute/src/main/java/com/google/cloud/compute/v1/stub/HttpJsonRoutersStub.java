@@ -26,7 +26,6 @@ import com.google.api.core.InternalApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.httpjson.ApiMethodDescriptor;
-import com.google.api.gax.httpjson.FieldsExtractor;
 import com.google.api.gax.httpjson.HttpJsonCallSettings;
 import com.google.api.gax.httpjson.HttpJsonStubCallableFactory;
 import com.google.api.gax.httpjson.ProtoMessageRequestFormatter;
@@ -77,60 +76,44 @@ public class HttpJsonRoutersStub extends RoutersStub {
                   ProtoMessageRequestFormatter.<AggregatedListRoutersRequest>newBuilder()
                       .setPath(
                           "/compute/v1/projects/{project}/aggregated/routers",
-                          new FieldsExtractor<AggregatedListRoutersRequest, Map<String, String>>() {
-                            @Override
-                            public Map<String, String> extract(
-                                AggregatedListRoutersRequest request) {
-                              Map<String, String> fields = new HashMap<>();
-                              ProtoRestSerializer<AggregatedListRoutersRequest> serializer =
-                                  ProtoRestSerializer.create();
-                              serializer.putPathParam(fields, "project", request.getProject());
-                              return fields;
-                            }
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<AggregatedListRoutersRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "project", request.getProject());
+                            return fields;
                           })
                       .setQueryParamsExtractor(
-                          new FieldsExtractor<
-                              AggregatedListRoutersRequest, Map<String, List<String>>>() {
-                            @Override
-                            public Map<String, List<String>> extract(
-                                AggregatedListRoutersRequest request) {
-                              Map<String, List<String>> fields = new HashMap<>();
-                              ProtoRestSerializer<AggregatedListRoutersRequest> serializer =
-                                  ProtoRestSerializer.create();
-                              if (request.hasFilter()) {
-                                serializer.putQueryParam(fields, "filter", request.getFilter());
-                              }
-                              if (request.hasIncludeAllScopes()) {
-                                serializer.putQueryParam(
-                                    fields, "includeAllScopes", request.getIncludeAllScopes());
-                              }
-                              if (request.hasMaxResults()) {
-                                serializer.putQueryParam(
-                                    fields, "maxResults", request.getMaxResults());
-                              }
-                              if (request.hasOrderBy()) {
-                                serializer.putQueryParam(fields, "orderBy", request.getOrderBy());
-                              }
-                              if (request.hasPageToken()) {
-                                serializer.putQueryParam(
-                                    fields, "pageToken", request.getPageToken());
-                              }
-                              if (request.hasReturnPartialSuccess()) {
-                                serializer.putQueryParam(
-                                    fields,
-                                    "returnPartialSuccess",
-                                    request.getReturnPartialSuccess());
-                              }
-                              return fields;
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<AggregatedListRoutersRequest> serializer =
+                                ProtoRestSerializer.create();
+                            if (request.hasFilter()) {
+                              serializer.putQueryParam(fields, "filter", request.getFilter());
                             }
-                          })
-                      .setRequestBodyExtractor(
-                          new FieldsExtractor<AggregatedListRoutersRequest, String>() {
-                            @Override
-                            public String extract(AggregatedListRoutersRequest request) {
-                              return null;
+                            if (request.hasIncludeAllScopes()) {
+                              serializer.putQueryParam(
+                                  fields, "includeAllScopes", request.getIncludeAllScopes());
                             }
+                            if (request.hasMaxResults()) {
+                              serializer.putQueryParam(
+                                  fields, "maxResults", request.getMaxResults());
+                            }
+                            if (request.hasOrderBy()) {
+                              serializer.putQueryParam(fields, "orderBy", request.getOrderBy());
+                            }
+                            if (request.hasPageToken()) {
+                              serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            }
+                            if (request.hasReturnPartialSuccess()) {
+                              serializer.putQueryParam(
+                                  fields,
+                                  "returnPartialSuccess",
+                                  request.getReturnPartialSuccess());
+                            }
+                            return fields;
                           })
+                      .setRequestBodyExtractor(request -> null)
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<RouterAggregatedList>newBuilder()
@@ -146,38 +129,26 @@ public class HttpJsonRoutersStub extends RoutersStub {
               ProtoMessageRequestFormatter.<DeleteRouterRequest>newBuilder()
                   .setPath(
                       "/compute/v1/projects/{project}/regions/{region}/routers/{router}",
-                      new FieldsExtractor<DeleteRouterRequest, Map<String, String>>() {
-                        @Override
-                        public Map<String, String> extract(DeleteRouterRequest request) {
-                          Map<String, String> fields = new HashMap<>();
-                          ProtoRestSerializer<DeleteRouterRequest> serializer =
-                              ProtoRestSerializer.create();
-                          serializer.putPathParam(fields, "project", request.getProject());
-                          serializer.putPathParam(fields, "region", request.getRegion());
-                          serializer.putPathParam(fields, "router", request.getRouter());
-                          return fields;
-                        }
+                      request -> {
+                        Map<String, String> fields = new HashMap<>();
+                        ProtoRestSerializer<DeleteRouterRequest> serializer =
+                            ProtoRestSerializer.create();
+                        serializer.putPathParam(fields, "project", request.getProject());
+                        serializer.putPathParam(fields, "region", request.getRegion());
+                        serializer.putPathParam(fields, "router", request.getRouter());
+                        return fields;
                       })
                   .setQueryParamsExtractor(
-                      new FieldsExtractor<DeleteRouterRequest, Map<String, List<String>>>() {
-                        @Override
-                        public Map<String, List<String>> extract(DeleteRouterRequest request) {
-                          Map<String, List<String>> fields = new HashMap<>();
-                          ProtoRestSerializer<DeleteRouterRequest> serializer =
-                              ProtoRestSerializer.create();
-                          if (request.hasRequestId()) {
-                            serializer.putQueryParam(fields, "requestId", request.getRequestId());
-                          }
-                          return fields;
+                      request -> {
+                        Map<String, List<String>> fields = new HashMap<>();
+                        ProtoRestSerializer<DeleteRouterRequest> serializer =
+                            ProtoRestSerializer.create();
+                        if (request.hasRequestId()) {
+                          serializer.putQueryParam(fields, "requestId", request.getRequestId());
                         }
+                        return fields;
                       })
-                  .setRequestBodyExtractor(
-                      new FieldsExtractor<DeleteRouterRequest, String>() {
-                        @Override
-                        public String extract(DeleteRouterRequest request) {
-                          return null;
-                        }
-                      })
+                  .setRequestBodyExtractor(request -> null)
                   .build())
           .setResponseParser(
               ProtoMessageResponseParser.<Operation>newBuilder()
@@ -193,35 +164,23 @@ public class HttpJsonRoutersStub extends RoutersStub {
               ProtoMessageRequestFormatter.<GetRouterRequest>newBuilder()
                   .setPath(
                       "/compute/v1/projects/{project}/regions/{region}/routers/{router}",
-                      new FieldsExtractor<GetRouterRequest, Map<String, String>>() {
-                        @Override
-                        public Map<String, String> extract(GetRouterRequest request) {
-                          Map<String, String> fields = new HashMap<>();
-                          ProtoRestSerializer<GetRouterRequest> serializer =
-                              ProtoRestSerializer.create();
-                          serializer.putPathParam(fields, "project", request.getProject());
-                          serializer.putPathParam(fields, "region", request.getRegion());
-                          serializer.putPathParam(fields, "router", request.getRouter());
-                          return fields;
-                        }
+                      request -> {
+                        Map<String, String> fields = new HashMap<>();
+                        ProtoRestSerializer<GetRouterRequest> serializer =
+                            ProtoRestSerializer.create();
+                        serializer.putPathParam(fields, "project", request.getProject());
+                        serializer.putPathParam(fields, "region", request.getRegion());
+                        serializer.putPathParam(fields, "router", request.getRouter());
+                        return fields;
                       })
                   .setQueryParamsExtractor(
-                      new FieldsExtractor<GetRouterRequest, Map<String, List<String>>>() {
-                        @Override
-                        public Map<String, List<String>> extract(GetRouterRequest request) {
-                          Map<String, List<String>> fields = new HashMap<>();
-                          ProtoRestSerializer<GetRouterRequest> serializer =
-                              ProtoRestSerializer.create();
-                          return fields;
-                        }
+                      request -> {
+                        Map<String, List<String>> fields = new HashMap<>();
+                        ProtoRestSerializer<GetRouterRequest> serializer =
+                            ProtoRestSerializer.create();
+                        return fields;
                       })
-                  .setRequestBodyExtractor(
-                      new FieldsExtractor<GetRouterRequest, String>() {
-                        @Override
-                        public String extract(GetRouterRequest request) {
-                          return null;
-                        }
-                      })
+                  .setRequestBodyExtractor(request -> null)
                   .build())
           .setResponseParser(
               ProtoMessageResponseParser.<Router>newBuilder()
@@ -240,59 +199,42 @@ public class HttpJsonRoutersStub extends RoutersStub {
                   ProtoMessageRequestFormatter.<GetNatMappingInfoRoutersRequest>newBuilder()
                       .setPath(
                           "/compute/v1/projects/{project}/regions/{region}/routers/{router}/getNatMappingInfo",
-                          new FieldsExtractor<
-                              GetNatMappingInfoRoutersRequest, Map<String, String>>() {
-                            @Override
-                            public Map<String, String> extract(
-                                GetNatMappingInfoRoutersRequest request) {
-                              Map<String, String> fields = new HashMap<>();
-                              ProtoRestSerializer<GetNatMappingInfoRoutersRequest> serializer =
-                                  ProtoRestSerializer.create();
-                              serializer.putPathParam(fields, "project", request.getProject());
-                              serializer.putPathParam(fields, "region", request.getRegion());
-                              serializer.putPathParam(fields, "router", request.getRouter());
-                              return fields;
-                            }
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<GetNatMappingInfoRoutersRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "project", request.getProject());
+                            serializer.putPathParam(fields, "region", request.getRegion());
+                            serializer.putPathParam(fields, "router", request.getRouter());
+                            return fields;
                           })
                       .setQueryParamsExtractor(
-                          new FieldsExtractor<
-                              GetNatMappingInfoRoutersRequest, Map<String, List<String>>>() {
-                            @Override
-                            public Map<String, List<String>> extract(
-                                GetNatMappingInfoRoutersRequest request) {
-                              Map<String, List<String>> fields = new HashMap<>();
-                              ProtoRestSerializer<GetNatMappingInfoRoutersRequest> serializer =
-                                  ProtoRestSerializer.create();
-                              if (request.hasFilter()) {
-                                serializer.putQueryParam(fields, "filter", request.getFilter());
-                              }
-                              if (request.hasMaxResults()) {
-                                serializer.putQueryParam(
-                                    fields, "maxResults", request.getMaxResults());
-                              }
-                              if (request.hasOrderBy()) {
-                                serializer.putQueryParam(fields, "orderBy", request.getOrderBy());
-                              }
-                              if (request.hasPageToken()) {
-                                serializer.putQueryParam(
-                                    fields, "pageToken", request.getPageToken());
-                              }
-                              if (request.hasReturnPartialSuccess()) {
-                                serializer.putQueryParam(
-                                    fields,
-                                    "returnPartialSuccess",
-                                    request.getReturnPartialSuccess());
-                              }
-                              return fields;
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<GetNatMappingInfoRoutersRequest> serializer =
+                                ProtoRestSerializer.create();
+                            if (request.hasFilter()) {
+                              serializer.putQueryParam(fields, "filter", request.getFilter());
                             }
-                          })
-                      .setRequestBodyExtractor(
-                          new FieldsExtractor<GetNatMappingInfoRoutersRequest, String>() {
-                            @Override
-                            public String extract(GetNatMappingInfoRoutersRequest request) {
-                              return null;
+                            if (request.hasMaxResults()) {
+                              serializer.putQueryParam(
+                                  fields, "maxResults", request.getMaxResults());
                             }
+                            if (request.hasOrderBy()) {
+                              serializer.putQueryParam(fields, "orderBy", request.getOrderBy());
+                            }
+                            if (request.hasPageToken()) {
+                              serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            }
+                            if (request.hasReturnPartialSuccess()) {
+                              serializer.putQueryParam(
+                                  fields,
+                                  "returnPartialSuccess",
+                                  request.getReturnPartialSuccess());
+                            }
+                            return fields;
                           })
+                      .setRequestBodyExtractor(request -> null)
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<VmEndpointNatMappingsList>newBuilder()
@@ -309,38 +251,23 @@ public class HttpJsonRoutersStub extends RoutersStub {
                   ProtoMessageRequestFormatter.<GetRouterStatusRouterRequest>newBuilder()
                       .setPath(
                           "/compute/v1/projects/{project}/regions/{region}/routers/{router}/getRouterStatus",
-                          new FieldsExtractor<GetRouterStatusRouterRequest, Map<String, String>>() {
-                            @Override
-                            public Map<String, String> extract(
-                                GetRouterStatusRouterRequest request) {
-                              Map<String, String> fields = new HashMap<>();
-                              ProtoRestSerializer<GetRouterStatusRouterRequest> serializer =
-                                  ProtoRestSerializer.create();
-                              serializer.putPathParam(fields, "project", request.getProject());
-                              serializer.putPathParam(fields, "region", request.getRegion());
-                              serializer.putPathParam(fields, "router", request.getRouter());
-                              return fields;
-                            }
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<GetRouterStatusRouterRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "project", request.getProject());
+                            serializer.putPathParam(fields, "region", request.getRegion());
+                            serializer.putPathParam(fields, "router", request.getRouter());
+                            return fields;
                           })
                       .setQueryParamsExtractor(
-                          new FieldsExtractor<
-                              GetRouterStatusRouterRequest, Map<String, List<String>>>() {
-                            @Override
-                            public Map<String, List<String>> extract(
-                                GetRouterStatusRouterRequest request) {
-                              Map<String, List<String>> fields = new HashMap<>();
-                              ProtoRestSerializer<GetRouterStatusRouterRequest> serializer =
-                                  ProtoRestSerializer.create();
-                              return fields;
-                            }
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<GetRouterStatusRouterRequest> serializer =
+                                ProtoRestSerializer.create();
+                            return fields;
                           })
-                      .setRequestBodyExtractor(
-                          new FieldsExtractor<GetRouterStatusRouterRequest, String>() {
-                            @Override
-                            public String extract(GetRouterStatusRouterRequest request) {
-                              return null;
-                            }
-                          })
+                      .setRequestBodyExtractor(request -> null)
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<RouterStatusResponse>newBuilder()
@@ -356,38 +283,28 @@ public class HttpJsonRoutersStub extends RoutersStub {
               ProtoMessageRequestFormatter.<InsertRouterRequest>newBuilder()
                   .setPath(
                       "/compute/v1/projects/{project}/regions/{region}/routers",
-                      new FieldsExtractor<InsertRouterRequest, Map<String, String>>() {
-                        @Override
-                        public Map<String, String> extract(InsertRouterRequest request) {
-                          Map<String, String> fields = new HashMap<>();
-                          ProtoRestSerializer<InsertRouterRequest> serializer =
-                              ProtoRestSerializer.create();
-                          serializer.putPathParam(fields, "project", request.getProject());
-                          serializer.putPathParam(fields, "region", request.getRegion());
-                          return fields;
-                        }
+                      request -> {
+                        Map<String, String> fields = new HashMap<>();
+                        ProtoRestSerializer<InsertRouterRequest> serializer =
+                            ProtoRestSerializer.create();
+                        serializer.putPathParam(fields, "project", request.getProject());
+                        serializer.putPathParam(fields, "region", request.getRegion());
+                        return fields;
                       })
                   .setQueryParamsExtractor(
-                      new FieldsExtractor<InsertRouterRequest, Map<String, List<String>>>() {
-                        @Override
-                        public Map<String, List<String>> extract(InsertRouterRequest request) {
-                          Map<String, List<String>> fields = new HashMap<>();
-                          ProtoRestSerializer<InsertRouterRequest> serializer =
-                              ProtoRestSerializer.create();
-                          if (request.hasRequestId()) {
-                            serializer.putQueryParam(fields, "requestId", request.getRequestId());
-                          }
-                          return fields;
+                      request -> {
+                        Map<String, List<String>> fields = new HashMap<>();
+                        ProtoRestSerializer<InsertRouterRequest> serializer =
+                            ProtoRestSerializer.create();
+                        if (request.hasRequestId()) {
+                          serializer.putQueryParam(fields, "requestId", request.getRequestId());
                         }
+                        return fields;
                       })
                   .setRequestBodyExtractor(
-                      new FieldsExtractor<InsertRouterRequest, String>() {
-                        @Override
-                        public String extract(InsertRouterRequest request) {
-                          return ProtoRestSerializer.create()
-                              .toBody("routerResource", request.getRouterResource());
-                        }
-                      })
+                      request ->
+                          ProtoRestSerializer.create()
+                              .toBody("routerResource", request.getRouterResource()))
                   .build())
           .setResponseParser(
               ProtoMessageResponseParser.<Operation>newBuilder()
@@ -403,50 +320,38 @@ public class HttpJsonRoutersStub extends RoutersStub {
               ProtoMessageRequestFormatter.<ListRoutersRequest>newBuilder()
                   .setPath(
                       "/compute/v1/projects/{project}/regions/{region}/routers",
-                      new FieldsExtractor<ListRoutersRequest, Map<String, String>>() {
-                        @Override
-                        public Map<String, String> extract(ListRoutersRequest request) {
-                          Map<String, String> fields = new HashMap<>();
-                          ProtoRestSerializer<ListRoutersRequest> serializer =
-                              ProtoRestSerializer.create();
-                          serializer.putPathParam(fields, "project", request.getProject());
-                          serializer.putPathParam(fields, "region", request.getRegion());
-                          return fields;
-                        }
+                      request -> {
+                        Map<String, String> fields = new HashMap<>();
+                        ProtoRestSerializer<ListRoutersRequest> serializer =
+                            ProtoRestSerializer.create();
+                        serializer.putPathParam(fields, "project", request.getProject());
+                        serializer.putPathParam(fields, "region", request.getRegion());
+                        return fields;
                       })
                   .setQueryParamsExtractor(
-                      new FieldsExtractor<ListRoutersRequest, Map<String, List<String>>>() {
-                        @Override
-                        public Map<String, List<String>> extract(ListRoutersRequest request) {
-                          Map<String, List<String>> fields = new HashMap<>();
-                          ProtoRestSerializer<ListRoutersRequest> serializer =
-                              ProtoRestSerializer.create();
-                          if (request.hasFilter()) {
-                            serializer.putQueryParam(fields, "filter", request.getFilter());
-                          }
-                          if (request.hasMaxResults()) {
-                            serializer.putQueryParam(fields, "maxResults", request.getMaxResults());
-                          }
-                          if (request.hasOrderBy()) {
-                            serializer.putQueryParam(fields, "orderBy", request.getOrderBy());
-                          }
-                          if (request.hasPageToken()) {
-                            serializer.putQueryParam(fields, "pageToken", request.getPageToken());
-                          }
-                          if (request.hasReturnPartialSuccess()) {
-                            serializer.putQueryParam(
-                                fields, "returnPartialSuccess", request.getReturnPartialSuccess());
-                          }
-                          return fields;
+                      request -> {
+                        Map<String, List<String>> fields = new HashMap<>();
+                        ProtoRestSerializer<ListRoutersRequest> serializer =
+                            ProtoRestSerializer.create();
+                        if (request.hasFilter()) {
+                          serializer.putQueryParam(fields, "filter", request.getFilter());
                         }
-                      })
-                  .setRequestBodyExtractor(
-                      new FieldsExtractor<ListRoutersRequest, String>() {
-                        @Override
-                        public String extract(ListRoutersRequest request) {
-                          return null;
+                        if (request.hasMaxResults()) {
+                          serializer.putQueryParam(fields, "maxResults", request.getMaxResults());
                         }
+                        if (request.hasOrderBy()) {
+                          serializer.putQueryParam(fields, "orderBy", request.getOrderBy());
+                        }
+                        if (request.hasPageToken()) {
+                          serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                        }
+                        if (request.hasReturnPartialSuccess()) {
+                          serializer.putQueryParam(
+                              fields, "returnPartialSuccess", request.getReturnPartialSuccess());
+                        }
+                        return fields;
                       })
+                  .setRequestBodyExtractor(request -> null)
                   .build())
           .setResponseParser(
               ProtoMessageResponseParser.<RouterList>newBuilder()
@@ -462,39 +367,29 @@ public class HttpJsonRoutersStub extends RoutersStub {
               ProtoMessageRequestFormatter.<PatchRouterRequest>newBuilder()
                   .setPath(
                       "/compute/v1/projects/{project}/regions/{region}/routers/{router}",
-                      new FieldsExtractor<PatchRouterRequest, Map<String, String>>() {
-                        @Override
-                        public Map<String, String> extract(PatchRouterRequest request) {
-                          Map<String, String> fields = new HashMap<>();
-                          ProtoRestSerializer<PatchRouterRequest> serializer =
-                              ProtoRestSerializer.create();
-                          serializer.putPathParam(fields, "project", request.getProject());
-                          serializer.putPathParam(fields, "region", request.getRegion());
-                          serializer.putPathParam(fields, "router", request.getRouter());
-                          return fields;
-                        }
+                      request -> {
+                        Map<String, String> fields = new HashMap<>();
+                        ProtoRestSerializer<PatchRouterRequest> serializer =
+                            ProtoRestSerializer.create();
+                        serializer.putPathParam(fields, "project", request.getProject());
+                        serializer.putPathParam(fields, "region", request.getRegion());
+                        serializer.putPathParam(fields, "router", request.getRouter());
+                        return fields;
                       })
                   .setQueryParamsExtractor(
-                      new FieldsExtractor<PatchRouterRequest, Map<String, List<String>>>() {
-                        @Override
-                        public Map<String, List<String>> extract(PatchRouterRequest request) {
-                          Map<String, List<String>> fields = new HashMap<>();
-                          ProtoRestSerializer<PatchRouterRequest> serializer =
-                              ProtoRestSerializer.create();
-                          if (request.hasRequestId()) {
-                            serializer.putQueryParam(fields, "requestId", request.getRequestId());
-                          }
-                          return fields;
+                      request -> {
+                        Map<String, List<String>> fields = new HashMap<>();
+                        ProtoRestSerializer<PatchRouterRequest> serializer =
+                            ProtoRestSerializer.create();
+                        if (request.hasRequestId()) {
+                          serializer.putQueryParam(fields, "requestId", request.getRequestId());
                         }
+                        return fields;
                       })
                   .setRequestBodyExtractor(
-                      new FieldsExtractor<PatchRouterRequest, String>() {
-                        @Override
-                        public String extract(PatchRouterRequest request) {
-                          return ProtoRestSerializer.create()
-                              .toBody("routerResource", request.getRouterResource());
-                        }
-                      })
+                      request ->
+                          ProtoRestSerializer.create()
+                              .toBody("routerResource", request.getRouterResource()))
                   .build())
           .setResponseParser(
               ProtoMessageResponseParser.<Operation>newBuilder()
@@ -511,36 +406,26 @@ public class HttpJsonRoutersStub extends RoutersStub {
                   ProtoMessageRequestFormatter.<PreviewRouterRequest>newBuilder()
                       .setPath(
                           "/compute/v1/projects/{project}/regions/{region}/routers/{router}/preview",
-                          new FieldsExtractor<PreviewRouterRequest, Map<String, String>>() {
-                            @Override
-                            public Map<String, String> extract(PreviewRouterRequest request) {
-                              Map<String, String> fields = new HashMap<>();
-                              ProtoRestSerializer<PreviewRouterRequest> serializer =
-                                  ProtoRestSerializer.create();
-                              serializer.putPathParam(fields, "project", request.getProject());
-                              serializer.putPathParam(fields, "region", request.getRegion());
-                              serializer.putPathParam(fields, "router", request.getRouter());
-                              return fields;
-                            }
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<PreviewRouterRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "project", request.getProject());
+                            serializer.putPathParam(fields, "region", request.getRegion());
+                            serializer.putPathParam(fields, "router", request.getRouter());
+                            return fields;
                           })
                       .setQueryParamsExtractor(
-                          new FieldsExtractor<PreviewRouterRequest, Map<String, List<String>>>() {
-                            @Override
-                            public Map<String, List<String>> extract(PreviewRouterRequest request) {
-                              Map<String, List<String>> fields = new HashMap<>();
-                              ProtoRestSerializer<PreviewRouterRequest> serializer =
-                                  ProtoRestSerializer.create();
-                              return fields;
-                            }
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<PreviewRouterRequest> serializer =
+                                ProtoRestSerializer.create();
+                            return fields;
                           })
                       .setRequestBodyExtractor(
-                          new FieldsExtractor<PreviewRouterRequest, String>() {
-                            @Override
-                            public String extract(PreviewRouterRequest request) {
-                              return ProtoRestSerializer.create()
-                                  .toBody("routerResource", request.getRouterResource());
-                            }
-                          })
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("routerResource", request.getRouterResource()))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<RoutersPreviewResponse>newBuilder()
@@ -556,39 +441,29 @@ public class HttpJsonRoutersStub extends RoutersStub {
               ProtoMessageRequestFormatter.<UpdateRouterRequest>newBuilder()
                   .setPath(
                       "/compute/v1/projects/{project}/regions/{region}/routers/{router}",
-                      new FieldsExtractor<UpdateRouterRequest, Map<String, String>>() {
-                        @Override
-                        public Map<String, String> extract(UpdateRouterRequest request) {
-                          Map<String, String> fields = new HashMap<>();
-                          ProtoRestSerializer<UpdateRouterRequest> serializer =
-                              ProtoRestSerializer.create();
-                          serializer.putPathParam(fields, "project", request.getProject());
-                          serializer.putPathParam(fields, "region", request.getRegion());
-                          serializer.putPathParam(fields, "router", request.getRouter());
-                          return fields;
-                        }
+                      request -> {
+                        Map<String, String> fields = new HashMap<>();
+                        ProtoRestSerializer<UpdateRouterRequest> serializer =
+                            ProtoRestSerializer.create();
+                        serializer.putPathParam(fields, "project", request.getProject());
+                        serializer.putPathParam(fields, "region", request.getRegion());
+                        serializer.putPathParam(fields, "router", request.getRouter());
+                        return fields;
                       })
                   .setQueryParamsExtractor(
-                      new FieldsExtractor<UpdateRouterRequest, Map<String, List<String>>>() {
-                        @Override
-                        public Map<String, List<String>> extract(UpdateRouterRequest request) {
-                          Map<String, List<String>> fields = new HashMap<>();
-                          ProtoRestSerializer<UpdateRouterRequest> serializer =
-                              ProtoRestSerializer.create();
-                          if (request.hasRequestId()) {
-                            serializer.putQueryParam(fields, "requestId", request.getRequestId());
-                          }
-                          return fields;
+                      request -> {
+                        Map<String, List<String>> fields = new HashMap<>();
+                        ProtoRestSerializer<UpdateRouterRequest> serializer =
+                            ProtoRestSerializer.create();
+                        if (request.hasRequestId()) {
+                          serializer.putQueryParam(fields, "requestId", request.getRequestId());
                         }
+                        return fields;
                       })
                   .setRequestBodyExtractor(
-                      new FieldsExtractor<UpdateRouterRequest, String>() {
-                        @Override
-                        public String extract(UpdateRouterRequest request) {
-                          return ProtoRestSerializer.create()
-                              .toBody("routerResource", request.getRouterResource());
-                        }
-                      })
+                      request ->
+                          ProtoRestSerializer.create()
+                              .toBody("routerResource", request.getRouterResource()))
                   .build())
           .setResponseParser(
               ProtoMessageResponseParser.<Operation>newBuilder()
@@ -835,7 +710,13 @@ public class HttpJsonRoutersStub extends RoutersStub {
 
   @Override
   public final void close() {
-    shutdown();
+    try {
+      backgroundResources.close();
+    } catch (RuntimeException e) {
+      throw e;
+    } catch (Exception e) {
+      throw new IllegalStateException("Failed to close resource", e);
+    }
   }
 
   @Override

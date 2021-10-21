@@ -25,7 +25,6 @@ import com.google.api.core.InternalApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.httpjson.ApiMethodDescriptor;
-import com.google.api.gax.httpjson.FieldsExtractor;
 import com.google.api.gax.httpjson.HttpJsonCallSettings;
 import com.google.api.gax.httpjson.HttpJsonStubCallableFactory;
 import com.google.api.gax.httpjson.ProtoMessageRequestFormatter;
@@ -75,61 +74,44 @@ public class HttpJsonResourcePoliciesStub extends ResourcePoliciesStub {
                   ProtoMessageRequestFormatter.<AggregatedListResourcePoliciesRequest>newBuilder()
                       .setPath(
                           "/compute/v1/projects/{project}/aggregated/resourcePolicies",
-                          new FieldsExtractor<
-                              AggregatedListResourcePoliciesRequest, Map<String, String>>() {
-                            @Override
-                            public Map<String, String> extract(
-                                AggregatedListResourcePoliciesRequest request) {
-                              Map<String, String> fields = new HashMap<>();
-                              ProtoRestSerializer<AggregatedListResourcePoliciesRequest>
-                                  serializer = ProtoRestSerializer.create();
-                              serializer.putPathParam(fields, "project", request.getProject());
-                              return fields;
-                            }
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<AggregatedListResourcePoliciesRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "project", request.getProject());
+                            return fields;
                           })
                       .setQueryParamsExtractor(
-                          new FieldsExtractor<
-                              AggregatedListResourcePoliciesRequest, Map<String, List<String>>>() {
-                            @Override
-                            public Map<String, List<String>> extract(
-                                AggregatedListResourcePoliciesRequest request) {
-                              Map<String, List<String>> fields = new HashMap<>();
-                              ProtoRestSerializer<AggregatedListResourcePoliciesRequest>
-                                  serializer = ProtoRestSerializer.create();
-                              if (request.hasFilter()) {
-                                serializer.putQueryParam(fields, "filter", request.getFilter());
-                              }
-                              if (request.hasIncludeAllScopes()) {
-                                serializer.putQueryParam(
-                                    fields, "includeAllScopes", request.getIncludeAllScopes());
-                              }
-                              if (request.hasMaxResults()) {
-                                serializer.putQueryParam(
-                                    fields, "maxResults", request.getMaxResults());
-                              }
-                              if (request.hasOrderBy()) {
-                                serializer.putQueryParam(fields, "orderBy", request.getOrderBy());
-                              }
-                              if (request.hasPageToken()) {
-                                serializer.putQueryParam(
-                                    fields, "pageToken", request.getPageToken());
-                              }
-                              if (request.hasReturnPartialSuccess()) {
-                                serializer.putQueryParam(
-                                    fields,
-                                    "returnPartialSuccess",
-                                    request.getReturnPartialSuccess());
-                              }
-                              return fields;
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<AggregatedListResourcePoliciesRequest> serializer =
+                                ProtoRestSerializer.create();
+                            if (request.hasFilter()) {
+                              serializer.putQueryParam(fields, "filter", request.getFilter());
                             }
-                          })
-                      .setRequestBodyExtractor(
-                          new FieldsExtractor<AggregatedListResourcePoliciesRequest, String>() {
-                            @Override
-                            public String extract(AggregatedListResourcePoliciesRequest request) {
-                              return null;
+                            if (request.hasIncludeAllScopes()) {
+                              serializer.putQueryParam(
+                                  fields, "includeAllScopes", request.getIncludeAllScopes());
                             }
+                            if (request.hasMaxResults()) {
+                              serializer.putQueryParam(
+                                  fields, "maxResults", request.getMaxResults());
+                            }
+                            if (request.hasOrderBy()) {
+                              serializer.putQueryParam(fields, "orderBy", request.getOrderBy());
+                            }
+                            if (request.hasPageToken()) {
+                              serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            }
+                            if (request.hasReturnPartialSuccess()) {
+                              serializer.putQueryParam(
+                                  fields,
+                                  "returnPartialSuccess",
+                                  request.getReturnPartialSuccess());
+                            }
+                            return fields;
                           })
+                      .setRequestBodyExtractor(request -> null)
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<ResourcePolicyAggregatedList>newBuilder()
@@ -146,43 +128,27 @@ public class HttpJsonResourcePoliciesStub extends ResourcePoliciesStub {
                   ProtoMessageRequestFormatter.<DeleteResourcePolicyRequest>newBuilder()
                       .setPath(
                           "/compute/v1/projects/{project}/regions/{region}/resourcePolicies/{resourcePolicy}",
-                          new FieldsExtractor<DeleteResourcePolicyRequest, Map<String, String>>() {
-                            @Override
-                            public Map<String, String> extract(
-                                DeleteResourcePolicyRequest request) {
-                              Map<String, String> fields = new HashMap<>();
-                              ProtoRestSerializer<DeleteResourcePolicyRequest> serializer =
-                                  ProtoRestSerializer.create();
-                              serializer.putPathParam(fields, "project", request.getProject());
-                              serializer.putPathParam(fields, "region", request.getRegion());
-                              serializer.putPathParam(
-                                  fields, "resourcePolicy", request.getResourcePolicy());
-                              return fields;
-                            }
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<DeleteResourcePolicyRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "project", request.getProject());
+                            serializer.putPathParam(fields, "region", request.getRegion());
+                            serializer.putPathParam(
+                                fields, "resourcePolicy", request.getResourcePolicy());
+                            return fields;
                           })
                       .setQueryParamsExtractor(
-                          new FieldsExtractor<
-                              DeleteResourcePolicyRequest, Map<String, List<String>>>() {
-                            @Override
-                            public Map<String, List<String>> extract(
-                                DeleteResourcePolicyRequest request) {
-                              Map<String, List<String>> fields = new HashMap<>();
-                              ProtoRestSerializer<DeleteResourcePolicyRequest> serializer =
-                                  ProtoRestSerializer.create();
-                              if (request.hasRequestId()) {
-                                serializer.putQueryParam(
-                                    fields, "requestId", request.getRequestId());
-                              }
-                              return fields;
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<DeleteResourcePolicyRequest> serializer =
+                                ProtoRestSerializer.create();
+                            if (request.hasRequestId()) {
+                              serializer.putQueryParam(fields, "requestId", request.getRequestId());
                             }
+                            return fields;
                           })
-                      .setRequestBodyExtractor(
-                          new FieldsExtractor<DeleteResourcePolicyRequest, String>() {
-                            @Override
-                            public String extract(DeleteResourcePolicyRequest request) {
-                              return null;
-                            }
-                          })
+                      .setRequestBodyExtractor(request -> null)
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -199,38 +165,24 @@ public class HttpJsonResourcePoliciesStub extends ResourcePoliciesStub {
                   ProtoMessageRequestFormatter.<GetResourcePolicyRequest>newBuilder()
                       .setPath(
                           "/compute/v1/projects/{project}/regions/{region}/resourcePolicies/{resourcePolicy}",
-                          new FieldsExtractor<GetResourcePolicyRequest, Map<String, String>>() {
-                            @Override
-                            public Map<String, String> extract(GetResourcePolicyRequest request) {
-                              Map<String, String> fields = new HashMap<>();
-                              ProtoRestSerializer<GetResourcePolicyRequest> serializer =
-                                  ProtoRestSerializer.create();
-                              serializer.putPathParam(fields, "project", request.getProject());
-                              serializer.putPathParam(fields, "region", request.getRegion());
-                              serializer.putPathParam(
-                                  fields, "resourcePolicy", request.getResourcePolicy());
-                              return fields;
-                            }
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<GetResourcePolicyRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "project", request.getProject());
+                            serializer.putPathParam(fields, "region", request.getRegion());
+                            serializer.putPathParam(
+                                fields, "resourcePolicy", request.getResourcePolicy());
+                            return fields;
                           })
                       .setQueryParamsExtractor(
-                          new FieldsExtractor<
-                              GetResourcePolicyRequest, Map<String, List<String>>>() {
-                            @Override
-                            public Map<String, List<String>> extract(
-                                GetResourcePolicyRequest request) {
-                              Map<String, List<String>> fields = new HashMap<>();
-                              ProtoRestSerializer<GetResourcePolicyRequest> serializer =
-                                  ProtoRestSerializer.create();
-                              return fields;
-                            }
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<GetResourcePolicyRequest> serializer =
+                                ProtoRestSerializer.create();
+                            return fields;
                           })
-                      .setRequestBodyExtractor(
-                          new FieldsExtractor<GetResourcePolicyRequest, String>() {
-                            @Override
-                            public String extract(GetResourcePolicyRequest request) {
-                              return null;
-                            }
-                          })
+                      .setRequestBodyExtractor(request -> null)
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<ResourcePolicy>newBuilder()
@@ -247,45 +199,29 @@ public class HttpJsonResourcePoliciesStub extends ResourcePoliciesStub {
                   ProtoMessageRequestFormatter.<GetIamPolicyResourcePolicyRequest>newBuilder()
                       .setPath(
                           "/compute/v1/projects/{project}/regions/{region}/resourcePolicies/{resource}/getIamPolicy",
-                          new FieldsExtractor<
-                              GetIamPolicyResourcePolicyRequest, Map<String, String>>() {
-                            @Override
-                            public Map<String, String> extract(
-                                GetIamPolicyResourcePolicyRequest request) {
-                              Map<String, String> fields = new HashMap<>();
-                              ProtoRestSerializer<GetIamPolicyResourcePolicyRequest> serializer =
-                                  ProtoRestSerializer.create();
-                              serializer.putPathParam(fields, "project", request.getProject());
-                              serializer.putPathParam(fields, "region", request.getRegion());
-                              serializer.putPathParam(fields, "resource", request.getResource());
-                              return fields;
-                            }
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<GetIamPolicyResourcePolicyRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "project", request.getProject());
+                            serializer.putPathParam(fields, "region", request.getRegion());
+                            serializer.putPathParam(fields, "resource", request.getResource());
+                            return fields;
                           })
                       .setQueryParamsExtractor(
-                          new FieldsExtractor<
-                              GetIamPolicyResourcePolicyRequest, Map<String, List<String>>>() {
-                            @Override
-                            public Map<String, List<String>> extract(
-                                GetIamPolicyResourcePolicyRequest request) {
-                              Map<String, List<String>> fields = new HashMap<>();
-                              ProtoRestSerializer<GetIamPolicyResourcePolicyRequest> serializer =
-                                  ProtoRestSerializer.create();
-                              if (request.hasOptionsRequestedPolicyVersion()) {
-                                serializer.putQueryParam(
-                                    fields,
-                                    "optionsRequestedPolicyVersion",
-                                    request.getOptionsRequestedPolicyVersion());
-                              }
-                              return fields;
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<GetIamPolicyResourcePolicyRequest> serializer =
+                                ProtoRestSerializer.create();
+                            if (request.hasOptionsRequestedPolicyVersion()) {
+                              serializer.putQueryParam(
+                                  fields,
+                                  "optionsRequestedPolicyVersion",
+                                  request.getOptionsRequestedPolicyVersion());
                             }
+                            return fields;
                           })
-                      .setRequestBodyExtractor(
-                          new FieldsExtractor<GetIamPolicyResourcePolicyRequest, String>() {
-                            @Override
-                            public String extract(GetIamPolicyResourcePolicyRequest request) {
-                              return null;
-                            }
-                          })
+                      .setRequestBodyExtractor(request -> null)
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Policy>newBuilder()
@@ -302,44 +238,30 @@ public class HttpJsonResourcePoliciesStub extends ResourcePoliciesStub {
                   ProtoMessageRequestFormatter.<InsertResourcePolicyRequest>newBuilder()
                       .setPath(
                           "/compute/v1/projects/{project}/regions/{region}/resourcePolicies",
-                          new FieldsExtractor<InsertResourcePolicyRequest, Map<String, String>>() {
-                            @Override
-                            public Map<String, String> extract(
-                                InsertResourcePolicyRequest request) {
-                              Map<String, String> fields = new HashMap<>();
-                              ProtoRestSerializer<InsertResourcePolicyRequest> serializer =
-                                  ProtoRestSerializer.create();
-                              serializer.putPathParam(fields, "project", request.getProject());
-                              serializer.putPathParam(fields, "region", request.getRegion());
-                              return fields;
-                            }
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<InsertResourcePolicyRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "project", request.getProject());
+                            serializer.putPathParam(fields, "region", request.getRegion());
+                            return fields;
                           })
                       .setQueryParamsExtractor(
-                          new FieldsExtractor<
-                              InsertResourcePolicyRequest, Map<String, List<String>>>() {
-                            @Override
-                            public Map<String, List<String>> extract(
-                                InsertResourcePolicyRequest request) {
-                              Map<String, List<String>> fields = new HashMap<>();
-                              ProtoRestSerializer<InsertResourcePolicyRequest> serializer =
-                                  ProtoRestSerializer.create();
-                              if (request.hasRequestId()) {
-                                serializer.putQueryParam(
-                                    fields, "requestId", request.getRequestId());
-                              }
-                              return fields;
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<InsertResourcePolicyRequest> serializer =
+                                ProtoRestSerializer.create();
+                            if (request.hasRequestId()) {
+                              serializer.putQueryParam(fields, "requestId", request.getRequestId());
                             }
+                            return fields;
                           })
                       .setRequestBodyExtractor(
-                          new FieldsExtractor<InsertResourcePolicyRequest, String>() {
-                            @Override
-                            public String extract(InsertResourcePolicyRequest request) {
-                              return ProtoRestSerializer.create()
+                          request ->
+                              ProtoRestSerializer.create()
                                   .toBody(
                                       "resourcePolicyResource",
-                                      request.getResourcePolicyResource());
-                            }
-                          })
+                                      request.getResourcePolicyResource()))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -356,57 +278,41 @@ public class HttpJsonResourcePoliciesStub extends ResourcePoliciesStub {
                   ProtoMessageRequestFormatter.<ListResourcePoliciesRequest>newBuilder()
                       .setPath(
                           "/compute/v1/projects/{project}/regions/{region}/resourcePolicies",
-                          new FieldsExtractor<ListResourcePoliciesRequest, Map<String, String>>() {
-                            @Override
-                            public Map<String, String> extract(
-                                ListResourcePoliciesRequest request) {
-                              Map<String, String> fields = new HashMap<>();
-                              ProtoRestSerializer<ListResourcePoliciesRequest> serializer =
-                                  ProtoRestSerializer.create();
-                              serializer.putPathParam(fields, "project", request.getProject());
-                              serializer.putPathParam(fields, "region", request.getRegion());
-                              return fields;
-                            }
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<ListResourcePoliciesRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "project", request.getProject());
+                            serializer.putPathParam(fields, "region", request.getRegion());
+                            return fields;
                           })
                       .setQueryParamsExtractor(
-                          new FieldsExtractor<
-                              ListResourcePoliciesRequest, Map<String, List<String>>>() {
-                            @Override
-                            public Map<String, List<String>> extract(
-                                ListResourcePoliciesRequest request) {
-                              Map<String, List<String>> fields = new HashMap<>();
-                              ProtoRestSerializer<ListResourcePoliciesRequest> serializer =
-                                  ProtoRestSerializer.create();
-                              if (request.hasFilter()) {
-                                serializer.putQueryParam(fields, "filter", request.getFilter());
-                              }
-                              if (request.hasMaxResults()) {
-                                serializer.putQueryParam(
-                                    fields, "maxResults", request.getMaxResults());
-                              }
-                              if (request.hasOrderBy()) {
-                                serializer.putQueryParam(fields, "orderBy", request.getOrderBy());
-                              }
-                              if (request.hasPageToken()) {
-                                serializer.putQueryParam(
-                                    fields, "pageToken", request.getPageToken());
-                              }
-                              if (request.hasReturnPartialSuccess()) {
-                                serializer.putQueryParam(
-                                    fields,
-                                    "returnPartialSuccess",
-                                    request.getReturnPartialSuccess());
-                              }
-                              return fields;
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<ListResourcePoliciesRequest> serializer =
+                                ProtoRestSerializer.create();
+                            if (request.hasFilter()) {
+                              serializer.putQueryParam(fields, "filter", request.getFilter());
                             }
-                          })
-                      .setRequestBodyExtractor(
-                          new FieldsExtractor<ListResourcePoliciesRequest, String>() {
-                            @Override
-                            public String extract(ListResourcePoliciesRequest request) {
-                              return null;
+                            if (request.hasMaxResults()) {
+                              serializer.putQueryParam(
+                                  fields, "maxResults", request.getMaxResults());
                             }
+                            if (request.hasOrderBy()) {
+                              serializer.putQueryParam(fields, "orderBy", request.getOrderBy());
+                            }
+                            if (request.hasPageToken()) {
+                              serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            }
+                            if (request.hasReturnPartialSuccess()) {
+                              serializer.putQueryParam(
+                                  fields,
+                                  "returnPartialSuccess",
+                                  request.getReturnPartialSuccess());
+                            }
+                            return fields;
                           })
+                      .setRequestBodyExtractor(request -> null)
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<ResourcePolicyList>newBuilder()
@@ -423,42 +329,28 @@ public class HttpJsonResourcePoliciesStub extends ResourcePoliciesStub {
                   ProtoMessageRequestFormatter.<SetIamPolicyResourcePolicyRequest>newBuilder()
                       .setPath(
                           "/compute/v1/projects/{project}/regions/{region}/resourcePolicies/{resource}/setIamPolicy",
-                          new FieldsExtractor<
-                              SetIamPolicyResourcePolicyRequest, Map<String, String>>() {
-                            @Override
-                            public Map<String, String> extract(
-                                SetIamPolicyResourcePolicyRequest request) {
-                              Map<String, String> fields = new HashMap<>();
-                              ProtoRestSerializer<SetIamPolicyResourcePolicyRequest> serializer =
-                                  ProtoRestSerializer.create();
-                              serializer.putPathParam(fields, "project", request.getProject());
-                              serializer.putPathParam(fields, "region", request.getRegion());
-                              serializer.putPathParam(fields, "resource", request.getResource());
-                              return fields;
-                            }
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<SetIamPolicyResourcePolicyRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "project", request.getProject());
+                            serializer.putPathParam(fields, "region", request.getRegion());
+                            serializer.putPathParam(fields, "resource", request.getResource());
+                            return fields;
                           })
                       .setQueryParamsExtractor(
-                          new FieldsExtractor<
-                              SetIamPolicyResourcePolicyRequest, Map<String, List<String>>>() {
-                            @Override
-                            public Map<String, List<String>> extract(
-                                SetIamPolicyResourcePolicyRequest request) {
-                              Map<String, List<String>> fields = new HashMap<>();
-                              ProtoRestSerializer<SetIamPolicyResourcePolicyRequest> serializer =
-                                  ProtoRestSerializer.create();
-                              return fields;
-                            }
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<SetIamPolicyResourcePolicyRequest> serializer =
+                                ProtoRestSerializer.create();
+                            return fields;
                           })
                       .setRequestBodyExtractor(
-                          new FieldsExtractor<SetIamPolicyResourcePolicyRequest, String>() {
-                            @Override
-                            public String extract(SetIamPolicyResourcePolicyRequest request) {
-                              return ProtoRestSerializer.create()
+                          request ->
+                              ProtoRestSerializer.create()
                                   .toBody(
                                       "regionSetPolicyRequestResource",
-                                      request.getRegionSetPolicyRequestResource());
-                            }
-                          })
+                                      request.getRegionSetPolicyRequestResource()))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Policy>newBuilder()
@@ -477,43 +369,28 @@ public class HttpJsonResourcePoliciesStub extends ResourcePoliciesStub {
                   ProtoMessageRequestFormatter.<TestIamPermissionsResourcePolicyRequest>newBuilder()
                       .setPath(
                           "/compute/v1/projects/{project}/regions/{region}/resourcePolicies/{resource}/testIamPermissions",
-                          new FieldsExtractor<
-                              TestIamPermissionsResourcePolicyRequest, Map<String, String>>() {
-                            @Override
-                            public Map<String, String> extract(
-                                TestIamPermissionsResourcePolicyRequest request) {
-                              Map<String, String> fields = new HashMap<>();
-                              ProtoRestSerializer<TestIamPermissionsResourcePolicyRequest>
-                                  serializer = ProtoRestSerializer.create();
-                              serializer.putPathParam(fields, "project", request.getProject());
-                              serializer.putPathParam(fields, "region", request.getRegion());
-                              serializer.putPathParam(fields, "resource", request.getResource());
-                              return fields;
-                            }
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<TestIamPermissionsResourcePolicyRequest>
+                                serializer = ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "project", request.getProject());
+                            serializer.putPathParam(fields, "region", request.getRegion());
+                            serializer.putPathParam(fields, "resource", request.getResource());
+                            return fields;
                           })
                       .setQueryParamsExtractor(
-                          new FieldsExtractor<
-                              TestIamPermissionsResourcePolicyRequest,
-                              Map<String, List<String>>>() {
-                            @Override
-                            public Map<String, List<String>> extract(
-                                TestIamPermissionsResourcePolicyRequest request) {
-                              Map<String, List<String>> fields = new HashMap<>();
-                              ProtoRestSerializer<TestIamPermissionsResourcePolicyRequest>
-                                  serializer = ProtoRestSerializer.create();
-                              return fields;
-                            }
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<TestIamPermissionsResourcePolicyRequest>
+                                serializer = ProtoRestSerializer.create();
+                            return fields;
                           })
                       .setRequestBodyExtractor(
-                          new FieldsExtractor<TestIamPermissionsResourcePolicyRequest, String>() {
-                            @Override
-                            public String extract(TestIamPermissionsResourcePolicyRequest request) {
-                              return ProtoRestSerializer.create()
+                          request ->
+                              ProtoRestSerializer.create()
                                   .toBody(
                                       "testPermissionsRequestResource",
-                                      request.getTestPermissionsRequestResource());
-                            }
-                          })
+                                      request.getTestPermissionsRequestResource()))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<TestPermissionsResponse>newBuilder()
@@ -720,7 +597,13 @@ public class HttpJsonResourcePoliciesStub extends ResourcePoliciesStub {
 
   @Override
   public final void close() {
-    shutdown();
+    try {
+      backgroundResources.close();
+    } catch (RuntimeException e) {
+      throw e;
+    } catch (Exception e) {
+      throw new IllegalStateException("Failed to close resource", e);
+    }
   }
 
   @Override

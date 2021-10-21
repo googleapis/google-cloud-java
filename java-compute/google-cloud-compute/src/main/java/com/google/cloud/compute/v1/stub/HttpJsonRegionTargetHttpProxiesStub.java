@@ -24,7 +24,6 @@ import com.google.api.core.InternalApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.httpjson.ApiMethodDescriptor;
-import com.google.api.gax.httpjson.FieldsExtractor;
 import com.google.api.gax.httpjson.HttpJsonCallSettings;
 import com.google.api.gax.httpjson.HttpJsonStubCallableFactory;
 import com.google.api.gax.httpjson.ProtoMessageRequestFormatter;
@@ -66,44 +65,27 @@ public class HttpJsonRegionTargetHttpProxiesStub extends RegionTargetHttpProxies
                   ProtoMessageRequestFormatter.<DeleteRegionTargetHttpProxyRequest>newBuilder()
                       .setPath(
                           "/compute/v1/projects/{project}/regions/{region}/targetHttpProxies/{targetHttpProxy}",
-                          new FieldsExtractor<
-                              DeleteRegionTargetHttpProxyRequest, Map<String, String>>() {
-                            @Override
-                            public Map<String, String> extract(
-                                DeleteRegionTargetHttpProxyRequest request) {
-                              Map<String, String> fields = new HashMap<>();
-                              ProtoRestSerializer<DeleteRegionTargetHttpProxyRequest> serializer =
-                                  ProtoRestSerializer.create();
-                              serializer.putPathParam(fields, "project", request.getProject());
-                              serializer.putPathParam(fields, "region", request.getRegion());
-                              serializer.putPathParam(
-                                  fields, "targetHttpProxy", request.getTargetHttpProxy());
-                              return fields;
-                            }
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<DeleteRegionTargetHttpProxyRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "project", request.getProject());
+                            serializer.putPathParam(fields, "region", request.getRegion());
+                            serializer.putPathParam(
+                                fields, "targetHttpProxy", request.getTargetHttpProxy());
+                            return fields;
                           })
                       .setQueryParamsExtractor(
-                          new FieldsExtractor<
-                              DeleteRegionTargetHttpProxyRequest, Map<String, List<String>>>() {
-                            @Override
-                            public Map<String, List<String>> extract(
-                                DeleteRegionTargetHttpProxyRequest request) {
-                              Map<String, List<String>> fields = new HashMap<>();
-                              ProtoRestSerializer<DeleteRegionTargetHttpProxyRequest> serializer =
-                                  ProtoRestSerializer.create();
-                              if (request.hasRequestId()) {
-                                serializer.putQueryParam(
-                                    fields, "requestId", request.getRequestId());
-                              }
-                              return fields;
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<DeleteRegionTargetHttpProxyRequest> serializer =
+                                ProtoRestSerializer.create();
+                            if (request.hasRequestId()) {
+                              serializer.putQueryParam(fields, "requestId", request.getRequestId());
                             }
+                            return fields;
                           })
-                      .setRequestBodyExtractor(
-                          new FieldsExtractor<DeleteRegionTargetHttpProxyRequest, String>() {
-                            @Override
-                            public String extract(DeleteRegionTargetHttpProxyRequest request) {
-                              return null;
-                            }
-                          })
+                      .setRequestBodyExtractor(request -> null)
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -120,40 +102,24 @@ public class HttpJsonRegionTargetHttpProxiesStub extends RegionTargetHttpProxies
                   ProtoMessageRequestFormatter.<GetRegionTargetHttpProxyRequest>newBuilder()
                       .setPath(
                           "/compute/v1/projects/{project}/regions/{region}/targetHttpProxies/{targetHttpProxy}",
-                          new FieldsExtractor<
-                              GetRegionTargetHttpProxyRequest, Map<String, String>>() {
-                            @Override
-                            public Map<String, String> extract(
-                                GetRegionTargetHttpProxyRequest request) {
-                              Map<String, String> fields = new HashMap<>();
-                              ProtoRestSerializer<GetRegionTargetHttpProxyRequest> serializer =
-                                  ProtoRestSerializer.create();
-                              serializer.putPathParam(fields, "project", request.getProject());
-                              serializer.putPathParam(fields, "region", request.getRegion());
-                              serializer.putPathParam(
-                                  fields, "targetHttpProxy", request.getTargetHttpProxy());
-                              return fields;
-                            }
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<GetRegionTargetHttpProxyRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "project", request.getProject());
+                            serializer.putPathParam(fields, "region", request.getRegion());
+                            serializer.putPathParam(
+                                fields, "targetHttpProxy", request.getTargetHttpProxy());
+                            return fields;
                           })
                       .setQueryParamsExtractor(
-                          new FieldsExtractor<
-                              GetRegionTargetHttpProxyRequest, Map<String, List<String>>>() {
-                            @Override
-                            public Map<String, List<String>> extract(
-                                GetRegionTargetHttpProxyRequest request) {
-                              Map<String, List<String>> fields = new HashMap<>();
-                              ProtoRestSerializer<GetRegionTargetHttpProxyRequest> serializer =
-                                  ProtoRestSerializer.create();
-                              return fields;
-                            }
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<GetRegionTargetHttpProxyRequest> serializer =
+                                ProtoRestSerializer.create();
+                            return fields;
                           })
-                      .setRequestBodyExtractor(
-                          new FieldsExtractor<GetRegionTargetHttpProxyRequest, String>() {
-                            @Override
-                            public String extract(GetRegionTargetHttpProxyRequest request) {
-                              return null;
-                            }
-                          })
+                      .setRequestBodyExtractor(request -> null)
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<TargetHttpProxy>newBuilder()
@@ -170,45 +136,30 @@ public class HttpJsonRegionTargetHttpProxiesStub extends RegionTargetHttpProxies
                   ProtoMessageRequestFormatter.<InsertRegionTargetHttpProxyRequest>newBuilder()
                       .setPath(
                           "/compute/v1/projects/{project}/regions/{region}/targetHttpProxies",
-                          new FieldsExtractor<
-                              InsertRegionTargetHttpProxyRequest, Map<String, String>>() {
-                            @Override
-                            public Map<String, String> extract(
-                                InsertRegionTargetHttpProxyRequest request) {
-                              Map<String, String> fields = new HashMap<>();
-                              ProtoRestSerializer<InsertRegionTargetHttpProxyRequest> serializer =
-                                  ProtoRestSerializer.create();
-                              serializer.putPathParam(fields, "project", request.getProject());
-                              serializer.putPathParam(fields, "region", request.getRegion());
-                              return fields;
-                            }
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<InsertRegionTargetHttpProxyRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "project", request.getProject());
+                            serializer.putPathParam(fields, "region", request.getRegion());
+                            return fields;
                           })
                       .setQueryParamsExtractor(
-                          new FieldsExtractor<
-                              InsertRegionTargetHttpProxyRequest, Map<String, List<String>>>() {
-                            @Override
-                            public Map<String, List<String>> extract(
-                                InsertRegionTargetHttpProxyRequest request) {
-                              Map<String, List<String>> fields = new HashMap<>();
-                              ProtoRestSerializer<InsertRegionTargetHttpProxyRequest> serializer =
-                                  ProtoRestSerializer.create();
-                              if (request.hasRequestId()) {
-                                serializer.putQueryParam(
-                                    fields, "requestId", request.getRequestId());
-                              }
-                              return fields;
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<InsertRegionTargetHttpProxyRequest> serializer =
+                                ProtoRestSerializer.create();
+                            if (request.hasRequestId()) {
+                              serializer.putQueryParam(fields, "requestId", request.getRequestId());
                             }
+                            return fields;
                           })
                       .setRequestBodyExtractor(
-                          new FieldsExtractor<InsertRegionTargetHttpProxyRequest, String>() {
-                            @Override
-                            public String extract(InsertRegionTargetHttpProxyRequest request) {
-                              return ProtoRestSerializer.create()
+                          request ->
+                              ProtoRestSerializer.create()
                                   .toBody(
                                       "targetHttpProxyResource",
-                                      request.getTargetHttpProxyResource());
-                            }
-                          })
+                                      request.getTargetHttpProxyResource()))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -225,58 +176,41 @@ public class HttpJsonRegionTargetHttpProxiesStub extends RegionTargetHttpProxies
                   ProtoMessageRequestFormatter.<ListRegionTargetHttpProxiesRequest>newBuilder()
                       .setPath(
                           "/compute/v1/projects/{project}/regions/{region}/targetHttpProxies",
-                          new FieldsExtractor<
-                              ListRegionTargetHttpProxiesRequest, Map<String, String>>() {
-                            @Override
-                            public Map<String, String> extract(
-                                ListRegionTargetHttpProxiesRequest request) {
-                              Map<String, String> fields = new HashMap<>();
-                              ProtoRestSerializer<ListRegionTargetHttpProxiesRequest> serializer =
-                                  ProtoRestSerializer.create();
-                              serializer.putPathParam(fields, "project", request.getProject());
-                              serializer.putPathParam(fields, "region", request.getRegion());
-                              return fields;
-                            }
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<ListRegionTargetHttpProxiesRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "project", request.getProject());
+                            serializer.putPathParam(fields, "region", request.getRegion());
+                            return fields;
                           })
                       .setQueryParamsExtractor(
-                          new FieldsExtractor<
-                              ListRegionTargetHttpProxiesRequest, Map<String, List<String>>>() {
-                            @Override
-                            public Map<String, List<String>> extract(
-                                ListRegionTargetHttpProxiesRequest request) {
-                              Map<String, List<String>> fields = new HashMap<>();
-                              ProtoRestSerializer<ListRegionTargetHttpProxiesRequest> serializer =
-                                  ProtoRestSerializer.create();
-                              if (request.hasFilter()) {
-                                serializer.putQueryParam(fields, "filter", request.getFilter());
-                              }
-                              if (request.hasMaxResults()) {
-                                serializer.putQueryParam(
-                                    fields, "maxResults", request.getMaxResults());
-                              }
-                              if (request.hasOrderBy()) {
-                                serializer.putQueryParam(fields, "orderBy", request.getOrderBy());
-                              }
-                              if (request.hasPageToken()) {
-                                serializer.putQueryParam(
-                                    fields, "pageToken", request.getPageToken());
-                              }
-                              if (request.hasReturnPartialSuccess()) {
-                                serializer.putQueryParam(
-                                    fields,
-                                    "returnPartialSuccess",
-                                    request.getReturnPartialSuccess());
-                              }
-                              return fields;
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<ListRegionTargetHttpProxiesRequest> serializer =
+                                ProtoRestSerializer.create();
+                            if (request.hasFilter()) {
+                              serializer.putQueryParam(fields, "filter", request.getFilter());
                             }
-                          })
-                      .setRequestBodyExtractor(
-                          new FieldsExtractor<ListRegionTargetHttpProxiesRequest, String>() {
-                            @Override
-                            public String extract(ListRegionTargetHttpProxiesRequest request) {
-                              return null;
+                            if (request.hasMaxResults()) {
+                              serializer.putQueryParam(
+                                  fields, "maxResults", request.getMaxResults());
                             }
+                            if (request.hasOrderBy()) {
+                              serializer.putQueryParam(fields, "orderBy", request.getOrderBy());
+                            }
+                            if (request.hasPageToken()) {
+                              serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            }
+                            if (request.hasReturnPartialSuccess()) {
+                              serializer.putQueryParam(
+                                  fields,
+                                  "returnPartialSuccess",
+                                  request.getReturnPartialSuccess());
+                            }
+                            return fields;
                           })
+                      .setRequestBodyExtractor(request -> null)
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<TargetHttpProxyList>newBuilder()
@@ -293,47 +227,32 @@ public class HttpJsonRegionTargetHttpProxiesStub extends RegionTargetHttpProxies
                   ProtoMessageRequestFormatter.<SetUrlMapRegionTargetHttpProxyRequest>newBuilder()
                       .setPath(
                           "/compute/v1/projects/{project}/regions/{region}/targetHttpProxies/{targetHttpProxy}/setUrlMap",
-                          new FieldsExtractor<
-                              SetUrlMapRegionTargetHttpProxyRequest, Map<String, String>>() {
-                            @Override
-                            public Map<String, String> extract(
-                                SetUrlMapRegionTargetHttpProxyRequest request) {
-                              Map<String, String> fields = new HashMap<>();
-                              ProtoRestSerializer<SetUrlMapRegionTargetHttpProxyRequest>
-                                  serializer = ProtoRestSerializer.create();
-                              serializer.putPathParam(fields, "project", request.getProject());
-                              serializer.putPathParam(fields, "region", request.getRegion());
-                              serializer.putPathParam(
-                                  fields, "targetHttpProxy", request.getTargetHttpProxy());
-                              return fields;
-                            }
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<SetUrlMapRegionTargetHttpProxyRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "project", request.getProject());
+                            serializer.putPathParam(fields, "region", request.getRegion());
+                            serializer.putPathParam(
+                                fields, "targetHttpProxy", request.getTargetHttpProxy());
+                            return fields;
                           })
                       .setQueryParamsExtractor(
-                          new FieldsExtractor<
-                              SetUrlMapRegionTargetHttpProxyRequest, Map<String, List<String>>>() {
-                            @Override
-                            public Map<String, List<String>> extract(
-                                SetUrlMapRegionTargetHttpProxyRequest request) {
-                              Map<String, List<String>> fields = new HashMap<>();
-                              ProtoRestSerializer<SetUrlMapRegionTargetHttpProxyRequest>
-                                  serializer = ProtoRestSerializer.create();
-                              if (request.hasRequestId()) {
-                                serializer.putQueryParam(
-                                    fields, "requestId", request.getRequestId());
-                              }
-                              return fields;
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<SetUrlMapRegionTargetHttpProxyRequest> serializer =
+                                ProtoRestSerializer.create();
+                            if (request.hasRequestId()) {
+                              serializer.putQueryParam(fields, "requestId", request.getRequestId());
                             }
+                            return fields;
                           })
                       .setRequestBodyExtractor(
-                          new FieldsExtractor<SetUrlMapRegionTargetHttpProxyRequest, String>() {
-                            @Override
-                            public String extract(SetUrlMapRegionTargetHttpProxyRequest request) {
-                              return ProtoRestSerializer.create()
+                          request ->
+                              ProtoRestSerializer.create()
                                   .toBody(
                                       "urlMapReferenceResource",
-                                      request.getUrlMapReferenceResource());
-                            }
-                          })
+                                      request.getUrlMapReferenceResource()))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -482,7 +401,13 @@ public class HttpJsonRegionTargetHttpProxiesStub extends RegionTargetHttpProxies
 
   @Override
   public final void close() {
-    shutdown();
+    try {
+      backgroundResources.close();
+    } catch (RuntimeException e) {
+      throw e;
+    } catch (Exception e) {
+      throw new IllegalStateException("Failed to close resource", e);
+    }
   }
 
   @Override

@@ -24,7 +24,6 @@ import com.google.api.core.InternalApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.httpjson.ApiMethodDescriptor;
-import com.google.api.gax.httpjson.FieldsExtractor;
 import com.google.api.gax.httpjson.HttpJsonCallSettings;
 import com.google.api.gax.httpjson.HttpJsonStubCallableFactory;
 import com.google.api.gax.httpjson.ProtoMessageRequestFormatter;
@@ -65,47 +64,27 @@ public class HttpJsonRegionNotificationEndpointsStub extends RegionNotificationE
                   ProtoMessageRequestFormatter.<DeleteRegionNotificationEndpointRequest>newBuilder()
                       .setPath(
                           "/compute/v1/projects/{project}/regions/{region}/notificationEndpoints/{notificationEndpoint}",
-                          new FieldsExtractor<
-                              DeleteRegionNotificationEndpointRequest, Map<String, String>>() {
-                            @Override
-                            public Map<String, String> extract(
-                                DeleteRegionNotificationEndpointRequest request) {
-                              Map<String, String> fields = new HashMap<>();
-                              ProtoRestSerializer<DeleteRegionNotificationEndpointRequest>
-                                  serializer = ProtoRestSerializer.create();
-                              serializer.putPathParam(
-                                  fields,
-                                  "notificationEndpoint",
-                                  request.getNotificationEndpoint());
-                              serializer.putPathParam(fields, "project", request.getProject());
-                              serializer.putPathParam(fields, "region", request.getRegion());
-                              return fields;
-                            }
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<DeleteRegionNotificationEndpointRequest>
+                                serializer = ProtoRestSerializer.create();
+                            serializer.putPathParam(
+                                fields, "notificationEndpoint", request.getNotificationEndpoint());
+                            serializer.putPathParam(fields, "project", request.getProject());
+                            serializer.putPathParam(fields, "region", request.getRegion());
+                            return fields;
                           })
                       .setQueryParamsExtractor(
-                          new FieldsExtractor<
-                              DeleteRegionNotificationEndpointRequest,
-                              Map<String, List<String>>>() {
-                            @Override
-                            public Map<String, List<String>> extract(
-                                DeleteRegionNotificationEndpointRequest request) {
-                              Map<String, List<String>> fields = new HashMap<>();
-                              ProtoRestSerializer<DeleteRegionNotificationEndpointRequest>
-                                  serializer = ProtoRestSerializer.create();
-                              if (request.hasRequestId()) {
-                                serializer.putQueryParam(
-                                    fields, "requestId", request.getRequestId());
-                              }
-                              return fields;
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<DeleteRegionNotificationEndpointRequest>
+                                serializer = ProtoRestSerializer.create();
+                            if (request.hasRequestId()) {
+                              serializer.putQueryParam(fields, "requestId", request.getRequestId());
                             }
+                            return fields;
                           })
-                      .setRequestBodyExtractor(
-                          new FieldsExtractor<DeleteRegionNotificationEndpointRequest, String>() {
-                            @Override
-                            public String extract(DeleteRegionNotificationEndpointRequest request) {
-                              return null;
-                            }
-                          })
+                      .setRequestBodyExtractor(request -> null)
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -124,42 +103,24 @@ public class HttpJsonRegionNotificationEndpointsStub extends RegionNotificationE
                   ProtoMessageRequestFormatter.<GetRegionNotificationEndpointRequest>newBuilder()
                       .setPath(
                           "/compute/v1/projects/{project}/regions/{region}/notificationEndpoints/{notificationEndpoint}",
-                          new FieldsExtractor<
-                              GetRegionNotificationEndpointRequest, Map<String, String>>() {
-                            @Override
-                            public Map<String, String> extract(
-                                GetRegionNotificationEndpointRequest request) {
-                              Map<String, String> fields = new HashMap<>();
-                              ProtoRestSerializer<GetRegionNotificationEndpointRequest> serializer =
-                                  ProtoRestSerializer.create();
-                              serializer.putPathParam(
-                                  fields,
-                                  "notificationEndpoint",
-                                  request.getNotificationEndpoint());
-                              serializer.putPathParam(fields, "project", request.getProject());
-                              serializer.putPathParam(fields, "region", request.getRegion());
-                              return fields;
-                            }
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<GetRegionNotificationEndpointRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(
+                                fields, "notificationEndpoint", request.getNotificationEndpoint());
+                            serializer.putPathParam(fields, "project", request.getProject());
+                            serializer.putPathParam(fields, "region", request.getRegion());
+                            return fields;
                           })
                       .setQueryParamsExtractor(
-                          new FieldsExtractor<
-                              GetRegionNotificationEndpointRequest, Map<String, List<String>>>() {
-                            @Override
-                            public Map<String, List<String>> extract(
-                                GetRegionNotificationEndpointRequest request) {
-                              Map<String, List<String>> fields = new HashMap<>();
-                              ProtoRestSerializer<GetRegionNotificationEndpointRequest> serializer =
-                                  ProtoRestSerializer.create();
-                              return fields;
-                            }
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<GetRegionNotificationEndpointRequest> serializer =
+                                ProtoRestSerializer.create();
+                            return fields;
                           })
-                      .setRequestBodyExtractor(
-                          new FieldsExtractor<GetRegionNotificationEndpointRequest, String>() {
-                            @Override
-                            public String extract(GetRegionNotificationEndpointRequest request) {
-                              return null;
-                            }
-                          })
+                      .setRequestBodyExtractor(request -> null)
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<NotificationEndpoint>newBuilder()
@@ -176,46 +137,30 @@ public class HttpJsonRegionNotificationEndpointsStub extends RegionNotificationE
                   ProtoMessageRequestFormatter.<InsertRegionNotificationEndpointRequest>newBuilder()
                       .setPath(
                           "/compute/v1/projects/{project}/regions/{region}/notificationEndpoints",
-                          new FieldsExtractor<
-                              InsertRegionNotificationEndpointRequest, Map<String, String>>() {
-                            @Override
-                            public Map<String, String> extract(
-                                InsertRegionNotificationEndpointRequest request) {
-                              Map<String, String> fields = new HashMap<>();
-                              ProtoRestSerializer<InsertRegionNotificationEndpointRequest>
-                                  serializer = ProtoRestSerializer.create();
-                              serializer.putPathParam(fields, "project", request.getProject());
-                              serializer.putPathParam(fields, "region", request.getRegion());
-                              return fields;
-                            }
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<InsertRegionNotificationEndpointRequest>
+                                serializer = ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "project", request.getProject());
+                            serializer.putPathParam(fields, "region", request.getRegion());
+                            return fields;
                           })
                       .setQueryParamsExtractor(
-                          new FieldsExtractor<
-                              InsertRegionNotificationEndpointRequest,
-                              Map<String, List<String>>>() {
-                            @Override
-                            public Map<String, List<String>> extract(
-                                InsertRegionNotificationEndpointRequest request) {
-                              Map<String, List<String>> fields = new HashMap<>();
-                              ProtoRestSerializer<InsertRegionNotificationEndpointRequest>
-                                  serializer = ProtoRestSerializer.create();
-                              if (request.hasRequestId()) {
-                                serializer.putQueryParam(
-                                    fields, "requestId", request.getRequestId());
-                              }
-                              return fields;
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<InsertRegionNotificationEndpointRequest>
+                                serializer = ProtoRestSerializer.create();
+                            if (request.hasRequestId()) {
+                              serializer.putQueryParam(fields, "requestId", request.getRequestId());
                             }
+                            return fields;
                           })
                       .setRequestBodyExtractor(
-                          new FieldsExtractor<InsertRegionNotificationEndpointRequest, String>() {
-                            @Override
-                            public String extract(InsertRegionNotificationEndpointRequest request) {
-                              return ProtoRestSerializer.create()
+                          request ->
+                              ProtoRestSerializer.create()
                                   .toBody(
                                       "notificationEndpointResource",
-                                      request.getNotificationEndpointResource());
-                            }
-                          })
+                                      request.getNotificationEndpointResource()))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -234,58 +179,41 @@ public class HttpJsonRegionNotificationEndpointsStub extends RegionNotificationE
                   ProtoMessageRequestFormatter.<ListRegionNotificationEndpointsRequest>newBuilder()
                       .setPath(
                           "/compute/v1/projects/{project}/regions/{region}/notificationEndpoints",
-                          new FieldsExtractor<
-                              ListRegionNotificationEndpointsRequest, Map<String, String>>() {
-                            @Override
-                            public Map<String, String> extract(
-                                ListRegionNotificationEndpointsRequest request) {
-                              Map<String, String> fields = new HashMap<>();
-                              ProtoRestSerializer<ListRegionNotificationEndpointsRequest>
-                                  serializer = ProtoRestSerializer.create();
-                              serializer.putPathParam(fields, "project", request.getProject());
-                              serializer.putPathParam(fields, "region", request.getRegion());
-                              return fields;
-                            }
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<ListRegionNotificationEndpointsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "project", request.getProject());
+                            serializer.putPathParam(fields, "region", request.getRegion());
+                            return fields;
                           })
                       .setQueryParamsExtractor(
-                          new FieldsExtractor<
-                              ListRegionNotificationEndpointsRequest, Map<String, List<String>>>() {
-                            @Override
-                            public Map<String, List<String>> extract(
-                                ListRegionNotificationEndpointsRequest request) {
-                              Map<String, List<String>> fields = new HashMap<>();
-                              ProtoRestSerializer<ListRegionNotificationEndpointsRequest>
-                                  serializer = ProtoRestSerializer.create();
-                              if (request.hasFilter()) {
-                                serializer.putQueryParam(fields, "filter", request.getFilter());
-                              }
-                              if (request.hasMaxResults()) {
-                                serializer.putQueryParam(
-                                    fields, "maxResults", request.getMaxResults());
-                              }
-                              if (request.hasOrderBy()) {
-                                serializer.putQueryParam(fields, "orderBy", request.getOrderBy());
-                              }
-                              if (request.hasPageToken()) {
-                                serializer.putQueryParam(
-                                    fields, "pageToken", request.getPageToken());
-                              }
-                              if (request.hasReturnPartialSuccess()) {
-                                serializer.putQueryParam(
-                                    fields,
-                                    "returnPartialSuccess",
-                                    request.getReturnPartialSuccess());
-                              }
-                              return fields;
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<ListRegionNotificationEndpointsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            if (request.hasFilter()) {
+                              serializer.putQueryParam(fields, "filter", request.getFilter());
                             }
-                          })
-                      .setRequestBodyExtractor(
-                          new FieldsExtractor<ListRegionNotificationEndpointsRequest, String>() {
-                            @Override
-                            public String extract(ListRegionNotificationEndpointsRequest request) {
-                              return null;
+                            if (request.hasMaxResults()) {
+                              serializer.putQueryParam(
+                                  fields, "maxResults", request.getMaxResults());
                             }
+                            if (request.hasOrderBy()) {
+                              serializer.putQueryParam(fields, "orderBy", request.getOrderBy());
+                            }
+                            if (request.hasPageToken()) {
+                              serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            }
+                            if (request.hasReturnPartialSuccess()) {
+                              serializer.putQueryParam(
+                                  fields,
+                                  "returnPartialSuccess",
+                                  request.getReturnPartialSuccess());
+                            }
+                            return fields;
                           })
+                      .setRequestBodyExtractor(request -> null)
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<NotificationEndpointList>newBuilder()
@@ -429,7 +357,13 @@ public class HttpJsonRegionNotificationEndpointsStub extends RegionNotificationE
 
   @Override
   public final void close() {
-    shutdown();
+    try {
+      backgroundResources.close();
+    } catch (RuntimeException e) {
+      throw e;
+    } catch (Exception e) {
+      throw new IllegalStateException("Failed to close resource", e);
+    }
   }
 
   @Override

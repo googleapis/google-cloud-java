@@ -16,7 +16,6 @@
 
 package com.google.cloud.compute.v1;
 
-import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
 import com.google.api.core.BetaApi;
@@ -1380,12 +1379,7 @@ public class SubnetworksClient implements BackgroundResource {
           AggregatedListPage.createEmptyPage().createPageAsync(context, futureResponse);
       return ApiFutures.transform(
           futurePage,
-          new ApiFunction<AggregatedListPage, AggregatedListPagedResponse>() {
-            @Override
-            public AggregatedListPagedResponse apply(AggregatedListPage input) {
-              return new AggregatedListPagedResponse(input);
-            }
-          },
+          input -> new AggregatedListPagedResponse(input),
           MoreExecutors.directExecutor());
     }
 
@@ -1471,14 +1465,7 @@ public class SubnetworksClient implements BackgroundResource {
       ApiFuture<ListPage> futurePage =
           ListPage.createEmptyPage().createPageAsync(context, futureResponse);
       return ApiFutures.transform(
-          futurePage,
-          new ApiFunction<ListPage, ListPagedResponse>() {
-            @Override
-            public ListPagedResponse apply(ListPage input) {
-              return new ListPagedResponse(input);
-            }
-          },
-          MoreExecutors.directExecutor());
+          futurePage, input -> new ListPagedResponse(input), MoreExecutors.directExecutor());
     }
 
     private ListPagedResponse(ListPage page) {
@@ -1547,14 +1534,7 @@ public class SubnetworksClient implements BackgroundResource {
       ApiFuture<ListUsablePage> futurePage =
           ListUsablePage.createEmptyPage().createPageAsync(context, futureResponse);
       return ApiFutures.transform(
-          futurePage,
-          new ApiFunction<ListUsablePage, ListUsablePagedResponse>() {
-            @Override
-            public ListUsablePagedResponse apply(ListUsablePage input) {
-              return new ListUsablePagedResponse(input);
-            }
-          },
-          MoreExecutors.directExecutor());
+          futurePage, input -> new ListUsablePagedResponse(input), MoreExecutors.directExecutor());
     }
 
     private ListUsablePagedResponse(ListUsablePage page) {

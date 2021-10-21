@@ -25,7 +25,6 @@ import com.google.api.core.InternalApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.httpjson.ApiMethodDescriptor;
-import com.google.api.gax.httpjson.FieldsExtractor;
 import com.google.api.gax.httpjson.HttpJsonCallSettings;
 import com.google.api.gax.httpjson.HttpJsonStubCallableFactory;
 import com.google.api.gax.httpjson.ProtoMessageRequestFormatter;
@@ -78,46 +77,31 @@ public class HttpJsonDisksStub extends DisksStub {
                   ProtoMessageRequestFormatter.<AddResourcePoliciesDiskRequest>newBuilder()
                       .setPath(
                           "/compute/v1/projects/{project}/zones/{zone}/disks/{disk}/addResourcePolicies",
-                          new FieldsExtractor<
-                              AddResourcePoliciesDiskRequest, Map<String, String>>() {
-                            @Override
-                            public Map<String, String> extract(
-                                AddResourcePoliciesDiskRequest request) {
-                              Map<String, String> fields = new HashMap<>();
-                              ProtoRestSerializer<AddResourcePoliciesDiskRequest> serializer =
-                                  ProtoRestSerializer.create();
-                              serializer.putPathParam(fields, "disk", request.getDisk());
-                              serializer.putPathParam(fields, "project", request.getProject());
-                              serializer.putPathParam(fields, "zone", request.getZone());
-                              return fields;
-                            }
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<AddResourcePoliciesDiskRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "disk", request.getDisk());
+                            serializer.putPathParam(fields, "project", request.getProject());
+                            serializer.putPathParam(fields, "zone", request.getZone());
+                            return fields;
                           })
                       .setQueryParamsExtractor(
-                          new FieldsExtractor<
-                              AddResourcePoliciesDiskRequest, Map<String, List<String>>>() {
-                            @Override
-                            public Map<String, List<String>> extract(
-                                AddResourcePoliciesDiskRequest request) {
-                              Map<String, List<String>> fields = new HashMap<>();
-                              ProtoRestSerializer<AddResourcePoliciesDiskRequest> serializer =
-                                  ProtoRestSerializer.create();
-                              if (request.hasRequestId()) {
-                                serializer.putQueryParam(
-                                    fields, "requestId", request.getRequestId());
-                              }
-                              return fields;
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<AddResourcePoliciesDiskRequest> serializer =
+                                ProtoRestSerializer.create();
+                            if (request.hasRequestId()) {
+                              serializer.putQueryParam(fields, "requestId", request.getRequestId());
                             }
+                            return fields;
                           })
                       .setRequestBodyExtractor(
-                          new FieldsExtractor<AddResourcePoliciesDiskRequest, String>() {
-                            @Override
-                            public String extract(AddResourcePoliciesDiskRequest request) {
-                              return ProtoRestSerializer.create()
+                          request ->
+                              ProtoRestSerializer.create()
                                   .toBody(
                                       "disksAddResourcePoliciesRequestResource",
-                                      request.getDisksAddResourcePoliciesRequestResource());
-                            }
-                          })
+                                      request.getDisksAddResourcePoliciesRequestResource()))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -134,59 +118,44 @@ public class HttpJsonDisksStub extends DisksStub {
                   ProtoMessageRequestFormatter.<AggregatedListDisksRequest>newBuilder()
                       .setPath(
                           "/compute/v1/projects/{project}/aggregated/disks",
-                          new FieldsExtractor<AggregatedListDisksRequest, Map<String, String>>() {
-                            @Override
-                            public Map<String, String> extract(AggregatedListDisksRequest request) {
-                              Map<String, String> fields = new HashMap<>();
-                              ProtoRestSerializer<AggregatedListDisksRequest> serializer =
-                                  ProtoRestSerializer.create();
-                              serializer.putPathParam(fields, "project", request.getProject());
-                              return fields;
-                            }
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<AggregatedListDisksRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "project", request.getProject());
+                            return fields;
                           })
                       .setQueryParamsExtractor(
-                          new FieldsExtractor<
-                              AggregatedListDisksRequest, Map<String, List<String>>>() {
-                            @Override
-                            public Map<String, List<String>> extract(
-                                AggregatedListDisksRequest request) {
-                              Map<String, List<String>> fields = new HashMap<>();
-                              ProtoRestSerializer<AggregatedListDisksRequest> serializer =
-                                  ProtoRestSerializer.create();
-                              if (request.hasFilter()) {
-                                serializer.putQueryParam(fields, "filter", request.getFilter());
-                              }
-                              if (request.hasIncludeAllScopes()) {
-                                serializer.putQueryParam(
-                                    fields, "includeAllScopes", request.getIncludeAllScopes());
-                              }
-                              if (request.hasMaxResults()) {
-                                serializer.putQueryParam(
-                                    fields, "maxResults", request.getMaxResults());
-                              }
-                              if (request.hasOrderBy()) {
-                                serializer.putQueryParam(fields, "orderBy", request.getOrderBy());
-                              }
-                              if (request.hasPageToken()) {
-                                serializer.putQueryParam(
-                                    fields, "pageToken", request.getPageToken());
-                              }
-                              if (request.hasReturnPartialSuccess()) {
-                                serializer.putQueryParam(
-                                    fields,
-                                    "returnPartialSuccess",
-                                    request.getReturnPartialSuccess());
-                              }
-                              return fields;
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<AggregatedListDisksRequest> serializer =
+                                ProtoRestSerializer.create();
+                            if (request.hasFilter()) {
+                              serializer.putQueryParam(fields, "filter", request.getFilter());
                             }
-                          })
-                      .setRequestBodyExtractor(
-                          new FieldsExtractor<AggregatedListDisksRequest, String>() {
-                            @Override
-                            public String extract(AggregatedListDisksRequest request) {
-                              return null;
+                            if (request.hasIncludeAllScopes()) {
+                              serializer.putQueryParam(
+                                  fields, "includeAllScopes", request.getIncludeAllScopes());
                             }
+                            if (request.hasMaxResults()) {
+                              serializer.putQueryParam(
+                                  fields, "maxResults", request.getMaxResults());
+                            }
+                            if (request.hasOrderBy()) {
+                              serializer.putQueryParam(fields, "orderBy", request.getOrderBy());
+                            }
+                            if (request.hasPageToken()) {
+                              serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            }
+                            if (request.hasReturnPartialSuccess()) {
+                              serializer.putQueryParam(
+                                  fields,
+                                  "returnPartialSuccess",
+                                  request.getReturnPartialSuccess());
+                            }
+                            return fields;
                           })
+                      .setRequestBodyExtractor(request -> null)
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<DiskAggregatedList>newBuilder()
@@ -203,46 +172,33 @@ public class HttpJsonDisksStub extends DisksStub {
                   ProtoMessageRequestFormatter.<CreateSnapshotDiskRequest>newBuilder()
                       .setPath(
                           "/compute/v1/projects/{project}/zones/{zone}/disks/{disk}/createSnapshot",
-                          new FieldsExtractor<CreateSnapshotDiskRequest, Map<String, String>>() {
-                            @Override
-                            public Map<String, String> extract(CreateSnapshotDiskRequest request) {
-                              Map<String, String> fields = new HashMap<>();
-                              ProtoRestSerializer<CreateSnapshotDiskRequest> serializer =
-                                  ProtoRestSerializer.create();
-                              serializer.putPathParam(fields, "disk", request.getDisk());
-                              serializer.putPathParam(fields, "project", request.getProject());
-                              serializer.putPathParam(fields, "zone", request.getZone());
-                              return fields;
-                            }
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<CreateSnapshotDiskRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "disk", request.getDisk());
+                            serializer.putPathParam(fields, "project", request.getProject());
+                            serializer.putPathParam(fields, "zone", request.getZone());
+                            return fields;
                           })
                       .setQueryParamsExtractor(
-                          new FieldsExtractor<
-                              CreateSnapshotDiskRequest, Map<String, List<String>>>() {
-                            @Override
-                            public Map<String, List<String>> extract(
-                                CreateSnapshotDiskRequest request) {
-                              Map<String, List<String>> fields = new HashMap<>();
-                              ProtoRestSerializer<CreateSnapshotDiskRequest> serializer =
-                                  ProtoRestSerializer.create();
-                              if (request.hasGuestFlush()) {
-                                serializer.putQueryParam(
-                                    fields, "guestFlush", request.getGuestFlush());
-                              }
-                              if (request.hasRequestId()) {
-                                serializer.putQueryParam(
-                                    fields, "requestId", request.getRequestId());
-                              }
-                              return fields;
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<CreateSnapshotDiskRequest> serializer =
+                                ProtoRestSerializer.create();
+                            if (request.hasGuestFlush()) {
+                              serializer.putQueryParam(
+                                  fields, "guestFlush", request.getGuestFlush());
                             }
+                            if (request.hasRequestId()) {
+                              serializer.putQueryParam(fields, "requestId", request.getRequestId());
+                            }
+                            return fields;
                           })
                       .setRequestBodyExtractor(
-                          new FieldsExtractor<CreateSnapshotDiskRequest, String>() {
-                            @Override
-                            public String extract(CreateSnapshotDiskRequest request) {
-                              return ProtoRestSerializer.create()
-                                  .toBody("snapshotResource", request.getSnapshotResource());
-                            }
-                          })
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("snapshotResource", request.getSnapshotResource()))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -258,38 +214,26 @@ public class HttpJsonDisksStub extends DisksStub {
               ProtoMessageRequestFormatter.<DeleteDiskRequest>newBuilder()
                   .setPath(
                       "/compute/v1/projects/{project}/zones/{zone}/disks/{disk}",
-                      new FieldsExtractor<DeleteDiskRequest, Map<String, String>>() {
-                        @Override
-                        public Map<String, String> extract(DeleteDiskRequest request) {
-                          Map<String, String> fields = new HashMap<>();
-                          ProtoRestSerializer<DeleteDiskRequest> serializer =
-                              ProtoRestSerializer.create();
-                          serializer.putPathParam(fields, "disk", request.getDisk());
-                          serializer.putPathParam(fields, "project", request.getProject());
-                          serializer.putPathParam(fields, "zone", request.getZone());
-                          return fields;
-                        }
+                      request -> {
+                        Map<String, String> fields = new HashMap<>();
+                        ProtoRestSerializer<DeleteDiskRequest> serializer =
+                            ProtoRestSerializer.create();
+                        serializer.putPathParam(fields, "disk", request.getDisk());
+                        serializer.putPathParam(fields, "project", request.getProject());
+                        serializer.putPathParam(fields, "zone", request.getZone());
+                        return fields;
                       })
                   .setQueryParamsExtractor(
-                      new FieldsExtractor<DeleteDiskRequest, Map<String, List<String>>>() {
-                        @Override
-                        public Map<String, List<String>> extract(DeleteDiskRequest request) {
-                          Map<String, List<String>> fields = new HashMap<>();
-                          ProtoRestSerializer<DeleteDiskRequest> serializer =
-                              ProtoRestSerializer.create();
-                          if (request.hasRequestId()) {
-                            serializer.putQueryParam(fields, "requestId", request.getRequestId());
-                          }
-                          return fields;
+                      request -> {
+                        Map<String, List<String>> fields = new HashMap<>();
+                        ProtoRestSerializer<DeleteDiskRequest> serializer =
+                            ProtoRestSerializer.create();
+                        if (request.hasRequestId()) {
+                          serializer.putQueryParam(fields, "requestId", request.getRequestId());
                         }
+                        return fields;
                       })
-                  .setRequestBodyExtractor(
-                      new FieldsExtractor<DeleteDiskRequest, String>() {
-                        @Override
-                        public String extract(DeleteDiskRequest request) {
-                          return null;
-                        }
-                      })
+                  .setRequestBodyExtractor(request -> null)
                   .build())
           .setResponseParser(
               ProtoMessageResponseParser.<Operation>newBuilder()
@@ -305,35 +249,23 @@ public class HttpJsonDisksStub extends DisksStub {
               ProtoMessageRequestFormatter.<GetDiskRequest>newBuilder()
                   .setPath(
                       "/compute/v1/projects/{project}/zones/{zone}/disks/{disk}",
-                      new FieldsExtractor<GetDiskRequest, Map<String, String>>() {
-                        @Override
-                        public Map<String, String> extract(GetDiskRequest request) {
-                          Map<String, String> fields = new HashMap<>();
-                          ProtoRestSerializer<GetDiskRequest> serializer =
-                              ProtoRestSerializer.create();
-                          serializer.putPathParam(fields, "disk", request.getDisk());
-                          serializer.putPathParam(fields, "project", request.getProject());
-                          serializer.putPathParam(fields, "zone", request.getZone());
-                          return fields;
-                        }
+                      request -> {
+                        Map<String, String> fields = new HashMap<>();
+                        ProtoRestSerializer<GetDiskRequest> serializer =
+                            ProtoRestSerializer.create();
+                        serializer.putPathParam(fields, "disk", request.getDisk());
+                        serializer.putPathParam(fields, "project", request.getProject());
+                        serializer.putPathParam(fields, "zone", request.getZone());
+                        return fields;
                       })
                   .setQueryParamsExtractor(
-                      new FieldsExtractor<GetDiskRequest, Map<String, List<String>>>() {
-                        @Override
-                        public Map<String, List<String>> extract(GetDiskRequest request) {
-                          Map<String, List<String>> fields = new HashMap<>();
-                          ProtoRestSerializer<GetDiskRequest> serializer =
-                              ProtoRestSerializer.create();
-                          return fields;
-                        }
+                      request -> {
+                        Map<String, List<String>> fields = new HashMap<>();
+                        ProtoRestSerializer<GetDiskRequest> serializer =
+                            ProtoRestSerializer.create();
+                        return fields;
                       })
-                  .setRequestBodyExtractor(
-                      new FieldsExtractor<GetDiskRequest, String>() {
-                        @Override
-                        public String extract(GetDiskRequest request) {
-                          return null;
-                        }
-                      })
+                  .setRequestBodyExtractor(request -> null)
                   .build())
           .setResponseParser(
               ProtoMessageResponseParser.<Disk>newBuilder()
@@ -350,43 +282,29 @@ public class HttpJsonDisksStub extends DisksStub {
                   ProtoMessageRequestFormatter.<GetIamPolicyDiskRequest>newBuilder()
                       .setPath(
                           "/compute/v1/projects/{project}/zones/{zone}/disks/{resource}/getIamPolicy",
-                          new FieldsExtractor<GetIamPolicyDiskRequest, Map<String, String>>() {
-                            @Override
-                            public Map<String, String> extract(GetIamPolicyDiskRequest request) {
-                              Map<String, String> fields = new HashMap<>();
-                              ProtoRestSerializer<GetIamPolicyDiskRequest> serializer =
-                                  ProtoRestSerializer.create();
-                              serializer.putPathParam(fields, "project", request.getProject());
-                              serializer.putPathParam(fields, "resource", request.getResource());
-                              serializer.putPathParam(fields, "zone", request.getZone());
-                              return fields;
-                            }
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<GetIamPolicyDiskRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "project", request.getProject());
+                            serializer.putPathParam(fields, "resource", request.getResource());
+                            serializer.putPathParam(fields, "zone", request.getZone());
+                            return fields;
                           })
                       .setQueryParamsExtractor(
-                          new FieldsExtractor<
-                              GetIamPolicyDiskRequest, Map<String, List<String>>>() {
-                            @Override
-                            public Map<String, List<String>> extract(
-                                GetIamPolicyDiskRequest request) {
-                              Map<String, List<String>> fields = new HashMap<>();
-                              ProtoRestSerializer<GetIamPolicyDiskRequest> serializer =
-                                  ProtoRestSerializer.create();
-                              if (request.hasOptionsRequestedPolicyVersion()) {
-                                serializer.putQueryParam(
-                                    fields,
-                                    "optionsRequestedPolicyVersion",
-                                    request.getOptionsRequestedPolicyVersion());
-                              }
-                              return fields;
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<GetIamPolicyDiskRequest> serializer =
+                                ProtoRestSerializer.create();
+                            if (request.hasOptionsRequestedPolicyVersion()) {
+                              serializer.putQueryParam(
+                                  fields,
+                                  "optionsRequestedPolicyVersion",
+                                  request.getOptionsRequestedPolicyVersion());
                             }
+                            return fields;
                           })
-                      .setRequestBodyExtractor(
-                          new FieldsExtractor<GetIamPolicyDiskRequest, String>() {
-                            @Override
-                            public String extract(GetIamPolicyDiskRequest request) {
-                              return null;
-                            }
-                          })
+                      .setRequestBodyExtractor(request -> null)
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Policy>newBuilder()
@@ -402,42 +320,31 @@ public class HttpJsonDisksStub extends DisksStub {
               ProtoMessageRequestFormatter.<InsertDiskRequest>newBuilder()
                   .setPath(
                       "/compute/v1/projects/{project}/zones/{zone}/disks",
-                      new FieldsExtractor<InsertDiskRequest, Map<String, String>>() {
-                        @Override
-                        public Map<String, String> extract(InsertDiskRequest request) {
-                          Map<String, String> fields = new HashMap<>();
-                          ProtoRestSerializer<InsertDiskRequest> serializer =
-                              ProtoRestSerializer.create();
-                          serializer.putPathParam(fields, "project", request.getProject());
-                          serializer.putPathParam(fields, "zone", request.getZone());
-                          return fields;
-                        }
+                      request -> {
+                        Map<String, String> fields = new HashMap<>();
+                        ProtoRestSerializer<InsertDiskRequest> serializer =
+                            ProtoRestSerializer.create();
+                        serializer.putPathParam(fields, "project", request.getProject());
+                        serializer.putPathParam(fields, "zone", request.getZone());
+                        return fields;
                       })
                   .setQueryParamsExtractor(
-                      new FieldsExtractor<InsertDiskRequest, Map<String, List<String>>>() {
-                        @Override
-                        public Map<String, List<String>> extract(InsertDiskRequest request) {
-                          Map<String, List<String>> fields = new HashMap<>();
-                          ProtoRestSerializer<InsertDiskRequest> serializer =
-                              ProtoRestSerializer.create();
-                          if (request.hasRequestId()) {
-                            serializer.putQueryParam(fields, "requestId", request.getRequestId());
-                          }
-                          if (request.hasSourceImage()) {
-                            serializer.putQueryParam(
-                                fields, "sourceImage", request.getSourceImage());
-                          }
-                          return fields;
+                      request -> {
+                        Map<String, List<String>> fields = new HashMap<>();
+                        ProtoRestSerializer<InsertDiskRequest> serializer =
+                            ProtoRestSerializer.create();
+                        if (request.hasRequestId()) {
+                          serializer.putQueryParam(fields, "requestId", request.getRequestId());
                         }
+                        if (request.hasSourceImage()) {
+                          serializer.putQueryParam(fields, "sourceImage", request.getSourceImage());
+                        }
+                        return fields;
                       })
                   .setRequestBodyExtractor(
-                      new FieldsExtractor<InsertDiskRequest, String>() {
-                        @Override
-                        public String extract(InsertDiskRequest request) {
-                          return ProtoRestSerializer.create()
-                              .toBody("diskResource", request.getDiskResource());
-                        }
-                      })
+                      request ->
+                          ProtoRestSerializer.create()
+                              .toBody("diskResource", request.getDiskResource()))
                   .build())
           .setResponseParser(
               ProtoMessageResponseParser.<Operation>newBuilder()
@@ -453,50 +360,38 @@ public class HttpJsonDisksStub extends DisksStub {
               ProtoMessageRequestFormatter.<ListDisksRequest>newBuilder()
                   .setPath(
                       "/compute/v1/projects/{project}/zones/{zone}/disks",
-                      new FieldsExtractor<ListDisksRequest, Map<String, String>>() {
-                        @Override
-                        public Map<String, String> extract(ListDisksRequest request) {
-                          Map<String, String> fields = new HashMap<>();
-                          ProtoRestSerializer<ListDisksRequest> serializer =
-                              ProtoRestSerializer.create();
-                          serializer.putPathParam(fields, "project", request.getProject());
-                          serializer.putPathParam(fields, "zone", request.getZone());
-                          return fields;
-                        }
+                      request -> {
+                        Map<String, String> fields = new HashMap<>();
+                        ProtoRestSerializer<ListDisksRequest> serializer =
+                            ProtoRestSerializer.create();
+                        serializer.putPathParam(fields, "project", request.getProject());
+                        serializer.putPathParam(fields, "zone", request.getZone());
+                        return fields;
                       })
                   .setQueryParamsExtractor(
-                      new FieldsExtractor<ListDisksRequest, Map<String, List<String>>>() {
-                        @Override
-                        public Map<String, List<String>> extract(ListDisksRequest request) {
-                          Map<String, List<String>> fields = new HashMap<>();
-                          ProtoRestSerializer<ListDisksRequest> serializer =
-                              ProtoRestSerializer.create();
-                          if (request.hasFilter()) {
-                            serializer.putQueryParam(fields, "filter", request.getFilter());
-                          }
-                          if (request.hasMaxResults()) {
-                            serializer.putQueryParam(fields, "maxResults", request.getMaxResults());
-                          }
-                          if (request.hasOrderBy()) {
-                            serializer.putQueryParam(fields, "orderBy", request.getOrderBy());
-                          }
-                          if (request.hasPageToken()) {
-                            serializer.putQueryParam(fields, "pageToken", request.getPageToken());
-                          }
-                          if (request.hasReturnPartialSuccess()) {
-                            serializer.putQueryParam(
-                                fields, "returnPartialSuccess", request.getReturnPartialSuccess());
-                          }
-                          return fields;
+                      request -> {
+                        Map<String, List<String>> fields = new HashMap<>();
+                        ProtoRestSerializer<ListDisksRequest> serializer =
+                            ProtoRestSerializer.create();
+                        if (request.hasFilter()) {
+                          serializer.putQueryParam(fields, "filter", request.getFilter());
                         }
-                      })
-                  .setRequestBodyExtractor(
-                      new FieldsExtractor<ListDisksRequest, String>() {
-                        @Override
-                        public String extract(ListDisksRequest request) {
-                          return null;
+                        if (request.hasMaxResults()) {
+                          serializer.putQueryParam(fields, "maxResults", request.getMaxResults());
                         }
+                        if (request.hasOrderBy()) {
+                          serializer.putQueryParam(fields, "orderBy", request.getOrderBy());
+                        }
+                        if (request.hasPageToken()) {
+                          serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                        }
+                        if (request.hasReturnPartialSuccess()) {
+                          serializer.putQueryParam(
+                              fields, "returnPartialSuccess", request.getReturnPartialSuccess());
+                        }
+                        return fields;
                       })
+                  .setRequestBodyExtractor(request -> null)
                   .build())
           .setResponseParser(
               ProtoMessageResponseParser.<DiskList>newBuilder()
@@ -513,46 +408,31 @@ public class HttpJsonDisksStub extends DisksStub {
                   ProtoMessageRequestFormatter.<RemoveResourcePoliciesDiskRequest>newBuilder()
                       .setPath(
                           "/compute/v1/projects/{project}/zones/{zone}/disks/{disk}/removeResourcePolicies",
-                          new FieldsExtractor<
-                              RemoveResourcePoliciesDiskRequest, Map<String, String>>() {
-                            @Override
-                            public Map<String, String> extract(
-                                RemoveResourcePoliciesDiskRequest request) {
-                              Map<String, String> fields = new HashMap<>();
-                              ProtoRestSerializer<RemoveResourcePoliciesDiskRequest> serializer =
-                                  ProtoRestSerializer.create();
-                              serializer.putPathParam(fields, "disk", request.getDisk());
-                              serializer.putPathParam(fields, "project", request.getProject());
-                              serializer.putPathParam(fields, "zone", request.getZone());
-                              return fields;
-                            }
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<RemoveResourcePoliciesDiskRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "disk", request.getDisk());
+                            serializer.putPathParam(fields, "project", request.getProject());
+                            serializer.putPathParam(fields, "zone", request.getZone());
+                            return fields;
                           })
                       .setQueryParamsExtractor(
-                          new FieldsExtractor<
-                              RemoveResourcePoliciesDiskRequest, Map<String, List<String>>>() {
-                            @Override
-                            public Map<String, List<String>> extract(
-                                RemoveResourcePoliciesDiskRequest request) {
-                              Map<String, List<String>> fields = new HashMap<>();
-                              ProtoRestSerializer<RemoveResourcePoliciesDiskRequest> serializer =
-                                  ProtoRestSerializer.create();
-                              if (request.hasRequestId()) {
-                                serializer.putQueryParam(
-                                    fields, "requestId", request.getRequestId());
-                              }
-                              return fields;
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<RemoveResourcePoliciesDiskRequest> serializer =
+                                ProtoRestSerializer.create();
+                            if (request.hasRequestId()) {
+                              serializer.putQueryParam(fields, "requestId", request.getRequestId());
                             }
+                            return fields;
                           })
                       .setRequestBodyExtractor(
-                          new FieldsExtractor<RemoveResourcePoliciesDiskRequest, String>() {
-                            @Override
-                            public String extract(RemoveResourcePoliciesDiskRequest request) {
-                              return ProtoRestSerializer.create()
+                          request ->
+                              ProtoRestSerializer.create()
                                   .toBody(
                                       "disksRemoveResourcePoliciesRequestResource",
-                                      request.getDisksRemoveResourcePoliciesRequestResource());
-                            }
-                          })
+                                      request.getDisksRemoveResourcePoliciesRequestResource()))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -568,41 +448,31 @@ public class HttpJsonDisksStub extends DisksStub {
               ProtoMessageRequestFormatter.<ResizeDiskRequest>newBuilder()
                   .setPath(
                       "/compute/v1/projects/{project}/zones/{zone}/disks/{disk}/resize",
-                      new FieldsExtractor<ResizeDiskRequest, Map<String, String>>() {
-                        @Override
-                        public Map<String, String> extract(ResizeDiskRequest request) {
-                          Map<String, String> fields = new HashMap<>();
-                          ProtoRestSerializer<ResizeDiskRequest> serializer =
-                              ProtoRestSerializer.create();
-                          serializer.putPathParam(fields, "disk", request.getDisk());
-                          serializer.putPathParam(fields, "project", request.getProject());
-                          serializer.putPathParam(fields, "zone", request.getZone());
-                          return fields;
-                        }
+                      request -> {
+                        Map<String, String> fields = new HashMap<>();
+                        ProtoRestSerializer<ResizeDiskRequest> serializer =
+                            ProtoRestSerializer.create();
+                        serializer.putPathParam(fields, "disk", request.getDisk());
+                        serializer.putPathParam(fields, "project", request.getProject());
+                        serializer.putPathParam(fields, "zone", request.getZone());
+                        return fields;
                       })
                   .setQueryParamsExtractor(
-                      new FieldsExtractor<ResizeDiskRequest, Map<String, List<String>>>() {
-                        @Override
-                        public Map<String, List<String>> extract(ResizeDiskRequest request) {
-                          Map<String, List<String>> fields = new HashMap<>();
-                          ProtoRestSerializer<ResizeDiskRequest> serializer =
-                              ProtoRestSerializer.create();
-                          if (request.hasRequestId()) {
-                            serializer.putQueryParam(fields, "requestId", request.getRequestId());
-                          }
-                          return fields;
+                      request -> {
+                        Map<String, List<String>> fields = new HashMap<>();
+                        ProtoRestSerializer<ResizeDiskRequest> serializer =
+                            ProtoRestSerializer.create();
+                        if (request.hasRequestId()) {
+                          serializer.putQueryParam(fields, "requestId", request.getRequestId());
                         }
+                        return fields;
                       })
                   .setRequestBodyExtractor(
-                      new FieldsExtractor<ResizeDiskRequest, String>() {
-                        @Override
-                        public String extract(ResizeDiskRequest request) {
-                          return ProtoRestSerializer.create()
+                      request ->
+                          ProtoRestSerializer.create()
                               .toBody(
                                   "disksResizeRequestResource",
-                                  request.getDisksResizeRequestResource());
-                        }
-                      })
+                                  request.getDisksResizeRequestResource()))
                   .build())
           .setResponseParser(
               ProtoMessageResponseParser.<Operation>newBuilder()
@@ -619,40 +489,28 @@ public class HttpJsonDisksStub extends DisksStub {
                   ProtoMessageRequestFormatter.<SetIamPolicyDiskRequest>newBuilder()
                       .setPath(
                           "/compute/v1/projects/{project}/zones/{zone}/disks/{resource}/setIamPolicy",
-                          new FieldsExtractor<SetIamPolicyDiskRequest, Map<String, String>>() {
-                            @Override
-                            public Map<String, String> extract(SetIamPolicyDiskRequest request) {
-                              Map<String, String> fields = new HashMap<>();
-                              ProtoRestSerializer<SetIamPolicyDiskRequest> serializer =
-                                  ProtoRestSerializer.create();
-                              serializer.putPathParam(fields, "project", request.getProject());
-                              serializer.putPathParam(fields, "resource", request.getResource());
-                              serializer.putPathParam(fields, "zone", request.getZone());
-                              return fields;
-                            }
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<SetIamPolicyDiskRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "project", request.getProject());
+                            serializer.putPathParam(fields, "resource", request.getResource());
+                            serializer.putPathParam(fields, "zone", request.getZone());
+                            return fields;
                           })
                       .setQueryParamsExtractor(
-                          new FieldsExtractor<
-                              SetIamPolicyDiskRequest, Map<String, List<String>>>() {
-                            @Override
-                            public Map<String, List<String>> extract(
-                                SetIamPolicyDiskRequest request) {
-                              Map<String, List<String>> fields = new HashMap<>();
-                              ProtoRestSerializer<SetIamPolicyDiskRequest> serializer =
-                                  ProtoRestSerializer.create();
-                              return fields;
-                            }
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<SetIamPolicyDiskRequest> serializer =
+                                ProtoRestSerializer.create();
+                            return fields;
                           })
                       .setRequestBodyExtractor(
-                          new FieldsExtractor<SetIamPolicyDiskRequest, String>() {
-                            @Override
-                            public String extract(SetIamPolicyDiskRequest request) {
-                              return ProtoRestSerializer.create()
+                          request ->
+                              ProtoRestSerializer.create()
                                   .toBody(
                                       "zoneSetPolicyRequestResource",
-                                      request.getZoneSetPolicyRequestResource());
-                            }
-                          })
+                                      request.getZoneSetPolicyRequestResource()))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Policy>newBuilder()
@@ -669,42 +527,31 @@ public class HttpJsonDisksStub extends DisksStub {
                   ProtoMessageRequestFormatter.<SetLabelsDiskRequest>newBuilder()
                       .setPath(
                           "/compute/v1/projects/{project}/zones/{zone}/disks/{resource}/setLabels",
-                          new FieldsExtractor<SetLabelsDiskRequest, Map<String, String>>() {
-                            @Override
-                            public Map<String, String> extract(SetLabelsDiskRequest request) {
-                              Map<String, String> fields = new HashMap<>();
-                              ProtoRestSerializer<SetLabelsDiskRequest> serializer =
-                                  ProtoRestSerializer.create();
-                              serializer.putPathParam(fields, "project", request.getProject());
-                              serializer.putPathParam(fields, "resource", request.getResource());
-                              serializer.putPathParam(fields, "zone", request.getZone());
-                              return fields;
-                            }
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<SetLabelsDiskRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "project", request.getProject());
+                            serializer.putPathParam(fields, "resource", request.getResource());
+                            serializer.putPathParam(fields, "zone", request.getZone());
+                            return fields;
                           })
                       .setQueryParamsExtractor(
-                          new FieldsExtractor<SetLabelsDiskRequest, Map<String, List<String>>>() {
-                            @Override
-                            public Map<String, List<String>> extract(SetLabelsDiskRequest request) {
-                              Map<String, List<String>> fields = new HashMap<>();
-                              ProtoRestSerializer<SetLabelsDiskRequest> serializer =
-                                  ProtoRestSerializer.create();
-                              if (request.hasRequestId()) {
-                                serializer.putQueryParam(
-                                    fields, "requestId", request.getRequestId());
-                              }
-                              return fields;
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<SetLabelsDiskRequest> serializer =
+                                ProtoRestSerializer.create();
+                            if (request.hasRequestId()) {
+                              serializer.putQueryParam(fields, "requestId", request.getRequestId());
                             }
+                            return fields;
                           })
                       .setRequestBodyExtractor(
-                          new FieldsExtractor<SetLabelsDiskRequest, String>() {
-                            @Override
-                            public String extract(SetLabelsDiskRequest request) {
-                              return ProtoRestSerializer.create()
+                          request ->
+                              ProtoRestSerializer.create()
                                   .toBody(
                                       "zoneSetLabelsRequestResource",
-                                      request.getZoneSetLabelsRequestResource());
-                            }
-                          })
+                                      request.getZoneSetLabelsRequestResource()))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -721,42 +568,28 @@ public class HttpJsonDisksStub extends DisksStub {
                   ProtoMessageRequestFormatter.<TestIamPermissionsDiskRequest>newBuilder()
                       .setPath(
                           "/compute/v1/projects/{project}/zones/{zone}/disks/{resource}/testIamPermissions",
-                          new FieldsExtractor<
-                              TestIamPermissionsDiskRequest, Map<String, String>>() {
-                            @Override
-                            public Map<String, String> extract(
-                                TestIamPermissionsDiskRequest request) {
-                              Map<String, String> fields = new HashMap<>();
-                              ProtoRestSerializer<TestIamPermissionsDiskRequest> serializer =
-                                  ProtoRestSerializer.create();
-                              serializer.putPathParam(fields, "project", request.getProject());
-                              serializer.putPathParam(fields, "resource", request.getResource());
-                              serializer.putPathParam(fields, "zone", request.getZone());
-                              return fields;
-                            }
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<TestIamPermissionsDiskRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "project", request.getProject());
+                            serializer.putPathParam(fields, "resource", request.getResource());
+                            serializer.putPathParam(fields, "zone", request.getZone());
+                            return fields;
                           })
                       .setQueryParamsExtractor(
-                          new FieldsExtractor<
-                              TestIamPermissionsDiskRequest, Map<String, List<String>>>() {
-                            @Override
-                            public Map<String, List<String>> extract(
-                                TestIamPermissionsDiskRequest request) {
-                              Map<String, List<String>> fields = new HashMap<>();
-                              ProtoRestSerializer<TestIamPermissionsDiskRequest> serializer =
-                                  ProtoRestSerializer.create();
-                              return fields;
-                            }
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<TestIamPermissionsDiskRequest> serializer =
+                                ProtoRestSerializer.create();
+                            return fields;
                           })
                       .setRequestBodyExtractor(
-                          new FieldsExtractor<TestIamPermissionsDiskRequest, String>() {
-                            @Override
-                            public String extract(TestIamPermissionsDiskRequest request) {
-                              return ProtoRestSerializer.create()
+                          request ->
+                              ProtoRestSerializer.create()
                                   .toBody(
                                       "testPermissionsRequestResource",
-                                      request.getTestPermissionsRequestResource());
-                            }
-                          })
+                                      request.getTestPermissionsRequestResource()))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<TestPermissionsResponse>newBuilder()
@@ -1037,7 +870,13 @@ public class HttpJsonDisksStub extends DisksStub {
 
   @Override
   public final void close() {
-    shutdown();
+    try {
+      backgroundResources.close();
+    } catch (RuntimeException e) {
+      throw e;
+    } catch (Exception e) {
+      throw new IllegalStateException("Failed to close resource", e);
+    }
   }
 
   @Override

@@ -26,7 +26,6 @@ import com.google.api.core.InternalApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.httpjson.ApiMethodDescriptor;
-import com.google.api.gax.httpjson.FieldsExtractor;
 import com.google.api.gax.httpjson.HttpJsonCallSettings;
 import com.google.api.gax.httpjson.HttpJsonStubCallableFactory;
 import com.google.api.gax.httpjson.ProtoMessageRequestFormatter;
@@ -79,64 +78,44 @@ public class HttpJsonNetworkEndpointGroupsStub extends NetworkEndpointGroupsStub
                       .<AggregatedListNetworkEndpointGroupsRequest>newBuilder()
                       .setPath(
                           "/compute/v1/projects/{project}/aggregated/networkEndpointGroups",
-                          new FieldsExtractor<
-                              AggregatedListNetworkEndpointGroupsRequest, Map<String, String>>() {
-                            @Override
-                            public Map<String, String> extract(
-                                AggregatedListNetworkEndpointGroupsRequest request) {
-                              Map<String, String> fields = new HashMap<>();
-                              ProtoRestSerializer<AggregatedListNetworkEndpointGroupsRequest>
-                                  serializer = ProtoRestSerializer.create();
-                              serializer.putPathParam(fields, "project", request.getProject());
-                              return fields;
-                            }
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<AggregatedListNetworkEndpointGroupsRequest>
+                                serializer = ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "project", request.getProject());
+                            return fields;
                           })
                       .setQueryParamsExtractor(
-                          new FieldsExtractor<
-                              AggregatedListNetworkEndpointGroupsRequest,
-                              Map<String, List<String>>>() {
-                            @Override
-                            public Map<String, List<String>> extract(
-                                AggregatedListNetworkEndpointGroupsRequest request) {
-                              Map<String, List<String>> fields = new HashMap<>();
-                              ProtoRestSerializer<AggregatedListNetworkEndpointGroupsRequest>
-                                  serializer = ProtoRestSerializer.create();
-                              if (request.hasFilter()) {
-                                serializer.putQueryParam(fields, "filter", request.getFilter());
-                              }
-                              if (request.hasIncludeAllScopes()) {
-                                serializer.putQueryParam(
-                                    fields, "includeAllScopes", request.getIncludeAllScopes());
-                              }
-                              if (request.hasMaxResults()) {
-                                serializer.putQueryParam(
-                                    fields, "maxResults", request.getMaxResults());
-                              }
-                              if (request.hasOrderBy()) {
-                                serializer.putQueryParam(fields, "orderBy", request.getOrderBy());
-                              }
-                              if (request.hasPageToken()) {
-                                serializer.putQueryParam(
-                                    fields, "pageToken", request.getPageToken());
-                              }
-                              if (request.hasReturnPartialSuccess()) {
-                                serializer.putQueryParam(
-                                    fields,
-                                    "returnPartialSuccess",
-                                    request.getReturnPartialSuccess());
-                              }
-                              return fields;
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<AggregatedListNetworkEndpointGroupsRequest>
+                                serializer = ProtoRestSerializer.create();
+                            if (request.hasFilter()) {
+                              serializer.putQueryParam(fields, "filter", request.getFilter());
                             }
-                          })
-                      .setRequestBodyExtractor(
-                          new FieldsExtractor<
-                              AggregatedListNetworkEndpointGroupsRequest, String>() {
-                            @Override
-                            public String extract(
-                                AggregatedListNetworkEndpointGroupsRequest request) {
-                              return null;
+                            if (request.hasIncludeAllScopes()) {
+                              serializer.putQueryParam(
+                                  fields, "includeAllScopes", request.getIncludeAllScopes());
                             }
+                            if (request.hasMaxResults()) {
+                              serializer.putQueryParam(
+                                  fields, "maxResults", request.getMaxResults());
+                            }
+                            if (request.hasOrderBy()) {
+                              serializer.putQueryParam(fields, "orderBy", request.getOrderBy());
+                            }
+                            if (request.hasPageToken()) {
+                              serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            }
+                            if (request.hasReturnPartialSuccess()) {
+                              serializer.putQueryParam(
+                                  fields,
+                                  "returnPartialSuccess",
+                                  request.getReturnPartialSuccess());
+                            }
+                            return fields;
                           })
+                      .setRequestBodyExtractor(request -> null)
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<NetworkEndpointGroupAggregatedList>newBuilder()
@@ -157,54 +136,33 @@ public class HttpJsonNetworkEndpointGroupsStub extends NetworkEndpointGroupsStub
                       .<AttachNetworkEndpointsNetworkEndpointGroupRequest>newBuilder()
                       .setPath(
                           "/compute/v1/projects/{project}/zones/{zone}/networkEndpointGroups/{networkEndpointGroup}/attachNetworkEndpoints",
-                          new FieldsExtractor<
-                              AttachNetworkEndpointsNetworkEndpointGroupRequest,
-                              Map<String, String>>() {
-                            @Override
-                            public Map<String, String> extract(
-                                AttachNetworkEndpointsNetworkEndpointGroupRequest request) {
-                              Map<String, String> fields = new HashMap<>();
-                              ProtoRestSerializer<AttachNetworkEndpointsNetworkEndpointGroupRequest>
-                                  serializer = ProtoRestSerializer.create();
-                              serializer.putPathParam(
-                                  fields,
-                                  "networkEndpointGroup",
-                                  request.getNetworkEndpointGroup());
-                              serializer.putPathParam(fields, "project", request.getProject());
-                              serializer.putPathParam(fields, "zone", request.getZone());
-                              return fields;
-                            }
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<AttachNetworkEndpointsNetworkEndpointGroupRequest>
+                                serializer = ProtoRestSerializer.create();
+                            serializer.putPathParam(
+                                fields, "networkEndpointGroup", request.getNetworkEndpointGroup());
+                            serializer.putPathParam(fields, "project", request.getProject());
+                            serializer.putPathParam(fields, "zone", request.getZone());
+                            return fields;
                           })
                       .setQueryParamsExtractor(
-                          new FieldsExtractor<
-                              AttachNetworkEndpointsNetworkEndpointGroupRequest,
-                              Map<String, List<String>>>() {
-                            @Override
-                            public Map<String, List<String>> extract(
-                                AttachNetworkEndpointsNetworkEndpointGroupRequest request) {
-                              Map<String, List<String>> fields = new HashMap<>();
-                              ProtoRestSerializer<AttachNetworkEndpointsNetworkEndpointGroupRequest>
-                                  serializer = ProtoRestSerializer.create();
-                              if (request.hasRequestId()) {
-                                serializer.putQueryParam(
-                                    fields, "requestId", request.getRequestId());
-                              }
-                              return fields;
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<AttachNetworkEndpointsNetworkEndpointGroupRequest>
+                                serializer = ProtoRestSerializer.create();
+                            if (request.hasRequestId()) {
+                              serializer.putQueryParam(fields, "requestId", request.getRequestId());
                             }
+                            return fields;
                           })
                       .setRequestBodyExtractor(
-                          new FieldsExtractor<
-                              AttachNetworkEndpointsNetworkEndpointGroupRequest, String>() {
-                            @Override
-                            public String extract(
-                                AttachNetworkEndpointsNetworkEndpointGroupRequest request) {
-                              return ProtoRestSerializer.create()
+                          request ->
+                              ProtoRestSerializer.create()
                                   .toBody(
                                       "networkEndpointGroupsAttachEndpointsRequestResource",
                                       request
-                                          .getNetworkEndpointGroupsAttachEndpointsRequestResource());
-                            }
-                          })
+                                          .getNetworkEndpointGroupsAttachEndpointsRequestResource()))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -221,46 +179,27 @@ public class HttpJsonNetworkEndpointGroupsStub extends NetworkEndpointGroupsStub
                   ProtoMessageRequestFormatter.<DeleteNetworkEndpointGroupRequest>newBuilder()
                       .setPath(
                           "/compute/v1/projects/{project}/zones/{zone}/networkEndpointGroups/{networkEndpointGroup}",
-                          new FieldsExtractor<
-                              DeleteNetworkEndpointGroupRequest, Map<String, String>>() {
-                            @Override
-                            public Map<String, String> extract(
-                                DeleteNetworkEndpointGroupRequest request) {
-                              Map<String, String> fields = new HashMap<>();
-                              ProtoRestSerializer<DeleteNetworkEndpointGroupRequest> serializer =
-                                  ProtoRestSerializer.create();
-                              serializer.putPathParam(
-                                  fields,
-                                  "networkEndpointGroup",
-                                  request.getNetworkEndpointGroup());
-                              serializer.putPathParam(fields, "project", request.getProject());
-                              serializer.putPathParam(fields, "zone", request.getZone());
-                              return fields;
-                            }
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<DeleteNetworkEndpointGroupRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(
+                                fields, "networkEndpointGroup", request.getNetworkEndpointGroup());
+                            serializer.putPathParam(fields, "project", request.getProject());
+                            serializer.putPathParam(fields, "zone", request.getZone());
+                            return fields;
                           })
                       .setQueryParamsExtractor(
-                          new FieldsExtractor<
-                              DeleteNetworkEndpointGroupRequest, Map<String, List<String>>>() {
-                            @Override
-                            public Map<String, List<String>> extract(
-                                DeleteNetworkEndpointGroupRequest request) {
-                              Map<String, List<String>> fields = new HashMap<>();
-                              ProtoRestSerializer<DeleteNetworkEndpointGroupRequest> serializer =
-                                  ProtoRestSerializer.create();
-                              if (request.hasRequestId()) {
-                                serializer.putQueryParam(
-                                    fields, "requestId", request.getRequestId());
-                              }
-                              return fields;
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<DeleteNetworkEndpointGroupRequest> serializer =
+                                ProtoRestSerializer.create();
+                            if (request.hasRequestId()) {
+                              serializer.putQueryParam(fields, "requestId", request.getRequestId());
                             }
+                            return fields;
                           })
-                      .setRequestBodyExtractor(
-                          new FieldsExtractor<DeleteNetworkEndpointGroupRequest, String>() {
-                            @Override
-                            public String extract(DeleteNetworkEndpointGroupRequest request) {
-                              return null;
-                            }
-                          })
+                      .setRequestBodyExtractor(request -> null)
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -281,54 +220,33 @@ public class HttpJsonNetworkEndpointGroupsStub extends NetworkEndpointGroupsStub
                       .<DetachNetworkEndpointsNetworkEndpointGroupRequest>newBuilder()
                       .setPath(
                           "/compute/v1/projects/{project}/zones/{zone}/networkEndpointGroups/{networkEndpointGroup}/detachNetworkEndpoints",
-                          new FieldsExtractor<
-                              DetachNetworkEndpointsNetworkEndpointGroupRequest,
-                              Map<String, String>>() {
-                            @Override
-                            public Map<String, String> extract(
-                                DetachNetworkEndpointsNetworkEndpointGroupRequest request) {
-                              Map<String, String> fields = new HashMap<>();
-                              ProtoRestSerializer<DetachNetworkEndpointsNetworkEndpointGroupRequest>
-                                  serializer = ProtoRestSerializer.create();
-                              serializer.putPathParam(
-                                  fields,
-                                  "networkEndpointGroup",
-                                  request.getNetworkEndpointGroup());
-                              serializer.putPathParam(fields, "project", request.getProject());
-                              serializer.putPathParam(fields, "zone", request.getZone());
-                              return fields;
-                            }
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<DetachNetworkEndpointsNetworkEndpointGroupRequest>
+                                serializer = ProtoRestSerializer.create();
+                            serializer.putPathParam(
+                                fields, "networkEndpointGroup", request.getNetworkEndpointGroup());
+                            serializer.putPathParam(fields, "project", request.getProject());
+                            serializer.putPathParam(fields, "zone", request.getZone());
+                            return fields;
                           })
                       .setQueryParamsExtractor(
-                          new FieldsExtractor<
-                              DetachNetworkEndpointsNetworkEndpointGroupRequest,
-                              Map<String, List<String>>>() {
-                            @Override
-                            public Map<String, List<String>> extract(
-                                DetachNetworkEndpointsNetworkEndpointGroupRequest request) {
-                              Map<String, List<String>> fields = new HashMap<>();
-                              ProtoRestSerializer<DetachNetworkEndpointsNetworkEndpointGroupRequest>
-                                  serializer = ProtoRestSerializer.create();
-                              if (request.hasRequestId()) {
-                                serializer.putQueryParam(
-                                    fields, "requestId", request.getRequestId());
-                              }
-                              return fields;
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<DetachNetworkEndpointsNetworkEndpointGroupRequest>
+                                serializer = ProtoRestSerializer.create();
+                            if (request.hasRequestId()) {
+                              serializer.putQueryParam(fields, "requestId", request.getRequestId());
                             }
+                            return fields;
                           })
                       .setRequestBodyExtractor(
-                          new FieldsExtractor<
-                              DetachNetworkEndpointsNetworkEndpointGroupRequest, String>() {
-                            @Override
-                            public String extract(
-                                DetachNetworkEndpointsNetworkEndpointGroupRequest request) {
-                              return ProtoRestSerializer.create()
+                          request ->
+                              ProtoRestSerializer.create()
                                   .toBody(
                                       "networkEndpointGroupsDetachEndpointsRequestResource",
                                       request
-                                          .getNetworkEndpointGroupsDetachEndpointsRequestResource());
-                            }
-                          })
+                                          .getNetworkEndpointGroupsDetachEndpointsRequestResource()))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -345,42 +263,24 @@ public class HttpJsonNetworkEndpointGroupsStub extends NetworkEndpointGroupsStub
                   ProtoMessageRequestFormatter.<GetNetworkEndpointGroupRequest>newBuilder()
                       .setPath(
                           "/compute/v1/projects/{project}/zones/{zone}/networkEndpointGroups/{networkEndpointGroup}",
-                          new FieldsExtractor<
-                              GetNetworkEndpointGroupRequest, Map<String, String>>() {
-                            @Override
-                            public Map<String, String> extract(
-                                GetNetworkEndpointGroupRequest request) {
-                              Map<String, String> fields = new HashMap<>();
-                              ProtoRestSerializer<GetNetworkEndpointGroupRequest> serializer =
-                                  ProtoRestSerializer.create();
-                              serializer.putPathParam(
-                                  fields,
-                                  "networkEndpointGroup",
-                                  request.getNetworkEndpointGroup());
-                              serializer.putPathParam(fields, "project", request.getProject());
-                              serializer.putPathParam(fields, "zone", request.getZone());
-                              return fields;
-                            }
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<GetNetworkEndpointGroupRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(
+                                fields, "networkEndpointGroup", request.getNetworkEndpointGroup());
+                            serializer.putPathParam(fields, "project", request.getProject());
+                            serializer.putPathParam(fields, "zone", request.getZone());
+                            return fields;
                           })
                       .setQueryParamsExtractor(
-                          new FieldsExtractor<
-                              GetNetworkEndpointGroupRequest, Map<String, List<String>>>() {
-                            @Override
-                            public Map<String, List<String>> extract(
-                                GetNetworkEndpointGroupRequest request) {
-                              Map<String, List<String>> fields = new HashMap<>();
-                              ProtoRestSerializer<GetNetworkEndpointGroupRequest> serializer =
-                                  ProtoRestSerializer.create();
-                              return fields;
-                            }
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<GetNetworkEndpointGroupRequest> serializer =
+                                ProtoRestSerializer.create();
+                            return fields;
                           })
-                      .setRequestBodyExtractor(
-                          new FieldsExtractor<GetNetworkEndpointGroupRequest, String>() {
-                            @Override
-                            public String extract(GetNetworkEndpointGroupRequest request) {
-                              return null;
-                            }
-                          })
+                      .setRequestBodyExtractor(request -> null)
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<NetworkEndpointGroup>newBuilder()
@@ -397,45 +297,30 @@ public class HttpJsonNetworkEndpointGroupsStub extends NetworkEndpointGroupsStub
                   ProtoMessageRequestFormatter.<InsertNetworkEndpointGroupRequest>newBuilder()
                       .setPath(
                           "/compute/v1/projects/{project}/zones/{zone}/networkEndpointGroups",
-                          new FieldsExtractor<
-                              InsertNetworkEndpointGroupRequest, Map<String, String>>() {
-                            @Override
-                            public Map<String, String> extract(
-                                InsertNetworkEndpointGroupRequest request) {
-                              Map<String, String> fields = new HashMap<>();
-                              ProtoRestSerializer<InsertNetworkEndpointGroupRequest> serializer =
-                                  ProtoRestSerializer.create();
-                              serializer.putPathParam(fields, "project", request.getProject());
-                              serializer.putPathParam(fields, "zone", request.getZone());
-                              return fields;
-                            }
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<InsertNetworkEndpointGroupRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "project", request.getProject());
+                            serializer.putPathParam(fields, "zone", request.getZone());
+                            return fields;
                           })
                       .setQueryParamsExtractor(
-                          new FieldsExtractor<
-                              InsertNetworkEndpointGroupRequest, Map<String, List<String>>>() {
-                            @Override
-                            public Map<String, List<String>> extract(
-                                InsertNetworkEndpointGroupRequest request) {
-                              Map<String, List<String>> fields = new HashMap<>();
-                              ProtoRestSerializer<InsertNetworkEndpointGroupRequest> serializer =
-                                  ProtoRestSerializer.create();
-                              if (request.hasRequestId()) {
-                                serializer.putQueryParam(
-                                    fields, "requestId", request.getRequestId());
-                              }
-                              return fields;
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<InsertNetworkEndpointGroupRequest> serializer =
+                                ProtoRestSerializer.create();
+                            if (request.hasRequestId()) {
+                              serializer.putQueryParam(fields, "requestId", request.getRequestId());
                             }
+                            return fields;
                           })
                       .setRequestBodyExtractor(
-                          new FieldsExtractor<InsertNetworkEndpointGroupRequest, String>() {
-                            @Override
-                            public String extract(InsertNetworkEndpointGroupRequest request) {
-                              return ProtoRestSerializer.create()
+                          request ->
+                              ProtoRestSerializer.create()
                                   .toBody(
                                       "networkEndpointGroupResource",
-                                      request.getNetworkEndpointGroupResource());
-                            }
-                          })
+                                      request.getNetworkEndpointGroupResource()))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -454,58 +339,41 @@ public class HttpJsonNetworkEndpointGroupsStub extends NetworkEndpointGroupsStub
                   ProtoMessageRequestFormatter.<ListNetworkEndpointGroupsRequest>newBuilder()
                       .setPath(
                           "/compute/v1/projects/{project}/zones/{zone}/networkEndpointGroups",
-                          new FieldsExtractor<
-                              ListNetworkEndpointGroupsRequest, Map<String, String>>() {
-                            @Override
-                            public Map<String, String> extract(
-                                ListNetworkEndpointGroupsRequest request) {
-                              Map<String, String> fields = new HashMap<>();
-                              ProtoRestSerializer<ListNetworkEndpointGroupsRequest> serializer =
-                                  ProtoRestSerializer.create();
-                              serializer.putPathParam(fields, "project", request.getProject());
-                              serializer.putPathParam(fields, "zone", request.getZone());
-                              return fields;
-                            }
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<ListNetworkEndpointGroupsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "project", request.getProject());
+                            serializer.putPathParam(fields, "zone", request.getZone());
+                            return fields;
                           })
                       .setQueryParamsExtractor(
-                          new FieldsExtractor<
-                              ListNetworkEndpointGroupsRequest, Map<String, List<String>>>() {
-                            @Override
-                            public Map<String, List<String>> extract(
-                                ListNetworkEndpointGroupsRequest request) {
-                              Map<String, List<String>> fields = new HashMap<>();
-                              ProtoRestSerializer<ListNetworkEndpointGroupsRequest> serializer =
-                                  ProtoRestSerializer.create();
-                              if (request.hasFilter()) {
-                                serializer.putQueryParam(fields, "filter", request.getFilter());
-                              }
-                              if (request.hasMaxResults()) {
-                                serializer.putQueryParam(
-                                    fields, "maxResults", request.getMaxResults());
-                              }
-                              if (request.hasOrderBy()) {
-                                serializer.putQueryParam(fields, "orderBy", request.getOrderBy());
-                              }
-                              if (request.hasPageToken()) {
-                                serializer.putQueryParam(
-                                    fields, "pageToken", request.getPageToken());
-                              }
-                              if (request.hasReturnPartialSuccess()) {
-                                serializer.putQueryParam(
-                                    fields,
-                                    "returnPartialSuccess",
-                                    request.getReturnPartialSuccess());
-                              }
-                              return fields;
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<ListNetworkEndpointGroupsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            if (request.hasFilter()) {
+                              serializer.putQueryParam(fields, "filter", request.getFilter());
                             }
-                          })
-                      .setRequestBodyExtractor(
-                          new FieldsExtractor<ListNetworkEndpointGroupsRequest, String>() {
-                            @Override
-                            public String extract(ListNetworkEndpointGroupsRequest request) {
-                              return null;
+                            if (request.hasMaxResults()) {
+                              serializer.putQueryParam(
+                                  fields, "maxResults", request.getMaxResults());
                             }
+                            if (request.hasOrderBy()) {
+                              serializer.putQueryParam(fields, "orderBy", request.getOrderBy());
+                            }
+                            if (request.hasPageToken()) {
+                              serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            }
+                            if (request.hasReturnPartialSuccess()) {
+                              serializer.putQueryParam(
+                                  fields,
+                                  "returnPartialSuccess",
+                                  request.getReturnPartialSuccess());
+                            }
+                            return fields;
                           })
+                      .setRequestBodyExtractor(request -> null)
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<NetworkEndpointGroupList>newBuilder()
@@ -529,70 +397,49 @@ public class HttpJsonNetworkEndpointGroupsStub extends NetworkEndpointGroupsStub
                       .<ListNetworkEndpointsNetworkEndpointGroupsRequest>newBuilder()
                       .setPath(
                           "/compute/v1/projects/{project}/zones/{zone}/networkEndpointGroups/{networkEndpointGroup}/listNetworkEndpoints",
-                          new FieldsExtractor<
-                              ListNetworkEndpointsNetworkEndpointGroupsRequest,
-                              Map<String, String>>() {
-                            @Override
-                            public Map<String, String> extract(
-                                ListNetworkEndpointsNetworkEndpointGroupsRequest request) {
-                              Map<String, String> fields = new HashMap<>();
-                              ProtoRestSerializer<ListNetworkEndpointsNetworkEndpointGroupsRequest>
-                                  serializer = ProtoRestSerializer.create();
-                              serializer.putPathParam(
-                                  fields,
-                                  "networkEndpointGroup",
-                                  request.getNetworkEndpointGroup());
-                              serializer.putPathParam(fields, "project", request.getProject());
-                              serializer.putPathParam(fields, "zone", request.getZone());
-                              return fields;
-                            }
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<ListNetworkEndpointsNetworkEndpointGroupsRequest>
+                                serializer = ProtoRestSerializer.create();
+                            serializer.putPathParam(
+                                fields, "networkEndpointGroup", request.getNetworkEndpointGroup());
+                            serializer.putPathParam(fields, "project", request.getProject());
+                            serializer.putPathParam(fields, "zone", request.getZone());
+                            return fields;
                           })
                       .setQueryParamsExtractor(
-                          new FieldsExtractor<
-                              ListNetworkEndpointsNetworkEndpointGroupsRequest,
-                              Map<String, List<String>>>() {
-                            @Override
-                            public Map<String, List<String>> extract(
-                                ListNetworkEndpointsNetworkEndpointGroupsRequest request) {
-                              Map<String, List<String>> fields = new HashMap<>();
-                              ProtoRestSerializer<ListNetworkEndpointsNetworkEndpointGroupsRequest>
-                                  serializer = ProtoRestSerializer.create();
-                              if (request.hasFilter()) {
-                                serializer.putQueryParam(fields, "filter", request.getFilter());
-                              }
-                              if (request.hasMaxResults()) {
-                                serializer.putQueryParam(
-                                    fields, "maxResults", request.getMaxResults());
-                              }
-                              if (request.hasOrderBy()) {
-                                serializer.putQueryParam(fields, "orderBy", request.getOrderBy());
-                              }
-                              if (request.hasPageToken()) {
-                                serializer.putQueryParam(
-                                    fields, "pageToken", request.getPageToken());
-                              }
-                              if (request.hasReturnPartialSuccess()) {
-                                serializer.putQueryParam(
-                                    fields,
-                                    "returnPartialSuccess",
-                                    request.getReturnPartialSuccess());
-                              }
-                              return fields;
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<ListNetworkEndpointsNetworkEndpointGroupsRequest>
+                                serializer = ProtoRestSerializer.create();
+                            if (request.hasFilter()) {
+                              serializer.putQueryParam(fields, "filter", request.getFilter());
                             }
+                            if (request.hasMaxResults()) {
+                              serializer.putQueryParam(
+                                  fields, "maxResults", request.getMaxResults());
+                            }
+                            if (request.hasOrderBy()) {
+                              serializer.putQueryParam(fields, "orderBy", request.getOrderBy());
+                            }
+                            if (request.hasPageToken()) {
+                              serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            }
+                            if (request.hasReturnPartialSuccess()) {
+                              serializer.putQueryParam(
+                                  fields,
+                                  "returnPartialSuccess",
+                                  request.getReturnPartialSuccess());
+                            }
+                            return fields;
                           })
                       .setRequestBodyExtractor(
-                          new FieldsExtractor<
-                              ListNetworkEndpointsNetworkEndpointGroupsRequest, String>() {
-                            @Override
-                            public String extract(
-                                ListNetworkEndpointsNetworkEndpointGroupsRequest request) {
-                              return ProtoRestSerializer.create()
+                          request ->
+                              ProtoRestSerializer.create()
                                   .toBody(
                                       "networkEndpointGroupsListEndpointsRequestResource",
                                       request
-                                          .getNetworkEndpointGroupsListEndpointsRequestResource());
-                            }
-                          })
+                                          .getNetworkEndpointGroupsListEndpointsRequestResource()))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<NetworkEndpointGroupsListNetworkEndpoints>newBuilder()
@@ -613,46 +460,28 @@ public class HttpJsonNetworkEndpointGroupsStub extends NetworkEndpointGroupsStub
                       .<TestIamPermissionsNetworkEndpointGroupRequest>newBuilder()
                       .setPath(
                           "/compute/v1/projects/{project}/zones/{zone}/networkEndpointGroups/{resource}/testIamPermissions",
-                          new FieldsExtractor<
-                              TestIamPermissionsNetworkEndpointGroupRequest,
-                              Map<String, String>>() {
-                            @Override
-                            public Map<String, String> extract(
-                                TestIamPermissionsNetworkEndpointGroupRequest request) {
-                              Map<String, String> fields = new HashMap<>();
-                              ProtoRestSerializer<TestIamPermissionsNetworkEndpointGroupRequest>
-                                  serializer = ProtoRestSerializer.create();
-                              serializer.putPathParam(fields, "project", request.getProject());
-                              serializer.putPathParam(fields, "resource", request.getResource());
-                              serializer.putPathParam(fields, "zone", request.getZone());
-                              return fields;
-                            }
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<TestIamPermissionsNetworkEndpointGroupRequest>
+                                serializer = ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "project", request.getProject());
+                            serializer.putPathParam(fields, "resource", request.getResource());
+                            serializer.putPathParam(fields, "zone", request.getZone());
+                            return fields;
                           })
                       .setQueryParamsExtractor(
-                          new FieldsExtractor<
-                              TestIamPermissionsNetworkEndpointGroupRequest,
-                              Map<String, List<String>>>() {
-                            @Override
-                            public Map<String, List<String>> extract(
-                                TestIamPermissionsNetworkEndpointGroupRequest request) {
-                              Map<String, List<String>> fields = new HashMap<>();
-                              ProtoRestSerializer<TestIamPermissionsNetworkEndpointGroupRequest>
-                                  serializer = ProtoRestSerializer.create();
-                              return fields;
-                            }
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<TestIamPermissionsNetworkEndpointGroupRequest>
+                                serializer = ProtoRestSerializer.create();
+                            return fields;
                           })
                       .setRequestBodyExtractor(
-                          new FieldsExtractor<
-                              TestIamPermissionsNetworkEndpointGroupRequest, String>() {
-                            @Override
-                            public String extract(
-                                TestIamPermissionsNetworkEndpointGroupRequest request) {
-                              return ProtoRestSerializer.create()
+                          request ->
+                              ProtoRestSerializer.create()
                                   .toBody(
                                       "testPermissionsRequestResource",
-                                      request.getTestPermissionsRequestResource());
-                            }
-                          })
+                                      request.getTestPermissionsRequestResource()))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<TestPermissionsResponse>newBuilder()
@@ -926,7 +755,13 @@ public class HttpJsonNetworkEndpointGroupsStub extends NetworkEndpointGroupsStub
 
   @Override
   public final void close() {
-    shutdown();
+    try {
+      backgroundResources.close();
+    } catch (RuntimeException e) {
+      throw e;
+    } catch (Exception e) {
+      throw new IllegalStateException("Failed to close resource", e);
+    }
   }
 
   @Override

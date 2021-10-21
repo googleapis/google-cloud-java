@@ -26,7 +26,6 @@ import com.google.api.core.InternalApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.httpjson.ApiMethodDescriptor;
-import com.google.api.gax.httpjson.FieldsExtractor;
 import com.google.api.gax.httpjson.HttpJsonCallSettings;
 import com.google.api.gax.httpjson.HttpJsonStubCallableFactory;
 import com.google.api.gax.httpjson.ProtoMessageRequestFormatter;
@@ -114,47 +113,32 @@ public class HttpJsonInstancesStub extends InstancesStub {
                   ProtoMessageRequestFormatter.<AddAccessConfigInstanceRequest>newBuilder()
                       .setPath(
                           "/compute/v1/projects/{project}/zones/{zone}/instances/{instance}/addAccessConfig",
-                          new FieldsExtractor<
-                              AddAccessConfigInstanceRequest, Map<String, String>>() {
-                            @Override
-                            public Map<String, String> extract(
-                                AddAccessConfigInstanceRequest request) {
-                              Map<String, String> fields = new HashMap<>();
-                              ProtoRestSerializer<AddAccessConfigInstanceRequest> serializer =
-                                  ProtoRestSerializer.create();
-                              serializer.putPathParam(fields, "instance", request.getInstance());
-                              serializer.putPathParam(fields, "project", request.getProject());
-                              serializer.putPathParam(fields, "zone", request.getZone());
-                              return fields;
-                            }
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<AddAccessConfigInstanceRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "instance", request.getInstance());
+                            serializer.putPathParam(fields, "project", request.getProject());
+                            serializer.putPathParam(fields, "zone", request.getZone());
+                            return fields;
                           })
                       .setQueryParamsExtractor(
-                          new FieldsExtractor<
-                              AddAccessConfigInstanceRequest, Map<String, List<String>>>() {
-                            @Override
-                            public Map<String, List<String>> extract(
-                                AddAccessConfigInstanceRequest request) {
-                              Map<String, List<String>> fields = new HashMap<>();
-                              ProtoRestSerializer<AddAccessConfigInstanceRequest> serializer =
-                                  ProtoRestSerializer.create();
-                              serializer.putQueryParam(
-                                  fields, "networkInterface", request.getNetworkInterface());
-                              if (request.hasRequestId()) {
-                                serializer.putQueryParam(
-                                    fields, "requestId", request.getRequestId());
-                              }
-                              return fields;
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<AddAccessConfigInstanceRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(
+                                fields, "networkInterface", request.getNetworkInterface());
+                            if (request.hasRequestId()) {
+                              serializer.putQueryParam(fields, "requestId", request.getRequestId());
                             }
+                            return fields;
                           })
                       .setRequestBodyExtractor(
-                          new FieldsExtractor<AddAccessConfigInstanceRequest, String>() {
-                            @Override
-                            public String extract(AddAccessConfigInstanceRequest request) {
-                              return ProtoRestSerializer.create()
+                          request ->
+                              ProtoRestSerializer.create()
                                   .toBody(
-                                      "accessConfigResource", request.getAccessConfigResource());
-                            }
-                          })
+                                      "accessConfigResource", request.getAccessConfigResource()))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -171,46 +155,31 @@ public class HttpJsonInstancesStub extends InstancesStub {
                   ProtoMessageRequestFormatter.<AddResourcePoliciesInstanceRequest>newBuilder()
                       .setPath(
                           "/compute/v1/projects/{project}/zones/{zone}/instances/{instance}/addResourcePolicies",
-                          new FieldsExtractor<
-                              AddResourcePoliciesInstanceRequest, Map<String, String>>() {
-                            @Override
-                            public Map<String, String> extract(
-                                AddResourcePoliciesInstanceRequest request) {
-                              Map<String, String> fields = new HashMap<>();
-                              ProtoRestSerializer<AddResourcePoliciesInstanceRequest> serializer =
-                                  ProtoRestSerializer.create();
-                              serializer.putPathParam(fields, "instance", request.getInstance());
-                              serializer.putPathParam(fields, "project", request.getProject());
-                              serializer.putPathParam(fields, "zone", request.getZone());
-                              return fields;
-                            }
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<AddResourcePoliciesInstanceRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "instance", request.getInstance());
+                            serializer.putPathParam(fields, "project", request.getProject());
+                            serializer.putPathParam(fields, "zone", request.getZone());
+                            return fields;
                           })
                       .setQueryParamsExtractor(
-                          new FieldsExtractor<
-                              AddResourcePoliciesInstanceRequest, Map<String, List<String>>>() {
-                            @Override
-                            public Map<String, List<String>> extract(
-                                AddResourcePoliciesInstanceRequest request) {
-                              Map<String, List<String>> fields = new HashMap<>();
-                              ProtoRestSerializer<AddResourcePoliciesInstanceRequest> serializer =
-                                  ProtoRestSerializer.create();
-                              if (request.hasRequestId()) {
-                                serializer.putQueryParam(
-                                    fields, "requestId", request.getRequestId());
-                              }
-                              return fields;
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<AddResourcePoliciesInstanceRequest> serializer =
+                                ProtoRestSerializer.create();
+                            if (request.hasRequestId()) {
+                              serializer.putQueryParam(fields, "requestId", request.getRequestId());
                             }
+                            return fields;
                           })
                       .setRequestBodyExtractor(
-                          new FieldsExtractor<AddResourcePoliciesInstanceRequest, String>() {
-                            @Override
-                            public String extract(AddResourcePoliciesInstanceRequest request) {
-                              return ProtoRestSerializer.create()
+                          request ->
+                              ProtoRestSerializer.create()
                                   .toBody(
                                       "instancesAddResourcePoliciesRequestResource",
-                                      request.getInstancesAddResourcePoliciesRequestResource());
-                            }
-                          })
+                                      request.getInstancesAddResourcePoliciesRequestResource()))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -227,61 +196,44 @@ public class HttpJsonInstancesStub extends InstancesStub {
                   ProtoMessageRequestFormatter.<AggregatedListInstancesRequest>newBuilder()
                       .setPath(
                           "/compute/v1/projects/{project}/aggregated/instances",
-                          new FieldsExtractor<
-                              AggregatedListInstancesRequest, Map<String, String>>() {
-                            @Override
-                            public Map<String, String> extract(
-                                AggregatedListInstancesRequest request) {
-                              Map<String, String> fields = new HashMap<>();
-                              ProtoRestSerializer<AggregatedListInstancesRequest> serializer =
-                                  ProtoRestSerializer.create();
-                              serializer.putPathParam(fields, "project", request.getProject());
-                              return fields;
-                            }
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<AggregatedListInstancesRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "project", request.getProject());
+                            return fields;
                           })
                       .setQueryParamsExtractor(
-                          new FieldsExtractor<
-                              AggregatedListInstancesRequest, Map<String, List<String>>>() {
-                            @Override
-                            public Map<String, List<String>> extract(
-                                AggregatedListInstancesRequest request) {
-                              Map<String, List<String>> fields = new HashMap<>();
-                              ProtoRestSerializer<AggregatedListInstancesRequest> serializer =
-                                  ProtoRestSerializer.create();
-                              if (request.hasFilter()) {
-                                serializer.putQueryParam(fields, "filter", request.getFilter());
-                              }
-                              if (request.hasIncludeAllScopes()) {
-                                serializer.putQueryParam(
-                                    fields, "includeAllScopes", request.getIncludeAllScopes());
-                              }
-                              if (request.hasMaxResults()) {
-                                serializer.putQueryParam(
-                                    fields, "maxResults", request.getMaxResults());
-                              }
-                              if (request.hasOrderBy()) {
-                                serializer.putQueryParam(fields, "orderBy", request.getOrderBy());
-                              }
-                              if (request.hasPageToken()) {
-                                serializer.putQueryParam(
-                                    fields, "pageToken", request.getPageToken());
-                              }
-                              if (request.hasReturnPartialSuccess()) {
-                                serializer.putQueryParam(
-                                    fields,
-                                    "returnPartialSuccess",
-                                    request.getReturnPartialSuccess());
-                              }
-                              return fields;
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<AggregatedListInstancesRequest> serializer =
+                                ProtoRestSerializer.create();
+                            if (request.hasFilter()) {
+                              serializer.putQueryParam(fields, "filter", request.getFilter());
                             }
-                          })
-                      .setRequestBodyExtractor(
-                          new FieldsExtractor<AggregatedListInstancesRequest, String>() {
-                            @Override
-                            public String extract(AggregatedListInstancesRequest request) {
-                              return null;
+                            if (request.hasIncludeAllScopes()) {
+                              serializer.putQueryParam(
+                                  fields, "includeAllScopes", request.getIncludeAllScopes());
                             }
+                            if (request.hasMaxResults()) {
+                              serializer.putQueryParam(
+                                  fields, "maxResults", request.getMaxResults());
+                            }
+                            if (request.hasOrderBy()) {
+                              serializer.putQueryParam(fields, "orderBy", request.getOrderBy());
+                            }
+                            if (request.hasPageToken()) {
+                              serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            }
+                            if (request.hasReturnPartialSuccess()) {
+                              serializer.putQueryParam(
+                                  fields,
+                                  "returnPartialSuccess",
+                                  request.getReturnPartialSuccess());
+                            }
+                            return fields;
                           })
+                      .setRequestBodyExtractor(request -> null)
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<InstanceAggregatedList>newBuilder()
@@ -298,47 +250,34 @@ public class HttpJsonInstancesStub extends InstancesStub {
                   ProtoMessageRequestFormatter.<AttachDiskInstanceRequest>newBuilder()
                       .setPath(
                           "/compute/v1/projects/{project}/zones/{zone}/instances/{instance}/attachDisk",
-                          new FieldsExtractor<AttachDiskInstanceRequest, Map<String, String>>() {
-                            @Override
-                            public Map<String, String> extract(AttachDiskInstanceRequest request) {
-                              Map<String, String> fields = new HashMap<>();
-                              ProtoRestSerializer<AttachDiskInstanceRequest> serializer =
-                                  ProtoRestSerializer.create();
-                              serializer.putPathParam(fields, "instance", request.getInstance());
-                              serializer.putPathParam(fields, "project", request.getProject());
-                              serializer.putPathParam(fields, "zone", request.getZone());
-                              return fields;
-                            }
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<AttachDiskInstanceRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "instance", request.getInstance());
+                            serializer.putPathParam(fields, "project", request.getProject());
+                            serializer.putPathParam(fields, "zone", request.getZone());
+                            return fields;
                           })
                       .setQueryParamsExtractor(
-                          new FieldsExtractor<
-                              AttachDiskInstanceRequest, Map<String, List<String>>>() {
-                            @Override
-                            public Map<String, List<String>> extract(
-                                AttachDiskInstanceRequest request) {
-                              Map<String, List<String>> fields = new HashMap<>();
-                              ProtoRestSerializer<AttachDiskInstanceRequest> serializer =
-                                  ProtoRestSerializer.create();
-                              if (request.hasForceAttach()) {
-                                serializer.putQueryParam(
-                                    fields, "forceAttach", request.getForceAttach());
-                              }
-                              if (request.hasRequestId()) {
-                                serializer.putQueryParam(
-                                    fields, "requestId", request.getRequestId());
-                              }
-                              return fields;
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<AttachDiskInstanceRequest> serializer =
+                                ProtoRestSerializer.create();
+                            if (request.hasForceAttach()) {
+                              serializer.putQueryParam(
+                                  fields, "forceAttach", request.getForceAttach());
                             }
+                            if (request.hasRequestId()) {
+                              serializer.putQueryParam(fields, "requestId", request.getRequestId());
+                            }
+                            return fields;
                           })
                       .setRequestBodyExtractor(
-                          new FieldsExtractor<AttachDiskInstanceRequest, String>() {
-                            @Override
-                            public String extract(AttachDiskInstanceRequest request) {
-                              return ProtoRestSerializer.create()
+                          request ->
+                              ProtoRestSerializer.create()
                                   .toBody(
-                                      "attachedDiskResource", request.getAttachedDiskResource());
-                            }
-                          })
+                                      "attachedDiskResource", request.getAttachedDiskResource()))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -355,43 +294,30 @@ public class HttpJsonInstancesStub extends InstancesStub {
                   ProtoMessageRequestFormatter.<BulkInsertInstanceRequest>newBuilder()
                       .setPath(
                           "/compute/v1/projects/{project}/zones/{zone}/instances/bulkInsert",
-                          new FieldsExtractor<BulkInsertInstanceRequest, Map<String, String>>() {
-                            @Override
-                            public Map<String, String> extract(BulkInsertInstanceRequest request) {
-                              Map<String, String> fields = new HashMap<>();
-                              ProtoRestSerializer<BulkInsertInstanceRequest> serializer =
-                                  ProtoRestSerializer.create();
-                              serializer.putPathParam(fields, "project", request.getProject());
-                              serializer.putPathParam(fields, "zone", request.getZone());
-                              return fields;
-                            }
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<BulkInsertInstanceRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "project", request.getProject());
+                            serializer.putPathParam(fields, "zone", request.getZone());
+                            return fields;
                           })
                       .setQueryParamsExtractor(
-                          new FieldsExtractor<
-                              BulkInsertInstanceRequest, Map<String, List<String>>>() {
-                            @Override
-                            public Map<String, List<String>> extract(
-                                BulkInsertInstanceRequest request) {
-                              Map<String, List<String>> fields = new HashMap<>();
-                              ProtoRestSerializer<BulkInsertInstanceRequest> serializer =
-                                  ProtoRestSerializer.create();
-                              if (request.hasRequestId()) {
-                                serializer.putQueryParam(
-                                    fields, "requestId", request.getRequestId());
-                              }
-                              return fields;
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<BulkInsertInstanceRequest> serializer =
+                                ProtoRestSerializer.create();
+                            if (request.hasRequestId()) {
+                              serializer.putQueryParam(fields, "requestId", request.getRequestId());
                             }
+                            return fields;
                           })
                       .setRequestBodyExtractor(
-                          new FieldsExtractor<BulkInsertInstanceRequest, String>() {
-                            @Override
-                            public String extract(BulkInsertInstanceRequest request) {
-                              return ProtoRestSerializer.create()
+                          request ->
+                              ProtoRestSerializer.create()
                                   .toBody(
                                       "bulkInsertInstanceResourceResource",
-                                      request.getBulkInsertInstanceResourceResource());
-                            }
-                          })
+                                      request.getBulkInsertInstanceResourceResource()))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -408,40 +334,26 @@ public class HttpJsonInstancesStub extends InstancesStub {
                   ProtoMessageRequestFormatter.<DeleteInstanceRequest>newBuilder()
                       .setPath(
                           "/compute/v1/projects/{project}/zones/{zone}/instances/{instance}",
-                          new FieldsExtractor<DeleteInstanceRequest, Map<String, String>>() {
-                            @Override
-                            public Map<String, String> extract(DeleteInstanceRequest request) {
-                              Map<String, String> fields = new HashMap<>();
-                              ProtoRestSerializer<DeleteInstanceRequest> serializer =
-                                  ProtoRestSerializer.create();
-                              serializer.putPathParam(fields, "instance", request.getInstance());
-                              serializer.putPathParam(fields, "project", request.getProject());
-                              serializer.putPathParam(fields, "zone", request.getZone());
-                              return fields;
-                            }
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<DeleteInstanceRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "instance", request.getInstance());
+                            serializer.putPathParam(fields, "project", request.getProject());
+                            serializer.putPathParam(fields, "zone", request.getZone());
+                            return fields;
                           })
                       .setQueryParamsExtractor(
-                          new FieldsExtractor<DeleteInstanceRequest, Map<String, List<String>>>() {
-                            @Override
-                            public Map<String, List<String>> extract(
-                                DeleteInstanceRequest request) {
-                              Map<String, List<String>> fields = new HashMap<>();
-                              ProtoRestSerializer<DeleteInstanceRequest> serializer =
-                                  ProtoRestSerializer.create();
-                              if (request.hasRequestId()) {
-                                serializer.putQueryParam(
-                                    fields, "requestId", request.getRequestId());
-                              }
-                              return fields;
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<DeleteInstanceRequest> serializer =
+                                ProtoRestSerializer.create();
+                            if (request.hasRequestId()) {
+                              serializer.putQueryParam(fields, "requestId", request.getRequestId());
                             }
+                            return fields;
                           })
-                      .setRequestBodyExtractor(
-                          new FieldsExtractor<DeleteInstanceRequest, String>() {
-                            @Override
-                            public String extract(DeleteInstanceRequest request) {
-                              return null;
-                            }
-                          })
+                      .setRequestBodyExtractor(request -> null)
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -458,47 +370,30 @@ public class HttpJsonInstancesStub extends InstancesStub {
                   ProtoMessageRequestFormatter.<DeleteAccessConfigInstanceRequest>newBuilder()
                       .setPath(
                           "/compute/v1/projects/{project}/zones/{zone}/instances/{instance}/deleteAccessConfig",
-                          new FieldsExtractor<
-                              DeleteAccessConfigInstanceRequest, Map<String, String>>() {
-                            @Override
-                            public Map<String, String> extract(
-                                DeleteAccessConfigInstanceRequest request) {
-                              Map<String, String> fields = new HashMap<>();
-                              ProtoRestSerializer<DeleteAccessConfigInstanceRequest> serializer =
-                                  ProtoRestSerializer.create();
-                              serializer.putPathParam(fields, "instance", request.getInstance());
-                              serializer.putPathParam(fields, "project", request.getProject());
-                              serializer.putPathParam(fields, "zone", request.getZone());
-                              return fields;
-                            }
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<DeleteAccessConfigInstanceRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "instance", request.getInstance());
+                            serializer.putPathParam(fields, "project", request.getProject());
+                            serializer.putPathParam(fields, "zone", request.getZone());
+                            return fields;
                           })
                       .setQueryParamsExtractor(
-                          new FieldsExtractor<
-                              DeleteAccessConfigInstanceRequest, Map<String, List<String>>>() {
-                            @Override
-                            public Map<String, List<String>> extract(
-                                DeleteAccessConfigInstanceRequest request) {
-                              Map<String, List<String>> fields = new HashMap<>();
-                              ProtoRestSerializer<DeleteAccessConfigInstanceRequest> serializer =
-                                  ProtoRestSerializer.create();
-                              serializer.putQueryParam(
-                                  fields, "accessConfig", request.getAccessConfig());
-                              serializer.putQueryParam(
-                                  fields, "networkInterface", request.getNetworkInterface());
-                              if (request.hasRequestId()) {
-                                serializer.putQueryParam(
-                                    fields, "requestId", request.getRequestId());
-                              }
-                              return fields;
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<DeleteAccessConfigInstanceRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(
+                                fields, "accessConfig", request.getAccessConfig());
+                            serializer.putQueryParam(
+                                fields, "networkInterface", request.getNetworkInterface());
+                            if (request.hasRequestId()) {
+                              serializer.putQueryParam(fields, "requestId", request.getRequestId());
                             }
+                            return fields;
                           })
-                      .setRequestBodyExtractor(
-                          new FieldsExtractor<DeleteAccessConfigInstanceRequest, String>() {
-                            @Override
-                            public String extract(DeleteAccessConfigInstanceRequest request) {
-                              return null;
-                            }
-                          })
+                      .setRequestBodyExtractor(request -> null)
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -515,43 +410,27 @@ public class HttpJsonInstancesStub extends InstancesStub {
                   ProtoMessageRequestFormatter.<DetachDiskInstanceRequest>newBuilder()
                       .setPath(
                           "/compute/v1/projects/{project}/zones/{zone}/instances/{instance}/detachDisk",
-                          new FieldsExtractor<DetachDiskInstanceRequest, Map<String, String>>() {
-                            @Override
-                            public Map<String, String> extract(DetachDiskInstanceRequest request) {
-                              Map<String, String> fields = new HashMap<>();
-                              ProtoRestSerializer<DetachDiskInstanceRequest> serializer =
-                                  ProtoRestSerializer.create();
-                              serializer.putPathParam(fields, "instance", request.getInstance());
-                              serializer.putPathParam(fields, "project", request.getProject());
-                              serializer.putPathParam(fields, "zone", request.getZone());
-                              return fields;
-                            }
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<DetachDiskInstanceRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "instance", request.getInstance());
+                            serializer.putPathParam(fields, "project", request.getProject());
+                            serializer.putPathParam(fields, "zone", request.getZone());
+                            return fields;
                           })
                       .setQueryParamsExtractor(
-                          new FieldsExtractor<
-                              DetachDiskInstanceRequest, Map<String, List<String>>>() {
-                            @Override
-                            public Map<String, List<String>> extract(
-                                DetachDiskInstanceRequest request) {
-                              Map<String, List<String>> fields = new HashMap<>();
-                              ProtoRestSerializer<DetachDiskInstanceRequest> serializer =
-                                  ProtoRestSerializer.create();
-                              serializer.putQueryParam(
-                                  fields, "deviceName", request.getDeviceName());
-                              if (request.hasRequestId()) {
-                                serializer.putQueryParam(
-                                    fields, "requestId", request.getRequestId());
-                              }
-                              return fields;
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<DetachDiskInstanceRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "deviceName", request.getDeviceName());
+                            if (request.hasRequestId()) {
+                              serializer.putQueryParam(fields, "requestId", request.getRequestId());
                             }
+                            return fields;
                           })
-                      .setRequestBodyExtractor(
-                          new FieldsExtractor<DetachDiskInstanceRequest, String>() {
-                            @Override
-                            public String extract(DetachDiskInstanceRequest request) {
-                              return null;
-                            }
-                          })
+                      .setRequestBodyExtractor(request -> null)
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -567,35 +446,23 @@ public class HttpJsonInstancesStub extends InstancesStub {
               ProtoMessageRequestFormatter.<GetInstanceRequest>newBuilder()
                   .setPath(
                       "/compute/v1/projects/{project}/zones/{zone}/instances/{instance}",
-                      new FieldsExtractor<GetInstanceRequest, Map<String, String>>() {
-                        @Override
-                        public Map<String, String> extract(GetInstanceRequest request) {
-                          Map<String, String> fields = new HashMap<>();
-                          ProtoRestSerializer<GetInstanceRequest> serializer =
-                              ProtoRestSerializer.create();
-                          serializer.putPathParam(fields, "instance", request.getInstance());
-                          serializer.putPathParam(fields, "project", request.getProject());
-                          serializer.putPathParam(fields, "zone", request.getZone());
-                          return fields;
-                        }
+                      request -> {
+                        Map<String, String> fields = new HashMap<>();
+                        ProtoRestSerializer<GetInstanceRequest> serializer =
+                            ProtoRestSerializer.create();
+                        serializer.putPathParam(fields, "instance", request.getInstance());
+                        serializer.putPathParam(fields, "project", request.getProject());
+                        serializer.putPathParam(fields, "zone", request.getZone());
+                        return fields;
                       })
                   .setQueryParamsExtractor(
-                      new FieldsExtractor<GetInstanceRequest, Map<String, List<String>>>() {
-                        @Override
-                        public Map<String, List<String>> extract(GetInstanceRequest request) {
-                          Map<String, List<String>> fields = new HashMap<>();
-                          ProtoRestSerializer<GetInstanceRequest> serializer =
-                              ProtoRestSerializer.create();
-                          return fields;
-                        }
+                      request -> {
+                        Map<String, List<String>> fields = new HashMap<>();
+                        ProtoRestSerializer<GetInstanceRequest> serializer =
+                            ProtoRestSerializer.create();
+                        return fields;
                       })
-                  .setRequestBodyExtractor(
-                      new FieldsExtractor<GetInstanceRequest, String>() {
-                        @Override
-                        public String extract(GetInstanceRequest request) {
-                          return null;
-                        }
-                      })
+                  .setRequestBodyExtractor(request -> null)
                   .build())
           .setResponseParser(
               ProtoMessageResponseParser.<Instance>newBuilder()
@@ -615,41 +482,25 @@ public class HttpJsonInstancesStub extends InstancesStub {
                   ProtoMessageRequestFormatter.<GetEffectiveFirewallsInstanceRequest>newBuilder()
                       .setPath(
                           "/compute/v1/projects/{project}/zones/{zone}/instances/{instance}/getEffectiveFirewalls",
-                          new FieldsExtractor<
-                              GetEffectiveFirewallsInstanceRequest, Map<String, String>>() {
-                            @Override
-                            public Map<String, String> extract(
-                                GetEffectiveFirewallsInstanceRequest request) {
-                              Map<String, String> fields = new HashMap<>();
-                              ProtoRestSerializer<GetEffectiveFirewallsInstanceRequest> serializer =
-                                  ProtoRestSerializer.create();
-                              serializer.putPathParam(fields, "instance", request.getInstance());
-                              serializer.putPathParam(fields, "project", request.getProject());
-                              serializer.putPathParam(fields, "zone", request.getZone());
-                              return fields;
-                            }
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<GetEffectiveFirewallsInstanceRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "instance", request.getInstance());
+                            serializer.putPathParam(fields, "project", request.getProject());
+                            serializer.putPathParam(fields, "zone", request.getZone());
+                            return fields;
                           })
                       .setQueryParamsExtractor(
-                          new FieldsExtractor<
-                              GetEffectiveFirewallsInstanceRequest, Map<String, List<String>>>() {
-                            @Override
-                            public Map<String, List<String>> extract(
-                                GetEffectiveFirewallsInstanceRequest request) {
-                              Map<String, List<String>> fields = new HashMap<>();
-                              ProtoRestSerializer<GetEffectiveFirewallsInstanceRequest> serializer =
-                                  ProtoRestSerializer.create();
-                              serializer.putQueryParam(
-                                  fields, "networkInterface", request.getNetworkInterface());
-                              return fields;
-                            }
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<GetEffectiveFirewallsInstanceRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(
+                                fields, "networkInterface", request.getNetworkInterface());
+                            return fields;
                           })
-                      .setRequestBodyExtractor(
-                          new FieldsExtractor<GetEffectiveFirewallsInstanceRequest, String>() {
-                            @Override
-                            public String extract(GetEffectiveFirewallsInstanceRequest request) {
-                              return null;
-                            }
-                          })
+                      .setRequestBodyExtractor(request -> null)
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<InstancesGetEffectiveFirewallsResponse>newBuilder()
@@ -667,47 +518,30 @@ public class HttpJsonInstancesStub extends InstancesStub {
                   ProtoMessageRequestFormatter.<GetGuestAttributesInstanceRequest>newBuilder()
                       .setPath(
                           "/compute/v1/projects/{project}/zones/{zone}/instances/{instance}/getGuestAttributes",
-                          new FieldsExtractor<
-                              GetGuestAttributesInstanceRequest, Map<String, String>>() {
-                            @Override
-                            public Map<String, String> extract(
-                                GetGuestAttributesInstanceRequest request) {
-                              Map<String, String> fields = new HashMap<>();
-                              ProtoRestSerializer<GetGuestAttributesInstanceRequest> serializer =
-                                  ProtoRestSerializer.create();
-                              serializer.putPathParam(fields, "instance", request.getInstance());
-                              serializer.putPathParam(fields, "project", request.getProject());
-                              serializer.putPathParam(fields, "zone", request.getZone());
-                              return fields;
-                            }
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<GetGuestAttributesInstanceRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "instance", request.getInstance());
+                            serializer.putPathParam(fields, "project", request.getProject());
+                            serializer.putPathParam(fields, "zone", request.getZone());
+                            return fields;
                           })
                       .setQueryParamsExtractor(
-                          new FieldsExtractor<
-                              GetGuestAttributesInstanceRequest, Map<String, List<String>>>() {
-                            @Override
-                            public Map<String, List<String>> extract(
-                                GetGuestAttributesInstanceRequest request) {
-                              Map<String, List<String>> fields = new HashMap<>();
-                              ProtoRestSerializer<GetGuestAttributesInstanceRequest> serializer =
-                                  ProtoRestSerializer.create();
-                              if (request.hasQueryPath()) {
-                                serializer.putQueryParam(
-                                    fields, "queryPath", request.getQueryPath());
-                              }
-                              if (request.hasVariableKey()) {
-                                serializer.putQueryParam(
-                                    fields, "variableKey", request.getVariableKey());
-                              }
-                              return fields;
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<GetGuestAttributesInstanceRequest> serializer =
+                                ProtoRestSerializer.create();
+                            if (request.hasQueryPath()) {
+                              serializer.putQueryParam(fields, "queryPath", request.getQueryPath());
                             }
-                          })
-                      .setRequestBodyExtractor(
-                          new FieldsExtractor<GetGuestAttributesInstanceRequest, String>() {
-                            @Override
-                            public String extract(GetGuestAttributesInstanceRequest request) {
-                              return null;
+                            if (request.hasVariableKey()) {
+                              serializer.putQueryParam(
+                                  fields, "variableKey", request.getVariableKey());
                             }
+                            return fields;
                           })
+                      .setRequestBodyExtractor(request -> null)
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<GuestAttributes>newBuilder()
@@ -724,44 +558,29 @@ public class HttpJsonInstancesStub extends InstancesStub {
                   ProtoMessageRequestFormatter.<GetIamPolicyInstanceRequest>newBuilder()
                       .setPath(
                           "/compute/v1/projects/{project}/zones/{zone}/instances/{resource}/getIamPolicy",
-                          new FieldsExtractor<GetIamPolicyInstanceRequest, Map<String, String>>() {
-                            @Override
-                            public Map<String, String> extract(
-                                GetIamPolicyInstanceRequest request) {
-                              Map<String, String> fields = new HashMap<>();
-                              ProtoRestSerializer<GetIamPolicyInstanceRequest> serializer =
-                                  ProtoRestSerializer.create();
-                              serializer.putPathParam(fields, "project", request.getProject());
-                              serializer.putPathParam(fields, "resource", request.getResource());
-                              serializer.putPathParam(fields, "zone", request.getZone());
-                              return fields;
-                            }
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<GetIamPolicyInstanceRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "project", request.getProject());
+                            serializer.putPathParam(fields, "resource", request.getResource());
+                            serializer.putPathParam(fields, "zone", request.getZone());
+                            return fields;
                           })
                       .setQueryParamsExtractor(
-                          new FieldsExtractor<
-                              GetIamPolicyInstanceRequest, Map<String, List<String>>>() {
-                            @Override
-                            public Map<String, List<String>> extract(
-                                GetIamPolicyInstanceRequest request) {
-                              Map<String, List<String>> fields = new HashMap<>();
-                              ProtoRestSerializer<GetIamPolicyInstanceRequest> serializer =
-                                  ProtoRestSerializer.create();
-                              if (request.hasOptionsRequestedPolicyVersion()) {
-                                serializer.putQueryParam(
-                                    fields,
-                                    "optionsRequestedPolicyVersion",
-                                    request.getOptionsRequestedPolicyVersion());
-                              }
-                              return fields;
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<GetIamPolicyInstanceRequest> serializer =
+                                ProtoRestSerializer.create();
+                            if (request.hasOptionsRequestedPolicyVersion()) {
+                              serializer.putQueryParam(
+                                  fields,
+                                  "optionsRequestedPolicyVersion",
+                                  request.getOptionsRequestedPolicyVersion());
                             }
+                            return fields;
                           })
-                      .setRequestBodyExtractor(
-                          new FieldsExtractor<GetIamPolicyInstanceRequest, String>() {
-                            @Override
-                            public String extract(GetIamPolicyInstanceRequest request) {
-                              return null;
-                            }
-                          })
+                      .setRequestBodyExtractor(request -> null)
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Policy>newBuilder()
@@ -778,38 +597,23 @@ public class HttpJsonInstancesStub extends InstancesStub {
                   ProtoMessageRequestFormatter.<GetScreenshotInstanceRequest>newBuilder()
                       .setPath(
                           "/compute/v1/projects/{project}/zones/{zone}/instances/{instance}/screenshot",
-                          new FieldsExtractor<GetScreenshotInstanceRequest, Map<String, String>>() {
-                            @Override
-                            public Map<String, String> extract(
-                                GetScreenshotInstanceRequest request) {
-                              Map<String, String> fields = new HashMap<>();
-                              ProtoRestSerializer<GetScreenshotInstanceRequest> serializer =
-                                  ProtoRestSerializer.create();
-                              serializer.putPathParam(fields, "instance", request.getInstance());
-                              serializer.putPathParam(fields, "project", request.getProject());
-                              serializer.putPathParam(fields, "zone", request.getZone());
-                              return fields;
-                            }
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<GetScreenshotInstanceRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "instance", request.getInstance());
+                            serializer.putPathParam(fields, "project", request.getProject());
+                            serializer.putPathParam(fields, "zone", request.getZone());
+                            return fields;
                           })
                       .setQueryParamsExtractor(
-                          new FieldsExtractor<
-                              GetScreenshotInstanceRequest, Map<String, List<String>>>() {
-                            @Override
-                            public Map<String, List<String>> extract(
-                                GetScreenshotInstanceRequest request) {
-                              Map<String, List<String>> fields = new HashMap<>();
-                              ProtoRestSerializer<GetScreenshotInstanceRequest> serializer =
-                                  ProtoRestSerializer.create();
-                              return fields;
-                            }
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<GetScreenshotInstanceRequest> serializer =
+                                ProtoRestSerializer.create();
+                            return fields;
                           })
-                      .setRequestBodyExtractor(
-                          new FieldsExtractor<GetScreenshotInstanceRequest, String>() {
-                            @Override
-                            public String extract(GetScreenshotInstanceRequest request) {
-                              return null;
-                            }
-                          })
+                      .setRequestBodyExtractor(request -> null)
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Screenshot>newBuilder()
@@ -826,45 +630,29 @@ public class HttpJsonInstancesStub extends InstancesStub {
                   ProtoMessageRequestFormatter.<GetSerialPortOutputInstanceRequest>newBuilder()
                       .setPath(
                           "/compute/v1/projects/{project}/zones/{zone}/instances/{instance}/serialPort",
-                          new FieldsExtractor<
-                              GetSerialPortOutputInstanceRequest, Map<String, String>>() {
-                            @Override
-                            public Map<String, String> extract(
-                                GetSerialPortOutputInstanceRequest request) {
-                              Map<String, String> fields = new HashMap<>();
-                              ProtoRestSerializer<GetSerialPortOutputInstanceRequest> serializer =
-                                  ProtoRestSerializer.create();
-                              serializer.putPathParam(fields, "instance", request.getInstance());
-                              serializer.putPathParam(fields, "project", request.getProject());
-                              serializer.putPathParam(fields, "zone", request.getZone());
-                              return fields;
-                            }
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<GetSerialPortOutputInstanceRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "instance", request.getInstance());
+                            serializer.putPathParam(fields, "project", request.getProject());
+                            serializer.putPathParam(fields, "zone", request.getZone());
+                            return fields;
                           })
                       .setQueryParamsExtractor(
-                          new FieldsExtractor<
-                              GetSerialPortOutputInstanceRequest, Map<String, List<String>>>() {
-                            @Override
-                            public Map<String, List<String>> extract(
-                                GetSerialPortOutputInstanceRequest request) {
-                              Map<String, List<String>> fields = new HashMap<>();
-                              ProtoRestSerializer<GetSerialPortOutputInstanceRequest> serializer =
-                                  ProtoRestSerializer.create();
-                              if (request.hasPort()) {
-                                serializer.putQueryParam(fields, "port", request.getPort());
-                              }
-                              if (request.hasStart()) {
-                                serializer.putQueryParam(fields, "start", request.getStart());
-                              }
-                              return fields;
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<GetSerialPortOutputInstanceRequest> serializer =
+                                ProtoRestSerializer.create();
+                            if (request.hasPort()) {
+                              serializer.putQueryParam(fields, "port", request.getPort());
                             }
-                          })
-                      .setRequestBodyExtractor(
-                          new FieldsExtractor<GetSerialPortOutputInstanceRequest, String>() {
-                            @Override
-                            public String extract(GetSerialPortOutputInstanceRequest request) {
-                              return null;
+                            if (request.hasStart()) {
+                              serializer.putQueryParam(fields, "start", request.getStart());
                             }
+                            return fields;
                           })
+                      .setRequestBodyExtractor(request -> null)
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<SerialPortOutput>newBuilder()
@@ -884,42 +672,23 @@ public class HttpJsonInstancesStub extends InstancesStub {
                       .<GetShieldedInstanceIdentityInstanceRequest>newBuilder()
                       .setPath(
                           "/compute/v1/projects/{project}/zones/{zone}/instances/{instance}/getShieldedInstanceIdentity",
-                          new FieldsExtractor<
-                              GetShieldedInstanceIdentityInstanceRequest, Map<String, String>>() {
-                            @Override
-                            public Map<String, String> extract(
-                                GetShieldedInstanceIdentityInstanceRequest request) {
-                              Map<String, String> fields = new HashMap<>();
-                              ProtoRestSerializer<GetShieldedInstanceIdentityInstanceRequest>
-                                  serializer = ProtoRestSerializer.create();
-                              serializer.putPathParam(fields, "instance", request.getInstance());
-                              serializer.putPathParam(fields, "project", request.getProject());
-                              serializer.putPathParam(fields, "zone", request.getZone());
-                              return fields;
-                            }
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<GetShieldedInstanceIdentityInstanceRequest>
+                                serializer = ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "instance", request.getInstance());
+                            serializer.putPathParam(fields, "project", request.getProject());
+                            serializer.putPathParam(fields, "zone", request.getZone());
+                            return fields;
                           })
                       .setQueryParamsExtractor(
-                          new FieldsExtractor<
-                              GetShieldedInstanceIdentityInstanceRequest,
-                              Map<String, List<String>>>() {
-                            @Override
-                            public Map<String, List<String>> extract(
-                                GetShieldedInstanceIdentityInstanceRequest request) {
-                              Map<String, List<String>> fields = new HashMap<>();
-                              ProtoRestSerializer<GetShieldedInstanceIdentityInstanceRequest>
-                                  serializer = ProtoRestSerializer.create();
-                              return fields;
-                            }
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<GetShieldedInstanceIdentityInstanceRequest>
+                                serializer = ProtoRestSerializer.create();
+                            return fields;
                           })
-                      .setRequestBodyExtractor(
-                          new FieldsExtractor<
-                              GetShieldedInstanceIdentityInstanceRequest, String>() {
-                            @Override
-                            public String extract(
-                                GetShieldedInstanceIdentityInstanceRequest request) {
-                              return null;
-                            }
-                          })
+                      .setRequestBodyExtractor(request -> null)
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<ShieldedInstanceIdentity>newBuilder()
@@ -936,46 +705,34 @@ public class HttpJsonInstancesStub extends InstancesStub {
                   ProtoMessageRequestFormatter.<InsertInstanceRequest>newBuilder()
                       .setPath(
                           "/compute/v1/projects/{project}/zones/{zone}/instances",
-                          new FieldsExtractor<InsertInstanceRequest, Map<String, String>>() {
-                            @Override
-                            public Map<String, String> extract(InsertInstanceRequest request) {
-                              Map<String, String> fields = new HashMap<>();
-                              ProtoRestSerializer<InsertInstanceRequest> serializer =
-                                  ProtoRestSerializer.create();
-                              serializer.putPathParam(fields, "project", request.getProject());
-                              serializer.putPathParam(fields, "zone", request.getZone());
-                              return fields;
-                            }
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<InsertInstanceRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "project", request.getProject());
+                            serializer.putPathParam(fields, "zone", request.getZone());
+                            return fields;
                           })
                       .setQueryParamsExtractor(
-                          new FieldsExtractor<InsertInstanceRequest, Map<String, List<String>>>() {
-                            @Override
-                            public Map<String, List<String>> extract(
-                                InsertInstanceRequest request) {
-                              Map<String, List<String>> fields = new HashMap<>();
-                              ProtoRestSerializer<InsertInstanceRequest> serializer =
-                                  ProtoRestSerializer.create();
-                              if (request.hasRequestId()) {
-                                serializer.putQueryParam(
-                                    fields, "requestId", request.getRequestId());
-                              }
-                              if (request.hasSourceInstanceTemplate()) {
-                                serializer.putQueryParam(
-                                    fields,
-                                    "sourceInstanceTemplate",
-                                    request.getSourceInstanceTemplate());
-                              }
-                              return fields;
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<InsertInstanceRequest> serializer =
+                                ProtoRestSerializer.create();
+                            if (request.hasRequestId()) {
+                              serializer.putQueryParam(fields, "requestId", request.getRequestId());
                             }
+                            if (request.hasSourceInstanceTemplate()) {
+                              serializer.putQueryParam(
+                                  fields,
+                                  "sourceInstanceTemplate",
+                                  request.getSourceInstanceTemplate());
+                            }
+                            return fields;
                           })
                       .setRequestBodyExtractor(
-                          new FieldsExtractor<InsertInstanceRequest, String>() {
-                            @Override
-                            public String extract(InsertInstanceRequest request) {
-                              return ProtoRestSerializer.create()
-                                  .toBody("instanceResource", request.getInstanceResource());
-                            }
-                          })
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("instanceResource", request.getInstanceResource()))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -992,54 +749,41 @@ public class HttpJsonInstancesStub extends InstancesStub {
                   ProtoMessageRequestFormatter.<ListInstancesRequest>newBuilder()
                       .setPath(
                           "/compute/v1/projects/{project}/zones/{zone}/instances",
-                          new FieldsExtractor<ListInstancesRequest, Map<String, String>>() {
-                            @Override
-                            public Map<String, String> extract(ListInstancesRequest request) {
-                              Map<String, String> fields = new HashMap<>();
-                              ProtoRestSerializer<ListInstancesRequest> serializer =
-                                  ProtoRestSerializer.create();
-                              serializer.putPathParam(fields, "project", request.getProject());
-                              serializer.putPathParam(fields, "zone", request.getZone());
-                              return fields;
-                            }
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<ListInstancesRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "project", request.getProject());
+                            serializer.putPathParam(fields, "zone", request.getZone());
+                            return fields;
                           })
                       .setQueryParamsExtractor(
-                          new FieldsExtractor<ListInstancesRequest, Map<String, List<String>>>() {
-                            @Override
-                            public Map<String, List<String>> extract(ListInstancesRequest request) {
-                              Map<String, List<String>> fields = new HashMap<>();
-                              ProtoRestSerializer<ListInstancesRequest> serializer =
-                                  ProtoRestSerializer.create();
-                              if (request.hasFilter()) {
-                                serializer.putQueryParam(fields, "filter", request.getFilter());
-                              }
-                              if (request.hasMaxResults()) {
-                                serializer.putQueryParam(
-                                    fields, "maxResults", request.getMaxResults());
-                              }
-                              if (request.hasOrderBy()) {
-                                serializer.putQueryParam(fields, "orderBy", request.getOrderBy());
-                              }
-                              if (request.hasPageToken()) {
-                                serializer.putQueryParam(
-                                    fields, "pageToken", request.getPageToken());
-                              }
-                              if (request.hasReturnPartialSuccess()) {
-                                serializer.putQueryParam(
-                                    fields,
-                                    "returnPartialSuccess",
-                                    request.getReturnPartialSuccess());
-                              }
-                              return fields;
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<ListInstancesRequest> serializer =
+                                ProtoRestSerializer.create();
+                            if (request.hasFilter()) {
+                              serializer.putQueryParam(fields, "filter", request.getFilter());
                             }
-                          })
-                      .setRequestBodyExtractor(
-                          new FieldsExtractor<ListInstancesRequest, String>() {
-                            @Override
-                            public String extract(ListInstancesRequest request) {
-                              return null;
+                            if (request.hasMaxResults()) {
+                              serializer.putQueryParam(
+                                  fields, "maxResults", request.getMaxResults());
                             }
+                            if (request.hasOrderBy()) {
+                              serializer.putQueryParam(fields, "orderBy", request.getOrderBy());
+                            }
+                            if (request.hasPageToken()) {
+                              serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            }
+                            if (request.hasReturnPartialSuccess()) {
+                              serializer.putQueryParam(
+                                  fields,
+                                  "returnPartialSuccess",
+                                  request.getReturnPartialSuccess());
+                            }
+                            return fields;
                           })
+                      .setRequestBodyExtractor(request -> null)
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<InstanceList>newBuilder()
@@ -1056,59 +800,42 @@ public class HttpJsonInstancesStub extends InstancesStub {
                   ProtoMessageRequestFormatter.<ListReferrersInstancesRequest>newBuilder()
                       .setPath(
                           "/compute/v1/projects/{project}/zones/{zone}/instances/{instance}/referrers",
-                          new FieldsExtractor<
-                              ListReferrersInstancesRequest, Map<String, String>>() {
-                            @Override
-                            public Map<String, String> extract(
-                                ListReferrersInstancesRequest request) {
-                              Map<String, String> fields = new HashMap<>();
-                              ProtoRestSerializer<ListReferrersInstancesRequest> serializer =
-                                  ProtoRestSerializer.create();
-                              serializer.putPathParam(fields, "instance", request.getInstance());
-                              serializer.putPathParam(fields, "project", request.getProject());
-                              serializer.putPathParam(fields, "zone", request.getZone());
-                              return fields;
-                            }
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<ListReferrersInstancesRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "instance", request.getInstance());
+                            serializer.putPathParam(fields, "project", request.getProject());
+                            serializer.putPathParam(fields, "zone", request.getZone());
+                            return fields;
                           })
                       .setQueryParamsExtractor(
-                          new FieldsExtractor<
-                              ListReferrersInstancesRequest, Map<String, List<String>>>() {
-                            @Override
-                            public Map<String, List<String>> extract(
-                                ListReferrersInstancesRequest request) {
-                              Map<String, List<String>> fields = new HashMap<>();
-                              ProtoRestSerializer<ListReferrersInstancesRequest> serializer =
-                                  ProtoRestSerializer.create();
-                              if (request.hasFilter()) {
-                                serializer.putQueryParam(fields, "filter", request.getFilter());
-                              }
-                              if (request.hasMaxResults()) {
-                                serializer.putQueryParam(
-                                    fields, "maxResults", request.getMaxResults());
-                              }
-                              if (request.hasOrderBy()) {
-                                serializer.putQueryParam(fields, "orderBy", request.getOrderBy());
-                              }
-                              if (request.hasPageToken()) {
-                                serializer.putQueryParam(
-                                    fields, "pageToken", request.getPageToken());
-                              }
-                              if (request.hasReturnPartialSuccess()) {
-                                serializer.putQueryParam(
-                                    fields,
-                                    "returnPartialSuccess",
-                                    request.getReturnPartialSuccess());
-                              }
-                              return fields;
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<ListReferrersInstancesRequest> serializer =
+                                ProtoRestSerializer.create();
+                            if (request.hasFilter()) {
+                              serializer.putQueryParam(fields, "filter", request.getFilter());
                             }
-                          })
-                      .setRequestBodyExtractor(
-                          new FieldsExtractor<ListReferrersInstancesRequest, String>() {
-                            @Override
-                            public String extract(ListReferrersInstancesRequest request) {
-                              return null;
+                            if (request.hasMaxResults()) {
+                              serializer.putQueryParam(
+                                  fields, "maxResults", request.getMaxResults());
                             }
+                            if (request.hasOrderBy()) {
+                              serializer.putQueryParam(fields, "orderBy", request.getOrderBy());
+                            }
+                            if (request.hasPageToken()) {
+                              serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            }
+                            if (request.hasReturnPartialSuccess()) {
+                              serializer.putQueryParam(
+                                  fields,
+                                  "returnPartialSuccess",
+                                  request.getReturnPartialSuccess());
+                            }
+                            return fields;
                           })
+                      .setRequestBodyExtractor(request -> null)
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<InstanceListReferrers>newBuilder()
@@ -1125,46 +852,31 @@ public class HttpJsonInstancesStub extends InstancesStub {
                   ProtoMessageRequestFormatter.<RemoveResourcePoliciesInstanceRequest>newBuilder()
                       .setPath(
                           "/compute/v1/projects/{project}/zones/{zone}/instances/{instance}/removeResourcePolicies",
-                          new FieldsExtractor<
-                              RemoveResourcePoliciesInstanceRequest, Map<String, String>>() {
-                            @Override
-                            public Map<String, String> extract(
-                                RemoveResourcePoliciesInstanceRequest request) {
-                              Map<String, String> fields = new HashMap<>();
-                              ProtoRestSerializer<RemoveResourcePoliciesInstanceRequest>
-                                  serializer = ProtoRestSerializer.create();
-                              serializer.putPathParam(fields, "instance", request.getInstance());
-                              serializer.putPathParam(fields, "project", request.getProject());
-                              serializer.putPathParam(fields, "zone", request.getZone());
-                              return fields;
-                            }
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<RemoveResourcePoliciesInstanceRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "instance", request.getInstance());
+                            serializer.putPathParam(fields, "project", request.getProject());
+                            serializer.putPathParam(fields, "zone", request.getZone());
+                            return fields;
                           })
                       .setQueryParamsExtractor(
-                          new FieldsExtractor<
-                              RemoveResourcePoliciesInstanceRequest, Map<String, List<String>>>() {
-                            @Override
-                            public Map<String, List<String>> extract(
-                                RemoveResourcePoliciesInstanceRequest request) {
-                              Map<String, List<String>> fields = new HashMap<>();
-                              ProtoRestSerializer<RemoveResourcePoliciesInstanceRequest>
-                                  serializer = ProtoRestSerializer.create();
-                              if (request.hasRequestId()) {
-                                serializer.putQueryParam(
-                                    fields, "requestId", request.getRequestId());
-                              }
-                              return fields;
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<RemoveResourcePoliciesInstanceRequest> serializer =
+                                ProtoRestSerializer.create();
+                            if (request.hasRequestId()) {
+                              serializer.putQueryParam(fields, "requestId", request.getRequestId());
                             }
+                            return fields;
                           })
                       .setRequestBodyExtractor(
-                          new FieldsExtractor<RemoveResourcePoliciesInstanceRequest, String>() {
-                            @Override
-                            public String extract(RemoveResourcePoliciesInstanceRequest request) {
-                              return ProtoRestSerializer.create()
+                          request ->
+                              ProtoRestSerializer.create()
                                   .toBody(
                                       "instancesRemoveResourcePoliciesRequestResource",
-                                      request.getInstancesRemoveResourcePoliciesRequestResource());
-                            }
-                          })
+                                      request.getInstancesRemoveResourcePoliciesRequestResource()))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -1180,38 +892,26 @@ public class HttpJsonInstancesStub extends InstancesStub {
               ProtoMessageRequestFormatter.<ResetInstanceRequest>newBuilder()
                   .setPath(
                       "/compute/v1/projects/{project}/zones/{zone}/instances/{instance}/reset",
-                      new FieldsExtractor<ResetInstanceRequest, Map<String, String>>() {
-                        @Override
-                        public Map<String, String> extract(ResetInstanceRequest request) {
-                          Map<String, String> fields = new HashMap<>();
-                          ProtoRestSerializer<ResetInstanceRequest> serializer =
-                              ProtoRestSerializer.create();
-                          serializer.putPathParam(fields, "instance", request.getInstance());
-                          serializer.putPathParam(fields, "project", request.getProject());
-                          serializer.putPathParam(fields, "zone", request.getZone());
-                          return fields;
-                        }
+                      request -> {
+                        Map<String, String> fields = new HashMap<>();
+                        ProtoRestSerializer<ResetInstanceRequest> serializer =
+                            ProtoRestSerializer.create();
+                        serializer.putPathParam(fields, "instance", request.getInstance());
+                        serializer.putPathParam(fields, "project", request.getProject());
+                        serializer.putPathParam(fields, "zone", request.getZone());
+                        return fields;
                       })
                   .setQueryParamsExtractor(
-                      new FieldsExtractor<ResetInstanceRequest, Map<String, List<String>>>() {
-                        @Override
-                        public Map<String, List<String>> extract(ResetInstanceRequest request) {
-                          Map<String, List<String>> fields = new HashMap<>();
-                          ProtoRestSerializer<ResetInstanceRequest> serializer =
-                              ProtoRestSerializer.create();
-                          if (request.hasRequestId()) {
-                            serializer.putQueryParam(fields, "requestId", request.getRequestId());
-                          }
-                          return fields;
+                      request -> {
+                        Map<String, List<String>> fields = new HashMap<>();
+                        ProtoRestSerializer<ResetInstanceRequest> serializer =
+                            ProtoRestSerializer.create();
+                        if (request.hasRequestId()) {
+                          serializer.putQueryParam(fields, "requestId", request.getRequestId());
                         }
+                        return fields;
                       })
-                  .setRequestBodyExtractor(
-                      new FieldsExtractor<ResetInstanceRequest, String>() {
-                        @Override
-                        public String extract(ResetInstanceRequest request) {
-                          return null;
-                        }
-                      })
+                  .setRequestBodyExtractor(request -> null)
                   .build())
           .setResponseParser(
               ProtoMessageResponseParser.<Operation>newBuilder()
@@ -1228,47 +928,30 @@ public class HttpJsonInstancesStub extends InstancesStub {
                   ProtoMessageRequestFormatter.<SetDeletionProtectionInstanceRequest>newBuilder()
                       .setPath(
                           "/compute/v1/projects/{project}/zones/{zone}/instances/{resource}/setDeletionProtection",
-                          new FieldsExtractor<
-                              SetDeletionProtectionInstanceRequest, Map<String, String>>() {
-                            @Override
-                            public Map<String, String> extract(
-                                SetDeletionProtectionInstanceRequest request) {
-                              Map<String, String> fields = new HashMap<>();
-                              ProtoRestSerializer<SetDeletionProtectionInstanceRequest> serializer =
-                                  ProtoRestSerializer.create();
-                              serializer.putPathParam(fields, "project", request.getProject());
-                              serializer.putPathParam(fields, "resource", request.getResource());
-                              serializer.putPathParam(fields, "zone", request.getZone());
-                              return fields;
-                            }
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<SetDeletionProtectionInstanceRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "project", request.getProject());
+                            serializer.putPathParam(fields, "resource", request.getResource());
+                            serializer.putPathParam(fields, "zone", request.getZone());
+                            return fields;
                           })
                       .setQueryParamsExtractor(
-                          new FieldsExtractor<
-                              SetDeletionProtectionInstanceRequest, Map<String, List<String>>>() {
-                            @Override
-                            public Map<String, List<String>> extract(
-                                SetDeletionProtectionInstanceRequest request) {
-                              Map<String, List<String>> fields = new HashMap<>();
-                              ProtoRestSerializer<SetDeletionProtectionInstanceRequest> serializer =
-                                  ProtoRestSerializer.create();
-                              if (request.hasDeletionProtection()) {
-                                serializer.putQueryParam(
-                                    fields, "deletionProtection", request.getDeletionProtection());
-                              }
-                              if (request.hasRequestId()) {
-                                serializer.putQueryParam(
-                                    fields, "requestId", request.getRequestId());
-                              }
-                              return fields;
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<SetDeletionProtectionInstanceRequest> serializer =
+                                ProtoRestSerializer.create();
+                            if (request.hasDeletionProtection()) {
+                              serializer.putQueryParam(
+                                  fields, "deletionProtection", request.getDeletionProtection());
                             }
-                          })
-                      .setRequestBodyExtractor(
-                          new FieldsExtractor<SetDeletionProtectionInstanceRequest, String>() {
-                            @Override
-                            public String extract(SetDeletionProtectionInstanceRequest request) {
-                              return null;
+                            if (request.hasRequestId()) {
+                              serializer.putQueryParam(fields, "requestId", request.getRequestId());
                             }
+                            return fields;
                           })
+                      .setRequestBodyExtractor(request -> null)
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -1285,47 +968,28 @@ public class HttpJsonInstancesStub extends InstancesStub {
                   ProtoMessageRequestFormatter.<SetDiskAutoDeleteInstanceRequest>newBuilder()
                       .setPath(
                           "/compute/v1/projects/{project}/zones/{zone}/instances/{instance}/setDiskAutoDelete",
-                          new FieldsExtractor<
-                              SetDiskAutoDeleteInstanceRequest, Map<String, String>>() {
-                            @Override
-                            public Map<String, String> extract(
-                                SetDiskAutoDeleteInstanceRequest request) {
-                              Map<String, String> fields = new HashMap<>();
-                              ProtoRestSerializer<SetDiskAutoDeleteInstanceRequest> serializer =
-                                  ProtoRestSerializer.create();
-                              serializer.putPathParam(fields, "instance", request.getInstance());
-                              serializer.putPathParam(fields, "project", request.getProject());
-                              serializer.putPathParam(fields, "zone", request.getZone());
-                              return fields;
-                            }
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<SetDiskAutoDeleteInstanceRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "instance", request.getInstance());
+                            serializer.putPathParam(fields, "project", request.getProject());
+                            serializer.putPathParam(fields, "zone", request.getZone());
+                            return fields;
                           })
                       .setQueryParamsExtractor(
-                          new FieldsExtractor<
-                              SetDiskAutoDeleteInstanceRequest, Map<String, List<String>>>() {
-                            @Override
-                            public Map<String, List<String>> extract(
-                                SetDiskAutoDeleteInstanceRequest request) {
-                              Map<String, List<String>> fields = new HashMap<>();
-                              ProtoRestSerializer<SetDiskAutoDeleteInstanceRequest> serializer =
-                                  ProtoRestSerializer.create();
-                              serializer.putQueryParam(
-                                  fields, "autoDelete", request.getAutoDelete());
-                              serializer.putQueryParam(
-                                  fields, "deviceName", request.getDeviceName());
-                              if (request.hasRequestId()) {
-                                serializer.putQueryParam(
-                                    fields, "requestId", request.getRequestId());
-                              }
-                              return fields;
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<SetDiskAutoDeleteInstanceRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "autoDelete", request.getAutoDelete());
+                            serializer.putQueryParam(fields, "deviceName", request.getDeviceName());
+                            if (request.hasRequestId()) {
+                              serializer.putQueryParam(fields, "requestId", request.getRequestId());
                             }
+                            return fields;
                           })
-                      .setRequestBodyExtractor(
-                          new FieldsExtractor<SetDiskAutoDeleteInstanceRequest, String>() {
-                            @Override
-                            public String extract(SetDiskAutoDeleteInstanceRequest request) {
-                              return null;
-                            }
-                          })
+                      .setRequestBodyExtractor(request -> null)
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -1342,41 +1006,28 @@ public class HttpJsonInstancesStub extends InstancesStub {
                   ProtoMessageRequestFormatter.<SetIamPolicyInstanceRequest>newBuilder()
                       .setPath(
                           "/compute/v1/projects/{project}/zones/{zone}/instances/{resource}/setIamPolicy",
-                          new FieldsExtractor<SetIamPolicyInstanceRequest, Map<String, String>>() {
-                            @Override
-                            public Map<String, String> extract(
-                                SetIamPolicyInstanceRequest request) {
-                              Map<String, String> fields = new HashMap<>();
-                              ProtoRestSerializer<SetIamPolicyInstanceRequest> serializer =
-                                  ProtoRestSerializer.create();
-                              serializer.putPathParam(fields, "project", request.getProject());
-                              serializer.putPathParam(fields, "resource", request.getResource());
-                              serializer.putPathParam(fields, "zone", request.getZone());
-                              return fields;
-                            }
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<SetIamPolicyInstanceRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "project", request.getProject());
+                            serializer.putPathParam(fields, "resource", request.getResource());
+                            serializer.putPathParam(fields, "zone", request.getZone());
+                            return fields;
                           })
                       .setQueryParamsExtractor(
-                          new FieldsExtractor<
-                              SetIamPolicyInstanceRequest, Map<String, List<String>>>() {
-                            @Override
-                            public Map<String, List<String>> extract(
-                                SetIamPolicyInstanceRequest request) {
-                              Map<String, List<String>> fields = new HashMap<>();
-                              ProtoRestSerializer<SetIamPolicyInstanceRequest> serializer =
-                                  ProtoRestSerializer.create();
-                              return fields;
-                            }
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<SetIamPolicyInstanceRequest> serializer =
+                                ProtoRestSerializer.create();
+                            return fields;
                           })
                       .setRequestBodyExtractor(
-                          new FieldsExtractor<SetIamPolicyInstanceRequest, String>() {
-                            @Override
-                            public String extract(SetIamPolicyInstanceRequest request) {
-                              return ProtoRestSerializer.create()
+                          request ->
+                              ProtoRestSerializer.create()
                                   .toBody(
                                       "zoneSetPolicyRequestResource",
-                                      request.getZoneSetPolicyRequestResource());
-                            }
-                          })
+                                      request.getZoneSetPolicyRequestResource()))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Policy>newBuilder()
@@ -1393,44 +1044,31 @@ public class HttpJsonInstancesStub extends InstancesStub {
                   ProtoMessageRequestFormatter.<SetLabelsInstanceRequest>newBuilder()
                       .setPath(
                           "/compute/v1/projects/{project}/zones/{zone}/instances/{instance}/setLabels",
-                          new FieldsExtractor<SetLabelsInstanceRequest, Map<String, String>>() {
-                            @Override
-                            public Map<String, String> extract(SetLabelsInstanceRequest request) {
-                              Map<String, String> fields = new HashMap<>();
-                              ProtoRestSerializer<SetLabelsInstanceRequest> serializer =
-                                  ProtoRestSerializer.create();
-                              serializer.putPathParam(fields, "instance", request.getInstance());
-                              serializer.putPathParam(fields, "project", request.getProject());
-                              serializer.putPathParam(fields, "zone", request.getZone());
-                              return fields;
-                            }
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<SetLabelsInstanceRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "instance", request.getInstance());
+                            serializer.putPathParam(fields, "project", request.getProject());
+                            serializer.putPathParam(fields, "zone", request.getZone());
+                            return fields;
                           })
                       .setQueryParamsExtractor(
-                          new FieldsExtractor<
-                              SetLabelsInstanceRequest, Map<String, List<String>>>() {
-                            @Override
-                            public Map<String, List<String>> extract(
-                                SetLabelsInstanceRequest request) {
-                              Map<String, List<String>> fields = new HashMap<>();
-                              ProtoRestSerializer<SetLabelsInstanceRequest> serializer =
-                                  ProtoRestSerializer.create();
-                              if (request.hasRequestId()) {
-                                serializer.putQueryParam(
-                                    fields, "requestId", request.getRequestId());
-                              }
-                              return fields;
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<SetLabelsInstanceRequest> serializer =
+                                ProtoRestSerializer.create();
+                            if (request.hasRequestId()) {
+                              serializer.putQueryParam(fields, "requestId", request.getRequestId());
                             }
+                            return fields;
                           })
                       .setRequestBodyExtractor(
-                          new FieldsExtractor<SetLabelsInstanceRequest, String>() {
-                            @Override
-                            public String extract(SetLabelsInstanceRequest request) {
-                              return ProtoRestSerializer.create()
+                          request ->
+                              ProtoRestSerializer.create()
                                   .toBody(
                                       "instancesSetLabelsRequestResource",
-                                      request.getInstancesSetLabelsRequestResource());
-                            }
-                          })
+                                      request.getInstancesSetLabelsRequestResource()))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -1447,46 +1085,31 @@ public class HttpJsonInstancesStub extends InstancesStub {
                   ProtoMessageRequestFormatter.<SetMachineResourcesInstanceRequest>newBuilder()
                       .setPath(
                           "/compute/v1/projects/{project}/zones/{zone}/instances/{instance}/setMachineResources",
-                          new FieldsExtractor<
-                              SetMachineResourcesInstanceRequest, Map<String, String>>() {
-                            @Override
-                            public Map<String, String> extract(
-                                SetMachineResourcesInstanceRequest request) {
-                              Map<String, String> fields = new HashMap<>();
-                              ProtoRestSerializer<SetMachineResourcesInstanceRequest> serializer =
-                                  ProtoRestSerializer.create();
-                              serializer.putPathParam(fields, "instance", request.getInstance());
-                              serializer.putPathParam(fields, "project", request.getProject());
-                              serializer.putPathParam(fields, "zone", request.getZone());
-                              return fields;
-                            }
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<SetMachineResourcesInstanceRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "instance", request.getInstance());
+                            serializer.putPathParam(fields, "project", request.getProject());
+                            serializer.putPathParam(fields, "zone", request.getZone());
+                            return fields;
                           })
                       .setQueryParamsExtractor(
-                          new FieldsExtractor<
-                              SetMachineResourcesInstanceRequest, Map<String, List<String>>>() {
-                            @Override
-                            public Map<String, List<String>> extract(
-                                SetMachineResourcesInstanceRequest request) {
-                              Map<String, List<String>> fields = new HashMap<>();
-                              ProtoRestSerializer<SetMachineResourcesInstanceRequest> serializer =
-                                  ProtoRestSerializer.create();
-                              if (request.hasRequestId()) {
-                                serializer.putQueryParam(
-                                    fields, "requestId", request.getRequestId());
-                              }
-                              return fields;
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<SetMachineResourcesInstanceRequest> serializer =
+                                ProtoRestSerializer.create();
+                            if (request.hasRequestId()) {
+                              serializer.putQueryParam(fields, "requestId", request.getRequestId());
                             }
+                            return fields;
                           })
                       .setRequestBodyExtractor(
-                          new FieldsExtractor<SetMachineResourcesInstanceRequest, String>() {
-                            @Override
-                            public String extract(SetMachineResourcesInstanceRequest request) {
-                              return ProtoRestSerializer.create()
+                          request ->
+                              ProtoRestSerializer.create()
                                   .toBody(
                                       "instancesSetMachineResourcesRequestResource",
-                                      request.getInstancesSetMachineResourcesRequestResource());
-                            }
-                          })
+                                      request.getInstancesSetMachineResourcesRequestResource()))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -1503,46 +1126,31 @@ public class HttpJsonInstancesStub extends InstancesStub {
                   ProtoMessageRequestFormatter.<SetMachineTypeInstanceRequest>newBuilder()
                       .setPath(
                           "/compute/v1/projects/{project}/zones/{zone}/instances/{instance}/setMachineType",
-                          new FieldsExtractor<
-                              SetMachineTypeInstanceRequest, Map<String, String>>() {
-                            @Override
-                            public Map<String, String> extract(
-                                SetMachineTypeInstanceRequest request) {
-                              Map<String, String> fields = new HashMap<>();
-                              ProtoRestSerializer<SetMachineTypeInstanceRequest> serializer =
-                                  ProtoRestSerializer.create();
-                              serializer.putPathParam(fields, "instance", request.getInstance());
-                              serializer.putPathParam(fields, "project", request.getProject());
-                              serializer.putPathParam(fields, "zone", request.getZone());
-                              return fields;
-                            }
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<SetMachineTypeInstanceRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "instance", request.getInstance());
+                            serializer.putPathParam(fields, "project", request.getProject());
+                            serializer.putPathParam(fields, "zone", request.getZone());
+                            return fields;
                           })
                       .setQueryParamsExtractor(
-                          new FieldsExtractor<
-                              SetMachineTypeInstanceRequest, Map<String, List<String>>>() {
-                            @Override
-                            public Map<String, List<String>> extract(
-                                SetMachineTypeInstanceRequest request) {
-                              Map<String, List<String>> fields = new HashMap<>();
-                              ProtoRestSerializer<SetMachineTypeInstanceRequest> serializer =
-                                  ProtoRestSerializer.create();
-                              if (request.hasRequestId()) {
-                                serializer.putQueryParam(
-                                    fields, "requestId", request.getRequestId());
-                              }
-                              return fields;
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<SetMachineTypeInstanceRequest> serializer =
+                                ProtoRestSerializer.create();
+                            if (request.hasRequestId()) {
+                              serializer.putQueryParam(fields, "requestId", request.getRequestId());
                             }
+                            return fields;
                           })
                       .setRequestBodyExtractor(
-                          new FieldsExtractor<SetMachineTypeInstanceRequest, String>() {
-                            @Override
-                            public String extract(SetMachineTypeInstanceRequest request) {
-                              return ProtoRestSerializer.create()
+                          request ->
+                              ProtoRestSerializer.create()
                                   .toBody(
                                       "instancesSetMachineTypeRequestResource",
-                                      request.getInstancesSetMachineTypeRequestResource());
-                            }
-                          })
+                                      request.getInstancesSetMachineTypeRequestResource()))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -1559,42 +1167,29 @@ public class HttpJsonInstancesStub extends InstancesStub {
                   ProtoMessageRequestFormatter.<SetMetadataInstanceRequest>newBuilder()
                       .setPath(
                           "/compute/v1/projects/{project}/zones/{zone}/instances/{instance}/setMetadata",
-                          new FieldsExtractor<SetMetadataInstanceRequest, Map<String, String>>() {
-                            @Override
-                            public Map<String, String> extract(SetMetadataInstanceRequest request) {
-                              Map<String, String> fields = new HashMap<>();
-                              ProtoRestSerializer<SetMetadataInstanceRequest> serializer =
-                                  ProtoRestSerializer.create();
-                              serializer.putPathParam(fields, "instance", request.getInstance());
-                              serializer.putPathParam(fields, "project", request.getProject());
-                              serializer.putPathParam(fields, "zone", request.getZone());
-                              return fields;
-                            }
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<SetMetadataInstanceRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "instance", request.getInstance());
+                            serializer.putPathParam(fields, "project", request.getProject());
+                            serializer.putPathParam(fields, "zone", request.getZone());
+                            return fields;
                           })
                       .setQueryParamsExtractor(
-                          new FieldsExtractor<
-                              SetMetadataInstanceRequest, Map<String, List<String>>>() {
-                            @Override
-                            public Map<String, List<String>> extract(
-                                SetMetadataInstanceRequest request) {
-                              Map<String, List<String>> fields = new HashMap<>();
-                              ProtoRestSerializer<SetMetadataInstanceRequest> serializer =
-                                  ProtoRestSerializer.create();
-                              if (request.hasRequestId()) {
-                                serializer.putQueryParam(
-                                    fields, "requestId", request.getRequestId());
-                              }
-                              return fields;
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<SetMetadataInstanceRequest> serializer =
+                                ProtoRestSerializer.create();
+                            if (request.hasRequestId()) {
+                              serializer.putQueryParam(fields, "requestId", request.getRequestId());
                             }
+                            return fields;
                           })
                       .setRequestBodyExtractor(
-                          new FieldsExtractor<SetMetadataInstanceRequest, String>() {
-                            @Override
-                            public String extract(SetMetadataInstanceRequest request) {
-                              return ProtoRestSerializer.create()
-                                  .toBody("metadataResource", request.getMetadataResource());
-                            }
-                          })
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("metadataResource", request.getMetadataResource()))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -1611,46 +1206,31 @@ public class HttpJsonInstancesStub extends InstancesStub {
                   ProtoMessageRequestFormatter.<SetMinCpuPlatformInstanceRequest>newBuilder()
                       .setPath(
                           "/compute/v1/projects/{project}/zones/{zone}/instances/{instance}/setMinCpuPlatform",
-                          new FieldsExtractor<
-                              SetMinCpuPlatformInstanceRequest, Map<String, String>>() {
-                            @Override
-                            public Map<String, String> extract(
-                                SetMinCpuPlatformInstanceRequest request) {
-                              Map<String, String> fields = new HashMap<>();
-                              ProtoRestSerializer<SetMinCpuPlatformInstanceRequest> serializer =
-                                  ProtoRestSerializer.create();
-                              serializer.putPathParam(fields, "instance", request.getInstance());
-                              serializer.putPathParam(fields, "project", request.getProject());
-                              serializer.putPathParam(fields, "zone", request.getZone());
-                              return fields;
-                            }
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<SetMinCpuPlatformInstanceRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "instance", request.getInstance());
+                            serializer.putPathParam(fields, "project", request.getProject());
+                            serializer.putPathParam(fields, "zone", request.getZone());
+                            return fields;
                           })
                       .setQueryParamsExtractor(
-                          new FieldsExtractor<
-                              SetMinCpuPlatformInstanceRequest, Map<String, List<String>>>() {
-                            @Override
-                            public Map<String, List<String>> extract(
-                                SetMinCpuPlatformInstanceRequest request) {
-                              Map<String, List<String>> fields = new HashMap<>();
-                              ProtoRestSerializer<SetMinCpuPlatformInstanceRequest> serializer =
-                                  ProtoRestSerializer.create();
-                              if (request.hasRequestId()) {
-                                serializer.putQueryParam(
-                                    fields, "requestId", request.getRequestId());
-                              }
-                              return fields;
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<SetMinCpuPlatformInstanceRequest> serializer =
+                                ProtoRestSerializer.create();
+                            if (request.hasRequestId()) {
+                              serializer.putQueryParam(fields, "requestId", request.getRequestId());
                             }
+                            return fields;
                           })
                       .setRequestBodyExtractor(
-                          new FieldsExtractor<SetMinCpuPlatformInstanceRequest, String>() {
-                            @Override
-                            public String extract(SetMinCpuPlatformInstanceRequest request) {
-                              return ProtoRestSerializer.create()
+                          request ->
+                              ProtoRestSerializer.create()
                                   .toBody(
                                       "instancesSetMinCpuPlatformRequestResource",
-                                      request.getInstancesSetMinCpuPlatformRequestResource());
-                            }
-                          })
+                                      request.getInstancesSetMinCpuPlatformRequestResource()))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -1667,43 +1247,29 @@ public class HttpJsonInstancesStub extends InstancesStub {
                   ProtoMessageRequestFormatter.<SetSchedulingInstanceRequest>newBuilder()
                       .setPath(
                           "/compute/v1/projects/{project}/zones/{zone}/instances/{instance}/setScheduling",
-                          new FieldsExtractor<SetSchedulingInstanceRequest, Map<String, String>>() {
-                            @Override
-                            public Map<String, String> extract(
-                                SetSchedulingInstanceRequest request) {
-                              Map<String, String> fields = new HashMap<>();
-                              ProtoRestSerializer<SetSchedulingInstanceRequest> serializer =
-                                  ProtoRestSerializer.create();
-                              serializer.putPathParam(fields, "instance", request.getInstance());
-                              serializer.putPathParam(fields, "project", request.getProject());
-                              serializer.putPathParam(fields, "zone", request.getZone());
-                              return fields;
-                            }
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<SetSchedulingInstanceRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "instance", request.getInstance());
+                            serializer.putPathParam(fields, "project", request.getProject());
+                            serializer.putPathParam(fields, "zone", request.getZone());
+                            return fields;
                           })
                       .setQueryParamsExtractor(
-                          new FieldsExtractor<
-                              SetSchedulingInstanceRequest, Map<String, List<String>>>() {
-                            @Override
-                            public Map<String, List<String>> extract(
-                                SetSchedulingInstanceRequest request) {
-                              Map<String, List<String>> fields = new HashMap<>();
-                              ProtoRestSerializer<SetSchedulingInstanceRequest> serializer =
-                                  ProtoRestSerializer.create();
-                              if (request.hasRequestId()) {
-                                serializer.putQueryParam(
-                                    fields, "requestId", request.getRequestId());
-                              }
-                              return fields;
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<SetSchedulingInstanceRequest> serializer =
+                                ProtoRestSerializer.create();
+                            if (request.hasRequestId()) {
+                              serializer.putQueryParam(fields, "requestId", request.getRequestId());
                             }
+                            return fields;
                           })
                       .setRequestBodyExtractor(
-                          new FieldsExtractor<SetSchedulingInstanceRequest, String>() {
-                            @Override
-                            public String extract(SetSchedulingInstanceRequest request) {
-                              return ProtoRestSerializer.create()
-                                  .toBody("schedulingResource", request.getSchedulingResource());
-                            }
-                          })
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("schedulingResource", request.getSchedulingResource()))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -1720,46 +1286,31 @@ public class HttpJsonInstancesStub extends InstancesStub {
                   ProtoMessageRequestFormatter.<SetServiceAccountInstanceRequest>newBuilder()
                       .setPath(
                           "/compute/v1/projects/{project}/zones/{zone}/instances/{instance}/setServiceAccount",
-                          new FieldsExtractor<
-                              SetServiceAccountInstanceRequest, Map<String, String>>() {
-                            @Override
-                            public Map<String, String> extract(
-                                SetServiceAccountInstanceRequest request) {
-                              Map<String, String> fields = new HashMap<>();
-                              ProtoRestSerializer<SetServiceAccountInstanceRequest> serializer =
-                                  ProtoRestSerializer.create();
-                              serializer.putPathParam(fields, "instance", request.getInstance());
-                              serializer.putPathParam(fields, "project", request.getProject());
-                              serializer.putPathParam(fields, "zone", request.getZone());
-                              return fields;
-                            }
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<SetServiceAccountInstanceRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "instance", request.getInstance());
+                            serializer.putPathParam(fields, "project", request.getProject());
+                            serializer.putPathParam(fields, "zone", request.getZone());
+                            return fields;
                           })
                       .setQueryParamsExtractor(
-                          new FieldsExtractor<
-                              SetServiceAccountInstanceRequest, Map<String, List<String>>>() {
-                            @Override
-                            public Map<String, List<String>> extract(
-                                SetServiceAccountInstanceRequest request) {
-                              Map<String, List<String>> fields = new HashMap<>();
-                              ProtoRestSerializer<SetServiceAccountInstanceRequest> serializer =
-                                  ProtoRestSerializer.create();
-                              if (request.hasRequestId()) {
-                                serializer.putQueryParam(
-                                    fields, "requestId", request.getRequestId());
-                              }
-                              return fields;
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<SetServiceAccountInstanceRequest> serializer =
+                                ProtoRestSerializer.create();
+                            if (request.hasRequestId()) {
+                              serializer.putQueryParam(fields, "requestId", request.getRequestId());
                             }
+                            return fields;
                           })
                       .setRequestBodyExtractor(
-                          new FieldsExtractor<SetServiceAccountInstanceRequest, String>() {
-                            @Override
-                            public String extract(SetServiceAccountInstanceRequest request) {
-                              return ProtoRestSerializer.create()
+                          request ->
+                              ProtoRestSerializer.create()
                                   .toBody(
                                       "instancesSetServiceAccountRequestResource",
-                                      request.getInstancesSetServiceAccountRequestResource());
-                            }
-                          })
+                                      request.getInstancesSetServiceAccountRequestResource()))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -1780,50 +1331,31 @@ public class HttpJsonInstancesStub extends InstancesStub {
                       .<SetShieldedInstanceIntegrityPolicyInstanceRequest>newBuilder()
                       .setPath(
                           "/compute/v1/projects/{project}/zones/{zone}/instances/{instance}/setShieldedInstanceIntegrityPolicy",
-                          new FieldsExtractor<
-                              SetShieldedInstanceIntegrityPolicyInstanceRequest,
-                              Map<String, String>>() {
-                            @Override
-                            public Map<String, String> extract(
-                                SetShieldedInstanceIntegrityPolicyInstanceRequest request) {
-                              Map<String, String> fields = new HashMap<>();
-                              ProtoRestSerializer<SetShieldedInstanceIntegrityPolicyInstanceRequest>
-                                  serializer = ProtoRestSerializer.create();
-                              serializer.putPathParam(fields, "instance", request.getInstance());
-                              serializer.putPathParam(fields, "project", request.getProject());
-                              serializer.putPathParam(fields, "zone", request.getZone());
-                              return fields;
-                            }
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<SetShieldedInstanceIntegrityPolicyInstanceRequest>
+                                serializer = ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "instance", request.getInstance());
+                            serializer.putPathParam(fields, "project", request.getProject());
+                            serializer.putPathParam(fields, "zone", request.getZone());
+                            return fields;
                           })
                       .setQueryParamsExtractor(
-                          new FieldsExtractor<
-                              SetShieldedInstanceIntegrityPolicyInstanceRequest,
-                              Map<String, List<String>>>() {
-                            @Override
-                            public Map<String, List<String>> extract(
-                                SetShieldedInstanceIntegrityPolicyInstanceRequest request) {
-                              Map<String, List<String>> fields = new HashMap<>();
-                              ProtoRestSerializer<SetShieldedInstanceIntegrityPolicyInstanceRequest>
-                                  serializer = ProtoRestSerializer.create();
-                              if (request.hasRequestId()) {
-                                serializer.putQueryParam(
-                                    fields, "requestId", request.getRequestId());
-                              }
-                              return fields;
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<SetShieldedInstanceIntegrityPolicyInstanceRequest>
+                                serializer = ProtoRestSerializer.create();
+                            if (request.hasRequestId()) {
+                              serializer.putQueryParam(fields, "requestId", request.getRequestId());
                             }
+                            return fields;
                           })
                       .setRequestBodyExtractor(
-                          new FieldsExtractor<
-                              SetShieldedInstanceIntegrityPolicyInstanceRequest, String>() {
-                            @Override
-                            public String extract(
-                                SetShieldedInstanceIntegrityPolicyInstanceRequest request) {
-                              return ProtoRestSerializer.create()
+                          request ->
+                              ProtoRestSerializer.create()
                                   .toBody(
                                       "shieldedInstanceIntegrityPolicyResource",
-                                      request.getShieldedInstanceIntegrityPolicyResource());
-                            }
-                          })
+                                      request.getShieldedInstanceIntegrityPolicyResource()))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -1840,41 +1372,29 @@ public class HttpJsonInstancesStub extends InstancesStub {
                   ProtoMessageRequestFormatter.<SetTagsInstanceRequest>newBuilder()
                       .setPath(
                           "/compute/v1/projects/{project}/zones/{zone}/instances/{instance}/setTags",
-                          new FieldsExtractor<SetTagsInstanceRequest, Map<String, String>>() {
-                            @Override
-                            public Map<String, String> extract(SetTagsInstanceRequest request) {
-                              Map<String, String> fields = new HashMap<>();
-                              ProtoRestSerializer<SetTagsInstanceRequest> serializer =
-                                  ProtoRestSerializer.create();
-                              serializer.putPathParam(fields, "instance", request.getInstance());
-                              serializer.putPathParam(fields, "project", request.getProject());
-                              serializer.putPathParam(fields, "zone", request.getZone());
-                              return fields;
-                            }
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<SetTagsInstanceRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "instance", request.getInstance());
+                            serializer.putPathParam(fields, "project", request.getProject());
+                            serializer.putPathParam(fields, "zone", request.getZone());
+                            return fields;
                           })
                       .setQueryParamsExtractor(
-                          new FieldsExtractor<SetTagsInstanceRequest, Map<String, List<String>>>() {
-                            @Override
-                            public Map<String, List<String>> extract(
-                                SetTagsInstanceRequest request) {
-                              Map<String, List<String>> fields = new HashMap<>();
-                              ProtoRestSerializer<SetTagsInstanceRequest> serializer =
-                                  ProtoRestSerializer.create();
-                              if (request.hasRequestId()) {
-                                serializer.putQueryParam(
-                                    fields, "requestId", request.getRequestId());
-                              }
-                              return fields;
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<SetTagsInstanceRequest> serializer =
+                                ProtoRestSerializer.create();
+                            if (request.hasRequestId()) {
+                              serializer.putQueryParam(fields, "requestId", request.getRequestId());
                             }
+                            return fields;
                           })
                       .setRequestBodyExtractor(
-                          new FieldsExtractor<SetTagsInstanceRequest, String>() {
-                            @Override
-                            public String extract(SetTagsInstanceRequest request) {
-                              return ProtoRestSerializer.create()
-                                  .toBody("tagsResource", request.getTagsResource());
-                            }
-                          })
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("tagsResource", request.getTagsResource()))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -1891,40 +1411,23 @@ public class HttpJsonInstancesStub extends InstancesStub {
                   ProtoMessageRequestFormatter.<SimulateMaintenanceEventInstanceRequest>newBuilder()
                       .setPath(
                           "/compute/v1/projects/{project}/zones/{zone}/instances/{instance}/simulateMaintenanceEvent",
-                          new FieldsExtractor<
-                              SimulateMaintenanceEventInstanceRequest, Map<String, String>>() {
-                            @Override
-                            public Map<String, String> extract(
-                                SimulateMaintenanceEventInstanceRequest request) {
-                              Map<String, String> fields = new HashMap<>();
-                              ProtoRestSerializer<SimulateMaintenanceEventInstanceRequest>
-                                  serializer = ProtoRestSerializer.create();
-                              serializer.putPathParam(fields, "instance", request.getInstance());
-                              serializer.putPathParam(fields, "project", request.getProject());
-                              serializer.putPathParam(fields, "zone", request.getZone());
-                              return fields;
-                            }
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<SimulateMaintenanceEventInstanceRequest>
+                                serializer = ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "instance", request.getInstance());
+                            serializer.putPathParam(fields, "project", request.getProject());
+                            serializer.putPathParam(fields, "zone", request.getZone());
+                            return fields;
                           })
                       .setQueryParamsExtractor(
-                          new FieldsExtractor<
-                              SimulateMaintenanceEventInstanceRequest,
-                              Map<String, List<String>>>() {
-                            @Override
-                            public Map<String, List<String>> extract(
-                                SimulateMaintenanceEventInstanceRequest request) {
-                              Map<String, List<String>> fields = new HashMap<>();
-                              ProtoRestSerializer<SimulateMaintenanceEventInstanceRequest>
-                                  serializer = ProtoRestSerializer.create();
-                              return fields;
-                            }
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<SimulateMaintenanceEventInstanceRequest>
+                                serializer = ProtoRestSerializer.create();
+                            return fields;
                           })
-                      .setRequestBodyExtractor(
-                          new FieldsExtractor<SimulateMaintenanceEventInstanceRequest, String>() {
-                            @Override
-                            public String extract(SimulateMaintenanceEventInstanceRequest request) {
-                              return null;
-                            }
-                          })
+                      .setRequestBodyExtractor(request -> null)
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -1940,38 +1443,26 @@ public class HttpJsonInstancesStub extends InstancesStub {
               ProtoMessageRequestFormatter.<StartInstanceRequest>newBuilder()
                   .setPath(
                       "/compute/v1/projects/{project}/zones/{zone}/instances/{instance}/start",
-                      new FieldsExtractor<StartInstanceRequest, Map<String, String>>() {
-                        @Override
-                        public Map<String, String> extract(StartInstanceRequest request) {
-                          Map<String, String> fields = new HashMap<>();
-                          ProtoRestSerializer<StartInstanceRequest> serializer =
-                              ProtoRestSerializer.create();
-                          serializer.putPathParam(fields, "instance", request.getInstance());
-                          serializer.putPathParam(fields, "project", request.getProject());
-                          serializer.putPathParam(fields, "zone", request.getZone());
-                          return fields;
-                        }
+                      request -> {
+                        Map<String, String> fields = new HashMap<>();
+                        ProtoRestSerializer<StartInstanceRequest> serializer =
+                            ProtoRestSerializer.create();
+                        serializer.putPathParam(fields, "instance", request.getInstance());
+                        serializer.putPathParam(fields, "project", request.getProject());
+                        serializer.putPathParam(fields, "zone", request.getZone());
+                        return fields;
                       })
                   .setQueryParamsExtractor(
-                      new FieldsExtractor<StartInstanceRequest, Map<String, List<String>>>() {
-                        @Override
-                        public Map<String, List<String>> extract(StartInstanceRequest request) {
-                          Map<String, List<String>> fields = new HashMap<>();
-                          ProtoRestSerializer<StartInstanceRequest> serializer =
-                              ProtoRestSerializer.create();
-                          if (request.hasRequestId()) {
-                            serializer.putQueryParam(fields, "requestId", request.getRequestId());
-                          }
-                          return fields;
+                      request -> {
+                        Map<String, List<String>> fields = new HashMap<>();
+                        ProtoRestSerializer<StartInstanceRequest> serializer =
+                            ProtoRestSerializer.create();
+                        if (request.hasRequestId()) {
+                          serializer.putQueryParam(fields, "requestId", request.getRequestId());
                         }
+                        return fields;
                       })
-                  .setRequestBodyExtractor(
-                      new FieldsExtractor<StartInstanceRequest, String>() {
-                        @Override
-                        public String extract(StartInstanceRequest request) {
-                          return null;
-                        }
-                      })
+                  .setRequestBodyExtractor(request -> null)
                   .build())
           .setResponseParser(
               ProtoMessageResponseParser.<Operation>newBuilder()
@@ -1988,46 +1479,31 @@ public class HttpJsonInstancesStub extends InstancesStub {
                   ProtoMessageRequestFormatter.<StartWithEncryptionKeyInstanceRequest>newBuilder()
                       .setPath(
                           "/compute/v1/projects/{project}/zones/{zone}/instances/{instance}/startWithEncryptionKey",
-                          new FieldsExtractor<
-                              StartWithEncryptionKeyInstanceRequest, Map<String, String>>() {
-                            @Override
-                            public Map<String, String> extract(
-                                StartWithEncryptionKeyInstanceRequest request) {
-                              Map<String, String> fields = new HashMap<>();
-                              ProtoRestSerializer<StartWithEncryptionKeyInstanceRequest>
-                                  serializer = ProtoRestSerializer.create();
-                              serializer.putPathParam(fields, "instance", request.getInstance());
-                              serializer.putPathParam(fields, "project", request.getProject());
-                              serializer.putPathParam(fields, "zone", request.getZone());
-                              return fields;
-                            }
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<StartWithEncryptionKeyInstanceRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "instance", request.getInstance());
+                            serializer.putPathParam(fields, "project", request.getProject());
+                            serializer.putPathParam(fields, "zone", request.getZone());
+                            return fields;
                           })
                       .setQueryParamsExtractor(
-                          new FieldsExtractor<
-                              StartWithEncryptionKeyInstanceRequest, Map<String, List<String>>>() {
-                            @Override
-                            public Map<String, List<String>> extract(
-                                StartWithEncryptionKeyInstanceRequest request) {
-                              Map<String, List<String>> fields = new HashMap<>();
-                              ProtoRestSerializer<StartWithEncryptionKeyInstanceRequest>
-                                  serializer = ProtoRestSerializer.create();
-                              if (request.hasRequestId()) {
-                                serializer.putQueryParam(
-                                    fields, "requestId", request.getRequestId());
-                              }
-                              return fields;
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<StartWithEncryptionKeyInstanceRequest> serializer =
+                                ProtoRestSerializer.create();
+                            if (request.hasRequestId()) {
+                              serializer.putQueryParam(fields, "requestId", request.getRequestId());
                             }
+                            return fields;
                           })
                       .setRequestBodyExtractor(
-                          new FieldsExtractor<StartWithEncryptionKeyInstanceRequest, String>() {
-                            @Override
-                            public String extract(StartWithEncryptionKeyInstanceRequest request) {
-                              return ProtoRestSerializer.create()
+                          request ->
+                              ProtoRestSerializer.create()
                                   .toBody(
                                       "instancesStartWithEncryptionKeyRequestResource",
-                                      request.getInstancesStartWithEncryptionKeyRequestResource());
-                            }
-                          })
+                                      request.getInstancesStartWithEncryptionKeyRequestResource()))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -2043,38 +1519,26 @@ public class HttpJsonInstancesStub extends InstancesStub {
               ProtoMessageRequestFormatter.<StopInstanceRequest>newBuilder()
                   .setPath(
                       "/compute/v1/projects/{project}/zones/{zone}/instances/{instance}/stop",
-                      new FieldsExtractor<StopInstanceRequest, Map<String, String>>() {
-                        @Override
-                        public Map<String, String> extract(StopInstanceRequest request) {
-                          Map<String, String> fields = new HashMap<>();
-                          ProtoRestSerializer<StopInstanceRequest> serializer =
-                              ProtoRestSerializer.create();
-                          serializer.putPathParam(fields, "instance", request.getInstance());
-                          serializer.putPathParam(fields, "project", request.getProject());
-                          serializer.putPathParam(fields, "zone", request.getZone());
-                          return fields;
-                        }
+                      request -> {
+                        Map<String, String> fields = new HashMap<>();
+                        ProtoRestSerializer<StopInstanceRequest> serializer =
+                            ProtoRestSerializer.create();
+                        serializer.putPathParam(fields, "instance", request.getInstance());
+                        serializer.putPathParam(fields, "project", request.getProject());
+                        serializer.putPathParam(fields, "zone", request.getZone());
+                        return fields;
                       })
                   .setQueryParamsExtractor(
-                      new FieldsExtractor<StopInstanceRequest, Map<String, List<String>>>() {
-                        @Override
-                        public Map<String, List<String>> extract(StopInstanceRequest request) {
-                          Map<String, List<String>> fields = new HashMap<>();
-                          ProtoRestSerializer<StopInstanceRequest> serializer =
-                              ProtoRestSerializer.create();
-                          if (request.hasRequestId()) {
-                            serializer.putQueryParam(fields, "requestId", request.getRequestId());
-                          }
-                          return fields;
+                      request -> {
+                        Map<String, List<String>> fields = new HashMap<>();
+                        ProtoRestSerializer<StopInstanceRequest> serializer =
+                            ProtoRestSerializer.create();
+                        if (request.hasRequestId()) {
+                          serializer.putQueryParam(fields, "requestId", request.getRequestId());
                         }
+                        return fields;
                       })
-                  .setRequestBodyExtractor(
-                      new FieldsExtractor<StopInstanceRequest, String>() {
-                        @Override
-                        public String extract(StopInstanceRequest request) {
-                          return null;
-                        }
-                      })
+                  .setRequestBodyExtractor(request -> null)
                   .build())
           .setResponseParser(
               ProtoMessageResponseParser.<Operation>newBuilder()
@@ -2093,42 +1557,28 @@ public class HttpJsonInstancesStub extends InstancesStub {
                   ProtoMessageRequestFormatter.<TestIamPermissionsInstanceRequest>newBuilder()
                       .setPath(
                           "/compute/v1/projects/{project}/zones/{zone}/instances/{resource}/testIamPermissions",
-                          new FieldsExtractor<
-                              TestIamPermissionsInstanceRequest, Map<String, String>>() {
-                            @Override
-                            public Map<String, String> extract(
-                                TestIamPermissionsInstanceRequest request) {
-                              Map<String, String> fields = new HashMap<>();
-                              ProtoRestSerializer<TestIamPermissionsInstanceRequest> serializer =
-                                  ProtoRestSerializer.create();
-                              serializer.putPathParam(fields, "project", request.getProject());
-                              serializer.putPathParam(fields, "resource", request.getResource());
-                              serializer.putPathParam(fields, "zone", request.getZone());
-                              return fields;
-                            }
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<TestIamPermissionsInstanceRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "project", request.getProject());
+                            serializer.putPathParam(fields, "resource", request.getResource());
+                            serializer.putPathParam(fields, "zone", request.getZone());
+                            return fields;
                           })
                       .setQueryParamsExtractor(
-                          new FieldsExtractor<
-                              TestIamPermissionsInstanceRequest, Map<String, List<String>>>() {
-                            @Override
-                            public Map<String, List<String>> extract(
-                                TestIamPermissionsInstanceRequest request) {
-                              Map<String, List<String>> fields = new HashMap<>();
-                              ProtoRestSerializer<TestIamPermissionsInstanceRequest> serializer =
-                                  ProtoRestSerializer.create();
-                              return fields;
-                            }
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<TestIamPermissionsInstanceRequest> serializer =
+                                ProtoRestSerializer.create();
+                            return fields;
                           })
                       .setRequestBodyExtractor(
-                          new FieldsExtractor<TestIamPermissionsInstanceRequest, String>() {
-                            @Override
-                            public String extract(TestIamPermissionsInstanceRequest request) {
-                              return ProtoRestSerializer.create()
+                          request ->
+                              ProtoRestSerializer.create()
                                   .toBody(
                                       "testPermissionsRequestResource",
-                                      request.getTestPermissionsRequestResource());
-                            }
-                          })
+                                      request.getTestPermissionsRequestResource()))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<TestPermissionsResponse>newBuilder()
@@ -2145,51 +1595,39 @@ public class HttpJsonInstancesStub extends InstancesStub {
                   ProtoMessageRequestFormatter.<UpdateInstanceRequest>newBuilder()
                       .setPath(
                           "/compute/v1/projects/{project}/zones/{zone}/instances/{instance}",
-                          new FieldsExtractor<UpdateInstanceRequest, Map<String, String>>() {
-                            @Override
-                            public Map<String, String> extract(UpdateInstanceRequest request) {
-                              Map<String, String> fields = new HashMap<>();
-                              ProtoRestSerializer<UpdateInstanceRequest> serializer =
-                                  ProtoRestSerializer.create();
-                              serializer.putPathParam(fields, "instance", request.getInstance());
-                              serializer.putPathParam(fields, "project", request.getProject());
-                              serializer.putPathParam(fields, "zone", request.getZone());
-                              return fields;
-                            }
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<UpdateInstanceRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "instance", request.getInstance());
+                            serializer.putPathParam(fields, "project", request.getProject());
+                            serializer.putPathParam(fields, "zone", request.getZone());
+                            return fields;
                           })
                       .setQueryParamsExtractor(
-                          new FieldsExtractor<UpdateInstanceRequest, Map<String, List<String>>>() {
-                            @Override
-                            public Map<String, List<String>> extract(
-                                UpdateInstanceRequest request) {
-                              Map<String, List<String>> fields = new HashMap<>();
-                              ProtoRestSerializer<UpdateInstanceRequest> serializer =
-                                  ProtoRestSerializer.create();
-                              if (request.hasMinimalAction()) {
-                                serializer.putQueryParam(
-                                    fields, "minimalAction", request.getMinimalAction());
-                              }
-                              if (request.hasMostDisruptiveAllowedAction()) {
-                                serializer.putQueryParam(
-                                    fields,
-                                    "mostDisruptiveAllowedAction",
-                                    request.getMostDisruptiveAllowedAction());
-                              }
-                              if (request.hasRequestId()) {
-                                serializer.putQueryParam(
-                                    fields, "requestId", request.getRequestId());
-                              }
-                              return fields;
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<UpdateInstanceRequest> serializer =
+                                ProtoRestSerializer.create();
+                            if (request.hasMinimalAction()) {
+                              serializer.putQueryParam(
+                                  fields, "minimalAction", request.getMinimalAction());
                             }
+                            if (request.hasMostDisruptiveAllowedAction()) {
+                              serializer.putQueryParam(
+                                  fields,
+                                  "mostDisruptiveAllowedAction",
+                                  request.getMostDisruptiveAllowedAction());
+                            }
+                            if (request.hasRequestId()) {
+                              serializer.putQueryParam(fields, "requestId", request.getRequestId());
+                            }
+                            return fields;
                           })
                       .setRequestBodyExtractor(
-                          new FieldsExtractor<UpdateInstanceRequest, String>() {
-                            @Override
-                            public String extract(UpdateInstanceRequest request) {
-                              return ProtoRestSerializer.create()
-                                  .toBody("instanceResource", request.getInstanceResource());
-                            }
-                          })
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("instanceResource", request.getInstanceResource()))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -2206,47 +1644,32 @@ public class HttpJsonInstancesStub extends InstancesStub {
                   ProtoMessageRequestFormatter.<UpdateAccessConfigInstanceRequest>newBuilder()
                       .setPath(
                           "/compute/v1/projects/{project}/zones/{zone}/instances/{instance}/updateAccessConfig",
-                          new FieldsExtractor<
-                              UpdateAccessConfigInstanceRequest, Map<String, String>>() {
-                            @Override
-                            public Map<String, String> extract(
-                                UpdateAccessConfigInstanceRequest request) {
-                              Map<String, String> fields = new HashMap<>();
-                              ProtoRestSerializer<UpdateAccessConfigInstanceRequest> serializer =
-                                  ProtoRestSerializer.create();
-                              serializer.putPathParam(fields, "instance", request.getInstance());
-                              serializer.putPathParam(fields, "project", request.getProject());
-                              serializer.putPathParam(fields, "zone", request.getZone());
-                              return fields;
-                            }
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<UpdateAccessConfigInstanceRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "instance", request.getInstance());
+                            serializer.putPathParam(fields, "project", request.getProject());
+                            serializer.putPathParam(fields, "zone", request.getZone());
+                            return fields;
                           })
                       .setQueryParamsExtractor(
-                          new FieldsExtractor<
-                              UpdateAccessConfigInstanceRequest, Map<String, List<String>>>() {
-                            @Override
-                            public Map<String, List<String>> extract(
-                                UpdateAccessConfigInstanceRequest request) {
-                              Map<String, List<String>> fields = new HashMap<>();
-                              ProtoRestSerializer<UpdateAccessConfigInstanceRequest> serializer =
-                                  ProtoRestSerializer.create();
-                              serializer.putQueryParam(
-                                  fields, "networkInterface", request.getNetworkInterface());
-                              if (request.hasRequestId()) {
-                                serializer.putQueryParam(
-                                    fields, "requestId", request.getRequestId());
-                              }
-                              return fields;
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<UpdateAccessConfigInstanceRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(
+                                fields, "networkInterface", request.getNetworkInterface());
+                            if (request.hasRequestId()) {
+                              serializer.putQueryParam(fields, "requestId", request.getRequestId());
                             }
+                            return fields;
                           })
                       .setRequestBodyExtractor(
-                          new FieldsExtractor<UpdateAccessConfigInstanceRequest, String>() {
-                            @Override
-                            public String extract(UpdateAccessConfigInstanceRequest request) {
-                              return ProtoRestSerializer.create()
+                          request ->
+                              ProtoRestSerializer.create()
                                   .toBody(
-                                      "accessConfigResource", request.getAccessConfigResource());
-                            }
-                          })
+                                      "accessConfigResource", request.getAccessConfigResource()))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -2263,45 +1686,30 @@ public class HttpJsonInstancesStub extends InstancesStub {
                   ProtoMessageRequestFormatter.<UpdateDisplayDeviceInstanceRequest>newBuilder()
                       .setPath(
                           "/compute/v1/projects/{project}/zones/{zone}/instances/{instance}/updateDisplayDevice",
-                          new FieldsExtractor<
-                              UpdateDisplayDeviceInstanceRequest, Map<String, String>>() {
-                            @Override
-                            public Map<String, String> extract(
-                                UpdateDisplayDeviceInstanceRequest request) {
-                              Map<String, String> fields = new HashMap<>();
-                              ProtoRestSerializer<UpdateDisplayDeviceInstanceRequest> serializer =
-                                  ProtoRestSerializer.create();
-                              serializer.putPathParam(fields, "instance", request.getInstance());
-                              serializer.putPathParam(fields, "project", request.getProject());
-                              serializer.putPathParam(fields, "zone", request.getZone());
-                              return fields;
-                            }
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<UpdateDisplayDeviceInstanceRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "instance", request.getInstance());
+                            serializer.putPathParam(fields, "project", request.getProject());
+                            serializer.putPathParam(fields, "zone", request.getZone());
+                            return fields;
                           })
                       .setQueryParamsExtractor(
-                          new FieldsExtractor<
-                              UpdateDisplayDeviceInstanceRequest, Map<String, List<String>>>() {
-                            @Override
-                            public Map<String, List<String>> extract(
-                                UpdateDisplayDeviceInstanceRequest request) {
-                              Map<String, List<String>> fields = new HashMap<>();
-                              ProtoRestSerializer<UpdateDisplayDeviceInstanceRequest> serializer =
-                                  ProtoRestSerializer.create();
-                              if (request.hasRequestId()) {
-                                serializer.putQueryParam(
-                                    fields, "requestId", request.getRequestId());
-                              }
-                              return fields;
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<UpdateDisplayDeviceInstanceRequest> serializer =
+                                ProtoRestSerializer.create();
+                            if (request.hasRequestId()) {
+                              serializer.putQueryParam(fields, "requestId", request.getRequestId());
                             }
+                            return fields;
                           })
                       .setRequestBodyExtractor(
-                          new FieldsExtractor<UpdateDisplayDeviceInstanceRequest, String>() {
-                            @Override
-                            public String extract(UpdateDisplayDeviceInstanceRequest request) {
-                              return ProtoRestSerializer.create()
+                          request ->
+                              ProtoRestSerializer.create()
                                   .toBody(
-                                      "displayDeviceResource", request.getDisplayDeviceResource());
-                            }
-                          })
+                                      "displayDeviceResource", request.getDisplayDeviceResource()))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -2318,48 +1726,33 @@ public class HttpJsonInstancesStub extends InstancesStub {
                   ProtoMessageRequestFormatter.<UpdateNetworkInterfaceInstanceRequest>newBuilder()
                       .setPath(
                           "/compute/v1/projects/{project}/zones/{zone}/instances/{instance}/updateNetworkInterface",
-                          new FieldsExtractor<
-                              UpdateNetworkInterfaceInstanceRequest, Map<String, String>>() {
-                            @Override
-                            public Map<String, String> extract(
-                                UpdateNetworkInterfaceInstanceRequest request) {
-                              Map<String, String> fields = new HashMap<>();
-                              ProtoRestSerializer<UpdateNetworkInterfaceInstanceRequest>
-                                  serializer = ProtoRestSerializer.create();
-                              serializer.putPathParam(fields, "instance", request.getInstance());
-                              serializer.putPathParam(fields, "project", request.getProject());
-                              serializer.putPathParam(fields, "zone", request.getZone());
-                              return fields;
-                            }
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<UpdateNetworkInterfaceInstanceRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "instance", request.getInstance());
+                            serializer.putPathParam(fields, "project", request.getProject());
+                            serializer.putPathParam(fields, "zone", request.getZone());
+                            return fields;
                           })
                       .setQueryParamsExtractor(
-                          new FieldsExtractor<
-                              UpdateNetworkInterfaceInstanceRequest, Map<String, List<String>>>() {
-                            @Override
-                            public Map<String, List<String>> extract(
-                                UpdateNetworkInterfaceInstanceRequest request) {
-                              Map<String, List<String>> fields = new HashMap<>();
-                              ProtoRestSerializer<UpdateNetworkInterfaceInstanceRequest>
-                                  serializer = ProtoRestSerializer.create();
-                              serializer.putQueryParam(
-                                  fields, "networkInterface", request.getNetworkInterface());
-                              if (request.hasRequestId()) {
-                                serializer.putQueryParam(
-                                    fields, "requestId", request.getRequestId());
-                              }
-                              return fields;
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<UpdateNetworkInterfaceInstanceRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(
+                                fields, "networkInterface", request.getNetworkInterface());
+                            if (request.hasRequestId()) {
+                              serializer.putQueryParam(fields, "requestId", request.getRequestId());
                             }
+                            return fields;
                           })
                       .setRequestBodyExtractor(
-                          new FieldsExtractor<UpdateNetworkInterfaceInstanceRequest, String>() {
-                            @Override
-                            public String extract(UpdateNetworkInterfaceInstanceRequest request) {
-                              return ProtoRestSerializer.create()
+                          request ->
+                              ProtoRestSerializer.create()
                                   .toBody(
                                       "networkInterfaceResource",
-                                      request.getNetworkInterfaceResource());
-                            }
-                          })
+                                      request.getNetworkInterfaceResource()))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -2377,49 +1770,31 @@ public class HttpJsonInstancesStub extends InstancesStub {
                       .<UpdateShieldedInstanceConfigInstanceRequest>newBuilder()
                       .setPath(
                           "/compute/v1/projects/{project}/zones/{zone}/instances/{instance}/updateShieldedInstanceConfig",
-                          new FieldsExtractor<
-                              UpdateShieldedInstanceConfigInstanceRequest, Map<String, String>>() {
-                            @Override
-                            public Map<String, String> extract(
-                                UpdateShieldedInstanceConfigInstanceRequest request) {
-                              Map<String, String> fields = new HashMap<>();
-                              ProtoRestSerializer<UpdateShieldedInstanceConfigInstanceRequest>
-                                  serializer = ProtoRestSerializer.create();
-                              serializer.putPathParam(fields, "instance", request.getInstance());
-                              serializer.putPathParam(fields, "project", request.getProject());
-                              serializer.putPathParam(fields, "zone", request.getZone());
-                              return fields;
-                            }
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<UpdateShieldedInstanceConfigInstanceRequest>
+                                serializer = ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "instance", request.getInstance());
+                            serializer.putPathParam(fields, "project", request.getProject());
+                            serializer.putPathParam(fields, "zone", request.getZone());
+                            return fields;
                           })
                       .setQueryParamsExtractor(
-                          new FieldsExtractor<
-                              UpdateShieldedInstanceConfigInstanceRequest,
-                              Map<String, List<String>>>() {
-                            @Override
-                            public Map<String, List<String>> extract(
-                                UpdateShieldedInstanceConfigInstanceRequest request) {
-                              Map<String, List<String>> fields = new HashMap<>();
-                              ProtoRestSerializer<UpdateShieldedInstanceConfigInstanceRequest>
-                                  serializer = ProtoRestSerializer.create();
-                              if (request.hasRequestId()) {
-                                serializer.putQueryParam(
-                                    fields, "requestId", request.getRequestId());
-                              }
-                              return fields;
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<UpdateShieldedInstanceConfigInstanceRequest>
+                                serializer = ProtoRestSerializer.create();
+                            if (request.hasRequestId()) {
+                              serializer.putQueryParam(fields, "requestId", request.getRequestId());
                             }
+                            return fields;
                           })
                       .setRequestBodyExtractor(
-                          new FieldsExtractor<
-                              UpdateShieldedInstanceConfigInstanceRequest, String>() {
-                            @Override
-                            public String extract(
-                                UpdateShieldedInstanceConfigInstanceRequest request) {
-                              return ProtoRestSerializer.create()
+                          request ->
+                              ProtoRestSerializer.create()
                                   .toBody(
                                       "shieldedInstanceConfigResource",
-                                      request.getShieldedInstanceConfigResource());
-                            }
-                          })
+                                      request.getShieldedInstanceConfigResource()))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -3212,7 +2587,13 @@ public class HttpJsonInstancesStub extends InstancesStub {
 
   @Override
   public final void close() {
-    shutdown();
+    try {
+      backgroundResources.close();
+    } catch (RuntimeException e) {
+      throw e;
+    } catch (Exception e) {
+      throw new IllegalStateException("Failed to close resource", e);
+    }
   }
 
   @Override

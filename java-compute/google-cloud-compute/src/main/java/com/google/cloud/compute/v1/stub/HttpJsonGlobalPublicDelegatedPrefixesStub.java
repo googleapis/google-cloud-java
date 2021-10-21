@@ -24,7 +24,6 @@ import com.google.api.core.InternalApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.httpjson.ApiMethodDescriptor;
-import com.google.api.gax.httpjson.FieldsExtractor;
 import com.google.api.gax.httpjson.HttpJsonCallSettings;
 import com.google.api.gax.httpjson.HttpJsonStubCallableFactory;
 import com.google.api.gax.httpjson.ProtoMessageRequestFormatter;
@@ -67,47 +66,28 @@ public class HttpJsonGlobalPublicDelegatedPrefixesStub extends GlobalPublicDeleg
                       .<DeleteGlobalPublicDelegatedPrefixeRequest>newBuilder()
                       .setPath(
                           "/compute/v1/projects/{project}/global/publicDelegatedPrefixes/{publicDelegatedPrefix}",
-                          new FieldsExtractor<
-                              DeleteGlobalPublicDelegatedPrefixeRequest, Map<String, String>>() {
-                            @Override
-                            public Map<String, String> extract(
-                                DeleteGlobalPublicDelegatedPrefixeRequest request) {
-                              Map<String, String> fields = new HashMap<>();
-                              ProtoRestSerializer<DeleteGlobalPublicDelegatedPrefixeRequest>
-                                  serializer = ProtoRestSerializer.create();
-                              serializer.putPathParam(fields, "project", request.getProject());
-                              serializer.putPathParam(
-                                  fields,
-                                  "publicDelegatedPrefix",
-                                  request.getPublicDelegatedPrefix());
-                              return fields;
-                            }
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<DeleteGlobalPublicDelegatedPrefixeRequest>
+                                serializer = ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "project", request.getProject());
+                            serializer.putPathParam(
+                                fields,
+                                "publicDelegatedPrefix",
+                                request.getPublicDelegatedPrefix());
+                            return fields;
                           })
                       .setQueryParamsExtractor(
-                          new FieldsExtractor<
-                              DeleteGlobalPublicDelegatedPrefixeRequest,
-                              Map<String, List<String>>>() {
-                            @Override
-                            public Map<String, List<String>> extract(
-                                DeleteGlobalPublicDelegatedPrefixeRequest request) {
-                              Map<String, List<String>> fields = new HashMap<>();
-                              ProtoRestSerializer<DeleteGlobalPublicDelegatedPrefixeRequest>
-                                  serializer = ProtoRestSerializer.create();
-                              if (request.hasRequestId()) {
-                                serializer.putQueryParam(
-                                    fields, "requestId", request.getRequestId());
-                              }
-                              return fields;
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<DeleteGlobalPublicDelegatedPrefixeRequest>
+                                serializer = ProtoRestSerializer.create();
+                            if (request.hasRequestId()) {
+                              serializer.putQueryParam(fields, "requestId", request.getRequestId());
                             }
+                            return fields;
                           })
-                      .setRequestBodyExtractor(
-                          new FieldsExtractor<DeleteGlobalPublicDelegatedPrefixeRequest, String>() {
-                            @Override
-                            public String extract(
-                                DeleteGlobalPublicDelegatedPrefixeRequest request) {
-                              return null;
-                            }
-                          })
+                      .setRequestBodyExtractor(request -> null)
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -126,41 +106,25 @@ public class HttpJsonGlobalPublicDelegatedPrefixesStub extends GlobalPublicDeleg
                   ProtoMessageRequestFormatter.<GetGlobalPublicDelegatedPrefixeRequest>newBuilder()
                       .setPath(
                           "/compute/v1/projects/{project}/global/publicDelegatedPrefixes/{publicDelegatedPrefix}",
-                          new FieldsExtractor<
-                              GetGlobalPublicDelegatedPrefixeRequest, Map<String, String>>() {
-                            @Override
-                            public Map<String, String> extract(
-                                GetGlobalPublicDelegatedPrefixeRequest request) {
-                              Map<String, String> fields = new HashMap<>();
-                              ProtoRestSerializer<GetGlobalPublicDelegatedPrefixeRequest>
-                                  serializer = ProtoRestSerializer.create();
-                              serializer.putPathParam(fields, "project", request.getProject());
-                              serializer.putPathParam(
-                                  fields,
-                                  "publicDelegatedPrefix",
-                                  request.getPublicDelegatedPrefix());
-                              return fields;
-                            }
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<GetGlobalPublicDelegatedPrefixeRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "project", request.getProject());
+                            serializer.putPathParam(
+                                fields,
+                                "publicDelegatedPrefix",
+                                request.getPublicDelegatedPrefix());
+                            return fields;
                           })
                       .setQueryParamsExtractor(
-                          new FieldsExtractor<
-                              GetGlobalPublicDelegatedPrefixeRequest, Map<String, List<String>>>() {
-                            @Override
-                            public Map<String, List<String>> extract(
-                                GetGlobalPublicDelegatedPrefixeRequest request) {
-                              Map<String, List<String>> fields = new HashMap<>();
-                              ProtoRestSerializer<GetGlobalPublicDelegatedPrefixeRequest>
-                                  serializer = ProtoRestSerializer.create();
-                              return fields;
-                            }
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<GetGlobalPublicDelegatedPrefixeRequest> serializer =
+                                ProtoRestSerializer.create();
+                            return fields;
                           })
-                      .setRequestBodyExtractor(
-                          new FieldsExtractor<GetGlobalPublicDelegatedPrefixeRequest, String>() {
-                            @Override
-                            public String extract(GetGlobalPublicDelegatedPrefixeRequest request) {
-                              return null;
-                            }
-                          })
+                      .setRequestBodyExtractor(request -> null)
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<PublicDelegatedPrefix>newBuilder()
@@ -178,46 +142,29 @@ public class HttpJsonGlobalPublicDelegatedPrefixesStub extends GlobalPublicDeleg
                       .<InsertGlobalPublicDelegatedPrefixeRequest>newBuilder()
                       .setPath(
                           "/compute/v1/projects/{project}/global/publicDelegatedPrefixes",
-                          new FieldsExtractor<
-                              InsertGlobalPublicDelegatedPrefixeRequest, Map<String, String>>() {
-                            @Override
-                            public Map<String, String> extract(
-                                InsertGlobalPublicDelegatedPrefixeRequest request) {
-                              Map<String, String> fields = new HashMap<>();
-                              ProtoRestSerializer<InsertGlobalPublicDelegatedPrefixeRequest>
-                                  serializer = ProtoRestSerializer.create();
-                              serializer.putPathParam(fields, "project", request.getProject());
-                              return fields;
-                            }
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<InsertGlobalPublicDelegatedPrefixeRequest>
+                                serializer = ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "project", request.getProject());
+                            return fields;
                           })
                       .setQueryParamsExtractor(
-                          new FieldsExtractor<
-                              InsertGlobalPublicDelegatedPrefixeRequest,
-                              Map<String, List<String>>>() {
-                            @Override
-                            public Map<String, List<String>> extract(
-                                InsertGlobalPublicDelegatedPrefixeRequest request) {
-                              Map<String, List<String>> fields = new HashMap<>();
-                              ProtoRestSerializer<InsertGlobalPublicDelegatedPrefixeRequest>
-                                  serializer = ProtoRestSerializer.create();
-                              if (request.hasRequestId()) {
-                                serializer.putQueryParam(
-                                    fields, "requestId", request.getRequestId());
-                              }
-                              return fields;
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<InsertGlobalPublicDelegatedPrefixeRequest>
+                                serializer = ProtoRestSerializer.create();
+                            if (request.hasRequestId()) {
+                              serializer.putQueryParam(fields, "requestId", request.getRequestId());
                             }
+                            return fields;
                           })
                       .setRequestBodyExtractor(
-                          new FieldsExtractor<InsertGlobalPublicDelegatedPrefixeRequest, String>() {
-                            @Override
-                            public String extract(
-                                InsertGlobalPublicDelegatedPrefixeRequest request) {
-                              return ProtoRestSerializer.create()
+                          request ->
+                              ProtoRestSerializer.create()
                                   .toBody(
                                       "publicDelegatedPrefixResource",
-                                      request.getPublicDelegatedPrefixResource());
-                            }
-                          })
+                                      request.getPublicDelegatedPrefixResource()))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -237,59 +184,40 @@ public class HttpJsonGlobalPublicDelegatedPrefixesStub extends GlobalPublicDeleg
                       .<ListGlobalPublicDelegatedPrefixesRequest>newBuilder()
                       .setPath(
                           "/compute/v1/projects/{project}/global/publicDelegatedPrefixes",
-                          new FieldsExtractor<
-                              ListGlobalPublicDelegatedPrefixesRequest, Map<String, String>>() {
-                            @Override
-                            public Map<String, String> extract(
-                                ListGlobalPublicDelegatedPrefixesRequest request) {
-                              Map<String, String> fields = new HashMap<>();
-                              ProtoRestSerializer<ListGlobalPublicDelegatedPrefixesRequest>
-                                  serializer = ProtoRestSerializer.create();
-                              serializer.putPathParam(fields, "project", request.getProject());
-                              return fields;
-                            }
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<ListGlobalPublicDelegatedPrefixesRequest>
+                                serializer = ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "project", request.getProject());
+                            return fields;
                           })
                       .setQueryParamsExtractor(
-                          new FieldsExtractor<
-                              ListGlobalPublicDelegatedPrefixesRequest,
-                              Map<String, List<String>>>() {
-                            @Override
-                            public Map<String, List<String>> extract(
-                                ListGlobalPublicDelegatedPrefixesRequest request) {
-                              Map<String, List<String>> fields = new HashMap<>();
-                              ProtoRestSerializer<ListGlobalPublicDelegatedPrefixesRequest>
-                                  serializer = ProtoRestSerializer.create();
-                              if (request.hasFilter()) {
-                                serializer.putQueryParam(fields, "filter", request.getFilter());
-                              }
-                              if (request.hasMaxResults()) {
-                                serializer.putQueryParam(
-                                    fields, "maxResults", request.getMaxResults());
-                              }
-                              if (request.hasOrderBy()) {
-                                serializer.putQueryParam(fields, "orderBy", request.getOrderBy());
-                              }
-                              if (request.hasPageToken()) {
-                                serializer.putQueryParam(
-                                    fields, "pageToken", request.getPageToken());
-                              }
-                              if (request.hasReturnPartialSuccess()) {
-                                serializer.putQueryParam(
-                                    fields,
-                                    "returnPartialSuccess",
-                                    request.getReturnPartialSuccess());
-                              }
-                              return fields;
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<ListGlobalPublicDelegatedPrefixesRequest>
+                                serializer = ProtoRestSerializer.create();
+                            if (request.hasFilter()) {
+                              serializer.putQueryParam(fields, "filter", request.getFilter());
                             }
-                          })
-                      .setRequestBodyExtractor(
-                          new FieldsExtractor<ListGlobalPublicDelegatedPrefixesRequest, String>() {
-                            @Override
-                            public String extract(
-                                ListGlobalPublicDelegatedPrefixesRequest request) {
-                              return null;
+                            if (request.hasMaxResults()) {
+                              serializer.putQueryParam(
+                                  fields, "maxResults", request.getMaxResults());
                             }
+                            if (request.hasOrderBy()) {
+                              serializer.putQueryParam(fields, "orderBy", request.getOrderBy());
+                            }
+                            if (request.hasPageToken()) {
+                              serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            }
+                            if (request.hasReturnPartialSuccess()) {
+                              serializer.putQueryParam(
+                                  fields,
+                                  "returnPartialSuccess",
+                                  request.getReturnPartialSuccess());
+                            }
+                            return fields;
                           })
+                      .setRequestBodyExtractor(request -> null)
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<PublicDelegatedPrefixList>newBuilder()
@@ -307,50 +235,33 @@ public class HttpJsonGlobalPublicDelegatedPrefixesStub extends GlobalPublicDeleg
                       .<PatchGlobalPublicDelegatedPrefixeRequest>newBuilder()
                       .setPath(
                           "/compute/v1/projects/{project}/global/publicDelegatedPrefixes/{publicDelegatedPrefix}",
-                          new FieldsExtractor<
-                              PatchGlobalPublicDelegatedPrefixeRequest, Map<String, String>>() {
-                            @Override
-                            public Map<String, String> extract(
-                                PatchGlobalPublicDelegatedPrefixeRequest request) {
-                              Map<String, String> fields = new HashMap<>();
-                              ProtoRestSerializer<PatchGlobalPublicDelegatedPrefixeRequest>
-                                  serializer = ProtoRestSerializer.create();
-                              serializer.putPathParam(fields, "project", request.getProject());
-                              serializer.putPathParam(
-                                  fields,
-                                  "publicDelegatedPrefix",
-                                  request.getPublicDelegatedPrefix());
-                              return fields;
-                            }
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<PatchGlobalPublicDelegatedPrefixeRequest>
+                                serializer = ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "project", request.getProject());
+                            serializer.putPathParam(
+                                fields,
+                                "publicDelegatedPrefix",
+                                request.getPublicDelegatedPrefix());
+                            return fields;
                           })
                       .setQueryParamsExtractor(
-                          new FieldsExtractor<
-                              PatchGlobalPublicDelegatedPrefixeRequest,
-                              Map<String, List<String>>>() {
-                            @Override
-                            public Map<String, List<String>> extract(
-                                PatchGlobalPublicDelegatedPrefixeRequest request) {
-                              Map<String, List<String>> fields = new HashMap<>();
-                              ProtoRestSerializer<PatchGlobalPublicDelegatedPrefixeRequest>
-                                  serializer = ProtoRestSerializer.create();
-                              if (request.hasRequestId()) {
-                                serializer.putQueryParam(
-                                    fields, "requestId", request.getRequestId());
-                              }
-                              return fields;
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<PatchGlobalPublicDelegatedPrefixeRequest>
+                                serializer = ProtoRestSerializer.create();
+                            if (request.hasRequestId()) {
+                              serializer.putQueryParam(fields, "requestId", request.getRequestId());
                             }
+                            return fields;
                           })
                       .setRequestBodyExtractor(
-                          new FieldsExtractor<PatchGlobalPublicDelegatedPrefixeRequest, String>() {
-                            @Override
-                            public String extract(
-                                PatchGlobalPublicDelegatedPrefixeRequest request) {
-                              return ProtoRestSerializer.create()
+                          request ->
+                              ProtoRestSerializer.create()
                                   .toBody(
                                       "publicDelegatedPrefixResource",
-                                      request.getPublicDelegatedPrefixResource());
-                            }
-                          })
+                                      request.getPublicDelegatedPrefixResource()))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -510,7 +421,13 @@ public class HttpJsonGlobalPublicDelegatedPrefixesStub extends GlobalPublicDeleg
 
   @Override
   public final void close() {
-    shutdown();
+    try {
+      backgroundResources.close();
+    } catch (RuntimeException e) {
+      throw e;
+    } catch (Exception e) {
+      throw new IllegalStateException("Failed to close resource", e);
+    }
   }
 
   @Override

@@ -25,7 +25,6 @@ import com.google.api.core.InternalApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.httpjson.ApiMethodDescriptor;
-import com.google.api.gax.httpjson.FieldsExtractor;
 import com.google.api.gax.httpjson.HttpJsonCallSettings;
 import com.google.api.gax.httpjson.HttpJsonStubCallableFactory;
 import com.google.api.gax.httpjson.ProtoMessageRequestFormatter;
@@ -73,60 +72,44 @@ public class HttpJsonUrlMapsStub extends UrlMapsStub {
                   ProtoMessageRequestFormatter.<AggregatedListUrlMapsRequest>newBuilder()
                       .setPath(
                           "/compute/v1/projects/{project}/aggregated/urlMaps",
-                          new FieldsExtractor<AggregatedListUrlMapsRequest, Map<String, String>>() {
-                            @Override
-                            public Map<String, String> extract(
-                                AggregatedListUrlMapsRequest request) {
-                              Map<String, String> fields = new HashMap<>();
-                              ProtoRestSerializer<AggregatedListUrlMapsRequest> serializer =
-                                  ProtoRestSerializer.create();
-                              serializer.putPathParam(fields, "project", request.getProject());
-                              return fields;
-                            }
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<AggregatedListUrlMapsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "project", request.getProject());
+                            return fields;
                           })
                       .setQueryParamsExtractor(
-                          new FieldsExtractor<
-                              AggregatedListUrlMapsRequest, Map<String, List<String>>>() {
-                            @Override
-                            public Map<String, List<String>> extract(
-                                AggregatedListUrlMapsRequest request) {
-                              Map<String, List<String>> fields = new HashMap<>();
-                              ProtoRestSerializer<AggregatedListUrlMapsRequest> serializer =
-                                  ProtoRestSerializer.create();
-                              if (request.hasFilter()) {
-                                serializer.putQueryParam(fields, "filter", request.getFilter());
-                              }
-                              if (request.hasIncludeAllScopes()) {
-                                serializer.putQueryParam(
-                                    fields, "includeAllScopes", request.getIncludeAllScopes());
-                              }
-                              if (request.hasMaxResults()) {
-                                serializer.putQueryParam(
-                                    fields, "maxResults", request.getMaxResults());
-                              }
-                              if (request.hasOrderBy()) {
-                                serializer.putQueryParam(fields, "orderBy", request.getOrderBy());
-                              }
-                              if (request.hasPageToken()) {
-                                serializer.putQueryParam(
-                                    fields, "pageToken", request.getPageToken());
-                              }
-                              if (request.hasReturnPartialSuccess()) {
-                                serializer.putQueryParam(
-                                    fields,
-                                    "returnPartialSuccess",
-                                    request.getReturnPartialSuccess());
-                              }
-                              return fields;
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<AggregatedListUrlMapsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            if (request.hasFilter()) {
+                              serializer.putQueryParam(fields, "filter", request.getFilter());
                             }
-                          })
-                      .setRequestBodyExtractor(
-                          new FieldsExtractor<AggregatedListUrlMapsRequest, String>() {
-                            @Override
-                            public String extract(AggregatedListUrlMapsRequest request) {
-                              return null;
+                            if (request.hasIncludeAllScopes()) {
+                              serializer.putQueryParam(
+                                  fields, "includeAllScopes", request.getIncludeAllScopes());
                             }
+                            if (request.hasMaxResults()) {
+                              serializer.putQueryParam(
+                                  fields, "maxResults", request.getMaxResults());
+                            }
+                            if (request.hasOrderBy()) {
+                              serializer.putQueryParam(fields, "orderBy", request.getOrderBy());
+                            }
+                            if (request.hasPageToken()) {
+                              serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            }
+                            if (request.hasReturnPartialSuccess()) {
+                              serializer.putQueryParam(
+                                  fields,
+                                  "returnPartialSuccess",
+                                  request.getReturnPartialSuccess());
+                            }
+                            return fields;
                           })
+                      .setRequestBodyExtractor(request -> null)
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<UrlMapsAggregatedList>newBuilder()
@@ -142,37 +125,25 @@ public class HttpJsonUrlMapsStub extends UrlMapsStub {
               ProtoMessageRequestFormatter.<DeleteUrlMapRequest>newBuilder()
                   .setPath(
                       "/compute/v1/projects/{project}/global/urlMaps/{urlMap}",
-                      new FieldsExtractor<DeleteUrlMapRequest, Map<String, String>>() {
-                        @Override
-                        public Map<String, String> extract(DeleteUrlMapRequest request) {
-                          Map<String, String> fields = new HashMap<>();
-                          ProtoRestSerializer<DeleteUrlMapRequest> serializer =
-                              ProtoRestSerializer.create();
-                          serializer.putPathParam(fields, "project", request.getProject());
-                          serializer.putPathParam(fields, "urlMap", request.getUrlMap());
-                          return fields;
-                        }
+                      request -> {
+                        Map<String, String> fields = new HashMap<>();
+                        ProtoRestSerializer<DeleteUrlMapRequest> serializer =
+                            ProtoRestSerializer.create();
+                        serializer.putPathParam(fields, "project", request.getProject());
+                        serializer.putPathParam(fields, "urlMap", request.getUrlMap());
+                        return fields;
                       })
                   .setQueryParamsExtractor(
-                      new FieldsExtractor<DeleteUrlMapRequest, Map<String, List<String>>>() {
-                        @Override
-                        public Map<String, List<String>> extract(DeleteUrlMapRequest request) {
-                          Map<String, List<String>> fields = new HashMap<>();
-                          ProtoRestSerializer<DeleteUrlMapRequest> serializer =
-                              ProtoRestSerializer.create();
-                          if (request.hasRequestId()) {
-                            serializer.putQueryParam(fields, "requestId", request.getRequestId());
-                          }
-                          return fields;
+                      request -> {
+                        Map<String, List<String>> fields = new HashMap<>();
+                        ProtoRestSerializer<DeleteUrlMapRequest> serializer =
+                            ProtoRestSerializer.create();
+                        if (request.hasRequestId()) {
+                          serializer.putQueryParam(fields, "requestId", request.getRequestId());
                         }
+                        return fields;
                       })
-                  .setRequestBodyExtractor(
-                      new FieldsExtractor<DeleteUrlMapRequest, String>() {
-                        @Override
-                        public String extract(DeleteUrlMapRequest request) {
-                          return null;
-                        }
-                      })
+                  .setRequestBodyExtractor(request -> null)
                   .build())
           .setResponseParser(
               ProtoMessageResponseParser.<Operation>newBuilder()
@@ -188,34 +159,22 @@ public class HttpJsonUrlMapsStub extends UrlMapsStub {
               ProtoMessageRequestFormatter.<GetUrlMapRequest>newBuilder()
                   .setPath(
                       "/compute/v1/projects/{project}/global/urlMaps/{urlMap}",
-                      new FieldsExtractor<GetUrlMapRequest, Map<String, String>>() {
-                        @Override
-                        public Map<String, String> extract(GetUrlMapRequest request) {
-                          Map<String, String> fields = new HashMap<>();
-                          ProtoRestSerializer<GetUrlMapRequest> serializer =
-                              ProtoRestSerializer.create();
-                          serializer.putPathParam(fields, "project", request.getProject());
-                          serializer.putPathParam(fields, "urlMap", request.getUrlMap());
-                          return fields;
-                        }
+                      request -> {
+                        Map<String, String> fields = new HashMap<>();
+                        ProtoRestSerializer<GetUrlMapRequest> serializer =
+                            ProtoRestSerializer.create();
+                        serializer.putPathParam(fields, "project", request.getProject());
+                        serializer.putPathParam(fields, "urlMap", request.getUrlMap());
+                        return fields;
                       })
                   .setQueryParamsExtractor(
-                      new FieldsExtractor<GetUrlMapRequest, Map<String, List<String>>>() {
-                        @Override
-                        public Map<String, List<String>> extract(GetUrlMapRequest request) {
-                          Map<String, List<String>> fields = new HashMap<>();
-                          ProtoRestSerializer<GetUrlMapRequest> serializer =
-                              ProtoRestSerializer.create();
-                          return fields;
-                        }
+                      request -> {
+                        Map<String, List<String>> fields = new HashMap<>();
+                        ProtoRestSerializer<GetUrlMapRequest> serializer =
+                            ProtoRestSerializer.create();
+                        return fields;
                       })
-                  .setRequestBodyExtractor(
-                      new FieldsExtractor<GetUrlMapRequest, String>() {
-                        @Override
-                        public String extract(GetUrlMapRequest request) {
-                          return null;
-                        }
-                      })
+                  .setRequestBodyExtractor(request -> null)
                   .build())
           .setResponseParser(
               ProtoMessageResponseParser.<UrlMap>newBuilder()
@@ -231,37 +190,27 @@ public class HttpJsonUrlMapsStub extends UrlMapsStub {
               ProtoMessageRequestFormatter.<InsertUrlMapRequest>newBuilder()
                   .setPath(
                       "/compute/v1/projects/{project}/global/urlMaps",
-                      new FieldsExtractor<InsertUrlMapRequest, Map<String, String>>() {
-                        @Override
-                        public Map<String, String> extract(InsertUrlMapRequest request) {
-                          Map<String, String> fields = new HashMap<>();
-                          ProtoRestSerializer<InsertUrlMapRequest> serializer =
-                              ProtoRestSerializer.create();
-                          serializer.putPathParam(fields, "project", request.getProject());
-                          return fields;
-                        }
+                      request -> {
+                        Map<String, String> fields = new HashMap<>();
+                        ProtoRestSerializer<InsertUrlMapRequest> serializer =
+                            ProtoRestSerializer.create();
+                        serializer.putPathParam(fields, "project", request.getProject());
+                        return fields;
                       })
                   .setQueryParamsExtractor(
-                      new FieldsExtractor<InsertUrlMapRequest, Map<String, List<String>>>() {
-                        @Override
-                        public Map<String, List<String>> extract(InsertUrlMapRequest request) {
-                          Map<String, List<String>> fields = new HashMap<>();
-                          ProtoRestSerializer<InsertUrlMapRequest> serializer =
-                              ProtoRestSerializer.create();
-                          if (request.hasRequestId()) {
-                            serializer.putQueryParam(fields, "requestId", request.getRequestId());
-                          }
-                          return fields;
+                      request -> {
+                        Map<String, List<String>> fields = new HashMap<>();
+                        ProtoRestSerializer<InsertUrlMapRequest> serializer =
+                            ProtoRestSerializer.create();
+                        if (request.hasRequestId()) {
+                          serializer.putQueryParam(fields, "requestId", request.getRequestId());
                         }
+                        return fields;
                       })
                   .setRequestBodyExtractor(
-                      new FieldsExtractor<InsertUrlMapRequest, String>() {
-                        @Override
-                        public String extract(InsertUrlMapRequest request) {
-                          return ProtoRestSerializer.create()
-                              .toBody("urlMapResource", request.getUrlMapResource());
-                        }
-                      })
+                      request ->
+                          ProtoRestSerializer.create()
+                              .toBody("urlMapResource", request.getUrlMapResource()))
                   .build())
           .setResponseParser(
               ProtoMessageResponseParser.<Operation>newBuilder()
@@ -278,44 +227,30 @@ public class HttpJsonUrlMapsStub extends UrlMapsStub {
                   ProtoMessageRequestFormatter.<InvalidateCacheUrlMapRequest>newBuilder()
                       .setPath(
                           "/compute/v1/projects/{project}/global/urlMaps/{urlMap}/invalidateCache",
-                          new FieldsExtractor<InvalidateCacheUrlMapRequest, Map<String, String>>() {
-                            @Override
-                            public Map<String, String> extract(
-                                InvalidateCacheUrlMapRequest request) {
-                              Map<String, String> fields = new HashMap<>();
-                              ProtoRestSerializer<InvalidateCacheUrlMapRequest> serializer =
-                                  ProtoRestSerializer.create();
-                              serializer.putPathParam(fields, "project", request.getProject());
-                              serializer.putPathParam(fields, "urlMap", request.getUrlMap());
-                              return fields;
-                            }
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<InvalidateCacheUrlMapRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "project", request.getProject());
+                            serializer.putPathParam(fields, "urlMap", request.getUrlMap());
+                            return fields;
                           })
                       .setQueryParamsExtractor(
-                          new FieldsExtractor<
-                              InvalidateCacheUrlMapRequest, Map<String, List<String>>>() {
-                            @Override
-                            public Map<String, List<String>> extract(
-                                InvalidateCacheUrlMapRequest request) {
-                              Map<String, List<String>> fields = new HashMap<>();
-                              ProtoRestSerializer<InvalidateCacheUrlMapRequest> serializer =
-                                  ProtoRestSerializer.create();
-                              if (request.hasRequestId()) {
-                                serializer.putQueryParam(
-                                    fields, "requestId", request.getRequestId());
-                              }
-                              return fields;
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<InvalidateCacheUrlMapRequest> serializer =
+                                ProtoRestSerializer.create();
+                            if (request.hasRequestId()) {
+                              serializer.putQueryParam(fields, "requestId", request.getRequestId());
                             }
+                            return fields;
                           })
                       .setRequestBodyExtractor(
-                          new FieldsExtractor<InvalidateCacheUrlMapRequest, String>() {
-                            @Override
-                            public String extract(InvalidateCacheUrlMapRequest request) {
-                              return ProtoRestSerializer.create()
+                          request ->
+                              ProtoRestSerializer.create()
                                   .toBody(
                                       "cacheInvalidationRuleResource",
-                                      request.getCacheInvalidationRuleResource());
-                            }
-                          })
+                                      request.getCacheInvalidationRuleResource()))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -331,49 +266,37 @@ public class HttpJsonUrlMapsStub extends UrlMapsStub {
               ProtoMessageRequestFormatter.<ListUrlMapsRequest>newBuilder()
                   .setPath(
                       "/compute/v1/projects/{project}/global/urlMaps",
-                      new FieldsExtractor<ListUrlMapsRequest, Map<String, String>>() {
-                        @Override
-                        public Map<String, String> extract(ListUrlMapsRequest request) {
-                          Map<String, String> fields = new HashMap<>();
-                          ProtoRestSerializer<ListUrlMapsRequest> serializer =
-                              ProtoRestSerializer.create();
-                          serializer.putPathParam(fields, "project", request.getProject());
-                          return fields;
-                        }
+                      request -> {
+                        Map<String, String> fields = new HashMap<>();
+                        ProtoRestSerializer<ListUrlMapsRequest> serializer =
+                            ProtoRestSerializer.create();
+                        serializer.putPathParam(fields, "project", request.getProject());
+                        return fields;
                       })
                   .setQueryParamsExtractor(
-                      new FieldsExtractor<ListUrlMapsRequest, Map<String, List<String>>>() {
-                        @Override
-                        public Map<String, List<String>> extract(ListUrlMapsRequest request) {
-                          Map<String, List<String>> fields = new HashMap<>();
-                          ProtoRestSerializer<ListUrlMapsRequest> serializer =
-                              ProtoRestSerializer.create();
-                          if (request.hasFilter()) {
-                            serializer.putQueryParam(fields, "filter", request.getFilter());
-                          }
-                          if (request.hasMaxResults()) {
-                            serializer.putQueryParam(fields, "maxResults", request.getMaxResults());
-                          }
-                          if (request.hasOrderBy()) {
-                            serializer.putQueryParam(fields, "orderBy", request.getOrderBy());
-                          }
-                          if (request.hasPageToken()) {
-                            serializer.putQueryParam(fields, "pageToken", request.getPageToken());
-                          }
-                          if (request.hasReturnPartialSuccess()) {
-                            serializer.putQueryParam(
-                                fields, "returnPartialSuccess", request.getReturnPartialSuccess());
-                          }
-                          return fields;
+                      request -> {
+                        Map<String, List<String>> fields = new HashMap<>();
+                        ProtoRestSerializer<ListUrlMapsRequest> serializer =
+                            ProtoRestSerializer.create();
+                        if (request.hasFilter()) {
+                          serializer.putQueryParam(fields, "filter", request.getFilter());
                         }
-                      })
-                  .setRequestBodyExtractor(
-                      new FieldsExtractor<ListUrlMapsRequest, String>() {
-                        @Override
-                        public String extract(ListUrlMapsRequest request) {
-                          return null;
+                        if (request.hasMaxResults()) {
+                          serializer.putQueryParam(fields, "maxResults", request.getMaxResults());
                         }
+                        if (request.hasOrderBy()) {
+                          serializer.putQueryParam(fields, "orderBy", request.getOrderBy());
+                        }
+                        if (request.hasPageToken()) {
+                          serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                        }
+                        if (request.hasReturnPartialSuccess()) {
+                          serializer.putQueryParam(
+                              fields, "returnPartialSuccess", request.getReturnPartialSuccess());
+                        }
+                        return fields;
                       })
+                  .setRequestBodyExtractor(request -> null)
                   .build())
           .setResponseParser(
               ProtoMessageResponseParser.<UrlMapList>newBuilder()
@@ -389,38 +312,28 @@ public class HttpJsonUrlMapsStub extends UrlMapsStub {
               ProtoMessageRequestFormatter.<PatchUrlMapRequest>newBuilder()
                   .setPath(
                       "/compute/v1/projects/{project}/global/urlMaps/{urlMap}",
-                      new FieldsExtractor<PatchUrlMapRequest, Map<String, String>>() {
-                        @Override
-                        public Map<String, String> extract(PatchUrlMapRequest request) {
-                          Map<String, String> fields = new HashMap<>();
-                          ProtoRestSerializer<PatchUrlMapRequest> serializer =
-                              ProtoRestSerializer.create();
-                          serializer.putPathParam(fields, "project", request.getProject());
-                          serializer.putPathParam(fields, "urlMap", request.getUrlMap());
-                          return fields;
-                        }
+                      request -> {
+                        Map<String, String> fields = new HashMap<>();
+                        ProtoRestSerializer<PatchUrlMapRequest> serializer =
+                            ProtoRestSerializer.create();
+                        serializer.putPathParam(fields, "project", request.getProject());
+                        serializer.putPathParam(fields, "urlMap", request.getUrlMap());
+                        return fields;
                       })
                   .setQueryParamsExtractor(
-                      new FieldsExtractor<PatchUrlMapRequest, Map<String, List<String>>>() {
-                        @Override
-                        public Map<String, List<String>> extract(PatchUrlMapRequest request) {
-                          Map<String, List<String>> fields = new HashMap<>();
-                          ProtoRestSerializer<PatchUrlMapRequest> serializer =
-                              ProtoRestSerializer.create();
-                          if (request.hasRequestId()) {
-                            serializer.putQueryParam(fields, "requestId", request.getRequestId());
-                          }
-                          return fields;
+                      request -> {
+                        Map<String, List<String>> fields = new HashMap<>();
+                        ProtoRestSerializer<PatchUrlMapRequest> serializer =
+                            ProtoRestSerializer.create();
+                        if (request.hasRequestId()) {
+                          serializer.putQueryParam(fields, "requestId", request.getRequestId());
                         }
+                        return fields;
                       })
                   .setRequestBodyExtractor(
-                      new FieldsExtractor<PatchUrlMapRequest, String>() {
-                        @Override
-                        public String extract(PatchUrlMapRequest request) {
-                          return ProtoRestSerializer.create()
-                              .toBody("urlMapResource", request.getUrlMapResource());
-                        }
-                      })
+                      request ->
+                          ProtoRestSerializer.create()
+                              .toBody("urlMapResource", request.getUrlMapResource()))
                   .build())
           .setResponseParser(
               ProtoMessageResponseParser.<Operation>newBuilder()
@@ -436,38 +349,28 @@ public class HttpJsonUrlMapsStub extends UrlMapsStub {
               ProtoMessageRequestFormatter.<UpdateUrlMapRequest>newBuilder()
                   .setPath(
                       "/compute/v1/projects/{project}/global/urlMaps/{urlMap}",
-                      new FieldsExtractor<UpdateUrlMapRequest, Map<String, String>>() {
-                        @Override
-                        public Map<String, String> extract(UpdateUrlMapRequest request) {
-                          Map<String, String> fields = new HashMap<>();
-                          ProtoRestSerializer<UpdateUrlMapRequest> serializer =
-                              ProtoRestSerializer.create();
-                          serializer.putPathParam(fields, "project", request.getProject());
-                          serializer.putPathParam(fields, "urlMap", request.getUrlMap());
-                          return fields;
-                        }
+                      request -> {
+                        Map<String, String> fields = new HashMap<>();
+                        ProtoRestSerializer<UpdateUrlMapRequest> serializer =
+                            ProtoRestSerializer.create();
+                        serializer.putPathParam(fields, "project", request.getProject());
+                        serializer.putPathParam(fields, "urlMap", request.getUrlMap());
+                        return fields;
                       })
                   .setQueryParamsExtractor(
-                      new FieldsExtractor<UpdateUrlMapRequest, Map<String, List<String>>>() {
-                        @Override
-                        public Map<String, List<String>> extract(UpdateUrlMapRequest request) {
-                          Map<String, List<String>> fields = new HashMap<>();
-                          ProtoRestSerializer<UpdateUrlMapRequest> serializer =
-                              ProtoRestSerializer.create();
-                          if (request.hasRequestId()) {
-                            serializer.putQueryParam(fields, "requestId", request.getRequestId());
-                          }
-                          return fields;
+                      request -> {
+                        Map<String, List<String>> fields = new HashMap<>();
+                        ProtoRestSerializer<UpdateUrlMapRequest> serializer =
+                            ProtoRestSerializer.create();
+                        if (request.hasRequestId()) {
+                          serializer.putQueryParam(fields, "requestId", request.getRequestId());
                         }
+                        return fields;
                       })
                   .setRequestBodyExtractor(
-                      new FieldsExtractor<UpdateUrlMapRequest, String>() {
-                        @Override
-                        public String extract(UpdateUrlMapRequest request) {
-                          return ProtoRestSerializer.create()
-                              .toBody("urlMapResource", request.getUrlMapResource());
-                        }
-                      })
+                      request ->
+                          ProtoRestSerializer.create()
+                              .toBody("urlMapResource", request.getUrlMapResource()))
                   .build())
           .setResponseParser(
               ProtoMessageResponseParser.<Operation>newBuilder()
@@ -484,38 +387,27 @@ public class HttpJsonUrlMapsStub extends UrlMapsStub {
                   ProtoMessageRequestFormatter.<ValidateUrlMapRequest>newBuilder()
                       .setPath(
                           "/compute/v1/projects/{project}/global/urlMaps/{urlMap}/validate",
-                          new FieldsExtractor<ValidateUrlMapRequest, Map<String, String>>() {
-                            @Override
-                            public Map<String, String> extract(ValidateUrlMapRequest request) {
-                              Map<String, String> fields = new HashMap<>();
-                              ProtoRestSerializer<ValidateUrlMapRequest> serializer =
-                                  ProtoRestSerializer.create();
-                              serializer.putPathParam(fields, "project", request.getProject());
-                              serializer.putPathParam(fields, "urlMap", request.getUrlMap());
-                              return fields;
-                            }
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<ValidateUrlMapRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "project", request.getProject());
+                            serializer.putPathParam(fields, "urlMap", request.getUrlMap());
+                            return fields;
                           })
                       .setQueryParamsExtractor(
-                          new FieldsExtractor<ValidateUrlMapRequest, Map<String, List<String>>>() {
-                            @Override
-                            public Map<String, List<String>> extract(
-                                ValidateUrlMapRequest request) {
-                              Map<String, List<String>> fields = new HashMap<>();
-                              ProtoRestSerializer<ValidateUrlMapRequest> serializer =
-                                  ProtoRestSerializer.create();
-                              return fields;
-                            }
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<ValidateUrlMapRequest> serializer =
+                                ProtoRestSerializer.create();
+                            return fields;
                           })
                       .setRequestBodyExtractor(
-                          new FieldsExtractor<ValidateUrlMapRequest, String>() {
-                            @Override
-                            public String extract(ValidateUrlMapRequest request) {
-                              return ProtoRestSerializer.create()
+                          request ->
+                              ProtoRestSerializer.create()
                                   .toBody(
                                       "urlMapsValidateRequestResource",
-                                      request.getUrlMapsValidateRequestResource());
-                            }
-                          })
+                                      request.getUrlMapsValidateRequestResource()))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<UrlMapsValidateResponse>newBuilder()
@@ -726,7 +618,13 @@ public class HttpJsonUrlMapsStub extends UrlMapsStub {
 
   @Override
   public final void close() {
-    shutdown();
+    try {
+      backgroundResources.close();
+    } catch (RuntimeException e) {
+      throw e;
+    } catch (Exception e) {
+      throw new IllegalStateException("Failed to close resource", e);
+    }
   }
 
   @Override

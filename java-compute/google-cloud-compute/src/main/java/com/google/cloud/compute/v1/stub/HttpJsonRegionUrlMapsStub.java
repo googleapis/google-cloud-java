@@ -24,7 +24,6 @@ import com.google.api.core.InternalApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.httpjson.ApiMethodDescriptor;
-import com.google.api.gax.httpjson.FieldsExtractor;
 import com.google.api.gax.httpjson.HttpJsonCallSettings;
 import com.google.api.gax.httpjson.HttpJsonStubCallableFactory;
 import com.google.api.gax.httpjson.ProtoMessageRequestFormatter;
@@ -69,41 +68,26 @@ public class HttpJsonRegionUrlMapsStub extends RegionUrlMapsStub {
                   ProtoMessageRequestFormatter.<DeleteRegionUrlMapRequest>newBuilder()
                       .setPath(
                           "/compute/v1/projects/{project}/regions/{region}/urlMaps/{urlMap}",
-                          new FieldsExtractor<DeleteRegionUrlMapRequest, Map<String, String>>() {
-                            @Override
-                            public Map<String, String> extract(DeleteRegionUrlMapRequest request) {
-                              Map<String, String> fields = new HashMap<>();
-                              ProtoRestSerializer<DeleteRegionUrlMapRequest> serializer =
-                                  ProtoRestSerializer.create();
-                              serializer.putPathParam(fields, "project", request.getProject());
-                              serializer.putPathParam(fields, "region", request.getRegion());
-                              serializer.putPathParam(fields, "urlMap", request.getUrlMap());
-                              return fields;
-                            }
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<DeleteRegionUrlMapRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "project", request.getProject());
+                            serializer.putPathParam(fields, "region", request.getRegion());
+                            serializer.putPathParam(fields, "urlMap", request.getUrlMap());
+                            return fields;
                           })
                       .setQueryParamsExtractor(
-                          new FieldsExtractor<
-                              DeleteRegionUrlMapRequest, Map<String, List<String>>>() {
-                            @Override
-                            public Map<String, List<String>> extract(
-                                DeleteRegionUrlMapRequest request) {
-                              Map<String, List<String>> fields = new HashMap<>();
-                              ProtoRestSerializer<DeleteRegionUrlMapRequest> serializer =
-                                  ProtoRestSerializer.create();
-                              if (request.hasRequestId()) {
-                                serializer.putQueryParam(
-                                    fields, "requestId", request.getRequestId());
-                              }
-                              return fields;
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<DeleteRegionUrlMapRequest> serializer =
+                                ProtoRestSerializer.create();
+                            if (request.hasRequestId()) {
+                              serializer.putQueryParam(fields, "requestId", request.getRequestId());
                             }
+                            return fields;
                           })
-                      .setRequestBodyExtractor(
-                          new FieldsExtractor<DeleteRegionUrlMapRequest, String>() {
-                            @Override
-                            public String extract(DeleteRegionUrlMapRequest request) {
-                              return null;
-                            }
-                          })
+                      .setRequestBodyExtractor(request -> null)
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -119,35 +103,23 @@ public class HttpJsonRegionUrlMapsStub extends RegionUrlMapsStub {
               ProtoMessageRequestFormatter.<GetRegionUrlMapRequest>newBuilder()
                   .setPath(
                       "/compute/v1/projects/{project}/regions/{region}/urlMaps/{urlMap}",
-                      new FieldsExtractor<GetRegionUrlMapRequest, Map<String, String>>() {
-                        @Override
-                        public Map<String, String> extract(GetRegionUrlMapRequest request) {
-                          Map<String, String> fields = new HashMap<>();
-                          ProtoRestSerializer<GetRegionUrlMapRequest> serializer =
-                              ProtoRestSerializer.create();
-                          serializer.putPathParam(fields, "project", request.getProject());
-                          serializer.putPathParam(fields, "region", request.getRegion());
-                          serializer.putPathParam(fields, "urlMap", request.getUrlMap());
-                          return fields;
-                        }
+                      request -> {
+                        Map<String, String> fields = new HashMap<>();
+                        ProtoRestSerializer<GetRegionUrlMapRequest> serializer =
+                            ProtoRestSerializer.create();
+                        serializer.putPathParam(fields, "project", request.getProject());
+                        serializer.putPathParam(fields, "region", request.getRegion());
+                        serializer.putPathParam(fields, "urlMap", request.getUrlMap());
+                        return fields;
                       })
                   .setQueryParamsExtractor(
-                      new FieldsExtractor<GetRegionUrlMapRequest, Map<String, List<String>>>() {
-                        @Override
-                        public Map<String, List<String>> extract(GetRegionUrlMapRequest request) {
-                          Map<String, List<String>> fields = new HashMap<>();
-                          ProtoRestSerializer<GetRegionUrlMapRequest> serializer =
-                              ProtoRestSerializer.create();
-                          return fields;
-                        }
+                      request -> {
+                        Map<String, List<String>> fields = new HashMap<>();
+                        ProtoRestSerializer<GetRegionUrlMapRequest> serializer =
+                            ProtoRestSerializer.create();
+                        return fields;
                       })
-                  .setRequestBodyExtractor(
-                      new FieldsExtractor<GetRegionUrlMapRequest, String>() {
-                        @Override
-                        public String extract(GetRegionUrlMapRequest request) {
-                          return null;
-                        }
-                      })
+                  .setRequestBodyExtractor(request -> null)
                   .build())
           .setResponseParser(
               ProtoMessageResponseParser.<UrlMap>newBuilder()
@@ -164,41 +136,28 @@ public class HttpJsonRegionUrlMapsStub extends RegionUrlMapsStub {
                   ProtoMessageRequestFormatter.<InsertRegionUrlMapRequest>newBuilder()
                       .setPath(
                           "/compute/v1/projects/{project}/regions/{region}/urlMaps",
-                          new FieldsExtractor<InsertRegionUrlMapRequest, Map<String, String>>() {
-                            @Override
-                            public Map<String, String> extract(InsertRegionUrlMapRequest request) {
-                              Map<String, String> fields = new HashMap<>();
-                              ProtoRestSerializer<InsertRegionUrlMapRequest> serializer =
-                                  ProtoRestSerializer.create();
-                              serializer.putPathParam(fields, "project", request.getProject());
-                              serializer.putPathParam(fields, "region", request.getRegion());
-                              return fields;
-                            }
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<InsertRegionUrlMapRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "project", request.getProject());
+                            serializer.putPathParam(fields, "region", request.getRegion());
+                            return fields;
                           })
                       .setQueryParamsExtractor(
-                          new FieldsExtractor<
-                              InsertRegionUrlMapRequest, Map<String, List<String>>>() {
-                            @Override
-                            public Map<String, List<String>> extract(
-                                InsertRegionUrlMapRequest request) {
-                              Map<String, List<String>> fields = new HashMap<>();
-                              ProtoRestSerializer<InsertRegionUrlMapRequest> serializer =
-                                  ProtoRestSerializer.create();
-                              if (request.hasRequestId()) {
-                                serializer.putQueryParam(
-                                    fields, "requestId", request.getRequestId());
-                              }
-                              return fields;
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<InsertRegionUrlMapRequest> serializer =
+                                ProtoRestSerializer.create();
+                            if (request.hasRequestId()) {
+                              serializer.putQueryParam(fields, "requestId", request.getRequestId());
                             }
+                            return fields;
                           })
                       .setRequestBodyExtractor(
-                          new FieldsExtractor<InsertRegionUrlMapRequest, String>() {
-                            @Override
-                            public String extract(InsertRegionUrlMapRequest request) {
-                              return ProtoRestSerializer.create()
-                                  .toBody("urlMapResource", request.getUrlMapResource());
-                            }
-                          })
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("urlMapResource", request.getUrlMapResource()))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -215,56 +174,41 @@ public class HttpJsonRegionUrlMapsStub extends RegionUrlMapsStub {
                   ProtoMessageRequestFormatter.<ListRegionUrlMapsRequest>newBuilder()
                       .setPath(
                           "/compute/v1/projects/{project}/regions/{region}/urlMaps",
-                          new FieldsExtractor<ListRegionUrlMapsRequest, Map<String, String>>() {
-                            @Override
-                            public Map<String, String> extract(ListRegionUrlMapsRequest request) {
-                              Map<String, String> fields = new HashMap<>();
-                              ProtoRestSerializer<ListRegionUrlMapsRequest> serializer =
-                                  ProtoRestSerializer.create();
-                              serializer.putPathParam(fields, "project", request.getProject());
-                              serializer.putPathParam(fields, "region", request.getRegion());
-                              return fields;
-                            }
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<ListRegionUrlMapsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "project", request.getProject());
+                            serializer.putPathParam(fields, "region", request.getRegion());
+                            return fields;
                           })
                       .setQueryParamsExtractor(
-                          new FieldsExtractor<
-                              ListRegionUrlMapsRequest, Map<String, List<String>>>() {
-                            @Override
-                            public Map<String, List<String>> extract(
-                                ListRegionUrlMapsRequest request) {
-                              Map<String, List<String>> fields = new HashMap<>();
-                              ProtoRestSerializer<ListRegionUrlMapsRequest> serializer =
-                                  ProtoRestSerializer.create();
-                              if (request.hasFilter()) {
-                                serializer.putQueryParam(fields, "filter", request.getFilter());
-                              }
-                              if (request.hasMaxResults()) {
-                                serializer.putQueryParam(
-                                    fields, "maxResults", request.getMaxResults());
-                              }
-                              if (request.hasOrderBy()) {
-                                serializer.putQueryParam(fields, "orderBy", request.getOrderBy());
-                              }
-                              if (request.hasPageToken()) {
-                                serializer.putQueryParam(
-                                    fields, "pageToken", request.getPageToken());
-                              }
-                              if (request.hasReturnPartialSuccess()) {
-                                serializer.putQueryParam(
-                                    fields,
-                                    "returnPartialSuccess",
-                                    request.getReturnPartialSuccess());
-                              }
-                              return fields;
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<ListRegionUrlMapsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            if (request.hasFilter()) {
+                              serializer.putQueryParam(fields, "filter", request.getFilter());
                             }
-                          })
-                      .setRequestBodyExtractor(
-                          new FieldsExtractor<ListRegionUrlMapsRequest, String>() {
-                            @Override
-                            public String extract(ListRegionUrlMapsRequest request) {
-                              return null;
+                            if (request.hasMaxResults()) {
+                              serializer.putQueryParam(
+                                  fields, "maxResults", request.getMaxResults());
                             }
+                            if (request.hasOrderBy()) {
+                              serializer.putQueryParam(fields, "orderBy", request.getOrderBy());
+                            }
+                            if (request.hasPageToken()) {
+                              serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            }
+                            if (request.hasReturnPartialSuccess()) {
+                              serializer.putQueryParam(
+                                  fields,
+                                  "returnPartialSuccess",
+                                  request.getReturnPartialSuccess());
+                            }
+                            return fields;
                           })
+                      .setRequestBodyExtractor(request -> null)
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<UrlMapList>newBuilder()
@@ -281,42 +225,29 @@ public class HttpJsonRegionUrlMapsStub extends RegionUrlMapsStub {
                   ProtoMessageRequestFormatter.<PatchRegionUrlMapRequest>newBuilder()
                       .setPath(
                           "/compute/v1/projects/{project}/regions/{region}/urlMaps/{urlMap}",
-                          new FieldsExtractor<PatchRegionUrlMapRequest, Map<String, String>>() {
-                            @Override
-                            public Map<String, String> extract(PatchRegionUrlMapRequest request) {
-                              Map<String, String> fields = new HashMap<>();
-                              ProtoRestSerializer<PatchRegionUrlMapRequest> serializer =
-                                  ProtoRestSerializer.create();
-                              serializer.putPathParam(fields, "project", request.getProject());
-                              serializer.putPathParam(fields, "region", request.getRegion());
-                              serializer.putPathParam(fields, "urlMap", request.getUrlMap());
-                              return fields;
-                            }
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<PatchRegionUrlMapRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "project", request.getProject());
+                            serializer.putPathParam(fields, "region", request.getRegion());
+                            serializer.putPathParam(fields, "urlMap", request.getUrlMap());
+                            return fields;
                           })
                       .setQueryParamsExtractor(
-                          new FieldsExtractor<
-                              PatchRegionUrlMapRequest, Map<String, List<String>>>() {
-                            @Override
-                            public Map<String, List<String>> extract(
-                                PatchRegionUrlMapRequest request) {
-                              Map<String, List<String>> fields = new HashMap<>();
-                              ProtoRestSerializer<PatchRegionUrlMapRequest> serializer =
-                                  ProtoRestSerializer.create();
-                              if (request.hasRequestId()) {
-                                serializer.putQueryParam(
-                                    fields, "requestId", request.getRequestId());
-                              }
-                              return fields;
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<PatchRegionUrlMapRequest> serializer =
+                                ProtoRestSerializer.create();
+                            if (request.hasRequestId()) {
+                              serializer.putQueryParam(fields, "requestId", request.getRequestId());
                             }
+                            return fields;
                           })
                       .setRequestBodyExtractor(
-                          new FieldsExtractor<PatchRegionUrlMapRequest, String>() {
-                            @Override
-                            public String extract(PatchRegionUrlMapRequest request) {
-                              return ProtoRestSerializer.create()
-                                  .toBody("urlMapResource", request.getUrlMapResource());
-                            }
-                          })
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("urlMapResource", request.getUrlMapResource()))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -333,42 +264,29 @@ public class HttpJsonRegionUrlMapsStub extends RegionUrlMapsStub {
                   ProtoMessageRequestFormatter.<UpdateRegionUrlMapRequest>newBuilder()
                       .setPath(
                           "/compute/v1/projects/{project}/regions/{region}/urlMaps/{urlMap}",
-                          new FieldsExtractor<UpdateRegionUrlMapRequest, Map<String, String>>() {
-                            @Override
-                            public Map<String, String> extract(UpdateRegionUrlMapRequest request) {
-                              Map<String, String> fields = new HashMap<>();
-                              ProtoRestSerializer<UpdateRegionUrlMapRequest> serializer =
-                                  ProtoRestSerializer.create();
-                              serializer.putPathParam(fields, "project", request.getProject());
-                              serializer.putPathParam(fields, "region", request.getRegion());
-                              serializer.putPathParam(fields, "urlMap", request.getUrlMap());
-                              return fields;
-                            }
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<UpdateRegionUrlMapRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "project", request.getProject());
+                            serializer.putPathParam(fields, "region", request.getRegion());
+                            serializer.putPathParam(fields, "urlMap", request.getUrlMap());
+                            return fields;
                           })
                       .setQueryParamsExtractor(
-                          new FieldsExtractor<
-                              UpdateRegionUrlMapRequest, Map<String, List<String>>>() {
-                            @Override
-                            public Map<String, List<String>> extract(
-                                UpdateRegionUrlMapRequest request) {
-                              Map<String, List<String>> fields = new HashMap<>();
-                              ProtoRestSerializer<UpdateRegionUrlMapRequest> serializer =
-                                  ProtoRestSerializer.create();
-                              if (request.hasRequestId()) {
-                                serializer.putQueryParam(
-                                    fields, "requestId", request.getRequestId());
-                              }
-                              return fields;
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<UpdateRegionUrlMapRequest> serializer =
+                                ProtoRestSerializer.create();
+                            if (request.hasRequestId()) {
+                              serializer.putQueryParam(fields, "requestId", request.getRequestId());
                             }
+                            return fields;
                           })
                       .setRequestBodyExtractor(
-                          new FieldsExtractor<UpdateRegionUrlMapRequest, String>() {
-                            @Override
-                            public String extract(UpdateRegionUrlMapRequest request) {
-                              return ProtoRestSerializer.create()
-                                  .toBody("urlMapResource", request.getUrlMapResource());
-                            }
-                          })
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("urlMapResource", request.getUrlMapResource()))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -385,41 +303,28 @@ public class HttpJsonRegionUrlMapsStub extends RegionUrlMapsStub {
                   ProtoMessageRequestFormatter.<ValidateRegionUrlMapRequest>newBuilder()
                       .setPath(
                           "/compute/v1/projects/{project}/regions/{region}/urlMaps/{urlMap}/validate",
-                          new FieldsExtractor<ValidateRegionUrlMapRequest, Map<String, String>>() {
-                            @Override
-                            public Map<String, String> extract(
-                                ValidateRegionUrlMapRequest request) {
-                              Map<String, String> fields = new HashMap<>();
-                              ProtoRestSerializer<ValidateRegionUrlMapRequest> serializer =
-                                  ProtoRestSerializer.create();
-                              serializer.putPathParam(fields, "project", request.getProject());
-                              serializer.putPathParam(fields, "region", request.getRegion());
-                              serializer.putPathParam(fields, "urlMap", request.getUrlMap());
-                              return fields;
-                            }
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<ValidateRegionUrlMapRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "project", request.getProject());
+                            serializer.putPathParam(fields, "region", request.getRegion());
+                            serializer.putPathParam(fields, "urlMap", request.getUrlMap());
+                            return fields;
                           })
                       .setQueryParamsExtractor(
-                          new FieldsExtractor<
-                              ValidateRegionUrlMapRequest, Map<String, List<String>>>() {
-                            @Override
-                            public Map<String, List<String>> extract(
-                                ValidateRegionUrlMapRequest request) {
-                              Map<String, List<String>> fields = new HashMap<>();
-                              ProtoRestSerializer<ValidateRegionUrlMapRequest> serializer =
-                                  ProtoRestSerializer.create();
-                              return fields;
-                            }
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<ValidateRegionUrlMapRequest> serializer =
+                                ProtoRestSerializer.create();
+                            return fields;
                           })
                       .setRequestBodyExtractor(
-                          new FieldsExtractor<ValidateRegionUrlMapRequest, String>() {
-                            @Override
-                            public String extract(ValidateRegionUrlMapRequest request) {
-                              return ProtoRestSerializer.create()
+                          request ->
+                              ProtoRestSerializer.create()
                                   .toBody(
                                       "regionUrlMapsValidateRequestResource",
-                                      request.getRegionUrlMapsValidateRequestResource());
-                            }
-                          })
+                                      request.getRegionUrlMapsValidateRequestResource()))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<UrlMapsValidateResponse>newBuilder()
@@ -593,7 +498,13 @@ public class HttpJsonRegionUrlMapsStub extends RegionUrlMapsStub {
 
   @Override
   public final void close() {
-    shutdown();
+    try {
+      backgroundResources.close();
+    } catch (RuntimeException e) {
+      throw e;
+    } catch (Exception e) {
+      throw new IllegalStateException("Failed to close resource", e);
+    }
   }
 
   @Override

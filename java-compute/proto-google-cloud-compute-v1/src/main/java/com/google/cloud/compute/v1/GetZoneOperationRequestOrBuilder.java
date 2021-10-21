@@ -30,7 +30,9 @@ public interface GetZoneOperationRequestOrBuilder
    * Name of the Operations resource to return.
    * </pre>
    *
-   * <code>string operation = 52090215 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>
+   * string operation = 52090215 [(.google.api.field_behavior) = REQUIRED, (.google.cloud.operation_response_field) = "name"];
+   * </code>
    *
    * @return The operation.
    */
@@ -42,7 +44,9 @@ public interface GetZoneOperationRequestOrBuilder
    * Name of the Operations resource to return.
    * </pre>
    *
-   * <code>string operation = 52090215 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>
+   * string operation = 52090215 [(.google.api.field_behavior) = REQUIRED, (.google.cloud.operation_response_field) = "name"];
+   * </code>
    *
    * @return The bytes for operation.
    */

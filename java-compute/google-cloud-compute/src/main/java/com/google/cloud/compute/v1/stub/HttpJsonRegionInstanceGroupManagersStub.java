@@ -27,7 +27,6 @@ import com.google.api.core.InternalApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.httpjson.ApiMethodDescriptor;
-import com.google.api.gax.httpjson.FieldsExtractor;
 import com.google.api.gax.httpjson.HttpJsonCallSettings;
 import com.google.api.gax.httpjson.HttpJsonStubCallableFactory;
 import com.google.api.gax.httpjson.ProtoMessageRequestFormatter;
@@ -90,54 +89,33 @@ public class HttpJsonRegionInstanceGroupManagersStub extends RegionInstanceGroup
                       .<AbandonInstancesRegionInstanceGroupManagerRequest>newBuilder()
                       .setPath(
                           "/compute/v1/projects/{project}/regions/{region}/instanceGroupManagers/{instanceGroupManager}/abandonInstances",
-                          new FieldsExtractor<
-                              AbandonInstancesRegionInstanceGroupManagerRequest,
-                              Map<String, String>>() {
-                            @Override
-                            public Map<String, String> extract(
-                                AbandonInstancesRegionInstanceGroupManagerRequest request) {
-                              Map<String, String> fields = new HashMap<>();
-                              ProtoRestSerializer<AbandonInstancesRegionInstanceGroupManagerRequest>
-                                  serializer = ProtoRestSerializer.create();
-                              serializer.putPathParam(
-                                  fields,
-                                  "instanceGroupManager",
-                                  request.getInstanceGroupManager());
-                              serializer.putPathParam(fields, "project", request.getProject());
-                              serializer.putPathParam(fields, "region", request.getRegion());
-                              return fields;
-                            }
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<AbandonInstancesRegionInstanceGroupManagerRequest>
+                                serializer = ProtoRestSerializer.create();
+                            serializer.putPathParam(
+                                fields, "instanceGroupManager", request.getInstanceGroupManager());
+                            serializer.putPathParam(fields, "project", request.getProject());
+                            serializer.putPathParam(fields, "region", request.getRegion());
+                            return fields;
                           })
                       .setQueryParamsExtractor(
-                          new FieldsExtractor<
-                              AbandonInstancesRegionInstanceGroupManagerRequest,
-                              Map<String, List<String>>>() {
-                            @Override
-                            public Map<String, List<String>> extract(
-                                AbandonInstancesRegionInstanceGroupManagerRequest request) {
-                              Map<String, List<String>> fields = new HashMap<>();
-                              ProtoRestSerializer<AbandonInstancesRegionInstanceGroupManagerRequest>
-                                  serializer = ProtoRestSerializer.create();
-                              if (request.hasRequestId()) {
-                                serializer.putQueryParam(
-                                    fields, "requestId", request.getRequestId());
-                              }
-                              return fields;
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<AbandonInstancesRegionInstanceGroupManagerRequest>
+                                serializer = ProtoRestSerializer.create();
+                            if (request.hasRequestId()) {
+                              serializer.putQueryParam(fields, "requestId", request.getRequestId());
                             }
+                            return fields;
                           })
                       .setRequestBodyExtractor(
-                          new FieldsExtractor<
-                              AbandonInstancesRegionInstanceGroupManagerRequest, String>() {
-                            @Override
-                            public String extract(
-                                AbandonInstancesRegionInstanceGroupManagerRequest request) {
-                              return ProtoRestSerializer.create()
+                          request ->
+                              ProtoRestSerializer.create()
                                   .toBody(
                                       "regionInstanceGroupManagersAbandonInstancesRequestResource",
                                       request
-                                          .getRegionInstanceGroupManagersAbandonInstancesRequestResource());
-                            }
-                          })
+                                          .getRegionInstanceGroupManagersAbandonInstancesRequestResource()))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -158,52 +136,32 @@ public class HttpJsonRegionInstanceGroupManagersStub extends RegionInstanceGroup
                       .<ApplyUpdatesToInstancesRegionInstanceGroupManagerRequest>newBuilder()
                       .setPath(
                           "/compute/v1/projects/{project}/regions/{region}/instanceGroupManagers/{instanceGroupManager}/applyUpdatesToInstances",
-                          new FieldsExtractor<
-                              ApplyUpdatesToInstancesRegionInstanceGroupManagerRequest,
-                              Map<String, String>>() {
-                            @Override
-                            public Map<String, String> extract(
-                                ApplyUpdatesToInstancesRegionInstanceGroupManagerRequest request) {
-                              Map<String, String> fields = new HashMap<>();
-                              ProtoRestSerializer<
-                                      ApplyUpdatesToInstancesRegionInstanceGroupManagerRequest>
-                                  serializer = ProtoRestSerializer.create();
-                              serializer.putPathParam(
-                                  fields,
-                                  "instanceGroupManager",
-                                  request.getInstanceGroupManager());
-                              serializer.putPathParam(fields, "project", request.getProject());
-                              serializer.putPathParam(fields, "region", request.getRegion());
-                              return fields;
-                            }
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<
+                                    ApplyUpdatesToInstancesRegionInstanceGroupManagerRequest>
+                                serializer = ProtoRestSerializer.create();
+                            serializer.putPathParam(
+                                fields, "instanceGroupManager", request.getInstanceGroupManager());
+                            serializer.putPathParam(fields, "project", request.getProject());
+                            serializer.putPathParam(fields, "region", request.getRegion());
+                            return fields;
                           })
                       .setQueryParamsExtractor(
-                          new FieldsExtractor<
-                              ApplyUpdatesToInstancesRegionInstanceGroupManagerRequest,
-                              Map<String, List<String>>>() {
-                            @Override
-                            public Map<String, List<String>> extract(
-                                ApplyUpdatesToInstancesRegionInstanceGroupManagerRequest request) {
-                              Map<String, List<String>> fields = new HashMap<>();
-                              ProtoRestSerializer<
-                                      ApplyUpdatesToInstancesRegionInstanceGroupManagerRequest>
-                                  serializer = ProtoRestSerializer.create();
-                              return fields;
-                            }
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<
+                                    ApplyUpdatesToInstancesRegionInstanceGroupManagerRequest>
+                                serializer = ProtoRestSerializer.create();
+                            return fields;
                           })
                       .setRequestBodyExtractor(
-                          new FieldsExtractor<
-                              ApplyUpdatesToInstancesRegionInstanceGroupManagerRequest, String>() {
-                            @Override
-                            public String extract(
-                                ApplyUpdatesToInstancesRegionInstanceGroupManagerRequest request) {
-                              return ProtoRestSerializer.create()
+                          request ->
+                              ProtoRestSerializer.create()
                                   .toBody(
                                       "regionInstanceGroupManagersApplyUpdatesRequestResource",
                                       request
-                                          .getRegionInstanceGroupManagersApplyUpdatesRequestResource());
-                            }
-                          })
+                                          .getRegionInstanceGroupManagersApplyUpdatesRequestResource()))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -224,54 +182,33 @@ public class HttpJsonRegionInstanceGroupManagersStub extends RegionInstanceGroup
                       .<CreateInstancesRegionInstanceGroupManagerRequest>newBuilder()
                       .setPath(
                           "/compute/v1/projects/{project}/regions/{region}/instanceGroupManagers/{instanceGroupManager}/createInstances",
-                          new FieldsExtractor<
-                              CreateInstancesRegionInstanceGroupManagerRequest,
-                              Map<String, String>>() {
-                            @Override
-                            public Map<String, String> extract(
-                                CreateInstancesRegionInstanceGroupManagerRequest request) {
-                              Map<String, String> fields = new HashMap<>();
-                              ProtoRestSerializer<CreateInstancesRegionInstanceGroupManagerRequest>
-                                  serializer = ProtoRestSerializer.create();
-                              serializer.putPathParam(
-                                  fields,
-                                  "instanceGroupManager",
-                                  request.getInstanceGroupManager());
-                              serializer.putPathParam(fields, "project", request.getProject());
-                              serializer.putPathParam(fields, "region", request.getRegion());
-                              return fields;
-                            }
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<CreateInstancesRegionInstanceGroupManagerRequest>
+                                serializer = ProtoRestSerializer.create();
+                            serializer.putPathParam(
+                                fields, "instanceGroupManager", request.getInstanceGroupManager());
+                            serializer.putPathParam(fields, "project", request.getProject());
+                            serializer.putPathParam(fields, "region", request.getRegion());
+                            return fields;
                           })
                       .setQueryParamsExtractor(
-                          new FieldsExtractor<
-                              CreateInstancesRegionInstanceGroupManagerRequest,
-                              Map<String, List<String>>>() {
-                            @Override
-                            public Map<String, List<String>> extract(
-                                CreateInstancesRegionInstanceGroupManagerRequest request) {
-                              Map<String, List<String>> fields = new HashMap<>();
-                              ProtoRestSerializer<CreateInstancesRegionInstanceGroupManagerRequest>
-                                  serializer = ProtoRestSerializer.create();
-                              if (request.hasRequestId()) {
-                                serializer.putQueryParam(
-                                    fields, "requestId", request.getRequestId());
-                              }
-                              return fields;
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<CreateInstancesRegionInstanceGroupManagerRequest>
+                                serializer = ProtoRestSerializer.create();
+                            if (request.hasRequestId()) {
+                              serializer.putQueryParam(fields, "requestId", request.getRequestId());
                             }
+                            return fields;
                           })
                       .setRequestBodyExtractor(
-                          new FieldsExtractor<
-                              CreateInstancesRegionInstanceGroupManagerRequest, String>() {
-                            @Override
-                            public String extract(
-                                CreateInstancesRegionInstanceGroupManagerRequest request) {
-                              return ProtoRestSerializer.create()
+                          request ->
+                              ProtoRestSerializer.create()
                                   .toBody(
                                       "regionInstanceGroupManagersCreateInstancesRequestResource",
                                       request
-                                          .getRegionInstanceGroupManagersCreateInstancesRequestResource());
-                            }
-                          })
+                                          .getRegionInstanceGroupManagersCreateInstancesRequestResource()))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -288,47 +225,27 @@ public class HttpJsonRegionInstanceGroupManagersStub extends RegionInstanceGroup
                   ProtoMessageRequestFormatter.<DeleteRegionInstanceGroupManagerRequest>newBuilder()
                       .setPath(
                           "/compute/v1/projects/{project}/regions/{region}/instanceGroupManagers/{instanceGroupManager}",
-                          new FieldsExtractor<
-                              DeleteRegionInstanceGroupManagerRequest, Map<String, String>>() {
-                            @Override
-                            public Map<String, String> extract(
-                                DeleteRegionInstanceGroupManagerRequest request) {
-                              Map<String, String> fields = new HashMap<>();
-                              ProtoRestSerializer<DeleteRegionInstanceGroupManagerRequest>
-                                  serializer = ProtoRestSerializer.create();
-                              serializer.putPathParam(
-                                  fields,
-                                  "instanceGroupManager",
-                                  request.getInstanceGroupManager());
-                              serializer.putPathParam(fields, "project", request.getProject());
-                              serializer.putPathParam(fields, "region", request.getRegion());
-                              return fields;
-                            }
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<DeleteRegionInstanceGroupManagerRequest>
+                                serializer = ProtoRestSerializer.create();
+                            serializer.putPathParam(
+                                fields, "instanceGroupManager", request.getInstanceGroupManager());
+                            serializer.putPathParam(fields, "project", request.getProject());
+                            serializer.putPathParam(fields, "region", request.getRegion());
+                            return fields;
                           })
                       .setQueryParamsExtractor(
-                          new FieldsExtractor<
-                              DeleteRegionInstanceGroupManagerRequest,
-                              Map<String, List<String>>>() {
-                            @Override
-                            public Map<String, List<String>> extract(
-                                DeleteRegionInstanceGroupManagerRequest request) {
-                              Map<String, List<String>> fields = new HashMap<>();
-                              ProtoRestSerializer<DeleteRegionInstanceGroupManagerRequest>
-                                  serializer = ProtoRestSerializer.create();
-                              if (request.hasRequestId()) {
-                                serializer.putQueryParam(
-                                    fields, "requestId", request.getRequestId());
-                              }
-                              return fields;
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<DeleteRegionInstanceGroupManagerRequest>
+                                serializer = ProtoRestSerializer.create();
+                            if (request.hasRequestId()) {
+                              serializer.putQueryParam(fields, "requestId", request.getRequestId());
                             }
+                            return fields;
                           })
-                      .setRequestBodyExtractor(
-                          new FieldsExtractor<DeleteRegionInstanceGroupManagerRequest, String>() {
-                            @Override
-                            public String extract(DeleteRegionInstanceGroupManagerRequest request) {
-                              return null;
-                            }
-                          })
+                      .setRequestBodyExtractor(request -> null)
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -349,54 +266,33 @@ public class HttpJsonRegionInstanceGroupManagersStub extends RegionInstanceGroup
                       .<DeleteInstancesRegionInstanceGroupManagerRequest>newBuilder()
                       .setPath(
                           "/compute/v1/projects/{project}/regions/{region}/instanceGroupManagers/{instanceGroupManager}/deleteInstances",
-                          new FieldsExtractor<
-                              DeleteInstancesRegionInstanceGroupManagerRequest,
-                              Map<String, String>>() {
-                            @Override
-                            public Map<String, String> extract(
-                                DeleteInstancesRegionInstanceGroupManagerRequest request) {
-                              Map<String, String> fields = new HashMap<>();
-                              ProtoRestSerializer<DeleteInstancesRegionInstanceGroupManagerRequest>
-                                  serializer = ProtoRestSerializer.create();
-                              serializer.putPathParam(
-                                  fields,
-                                  "instanceGroupManager",
-                                  request.getInstanceGroupManager());
-                              serializer.putPathParam(fields, "project", request.getProject());
-                              serializer.putPathParam(fields, "region", request.getRegion());
-                              return fields;
-                            }
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<DeleteInstancesRegionInstanceGroupManagerRequest>
+                                serializer = ProtoRestSerializer.create();
+                            serializer.putPathParam(
+                                fields, "instanceGroupManager", request.getInstanceGroupManager());
+                            serializer.putPathParam(fields, "project", request.getProject());
+                            serializer.putPathParam(fields, "region", request.getRegion());
+                            return fields;
                           })
                       .setQueryParamsExtractor(
-                          new FieldsExtractor<
-                              DeleteInstancesRegionInstanceGroupManagerRequest,
-                              Map<String, List<String>>>() {
-                            @Override
-                            public Map<String, List<String>> extract(
-                                DeleteInstancesRegionInstanceGroupManagerRequest request) {
-                              Map<String, List<String>> fields = new HashMap<>();
-                              ProtoRestSerializer<DeleteInstancesRegionInstanceGroupManagerRequest>
-                                  serializer = ProtoRestSerializer.create();
-                              if (request.hasRequestId()) {
-                                serializer.putQueryParam(
-                                    fields, "requestId", request.getRequestId());
-                              }
-                              return fields;
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<DeleteInstancesRegionInstanceGroupManagerRequest>
+                                serializer = ProtoRestSerializer.create();
+                            if (request.hasRequestId()) {
+                              serializer.putQueryParam(fields, "requestId", request.getRequestId());
                             }
+                            return fields;
                           })
                       .setRequestBodyExtractor(
-                          new FieldsExtractor<
-                              DeleteInstancesRegionInstanceGroupManagerRequest, String>() {
-                            @Override
-                            public String extract(
-                                DeleteInstancesRegionInstanceGroupManagerRequest request) {
-                              return ProtoRestSerializer.create()
+                          request ->
+                              ProtoRestSerializer.create()
                                   .toBody(
                                       "regionInstanceGroupManagersDeleteInstancesRequestResource",
                                       request
-                                          .getRegionInstanceGroupManagersDeleteInstancesRequestResource());
-                            }
-                          })
+                                          .getRegionInstanceGroupManagersDeleteInstancesRequestResource()))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -417,52 +313,32 @@ public class HttpJsonRegionInstanceGroupManagersStub extends RegionInstanceGroup
                       .<DeletePerInstanceConfigsRegionInstanceGroupManagerRequest>newBuilder()
                       .setPath(
                           "/compute/v1/projects/{project}/regions/{region}/instanceGroupManagers/{instanceGroupManager}/deletePerInstanceConfigs",
-                          new FieldsExtractor<
-                              DeletePerInstanceConfigsRegionInstanceGroupManagerRequest,
-                              Map<String, String>>() {
-                            @Override
-                            public Map<String, String> extract(
-                                DeletePerInstanceConfigsRegionInstanceGroupManagerRequest request) {
-                              Map<String, String> fields = new HashMap<>();
-                              ProtoRestSerializer<
-                                      DeletePerInstanceConfigsRegionInstanceGroupManagerRequest>
-                                  serializer = ProtoRestSerializer.create();
-                              serializer.putPathParam(
-                                  fields,
-                                  "instanceGroupManager",
-                                  request.getInstanceGroupManager());
-                              serializer.putPathParam(fields, "project", request.getProject());
-                              serializer.putPathParam(fields, "region", request.getRegion());
-                              return fields;
-                            }
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<
+                                    DeletePerInstanceConfigsRegionInstanceGroupManagerRequest>
+                                serializer = ProtoRestSerializer.create();
+                            serializer.putPathParam(
+                                fields, "instanceGroupManager", request.getInstanceGroupManager());
+                            serializer.putPathParam(fields, "project", request.getProject());
+                            serializer.putPathParam(fields, "region", request.getRegion());
+                            return fields;
                           })
                       .setQueryParamsExtractor(
-                          new FieldsExtractor<
-                              DeletePerInstanceConfigsRegionInstanceGroupManagerRequest,
-                              Map<String, List<String>>>() {
-                            @Override
-                            public Map<String, List<String>> extract(
-                                DeletePerInstanceConfigsRegionInstanceGroupManagerRequest request) {
-                              Map<String, List<String>> fields = new HashMap<>();
-                              ProtoRestSerializer<
-                                      DeletePerInstanceConfigsRegionInstanceGroupManagerRequest>
-                                  serializer = ProtoRestSerializer.create();
-                              return fields;
-                            }
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<
+                                    DeletePerInstanceConfigsRegionInstanceGroupManagerRequest>
+                                serializer = ProtoRestSerializer.create();
+                            return fields;
                           })
                       .setRequestBodyExtractor(
-                          new FieldsExtractor<
-                              DeletePerInstanceConfigsRegionInstanceGroupManagerRequest, String>() {
-                            @Override
-                            public String extract(
-                                DeletePerInstanceConfigsRegionInstanceGroupManagerRequest request) {
-                              return ProtoRestSerializer.create()
+                          request ->
+                              ProtoRestSerializer.create()
                                   .toBody(
                                       "regionInstanceGroupManagerDeleteInstanceConfigReqResource",
                                       request
-                                          .getRegionInstanceGroupManagerDeleteInstanceConfigReqResource());
-                            }
-                          })
+                                          .getRegionInstanceGroupManagerDeleteInstanceConfigReqResource()))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -481,42 +357,24 @@ public class HttpJsonRegionInstanceGroupManagersStub extends RegionInstanceGroup
                   ProtoMessageRequestFormatter.<GetRegionInstanceGroupManagerRequest>newBuilder()
                       .setPath(
                           "/compute/v1/projects/{project}/regions/{region}/instanceGroupManagers/{instanceGroupManager}",
-                          new FieldsExtractor<
-                              GetRegionInstanceGroupManagerRequest, Map<String, String>>() {
-                            @Override
-                            public Map<String, String> extract(
-                                GetRegionInstanceGroupManagerRequest request) {
-                              Map<String, String> fields = new HashMap<>();
-                              ProtoRestSerializer<GetRegionInstanceGroupManagerRequest> serializer =
-                                  ProtoRestSerializer.create();
-                              serializer.putPathParam(
-                                  fields,
-                                  "instanceGroupManager",
-                                  request.getInstanceGroupManager());
-                              serializer.putPathParam(fields, "project", request.getProject());
-                              serializer.putPathParam(fields, "region", request.getRegion());
-                              return fields;
-                            }
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<GetRegionInstanceGroupManagerRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(
+                                fields, "instanceGroupManager", request.getInstanceGroupManager());
+                            serializer.putPathParam(fields, "project", request.getProject());
+                            serializer.putPathParam(fields, "region", request.getRegion());
+                            return fields;
                           })
                       .setQueryParamsExtractor(
-                          new FieldsExtractor<
-                              GetRegionInstanceGroupManagerRequest, Map<String, List<String>>>() {
-                            @Override
-                            public Map<String, List<String>> extract(
-                                GetRegionInstanceGroupManagerRequest request) {
-                              Map<String, List<String>> fields = new HashMap<>();
-                              ProtoRestSerializer<GetRegionInstanceGroupManagerRequest> serializer =
-                                  ProtoRestSerializer.create();
-                              return fields;
-                            }
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<GetRegionInstanceGroupManagerRequest> serializer =
+                                ProtoRestSerializer.create();
+                            return fields;
                           })
-                      .setRequestBodyExtractor(
-                          new FieldsExtractor<GetRegionInstanceGroupManagerRequest, String>() {
-                            @Override
-                            public String extract(GetRegionInstanceGroupManagerRequest request) {
-                              return null;
-                            }
-                          })
+                      .setRequestBodyExtractor(request -> null)
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<InstanceGroupManager>newBuilder()
@@ -533,46 +391,30 @@ public class HttpJsonRegionInstanceGroupManagersStub extends RegionInstanceGroup
                   ProtoMessageRequestFormatter.<InsertRegionInstanceGroupManagerRequest>newBuilder()
                       .setPath(
                           "/compute/v1/projects/{project}/regions/{region}/instanceGroupManagers",
-                          new FieldsExtractor<
-                              InsertRegionInstanceGroupManagerRequest, Map<String, String>>() {
-                            @Override
-                            public Map<String, String> extract(
-                                InsertRegionInstanceGroupManagerRequest request) {
-                              Map<String, String> fields = new HashMap<>();
-                              ProtoRestSerializer<InsertRegionInstanceGroupManagerRequest>
-                                  serializer = ProtoRestSerializer.create();
-                              serializer.putPathParam(fields, "project", request.getProject());
-                              serializer.putPathParam(fields, "region", request.getRegion());
-                              return fields;
-                            }
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<InsertRegionInstanceGroupManagerRequest>
+                                serializer = ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "project", request.getProject());
+                            serializer.putPathParam(fields, "region", request.getRegion());
+                            return fields;
                           })
                       .setQueryParamsExtractor(
-                          new FieldsExtractor<
-                              InsertRegionInstanceGroupManagerRequest,
-                              Map<String, List<String>>>() {
-                            @Override
-                            public Map<String, List<String>> extract(
-                                InsertRegionInstanceGroupManagerRequest request) {
-                              Map<String, List<String>> fields = new HashMap<>();
-                              ProtoRestSerializer<InsertRegionInstanceGroupManagerRequest>
-                                  serializer = ProtoRestSerializer.create();
-                              if (request.hasRequestId()) {
-                                serializer.putQueryParam(
-                                    fields, "requestId", request.getRequestId());
-                              }
-                              return fields;
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<InsertRegionInstanceGroupManagerRequest>
+                                serializer = ProtoRestSerializer.create();
+                            if (request.hasRequestId()) {
+                              serializer.putQueryParam(fields, "requestId", request.getRequestId());
                             }
+                            return fields;
                           })
                       .setRequestBodyExtractor(
-                          new FieldsExtractor<InsertRegionInstanceGroupManagerRequest, String>() {
-                            @Override
-                            public String extract(InsertRegionInstanceGroupManagerRequest request) {
-                              return ProtoRestSerializer.create()
+                          request ->
+                              ProtoRestSerializer.create()
                                   .toBody(
                                       "instanceGroupManagerResource",
-                                      request.getInstanceGroupManagerResource());
-                            }
-                          })
+                                      request.getInstanceGroupManagerResource()))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -591,58 +433,41 @@ public class HttpJsonRegionInstanceGroupManagersStub extends RegionInstanceGroup
                   ProtoMessageRequestFormatter.<ListRegionInstanceGroupManagersRequest>newBuilder()
                       .setPath(
                           "/compute/v1/projects/{project}/regions/{region}/instanceGroupManagers",
-                          new FieldsExtractor<
-                              ListRegionInstanceGroupManagersRequest, Map<String, String>>() {
-                            @Override
-                            public Map<String, String> extract(
-                                ListRegionInstanceGroupManagersRequest request) {
-                              Map<String, String> fields = new HashMap<>();
-                              ProtoRestSerializer<ListRegionInstanceGroupManagersRequest>
-                                  serializer = ProtoRestSerializer.create();
-                              serializer.putPathParam(fields, "project", request.getProject());
-                              serializer.putPathParam(fields, "region", request.getRegion());
-                              return fields;
-                            }
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<ListRegionInstanceGroupManagersRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "project", request.getProject());
+                            serializer.putPathParam(fields, "region", request.getRegion());
+                            return fields;
                           })
                       .setQueryParamsExtractor(
-                          new FieldsExtractor<
-                              ListRegionInstanceGroupManagersRequest, Map<String, List<String>>>() {
-                            @Override
-                            public Map<String, List<String>> extract(
-                                ListRegionInstanceGroupManagersRequest request) {
-                              Map<String, List<String>> fields = new HashMap<>();
-                              ProtoRestSerializer<ListRegionInstanceGroupManagersRequest>
-                                  serializer = ProtoRestSerializer.create();
-                              if (request.hasFilter()) {
-                                serializer.putQueryParam(fields, "filter", request.getFilter());
-                              }
-                              if (request.hasMaxResults()) {
-                                serializer.putQueryParam(
-                                    fields, "maxResults", request.getMaxResults());
-                              }
-                              if (request.hasOrderBy()) {
-                                serializer.putQueryParam(fields, "orderBy", request.getOrderBy());
-                              }
-                              if (request.hasPageToken()) {
-                                serializer.putQueryParam(
-                                    fields, "pageToken", request.getPageToken());
-                              }
-                              if (request.hasReturnPartialSuccess()) {
-                                serializer.putQueryParam(
-                                    fields,
-                                    "returnPartialSuccess",
-                                    request.getReturnPartialSuccess());
-                              }
-                              return fields;
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<ListRegionInstanceGroupManagersRequest> serializer =
+                                ProtoRestSerializer.create();
+                            if (request.hasFilter()) {
+                              serializer.putQueryParam(fields, "filter", request.getFilter());
                             }
-                          })
-                      .setRequestBodyExtractor(
-                          new FieldsExtractor<ListRegionInstanceGroupManagersRequest, String>() {
-                            @Override
-                            public String extract(ListRegionInstanceGroupManagersRequest request) {
-                              return null;
+                            if (request.hasMaxResults()) {
+                              serializer.putQueryParam(
+                                  fields, "maxResults", request.getMaxResults());
                             }
+                            if (request.hasOrderBy()) {
+                              serializer.putQueryParam(fields, "orderBy", request.getOrderBy());
+                            }
+                            if (request.hasPageToken()) {
+                              serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            }
+                            if (request.hasReturnPartialSuccess()) {
+                              serializer.putQueryParam(
+                                  fields,
+                                  "returnPartialSuccess",
+                                  request.getReturnPartialSuccess());
+                            }
+                            return fields;
                           })
+                      .setRequestBodyExtractor(request -> null)
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<RegionInstanceGroupManagerList>newBuilder()
@@ -665,65 +490,43 @@ public class HttpJsonRegionInstanceGroupManagersStub extends RegionInstanceGroup
                       .<ListErrorsRegionInstanceGroupManagersRequest>newBuilder()
                       .setPath(
                           "/compute/v1/projects/{project}/regions/{region}/instanceGroupManagers/{instanceGroupManager}/listErrors",
-                          new FieldsExtractor<
-                              ListErrorsRegionInstanceGroupManagersRequest, Map<String, String>>() {
-                            @Override
-                            public Map<String, String> extract(
-                                ListErrorsRegionInstanceGroupManagersRequest request) {
-                              Map<String, String> fields = new HashMap<>();
-                              ProtoRestSerializer<ListErrorsRegionInstanceGroupManagersRequest>
-                                  serializer = ProtoRestSerializer.create();
-                              serializer.putPathParam(
-                                  fields,
-                                  "instanceGroupManager",
-                                  request.getInstanceGroupManager());
-                              serializer.putPathParam(fields, "project", request.getProject());
-                              serializer.putPathParam(fields, "region", request.getRegion());
-                              return fields;
-                            }
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<ListErrorsRegionInstanceGroupManagersRequest>
+                                serializer = ProtoRestSerializer.create();
+                            serializer.putPathParam(
+                                fields, "instanceGroupManager", request.getInstanceGroupManager());
+                            serializer.putPathParam(fields, "project", request.getProject());
+                            serializer.putPathParam(fields, "region", request.getRegion());
+                            return fields;
                           })
                       .setQueryParamsExtractor(
-                          new FieldsExtractor<
-                              ListErrorsRegionInstanceGroupManagersRequest,
-                              Map<String, List<String>>>() {
-                            @Override
-                            public Map<String, List<String>> extract(
-                                ListErrorsRegionInstanceGroupManagersRequest request) {
-                              Map<String, List<String>> fields = new HashMap<>();
-                              ProtoRestSerializer<ListErrorsRegionInstanceGroupManagersRequest>
-                                  serializer = ProtoRestSerializer.create();
-                              if (request.hasFilter()) {
-                                serializer.putQueryParam(fields, "filter", request.getFilter());
-                              }
-                              if (request.hasMaxResults()) {
-                                serializer.putQueryParam(
-                                    fields, "maxResults", request.getMaxResults());
-                              }
-                              if (request.hasOrderBy()) {
-                                serializer.putQueryParam(fields, "orderBy", request.getOrderBy());
-                              }
-                              if (request.hasPageToken()) {
-                                serializer.putQueryParam(
-                                    fields, "pageToken", request.getPageToken());
-                              }
-                              if (request.hasReturnPartialSuccess()) {
-                                serializer.putQueryParam(
-                                    fields,
-                                    "returnPartialSuccess",
-                                    request.getReturnPartialSuccess());
-                              }
-                              return fields;
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<ListErrorsRegionInstanceGroupManagersRequest>
+                                serializer = ProtoRestSerializer.create();
+                            if (request.hasFilter()) {
+                              serializer.putQueryParam(fields, "filter", request.getFilter());
                             }
-                          })
-                      .setRequestBodyExtractor(
-                          new FieldsExtractor<
-                              ListErrorsRegionInstanceGroupManagersRequest, String>() {
-                            @Override
-                            public String extract(
-                                ListErrorsRegionInstanceGroupManagersRequest request) {
-                              return null;
+                            if (request.hasMaxResults()) {
+                              serializer.putQueryParam(
+                                  fields, "maxResults", request.getMaxResults());
                             }
+                            if (request.hasOrderBy()) {
+                              serializer.putQueryParam(fields, "orderBy", request.getOrderBy());
+                            }
+                            if (request.hasPageToken()) {
+                              serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            }
+                            if (request.hasReturnPartialSuccess()) {
+                              serializer.putQueryParam(
+                                  fields,
+                                  "returnPartialSuccess",
+                                  request.getReturnPartialSuccess());
+                            }
+                            return fields;
                           })
+                      .setRequestBodyExtractor(request -> null)
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser
@@ -749,68 +552,45 @@ public class HttpJsonRegionInstanceGroupManagersStub extends RegionInstanceGroup
                       .<ListManagedInstancesRegionInstanceGroupManagersRequest>newBuilder()
                       .setPath(
                           "/compute/v1/projects/{project}/regions/{region}/instanceGroupManagers/{instanceGroupManager}/listManagedInstances",
-                          new FieldsExtractor<
-                              ListManagedInstancesRegionInstanceGroupManagersRequest,
-                              Map<String, String>>() {
-                            @Override
-                            public Map<String, String> extract(
-                                ListManagedInstancesRegionInstanceGroupManagersRequest request) {
-                              Map<String, String> fields = new HashMap<>();
-                              ProtoRestSerializer<
-                                      ListManagedInstancesRegionInstanceGroupManagersRequest>
-                                  serializer = ProtoRestSerializer.create();
-                              serializer.putPathParam(
-                                  fields,
-                                  "instanceGroupManager",
-                                  request.getInstanceGroupManager());
-                              serializer.putPathParam(fields, "project", request.getProject());
-                              serializer.putPathParam(fields, "region", request.getRegion());
-                              return fields;
-                            }
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<
+                                    ListManagedInstancesRegionInstanceGroupManagersRequest>
+                                serializer = ProtoRestSerializer.create();
+                            serializer.putPathParam(
+                                fields, "instanceGroupManager", request.getInstanceGroupManager());
+                            serializer.putPathParam(fields, "project", request.getProject());
+                            serializer.putPathParam(fields, "region", request.getRegion());
+                            return fields;
                           })
                       .setQueryParamsExtractor(
-                          new FieldsExtractor<
-                              ListManagedInstancesRegionInstanceGroupManagersRequest,
-                              Map<String, List<String>>>() {
-                            @Override
-                            public Map<String, List<String>> extract(
-                                ListManagedInstancesRegionInstanceGroupManagersRequest request) {
-                              Map<String, List<String>> fields = new HashMap<>();
-                              ProtoRestSerializer<
-                                      ListManagedInstancesRegionInstanceGroupManagersRequest>
-                                  serializer = ProtoRestSerializer.create();
-                              if (request.hasFilter()) {
-                                serializer.putQueryParam(fields, "filter", request.getFilter());
-                              }
-                              if (request.hasMaxResults()) {
-                                serializer.putQueryParam(
-                                    fields, "maxResults", request.getMaxResults());
-                              }
-                              if (request.hasOrderBy()) {
-                                serializer.putQueryParam(fields, "orderBy", request.getOrderBy());
-                              }
-                              if (request.hasPageToken()) {
-                                serializer.putQueryParam(
-                                    fields, "pageToken", request.getPageToken());
-                              }
-                              if (request.hasReturnPartialSuccess()) {
-                                serializer.putQueryParam(
-                                    fields,
-                                    "returnPartialSuccess",
-                                    request.getReturnPartialSuccess());
-                              }
-                              return fields;
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<
+                                    ListManagedInstancesRegionInstanceGroupManagersRequest>
+                                serializer = ProtoRestSerializer.create();
+                            if (request.hasFilter()) {
+                              serializer.putQueryParam(fields, "filter", request.getFilter());
                             }
-                          })
-                      .setRequestBodyExtractor(
-                          new FieldsExtractor<
-                              ListManagedInstancesRegionInstanceGroupManagersRequest, String>() {
-                            @Override
-                            public String extract(
-                                ListManagedInstancesRegionInstanceGroupManagersRequest request) {
-                              return null;
+                            if (request.hasMaxResults()) {
+                              serializer.putQueryParam(
+                                  fields, "maxResults", request.getMaxResults());
                             }
+                            if (request.hasOrderBy()) {
+                              serializer.putQueryParam(fields, "orderBy", request.getOrderBy());
+                            }
+                            if (request.hasPageToken()) {
+                              serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            }
+                            if (request.hasReturnPartialSuccess()) {
+                              serializer.putQueryParam(
+                                  fields,
+                                  "returnPartialSuccess",
+                                  request.getReturnPartialSuccess());
+                            }
+                            return fields;
                           })
+                      .setRequestBodyExtractor(request -> null)
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser
@@ -836,68 +616,45 @@ public class HttpJsonRegionInstanceGroupManagersStub extends RegionInstanceGroup
                       .<ListPerInstanceConfigsRegionInstanceGroupManagersRequest>newBuilder()
                       .setPath(
                           "/compute/v1/projects/{project}/regions/{region}/instanceGroupManagers/{instanceGroupManager}/listPerInstanceConfigs",
-                          new FieldsExtractor<
-                              ListPerInstanceConfigsRegionInstanceGroupManagersRequest,
-                              Map<String, String>>() {
-                            @Override
-                            public Map<String, String> extract(
-                                ListPerInstanceConfigsRegionInstanceGroupManagersRequest request) {
-                              Map<String, String> fields = new HashMap<>();
-                              ProtoRestSerializer<
-                                      ListPerInstanceConfigsRegionInstanceGroupManagersRequest>
-                                  serializer = ProtoRestSerializer.create();
-                              serializer.putPathParam(
-                                  fields,
-                                  "instanceGroupManager",
-                                  request.getInstanceGroupManager());
-                              serializer.putPathParam(fields, "project", request.getProject());
-                              serializer.putPathParam(fields, "region", request.getRegion());
-                              return fields;
-                            }
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<
+                                    ListPerInstanceConfigsRegionInstanceGroupManagersRequest>
+                                serializer = ProtoRestSerializer.create();
+                            serializer.putPathParam(
+                                fields, "instanceGroupManager", request.getInstanceGroupManager());
+                            serializer.putPathParam(fields, "project", request.getProject());
+                            serializer.putPathParam(fields, "region", request.getRegion());
+                            return fields;
                           })
                       .setQueryParamsExtractor(
-                          new FieldsExtractor<
-                              ListPerInstanceConfigsRegionInstanceGroupManagersRequest,
-                              Map<String, List<String>>>() {
-                            @Override
-                            public Map<String, List<String>> extract(
-                                ListPerInstanceConfigsRegionInstanceGroupManagersRequest request) {
-                              Map<String, List<String>> fields = new HashMap<>();
-                              ProtoRestSerializer<
-                                      ListPerInstanceConfigsRegionInstanceGroupManagersRequest>
-                                  serializer = ProtoRestSerializer.create();
-                              if (request.hasFilter()) {
-                                serializer.putQueryParam(fields, "filter", request.getFilter());
-                              }
-                              if (request.hasMaxResults()) {
-                                serializer.putQueryParam(
-                                    fields, "maxResults", request.getMaxResults());
-                              }
-                              if (request.hasOrderBy()) {
-                                serializer.putQueryParam(fields, "orderBy", request.getOrderBy());
-                              }
-                              if (request.hasPageToken()) {
-                                serializer.putQueryParam(
-                                    fields, "pageToken", request.getPageToken());
-                              }
-                              if (request.hasReturnPartialSuccess()) {
-                                serializer.putQueryParam(
-                                    fields,
-                                    "returnPartialSuccess",
-                                    request.getReturnPartialSuccess());
-                              }
-                              return fields;
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<
+                                    ListPerInstanceConfigsRegionInstanceGroupManagersRequest>
+                                serializer = ProtoRestSerializer.create();
+                            if (request.hasFilter()) {
+                              serializer.putQueryParam(fields, "filter", request.getFilter());
                             }
-                          })
-                      .setRequestBodyExtractor(
-                          new FieldsExtractor<
-                              ListPerInstanceConfigsRegionInstanceGroupManagersRequest, String>() {
-                            @Override
-                            public String extract(
-                                ListPerInstanceConfigsRegionInstanceGroupManagersRequest request) {
-                              return null;
+                            if (request.hasMaxResults()) {
+                              serializer.putQueryParam(
+                                  fields, "maxResults", request.getMaxResults());
                             }
+                            if (request.hasOrderBy()) {
+                              serializer.putQueryParam(fields, "orderBy", request.getOrderBy());
+                            }
+                            if (request.hasPageToken()) {
+                              serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            }
+                            if (request.hasReturnPartialSuccess()) {
+                              serializer.putQueryParam(
+                                  fields,
+                                  "returnPartialSuccess",
+                                  request.getReturnPartialSuccess());
+                            }
+                            return fields;
                           })
+                      .setRequestBodyExtractor(request -> null)
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser
@@ -916,49 +673,32 @@ public class HttpJsonRegionInstanceGroupManagersStub extends RegionInstanceGroup
                   ProtoMessageRequestFormatter.<PatchRegionInstanceGroupManagerRequest>newBuilder()
                       .setPath(
                           "/compute/v1/projects/{project}/regions/{region}/instanceGroupManagers/{instanceGroupManager}",
-                          new FieldsExtractor<
-                              PatchRegionInstanceGroupManagerRequest, Map<String, String>>() {
-                            @Override
-                            public Map<String, String> extract(
-                                PatchRegionInstanceGroupManagerRequest request) {
-                              Map<String, String> fields = new HashMap<>();
-                              ProtoRestSerializer<PatchRegionInstanceGroupManagerRequest>
-                                  serializer = ProtoRestSerializer.create();
-                              serializer.putPathParam(
-                                  fields,
-                                  "instanceGroupManager",
-                                  request.getInstanceGroupManager());
-                              serializer.putPathParam(fields, "project", request.getProject());
-                              serializer.putPathParam(fields, "region", request.getRegion());
-                              return fields;
-                            }
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<PatchRegionInstanceGroupManagerRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(
+                                fields, "instanceGroupManager", request.getInstanceGroupManager());
+                            serializer.putPathParam(fields, "project", request.getProject());
+                            serializer.putPathParam(fields, "region", request.getRegion());
+                            return fields;
                           })
                       .setQueryParamsExtractor(
-                          new FieldsExtractor<
-                              PatchRegionInstanceGroupManagerRequest, Map<String, List<String>>>() {
-                            @Override
-                            public Map<String, List<String>> extract(
-                                PatchRegionInstanceGroupManagerRequest request) {
-                              Map<String, List<String>> fields = new HashMap<>();
-                              ProtoRestSerializer<PatchRegionInstanceGroupManagerRequest>
-                                  serializer = ProtoRestSerializer.create();
-                              if (request.hasRequestId()) {
-                                serializer.putQueryParam(
-                                    fields, "requestId", request.getRequestId());
-                              }
-                              return fields;
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<PatchRegionInstanceGroupManagerRequest> serializer =
+                                ProtoRestSerializer.create();
+                            if (request.hasRequestId()) {
+                              serializer.putQueryParam(fields, "requestId", request.getRequestId());
                             }
+                            return fields;
                           })
                       .setRequestBodyExtractor(
-                          new FieldsExtractor<PatchRegionInstanceGroupManagerRequest, String>() {
-                            @Override
-                            public String extract(PatchRegionInstanceGroupManagerRequest request) {
-                              return ProtoRestSerializer.create()
+                          request ->
+                              ProtoRestSerializer.create()
                                   .toBody(
                                       "instanceGroupManagerResource",
-                                      request.getInstanceGroupManagerResource());
-                            }
-                          })
+                                      request.getInstanceGroupManagerResource()))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -979,56 +719,35 @@ public class HttpJsonRegionInstanceGroupManagersStub extends RegionInstanceGroup
                       .<PatchPerInstanceConfigsRegionInstanceGroupManagerRequest>newBuilder()
                       .setPath(
                           "/compute/v1/projects/{project}/regions/{region}/instanceGroupManagers/{instanceGroupManager}/patchPerInstanceConfigs",
-                          new FieldsExtractor<
-                              PatchPerInstanceConfigsRegionInstanceGroupManagerRequest,
-                              Map<String, String>>() {
-                            @Override
-                            public Map<String, String> extract(
-                                PatchPerInstanceConfigsRegionInstanceGroupManagerRequest request) {
-                              Map<String, String> fields = new HashMap<>();
-                              ProtoRestSerializer<
-                                      PatchPerInstanceConfigsRegionInstanceGroupManagerRequest>
-                                  serializer = ProtoRestSerializer.create();
-                              serializer.putPathParam(
-                                  fields,
-                                  "instanceGroupManager",
-                                  request.getInstanceGroupManager());
-                              serializer.putPathParam(fields, "project", request.getProject());
-                              serializer.putPathParam(fields, "region", request.getRegion());
-                              return fields;
-                            }
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<
+                                    PatchPerInstanceConfigsRegionInstanceGroupManagerRequest>
+                                serializer = ProtoRestSerializer.create();
+                            serializer.putPathParam(
+                                fields, "instanceGroupManager", request.getInstanceGroupManager());
+                            serializer.putPathParam(fields, "project", request.getProject());
+                            serializer.putPathParam(fields, "region", request.getRegion());
+                            return fields;
                           })
                       .setQueryParamsExtractor(
-                          new FieldsExtractor<
-                              PatchPerInstanceConfigsRegionInstanceGroupManagerRequest,
-                              Map<String, List<String>>>() {
-                            @Override
-                            public Map<String, List<String>> extract(
-                                PatchPerInstanceConfigsRegionInstanceGroupManagerRequest request) {
-                              Map<String, List<String>> fields = new HashMap<>();
-                              ProtoRestSerializer<
-                                      PatchPerInstanceConfigsRegionInstanceGroupManagerRequest>
-                                  serializer = ProtoRestSerializer.create();
-                              if (request.hasRequestId()) {
-                                serializer.putQueryParam(
-                                    fields, "requestId", request.getRequestId());
-                              }
-                              return fields;
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<
+                                    PatchPerInstanceConfigsRegionInstanceGroupManagerRequest>
+                                serializer = ProtoRestSerializer.create();
+                            if (request.hasRequestId()) {
+                              serializer.putQueryParam(fields, "requestId", request.getRequestId());
                             }
+                            return fields;
                           })
                       .setRequestBodyExtractor(
-                          new FieldsExtractor<
-                              PatchPerInstanceConfigsRegionInstanceGroupManagerRequest, String>() {
-                            @Override
-                            public String extract(
-                                PatchPerInstanceConfigsRegionInstanceGroupManagerRequest request) {
-                              return ProtoRestSerializer.create()
+                          request ->
+                              ProtoRestSerializer.create()
                                   .toBody(
                                       "regionInstanceGroupManagerPatchInstanceConfigReqResource",
                                       request
-                                          .getRegionInstanceGroupManagerPatchInstanceConfigReqResource());
-                            }
-                          })
+                                          .getRegionInstanceGroupManagerPatchInstanceConfigReqResource()))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -1049,56 +768,33 @@ public class HttpJsonRegionInstanceGroupManagersStub extends RegionInstanceGroup
                       .<RecreateInstancesRegionInstanceGroupManagerRequest>newBuilder()
                       .setPath(
                           "/compute/v1/projects/{project}/regions/{region}/instanceGroupManagers/{instanceGroupManager}/recreateInstances",
-                          new FieldsExtractor<
-                              RecreateInstancesRegionInstanceGroupManagerRequest,
-                              Map<String, String>>() {
-                            @Override
-                            public Map<String, String> extract(
-                                RecreateInstancesRegionInstanceGroupManagerRequest request) {
-                              Map<String, String> fields = new HashMap<>();
-                              ProtoRestSerializer<
-                                      RecreateInstancesRegionInstanceGroupManagerRequest>
-                                  serializer = ProtoRestSerializer.create();
-                              serializer.putPathParam(
-                                  fields,
-                                  "instanceGroupManager",
-                                  request.getInstanceGroupManager());
-                              serializer.putPathParam(fields, "project", request.getProject());
-                              serializer.putPathParam(fields, "region", request.getRegion());
-                              return fields;
-                            }
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<RecreateInstancesRegionInstanceGroupManagerRequest>
+                                serializer = ProtoRestSerializer.create();
+                            serializer.putPathParam(
+                                fields, "instanceGroupManager", request.getInstanceGroupManager());
+                            serializer.putPathParam(fields, "project", request.getProject());
+                            serializer.putPathParam(fields, "region", request.getRegion());
+                            return fields;
                           })
                       .setQueryParamsExtractor(
-                          new FieldsExtractor<
-                              RecreateInstancesRegionInstanceGroupManagerRequest,
-                              Map<String, List<String>>>() {
-                            @Override
-                            public Map<String, List<String>> extract(
-                                RecreateInstancesRegionInstanceGroupManagerRequest request) {
-                              Map<String, List<String>> fields = new HashMap<>();
-                              ProtoRestSerializer<
-                                      RecreateInstancesRegionInstanceGroupManagerRequest>
-                                  serializer = ProtoRestSerializer.create();
-                              if (request.hasRequestId()) {
-                                serializer.putQueryParam(
-                                    fields, "requestId", request.getRequestId());
-                              }
-                              return fields;
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<RecreateInstancesRegionInstanceGroupManagerRequest>
+                                serializer = ProtoRestSerializer.create();
+                            if (request.hasRequestId()) {
+                              serializer.putQueryParam(fields, "requestId", request.getRequestId());
                             }
+                            return fields;
                           })
                       .setRequestBodyExtractor(
-                          new FieldsExtractor<
-                              RecreateInstancesRegionInstanceGroupManagerRequest, String>() {
-                            @Override
-                            public String extract(
-                                RecreateInstancesRegionInstanceGroupManagerRequest request) {
-                              return ProtoRestSerializer.create()
+                          request ->
+                              ProtoRestSerializer.create()
                                   .toBody(
                                       "regionInstanceGroupManagersRecreateRequestResource",
                                       request
-                                          .getRegionInstanceGroupManagersRecreateRequestResource());
-                            }
-                          })
+                                          .getRegionInstanceGroupManagersRecreateRequestResource()))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -1115,48 +811,28 @@ public class HttpJsonRegionInstanceGroupManagersStub extends RegionInstanceGroup
                   ProtoMessageRequestFormatter.<ResizeRegionInstanceGroupManagerRequest>newBuilder()
                       .setPath(
                           "/compute/v1/projects/{project}/regions/{region}/instanceGroupManagers/{instanceGroupManager}/resize",
-                          new FieldsExtractor<
-                              ResizeRegionInstanceGroupManagerRequest, Map<String, String>>() {
-                            @Override
-                            public Map<String, String> extract(
-                                ResizeRegionInstanceGroupManagerRequest request) {
-                              Map<String, String> fields = new HashMap<>();
-                              ProtoRestSerializer<ResizeRegionInstanceGroupManagerRequest>
-                                  serializer = ProtoRestSerializer.create();
-                              serializer.putPathParam(
-                                  fields,
-                                  "instanceGroupManager",
-                                  request.getInstanceGroupManager());
-                              serializer.putPathParam(fields, "project", request.getProject());
-                              serializer.putPathParam(fields, "region", request.getRegion());
-                              return fields;
-                            }
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<ResizeRegionInstanceGroupManagerRequest>
+                                serializer = ProtoRestSerializer.create();
+                            serializer.putPathParam(
+                                fields, "instanceGroupManager", request.getInstanceGroupManager());
+                            serializer.putPathParam(fields, "project", request.getProject());
+                            serializer.putPathParam(fields, "region", request.getRegion());
+                            return fields;
                           })
                       .setQueryParamsExtractor(
-                          new FieldsExtractor<
-                              ResizeRegionInstanceGroupManagerRequest,
-                              Map<String, List<String>>>() {
-                            @Override
-                            public Map<String, List<String>> extract(
-                                ResizeRegionInstanceGroupManagerRequest request) {
-                              Map<String, List<String>> fields = new HashMap<>();
-                              ProtoRestSerializer<ResizeRegionInstanceGroupManagerRequest>
-                                  serializer = ProtoRestSerializer.create();
-                              if (request.hasRequestId()) {
-                                serializer.putQueryParam(
-                                    fields, "requestId", request.getRequestId());
-                              }
-                              serializer.putQueryParam(fields, "size", request.getSize());
-                              return fields;
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<ResizeRegionInstanceGroupManagerRequest>
+                                serializer = ProtoRestSerializer.create();
+                            if (request.hasRequestId()) {
+                              serializer.putQueryParam(fields, "requestId", request.getRequestId());
                             }
+                            serializer.putQueryParam(fields, "size", request.getSize());
+                            return fields;
                           })
-                      .setRequestBodyExtractor(
-                          new FieldsExtractor<ResizeRegionInstanceGroupManagerRequest, String>() {
-                            @Override
-                            public String extract(ResizeRegionInstanceGroupManagerRequest request) {
-                              return null;
-                            }
-                          })
+                      .setRequestBodyExtractor(request -> null)
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -1177,56 +853,35 @@ public class HttpJsonRegionInstanceGroupManagersStub extends RegionInstanceGroup
                       .<SetInstanceTemplateRegionInstanceGroupManagerRequest>newBuilder()
                       .setPath(
                           "/compute/v1/projects/{project}/regions/{region}/instanceGroupManagers/{instanceGroupManager}/setInstanceTemplate",
-                          new FieldsExtractor<
-                              SetInstanceTemplateRegionInstanceGroupManagerRequest,
-                              Map<String, String>>() {
-                            @Override
-                            public Map<String, String> extract(
-                                SetInstanceTemplateRegionInstanceGroupManagerRequest request) {
-                              Map<String, String> fields = new HashMap<>();
-                              ProtoRestSerializer<
-                                      SetInstanceTemplateRegionInstanceGroupManagerRequest>
-                                  serializer = ProtoRestSerializer.create();
-                              serializer.putPathParam(
-                                  fields,
-                                  "instanceGroupManager",
-                                  request.getInstanceGroupManager());
-                              serializer.putPathParam(fields, "project", request.getProject());
-                              serializer.putPathParam(fields, "region", request.getRegion());
-                              return fields;
-                            }
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<
+                                    SetInstanceTemplateRegionInstanceGroupManagerRequest>
+                                serializer = ProtoRestSerializer.create();
+                            serializer.putPathParam(
+                                fields, "instanceGroupManager", request.getInstanceGroupManager());
+                            serializer.putPathParam(fields, "project", request.getProject());
+                            serializer.putPathParam(fields, "region", request.getRegion());
+                            return fields;
                           })
                       .setQueryParamsExtractor(
-                          new FieldsExtractor<
-                              SetInstanceTemplateRegionInstanceGroupManagerRequest,
-                              Map<String, List<String>>>() {
-                            @Override
-                            public Map<String, List<String>> extract(
-                                SetInstanceTemplateRegionInstanceGroupManagerRequest request) {
-                              Map<String, List<String>> fields = new HashMap<>();
-                              ProtoRestSerializer<
-                                      SetInstanceTemplateRegionInstanceGroupManagerRequest>
-                                  serializer = ProtoRestSerializer.create();
-                              if (request.hasRequestId()) {
-                                serializer.putQueryParam(
-                                    fields, "requestId", request.getRequestId());
-                              }
-                              return fields;
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<
+                                    SetInstanceTemplateRegionInstanceGroupManagerRequest>
+                                serializer = ProtoRestSerializer.create();
+                            if (request.hasRequestId()) {
+                              serializer.putQueryParam(fields, "requestId", request.getRequestId());
                             }
+                            return fields;
                           })
                       .setRequestBodyExtractor(
-                          new FieldsExtractor<
-                              SetInstanceTemplateRegionInstanceGroupManagerRequest, String>() {
-                            @Override
-                            public String extract(
-                                SetInstanceTemplateRegionInstanceGroupManagerRequest request) {
-                              return ProtoRestSerializer.create()
+                          request ->
+                              ProtoRestSerializer.create()
                                   .toBody(
                                       "regionInstanceGroupManagersSetTemplateRequestResource",
                                       request
-                                          .getRegionInstanceGroupManagersSetTemplateRequestResource());
-                            }
-                          })
+                                          .getRegionInstanceGroupManagersSetTemplateRequestResource()))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -1247,54 +902,33 @@ public class HttpJsonRegionInstanceGroupManagersStub extends RegionInstanceGroup
                       .<SetTargetPoolsRegionInstanceGroupManagerRequest>newBuilder()
                       .setPath(
                           "/compute/v1/projects/{project}/regions/{region}/instanceGroupManagers/{instanceGroupManager}/setTargetPools",
-                          new FieldsExtractor<
-                              SetTargetPoolsRegionInstanceGroupManagerRequest,
-                              Map<String, String>>() {
-                            @Override
-                            public Map<String, String> extract(
-                                SetTargetPoolsRegionInstanceGroupManagerRequest request) {
-                              Map<String, String> fields = new HashMap<>();
-                              ProtoRestSerializer<SetTargetPoolsRegionInstanceGroupManagerRequest>
-                                  serializer = ProtoRestSerializer.create();
-                              serializer.putPathParam(
-                                  fields,
-                                  "instanceGroupManager",
-                                  request.getInstanceGroupManager());
-                              serializer.putPathParam(fields, "project", request.getProject());
-                              serializer.putPathParam(fields, "region", request.getRegion());
-                              return fields;
-                            }
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<SetTargetPoolsRegionInstanceGroupManagerRequest>
+                                serializer = ProtoRestSerializer.create();
+                            serializer.putPathParam(
+                                fields, "instanceGroupManager", request.getInstanceGroupManager());
+                            serializer.putPathParam(fields, "project", request.getProject());
+                            serializer.putPathParam(fields, "region", request.getRegion());
+                            return fields;
                           })
                       .setQueryParamsExtractor(
-                          new FieldsExtractor<
-                              SetTargetPoolsRegionInstanceGroupManagerRequest,
-                              Map<String, List<String>>>() {
-                            @Override
-                            public Map<String, List<String>> extract(
-                                SetTargetPoolsRegionInstanceGroupManagerRequest request) {
-                              Map<String, List<String>> fields = new HashMap<>();
-                              ProtoRestSerializer<SetTargetPoolsRegionInstanceGroupManagerRequest>
-                                  serializer = ProtoRestSerializer.create();
-                              if (request.hasRequestId()) {
-                                serializer.putQueryParam(
-                                    fields, "requestId", request.getRequestId());
-                              }
-                              return fields;
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<SetTargetPoolsRegionInstanceGroupManagerRequest>
+                                serializer = ProtoRestSerializer.create();
+                            if (request.hasRequestId()) {
+                              serializer.putQueryParam(fields, "requestId", request.getRequestId());
                             }
+                            return fields;
                           })
                       .setRequestBodyExtractor(
-                          new FieldsExtractor<
-                              SetTargetPoolsRegionInstanceGroupManagerRequest, String>() {
-                            @Override
-                            public String extract(
-                                SetTargetPoolsRegionInstanceGroupManagerRequest request) {
-                              return ProtoRestSerializer.create()
+                          request ->
+                              ProtoRestSerializer.create()
                                   .toBody(
                                       "regionInstanceGroupManagersSetTargetPoolsRequestResource",
                                       request
-                                          .getRegionInstanceGroupManagersSetTargetPoolsRequestResource());
-                            }
-                          })
+                                          .getRegionInstanceGroupManagersSetTargetPoolsRequestResource()))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -1315,56 +949,35 @@ public class HttpJsonRegionInstanceGroupManagersStub extends RegionInstanceGroup
                       .<UpdatePerInstanceConfigsRegionInstanceGroupManagerRequest>newBuilder()
                       .setPath(
                           "/compute/v1/projects/{project}/regions/{region}/instanceGroupManagers/{instanceGroupManager}/updatePerInstanceConfigs",
-                          new FieldsExtractor<
-                              UpdatePerInstanceConfigsRegionInstanceGroupManagerRequest,
-                              Map<String, String>>() {
-                            @Override
-                            public Map<String, String> extract(
-                                UpdatePerInstanceConfigsRegionInstanceGroupManagerRequest request) {
-                              Map<String, String> fields = new HashMap<>();
-                              ProtoRestSerializer<
-                                      UpdatePerInstanceConfigsRegionInstanceGroupManagerRequest>
-                                  serializer = ProtoRestSerializer.create();
-                              serializer.putPathParam(
-                                  fields,
-                                  "instanceGroupManager",
-                                  request.getInstanceGroupManager());
-                              serializer.putPathParam(fields, "project", request.getProject());
-                              serializer.putPathParam(fields, "region", request.getRegion());
-                              return fields;
-                            }
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<
+                                    UpdatePerInstanceConfigsRegionInstanceGroupManagerRequest>
+                                serializer = ProtoRestSerializer.create();
+                            serializer.putPathParam(
+                                fields, "instanceGroupManager", request.getInstanceGroupManager());
+                            serializer.putPathParam(fields, "project", request.getProject());
+                            serializer.putPathParam(fields, "region", request.getRegion());
+                            return fields;
                           })
                       .setQueryParamsExtractor(
-                          new FieldsExtractor<
-                              UpdatePerInstanceConfigsRegionInstanceGroupManagerRequest,
-                              Map<String, List<String>>>() {
-                            @Override
-                            public Map<String, List<String>> extract(
-                                UpdatePerInstanceConfigsRegionInstanceGroupManagerRequest request) {
-                              Map<String, List<String>> fields = new HashMap<>();
-                              ProtoRestSerializer<
-                                      UpdatePerInstanceConfigsRegionInstanceGroupManagerRequest>
-                                  serializer = ProtoRestSerializer.create();
-                              if (request.hasRequestId()) {
-                                serializer.putQueryParam(
-                                    fields, "requestId", request.getRequestId());
-                              }
-                              return fields;
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<
+                                    UpdatePerInstanceConfigsRegionInstanceGroupManagerRequest>
+                                serializer = ProtoRestSerializer.create();
+                            if (request.hasRequestId()) {
+                              serializer.putQueryParam(fields, "requestId", request.getRequestId());
                             }
+                            return fields;
                           })
                       .setRequestBodyExtractor(
-                          new FieldsExtractor<
-                              UpdatePerInstanceConfigsRegionInstanceGroupManagerRequest, String>() {
-                            @Override
-                            public String extract(
-                                UpdatePerInstanceConfigsRegionInstanceGroupManagerRequest request) {
-                              return ProtoRestSerializer.create()
+                          request ->
+                              ProtoRestSerializer.create()
                                   .toBody(
                                       "regionInstanceGroupManagerUpdateInstanceConfigReqResource",
                                       request
-                                          .getRegionInstanceGroupManagerUpdateInstanceConfigReqResource());
-                            }
-                          })
+                                          .getRegionInstanceGroupManagerUpdateInstanceConfigReqResource()))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -1856,7 +1469,13 @@ public class HttpJsonRegionInstanceGroupManagersStub extends RegionInstanceGroup
 
   @Override
   public final void close() {
-    shutdown();
+    try {
+      backgroundResources.close();
+    } catch (RuntimeException e) {
+      throw e;
+    } catch (Exception e) {
+      throw new IllegalStateException("Failed to close resource", e);
+    }
   }
 
   @Override

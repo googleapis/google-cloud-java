@@ -24,7 +24,6 @@ import com.google.api.core.InternalApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.httpjson.ApiMethodDescriptor;
-import com.google.api.gax.httpjson.FieldsExtractor;
 import com.google.api.gax.httpjson.HttpJsonCallSettings;
 import com.google.api.gax.httpjson.HttpJsonStubCallableFactory;
 import com.google.api.gax.httpjson.ProtoMessageRequestFormatter;
@@ -69,42 +68,26 @@ public class HttpJsonTargetSslProxiesStub extends TargetSslProxiesStub {
                   ProtoMessageRequestFormatter.<DeleteTargetSslProxyRequest>newBuilder()
                       .setPath(
                           "/compute/v1/projects/{project}/global/targetSslProxies/{targetSslProxy}",
-                          new FieldsExtractor<DeleteTargetSslProxyRequest, Map<String, String>>() {
-                            @Override
-                            public Map<String, String> extract(
-                                DeleteTargetSslProxyRequest request) {
-                              Map<String, String> fields = new HashMap<>();
-                              ProtoRestSerializer<DeleteTargetSslProxyRequest> serializer =
-                                  ProtoRestSerializer.create();
-                              serializer.putPathParam(fields, "project", request.getProject());
-                              serializer.putPathParam(
-                                  fields, "targetSslProxy", request.getTargetSslProxy());
-                              return fields;
-                            }
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<DeleteTargetSslProxyRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "project", request.getProject());
+                            serializer.putPathParam(
+                                fields, "targetSslProxy", request.getTargetSslProxy());
+                            return fields;
                           })
                       .setQueryParamsExtractor(
-                          new FieldsExtractor<
-                              DeleteTargetSslProxyRequest, Map<String, List<String>>>() {
-                            @Override
-                            public Map<String, List<String>> extract(
-                                DeleteTargetSslProxyRequest request) {
-                              Map<String, List<String>> fields = new HashMap<>();
-                              ProtoRestSerializer<DeleteTargetSslProxyRequest> serializer =
-                                  ProtoRestSerializer.create();
-                              if (request.hasRequestId()) {
-                                serializer.putQueryParam(
-                                    fields, "requestId", request.getRequestId());
-                              }
-                              return fields;
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<DeleteTargetSslProxyRequest> serializer =
+                                ProtoRestSerializer.create();
+                            if (request.hasRequestId()) {
+                              serializer.putQueryParam(fields, "requestId", request.getRequestId());
                             }
+                            return fields;
                           })
-                      .setRequestBodyExtractor(
-                          new FieldsExtractor<DeleteTargetSslProxyRequest, String>() {
-                            @Override
-                            public String extract(DeleteTargetSslProxyRequest request) {
-                              return null;
-                            }
-                          })
+                      .setRequestBodyExtractor(request -> null)
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -121,37 +104,23 @@ public class HttpJsonTargetSslProxiesStub extends TargetSslProxiesStub {
                   ProtoMessageRequestFormatter.<GetTargetSslProxyRequest>newBuilder()
                       .setPath(
                           "/compute/v1/projects/{project}/global/targetSslProxies/{targetSslProxy}",
-                          new FieldsExtractor<GetTargetSslProxyRequest, Map<String, String>>() {
-                            @Override
-                            public Map<String, String> extract(GetTargetSslProxyRequest request) {
-                              Map<String, String> fields = new HashMap<>();
-                              ProtoRestSerializer<GetTargetSslProxyRequest> serializer =
-                                  ProtoRestSerializer.create();
-                              serializer.putPathParam(fields, "project", request.getProject());
-                              serializer.putPathParam(
-                                  fields, "targetSslProxy", request.getTargetSslProxy());
-                              return fields;
-                            }
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<GetTargetSslProxyRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "project", request.getProject());
+                            serializer.putPathParam(
+                                fields, "targetSslProxy", request.getTargetSslProxy());
+                            return fields;
                           })
                       .setQueryParamsExtractor(
-                          new FieldsExtractor<
-                              GetTargetSslProxyRequest, Map<String, List<String>>>() {
-                            @Override
-                            public Map<String, List<String>> extract(
-                                GetTargetSslProxyRequest request) {
-                              Map<String, List<String>> fields = new HashMap<>();
-                              ProtoRestSerializer<GetTargetSslProxyRequest> serializer =
-                                  ProtoRestSerializer.create();
-                              return fields;
-                            }
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<GetTargetSslProxyRequest> serializer =
+                                ProtoRestSerializer.create();
+                            return fields;
                           })
-                      .setRequestBodyExtractor(
-                          new FieldsExtractor<GetTargetSslProxyRequest, String>() {
-                            @Override
-                            public String extract(GetTargetSslProxyRequest request) {
-                              return null;
-                            }
-                          })
+                      .setRequestBodyExtractor(request -> null)
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<TargetSslProxy>newBuilder()
@@ -168,43 +137,29 @@ public class HttpJsonTargetSslProxiesStub extends TargetSslProxiesStub {
                   ProtoMessageRequestFormatter.<InsertTargetSslProxyRequest>newBuilder()
                       .setPath(
                           "/compute/v1/projects/{project}/global/targetSslProxies",
-                          new FieldsExtractor<InsertTargetSslProxyRequest, Map<String, String>>() {
-                            @Override
-                            public Map<String, String> extract(
-                                InsertTargetSslProxyRequest request) {
-                              Map<String, String> fields = new HashMap<>();
-                              ProtoRestSerializer<InsertTargetSslProxyRequest> serializer =
-                                  ProtoRestSerializer.create();
-                              serializer.putPathParam(fields, "project", request.getProject());
-                              return fields;
-                            }
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<InsertTargetSslProxyRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "project", request.getProject());
+                            return fields;
                           })
                       .setQueryParamsExtractor(
-                          new FieldsExtractor<
-                              InsertTargetSslProxyRequest, Map<String, List<String>>>() {
-                            @Override
-                            public Map<String, List<String>> extract(
-                                InsertTargetSslProxyRequest request) {
-                              Map<String, List<String>> fields = new HashMap<>();
-                              ProtoRestSerializer<InsertTargetSslProxyRequest> serializer =
-                                  ProtoRestSerializer.create();
-                              if (request.hasRequestId()) {
-                                serializer.putQueryParam(
-                                    fields, "requestId", request.getRequestId());
-                              }
-                              return fields;
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<InsertTargetSslProxyRequest> serializer =
+                                ProtoRestSerializer.create();
+                            if (request.hasRequestId()) {
+                              serializer.putQueryParam(fields, "requestId", request.getRequestId());
                             }
+                            return fields;
                           })
                       .setRequestBodyExtractor(
-                          new FieldsExtractor<InsertTargetSslProxyRequest, String>() {
-                            @Override
-                            public String extract(InsertTargetSslProxyRequest request) {
-                              return ProtoRestSerializer.create()
+                          request ->
+                              ProtoRestSerializer.create()
                                   .toBody(
                                       "targetSslProxyResource",
-                                      request.getTargetSslProxyResource());
-                            }
-                          })
+                                      request.getTargetSslProxyResource()))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -221,56 +176,40 @@ public class HttpJsonTargetSslProxiesStub extends TargetSslProxiesStub {
                   ProtoMessageRequestFormatter.<ListTargetSslProxiesRequest>newBuilder()
                       .setPath(
                           "/compute/v1/projects/{project}/global/targetSslProxies",
-                          new FieldsExtractor<ListTargetSslProxiesRequest, Map<String, String>>() {
-                            @Override
-                            public Map<String, String> extract(
-                                ListTargetSslProxiesRequest request) {
-                              Map<String, String> fields = new HashMap<>();
-                              ProtoRestSerializer<ListTargetSslProxiesRequest> serializer =
-                                  ProtoRestSerializer.create();
-                              serializer.putPathParam(fields, "project", request.getProject());
-                              return fields;
-                            }
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<ListTargetSslProxiesRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "project", request.getProject());
+                            return fields;
                           })
                       .setQueryParamsExtractor(
-                          new FieldsExtractor<
-                              ListTargetSslProxiesRequest, Map<String, List<String>>>() {
-                            @Override
-                            public Map<String, List<String>> extract(
-                                ListTargetSslProxiesRequest request) {
-                              Map<String, List<String>> fields = new HashMap<>();
-                              ProtoRestSerializer<ListTargetSslProxiesRequest> serializer =
-                                  ProtoRestSerializer.create();
-                              if (request.hasFilter()) {
-                                serializer.putQueryParam(fields, "filter", request.getFilter());
-                              }
-                              if (request.hasMaxResults()) {
-                                serializer.putQueryParam(
-                                    fields, "maxResults", request.getMaxResults());
-                              }
-                              if (request.hasOrderBy()) {
-                                serializer.putQueryParam(fields, "orderBy", request.getOrderBy());
-                              }
-                              if (request.hasPageToken()) {
-                                serializer.putQueryParam(
-                                    fields, "pageToken", request.getPageToken());
-                              }
-                              if (request.hasReturnPartialSuccess()) {
-                                serializer.putQueryParam(
-                                    fields,
-                                    "returnPartialSuccess",
-                                    request.getReturnPartialSuccess());
-                              }
-                              return fields;
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<ListTargetSslProxiesRequest> serializer =
+                                ProtoRestSerializer.create();
+                            if (request.hasFilter()) {
+                              serializer.putQueryParam(fields, "filter", request.getFilter());
                             }
-                          })
-                      .setRequestBodyExtractor(
-                          new FieldsExtractor<ListTargetSslProxiesRequest, String>() {
-                            @Override
-                            public String extract(ListTargetSslProxiesRequest request) {
-                              return null;
+                            if (request.hasMaxResults()) {
+                              serializer.putQueryParam(
+                                  fields, "maxResults", request.getMaxResults());
                             }
+                            if (request.hasOrderBy()) {
+                              serializer.putQueryParam(fields, "orderBy", request.getOrderBy());
+                            }
+                            if (request.hasPageToken()) {
+                              serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            }
+                            if (request.hasReturnPartialSuccess()) {
+                              serializer.putQueryParam(
+                                  fields,
+                                  "returnPartialSuccess",
+                                  request.getReturnPartialSuccess());
+                            }
+                            return fields;
                           })
+                      .setRequestBodyExtractor(request -> null)
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<TargetSslProxyList>newBuilder()
@@ -287,47 +226,32 @@ public class HttpJsonTargetSslProxiesStub extends TargetSslProxiesStub {
                   ProtoMessageRequestFormatter.<SetBackendServiceTargetSslProxyRequest>newBuilder()
                       .setPath(
                           "/compute/v1/projects/{project}/global/targetSslProxies/{targetSslProxy}/setBackendService",
-                          new FieldsExtractor<
-                              SetBackendServiceTargetSslProxyRequest, Map<String, String>>() {
-                            @Override
-                            public Map<String, String> extract(
-                                SetBackendServiceTargetSslProxyRequest request) {
-                              Map<String, String> fields = new HashMap<>();
-                              ProtoRestSerializer<SetBackendServiceTargetSslProxyRequest>
-                                  serializer = ProtoRestSerializer.create();
-                              serializer.putPathParam(fields, "project", request.getProject());
-                              serializer.putPathParam(
-                                  fields, "targetSslProxy", request.getTargetSslProxy());
-                              return fields;
-                            }
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<SetBackendServiceTargetSslProxyRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "project", request.getProject());
+                            serializer.putPathParam(
+                                fields, "targetSslProxy", request.getTargetSslProxy());
+                            return fields;
                           })
                       .setQueryParamsExtractor(
-                          new FieldsExtractor<
-                              SetBackendServiceTargetSslProxyRequest, Map<String, List<String>>>() {
-                            @Override
-                            public Map<String, List<String>> extract(
-                                SetBackendServiceTargetSslProxyRequest request) {
-                              Map<String, List<String>> fields = new HashMap<>();
-                              ProtoRestSerializer<SetBackendServiceTargetSslProxyRequest>
-                                  serializer = ProtoRestSerializer.create();
-                              if (request.hasRequestId()) {
-                                serializer.putQueryParam(
-                                    fields, "requestId", request.getRequestId());
-                              }
-                              return fields;
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<SetBackendServiceTargetSslProxyRequest> serializer =
+                                ProtoRestSerializer.create();
+                            if (request.hasRequestId()) {
+                              serializer.putQueryParam(fields, "requestId", request.getRequestId());
                             }
+                            return fields;
                           })
                       .setRequestBodyExtractor(
-                          new FieldsExtractor<SetBackendServiceTargetSslProxyRequest, String>() {
-                            @Override
-                            public String extract(SetBackendServiceTargetSslProxyRequest request) {
-                              return ProtoRestSerializer.create()
+                          request ->
+                              ProtoRestSerializer.create()
                                   .toBody(
                                       "targetSslProxiesSetBackendServiceRequestResource",
                                       request
-                                          .getTargetSslProxiesSetBackendServiceRequestResource());
-                            }
-                          })
+                                          .getTargetSslProxiesSetBackendServiceRequestResource()))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -344,46 +268,31 @@ public class HttpJsonTargetSslProxiesStub extends TargetSslProxiesStub {
                   ProtoMessageRequestFormatter.<SetProxyHeaderTargetSslProxyRequest>newBuilder()
                       .setPath(
                           "/compute/v1/projects/{project}/global/targetSslProxies/{targetSslProxy}/setProxyHeader",
-                          new FieldsExtractor<
-                              SetProxyHeaderTargetSslProxyRequest, Map<String, String>>() {
-                            @Override
-                            public Map<String, String> extract(
-                                SetProxyHeaderTargetSslProxyRequest request) {
-                              Map<String, String> fields = new HashMap<>();
-                              ProtoRestSerializer<SetProxyHeaderTargetSslProxyRequest> serializer =
-                                  ProtoRestSerializer.create();
-                              serializer.putPathParam(fields, "project", request.getProject());
-                              serializer.putPathParam(
-                                  fields, "targetSslProxy", request.getTargetSslProxy());
-                              return fields;
-                            }
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<SetProxyHeaderTargetSslProxyRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "project", request.getProject());
+                            serializer.putPathParam(
+                                fields, "targetSslProxy", request.getTargetSslProxy());
+                            return fields;
                           })
                       .setQueryParamsExtractor(
-                          new FieldsExtractor<
-                              SetProxyHeaderTargetSslProxyRequest, Map<String, List<String>>>() {
-                            @Override
-                            public Map<String, List<String>> extract(
-                                SetProxyHeaderTargetSslProxyRequest request) {
-                              Map<String, List<String>> fields = new HashMap<>();
-                              ProtoRestSerializer<SetProxyHeaderTargetSslProxyRequest> serializer =
-                                  ProtoRestSerializer.create();
-                              if (request.hasRequestId()) {
-                                serializer.putQueryParam(
-                                    fields, "requestId", request.getRequestId());
-                              }
-                              return fields;
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<SetProxyHeaderTargetSslProxyRequest> serializer =
+                                ProtoRestSerializer.create();
+                            if (request.hasRequestId()) {
+                              serializer.putQueryParam(fields, "requestId", request.getRequestId());
                             }
+                            return fields;
                           })
                       .setRequestBodyExtractor(
-                          new FieldsExtractor<SetProxyHeaderTargetSslProxyRequest, String>() {
-                            @Override
-                            public String extract(SetProxyHeaderTargetSslProxyRequest request) {
-                              return ProtoRestSerializer.create()
+                          request ->
+                              ProtoRestSerializer.create()
                                   .toBody(
                                       "targetSslProxiesSetProxyHeaderRequestResource",
-                                      request.getTargetSslProxiesSetProxyHeaderRequestResource());
-                            }
-                          })
+                                      request.getTargetSslProxiesSetProxyHeaderRequestResource()))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -400,48 +309,32 @@ public class HttpJsonTargetSslProxiesStub extends TargetSslProxiesStub {
                   ProtoMessageRequestFormatter.<SetSslCertificatesTargetSslProxyRequest>newBuilder()
                       .setPath(
                           "/compute/v1/projects/{project}/global/targetSslProxies/{targetSslProxy}/setSslCertificates",
-                          new FieldsExtractor<
-                              SetSslCertificatesTargetSslProxyRequest, Map<String, String>>() {
-                            @Override
-                            public Map<String, String> extract(
-                                SetSslCertificatesTargetSslProxyRequest request) {
-                              Map<String, String> fields = new HashMap<>();
-                              ProtoRestSerializer<SetSslCertificatesTargetSslProxyRequest>
-                                  serializer = ProtoRestSerializer.create();
-                              serializer.putPathParam(fields, "project", request.getProject());
-                              serializer.putPathParam(
-                                  fields, "targetSslProxy", request.getTargetSslProxy());
-                              return fields;
-                            }
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<SetSslCertificatesTargetSslProxyRequest>
+                                serializer = ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "project", request.getProject());
+                            serializer.putPathParam(
+                                fields, "targetSslProxy", request.getTargetSslProxy());
+                            return fields;
                           })
                       .setQueryParamsExtractor(
-                          new FieldsExtractor<
-                              SetSslCertificatesTargetSslProxyRequest,
-                              Map<String, List<String>>>() {
-                            @Override
-                            public Map<String, List<String>> extract(
-                                SetSslCertificatesTargetSslProxyRequest request) {
-                              Map<String, List<String>> fields = new HashMap<>();
-                              ProtoRestSerializer<SetSslCertificatesTargetSslProxyRequest>
-                                  serializer = ProtoRestSerializer.create();
-                              if (request.hasRequestId()) {
-                                serializer.putQueryParam(
-                                    fields, "requestId", request.getRequestId());
-                              }
-                              return fields;
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<SetSslCertificatesTargetSslProxyRequest>
+                                serializer = ProtoRestSerializer.create();
+                            if (request.hasRequestId()) {
+                              serializer.putQueryParam(fields, "requestId", request.getRequestId());
                             }
+                            return fields;
                           })
                       .setRequestBodyExtractor(
-                          new FieldsExtractor<SetSslCertificatesTargetSslProxyRequest, String>() {
-                            @Override
-                            public String extract(SetSslCertificatesTargetSslProxyRequest request) {
-                              return ProtoRestSerializer.create()
+                          request ->
+                              ProtoRestSerializer.create()
                                   .toBody(
                                       "targetSslProxiesSetSslCertificatesRequestResource",
                                       request
-                                          .getTargetSslProxiesSetSslCertificatesRequestResource());
-                            }
-                          })
+                                          .getTargetSslProxiesSetSslCertificatesRequestResource()))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -458,46 +351,31 @@ public class HttpJsonTargetSslProxiesStub extends TargetSslProxiesStub {
                   ProtoMessageRequestFormatter.<SetSslPolicyTargetSslProxyRequest>newBuilder()
                       .setPath(
                           "/compute/v1/projects/{project}/global/targetSslProxies/{targetSslProxy}/setSslPolicy",
-                          new FieldsExtractor<
-                              SetSslPolicyTargetSslProxyRequest, Map<String, String>>() {
-                            @Override
-                            public Map<String, String> extract(
-                                SetSslPolicyTargetSslProxyRequest request) {
-                              Map<String, String> fields = new HashMap<>();
-                              ProtoRestSerializer<SetSslPolicyTargetSslProxyRequest> serializer =
-                                  ProtoRestSerializer.create();
-                              serializer.putPathParam(fields, "project", request.getProject());
-                              serializer.putPathParam(
-                                  fields, "targetSslProxy", request.getTargetSslProxy());
-                              return fields;
-                            }
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<SetSslPolicyTargetSslProxyRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "project", request.getProject());
+                            serializer.putPathParam(
+                                fields, "targetSslProxy", request.getTargetSslProxy());
+                            return fields;
                           })
                       .setQueryParamsExtractor(
-                          new FieldsExtractor<
-                              SetSslPolicyTargetSslProxyRequest, Map<String, List<String>>>() {
-                            @Override
-                            public Map<String, List<String>> extract(
-                                SetSslPolicyTargetSslProxyRequest request) {
-                              Map<String, List<String>> fields = new HashMap<>();
-                              ProtoRestSerializer<SetSslPolicyTargetSslProxyRequest> serializer =
-                                  ProtoRestSerializer.create();
-                              if (request.hasRequestId()) {
-                                serializer.putQueryParam(
-                                    fields, "requestId", request.getRequestId());
-                              }
-                              return fields;
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<SetSslPolicyTargetSslProxyRequest> serializer =
+                                ProtoRestSerializer.create();
+                            if (request.hasRequestId()) {
+                              serializer.putQueryParam(fields, "requestId", request.getRequestId());
                             }
+                            return fields;
                           })
                       .setRequestBodyExtractor(
-                          new FieldsExtractor<SetSslPolicyTargetSslProxyRequest, String>() {
-                            @Override
-                            public String extract(SetSslPolicyTargetSslProxyRequest request) {
-                              return ProtoRestSerializer.create()
+                          request ->
+                              ProtoRestSerializer.create()
                                   .toBody(
                                       "sslPolicyReferenceResource",
-                                      request.getSslPolicyReferenceResource());
-                            }
-                          })
+                                      request.getSslPolicyReferenceResource()))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -696,7 +574,13 @@ public class HttpJsonTargetSslProxiesStub extends TargetSslProxiesStub {
 
   @Override
   public final void close() {
-    shutdown();
+    try {
+      backgroundResources.close();
+    } catch (RuntimeException e) {
+      throw e;
+    } catch (Exception e) {
+      throw new IllegalStateException("Failed to close resource", e);
+    }
   }
 
   @Override

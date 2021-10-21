@@ -30,7 +30,9 @@ public interface DeletePublicDelegatedPrefixeRequestOrBuilder
    * Project ID for this request.
    * </pre>
    *
-   * <code>string project = 227560217 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>
+   * string project = 227560217 [(.google.api.field_behavior) = REQUIRED, (.google.cloud.operation_request_field) = "project"];
+   * </code>
    *
    * @return The project.
    */
@@ -42,7 +44,9 @@ public interface DeletePublicDelegatedPrefixeRequestOrBuilder
    * Project ID for this request.
    * </pre>
    *
-   * <code>string project = 227560217 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>
+   * string project = 227560217 [(.google.api.field_behavior) = REQUIRED, (.google.cloud.operation_request_field) = "project"];
+   * </code>
    *
    * @return The bytes for project.
    */
@@ -82,7 +86,9 @@ public interface DeletePublicDelegatedPrefixeRequestOrBuilder
    * Name of the region of this request.
    * </pre>
    *
-   * <code>string region = 138946292 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>
+   * string region = 138946292 [(.google.api.field_behavior) = REQUIRED, (.google.cloud.operation_request_field) = "region"];
+   * </code>
    *
    * @return The region.
    */
@@ -94,7 +100,9 @@ public interface DeletePublicDelegatedPrefixeRequestOrBuilder
    * Name of the region of this request.
    * </pre>
    *
-   * <code>string region = 138946292 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>
+   * string region = 138946292 [(.google.api.field_behavior) = REQUIRED, (.google.cloud.operation_request_field) = "region"];
+   * </code>
    *
    * @return The bytes for region.
    */

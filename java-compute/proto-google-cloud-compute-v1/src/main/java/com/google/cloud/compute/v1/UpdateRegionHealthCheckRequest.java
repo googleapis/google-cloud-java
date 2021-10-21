@@ -266,7 +266,9 @@ public final class UpdateRegionHealthCheckRequest extends com.google.protobuf.Ge
    * Project ID for this request.
    * </pre>
    *
-   * <code>string project = 227560217 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>
+   * string project = 227560217 [(.google.api.field_behavior) = REQUIRED, (.google.cloud.operation_request_field) = "project"];
+   * </code>
    *
    * @return The project.
    */
@@ -289,7 +291,9 @@ public final class UpdateRegionHealthCheckRequest extends com.google.protobuf.Ge
    * Project ID for this request.
    * </pre>
    *
-   * <code>string project = 227560217 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>
+   * string project = 227560217 [(.google.api.field_behavior) = REQUIRED, (.google.cloud.operation_request_field) = "project"];
+   * </code>
    *
    * @return The bytes for project.
    */
@@ -315,7 +319,9 @@ public final class UpdateRegionHealthCheckRequest extends com.google.protobuf.Ge
    * Name of the region scoping this request.
    * </pre>
    *
-   * <code>string region = 138946292 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>
+   * string region = 138946292 [(.google.api.field_behavior) = REQUIRED, (.google.cloud.operation_request_field) = "region"];
+   * </code>
    *
    * @return The region.
    */
@@ -338,7 +344,9 @@ public final class UpdateRegionHealthCheckRequest extends com.google.protobuf.Ge
    * Name of the region scoping this request.
    * </pre>
    *
-   * <code>string region = 138946292 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>
+   * string region = 138946292 [(.google.api.field_behavior) = REQUIRED, (.google.cloud.operation_request_field) = "region"];
+   * </code>
    *
    * @return The bytes for region.
    */
@@ -1154,7 +1162,9 @@ public final class UpdateRegionHealthCheckRequest extends com.google.protobuf.Ge
      * Project ID for this request.
      * </pre>
      *
-     * <code>string project = 227560217 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>
+     * string project = 227560217 [(.google.api.field_behavior) = REQUIRED, (.google.cloud.operation_request_field) = "project"];
+     * </code>
      *
      * @return The project.
      */
@@ -1176,7 +1186,9 @@ public final class UpdateRegionHealthCheckRequest extends com.google.protobuf.Ge
      * Project ID for this request.
      * </pre>
      *
-     * <code>string project = 227560217 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>
+     * string project = 227560217 [(.google.api.field_behavior) = REQUIRED, (.google.cloud.operation_request_field) = "project"];
+     * </code>
      *
      * @return The bytes for project.
      */
@@ -1198,7 +1210,9 @@ public final class UpdateRegionHealthCheckRequest extends com.google.protobuf.Ge
      * Project ID for this request.
      * </pre>
      *
-     * <code>string project = 227560217 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>
+     * string project = 227560217 [(.google.api.field_behavior) = REQUIRED, (.google.cloud.operation_request_field) = "project"];
+     * </code>
      *
      * @param value The project to set.
      * @return This builder for chaining.
@@ -1219,7 +1233,9 @@ public final class UpdateRegionHealthCheckRequest extends com.google.protobuf.Ge
      * Project ID for this request.
      * </pre>
      *
-     * <code>string project = 227560217 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>
+     * string project = 227560217 [(.google.api.field_behavior) = REQUIRED, (.google.cloud.operation_request_field) = "project"];
+     * </code>
      *
      * @return This builder for chaining.
      */
@@ -1236,7 +1252,9 @@ public final class UpdateRegionHealthCheckRequest extends com.google.protobuf.Ge
      * Project ID for this request.
      * </pre>
      *
-     * <code>string project = 227560217 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>
+     * string project = 227560217 [(.google.api.field_behavior) = REQUIRED, (.google.cloud.operation_request_field) = "project"];
+     * </code>
      *
      * @param value The bytes for project to set.
      * @return This builder for chaining.
@@ -1260,7 +1278,9 @@ public final class UpdateRegionHealthCheckRequest extends com.google.protobuf.Ge
      * Name of the region scoping this request.
      * </pre>
      *
-     * <code>string region = 138946292 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>
+     * string region = 138946292 [(.google.api.field_behavior) = REQUIRED, (.google.cloud.operation_request_field) = "region"];
+     * </code>
      *
      * @return The region.
      */
@@ -1282,7 +1302,9 @@ public final class UpdateRegionHealthCheckRequest extends com.google.protobuf.Ge
      * Name of the region scoping this request.
      * </pre>
      *
-     * <code>string region = 138946292 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>
+     * string region = 138946292 [(.google.api.field_behavior) = REQUIRED, (.google.cloud.operation_request_field) = "region"];
+     * </code>
      *
      * @return The bytes for region.
      */
@@ -1304,7 +1326,9 @@ public final class UpdateRegionHealthCheckRequest extends com.google.protobuf.Ge
      * Name of the region scoping this request.
      * </pre>
      *
-     * <code>string region = 138946292 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>
+     * string region = 138946292 [(.google.api.field_behavior) = REQUIRED, (.google.cloud.operation_request_field) = "region"];
+     * </code>
      *
      * @param value The region to set.
      * @return This builder for chaining.
@@ -1325,7 +1349,9 @@ public final class UpdateRegionHealthCheckRequest extends com.google.protobuf.Ge
      * Name of the region scoping this request.
      * </pre>
      *
-     * <code>string region = 138946292 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>
+     * string region = 138946292 [(.google.api.field_behavior) = REQUIRED, (.google.cloud.operation_request_field) = "region"];
+     * </code>
      *
      * @return This builder for chaining.
      */
@@ -1342,7 +1368,9 @@ public final class UpdateRegionHealthCheckRequest extends com.google.protobuf.Ge
      * Name of the region scoping this request.
      * </pre>
      *
-     * <code>string region = 138946292 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>
+     * string region = 138946292 [(.google.api.field_behavior) = REQUIRED, (.google.cloud.operation_request_field) = "region"];
+     * </code>
      *
      * @param value The bytes for region to set.
      * @return This builder for chaining.

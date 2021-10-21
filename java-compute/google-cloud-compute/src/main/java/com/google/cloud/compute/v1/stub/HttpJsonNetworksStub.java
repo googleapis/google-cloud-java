@@ -25,7 +25,6 @@ import com.google.api.core.InternalApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.httpjson.ApiMethodDescriptor;
-import com.google.api.gax.httpjson.FieldsExtractor;
 import com.google.api.gax.httpjson.HttpJsonCallSettings;
 import com.google.api.gax.httpjson.HttpJsonStubCallableFactory;
 import com.google.api.gax.httpjson.ProtoMessageRequestFormatter;
@@ -75,43 +74,30 @@ public class HttpJsonNetworksStub extends NetworksStub {
                   ProtoMessageRequestFormatter.<AddPeeringNetworkRequest>newBuilder()
                       .setPath(
                           "/compute/v1/projects/{project}/global/networks/{network}/addPeering",
-                          new FieldsExtractor<AddPeeringNetworkRequest, Map<String, String>>() {
-                            @Override
-                            public Map<String, String> extract(AddPeeringNetworkRequest request) {
-                              Map<String, String> fields = new HashMap<>();
-                              ProtoRestSerializer<AddPeeringNetworkRequest> serializer =
-                                  ProtoRestSerializer.create();
-                              serializer.putPathParam(fields, "network", request.getNetwork());
-                              serializer.putPathParam(fields, "project", request.getProject());
-                              return fields;
-                            }
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<AddPeeringNetworkRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "network", request.getNetwork());
+                            serializer.putPathParam(fields, "project", request.getProject());
+                            return fields;
                           })
                       .setQueryParamsExtractor(
-                          new FieldsExtractor<
-                              AddPeeringNetworkRequest, Map<String, List<String>>>() {
-                            @Override
-                            public Map<String, List<String>> extract(
-                                AddPeeringNetworkRequest request) {
-                              Map<String, List<String>> fields = new HashMap<>();
-                              ProtoRestSerializer<AddPeeringNetworkRequest> serializer =
-                                  ProtoRestSerializer.create();
-                              if (request.hasRequestId()) {
-                                serializer.putQueryParam(
-                                    fields, "requestId", request.getRequestId());
-                              }
-                              return fields;
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<AddPeeringNetworkRequest> serializer =
+                                ProtoRestSerializer.create();
+                            if (request.hasRequestId()) {
+                              serializer.putQueryParam(fields, "requestId", request.getRequestId());
                             }
+                            return fields;
                           })
                       .setRequestBodyExtractor(
-                          new FieldsExtractor<AddPeeringNetworkRequest, String>() {
-                            @Override
-                            public String extract(AddPeeringNetworkRequest request) {
-                              return ProtoRestSerializer.create()
+                          request ->
+                              ProtoRestSerializer.create()
                                   .toBody(
                                       "networksAddPeeringRequestResource",
-                                      request.getNetworksAddPeeringRequestResource());
-                            }
-                          })
+                                      request.getNetworksAddPeeringRequestResource()))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -127,37 +113,25 @@ public class HttpJsonNetworksStub extends NetworksStub {
               ProtoMessageRequestFormatter.<DeleteNetworkRequest>newBuilder()
                   .setPath(
                       "/compute/v1/projects/{project}/global/networks/{network}",
-                      new FieldsExtractor<DeleteNetworkRequest, Map<String, String>>() {
-                        @Override
-                        public Map<String, String> extract(DeleteNetworkRequest request) {
-                          Map<String, String> fields = new HashMap<>();
-                          ProtoRestSerializer<DeleteNetworkRequest> serializer =
-                              ProtoRestSerializer.create();
-                          serializer.putPathParam(fields, "network", request.getNetwork());
-                          serializer.putPathParam(fields, "project", request.getProject());
-                          return fields;
-                        }
+                      request -> {
+                        Map<String, String> fields = new HashMap<>();
+                        ProtoRestSerializer<DeleteNetworkRequest> serializer =
+                            ProtoRestSerializer.create();
+                        serializer.putPathParam(fields, "network", request.getNetwork());
+                        serializer.putPathParam(fields, "project", request.getProject());
+                        return fields;
                       })
                   .setQueryParamsExtractor(
-                      new FieldsExtractor<DeleteNetworkRequest, Map<String, List<String>>>() {
-                        @Override
-                        public Map<String, List<String>> extract(DeleteNetworkRequest request) {
-                          Map<String, List<String>> fields = new HashMap<>();
-                          ProtoRestSerializer<DeleteNetworkRequest> serializer =
-                              ProtoRestSerializer.create();
-                          if (request.hasRequestId()) {
-                            serializer.putQueryParam(fields, "requestId", request.getRequestId());
-                          }
-                          return fields;
+                      request -> {
+                        Map<String, List<String>> fields = new HashMap<>();
+                        ProtoRestSerializer<DeleteNetworkRequest> serializer =
+                            ProtoRestSerializer.create();
+                        if (request.hasRequestId()) {
+                          serializer.putQueryParam(fields, "requestId", request.getRequestId());
                         }
+                        return fields;
                       })
-                  .setRequestBodyExtractor(
-                      new FieldsExtractor<DeleteNetworkRequest, String>() {
-                        @Override
-                        public String extract(DeleteNetworkRequest request) {
-                          return null;
-                        }
-                      })
+                  .setRequestBodyExtractor(request -> null)
                   .build())
           .setResponseParser(
               ProtoMessageResponseParser.<Operation>newBuilder()
@@ -173,34 +147,22 @@ public class HttpJsonNetworksStub extends NetworksStub {
               ProtoMessageRequestFormatter.<GetNetworkRequest>newBuilder()
                   .setPath(
                       "/compute/v1/projects/{project}/global/networks/{network}",
-                      new FieldsExtractor<GetNetworkRequest, Map<String, String>>() {
-                        @Override
-                        public Map<String, String> extract(GetNetworkRequest request) {
-                          Map<String, String> fields = new HashMap<>();
-                          ProtoRestSerializer<GetNetworkRequest> serializer =
-                              ProtoRestSerializer.create();
-                          serializer.putPathParam(fields, "network", request.getNetwork());
-                          serializer.putPathParam(fields, "project", request.getProject());
-                          return fields;
-                        }
+                      request -> {
+                        Map<String, String> fields = new HashMap<>();
+                        ProtoRestSerializer<GetNetworkRequest> serializer =
+                            ProtoRestSerializer.create();
+                        serializer.putPathParam(fields, "network", request.getNetwork());
+                        serializer.putPathParam(fields, "project", request.getProject());
+                        return fields;
                       })
                   .setQueryParamsExtractor(
-                      new FieldsExtractor<GetNetworkRequest, Map<String, List<String>>>() {
-                        @Override
-                        public Map<String, List<String>> extract(GetNetworkRequest request) {
-                          Map<String, List<String>> fields = new HashMap<>();
-                          ProtoRestSerializer<GetNetworkRequest> serializer =
-                              ProtoRestSerializer.create();
-                          return fields;
-                        }
+                      request -> {
+                        Map<String, List<String>> fields = new HashMap<>();
+                        ProtoRestSerializer<GetNetworkRequest> serializer =
+                            ProtoRestSerializer.create();
+                        return fields;
                       })
-                  .setRequestBodyExtractor(
-                      new FieldsExtractor<GetNetworkRequest, String>() {
-                        @Override
-                        public String extract(GetNetworkRequest request) {
-                          return null;
-                        }
-                      })
+                  .setRequestBodyExtractor(request -> null)
                   .build())
           .setResponseParser(
               ProtoMessageResponseParser.<Network>newBuilder()
@@ -220,38 +182,22 @@ public class HttpJsonNetworksStub extends NetworksStub {
                   ProtoMessageRequestFormatter.<GetEffectiveFirewallsNetworkRequest>newBuilder()
                       .setPath(
                           "/compute/v1/projects/{project}/global/networks/{network}/getEffectiveFirewalls",
-                          new FieldsExtractor<
-                              GetEffectiveFirewallsNetworkRequest, Map<String, String>>() {
-                            @Override
-                            public Map<String, String> extract(
-                                GetEffectiveFirewallsNetworkRequest request) {
-                              Map<String, String> fields = new HashMap<>();
-                              ProtoRestSerializer<GetEffectiveFirewallsNetworkRequest> serializer =
-                                  ProtoRestSerializer.create();
-                              serializer.putPathParam(fields, "network", request.getNetwork());
-                              serializer.putPathParam(fields, "project", request.getProject());
-                              return fields;
-                            }
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<GetEffectiveFirewallsNetworkRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "network", request.getNetwork());
+                            serializer.putPathParam(fields, "project", request.getProject());
+                            return fields;
                           })
                       .setQueryParamsExtractor(
-                          new FieldsExtractor<
-                              GetEffectiveFirewallsNetworkRequest, Map<String, List<String>>>() {
-                            @Override
-                            public Map<String, List<String>> extract(
-                                GetEffectiveFirewallsNetworkRequest request) {
-                              Map<String, List<String>> fields = new HashMap<>();
-                              ProtoRestSerializer<GetEffectiveFirewallsNetworkRequest> serializer =
-                                  ProtoRestSerializer.create();
-                              return fields;
-                            }
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<GetEffectiveFirewallsNetworkRequest> serializer =
+                                ProtoRestSerializer.create();
+                            return fields;
                           })
-                      .setRequestBodyExtractor(
-                          new FieldsExtractor<GetEffectiveFirewallsNetworkRequest, String>() {
-                            @Override
-                            public String extract(GetEffectiveFirewallsNetworkRequest request) {
-                              return null;
-                            }
-                          })
+                      .setRequestBodyExtractor(request -> null)
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<NetworksGetEffectiveFirewallsResponse>newBuilder()
@@ -268,37 +214,27 @@ public class HttpJsonNetworksStub extends NetworksStub {
               ProtoMessageRequestFormatter.<InsertNetworkRequest>newBuilder()
                   .setPath(
                       "/compute/v1/projects/{project}/global/networks",
-                      new FieldsExtractor<InsertNetworkRequest, Map<String, String>>() {
-                        @Override
-                        public Map<String, String> extract(InsertNetworkRequest request) {
-                          Map<String, String> fields = new HashMap<>();
-                          ProtoRestSerializer<InsertNetworkRequest> serializer =
-                              ProtoRestSerializer.create();
-                          serializer.putPathParam(fields, "project", request.getProject());
-                          return fields;
-                        }
+                      request -> {
+                        Map<String, String> fields = new HashMap<>();
+                        ProtoRestSerializer<InsertNetworkRequest> serializer =
+                            ProtoRestSerializer.create();
+                        serializer.putPathParam(fields, "project", request.getProject());
+                        return fields;
                       })
                   .setQueryParamsExtractor(
-                      new FieldsExtractor<InsertNetworkRequest, Map<String, List<String>>>() {
-                        @Override
-                        public Map<String, List<String>> extract(InsertNetworkRequest request) {
-                          Map<String, List<String>> fields = new HashMap<>();
-                          ProtoRestSerializer<InsertNetworkRequest> serializer =
-                              ProtoRestSerializer.create();
-                          if (request.hasRequestId()) {
-                            serializer.putQueryParam(fields, "requestId", request.getRequestId());
-                          }
-                          return fields;
+                      request -> {
+                        Map<String, List<String>> fields = new HashMap<>();
+                        ProtoRestSerializer<InsertNetworkRequest> serializer =
+                            ProtoRestSerializer.create();
+                        if (request.hasRequestId()) {
+                          serializer.putQueryParam(fields, "requestId", request.getRequestId());
                         }
+                        return fields;
                       })
                   .setRequestBodyExtractor(
-                      new FieldsExtractor<InsertNetworkRequest, String>() {
-                        @Override
-                        public String extract(InsertNetworkRequest request) {
-                          return ProtoRestSerializer.create()
-                              .toBody("networkResource", request.getNetworkResource());
-                        }
-                      })
+                      request ->
+                          ProtoRestSerializer.create()
+                              .toBody("networkResource", request.getNetworkResource()))
                   .build())
           .setResponseParser(
               ProtoMessageResponseParser.<Operation>newBuilder()
@@ -314,49 +250,37 @@ public class HttpJsonNetworksStub extends NetworksStub {
               ProtoMessageRequestFormatter.<ListNetworksRequest>newBuilder()
                   .setPath(
                       "/compute/v1/projects/{project}/global/networks",
-                      new FieldsExtractor<ListNetworksRequest, Map<String, String>>() {
-                        @Override
-                        public Map<String, String> extract(ListNetworksRequest request) {
-                          Map<String, String> fields = new HashMap<>();
-                          ProtoRestSerializer<ListNetworksRequest> serializer =
-                              ProtoRestSerializer.create();
-                          serializer.putPathParam(fields, "project", request.getProject());
-                          return fields;
-                        }
+                      request -> {
+                        Map<String, String> fields = new HashMap<>();
+                        ProtoRestSerializer<ListNetworksRequest> serializer =
+                            ProtoRestSerializer.create();
+                        serializer.putPathParam(fields, "project", request.getProject());
+                        return fields;
                       })
                   .setQueryParamsExtractor(
-                      new FieldsExtractor<ListNetworksRequest, Map<String, List<String>>>() {
-                        @Override
-                        public Map<String, List<String>> extract(ListNetworksRequest request) {
-                          Map<String, List<String>> fields = new HashMap<>();
-                          ProtoRestSerializer<ListNetworksRequest> serializer =
-                              ProtoRestSerializer.create();
-                          if (request.hasFilter()) {
-                            serializer.putQueryParam(fields, "filter", request.getFilter());
-                          }
-                          if (request.hasMaxResults()) {
-                            serializer.putQueryParam(fields, "maxResults", request.getMaxResults());
-                          }
-                          if (request.hasOrderBy()) {
-                            serializer.putQueryParam(fields, "orderBy", request.getOrderBy());
-                          }
-                          if (request.hasPageToken()) {
-                            serializer.putQueryParam(fields, "pageToken", request.getPageToken());
-                          }
-                          if (request.hasReturnPartialSuccess()) {
-                            serializer.putQueryParam(
-                                fields, "returnPartialSuccess", request.getReturnPartialSuccess());
-                          }
-                          return fields;
+                      request -> {
+                        Map<String, List<String>> fields = new HashMap<>();
+                        ProtoRestSerializer<ListNetworksRequest> serializer =
+                            ProtoRestSerializer.create();
+                        if (request.hasFilter()) {
+                          serializer.putQueryParam(fields, "filter", request.getFilter());
                         }
-                      })
-                  .setRequestBodyExtractor(
-                      new FieldsExtractor<ListNetworksRequest, String>() {
-                        @Override
-                        public String extract(ListNetworksRequest request) {
-                          return null;
+                        if (request.hasMaxResults()) {
+                          serializer.putQueryParam(fields, "maxResults", request.getMaxResults());
                         }
+                        if (request.hasOrderBy()) {
+                          serializer.putQueryParam(fields, "orderBy", request.getOrderBy());
+                        }
+                        if (request.hasPageToken()) {
+                          serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                        }
+                        if (request.hasReturnPartialSuccess()) {
+                          serializer.putQueryParam(
+                              fields, "returnPartialSuccess", request.getReturnPartialSuccess());
+                        }
+                        return fields;
                       })
+                  .setRequestBodyExtractor(request -> null)
                   .build())
           .setResponseParser(
               ProtoMessageResponseParser.<NetworkList>newBuilder()
@@ -375,69 +299,51 @@ public class HttpJsonNetworksStub extends NetworksStub {
                   ProtoMessageRequestFormatter.<ListPeeringRoutesNetworksRequest>newBuilder()
                       .setPath(
                           "/compute/v1/projects/{project}/global/networks/{network}/listPeeringRoutes",
-                          new FieldsExtractor<
-                              ListPeeringRoutesNetworksRequest, Map<String, String>>() {
-                            @Override
-                            public Map<String, String> extract(
-                                ListPeeringRoutesNetworksRequest request) {
-                              Map<String, String> fields = new HashMap<>();
-                              ProtoRestSerializer<ListPeeringRoutesNetworksRequest> serializer =
-                                  ProtoRestSerializer.create();
-                              serializer.putPathParam(fields, "network", request.getNetwork());
-                              serializer.putPathParam(fields, "project", request.getProject());
-                              return fields;
-                            }
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<ListPeeringRoutesNetworksRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "network", request.getNetwork());
+                            serializer.putPathParam(fields, "project", request.getProject());
+                            return fields;
                           })
                       .setQueryParamsExtractor(
-                          new FieldsExtractor<
-                              ListPeeringRoutesNetworksRequest, Map<String, List<String>>>() {
-                            @Override
-                            public Map<String, List<String>> extract(
-                                ListPeeringRoutesNetworksRequest request) {
-                              Map<String, List<String>> fields = new HashMap<>();
-                              ProtoRestSerializer<ListPeeringRoutesNetworksRequest> serializer =
-                                  ProtoRestSerializer.create();
-                              if (request.hasDirection()) {
-                                serializer.putQueryParam(
-                                    fields, "direction", request.getDirection());
-                              }
-                              if (request.hasFilter()) {
-                                serializer.putQueryParam(fields, "filter", request.getFilter());
-                              }
-                              if (request.hasMaxResults()) {
-                                serializer.putQueryParam(
-                                    fields, "maxResults", request.getMaxResults());
-                              }
-                              if (request.hasOrderBy()) {
-                                serializer.putQueryParam(fields, "orderBy", request.getOrderBy());
-                              }
-                              if (request.hasPageToken()) {
-                                serializer.putQueryParam(
-                                    fields, "pageToken", request.getPageToken());
-                              }
-                              if (request.hasPeeringName()) {
-                                serializer.putQueryParam(
-                                    fields, "peeringName", request.getPeeringName());
-                              }
-                              if (request.hasRegion()) {
-                                serializer.putQueryParam(fields, "region", request.getRegion());
-                              }
-                              if (request.hasReturnPartialSuccess()) {
-                                serializer.putQueryParam(
-                                    fields,
-                                    "returnPartialSuccess",
-                                    request.getReturnPartialSuccess());
-                              }
-                              return fields;
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<ListPeeringRoutesNetworksRequest> serializer =
+                                ProtoRestSerializer.create();
+                            if (request.hasDirection()) {
+                              serializer.putQueryParam(fields, "direction", request.getDirection());
                             }
-                          })
-                      .setRequestBodyExtractor(
-                          new FieldsExtractor<ListPeeringRoutesNetworksRequest, String>() {
-                            @Override
-                            public String extract(ListPeeringRoutesNetworksRequest request) {
-                              return null;
+                            if (request.hasFilter()) {
+                              serializer.putQueryParam(fields, "filter", request.getFilter());
                             }
+                            if (request.hasMaxResults()) {
+                              serializer.putQueryParam(
+                                  fields, "maxResults", request.getMaxResults());
+                            }
+                            if (request.hasOrderBy()) {
+                              serializer.putQueryParam(fields, "orderBy", request.getOrderBy());
+                            }
+                            if (request.hasPageToken()) {
+                              serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            }
+                            if (request.hasPeeringName()) {
+                              serializer.putQueryParam(
+                                  fields, "peeringName", request.getPeeringName());
+                            }
+                            if (request.hasRegion()) {
+                              serializer.putQueryParam(fields, "region", request.getRegion());
+                            }
+                            if (request.hasReturnPartialSuccess()) {
+                              serializer.putQueryParam(
+                                  fields,
+                                  "returnPartialSuccess",
+                                  request.getReturnPartialSuccess());
+                            }
+                            return fields;
                           })
+                      .setRequestBodyExtractor(request -> null)
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<ExchangedPeeringRoutesList>newBuilder()
@@ -453,38 +359,28 @@ public class HttpJsonNetworksStub extends NetworksStub {
               ProtoMessageRequestFormatter.<PatchNetworkRequest>newBuilder()
                   .setPath(
                       "/compute/v1/projects/{project}/global/networks/{network}",
-                      new FieldsExtractor<PatchNetworkRequest, Map<String, String>>() {
-                        @Override
-                        public Map<String, String> extract(PatchNetworkRequest request) {
-                          Map<String, String> fields = new HashMap<>();
-                          ProtoRestSerializer<PatchNetworkRequest> serializer =
-                              ProtoRestSerializer.create();
-                          serializer.putPathParam(fields, "network", request.getNetwork());
-                          serializer.putPathParam(fields, "project", request.getProject());
-                          return fields;
-                        }
+                      request -> {
+                        Map<String, String> fields = new HashMap<>();
+                        ProtoRestSerializer<PatchNetworkRequest> serializer =
+                            ProtoRestSerializer.create();
+                        serializer.putPathParam(fields, "network", request.getNetwork());
+                        serializer.putPathParam(fields, "project", request.getProject());
+                        return fields;
                       })
                   .setQueryParamsExtractor(
-                      new FieldsExtractor<PatchNetworkRequest, Map<String, List<String>>>() {
-                        @Override
-                        public Map<String, List<String>> extract(PatchNetworkRequest request) {
-                          Map<String, List<String>> fields = new HashMap<>();
-                          ProtoRestSerializer<PatchNetworkRequest> serializer =
-                              ProtoRestSerializer.create();
-                          if (request.hasRequestId()) {
-                            serializer.putQueryParam(fields, "requestId", request.getRequestId());
-                          }
-                          return fields;
+                      request -> {
+                        Map<String, List<String>> fields = new HashMap<>();
+                        ProtoRestSerializer<PatchNetworkRequest> serializer =
+                            ProtoRestSerializer.create();
+                        if (request.hasRequestId()) {
+                          serializer.putQueryParam(fields, "requestId", request.getRequestId());
                         }
+                        return fields;
                       })
                   .setRequestBodyExtractor(
-                      new FieldsExtractor<PatchNetworkRequest, String>() {
-                        @Override
-                        public String extract(PatchNetworkRequest request) {
-                          return ProtoRestSerializer.create()
-                              .toBody("networkResource", request.getNetworkResource());
-                        }
-                      })
+                      request ->
+                          ProtoRestSerializer.create()
+                              .toBody("networkResource", request.getNetworkResource()))
                   .build())
           .setResponseParser(
               ProtoMessageResponseParser.<Operation>newBuilder()
@@ -501,44 +397,30 @@ public class HttpJsonNetworksStub extends NetworksStub {
                   ProtoMessageRequestFormatter.<RemovePeeringNetworkRequest>newBuilder()
                       .setPath(
                           "/compute/v1/projects/{project}/global/networks/{network}/removePeering",
-                          new FieldsExtractor<RemovePeeringNetworkRequest, Map<String, String>>() {
-                            @Override
-                            public Map<String, String> extract(
-                                RemovePeeringNetworkRequest request) {
-                              Map<String, String> fields = new HashMap<>();
-                              ProtoRestSerializer<RemovePeeringNetworkRequest> serializer =
-                                  ProtoRestSerializer.create();
-                              serializer.putPathParam(fields, "network", request.getNetwork());
-                              serializer.putPathParam(fields, "project", request.getProject());
-                              return fields;
-                            }
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<RemovePeeringNetworkRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "network", request.getNetwork());
+                            serializer.putPathParam(fields, "project", request.getProject());
+                            return fields;
                           })
                       .setQueryParamsExtractor(
-                          new FieldsExtractor<
-                              RemovePeeringNetworkRequest, Map<String, List<String>>>() {
-                            @Override
-                            public Map<String, List<String>> extract(
-                                RemovePeeringNetworkRequest request) {
-                              Map<String, List<String>> fields = new HashMap<>();
-                              ProtoRestSerializer<RemovePeeringNetworkRequest> serializer =
-                                  ProtoRestSerializer.create();
-                              if (request.hasRequestId()) {
-                                serializer.putQueryParam(
-                                    fields, "requestId", request.getRequestId());
-                              }
-                              return fields;
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<RemovePeeringNetworkRequest> serializer =
+                                ProtoRestSerializer.create();
+                            if (request.hasRequestId()) {
+                              serializer.putQueryParam(fields, "requestId", request.getRequestId());
                             }
+                            return fields;
                           })
                       .setRequestBodyExtractor(
-                          new FieldsExtractor<RemovePeeringNetworkRequest, String>() {
-                            @Override
-                            public String extract(RemovePeeringNetworkRequest request) {
-                              return ProtoRestSerializer.create()
+                          request ->
+                              ProtoRestSerializer.create()
                                   .toBody(
                                       "networksRemovePeeringRequestResource",
-                                      request.getNetworksRemovePeeringRequestResource());
-                            }
-                          })
+                                      request.getNetworksRemovePeeringRequestResource()))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -555,42 +437,25 @@ public class HttpJsonNetworksStub extends NetworksStub {
                   ProtoMessageRequestFormatter.<SwitchToCustomModeNetworkRequest>newBuilder()
                       .setPath(
                           "/compute/v1/projects/{project}/global/networks/{network}/switchToCustomMode",
-                          new FieldsExtractor<
-                              SwitchToCustomModeNetworkRequest, Map<String, String>>() {
-                            @Override
-                            public Map<String, String> extract(
-                                SwitchToCustomModeNetworkRequest request) {
-                              Map<String, String> fields = new HashMap<>();
-                              ProtoRestSerializer<SwitchToCustomModeNetworkRequest> serializer =
-                                  ProtoRestSerializer.create();
-                              serializer.putPathParam(fields, "network", request.getNetwork());
-                              serializer.putPathParam(fields, "project", request.getProject());
-                              return fields;
-                            }
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<SwitchToCustomModeNetworkRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "network", request.getNetwork());
+                            serializer.putPathParam(fields, "project", request.getProject());
+                            return fields;
                           })
                       .setQueryParamsExtractor(
-                          new FieldsExtractor<
-                              SwitchToCustomModeNetworkRequest, Map<String, List<String>>>() {
-                            @Override
-                            public Map<String, List<String>> extract(
-                                SwitchToCustomModeNetworkRequest request) {
-                              Map<String, List<String>> fields = new HashMap<>();
-                              ProtoRestSerializer<SwitchToCustomModeNetworkRequest> serializer =
-                                  ProtoRestSerializer.create();
-                              if (request.hasRequestId()) {
-                                serializer.putQueryParam(
-                                    fields, "requestId", request.getRequestId());
-                              }
-                              return fields;
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<SwitchToCustomModeNetworkRequest> serializer =
+                                ProtoRestSerializer.create();
+                            if (request.hasRequestId()) {
+                              serializer.putQueryParam(fields, "requestId", request.getRequestId());
                             }
+                            return fields;
                           })
-                      .setRequestBodyExtractor(
-                          new FieldsExtractor<SwitchToCustomModeNetworkRequest, String>() {
-                            @Override
-                            public String extract(SwitchToCustomModeNetworkRequest request) {
-                              return null;
-                            }
-                          })
+                      .setRequestBodyExtractor(request -> null)
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -607,44 +472,30 @@ public class HttpJsonNetworksStub extends NetworksStub {
                   ProtoMessageRequestFormatter.<UpdatePeeringNetworkRequest>newBuilder()
                       .setPath(
                           "/compute/v1/projects/{project}/global/networks/{network}/updatePeering",
-                          new FieldsExtractor<UpdatePeeringNetworkRequest, Map<String, String>>() {
-                            @Override
-                            public Map<String, String> extract(
-                                UpdatePeeringNetworkRequest request) {
-                              Map<String, String> fields = new HashMap<>();
-                              ProtoRestSerializer<UpdatePeeringNetworkRequest> serializer =
-                                  ProtoRestSerializer.create();
-                              serializer.putPathParam(fields, "network", request.getNetwork());
-                              serializer.putPathParam(fields, "project", request.getProject());
-                              return fields;
-                            }
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<UpdatePeeringNetworkRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "network", request.getNetwork());
+                            serializer.putPathParam(fields, "project", request.getProject());
+                            return fields;
                           })
                       .setQueryParamsExtractor(
-                          new FieldsExtractor<
-                              UpdatePeeringNetworkRequest, Map<String, List<String>>>() {
-                            @Override
-                            public Map<String, List<String>> extract(
-                                UpdatePeeringNetworkRequest request) {
-                              Map<String, List<String>> fields = new HashMap<>();
-                              ProtoRestSerializer<UpdatePeeringNetworkRequest> serializer =
-                                  ProtoRestSerializer.create();
-                              if (request.hasRequestId()) {
-                                serializer.putQueryParam(
-                                    fields, "requestId", request.getRequestId());
-                              }
-                              return fields;
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<UpdatePeeringNetworkRequest> serializer =
+                                ProtoRestSerializer.create();
+                            if (request.hasRequestId()) {
+                              serializer.putQueryParam(fields, "requestId", request.getRequestId());
                             }
+                            return fields;
                           })
                       .setRequestBodyExtractor(
-                          new FieldsExtractor<UpdatePeeringNetworkRequest, String>() {
-                            @Override
-                            public String extract(UpdatePeeringNetworkRequest request) {
-                              return ProtoRestSerializer.create()
+                          request ->
+                              ProtoRestSerializer.create()
                                   .toBody(
                                       "networksUpdatePeeringRequestResource",
-                                      request.getNetworksUpdatePeeringRequestResource());
-                            }
-                          })
+                                      request.getNetworksUpdatePeeringRequestResource()))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -901,7 +752,13 @@ public class HttpJsonNetworksStub extends NetworksStub {
 
   @Override
   public final void close() {
-    shutdown();
+    try {
+      backgroundResources.close();
+    } catch (RuntimeException e) {
+      throw e;
+    } catch (Exception e) {
+      throw new IllegalStateException("Failed to close resource", e);
+    }
   }
 
   @Override

@@ -24,7 +24,6 @@ import com.google.api.core.InternalApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.httpjson.ApiMethodDescriptor;
-import com.google.api.gax.httpjson.FieldsExtractor;
 import com.google.api.gax.httpjson.HttpJsonCallSettings;
 import com.google.api.gax.httpjson.HttpJsonStubCallableFactory;
 import com.google.api.gax.httpjson.ProtoMessageRequestFormatter;
@@ -67,42 +66,26 @@ public class HttpJsonTargetTcpProxiesStub extends TargetTcpProxiesStub {
                   ProtoMessageRequestFormatter.<DeleteTargetTcpProxyRequest>newBuilder()
                       .setPath(
                           "/compute/v1/projects/{project}/global/targetTcpProxies/{targetTcpProxy}",
-                          new FieldsExtractor<DeleteTargetTcpProxyRequest, Map<String, String>>() {
-                            @Override
-                            public Map<String, String> extract(
-                                DeleteTargetTcpProxyRequest request) {
-                              Map<String, String> fields = new HashMap<>();
-                              ProtoRestSerializer<DeleteTargetTcpProxyRequest> serializer =
-                                  ProtoRestSerializer.create();
-                              serializer.putPathParam(fields, "project", request.getProject());
-                              serializer.putPathParam(
-                                  fields, "targetTcpProxy", request.getTargetTcpProxy());
-                              return fields;
-                            }
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<DeleteTargetTcpProxyRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "project", request.getProject());
+                            serializer.putPathParam(
+                                fields, "targetTcpProxy", request.getTargetTcpProxy());
+                            return fields;
                           })
                       .setQueryParamsExtractor(
-                          new FieldsExtractor<
-                              DeleteTargetTcpProxyRequest, Map<String, List<String>>>() {
-                            @Override
-                            public Map<String, List<String>> extract(
-                                DeleteTargetTcpProxyRequest request) {
-                              Map<String, List<String>> fields = new HashMap<>();
-                              ProtoRestSerializer<DeleteTargetTcpProxyRequest> serializer =
-                                  ProtoRestSerializer.create();
-                              if (request.hasRequestId()) {
-                                serializer.putQueryParam(
-                                    fields, "requestId", request.getRequestId());
-                              }
-                              return fields;
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<DeleteTargetTcpProxyRequest> serializer =
+                                ProtoRestSerializer.create();
+                            if (request.hasRequestId()) {
+                              serializer.putQueryParam(fields, "requestId", request.getRequestId());
                             }
+                            return fields;
                           })
-                      .setRequestBodyExtractor(
-                          new FieldsExtractor<DeleteTargetTcpProxyRequest, String>() {
-                            @Override
-                            public String extract(DeleteTargetTcpProxyRequest request) {
-                              return null;
-                            }
-                          })
+                      .setRequestBodyExtractor(request -> null)
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -119,37 +102,23 @@ public class HttpJsonTargetTcpProxiesStub extends TargetTcpProxiesStub {
                   ProtoMessageRequestFormatter.<GetTargetTcpProxyRequest>newBuilder()
                       .setPath(
                           "/compute/v1/projects/{project}/global/targetTcpProxies/{targetTcpProxy}",
-                          new FieldsExtractor<GetTargetTcpProxyRequest, Map<String, String>>() {
-                            @Override
-                            public Map<String, String> extract(GetTargetTcpProxyRequest request) {
-                              Map<String, String> fields = new HashMap<>();
-                              ProtoRestSerializer<GetTargetTcpProxyRequest> serializer =
-                                  ProtoRestSerializer.create();
-                              serializer.putPathParam(fields, "project", request.getProject());
-                              serializer.putPathParam(
-                                  fields, "targetTcpProxy", request.getTargetTcpProxy());
-                              return fields;
-                            }
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<GetTargetTcpProxyRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "project", request.getProject());
+                            serializer.putPathParam(
+                                fields, "targetTcpProxy", request.getTargetTcpProxy());
+                            return fields;
                           })
                       .setQueryParamsExtractor(
-                          new FieldsExtractor<
-                              GetTargetTcpProxyRequest, Map<String, List<String>>>() {
-                            @Override
-                            public Map<String, List<String>> extract(
-                                GetTargetTcpProxyRequest request) {
-                              Map<String, List<String>> fields = new HashMap<>();
-                              ProtoRestSerializer<GetTargetTcpProxyRequest> serializer =
-                                  ProtoRestSerializer.create();
-                              return fields;
-                            }
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<GetTargetTcpProxyRequest> serializer =
+                                ProtoRestSerializer.create();
+                            return fields;
                           })
-                      .setRequestBodyExtractor(
-                          new FieldsExtractor<GetTargetTcpProxyRequest, String>() {
-                            @Override
-                            public String extract(GetTargetTcpProxyRequest request) {
-                              return null;
-                            }
-                          })
+                      .setRequestBodyExtractor(request -> null)
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<TargetTcpProxy>newBuilder()
@@ -166,43 +135,29 @@ public class HttpJsonTargetTcpProxiesStub extends TargetTcpProxiesStub {
                   ProtoMessageRequestFormatter.<InsertTargetTcpProxyRequest>newBuilder()
                       .setPath(
                           "/compute/v1/projects/{project}/global/targetTcpProxies",
-                          new FieldsExtractor<InsertTargetTcpProxyRequest, Map<String, String>>() {
-                            @Override
-                            public Map<String, String> extract(
-                                InsertTargetTcpProxyRequest request) {
-                              Map<String, String> fields = new HashMap<>();
-                              ProtoRestSerializer<InsertTargetTcpProxyRequest> serializer =
-                                  ProtoRestSerializer.create();
-                              serializer.putPathParam(fields, "project", request.getProject());
-                              return fields;
-                            }
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<InsertTargetTcpProxyRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "project", request.getProject());
+                            return fields;
                           })
                       .setQueryParamsExtractor(
-                          new FieldsExtractor<
-                              InsertTargetTcpProxyRequest, Map<String, List<String>>>() {
-                            @Override
-                            public Map<String, List<String>> extract(
-                                InsertTargetTcpProxyRequest request) {
-                              Map<String, List<String>> fields = new HashMap<>();
-                              ProtoRestSerializer<InsertTargetTcpProxyRequest> serializer =
-                                  ProtoRestSerializer.create();
-                              if (request.hasRequestId()) {
-                                serializer.putQueryParam(
-                                    fields, "requestId", request.getRequestId());
-                              }
-                              return fields;
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<InsertTargetTcpProxyRequest> serializer =
+                                ProtoRestSerializer.create();
+                            if (request.hasRequestId()) {
+                              serializer.putQueryParam(fields, "requestId", request.getRequestId());
                             }
+                            return fields;
                           })
                       .setRequestBodyExtractor(
-                          new FieldsExtractor<InsertTargetTcpProxyRequest, String>() {
-                            @Override
-                            public String extract(InsertTargetTcpProxyRequest request) {
-                              return ProtoRestSerializer.create()
+                          request ->
+                              ProtoRestSerializer.create()
                                   .toBody(
                                       "targetTcpProxyResource",
-                                      request.getTargetTcpProxyResource());
-                            }
-                          })
+                                      request.getTargetTcpProxyResource()))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -219,56 +174,40 @@ public class HttpJsonTargetTcpProxiesStub extends TargetTcpProxiesStub {
                   ProtoMessageRequestFormatter.<ListTargetTcpProxiesRequest>newBuilder()
                       .setPath(
                           "/compute/v1/projects/{project}/global/targetTcpProxies",
-                          new FieldsExtractor<ListTargetTcpProxiesRequest, Map<String, String>>() {
-                            @Override
-                            public Map<String, String> extract(
-                                ListTargetTcpProxiesRequest request) {
-                              Map<String, String> fields = new HashMap<>();
-                              ProtoRestSerializer<ListTargetTcpProxiesRequest> serializer =
-                                  ProtoRestSerializer.create();
-                              serializer.putPathParam(fields, "project", request.getProject());
-                              return fields;
-                            }
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<ListTargetTcpProxiesRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "project", request.getProject());
+                            return fields;
                           })
                       .setQueryParamsExtractor(
-                          new FieldsExtractor<
-                              ListTargetTcpProxiesRequest, Map<String, List<String>>>() {
-                            @Override
-                            public Map<String, List<String>> extract(
-                                ListTargetTcpProxiesRequest request) {
-                              Map<String, List<String>> fields = new HashMap<>();
-                              ProtoRestSerializer<ListTargetTcpProxiesRequest> serializer =
-                                  ProtoRestSerializer.create();
-                              if (request.hasFilter()) {
-                                serializer.putQueryParam(fields, "filter", request.getFilter());
-                              }
-                              if (request.hasMaxResults()) {
-                                serializer.putQueryParam(
-                                    fields, "maxResults", request.getMaxResults());
-                              }
-                              if (request.hasOrderBy()) {
-                                serializer.putQueryParam(fields, "orderBy", request.getOrderBy());
-                              }
-                              if (request.hasPageToken()) {
-                                serializer.putQueryParam(
-                                    fields, "pageToken", request.getPageToken());
-                              }
-                              if (request.hasReturnPartialSuccess()) {
-                                serializer.putQueryParam(
-                                    fields,
-                                    "returnPartialSuccess",
-                                    request.getReturnPartialSuccess());
-                              }
-                              return fields;
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<ListTargetTcpProxiesRequest> serializer =
+                                ProtoRestSerializer.create();
+                            if (request.hasFilter()) {
+                              serializer.putQueryParam(fields, "filter", request.getFilter());
                             }
-                          })
-                      .setRequestBodyExtractor(
-                          new FieldsExtractor<ListTargetTcpProxiesRequest, String>() {
-                            @Override
-                            public String extract(ListTargetTcpProxiesRequest request) {
-                              return null;
+                            if (request.hasMaxResults()) {
+                              serializer.putQueryParam(
+                                  fields, "maxResults", request.getMaxResults());
                             }
+                            if (request.hasOrderBy()) {
+                              serializer.putQueryParam(fields, "orderBy", request.getOrderBy());
+                            }
+                            if (request.hasPageToken()) {
+                              serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            }
+                            if (request.hasReturnPartialSuccess()) {
+                              serializer.putQueryParam(
+                                  fields,
+                                  "returnPartialSuccess",
+                                  request.getReturnPartialSuccess());
+                            }
+                            return fields;
                           })
+                      .setRequestBodyExtractor(request -> null)
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<TargetTcpProxyList>newBuilder()
@@ -285,47 +224,32 @@ public class HttpJsonTargetTcpProxiesStub extends TargetTcpProxiesStub {
                   ProtoMessageRequestFormatter.<SetBackendServiceTargetTcpProxyRequest>newBuilder()
                       .setPath(
                           "/compute/v1/projects/{project}/global/targetTcpProxies/{targetTcpProxy}/setBackendService",
-                          new FieldsExtractor<
-                              SetBackendServiceTargetTcpProxyRequest, Map<String, String>>() {
-                            @Override
-                            public Map<String, String> extract(
-                                SetBackendServiceTargetTcpProxyRequest request) {
-                              Map<String, String> fields = new HashMap<>();
-                              ProtoRestSerializer<SetBackendServiceTargetTcpProxyRequest>
-                                  serializer = ProtoRestSerializer.create();
-                              serializer.putPathParam(fields, "project", request.getProject());
-                              serializer.putPathParam(
-                                  fields, "targetTcpProxy", request.getTargetTcpProxy());
-                              return fields;
-                            }
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<SetBackendServiceTargetTcpProxyRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "project", request.getProject());
+                            serializer.putPathParam(
+                                fields, "targetTcpProxy", request.getTargetTcpProxy());
+                            return fields;
                           })
                       .setQueryParamsExtractor(
-                          new FieldsExtractor<
-                              SetBackendServiceTargetTcpProxyRequest, Map<String, List<String>>>() {
-                            @Override
-                            public Map<String, List<String>> extract(
-                                SetBackendServiceTargetTcpProxyRequest request) {
-                              Map<String, List<String>> fields = new HashMap<>();
-                              ProtoRestSerializer<SetBackendServiceTargetTcpProxyRequest>
-                                  serializer = ProtoRestSerializer.create();
-                              if (request.hasRequestId()) {
-                                serializer.putQueryParam(
-                                    fields, "requestId", request.getRequestId());
-                              }
-                              return fields;
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<SetBackendServiceTargetTcpProxyRequest> serializer =
+                                ProtoRestSerializer.create();
+                            if (request.hasRequestId()) {
+                              serializer.putQueryParam(fields, "requestId", request.getRequestId());
                             }
+                            return fields;
                           })
                       .setRequestBodyExtractor(
-                          new FieldsExtractor<SetBackendServiceTargetTcpProxyRequest, String>() {
-                            @Override
-                            public String extract(SetBackendServiceTargetTcpProxyRequest request) {
-                              return ProtoRestSerializer.create()
+                          request ->
+                              ProtoRestSerializer.create()
                                   .toBody(
                                       "targetTcpProxiesSetBackendServiceRequestResource",
                                       request
-                                          .getTargetTcpProxiesSetBackendServiceRequestResource());
-                            }
-                          })
+                                          .getTargetTcpProxiesSetBackendServiceRequestResource()))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -342,46 +266,31 @@ public class HttpJsonTargetTcpProxiesStub extends TargetTcpProxiesStub {
                   ProtoMessageRequestFormatter.<SetProxyHeaderTargetTcpProxyRequest>newBuilder()
                       .setPath(
                           "/compute/v1/projects/{project}/global/targetTcpProxies/{targetTcpProxy}/setProxyHeader",
-                          new FieldsExtractor<
-                              SetProxyHeaderTargetTcpProxyRequest, Map<String, String>>() {
-                            @Override
-                            public Map<String, String> extract(
-                                SetProxyHeaderTargetTcpProxyRequest request) {
-                              Map<String, String> fields = new HashMap<>();
-                              ProtoRestSerializer<SetProxyHeaderTargetTcpProxyRequest> serializer =
-                                  ProtoRestSerializer.create();
-                              serializer.putPathParam(fields, "project", request.getProject());
-                              serializer.putPathParam(
-                                  fields, "targetTcpProxy", request.getTargetTcpProxy());
-                              return fields;
-                            }
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<SetProxyHeaderTargetTcpProxyRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "project", request.getProject());
+                            serializer.putPathParam(
+                                fields, "targetTcpProxy", request.getTargetTcpProxy());
+                            return fields;
                           })
                       .setQueryParamsExtractor(
-                          new FieldsExtractor<
-                              SetProxyHeaderTargetTcpProxyRequest, Map<String, List<String>>>() {
-                            @Override
-                            public Map<String, List<String>> extract(
-                                SetProxyHeaderTargetTcpProxyRequest request) {
-                              Map<String, List<String>> fields = new HashMap<>();
-                              ProtoRestSerializer<SetProxyHeaderTargetTcpProxyRequest> serializer =
-                                  ProtoRestSerializer.create();
-                              if (request.hasRequestId()) {
-                                serializer.putQueryParam(
-                                    fields, "requestId", request.getRequestId());
-                              }
-                              return fields;
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<SetProxyHeaderTargetTcpProxyRequest> serializer =
+                                ProtoRestSerializer.create();
+                            if (request.hasRequestId()) {
+                              serializer.putQueryParam(fields, "requestId", request.getRequestId());
                             }
+                            return fields;
                           })
                       .setRequestBodyExtractor(
-                          new FieldsExtractor<SetProxyHeaderTargetTcpProxyRequest, String>() {
-                            @Override
-                            public String extract(SetProxyHeaderTargetTcpProxyRequest request) {
-                              return ProtoRestSerializer.create()
+                          request ->
+                              ProtoRestSerializer.create()
                                   .toBody(
                                       "targetTcpProxiesSetProxyHeaderRequestResource",
-                                      request.getTargetTcpProxiesSetProxyHeaderRequestResource());
-                            }
-                          })
+                                      request.getTargetTcpProxiesSetProxyHeaderRequestResource()))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -546,7 +455,13 @@ public class HttpJsonTargetTcpProxiesStub extends TargetTcpProxiesStub {
 
   @Override
   public final void close() {
-    shutdown();
+    try {
+      backgroundResources.close();
+    } catch (RuntimeException e) {
+      throw e;
+    } catch (Exception e) {
+      throw new IllegalStateException("Failed to close resource", e);
+    }
   }
 
   @Override

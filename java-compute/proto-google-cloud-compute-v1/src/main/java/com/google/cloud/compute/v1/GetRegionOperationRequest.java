@@ -136,7 +136,9 @@ public final class GetRegionOperationRequest extends com.google.protobuf.Generat
    * Name of the Operations resource to return.
    * </pre>
    *
-   * <code>string operation = 52090215 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>
+   * string operation = 52090215 [(.google.api.field_behavior) = REQUIRED, (.google.cloud.operation_response_field) = "name"];
+   * </code>
    *
    * @return The operation.
    */
@@ -159,7 +161,9 @@ public final class GetRegionOperationRequest extends com.google.protobuf.Generat
    * Name of the Operations resource to return.
    * </pre>
    *
-   * <code>string operation = 52090215 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>
+   * string operation = 52090215 [(.google.api.field_behavior) = REQUIRED, (.google.cloud.operation_response_field) = "name"];
+   * </code>
    *
    * @return The bytes for operation.
    */
@@ -633,7 +637,9 @@ public final class GetRegionOperationRequest extends com.google.protobuf.Generat
      * Name of the Operations resource to return.
      * </pre>
      *
-     * <code>string operation = 52090215 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>
+     * string operation = 52090215 [(.google.api.field_behavior) = REQUIRED, (.google.cloud.operation_response_field) = "name"];
+     * </code>
      *
      * @return The operation.
      */
@@ -655,7 +661,9 @@ public final class GetRegionOperationRequest extends com.google.protobuf.Generat
      * Name of the Operations resource to return.
      * </pre>
      *
-     * <code>string operation = 52090215 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>
+     * string operation = 52090215 [(.google.api.field_behavior) = REQUIRED, (.google.cloud.operation_response_field) = "name"];
+     * </code>
      *
      * @return The bytes for operation.
      */
@@ -677,7 +685,9 @@ public final class GetRegionOperationRequest extends com.google.protobuf.Generat
      * Name of the Operations resource to return.
      * </pre>
      *
-     * <code>string operation = 52090215 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>
+     * string operation = 52090215 [(.google.api.field_behavior) = REQUIRED, (.google.cloud.operation_response_field) = "name"];
+     * </code>
      *
      * @param value The operation to set.
      * @return This builder for chaining.
@@ -698,7 +708,9 @@ public final class GetRegionOperationRequest extends com.google.protobuf.Generat
      * Name of the Operations resource to return.
      * </pre>
      *
-     * <code>string operation = 52090215 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>
+     * string operation = 52090215 [(.google.api.field_behavior) = REQUIRED, (.google.cloud.operation_response_field) = "name"];
+     * </code>
      *
      * @return This builder for chaining.
      */
@@ -715,7 +727,9 @@ public final class GetRegionOperationRequest extends com.google.protobuf.Generat
      * Name of the Operations resource to return.
      * </pre>
      *
-     * <code>string operation = 52090215 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>
+     * string operation = 52090215 [(.google.api.field_behavior) = REQUIRED, (.google.cloud.operation_response_field) = "name"];
+     * </code>
      *
      * @param value The bytes for operation to set.
      * @return This builder for chaining.

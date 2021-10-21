@@ -24,7 +24,6 @@ import com.google.api.core.InternalApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.httpjson.ApiMethodDescriptor;
-import com.google.api.gax.httpjson.FieldsExtractor;
 import com.google.api.gax.httpjson.HttpJsonCallSettings;
 import com.google.api.gax.httpjson.HttpJsonStubCallableFactory;
 import com.google.api.gax.httpjson.ProtoMessageRequestFormatter;
@@ -66,42 +65,26 @@ public class HttpJsonTargetGrpcProxiesStub extends TargetGrpcProxiesStub {
                   ProtoMessageRequestFormatter.<DeleteTargetGrpcProxyRequest>newBuilder()
                       .setPath(
                           "/compute/v1/projects/{project}/global/targetGrpcProxies/{targetGrpcProxy}",
-                          new FieldsExtractor<DeleteTargetGrpcProxyRequest, Map<String, String>>() {
-                            @Override
-                            public Map<String, String> extract(
-                                DeleteTargetGrpcProxyRequest request) {
-                              Map<String, String> fields = new HashMap<>();
-                              ProtoRestSerializer<DeleteTargetGrpcProxyRequest> serializer =
-                                  ProtoRestSerializer.create();
-                              serializer.putPathParam(fields, "project", request.getProject());
-                              serializer.putPathParam(
-                                  fields, "targetGrpcProxy", request.getTargetGrpcProxy());
-                              return fields;
-                            }
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<DeleteTargetGrpcProxyRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "project", request.getProject());
+                            serializer.putPathParam(
+                                fields, "targetGrpcProxy", request.getTargetGrpcProxy());
+                            return fields;
                           })
                       .setQueryParamsExtractor(
-                          new FieldsExtractor<
-                              DeleteTargetGrpcProxyRequest, Map<String, List<String>>>() {
-                            @Override
-                            public Map<String, List<String>> extract(
-                                DeleteTargetGrpcProxyRequest request) {
-                              Map<String, List<String>> fields = new HashMap<>();
-                              ProtoRestSerializer<DeleteTargetGrpcProxyRequest> serializer =
-                                  ProtoRestSerializer.create();
-                              if (request.hasRequestId()) {
-                                serializer.putQueryParam(
-                                    fields, "requestId", request.getRequestId());
-                              }
-                              return fields;
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<DeleteTargetGrpcProxyRequest> serializer =
+                                ProtoRestSerializer.create();
+                            if (request.hasRequestId()) {
+                              serializer.putQueryParam(fields, "requestId", request.getRequestId());
                             }
+                            return fields;
                           })
-                      .setRequestBodyExtractor(
-                          new FieldsExtractor<DeleteTargetGrpcProxyRequest, String>() {
-                            @Override
-                            public String extract(DeleteTargetGrpcProxyRequest request) {
-                              return null;
-                            }
-                          })
+                      .setRequestBodyExtractor(request -> null)
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -118,37 +101,23 @@ public class HttpJsonTargetGrpcProxiesStub extends TargetGrpcProxiesStub {
                   ProtoMessageRequestFormatter.<GetTargetGrpcProxyRequest>newBuilder()
                       .setPath(
                           "/compute/v1/projects/{project}/global/targetGrpcProxies/{targetGrpcProxy}",
-                          new FieldsExtractor<GetTargetGrpcProxyRequest, Map<String, String>>() {
-                            @Override
-                            public Map<String, String> extract(GetTargetGrpcProxyRequest request) {
-                              Map<String, String> fields = new HashMap<>();
-                              ProtoRestSerializer<GetTargetGrpcProxyRequest> serializer =
-                                  ProtoRestSerializer.create();
-                              serializer.putPathParam(fields, "project", request.getProject());
-                              serializer.putPathParam(
-                                  fields, "targetGrpcProxy", request.getTargetGrpcProxy());
-                              return fields;
-                            }
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<GetTargetGrpcProxyRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "project", request.getProject());
+                            serializer.putPathParam(
+                                fields, "targetGrpcProxy", request.getTargetGrpcProxy());
+                            return fields;
                           })
                       .setQueryParamsExtractor(
-                          new FieldsExtractor<
-                              GetTargetGrpcProxyRequest, Map<String, List<String>>>() {
-                            @Override
-                            public Map<String, List<String>> extract(
-                                GetTargetGrpcProxyRequest request) {
-                              Map<String, List<String>> fields = new HashMap<>();
-                              ProtoRestSerializer<GetTargetGrpcProxyRequest> serializer =
-                                  ProtoRestSerializer.create();
-                              return fields;
-                            }
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<GetTargetGrpcProxyRequest> serializer =
+                                ProtoRestSerializer.create();
+                            return fields;
                           })
-                      .setRequestBodyExtractor(
-                          new FieldsExtractor<GetTargetGrpcProxyRequest, String>() {
-                            @Override
-                            public String extract(GetTargetGrpcProxyRequest request) {
-                              return null;
-                            }
-                          })
+                      .setRequestBodyExtractor(request -> null)
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<TargetGrpcProxy>newBuilder()
@@ -165,43 +134,29 @@ public class HttpJsonTargetGrpcProxiesStub extends TargetGrpcProxiesStub {
                   ProtoMessageRequestFormatter.<InsertTargetGrpcProxyRequest>newBuilder()
                       .setPath(
                           "/compute/v1/projects/{project}/global/targetGrpcProxies",
-                          new FieldsExtractor<InsertTargetGrpcProxyRequest, Map<String, String>>() {
-                            @Override
-                            public Map<String, String> extract(
-                                InsertTargetGrpcProxyRequest request) {
-                              Map<String, String> fields = new HashMap<>();
-                              ProtoRestSerializer<InsertTargetGrpcProxyRequest> serializer =
-                                  ProtoRestSerializer.create();
-                              serializer.putPathParam(fields, "project", request.getProject());
-                              return fields;
-                            }
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<InsertTargetGrpcProxyRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "project", request.getProject());
+                            return fields;
                           })
                       .setQueryParamsExtractor(
-                          new FieldsExtractor<
-                              InsertTargetGrpcProxyRequest, Map<String, List<String>>>() {
-                            @Override
-                            public Map<String, List<String>> extract(
-                                InsertTargetGrpcProxyRequest request) {
-                              Map<String, List<String>> fields = new HashMap<>();
-                              ProtoRestSerializer<InsertTargetGrpcProxyRequest> serializer =
-                                  ProtoRestSerializer.create();
-                              if (request.hasRequestId()) {
-                                serializer.putQueryParam(
-                                    fields, "requestId", request.getRequestId());
-                              }
-                              return fields;
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<InsertTargetGrpcProxyRequest> serializer =
+                                ProtoRestSerializer.create();
+                            if (request.hasRequestId()) {
+                              serializer.putQueryParam(fields, "requestId", request.getRequestId());
                             }
+                            return fields;
                           })
                       .setRequestBodyExtractor(
-                          new FieldsExtractor<InsertTargetGrpcProxyRequest, String>() {
-                            @Override
-                            public String extract(InsertTargetGrpcProxyRequest request) {
-                              return ProtoRestSerializer.create()
+                          request ->
+                              ProtoRestSerializer.create()
                                   .toBody(
                                       "targetGrpcProxyResource",
-                                      request.getTargetGrpcProxyResource());
-                            }
-                          })
+                                      request.getTargetGrpcProxyResource()))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -218,56 +173,40 @@ public class HttpJsonTargetGrpcProxiesStub extends TargetGrpcProxiesStub {
                   ProtoMessageRequestFormatter.<ListTargetGrpcProxiesRequest>newBuilder()
                       .setPath(
                           "/compute/v1/projects/{project}/global/targetGrpcProxies",
-                          new FieldsExtractor<ListTargetGrpcProxiesRequest, Map<String, String>>() {
-                            @Override
-                            public Map<String, String> extract(
-                                ListTargetGrpcProxiesRequest request) {
-                              Map<String, String> fields = new HashMap<>();
-                              ProtoRestSerializer<ListTargetGrpcProxiesRequest> serializer =
-                                  ProtoRestSerializer.create();
-                              serializer.putPathParam(fields, "project", request.getProject());
-                              return fields;
-                            }
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<ListTargetGrpcProxiesRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "project", request.getProject());
+                            return fields;
                           })
                       .setQueryParamsExtractor(
-                          new FieldsExtractor<
-                              ListTargetGrpcProxiesRequest, Map<String, List<String>>>() {
-                            @Override
-                            public Map<String, List<String>> extract(
-                                ListTargetGrpcProxiesRequest request) {
-                              Map<String, List<String>> fields = new HashMap<>();
-                              ProtoRestSerializer<ListTargetGrpcProxiesRequest> serializer =
-                                  ProtoRestSerializer.create();
-                              if (request.hasFilter()) {
-                                serializer.putQueryParam(fields, "filter", request.getFilter());
-                              }
-                              if (request.hasMaxResults()) {
-                                serializer.putQueryParam(
-                                    fields, "maxResults", request.getMaxResults());
-                              }
-                              if (request.hasOrderBy()) {
-                                serializer.putQueryParam(fields, "orderBy", request.getOrderBy());
-                              }
-                              if (request.hasPageToken()) {
-                                serializer.putQueryParam(
-                                    fields, "pageToken", request.getPageToken());
-                              }
-                              if (request.hasReturnPartialSuccess()) {
-                                serializer.putQueryParam(
-                                    fields,
-                                    "returnPartialSuccess",
-                                    request.getReturnPartialSuccess());
-                              }
-                              return fields;
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<ListTargetGrpcProxiesRequest> serializer =
+                                ProtoRestSerializer.create();
+                            if (request.hasFilter()) {
+                              serializer.putQueryParam(fields, "filter", request.getFilter());
                             }
-                          })
-                      .setRequestBodyExtractor(
-                          new FieldsExtractor<ListTargetGrpcProxiesRequest, String>() {
-                            @Override
-                            public String extract(ListTargetGrpcProxiesRequest request) {
-                              return null;
+                            if (request.hasMaxResults()) {
+                              serializer.putQueryParam(
+                                  fields, "maxResults", request.getMaxResults());
                             }
+                            if (request.hasOrderBy()) {
+                              serializer.putQueryParam(fields, "orderBy", request.getOrderBy());
+                            }
+                            if (request.hasPageToken()) {
+                              serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            }
+                            if (request.hasReturnPartialSuccess()) {
+                              serializer.putQueryParam(
+                                  fields,
+                                  "returnPartialSuccess",
+                                  request.getReturnPartialSuccess());
+                            }
+                            return fields;
                           })
+                      .setRequestBodyExtractor(request -> null)
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<TargetGrpcProxyList>newBuilder()
@@ -284,45 +223,31 @@ public class HttpJsonTargetGrpcProxiesStub extends TargetGrpcProxiesStub {
                   ProtoMessageRequestFormatter.<PatchTargetGrpcProxyRequest>newBuilder()
                       .setPath(
                           "/compute/v1/projects/{project}/global/targetGrpcProxies/{targetGrpcProxy}",
-                          new FieldsExtractor<PatchTargetGrpcProxyRequest, Map<String, String>>() {
-                            @Override
-                            public Map<String, String> extract(
-                                PatchTargetGrpcProxyRequest request) {
-                              Map<String, String> fields = new HashMap<>();
-                              ProtoRestSerializer<PatchTargetGrpcProxyRequest> serializer =
-                                  ProtoRestSerializer.create();
-                              serializer.putPathParam(fields, "project", request.getProject());
-                              serializer.putPathParam(
-                                  fields, "targetGrpcProxy", request.getTargetGrpcProxy());
-                              return fields;
-                            }
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<PatchTargetGrpcProxyRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "project", request.getProject());
+                            serializer.putPathParam(
+                                fields, "targetGrpcProxy", request.getTargetGrpcProxy());
+                            return fields;
                           })
                       .setQueryParamsExtractor(
-                          new FieldsExtractor<
-                              PatchTargetGrpcProxyRequest, Map<String, List<String>>>() {
-                            @Override
-                            public Map<String, List<String>> extract(
-                                PatchTargetGrpcProxyRequest request) {
-                              Map<String, List<String>> fields = new HashMap<>();
-                              ProtoRestSerializer<PatchTargetGrpcProxyRequest> serializer =
-                                  ProtoRestSerializer.create();
-                              if (request.hasRequestId()) {
-                                serializer.putQueryParam(
-                                    fields, "requestId", request.getRequestId());
-                              }
-                              return fields;
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<PatchTargetGrpcProxyRequest> serializer =
+                                ProtoRestSerializer.create();
+                            if (request.hasRequestId()) {
+                              serializer.putQueryParam(fields, "requestId", request.getRequestId());
                             }
+                            return fields;
                           })
                       .setRequestBodyExtractor(
-                          new FieldsExtractor<PatchTargetGrpcProxyRequest, String>() {
-                            @Override
-                            public String extract(PatchTargetGrpcProxyRequest request) {
-                              return ProtoRestSerializer.create()
+                          request ->
+                              ProtoRestSerializer.create()
                                   .toBody(
                                       "targetGrpcProxyResource",
-                                      request.getTargetGrpcProxyResource());
-                            }
-                          })
+                                      request.getTargetGrpcProxyResource()))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -466,7 +391,13 @@ public class HttpJsonTargetGrpcProxiesStub extends TargetGrpcProxiesStub {
 
   @Override
   public final void close() {
-    shutdown();
+    try {
+      backgroundResources.close();
+    } catch (RuntimeException e) {
+      throw e;
+    } catch (Exception e) {
+      throw new IllegalStateException("Failed to close resource", e);
+    }
   }
 
   @Override

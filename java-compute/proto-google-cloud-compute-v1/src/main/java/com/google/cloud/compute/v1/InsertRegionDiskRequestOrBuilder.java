@@ -71,7 +71,9 @@ public interface InsertRegionDiskRequestOrBuilder
    * Project ID for this request.
    * </pre>
    *
-   * <code>string project = 227560217 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>
+   * string project = 227560217 [(.google.api.field_behavior) = REQUIRED, (.google.cloud.operation_request_field) = "project"];
+   * </code>
    *
    * @return The project.
    */
@@ -83,7 +85,9 @@ public interface InsertRegionDiskRequestOrBuilder
    * Project ID for this request.
    * </pre>
    *
-   * <code>string project = 227560217 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>
+   * string project = 227560217 [(.google.api.field_behavior) = REQUIRED, (.google.cloud.operation_request_field) = "project"];
+   * </code>
    *
    * @return The bytes for project.
    */
@@ -96,7 +100,9 @@ public interface InsertRegionDiskRequestOrBuilder
    * Name of the region for this request.
    * </pre>
    *
-   * <code>string region = 138946292 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>
+   * string region = 138946292 [(.google.api.field_behavior) = REQUIRED, (.google.cloud.operation_request_field) = "region"];
+   * </code>
    *
    * @return The region.
    */
@@ -108,7 +114,9 @@ public interface InsertRegionDiskRequestOrBuilder
    * Name of the region for this request.
    * </pre>
    *
-   * <code>string region = 138946292 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>
+   * string region = 138946292 [(.google.api.field_behavior) = REQUIRED, (.google.cloud.operation_request_field) = "region"];
+   * </code>
    *
    * @return The bytes for region.
    */

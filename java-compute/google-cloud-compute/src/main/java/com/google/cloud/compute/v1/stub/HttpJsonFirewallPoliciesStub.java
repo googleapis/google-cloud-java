@@ -24,7 +24,6 @@ import com.google.api.core.InternalApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.httpjson.ApiMethodDescriptor;
-import com.google.api.gax.httpjson.FieldsExtractor;
 import com.google.api.gax.httpjson.HttpJsonCallSettings;
 import com.google.api.gax.httpjson.HttpJsonStubCallableFactory;
 import com.google.api.gax.httpjson.ProtoMessageRequestFormatter;
@@ -84,51 +83,36 @@ public class HttpJsonFirewallPoliciesStub extends FirewallPoliciesStub {
                   ProtoMessageRequestFormatter.<AddAssociationFirewallPolicyRequest>newBuilder()
                       .setPath(
                           "/compute/v1/locations/global/firewallPolicies/{firewallPolicy}/addAssociation",
-                          new FieldsExtractor<
-                              AddAssociationFirewallPolicyRequest, Map<String, String>>() {
-                            @Override
-                            public Map<String, String> extract(
-                                AddAssociationFirewallPolicyRequest request) {
-                              Map<String, String> fields = new HashMap<>();
-                              ProtoRestSerializer<AddAssociationFirewallPolicyRequest> serializer =
-                                  ProtoRestSerializer.create();
-                              serializer.putPathParam(
-                                  fields, "firewallPolicy", request.getFirewallPolicy());
-                              return fields;
-                            }
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<AddAssociationFirewallPolicyRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(
+                                fields, "firewallPolicy", request.getFirewallPolicy());
+                            return fields;
                           })
                       .setQueryParamsExtractor(
-                          new FieldsExtractor<
-                              AddAssociationFirewallPolicyRequest, Map<String, List<String>>>() {
-                            @Override
-                            public Map<String, List<String>> extract(
-                                AddAssociationFirewallPolicyRequest request) {
-                              Map<String, List<String>> fields = new HashMap<>();
-                              ProtoRestSerializer<AddAssociationFirewallPolicyRequest> serializer =
-                                  ProtoRestSerializer.create();
-                              if (request.hasReplaceExistingAssociation()) {
-                                serializer.putQueryParam(
-                                    fields,
-                                    "replaceExistingAssociation",
-                                    request.getReplaceExistingAssociation());
-                              }
-                              if (request.hasRequestId()) {
-                                serializer.putQueryParam(
-                                    fields, "requestId", request.getRequestId());
-                              }
-                              return fields;
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<AddAssociationFirewallPolicyRequest> serializer =
+                                ProtoRestSerializer.create();
+                            if (request.hasReplaceExistingAssociation()) {
+                              serializer.putQueryParam(
+                                  fields,
+                                  "replaceExistingAssociation",
+                                  request.getReplaceExistingAssociation());
                             }
+                            if (request.hasRequestId()) {
+                              serializer.putQueryParam(fields, "requestId", request.getRequestId());
+                            }
+                            return fields;
                           })
                       .setRequestBodyExtractor(
-                          new FieldsExtractor<AddAssociationFirewallPolicyRequest, String>() {
-                            @Override
-                            public String extract(AddAssociationFirewallPolicyRequest request) {
-                              return ProtoRestSerializer.create()
+                          request ->
+                              ProtoRestSerializer.create()
                                   .toBody(
                                       "firewallPolicyAssociationResource",
-                                      request.getFirewallPolicyAssociationResource());
-                            }
-                          })
+                                      request.getFirewallPolicyAssociationResource()))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -145,44 +129,30 @@ public class HttpJsonFirewallPoliciesStub extends FirewallPoliciesStub {
                   ProtoMessageRequestFormatter.<AddRuleFirewallPolicyRequest>newBuilder()
                       .setPath(
                           "/compute/v1/locations/global/firewallPolicies/{firewallPolicy}/addRule",
-                          new FieldsExtractor<AddRuleFirewallPolicyRequest, Map<String, String>>() {
-                            @Override
-                            public Map<String, String> extract(
-                                AddRuleFirewallPolicyRequest request) {
-                              Map<String, String> fields = new HashMap<>();
-                              ProtoRestSerializer<AddRuleFirewallPolicyRequest> serializer =
-                                  ProtoRestSerializer.create();
-                              serializer.putPathParam(
-                                  fields, "firewallPolicy", request.getFirewallPolicy());
-                              return fields;
-                            }
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<AddRuleFirewallPolicyRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(
+                                fields, "firewallPolicy", request.getFirewallPolicy());
+                            return fields;
                           })
                       .setQueryParamsExtractor(
-                          new FieldsExtractor<
-                              AddRuleFirewallPolicyRequest, Map<String, List<String>>>() {
-                            @Override
-                            public Map<String, List<String>> extract(
-                                AddRuleFirewallPolicyRequest request) {
-                              Map<String, List<String>> fields = new HashMap<>();
-                              ProtoRestSerializer<AddRuleFirewallPolicyRequest> serializer =
-                                  ProtoRestSerializer.create();
-                              if (request.hasRequestId()) {
-                                serializer.putQueryParam(
-                                    fields, "requestId", request.getRequestId());
-                              }
-                              return fields;
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<AddRuleFirewallPolicyRequest> serializer =
+                                ProtoRestSerializer.create();
+                            if (request.hasRequestId()) {
+                              serializer.putQueryParam(fields, "requestId", request.getRequestId());
                             }
+                            return fields;
                           })
                       .setRequestBodyExtractor(
-                          new FieldsExtractor<AddRuleFirewallPolicyRequest, String>() {
-                            @Override
-                            public String extract(AddRuleFirewallPolicyRequest request) {
-                              return ProtoRestSerializer.create()
+                          request ->
+                              ProtoRestSerializer.create()
                                   .toBody(
                                       "firewallPolicyRuleResource",
-                                      request.getFirewallPolicyRuleResource());
-                            }
-                          })
+                                      request.getFirewallPolicyRuleResource()))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -199,48 +169,31 @@ public class HttpJsonFirewallPoliciesStub extends FirewallPoliciesStub {
                   ProtoMessageRequestFormatter.<CloneRulesFirewallPolicyRequest>newBuilder()
                       .setPath(
                           "/compute/v1/locations/global/firewallPolicies/{firewallPolicy}/cloneRules",
-                          new FieldsExtractor<
-                              CloneRulesFirewallPolicyRequest, Map<String, String>>() {
-                            @Override
-                            public Map<String, String> extract(
-                                CloneRulesFirewallPolicyRequest request) {
-                              Map<String, String> fields = new HashMap<>();
-                              ProtoRestSerializer<CloneRulesFirewallPolicyRequest> serializer =
-                                  ProtoRestSerializer.create();
-                              serializer.putPathParam(
-                                  fields, "firewallPolicy", request.getFirewallPolicy());
-                              return fields;
-                            }
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<CloneRulesFirewallPolicyRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(
+                                fields, "firewallPolicy", request.getFirewallPolicy());
+                            return fields;
                           })
                       .setQueryParamsExtractor(
-                          new FieldsExtractor<
-                              CloneRulesFirewallPolicyRequest, Map<String, List<String>>>() {
-                            @Override
-                            public Map<String, List<String>> extract(
-                                CloneRulesFirewallPolicyRequest request) {
-                              Map<String, List<String>> fields = new HashMap<>();
-                              ProtoRestSerializer<CloneRulesFirewallPolicyRequest> serializer =
-                                  ProtoRestSerializer.create();
-                              if (request.hasRequestId()) {
-                                serializer.putQueryParam(
-                                    fields, "requestId", request.getRequestId());
-                              }
-                              if (request.hasSourceFirewallPolicy()) {
-                                serializer.putQueryParam(
-                                    fields,
-                                    "sourceFirewallPolicy",
-                                    request.getSourceFirewallPolicy());
-                              }
-                              return fields;
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<CloneRulesFirewallPolicyRequest> serializer =
+                                ProtoRestSerializer.create();
+                            if (request.hasRequestId()) {
+                              serializer.putQueryParam(fields, "requestId", request.getRequestId());
                             }
-                          })
-                      .setRequestBodyExtractor(
-                          new FieldsExtractor<CloneRulesFirewallPolicyRequest, String>() {
-                            @Override
-                            public String extract(CloneRulesFirewallPolicyRequest request) {
-                              return null;
+                            if (request.hasSourceFirewallPolicy()) {
+                              serializer.putQueryParam(
+                                  fields,
+                                  "sourceFirewallPolicy",
+                                  request.getSourceFirewallPolicy());
                             }
+                            return fields;
                           })
+                      .setRequestBodyExtractor(request -> null)
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -257,41 +210,25 @@ public class HttpJsonFirewallPoliciesStub extends FirewallPoliciesStub {
                   ProtoMessageRequestFormatter.<DeleteFirewallPolicyRequest>newBuilder()
                       .setPath(
                           "/compute/v1/locations/global/firewallPolicies/{firewallPolicy}",
-                          new FieldsExtractor<DeleteFirewallPolicyRequest, Map<String, String>>() {
-                            @Override
-                            public Map<String, String> extract(
-                                DeleteFirewallPolicyRequest request) {
-                              Map<String, String> fields = new HashMap<>();
-                              ProtoRestSerializer<DeleteFirewallPolicyRequest> serializer =
-                                  ProtoRestSerializer.create();
-                              serializer.putPathParam(
-                                  fields, "firewallPolicy", request.getFirewallPolicy());
-                              return fields;
-                            }
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<DeleteFirewallPolicyRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(
+                                fields, "firewallPolicy", request.getFirewallPolicy());
+                            return fields;
                           })
                       .setQueryParamsExtractor(
-                          new FieldsExtractor<
-                              DeleteFirewallPolicyRequest, Map<String, List<String>>>() {
-                            @Override
-                            public Map<String, List<String>> extract(
-                                DeleteFirewallPolicyRequest request) {
-                              Map<String, List<String>> fields = new HashMap<>();
-                              ProtoRestSerializer<DeleteFirewallPolicyRequest> serializer =
-                                  ProtoRestSerializer.create();
-                              if (request.hasRequestId()) {
-                                serializer.putQueryParam(
-                                    fields, "requestId", request.getRequestId());
-                              }
-                              return fields;
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<DeleteFirewallPolicyRequest> serializer =
+                                ProtoRestSerializer.create();
+                            if (request.hasRequestId()) {
+                              serializer.putQueryParam(fields, "requestId", request.getRequestId());
                             }
+                            return fields;
                           })
-                      .setRequestBodyExtractor(
-                          new FieldsExtractor<DeleteFirewallPolicyRequest, String>() {
-                            @Override
-                            public String extract(DeleteFirewallPolicyRequest request) {
-                              return null;
-                            }
-                          })
+                      .setRequestBodyExtractor(request -> null)
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -308,36 +245,22 @@ public class HttpJsonFirewallPoliciesStub extends FirewallPoliciesStub {
                   ProtoMessageRequestFormatter.<GetFirewallPolicyRequest>newBuilder()
                       .setPath(
                           "/compute/v1/locations/global/firewallPolicies/{firewallPolicy}",
-                          new FieldsExtractor<GetFirewallPolicyRequest, Map<String, String>>() {
-                            @Override
-                            public Map<String, String> extract(GetFirewallPolicyRequest request) {
-                              Map<String, String> fields = new HashMap<>();
-                              ProtoRestSerializer<GetFirewallPolicyRequest> serializer =
-                                  ProtoRestSerializer.create();
-                              serializer.putPathParam(
-                                  fields, "firewallPolicy", request.getFirewallPolicy());
-                              return fields;
-                            }
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<GetFirewallPolicyRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(
+                                fields, "firewallPolicy", request.getFirewallPolicy());
+                            return fields;
                           })
                       .setQueryParamsExtractor(
-                          new FieldsExtractor<
-                              GetFirewallPolicyRequest, Map<String, List<String>>>() {
-                            @Override
-                            public Map<String, List<String>> extract(
-                                GetFirewallPolicyRequest request) {
-                              Map<String, List<String>> fields = new HashMap<>();
-                              ProtoRestSerializer<GetFirewallPolicyRequest> serializer =
-                                  ProtoRestSerializer.create();
-                              return fields;
-                            }
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<GetFirewallPolicyRequest> serializer =
+                                ProtoRestSerializer.create();
+                            return fields;
                           })
-                      .setRequestBodyExtractor(
-                          new FieldsExtractor<GetFirewallPolicyRequest, String>() {
-                            @Override
-                            public String extract(GetFirewallPolicyRequest request) {
-                              return null;
-                            }
-                          })
+                      .setRequestBodyExtractor(request -> null)
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<FirewallPolicy>newBuilder()
@@ -356,41 +279,25 @@ public class HttpJsonFirewallPoliciesStub extends FirewallPoliciesStub {
                   ProtoMessageRequestFormatter.<GetAssociationFirewallPolicyRequest>newBuilder()
                       .setPath(
                           "/compute/v1/locations/global/firewallPolicies/{firewallPolicy}/getAssociation",
-                          new FieldsExtractor<
-                              GetAssociationFirewallPolicyRequest, Map<String, String>>() {
-                            @Override
-                            public Map<String, String> extract(
-                                GetAssociationFirewallPolicyRequest request) {
-                              Map<String, String> fields = new HashMap<>();
-                              ProtoRestSerializer<GetAssociationFirewallPolicyRequest> serializer =
-                                  ProtoRestSerializer.create();
-                              serializer.putPathParam(
-                                  fields, "firewallPolicy", request.getFirewallPolicy());
-                              return fields;
-                            }
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<GetAssociationFirewallPolicyRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(
+                                fields, "firewallPolicy", request.getFirewallPolicy());
+                            return fields;
                           })
                       .setQueryParamsExtractor(
-                          new FieldsExtractor<
-                              GetAssociationFirewallPolicyRequest, Map<String, List<String>>>() {
-                            @Override
-                            public Map<String, List<String>> extract(
-                                GetAssociationFirewallPolicyRequest request) {
-                              Map<String, List<String>> fields = new HashMap<>();
-                              ProtoRestSerializer<GetAssociationFirewallPolicyRequest> serializer =
-                                  ProtoRestSerializer.create();
-                              if (request.hasName()) {
-                                serializer.putQueryParam(fields, "name", request.getName());
-                              }
-                              return fields;
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<GetAssociationFirewallPolicyRequest> serializer =
+                                ProtoRestSerializer.create();
+                            if (request.hasName()) {
+                              serializer.putQueryParam(fields, "name", request.getName());
                             }
+                            return fields;
                           })
-                      .setRequestBodyExtractor(
-                          new FieldsExtractor<GetAssociationFirewallPolicyRequest, String>() {
-                            @Override
-                            public String extract(GetAssociationFirewallPolicyRequest request) {
-                              return null;
-                            }
-                          })
+                      .setRequestBodyExtractor(request -> null)
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<FirewallPolicyAssociation>newBuilder()
@@ -407,43 +314,27 @@ public class HttpJsonFirewallPoliciesStub extends FirewallPoliciesStub {
                   ProtoMessageRequestFormatter.<GetIamPolicyFirewallPolicyRequest>newBuilder()
                       .setPath(
                           "/compute/v1/locations/global/firewallPolicies/{resource}/getIamPolicy",
-                          new FieldsExtractor<
-                              GetIamPolicyFirewallPolicyRequest, Map<String, String>>() {
-                            @Override
-                            public Map<String, String> extract(
-                                GetIamPolicyFirewallPolicyRequest request) {
-                              Map<String, String> fields = new HashMap<>();
-                              ProtoRestSerializer<GetIamPolicyFirewallPolicyRequest> serializer =
-                                  ProtoRestSerializer.create();
-                              serializer.putPathParam(fields, "resource", request.getResource());
-                              return fields;
-                            }
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<GetIamPolicyFirewallPolicyRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "resource", request.getResource());
+                            return fields;
                           })
                       .setQueryParamsExtractor(
-                          new FieldsExtractor<
-                              GetIamPolicyFirewallPolicyRequest, Map<String, List<String>>>() {
-                            @Override
-                            public Map<String, List<String>> extract(
-                                GetIamPolicyFirewallPolicyRequest request) {
-                              Map<String, List<String>> fields = new HashMap<>();
-                              ProtoRestSerializer<GetIamPolicyFirewallPolicyRequest> serializer =
-                                  ProtoRestSerializer.create();
-                              if (request.hasOptionsRequestedPolicyVersion()) {
-                                serializer.putQueryParam(
-                                    fields,
-                                    "optionsRequestedPolicyVersion",
-                                    request.getOptionsRequestedPolicyVersion());
-                              }
-                              return fields;
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<GetIamPolicyFirewallPolicyRequest> serializer =
+                                ProtoRestSerializer.create();
+                            if (request.hasOptionsRequestedPolicyVersion()) {
+                              serializer.putQueryParam(
+                                  fields,
+                                  "optionsRequestedPolicyVersion",
+                                  request.getOptionsRequestedPolicyVersion());
                             }
+                            return fields;
                           })
-                      .setRequestBodyExtractor(
-                          new FieldsExtractor<GetIamPolicyFirewallPolicyRequest, String>() {
-                            @Override
-                            public String extract(GetIamPolicyFirewallPolicyRequest request) {
-                              return null;
-                            }
-                          })
+                      .setRequestBodyExtractor(request -> null)
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Policy>newBuilder()
@@ -460,40 +351,25 @@ public class HttpJsonFirewallPoliciesStub extends FirewallPoliciesStub {
                   ProtoMessageRequestFormatter.<GetRuleFirewallPolicyRequest>newBuilder()
                       .setPath(
                           "/compute/v1/locations/global/firewallPolicies/{firewallPolicy}/getRule",
-                          new FieldsExtractor<GetRuleFirewallPolicyRequest, Map<String, String>>() {
-                            @Override
-                            public Map<String, String> extract(
-                                GetRuleFirewallPolicyRequest request) {
-                              Map<String, String> fields = new HashMap<>();
-                              ProtoRestSerializer<GetRuleFirewallPolicyRequest> serializer =
-                                  ProtoRestSerializer.create();
-                              serializer.putPathParam(
-                                  fields, "firewallPolicy", request.getFirewallPolicy());
-                              return fields;
-                            }
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<GetRuleFirewallPolicyRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(
+                                fields, "firewallPolicy", request.getFirewallPolicy());
+                            return fields;
                           })
                       .setQueryParamsExtractor(
-                          new FieldsExtractor<
-                              GetRuleFirewallPolicyRequest, Map<String, List<String>>>() {
-                            @Override
-                            public Map<String, List<String>> extract(
-                                GetRuleFirewallPolicyRequest request) {
-                              Map<String, List<String>> fields = new HashMap<>();
-                              ProtoRestSerializer<GetRuleFirewallPolicyRequest> serializer =
-                                  ProtoRestSerializer.create();
-                              if (request.hasPriority()) {
-                                serializer.putQueryParam(fields, "priority", request.getPriority());
-                              }
-                              return fields;
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<GetRuleFirewallPolicyRequest> serializer =
+                                ProtoRestSerializer.create();
+                            if (request.hasPriority()) {
+                              serializer.putQueryParam(fields, "priority", request.getPriority());
                             }
+                            return fields;
                           })
-                      .setRequestBodyExtractor(
-                          new FieldsExtractor<GetRuleFirewallPolicyRequest, String>() {
-                            @Override
-                            public String extract(GetRuleFirewallPolicyRequest request) {
-                              return null;
-                            }
-                          })
+                      .setRequestBodyExtractor(request -> null)
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<FirewallPolicyRule>newBuilder()
@@ -510,45 +386,31 @@ public class HttpJsonFirewallPoliciesStub extends FirewallPoliciesStub {
                   ProtoMessageRequestFormatter.<InsertFirewallPolicyRequest>newBuilder()
                       .setPath(
                           "/compute/v1/locations/global/firewallPolicies",
-                          new FieldsExtractor<InsertFirewallPolicyRequest, Map<String, String>>() {
-                            @Override
-                            public Map<String, String> extract(
-                                InsertFirewallPolicyRequest request) {
-                              Map<String, String> fields = new HashMap<>();
-                              ProtoRestSerializer<InsertFirewallPolicyRequest> serializer =
-                                  ProtoRestSerializer.create();
-                              return fields;
-                            }
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<InsertFirewallPolicyRequest> serializer =
+                                ProtoRestSerializer.create();
+                            return fields;
                           })
                       .setQueryParamsExtractor(
-                          new FieldsExtractor<
-                              InsertFirewallPolicyRequest, Map<String, List<String>>>() {
-                            @Override
-                            public Map<String, List<String>> extract(
-                                InsertFirewallPolicyRequest request) {
-                              Map<String, List<String>> fields = new HashMap<>();
-                              ProtoRestSerializer<InsertFirewallPolicyRequest> serializer =
-                                  ProtoRestSerializer.create();
-                              if (request.hasParentId()) {
-                                serializer.putQueryParam(fields, "parentId", request.getParentId());
-                              }
-                              if (request.hasRequestId()) {
-                                serializer.putQueryParam(
-                                    fields, "requestId", request.getRequestId());
-                              }
-                              return fields;
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<InsertFirewallPolicyRequest> serializer =
+                                ProtoRestSerializer.create();
+                            if (request.hasParentId()) {
+                              serializer.putQueryParam(fields, "parentId", request.getParentId());
                             }
+                            if (request.hasRequestId()) {
+                              serializer.putQueryParam(fields, "requestId", request.getRequestId());
+                            }
+                            return fields;
                           })
                       .setRequestBodyExtractor(
-                          new FieldsExtractor<InsertFirewallPolicyRequest, String>() {
-                            @Override
-                            public String extract(InsertFirewallPolicyRequest request) {
-                              return ProtoRestSerializer.create()
+                          request ->
+                              ProtoRestSerializer.create()
                                   .toBody(
                                       "firewallPolicyResource",
-                                      request.getFirewallPolicyResource());
-                            }
-                          })
+                                      request.getFirewallPolicyResource()))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -565,58 +427,42 @@ public class HttpJsonFirewallPoliciesStub extends FirewallPoliciesStub {
                   ProtoMessageRequestFormatter.<ListFirewallPoliciesRequest>newBuilder()
                       .setPath(
                           "/compute/v1/locations/global/firewallPolicies",
-                          new FieldsExtractor<ListFirewallPoliciesRequest, Map<String, String>>() {
-                            @Override
-                            public Map<String, String> extract(
-                                ListFirewallPoliciesRequest request) {
-                              Map<String, String> fields = new HashMap<>();
-                              ProtoRestSerializer<ListFirewallPoliciesRequest> serializer =
-                                  ProtoRestSerializer.create();
-                              return fields;
-                            }
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<ListFirewallPoliciesRequest> serializer =
+                                ProtoRestSerializer.create();
+                            return fields;
                           })
                       .setQueryParamsExtractor(
-                          new FieldsExtractor<
-                              ListFirewallPoliciesRequest, Map<String, List<String>>>() {
-                            @Override
-                            public Map<String, List<String>> extract(
-                                ListFirewallPoliciesRequest request) {
-                              Map<String, List<String>> fields = new HashMap<>();
-                              ProtoRestSerializer<ListFirewallPoliciesRequest> serializer =
-                                  ProtoRestSerializer.create();
-                              if (request.hasFilter()) {
-                                serializer.putQueryParam(fields, "filter", request.getFilter());
-                              }
-                              if (request.hasMaxResults()) {
-                                serializer.putQueryParam(
-                                    fields, "maxResults", request.getMaxResults());
-                              }
-                              if (request.hasOrderBy()) {
-                                serializer.putQueryParam(fields, "orderBy", request.getOrderBy());
-                              }
-                              if (request.hasPageToken()) {
-                                serializer.putQueryParam(
-                                    fields, "pageToken", request.getPageToken());
-                              }
-                              if (request.hasParentId()) {
-                                serializer.putQueryParam(fields, "parentId", request.getParentId());
-                              }
-                              if (request.hasReturnPartialSuccess()) {
-                                serializer.putQueryParam(
-                                    fields,
-                                    "returnPartialSuccess",
-                                    request.getReturnPartialSuccess());
-                              }
-                              return fields;
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<ListFirewallPoliciesRequest> serializer =
+                                ProtoRestSerializer.create();
+                            if (request.hasFilter()) {
+                              serializer.putQueryParam(fields, "filter", request.getFilter());
                             }
-                          })
-                      .setRequestBodyExtractor(
-                          new FieldsExtractor<ListFirewallPoliciesRequest, String>() {
-                            @Override
-                            public String extract(ListFirewallPoliciesRequest request) {
-                              return null;
+                            if (request.hasMaxResults()) {
+                              serializer.putQueryParam(
+                                  fields, "maxResults", request.getMaxResults());
                             }
+                            if (request.hasOrderBy()) {
+                              serializer.putQueryParam(fields, "orderBy", request.getOrderBy());
+                            }
+                            if (request.hasPageToken()) {
+                              serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            }
+                            if (request.hasParentId()) {
+                              serializer.putQueryParam(fields, "parentId", request.getParentId());
+                            }
+                            if (request.hasReturnPartialSuccess()) {
+                              serializer.putQueryParam(
+                                  fields,
+                                  "returnPartialSuccess",
+                                  request.getReturnPartialSuccess());
+                            }
+                            return fields;
                           })
+                      .setRequestBodyExtractor(request -> null)
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<FirewallPolicyList>newBuilder()
@@ -636,40 +482,24 @@ public class HttpJsonFirewallPoliciesStub extends FirewallPoliciesStub {
                   ProtoMessageRequestFormatter.<ListAssociationsFirewallPolicyRequest>newBuilder()
                       .setPath(
                           "/compute/v1/locations/global/firewallPolicies/listAssociations",
-                          new FieldsExtractor<
-                              ListAssociationsFirewallPolicyRequest, Map<String, String>>() {
-                            @Override
-                            public Map<String, String> extract(
-                                ListAssociationsFirewallPolicyRequest request) {
-                              Map<String, String> fields = new HashMap<>();
-                              ProtoRestSerializer<ListAssociationsFirewallPolicyRequest>
-                                  serializer = ProtoRestSerializer.create();
-                              return fields;
-                            }
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<ListAssociationsFirewallPolicyRequest> serializer =
+                                ProtoRestSerializer.create();
+                            return fields;
                           })
                       .setQueryParamsExtractor(
-                          new FieldsExtractor<
-                              ListAssociationsFirewallPolicyRequest, Map<String, List<String>>>() {
-                            @Override
-                            public Map<String, List<String>> extract(
-                                ListAssociationsFirewallPolicyRequest request) {
-                              Map<String, List<String>> fields = new HashMap<>();
-                              ProtoRestSerializer<ListAssociationsFirewallPolicyRequest>
-                                  serializer = ProtoRestSerializer.create();
-                              if (request.hasTargetResource()) {
-                                serializer.putQueryParam(
-                                    fields, "targetResource", request.getTargetResource());
-                              }
-                              return fields;
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<ListAssociationsFirewallPolicyRequest> serializer =
+                                ProtoRestSerializer.create();
+                            if (request.hasTargetResource()) {
+                              serializer.putQueryParam(
+                                  fields, "targetResource", request.getTargetResource());
                             }
+                            return fields;
                           })
-                      .setRequestBodyExtractor(
-                          new FieldsExtractor<ListAssociationsFirewallPolicyRequest, String>() {
-                            @Override
-                            public String extract(ListAssociationsFirewallPolicyRequest request) {
-                              return null;
-                            }
-                          })
+                      .setRequestBodyExtractor(request -> null)
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<FirewallPoliciesListAssociationsResponse>newBuilder()
@@ -687,43 +517,28 @@ public class HttpJsonFirewallPoliciesStub extends FirewallPoliciesStub {
                   ProtoMessageRequestFormatter.<MoveFirewallPolicyRequest>newBuilder()
                       .setPath(
                           "/compute/v1/locations/global/firewallPolicies/{firewallPolicy}/move",
-                          new FieldsExtractor<MoveFirewallPolicyRequest, Map<String, String>>() {
-                            @Override
-                            public Map<String, String> extract(MoveFirewallPolicyRequest request) {
-                              Map<String, String> fields = new HashMap<>();
-                              ProtoRestSerializer<MoveFirewallPolicyRequest> serializer =
-                                  ProtoRestSerializer.create();
-                              serializer.putPathParam(
-                                  fields, "firewallPolicy", request.getFirewallPolicy());
-                              return fields;
-                            }
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<MoveFirewallPolicyRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(
+                                fields, "firewallPolicy", request.getFirewallPolicy());
+                            return fields;
                           })
                       .setQueryParamsExtractor(
-                          new FieldsExtractor<
-                              MoveFirewallPolicyRequest, Map<String, List<String>>>() {
-                            @Override
-                            public Map<String, List<String>> extract(
-                                MoveFirewallPolicyRequest request) {
-                              Map<String, List<String>> fields = new HashMap<>();
-                              ProtoRestSerializer<MoveFirewallPolicyRequest> serializer =
-                                  ProtoRestSerializer.create();
-                              if (request.hasParentId()) {
-                                serializer.putQueryParam(fields, "parentId", request.getParentId());
-                              }
-                              if (request.hasRequestId()) {
-                                serializer.putQueryParam(
-                                    fields, "requestId", request.getRequestId());
-                              }
-                              return fields;
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<MoveFirewallPolicyRequest> serializer =
+                                ProtoRestSerializer.create();
+                            if (request.hasParentId()) {
+                              serializer.putQueryParam(fields, "parentId", request.getParentId());
                             }
-                          })
-                      .setRequestBodyExtractor(
-                          new FieldsExtractor<MoveFirewallPolicyRequest, String>() {
-                            @Override
-                            public String extract(MoveFirewallPolicyRequest request) {
-                              return null;
+                            if (request.hasRequestId()) {
+                              serializer.putQueryParam(fields, "requestId", request.getRequestId());
                             }
+                            return fields;
                           })
+                      .setRequestBodyExtractor(request -> null)
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -740,43 +555,30 @@ public class HttpJsonFirewallPoliciesStub extends FirewallPoliciesStub {
                   ProtoMessageRequestFormatter.<PatchFirewallPolicyRequest>newBuilder()
                       .setPath(
                           "/compute/v1/locations/global/firewallPolicies/{firewallPolicy}",
-                          new FieldsExtractor<PatchFirewallPolicyRequest, Map<String, String>>() {
-                            @Override
-                            public Map<String, String> extract(PatchFirewallPolicyRequest request) {
-                              Map<String, String> fields = new HashMap<>();
-                              ProtoRestSerializer<PatchFirewallPolicyRequest> serializer =
-                                  ProtoRestSerializer.create();
-                              serializer.putPathParam(
-                                  fields, "firewallPolicy", request.getFirewallPolicy());
-                              return fields;
-                            }
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<PatchFirewallPolicyRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(
+                                fields, "firewallPolicy", request.getFirewallPolicy());
+                            return fields;
                           })
                       .setQueryParamsExtractor(
-                          new FieldsExtractor<
-                              PatchFirewallPolicyRequest, Map<String, List<String>>>() {
-                            @Override
-                            public Map<String, List<String>> extract(
-                                PatchFirewallPolicyRequest request) {
-                              Map<String, List<String>> fields = new HashMap<>();
-                              ProtoRestSerializer<PatchFirewallPolicyRequest> serializer =
-                                  ProtoRestSerializer.create();
-                              if (request.hasRequestId()) {
-                                serializer.putQueryParam(
-                                    fields, "requestId", request.getRequestId());
-                              }
-                              return fields;
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<PatchFirewallPolicyRequest> serializer =
+                                ProtoRestSerializer.create();
+                            if (request.hasRequestId()) {
+                              serializer.putQueryParam(fields, "requestId", request.getRequestId());
                             }
+                            return fields;
                           })
                       .setRequestBodyExtractor(
-                          new FieldsExtractor<PatchFirewallPolicyRequest, String>() {
-                            @Override
-                            public String extract(PatchFirewallPolicyRequest request) {
-                              return ProtoRestSerializer.create()
+                          request ->
+                              ProtoRestSerializer.create()
                                   .toBody(
                                       "firewallPolicyResource",
-                                      request.getFirewallPolicyResource());
-                            }
-                          })
+                                      request.getFirewallPolicyResource()))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -793,48 +595,33 @@ public class HttpJsonFirewallPoliciesStub extends FirewallPoliciesStub {
                   ProtoMessageRequestFormatter.<PatchRuleFirewallPolicyRequest>newBuilder()
                       .setPath(
                           "/compute/v1/locations/global/firewallPolicies/{firewallPolicy}/patchRule",
-                          new FieldsExtractor<
-                              PatchRuleFirewallPolicyRequest, Map<String, String>>() {
-                            @Override
-                            public Map<String, String> extract(
-                                PatchRuleFirewallPolicyRequest request) {
-                              Map<String, String> fields = new HashMap<>();
-                              ProtoRestSerializer<PatchRuleFirewallPolicyRequest> serializer =
-                                  ProtoRestSerializer.create();
-                              serializer.putPathParam(
-                                  fields, "firewallPolicy", request.getFirewallPolicy());
-                              return fields;
-                            }
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<PatchRuleFirewallPolicyRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(
+                                fields, "firewallPolicy", request.getFirewallPolicy());
+                            return fields;
                           })
                       .setQueryParamsExtractor(
-                          new FieldsExtractor<
-                              PatchRuleFirewallPolicyRequest, Map<String, List<String>>>() {
-                            @Override
-                            public Map<String, List<String>> extract(
-                                PatchRuleFirewallPolicyRequest request) {
-                              Map<String, List<String>> fields = new HashMap<>();
-                              ProtoRestSerializer<PatchRuleFirewallPolicyRequest> serializer =
-                                  ProtoRestSerializer.create();
-                              if (request.hasPriority()) {
-                                serializer.putQueryParam(fields, "priority", request.getPriority());
-                              }
-                              if (request.hasRequestId()) {
-                                serializer.putQueryParam(
-                                    fields, "requestId", request.getRequestId());
-                              }
-                              return fields;
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<PatchRuleFirewallPolicyRequest> serializer =
+                                ProtoRestSerializer.create();
+                            if (request.hasPriority()) {
+                              serializer.putQueryParam(fields, "priority", request.getPriority());
                             }
+                            if (request.hasRequestId()) {
+                              serializer.putQueryParam(fields, "requestId", request.getRequestId());
+                            }
+                            return fields;
                           })
                       .setRequestBodyExtractor(
-                          new FieldsExtractor<PatchRuleFirewallPolicyRequest, String>() {
-                            @Override
-                            public String extract(PatchRuleFirewallPolicyRequest request) {
-                              return ProtoRestSerializer.create()
+                          request ->
+                              ProtoRestSerializer.create()
                                   .toBody(
                                       "firewallPolicyRuleResource",
-                                      request.getFirewallPolicyRuleResource());
-                            }
-                          })
+                                      request.getFirewallPolicyRuleResource()))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -851,45 +638,28 @@ public class HttpJsonFirewallPoliciesStub extends FirewallPoliciesStub {
                   ProtoMessageRequestFormatter.<RemoveAssociationFirewallPolicyRequest>newBuilder()
                       .setPath(
                           "/compute/v1/locations/global/firewallPolicies/{firewallPolicy}/removeAssociation",
-                          new FieldsExtractor<
-                              RemoveAssociationFirewallPolicyRequest, Map<String, String>>() {
-                            @Override
-                            public Map<String, String> extract(
-                                RemoveAssociationFirewallPolicyRequest request) {
-                              Map<String, String> fields = new HashMap<>();
-                              ProtoRestSerializer<RemoveAssociationFirewallPolicyRequest>
-                                  serializer = ProtoRestSerializer.create();
-                              serializer.putPathParam(
-                                  fields, "firewallPolicy", request.getFirewallPolicy());
-                              return fields;
-                            }
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<RemoveAssociationFirewallPolicyRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(
+                                fields, "firewallPolicy", request.getFirewallPolicy());
+                            return fields;
                           })
                       .setQueryParamsExtractor(
-                          new FieldsExtractor<
-                              RemoveAssociationFirewallPolicyRequest, Map<String, List<String>>>() {
-                            @Override
-                            public Map<String, List<String>> extract(
-                                RemoveAssociationFirewallPolicyRequest request) {
-                              Map<String, List<String>> fields = new HashMap<>();
-                              ProtoRestSerializer<RemoveAssociationFirewallPolicyRequest>
-                                  serializer = ProtoRestSerializer.create();
-                              if (request.hasName()) {
-                                serializer.putQueryParam(fields, "name", request.getName());
-                              }
-                              if (request.hasRequestId()) {
-                                serializer.putQueryParam(
-                                    fields, "requestId", request.getRequestId());
-                              }
-                              return fields;
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<RemoveAssociationFirewallPolicyRequest> serializer =
+                                ProtoRestSerializer.create();
+                            if (request.hasName()) {
+                              serializer.putQueryParam(fields, "name", request.getName());
                             }
-                          })
-                      .setRequestBodyExtractor(
-                          new FieldsExtractor<RemoveAssociationFirewallPolicyRequest, String>() {
-                            @Override
-                            public String extract(RemoveAssociationFirewallPolicyRequest request) {
-                              return null;
+                            if (request.hasRequestId()) {
+                              serializer.putQueryParam(fields, "requestId", request.getRequestId());
                             }
+                            return fields;
                           })
+                      .setRequestBodyExtractor(request -> null)
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -906,45 +676,28 @@ public class HttpJsonFirewallPoliciesStub extends FirewallPoliciesStub {
                   ProtoMessageRequestFormatter.<RemoveRuleFirewallPolicyRequest>newBuilder()
                       .setPath(
                           "/compute/v1/locations/global/firewallPolicies/{firewallPolicy}/removeRule",
-                          new FieldsExtractor<
-                              RemoveRuleFirewallPolicyRequest, Map<String, String>>() {
-                            @Override
-                            public Map<String, String> extract(
-                                RemoveRuleFirewallPolicyRequest request) {
-                              Map<String, String> fields = new HashMap<>();
-                              ProtoRestSerializer<RemoveRuleFirewallPolicyRequest> serializer =
-                                  ProtoRestSerializer.create();
-                              serializer.putPathParam(
-                                  fields, "firewallPolicy", request.getFirewallPolicy());
-                              return fields;
-                            }
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<RemoveRuleFirewallPolicyRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(
+                                fields, "firewallPolicy", request.getFirewallPolicy());
+                            return fields;
                           })
                       .setQueryParamsExtractor(
-                          new FieldsExtractor<
-                              RemoveRuleFirewallPolicyRequest, Map<String, List<String>>>() {
-                            @Override
-                            public Map<String, List<String>> extract(
-                                RemoveRuleFirewallPolicyRequest request) {
-                              Map<String, List<String>> fields = new HashMap<>();
-                              ProtoRestSerializer<RemoveRuleFirewallPolicyRequest> serializer =
-                                  ProtoRestSerializer.create();
-                              if (request.hasPriority()) {
-                                serializer.putQueryParam(fields, "priority", request.getPriority());
-                              }
-                              if (request.hasRequestId()) {
-                                serializer.putQueryParam(
-                                    fields, "requestId", request.getRequestId());
-                              }
-                              return fields;
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<RemoveRuleFirewallPolicyRequest> serializer =
+                                ProtoRestSerializer.create();
+                            if (request.hasPriority()) {
+                              serializer.putQueryParam(fields, "priority", request.getPriority());
                             }
-                          })
-                      .setRequestBodyExtractor(
-                          new FieldsExtractor<RemoveRuleFirewallPolicyRequest, String>() {
-                            @Override
-                            public String extract(RemoveRuleFirewallPolicyRequest request) {
-                              return null;
+                            if (request.hasRequestId()) {
+                              serializer.putQueryParam(fields, "requestId", request.getRequestId());
                             }
+                            return fields;
                           })
+                      .setRequestBodyExtractor(request -> null)
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -961,40 +714,26 @@ public class HttpJsonFirewallPoliciesStub extends FirewallPoliciesStub {
                   ProtoMessageRequestFormatter.<SetIamPolicyFirewallPolicyRequest>newBuilder()
                       .setPath(
                           "/compute/v1/locations/global/firewallPolicies/{resource}/setIamPolicy",
-                          new FieldsExtractor<
-                              SetIamPolicyFirewallPolicyRequest, Map<String, String>>() {
-                            @Override
-                            public Map<String, String> extract(
-                                SetIamPolicyFirewallPolicyRequest request) {
-                              Map<String, String> fields = new HashMap<>();
-                              ProtoRestSerializer<SetIamPolicyFirewallPolicyRequest> serializer =
-                                  ProtoRestSerializer.create();
-                              serializer.putPathParam(fields, "resource", request.getResource());
-                              return fields;
-                            }
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<SetIamPolicyFirewallPolicyRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "resource", request.getResource());
+                            return fields;
                           })
                       .setQueryParamsExtractor(
-                          new FieldsExtractor<
-                              SetIamPolicyFirewallPolicyRequest, Map<String, List<String>>>() {
-                            @Override
-                            public Map<String, List<String>> extract(
-                                SetIamPolicyFirewallPolicyRequest request) {
-                              Map<String, List<String>> fields = new HashMap<>();
-                              ProtoRestSerializer<SetIamPolicyFirewallPolicyRequest> serializer =
-                                  ProtoRestSerializer.create();
-                              return fields;
-                            }
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<SetIamPolicyFirewallPolicyRequest> serializer =
+                                ProtoRestSerializer.create();
+                            return fields;
                           })
                       .setRequestBodyExtractor(
-                          new FieldsExtractor<SetIamPolicyFirewallPolicyRequest, String>() {
-                            @Override
-                            public String extract(SetIamPolicyFirewallPolicyRequest request) {
-                              return ProtoRestSerializer.create()
+                          request ->
+                              ProtoRestSerializer.create()
                                   .toBody(
                                       "globalOrganizationSetPolicyRequestResource",
-                                      request.getGlobalOrganizationSetPolicyRequestResource());
-                            }
-                          })
+                                      request.getGlobalOrganizationSetPolicyRequestResource()))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Policy>newBuilder()
@@ -1013,41 +752,26 @@ public class HttpJsonFirewallPoliciesStub extends FirewallPoliciesStub {
                   ProtoMessageRequestFormatter.<TestIamPermissionsFirewallPolicyRequest>newBuilder()
                       .setPath(
                           "/compute/v1/locations/global/firewallPolicies/{resource}/testIamPermissions",
-                          new FieldsExtractor<
-                              TestIamPermissionsFirewallPolicyRequest, Map<String, String>>() {
-                            @Override
-                            public Map<String, String> extract(
-                                TestIamPermissionsFirewallPolicyRequest request) {
-                              Map<String, String> fields = new HashMap<>();
-                              ProtoRestSerializer<TestIamPermissionsFirewallPolicyRequest>
-                                  serializer = ProtoRestSerializer.create();
-                              serializer.putPathParam(fields, "resource", request.getResource());
-                              return fields;
-                            }
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<TestIamPermissionsFirewallPolicyRequest>
+                                serializer = ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "resource", request.getResource());
+                            return fields;
                           })
                       .setQueryParamsExtractor(
-                          new FieldsExtractor<
-                              TestIamPermissionsFirewallPolicyRequest,
-                              Map<String, List<String>>>() {
-                            @Override
-                            public Map<String, List<String>> extract(
-                                TestIamPermissionsFirewallPolicyRequest request) {
-                              Map<String, List<String>> fields = new HashMap<>();
-                              ProtoRestSerializer<TestIamPermissionsFirewallPolicyRequest>
-                                  serializer = ProtoRestSerializer.create();
-                              return fields;
-                            }
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<TestIamPermissionsFirewallPolicyRequest>
+                                serializer = ProtoRestSerializer.create();
+                            return fields;
                           })
                       .setRequestBodyExtractor(
-                          new FieldsExtractor<TestIamPermissionsFirewallPolicyRequest, String>() {
-                            @Override
-                            public String extract(TestIamPermissionsFirewallPolicyRequest request) {
-                              return ProtoRestSerializer.create()
+                          request ->
+                              ProtoRestSerializer.create()
                                   .toBody(
                                       "testPermissionsRequestResource",
-                                      request.getTestPermissionsRequestResource());
-                            }
-                          })
+                                      request.getTestPermissionsRequestResource()))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<TestPermissionsResponse>newBuilder()
@@ -1399,7 +1123,13 @@ public class HttpJsonFirewallPoliciesStub extends FirewallPoliciesStub {
 
   @Override
   public final void close() {
-    shutdown();
+    try {
+      backgroundResources.close();
+    } catch (RuntimeException e) {
+      throw e;
+    } catch (Exception e) {
+      throw new IllegalStateException("Failed to close resource", e);
+    }
   }
 
   @Override

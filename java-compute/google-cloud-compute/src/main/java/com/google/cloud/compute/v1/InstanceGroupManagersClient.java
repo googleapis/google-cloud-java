@@ -16,7 +16,6 @@
 
 package com.google.cloud.compute.v1;
 
-import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
 import com.google.api.core.BetaApi;
@@ -2708,12 +2707,7 @@ public class InstanceGroupManagersClient implements BackgroundResource {
           AggregatedListPage.createEmptyPage().createPageAsync(context, futureResponse);
       return ApiFutures.transform(
           futurePage,
-          new ApiFunction<AggregatedListPage, AggregatedListPagedResponse>() {
-            @Override
-            public AggregatedListPagedResponse apply(AggregatedListPage input) {
-              return new AggregatedListPagedResponse(input);
-            }
-          },
+          input -> new AggregatedListPagedResponse(input),
           MoreExecutors.directExecutor());
     }
 
@@ -2805,14 +2799,7 @@ public class InstanceGroupManagersClient implements BackgroundResource {
       ApiFuture<ListPage> futurePage =
           ListPage.createEmptyPage().createPageAsync(context, futureResponse);
       return ApiFutures.transform(
-          futurePage,
-          new ApiFunction<ListPage, ListPagedResponse>() {
-            @Override
-            public ListPagedResponse apply(ListPage input) {
-              return new ListPagedResponse(input);
-            }
-          },
-          MoreExecutors.directExecutor());
+          futurePage, input -> new ListPagedResponse(input), MoreExecutors.directExecutor());
     }
 
     private ListPagedResponse(ListPage page) {
@@ -2898,14 +2885,7 @@ public class InstanceGroupManagersClient implements BackgroundResource {
       ApiFuture<ListErrorsPage> futurePage =
           ListErrorsPage.createEmptyPage().createPageAsync(context, futureResponse);
       return ApiFutures.transform(
-          futurePage,
-          new ApiFunction<ListErrorsPage, ListErrorsPagedResponse>() {
-            @Override
-            public ListErrorsPagedResponse apply(ListErrorsPage input) {
-              return new ListErrorsPagedResponse(input);
-            }
-          },
-          MoreExecutors.directExecutor());
+          futurePage, input -> new ListErrorsPagedResponse(input), MoreExecutors.directExecutor());
     }
 
     private ListErrorsPagedResponse(ListErrorsPage page) {
@@ -2999,12 +2979,7 @@ public class InstanceGroupManagersClient implements BackgroundResource {
           ListManagedInstancesPage.createEmptyPage().createPageAsync(context, futureResponse);
       return ApiFutures.transform(
           futurePage,
-          new ApiFunction<ListManagedInstancesPage, ListManagedInstancesPagedResponse>() {
-            @Override
-            public ListManagedInstancesPagedResponse apply(ListManagedInstancesPage input) {
-              return new ListManagedInstancesPagedResponse(input);
-            }
-          },
+          input -> new ListManagedInstancesPagedResponse(input),
           MoreExecutors.directExecutor());
     }
 
@@ -3100,12 +3075,7 @@ public class InstanceGroupManagersClient implements BackgroundResource {
           ListPerInstanceConfigsPage.createEmptyPage().createPageAsync(context, futureResponse);
       return ApiFutures.transform(
           futurePage,
-          new ApiFunction<ListPerInstanceConfigsPage, ListPerInstanceConfigsPagedResponse>() {
-            @Override
-            public ListPerInstanceConfigsPagedResponse apply(ListPerInstanceConfigsPage input) {
-              return new ListPerInstanceConfigsPagedResponse(input);
-            }
-          },
+          input -> new ListPerInstanceConfigsPagedResponse(input),
           MoreExecutors.directExecutor());
     }
 

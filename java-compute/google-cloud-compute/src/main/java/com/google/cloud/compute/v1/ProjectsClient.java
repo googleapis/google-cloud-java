@@ -16,7 +16,6 @@
 
 package com.google.cloud.compute.v1;
 
-import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
 import com.google.api.core.BetaApi;
@@ -1284,12 +1283,7 @@ public class ProjectsClient implements BackgroundResource {
           GetXpnResourcesPage.createEmptyPage().createPageAsync(context, futureResponse);
       return ApiFutures.transform(
           futurePage,
-          new ApiFunction<GetXpnResourcesPage, GetXpnResourcesPagedResponse>() {
-            @Override
-            public GetXpnResourcesPagedResponse apply(GetXpnResourcesPage input) {
-              return new GetXpnResourcesPagedResponse(input);
-            }
-          },
+          input -> new GetXpnResourcesPagedResponse(input),
           MoreExecutors.directExecutor());
     }
 
@@ -1369,12 +1363,7 @@ public class ProjectsClient implements BackgroundResource {
           ListXpnHostsPage.createEmptyPage().createPageAsync(context, futureResponse);
       return ApiFutures.transform(
           futurePage,
-          new ApiFunction<ListXpnHostsPage, ListXpnHostsPagedResponse>() {
-            @Override
-            public ListXpnHostsPagedResponse apply(ListXpnHostsPage input) {
-              return new ListXpnHostsPagedResponse(input);
-            }
-          },
+          input -> new ListXpnHostsPagedResponse(input),
           MoreExecutors.directExecutor());
     }
 

@@ -22,7 +22,6 @@ import com.google.api.core.InternalApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.httpjson.ApiMethodDescriptor;
-import com.google.api.gax.httpjson.FieldsExtractor;
 import com.google.api.gax.httpjson.HttpJsonCallSettings;
 import com.google.api.gax.httpjson.HttpJsonStubCallableFactory;
 import com.google.api.gax.httpjson.ProtoMessageRequestFormatter;
@@ -59,34 +58,22 @@ public class HttpJsonLicenseCodesStub extends LicenseCodesStub {
               ProtoMessageRequestFormatter.<GetLicenseCodeRequest>newBuilder()
                   .setPath(
                       "/compute/v1/projects/{project}/global/licenseCodes/{licenseCode}",
-                      new FieldsExtractor<GetLicenseCodeRequest, Map<String, String>>() {
-                        @Override
-                        public Map<String, String> extract(GetLicenseCodeRequest request) {
-                          Map<String, String> fields = new HashMap<>();
-                          ProtoRestSerializer<GetLicenseCodeRequest> serializer =
-                              ProtoRestSerializer.create();
-                          serializer.putPathParam(fields, "licenseCode", request.getLicenseCode());
-                          serializer.putPathParam(fields, "project", request.getProject());
-                          return fields;
-                        }
+                      request -> {
+                        Map<String, String> fields = new HashMap<>();
+                        ProtoRestSerializer<GetLicenseCodeRequest> serializer =
+                            ProtoRestSerializer.create();
+                        serializer.putPathParam(fields, "licenseCode", request.getLicenseCode());
+                        serializer.putPathParam(fields, "project", request.getProject());
+                        return fields;
                       })
                   .setQueryParamsExtractor(
-                      new FieldsExtractor<GetLicenseCodeRequest, Map<String, List<String>>>() {
-                        @Override
-                        public Map<String, List<String>> extract(GetLicenseCodeRequest request) {
-                          Map<String, List<String>> fields = new HashMap<>();
-                          ProtoRestSerializer<GetLicenseCodeRequest> serializer =
-                              ProtoRestSerializer.create();
-                          return fields;
-                        }
+                      request -> {
+                        Map<String, List<String>> fields = new HashMap<>();
+                        ProtoRestSerializer<GetLicenseCodeRequest> serializer =
+                            ProtoRestSerializer.create();
+                        return fields;
                       })
-                  .setRequestBodyExtractor(
-                      new FieldsExtractor<GetLicenseCodeRequest, String>() {
-                        @Override
-                        public String extract(GetLicenseCodeRequest request) {
-                          return null;
-                        }
-                      })
+                  .setRequestBodyExtractor(request -> null)
                   .build())
           .setResponseParser(
               ProtoMessageResponseParser.<LicenseCode>newBuilder()
@@ -105,41 +92,27 @@ public class HttpJsonLicenseCodesStub extends LicenseCodesStub {
                   ProtoMessageRequestFormatter.<TestIamPermissionsLicenseCodeRequest>newBuilder()
                       .setPath(
                           "/compute/v1/projects/{project}/global/licenseCodes/{resource}/testIamPermissions",
-                          new FieldsExtractor<
-                              TestIamPermissionsLicenseCodeRequest, Map<String, String>>() {
-                            @Override
-                            public Map<String, String> extract(
-                                TestIamPermissionsLicenseCodeRequest request) {
-                              Map<String, String> fields = new HashMap<>();
-                              ProtoRestSerializer<TestIamPermissionsLicenseCodeRequest> serializer =
-                                  ProtoRestSerializer.create();
-                              serializer.putPathParam(fields, "project", request.getProject());
-                              serializer.putPathParam(fields, "resource", request.getResource());
-                              return fields;
-                            }
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<TestIamPermissionsLicenseCodeRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "project", request.getProject());
+                            serializer.putPathParam(fields, "resource", request.getResource());
+                            return fields;
                           })
                       .setQueryParamsExtractor(
-                          new FieldsExtractor<
-                              TestIamPermissionsLicenseCodeRequest, Map<String, List<String>>>() {
-                            @Override
-                            public Map<String, List<String>> extract(
-                                TestIamPermissionsLicenseCodeRequest request) {
-                              Map<String, List<String>> fields = new HashMap<>();
-                              ProtoRestSerializer<TestIamPermissionsLicenseCodeRequest> serializer =
-                                  ProtoRestSerializer.create();
-                              return fields;
-                            }
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<TestIamPermissionsLicenseCodeRequest> serializer =
+                                ProtoRestSerializer.create();
+                            return fields;
                           })
                       .setRequestBodyExtractor(
-                          new FieldsExtractor<TestIamPermissionsLicenseCodeRequest, String>() {
-                            @Override
-                            public String extract(TestIamPermissionsLicenseCodeRequest request) {
-                              return ProtoRestSerializer.create()
+                          request ->
+                              ProtoRestSerializer.create()
                                   .toBody(
                                       "testPermissionsRequestResource",
-                                      request.getTestPermissionsRequestResource());
-                            }
-                          })
+                                      request.getTestPermissionsRequestResource()))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<TestPermissionsResponse>newBuilder()
@@ -238,7 +211,13 @@ public class HttpJsonLicenseCodesStub extends LicenseCodesStub {
 
   @Override
   public final void close() {
-    shutdown();
+    try {
+      backgroundResources.close();
+    } catch (RuntimeException e) {
+      throw e;
+    } catch (Exception e) {
+      throw new IllegalStateException("Failed to close resource", e);
+    }
   }
 
   @Override

@@ -753,7 +753,8 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] If the operation fails, this field contains the HTTP error message that was returned, such as `NOT FOUND`.
    * </pre>
    *
-   * <code>string http_error_message = 202521945;</code>
+   * <code>string http_error_message = 202521945 [(.google.cloud.operation_field) = ERROR_MESSAGE];
+   * </code>
    *
    * @return Whether the httpErrorMessage field is set.
    */
@@ -768,7 +769,8 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] If the operation fails, this field contains the HTTP error message that was returned, such as `NOT FOUND`.
    * </pre>
    *
-   * <code>string http_error_message = 202521945;</code>
+   * <code>string http_error_message = 202521945 [(.google.cloud.operation_field) = ERROR_MESSAGE];
+   * </code>
    *
    * @return The httpErrorMessage.
    */
@@ -791,7 +793,8 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] If the operation fails, this field contains the HTTP error message that was returned, such as `NOT FOUND`.
    * </pre>
    *
-   * <code>string http_error_message = 202521945;</code>
+   * <code>string http_error_message = 202521945 [(.google.cloud.operation_field) = ERROR_MESSAGE];
+   * </code>
    *
    * @return The bytes for httpErrorMessage.
    */
@@ -817,7 +820,8 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] If the operation fails, this field contains the HTTP error status code that was returned. For example, a `404` means the resource was not found.
    * </pre>
    *
-   * <code>int32 http_error_status_code = 312345196;</code>
+   * <code>int32 http_error_status_code = 312345196 [(.google.cloud.operation_field) = ERROR_CODE];
+   * </code>
    *
    * @return Whether the httpErrorStatusCode field is set.
    */
@@ -832,7 +836,8 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] If the operation fails, this field contains the HTTP error status code that was returned. For example, a `404` means the resource was not found.
    * </pre>
    *
-   * <code>int32 http_error_status_code = 312345196;</code>
+   * <code>int32 http_error_status_code = 312345196 [(.google.cloud.operation_field) = ERROR_CODE];
+   * </code>
    *
    * @return The httpErrorStatusCode.
    */
@@ -1011,7 +1016,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] Name of the operation.
    * </pre>
    *
-   * <code>string name = 3373707;</code>
+   * <code>string name = 3373707 [(.google.cloud.operation_field) = NAME];</code>
    *
    * @return Whether the name field is set.
    */
@@ -1026,7 +1031,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] Name of the operation.
    * </pre>
    *
-   * <code>string name = 3373707;</code>
+   * <code>string name = 3373707 [(.google.cloud.operation_field) = NAME];</code>
    *
    * @return The name.
    */
@@ -1049,7 +1054,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] Name of the operation.
    * </pre>
    *
-   * <code>string name = 3373707;</code>
+   * <code>string name = 3373707 [(.google.cloud.operation_field) = NAME];</code>
    *
    * @return The bytes for name.
    */
@@ -1428,7 +1433,9 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] The status of the operation, which can be one of the following: `PENDING`, `RUNNING`, or `DONE`.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.Operation.Status status = 181260274;</code>
+   * <code>
+   * .google.cloud.compute.v1.Operation.Status status = 181260274 [(.google.cloud.operation_field) = STATUS];
+   * </code>
    *
    * @return Whether the status field is set.
    */
@@ -1443,7 +1450,9 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] The status of the operation, which can be one of the following: `PENDING`, `RUNNING`, or `DONE`.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.Operation.Status status = 181260274;</code>
+   * <code>
+   * .google.cloud.compute.v1.Operation.Status status = 181260274 [(.google.cloud.operation_field) = STATUS];
+   * </code>
    *
    * @return The enum numeric value on the wire for status.
    */
@@ -1458,7 +1467,9 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] The status of the operation, which can be one of the following: `PENDING`, `RUNNING`, or `DONE`.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.Operation.Status status = 181260274;</code>
+   * <code>
+   * .google.cloud.compute.v1.Operation.Status status = 181260274 [(.google.cloud.operation_field) = STATUS];
+   * </code>
    *
    * @return The status.
    */
@@ -3438,7 +3449,9 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] If the operation fails, this field contains the HTTP error message that was returned, such as `NOT FOUND`.
      * </pre>
      *
-     * <code>string http_error_message = 202521945;</code>
+     * <code>
+     * string http_error_message = 202521945 [(.google.cloud.operation_field) = ERROR_MESSAGE];
+     * </code>
      *
      * @return Whether the httpErrorMessage field is set.
      */
@@ -3452,7 +3465,9 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] If the operation fails, this field contains the HTTP error message that was returned, such as `NOT FOUND`.
      * </pre>
      *
-     * <code>string http_error_message = 202521945;</code>
+     * <code>
+     * string http_error_message = 202521945 [(.google.cloud.operation_field) = ERROR_MESSAGE];
+     * </code>
      *
      * @return The httpErrorMessage.
      */
@@ -3474,7 +3489,9 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] If the operation fails, this field contains the HTTP error message that was returned, such as `NOT FOUND`.
      * </pre>
      *
-     * <code>string http_error_message = 202521945;</code>
+     * <code>
+     * string http_error_message = 202521945 [(.google.cloud.operation_field) = ERROR_MESSAGE];
+     * </code>
      *
      * @return The bytes for httpErrorMessage.
      */
@@ -3496,7 +3513,9 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] If the operation fails, this field contains the HTTP error message that was returned, such as `NOT FOUND`.
      * </pre>
      *
-     * <code>string http_error_message = 202521945;</code>
+     * <code>
+     * string http_error_message = 202521945 [(.google.cloud.operation_field) = ERROR_MESSAGE];
+     * </code>
      *
      * @param value The httpErrorMessage to set.
      * @return This builder for chaining.
@@ -3517,7 +3536,9 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] If the operation fails, this field contains the HTTP error message that was returned, such as `NOT FOUND`.
      * </pre>
      *
-     * <code>string http_error_message = 202521945;</code>
+     * <code>
+     * string http_error_message = 202521945 [(.google.cloud.operation_field) = ERROR_MESSAGE];
+     * </code>
      *
      * @return This builder for chaining.
      */
@@ -3534,7 +3555,9 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] If the operation fails, this field contains the HTTP error message that was returned, such as `NOT FOUND`.
      * </pre>
      *
-     * <code>string http_error_message = 202521945;</code>
+     * <code>
+     * string http_error_message = 202521945 [(.google.cloud.operation_field) = ERROR_MESSAGE];
+     * </code>
      *
      * @param value The bytes for httpErrorMessage to set.
      * @return This builder for chaining.
@@ -3558,7 +3581,9 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] If the operation fails, this field contains the HTTP error status code that was returned. For example, a `404` means the resource was not found.
      * </pre>
      *
-     * <code>int32 http_error_status_code = 312345196;</code>
+     * <code>
+     * int32 http_error_status_code = 312345196 [(.google.cloud.operation_field) = ERROR_CODE];
+     * </code>
      *
      * @return Whether the httpErrorStatusCode field is set.
      */
@@ -3573,7 +3598,9 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] If the operation fails, this field contains the HTTP error status code that was returned. For example, a `404` means the resource was not found.
      * </pre>
      *
-     * <code>int32 http_error_status_code = 312345196;</code>
+     * <code>
+     * int32 http_error_status_code = 312345196 [(.google.cloud.operation_field) = ERROR_CODE];
+     * </code>
      *
      * @return The httpErrorStatusCode.
      */
@@ -3588,7 +3615,9 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] If the operation fails, this field contains the HTTP error status code that was returned. For example, a `404` means the resource was not found.
      * </pre>
      *
-     * <code>int32 http_error_status_code = 312345196;</code>
+     * <code>
+     * int32 http_error_status_code = 312345196 [(.google.cloud.operation_field) = ERROR_CODE];
+     * </code>
      *
      * @param value The httpErrorStatusCode to set.
      * @return This builder for chaining.
@@ -3606,7 +3635,9 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] If the operation fails, this field contains the HTTP error status code that was returned. For example, a `404` means the resource was not found.
      * </pre>
      *
-     * <code>int32 http_error_status_code = 312345196;</code>
+     * <code>
+     * int32 http_error_status_code = 312345196 [(.google.cloud.operation_field) = ERROR_CODE];
+     * </code>
      *
      * @return This builder for chaining.
      */
@@ -3932,7 +3963,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Name of the operation.
      * </pre>
      *
-     * <code>string name = 3373707;</code>
+     * <code>string name = 3373707 [(.google.cloud.operation_field) = NAME];</code>
      *
      * @return Whether the name field is set.
      */
@@ -3946,7 +3977,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Name of the operation.
      * </pre>
      *
-     * <code>string name = 3373707;</code>
+     * <code>string name = 3373707 [(.google.cloud.operation_field) = NAME];</code>
      *
      * @return The name.
      */
@@ -3968,7 +3999,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Name of the operation.
      * </pre>
      *
-     * <code>string name = 3373707;</code>
+     * <code>string name = 3373707 [(.google.cloud.operation_field) = NAME];</code>
      *
      * @return The bytes for name.
      */
@@ -3990,7 +4021,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Name of the operation.
      * </pre>
      *
-     * <code>string name = 3373707;</code>
+     * <code>string name = 3373707 [(.google.cloud.operation_field) = NAME];</code>
      *
      * @param value The name to set.
      * @return This builder for chaining.
@@ -4011,7 +4042,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Name of the operation.
      * </pre>
      *
-     * <code>string name = 3373707;</code>
+     * <code>string name = 3373707 [(.google.cloud.operation_field) = NAME];</code>
      *
      * @return This builder for chaining.
      */
@@ -4028,7 +4059,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Name of the operation.
      * </pre>
      *
-     * <code>string name = 3373707;</code>
+     * <code>string name = 3373707 [(.google.cloud.operation_field) = NAME];</code>
      *
      * @param value The bytes for name to set.
      * @return This builder for chaining.
@@ -4719,7 +4750,9 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The status of the operation, which can be one of the following: `PENDING`, `RUNNING`, or `DONE`.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.Operation.Status status = 181260274;</code>
+     * <code>
+     * .google.cloud.compute.v1.Operation.Status status = 181260274 [(.google.cloud.operation_field) = STATUS];
+     * </code>
      *
      * @return Whether the status field is set.
      */
@@ -4734,7 +4767,9 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The status of the operation, which can be one of the following: `PENDING`, `RUNNING`, or `DONE`.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.Operation.Status status = 181260274;</code>
+     * <code>
+     * .google.cloud.compute.v1.Operation.Status status = 181260274 [(.google.cloud.operation_field) = STATUS];
+     * </code>
      *
      * @return The enum numeric value on the wire for status.
      */
@@ -4749,7 +4784,9 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The status of the operation, which can be one of the following: `PENDING`, `RUNNING`, or `DONE`.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.Operation.Status status = 181260274;</code>
+     * <code>
+     * .google.cloud.compute.v1.Operation.Status status = 181260274 [(.google.cloud.operation_field) = STATUS];
+     * </code>
      *
      * @param value The enum numeric value on the wire for status to set.
      * @return This builder for chaining.
@@ -4767,7 +4804,9 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The status of the operation, which can be one of the following: `PENDING`, `RUNNING`, or `DONE`.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.Operation.Status status = 181260274;</code>
+     * <code>
+     * .google.cloud.compute.v1.Operation.Status status = 181260274 [(.google.cloud.operation_field) = STATUS];
+     * </code>
      *
      * @return The status.
      */
@@ -4785,7 +4824,9 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The status of the operation, which can be one of the following: `PENDING`, `RUNNING`, or `DONE`.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.Operation.Status status = 181260274;</code>
+     * <code>
+     * .google.cloud.compute.v1.Operation.Status status = 181260274 [(.google.cloud.operation_field) = STATUS];
+     * </code>
      *
      * @param value The status to set.
      * @return This builder for chaining.
@@ -4806,7 +4847,9 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The status of the operation, which can be one of the following: `PENDING`, `RUNNING`, or `DONE`.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.Operation.Status status = 181260274;</code>
+     * <code>
+     * .google.cloud.compute.v1.Operation.Status status = 181260274 [(.google.cloud.operation_field) = STATUS];
+     * </code>
      *
      * @return This builder for chaining.
      */

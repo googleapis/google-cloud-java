@@ -187,7 +187,8 @@ public final class MoveFirewallPolicyRequest extends com.google.protobuf.Generat
    * The new parent of the firewall policy.
    * </pre>
    *
-   * <code>string parent_id = 459714768;</code>
+   * <code>string parent_id = 459714768 [(.google.cloud.operation_request_field) = "parent_id"];
+   * </code>
    *
    * @return Whether the parentId field is set.
    */
@@ -202,7 +203,8 @@ public final class MoveFirewallPolicyRequest extends com.google.protobuf.Generat
    * The new parent of the firewall policy.
    * </pre>
    *
-   * <code>string parent_id = 459714768;</code>
+   * <code>string parent_id = 459714768 [(.google.cloud.operation_request_field) = "parent_id"];
+   * </code>
    *
    * @return The parentId.
    */
@@ -225,7 +227,8 @@ public final class MoveFirewallPolicyRequest extends com.google.protobuf.Generat
    * The new parent of the firewall policy.
    * </pre>
    *
-   * <code>string parent_id = 459714768;</code>
+   * <code>string parent_id = 459714768 [(.google.cloud.operation_request_field) = "parent_id"];
+   * </code>
    *
    * @return The bytes for parentId.
    */
@@ -800,7 +803,8 @@ public final class MoveFirewallPolicyRequest extends com.google.protobuf.Generat
      * The new parent of the firewall policy.
      * </pre>
      *
-     * <code>string parent_id = 459714768;</code>
+     * <code>string parent_id = 459714768 [(.google.cloud.operation_request_field) = "parent_id"];
+     * </code>
      *
      * @return Whether the parentId field is set.
      */
@@ -814,7 +818,8 @@ public final class MoveFirewallPolicyRequest extends com.google.protobuf.Generat
      * The new parent of the firewall policy.
      * </pre>
      *
-     * <code>string parent_id = 459714768;</code>
+     * <code>string parent_id = 459714768 [(.google.cloud.operation_request_field) = "parent_id"];
+     * </code>
      *
      * @return The parentId.
      */
@@ -836,7 +841,8 @@ public final class MoveFirewallPolicyRequest extends com.google.protobuf.Generat
      * The new parent of the firewall policy.
      * </pre>
      *
-     * <code>string parent_id = 459714768;</code>
+     * <code>string parent_id = 459714768 [(.google.cloud.operation_request_field) = "parent_id"];
+     * </code>
      *
      * @return The bytes for parentId.
      */
@@ -858,7 +864,8 @@ public final class MoveFirewallPolicyRequest extends com.google.protobuf.Generat
      * The new parent of the firewall policy.
      * </pre>
      *
-     * <code>string parent_id = 459714768;</code>
+     * <code>string parent_id = 459714768 [(.google.cloud.operation_request_field) = "parent_id"];
+     * </code>
      *
      * @param value The parentId to set.
      * @return This builder for chaining.
@@ -879,7 +886,8 @@ public final class MoveFirewallPolicyRequest extends com.google.protobuf.Generat
      * The new parent of the firewall policy.
      * </pre>
      *
-     * <code>string parent_id = 459714768;</code>
+     * <code>string parent_id = 459714768 [(.google.cloud.operation_request_field) = "parent_id"];
+     * </code>
      *
      * @return This builder for chaining.
      */
@@ -896,7 +904,8 @@ public final class MoveFirewallPolicyRequest extends com.google.protobuf.Generat
      * The new parent of the firewall policy.
      * </pre>
      *
-     * <code>string parent_id = 459714768;</code>
+     * <code>string parent_id = 459714768 [(.google.cloud.operation_request_field) = "parent_id"];
+     * </code>
      *
      * @param value The bytes for parentId to set.
      * @return This builder for chaining.

@@ -24,7 +24,6 @@ import com.google.api.core.InternalApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.httpjson.ApiMethodDescriptor;
-import com.google.api.gax.httpjson.FieldsExtractor;
 import com.google.api.gax.httpjson.HttpJsonCallSettings;
 import com.google.api.gax.httpjson.HttpJsonStubCallableFactory;
 import com.google.api.gax.httpjson.ProtoMessageRequestFormatter;
@@ -66,45 +65,28 @@ public class HttpJsonPublicAdvertisedPrefixesStub extends PublicAdvertisedPrefix
                   ProtoMessageRequestFormatter.<DeletePublicAdvertisedPrefixeRequest>newBuilder()
                       .setPath(
                           "/compute/v1/projects/{project}/global/publicAdvertisedPrefixes/{publicAdvertisedPrefix}",
-                          new FieldsExtractor<
-                              DeletePublicAdvertisedPrefixeRequest, Map<String, String>>() {
-                            @Override
-                            public Map<String, String> extract(
-                                DeletePublicAdvertisedPrefixeRequest request) {
-                              Map<String, String> fields = new HashMap<>();
-                              ProtoRestSerializer<DeletePublicAdvertisedPrefixeRequest> serializer =
-                                  ProtoRestSerializer.create();
-                              serializer.putPathParam(fields, "project", request.getProject());
-                              serializer.putPathParam(
-                                  fields,
-                                  "publicAdvertisedPrefix",
-                                  request.getPublicAdvertisedPrefix());
-                              return fields;
-                            }
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<DeletePublicAdvertisedPrefixeRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "project", request.getProject());
+                            serializer.putPathParam(
+                                fields,
+                                "publicAdvertisedPrefix",
+                                request.getPublicAdvertisedPrefix());
+                            return fields;
                           })
                       .setQueryParamsExtractor(
-                          new FieldsExtractor<
-                              DeletePublicAdvertisedPrefixeRequest, Map<String, List<String>>>() {
-                            @Override
-                            public Map<String, List<String>> extract(
-                                DeletePublicAdvertisedPrefixeRequest request) {
-                              Map<String, List<String>> fields = new HashMap<>();
-                              ProtoRestSerializer<DeletePublicAdvertisedPrefixeRequest> serializer =
-                                  ProtoRestSerializer.create();
-                              if (request.hasRequestId()) {
-                                serializer.putQueryParam(
-                                    fields, "requestId", request.getRequestId());
-                              }
-                              return fields;
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<DeletePublicAdvertisedPrefixeRequest> serializer =
+                                ProtoRestSerializer.create();
+                            if (request.hasRequestId()) {
+                              serializer.putQueryParam(fields, "requestId", request.getRequestId());
                             }
+                            return fields;
                           })
-                      .setRequestBodyExtractor(
-                          new FieldsExtractor<DeletePublicAdvertisedPrefixeRequest, String>() {
-                            @Override
-                            public String extract(DeletePublicAdvertisedPrefixeRequest request) {
-                              return null;
-                            }
-                          })
+                      .setRequestBodyExtractor(request -> null)
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -123,41 +105,25 @@ public class HttpJsonPublicAdvertisedPrefixesStub extends PublicAdvertisedPrefix
                   ProtoMessageRequestFormatter.<GetPublicAdvertisedPrefixeRequest>newBuilder()
                       .setPath(
                           "/compute/v1/projects/{project}/global/publicAdvertisedPrefixes/{publicAdvertisedPrefix}",
-                          new FieldsExtractor<
-                              GetPublicAdvertisedPrefixeRequest, Map<String, String>>() {
-                            @Override
-                            public Map<String, String> extract(
-                                GetPublicAdvertisedPrefixeRequest request) {
-                              Map<String, String> fields = new HashMap<>();
-                              ProtoRestSerializer<GetPublicAdvertisedPrefixeRequest> serializer =
-                                  ProtoRestSerializer.create();
-                              serializer.putPathParam(fields, "project", request.getProject());
-                              serializer.putPathParam(
-                                  fields,
-                                  "publicAdvertisedPrefix",
-                                  request.getPublicAdvertisedPrefix());
-                              return fields;
-                            }
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<GetPublicAdvertisedPrefixeRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "project", request.getProject());
+                            serializer.putPathParam(
+                                fields,
+                                "publicAdvertisedPrefix",
+                                request.getPublicAdvertisedPrefix());
+                            return fields;
                           })
                       .setQueryParamsExtractor(
-                          new FieldsExtractor<
-                              GetPublicAdvertisedPrefixeRequest, Map<String, List<String>>>() {
-                            @Override
-                            public Map<String, List<String>> extract(
-                                GetPublicAdvertisedPrefixeRequest request) {
-                              Map<String, List<String>> fields = new HashMap<>();
-                              ProtoRestSerializer<GetPublicAdvertisedPrefixeRequest> serializer =
-                                  ProtoRestSerializer.create();
-                              return fields;
-                            }
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<GetPublicAdvertisedPrefixeRequest> serializer =
+                                ProtoRestSerializer.create();
+                            return fields;
                           })
-                      .setRequestBodyExtractor(
-                          new FieldsExtractor<GetPublicAdvertisedPrefixeRequest, String>() {
-                            @Override
-                            public String extract(GetPublicAdvertisedPrefixeRequest request) {
-                              return null;
-                            }
-                          })
+                      .setRequestBodyExtractor(request -> null)
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<PublicAdvertisedPrefix>newBuilder()
@@ -174,44 +140,29 @@ public class HttpJsonPublicAdvertisedPrefixesStub extends PublicAdvertisedPrefix
                   ProtoMessageRequestFormatter.<InsertPublicAdvertisedPrefixeRequest>newBuilder()
                       .setPath(
                           "/compute/v1/projects/{project}/global/publicAdvertisedPrefixes",
-                          new FieldsExtractor<
-                              InsertPublicAdvertisedPrefixeRequest, Map<String, String>>() {
-                            @Override
-                            public Map<String, String> extract(
-                                InsertPublicAdvertisedPrefixeRequest request) {
-                              Map<String, String> fields = new HashMap<>();
-                              ProtoRestSerializer<InsertPublicAdvertisedPrefixeRequest> serializer =
-                                  ProtoRestSerializer.create();
-                              serializer.putPathParam(fields, "project", request.getProject());
-                              return fields;
-                            }
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<InsertPublicAdvertisedPrefixeRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "project", request.getProject());
+                            return fields;
                           })
                       .setQueryParamsExtractor(
-                          new FieldsExtractor<
-                              InsertPublicAdvertisedPrefixeRequest, Map<String, List<String>>>() {
-                            @Override
-                            public Map<String, List<String>> extract(
-                                InsertPublicAdvertisedPrefixeRequest request) {
-                              Map<String, List<String>> fields = new HashMap<>();
-                              ProtoRestSerializer<InsertPublicAdvertisedPrefixeRequest> serializer =
-                                  ProtoRestSerializer.create();
-                              if (request.hasRequestId()) {
-                                serializer.putQueryParam(
-                                    fields, "requestId", request.getRequestId());
-                              }
-                              return fields;
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<InsertPublicAdvertisedPrefixeRequest> serializer =
+                                ProtoRestSerializer.create();
+                            if (request.hasRequestId()) {
+                              serializer.putQueryParam(fields, "requestId", request.getRequestId());
                             }
+                            return fields;
                           })
                       .setRequestBodyExtractor(
-                          new FieldsExtractor<InsertPublicAdvertisedPrefixeRequest, String>() {
-                            @Override
-                            public String extract(InsertPublicAdvertisedPrefixeRequest request) {
-                              return ProtoRestSerializer.create()
+                          request ->
+                              ProtoRestSerializer.create()
                                   .toBody(
                                       "publicAdvertisedPrefixResource",
-                                      request.getPublicAdvertisedPrefixResource());
-                            }
-                          })
+                                      request.getPublicAdvertisedPrefixResource()))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -230,57 +181,40 @@ public class HttpJsonPublicAdvertisedPrefixesStub extends PublicAdvertisedPrefix
                   ProtoMessageRequestFormatter.<ListPublicAdvertisedPrefixesRequest>newBuilder()
                       .setPath(
                           "/compute/v1/projects/{project}/global/publicAdvertisedPrefixes",
-                          new FieldsExtractor<
-                              ListPublicAdvertisedPrefixesRequest, Map<String, String>>() {
-                            @Override
-                            public Map<String, String> extract(
-                                ListPublicAdvertisedPrefixesRequest request) {
-                              Map<String, String> fields = new HashMap<>();
-                              ProtoRestSerializer<ListPublicAdvertisedPrefixesRequest> serializer =
-                                  ProtoRestSerializer.create();
-                              serializer.putPathParam(fields, "project", request.getProject());
-                              return fields;
-                            }
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<ListPublicAdvertisedPrefixesRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "project", request.getProject());
+                            return fields;
                           })
                       .setQueryParamsExtractor(
-                          new FieldsExtractor<
-                              ListPublicAdvertisedPrefixesRequest, Map<String, List<String>>>() {
-                            @Override
-                            public Map<String, List<String>> extract(
-                                ListPublicAdvertisedPrefixesRequest request) {
-                              Map<String, List<String>> fields = new HashMap<>();
-                              ProtoRestSerializer<ListPublicAdvertisedPrefixesRequest> serializer =
-                                  ProtoRestSerializer.create();
-                              if (request.hasFilter()) {
-                                serializer.putQueryParam(fields, "filter", request.getFilter());
-                              }
-                              if (request.hasMaxResults()) {
-                                serializer.putQueryParam(
-                                    fields, "maxResults", request.getMaxResults());
-                              }
-                              if (request.hasOrderBy()) {
-                                serializer.putQueryParam(fields, "orderBy", request.getOrderBy());
-                              }
-                              if (request.hasPageToken()) {
-                                serializer.putQueryParam(
-                                    fields, "pageToken", request.getPageToken());
-                              }
-                              if (request.hasReturnPartialSuccess()) {
-                                serializer.putQueryParam(
-                                    fields,
-                                    "returnPartialSuccess",
-                                    request.getReturnPartialSuccess());
-                              }
-                              return fields;
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<ListPublicAdvertisedPrefixesRequest> serializer =
+                                ProtoRestSerializer.create();
+                            if (request.hasFilter()) {
+                              serializer.putQueryParam(fields, "filter", request.getFilter());
                             }
-                          })
-                      .setRequestBodyExtractor(
-                          new FieldsExtractor<ListPublicAdvertisedPrefixesRequest, String>() {
-                            @Override
-                            public String extract(ListPublicAdvertisedPrefixesRequest request) {
-                              return null;
+                            if (request.hasMaxResults()) {
+                              serializer.putQueryParam(
+                                  fields, "maxResults", request.getMaxResults());
                             }
+                            if (request.hasOrderBy()) {
+                              serializer.putQueryParam(fields, "orderBy", request.getOrderBy());
+                            }
+                            if (request.hasPageToken()) {
+                              serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            }
+                            if (request.hasReturnPartialSuccess()) {
+                              serializer.putQueryParam(
+                                  fields,
+                                  "returnPartialSuccess",
+                                  request.getReturnPartialSuccess());
+                            }
+                            return fields;
                           })
+                      .setRequestBodyExtractor(request -> null)
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<PublicAdvertisedPrefixList>newBuilder()
@@ -297,48 +231,33 @@ public class HttpJsonPublicAdvertisedPrefixesStub extends PublicAdvertisedPrefix
                   ProtoMessageRequestFormatter.<PatchPublicAdvertisedPrefixeRequest>newBuilder()
                       .setPath(
                           "/compute/v1/projects/{project}/global/publicAdvertisedPrefixes/{publicAdvertisedPrefix}",
-                          new FieldsExtractor<
-                              PatchPublicAdvertisedPrefixeRequest, Map<String, String>>() {
-                            @Override
-                            public Map<String, String> extract(
-                                PatchPublicAdvertisedPrefixeRequest request) {
-                              Map<String, String> fields = new HashMap<>();
-                              ProtoRestSerializer<PatchPublicAdvertisedPrefixeRequest> serializer =
-                                  ProtoRestSerializer.create();
-                              serializer.putPathParam(fields, "project", request.getProject());
-                              serializer.putPathParam(
-                                  fields,
-                                  "publicAdvertisedPrefix",
-                                  request.getPublicAdvertisedPrefix());
-                              return fields;
-                            }
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<PatchPublicAdvertisedPrefixeRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "project", request.getProject());
+                            serializer.putPathParam(
+                                fields,
+                                "publicAdvertisedPrefix",
+                                request.getPublicAdvertisedPrefix());
+                            return fields;
                           })
                       .setQueryParamsExtractor(
-                          new FieldsExtractor<
-                              PatchPublicAdvertisedPrefixeRequest, Map<String, List<String>>>() {
-                            @Override
-                            public Map<String, List<String>> extract(
-                                PatchPublicAdvertisedPrefixeRequest request) {
-                              Map<String, List<String>> fields = new HashMap<>();
-                              ProtoRestSerializer<PatchPublicAdvertisedPrefixeRequest> serializer =
-                                  ProtoRestSerializer.create();
-                              if (request.hasRequestId()) {
-                                serializer.putQueryParam(
-                                    fields, "requestId", request.getRequestId());
-                              }
-                              return fields;
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<PatchPublicAdvertisedPrefixeRequest> serializer =
+                                ProtoRestSerializer.create();
+                            if (request.hasRequestId()) {
+                              serializer.putQueryParam(fields, "requestId", request.getRequestId());
                             }
+                            return fields;
                           })
                       .setRequestBodyExtractor(
-                          new FieldsExtractor<PatchPublicAdvertisedPrefixeRequest, String>() {
-                            @Override
-                            public String extract(PatchPublicAdvertisedPrefixeRequest request) {
-                              return ProtoRestSerializer.create()
+                          request ->
+                              ProtoRestSerializer.create()
                                   .toBody(
                                       "publicAdvertisedPrefixResource",
-                                      request.getPublicAdvertisedPrefixResource());
-                            }
-                          })
+                                      request.getPublicAdvertisedPrefixResource()))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -491,7 +410,13 @@ public class HttpJsonPublicAdvertisedPrefixesStub extends PublicAdvertisedPrefix
 
   @Override
   public final void close() {
-    shutdown();
+    try {
+      backgroundResources.close();
+    } catch (RuntimeException e) {
+      throw e;
+    } catch (Exception e) {
+      throw new IllegalStateException("Failed to close resource", e);
+    }
   }
 
   @Override

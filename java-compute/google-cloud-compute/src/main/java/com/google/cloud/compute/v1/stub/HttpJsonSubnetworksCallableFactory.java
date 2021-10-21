@@ -16,6 +16,7 @@
 
 package com.google.cloud.compute.v1.stub;
 
+import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.httpjson.ApiMessage;
 import com.google.api.gax.httpjson.HttpJsonCallSettings;
@@ -37,6 +38,7 @@ import javax.annotation.Generated;
  * <p>This class is for advanced usage.
  */
 @Generated("by gapic-generator-java")
+@BetaApi
 public class HttpJsonSubnetworksCallableFactory
     implements HttpJsonStubCallableFactory<ApiMessage, BackgroundResource> {
 
@@ -68,6 +70,8 @@ public class HttpJsonSubnetworksCallableFactory
         httpJsonCallSettings, callSettings, clientContext);
   }
 
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
   @Override
   public <RequestT, ResponseT, MetadataT>
       OperationCallable<RequestT, ResponseT, MetadataT> createOperationCallable(

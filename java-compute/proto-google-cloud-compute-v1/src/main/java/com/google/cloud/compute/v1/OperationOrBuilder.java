@@ -213,7 +213,8 @@ public interface OperationOrBuilder
    * [Output Only] If the operation fails, this field contains the HTTP error message that was returned, such as `NOT FOUND`.
    * </pre>
    *
-   * <code>string http_error_message = 202521945;</code>
+   * <code>string http_error_message = 202521945 [(.google.cloud.operation_field) = ERROR_MESSAGE];
+   * </code>
    *
    * @return Whether the httpErrorMessage field is set.
    */
@@ -225,7 +226,8 @@ public interface OperationOrBuilder
    * [Output Only] If the operation fails, this field contains the HTTP error message that was returned, such as `NOT FOUND`.
    * </pre>
    *
-   * <code>string http_error_message = 202521945;</code>
+   * <code>string http_error_message = 202521945 [(.google.cloud.operation_field) = ERROR_MESSAGE];
+   * </code>
    *
    * @return The httpErrorMessage.
    */
@@ -237,7 +239,8 @@ public interface OperationOrBuilder
    * [Output Only] If the operation fails, this field contains the HTTP error message that was returned, such as `NOT FOUND`.
    * </pre>
    *
-   * <code>string http_error_message = 202521945;</code>
+   * <code>string http_error_message = 202521945 [(.google.cloud.operation_field) = ERROR_MESSAGE];
+   * </code>
    *
    * @return The bytes for httpErrorMessage.
    */
@@ -250,7 +253,8 @@ public interface OperationOrBuilder
    * [Output Only] If the operation fails, this field contains the HTTP error status code that was returned. For example, a `404` means the resource was not found.
    * </pre>
    *
-   * <code>int32 http_error_status_code = 312345196;</code>
+   * <code>int32 http_error_status_code = 312345196 [(.google.cloud.operation_field) = ERROR_CODE];
+   * </code>
    *
    * @return Whether the httpErrorStatusCode field is set.
    */
@@ -262,7 +266,8 @@ public interface OperationOrBuilder
    * [Output Only] If the operation fails, this field contains the HTTP error status code that was returned. For example, a `404` means the resource was not found.
    * </pre>
    *
-   * <code>int32 http_error_status_code = 312345196;</code>
+   * <code>int32 http_error_status_code = 312345196 [(.google.cloud.operation_field) = ERROR_CODE];
+   * </code>
    *
    * @return The httpErrorStatusCode.
    */
@@ -374,7 +379,7 @@ public interface OperationOrBuilder
    * [Output Only] Name of the operation.
    * </pre>
    *
-   * <code>string name = 3373707;</code>
+   * <code>string name = 3373707 [(.google.cloud.operation_field) = NAME];</code>
    *
    * @return Whether the name field is set.
    */
@@ -386,7 +391,7 @@ public interface OperationOrBuilder
    * [Output Only] Name of the operation.
    * </pre>
    *
-   * <code>string name = 3373707;</code>
+   * <code>string name = 3373707 [(.google.cloud.operation_field) = NAME];</code>
    *
    * @return The name.
    */
@@ -398,7 +403,7 @@ public interface OperationOrBuilder
    * [Output Only] Name of the operation.
    * </pre>
    *
-   * <code>string name = 3373707;</code>
+   * <code>string name = 3373707 [(.google.cloud.operation_field) = NAME];</code>
    *
    * @return The bytes for name.
    */
@@ -621,7 +626,9 @@ public interface OperationOrBuilder
    * [Output Only] The status of the operation, which can be one of the following: `PENDING`, `RUNNING`, or `DONE`.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.Operation.Status status = 181260274;</code>
+   * <code>
+   * .google.cloud.compute.v1.Operation.Status status = 181260274 [(.google.cloud.operation_field) = STATUS];
+   * </code>
    *
    * @return Whether the status field is set.
    */
@@ -633,7 +640,9 @@ public interface OperationOrBuilder
    * [Output Only] The status of the operation, which can be one of the following: `PENDING`, `RUNNING`, or `DONE`.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.Operation.Status status = 181260274;</code>
+   * <code>
+   * .google.cloud.compute.v1.Operation.Status status = 181260274 [(.google.cloud.operation_field) = STATUS];
+   * </code>
    *
    * @return The enum numeric value on the wire for status.
    */
@@ -645,7 +654,9 @@ public interface OperationOrBuilder
    * [Output Only] The status of the operation, which can be one of the following: `PENDING`, `RUNNING`, or `DONE`.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.Operation.Status status = 181260274;</code>
+   * <code>
+   * .google.cloud.compute.v1.Operation.Status status = 181260274 [(.google.cloud.operation_field) = STATUS];
+   * </code>
    *
    * @return The status.
    */

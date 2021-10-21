@@ -25,7 +25,6 @@ import com.google.api.core.InternalApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.httpjson.ApiMethodDescriptor;
-import com.google.api.gax.httpjson.FieldsExtractor;
 import com.google.api.gax.httpjson.HttpJsonCallSettings;
 import com.google.api.gax.httpjson.HttpJsonStubCallableFactory;
 import com.google.api.gax.httpjson.ProtoMessageRequestFormatter;
@@ -76,40 +75,24 @@ public class HttpJsonProjectsStub extends ProjectsStub {
                   ProtoMessageRequestFormatter.<DisableXpnHostProjectRequest>newBuilder()
                       .setPath(
                           "/compute/v1/projects/{project}/disableXpnHost",
-                          new FieldsExtractor<DisableXpnHostProjectRequest, Map<String, String>>() {
-                            @Override
-                            public Map<String, String> extract(
-                                DisableXpnHostProjectRequest request) {
-                              Map<String, String> fields = new HashMap<>();
-                              ProtoRestSerializer<DisableXpnHostProjectRequest> serializer =
-                                  ProtoRestSerializer.create();
-                              serializer.putPathParam(fields, "project", request.getProject());
-                              return fields;
-                            }
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<DisableXpnHostProjectRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "project", request.getProject());
+                            return fields;
                           })
                       .setQueryParamsExtractor(
-                          new FieldsExtractor<
-                              DisableXpnHostProjectRequest, Map<String, List<String>>>() {
-                            @Override
-                            public Map<String, List<String>> extract(
-                                DisableXpnHostProjectRequest request) {
-                              Map<String, List<String>> fields = new HashMap<>();
-                              ProtoRestSerializer<DisableXpnHostProjectRequest> serializer =
-                                  ProtoRestSerializer.create();
-                              if (request.hasRequestId()) {
-                                serializer.putQueryParam(
-                                    fields, "requestId", request.getRequestId());
-                              }
-                              return fields;
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<DisableXpnHostProjectRequest> serializer =
+                                ProtoRestSerializer.create();
+                            if (request.hasRequestId()) {
+                              serializer.putQueryParam(fields, "requestId", request.getRequestId());
                             }
+                            return fields;
                           })
-                      .setRequestBodyExtractor(
-                          new FieldsExtractor<DisableXpnHostProjectRequest, String>() {
-                            @Override
-                            public String extract(DisableXpnHostProjectRequest request) {
-                              return null;
-                            }
-                          })
+                      .setRequestBodyExtractor(request -> null)
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -126,44 +109,29 @@ public class HttpJsonProjectsStub extends ProjectsStub {
                   ProtoMessageRequestFormatter.<DisableXpnResourceProjectRequest>newBuilder()
                       .setPath(
                           "/compute/v1/projects/{project}/disableXpnResource",
-                          new FieldsExtractor<
-                              DisableXpnResourceProjectRequest, Map<String, String>>() {
-                            @Override
-                            public Map<String, String> extract(
-                                DisableXpnResourceProjectRequest request) {
-                              Map<String, String> fields = new HashMap<>();
-                              ProtoRestSerializer<DisableXpnResourceProjectRequest> serializer =
-                                  ProtoRestSerializer.create();
-                              serializer.putPathParam(fields, "project", request.getProject());
-                              return fields;
-                            }
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<DisableXpnResourceProjectRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "project", request.getProject());
+                            return fields;
                           })
                       .setQueryParamsExtractor(
-                          new FieldsExtractor<
-                              DisableXpnResourceProjectRequest, Map<String, List<String>>>() {
-                            @Override
-                            public Map<String, List<String>> extract(
-                                DisableXpnResourceProjectRequest request) {
-                              Map<String, List<String>> fields = new HashMap<>();
-                              ProtoRestSerializer<DisableXpnResourceProjectRequest> serializer =
-                                  ProtoRestSerializer.create();
-                              if (request.hasRequestId()) {
-                                serializer.putQueryParam(
-                                    fields, "requestId", request.getRequestId());
-                              }
-                              return fields;
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<DisableXpnResourceProjectRequest> serializer =
+                                ProtoRestSerializer.create();
+                            if (request.hasRequestId()) {
+                              serializer.putQueryParam(fields, "requestId", request.getRequestId());
                             }
+                            return fields;
                           })
                       .setRequestBodyExtractor(
-                          new FieldsExtractor<DisableXpnResourceProjectRequest, String>() {
-                            @Override
-                            public String extract(DisableXpnResourceProjectRequest request) {
-                              return ProtoRestSerializer.create()
+                          request ->
+                              ProtoRestSerializer.create()
                                   .toBody(
                                       "projectsDisableXpnResourceRequestResource",
-                                      request.getProjectsDisableXpnResourceRequestResource());
-                            }
-                          })
+                                      request.getProjectsDisableXpnResourceRequestResource()))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -180,40 +148,24 @@ public class HttpJsonProjectsStub extends ProjectsStub {
                   ProtoMessageRequestFormatter.<EnableXpnHostProjectRequest>newBuilder()
                       .setPath(
                           "/compute/v1/projects/{project}/enableXpnHost",
-                          new FieldsExtractor<EnableXpnHostProjectRequest, Map<String, String>>() {
-                            @Override
-                            public Map<String, String> extract(
-                                EnableXpnHostProjectRequest request) {
-                              Map<String, String> fields = new HashMap<>();
-                              ProtoRestSerializer<EnableXpnHostProjectRequest> serializer =
-                                  ProtoRestSerializer.create();
-                              serializer.putPathParam(fields, "project", request.getProject());
-                              return fields;
-                            }
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<EnableXpnHostProjectRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "project", request.getProject());
+                            return fields;
                           })
                       .setQueryParamsExtractor(
-                          new FieldsExtractor<
-                              EnableXpnHostProjectRequest, Map<String, List<String>>>() {
-                            @Override
-                            public Map<String, List<String>> extract(
-                                EnableXpnHostProjectRequest request) {
-                              Map<String, List<String>> fields = new HashMap<>();
-                              ProtoRestSerializer<EnableXpnHostProjectRequest> serializer =
-                                  ProtoRestSerializer.create();
-                              if (request.hasRequestId()) {
-                                serializer.putQueryParam(
-                                    fields, "requestId", request.getRequestId());
-                              }
-                              return fields;
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<EnableXpnHostProjectRequest> serializer =
+                                ProtoRestSerializer.create();
+                            if (request.hasRequestId()) {
+                              serializer.putQueryParam(fields, "requestId", request.getRequestId());
                             }
+                            return fields;
                           })
-                      .setRequestBodyExtractor(
-                          new FieldsExtractor<EnableXpnHostProjectRequest, String>() {
-                            @Override
-                            public String extract(EnableXpnHostProjectRequest request) {
-                              return null;
-                            }
-                          })
+                      .setRequestBodyExtractor(request -> null)
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -230,44 +182,29 @@ public class HttpJsonProjectsStub extends ProjectsStub {
                   ProtoMessageRequestFormatter.<EnableXpnResourceProjectRequest>newBuilder()
                       .setPath(
                           "/compute/v1/projects/{project}/enableXpnResource",
-                          new FieldsExtractor<
-                              EnableXpnResourceProjectRequest, Map<String, String>>() {
-                            @Override
-                            public Map<String, String> extract(
-                                EnableXpnResourceProjectRequest request) {
-                              Map<String, String> fields = new HashMap<>();
-                              ProtoRestSerializer<EnableXpnResourceProjectRequest> serializer =
-                                  ProtoRestSerializer.create();
-                              serializer.putPathParam(fields, "project", request.getProject());
-                              return fields;
-                            }
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<EnableXpnResourceProjectRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "project", request.getProject());
+                            return fields;
                           })
                       .setQueryParamsExtractor(
-                          new FieldsExtractor<
-                              EnableXpnResourceProjectRequest, Map<String, List<String>>>() {
-                            @Override
-                            public Map<String, List<String>> extract(
-                                EnableXpnResourceProjectRequest request) {
-                              Map<String, List<String>> fields = new HashMap<>();
-                              ProtoRestSerializer<EnableXpnResourceProjectRequest> serializer =
-                                  ProtoRestSerializer.create();
-                              if (request.hasRequestId()) {
-                                serializer.putQueryParam(
-                                    fields, "requestId", request.getRequestId());
-                              }
-                              return fields;
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<EnableXpnResourceProjectRequest> serializer =
+                                ProtoRestSerializer.create();
+                            if (request.hasRequestId()) {
+                              serializer.putQueryParam(fields, "requestId", request.getRequestId());
                             }
+                            return fields;
                           })
                       .setRequestBodyExtractor(
-                          new FieldsExtractor<EnableXpnResourceProjectRequest, String>() {
-                            @Override
-                            public String extract(EnableXpnResourceProjectRequest request) {
-                              return ProtoRestSerializer.create()
+                          request ->
+                              ProtoRestSerializer.create()
                                   .toBody(
                                       "projectsEnableXpnResourceRequestResource",
-                                      request.getProjectsEnableXpnResourceRequestResource());
-                            }
-                          })
+                                      request.getProjectsEnableXpnResourceRequestResource()))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -283,33 +220,21 @@ public class HttpJsonProjectsStub extends ProjectsStub {
               ProtoMessageRequestFormatter.<GetProjectRequest>newBuilder()
                   .setPath(
                       "/compute/v1/projects/{project}",
-                      new FieldsExtractor<GetProjectRequest, Map<String, String>>() {
-                        @Override
-                        public Map<String, String> extract(GetProjectRequest request) {
-                          Map<String, String> fields = new HashMap<>();
-                          ProtoRestSerializer<GetProjectRequest> serializer =
-                              ProtoRestSerializer.create();
-                          serializer.putPathParam(fields, "project", request.getProject());
-                          return fields;
-                        }
+                      request -> {
+                        Map<String, String> fields = new HashMap<>();
+                        ProtoRestSerializer<GetProjectRequest> serializer =
+                            ProtoRestSerializer.create();
+                        serializer.putPathParam(fields, "project", request.getProject());
+                        return fields;
                       })
                   .setQueryParamsExtractor(
-                      new FieldsExtractor<GetProjectRequest, Map<String, List<String>>>() {
-                        @Override
-                        public Map<String, List<String>> extract(GetProjectRequest request) {
-                          Map<String, List<String>> fields = new HashMap<>();
-                          ProtoRestSerializer<GetProjectRequest> serializer =
-                              ProtoRestSerializer.create();
-                          return fields;
-                        }
+                      request -> {
+                        Map<String, List<String>> fields = new HashMap<>();
+                        ProtoRestSerializer<GetProjectRequest> serializer =
+                            ProtoRestSerializer.create();
+                        return fields;
                       })
-                  .setRequestBodyExtractor(
-                      new FieldsExtractor<GetProjectRequest, String>() {
-                        @Override
-                        public String extract(GetProjectRequest request) {
-                          return null;
-                        }
-                      })
+                  .setRequestBodyExtractor(request -> null)
                   .build())
           .setResponseParser(
               ProtoMessageResponseParser.<Project>newBuilder()
@@ -326,35 +251,21 @@ public class HttpJsonProjectsStub extends ProjectsStub {
                   ProtoMessageRequestFormatter.<GetXpnHostProjectRequest>newBuilder()
                       .setPath(
                           "/compute/v1/projects/{project}/getXpnHost",
-                          new FieldsExtractor<GetXpnHostProjectRequest, Map<String, String>>() {
-                            @Override
-                            public Map<String, String> extract(GetXpnHostProjectRequest request) {
-                              Map<String, String> fields = new HashMap<>();
-                              ProtoRestSerializer<GetXpnHostProjectRequest> serializer =
-                                  ProtoRestSerializer.create();
-                              serializer.putPathParam(fields, "project", request.getProject());
-                              return fields;
-                            }
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<GetXpnHostProjectRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "project", request.getProject());
+                            return fields;
                           })
                       .setQueryParamsExtractor(
-                          new FieldsExtractor<
-                              GetXpnHostProjectRequest, Map<String, List<String>>>() {
-                            @Override
-                            public Map<String, List<String>> extract(
-                                GetXpnHostProjectRequest request) {
-                              Map<String, List<String>> fields = new HashMap<>();
-                              ProtoRestSerializer<GetXpnHostProjectRequest> serializer =
-                                  ProtoRestSerializer.create();
-                              return fields;
-                            }
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<GetXpnHostProjectRequest> serializer =
+                                ProtoRestSerializer.create();
+                            return fields;
                           })
-                      .setRequestBodyExtractor(
-                          new FieldsExtractor<GetXpnHostProjectRequest, String>() {
-                            @Override
-                            public String extract(GetXpnHostProjectRequest request) {
-                              return null;
-                            }
-                          })
+                      .setRequestBodyExtractor(request -> null)
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Project>newBuilder()
@@ -371,57 +282,40 @@ public class HttpJsonProjectsStub extends ProjectsStub {
                   ProtoMessageRequestFormatter.<GetXpnResourcesProjectsRequest>newBuilder()
                       .setPath(
                           "/compute/v1/projects/{project}/getXpnResources",
-                          new FieldsExtractor<
-                              GetXpnResourcesProjectsRequest, Map<String, String>>() {
-                            @Override
-                            public Map<String, String> extract(
-                                GetXpnResourcesProjectsRequest request) {
-                              Map<String, String> fields = new HashMap<>();
-                              ProtoRestSerializer<GetXpnResourcesProjectsRequest> serializer =
-                                  ProtoRestSerializer.create();
-                              serializer.putPathParam(fields, "project", request.getProject());
-                              return fields;
-                            }
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<GetXpnResourcesProjectsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "project", request.getProject());
+                            return fields;
                           })
                       .setQueryParamsExtractor(
-                          new FieldsExtractor<
-                              GetXpnResourcesProjectsRequest, Map<String, List<String>>>() {
-                            @Override
-                            public Map<String, List<String>> extract(
-                                GetXpnResourcesProjectsRequest request) {
-                              Map<String, List<String>> fields = new HashMap<>();
-                              ProtoRestSerializer<GetXpnResourcesProjectsRequest> serializer =
-                                  ProtoRestSerializer.create();
-                              if (request.hasFilter()) {
-                                serializer.putQueryParam(fields, "filter", request.getFilter());
-                              }
-                              if (request.hasMaxResults()) {
-                                serializer.putQueryParam(
-                                    fields, "maxResults", request.getMaxResults());
-                              }
-                              if (request.hasOrderBy()) {
-                                serializer.putQueryParam(fields, "orderBy", request.getOrderBy());
-                              }
-                              if (request.hasPageToken()) {
-                                serializer.putQueryParam(
-                                    fields, "pageToken", request.getPageToken());
-                              }
-                              if (request.hasReturnPartialSuccess()) {
-                                serializer.putQueryParam(
-                                    fields,
-                                    "returnPartialSuccess",
-                                    request.getReturnPartialSuccess());
-                              }
-                              return fields;
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<GetXpnResourcesProjectsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            if (request.hasFilter()) {
+                              serializer.putQueryParam(fields, "filter", request.getFilter());
                             }
-                          })
-                      .setRequestBodyExtractor(
-                          new FieldsExtractor<GetXpnResourcesProjectsRequest, String>() {
-                            @Override
-                            public String extract(GetXpnResourcesProjectsRequest request) {
-                              return null;
+                            if (request.hasMaxResults()) {
+                              serializer.putQueryParam(
+                                  fields, "maxResults", request.getMaxResults());
                             }
+                            if (request.hasOrderBy()) {
+                              serializer.putQueryParam(fields, "orderBy", request.getOrderBy());
+                            }
+                            if (request.hasPageToken()) {
+                              serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            }
+                            if (request.hasReturnPartialSuccess()) {
+                              serializer.putQueryParam(
+                                  fields,
+                                  "returnPartialSuccess",
+                                  request.getReturnPartialSuccess());
+                            }
+                            return fields;
                           })
+                      .setRequestBodyExtractor(request -> null)
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<ProjectsGetXpnResources>newBuilder()
@@ -438,59 +332,45 @@ public class HttpJsonProjectsStub extends ProjectsStub {
                   ProtoMessageRequestFormatter.<ListXpnHostsProjectsRequest>newBuilder()
                       .setPath(
                           "/compute/v1/projects/{project}/listXpnHosts",
-                          new FieldsExtractor<ListXpnHostsProjectsRequest, Map<String, String>>() {
-                            @Override
-                            public Map<String, String> extract(
-                                ListXpnHostsProjectsRequest request) {
-                              Map<String, String> fields = new HashMap<>();
-                              ProtoRestSerializer<ListXpnHostsProjectsRequest> serializer =
-                                  ProtoRestSerializer.create();
-                              serializer.putPathParam(fields, "project", request.getProject());
-                              return fields;
-                            }
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<ListXpnHostsProjectsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "project", request.getProject());
+                            return fields;
                           })
                       .setQueryParamsExtractor(
-                          new FieldsExtractor<
-                              ListXpnHostsProjectsRequest, Map<String, List<String>>>() {
-                            @Override
-                            public Map<String, List<String>> extract(
-                                ListXpnHostsProjectsRequest request) {
-                              Map<String, List<String>> fields = new HashMap<>();
-                              ProtoRestSerializer<ListXpnHostsProjectsRequest> serializer =
-                                  ProtoRestSerializer.create();
-                              if (request.hasFilter()) {
-                                serializer.putQueryParam(fields, "filter", request.getFilter());
-                              }
-                              if (request.hasMaxResults()) {
-                                serializer.putQueryParam(
-                                    fields, "maxResults", request.getMaxResults());
-                              }
-                              if (request.hasOrderBy()) {
-                                serializer.putQueryParam(fields, "orderBy", request.getOrderBy());
-                              }
-                              if (request.hasPageToken()) {
-                                serializer.putQueryParam(
-                                    fields, "pageToken", request.getPageToken());
-                              }
-                              if (request.hasReturnPartialSuccess()) {
-                                serializer.putQueryParam(
-                                    fields,
-                                    "returnPartialSuccess",
-                                    request.getReturnPartialSuccess());
-                              }
-                              return fields;
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<ListXpnHostsProjectsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            if (request.hasFilter()) {
+                              serializer.putQueryParam(fields, "filter", request.getFilter());
                             }
+                            if (request.hasMaxResults()) {
+                              serializer.putQueryParam(
+                                  fields, "maxResults", request.getMaxResults());
+                            }
+                            if (request.hasOrderBy()) {
+                              serializer.putQueryParam(fields, "orderBy", request.getOrderBy());
+                            }
+                            if (request.hasPageToken()) {
+                              serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            }
+                            if (request.hasReturnPartialSuccess()) {
+                              serializer.putQueryParam(
+                                  fields,
+                                  "returnPartialSuccess",
+                                  request.getReturnPartialSuccess());
+                            }
+                            return fields;
                           })
                       .setRequestBodyExtractor(
-                          new FieldsExtractor<ListXpnHostsProjectsRequest, String>() {
-                            @Override
-                            public String extract(ListXpnHostsProjectsRequest request) {
-                              return ProtoRestSerializer.create()
+                          request ->
+                              ProtoRestSerializer.create()
                                   .toBody(
                                       "projectsListXpnHostsRequestResource",
-                                      request.getProjectsListXpnHostsRequestResource());
-                            }
-                          })
+                                      request.getProjectsListXpnHostsRequestResource()))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<XpnHostList>newBuilder()
@@ -507,41 +387,29 @@ public class HttpJsonProjectsStub extends ProjectsStub {
                   ProtoMessageRequestFormatter.<MoveDiskProjectRequest>newBuilder()
                       .setPath(
                           "/compute/v1/projects/{project}/moveDisk",
-                          new FieldsExtractor<MoveDiskProjectRequest, Map<String, String>>() {
-                            @Override
-                            public Map<String, String> extract(MoveDiskProjectRequest request) {
-                              Map<String, String> fields = new HashMap<>();
-                              ProtoRestSerializer<MoveDiskProjectRequest> serializer =
-                                  ProtoRestSerializer.create();
-                              serializer.putPathParam(fields, "project", request.getProject());
-                              return fields;
-                            }
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<MoveDiskProjectRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "project", request.getProject());
+                            return fields;
                           })
                       .setQueryParamsExtractor(
-                          new FieldsExtractor<MoveDiskProjectRequest, Map<String, List<String>>>() {
-                            @Override
-                            public Map<String, List<String>> extract(
-                                MoveDiskProjectRequest request) {
-                              Map<String, List<String>> fields = new HashMap<>();
-                              ProtoRestSerializer<MoveDiskProjectRequest> serializer =
-                                  ProtoRestSerializer.create();
-                              if (request.hasRequestId()) {
-                                serializer.putQueryParam(
-                                    fields, "requestId", request.getRequestId());
-                              }
-                              return fields;
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<MoveDiskProjectRequest> serializer =
+                                ProtoRestSerializer.create();
+                            if (request.hasRequestId()) {
+                              serializer.putQueryParam(fields, "requestId", request.getRequestId());
                             }
+                            return fields;
                           })
                       .setRequestBodyExtractor(
-                          new FieldsExtractor<MoveDiskProjectRequest, String>() {
-                            @Override
-                            public String extract(MoveDiskProjectRequest request) {
-                              return ProtoRestSerializer.create()
+                          request ->
+                              ProtoRestSerializer.create()
                                   .toBody(
                                       "diskMoveRequestResource",
-                                      request.getDiskMoveRequestResource());
-                            }
-                          })
+                                      request.getDiskMoveRequestResource()))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -558,42 +426,29 @@ public class HttpJsonProjectsStub extends ProjectsStub {
                   ProtoMessageRequestFormatter.<MoveInstanceProjectRequest>newBuilder()
                       .setPath(
                           "/compute/v1/projects/{project}/moveInstance",
-                          new FieldsExtractor<MoveInstanceProjectRequest, Map<String, String>>() {
-                            @Override
-                            public Map<String, String> extract(MoveInstanceProjectRequest request) {
-                              Map<String, String> fields = new HashMap<>();
-                              ProtoRestSerializer<MoveInstanceProjectRequest> serializer =
-                                  ProtoRestSerializer.create();
-                              serializer.putPathParam(fields, "project", request.getProject());
-                              return fields;
-                            }
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<MoveInstanceProjectRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "project", request.getProject());
+                            return fields;
                           })
                       .setQueryParamsExtractor(
-                          new FieldsExtractor<
-                              MoveInstanceProjectRequest, Map<String, List<String>>>() {
-                            @Override
-                            public Map<String, List<String>> extract(
-                                MoveInstanceProjectRequest request) {
-                              Map<String, List<String>> fields = new HashMap<>();
-                              ProtoRestSerializer<MoveInstanceProjectRequest> serializer =
-                                  ProtoRestSerializer.create();
-                              if (request.hasRequestId()) {
-                                serializer.putQueryParam(
-                                    fields, "requestId", request.getRequestId());
-                              }
-                              return fields;
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<MoveInstanceProjectRequest> serializer =
+                                ProtoRestSerializer.create();
+                            if (request.hasRequestId()) {
+                              serializer.putQueryParam(fields, "requestId", request.getRequestId());
                             }
+                            return fields;
                           })
                       .setRequestBodyExtractor(
-                          new FieldsExtractor<MoveInstanceProjectRequest, String>() {
-                            @Override
-                            public String extract(MoveInstanceProjectRequest request) {
-                              return ProtoRestSerializer.create()
+                          request ->
+                              ProtoRestSerializer.create()
                                   .toBody(
                                       "instanceMoveRequestResource",
-                                      request.getInstanceMoveRequestResource());
-                            }
-                          })
+                                      request.getInstanceMoveRequestResource()))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -610,43 +465,27 @@ public class HttpJsonProjectsStub extends ProjectsStub {
                   ProtoMessageRequestFormatter.<SetCommonInstanceMetadataProjectRequest>newBuilder()
                       .setPath(
                           "/compute/v1/projects/{project}/setCommonInstanceMetadata",
-                          new FieldsExtractor<
-                              SetCommonInstanceMetadataProjectRequest, Map<String, String>>() {
-                            @Override
-                            public Map<String, String> extract(
-                                SetCommonInstanceMetadataProjectRequest request) {
-                              Map<String, String> fields = new HashMap<>();
-                              ProtoRestSerializer<SetCommonInstanceMetadataProjectRequest>
-                                  serializer = ProtoRestSerializer.create();
-                              serializer.putPathParam(fields, "project", request.getProject());
-                              return fields;
-                            }
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<SetCommonInstanceMetadataProjectRequest>
+                                serializer = ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "project", request.getProject());
+                            return fields;
                           })
                       .setQueryParamsExtractor(
-                          new FieldsExtractor<
-                              SetCommonInstanceMetadataProjectRequest,
-                              Map<String, List<String>>>() {
-                            @Override
-                            public Map<String, List<String>> extract(
-                                SetCommonInstanceMetadataProjectRequest request) {
-                              Map<String, List<String>> fields = new HashMap<>();
-                              ProtoRestSerializer<SetCommonInstanceMetadataProjectRequest>
-                                  serializer = ProtoRestSerializer.create();
-                              if (request.hasRequestId()) {
-                                serializer.putQueryParam(
-                                    fields, "requestId", request.getRequestId());
-                              }
-                              return fields;
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<SetCommonInstanceMetadataProjectRequest>
+                                serializer = ProtoRestSerializer.create();
+                            if (request.hasRequestId()) {
+                              serializer.putQueryParam(fields, "requestId", request.getRequestId());
                             }
+                            return fields;
                           })
                       .setRequestBodyExtractor(
-                          new FieldsExtractor<SetCommonInstanceMetadataProjectRequest, String>() {
-                            @Override
-                            public String extract(SetCommonInstanceMetadataProjectRequest request) {
-                              return ProtoRestSerializer.create()
-                                  .toBody("metadataResource", request.getMetadataResource());
-                            }
-                          })
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("metadataResource", request.getMetadataResource()))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -663,44 +502,29 @@ public class HttpJsonProjectsStub extends ProjectsStub {
                   ProtoMessageRequestFormatter.<SetDefaultNetworkTierProjectRequest>newBuilder()
                       .setPath(
                           "/compute/v1/projects/{project}/setDefaultNetworkTier",
-                          new FieldsExtractor<
-                              SetDefaultNetworkTierProjectRequest, Map<String, String>>() {
-                            @Override
-                            public Map<String, String> extract(
-                                SetDefaultNetworkTierProjectRequest request) {
-                              Map<String, String> fields = new HashMap<>();
-                              ProtoRestSerializer<SetDefaultNetworkTierProjectRequest> serializer =
-                                  ProtoRestSerializer.create();
-                              serializer.putPathParam(fields, "project", request.getProject());
-                              return fields;
-                            }
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<SetDefaultNetworkTierProjectRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "project", request.getProject());
+                            return fields;
                           })
                       .setQueryParamsExtractor(
-                          new FieldsExtractor<
-                              SetDefaultNetworkTierProjectRequest, Map<String, List<String>>>() {
-                            @Override
-                            public Map<String, List<String>> extract(
-                                SetDefaultNetworkTierProjectRequest request) {
-                              Map<String, List<String>> fields = new HashMap<>();
-                              ProtoRestSerializer<SetDefaultNetworkTierProjectRequest> serializer =
-                                  ProtoRestSerializer.create();
-                              if (request.hasRequestId()) {
-                                serializer.putQueryParam(
-                                    fields, "requestId", request.getRequestId());
-                              }
-                              return fields;
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<SetDefaultNetworkTierProjectRequest> serializer =
+                                ProtoRestSerializer.create();
+                            if (request.hasRequestId()) {
+                              serializer.putQueryParam(fields, "requestId", request.getRequestId());
                             }
+                            return fields;
                           })
                       .setRequestBodyExtractor(
-                          new FieldsExtractor<SetDefaultNetworkTierProjectRequest, String>() {
-                            @Override
-                            public String extract(SetDefaultNetworkTierProjectRequest request) {
-                              return ProtoRestSerializer.create()
+                          request ->
+                              ProtoRestSerializer.create()
                                   .toBody(
                                       "projectsSetDefaultNetworkTierRequestResource",
-                                      request.getProjectsSetDefaultNetworkTierRequestResource());
-                            }
-                          })
+                                      request.getProjectsSetDefaultNetworkTierRequestResource()))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -717,44 +541,29 @@ public class HttpJsonProjectsStub extends ProjectsStub {
                   ProtoMessageRequestFormatter.<SetUsageExportBucketProjectRequest>newBuilder()
                       .setPath(
                           "/compute/v1/projects/{project}/setUsageExportBucket",
-                          new FieldsExtractor<
-                              SetUsageExportBucketProjectRequest, Map<String, String>>() {
-                            @Override
-                            public Map<String, String> extract(
-                                SetUsageExportBucketProjectRequest request) {
-                              Map<String, String> fields = new HashMap<>();
-                              ProtoRestSerializer<SetUsageExportBucketProjectRequest> serializer =
-                                  ProtoRestSerializer.create();
-                              serializer.putPathParam(fields, "project", request.getProject());
-                              return fields;
-                            }
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<SetUsageExportBucketProjectRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "project", request.getProject());
+                            return fields;
                           })
                       .setQueryParamsExtractor(
-                          new FieldsExtractor<
-                              SetUsageExportBucketProjectRequest, Map<String, List<String>>>() {
-                            @Override
-                            public Map<String, List<String>> extract(
-                                SetUsageExportBucketProjectRequest request) {
-                              Map<String, List<String>> fields = new HashMap<>();
-                              ProtoRestSerializer<SetUsageExportBucketProjectRequest> serializer =
-                                  ProtoRestSerializer.create();
-                              if (request.hasRequestId()) {
-                                serializer.putQueryParam(
-                                    fields, "requestId", request.getRequestId());
-                              }
-                              return fields;
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<SetUsageExportBucketProjectRequest> serializer =
+                                ProtoRestSerializer.create();
+                            if (request.hasRequestId()) {
+                              serializer.putQueryParam(fields, "requestId", request.getRequestId());
                             }
+                            return fields;
                           })
                       .setRequestBodyExtractor(
-                          new FieldsExtractor<SetUsageExportBucketProjectRequest, String>() {
-                            @Override
-                            public String extract(SetUsageExportBucketProjectRequest request) {
-                              return ProtoRestSerializer.create()
+                          request ->
+                              ProtoRestSerializer.create()
                                   .toBody(
                                       "usageExportLocationResource",
-                                      request.getUsageExportLocationResource());
-                            }
-                          })
+                                      request.getUsageExportLocationResource()))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -1047,7 +856,13 @@ public class HttpJsonProjectsStub extends ProjectsStub {
 
   @Override
   public final void close() {
-    shutdown();
+    try {
+      backgroundResources.close();
+    } catch (RuntimeException e) {
+      throw e;
+    } catch (Exception e) {
+      throw new IllegalStateException("Failed to close resource", e);
+    }
   }
 
   @Override

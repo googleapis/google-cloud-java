@@ -24,7 +24,6 @@ import com.google.api.core.InternalApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.httpjson.ApiMethodDescriptor;
-import com.google.api.gax.httpjson.FieldsExtractor;
 import com.google.api.gax.httpjson.HttpJsonCallSettings;
 import com.google.api.gax.httpjson.HttpJsonStubCallableFactory;
 import com.google.api.gax.httpjson.ProtoMessageRequestFormatter;
@@ -67,44 +66,26 @@ public class HttpJsonRegionAutoscalersStub extends RegionAutoscalersStub {
                   ProtoMessageRequestFormatter.<DeleteRegionAutoscalerRequest>newBuilder()
                       .setPath(
                           "/compute/v1/projects/{project}/regions/{region}/autoscalers/{autoscaler}",
-                          new FieldsExtractor<
-                              DeleteRegionAutoscalerRequest, Map<String, String>>() {
-                            @Override
-                            public Map<String, String> extract(
-                                DeleteRegionAutoscalerRequest request) {
-                              Map<String, String> fields = new HashMap<>();
-                              ProtoRestSerializer<DeleteRegionAutoscalerRequest> serializer =
-                                  ProtoRestSerializer.create();
-                              serializer.putPathParam(
-                                  fields, "autoscaler", request.getAutoscaler());
-                              serializer.putPathParam(fields, "project", request.getProject());
-                              serializer.putPathParam(fields, "region", request.getRegion());
-                              return fields;
-                            }
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<DeleteRegionAutoscalerRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "autoscaler", request.getAutoscaler());
+                            serializer.putPathParam(fields, "project", request.getProject());
+                            serializer.putPathParam(fields, "region", request.getRegion());
+                            return fields;
                           })
                       .setQueryParamsExtractor(
-                          new FieldsExtractor<
-                              DeleteRegionAutoscalerRequest, Map<String, List<String>>>() {
-                            @Override
-                            public Map<String, List<String>> extract(
-                                DeleteRegionAutoscalerRequest request) {
-                              Map<String, List<String>> fields = new HashMap<>();
-                              ProtoRestSerializer<DeleteRegionAutoscalerRequest> serializer =
-                                  ProtoRestSerializer.create();
-                              if (request.hasRequestId()) {
-                                serializer.putQueryParam(
-                                    fields, "requestId", request.getRequestId());
-                              }
-                              return fields;
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<DeleteRegionAutoscalerRequest> serializer =
+                                ProtoRestSerializer.create();
+                            if (request.hasRequestId()) {
+                              serializer.putQueryParam(fields, "requestId", request.getRequestId());
                             }
+                            return fields;
                           })
-                      .setRequestBodyExtractor(
-                          new FieldsExtractor<DeleteRegionAutoscalerRequest, String>() {
-                            @Override
-                            public String extract(DeleteRegionAutoscalerRequest request) {
-                              return null;
-                            }
-                          })
+                      .setRequestBodyExtractor(request -> null)
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -121,38 +102,23 @@ public class HttpJsonRegionAutoscalersStub extends RegionAutoscalersStub {
                   ProtoMessageRequestFormatter.<GetRegionAutoscalerRequest>newBuilder()
                       .setPath(
                           "/compute/v1/projects/{project}/regions/{region}/autoscalers/{autoscaler}",
-                          new FieldsExtractor<GetRegionAutoscalerRequest, Map<String, String>>() {
-                            @Override
-                            public Map<String, String> extract(GetRegionAutoscalerRequest request) {
-                              Map<String, String> fields = new HashMap<>();
-                              ProtoRestSerializer<GetRegionAutoscalerRequest> serializer =
-                                  ProtoRestSerializer.create();
-                              serializer.putPathParam(
-                                  fields, "autoscaler", request.getAutoscaler());
-                              serializer.putPathParam(fields, "project", request.getProject());
-                              serializer.putPathParam(fields, "region", request.getRegion());
-                              return fields;
-                            }
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<GetRegionAutoscalerRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "autoscaler", request.getAutoscaler());
+                            serializer.putPathParam(fields, "project", request.getProject());
+                            serializer.putPathParam(fields, "region", request.getRegion());
+                            return fields;
                           })
                       .setQueryParamsExtractor(
-                          new FieldsExtractor<
-                              GetRegionAutoscalerRequest, Map<String, List<String>>>() {
-                            @Override
-                            public Map<String, List<String>> extract(
-                                GetRegionAutoscalerRequest request) {
-                              Map<String, List<String>> fields = new HashMap<>();
-                              ProtoRestSerializer<GetRegionAutoscalerRequest> serializer =
-                                  ProtoRestSerializer.create();
-                              return fields;
-                            }
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<GetRegionAutoscalerRequest> serializer =
+                                ProtoRestSerializer.create();
+                            return fields;
                           })
-                      .setRequestBodyExtractor(
-                          new FieldsExtractor<GetRegionAutoscalerRequest, String>() {
-                            @Override
-                            public String extract(GetRegionAutoscalerRequest request) {
-                              return null;
-                            }
-                          })
+                      .setRequestBodyExtractor(request -> null)
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Autoscaler>newBuilder()
@@ -169,43 +135,28 @@ public class HttpJsonRegionAutoscalersStub extends RegionAutoscalersStub {
                   ProtoMessageRequestFormatter.<InsertRegionAutoscalerRequest>newBuilder()
                       .setPath(
                           "/compute/v1/projects/{project}/regions/{region}/autoscalers",
-                          new FieldsExtractor<
-                              InsertRegionAutoscalerRequest, Map<String, String>>() {
-                            @Override
-                            public Map<String, String> extract(
-                                InsertRegionAutoscalerRequest request) {
-                              Map<String, String> fields = new HashMap<>();
-                              ProtoRestSerializer<InsertRegionAutoscalerRequest> serializer =
-                                  ProtoRestSerializer.create();
-                              serializer.putPathParam(fields, "project", request.getProject());
-                              serializer.putPathParam(fields, "region", request.getRegion());
-                              return fields;
-                            }
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<InsertRegionAutoscalerRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "project", request.getProject());
+                            serializer.putPathParam(fields, "region", request.getRegion());
+                            return fields;
                           })
                       .setQueryParamsExtractor(
-                          new FieldsExtractor<
-                              InsertRegionAutoscalerRequest, Map<String, List<String>>>() {
-                            @Override
-                            public Map<String, List<String>> extract(
-                                InsertRegionAutoscalerRequest request) {
-                              Map<String, List<String>> fields = new HashMap<>();
-                              ProtoRestSerializer<InsertRegionAutoscalerRequest> serializer =
-                                  ProtoRestSerializer.create();
-                              if (request.hasRequestId()) {
-                                serializer.putQueryParam(
-                                    fields, "requestId", request.getRequestId());
-                              }
-                              return fields;
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<InsertRegionAutoscalerRequest> serializer =
+                                ProtoRestSerializer.create();
+                            if (request.hasRequestId()) {
+                              serializer.putQueryParam(fields, "requestId", request.getRequestId());
                             }
+                            return fields;
                           })
                       .setRequestBodyExtractor(
-                          new FieldsExtractor<InsertRegionAutoscalerRequest, String>() {
-                            @Override
-                            public String extract(InsertRegionAutoscalerRequest request) {
-                              return ProtoRestSerializer.create()
-                                  .toBody("autoscalerResource", request.getAutoscalerResource());
-                            }
-                          })
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("autoscalerResource", request.getAutoscalerResource()))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -222,57 +173,41 @@ public class HttpJsonRegionAutoscalersStub extends RegionAutoscalersStub {
                   ProtoMessageRequestFormatter.<ListRegionAutoscalersRequest>newBuilder()
                       .setPath(
                           "/compute/v1/projects/{project}/regions/{region}/autoscalers",
-                          new FieldsExtractor<ListRegionAutoscalersRequest, Map<String, String>>() {
-                            @Override
-                            public Map<String, String> extract(
-                                ListRegionAutoscalersRequest request) {
-                              Map<String, String> fields = new HashMap<>();
-                              ProtoRestSerializer<ListRegionAutoscalersRequest> serializer =
-                                  ProtoRestSerializer.create();
-                              serializer.putPathParam(fields, "project", request.getProject());
-                              serializer.putPathParam(fields, "region", request.getRegion());
-                              return fields;
-                            }
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<ListRegionAutoscalersRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "project", request.getProject());
+                            serializer.putPathParam(fields, "region", request.getRegion());
+                            return fields;
                           })
                       .setQueryParamsExtractor(
-                          new FieldsExtractor<
-                              ListRegionAutoscalersRequest, Map<String, List<String>>>() {
-                            @Override
-                            public Map<String, List<String>> extract(
-                                ListRegionAutoscalersRequest request) {
-                              Map<String, List<String>> fields = new HashMap<>();
-                              ProtoRestSerializer<ListRegionAutoscalersRequest> serializer =
-                                  ProtoRestSerializer.create();
-                              if (request.hasFilter()) {
-                                serializer.putQueryParam(fields, "filter", request.getFilter());
-                              }
-                              if (request.hasMaxResults()) {
-                                serializer.putQueryParam(
-                                    fields, "maxResults", request.getMaxResults());
-                              }
-                              if (request.hasOrderBy()) {
-                                serializer.putQueryParam(fields, "orderBy", request.getOrderBy());
-                              }
-                              if (request.hasPageToken()) {
-                                serializer.putQueryParam(
-                                    fields, "pageToken", request.getPageToken());
-                              }
-                              if (request.hasReturnPartialSuccess()) {
-                                serializer.putQueryParam(
-                                    fields,
-                                    "returnPartialSuccess",
-                                    request.getReturnPartialSuccess());
-                              }
-                              return fields;
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<ListRegionAutoscalersRequest> serializer =
+                                ProtoRestSerializer.create();
+                            if (request.hasFilter()) {
+                              serializer.putQueryParam(fields, "filter", request.getFilter());
                             }
-                          })
-                      .setRequestBodyExtractor(
-                          new FieldsExtractor<ListRegionAutoscalersRequest, String>() {
-                            @Override
-                            public String extract(ListRegionAutoscalersRequest request) {
-                              return null;
+                            if (request.hasMaxResults()) {
+                              serializer.putQueryParam(
+                                  fields, "maxResults", request.getMaxResults());
                             }
+                            if (request.hasOrderBy()) {
+                              serializer.putQueryParam(fields, "orderBy", request.getOrderBy());
+                            }
+                            if (request.hasPageToken()) {
+                              serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            }
+                            if (request.hasReturnPartialSuccess()) {
+                              serializer.putQueryParam(
+                                  fields,
+                                  "returnPartialSuccess",
+                                  request.getReturnPartialSuccess());
+                            }
+                            return fields;
                           })
+                      .setRequestBodyExtractor(request -> null)
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<RegionAutoscalerList>newBuilder()
@@ -289,46 +224,32 @@ public class HttpJsonRegionAutoscalersStub extends RegionAutoscalersStub {
                   ProtoMessageRequestFormatter.<PatchRegionAutoscalerRequest>newBuilder()
                       .setPath(
                           "/compute/v1/projects/{project}/regions/{region}/autoscalers",
-                          new FieldsExtractor<PatchRegionAutoscalerRequest, Map<String, String>>() {
-                            @Override
-                            public Map<String, String> extract(
-                                PatchRegionAutoscalerRequest request) {
-                              Map<String, String> fields = new HashMap<>();
-                              ProtoRestSerializer<PatchRegionAutoscalerRequest> serializer =
-                                  ProtoRestSerializer.create();
-                              serializer.putPathParam(fields, "project", request.getProject());
-                              serializer.putPathParam(fields, "region", request.getRegion());
-                              return fields;
-                            }
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<PatchRegionAutoscalerRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "project", request.getProject());
+                            serializer.putPathParam(fields, "region", request.getRegion());
+                            return fields;
                           })
                       .setQueryParamsExtractor(
-                          new FieldsExtractor<
-                              PatchRegionAutoscalerRequest, Map<String, List<String>>>() {
-                            @Override
-                            public Map<String, List<String>> extract(
-                                PatchRegionAutoscalerRequest request) {
-                              Map<String, List<String>> fields = new HashMap<>();
-                              ProtoRestSerializer<PatchRegionAutoscalerRequest> serializer =
-                                  ProtoRestSerializer.create();
-                              if (request.hasAutoscaler()) {
-                                serializer.putQueryParam(
-                                    fields, "autoscaler", request.getAutoscaler());
-                              }
-                              if (request.hasRequestId()) {
-                                serializer.putQueryParam(
-                                    fields, "requestId", request.getRequestId());
-                              }
-                              return fields;
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<PatchRegionAutoscalerRequest> serializer =
+                                ProtoRestSerializer.create();
+                            if (request.hasAutoscaler()) {
+                              serializer.putQueryParam(
+                                  fields, "autoscaler", request.getAutoscaler());
                             }
+                            if (request.hasRequestId()) {
+                              serializer.putQueryParam(fields, "requestId", request.getRequestId());
+                            }
+                            return fields;
                           })
                       .setRequestBodyExtractor(
-                          new FieldsExtractor<PatchRegionAutoscalerRequest, String>() {
-                            @Override
-                            public String extract(PatchRegionAutoscalerRequest request) {
-                              return ProtoRestSerializer.create()
-                                  .toBody("autoscalerResource", request.getAutoscalerResource());
-                            }
-                          })
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("autoscalerResource", request.getAutoscalerResource()))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -345,47 +266,32 @@ public class HttpJsonRegionAutoscalersStub extends RegionAutoscalersStub {
                   ProtoMessageRequestFormatter.<UpdateRegionAutoscalerRequest>newBuilder()
                       .setPath(
                           "/compute/v1/projects/{project}/regions/{region}/autoscalers",
-                          new FieldsExtractor<
-                              UpdateRegionAutoscalerRequest, Map<String, String>>() {
-                            @Override
-                            public Map<String, String> extract(
-                                UpdateRegionAutoscalerRequest request) {
-                              Map<String, String> fields = new HashMap<>();
-                              ProtoRestSerializer<UpdateRegionAutoscalerRequest> serializer =
-                                  ProtoRestSerializer.create();
-                              serializer.putPathParam(fields, "project", request.getProject());
-                              serializer.putPathParam(fields, "region", request.getRegion());
-                              return fields;
-                            }
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<UpdateRegionAutoscalerRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "project", request.getProject());
+                            serializer.putPathParam(fields, "region", request.getRegion());
+                            return fields;
                           })
                       .setQueryParamsExtractor(
-                          new FieldsExtractor<
-                              UpdateRegionAutoscalerRequest, Map<String, List<String>>>() {
-                            @Override
-                            public Map<String, List<String>> extract(
-                                UpdateRegionAutoscalerRequest request) {
-                              Map<String, List<String>> fields = new HashMap<>();
-                              ProtoRestSerializer<UpdateRegionAutoscalerRequest> serializer =
-                                  ProtoRestSerializer.create();
-                              if (request.hasAutoscaler()) {
-                                serializer.putQueryParam(
-                                    fields, "autoscaler", request.getAutoscaler());
-                              }
-                              if (request.hasRequestId()) {
-                                serializer.putQueryParam(
-                                    fields, "requestId", request.getRequestId());
-                              }
-                              return fields;
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<UpdateRegionAutoscalerRequest> serializer =
+                                ProtoRestSerializer.create();
+                            if (request.hasAutoscaler()) {
+                              serializer.putQueryParam(
+                                  fields, "autoscaler", request.getAutoscaler());
                             }
+                            if (request.hasRequestId()) {
+                              serializer.putQueryParam(fields, "requestId", request.getRequestId());
+                            }
+                            return fields;
                           })
                       .setRequestBodyExtractor(
-                          new FieldsExtractor<UpdateRegionAutoscalerRequest, String>() {
-                            @Override
-                            public String extract(UpdateRegionAutoscalerRequest request) {
-                              return ProtoRestSerializer.create()
-                                  .toBody("autoscalerResource", request.getAutoscalerResource());
-                            }
-                          })
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("autoscalerResource", request.getAutoscalerResource()))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -543,7 +449,13 @@ public class HttpJsonRegionAutoscalersStub extends RegionAutoscalersStub {
 
   @Override
   public final void close() {
-    shutdown();
+    try {
+      backgroundResources.close();
+    } catch (RuntimeException e) {
+      throw e;
+    } catch (Exception e) {
+      throw new IllegalStateException("Failed to close resource", e);
+    }
   }
 
   @Override

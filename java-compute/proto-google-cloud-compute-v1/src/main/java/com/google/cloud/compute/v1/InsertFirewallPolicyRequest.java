@@ -200,7 +200,8 @@ public final class InsertFirewallPolicyRequest extends com.google.protobuf.Gener
    * Parent ID for this request. The ID can be either be "folders/[FOLDER_ID]" if the parent is a folder or "organizations/[ORGANIZATION_ID]" if the parent is an organization.
    * </pre>
    *
-   * <code>string parent_id = 459714768;</code>
+   * <code>string parent_id = 459714768 [(.google.cloud.operation_request_field) = "parent_id"];
+   * </code>
    *
    * @return Whether the parentId field is set.
    */
@@ -215,7 +216,8 @@ public final class InsertFirewallPolicyRequest extends com.google.protobuf.Gener
    * Parent ID for this request. The ID can be either be "folders/[FOLDER_ID]" if the parent is a folder or "organizations/[ORGANIZATION_ID]" if the parent is an organization.
    * </pre>
    *
-   * <code>string parent_id = 459714768;</code>
+   * <code>string parent_id = 459714768 [(.google.cloud.operation_request_field) = "parent_id"];
+   * </code>
    *
    * @return The parentId.
    */
@@ -238,7 +240,8 @@ public final class InsertFirewallPolicyRequest extends com.google.protobuf.Gener
    * Parent ID for this request. The ID can be either be "folders/[FOLDER_ID]" if the parent is a folder or "organizations/[ORGANIZATION_ID]" if the parent is an organization.
    * </pre>
    *
-   * <code>string parent_id = 459714768;</code>
+   * <code>string parent_id = 459714768 [(.google.cloud.operation_request_field) = "parent_id"];
+   * </code>
    *
    * @return The bytes for parentId.
    */
@@ -926,7 +929,8 @@ public final class InsertFirewallPolicyRequest extends com.google.protobuf.Gener
      * Parent ID for this request. The ID can be either be "folders/[FOLDER_ID]" if the parent is a folder or "organizations/[ORGANIZATION_ID]" if the parent is an organization.
      * </pre>
      *
-     * <code>string parent_id = 459714768;</code>
+     * <code>string parent_id = 459714768 [(.google.cloud.operation_request_field) = "parent_id"];
+     * </code>
      *
      * @return Whether the parentId field is set.
      */
@@ -940,7 +944,8 @@ public final class InsertFirewallPolicyRequest extends com.google.protobuf.Gener
      * Parent ID for this request. The ID can be either be "folders/[FOLDER_ID]" if the parent is a folder or "organizations/[ORGANIZATION_ID]" if the parent is an organization.
      * </pre>
      *
-     * <code>string parent_id = 459714768;</code>
+     * <code>string parent_id = 459714768 [(.google.cloud.operation_request_field) = "parent_id"];
+     * </code>
      *
      * @return The parentId.
      */
@@ -962,7 +967,8 @@ public final class InsertFirewallPolicyRequest extends com.google.protobuf.Gener
      * Parent ID for this request. The ID can be either be "folders/[FOLDER_ID]" if the parent is a folder or "organizations/[ORGANIZATION_ID]" if the parent is an organization.
      * </pre>
      *
-     * <code>string parent_id = 459714768;</code>
+     * <code>string parent_id = 459714768 [(.google.cloud.operation_request_field) = "parent_id"];
+     * </code>
      *
      * @return The bytes for parentId.
      */
@@ -984,7 +990,8 @@ public final class InsertFirewallPolicyRequest extends com.google.protobuf.Gener
      * Parent ID for this request. The ID can be either be "folders/[FOLDER_ID]" if the parent is a folder or "organizations/[ORGANIZATION_ID]" if the parent is an organization.
      * </pre>
      *
-     * <code>string parent_id = 459714768;</code>
+     * <code>string parent_id = 459714768 [(.google.cloud.operation_request_field) = "parent_id"];
+     * </code>
      *
      * @param value The parentId to set.
      * @return This builder for chaining.
@@ -1005,7 +1012,8 @@ public final class InsertFirewallPolicyRequest extends com.google.protobuf.Gener
      * Parent ID for this request. The ID can be either be "folders/[FOLDER_ID]" if the parent is a folder or "organizations/[ORGANIZATION_ID]" if the parent is an organization.
      * </pre>
      *
-     * <code>string parent_id = 459714768;</code>
+     * <code>string parent_id = 459714768 [(.google.cloud.operation_request_field) = "parent_id"];
+     * </code>
      *
      * @return This builder for chaining.
      */
@@ -1022,7 +1030,8 @@ public final class InsertFirewallPolicyRequest extends com.google.protobuf.Gener
      * Parent ID for this request. The ID can be either be "folders/[FOLDER_ID]" if the parent is a folder or "organizations/[ORGANIZATION_ID]" if the parent is an organization.
      * </pre>
      *
-     * <code>string parent_id = 459714768;</code>
+     * <code>string parent_id = 459714768 [(.google.cloud.operation_request_field) = "parent_id"];
+     * </code>
      *
      * @param value The bytes for parentId to set.
      * @return This builder for chaining.

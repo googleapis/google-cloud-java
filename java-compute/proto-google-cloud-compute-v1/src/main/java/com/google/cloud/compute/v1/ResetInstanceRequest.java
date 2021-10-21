@@ -195,7 +195,9 @@ public final class ResetInstanceRequest extends com.google.protobuf.GeneratedMes
    * Project ID for this request.
    * </pre>
    *
-   * <code>string project = 227560217 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>
+   * string project = 227560217 [(.google.api.field_behavior) = REQUIRED, (.google.cloud.operation_request_field) = "project"];
+   * </code>
    *
    * @return The project.
    */
@@ -218,7 +220,9 @@ public final class ResetInstanceRequest extends com.google.protobuf.GeneratedMes
    * Project ID for this request.
    * </pre>
    *
-   * <code>string project = 227560217 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>
+   * string project = 227560217 [(.google.api.field_behavior) = REQUIRED, (.google.cloud.operation_request_field) = "project"];
+   * </code>
    *
    * @return The bytes for project.
    */
@@ -314,7 +318,9 @@ public final class ResetInstanceRequest extends com.google.protobuf.GeneratedMes
    * The name of the zone for this request.
    * </pre>
    *
-   * <code>string zone = 3744684 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>
+   * string zone = 3744684 [(.google.api.field_behavior) = REQUIRED, (.google.cloud.operation_request_field) = "zone"];
+   * </code>
    *
    * @return The zone.
    */
@@ -337,7 +343,9 @@ public final class ResetInstanceRequest extends com.google.protobuf.GeneratedMes
    * The name of the zone for this request.
    * </pre>
    *
-   * <code>string zone = 3744684 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>
+   * string zone = 3744684 [(.google.api.field_behavior) = REQUIRED, (.google.cloud.operation_request_field) = "zone"];
+   * </code>
    *
    * @return The bytes for zone.
    */
@@ -847,7 +855,9 @@ public final class ResetInstanceRequest extends com.google.protobuf.GeneratedMes
      * Project ID for this request.
      * </pre>
      *
-     * <code>string project = 227560217 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>
+     * string project = 227560217 [(.google.api.field_behavior) = REQUIRED, (.google.cloud.operation_request_field) = "project"];
+     * </code>
      *
      * @return The project.
      */
@@ -869,7 +879,9 @@ public final class ResetInstanceRequest extends com.google.protobuf.GeneratedMes
      * Project ID for this request.
      * </pre>
      *
-     * <code>string project = 227560217 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>
+     * string project = 227560217 [(.google.api.field_behavior) = REQUIRED, (.google.cloud.operation_request_field) = "project"];
+     * </code>
      *
      * @return The bytes for project.
      */
@@ -891,7 +903,9 @@ public final class ResetInstanceRequest extends com.google.protobuf.GeneratedMes
      * Project ID for this request.
      * </pre>
      *
-     * <code>string project = 227560217 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>
+     * string project = 227560217 [(.google.api.field_behavior) = REQUIRED, (.google.cloud.operation_request_field) = "project"];
+     * </code>
      *
      * @param value The project to set.
      * @return This builder for chaining.
@@ -912,7 +926,9 @@ public final class ResetInstanceRequest extends com.google.protobuf.GeneratedMes
      * Project ID for this request.
      * </pre>
      *
-     * <code>string project = 227560217 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>
+     * string project = 227560217 [(.google.api.field_behavior) = REQUIRED, (.google.cloud.operation_request_field) = "project"];
+     * </code>
      *
      * @return This builder for chaining.
      */
@@ -929,7 +945,9 @@ public final class ResetInstanceRequest extends com.google.protobuf.GeneratedMes
      * Project ID for this request.
      * </pre>
      *
-     * <code>string project = 227560217 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>
+     * string project = 227560217 [(.google.api.field_behavior) = REQUIRED, (.google.cloud.operation_request_field) = "project"];
+     * </code>
      *
      * @param value The bytes for project to set.
      * @return This builder for chaining.
@@ -1085,7 +1103,9 @@ public final class ResetInstanceRequest extends com.google.protobuf.GeneratedMes
      * The name of the zone for this request.
      * </pre>
      *
-     * <code>string zone = 3744684 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>
+     * string zone = 3744684 [(.google.api.field_behavior) = REQUIRED, (.google.cloud.operation_request_field) = "zone"];
+     * </code>
      *
      * @return The zone.
      */
@@ -1107,7 +1127,9 @@ public final class ResetInstanceRequest extends com.google.protobuf.GeneratedMes
      * The name of the zone for this request.
      * </pre>
      *
-     * <code>string zone = 3744684 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>
+     * string zone = 3744684 [(.google.api.field_behavior) = REQUIRED, (.google.cloud.operation_request_field) = "zone"];
+     * </code>
      *
      * @return The bytes for zone.
      */
@@ -1129,7 +1151,9 @@ public final class ResetInstanceRequest extends com.google.protobuf.GeneratedMes
      * The name of the zone for this request.
      * </pre>
      *
-     * <code>string zone = 3744684 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>
+     * string zone = 3744684 [(.google.api.field_behavior) = REQUIRED, (.google.cloud.operation_request_field) = "zone"];
+     * </code>
      *
      * @param value The zone to set.
      * @return This builder for chaining.
@@ -1150,7 +1174,9 @@ public final class ResetInstanceRequest extends com.google.protobuf.GeneratedMes
      * The name of the zone for this request.
      * </pre>
      *
-     * <code>string zone = 3744684 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>
+     * string zone = 3744684 [(.google.api.field_behavior) = REQUIRED, (.google.cloud.operation_request_field) = "zone"];
+     * </code>
      *
      * @return This builder for chaining.
      */
@@ -1167,7 +1193,9 @@ public final class ResetInstanceRequest extends com.google.protobuf.GeneratedMes
      * The name of the zone for this request.
      * </pre>
      *
-     * <code>string zone = 3744684 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>
+     * string zone = 3744684 [(.google.api.field_behavior) = REQUIRED, (.google.cloud.operation_request_field) = "zone"];
+     * </code>
      *
      * @param value The bytes for zone to set.
      * @return This builder for chaining.

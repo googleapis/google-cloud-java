@@ -16,7 +16,6 @@
 
 package com.google.cloud.compute.v1;
 
-import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
 import com.google.api.core.BetaApi;
@@ -1203,12 +1202,7 @@ public class InstanceGroupsClient implements BackgroundResource {
           AggregatedListPage.createEmptyPage().createPageAsync(context, futureResponse);
       return ApiFutures.transform(
           futurePage,
-          new ApiFunction<AggregatedListPage, AggregatedListPagedResponse>() {
-            @Override
-            public AggregatedListPagedResponse apply(AggregatedListPage input) {
-              return new AggregatedListPagedResponse(input);
-            }
-          },
+          input -> new AggregatedListPagedResponse(input),
           MoreExecutors.directExecutor());
     }
 
@@ -1298,14 +1292,7 @@ public class InstanceGroupsClient implements BackgroundResource {
       ApiFuture<ListPage> futurePage =
           ListPage.createEmptyPage().createPageAsync(context, futureResponse);
       return ApiFutures.transform(
-          futurePage,
-          new ApiFunction<ListPage, ListPagedResponse>() {
-            @Override
-            public ListPagedResponse apply(ListPage input) {
-              return new ListPagedResponse(input);
-            }
-          },
-          MoreExecutors.directExecutor());
+          futurePage, input -> new ListPagedResponse(input), MoreExecutors.directExecutor());
     }
 
     private ListPagedResponse(ListPage page) {
@@ -1382,12 +1369,7 @@ public class InstanceGroupsClient implements BackgroundResource {
           ListInstancesPage.createEmptyPage().createPageAsync(context, futureResponse);
       return ApiFutures.transform(
           futurePage,
-          new ApiFunction<ListInstancesPage, ListInstancesPagedResponse>() {
-            @Override
-            public ListInstancesPagedResponse apply(ListInstancesPage input) {
-              return new ListInstancesPagedResponse(input);
-            }
-          },
+          input -> new ListInstancesPagedResponse(input),
           MoreExecutors.directExecutor());
     }
 
