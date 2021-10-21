@@ -1506,7 +1506,7 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
         output.writeMessage(
             4, (com.google.cloud.talent.v4.CompensationInfo.CompensationRange) compensationAmount_);
       }
-      if (!getDescriptionBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(description_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 5, description_);
       }
       if (expectedUnitsPerYear_ != null) {
@@ -1545,7 +1545,7 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
                 (com.google.cloud.talent.v4.CompensationInfo.CompensationRange)
                     compensationAmount_);
       }
-      if (!getDescriptionBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(description_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, description_);
       }
       if (expectedUnitsPerYear_ != null) {

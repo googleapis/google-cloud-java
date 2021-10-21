@@ -919,19 +919,19 @@ public final class EmploymentRecord extends com.google.protobuf.GeneratedMessage
     if (endDate_ != null) {
       output.writeMessage(2, getEndDate());
     }
-    if (!getEmployerNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(employerName_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, employerName_);
     }
-    if (!getDivisionNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(divisionName_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 4, divisionName_);
     }
     if (address_ != null) {
       output.writeMessage(5, getAddress());
     }
-    if (!getJobTitleBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(jobTitle_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 6, jobTitle_);
     }
-    if (!getJobDescriptionBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(jobDescription_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 7, jobDescription_);
     }
     if (isSupervisor_ != null) {
@@ -943,13 +943,13 @@ public final class EmploymentRecord extends com.google.protobuf.GeneratedMessage
     if (isCurrent_ != null) {
       output.writeMessage(10, getIsCurrent());
     }
-    if (!getJobTitleSnippetBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(jobTitleSnippet_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 11, jobTitleSnippet_);
     }
-    if (!getJobDescriptionSnippetBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(jobDescriptionSnippet_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 12, jobDescriptionSnippet_);
     }
-    if (!getEmployerNameSnippetBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(employerNameSnippet_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 13, employerNameSnippet_);
     }
     unknownFields.writeTo(output);
@@ -967,19 +967,19 @@ public final class EmploymentRecord extends com.google.protobuf.GeneratedMessage
     if (endDate_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, getEndDate());
     }
-    if (!getEmployerNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(employerName_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, employerName_);
     }
-    if (!getDivisionNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(divisionName_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, divisionName_);
     }
     if (address_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(5, getAddress());
     }
-    if (!getJobTitleBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(jobTitle_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, jobTitle_);
     }
-    if (!getJobDescriptionBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(jobDescription_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, jobDescription_);
     }
     if (isSupervisor_ != null) {
@@ -991,13 +991,13 @@ public final class EmploymentRecord extends com.google.protobuf.GeneratedMessage
     if (isCurrent_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(10, getIsCurrent());
     }
-    if (!getJobTitleSnippetBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(jobTitleSnippet_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(11, jobTitleSnippet_);
     }
-    if (!getJobDescriptionSnippetBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(jobDescriptionSnippet_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(12, jobDescriptionSnippet_);
     }
-    if (!getEmployerNameSnippetBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(employerNameSnippet_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(13, employerNameSnippet_);
     }
     size += unknownFields.getSerializedSize();

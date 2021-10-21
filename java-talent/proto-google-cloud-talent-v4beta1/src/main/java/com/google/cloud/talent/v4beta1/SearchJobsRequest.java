@@ -1218,7 +1218,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
               .getNumber()) {
         output.writeEnum(1, importanceLevel_);
       }
-      if (!getRankingExpressionBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(rankingExpression_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, rankingExpression_);
       }
       unknownFields.writeTo(output);
@@ -1236,7 +1236,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
               .getNumber()) {
         size += com.google.protobuf.CodedOutputStream.computeEnumSize(1, importanceLevel_);
       }
-      if (!getRankingExpressionBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(rankingExpression_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, rankingExpression_);
       }
       size += unknownFields.getSerializedSize();
@@ -3064,7 +3064,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getParentBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(parent_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, parent_);
     }
     if (searchMode_
@@ -3096,10 +3096,10 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
     if (pageSize_ != 0) {
       output.writeInt32(10, pageSize_);
     }
-    if (!getPageTokenBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(pageToken_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 11, pageToken_);
     }
-    if (!getOrderByBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(orderBy_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 12, orderBy_);
     }
     if (diversificationLevel_
@@ -3123,7 +3123,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
     if (size != -1) return size;
 
     size = 0;
-    if (!getParentBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(parent_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, parent_);
     }
     if (searchMode_
@@ -3155,10 +3155,10 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
     if (pageSize_ != 0) {
       size += com.google.protobuf.CodedOutputStream.computeInt32Size(10, pageSize_);
     }
-    if (!getPageTokenBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(pageToken_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(11, pageToken_);
     }
-    if (!getOrderByBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(orderBy_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(12, orderBy_);
     }
     if (diversificationLevel_

@@ -873,7 +873,7 @@ public final class EducationRecord extends com.google.protobuf.GeneratedMessageV
     if (expectedGraduationDate_ != null) {
       output.writeMessage(3, getExpectedGraduationDate());
     }
-    if (!getSchoolNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(schoolName_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 4, schoolName_);
     }
     if (address_ != null) {
@@ -885,16 +885,16 @@ public final class EducationRecord extends com.google.protobuf.GeneratedMessageV
     if (degreeCase_ == 7) {
       output.writeMessage(7, (com.google.cloud.talent.v4beta1.Degree) degree_);
     }
-    if (!getDescriptionBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(description_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 8, description_);
     }
     if (isCurrent_ != null) {
       output.writeMessage(9, getIsCurrent());
     }
-    if (!getSchoolNameSnippetBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(schoolNameSnippet_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 10, schoolNameSnippet_);
     }
-    if (!getDegreeSnippetBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(degreeSnippet_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 11, degreeSnippet_);
     }
     unknownFields.writeTo(output);
@@ -916,7 +916,7 @@ public final class EducationRecord extends com.google.protobuf.GeneratedMessageV
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(3, getExpectedGraduationDate());
     }
-    if (!getSchoolNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(schoolName_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, schoolName_);
     }
     if (address_ != null) {
@@ -930,16 +930,16 @@ public final class EducationRecord extends com.google.protobuf.GeneratedMessageV
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               7, (com.google.cloud.talent.v4beta1.Degree) degree_);
     }
-    if (!getDescriptionBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(description_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, description_);
     }
     if (isCurrent_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(9, getIsCurrent());
     }
-    if (!getSchoolNameSnippetBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(schoolNameSnippet_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(10, schoolNameSnippet_);
     }
-    if (!getDegreeSnippetBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(degreeSnippet_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(11, degreeSnippet_);
     }
     size += unknownFields.getSerializedSize();

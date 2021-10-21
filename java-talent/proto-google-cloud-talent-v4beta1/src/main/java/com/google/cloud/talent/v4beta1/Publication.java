@@ -674,28 +674,28 @@ public final class Publication extends com.google.protobuf.GeneratedMessageV3
     for (int i = 0; i < authors_.size(); i++) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, authors_.getRaw(i));
     }
-    if (!getTitleBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(title_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, title_);
     }
-    if (!getDescriptionBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(description_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, description_);
     }
-    if (!getJournalBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(journal_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 4, journal_);
     }
-    if (!getVolumeBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(volume_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 5, volume_);
     }
-    if (!getPublisherBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(publisher_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 6, publisher_);
     }
     if (publicationDate_ != null) {
       output.writeMessage(7, getPublicationDate());
     }
-    if (!getPublicationTypeBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(publicationType_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 8, publicationType_);
     }
-    if (!getIsbnBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(isbn_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 9, isbn_);
     }
     unknownFields.writeTo(output);
@@ -715,28 +715,28 @@ public final class Publication extends com.google.protobuf.GeneratedMessageV3
       size += dataSize;
       size += 1 * getAuthorsList().size();
     }
-    if (!getTitleBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(title_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, title_);
     }
-    if (!getDescriptionBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(description_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, description_);
     }
-    if (!getJournalBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(journal_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, journal_);
     }
-    if (!getVolumeBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(volume_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, volume_);
     }
-    if (!getPublisherBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(publisher_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, publisher_);
     }
     if (publicationDate_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(7, getPublicationDate());
     }
-    if (!getPublicationTypeBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(publicationType_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, publicationType_);
     }
-    if (!getIsbnBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(isbn_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(9, isbn_);
     }
     size += unknownFields.getSerializedSize();

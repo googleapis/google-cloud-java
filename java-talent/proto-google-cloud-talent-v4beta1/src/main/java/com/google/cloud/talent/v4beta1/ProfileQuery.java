@@ -2058,7 +2058,7 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getQueryBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(query_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, query_);
     }
     for (int i = 0; i < locationFilters_.size(); i++) {
@@ -2094,7 +2094,7 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
     for (int i = 0; i < applicationJobFilters_.size(); i++) {
       output.writeMessage(13, applicationJobFilters_.get(i));
     }
-    if (!getCustomAttributeFilterBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(customAttributeFilter_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 15, customAttributeFilter_);
     }
     if (candidateAvailabilityFilter_ != null) {
@@ -2115,7 +2115,7 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
     if (size != -1) return size;
 
     size = 0;
-    if (!getQueryBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(query_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, query_);
     }
     for (int i = 0; i < locationFilters_.size(); i++) {
@@ -2158,7 +2158,7 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               13, applicationJobFilters_.get(i));
     }
-    if (!getCustomAttributeFilterBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(customAttributeFilter_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(15, customAttributeFilter_);
     }
     if (candidateAvailabilityFilter_ != null) {

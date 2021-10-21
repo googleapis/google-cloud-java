@@ -2856,19 +2856,19 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name_);
     }
-    if (!getExternalIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(externalId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, externalId_);
     }
-    if (!getSourceBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(source_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, source_);
     }
-    if (!getUriBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(uri_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 4, uri_);
     }
-    if (!getGroupIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(groupId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 5, groupId_);
     }
     if (isHirable_ != null) {
@@ -2924,7 +2924,7 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
     if (processed_ != false) {
       output.writeBool(27, processed_);
     }
-    if (!getKeywordSnippetBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(keywordSnippet_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 28, keywordSnippet_);
     }
     for (int i = 0; i < applications_.size(); i++) {
@@ -2957,19 +2957,19 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
     if (size != -1) return size;
 
     size = 0;
-    if (!getNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, name_);
     }
-    if (!getExternalIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(externalId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, externalId_);
     }
-    if (!getSourceBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(source_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, source_);
     }
-    if (!getUriBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(uri_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, uri_);
     }
-    if (!getGroupIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(groupId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, groupId_);
     }
     if (isHirable_ != null) {
@@ -3039,7 +3039,7 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
     if (processed_ != false) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(27, processed_);
     }
-    if (!getKeywordSnippetBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(keywordSnippet_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(28, keywordSnippet_);
     }
     {

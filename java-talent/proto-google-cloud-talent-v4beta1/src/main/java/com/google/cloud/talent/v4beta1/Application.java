@@ -1626,16 +1626,16 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name_);
     }
-    if (!getProfileBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(profile_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, profile_);
     }
-    if (!getJobBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(job_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 4, job_);
     }
-    if (!getCompanyBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(company_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 5, company_);
     }
     if (applicationDate_ != null) {
@@ -1665,7 +1665,7 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
     if (updateTime_ != null) {
       output.writeMessage(20, getUpdateTime());
     }
-    if (!getOutcomeNotesBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(outcomeNotes_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 21, outcomeNotes_);
     }
     if (outcome_ != com.google.cloud.talent.v4beta1.Outcome.OUTCOME_UNSPECIFIED.getNumber()) {
@@ -1674,10 +1674,10 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
     if (isMatch_ != null) {
       output.writeMessage(28, getIsMatch());
     }
-    if (!getJobTitleSnippetBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(jobTitleSnippet_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 29, jobTitleSnippet_);
     }
-    if (!getExternalIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(externalId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 31, externalId_);
     }
     unknownFields.writeTo(output);
@@ -1689,16 +1689,16 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
     if (size != -1) return size;
 
     size = 0;
-    if (!getNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, name_);
     }
-    if (!getProfileBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(profile_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, profile_);
     }
-    if (!getJobBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(job_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, job_);
     }
-    if (!getCompanyBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(company_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, company_);
     }
     if (applicationDate_ != null) {
@@ -1728,7 +1728,7 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
     if (updateTime_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(20, getUpdateTime());
     }
-    if (!getOutcomeNotesBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(outcomeNotes_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(21, outcomeNotes_);
     }
     if (outcome_ != com.google.cloud.talent.v4beta1.Outcome.OUTCOME_UNSPECIFIED.getNumber()) {
@@ -1737,10 +1737,10 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
     if (isMatch_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(28, getIsMatch());
     }
-    if (!getJobTitleSnippetBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(jobTitleSnippet_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(29, jobTitleSnippet_);
     }
-    if (!getExternalIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(externalId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(31, externalId_);
     }
     size += unknownFields.getSerializedSize();

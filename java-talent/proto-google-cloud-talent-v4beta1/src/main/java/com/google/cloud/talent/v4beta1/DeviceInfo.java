@@ -480,7 +480,7 @@ public final class DeviceInfo extends com.google.protobuf.GeneratedMessageV3
             .getNumber()) {
       output.writeEnum(1, deviceType_);
     }
-    if (!getIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(id_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, id_);
     }
     unknownFields.writeTo(output);
@@ -497,7 +497,7 @@ public final class DeviceInfo extends com.google.protobuf.GeneratedMessageV3
             .getNumber()) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(1, deviceType_);
     }
-    if (!getIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(id_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, id_);
     }
     size += unknownFields.getSerializedSize();

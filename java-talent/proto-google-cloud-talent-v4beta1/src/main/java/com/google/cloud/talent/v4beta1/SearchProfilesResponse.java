@@ -590,7 +590,7 @@ public final class SearchProfilesResponse extends com.google.protobuf.GeneratedM
     if (metadata_ != null) {
       output.writeMessage(3, getMetadata());
     }
-    if (!getNextPageTokenBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(nextPageToken_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 4, nextPageToken_);
     }
     for (int i = 0; i < histogramQueryResults_.size(); i++) {
@@ -599,7 +599,7 @@ public final class SearchProfilesResponse extends com.google.protobuf.GeneratedM
     for (int i = 0; i < summarizedProfiles_.size(); i++) {
       output.writeMessage(6, summarizedProfiles_.get(i));
     }
-    if (!getResultSetIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(resultSetId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 7, resultSetId_);
     }
     unknownFields.writeTo(output);
@@ -620,7 +620,7 @@ public final class SearchProfilesResponse extends com.google.protobuf.GeneratedM
     if (metadata_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(3, getMetadata());
     }
-    if (!getNextPageTokenBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(nextPageToken_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, nextPageToken_);
     }
     for (int i = 0; i < histogramQueryResults_.size(); i++) {
@@ -632,7 +632,7 @@ public final class SearchProfilesResponse extends com.google.protobuf.GeneratedM
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(6, summarizedProfiles_.get(i));
     }
-    if (!getResultSetIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(resultSetId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, resultSetId_);
     }
     size += unknownFields.getSerializedSize();

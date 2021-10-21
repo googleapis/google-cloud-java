@@ -997,7 +997,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
       for (int i = 0; i < emails_.size(); i++) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, emails_.getRaw(i));
       }
-      if (!getInstructionBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(instruction_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, instruction_);
       }
       for (int i = 0; i < uris_.size(); i++) {
@@ -1020,7 +1020,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
         size += dataSize;
         size += 1 * getEmailsList().size();
       }
-      if (!getInstructionBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(instruction_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, instruction_);
       }
       {
@@ -6228,19 +6228,19 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
     getSerializedSize();
-    if (!getNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name_);
     }
-    if (!getCompanyBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(company_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, company_);
     }
-    if (!getRequisitionIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(requisitionId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, requisitionId_);
     }
-    if (!getTitleBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(title_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 4, title_);
     }
-    if (!getDescriptionBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(description_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 5, description_);
     }
     for (int i = 0; i < addresses_.size(); i++) {
@@ -6268,7 +6268,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
     for (int i = 0; i < degreeTypes_.size(); i++) {
       output.writeEnumNoTag(degreeTypes_.get(i));
     }
-    if (!getDepartmentBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(department_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 12, department_);
     }
     if (getEmploymentTypesList().size() > 0) {
@@ -6278,10 +6278,10 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
     for (int i = 0; i < employmentTypes_.size(); i++) {
       output.writeEnumNoTag(employmentTypes_.get(i));
     }
-    if (!getIncentivesBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(incentives_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 14, incentives_);
     }
-    if (!getLanguageCodeBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(languageCode_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 15, languageCode_);
     }
     if (jobLevel_ != com.google.cloud.talent.v4.JobLevel.JOB_LEVEL_UNSPECIFIED.getNumber()) {
@@ -6290,10 +6290,10 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
     if (promotionValue_ != 0) {
       output.writeInt32(17, promotionValue_);
     }
-    if (!getQualificationsBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(qualifications_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 18, qualifications_);
     }
-    if (!getResponsibilitiesBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(responsibilities_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 19, responsibilities_);
     }
     if (postingRegion_
@@ -6321,7 +6321,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
     if (postingUpdateTime_ != null) {
       output.writeMessage(27, getPostingUpdateTime());
     }
-    if (!getCompanyDisplayNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(companyDisplayName_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 28, companyDisplayName_);
     }
     if (derivedInfo_ != null) {
@@ -6339,19 +6339,19 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
     if (size != -1) return size;
 
     size = 0;
-    if (!getNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, name_);
     }
-    if (!getCompanyBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(company_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, company_);
     }
-    if (!getRequisitionIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(requisitionId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, requisitionId_);
     }
-    if (!getTitleBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(title_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, title_);
     }
-    if (!getDescriptionBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(description_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, description_);
     }
     {
@@ -6403,7 +6403,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
       }
       degreeTypesMemoizedSerializedSize = dataSize;
     }
-    if (!getDepartmentBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(department_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(12, department_);
     }
     {
@@ -6419,10 +6419,10 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
       }
       employmentTypesMemoizedSerializedSize = dataSize;
     }
-    if (!getIncentivesBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(incentives_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(14, incentives_);
     }
-    if (!getLanguageCodeBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(languageCode_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(15, languageCode_);
     }
     if (jobLevel_ != com.google.cloud.talent.v4.JobLevel.JOB_LEVEL_UNSPECIFIED.getNumber()) {
@@ -6431,10 +6431,10 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
     if (promotionValue_ != 0) {
       size += com.google.protobuf.CodedOutputStream.computeInt32Size(17, promotionValue_);
     }
-    if (!getQualificationsBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(qualifications_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(18, qualifications_);
     }
-    if (!getResponsibilitiesBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(responsibilities_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(19, responsibilities_);
     }
     if (postingRegion_
@@ -6462,7 +6462,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
     if (postingUpdateTime_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(27, getPostingUpdateTime());
     }
-    if (!getCompanyDisplayNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(companyDisplayName_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(28, companyDisplayName_);
     }
     if (derivedInfo_ != null) {

@@ -287,10 +287,10 @@ public final class AdditionalContactInfo extends com.google.protobuf.GeneratedMe
             .getNumber()) {
       output.writeEnum(1, usage_);
     }
-    if (!getNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, name_);
     }
-    if (!getContactIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(contactId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, contactId_);
     }
     unknownFields.writeTo(output);
@@ -307,10 +307,10 @@ public final class AdditionalContactInfo extends com.google.protobuf.GeneratedMe
             .getNumber()) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(1, usage_);
     }
-    if (!getNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, name_);
     }
-    if (!getContactIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(contactId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, contactId_);
     }
     size += unknownFields.getSerializedSize();

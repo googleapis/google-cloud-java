@@ -267,10 +267,10 @@ public final class SpellingCorrection extends com.google.protobuf.GeneratedMessa
     if (corrected_ != false) {
       output.writeBool(1, corrected_);
     }
-    if (!getCorrectedTextBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(correctedText_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, correctedText_);
     }
-    if (!getCorrectedHtmlBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(correctedHtml_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, correctedHtml_);
     }
     unknownFields.writeTo(output);
@@ -285,10 +285,10 @@ public final class SpellingCorrection extends com.google.protobuf.GeneratedMessa
     if (corrected_ != false) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(1, corrected_);
     }
-    if (!getCorrectedTextBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(correctedText_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, correctedText_);
     }
-    if (!getCorrectedHtmlBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(correctedHtml_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, correctedHtml_);
     }
     size += unknownFields.getSerializedSize();

@@ -734,7 +734,7 @@ public final class BatchOperationMetadata extends com.google.protobuf.GeneratedM
             .getNumber()) {
       output.writeEnum(1, state_);
     }
-    if (!getStateDescriptionBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(stateDescription_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, stateDescription_);
     }
     if (successCount_ != 0) {
@@ -769,7 +769,7 @@ public final class BatchOperationMetadata extends com.google.protobuf.GeneratedM
             .getNumber()) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(1, state_);
     }
-    if (!getStateDescriptionBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(stateDescription_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, stateDescription_);
     }
     if (successCount_ != 0) {

@@ -702,13 +702,13 @@ public final class Patent extends com.google.protobuf.GeneratedMessageV3
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getDisplayNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(displayName_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, displayName_);
     }
     for (int i = 0; i < inventors_.size(); i++) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, inventors_.getRaw(i));
     }
-    if (!getPatentStatusBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(patentStatus_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, patentStatus_);
     }
     if (patentStatusDate_ != null) {
@@ -717,13 +717,13 @@ public final class Patent extends com.google.protobuf.GeneratedMessageV3
     if (patentFilingDate_ != null) {
       output.writeMessage(5, getPatentFilingDate());
     }
-    if (!getPatentOfficeBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(patentOffice_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 6, patentOffice_);
     }
-    if (!getPatentNumberBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(patentNumber_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 7, patentNumber_);
     }
-    if (!getPatentDescriptionBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(patentDescription_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 8, patentDescription_);
     }
     for (int i = 0; i < skillsUsed_.size(); i++) {
@@ -738,7 +738,7 @@ public final class Patent extends com.google.protobuf.GeneratedMessageV3
     if (size != -1) return size;
 
     size = 0;
-    if (!getDisplayNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(displayName_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, displayName_);
     }
     {
@@ -749,7 +749,7 @@ public final class Patent extends com.google.protobuf.GeneratedMessageV3
       size += dataSize;
       size += 1 * getInventorsList().size();
     }
-    if (!getPatentStatusBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(patentStatus_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, patentStatus_);
     }
     if (patentStatusDate_ != null) {
@@ -758,13 +758,13 @@ public final class Patent extends com.google.protobuf.GeneratedMessageV3
     if (patentFilingDate_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(5, getPatentFilingDate());
     }
-    if (!getPatentOfficeBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(patentOffice_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, patentOffice_);
     }
-    if (!getPatentNumberBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(patentNumber_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, patentNumber_);
     }
-    if (!getPatentDescriptionBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(patentDescription_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, patentDescription_);
     }
     for (int i = 0; i < skillsUsed_.size(); i++) {

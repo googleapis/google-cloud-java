@@ -198,7 +198,7 @@ public final class JobTitleFilter extends com.google.protobuf.GeneratedMessageV3
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getJobTitleBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(jobTitle_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, jobTitle_);
     }
     if (negated_ != false) {
@@ -213,7 +213,7 @@ public final class JobTitleFilter extends com.google.protobuf.GeneratedMessageV3
     if (size != -1) return size;
 
     size = 0;
-    if (!getJobTitleBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(jobTitle_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, jobTitle_);
     }
     if (negated_ != false) {

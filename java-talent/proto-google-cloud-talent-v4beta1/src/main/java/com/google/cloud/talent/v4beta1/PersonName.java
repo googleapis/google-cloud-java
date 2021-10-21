@@ -868,13 +868,13 @@ public final class PersonName extends com.google.protobuf.GeneratedMessageV3
 
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-      if (!getGivenNameBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(givenName_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, givenName_);
       }
-      if (!getMiddleInitialBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(middleInitial_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, middleInitial_);
       }
-      if (!getFamilyNameBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(familyName_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 3, familyName_);
       }
       for (int i = 0; i < suffixes_.size(); i++) {
@@ -883,7 +883,7 @@ public final class PersonName extends com.google.protobuf.GeneratedMessageV3
       for (int i = 0; i < prefixes_.size(); i++) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 5, prefixes_.getRaw(i));
       }
-      if (!getPreferredNameBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(preferredName_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 6, preferredName_);
       }
       unknownFields.writeTo(output);
@@ -895,13 +895,13 @@ public final class PersonName extends com.google.protobuf.GeneratedMessageV3
       if (size != -1) return size;
 
       size = 0;
-      if (!getGivenNameBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(givenName_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, givenName_);
       }
-      if (!getMiddleInitialBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(middleInitial_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, middleInitial_);
       }
-      if (!getFamilyNameBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(familyName_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, familyName_);
       }
       {
@@ -920,7 +920,7 @@ public final class PersonName extends com.google.protobuf.GeneratedMessageV3
         size += dataSize;
         size += 1 * getPrefixesList().size();
       }
-      if (!getPreferredNameBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(preferredName_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, preferredName_);
       }
       size += unknownFields.getSerializedSize();
@@ -2417,7 +2417,7 @@ public final class PersonName extends com.google.protobuf.GeneratedMessageV3
       output.writeMessage(
           2, (com.google.cloud.talent.v4beta1.PersonName.PersonStructuredName) personName_);
     }
-    if (!getPreferredNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(preferredName_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, preferredName_);
     }
     unknownFields.writeTo(output);
@@ -2437,7 +2437,7 @@ public final class PersonName extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               2, (com.google.cloud.talent.v4beta1.PersonName.PersonStructuredName) personName_);
     }
-    if (!getPreferredNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(preferredName_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, preferredName_);
     }
     size += unknownFields.getSerializedSize();

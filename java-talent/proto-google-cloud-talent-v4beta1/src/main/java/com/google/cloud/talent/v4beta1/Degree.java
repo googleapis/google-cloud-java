@@ -310,7 +310,7 @@ public final class Degree extends com.google.protobuf.GeneratedMessageV3
         != com.google.cloud.talent.v4beta1.DegreeType.DEGREE_TYPE_UNSPECIFIED.getNumber()) {
       output.writeEnum(1, degreeType_);
     }
-    if (!getDegreeNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(degreeName_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, degreeName_);
     }
     for (int i = 0; i < fieldsOfStudy_.size(); i++) {
@@ -329,7 +329,7 @@ public final class Degree extends com.google.protobuf.GeneratedMessageV3
         != com.google.cloud.talent.v4beta1.DegreeType.DEGREE_TYPE_UNSPECIFIED.getNumber()) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(1, degreeType_);
     }
-    if (!getDegreeNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(degreeName_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, degreeName_);
     }
     {

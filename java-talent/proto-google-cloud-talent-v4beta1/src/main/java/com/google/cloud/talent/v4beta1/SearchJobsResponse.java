@@ -794,13 +794,13 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
       if (job_ != null) {
         output.writeMessage(1, getJob());
       }
-      if (!getJobSummaryBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(jobSummary_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, jobSummary_);
       }
-      if (!getJobTitleSnippetBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(jobTitleSnippet_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 3, jobTitleSnippet_);
       }
-      if (!getSearchTextSnippetBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(searchTextSnippet_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 4, searchTextSnippet_);
       }
       if (commuteInfo_ != null) {
@@ -818,13 +818,13 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
       if (job_ != null) {
         size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, getJob());
       }
-      if (!getJobSummaryBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(jobSummary_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, jobSummary_);
       }
-      if (!getJobTitleSnippetBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(jobTitleSnippet_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, jobTitleSnippet_);
       }
-      if (!getSearchTextSnippetBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(searchTextSnippet_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, searchTextSnippet_);
       }
       if (commuteInfo_ != null) {
@@ -3573,7 +3573,7 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
     for (int i = 0; i < histogramQueryResults_.size(); i++) {
       output.writeMessage(2, histogramQueryResults_.get(i));
     }
-    if (!getNextPageTokenBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(nextPageToken_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, nextPageToken_);
     }
     for (int i = 0; i < locationFilters_.size(); i++) {
@@ -3611,7 +3611,7 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               2, histogramQueryResults_.get(i));
     }
-    if (!getNextPageTokenBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(nextPageToken_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, nextPageToken_);
     }
     for (int i = 0; i < locationFilters_.size(); i++) {

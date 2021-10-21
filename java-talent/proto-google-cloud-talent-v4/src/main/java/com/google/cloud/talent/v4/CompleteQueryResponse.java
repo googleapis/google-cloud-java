@@ -481,7 +481,7 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
 
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-      if (!getSuggestionBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(suggestion_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, suggestion_);
       }
       if (type_
@@ -490,7 +490,7 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
               .getNumber()) {
         output.writeEnum(2, type_);
       }
-      if (!getImageUriBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(imageUri_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 3, imageUri_);
       }
       unknownFields.writeTo(output);
@@ -502,7 +502,7 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
       if (size != -1) return size;
 
       size = 0;
-      if (!getSuggestionBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(suggestion_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, suggestion_);
       }
       if (type_
@@ -511,7 +511,7 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
               .getNumber()) {
         size += com.google.protobuf.CodedOutputStream.computeEnumSize(2, type_);
       }
-      if (!getImageUriBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(imageUri_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, imageUri_);
       }
       size += unknownFields.getSerializedSize();
