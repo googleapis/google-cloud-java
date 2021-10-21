@@ -1,5 +1,29 @@
 # Changelog
 
+## [2.3.0](https://www.github.com/googleapis/java-aiplatform/compare/v2.2.4...v2.3.0) (2021-10-21)
+
+
+### Features
+
+* add featurestore service to aiplatform v1 feat: add metadata service to aiplatform v1 ([#692](https://www.github.com/googleapis/java-aiplatform/issues/692)) ([1ecc5d1](https://www.github.com/googleapis/java-aiplatform/commit/1ecc5d1288fdb9ca909d54ca5ad16586af9648d4))
+* add Similarity to explanation in aiplatform v1beta1 feat: add EncryptionSpec to featurestore in aiplatform v1beta1 feat: add PipelineTaskStatus to pipeline_job in aiplatform v1beta1 feat: add BatchReadTensorboardTimeSeriesData to tensorboard_serv... ([#691](https://www.github.com/googleapis/java-aiplatform/issues/691)) ([a215d7b](https://www.github.com/googleapis/java-aiplatform/commit/a215d7b0aa1d0e2909d7a1218ded4094f4a31a44))
+* add vizier service to aiplatform v1 BUILD.bazel ([#688](https://www.github.com/googleapis/java-aiplatform/issues/688)) ([4fcfca6](https://www.github.com/googleapis/java-aiplatform/commit/4fcfca6dc1e9ddab8f991804a02c6370ddb16b35))
+
+
+### Bug Fixes
+
+* Remove invalid resource annotations ([#699](https://www.github.com/googleapis/java-aiplatform/issues/699)) ([5ece66d](https://www.github.com/googleapis/java-aiplatform/commit/5ece66dd33c5195169e8e5a559ee04864a45827d))
+
+
+### Dependencies
+
+* update dependency com.google.api.grpc:proto-google-cloud-aiplatform-v1beta1 to v0.8.4 ([#682](https://www.github.com/googleapis/java-aiplatform/issues/682)) ([2309a27](https://www.github.com/googleapis/java-aiplatform/commit/2309a27f48051707d34f9121980e633e465681b9))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.4.0 ([#697](https://www.github.com/googleapis/java-aiplatform/issues/697)) ([29abdbd](https://www.github.com/googleapis/java-aiplatform/commit/29abdbdfbeec4d6928922e27a1ec2b25c62530d5))
+* update dependency com.google.cloud:google-cloud-storage to v2.1.6 ([#683](https://www.github.com/googleapis/java-aiplatform/issues/683)) ([e1419a3](https://www.github.com/googleapis/java-aiplatform/commit/e1419a3f3fd092c9108622c34ee68bdc62bed3f5))
+* update dependency com.google.cloud:google-cloud-storage to v2.1.7 ([#689](https://www.github.com/googleapis/java-aiplatform/issues/689)) ([56ab398](https://www.github.com/googleapis/java-aiplatform/commit/56ab398d3dc440150b0e771b606c783db50e4513))
+* update dependency com.google.cloud:google-cloud-storage to v2.1.8 ([#696](https://www.github.com/googleapis/java-aiplatform/issues/696)) ([ae93da9](https://www.github.com/googleapis/java-aiplatform/commit/ae93da916ff20d6191729d7afb05b123009163d6))
+* update dependency com.google.cloud:google-cloud-storage to v2.1.9 ([#698](https://www.github.com/googleapis/java-aiplatform/issues/698)) ([e762a46](https://www.github.com/googleapis/java-aiplatform/commit/e762a46d8a2b8fc5687da25aced63798427bcf45))
+
 ### [2.2.4](https://www.github.com/googleapis/java-aiplatform/compare/v2.2.3...v2.2.4) (2021-09-24)
 
 
