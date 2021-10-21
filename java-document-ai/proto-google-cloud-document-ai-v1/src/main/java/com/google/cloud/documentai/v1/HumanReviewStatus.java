@@ -494,10 +494,10 @@ public final class HumanReviewStatus extends com.google.protobuf.GeneratedMessag
         != com.google.cloud.documentai.v1.HumanReviewStatus.State.STATE_UNSPECIFIED.getNumber()) {
       output.writeEnum(1, state_);
     }
-    if (!getStateMessageBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(stateMessage_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, stateMessage_);
     }
-    if (!getHumanReviewOperationBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(humanReviewOperation_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, humanReviewOperation_);
     }
     unknownFields.writeTo(output);
@@ -513,10 +513,10 @@ public final class HumanReviewStatus extends com.google.protobuf.GeneratedMessag
         != com.google.cloud.documentai.v1.HumanReviewStatus.State.STATE_UNSPECIFIED.getNumber()) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(1, state_);
     }
-    if (!getStateMessageBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(stateMessage_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, stateMessage_);
     }
-    if (!getHumanReviewOperationBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(humanReviewOperation_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, humanReviewOperation_);
     }
     size += unknownFields.getSerializedSize();

@@ -203,7 +203,7 @@ public final class RawDocument extends com.google.protobuf.GeneratedMessageV3
     if (!content_.isEmpty()) {
       output.writeBytes(1, content_);
     }
-    if (!getMimeTypeBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(mimeType_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, mimeType_);
     }
     unknownFields.writeTo(output);
@@ -218,7 +218,7 @@ public final class RawDocument extends com.google.protobuf.GeneratedMessageV3
     if (!content_.isEmpty()) {
       size += com.google.protobuf.CodedOutputStream.computeBytesSize(1, content_);
     }
-    if (!getMimeTypeBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(mimeType_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, mimeType_);
     }
     size += unknownFields.getSerializedSize();

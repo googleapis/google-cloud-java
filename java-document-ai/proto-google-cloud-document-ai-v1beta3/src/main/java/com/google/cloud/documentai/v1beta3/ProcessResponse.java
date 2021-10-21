@@ -318,7 +318,7 @@ public final class ProcessResponse extends com.google.protobuf.GeneratedMessageV
     if (document_ != null) {
       output.writeMessage(1, getDocument());
     }
-    if (!getHumanReviewOperationBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(humanReviewOperation_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, humanReviewOperation_);
     }
     if (humanReviewStatus_ != null) {
@@ -336,7 +336,7 @@ public final class ProcessResponse extends com.google.protobuf.GeneratedMessageV
     if (document_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, getDocument());
     }
-    if (!getHumanReviewOperationBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(humanReviewOperation_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, humanReviewOperation_);
     }
     if (humanReviewStatus_ != null) {

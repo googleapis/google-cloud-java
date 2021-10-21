@@ -737,7 +737,7 @@ public final class ProcessDocumentRequest extends com.google.protobuf.GeneratedM
     if (outputConfig_ != null) {
       output.writeMessage(2, getOutputConfig());
     }
-    if (!getDocumentTypeBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(documentType_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, documentType_);
     }
     if (tableExtractionParams_ != null) {
@@ -755,7 +755,7 @@ public final class ProcessDocumentRequest extends com.google.protobuf.GeneratedM
     if (automlParams_ != null) {
       output.writeMessage(8, getAutomlParams());
     }
-    if (!getParentBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(parent_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 9, parent_);
     }
     unknownFields.writeTo(output);
@@ -773,7 +773,7 @@ public final class ProcessDocumentRequest extends com.google.protobuf.GeneratedM
     if (outputConfig_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, getOutputConfig());
     }
-    if (!getDocumentTypeBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(documentType_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, documentType_);
     }
     if (tableExtractionParams_ != null) {
@@ -794,7 +794,7 @@ public final class ProcessDocumentRequest extends com.google.protobuf.GeneratedM
     if (automlParams_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(8, getAutomlParams());
     }
-    if (!getParentBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(parent_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(9, parent_);
     }
     size += unknownFields.getSerializedSize();

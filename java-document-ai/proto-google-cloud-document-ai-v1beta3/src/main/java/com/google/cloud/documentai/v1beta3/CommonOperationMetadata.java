@@ -572,7 +572,7 @@ public final class CommonOperationMetadata extends com.google.protobuf.Generated
             .getNumber()) {
       output.writeEnum(1, state_);
     }
-    if (!getStateMessageBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(stateMessage_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, stateMessage_);
     }
     if (createTime_ != null) {
@@ -595,7 +595,7 @@ public final class CommonOperationMetadata extends com.google.protobuf.Generated
             .getNumber()) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(1, state_);
     }
-    if (!getStateMessageBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(stateMessage_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, stateMessage_);
     }
     if (createTime_ != null) {

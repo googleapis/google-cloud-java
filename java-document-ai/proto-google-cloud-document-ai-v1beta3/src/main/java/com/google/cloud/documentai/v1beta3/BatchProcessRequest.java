@@ -469,10 +469,10 @@ public final class BatchProcessRequest extends com.google.protobuf.GeneratedMess
 
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-      if (!getGcsSourceBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(gcsSource_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, gcsSource_);
       }
-      if (!getMimeTypeBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(mimeType_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, mimeType_);
       }
       unknownFields.writeTo(output);
@@ -484,10 +484,10 @@ public final class BatchProcessRequest extends com.google.protobuf.GeneratedMess
       if (size != -1) return size;
 
       size = 0;
-      if (!getGcsSourceBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(gcsSource_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, gcsSource_);
       }
-      if (!getMimeTypeBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(mimeType_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, mimeType_);
       }
       size += unknownFields.getSerializedSize();
@@ -1280,7 +1280,7 @@ public final class BatchProcessRequest extends com.google.protobuf.GeneratedMess
 
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-      if (!getGcsDestinationBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(gcsDestination_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, gcsDestination_);
       }
       unknownFields.writeTo(output);
@@ -1292,7 +1292,7 @@ public final class BatchProcessRequest extends com.google.protobuf.GeneratedMess
       if (size != -1) return size;
 
       size = 0;
-      if (!getGcsDestinationBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(gcsDestination_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, gcsDestination_);
       }
       size += unknownFields.getSerializedSize();
@@ -2104,7 +2104,7 @@ public final class BatchProcessRequest extends com.google.protobuf.GeneratedMess
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name_);
     }
     for (int i = 0; i < inputConfigs_.size(); i++) {
@@ -2131,7 +2131,7 @@ public final class BatchProcessRequest extends com.google.protobuf.GeneratedMess
     if (size != -1) return size;
 
     size = 0;
-    if (!getNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, name_);
     }
     for (int i = 0; i < inputConfigs_.size(); i++) {
