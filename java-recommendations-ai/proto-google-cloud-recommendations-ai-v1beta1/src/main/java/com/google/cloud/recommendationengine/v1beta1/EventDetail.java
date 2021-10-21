@@ -560,22 +560,22 @@ public final class EventDetail extends com.google.protobuf.GeneratedMessageV3
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getUriBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(uri_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, uri_);
     }
-    if (!getPageViewIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(pageViewId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, pageViewId_);
     }
     for (int i = 0; i < experimentIds_.size(); i++) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, experimentIds_.getRaw(i));
     }
-    if (!getRecommendationTokenBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(recommendationToken_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 4, recommendationToken_);
     }
     if (eventAttributes_ != null) {
       output.writeMessage(5, getEventAttributes());
     }
-    if (!getReferrerUriBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(referrerUri_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 6, referrerUri_);
     }
     unknownFields.writeTo(output);
@@ -587,10 +587,10 @@ public final class EventDetail extends com.google.protobuf.GeneratedMessageV3
     if (size != -1) return size;
 
     size = 0;
-    if (!getUriBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(uri_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, uri_);
     }
-    if (!getPageViewIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(pageViewId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, pageViewId_);
     }
     {
@@ -601,13 +601,13 @@ public final class EventDetail extends com.google.protobuf.GeneratedMessageV3
       size += dataSize;
       size += 1 * getExperimentIdsList().size();
     }
-    if (!getRecommendationTokenBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(recommendationToken_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, recommendationToken_);
     }
     if (eventAttributes_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(5, getEventAttributes());
     }
-    if (!getReferrerUriBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(referrerUri_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, referrerUri_);
     }
     size += unknownFields.getSerializedSize();

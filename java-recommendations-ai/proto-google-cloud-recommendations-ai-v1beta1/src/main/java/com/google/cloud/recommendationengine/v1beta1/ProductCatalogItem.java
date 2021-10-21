@@ -2356,7 +2356,7 @@ public final class ProductCatalogItem extends com.google.protobuf.GeneratedMessa
     }
     com.google.protobuf.GeneratedMessageV3.serializeStringMapTo(
         output, internalGetCosts(), CostsDefaultEntryHolder.defaultEntry, 3);
-    if (!getCurrencyCodeBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(currencyCode_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 4, currencyCode_);
     }
     if (stockState_
@@ -2368,7 +2368,7 @@ public final class ProductCatalogItem extends com.google.protobuf.GeneratedMessa
     if (availableQuantity_ != 0L) {
       output.writeInt64(6, availableQuantity_);
     }
-    if (!getCanonicalProductUriBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(canonicalProductUri_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 7, canonicalProductUri_);
     }
     for (int i = 0; i < images_.size(); i++) {
@@ -2405,7 +2405,7 @@ public final class ProductCatalogItem extends com.google.protobuf.GeneratedMessa
               .build();
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(3, costs__);
     }
-    if (!getCurrencyCodeBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(currencyCode_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, currencyCode_);
     }
     if (stockState_
@@ -2417,7 +2417,7 @@ public final class ProductCatalogItem extends com.google.protobuf.GeneratedMessa
     if (availableQuantity_ != 0L) {
       size += com.google.protobuf.CodedOutputStream.computeInt64Size(6, availableQuantity_);
     }
-    if (!getCanonicalProductUriBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(canonicalProductUri_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, canonicalProductUri_);
     }
     for (int i = 0; i < images_.size(); i++) {

@@ -1732,28 +1732,28 @@ public final class CatalogItem extends com.google.protobuf.GeneratedMessageV3
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(id_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, id_);
     }
     for (int i = 0; i < categoryHierarchies_.size(); i++) {
       output.writeMessage(2, categoryHierarchies_.get(i));
     }
-    if (!getTitleBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(title_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, title_);
     }
-    if (!getDescriptionBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(description_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 4, description_);
     }
     if (itemAttributes_ != null) {
       output.writeMessage(5, getItemAttributes());
     }
-    if (!getLanguageCodeBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(languageCode_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 6, languageCode_);
     }
     for (int i = 0; i < tags_.size(); i++) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 8, tags_.getRaw(i));
     }
-    if (!getItemGroupIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(itemGroupId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 9, itemGroupId_);
     }
     if (recommendationTypeCase_ == 10) {
@@ -1770,23 +1770,23 @@ public final class CatalogItem extends com.google.protobuf.GeneratedMessageV3
     if (size != -1) return size;
 
     size = 0;
-    if (!getIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(id_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, id_);
     }
     for (int i = 0; i < categoryHierarchies_.size(); i++) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(2, categoryHierarchies_.get(i));
     }
-    if (!getTitleBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(title_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, title_);
     }
-    if (!getDescriptionBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(description_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, description_);
     }
     if (itemAttributes_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(5, getItemAttributes());
     }
-    if (!getLanguageCodeBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(languageCode_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, languageCode_);
     }
     {
@@ -1797,7 +1797,7 @@ public final class CatalogItem extends com.google.protobuf.GeneratedMessageV3
       size += dataSize;
       size += 1 * getTagsList().size();
     }
-    if (!getItemGroupIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(itemGroupId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(9, itemGroupId_);
     }
     if (recommendationTypeCase_ == 10) {

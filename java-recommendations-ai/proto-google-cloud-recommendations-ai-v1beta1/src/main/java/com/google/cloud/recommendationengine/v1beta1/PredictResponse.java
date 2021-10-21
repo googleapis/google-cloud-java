@@ -608,7 +608,7 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
 
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-      if (!getIdBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(id_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, id_);
       }
       com.google.protobuf.GeneratedMessageV3.serializeStringMapTo(
@@ -622,7 +622,7 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
       if (size != -1) return size;
 
       size = 0;
-      if (!getIdBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(id_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, id_);
       }
       for (java.util.Map.Entry<java.lang.String, com.google.protobuf.Value> entry :
@@ -1744,7 +1744,7 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
     for (int i = 0; i < results_.size(); i++) {
       output.writeMessage(1, results_.get(i));
     }
-    if (!getRecommendationTokenBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(recommendationToken_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, recommendationToken_);
     }
     for (int i = 0; i < itemsMissingInCatalog_.size(); i++) {
@@ -1756,7 +1756,7 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
     }
     com.google.protobuf.GeneratedMessageV3.serializeStringMapTo(
         output, internalGetMetadata(), MetadataDefaultEntryHolder.defaultEntry, 5);
-    if (!getNextPageTokenBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(nextPageToken_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 6, nextPageToken_);
     }
     unknownFields.writeTo(output);
@@ -1771,7 +1771,7 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
     for (int i = 0; i < results_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, results_.get(i));
     }
-    if (!getRecommendationTokenBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(recommendationToken_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, recommendationToken_);
     }
     {
@@ -1795,7 +1795,7 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
               .build();
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(5, metadata__);
     }
-    if (!getNextPageTokenBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(nextPageToken_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, nextPageToken_);
     }
     size += unknownFields.getSerializedSize();
