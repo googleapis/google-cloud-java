@@ -467,10 +467,10 @@ public final class X509CertificateDetails extends com.google.protobuf.GeneratedM
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getIssuerBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(issuer_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, issuer_);
     }
-    if (!getSubjectBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(subject_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, subject_);
     }
     if (startTime_ != null) {
@@ -479,10 +479,10 @@ public final class X509CertificateDetails extends com.google.protobuf.GeneratedM
     if (expiryTime_ != null) {
       output.writeMessage(4, getExpiryTime());
     }
-    if (!getSignatureAlgorithmBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(signatureAlgorithm_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 5, signatureAlgorithm_);
     }
-    if (!getPublicKeyTypeBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(publicKeyType_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 6, publicKeyType_);
     }
     unknownFields.writeTo(output);
@@ -494,10 +494,10 @@ public final class X509CertificateDetails extends com.google.protobuf.GeneratedM
     if (size != -1) return size;
 
     size = 0;
-    if (!getIssuerBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(issuer_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, issuer_);
     }
-    if (!getSubjectBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(subject_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, subject_);
     }
     if (startTime_ != null) {
@@ -506,10 +506,10 @@ public final class X509CertificateDetails extends com.google.protobuf.GeneratedM
     if (expiryTime_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(4, getExpiryTime());
     }
-    if (!getSignatureAlgorithmBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(signatureAlgorithm_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, signatureAlgorithm_);
     }
-    if (!getPublicKeyTypeBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(publicKeyType_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, publicKeyType_);
     }
     size += unknownFields.getSerializedSize();

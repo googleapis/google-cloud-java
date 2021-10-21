@@ -222,7 +222,7 @@ public final class PublicKeyCredential extends com.google.protobuf.GeneratedMess
         != com.google.cloud.iot.v1.PublicKeyFormat.UNSPECIFIED_PUBLIC_KEY_FORMAT.getNumber()) {
       output.writeEnum(1, format_);
     }
-    if (!getKeyBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(key_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, key_);
     }
     unknownFields.writeTo(output);
@@ -238,7 +238,7 @@ public final class PublicKeyCredential extends com.google.protobuf.GeneratedMess
         != com.google.cloud.iot.v1.PublicKeyFormat.UNSPECIFIED_PUBLIC_KEY_FORMAT.getNumber()) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(1, format_);
     }
-    if (!getKeyBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(key_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, key_);
     }
     size += unknownFields.getSerializedSize();

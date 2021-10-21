@@ -337,7 +337,7 @@ public final class GatewayConfig extends com.google.protobuf.GeneratedMessageV3
         != com.google.cloud.iot.v1.GatewayAuthMethod.GATEWAY_AUTH_METHOD_UNSPECIFIED.getNumber()) {
       output.writeEnum(2, gatewayAuthMethod_);
     }
-    if (!getLastAccessedGatewayIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(lastAccessedGatewayId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, lastAccessedGatewayId_);
     }
     if (lastAccessedGatewayTime_ != null) {
@@ -359,7 +359,7 @@ public final class GatewayConfig extends com.google.protobuf.GeneratedMessageV3
         != com.google.cloud.iot.v1.GatewayAuthMethod.GATEWAY_AUTH_METHOD_UNSPECIFIED.getNumber()) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(2, gatewayAuthMethod_);
     }
-    if (!getLastAccessedGatewayIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(lastAccessedGatewayId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, lastAccessedGatewayId_);
     }
     if (lastAccessedGatewayTime_ != null) {

@@ -290,7 +290,7 @@ public final class PublicKeyCertificate extends com.google.protobuf.GeneratedMes
             .getNumber()) {
       output.writeEnum(1, format_);
     }
-    if (!getCertificateBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(certificate_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, certificate_);
     }
     if (x509Details_ != null) {
@@ -311,7 +311,7 @@ public final class PublicKeyCertificate extends com.google.protobuf.GeneratedMes
             .getNumber()) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(1, format_);
     }
-    if (!getCertificateBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(certificate_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, certificate_);
     }
     if (x509Details_ != null) {
