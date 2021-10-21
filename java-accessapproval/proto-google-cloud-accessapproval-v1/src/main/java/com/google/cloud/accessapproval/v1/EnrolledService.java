@@ -242,7 +242,7 @@ public final class EnrolledService extends com.google.protobuf.GeneratedMessageV
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getCloudProductBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(cloudProduct_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, cloudProduct_);
     }
     if (enrollmentLevel_
@@ -259,7 +259,7 @@ public final class EnrolledService extends com.google.protobuf.GeneratedMessageV
     if (size != -1) return size;
 
     size = 0;
-    if (!getCloudProductBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(cloudProduct_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, cloudProduct_);
     }
     if (enrollmentLevel_

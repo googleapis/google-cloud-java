@@ -417,7 +417,7 @@ public final class AccessReason extends com.google.protobuf.GeneratedMessageV3
         != com.google.cloud.accessapproval.v1.AccessReason.Type.TYPE_UNSPECIFIED.getNumber()) {
       output.writeEnum(1, type_);
     }
-    if (!getDetailBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(detail_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, detail_);
     }
     unknownFields.writeTo(output);
@@ -433,7 +433,7 @@ public final class AccessReason extends com.google.protobuf.GeneratedMessageV3
         != com.google.cloud.accessapproval.v1.AccessReason.Type.TYPE_UNSPECIFIED.getNumber()) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(1, type_);
     }
-    if (!getDetailBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(detail_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, detail_);
     }
     size += unknownFields.getSerializedSize();
