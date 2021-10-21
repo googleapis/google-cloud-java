@@ -430,7 +430,7 @@ public final class PublicKey extends com.google.protobuf.GeneratedMessageV3
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getPemBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(pem_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, pem_);
     }
     if (algorithm_
@@ -442,7 +442,7 @@ public final class PublicKey extends com.google.protobuf.GeneratedMessageV3
     if (pemCrc32C_ != null) {
       output.writeMessage(3, getPemCrc32C());
     }
-    if (!getNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 4, name_);
     }
     if (protectionLevel_
@@ -458,7 +458,7 @@ public final class PublicKey extends com.google.protobuf.GeneratedMessageV3
     if (size != -1) return size;
 
     size = 0;
-    if (!getPemBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(pem_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, pem_);
     }
     if (algorithm_
@@ -470,7 +470,7 @@ public final class PublicKey extends com.google.protobuf.GeneratedMessageV3
     if (pemCrc32C_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(3, getPemCrc32C());
     }
-    if (!getNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, name_);
     }
     if (protectionLevel_

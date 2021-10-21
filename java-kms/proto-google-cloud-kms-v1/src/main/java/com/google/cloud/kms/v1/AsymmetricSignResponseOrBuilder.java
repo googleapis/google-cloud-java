@@ -152,6 +152,26 @@ public interface AsymmetricSignResponseOrBuilder
    *
    *
    * <pre>
+   * Integrity verification field. A flag indicating whether
+   * [AsymmetricSignRequest.data_crc32c][google.cloud.kms.v1.AsymmetricSignRequest.data_crc32c] was received by
+   * [KeyManagementService][google.cloud.kms.v1.KeyManagementService] and used for the integrity verification of the
+   * [data][google.cloud.kms.v1.AsymmetricSignRequest.data]. A false value of this field
+   * indicates either that [AsymmetricSignRequest.data_crc32c][google.cloud.kms.v1.AsymmetricSignRequest.data_crc32c] was left
+   * unset or that it was not delivered to [KeyManagementService][google.cloud.kms.v1.KeyManagementService]. If you've
+   * set [AsymmetricSignRequest.data_crc32c][google.cloud.kms.v1.AsymmetricSignRequest.data_crc32c] but this field is still false,
+   * discard the response and perform a limited number of retries.
+   * </pre>
+   *
+   * <code>bool verified_data_crc32c = 5;</code>
+   *
+   * @return The verifiedDataCrc32c.
+   */
+  boolean getVerifiedDataCrc32C();
+
+  /**
+   *
+   *
+   * <pre>
    * The [ProtectionLevel][google.cloud.kms.v1.ProtectionLevel] of the [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] used for signing.
    * </pre>
    *

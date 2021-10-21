@@ -413,6 +413,36 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
+     * RSASSA-PKCS1-v1_5 signing without encoding, with a 2048 bit key.
+     * </pre>
+     *
+     * <code>RSA_SIGN_RAW_PKCS1_2048 = 28;</code>
+     */
+    RSA_SIGN_RAW_PKCS1_2048(28),
+    /**
+     *
+     *
+     * <pre>
+     * RSASSA-PKCS1-v1_5 signing without encoding, with a 3072 bit key.
+     * </pre>
+     *
+     * <code>RSA_SIGN_RAW_PKCS1_3072 = 29;</code>
+     */
+    RSA_SIGN_RAW_PKCS1_3072(29),
+    /**
+     *
+     *
+     * <pre>
+     * RSASSA-PKCS1-v1_5 signing without encoding, with a 4096 bit key.
+     * </pre>
+     *
+     * <code>RSA_SIGN_RAW_PKCS1_4096 = 30;</code>
+     */
+    RSA_SIGN_RAW_PKCS1_4096(30),
+    /**
+     *
+     *
+     * <pre>
      * RSAES-OAEP 2048 bit key with a SHA256 digest.
      * </pre>
      *
@@ -637,6 +667,36 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
+     * RSASSA-PKCS1-v1_5 signing without encoding, with a 2048 bit key.
+     * </pre>
+     *
+     * <code>RSA_SIGN_RAW_PKCS1_2048 = 28;</code>
+     */
+    public static final int RSA_SIGN_RAW_PKCS1_2048_VALUE = 28;
+    /**
+     *
+     *
+     * <pre>
+     * RSASSA-PKCS1-v1_5 signing without encoding, with a 3072 bit key.
+     * </pre>
+     *
+     * <code>RSA_SIGN_RAW_PKCS1_3072 = 29;</code>
+     */
+    public static final int RSA_SIGN_RAW_PKCS1_3072_VALUE = 29;
+    /**
+     *
+     *
+     * <pre>
+     * RSASSA-PKCS1-v1_5 signing without encoding, with a 4096 bit key.
+     * </pre>
+     *
+     * <code>RSA_SIGN_RAW_PKCS1_4096 = 30;</code>
+     */
+    public static final int RSA_SIGN_RAW_PKCS1_4096_VALUE = 30;
+    /**
+     *
+     *
+     * <pre>
      * RSAES-OAEP 2048 bit key with a SHA256 digest.
      * </pre>
      *
@@ -799,6 +859,12 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
           return RSA_SIGN_PKCS1_4096_SHA256;
         case 16:
           return RSA_SIGN_PKCS1_4096_SHA512;
+        case 28:
+          return RSA_SIGN_RAW_PKCS1_2048;
+        case 29:
+          return RSA_SIGN_RAW_PKCS1_3072;
+        case 30:
+          return RSA_SIGN_RAW_PKCS1_4096;
         case 8:
           return RSA_DECRYPT_OAEP_2048_SHA256;
         case 9:
@@ -2037,7 +2103,7 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name_);
     }
     if (state_
@@ -2071,13 +2137,13 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
     if (generateTime_ != null) {
       output.writeMessage(11, getGenerateTime());
     }
-    if (!getImportJobBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(importJob_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 14, importJob_);
     }
     if (importTime_ != null) {
       output.writeMessage(15, getImportTime());
     }
-    if (!getImportFailureReasonBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(importFailureReason_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 16, importFailureReason_);
     }
     if (externalProtectionLevelOptions_ != null) {
@@ -2095,7 +2161,7 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
     if (size != -1) return size;
 
     size = 0;
-    if (!getNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, name_);
     }
     if (state_
@@ -2129,13 +2195,13 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
     if (generateTime_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(11, getGenerateTime());
     }
-    if (!getImportJobBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(importJob_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(14, importJob_);
     }
     if (importTime_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(15, getImportTime());
     }
-    if (!getImportFailureReasonBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(importFailureReason_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(16, importFailureReason_);
     }
     if (externalProtectionLevelOptions_ != null) {

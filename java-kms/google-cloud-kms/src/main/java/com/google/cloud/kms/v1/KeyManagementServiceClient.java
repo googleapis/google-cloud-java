@@ -2943,7 +2943,7 @@ public class KeyManagementServiceClient implements BackgroundResource {
    *
    * @param name Required. The resource name of the
    *     [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] to use for signing.
-   * @param digest Required. The digest of the data to sign. The digest must be produced with the
+   * @param digest Optional. The digest of the data to sign. The digest must be produced with the
    *     same digest algorithm as specified by the key version's
    *     [algorithm][google.cloud.kms.v1.CryptoKeyVersion.algorithm].
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -2980,7 +2980,7 @@ public class KeyManagementServiceClient implements BackgroundResource {
    *
    * @param name Required. The resource name of the
    *     [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] to use for signing.
-   * @param digest Required. The digest of the data to sign. The digest must be produced with the
+   * @param digest Optional. The digest of the data to sign. The digest must be produced with the
    *     same digest algorithm as specified by the key version's
    *     [algorithm][google.cloud.kms.v1.CryptoKeyVersion.algorithm].
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -3015,6 +3015,8 @@ public class KeyManagementServiceClient implements BackgroundResource {
    *                   .toString())
    *           .setDigest(Digest.newBuilder().build())
    *           .setDigestCrc32C(Int64Value.newBuilder().build())
+   *           .setData(ByteString.EMPTY)
+   *           .setDataCrc32C(Int64Value.newBuilder().build())
    *           .build();
    *   AsymmetricSignResponse response = keyManagementServiceClient.asymmetricSign(request);
    * }
@@ -3051,6 +3053,8 @@ public class KeyManagementServiceClient implements BackgroundResource {
    *                   .toString())
    *           .setDigest(Digest.newBuilder().build())
    *           .setDigestCrc32C(Int64Value.newBuilder().build())
+   *           .setData(ByteString.EMPTY)
+   *           .setDataCrc32C(Int64Value.newBuilder().build())
    *           .build();
    *   ApiFuture<AsymmetricSignResponse> future =
    *       keyManagementServiceClient.asymmetricSignCallable().futureCall(request);

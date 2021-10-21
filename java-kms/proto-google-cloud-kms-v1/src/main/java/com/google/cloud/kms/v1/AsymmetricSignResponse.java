@@ -104,6 +104,11 @@ public final class AsymmetricSignResponse extends com.google.protobuf.GeneratedM
               name_ = s;
               break;
             }
+          case 40:
+            {
+              verifiedDataCrc32C_ = input.readBool();
+              break;
+            }
           case 48:
             {
               int rawValue = input.readEnum();
@@ -317,6 +322,31 @@ public final class AsymmetricSignResponse extends com.google.protobuf.GeneratedM
     }
   }
 
+  public static final int VERIFIED_DATA_CRC32C_FIELD_NUMBER = 5;
+  private boolean verifiedDataCrc32C_;
+  /**
+   *
+   *
+   * <pre>
+   * Integrity verification field. A flag indicating whether
+   * [AsymmetricSignRequest.data_crc32c][google.cloud.kms.v1.AsymmetricSignRequest.data_crc32c] was received by
+   * [KeyManagementService][google.cloud.kms.v1.KeyManagementService] and used for the integrity verification of the
+   * [data][google.cloud.kms.v1.AsymmetricSignRequest.data]. A false value of this field
+   * indicates either that [AsymmetricSignRequest.data_crc32c][google.cloud.kms.v1.AsymmetricSignRequest.data_crc32c] was left
+   * unset or that it was not delivered to [KeyManagementService][google.cloud.kms.v1.KeyManagementService]. If you've
+   * set [AsymmetricSignRequest.data_crc32c][google.cloud.kms.v1.AsymmetricSignRequest.data_crc32c] but this field is still false,
+   * discard the response and perform a limited number of retries.
+   * </pre>
+   *
+   * <code>bool verified_data_crc32c = 5;</code>
+   *
+   * @return The verifiedDataCrc32c.
+   */
+  @java.lang.Override
+  public boolean getVerifiedDataCrc32C() {
+    return verifiedDataCrc32C_;
+  }
+
   public static final int PROTECTION_LEVEL_FIELD_NUMBER = 6;
   private int protectionLevel_;
   /**
@@ -376,8 +406,11 @@ public final class AsymmetricSignResponse extends com.google.protobuf.GeneratedM
     if (verifiedDigestCrc32C_ != false) {
       output.writeBool(3, verifiedDigestCrc32C_);
     }
-    if (!getNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 4, name_);
+    }
+    if (verifiedDataCrc32C_ != false) {
+      output.writeBool(5, verifiedDataCrc32C_);
     }
     if (protectionLevel_
         != com.google.cloud.kms.v1.ProtectionLevel.PROTECTION_LEVEL_UNSPECIFIED.getNumber()) {
@@ -401,8 +434,11 @@ public final class AsymmetricSignResponse extends com.google.protobuf.GeneratedM
     if (verifiedDigestCrc32C_ != false) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(3, verifiedDigestCrc32C_);
     }
-    if (!getNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, name_);
+    }
+    if (verifiedDataCrc32C_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(5, verifiedDataCrc32C_);
     }
     if (protectionLevel_
         != com.google.cloud.kms.v1.ProtectionLevel.PROTECTION_LEVEL_UNSPECIFIED.getNumber()) {
@@ -431,6 +467,7 @@ public final class AsymmetricSignResponse extends com.google.protobuf.GeneratedM
     }
     if (getVerifiedDigestCrc32C() != other.getVerifiedDigestCrc32C()) return false;
     if (!getName().equals(other.getName())) return false;
+    if (getVerifiedDataCrc32C() != other.getVerifiedDataCrc32C()) return false;
     if (protectionLevel_ != other.protectionLevel_) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
@@ -453,6 +490,8 @@ public final class AsymmetricSignResponse extends com.google.protobuf.GeneratedM
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getVerifiedDigestCrc32C());
     hash = (37 * hash) + NAME_FIELD_NUMBER;
     hash = (53 * hash) + getName().hashCode();
+    hash = (37 * hash) + VERIFIED_DATA_CRC32C_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getVerifiedDataCrc32C());
     hash = (37 * hash) + PROTECTION_LEVEL_FIELD_NUMBER;
     hash = (53 * hash) + protectionLevel_;
     hash = (29 * hash) + unknownFields.hashCode();
@@ -612,6 +651,8 @@ public final class AsymmetricSignResponse extends com.google.protobuf.GeneratedM
 
       name_ = "";
 
+      verifiedDataCrc32C_ = false;
+
       protectionLevel_ = 0;
 
       return this;
@@ -649,6 +690,7 @@ public final class AsymmetricSignResponse extends com.google.protobuf.GeneratedM
       }
       result.verifiedDigestCrc32C_ = verifiedDigestCrc32C_;
       result.name_ = name_;
+      result.verifiedDataCrc32C_ = verifiedDataCrc32C_;
       result.protectionLevel_ = protectionLevel_;
       onBuilt();
       return result;
@@ -711,6 +753,9 @@ public final class AsymmetricSignResponse extends com.google.protobuf.GeneratedM
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
         onChanged();
+      }
+      if (other.getVerifiedDataCrc32C() != false) {
+        setVerifiedDataCrc32C(other.getVerifiedDataCrc32C());
       }
       if (other.protectionLevel_ != 0) {
         setProtectionLevelValue(other.getProtectionLevelValue());
@@ -1254,6 +1299,79 @@ public final class AsymmetricSignResponse extends com.google.protobuf.GeneratedM
       checkByteStringIsUtf8(value);
 
       name_ = value;
+      onChanged();
+      return this;
+    }
+
+    private boolean verifiedDataCrc32C_;
+    /**
+     *
+     *
+     * <pre>
+     * Integrity verification field. A flag indicating whether
+     * [AsymmetricSignRequest.data_crc32c][google.cloud.kms.v1.AsymmetricSignRequest.data_crc32c] was received by
+     * [KeyManagementService][google.cloud.kms.v1.KeyManagementService] and used for the integrity verification of the
+     * [data][google.cloud.kms.v1.AsymmetricSignRequest.data]. A false value of this field
+     * indicates either that [AsymmetricSignRequest.data_crc32c][google.cloud.kms.v1.AsymmetricSignRequest.data_crc32c] was left
+     * unset or that it was not delivered to [KeyManagementService][google.cloud.kms.v1.KeyManagementService]. If you've
+     * set [AsymmetricSignRequest.data_crc32c][google.cloud.kms.v1.AsymmetricSignRequest.data_crc32c] but this field is still false,
+     * discard the response and perform a limited number of retries.
+     * </pre>
+     *
+     * <code>bool verified_data_crc32c = 5;</code>
+     *
+     * @return The verifiedDataCrc32c.
+     */
+    @java.lang.Override
+    public boolean getVerifiedDataCrc32C() {
+      return verifiedDataCrc32C_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Integrity verification field. A flag indicating whether
+     * [AsymmetricSignRequest.data_crc32c][google.cloud.kms.v1.AsymmetricSignRequest.data_crc32c] was received by
+     * [KeyManagementService][google.cloud.kms.v1.KeyManagementService] and used for the integrity verification of the
+     * [data][google.cloud.kms.v1.AsymmetricSignRequest.data]. A false value of this field
+     * indicates either that [AsymmetricSignRequest.data_crc32c][google.cloud.kms.v1.AsymmetricSignRequest.data_crc32c] was left
+     * unset or that it was not delivered to [KeyManagementService][google.cloud.kms.v1.KeyManagementService]. If you've
+     * set [AsymmetricSignRequest.data_crc32c][google.cloud.kms.v1.AsymmetricSignRequest.data_crc32c] but this field is still false,
+     * discard the response and perform a limited number of retries.
+     * </pre>
+     *
+     * <code>bool verified_data_crc32c = 5;</code>
+     *
+     * @param value The verifiedDataCrc32c to set.
+     * @return This builder for chaining.
+     */
+    public Builder setVerifiedDataCrc32C(boolean value) {
+
+      verifiedDataCrc32C_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Integrity verification field. A flag indicating whether
+     * [AsymmetricSignRequest.data_crc32c][google.cloud.kms.v1.AsymmetricSignRequest.data_crc32c] was received by
+     * [KeyManagementService][google.cloud.kms.v1.KeyManagementService] and used for the integrity verification of the
+     * [data][google.cloud.kms.v1.AsymmetricSignRequest.data]. A false value of this field
+     * indicates either that [AsymmetricSignRequest.data_crc32c][google.cloud.kms.v1.AsymmetricSignRequest.data_crc32c] was left
+     * unset or that it was not delivered to [KeyManagementService][google.cloud.kms.v1.KeyManagementService]. If you've
+     * set [AsymmetricSignRequest.data_crc32c][google.cloud.kms.v1.AsymmetricSignRequest.data_crc32c] but this field is still false,
+     * discard the response and perform a limited number of retries.
+     * </pre>
+     *
+     * <code>bool verified_data_crc32c = 5;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearVerifiedDataCrc32C() {
+
+      verifiedDataCrc32C_ = false;
       onChanged();
       return this;
     }

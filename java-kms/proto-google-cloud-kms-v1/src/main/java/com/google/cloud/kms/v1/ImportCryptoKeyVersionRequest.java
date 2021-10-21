@@ -507,7 +507,7 @@ public final class ImportCryptoKeyVersionRequest extends com.google.protobuf.Gen
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getParentBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(parent_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, parent_);
     }
     if (algorithm_
@@ -516,13 +516,13 @@ public final class ImportCryptoKeyVersionRequest extends com.google.protobuf.Gen
             .getNumber()) {
       output.writeEnum(2, algorithm_);
     }
-    if (!getImportJobBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(importJob_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 4, importJob_);
     }
     if (wrappedKeyMaterialCase_ == 5) {
       output.writeBytes(5, (com.google.protobuf.ByteString) wrappedKeyMaterial_);
     }
-    if (!getCryptoKeyVersionBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(cryptoKeyVersion_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 6, cryptoKeyVersion_);
     }
     unknownFields.writeTo(output);
@@ -534,7 +534,7 @@ public final class ImportCryptoKeyVersionRequest extends com.google.protobuf.Gen
     if (size != -1) return size;
 
     size = 0;
-    if (!getParentBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(parent_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, parent_);
     }
     if (algorithm_
@@ -543,7 +543,7 @@ public final class ImportCryptoKeyVersionRequest extends com.google.protobuf.Gen
             .getNumber()) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(2, algorithm_);
     }
-    if (!getImportJobBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(importJob_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, importJob_);
     }
     if (wrappedKeyMaterialCase_ == 5) {
@@ -551,7 +551,7 @@ public final class ImportCryptoKeyVersionRequest extends com.google.protobuf.Gen
           com.google.protobuf.CodedOutputStream.computeBytesSize(
               5, (com.google.protobuf.ByteString) wrappedKeyMaterial_);
     }
-    if (!getCryptoKeyVersionBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(cryptoKeyVersion_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, cryptoKeyVersion_);
     }
     size += unknownFields.getSerializedSize();

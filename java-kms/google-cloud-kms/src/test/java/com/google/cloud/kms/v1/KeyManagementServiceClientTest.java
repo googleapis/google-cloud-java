@@ -2077,6 +2077,7 @@ public class KeyManagementServiceClientTest {
             .setSignatureCrc32C(Int64Value.newBuilder().build())
             .setVerifiedDigestCrc32C(true)
             .setName("name3373707")
+            .setVerifiedDataCrc32C(true)
             .setProtectionLevel(ProtectionLevel.forNumber(0))
             .build();
     mockKeyManagementService.addResponse(expectedResponse);
@@ -2126,6 +2127,7 @@ public class KeyManagementServiceClientTest {
             .setSignatureCrc32C(Int64Value.newBuilder().build())
             .setVerifiedDigestCrc32C(true)
             .setName("name3373707")
+            .setVerifiedDataCrc32C(true)
             .setProtectionLevel(ProtectionLevel.forNumber(0))
             .build();
     mockKeyManagementService.addResponse(expectedResponse);
