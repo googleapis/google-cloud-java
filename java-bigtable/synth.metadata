@@ -4,7 +4,7 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/java-bigtable.git",
-        "sha": "8b120de58f0dfba3573ab696fb0e5375e917a00e"
+        "sha": "39622f30ec8c7c0e4a8e4255c746a7aa25773566"
       }
     },
     {
@@ -19,7 +19,7 @@
       "git": {
         "name": "synthtool",
         "remote": "https://github.com/googleapis/synthtool.git",
-        "sha": "a4be3384ccb92364795d981f2863f6986fcee620"
+        "sha": "d45942be8066ad57bd0509f4a16e1fac78ecc50f"
       }
     }
   ],
@@ -77,6 +77,7 @@
     ".kokoro/presubmit/clirr.cfg",
     ".kokoro/presubmit/common.cfg",
     ".kokoro/presubmit/dependencies.cfg",
+    ".kokoro/presubmit/graalvm-native.cfg",
     ".kokoro/presubmit/java11.cfg",
     ".kokoro/presubmit/java7.cfg",
     ".kokoro/presubmit/java8-osx.cfg",
