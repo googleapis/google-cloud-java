@@ -1181,7 +1181,7 @@ public final class ContinuousValidationEvent extends com.google.protobuf.Generat
 
       @java.lang.Override
       public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-        if (!getImageBytes().isEmpty()) {
+        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(image_)) {
           com.google.protobuf.GeneratedMessageV3.writeString(output, 1, image_);
         }
         if (result_
@@ -1190,7 +1190,7 @@ public final class ContinuousValidationEvent extends com.google.protobuf.Generat
                 .getNumber()) {
           output.writeEnum(2, result_);
         }
-        if (!getDescriptionBytes().isEmpty()) {
+        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(description_)) {
           com.google.protobuf.GeneratedMessageV3.writeString(output, 3, description_);
         }
         unknownFields.writeTo(output);
@@ -1202,7 +1202,7 @@ public final class ContinuousValidationEvent extends com.google.protobuf.Generat
         if (size != -1) return size;
 
         size = 0;
-        if (!getImageBytes().isEmpty()) {
+        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(image_)) {
           size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, image_);
         }
         if (result_
@@ -1211,7 +1211,7 @@ public final class ContinuousValidationEvent extends com.google.protobuf.Generat
                 .getNumber()) {
           size += com.google.protobuf.CodedOutputStream.computeEnumSize(2, result_);
         }
-        if (!getDescriptionBytes().isEmpty()) {
+        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(description_)) {
           size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, description_);
         }
         size += unknownFields.getSerializedSize();
@@ -2266,7 +2266,7 @@ public final class ContinuousValidationEvent extends com.google.protobuf.Generat
 
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-      if (!getPodBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(pod_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, pod_);
       }
       if (deployTime_ != null) {
@@ -2294,7 +2294,7 @@ public final class ContinuousValidationEvent extends com.google.protobuf.Generat
       if (size != -1) return size;
 
       size = 0;
-      if (!getPodBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(pod_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, pod_);
       }
       if (deployTime_ != null) {
@@ -4047,7 +4047,7 @@ public final class ContinuousValidationEvent extends com.google.protobuf.Generat
 
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-      if (!getDescriptionBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(description_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, description_);
       }
       unknownFields.writeTo(output);
@@ -4059,7 +4059,7 @@ public final class ContinuousValidationEvent extends com.google.protobuf.Generat
       if (size != -1) return size;
 
       size = 0;
-      if (!getDescriptionBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(description_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, description_);
       }
       size += unknownFields.getSerializedSize();

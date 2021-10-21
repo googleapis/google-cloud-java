@@ -391,13 +391,13 @@ public final class UserOwnedDrydockNote extends com.google.protobuf.GeneratedMes
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getNoteReferenceBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(noteReference_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, noteReference_);
     }
     for (int i = 0; i < publicKeys_.size(); i++) {
       output.writeMessage(2, publicKeys_.get(i));
     }
-    if (!getDelegationServiceAccountEmailBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(delegationServiceAccountEmail_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, delegationServiceAccountEmail_);
     }
     unknownFields.writeTo(output);
@@ -409,13 +409,13 @@ public final class UserOwnedDrydockNote extends com.google.protobuf.GeneratedMes
     if (size != -1) return size;
 
     size = 0;
-    if (!getNoteReferenceBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(noteReference_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, noteReference_);
     }
     for (int i = 0; i < publicKeys_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, publicKeys_.get(i));
     }
-    if (!getDelegationServiceAccountEmailBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(delegationServiceAccountEmail_)) {
       size +=
           com.google.protobuf.GeneratedMessageV3.computeStringSize(
               3, delegationServiceAccountEmail_);
