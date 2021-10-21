@@ -38,8 +38,11 @@ import com.google.cloud.domains.v1alpha2.ResetAuthorizationCodeRequest;
 import com.google.cloud.domains.v1alpha2.RetrieveAuthorizationCodeRequest;
 import com.google.cloud.domains.v1alpha2.RetrieveRegisterParametersRequest;
 import com.google.cloud.domains.v1alpha2.RetrieveRegisterParametersResponse;
+import com.google.cloud.domains.v1alpha2.RetrieveTransferParametersRequest;
+import com.google.cloud.domains.v1alpha2.RetrieveTransferParametersResponse;
 import com.google.cloud.domains.v1alpha2.SearchDomainsRequest;
 import com.google.cloud.domains.v1alpha2.SearchDomainsResponse;
+import com.google.cloud.domains.v1alpha2.TransferDomainRequest;
 import com.google.cloud.domains.v1alpha2.UpdateRegistrationRequest;
 import com.google.longrunning.Operation;
 import com.google.longrunning.stub.OperationsStub;
@@ -77,6 +80,21 @@ public abstract class DomainsStub implements BackgroundResource {
 
   public UnaryCallable<RegisterDomainRequest, Operation> registerDomainCallable() {
     throw new UnsupportedOperationException("Not implemented: registerDomainCallable()");
+  }
+
+  public UnaryCallable<RetrieveTransferParametersRequest, RetrieveTransferParametersResponse>
+      retrieveTransferParametersCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: retrieveTransferParametersCallable()");
+  }
+
+  public OperationCallable<TransferDomainRequest, Registration, OperationMetadata>
+      transferDomainOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: transferDomainOperationCallable()");
+  }
+
+  public UnaryCallable<TransferDomainRequest, Operation> transferDomainCallable() {
+    throw new UnsupportedOperationException("Not implemented: transferDomainCallable()");
   }
 
   public UnaryCallable<ListRegistrationsRequest, ListRegistrationsPagedResponse>

@@ -94,6 +94,23 @@ public class DomainsSettings extends ClientSettings<DomainsSettings> {
     return ((DomainsStubSettings) getStubSettings()).registerDomainOperationSettings();
   }
 
+  /** Returns the object with the settings used for calls to retrieveTransferParameters. */
+  public UnaryCallSettings<RetrieveTransferParametersRequest, RetrieveTransferParametersResponse>
+      retrieveTransferParametersSettings() {
+    return ((DomainsStubSettings) getStubSettings()).retrieveTransferParametersSettings();
+  }
+
+  /** Returns the object with the settings used for calls to transferDomain. */
+  public UnaryCallSettings<TransferDomainRequest, Operation> transferDomainSettings() {
+    return ((DomainsStubSettings) getStubSettings()).transferDomainSettings();
+  }
+
+  /** Returns the object with the settings used for calls to transferDomain. */
+  public OperationCallSettings<TransferDomainRequest, Registration, OperationMetadata>
+      transferDomainOperationSettings() {
+    return ((DomainsStubSettings) getStubSettings()).transferDomainOperationSettings();
+  }
+
   /** Returns the object with the settings used for calls to listRegistrations. */
   public PagedCallSettings<
           ListRegistrationsRequest, ListRegistrationsResponse, ListRegistrationsPagedResponse>
@@ -304,6 +321,24 @@ public class DomainsSettings extends ClientSettings<DomainsSettings> {
     public OperationCallSettings.Builder<RegisterDomainRequest, Registration, OperationMetadata>
         registerDomainOperationSettings() {
       return getStubSettingsBuilder().registerDomainOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to retrieveTransferParameters. */
+    public UnaryCallSettings.Builder<
+            RetrieveTransferParametersRequest, RetrieveTransferParametersResponse>
+        retrieveTransferParametersSettings() {
+      return getStubSettingsBuilder().retrieveTransferParametersSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to transferDomain. */
+    public UnaryCallSettings.Builder<TransferDomainRequest, Operation> transferDomainSettings() {
+      return getStubSettingsBuilder().transferDomainSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to transferDomain. */
+    public OperationCallSettings.Builder<TransferDomainRequest, Registration, OperationMetadata>
+        transferDomainOperationSettings() {
+      return getStubSettingsBuilder().transferDomainOperationSettings();
     }
 
     /** Returns the builder for the settings used for calls to listRegistrations. */

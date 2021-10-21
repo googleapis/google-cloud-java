@@ -168,7 +168,7 @@ public interface RegisterDomainRequestOrBuilder
    *
    * <pre>
    * The list of contact notices that the caller acknowledges. The notices
-   * required here depend on the values specified in
+   * needed here depend on the values specified in
    * `registration.contact_settings`.
    * </pre>
    *
@@ -182,7 +182,7 @@ public interface RegisterDomainRequestOrBuilder
    *
    * <pre>
    * The list of contact notices that the caller acknowledges. The notices
-   * required here depend on the values specified in
+   * needed here depend on the values specified in
    * `registration.contact_settings`.
    * </pre>
    *
@@ -196,7 +196,7 @@ public interface RegisterDomainRequestOrBuilder
    *
    * <pre>
    * The list of contact notices that the caller acknowledges. The notices
-   * required here depend on the values specified in
+   * needed here depend on the values specified in
    * `registration.contact_settings`.
    * </pre>
    *
@@ -211,7 +211,7 @@ public interface RegisterDomainRequestOrBuilder
    *
    * <pre>
    * The list of contact notices that the caller acknowledges. The notices
-   * required here depend on the values specified in
+   * needed here depend on the values specified in
    * `registration.contact_settings`.
    * </pre>
    *
@@ -225,7 +225,7 @@ public interface RegisterDomainRequestOrBuilder
    *
    * <pre>
    * The list of contact notices that the caller acknowledges. The notices
-   * required here depend on the values specified in
+   * needed here depend on the values specified in
    * `registration.contact_settings`.
    * </pre>
    *
@@ -281,7 +281,7 @@ public interface RegisterDomainRequestOrBuilder
    *
    *
    * <pre>
-   * When true, only validation will be performed, without actually registering
+   * When true, only validation is performed, without actually registering
    * the domain. Follows:
    * https://cloud.google.com/apis/design/design_patterns#request_validation
    * </pre>

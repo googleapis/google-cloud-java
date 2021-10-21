@@ -124,6 +124,49 @@ public class MockDomainsImpl extends DomainsImplBase {
   }
 
   @Override
+  public void retrieveTransferParameters(
+      RetrieveTransferParametersRequest request,
+      StreamObserver<RetrieveTransferParametersResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof RetrieveTransferParametersResponse) {
+      requests.add(request);
+      responseObserver.onNext(((RetrieveTransferParametersResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method RetrieveTransferParameters, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  RetrieveTransferParametersResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void transferDomain(
+      TransferDomainRequest request, StreamObserver<Operation> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Operation) {
+      requests.add(request);
+      responseObserver.onNext(((Operation) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method TransferDomain, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
   public void listRegistrations(
       ListRegistrationsRequest request,
       StreamObserver<ListRegistrationsResponse> responseObserver) {

@@ -60,8 +60,11 @@ import com.google.cloud.domains.v1alpha2.ResetAuthorizationCodeRequest;
 import com.google.cloud.domains.v1alpha2.RetrieveAuthorizationCodeRequest;
 import com.google.cloud.domains.v1alpha2.RetrieveRegisterParametersRequest;
 import com.google.cloud.domains.v1alpha2.RetrieveRegisterParametersResponse;
+import com.google.cloud.domains.v1alpha2.RetrieveTransferParametersRequest;
+import com.google.cloud.domains.v1alpha2.RetrieveTransferParametersResponse;
 import com.google.cloud.domains.v1alpha2.SearchDomainsRequest;
 import com.google.cloud.domains.v1alpha2.SearchDomainsResponse;
+import com.google.cloud.domains.v1alpha2.TransferDomainRequest;
 import com.google.cloud.domains.v1alpha2.UpdateRegistrationRequest;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
@@ -120,6 +123,12 @@ public class DomainsStubSettings extends StubSettings<DomainsStubSettings> {
   private final UnaryCallSettings<RegisterDomainRequest, Operation> registerDomainSettings;
   private final OperationCallSettings<RegisterDomainRequest, Registration, OperationMetadata>
       registerDomainOperationSettings;
+  private final UnaryCallSettings<
+          RetrieveTransferParametersRequest, RetrieveTransferParametersResponse>
+      retrieveTransferParametersSettings;
+  private final UnaryCallSettings<TransferDomainRequest, Operation> transferDomainSettings;
+  private final OperationCallSettings<TransferDomainRequest, Registration, OperationMetadata>
+      transferDomainOperationSettings;
   private final PagedCallSettings<
           ListRegistrationsRequest, ListRegistrationsResponse, ListRegistrationsPagedResponse>
       listRegistrationsSettings;
@@ -233,6 +242,23 @@ public class DomainsStubSettings extends StubSettings<DomainsStubSettings> {
   public OperationCallSettings<RegisterDomainRequest, Registration, OperationMetadata>
       registerDomainOperationSettings() {
     return registerDomainOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to retrieveTransferParameters. */
+  public UnaryCallSettings<RetrieveTransferParametersRequest, RetrieveTransferParametersResponse>
+      retrieveTransferParametersSettings() {
+    return retrieveTransferParametersSettings;
+  }
+
+  /** Returns the object with the settings used for calls to transferDomain. */
+  public UnaryCallSettings<TransferDomainRequest, Operation> transferDomainSettings() {
+    return transferDomainSettings;
+  }
+
+  /** Returns the object with the settings used for calls to transferDomain. */
+  public OperationCallSettings<TransferDomainRequest, Registration, OperationMetadata>
+      transferDomainOperationSettings() {
+    return transferDomainOperationSettings;
   }
 
   /** Returns the object with the settings used for calls to listRegistrations. */
@@ -407,6 +433,10 @@ public class DomainsStubSettings extends StubSettings<DomainsStubSettings> {
         settingsBuilder.retrieveRegisterParametersSettings().build();
     registerDomainSettings = settingsBuilder.registerDomainSettings().build();
     registerDomainOperationSettings = settingsBuilder.registerDomainOperationSettings().build();
+    retrieveTransferParametersSettings =
+        settingsBuilder.retrieveTransferParametersSettings().build();
+    transferDomainSettings = settingsBuilder.transferDomainSettings().build();
+    transferDomainOperationSettings = settingsBuilder.transferDomainOperationSettings().build();
     listRegistrationsSettings = settingsBuilder.listRegistrationsSettings().build();
     getRegistrationSettings = settingsBuilder.getRegistrationSettings().build();
     updateRegistrationSettings = settingsBuilder.updateRegistrationSettings().build();
@@ -445,6 +475,14 @@ public class DomainsStubSettings extends StubSettings<DomainsStubSettings> {
     private final OperationCallSettings.Builder<
             RegisterDomainRequest, Registration, OperationMetadata>
         registerDomainOperationSettings;
+    private final UnaryCallSettings.Builder<
+            RetrieveTransferParametersRequest, RetrieveTransferParametersResponse>
+        retrieveTransferParametersSettings;
+    private final UnaryCallSettings.Builder<TransferDomainRequest, Operation>
+        transferDomainSettings;
+    private final OperationCallSettings.Builder<
+            TransferDomainRequest, Registration, OperationMetadata>
+        transferDomainOperationSettings;
     private final PagedCallSettings.Builder<
             ListRegistrationsRequest, ListRegistrationsResponse, ListRegistrationsPagedResponse>
         listRegistrationsSettings;
@@ -514,6 +552,9 @@ public class DomainsStubSettings extends StubSettings<DomainsStubSettings> {
       retrieveRegisterParametersSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       registerDomainSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       registerDomainOperationSettings = OperationCallSettings.newBuilder();
+      retrieveTransferParametersSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      transferDomainSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      transferDomainOperationSettings = OperationCallSettings.newBuilder();
       listRegistrationsSettings = PagedCallSettings.newBuilder(LIST_REGISTRATIONS_PAGE_STR_FACT);
       getRegistrationSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       updateRegistrationSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
@@ -536,6 +577,8 @@ public class DomainsStubSettings extends StubSettings<DomainsStubSettings> {
               searchDomainsSettings,
               retrieveRegisterParametersSettings,
               registerDomainSettings,
+              retrieveTransferParametersSettings,
+              transferDomainSettings,
               listRegistrationsSettings,
               getRegistrationSettings,
               updateRegistrationSettings,
@@ -556,6 +599,9 @@ public class DomainsStubSettings extends StubSettings<DomainsStubSettings> {
       retrieveRegisterParametersSettings = settings.retrieveRegisterParametersSettings.toBuilder();
       registerDomainSettings = settings.registerDomainSettings.toBuilder();
       registerDomainOperationSettings = settings.registerDomainOperationSettings.toBuilder();
+      retrieveTransferParametersSettings = settings.retrieveTransferParametersSettings.toBuilder();
+      transferDomainSettings = settings.transferDomainSettings.toBuilder();
+      transferDomainOperationSettings = settings.transferDomainOperationSettings.toBuilder();
       listRegistrationsSettings = settings.listRegistrationsSettings.toBuilder();
       getRegistrationSettings = settings.getRegistrationSettings.toBuilder();
       updateRegistrationSettings = settings.updateRegistrationSettings.toBuilder();
@@ -585,6 +631,8 @@ public class DomainsStubSettings extends StubSettings<DomainsStubSettings> {
               searchDomainsSettings,
               retrieveRegisterParametersSettings,
               registerDomainSettings,
+              retrieveTransferParametersSettings,
+              transferDomainSettings,
               listRegistrationsSettings,
               getRegistrationSettings,
               updateRegistrationSettings,
@@ -623,6 +671,16 @@ public class DomainsStubSettings extends StubSettings<DomainsStubSettings> {
 
       builder
           .registerDomainSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .retrieveTransferParametersSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .transferDomainSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
 
@@ -681,6 +739,30 @@ public class DomainsStubSettings extends StubSettings<DomainsStubSettings> {
           .setInitialCallSettings(
               UnaryCallSettings
                   .<RegisterDomainRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Registration.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
+                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .transferDomainOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<TransferDomainRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
                   .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
                   .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"))
                   .build())
@@ -887,6 +969,26 @@ public class DomainsStubSettings extends StubSettings<DomainsStubSettings> {
     public OperationCallSettings.Builder<RegisterDomainRequest, Registration, OperationMetadata>
         registerDomainOperationSettings() {
       return registerDomainOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to retrieveTransferParameters. */
+    public UnaryCallSettings.Builder<
+            RetrieveTransferParametersRequest, RetrieveTransferParametersResponse>
+        retrieveTransferParametersSettings() {
+      return retrieveTransferParametersSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to transferDomain. */
+    public UnaryCallSettings.Builder<TransferDomainRequest, Operation> transferDomainSettings() {
+      return transferDomainSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to transferDomain. */
+    @BetaApi(
+        "The surface for use by generated code is not stable yet and may change in the future.")
+    public OperationCallSettings.Builder<TransferDomainRequest, Registration, OperationMetadata>
+        transferDomainOperationSettings() {
+      return transferDomainOperationSettings;
     }
 
     /** Returns the builder for the settings used for calls to listRegistrations. */

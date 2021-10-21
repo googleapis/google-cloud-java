@@ -65,6 +65,16 @@
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
+        <artifactId>proto-google-cloud-domains-v1</artifactId>
+        <version>0.4.3-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-domains-v1:current} -->
+      </dependency>
+      <dependency>
+        <groupId>com.google.api.grpc</groupId>
+        <artifactId>grpc-google-cloud-domains-v1</artifactId>
+        <version>0.4.3-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-domains-v1:current} -->
+      </dependency>
+      <dependency>
+        <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-domains-v1alpha2</artifactId>
         <version>0.4.3-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-domains-v1alpha2:current} -->
       </dependency>
@@ -115,8 +125,10 @@
     <module>google-cloud-domains</module>
     <module>grpc-google-cloud-domains-v1beta1</module>
     <module>grpc-google-cloud-domains-v1alpha2</module>
+    <module>grpc-google-cloud-domains-v1</module>
     <module>proto-google-cloud-domains-v1beta1</module>
     <module>proto-google-cloud-domains-v1alpha2</module>
+    <module>proto-google-cloud-domains-v1</module>
     <module>google-cloud-domains-bom</module>
   </modules>
 

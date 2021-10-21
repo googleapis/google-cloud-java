@@ -88,6 +88,18 @@ public final class DomainsProto {
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_domains_v1beta1_RegisterDomainRequest_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_domains_v1beta1_RetrieveTransferParametersRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_domains_v1beta1_RetrieveTransferParametersRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_domains_v1beta1_RetrieveTransferParametersResponse_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_domains_v1beta1_RetrieveTransferParametersResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_domains_v1beta1_TransferDomainRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_domains_v1beta1_TransferDomainRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_domains_v1beta1_ListRegistrationsRequest_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_domains_v1beta1_ListRegistrationsRequest_fieldAccessorTable;
@@ -136,6 +148,10 @@ public final class DomainsProto {
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_domains_v1beta1_RegisterParameters_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_domains_v1beta1_TransferParameters_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_domains_v1beta1_TransferParameters_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_domains_v1beta1_AuthorizationCode_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_domains_v1beta1_AuthorizationCode_fieldAccessorTable;
@@ -160,7 +176,7 @@ public final class DomainsProto {
           + "ngrunning/operations.proto\032 google/proto"
           + "buf/field_mask.proto\032\037google/protobuf/ti"
           + "mestamp.proto\032\027google/type/money.proto\032 "
-          + "google/type/postal_address.proto\"\347\010\n\014Reg"
+          + "google/type/postal_address.proto\"\223\t\n\014Reg"
           + "istration\022\021\n\004name\030\001 \001(\tB\003\340A\003\022\033\n\013domain_n"
           + "ame\030\002 \001(\tB\006\340A\002\340A\005\0224\n\013create_time\030\003 \001(\0132\032"
           + ".google.protobuf.TimestampB\003\340A\003\0224\n\013expir"
@@ -181,241 +197,280 @@ public final class DomainsProto {
           + "sB\003\340A\003\022L\n\021supported_privacy\030\016 \003(\0162,.goog"
           + "le.cloud.domains.v1beta1.ContactPrivacyB"
           + "\003\340A\003\032-\n\013LabelsEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005valu"
-          + "e\030\002 \001(\t:\0028\001\"z\n\005State\022\025\n\021STATE_UNSPECIFIE"
-          + "D\020\000\022\030\n\024REGISTRATION_PENDING\020\001\022\027\n\023REGISTR"
-          + "ATION_FAILED\020\002\022\n\n\006ACTIVE\020\006\022\r\n\tSUSPENDED\020"
-          + "\007\022\014\n\010EXPORTED\020\010\"I\n\005Issue\022\025\n\021ISSUE_UNSPEC"
-          + "IFIED\020\000\022\023\n\017CONTACT_SUPPORT\020\001\022\024\n\020UNVERIFI"
-          + "ED_EMAIL\020\002:n\352Ak\n#domains.googleapis.com/"
-          + "Registration\022Dprojects/{project}/locatio"
-          + "ns/{location}/registrations/{registratio"
-          + "n}\"\233\002\n\022ManagementSettings\022[\n\016renewal_met"
-          + "hod\030\003 \001(\0162>.google.cloud.domains.v1beta1"
-          + ".ManagementSettings.RenewalMethodB\003\340A\003\022L"
-          + "\n\023transfer_lock_state\030\004 \001(\0162/.google.clo"
-          + "ud.domains.v1beta1.TransferLockState\"Z\n\r"
-          + "RenewalMethod\022\036\n\032RENEWAL_METHOD_UNSPECIF"
-          + "IED\020\000\022\025\n\021AUTOMATIC_RENEWAL\020\001\022\022\n\016MANUAL_R"
-          + "ENEWAL\020\002\"\201\n\n\013DnsSettings\022I\n\ncustom_dns\030\001"
-          + " \001(\01323.google.cloud.domains.v1beta1.DnsS"
-          + "ettings.CustomDnsH\000\022X\n\022google_domains_dn"
-          + "s\030\002 \001(\0132:.google.cloud.domains.v1beta1.D"
-          + "nsSettings.GoogleDomainsDnsH\000\022J\n\014glue_re"
-          + "cords\030\004 \003(\01324.google.cloud.domains.v1bet"
-          + "a1.DnsSettings.GlueRecord\032n\n\tCustomDns\022\031"
-          + "\n\014name_servers\030\001 \003(\tB\003\340A\002\022F\n\nds_records\030"
-          + "\002 \003(\01322.google.cloud.domains.v1beta1.Dns"
-          + "Settings.DsRecord\032\304\001\n\020GoogleDomainsDns\022\031"
-          + "\n\014name_servers\030\001 \003(\tB\003\340A\003\022H\n\010ds_state\030\002 "
-          + "\001(\01621.google.cloud.domains.v1beta1.DnsSe"
-          + "ttings.DsStateB\003\340A\002\022K\n\nds_records\030\003 \003(\0132"
-          + "2.google.cloud.domains.v1beta1.DnsSettin"
-          + "gs.DsRecordB\003\340A\003\032\210\004\n\010DsRecord\022\017\n\007key_tag"
-          + "\030\001 \001(\005\022O\n\talgorithm\030\002 \001(\0162<.google.cloud"
-          + ".domains.v1beta1.DnsSettings.DsRecord.Al"
-          + "gorithm\022R\n\013digest_type\030\003 \001(\0162=.google.cl"
-          + "oud.domains.v1beta1.DnsSettings.DsRecord"
-          + ".DigestType\022\016\n\006digest\030\004 \001(\t\"\332\001\n\tAlgorith"
-          + "m\022\031\n\025ALGORITHM_UNSPECIFIED\020\000\022\007\n\003DSA\020\003\022\007\n"
-          + "\003ECC\020\004\022\013\n\007RSASHA1\020\005\022\020\n\014DSANSEC3SHA1\020\006\022\024\n"
-          + "\020RSASHA1NSEC3SHA1\020\007\022\r\n\tRSASHA256\020\010\022\r\n\tRS"
-          + "ASHA512\020\n\022\013\n\007ECCGOST\020\014\022\023\n\017ECDSAP256SHA25"
-          + "6\020\r\022\023\n\017ECDSAP384SHA384\020\016\022\013\n\007ED25519\020\017\022\t\n"
-          + "\005ED448\020\020\"Y\n\nDigestType\022\033\n\027DIGEST_TYPE_UN"
-          + "SPECIFIED\020\000\022\010\n\004SHA1\020\001\022\n\n\006SHA256\020\002\022\014\n\010GOS"
-          + "T3411\020\003\022\n\n\006SHA384\020\004\032T\n\nGlueRecord\022\026\n\thos"
-          + "t_name\030\001 \001(\tB\003\340A\002\022\026\n\016ipv4_addresses\030\002 \003("
-          + "\t\022\026\n\016ipv6_addresses\030\003 \003(\t\"Y\n\007DsState\022\030\n\024"
-          + "DS_STATE_UNSPECIFIED\020\000\022\032\n\026DS_RECORDS_UNP"
-          + "UBLISHED\020\001\022\030\n\024DS_RECORDS_PUBLISHED\020\002B\016\n\014"
-          + "dns_provider\"\337\003\n\017ContactSettings\022B\n\007priv"
-          + "acy\030\001 \001(\0162,.google.cloud.domains.v1beta1"
-          + ".ContactPrivacyB\003\340A\002\022V\n\022registrant_conta"
-          + "ct\030\002 \001(\01325.google.cloud.domains.v1beta1."
-          + "ContactSettings.ContactB\003\340A\002\022Q\n\radmin_co"
-          + "ntact\030\003 \001(\01325.google.cloud.domains.v1bet"
-          + "a1.ContactSettings.ContactB\003\340A\002\022U\n\021techn"
-          + "ical_contact\030\004 \001(\01325.google.cloud.domain"
-          + "s.v1beta1.ContactSettings.ContactB\003\340A\002\032\205"
-          + "\001\n\007Contact\0227\n\016postal_address\030\001 \001(\0132\032.goo"
-          + "gle.type.PostalAddressB\003\340A\002\022\022\n\005email\030\002 \001"
-          + "(\tB\003\340A\002\022\031\n\014phone_number\030\003 \001(\tB\003\340A\002\022\022\n\nfa"
-          + "x_number\030\004 \001(\t\"g\n\024SearchDomainsRequest\022\022"
-          + "\n\005query\030\001 \001(\tB\003\340A\002\022;\n\010location\030\002 \001(\tB)\340A"
-          + "\002\372A#\n!locations.googleapis.com/Location\""
-          + "f\n\025SearchDomainsResponse\022M\n\023register_par"
-          + "ameters\030\001 \003(\01320.google.cloud.domains.v1b"
-          + "eta1.RegisterParameters\"z\n!RetrieveRegis"
-          + "terParametersRequest\022\030\n\013domain_name\030\001 \001("
-          + "\tB\003\340A\002\022;\n\010location\030\002 \001(\tB)\340A\002\372A#\n!locati"
-          + "ons.googleapis.com/Location\"s\n\"RetrieveR"
-          + "egisterParametersResponse\022M\n\023register_pa"
-          + "rameters\030\001 \001(\01320.google.cloud.domains.v1"
-          + "beta1.RegisterParameters\"\351\002\n\025RegisterDom"
-          + "ainRequest\0229\n\006parent\030\001 \001(\tB)\340A\002\372A#\n!loca"
-          + "tions.googleapis.com/Location\022E\n\014registr"
-          + "ation\030\002 \001(\0132*.google.cloud.domains.v1bet"
-          + "a1.RegistrationB\003\340A\002\022B\n\016domain_notices\030\003"
-          + " \003(\0162*.google.cloud.domains.v1beta1.Doma"
-          + "inNotice\022D\n\017contact_notices\030\004 \003(\0162+.goog"
-          + "le.cloud.domains.v1beta1.ContactNotice\022-"
-          + "\n\014yearly_price\030\005 \001(\0132\022.google.type.Money"
-          + "B\003\340A\002\022\025\n\rvalidate_only\030\006 \001(\010\"\214\001\n\030ListReg"
-          + "istrationsRequest\0229\n\006parent\030\001 \001(\tB)\340A\002\372A"
-          + "#\n!locations.googleapis.com/Location\022\021\n\t"
-          + "page_size\030\002 \001(\005\022\022\n\npage_token\030\003 \001(\t\022\016\n\006f"
-          + "ilter\030\004 \001(\t\"w\n\031ListRegistrationsResponse"
-          + "\022A\n\rregistrations\030\001 \003(\0132*.google.cloud.d"
-          + "omains.v1beta1.Registration\022\027\n\017next_page"
-          + "_token\030\002 \001(\t\"S\n\026GetRegistrationRequest\0229"
-          + "\n\004name\030\001 \001(\tB+\340A\002\372A%\n#domains.googleapis"
-          + ".com/Registration\"\223\001\n\031UpdateRegistration"
-          + "Request\022@\n\014registration\030\001 \001(\0132*.google.c"
-          + "loud.domains.v1beta1.Registration\0224\n\013upd"
-          + "ate_mask\030\002 \001(\0132\032.google.protobuf.FieldMa"
-          + "skB\003\340A\002\"\354\001\n\"ConfigureManagementSettingsR"
-          + "equest\022A\n\014registration\030\001 \001(\tB+\340A\002\372A%\n#do"
-          + "mains.googleapis.com/Registration\022M\n\023man"
-          + "agement_settings\030\002 \001(\01320.google.cloud.do"
-          + "mains.v1beta1.ManagementSettings\0224\n\013upda"
-          + "te_mask\030\003 \001(\0132\032.google.protobuf.FieldMas"
-          + "kB\003\340A\002\"\356\001\n\033ConfigureDnsSettingsRequest\022A"
-          + "\n\014registration\030\001 \001(\tB+\340A\002\372A%\n#domains.go"
-          + "ogleapis.com/Registration\022?\n\014dns_setting"
-          + "s\030\002 \001(\0132).google.cloud.domains.v1beta1.D"
-          + "nsSettings\0224\n\013update_mask\030\003 \001(\0132\032.google"
-          + ".protobuf.FieldMaskB\003\340A\002\022\025\n\rvalidate_onl"
-          + "y\030\004 \001(\010\"\300\002\n\037ConfigureContactSettingsRequ"
-          + "est\022A\n\014registration\030\001 \001(\tB+\340A\002\372A%\n#domai"
-          + "ns.googleapis.com/Registration\022G\n\020contac"
-          + "t_settings\030\002 \001(\0132-.google.cloud.domains."
-          + "v1beta1.ContactSettings\0224\n\013update_mask\030\003"
-          + " \001(\0132\032.google.protobuf.FieldMaskB\003\340A\002\022D\n"
-          + "\017contact_notices\030\004 \003(\0162+.google.cloud.do"
-          + "mains.v1beta1.ContactNotice\022\025\n\rvalidate_"
-          + "only\030\005 \001(\010\"V\n\031ExportRegistrationRequest\022"
-          + "9\n\004name\030\001 \001(\tB+\340A\002\372A%\n#domains.googleapi"
-          + "s.com/Registration\"V\n\031DeleteRegistration"
-          + "Request\0229\n\004name\030\001 \001(\tB+\340A\002\372A%\n#domains.g"
-          + "oogleapis.com/Registration\"e\n RetrieveAu"
-          + "thorizationCodeRequest\022A\n\014registration\030\001"
-          + " \001(\tB+\340A\002\372A%\n#domains.googleapis.com/Reg"
-          + "istration\"b\n\035ResetAuthorizationCodeReque"
-          + "st\022A\n\014registration\030\001 \001(\tB+\340A\002\372A%\n#domain"
-          + "s.googleapis.com/Registration\"\241\003\n\022Regist"
-          + "erParameters\022\023\n\013domain_name\030\001 \001(\t\022S\n\014ava"
-          + "ilability\030\002 \001(\0162=.google.cloud.domains.v"
-          + "1beta1.RegisterParameters.Availability\022G"
-          + "\n\021supported_privacy\030\003 \003(\0162,.google.cloud"
-          + ".domains.v1beta1.ContactPrivacy\022B\n\016domai"
-          + "n_notices\030\004 \003(\0162*.google.cloud.domains.v"
-          + "1beta1.DomainNotice\022(\n\014yearly_price\030\005 \001("
-          + "\0132\022.google.type.Money\"j\n\014Availability\022\034\n"
-          + "\030AVAILABILITY_UNSPECIFIED\020\000\022\r\n\tAVAILABLE"
-          + "\020\001\022\017\n\013UNAVAILABLE\020\002\022\017\n\013UNSUPPORTED\020\003\022\013\n\007"
-          + "UNKNOWN\020\004\"!\n\021AuthorizationCode\022\014\n\004code\030\001"
-          + " \001(\t\"\274\001\n\021OperationMetadata\022/\n\013create_tim"
-          + "e\030\001 \001(\0132\032.google.protobuf.Timestamp\022,\n\010e"
-          + "nd_time\030\002 \001(\0132\032.google.protobuf.Timestam"
-          + "p\022\016\n\006target\030\003 \001(\t\022\014\n\004verb\030\004 \001(\t\022\025\n\rstatu"
-          + "s_detail\030\005 \001(\t\022\023\n\013api_version\030\006 \001(\t*\177\n\016C"
-          + "ontactPrivacy\022\037\n\033CONTACT_PRIVACY_UNSPECI"
-          + "FIED\020\000\022\027\n\023PUBLIC_CONTACT_DATA\020\001\022\030\n\024PRIVA"
-          + "TE_CONTACT_DATA\020\002\022\031\n\025REDACTED_CONTACT_DA"
-          + "TA\020\003*A\n\014DomainNotice\022\035\n\031DOMAIN_NOTICE_UN"
-          + "SPECIFIED\020\000\022\022\n\016HSTS_PRELOADED\020\001*X\n\rConta"
-          + "ctNotice\022\036\n\032CONTACT_NOTICE_UNSPECIFIED\020\000"
-          + "\022\'\n#PUBLIC_CONTACT_DATA_ACKNOWLEDGEMENT\020"
-          + "\001*R\n\021TransferLockState\022#\n\037TRANSFER_LOCK_"
-          + "STATE_UNSPECIFIED\020\000\022\014\n\010UNLOCKED\020\001\022\n\n\006LOC"
-          + "KED\020\0022\246\032\n\007Domains\022\331\001\n\rSearchDomains\0222.go"
-          + "ogle.cloud.domains.v1beta1.SearchDomains"
-          + "Request\0323.google.cloud.domains.v1beta1.S"
-          + "earchDomainsResponse\"_\202\323\344\223\002H\022F/v1beta1/{"
-          + "location=projects/*/locations/*}/registr"
-          + "ations:searchDomains\332A\016location,query\022\223\002"
-          + "\n\032RetrieveRegisterParameters\022?.google.cl"
-          + "oud.domains.v1beta1.RetrieveRegisterPara"
-          + "metersRequest\032@.google.cloud.domains.v1b"
-          + "eta1.RetrieveRegisterParametersResponse\""
-          + "r\202\323\344\223\002U\022S/v1beta1/{location=projects/*/l"
-          + "ocations/*}/registrations:retrieveRegist"
-          + "erParameters\332A\024location,domain_name\022\370\001\n\016"
-          + "RegisterDomain\0223.google.cloud.domains.v1"
-          + "beta1.RegisterDomainRequest\032\035.google.lon"
-          + "grunning.Operation\"\221\001\202\323\344\223\002D\"?/v1beta1/{p"
-          + "arent=projects/*/locations/*}/registrati"
-          + "ons:register:\001*\332A parent,registration,ye"
-          + "arly_price\312A!\n\014Registration\022\021OperationMe"
-          + "tadata\022\315\001\n\021ListRegistrations\0226.google.cl"
-          + "oud.domains.v1beta1.ListRegistrationsReq"
-          + "uest\0327.google.cloud.domains.v1beta1.List"
-          + "RegistrationsResponse\"G\202\323\344\223\0028\0226/v1beta1/"
-          + "{parent=projects/*/locations/*}/registra"
-          + "tions\332A\006parent\022\272\001\n\017GetRegistration\0224.goo"
-          + "gle.cloud.domains.v1beta1.GetRegistratio"
-          + "nRequest\032*.google.cloud.domains.v1beta1."
-          + "Registration\"E\202\323\344\223\0028\0226/v1beta1/{name=pro"
-          + "jects/*/locations/*/registrations/*}\332A\004n"
-          + "ame\022\207\002\n\022UpdateRegistration\0227.google.clou"
-          + "d.domains.v1beta1.UpdateRegistrationRequ"
-          + "est\032\035.google.longrunning.Operation\"\230\001\202\323\344"
-          + "\223\002S2C/v1beta1/{registration.name=project"
-          + "s/*/locations/*/registrations/*}:\014regist"
-          + "ration\332A\030registration,update_mask\312A!\n\014Re"
-          + "gistration\022\021OperationMetadata\022\271\002\n\033Config"
-          + "ureManagementSettings\022@.google.cloud.dom"
-          + "ains.v1beta1.ConfigureManagementSettings"
-          + "Request\032\035.google.longrunning.Operation\"\270"
-          + "\001\202\323\344\223\002_\"Z/v1beta1/{registration=projects"
-          + "/*/locations/*/registrations/*}:configur"
-          + "eManagementSettings:\001*\332A,registration,ma"
-          + "nagement_settings,update_mask\312A!\n\014Regist"
-          + "ration\022\021OperationMetadata\022\235\002\n\024ConfigureD"
-          + "nsSettings\0229.google.cloud.domains.v1beta"
-          + "1.ConfigureDnsSettingsRequest\032\035.google.l"
-          + "ongrunning.Operation\"\252\001\202\323\344\223\002X\"S/v1beta1/"
-          + "{registration=projects/*/locations/*/reg"
-          + "istrations/*}:configureDnsSettings:\001*\332A%"
-          + "registration,dns_settings,update_mask\312A!"
-          + "\n\014Registration\022\021OperationMetadata\022\255\002\n\030Co"
-          + "nfigureContactSettings\022=.google.cloud.do"
-          + "mains.v1beta1.ConfigureContactSettingsRe"
-          + "quest\032\035.google.longrunning.Operation\"\262\001\202"
-          + "\323\344\223\002\\\"W/v1beta1/{registration=projects/*"
-          + "/locations/*/registrations/*}:configureC"
-          + "ontactSettings:\001*\332A)registration,contact"
-          + "_settings,update_mask\312A!\n\014Registration\022\021"
-          + "OperationMetadata\022\341\001\n\022ExportRegistration"
-          + "\0227.google.cloud.domains.v1beta1.ExportRe"
-          + "gistrationRequest\032\035.google.longrunning.O"
-          + "peration\"s\202\323\344\223\002B\"=/v1beta1/{name=project"
-          + "s/*/locations/*/registrations/*}:export:"
-          + "\001*\332A\004name\312A!\n\014Registration\022\021OperationMet"
-          + "adata\022\340\001\n\022DeleteRegistration\0227.google.cl"
-          + "oud.domains.v1beta1.DeleteRegistrationRe"
-          + "quest\032\035.google.longrunning.Operation\"r\202\323"
-          + "\344\223\0028*6/v1beta1/{name=projects/*/location"
-          + "s/*/registrations/*}\332A\004name\312A*\n\025google.p"
-          + "rotobuf.Empty\022\021OperationMetadata\022\375\001\n\031Ret"
-          + "rieveAuthorizationCode\022>.google.cloud.do"
-          + "mains.v1beta1.RetrieveAuthorizationCodeR"
-          + "equest\032/.google.cloud.domains.v1beta1.Au"
-          + "thorizationCode\"o\202\323\344\223\002Z\022X/v1beta1/{regis"
-          + "tration=projects/*/locations/*/registrat"
-          + "ions/*}:retrieveAuthorizationCode\332A\014regi"
-          + "stration\022\367\001\n\026ResetAuthorizationCode\022;.go"
-          + "ogle.cloud.domains.v1beta1.ResetAuthoriz"
-          + "ationCodeRequest\032/.google.cloud.domains."
-          + "v1beta1.AuthorizationCode\"o\202\323\344\223\002Z\"U/v1be"
-          + "ta1/{registration=projects/*/locations/*"
-          + "/registrations/*}:resetAuthorizationCode"
-          + ":\001*\332A\014registration\032J\312A\026domains.googleapi"
-          + "s.com\322A.https://www.googleapis.com/auth/"
-          + "cloud-platformBw\n com.google.cloud.domai"
-          + "ns.v1beta1B\014DomainsProtoP\001ZCgoogle.golan"
-          + "g.org/genproto/googleapis/cloud/domains/"
-          + "v1beta1;domainsb\006proto3"
+          + "e\030\002 \001(\t:\0028\001\"\245\001\n\005State\022\025\n\021STATE_UNSPECIFI"
+          + "ED\020\000\022\030\n\024REGISTRATION_PENDING\020\001\022\027\n\023REGIST"
+          + "RATION_FAILED\020\002\022\024\n\020TRANSFER_PENDING\020\003\022\023\n"
+          + "\017TRANSFER_FAILED\020\004\022\n\n\006ACTIVE\020\006\022\r\n\tSUSPEN"
+          + "DED\020\007\022\014\n\010EXPORTED\020\010\"I\n\005Issue\022\025\n\021ISSUE_UN"
+          + "SPECIFIED\020\000\022\023\n\017CONTACT_SUPPORT\020\001\022\024\n\020UNVE"
+          + "RIFIED_EMAIL\020\002:n\352Ak\n#domains.googleapis."
+          + "com/Registration\022Dprojects/{project}/loc"
+          + "ations/{location}/registrations/{registr"
+          + "ation}\"\233\002\n\022ManagementSettings\022[\n\016renewal"
+          + "_method\030\003 \001(\0162>.google.cloud.domains.v1b"
+          + "eta1.ManagementSettings.RenewalMethodB\003\340"
+          + "A\003\022L\n\023transfer_lock_state\030\004 \001(\0162/.google"
+          + ".cloud.domains.v1beta1.TransferLockState"
+          + "\"Z\n\rRenewalMethod\022\036\n\032RENEWAL_METHOD_UNSP"
+          + "ECIFIED\020\000\022\025\n\021AUTOMATIC_RENEWAL\020\001\022\022\n\016MANU"
+          + "AL_RENEWAL\020\002\"\306\n\n\013DnsSettings\022I\n\ncustom_d"
+          + "ns\030\001 \001(\01323.google.cloud.domains.v1beta1."
+          + "DnsSettings.CustomDnsH\000\022X\n\022google_domain"
+          + "s_dns\030\002 \001(\0132:.google.cloud.domains.v1bet"
+          + "a1.DnsSettings.GoogleDomainsDnsH\000\022J\n\014glu"
+          + "e_records\030\004 \003(\01324.google.cloud.domains.v"
+          + "1beta1.DnsSettings.GlueRecord\032n\n\tCustomD"
+          + "ns\022\031\n\014name_servers\030\001 \003(\tB\003\340A\002\022F\n\nds_reco"
+          + "rds\030\002 \003(\01322.google.cloud.domains.v1beta1"
+          + ".DnsSettings.DsRecord\032\304\001\n\020GoogleDomainsD"
+          + "ns\022\031\n\014name_servers\030\001 \003(\tB\003\340A\003\022H\n\010ds_stat"
+          + "e\030\002 \001(\01621.google.cloud.domains.v1beta1.D"
+          + "nsSettings.DsStateB\003\340A\002\022K\n\nds_records\030\003 "
+          + "\003(\01322.google.cloud.domains.v1beta1.DnsSe"
+          + "ttings.DsRecordB\003\340A\003\032\315\004\n\010DsRecord\022\017\n\007key"
+          + "_tag\030\001 \001(\005\022O\n\talgorithm\030\002 \001(\0162<.google.c"
+          + "loud.domains.v1beta1.DnsSettings.DsRecor"
+          + "d.Algorithm\022R\n\013digest_type\030\003 \001(\0162=.googl"
+          + "e.cloud.domains.v1beta1.DnsSettings.DsRe"
+          + "cord.DigestType\022\016\n\006digest\030\004 \001(\t\"\237\002\n\tAlgo"
+          + "rithm\022\031\n\025ALGORITHM_UNSPECIFIED\020\000\022\n\n\006RSAM"
+          + "D5\020\001\022\006\n\002DH\020\002\022\007\n\003DSA\020\003\022\007\n\003ECC\020\004\022\013\n\007RSASHA"
+          + "1\020\005\022\020\n\014DSANSEC3SHA1\020\006\022\024\n\020RSASHA1NSEC3SHA"
+          + "1\020\007\022\r\n\tRSASHA256\020\010\022\r\n\tRSASHA512\020\n\022\013\n\007ECC"
+          + "GOST\020\014\022\023\n\017ECDSAP256SHA256\020\r\022\023\n\017ECDSAP384"
+          + "SHA384\020\016\022\013\n\007ED25519\020\017\022\t\n\005ED448\020\020\022\r\n\010INDI"
+          + "RECT\020\374\001\022\017\n\nPRIVATEDNS\020\375\001\022\017\n\nPRIVATEOID\020\376"
+          + "\001\"Y\n\nDigestType\022\033\n\027DIGEST_TYPE_UNSPECIFI"
+          + "ED\020\000\022\010\n\004SHA1\020\001\022\n\n\006SHA256\020\002\022\014\n\010GOST3411\020\003"
+          + "\022\n\n\006SHA384\020\004\032T\n\nGlueRecord\022\026\n\thost_name\030"
+          + "\001 \001(\tB\003\340A\002\022\026\n\016ipv4_addresses\030\002 \003(\t\022\026\n\016ip"
+          + "v6_addresses\030\003 \003(\t\"Y\n\007DsState\022\030\n\024DS_STAT"
+          + "E_UNSPECIFIED\020\000\022\032\n\026DS_RECORDS_UNPUBLISHE"
+          + "D\020\001\022\030\n\024DS_RECORDS_PUBLISHED\020\002B\016\n\014dns_pro"
+          + "vider\"\337\003\n\017ContactSettings\022B\n\007privacy\030\001 \001"
+          + "(\0162,.google.cloud.domains.v1beta1.Contac"
+          + "tPrivacyB\003\340A\002\022V\n\022registrant_contact\030\002 \001("
+          + "\01325.google.cloud.domains.v1beta1.Contact"
+          + "Settings.ContactB\003\340A\002\022Q\n\radmin_contact\030\003"
+          + " \001(\01325.google.cloud.domains.v1beta1.Cont"
+          + "actSettings.ContactB\003\340A\002\022U\n\021technical_co"
+          + "ntact\030\004 \001(\01325.google.cloud.domains.v1bet"
+          + "a1.ContactSettings.ContactB\003\340A\002\032\205\001\n\007Cont"
+          + "act\0227\n\016postal_address\030\001 \001(\0132\032.google.typ"
+          + "e.PostalAddressB\003\340A\002\022\022\n\005email\030\002 \001(\tB\003\340A\002"
+          + "\022\031\n\014phone_number\030\003 \001(\tB\003\340A\002\022\022\n\nfax_numbe"
+          + "r\030\004 \001(\t\"g\n\024SearchDomainsRequest\022\022\n\005query"
+          + "\030\001 \001(\tB\003\340A\002\022;\n\010location\030\002 \001(\tB)\340A\002\372A#\n!l"
+          + "ocations.googleapis.com/Location\"f\n\025Sear"
+          + "chDomainsResponse\022M\n\023register_parameters"
+          + "\030\001 \003(\01320.google.cloud.domains.v1beta1.Re"
+          + "gisterParameters\"z\n!RetrieveRegisterPara"
+          + "metersRequest\022\030\n\013domain_name\030\001 \001(\tB\003\340A\002\022"
+          + ";\n\010location\030\002 \001(\tB)\340A\002\372A#\n!locations.goo"
+          + "gleapis.com/Location\"s\n\"RetrieveRegister"
+          + "ParametersResponse\022M\n\023register_parameter"
+          + "s\030\001 \001(\01320.google.cloud.domains.v1beta1.R"
+          + "egisterParameters\"\351\002\n\025RegisterDomainRequ"
+          + "est\0229\n\006parent\030\001 \001(\tB)\340A\002\372A#\n!locations.g"
+          + "oogleapis.com/Location\022E\n\014registration\030\002"
+          + " \001(\0132*.google.cloud.domains.v1beta1.Regi"
+          + "strationB\003\340A\002\022B\n\016domain_notices\030\003 \003(\0162*."
+          + "google.cloud.domains.v1beta1.DomainNotic"
+          + "e\022D\n\017contact_notices\030\004 \003(\0162+.google.clou"
+          + "d.domains.v1beta1.ContactNotice\022-\n\014yearl"
+          + "y_price\030\005 \001(\0132\022.google.type.MoneyB\003\340A\002\022\025"
+          + "\n\rvalidate_only\030\006 \001(\010\"z\n!RetrieveTransfe"
+          + "rParametersRequest\022\030\n\013domain_name\030\001 \001(\tB"
+          + "\003\340A\002\022;\n\010location\030\002 \001(\tB)\340A\002\372A#\n!location"
+          + "s.googleapis.com/Location\"s\n\"RetrieveTra"
+          + "nsferParametersResponse\022M\n\023transfer_para"
+          + "meters\030\001 \001(\01320.google.cloud.domains.v1be"
+          + "ta1.TransferParameters\"\362\002\n\025TransferDomai"
+          + "nRequest\0229\n\006parent\030\001 \001(\tB)\340A\002\372A#\n!locati"
+          + "ons.googleapis.com/Location\022E\n\014registrat"
+          + "ion\030\002 \001(\0132*.google.cloud.domains.v1beta1"
+          + ".RegistrationB\003\340A\002\022D\n\017contact_notices\030\003 "
+          + "\003(\0162+.google.cloud.domains.v1beta1.Conta"
+          + "ctNotice\022-\n\014yearly_price\030\004 \001(\0132\022.google."
+          + "type.MoneyB\003\340A\002\022K\n\022authorization_code\030\005 "
+          + "\001(\0132/.google.cloud.domains.v1beta1.Autho"
+          + "rizationCode\022\025\n\rvalidate_only\030\006 \001(\010\"\214\001\n\030"
+          + "ListRegistrationsRequest\0229\n\006parent\030\001 \001(\t"
+          + "B)\340A\002\372A#\n!locations.googleapis.com/Locat"
+          + "ion\022\021\n\tpage_size\030\002 \001(\005\022\022\n\npage_token\030\003 \001"
+          + "(\t\022\016\n\006filter\030\004 \001(\t\"w\n\031ListRegistrationsR"
+          + "esponse\022A\n\rregistrations\030\001 \003(\0132*.google."
+          + "cloud.domains.v1beta1.Registration\022\027\n\017ne"
+          + "xt_page_token\030\002 \001(\t\"S\n\026GetRegistrationRe"
+          + "quest\0229\n\004name\030\001 \001(\tB+\340A\002\372A%\n#domains.goo"
+          + "gleapis.com/Registration\"\223\001\n\031UpdateRegis"
+          + "trationRequest\022@\n\014registration\030\001 \001(\0132*.g"
+          + "oogle.cloud.domains.v1beta1.Registration"
+          + "\0224\n\013update_mask\030\002 \001(\0132\032.google.protobuf."
+          + "FieldMaskB\003\340A\002\"\354\001\n\"ConfigureManagementSe"
+          + "ttingsRequest\022A\n\014registration\030\001 \001(\tB+\340A\002"
+          + "\372A%\n#domains.googleapis.com/Registration"
+          + "\022M\n\023management_settings\030\002 \001(\01320.google.c"
+          + "loud.domains.v1beta1.ManagementSettings\022"
+          + "4\n\013update_mask\030\003 \001(\0132\032.google.protobuf.F"
+          + "ieldMaskB\003\340A\002\"\356\001\n\033ConfigureDnsSettingsRe"
+          + "quest\022A\n\014registration\030\001 \001(\tB+\340A\002\372A%\n#dom"
+          + "ains.googleapis.com/Registration\022?\n\014dns_"
+          + "settings\030\002 \001(\0132).google.cloud.domains.v1"
+          + "beta1.DnsSettings\0224\n\013update_mask\030\003 \001(\0132\032"
+          + ".google.protobuf.FieldMaskB\003\340A\002\022\025\n\rvalid"
+          + "ate_only\030\004 \001(\010\"\300\002\n\037ConfigureContactSetti"
+          + "ngsRequest\022A\n\014registration\030\001 \001(\tB+\340A\002\372A%"
+          + "\n#domains.googleapis.com/Registration\022G\n"
+          + "\020contact_settings\030\002 \001(\0132-.google.cloud.d"
+          + "omains.v1beta1.ContactSettings\0224\n\013update"
+          + "_mask\030\003 \001(\0132\032.google.protobuf.FieldMaskB"
+          + "\003\340A\002\022D\n\017contact_notices\030\004 \003(\0162+.google.c"
+          + "loud.domains.v1beta1.ContactNotice\022\025\n\rva"
+          + "lidate_only\030\005 \001(\010\"V\n\031ExportRegistrationR"
+          + "equest\0229\n\004name\030\001 \001(\tB+\340A\002\372A%\n#domains.go"
+          + "ogleapis.com/Registration\"V\n\031DeleteRegis"
+          + "trationRequest\0229\n\004name\030\001 \001(\tB+\340A\002\372A%\n#do"
+          + "mains.googleapis.com/Registration\"e\n Ret"
+          + "rieveAuthorizationCodeRequest\022A\n\014registr"
+          + "ation\030\001 \001(\tB+\340A\002\372A%\n#domains.googleapis."
+          + "com/Registration\"b\n\035ResetAuthorizationCo"
+          + "deRequest\022A\n\014registration\030\001 \001(\tB+\340A\002\372A%\n"
+          + "#domains.googleapis.com/Registration\"\241\003\n"
+          + "\022RegisterParameters\022\023\n\013domain_name\030\001 \001(\t"
+          + "\022S\n\014availability\030\002 \001(\0162=.google.cloud.do"
+          + "mains.v1beta1.RegisterParameters.Availab"
+          + "ility\022G\n\021supported_privacy\030\003 \003(\0162,.googl"
+          + "e.cloud.domains.v1beta1.ContactPrivacy\022B"
+          + "\n\016domain_notices\030\004 \003(\0162*.google.cloud.do"
+          + "mains.v1beta1.DomainNotice\022(\n\014yearly_pri"
+          + "ce\030\005 \001(\0132\022.google.type.Money\"j\n\014Availabi"
+          + "lity\022\034\n\030AVAILABILITY_UNSPECIFIED\020\000\022\r\n\tAV"
+          + "AILABLE\020\001\022\017\n\013UNAVAILABLE\020\002\022\017\n\013UNSUPPORTE"
+          + "D\020\003\022\013\n\007UNKNOWN\020\004\"\233\002\n\022TransferParameters\022"
+          + "\023\n\013domain_name\030\001 \001(\t\022\031\n\021current_registra"
+          + "r\030\002 \001(\t\022\024\n\014name_servers\030\003 \003(\t\022L\n\023transfe"
+          + "r_lock_state\030\004 \001(\0162/.google.cloud.domain"
+          + "s.v1beta1.TransferLockState\022G\n\021supported"
+          + "_privacy\030\005 \003(\0162,.google.cloud.domains.v1"
+          + "beta1.ContactPrivacy\022(\n\014yearly_price\030\006 \001"
+          + "(\0132\022.google.type.Money\"!\n\021AuthorizationC"
+          + "ode\022\014\n\004code\030\001 \001(\t\"\274\001\n\021OperationMetadata\022"
+          + "/\n\013create_time\030\001 \001(\0132\032.google.protobuf.T"
+          + "imestamp\022,\n\010end_time\030\002 \001(\0132\032.google.prot"
+          + "obuf.Timestamp\022\016\n\006target\030\003 \001(\t\022\014\n\004verb\030\004"
+          + " \001(\t\022\025\n\rstatus_detail\030\005 \001(\t\022\023\n\013api_versi"
+          + "on\030\006 \001(\t*\177\n\016ContactPrivacy\022\037\n\033CONTACT_PR"
+          + "IVACY_UNSPECIFIED\020\000\022\027\n\023PUBLIC_CONTACT_DA"
+          + "TA\020\001\022\030\n\024PRIVATE_CONTACT_DATA\020\002\022\031\n\025REDACT"
+          + "ED_CONTACT_DATA\020\003*A\n\014DomainNotice\022\035\n\031DOM"
+          + "AIN_NOTICE_UNSPECIFIED\020\000\022\022\n\016HSTS_PRELOAD"
+          + "ED\020\001*X\n\rContactNotice\022\036\n\032CONTACT_NOTICE_"
+          + "UNSPECIFIED\020\000\022\'\n#PUBLIC_CONTACT_DATA_ACK"
+          + "NOWLEDGEMENT\020\001*R\n\021TransferLockState\022#\n\037T"
+          + "RANSFER_LOCK_STATE_UNSPECIFIED\020\000\022\014\n\010UNLO"
+          + "CKED\020\001\022\n\n\006LOCKED\020\0022\312\036\n\007Domains\022\331\001\n\rSearc"
+          + "hDomains\0222.google.cloud.domains.v1beta1."
+          + "SearchDomainsRequest\0323.google.cloud.doma"
+          + "ins.v1beta1.SearchDomainsResponse\"_\202\323\344\223\002"
+          + "H\022F/v1beta1/{location=projects/*/locatio"
+          + "ns/*}/registrations:searchDomains\332A\016loca"
+          + "tion,query\022\223\002\n\032RetrieveRegisterParameter"
+          + "s\022?.google.cloud.domains.v1beta1.Retriev"
+          + "eRegisterParametersRequest\032@.google.clou"
+          + "d.domains.v1beta1.RetrieveRegisterParame"
+          + "tersResponse\"r\202\323\344\223\002U\022S/v1beta1/{location"
+          + "=projects/*/locations/*}/registrations:r"
+          + "etrieveRegisterParameters\332A\024location,dom"
+          + "ain_name\022\370\001\n\016RegisterDomain\0223.google.clo"
+          + "ud.domains.v1beta1.RegisterDomainRequest"
+          + "\032\035.google.longrunning.Operation\"\221\001\202\323\344\223\002D"
+          + "\"?/v1beta1/{parent=projects/*/locations/"
+          + "*}/registrations:register:\001*\332A parent,re"
+          + "gistration,yearly_price\312A!\n\014Registration"
+          + "\022\021OperationMetadata\022\223\002\n\032RetrieveTransfer"
+          + "Parameters\022?.google.cloud.domains.v1beta"
+          + "1.RetrieveTransferParametersRequest\032@.go"
+          + "ogle.cloud.domains.v1beta1.RetrieveTrans"
+          + "ferParametersResponse\"r\202\323\344\223\002U\022S/v1beta1/"
+          + "{location=projects/*/locations/*}/regist"
+          + "rations:retrieveTransferParameters\332A\024loc"
+          + "ation,domain_name\022\213\002\n\016TransferDomain\0223.g"
+          + "oogle.cloud.domains.v1beta1.TransferDoma"
+          + "inRequest\032\035.google.longrunning.Operation"
+          + "\"\244\001\202\323\344\223\002D\"?/v1beta1/{parent=projects/*/l"
+          + "ocations/*}/registrations:transfer:\001*\332A3"
+          + "parent,registration,yearly_price,authori"
+          + "zation_code\312A!\n\014Registration\022\021OperationM"
+          + "etadata\022\315\001\n\021ListRegistrations\0226.google.c"
+          + "loud.domains.v1beta1.ListRegistrationsRe"
+          + "quest\0327.google.cloud.domains.v1beta1.Lis"
+          + "tRegistrationsResponse\"G\202\323\344\223\0028\0226/v1beta1"
+          + "/{parent=projects/*/locations/*}/registr"
+          + "ations\332A\006parent\022\272\001\n\017GetRegistration\0224.go"
+          + "ogle.cloud.domains.v1beta1.GetRegistrati"
+          + "onRequest\032*.google.cloud.domains.v1beta1"
+          + ".Registration\"E\202\323\344\223\0028\0226/v1beta1/{name=pr"
+          + "ojects/*/locations/*/registrations/*}\332A\004"
+          + "name\022\207\002\n\022UpdateRegistration\0227.google.clo"
+          + "ud.domains.v1beta1.UpdateRegistrationReq"
+          + "uest\032\035.google.longrunning.Operation\"\230\001\202\323"
+          + "\344\223\002S2C/v1beta1/{registration.name=projec"
+          + "ts/*/locations/*/registrations/*}:\014regis"
+          + "tration\332A\030registration,update_mask\312A!\n\014R"
+          + "egistration\022\021OperationMetadata\022\271\002\n\033Confi"
+          + "gureManagementSettings\022@.google.cloud.do"
+          + "mains.v1beta1.ConfigureManagementSetting"
+          + "sRequest\032\035.google.longrunning.Operation\""
+          + "\270\001\202\323\344\223\002_\"Z/v1beta1/{registration=project"
+          + "s/*/locations/*/registrations/*}:configu"
+          + "reManagementSettings:\001*\332A,registration,m"
+          + "anagement_settings,update_mask\312A!\n\014Regis"
+          + "tration\022\021OperationMetadata\022\235\002\n\024Configure"
+          + "DnsSettings\0229.google.cloud.domains.v1bet"
+          + "a1.ConfigureDnsSettingsRequest\032\035.google."
+          + "longrunning.Operation\"\252\001\202\323\344\223\002X\"S/v1beta1"
+          + "/{registration=projects/*/locations/*/re"
+          + "gistrations/*}:configureDnsSettings:\001*\332A"
+          + "%registration,dns_settings,update_mask\312A"
+          + "!\n\014Registration\022\021OperationMetadata\022\255\002\n\030C"
+          + "onfigureContactSettings\022=.google.cloud.d"
+          + "omains.v1beta1.ConfigureContactSettingsR"
+          + "equest\032\035.google.longrunning.Operation\"\262\001"
+          + "\202\323\344\223\002\\\"W/v1beta1/{registration=projects/"
+          + "*/locations/*/registrations/*}:configure"
+          + "ContactSettings:\001*\332A)registration,contac"
+          + "t_settings,update_mask\312A!\n\014Registration\022"
+          + "\021OperationMetadata\022\341\001\n\022ExportRegistratio"
+          + "n\0227.google.cloud.domains.v1beta1.ExportR"
+          + "egistrationRequest\032\035.google.longrunning."
+          + "Operation\"s\202\323\344\223\002B\"=/v1beta1/{name=projec"
+          + "ts/*/locations/*/registrations/*}:export"
+          + ":\001*\332A\004name\312A!\n\014Registration\022\021OperationMe"
+          + "tadata\022\340\001\n\022DeleteRegistration\0227.google.c"
+          + "loud.domains.v1beta1.DeleteRegistrationR"
+          + "equest\032\035.google.longrunning.Operation\"r\202"
+          + "\323\344\223\0028*6/v1beta1/{name=projects/*/locatio"
+          + "ns/*/registrations/*}\332A\004name\312A*\n\025google."
+          + "protobuf.Empty\022\021OperationMetadata\022\375\001\n\031Re"
+          + "trieveAuthorizationCode\022>.google.cloud.d"
+          + "omains.v1beta1.RetrieveAuthorizationCode"
+          + "Request\032/.google.cloud.domains.v1beta1.A"
+          + "uthorizationCode\"o\202\323\344\223\002Z\022X/v1beta1/{regi"
+          + "stration=projects/*/locations/*/registra"
+          + "tions/*}:retrieveAuthorizationCode\332A\014reg"
+          + "istration\022\367\001\n\026ResetAuthorizationCode\022;.g"
+          + "oogle.cloud.domains.v1beta1.ResetAuthori"
+          + "zationCodeRequest\032/.google.cloud.domains"
+          + ".v1beta1.AuthorizationCode\"o\202\323\344\223\002Z\"U/v1b"
+          + "eta1/{registration=projects/*/locations/"
+          + "*/registrations/*}:resetAuthorizationCod"
+          + "e:\001*\332A\014registration\032J\312A\026domains.googleap"
+          + "is.com\322A.https://www.googleapis.com/auth"
+          + "/cloud-platformBw\n com.google.cloud.doma"
+          + "ins.v1beta1B\014DomainsProtoP\001ZCgoogle.gola"
+          + "ng.org/genproto/googleapis/cloud/domains"
+          + "/v1beta1;domainsb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -571,8 +626,37 @@ public final class DomainsProto {
               "YearlyPrice",
               "ValidateOnly",
             });
-    internal_static_google_cloud_domains_v1beta1_ListRegistrationsRequest_descriptor =
+    internal_static_google_cloud_domains_v1beta1_RetrieveTransferParametersRequest_descriptor =
         getDescriptor().getMessageTypes().get(9);
+    internal_static_google_cloud_domains_v1beta1_RetrieveTransferParametersRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_domains_v1beta1_RetrieveTransferParametersRequest_descriptor,
+            new java.lang.String[] {
+              "DomainName", "Location",
+            });
+    internal_static_google_cloud_domains_v1beta1_RetrieveTransferParametersResponse_descriptor =
+        getDescriptor().getMessageTypes().get(10);
+    internal_static_google_cloud_domains_v1beta1_RetrieveTransferParametersResponse_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_domains_v1beta1_RetrieveTransferParametersResponse_descriptor,
+            new java.lang.String[] {
+              "TransferParameters",
+            });
+    internal_static_google_cloud_domains_v1beta1_TransferDomainRequest_descriptor =
+        getDescriptor().getMessageTypes().get(11);
+    internal_static_google_cloud_domains_v1beta1_TransferDomainRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_domains_v1beta1_TransferDomainRequest_descriptor,
+            new java.lang.String[] {
+              "Parent",
+              "Registration",
+              "ContactNotices",
+              "YearlyPrice",
+              "AuthorizationCode",
+              "ValidateOnly",
+            });
+    internal_static_google_cloud_domains_v1beta1_ListRegistrationsRequest_descriptor =
+        getDescriptor().getMessageTypes().get(12);
     internal_static_google_cloud_domains_v1beta1_ListRegistrationsRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_domains_v1beta1_ListRegistrationsRequest_descriptor,
@@ -580,7 +664,7 @@ public final class DomainsProto {
               "Parent", "PageSize", "PageToken", "Filter",
             });
     internal_static_google_cloud_domains_v1beta1_ListRegistrationsResponse_descriptor =
-        getDescriptor().getMessageTypes().get(10);
+        getDescriptor().getMessageTypes().get(13);
     internal_static_google_cloud_domains_v1beta1_ListRegistrationsResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_domains_v1beta1_ListRegistrationsResponse_descriptor,
@@ -588,7 +672,7 @@ public final class DomainsProto {
               "Registrations", "NextPageToken",
             });
     internal_static_google_cloud_domains_v1beta1_GetRegistrationRequest_descriptor =
-        getDescriptor().getMessageTypes().get(11);
+        getDescriptor().getMessageTypes().get(14);
     internal_static_google_cloud_domains_v1beta1_GetRegistrationRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_domains_v1beta1_GetRegistrationRequest_descriptor,
@@ -596,7 +680,7 @@ public final class DomainsProto {
               "Name",
             });
     internal_static_google_cloud_domains_v1beta1_UpdateRegistrationRequest_descriptor =
-        getDescriptor().getMessageTypes().get(12);
+        getDescriptor().getMessageTypes().get(15);
     internal_static_google_cloud_domains_v1beta1_UpdateRegistrationRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_domains_v1beta1_UpdateRegistrationRequest_descriptor,
@@ -604,7 +688,7 @@ public final class DomainsProto {
               "Registration", "UpdateMask",
             });
     internal_static_google_cloud_domains_v1beta1_ConfigureManagementSettingsRequest_descriptor =
-        getDescriptor().getMessageTypes().get(13);
+        getDescriptor().getMessageTypes().get(16);
     internal_static_google_cloud_domains_v1beta1_ConfigureManagementSettingsRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_domains_v1beta1_ConfigureManagementSettingsRequest_descriptor,
@@ -612,7 +696,7 @@ public final class DomainsProto {
               "Registration", "ManagementSettings", "UpdateMask",
             });
     internal_static_google_cloud_domains_v1beta1_ConfigureDnsSettingsRequest_descriptor =
-        getDescriptor().getMessageTypes().get(14);
+        getDescriptor().getMessageTypes().get(17);
     internal_static_google_cloud_domains_v1beta1_ConfigureDnsSettingsRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_domains_v1beta1_ConfigureDnsSettingsRequest_descriptor,
@@ -620,7 +704,7 @@ public final class DomainsProto {
               "Registration", "DnsSettings", "UpdateMask", "ValidateOnly",
             });
     internal_static_google_cloud_domains_v1beta1_ConfigureContactSettingsRequest_descriptor =
-        getDescriptor().getMessageTypes().get(15);
+        getDescriptor().getMessageTypes().get(18);
     internal_static_google_cloud_domains_v1beta1_ConfigureContactSettingsRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_domains_v1beta1_ConfigureContactSettingsRequest_descriptor,
@@ -628,7 +712,7 @@ public final class DomainsProto {
               "Registration", "ContactSettings", "UpdateMask", "ContactNotices", "ValidateOnly",
             });
     internal_static_google_cloud_domains_v1beta1_ExportRegistrationRequest_descriptor =
-        getDescriptor().getMessageTypes().get(16);
+        getDescriptor().getMessageTypes().get(19);
     internal_static_google_cloud_domains_v1beta1_ExportRegistrationRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_domains_v1beta1_ExportRegistrationRequest_descriptor,
@@ -636,7 +720,7 @@ public final class DomainsProto {
               "Name",
             });
     internal_static_google_cloud_domains_v1beta1_DeleteRegistrationRequest_descriptor =
-        getDescriptor().getMessageTypes().get(17);
+        getDescriptor().getMessageTypes().get(20);
     internal_static_google_cloud_domains_v1beta1_DeleteRegistrationRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_domains_v1beta1_DeleteRegistrationRequest_descriptor,
@@ -644,7 +728,7 @@ public final class DomainsProto {
               "Name",
             });
     internal_static_google_cloud_domains_v1beta1_RetrieveAuthorizationCodeRequest_descriptor =
-        getDescriptor().getMessageTypes().get(18);
+        getDescriptor().getMessageTypes().get(21);
     internal_static_google_cloud_domains_v1beta1_RetrieveAuthorizationCodeRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_domains_v1beta1_RetrieveAuthorizationCodeRequest_descriptor,
@@ -652,7 +736,7 @@ public final class DomainsProto {
               "Registration",
             });
     internal_static_google_cloud_domains_v1beta1_ResetAuthorizationCodeRequest_descriptor =
-        getDescriptor().getMessageTypes().get(19);
+        getDescriptor().getMessageTypes().get(22);
     internal_static_google_cloud_domains_v1beta1_ResetAuthorizationCodeRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_domains_v1beta1_ResetAuthorizationCodeRequest_descriptor,
@@ -660,15 +744,28 @@ public final class DomainsProto {
               "Registration",
             });
     internal_static_google_cloud_domains_v1beta1_RegisterParameters_descriptor =
-        getDescriptor().getMessageTypes().get(20);
+        getDescriptor().getMessageTypes().get(23);
     internal_static_google_cloud_domains_v1beta1_RegisterParameters_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_domains_v1beta1_RegisterParameters_descriptor,
             new java.lang.String[] {
               "DomainName", "Availability", "SupportedPrivacy", "DomainNotices", "YearlyPrice",
             });
+    internal_static_google_cloud_domains_v1beta1_TransferParameters_descriptor =
+        getDescriptor().getMessageTypes().get(24);
+    internal_static_google_cloud_domains_v1beta1_TransferParameters_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_domains_v1beta1_TransferParameters_descriptor,
+            new java.lang.String[] {
+              "DomainName",
+              "CurrentRegistrar",
+              "NameServers",
+              "TransferLockState",
+              "SupportedPrivacy",
+              "YearlyPrice",
+            });
     internal_static_google_cloud_domains_v1beta1_AuthorizationCode_descriptor =
-        getDescriptor().getMessageTypes().get(21);
+        getDescriptor().getMessageTypes().get(25);
     internal_static_google_cloud_domains_v1beta1_AuthorizationCode_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_domains_v1beta1_AuthorizationCode_descriptor,
@@ -676,7 +773,7 @@ public final class DomainsProto {
               "Code",
             });
     internal_static_google_cloud_domains_v1beta1_OperationMetadata_descriptor =
-        getDescriptor().getMessageTypes().get(22);
+        getDescriptor().getMessageTypes().get(26);
     internal_static_google_cloud_domains_v1beta1_OperationMetadata_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_domains_v1beta1_OperationMetadata_descriptor,

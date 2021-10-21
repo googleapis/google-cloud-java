@@ -144,8 +144,8 @@ public final class ManagementSettings extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * The domain is automatically renewed each year .
-     * To disable automatic renewals, export the domain by calling
-     * `ExportRegistration` .
+     * To disable automatic renewals, delete the resource by calling
+     * `DeleteRegistration` or export it by calling `ExportRegistration`.
      * </pre>
      *
      * <code>AUTOMATIC_RENEWAL = 1;</code>
@@ -183,8 +183,8 @@ public final class ManagementSettings extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * The domain is automatically renewed each year .
-     * To disable automatic renewals, export the domain by calling
-     * `ExportRegistration` .
+     * To disable automatic renewals, delete the resource by calling
+     * `DeleteRegistration` or export it by calling `ExportRegistration`.
      * </pre>
      *
      * <code>AUTOMATIC_RENEWAL = 1;</code>

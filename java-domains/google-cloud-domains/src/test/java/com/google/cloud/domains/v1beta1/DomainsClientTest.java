@@ -383,6 +383,224 @@ public class DomainsClientTest {
   }
 
   @Test
+  public void retrieveTransferParametersTest() throws Exception {
+    RetrieveTransferParametersResponse expectedResponse =
+        RetrieveTransferParametersResponse.newBuilder()
+            .setTransferParameters(TransferParameters.newBuilder().build())
+            .build();
+    mockDomains.addResponse(expectedResponse);
+
+    LocationName location = LocationName.of("[PROJECT]", "[LOCATION]");
+    String domainName = "domainName-1244085905";
+
+    RetrieveTransferParametersResponse actualResponse =
+        client.retrieveTransferParameters(location, domainName);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockDomains.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    RetrieveTransferParametersRequest actualRequest =
+        ((RetrieveTransferParametersRequest) actualRequests.get(0));
+
+    Assert.assertEquals(location.toString(), actualRequest.getLocation());
+    Assert.assertEquals(domainName, actualRequest.getDomainName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void retrieveTransferParametersExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockDomains.addException(exception);
+
+    try {
+      LocationName location = LocationName.of("[PROJECT]", "[LOCATION]");
+      String domainName = "domainName-1244085905";
+      client.retrieveTransferParameters(location, domainName);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void retrieveTransferParametersTest2() throws Exception {
+    RetrieveTransferParametersResponse expectedResponse =
+        RetrieveTransferParametersResponse.newBuilder()
+            .setTransferParameters(TransferParameters.newBuilder().build())
+            .build();
+    mockDomains.addResponse(expectedResponse);
+
+    String location = "location1901043637";
+    String domainName = "domainName-1244085905";
+
+    RetrieveTransferParametersResponse actualResponse =
+        client.retrieveTransferParameters(location, domainName);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockDomains.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    RetrieveTransferParametersRequest actualRequest =
+        ((RetrieveTransferParametersRequest) actualRequests.get(0));
+
+    Assert.assertEquals(location, actualRequest.getLocation());
+    Assert.assertEquals(domainName, actualRequest.getDomainName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void retrieveTransferParametersExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockDomains.addException(exception);
+
+    try {
+      String location = "location1901043637";
+      String domainName = "domainName-1244085905";
+      client.retrieveTransferParameters(location, domainName);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void transferDomainTest() throws Exception {
+    Registration expectedResponse =
+        Registration.newBuilder()
+            .setName(RegistrationName.of("[PROJECT]", "[LOCATION]", "[REGISTRATION]").toString())
+            .setDomainName("domainName-1244085905")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setExpireTime(Timestamp.newBuilder().build())
+            .addAllIssues(new ArrayList<Registration.Issue>())
+            .putAllLabels(new HashMap<String, String>())
+            .setManagementSettings(ManagementSettings.newBuilder().build())
+            .setDnsSettings(DnsSettings.newBuilder().build())
+            .setContactSettings(ContactSettings.newBuilder().build())
+            .setPendingContactSettings(ContactSettings.newBuilder().build())
+            .addAllSupportedPrivacy(new ArrayList<ContactPrivacy>())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("transferDomainTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockDomains.addResponse(resultOperation);
+
+    LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+    Registration registration = Registration.newBuilder().build();
+    Money yearlyPrice = Money.newBuilder().build();
+    AuthorizationCode authorizationCode = AuthorizationCode.newBuilder().build();
+
+    Registration actualResponse =
+        client.transferDomainAsync(parent, registration, yearlyPrice, authorizationCode).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockDomains.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    TransferDomainRequest actualRequest = ((TransferDomainRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertEquals(registration, actualRequest.getRegistration());
+    Assert.assertEquals(yearlyPrice, actualRequest.getYearlyPrice());
+    Assert.assertEquals(authorizationCode, actualRequest.getAuthorizationCode());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void transferDomainExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockDomains.addException(exception);
+
+    try {
+      LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+      Registration registration = Registration.newBuilder().build();
+      Money yearlyPrice = Money.newBuilder().build();
+      AuthorizationCode authorizationCode = AuthorizationCode.newBuilder().build();
+      client.transferDomainAsync(parent, registration, yearlyPrice, authorizationCode).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void transferDomainTest2() throws Exception {
+    Registration expectedResponse =
+        Registration.newBuilder()
+            .setName(RegistrationName.of("[PROJECT]", "[LOCATION]", "[REGISTRATION]").toString())
+            .setDomainName("domainName-1244085905")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setExpireTime(Timestamp.newBuilder().build())
+            .addAllIssues(new ArrayList<Registration.Issue>())
+            .putAllLabels(new HashMap<String, String>())
+            .setManagementSettings(ManagementSettings.newBuilder().build())
+            .setDnsSettings(DnsSettings.newBuilder().build())
+            .setContactSettings(ContactSettings.newBuilder().build())
+            .setPendingContactSettings(ContactSettings.newBuilder().build())
+            .addAllSupportedPrivacy(new ArrayList<ContactPrivacy>())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("transferDomainTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockDomains.addResponse(resultOperation);
+
+    String parent = "parent-995424086";
+    Registration registration = Registration.newBuilder().build();
+    Money yearlyPrice = Money.newBuilder().build();
+    AuthorizationCode authorizationCode = AuthorizationCode.newBuilder().build();
+
+    Registration actualResponse =
+        client.transferDomainAsync(parent, registration, yearlyPrice, authorizationCode).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockDomains.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    TransferDomainRequest actualRequest = ((TransferDomainRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertEquals(registration, actualRequest.getRegistration());
+    Assert.assertEquals(yearlyPrice, actualRequest.getYearlyPrice());
+    Assert.assertEquals(authorizationCode, actualRequest.getAuthorizationCode());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void transferDomainExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockDomains.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      Registration registration = Registration.newBuilder().build();
+      Money yearlyPrice = Money.newBuilder().build();
+      AuthorizationCode authorizationCode = AuthorizationCode.newBuilder().build();
+      client.transferDomainAsync(parent, registration, yearlyPrice, authorizationCode).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
   public void listRegistrationsTest() throws Exception {
     Registration responsesElement = Registration.newBuilder().build();
     ListRegistrationsResponse expectedResponse =

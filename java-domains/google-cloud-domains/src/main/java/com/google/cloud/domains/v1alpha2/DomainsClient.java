@@ -589,6 +589,390 @@ public class DomainsClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
+   * Gets parameters needed to transfer a domain name from another registrar to Cloud Domains. For
+   * domains managed by Google Domains, transferring to Cloud Domains is not supported.
+   *
+   * <p>Use the returned values to call `TransferDomain`.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (DomainsClient domainsClient = DomainsClient.create()) {
+   *   LocationName location = LocationName.of("[PROJECT]", "[LOCATION]");
+   *   String domainName = "domainName-1244085905";
+   *   RetrieveTransferParametersResponse response =
+   *       domainsClient.retrieveTransferParameters(location, domainName);
+   * }
+   * }</pre>
+   *
+   * @param location Required. The location. Must be in the format `projects/&#42;/locations/&#42;`.
+   * @param domainName Required. The domain name. Unicode domain names must be expressed in Punycode
+   *     format.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final RetrieveTransferParametersResponse retrieveTransferParameters(
+      LocationName location, String domainName) {
+    RetrieveTransferParametersRequest request =
+        RetrieveTransferParametersRequest.newBuilder()
+            .setLocation(location == null ? null : location.toString())
+            .setDomainName(domainName)
+            .build();
+    return retrieveTransferParameters(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets parameters needed to transfer a domain name from another registrar to Cloud Domains. For
+   * domains managed by Google Domains, transferring to Cloud Domains is not supported.
+   *
+   * <p>Use the returned values to call `TransferDomain`.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (DomainsClient domainsClient = DomainsClient.create()) {
+   *   String location = LocationName.of("[PROJECT]", "[LOCATION]").toString();
+   *   String domainName = "domainName-1244085905";
+   *   RetrieveTransferParametersResponse response =
+   *       domainsClient.retrieveTransferParameters(location, domainName);
+   * }
+   * }</pre>
+   *
+   * @param location Required. The location. Must be in the format `projects/&#42;/locations/&#42;`.
+   * @param domainName Required. The domain name. Unicode domain names must be expressed in Punycode
+   *     format.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final RetrieveTransferParametersResponse retrieveTransferParameters(
+      String location, String domainName) {
+    RetrieveTransferParametersRequest request =
+        RetrieveTransferParametersRequest.newBuilder()
+            .setLocation(location)
+            .setDomainName(domainName)
+            .build();
+    return retrieveTransferParameters(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets parameters needed to transfer a domain name from another registrar to Cloud Domains. For
+   * domains managed by Google Domains, transferring to Cloud Domains is not supported.
+   *
+   * <p>Use the returned values to call `TransferDomain`.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (DomainsClient domainsClient = DomainsClient.create()) {
+   *   RetrieveTransferParametersRequest request =
+   *       RetrieveTransferParametersRequest.newBuilder()
+   *           .setDomainName("domainName-1244085905")
+   *           .setLocation(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .build();
+   *   RetrieveTransferParametersResponse response =
+   *       domainsClient.retrieveTransferParameters(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final RetrieveTransferParametersResponse retrieveTransferParameters(
+      RetrieveTransferParametersRequest request) {
+    return retrieveTransferParametersCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets parameters needed to transfer a domain name from another registrar to Cloud Domains. For
+   * domains managed by Google Domains, transferring to Cloud Domains is not supported.
+   *
+   * <p>Use the returned values to call `TransferDomain`.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (DomainsClient domainsClient = DomainsClient.create()) {
+   *   RetrieveTransferParametersRequest request =
+   *       RetrieveTransferParametersRequest.newBuilder()
+   *           .setDomainName("domainName-1244085905")
+   *           .setLocation(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .build();
+   *   ApiFuture<RetrieveTransferParametersResponse> future =
+   *       domainsClient.retrieveTransferParametersCallable().futureCall(request);
+   *   // Do something.
+   *   RetrieveTransferParametersResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<RetrieveTransferParametersRequest, RetrieveTransferParametersResponse>
+      retrieveTransferParametersCallable() {
+    return stub.retrieveTransferParametersCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Transfers a domain name from another registrar to Cloud Domains. For domains managed by Google
+   * Domains, transferring to Cloud Domains is not supported.
+   *
+   * <p>Before calling this method, go to the domain's current registrar to unlock the domain for
+   * transfer and retrieve the domain's transfer authorization code. Then call
+   * `RetrieveTransferParameters` to confirm that the domain is unlocked and to get values needed to
+   * build a call to this method.
+   *
+   * <p>A successful call creates a `Registration` resource in state `TRANSFER_PENDING`. It can take
+   * several days to complete the transfer process. The registrant can often speed up this process
+   * by approving the transfer through the current registrar, either by clicking a link in an email
+   * from the registrar or by visiting the registrar's website.
+   *
+   * <p>A few minutes after transfer approval, the resource transitions to state `ACTIVE`,
+   * indicating that the transfer was successful. If the transfer is rejected or the request expires
+   * without being approved, the resource can end up in state `TRANSFER_FAILED`. If transfer fails,
+   * you can safely delete the resource and retry the transfer.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (DomainsClient domainsClient = DomainsClient.create()) {
+   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+   *   Registration registration = Registration.newBuilder().build();
+   *   Money yearlyPrice = Money.newBuilder().build();
+   *   AuthorizationCode authorizationCode = AuthorizationCode.newBuilder().build();
+   *   Registration response =
+   *       domainsClient
+   *           .transferDomainAsync(parent, registration, yearlyPrice, authorizationCode)
+   *           .get();
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The parent resource of the `Registration`. Must be in the format
+   *     `projects/&#42;/locations/&#42;`.
+   * @param registration Required. The complete `Registration` resource to be created.
+   *     <p>You can leave `registration.dns_settings` unset to import the domain's current DNS
+   *     configuration from its current registrar. Use this option only if you are sure that the
+   *     domain's current DNS service does not cease upon transfer, as is often the case for DNS
+   *     services provided for free by the registrar.
+   * @param yearlyPrice Required. Acknowledgement of the price to transfer or renew the domain for
+   *     one year. Call `RetrieveTransferParameters` to obtain the price, which you must
+   *     acknowledge.
+   * @param authorizationCode The domain's transfer authorization code. You can obtain this from the
+   *     domain's current registrar.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Registration, OperationMetadata> transferDomainAsync(
+      LocationName parent,
+      Registration registration,
+      Money yearlyPrice,
+      AuthorizationCode authorizationCode) {
+    TransferDomainRequest request =
+        TransferDomainRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .setRegistration(registration)
+            .setYearlyPrice(yearlyPrice)
+            .setAuthorizationCode(authorizationCode)
+            .build();
+    return transferDomainAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Transfers a domain name from another registrar to Cloud Domains. For domains managed by Google
+   * Domains, transferring to Cloud Domains is not supported.
+   *
+   * <p>Before calling this method, go to the domain's current registrar to unlock the domain for
+   * transfer and retrieve the domain's transfer authorization code. Then call
+   * `RetrieveTransferParameters` to confirm that the domain is unlocked and to get values needed to
+   * build a call to this method.
+   *
+   * <p>A successful call creates a `Registration` resource in state `TRANSFER_PENDING`. It can take
+   * several days to complete the transfer process. The registrant can often speed up this process
+   * by approving the transfer through the current registrar, either by clicking a link in an email
+   * from the registrar or by visiting the registrar's website.
+   *
+   * <p>A few minutes after transfer approval, the resource transitions to state `ACTIVE`,
+   * indicating that the transfer was successful. If the transfer is rejected or the request expires
+   * without being approved, the resource can end up in state `TRANSFER_FAILED`. If transfer fails,
+   * you can safely delete the resource and retry the transfer.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (DomainsClient domainsClient = DomainsClient.create()) {
+   *   String parent = LocationName.of("[PROJECT]", "[LOCATION]").toString();
+   *   Registration registration = Registration.newBuilder().build();
+   *   Money yearlyPrice = Money.newBuilder().build();
+   *   AuthorizationCode authorizationCode = AuthorizationCode.newBuilder().build();
+   *   Registration response =
+   *       domainsClient
+   *           .transferDomainAsync(parent, registration, yearlyPrice, authorizationCode)
+   *           .get();
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The parent resource of the `Registration`. Must be in the format
+   *     `projects/&#42;/locations/&#42;`.
+   * @param registration Required. The complete `Registration` resource to be created.
+   *     <p>You can leave `registration.dns_settings` unset to import the domain's current DNS
+   *     configuration from its current registrar. Use this option only if you are sure that the
+   *     domain's current DNS service does not cease upon transfer, as is often the case for DNS
+   *     services provided for free by the registrar.
+   * @param yearlyPrice Required. Acknowledgement of the price to transfer or renew the domain for
+   *     one year. Call `RetrieveTransferParameters` to obtain the price, which you must
+   *     acknowledge.
+   * @param authorizationCode The domain's transfer authorization code. You can obtain this from the
+   *     domain's current registrar.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Registration, OperationMetadata> transferDomainAsync(
+      String parent,
+      Registration registration,
+      Money yearlyPrice,
+      AuthorizationCode authorizationCode) {
+    TransferDomainRequest request =
+        TransferDomainRequest.newBuilder()
+            .setParent(parent)
+            .setRegistration(registration)
+            .setYearlyPrice(yearlyPrice)
+            .setAuthorizationCode(authorizationCode)
+            .build();
+    return transferDomainAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Transfers a domain name from another registrar to Cloud Domains. For domains managed by Google
+   * Domains, transferring to Cloud Domains is not supported.
+   *
+   * <p>Before calling this method, go to the domain's current registrar to unlock the domain for
+   * transfer and retrieve the domain's transfer authorization code. Then call
+   * `RetrieveTransferParameters` to confirm that the domain is unlocked and to get values needed to
+   * build a call to this method.
+   *
+   * <p>A successful call creates a `Registration` resource in state `TRANSFER_PENDING`. It can take
+   * several days to complete the transfer process. The registrant can often speed up this process
+   * by approving the transfer through the current registrar, either by clicking a link in an email
+   * from the registrar or by visiting the registrar's website.
+   *
+   * <p>A few minutes after transfer approval, the resource transitions to state `ACTIVE`,
+   * indicating that the transfer was successful. If the transfer is rejected or the request expires
+   * without being approved, the resource can end up in state `TRANSFER_FAILED`. If transfer fails,
+   * you can safely delete the resource and retry the transfer.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (DomainsClient domainsClient = DomainsClient.create()) {
+   *   TransferDomainRequest request =
+   *       TransferDomainRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setRegistration(Registration.newBuilder().build())
+   *           .addAllContactNotices(new ArrayList<ContactNotice>())
+   *           .setYearlyPrice(Money.newBuilder().build())
+   *           .setAuthorizationCode(AuthorizationCode.newBuilder().build())
+   *           .setValidateOnly(true)
+   *           .build();
+   *   Registration response = domainsClient.transferDomainAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Registration, OperationMetadata> transferDomainAsync(
+      TransferDomainRequest request) {
+    return transferDomainOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Transfers a domain name from another registrar to Cloud Domains. For domains managed by Google
+   * Domains, transferring to Cloud Domains is not supported.
+   *
+   * <p>Before calling this method, go to the domain's current registrar to unlock the domain for
+   * transfer and retrieve the domain's transfer authorization code. Then call
+   * `RetrieveTransferParameters` to confirm that the domain is unlocked and to get values needed to
+   * build a call to this method.
+   *
+   * <p>A successful call creates a `Registration` resource in state `TRANSFER_PENDING`. It can take
+   * several days to complete the transfer process. The registrant can often speed up this process
+   * by approving the transfer through the current registrar, either by clicking a link in an email
+   * from the registrar or by visiting the registrar's website.
+   *
+   * <p>A few minutes after transfer approval, the resource transitions to state `ACTIVE`,
+   * indicating that the transfer was successful. If the transfer is rejected or the request expires
+   * without being approved, the resource can end up in state `TRANSFER_FAILED`. If transfer fails,
+   * you can safely delete the resource and retry the transfer.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (DomainsClient domainsClient = DomainsClient.create()) {
+   *   TransferDomainRequest request =
+   *       TransferDomainRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setRegistration(Registration.newBuilder().build())
+   *           .addAllContactNotices(new ArrayList<ContactNotice>())
+   *           .setYearlyPrice(Money.newBuilder().build())
+   *           .setAuthorizationCode(AuthorizationCode.newBuilder().build())
+   *           .setValidateOnly(true)
+   *           .build();
+   *   OperationFuture<Registration, OperationMetadata> future =
+   *       domainsClient.transferDomainOperationCallable().futureCall(request);
+   *   // Do something.
+   *   Registration response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<TransferDomainRequest, Registration, OperationMetadata>
+      transferDomainOperationCallable() {
+    return stub.transferDomainOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Transfers a domain name from another registrar to Cloud Domains. For domains managed by Google
+   * Domains, transferring to Cloud Domains is not supported.
+   *
+   * <p>Before calling this method, go to the domain's current registrar to unlock the domain for
+   * transfer and retrieve the domain's transfer authorization code. Then call
+   * `RetrieveTransferParameters` to confirm that the domain is unlocked and to get values needed to
+   * build a call to this method.
+   *
+   * <p>A successful call creates a `Registration` resource in state `TRANSFER_PENDING`. It can take
+   * several days to complete the transfer process. The registrant can often speed up this process
+   * by approving the transfer through the current registrar, either by clicking a link in an email
+   * from the registrar or by visiting the registrar's website.
+   *
+   * <p>A few minutes after transfer approval, the resource transitions to state `ACTIVE`,
+   * indicating that the transfer was successful. If the transfer is rejected or the request expires
+   * without being approved, the resource can end up in state `TRANSFER_FAILED`. If transfer fails,
+   * you can safely delete the resource and retry the transfer.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (DomainsClient domainsClient = DomainsClient.create()) {
+   *   TransferDomainRequest request =
+   *       TransferDomainRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setRegistration(Registration.newBuilder().build())
+   *           .addAllContactNotices(new ArrayList<ContactNotice>())
+   *           .setYearlyPrice(Money.newBuilder().build())
+   *           .setAuthorizationCode(AuthorizationCode.newBuilder().build())
+   *           .setValidateOnly(true)
+   *           .build();
+   *   ApiFuture<Operation> future = domainsClient.transferDomainCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<TransferDomainRequest, Operation> transferDomainCallable() {
+    return stub.transferDomainCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
    * Lists the `Registration` resources in a project.
    *
    * <p>Sample code:
@@ -846,7 +1230,7 @@ public class DomainsClient implements BackgroundResource {
    * @param registration Fields of the `Registration` to update.
    * @param updateMask Required. The field mask describing which fields to update as a
    *     comma-separated list. For example, if only the labels are being updated, the `update_mask`
-   *     would be `"labels"`.
+   *     is `"labels"`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Registration, OperationMetadata> updateRegistrationAsync(
@@ -977,7 +1361,7 @@ public class DomainsClient implements BackgroundResource {
    * @param managementSettings Fields of the `ManagementSettings` to update.
    * @param updateMask Required. The field mask describing which fields to update as a
    *     comma-separated list. For example, if only the transfer lock is being updated, the
-   *     `update_mask` would be `"transfer_lock_state"`.
+   *     `update_mask` is `"transfer_lock_state"`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Registration, OperationMetadata> configureManagementSettingsAsync(
@@ -1015,7 +1399,7 @@ public class DomainsClient implements BackgroundResource {
    * @param managementSettings Fields of the `ManagementSettings` to update.
    * @param updateMask Required. The field mask describing which fields to update as a
    *     comma-separated list. For example, if only the transfer lock is being updated, the
-   *     `update_mask` would be `"transfer_lock_state"`.
+   *     `update_mask` is `"transfer_lock_state"`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Registration, OperationMetadata> configureManagementSettingsAsync(
@@ -1133,10 +1517,10 @@ public class DomainsClient implements BackgroundResource {
    * @param dnsSettings Fields of the `DnsSettings` to update.
    * @param updateMask Required. The field mask describing which fields to update as a
    *     comma-separated list. For example, if only the name servers are being updated for an
-   *     existing Custom DNS configuration, the `update_mask` would be `"custom_dns.name_servers"`.
+   *     existing Custom DNS configuration, the `update_mask` is `"custom_dns.name_servers"`.
    *     <p>When changing the DNS provider from one type to another, pass the new provider's field
    *     name as part of the field mask. For example, when changing from a Google Domains DNS
-   *     configuration to a Custom DNS configuration, the `update_mask` would be `"custom_dns"`. //
+   *     configuration to a Custom DNS configuration, the `update_mask` is `"custom_dns"`. //
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Registration, OperationMetadata> configureDnsSettingsAsync(
@@ -1172,10 +1556,10 @@ public class DomainsClient implements BackgroundResource {
    * @param dnsSettings Fields of the `DnsSettings` to update.
    * @param updateMask Required. The field mask describing which fields to update as a
    *     comma-separated list. For example, if only the name servers are being updated for an
-   *     existing Custom DNS configuration, the `update_mask` would be `"custom_dns.name_servers"`.
+   *     existing Custom DNS configuration, the `update_mask` is `"custom_dns.name_servers"`.
    *     <p>When changing the DNS provider from one type to another, pass the new provider's field
    *     name as part of the field mask. For example, when changing from a Google Domains DNS
-   *     configuration to a Custom DNS configuration, the `update_mask` would be `"custom_dns"`. //
+   *     configuration to a Custom DNS configuration, the `update_mask` is `"custom_dns"`. //
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Registration, OperationMetadata> configureDnsSettingsAsync(
@@ -1298,7 +1682,7 @@ public class DomainsClient implements BackgroundResource {
    * @param contactSettings Fields of the `ContactSettings` to update.
    * @param updateMask Required. The field mask describing which fields to update as a
    *     comma-separated list. For example, if only the registrant contact is being updated, the
-   *     `update_mask` would be `"registrant_contact"`.
+   *     `update_mask` is `"registrant_contact"`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Registration, OperationMetadata> configureContactSettingsAsync(
@@ -1337,7 +1721,7 @@ public class DomainsClient implements BackgroundResource {
    * @param contactSettings Fields of the `ContactSettings` to update.
    * @param updateMask Required. The field mask describing which fields to update as a
    *     comma-separated list. For example, if only the registrant contact is being updated, the
-   *     `update_mask` would be `"registrant_contact"`.
+   *     `update_mask` is `"registrant_contact"`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Registration, OperationMetadata> configureContactSettingsAsync(
@@ -1443,20 +1827,13 @@ public class DomainsClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Exports a `Registration` that you no longer want to use with Cloud Domains. You can continue to
-   * use the domain in [Google Domains](https://domains.google/) until it expires.
+   * Exports a `Registration` resource, such that it is no longer managed by Cloud Domains.
    *
-   * <p>If the export is successful:
-   *
-   * <ul>
-   *   <li>The resource's `state` becomes `EXPORTED`, meaning that it is no longer managed by Cloud
-   *       Domains
-   *   <li>Because individual users can own domains in Google Domains, the calling user becomes the
-   *       domain's sole owner. Permissions for the domain are subsequently managed in Google
-   *       Domains.
-   *   <li>Without further action, the domain does not renew automatically. The new owner can set up
-   *       billing in Google Domains to renew the domain if needed.
-   * </ul>
+   * <p>When an active domain is successfully exported, you can continue to use the domain in
+   * [Google Domains](https://domains.google/) until it expires. The calling user becomes the
+   * domain's sole owner in Google Domains, and permissions for the domain are subsequently managed
+   * there. The domain does not renew automatically unless the new owner sets up billing in Google
+   * Domains.
    *
    * <p>Sample code:
    *
@@ -1482,20 +1859,13 @@ public class DomainsClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Exports a `Registration` that you no longer want to use with Cloud Domains. You can continue to
-   * use the domain in [Google Domains](https://domains.google/) until it expires.
+   * Exports a `Registration` resource, such that it is no longer managed by Cloud Domains.
    *
-   * <p>If the export is successful:
-   *
-   * <ul>
-   *   <li>The resource's `state` becomes `EXPORTED`, meaning that it is no longer managed by Cloud
-   *       Domains
-   *   <li>Because individual users can own domains in Google Domains, the calling user becomes the
-   *       domain's sole owner. Permissions for the domain are subsequently managed in Google
-   *       Domains.
-   *   <li>Without further action, the domain does not renew automatically. The new owner can set up
-   *       billing in Google Domains to renew the domain if needed.
-   * </ul>
+   * <p>When an active domain is successfully exported, you can continue to use the domain in
+   * [Google Domains](https://domains.google/) until it expires. The calling user becomes the
+   * domain's sole owner in Google Domains, and permissions for the domain are subsequently managed
+   * there. The domain does not renew automatically unless the new owner sets up billing in Google
+   * Domains.
    *
    * <p>Sample code:
    *
@@ -1519,20 +1889,13 @@ public class DomainsClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Exports a `Registration` that you no longer want to use with Cloud Domains. You can continue to
-   * use the domain in [Google Domains](https://domains.google/) until it expires.
+   * Exports a `Registration` resource, such that it is no longer managed by Cloud Domains.
    *
-   * <p>If the export is successful:
-   *
-   * <ul>
-   *   <li>The resource's `state` becomes `EXPORTED`, meaning that it is no longer managed by Cloud
-   *       Domains
-   *   <li>Because individual users can own domains in Google Domains, the calling user becomes the
-   *       domain's sole owner. Permissions for the domain are subsequently managed in Google
-   *       Domains.
-   *   <li>Without further action, the domain does not renew automatically. The new owner can set up
-   *       billing in Google Domains to renew the domain if needed.
-   * </ul>
+   * <p>When an active domain is successfully exported, you can continue to use the domain in
+   * [Google Domains](https://domains.google/) until it expires. The calling user becomes the
+   * domain's sole owner in Google Domains, and permissions for the domain are subsequently managed
+   * there. The domain does not renew automatically unless the new owner sets up billing in Google
+   * Domains.
    *
    * <p>Sample code:
    *
@@ -1556,20 +1919,13 @@ public class DomainsClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Exports a `Registration` that you no longer want to use with Cloud Domains. You can continue to
-   * use the domain in [Google Domains](https://domains.google/) until it expires.
+   * Exports a `Registration` resource, such that it is no longer managed by Cloud Domains.
    *
-   * <p>If the export is successful:
-   *
-   * <ul>
-   *   <li>The resource's `state` becomes `EXPORTED`, meaning that it is no longer managed by Cloud
-   *       Domains
-   *   <li>Because individual users can own domains in Google Domains, the calling user becomes the
-   *       domain's sole owner. Permissions for the domain are subsequently managed in Google
-   *       Domains.
-   *   <li>Without further action, the domain does not renew automatically. The new owner can set up
-   *       billing in Google Domains to renew the domain if needed.
-   * </ul>
+   * <p>When an active domain is successfully exported, you can continue to use the domain in
+   * [Google Domains](https://domains.google/) until it expires. The calling user becomes the
+   * domain's sole owner in Google Domains, and permissions for the domain are subsequently managed
+   * there. The domain does not renew automatically unless the new owner sets up billing in Google
+   * Domains.
    *
    * <p>Sample code:
    *
@@ -1593,20 +1949,13 @@ public class DomainsClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Exports a `Registration` that you no longer want to use with Cloud Domains. You can continue to
-   * use the domain in [Google Domains](https://domains.google/) until it expires.
+   * Exports a `Registration` resource, such that it is no longer managed by Cloud Domains.
    *
-   * <p>If the export is successful:
-   *
-   * <ul>
-   *   <li>The resource's `state` becomes `EXPORTED`, meaning that it is no longer managed by Cloud
-   *       Domains
-   *   <li>Because individual users can own domains in Google Domains, the calling user becomes the
-   *       domain's sole owner. Permissions for the domain are subsequently managed in Google
-   *       Domains.
-   *   <li>Without further action, the domain does not renew automatically. The new owner can set up
-   *       billing in Google Domains to renew the domain if needed.
-   * </ul>
+   * <p>When an active domain is successfully exported, you can continue to use the domain in
+   * [Google Domains](https://domains.google/) until it expires. The calling user becomes the
+   * domain's sole owner in Google Domains, and permissions for the domain are subsequently managed
+   * there. The domain does not renew automatically unless the new owner sets up billing in Google
+   * Domains.
    *
    * <p>Sample code:
    *
@@ -1630,12 +1979,24 @@ public class DomainsClient implements BackgroundResource {
   /**
    * Deletes a `Registration` resource.
    *
-   * <p>This method only works on resources in one of the following states:
+   * <p>This method works on any `Registration` resource using [Subscription or Commitment
+   * billing](/domains/pricing#billing-models), provided that the resource was created at least 1
+   * day in the past.
+   *
+   * <p>For `Registration` resources using [Monthly billing](/domains/pricing#billing-models), this
+   * method works if:
    *
    * <ul>
    *   <li>`state` is `EXPORTED` with `expire_time` in the past
    *   <li>`state` is `REGISTRATION_FAILED`
+   *   <li>`state` is `TRANSFER_FAILED`
    * </ul>
+   *
+   * <p>When an active registration is successfully deleted, you can continue to use the domain in
+   * [Google Domains](https://domains.google/) until it expires. The calling user becomes the
+   * domain's sole owner in Google Domains, and permissions for the domain are subsequently managed
+   * there. The domain does not renew automatically unless the new owner sets up billing in Google
+   * Domains.
    *
    * <p>Sample code:
    *
@@ -1663,12 +2024,24 @@ public class DomainsClient implements BackgroundResource {
   /**
    * Deletes a `Registration` resource.
    *
-   * <p>This method only works on resources in one of the following states:
+   * <p>This method works on any `Registration` resource using [Subscription or Commitment
+   * billing](/domains/pricing#billing-models), provided that the resource was created at least 1
+   * day in the past.
+   *
+   * <p>For `Registration` resources using [Monthly billing](/domains/pricing#billing-models), this
+   * method works if:
    *
    * <ul>
    *   <li>`state` is `EXPORTED` with `expire_time` in the past
    *   <li>`state` is `REGISTRATION_FAILED`
+   *   <li>`state` is `TRANSFER_FAILED`
    * </ul>
+   *
+   * <p>When an active registration is successfully deleted, you can continue to use the domain in
+   * [Google Domains](https://domains.google/) until it expires. The calling user becomes the
+   * domain's sole owner in Google Domains, and permissions for the domain are subsequently managed
+   * there. The domain does not renew automatically unless the new owner sets up billing in Google
+   * Domains.
    *
    * <p>Sample code:
    *
@@ -1693,12 +2066,24 @@ public class DomainsClient implements BackgroundResource {
   /**
    * Deletes a `Registration` resource.
    *
-   * <p>This method only works on resources in one of the following states:
+   * <p>This method works on any `Registration` resource using [Subscription or Commitment
+   * billing](/domains/pricing#billing-models), provided that the resource was created at least 1
+   * day in the past.
+   *
+   * <p>For `Registration` resources using [Monthly billing](/domains/pricing#billing-models), this
+   * method works if:
    *
    * <ul>
    *   <li>`state` is `EXPORTED` with `expire_time` in the past
    *   <li>`state` is `REGISTRATION_FAILED`
+   *   <li>`state` is `TRANSFER_FAILED`
    * </ul>
+   *
+   * <p>When an active registration is successfully deleted, you can continue to use the domain in
+   * [Google Domains](https://domains.google/) until it expires. The calling user becomes the
+   * domain's sole owner in Google Domains, and permissions for the domain are subsequently managed
+   * there. The domain does not renew automatically unless the new owner sets up billing in Google
+   * Domains.
    *
    * <p>Sample code:
    *
@@ -1724,12 +2109,24 @@ public class DomainsClient implements BackgroundResource {
   /**
    * Deletes a `Registration` resource.
    *
-   * <p>This method only works on resources in one of the following states:
+   * <p>This method works on any `Registration` resource using [Subscription or Commitment
+   * billing](/domains/pricing#billing-models), provided that the resource was created at least 1
+   * day in the past.
+   *
+   * <p>For `Registration` resources using [Monthly billing](/domains/pricing#billing-models), this
+   * method works if:
    *
    * <ul>
    *   <li>`state` is `EXPORTED` with `expire_time` in the past
    *   <li>`state` is `REGISTRATION_FAILED`
+   *   <li>`state` is `TRANSFER_FAILED`
    * </ul>
+   *
+   * <p>When an active registration is successfully deleted, you can continue to use the domain in
+   * [Google Domains](https://domains.google/) until it expires. The calling user becomes the
+   * domain's sole owner in Google Domains, and permissions for the domain are subsequently managed
+   * there. The domain does not renew automatically unless the new owner sets up billing in Google
+   * Domains.
    *
    * <p>Sample code:
    *
@@ -1755,12 +2152,24 @@ public class DomainsClient implements BackgroundResource {
   /**
    * Deletes a `Registration` resource.
    *
-   * <p>This method only works on resources in one of the following states:
+   * <p>This method works on any `Registration` resource using [Subscription or Commitment
+   * billing](/domains/pricing#billing-models), provided that the resource was created at least 1
+   * day in the past.
+   *
+   * <p>For `Registration` resources using [Monthly billing](/domains/pricing#billing-models), this
+   * method works if:
    *
    * <ul>
    *   <li>`state` is `EXPORTED` with `expire_time` in the past
    *   <li>`state` is `REGISTRATION_FAILED`
+   *   <li>`state` is `TRANSFER_FAILED`
    * </ul>
+   *
+   * <p>When an active registration is successfully deleted, you can continue to use the domain in
+   * [Google Domains](https://domains.google/) until it expires. The calling user becomes the
+   * domain's sole owner in Google Domains, and permissions for the domain are subsequently managed
+   * there. The domain does not renew automatically unless the new owner sets up billing in Google
+   * Domains.
    *
    * <p>Sample code:
    *

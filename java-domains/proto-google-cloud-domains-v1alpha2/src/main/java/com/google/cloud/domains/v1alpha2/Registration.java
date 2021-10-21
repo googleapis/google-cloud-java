@@ -24,11 +24,17 @@ package com.google.cloud.domains.v1alpha2;
  * <pre>
  * The `Registration` resource facilitates managing and configuring domain name
  * registrations.
+ * There are several ways to create a new `Registration` resource:
  * To create a new `Registration` resource, find a suitable domain name by
  * calling the `SearchDomains` method with a query to see available domain name
  * options. After choosing a name, call `RetrieveRegisterParameters` to
  * ensure availability and obtain information like pricing, which is needed to
  * build a call to `RegisterDomain`.
+ * Another way to create a new `Registration` is to transfer an existing
+ * domain from another registrar. First, go to the current registrar to unlock
+ * the domain for transfer and retrieve the domain's transfer authorization
+ * code. Then call `RetrieveTransferParameters` to confirm that the domain is
+ * unlocked and to get values needed to build a call to `TransferDomain`.
  * </pre>
  *
  * Protobuf type {@code google.cloud.domains.v1alpha2.Registration}
@@ -358,6 +364,28 @@ public final class Registration extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
+     * The domain is being transferred from another registrar to Cloud Domains.
+     * </pre>
+     *
+     * <code>TRANSFER_PENDING = 3;</code>
+     */
+    TRANSFER_PENDING(3),
+    /**
+     *
+     *
+     * <pre>
+     * The attempt to transfer the domain from another registrar to
+     * Cloud Domains failed. You can delete resources in this state and retry
+     * the transfer.
+     * </pre>
+     *
+     * <code>TRANSFER_FAILED = 4;</code>
+     */
+    TRANSFER_FAILED(4),
+    /**
+     *
+     *
+     * <pre>
      * The domain is registered and operational. The domain renews automatically
      * as long as it remains in this state.
      * </pre>
@@ -380,11 +408,11 @@ public final class Registration extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The domain has been exported from Cloud Domains to
+     * The domain is no longer managed with Cloud Domains. It may have been
+     * transferred to another registrar or exported for management in
      * [Google Domains](https://domains.google/). You can no longer update it
-     * with this API, and information shown about it may be stale. Without further action, domains in this
-     * state expire at their `expire_time`. You can delete the resource
-     * after the `expire_time` has passed.
+     * with this API, and information shown about it may be stale. Domains in
+     * this state are not automatically renewed by Cloud Domains.
      * </pre>
      *
      * <code>EXPORTED = 8;</code>
@@ -428,6 +456,28 @@ public final class Registration extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
+     * The domain is being transferred from another registrar to Cloud Domains.
+     * </pre>
+     *
+     * <code>TRANSFER_PENDING = 3;</code>
+     */
+    public static final int TRANSFER_PENDING_VALUE = 3;
+    /**
+     *
+     *
+     * <pre>
+     * The attempt to transfer the domain from another registrar to
+     * Cloud Domains failed. You can delete resources in this state and retry
+     * the transfer.
+     * </pre>
+     *
+     * <code>TRANSFER_FAILED = 4;</code>
+     */
+    public static final int TRANSFER_FAILED_VALUE = 4;
+    /**
+     *
+     *
+     * <pre>
      * The domain is registered and operational. The domain renews automatically
      * as long as it remains in this state.
      * </pre>
@@ -450,11 +500,11 @@ public final class Registration extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The domain has been exported from Cloud Domains to
+     * The domain is no longer managed with Cloud Domains. It may have been
+     * transferred to another registrar or exported for management in
      * [Google Domains](https://domains.google/). You can no longer update it
-     * with this API, and information shown about it may be stale. Without further action, domains in this
-     * state expire at their `expire_time`. You can delete the resource
-     * after the `expire_time` has passed.
+     * with this API, and information shown about it may be stale. Domains in
+     * this state are not automatically renewed by Cloud Domains.
      * </pre>
      *
      * <code>EXPORTED = 8;</code>
@@ -491,6 +541,10 @@ public final class Registration extends com.google.protobuf.GeneratedMessageV3
           return REGISTRATION_PENDING;
         case 2:
           return REGISTRATION_FAILED;
+        case 3:
+          return TRANSFER_PENDING;
+        case 4:
+          return TRANSFER_FAILED;
         case 6:
           return ACTIVE;
         case 7:
@@ -589,7 +643,7 @@ public final class Registration extends com.google.protobuf.GeneratedMessageV3
      * verify the email address, follow the
      * instructions in the email the `registrant_contact` receives following
      * registration. If you do not complete email verification within
-     * 14 days of registration, the domain is suspended. To resend the
+     * 15 days of registration, the domain is suspended. To resend the
      * verification email, call ConfigureContactSettings and provide the current
      * `registrant_contact.email`.
      * </pre>
@@ -629,7 +683,7 @@ public final class Registration extends com.google.protobuf.GeneratedMessageV3
      * verify the email address, follow the
      * instructions in the email the `registrant_contact` receives following
      * registration. If you do not complete email verification within
-     * 14 days of registration, the domain is suspended. To resend the
+     * 15 days of registration, the domain is suspended. To resend the
      * verification email, call ConfigureContactSettings and provide the current
      * `registrant_contact.email`.
      * </pre>
@@ -1354,7 +1408,7 @@ public final class Registration extends com.google.protobuf.GeneratedMessageV3
    * `contact_settings` field that change its `registrant_contact` or `privacy`
    * fields require email confirmation by the `registrant_contact`
    * before taking effect. This field is set only if there are pending updates
-   * to the `contact_settings` that have not yet been confirmed. To confirm the
+   * to the `contact_settings` that have not been confirmed. To confirm the
    * changes, the `registrant_contact` must follow the instructions in the
    * email they receive.
    * </pre>
@@ -1377,7 +1431,7 @@ public final class Registration extends com.google.protobuf.GeneratedMessageV3
    * `contact_settings` field that change its `registrant_contact` or `privacy`
    * fields require email confirmation by the `registrant_contact`
    * before taking effect. This field is set only if there are pending updates
-   * to the `contact_settings` that have not yet been confirmed. To confirm the
+   * to the `contact_settings` that have not been confirmed. To confirm the
    * changes, the `registrant_contact` must follow the instructions in the
    * email they receive.
    * </pre>
@@ -1402,7 +1456,7 @@ public final class Registration extends com.google.protobuf.GeneratedMessageV3
    * `contact_settings` field that change its `registrant_contact` or `privacy`
    * fields require email confirmation by the `registrant_contact`
    * before taking effect. This field is set only if there are pending updates
-   * to the `contact_settings` that have not yet been confirmed. To confirm the
+   * to the `contact_settings` that have not been confirmed. To confirm the
    * changes, the `registrant_contact` must follow the instructions in the
    * email they receive.
    * </pre>
@@ -1869,11 +1923,17 @@ public final class Registration extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * The `Registration` resource facilitates managing and configuring domain name
    * registrations.
+   * There are several ways to create a new `Registration` resource:
    * To create a new `Registration` resource, find a suitable domain name by
    * calling the `SearchDomains` method with a query to see available domain name
    * options. After choosing a name, call `RetrieveRegisterParameters` to
    * ensure availability and obtain information like pricing, which is needed to
    * build a call to `RegisterDomain`.
+   * Another way to create a new `Registration` is to transfer an existing
+   * domain from another registrar. First, go to the current registrar to unlock
+   * the domain for transfer and retrieve the domain's transfer authorization
+   * code. Then call `RetrieveTransferParameters` to confirm that the domain is
+   * unlocked and to get values needed to build a call to `TransferDomain`.
    * </pre>
    *
    * Protobuf type {@code google.cloud.domains.v1alpha2.Registration}
@@ -3977,7 +4037,7 @@ public final class Registration extends com.google.protobuf.GeneratedMessageV3
      * `contact_settings` field that change its `registrant_contact` or `privacy`
      * fields require email confirmation by the `registrant_contact`
      * before taking effect. This field is set only if there are pending updates
-     * to the `contact_settings` that have not yet been confirmed. To confirm the
+     * to the `contact_settings` that have not been confirmed. To confirm the
      * changes, the `registrant_contact` must follow the instructions in the
      * email they receive.
      * </pre>
@@ -3999,7 +4059,7 @@ public final class Registration extends com.google.protobuf.GeneratedMessageV3
      * `contact_settings` field that change its `registrant_contact` or `privacy`
      * fields require email confirmation by the `registrant_contact`
      * before taking effect. This field is set only if there are pending updates
-     * to the `contact_settings` that have not yet been confirmed. To confirm the
+     * to the `contact_settings` that have not been confirmed. To confirm the
      * changes, the `registrant_contact` must follow the instructions in the
      * email they receive.
      * </pre>
@@ -4027,7 +4087,7 @@ public final class Registration extends com.google.protobuf.GeneratedMessageV3
      * `contact_settings` field that change its `registrant_contact` or `privacy`
      * fields require email confirmation by the `registrant_contact`
      * before taking effect. This field is set only if there are pending updates
-     * to the `contact_settings` that have not yet been confirmed. To confirm the
+     * to the `contact_settings` that have not been confirmed. To confirm the
      * changes, the `registrant_contact` must follow the instructions in the
      * email they receive.
      * </pre>
@@ -4058,7 +4118,7 @@ public final class Registration extends com.google.protobuf.GeneratedMessageV3
      * `contact_settings` field that change its `registrant_contact` or `privacy`
      * fields require email confirmation by the `registrant_contact`
      * before taking effect. This field is set only if there are pending updates
-     * to the `contact_settings` that have not yet been confirmed. To confirm the
+     * to the `contact_settings` that have not been confirmed. To confirm the
      * changes, the `registrant_contact` must follow the instructions in the
      * email they receive.
      * </pre>
@@ -4086,7 +4146,7 @@ public final class Registration extends com.google.protobuf.GeneratedMessageV3
      * `contact_settings` field that change its `registrant_contact` or `privacy`
      * fields require email confirmation by the `registrant_contact`
      * before taking effect. This field is set only if there are pending updates
-     * to the `contact_settings` that have not yet been confirmed. To confirm the
+     * to the `contact_settings` that have not been confirmed. To confirm the
      * changes, the `registrant_contact` must follow the instructions in the
      * email they receive.
      * </pre>
@@ -4121,7 +4181,7 @@ public final class Registration extends com.google.protobuf.GeneratedMessageV3
      * `contact_settings` field that change its `registrant_contact` or `privacy`
      * fields require email confirmation by the `registrant_contact`
      * before taking effect. This field is set only if there are pending updates
-     * to the `contact_settings` that have not yet been confirmed. To confirm the
+     * to the `contact_settings` that have not been confirmed. To confirm the
      * changes, the `registrant_contact` must follow the instructions in the
      * email they receive.
      * </pre>
@@ -4149,7 +4209,7 @@ public final class Registration extends com.google.protobuf.GeneratedMessageV3
      * `contact_settings` field that change its `registrant_contact` or `privacy`
      * fields require email confirmation by the `registrant_contact`
      * before taking effect. This field is set only if there are pending updates
-     * to the `contact_settings` that have not yet been confirmed. To confirm the
+     * to the `contact_settings` that have not been confirmed. To confirm the
      * changes, the `registrant_contact` must follow the instructions in the
      * email they receive.
      * </pre>
@@ -4172,7 +4232,7 @@ public final class Registration extends com.google.protobuf.GeneratedMessageV3
      * `contact_settings` field that change its `registrant_contact` or `privacy`
      * fields require email confirmation by the `registrant_contact`
      * before taking effect. This field is set only if there are pending updates
-     * to the `contact_settings` that have not yet been confirmed. To confirm the
+     * to the `contact_settings` that have not been confirmed. To confirm the
      * changes, the `registrant_contact` must follow the instructions in the
      * email they receive.
      * </pre>
@@ -4199,7 +4259,7 @@ public final class Registration extends com.google.protobuf.GeneratedMessageV3
      * `contact_settings` field that change its `registrant_contact` or `privacy`
      * fields require email confirmation by the `registrant_contact`
      * before taking effect. This field is set only if there are pending updates
-     * to the `contact_settings` that have not yet been confirmed. To confirm the
+     * to the `contact_settings` that have not been confirmed. To confirm the
      * changes, the `registrant_contact` must follow the instructions in the
      * email they receive.
      * </pre>

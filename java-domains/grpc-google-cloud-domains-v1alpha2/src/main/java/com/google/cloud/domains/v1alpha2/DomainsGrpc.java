@@ -174,6 +174,99 @@ public final class DomainsGrpc {
   }
 
   private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.domains.v1alpha2.RetrieveTransferParametersRequest,
+          com.google.cloud.domains.v1alpha2.RetrieveTransferParametersResponse>
+      getRetrieveTransferParametersMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "RetrieveTransferParameters",
+      requestType = com.google.cloud.domains.v1alpha2.RetrieveTransferParametersRequest.class,
+      responseType = com.google.cloud.domains.v1alpha2.RetrieveTransferParametersResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.domains.v1alpha2.RetrieveTransferParametersRequest,
+          com.google.cloud.domains.v1alpha2.RetrieveTransferParametersResponse>
+      getRetrieveTransferParametersMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.domains.v1alpha2.RetrieveTransferParametersRequest,
+            com.google.cloud.domains.v1alpha2.RetrieveTransferParametersResponse>
+        getRetrieveTransferParametersMethod;
+    if ((getRetrieveTransferParametersMethod = DomainsGrpc.getRetrieveTransferParametersMethod)
+        == null) {
+      synchronized (DomainsGrpc.class) {
+        if ((getRetrieveTransferParametersMethod = DomainsGrpc.getRetrieveTransferParametersMethod)
+            == null) {
+          DomainsGrpc.getRetrieveTransferParametersMethod =
+              getRetrieveTransferParametersMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.domains.v1alpha2.RetrieveTransferParametersRequest,
+                          com.google.cloud.domains.v1alpha2.RetrieveTransferParametersResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "RetrieveTransferParameters"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.domains.v1alpha2.RetrieveTransferParametersRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.domains.v1alpha2.RetrieveTransferParametersResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new DomainsMethodDescriptorSupplier("RetrieveTransferParameters"))
+                      .build();
+        }
+      }
+    }
+    return getRetrieveTransferParametersMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.domains.v1alpha2.TransferDomainRequest, com.google.longrunning.Operation>
+      getTransferDomainMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "TransferDomain",
+      requestType = com.google.cloud.domains.v1alpha2.TransferDomainRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.domains.v1alpha2.TransferDomainRequest, com.google.longrunning.Operation>
+      getTransferDomainMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.domains.v1alpha2.TransferDomainRequest,
+            com.google.longrunning.Operation>
+        getTransferDomainMethod;
+    if ((getTransferDomainMethod = DomainsGrpc.getTransferDomainMethod) == null) {
+      synchronized (DomainsGrpc.class) {
+        if ((getTransferDomainMethod = DomainsGrpc.getTransferDomainMethod) == null) {
+          DomainsGrpc.getTransferDomainMethod =
+              getTransferDomainMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.domains.v1alpha2.TransferDomainRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "TransferDomain"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.domains.v1alpha2.TransferDomainRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(new DomainsMethodDescriptorSupplier("TransferDomain"))
+                      .build();
+        }
+      }
+    }
+    return getTransferDomainMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.domains.v1alpha2.ListRegistrationsRequest,
           com.google.cloud.domains.v1alpha2.ListRegistrationsResponse>
       getListRegistrationsMethod;
@@ -759,6 +852,55 @@ public final class DomainsGrpc {
      *
      *
      * <pre>
+     * Gets parameters needed to transfer a domain name from another registrar to
+     * Cloud Domains. For domains managed by Google Domains, transferring to Cloud
+     * Domains is not supported.
+     * Use the returned values to call `TransferDomain`.
+     * </pre>
+     */
+    public void retrieveTransferParameters(
+        com.google.cloud.domains.v1alpha2.RetrieveTransferParametersRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.cloud.domains.v1alpha2.RetrieveTransferParametersResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getRetrieveTransferParametersMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Transfers a domain name from another registrar to Cloud Domains.  For
+     * domains managed by Google Domains, transferring to Cloud Domains is not
+     * supported.
+     * Before calling this method, go to the domain's current registrar to unlock
+     * the domain for transfer and retrieve the domain's transfer authorization
+     * code. Then call `RetrieveTransferParameters` to confirm that the domain is
+     * unlocked and to get values needed to build a call to this method.
+     * A successful call creates a `Registration` resource in state
+     * `TRANSFER_PENDING`. It can take several days to complete the transfer
+     * process. The registrant can often speed up this process by approving the
+     * transfer through the current registrar, either by clicking a link in an
+     * email from the registrar or by visiting the registrar's website.
+     * A few minutes after transfer approval, the resource transitions to state
+     * `ACTIVE`, indicating that the transfer was successful. If the transfer is
+     * rejected or the request expires without being approved, the resource can
+     * end up in state `TRANSFER_FAILED`. If transfer fails, you can safely delete
+     * the resource and retry the transfer.
+     * </pre>
+     */
+    public void transferDomain(
+        com.google.cloud.domains.v1alpha2.TransferDomainRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getTransferDomainMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Lists the `Registration` resources in a project.
      * </pre>
      */
@@ -850,18 +992,14 @@ public final class DomainsGrpc {
      *
      *
      * <pre>
-     * Exports a `Registration` that you no longer want to use with
-     * Cloud Domains. You can continue to use the domain in
-     * [Google Domains](https://domains.google/) until it expires.
-     * If the export is successful:
-     * * The resource's `state` becomes `EXPORTED`, meaning that it is no longer
-     * managed by Cloud Domains
-     * * Because individual users can own domains in Google Domains, the calling
-     * user becomes the domain's sole owner. Permissions for the domain are
-     * subsequently managed in Google Domains.
-     * * Without further action, the domain does not renew automatically.
-     * The new owner can set up billing in Google Domains to renew the domain
-     * if needed.
+     * Exports a `Registration` resource, such that it is no longer managed by
+     * Cloud Domains.
+     * When an active domain is successfully exported, you can continue to use the
+     * domain in [Google Domains](https://domains.google/) until it expires. The
+     * calling user becomes the domain's sole owner in Google Domains, and
+     * permissions for the domain are subsequently managed there. The domain does
+     * not renew automatically unless the new owner sets up billing in Google
+     * Domains.
      * </pre>
      */
     public void exportRegistration(
@@ -876,9 +1014,20 @@ public final class DomainsGrpc {
      *
      * <pre>
      * Deletes a `Registration` resource.
-     * This method only works on resources in one of the following states:
+     * This method works on any `Registration` resource using [Subscription or
+     * Commitment billing](/domains/pricing#billing-models), provided that the
+     * resource was created at least 1 day in the past.
+     * For `Registration` resources using
+     * [Monthly billing](/domains/pricing#billing-models), this method works if:
      * * `state` is `EXPORTED` with `expire_time` in the past
      * * `state` is `REGISTRATION_FAILED`
+     * * `state` is `TRANSFER_FAILED`
+     * When an active registration is successfully deleted, you can continue to
+     * use the domain in [Google Domains](https://domains.google/) until it
+     * expires. The calling user becomes the domain's sole owner in Google
+     * Domains, and permissions for the domain are subsequently managed there. The
+     * domain does not renew automatically unless the new owner sets up billing in
+     * Google Domains.
      * </pre>
      */
     public void deleteRegistration(
@@ -946,6 +1095,19 @@ public final class DomainsGrpc {
                   new MethodHandlers<
                       com.google.cloud.domains.v1alpha2.RegisterDomainRequest,
                       com.google.longrunning.Operation>(this, METHODID_REGISTER_DOMAIN)))
+          .addMethod(
+              getRetrieveTransferParametersMethod(),
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.cloud.domains.v1alpha2.RetrieveTransferParametersRequest,
+                      com.google.cloud.domains.v1alpha2.RetrieveTransferParametersResponse>(
+                      this, METHODID_RETRIEVE_TRANSFER_PARAMETERS)))
+          .addMethod(
+              getTransferDomainMethod(),
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.cloud.domains.v1alpha2.TransferDomainRequest,
+                      com.google.longrunning.Operation>(this, METHODID_TRANSFER_DOMAIN)))
           .addMethod(
               getListRegistrationsMethod(),
               io.grpc.stub.ServerCalls.asyncUnaryCall(
@@ -1101,6 +1263,59 @@ public final class DomainsGrpc {
      *
      *
      * <pre>
+     * Gets parameters needed to transfer a domain name from another registrar to
+     * Cloud Domains. For domains managed by Google Domains, transferring to Cloud
+     * Domains is not supported.
+     * Use the returned values to call `TransferDomain`.
+     * </pre>
+     */
+    public void retrieveTransferParameters(
+        com.google.cloud.domains.v1alpha2.RetrieveTransferParametersRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.cloud.domains.v1alpha2.RetrieveTransferParametersResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getRetrieveTransferParametersMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Transfers a domain name from another registrar to Cloud Domains.  For
+     * domains managed by Google Domains, transferring to Cloud Domains is not
+     * supported.
+     * Before calling this method, go to the domain's current registrar to unlock
+     * the domain for transfer and retrieve the domain's transfer authorization
+     * code. Then call `RetrieveTransferParameters` to confirm that the domain is
+     * unlocked and to get values needed to build a call to this method.
+     * A successful call creates a `Registration` resource in state
+     * `TRANSFER_PENDING`. It can take several days to complete the transfer
+     * process. The registrant can often speed up this process by approving the
+     * transfer through the current registrar, either by clicking a link in an
+     * email from the registrar or by visiting the registrar's website.
+     * A few minutes after transfer approval, the resource transitions to state
+     * `ACTIVE`, indicating that the transfer was successful. If the transfer is
+     * rejected or the request expires without being approved, the resource can
+     * end up in state `TRANSFER_FAILED`. If transfer fails, you can safely delete
+     * the resource and retry the transfer.
+     * </pre>
+     */
+    public void transferDomain(
+        com.google.cloud.domains.v1alpha2.TransferDomainRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getTransferDomainMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Lists the `Registration` resources in a project.
      * </pre>
      */
@@ -1204,18 +1419,14 @@ public final class DomainsGrpc {
      *
      *
      * <pre>
-     * Exports a `Registration` that you no longer want to use with
-     * Cloud Domains. You can continue to use the domain in
-     * [Google Domains](https://domains.google/) until it expires.
-     * If the export is successful:
-     * * The resource's `state` becomes `EXPORTED`, meaning that it is no longer
-     * managed by Cloud Domains
-     * * Because individual users can own domains in Google Domains, the calling
-     * user becomes the domain's sole owner. Permissions for the domain are
-     * subsequently managed in Google Domains.
-     * * Without further action, the domain does not renew automatically.
-     * The new owner can set up billing in Google Domains to renew the domain
-     * if needed.
+     * Exports a `Registration` resource, such that it is no longer managed by
+     * Cloud Domains.
+     * When an active domain is successfully exported, you can continue to use the
+     * domain in [Google Domains](https://domains.google/) until it expires. The
+     * calling user becomes the domain's sole owner in Google Domains, and
+     * permissions for the domain are subsequently managed there. The domain does
+     * not renew automatically unless the new owner sets up billing in Google
+     * Domains.
      * </pre>
      */
     public void exportRegistration(
@@ -1232,9 +1443,20 @@ public final class DomainsGrpc {
      *
      * <pre>
      * Deletes a `Registration` resource.
-     * This method only works on resources in one of the following states:
+     * This method works on any `Registration` resource using [Subscription or
+     * Commitment billing](/domains/pricing#billing-models), provided that the
+     * resource was created at least 1 day in the past.
+     * For `Registration` resources using
+     * [Monthly billing](/domains/pricing#billing-models), this method works if:
      * * `state` is `EXPORTED` with `expire_time` in the past
      * * `state` is `REGISTRATION_FAILED`
+     * * `state` is `TRANSFER_FAILED`
+     * When an active registration is successfully deleted, you can continue to
+     * use the domain in [Google Domains](https://domains.google/) until it
+     * expires. The calling user becomes the domain's sole owner in Google
+     * Domains, and permissions for the domain are subsequently managed there. The
+     * domain does not renew automatically unless the new owner sets up billing in
+     * Google Domains.
      * </pre>
      */
     public void deleteRegistration(
@@ -1362,6 +1584,52 @@ public final class DomainsGrpc {
      *
      *
      * <pre>
+     * Gets parameters needed to transfer a domain name from another registrar to
+     * Cloud Domains. For domains managed by Google Domains, transferring to Cloud
+     * Domains is not supported.
+     * Use the returned values to call `TransferDomain`.
+     * </pre>
+     */
+    public com.google.cloud.domains.v1alpha2.RetrieveTransferParametersResponse
+        retrieveTransferParameters(
+            com.google.cloud.domains.v1alpha2.RetrieveTransferParametersRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getRetrieveTransferParametersMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Transfers a domain name from another registrar to Cloud Domains.  For
+     * domains managed by Google Domains, transferring to Cloud Domains is not
+     * supported.
+     * Before calling this method, go to the domain's current registrar to unlock
+     * the domain for transfer and retrieve the domain's transfer authorization
+     * code. Then call `RetrieveTransferParameters` to confirm that the domain is
+     * unlocked and to get values needed to build a call to this method.
+     * A successful call creates a `Registration` resource in state
+     * `TRANSFER_PENDING`. It can take several days to complete the transfer
+     * process. The registrant can often speed up this process by approving the
+     * transfer through the current registrar, either by clicking a link in an
+     * email from the registrar or by visiting the registrar's website.
+     * A few minutes after transfer approval, the resource transitions to state
+     * `ACTIVE`, indicating that the transfer was successful. If the transfer is
+     * rejected or the request expires without being approved, the resource can
+     * end up in state `TRANSFER_FAILED`. If transfer fails, you can safely delete
+     * the resource and retry the transfer.
+     * </pre>
+     */
+    public com.google.longrunning.Operation transferDomain(
+        com.google.cloud.domains.v1alpha2.TransferDomainRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getTransferDomainMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Lists the `Registration` resources in a project.
      * </pre>
      */
@@ -1445,18 +1713,14 @@ public final class DomainsGrpc {
      *
      *
      * <pre>
-     * Exports a `Registration` that you no longer want to use with
-     * Cloud Domains. You can continue to use the domain in
-     * [Google Domains](https://domains.google/) until it expires.
-     * If the export is successful:
-     * * The resource's `state` becomes `EXPORTED`, meaning that it is no longer
-     * managed by Cloud Domains
-     * * Because individual users can own domains in Google Domains, the calling
-     * user becomes the domain's sole owner. Permissions for the domain are
-     * subsequently managed in Google Domains.
-     * * Without further action, the domain does not renew automatically.
-     * The new owner can set up billing in Google Domains to renew the domain
-     * if needed.
+     * Exports a `Registration` resource, such that it is no longer managed by
+     * Cloud Domains.
+     * When an active domain is successfully exported, you can continue to use the
+     * domain in [Google Domains](https://domains.google/) until it expires. The
+     * calling user becomes the domain's sole owner in Google Domains, and
+     * permissions for the domain are subsequently managed there. The domain does
+     * not renew automatically unless the new owner sets up billing in Google
+     * Domains.
      * </pre>
      */
     public com.google.longrunning.Operation exportRegistration(
@@ -1470,9 +1734,20 @@ public final class DomainsGrpc {
      *
      * <pre>
      * Deletes a `Registration` resource.
-     * This method only works on resources in one of the following states:
+     * This method works on any `Registration` resource using [Subscription or
+     * Commitment billing](/domains/pricing#billing-models), provided that the
+     * resource was created at least 1 day in the past.
+     * For `Registration` resources using
+     * [Monthly billing](/domains/pricing#billing-models), this method works if:
      * * `state` is `EXPORTED` with `expire_time` in the past
      * * `state` is `REGISTRATION_FAILED`
+     * * `state` is `TRANSFER_FAILED`
+     * When an active registration is successfully deleted, you can continue to
+     * use the domain in [Google Domains](https://domains.google/) until it
+     * expires. The calling user becomes the domain's sole owner in Google
+     * Domains, and permissions for the domain are subsequently managed there. The
+     * domain does not renew automatically unless the new owner sets up billing in
+     * Google Domains.
      * </pre>
      */
     public com.google.longrunning.Operation deleteRegistration(
@@ -1591,6 +1866,53 @@ public final class DomainsGrpc {
      *
      *
      * <pre>
+     * Gets parameters needed to transfer a domain name from another registrar to
+     * Cloud Domains. For domains managed by Google Domains, transferring to Cloud
+     * Domains is not supported.
+     * Use the returned values to call `TransferDomain`.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.domains.v1alpha2.RetrieveTransferParametersResponse>
+        retrieveTransferParameters(
+            com.google.cloud.domains.v1alpha2.RetrieveTransferParametersRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getRetrieveTransferParametersMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Transfers a domain name from another registrar to Cloud Domains.  For
+     * domains managed by Google Domains, transferring to Cloud Domains is not
+     * supported.
+     * Before calling this method, go to the domain's current registrar to unlock
+     * the domain for transfer and retrieve the domain's transfer authorization
+     * code. Then call `RetrieveTransferParameters` to confirm that the domain is
+     * unlocked and to get values needed to build a call to this method.
+     * A successful call creates a `Registration` resource in state
+     * `TRANSFER_PENDING`. It can take several days to complete the transfer
+     * process. The registrant can often speed up this process by approving the
+     * transfer through the current registrar, either by clicking a link in an
+     * email from the registrar or by visiting the registrar's website.
+     * A few minutes after transfer approval, the resource transitions to state
+     * `ACTIVE`, indicating that the transfer was successful. If the transfer is
+     * rejected or the request expires without being approved, the resource can
+     * end up in state `TRANSFER_FAILED`. If transfer fails, you can safely delete
+     * the resource and retry the transfer.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        transferDomain(com.google.cloud.domains.v1alpha2.TransferDomainRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getTransferDomainMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Lists the `Registration` resources in a project.
      * </pre>
      */
@@ -1679,18 +2001,14 @@ public final class DomainsGrpc {
      *
      *
      * <pre>
-     * Exports a `Registration` that you no longer want to use with
-     * Cloud Domains. You can continue to use the domain in
-     * [Google Domains](https://domains.google/) until it expires.
-     * If the export is successful:
-     * * The resource's `state` becomes `EXPORTED`, meaning that it is no longer
-     * managed by Cloud Domains
-     * * Because individual users can own domains in Google Domains, the calling
-     * user becomes the domain's sole owner. Permissions for the domain are
-     * subsequently managed in Google Domains.
-     * * Without further action, the domain does not renew automatically.
-     * The new owner can set up billing in Google Domains to renew the domain
-     * if needed.
+     * Exports a `Registration` resource, such that it is no longer managed by
+     * Cloud Domains.
+     * When an active domain is successfully exported, you can continue to use the
+     * domain in [Google Domains](https://domains.google/) until it expires. The
+     * calling user becomes the domain's sole owner in Google Domains, and
+     * permissions for the domain are subsequently managed there. The domain does
+     * not renew automatically unless the new owner sets up billing in Google
+     * Domains.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
@@ -1704,9 +2022,20 @@ public final class DomainsGrpc {
      *
      * <pre>
      * Deletes a `Registration` resource.
-     * This method only works on resources in one of the following states:
+     * This method works on any `Registration` resource using [Subscription or
+     * Commitment billing](/domains/pricing#billing-models), provided that the
+     * resource was created at least 1 day in the past.
+     * For `Registration` resources using
+     * [Monthly billing](/domains/pricing#billing-models), this method works if:
      * * `state` is `EXPORTED` with `expire_time` in the past
      * * `state` is `REGISTRATION_FAILED`
+     * * `state` is `TRANSFER_FAILED`
+     * When an active registration is successfully deleted, you can continue to
+     * use the domain in [Google Domains](https://domains.google/) until it
+     * expires. The calling user becomes the domain's sole owner in Google
+     * Domains, and permissions for the domain are subsequently managed there. The
+     * domain does not renew automatically unless the new owner sets up billing in
+     * Google Domains.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
@@ -1754,16 +2083,18 @@ public final class DomainsGrpc {
   private static final int METHODID_SEARCH_DOMAINS = 0;
   private static final int METHODID_RETRIEVE_REGISTER_PARAMETERS = 1;
   private static final int METHODID_REGISTER_DOMAIN = 2;
-  private static final int METHODID_LIST_REGISTRATIONS = 3;
-  private static final int METHODID_GET_REGISTRATION = 4;
-  private static final int METHODID_UPDATE_REGISTRATION = 5;
-  private static final int METHODID_CONFIGURE_MANAGEMENT_SETTINGS = 6;
-  private static final int METHODID_CONFIGURE_DNS_SETTINGS = 7;
-  private static final int METHODID_CONFIGURE_CONTACT_SETTINGS = 8;
-  private static final int METHODID_EXPORT_REGISTRATION = 9;
-  private static final int METHODID_DELETE_REGISTRATION = 10;
-  private static final int METHODID_RETRIEVE_AUTHORIZATION_CODE = 11;
-  private static final int METHODID_RESET_AUTHORIZATION_CODE = 12;
+  private static final int METHODID_RETRIEVE_TRANSFER_PARAMETERS = 3;
+  private static final int METHODID_TRANSFER_DOMAIN = 4;
+  private static final int METHODID_LIST_REGISTRATIONS = 5;
+  private static final int METHODID_GET_REGISTRATION = 6;
+  private static final int METHODID_UPDATE_REGISTRATION = 7;
+  private static final int METHODID_CONFIGURE_MANAGEMENT_SETTINGS = 8;
+  private static final int METHODID_CONFIGURE_DNS_SETTINGS = 9;
+  private static final int METHODID_CONFIGURE_CONTACT_SETTINGS = 10;
+  private static final int METHODID_EXPORT_REGISTRATION = 11;
+  private static final int METHODID_DELETE_REGISTRATION = 12;
+  private static final int METHODID_RETRIEVE_AUTHORIZATION_CODE = 13;
+  private static final int METHODID_RESET_AUTHORIZATION_CODE = 14;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -1798,6 +2129,18 @@ public final class DomainsGrpc {
         case METHODID_REGISTER_DOMAIN:
           serviceImpl.registerDomain(
               (com.google.cloud.domains.v1alpha2.RegisterDomainRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_RETRIEVE_TRANSFER_PARAMETERS:
+          serviceImpl.retrieveTransferParameters(
+              (com.google.cloud.domains.v1alpha2.RetrieveTransferParametersRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.cloud.domains.v1alpha2.RetrieveTransferParametersResponse>)
+                  responseObserver);
+          break;
+        case METHODID_TRANSFER_DOMAIN:
+          serviceImpl.transferDomain(
+              (com.google.cloud.domains.v1alpha2.TransferDomainRequest) request,
               (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
           break;
         case METHODID_LIST_REGISTRATIONS:
@@ -1920,6 +2263,8 @@ public final class DomainsGrpc {
                       .addMethod(getSearchDomainsMethod())
                       .addMethod(getRetrieveRegisterParametersMethod())
                       .addMethod(getRegisterDomainMethod())
+                      .addMethod(getRetrieveTransferParametersMethod())
+                      .addMethod(getTransferDomainMethod())
                       .addMethod(getListRegistrationsMethod())
                       .addMethod(getGetRegistrationMethod())
                       .addMethod(getUpdateRegistrationMethod())

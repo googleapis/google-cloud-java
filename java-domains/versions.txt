@@ -4,5 +4,7 @@
 google-cloud-domains:0.4.2:0.4.3-SNAPSHOT
 grpc-google-cloud-domains-v1beta1:0.4.2:0.4.3-SNAPSHOT
 grpc-google-cloud-domains-v1alpha2:0.4.2:0.4.3-SNAPSHOT
+grpc-google-cloud-domains-v1:0.4.2:0.4.3-SNAPSHOT
 proto-google-cloud-domains-v1beta1:0.4.2:0.4.3-SNAPSHOT
 proto-google-cloud-domains-v1alpha2:0.4.2:0.4.3-SNAPSHOT
+proto-google-cloud-domains-v1:0.4.2:0.4.3-SNAPSHOT

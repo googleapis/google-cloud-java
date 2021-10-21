@@ -43,8 +43,14 @@
             "RetrieveRegisterParameters": {
               "methods": ["retrieveRegisterParameters", "retrieveRegisterParameters", "retrieveRegisterParameters", "retrieveRegisterParametersCallable"]
             },
+            "RetrieveTransferParameters": {
+              "methods": ["retrieveTransferParameters", "retrieveTransferParameters", "retrieveTransferParameters", "retrieveTransferParametersCallable"]
+            },
             "SearchDomains": {
               "methods": ["searchDomains", "searchDomains", "searchDomains", "searchDomainsCallable"]
+            },
+            "TransferDomain": {
+              "methods": ["transferDomainAsync", "transferDomainAsync", "transferDomainAsync", "transferDomainOperationCallable", "transferDomainCallable"]
             },
             "UpdateRegistration": {
               "methods": ["updateRegistrationAsync", "updateRegistrationAsync", "updateRegistrationOperationCallable", "updateRegistrationCallable"]

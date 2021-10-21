@@ -42,8 +42,11 @@ import com.google.cloud.domains.v1alpha2.ResetAuthorizationCodeRequest;
 import com.google.cloud.domains.v1alpha2.RetrieveAuthorizationCodeRequest;
 import com.google.cloud.domains.v1alpha2.RetrieveRegisterParametersRequest;
 import com.google.cloud.domains.v1alpha2.RetrieveRegisterParametersResponse;
+import com.google.cloud.domains.v1alpha2.RetrieveTransferParametersRequest;
+import com.google.cloud.domains.v1alpha2.RetrieveTransferParametersResponse;
 import com.google.cloud.domains.v1alpha2.SearchDomainsRequest;
 import com.google.cloud.domains.v1alpha2.SearchDomainsResponse;
+import com.google.cloud.domains.v1alpha2.TransferDomainRequest;
 import com.google.cloud.domains.v1alpha2.UpdateRegistrationRequest;
 import com.google.common.collect.ImmutableMap;
 import com.google.longrunning.Operation;
@@ -95,6 +98,29 @@ public class GrpcDomainsStub extends DomainsStub {
               .setFullMethodName("google.cloud.domains.v1alpha2.Domains/RegisterDomain")
               .setRequestMarshaller(
                   ProtoUtils.marshaller(RegisterDomainRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<
+          RetrieveTransferParametersRequest, RetrieveTransferParametersResponse>
+      retrieveTransferParametersMethodDescriptor =
+          MethodDescriptor
+              .<RetrieveTransferParametersRequest, RetrieveTransferParametersResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.domains.v1alpha2.Domains/RetrieveTransferParameters")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(RetrieveTransferParametersRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(RetrieveTransferParametersResponse.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<TransferDomainRequest, Operation>
+      transferDomainMethodDescriptor =
+          MethodDescriptor.<TransferDomainRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.domains.v1alpha2.Domains/TransferDomain")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(TransferDomainRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
               .build();
 
@@ -206,6 +232,11 @@ public class GrpcDomainsStub extends DomainsStub {
   private final UnaryCallable<RegisterDomainRequest, Operation> registerDomainCallable;
   private final OperationCallable<RegisterDomainRequest, Registration, OperationMetadata>
       registerDomainOperationCallable;
+  private final UnaryCallable<RetrieveTransferParametersRequest, RetrieveTransferParametersResponse>
+      retrieveTransferParametersCallable;
+  private final UnaryCallable<TransferDomainRequest, Operation> transferDomainCallable;
+  private final OperationCallable<TransferDomainRequest, Registration, OperationMetadata>
+      transferDomainOperationCallable;
   private final UnaryCallable<ListRegistrationsRequest, ListRegistrationsResponse>
       listRegistrationsCallable;
   private final UnaryCallable<ListRegistrationsRequest, ListRegistrationsPagedResponse>
@@ -301,6 +332,28 @@ public class GrpcDomainsStub extends DomainsStub {
     GrpcCallSettings<RegisterDomainRequest, Operation> registerDomainTransportSettings =
         GrpcCallSettings.<RegisterDomainRequest, Operation>newBuilder()
             .setMethodDescriptor(registerDomainMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("parent", String.valueOf(request.getParent()));
+                  return params.build();
+                })
+            .build();
+    GrpcCallSettings<RetrieveTransferParametersRequest, RetrieveTransferParametersResponse>
+        retrieveTransferParametersTransportSettings =
+            GrpcCallSettings
+                .<RetrieveTransferParametersRequest, RetrieveTransferParametersResponse>newBuilder()
+                .setMethodDescriptor(retrieveTransferParametersMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("location", String.valueOf(request.getLocation()));
+                      return params.build();
+                    })
+                .build();
+    GrpcCallSettings<TransferDomainRequest, Operation> transferDomainTransportSettings =
+        GrpcCallSettings.<TransferDomainRequest, Operation>newBuilder()
+            .setMethodDescriptor(transferDomainMethodDescriptor)
             .setParamsExtractor(
                 request -> {
                   ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
@@ -432,6 +485,20 @@ public class GrpcDomainsStub extends DomainsStub {
             settings.registerDomainOperationSettings(),
             clientContext,
             operationsStub);
+    this.retrieveTransferParametersCallable =
+        callableFactory.createUnaryCallable(
+            retrieveTransferParametersTransportSettings,
+            settings.retrieveTransferParametersSettings(),
+            clientContext);
+    this.transferDomainCallable =
+        callableFactory.createUnaryCallable(
+            transferDomainTransportSettings, settings.transferDomainSettings(), clientContext);
+    this.transferDomainOperationCallable =
+        callableFactory.createOperationCallable(
+            transferDomainTransportSettings,
+            settings.transferDomainOperationSettings(),
+            clientContext,
+            operationsStub);
     this.listRegistrationsCallable =
         callableFactory.createUnaryCallable(
             listRegistrationsTransportSettings,
@@ -550,6 +617,23 @@ public class GrpcDomainsStub extends DomainsStub {
   public OperationCallable<RegisterDomainRequest, Registration, OperationMetadata>
       registerDomainOperationCallable() {
     return registerDomainOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<RetrieveTransferParametersRequest, RetrieveTransferParametersResponse>
+      retrieveTransferParametersCallable() {
+    return retrieveTransferParametersCallable;
+  }
+
+  @Override
+  public UnaryCallable<TransferDomainRequest, Operation> transferDomainCallable() {
+    return transferDomainCallable;
+  }
+
+  @Override
+  public OperationCallable<TransferDomainRequest, Registration, OperationMetadata>
+      transferDomainOperationCallable() {
+    return transferDomainOperationCallable;
   }
 
   @Override
