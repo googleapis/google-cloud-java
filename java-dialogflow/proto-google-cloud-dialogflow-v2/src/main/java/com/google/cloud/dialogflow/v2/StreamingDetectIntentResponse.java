@@ -25,10 +25,11 @@ package com.google.cloud.dialogflow.v2;
  * The top-level message returned from the
  * `StreamingDetectIntent` method.
  * Multiple response messages can be returned in order:
- * 1.  If the input was set to streaming audio, the first one or more messages
- *     contain `recognition_result`. Each `recognition_result` represents a more
- *     complete transcript of what the user said. The last `recognition_result`
- *     has `is_final` set to `true`.
+ * 1.  If the `StreamingDetectIntentRequest.input_audio` field was
+ *     set, the `recognition_result` field is populated for one
+ *     or more messages.
+ *     See the [StreamingRecognitionResult][google.cloud.dialogflow.v2.StreamingRecognitionResult] message for details
+ *     about the result message sequence.
  * 2.  The next message contains `response_id`, `query_result`
  *     and optionally `webhook_status` if a WebHook was called.
  * </pre>
@@ -688,10 +689,11 @@ public final class StreamingDetectIntentResponse extends com.google.protobuf.Gen
    * The top-level message returned from the
    * `StreamingDetectIntent` method.
    * Multiple response messages can be returned in order:
-   * 1.  If the input was set to streaming audio, the first one or more messages
-   *     contain `recognition_result`. Each `recognition_result` represents a more
-   *     complete transcript of what the user said. The last `recognition_result`
-   *     has `is_final` set to `true`.
+   * 1.  If the `StreamingDetectIntentRequest.input_audio` field was
+   *     set, the `recognition_result` field is populated for one
+   *     or more messages.
+   *     See the [StreamingRecognitionResult][google.cloud.dialogflow.v2.StreamingRecognitionResult] message for details
+   *     about the result message sequence.
    * 2.  The next message contains `response_id`, `query_result`
    *     and optionally `webhook_status` if a WebHook was called.
    * </pre>
