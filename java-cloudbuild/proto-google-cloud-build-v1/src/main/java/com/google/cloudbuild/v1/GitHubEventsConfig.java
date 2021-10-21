@@ -453,10 +453,10 @@ public final class GitHubEventsConfig extends com.google.protobuf.GeneratedMessa
     if (eventCase_ == 5) {
       output.writeMessage(5, (com.google.cloudbuild.v1.PushFilter) event_);
     }
-    if (!getOwnerBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(owner_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 6, owner_);
     }
-    if (!getNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 7, name_);
     }
     unknownFields.writeTo(output);
@@ -481,10 +481,10 @@ public final class GitHubEventsConfig extends com.google.protobuf.GeneratedMessa
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               5, (com.google.cloudbuild.v1.PushFilter) event_);
     }
-    if (!getOwnerBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(owner_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, owner_);
     }
-    if (!getNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, name_);
     }
     size += unknownFields.getSerializedSize();

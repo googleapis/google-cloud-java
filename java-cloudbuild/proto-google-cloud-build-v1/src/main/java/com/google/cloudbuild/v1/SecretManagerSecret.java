@@ -237,10 +237,10 @@ public final class SecretManagerSecret extends com.google.protobuf.GeneratedMess
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getVersionNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(versionName_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, versionName_);
     }
-    if (!getEnvBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(env_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, env_);
     }
     unknownFields.writeTo(output);
@@ -252,10 +252,10 @@ public final class SecretManagerSecret extends com.google.protobuf.GeneratedMess
     if (size != -1) return size;
 
     size = 0;
-    if (!getVersionNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(versionName_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, versionName_);
     }
-    if (!getEnvBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(env_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, env_);
     }
     size += unknownFields.getSerializedSize();

@@ -411,16 +411,16 @@ public final class ReceiveTriggerWebhookRequest extends com.google.protobuf.Gene
     if (body_ != null) {
       output.writeMessage(1, getBody());
     }
-    if (!getProjectIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(projectId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, projectId_);
     }
-    if (!getTriggerBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(trigger_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, trigger_);
     }
-    if (!getSecretBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(secret_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 4, secret_);
     }
-    if (!getNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 5, name_);
     }
     unknownFields.writeTo(output);
@@ -435,16 +435,16 @@ public final class ReceiveTriggerWebhookRequest extends com.google.protobuf.Gene
     if (body_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, getBody());
     }
-    if (!getProjectIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(projectId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, projectId_);
     }
-    if (!getTriggerBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(trigger_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, trigger_);
     }
-    if (!getSecretBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(secret_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, secret_);
     }
-    if (!getNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, name_);
     }
     size += unknownFields.getSerializedSize();

@@ -264,7 +264,7 @@ public final class ArtifactResult extends com.google.protobuf.GeneratedMessageV3
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getLocationBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(location_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, location_);
     }
     for (int i = 0; i < fileHash_.size(); i++) {
@@ -279,7 +279,7 @@ public final class ArtifactResult extends com.google.protobuf.GeneratedMessageV3
     if (size != -1) return size;
 
     size = 0;
-    if (!getLocationBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(location_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, location_);
     }
     for (int i = 0; i < fileHash_.size(); i++) {
