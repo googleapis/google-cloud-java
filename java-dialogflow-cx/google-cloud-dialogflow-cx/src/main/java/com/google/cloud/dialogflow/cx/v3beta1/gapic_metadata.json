@@ -41,6 +41,21 @@
         }
       }
     },
+    "Changelogs": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "ChangelogsClient",
+          "rpcs": {
+            "GetChangelog": {
+              "methods": ["getChangelog", "getChangelog", "getChangelog", "getChangelogCallable"]
+            },
+            "ListChangelogs": {
+              "methods": ["listChangelogs", "listChangelogs", "listChangelogs", "listChangelogsPagedCallable", "listChangelogsCallable"]
+            }
+          }
+        }
+      }
+    },
     "Deployments": {
       "clients": {
         "grpc": {

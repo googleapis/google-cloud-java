@@ -26,7 +26,7 @@ package com.google.cloud.dialogflow.cx.v3beta1;
  * [Sessions.StreamingDetectIntent][google.cloud.dialogflow.cx.v3beta1.Sessions.StreamingDetectIntent] method.
  * Multiple request messages should be sent in order:
  * 1.  The first message must contain
- * [session][google.cloud.dialogflow.cx.v3beta1.StreamingDetectIntentRequest.session],
+ *     [session][google.cloud.dialogflow.cx.v3beta1.StreamingDetectIntentRequest.session],
  *     [query_input][google.cloud.dialogflow.cx.v3beta1.StreamingDetectIntentRequest.query_input] plus optionally
  *     [query_params][google.cloud.dialogflow.cx.v3beta1.StreamingDetectIntentRequest.query_params]. If the client
  *     wants to receive an audio response, it should also contain
@@ -657,7 +657,7 @@ public final class StreamingDetectIntentRequest extends com.google.protobuf.Gene
    * [Sessions.StreamingDetectIntent][google.cloud.dialogflow.cx.v3beta1.Sessions.StreamingDetectIntent] method.
    * Multiple request messages should be sent in order:
    * 1.  The first message must contain
-   * [session][google.cloud.dialogflow.cx.v3beta1.StreamingDetectIntentRequest.session],
+   *     [session][google.cloud.dialogflow.cx.v3beta1.StreamingDetectIntentRequest.session],
    *     [query_input][google.cloud.dialogflow.cx.v3beta1.StreamingDetectIntentRequest.query_input] plus optionally
    *     [query_params][google.cloud.dialogflow.cx.v3beta1.StreamingDetectIntentRequest.query_params]. If the client
    *     wants to receive an audio response, it should also contain
