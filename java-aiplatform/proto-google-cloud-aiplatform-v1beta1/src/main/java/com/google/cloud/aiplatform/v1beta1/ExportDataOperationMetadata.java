@@ -246,7 +246,7 @@ public final class ExportDataOperationMetadata extends com.google.protobuf.Gener
     if (genericMetadata_ != null) {
       output.writeMessage(1, getGenericMetadata());
     }
-    if (!getGcsOutputDirectoryBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(gcsOutputDirectory_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, gcsOutputDirectory_);
     }
     unknownFields.writeTo(output);
@@ -261,7 +261,7 @@ public final class ExportDataOperationMetadata extends com.google.protobuf.Gener
     if (genericMetadata_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, getGenericMetadata());
     }
-    if (!getGcsOutputDirectoryBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(gcsOutputDirectory_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, gcsOutputDirectory_);
     }
     size += unknownFields.getSerializedSize();

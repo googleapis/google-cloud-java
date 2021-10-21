@@ -451,10 +451,10 @@ public final class PipelineTaskExecutorDetail extends com.google.protobuf.Genera
 
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-      if (!getMainJobBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(mainJob_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, mainJob_);
       }
-      if (!getPreCachingCheckJobBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(preCachingCheckJob_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, preCachingCheckJob_);
       }
       unknownFields.writeTo(output);
@@ -466,10 +466,10 @@ public final class PipelineTaskExecutorDetail extends com.google.protobuf.Genera
       if (size != -1) return size;
 
       size = 0;
-      if (!getMainJobBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(mainJob_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, mainJob_);
       }
-      if (!getPreCachingCheckJobBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(preCachingCheckJob_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, preCachingCheckJob_);
       }
       size += unknownFields.getSerializedSize();
@@ -1305,7 +1305,7 @@ public final class PipelineTaskExecutorDetail extends com.google.protobuf.Genera
 
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-      if (!getJobBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(job_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, job_);
       }
       unknownFields.writeTo(output);
@@ -1317,7 +1317,7 @@ public final class PipelineTaskExecutorDetail extends com.google.protobuf.Genera
       if (size != -1) return size;
 
       size = 0;
-      if (!getJobBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(job_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, job_);
       }
       size += unknownFields.getSerializedSize();

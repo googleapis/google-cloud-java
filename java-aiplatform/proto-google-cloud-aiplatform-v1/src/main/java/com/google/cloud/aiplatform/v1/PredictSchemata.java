@@ -346,13 +346,13 @@ public final class PredictSchemata extends com.google.protobuf.GeneratedMessageV
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getInstanceSchemaUriBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(instanceSchemaUri_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, instanceSchemaUri_);
     }
-    if (!getParametersSchemaUriBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(parametersSchemaUri_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, parametersSchemaUri_);
     }
-    if (!getPredictionSchemaUriBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(predictionSchemaUri_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, predictionSchemaUri_);
     }
     unknownFields.writeTo(output);
@@ -364,13 +364,13 @@ public final class PredictSchemata extends com.google.protobuf.GeneratedMessageV
     if (size != -1) return size;
 
     size = 0;
-    if (!getInstanceSchemaUriBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(instanceSchemaUri_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, instanceSchemaUri_);
     }
-    if (!getParametersSchemaUriBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(parametersSchemaUri_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, parametersSchemaUri_);
     }
-    if (!getPredictionSchemaUriBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(predictionSchemaUri_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, predictionSchemaUri_);
     }
     size += unknownFields.getSerializedSize();

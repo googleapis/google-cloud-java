@@ -362,7 +362,7 @@ public final class ExplainResponse extends com.google.protobuf.GeneratedMessageV
     for (int i = 0; i < explanations_.size(); i++) {
       output.writeMessage(1, explanations_.get(i));
     }
-    if (!getDeployedModelIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(deployedModelId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, deployedModelId_);
     }
     for (int i = 0; i < predictions_.size(); i++) {
@@ -380,7 +380,7 @@ public final class ExplainResponse extends com.google.protobuf.GeneratedMessageV
     for (int i = 0; i < explanations_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, explanations_.get(i));
     }
-    if (!getDeployedModelIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(deployedModelId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, deployedModelId_);
     }
     for (int i = 0; i < predictions_.size(); i++) {

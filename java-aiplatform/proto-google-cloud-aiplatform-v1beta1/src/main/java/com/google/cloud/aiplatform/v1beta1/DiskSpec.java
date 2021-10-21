@@ -201,7 +201,7 @@ public final class DiskSpec extends com.google.protobuf.GeneratedMessageV3
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getBootDiskTypeBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(bootDiskType_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, bootDiskType_);
     }
     if (bootDiskSizeGb_ != 0) {
@@ -216,7 +216,7 @@ public final class DiskSpec extends com.google.protobuf.GeneratedMessageV3
     if (size != -1) return size;
 
     size = 0;
-    if (!getBootDiskTypeBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(bootDiskType_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, bootDiskType_);
     }
     if (bootDiskSizeGb_ != 0) {

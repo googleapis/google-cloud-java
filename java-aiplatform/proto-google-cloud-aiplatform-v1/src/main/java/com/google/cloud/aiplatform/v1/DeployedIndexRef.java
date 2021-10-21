@@ -235,10 +235,10 @@ public final class DeployedIndexRef extends com.google.protobuf.GeneratedMessage
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getIndexEndpointBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(indexEndpoint_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, indexEndpoint_);
     }
-    if (!getDeployedIndexIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(deployedIndexId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, deployedIndexId_);
     }
     unknownFields.writeTo(output);
@@ -250,10 +250,10 @@ public final class DeployedIndexRef extends com.google.protobuf.GeneratedMessage
     if (size != -1) return size;
 
     size = 0;
-    if (!getIndexEndpointBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(indexEndpoint_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, indexEndpoint_);
     }
-    if (!getDeployedIndexIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(deployedIndexId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, deployedIndexId_);
     }
     size += unknownFields.getSerializedSize();

@@ -288,7 +288,7 @@ public final class WriteTensorboardExperimentDataRequest
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getTensorboardExperimentBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(tensorboardExperiment_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, tensorboardExperiment_);
     }
     for (int i = 0; i < writeRunDataRequests_.size(); i++) {
@@ -303,7 +303,7 @@ public final class WriteTensorboardExperimentDataRequest
     if (size != -1) return size;
 
     size = 0;
-    if (!getTensorboardExperimentBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(tensorboardExperiment_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, tensorboardExperiment_);
     }
     for (int i = 0; i < writeRunDataRequests_.size(); i++) {

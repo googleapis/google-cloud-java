@@ -255,10 +255,10 @@ public final class ImageSegmentationPredictionResult extends com.google.protobuf
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getCategoryMaskBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(categoryMask_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, categoryMask_);
     }
-    if (!getConfidenceMaskBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(confidenceMask_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, confidenceMask_);
     }
     unknownFields.writeTo(output);
@@ -270,10 +270,10 @@ public final class ImageSegmentationPredictionResult extends com.google.protobuf
     if (size != -1) return size;
 
     size = 0;
-    if (!getCategoryMaskBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(categoryMask_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, categoryMask_);
     }
-    if (!getConfidenceMaskBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(confidenceMask_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, confidenceMask_);
     }
     size += unknownFields.getSerializedSize();

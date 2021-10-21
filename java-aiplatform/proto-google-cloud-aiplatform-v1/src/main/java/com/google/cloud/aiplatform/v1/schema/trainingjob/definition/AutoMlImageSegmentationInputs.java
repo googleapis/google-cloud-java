@@ -458,7 +458,7 @@ public final class AutoMlImageSegmentationInputs extends com.google.protobuf.Gen
     if (budgetMilliNodeHours_ != 0L) {
       output.writeInt64(2, budgetMilliNodeHours_);
     }
-    if (!getBaseModelIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(baseModelId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, baseModelId_);
     }
     unknownFields.writeTo(output);
@@ -479,7 +479,7 @@ public final class AutoMlImageSegmentationInputs extends com.google.protobuf.Gen
     if (budgetMilliNodeHours_ != 0L) {
       size += com.google.protobuf.CodedOutputStream.computeInt64Size(2, budgetMilliNodeHours_);
     }
-    if (!getBaseModelIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(baseModelId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, baseModelId_);
     }
     size += unknownFields.getSerializedSize();

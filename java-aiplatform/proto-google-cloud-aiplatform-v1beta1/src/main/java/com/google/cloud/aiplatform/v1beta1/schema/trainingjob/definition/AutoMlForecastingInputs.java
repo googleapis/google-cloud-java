@@ -841,7 +841,7 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
 
       @java.lang.Override
       public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-        if (!getColumnNameBytes().isEmpty()) {
+        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(columnName_)) {
           com.google.protobuf.GeneratedMessageV3.writeString(output, 1, columnName_);
         }
         unknownFields.writeTo(output);
@@ -853,7 +853,7 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
         if (size != -1) return size;
 
         size = 0;
-        if (!getColumnNameBytes().isEmpty()) {
+        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(columnName_)) {
           size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, columnName_);
         }
         size += unknownFields.getSerializedSize();
@@ -1528,7 +1528,7 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
 
       @java.lang.Override
       public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-        if (!getColumnNameBytes().isEmpty()) {
+        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(columnName_)) {
           com.google.protobuf.GeneratedMessageV3.writeString(output, 1, columnName_);
         }
         unknownFields.writeTo(output);
@@ -1540,7 +1540,7 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
         if (size != -1) return size;
 
         size = 0;
-        if (!getColumnNameBytes().isEmpty()) {
+        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(columnName_)) {
           size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, columnName_);
         }
         size += unknownFields.getSerializedSize();
@@ -2223,7 +2223,7 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
 
       @java.lang.Override
       public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-        if (!getColumnNameBytes().isEmpty()) {
+        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(columnName_)) {
           com.google.protobuf.GeneratedMessageV3.writeString(output, 1, columnName_);
         }
         unknownFields.writeTo(output);
@@ -2235,7 +2235,7 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
         if (size != -1) return size;
 
         size = 0;
-        if (!getColumnNameBytes().isEmpty()) {
+        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(columnName_)) {
           size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, columnName_);
         }
         size += unknownFields.getSerializedSize();
@@ -3041,10 +3041,10 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
 
       @java.lang.Override
       public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-        if (!getColumnNameBytes().isEmpty()) {
+        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(columnName_)) {
           com.google.protobuf.GeneratedMessageV3.writeString(output, 1, columnName_);
         }
-        if (!getTimeFormatBytes().isEmpty()) {
+        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(timeFormat_)) {
           com.google.protobuf.GeneratedMessageV3.writeString(output, 2, timeFormat_);
         }
         unknownFields.writeTo(output);
@@ -3056,10 +3056,10 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
         if (size != -1) return size;
 
         size = 0;
-        if (!getColumnNameBytes().isEmpty()) {
+        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(columnName_)) {
           size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, columnName_);
         }
-        if (!getTimeFormatBytes().isEmpty()) {
+        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(timeFormat_)) {
           size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, timeFormat_);
         }
         size += unknownFields.getSerializedSize();
@@ -3906,7 +3906,7 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
 
       @java.lang.Override
       public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-        if (!getColumnNameBytes().isEmpty()) {
+        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(columnName_)) {
           com.google.protobuf.GeneratedMessageV3.writeString(output, 1, columnName_);
         }
         unknownFields.writeTo(output);
@@ -3918,7 +3918,7 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
         if (size != -1) return size;
 
         size = 0;
-        if (!getColumnNameBytes().isEmpty()) {
+        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(columnName_)) {
           size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, columnName_);
         }
         size += unknownFields.getSerializedSize();
@@ -6676,7 +6676,7 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
 
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-      if (!getUnitBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(unit_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, unit_);
       }
       if (quantity_ != 0L) {
@@ -6691,7 +6691,7 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
       if (size != -1) return size;
 
       size = 0;
-      if (!getUnitBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(unit_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, unit_);
       }
       if (quantity_ != 0L) {
@@ -8310,25 +8310,25 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
     getSerializedSize();
-    if (!getTargetColumnBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(targetColumn_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, targetColumn_);
     }
-    if (!getTimeSeriesIdentifierColumnBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(timeSeriesIdentifierColumn_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, timeSeriesIdentifierColumn_);
     }
-    if (!getTimeColumnBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(timeColumn_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, timeColumn_);
     }
     for (int i = 0; i < transformations_.size(); i++) {
       output.writeMessage(4, transformations_.get(i));
     }
-    if (!getOptimizationObjectiveBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(optimizationObjective_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 5, optimizationObjective_);
     }
     if (trainBudgetMilliNodeHours_ != 0L) {
       output.writeInt64(6, trainBudgetMilliNodeHours_);
     }
-    if (!getWeightColumnBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(weightColumn_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 7, weightColumn_);
     }
     if (exportEvaluatedDataItemsConfig_ != null) {
@@ -8341,7 +8341,7 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
     for (int i = 0; i < quantiles_.size(); i++) {
       output.writeDoubleNoTag(quantiles_.getDouble(i));
     }
-    if (!getValidationOptionsBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(validationOptions_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 17, validationOptions_);
     }
     for (int i = 0; i < timeSeriesAttributeColumns_.size(); i++) {
@@ -8378,26 +8378,26 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
     if (size != -1) return size;
 
     size = 0;
-    if (!getTargetColumnBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(targetColumn_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, targetColumn_);
     }
-    if (!getTimeSeriesIdentifierColumnBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(timeSeriesIdentifierColumn_)) {
       size +=
           com.google.protobuf.GeneratedMessageV3.computeStringSize(2, timeSeriesIdentifierColumn_);
     }
-    if (!getTimeColumnBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(timeColumn_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, timeColumn_);
     }
     for (int i = 0; i < transformations_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(4, transformations_.get(i));
     }
-    if (!getOptimizationObjectiveBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(optimizationObjective_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, optimizationObjective_);
     }
     if (trainBudgetMilliNodeHours_ != 0L) {
       size += com.google.protobuf.CodedOutputStream.computeInt64Size(6, trainBudgetMilliNodeHours_);
     }
-    if (!getWeightColumnBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(weightColumn_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, weightColumn_);
     }
     if (exportEvaluatedDataItemsConfig_ != null) {
@@ -8415,7 +8415,7 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
       }
       quantilesMemoizedSerializedSize = dataSize;
     }
-    if (!getValidationOptionsBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(validationOptions_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(17, validationOptions_);
     }
     {

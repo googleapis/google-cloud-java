@@ -251,7 +251,7 @@ public final class UpdateSpecialistPoolOperationMetadata
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getSpecialistPoolBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(specialistPool_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, specialistPool_);
     }
     if (genericMetadata_ != null) {
@@ -266,7 +266,7 @@ public final class UpdateSpecialistPoolOperationMetadata
     if (size != -1) return size;
 
     size = 0;
-    if (!getSpecialistPoolBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(specialistPool_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, specialistPool_);
     }
     if (genericMetadata_ != null) {

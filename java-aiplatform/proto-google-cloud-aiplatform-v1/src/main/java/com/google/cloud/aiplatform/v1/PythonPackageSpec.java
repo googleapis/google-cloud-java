@@ -489,13 +489,13 @@ public final class PythonPackageSpec extends com.google.protobuf.GeneratedMessag
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getExecutorImageUriBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(executorImageUri_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, executorImageUri_);
     }
     for (int i = 0; i < packageUris_.size(); i++) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, packageUris_.getRaw(i));
     }
-    if (!getPythonModuleBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(pythonModule_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, pythonModule_);
     }
     for (int i = 0; i < args_.size(); i++) {
@@ -513,7 +513,7 @@ public final class PythonPackageSpec extends com.google.protobuf.GeneratedMessag
     if (size != -1) return size;
 
     size = 0;
-    if (!getExecutorImageUriBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(executorImageUri_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, executorImageUri_);
     }
     {
@@ -524,7 +524,7 @@ public final class PythonPackageSpec extends com.google.protobuf.GeneratedMessag
       size += dataSize;
       size += 1 * getPackageUrisList().size();
     }
-    if (!getPythonModuleBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(pythonModule_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, pythonModule_);
     }
     {

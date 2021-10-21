@@ -302,7 +302,7 @@ public final class WriteTensorboardRunDataRequest extends com.google.protobuf.Ge
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getTensorboardRunBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(tensorboardRun_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, tensorboardRun_);
     }
     for (int i = 0; i < timeSeriesData_.size(); i++) {
@@ -317,7 +317,7 @@ public final class WriteTensorboardRunDataRequest extends com.google.protobuf.Ge
     if (size != -1) return size;
 
     size = 0;
-    if (!getTensorboardRunBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(tensorboardRun_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, tensorboardRun_);
     }
     for (int i = 0; i < timeSeriesData_.size(); i++) {

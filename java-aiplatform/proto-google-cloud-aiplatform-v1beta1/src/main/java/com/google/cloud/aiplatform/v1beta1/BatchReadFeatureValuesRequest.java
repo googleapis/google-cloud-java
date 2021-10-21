@@ -398,7 +398,7 @@ public final class BatchReadFeatureValuesRequest extends com.google.protobuf.Gen
 
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-      if (!getFieldNameBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(fieldName_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, fieldName_);
       }
       unknownFields.writeTo(output);
@@ -410,7 +410,7 @@ public final class BatchReadFeatureValuesRequest extends com.google.protobuf.Gen
       if (size != -1) return size;
 
       size = 0;
-      if (!getFieldNameBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(fieldName_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, fieldName_);
       }
       size += unknownFields.getSerializedSize();
@@ -1369,7 +1369,7 @@ public final class BatchReadFeatureValuesRequest extends com.google.protobuf.Gen
 
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-      if (!getEntityTypeIdBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(entityTypeId_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, entityTypeId_);
       }
       if (featureSelector_ != null) {
@@ -1387,7 +1387,7 @@ public final class BatchReadFeatureValuesRequest extends com.google.protobuf.Gen
       if (size != -1) return size;
 
       size = 0;
-      if (!getEntityTypeIdBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(entityTypeId_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, entityTypeId_);
       }
       if (featureSelector_ != null) {
@@ -3103,7 +3103,7 @@ public final class BatchReadFeatureValuesRequest extends com.google.protobuf.Gen
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getFeaturestoreBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(featurestore_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, featurestore_);
     }
     if (readOptionCase_ == 3) {
@@ -3130,7 +3130,7 @@ public final class BatchReadFeatureValuesRequest extends com.google.protobuf.Gen
     if (size != -1) return size;
 
     size = 0;
-    if (!getFeaturestoreBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(featurestore_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, featurestore_);
     }
     if (readOptionCase_ == 3) {

@@ -244,7 +244,7 @@ public final class ModelDeploymentMonitoringObjectiveConfig
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getDeployedModelIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(deployedModelId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, deployedModelId_);
     }
     if (objectiveConfig_ != null) {
@@ -259,7 +259,7 @@ public final class ModelDeploymentMonitoringObjectiveConfig
     if (size != -1) return size;
 
     size = 0;
-    if (!getDeployedModelIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(deployedModelId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, deployedModelId_);
     }
     if (objectiveConfig_ != null) {

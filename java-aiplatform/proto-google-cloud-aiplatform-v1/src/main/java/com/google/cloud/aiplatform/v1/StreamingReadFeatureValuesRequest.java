@@ -347,7 +347,7 @@ public final class StreamingReadFeatureValuesRequest extends com.google.protobuf
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getEntityTypeBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(entityType_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, entityType_);
     }
     for (int i = 0; i < entityIds_.size(); i++) {
@@ -365,7 +365,7 @@ public final class StreamingReadFeatureValuesRequest extends com.google.protobuf
     if (size != -1) return size;
 
     size = 0;
-    if (!getEntityTypeBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(entityType_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, entityType_);
     }
     {

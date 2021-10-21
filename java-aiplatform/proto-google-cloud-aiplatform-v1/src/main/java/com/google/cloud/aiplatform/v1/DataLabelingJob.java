@@ -1390,10 +1390,10 @@ public final class DataLabelingJob extends com.google.protobuf.GeneratedMessageV
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name_);
     }
-    if (!getDisplayNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(displayName_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, displayName_);
     }
     for (int i = 0; i < datasets_.size(); i++) {
@@ -1402,10 +1402,10 @@ public final class DataLabelingJob extends com.google.protobuf.GeneratedMessageV
     if (labelerCount_ != 0) {
       output.writeInt32(4, labelerCount_);
     }
-    if (!getInstructionUriBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(instructionUri_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 5, instructionUri_);
     }
-    if (!getInputsSchemaUriBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(inputsSchemaUri_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 6, inputsSchemaUri_);
     }
     if (inputs_ != null) {
@@ -1451,10 +1451,10 @@ public final class DataLabelingJob extends com.google.protobuf.GeneratedMessageV
     if (size != -1) return size;
 
     size = 0;
-    if (!getNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, name_);
     }
-    if (!getDisplayNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(displayName_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, displayName_);
     }
     {
@@ -1468,10 +1468,10 @@ public final class DataLabelingJob extends com.google.protobuf.GeneratedMessageV
     if (labelerCount_ != 0) {
       size += com.google.protobuf.CodedOutputStream.computeInt32Size(4, labelerCount_);
     }
-    if (!getInstructionUriBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(instructionUri_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, instructionUri_);
     }
-    if (!getInputsSchemaUriBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(inputsSchemaUri_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, inputsSchemaUri_);
     }
     if (inputs_ != null) {

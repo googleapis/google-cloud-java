@@ -1106,17 +1106,17 @@ public final class Execution extends com.google.protobuf.GeneratedMessageV3
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name_);
     }
-    if (!getDisplayNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(displayName_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, displayName_);
     }
     if (state_
         != com.google.cloud.aiplatform.v1beta1.Execution.State.STATE_UNSPECIFIED.getNumber()) {
       output.writeEnum(6, state_);
     }
-    if (!getEtagBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(etag_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 9, etag_);
     }
     com.google.protobuf.GeneratedMessageV3.serializeStringMapTo(
@@ -1127,16 +1127,16 @@ public final class Execution extends com.google.protobuf.GeneratedMessageV3
     if (updateTime_ != null) {
       output.writeMessage(12, getUpdateTime());
     }
-    if (!getSchemaTitleBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(schemaTitle_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 13, schemaTitle_);
     }
-    if (!getSchemaVersionBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(schemaVersion_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 14, schemaVersion_);
     }
     if (metadata_ != null) {
       output.writeMessage(15, getMetadata());
     }
-    if (!getDescriptionBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(description_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 16, description_);
     }
     unknownFields.writeTo(output);
@@ -1148,17 +1148,17 @@ public final class Execution extends com.google.protobuf.GeneratedMessageV3
     if (size != -1) return size;
 
     size = 0;
-    if (!getNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, name_);
     }
-    if (!getDisplayNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(displayName_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, displayName_);
     }
     if (state_
         != com.google.cloud.aiplatform.v1beta1.Execution.State.STATE_UNSPECIFIED.getNumber()) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(6, state_);
     }
-    if (!getEtagBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(etag_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(9, etag_);
     }
     for (java.util.Map.Entry<java.lang.String, java.lang.String> entry :
@@ -1177,16 +1177,16 @@ public final class Execution extends com.google.protobuf.GeneratedMessageV3
     if (updateTime_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(12, getUpdateTime());
     }
-    if (!getSchemaTitleBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(schemaTitle_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(13, schemaTitle_);
     }
-    if (!getSchemaVersionBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(schemaVersion_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(14, schemaVersion_);
     }
     if (metadata_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(15, getMetadata());
     }
-    if (!getDescriptionBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(description_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(16, description_);
     }
     size += unknownFields.getSerializedSize();

@@ -421,10 +421,10 @@ public final class ExportModelOperationMetadata extends com.google.protobuf.Gene
 
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-      if (!getArtifactOutputUriBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(artifactOutputUri_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, artifactOutputUri_);
       }
-      if (!getImageOutputUriBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(imageOutputUri_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 3, imageOutputUri_);
       }
       unknownFields.writeTo(output);
@@ -436,10 +436,10 @@ public final class ExportModelOperationMetadata extends com.google.protobuf.Gene
       if (size != -1) return size;
 
       size = 0;
-      if (!getArtifactOutputUriBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(artifactOutputUri_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, artifactOutputUri_);
       }
-      if (!getImageOutputUriBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(imageOutputUri_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, imageOutputUri_);
       }
       size += unknownFields.getSerializedSize();

@@ -244,7 +244,7 @@ public final class DeployIndexOperationMetadata extends com.google.protobuf.Gene
     if (genericMetadata_ != null) {
       output.writeMessage(1, getGenericMetadata());
     }
-    if (!getDeployedIndexIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(deployedIndexId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, deployedIndexId_);
     }
     unknownFields.writeTo(output);
@@ -259,7 +259,7 @@ public final class DeployIndexOperationMetadata extends com.google.protobuf.Gene
     if (genericMetadata_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, getGenericMetadata());
     }
-    if (!getDeployedIndexIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(deployedIndexId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, deployedIndexId_);
     }
     size += unknownFields.getSerializedSize();

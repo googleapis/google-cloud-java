@@ -467,7 +467,7 @@ public final class ImportDataConfig extends com.google.protobuf.GeneratedMessage
     }
     com.google.protobuf.GeneratedMessageV3.serializeStringMapTo(
         output, internalGetDataItemLabels(), DataItemLabelsDefaultEntryHolder.defaultEntry, 2);
-    if (!getImportSchemaUriBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(importSchemaUri_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 4, importSchemaUri_);
     }
     unknownFields.writeTo(output);
@@ -494,7 +494,7 @@ public final class ImportDataConfig extends com.google.protobuf.GeneratedMessage
               .build();
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, dataItemLabels__);
     }
-    if (!getImportSchemaUriBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(importSchemaUri_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, importSchemaUri_);
     }
     size += unknownFields.getSerializedSize();

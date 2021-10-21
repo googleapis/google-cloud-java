@@ -327,7 +327,7 @@ public final class ReadFeatureValuesResponse extends com.google.protobuf.Generat
 
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-      if (!getIdBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(id_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, id_);
       }
       unknownFields.writeTo(output);
@@ -339,7 +339,7 @@ public final class ReadFeatureValuesResponse extends com.google.protobuf.Generat
       if (size != -1) return size;
 
       size = 0;
-      if (!getIdBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(id_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, id_);
       }
       size += unknownFields.getSerializedSize();
@@ -1207,7 +1207,7 @@ public final class ReadFeatureValuesResponse extends com.google.protobuf.Generat
 
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-      if (!getEntityTypeBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(entityType_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, entityType_);
       }
       for (int i = 0; i < featureDescriptors_.size(); i++) {
@@ -1222,7 +1222,7 @@ public final class ReadFeatureValuesResponse extends com.google.protobuf.Generat
       if (size != -1) return size;
 
       size = 0;
-      if (!getEntityTypeBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(entityType_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, entityType_);
       }
       for (int i = 0; i < featureDescriptors_.size(); i++) {
@@ -3904,7 +3904,7 @@ public final class ReadFeatureValuesResponse extends com.google.protobuf.Generat
 
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-      if (!getEntityIdBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(entityId_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, entityId_);
       }
       for (int i = 0; i < data_.size(); i++) {
@@ -3919,7 +3919,7 @@ public final class ReadFeatureValuesResponse extends com.google.protobuf.Generat
       if (size != -1) return size;
 
       size = 0;
-      if (!getEntityIdBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(entityId_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, entityId_);
       }
       for (int i = 0; i < data_.size(); i++) {

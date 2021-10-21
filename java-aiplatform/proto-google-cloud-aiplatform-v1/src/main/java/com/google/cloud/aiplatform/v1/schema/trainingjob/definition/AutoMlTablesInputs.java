@@ -897,7 +897,7 @@ public final class AutoMlTablesInputs extends com.google.protobuf.GeneratedMessa
 
       @java.lang.Override
       public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-        if (!getColumnNameBytes().isEmpty()) {
+        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(columnName_)) {
           com.google.protobuf.GeneratedMessageV3.writeString(output, 1, columnName_);
         }
         unknownFields.writeTo(output);
@@ -909,7 +909,7 @@ public final class AutoMlTablesInputs extends com.google.protobuf.GeneratedMessa
         if (size != -1) return size;
 
         size = 0;
-        if (!getColumnNameBytes().isEmpty()) {
+        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(columnName_)) {
           size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, columnName_);
         }
         size += unknownFields.getSerializedSize();
@@ -1620,7 +1620,7 @@ public final class AutoMlTablesInputs extends com.google.protobuf.GeneratedMessa
 
       @java.lang.Override
       public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-        if (!getColumnNameBytes().isEmpty()) {
+        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(columnName_)) {
           com.google.protobuf.GeneratedMessageV3.writeString(output, 1, columnName_);
         }
         if (invalidValuesAllowed_ != false) {
@@ -1635,7 +1635,7 @@ public final class AutoMlTablesInputs extends com.google.protobuf.GeneratedMessa
         if (size != -1) return size;
 
         size = 0;
-        if (!getColumnNameBytes().isEmpty()) {
+        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(columnName_)) {
           size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, columnName_);
         }
         if (invalidValuesAllowed_ != false) {
@@ -2385,7 +2385,7 @@ public final class AutoMlTablesInputs extends com.google.protobuf.GeneratedMessa
 
       @java.lang.Override
       public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-        if (!getColumnNameBytes().isEmpty()) {
+        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(columnName_)) {
           com.google.protobuf.GeneratedMessageV3.writeString(output, 1, columnName_);
         }
         unknownFields.writeTo(output);
@@ -2397,7 +2397,7 @@ public final class AutoMlTablesInputs extends com.google.protobuf.GeneratedMessa
         if (size != -1) return size;
 
         size = 0;
-        if (!getColumnNameBytes().isEmpty()) {
+        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(columnName_)) {
           size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, columnName_);
         }
         size += unknownFields.getSerializedSize();
@@ -3234,10 +3234,10 @@ public final class AutoMlTablesInputs extends com.google.protobuf.GeneratedMessa
 
       @java.lang.Override
       public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-        if (!getColumnNameBytes().isEmpty()) {
+        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(columnName_)) {
           com.google.protobuf.GeneratedMessageV3.writeString(output, 1, columnName_);
         }
-        if (!getTimeFormatBytes().isEmpty()) {
+        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(timeFormat_)) {
           com.google.protobuf.GeneratedMessageV3.writeString(output, 2, timeFormat_);
         }
         if (invalidValuesAllowed_ != false) {
@@ -3252,10 +3252,10 @@ public final class AutoMlTablesInputs extends com.google.protobuf.GeneratedMessa
         if (size != -1) return size;
 
         size = 0;
-        if (!getColumnNameBytes().isEmpty()) {
+        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(columnName_)) {
           size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, columnName_);
         }
-        if (!getTimeFormatBytes().isEmpty()) {
+        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(timeFormat_)) {
           size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, timeFormat_);
         }
         if (invalidValuesAllowed_ != false) {
@@ -4169,7 +4169,7 @@ public final class AutoMlTablesInputs extends com.google.protobuf.GeneratedMessa
 
       @java.lang.Override
       public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-        if (!getColumnNameBytes().isEmpty()) {
+        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(columnName_)) {
           com.google.protobuf.GeneratedMessageV3.writeString(output, 1, columnName_);
         }
         unknownFields.writeTo(output);
@@ -4181,7 +4181,7 @@ public final class AutoMlTablesInputs extends com.google.protobuf.GeneratedMessa
         if (size != -1) return size;
 
         size = 0;
-        if (!getColumnNameBytes().isEmpty()) {
+        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(columnName_)) {
           size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, columnName_);
         }
         size += unknownFields.getSerializedSize();
@@ -4898,7 +4898,7 @@ public final class AutoMlTablesInputs extends com.google.protobuf.GeneratedMessa
 
       @java.lang.Override
       public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-        if (!getColumnNameBytes().isEmpty()) {
+        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(columnName_)) {
           com.google.protobuf.GeneratedMessageV3.writeString(output, 1, columnName_);
         }
         if (invalidValuesAllowed_ != false) {
@@ -4913,7 +4913,7 @@ public final class AutoMlTablesInputs extends com.google.protobuf.GeneratedMessa
         if (size != -1) return size;
 
         size = 0;
-        if (!getColumnNameBytes().isEmpty()) {
+        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(columnName_)) {
           size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, columnName_);
         }
         if (invalidValuesAllowed_ != false) {
@@ -5658,7 +5658,7 @@ public final class AutoMlTablesInputs extends com.google.protobuf.GeneratedMessa
 
       @java.lang.Override
       public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-        if (!getColumnNameBytes().isEmpty()) {
+        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(columnName_)) {
           com.google.protobuf.GeneratedMessageV3.writeString(output, 1, columnName_);
         }
         unknownFields.writeTo(output);
@@ -5670,7 +5670,7 @@ public final class AutoMlTablesInputs extends com.google.protobuf.GeneratedMessa
         if (size != -1) return size;
 
         size = 0;
-        if (!getColumnNameBytes().isEmpty()) {
+        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(columnName_)) {
           size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, columnName_);
         }
         size += unknownFields.getSerializedSize();
@@ -6342,7 +6342,7 @@ public final class AutoMlTablesInputs extends com.google.protobuf.GeneratedMessa
 
       @java.lang.Override
       public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-        if (!getColumnNameBytes().isEmpty()) {
+        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(columnName_)) {
           com.google.protobuf.GeneratedMessageV3.writeString(output, 1, columnName_);
         }
         unknownFields.writeTo(output);
@@ -6354,7 +6354,7 @@ public final class AutoMlTablesInputs extends com.google.protobuf.GeneratedMessa
         if (size != -1) return size;
 
         size = 0;
-        if (!getColumnNameBytes().isEmpty()) {
+        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(columnName_)) {
           size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, columnName_);
         }
         size += unknownFields.getSerializedSize();
@@ -10399,16 +10399,16 @@ public final class AutoMlTablesInputs extends com.google.protobuf.GeneratedMessa
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getPredictionTypeBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(predictionType_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, predictionType_);
     }
-    if (!getTargetColumnBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(targetColumn_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, targetColumn_);
     }
     for (int i = 0; i < transformations_.size(); i++) {
       output.writeMessage(3, transformations_.get(i));
     }
-    if (!getOptimizationObjectiveBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(optimizationObjective_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 4, optimizationObjective_);
     }
     if (additionalOptimizationObjectiveConfigCase_ == 5) {
@@ -10423,7 +10423,7 @@ public final class AutoMlTablesInputs extends com.google.protobuf.GeneratedMessa
     if (disableEarlyStopping_ != false) {
       output.writeBool(8, disableEarlyStopping_);
     }
-    if (!getWeightColumnNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(weightColumnName_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 9, weightColumnName_);
     }
     if (exportEvaluatedDataItemsConfig_ != null) {
@@ -10442,16 +10442,16 @@ public final class AutoMlTablesInputs extends com.google.protobuf.GeneratedMessa
     if (size != -1) return size;
 
     size = 0;
-    if (!getPredictionTypeBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(predictionType_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, predictionType_);
     }
-    if (!getTargetColumnBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(targetColumn_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, targetColumn_);
     }
     for (int i = 0; i < transformations_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(3, transformations_.get(i));
     }
-    if (!getOptimizationObjectiveBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(optimizationObjective_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, optimizationObjective_);
     }
     if (additionalOptimizationObjectiveConfigCase_ == 5) {
@@ -10470,7 +10470,7 @@ public final class AutoMlTablesInputs extends com.google.protobuf.GeneratedMessa
     if (disableEarlyStopping_ != false) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(8, disableEarlyStopping_);
     }
-    if (!getWeightColumnNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(weightColumnName_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(9, weightColumnName_);
     }
     if (exportEvaluatedDataItemsConfig_ != null) {

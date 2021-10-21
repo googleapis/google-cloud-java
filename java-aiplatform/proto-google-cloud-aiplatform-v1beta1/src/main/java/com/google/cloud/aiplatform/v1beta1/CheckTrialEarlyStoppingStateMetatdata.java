@@ -306,10 +306,10 @@ public final class CheckTrialEarlyStoppingStateMetatdata
     if (genericMetadata_ != null) {
       output.writeMessage(1, getGenericMetadata());
     }
-    if (!getStudyBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(study_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, study_);
     }
-    if (!getTrialBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(trial_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, trial_);
     }
     unknownFields.writeTo(output);
@@ -324,10 +324,10 @@ public final class CheckTrialEarlyStoppingStateMetatdata
     if (genericMetadata_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, getGenericMetadata());
     }
-    if (!getStudyBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(study_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, study_);
     }
-    if (!getTrialBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(trial_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, trial_);
     }
     size += unknownFields.getSerializedSize();

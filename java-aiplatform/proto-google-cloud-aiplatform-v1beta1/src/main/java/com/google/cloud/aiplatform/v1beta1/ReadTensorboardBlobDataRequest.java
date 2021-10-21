@@ -259,7 +259,7 @@ public final class ReadTensorboardBlobDataRequest extends com.google.protobuf.Ge
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getTimeSeriesBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(timeSeries_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, timeSeries_);
     }
     for (int i = 0; i < blobIds_.size(); i++) {
@@ -274,7 +274,7 @@ public final class ReadTensorboardBlobDataRequest extends com.google.protobuf.Ge
     if (size != -1) return size;
 
     size = 0;
-    if (!getTimeSeriesBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(timeSeries_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, timeSeries_);
     }
     {

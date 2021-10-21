@@ -323,13 +323,13 @@ public final class FilterSplit extends com.google.protobuf.GeneratedMessageV3
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getTrainingFilterBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(trainingFilter_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, trainingFilter_);
     }
-    if (!getValidationFilterBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(validationFilter_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, validationFilter_);
     }
-    if (!getTestFilterBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(testFilter_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, testFilter_);
     }
     unknownFields.writeTo(output);
@@ -341,13 +341,13 @@ public final class FilterSplit extends com.google.protobuf.GeneratedMessageV3
     if (size != -1) return size;
 
     size = 0;
-    if (!getTrainingFilterBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(trainingFilter_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, trainingFilter_);
     }
-    if (!getValidationFilterBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(validationFilter_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, validationFilter_);
     }
-    if (!getTestFilterBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(testFilter_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, testFilter_);
     }
     size += unknownFields.getSerializedSize();

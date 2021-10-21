@@ -522,10 +522,10 @@ public final class MigratableResource extends com.google.protobuf.GeneratedMessa
 
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-      if (!getEndpointBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(endpoint_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, endpoint_);
       }
-      if (!getVersionBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(version_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, version_);
       }
       unknownFields.writeTo(output);
@@ -537,10 +537,10 @@ public final class MigratableResource extends com.google.protobuf.GeneratedMessa
       if (size != -1) return size;
 
       size = 0;
-      if (!getEndpointBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(endpoint_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, endpoint_);
       }
-      if (!getVersionBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(version_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, version_);
       }
       size += unknownFields.getSerializedSize();
@@ -1446,10 +1446,10 @@ public final class MigratableResource extends com.google.protobuf.GeneratedMessa
 
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-      if (!getModelBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(model_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, model_);
       }
-      if (!getModelDisplayNameBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(modelDisplayName_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 3, modelDisplayName_);
       }
       unknownFields.writeTo(output);
@@ -1461,10 +1461,10 @@ public final class MigratableResource extends com.google.protobuf.GeneratedMessa
       if (size != -1) return size;
 
       size = 0;
-      if (!getModelBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(model_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, model_);
       }
-      if (!getModelDisplayNameBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(modelDisplayName_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, modelDisplayName_);
       }
       size += unknownFields.getSerializedSize();
@@ -2332,10 +2332,10 @@ public final class MigratableResource extends com.google.protobuf.GeneratedMessa
 
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-      if (!getDatasetBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(dataset_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, dataset_);
       }
-      if (!getDatasetDisplayNameBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(datasetDisplayName_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 4, datasetDisplayName_);
       }
       unknownFields.writeTo(output);
@@ -2347,10 +2347,10 @@ public final class MigratableResource extends com.google.protobuf.GeneratedMessa
       if (size != -1) return size;
 
       size = 0;
-      if (!getDatasetBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(dataset_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, dataset_);
       }
-      if (!getDatasetDisplayNameBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(datasetDisplayName_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, datasetDisplayName_);
       }
       size += unknownFields.getSerializedSize();
@@ -3485,10 +3485,10 @@ public final class MigratableResource extends com.google.protobuf.GeneratedMessa
 
       @java.lang.Override
       public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-        if (!getAnnotatedDatasetBytes().isEmpty()) {
+        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(annotatedDataset_)) {
           com.google.protobuf.GeneratedMessageV3.writeString(output, 1, annotatedDataset_);
         }
-        if (!getAnnotatedDatasetDisplayNameBytes().isEmpty()) {
+        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(annotatedDatasetDisplayName_)) {
           com.google.protobuf.GeneratedMessageV3.writeString(
               output, 3, annotatedDatasetDisplayName_);
         }
@@ -3501,10 +3501,10 @@ public final class MigratableResource extends com.google.protobuf.GeneratedMessa
         if (size != -1) return size;
 
         size = 0;
-        if (!getAnnotatedDatasetBytes().isEmpty()) {
+        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(annotatedDataset_)) {
           size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, annotatedDataset_);
         }
-        if (!getAnnotatedDatasetDisplayNameBytes().isEmpty()) {
+        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(annotatedDatasetDisplayName_)) {
           size +=
               com.google.protobuf.GeneratedMessageV3.computeStringSize(
                   3, annotatedDatasetDisplayName_);
@@ -4369,13 +4369,13 @@ public final class MigratableResource extends com.google.protobuf.GeneratedMessa
 
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-      if (!getDatasetBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(dataset_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, dataset_);
       }
       for (int i = 0; i < dataLabelingAnnotatedDatasets_.size(); i++) {
         output.writeMessage(3, dataLabelingAnnotatedDatasets_.get(i));
       }
-      if (!getDatasetDisplayNameBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(datasetDisplayName_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 4, datasetDisplayName_);
       }
       unknownFields.writeTo(output);
@@ -4387,7 +4387,7 @@ public final class MigratableResource extends com.google.protobuf.GeneratedMessa
       if (size != -1) return size;
 
       size = 0;
-      if (!getDatasetBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(dataset_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, dataset_);
       }
       for (int i = 0; i < dataLabelingAnnotatedDatasets_.size(); i++) {
@@ -4395,7 +4395,7 @@ public final class MigratableResource extends com.google.protobuf.GeneratedMessa
             com.google.protobuf.CodedOutputStream.computeMessageSize(
                 3, dataLabelingAnnotatedDatasets_.get(i));
       }
-      if (!getDatasetDisplayNameBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(datasetDisplayName_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, datasetDisplayName_);
       }
       size += unknownFields.getSerializedSize();

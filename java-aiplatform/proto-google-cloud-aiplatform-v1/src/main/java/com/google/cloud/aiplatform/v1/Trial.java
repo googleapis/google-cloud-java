@@ -798,7 +798,7 @@ public final class Trial extends com.google.protobuf.GeneratedMessageV3
 
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-      if (!getParameterIdBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(parameterId_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, parameterId_);
       }
       if (value_ != null) {
@@ -813,7 +813,7 @@ public final class Trial extends com.google.protobuf.GeneratedMessageV3
       if (size != -1) return size;
 
       size = 0;
-      if (!getParameterIdBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(parameterId_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, parameterId_);
       }
       if (value_ != null) {
@@ -2300,10 +2300,10 @@ public final class Trial extends com.google.protobuf.GeneratedMessageV3
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name_);
     }
-    if (!getIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(id_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, id_);
     }
     if (state_ != com.google.cloud.aiplatform.v1.Trial.State.STATE_UNSPECIFIED.getNumber()) {
@@ -2324,13 +2324,13 @@ public final class Trial extends com.google.protobuf.GeneratedMessageV3
     if (endTime_ != null) {
       output.writeMessage(8, getEndTime());
     }
-    if (!getClientIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(clientId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 9, clientId_);
     }
-    if (!getInfeasibleReasonBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(infeasibleReason_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 10, infeasibleReason_);
     }
-    if (!getCustomJobBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(customJob_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 11, customJob_);
     }
     com.google.protobuf.GeneratedMessageV3.serializeStringMapTo(
@@ -2344,10 +2344,10 @@ public final class Trial extends com.google.protobuf.GeneratedMessageV3
     if (size != -1) return size;
 
     size = 0;
-    if (!getNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, name_);
     }
-    if (!getIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(id_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, id_);
     }
     if (state_ != com.google.cloud.aiplatform.v1.Trial.State.STATE_UNSPECIFIED.getNumber()) {
@@ -2368,13 +2368,13 @@ public final class Trial extends com.google.protobuf.GeneratedMessageV3
     if (endTime_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(8, getEndTime());
     }
-    if (!getClientIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(clientId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(9, clientId_);
     }
-    if (!getInfeasibleReasonBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(infeasibleReason_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(10, infeasibleReason_);
     }
-    if (!getCustomJobBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(customJob_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(11, customJob_);
     }
     for (java.util.Map.Entry<java.lang.String, java.lang.String> entry :

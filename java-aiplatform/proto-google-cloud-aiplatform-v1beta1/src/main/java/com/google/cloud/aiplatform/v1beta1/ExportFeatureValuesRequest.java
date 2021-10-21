@@ -1367,7 +1367,7 @@ public final class ExportFeatureValuesRequest extends com.google.protobuf.Genera
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getEntityTypeBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(entityType_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, entityType_);
     }
     if (modeCase_ == 3) {
@@ -1392,7 +1392,7 @@ public final class ExportFeatureValuesRequest extends com.google.protobuf.Genera
     if (size != -1) return size;
 
     size = 0;
-    if (!getEntityTypeBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(entityType_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, entityType_);
     }
     if (modeCase_ == 3) {

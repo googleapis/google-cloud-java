@@ -545,7 +545,7 @@ public final class AutoMlImageClassificationInputs extends com.google.protobuf.G
             .getNumber()) {
       output.writeEnum(1, modelType_);
     }
-    if (!getBaseModelIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(baseModelId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, baseModelId_);
     }
     if (budgetMilliNodeHours_ != 0L) {
@@ -572,7 +572,7 @@ public final class AutoMlImageClassificationInputs extends com.google.protobuf.G
             .getNumber()) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(1, modelType_);
     }
-    if (!getBaseModelIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(baseModelId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, baseModelId_);
     }
     if (budgetMilliNodeHours_ != 0L) {

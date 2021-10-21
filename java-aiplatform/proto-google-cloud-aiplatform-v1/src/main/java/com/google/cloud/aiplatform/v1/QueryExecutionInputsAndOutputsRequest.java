@@ -186,7 +186,7 @@ public final class QueryExecutionInputsAndOutputsRequest
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getExecutionBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(execution_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, execution_);
     }
     unknownFields.writeTo(output);
@@ -198,7 +198,7 @@ public final class QueryExecutionInputsAndOutputsRequest
     if (size != -1) return size;
 
     size = 0;
-    if (!getExecutionBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(execution_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, execution_);
     }
     size += unknownFields.getSerializedSize();

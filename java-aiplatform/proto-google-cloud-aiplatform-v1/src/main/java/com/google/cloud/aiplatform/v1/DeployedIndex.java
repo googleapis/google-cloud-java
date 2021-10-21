@@ -921,13 +921,13 @@ public final class DeployedIndex extends com.google.protobuf.GeneratedMessageV3
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(id_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, id_);
     }
-    if (!getIndexBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(index_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, index_);
     }
-    if (!getDisplayNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(displayName_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, displayName_);
     }
     if (createTime_ != null) {
@@ -951,7 +951,7 @@ public final class DeployedIndex extends com.google.protobuf.GeneratedMessageV3
     for (int i = 0; i < reservedIpRanges_.size(); i++) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 10, reservedIpRanges_.getRaw(i));
     }
-    if (!getDeploymentGroupBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(deploymentGroup_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 11, deploymentGroup_);
     }
     unknownFields.writeTo(output);
@@ -963,13 +963,13 @@ public final class DeployedIndex extends com.google.protobuf.GeneratedMessageV3
     if (size != -1) return size;
 
     size = 0;
-    if (!getIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(id_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, id_);
     }
-    if (!getIndexBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(index_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, index_);
     }
-    if (!getDisplayNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(displayName_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, displayName_);
     }
     if (createTime_ != null) {
@@ -999,7 +999,7 @@ public final class DeployedIndex extends com.google.protobuf.GeneratedMessageV3
       size += dataSize;
       size += 1 * getReservedIpRangesList().size();
     }
-    if (!getDeploymentGroupBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(deploymentGroup_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(11, deploymentGroup_);
     }
     size += unknownFields.getSerializedSize();

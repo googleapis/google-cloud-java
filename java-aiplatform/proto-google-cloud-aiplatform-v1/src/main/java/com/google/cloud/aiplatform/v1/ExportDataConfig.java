@@ -320,7 +320,7 @@ public final class ExportDataConfig extends com.google.protobuf.GeneratedMessage
     if (destinationCase_ == 1) {
       output.writeMessage(1, (com.google.cloud.aiplatform.v1.GcsDestination) destination_);
     }
-    if (!getAnnotationsFilterBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(annotationsFilter_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, annotationsFilter_);
     }
     unknownFields.writeTo(output);
@@ -337,7 +337,7 @@ public final class ExportDataConfig extends com.google.protobuf.GeneratedMessage
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               1, (com.google.cloud.aiplatform.v1.GcsDestination) destination_);
     }
-    if (!getAnnotationsFilterBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(annotationsFilter_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, annotationsFilter_);
     }
     size += unknownFields.getSerializedSize();

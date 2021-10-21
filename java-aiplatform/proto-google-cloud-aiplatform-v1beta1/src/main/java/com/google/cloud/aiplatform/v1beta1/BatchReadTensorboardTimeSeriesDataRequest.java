@@ -278,7 +278,7 @@ public final class BatchReadTensorboardTimeSeriesDataRequest
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getTensorboardBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(tensorboard_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, tensorboard_);
     }
     for (int i = 0; i < timeSeries_.size(); i++) {
@@ -293,7 +293,7 @@ public final class BatchReadTensorboardTimeSeriesDataRequest
     if (size != -1) return size;
 
     size = 0;
-    if (!getTensorboardBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(tensorboard_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, tensorboard_);
     }
     {

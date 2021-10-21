@@ -249,7 +249,7 @@ public final class SuggestTrialsMetadata extends com.google.protobuf.GeneratedMe
     if (genericMetadata_ != null) {
       output.writeMessage(1, getGenericMetadata());
     }
-    if (!getClientIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(clientId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, clientId_);
     }
     unknownFields.writeTo(output);
@@ -264,7 +264,7 @@ public final class SuggestTrialsMetadata extends com.google.protobuf.GeneratedMe
     if (genericMetadata_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, getGenericMetadata());
     }
-    if (!getClientIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(clientId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, clientId_);
     }
     size += unknownFields.getSerializedSize();

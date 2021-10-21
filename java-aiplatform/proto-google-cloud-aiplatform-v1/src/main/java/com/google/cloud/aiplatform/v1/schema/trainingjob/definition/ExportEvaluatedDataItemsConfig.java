@@ -214,7 +214,7 @@ public final class ExportEvaluatedDataItemsConfig extends com.google.protobuf.Ge
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getDestinationBigqueryUriBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(destinationBigqueryUri_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, destinationBigqueryUri_);
     }
     if (overrideExistingTable_ != false) {
@@ -229,7 +229,7 @@ public final class ExportEvaluatedDataItemsConfig extends com.google.protobuf.Ge
     if (size != -1) return size;
 
     size = 0;
-    if (!getDestinationBigqueryUriBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(destinationBigqueryUri_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, destinationBigqueryUri_);
     }
     if (overrideExistingTable_ != false) {

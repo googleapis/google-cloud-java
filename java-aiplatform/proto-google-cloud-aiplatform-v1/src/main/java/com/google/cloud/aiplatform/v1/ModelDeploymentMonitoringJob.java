@@ -1891,13 +1891,13 @@ public final class ModelDeploymentMonitoringJob extends com.google.protobuf.Gene
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name_);
     }
-    if (!getDisplayNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(displayName_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, displayName_);
     }
-    if (!getEndpointBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(endpoint_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, endpoint_);
     }
     if (state_ != com.google.cloud.aiplatform.v1.JobState.JOB_STATE_UNSPECIFIED.getNumber()) {
@@ -1918,7 +1918,7 @@ public final class ModelDeploymentMonitoringJob extends com.google.protobuf.Gene
     if (loggingSamplingStrategy_ != null) {
       output.writeMessage(8, getLoggingSamplingStrategy());
     }
-    if (!getPredictInstanceSchemaUriBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(predictInstanceSchemaUri_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 9, predictInstanceSchemaUri_);
     }
     for (int i = 0; i < bigqueryTables_.size(); i++) {
@@ -1938,7 +1938,7 @@ public final class ModelDeploymentMonitoringJob extends com.google.protobuf.Gene
     if (modelMonitoringAlertConfig_ != null) {
       output.writeMessage(15, getModelMonitoringAlertConfig());
     }
-    if (!getAnalysisInstanceSchemaUriBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(analysisInstanceSchemaUri_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 16, analysisInstanceSchemaUri_);
     }
     if (logTtl_ != null) {
@@ -1968,13 +1968,13 @@ public final class ModelDeploymentMonitoringJob extends com.google.protobuf.Gene
     if (size != -1) return size;
 
     size = 0;
-    if (!getNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, name_);
     }
-    if (!getDisplayNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(displayName_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, displayName_);
     }
-    if (!getEndpointBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(endpoint_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, endpoint_);
     }
     if (state_ != com.google.cloud.aiplatform.v1.JobState.JOB_STATE_UNSPECIFIED.getNumber()) {
@@ -2000,7 +2000,7 @@ public final class ModelDeploymentMonitoringJob extends com.google.protobuf.Gene
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(8, getLoggingSamplingStrategy());
     }
-    if (!getPredictInstanceSchemaUriBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(predictInstanceSchemaUri_)) {
       size +=
           com.google.protobuf.GeneratedMessageV3.computeStringSize(9, predictInstanceSchemaUri_);
     }
@@ -2031,7 +2031,7 @@ public final class ModelDeploymentMonitoringJob extends com.google.protobuf.Gene
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               15, getModelMonitoringAlertConfig());
     }
-    if (!getAnalysisInstanceSchemaUriBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(analysisInstanceSchemaUri_)) {
       size +=
           com.google.protobuf.GeneratedMessageV3.computeStringSize(16, analysisInstanceSchemaUri_);
     }

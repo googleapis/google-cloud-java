@@ -957,7 +957,7 @@ public final class InputDataConfig extends com.google.protobuf.GeneratedMessageV
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getDatasetIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(datasetId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, datasetId_);
     }
     if (splitCase_ == 2) {
@@ -972,13 +972,13 @@ public final class InputDataConfig extends com.google.protobuf.GeneratedMessageV
     if (splitCase_ == 5) {
       output.writeMessage(5, (com.google.cloud.aiplatform.v1beta1.TimestampSplit) split_);
     }
-    if (!getAnnotationsFilterBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(annotationsFilter_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 6, annotationsFilter_);
     }
     if (destinationCase_ == 8) {
       output.writeMessage(8, (com.google.cloud.aiplatform.v1beta1.GcsDestination) destination_);
     }
-    if (!getAnnotationSchemaUriBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(annotationSchemaUri_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 9, annotationSchemaUri_);
     }
     if (destinationCase_ == 10) {
@@ -994,7 +994,7 @@ public final class InputDataConfig extends com.google.protobuf.GeneratedMessageV
     if (size != -1) return size;
 
     size = 0;
-    if (!getDatasetIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(datasetId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, datasetId_);
     }
     if (splitCase_ == 2) {
@@ -1017,7 +1017,7 @@ public final class InputDataConfig extends com.google.protobuf.GeneratedMessageV
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               5, (com.google.cloud.aiplatform.v1beta1.TimestampSplit) split_);
     }
-    if (!getAnnotationsFilterBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(annotationsFilter_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, annotationsFilter_);
     }
     if (destinationCase_ == 8) {
@@ -1025,7 +1025,7 @@ public final class InputDataConfig extends com.google.protobuf.GeneratedMessageV
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               8, (com.google.cloud.aiplatform.v1beta1.GcsDestination) destination_);
     }
-    if (!getAnnotationSchemaUriBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(annotationSchemaUri_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(9, annotationSchemaUri_);
     }
     if (destinationCase_ == 10) {

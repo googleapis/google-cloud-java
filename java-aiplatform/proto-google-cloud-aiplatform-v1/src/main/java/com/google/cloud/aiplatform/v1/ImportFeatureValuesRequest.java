@@ -495,10 +495,10 @@ public final class ImportFeatureValuesRequest extends com.google.protobuf.Genera
 
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-      if (!getIdBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(id_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, id_);
       }
-      if (!getSourceFieldBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(sourceField_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, sourceField_);
       }
       unknownFields.writeTo(output);
@@ -510,10 +510,10 @@ public final class ImportFeatureValuesRequest extends com.google.protobuf.Genera
       if (size != -1) return size;
 
       size = 0;
-      if (!getIdBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(id_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, id_);
       }
-      if (!getSourceFieldBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(sourceField_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, sourceField_);
       }
       size += unknownFields.getSerializedSize();
@@ -1685,7 +1685,7 @@ public final class ImportFeatureValuesRequest extends com.google.protobuf.Genera
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getEntityTypeBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(entityType_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, entityType_);
     }
     if (sourceCase_ == 2) {
@@ -1697,7 +1697,7 @@ public final class ImportFeatureValuesRequest extends com.google.protobuf.Genera
     if (sourceCase_ == 4) {
       output.writeMessage(4, (com.google.cloud.aiplatform.v1.CsvSource) source_);
     }
-    if (!getEntityIdFieldBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(entityIdField_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 5, entityIdField_);
     }
     if (featureTimeSourceCase_ == 6) {
@@ -1724,7 +1724,7 @@ public final class ImportFeatureValuesRequest extends com.google.protobuf.Genera
     if (size != -1) return size;
 
     size = 0;
-    if (!getEntityTypeBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(entityType_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, entityType_);
     }
     if (sourceCase_ == 2) {
@@ -1742,7 +1742,7 @@ public final class ImportFeatureValuesRequest extends com.google.protobuf.Genera
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               4, (com.google.cloud.aiplatform.v1.CsvSource) source_);
     }
-    if (!getEntityIdFieldBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(entityIdField_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, entityIdField_);
     }
     if (featureTimeSourceCase_ == 6) {

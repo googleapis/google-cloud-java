@@ -312,13 +312,13 @@ public final class CreateTensorboardExperimentRequest extends com.google.protobu
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getParentBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(parent_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, parent_);
     }
     if (tensorboardExperiment_ != null) {
       output.writeMessage(2, getTensorboardExperiment());
     }
-    if (!getTensorboardExperimentIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(tensorboardExperimentId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, tensorboardExperimentId_);
     }
     unknownFields.writeTo(output);
@@ -330,14 +330,14 @@ public final class CreateTensorboardExperimentRequest extends com.google.protobu
     if (size != -1) return size;
 
     size = 0;
-    if (!getParentBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(parent_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, parent_);
     }
     if (tensorboardExperiment_ != null) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(2, getTensorboardExperiment());
     }
-    if (!getTensorboardExperimentIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(tensorboardExperimentId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, tensorboardExperimentId_);
     }
     size += unknownFields.getSerializedSize();

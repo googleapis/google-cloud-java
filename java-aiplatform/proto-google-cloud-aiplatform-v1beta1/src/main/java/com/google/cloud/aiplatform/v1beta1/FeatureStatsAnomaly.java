@@ -483,10 +483,10 @@ public final class FeatureStatsAnomaly extends com.google.protobuf.GeneratedMess
     if (score_ != 0D) {
       output.writeDouble(1, score_);
     }
-    if (!getStatsUriBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(statsUri_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, statsUri_);
     }
-    if (!getAnomalyUriBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(anomalyUri_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 4, anomalyUri_);
     }
     if (distributionDeviation_ != 0D) {
@@ -513,10 +513,10 @@ public final class FeatureStatsAnomaly extends com.google.protobuf.GeneratedMess
     if (score_ != 0D) {
       size += com.google.protobuf.CodedOutputStream.computeDoubleSize(1, score_);
     }
-    if (!getStatsUriBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(statsUri_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, statsUri_);
     }
-    if (!getAnomalyUriBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(anomalyUri_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, anomalyUri_);
     }
     if (distributionDeviation_ != 0D) {

@@ -159,9 +159,7 @@ public final class LineageSubgraph extends com.google.protobuf.GeneratedMessageV
    * The Artifact nodes in the subgraph.
    * </pre>
    *
-   * <code>
-   * repeated .google.cloud.aiplatform.v1.Artifact artifacts = 1 [(.google.api.resource_reference) = { ... }
-   * </code>
+   * <code>repeated .google.cloud.aiplatform.v1.Artifact artifacts = 1;</code>
    */
   @java.lang.Override
   public java.util.List<com.google.cloud.aiplatform.v1.Artifact> getArtifactsList() {
@@ -174,9 +172,7 @@ public final class LineageSubgraph extends com.google.protobuf.GeneratedMessageV
    * The Artifact nodes in the subgraph.
    * </pre>
    *
-   * <code>
-   * repeated .google.cloud.aiplatform.v1.Artifact artifacts = 1 [(.google.api.resource_reference) = { ... }
-   * </code>
+   * <code>repeated .google.cloud.aiplatform.v1.Artifact artifacts = 1;</code>
    */
   @java.lang.Override
   public java.util.List<? extends com.google.cloud.aiplatform.v1.ArtifactOrBuilder>
@@ -190,9 +186,7 @@ public final class LineageSubgraph extends com.google.protobuf.GeneratedMessageV
    * The Artifact nodes in the subgraph.
    * </pre>
    *
-   * <code>
-   * repeated .google.cloud.aiplatform.v1.Artifact artifacts = 1 [(.google.api.resource_reference) = { ... }
-   * </code>
+   * <code>repeated .google.cloud.aiplatform.v1.Artifact artifacts = 1;</code>
    */
   @java.lang.Override
   public int getArtifactsCount() {
@@ -205,9 +199,7 @@ public final class LineageSubgraph extends com.google.protobuf.GeneratedMessageV
    * The Artifact nodes in the subgraph.
    * </pre>
    *
-   * <code>
-   * repeated .google.cloud.aiplatform.v1.Artifact artifacts = 1 [(.google.api.resource_reference) = { ... }
-   * </code>
+   * <code>repeated .google.cloud.aiplatform.v1.Artifact artifacts = 1;</code>
    */
   @java.lang.Override
   public com.google.cloud.aiplatform.v1.Artifact getArtifacts(int index) {
@@ -220,9 +212,7 @@ public final class LineageSubgraph extends com.google.protobuf.GeneratedMessageV
    * The Artifact nodes in the subgraph.
    * </pre>
    *
-   * <code>
-   * repeated .google.cloud.aiplatform.v1.Artifact artifacts = 1 [(.google.api.resource_reference) = { ... }
-   * </code>
+   * <code>repeated .google.cloud.aiplatform.v1.Artifact artifacts = 1;</code>
    */
   @java.lang.Override
   public com.google.cloud.aiplatform.v1.ArtifactOrBuilder getArtifactsOrBuilder(int index) {
@@ -238,9 +228,7 @@ public final class LineageSubgraph extends com.google.protobuf.GeneratedMessageV
    * The Execution nodes in the subgraph.
    * </pre>
    *
-   * <code>
-   * repeated .google.cloud.aiplatform.v1.Execution executions = 2 [(.google.api.resource_reference) = { ... }
-   * </code>
+   * <code>repeated .google.cloud.aiplatform.v1.Execution executions = 2;</code>
    */
   @java.lang.Override
   public java.util.List<com.google.cloud.aiplatform.v1.Execution> getExecutionsList() {
@@ -253,9 +241,7 @@ public final class LineageSubgraph extends com.google.protobuf.GeneratedMessageV
    * The Execution nodes in the subgraph.
    * </pre>
    *
-   * <code>
-   * repeated .google.cloud.aiplatform.v1.Execution executions = 2 [(.google.api.resource_reference) = { ... }
-   * </code>
+   * <code>repeated .google.cloud.aiplatform.v1.Execution executions = 2;</code>
    */
   @java.lang.Override
   public java.util.List<? extends com.google.cloud.aiplatform.v1.ExecutionOrBuilder>
@@ -269,9 +255,7 @@ public final class LineageSubgraph extends com.google.protobuf.GeneratedMessageV
    * The Execution nodes in the subgraph.
    * </pre>
    *
-   * <code>
-   * repeated .google.cloud.aiplatform.v1.Execution executions = 2 [(.google.api.resource_reference) = { ... }
-   * </code>
+   * <code>repeated .google.cloud.aiplatform.v1.Execution executions = 2;</code>
    */
   @java.lang.Override
   public int getExecutionsCount() {
@@ -284,9 +268,7 @@ public final class LineageSubgraph extends com.google.protobuf.GeneratedMessageV
    * The Execution nodes in the subgraph.
    * </pre>
    *
-   * <code>
-   * repeated .google.cloud.aiplatform.v1.Execution executions = 2 [(.google.api.resource_reference) = { ... }
-   * </code>
+   * <code>repeated .google.cloud.aiplatform.v1.Execution executions = 2;</code>
    */
   @java.lang.Override
   public com.google.cloud.aiplatform.v1.Execution getExecutions(int index) {
@@ -299,9 +281,7 @@ public final class LineageSubgraph extends com.google.protobuf.GeneratedMessageV
    * The Execution nodes in the subgraph.
    * </pre>
    *
-   * <code>
-   * repeated .google.cloud.aiplatform.v1.Execution executions = 2 [(.google.api.resource_reference) = { ... }
-   * </code>
+   * <code>repeated .google.cloud.aiplatform.v1.Execution executions = 2;</code>
    */
   @java.lang.Override
   public com.google.cloud.aiplatform.v1.ExecutionOrBuilder getExecutionsOrBuilder(int index) {
@@ -867,9 +847,7 @@ public final class LineageSubgraph extends com.google.protobuf.GeneratedMessageV
      * The Artifact nodes in the subgraph.
      * </pre>
      *
-     * <code>
-     * repeated .google.cloud.aiplatform.v1.Artifact artifacts = 1 [(.google.api.resource_reference) = { ... }
-     * </code>
+     * <code>repeated .google.cloud.aiplatform.v1.Artifact artifacts = 1;</code>
      */
     public java.util.List<com.google.cloud.aiplatform.v1.Artifact> getArtifactsList() {
       if (artifactsBuilder_ == null) {
@@ -885,9 +863,7 @@ public final class LineageSubgraph extends com.google.protobuf.GeneratedMessageV
      * The Artifact nodes in the subgraph.
      * </pre>
      *
-     * <code>
-     * repeated .google.cloud.aiplatform.v1.Artifact artifacts = 1 [(.google.api.resource_reference) = { ... }
-     * </code>
+     * <code>repeated .google.cloud.aiplatform.v1.Artifact artifacts = 1;</code>
      */
     public int getArtifactsCount() {
       if (artifactsBuilder_ == null) {
@@ -903,9 +879,7 @@ public final class LineageSubgraph extends com.google.protobuf.GeneratedMessageV
      * The Artifact nodes in the subgraph.
      * </pre>
      *
-     * <code>
-     * repeated .google.cloud.aiplatform.v1.Artifact artifacts = 1 [(.google.api.resource_reference) = { ... }
-     * </code>
+     * <code>repeated .google.cloud.aiplatform.v1.Artifact artifacts = 1;</code>
      */
     public com.google.cloud.aiplatform.v1.Artifact getArtifacts(int index) {
       if (artifactsBuilder_ == null) {
@@ -921,9 +895,7 @@ public final class LineageSubgraph extends com.google.protobuf.GeneratedMessageV
      * The Artifact nodes in the subgraph.
      * </pre>
      *
-     * <code>
-     * repeated .google.cloud.aiplatform.v1.Artifact artifacts = 1 [(.google.api.resource_reference) = { ... }
-     * </code>
+     * <code>repeated .google.cloud.aiplatform.v1.Artifact artifacts = 1;</code>
      */
     public Builder setArtifacts(int index, com.google.cloud.aiplatform.v1.Artifact value) {
       if (artifactsBuilder_ == null) {
@@ -945,9 +917,7 @@ public final class LineageSubgraph extends com.google.protobuf.GeneratedMessageV
      * The Artifact nodes in the subgraph.
      * </pre>
      *
-     * <code>
-     * repeated .google.cloud.aiplatform.v1.Artifact artifacts = 1 [(.google.api.resource_reference) = { ... }
-     * </code>
+     * <code>repeated .google.cloud.aiplatform.v1.Artifact artifacts = 1;</code>
      */
     public Builder setArtifacts(
         int index, com.google.cloud.aiplatform.v1.Artifact.Builder builderForValue) {
@@ -967,9 +937,7 @@ public final class LineageSubgraph extends com.google.protobuf.GeneratedMessageV
      * The Artifact nodes in the subgraph.
      * </pre>
      *
-     * <code>
-     * repeated .google.cloud.aiplatform.v1.Artifact artifacts = 1 [(.google.api.resource_reference) = { ... }
-     * </code>
+     * <code>repeated .google.cloud.aiplatform.v1.Artifact artifacts = 1;</code>
      */
     public Builder addArtifacts(com.google.cloud.aiplatform.v1.Artifact value) {
       if (artifactsBuilder_ == null) {
@@ -991,9 +959,7 @@ public final class LineageSubgraph extends com.google.protobuf.GeneratedMessageV
      * The Artifact nodes in the subgraph.
      * </pre>
      *
-     * <code>
-     * repeated .google.cloud.aiplatform.v1.Artifact artifacts = 1 [(.google.api.resource_reference) = { ... }
-     * </code>
+     * <code>repeated .google.cloud.aiplatform.v1.Artifact artifacts = 1;</code>
      */
     public Builder addArtifacts(int index, com.google.cloud.aiplatform.v1.Artifact value) {
       if (artifactsBuilder_ == null) {
@@ -1015,9 +981,7 @@ public final class LineageSubgraph extends com.google.protobuf.GeneratedMessageV
      * The Artifact nodes in the subgraph.
      * </pre>
      *
-     * <code>
-     * repeated .google.cloud.aiplatform.v1.Artifact artifacts = 1 [(.google.api.resource_reference) = { ... }
-     * </code>
+     * <code>repeated .google.cloud.aiplatform.v1.Artifact artifacts = 1;</code>
      */
     public Builder addArtifacts(com.google.cloud.aiplatform.v1.Artifact.Builder builderForValue) {
       if (artifactsBuilder_ == null) {
@@ -1036,9 +1000,7 @@ public final class LineageSubgraph extends com.google.protobuf.GeneratedMessageV
      * The Artifact nodes in the subgraph.
      * </pre>
      *
-     * <code>
-     * repeated .google.cloud.aiplatform.v1.Artifact artifacts = 1 [(.google.api.resource_reference) = { ... }
-     * </code>
+     * <code>repeated .google.cloud.aiplatform.v1.Artifact artifacts = 1;</code>
      */
     public Builder addArtifacts(
         int index, com.google.cloud.aiplatform.v1.Artifact.Builder builderForValue) {
@@ -1058,9 +1020,7 @@ public final class LineageSubgraph extends com.google.protobuf.GeneratedMessageV
      * The Artifact nodes in the subgraph.
      * </pre>
      *
-     * <code>
-     * repeated .google.cloud.aiplatform.v1.Artifact artifacts = 1 [(.google.api.resource_reference) = { ... }
-     * </code>
+     * <code>repeated .google.cloud.aiplatform.v1.Artifact artifacts = 1;</code>
      */
     public Builder addAllArtifacts(
         java.lang.Iterable<? extends com.google.cloud.aiplatform.v1.Artifact> values) {
@@ -1080,9 +1040,7 @@ public final class LineageSubgraph extends com.google.protobuf.GeneratedMessageV
      * The Artifact nodes in the subgraph.
      * </pre>
      *
-     * <code>
-     * repeated .google.cloud.aiplatform.v1.Artifact artifacts = 1 [(.google.api.resource_reference) = { ... }
-     * </code>
+     * <code>repeated .google.cloud.aiplatform.v1.Artifact artifacts = 1;</code>
      */
     public Builder clearArtifacts() {
       if (artifactsBuilder_ == null) {
@@ -1101,9 +1059,7 @@ public final class LineageSubgraph extends com.google.protobuf.GeneratedMessageV
      * The Artifact nodes in the subgraph.
      * </pre>
      *
-     * <code>
-     * repeated .google.cloud.aiplatform.v1.Artifact artifacts = 1 [(.google.api.resource_reference) = { ... }
-     * </code>
+     * <code>repeated .google.cloud.aiplatform.v1.Artifact artifacts = 1;</code>
      */
     public Builder removeArtifacts(int index) {
       if (artifactsBuilder_ == null) {
@@ -1122,9 +1078,7 @@ public final class LineageSubgraph extends com.google.protobuf.GeneratedMessageV
      * The Artifact nodes in the subgraph.
      * </pre>
      *
-     * <code>
-     * repeated .google.cloud.aiplatform.v1.Artifact artifacts = 1 [(.google.api.resource_reference) = { ... }
-     * </code>
+     * <code>repeated .google.cloud.aiplatform.v1.Artifact artifacts = 1;</code>
      */
     public com.google.cloud.aiplatform.v1.Artifact.Builder getArtifactsBuilder(int index) {
       return getArtifactsFieldBuilder().getBuilder(index);
@@ -1136,9 +1090,7 @@ public final class LineageSubgraph extends com.google.protobuf.GeneratedMessageV
      * The Artifact nodes in the subgraph.
      * </pre>
      *
-     * <code>
-     * repeated .google.cloud.aiplatform.v1.Artifact artifacts = 1 [(.google.api.resource_reference) = { ... }
-     * </code>
+     * <code>repeated .google.cloud.aiplatform.v1.Artifact artifacts = 1;</code>
      */
     public com.google.cloud.aiplatform.v1.ArtifactOrBuilder getArtifactsOrBuilder(int index) {
       if (artifactsBuilder_ == null) {
@@ -1154,9 +1106,7 @@ public final class LineageSubgraph extends com.google.protobuf.GeneratedMessageV
      * The Artifact nodes in the subgraph.
      * </pre>
      *
-     * <code>
-     * repeated .google.cloud.aiplatform.v1.Artifact artifacts = 1 [(.google.api.resource_reference) = { ... }
-     * </code>
+     * <code>repeated .google.cloud.aiplatform.v1.Artifact artifacts = 1;</code>
      */
     public java.util.List<? extends com.google.cloud.aiplatform.v1.ArtifactOrBuilder>
         getArtifactsOrBuilderList() {
@@ -1173,9 +1123,7 @@ public final class LineageSubgraph extends com.google.protobuf.GeneratedMessageV
      * The Artifact nodes in the subgraph.
      * </pre>
      *
-     * <code>
-     * repeated .google.cloud.aiplatform.v1.Artifact artifacts = 1 [(.google.api.resource_reference) = { ... }
-     * </code>
+     * <code>repeated .google.cloud.aiplatform.v1.Artifact artifacts = 1;</code>
      */
     public com.google.cloud.aiplatform.v1.Artifact.Builder addArtifactsBuilder() {
       return getArtifactsFieldBuilder()
@@ -1188,9 +1136,7 @@ public final class LineageSubgraph extends com.google.protobuf.GeneratedMessageV
      * The Artifact nodes in the subgraph.
      * </pre>
      *
-     * <code>
-     * repeated .google.cloud.aiplatform.v1.Artifact artifacts = 1 [(.google.api.resource_reference) = { ... }
-     * </code>
+     * <code>repeated .google.cloud.aiplatform.v1.Artifact artifacts = 1;</code>
      */
     public com.google.cloud.aiplatform.v1.Artifact.Builder addArtifactsBuilder(int index) {
       return getArtifactsFieldBuilder()
@@ -1203,9 +1149,7 @@ public final class LineageSubgraph extends com.google.protobuf.GeneratedMessageV
      * The Artifact nodes in the subgraph.
      * </pre>
      *
-     * <code>
-     * repeated .google.cloud.aiplatform.v1.Artifact artifacts = 1 [(.google.api.resource_reference) = { ... }
-     * </code>
+     * <code>repeated .google.cloud.aiplatform.v1.Artifact artifacts = 1;</code>
      */
     public java.util.List<com.google.cloud.aiplatform.v1.Artifact.Builder>
         getArtifactsBuilderList() {
@@ -1253,9 +1197,7 @@ public final class LineageSubgraph extends com.google.protobuf.GeneratedMessageV
      * The Execution nodes in the subgraph.
      * </pre>
      *
-     * <code>
-     * repeated .google.cloud.aiplatform.v1.Execution executions = 2 [(.google.api.resource_reference) = { ... }
-     * </code>
+     * <code>repeated .google.cloud.aiplatform.v1.Execution executions = 2;</code>
      */
     public java.util.List<com.google.cloud.aiplatform.v1.Execution> getExecutionsList() {
       if (executionsBuilder_ == null) {
@@ -1271,9 +1213,7 @@ public final class LineageSubgraph extends com.google.protobuf.GeneratedMessageV
      * The Execution nodes in the subgraph.
      * </pre>
      *
-     * <code>
-     * repeated .google.cloud.aiplatform.v1.Execution executions = 2 [(.google.api.resource_reference) = { ... }
-     * </code>
+     * <code>repeated .google.cloud.aiplatform.v1.Execution executions = 2;</code>
      */
     public int getExecutionsCount() {
       if (executionsBuilder_ == null) {
@@ -1289,9 +1229,7 @@ public final class LineageSubgraph extends com.google.protobuf.GeneratedMessageV
      * The Execution nodes in the subgraph.
      * </pre>
      *
-     * <code>
-     * repeated .google.cloud.aiplatform.v1.Execution executions = 2 [(.google.api.resource_reference) = { ... }
-     * </code>
+     * <code>repeated .google.cloud.aiplatform.v1.Execution executions = 2;</code>
      */
     public com.google.cloud.aiplatform.v1.Execution getExecutions(int index) {
       if (executionsBuilder_ == null) {
@@ -1307,9 +1245,7 @@ public final class LineageSubgraph extends com.google.protobuf.GeneratedMessageV
      * The Execution nodes in the subgraph.
      * </pre>
      *
-     * <code>
-     * repeated .google.cloud.aiplatform.v1.Execution executions = 2 [(.google.api.resource_reference) = { ... }
-     * </code>
+     * <code>repeated .google.cloud.aiplatform.v1.Execution executions = 2;</code>
      */
     public Builder setExecutions(int index, com.google.cloud.aiplatform.v1.Execution value) {
       if (executionsBuilder_ == null) {
@@ -1331,9 +1267,7 @@ public final class LineageSubgraph extends com.google.protobuf.GeneratedMessageV
      * The Execution nodes in the subgraph.
      * </pre>
      *
-     * <code>
-     * repeated .google.cloud.aiplatform.v1.Execution executions = 2 [(.google.api.resource_reference) = { ... }
-     * </code>
+     * <code>repeated .google.cloud.aiplatform.v1.Execution executions = 2;</code>
      */
     public Builder setExecutions(
         int index, com.google.cloud.aiplatform.v1.Execution.Builder builderForValue) {
@@ -1353,9 +1287,7 @@ public final class LineageSubgraph extends com.google.protobuf.GeneratedMessageV
      * The Execution nodes in the subgraph.
      * </pre>
      *
-     * <code>
-     * repeated .google.cloud.aiplatform.v1.Execution executions = 2 [(.google.api.resource_reference) = { ... }
-     * </code>
+     * <code>repeated .google.cloud.aiplatform.v1.Execution executions = 2;</code>
      */
     public Builder addExecutions(com.google.cloud.aiplatform.v1.Execution value) {
       if (executionsBuilder_ == null) {
@@ -1377,9 +1309,7 @@ public final class LineageSubgraph extends com.google.protobuf.GeneratedMessageV
      * The Execution nodes in the subgraph.
      * </pre>
      *
-     * <code>
-     * repeated .google.cloud.aiplatform.v1.Execution executions = 2 [(.google.api.resource_reference) = { ... }
-     * </code>
+     * <code>repeated .google.cloud.aiplatform.v1.Execution executions = 2;</code>
      */
     public Builder addExecutions(int index, com.google.cloud.aiplatform.v1.Execution value) {
       if (executionsBuilder_ == null) {
@@ -1401,9 +1331,7 @@ public final class LineageSubgraph extends com.google.protobuf.GeneratedMessageV
      * The Execution nodes in the subgraph.
      * </pre>
      *
-     * <code>
-     * repeated .google.cloud.aiplatform.v1.Execution executions = 2 [(.google.api.resource_reference) = { ... }
-     * </code>
+     * <code>repeated .google.cloud.aiplatform.v1.Execution executions = 2;</code>
      */
     public Builder addExecutions(com.google.cloud.aiplatform.v1.Execution.Builder builderForValue) {
       if (executionsBuilder_ == null) {
@@ -1422,9 +1350,7 @@ public final class LineageSubgraph extends com.google.protobuf.GeneratedMessageV
      * The Execution nodes in the subgraph.
      * </pre>
      *
-     * <code>
-     * repeated .google.cloud.aiplatform.v1.Execution executions = 2 [(.google.api.resource_reference) = { ... }
-     * </code>
+     * <code>repeated .google.cloud.aiplatform.v1.Execution executions = 2;</code>
      */
     public Builder addExecutions(
         int index, com.google.cloud.aiplatform.v1.Execution.Builder builderForValue) {
@@ -1444,9 +1370,7 @@ public final class LineageSubgraph extends com.google.protobuf.GeneratedMessageV
      * The Execution nodes in the subgraph.
      * </pre>
      *
-     * <code>
-     * repeated .google.cloud.aiplatform.v1.Execution executions = 2 [(.google.api.resource_reference) = { ... }
-     * </code>
+     * <code>repeated .google.cloud.aiplatform.v1.Execution executions = 2;</code>
      */
     public Builder addAllExecutions(
         java.lang.Iterable<? extends com.google.cloud.aiplatform.v1.Execution> values) {
@@ -1466,9 +1390,7 @@ public final class LineageSubgraph extends com.google.protobuf.GeneratedMessageV
      * The Execution nodes in the subgraph.
      * </pre>
      *
-     * <code>
-     * repeated .google.cloud.aiplatform.v1.Execution executions = 2 [(.google.api.resource_reference) = { ... }
-     * </code>
+     * <code>repeated .google.cloud.aiplatform.v1.Execution executions = 2;</code>
      */
     public Builder clearExecutions() {
       if (executionsBuilder_ == null) {
@@ -1487,9 +1409,7 @@ public final class LineageSubgraph extends com.google.protobuf.GeneratedMessageV
      * The Execution nodes in the subgraph.
      * </pre>
      *
-     * <code>
-     * repeated .google.cloud.aiplatform.v1.Execution executions = 2 [(.google.api.resource_reference) = { ... }
-     * </code>
+     * <code>repeated .google.cloud.aiplatform.v1.Execution executions = 2;</code>
      */
     public Builder removeExecutions(int index) {
       if (executionsBuilder_ == null) {
@@ -1508,9 +1428,7 @@ public final class LineageSubgraph extends com.google.protobuf.GeneratedMessageV
      * The Execution nodes in the subgraph.
      * </pre>
      *
-     * <code>
-     * repeated .google.cloud.aiplatform.v1.Execution executions = 2 [(.google.api.resource_reference) = { ... }
-     * </code>
+     * <code>repeated .google.cloud.aiplatform.v1.Execution executions = 2;</code>
      */
     public com.google.cloud.aiplatform.v1.Execution.Builder getExecutionsBuilder(int index) {
       return getExecutionsFieldBuilder().getBuilder(index);
@@ -1522,9 +1440,7 @@ public final class LineageSubgraph extends com.google.protobuf.GeneratedMessageV
      * The Execution nodes in the subgraph.
      * </pre>
      *
-     * <code>
-     * repeated .google.cloud.aiplatform.v1.Execution executions = 2 [(.google.api.resource_reference) = { ... }
-     * </code>
+     * <code>repeated .google.cloud.aiplatform.v1.Execution executions = 2;</code>
      */
     public com.google.cloud.aiplatform.v1.ExecutionOrBuilder getExecutionsOrBuilder(int index) {
       if (executionsBuilder_ == null) {
@@ -1540,9 +1456,7 @@ public final class LineageSubgraph extends com.google.protobuf.GeneratedMessageV
      * The Execution nodes in the subgraph.
      * </pre>
      *
-     * <code>
-     * repeated .google.cloud.aiplatform.v1.Execution executions = 2 [(.google.api.resource_reference) = { ... }
-     * </code>
+     * <code>repeated .google.cloud.aiplatform.v1.Execution executions = 2;</code>
      */
     public java.util.List<? extends com.google.cloud.aiplatform.v1.ExecutionOrBuilder>
         getExecutionsOrBuilderList() {
@@ -1559,9 +1473,7 @@ public final class LineageSubgraph extends com.google.protobuf.GeneratedMessageV
      * The Execution nodes in the subgraph.
      * </pre>
      *
-     * <code>
-     * repeated .google.cloud.aiplatform.v1.Execution executions = 2 [(.google.api.resource_reference) = { ... }
-     * </code>
+     * <code>repeated .google.cloud.aiplatform.v1.Execution executions = 2;</code>
      */
     public com.google.cloud.aiplatform.v1.Execution.Builder addExecutionsBuilder() {
       return getExecutionsFieldBuilder()
@@ -1574,9 +1486,7 @@ public final class LineageSubgraph extends com.google.protobuf.GeneratedMessageV
      * The Execution nodes in the subgraph.
      * </pre>
      *
-     * <code>
-     * repeated .google.cloud.aiplatform.v1.Execution executions = 2 [(.google.api.resource_reference) = { ... }
-     * </code>
+     * <code>repeated .google.cloud.aiplatform.v1.Execution executions = 2;</code>
      */
     public com.google.cloud.aiplatform.v1.Execution.Builder addExecutionsBuilder(int index) {
       return getExecutionsFieldBuilder()
@@ -1589,9 +1499,7 @@ public final class LineageSubgraph extends com.google.protobuf.GeneratedMessageV
      * The Execution nodes in the subgraph.
      * </pre>
      *
-     * <code>
-     * repeated .google.cloud.aiplatform.v1.Execution executions = 2 [(.google.api.resource_reference) = { ... }
-     * </code>
+     * <code>repeated .google.cloud.aiplatform.v1.Execution executions = 2;</code>
      */
     public java.util.List<com.google.cloud.aiplatform.v1.Execution.Builder>
         getExecutionsBuilderList() {
