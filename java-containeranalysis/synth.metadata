@@ -4,7 +4,7 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/java-containeranalysis.git",
-        "sha": "e82b1fc8fd69b6fd8711fa0c576ceb2897f00c3a"
+        "sha": "345cd80877bce3c41d30809461d176d25310b5cf"
       }
     },
     {
@@ -19,7 +19,7 @@
       "git": {
         "name": "synthtool",
         "remote": "https://github.com/googleapis/synthtool.git",
-        "sha": "a4be3384ccb92364795d981f2863f6986fcee620"
+        "sha": "d45942be8066ad57bd0509f4a16e1fac78ecc50f"
       }
     }
   ],
@@ -71,6 +71,7 @@
     ".kokoro/presubmit/clirr.cfg",
     ".kokoro/presubmit/common.cfg",
     ".kokoro/presubmit/dependencies.cfg",
+    ".kokoro/presubmit/graalvm-native.cfg",
     ".kokoro/presubmit/integration.cfg",
     ".kokoro/presubmit/java11.cfg",
     ".kokoro/presubmit/java7.cfg",
