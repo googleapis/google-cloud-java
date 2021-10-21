@@ -266,7 +266,7 @@ public final class ListFilesResponse extends com.google.protobuf.GeneratedMessag
     for (int i = 0; i < files_.size(); i++) {
       output.writeMessage(1, files_.get(i));
     }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(nextPageToken_)) {
+    if (!getNextPageTokenBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, nextPageToken_);
     }
     unknownFields.writeTo(output);
@@ -281,7 +281,7 @@ public final class ListFilesResponse extends com.google.protobuf.GeneratedMessag
     for (int i = 0; i < files_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, files_.get(i));
     }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(nextPageToken_)) {
+    if (!getNextPageTokenBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, nextPageToken_);
     }
     size += unknownFields.getSerializedSize();

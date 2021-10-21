@@ -265,7 +265,7 @@ public final class ListTagsResponse extends com.google.protobuf.GeneratedMessage
     for (int i = 0; i < tags_.size(); i++) {
       output.writeMessage(1, tags_.get(i));
     }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(nextPageToken_)) {
+    if (!getNextPageTokenBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, nextPageToken_);
     }
     unknownFields.writeTo(output);
@@ -280,7 +280,7 @@ public final class ListTagsResponse extends com.google.protobuf.GeneratedMessage
     for (int i = 0; i < tags_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, tags_.get(i));
     }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(nextPageToken_)) {
+    if (!getNextPageTokenBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, nextPageToken_);
     }
     size += unknownFields.getSerializedSize();

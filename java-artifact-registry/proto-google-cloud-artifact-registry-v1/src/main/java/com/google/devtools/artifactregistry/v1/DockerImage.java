@@ -25,9 +25,9 @@ package com.google.devtools.artifactregistry.v1;
  * DockerImage represents a docker artifact.
  * The following fields are returned as untyped metadata in the Version
  * resource, using camelcase keys (i.e. metadata.imageSizeBytes):
- * * imageSizeBytes
- * * mediaType
- * * buildTime
+ *   - imageSizeBytes
+ *   - mediaType
+ *   - buildTime
  * </pre>
  *
  * Protobuf type {@code google.devtools.artifactregistry.v1.DockerImage}
@@ -556,10 +556,10 @@ public final class DockerImage extends com.google.protobuf.GeneratedMessageV3
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
+    if (!getNameBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name_);
     }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(uri_)) {
+    if (!getUriBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, uri_);
     }
     for (int i = 0; i < tags_.size(); i++) {
@@ -571,7 +571,7 @@ public final class DockerImage extends com.google.protobuf.GeneratedMessageV3
     if (uploadTime_ != null) {
       output.writeMessage(5, getUploadTime());
     }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(mediaType_)) {
+    if (!getMediaTypeBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 6, mediaType_);
     }
     if (buildTime_ != null) {
@@ -586,10 +586,10 @@ public final class DockerImage extends com.google.protobuf.GeneratedMessageV3
     if (size != -1) return size;
 
     size = 0;
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
+    if (!getNameBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, name_);
     }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(uri_)) {
+    if (!getUriBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, uri_);
     }
     {
@@ -606,7 +606,7 @@ public final class DockerImage extends com.google.protobuf.GeneratedMessageV3
     if (uploadTime_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(5, getUploadTime());
     }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(mediaType_)) {
+    if (!getMediaTypeBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, mediaType_);
     }
     if (buildTime_ != null) {
@@ -779,9 +779,9 @@ public final class DockerImage extends com.google.protobuf.GeneratedMessageV3
    * DockerImage represents a docker artifact.
    * The following fields are returned as untyped metadata in the Version
    * resource, using camelcase keys (i.e. metadata.imageSizeBytes):
-   * * imageSizeBytes
-   * * mediaType
-   * * buildTime
+   *   - imageSizeBytes
+   *   - mediaType
+   *   - buildTime
    * </pre>
    *
    * Protobuf type {@code google.devtools.artifactregistry.v1.DockerImage}

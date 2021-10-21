@@ -267,7 +267,7 @@ public final class ListVersionsResponse extends com.google.protobuf.GeneratedMes
     for (int i = 0; i < versions_.size(); i++) {
       output.writeMessage(1, versions_.get(i));
     }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(nextPageToken_)) {
+    if (!getNextPageTokenBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, nextPageToken_);
     }
     unknownFields.writeTo(output);
@@ -282,7 +282,7 @@ public final class ListVersionsResponse extends com.google.protobuf.GeneratedMes
     for (int i = 0; i < versions_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, versions_.get(i));
     }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(nextPageToken_)) {
+    if (!getNextPageTokenBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, nextPageToken_);
     }
     size += unknownFields.getSerializedSize();

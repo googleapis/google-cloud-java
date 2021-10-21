@@ -327,16 +327,16 @@ public final class ListFilesRequest extends com.google.protobuf.GeneratedMessage
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(parent_)) {
+    if (!getParentBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, parent_);
     }
     if (pageSize_ != 0) {
       output.writeInt32(2, pageSize_);
     }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(pageToken_)) {
+    if (!getPageTokenBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, pageToken_);
     }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(filter_)) {
+    if (!getFilterBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 4, filter_);
     }
     unknownFields.writeTo(output);
@@ -348,16 +348,16 @@ public final class ListFilesRequest extends com.google.protobuf.GeneratedMessage
     if (size != -1) return size;
 
     size = 0;
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(parent_)) {
+    if (!getParentBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, parent_);
     }
     if (pageSize_ != 0) {
       size += com.google.protobuf.CodedOutputStream.computeInt32Size(2, pageSize_);
     }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(pageToken_)) {
+    if (!getPageTokenBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, pageToken_);
     }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(filter_)) {
+    if (!getFilterBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, filter_);
     }
     size += unknownFields.getSerializedSize();
