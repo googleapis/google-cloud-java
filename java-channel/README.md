@@ -19,7 +19,7 @@ If you are using Maven, add this to your pom.xml file:
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-channel</artifactId>
-  <version>3.2.1</version>
+  <version>3.2.2</version>
 </dependency>
 
 ```
