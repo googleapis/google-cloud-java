@@ -1,5 +1,27 @@
 # Changelog
 
+## [4.2.0](https://www.github.com/googleapis/java-dialogflow/compare/v4.1.7...v4.2.0) (2021-10-21)
+
+
+### Features
+
+* added support for TelephonyTransferCall in Participant ResponseMessage ([#736](https://www.github.com/googleapis/java-dialogflow/issues/736)) ([d94ab52](https://www.github.com/googleapis/java-dialogflow/commit/d94ab525a256da701eba66e5b42b83d1b8a1b01b))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-core to v2.1.8 ([#749](https://www.github.com/googleapis/java-dialogflow/issues/749)) ([dba1478](https://www.github.com/googleapis/java-dialogflow/commit/dba14789e459ab05be92763b3cb49e59524edc64))
+* update dependency com.google.cloud:google-cloud-core to v2.2.0 ([#751](https://www.github.com/googleapis/java-dialogflow/issues/751)) ([c473f05](https://www.github.com/googleapis/java-dialogflow/commit/c473f05be1c96101d0675ec436ce7b9b3aaefe54))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.4.0 ([#752](https://www.github.com/googleapis/java-dialogflow/issues/752)) ([55bd28f](https://www.github.com/googleapis/java-dialogflow/commit/55bd28fc2269d7800afe9620884cbaef053f7f2d))
+
+
+### Documentation
+
+* clarified meaning of the legacy editions docs: clarified semantic of the streaming APIs ([#753](https://www.github.com/googleapis/java-dialogflow/issues/753)) ([df1d5e0](https://www.github.com/googleapis/java-dialogflow/commit/df1d5e08908c42006d160b749a9ca85db6b9a3fc))
+* recommend AnalyzeContent for future users ([#743](https://www.github.com/googleapis/java-dialogflow/issues/743)) ([866ca0f](https://www.github.com/googleapis/java-dialogflow/commit/866ca0fa1808b0b09fdd75148c64f0fb7f3cf86a))
+* recommend AnalyzeContent for future users ([#745](https://www.github.com/googleapis/java-dialogflow/issues/745)) ([987bfb1](https://www.github.com/googleapis/java-dialogflow/commit/987bfb18fe22cbb48b462309202b9c664786e54d))
+* **sample:** adds new list training phrases sample ([#742](https://www.github.com/googleapis/java-dialogflow/issues/742)) ([10b4f32](https://www.github.com/googleapis/java-dialogflow/commit/10b4f32b5049fc6c25cc1217908126397fe17fd9))
+
 ### [4.1.7](https://www.github.com/googleapis/java-dialogflow/compare/v4.1.6...v4.1.7) (2021-10-06)
 
 
