@@ -198,7 +198,7 @@ public final class FindingTypeStats extends com.google.protobuf.GeneratedMessage
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getFindingTypeBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(findingType_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, findingType_);
     }
     if (findingCount_ != 0) {
@@ -213,7 +213,7 @@ public final class FindingTypeStats extends com.google.protobuf.GeneratedMessage
     if (size != -1) return size;
 
     size = 0;
-    if (!getFindingTypeBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(findingType_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, findingType_);
     }
     if (findingCount_ != 0) {

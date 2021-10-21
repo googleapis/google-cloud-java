@@ -232,10 +232,10 @@ public final class ViolatingResource extends com.google.protobuf.GeneratedMessag
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getContentTypeBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(contentType_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, contentType_);
     }
-    if (!getResourceUrlBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(resourceUrl_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, resourceUrl_);
     }
     unknownFields.writeTo(output);
@@ -247,10 +247,10 @@ public final class ViolatingResource extends com.google.protobuf.GeneratedMessag
     if (size != -1) return size;
 
     size = 0;
-    if (!getContentTypeBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(contentType_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, contentType_);
     }
-    if (!getResourceUrlBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(resourceUrl_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, resourceUrl_);
     }
     size += unknownFields.getSerializedSize();

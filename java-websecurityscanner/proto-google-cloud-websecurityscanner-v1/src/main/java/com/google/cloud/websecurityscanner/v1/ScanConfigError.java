@@ -1332,7 +1332,7 @@ public final class ScanConfigError extends com.google.protobuf.GeneratedMessageV
             .getNumber()) {
       output.writeEnum(1, code_);
     }
-    if (!getFieldNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(fieldName_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, fieldName_);
     }
     unknownFields.writeTo(output);
@@ -1349,7 +1349,7 @@ public final class ScanConfigError extends com.google.protobuf.GeneratedMessageV
             .getNumber()) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(1, code_);
     }
-    if (!getFieldNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(fieldName_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, fieldName_);
     }
     size += unknownFields.getSerializedSize();

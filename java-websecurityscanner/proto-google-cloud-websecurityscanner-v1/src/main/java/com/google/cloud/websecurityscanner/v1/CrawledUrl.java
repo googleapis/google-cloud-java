@@ -292,13 +292,13 @@ public final class CrawledUrl extends com.google.protobuf.GeneratedMessageV3
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getHttpMethodBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(httpMethod_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, httpMethod_);
     }
-    if (!getUrlBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(url_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, url_);
     }
-    if (!getBodyBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(body_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, body_);
     }
     unknownFields.writeTo(output);
@@ -310,13 +310,13 @@ public final class CrawledUrl extends com.google.protobuf.GeneratedMessageV3
     if (size != -1) return size;
 
     size = 0;
-    if (!getHttpMethodBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(httpMethod_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, httpMethod_);
     }
-    if (!getUrlBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(url_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, url_);
     }
-    if (!getBodyBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(body_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, body_);
     }
     size += unknownFields.getSerializedSize();

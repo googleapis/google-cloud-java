@@ -1113,34 +1113,34 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name_);
     }
-    if (!getFindingTypeBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(findingType_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, findingType_);
     }
-    if (!getHttpMethodBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(httpMethod_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, httpMethod_);
     }
-    if (!getFuzzedUrlBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(fuzzedUrl_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 4, fuzzedUrl_);
     }
-    if (!getBodyBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(body_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 5, body_);
     }
-    if (!getDescriptionBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(description_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 6, description_);
     }
-    if (!getReproductionUrlBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(reproductionUrl_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 7, reproductionUrl_);
     }
-    if (!getFrameUrlBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(frameUrl_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 8, frameUrl_);
     }
-    if (!getFinalUrlBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(finalUrl_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 9, finalUrl_);
     }
-    if (!getTrackingIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(trackingId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 10, trackingId_);
     }
     if (outdatedLibrary_ != null) {
@@ -1170,34 +1170,34 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
     if (size != -1) return size;
 
     size = 0;
-    if (!getNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, name_);
     }
-    if (!getFindingTypeBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(findingType_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, findingType_);
     }
-    if (!getHttpMethodBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(httpMethod_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, httpMethod_);
     }
-    if (!getFuzzedUrlBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(fuzzedUrl_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, fuzzedUrl_);
     }
-    if (!getBodyBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(body_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, body_);
     }
-    if (!getDescriptionBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(description_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, description_);
     }
-    if (!getReproductionUrlBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(reproductionUrl_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, reproductionUrl_);
     }
-    if (!getFrameUrlBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(frameUrl_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, frameUrl_);
     }
-    if (!getFinalUrlBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(finalUrl_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(9, finalUrl_);
     }
-    if (!getTrackingIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(trackingId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(10, trackingId_);
     }
     if (outdatedLibrary_ != null) {
