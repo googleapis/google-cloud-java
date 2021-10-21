@@ -198,7 +198,7 @@ public final class TextSpan extends com.google.protobuf.GeneratedMessageV3
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getContentBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(content_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, content_);
     }
     if (beginOffset_ != 0) {
@@ -213,7 +213,7 @@ public final class TextSpan extends com.google.protobuf.GeneratedMessageV3
     if (size != -1) return size;
 
     size = 0;
-    if (!getContentBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(content_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, content_);
     }
     if (beginOffset_ != 0) {

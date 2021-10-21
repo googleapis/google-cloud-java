@@ -330,7 +330,7 @@ public final class AnalyzeSentimentResponse extends com.google.protobuf.Generate
     if (documentSentiment_ != null) {
       output.writeMessage(1, getDocumentSentiment());
     }
-    if (!getLanguageBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(language_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, language_);
     }
     for (int i = 0; i < sentences_.size(); i++) {
@@ -348,7 +348,7 @@ public final class AnalyzeSentimentResponse extends com.google.protobuf.Generate
     if (documentSentiment_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, getDocumentSentiment());
     }
-    if (!getLanguageBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(language_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, language_);
     }
     for (int i = 0; i < sentences_.size(); i++) {
