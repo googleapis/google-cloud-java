@@ -25,9 +25,9 @@ package com.google.devtools.artifactregistry.v1;
  * DockerImage represents a docker artifact.
  * The following fields are returned as untyped metadata in the Version
  * resource, using camelcase keys (i.e. metadata.imageSizeBytes):
- *   - imageSizeBytes
- *   - mediaType
- *   - buildTime
+ * * imageSizeBytes
+ * * mediaType
+ * * buildTime
  * </pre>
  *
  * Protobuf type {@code google.devtools.artifactregistry.v1.DockerImage}
@@ -779,9 +779,9 @@ public final class DockerImage extends com.google.protobuf.GeneratedMessageV3
    * DockerImage represents a docker artifact.
    * The following fields are returned as untyped metadata in the Version
    * resource, using camelcase keys (i.e. metadata.imageSizeBytes):
-   *   - imageSizeBytes
-   *   - mediaType
-   *   - buildTime
+   * * imageSizeBytes
+   * * mediaType
+   * * buildTime
    * </pre>
    *
    * Protobuf type {@code google.devtools.artifactregistry.v1.DockerImage}
