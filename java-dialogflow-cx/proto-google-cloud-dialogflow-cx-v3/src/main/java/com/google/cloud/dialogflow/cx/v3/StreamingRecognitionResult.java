@@ -25,34 +25,23 @@ package com.google.cloud.dialogflow.cx.v3;
  * Contains a speech recognition result corresponding to a portion of the audio
  * that is currently being processed or an indication that this is the end
  * of the single requested utterance.
- * While end-user audio is being processed, Dialogflow sends a series of
- * results. Each result may contain a `transcript` value. A transcript
- * represents a portion of the utterance. While the recognizer is processing
- * audio, transcript values may be interim values or finalized values.
- * Once a transcript is finalized, the `is_final` value is set to true and
- * processing continues for the next transcript.
- * If `StreamingDetectIntentRequest.query_input.audio.config.single_utterance`
- * was true, and the recognizer has completed processing audio,
- * the `message_type` value is set to `END_OF_SINGLE_UTTERANCE and the
- * following (last) result contains the last finalized transcript.
- * The complete end-user utterance is determined by concatenating the
- * finalized transcript values received for the series of results.
- * In the following example, single utterance is enabled. In the case where
- * single utterance is not enabled, result 7 would not occur.
- * ```
- * Num | transcript              | message_type            | is_final
- * --- | ----------------------- | ----------------------- | --------
- * 1   | "tube"                  | TRANSCRIPT              | false
- * 2   | "to be a"               | TRANSCRIPT              | false
- * 3   | "to be"                 | TRANSCRIPT              | false
- * 4   | "to be or not to be"    | TRANSCRIPT              | true
- * 5   | "that's"                | TRANSCRIPT              | false
- * 6   | "that is                | TRANSCRIPT              | false
- * 7   | unset                   | END_OF_SINGLE_UTTERANCE | unset
- * 8   | " that is the question" | TRANSCRIPT              | true
- * ```
- * Concatenating the finalized transcripts with `is_final` set to true,
- * the complete utterance becomes "to be or not to be that is the question".
+ * Example:
+ * 1.  transcript: "tube"
+ * 2.  transcript: "to be a"
+ * 3.  transcript: "to be"
+ * 4.  transcript: "to be or not to be"
+ *     is_final: true
+ * 5.  transcript: " that's"
+ * 6.  transcript: " that is"
+ * 7.  message_type: `END_OF_SINGLE_UTTERANCE`
+ * 8.  transcript: " that is the question"
+ *     is_final: true
+ * Only two of the responses contain final results (#4 and #8 indicated by
+ * `is_final: true`). Concatenating these generates the full transcript: "to be
+ * or not to be that is the question".
+ * In each response we populate:
+ * *  for `TRANSCRIPT`: `transcript` and possibly `is_final`.
+ * *  for `END_OF_SINGLE_UTTERANCE`: only `message_type`.
  * </pre>
  *
  * Protobuf type {@code google.cloud.dialogflow.cx.v3.StreamingRecognitionResult}
@@ -966,34 +955,23 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
    * Contains a speech recognition result corresponding to a portion of the audio
    * that is currently being processed or an indication that this is the end
    * of the single requested utterance.
-   * While end-user audio is being processed, Dialogflow sends a series of
-   * results. Each result may contain a `transcript` value. A transcript
-   * represents a portion of the utterance. While the recognizer is processing
-   * audio, transcript values may be interim values or finalized values.
-   * Once a transcript is finalized, the `is_final` value is set to true and
-   * processing continues for the next transcript.
-   * If `StreamingDetectIntentRequest.query_input.audio.config.single_utterance`
-   * was true, and the recognizer has completed processing audio,
-   * the `message_type` value is set to `END_OF_SINGLE_UTTERANCE and the
-   * following (last) result contains the last finalized transcript.
-   * The complete end-user utterance is determined by concatenating the
-   * finalized transcript values received for the series of results.
-   * In the following example, single utterance is enabled. In the case where
-   * single utterance is not enabled, result 7 would not occur.
-   * ```
-   * Num | transcript              | message_type            | is_final
-   * --- | ----------------------- | ----------------------- | --------
-   * 1   | "tube"                  | TRANSCRIPT              | false
-   * 2   | "to be a"               | TRANSCRIPT              | false
-   * 3   | "to be"                 | TRANSCRIPT              | false
-   * 4   | "to be or not to be"    | TRANSCRIPT              | true
-   * 5   | "that's"                | TRANSCRIPT              | false
-   * 6   | "that is                | TRANSCRIPT              | false
-   * 7   | unset                   | END_OF_SINGLE_UTTERANCE | unset
-   * 8   | " that is the question" | TRANSCRIPT              | true
-   * ```
-   * Concatenating the finalized transcripts with `is_final` set to true,
-   * the complete utterance becomes "to be or not to be that is the question".
+   * Example:
+   * 1.  transcript: "tube"
+   * 2.  transcript: "to be a"
+   * 3.  transcript: "to be"
+   * 4.  transcript: "to be or not to be"
+   *     is_final: true
+   * 5.  transcript: " that's"
+   * 6.  transcript: " that is"
+   * 7.  message_type: `END_OF_SINGLE_UTTERANCE`
+   * 8.  transcript: " that is the question"
+   *     is_final: true
+   * Only two of the responses contain final results (#4 and #8 indicated by
+   * `is_final: true`). Concatenating these generates the full transcript: "to be
+   * or not to be that is the question".
+   * In each response we populate:
+   * *  for `TRANSCRIPT`: `transcript` and possibly `is_final`.
+   * *  for `END_OF_SINGLE_UTTERANCE`: only `message_type`.
    * </pre>
    *
    * Protobuf type {@code google.cloud.dialogflow.cx.v3.StreamingRecognitionResult}
