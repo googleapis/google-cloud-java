@@ -22,7 +22,7 @@ package com.google.cloud.retail.v2;
  *
  *
  * <pre>
- * Response of the RemoveFulfillmentPlacesRequest.  Currently empty because
+ * Response of the AddFulfillmentPlacesRequest.  Currently empty because
  * there is no meaningful response populated from the [AddFulfillmentPlaces][]
  * method.
  * </pre>
@@ -259,7 +259,7 @@ public final class AddFulfillmentPlacesResponse extends com.google.protobuf.Gene
    *
    *
    * <pre>
-   * Response of the RemoveFulfillmentPlacesRequest.  Currently empty because
+   * Response of the AddFulfillmentPlacesRequest.  Currently empty because
    * there is no meaningful response populated from the [AddFulfillmentPlaces][]
    * method.
    * </pre>

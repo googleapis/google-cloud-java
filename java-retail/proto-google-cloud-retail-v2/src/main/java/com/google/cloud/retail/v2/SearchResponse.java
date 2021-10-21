@@ -1285,7 +1285,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
 
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-      if (!getIdBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(id_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, id_);
       }
       if (product_ != null) {
@@ -1313,7 +1313,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
       if (size != -1) return size;
 
       size = 0;
-      if (!getIdBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(id_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, id_);
       }
       if (product_ != null) {
@@ -4429,7 +4429,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
 
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-      if (!getKeyBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(key_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, key_);
       }
       for (int i = 0; i < values_.size(); i++) {
@@ -4447,7 +4447,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
       if (size != -1) return size;
 
       size = 0;
-      if (!getKeyBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(key_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, key_);
       }
       for (int i = 0; i < values_.size(); i++) {
@@ -5413,7 +5413,8 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Number of pinned results. This field will only be set when expansion
-     * happens and [SearchRequest.query_expansion_spec.pin_unexpanded_results][]
+     * happens and
+     * [SearchRequest.QueryExpansionSpec.pin_unexpanded_results][google.cloud.retail.v2.SearchRequest.QueryExpansionSpec.pin_unexpanded_results]
      * is set to true.
      * </pre>
      *
@@ -5543,7 +5544,8 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Number of pinned results. This field will only be set when expansion
-     * happens and [SearchRequest.query_expansion_spec.pin_unexpanded_results][]
+     * happens and
+     * [SearchRequest.QueryExpansionSpec.pin_unexpanded_results][google.cloud.retail.v2.SearchRequest.QueryExpansionSpec.pin_unexpanded_results]
      * is set to true.
      * </pre>
      *
@@ -5955,7 +5957,8 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Number of pinned results. This field will only be set when expansion
-       * happens and [SearchRequest.query_expansion_spec.pin_unexpanded_results][]
+       * happens and
+       * [SearchRequest.QueryExpansionSpec.pin_unexpanded_results][google.cloud.retail.v2.SearchRequest.QueryExpansionSpec.pin_unexpanded_results]
        * is set to true.
        * </pre>
        *
@@ -5972,7 +5975,8 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Number of pinned results. This field will only be set when expansion
-       * happens and [SearchRequest.query_expansion_spec.pin_unexpanded_results][]
+       * happens and
+       * [SearchRequest.QueryExpansionSpec.pin_unexpanded_results][google.cloud.retail.v2.SearchRequest.QueryExpansionSpec.pin_unexpanded_results]
        * is set to true.
        * </pre>
        *
@@ -5992,7 +5996,8 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Number of pinned results. This field will only be set when expansion
-       * happens and [SearchRequest.query_expansion_spec.pin_unexpanded_results][]
+       * happens and
+       * [SearchRequest.QueryExpansionSpec.pin_unexpanded_results][google.cloud.retail.v2.SearchRequest.QueryExpansionSpec.pin_unexpanded_results]
        * is set to true.
        * </pre>
        *
@@ -6512,19 +6517,19 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
     if (totalSize_ != 0) {
       output.writeInt32(3, totalSize_);
     }
-    if (!getCorrectedQueryBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(correctedQuery_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 4, correctedQuery_);
     }
-    if (!getAttributionTokenBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(attributionToken_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 5, attributionToken_);
     }
-    if (!getNextPageTokenBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(nextPageToken_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 6, nextPageToken_);
     }
     if (queryExpansionInfo_ != null) {
       output.writeMessage(7, getQueryExpansionInfo());
     }
-    if (!getRedirectUriBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(redirectUri_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 10, redirectUri_);
     }
     unknownFields.writeTo(output);
@@ -6545,19 +6550,19 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
     if (totalSize_ != 0) {
       size += com.google.protobuf.CodedOutputStream.computeInt32Size(3, totalSize_);
     }
-    if (!getCorrectedQueryBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(correctedQuery_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, correctedQuery_);
     }
-    if (!getAttributionTokenBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(attributionToken_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, attributionToken_);
     }
-    if (!getNextPageTokenBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(nextPageToken_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, nextPageToken_);
     }
     if (queryExpansionInfo_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(7, getQueryExpansionInfo());
     }
-    if (!getRedirectUriBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(redirectUri_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(10, redirectUri_);
     }
     size += unknownFields.getSerializedSize();

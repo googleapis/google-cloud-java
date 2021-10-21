@@ -140,6 +140,7 @@ public class SearchServiceClientTest {
     Assert.assertEquals(
         request.getVariantRollupKeysList(), actualRequest.getVariantRollupKeysList());
     Assert.assertEquals(request.getPageCategoriesList(), actualRequest.getPageCategoriesList());
+    Assert.assertEquals(request.getSearchMode(), actualRequest.getSearchMode());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),

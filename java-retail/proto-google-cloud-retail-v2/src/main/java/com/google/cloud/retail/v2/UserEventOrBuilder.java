@@ -329,12 +329,12 @@ public interface UserEventOrBuilder
    * * `detail-page-view`
    * * `purchase-complete`
    * In a `search` event, this field represents the products returned to the end
-   * user on the current page (the end user may have not finished broswing the
+   * user on the current page (the end user may have not finished browsing the
    * whole page yet). When a new page is returned to the end user, after
    * pagination/filtering/ordering even for the same query, a new `search` event
    * with different
    * [product_details][google.cloud.retail.v2.UserEvent.product_details] is
-   * desired. The end user may have not finished broswing the whole page yet.
+   * desired. The end user may have not finished browsing the whole page yet.
    * </pre>
    *
    * <code>repeated .google.cloud.retail.v2.ProductDetail product_details = 6;</code>
@@ -350,12 +350,12 @@ public interface UserEventOrBuilder
    * * `detail-page-view`
    * * `purchase-complete`
    * In a `search` event, this field represents the products returned to the end
-   * user on the current page (the end user may have not finished broswing the
+   * user on the current page (the end user may have not finished browsing the
    * whole page yet). When a new page is returned to the end user, after
    * pagination/filtering/ordering even for the same query, a new `search` event
    * with different
    * [product_details][google.cloud.retail.v2.UserEvent.product_details] is
-   * desired. The end user may have not finished broswing the whole page yet.
+   * desired. The end user may have not finished browsing the whole page yet.
    * </pre>
    *
    * <code>repeated .google.cloud.retail.v2.ProductDetail product_details = 6;</code>
@@ -371,12 +371,12 @@ public interface UserEventOrBuilder
    * * `detail-page-view`
    * * `purchase-complete`
    * In a `search` event, this field represents the products returned to the end
-   * user on the current page (the end user may have not finished broswing the
+   * user on the current page (the end user may have not finished browsing the
    * whole page yet). When a new page is returned to the end user, after
    * pagination/filtering/ordering even for the same query, a new `search` event
    * with different
    * [product_details][google.cloud.retail.v2.UserEvent.product_details] is
-   * desired. The end user may have not finished broswing the whole page yet.
+   * desired. The end user may have not finished browsing the whole page yet.
    * </pre>
    *
    * <code>repeated .google.cloud.retail.v2.ProductDetail product_details = 6;</code>
@@ -392,12 +392,12 @@ public interface UserEventOrBuilder
    * * `detail-page-view`
    * * `purchase-complete`
    * In a `search` event, this field represents the products returned to the end
-   * user on the current page (the end user may have not finished broswing the
+   * user on the current page (the end user may have not finished browsing the
    * whole page yet). When a new page is returned to the end user, after
    * pagination/filtering/ordering even for the same query, a new `search` event
    * with different
    * [product_details][google.cloud.retail.v2.UserEvent.product_details] is
-   * desired. The end user may have not finished broswing the whole page yet.
+   * desired. The end user may have not finished browsing the whole page yet.
    * </pre>
    *
    * <code>repeated .google.cloud.retail.v2.ProductDetail product_details = 6;</code>
@@ -414,12 +414,12 @@ public interface UserEventOrBuilder
    * * `detail-page-view`
    * * `purchase-complete`
    * In a `search` event, this field represents the products returned to the end
-   * user on the current page (the end user may have not finished broswing the
+   * user on the current page (the end user may have not finished browsing the
    * whole page yet). When a new page is returned to the end user, after
    * pagination/filtering/ordering even for the same query, a new `search` event
    * with different
    * [product_details][google.cloud.retail.v2.UserEvent.product_details] is
-   * desired. The end user may have not finished broswing the whole page yet.
+   * desired. The end user may have not finished browsing the whole page yet.
    * </pre>
    *
    * <code>repeated .google.cloud.retail.v2.ProductDetail product_details = 6;</code>
@@ -559,7 +559,7 @@ public interface UserEventOrBuilder
    *
    *
    * <pre>
-   * The id or name of the associated shopping cart. This id is used
+   * The ID or name of the associated shopping cart. This ID is used
    * to associate multiple items added or present in the cart before purchase.
    * This can only be set for `add-to-cart`, `purchase-complete`, or
    * `shopping-cart-page-view` events.
@@ -574,7 +574,7 @@ public interface UserEventOrBuilder
    *
    *
    * <pre>
-   * The id or name of the associated shopping cart. This id is used
+   * The ID or name of the associated shopping cart. This ID is used
    * to associate multiple items added or present in the cart before purchase.
    * This can only be set for `add-to-cart`, `purchase-complete`, or
    * `shopping-cart-page-view` events.
@@ -955,7 +955,7 @@ public interface UserEventOrBuilder
    *
    *
    * <pre>
-   * A unique id of a web page view.
+   * A unique ID of a web page view.
    * This should be kept the same for all user events triggered from the same
    * pageview. For example, an item detail page view could trigger multiple
    * events as the user is browsing the page. The `pageViewId` property should
@@ -974,7 +974,7 @@ public interface UserEventOrBuilder
    *
    *
    * <pre>
-   * A unique id of a web page view.
+   * A unique ID of a web page view.
    * This should be kept the same for all user events triggered from the same
    * pageview. For example, an item detail page view could trigger multiple
    * events as the user is browsing the page. The `pageViewId` property should

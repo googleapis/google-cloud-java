@@ -261,10 +261,10 @@ public final class CompletionDetail extends com.google.protobuf.GeneratedMessage
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getCompletionAttributionTokenBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(completionAttributionToken_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, completionAttributionToken_);
     }
-    if (!getSelectedSuggestionBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(selectedSuggestion_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, selectedSuggestion_);
     }
     if (selectedPosition_ != 0) {
@@ -279,11 +279,11 @@ public final class CompletionDetail extends com.google.protobuf.GeneratedMessage
     if (size != -1) return size;
 
     size = 0;
-    if (!getCompletionAttributionTokenBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(completionAttributionToken_)) {
       size +=
           com.google.protobuf.GeneratedMessageV3.computeStringSize(1, completionAttributionToken_);
     }
-    if (!getSelectedSuggestionBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(selectedSuggestion_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, selectedSuggestion_);
     }
     if (selectedPosition_ != 0) {

@@ -304,7 +304,7 @@ public final class GcsSource extends com.google.protobuf.GeneratedMessageV3
     for (int i = 0; i < inputUris_.size(); i++) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, inputUris_.getRaw(i));
     }
-    if (!getDataSchemaBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(dataSchema_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, dataSchema_);
     }
     unknownFields.writeTo(output);
@@ -324,7 +324,7 @@ public final class GcsSource extends com.google.protobuf.GeneratedMessageV3
       size += dataSize;
       size += 1 * getInputUrisList().size();
     }
-    if (!getDataSchemaBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(dataSchema_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, dataSchema_);
     }
     size += unknownFields.getSerializedSize();

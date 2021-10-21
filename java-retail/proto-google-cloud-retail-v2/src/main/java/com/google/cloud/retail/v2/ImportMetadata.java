@@ -425,10 +425,10 @@ public final class ImportMetadata extends com.google.protobuf.GeneratedMessageV3
     if (failureCount_ != 0L) {
       output.writeInt64(4, failureCount_);
     }
-    if (!getRequestIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(requestId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 5, requestId_);
     }
-    if (!getNotificationPubsubTopicBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(notificationPubsubTopic_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 6, notificationPubsubTopic_);
     }
     unknownFields.writeTo(output);
@@ -452,10 +452,10 @@ public final class ImportMetadata extends com.google.protobuf.GeneratedMessageV3
     if (failureCount_ != 0L) {
       size += com.google.protobuf.CodedOutputStream.computeInt64Size(4, failureCount_);
     }
-    if (!getRequestIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(requestId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, requestId_);
     }
-    if (!getNotificationPubsubTopicBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(notificationPubsubTopic_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, notificationPubsubTopic_);
     }
     size += unknownFields.getSerializedSize();

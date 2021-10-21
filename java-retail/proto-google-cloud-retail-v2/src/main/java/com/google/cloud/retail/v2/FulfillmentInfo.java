@@ -215,8 +215,8 @@ public final class FulfillmentInfo extends com.google.protobuf.GeneratedMessageV
    * [FulfillmentInfo.type.pickup-in-store][google.cloud.retail.v2.FulfillmentInfo.type]
    * or the region IDs for
    * [FulfillmentInfo.type.same-day-delivery][google.cloud.retail.v2.FulfillmentInfo.type].
-   * A maximum of 2000 values are allowed. Each value must be a string with a
-   * length limit of 10 characters, matching the pattern [a-zA-Z0-9_-]+, such as
+   * A maximum of 3000 values are allowed. Each value must be a string with a
+   * length limit of 30 characters, matching the pattern [a-zA-Z0-9_-]+, such as
    * "store1" or "REGION-2". Otherwise, an INVALID_ARGUMENT error is returned.
    * </pre>
    *
@@ -236,8 +236,8 @@ public final class FulfillmentInfo extends com.google.protobuf.GeneratedMessageV
    * [FulfillmentInfo.type.pickup-in-store][google.cloud.retail.v2.FulfillmentInfo.type]
    * or the region IDs for
    * [FulfillmentInfo.type.same-day-delivery][google.cloud.retail.v2.FulfillmentInfo.type].
-   * A maximum of 2000 values are allowed. Each value must be a string with a
-   * length limit of 10 characters, matching the pattern [a-zA-Z0-9_-]+, such as
+   * A maximum of 3000 values are allowed. Each value must be a string with a
+   * length limit of 30 characters, matching the pattern [a-zA-Z0-9_-]+, such as
    * "store1" or "REGION-2". Otherwise, an INVALID_ARGUMENT error is returned.
    * </pre>
    *
@@ -257,8 +257,8 @@ public final class FulfillmentInfo extends com.google.protobuf.GeneratedMessageV
    * [FulfillmentInfo.type.pickup-in-store][google.cloud.retail.v2.FulfillmentInfo.type]
    * or the region IDs for
    * [FulfillmentInfo.type.same-day-delivery][google.cloud.retail.v2.FulfillmentInfo.type].
-   * A maximum of 2000 values are allowed. Each value must be a string with a
-   * length limit of 10 characters, matching the pattern [a-zA-Z0-9_-]+, such as
+   * A maximum of 3000 values are allowed. Each value must be a string with a
+   * length limit of 30 characters, matching the pattern [a-zA-Z0-9_-]+, such as
    * "store1" or "REGION-2". Otherwise, an INVALID_ARGUMENT error is returned.
    * </pre>
    *
@@ -279,8 +279,8 @@ public final class FulfillmentInfo extends com.google.protobuf.GeneratedMessageV
    * [FulfillmentInfo.type.pickup-in-store][google.cloud.retail.v2.FulfillmentInfo.type]
    * or the region IDs for
    * [FulfillmentInfo.type.same-day-delivery][google.cloud.retail.v2.FulfillmentInfo.type].
-   * A maximum of 2000 values are allowed. Each value must be a string with a
-   * length limit of 10 characters, matching the pattern [a-zA-Z0-9_-]+, such as
+   * A maximum of 3000 values are allowed. Each value must be a string with a
+   * length limit of 30 characters, matching the pattern [a-zA-Z0-9_-]+, such as
    * "store1" or "REGION-2". Otherwise, an INVALID_ARGUMENT error is returned.
    * </pre>
    *
@@ -307,7 +307,7 @@ public final class FulfillmentInfo extends com.google.protobuf.GeneratedMessageV
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getTypeBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(type_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, type_);
     }
     for (int i = 0; i < placeIds_.size(); i++) {
@@ -322,7 +322,7 @@ public final class FulfillmentInfo extends com.google.protobuf.GeneratedMessageV
     if (size != -1) return size;
 
     size = 0;
-    if (!getTypeBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(type_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, type_);
     }
     {
@@ -840,8 +840,8 @@ public final class FulfillmentInfo extends com.google.protobuf.GeneratedMessageV
      * [FulfillmentInfo.type.pickup-in-store][google.cloud.retail.v2.FulfillmentInfo.type]
      * or the region IDs for
      * [FulfillmentInfo.type.same-day-delivery][google.cloud.retail.v2.FulfillmentInfo.type].
-     * A maximum of 2000 values are allowed. Each value must be a string with a
-     * length limit of 10 characters, matching the pattern [a-zA-Z0-9_-]+, such as
+     * A maximum of 3000 values are allowed. Each value must be a string with a
+     * length limit of 30 characters, matching the pattern [a-zA-Z0-9_-]+, such as
      * "store1" or "REGION-2". Otherwise, an INVALID_ARGUMENT error is returned.
      * </pre>
      *
@@ -861,8 +861,8 @@ public final class FulfillmentInfo extends com.google.protobuf.GeneratedMessageV
      * [FulfillmentInfo.type.pickup-in-store][google.cloud.retail.v2.FulfillmentInfo.type]
      * or the region IDs for
      * [FulfillmentInfo.type.same-day-delivery][google.cloud.retail.v2.FulfillmentInfo.type].
-     * A maximum of 2000 values are allowed. Each value must be a string with a
-     * length limit of 10 characters, matching the pattern [a-zA-Z0-9_-]+, such as
+     * A maximum of 3000 values are allowed. Each value must be a string with a
+     * length limit of 30 characters, matching the pattern [a-zA-Z0-9_-]+, such as
      * "store1" or "REGION-2". Otherwise, an INVALID_ARGUMENT error is returned.
      * </pre>
      *
@@ -882,8 +882,8 @@ public final class FulfillmentInfo extends com.google.protobuf.GeneratedMessageV
      * [FulfillmentInfo.type.pickup-in-store][google.cloud.retail.v2.FulfillmentInfo.type]
      * or the region IDs for
      * [FulfillmentInfo.type.same-day-delivery][google.cloud.retail.v2.FulfillmentInfo.type].
-     * A maximum of 2000 values are allowed. Each value must be a string with a
-     * length limit of 10 characters, matching the pattern [a-zA-Z0-9_-]+, such as
+     * A maximum of 3000 values are allowed. Each value must be a string with a
+     * length limit of 30 characters, matching the pattern [a-zA-Z0-9_-]+, such as
      * "store1" or "REGION-2". Otherwise, an INVALID_ARGUMENT error is returned.
      * </pre>
      *
@@ -904,8 +904,8 @@ public final class FulfillmentInfo extends com.google.protobuf.GeneratedMessageV
      * [FulfillmentInfo.type.pickup-in-store][google.cloud.retail.v2.FulfillmentInfo.type]
      * or the region IDs for
      * [FulfillmentInfo.type.same-day-delivery][google.cloud.retail.v2.FulfillmentInfo.type].
-     * A maximum of 2000 values are allowed. Each value must be a string with a
-     * length limit of 10 characters, matching the pattern [a-zA-Z0-9_-]+, such as
+     * A maximum of 3000 values are allowed. Each value must be a string with a
+     * length limit of 30 characters, matching the pattern [a-zA-Z0-9_-]+, such as
      * "store1" or "REGION-2". Otherwise, an INVALID_ARGUMENT error is returned.
      * </pre>
      *
@@ -926,8 +926,8 @@ public final class FulfillmentInfo extends com.google.protobuf.GeneratedMessageV
      * [FulfillmentInfo.type.pickup-in-store][google.cloud.retail.v2.FulfillmentInfo.type]
      * or the region IDs for
      * [FulfillmentInfo.type.same-day-delivery][google.cloud.retail.v2.FulfillmentInfo.type].
-     * A maximum of 2000 values are allowed. Each value must be a string with a
-     * length limit of 10 characters, matching the pattern [a-zA-Z0-9_-]+, such as
+     * A maximum of 3000 values are allowed. Each value must be a string with a
+     * length limit of 30 characters, matching the pattern [a-zA-Z0-9_-]+, such as
      * "store1" or "REGION-2". Otherwise, an INVALID_ARGUMENT error is returned.
      * </pre>
      *
@@ -955,8 +955,8 @@ public final class FulfillmentInfo extends com.google.protobuf.GeneratedMessageV
      * [FulfillmentInfo.type.pickup-in-store][google.cloud.retail.v2.FulfillmentInfo.type]
      * or the region IDs for
      * [FulfillmentInfo.type.same-day-delivery][google.cloud.retail.v2.FulfillmentInfo.type].
-     * A maximum of 2000 values are allowed. Each value must be a string with a
-     * length limit of 10 characters, matching the pattern [a-zA-Z0-9_-]+, such as
+     * A maximum of 3000 values are allowed. Each value must be a string with a
+     * length limit of 30 characters, matching the pattern [a-zA-Z0-9_-]+, such as
      * "store1" or "REGION-2". Otherwise, an INVALID_ARGUMENT error is returned.
      * </pre>
      *
@@ -983,8 +983,8 @@ public final class FulfillmentInfo extends com.google.protobuf.GeneratedMessageV
      * [FulfillmentInfo.type.pickup-in-store][google.cloud.retail.v2.FulfillmentInfo.type]
      * or the region IDs for
      * [FulfillmentInfo.type.same-day-delivery][google.cloud.retail.v2.FulfillmentInfo.type].
-     * A maximum of 2000 values are allowed. Each value must be a string with a
-     * length limit of 10 characters, matching the pattern [a-zA-Z0-9_-]+, such as
+     * A maximum of 3000 values are allowed. Each value must be a string with a
+     * length limit of 30 characters, matching the pattern [a-zA-Z0-9_-]+, such as
      * "store1" or "REGION-2". Otherwise, an INVALID_ARGUMENT error is returned.
      * </pre>
      *
@@ -1008,8 +1008,8 @@ public final class FulfillmentInfo extends com.google.protobuf.GeneratedMessageV
      * [FulfillmentInfo.type.pickup-in-store][google.cloud.retail.v2.FulfillmentInfo.type]
      * or the region IDs for
      * [FulfillmentInfo.type.same-day-delivery][google.cloud.retail.v2.FulfillmentInfo.type].
-     * A maximum of 2000 values are allowed. Each value must be a string with a
-     * length limit of 10 characters, matching the pattern [a-zA-Z0-9_-]+, such as
+     * A maximum of 3000 values are allowed. Each value must be a string with a
+     * length limit of 30 characters, matching the pattern [a-zA-Z0-9_-]+, such as
      * "store1" or "REGION-2". Otherwise, an INVALID_ARGUMENT error is returned.
      * </pre>
      *
@@ -1032,8 +1032,8 @@ public final class FulfillmentInfo extends com.google.protobuf.GeneratedMessageV
      * [FulfillmentInfo.type.pickup-in-store][google.cloud.retail.v2.FulfillmentInfo.type]
      * or the region IDs for
      * [FulfillmentInfo.type.same-day-delivery][google.cloud.retail.v2.FulfillmentInfo.type].
-     * A maximum of 2000 values are allowed. Each value must be a string with a
-     * length limit of 10 characters, matching the pattern [a-zA-Z0-9_-]+, such as
+     * A maximum of 3000 values are allowed. Each value must be a string with a
+     * length limit of 30 characters, matching the pattern [a-zA-Z0-9_-]+, such as
      * "store1" or "REGION-2". Otherwise, an INVALID_ARGUMENT error is returned.
      * </pre>
      *

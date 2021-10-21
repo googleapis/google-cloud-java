@@ -449,8 +449,8 @@ public final class RemoveFulfillmentPlacesRequest extends com.google.protobuf.Ge
    * If set to true, and the [Product][google.cloud.retail.v2.Product] is not
    * found, the fulfillment information will still be processed and retained for
    * at most 1 day and processed once the
-   * [Product][google.cloud.retail.v2.Product] is created. If set to false, an
-   * INVALID_ARGUMENT error is returned if the
+   * [Product][google.cloud.retail.v2.Product] is created. If set to false, a
+   * NOT_FOUND error is returned if the
    * [Product][google.cloud.retail.v2.Product] is not found.
    * </pre>
    *
@@ -477,10 +477,10 @@ public final class RemoveFulfillmentPlacesRequest extends com.google.protobuf.Ge
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getProductBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(product_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, product_);
     }
-    if (!getTypeBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(type_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, type_);
     }
     for (int i = 0; i < placeIds_.size(); i++) {
@@ -501,10 +501,10 @@ public final class RemoveFulfillmentPlacesRequest extends com.google.protobuf.Ge
     if (size != -1) return size;
 
     size = 0;
-    if (!getProductBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(product_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, product_);
     }
-    if (!getTypeBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(type_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, type_);
     }
     {
@@ -1643,8 +1643,8 @@ public final class RemoveFulfillmentPlacesRequest extends com.google.protobuf.Ge
      * If set to true, and the [Product][google.cloud.retail.v2.Product] is not
      * found, the fulfillment information will still be processed and retained for
      * at most 1 day and processed once the
-     * [Product][google.cloud.retail.v2.Product] is created. If set to false, an
-     * INVALID_ARGUMENT error is returned if the
+     * [Product][google.cloud.retail.v2.Product] is created. If set to false, a
+     * NOT_FOUND error is returned if the
      * [Product][google.cloud.retail.v2.Product] is not found.
      * </pre>
      *
@@ -1663,8 +1663,8 @@ public final class RemoveFulfillmentPlacesRequest extends com.google.protobuf.Ge
      * If set to true, and the [Product][google.cloud.retail.v2.Product] is not
      * found, the fulfillment information will still be processed and retained for
      * at most 1 day and processed once the
-     * [Product][google.cloud.retail.v2.Product] is created. If set to false, an
-     * INVALID_ARGUMENT error is returned if the
+     * [Product][google.cloud.retail.v2.Product] is created. If set to false, a
+     * NOT_FOUND error is returned if the
      * [Product][google.cloud.retail.v2.Product] is not found.
      * </pre>
      *
@@ -1686,8 +1686,8 @@ public final class RemoveFulfillmentPlacesRequest extends com.google.protobuf.Ge
      * If set to true, and the [Product][google.cloud.retail.v2.Product] is not
      * found, the fulfillment information will still be processed and retained for
      * at most 1 day and processed once the
-     * [Product][google.cloud.retail.v2.Product] is created. If set to false, an
-     * INVALID_ARGUMENT error is returned if the
+     * [Product][google.cloud.retail.v2.Product] is created. If set to false, a
+     * NOT_FOUND error is returned if the
      * [Product][google.cloud.retail.v2.Product] is not found.
      * </pre>
      *

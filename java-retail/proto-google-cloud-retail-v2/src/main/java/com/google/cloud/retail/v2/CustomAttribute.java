@@ -328,7 +328,7 @@ public final class CustomAttribute extends com.google.protobuf.GeneratedMessageV
    * set. Otherwise, a INVALID_ARGUMENT error is returned.
    * </pre>
    *
-   * <code>bool searchable = 3;</code>
+   * <code>optional bool searchable = 3;</code>
    *
    * @return Whether the searchable field is set.
    */
@@ -347,7 +347,7 @@ public final class CustomAttribute extends com.google.protobuf.GeneratedMessageV
    * set. Otherwise, a INVALID_ARGUMENT error is returned.
    * </pre>
    *
-   * <code>bool searchable = 3;</code>
+   * <code>optional bool searchable = 3;</code>
    *
    * @return The searchable.
    */
@@ -373,7 +373,7 @@ public final class CustomAttribute extends com.google.protobuf.GeneratedMessageV
    * for more details.
    * </pre>
    *
-   * <code>bool indexable = 4;</code>
+   * <code>optional bool indexable = 4;</code>
    *
    * @return Whether the indexable field is set.
    */
@@ -396,7 +396,7 @@ public final class CustomAttribute extends com.google.protobuf.GeneratedMessageV
    * for more details.
    * </pre>
    *
-   * <code>bool indexable = 4;</code>
+   * <code>optional bool indexable = 4;</code>
    *
    * @return The indexable.
    */
@@ -1241,7 +1241,7 @@ public final class CustomAttribute extends com.google.protobuf.GeneratedMessageV
      * set. Otherwise, a INVALID_ARGUMENT error is returned.
      * </pre>
      *
-     * <code>bool searchable = 3;</code>
+     * <code>optional bool searchable = 3;</code>
      *
      * @return Whether the searchable field is set.
      */
@@ -1260,7 +1260,7 @@ public final class CustomAttribute extends com.google.protobuf.GeneratedMessageV
      * set. Otherwise, a INVALID_ARGUMENT error is returned.
      * </pre>
      *
-     * <code>bool searchable = 3;</code>
+     * <code>optional bool searchable = 3;</code>
      *
      * @return The searchable.
      */
@@ -1279,7 +1279,7 @@ public final class CustomAttribute extends com.google.protobuf.GeneratedMessageV
      * set. Otherwise, a INVALID_ARGUMENT error is returned.
      * </pre>
      *
-     * <code>bool searchable = 3;</code>
+     * <code>optional bool searchable = 3;</code>
      *
      * @param value The searchable to set.
      * @return This builder for chaining.
@@ -1301,7 +1301,7 @@ public final class CustomAttribute extends com.google.protobuf.GeneratedMessageV
      * set. Otherwise, a INVALID_ARGUMENT error is returned.
      * </pre>
      *
-     * <code>bool searchable = 3;</code>
+     * <code>optional bool searchable = 3;</code>
      *
      * @return This builder for chaining.
      */
@@ -1328,7 +1328,7 @@ public final class CustomAttribute extends com.google.protobuf.GeneratedMessageV
      * for more details.
      * </pre>
      *
-     * <code>bool indexable = 4;</code>
+     * <code>optional bool indexable = 4;</code>
      *
      * @return Whether the indexable field is set.
      */
@@ -1351,7 +1351,7 @@ public final class CustomAttribute extends com.google.protobuf.GeneratedMessageV
      * for more details.
      * </pre>
      *
-     * <code>bool indexable = 4;</code>
+     * <code>optional bool indexable = 4;</code>
      *
      * @return The indexable.
      */
@@ -1374,7 +1374,7 @@ public final class CustomAttribute extends com.google.protobuf.GeneratedMessageV
      * for more details.
      * </pre>
      *
-     * <code>bool indexable = 4;</code>
+     * <code>optional bool indexable = 4;</code>
      *
      * @param value The indexable to set.
      * @return This builder for chaining.
@@ -1400,7 +1400,7 @@ public final class CustomAttribute extends com.google.protobuf.GeneratedMessageV
      * for more details.
      * </pre>
      *
-     * <code>bool indexable = 4;</code>
+     * <code>optional bool indexable = 4;</code>
      *
      * @return This builder for chaining.
      */

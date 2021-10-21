@@ -169,7 +169,7 @@ public interface CustomAttributeOrBuilder
    * set. Otherwise, a INVALID_ARGUMENT error is returned.
    * </pre>
    *
-   * <code>bool searchable = 3;</code>
+   * <code>optional bool searchable = 3;</code>
    *
    * @return Whether the searchable field is set.
    */
@@ -185,7 +185,7 @@ public interface CustomAttributeOrBuilder
    * set. Otherwise, a INVALID_ARGUMENT error is returned.
    * </pre>
    *
-   * <code>bool searchable = 3;</code>
+   * <code>optional bool searchable = 3;</code>
    *
    * @return The searchable.
    */
@@ -206,7 +206,7 @@ public interface CustomAttributeOrBuilder
    * for more details.
    * </pre>
    *
-   * <code>bool indexable = 4;</code>
+   * <code>optional bool indexable = 4;</code>
    *
    * @return Whether the indexable field is set.
    */
@@ -226,7 +226,7 @@ public interface CustomAttributeOrBuilder
    * for more details.
    * </pre>
    *
-   * <code>bool indexable = 4;</code>
+   * <code>optional bool indexable = 4;</code>
    *
    * @return The indexable.
    */

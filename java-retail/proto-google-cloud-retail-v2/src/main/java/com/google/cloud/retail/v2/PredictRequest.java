@@ -855,7 +855,7 @@ public final class PredictRequest extends com.google.protobuf.GeneratedMessageV3
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getPlacementBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(placement_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, placement_);
     }
     if (userEvent_ != null) {
@@ -864,10 +864,10 @@ public final class PredictRequest extends com.google.protobuf.GeneratedMessageV3
     if (pageSize_ != 0) {
       output.writeInt32(3, pageSize_);
     }
-    if (!getPageTokenBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(pageToken_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 4, pageToken_);
     }
-    if (!getFilterBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(filter_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 5, filter_);
     }
     if (validateOnly_ != false) {
@@ -886,7 +886,7 @@ public final class PredictRequest extends com.google.protobuf.GeneratedMessageV3
     if (size != -1) return size;
 
     size = 0;
-    if (!getPlacementBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(placement_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, placement_);
     }
     if (userEvent_ != null) {
@@ -895,10 +895,10 @@ public final class PredictRequest extends com.google.protobuf.GeneratedMessageV3
     if (pageSize_ != 0) {
       size += com.google.protobuf.CodedOutputStream.computeInt32Size(3, pageSize_);
     }
-    if (!getPageTokenBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(pageToken_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, pageToken_);
     }
-    if (!getFilterBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(filter_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, filter_);
     }
     if (validateOnly_ != false) {

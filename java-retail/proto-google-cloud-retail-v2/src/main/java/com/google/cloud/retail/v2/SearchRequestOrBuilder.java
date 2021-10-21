@@ -29,10 +29,8 @@ public interface SearchRequestOrBuilder
    * <pre>
    * Required. The resource name of the search engine placement, such as
    * `projects/&#42;&#47;locations/global/catalogs/default_catalog/placements/default_search`.
-   * This field is used to identify the set of models that will be used to make
-   * the search.
-   * We currently support one placement with the following ID:
-   * * `default_search`.
+   * This field is used to identify the serving configuration name and the set
+   * of models that will be used to make the search.
    * </pre>
    *
    * <code>string placement = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -46,10 +44,8 @@ public interface SearchRequestOrBuilder
    * <pre>
    * Required. The resource name of the search engine placement, such as
    * `projects/&#42;&#47;locations/global/catalogs/default_catalog/placements/default_search`.
-   * This field is used to identify the set of models that will be used to make
-   * the search.
-   * We currently support one placement with the following ID:
-   * * `default_search`.
+   * This field is used to identify the serving configuration name and the set
+   * of models that will be used to make the search.
    * </pre>
    *
    * <code>string placement = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -265,7 +261,8 @@ public interface SearchRequestOrBuilder
    * <pre>
    * The filter syntax consists of an expression language for constructing a
    * predicate from one or more fields of the products being filtered. Filter
-   * expression is case-sensitive.
+   * expression is case-sensitive. See more details at this [user
+   * guide](https://cloud.google.com/retail/docs/filter-and-order#filter).
    * If this field is unrecognizable, an INVALID_ARGUMENT is returned.
    * </pre>
    *
@@ -280,7 +277,8 @@ public interface SearchRequestOrBuilder
    * <pre>
    * The filter syntax consists of an expression language for constructing a
    * predicate from one or more fields of the products being filtered. Filter
-   * expression is case-sensitive.
+   * expression is case-sensitive. See more details at this [user
+   * guide](https://cloud.google.com/retail/docs/filter-and-order#filter).
    * If this field is unrecognizable, an INVALID_ARGUMENT is returned.
    * </pre>
    *
@@ -335,7 +333,9 @@ public interface SearchRequestOrBuilder
    * <pre>
    * The order in which products are returned. Products can be ordered by
    * a field in an [Product][google.cloud.retail.v2.Product] object. Leave it
-   * unset if ordered by relevance. OrderBy expression is case-sensitive.
+   * unset if ordered by relevance. OrderBy expression is case-sensitive. See
+   * more details at this [user
+   * guide](https://cloud.google.com/retail/docs/filter-and-order#order).
    * If this field is unrecognizable, an INVALID_ARGUMENT is returned.
    * </pre>
    *
@@ -350,7 +350,9 @@ public interface SearchRequestOrBuilder
    * <pre>
    * The order in which products are returned. Products can be ordered by
    * a field in an [Product][google.cloud.retail.v2.Product] object. Leave it
-   * unset if ordered by relevance. OrderBy expression is case-sensitive.
+   * unset if ordered by relevance. OrderBy expression is case-sensitive. See
+   * more details at this [user
+   * guide](https://cloud.google.com/retail/docs/filter-and-order#order).
    * If this field is unrecognizable, an INVALID_ARGUMENT is returned.
    * </pre>
    *
@@ -470,7 +472,13 @@ public interface SearchRequestOrBuilder
    *
    *
    * <pre>
-   * Boost specification to boost certain products.
+   * Boost specification to boost certain products. See more details at this
+   * [user guide](https://cloud.google.com/retail/docs/boosting).
+   * Notice that if both [ServingConfig.boost_control_ids][] and
+   * [SearchRequest.boost_spec] are set, the boost conditions from both places
+   * are evaluated. If a search request matches multiple boost conditions,
+   * the final boost score is equal to the sum of the boost scores from all
+   * matched boost conditions.
    * </pre>
    *
    * <code>.google.cloud.retail.v2.SearchRequest.BoostSpec boost_spec = 13;</code>
@@ -482,7 +490,13 @@ public interface SearchRequestOrBuilder
    *
    *
    * <pre>
-   * Boost specification to boost certain products.
+   * Boost specification to boost certain products. See more details at this
+   * [user guide](https://cloud.google.com/retail/docs/boosting).
+   * Notice that if both [ServingConfig.boost_control_ids][] and
+   * [SearchRequest.boost_spec] are set, the boost conditions from both places
+   * are evaluated. If a search request matches multiple boost conditions,
+   * the final boost score is equal to the sum of the boost scores from all
+   * matched boost conditions.
    * </pre>
    *
    * <code>.google.cloud.retail.v2.SearchRequest.BoostSpec boost_spec = 13;</code>
@@ -494,7 +508,13 @@ public interface SearchRequestOrBuilder
    *
    *
    * <pre>
-   * Boost specification to boost certain products.
+   * Boost specification to boost certain products. See more details at this
+   * [user guide](https://cloud.google.com/retail/docs/boosting).
+   * Notice that if both [ServingConfig.boost_control_ids][] and
+   * [SearchRequest.boost_spec] are set, the boost conditions from both places
+   * are evaluated. If a search request matches multiple boost conditions,
+   * the final boost score is equal to the sum of the boost scores from all
+   * matched boost conditions.
    * </pre>
    *
    * <code>.google.cloud.retail.v2.SearchRequest.BoostSpec boost_spec = 13;</code>
@@ -506,7 +526,8 @@ public interface SearchRequestOrBuilder
    *
    * <pre>
    * The query expansion specification that specifies the conditions under which
-   * query expansion will occur.
+   * query expansion will occur. See more details at this [user
+   * guide](https://cloud.google.com/retail/docs/result-size#query_expansion).
    * </pre>
    *
    * <code>.google.cloud.retail.v2.SearchRequest.QueryExpansionSpec query_expansion_spec = 14;
@@ -520,7 +541,8 @@ public interface SearchRequestOrBuilder
    *
    * <pre>
    * The query expansion specification that specifies the conditions under which
-   * query expansion will occur.
+   * query expansion will occur. See more details at this [user
+   * guide](https://cloud.google.com/retail/docs/result-size#query_expansion).
    * </pre>
    *
    * <code>.google.cloud.retail.v2.SearchRequest.QueryExpansionSpec query_expansion_spec = 14;
@@ -534,7 +556,8 @@ public interface SearchRequestOrBuilder
    *
    * <pre>
    * The query expansion specification that specifies the conditions under which
-   * query expansion will occur.
+   * query expansion will occur. See more details at this [user
+   * guide](https://cloud.google.com/retail/docs/result-size#query_expansion).
    * </pre>
    *
    * <code>.google.cloud.retail.v2.SearchRequest.QueryExpansionSpec query_expansion_spec = 14;
@@ -564,6 +587,7 @@ public interface SearchRequestOrBuilder
    * * price
    * * originalPrice
    * * discount
+   * * inventory(place_id,price)
    * * attributes.key, where key is any key in the
    *   [Product.attributes][google.cloud.retail.v2.Product.attributes] map.
    * * pickupInStore.id, where id is any
@@ -632,6 +656,7 @@ public interface SearchRequestOrBuilder
    * * price
    * * originalPrice
    * * discount
+   * * inventory(place_id,price)
    * * attributes.key, where key is any key in the
    *   [Product.attributes][google.cloud.retail.v2.Product.attributes] map.
    * * pickupInStore.id, where id is any
@@ -700,6 +725,7 @@ public interface SearchRequestOrBuilder
    * * price
    * * originalPrice
    * * discount
+   * * inventory(place_id,price)
    * * attributes.key, where key is any key in the
    *   [Product.attributes][google.cloud.retail.v2.Product.attributes] map.
    * * pickupInStore.id, where id is any
@@ -769,6 +795,7 @@ public interface SearchRequestOrBuilder
    * * price
    * * originalPrice
    * * discount
+   * * inventory(place_id,price)
    * * attributes.key, where key is any key in the
    *   [Product.attributes][google.cloud.retail.v2.Product.attributes] map.
    * * pickupInStore.id, where id is any
@@ -904,4 +931,31 @@ public interface SearchRequestOrBuilder
    * @return The bytes of the pageCategories at the given index.
    */
   com.google.protobuf.ByteString getPageCategoriesBytes(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * The search mode of the search request. If not specified, a single search
+   * request triggers both product search and faceted search.
+   * </pre>
+   *
+   * <code>.google.cloud.retail.v2.SearchRequest.SearchMode search_mode = 31;</code>
+   *
+   * @return The enum numeric value on the wire for searchMode.
+   */
+  int getSearchModeValue();
+  /**
+   *
+   *
+   * <pre>
+   * The search mode of the search request. If not specified, a single search
+   * request triggers both product search and faceted search.
+   * </pre>
+   *
+   * <code>.google.cloud.retail.v2.SearchRequest.SearchMode search_mode = 31;</code>
+   *
+   * @return The searchMode.
+   */
+  com.google.cloud.retail.v2.SearchRequest.SearchMode getSearchMode();
 }

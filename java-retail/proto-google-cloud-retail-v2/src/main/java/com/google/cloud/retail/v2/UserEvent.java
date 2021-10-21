@@ -758,12 +758,12 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
    * * `detail-page-view`
    * * `purchase-complete`
    * In a `search` event, this field represents the products returned to the end
-   * user on the current page (the end user may have not finished broswing the
+   * user on the current page (the end user may have not finished browsing the
    * whole page yet). When a new page is returned to the end user, after
    * pagination/filtering/ordering even for the same query, a new `search` event
    * with different
    * [product_details][google.cloud.retail.v2.UserEvent.product_details] is
-   * desired. The end user may have not finished broswing the whole page yet.
+   * desired. The end user may have not finished browsing the whole page yet.
    * </pre>
    *
    * <code>repeated .google.cloud.retail.v2.ProductDetail product_details = 6;</code>
@@ -782,12 +782,12 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
    * * `detail-page-view`
    * * `purchase-complete`
    * In a `search` event, this field represents the products returned to the end
-   * user on the current page (the end user may have not finished broswing the
+   * user on the current page (the end user may have not finished browsing the
    * whole page yet). When a new page is returned to the end user, after
    * pagination/filtering/ordering even for the same query, a new `search` event
    * with different
    * [product_details][google.cloud.retail.v2.UserEvent.product_details] is
-   * desired. The end user may have not finished broswing the whole page yet.
+   * desired. The end user may have not finished browsing the whole page yet.
    * </pre>
    *
    * <code>repeated .google.cloud.retail.v2.ProductDetail product_details = 6;</code>
@@ -807,12 +807,12 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
    * * `detail-page-view`
    * * `purchase-complete`
    * In a `search` event, this field represents the products returned to the end
-   * user on the current page (the end user may have not finished broswing the
+   * user on the current page (the end user may have not finished browsing the
    * whole page yet). When a new page is returned to the end user, after
    * pagination/filtering/ordering even for the same query, a new `search` event
    * with different
    * [product_details][google.cloud.retail.v2.UserEvent.product_details] is
-   * desired. The end user may have not finished broswing the whole page yet.
+   * desired. The end user may have not finished browsing the whole page yet.
    * </pre>
    *
    * <code>repeated .google.cloud.retail.v2.ProductDetail product_details = 6;</code>
@@ -831,12 +831,12 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
    * * `detail-page-view`
    * * `purchase-complete`
    * In a `search` event, this field represents the products returned to the end
-   * user on the current page (the end user may have not finished broswing the
+   * user on the current page (the end user may have not finished browsing the
    * whole page yet). When a new page is returned to the end user, after
    * pagination/filtering/ordering even for the same query, a new `search` event
    * with different
    * [product_details][google.cloud.retail.v2.UserEvent.product_details] is
-   * desired. The end user may have not finished broswing the whole page yet.
+   * desired. The end user may have not finished browsing the whole page yet.
    * </pre>
    *
    * <code>repeated .google.cloud.retail.v2.ProductDetail product_details = 6;</code>
@@ -855,12 +855,12 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
    * * `detail-page-view`
    * * `purchase-complete`
    * In a `search` event, this field represents the products returned to the end
-   * user on the current page (the end user may have not finished broswing the
+   * user on the current page (the end user may have not finished browsing the
    * whole page yet). When a new page is returned to the end user, after
    * pagination/filtering/ordering even for the same query, a new `search` event
    * with different
    * [product_details][google.cloud.retail.v2.UserEvent.product_details] is
-   * desired. The end user may have not finished broswing the whole page yet.
+   * desired. The end user may have not finished browsing the whole page yet.
    * </pre>
    *
    * <code>repeated .google.cloud.retail.v2.ProductDetail product_details = 6;</code>
@@ -1065,7 +1065,7 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The id or name of the associated shopping cart. This id is used
+   * The ID or name of the associated shopping cart. This ID is used
    * to associate multiple items added or present in the cart before purchase.
    * This can only be set for `add-to-cart`, `purchase-complete`, or
    * `shopping-cart-page-view` events.
@@ -1091,7 +1091,7 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The id or name of the associated shopping cart. This id is used
+   * The ID or name of the associated shopping cart. This ID is used
    * to associate multiple items added or present in the cart before purchase.
    * This can only be set for `add-to-cart`, `purchase-complete`, or
    * `shopping-cart-page-view` events.
@@ -1644,7 +1644,7 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * A unique id of a web page view.
+   * A unique ID of a web page view.
    * This should be kept the same for all user events triggered from the same
    * pageview. For example, an item detail page view could trigger multiple
    * events as the user is browsing the page. The `pageViewId` property should
@@ -1674,7 +1674,7 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * A unique id of a web page view.
+   * A unique ID of a web page view.
    * This should be kept the same for all user events triggered from the same
    * pageview. For example, an item detail page view could trigger multiple
    * events as the user is browsing the page. The `pageViewId` property should
@@ -1715,10 +1715,10 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getEventTypeBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(eventType_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, eventType_);
     }
-    if (!getVisitorIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(visitorId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, visitorId_);
     }
     if (eventTime_ != null) {
@@ -1727,7 +1727,7 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
     for (int i = 0; i < experimentIds_.size(); i++) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 4, experimentIds_.getRaw(i));
     }
-    if (!getAttributionTokenBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(attributionToken_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 5, attributionToken_);
     }
     for (int i = 0; i < productDetails_.size(); i++) {
@@ -1735,13 +1735,13 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
     }
     com.google.protobuf.GeneratedMessageV3.serializeStringMapTo(
         output, internalGetAttributes(), AttributesDefaultEntryHolder.defaultEntry, 7);
-    if (!getCartIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(cartId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 8, cartId_);
     }
     if (purchaseTransaction_ != null) {
       output.writeMessage(9, getPurchaseTransaction());
     }
-    if (!getSearchQueryBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(searchQuery_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 10, searchQuery_);
     }
     for (int i = 0; i < pageCategories_.size(); i++) {
@@ -1750,25 +1750,25 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
     if (userInfo_ != null) {
       output.writeMessage(12, getUserInfo());
     }
-    if (!getUriBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(uri_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 13, uri_);
     }
-    if (!getReferrerUriBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(referrerUri_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 14, referrerUri_);
     }
-    if (!getPageViewIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(pageViewId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 15, pageViewId_);
     }
-    if (!getFilterBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(filter_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 16, filter_);
     }
-    if (!getOrderByBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(orderBy_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 17, orderBy_);
     }
     if (offset_ != 0) {
       output.writeInt32(18, offset_);
     }
-    if (!getSessionIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(sessionId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 21, sessionId_);
     }
     if (completionDetail_ != null) {
@@ -1783,10 +1783,10 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
     if (size != -1) return size;
 
     size = 0;
-    if (!getEventTypeBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(eventType_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, eventType_);
     }
-    if (!getVisitorIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(visitorId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, visitorId_);
     }
     if (eventTime_ != null) {
@@ -1800,7 +1800,7 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
       size += dataSize;
       size += 1 * getExperimentIdsList().size();
     }
-    if (!getAttributionTokenBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(attributionToken_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, attributionToken_);
     }
     for (int i = 0; i < productDetails_.size(); i++) {
@@ -1817,13 +1817,13 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
                   .build();
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(7, attributes__);
     }
-    if (!getCartIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(cartId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, cartId_);
     }
     if (purchaseTransaction_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(9, getPurchaseTransaction());
     }
-    if (!getSearchQueryBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(searchQuery_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(10, searchQuery_);
     }
     {
@@ -1837,25 +1837,25 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
     if (userInfo_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(12, getUserInfo());
     }
-    if (!getUriBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(uri_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(13, uri_);
     }
-    if (!getReferrerUriBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(referrerUri_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(14, referrerUri_);
     }
-    if (!getPageViewIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(pageViewId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(15, pageViewId_);
     }
-    if (!getFilterBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(filter_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(16, filter_);
     }
-    if (!getOrderByBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(orderBy_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(17, orderBy_);
     }
     if (offset_ != 0) {
       size += com.google.protobuf.CodedOutputStream.computeInt32Size(18, offset_);
     }
-    if (!getSessionIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(sessionId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(21, sessionId_);
     }
     if (completionDetail_ != null) {
@@ -3541,12 +3541,12 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
      * * `detail-page-view`
      * * `purchase-complete`
      * In a `search` event, this field represents the products returned to the end
-     * user on the current page (the end user may have not finished broswing the
+     * user on the current page (the end user may have not finished browsing the
      * whole page yet). When a new page is returned to the end user, after
      * pagination/filtering/ordering even for the same query, a new `search` event
      * with different
      * [product_details][google.cloud.retail.v2.UserEvent.product_details] is
-     * desired. The end user may have not finished broswing the whole page yet.
+     * desired. The end user may have not finished browsing the whole page yet.
      * </pre>
      *
      * <code>repeated .google.cloud.retail.v2.ProductDetail product_details = 6;</code>
@@ -3568,12 +3568,12 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
      * * `detail-page-view`
      * * `purchase-complete`
      * In a `search` event, this field represents the products returned to the end
-     * user on the current page (the end user may have not finished broswing the
+     * user on the current page (the end user may have not finished browsing the
      * whole page yet). When a new page is returned to the end user, after
      * pagination/filtering/ordering even for the same query, a new `search` event
      * with different
      * [product_details][google.cloud.retail.v2.UserEvent.product_details] is
-     * desired. The end user may have not finished broswing the whole page yet.
+     * desired. The end user may have not finished browsing the whole page yet.
      * </pre>
      *
      * <code>repeated .google.cloud.retail.v2.ProductDetail product_details = 6;</code>
@@ -3595,12 +3595,12 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
      * * `detail-page-view`
      * * `purchase-complete`
      * In a `search` event, this field represents the products returned to the end
-     * user on the current page (the end user may have not finished broswing the
+     * user on the current page (the end user may have not finished browsing the
      * whole page yet). When a new page is returned to the end user, after
      * pagination/filtering/ordering even for the same query, a new `search` event
      * with different
      * [product_details][google.cloud.retail.v2.UserEvent.product_details] is
-     * desired. The end user may have not finished broswing the whole page yet.
+     * desired. The end user may have not finished browsing the whole page yet.
      * </pre>
      *
      * <code>repeated .google.cloud.retail.v2.ProductDetail product_details = 6;</code>
@@ -3622,12 +3622,12 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
      * * `detail-page-view`
      * * `purchase-complete`
      * In a `search` event, this field represents the products returned to the end
-     * user on the current page (the end user may have not finished broswing the
+     * user on the current page (the end user may have not finished browsing the
      * whole page yet). When a new page is returned to the end user, after
      * pagination/filtering/ordering even for the same query, a new `search` event
      * with different
      * [product_details][google.cloud.retail.v2.UserEvent.product_details] is
-     * desired. The end user may have not finished broswing the whole page yet.
+     * desired. The end user may have not finished browsing the whole page yet.
      * </pre>
      *
      * <code>repeated .google.cloud.retail.v2.ProductDetail product_details = 6;</code>
@@ -3655,12 +3655,12 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
      * * `detail-page-view`
      * * `purchase-complete`
      * In a `search` event, this field represents the products returned to the end
-     * user on the current page (the end user may have not finished broswing the
+     * user on the current page (the end user may have not finished browsing the
      * whole page yet). When a new page is returned to the end user, after
      * pagination/filtering/ordering even for the same query, a new `search` event
      * with different
      * [product_details][google.cloud.retail.v2.UserEvent.product_details] is
-     * desired. The end user may have not finished broswing the whole page yet.
+     * desired. The end user may have not finished browsing the whole page yet.
      * </pre>
      *
      * <code>repeated .google.cloud.retail.v2.ProductDetail product_details = 6;</code>
@@ -3686,12 +3686,12 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
      * * `detail-page-view`
      * * `purchase-complete`
      * In a `search` event, this field represents the products returned to the end
-     * user on the current page (the end user may have not finished broswing the
+     * user on the current page (the end user may have not finished browsing the
      * whole page yet). When a new page is returned to the end user, after
      * pagination/filtering/ordering even for the same query, a new `search` event
      * with different
      * [product_details][google.cloud.retail.v2.UserEvent.product_details] is
-     * desired. The end user may have not finished broswing the whole page yet.
+     * desired. The end user may have not finished browsing the whole page yet.
      * </pre>
      *
      * <code>repeated .google.cloud.retail.v2.ProductDetail product_details = 6;</code>
@@ -3719,12 +3719,12 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
      * * `detail-page-view`
      * * `purchase-complete`
      * In a `search` event, this field represents the products returned to the end
-     * user on the current page (the end user may have not finished broswing the
+     * user on the current page (the end user may have not finished browsing the
      * whole page yet). When a new page is returned to the end user, after
      * pagination/filtering/ordering even for the same query, a new `search` event
      * with different
      * [product_details][google.cloud.retail.v2.UserEvent.product_details] is
-     * desired. The end user may have not finished broswing the whole page yet.
+     * desired. The end user may have not finished browsing the whole page yet.
      * </pre>
      *
      * <code>repeated .google.cloud.retail.v2.ProductDetail product_details = 6;</code>
@@ -3752,12 +3752,12 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
      * * `detail-page-view`
      * * `purchase-complete`
      * In a `search` event, this field represents the products returned to the end
-     * user on the current page (the end user may have not finished broswing the
+     * user on the current page (the end user may have not finished browsing the
      * whole page yet). When a new page is returned to the end user, after
      * pagination/filtering/ordering even for the same query, a new `search` event
      * with different
      * [product_details][google.cloud.retail.v2.UserEvent.product_details] is
-     * desired. The end user may have not finished broswing the whole page yet.
+     * desired. The end user may have not finished browsing the whole page yet.
      * </pre>
      *
      * <code>repeated .google.cloud.retail.v2.ProductDetail product_details = 6;</code>
@@ -3783,12 +3783,12 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
      * * `detail-page-view`
      * * `purchase-complete`
      * In a `search` event, this field represents the products returned to the end
-     * user on the current page (the end user may have not finished broswing the
+     * user on the current page (the end user may have not finished browsing the
      * whole page yet). When a new page is returned to the end user, after
      * pagination/filtering/ordering even for the same query, a new `search` event
      * with different
      * [product_details][google.cloud.retail.v2.UserEvent.product_details] is
-     * desired. The end user may have not finished broswing the whole page yet.
+     * desired. The end user may have not finished browsing the whole page yet.
      * </pre>
      *
      * <code>repeated .google.cloud.retail.v2.ProductDetail product_details = 6;</code>
@@ -3814,12 +3814,12 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
      * * `detail-page-view`
      * * `purchase-complete`
      * In a `search` event, this field represents the products returned to the end
-     * user on the current page (the end user may have not finished broswing the
+     * user on the current page (the end user may have not finished browsing the
      * whole page yet). When a new page is returned to the end user, after
      * pagination/filtering/ordering even for the same query, a new `search` event
      * with different
      * [product_details][google.cloud.retail.v2.UserEvent.product_details] is
-     * desired. The end user may have not finished broswing the whole page yet.
+     * desired. The end user may have not finished browsing the whole page yet.
      * </pre>
      *
      * <code>repeated .google.cloud.retail.v2.ProductDetail product_details = 6;</code>
@@ -3845,12 +3845,12 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
      * * `detail-page-view`
      * * `purchase-complete`
      * In a `search` event, this field represents the products returned to the end
-     * user on the current page (the end user may have not finished broswing the
+     * user on the current page (the end user may have not finished browsing the
      * whole page yet). When a new page is returned to the end user, after
      * pagination/filtering/ordering even for the same query, a new `search` event
      * with different
      * [product_details][google.cloud.retail.v2.UserEvent.product_details] is
-     * desired. The end user may have not finished broswing the whole page yet.
+     * desired. The end user may have not finished browsing the whole page yet.
      * </pre>
      *
      * <code>repeated .google.cloud.retail.v2.ProductDetail product_details = 6;</code>
@@ -3875,12 +3875,12 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
      * * `detail-page-view`
      * * `purchase-complete`
      * In a `search` event, this field represents the products returned to the end
-     * user on the current page (the end user may have not finished broswing the
+     * user on the current page (the end user may have not finished browsing the
      * whole page yet). When a new page is returned to the end user, after
      * pagination/filtering/ordering even for the same query, a new `search` event
      * with different
      * [product_details][google.cloud.retail.v2.UserEvent.product_details] is
-     * desired. The end user may have not finished broswing the whole page yet.
+     * desired. The end user may have not finished browsing the whole page yet.
      * </pre>
      *
      * <code>repeated .google.cloud.retail.v2.ProductDetail product_details = 6;</code>
@@ -3905,12 +3905,12 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
      * * `detail-page-view`
      * * `purchase-complete`
      * In a `search` event, this field represents the products returned to the end
-     * user on the current page (the end user may have not finished broswing the
+     * user on the current page (the end user may have not finished browsing the
      * whole page yet). When a new page is returned to the end user, after
      * pagination/filtering/ordering even for the same query, a new `search` event
      * with different
      * [product_details][google.cloud.retail.v2.UserEvent.product_details] is
-     * desired. The end user may have not finished broswing the whole page yet.
+     * desired. The end user may have not finished browsing the whole page yet.
      * </pre>
      *
      * <code>repeated .google.cloud.retail.v2.ProductDetail product_details = 6;</code>
@@ -3928,12 +3928,12 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
      * * `detail-page-view`
      * * `purchase-complete`
      * In a `search` event, this field represents the products returned to the end
-     * user on the current page (the end user may have not finished broswing the
+     * user on the current page (the end user may have not finished browsing the
      * whole page yet). When a new page is returned to the end user, after
      * pagination/filtering/ordering even for the same query, a new `search` event
      * with different
      * [product_details][google.cloud.retail.v2.UserEvent.product_details] is
-     * desired. The end user may have not finished broswing the whole page yet.
+     * desired. The end user may have not finished browsing the whole page yet.
      * </pre>
      *
      * <code>repeated .google.cloud.retail.v2.ProductDetail product_details = 6;</code>
@@ -3955,12 +3955,12 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
      * * `detail-page-view`
      * * `purchase-complete`
      * In a `search` event, this field represents the products returned to the end
-     * user on the current page (the end user may have not finished broswing the
+     * user on the current page (the end user may have not finished browsing the
      * whole page yet). When a new page is returned to the end user, after
      * pagination/filtering/ordering even for the same query, a new `search` event
      * with different
      * [product_details][google.cloud.retail.v2.UserEvent.product_details] is
-     * desired. The end user may have not finished broswing the whole page yet.
+     * desired. The end user may have not finished browsing the whole page yet.
      * </pre>
      *
      * <code>repeated .google.cloud.retail.v2.ProductDetail product_details = 6;</code>
@@ -3983,12 +3983,12 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
      * * `detail-page-view`
      * * `purchase-complete`
      * In a `search` event, this field represents the products returned to the end
-     * user on the current page (the end user may have not finished broswing the
+     * user on the current page (the end user may have not finished browsing the
      * whole page yet). When a new page is returned to the end user, after
      * pagination/filtering/ordering even for the same query, a new `search` event
      * with different
      * [product_details][google.cloud.retail.v2.UserEvent.product_details] is
-     * desired. The end user may have not finished broswing the whole page yet.
+     * desired. The end user may have not finished browsing the whole page yet.
      * </pre>
      *
      * <code>repeated .google.cloud.retail.v2.ProductDetail product_details = 6;</code>
@@ -4007,12 +4007,12 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
      * * `detail-page-view`
      * * `purchase-complete`
      * In a `search` event, this field represents the products returned to the end
-     * user on the current page (the end user may have not finished broswing the
+     * user on the current page (the end user may have not finished browsing the
      * whole page yet). When a new page is returned to the end user, after
      * pagination/filtering/ordering even for the same query, a new `search` event
      * with different
      * [product_details][google.cloud.retail.v2.UserEvent.product_details] is
-     * desired. The end user may have not finished broswing the whole page yet.
+     * desired. The end user may have not finished browsing the whole page yet.
      * </pre>
      *
      * <code>repeated .google.cloud.retail.v2.ProductDetail product_details = 6;</code>
@@ -4031,12 +4031,12 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
      * * `detail-page-view`
      * * `purchase-complete`
      * In a `search` event, this field represents the products returned to the end
-     * user on the current page (the end user may have not finished broswing the
+     * user on the current page (the end user may have not finished browsing the
      * whole page yet). When a new page is returned to the end user, after
      * pagination/filtering/ordering even for the same query, a new `search` event
      * with different
      * [product_details][google.cloud.retail.v2.UserEvent.product_details] is
-     * desired. The end user may have not finished broswing the whole page yet.
+     * desired. The end user may have not finished browsing the whole page yet.
      * </pre>
      *
      * <code>repeated .google.cloud.retail.v2.ProductDetail product_details = 6;</code>
@@ -4497,7 +4497,7 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The id or name of the associated shopping cart. This id is used
+     * The ID or name of the associated shopping cart. This ID is used
      * to associate multiple items added or present in the cart before purchase.
      * This can only be set for `add-to-cart`, `purchase-complete`, or
      * `shopping-cart-page-view` events.
@@ -4522,7 +4522,7 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The id or name of the associated shopping cart. This id is used
+     * The ID or name of the associated shopping cart. This ID is used
      * to associate multiple items added or present in the cart before purchase.
      * This can only be set for `add-to-cart`, `purchase-complete`, or
      * `shopping-cart-page-view` events.
@@ -4547,7 +4547,7 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The id or name of the associated shopping cart. This id is used
+     * The ID or name of the associated shopping cart. This ID is used
      * to associate multiple items added or present in the cart before purchase.
      * This can only be set for `add-to-cart`, `purchase-complete`, or
      * `shopping-cart-page-view` events.
@@ -4571,7 +4571,7 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The id or name of the associated shopping cart. This id is used
+     * The ID or name of the associated shopping cart. This ID is used
      * to associate multiple items added or present in the cart before purchase.
      * This can only be set for `add-to-cart`, `purchase-complete`, or
      * `shopping-cart-page-view` events.
@@ -4591,7 +4591,7 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The id or name of the associated shopping cart. This id is used
+     * The ID or name of the associated shopping cart. This ID is used
      * to associate multiple items added or present in the cart before purchase.
      * This can only be set for `add-to-cart`, `purchase-complete`, or
      * `shopping-cart-page-view` events.
@@ -6000,7 +6000,7 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A unique id of a web page view.
+     * A unique ID of a web page view.
      * This should be kept the same for all user events triggered from the same
      * pageview. For example, an item detail page view could trigger multiple
      * events as the user is browsing the page. The `pageViewId` property should
@@ -6029,7 +6029,7 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A unique id of a web page view.
+     * A unique ID of a web page view.
      * This should be kept the same for all user events triggered from the same
      * pageview. For example, an item detail page view could trigger multiple
      * events as the user is browsing the page. The `pageViewId` property should
@@ -6058,7 +6058,7 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A unique id of a web page view.
+     * A unique ID of a web page view.
      * This should be kept the same for all user events triggered from the same
      * pageview. For example, an item detail page view could trigger multiple
      * events as the user is browsing the page. The `pageViewId` property should
@@ -6086,7 +6086,7 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A unique id of a web page view.
+     * A unique ID of a web page view.
      * This should be kept the same for all user events triggered from the same
      * pageview. For example, an item detail page view could trigger multiple
      * events as the user is browsing the page. The `pageViewId` property should
@@ -6110,7 +6110,7 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A unique id of a web page view.
+     * A unique ID of a web page view.
      * This should be kept the same for all user events triggered from the same
      * pageview. For example, an item detail page view could trigger multiple
      * events as the user is browsing the page. The `pageViewId` property should

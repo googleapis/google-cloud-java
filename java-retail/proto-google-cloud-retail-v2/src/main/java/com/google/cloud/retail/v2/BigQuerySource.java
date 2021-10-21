@@ -554,19 +554,19 @@ public final class BigQuerySource extends com.google.protobuf.GeneratedMessageV3
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getDatasetIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(datasetId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, datasetId_);
     }
-    if (!getTableIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(tableId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, tableId_);
     }
-    if (!getGcsStagingDirBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(gcsStagingDir_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, gcsStagingDir_);
     }
-    if (!getDataSchemaBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(dataSchema_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 4, dataSchema_);
     }
-    if (!getProjectIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(projectId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 5, projectId_);
     }
     if (partitionCase_ == 6) {
@@ -581,19 +581,19 @@ public final class BigQuerySource extends com.google.protobuf.GeneratedMessageV3
     if (size != -1) return size;
 
     size = 0;
-    if (!getDatasetIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(datasetId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, datasetId_);
     }
-    if (!getTableIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(tableId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, tableId_);
     }
-    if (!getGcsStagingDirBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(gcsStagingDir_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, gcsStagingDir_);
     }
-    if (!getDataSchemaBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(dataSchema_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, dataSchema_);
     }
-    if (!getProjectIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(projectId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, projectId_);
     }
     if (partitionCase_ == 6) {

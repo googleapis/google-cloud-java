@@ -529,7 +529,7 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
 
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-      if (!getSuggestionBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(suggestion_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, suggestion_);
       }
       com.google.protobuf.GeneratedMessageV3.serializeStringMapTo(
@@ -543,7 +543,7 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
       if (size != -1) return size;
 
       size = 0;
-      if (!getSuggestionBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(suggestion_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, suggestion_);
       }
       for (java.util.Map.Entry<java.lang.String, com.google.cloud.retail.v2.CustomAttribute> entry :
@@ -1409,7 +1409,7 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
 
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-      if (!getRecentSearchBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(recentSearch_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, recentSearch_);
       }
       unknownFields.writeTo(output);
@@ -1421,7 +1421,7 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
       if (size != -1) return size;
 
       size = 0;
-      if (!getRecentSearchBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(recentSearch_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, recentSearch_);
       }
       size += unknownFields.getSerializedSize();
@@ -2202,7 +2202,7 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
     for (int i = 0; i < completionResults_.size(); i++) {
       output.writeMessage(1, completionResults_.get(i));
     }
-    if (!getAttributionTokenBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(attributionToken_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, attributionToken_);
     }
     for (int i = 0; i < recentSearchResults_.size(); i++) {
@@ -2221,7 +2221,7 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(1, completionResults_.get(i));
     }
-    if (!getAttributionTokenBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(attributionToken_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, attributionToken_);
     }
     for (int i = 0; i < recentSearchResults_.size(); i++) {
