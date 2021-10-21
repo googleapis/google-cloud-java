@@ -1,5 +1,24 @@
 # Changelog
 
+## [2.2.0](https://www.github.com/googleapis/java-servicedirectory/compare/v2.1.2...v2.2.0) (2021-10-20)
+
+
+### Features
+
+* add `google/api/routing.proto` ([#538](https://www.github.com/googleapis/java-servicedirectory/issues/538)) ([b3702f3](https://www.github.com/googleapis/java-servicedirectory/commit/b3702f32243019c66fc50f016910bb7b7e82bf18))
+* publish `routing.proto` containing the `google.api.RoutingRule` annotation feat: add Bazel rules wrapping `routing.proto` ([#547](https://www.github.com/googleapis/java-servicedirectory/issues/547)) ([c19c27b](https://www.github.com/googleapis/java-servicedirectory/commit/c19c27bc4cac2d5e32667b769cc6e88f1b9d5d69))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.4.0 ([#553](https://www.github.com/googleapis/java-servicedirectory/issues/553)) ([ffcf65b](https://www.github.com/googleapis/java-servicedirectory/commit/ffcf65bafe4c4d911472ffe772367187dfe62a8e))
+
+
+### Documentation
+
+* fix docstring formatting ([#551](https://www.github.com/googleapis/java-servicedirectory/issues/551)) ([5625972](https://www.github.com/googleapis/java-servicedirectory/commit/562597264a2332cd5ec988f4af1895de0036c84b))
+* fix docstring formatting ([#552](https://www.github.com/googleapis/java-servicedirectory/issues/552)) ([bd37e33](https://www.github.com/googleapis/java-servicedirectory/commit/bd37e332e458edf4b3ee9139bd6f0e33916c6e1e))
+
 ### [2.1.2](https://www.github.com/googleapis/java-servicedirectory/compare/v2.1.1...v2.1.2) (2021-09-23)
 
 
