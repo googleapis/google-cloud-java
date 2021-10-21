@@ -43,7 +43,7 @@ If you are using Maven without BOM, add this to your dependencies:
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-bigquery</artifactId>
-  <version>2.1.7</version>
+  <version>2.1.13</version>
 </dependency>
 
 ```
@@ -51,20 +51,20 @@ If you are using Maven without BOM, add this to your dependencies:
 If you are using Gradle 5.x or later, add this to your dependencies
 
 ```Groovy
-implementation platform('com.google.cloud:libraries-bom:23.0.0')
+implementation platform('com.google.cloud:libraries-bom:23.1.0')
 
 implementation 'com.google.cloud:google-cloud-bigquery'
 ```
 If you are using Gradle without BOM, add this to your dependencies
 
 ```Groovy
-implementation 'com.google.cloud:google-cloud-bigquery:2.1.7'
+implementation 'com.google.cloud:google-cloud-bigquery:2.3.2'
 ```
 
 If you are using SBT, add this to your dependencies
 
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-bigquery" % "2.1.7"
+libraryDependencies += "com.google.cloud" % "google-cloud-bigquery" % "2.3.2"
 ```
 
 ## Authentication
