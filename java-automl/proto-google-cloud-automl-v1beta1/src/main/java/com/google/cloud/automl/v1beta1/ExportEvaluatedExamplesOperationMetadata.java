@@ -321,7 +321,7 @@ public final class ExportEvaluatedExamplesOperationMetadata
 
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-      if (!getBigqueryOutputDatasetBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(bigqueryOutputDataset_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, bigqueryOutputDataset_);
       }
       unknownFields.writeTo(output);
@@ -333,7 +333,7 @@ public final class ExportEvaluatedExamplesOperationMetadata
       if (size != -1) return size;
 
       size = 0;
-      if (!getBigqueryOutputDatasetBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(bigqueryOutputDataset_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, bigqueryOutputDataset_);
       }
       size += unknownFields.getSerializedSize();

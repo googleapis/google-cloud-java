@@ -662,16 +662,16 @@ public final class TablesDatasetMetadata extends com.google.protobuf.GeneratedMe
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getPrimaryTableSpecIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(primaryTableSpecId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, primaryTableSpecId_);
     }
-    if (!getTargetColumnSpecIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(targetColumnSpecId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, targetColumnSpecId_);
     }
-    if (!getWeightColumnSpecIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(weightColumnSpecId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, weightColumnSpecId_);
     }
-    if (!getMlUseColumnSpecIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(mlUseColumnSpecId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 4, mlUseColumnSpecId_);
     }
     com.google.protobuf.GeneratedMessageV3.serializeStringMapTo(
@@ -691,16 +691,16 @@ public final class TablesDatasetMetadata extends com.google.protobuf.GeneratedMe
     if (size != -1) return size;
 
     size = 0;
-    if (!getPrimaryTableSpecIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(primaryTableSpecId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, primaryTableSpecId_);
     }
-    if (!getTargetColumnSpecIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(targetColumnSpecId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, targetColumnSpecId_);
     }
-    if (!getWeightColumnSpecIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(weightColumnSpecId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, weightColumnSpecId_);
     }
-    if (!getMlUseColumnSpecIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(mlUseColumnSpecId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, mlUseColumnSpecId_);
     }
     for (java.util.Map.Entry<java.lang.String, com.google.cloud.automl.v1beta1.CorrelationStats>

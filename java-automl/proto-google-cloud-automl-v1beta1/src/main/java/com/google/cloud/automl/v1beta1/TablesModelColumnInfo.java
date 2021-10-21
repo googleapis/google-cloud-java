@@ -274,10 +274,10 @@ public final class TablesModelColumnInfo extends com.google.protobuf.GeneratedMe
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getColumnSpecNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(columnSpecName_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, columnSpecName_);
     }
-    if (!getColumnDisplayNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(columnDisplayName_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, columnDisplayName_);
     }
     if (featureImportance_ != 0F) {
@@ -292,10 +292,10 @@ public final class TablesModelColumnInfo extends com.google.protobuf.GeneratedMe
     if (size != -1) return size;
 
     size = 0;
-    if (!getColumnSpecNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(columnSpecName_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, columnSpecName_);
     }
-    if (!getColumnDisplayNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(columnDisplayName_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, columnDisplayName_);
     }
     if (featureImportance_ != 0F) {

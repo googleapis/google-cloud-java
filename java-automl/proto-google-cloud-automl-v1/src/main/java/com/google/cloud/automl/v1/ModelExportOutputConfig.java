@@ -514,7 +514,7 @@ public final class ModelExportOutputConfig extends com.google.protobuf.Generated
     }
     com.google.protobuf.GeneratedMessageV3.serializeStringMapTo(
         output, internalGetParams(), ParamsDefaultEntryHolder.defaultEntry, 2);
-    if (!getModelFormatBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(modelFormat_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 4, modelFormat_);
     }
     unknownFields.writeTo(output);
@@ -541,7 +541,7 @@ public final class ModelExportOutputConfig extends com.google.protobuf.Generated
               .build();
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, params__);
     }
-    if (!getModelFormatBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(modelFormat_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, modelFormat_);
     }
     size += unknownFields.getSerializedSize();

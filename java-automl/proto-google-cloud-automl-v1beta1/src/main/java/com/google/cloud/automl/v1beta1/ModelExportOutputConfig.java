@@ -620,7 +620,7 @@ public final class ModelExportOutputConfig extends com.google.protobuf.Generated
     if (destinationCase_ == 3) {
       output.writeMessage(3, (com.google.cloud.automl.v1beta1.GcrDestination) destination_);
     }
-    if (!getModelFormatBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(modelFormat_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 4, modelFormat_);
     }
     unknownFields.writeTo(output);
@@ -652,7 +652,7 @@ public final class ModelExportOutputConfig extends com.google.protobuf.Generated
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               3, (com.google.cloud.automl.v1beta1.GcrDestination) destination_);
     }
-    if (!getModelFormatBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(modelFormat_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, modelFormat_);
     }
     size += unknownFields.getSerializedSize();

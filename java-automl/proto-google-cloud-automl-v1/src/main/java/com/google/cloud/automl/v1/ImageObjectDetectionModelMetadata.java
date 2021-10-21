@@ -389,7 +389,7 @@ public final class ImageObjectDetectionModelMetadata extends com.google.protobuf
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getModelTypeBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(modelType_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, modelType_);
     }
     if (nodeCount_ != 0L) {
@@ -398,7 +398,7 @@ public final class ImageObjectDetectionModelMetadata extends com.google.protobuf
     if (nodeQps_ != 0D) {
       output.writeDouble(4, nodeQps_);
     }
-    if (!getStopReasonBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(stopReason_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 5, stopReason_);
     }
     if (trainBudgetMilliNodeHours_ != 0L) {
@@ -416,7 +416,7 @@ public final class ImageObjectDetectionModelMetadata extends com.google.protobuf
     if (size != -1) return size;
 
     size = 0;
-    if (!getModelTypeBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(modelType_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, modelType_);
     }
     if (nodeCount_ != 0L) {
@@ -425,7 +425,7 @@ public final class ImageObjectDetectionModelMetadata extends com.google.protobuf
     if (nodeQps_ != 0D) {
       size += com.google.protobuf.CodedOutputStream.computeDoubleSize(4, nodeQps_);
     }
-    if (!getStopReasonBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(stopReason_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, stopReason_);
     }
     if (trainBudgetMilliNodeHours_ != 0L) {

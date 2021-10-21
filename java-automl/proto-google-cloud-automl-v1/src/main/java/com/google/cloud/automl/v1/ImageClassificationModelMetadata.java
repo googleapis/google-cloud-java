@@ -473,13 +473,13 @@ public final class ImageClassificationModelMetadata extends com.google.protobuf.
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getBaseModelIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(baseModelId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, baseModelId_);
     }
-    if (!getStopReasonBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(stopReason_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 5, stopReason_);
     }
-    if (!getModelTypeBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(modelType_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 7, modelType_);
     }
     if (nodeQps_ != 0D) {
@@ -503,13 +503,13 @@ public final class ImageClassificationModelMetadata extends com.google.protobuf.
     if (size != -1) return size;
 
     size = 0;
-    if (!getBaseModelIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(baseModelId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, baseModelId_);
     }
-    if (!getStopReasonBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(stopReason_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, stopReason_);
     }
-    if (!getModelTypeBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(modelType_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, modelType_);
     }
     if (nodeQps_ != 0D) {

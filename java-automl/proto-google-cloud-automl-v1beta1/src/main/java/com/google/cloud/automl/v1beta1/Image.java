@@ -337,7 +337,7 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
     if (dataCase_ == 1) {
       output.writeBytes(1, (com.google.protobuf.ByteString) data_);
     }
-    if (!getThumbnailUriBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(thumbnailUri_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 4, thumbnailUri_);
     }
     if (dataCase_ == 6) {
@@ -357,7 +357,7 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.CodedOutputStream.computeBytesSize(
               1, (com.google.protobuf.ByteString) data_);
     }
-    if (!getThumbnailUriBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(thumbnailUri_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, thumbnailUri_);
     }
     if (dataCase_ == 6) {

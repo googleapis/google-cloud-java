@@ -314,7 +314,7 @@ public final class ExportModelOperationMetadata extends com.google.protobuf.Gene
 
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-      if (!getGcsOutputDirectoryBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(gcsOutputDirectory_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, gcsOutputDirectory_);
       }
       unknownFields.writeTo(output);
@@ -326,7 +326,7 @@ public final class ExportModelOperationMetadata extends com.google.protobuf.Gene
       if (size != -1) return size;
 
       size = 0;
-      if (!getGcsOutputDirectoryBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(gcsOutputDirectory_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, gcsOutputDirectory_);
       }
       size += unknownFields.getSerializedSize();

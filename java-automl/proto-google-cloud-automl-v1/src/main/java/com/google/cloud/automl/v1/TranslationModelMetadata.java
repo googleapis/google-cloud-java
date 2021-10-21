@@ -298,13 +298,13 @@ public final class TranslationModelMetadata extends com.google.protobuf.Generate
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getBaseModelBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(baseModel_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, baseModel_);
     }
-    if (!getSourceLanguageCodeBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(sourceLanguageCode_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, sourceLanguageCode_);
     }
-    if (!getTargetLanguageCodeBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(targetLanguageCode_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, targetLanguageCode_);
     }
     unknownFields.writeTo(output);
@@ -316,13 +316,13 @@ public final class TranslationModelMetadata extends com.google.protobuf.Generate
     if (size != -1) return size;
 
     size = 0;
-    if (!getBaseModelBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(baseModel_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, baseModel_);
     }
-    if (!getSourceLanguageCodeBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(sourceLanguageCode_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, sourceLanguageCode_);
     }
-    if (!getTargetLanguageCodeBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(targetLanguageCode_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, targetLanguageCode_);
     }
     size += unknownFields.getSerializedSize();

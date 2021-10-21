@@ -229,7 +229,7 @@ public final class TextSegment extends com.google.protobuf.GeneratedMessageV3
     if (endOffset_ != 0L) {
       output.writeInt64(2, endOffset_);
     }
-    if (!getContentBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(content_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, content_);
     }
     unknownFields.writeTo(output);
@@ -247,7 +247,7 @@ public final class TextSegment extends com.google.protobuf.GeneratedMessageV3
     if (endOffset_ != 0L) {
       size += com.google.protobuf.CodedOutputStream.computeInt64Size(2, endOffset_);
     }
-    if (!getContentBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(content_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, content_);
     }
     size += unknownFields.getSerializedSize();
