@@ -1261,7 +1261,7 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
       if (strength_ != 0D) {
         output.writeDouble(1, strength_);
       }
-      if (!getTuneBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(tune_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, tune_);
       }
       unknownFields.writeTo(output);
@@ -1276,7 +1276,7 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
       if (strength_ != 0D) {
         size += com.google.protobuf.CodedOutputStream.computeDoubleSize(1, strength_);
       }
-      if (!getTuneBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(tune_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, tune_);
       }
       size += unknownFields.getSerializedSize();

@@ -1051,16 +1051,16 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getCodecBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(codec_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, codec_);
     }
-    if (!getProfileBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(profile_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, profile_);
     }
-    if (!getTuneBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(tune_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, tune_);
     }
-    if (!getPresetBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(preset_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 4, preset_);
     }
     if (heightPixels_ != 0) {
@@ -1069,13 +1069,13 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
     if (widthPixels_ != 0) {
       output.writeInt32(6, widthPixels_);
     }
-    if (!getPixelFormatBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(pixelFormat_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 7, pixelFormat_);
     }
     if (bitrateBps_ != 0) {
       output.writeInt32(8, bitrateBps_);
     }
-    if (!getRateControlModeBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(rateControlMode_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 9, rateControlMode_);
     }
     if (enableTwoPass_ != false) {
@@ -1099,7 +1099,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
     if (gopModeCase_ == 16) {
       output.writeMessage(16, (com.google.protobuf.Duration) gopMode_);
     }
-    if (!getEntropyCoderBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(entropyCoder_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 17, entropyCoder_);
     }
     if (bPyramid_ != false) {
@@ -1123,16 +1123,16 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
     if (size != -1) return size;
 
     size = 0;
-    if (!getCodecBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(codec_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, codec_);
     }
-    if (!getProfileBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(profile_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, profile_);
     }
-    if (!getTuneBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(tune_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, tune_);
     }
-    if (!getPresetBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(preset_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, preset_);
     }
     if (heightPixels_ != 0) {
@@ -1141,13 +1141,13 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
     if (widthPixels_ != 0) {
       size += com.google.protobuf.CodedOutputStream.computeInt32Size(6, widthPixels_);
     }
-    if (!getPixelFormatBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(pixelFormat_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, pixelFormat_);
     }
     if (bitrateBps_ != 0) {
       size += com.google.protobuf.CodedOutputStream.computeInt32Size(8, bitrateBps_);
     }
-    if (!getRateControlModeBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(rateControlMode_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(9, rateControlMode_);
     }
     if (enableTwoPass_ != false) {
@@ -1175,7 +1175,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               16, (com.google.protobuf.Duration) gopMode_);
     }
-    if (!getEntropyCoderBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(entropyCoder_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(17, entropyCoder_);
     }
     if (bPyramid_ != false) {

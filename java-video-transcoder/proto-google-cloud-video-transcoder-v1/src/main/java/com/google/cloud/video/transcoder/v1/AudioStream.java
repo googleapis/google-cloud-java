@@ -577,10 +577,10 @@ public final class AudioStream extends com.google.protobuf.GeneratedMessageV3
 
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-      if (!getAtomKeyBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(atomKey_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, atomKey_);
       }
-      if (!getInputKeyBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(inputKey_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, inputKey_);
       }
       if (inputTrack_ != 0) {
@@ -604,10 +604,10 @@ public final class AudioStream extends com.google.protobuf.GeneratedMessageV3
       if (size != -1) return size;
 
       size = 0;
-      if (!getAtomKeyBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(atomKey_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, atomKey_);
       }
-      if (!getInputKeyBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(inputKey_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, inputKey_);
       }
       if (inputTrack_ != 0) {
@@ -1753,7 +1753,7 @@ public final class AudioStream extends com.google.protobuf.GeneratedMessageV3
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getCodecBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(codec_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, codec_);
     }
     if (bitrateBps_ != 0) {
@@ -1780,7 +1780,7 @@ public final class AudioStream extends com.google.protobuf.GeneratedMessageV3
     if (size != -1) return size;
 
     size = 0;
-    if (!getCodecBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(codec_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, codec_);
     }
     if (bitrateBps_ != 0) {

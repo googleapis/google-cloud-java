@@ -313,13 +313,13 @@ public final class CreateJobTemplateRequest extends com.google.protobuf.Generate
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getParentBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(parent_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, parent_);
     }
     if (jobTemplate_ != null) {
       output.writeMessage(2, getJobTemplate());
     }
-    if (!getJobTemplateIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(jobTemplateId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, jobTemplateId_);
     }
     unknownFields.writeTo(output);
@@ -331,13 +331,13 @@ public final class CreateJobTemplateRequest extends com.google.protobuf.Generate
     if (size != -1) return size;
 
     size = 0;
-    if (!getParentBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(parent_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, parent_);
     }
     if (jobTemplate_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, getJobTemplate());
     }
-    if (!getJobTemplateIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(jobTemplateId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, jobTemplateId_);
     }
     size += unknownFields.getSerializedSize();
