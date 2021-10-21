@@ -5661,6 +5661,17 @@ public final class PatchDeployments {
        * <code>MONTHLY = 2;</code>
        */
       MONTHLY(2),
+      /**
+       *
+       *
+       * <pre>
+       * Indicates that the frequency should be expressed in terms of
+       * days.
+       * </pre>
+       *
+       * <code>DAILY = 3;</code>
+       */
+      DAILY(3),
       UNRECOGNIZED(-1),
       ;
 
@@ -5696,6 +5707,17 @@ public final class PatchDeployments {
        * <code>MONTHLY = 2;</code>
        */
       public static final int MONTHLY_VALUE = 2;
+      /**
+       *
+       *
+       * <pre>
+       * Indicates that the frequency should be expressed in terms of
+       * days.
+       * </pre>
+       *
+       * <code>DAILY = 3;</code>
+       */
+      public static final int DAILY_VALUE = 3;
 
       public final int getNumber() {
         if (this == UNRECOGNIZED) {
@@ -5727,6 +5749,8 @@ public final class PatchDeployments {
             return WEEKLY;
           case 2:
             return MONTHLY;
+          case 3:
+            return DAILY;
           default:
             return null;
         }
@@ -16281,8 +16305,8 @@ public final class PatchDeployments {
           + "/PatchDeployment\0226projects/{project}/pat"
           + "chDeployments/{patch_deployment}B\n\n\010sche"
           + "dule\"H\n\017OneTimeSchedule\0225\n\014execute_time\030"
-          + "\001 \001(\0132\032.google.protobuf.TimestampB\003\340A\002\"\373"
-          + "\004\n\021RecurringSchedule\022-\n\ttime_zone\030\001 \001(\0132"
+          + "\001 \001(\0132\032.google.protobuf.TimestampB\003\340A\002\"\206"
+          + "\005\n\021RecurringSchedule\022-\n\ttime_zone\030\001 \001(\0132"
           + "\025.google.type.TimeZoneB\003\340A\002\0223\n\nstart_tim"
           + "e\030\002 \001(\0132\032.google.protobuf.TimestampB\003\340A\001"
           + "\0221\n\010end_time\030\003 \001(\0132\032.google.protobuf.Tim"
@@ -16295,39 +16319,39 @@ public final class PatchDeployments {
           + "config.v1.MonthlyScheduleB\003\340A\002H\000\022:\n\021last"
           + "_execute_time\030\t \001(\0132\032.google.protobuf.Ti"
           + "mestampB\003\340A\003\022:\n\021next_execute_time\030\n \001(\0132"
-          + "\032.google.protobuf.TimestampB\003\340A\003\"?\n\tFreq"
+          + "\032.google.protobuf.TimestampB\003\340A\003\"J\n\tFreq"
           + "uency\022\031\n\025FREQUENCY_UNSPECIFIED\020\000\022\n\n\006WEEK"
-          + "LY\020\001\022\013\n\007MONTHLY\020\002B\021\n\017schedule_config\"B\n\016"
-          + "WeeklySchedule\0220\n\013day_of_week\030\001 \001(\0162\026.go"
-          + "ogle.type.DayOfWeekB\003\340A\002\"\207\001\n\017MonthlySche"
-          + "dule\022J\n\021week_day_of_month\030\001 \001(\0132(.google"
-          + ".cloud.osconfig.v1.WeekDayOfMonthB\003\340A\002H\000"
-          + "\022\030\n\tmonth_day\030\002 \001(\005B\003\340A\002H\000B\016\n\014day_of_mon"
-          + "th\"]\n\016WeekDayOfMonth\022\031\n\014week_ordinal\030\001 \001"
-          + "(\005B\003\340A\002\0220\n\013day_of_week\030\002 \001(\0162\026.google.ty"
-          + "pe.DayOfWeekB\003\340A\002\"\317\001\n\034CreatePatchDeploym"
-          + "entRequest\022C\n\006parent\030\001 \001(\tB3\340A\002\372A-\n+clou"
-          + "dresourcemanager.googleapis.com/Project\022"
-          + " \n\023patch_deployment_id\030\002 \001(\tB\003\340A\002\022H\n\020pat"
-          + "ch_deployment\030\003 \001(\0132).google.cloud.oscon"
-          + "fig.v1.PatchDeploymentB\003\340A\002\"Z\n\031GetPatchD"
-          + "eploymentRequest\022=\n\004name\030\001 \001(\tB/\340A\002\372A)\n\'"
-          + "osconfig.googleapis.com/PatchDeployment\""
-          + "\223\001\n\033ListPatchDeploymentsRequest\022C\n\006paren"
-          + "t\030\001 \001(\tB3\340A\002\372A-\n+cloudresourcemanager.go"
-          + "ogleapis.com/Project\022\026\n\tpage_size\030\002 \001(\005B"
-          + "\003\340A\001\022\027\n\npage_token\030\003 \001(\tB\003\340A\001\"}\n\034ListPat"
-          + "chDeploymentsResponse\022D\n\021patch_deploymen"
-          + "ts\030\001 \003(\0132).google.cloud.osconfig.v1.Patc"
-          + "hDeployment\022\027\n\017next_page_token\030\002 \001(\t\"]\n\034"
-          + "DeletePatchDeploymentRequest\022=\n\004name\030\001 \001"
-          + "(\tB/\340A\002\372A)\n\'osconfig.googleapis.com/Patc"
-          + "hDeploymentB\306\001\n\034com.google.cloud.osconfi"
-          + "g.v1B\020PatchDeploymentsZ@google.golang.or"
-          + "g/genproto/googleapis/cloud/osconfig/v1;"
-          + "osconfig\252\002\030Google.Cloud.OsConfig.V1\312\002\030Go"
-          + "ogle\\Cloud\\OsConfig\\V1\352\002\033Google::Cloud::"
-          + "OsConfig::V1b\006proto3"
+          + "LY\020\001\022\013\n\007MONTHLY\020\002\022\t\n\005DAILY\020\003B\021\n\017schedule"
+          + "_config\"B\n\016WeeklySchedule\0220\n\013day_of_week"
+          + "\030\001 \001(\0162\026.google.type.DayOfWeekB\003\340A\002\"\207\001\n\017"
+          + "MonthlySchedule\022J\n\021week_day_of_month\030\001 \001"
+          + "(\0132(.google.cloud.osconfig.v1.WeekDayOfM"
+          + "onthB\003\340A\002H\000\022\030\n\tmonth_day\030\002 \001(\005B\003\340A\002H\000B\016\n"
+          + "\014day_of_month\"]\n\016WeekDayOfMonth\022\031\n\014week_"
+          + "ordinal\030\001 \001(\005B\003\340A\002\0220\n\013day_of_week\030\002 \001(\0162"
+          + "\026.google.type.DayOfWeekB\003\340A\002\"\317\001\n\034CreateP"
+          + "atchDeploymentRequest\022C\n\006parent\030\001 \001(\tB3\340"
+          + "A\002\372A-\n+cloudresourcemanager.googleapis.c"
+          + "om/Project\022 \n\023patch_deployment_id\030\002 \001(\tB"
+          + "\003\340A\002\022H\n\020patch_deployment\030\003 \001(\0132).google."
+          + "cloud.osconfig.v1.PatchDeploymentB\003\340A\002\"Z"
+          + "\n\031GetPatchDeploymentRequest\022=\n\004name\030\001 \001("
+          + "\tB/\340A\002\372A)\n\'osconfig.googleapis.com/Patch"
+          + "Deployment\"\223\001\n\033ListPatchDeploymentsReque"
+          + "st\022C\n\006parent\030\001 \001(\tB3\340A\002\372A-\n+cloudresourc"
+          + "emanager.googleapis.com/Project\022\026\n\tpage_"
+          + "size\030\002 \001(\005B\003\340A\001\022\027\n\npage_token\030\003 \001(\tB\003\340A\001"
+          + "\"}\n\034ListPatchDeploymentsResponse\022D\n\021patc"
+          + "h_deployments\030\001 \003(\0132).google.cloud.oscon"
+          + "fig.v1.PatchDeployment\022\027\n\017next_page_toke"
+          + "n\030\002 \001(\t\"]\n\034DeletePatchDeploymentRequest\022"
+          + "=\n\004name\030\001 \001(\tB/\340A\002\372A)\n\'osconfig.googleap"
+          + "is.com/PatchDeploymentB\306\001\n\034com.google.cl"
+          + "oud.osconfig.v1B\020PatchDeploymentsZ@googl"
+          + "e.golang.org/genproto/googleapis/cloud/o"
+          + "sconfig/v1;osconfig\252\002\030Google.Cloud.OsCon"
+          + "fig.V1\312\002\030Google\\Cloud\\OsConfig\\V1\352\002\033Goog"
+          + "le::Cloud::OsConfig::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

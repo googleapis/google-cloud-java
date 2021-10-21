@@ -5379,6 +5379,17 @@ public final class PatchDeployments {
        * <code>MONTHLY = 2;</code>
        */
       MONTHLY(2),
+      /**
+       *
+       *
+       * <pre>
+       * Indicates that the frequency should be expressed in terms of
+       * days.
+       * </pre>
+       *
+       * <code>DAILY = 3;</code>
+       */
+      DAILY(3),
       UNRECOGNIZED(-1),
       ;
 
@@ -5414,6 +5425,17 @@ public final class PatchDeployments {
        * <code>MONTHLY = 2;</code>
        */
       public static final int MONTHLY_VALUE = 2;
+      /**
+       *
+       *
+       * <pre>
+       * Indicates that the frequency should be expressed in terms of
+       * days.
+       * </pre>
+       *
+       * <code>DAILY = 3;</code>
+       */
+      public static final int DAILY_VALUE = 3;
 
       public final int getNumber() {
         if (this == UNRECOGNIZED) {
@@ -5445,6 +5467,8 @@ public final class PatchDeployments {
             return WEEKLY;
           case 2:
             return MONTHLY;
+          case 3:
+            return DAILY;
           default:
             return null;
         }
@@ -15991,7 +16015,7 @@ public final class PatchDeployments {
           + "last_execute_time\030\n \001(\0132\032.google.protobu"
           + "f.TimestampB\003\340A\003B\n\n\010schedule\"H\n\017OneTimeS"
           + "chedule\0225\n\014execute_time\030\001 \001(\0132\032.google.p"
-          + "rotobuf.TimestampB\003\340A\002\"\207\005\n\021RecurringSche"
+          + "rotobuf.TimestampB\003\340A\002\"\222\005\n\021RecurringSche"
           + "dule\022-\n\ttime_zone\030\001 \001(\0132\025.google.type.Ti"
           + "meZoneB\003\340A\002\0223\n\nstart_time\030\002 \001(\0132\032.google"
           + ".protobuf.TimestampB\003\340A\001\0221\n\010end_time\030\003 \001"
@@ -16005,33 +16029,33 @@ public final class PatchDeployments {
           + "1beta.MonthlyScheduleB\003\340A\002H\000\022:\n\021last_exe"
           + "cute_time\030\t \001(\0132\032.google.protobuf.Timest"
           + "ampB\003\340A\003\022:\n\021next_execute_time\030\n \001(\0132\032.go"
-          + "ogle.protobuf.TimestampB\003\340A\003\"?\n\tFrequenc"
+          + "ogle.protobuf.TimestampB\003\340A\003\"J\n\tFrequenc"
           + "y\022\031\n\025FREQUENCY_UNSPECIFIED\020\000\022\n\n\006WEEKLY\020\001"
-          + "\022\013\n\007MONTHLY\020\002B\021\n\017schedule_config\"B\n\016Week"
-          + "lySchedule\0220\n\013day_of_week\030\001 \001(\0162\026.google"
-          + ".type.DayOfWeekB\003\340A\002\"\213\001\n\017MonthlySchedule"
-          + "\022N\n\021week_day_of_month\030\001 \001(\0132,.google.clo"
-          + "ud.osconfig.v1beta.WeekDayOfMonthB\003\340A\002H\000"
-          + "\022\030\n\tmonth_day\030\002 \001(\005B\003\340A\002H\000B\016\n\014day_of_mon"
-          + "th\"]\n\016WeekDayOfMonth\022\031\n\014week_ordinal\030\001 \001"
-          + "(\005B\003\340A\002\0220\n\013day_of_week\030\002 \001(\0162\026.google.ty"
-          + "pe.DayOfWeekB\003\340A\002\"\243\001\n\034CreatePatchDeploym"
-          + "entRequest\022\023\n\006parent\030\001 \001(\tB\003\340A\002\022 \n\023patch"
-          + "_deployment_id\030\002 \001(\tB\003\340A\002\022L\n\020patch_deplo"
-          + "yment\030\003 \001(\0132-.google.cloud.osconfig.v1be"
-          + "ta.PatchDeploymentB\003\340A\002\".\n\031GetPatchDeplo"
-          + "ymentRequest\022\021\n\004name\030\001 \001(\tB\003\340A\002\"c\n\033ListP"
-          + "atchDeploymentsRequest\022\023\n\006parent\030\001 \001(\tB\003"
-          + "\340A\002\022\026\n\tpage_size\030\002 \001(\005B\003\340A\001\022\027\n\npage_toke"
-          + "n\030\003 \001(\tB\003\340A\001\"\201\001\n\034ListPatchDeploymentsRes"
-          + "ponse\022H\n\021patch_deployments\030\001 \003(\0132-.googl"
-          + "e.cloud.osconfig.v1beta.PatchDeployment\022"
-          + "\027\n\017next_page_token\030\002 \001(\t\"1\n\034DeletePatchD"
-          + "eploymentRequest\022\021\n\004name\030\001 \001(\tB\003\340A\002Bz\n c"
-          + "om.google.cloud.osconfig.v1betaB\020PatchDe"
-          + "ploymentsZDgoogle.golang.org/genproto/go"
-          + "ogleapis/cloud/osconfig/v1beta;osconfigb"
-          + "\006proto3"
+          + "\022\013\n\007MONTHLY\020\002\022\t\n\005DAILY\020\003B\021\n\017schedule_con"
+          + "fig\"B\n\016WeeklySchedule\0220\n\013day_of_week\030\001 \001"
+          + "(\0162\026.google.type.DayOfWeekB\003\340A\002\"\213\001\n\017Mont"
+          + "hlySchedule\022N\n\021week_day_of_month\030\001 \001(\0132,"
+          + ".google.cloud.osconfig.v1beta.WeekDayOfM"
+          + "onthB\003\340A\002H\000\022\030\n\tmonth_day\030\002 \001(\005B\003\340A\002H\000B\016\n"
+          + "\014day_of_month\"]\n\016WeekDayOfMonth\022\031\n\014week_"
+          + "ordinal\030\001 \001(\005B\003\340A\002\0220\n\013day_of_week\030\002 \001(\0162"
+          + "\026.google.type.DayOfWeekB\003\340A\002\"\243\001\n\034CreateP"
+          + "atchDeploymentRequest\022\023\n\006parent\030\001 \001(\tB\003\340"
+          + "A\002\022 \n\023patch_deployment_id\030\002 \001(\tB\003\340A\002\022L\n\020"
+          + "patch_deployment\030\003 \001(\0132-.google.cloud.os"
+          + "config.v1beta.PatchDeploymentB\003\340A\002\".\n\031Ge"
+          + "tPatchDeploymentRequest\022\021\n\004name\030\001 \001(\tB\003\340"
+          + "A\002\"c\n\033ListPatchDeploymentsRequest\022\023\n\006par"
+          + "ent\030\001 \001(\tB\003\340A\002\022\026\n\tpage_size\030\002 \001(\005B\003\340A\001\022\027"
+          + "\n\npage_token\030\003 \001(\tB\003\340A\001\"\201\001\n\034ListPatchDep"
+          + "loymentsResponse\022H\n\021patch_deployments\030\001 "
+          + "\003(\0132-.google.cloud.osconfig.v1beta.Patch"
+          + "Deployment\022\027\n\017next_page_token\030\002 \001(\t\"1\n\034D"
+          + "eletePatchDeploymentRequest\022\021\n\004name\030\001 \001("
+          + "\tB\003\340A\002Bz\n com.google.cloud.osconfig.v1be"
+          + "taB\020PatchDeploymentsZDgoogle.golang.org/"
+          + "genproto/googleapis/cloud/osconfig/v1bet"
+          + "a;osconfigb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
