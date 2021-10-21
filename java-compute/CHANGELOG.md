@@ -1,5 +1,18 @@
 # Changelog
 
+## [1.5.0](https://www.github.com/googleapis/java-compute/compare/v1.4.4...v1.5.0) (2021-10-21)
+
+
+### Features
+
+* Introduce Native Image testing build script changes ([#565](https://www.github.com/googleapis/java-compute/issues/565)) ([5a64dbe](https://www.github.com/googleapis/java-compute/commit/5a64dbecf89748ceee879ac6681fbfec373ea384))
+* Populate compute proto with extended_operations annotations ([#563](https://www.github.com/googleapis/java-compute/issues/563)) ([9311680](https://www.github.com/googleapis/java-compute/commit/93116806dad1cff882354c16f70fb0fb810801b0))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.4.0 ([#566](https://www.github.com/googleapis/java-compute/issues/566)) ([e221882](https://www.github.com/googleapis/java-compute/commit/e2218823e6f74bfbfbb2a78f7431fa14020c7e4c))
+
 ### [1.4.4](https://www.github.com/googleapis/java-compute/compare/v1.4.3...v1.4.4) (2021-09-22)
 
 
