@@ -190,6 +190,12 @@ public final class SessionsGrpc {
      * as a result. This method is not idempotent, because it may cause contexts
      * and session entity types to be updated, which in turn might affect
      * results of future queries.
+     * If you might use
+     * [Agent Assist](https://cloud.google.com/dialogflow/docs/#aa)
+     * or other CCAI products now or in the future, consider using
+     * [AnalyzeContent][google.cloud.dialogflow.v2.Participants.AnalyzeContent]
+     * instead of `DetectIntent`. `AnalyzeContent` has additional
+     * functionality for Agent Assist and other CCAI products.
      * Note: Always use agent versions for production traffic.
      * See [Versions and
      * environments](https://cloud.google.com/dialogflow/es/docs/agents-versions).
@@ -210,6 +216,12 @@ public final class SessionsGrpc {
      * Processes a natural language query in audio format in a streaming fashion
      * and returns structured, actionable data as a result. This method is only
      * available via the gRPC API (not REST).
+     * If you might use
+     * [Agent Assist](https://cloud.google.com/dialogflow/docs/#aa)
+     * or other CCAI products now or in the future, consider using
+     * [StreamingAnalyzeContent][google.cloud.dialogflow.v2.Participants.StreamingAnalyzeContent]
+     * instead of `StreamingDetectIntent`. `StreamingAnalyzeContent` has
+     * additional functionality for Agent Assist and other CCAI products.
      * Note: Always use agent versions for production traffic.
      * See [Versions and
      * environments](https://cloud.google.com/dialogflow/es/docs/agents-versions).
@@ -272,6 +284,12 @@ public final class SessionsGrpc {
      * as a result. This method is not idempotent, because it may cause contexts
      * and session entity types to be updated, which in turn might affect
      * results of future queries.
+     * If you might use
+     * [Agent Assist](https://cloud.google.com/dialogflow/docs/#aa)
+     * or other CCAI products now or in the future, consider using
+     * [AnalyzeContent][google.cloud.dialogflow.v2.Participants.AnalyzeContent]
+     * instead of `DetectIntent`. `AnalyzeContent` has additional
+     * functionality for Agent Assist and other CCAI products.
      * Note: Always use agent versions for production traffic.
      * See [Versions and
      * environments](https://cloud.google.com/dialogflow/es/docs/agents-versions).
@@ -294,6 +312,12 @@ public final class SessionsGrpc {
      * Processes a natural language query in audio format in a streaming fashion
      * and returns structured, actionable data as a result. This method is only
      * available via the gRPC API (not REST).
+     * If you might use
+     * [Agent Assist](https://cloud.google.com/dialogflow/docs/#aa)
+     * or other CCAI products now or in the future, consider using
+     * [StreamingAnalyzeContent][google.cloud.dialogflow.v2.Participants.StreamingAnalyzeContent]
+     * instead of `StreamingDetectIntent`. `StreamingAnalyzeContent` has
+     * additional functionality for Agent Assist and other CCAI products.
      * Note: Always use agent versions for production traffic.
      * See [Versions and
      * environments](https://cloud.google.com/dialogflow/es/docs/agents-versions).
@@ -338,6 +362,12 @@ public final class SessionsGrpc {
      * as a result. This method is not idempotent, because it may cause contexts
      * and session entity types to be updated, which in turn might affect
      * results of future queries.
+     * If you might use
+     * [Agent Assist](https://cloud.google.com/dialogflow/docs/#aa)
+     * or other CCAI products now or in the future, consider using
+     * [AnalyzeContent][google.cloud.dialogflow.v2.Participants.AnalyzeContent]
+     * instead of `DetectIntent`. `AnalyzeContent` has additional
+     * functionality for Agent Assist and other CCAI products.
      * Note: Always use agent versions for production traffic.
      * See [Versions and
      * environments](https://cloud.google.com/dialogflow/es/docs/agents-versions).
@@ -378,6 +408,12 @@ public final class SessionsGrpc {
      * as a result. This method is not idempotent, because it may cause contexts
      * and session entity types to be updated, which in turn might affect
      * results of future queries.
+     * If you might use
+     * [Agent Assist](https://cloud.google.com/dialogflow/docs/#aa)
+     * or other CCAI products now or in the future, consider using
+     * [AnalyzeContent][google.cloud.dialogflow.v2.Participants.AnalyzeContent]
+     * instead of `DetectIntent`. `AnalyzeContent` has additional
+     * functionality for Agent Assist and other CCAI products.
      * Note: Always use agent versions for production traffic.
      * See [Versions and
      * environments](https://cloud.google.com/dialogflow/es/docs/agents-versions).
