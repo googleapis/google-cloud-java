@@ -60,7 +60,7 @@ public class TableDataWriteChannel
                 }
               },
               getOptions().getRetrySettings(),
-              BigQueryImpl.EXCEPTION_HANDLER,
+              BigQueryBaseService.BIGQUERY_EXCEPTION_HANDLER,
               getOptions().getClock());
       job = jobPb != null ? Job.fromPb(getOptions().getService(), jobPb) : null;
     } catch (RetryHelper.RetryHelperException e) {
@@ -91,7 +91,7 @@ public class TableDataWriteChannel
             }
           },
           options.getRetrySettings(),
-          BigQueryImpl.EXCEPTION_HANDLER,
+          BigQueryBaseService.BIGQUERY_EXCEPTION_HANDLER,
           options.getClock());
     } catch (RetryHelper.RetryHelperException e) {
       throw BigQueryException.translateAndThrow(e);
