@@ -25,10 +25,10 @@ package com.google.api.servicecontrol.v1;
  * Distribution represents a frequency distribution of double-valued sample
  * points. It contains the size of the population of sample points plus
  * additional optional information:
- *   - the arithmetic mean of the samples
- *   - the minimum and maximum of the samples
- *   - the sum-squared-deviation of the samples, used to compute variance
- *   - a histogram of the values of the sample points
+ * * the arithmetic mean of the samples
+ * * the minimum and maximum of the samples
+ * * the sum-squared-deviation of the samples, used to compute variance
+ * * a histogram of the values of the sample points
  * </pre>
  *
  * Protobuf type {@code google.api.servicecontrol.v1.Distribution}
@@ -3513,10 +3513,10 @@ public final class Distribution extends com.google.protobuf.GeneratedMessageV3
    * Distribution represents a frequency distribution of double-valued sample
    * points. It contains the size of the population of sample points plus
    * additional optional information:
-   *   - the arithmetic mean of the samples
-   *   - the minimum and maximum of the samples
-   *   - the sum-squared-deviation of the samples, used to compute variance
-   *   - a histogram of the values of the sample points
+   * * the arithmetic mean of the samples
+   * * the minimum and maximum of the samples
+   * * the sum-squared-deviation of the samples, used to compute variance
+   * * a histogram of the values of the sample points
    * </pre>
    *
    * Protobuf type {@code google.api.servicecontrol.v1.Distribution}
