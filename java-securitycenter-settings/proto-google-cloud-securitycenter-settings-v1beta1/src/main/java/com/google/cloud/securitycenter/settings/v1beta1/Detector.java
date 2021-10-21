@@ -379,10 +379,10 @@ public final class Detector extends com.google.protobuf.GeneratedMessageV3
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getDetectorBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(detector_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, detector_);
     }
-    if (!getComponentBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(component_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, component_);
     }
     if (billingTier_
@@ -402,10 +402,10 @@ public final class Detector extends com.google.protobuf.GeneratedMessageV3
     if (size != -1) return size;
 
     size = 0;
-    if (!getDetectorBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(detector_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, detector_);
     }
-    if (!getComponentBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(component_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, component_);
     }
     if (billingTier_

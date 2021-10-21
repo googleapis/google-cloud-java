@@ -1721,7 +1721,7 @@ public final class ComponentSettings extends com.google.protobuf.GeneratedMessag
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name_);
     }
     if (state_
@@ -1730,12 +1730,12 @@ public final class ComponentSettings extends com.google.protobuf.GeneratedMessag
             .getNumber()) {
       output.writeEnum(2, state_);
     }
-    if (!getProjectServiceAccountBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(projectServiceAccount_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, projectServiceAccount_);
     }
     com.google.protobuf.GeneratedMessageV3.serializeStringMapTo(
         output, internalGetDetectorSettings(), DetectorSettingsDefaultEntryHolder.defaultEntry, 4);
-    if (!getEtagBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(etag_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 5, etag_);
     }
     if (updateTime_ != null) {
@@ -1773,7 +1773,7 @@ public final class ComponentSettings extends com.google.protobuf.GeneratedMessag
     if (size != -1) return size;
 
     size = 0;
-    if (!getNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, name_);
     }
     if (state_
@@ -1782,7 +1782,7 @@ public final class ComponentSettings extends com.google.protobuf.GeneratedMessag
             .getNumber()) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(2, state_);
     }
-    if (!getProjectServiceAccountBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(projectServiceAccount_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, projectServiceAccount_);
     }
     for (java.util.Map.Entry<
@@ -1800,7 +1800,7 @@ public final class ComponentSettings extends com.google.protobuf.GeneratedMessag
                   .build();
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(4, detectorSettings__);
     }
-    if (!getEtagBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(etag_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, etag_);
     }
     if (updateTime_ != null) {

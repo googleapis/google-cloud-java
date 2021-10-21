@@ -1816,7 +1816,7 @@ public final class Settings extends com.google.protobuf.GeneratedMessageV3
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name_);
     }
     if (billingSettings_ != null) {
@@ -1828,7 +1828,7 @@ public final class Settings extends com.google.protobuf.GeneratedMessageV3
             .getNumber()) {
       output.writeEnum(3, state_);
     }
-    if (!getOrgServiceAccountBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(orgServiceAccount_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 5, orgServiceAccount_);
     }
     if (sinkSettings_ != null) {
@@ -1844,7 +1844,7 @@ public final class Settings extends com.google.protobuf.GeneratedMessageV3
         internalGetDetectorGroupSettings(),
         DetectorGroupSettingsDefaultEntryHolder.defaultEntry,
         8);
-    if (!getEtagBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(etag_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 9, etag_);
     }
     if (updateTime_ != null) {
@@ -1859,7 +1859,7 @@ public final class Settings extends com.google.protobuf.GeneratedMessageV3
     if (size != -1) return size;
 
     size = 0;
-    if (!getNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, name_);
     }
     if (billingSettings_ != null) {
@@ -1871,7 +1871,7 @@ public final class Settings extends com.google.protobuf.GeneratedMessageV3
             .getNumber()) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(3, state_);
     }
-    if (!getOrgServiceAccountBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(orgServiceAccount_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, orgServiceAccount_);
     }
     if (sinkSettings_ != null) {
@@ -1905,7 +1905,7 @@ public final class Settings extends com.google.protobuf.GeneratedMessageV3
                   .build();
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(8, detectorGroupSettings__);
     }
-    if (!getEtagBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(etag_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(9, etag_);
     }
     if (updateTime_ != null) {
