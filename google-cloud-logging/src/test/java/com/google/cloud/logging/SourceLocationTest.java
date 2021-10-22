@@ -58,6 +58,27 @@ public class SourceLocationTest {
     compareSourceLocation(SOURCE_LOCATION, SourceLocation.fromPb(SOURCE_LOCATION.toPb()));
   }
 
+  @Test
+  public void testFromCurrentContext() {
+    StackTraceElement expectedData = (new Exception()).getStackTrace()[0];
+    SourceLocation data = SourceLocation.fromCurrentContext(0);
+    assertEquals(expectedData.getFileName(), data.getFile());
+    assertEquals(expectedData.getMethodName(), data.getFunction());
+    // mind the assertion is vs (expectedData.lineNumber + 1). it is because the source location
+    // info of the expectedData is one line above the source location of the tested data.
+    assertEquals(Long.valueOf(expectedData.getLineNumber() + 1), data.getLine());
+  }
+
+  @Test(expected = IndexOutOfBoundsException.class)
+  public void testFromCurrentContextWithNegativeLevel() {
+    SourceLocation.fromCurrentContext(-1);
+  }
+
+  @Test(expected = IndexOutOfBoundsException.class)
+  public void testFromCurrentContextWithVeryLargeLevel() {
+    SourceLocation.fromCurrentContext(10000);
+  }
+
   private void compareSourceLocation(SourceLocation expected, SourceLocation value) {
     assertEquals(expected, value);
     assertEquals(expected.getFile(), value.getFile());

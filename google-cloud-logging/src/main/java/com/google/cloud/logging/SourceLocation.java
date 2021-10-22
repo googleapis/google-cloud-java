@@ -16,6 +16,8 @@
 
 package com.google.cloud.logging;
 
+import static com.google.common.base.Preconditions.checkElementIndex;
+
 import com.google.common.base.MoreObjects;
 import com.google.logging.v2.LogEntrySourceLocation;
 import java.io.Serializable;
@@ -152,6 +154,32 @@ public final class SourceLocation implements Serializable {
         .setFile(sourceLocationPb.getFile())
         .setLine(sourceLocationPb.getLine())
         .setFunction(sourceLocationPb.getFunction())
+        .build();
+  }
+
+  /**
+   * Creates instance of {@link SourceLocation} based on stack trace information. Caller should
+   * provide the level in the stack where the information can be located. The stack trace level
+   * should be {@code 0} to display information for the caller of the method.
+   *
+   * @param level Zero-based non-negative integer defining the level in the stack trace where {@code
+   *     0} is topmost element.
+   * @return a new instance of {@link SourceLocation} populated with file name, method and line
+   *     number information.
+   * @throws IndexOutOfBoundsException if the provided {@link level} is negative or greater than the
+   *     current call stack.
+   */
+  static SourceLocation fromCurrentContext(int level) {
+    StackTraceElement[] stackTrace = (new Exception()).getStackTrace();
+    Builder builder = newBuilder();
+    // need to take info from 1 level down the stack to compensate the call to this
+    // method
+    int indexPlus = checkElementIndex(level, stackTrace.length - 1) + 1;
+    StackTraceElement ste = stackTrace[indexPlus];
+    return builder
+        .setFile(ste.getFileName())
+        .setLine(Long.valueOf(ste.getLineNumber()))
+        .setFunction(ste.getMethodName())
         .build();
   }
 }
