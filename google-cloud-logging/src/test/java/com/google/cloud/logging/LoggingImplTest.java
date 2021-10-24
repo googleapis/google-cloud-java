@@ -118,11 +118,13 @@ public class LoggingImplTest {
   private static final LogEntry LOG_ENTRY1 =
       LogEntry.newBuilder(StringPayload.of("entry1"))
           .setLogName(LOG_NAME)
+          .setDestination(LogDestinationName.project(PROJECT))
           .setResource(MONITORED_RESOURCE)
           .build();
   private static final LogEntry LOG_ENTRY2 =
       LogEntry.newBuilder(StringPayload.of("entry2"))
           .setLogName(LOG_NAME)
+          .setDestination(LogDestinationName.project(PROJECT))
           .setResource(MONITORED_RESOURCE)
           .build();
   private static final Function<SinkInfo, LogSink> SINK_TO_PB_FUNCTION =

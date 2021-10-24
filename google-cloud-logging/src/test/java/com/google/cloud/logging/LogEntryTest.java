@@ -34,6 +34,7 @@ import org.junit.Test;
 public class LogEntryTest {
 
   private static final String LOG_NAME = "syslog";
+  private static final String PROJECT = "project";
   private static final MonitoredResource RESOURCE =
       MonitoredResource.newBuilder("cloudsql_database")
           .setLabels(ImmutableMap.of("datasetId", "myDataset", "zone", "myZone"))
@@ -74,6 +75,11 @@ public class LogEntryTest {
       JsonPayload.of(ImmutableMap.<String, Object>of("key", "val"));
   private static final ProtoPayload PROTO_PAYLOAD =
       ProtoPayload.of(Any.pack(Empty.getDefaultInstance()));
+  private static final LogDestinationName BILLING_NAME =
+      LogDestinationName.billingAccount("000000-111111-222222");
+  private static final LogDestinationName PROJECT_NAME = LogDestinationName.project(PROJECT);
+  private static final LogDestinationName FOLDER_NAME = LogDestinationName.folder("123456789");
+  private static final LogDestinationName ORG_NAME = LogDestinationName.organization("1122334455");
   private static final LogEntry STRING_ENTRY =
       LogEntry.newBuilder(STRING_PAYLOAD)
           .setLogName(LOG_NAME)
@@ -122,6 +128,14 @@ public class LogEntryTest {
           .setTraceSampled(TRACE_SAMPLED)
           .setSourceLocation(SOURCE_LOCATION)
           .build();
+  private static final LogEntry STRING_ENTRY_BILLING =
+      STRING_ENTRY.toBuilder().setDestination(BILLING_NAME).build();
+  private static final LogEntry STRING_ENTRY_PROJECT =
+      STRING_ENTRY.toBuilder().setDestination(PROJECT_NAME).build();
+  private static final LogEntry STRING_ENTRY_FOLDER =
+      STRING_ENTRY.toBuilder().setDestination(FOLDER_NAME).build();
+  private static final LogEntry STRING_ENTRY_ORG =
+      STRING_ENTRY.toBuilder().setDestination(ORG_NAME).build();
 
   @Test
   public void testOf() {
@@ -251,7 +265,7 @@ public class LogEntryTest {
 
   @Test
   public void testToBuilder() {
-    compareLogEntry(STRING_ENTRY, STRING_ENTRY.toBuilder().build());
+    compareLogEntry(STRING_ENTRY, STRING_ENTRY.toBuilder().build(), true);
     HttpRequest request =
         HttpRequest.newBuilder()
             .setRequestMethod(HttpRequest.RequestMethod.POST)
@@ -309,22 +323,45 @@ public class LogEntryTest {
             .setTraceSampled(TRACE_SAMPLED)
             .setSourceLocation(SOURCE_LOCATION)
             .build();
-    compareLogEntry(STRING_ENTRY, logEntry);
+    compareLogEntry(STRING_ENTRY, logEntry, true);
   }
 
   @Test
   public void testToAndFromPb() {
-    compareLogEntry(STRING_ENTRY, LogEntry.fromPb(STRING_ENTRY.toPb("project")));
-    compareLogEntry(JSON_ENTRY, LogEntry.fromPb(JSON_ENTRY.toPb("project")));
-    compareLogEntry(PROTO_ENTRY, LogEntry.fromPb(PROTO_ENTRY.toPb("project")));
+    compareLogEntry(STRING_ENTRY, LogEntry.fromPb(STRING_ENTRY.toPb(PROJECT)), false);
+    compareLogEntry(JSON_ENTRY, LogEntry.fromPb(JSON_ENTRY.toPb(PROJECT)), false);
+    compareLogEntry(PROTO_ENTRY, LogEntry.fromPb(PROTO_ENTRY.toPb(PROJECT)), false);
+    compareLogEntry(
+        STRING_ENTRY_BILLING, LogEntry.fromPb(STRING_ENTRY_BILLING.toPb(PROJECT)), true);
+    compareLogEntry(STRING_ENTRY_FOLDER, LogEntry.fromPb(STRING_ENTRY_FOLDER.toPb(PROJECT)), true);
+    compareLogEntry(STRING_ENTRY_ORG, LogEntry.fromPb(STRING_ENTRY_ORG.toPb(PROJECT)), true);
+    compareLogEntry(
+        STRING_ENTRY_PROJECT, LogEntry.fromPb(STRING_ENTRY_PROJECT.toPb(PROJECT)), true);
     LogEntry logEntry = LogEntry.of(STRING_PAYLOAD);
-    compareLogEntry(logEntry, LogEntry.fromPb(logEntry.toPb("project")));
+    compareLogEntry(logEntry, LogEntry.fromPb(logEntry.toPb(PROJECT)), true);
     logEntry = LogEntry.of(LOG_NAME, RESOURCE, STRING_PAYLOAD);
-    compareLogEntry(logEntry, LogEntry.fromPb(logEntry.toPb("project")));
+    compareLogEntry(logEntry, LogEntry.fromPb(logEntry.toPb(PROJECT)), false);
+    logEntry =
+        LogEntry.newBuilder(STRING_PAYLOAD)
+            .setLogName(LOG_NAME)
+            .setResource(RESOURCE)
+            .setDestination(FOLDER_NAME)
+            .build();
+    compareLogEntry(logEntry, LogEntry.fromPb(logEntry.toPb(PROJECT)), true);
   }
 
-  private void compareLogEntry(LogEntry expected, LogEntry value) {
-    assertEquals(expected, value);
+  @Test(expected = AssertionError.class)
+  public void testToAndFromPbWithExpectedFailure() {
+    LogEntry logEntry =
+        LogEntry.newBuilder(STRING_PAYLOAD).setLogName(LOG_NAME).setResource(RESOURCE).build();
+    compareLogEntry(logEntry, LogEntry.fromPb(logEntry.toPb(PROJECT)), true);
+  }
+
+  private void compareLogEntry(LogEntry expected, LogEntry value, Boolean extraValidations) {
+    if (extraValidations) {
+      assertEquals(expected.hashCode(), value.hashCode());
+      assertEquals(expected, value);
+    }
     assertEquals(expected.getLogName(), value.getLogName());
     assertEquals(expected.getResource(), value.getResource());
     assertEquals(expected.getTimestamp(), value.getTimestamp());
@@ -341,6 +378,5 @@ public class LogEntryTest {
     assertEquals(expected.getTraceSampled(), value.getTraceSampled());
     assertEquals(expected.getSourceLocation(), value.getSourceLocation());
     assertEquals(expected.getPayload(), value.getPayload());
-    assertEquals(expected.hashCode(), value.hashCode());
   }
 }

@@ -66,6 +66,7 @@ public class LogEntry implements Serializable {
   private final boolean traceSampled;
   private final SourceLocation sourceLocation;
   private final Payload<?> payload;
+  private final LogDestinationName destination;
 
   /** A builder for {@code LogEntry} objects. */
   public static class Builder {
@@ -84,6 +85,7 @@ public class LogEntry implements Serializable {
     private boolean traceSampled;
     private SourceLocation sourceLocation;
     private Payload<?> payload;
+    private LogDestinationName destination;
 
     Builder(Payload<?> payload) {
       this.payload = payload;
@@ -104,6 +106,7 @@ public class LogEntry implements Serializable {
       this.traceSampled = entry.traceSampled;
       this.sourceLocation = entry.sourceLocation;
       this.payload = entry.payload;
+      this.destination = entry.destination;
     }
 
     /**
@@ -282,6 +285,12 @@ public class LogEntry implements Serializable {
       return this;
     }
 
+    /** Sets the log path destination name type associated with the log entry. */
+    public Builder setDestination(LogDestinationName destination) {
+      this.destination = destination;
+      return this;
+    }
+
     /** Creates a {@code LogEntry} object for this builder. */
     public LogEntry build() {
       return new LogEntry(this);
@@ -303,6 +312,7 @@ public class LogEntry implements Serializable {
     this.traceSampled = builder.traceSampled;
     this.sourceLocation = builder.sourceLocation;
     this.payload = builder.payload;
+    this.destination = builder.destination;
   }
 
   /**
@@ -438,6 +448,16 @@ public class LogEntry implements Serializable {
     return (T) payload;
   }
 
+  /**
+   * Returns the log path destination name type associated with log entry. By default, project name
+   * based destination is used.
+   *
+   * @see <a href="https://cloud.google.com/logging/docs/reference/v2/rest/v2/LogEntry">logName</a>
+   */
+  public LogDestinationName getDestination() {
+    return destination;
+  }
+
   @Override
   public int hashCode() {
     return Objects.hash(
@@ -454,7 +474,8 @@ public class LogEntry implements Serializable {
         getSpanId(),
         traceSampled,
         sourceLocation,
-        payload);
+        payload,
+        destination);
   }
 
   @Override
@@ -479,7 +500,8 @@ public class LogEntry implements Serializable {
         && Objects.equals(getSpanId(), other.getSpanId())
         && Objects.equals(traceSampled, other.traceSampled)
         && Objects.equals(sourceLocation, other.sourceLocation)
-        && Objects.equals(payload, other.payload);
+        && Objects.equals(payload, other.payload)
+        && Objects.equals(destination, other.destination);
   }
 
   @Override
@@ -499,6 +521,7 @@ public class LogEntry implements Serializable {
         .add("traceSampled", traceSampled)
         .add("sourceLocation", sourceLocation)
         .add("payload", payload)
+        .add("destination", destination)
         .toString();
   }
 
@@ -510,8 +533,13 @@ public class LogEntry implements Serializable {
   com.google.logging.v2.LogEntry toPb(String projectId) {
     com.google.logging.v2.LogEntry.Builder builder = payload.toPb();
     builder.putAllLabels(labels);
+
     if (logName != null) {
-      builder.setLogName(LogName.ofProjectLogName(projectId, logName).toString());
+      if (destination == null) {
+        builder.setLogName(LogName.ofProjectLogName(projectId, logName).toString());
+      } else {
+        builder.setLogName(destination.toLogName(logName).toString());
+      }
     }
     if (resource != null) {
       builder.setResource(resource.toPb());
@@ -570,7 +598,12 @@ public class LogEntry implements Serializable {
     builder.setLabels(entryPb.getLabelsMap());
     builder.setSeverity(Severity.fromPb(entryPb.getSeverity()));
     if (!entryPb.getLogName().equals("")) {
-      builder.setLogName(LogName.parse(entryPb.getLogName()).getLog());
+      LogName name = LogName.parse(entryPb.getLogName());
+      builder.setLogName(name.getLog());
+      LogDestinationName resource = LogDestinationName.fromLogName(name);
+      if (resource != null) {
+        builder.setDestination(resource);
+      }
     }
     if (!entryPb.getResource().equals(com.google.api.MonitoredResource.getDefaultInstance())) {
       builder.setResource(MonitoredResource.fromPb(entryPb.getResource()));
