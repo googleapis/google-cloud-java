@@ -88,7 +88,7 @@
     <dependency>
       <groupId>com.google.apis</groupId>
       <artifactId>google-api-services-storage</artifactId>
-      <version>v1-rev20210918-1.32.1</version>
+      <version>v1-rev20211018-1.32.1</version>
     </dependency>
     <dependency>
       <groupId>com.google.api</groupId>
