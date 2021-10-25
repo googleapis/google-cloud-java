@@ -324,7 +324,7 @@ public class AssuredWorkloadsServiceClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param workload Required. The workload to update. The workload?s `name` field is used to
+   * @param workload Required. The workload to update. The workload’s `name` field is used to
    *     identify the workload to be updated. Format:
    *     organizations/{org_id}/locations/{location_id}/workloads/{workload_id}
    * @param updateMask Required. The list of fields to be updated.
