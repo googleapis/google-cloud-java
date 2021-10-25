@@ -151,11 +151,11 @@ public interface CustomMetricOrBuilder
    *
    *
    * <pre>
-   * Required. Immutable. The type for the custom metric's value.
+   * Required. The type for the custom metric's value.
    * </pre>
    *
    * <code>
-   * .google.analytics.admin.v1alpha.CustomMetric.MeasurementUnit measurement_unit = 5 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE];
+   * .google.analytics.admin.v1alpha.CustomMetric.MeasurementUnit measurement_unit = 5 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return The enum numeric value on the wire for measurementUnit.
@@ -165,11 +165,11 @@ public interface CustomMetricOrBuilder
    *
    *
    * <pre>
-   * Required. Immutable. The type for the custom metric's value.
+   * Required. The type for the custom metric's value.
    * </pre>
    *
    * <code>
-   * .google.analytics.admin.v1alpha.CustomMetric.MeasurementUnit measurement_unit = 5 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE];
+   * .google.analytics.admin.v1alpha.CustomMetric.MeasurementUnit measurement_unit = 5 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return The measurementUnit.

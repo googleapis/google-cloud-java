@@ -40,7 +40,7 @@ public final class GoogleAdsLink extends com.google.protobuf.GeneratedMessageV3
   private GoogleAdsLink() {
     name_ = "";
     customerId_ = "";
-    emailAddress_ = "";
+    creatorEmailAddress_ = "";
   }
 
   @java.lang.Override
@@ -106,13 +106,6 @@ public final class GoogleAdsLink extends com.google.protobuf.GeneratedMessageV3
 
               break;
             }
-          case 50:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              emailAddress_ = s;
-              break;
-            }
           case 58:
             {
               com.google.protobuf.Timestamp.Builder subBuilder = null;
@@ -141,6 +134,13 @@ public final class GoogleAdsLink extends com.google.protobuf.GeneratedMessageV3
                 updateTime_ = subBuilder.buildPartial();
               }
 
+              break;
+            }
+          case 74:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              creatorEmailAddress_ = s;
               break;
             }
           default:
@@ -352,57 +352,6 @@ public final class GoogleAdsLink extends com.google.protobuf.GeneratedMessageV3
     return getAdsPersonalizationEnabled();
   }
 
-  public static final int EMAIL_ADDRESS_FIELD_NUMBER = 6;
-  private volatile java.lang.Object emailAddress_;
-  /**
-   *
-   *
-   * <pre>
-   * Output only. Email address of the user that created the link.
-   * An empty string will be returned if the email address can't be retrieved.
-   * </pre>
-   *
-   * <code>string email_address = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-   *
-   * @return The emailAddress.
-   */
-  @java.lang.Override
-  public java.lang.String getEmailAddress() {
-    java.lang.Object ref = emailAddress_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      emailAddress_ = s;
-      return s;
-    }
-  }
-  /**
-   *
-   *
-   * <pre>
-   * Output only. Email address of the user that created the link.
-   * An empty string will be returned if the email address can't be retrieved.
-   * </pre>
-   *
-   * <code>string email_address = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-   *
-   * @return The bytes for emailAddress.
-   */
-  @java.lang.Override
-  public com.google.protobuf.ByteString getEmailAddressBytes() {
-    java.lang.Object ref = emailAddress_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b =
-          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
-      emailAddress_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
-  }
-
   public static final int CREATE_TIME_FIELD_NUMBER = 7;
   private com.google.protobuf.Timestamp createTime_;
   /**
@@ -501,6 +450,57 @@ public final class GoogleAdsLink extends com.google.protobuf.GeneratedMessageV3
     return getUpdateTime();
   }
 
+  public static final int CREATOR_EMAIL_ADDRESS_FIELD_NUMBER = 9;
+  private volatile java.lang.Object creatorEmailAddress_;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Email address of the user that created the link.
+   * An empty string will be returned if the email address can't be retrieved.
+   * </pre>
+   *
+   * <code>string creator_email_address = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The creatorEmailAddress.
+   */
+  @java.lang.Override
+  public java.lang.String getCreatorEmailAddress() {
+    java.lang.Object ref = creatorEmailAddress_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      creatorEmailAddress_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Email address of the user that created the link.
+   * An empty string will be returned if the email address can't be retrieved.
+   * </pre>
+   *
+   * <code>string creator_email_address = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The bytes for creatorEmailAddress.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getCreatorEmailAddressBytes() {
+    java.lang.Object ref = creatorEmailAddress_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      creatorEmailAddress_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -527,14 +527,14 @@ public final class GoogleAdsLink extends com.google.protobuf.GeneratedMessageV3
     if (adsPersonalizationEnabled_ != null) {
       output.writeMessage(5, getAdsPersonalizationEnabled());
     }
-    if (!getEmailAddressBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 6, emailAddress_);
-    }
     if (createTime_ != null) {
       output.writeMessage(7, getCreateTime());
     }
     if (updateTime_ != null) {
       output.writeMessage(8, getUpdateTime());
+    }
+    if (!getCreatorEmailAddressBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 9, creatorEmailAddress_);
     }
     unknownFields.writeTo(output);
   }
@@ -559,14 +559,14 @@ public final class GoogleAdsLink extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               5, getAdsPersonalizationEnabled());
     }
-    if (!getEmailAddressBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, emailAddress_);
-    }
     if (createTime_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(7, getCreateTime());
     }
     if (updateTime_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(8, getUpdateTime());
+    }
+    if (!getCreatorEmailAddressBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(9, creatorEmailAddress_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -592,7 +592,6 @@ public final class GoogleAdsLink extends com.google.protobuf.GeneratedMessageV3
       if (!getAdsPersonalizationEnabled().equals(other.getAdsPersonalizationEnabled()))
         return false;
     }
-    if (!getEmailAddress().equals(other.getEmailAddress())) return false;
     if (hasCreateTime() != other.hasCreateTime()) return false;
     if (hasCreateTime()) {
       if (!getCreateTime().equals(other.getCreateTime())) return false;
@@ -601,6 +600,7 @@ public final class GoogleAdsLink extends com.google.protobuf.GeneratedMessageV3
     if (hasUpdateTime()) {
       if (!getUpdateTime().equals(other.getUpdateTime())) return false;
     }
+    if (!getCreatorEmailAddress().equals(other.getCreatorEmailAddress())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -622,8 +622,6 @@ public final class GoogleAdsLink extends com.google.protobuf.GeneratedMessageV3
       hash = (37 * hash) + ADS_PERSONALIZATION_ENABLED_FIELD_NUMBER;
       hash = (53 * hash) + getAdsPersonalizationEnabled().hashCode();
     }
-    hash = (37 * hash) + EMAIL_ADDRESS_FIELD_NUMBER;
-    hash = (53 * hash) + getEmailAddress().hashCode();
     if (hasCreateTime()) {
       hash = (37 * hash) + CREATE_TIME_FIELD_NUMBER;
       hash = (53 * hash) + getCreateTime().hashCode();
@@ -632,6 +630,8 @@ public final class GoogleAdsLink extends com.google.protobuf.GeneratedMessageV3
       hash = (37 * hash) + UPDATE_TIME_FIELD_NUMBER;
       hash = (53 * hash) + getUpdateTime().hashCode();
     }
+    hash = (37 * hash) + CREATOR_EMAIL_ADDRESS_FIELD_NUMBER;
+    hash = (53 * hash) + getCreatorEmailAddress().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -789,8 +789,6 @@ public final class GoogleAdsLink extends com.google.protobuf.GeneratedMessageV3
         adsPersonalizationEnabled_ = null;
         adsPersonalizationEnabledBuilder_ = null;
       }
-      emailAddress_ = "";
-
       if (createTimeBuilder_ == null) {
         createTime_ = null;
       } else {
@@ -803,6 +801,8 @@ public final class GoogleAdsLink extends com.google.protobuf.GeneratedMessageV3
         updateTime_ = null;
         updateTimeBuilder_ = null;
       }
+      creatorEmailAddress_ = "";
+
       return this;
     }
 
@@ -838,7 +838,6 @@ public final class GoogleAdsLink extends com.google.protobuf.GeneratedMessageV3
       } else {
         result.adsPersonalizationEnabled_ = adsPersonalizationEnabledBuilder_.build();
       }
-      result.emailAddress_ = emailAddress_;
       if (createTimeBuilder_ == null) {
         result.createTime_ = createTime_;
       } else {
@@ -849,6 +848,7 @@ public final class GoogleAdsLink extends com.google.protobuf.GeneratedMessageV3
       } else {
         result.updateTime_ = updateTimeBuilder_.build();
       }
+      result.creatorEmailAddress_ = creatorEmailAddress_;
       onBuilt();
       return result;
     }
@@ -913,15 +913,15 @@ public final class GoogleAdsLink extends com.google.protobuf.GeneratedMessageV3
       if (other.hasAdsPersonalizationEnabled()) {
         mergeAdsPersonalizationEnabled(other.getAdsPersonalizationEnabled());
       }
-      if (!other.getEmailAddress().isEmpty()) {
-        emailAddress_ = other.emailAddress_;
-        onChanged();
-      }
       if (other.hasCreateTime()) {
         mergeCreateTime(other.getCreateTime());
       }
       if (other.hasUpdateTime()) {
         mergeUpdateTime(other.getUpdateTime());
+      }
+      if (!other.getCreatorEmailAddress().isEmpty()) {
+        creatorEmailAddress_ = other.creatorEmailAddress_;
+        onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -1434,117 +1434,6 @@ public final class GoogleAdsLink extends com.google.protobuf.GeneratedMessageV3
       return adsPersonalizationEnabledBuilder_;
     }
 
-    private java.lang.Object emailAddress_ = "";
-    /**
-     *
-     *
-     * <pre>
-     * Output only. Email address of the user that created the link.
-     * An empty string will be returned if the email address can't be retrieved.
-     * </pre>
-     *
-     * <code>string email_address = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     *
-     * @return The emailAddress.
-     */
-    public java.lang.String getEmailAddress() {
-      java.lang.Object ref = emailAddress_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        emailAddress_ = s;
-        return s;
-      } else {
-        return (java.lang.String) ref;
-      }
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Output only. Email address of the user that created the link.
-     * An empty string will be returned if the email address can't be retrieved.
-     * </pre>
-     *
-     * <code>string email_address = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     *
-     * @return The bytes for emailAddress.
-     */
-    public com.google.protobuf.ByteString getEmailAddressBytes() {
-      java.lang.Object ref = emailAddress_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b =
-            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
-        emailAddress_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Output only. Email address of the user that created the link.
-     * An empty string will be returned if the email address can't be retrieved.
-     * </pre>
-     *
-     * <code>string email_address = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     *
-     * @param value The emailAddress to set.
-     * @return This builder for chaining.
-     */
-    public Builder setEmailAddress(java.lang.String value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-
-      emailAddress_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Output only. Email address of the user that created the link.
-     * An empty string will be returned if the email address can't be retrieved.
-     * </pre>
-     *
-     * <code>string email_address = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     *
-     * @return This builder for chaining.
-     */
-    public Builder clearEmailAddress() {
-
-      emailAddress_ = getDefaultInstance().getEmailAddress();
-      onChanged();
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Output only. Email address of the user that created the link.
-     * An empty string will be returned if the email address can't be retrieved.
-     * </pre>
-     *
-     * <code>string email_address = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     *
-     * @param value The bytes for emailAddress to set.
-     * @return This builder for chaining.
-     */
-    public Builder setEmailAddressBytes(com.google.protobuf.ByteString value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      checkByteStringIsUtf8(value);
-
-      emailAddress_ = value;
-      onChanged();
-      return this;
-    }
-
     private com.google.protobuf.Timestamp createTime_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.protobuf.Timestamp,
@@ -1945,6 +1834,117 @@ public final class GoogleAdsLink extends com.google.protobuf.GeneratedMessageV3
         updateTime_ = null;
       }
       return updateTimeBuilder_;
+    }
+
+    private java.lang.Object creatorEmailAddress_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Email address of the user that created the link.
+     * An empty string will be returned if the email address can't be retrieved.
+     * </pre>
+     *
+     * <code>string creator_email_address = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The creatorEmailAddress.
+     */
+    public java.lang.String getCreatorEmailAddress() {
+      java.lang.Object ref = creatorEmailAddress_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        creatorEmailAddress_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Email address of the user that created the link.
+     * An empty string will be returned if the email address can't be retrieved.
+     * </pre>
+     *
+     * <code>string creator_email_address = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The bytes for creatorEmailAddress.
+     */
+    public com.google.protobuf.ByteString getCreatorEmailAddressBytes() {
+      java.lang.Object ref = creatorEmailAddress_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        creatorEmailAddress_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Email address of the user that created the link.
+     * An empty string will be returned if the email address can't be retrieved.
+     * </pre>
+     *
+     * <code>string creator_email_address = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The creatorEmailAddress to set.
+     * @return This builder for chaining.
+     */
+    public Builder setCreatorEmailAddress(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+
+      creatorEmailAddress_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Email address of the user that created the link.
+     * An empty string will be returned if the email address can't be retrieved.
+     * </pre>
+     *
+     * <code>string creator_email_address = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearCreatorEmailAddress() {
+
+      creatorEmailAddress_ = getDefaultInstance().getCreatorEmailAddress();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Email address of the user that created the link.
+     * An empty string will be returned if the email address can't be retrieved.
+     * </pre>
+     *
+     * <code>string creator_email_address = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The bytes for creatorEmailAddress to set.
+     * @return This builder for chaining.
+     */
+    public Builder setCreatorEmailAddressBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
+      creatorEmailAddress_ = value;
+      onChanged();
+      return this;
     }
 
     @java.lang.Override

@@ -16,4 +16,42 @@
     <className>com/google/analytics/admin/v1alpha/*OrBuilder</className>
     <method>boolean has*(*)</method>
   </difference>
+  <difference>
+    <differenceType>6011</differenceType>
+    <className>com/google/analytics/admin/v1alpha/Conversion*</className>
+    <field>*_FIELD_NUMBER</field>
+  </difference>
+  <difference>
+    <differenceType>7002</differenceType>
+    <className>com/google/analytics/admin/v1alpha/Conversion*</className>
+    <method>* *Deletable*(*)</method>
+  </difference>
+  <difference>
+    <differenceType>6011</differenceType>
+    <className>com/google/analytics/admin/v1alpha/FirebaseLink*</className>
+    <field>*_FIELD_NUMBER</field>
+  </difference>
+  <difference>
+    <differenceType>7002</differenceType>
+    <className>com/google/analytics/admin/v1alpha/FirebaseLink*</className>
+    <method>* *MaximumUserAccess*(*)</method>
+  </difference>
+  <difference>
+    <differenceType>6011</differenceType>
+    <className>com/google/analytics/admin/v1alpha/GoogleAdsLink*</className>
+    <field>*_FIELD_NUMBER</field>
+  </difference>
+  <difference>
+    <differenceType>7002</differenceType>
+    <className>com/google/analytics/admin/v1alpha/GoogleAdsLink*</className>
+    <method>* *EmailAddress*(*)</method>
+  </difference>
+  <difference>
+    <differenceType>8001</differenceType>
+    <className>com/google/analytics/admin/v1alpha/UpdateFirebaseLinkRequest*</className>
+  </difference>
+  <difference>
+    <differenceType>8001</differenceType>
+    <className>com/google/analytics/admin/v1alpha/MaximumUserAccess*</className>
+  </difference>
 </differences>

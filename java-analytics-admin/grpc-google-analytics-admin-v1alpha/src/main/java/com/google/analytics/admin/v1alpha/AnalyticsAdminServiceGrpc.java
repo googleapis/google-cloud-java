@@ -1843,54 +1843,6 @@ public final class AnalyticsAdminServiceGrpc {
   }
 
   private static volatile io.grpc.MethodDescriptor<
-          com.google.analytics.admin.v1alpha.UpdateFirebaseLinkRequest,
-          com.google.analytics.admin.v1alpha.FirebaseLink>
-      getUpdateFirebaseLinkMethod;
-
-  @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "UpdateFirebaseLink",
-      requestType = com.google.analytics.admin.v1alpha.UpdateFirebaseLinkRequest.class,
-      responseType = com.google.analytics.admin.v1alpha.FirebaseLink.class,
-      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<
-          com.google.analytics.admin.v1alpha.UpdateFirebaseLinkRequest,
-          com.google.analytics.admin.v1alpha.FirebaseLink>
-      getUpdateFirebaseLinkMethod() {
-    io.grpc.MethodDescriptor<
-            com.google.analytics.admin.v1alpha.UpdateFirebaseLinkRequest,
-            com.google.analytics.admin.v1alpha.FirebaseLink>
-        getUpdateFirebaseLinkMethod;
-    if ((getUpdateFirebaseLinkMethod = AnalyticsAdminServiceGrpc.getUpdateFirebaseLinkMethod)
-        == null) {
-      synchronized (AnalyticsAdminServiceGrpc.class) {
-        if ((getUpdateFirebaseLinkMethod = AnalyticsAdminServiceGrpc.getUpdateFirebaseLinkMethod)
-            == null) {
-          AnalyticsAdminServiceGrpc.getUpdateFirebaseLinkMethod =
-              getUpdateFirebaseLinkMethod =
-                  io.grpc.MethodDescriptor
-                      .<com.google.analytics.admin.v1alpha.UpdateFirebaseLinkRequest,
-                          com.google.analytics.admin.v1alpha.FirebaseLink>
-                          newBuilder()
-                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "UpdateFirebaseLink"))
-                      .setSampledToLocalTracing(true)
-                      .setRequestMarshaller(
-                          io.grpc.protobuf.ProtoUtils.marshaller(
-                              com.google.analytics.admin.v1alpha.UpdateFirebaseLinkRequest
-                                  .getDefaultInstance()))
-                      .setResponseMarshaller(
-                          io.grpc.protobuf.ProtoUtils.marshaller(
-                              com.google.analytics.admin.v1alpha.FirebaseLink.getDefaultInstance()))
-                      .setSchemaDescriptor(
-                          new AnalyticsAdminServiceMethodDescriptorSupplier("UpdateFirebaseLink"))
-                      .build();
-        }
-      }
-    }
-    return getUpdateFirebaseLinkMethod;
-  }
-
-  private static volatile io.grpc.MethodDescriptor<
           com.google.analytics.admin.v1alpha.DeleteFirebaseLinkRequest, com.google.protobuf.Empty>
       getDeleteFirebaseLinkMethod;
 
@@ -2909,6 +2861,639 @@ public final class AnalyticsAdminServiceGrpc {
   }
 
   private static volatile io.grpc.MethodDescriptor<
+          com.google.analytics.admin.v1alpha.GetDisplayVideo360AdvertiserLinkRequest,
+          com.google.analytics.admin.v1alpha.DisplayVideo360AdvertiserLink>
+      getGetDisplayVideo360AdvertiserLinkMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetDisplayVideo360AdvertiserLink",
+      requestType =
+          com.google.analytics.admin.v1alpha.GetDisplayVideo360AdvertiserLinkRequest.class,
+      responseType = com.google.analytics.admin.v1alpha.DisplayVideo360AdvertiserLink.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.analytics.admin.v1alpha.GetDisplayVideo360AdvertiserLinkRequest,
+          com.google.analytics.admin.v1alpha.DisplayVideo360AdvertiserLink>
+      getGetDisplayVideo360AdvertiserLinkMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.analytics.admin.v1alpha.GetDisplayVideo360AdvertiserLinkRequest,
+            com.google.analytics.admin.v1alpha.DisplayVideo360AdvertiserLink>
+        getGetDisplayVideo360AdvertiserLinkMethod;
+    if ((getGetDisplayVideo360AdvertiserLinkMethod =
+            AnalyticsAdminServiceGrpc.getGetDisplayVideo360AdvertiserLinkMethod)
+        == null) {
+      synchronized (AnalyticsAdminServiceGrpc.class) {
+        if ((getGetDisplayVideo360AdvertiserLinkMethod =
+                AnalyticsAdminServiceGrpc.getGetDisplayVideo360AdvertiserLinkMethod)
+            == null) {
+          AnalyticsAdminServiceGrpc.getGetDisplayVideo360AdvertiserLinkMethod =
+              getGetDisplayVideo360AdvertiserLinkMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.analytics.admin.v1alpha.GetDisplayVideo360AdvertiserLinkRequest,
+                          com.google.analytics.admin.v1alpha.DisplayVideo360AdvertiserLink>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "GetDisplayVideo360AdvertiserLink"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.analytics.admin.v1alpha
+                                  .GetDisplayVideo360AdvertiserLinkRequest.getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.analytics.admin.v1alpha.DisplayVideo360AdvertiserLink
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new AnalyticsAdminServiceMethodDescriptorSupplier(
+                              "GetDisplayVideo360AdvertiserLink"))
+                      .build();
+        }
+      }
+    }
+    return getGetDisplayVideo360AdvertiserLinkMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.analytics.admin.v1alpha.ListDisplayVideo360AdvertiserLinksRequest,
+          com.google.analytics.admin.v1alpha.ListDisplayVideo360AdvertiserLinksResponse>
+      getListDisplayVideo360AdvertiserLinksMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListDisplayVideo360AdvertiserLinks",
+      requestType =
+          com.google.analytics.admin.v1alpha.ListDisplayVideo360AdvertiserLinksRequest.class,
+      responseType =
+          com.google.analytics.admin.v1alpha.ListDisplayVideo360AdvertiserLinksResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.analytics.admin.v1alpha.ListDisplayVideo360AdvertiserLinksRequest,
+          com.google.analytics.admin.v1alpha.ListDisplayVideo360AdvertiserLinksResponse>
+      getListDisplayVideo360AdvertiserLinksMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.analytics.admin.v1alpha.ListDisplayVideo360AdvertiserLinksRequest,
+            com.google.analytics.admin.v1alpha.ListDisplayVideo360AdvertiserLinksResponse>
+        getListDisplayVideo360AdvertiserLinksMethod;
+    if ((getListDisplayVideo360AdvertiserLinksMethod =
+            AnalyticsAdminServiceGrpc.getListDisplayVideo360AdvertiserLinksMethod)
+        == null) {
+      synchronized (AnalyticsAdminServiceGrpc.class) {
+        if ((getListDisplayVideo360AdvertiserLinksMethod =
+                AnalyticsAdminServiceGrpc.getListDisplayVideo360AdvertiserLinksMethod)
+            == null) {
+          AnalyticsAdminServiceGrpc.getListDisplayVideo360AdvertiserLinksMethod =
+              getListDisplayVideo360AdvertiserLinksMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.analytics.admin.v1alpha
+                              .ListDisplayVideo360AdvertiserLinksRequest,
+                          com.google.analytics.admin.v1alpha
+                              .ListDisplayVideo360AdvertiserLinksResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(
+                              SERVICE_NAME, "ListDisplayVideo360AdvertiserLinks"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.analytics.admin.v1alpha
+                                  .ListDisplayVideo360AdvertiserLinksRequest.getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.analytics.admin.v1alpha
+                                  .ListDisplayVideo360AdvertiserLinksResponse.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new AnalyticsAdminServiceMethodDescriptorSupplier(
+                              "ListDisplayVideo360AdvertiserLinks"))
+                      .build();
+        }
+      }
+    }
+    return getListDisplayVideo360AdvertiserLinksMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.analytics.admin.v1alpha.CreateDisplayVideo360AdvertiserLinkRequest,
+          com.google.analytics.admin.v1alpha.DisplayVideo360AdvertiserLink>
+      getCreateDisplayVideo360AdvertiserLinkMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "CreateDisplayVideo360AdvertiserLink",
+      requestType =
+          com.google.analytics.admin.v1alpha.CreateDisplayVideo360AdvertiserLinkRequest.class,
+      responseType = com.google.analytics.admin.v1alpha.DisplayVideo360AdvertiserLink.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.analytics.admin.v1alpha.CreateDisplayVideo360AdvertiserLinkRequest,
+          com.google.analytics.admin.v1alpha.DisplayVideo360AdvertiserLink>
+      getCreateDisplayVideo360AdvertiserLinkMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.analytics.admin.v1alpha.CreateDisplayVideo360AdvertiserLinkRequest,
+            com.google.analytics.admin.v1alpha.DisplayVideo360AdvertiserLink>
+        getCreateDisplayVideo360AdvertiserLinkMethod;
+    if ((getCreateDisplayVideo360AdvertiserLinkMethod =
+            AnalyticsAdminServiceGrpc.getCreateDisplayVideo360AdvertiserLinkMethod)
+        == null) {
+      synchronized (AnalyticsAdminServiceGrpc.class) {
+        if ((getCreateDisplayVideo360AdvertiserLinkMethod =
+                AnalyticsAdminServiceGrpc.getCreateDisplayVideo360AdvertiserLinkMethod)
+            == null) {
+          AnalyticsAdminServiceGrpc.getCreateDisplayVideo360AdvertiserLinkMethod =
+              getCreateDisplayVideo360AdvertiserLinkMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.analytics.admin.v1alpha
+                              .CreateDisplayVideo360AdvertiserLinkRequest,
+                          com.google.analytics.admin.v1alpha.DisplayVideo360AdvertiserLink>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(
+                              SERVICE_NAME, "CreateDisplayVideo360AdvertiserLink"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.analytics.admin.v1alpha
+                                  .CreateDisplayVideo360AdvertiserLinkRequest.getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.analytics.admin.v1alpha.DisplayVideo360AdvertiserLink
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new AnalyticsAdminServiceMethodDescriptorSupplier(
+                              "CreateDisplayVideo360AdvertiserLink"))
+                      .build();
+        }
+      }
+    }
+    return getCreateDisplayVideo360AdvertiserLinkMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.analytics.admin.v1alpha.DeleteDisplayVideo360AdvertiserLinkRequest,
+          com.google.protobuf.Empty>
+      getDeleteDisplayVideo360AdvertiserLinkMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "DeleteDisplayVideo360AdvertiserLink",
+      requestType =
+          com.google.analytics.admin.v1alpha.DeleteDisplayVideo360AdvertiserLinkRequest.class,
+      responseType = com.google.protobuf.Empty.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.analytics.admin.v1alpha.DeleteDisplayVideo360AdvertiserLinkRequest,
+          com.google.protobuf.Empty>
+      getDeleteDisplayVideo360AdvertiserLinkMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.analytics.admin.v1alpha.DeleteDisplayVideo360AdvertiserLinkRequest,
+            com.google.protobuf.Empty>
+        getDeleteDisplayVideo360AdvertiserLinkMethod;
+    if ((getDeleteDisplayVideo360AdvertiserLinkMethod =
+            AnalyticsAdminServiceGrpc.getDeleteDisplayVideo360AdvertiserLinkMethod)
+        == null) {
+      synchronized (AnalyticsAdminServiceGrpc.class) {
+        if ((getDeleteDisplayVideo360AdvertiserLinkMethod =
+                AnalyticsAdminServiceGrpc.getDeleteDisplayVideo360AdvertiserLinkMethod)
+            == null) {
+          AnalyticsAdminServiceGrpc.getDeleteDisplayVideo360AdvertiserLinkMethod =
+              getDeleteDisplayVideo360AdvertiserLinkMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.analytics.admin.v1alpha
+                              .DeleteDisplayVideo360AdvertiserLinkRequest,
+                          com.google.protobuf.Empty>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(
+                              SERVICE_NAME, "DeleteDisplayVideo360AdvertiserLink"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.analytics.admin.v1alpha
+                                  .DeleteDisplayVideo360AdvertiserLinkRequest.getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.protobuf.Empty.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new AnalyticsAdminServiceMethodDescriptorSupplier(
+                              "DeleteDisplayVideo360AdvertiserLink"))
+                      .build();
+        }
+      }
+    }
+    return getDeleteDisplayVideo360AdvertiserLinkMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.analytics.admin.v1alpha.UpdateDisplayVideo360AdvertiserLinkRequest,
+          com.google.analytics.admin.v1alpha.DisplayVideo360AdvertiserLink>
+      getUpdateDisplayVideo360AdvertiserLinkMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "UpdateDisplayVideo360AdvertiserLink",
+      requestType =
+          com.google.analytics.admin.v1alpha.UpdateDisplayVideo360AdvertiserLinkRequest.class,
+      responseType = com.google.analytics.admin.v1alpha.DisplayVideo360AdvertiserLink.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.analytics.admin.v1alpha.UpdateDisplayVideo360AdvertiserLinkRequest,
+          com.google.analytics.admin.v1alpha.DisplayVideo360AdvertiserLink>
+      getUpdateDisplayVideo360AdvertiserLinkMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.analytics.admin.v1alpha.UpdateDisplayVideo360AdvertiserLinkRequest,
+            com.google.analytics.admin.v1alpha.DisplayVideo360AdvertiserLink>
+        getUpdateDisplayVideo360AdvertiserLinkMethod;
+    if ((getUpdateDisplayVideo360AdvertiserLinkMethod =
+            AnalyticsAdminServiceGrpc.getUpdateDisplayVideo360AdvertiserLinkMethod)
+        == null) {
+      synchronized (AnalyticsAdminServiceGrpc.class) {
+        if ((getUpdateDisplayVideo360AdvertiserLinkMethod =
+                AnalyticsAdminServiceGrpc.getUpdateDisplayVideo360AdvertiserLinkMethod)
+            == null) {
+          AnalyticsAdminServiceGrpc.getUpdateDisplayVideo360AdvertiserLinkMethod =
+              getUpdateDisplayVideo360AdvertiserLinkMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.analytics.admin.v1alpha
+                              .UpdateDisplayVideo360AdvertiserLinkRequest,
+                          com.google.analytics.admin.v1alpha.DisplayVideo360AdvertiserLink>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(
+                              SERVICE_NAME, "UpdateDisplayVideo360AdvertiserLink"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.analytics.admin.v1alpha
+                                  .UpdateDisplayVideo360AdvertiserLinkRequest.getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.analytics.admin.v1alpha.DisplayVideo360AdvertiserLink
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new AnalyticsAdminServiceMethodDescriptorSupplier(
+                              "UpdateDisplayVideo360AdvertiserLink"))
+                      .build();
+        }
+      }
+    }
+    return getUpdateDisplayVideo360AdvertiserLinkMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.analytics.admin.v1alpha.GetDisplayVideo360AdvertiserLinkProposalRequest,
+          com.google.analytics.admin.v1alpha.DisplayVideo360AdvertiserLinkProposal>
+      getGetDisplayVideo360AdvertiserLinkProposalMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetDisplayVideo360AdvertiserLinkProposal",
+      requestType =
+          com.google.analytics.admin.v1alpha.GetDisplayVideo360AdvertiserLinkProposalRequest.class,
+      responseType = com.google.analytics.admin.v1alpha.DisplayVideo360AdvertiserLinkProposal.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.analytics.admin.v1alpha.GetDisplayVideo360AdvertiserLinkProposalRequest,
+          com.google.analytics.admin.v1alpha.DisplayVideo360AdvertiserLinkProposal>
+      getGetDisplayVideo360AdvertiserLinkProposalMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.analytics.admin.v1alpha.GetDisplayVideo360AdvertiserLinkProposalRequest,
+            com.google.analytics.admin.v1alpha.DisplayVideo360AdvertiserLinkProposal>
+        getGetDisplayVideo360AdvertiserLinkProposalMethod;
+    if ((getGetDisplayVideo360AdvertiserLinkProposalMethod =
+            AnalyticsAdminServiceGrpc.getGetDisplayVideo360AdvertiserLinkProposalMethod)
+        == null) {
+      synchronized (AnalyticsAdminServiceGrpc.class) {
+        if ((getGetDisplayVideo360AdvertiserLinkProposalMethod =
+                AnalyticsAdminServiceGrpc.getGetDisplayVideo360AdvertiserLinkProposalMethod)
+            == null) {
+          AnalyticsAdminServiceGrpc.getGetDisplayVideo360AdvertiserLinkProposalMethod =
+              getGetDisplayVideo360AdvertiserLinkProposalMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.analytics.admin.v1alpha
+                              .GetDisplayVideo360AdvertiserLinkProposalRequest,
+                          com.google.analytics.admin.v1alpha.DisplayVideo360AdvertiserLinkProposal>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(
+                              SERVICE_NAME, "GetDisplayVideo360AdvertiserLinkProposal"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.analytics.admin.v1alpha
+                                  .GetDisplayVideo360AdvertiserLinkProposalRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.analytics.admin.v1alpha
+                                  .DisplayVideo360AdvertiserLinkProposal.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new AnalyticsAdminServiceMethodDescriptorSupplier(
+                              "GetDisplayVideo360AdvertiserLinkProposal"))
+                      .build();
+        }
+      }
+    }
+    return getGetDisplayVideo360AdvertiserLinkProposalMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.analytics.admin.v1alpha.ListDisplayVideo360AdvertiserLinkProposalsRequest,
+          com.google.analytics.admin.v1alpha.ListDisplayVideo360AdvertiserLinkProposalsResponse>
+      getListDisplayVideo360AdvertiserLinkProposalsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListDisplayVideo360AdvertiserLinkProposals",
+      requestType =
+          com.google.analytics.admin.v1alpha.ListDisplayVideo360AdvertiserLinkProposalsRequest
+              .class,
+      responseType =
+          com.google.analytics.admin.v1alpha.ListDisplayVideo360AdvertiserLinkProposalsResponse
+              .class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.analytics.admin.v1alpha.ListDisplayVideo360AdvertiserLinkProposalsRequest,
+          com.google.analytics.admin.v1alpha.ListDisplayVideo360AdvertiserLinkProposalsResponse>
+      getListDisplayVideo360AdvertiserLinkProposalsMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.analytics.admin.v1alpha.ListDisplayVideo360AdvertiserLinkProposalsRequest,
+            com.google.analytics.admin.v1alpha.ListDisplayVideo360AdvertiserLinkProposalsResponse>
+        getListDisplayVideo360AdvertiserLinkProposalsMethod;
+    if ((getListDisplayVideo360AdvertiserLinkProposalsMethod =
+            AnalyticsAdminServiceGrpc.getListDisplayVideo360AdvertiserLinkProposalsMethod)
+        == null) {
+      synchronized (AnalyticsAdminServiceGrpc.class) {
+        if ((getListDisplayVideo360AdvertiserLinkProposalsMethod =
+                AnalyticsAdminServiceGrpc.getListDisplayVideo360AdvertiserLinkProposalsMethod)
+            == null) {
+          AnalyticsAdminServiceGrpc.getListDisplayVideo360AdvertiserLinkProposalsMethod =
+              getListDisplayVideo360AdvertiserLinkProposalsMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.analytics.admin.v1alpha
+                              .ListDisplayVideo360AdvertiserLinkProposalsRequest,
+                          com.google.analytics.admin.v1alpha
+                              .ListDisplayVideo360AdvertiserLinkProposalsResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(
+                              SERVICE_NAME, "ListDisplayVideo360AdvertiserLinkProposals"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.analytics.admin.v1alpha
+                                  .ListDisplayVideo360AdvertiserLinkProposalsRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.analytics.admin.v1alpha
+                                  .ListDisplayVideo360AdvertiserLinkProposalsResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new AnalyticsAdminServiceMethodDescriptorSupplier(
+                              "ListDisplayVideo360AdvertiserLinkProposals"))
+                      .build();
+        }
+      }
+    }
+    return getListDisplayVideo360AdvertiserLinkProposalsMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.analytics.admin.v1alpha.CreateDisplayVideo360AdvertiserLinkProposalRequest,
+          com.google.analytics.admin.v1alpha.DisplayVideo360AdvertiserLinkProposal>
+      getCreateDisplayVideo360AdvertiserLinkProposalMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "CreateDisplayVideo360AdvertiserLinkProposal",
+      requestType =
+          com.google.analytics.admin.v1alpha.CreateDisplayVideo360AdvertiserLinkProposalRequest
+              .class,
+      responseType = com.google.analytics.admin.v1alpha.DisplayVideo360AdvertiserLinkProposal.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.analytics.admin.v1alpha.CreateDisplayVideo360AdvertiserLinkProposalRequest,
+          com.google.analytics.admin.v1alpha.DisplayVideo360AdvertiserLinkProposal>
+      getCreateDisplayVideo360AdvertiserLinkProposalMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.analytics.admin.v1alpha.CreateDisplayVideo360AdvertiserLinkProposalRequest,
+            com.google.analytics.admin.v1alpha.DisplayVideo360AdvertiserLinkProposal>
+        getCreateDisplayVideo360AdvertiserLinkProposalMethod;
+    if ((getCreateDisplayVideo360AdvertiserLinkProposalMethod =
+            AnalyticsAdminServiceGrpc.getCreateDisplayVideo360AdvertiserLinkProposalMethod)
+        == null) {
+      synchronized (AnalyticsAdminServiceGrpc.class) {
+        if ((getCreateDisplayVideo360AdvertiserLinkProposalMethod =
+                AnalyticsAdminServiceGrpc.getCreateDisplayVideo360AdvertiserLinkProposalMethod)
+            == null) {
+          AnalyticsAdminServiceGrpc.getCreateDisplayVideo360AdvertiserLinkProposalMethod =
+              getCreateDisplayVideo360AdvertiserLinkProposalMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.analytics.admin.v1alpha
+                              .CreateDisplayVideo360AdvertiserLinkProposalRequest,
+                          com.google.analytics.admin.v1alpha.DisplayVideo360AdvertiserLinkProposal>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(
+                              SERVICE_NAME, "CreateDisplayVideo360AdvertiserLinkProposal"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.analytics.admin.v1alpha
+                                  .CreateDisplayVideo360AdvertiserLinkProposalRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.analytics.admin.v1alpha
+                                  .DisplayVideo360AdvertiserLinkProposal.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new AnalyticsAdminServiceMethodDescriptorSupplier(
+                              "CreateDisplayVideo360AdvertiserLinkProposal"))
+                      .build();
+        }
+      }
+    }
+    return getCreateDisplayVideo360AdvertiserLinkProposalMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.analytics.admin.v1alpha.DeleteDisplayVideo360AdvertiserLinkProposalRequest,
+          com.google.protobuf.Empty>
+      getDeleteDisplayVideo360AdvertiserLinkProposalMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "DeleteDisplayVideo360AdvertiserLinkProposal",
+      requestType =
+          com.google.analytics.admin.v1alpha.DeleteDisplayVideo360AdvertiserLinkProposalRequest
+              .class,
+      responseType = com.google.protobuf.Empty.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.analytics.admin.v1alpha.DeleteDisplayVideo360AdvertiserLinkProposalRequest,
+          com.google.protobuf.Empty>
+      getDeleteDisplayVideo360AdvertiserLinkProposalMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.analytics.admin.v1alpha.DeleteDisplayVideo360AdvertiserLinkProposalRequest,
+            com.google.protobuf.Empty>
+        getDeleteDisplayVideo360AdvertiserLinkProposalMethod;
+    if ((getDeleteDisplayVideo360AdvertiserLinkProposalMethod =
+            AnalyticsAdminServiceGrpc.getDeleteDisplayVideo360AdvertiserLinkProposalMethod)
+        == null) {
+      synchronized (AnalyticsAdminServiceGrpc.class) {
+        if ((getDeleteDisplayVideo360AdvertiserLinkProposalMethod =
+                AnalyticsAdminServiceGrpc.getDeleteDisplayVideo360AdvertiserLinkProposalMethod)
+            == null) {
+          AnalyticsAdminServiceGrpc.getDeleteDisplayVideo360AdvertiserLinkProposalMethod =
+              getDeleteDisplayVideo360AdvertiserLinkProposalMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.analytics.admin.v1alpha
+                              .DeleteDisplayVideo360AdvertiserLinkProposalRequest,
+                          com.google.protobuf.Empty>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(
+                              SERVICE_NAME, "DeleteDisplayVideo360AdvertiserLinkProposal"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.analytics.admin.v1alpha
+                                  .DeleteDisplayVideo360AdvertiserLinkProposalRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.protobuf.Empty.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new AnalyticsAdminServiceMethodDescriptorSupplier(
+                              "DeleteDisplayVideo360AdvertiserLinkProposal"))
+                      .build();
+        }
+      }
+    }
+    return getDeleteDisplayVideo360AdvertiserLinkProposalMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.analytics.admin.v1alpha.ApproveDisplayVideo360AdvertiserLinkProposalRequest,
+          com.google.analytics.admin.v1alpha.ApproveDisplayVideo360AdvertiserLinkProposalResponse>
+      getApproveDisplayVideo360AdvertiserLinkProposalMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ApproveDisplayVideo360AdvertiserLinkProposal",
+      requestType =
+          com.google.analytics.admin.v1alpha.ApproveDisplayVideo360AdvertiserLinkProposalRequest
+              .class,
+      responseType =
+          com.google.analytics.admin.v1alpha.ApproveDisplayVideo360AdvertiserLinkProposalResponse
+              .class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.analytics.admin.v1alpha.ApproveDisplayVideo360AdvertiserLinkProposalRequest,
+          com.google.analytics.admin.v1alpha.ApproveDisplayVideo360AdvertiserLinkProposalResponse>
+      getApproveDisplayVideo360AdvertiserLinkProposalMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.analytics.admin.v1alpha.ApproveDisplayVideo360AdvertiserLinkProposalRequest,
+            com.google.analytics.admin.v1alpha.ApproveDisplayVideo360AdvertiserLinkProposalResponse>
+        getApproveDisplayVideo360AdvertiserLinkProposalMethod;
+    if ((getApproveDisplayVideo360AdvertiserLinkProposalMethod =
+            AnalyticsAdminServiceGrpc.getApproveDisplayVideo360AdvertiserLinkProposalMethod)
+        == null) {
+      synchronized (AnalyticsAdminServiceGrpc.class) {
+        if ((getApproveDisplayVideo360AdvertiserLinkProposalMethod =
+                AnalyticsAdminServiceGrpc.getApproveDisplayVideo360AdvertiserLinkProposalMethod)
+            == null) {
+          AnalyticsAdminServiceGrpc.getApproveDisplayVideo360AdvertiserLinkProposalMethod =
+              getApproveDisplayVideo360AdvertiserLinkProposalMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.analytics.admin.v1alpha
+                              .ApproveDisplayVideo360AdvertiserLinkProposalRequest,
+                          com.google.analytics.admin.v1alpha
+                              .ApproveDisplayVideo360AdvertiserLinkProposalResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(
+                              SERVICE_NAME, "ApproveDisplayVideo360AdvertiserLinkProposal"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.analytics.admin.v1alpha
+                                  .ApproveDisplayVideo360AdvertiserLinkProposalRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.analytics.admin.v1alpha
+                                  .ApproveDisplayVideo360AdvertiserLinkProposalResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new AnalyticsAdminServiceMethodDescriptorSupplier(
+                              "ApproveDisplayVideo360AdvertiserLinkProposal"))
+                      .build();
+        }
+      }
+    }
+    return getApproveDisplayVideo360AdvertiserLinkProposalMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.analytics.admin.v1alpha.CancelDisplayVideo360AdvertiserLinkProposalRequest,
+          com.google.analytics.admin.v1alpha.DisplayVideo360AdvertiserLinkProposal>
+      getCancelDisplayVideo360AdvertiserLinkProposalMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "CancelDisplayVideo360AdvertiserLinkProposal",
+      requestType =
+          com.google.analytics.admin.v1alpha.CancelDisplayVideo360AdvertiserLinkProposalRequest
+              .class,
+      responseType = com.google.analytics.admin.v1alpha.DisplayVideo360AdvertiserLinkProposal.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.analytics.admin.v1alpha.CancelDisplayVideo360AdvertiserLinkProposalRequest,
+          com.google.analytics.admin.v1alpha.DisplayVideo360AdvertiserLinkProposal>
+      getCancelDisplayVideo360AdvertiserLinkProposalMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.analytics.admin.v1alpha.CancelDisplayVideo360AdvertiserLinkProposalRequest,
+            com.google.analytics.admin.v1alpha.DisplayVideo360AdvertiserLinkProposal>
+        getCancelDisplayVideo360AdvertiserLinkProposalMethod;
+    if ((getCancelDisplayVideo360AdvertiserLinkProposalMethod =
+            AnalyticsAdminServiceGrpc.getCancelDisplayVideo360AdvertiserLinkProposalMethod)
+        == null) {
+      synchronized (AnalyticsAdminServiceGrpc.class) {
+        if ((getCancelDisplayVideo360AdvertiserLinkProposalMethod =
+                AnalyticsAdminServiceGrpc.getCancelDisplayVideo360AdvertiserLinkProposalMethod)
+            == null) {
+          AnalyticsAdminServiceGrpc.getCancelDisplayVideo360AdvertiserLinkProposalMethod =
+              getCancelDisplayVideo360AdvertiserLinkProposalMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.analytics.admin.v1alpha
+                              .CancelDisplayVideo360AdvertiserLinkProposalRequest,
+                          com.google.analytics.admin.v1alpha.DisplayVideo360AdvertiserLinkProposal>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(
+                              SERVICE_NAME, "CancelDisplayVideo360AdvertiserLinkProposal"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.analytics.admin.v1alpha
+                                  .CancelDisplayVideo360AdvertiserLinkProposalRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.analytics.admin.v1alpha
+                                  .DisplayVideo360AdvertiserLinkProposal.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new AnalyticsAdminServiceMethodDescriptorSupplier(
+                              "CancelDisplayVideo360AdvertiserLinkProposal"))
+                      .build();
+        }
+      }
+    }
+    return getCancelDisplayVideo360AdvertiserLinkProposalMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
           com.google.analytics.admin.v1alpha.CreateCustomDimensionRequest,
           com.google.analytics.admin.v1alpha.CustomDimension>
       getCreateCustomDimensionMethod;
@@ -3401,6 +3986,112 @@ public final class AnalyticsAdminServiceGrpc {
       }
     }
     return getGetCustomMetricMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.analytics.admin.v1alpha.GetDataRetentionSettingsRequest,
+          com.google.analytics.admin.v1alpha.DataRetentionSettings>
+      getGetDataRetentionSettingsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetDataRetentionSettings",
+      requestType = com.google.analytics.admin.v1alpha.GetDataRetentionSettingsRequest.class,
+      responseType = com.google.analytics.admin.v1alpha.DataRetentionSettings.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.analytics.admin.v1alpha.GetDataRetentionSettingsRequest,
+          com.google.analytics.admin.v1alpha.DataRetentionSettings>
+      getGetDataRetentionSettingsMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.analytics.admin.v1alpha.GetDataRetentionSettingsRequest,
+            com.google.analytics.admin.v1alpha.DataRetentionSettings>
+        getGetDataRetentionSettingsMethod;
+    if ((getGetDataRetentionSettingsMethod =
+            AnalyticsAdminServiceGrpc.getGetDataRetentionSettingsMethod)
+        == null) {
+      synchronized (AnalyticsAdminServiceGrpc.class) {
+        if ((getGetDataRetentionSettingsMethod =
+                AnalyticsAdminServiceGrpc.getGetDataRetentionSettingsMethod)
+            == null) {
+          AnalyticsAdminServiceGrpc.getGetDataRetentionSettingsMethod =
+              getGetDataRetentionSettingsMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.analytics.admin.v1alpha.GetDataRetentionSettingsRequest,
+                          com.google.analytics.admin.v1alpha.DataRetentionSettings>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "GetDataRetentionSettings"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.analytics.admin.v1alpha.GetDataRetentionSettingsRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.analytics.admin.v1alpha.DataRetentionSettings
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new AnalyticsAdminServiceMethodDescriptorSupplier(
+                              "GetDataRetentionSettings"))
+                      .build();
+        }
+      }
+    }
+    return getGetDataRetentionSettingsMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.analytics.admin.v1alpha.UpdateDataRetentionSettingsRequest,
+          com.google.analytics.admin.v1alpha.DataRetentionSettings>
+      getUpdateDataRetentionSettingsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "UpdateDataRetentionSettings",
+      requestType = com.google.analytics.admin.v1alpha.UpdateDataRetentionSettingsRequest.class,
+      responseType = com.google.analytics.admin.v1alpha.DataRetentionSettings.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.analytics.admin.v1alpha.UpdateDataRetentionSettingsRequest,
+          com.google.analytics.admin.v1alpha.DataRetentionSettings>
+      getUpdateDataRetentionSettingsMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.analytics.admin.v1alpha.UpdateDataRetentionSettingsRequest,
+            com.google.analytics.admin.v1alpha.DataRetentionSettings>
+        getUpdateDataRetentionSettingsMethod;
+    if ((getUpdateDataRetentionSettingsMethod =
+            AnalyticsAdminServiceGrpc.getUpdateDataRetentionSettingsMethod)
+        == null) {
+      synchronized (AnalyticsAdminServiceGrpc.class) {
+        if ((getUpdateDataRetentionSettingsMethod =
+                AnalyticsAdminServiceGrpc.getUpdateDataRetentionSettingsMethod)
+            == null) {
+          AnalyticsAdminServiceGrpc.getUpdateDataRetentionSettingsMethod =
+              getUpdateDataRetentionSettingsMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.analytics.admin.v1alpha.UpdateDataRetentionSettingsRequest,
+                          com.google.analytics.admin.v1alpha.DataRetentionSettings>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "UpdateDataRetentionSettings"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.analytics.admin.v1alpha.UpdateDataRetentionSettingsRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.analytics.admin.v1alpha.DataRetentionSettings
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new AnalyticsAdminServiceMethodDescriptorSupplier(
+                              "UpdateDataRetentionSettings"))
+                      .build();
+        }
+      }
+    }
+    return getUpdateDataRetentionSettingsMethod;
   }
 
   /** Creates a new async stub that supports all call types for the service */
@@ -4043,21 +4734,6 @@ public final class AnalyticsAdminServiceGrpc {
      *
      *
      * <pre>
-     * Updates a FirebaseLink on a property
-     * </pre>
-     */
-    public void updateFirebaseLink(
-        com.google.analytics.admin.v1alpha.UpdateFirebaseLinkRequest request,
-        io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.FirebaseLink>
-            responseObserver) {
-      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
-          getUpdateFirebaseLinkMethod(), responseObserver);
-    }
-
-    /**
-     *
-     *
-     * <pre>
      * Deletes a FirebaseLink on a property
      * </pre>
      */
@@ -4362,6 +5038,196 @@ public final class AnalyticsAdminServiceGrpc {
      *
      *
      * <pre>
+     * Look up a single DisplayVideo360AdvertiserLink
+     * </pre>
+     */
+    public void getDisplayVideo360AdvertiserLink(
+        com.google.analytics.admin.v1alpha.GetDisplayVideo360AdvertiserLinkRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.analytics.admin.v1alpha.DisplayVideo360AdvertiserLink>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getGetDisplayVideo360AdvertiserLinkMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists all DisplayVideo360AdvertiserLinks on a property.
+     * </pre>
+     */
+    public void listDisplayVideo360AdvertiserLinks(
+        com.google.analytics.admin.v1alpha.ListDisplayVideo360AdvertiserLinksRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.analytics.admin.v1alpha.ListDisplayVideo360AdvertiserLinksResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getListDisplayVideo360AdvertiserLinksMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a DisplayVideo360AdvertiserLink.
+     * This can only be utilized by users who have proper authorization both on
+     * the Google Analytics property and on the Display &amp; Video 360 advertiser.
+     * Users who do not have access to the Display &amp; Video 360 advertiser should
+     * instead seek to create a DisplayVideo360LinkProposal.
+     * </pre>
+     */
+    public void createDisplayVideo360AdvertiserLink(
+        com.google.analytics.admin.v1alpha.CreateDisplayVideo360AdvertiserLinkRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.analytics.admin.v1alpha.DisplayVideo360AdvertiserLink>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getCreateDisplayVideo360AdvertiserLinkMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a DisplayVideo360AdvertiserLink on a property.
+     * </pre>
+     */
+    public void deleteDisplayVideo360AdvertiserLink(
+        com.google.analytics.admin.v1alpha.DeleteDisplayVideo360AdvertiserLinkRequest request,
+        io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getDeleteDisplayVideo360AdvertiserLinkMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a DisplayVideo360AdvertiserLink on a property.
+     * </pre>
+     */
+    public void updateDisplayVideo360AdvertiserLink(
+        com.google.analytics.admin.v1alpha.UpdateDisplayVideo360AdvertiserLinkRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.analytics.admin.v1alpha.DisplayVideo360AdvertiserLink>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getUpdateDisplayVideo360AdvertiserLinkMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lookup for a single DisplayVideo360AdvertiserLinkProposal.
+     * </pre>
+     */
+    public void getDisplayVideo360AdvertiserLinkProposal(
+        com.google.analytics.admin.v1alpha.GetDisplayVideo360AdvertiserLinkProposalRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.analytics.admin.v1alpha.DisplayVideo360AdvertiserLinkProposal>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getGetDisplayVideo360AdvertiserLinkProposalMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists DisplayVideo360AdvertiserLinkProposals on a property.
+     * </pre>
+     */
+    public void listDisplayVideo360AdvertiserLinkProposals(
+        com.google.analytics.admin.v1alpha.ListDisplayVideo360AdvertiserLinkProposalsRequest
+            request,
+        io.grpc.stub.StreamObserver<
+                com.google.analytics.admin.v1alpha
+                    .ListDisplayVideo360AdvertiserLinkProposalsResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getListDisplayVideo360AdvertiserLinkProposalsMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a DisplayVideo360AdvertiserLinkProposal.
+     * </pre>
+     */
+    public void createDisplayVideo360AdvertiserLinkProposal(
+        com.google.analytics.admin.v1alpha.CreateDisplayVideo360AdvertiserLinkProposalRequest
+            request,
+        io.grpc.stub.StreamObserver<
+                com.google.analytics.admin.v1alpha.DisplayVideo360AdvertiserLinkProposal>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getCreateDisplayVideo360AdvertiserLinkProposalMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a DisplayVideo360AdvertiserLinkProposal on a property.
+     * This can only be used on cancelled proposals.
+     * </pre>
+     */
+    public void deleteDisplayVideo360AdvertiserLinkProposal(
+        com.google.analytics.admin.v1alpha.DeleteDisplayVideo360AdvertiserLinkProposalRequest
+            request,
+        io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getDeleteDisplayVideo360AdvertiserLinkProposalMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Approves a DisplayVideo360AdvertiserLinkProposal.
+     * The DisplayVideo360AdvertiserLinkProposal will be deleted and a new
+     * DisplayVideo360AdvertiserLink will be created.
+     * </pre>
+     */
+    public void approveDisplayVideo360AdvertiserLinkProposal(
+        com.google.analytics.admin.v1alpha.ApproveDisplayVideo360AdvertiserLinkProposalRequest
+            request,
+        io.grpc.stub.StreamObserver<
+                com.google.analytics.admin.v1alpha
+                    .ApproveDisplayVideo360AdvertiserLinkProposalResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getApproveDisplayVideo360AdvertiserLinkProposalMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Cancels a DisplayVideo360AdvertiserLinkProposal.
+     * Cancelling can mean either:
+     * - Declining a proposal initiated from Display &amp; Video 360
+     * - Withdrawing a proposal initiated from Google Analytics
+     * After being cancelled, a proposal will eventually be deleted automatically.
+     * </pre>
+     */
+    public void cancelDisplayVideo360AdvertiserLinkProposal(
+        com.google.analytics.admin.v1alpha.CancelDisplayVideo360AdvertiserLinkProposalRequest
+            request,
+        io.grpc.stub.StreamObserver<
+                com.google.analytics.admin.v1alpha.DisplayVideo360AdvertiserLinkProposal>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getCancelDisplayVideo360AdvertiserLinkProposalMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Creates a CustomDimension.
      * </pre>
      */
@@ -4504,6 +5370,36 @@ public final class AnalyticsAdminServiceGrpc {
             responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getGetCustomMetricMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns the singleton data retention settings for this property.
+     * </pre>
+     */
+    public void getDataRetentionSettings(
+        com.google.analytics.admin.v1alpha.GetDataRetentionSettingsRequest request,
+        io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.DataRetentionSettings>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getGetDataRetentionSettingsMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the singleton data retention settings for this property.
+     * </pre>
+     */
+    public void updateDataRetentionSettings(
+        com.google.analytics.admin.v1alpha.UpdateDataRetentionSettingsRequest request,
+        io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.DataRetentionSettings>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getUpdateDataRetentionSettingsMethod(), responseObserver);
     }
 
     @java.lang.Override
@@ -4756,13 +5652,6 @@ public final class AnalyticsAdminServiceGrpc {
                       com.google.analytics.admin.v1alpha.FirebaseLink>(
                       this, METHODID_CREATE_FIREBASE_LINK)))
           .addMethod(
-              getUpdateFirebaseLinkMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.analytics.admin.v1alpha.UpdateFirebaseLinkRequest,
-                      com.google.analytics.admin.v1alpha.FirebaseLink>(
-                      this, METHODID_UPDATE_FIREBASE_LINK)))
-          .addMethod(
               getDeleteFirebaseLinkMethod(),
               io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
@@ -4900,6 +5789,92 @@ public final class AnalyticsAdminServiceGrpc {
                       com.google.analytics.admin.v1alpha.ListConversionEventsResponse>(
                       this, METHODID_LIST_CONVERSION_EVENTS)))
           .addMethod(
+              getGetDisplayVideo360AdvertiserLinkMethod(),
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.analytics.admin.v1alpha.GetDisplayVideo360AdvertiserLinkRequest,
+                      com.google.analytics.admin.v1alpha.DisplayVideo360AdvertiserLink>(
+                      this, METHODID_GET_DISPLAY_VIDEO360ADVERTISER_LINK)))
+          .addMethod(
+              getListDisplayVideo360AdvertiserLinksMethod(),
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.analytics.admin.v1alpha.ListDisplayVideo360AdvertiserLinksRequest,
+                      com.google.analytics.admin.v1alpha
+                          .ListDisplayVideo360AdvertiserLinksResponse>(
+                      this, METHODID_LIST_DISPLAY_VIDEO360ADVERTISER_LINKS)))
+          .addMethod(
+              getCreateDisplayVideo360AdvertiserLinkMethod(),
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.analytics.admin.v1alpha.CreateDisplayVideo360AdvertiserLinkRequest,
+                      com.google.analytics.admin.v1alpha.DisplayVideo360AdvertiserLink>(
+                      this, METHODID_CREATE_DISPLAY_VIDEO360ADVERTISER_LINK)))
+          .addMethod(
+              getDeleteDisplayVideo360AdvertiserLinkMethod(),
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.analytics.admin.v1alpha.DeleteDisplayVideo360AdvertiserLinkRequest,
+                      com.google.protobuf.Empty>(
+                      this, METHODID_DELETE_DISPLAY_VIDEO360ADVERTISER_LINK)))
+          .addMethod(
+              getUpdateDisplayVideo360AdvertiserLinkMethod(),
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.analytics.admin.v1alpha.UpdateDisplayVideo360AdvertiserLinkRequest,
+                      com.google.analytics.admin.v1alpha.DisplayVideo360AdvertiserLink>(
+                      this, METHODID_UPDATE_DISPLAY_VIDEO360ADVERTISER_LINK)))
+          .addMethod(
+              getGetDisplayVideo360AdvertiserLinkProposalMethod(),
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.analytics.admin.v1alpha
+                          .GetDisplayVideo360AdvertiserLinkProposalRequest,
+                      com.google.analytics.admin.v1alpha.DisplayVideo360AdvertiserLinkProposal>(
+                      this, METHODID_GET_DISPLAY_VIDEO360ADVERTISER_LINK_PROPOSAL)))
+          .addMethod(
+              getListDisplayVideo360AdvertiserLinkProposalsMethod(),
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.analytics.admin.v1alpha
+                          .ListDisplayVideo360AdvertiserLinkProposalsRequest,
+                      com.google.analytics.admin.v1alpha
+                          .ListDisplayVideo360AdvertiserLinkProposalsResponse>(
+                      this, METHODID_LIST_DISPLAY_VIDEO360ADVERTISER_LINK_PROPOSALS)))
+          .addMethod(
+              getCreateDisplayVideo360AdvertiserLinkProposalMethod(),
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.analytics.admin.v1alpha
+                          .CreateDisplayVideo360AdvertiserLinkProposalRequest,
+                      com.google.analytics.admin.v1alpha.DisplayVideo360AdvertiserLinkProposal>(
+                      this, METHODID_CREATE_DISPLAY_VIDEO360ADVERTISER_LINK_PROPOSAL)))
+          .addMethod(
+              getDeleteDisplayVideo360AdvertiserLinkProposalMethod(),
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.analytics.admin.v1alpha
+                          .DeleteDisplayVideo360AdvertiserLinkProposalRequest,
+                      com.google.protobuf.Empty>(
+                      this, METHODID_DELETE_DISPLAY_VIDEO360ADVERTISER_LINK_PROPOSAL)))
+          .addMethod(
+              getApproveDisplayVideo360AdvertiserLinkProposalMethod(),
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.analytics.admin.v1alpha
+                          .ApproveDisplayVideo360AdvertiserLinkProposalRequest,
+                      com.google.analytics.admin.v1alpha
+                          .ApproveDisplayVideo360AdvertiserLinkProposalResponse>(
+                      this, METHODID_APPROVE_DISPLAY_VIDEO360ADVERTISER_LINK_PROPOSAL)))
+          .addMethod(
+              getCancelDisplayVideo360AdvertiserLinkProposalMethod(),
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.analytics.admin.v1alpha
+                          .CancelDisplayVideo360AdvertiserLinkProposalRequest,
+                      com.google.analytics.admin.v1alpha.DisplayVideo360AdvertiserLinkProposal>(
+                      this, METHODID_CANCEL_DISPLAY_VIDEO360ADVERTISER_LINK_PROPOSAL)))
+          .addMethod(
               getCreateCustomDimensionMethod(),
               io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
@@ -4967,6 +5942,20 @@ public final class AnalyticsAdminServiceGrpc {
                       com.google.analytics.admin.v1alpha.GetCustomMetricRequest,
                       com.google.analytics.admin.v1alpha.CustomMetric>(
                       this, METHODID_GET_CUSTOM_METRIC)))
+          .addMethod(
+              getGetDataRetentionSettingsMethod(),
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.analytics.admin.v1alpha.GetDataRetentionSettingsRequest,
+                      com.google.analytics.admin.v1alpha.DataRetentionSettings>(
+                      this, METHODID_GET_DATA_RETENTION_SETTINGS)))
+          .addMethod(
+              getUpdateDataRetentionSettingsMethod(),
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.analytics.admin.v1alpha.UpdateDataRetentionSettingsRequest,
+                      com.google.analytics.admin.v1alpha.DataRetentionSettings>(
+                      this, METHODID_UPDATE_DATA_RETENTION_SETTINGS)))
           .build();
     }
   }
@@ -5653,23 +6642,6 @@ public final class AnalyticsAdminServiceGrpc {
      *
      *
      * <pre>
-     * Updates a FirebaseLink on a property
-     * </pre>
-     */
-    public void updateFirebaseLink(
-        com.google.analytics.admin.v1alpha.UpdateFirebaseLinkRequest request,
-        io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.FirebaseLink>
-            responseObserver) {
-      io.grpc.stub.ClientCalls.asyncUnaryCall(
-          getChannel().newCall(getUpdateFirebaseLinkMethod(), getCallOptions()),
-          request,
-          responseObserver);
-    }
-
-    /**
-     *
-     *
-     * <pre>
      * Deletes a FirebaseLink on a property
      * </pre>
      */
@@ -6014,6 +6986,224 @@ public final class AnalyticsAdminServiceGrpc {
      *
      *
      * <pre>
+     * Look up a single DisplayVideo360AdvertiserLink
+     * </pre>
+     */
+    public void getDisplayVideo360AdvertiserLink(
+        com.google.analytics.admin.v1alpha.GetDisplayVideo360AdvertiserLinkRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.analytics.admin.v1alpha.DisplayVideo360AdvertiserLink>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetDisplayVideo360AdvertiserLinkMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists all DisplayVideo360AdvertiserLinks on a property.
+     * </pre>
+     */
+    public void listDisplayVideo360AdvertiserLinks(
+        com.google.analytics.admin.v1alpha.ListDisplayVideo360AdvertiserLinksRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.analytics.admin.v1alpha.ListDisplayVideo360AdvertiserLinksResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getListDisplayVideo360AdvertiserLinksMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a DisplayVideo360AdvertiserLink.
+     * This can only be utilized by users who have proper authorization both on
+     * the Google Analytics property and on the Display &amp; Video 360 advertiser.
+     * Users who do not have access to the Display &amp; Video 360 advertiser should
+     * instead seek to create a DisplayVideo360LinkProposal.
+     * </pre>
+     */
+    public void createDisplayVideo360AdvertiserLink(
+        com.google.analytics.admin.v1alpha.CreateDisplayVideo360AdvertiserLinkRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.analytics.admin.v1alpha.DisplayVideo360AdvertiserLink>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getCreateDisplayVideo360AdvertiserLinkMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a DisplayVideo360AdvertiserLink on a property.
+     * </pre>
+     */
+    public void deleteDisplayVideo360AdvertiserLink(
+        com.google.analytics.admin.v1alpha.DeleteDisplayVideo360AdvertiserLinkRequest request,
+        io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getDeleteDisplayVideo360AdvertiserLinkMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a DisplayVideo360AdvertiserLink on a property.
+     * </pre>
+     */
+    public void updateDisplayVideo360AdvertiserLink(
+        com.google.analytics.admin.v1alpha.UpdateDisplayVideo360AdvertiserLinkRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.analytics.admin.v1alpha.DisplayVideo360AdvertiserLink>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getUpdateDisplayVideo360AdvertiserLinkMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lookup for a single DisplayVideo360AdvertiserLinkProposal.
+     * </pre>
+     */
+    public void getDisplayVideo360AdvertiserLinkProposal(
+        com.google.analytics.admin.v1alpha.GetDisplayVideo360AdvertiserLinkProposalRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.analytics.admin.v1alpha.DisplayVideo360AdvertiserLinkProposal>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel()
+              .newCall(getGetDisplayVideo360AdvertiserLinkProposalMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists DisplayVideo360AdvertiserLinkProposals on a property.
+     * </pre>
+     */
+    public void listDisplayVideo360AdvertiserLinkProposals(
+        com.google.analytics.admin.v1alpha.ListDisplayVideo360AdvertiserLinkProposalsRequest
+            request,
+        io.grpc.stub.StreamObserver<
+                com.google.analytics.admin.v1alpha
+                    .ListDisplayVideo360AdvertiserLinkProposalsResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel()
+              .newCall(getListDisplayVideo360AdvertiserLinkProposalsMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a DisplayVideo360AdvertiserLinkProposal.
+     * </pre>
+     */
+    public void createDisplayVideo360AdvertiserLinkProposal(
+        com.google.analytics.admin.v1alpha.CreateDisplayVideo360AdvertiserLinkProposalRequest
+            request,
+        io.grpc.stub.StreamObserver<
+                com.google.analytics.admin.v1alpha.DisplayVideo360AdvertiserLinkProposal>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel()
+              .newCall(getCreateDisplayVideo360AdvertiserLinkProposalMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a DisplayVideo360AdvertiserLinkProposal on a property.
+     * This can only be used on cancelled proposals.
+     * </pre>
+     */
+    public void deleteDisplayVideo360AdvertiserLinkProposal(
+        com.google.analytics.admin.v1alpha.DeleteDisplayVideo360AdvertiserLinkProposalRequest
+            request,
+        io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel()
+              .newCall(getDeleteDisplayVideo360AdvertiserLinkProposalMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Approves a DisplayVideo360AdvertiserLinkProposal.
+     * The DisplayVideo360AdvertiserLinkProposal will be deleted and a new
+     * DisplayVideo360AdvertiserLink will be created.
+     * </pre>
+     */
+    public void approveDisplayVideo360AdvertiserLinkProposal(
+        com.google.analytics.admin.v1alpha.ApproveDisplayVideo360AdvertiserLinkProposalRequest
+            request,
+        io.grpc.stub.StreamObserver<
+                com.google.analytics.admin.v1alpha
+                    .ApproveDisplayVideo360AdvertiserLinkProposalResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel()
+              .newCall(getApproveDisplayVideo360AdvertiserLinkProposalMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Cancels a DisplayVideo360AdvertiserLinkProposal.
+     * Cancelling can mean either:
+     * - Declining a proposal initiated from Display &amp; Video 360
+     * - Withdrawing a proposal initiated from Google Analytics
+     * After being cancelled, a proposal will eventually be deleted automatically.
+     * </pre>
+     */
+    public void cancelDisplayVideo360AdvertiserLinkProposal(
+        com.google.analytics.admin.v1alpha.CancelDisplayVideo360AdvertiserLinkProposalRequest
+            request,
+        io.grpc.stub.StreamObserver<
+                com.google.analytics.admin.v1alpha.DisplayVideo360AdvertiserLinkProposal>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel()
+              .newCall(getCancelDisplayVideo360AdvertiserLinkProposalMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Creates a CustomDimension.
      * </pre>
      */
@@ -6174,6 +7364,40 @@ public final class AnalyticsAdminServiceGrpc {
             responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getGetCustomMetricMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns the singleton data retention settings for this property.
+     * </pre>
+     */
+    public void getDataRetentionSettings(
+        com.google.analytics.admin.v1alpha.GetDataRetentionSettingsRequest request,
+        io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.DataRetentionSettings>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetDataRetentionSettingsMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the singleton data retention settings for this property.
+     * </pre>
+     */
+    public void updateDataRetentionSettings(
+        com.google.analytics.admin.v1alpha.UpdateDataRetentionSettingsRequest request,
+        io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.DataRetentionSettings>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getUpdateDataRetentionSettingsMethod(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -6731,19 +7955,6 @@ public final class AnalyticsAdminServiceGrpc {
      *
      *
      * <pre>
-     * Updates a FirebaseLink on a property
-     * </pre>
-     */
-    public com.google.analytics.admin.v1alpha.FirebaseLink updateFirebaseLink(
-        com.google.analytics.admin.v1alpha.UpdateFirebaseLinkRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getUpdateFirebaseLinkMethod(), getCallOptions(), request);
-    }
-
-    /**
-     *
-     *
-     * <pre>
      * Deletes a FirebaseLink on a property
      * </pre>
      */
@@ -7015,6 +8226,193 @@ public final class AnalyticsAdminServiceGrpc {
      *
      *
      * <pre>
+     * Look up a single DisplayVideo360AdvertiserLink
+     * </pre>
+     */
+    public com.google.analytics.admin.v1alpha.DisplayVideo360AdvertiserLink
+        getDisplayVideo360AdvertiserLink(
+            com.google.analytics.admin.v1alpha.GetDisplayVideo360AdvertiserLinkRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetDisplayVideo360AdvertiserLinkMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists all DisplayVideo360AdvertiserLinks on a property.
+     * </pre>
+     */
+    public com.google.analytics.admin.v1alpha.ListDisplayVideo360AdvertiserLinksResponse
+        listDisplayVideo360AdvertiserLinks(
+            com.google.analytics.admin.v1alpha.ListDisplayVideo360AdvertiserLinksRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListDisplayVideo360AdvertiserLinksMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a DisplayVideo360AdvertiserLink.
+     * This can only be utilized by users who have proper authorization both on
+     * the Google Analytics property and on the Display &amp; Video 360 advertiser.
+     * Users who do not have access to the Display &amp; Video 360 advertiser should
+     * instead seek to create a DisplayVideo360LinkProposal.
+     * </pre>
+     */
+    public com.google.analytics.admin.v1alpha.DisplayVideo360AdvertiserLink
+        createDisplayVideo360AdvertiserLink(
+            com.google.analytics.admin.v1alpha.CreateDisplayVideo360AdvertiserLinkRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateDisplayVideo360AdvertiserLinkMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a DisplayVideo360AdvertiserLink on a property.
+     * </pre>
+     */
+    public com.google.protobuf.Empty deleteDisplayVideo360AdvertiserLink(
+        com.google.analytics.admin.v1alpha.DeleteDisplayVideo360AdvertiserLinkRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteDisplayVideo360AdvertiserLinkMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a DisplayVideo360AdvertiserLink on a property.
+     * </pre>
+     */
+    public com.google.analytics.admin.v1alpha.DisplayVideo360AdvertiserLink
+        updateDisplayVideo360AdvertiserLink(
+            com.google.analytics.admin.v1alpha.UpdateDisplayVideo360AdvertiserLinkRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateDisplayVideo360AdvertiserLinkMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lookup for a single DisplayVideo360AdvertiserLinkProposal.
+     * </pre>
+     */
+    public com.google.analytics.admin.v1alpha.DisplayVideo360AdvertiserLinkProposal
+        getDisplayVideo360AdvertiserLinkProposal(
+            com.google.analytics.admin.v1alpha.GetDisplayVideo360AdvertiserLinkProposalRequest
+                request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(),
+          getGetDisplayVideo360AdvertiserLinkProposalMethod(),
+          getCallOptions(),
+          request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists DisplayVideo360AdvertiserLinkProposals on a property.
+     * </pre>
+     */
+    public com.google.analytics.admin.v1alpha.ListDisplayVideo360AdvertiserLinkProposalsResponse
+        listDisplayVideo360AdvertiserLinkProposals(
+            com.google.analytics.admin.v1alpha.ListDisplayVideo360AdvertiserLinkProposalsRequest
+                request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(),
+          getListDisplayVideo360AdvertiserLinkProposalsMethod(),
+          getCallOptions(),
+          request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a DisplayVideo360AdvertiserLinkProposal.
+     * </pre>
+     */
+    public com.google.analytics.admin.v1alpha.DisplayVideo360AdvertiserLinkProposal
+        createDisplayVideo360AdvertiserLinkProposal(
+            com.google.analytics.admin.v1alpha.CreateDisplayVideo360AdvertiserLinkProposalRequest
+                request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(),
+          getCreateDisplayVideo360AdvertiserLinkProposalMethod(),
+          getCallOptions(),
+          request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a DisplayVideo360AdvertiserLinkProposal on a property.
+     * This can only be used on cancelled proposals.
+     * </pre>
+     */
+    public com.google.protobuf.Empty deleteDisplayVideo360AdvertiserLinkProposal(
+        com.google.analytics.admin.v1alpha.DeleteDisplayVideo360AdvertiserLinkProposalRequest
+            request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(),
+          getDeleteDisplayVideo360AdvertiserLinkProposalMethod(),
+          getCallOptions(),
+          request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Approves a DisplayVideo360AdvertiserLinkProposal.
+     * The DisplayVideo360AdvertiserLinkProposal will be deleted and a new
+     * DisplayVideo360AdvertiserLink will be created.
+     * </pre>
+     */
+    public com.google.analytics.admin.v1alpha.ApproveDisplayVideo360AdvertiserLinkProposalResponse
+        approveDisplayVideo360AdvertiserLinkProposal(
+            com.google.analytics.admin.v1alpha.ApproveDisplayVideo360AdvertiserLinkProposalRequest
+                request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(),
+          getApproveDisplayVideo360AdvertiserLinkProposalMethod(),
+          getCallOptions(),
+          request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Cancels a DisplayVideo360AdvertiserLinkProposal.
+     * Cancelling can mean either:
+     * - Declining a proposal initiated from Display &amp; Video 360
+     * - Withdrawing a proposal initiated from Google Analytics
+     * After being cancelled, a proposal will eventually be deleted automatically.
+     * </pre>
+     */
+    public com.google.analytics.admin.v1alpha.DisplayVideo360AdvertiserLinkProposal
+        cancelDisplayVideo360AdvertiserLinkProposal(
+            com.google.analytics.admin.v1alpha.CancelDisplayVideo360AdvertiserLinkProposalRequest
+                request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(),
+          getCancelDisplayVideo360AdvertiserLinkProposalMethod(),
+          getCallOptions(),
+          request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Creates a CustomDimension.
      * </pre>
      */
@@ -7139,6 +8537,32 @@ public final class AnalyticsAdminServiceGrpc {
         com.google.analytics.admin.v1alpha.GetCustomMetricRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getGetCustomMetricMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns the singleton data retention settings for this property.
+     * </pre>
+     */
+    public com.google.analytics.admin.v1alpha.DataRetentionSettings getDataRetentionSettings(
+        com.google.analytics.admin.v1alpha.GetDataRetentionSettingsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetDataRetentionSettingsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the singleton data retention settings for this property.
+     * </pre>
+     */
+    public com.google.analytics.admin.v1alpha.DataRetentionSettings updateDataRetentionSettings(
+        com.google.analytics.admin.v1alpha.UpdateDataRetentionSettingsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateDataRetentionSettingsMethod(), getCallOptions(), request);
     }
   }
 
@@ -7738,20 +9162,6 @@ public final class AnalyticsAdminServiceGrpc {
      *
      *
      * <pre>
-     * Updates a FirebaseLink on a property
-     * </pre>
-     */
-    public com.google.common.util.concurrent.ListenableFuture<
-            com.google.analytics.admin.v1alpha.FirebaseLink>
-        updateFirebaseLink(com.google.analytics.admin.v1alpha.UpdateFirebaseLinkRequest request) {
-      return io.grpc.stub.ClientCalls.futureUnaryCall(
-          getChannel().newCall(getUpdateFirebaseLinkMethod(), getCallOptions()), request);
-    }
-
-    /**
-     *
-     *
-     * <pre>
      * Deletes a FirebaseLink on a property
      * </pre>
      */
@@ -8050,6 +9460,203 @@ public final class AnalyticsAdminServiceGrpc {
      *
      *
      * <pre>
+     * Look up a single DisplayVideo360AdvertiserLink
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.analytics.admin.v1alpha.DisplayVideo360AdvertiserLink>
+        getDisplayVideo360AdvertiserLink(
+            com.google.analytics.admin.v1alpha.GetDisplayVideo360AdvertiserLinkRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetDisplayVideo360AdvertiserLinkMethod(), getCallOptions()),
+          request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists all DisplayVideo360AdvertiserLinks on a property.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.analytics.admin.v1alpha.ListDisplayVideo360AdvertiserLinksResponse>
+        listDisplayVideo360AdvertiserLinks(
+            com.google.analytics.admin.v1alpha.ListDisplayVideo360AdvertiserLinksRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getListDisplayVideo360AdvertiserLinksMethod(), getCallOptions()),
+          request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a DisplayVideo360AdvertiserLink.
+     * This can only be utilized by users who have proper authorization both on
+     * the Google Analytics property and on the Display &amp; Video 360 advertiser.
+     * Users who do not have access to the Display &amp; Video 360 advertiser should
+     * instead seek to create a DisplayVideo360LinkProposal.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.analytics.admin.v1alpha.DisplayVideo360AdvertiserLink>
+        createDisplayVideo360AdvertiserLink(
+            com.google.analytics.admin.v1alpha.CreateDisplayVideo360AdvertiserLinkRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getCreateDisplayVideo360AdvertiserLinkMethod(), getCallOptions()),
+          request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a DisplayVideo360AdvertiserLink on a property.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty>
+        deleteDisplayVideo360AdvertiserLink(
+            com.google.analytics.admin.v1alpha.DeleteDisplayVideo360AdvertiserLinkRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getDeleteDisplayVideo360AdvertiserLinkMethod(), getCallOptions()),
+          request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a DisplayVideo360AdvertiserLink on a property.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.analytics.admin.v1alpha.DisplayVideo360AdvertiserLink>
+        updateDisplayVideo360AdvertiserLink(
+            com.google.analytics.admin.v1alpha.UpdateDisplayVideo360AdvertiserLinkRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getUpdateDisplayVideo360AdvertiserLinkMethod(), getCallOptions()),
+          request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lookup for a single DisplayVideo360AdvertiserLinkProposal.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.analytics.admin.v1alpha.DisplayVideo360AdvertiserLinkProposal>
+        getDisplayVideo360AdvertiserLinkProposal(
+            com.google.analytics.admin.v1alpha.GetDisplayVideo360AdvertiserLinkProposalRequest
+                request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel()
+              .newCall(getGetDisplayVideo360AdvertiserLinkProposalMethod(), getCallOptions()),
+          request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists DisplayVideo360AdvertiserLinkProposals on a property.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.analytics.admin.v1alpha.ListDisplayVideo360AdvertiserLinkProposalsResponse>
+        listDisplayVideo360AdvertiserLinkProposals(
+            com.google.analytics.admin.v1alpha.ListDisplayVideo360AdvertiserLinkProposalsRequest
+                request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel()
+              .newCall(getListDisplayVideo360AdvertiserLinkProposalsMethod(), getCallOptions()),
+          request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a DisplayVideo360AdvertiserLinkProposal.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.analytics.admin.v1alpha.DisplayVideo360AdvertiserLinkProposal>
+        createDisplayVideo360AdvertiserLinkProposal(
+            com.google.analytics.admin.v1alpha.CreateDisplayVideo360AdvertiserLinkProposalRequest
+                request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel()
+              .newCall(getCreateDisplayVideo360AdvertiserLinkProposalMethod(), getCallOptions()),
+          request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a DisplayVideo360AdvertiserLinkProposal on a property.
+     * This can only be used on cancelled proposals.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty>
+        deleteDisplayVideo360AdvertiserLinkProposal(
+            com.google.analytics.admin.v1alpha.DeleteDisplayVideo360AdvertiserLinkProposalRequest
+                request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel()
+              .newCall(getDeleteDisplayVideo360AdvertiserLinkProposalMethod(), getCallOptions()),
+          request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Approves a DisplayVideo360AdvertiserLinkProposal.
+     * The DisplayVideo360AdvertiserLinkProposal will be deleted and a new
+     * DisplayVideo360AdvertiserLink will be created.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.analytics.admin.v1alpha.ApproveDisplayVideo360AdvertiserLinkProposalResponse>
+        approveDisplayVideo360AdvertiserLinkProposal(
+            com.google.analytics.admin.v1alpha.ApproveDisplayVideo360AdvertiserLinkProposalRequest
+                request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel()
+              .newCall(getApproveDisplayVideo360AdvertiserLinkProposalMethod(), getCallOptions()),
+          request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Cancels a DisplayVideo360AdvertiserLinkProposal.
+     * Cancelling can mean either:
+     * - Declining a proposal initiated from Display &amp; Video 360
+     * - Withdrawing a proposal initiated from Google Analytics
+     * After being cancelled, a proposal will eventually be deleted automatically.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.analytics.admin.v1alpha.DisplayVideo360AdvertiserLinkProposal>
+        cancelDisplayVideo360AdvertiserLinkProposal(
+            com.google.analytics.admin.v1alpha.CancelDisplayVideo360AdvertiserLinkProposalRequest
+                request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel()
+              .newCall(getCancelDisplayVideo360AdvertiserLinkProposalMethod(), getCallOptions()),
+          request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Creates a CustomDimension.
      * </pre>
      */
@@ -8187,6 +9794,36 @@ public final class AnalyticsAdminServiceGrpc {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getGetCustomMetricMethod(), getCallOptions()), request);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns the singleton data retention settings for this property.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.analytics.admin.v1alpha.DataRetentionSettings>
+        getDataRetentionSettings(
+            com.google.analytics.admin.v1alpha.GetDataRetentionSettingsRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetDataRetentionSettingsMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the singleton data retention settings for this property.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.analytics.admin.v1alpha.DataRetentionSettings>
+        updateDataRetentionSettings(
+            com.google.analytics.admin.v1alpha.UpdateDataRetentionSettingsRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getUpdateDataRetentionSettingsMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_GET_ACCOUNT = 0;
@@ -8226,37 +9863,49 @@ public final class AnalyticsAdminServiceGrpc {
   private static final int METHODID_GET_ENHANCED_MEASUREMENT_SETTINGS = 34;
   private static final int METHODID_UPDATE_ENHANCED_MEASUREMENT_SETTINGS = 35;
   private static final int METHODID_CREATE_FIREBASE_LINK = 36;
-  private static final int METHODID_UPDATE_FIREBASE_LINK = 37;
-  private static final int METHODID_DELETE_FIREBASE_LINK = 38;
-  private static final int METHODID_LIST_FIREBASE_LINKS = 39;
-  private static final int METHODID_GET_GLOBAL_SITE_TAG = 40;
-  private static final int METHODID_CREATE_GOOGLE_ADS_LINK = 41;
-  private static final int METHODID_UPDATE_GOOGLE_ADS_LINK = 42;
-  private static final int METHODID_DELETE_GOOGLE_ADS_LINK = 43;
-  private static final int METHODID_LIST_GOOGLE_ADS_LINKS = 44;
-  private static final int METHODID_GET_DATA_SHARING_SETTINGS = 45;
-  private static final int METHODID_GET_MEASUREMENT_PROTOCOL_SECRET = 46;
-  private static final int METHODID_LIST_MEASUREMENT_PROTOCOL_SECRETS = 47;
-  private static final int METHODID_CREATE_MEASUREMENT_PROTOCOL_SECRET = 48;
-  private static final int METHODID_DELETE_MEASUREMENT_PROTOCOL_SECRET = 49;
-  private static final int METHODID_UPDATE_MEASUREMENT_PROTOCOL_SECRET = 50;
-  private static final int METHODID_SEARCH_CHANGE_HISTORY_EVENTS = 51;
-  private static final int METHODID_GET_GOOGLE_SIGNALS_SETTINGS = 52;
-  private static final int METHODID_UPDATE_GOOGLE_SIGNALS_SETTINGS = 53;
-  private static final int METHODID_CREATE_CONVERSION_EVENT = 54;
-  private static final int METHODID_GET_CONVERSION_EVENT = 55;
-  private static final int METHODID_DELETE_CONVERSION_EVENT = 56;
-  private static final int METHODID_LIST_CONVERSION_EVENTS = 57;
-  private static final int METHODID_CREATE_CUSTOM_DIMENSION = 58;
-  private static final int METHODID_UPDATE_CUSTOM_DIMENSION = 59;
-  private static final int METHODID_LIST_CUSTOM_DIMENSIONS = 60;
-  private static final int METHODID_ARCHIVE_CUSTOM_DIMENSION = 61;
-  private static final int METHODID_GET_CUSTOM_DIMENSION = 62;
-  private static final int METHODID_CREATE_CUSTOM_METRIC = 63;
-  private static final int METHODID_UPDATE_CUSTOM_METRIC = 64;
-  private static final int METHODID_LIST_CUSTOM_METRICS = 65;
-  private static final int METHODID_ARCHIVE_CUSTOM_METRIC = 66;
-  private static final int METHODID_GET_CUSTOM_METRIC = 67;
+  private static final int METHODID_DELETE_FIREBASE_LINK = 37;
+  private static final int METHODID_LIST_FIREBASE_LINKS = 38;
+  private static final int METHODID_GET_GLOBAL_SITE_TAG = 39;
+  private static final int METHODID_CREATE_GOOGLE_ADS_LINK = 40;
+  private static final int METHODID_UPDATE_GOOGLE_ADS_LINK = 41;
+  private static final int METHODID_DELETE_GOOGLE_ADS_LINK = 42;
+  private static final int METHODID_LIST_GOOGLE_ADS_LINKS = 43;
+  private static final int METHODID_GET_DATA_SHARING_SETTINGS = 44;
+  private static final int METHODID_GET_MEASUREMENT_PROTOCOL_SECRET = 45;
+  private static final int METHODID_LIST_MEASUREMENT_PROTOCOL_SECRETS = 46;
+  private static final int METHODID_CREATE_MEASUREMENT_PROTOCOL_SECRET = 47;
+  private static final int METHODID_DELETE_MEASUREMENT_PROTOCOL_SECRET = 48;
+  private static final int METHODID_UPDATE_MEASUREMENT_PROTOCOL_SECRET = 49;
+  private static final int METHODID_SEARCH_CHANGE_HISTORY_EVENTS = 50;
+  private static final int METHODID_GET_GOOGLE_SIGNALS_SETTINGS = 51;
+  private static final int METHODID_UPDATE_GOOGLE_SIGNALS_SETTINGS = 52;
+  private static final int METHODID_CREATE_CONVERSION_EVENT = 53;
+  private static final int METHODID_GET_CONVERSION_EVENT = 54;
+  private static final int METHODID_DELETE_CONVERSION_EVENT = 55;
+  private static final int METHODID_LIST_CONVERSION_EVENTS = 56;
+  private static final int METHODID_GET_DISPLAY_VIDEO360ADVERTISER_LINK = 57;
+  private static final int METHODID_LIST_DISPLAY_VIDEO360ADVERTISER_LINKS = 58;
+  private static final int METHODID_CREATE_DISPLAY_VIDEO360ADVERTISER_LINK = 59;
+  private static final int METHODID_DELETE_DISPLAY_VIDEO360ADVERTISER_LINK = 60;
+  private static final int METHODID_UPDATE_DISPLAY_VIDEO360ADVERTISER_LINK = 61;
+  private static final int METHODID_GET_DISPLAY_VIDEO360ADVERTISER_LINK_PROPOSAL = 62;
+  private static final int METHODID_LIST_DISPLAY_VIDEO360ADVERTISER_LINK_PROPOSALS = 63;
+  private static final int METHODID_CREATE_DISPLAY_VIDEO360ADVERTISER_LINK_PROPOSAL = 64;
+  private static final int METHODID_DELETE_DISPLAY_VIDEO360ADVERTISER_LINK_PROPOSAL = 65;
+  private static final int METHODID_APPROVE_DISPLAY_VIDEO360ADVERTISER_LINK_PROPOSAL = 66;
+  private static final int METHODID_CANCEL_DISPLAY_VIDEO360ADVERTISER_LINK_PROPOSAL = 67;
+  private static final int METHODID_CREATE_CUSTOM_DIMENSION = 68;
+  private static final int METHODID_UPDATE_CUSTOM_DIMENSION = 69;
+  private static final int METHODID_LIST_CUSTOM_DIMENSIONS = 70;
+  private static final int METHODID_ARCHIVE_CUSTOM_DIMENSION = 71;
+  private static final int METHODID_GET_CUSTOM_DIMENSION = 72;
+  private static final int METHODID_CREATE_CUSTOM_METRIC = 73;
+  private static final int METHODID_UPDATE_CUSTOM_METRIC = 74;
+  private static final int METHODID_LIST_CUSTOM_METRICS = 75;
+  private static final int METHODID_ARCHIVE_CUSTOM_METRIC = 76;
+  private static final int METHODID_GET_CUSTOM_METRIC = 77;
+  private static final int METHODID_GET_DATA_RETENTION_SETTINGS = 78;
+  private static final int METHODID_UPDATE_DATA_RETENTION_SETTINGS = 79;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -8504,12 +10153,6 @@ public final class AnalyticsAdminServiceGrpc {
               (io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.FirebaseLink>)
                   responseObserver);
           break;
-        case METHODID_UPDATE_FIREBASE_LINK:
-          serviceImpl.updateFirebaseLink(
-              (com.google.analytics.admin.v1alpha.UpdateFirebaseLinkRequest) request,
-              (io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.FirebaseLink>)
-                  responseObserver);
-          break;
         case METHODID_DELETE_FIREBASE_LINK:
           serviceImpl.deleteFirebaseLink(
               (com.google.analytics.admin.v1alpha.DeleteFirebaseLinkRequest) request,
@@ -8636,6 +10279,96 @@ public final class AnalyticsAdminServiceGrpc {
                       com.google.analytics.admin.v1alpha.ListConversionEventsResponse>)
                   responseObserver);
           break;
+        case METHODID_GET_DISPLAY_VIDEO360ADVERTISER_LINK:
+          serviceImpl.getDisplayVideo360AdvertiserLink(
+              (com.google.analytics.admin.v1alpha.GetDisplayVideo360AdvertiserLinkRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.analytics.admin.v1alpha.DisplayVideo360AdvertiserLink>)
+                  responseObserver);
+          break;
+        case METHODID_LIST_DISPLAY_VIDEO360ADVERTISER_LINKS:
+          serviceImpl.listDisplayVideo360AdvertiserLinks(
+              (com.google.analytics.admin.v1alpha.ListDisplayVideo360AdvertiserLinksRequest)
+                  request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.analytics.admin.v1alpha
+                          .ListDisplayVideo360AdvertiserLinksResponse>)
+                  responseObserver);
+          break;
+        case METHODID_CREATE_DISPLAY_VIDEO360ADVERTISER_LINK:
+          serviceImpl.createDisplayVideo360AdvertiserLink(
+              (com.google.analytics.admin.v1alpha.CreateDisplayVideo360AdvertiserLinkRequest)
+                  request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.analytics.admin.v1alpha.DisplayVideo360AdvertiserLink>)
+                  responseObserver);
+          break;
+        case METHODID_DELETE_DISPLAY_VIDEO360ADVERTISER_LINK:
+          serviceImpl.deleteDisplayVideo360AdvertiserLink(
+              (com.google.analytics.admin.v1alpha.DeleteDisplayVideo360AdvertiserLinkRequest)
+                  request,
+              (io.grpc.stub.StreamObserver<com.google.protobuf.Empty>) responseObserver);
+          break;
+        case METHODID_UPDATE_DISPLAY_VIDEO360ADVERTISER_LINK:
+          serviceImpl.updateDisplayVideo360AdvertiserLink(
+              (com.google.analytics.admin.v1alpha.UpdateDisplayVideo360AdvertiserLinkRequest)
+                  request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.analytics.admin.v1alpha.DisplayVideo360AdvertiserLink>)
+                  responseObserver);
+          break;
+        case METHODID_GET_DISPLAY_VIDEO360ADVERTISER_LINK_PROPOSAL:
+          serviceImpl.getDisplayVideo360AdvertiserLinkProposal(
+              (com.google.analytics.admin.v1alpha.GetDisplayVideo360AdvertiserLinkProposalRequest)
+                  request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.analytics.admin.v1alpha.DisplayVideo360AdvertiserLinkProposal>)
+                  responseObserver);
+          break;
+        case METHODID_LIST_DISPLAY_VIDEO360ADVERTISER_LINK_PROPOSALS:
+          serviceImpl.listDisplayVideo360AdvertiserLinkProposals(
+              (com.google.analytics.admin.v1alpha.ListDisplayVideo360AdvertiserLinkProposalsRequest)
+                  request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.analytics.admin.v1alpha
+                          .ListDisplayVideo360AdvertiserLinkProposalsResponse>)
+                  responseObserver);
+          break;
+        case METHODID_CREATE_DISPLAY_VIDEO360ADVERTISER_LINK_PROPOSAL:
+          serviceImpl.createDisplayVideo360AdvertiserLinkProposal(
+              (com.google.analytics.admin.v1alpha
+                      .CreateDisplayVideo360AdvertiserLinkProposalRequest)
+                  request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.analytics.admin.v1alpha.DisplayVideo360AdvertiserLinkProposal>)
+                  responseObserver);
+          break;
+        case METHODID_DELETE_DISPLAY_VIDEO360ADVERTISER_LINK_PROPOSAL:
+          serviceImpl.deleteDisplayVideo360AdvertiserLinkProposal(
+              (com.google.analytics.admin.v1alpha
+                      .DeleteDisplayVideo360AdvertiserLinkProposalRequest)
+                  request,
+              (io.grpc.stub.StreamObserver<com.google.protobuf.Empty>) responseObserver);
+          break;
+        case METHODID_APPROVE_DISPLAY_VIDEO360ADVERTISER_LINK_PROPOSAL:
+          serviceImpl.approveDisplayVideo360AdvertiserLinkProposal(
+              (com.google.analytics.admin.v1alpha
+                      .ApproveDisplayVideo360AdvertiserLinkProposalRequest)
+                  request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.analytics.admin.v1alpha
+                          .ApproveDisplayVideo360AdvertiserLinkProposalResponse>)
+                  responseObserver);
+          break;
+        case METHODID_CANCEL_DISPLAY_VIDEO360ADVERTISER_LINK_PROPOSAL:
+          serviceImpl.cancelDisplayVideo360AdvertiserLinkProposal(
+              (com.google.analytics.admin.v1alpha
+                      .CancelDisplayVideo360AdvertiserLinkProposalRequest)
+                  request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.analytics.admin.v1alpha.DisplayVideo360AdvertiserLinkProposal>)
+                  responseObserver);
+          break;
         case METHODID_CREATE_CUSTOM_DIMENSION:
           serviceImpl.createCustomDimension(
               (com.google.analytics.admin.v1alpha.CreateCustomDimensionRequest) request,
@@ -8694,6 +10427,20 @@ public final class AnalyticsAdminServiceGrpc {
           serviceImpl.getCustomMetric(
               (com.google.analytics.admin.v1alpha.GetCustomMetricRequest) request,
               (io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.CustomMetric>)
+                  responseObserver);
+          break;
+        case METHODID_GET_DATA_RETENTION_SETTINGS:
+          serviceImpl.getDataRetentionSettings(
+              (com.google.analytics.admin.v1alpha.GetDataRetentionSettingsRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.analytics.admin.v1alpha.DataRetentionSettings>)
+                  responseObserver);
+          break;
+        case METHODID_UPDATE_DATA_RETENTION_SETTINGS:
+          serviceImpl.updateDataRetentionSettings(
+              (com.google.analytics.admin.v1alpha.UpdateDataRetentionSettingsRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.analytics.admin.v1alpha.DataRetentionSettings>)
                   responseObserver);
           break;
         default:
@@ -8797,7 +10544,6 @@ public final class AnalyticsAdminServiceGrpc {
                       .addMethod(getGetEnhancedMeasurementSettingsMethod())
                       .addMethod(getUpdateEnhancedMeasurementSettingsMethod())
                       .addMethod(getCreateFirebaseLinkMethod())
-                      .addMethod(getUpdateFirebaseLinkMethod())
                       .addMethod(getDeleteFirebaseLinkMethod())
                       .addMethod(getListFirebaseLinksMethod())
                       .addMethod(getGetGlobalSiteTagMethod())
@@ -8818,6 +10564,17 @@ public final class AnalyticsAdminServiceGrpc {
                       .addMethod(getGetConversionEventMethod())
                       .addMethod(getDeleteConversionEventMethod())
                       .addMethod(getListConversionEventsMethod())
+                      .addMethod(getGetDisplayVideo360AdvertiserLinkMethod())
+                      .addMethod(getListDisplayVideo360AdvertiserLinksMethod())
+                      .addMethod(getCreateDisplayVideo360AdvertiserLinkMethod())
+                      .addMethod(getDeleteDisplayVideo360AdvertiserLinkMethod())
+                      .addMethod(getUpdateDisplayVideo360AdvertiserLinkMethod())
+                      .addMethod(getGetDisplayVideo360AdvertiserLinkProposalMethod())
+                      .addMethod(getListDisplayVideo360AdvertiserLinkProposalsMethod())
+                      .addMethod(getCreateDisplayVideo360AdvertiserLinkProposalMethod())
+                      .addMethod(getDeleteDisplayVideo360AdvertiserLinkProposalMethod())
+                      .addMethod(getApproveDisplayVideo360AdvertiserLinkProposalMethod())
+                      .addMethod(getCancelDisplayVideo360AdvertiserLinkProposalMethod())
                       .addMethod(getCreateCustomDimensionMethod())
                       .addMethod(getUpdateCustomDimensionMethod())
                       .addMethod(getListCustomDimensionsMethod())
@@ -8828,6 +10585,8 @@ public final class AnalyticsAdminServiceGrpc {
                       .addMethod(getListCustomMetricsMethod())
                       .addMethod(getArchiveCustomMetricMethod())
                       .addMethod(getGetCustomMetricMethod())
+                      .addMethod(getGetDataRetentionSettingsMethod())
+                      .addMethod(getUpdateDataRetentionSettingsMethod())
                       .build();
         }
       }

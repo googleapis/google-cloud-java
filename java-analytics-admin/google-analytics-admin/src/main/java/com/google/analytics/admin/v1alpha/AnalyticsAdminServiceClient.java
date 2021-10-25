@@ -3879,87 +3879,6 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Updates a FirebaseLink on a property
-   *
-   * <p>Sample code:
-   *
-   * <pre>{@code
-   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
-   *     AnalyticsAdminServiceClient.create()) {
-   *   FirebaseLink firebaseLink = FirebaseLink.newBuilder().build();
-   *   FieldMask updateMask = FieldMask.newBuilder().build();
-   *   FirebaseLink response =
-   *       analyticsAdminServiceClient.updateFirebaseLink(firebaseLink, updateMask);
-   * }
-   * }</pre>
-   *
-   * @param firebaseLink Required. The Firebase link to update.
-   * @param updateMask Required. The list of fields to be updated. Field names must be in snake case
-   *     (e.g., "field_to_update"). Omitted fields will not be updated. To replace the entire
-   *     entity, use one path with the string "&#42;" to match all fields.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final FirebaseLink updateFirebaseLink(FirebaseLink firebaseLink, FieldMask updateMask) {
-    UpdateFirebaseLinkRequest request =
-        UpdateFirebaseLinkRequest.newBuilder()
-            .setFirebaseLink(firebaseLink)
-            .setUpdateMask(updateMask)
-            .build();
-    return updateFirebaseLink(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD.
-  /**
-   * Updates a FirebaseLink on a property
-   *
-   * <p>Sample code:
-   *
-   * <pre>{@code
-   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
-   *     AnalyticsAdminServiceClient.create()) {
-   *   UpdateFirebaseLinkRequest request =
-   *       UpdateFirebaseLinkRequest.newBuilder()
-   *           .setFirebaseLink(FirebaseLink.newBuilder().build())
-   *           .setUpdateMask(FieldMask.newBuilder().build())
-   *           .build();
-   *   FirebaseLink response = analyticsAdminServiceClient.updateFirebaseLink(request);
-   * }
-   * }</pre>
-   *
-   * @param request The request object containing all of the parameters for the API call.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final FirebaseLink updateFirebaseLink(UpdateFirebaseLinkRequest request) {
-    return updateFirebaseLinkCallable().call(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD.
-  /**
-   * Updates a FirebaseLink on a property
-   *
-   * <p>Sample code:
-   *
-   * <pre>{@code
-   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
-   *     AnalyticsAdminServiceClient.create()) {
-   *   UpdateFirebaseLinkRequest request =
-   *       UpdateFirebaseLinkRequest.newBuilder()
-   *           .setFirebaseLink(FirebaseLink.newBuilder().build())
-   *           .setUpdateMask(FieldMask.newBuilder().build())
-   *           .build();
-   *   ApiFuture<FirebaseLink> future =
-   *       analyticsAdminServiceClient.updateFirebaseLinkCallable().futureCall(request);
-   *   // Do something.
-   *   FirebaseLink response = future.get();
-   * }
-   * }</pre>
-   */
-  public final UnaryCallable<UpdateFirebaseLinkRequest, FirebaseLink> updateFirebaseLinkCallable() {
-    return stub.updateFirebaseLinkCallable();
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD.
-  /**
    * Deletes a FirebaseLink on a property
    *
    * <p>Sample code:
@@ -6236,6 +6155,1306 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
+   * Look up a single DisplayVideo360AdvertiserLink
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   DisplayVideo360AdvertiserLinkName name =
+   *       DisplayVideo360AdvertiserLinkName.of("[PROPERTY]", "[DISPLAY_VIDEO_360_ADVERTISER_LINK]");
+   *   DisplayVideo360AdvertiserLink response =
+   *       analyticsAdminServiceClient.getDisplayVideo360AdvertiserLink(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the DisplayVideo360AdvertiserLink to get. Example format:
+   *     properties/1234/displayVideo360AdvertiserLink/5678
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final DisplayVideo360AdvertiserLink getDisplayVideo360AdvertiserLink(
+      DisplayVideo360AdvertiserLinkName name) {
+    GetDisplayVideo360AdvertiserLinkRequest request =
+        GetDisplayVideo360AdvertiserLinkRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .build();
+    return getDisplayVideo360AdvertiserLink(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Look up a single DisplayVideo360AdvertiserLink
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   String name =
+   *       DisplayVideo360AdvertiserLinkName.of("[PROPERTY]", "[DISPLAY_VIDEO_360_ADVERTISER_LINK]")
+   *           .toString();
+   *   DisplayVideo360AdvertiserLink response =
+   *       analyticsAdminServiceClient.getDisplayVideo360AdvertiserLink(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the DisplayVideo360AdvertiserLink to get. Example format:
+   *     properties/1234/displayVideo360AdvertiserLink/5678
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final DisplayVideo360AdvertiserLink getDisplayVideo360AdvertiserLink(String name) {
+    GetDisplayVideo360AdvertiserLinkRequest request =
+        GetDisplayVideo360AdvertiserLinkRequest.newBuilder().setName(name).build();
+    return getDisplayVideo360AdvertiserLink(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Look up a single DisplayVideo360AdvertiserLink
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   GetDisplayVideo360AdvertiserLinkRequest request =
+   *       GetDisplayVideo360AdvertiserLinkRequest.newBuilder()
+   *           .setName(
+   *               DisplayVideo360AdvertiserLinkName.of(
+   *                       "[PROPERTY]", "[DISPLAY_VIDEO_360_ADVERTISER_LINK]")
+   *                   .toString())
+   *           .build();
+   *   DisplayVideo360AdvertiserLink response =
+   *       analyticsAdminServiceClient.getDisplayVideo360AdvertiserLink(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final DisplayVideo360AdvertiserLink getDisplayVideo360AdvertiserLink(
+      GetDisplayVideo360AdvertiserLinkRequest request) {
+    return getDisplayVideo360AdvertiserLinkCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Look up a single DisplayVideo360AdvertiserLink
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   GetDisplayVideo360AdvertiserLinkRequest request =
+   *       GetDisplayVideo360AdvertiserLinkRequest.newBuilder()
+   *           .setName(
+   *               DisplayVideo360AdvertiserLinkName.of(
+   *                       "[PROPERTY]", "[DISPLAY_VIDEO_360_ADVERTISER_LINK]")
+   *                   .toString())
+   *           .build();
+   *   ApiFuture<DisplayVideo360AdvertiserLink> future =
+   *       analyticsAdminServiceClient
+   *           .getDisplayVideo360AdvertiserLinkCallable()
+   *           .futureCall(request);
+   *   // Do something.
+   *   DisplayVideo360AdvertiserLink response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<GetDisplayVideo360AdvertiserLinkRequest, DisplayVideo360AdvertiserLink>
+      getDisplayVideo360AdvertiserLinkCallable() {
+    return stub.getDisplayVideo360AdvertiserLinkCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists all DisplayVideo360AdvertiserLinks on a property.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   PropertyName parent = PropertyName.of("[PROPERTY]");
+   *   for (DisplayVideo360AdvertiserLink element :
+   *       analyticsAdminServiceClient.listDisplayVideo360AdvertiserLinks(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. Example format: properties/1234
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListDisplayVideo360AdvertiserLinksPagedResponse listDisplayVideo360AdvertiserLinks(
+      PropertyName parent) {
+    ListDisplayVideo360AdvertiserLinksRequest request =
+        ListDisplayVideo360AdvertiserLinksRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .build();
+    return listDisplayVideo360AdvertiserLinks(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists all DisplayVideo360AdvertiserLinks on a property.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   String parent =
+   *       DisplayVideo360AdvertiserLinkName.of("[PROPERTY]", "[DISPLAY_VIDEO_360_ADVERTISER_LINK]")
+   *           .toString();
+   *   for (DisplayVideo360AdvertiserLink element :
+   *       analyticsAdminServiceClient.listDisplayVideo360AdvertiserLinks(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. Example format: properties/1234
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListDisplayVideo360AdvertiserLinksPagedResponse listDisplayVideo360AdvertiserLinks(
+      String parent) {
+    ListDisplayVideo360AdvertiserLinksRequest request =
+        ListDisplayVideo360AdvertiserLinksRequest.newBuilder().setParent(parent).build();
+    return listDisplayVideo360AdvertiserLinks(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists all DisplayVideo360AdvertiserLinks on a property.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   ListDisplayVideo360AdvertiserLinksRequest request =
+   *       ListDisplayVideo360AdvertiserLinksRequest.newBuilder()
+   *           .setParent(
+   *               DisplayVideo360AdvertiserLinkName.of(
+   *                       "[PROPERTY]", "[DISPLAY_VIDEO_360_ADVERTISER_LINK]")
+   *                   .toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   for (DisplayVideo360AdvertiserLink element :
+   *       analyticsAdminServiceClient.listDisplayVideo360AdvertiserLinks(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListDisplayVideo360AdvertiserLinksPagedResponse listDisplayVideo360AdvertiserLinks(
+      ListDisplayVideo360AdvertiserLinksRequest request) {
+    return listDisplayVideo360AdvertiserLinksPagedCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists all DisplayVideo360AdvertiserLinks on a property.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   ListDisplayVideo360AdvertiserLinksRequest request =
+   *       ListDisplayVideo360AdvertiserLinksRequest.newBuilder()
+   *           .setParent(
+   *               DisplayVideo360AdvertiserLinkName.of(
+   *                       "[PROPERTY]", "[DISPLAY_VIDEO_360_ADVERTISER_LINK]")
+   *                   .toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   ApiFuture<DisplayVideo360AdvertiserLink> future =
+   *       analyticsAdminServiceClient
+   *           .listDisplayVideo360AdvertiserLinksPagedCallable()
+   *           .futureCall(request);
+   *   // Do something.
+   *   for (DisplayVideo360AdvertiserLink element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<
+          ListDisplayVideo360AdvertiserLinksRequest,
+          ListDisplayVideo360AdvertiserLinksPagedResponse>
+      listDisplayVideo360AdvertiserLinksPagedCallable() {
+    return stub.listDisplayVideo360AdvertiserLinksPagedCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists all DisplayVideo360AdvertiserLinks on a property.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   ListDisplayVideo360AdvertiserLinksRequest request =
+   *       ListDisplayVideo360AdvertiserLinksRequest.newBuilder()
+   *           .setParent(
+   *               DisplayVideo360AdvertiserLinkName.of(
+   *                       "[PROPERTY]", "[DISPLAY_VIDEO_360_ADVERTISER_LINK]")
+   *                   .toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   while (true) {
+   *     ListDisplayVideo360AdvertiserLinksResponse response =
+   *         analyticsAdminServiceClient.listDisplayVideo360AdvertiserLinksCallable().call(request);
+   *     for (DisplayVideo360AdvertiserLink element : response.getResponsesList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<
+          ListDisplayVideo360AdvertiserLinksRequest, ListDisplayVideo360AdvertiserLinksResponse>
+      listDisplayVideo360AdvertiserLinksCallable() {
+    return stub.listDisplayVideo360AdvertiserLinksCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a DisplayVideo360AdvertiserLink. This can only be utilized by users who have proper
+   * authorization both on the Google Analytics property and on the Display &amp; Video 360
+   * advertiser. Users who do not have access to the Display &amp; Video 360 advertiser should
+   * instead seek to create a DisplayVideo360LinkProposal.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   PropertyName parent = PropertyName.of("[PROPERTY]");
+   *   DisplayVideo360AdvertiserLink displayVideo360AdvertiserLink =
+   *       DisplayVideo360AdvertiserLink.newBuilder().build();
+   *   DisplayVideo360AdvertiserLink response =
+   *       analyticsAdminServiceClient.createDisplayVideo360AdvertiserLink(
+   *           parent, displayVideo360AdvertiserLink);
+   * }
+   * }</pre>
+   *
+   * @param parent Required. Example format: properties/1234
+   * @param displayVideo360AdvertiserLink Required. The DisplayVideo360AdvertiserLink to create.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final DisplayVideo360AdvertiserLink createDisplayVideo360AdvertiserLink(
+      PropertyName parent, DisplayVideo360AdvertiserLink displayVideo360AdvertiserLink) {
+    CreateDisplayVideo360AdvertiserLinkRequest request =
+        CreateDisplayVideo360AdvertiserLinkRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .setDisplayVideo360AdvertiserLink(displayVideo360AdvertiserLink)
+            .build();
+    return createDisplayVideo360AdvertiserLink(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a DisplayVideo360AdvertiserLink. This can only be utilized by users who have proper
+   * authorization both on the Google Analytics property and on the Display &amp; Video 360
+   * advertiser. Users who do not have access to the Display &amp; Video 360 advertiser should
+   * instead seek to create a DisplayVideo360LinkProposal.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   String parent =
+   *       DisplayVideo360AdvertiserLinkName.of("[PROPERTY]", "[DISPLAY_VIDEO_360_ADVERTISER_LINK]")
+   *           .toString();
+   *   DisplayVideo360AdvertiserLink displayVideo360AdvertiserLink =
+   *       DisplayVideo360AdvertiserLink.newBuilder().build();
+   *   DisplayVideo360AdvertiserLink response =
+   *       analyticsAdminServiceClient.createDisplayVideo360AdvertiserLink(
+   *           parent, displayVideo360AdvertiserLink);
+   * }
+   * }</pre>
+   *
+   * @param parent Required. Example format: properties/1234
+   * @param displayVideo360AdvertiserLink Required. The DisplayVideo360AdvertiserLink to create.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final DisplayVideo360AdvertiserLink createDisplayVideo360AdvertiserLink(
+      String parent, DisplayVideo360AdvertiserLink displayVideo360AdvertiserLink) {
+    CreateDisplayVideo360AdvertiserLinkRequest request =
+        CreateDisplayVideo360AdvertiserLinkRequest.newBuilder()
+            .setParent(parent)
+            .setDisplayVideo360AdvertiserLink(displayVideo360AdvertiserLink)
+            .build();
+    return createDisplayVideo360AdvertiserLink(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a DisplayVideo360AdvertiserLink. This can only be utilized by users who have proper
+   * authorization both on the Google Analytics property and on the Display &amp; Video 360
+   * advertiser. Users who do not have access to the Display &amp; Video 360 advertiser should
+   * instead seek to create a DisplayVideo360LinkProposal.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   CreateDisplayVideo360AdvertiserLinkRequest request =
+   *       CreateDisplayVideo360AdvertiserLinkRequest.newBuilder()
+   *           .setParent(
+   *               DisplayVideo360AdvertiserLinkName.of(
+   *                       "[PROPERTY]", "[DISPLAY_VIDEO_360_ADVERTISER_LINK]")
+   *                   .toString())
+   *           .setDisplayVideo360AdvertiserLink(DisplayVideo360AdvertiserLink.newBuilder().build())
+   *           .build();
+   *   DisplayVideo360AdvertiserLink response =
+   *       analyticsAdminServiceClient.createDisplayVideo360AdvertiserLink(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final DisplayVideo360AdvertiserLink createDisplayVideo360AdvertiserLink(
+      CreateDisplayVideo360AdvertiserLinkRequest request) {
+    return createDisplayVideo360AdvertiserLinkCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a DisplayVideo360AdvertiserLink. This can only be utilized by users who have proper
+   * authorization both on the Google Analytics property and on the Display &amp; Video 360
+   * advertiser. Users who do not have access to the Display &amp; Video 360 advertiser should
+   * instead seek to create a DisplayVideo360LinkProposal.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   CreateDisplayVideo360AdvertiserLinkRequest request =
+   *       CreateDisplayVideo360AdvertiserLinkRequest.newBuilder()
+   *           .setParent(
+   *               DisplayVideo360AdvertiserLinkName.of(
+   *                       "[PROPERTY]", "[DISPLAY_VIDEO_360_ADVERTISER_LINK]")
+   *                   .toString())
+   *           .setDisplayVideo360AdvertiserLink(DisplayVideo360AdvertiserLink.newBuilder().build())
+   *           .build();
+   *   ApiFuture<DisplayVideo360AdvertiserLink> future =
+   *       analyticsAdminServiceClient
+   *           .createDisplayVideo360AdvertiserLinkCallable()
+   *           .futureCall(request);
+   *   // Do something.
+   *   DisplayVideo360AdvertiserLink response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<
+          CreateDisplayVideo360AdvertiserLinkRequest, DisplayVideo360AdvertiserLink>
+      createDisplayVideo360AdvertiserLinkCallable() {
+    return stub.createDisplayVideo360AdvertiserLinkCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a DisplayVideo360AdvertiserLink on a property.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   DisplayVideo360AdvertiserLinkName name =
+   *       DisplayVideo360AdvertiserLinkName.of("[PROPERTY]", "[DISPLAY_VIDEO_360_ADVERTISER_LINK]");
+   *   analyticsAdminServiceClient.deleteDisplayVideo360AdvertiserLink(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the DisplayVideo360AdvertiserLink to delete. Example format:
+   *     properties/1234/displayVideo360AdvertiserLinks/5678
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteDisplayVideo360AdvertiserLink(DisplayVideo360AdvertiserLinkName name) {
+    DeleteDisplayVideo360AdvertiserLinkRequest request =
+        DeleteDisplayVideo360AdvertiserLinkRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .build();
+    deleteDisplayVideo360AdvertiserLink(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a DisplayVideo360AdvertiserLink on a property.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   String name =
+   *       DisplayVideo360AdvertiserLinkName.of("[PROPERTY]", "[DISPLAY_VIDEO_360_ADVERTISER_LINK]")
+   *           .toString();
+   *   analyticsAdminServiceClient.deleteDisplayVideo360AdvertiserLink(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the DisplayVideo360AdvertiserLink to delete. Example format:
+   *     properties/1234/displayVideo360AdvertiserLinks/5678
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteDisplayVideo360AdvertiserLink(String name) {
+    DeleteDisplayVideo360AdvertiserLinkRequest request =
+        DeleteDisplayVideo360AdvertiserLinkRequest.newBuilder().setName(name).build();
+    deleteDisplayVideo360AdvertiserLink(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a DisplayVideo360AdvertiserLink on a property.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   DeleteDisplayVideo360AdvertiserLinkRequest request =
+   *       DeleteDisplayVideo360AdvertiserLinkRequest.newBuilder()
+   *           .setName(
+   *               DisplayVideo360AdvertiserLinkName.of(
+   *                       "[PROPERTY]", "[DISPLAY_VIDEO_360_ADVERTISER_LINK]")
+   *                   .toString())
+   *           .build();
+   *   analyticsAdminServiceClient.deleteDisplayVideo360AdvertiserLink(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteDisplayVideo360AdvertiserLink(
+      DeleteDisplayVideo360AdvertiserLinkRequest request) {
+    deleteDisplayVideo360AdvertiserLinkCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a DisplayVideo360AdvertiserLink on a property.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   DeleteDisplayVideo360AdvertiserLinkRequest request =
+   *       DeleteDisplayVideo360AdvertiserLinkRequest.newBuilder()
+   *           .setName(
+   *               DisplayVideo360AdvertiserLinkName.of(
+   *                       "[PROPERTY]", "[DISPLAY_VIDEO_360_ADVERTISER_LINK]")
+   *                   .toString())
+   *           .build();
+   *   ApiFuture<Empty> future =
+   *       analyticsAdminServiceClient
+   *           .deleteDisplayVideo360AdvertiserLinkCallable()
+   *           .futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<DeleteDisplayVideo360AdvertiserLinkRequest, Empty>
+      deleteDisplayVideo360AdvertiserLinkCallable() {
+    return stub.deleteDisplayVideo360AdvertiserLinkCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates a DisplayVideo360AdvertiserLink on a property.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   DisplayVideo360AdvertiserLink displayVideo360AdvertiserLink =
+   *       DisplayVideo360AdvertiserLink.newBuilder().build();
+   *   FieldMask updateMask = FieldMask.newBuilder().build();
+   *   DisplayVideo360AdvertiserLink response =
+   *       analyticsAdminServiceClient.updateDisplayVideo360AdvertiserLink(
+   *           displayVideo360AdvertiserLink, updateMask);
+   * }
+   * }</pre>
+   *
+   * @param displayVideo360AdvertiserLink The DisplayVideo360AdvertiserLink to update
+   * @param updateMask Required. The list of fields to be updated. Omitted fields will not be
+   *     updated. To replace the entire entity, use one path with the string "&#42;" to match all
+   *     fields.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final DisplayVideo360AdvertiserLink updateDisplayVideo360AdvertiserLink(
+      DisplayVideo360AdvertiserLink displayVideo360AdvertiserLink, FieldMask updateMask) {
+    UpdateDisplayVideo360AdvertiserLinkRequest request =
+        UpdateDisplayVideo360AdvertiserLinkRequest.newBuilder()
+            .setDisplayVideo360AdvertiserLink(displayVideo360AdvertiserLink)
+            .setUpdateMask(updateMask)
+            .build();
+    return updateDisplayVideo360AdvertiserLink(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates a DisplayVideo360AdvertiserLink on a property.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   UpdateDisplayVideo360AdvertiserLinkRequest request =
+   *       UpdateDisplayVideo360AdvertiserLinkRequest.newBuilder()
+   *           .setDisplayVideo360AdvertiserLink(DisplayVideo360AdvertiserLink.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   DisplayVideo360AdvertiserLink response =
+   *       analyticsAdminServiceClient.updateDisplayVideo360AdvertiserLink(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final DisplayVideo360AdvertiserLink updateDisplayVideo360AdvertiserLink(
+      UpdateDisplayVideo360AdvertiserLinkRequest request) {
+    return updateDisplayVideo360AdvertiserLinkCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates a DisplayVideo360AdvertiserLink on a property.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   UpdateDisplayVideo360AdvertiserLinkRequest request =
+   *       UpdateDisplayVideo360AdvertiserLinkRequest.newBuilder()
+   *           .setDisplayVideo360AdvertiserLink(DisplayVideo360AdvertiserLink.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   ApiFuture<DisplayVideo360AdvertiserLink> future =
+   *       analyticsAdminServiceClient
+   *           .updateDisplayVideo360AdvertiserLinkCallable()
+   *           .futureCall(request);
+   *   // Do something.
+   *   DisplayVideo360AdvertiserLink response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<
+          UpdateDisplayVideo360AdvertiserLinkRequest, DisplayVideo360AdvertiserLink>
+      updateDisplayVideo360AdvertiserLinkCallable() {
+    return stub.updateDisplayVideo360AdvertiserLinkCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lookup for a single DisplayVideo360AdvertiserLinkProposal.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   DisplayVideo360AdvertiserLinkProposalName name =
+   *       DisplayVideo360AdvertiserLinkProposalName.of(
+   *           "[PROPERTY]", "[DISPLAY_VIDEO_360_ADVERTISER_LINK_PROPOSAL]");
+   *   DisplayVideo360AdvertiserLinkProposal response =
+   *       analyticsAdminServiceClient.getDisplayVideo360AdvertiserLinkProposal(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the DisplayVideo360AdvertiserLinkProposal to get. Example
+   *     format: properties/1234/displayVideo360AdvertiserLinkProposals/5678
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final DisplayVideo360AdvertiserLinkProposal getDisplayVideo360AdvertiserLinkProposal(
+      DisplayVideo360AdvertiserLinkProposalName name) {
+    GetDisplayVideo360AdvertiserLinkProposalRequest request =
+        GetDisplayVideo360AdvertiserLinkProposalRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .build();
+    return getDisplayVideo360AdvertiserLinkProposal(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lookup for a single DisplayVideo360AdvertiserLinkProposal.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   String name =
+   *       DisplayVideo360AdvertiserLinkProposalName.of(
+   *               "[PROPERTY]", "[DISPLAY_VIDEO_360_ADVERTISER_LINK_PROPOSAL]")
+   *           .toString();
+   *   DisplayVideo360AdvertiserLinkProposal response =
+   *       analyticsAdminServiceClient.getDisplayVideo360AdvertiserLinkProposal(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the DisplayVideo360AdvertiserLinkProposal to get. Example
+   *     format: properties/1234/displayVideo360AdvertiserLinkProposals/5678
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final DisplayVideo360AdvertiserLinkProposal getDisplayVideo360AdvertiserLinkProposal(
+      String name) {
+    GetDisplayVideo360AdvertiserLinkProposalRequest request =
+        GetDisplayVideo360AdvertiserLinkProposalRequest.newBuilder().setName(name).build();
+    return getDisplayVideo360AdvertiserLinkProposal(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lookup for a single DisplayVideo360AdvertiserLinkProposal.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   GetDisplayVideo360AdvertiserLinkProposalRequest request =
+   *       GetDisplayVideo360AdvertiserLinkProposalRequest.newBuilder()
+   *           .setName(
+   *               DisplayVideo360AdvertiserLinkProposalName.of(
+   *                       "[PROPERTY]", "[DISPLAY_VIDEO_360_ADVERTISER_LINK_PROPOSAL]")
+   *                   .toString())
+   *           .build();
+   *   DisplayVideo360AdvertiserLinkProposal response =
+   *       analyticsAdminServiceClient.getDisplayVideo360AdvertiserLinkProposal(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final DisplayVideo360AdvertiserLinkProposal getDisplayVideo360AdvertiserLinkProposal(
+      GetDisplayVideo360AdvertiserLinkProposalRequest request) {
+    return getDisplayVideo360AdvertiserLinkProposalCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lookup for a single DisplayVideo360AdvertiserLinkProposal.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   GetDisplayVideo360AdvertiserLinkProposalRequest request =
+   *       GetDisplayVideo360AdvertiserLinkProposalRequest.newBuilder()
+   *           .setName(
+   *               DisplayVideo360AdvertiserLinkProposalName.of(
+   *                       "[PROPERTY]", "[DISPLAY_VIDEO_360_ADVERTISER_LINK_PROPOSAL]")
+   *                   .toString())
+   *           .build();
+   *   ApiFuture<DisplayVideo360AdvertiserLinkProposal> future =
+   *       analyticsAdminServiceClient
+   *           .getDisplayVideo360AdvertiserLinkProposalCallable()
+   *           .futureCall(request);
+   *   // Do something.
+   *   DisplayVideo360AdvertiserLinkProposal response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<
+          GetDisplayVideo360AdvertiserLinkProposalRequest, DisplayVideo360AdvertiserLinkProposal>
+      getDisplayVideo360AdvertiserLinkProposalCallable() {
+    return stub.getDisplayVideo360AdvertiserLinkProposalCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists DisplayVideo360AdvertiserLinkProposals on a property.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   PropertyName parent = PropertyName.of("[PROPERTY]");
+   *   for (DisplayVideo360AdvertiserLinkProposal element :
+   *       analyticsAdminServiceClient
+   *           .listDisplayVideo360AdvertiserLinkProposals(parent)
+   *           .iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. Example format: properties/1234
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListDisplayVideo360AdvertiserLinkProposalsPagedResponse
+      listDisplayVideo360AdvertiserLinkProposals(PropertyName parent) {
+    ListDisplayVideo360AdvertiserLinkProposalsRequest request =
+        ListDisplayVideo360AdvertiserLinkProposalsRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .build();
+    return listDisplayVideo360AdvertiserLinkProposals(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists DisplayVideo360AdvertiserLinkProposals on a property.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   String parent =
+   *       DisplayVideo360AdvertiserLinkProposalName.of(
+   *               "[PROPERTY]", "[DISPLAY_VIDEO_360_ADVERTISER_LINK_PROPOSAL]")
+   *           .toString();
+   *   for (DisplayVideo360AdvertiserLinkProposal element :
+   *       analyticsAdminServiceClient
+   *           .listDisplayVideo360AdvertiserLinkProposals(parent)
+   *           .iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. Example format: properties/1234
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListDisplayVideo360AdvertiserLinkProposalsPagedResponse
+      listDisplayVideo360AdvertiserLinkProposals(String parent) {
+    ListDisplayVideo360AdvertiserLinkProposalsRequest request =
+        ListDisplayVideo360AdvertiserLinkProposalsRequest.newBuilder().setParent(parent).build();
+    return listDisplayVideo360AdvertiserLinkProposals(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists DisplayVideo360AdvertiserLinkProposals on a property.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   ListDisplayVideo360AdvertiserLinkProposalsRequest request =
+   *       ListDisplayVideo360AdvertiserLinkProposalsRequest.newBuilder()
+   *           .setParent(
+   *               DisplayVideo360AdvertiserLinkProposalName.of(
+   *                       "[PROPERTY]", "[DISPLAY_VIDEO_360_ADVERTISER_LINK_PROPOSAL]")
+   *                   .toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   for (DisplayVideo360AdvertiserLinkProposal element :
+   *       analyticsAdminServiceClient
+   *           .listDisplayVideo360AdvertiserLinkProposals(request)
+   *           .iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListDisplayVideo360AdvertiserLinkProposalsPagedResponse
+      listDisplayVideo360AdvertiserLinkProposals(
+          ListDisplayVideo360AdvertiserLinkProposalsRequest request) {
+    return listDisplayVideo360AdvertiserLinkProposalsPagedCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists DisplayVideo360AdvertiserLinkProposals on a property.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   ListDisplayVideo360AdvertiserLinkProposalsRequest request =
+   *       ListDisplayVideo360AdvertiserLinkProposalsRequest.newBuilder()
+   *           .setParent(
+   *               DisplayVideo360AdvertiserLinkProposalName.of(
+   *                       "[PROPERTY]", "[DISPLAY_VIDEO_360_ADVERTISER_LINK_PROPOSAL]")
+   *                   .toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   ApiFuture<DisplayVideo360AdvertiserLinkProposal> future =
+   *       analyticsAdminServiceClient
+   *           .listDisplayVideo360AdvertiserLinkProposalsPagedCallable()
+   *           .futureCall(request);
+   *   // Do something.
+   *   for (DisplayVideo360AdvertiserLinkProposal element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<
+          ListDisplayVideo360AdvertiserLinkProposalsRequest,
+          ListDisplayVideo360AdvertiserLinkProposalsPagedResponse>
+      listDisplayVideo360AdvertiserLinkProposalsPagedCallable() {
+    return stub.listDisplayVideo360AdvertiserLinkProposalsPagedCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists DisplayVideo360AdvertiserLinkProposals on a property.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   ListDisplayVideo360AdvertiserLinkProposalsRequest request =
+   *       ListDisplayVideo360AdvertiserLinkProposalsRequest.newBuilder()
+   *           .setParent(
+   *               DisplayVideo360AdvertiserLinkProposalName.of(
+   *                       "[PROPERTY]", "[DISPLAY_VIDEO_360_ADVERTISER_LINK_PROPOSAL]")
+   *                   .toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   while (true) {
+   *     ListDisplayVideo360AdvertiserLinkProposalsResponse response =
+   *         analyticsAdminServiceClient
+   *             .listDisplayVideo360AdvertiserLinkProposalsCallable()
+   *             .call(request);
+   *     for (DisplayVideo360AdvertiserLinkProposal element : response.getResponsesList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<
+          ListDisplayVideo360AdvertiserLinkProposalsRequest,
+          ListDisplayVideo360AdvertiserLinkProposalsResponse>
+      listDisplayVideo360AdvertiserLinkProposalsCallable() {
+    return stub.listDisplayVideo360AdvertiserLinkProposalsCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a DisplayVideo360AdvertiserLinkProposal.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   PropertyName parent = PropertyName.of("[PROPERTY]");
+   *   DisplayVideo360AdvertiserLinkProposal displayVideo360AdvertiserLinkProposal =
+   *       DisplayVideo360AdvertiserLinkProposal.newBuilder().build();
+   *   DisplayVideo360AdvertiserLinkProposal response =
+   *       analyticsAdminServiceClient.createDisplayVideo360AdvertiserLinkProposal(
+   *           parent, displayVideo360AdvertiserLinkProposal);
+   * }
+   * }</pre>
+   *
+   * @param parent Required. Example format: properties/1234
+   * @param displayVideo360AdvertiserLinkProposal Required. The
+   *     DisplayVideo360AdvertiserLinkProposal to create.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final DisplayVideo360AdvertiserLinkProposal createDisplayVideo360AdvertiserLinkProposal(
+      PropertyName parent,
+      DisplayVideo360AdvertiserLinkProposal displayVideo360AdvertiserLinkProposal) {
+    CreateDisplayVideo360AdvertiserLinkProposalRequest request =
+        CreateDisplayVideo360AdvertiserLinkProposalRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .setDisplayVideo360AdvertiserLinkProposal(displayVideo360AdvertiserLinkProposal)
+            .build();
+    return createDisplayVideo360AdvertiserLinkProposal(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a DisplayVideo360AdvertiserLinkProposal.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   String parent =
+   *       DisplayVideo360AdvertiserLinkProposalName.of(
+   *               "[PROPERTY]", "[DISPLAY_VIDEO_360_ADVERTISER_LINK_PROPOSAL]")
+   *           .toString();
+   *   DisplayVideo360AdvertiserLinkProposal displayVideo360AdvertiserLinkProposal =
+   *       DisplayVideo360AdvertiserLinkProposal.newBuilder().build();
+   *   DisplayVideo360AdvertiserLinkProposal response =
+   *       analyticsAdminServiceClient.createDisplayVideo360AdvertiserLinkProposal(
+   *           parent, displayVideo360AdvertiserLinkProposal);
+   * }
+   * }</pre>
+   *
+   * @param parent Required. Example format: properties/1234
+   * @param displayVideo360AdvertiserLinkProposal Required. The
+   *     DisplayVideo360AdvertiserLinkProposal to create.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final DisplayVideo360AdvertiserLinkProposal createDisplayVideo360AdvertiserLinkProposal(
+      String parent, DisplayVideo360AdvertiserLinkProposal displayVideo360AdvertiserLinkProposal) {
+    CreateDisplayVideo360AdvertiserLinkProposalRequest request =
+        CreateDisplayVideo360AdvertiserLinkProposalRequest.newBuilder()
+            .setParent(parent)
+            .setDisplayVideo360AdvertiserLinkProposal(displayVideo360AdvertiserLinkProposal)
+            .build();
+    return createDisplayVideo360AdvertiserLinkProposal(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a DisplayVideo360AdvertiserLinkProposal.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   CreateDisplayVideo360AdvertiserLinkProposalRequest request =
+   *       CreateDisplayVideo360AdvertiserLinkProposalRequest.newBuilder()
+   *           .setParent(
+   *               DisplayVideo360AdvertiserLinkProposalName.of(
+   *                       "[PROPERTY]", "[DISPLAY_VIDEO_360_ADVERTISER_LINK_PROPOSAL]")
+   *                   .toString())
+   *           .setDisplayVideo360AdvertiserLinkProposal(
+   *               DisplayVideo360AdvertiserLinkProposal.newBuilder().build())
+   *           .build();
+   *   DisplayVideo360AdvertiserLinkProposal response =
+   *       analyticsAdminServiceClient.createDisplayVideo360AdvertiserLinkProposal(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final DisplayVideo360AdvertiserLinkProposal createDisplayVideo360AdvertiserLinkProposal(
+      CreateDisplayVideo360AdvertiserLinkProposalRequest request) {
+    return createDisplayVideo360AdvertiserLinkProposalCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a DisplayVideo360AdvertiserLinkProposal.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   CreateDisplayVideo360AdvertiserLinkProposalRequest request =
+   *       CreateDisplayVideo360AdvertiserLinkProposalRequest.newBuilder()
+   *           .setParent(
+   *               DisplayVideo360AdvertiserLinkProposalName.of(
+   *                       "[PROPERTY]", "[DISPLAY_VIDEO_360_ADVERTISER_LINK_PROPOSAL]")
+   *                   .toString())
+   *           .setDisplayVideo360AdvertiserLinkProposal(
+   *               DisplayVideo360AdvertiserLinkProposal.newBuilder().build())
+   *           .build();
+   *   ApiFuture<DisplayVideo360AdvertiserLinkProposal> future =
+   *       analyticsAdminServiceClient
+   *           .createDisplayVideo360AdvertiserLinkProposalCallable()
+   *           .futureCall(request);
+   *   // Do something.
+   *   DisplayVideo360AdvertiserLinkProposal response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<
+          CreateDisplayVideo360AdvertiserLinkProposalRequest, DisplayVideo360AdvertiserLinkProposal>
+      createDisplayVideo360AdvertiserLinkProposalCallable() {
+    return stub.createDisplayVideo360AdvertiserLinkProposalCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a DisplayVideo360AdvertiserLinkProposal on a property. This can only be used on
+   * cancelled proposals.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   DisplayVideo360AdvertiserLinkProposalName name =
+   *       DisplayVideo360AdvertiserLinkProposalName.of(
+   *           "[PROPERTY]", "[DISPLAY_VIDEO_360_ADVERTISER_LINK_PROPOSAL]");
+   *   analyticsAdminServiceClient.deleteDisplayVideo360AdvertiserLinkProposal(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the DisplayVideo360AdvertiserLinkProposal to delete. Example
+   *     format: properties/1234/displayVideo360AdvertiserLinkProposals/5678
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteDisplayVideo360AdvertiserLinkProposal(
+      DisplayVideo360AdvertiserLinkProposalName name) {
+    DeleteDisplayVideo360AdvertiserLinkProposalRequest request =
+        DeleteDisplayVideo360AdvertiserLinkProposalRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .build();
+    deleteDisplayVideo360AdvertiserLinkProposal(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a DisplayVideo360AdvertiserLinkProposal on a property. This can only be used on
+   * cancelled proposals.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   String name =
+   *       DisplayVideo360AdvertiserLinkProposalName.of(
+   *               "[PROPERTY]", "[DISPLAY_VIDEO_360_ADVERTISER_LINK_PROPOSAL]")
+   *           .toString();
+   *   analyticsAdminServiceClient.deleteDisplayVideo360AdvertiserLinkProposal(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the DisplayVideo360AdvertiserLinkProposal to delete. Example
+   *     format: properties/1234/displayVideo360AdvertiserLinkProposals/5678
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteDisplayVideo360AdvertiserLinkProposal(String name) {
+    DeleteDisplayVideo360AdvertiserLinkProposalRequest request =
+        DeleteDisplayVideo360AdvertiserLinkProposalRequest.newBuilder().setName(name).build();
+    deleteDisplayVideo360AdvertiserLinkProposal(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a DisplayVideo360AdvertiserLinkProposal on a property. This can only be used on
+   * cancelled proposals.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   DeleteDisplayVideo360AdvertiserLinkProposalRequest request =
+   *       DeleteDisplayVideo360AdvertiserLinkProposalRequest.newBuilder()
+   *           .setName(
+   *               DisplayVideo360AdvertiserLinkProposalName.of(
+   *                       "[PROPERTY]", "[DISPLAY_VIDEO_360_ADVERTISER_LINK_PROPOSAL]")
+   *                   .toString())
+   *           .build();
+   *   analyticsAdminServiceClient.deleteDisplayVideo360AdvertiserLinkProposal(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteDisplayVideo360AdvertiserLinkProposal(
+      DeleteDisplayVideo360AdvertiserLinkProposalRequest request) {
+    deleteDisplayVideo360AdvertiserLinkProposalCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a DisplayVideo360AdvertiserLinkProposal on a property. This can only be used on
+   * cancelled proposals.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   DeleteDisplayVideo360AdvertiserLinkProposalRequest request =
+   *       DeleteDisplayVideo360AdvertiserLinkProposalRequest.newBuilder()
+   *           .setName(
+   *               DisplayVideo360AdvertiserLinkProposalName.of(
+   *                       "[PROPERTY]", "[DISPLAY_VIDEO_360_ADVERTISER_LINK_PROPOSAL]")
+   *                   .toString())
+   *           .build();
+   *   ApiFuture<Empty> future =
+   *       analyticsAdminServiceClient
+   *           .deleteDisplayVideo360AdvertiserLinkProposalCallable()
+   *           .futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<DeleteDisplayVideo360AdvertiserLinkProposalRequest, Empty>
+      deleteDisplayVideo360AdvertiserLinkProposalCallable() {
+    return stub.deleteDisplayVideo360AdvertiserLinkProposalCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Approves a DisplayVideo360AdvertiserLinkProposal. The DisplayVideo360AdvertiserLinkProposal
+   * will be deleted and a new DisplayVideo360AdvertiserLink will be created.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   ApproveDisplayVideo360AdvertiserLinkProposalRequest request =
+   *       ApproveDisplayVideo360AdvertiserLinkProposalRequest.newBuilder()
+   *           .setName(
+   *               DisplayVideo360AdvertiserLinkProposalName.of(
+   *                       "[PROPERTY]", "[DISPLAY_VIDEO_360_ADVERTISER_LINK_PROPOSAL]")
+   *                   .toString())
+   *           .build();
+   *   ApproveDisplayVideo360AdvertiserLinkProposalResponse response =
+   *       analyticsAdminServiceClient.approveDisplayVideo360AdvertiserLinkProposal(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ApproveDisplayVideo360AdvertiserLinkProposalResponse
+      approveDisplayVideo360AdvertiserLinkProposal(
+          ApproveDisplayVideo360AdvertiserLinkProposalRequest request) {
+    return approveDisplayVideo360AdvertiserLinkProposalCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Approves a DisplayVideo360AdvertiserLinkProposal. The DisplayVideo360AdvertiserLinkProposal
+   * will be deleted and a new DisplayVideo360AdvertiserLink will be created.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   ApproveDisplayVideo360AdvertiserLinkProposalRequest request =
+   *       ApproveDisplayVideo360AdvertiserLinkProposalRequest.newBuilder()
+   *           .setName(
+   *               DisplayVideo360AdvertiserLinkProposalName.of(
+   *                       "[PROPERTY]", "[DISPLAY_VIDEO_360_ADVERTISER_LINK_PROPOSAL]")
+   *                   .toString())
+   *           .build();
+   *   ApiFuture<ApproveDisplayVideo360AdvertiserLinkProposalResponse> future =
+   *       analyticsAdminServiceClient
+   *           .approveDisplayVideo360AdvertiserLinkProposalCallable()
+   *           .futureCall(request);
+   *   // Do something.
+   *   ApproveDisplayVideo360AdvertiserLinkProposalResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<
+          ApproveDisplayVideo360AdvertiserLinkProposalRequest,
+          ApproveDisplayVideo360AdvertiserLinkProposalResponse>
+      approveDisplayVideo360AdvertiserLinkProposalCallable() {
+    return stub.approveDisplayVideo360AdvertiserLinkProposalCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Cancels a DisplayVideo360AdvertiserLinkProposal. Cancelling can mean either: - Declining a
+   * proposal initiated from Display &amp; Video 360 - Withdrawing a proposal initiated from Google
+   * Analytics After being cancelled, a proposal will eventually be deleted automatically.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   CancelDisplayVideo360AdvertiserLinkProposalRequest request =
+   *       CancelDisplayVideo360AdvertiserLinkProposalRequest.newBuilder()
+   *           .setName(
+   *               DisplayVideo360AdvertiserLinkProposalName.of(
+   *                       "[PROPERTY]", "[DISPLAY_VIDEO_360_ADVERTISER_LINK_PROPOSAL]")
+   *                   .toString())
+   *           .build();
+   *   DisplayVideo360AdvertiserLinkProposal response =
+   *       analyticsAdminServiceClient.cancelDisplayVideo360AdvertiserLinkProposal(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final DisplayVideo360AdvertiserLinkProposal cancelDisplayVideo360AdvertiserLinkProposal(
+      CancelDisplayVideo360AdvertiserLinkProposalRequest request) {
+    return cancelDisplayVideo360AdvertiserLinkProposalCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Cancels a DisplayVideo360AdvertiserLinkProposal. Cancelling can mean either: - Declining a
+   * proposal initiated from Display &amp; Video 360 - Withdrawing a proposal initiated from Google
+   * Analytics After being cancelled, a proposal will eventually be deleted automatically.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   CancelDisplayVideo360AdvertiserLinkProposalRequest request =
+   *       CancelDisplayVideo360AdvertiserLinkProposalRequest.newBuilder()
+   *           .setName(
+   *               DisplayVideo360AdvertiserLinkProposalName.of(
+   *                       "[PROPERTY]", "[DISPLAY_VIDEO_360_ADVERTISER_LINK_PROPOSAL]")
+   *                   .toString())
+   *           .build();
+   *   ApiFuture<DisplayVideo360AdvertiserLinkProposal> future =
+   *       analyticsAdminServiceClient
+   *           .cancelDisplayVideo360AdvertiserLinkProposalCallable()
+   *           .futureCall(request);
+   *   // Do something.
+   *   DisplayVideo360AdvertiserLinkProposal response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<
+          CancelDisplayVideo360AdvertiserLinkProposalRequest, DisplayVideo360AdvertiserLinkProposal>
+      cancelDisplayVideo360AdvertiserLinkProposalCallable() {
+    return stub.cancelDisplayVideo360AdvertiserLinkProposalCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
    * Creates a CustomDimension.
    *
    * <p>Sample code:
@@ -7301,6 +8520,196 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    */
   public final UnaryCallable<GetCustomMetricRequest, CustomMetric> getCustomMetricCallable() {
     return stub.getCustomMetricCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Returns the singleton data retention settings for this property.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   DataRetentionSettingsName name = DataRetentionSettingsName.of("[PROPERTY]");
+   *   DataRetentionSettings response = analyticsAdminServiceClient.getDataRetentionSettings(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the settings to lookup. Format:
+   *     properties/{property}/dataRetentionSettings Example:
+   *     "properties/1000/dataRetentionSettings"
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final DataRetentionSettings getDataRetentionSettings(DataRetentionSettingsName name) {
+    GetDataRetentionSettingsRequest request =
+        GetDataRetentionSettingsRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .build();
+    return getDataRetentionSettings(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Returns the singleton data retention settings for this property.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   String name = DataRetentionSettingsName.of("[PROPERTY]").toString();
+   *   DataRetentionSettings response = analyticsAdminServiceClient.getDataRetentionSettings(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the settings to lookup. Format:
+   *     properties/{property}/dataRetentionSettings Example:
+   *     "properties/1000/dataRetentionSettings"
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final DataRetentionSettings getDataRetentionSettings(String name) {
+    GetDataRetentionSettingsRequest request =
+        GetDataRetentionSettingsRequest.newBuilder().setName(name).build();
+    return getDataRetentionSettings(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Returns the singleton data retention settings for this property.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   GetDataRetentionSettingsRequest request =
+   *       GetDataRetentionSettingsRequest.newBuilder()
+   *           .setName(DataRetentionSettingsName.of("[PROPERTY]").toString())
+   *           .build();
+   *   DataRetentionSettings response =
+   *       analyticsAdminServiceClient.getDataRetentionSettings(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final DataRetentionSettings getDataRetentionSettings(
+      GetDataRetentionSettingsRequest request) {
+    return getDataRetentionSettingsCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Returns the singleton data retention settings for this property.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   GetDataRetentionSettingsRequest request =
+   *       GetDataRetentionSettingsRequest.newBuilder()
+   *           .setName(DataRetentionSettingsName.of("[PROPERTY]").toString())
+   *           .build();
+   *   ApiFuture<DataRetentionSettings> future =
+   *       analyticsAdminServiceClient.getDataRetentionSettingsCallable().futureCall(request);
+   *   // Do something.
+   *   DataRetentionSettings response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<GetDataRetentionSettingsRequest, DataRetentionSettings>
+      getDataRetentionSettingsCallable() {
+    return stub.getDataRetentionSettingsCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates the singleton data retention settings for this property.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   DataRetentionSettings dataRetentionSettings = DataRetentionSettings.newBuilder().build();
+   *   FieldMask updateMask = FieldMask.newBuilder().build();
+   *   DataRetentionSettings response =
+   *       analyticsAdminServiceClient.updateDataRetentionSettings(
+   *           dataRetentionSettings, updateMask);
+   * }
+   * }</pre>
+   *
+   * @param dataRetentionSettings Required. The settings to update. The `name` field is used to
+   *     identify the settings to be updated.
+   * @param updateMask Required. The list of fields to be updated. Field names must be in snake case
+   *     (e.g., "field_to_update"). Omitted fields will not be updated. To replace the entire
+   *     entity, use one path with the string "&#42;" to match all fields.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final DataRetentionSettings updateDataRetentionSettings(
+      DataRetentionSettings dataRetentionSettings, FieldMask updateMask) {
+    UpdateDataRetentionSettingsRequest request =
+        UpdateDataRetentionSettingsRequest.newBuilder()
+            .setDataRetentionSettings(dataRetentionSettings)
+            .setUpdateMask(updateMask)
+            .build();
+    return updateDataRetentionSettings(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates the singleton data retention settings for this property.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   UpdateDataRetentionSettingsRequest request =
+   *       UpdateDataRetentionSettingsRequest.newBuilder()
+   *           .setDataRetentionSettings(DataRetentionSettings.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   DataRetentionSettings response =
+   *       analyticsAdminServiceClient.updateDataRetentionSettings(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final DataRetentionSettings updateDataRetentionSettings(
+      UpdateDataRetentionSettingsRequest request) {
+    return updateDataRetentionSettingsCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates the singleton data retention settings for this property.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   UpdateDataRetentionSettingsRequest request =
+   *       UpdateDataRetentionSettingsRequest.newBuilder()
+   *           .setDataRetentionSettings(DataRetentionSettings.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   ApiFuture<DataRetentionSettings> future =
+   *       analyticsAdminServiceClient.updateDataRetentionSettingsCallable().futureCall(request);
+   *   // Do something.
+   *   DataRetentionSettings response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<UpdateDataRetentionSettingsRequest, DataRetentionSettings>
+      updateDataRetentionSettingsCallable() {
+    return stub.updateDataRetentionSettingsCallable();
   }
 
   @Override
@@ -8414,6 +9823,206 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
     protected ListConversionEventsFixedSizeCollection createCollection(
         List<ListConversionEventsPage> pages, int collectionSize) {
       return new ListConversionEventsFixedSizeCollection(pages, collectionSize);
+    }
+  }
+
+  public static class ListDisplayVideo360AdvertiserLinksPagedResponse
+      extends AbstractPagedListResponse<
+          ListDisplayVideo360AdvertiserLinksRequest,
+          ListDisplayVideo360AdvertiserLinksResponse,
+          DisplayVideo360AdvertiserLink,
+          ListDisplayVideo360AdvertiserLinksPage,
+          ListDisplayVideo360AdvertiserLinksFixedSizeCollection> {
+
+    public static ApiFuture<ListDisplayVideo360AdvertiserLinksPagedResponse> createAsync(
+        PageContext<
+                ListDisplayVideo360AdvertiserLinksRequest,
+                ListDisplayVideo360AdvertiserLinksResponse,
+                DisplayVideo360AdvertiserLink>
+            context,
+        ApiFuture<ListDisplayVideo360AdvertiserLinksResponse> futureResponse) {
+      ApiFuture<ListDisplayVideo360AdvertiserLinksPage> futurePage =
+          ListDisplayVideo360AdvertiserLinksPage.createEmptyPage()
+              .createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage,
+          input -> new ListDisplayVideo360AdvertiserLinksPagedResponse(input),
+          MoreExecutors.directExecutor());
+    }
+
+    private ListDisplayVideo360AdvertiserLinksPagedResponse(
+        ListDisplayVideo360AdvertiserLinksPage page) {
+      super(page, ListDisplayVideo360AdvertiserLinksFixedSizeCollection.createEmptyCollection());
+    }
+  }
+
+  public static class ListDisplayVideo360AdvertiserLinksPage
+      extends AbstractPage<
+          ListDisplayVideo360AdvertiserLinksRequest,
+          ListDisplayVideo360AdvertiserLinksResponse,
+          DisplayVideo360AdvertiserLink,
+          ListDisplayVideo360AdvertiserLinksPage> {
+
+    private ListDisplayVideo360AdvertiserLinksPage(
+        PageContext<
+                ListDisplayVideo360AdvertiserLinksRequest,
+                ListDisplayVideo360AdvertiserLinksResponse,
+                DisplayVideo360AdvertiserLink>
+            context,
+        ListDisplayVideo360AdvertiserLinksResponse response) {
+      super(context, response);
+    }
+
+    private static ListDisplayVideo360AdvertiserLinksPage createEmptyPage() {
+      return new ListDisplayVideo360AdvertiserLinksPage(null, null);
+    }
+
+    @Override
+    protected ListDisplayVideo360AdvertiserLinksPage createPage(
+        PageContext<
+                ListDisplayVideo360AdvertiserLinksRequest,
+                ListDisplayVideo360AdvertiserLinksResponse,
+                DisplayVideo360AdvertiserLink>
+            context,
+        ListDisplayVideo360AdvertiserLinksResponse response) {
+      return new ListDisplayVideo360AdvertiserLinksPage(context, response);
+    }
+
+    @Override
+    public ApiFuture<ListDisplayVideo360AdvertiserLinksPage> createPageAsync(
+        PageContext<
+                ListDisplayVideo360AdvertiserLinksRequest,
+                ListDisplayVideo360AdvertiserLinksResponse,
+                DisplayVideo360AdvertiserLink>
+            context,
+        ApiFuture<ListDisplayVideo360AdvertiserLinksResponse> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+  }
+
+  public static class ListDisplayVideo360AdvertiserLinksFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          ListDisplayVideo360AdvertiserLinksRequest,
+          ListDisplayVideo360AdvertiserLinksResponse,
+          DisplayVideo360AdvertiserLink,
+          ListDisplayVideo360AdvertiserLinksPage,
+          ListDisplayVideo360AdvertiserLinksFixedSizeCollection> {
+
+    private ListDisplayVideo360AdvertiserLinksFixedSizeCollection(
+        List<ListDisplayVideo360AdvertiserLinksPage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static ListDisplayVideo360AdvertiserLinksFixedSizeCollection createEmptyCollection() {
+      return new ListDisplayVideo360AdvertiserLinksFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected ListDisplayVideo360AdvertiserLinksFixedSizeCollection createCollection(
+        List<ListDisplayVideo360AdvertiserLinksPage> pages, int collectionSize) {
+      return new ListDisplayVideo360AdvertiserLinksFixedSizeCollection(pages, collectionSize);
+    }
+  }
+
+  public static class ListDisplayVideo360AdvertiserLinkProposalsPagedResponse
+      extends AbstractPagedListResponse<
+          ListDisplayVideo360AdvertiserLinkProposalsRequest,
+          ListDisplayVideo360AdvertiserLinkProposalsResponse,
+          DisplayVideo360AdvertiserLinkProposal,
+          ListDisplayVideo360AdvertiserLinkProposalsPage,
+          ListDisplayVideo360AdvertiserLinkProposalsFixedSizeCollection> {
+
+    public static ApiFuture<ListDisplayVideo360AdvertiserLinkProposalsPagedResponse> createAsync(
+        PageContext<
+                ListDisplayVideo360AdvertiserLinkProposalsRequest,
+                ListDisplayVideo360AdvertiserLinkProposalsResponse,
+                DisplayVideo360AdvertiserLinkProposal>
+            context,
+        ApiFuture<ListDisplayVideo360AdvertiserLinkProposalsResponse> futureResponse) {
+      ApiFuture<ListDisplayVideo360AdvertiserLinkProposalsPage> futurePage =
+          ListDisplayVideo360AdvertiserLinkProposalsPage.createEmptyPage()
+              .createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage,
+          input -> new ListDisplayVideo360AdvertiserLinkProposalsPagedResponse(input),
+          MoreExecutors.directExecutor());
+    }
+
+    private ListDisplayVideo360AdvertiserLinkProposalsPagedResponse(
+        ListDisplayVideo360AdvertiserLinkProposalsPage page) {
+      super(
+          page,
+          ListDisplayVideo360AdvertiserLinkProposalsFixedSizeCollection.createEmptyCollection());
+    }
+  }
+
+  public static class ListDisplayVideo360AdvertiserLinkProposalsPage
+      extends AbstractPage<
+          ListDisplayVideo360AdvertiserLinkProposalsRequest,
+          ListDisplayVideo360AdvertiserLinkProposalsResponse,
+          DisplayVideo360AdvertiserLinkProposal,
+          ListDisplayVideo360AdvertiserLinkProposalsPage> {
+
+    private ListDisplayVideo360AdvertiserLinkProposalsPage(
+        PageContext<
+                ListDisplayVideo360AdvertiserLinkProposalsRequest,
+                ListDisplayVideo360AdvertiserLinkProposalsResponse,
+                DisplayVideo360AdvertiserLinkProposal>
+            context,
+        ListDisplayVideo360AdvertiserLinkProposalsResponse response) {
+      super(context, response);
+    }
+
+    private static ListDisplayVideo360AdvertiserLinkProposalsPage createEmptyPage() {
+      return new ListDisplayVideo360AdvertiserLinkProposalsPage(null, null);
+    }
+
+    @Override
+    protected ListDisplayVideo360AdvertiserLinkProposalsPage createPage(
+        PageContext<
+                ListDisplayVideo360AdvertiserLinkProposalsRequest,
+                ListDisplayVideo360AdvertiserLinkProposalsResponse,
+                DisplayVideo360AdvertiserLinkProposal>
+            context,
+        ListDisplayVideo360AdvertiserLinkProposalsResponse response) {
+      return new ListDisplayVideo360AdvertiserLinkProposalsPage(context, response);
+    }
+
+    @Override
+    public ApiFuture<ListDisplayVideo360AdvertiserLinkProposalsPage> createPageAsync(
+        PageContext<
+                ListDisplayVideo360AdvertiserLinkProposalsRequest,
+                ListDisplayVideo360AdvertiserLinkProposalsResponse,
+                DisplayVideo360AdvertiserLinkProposal>
+            context,
+        ApiFuture<ListDisplayVideo360AdvertiserLinkProposalsResponse> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+  }
+
+  public static class ListDisplayVideo360AdvertiserLinkProposalsFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          ListDisplayVideo360AdvertiserLinkProposalsRequest,
+          ListDisplayVideo360AdvertiserLinkProposalsResponse,
+          DisplayVideo360AdvertiserLinkProposal,
+          ListDisplayVideo360AdvertiserLinkProposalsPage,
+          ListDisplayVideo360AdvertiserLinkProposalsFixedSizeCollection> {
+
+    private ListDisplayVideo360AdvertiserLinkProposalsFixedSizeCollection(
+        List<ListDisplayVideo360AdvertiserLinkProposalsPage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static ListDisplayVideo360AdvertiserLinkProposalsFixedSizeCollection
+        createEmptyCollection() {
+      return new ListDisplayVideo360AdvertiserLinkProposalsFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected ListDisplayVideo360AdvertiserLinkProposalsFixedSizeCollection createCollection(
+        List<ListDisplayVideo360AdvertiserLinkProposalsPage> pages, int collectionSize) {
+      return new ListDisplayVideo360AdvertiserLinkProposalsFixedSizeCollection(
+          pages, collectionSize);
     }
   }
 

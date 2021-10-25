@@ -22,27 +22,28 @@ package com.google.analytics.admin.v1alpha;
  *
  *
  * <pre>
- * Request message for UpdateFirebaseLink RPC
+ * Request message for UpdateDataRetentionSettings RPC.
  * </pre>
  *
- * Protobuf type {@code google.analytics.admin.v1alpha.UpdateFirebaseLinkRequest}
+ * Protobuf type {@code google.analytics.admin.v1alpha.UpdateDataRetentionSettingsRequest}
  */
-public final class UpdateFirebaseLinkRequest extends com.google.protobuf.GeneratedMessageV3
+public final class UpdateDataRetentionSettingsRequest extends com.google.protobuf.GeneratedMessageV3
     implements
-    // @@protoc_insertion_point(message_implements:google.analytics.admin.v1alpha.UpdateFirebaseLinkRequest)
-    UpdateFirebaseLinkRequestOrBuilder {
+    // @@protoc_insertion_point(message_implements:google.analytics.admin.v1alpha.UpdateDataRetentionSettingsRequest)
+    UpdateDataRetentionSettingsRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-  // Use UpdateFirebaseLinkRequest.newBuilder() to construct.
-  private UpdateFirebaseLinkRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+  // Use UpdateDataRetentionSettingsRequest.newBuilder() to construct.
+  private UpdateDataRetentionSettingsRequest(
+      com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
 
-  private UpdateFirebaseLinkRequest() {}
+  private UpdateDataRetentionSettingsRequest() {}
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
-    return new UpdateFirebaseLinkRequest();
+    return new UpdateDataRetentionSettingsRequest();
   }
 
   @java.lang.Override
@@ -50,7 +51,7 @@ public final class UpdateFirebaseLinkRequest extends com.google.protobuf.Generat
     return this.unknownFields;
   }
 
-  private UpdateFirebaseLinkRequest(
+  private UpdateDataRetentionSettingsRequest(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
@@ -70,16 +71,17 @@ public final class UpdateFirebaseLinkRequest extends com.google.protobuf.Generat
             break;
           case 10:
             {
-              com.google.analytics.admin.v1alpha.FirebaseLink.Builder subBuilder = null;
-              if (firebaseLink_ != null) {
-                subBuilder = firebaseLink_.toBuilder();
+              com.google.analytics.admin.v1alpha.DataRetentionSettings.Builder subBuilder = null;
+              if (dataRetentionSettings_ != null) {
+                subBuilder = dataRetentionSettings_.toBuilder();
               }
-              firebaseLink_ =
+              dataRetentionSettings_ =
                   input.readMessage(
-                      com.google.analytics.admin.v1alpha.FirebaseLink.parser(), extensionRegistry);
+                      com.google.analytics.admin.v1alpha.DataRetentionSettings.parser(),
+                      extensionRegistry);
               if (subBuilder != null) {
-                subBuilder.mergeFrom(firebaseLink_);
-                firebaseLink_ = subBuilder.buildPartial();
+                subBuilder.mergeFrom(dataRetentionSettings_);
+                dataRetentionSettings_ = subBuilder.buildPartial();
               }
 
               break;
@@ -120,71 +122,75 @@ public final class UpdateFirebaseLinkRequest extends com.google.protobuf.Generat
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.analytics.admin.v1alpha.AnalyticsAdminProto
-        .internal_static_google_analytics_admin_v1alpha_UpdateFirebaseLinkRequest_descriptor;
+        .internal_static_google_analytics_admin_v1alpha_UpdateDataRetentionSettingsRequest_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
     return com.google.analytics.admin.v1alpha.AnalyticsAdminProto
-        .internal_static_google_analytics_admin_v1alpha_UpdateFirebaseLinkRequest_fieldAccessorTable
+        .internal_static_google_analytics_admin_v1alpha_UpdateDataRetentionSettingsRequest_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.google.analytics.admin.v1alpha.UpdateFirebaseLinkRequest.class,
-            com.google.analytics.admin.v1alpha.UpdateFirebaseLinkRequest.Builder.class);
+            com.google.analytics.admin.v1alpha.UpdateDataRetentionSettingsRequest.class,
+            com.google.analytics.admin.v1alpha.UpdateDataRetentionSettingsRequest.Builder.class);
   }
 
-  public static final int FIREBASE_LINK_FIELD_NUMBER = 1;
-  private com.google.analytics.admin.v1alpha.FirebaseLink firebaseLink_;
+  public static final int DATA_RETENTION_SETTINGS_FIELD_NUMBER = 1;
+  private com.google.analytics.admin.v1alpha.DataRetentionSettings dataRetentionSettings_;
   /**
    *
    *
    * <pre>
-   * Required. The Firebase link to update.
+   * Required. The settings to update.
+   * The `name` field is used to identify the settings to be updated.
    * </pre>
    *
    * <code>
-   * .google.analytics.admin.v1alpha.FirebaseLink firebase_link = 1 [(.google.api.field_behavior) = REQUIRED];
+   * .google.analytics.admin.v1alpha.DataRetentionSettings data_retention_settings = 1 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
-   * @return Whether the firebaseLink field is set.
+   * @return Whether the dataRetentionSettings field is set.
    */
   @java.lang.Override
-  public boolean hasFirebaseLink() {
-    return firebaseLink_ != null;
+  public boolean hasDataRetentionSettings() {
+    return dataRetentionSettings_ != null;
   }
   /**
    *
    *
    * <pre>
-   * Required. The Firebase link to update.
+   * Required. The settings to update.
+   * The `name` field is used to identify the settings to be updated.
    * </pre>
    *
    * <code>
-   * .google.analytics.admin.v1alpha.FirebaseLink firebase_link = 1 [(.google.api.field_behavior) = REQUIRED];
+   * .google.analytics.admin.v1alpha.DataRetentionSettings data_retention_settings = 1 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
-   * @return The firebaseLink.
+   * @return The dataRetentionSettings.
    */
   @java.lang.Override
-  public com.google.analytics.admin.v1alpha.FirebaseLink getFirebaseLink() {
-    return firebaseLink_ == null
-        ? com.google.analytics.admin.v1alpha.FirebaseLink.getDefaultInstance()
-        : firebaseLink_;
+  public com.google.analytics.admin.v1alpha.DataRetentionSettings getDataRetentionSettings() {
+    return dataRetentionSettings_ == null
+        ? com.google.analytics.admin.v1alpha.DataRetentionSettings.getDefaultInstance()
+        : dataRetentionSettings_;
   }
   /**
    *
    *
    * <pre>
-   * Required. The Firebase link to update.
+   * Required. The settings to update.
+   * The `name` field is used to identify the settings to be updated.
    * </pre>
    *
    * <code>
-   * .google.analytics.admin.v1alpha.FirebaseLink firebase_link = 1 [(.google.api.field_behavior) = REQUIRED];
+   * .google.analytics.admin.v1alpha.DataRetentionSettings data_retention_settings = 1 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
   @java.lang.Override
-  public com.google.analytics.admin.v1alpha.FirebaseLinkOrBuilder getFirebaseLinkOrBuilder() {
-    return getFirebaseLink();
+  public com.google.analytics.admin.v1alpha.DataRetentionSettingsOrBuilder
+      getDataRetentionSettingsOrBuilder() {
+    return getDataRetentionSettings();
   }
 
   public static final int UPDATE_MASK_FIELD_NUMBER = 2;
@@ -256,8 +262,8 @@ public final class UpdateFirebaseLinkRequest extends com.google.protobuf.Generat
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (firebaseLink_ != null) {
-      output.writeMessage(1, getFirebaseLink());
+    if (dataRetentionSettings_ != null) {
+      output.writeMessage(1, getDataRetentionSettings());
     }
     if (updateMask_ != null) {
       output.writeMessage(2, getUpdateMask());
@@ -271,8 +277,9 @@ public final class UpdateFirebaseLinkRequest extends com.google.protobuf.Generat
     if (size != -1) return size;
 
     size = 0;
-    if (firebaseLink_ != null) {
-      size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, getFirebaseLink());
+    if (dataRetentionSettings_ != null) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(1, getDataRetentionSettings());
     }
     if (updateMask_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, getUpdateMask());
@@ -287,15 +294,15 @@ public final class UpdateFirebaseLinkRequest extends com.google.protobuf.Generat
     if (obj == this) {
       return true;
     }
-    if (!(obj instanceof com.google.analytics.admin.v1alpha.UpdateFirebaseLinkRequest)) {
+    if (!(obj instanceof com.google.analytics.admin.v1alpha.UpdateDataRetentionSettingsRequest)) {
       return super.equals(obj);
     }
-    com.google.analytics.admin.v1alpha.UpdateFirebaseLinkRequest other =
-        (com.google.analytics.admin.v1alpha.UpdateFirebaseLinkRequest) obj;
+    com.google.analytics.admin.v1alpha.UpdateDataRetentionSettingsRequest other =
+        (com.google.analytics.admin.v1alpha.UpdateDataRetentionSettingsRequest) obj;
 
-    if (hasFirebaseLink() != other.hasFirebaseLink()) return false;
-    if (hasFirebaseLink()) {
-      if (!getFirebaseLink().equals(other.getFirebaseLink())) return false;
+    if (hasDataRetentionSettings() != other.hasDataRetentionSettings()) return false;
+    if (hasDataRetentionSettings()) {
+      if (!getDataRetentionSettings().equals(other.getDataRetentionSettings())) return false;
     }
     if (hasUpdateMask() != other.hasUpdateMask()) return false;
     if (hasUpdateMask()) {
@@ -312,9 +319,9 @@ public final class UpdateFirebaseLinkRequest extends com.google.protobuf.Generat
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    if (hasFirebaseLink()) {
-      hash = (37 * hash) + FIREBASE_LINK_FIELD_NUMBER;
-      hash = (53 * hash) + getFirebaseLink().hashCode();
+    if (hasDataRetentionSettings()) {
+      hash = (37 * hash) + DATA_RETENTION_SETTINGS_FIELD_NUMBER;
+      hash = (53 * hash) + getDataRetentionSettings().hashCode();
     }
     if (hasUpdateMask()) {
       hash = (37 * hash) + UPDATE_MASK_FIELD_NUMBER;
@@ -325,71 +332,72 @@ public final class UpdateFirebaseLinkRequest extends com.google.protobuf.Generat
     return hash;
   }
 
-  public static com.google.analytics.admin.v1alpha.UpdateFirebaseLinkRequest parseFrom(
+  public static com.google.analytics.admin.v1alpha.UpdateDataRetentionSettingsRequest parseFrom(
       java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
 
-  public static com.google.analytics.admin.v1alpha.UpdateFirebaseLinkRequest parseFrom(
+  public static com.google.analytics.admin.v1alpha.UpdateDataRetentionSettingsRequest parseFrom(
       java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
 
-  public static com.google.analytics.admin.v1alpha.UpdateFirebaseLinkRequest parseFrom(
+  public static com.google.analytics.admin.v1alpha.UpdateDataRetentionSettingsRequest parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
 
-  public static com.google.analytics.admin.v1alpha.UpdateFirebaseLinkRequest parseFrom(
+  public static com.google.analytics.admin.v1alpha.UpdateDataRetentionSettingsRequest parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
 
-  public static com.google.analytics.admin.v1alpha.UpdateFirebaseLinkRequest parseFrom(byte[] data)
-      throws com.google.protobuf.InvalidProtocolBufferException {
+  public static com.google.analytics.admin.v1alpha.UpdateDataRetentionSettingsRequest parseFrom(
+      byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
 
-  public static com.google.analytics.admin.v1alpha.UpdateFirebaseLinkRequest parseFrom(
+  public static com.google.analytics.admin.v1alpha.UpdateDataRetentionSettingsRequest parseFrom(
       byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
 
-  public static com.google.analytics.admin.v1alpha.UpdateFirebaseLinkRequest parseFrom(
+  public static com.google.analytics.admin.v1alpha.UpdateDataRetentionSettingsRequest parseFrom(
       java.io.InputStream input) throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
 
-  public static com.google.analytics.admin.v1alpha.UpdateFirebaseLinkRequest parseFrom(
+  public static com.google.analytics.admin.v1alpha.UpdateDataRetentionSettingsRequest parseFrom(
       java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
         PARSER, input, extensionRegistry);
   }
 
-  public static com.google.analytics.admin.v1alpha.UpdateFirebaseLinkRequest parseDelimitedFrom(
-      java.io.InputStream input) throws java.io.IOException {
+  public static com.google.analytics.admin.v1alpha.UpdateDataRetentionSettingsRequest
+      parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
   }
 
-  public static com.google.analytics.admin.v1alpha.UpdateFirebaseLinkRequest parseDelimitedFrom(
-      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws java.io.IOException {
+  public static com.google.analytics.admin.v1alpha.UpdateDataRetentionSettingsRequest
+      parseDelimitedFrom(
+          java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
         PARSER, input, extensionRegistry);
   }
 
-  public static com.google.analytics.admin.v1alpha.UpdateFirebaseLinkRequest parseFrom(
+  public static com.google.analytics.admin.v1alpha.UpdateDataRetentionSettingsRequest parseFrom(
       com.google.protobuf.CodedInputStream input) throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
 
-  public static com.google.analytics.admin.v1alpha.UpdateFirebaseLinkRequest parseFrom(
+  public static com.google.analytics.admin.v1alpha.UpdateDataRetentionSettingsRequest parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -407,7 +415,7 @@ public final class UpdateFirebaseLinkRequest extends com.google.protobuf.Generat
   }
 
   public static Builder newBuilder(
-      com.google.analytics.admin.v1alpha.UpdateFirebaseLinkRequest prototype) {
+      com.google.analytics.admin.v1alpha.UpdateDataRetentionSettingsRequest prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
 
@@ -425,31 +433,32 @@ public final class UpdateFirebaseLinkRequest extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * Request message for UpdateFirebaseLink RPC
+   * Request message for UpdateDataRetentionSettings RPC.
    * </pre>
    *
-   * Protobuf type {@code google.analytics.admin.v1alpha.UpdateFirebaseLinkRequest}
+   * Protobuf type {@code google.analytics.admin.v1alpha.UpdateDataRetentionSettingsRequest}
    */
   public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
       implements
-      // @@protoc_insertion_point(builder_implements:google.analytics.admin.v1alpha.UpdateFirebaseLinkRequest)
-      com.google.analytics.admin.v1alpha.UpdateFirebaseLinkRequestOrBuilder {
+      // @@protoc_insertion_point(builder_implements:google.analytics.admin.v1alpha.UpdateDataRetentionSettingsRequest)
+      com.google.analytics.admin.v1alpha.UpdateDataRetentionSettingsRequestOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.analytics.admin.v1alpha.AnalyticsAdminProto
-          .internal_static_google_analytics_admin_v1alpha_UpdateFirebaseLinkRequest_descriptor;
+          .internal_static_google_analytics_admin_v1alpha_UpdateDataRetentionSettingsRequest_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return com.google.analytics.admin.v1alpha.AnalyticsAdminProto
-          .internal_static_google_analytics_admin_v1alpha_UpdateFirebaseLinkRequest_fieldAccessorTable
+          .internal_static_google_analytics_admin_v1alpha_UpdateDataRetentionSettingsRequest_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.analytics.admin.v1alpha.UpdateFirebaseLinkRequest.class,
-              com.google.analytics.admin.v1alpha.UpdateFirebaseLinkRequest.Builder.class);
+              com.google.analytics.admin.v1alpha.UpdateDataRetentionSettingsRequest.class,
+              com.google.analytics.admin.v1alpha.UpdateDataRetentionSettingsRequest.Builder.class);
     }
 
-    // Construct using com.google.analytics.admin.v1alpha.UpdateFirebaseLinkRequest.newBuilder()
+    // Construct using
+    // com.google.analytics.admin.v1alpha.UpdateDataRetentionSettingsRequest.newBuilder()
     private Builder() {
       maybeForceBuilderInitialization();
     }
@@ -466,11 +475,11 @@ public final class UpdateFirebaseLinkRequest extends com.google.protobuf.Generat
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (firebaseLinkBuilder_ == null) {
-        firebaseLink_ = null;
+      if (dataRetentionSettingsBuilder_ == null) {
+        dataRetentionSettings_ = null;
       } else {
-        firebaseLink_ = null;
-        firebaseLinkBuilder_ = null;
+        dataRetentionSettings_ = null;
+        dataRetentionSettingsBuilder_ = null;
       }
       if (updateMaskBuilder_ == null) {
         updateMask_ = null;
@@ -484,18 +493,19 @@ public final class UpdateFirebaseLinkRequest extends com.google.protobuf.Generat
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
       return com.google.analytics.admin.v1alpha.AnalyticsAdminProto
-          .internal_static_google_analytics_admin_v1alpha_UpdateFirebaseLinkRequest_descriptor;
+          .internal_static_google_analytics_admin_v1alpha_UpdateDataRetentionSettingsRequest_descriptor;
     }
 
     @java.lang.Override
-    public com.google.analytics.admin.v1alpha.UpdateFirebaseLinkRequest
+    public com.google.analytics.admin.v1alpha.UpdateDataRetentionSettingsRequest
         getDefaultInstanceForType() {
-      return com.google.analytics.admin.v1alpha.UpdateFirebaseLinkRequest.getDefaultInstance();
+      return com.google.analytics.admin.v1alpha.UpdateDataRetentionSettingsRequest
+          .getDefaultInstance();
     }
 
     @java.lang.Override
-    public com.google.analytics.admin.v1alpha.UpdateFirebaseLinkRequest build() {
-      com.google.analytics.admin.v1alpha.UpdateFirebaseLinkRequest result = buildPartial();
+    public com.google.analytics.admin.v1alpha.UpdateDataRetentionSettingsRequest build() {
+      com.google.analytics.admin.v1alpha.UpdateDataRetentionSettingsRequest result = buildPartial();
       if (!result.isInitialized()) {
         throw newUninitializedMessageException(result);
       }
@@ -503,13 +513,13 @@ public final class UpdateFirebaseLinkRequest extends com.google.protobuf.Generat
     }
 
     @java.lang.Override
-    public com.google.analytics.admin.v1alpha.UpdateFirebaseLinkRequest buildPartial() {
-      com.google.analytics.admin.v1alpha.UpdateFirebaseLinkRequest result =
-          new com.google.analytics.admin.v1alpha.UpdateFirebaseLinkRequest(this);
-      if (firebaseLinkBuilder_ == null) {
-        result.firebaseLink_ = firebaseLink_;
+    public com.google.analytics.admin.v1alpha.UpdateDataRetentionSettingsRequest buildPartial() {
+      com.google.analytics.admin.v1alpha.UpdateDataRetentionSettingsRequest result =
+          new com.google.analytics.admin.v1alpha.UpdateDataRetentionSettingsRequest(this);
+      if (dataRetentionSettingsBuilder_ == null) {
+        result.dataRetentionSettings_ = dataRetentionSettings_;
       } else {
-        result.firebaseLink_ = firebaseLinkBuilder_.build();
+        result.dataRetentionSettings_ = dataRetentionSettingsBuilder_.build();
       }
       if (updateMaskBuilder_ == null) {
         result.updateMask_ = updateMask_;
@@ -555,20 +565,22 @@ public final class UpdateFirebaseLinkRequest extends com.google.protobuf.Generat
 
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof com.google.analytics.admin.v1alpha.UpdateFirebaseLinkRequest) {
-        return mergeFrom((com.google.analytics.admin.v1alpha.UpdateFirebaseLinkRequest) other);
+      if (other instanceof com.google.analytics.admin.v1alpha.UpdateDataRetentionSettingsRequest) {
+        return mergeFrom(
+            (com.google.analytics.admin.v1alpha.UpdateDataRetentionSettingsRequest) other);
       } else {
         super.mergeFrom(other);
         return this;
       }
     }
 
-    public Builder mergeFrom(com.google.analytics.admin.v1alpha.UpdateFirebaseLinkRequest other) {
+    public Builder mergeFrom(
+        com.google.analytics.admin.v1alpha.UpdateDataRetentionSettingsRequest other) {
       if (other
-          == com.google.analytics.admin.v1alpha.UpdateFirebaseLinkRequest.getDefaultInstance())
-        return this;
-      if (other.hasFirebaseLink()) {
-        mergeFirebaseLink(other.getFirebaseLink());
+          == com.google.analytics.admin.v1alpha.UpdateDataRetentionSettingsRequest
+              .getDefaultInstance()) return this;
+      if (other.hasDataRetentionSettings()) {
+        mergeDataRetentionSettings(other.getDataRetentionSettings());
       }
       if (other.hasUpdateMask()) {
         mergeUpdateMask(other.getUpdateMask());
@@ -588,12 +600,13 @@ public final class UpdateFirebaseLinkRequest extends com.google.protobuf.Generat
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.analytics.admin.v1alpha.UpdateFirebaseLinkRequest parsedMessage = null;
+      com.google.analytics.admin.v1alpha.UpdateDataRetentionSettingsRequest parsedMessage = null;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         parsedMessage =
-            (com.google.analytics.admin.v1alpha.UpdateFirebaseLinkRequest) e.getUnfinishedMessage();
+            (com.google.analytics.admin.v1alpha.UpdateDataRetentionSettingsRequest)
+                e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
@@ -603,70 +616,74 @@ public final class UpdateFirebaseLinkRequest extends com.google.protobuf.Generat
       return this;
     }
 
-    private com.google.analytics.admin.v1alpha.FirebaseLink firebaseLink_;
+    private com.google.analytics.admin.v1alpha.DataRetentionSettings dataRetentionSettings_;
     private com.google.protobuf.SingleFieldBuilderV3<
-            com.google.analytics.admin.v1alpha.FirebaseLink,
-            com.google.analytics.admin.v1alpha.FirebaseLink.Builder,
-            com.google.analytics.admin.v1alpha.FirebaseLinkOrBuilder>
-        firebaseLinkBuilder_;
+            com.google.analytics.admin.v1alpha.DataRetentionSettings,
+            com.google.analytics.admin.v1alpha.DataRetentionSettings.Builder,
+            com.google.analytics.admin.v1alpha.DataRetentionSettingsOrBuilder>
+        dataRetentionSettingsBuilder_;
     /**
      *
      *
      * <pre>
-     * Required. The Firebase link to update.
+     * Required. The settings to update.
+     * The `name` field is used to identify the settings to be updated.
      * </pre>
      *
      * <code>
-     * .google.analytics.admin.v1alpha.FirebaseLink firebase_link = 1 [(.google.api.field_behavior) = REQUIRED];
+     * .google.analytics.admin.v1alpha.DataRetentionSettings data_retention_settings = 1 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      *
-     * @return Whether the firebaseLink field is set.
+     * @return Whether the dataRetentionSettings field is set.
      */
-    public boolean hasFirebaseLink() {
-      return firebaseLinkBuilder_ != null || firebaseLink_ != null;
+    public boolean hasDataRetentionSettings() {
+      return dataRetentionSettingsBuilder_ != null || dataRetentionSettings_ != null;
     }
     /**
      *
      *
      * <pre>
-     * Required. The Firebase link to update.
+     * Required. The settings to update.
+     * The `name` field is used to identify the settings to be updated.
      * </pre>
      *
      * <code>
-     * .google.analytics.admin.v1alpha.FirebaseLink firebase_link = 1 [(.google.api.field_behavior) = REQUIRED];
+     * .google.analytics.admin.v1alpha.DataRetentionSettings data_retention_settings = 1 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      *
-     * @return The firebaseLink.
+     * @return The dataRetentionSettings.
      */
-    public com.google.analytics.admin.v1alpha.FirebaseLink getFirebaseLink() {
-      if (firebaseLinkBuilder_ == null) {
-        return firebaseLink_ == null
-            ? com.google.analytics.admin.v1alpha.FirebaseLink.getDefaultInstance()
-            : firebaseLink_;
+    public com.google.analytics.admin.v1alpha.DataRetentionSettings getDataRetentionSettings() {
+      if (dataRetentionSettingsBuilder_ == null) {
+        return dataRetentionSettings_ == null
+            ? com.google.analytics.admin.v1alpha.DataRetentionSettings.getDefaultInstance()
+            : dataRetentionSettings_;
       } else {
-        return firebaseLinkBuilder_.getMessage();
+        return dataRetentionSettingsBuilder_.getMessage();
       }
     }
     /**
      *
      *
      * <pre>
-     * Required. The Firebase link to update.
+     * Required. The settings to update.
+     * The `name` field is used to identify the settings to be updated.
      * </pre>
      *
      * <code>
-     * .google.analytics.admin.v1alpha.FirebaseLink firebase_link = 1 [(.google.api.field_behavior) = REQUIRED];
+     * .google.analytics.admin.v1alpha.DataRetentionSettings data_retention_settings = 1 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
-    public Builder setFirebaseLink(com.google.analytics.admin.v1alpha.FirebaseLink value) {
-      if (firebaseLinkBuilder_ == null) {
+    public Builder setDataRetentionSettings(
+        com.google.analytics.admin.v1alpha.DataRetentionSettings value) {
+      if (dataRetentionSettingsBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
         }
-        firebaseLink_ = value;
+        dataRetentionSettings_ = value;
         onChanged();
       } else {
-        firebaseLinkBuilder_.setMessage(value);
+        dataRetentionSettingsBuilder_.setMessage(value);
       }
 
       return this;
@@ -675,20 +692,21 @@ public final class UpdateFirebaseLinkRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Required. The Firebase link to update.
+     * Required. The settings to update.
+     * The `name` field is used to identify the settings to be updated.
      * </pre>
      *
      * <code>
-     * .google.analytics.admin.v1alpha.FirebaseLink firebase_link = 1 [(.google.api.field_behavior) = REQUIRED];
+     * .google.analytics.admin.v1alpha.DataRetentionSettings data_retention_settings = 1 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
-    public Builder setFirebaseLink(
-        com.google.analytics.admin.v1alpha.FirebaseLink.Builder builderForValue) {
-      if (firebaseLinkBuilder_ == null) {
-        firebaseLink_ = builderForValue.build();
+    public Builder setDataRetentionSettings(
+        com.google.analytics.admin.v1alpha.DataRetentionSettings.Builder builderForValue) {
+      if (dataRetentionSettingsBuilder_ == null) {
+        dataRetentionSettings_ = builderForValue.build();
         onChanged();
       } else {
-        firebaseLinkBuilder_.setMessage(builderForValue.build());
+        dataRetentionSettingsBuilder_.setMessage(builderForValue.build());
       }
 
       return this;
@@ -697,26 +715,29 @@ public final class UpdateFirebaseLinkRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Required. The Firebase link to update.
+     * Required. The settings to update.
+     * The `name` field is used to identify the settings to be updated.
      * </pre>
      *
      * <code>
-     * .google.analytics.admin.v1alpha.FirebaseLink firebase_link = 1 [(.google.api.field_behavior) = REQUIRED];
+     * .google.analytics.admin.v1alpha.DataRetentionSettings data_retention_settings = 1 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
-    public Builder mergeFirebaseLink(com.google.analytics.admin.v1alpha.FirebaseLink value) {
-      if (firebaseLinkBuilder_ == null) {
-        if (firebaseLink_ != null) {
-          firebaseLink_ =
-              com.google.analytics.admin.v1alpha.FirebaseLink.newBuilder(firebaseLink_)
+    public Builder mergeDataRetentionSettings(
+        com.google.analytics.admin.v1alpha.DataRetentionSettings value) {
+      if (dataRetentionSettingsBuilder_ == null) {
+        if (dataRetentionSettings_ != null) {
+          dataRetentionSettings_ =
+              com.google.analytics.admin.v1alpha.DataRetentionSettings.newBuilder(
+                      dataRetentionSettings_)
                   .mergeFrom(value)
                   .buildPartial();
         } else {
-          firebaseLink_ = value;
+          dataRetentionSettings_ = value;
         }
         onChanged();
       } else {
-        firebaseLinkBuilder_.mergeFrom(value);
+        dataRetentionSettingsBuilder_.mergeFrom(value);
       }
 
       return this;
@@ -725,20 +746,21 @@ public final class UpdateFirebaseLinkRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Required. The Firebase link to update.
+     * Required. The settings to update.
+     * The `name` field is used to identify the settings to be updated.
      * </pre>
      *
      * <code>
-     * .google.analytics.admin.v1alpha.FirebaseLink firebase_link = 1 [(.google.api.field_behavior) = REQUIRED];
+     * .google.analytics.admin.v1alpha.DataRetentionSettings data_retention_settings = 1 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
-    public Builder clearFirebaseLink() {
-      if (firebaseLinkBuilder_ == null) {
-        firebaseLink_ = null;
+    public Builder clearDataRetentionSettings() {
+      if (dataRetentionSettingsBuilder_ == null) {
+        dataRetentionSettings_ = null;
         onChanged();
       } else {
-        firebaseLink_ = null;
-        firebaseLinkBuilder_ = null;
+        dataRetentionSettings_ = null;
+        dataRetentionSettingsBuilder_ = null;
       }
 
       return this;
@@ -747,64 +769,69 @@ public final class UpdateFirebaseLinkRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Required. The Firebase link to update.
+     * Required. The settings to update.
+     * The `name` field is used to identify the settings to be updated.
      * </pre>
      *
      * <code>
-     * .google.analytics.admin.v1alpha.FirebaseLink firebase_link = 1 [(.google.api.field_behavior) = REQUIRED];
+     * .google.analytics.admin.v1alpha.DataRetentionSettings data_retention_settings = 1 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
-    public com.google.analytics.admin.v1alpha.FirebaseLink.Builder getFirebaseLinkBuilder() {
+    public com.google.analytics.admin.v1alpha.DataRetentionSettings.Builder
+        getDataRetentionSettingsBuilder() {
 
       onChanged();
-      return getFirebaseLinkFieldBuilder().getBuilder();
+      return getDataRetentionSettingsFieldBuilder().getBuilder();
     }
     /**
      *
      *
      * <pre>
-     * Required. The Firebase link to update.
+     * Required. The settings to update.
+     * The `name` field is used to identify the settings to be updated.
      * </pre>
      *
      * <code>
-     * .google.analytics.admin.v1alpha.FirebaseLink firebase_link = 1 [(.google.api.field_behavior) = REQUIRED];
+     * .google.analytics.admin.v1alpha.DataRetentionSettings data_retention_settings = 1 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
-    public com.google.analytics.admin.v1alpha.FirebaseLinkOrBuilder getFirebaseLinkOrBuilder() {
-      if (firebaseLinkBuilder_ != null) {
-        return firebaseLinkBuilder_.getMessageOrBuilder();
+    public com.google.analytics.admin.v1alpha.DataRetentionSettingsOrBuilder
+        getDataRetentionSettingsOrBuilder() {
+      if (dataRetentionSettingsBuilder_ != null) {
+        return dataRetentionSettingsBuilder_.getMessageOrBuilder();
       } else {
-        return firebaseLink_ == null
-            ? com.google.analytics.admin.v1alpha.FirebaseLink.getDefaultInstance()
-            : firebaseLink_;
+        return dataRetentionSettings_ == null
+            ? com.google.analytics.admin.v1alpha.DataRetentionSettings.getDefaultInstance()
+            : dataRetentionSettings_;
       }
     }
     /**
      *
      *
      * <pre>
-     * Required. The Firebase link to update.
+     * Required. The settings to update.
+     * The `name` field is used to identify the settings to be updated.
      * </pre>
      *
      * <code>
-     * .google.analytics.admin.v1alpha.FirebaseLink firebase_link = 1 [(.google.api.field_behavior) = REQUIRED];
+     * .google.analytics.admin.v1alpha.DataRetentionSettings data_retention_settings = 1 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-            com.google.analytics.admin.v1alpha.FirebaseLink,
-            com.google.analytics.admin.v1alpha.FirebaseLink.Builder,
-            com.google.analytics.admin.v1alpha.FirebaseLinkOrBuilder>
-        getFirebaseLinkFieldBuilder() {
-      if (firebaseLinkBuilder_ == null) {
-        firebaseLinkBuilder_ =
+            com.google.analytics.admin.v1alpha.DataRetentionSettings,
+            com.google.analytics.admin.v1alpha.DataRetentionSettings.Builder,
+            com.google.analytics.admin.v1alpha.DataRetentionSettingsOrBuilder>
+        getDataRetentionSettingsFieldBuilder() {
+      if (dataRetentionSettingsBuilder_ == null) {
+        dataRetentionSettingsBuilder_ =
             new com.google.protobuf.SingleFieldBuilderV3<
-                com.google.analytics.admin.v1alpha.FirebaseLink,
-                com.google.analytics.admin.v1alpha.FirebaseLink.Builder,
-                com.google.analytics.admin.v1alpha.FirebaseLinkOrBuilder>(
-                getFirebaseLink(), getParentForChildren(), isClean());
-        firebaseLink_ = null;
+                com.google.analytics.admin.v1alpha.DataRetentionSettings,
+                com.google.analytics.admin.v1alpha.DataRetentionSettings.Builder,
+                com.google.analytics.admin.v1alpha.DataRetentionSettingsOrBuilder>(
+                getDataRetentionSettings(), getParentForChildren(), isClean());
+        dataRetentionSettings_ = null;
       }
-      return firebaseLinkBuilder_;
+      return dataRetentionSettingsBuilder_;
     }
 
     private com.google.protobuf.FieldMask updateMask_;
@@ -1028,43 +1055,45 @@ public final class UpdateFirebaseLinkRequest extends com.google.protobuf.Generat
       return super.mergeUnknownFields(unknownFields);
     }
 
-    // @@protoc_insertion_point(builder_scope:google.analytics.admin.v1alpha.UpdateFirebaseLinkRequest)
+    // @@protoc_insertion_point(builder_scope:google.analytics.admin.v1alpha.UpdateDataRetentionSettingsRequest)
   }
 
-  // @@protoc_insertion_point(class_scope:google.analytics.admin.v1alpha.UpdateFirebaseLinkRequest)
-  private static final com.google.analytics.admin.v1alpha.UpdateFirebaseLinkRequest
+  // @@protoc_insertion_point(class_scope:google.analytics.admin.v1alpha.UpdateDataRetentionSettingsRequest)
+  private static final com.google.analytics.admin.v1alpha.UpdateDataRetentionSettingsRequest
       DEFAULT_INSTANCE;
 
   static {
-    DEFAULT_INSTANCE = new com.google.analytics.admin.v1alpha.UpdateFirebaseLinkRequest();
+    DEFAULT_INSTANCE = new com.google.analytics.admin.v1alpha.UpdateDataRetentionSettingsRequest();
   }
 
-  public static com.google.analytics.admin.v1alpha.UpdateFirebaseLinkRequest getDefaultInstance() {
+  public static com.google.analytics.admin.v1alpha.UpdateDataRetentionSettingsRequest
+      getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<UpdateFirebaseLinkRequest> PARSER =
-      new com.google.protobuf.AbstractParser<UpdateFirebaseLinkRequest>() {
+  private static final com.google.protobuf.Parser<UpdateDataRetentionSettingsRequest> PARSER =
+      new com.google.protobuf.AbstractParser<UpdateDataRetentionSettingsRequest>() {
         @java.lang.Override
-        public UpdateFirebaseLinkRequest parsePartialFrom(
+        public UpdateDataRetentionSettingsRequest parsePartialFrom(
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new UpdateFirebaseLinkRequest(input, extensionRegistry);
+          return new UpdateDataRetentionSettingsRequest(input, extensionRegistry);
         }
       };
 
-  public static com.google.protobuf.Parser<UpdateFirebaseLinkRequest> parser() {
+  public static com.google.protobuf.Parser<UpdateDataRetentionSettingsRequest> parser() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.protobuf.Parser<UpdateFirebaseLinkRequest> getParserForType() {
+  public com.google.protobuf.Parser<UpdateDataRetentionSettingsRequest> getParserForType() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.analytics.admin.v1alpha.UpdateFirebaseLinkRequest getDefaultInstanceForType() {
+  public com.google.analytics.admin.v1alpha.UpdateDataRetentionSettingsRequest
+      getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
 }

@@ -120,31 +120,4 @@ public interface FirebaseLinkOrBuilder
    * </code>
    */
   com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder();
-
-  /**
-   *
-   *
-   * <pre>
-   * Maximum user access to the GA4 property allowed to admins of
-   * the linked Firebase project.
-   * </pre>
-   *
-   * <code>.google.analytics.admin.v1alpha.MaximumUserAccess maximum_user_access = 4;</code>
-   *
-   * @return The enum numeric value on the wire for maximumUserAccess.
-   */
-  int getMaximumUserAccessValue();
-  /**
-   *
-   *
-   * <pre>
-   * Maximum user access to the GA4 property allowed to admins of
-   * the linked Firebase project.
-   * </pre>
-   *
-   * <code>.google.analytics.admin.v1alpha.MaximumUserAccess maximum_user_access = 4;</code>
-   *
-   * @return The maximumUserAccess.
-   */
-  com.google.analytics.admin.v1alpha.MaximumUserAccess getMaximumUserAccess();
 }

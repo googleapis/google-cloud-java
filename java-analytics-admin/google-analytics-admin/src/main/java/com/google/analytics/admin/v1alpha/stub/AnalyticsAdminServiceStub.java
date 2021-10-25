@@ -23,6 +23,8 @@ import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.Lis
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListConversionEventsPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListCustomDimensionsPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListCustomMetricsPagedResponse;
+import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListDisplayVideo360AdvertiserLinkProposalsPagedResponse;
+import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListDisplayVideo360AdvertiserLinksPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListFirebaseLinksPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListGoogleAdsLinksPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListIosAppDataStreamsPagedResponse;
@@ -34,6 +36,8 @@ import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.Sea
 
 import com.google.analytics.admin.v1alpha.Account;
 import com.google.analytics.admin.v1alpha.AndroidAppDataStream;
+import com.google.analytics.admin.v1alpha.ApproveDisplayVideo360AdvertiserLinkProposalRequest;
+import com.google.analytics.admin.v1alpha.ApproveDisplayVideo360AdvertiserLinkProposalResponse;
 import com.google.analytics.admin.v1alpha.ArchiveCustomDimensionRequest;
 import com.google.analytics.admin.v1alpha.ArchiveCustomMetricRequest;
 import com.google.analytics.admin.v1alpha.AuditUserLinksRequest;
@@ -45,10 +49,13 @@ import com.google.analytics.admin.v1alpha.BatchGetUserLinksRequest;
 import com.google.analytics.admin.v1alpha.BatchGetUserLinksResponse;
 import com.google.analytics.admin.v1alpha.BatchUpdateUserLinksRequest;
 import com.google.analytics.admin.v1alpha.BatchUpdateUserLinksResponse;
+import com.google.analytics.admin.v1alpha.CancelDisplayVideo360AdvertiserLinkProposalRequest;
 import com.google.analytics.admin.v1alpha.ConversionEvent;
 import com.google.analytics.admin.v1alpha.CreateConversionEventRequest;
 import com.google.analytics.admin.v1alpha.CreateCustomDimensionRequest;
 import com.google.analytics.admin.v1alpha.CreateCustomMetricRequest;
+import com.google.analytics.admin.v1alpha.CreateDisplayVideo360AdvertiserLinkProposalRequest;
+import com.google.analytics.admin.v1alpha.CreateDisplayVideo360AdvertiserLinkRequest;
 import com.google.analytics.admin.v1alpha.CreateFirebaseLinkRequest;
 import com.google.analytics.admin.v1alpha.CreateGoogleAdsLinkRequest;
 import com.google.analytics.admin.v1alpha.CreateMeasurementProtocolSecretRequest;
@@ -57,10 +64,13 @@ import com.google.analytics.admin.v1alpha.CreateUserLinkRequest;
 import com.google.analytics.admin.v1alpha.CreateWebDataStreamRequest;
 import com.google.analytics.admin.v1alpha.CustomDimension;
 import com.google.analytics.admin.v1alpha.CustomMetric;
+import com.google.analytics.admin.v1alpha.DataRetentionSettings;
 import com.google.analytics.admin.v1alpha.DataSharingSettings;
 import com.google.analytics.admin.v1alpha.DeleteAccountRequest;
 import com.google.analytics.admin.v1alpha.DeleteAndroidAppDataStreamRequest;
 import com.google.analytics.admin.v1alpha.DeleteConversionEventRequest;
+import com.google.analytics.admin.v1alpha.DeleteDisplayVideo360AdvertiserLinkProposalRequest;
+import com.google.analytics.admin.v1alpha.DeleteDisplayVideo360AdvertiserLinkRequest;
 import com.google.analytics.admin.v1alpha.DeleteFirebaseLinkRequest;
 import com.google.analytics.admin.v1alpha.DeleteGoogleAdsLinkRequest;
 import com.google.analytics.admin.v1alpha.DeleteIosAppDataStreamRequest;
@@ -68,6 +78,8 @@ import com.google.analytics.admin.v1alpha.DeleteMeasurementProtocolSecretRequest
 import com.google.analytics.admin.v1alpha.DeletePropertyRequest;
 import com.google.analytics.admin.v1alpha.DeleteUserLinkRequest;
 import com.google.analytics.admin.v1alpha.DeleteWebDataStreamRequest;
+import com.google.analytics.admin.v1alpha.DisplayVideo360AdvertiserLink;
+import com.google.analytics.admin.v1alpha.DisplayVideo360AdvertiserLinkProposal;
 import com.google.analytics.admin.v1alpha.EnhancedMeasurementSettings;
 import com.google.analytics.admin.v1alpha.FirebaseLink;
 import com.google.analytics.admin.v1alpha.GetAccountRequest;
@@ -75,7 +87,10 @@ import com.google.analytics.admin.v1alpha.GetAndroidAppDataStreamRequest;
 import com.google.analytics.admin.v1alpha.GetConversionEventRequest;
 import com.google.analytics.admin.v1alpha.GetCustomDimensionRequest;
 import com.google.analytics.admin.v1alpha.GetCustomMetricRequest;
+import com.google.analytics.admin.v1alpha.GetDataRetentionSettingsRequest;
 import com.google.analytics.admin.v1alpha.GetDataSharingSettingsRequest;
+import com.google.analytics.admin.v1alpha.GetDisplayVideo360AdvertiserLinkProposalRequest;
+import com.google.analytics.admin.v1alpha.GetDisplayVideo360AdvertiserLinkRequest;
 import com.google.analytics.admin.v1alpha.GetEnhancedMeasurementSettingsRequest;
 import com.google.analytics.admin.v1alpha.GetGlobalSiteTagRequest;
 import com.google.analytics.admin.v1alpha.GetGoogleSignalsSettingsRequest;
@@ -100,6 +115,10 @@ import com.google.analytics.admin.v1alpha.ListCustomDimensionsRequest;
 import com.google.analytics.admin.v1alpha.ListCustomDimensionsResponse;
 import com.google.analytics.admin.v1alpha.ListCustomMetricsRequest;
 import com.google.analytics.admin.v1alpha.ListCustomMetricsResponse;
+import com.google.analytics.admin.v1alpha.ListDisplayVideo360AdvertiserLinkProposalsRequest;
+import com.google.analytics.admin.v1alpha.ListDisplayVideo360AdvertiserLinkProposalsResponse;
+import com.google.analytics.admin.v1alpha.ListDisplayVideo360AdvertiserLinksRequest;
+import com.google.analytics.admin.v1alpha.ListDisplayVideo360AdvertiserLinksResponse;
 import com.google.analytics.admin.v1alpha.ListFirebaseLinksRequest;
 import com.google.analytics.admin.v1alpha.ListFirebaseLinksResponse;
 import com.google.analytics.admin.v1alpha.ListGoogleAdsLinksRequest;
@@ -124,8 +143,9 @@ import com.google.analytics.admin.v1alpha.UpdateAccountRequest;
 import com.google.analytics.admin.v1alpha.UpdateAndroidAppDataStreamRequest;
 import com.google.analytics.admin.v1alpha.UpdateCustomDimensionRequest;
 import com.google.analytics.admin.v1alpha.UpdateCustomMetricRequest;
+import com.google.analytics.admin.v1alpha.UpdateDataRetentionSettingsRequest;
+import com.google.analytics.admin.v1alpha.UpdateDisplayVideo360AdvertiserLinkRequest;
 import com.google.analytics.admin.v1alpha.UpdateEnhancedMeasurementSettingsRequest;
-import com.google.analytics.admin.v1alpha.UpdateFirebaseLinkRequest;
 import com.google.analytics.admin.v1alpha.UpdateGoogleAdsLinkRequest;
 import com.google.analytics.admin.v1alpha.UpdateGoogleSignalsSettingsRequest;
 import com.google.analytics.admin.v1alpha.UpdateIosAppDataStreamRequest;
@@ -358,10 +378,6 @@ public abstract class AnalyticsAdminServiceStub implements BackgroundResource {
     throw new UnsupportedOperationException("Not implemented: createFirebaseLinkCallable()");
   }
 
-  public UnaryCallable<UpdateFirebaseLinkRequest, FirebaseLink> updateFirebaseLinkCallable() {
-    throw new UnsupportedOperationException("Not implemented: updateFirebaseLinkCallable()");
-  }
-
   public UnaryCallable<DeleteFirebaseLinkRequest, Empty> deleteFirebaseLinkCallable() {
     throw new UnsupportedOperationException("Not implemented: deleteFirebaseLinkCallable()");
   }
@@ -490,6 +506,96 @@ public abstract class AnalyticsAdminServiceStub implements BackgroundResource {
     throw new UnsupportedOperationException("Not implemented: listConversionEventsCallable()");
   }
 
+  public UnaryCallable<GetDisplayVideo360AdvertiserLinkRequest, DisplayVideo360AdvertiserLink>
+      getDisplayVideo360AdvertiserLinkCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: getDisplayVideo360AdvertiserLinkCallable()");
+  }
+
+  public UnaryCallable<
+          ListDisplayVideo360AdvertiserLinksRequest,
+          ListDisplayVideo360AdvertiserLinksPagedResponse>
+      listDisplayVideo360AdvertiserLinksPagedCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: listDisplayVideo360AdvertiserLinksPagedCallable()");
+  }
+
+  public UnaryCallable<
+          ListDisplayVideo360AdvertiserLinksRequest, ListDisplayVideo360AdvertiserLinksResponse>
+      listDisplayVideo360AdvertiserLinksCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: listDisplayVideo360AdvertiserLinksCallable()");
+  }
+
+  public UnaryCallable<CreateDisplayVideo360AdvertiserLinkRequest, DisplayVideo360AdvertiserLink>
+      createDisplayVideo360AdvertiserLinkCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: createDisplayVideo360AdvertiserLinkCallable()");
+  }
+
+  public UnaryCallable<DeleteDisplayVideo360AdvertiserLinkRequest, Empty>
+      deleteDisplayVideo360AdvertiserLinkCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: deleteDisplayVideo360AdvertiserLinkCallable()");
+  }
+
+  public UnaryCallable<UpdateDisplayVideo360AdvertiserLinkRequest, DisplayVideo360AdvertiserLink>
+      updateDisplayVideo360AdvertiserLinkCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: updateDisplayVideo360AdvertiserLinkCallable()");
+  }
+
+  public UnaryCallable<
+          GetDisplayVideo360AdvertiserLinkProposalRequest, DisplayVideo360AdvertiserLinkProposal>
+      getDisplayVideo360AdvertiserLinkProposalCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: getDisplayVideo360AdvertiserLinkProposalCallable()");
+  }
+
+  public UnaryCallable<
+          ListDisplayVideo360AdvertiserLinkProposalsRequest,
+          ListDisplayVideo360AdvertiserLinkProposalsPagedResponse>
+      listDisplayVideo360AdvertiserLinkProposalsPagedCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: listDisplayVideo360AdvertiserLinkProposalsPagedCallable()");
+  }
+
+  public UnaryCallable<
+          ListDisplayVideo360AdvertiserLinkProposalsRequest,
+          ListDisplayVideo360AdvertiserLinkProposalsResponse>
+      listDisplayVideo360AdvertiserLinkProposalsCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: listDisplayVideo360AdvertiserLinkProposalsCallable()");
+  }
+
+  public UnaryCallable<
+          CreateDisplayVideo360AdvertiserLinkProposalRequest, DisplayVideo360AdvertiserLinkProposal>
+      createDisplayVideo360AdvertiserLinkProposalCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: createDisplayVideo360AdvertiserLinkProposalCallable()");
+  }
+
+  public UnaryCallable<DeleteDisplayVideo360AdvertiserLinkProposalRequest, Empty>
+      deleteDisplayVideo360AdvertiserLinkProposalCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: deleteDisplayVideo360AdvertiserLinkProposalCallable()");
+  }
+
+  public UnaryCallable<
+          ApproveDisplayVideo360AdvertiserLinkProposalRequest,
+          ApproveDisplayVideo360AdvertiserLinkProposalResponse>
+      approveDisplayVideo360AdvertiserLinkProposalCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: approveDisplayVideo360AdvertiserLinkProposalCallable()");
+  }
+
+  public UnaryCallable<
+          CancelDisplayVideo360AdvertiserLinkProposalRequest, DisplayVideo360AdvertiserLinkProposal>
+      cancelDisplayVideo360AdvertiserLinkProposalCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: cancelDisplayVideo360AdvertiserLinkProposalCallable()");
+  }
+
   public UnaryCallable<CreateCustomDimensionRequest, CustomDimension>
       createCustomDimensionCallable() {
     throw new UnsupportedOperationException("Not implemented: createCustomDimensionCallable()");
@@ -542,6 +648,17 @@ public abstract class AnalyticsAdminServiceStub implements BackgroundResource {
 
   public UnaryCallable<GetCustomMetricRequest, CustomMetric> getCustomMetricCallable() {
     throw new UnsupportedOperationException("Not implemented: getCustomMetricCallable()");
+  }
+
+  public UnaryCallable<GetDataRetentionSettingsRequest, DataRetentionSettings>
+      getDataRetentionSettingsCallable() {
+    throw new UnsupportedOperationException("Not implemented: getDataRetentionSettingsCallable()");
+  }
+
+  public UnaryCallable<UpdateDataRetentionSettingsRequest, DataRetentionSettings>
+      updateDataRetentionSettingsCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: updateDataRetentionSettingsCallable()");
   }
 
   @Override

@@ -454,6 +454,98 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
+     * A snapshot of a DisplayVideo360AdvertiserLink resource in change
+     * history.
+     * </pre>
+     *
+     * <code>
+     * .google.analytics.admin.v1alpha.DisplayVideo360AdvertiserLink display_video_360_advertiser_link = 9;
+     * </code>
+     *
+     * @return Whether the displayVideo360AdvertiserLink field is set.
+     */
+    boolean hasDisplayVideo360AdvertiserLink();
+    /**
+     *
+     *
+     * <pre>
+     * A snapshot of a DisplayVideo360AdvertiserLink resource in change
+     * history.
+     * </pre>
+     *
+     * <code>
+     * .google.analytics.admin.v1alpha.DisplayVideo360AdvertiserLink display_video_360_advertiser_link = 9;
+     * </code>
+     *
+     * @return The displayVideo360AdvertiserLink.
+     */
+    com.google.analytics.admin.v1alpha.DisplayVideo360AdvertiserLink
+        getDisplayVideo360AdvertiserLink();
+    /**
+     *
+     *
+     * <pre>
+     * A snapshot of a DisplayVideo360AdvertiserLink resource in change
+     * history.
+     * </pre>
+     *
+     * <code>
+     * .google.analytics.admin.v1alpha.DisplayVideo360AdvertiserLink display_video_360_advertiser_link = 9;
+     * </code>
+     */
+    com.google.analytics.admin.v1alpha.DisplayVideo360AdvertiserLinkOrBuilder
+        getDisplayVideo360AdvertiserLinkOrBuilder();
+
+    /**
+     *
+     *
+     * <pre>
+     * A snapshot of a DisplayVideo360AdvertiserLinkProposal resource in
+     * change history.
+     * </pre>
+     *
+     * <code>
+     * .google.analytics.admin.v1alpha.DisplayVideo360AdvertiserLinkProposal display_video_360_advertiser_link_proposal = 10;
+     * </code>
+     *
+     * @return Whether the displayVideo360AdvertiserLinkProposal field is set.
+     */
+    boolean hasDisplayVideo360AdvertiserLinkProposal();
+    /**
+     *
+     *
+     * <pre>
+     * A snapshot of a DisplayVideo360AdvertiserLinkProposal resource in
+     * change history.
+     * </pre>
+     *
+     * <code>
+     * .google.analytics.admin.v1alpha.DisplayVideo360AdvertiserLinkProposal display_video_360_advertiser_link_proposal = 10;
+     * </code>
+     *
+     * @return The displayVideo360AdvertiserLinkProposal.
+     */
+    com.google.analytics.admin.v1alpha.DisplayVideo360AdvertiserLinkProposal
+        getDisplayVideo360AdvertiserLinkProposal();
+    /**
+     *
+     *
+     * <pre>
+     * A snapshot of a DisplayVideo360AdvertiserLinkProposal resource in
+     * change history.
+     * </pre>
+     *
+     * <code>
+     * .google.analytics.admin.v1alpha.DisplayVideo360AdvertiserLinkProposal display_video_360_advertiser_link_proposal = 10;
+     * </code>
+     */
+    com.google.analytics.admin.v1alpha.DisplayVideo360AdvertiserLinkProposalOrBuilder
+        getDisplayVideo360AdvertiserLinkProposalOrBuilder();
+
+    /**
+     *
+     *
+     * <pre>
      * A snapshot of a ConversionEvent resource in change history.
      * </pre>
      *
@@ -596,6 +688,45 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
      * <code>.google.analytics.admin.v1alpha.CustomMetric custom_metric = 14;</code>
      */
     com.google.analytics.admin.v1alpha.CustomMetricOrBuilder getCustomMetricOrBuilder();
+
+    /**
+     *
+     *
+     * <pre>
+     * A snapshot of a data retention settings resource in change history.
+     * </pre>
+     *
+     * <code>.google.analytics.admin.v1alpha.DataRetentionSettings data_retention_settings = 15;
+     * </code>
+     *
+     * @return Whether the dataRetentionSettings field is set.
+     */
+    boolean hasDataRetentionSettings();
+    /**
+     *
+     *
+     * <pre>
+     * A snapshot of a data retention settings resource in change history.
+     * </pre>
+     *
+     * <code>.google.analytics.admin.v1alpha.DataRetentionSettings data_retention_settings = 15;
+     * </code>
+     *
+     * @return The dataRetentionSettings.
+     */
+    com.google.analytics.admin.v1alpha.DataRetentionSettings getDataRetentionSettings();
+    /**
+     *
+     *
+     * <pre>
+     * A snapshot of a data retention settings resource in change history.
+     * </pre>
+     *
+     * <code>.google.analytics.admin.v1alpha.DataRetentionSettings data_retention_settings = 15;
+     * </code>
+     */
+    com.google.analytics.admin.v1alpha.DataRetentionSettingsOrBuilder
+        getDataRetentionSettingsOrBuilder();
 
     public com.google.analytics.admin.v1alpha.ChangeHistoryChange.ChangeHistoryResource.ResourceCase
         getResourceCase();
@@ -799,6 +930,51 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
                 resourceCase_ = 8;
                 break;
               }
+            case 74:
+              {
+                com.google.analytics.admin.v1alpha.DisplayVideo360AdvertiserLink.Builder
+                    subBuilder = null;
+                if (resourceCase_ == 9) {
+                  subBuilder =
+                      ((com.google.analytics.admin.v1alpha.DisplayVideo360AdvertiserLink) resource_)
+                          .toBuilder();
+                }
+                resource_ =
+                    input.readMessage(
+                        com.google.analytics.admin.v1alpha.DisplayVideo360AdvertiserLink.parser(),
+                        extensionRegistry);
+                if (subBuilder != null) {
+                  subBuilder.mergeFrom(
+                      (com.google.analytics.admin.v1alpha.DisplayVideo360AdvertiserLink) resource_);
+                  resource_ = subBuilder.buildPartial();
+                }
+                resourceCase_ = 9;
+                break;
+              }
+            case 82:
+              {
+                com.google.analytics.admin.v1alpha.DisplayVideo360AdvertiserLinkProposal.Builder
+                    subBuilder = null;
+                if (resourceCase_ == 10) {
+                  subBuilder =
+                      ((com.google.analytics.admin.v1alpha.DisplayVideo360AdvertiserLinkProposal)
+                              resource_)
+                          .toBuilder();
+                }
+                resource_ =
+                    input.readMessage(
+                        com.google.analytics.admin.v1alpha.DisplayVideo360AdvertiserLinkProposal
+                            .parser(),
+                        extensionRegistry);
+                if (subBuilder != null) {
+                  subBuilder.mergeFrom(
+                      (com.google.analytics.admin.v1alpha.DisplayVideo360AdvertiserLinkProposal)
+                          resource_);
+                  resource_ = subBuilder.buildPartial();
+                }
+                resourceCase_ = 10;
+                break;
+              }
             case 90:
               {
                 com.google.analytics.admin.v1alpha.ConversionEvent.Builder subBuilder = null;
@@ -876,6 +1052,26 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
                 resourceCase_ = 14;
                 break;
               }
+            case 122:
+              {
+                com.google.analytics.admin.v1alpha.DataRetentionSettings.Builder subBuilder = null;
+                if (resourceCase_ == 15) {
+                  subBuilder =
+                      ((com.google.analytics.admin.v1alpha.DataRetentionSettings) resource_)
+                          .toBuilder();
+                }
+                resource_ =
+                    input.readMessage(
+                        com.google.analytics.admin.v1alpha.DataRetentionSettings.parser(),
+                        extensionRegistry);
+                if (subBuilder != null) {
+                  subBuilder.mergeFrom(
+                      (com.google.analytics.admin.v1alpha.DataRetentionSettings) resource_);
+                  resource_ = subBuilder.buildPartial();
+                }
+                resourceCase_ = 15;
+                break;
+              }
             default:
               {
                 if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -926,10 +1122,13 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
       FIREBASE_LINK(6),
       GOOGLE_ADS_LINK(7),
       GOOGLE_SIGNALS_SETTINGS(8),
+      DISPLAY_VIDEO_360_ADVERTISER_LINK(9),
+      DISPLAY_VIDEO_360_ADVERTISER_LINK_PROPOSAL(10),
       CONVERSION_EVENT(11),
       MEASUREMENT_PROTOCOL_SECRET(12),
       CUSTOM_DIMENSION(13),
       CUSTOM_METRIC(14),
+      DATA_RETENTION_SETTINGS(15),
       RESOURCE_NOT_SET(0);
       private final int value;
 
@@ -964,6 +1163,10 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
             return GOOGLE_ADS_LINK;
           case 8:
             return GOOGLE_SIGNALS_SETTINGS;
+          case 9:
+            return DISPLAY_VIDEO_360_ADVERTISER_LINK;
+          case 10:
+            return DISPLAY_VIDEO_360_ADVERTISER_LINK_PROPOSAL;
           case 11:
             return CONVERSION_EVENT;
           case 12:
@@ -972,6 +1175,8 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
             return CUSTOM_DIMENSION;
           case 14:
             return CUSTOM_METRIC;
+          case 15:
+            return DATA_RETENTION_SETTINGS;
           case 0:
             return RESOURCE_NOT_SET;
           default:
@@ -1405,6 +1610,132 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
       return com.google.analytics.admin.v1alpha.GoogleSignalsSettings.getDefaultInstance();
     }
 
+    public static final int DISPLAY_VIDEO_360_ADVERTISER_LINK_FIELD_NUMBER = 9;
+    /**
+     *
+     *
+     * <pre>
+     * A snapshot of a DisplayVideo360AdvertiserLink resource in change
+     * history.
+     * </pre>
+     *
+     * <code>
+     * .google.analytics.admin.v1alpha.DisplayVideo360AdvertiserLink display_video_360_advertiser_link = 9;
+     * </code>
+     *
+     * @return Whether the displayVideo360AdvertiserLink field is set.
+     */
+    @java.lang.Override
+    public boolean hasDisplayVideo360AdvertiserLink() {
+      return resourceCase_ == 9;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A snapshot of a DisplayVideo360AdvertiserLink resource in change
+     * history.
+     * </pre>
+     *
+     * <code>
+     * .google.analytics.admin.v1alpha.DisplayVideo360AdvertiserLink display_video_360_advertiser_link = 9;
+     * </code>
+     *
+     * @return The displayVideo360AdvertiserLink.
+     */
+    @java.lang.Override
+    public com.google.analytics.admin.v1alpha.DisplayVideo360AdvertiserLink
+        getDisplayVideo360AdvertiserLink() {
+      if (resourceCase_ == 9) {
+        return (com.google.analytics.admin.v1alpha.DisplayVideo360AdvertiserLink) resource_;
+      }
+      return com.google.analytics.admin.v1alpha.DisplayVideo360AdvertiserLink.getDefaultInstance();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A snapshot of a DisplayVideo360AdvertiserLink resource in change
+     * history.
+     * </pre>
+     *
+     * <code>
+     * .google.analytics.admin.v1alpha.DisplayVideo360AdvertiserLink display_video_360_advertiser_link = 9;
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.analytics.admin.v1alpha.DisplayVideo360AdvertiserLinkOrBuilder
+        getDisplayVideo360AdvertiserLinkOrBuilder() {
+      if (resourceCase_ == 9) {
+        return (com.google.analytics.admin.v1alpha.DisplayVideo360AdvertiserLink) resource_;
+      }
+      return com.google.analytics.admin.v1alpha.DisplayVideo360AdvertiserLink.getDefaultInstance();
+    }
+
+    public static final int DISPLAY_VIDEO_360_ADVERTISER_LINK_PROPOSAL_FIELD_NUMBER = 10;
+    /**
+     *
+     *
+     * <pre>
+     * A snapshot of a DisplayVideo360AdvertiserLinkProposal resource in
+     * change history.
+     * </pre>
+     *
+     * <code>
+     * .google.analytics.admin.v1alpha.DisplayVideo360AdvertiserLinkProposal display_video_360_advertiser_link_proposal = 10;
+     * </code>
+     *
+     * @return Whether the displayVideo360AdvertiserLinkProposal field is set.
+     */
+    @java.lang.Override
+    public boolean hasDisplayVideo360AdvertiserLinkProposal() {
+      return resourceCase_ == 10;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A snapshot of a DisplayVideo360AdvertiserLinkProposal resource in
+     * change history.
+     * </pre>
+     *
+     * <code>
+     * .google.analytics.admin.v1alpha.DisplayVideo360AdvertiserLinkProposal display_video_360_advertiser_link_proposal = 10;
+     * </code>
+     *
+     * @return The displayVideo360AdvertiserLinkProposal.
+     */
+    @java.lang.Override
+    public com.google.analytics.admin.v1alpha.DisplayVideo360AdvertiserLinkProposal
+        getDisplayVideo360AdvertiserLinkProposal() {
+      if (resourceCase_ == 10) {
+        return (com.google.analytics.admin.v1alpha.DisplayVideo360AdvertiserLinkProposal) resource_;
+      }
+      return com.google.analytics.admin.v1alpha.DisplayVideo360AdvertiserLinkProposal
+          .getDefaultInstance();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A snapshot of a DisplayVideo360AdvertiserLinkProposal resource in
+     * change history.
+     * </pre>
+     *
+     * <code>
+     * .google.analytics.admin.v1alpha.DisplayVideo360AdvertiserLinkProposal display_video_360_advertiser_link_proposal = 10;
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.analytics.admin.v1alpha.DisplayVideo360AdvertiserLinkProposalOrBuilder
+        getDisplayVideo360AdvertiserLinkProposalOrBuilder() {
+      if (resourceCase_ == 10) {
+        return (com.google.analytics.admin.v1alpha.DisplayVideo360AdvertiserLinkProposal) resource_;
+      }
+      return com.google.analytics.admin.v1alpha.DisplayVideo360AdvertiserLinkProposal
+          .getDefaultInstance();
+    }
+
     public static final int CONVERSION_EVENT_FIELD_NUMBER = 11;
     /**
      *
@@ -1619,6 +1950,61 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
       return com.google.analytics.admin.v1alpha.CustomMetric.getDefaultInstance();
     }
 
+    public static final int DATA_RETENTION_SETTINGS_FIELD_NUMBER = 15;
+    /**
+     *
+     *
+     * <pre>
+     * A snapshot of a data retention settings resource in change history.
+     * </pre>
+     *
+     * <code>.google.analytics.admin.v1alpha.DataRetentionSettings data_retention_settings = 15;
+     * </code>
+     *
+     * @return Whether the dataRetentionSettings field is set.
+     */
+    @java.lang.Override
+    public boolean hasDataRetentionSettings() {
+      return resourceCase_ == 15;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A snapshot of a data retention settings resource in change history.
+     * </pre>
+     *
+     * <code>.google.analytics.admin.v1alpha.DataRetentionSettings data_retention_settings = 15;
+     * </code>
+     *
+     * @return The dataRetentionSettings.
+     */
+    @java.lang.Override
+    public com.google.analytics.admin.v1alpha.DataRetentionSettings getDataRetentionSettings() {
+      if (resourceCase_ == 15) {
+        return (com.google.analytics.admin.v1alpha.DataRetentionSettings) resource_;
+      }
+      return com.google.analytics.admin.v1alpha.DataRetentionSettings.getDefaultInstance();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A snapshot of a data retention settings resource in change history.
+     * </pre>
+     *
+     * <code>.google.analytics.admin.v1alpha.DataRetentionSettings data_retention_settings = 15;
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.analytics.admin.v1alpha.DataRetentionSettingsOrBuilder
+        getDataRetentionSettingsOrBuilder() {
+      if (resourceCase_ == 15) {
+        return (com.google.analytics.admin.v1alpha.DataRetentionSettings) resource_;
+      }
+      return com.google.analytics.admin.v1alpha.DataRetentionSettings.getDefaultInstance();
+    }
+
     private byte memoizedIsInitialized = -1;
 
     @java.lang.Override
@@ -1658,6 +2044,15 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
         output.writeMessage(
             8, (com.google.analytics.admin.v1alpha.GoogleSignalsSettings) resource_);
       }
+      if (resourceCase_ == 9) {
+        output.writeMessage(
+            9, (com.google.analytics.admin.v1alpha.DisplayVideo360AdvertiserLink) resource_);
+      }
+      if (resourceCase_ == 10) {
+        output.writeMessage(
+            10,
+            (com.google.analytics.admin.v1alpha.DisplayVideo360AdvertiserLinkProposal) resource_);
+      }
       if (resourceCase_ == 11) {
         output.writeMessage(11, (com.google.analytics.admin.v1alpha.ConversionEvent) resource_);
       }
@@ -1670,6 +2065,10 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
       }
       if (resourceCase_ == 14) {
         output.writeMessage(14, (com.google.analytics.admin.v1alpha.CustomMetric) resource_);
+      }
+      if (resourceCase_ == 15) {
+        output.writeMessage(
+            15, (com.google.analytics.admin.v1alpha.DataRetentionSettings) resource_);
       }
       unknownFields.writeTo(output);
     }
@@ -1720,6 +2119,18 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
             com.google.protobuf.CodedOutputStream.computeMessageSize(
                 8, (com.google.analytics.admin.v1alpha.GoogleSignalsSettings) resource_);
       }
+      if (resourceCase_ == 9) {
+        size +=
+            com.google.protobuf.CodedOutputStream.computeMessageSize(
+                9, (com.google.analytics.admin.v1alpha.DisplayVideo360AdvertiserLink) resource_);
+      }
+      if (resourceCase_ == 10) {
+        size +=
+            com.google.protobuf.CodedOutputStream.computeMessageSize(
+                10,
+                (com.google.analytics.admin.v1alpha.DisplayVideo360AdvertiserLinkProposal)
+                    resource_);
+      }
       if (resourceCase_ == 11) {
         size +=
             com.google.protobuf.CodedOutputStream.computeMessageSize(
@@ -1739,6 +2150,11 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
         size +=
             com.google.protobuf.CodedOutputStream.computeMessageSize(
                 14, (com.google.analytics.admin.v1alpha.CustomMetric) resource_);
+      }
+      if (resourceCase_ == 15) {
+        size +=
+            com.google.protobuf.CodedOutputStream.computeMessageSize(
+                15, (com.google.analytics.admin.v1alpha.DataRetentionSettings) resource_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -1784,6 +2200,14 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
         case 8:
           if (!getGoogleSignalsSettings().equals(other.getGoogleSignalsSettings())) return false;
           break;
+        case 9:
+          if (!getDisplayVideo360AdvertiserLink().equals(other.getDisplayVideo360AdvertiserLink()))
+            return false;
+          break;
+        case 10:
+          if (!getDisplayVideo360AdvertiserLinkProposal()
+              .equals(other.getDisplayVideo360AdvertiserLinkProposal())) return false;
+          break;
         case 11:
           if (!getConversionEvent().equals(other.getConversionEvent())) return false;
           break;
@@ -1796,6 +2220,9 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
           break;
         case 14:
           if (!getCustomMetric().equals(other.getCustomMetric())) return false;
+          break;
+        case 15:
+          if (!getDataRetentionSettings().equals(other.getDataRetentionSettings())) return false;
           break;
         case 0:
         default:
@@ -1844,6 +2271,14 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
           hash = (37 * hash) + GOOGLE_SIGNALS_SETTINGS_FIELD_NUMBER;
           hash = (53 * hash) + getGoogleSignalsSettings().hashCode();
           break;
+        case 9:
+          hash = (37 * hash) + DISPLAY_VIDEO_360_ADVERTISER_LINK_FIELD_NUMBER;
+          hash = (53 * hash) + getDisplayVideo360AdvertiserLink().hashCode();
+          break;
+        case 10:
+          hash = (37 * hash) + DISPLAY_VIDEO_360_ADVERTISER_LINK_PROPOSAL_FIELD_NUMBER;
+          hash = (53 * hash) + getDisplayVideo360AdvertiserLinkProposal().hashCode();
+          break;
         case 11:
           hash = (37 * hash) + CONVERSION_EVENT_FIELD_NUMBER;
           hash = (53 * hash) + getConversionEvent().hashCode();
@@ -1859,6 +2294,10 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
         case 14:
           hash = (37 * hash) + CUSTOM_METRIC_FIELD_NUMBER;
           hash = (53 * hash) + getCustomMetric().hashCode();
+          break;
+        case 15:
+          hash = (37 * hash) + DATA_RETENTION_SETTINGS_FIELD_NUMBER;
+          hash = (53 * hash) + getDataRetentionSettings().hashCode();
           break;
         case 0:
         default:
@@ -2110,6 +2549,20 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
             result.resource_ = googleSignalsSettingsBuilder_.build();
           }
         }
+        if (resourceCase_ == 9) {
+          if (displayVideo360AdvertiserLinkBuilder_ == null) {
+            result.resource_ = resource_;
+          } else {
+            result.resource_ = displayVideo360AdvertiserLinkBuilder_.build();
+          }
+        }
+        if (resourceCase_ == 10) {
+          if (displayVideo360AdvertiserLinkProposalBuilder_ == null) {
+            result.resource_ = resource_;
+          } else {
+            result.resource_ = displayVideo360AdvertiserLinkProposalBuilder_.build();
+          }
+        }
         if (resourceCase_ == 11) {
           if (conversionEventBuilder_ == null) {
             result.resource_ = resource_;
@@ -2136,6 +2589,13 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
             result.resource_ = resource_;
           } else {
             result.resource_ = customMetricBuilder_.build();
+          }
+        }
+        if (resourceCase_ == 15) {
+          if (dataRetentionSettingsBuilder_ == null) {
+            result.resource_ = resource_;
+          } else {
+            result.resource_ = dataRetentionSettingsBuilder_.build();
           }
         }
         result.resourceCase_ = resourceCase_;
@@ -2237,6 +2697,17 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
               mergeGoogleSignalsSettings(other.getGoogleSignalsSettings());
               break;
             }
+          case DISPLAY_VIDEO_360_ADVERTISER_LINK:
+            {
+              mergeDisplayVideo360AdvertiserLink(other.getDisplayVideo360AdvertiserLink());
+              break;
+            }
+          case DISPLAY_VIDEO_360_ADVERTISER_LINK_PROPOSAL:
+            {
+              mergeDisplayVideo360AdvertiserLinkProposal(
+                  other.getDisplayVideo360AdvertiserLinkProposal());
+              break;
+            }
           case CONVERSION_EVENT:
             {
               mergeConversionEvent(other.getConversionEvent());
@@ -2255,6 +2726,11 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
           case CUSTOM_METRIC:
             {
               mergeCustomMetric(other.getCustomMetric());
+              break;
+            }
+          case DATA_RETENTION_SETTINGS:
+            {
+              mergeDataRetentionSettings(other.getDataRetentionSettings());
               break;
             }
           case RESOURCE_NOT_SET:
@@ -4020,6 +4496,510 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
       }
 
       private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.analytics.admin.v1alpha.DisplayVideo360AdvertiserLink,
+              com.google.analytics.admin.v1alpha.DisplayVideo360AdvertiserLink.Builder,
+              com.google.analytics.admin.v1alpha.DisplayVideo360AdvertiserLinkOrBuilder>
+          displayVideo360AdvertiserLinkBuilder_;
+      /**
+       *
+       *
+       * <pre>
+       * A snapshot of a DisplayVideo360AdvertiserLink resource in change
+       * history.
+       * </pre>
+       *
+       * <code>
+       * .google.analytics.admin.v1alpha.DisplayVideo360AdvertiserLink display_video_360_advertiser_link = 9;
+       * </code>
+       *
+       * @return Whether the displayVideo360AdvertiserLink field is set.
+       */
+      @java.lang.Override
+      public boolean hasDisplayVideo360AdvertiserLink() {
+        return resourceCase_ == 9;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A snapshot of a DisplayVideo360AdvertiserLink resource in change
+       * history.
+       * </pre>
+       *
+       * <code>
+       * .google.analytics.admin.v1alpha.DisplayVideo360AdvertiserLink display_video_360_advertiser_link = 9;
+       * </code>
+       *
+       * @return The displayVideo360AdvertiserLink.
+       */
+      @java.lang.Override
+      public com.google.analytics.admin.v1alpha.DisplayVideo360AdvertiserLink
+          getDisplayVideo360AdvertiserLink() {
+        if (displayVideo360AdvertiserLinkBuilder_ == null) {
+          if (resourceCase_ == 9) {
+            return (com.google.analytics.admin.v1alpha.DisplayVideo360AdvertiserLink) resource_;
+          }
+          return com.google.analytics.admin.v1alpha.DisplayVideo360AdvertiserLink
+              .getDefaultInstance();
+        } else {
+          if (resourceCase_ == 9) {
+            return displayVideo360AdvertiserLinkBuilder_.getMessage();
+          }
+          return com.google.analytics.admin.v1alpha.DisplayVideo360AdvertiserLink
+              .getDefaultInstance();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A snapshot of a DisplayVideo360AdvertiserLink resource in change
+       * history.
+       * </pre>
+       *
+       * <code>
+       * .google.analytics.admin.v1alpha.DisplayVideo360AdvertiserLink display_video_360_advertiser_link = 9;
+       * </code>
+       */
+      public Builder setDisplayVideo360AdvertiserLink(
+          com.google.analytics.admin.v1alpha.DisplayVideo360AdvertiserLink value) {
+        if (displayVideo360AdvertiserLinkBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          resource_ = value;
+          onChanged();
+        } else {
+          displayVideo360AdvertiserLinkBuilder_.setMessage(value);
+        }
+        resourceCase_ = 9;
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A snapshot of a DisplayVideo360AdvertiserLink resource in change
+       * history.
+       * </pre>
+       *
+       * <code>
+       * .google.analytics.admin.v1alpha.DisplayVideo360AdvertiserLink display_video_360_advertiser_link = 9;
+       * </code>
+       */
+      public Builder setDisplayVideo360AdvertiserLink(
+          com.google.analytics.admin.v1alpha.DisplayVideo360AdvertiserLink.Builder
+              builderForValue) {
+        if (displayVideo360AdvertiserLinkBuilder_ == null) {
+          resource_ = builderForValue.build();
+          onChanged();
+        } else {
+          displayVideo360AdvertiserLinkBuilder_.setMessage(builderForValue.build());
+        }
+        resourceCase_ = 9;
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A snapshot of a DisplayVideo360AdvertiserLink resource in change
+       * history.
+       * </pre>
+       *
+       * <code>
+       * .google.analytics.admin.v1alpha.DisplayVideo360AdvertiserLink display_video_360_advertiser_link = 9;
+       * </code>
+       */
+      public Builder mergeDisplayVideo360AdvertiserLink(
+          com.google.analytics.admin.v1alpha.DisplayVideo360AdvertiserLink value) {
+        if (displayVideo360AdvertiserLinkBuilder_ == null) {
+          if (resourceCase_ == 9
+              && resource_
+                  != com.google.analytics.admin.v1alpha.DisplayVideo360AdvertiserLink
+                      .getDefaultInstance()) {
+            resource_ =
+                com.google.analytics.admin.v1alpha.DisplayVideo360AdvertiserLink.newBuilder(
+                        (com.google.analytics.admin.v1alpha.DisplayVideo360AdvertiserLink)
+                            resource_)
+                    .mergeFrom(value)
+                    .buildPartial();
+          } else {
+            resource_ = value;
+          }
+          onChanged();
+        } else {
+          if (resourceCase_ == 9) {
+            displayVideo360AdvertiserLinkBuilder_.mergeFrom(value);
+          }
+          displayVideo360AdvertiserLinkBuilder_.setMessage(value);
+        }
+        resourceCase_ = 9;
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A snapshot of a DisplayVideo360AdvertiserLink resource in change
+       * history.
+       * </pre>
+       *
+       * <code>
+       * .google.analytics.admin.v1alpha.DisplayVideo360AdvertiserLink display_video_360_advertiser_link = 9;
+       * </code>
+       */
+      public Builder clearDisplayVideo360AdvertiserLink() {
+        if (displayVideo360AdvertiserLinkBuilder_ == null) {
+          if (resourceCase_ == 9) {
+            resourceCase_ = 0;
+            resource_ = null;
+            onChanged();
+          }
+        } else {
+          if (resourceCase_ == 9) {
+            resourceCase_ = 0;
+            resource_ = null;
+          }
+          displayVideo360AdvertiserLinkBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A snapshot of a DisplayVideo360AdvertiserLink resource in change
+       * history.
+       * </pre>
+       *
+       * <code>
+       * .google.analytics.admin.v1alpha.DisplayVideo360AdvertiserLink display_video_360_advertiser_link = 9;
+       * </code>
+       */
+      public com.google.analytics.admin.v1alpha.DisplayVideo360AdvertiserLink.Builder
+          getDisplayVideo360AdvertiserLinkBuilder() {
+        return getDisplayVideo360AdvertiserLinkFieldBuilder().getBuilder();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A snapshot of a DisplayVideo360AdvertiserLink resource in change
+       * history.
+       * </pre>
+       *
+       * <code>
+       * .google.analytics.admin.v1alpha.DisplayVideo360AdvertiserLink display_video_360_advertiser_link = 9;
+       * </code>
+       */
+      @java.lang.Override
+      public com.google.analytics.admin.v1alpha.DisplayVideo360AdvertiserLinkOrBuilder
+          getDisplayVideo360AdvertiserLinkOrBuilder() {
+        if ((resourceCase_ == 9) && (displayVideo360AdvertiserLinkBuilder_ != null)) {
+          return displayVideo360AdvertiserLinkBuilder_.getMessageOrBuilder();
+        } else {
+          if (resourceCase_ == 9) {
+            return (com.google.analytics.admin.v1alpha.DisplayVideo360AdvertiserLink) resource_;
+          }
+          return com.google.analytics.admin.v1alpha.DisplayVideo360AdvertiserLink
+              .getDefaultInstance();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A snapshot of a DisplayVideo360AdvertiserLink resource in change
+       * history.
+       * </pre>
+       *
+       * <code>
+       * .google.analytics.admin.v1alpha.DisplayVideo360AdvertiserLink display_video_360_advertiser_link = 9;
+       * </code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.analytics.admin.v1alpha.DisplayVideo360AdvertiserLink,
+              com.google.analytics.admin.v1alpha.DisplayVideo360AdvertiserLink.Builder,
+              com.google.analytics.admin.v1alpha.DisplayVideo360AdvertiserLinkOrBuilder>
+          getDisplayVideo360AdvertiserLinkFieldBuilder() {
+        if (displayVideo360AdvertiserLinkBuilder_ == null) {
+          if (!(resourceCase_ == 9)) {
+            resource_ =
+                com.google.analytics.admin.v1alpha.DisplayVideo360AdvertiserLink
+                    .getDefaultInstance();
+          }
+          displayVideo360AdvertiserLinkBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.analytics.admin.v1alpha.DisplayVideo360AdvertiserLink,
+                  com.google.analytics.admin.v1alpha.DisplayVideo360AdvertiserLink.Builder,
+                  com.google.analytics.admin.v1alpha.DisplayVideo360AdvertiserLinkOrBuilder>(
+                  (com.google.analytics.admin.v1alpha.DisplayVideo360AdvertiserLink) resource_,
+                  getParentForChildren(),
+                  isClean());
+          resource_ = null;
+        }
+        resourceCase_ = 9;
+        onChanged();
+        ;
+        return displayVideo360AdvertiserLinkBuilder_;
+      }
+
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.analytics.admin.v1alpha.DisplayVideo360AdvertiserLinkProposal,
+              com.google.analytics.admin.v1alpha.DisplayVideo360AdvertiserLinkProposal.Builder,
+              com.google.analytics.admin.v1alpha.DisplayVideo360AdvertiserLinkProposalOrBuilder>
+          displayVideo360AdvertiserLinkProposalBuilder_;
+      /**
+       *
+       *
+       * <pre>
+       * A snapshot of a DisplayVideo360AdvertiserLinkProposal resource in
+       * change history.
+       * </pre>
+       *
+       * <code>
+       * .google.analytics.admin.v1alpha.DisplayVideo360AdvertiserLinkProposal display_video_360_advertiser_link_proposal = 10;
+       * </code>
+       *
+       * @return Whether the displayVideo360AdvertiserLinkProposal field is set.
+       */
+      @java.lang.Override
+      public boolean hasDisplayVideo360AdvertiserLinkProposal() {
+        return resourceCase_ == 10;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A snapshot of a DisplayVideo360AdvertiserLinkProposal resource in
+       * change history.
+       * </pre>
+       *
+       * <code>
+       * .google.analytics.admin.v1alpha.DisplayVideo360AdvertiserLinkProposal display_video_360_advertiser_link_proposal = 10;
+       * </code>
+       *
+       * @return The displayVideo360AdvertiserLinkProposal.
+       */
+      @java.lang.Override
+      public com.google.analytics.admin.v1alpha.DisplayVideo360AdvertiserLinkProposal
+          getDisplayVideo360AdvertiserLinkProposal() {
+        if (displayVideo360AdvertiserLinkProposalBuilder_ == null) {
+          if (resourceCase_ == 10) {
+            return (com.google.analytics.admin.v1alpha.DisplayVideo360AdvertiserLinkProposal)
+                resource_;
+          }
+          return com.google.analytics.admin.v1alpha.DisplayVideo360AdvertiserLinkProposal
+              .getDefaultInstance();
+        } else {
+          if (resourceCase_ == 10) {
+            return displayVideo360AdvertiserLinkProposalBuilder_.getMessage();
+          }
+          return com.google.analytics.admin.v1alpha.DisplayVideo360AdvertiserLinkProposal
+              .getDefaultInstance();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A snapshot of a DisplayVideo360AdvertiserLinkProposal resource in
+       * change history.
+       * </pre>
+       *
+       * <code>
+       * .google.analytics.admin.v1alpha.DisplayVideo360AdvertiserLinkProposal display_video_360_advertiser_link_proposal = 10;
+       * </code>
+       */
+      public Builder setDisplayVideo360AdvertiserLinkProposal(
+          com.google.analytics.admin.v1alpha.DisplayVideo360AdvertiserLinkProposal value) {
+        if (displayVideo360AdvertiserLinkProposalBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          resource_ = value;
+          onChanged();
+        } else {
+          displayVideo360AdvertiserLinkProposalBuilder_.setMessage(value);
+        }
+        resourceCase_ = 10;
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A snapshot of a DisplayVideo360AdvertiserLinkProposal resource in
+       * change history.
+       * </pre>
+       *
+       * <code>
+       * .google.analytics.admin.v1alpha.DisplayVideo360AdvertiserLinkProposal display_video_360_advertiser_link_proposal = 10;
+       * </code>
+       */
+      public Builder setDisplayVideo360AdvertiserLinkProposal(
+          com.google.analytics.admin.v1alpha.DisplayVideo360AdvertiserLinkProposal.Builder
+              builderForValue) {
+        if (displayVideo360AdvertiserLinkProposalBuilder_ == null) {
+          resource_ = builderForValue.build();
+          onChanged();
+        } else {
+          displayVideo360AdvertiserLinkProposalBuilder_.setMessage(builderForValue.build());
+        }
+        resourceCase_ = 10;
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A snapshot of a DisplayVideo360AdvertiserLinkProposal resource in
+       * change history.
+       * </pre>
+       *
+       * <code>
+       * .google.analytics.admin.v1alpha.DisplayVideo360AdvertiserLinkProposal display_video_360_advertiser_link_proposal = 10;
+       * </code>
+       */
+      public Builder mergeDisplayVideo360AdvertiserLinkProposal(
+          com.google.analytics.admin.v1alpha.DisplayVideo360AdvertiserLinkProposal value) {
+        if (displayVideo360AdvertiserLinkProposalBuilder_ == null) {
+          if (resourceCase_ == 10
+              && resource_
+                  != com.google.analytics.admin.v1alpha.DisplayVideo360AdvertiserLinkProposal
+                      .getDefaultInstance()) {
+            resource_ =
+                com.google.analytics.admin.v1alpha.DisplayVideo360AdvertiserLinkProposal.newBuilder(
+                        (com.google.analytics.admin.v1alpha.DisplayVideo360AdvertiserLinkProposal)
+                            resource_)
+                    .mergeFrom(value)
+                    .buildPartial();
+          } else {
+            resource_ = value;
+          }
+          onChanged();
+        } else {
+          if (resourceCase_ == 10) {
+            displayVideo360AdvertiserLinkProposalBuilder_.mergeFrom(value);
+          }
+          displayVideo360AdvertiserLinkProposalBuilder_.setMessage(value);
+        }
+        resourceCase_ = 10;
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A snapshot of a DisplayVideo360AdvertiserLinkProposal resource in
+       * change history.
+       * </pre>
+       *
+       * <code>
+       * .google.analytics.admin.v1alpha.DisplayVideo360AdvertiserLinkProposal display_video_360_advertiser_link_proposal = 10;
+       * </code>
+       */
+      public Builder clearDisplayVideo360AdvertiserLinkProposal() {
+        if (displayVideo360AdvertiserLinkProposalBuilder_ == null) {
+          if (resourceCase_ == 10) {
+            resourceCase_ = 0;
+            resource_ = null;
+            onChanged();
+          }
+        } else {
+          if (resourceCase_ == 10) {
+            resourceCase_ = 0;
+            resource_ = null;
+          }
+          displayVideo360AdvertiserLinkProposalBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A snapshot of a DisplayVideo360AdvertiserLinkProposal resource in
+       * change history.
+       * </pre>
+       *
+       * <code>
+       * .google.analytics.admin.v1alpha.DisplayVideo360AdvertiserLinkProposal display_video_360_advertiser_link_proposal = 10;
+       * </code>
+       */
+      public com.google.analytics.admin.v1alpha.DisplayVideo360AdvertiserLinkProposal.Builder
+          getDisplayVideo360AdvertiserLinkProposalBuilder() {
+        return getDisplayVideo360AdvertiserLinkProposalFieldBuilder().getBuilder();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A snapshot of a DisplayVideo360AdvertiserLinkProposal resource in
+       * change history.
+       * </pre>
+       *
+       * <code>
+       * .google.analytics.admin.v1alpha.DisplayVideo360AdvertiserLinkProposal display_video_360_advertiser_link_proposal = 10;
+       * </code>
+       */
+      @java.lang.Override
+      public com.google.analytics.admin.v1alpha.DisplayVideo360AdvertiserLinkProposalOrBuilder
+          getDisplayVideo360AdvertiserLinkProposalOrBuilder() {
+        if ((resourceCase_ == 10) && (displayVideo360AdvertiserLinkProposalBuilder_ != null)) {
+          return displayVideo360AdvertiserLinkProposalBuilder_.getMessageOrBuilder();
+        } else {
+          if (resourceCase_ == 10) {
+            return (com.google.analytics.admin.v1alpha.DisplayVideo360AdvertiserLinkProposal)
+                resource_;
+          }
+          return com.google.analytics.admin.v1alpha.DisplayVideo360AdvertiserLinkProposal
+              .getDefaultInstance();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A snapshot of a DisplayVideo360AdvertiserLinkProposal resource in
+       * change history.
+       * </pre>
+       *
+       * <code>
+       * .google.analytics.admin.v1alpha.DisplayVideo360AdvertiserLinkProposal display_video_360_advertiser_link_proposal = 10;
+       * </code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.analytics.admin.v1alpha.DisplayVideo360AdvertiserLinkProposal,
+              com.google.analytics.admin.v1alpha.DisplayVideo360AdvertiserLinkProposal.Builder,
+              com.google.analytics.admin.v1alpha.DisplayVideo360AdvertiserLinkProposalOrBuilder>
+          getDisplayVideo360AdvertiserLinkProposalFieldBuilder() {
+        if (displayVideo360AdvertiserLinkProposalBuilder_ == null) {
+          if (!(resourceCase_ == 10)) {
+            resource_ =
+                com.google.analytics.admin.v1alpha.DisplayVideo360AdvertiserLinkProposal
+                    .getDefaultInstance();
+          }
+          displayVideo360AdvertiserLinkProposalBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.analytics.admin.v1alpha.DisplayVideo360AdvertiserLinkProposal,
+                  com.google.analytics.admin.v1alpha.DisplayVideo360AdvertiserLinkProposal.Builder,
+                  com.google.analytics.admin.v1alpha
+                      .DisplayVideo360AdvertiserLinkProposalOrBuilder>(
+                  (com.google.analytics.admin.v1alpha.DisplayVideo360AdvertiserLinkProposal)
+                      resource_,
+                  getParentForChildren(),
+                  isClean());
+          resource_ = null;
+        }
+        resourceCase_ = 10;
+        onChanged();
+        ;
+        return displayVideo360AdvertiserLinkProposalBuilder_;
+      }
+
+      private com.google.protobuf.SingleFieldBuilderV3<
               com.google.analytics.admin.v1alpha.ConversionEvent,
               com.google.analytics.admin.v1alpha.ConversionEvent.Builder,
               com.google.analytics.admin.v1alpha.ConversionEventOrBuilder>
@@ -4888,6 +5868,231 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
         onChanged();
         ;
         return customMetricBuilder_;
+      }
+
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.analytics.admin.v1alpha.DataRetentionSettings,
+              com.google.analytics.admin.v1alpha.DataRetentionSettings.Builder,
+              com.google.analytics.admin.v1alpha.DataRetentionSettingsOrBuilder>
+          dataRetentionSettingsBuilder_;
+      /**
+       *
+       *
+       * <pre>
+       * A snapshot of a data retention settings resource in change history.
+       * </pre>
+       *
+       * <code>.google.analytics.admin.v1alpha.DataRetentionSettings data_retention_settings = 15;
+       * </code>
+       *
+       * @return Whether the dataRetentionSettings field is set.
+       */
+      @java.lang.Override
+      public boolean hasDataRetentionSettings() {
+        return resourceCase_ == 15;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A snapshot of a data retention settings resource in change history.
+       * </pre>
+       *
+       * <code>.google.analytics.admin.v1alpha.DataRetentionSettings data_retention_settings = 15;
+       * </code>
+       *
+       * @return The dataRetentionSettings.
+       */
+      @java.lang.Override
+      public com.google.analytics.admin.v1alpha.DataRetentionSettings getDataRetentionSettings() {
+        if (dataRetentionSettingsBuilder_ == null) {
+          if (resourceCase_ == 15) {
+            return (com.google.analytics.admin.v1alpha.DataRetentionSettings) resource_;
+          }
+          return com.google.analytics.admin.v1alpha.DataRetentionSettings.getDefaultInstance();
+        } else {
+          if (resourceCase_ == 15) {
+            return dataRetentionSettingsBuilder_.getMessage();
+          }
+          return com.google.analytics.admin.v1alpha.DataRetentionSettings.getDefaultInstance();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A snapshot of a data retention settings resource in change history.
+       * </pre>
+       *
+       * <code>.google.analytics.admin.v1alpha.DataRetentionSettings data_retention_settings = 15;
+       * </code>
+       */
+      public Builder setDataRetentionSettings(
+          com.google.analytics.admin.v1alpha.DataRetentionSettings value) {
+        if (dataRetentionSettingsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          resource_ = value;
+          onChanged();
+        } else {
+          dataRetentionSettingsBuilder_.setMessage(value);
+        }
+        resourceCase_ = 15;
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A snapshot of a data retention settings resource in change history.
+       * </pre>
+       *
+       * <code>.google.analytics.admin.v1alpha.DataRetentionSettings data_retention_settings = 15;
+       * </code>
+       */
+      public Builder setDataRetentionSettings(
+          com.google.analytics.admin.v1alpha.DataRetentionSettings.Builder builderForValue) {
+        if (dataRetentionSettingsBuilder_ == null) {
+          resource_ = builderForValue.build();
+          onChanged();
+        } else {
+          dataRetentionSettingsBuilder_.setMessage(builderForValue.build());
+        }
+        resourceCase_ = 15;
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A snapshot of a data retention settings resource in change history.
+       * </pre>
+       *
+       * <code>.google.analytics.admin.v1alpha.DataRetentionSettings data_retention_settings = 15;
+       * </code>
+       */
+      public Builder mergeDataRetentionSettings(
+          com.google.analytics.admin.v1alpha.DataRetentionSettings value) {
+        if (dataRetentionSettingsBuilder_ == null) {
+          if (resourceCase_ == 15
+              && resource_
+                  != com.google.analytics.admin.v1alpha.DataRetentionSettings
+                      .getDefaultInstance()) {
+            resource_ =
+                com.google.analytics.admin.v1alpha.DataRetentionSettings.newBuilder(
+                        (com.google.analytics.admin.v1alpha.DataRetentionSettings) resource_)
+                    .mergeFrom(value)
+                    .buildPartial();
+          } else {
+            resource_ = value;
+          }
+          onChanged();
+        } else {
+          if (resourceCase_ == 15) {
+            dataRetentionSettingsBuilder_.mergeFrom(value);
+          }
+          dataRetentionSettingsBuilder_.setMessage(value);
+        }
+        resourceCase_ = 15;
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A snapshot of a data retention settings resource in change history.
+       * </pre>
+       *
+       * <code>.google.analytics.admin.v1alpha.DataRetentionSettings data_retention_settings = 15;
+       * </code>
+       */
+      public Builder clearDataRetentionSettings() {
+        if (dataRetentionSettingsBuilder_ == null) {
+          if (resourceCase_ == 15) {
+            resourceCase_ = 0;
+            resource_ = null;
+            onChanged();
+          }
+        } else {
+          if (resourceCase_ == 15) {
+            resourceCase_ = 0;
+            resource_ = null;
+          }
+          dataRetentionSettingsBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A snapshot of a data retention settings resource in change history.
+       * </pre>
+       *
+       * <code>.google.analytics.admin.v1alpha.DataRetentionSettings data_retention_settings = 15;
+       * </code>
+       */
+      public com.google.analytics.admin.v1alpha.DataRetentionSettings.Builder
+          getDataRetentionSettingsBuilder() {
+        return getDataRetentionSettingsFieldBuilder().getBuilder();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A snapshot of a data retention settings resource in change history.
+       * </pre>
+       *
+       * <code>.google.analytics.admin.v1alpha.DataRetentionSettings data_retention_settings = 15;
+       * </code>
+       */
+      @java.lang.Override
+      public com.google.analytics.admin.v1alpha.DataRetentionSettingsOrBuilder
+          getDataRetentionSettingsOrBuilder() {
+        if ((resourceCase_ == 15) && (dataRetentionSettingsBuilder_ != null)) {
+          return dataRetentionSettingsBuilder_.getMessageOrBuilder();
+        } else {
+          if (resourceCase_ == 15) {
+            return (com.google.analytics.admin.v1alpha.DataRetentionSettings) resource_;
+          }
+          return com.google.analytics.admin.v1alpha.DataRetentionSettings.getDefaultInstance();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A snapshot of a data retention settings resource in change history.
+       * </pre>
+       *
+       * <code>.google.analytics.admin.v1alpha.DataRetentionSettings data_retention_settings = 15;
+       * </code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.analytics.admin.v1alpha.DataRetentionSettings,
+              com.google.analytics.admin.v1alpha.DataRetentionSettings.Builder,
+              com.google.analytics.admin.v1alpha.DataRetentionSettingsOrBuilder>
+          getDataRetentionSettingsFieldBuilder() {
+        if (dataRetentionSettingsBuilder_ == null) {
+          if (!(resourceCase_ == 15)) {
+            resource_ =
+                com.google.analytics.admin.v1alpha.DataRetentionSettings.getDefaultInstance();
+          }
+          dataRetentionSettingsBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.analytics.admin.v1alpha.DataRetentionSettings,
+                  com.google.analytics.admin.v1alpha.DataRetentionSettings.Builder,
+                  com.google.analytics.admin.v1alpha.DataRetentionSettingsOrBuilder>(
+                  (com.google.analytics.admin.v1alpha.DataRetentionSettings) resource_,
+                  getParentForChildren(),
+                  isClean());
+          resource_ = null;
+        }
+        resourceCase_ = 15;
+        onChanged();
+        ;
+        return dataRetentionSettingsBuilder_;
       }
 
       @java.lang.Override

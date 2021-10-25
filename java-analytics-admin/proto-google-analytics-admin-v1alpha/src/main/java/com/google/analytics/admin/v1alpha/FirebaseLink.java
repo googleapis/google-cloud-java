@@ -40,7 +40,6 @@ public final class FirebaseLink extends com.google.protobuf.GeneratedMessageV3
   private FirebaseLink() {
     name_ = "";
     project_ = "";
-    maximumUserAccess_ = 0;
   }
 
   @java.lang.Override
@@ -99,13 +98,6 @@ public final class FirebaseLink extends com.google.protobuf.GeneratedMessageV3
                 createTime_ = subBuilder.buildPartial();
               }
 
-              break;
-            }
-          case 32:
-            {
-              int rawValue = input.readEnum();
-
-              maximumUserAccess_ = rawValue;
               break;
             }
           default:
@@ -299,46 +291,6 @@ public final class FirebaseLink extends com.google.protobuf.GeneratedMessageV3
     return getCreateTime();
   }
 
-  public static final int MAXIMUM_USER_ACCESS_FIELD_NUMBER = 4;
-  private int maximumUserAccess_;
-  /**
-   *
-   *
-   * <pre>
-   * Maximum user access to the GA4 property allowed to admins of
-   * the linked Firebase project.
-   * </pre>
-   *
-   * <code>.google.analytics.admin.v1alpha.MaximumUserAccess maximum_user_access = 4;</code>
-   *
-   * @return The enum numeric value on the wire for maximumUserAccess.
-   */
-  @java.lang.Override
-  public int getMaximumUserAccessValue() {
-    return maximumUserAccess_;
-  }
-  /**
-   *
-   *
-   * <pre>
-   * Maximum user access to the GA4 property allowed to admins of
-   * the linked Firebase project.
-   * </pre>
-   *
-   * <code>.google.analytics.admin.v1alpha.MaximumUserAccess maximum_user_access = 4;</code>
-   *
-   * @return The maximumUserAccess.
-   */
-  @java.lang.Override
-  public com.google.analytics.admin.v1alpha.MaximumUserAccess getMaximumUserAccess() {
-    @SuppressWarnings("deprecation")
-    com.google.analytics.admin.v1alpha.MaximumUserAccess result =
-        com.google.analytics.admin.v1alpha.MaximumUserAccess.valueOf(maximumUserAccess_);
-    return result == null
-        ? com.google.analytics.admin.v1alpha.MaximumUserAccess.UNRECOGNIZED
-        : result;
-  }
-
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -362,11 +314,6 @@ public final class FirebaseLink extends com.google.protobuf.GeneratedMessageV3
     if (createTime_ != null) {
       output.writeMessage(3, getCreateTime());
     }
-    if (maximumUserAccess_
-        != com.google.analytics.admin.v1alpha.MaximumUserAccess.MAXIMUM_USER_ACCESS_UNSPECIFIED
-            .getNumber()) {
-      output.writeEnum(4, maximumUserAccess_);
-    }
     unknownFields.writeTo(output);
   }
 
@@ -384,11 +331,6 @@ public final class FirebaseLink extends com.google.protobuf.GeneratedMessageV3
     }
     if (createTime_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(3, getCreateTime());
-    }
-    if (maximumUserAccess_
-        != com.google.analytics.admin.v1alpha.MaximumUserAccess.MAXIMUM_USER_ACCESS_UNSPECIFIED
-            .getNumber()) {
-      size += com.google.protobuf.CodedOutputStream.computeEnumSize(4, maximumUserAccess_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -412,7 +354,6 @@ public final class FirebaseLink extends com.google.protobuf.GeneratedMessageV3
     if (hasCreateTime()) {
       if (!getCreateTime().equals(other.getCreateTime())) return false;
     }
-    if (maximumUserAccess_ != other.maximumUserAccess_) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -432,8 +373,6 @@ public final class FirebaseLink extends com.google.protobuf.GeneratedMessageV3
       hash = (37 * hash) + CREATE_TIME_FIELD_NUMBER;
       hash = (53 * hash) + getCreateTime().hashCode();
     }
-    hash = (37 * hash) + MAXIMUM_USER_ACCESS_FIELD_NUMBER;
-    hash = (53 * hash) + maximumUserAccess_;
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -589,8 +528,6 @@ public final class FirebaseLink extends com.google.protobuf.GeneratedMessageV3
         createTime_ = null;
         createTimeBuilder_ = null;
       }
-      maximumUserAccess_ = 0;
-
       return this;
     }
 
@@ -625,7 +562,6 @@ public final class FirebaseLink extends com.google.protobuf.GeneratedMessageV3
       } else {
         result.createTime_ = createTimeBuilder_.build();
       }
-      result.maximumUserAccess_ = maximumUserAccess_;
       onBuilt();
       return result;
     }
@@ -686,9 +622,6 @@ public final class FirebaseLink extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.hasCreateTime()) {
         mergeCreateTime(other.getCreateTime());
-      }
-      if (other.maximumUserAccess_ != 0) {
-        setMaximumUserAccessValue(other.getMaximumUserAccessValue());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -1155,105 +1088,6 @@ public final class FirebaseLink extends com.google.protobuf.GeneratedMessageV3
         createTime_ = null;
       }
       return createTimeBuilder_;
-    }
-
-    private int maximumUserAccess_ = 0;
-    /**
-     *
-     *
-     * <pre>
-     * Maximum user access to the GA4 property allowed to admins of
-     * the linked Firebase project.
-     * </pre>
-     *
-     * <code>.google.analytics.admin.v1alpha.MaximumUserAccess maximum_user_access = 4;</code>
-     *
-     * @return The enum numeric value on the wire for maximumUserAccess.
-     */
-    @java.lang.Override
-    public int getMaximumUserAccessValue() {
-      return maximumUserAccess_;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Maximum user access to the GA4 property allowed to admins of
-     * the linked Firebase project.
-     * </pre>
-     *
-     * <code>.google.analytics.admin.v1alpha.MaximumUserAccess maximum_user_access = 4;</code>
-     *
-     * @param value The enum numeric value on the wire for maximumUserAccess to set.
-     * @return This builder for chaining.
-     */
-    public Builder setMaximumUserAccessValue(int value) {
-
-      maximumUserAccess_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Maximum user access to the GA4 property allowed to admins of
-     * the linked Firebase project.
-     * </pre>
-     *
-     * <code>.google.analytics.admin.v1alpha.MaximumUserAccess maximum_user_access = 4;</code>
-     *
-     * @return The maximumUserAccess.
-     */
-    @java.lang.Override
-    public com.google.analytics.admin.v1alpha.MaximumUserAccess getMaximumUserAccess() {
-      @SuppressWarnings("deprecation")
-      com.google.analytics.admin.v1alpha.MaximumUserAccess result =
-          com.google.analytics.admin.v1alpha.MaximumUserAccess.valueOf(maximumUserAccess_);
-      return result == null
-          ? com.google.analytics.admin.v1alpha.MaximumUserAccess.UNRECOGNIZED
-          : result;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Maximum user access to the GA4 property allowed to admins of
-     * the linked Firebase project.
-     * </pre>
-     *
-     * <code>.google.analytics.admin.v1alpha.MaximumUserAccess maximum_user_access = 4;</code>
-     *
-     * @param value The maximumUserAccess to set.
-     * @return This builder for chaining.
-     */
-    public Builder setMaximumUserAccess(
-        com.google.analytics.admin.v1alpha.MaximumUserAccess value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-
-      maximumUserAccess_ = value.getNumber();
-      onChanged();
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Maximum user access to the GA4 property allowed to admins of
-     * the linked Firebase project.
-     * </pre>
-     *
-     * <code>.google.analytics.admin.v1alpha.MaximumUserAccess maximum_user_access = 4;</code>
-     *
-     * @return This builder for chaining.
-     */
-    public Builder clearMaximumUserAccess() {
-
-      maximumUserAccess_ = 0;
-      onChanged();
-      return this;
     }
 
     @java.lang.Override

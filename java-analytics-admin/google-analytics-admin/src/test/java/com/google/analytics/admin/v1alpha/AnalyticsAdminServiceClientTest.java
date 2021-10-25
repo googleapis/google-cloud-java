@@ -23,6 +23,8 @@ import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.Lis
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListConversionEventsPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListCustomDimensionsPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListCustomMetricsPagedResponse;
+import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListDisplayVideo360AdvertiserLinkProposalsPagedResponse;
+import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListDisplayVideo360AdvertiserLinksPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListFirebaseLinksPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListGoogleAdsLinksPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListIosAppDataStreamsPagedResponse;
@@ -468,6 +470,7 @@ public class AnalyticsAdminServiceClientTest {
             .setIndustryCategory(IndustryCategory.forNumber(0))
             .setTimeZone("timeZone-2077180903")
             .setCurrencyCode("currencyCode1004773790")
+            .setServiceLevel(ServiceLevel.forNumber(0))
             .setDeleteTime(Timestamp.newBuilder().build())
             .setExpireTime(Timestamp.newBuilder().build())
             .build();
@@ -515,6 +518,7 @@ public class AnalyticsAdminServiceClientTest {
             .setIndustryCategory(IndustryCategory.forNumber(0))
             .setTimeZone("timeZone-2077180903")
             .setCurrencyCode("currencyCode1004773790")
+            .setServiceLevel(ServiceLevel.forNumber(0))
             .setDeleteTime(Timestamp.newBuilder().build())
             .setExpireTime(Timestamp.newBuilder().build())
             .build();
@@ -621,6 +625,7 @@ public class AnalyticsAdminServiceClientTest {
             .setIndustryCategory(IndustryCategory.forNumber(0))
             .setTimeZone("timeZone-2077180903")
             .setCurrencyCode("currencyCode1004773790")
+            .setServiceLevel(ServiceLevel.forNumber(0))
             .setDeleteTime(Timestamp.newBuilder().build())
             .setExpireTime(Timestamp.newBuilder().build())
             .build();
@@ -668,6 +673,7 @@ public class AnalyticsAdminServiceClientTest {
             .setIndustryCategory(IndustryCategory.forNumber(0))
             .setTimeZone("timeZone-2077180903")
             .setCurrencyCode("currencyCode1004773790")
+            .setServiceLevel(ServiceLevel.forNumber(0))
             .setDeleteTime(Timestamp.newBuilder().build())
             .setExpireTime(Timestamp.newBuilder().build())
             .build();
@@ -715,6 +721,7 @@ public class AnalyticsAdminServiceClientTest {
             .setIndustryCategory(IndustryCategory.forNumber(0))
             .setTimeZone("timeZone-2077180903")
             .setCurrencyCode("currencyCode1004773790")
+            .setServiceLevel(ServiceLevel.forNumber(0))
             .setDeleteTime(Timestamp.newBuilder().build())
             .setExpireTime(Timestamp.newBuilder().build())
             .build();
@@ -762,6 +769,7 @@ public class AnalyticsAdminServiceClientTest {
             .setIndustryCategory(IndustryCategory.forNumber(0))
             .setTimeZone("timeZone-2077180903")
             .setCurrencyCode("currencyCode1004773790")
+            .setServiceLevel(ServiceLevel.forNumber(0))
             .setDeleteTime(Timestamp.newBuilder().build())
             .setExpireTime(Timestamp.newBuilder().build())
             .build();
@@ -2645,7 +2653,6 @@ public class AnalyticsAdminServiceClientTest {
             .setName(FirebaseLinkName.of("[PROPERTY]", "[FIREBASE_LINK]").toString())
             .setProject("project-309310695")
             .setCreateTime(Timestamp.newBuilder().build())
-            .setMaximumUserAccess(MaximumUserAccess.forNumber(0))
             .build();
     mockAnalyticsAdminService.addResponse(expectedResponse);
 
@@ -2689,7 +2696,6 @@ public class AnalyticsAdminServiceClientTest {
             .setName(FirebaseLinkName.of("[PROPERTY]", "[FIREBASE_LINK]").toString())
             .setProject("project-309310695")
             .setCreateTime(Timestamp.newBuilder().build())
-            .setMaximumUserAccess(MaximumUserAccess.forNumber(0))
             .build();
     mockAnalyticsAdminService.addResponse(expectedResponse);
 
@@ -2720,50 +2726,6 @@ public class AnalyticsAdminServiceClientTest {
       String parent = "parent-995424086";
       FirebaseLink firebaseLink = FirebaseLink.newBuilder().build();
       client.createFirebaseLink(parent, firebaseLink);
-      Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception.
-    }
-  }
-
-  @Test
-  public void updateFirebaseLinkTest() throws Exception {
-    FirebaseLink expectedResponse =
-        FirebaseLink.newBuilder()
-            .setName(FirebaseLinkName.of("[PROPERTY]", "[FIREBASE_LINK]").toString())
-            .setProject("project-309310695")
-            .setCreateTime(Timestamp.newBuilder().build())
-            .setMaximumUserAccess(MaximumUserAccess.forNumber(0))
-            .build();
-    mockAnalyticsAdminService.addResponse(expectedResponse);
-
-    FirebaseLink firebaseLink = FirebaseLink.newBuilder().build();
-    FieldMask updateMask = FieldMask.newBuilder().build();
-
-    FirebaseLink actualResponse = client.updateFirebaseLink(firebaseLink, updateMask);
-    Assert.assertEquals(expectedResponse, actualResponse);
-
-    List<AbstractMessage> actualRequests = mockAnalyticsAdminService.getRequests();
-    Assert.assertEquals(1, actualRequests.size());
-    UpdateFirebaseLinkRequest actualRequest = ((UpdateFirebaseLinkRequest) actualRequests.get(0));
-
-    Assert.assertEquals(firebaseLink, actualRequest.getFirebaseLink());
-    Assert.assertEquals(updateMask, actualRequest.getUpdateMask());
-    Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
-  }
-
-  @Test
-  public void updateFirebaseLinkExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
-    mockAnalyticsAdminService.addException(exception);
-
-    try {
-      FirebaseLink firebaseLink = FirebaseLink.newBuilder().build();
-      FieldMask updateMask = FieldMask.newBuilder().build();
-      client.updateFirebaseLink(firebaseLink, updateMask);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.
@@ -3012,9 +2974,9 @@ public class AnalyticsAdminServiceClientTest {
             .setCustomerId("customerId-1581184615")
             .setCanManageClients(true)
             .setAdsPersonalizationEnabled(BoolValue.newBuilder().build())
-            .setEmailAddress("emailAddress-1070931784")
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
+            .setCreatorEmailAddress("creatorEmailAddress67752708")
             .build();
     mockAnalyticsAdminService.addResponse(expectedResponse);
 
@@ -3059,9 +3021,9 @@ public class AnalyticsAdminServiceClientTest {
             .setCustomerId("customerId-1581184615")
             .setCanManageClients(true)
             .setAdsPersonalizationEnabled(BoolValue.newBuilder().build())
-            .setEmailAddress("emailAddress-1070931784")
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
+            .setCreatorEmailAddress("creatorEmailAddress67752708")
             .build();
     mockAnalyticsAdminService.addResponse(expectedResponse);
 
@@ -3106,9 +3068,9 @@ public class AnalyticsAdminServiceClientTest {
             .setCustomerId("customerId-1581184615")
             .setCanManageClients(true)
             .setAdsPersonalizationEnabled(BoolValue.newBuilder().build())
-            .setEmailAddress("emailAddress-1070931784")
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
+            .setCreatorEmailAddress("creatorEmailAddress67752708")
             .build();
     mockAnalyticsAdminService.addResponse(expectedResponse);
 
@@ -4009,7 +3971,8 @@ public class AnalyticsAdminServiceClientTest {
             .setName(ConversionEventName.of("[PROPERTY]", "[CONVERSION_EVENT]").toString())
             .setEventName("eventName31228997")
             .setCreateTime(Timestamp.newBuilder().build())
-            .setIsDeletable(true)
+            .setDeletable(true)
+            .setCustom(true)
             .build();
     mockAnalyticsAdminService.addResponse(expectedResponse);
 
@@ -4054,7 +4017,8 @@ public class AnalyticsAdminServiceClientTest {
             .setName(ConversionEventName.of("[PROPERTY]", "[CONVERSION_EVENT]").toString())
             .setEventName("eventName31228997")
             .setCreateTime(Timestamp.newBuilder().build())
-            .setIsDeletable(true)
+            .setDeletable(true)
+            .setCustom(true)
             .build();
     mockAnalyticsAdminService.addResponse(expectedResponse);
 
@@ -4099,7 +4063,8 @@ public class AnalyticsAdminServiceClientTest {
             .setName(ConversionEventName.of("[PROPERTY]", "[CONVERSION_EVENT]").toString())
             .setEventName("eventName31228997")
             .setCreateTime(Timestamp.newBuilder().build())
-            .setIsDeletable(true)
+            .setDeletable(true)
+            .setCustom(true)
             .build();
     mockAnalyticsAdminService.addResponse(expectedResponse);
 
@@ -4140,7 +4105,8 @@ public class AnalyticsAdminServiceClientTest {
             .setName(ConversionEventName.of("[PROPERTY]", "[CONVERSION_EVENT]").toString())
             .setEventName("eventName31228997")
             .setCreateTime(Timestamp.newBuilder().build())
-            .setIsDeletable(true)
+            .setDeletable(true)
+            .setCustom(true)
             .build();
     mockAnalyticsAdminService.addResponse(expectedResponse);
 
@@ -4328,6 +4294,942 @@ public class AnalyticsAdminServiceClientTest {
     try {
       String parent = "parent-995424086";
       client.listConversionEvents(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getDisplayVideo360AdvertiserLinkTest() throws Exception {
+    DisplayVideo360AdvertiserLink expectedResponse =
+        DisplayVideo360AdvertiserLink.newBuilder()
+            .setName(
+                DisplayVideo360AdvertiserLinkName.of(
+                        "[PROPERTY]", "[DISPLAY_VIDEO_360_ADVERTISER_LINK]")
+                    .toString())
+            .setAdvertiserId("advertiserId550061990")
+            .setAdvertiserDisplayName("advertiserDisplayName1594116162")
+            .setAdsPersonalizationEnabled(BoolValue.newBuilder().build())
+            .setCampaignDataSharingEnabled(BoolValue.newBuilder().build())
+            .setCostDataSharingEnabled(BoolValue.newBuilder().build())
+            .build();
+    mockAnalyticsAdminService.addResponse(expectedResponse);
+
+    DisplayVideo360AdvertiserLinkName name =
+        DisplayVideo360AdvertiserLinkName.of("[PROPERTY]", "[DISPLAY_VIDEO_360_ADVERTISER_LINK]");
+
+    DisplayVideo360AdvertiserLink actualResponse = client.getDisplayVideo360AdvertiserLink(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockAnalyticsAdminService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetDisplayVideo360AdvertiserLinkRequest actualRequest =
+        ((GetDisplayVideo360AdvertiserLinkRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getDisplayVideo360AdvertiserLinkExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockAnalyticsAdminService.addException(exception);
+
+    try {
+      DisplayVideo360AdvertiserLinkName name =
+          DisplayVideo360AdvertiserLinkName.of("[PROPERTY]", "[DISPLAY_VIDEO_360_ADVERTISER_LINK]");
+      client.getDisplayVideo360AdvertiserLink(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getDisplayVideo360AdvertiserLinkTest2() throws Exception {
+    DisplayVideo360AdvertiserLink expectedResponse =
+        DisplayVideo360AdvertiserLink.newBuilder()
+            .setName(
+                DisplayVideo360AdvertiserLinkName.of(
+                        "[PROPERTY]", "[DISPLAY_VIDEO_360_ADVERTISER_LINK]")
+                    .toString())
+            .setAdvertiserId("advertiserId550061990")
+            .setAdvertiserDisplayName("advertiserDisplayName1594116162")
+            .setAdsPersonalizationEnabled(BoolValue.newBuilder().build())
+            .setCampaignDataSharingEnabled(BoolValue.newBuilder().build())
+            .setCostDataSharingEnabled(BoolValue.newBuilder().build())
+            .build();
+    mockAnalyticsAdminService.addResponse(expectedResponse);
+
+    String name = "name3373707";
+
+    DisplayVideo360AdvertiserLink actualResponse = client.getDisplayVideo360AdvertiserLink(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockAnalyticsAdminService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetDisplayVideo360AdvertiserLinkRequest actualRequest =
+        ((GetDisplayVideo360AdvertiserLinkRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getDisplayVideo360AdvertiserLinkExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockAnalyticsAdminService.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.getDisplayVideo360AdvertiserLink(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listDisplayVideo360AdvertiserLinksTest() throws Exception {
+    DisplayVideo360AdvertiserLink responsesElement =
+        DisplayVideo360AdvertiserLink.newBuilder().build();
+    ListDisplayVideo360AdvertiserLinksResponse expectedResponse =
+        ListDisplayVideo360AdvertiserLinksResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllDisplayVideo360AdvertiserLinks(Arrays.asList(responsesElement))
+            .build();
+    mockAnalyticsAdminService.addResponse(expectedResponse);
+
+    PropertyName parent = PropertyName.of("[PROPERTY]");
+
+    ListDisplayVideo360AdvertiserLinksPagedResponse pagedListResponse =
+        client.listDisplayVideo360AdvertiserLinks(parent);
+
+    List<DisplayVideo360AdvertiserLink> resources =
+        Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(
+        expectedResponse.getDisplayVideo360AdvertiserLinksList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockAnalyticsAdminService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListDisplayVideo360AdvertiserLinksRequest actualRequest =
+        ((ListDisplayVideo360AdvertiserLinksRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listDisplayVideo360AdvertiserLinksExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockAnalyticsAdminService.addException(exception);
+
+    try {
+      PropertyName parent = PropertyName.of("[PROPERTY]");
+      client.listDisplayVideo360AdvertiserLinks(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listDisplayVideo360AdvertiserLinksTest2() throws Exception {
+    DisplayVideo360AdvertiserLink responsesElement =
+        DisplayVideo360AdvertiserLink.newBuilder().build();
+    ListDisplayVideo360AdvertiserLinksResponse expectedResponse =
+        ListDisplayVideo360AdvertiserLinksResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllDisplayVideo360AdvertiserLinks(Arrays.asList(responsesElement))
+            .build();
+    mockAnalyticsAdminService.addResponse(expectedResponse);
+
+    String parent = "parent-995424086";
+
+    ListDisplayVideo360AdvertiserLinksPagedResponse pagedListResponse =
+        client.listDisplayVideo360AdvertiserLinks(parent);
+
+    List<DisplayVideo360AdvertiserLink> resources =
+        Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(
+        expectedResponse.getDisplayVideo360AdvertiserLinksList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockAnalyticsAdminService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListDisplayVideo360AdvertiserLinksRequest actualRequest =
+        ((ListDisplayVideo360AdvertiserLinksRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listDisplayVideo360AdvertiserLinksExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockAnalyticsAdminService.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      client.listDisplayVideo360AdvertiserLinks(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void createDisplayVideo360AdvertiserLinkTest() throws Exception {
+    DisplayVideo360AdvertiserLink expectedResponse =
+        DisplayVideo360AdvertiserLink.newBuilder()
+            .setName(
+                DisplayVideo360AdvertiserLinkName.of(
+                        "[PROPERTY]", "[DISPLAY_VIDEO_360_ADVERTISER_LINK]")
+                    .toString())
+            .setAdvertiserId("advertiserId550061990")
+            .setAdvertiserDisplayName("advertiserDisplayName1594116162")
+            .setAdsPersonalizationEnabled(BoolValue.newBuilder().build())
+            .setCampaignDataSharingEnabled(BoolValue.newBuilder().build())
+            .setCostDataSharingEnabled(BoolValue.newBuilder().build())
+            .build();
+    mockAnalyticsAdminService.addResponse(expectedResponse);
+
+    PropertyName parent = PropertyName.of("[PROPERTY]");
+    DisplayVideo360AdvertiserLink displayVideo360AdvertiserLink =
+        DisplayVideo360AdvertiserLink.newBuilder().build();
+
+    DisplayVideo360AdvertiserLink actualResponse =
+        client.createDisplayVideo360AdvertiserLink(parent, displayVideo360AdvertiserLink);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockAnalyticsAdminService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    CreateDisplayVideo360AdvertiserLinkRequest actualRequest =
+        ((CreateDisplayVideo360AdvertiserLinkRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertEquals(
+        displayVideo360AdvertiserLink, actualRequest.getDisplayVideo360AdvertiserLink());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void createDisplayVideo360AdvertiserLinkExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockAnalyticsAdminService.addException(exception);
+
+    try {
+      PropertyName parent = PropertyName.of("[PROPERTY]");
+      DisplayVideo360AdvertiserLink displayVideo360AdvertiserLink =
+          DisplayVideo360AdvertiserLink.newBuilder().build();
+      client.createDisplayVideo360AdvertiserLink(parent, displayVideo360AdvertiserLink);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void createDisplayVideo360AdvertiserLinkTest2() throws Exception {
+    DisplayVideo360AdvertiserLink expectedResponse =
+        DisplayVideo360AdvertiserLink.newBuilder()
+            .setName(
+                DisplayVideo360AdvertiserLinkName.of(
+                        "[PROPERTY]", "[DISPLAY_VIDEO_360_ADVERTISER_LINK]")
+                    .toString())
+            .setAdvertiserId("advertiserId550061990")
+            .setAdvertiserDisplayName("advertiserDisplayName1594116162")
+            .setAdsPersonalizationEnabled(BoolValue.newBuilder().build())
+            .setCampaignDataSharingEnabled(BoolValue.newBuilder().build())
+            .setCostDataSharingEnabled(BoolValue.newBuilder().build())
+            .build();
+    mockAnalyticsAdminService.addResponse(expectedResponse);
+
+    String parent = "parent-995424086";
+    DisplayVideo360AdvertiserLink displayVideo360AdvertiserLink =
+        DisplayVideo360AdvertiserLink.newBuilder().build();
+
+    DisplayVideo360AdvertiserLink actualResponse =
+        client.createDisplayVideo360AdvertiserLink(parent, displayVideo360AdvertiserLink);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockAnalyticsAdminService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    CreateDisplayVideo360AdvertiserLinkRequest actualRequest =
+        ((CreateDisplayVideo360AdvertiserLinkRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertEquals(
+        displayVideo360AdvertiserLink, actualRequest.getDisplayVideo360AdvertiserLink());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void createDisplayVideo360AdvertiserLinkExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockAnalyticsAdminService.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      DisplayVideo360AdvertiserLink displayVideo360AdvertiserLink =
+          DisplayVideo360AdvertiserLink.newBuilder().build();
+      client.createDisplayVideo360AdvertiserLink(parent, displayVideo360AdvertiserLink);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void deleteDisplayVideo360AdvertiserLinkTest() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    mockAnalyticsAdminService.addResponse(expectedResponse);
+
+    DisplayVideo360AdvertiserLinkName name =
+        DisplayVideo360AdvertiserLinkName.of("[PROPERTY]", "[DISPLAY_VIDEO_360_ADVERTISER_LINK]");
+
+    client.deleteDisplayVideo360AdvertiserLink(name);
+
+    List<AbstractMessage> actualRequests = mockAnalyticsAdminService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DeleteDisplayVideo360AdvertiserLinkRequest actualRequest =
+        ((DeleteDisplayVideo360AdvertiserLinkRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void deleteDisplayVideo360AdvertiserLinkExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockAnalyticsAdminService.addException(exception);
+
+    try {
+      DisplayVideo360AdvertiserLinkName name =
+          DisplayVideo360AdvertiserLinkName.of("[PROPERTY]", "[DISPLAY_VIDEO_360_ADVERTISER_LINK]");
+      client.deleteDisplayVideo360AdvertiserLink(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void deleteDisplayVideo360AdvertiserLinkTest2() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    mockAnalyticsAdminService.addResponse(expectedResponse);
+
+    String name = "name3373707";
+
+    client.deleteDisplayVideo360AdvertiserLink(name);
+
+    List<AbstractMessage> actualRequests = mockAnalyticsAdminService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DeleteDisplayVideo360AdvertiserLinkRequest actualRequest =
+        ((DeleteDisplayVideo360AdvertiserLinkRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void deleteDisplayVideo360AdvertiserLinkExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockAnalyticsAdminService.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.deleteDisplayVideo360AdvertiserLink(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void updateDisplayVideo360AdvertiserLinkTest() throws Exception {
+    DisplayVideo360AdvertiserLink expectedResponse =
+        DisplayVideo360AdvertiserLink.newBuilder()
+            .setName(
+                DisplayVideo360AdvertiserLinkName.of(
+                        "[PROPERTY]", "[DISPLAY_VIDEO_360_ADVERTISER_LINK]")
+                    .toString())
+            .setAdvertiserId("advertiserId550061990")
+            .setAdvertiserDisplayName("advertiserDisplayName1594116162")
+            .setAdsPersonalizationEnabled(BoolValue.newBuilder().build())
+            .setCampaignDataSharingEnabled(BoolValue.newBuilder().build())
+            .setCostDataSharingEnabled(BoolValue.newBuilder().build())
+            .build();
+    mockAnalyticsAdminService.addResponse(expectedResponse);
+
+    DisplayVideo360AdvertiserLink displayVideo360AdvertiserLink =
+        DisplayVideo360AdvertiserLink.newBuilder().build();
+    FieldMask updateMask = FieldMask.newBuilder().build();
+
+    DisplayVideo360AdvertiserLink actualResponse =
+        client.updateDisplayVideo360AdvertiserLink(displayVideo360AdvertiserLink, updateMask);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockAnalyticsAdminService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    UpdateDisplayVideo360AdvertiserLinkRequest actualRequest =
+        ((UpdateDisplayVideo360AdvertiserLinkRequest) actualRequests.get(0));
+
+    Assert.assertEquals(
+        displayVideo360AdvertiserLink, actualRequest.getDisplayVideo360AdvertiserLink());
+    Assert.assertEquals(updateMask, actualRequest.getUpdateMask());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void updateDisplayVideo360AdvertiserLinkExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockAnalyticsAdminService.addException(exception);
+
+    try {
+      DisplayVideo360AdvertiserLink displayVideo360AdvertiserLink =
+          DisplayVideo360AdvertiserLink.newBuilder().build();
+      FieldMask updateMask = FieldMask.newBuilder().build();
+      client.updateDisplayVideo360AdvertiserLink(displayVideo360AdvertiserLink, updateMask);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getDisplayVideo360AdvertiserLinkProposalTest() throws Exception {
+    DisplayVideo360AdvertiserLinkProposal expectedResponse =
+        DisplayVideo360AdvertiserLinkProposal.newBuilder()
+            .setName(
+                DisplayVideo360AdvertiserLinkProposalName.of(
+                        "[PROPERTY]", "[DISPLAY_VIDEO_360_ADVERTISER_LINK_PROPOSAL]")
+                    .toString())
+            .setAdvertiserId("advertiserId550061990")
+            .setLinkProposalStatusDetails(LinkProposalStatusDetails.newBuilder().build())
+            .setAdvertiserDisplayName("advertiserDisplayName1594116162")
+            .setValidationEmail("validationEmail-94407005")
+            .setAdsPersonalizationEnabled(BoolValue.newBuilder().build())
+            .setCampaignDataSharingEnabled(BoolValue.newBuilder().build())
+            .setCostDataSharingEnabled(BoolValue.newBuilder().build())
+            .build();
+    mockAnalyticsAdminService.addResponse(expectedResponse);
+
+    DisplayVideo360AdvertiserLinkProposalName name =
+        DisplayVideo360AdvertiserLinkProposalName.of(
+            "[PROPERTY]", "[DISPLAY_VIDEO_360_ADVERTISER_LINK_PROPOSAL]");
+
+    DisplayVideo360AdvertiserLinkProposal actualResponse =
+        client.getDisplayVideo360AdvertiserLinkProposal(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockAnalyticsAdminService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetDisplayVideo360AdvertiserLinkProposalRequest actualRequest =
+        ((GetDisplayVideo360AdvertiserLinkProposalRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getDisplayVideo360AdvertiserLinkProposalExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockAnalyticsAdminService.addException(exception);
+
+    try {
+      DisplayVideo360AdvertiserLinkProposalName name =
+          DisplayVideo360AdvertiserLinkProposalName.of(
+              "[PROPERTY]", "[DISPLAY_VIDEO_360_ADVERTISER_LINK_PROPOSAL]");
+      client.getDisplayVideo360AdvertiserLinkProposal(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getDisplayVideo360AdvertiserLinkProposalTest2() throws Exception {
+    DisplayVideo360AdvertiserLinkProposal expectedResponse =
+        DisplayVideo360AdvertiserLinkProposal.newBuilder()
+            .setName(
+                DisplayVideo360AdvertiserLinkProposalName.of(
+                        "[PROPERTY]", "[DISPLAY_VIDEO_360_ADVERTISER_LINK_PROPOSAL]")
+                    .toString())
+            .setAdvertiserId("advertiserId550061990")
+            .setLinkProposalStatusDetails(LinkProposalStatusDetails.newBuilder().build())
+            .setAdvertiserDisplayName("advertiserDisplayName1594116162")
+            .setValidationEmail("validationEmail-94407005")
+            .setAdsPersonalizationEnabled(BoolValue.newBuilder().build())
+            .setCampaignDataSharingEnabled(BoolValue.newBuilder().build())
+            .setCostDataSharingEnabled(BoolValue.newBuilder().build())
+            .build();
+    mockAnalyticsAdminService.addResponse(expectedResponse);
+
+    String name = "name3373707";
+
+    DisplayVideo360AdvertiserLinkProposal actualResponse =
+        client.getDisplayVideo360AdvertiserLinkProposal(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockAnalyticsAdminService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetDisplayVideo360AdvertiserLinkProposalRequest actualRequest =
+        ((GetDisplayVideo360AdvertiserLinkProposalRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getDisplayVideo360AdvertiserLinkProposalExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockAnalyticsAdminService.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.getDisplayVideo360AdvertiserLinkProposal(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listDisplayVideo360AdvertiserLinkProposalsTest() throws Exception {
+    DisplayVideo360AdvertiserLinkProposal responsesElement =
+        DisplayVideo360AdvertiserLinkProposal.newBuilder().build();
+    ListDisplayVideo360AdvertiserLinkProposalsResponse expectedResponse =
+        ListDisplayVideo360AdvertiserLinkProposalsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllDisplayVideo360AdvertiserLinkProposals(Arrays.asList(responsesElement))
+            .build();
+    mockAnalyticsAdminService.addResponse(expectedResponse);
+
+    PropertyName parent = PropertyName.of("[PROPERTY]");
+
+    ListDisplayVideo360AdvertiserLinkProposalsPagedResponse pagedListResponse =
+        client.listDisplayVideo360AdvertiserLinkProposals(parent);
+
+    List<DisplayVideo360AdvertiserLinkProposal> resources =
+        Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(
+        expectedResponse.getDisplayVideo360AdvertiserLinkProposalsList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockAnalyticsAdminService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListDisplayVideo360AdvertiserLinkProposalsRequest actualRequest =
+        ((ListDisplayVideo360AdvertiserLinkProposalsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listDisplayVideo360AdvertiserLinkProposalsExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockAnalyticsAdminService.addException(exception);
+
+    try {
+      PropertyName parent = PropertyName.of("[PROPERTY]");
+      client.listDisplayVideo360AdvertiserLinkProposals(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listDisplayVideo360AdvertiserLinkProposalsTest2() throws Exception {
+    DisplayVideo360AdvertiserLinkProposal responsesElement =
+        DisplayVideo360AdvertiserLinkProposal.newBuilder().build();
+    ListDisplayVideo360AdvertiserLinkProposalsResponse expectedResponse =
+        ListDisplayVideo360AdvertiserLinkProposalsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllDisplayVideo360AdvertiserLinkProposals(Arrays.asList(responsesElement))
+            .build();
+    mockAnalyticsAdminService.addResponse(expectedResponse);
+
+    String parent = "parent-995424086";
+
+    ListDisplayVideo360AdvertiserLinkProposalsPagedResponse pagedListResponse =
+        client.listDisplayVideo360AdvertiserLinkProposals(parent);
+
+    List<DisplayVideo360AdvertiserLinkProposal> resources =
+        Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(
+        expectedResponse.getDisplayVideo360AdvertiserLinkProposalsList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockAnalyticsAdminService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListDisplayVideo360AdvertiserLinkProposalsRequest actualRequest =
+        ((ListDisplayVideo360AdvertiserLinkProposalsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listDisplayVideo360AdvertiserLinkProposalsExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockAnalyticsAdminService.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      client.listDisplayVideo360AdvertiserLinkProposals(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void createDisplayVideo360AdvertiserLinkProposalTest() throws Exception {
+    DisplayVideo360AdvertiserLinkProposal expectedResponse =
+        DisplayVideo360AdvertiserLinkProposal.newBuilder()
+            .setName(
+                DisplayVideo360AdvertiserLinkProposalName.of(
+                        "[PROPERTY]", "[DISPLAY_VIDEO_360_ADVERTISER_LINK_PROPOSAL]")
+                    .toString())
+            .setAdvertiserId("advertiserId550061990")
+            .setLinkProposalStatusDetails(LinkProposalStatusDetails.newBuilder().build())
+            .setAdvertiserDisplayName("advertiserDisplayName1594116162")
+            .setValidationEmail("validationEmail-94407005")
+            .setAdsPersonalizationEnabled(BoolValue.newBuilder().build())
+            .setCampaignDataSharingEnabled(BoolValue.newBuilder().build())
+            .setCostDataSharingEnabled(BoolValue.newBuilder().build())
+            .build();
+    mockAnalyticsAdminService.addResponse(expectedResponse);
+
+    PropertyName parent = PropertyName.of("[PROPERTY]");
+    DisplayVideo360AdvertiserLinkProposal displayVideo360AdvertiserLinkProposal =
+        DisplayVideo360AdvertiserLinkProposal.newBuilder().build();
+
+    DisplayVideo360AdvertiserLinkProposal actualResponse =
+        client.createDisplayVideo360AdvertiserLinkProposal(
+            parent, displayVideo360AdvertiserLinkProposal);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockAnalyticsAdminService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    CreateDisplayVideo360AdvertiserLinkProposalRequest actualRequest =
+        ((CreateDisplayVideo360AdvertiserLinkProposalRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertEquals(
+        displayVideo360AdvertiserLinkProposal,
+        actualRequest.getDisplayVideo360AdvertiserLinkProposal());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void createDisplayVideo360AdvertiserLinkProposalExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockAnalyticsAdminService.addException(exception);
+
+    try {
+      PropertyName parent = PropertyName.of("[PROPERTY]");
+      DisplayVideo360AdvertiserLinkProposal displayVideo360AdvertiserLinkProposal =
+          DisplayVideo360AdvertiserLinkProposal.newBuilder().build();
+      client.createDisplayVideo360AdvertiserLinkProposal(
+          parent, displayVideo360AdvertiserLinkProposal);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void createDisplayVideo360AdvertiserLinkProposalTest2() throws Exception {
+    DisplayVideo360AdvertiserLinkProposal expectedResponse =
+        DisplayVideo360AdvertiserLinkProposal.newBuilder()
+            .setName(
+                DisplayVideo360AdvertiserLinkProposalName.of(
+                        "[PROPERTY]", "[DISPLAY_VIDEO_360_ADVERTISER_LINK_PROPOSAL]")
+                    .toString())
+            .setAdvertiserId("advertiserId550061990")
+            .setLinkProposalStatusDetails(LinkProposalStatusDetails.newBuilder().build())
+            .setAdvertiserDisplayName("advertiserDisplayName1594116162")
+            .setValidationEmail("validationEmail-94407005")
+            .setAdsPersonalizationEnabled(BoolValue.newBuilder().build())
+            .setCampaignDataSharingEnabled(BoolValue.newBuilder().build())
+            .setCostDataSharingEnabled(BoolValue.newBuilder().build())
+            .build();
+    mockAnalyticsAdminService.addResponse(expectedResponse);
+
+    String parent = "parent-995424086";
+    DisplayVideo360AdvertiserLinkProposal displayVideo360AdvertiserLinkProposal =
+        DisplayVideo360AdvertiserLinkProposal.newBuilder().build();
+
+    DisplayVideo360AdvertiserLinkProposal actualResponse =
+        client.createDisplayVideo360AdvertiserLinkProposal(
+            parent, displayVideo360AdvertiserLinkProposal);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockAnalyticsAdminService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    CreateDisplayVideo360AdvertiserLinkProposalRequest actualRequest =
+        ((CreateDisplayVideo360AdvertiserLinkProposalRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertEquals(
+        displayVideo360AdvertiserLinkProposal,
+        actualRequest.getDisplayVideo360AdvertiserLinkProposal());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void createDisplayVideo360AdvertiserLinkProposalExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockAnalyticsAdminService.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      DisplayVideo360AdvertiserLinkProposal displayVideo360AdvertiserLinkProposal =
+          DisplayVideo360AdvertiserLinkProposal.newBuilder().build();
+      client.createDisplayVideo360AdvertiserLinkProposal(
+          parent, displayVideo360AdvertiserLinkProposal);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void deleteDisplayVideo360AdvertiserLinkProposalTest() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    mockAnalyticsAdminService.addResponse(expectedResponse);
+
+    DisplayVideo360AdvertiserLinkProposalName name =
+        DisplayVideo360AdvertiserLinkProposalName.of(
+            "[PROPERTY]", "[DISPLAY_VIDEO_360_ADVERTISER_LINK_PROPOSAL]");
+
+    client.deleteDisplayVideo360AdvertiserLinkProposal(name);
+
+    List<AbstractMessage> actualRequests = mockAnalyticsAdminService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DeleteDisplayVideo360AdvertiserLinkProposalRequest actualRequest =
+        ((DeleteDisplayVideo360AdvertiserLinkProposalRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void deleteDisplayVideo360AdvertiserLinkProposalExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockAnalyticsAdminService.addException(exception);
+
+    try {
+      DisplayVideo360AdvertiserLinkProposalName name =
+          DisplayVideo360AdvertiserLinkProposalName.of(
+              "[PROPERTY]", "[DISPLAY_VIDEO_360_ADVERTISER_LINK_PROPOSAL]");
+      client.deleteDisplayVideo360AdvertiserLinkProposal(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void deleteDisplayVideo360AdvertiserLinkProposalTest2() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    mockAnalyticsAdminService.addResponse(expectedResponse);
+
+    String name = "name3373707";
+
+    client.deleteDisplayVideo360AdvertiserLinkProposal(name);
+
+    List<AbstractMessage> actualRequests = mockAnalyticsAdminService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DeleteDisplayVideo360AdvertiserLinkProposalRequest actualRequest =
+        ((DeleteDisplayVideo360AdvertiserLinkProposalRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void deleteDisplayVideo360AdvertiserLinkProposalExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockAnalyticsAdminService.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.deleteDisplayVideo360AdvertiserLinkProposal(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void approveDisplayVideo360AdvertiserLinkProposalTest() throws Exception {
+    ApproveDisplayVideo360AdvertiserLinkProposalResponse expectedResponse =
+        ApproveDisplayVideo360AdvertiserLinkProposalResponse.newBuilder()
+            .setDisplayVideo360AdvertiserLink(DisplayVideo360AdvertiserLink.newBuilder().build())
+            .build();
+    mockAnalyticsAdminService.addResponse(expectedResponse);
+
+    ApproveDisplayVideo360AdvertiserLinkProposalRequest request =
+        ApproveDisplayVideo360AdvertiserLinkProposalRequest.newBuilder()
+            .setName(
+                DisplayVideo360AdvertiserLinkProposalName.of(
+                        "[PROPERTY]", "[DISPLAY_VIDEO_360_ADVERTISER_LINK_PROPOSAL]")
+                    .toString())
+            .build();
+
+    ApproveDisplayVideo360AdvertiserLinkProposalResponse actualResponse =
+        client.approveDisplayVideo360AdvertiserLinkProposal(request);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockAnalyticsAdminService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ApproveDisplayVideo360AdvertiserLinkProposalRequest actualRequest =
+        ((ApproveDisplayVideo360AdvertiserLinkProposalRequest) actualRequests.get(0));
+
+    Assert.assertEquals(request.getName(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void approveDisplayVideo360AdvertiserLinkProposalExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockAnalyticsAdminService.addException(exception);
+
+    try {
+      ApproveDisplayVideo360AdvertiserLinkProposalRequest request =
+          ApproveDisplayVideo360AdvertiserLinkProposalRequest.newBuilder()
+              .setName(
+                  DisplayVideo360AdvertiserLinkProposalName.of(
+                          "[PROPERTY]", "[DISPLAY_VIDEO_360_ADVERTISER_LINK_PROPOSAL]")
+                      .toString())
+              .build();
+      client.approveDisplayVideo360AdvertiserLinkProposal(request);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void cancelDisplayVideo360AdvertiserLinkProposalTest() throws Exception {
+    DisplayVideo360AdvertiserLinkProposal expectedResponse =
+        DisplayVideo360AdvertiserLinkProposal.newBuilder()
+            .setName(
+                DisplayVideo360AdvertiserLinkProposalName.of(
+                        "[PROPERTY]", "[DISPLAY_VIDEO_360_ADVERTISER_LINK_PROPOSAL]")
+                    .toString())
+            .setAdvertiserId("advertiserId550061990")
+            .setLinkProposalStatusDetails(LinkProposalStatusDetails.newBuilder().build())
+            .setAdvertiserDisplayName("advertiserDisplayName1594116162")
+            .setValidationEmail("validationEmail-94407005")
+            .setAdsPersonalizationEnabled(BoolValue.newBuilder().build())
+            .setCampaignDataSharingEnabled(BoolValue.newBuilder().build())
+            .setCostDataSharingEnabled(BoolValue.newBuilder().build())
+            .build();
+    mockAnalyticsAdminService.addResponse(expectedResponse);
+
+    CancelDisplayVideo360AdvertiserLinkProposalRequest request =
+        CancelDisplayVideo360AdvertiserLinkProposalRequest.newBuilder()
+            .setName(
+                DisplayVideo360AdvertiserLinkProposalName.of(
+                        "[PROPERTY]", "[DISPLAY_VIDEO_360_ADVERTISER_LINK_PROPOSAL]")
+                    .toString())
+            .build();
+
+    DisplayVideo360AdvertiserLinkProposal actualResponse =
+        client.cancelDisplayVideo360AdvertiserLinkProposal(request);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockAnalyticsAdminService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    CancelDisplayVideo360AdvertiserLinkProposalRequest actualRequest =
+        ((CancelDisplayVideo360AdvertiserLinkProposalRequest) actualRequests.get(0));
+
+    Assert.assertEquals(request.getName(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void cancelDisplayVideo360AdvertiserLinkProposalExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockAnalyticsAdminService.addException(exception);
+
+    try {
+      CancelDisplayVideo360AdvertiserLinkProposalRequest request =
+          CancelDisplayVideo360AdvertiserLinkProposalRequest.newBuilder()
+              .setName(
+                  DisplayVideo360AdvertiserLinkProposalName.of(
+                          "[PROPERTY]", "[DISPLAY_VIDEO_360_ADVERTISER_LINK_PROPOSAL]")
+                      .toString())
+              .build();
+      client.cancelDisplayVideo360AdvertiserLinkProposal(request);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.
@@ -5080,6 +5982,130 @@ public class AnalyticsAdminServiceClientTest {
     try {
       String name = "name3373707";
       client.getCustomMetric(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getDataRetentionSettingsTest() throws Exception {
+    DataRetentionSettings expectedResponse =
+        DataRetentionSettings.newBuilder()
+            .setName(DataRetentionSettingsName.of("[PROPERTY]").toString())
+            .setResetUserDataOnNewActivity(true)
+            .build();
+    mockAnalyticsAdminService.addResponse(expectedResponse);
+
+    DataRetentionSettingsName name = DataRetentionSettingsName.of("[PROPERTY]");
+
+    DataRetentionSettings actualResponse = client.getDataRetentionSettings(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockAnalyticsAdminService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetDataRetentionSettingsRequest actualRequest =
+        ((GetDataRetentionSettingsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getDataRetentionSettingsExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockAnalyticsAdminService.addException(exception);
+
+    try {
+      DataRetentionSettingsName name = DataRetentionSettingsName.of("[PROPERTY]");
+      client.getDataRetentionSettings(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getDataRetentionSettingsTest2() throws Exception {
+    DataRetentionSettings expectedResponse =
+        DataRetentionSettings.newBuilder()
+            .setName(DataRetentionSettingsName.of("[PROPERTY]").toString())
+            .setResetUserDataOnNewActivity(true)
+            .build();
+    mockAnalyticsAdminService.addResponse(expectedResponse);
+
+    String name = "name3373707";
+
+    DataRetentionSettings actualResponse = client.getDataRetentionSettings(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockAnalyticsAdminService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetDataRetentionSettingsRequest actualRequest =
+        ((GetDataRetentionSettingsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getDataRetentionSettingsExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockAnalyticsAdminService.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.getDataRetentionSettings(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void updateDataRetentionSettingsTest() throws Exception {
+    DataRetentionSettings expectedResponse =
+        DataRetentionSettings.newBuilder()
+            .setName(DataRetentionSettingsName.of("[PROPERTY]").toString())
+            .setResetUserDataOnNewActivity(true)
+            .build();
+    mockAnalyticsAdminService.addResponse(expectedResponse);
+
+    DataRetentionSettings dataRetentionSettings = DataRetentionSettings.newBuilder().build();
+    FieldMask updateMask = FieldMask.newBuilder().build();
+
+    DataRetentionSettings actualResponse =
+        client.updateDataRetentionSettings(dataRetentionSettings, updateMask);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockAnalyticsAdminService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    UpdateDataRetentionSettingsRequest actualRequest =
+        ((UpdateDataRetentionSettingsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(dataRetentionSettings, actualRequest.getDataRetentionSettings());
+    Assert.assertEquals(updateMask, actualRequest.getUpdateMask());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void updateDataRetentionSettingsExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockAnalyticsAdminService.addException(exception);
+
+    try {
+      DataRetentionSettings dataRetentionSettings = DataRetentionSettings.newBuilder().build();
+      FieldMask updateMask = FieldMask.newBuilder().build();
+      client.updateDataRetentionSettings(dataRetentionSettings, updateMask);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.

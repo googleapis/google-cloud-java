@@ -158,6 +158,16 @@ public enum ChangeHistoryResourceType implements com.google.protobuf.ProtocolMes
    * <code>CUSTOM_METRIC = 12;</code>
    */
   CUSTOM_METRIC(12),
+  /**
+   *
+   *
+   * <pre>
+   * DataRetentionSettings resource
+   * </pre>
+   *
+   * <code>DATA_RETENTION_SETTINGS = 13;</code>
+   */
+  DATA_RETENTION_SETTINGS(13),
   UNRECOGNIZED(-1),
   ;
 
@@ -291,6 +301,16 @@ public enum ChangeHistoryResourceType implements com.google.protobuf.ProtocolMes
    * <code>CUSTOM_METRIC = 12;</code>
    */
   public static final int CUSTOM_METRIC_VALUE = 12;
+  /**
+   *
+   *
+   * <pre>
+   * DataRetentionSettings resource
+   * </pre>
+   *
+   * <code>DATA_RETENTION_SETTINGS = 13;</code>
+   */
+  public static final int DATA_RETENTION_SETTINGS_VALUE = 13;
 
   public final int getNumber() {
     if (this == UNRECOGNIZED) {
@@ -342,6 +362,8 @@ public enum ChangeHistoryResourceType implements com.google.protobuf.ProtocolMes
         return CUSTOM_DIMENSION;
       case 12:
         return CUSTOM_METRIC;
+      case 13:
+        return DATA_RETENTION_SETTINGS;
       default:
         return null;
     }

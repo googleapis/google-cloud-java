@@ -44,6 +44,7 @@ public final class Property extends com.google.protobuf.GeneratedMessageV3
     industryCategory_ = 0;
     timeZone_ = "";
     currencyCode_ = "";
+    serviceLevel_ = 0;
   }
 
   @java.lang.Override
@@ -145,6 +146,13 @@ public final class Property extends com.google.protobuf.GeneratedMessageV3
               java.lang.String s = input.readStringRequireUtf8();
 
               currencyCode_ = s;
+              break;
+            }
+          case 80:
+            {
+              int rawValue = input.readEnum();
+
+              serviceLevel_ = rawValue;
               break;
             }
           case 90:
@@ -622,6 +630,46 @@ public final class Property extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
+  public static final int SERVICE_LEVEL_FIELD_NUMBER = 10;
+  private int serviceLevel_;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The Google Analytics service level that applies to this property.
+   * </pre>
+   *
+   * <code>
+   * .google.analytics.admin.v1alpha.ServiceLevel service_level = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for serviceLevel.
+   */
+  @java.lang.Override
+  public int getServiceLevelValue() {
+    return serviceLevel_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The Google Analytics service level that applies to this property.
+   * </pre>
+   *
+   * <code>
+   * .google.analytics.admin.v1alpha.ServiceLevel service_level = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The serviceLevel.
+   */
+  @java.lang.Override
+  public com.google.analytics.admin.v1alpha.ServiceLevel getServiceLevel() {
+    @SuppressWarnings("deprecation")
+    com.google.analytics.admin.v1alpha.ServiceLevel result =
+        com.google.analytics.admin.v1alpha.ServiceLevel.valueOf(serviceLevel_);
+    return result == null ? com.google.analytics.admin.v1alpha.ServiceLevel.UNRECOGNIZED : result;
+  }
+
   public static final int DELETE_TIME_FIELD_NUMBER = 11;
   private com.google.protobuf.Timestamp deleteTime_;
   /**
@@ -769,6 +817,10 @@ public final class Property extends com.google.protobuf.GeneratedMessageV3
     if (!getCurrencyCodeBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 8, currencyCode_);
     }
+    if (serviceLevel_
+        != com.google.analytics.admin.v1alpha.ServiceLevel.SERVICE_LEVEL_UNSPECIFIED.getNumber()) {
+      output.writeEnum(10, serviceLevel_);
+    }
     if (deleteTime_ != null) {
       output.writeMessage(11, getDeleteTime());
     }
@@ -810,6 +862,10 @@ public final class Property extends com.google.protobuf.GeneratedMessageV3
     if (!getCurrencyCodeBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, currencyCode_);
     }
+    if (serviceLevel_
+        != com.google.analytics.admin.v1alpha.ServiceLevel.SERVICE_LEVEL_UNSPECIFIED.getNumber()) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(10, serviceLevel_);
+    }
     if (deleteTime_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(11, getDeleteTime());
     }
@@ -846,6 +902,7 @@ public final class Property extends com.google.protobuf.GeneratedMessageV3
     if (industryCategory_ != other.industryCategory_) return false;
     if (!getTimeZone().equals(other.getTimeZone())) return false;
     if (!getCurrencyCode().equals(other.getCurrencyCode())) return false;
+    if (serviceLevel_ != other.serviceLevel_) return false;
     if (hasDeleteTime() != other.hasDeleteTime()) return false;
     if (hasDeleteTime()) {
       if (!getDeleteTime().equals(other.getDeleteTime())) return false;
@@ -885,6 +942,8 @@ public final class Property extends com.google.protobuf.GeneratedMessageV3
     hash = (53 * hash) + getTimeZone().hashCode();
     hash = (37 * hash) + CURRENCY_CODE_FIELD_NUMBER;
     hash = (53 * hash) + getCurrencyCode().hashCode();
+    hash = (37 * hash) + SERVICE_LEVEL_FIELD_NUMBER;
+    hash = (53 * hash) + serviceLevel_;
     if (hasDeleteTime()) {
       hash = (37 * hash) + DELETE_TIME_FIELD_NUMBER;
       hash = (53 * hash) + getDeleteTime().hashCode();
@@ -1062,6 +1121,8 @@ public final class Property extends com.google.protobuf.GeneratedMessageV3
 
       currencyCode_ = "";
 
+      serviceLevel_ = 0;
+
       if (deleteTimeBuilder_ == null) {
         deleteTime_ = null;
       } else {
@@ -1117,6 +1178,7 @@ public final class Property extends com.google.protobuf.GeneratedMessageV3
       result.industryCategory_ = industryCategory_;
       result.timeZone_ = timeZone_;
       result.currencyCode_ = currencyCode_;
+      result.serviceLevel_ = serviceLevel_;
       if (deleteTimeBuilder_ == null) {
         result.deleteTime_ = deleteTime_;
       } else {
@@ -1204,6 +1266,9 @@ public final class Property extends com.google.protobuf.GeneratedMessageV3
       if (!other.getCurrencyCode().isEmpty()) {
         currencyCode_ = other.currencyCode_;
         onChanged();
+      }
+      if (other.serviceLevel_ != 0) {
+        setServiceLevelValue(other.getServiceLevelValue());
       }
       if (other.hasDeleteTime()) {
         mergeDeleteTime(other.getDeleteTime());
@@ -2336,6 +2401,107 @@ public final class Property extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
 
       currencyCode_ = value;
+      onChanged();
+      return this;
+    }
+
+    private int serviceLevel_ = 0;
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The Google Analytics service level that applies to this property.
+     * </pre>
+     *
+     * <code>
+     * .google.analytics.admin.v1alpha.ServiceLevel service_level = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for serviceLevel.
+     */
+    @java.lang.Override
+    public int getServiceLevelValue() {
+      return serviceLevel_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The Google Analytics service level that applies to this property.
+     * </pre>
+     *
+     * <code>
+     * .google.analytics.admin.v1alpha.ServiceLevel service_level = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param value The enum numeric value on the wire for serviceLevel to set.
+     * @return This builder for chaining.
+     */
+    public Builder setServiceLevelValue(int value) {
+
+      serviceLevel_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The Google Analytics service level that applies to this property.
+     * </pre>
+     *
+     * <code>
+     * .google.analytics.admin.v1alpha.ServiceLevel service_level = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The serviceLevel.
+     */
+    @java.lang.Override
+    public com.google.analytics.admin.v1alpha.ServiceLevel getServiceLevel() {
+      @SuppressWarnings("deprecation")
+      com.google.analytics.admin.v1alpha.ServiceLevel result =
+          com.google.analytics.admin.v1alpha.ServiceLevel.valueOf(serviceLevel_);
+      return result == null ? com.google.analytics.admin.v1alpha.ServiceLevel.UNRECOGNIZED : result;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The Google Analytics service level that applies to this property.
+     * </pre>
+     *
+     * <code>
+     * .google.analytics.admin.v1alpha.ServiceLevel service_level = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param value The serviceLevel to set.
+     * @return This builder for chaining.
+     */
+    public Builder setServiceLevel(com.google.analytics.admin.v1alpha.ServiceLevel value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+
+      serviceLevel_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The Google Analytics service level that applies to this property.
+     * </pre>
+     *
+     * <code>
+     * .google.analytics.admin.v1alpha.ServiceLevel service_level = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearServiceLevel() {
+
+      serviceLevel_ = 0;
       onChanged();
       return this;
     }

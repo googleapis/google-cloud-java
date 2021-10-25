@@ -102,7 +102,12 @@ public final class ConversionEvent extends com.google.protobuf.GeneratedMessageV
             }
           case 32:
             {
-              isDeletable_ = input.readBool();
+              deletable_ = input.readBool();
+              break;
+            }
+          case 40:
+            {
+              custom_ = input.readBool();
               break;
             }
           default:
@@ -290,8 +295,8 @@ public final class ConversionEvent extends com.google.protobuf.GeneratedMessageV
     return getCreateTime();
   }
 
-  public static final int IS_DELETABLE_FIELD_NUMBER = 4;
-  private boolean isDeletable_;
+  public static final int DELETABLE_FIELD_NUMBER = 4;
+  private boolean deletable_;
   /**
    *
    *
@@ -299,13 +304,36 @@ public final class ConversionEvent extends com.google.protobuf.GeneratedMessageV
    * Output only. If set, this event can currently be deleted via DeleteConversionEvent.
    * </pre>
    *
-   * <code>bool is_deletable = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>bool deletable = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
-   * @return The isDeletable.
+   * @return The deletable.
    */
   @java.lang.Override
-  public boolean getIsDeletable() {
-    return isDeletable_;
+  public boolean getDeletable() {
+    return deletable_;
+  }
+
+  public static final int CUSTOM_FIELD_NUMBER = 5;
+  private boolean custom_;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. If set to true, this conversion event refers to a custom event.  If set to
+   * false, this conversion event refers to a default event in GA. Default
+   * events typically have special meaning in GA. Default events are usually
+   * created for you by the GA system, but in some cases can be created by
+   * property admins. Custom events count towards the maximum number of
+   * custom conversion events that may be created per property.
+   * </pre>
+   *
+   * <code>bool custom = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The custom.
+   */
+  @java.lang.Override
+  public boolean getCustom() {
+    return custom_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -331,8 +359,11 @@ public final class ConversionEvent extends com.google.protobuf.GeneratedMessageV
     if (createTime_ != null) {
       output.writeMessage(3, getCreateTime());
     }
-    if (isDeletable_ != false) {
-      output.writeBool(4, isDeletable_);
+    if (deletable_ != false) {
+      output.writeBool(4, deletable_);
+    }
+    if (custom_ != false) {
+      output.writeBool(5, custom_);
     }
     unknownFields.writeTo(output);
   }
@@ -352,8 +383,11 @@ public final class ConversionEvent extends com.google.protobuf.GeneratedMessageV
     if (createTime_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(3, getCreateTime());
     }
-    if (isDeletable_ != false) {
-      size += com.google.protobuf.CodedOutputStream.computeBoolSize(4, isDeletable_);
+    if (deletable_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(4, deletable_);
+    }
+    if (custom_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(5, custom_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -377,7 +411,8 @@ public final class ConversionEvent extends com.google.protobuf.GeneratedMessageV
     if (hasCreateTime()) {
       if (!getCreateTime().equals(other.getCreateTime())) return false;
     }
-    if (getIsDeletable() != other.getIsDeletable()) return false;
+    if (getDeletable() != other.getDeletable()) return false;
+    if (getCustom() != other.getCustom()) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -397,8 +432,10 @@ public final class ConversionEvent extends com.google.protobuf.GeneratedMessageV
       hash = (37 * hash) + CREATE_TIME_FIELD_NUMBER;
       hash = (53 * hash) + getCreateTime().hashCode();
     }
-    hash = (37 * hash) + IS_DELETABLE_FIELD_NUMBER;
-    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getIsDeletable());
+    hash = (37 * hash) + DELETABLE_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getDeletable());
+    hash = (37 * hash) + CUSTOM_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getCustom());
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -554,7 +591,9 @@ public final class ConversionEvent extends com.google.protobuf.GeneratedMessageV
         createTime_ = null;
         createTimeBuilder_ = null;
       }
-      isDeletable_ = false;
+      deletable_ = false;
+
+      custom_ = false;
 
       return this;
     }
@@ -590,7 +629,8 @@ public final class ConversionEvent extends com.google.protobuf.GeneratedMessageV
       } else {
         result.createTime_ = createTimeBuilder_.build();
       }
-      result.isDeletable_ = isDeletable_;
+      result.deletable_ = deletable_;
+      result.custom_ = custom_;
       onBuilt();
       return result;
     }
@@ -652,8 +692,11 @@ public final class ConversionEvent extends com.google.protobuf.GeneratedMessageV
       if (other.hasCreateTime()) {
         mergeCreateTime(other.getCreateTime());
       }
-      if (other.getIsDeletable() != false) {
-        setIsDeletable(other.getIsDeletable());
+      if (other.getDeletable() != false) {
+        setDeletable(other.getDeletable());
+      }
+      if (other.getCustom() != false) {
+        setCustom(other.getCustom());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -1108,7 +1151,7 @@ public final class ConversionEvent extends com.google.protobuf.GeneratedMessageV
       return createTimeBuilder_;
     }
 
-    private boolean isDeletable_;
+    private boolean deletable_;
     /**
      *
      *
@@ -1116,13 +1159,13 @@ public final class ConversionEvent extends com.google.protobuf.GeneratedMessageV
      * Output only. If set, this event can currently be deleted via DeleteConversionEvent.
      * </pre>
      *
-     * <code>bool is_deletable = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>bool deletable = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
-     * @return The isDeletable.
+     * @return The deletable.
      */
     @java.lang.Override
-    public boolean getIsDeletable() {
-      return isDeletable_;
+    public boolean getDeletable() {
+      return deletable_;
     }
     /**
      *
@@ -1131,14 +1174,14 @@ public final class ConversionEvent extends com.google.protobuf.GeneratedMessageV
      * Output only. If set, this event can currently be deleted via DeleteConversionEvent.
      * </pre>
      *
-     * <code>bool is_deletable = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>bool deletable = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
-     * @param value The isDeletable to set.
+     * @param value The deletable to set.
      * @return This builder for chaining.
      */
-    public Builder setIsDeletable(boolean value) {
+    public Builder setDeletable(boolean value) {
 
-      isDeletable_ = value;
+      deletable_ = value;
       onChanged();
       return this;
     }
@@ -1149,13 +1192,80 @@ public final class ConversionEvent extends com.google.protobuf.GeneratedMessageV
      * Output only. If set, this event can currently be deleted via DeleteConversionEvent.
      * </pre>
      *
-     * <code>bool is_deletable = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>bool deletable = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @return This builder for chaining.
      */
-    public Builder clearIsDeletable() {
+    public Builder clearDeletable() {
 
-      isDeletable_ = false;
+      deletable_ = false;
+      onChanged();
+      return this;
+    }
+
+    private boolean custom_;
+    /**
+     *
+     *
+     * <pre>
+     * Output only. If set to true, this conversion event refers to a custom event.  If set to
+     * false, this conversion event refers to a default event in GA. Default
+     * events typically have special meaning in GA. Default events are usually
+     * created for you by the GA system, but in some cases can be created by
+     * property admins. Custom events count towards the maximum number of
+     * custom conversion events that may be created per property.
+     * </pre>
+     *
+     * <code>bool custom = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The custom.
+     */
+    @java.lang.Override
+    public boolean getCustom() {
+      return custom_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. If set to true, this conversion event refers to a custom event.  If set to
+     * false, this conversion event refers to a default event in GA. Default
+     * events typically have special meaning in GA. Default events are usually
+     * created for you by the GA system, but in some cases can be created by
+     * property admins. Custom events count towards the maximum number of
+     * custom conversion events that may be created per property.
+     * </pre>
+     *
+     * <code>bool custom = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The custom to set.
+     * @return This builder for chaining.
+     */
+    public Builder setCustom(boolean value) {
+
+      custom_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. If set to true, this conversion event refers to a custom event.  If set to
+     * false, this conversion event refers to a default event in GA. Default
+     * events typically have special meaning in GA. Default events are usually
+     * created for you by the GA system, but in some cases can be created by
+     * property admins. Custom events count towards the maximum number of
+     * custom conversion events that may be created per property.
+     * </pre>
+     *
+     * <code>bool custom = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearCustom() {
+
+      custom_ = false;
       onChanged();
       return this;
     }

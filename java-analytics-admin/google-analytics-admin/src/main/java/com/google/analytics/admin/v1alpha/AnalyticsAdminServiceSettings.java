@@ -23,6 +23,8 @@ import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.Lis
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListConversionEventsPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListCustomDimensionsPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListCustomMetricsPagedResponse;
+import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListDisplayVideo360AdvertiserLinkProposalsPagedResponse;
+import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListDisplayVideo360AdvertiserLinksPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListFirebaseLinksPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListGoogleAdsLinksPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListIosAppDataStreamsPagedResponse;
@@ -311,11 +313,6 @@ public class AnalyticsAdminServiceSettings extends ClientSettings<AnalyticsAdmin
     return ((AnalyticsAdminServiceStubSettings) getStubSettings()).createFirebaseLinkSettings();
   }
 
-  /** Returns the object with the settings used for calls to updateFirebaseLink. */
-  public UnaryCallSettings<UpdateFirebaseLinkRequest, FirebaseLink> updateFirebaseLinkSettings() {
-    return ((AnalyticsAdminServiceStubSettings) getStubSettings()).updateFirebaseLinkSettings();
-  }
-
   /** Returns the object with the settings used for calls to deleteFirebaseLink. */
   public UnaryCallSettings<DeleteFirebaseLinkRequest, Empty> deleteFirebaseLinkSettings() {
     return ((AnalyticsAdminServiceStubSettings) getStubSettings()).deleteFirebaseLinkSettings();
@@ -451,6 +448,114 @@ public class AnalyticsAdminServiceSettings extends ClientSettings<AnalyticsAdmin
     return ((AnalyticsAdminServiceStubSettings) getStubSettings()).listConversionEventsSettings();
   }
 
+  /** Returns the object with the settings used for calls to getDisplayVideo360AdvertiserLink. */
+  public UnaryCallSettings<GetDisplayVideo360AdvertiserLinkRequest, DisplayVideo360AdvertiserLink>
+      getDisplayVideo360AdvertiserLinkSettings() {
+    return ((AnalyticsAdminServiceStubSettings) getStubSettings())
+        .getDisplayVideo360AdvertiserLinkSettings();
+  }
+
+  /** Returns the object with the settings used for calls to listDisplayVideo360AdvertiserLinks. */
+  public PagedCallSettings<
+          ListDisplayVideo360AdvertiserLinksRequest,
+          ListDisplayVideo360AdvertiserLinksResponse,
+          ListDisplayVideo360AdvertiserLinksPagedResponse>
+      listDisplayVideo360AdvertiserLinksSettings() {
+    return ((AnalyticsAdminServiceStubSettings) getStubSettings())
+        .listDisplayVideo360AdvertiserLinksSettings();
+  }
+
+  /** Returns the object with the settings used for calls to createDisplayVideo360AdvertiserLink. */
+  public UnaryCallSettings<
+          CreateDisplayVideo360AdvertiserLinkRequest, DisplayVideo360AdvertiserLink>
+      createDisplayVideo360AdvertiserLinkSettings() {
+    return ((AnalyticsAdminServiceStubSettings) getStubSettings())
+        .createDisplayVideo360AdvertiserLinkSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteDisplayVideo360AdvertiserLink. */
+  public UnaryCallSettings<DeleteDisplayVideo360AdvertiserLinkRequest, Empty>
+      deleteDisplayVideo360AdvertiserLinkSettings() {
+    return ((AnalyticsAdminServiceStubSettings) getStubSettings())
+        .deleteDisplayVideo360AdvertiserLinkSettings();
+  }
+
+  /** Returns the object with the settings used for calls to updateDisplayVideo360AdvertiserLink. */
+  public UnaryCallSettings<
+          UpdateDisplayVideo360AdvertiserLinkRequest, DisplayVideo360AdvertiserLink>
+      updateDisplayVideo360AdvertiserLinkSettings() {
+    return ((AnalyticsAdminServiceStubSettings) getStubSettings())
+        .updateDisplayVideo360AdvertiserLinkSettings();
+  }
+
+  /**
+   * Returns the object with the settings used for calls to
+   * getDisplayVideo360AdvertiserLinkProposal.
+   */
+  public UnaryCallSettings<
+          GetDisplayVideo360AdvertiserLinkProposalRequest, DisplayVideo360AdvertiserLinkProposal>
+      getDisplayVideo360AdvertiserLinkProposalSettings() {
+    return ((AnalyticsAdminServiceStubSettings) getStubSettings())
+        .getDisplayVideo360AdvertiserLinkProposalSettings();
+  }
+
+  /**
+   * Returns the object with the settings used for calls to
+   * listDisplayVideo360AdvertiserLinkProposals.
+   */
+  public PagedCallSettings<
+          ListDisplayVideo360AdvertiserLinkProposalsRequest,
+          ListDisplayVideo360AdvertiserLinkProposalsResponse,
+          ListDisplayVideo360AdvertiserLinkProposalsPagedResponse>
+      listDisplayVideo360AdvertiserLinkProposalsSettings() {
+    return ((AnalyticsAdminServiceStubSettings) getStubSettings())
+        .listDisplayVideo360AdvertiserLinkProposalsSettings();
+  }
+
+  /**
+   * Returns the object with the settings used for calls to
+   * createDisplayVideo360AdvertiserLinkProposal.
+   */
+  public UnaryCallSettings<
+          CreateDisplayVideo360AdvertiserLinkProposalRequest, DisplayVideo360AdvertiserLinkProposal>
+      createDisplayVideo360AdvertiserLinkProposalSettings() {
+    return ((AnalyticsAdminServiceStubSettings) getStubSettings())
+        .createDisplayVideo360AdvertiserLinkProposalSettings();
+  }
+
+  /**
+   * Returns the object with the settings used for calls to
+   * deleteDisplayVideo360AdvertiserLinkProposal.
+   */
+  public UnaryCallSettings<DeleteDisplayVideo360AdvertiserLinkProposalRequest, Empty>
+      deleteDisplayVideo360AdvertiserLinkProposalSettings() {
+    return ((AnalyticsAdminServiceStubSettings) getStubSettings())
+        .deleteDisplayVideo360AdvertiserLinkProposalSettings();
+  }
+
+  /**
+   * Returns the object with the settings used for calls to
+   * approveDisplayVideo360AdvertiserLinkProposal.
+   */
+  public UnaryCallSettings<
+          ApproveDisplayVideo360AdvertiserLinkProposalRequest,
+          ApproveDisplayVideo360AdvertiserLinkProposalResponse>
+      approveDisplayVideo360AdvertiserLinkProposalSettings() {
+    return ((AnalyticsAdminServiceStubSettings) getStubSettings())
+        .approveDisplayVideo360AdvertiserLinkProposalSettings();
+  }
+
+  /**
+   * Returns the object with the settings used for calls to
+   * cancelDisplayVideo360AdvertiserLinkProposal.
+   */
+  public UnaryCallSettings<
+          CancelDisplayVideo360AdvertiserLinkProposalRequest, DisplayVideo360AdvertiserLinkProposal>
+      cancelDisplayVideo360AdvertiserLinkProposalSettings() {
+    return ((AnalyticsAdminServiceStubSettings) getStubSettings())
+        .cancelDisplayVideo360AdvertiserLinkProposalSettings();
+  }
+
   /** Returns the object with the settings used for calls to createCustomDimension. */
   public UnaryCallSettings<CreateCustomDimensionRequest, CustomDimension>
       createCustomDimensionSettings() {
@@ -508,6 +613,20 @@ public class AnalyticsAdminServiceSettings extends ClientSettings<AnalyticsAdmin
   /** Returns the object with the settings used for calls to getCustomMetric. */
   public UnaryCallSettings<GetCustomMetricRequest, CustomMetric> getCustomMetricSettings() {
     return ((AnalyticsAdminServiceStubSettings) getStubSettings()).getCustomMetricSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getDataRetentionSettings. */
+  public UnaryCallSettings<GetDataRetentionSettingsRequest, DataRetentionSettings>
+      getDataRetentionSettingsSettings() {
+    return ((AnalyticsAdminServiceStubSettings) getStubSettings())
+        .getDataRetentionSettingsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to updateDataRetentionSettings. */
+  public UnaryCallSettings<UpdateDataRetentionSettingsRequest, DataRetentionSettings>
+      updateDataRetentionSettingsSettings() {
+    return ((AnalyticsAdminServiceStubSettings) getStubSettings())
+        .updateDataRetentionSettingsSettings();
   }
 
   public static final AnalyticsAdminServiceSettings create(AnalyticsAdminServiceStubSettings stub)
@@ -835,12 +954,6 @@ public class AnalyticsAdminServiceSettings extends ClientSettings<AnalyticsAdmin
       return getStubSettingsBuilder().createFirebaseLinkSettings();
     }
 
-    /** Returns the builder for the settings used for calls to updateFirebaseLink. */
-    public UnaryCallSettings.Builder<UpdateFirebaseLinkRequest, FirebaseLink>
-        updateFirebaseLinkSettings() {
-      return getStubSettingsBuilder().updateFirebaseLinkSettings();
-    }
-
     /** Returns the builder for the settings used for calls to deleteFirebaseLink. */
     public UnaryCallSettings.Builder<DeleteFirebaseLinkRequest, Empty>
         deleteFirebaseLinkSettings() {
@@ -974,6 +1087,114 @@ public class AnalyticsAdminServiceSettings extends ClientSettings<AnalyticsAdmin
       return getStubSettingsBuilder().listConversionEventsSettings();
     }
 
+    /** Returns the builder for the settings used for calls to getDisplayVideo360AdvertiserLink. */
+    public UnaryCallSettings.Builder<
+            GetDisplayVideo360AdvertiserLinkRequest, DisplayVideo360AdvertiserLink>
+        getDisplayVideo360AdvertiserLinkSettings() {
+      return getStubSettingsBuilder().getDisplayVideo360AdvertiserLinkSettings();
+    }
+
+    /**
+     * Returns the builder for the settings used for calls to listDisplayVideo360AdvertiserLinks.
+     */
+    public PagedCallSettings.Builder<
+            ListDisplayVideo360AdvertiserLinksRequest,
+            ListDisplayVideo360AdvertiserLinksResponse,
+            ListDisplayVideo360AdvertiserLinksPagedResponse>
+        listDisplayVideo360AdvertiserLinksSettings() {
+      return getStubSettingsBuilder().listDisplayVideo360AdvertiserLinksSettings();
+    }
+
+    /**
+     * Returns the builder for the settings used for calls to createDisplayVideo360AdvertiserLink.
+     */
+    public UnaryCallSettings.Builder<
+            CreateDisplayVideo360AdvertiserLinkRequest, DisplayVideo360AdvertiserLink>
+        createDisplayVideo360AdvertiserLinkSettings() {
+      return getStubSettingsBuilder().createDisplayVideo360AdvertiserLinkSettings();
+    }
+
+    /**
+     * Returns the builder for the settings used for calls to deleteDisplayVideo360AdvertiserLink.
+     */
+    public UnaryCallSettings.Builder<DeleteDisplayVideo360AdvertiserLinkRequest, Empty>
+        deleteDisplayVideo360AdvertiserLinkSettings() {
+      return getStubSettingsBuilder().deleteDisplayVideo360AdvertiserLinkSettings();
+    }
+
+    /**
+     * Returns the builder for the settings used for calls to updateDisplayVideo360AdvertiserLink.
+     */
+    public UnaryCallSettings.Builder<
+            UpdateDisplayVideo360AdvertiserLinkRequest, DisplayVideo360AdvertiserLink>
+        updateDisplayVideo360AdvertiserLinkSettings() {
+      return getStubSettingsBuilder().updateDisplayVideo360AdvertiserLinkSettings();
+    }
+
+    /**
+     * Returns the builder for the settings used for calls to
+     * getDisplayVideo360AdvertiserLinkProposal.
+     */
+    public UnaryCallSettings.Builder<
+            GetDisplayVideo360AdvertiserLinkProposalRequest, DisplayVideo360AdvertiserLinkProposal>
+        getDisplayVideo360AdvertiserLinkProposalSettings() {
+      return getStubSettingsBuilder().getDisplayVideo360AdvertiserLinkProposalSettings();
+    }
+
+    /**
+     * Returns the builder for the settings used for calls to
+     * listDisplayVideo360AdvertiserLinkProposals.
+     */
+    public PagedCallSettings.Builder<
+            ListDisplayVideo360AdvertiserLinkProposalsRequest,
+            ListDisplayVideo360AdvertiserLinkProposalsResponse,
+            ListDisplayVideo360AdvertiserLinkProposalsPagedResponse>
+        listDisplayVideo360AdvertiserLinkProposalsSettings() {
+      return getStubSettingsBuilder().listDisplayVideo360AdvertiserLinkProposalsSettings();
+    }
+
+    /**
+     * Returns the builder for the settings used for calls to
+     * createDisplayVideo360AdvertiserLinkProposal.
+     */
+    public UnaryCallSettings.Builder<
+            CreateDisplayVideo360AdvertiserLinkProposalRequest,
+            DisplayVideo360AdvertiserLinkProposal>
+        createDisplayVideo360AdvertiserLinkProposalSettings() {
+      return getStubSettingsBuilder().createDisplayVideo360AdvertiserLinkProposalSettings();
+    }
+
+    /**
+     * Returns the builder for the settings used for calls to
+     * deleteDisplayVideo360AdvertiserLinkProposal.
+     */
+    public UnaryCallSettings.Builder<DeleteDisplayVideo360AdvertiserLinkProposalRequest, Empty>
+        deleteDisplayVideo360AdvertiserLinkProposalSettings() {
+      return getStubSettingsBuilder().deleteDisplayVideo360AdvertiserLinkProposalSettings();
+    }
+
+    /**
+     * Returns the builder for the settings used for calls to
+     * approveDisplayVideo360AdvertiserLinkProposal.
+     */
+    public UnaryCallSettings.Builder<
+            ApproveDisplayVideo360AdvertiserLinkProposalRequest,
+            ApproveDisplayVideo360AdvertiserLinkProposalResponse>
+        approveDisplayVideo360AdvertiserLinkProposalSettings() {
+      return getStubSettingsBuilder().approveDisplayVideo360AdvertiserLinkProposalSettings();
+    }
+
+    /**
+     * Returns the builder for the settings used for calls to
+     * cancelDisplayVideo360AdvertiserLinkProposal.
+     */
+    public UnaryCallSettings.Builder<
+            CancelDisplayVideo360AdvertiserLinkProposalRequest,
+            DisplayVideo360AdvertiserLinkProposal>
+        cancelDisplayVideo360AdvertiserLinkProposalSettings() {
+      return getStubSettingsBuilder().cancelDisplayVideo360AdvertiserLinkProposalSettings();
+    }
+
     /** Returns the builder for the settings used for calls to createCustomDimension. */
     public UnaryCallSettings.Builder<CreateCustomDimensionRequest, CustomDimension>
         createCustomDimensionSettings() {
@@ -1036,6 +1257,18 @@ public class AnalyticsAdminServiceSettings extends ClientSettings<AnalyticsAdmin
     public UnaryCallSettings.Builder<GetCustomMetricRequest, CustomMetric>
         getCustomMetricSettings() {
       return getStubSettingsBuilder().getCustomMetricSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getDataRetentionSettings. */
+    public UnaryCallSettings.Builder<GetDataRetentionSettingsRequest, DataRetentionSettings>
+        getDataRetentionSettingsSettings() {
+      return getStubSettingsBuilder().getDataRetentionSettingsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updateDataRetentionSettings. */
+    public UnaryCallSettings.Builder<UpdateDataRetentionSettingsRequest, DataRetentionSettings>
+        updateDataRetentionSettingsSettings() {
+      return getStubSettingsBuilder().updateDataRetentionSettingsSettings();
     }
 
     @Override

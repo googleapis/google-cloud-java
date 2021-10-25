@@ -845,27 +845,6 @@ public class MockAnalyticsAdminServiceImpl extends AnalyticsAdminServiceImplBase
   }
 
   @Override
-  public void updateFirebaseLink(
-      UpdateFirebaseLinkRequest request, StreamObserver<FirebaseLink> responseObserver) {
-    Object response = responses.poll();
-    if (response instanceof FirebaseLink) {
-      requests.add(request);
-      responseObserver.onNext(((FirebaseLink) response));
-      responseObserver.onCompleted();
-    } else if (response instanceof Exception) {
-      responseObserver.onError(((Exception) response));
-    } else {
-      responseObserver.onError(
-          new IllegalArgumentException(
-              String.format(
-                  "Unrecognized response type %s for method UpdateFirebaseLink, expected %s or %s",
-                  response == null ? "null" : response.getClass().getName(),
-                  FirebaseLink.class.getName(),
-                  Exception.class.getName())));
-    }
-  }
-
-  @Override
   public void deleteFirebaseLink(
       DeleteFirebaseLinkRequest request, StreamObserver<Empty> responseObserver) {
     Object response = responses.poll();
@@ -1296,6 +1275,247 @@ public class MockAnalyticsAdminServiceImpl extends AnalyticsAdminServiceImplBase
   }
 
   @Override
+  public void getDisplayVideo360AdvertiserLink(
+      GetDisplayVideo360AdvertiserLinkRequest request,
+      StreamObserver<DisplayVideo360AdvertiserLink> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof DisplayVideo360AdvertiserLink) {
+      requests.add(request);
+      responseObserver.onNext(((DisplayVideo360AdvertiserLink) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetDisplayVideo360AdvertiserLink, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  DisplayVideo360AdvertiserLink.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void listDisplayVideo360AdvertiserLinks(
+      ListDisplayVideo360AdvertiserLinksRequest request,
+      StreamObserver<ListDisplayVideo360AdvertiserLinksResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof ListDisplayVideo360AdvertiserLinksResponse) {
+      requests.add(request);
+      responseObserver.onNext(((ListDisplayVideo360AdvertiserLinksResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListDisplayVideo360AdvertiserLinks, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  ListDisplayVideo360AdvertiserLinksResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void createDisplayVideo360AdvertiserLink(
+      CreateDisplayVideo360AdvertiserLinkRequest request,
+      StreamObserver<DisplayVideo360AdvertiserLink> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof DisplayVideo360AdvertiserLink) {
+      requests.add(request);
+      responseObserver.onNext(((DisplayVideo360AdvertiserLink) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method CreateDisplayVideo360AdvertiserLink, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  DisplayVideo360AdvertiserLink.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void deleteDisplayVideo360AdvertiserLink(
+      DeleteDisplayVideo360AdvertiserLinkRequest request, StreamObserver<Empty> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Empty) {
+      requests.add(request);
+      responseObserver.onNext(((Empty) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method DeleteDisplayVideo360AdvertiserLink, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Empty.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void updateDisplayVideo360AdvertiserLink(
+      UpdateDisplayVideo360AdvertiserLinkRequest request,
+      StreamObserver<DisplayVideo360AdvertiserLink> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof DisplayVideo360AdvertiserLink) {
+      requests.add(request);
+      responseObserver.onNext(((DisplayVideo360AdvertiserLink) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method UpdateDisplayVideo360AdvertiserLink, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  DisplayVideo360AdvertiserLink.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void getDisplayVideo360AdvertiserLinkProposal(
+      GetDisplayVideo360AdvertiserLinkProposalRequest request,
+      StreamObserver<DisplayVideo360AdvertiserLinkProposal> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof DisplayVideo360AdvertiserLinkProposal) {
+      requests.add(request);
+      responseObserver.onNext(((DisplayVideo360AdvertiserLinkProposal) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetDisplayVideo360AdvertiserLinkProposal, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  DisplayVideo360AdvertiserLinkProposal.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void listDisplayVideo360AdvertiserLinkProposals(
+      ListDisplayVideo360AdvertiserLinkProposalsRequest request,
+      StreamObserver<ListDisplayVideo360AdvertiserLinkProposalsResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof ListDisplayVideo360AdvertiserLinkProposalsResponse) {
+      requests.add(request);
+      responseObserver.onNext(((ListDisplayVideo360AdvertiserLinkProposalsResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListDisplayVideo360AdvertiserLinkProposals, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  ListDisplayVideo360AdvertiserLinkProposalsResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void createDisplayVideo360AdvertiserLinkProposal(
+      CreateDisplayVideo360AdvertiserLinkProposalRequest request,
+      StreamObserver<DisplayVideo360AdvertiserLinkProposal> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof DisplayVideo360AdvertiserLinkProposal) {
+      requests.add(request);
+      responseObserver.onNext(((DisplayVideo360AdvertiserLinkProposal) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method CreateDisplayVideo360AdvertiserLinkProposal, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  DisplayVideo360AdvertiserLinkProposal.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void deleteDisplayVideo360AdvertiserLinkProposal(
+      DeleteDisplayVideo360AdvertiserLinkProposalRequest request,
+      StreamObserver<Empty> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Empty) {
+      requests.add(request);
+      responseObserver.onNext(((Empty) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method DeleteDisplayVideo360AdvertiserLinkProposal, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Empty.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void approveDisplayVideo360AdvertiserLinkProposal(
+      ApproveDisplayVideo360AdvertiserLinkProposalRequest request,
+      StreamObserver<ApproveDisplayVideo360AdvertiserLinkProposalResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof ApproveDisplayVideo360AdvertiserLinkProposalResponse) {
+      requests.add(request);
+      responseObserver.onNext(((ApproveDisplayVideo360AdvertiserLinkProposalResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ApproveDisplayVideo360AdvertiserLinkProposal, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  ApproveDisplayVideo360AdvertiserLinkProposalResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void cancelDisplayVideo360AdvertiserLinkProposal(
+      CancelDisplayVideo360AdvertiserLinkProposalRequest request,
+      StreamObserver<DisplayVideo360AdvertiserLinkProposal> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof DisplayVideo360AdvertiserLinkProposal) {
+      requests.add(request);
+      responseObserver.onNext(((DisplayVideo360AdvertiserLinkProposal) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method CancelDisplayVideo360AdvertiserLinkProposal, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  DisplayVideo360AdvertiserLinkProposal.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
   public void createCustomDimension(
       CreateCustomDimensionRequest request, StreamObserver<CustomDimension> responseObserver) {
     Object response = responses.poll();
@@ -1503,6 +1723,50 @@ public class MockAnalyticsAdminServiceImpl extends AnalyticsAdminServiceImplBase
                   "Unrecognized response type %s for method GetCustomMetric, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   CustomMetric.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void getDataRetentionSettings(
+      GetDataRetentionSettingsRequest request,
+      StreamObserver<DataRetentionSettings> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof DataRetentionSettings) {
+      requests.add(request);
+      responseObserver.onNext(((DataRetentionSettings) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetDataRetentionSettings, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  DataRetentionSettings.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void updateDataRetentionSettings(
+      UpdateDataRetentionSettingsRequest request,
+      StreamObserver<DataRetentionSettings> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof DataRetentionSettings) {
+      requests.add(request);
+      responseObserver.onNext(((DataRetentionSettings) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method UpdateDataRetentionSettings, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  DataRetentionSettings.class.getName(),
                   Exception.class.getName())));
     }
   }

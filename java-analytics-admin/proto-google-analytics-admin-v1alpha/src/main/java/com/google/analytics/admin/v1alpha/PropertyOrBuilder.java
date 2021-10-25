@@ -283,6 +283,35 @@ public interface PropertyOrBuilder
    *
    *
    * <pre>
+   * Output only. The Google Analytics service level that applies to this property.
+   * </pre>
+   *
+   * <code>
+   * .google.analytics.admin.v1alpha.ServiceLevel service_level = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for serviceLevel.
+   */
+  int getServiceLevelValue();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The Google Analytics service level that applies to this property.
+   * </pre>
+   *
+   * <code>
+   * .google.analytics.admin.v1alpha.ServiceLevel service_level = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The serviceLevel.
+   */
+  com.google.analytics.admin.v1alpha.ServiceLevel getServiceLevel();
+
+  /**
+   *
+   *
+   * <pre>
    * Output only. If set, the time at which this property was trashed. If not set, then this
    * property is not currently in the trash can.
    * </pre>

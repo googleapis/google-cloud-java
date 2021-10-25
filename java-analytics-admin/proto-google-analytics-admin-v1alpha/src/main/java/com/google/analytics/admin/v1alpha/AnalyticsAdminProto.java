@@ -216,10 +216,6 @@ public final class AnalyticsAdminProto {
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_analytics_admin_v1alpha_CreateFirebaseLinkRequest_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
-      internal_static_google_analytics_admin_v1alpha_UpdateFirebaseLinkRequest_descriptor;
-  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_google_analytics_admin_v1alpha_UpdateFirebaseLinkRequest_fieldAccessorTable;
-  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_analytics_admin_v1alpha_DeleteFirebaseLinkRequest_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_analytics_admin_v1alpha_DeleteFirebaseLinkRequest_fieldAccessorTable;
@@ -328,6 +324,62 @@ public final class AnalyticsAdminProto {
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_analytics_admin_v1alpha_ListConversionEventsResponse_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_analytics_admin_v1alpha_GetDisplayVideo360AdvertiserLinkRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_analytics_admin_v1alpha_GetDisplayVideo360AdvertiserLinkRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_analytics_admin_v1alpha_ListDisplayVideo360AdvertiserLinksRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_analytics_admin_v1alpha_ListDisplayVideo360AdvertiserLinksRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_analytics_admin_v1alpha_ListDisplayVideo360AdvertiserLinksResponse_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_analytics_admin_v1alpha_ListDisplayVideo360AdvertiserLinksResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_analytics_admin_v1alpha_CreateDisplayVideo360AdvertiserLinkRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_analytics_admin_v1alpha_CreateDisplayVideo360AdvertiserLinkRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_analytics_admin_v1alpha_DeleteDisplayVideo360AdvertiserLinkRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_analytics_admin_v1alpha_DeleteDisplayVideo360AdvertiserLinkRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_analytics_admin_v1alpha_UpdateDisplayVideo360AdvertiserLinkRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_analytics_admin_v1alpha_UpdateDisplayVideo360AdvertiserLinkRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_analytics_admin_v1alpha_GetDisplayVideo360AdvertiserLinkProposalRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_analytics_admin_v1alpha_GetDisplayVideo360AdvertiserLinkProposalRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_analytics_admin_v1alpha_ListDisplayVideo360AdvertiserLinkProposalsRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_analytics_admin_v1alpha_ListDisplayVideo360AdvertiserLinkProposalsRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_analytics_admin_v1alpha_ListDisplayVideo360AdvertiserLinkProposalsResponse_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_analytics_admin_v1alpha_ListDisplayVideo360AdvertiserLinkProposalsResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_analytics_admin_v1alpha_CreateDisplayVideo360AdvertiserLinkProposalRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_analytics_admin_v1alpha_CreateDisplayVideo360AdvertiserLinkProposalRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_analytics_admin_v1alpha_DeleteDisplayVideo360AdvertiserLinkProposalRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_analytics_admin_v1alpha_DeleteDisplayVideo360AdvertiserLinkProposalRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_analytics_admin_v1alpha_ApproveDisplayVideo360AdvertiserLinkProposalRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_analytics_admin_v1alpha_ApproveDisplayVideo360AdvertiserLinkProposalRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_analytics_admin_v1alpha_ApproveDisplayVideo360AdvertiserLinkProposalResponse_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_analytics_admin_v1alpha_ApproveDisplayVideo360AdvertiserLinkProposalResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_analytics_admin_v1alpha_CancelDisplayVideo360AdvertiserLinkProposalRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_analytics_admin_v1alpha_CancelDisplayVideo360AdvertiserLinkProposalRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_analytics_admin_v1alpha_CreateCustomDimensionRequest_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_analytics_admin_v1alpha_CreateCustomDimensionRequest_fieldAccessorTable;
@@ -375,6 +427,14 @@ public final class AnalyticsAdminProto {
       internal_static_google_analytics_admin_v1alpha_GetCustomMetricRequest_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_analytics_admin_v1alpha_GetCustomMetricRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_analytics_admin_v1alpha_GetDataRetentionSettingsRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_analytics_admin_v1alpha_GetDataRetentionSettingsRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_analytics_admin_v1alpha_UpdateDataRetentionSettingsRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_analytics_admin_v1alpha_UpdateDataRetentionSettingsRequest_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
     return descriptor;
@@ -539,561 +599,715 @@ public final class AnalyticsAdminProto {
           + "est\022B\n\006parent\030\001 \001(\tB2\340A\002\372A,\022*analyticsad"
           + "min.googleapis.com/FirebaseLink\022H\n\rfireb"
           + "ase_link\030\002 \001(\0132,.google.analytics.admin."
-          + "v1alpha.FirebaseLinkB\003\340A\002\"\233\001\n\031UpdateFire"
-          + "baseLinkRequest\022H\n\rfirebase_link\030\001 \001(\0132,"
-          + ".google.analytics.admin.v1alpha.Firebase"
-          + "LinkB\003\340A\002\0224\n\013update_mask\030\002 \001(\0132\032.google."
-          + "protobuf.FieldMaskB\003\340A\002\"]\n\031DeleteFirebas"
-          + "eLinkRequest\022@\n\004name\030\001 \001(\tB2\340A\002\372A,\n*anal"
-          + "yticsadmin.googleapis.com/FirebaseLink\"\205"
-          + "\001\n\030ListFirebaseLinksRequest\022B\n\006parent\030\001 "
-          + "\001(\tB2\340A\002\372A,\022*analyticsadmin.googleapis.c"
-          + "om/FirebaseLink\022\021\n\tpage_size\030\002 \001(\005\022\022\n\npa"
-          + "ge_token\030\003 \001(\t\"z\n\031ListFirebaseLinksRespo"
-          + "nse\022D\n\016firebase_links\030\001 \003(\0132,.google.ana"
-          + "lytics.admin.v1alpha.FirebaseLink\022\027\n\017nex"
-          + "t_page_token\030\002 \001(\t\"\\\n\027GetGlobalSiteTagRe"
-          + "quest\022A\n\004name\030\001 \001(\tB3\340A\002\372A-\n+analyticsad"
-          + "min.googleapis.com/GlobalSiteTag\"\256\001\n\032Cre"
-          + "ateGoogleAdsLinkRequest\022C\n\006parent\030\001 \001(\tB"
-          + "3\340A\002\372A-\022+analyticsadmin.googleapis.com/G"
-          + "oogleAdsLink\022K\n\017google_ads_link\030\002 \001(\0132-."
-          + "google.analytics.admin.v1alpha.GoogleAds"
-          + "LinkB\003\340A\002\"\232\001\n\032UpdateGoogleAdsLinkRequest"
-          + "\022F\n\017google_ads_link\030\001 \001(\0132-.google.analy"
-          + "tics.admin.v1alpha.GoogleAdsLink\0224\n\013upda"
+          + "v1alpha.FirebaseLinkB\003\340A\002\"]\n\031DeleteFireb"
+          + "aseLinkRequest\022@\n\004name\030\001 \001(\tB2\340A\002\372A,\n*an"
+          + "alyticsadmin.googleapis.com/FirebaseLink"
+          + "\"\205\001\n\030ListFirebaseLinksRequest\022B\n\006parent\030"
+          + "\001 \001(\tB2\340A\002\372A,\022*analyticsadmin.googleapis"
+          + ".com/FirebaseLink\022\021\n\tpage_size\030\002 \001(\005\022\022\n\n"
+          + "page_token\030\003 \001(\t\"z\n\031ListFirebaseLinksRes"
+          + "ponse\022D\n\016firebase_links\030\001 \003(\0132,.google.a"
+          + "nalytics.admin.v1alpha.FirebaseLink\022\027\n\017n"
+          + "ext_page_token\030\002 \001(\t\"\\\n\027GetGlobalSiteTag"
+          + "Request\022A\n\004name\030\001 \001(\tB3\340A\002\372A-\n+analytics"
+          + "admin.googleapis.com/GlobalSiteTag\"\256\001\n\032C"
+          + "reateGoogleAdsLinkRequest\022C\n\006parent\030\001 \001("
+          + "\tB3\340A\002\372A-\022+analyticsadmin.googleapis.com"
+          + "/GoogleAdsLink\022K\n\017google_ads_link\030\002 \001(\0132"
+          + "-.google.analytics.admin.v1alpha.GoogleA"
+          + "dsLinkB\003\340A\002\"\232\001\n\032UpdateGoogleAdsLinkReque"
+          + "st\022F\n\017google_ads_link\030\001 \001(\0132-.google.ana"
+          + "lytics.admin.v1alpha.GoogleAdsLink\0224\n\013up"
+          + "date_mask\030\002 \001(\0132\032.google.protobuf.FieldM"
+          + "askB\003\340A\002\"_\n\032DeleteGoogleAdsLinkRequest\022A"
+          + "\n\004name\030\001 \001(\tB3\340A\002\372A-\n+analyticsadmin.goo"
+          + "gleapis.com/GoogleAdsLink\"\207\001\n\031ListGoogle"
+          + "AdsLinksRequest\022C\n\006parent\030\001 \001(\tB3\340A\002\372A-\022"
+          + "+analyticsadmin.googleapis.com/GoogleAds"
+          + "Link\022\021\n\tpage_size\030\002 \001(\005\022\022\n\npage_token\030\003 "
+          + "\001(\t\"~\n\032ListGoogleAdsLinksResponse\022G\n\020goo"
+          + "gle_ads_links\030\001 \003(\0132-.google.analytics.a"
+          + "dmin.v1alpha.GoogleAdsLink\022\027\n\017next_page_"
+          + "token\030\002 \001(\t\"h\n\035GetDataSharingSettingsReq"
+          + "uest\022G\n\004name\030\001 \001(\tB9\340A\002\372A3\n1analyticsadm"
+          + "in.googleapis.com/DataSharingSettings\"D\n"
+          + "\033ListAccountSummariesRequest\022\021\n\tpage_siz"
+          + "e\030\001 \001(\005\022\022\n\npage_token\030\002 \001(\t\"\202\001\n\034ListAcco"
+          + "untSummariesResponse\022I\n\021account_summarie"
+          + "s\030\001 \003(\0132..google.analytics.admin.v1alpha"
+          + ".AccountSummary\022\027\n\017next_page_token\030\002 \001(\t"
+          + "\"\203\004\n SearchChangeHistoryEventsRequest\022>\n"
+          + "\007account\030\001 \001(\tB-\340A\002\372A\'\n%analyticsadmin.g"
+          + "oogleapis.com/Account\022@\n\010property\030\002 \001(\tB"
+          + ".\340A\001\372A(\n&analyticsadmin.googleapis.com/P"
+          + "roperty\022U\n\rresource_type\030\003 \003(\01629.google."
+          + "analytics.admin.v1alpha.ChangeHistoryRes"
+          + "ourceTypeB\003\340A\001\022?\n\006action\030\004 \003(\0162*.google."
+          + "analytics.admin.v1alpha.ActionTypeB\003\340A\001\022"
+          + "\030\n\013actor_email\030\005 \003(\tB\003\340A\001\022=\n\024earliest_ch"
+          + "ange_time\030\006 \001(\0132\032.google.protobuf.Timest"
+          + "ampB\003\340A\001\022;\n\022latest_change_time\030\007 \001(\0132\032.g"
+          + "oogle.protobuf.TimestampB\003\340A\001\022\026\n\tpage_si"
+          + "ze\030\010 \001(\005B\003\340A\001\022\027\n\npage_token\030\t \001(\tB\003\340A\001\"\217"
+          + "\001\n!SearchChangeHistoryEventsResponse\022Q\n\025"
+          + "change_history_events\030\001 \003(\01322.google.ana"
+          + "lytics.admin.v1alpha.ChangeHistoryEvent\022"
+          + "\027\n\017next_page_token\030\002 \001(\t\"t\n#GetMeasureme"
+          + "ntProtocolSecretRequest\022M\n\004name\030\001 \001(\tB?\340"
+          + "A\002\372A9\n7analyticsadmin.googleapis.com/Mea"
+          + "surementProtocolSecret\"\336\001\n&CreateMeasure"
+          + "mentProtocolSecretRequest\022O\n\006parent\030\001 \001("
+          + "\tB?\340A\002\372A9\0227analyticsadmin.googleapis.com"
+          + "/MeasurementProtocolSecret\022c\n\033measuremen"
+          + "t_protocol_secret\030\002 \001(\01329.google.analyti"
+          + "cs.admin.v1alpha.MeasurementProtocolSecr"
+          + "etB\003\340A\002\"w\n&DeleteMeasurementProtocolSecr"
+          + "etRequest\022M\n\004name\030\001 \001(\tB?\340A\002\372A9\n7analyti"
+          + "csadmin.googleapis.com/MeasurementProtoc"
+          + "olSecret\"\276\001\n&UpdateMeasurementProtocolSe"
+          + "cretRequest\022c\n\033measurement_protocol_secr"
+          + "et\030\001 \001(\01329.google.analytics.admin.v1alph"
+          + "a.MeasurementProtocolSecretB\003\340A\002\022/\n\013upda"
           + "te_mask\030\002 \001(\0132\032.google.protobuf.FieldMas"
-          + "kB\003\340A\002\"_\n\032DeleteGoogleAdsLinkRequest\022A\n\004"
-          + "name\030\001 \001(\tB3\340A\002\372A-\n+analyticsadmin.googl"
-          + "eapis.com/GoogleAdsLink\"\207\001\n\031ListGoogleAd"
-          + "sLinksRequest\022C\n\006parent\030\001 \001(\tB3\340A\002\372A-\022+a"
-          + "nalyticsadmin.googleapis.com/GoogleAdsLi"
-          + "nk\022\021\n\tpage_size\030\002 \001(\005\022\022\n\npage_token\030\003 \001("
-          + "\t\"~\n\032ListGoogleAdsLinksResponse\022G\n\020googl"
-          + "e_ads_links\030\001 \003(\0132-.google.analytics.adm"
-          + "in.v1alpha.GoogleAdsLink\022\027\n\017next_page_to"
-          + "ken\030\002 \001(\t\"h\n\035GetDataSharingSettingsReque"
-          + "st\022G\n\004name\030\001 \001(\tB9\340A\002\372A3\n1analyticsadmin"
-          + ".googleapis.com/DataSharingSettings\"D\n\033L"
-          + "istAccountSummariesRequest\022\021\n\tpage_size\030"
-          + "\001 \001(\005\022\022\n\npage_token\030\002 \001(\t\"\202\001\n\034ListAccoun"
-          + "tSummariesResponse\022I\n\021account_summaries\030"
-          + "\001 \003(\0132..google.analytics.admin.v1alpha.A"
-          + "ccountSummary\022\027\n\017next_page_token\030\002 \001(\t\"\203"
-          + "\004\n SearchChangeHistoryEventsRequest\022>\n\007a"
-          + "ccount\030\001 \001(\tB-\340A\002\372A\'\n%analyticsadmin.goo"
-          + "gleapis.com/Account\022@\n\010property\030\002 \001(\tB.\340"
-          + "A\001\372A(\n&analyticsadmin.googleapis.com/Pro"
-          + "perty\022U\n\rresource_type\030\003 \003(\01629.google.an"
-          + "alytics.admin.v1alpha.ChangeHistoryResou"
-          + "rceTypeB\003\340A\001\022?\n\006action\030\004 \003(\0162*.google.an"
-          + "alytics.admin.v1alpha.ActionTypeB\003\340A\001\022\030\n"
-          + "\013actor_email\030\005 \003(\tB\003\340A\001\022=\n\024earliest_chan"
-          + "ge_time\030\006 \001(\0132\032.google.protobuf.Timestam"
-          + "pB\003\340A\001\022;\n\022latest_change_time\030\007 \001(\0132\032.goo"
-          + "gle.protobuf.TimestampB\003\340A\001\022\026\n\tpage_size"
-          + "\030\010 \001(\005B\003\340A\001\022\027\n\npage_token\030\t \001(\tB\003\340A\001\"\217\001\n"
-          + "!SearchChangeHistoryEventsResponse\022Q\n\025ch"
-          + "ange_history_events\030\001 \003(\01322.google.analy"
-          + "tics.admin.v1alpha.ChangeHistoryEvent\022\027\n"
-          + "\017next_page_token\030\002 \001(\t\"t\n#GetMeasurement"
-          + "ProtocolSecretRequest\022M\n\004name\030\001 \001(\tB?\340A\002"
-          + "\372A9\n7analyticsadmin.googleapis.com/Measu"
-          + "rementProtocolSecret\"\336\001\n&CreateMeasureme"
-          + "ntProtocolSecretRequest\022O\n\006parent\030\001 \001(\tB"
-          + "?\340A\002\372A9\0227analyticsadmin.googleapis.com/M"
-          + "easurementProtocolSecret\022c\n\033measurement_"
-          + "protocol_secret\030\002 \001(\01329.google.analytics"
-          + ".admin.v1alpha.MeasurementProtocolSecret"
-          + "B\003\340A\002\"w\n&DeleteMeasurementProtocolSecret"
-          + "Request\022M\n\004name\030\001 \001(\tB?\340A\002\372A9\n7analytics"
-          + "admin.googleapis.com/MeasurementProtocol"
-          + "Secret\"\276\001\n&UpdateMeasurementProtocolSecr"
-          + "etRequest\022c\n\033measurement_protocol_secret"
-          + "\030\001 \001(\01329.google.analytics.admin.v1alpha."
-          + "MeasurementProtocolSecretB\003\340A\002\022/\n\013update"
-          + "_mask\030\002 \001(\0132\032.google.protobuf.FieldMask\""
-          + "\237\001\n%ListMeasurementProtocolSecretsReques"
-          + "t\022O\n\006parent\030\001 \001(\tB?\340A\002\372A9\0227analyticsadmi"
-          + "n.googleapis.com/MeasurementProtocolSecr"
-          + "et\022\021\n\tpage_size\030\002 \001(\005\022\022\n\npage_token\030\003 \001("
-          + "\t\"\242\001\n&ListMeasurementProtocolSecretsResp"
-          + "onse\022_\n\034measurement_protocol_secrets\030\001 \003"
-          + "(\01329.google.analytics.admin.v1alpha.Meas"
-          + "urementProtocolSecret\022\027\n\017next_page_token"
-          + "\030\002 \001(\t\"l\n\037GetGoogleSignalsSettingsReques"
-          + "t\022I\n\004name\030\001 \001(\tB;\340A\002\372A5\n3analyticsadmin."
-          + "googleapis.com/GoogleSignalsSettings\"\267\001\n"
-          + "\"UpdateGoogleSignalsSettingsRequest\022[\n\027g"
-          + "oogle_signals_settings\030\001 \001(\01325.google.an"
-          + "alytics.admin.v1alpha.GoogleSignalsSetti"
-          + "ngsB\003\340A\002\0224\n\013update_mask\030\002 \001(\0132\032.google.p"
-          + "rotobuf.FieldMaskB\003\340A\002\"\265\001\n\034CreateConvers"
-          + "ionEventRequest\022N\n\020conversion_event\030\001 \001("
-          + "\0132/.google.analytics.admin.v1alpha.Conve"
-          + "rsionEventB\003\340A\002\022E\n\006parent\030\002 \001(\tB5\340A\002\372A/\022"
-          + "-analyticsadmin.googleapis.com/Conversio"
-          + "nEvent\"`\n\031GetConversionEventRequest\022C\n\004n"
-          + "ame\030\001 \001(\tB5\340A\002\372A/\n-analyticsadmin.google"
-          + "apis.com/ConversionEvent\"c\n\034DeleteConver"
-          + "sionEventRequest\022C\n\004name\030\001 \001(\tB5\340A\002\372A/\n-"
-          + "analyticsadmin.googleapis.com/Conversion"
-          + "Event\"\213\001\n\033ListConversionEventsRequest\022E\n"
-          + "\006parent\030\001 \001(\tB5\340A\002\372A/\022-analyticsadmin.go"
-          + "ogleapis.com/ConversionEvent\022\021\n\tpage_siz"
-          + "e\030\002 \001(\005\022\022\n\npage_token\030\003 \001(\t\"\203\001\n\034ListConv"
-          + "ersionEventsResponse\022J\n\021conversion_event"
-          + "s\030\001 \003(\0132/.google.analytics.admin.v1alpha"
-          + ".ConversionEvent\022\027\n\017next_page_token\030\002 \001("
-          + "\t\"\265\001\n\034CreateCustomDimensionRequest\022E\n\006pa"
-          + "rent\030\001 \001(\tB5\340A\002\372A/\022-analyticsadmin.googl"
-          + "eapis.com/CustomDimension\022N\n\020custom_dime"
-          + "nsion\030\002 \001(\0132/.google.analytics.admin.v1a"
-          + "lpha.CustomDimensionB\003\340A\002\"\237\001\n\034UpdateCust"
-          + "omDimensionRequest\022I\n\020custom_dimension\030\001"
-          + " \001(\0132/.google.analytics.admin.v1alpha.Cu"
-          + "stomDimension\0224\n\013update_mask\030\002 \001(\0132\032.goo"
-          + "gle.protobuf.FieldMaskB\003\340A\002\"\213\001\n\033ListCust"
-          + "omDimensionsRequest\022E\n\006parent\030\001 \001(\tB5\340A\002"
-          + "\372A/\022-analyticsadmin.googleapis.com/Custo"
-          + "mDimension\022\021\n\tpage_size\030\002 \001(\005\022\022\n\npage_to"
-          + "ken\030\003 \001(\t\"\203\001\n\034ListCustomDimensionsRespon"
-          + "se\022J\n\021custom_dimensions\030\001 \003(\0132/.google.a"
-          + "nalytics.admin.v1alpha.CustomDimension\022\027"
-          + "\n\017next_page_token\030\002 \001(\t\"d\n\035ArchiveCustom"
-          + "DimensionRequest\022C\n\004name\030\001 \001(\tB5\340A\002\372A/\n-"
-          + "analyticsadmin.googleapis.com/CustomDime"
-          + "nsion\"`\n\031GetCustomDimensionRequest\022C\n\004na"
-          + "me\030\001 \001(\tB5\340A\002\372A/\n-analyticsadmin.googlea"
-          + "pis.com/CustomDimension\"\251\001\n\031CreateCustom"
-          + "MetricRequest\022B\n\006parent\030\001 \001(\tB2\340A\002\372A,\022*a"
-          + "nalyticsadmin.googleapis.com/CustomMetri"
-          + "c\022H\n\rcustom_metric\030\002 \001(\0132,.google.analyt"
-          + "ics.admin.v1alpha.CustomMetricB\003\340A\002\"\226\001\n\031"
-          + "UpdateCustomMetricRequest\022C\n\rcustom_metr"
-          + "ic\030\001 \001(\0132,.google.analytics.admin.v1alph"
-          + "a.CustomMetric\0224\n\013update_mask\030\002 \001(\0132\032.go"
-          + "ogle.protobuf.FieldMaskB\003\340A\002\"\205\001\n\030ListCus"
-          + "tomMetricsRequest\022B\n\006parent\030\001 \001(\tB2\340A\002\372A"
-          + ",\022*analyticsadmin.googleapis.com/CustomM"
-          + "etric\022\021\n\tpage_size\030\002 \001(\005\022\022\n\npage_token\030\003"
-          + " \001(\t\"z\n\031ListCustomMetricsResponse\022D\n\016cus"
-          + "tom_metrics\030\001 \003(\0132,.google.analytics.adm"
-          + "in.v1alpha.CustomMetric\022\027\n\017next_page_tok"
-          + "en\030\002 \001(\t\"^\n\032ArchiveCustomMetricRequest\022@"
-          + "\n\004name\030\001 \001(\tB2\340A\002\372A,\n*analyticsadmin.goo"
-          + "gleapis.com/CustomMetric\"Z\n\026GetCustomMet"
-          + "ricRequest\022@\n\004name\030\001 \001(\tB2\340A\002\372A,\n*analyt"
-          + "icsadmin.googleapis.com/CustomMetric2\335~\n"
-          + "\025AnalyticsAdminService\022\223\001\n\nGetAccount\0221."
-          + "google.analytics.admin.v1alpha.GetAccoun"
-          + "tRequest\032\'.google.analytics.admin.v1alph"
-          + "a.Account\")\202\323\344\223\002\034\022\032/v1alpha/{name=accoun"
-          + "ts/*}\332A\004name\022\224\001\n\014ListAccounts\0223.google.a"
-          + "nalytics.admin.v1alpha.ListAccountsReque"
-          + "st\0324.google.analytics.admin.v1alpha.List"
-          + "AccountsResponse\"\031\202\323\344\223\002\023\022\021/v1alpha/accou"
-          + "nts\022\210\001\n\rDeleteAccount\0224.google.analytics"
-          + ".admin.v1alpha.DeleteAccountRequest\032\026.go"
-          + "ogle.protobuf.Empty\")\202\323\344\223\002\034*\032/v1alpha/{n"
-          + "ame=accounts/*}\332A\004name\022\271\001\n\rUpdateAccount"
-          + "\0224.google.analytics.admin.v1alpha.Update"
-          + "AccountRequest\032\'.google.analytics.admin."
-          + "v1alpha.Account\"I\202\323\344\223\002-2\"/v1alpha/{accou"
-          + "nt.name=accounts/*}:\007account\332A\023account,u"
-          + "pdate_mask\022\314\001\n\026ProvisionAccountTicket\022=."
-          + "google.analytics.admin.v1alpha.Provision"
-          + "AccountTicketRequest\032>.google.analytics."
-          + "admin.v1alpha.ProvisionAccountTicketResp"
-          + "onse\"3\202\323\344\223\002-\"(/v1alpha/accounts:provisio"
-          + "nAccountTicket:\001*\022\264\001\n\024ListAccountSummari"
-          + "es\022;.google.analytics.admin.v1alpha.List"
-          + "AccountSummariesRequest\032<.google.analyti"
-          + "cs.admin.v1alpha.ListAccountSummariesRes"
-          + "ponse\"!\202\323\344\223\002\033\022\031/v1alpha/accountSummaries"
-          + "\022\230\001\n\013GetProperty\0222.google.analytics.admi"
-          + "n.v1alpha.GetPropertyRequest\032(.google.an"
-          + "alytics.admin.v1alpha.Property\"+\202\323\344\223\002\036\022\034"
-          + "/v1alpha/{name=properties/*}\332A\004name\022\234\001\n\016"
-          + "ListProperties\0225.google.analytics.admin."
-          + "v1alpha.ListPropertiesRequest\0326.google.a"
-          + "nalytics.admin.v1alpha.ListPropertiesRes"
-          + "ponse\"\033\202\323\344\223\002\025\022\023/v1alpha/properties\022\243\001\n\016C"
-          + "reateProperty\0225.google.analytics.admin.v"
-          + "1alpha.CreatePropertyRequest\032(.google.an"
-          + "alytics.admin.v1alpha.Property\"0\202\323\344\223\002\037\"\023"
-          + "/v1alpha/properties:\010property\332A\010property"
-          + "\022\236\001\n\016DeleteProperty\0225.google.analytics.a"
-          + "dmin.v1alpha.DeletePropertyRequest\032(.goo"
-          + "gle.analytics.admin.v1alpha.Property\"+\202\323"
-          + "\344\223\002\036*\034/v1alpha/{name=properties/*}\332A\004nam"
-          + "e\022\301\001\n\016UpdateProperty\0225.google.analytics."
-          + "admin.v1alpha.UpdatePropertyRequest\032(.go"
-          + "ogle.analytics.admin.v1alpha.Property\"N\202"
-          + "\323\344\223\00212%/v1alpha/{property.name=propertie"
-          + "s/*}:\010property\332A\024property,update_mask\022\316\001"
-          + "\n\013GetUserLink\0222.google.analytics.admin.v"
-          + "1alpha.GetUserLinkRequest\032(.google.analy"
-          + "tics.admin.v1alpha.UserLink\"a\202\323\344\223\002T\022&/v1"
-          + "alpha/{name=accounts/*/userLinks/*}Z*\022(/"
-          + "v1alpha/{name=properties/*/userLinks/*}\332"
-          + "A\004name\022\366\001\n\021BatchGetUserLinks\0228.google.an"
-          + "alytics.admin.v1alpha.BatchGetUserLinksR"
-          + "equest\0329.google.analytics.admin.v1alpha."
-          + "BatchGetUserLinksResponse\"l\202\323\344\223\002f\022//v1al"
-          + "pha/{parent=accounts/*}/userLinks:batchG"
-          + "etZ3\0221/v1alpha/{parent=properties/*}/use"
-          + "rLinks:batchGet\022\341\001\n\rListUserLinks\0224.goog"
-          + "le.analytics.admin.v1alpha.ListUserLinks"
-          + "Request\0325.google.analytics.admin.v1alpha"
-          + ".ListUserLinksResponse\"c\202\323\344\223\002T\022&/v1alpha"
-          + "/{parent=accounts/*}/userLinksZ*\022(/v1alp"
-          + "ha/{parent=properties/*}/userLinks\332A\006par"
-          + "ent\022\355\001\n\016AuditUserLinks\0225.google.analytic"
-          + "s.admin.v1alpha.AuditUserLinksRequest\0326."
-          + "google.analytics.admin.v1alpha.AuditUser"
-          + "LinksResponse\"l\202\323\344\223\002f\",/v1alpha/{parent="
-          + "accounts/*}/userLinks:audit:\001*Z3\"./v1alp"
-          + "ha/{parent=properties/*}/userLinks:audit"
-          + ":\001*\022\367\001\n\016CreateUserLink\0225.google.analytic"
-          + "s.admin.v1alpha.CreateUserLinkRequest\032(."
-          + "google.analytics.admin.v1alpha.UserLink\""
-          + "\203\001\202\323\344\223\002j\"&/v1alpha/{parent=accounts/*}/u"
-          + "serLinks:\tuser_linkZ5\"(/v1alpha/{parent="
-          + "properties/*}/userLinks:\tuser_link\332A\020par"
-          + "ent,user_link\022\213\002\n\024BatchCreateUserLinks\022;"
-          + ".google.analytics.admin.v1alpha.BatchCre"
-          + "ateUserLinksRequest\032<.google.analytics.a"
-          + "dmin.v1alpha.BatchCreateUserLinksRespons"
-          + "e\"x\202\323\344\223\002r\"2/v1alpha/{parent=accounts/*}/"
-          + "userLinks:batchCreate:\001*Z9\"4/v1alpha/{pa"
-          + "rent=properties/*}/userLinks:batchCreate"
-          + ":\001*\022\204\002\n\016UpdateUserLink\0225.google.analytic"
-          + "s.admin.v1alpha.UpdateUserLinkRequest\032(."
-          + "google.analytics.admin.v1alpha.UserLink\""
-          + "\220\001\202\323\344\223\002~20/v1alpha/{user_link.name=accou"
-          + "nts/*/userLinks/*}:\tuser_linkZ?22/v1alph"
-          + "a/{user_link.name=properties/*/userLinks"
-          + "/*}:\tuser_link\332A\tuser_link\022\213\002\n\024BatchUpda"
-          + "teUserLinks\022;.google.analytics.admin.v1a"
-          + "lpha.BatchUpdateUserLinksRequest\032<.googl"
-          + "e.analytics.admin.v1alpha.BatchUpdateUse"
-          + "rLinksResponse\"x\202\323\344\223\002r\"2/v1alpha/{parent"
-          + "=accounts/*}/userLinks:batchUpdate:\001*Z9\""
-          + "4/v1alpha/{parent=properties/*}/userLink"
-          + "s:batchUpdate:\001*\022\302\001\n\016DeleteUserLink\0225.go"
-          + "ogle.analytics.admin.v1alpha.DeleteUserL"
-          + "inkRequest\032\026.google.protobuf.Empty\"a\202\323\344\223",
-      "\002T*&/v1alpha/{name=accounts/*/userLinks/"
-          + "*}Z**(/v1alpha/{name=properties/*/userLi"
-          + "nks/*}\332A\004name\022\345\001\n\024BatchDeleteUserLinks\022;"
-          + ".google.analytics.admin.v1alpha.BatchDel"
-          + "eteUserLinksRequest\032\026.google.protobuf.Em"
-          + "pty\"x\202\323\344\223\002r\"2/v1alpha/{parent=accounts/*"
-          + "}/userLinks:batchDelete:\001*Z9\"4/v1alpha/{"
-          + "parent=properties/*}/userLinks:batchDele"
-          + "te:\001*\022\270\001\n\020GetWebDataStream\0227.google.anal"
-          + "ytics.admin.v1alpha.GetWebDataStreamRequ"
-          + "est\032-.google.analytics.admin.v1alpha.Web"
-          + "DataStream\"<\202\323\344\223\002/\022-/v1alpha/{name=prope"
-          + "rties/*/webDataStreams/*}\332A\004name\022\247\001\n\023Del"
-          + "eteWebDataStream\022:.google.analytics.admi"
-          + "n.v1alpha.DeleteWebDataStreamRequest\032\026.g"
-          + "oogle.protobuf.Empty\"<\202\323\344\223\002/*-/v1alpha/{"
-          + "name=properties/*/webDataStreams/*}\332A\004na"
-          + "me\022\366\001\n\023UpdateWebDataStream\022:.google.anal"
-          + "ytics.admin.v1alpha.UpdateWebDataStreamR"
-          + "equest\032-.google.analytics.admin.v1alpha."
-          + "WebDataStream\"t\202\323\344\223\002P2=/v1alpha/{web_dat"
-          + "a_stream.name=properties/*/webDataStream"
-          + "s/*}:\017web_data_stream\332A\033web_data_stream,"
-          + "update_mask\022\341\001\n\023CreateWebDataStream\022:.go"
-          + "ogle.analytics.admin.v1alpha.CreateWebDa"
-          + "taStreamRequest\032-.google.analytics.admin"
-          + ".v1alpha.WebDataStream\"_\202\323\344\223\002@\"-/v1alpha"
-          + "/{parent=properties/*}/webDataStreams:\017w"
-          + "eb_data_stream\332A\026parent,web_data_stream\022"
-          + "\313\001\n\022ListWebDataStreams\0229.google.analytic"
-          + "s.admin.v1alpha.ListWebDataStreamsReques"
-          + "t\032:.google.analytics.admin.v1alpha.ListW"
-          + "ebDataStreamsResponse\">\202\323\344\223\002/\022-/v1alpha/"
-          + "{parent=properties/*}/webDataStreams\332A\006p"
-          + "arent\022\304\001\n\023GetIosAppDataStream\022:.google.a"
-          + "nalytics.admin.v1alpha.GetIosAppDataStre"
-          + "amRequest\0320.google.analytics.admin.v1alp"
-          + "ha.IosAppDataStream\"?\202\323\344\223\0022\0220/v1alpha/{n"
-          + "ame=properties/*/iosAppDataStreams/*}\332A\004"
-          + "name\022\260\001\n\026DeleteIosAppDataStream\022=.google"
-          + ".analytics.admin.v1alpha.DeleteIosAppDat"
-          + "aStreamRequest\032\026.google.protobuf.Empty\"?"
-          + "\202\323\344\223\0022*0/v1alpha/{name=properties/*/iosA"
-          + "ppDataStreams/*}\332A\004name\022\217\002\n\026UpdateIosApp"
-          + "DataStream\022=.google.analytics.admin.v1al"
-          + "pha.UpdateIosAppDataStreamRequest\0320.goog"
-          + "le.analytics.admin.v1alpha.IosAppDataStr"
-          + "eam\"\203\001\202\323\344\223\002[2D/v1alpha/{ios_app_data_str"
-          + "eam.name=properties/*/iosAppDataStreams/"
-          + "*}:\023ios_app_data_stream\332A\037ios_app_data_s"
-          + "tream,update_mask\022\327\001\n\025ListIosAppDataStre"
-          + "ams\022<.google.analytics.admin.v1alpha.Lis"
-          + "tIosAppDataStreamsRequest\032=.google.analy"
-          + "tics.admin.v1alpha.ListIosAppDataStreams"
-          + "Response\"A\202\323\344\223\0022\0220/v1alpha/{parent=prope"
-          + "rties/*}/iosAppDataStreams\332A\006parent\022\324\001\n\027"
-          + "GetAndroidAppDataStream\022>.google.analyti"
-          + "cs.admin.v1alpha.GetAndroidAppDataStream"
-          + "Request\0324.google.analytics.admin.v1alpha"
-          + ".AndroidAppDataStream\"C\202\323\344\223\0026\0224/v1alpha/"
-          + "{name=properties/*/androidAppDataStreams"
-          + "/*}\332A\004name\022\274\001\n\032DeleteAndroidAppDataStrea"
-          + "m\022A.google.analytics.admin.v1alpha.Delet"
-          + "eAndroidAppDataStreamRequest\032\026.google.pr"
-          + "otobuf.Empty\"C\202\323\344\223\0026*4/v1alpha/{name=pro"
-          + "perties/*/androidAppDataStreams/*}\332A\004nam"
-          + "e\022\253\002\n\032UpdateAndroidAppDataStream\022A.googl"
-          + "e.analytics.admin.v1alpha.UpdateAndroidA"
-          + "ppDataStreamRequest\0324.google.analytics.a"
-          + "dmin.v1alpha.AndroidAppDataStream\"\223\001\202\323\344\223"
-          + "\002g2L/v1alpha/{android_app_data_stream.na"
-          + "me=properties/*/androidAppDataStreams/*}"
-          + ":\027android_app_data_stream\332A#android_app_"
-          + "data_stream,update_mask\022\347\001\n\031ListAndroidA"
-          + "ppDataStreams\022@.google.analytics.admin.v"
-          + "1alpha.ListAndroidAppDataStreamsRequest\032"
-          + "A.google.analytics.admin.v1alpha.ListAnd"
-          + "roidAppDataStreamsResponse\"E\202\323\344\223\0026\0224/v1a"
-          + "lpha/{parent=properties/*}/androidAppDat"
-          + "aStreams\332A\006parent\022\376\001\n\036GetEnhancedMeasure"
-          + "mentSettings\022E.google.analytics.admin.v1"
-          + "alpha.GetEnhancedMeasurementSettingsRequ"
-          + "est\032;.google.analytics.admin.v1alpha.Enh"
-          + "ancedMeasurementSettings\"X\202\323\344\223\002K\022I/v1alp"
-          + "ha/{name=properties/*/webDataStreams/*/e"
-          + "nhancedMeasurementSettings}\332A\004name\022\350\002\n!U"
-          + "pdateEnhancedMeasurementSettings\022H.googl"
-          + "e.analytics.admin.v1alpha.UpdateEnhanced"
-          + "MeasurementSettingsRequest\032;.google.anal"
-          + "ytics.admin.v1alpha.EnhancedMeasurementS"
-          + "ettings\"\273\001\202\323\344\223\002\210\0012g/v1alpha/{enhanced_me"
-          + "asurement_settings.name=properties/*/web"
-          + "DataStreams/*/enhancedMeasurementSetting"
-          + "s}:\035enhanced_measurement_settings\332A)enha"
-          + "nced_measurement_settings,update_mask\022\331\001"
-          + "\n\022CreateFirebaseLink\0229.google.analytics."
-          + "admin.v1alpha.CreateFirebaseLinkRequest\032"
-          + ",.google.analytics.admin.v1alpha.Firebas"
-          + "eLink\"Z\202\323\344\223\002=\",/v1alpha/{parent=properti"
-          + "es/*}/firebaseLinks:\rfirebase_link\332A\024par"
-          + "ent,firebase_link\022\354\001\n\022UpdateFirebaseLink"
-          + "\0229.google.analytics.admin.v1alpha.Update"
-          + "FirebaseLinkRequest\032,.google.analytics.a"
-          + "dmin.v1alpha.FirebaseLink\"m\202\323\344\223\002K2:/v1al"
-          + "pha/{firebase_link.name=properties/*/fir"
-          + "ebaseLinks/*}:\rfirebase_link\332A\031firebase_"
-          + "link,update_mask\022\244\001\n\022DeleteFirebaseLink\022"
-          + "9.google.analytics.admin.v1alpha.DeleteF"
-          + "irebaseLinkRequest\032\026.google.protobuf.Emp"
-          + "ty\";\202\323\344\223\002.*,/v1alpha/{name=properties/*/"
-          + "firebaseLinks/*}\332A\004name\022\307\001\n\021ListFirebase"
-          + "Links\0228.google.analytics.admin.v1alpha.L"
-          + "istFirebaseLinksRequest\0329.google.analyti"
-          + "cs.admin.v1alpha.ListFirebaseLinksRespon"
-          + "se\"=\202\323\344\223\002.\022,/v1alpha/{parent=properties/"
-          + "*}/firebaseLinks\332A\006parent\022\306\001\n\020GetGlobalS"
-          + "iteTag\0227.google.analytics.admin.v1alpha."
-          + "GetGlobalSiteTagRequest\032-.google.analyti"
-          + "cs.admin.v1alpha.GlobalSiteTag\"J\202\323\344\223\002=\022;"
-          + "/v1alpha/{name=properties/*/webDataStrea"
-          + "ms/*/globalSiteTag}\332A\004name\022\341\001\n\023CreateGoo"
-          + "gleAdsLink\022:.google.analytics.admin.v1al"
-          + "pha.CreateGoogleAdsLinkRequest\032-.google."
-          + "analytics.admin.v1alpha.GoogleAdsLink\"_\202"
-          + "\323\344\223\002@\"-/v1alpha/{parent=properties/*}/go"
-          + "ogleAdsLinks:\017google_ads_link\332A\026parent,g"
-          + "oogle_ads_link\022\366\001\n\023UpdateGoogleAdsLink\022:"
-          + ".google.analytics.admin.v1alpha.UpdateGo"
-          + "ogleAdsLinkRequest\032-.google.analytics.ad"
-          + "min.v1alpha.GoogleAdsLink\"t\202\323\344\223\002P2=/v1al"
-          + "pha/{google_ads_link.name=properties/*/g"
-          + "oogleAdsLinks/*}:\017google_ads_link\332A\033goog"
-          + "le_ads_link,update_mask\022\247\001\n\023DeleteGoogle"
-          + "AdsLink\022:.google.analytics.admin.v1alpha"
-          + ".DeleteGoogleAdsLinkRequest\032\026.google.pro"
-          + "tobuf.Empty\"<\202\323\344\223\002/*-/v1alpha/{name=prop"
-          + "erties/*/googleAdsLinks/*}\332A\004name\022\313\001\n\022Li"
-          + "stGoogleAdsLinks\0229.google.analytics.admi"
-          + "n.v1alpha.ListGoogleAdsLinksRequest\032:.go"
-          + "ogle.analytics.admin.v1alpha.ListGoogleA"
-          + "dsLinksResponse\">\202\323\344\223\002/\022-/v1alpha/{paren"
-          + "t=properties/*}/googleAdsLinks\332A\006parent\022"
-          + "\313\001\n\026GetDataSharingSettings\022=.google.anal"
-          + "ytics.admin.v1alpha.GetDataSharingSettin"
-          + "gsRequest\0323.google.analytics.admin.v1alp"
-          + "ha.DataSharingSettings\"=\202\323\344\223\0020\022./v1alpha"
-          + "/{name=accounts/*/dataSharingSettings}\332A"
-          + "\004name\022\241\003\n\034GetMeasurementProtocolSecret\022C"
-          + ".google.analytics.admin.v1alpha.GetMeasu"
-          + "rementProtocolSecretRequest\0329.google.ana"
-          + "lytics.admin.v1alpha.MeasurementProtocol"
-          + "Secret\"\200\002\202\323\344\223\002\362\001\022J/v1alpha/{name=propert"
-          + "ies/*/webDataStreams/*/measurementProtoc"
-          + "olSecrets/*}ZO\022M/v1alpha/{name=propertie"
-          + "s/*/iosAppDataStreams/*/measurementProto"
-          + "colSecrets/*}ZS\022Q/v1alpha/{name=properti"
-          + "es/*/androidAppDataStreams/*/measurement"
-          + "ProtocolSecrets/*}\332A\004name\022\264\003\n\036ListMeasur"
-          + "ementProtocolSecrets\022E.google.analytics."
-          + "admin.v1alpha.ListMeasurementProtocolSec"
-          + "retsRequest\032F.google.analytics.admin.v1a"
-          + "lpha.ListMeasurementProtocolSecretsRespo"
-          + "nse\"\202\002\202\323\344\223\002\362\001\022J/v1alpha/{parent=properti"
-          + "es/*/webDataStreams/*}/measurementProtoc"
-          + "olSecretsZO\022M/v1alpha/{parent=properties"
-          + "/*/iosAppDataStreams/*}/measurementProto"
-          + "colSecretsZS\022Q/v1alpha/{parent=propertie"
-          + "s/*/androidAppDataStreams/*}/measurement"
-          + "ProtocolSecrets\332A\006parent\022\234\004\n\037CreateMeasu"
-          + "rementProtocolSecret\022F.google.analytics."
-          + "admin.v1alpha.CreateMeasurementProtocolS"
-          + "ecretRequest\0329.google.analytics.admin.v1"
-          + "alpha.MeasurementProtocolSecret\"\365\002\202\323\344\223\002\311"
-          + "\002\"J/v1alpha/{parent=properties/*/webData"
-          + "Streams/*}/measurementProtocolSecrets:\033m"
-          + "easurement_protocol_secretZl\"M/v1alpha/{"
-          + "parent=properties/*/iosAppDataStreams/*}"
-          + "/measurementProtocolSecrets:\033measurement"
-          + "_protocol_secretZp\"Q/v1alpha/{parent=pro"
-          + "perties/*/androidAppDataStreams/*}/measu"
-          + "rementProtocolSecrets:\033measurement_proto"
-          + "col_secret\332A\"parent,measurement_protocol"
-          + "_secret\022\204\003\n\037DeleteMeasurementProtocolSec"
-          + "ret\022F.google.analytics.admin.v1alpha.Del"
-          + "eteMeasurementProtocolSecretRequest\032\026.go"
-          + "ogle.protobuf.Empty\"\200\002\202\323\344\223\002\362\001*J/v1alpha/"
-          + "{name=properties/*/webDataStreams/*/meas"
-          + "urementProtocolSecrets/*}ZO*M/v1alpha/{n"
-          + "ame=properties/*/iosAppDataStreams/*/mea"
-          + "surementProtocolSecrets/*}ZS*Q/v1alpha/{"
-          + "name=properties/*/androidAppDataStreams/"
-          + "*/measurementProtocolSecrets/*}\332A\004name\022\367"
-          + "\004\n\037UpdateMeasurementProtocolSecret\022F.goo"
-          + "gle.analytics.admin.v1alpha.UpdateMeasur"
-          + "ementProtocolSecretRequest\0329.google.anal"
-          + "ytics.admin.v1alpha.MeasurementProtocolS"
-          + "ecret\"\320\003\202\323\344\223\002\237\0032f/v1alpha/{measurement_p"
-          + "rotocol_secret.name=properties/*/webData"
-          + "Streams/*/measurementProtocolSecrets/*}:"
-          + "\033measurement_protocol_secretZ\210\0012i/v1alph"
-          + "a/{measurement_protocol_secret.name=prop"
+          + "k\"\237\001\n%ListMeasurementProtocolSecretsRequ"
+          + "est\022O\n\006parent\030\001 \001(\tB?\340A\002\372A9\0227analyticsad"
+          + "min.googleapis.com/MeasurementProtocolSe"
+          + "cret\022\021\n\tpage_size\030\002 \001(\005\022\022\n\npage_token\030\003 "
+          + "\001(\t\"\242\001\n&ListMeasurementProtocolSecretsRe"
+          + "sponse\022_\n\034measurement_protocol_secrets\030\001"
+          + " \003(\01329.google.analytics.admin.v1alpha.Me"
+          + "asurementProtocolSecret\022\027\n\017next_page_tok"
+          + "en\030\002 \001(\t\"l\n\037GetGoogleSignalsSettingsRequ"
+          + "est\022I\n\004name\030\001 \001(\tB;\340A\002\372A5\n3analyticsadmi"
+          + "n.googleapis.com/GoogleSignalsSettings\"\267"
+          + "\001\n\"UpdateGoogleSignalsSettingsRequest\022[\n"
+          + "\027google_signals_settings\030\001 \001(\01325.google."
+          + "analytics.admin.v1alpha.GoogleSignalsSet"
+          + "tingsB\003\340A\002\0224\n\013update_mask\030\002 \001(\0132\032.google"
+          + ".protobuf.FieldMaskB\003\340A\002\"\265\001\n\034CreateConve"
+          + "rsionEventRequest\022N\n\020conversion_event\030\001 "
+          + "\001(\0132/.google.analytics.admin.v1alpha.Con"
+          + "versionEventB\003\340A\002\022E\n\006parent\030\002 \001(\tB5\340A\002\372A"
+          + "/\022-analyticsadmin.googleapis.com/Convers"
+          + "ionEvent\"`\n\031GetConversionEventRequest\022C\n"
+          + "\004name\030\001 \001(\tB5\340A\002\372A/\n-analyticsadmin.goog"
+          + "leapis.com/ConversionEvent\"c\n\034DeleteConv"
+          + "ersionEventRequest\022C\n\004name\030\001 \001(\tB5\340A\002\372A/"
+          + "\n-analyticsadmin.googleapis.com/Conversi"
+          + "onEvent\"\213\001\n\033ListConversionEventsRequest\022"
+          + "E\n\006parent\030\001 \001(\tB5\340A\002\372A/\022-analyticsadmin."
+          + "googleapis.com/ConversionEvent\022\021\n\tpage_s"
+          + "ize\030\002 \001(\005\022\022\n\npage_token\030\003 \001(\t\"\203\001\n\034ListCo"
+          + "nversionEventsResponse\022J\n\021conversion_eve"
+          + "nts\030\001 \003(\0132/.google.analytics.admin.v1alp"
+          + "ha.ConversionEvent\022\027\n\017next_page_token\030\002 "
+          + "\001(\t\"|\n\'GetDisplayVideo360AdvertiserLinkR"
+          + "equest\022Q\n\004name\030\001 \001(\tBC\340A\002\372A=\n;analyticsa"
+          + "dmin.googleapis.com/DisplayVideo360Adver"
+          + "tiserLink\"\247\001\n)ListDisplayVideo360Adverti"
+          + "serLinksRequest\022S\n\006parent\030\001 \001(\tBC\340A\002\372A=\022"
+          + ";analyticsadmin.googleapis.com/DisplayVi"
+          + "deo360AdvertiserLink\022\021\n\tpage_size\030\002 \001(\005\022"
+          + "\022\n\npage_token\030\003 \001(\t\"\260\001\n*ListDisplayVideo"
+          + "360AdvertiserLinksResponse\022i\n\"display_vi"
+          + "deo_360_advertiser_links\030\001 \003(\0132=.google."
+          + "analytics.admin.v1alpha.DisplayVideo360A"
+          + "dvertiserLink\022\027\n\017next_page_token\030\002 \001(\t\"\360"
+          + "\001\n*CreateDisplayVideo360AdvertiserLinkRe"
+          + "quest\022S\n\006parent\030\001 \001(\tBC\340A\002\372A=\022;analytics"
+          + "admin.googleapis.com/DisplayVideo360Adve"
+          + "rtiserLink\022m\n!display_video_360_advertis"
+          + "er_link\030\002 \001(\0132=.google.analytics.admin.v"
+          + "1alpha.DisplayVideo360AdvertiserLinkB\003\340A"
+          + "\002\"\177\n*DeleteDisplayVideo360AdvertiserLink"
+          + "Request\022Q\n\004name\030\001 \001(\tBC\340A\002\372A=\n;analytics"
+          + "admin.googleapis.com/DisplayVideo360Adve"
+          + "rtiserLink\"\314\001\n*UpdateDisplayVideo360Adve"
+          + "rtiserLinkRequest\022h\n!display_video_360_a"
+          + "dvertiser_link\030\001 \001(\0132=.google.analytics."
+          + "admin.v1alpha.DisplayVideo360AdvertiserL"
+          + "ink\0224\n\013update_mask\030\002 \001(\0132\032.google.protob"
+          + "uf.FieldMaskB\003\340A\002\"\214\001\n/GetDisplayVideo360"
+          + "AdvertiserLinkProposalRequest\022Y\n\004name\030\001 "
+          + "\001(\tBK\340A\002\372AE\nCanalyticsadmin.googleapis.c"
+          + "om/DisplayVideo360AdvertiserLinkProposal"
+          + "\"\267\001\n1ListDisplayVideo360AdvertiserLinkPr"
+          + "oposalsRequest\022[\n\006parent\030\001 \001(\tBK\340A\002\372AE\022C"
+          + "analyticsadmin.googleapis.com/DisplayVid"
+          + "eo360AdvertiserLinkProposal\022\021\n\tpage_size"
+          + "\030\002 \001(\005\022\022\n\npage_token\030\003 \001(\t\"\311\001\n2ListDispl"
+          + "ayVideo360AdvertiserLinkProposalsRespons"
+          + "e\022z\n+display_video_360_advertiser_link_p"
+          + "roposals\030\001 \003(\0132E.google.analytics.admin."
+          + "v1alpha.DisplayVideo360AdvertiserLinkPro"
+          + "posal\022\027\n\017next_page_token\030\002 \001(\t\"\221\002\n2Creat"
+          + "eDisplayVideo360AdvertiserLinkProposalRe"
+          + "quest\022[\n\006parent\030\001 \001(\tBK\340A\002\372AE\022Canalytics"
+          + "admin.googleapis.com/DisplayVideo360Adve"
+          + "rtiserLinkProposal\022~\n*display_video_360_"
+          + "advertiser_link_proposal\030\002 \001(\0132E.google."
+          + "analytics.admin.v1alpha.DisplayVideo360A"
+          + "dvertiserLinkProposalB\003\340A\002\"\217\001\n2DeleteDis"
+          + "playVideo360AdvertiserLinkProposalReques"
+          + "t\022Y\n\004name\030\001 \001(\tBK\340A\002\372AE\nCanalyticsadmin."
+          + "googleapis.com/DisplayVideo360Advertiser"
+          + "LinkProposal\"\220\001\n3ApproveDisplayVideo360A"
+          + "dvertiserLinkProposalRequest\022Y\n\004name\030\001 \001"
+          + "(\tBK\340A\002\372AE\nCanalyticsadmin.googleapis.co"
+          + "m/DisplayVideo360AdvertiserLinkProposal\""
+          + "\240\001\n4ApproveDisplayVideo360AdvertiserLink"
+          + "ProposalResponse\022h\n!display_video_360_ad"
+          + "vertiser_link\030\001 \001(\0132=.google.analytics.a"
+          + "dmin.v1alpha.DisplayVideo360AdvertiserLi"
+          + "nk\"\217\001\n2CancelDisplayVideo360AdvertiserLi"
+          + "nkProposalRequest\022Y\n\004name\030\001 \001(\tBK\340A\002\372AE\n"
+          + "Canalyticsadmin.googleapis.com/DisplayVi"
+          + "deo360AdvertiserLinkProposal\"\265\001\n\034CreateC"
+          + "ustomDimensionRequest\022E\n\006parent\030\001 \001(\tB5\340"
+          + "A\002\372A/\022-analyticsadmin.googleapis.com/Cus"
+          + "tomDimension\022N\n\020custom_dimension\030\002 \001(\0132/"
+          + ".google.analytics.admin.v1alpha.CustomDi"
+          + "mensionB\003\340A\002\"\237\001\n\034UpdateCustomDimensionRe"
+          + "quest\022I\n\020custom_dimension\030\001 \001(\0132/.google"
+          + ".analytics.admin.v1alpha.CustomDimension"
+          + "\0224\n\013update_mask\030\002 \001(\0132\032.google.protobuf."
+          + "FieldMaskB\003\340A\002\"\213\001\n\033ListCustomDimensionsR"
+          + "equest\022E\n\006parent\030\001 \001(\tB5\340A\002\372A/\022-analytic"
+          + "sadmin.googleapis.com/CustomDimension\022\021\n"
+          + "\tpage_size\030\002 \001(\005\022\022\n\npage_token\030\003 \001(\t\"\203\001\n"
+          + "\034ListCustomDimensionsResponse\022J\n\021custom_"
+          + "dimensions\030\001 \003(\0132/.google.analytics.admi"
+          + "n.v1alpha.CustomDimension\022\027\n\017next_page_t"
+          + "oken\030\002 \001(\t\"d\n\035ArchiveCustomDimensionRequ"
+          + "est\022C\n\004name\030\001 \001(\tB5\340A\002\372A/\n-analyticsadmi"
+          + "n.googleapis.com/CustomDimension\"`\n\031GetC"
+          + "ustomDimensionRequest\022C\n\004name\030\001 \001(\tB5\340A\002"
+          + "\372A/\n-analyticsadmin.googleapis.com/Custo"
+          + "mDimension\"\251\001\n\031CreateCustomMetricRequest"
+          + "\022B\n\006parent\030\001 \001(\tB2\340A\002\372A,\022*analyticsadmin"
+          + ".googleapis.com/CustomMetric\022H\n\rcustom_m"
+          + "etric\030\002 \001(\0132,.google.analytics.admin.v1a"
+          + "lpha.CustomMetricB\003\340A\002\"\226\001\n\031UpdateCustomM"
+          + "etricRequest\022C\n\rcustom_metric\030\001 \001(\0132,.go"
+          + "ogle.analytics.admin.v1alpha.CustomMetri"
+          + "c\0224\n\013update_mask\030\002 \001(\0132\032.google.protobuf"
+          + ".FieldMaskB\003\340A\002\"\205\001\n\030ListCustomMetricsReq"
+          + "uest\022B\n\006parent\030\001 \001(\tB2\340A\002\372A,\022*analyticsa"
+          + "dmin.googleapis.com/CustomMetric\022\021\n\tpage"
+          + "_size\030\002 \001(\005\022\022\n\npage_token\030\003 \001(\t\"z\n\031ListC"
+          + "ustomMetricsResponse\022D\n\016custom_metrics\030\001"
+          + " \003(\0132,.google.analytics.admin.v1alpha.Cu"
+          + "stomMetric\022\027\n\017next_page_token\030\002 \001(\t\"^\n\032A"
+          + "rchiveCustomMetricRequest\022@\n\004name\030\001 \001(\tB"
+          + "2\340A\002\372A,\n*analyticsadmin.googleapis.com/C"
+          + "ustomMetric\"Z\n\026GetCustomMetricRequest\022@\n"
+          + "\004name\030\001 \001(\tB2\340A\002\372A,\n*analyticsadmin.goog"
+          + "leapis.com/CustomMetric\"l\n\037GetDataRetent"
+          + "ionSettingsRequest\022I\n\004name\030\001 \001(\tB;\340A\002\372A5"
+          + "\n3analyticsadmin.googleapis.com/DataRete"
+          + "ntionSettings\"\267\001\n\"UpdateDataRetentionSet"
+          + "tingsRequest\022[\n\027data_retention_settings\030"
+          + "\001 \001(\01325.google.analytics.admin.v1alpha.D"
+          + "ataRetentionSettingsB\003\340A\002\0224\n\013update_mask"
+          + "\030\002 \001(\0132\032.google.protobuf.FieldMaskB\003\340A\0022"
+          + "\242\232\001\n\025AnalyticsAdminService\022\223\001\n\nGetAccoun"
+          + "t\0221.google.analytics.admin.v1alpha.GetAc"
+          + "countRequest\032\'.google.analytics.admin.v1"
+          + "alpha.Account\")\202\323\344\223\002\034\022\032/v1alpha/{name=ac"
+          + "counts/*}\332A\004name\022\224\001\n\014ListAccounts\0223.goog"
+          + "le.analytics.admin.v1alpha.ListAccountsR"
+          + "equest\0324.google.analytics.admin.v1alpha."
+          + "ListAccountsResponse\"\031\202\323\344\223\002\023\022\021/v1alpha/a"
+          + "ccounts\022\210\001\n\rDeleteAccount\0224.google.analy"
+          + "tics.admin.v1alpha.DeleteAccountRequest\032"
+          + "\026.google.protobuf.Empty\")\202\323\344\223\002\034*\032/v1alph"
+          + "a/{name=accounts/*}\332A\004name\022\271\001\n\rUpdateAcc"
+          + "ount\0224.google.analytics.admin.v1alpha.Up"
+          + "dateAccountRequest\032\'.google.analytics.ad"
+          + "min.v1alpha.Account\"I\202\323\344\223\002-2\"/v1alpha/{a"
+          + "ccount.name=accounts/*}:\007account\332A\023accou"
+          + "nt,update_mask\022\314\001\n\026ProvisionAccountTicke"
+          + "t\022=.google.analytics.admin.v1alpha.Provi"
+          + "sionAccountTicketRequest\032>.google.analyt"
+          + "ics.admin.v1alpha.ProvisionAccountTicket"
+          + "Response\"3\202\323\344\223\002-\"(/v1alpha/accounts:prov"
+          + "isionAccountTicket:\001*\022\264\001\n\024ListAccountSum"
+          + "maries\022;.google.analytics.admin.v1alpha."
+          + "ListAccountSummariesRequest\032<.google.ana"
+          + "lytics.admin.v1alpha.ListAccountSummarie"
+          + "sResponse\"!\202\323\344\223\002\033\022\031/v1alpha/accountSumma"
+          + "ries\022\230\001\n\013GetProperty\0222.google.analytics."
+          + "admin.v1alpha.GetPropertyRequest\032(.googl"
+          + "e.analytics.admin.v1alpha.Property\"+\202\323\344\223"
+          + "\002\036\022\034/v1alpha/{name=properties/*}\332A\004name\022"
+          + "\234\001\n\016ListProperties\0225.google.analytics.ad"
+          + "min.v1alpha.ListPropertiesRequest\0326.goog"
+          + "le.analytics.admin.v1alpha.ListPropertie"
+          + "sResponse\"\033\202\323\344\223\002\025\022\023/v1alpha/properties\022\243",
+      "\001\n\016CreateProperty\0225.google.analytics.adm"
+          + "in.v1alpha.CreatePropertyRequest\032(.googl"
+          + "e.analytics.admin.v1alpha.Property\"0\202\323\344\223"
+          + "\002\037\"\023/v1alpha/properties:\010property\332A\010prop"
+          + "erty\022\236\001\n\016DeleteProperty\0225.google.analyti"
+          + "cs.admin.v1alpha.DeletePropertyRequest\032("
+          + ".google.analytics.admin.v1alpha.Property"
+          + "\"+\202\323\344\223\002\036*\034/v1alpha/{name=properties/*}\332A"
+          + "\004name\022\301\001\n\016UpdateProperty\0225.google.analyt"
+          + "ics.admin.v1alpha.UpdatePropertyRequest\032"
+          + "(.google.analytics.admin.v1alpha.Propert"
+          + "y\"N\202\323\344\223\00212%/v1alpha/{property.name=prope"
+          + "rties/*}:\010property\332A\024property,update_mas"
+          + "k\022\316\001\n\013GetUserLink\0222.google.analytics.adm"
+          + "in.v1alpha.GetUserLinkRequest\032(.google.a"
+          + "nalytics.admin.v1alpha.UserLink\"a\202\323\344\223\002T\022"
+          + "&/v1alpha/{name=accounts/*/userLinks/*}Z"
+          + "*\022(/v1alpha/{name=properties/*/userLinks"
+          + "/*}\332A\004name\022\366\001\n\021BatchGetUserLinks\0228.googl"
+          + "e.analytics.admin.v1alpha.BatchGetUserLi"
+          + "nksRequest\0329.google.analytics.admin.v1al"
+          + "pha.BatchGetUserLinksResponse\"l\202\323\344\223\002f\022//"
+          + "v1alpha/{parent=accounts/*}/userLinks:ba"
+          + "tchGetZ3\0221/v1alpha/{parent=properties/*}"
+          + "/userLinks:batchGet\022\341\001\n\rListUserLinks\0224."
+          + "google.analytics.admin.v1alpha.ListUserL"
+          + "inksRequest\0325.google.analytics.admin.v1a"
+          + "lpha.ListUserLinksResponse\"c\202\323\344\223\002T\022&/v1a"
+          + "lpha/{parent=accounts/*}/userLinksZ*\022(/v"
+          + "1alpha/{parent=properties/*}/userLinks\332A"
+          + "\006parent\022\355\001\n\016AuditUserLinks\0225.google.anal"
+          + "ytics.admin.v1alpha.AuditUserLinksReques"
+          + "t\0326.google.analytics.admin.v1alpha.Audit"
+          + "UserLinksResponse\"l\202\323\344\223\002f\",/v1alpha/{par"
+          + "ent=accounts/*}/userLinks:audit:\001*Z3\"./v"
+          + "1alpha/{parent=properties/*}/userLinks:a"
+          + "udit:\001*\022\367\001\n\016CreateUserLink\0225.google.anal"
+          + "ytics.admin.v1alpha.CreateUserLinkReques"
+          + "t\032(.google.analytics.admin.v1alpha.UserL"
+          + "ink\"\203\001\202\323\344\223\002j\"&/v1alpha/{parent=accounts/"
+          + "*}/userLinks:\tuser_linkZ5\"(/v1alpha/{par"
+          + "ent=properties/*}/userLinks:\tuser_link\332A"
+          + "\020parent,user_link\022\213\002\n\024BatchCreateUserLin"
+          + "ks\022;.google.analytics.admin.v1alpha.Batc"
+          + "hCreateUserLinksRequest\032<.google.analyti"
+          + "cs.admin.v1alpha.BatchCreateUserLinksRes"
+          + "ponse\"x\202\323\344\223\002r\"2/v1alpha/{parent=accounts"
+          + "/*}/userLinks:batchCreate:\001*Z9\"4/v1alpha"
+          + "/{parent=properties/*}/userLinks:batchCr"
+          + "eate:\001*\022\204\002\n\016UpdateUserLink\0225.google.anal"
+          + "ytics.admin.v1alpha.UpdateUserLinkReques"
+          + "t\032(.google.analytics.admin.v1alpha.UserL"
+          + "ink\"\220\001\202\323\344\223\002~20/v1alpha/{user_link.name=a"
+          + "ccounts/*/userLinks/*}:\tuser_linkZ?22/v1"
+          + "alpha/{user_link.name=properties/*/userL"
+          + "inks/*}:\tuser_link\332A\tuser_link\022\213\002\n\024Batch"
+          + "UpdateUserLinks\022;.google.analytics.admin"
+          + ".v1alpha.BatchUpdateUserLinksRequest\032<.g"
+          + "oogle.analytics.admin.v1alpha.BatchUpdat"
+          + "eUserLinksResponse\"x\202\323\344\223\002r\"2/v1alpha/{pa"
+          + "rent=accounts/*}/userLinks:batchUpdate:\001"
+          + "*Z9\"4/v1alpha/{parent=properties/*}/user"
+          + "Links:batchUpdate:\001*\022\302\001\n\016DeleteUserLink\022"
+          + "5.google.analytics.admin.v1alpha.DeleteU"
+          + "serLinkRequest\032\026.google.protobuf.Empty\"a"
+          + "\202\323\344\223\002T*&/v1alpha/{name=accounts/*/userLi"
+          + "nks/*}Z**(/v1alpha/{name=properties/*/us"
+          + "erLinks/*}\332A\004name\022\345\001\n\024BatchDeleteUserLin"
+          + "ks\022;.google.analytics.admin.v1alpha.Batc"
+          + "hDeleteUserLinksRequest\032\026.google.protobu"
+          + "f.Empty\"x\202\323\344\223\002r\"2/v1alpha/{parent=accoun"
+          + "ts/*}/userLinks:batchDelete:\001*Z9\"4/v1alp"
+          + "ha/{parent=properties/*}/userLinks:batch"
+          + "Delete:\001*\022\270\001\n\020GetWebDataStream\0227.google."
+          + "analytics.admin.v1alpha.GetWebDataStream"
+          + "Request\032-.google.analytics.admin.v1alpha"
+          + ".WebDataStream\"<\202\323\344\223\002/\022-/v1alpha/{name=p"
+          + "roperties/*/webDataStreams/*}\332A\004name\022\247\001\n"
+          + "\023DeleteWebDataStream\022:.google.analytics."
+          + "admin.v1alpha.DeleteWebDataStreamRequest"
+          + "\032\026.google.protobuf.Empty\"<\202\323\344\223\002/*-/v1alp"
+          + "ha/{name=properties/*/webDataStreams/*}\332"
+          + "A\004name\022\366\001\n\023UpdateWebDataStream\022:.google."
+          + "analytics.admin.v1alpha.UpdateWebDataStr"
+          + "eamRequest\032-.google.analytics.admin.v1al"
+          + "pha.WebDataStream\"t\202\323\344\223\002P2=/v1alpha/{web"
+          + "_data_stream.name=properties/*/webDataSt"
+          + "reams/*}:\017web_data_stream\332A\033web_data_str"
+          + "eam,update_mask\022\341\001\n\023CreateWebDataStream\022"
+          + ":.google.analytics.admin.v1alpha.CreateW"
+          + "ebDataStreamRequest\032-.google.analytics.a"
+          + "dmin.v1alpha.WebDataStream\"_\202\323\344\223\002@\"-/v1a"
+          + "lpha/{parent=properties/*}/webDataStream"
+          + "s:\017web_data_stream\332A\026parent,web_data_str"
+          + "eam\022\313\001\n\022ListWebDataStreams\0229.google.anal"
+          + "ytics.admin.v1alpha.ListWebDataStreamsRe"
+          + "quest\032:.google.analytics.admin.v1alpha.L"
+          + "istWebDataStreamsResponse\">\202\323\344\223\002/\022-/v1al"
+          + "pha/{parent=properties/*}/webDataStreams"
+          + "\332A\006parent\022\304\001\n\023GetIosAppDataStream\022:.goog"
+          + "le.analytics.admin.v1alpha.GetIosAppData"
+          + "StreamRequest\0320.google.analytics.admin.v"
+          + "1alpha.IosAppDataStream\"?\202\323\344\223\0022\0220/v1alph"
+          + "a/{name=properties/*/iosAppDataStreams/*"
+          + "}\332A\004name\022\260\001\n\026DeleteIosAppDataStream\022=.go"
+          + "ogle.analytics.admin.v1alpha.DeleteIosAp"
+          + "pDataStreamRequest\032\026.google.protobuf.Emp"
+          + "ty\"?\202\323\344\223\0022*0/v1alpha/{name=properties/*/"
+          + "iosAppDataStreams/*}\332A\004name\022\217\002\n\026UpdateIo"
+          + "sAppDataStream\022=.google.analytics.admin."
+          + "v1alpha.UpdateIosAppDataStreamRequest\0320."
+          + "google.analytics.admin.v1alpha.IosAppDat"
+          + "aStream\"\203\001\202\323\344\223\002[2D/v1alpha/{ios_app_data"
+          + "_stream.name=properties/*/iosAppDataStre"
+          + "ams/*}:\023ios_app_data_stream\332A\037ios_app_da"
+          + "ta_stream,update_mask\022\327\001\n\025ListIosAppData"
+          + "Streams\022<.google.analytics.admin.v1alpha"
+          + ".ListIosAppDataStreamsRequest\032=.google.a"
+          + "nalytics.admin.v1alpha.ListIosAppDataStr"
+          + "eamsResponse\"A\202\323\344\223\0022\0220/v1alpha/{parent=p"
+          + "roperties/*}/iosAppDataStreams\332A\006parent\022"
+          + "\324\001\n\027GetAndroidAppDataStream\022>.google.ana"
+          + "lytics.admin.v1alpha.GetAndroidAppDataSt"
+          + "reamRequest\0324.google.analytics.admin.v1a"
+          + "lpha.AndroidAppDataStream\"C\202\323\344\223\0026\0224/v1al"
+          + "pha/{name=properties/*/androidAppDataStr"
+          + "eams/*}\332A\004name\022\274\001\n\032DeleteAndroidAppDataS"
+          + "tream\022A.google.analytics.admin.v1alpha.D"
+          + "eleteAndroidAppDataStreamRequest\032\026.googl"
+          + "e.protobuf.Empty\"C\202\323\344\223\0026*4/v1alpha/{name"
+          + "=properties/*/androidAppDataStreams/*}\332A"
+          + "\004name\022\253\002\n\032UpdateAndroidAppDataStream\022A.g"
+          + "oogle.analytics.admin.v1alpha.UpdateAndr"
+          + "oidAppDataStreamRequest\0324.google.analyti"
+          + "cs.admin.v1alpha.AndroidAppDataStream\"\223\001"
+          + "\202\323\344\223\002g2L/v1alpha/{android_app_data_strea"
+          + "m.name=properties/*/androidAppDataStream"
+          + "s/*}:\027android_app_data_stream\332A#android_"
+          + "app_data_stream,update_mask\022\347\001\n\031ListAndr"
+          + "oidAppDataStreams\022@.google.analytics.adm"
+          + "in.v1alpha.ListAndroidAppDataStreamsRequ"
+          + "est\032A.google.analytics.admin.v1alpha.Lis"
+          + "tAndroidAppDataStreamsResponse\"E\202\323\344\223\0026\0224"
+          + "/v1alpha/{parent=properties/*}/androidAp"
+          + "pDataStreams\332A\006parent\022\376\001\n\036GetEnhancedMea"
+          + "surementSettings\022E.google.analytics.admi"
+          + "n.v1alpha.GetEnhancedMeasurementSettings"
+          + "Request\032;.google.analytics.admin.v1alpha"
+          + ".EnhancedMeasurementSettings\"X\202\323\344\223\002K\022I/v"
+          + "1alpha/{name=properties/*/webDataStreams"
+          + "/*/enhancedMeasurementSettings}\332A\004name\022\350"
+          + "\002\n!UpdateEnhancedMeasurementSettings\022H.g"
+          + "oogle.analytics.admin.v1alpha.UpdateEnha"
+          + "ncedMeasurementSettingsRequest\032;.google."
+          + "analytics.admin.v1alpha.EnhancedMeasurem"
+          + "entSettings\"\273\001\202\323\344\223\002\210\0012g/v1alpha/{enhance"
+          + "d_measurement_settings.name=properties/*"
+          + "/webDataStreams/*/enhancedMeasurementSet"
+          + "tings}:\035enhanced_measurement_settings\332A)"
+          + "enhanced_measurement_settings,update_mas"
+          + "k\022\331\001\n\022CreateFirebaseLink\0229.google.analyt"
+          + "ics.admin.v1alpha.CreateFirebaseLinkRequ"
+          + "est\032,.google.analytics.admin.v1alpha.Fir"
+          + "ebaseLink\"Z\202\323\344\223\002=\",/v1alpha/{parent=prop"
+          + "erties/*}/firebaseLinks:\rfirebase_link\332A"
+          + "\024parent,firebase_link\022\244\001\n\022DeleteFirebase"
+          + "Link\0229.google.analytics.admin.v1alpha.De"
+          + "leteFirebaseLinkRequest\032\026.google.protobu"
+          + "f.Empty\";\202\323\344\223\002.*,/v1alpha/{name=properti"
+          + "es/*/firebaseLinks/*}\332A\004name\022\307\001\n\021ListFir"
+          + "ebaseLinks\0228.google.analytics.admin.v1al"
+          + "pha.ListFirebaseLinksRequest\0329.google.an"
+          + "alytics.admin.v1alpha.ListFirebaseLinksR"
+          + "esponse\"=\202\323\344\223\002.\022,/v1alpha/{parent=proper"
+          + "ties/*}/firebaseLinks\332A\006parent\022\306\001\n\020GetGl"
+          + "obalSiteTag\0227.google.analytics.admin.v1a"
+          + "lpha.GetGlobalSiteTagRequest\032-.google.an"
+          + "alytics.admin.v1alpha.GlobalSiteTag\"J\202\323\344"
+          + "\223\002=\022;/v1alpha/{name=properties/*/webData"
+          + "Streams/*/globalSiteTag}\332A\004name\022\341\001\n\023Crea"
+          + "teGoogleAdsLink\022:.google.analytics.admin"
+          + ".v1alpha.CreateGoogleAdsLinkRequest\032-.go"
+          + "ogle.analytics.admin.v1alpha.GoogleAdsLi"
+          + "nk\"_\202\323\344\223\002@\"-/v1alpha/{parent=properties/"
+          + "*}/googleAdsLinks:\017google_ads_link\332A\026par"
+          + "ent,google_ads_link\022\366\001\n\023UpdateGoogleAdsL"
+          + "ink\022:.google.analytics.admin.v1alpha.Upd"
+          + "ateGoogleAdsLinkRequest\032-.google.analyti"
+          + "cs.admin.v1alpha.GoogleAdsLink\"t\202\323\344\223\002P2="
+          + "/v1alpha/{google_ads_link.name=propertie"
+          + "s/*/googleAdsLinks/*}:\017google_ads_link\332A"
+          + "\033google_ads_link,update_mask\022\247\001\n\023DeleteG"
+          + "oogleAdsLink\022:.google.analytics.admin.v1"
+          + "alpha.DeleteGoogleAdsLinkRequest\032\026.googl"
+          + "e.protobuf.Empty\"<\202\323\344\223\002/*-/v1alpha/{name"
+          + "=properties/*/googleAdsLinks/*}\332A\004name\022\313"
+          + "\001\n\022ListGoogleAdsLinks\0229.google.analytics"
+          + ".admin.v1alpha.ListGoogleAdsLinksRequest"
+          + "\032:.google.analytics.admin.v1alpha.ListGo"
+          + "ogleAdsLinksResponse\">\202\323\344\223\002/\022-/v1alpha/{"
+          + "parent=properties/*}/googleAdsLinks\332A\006pa"
+          + "rent\022\313\001\n\026GetDataSharingSettings\022=.google"
+          + ".analytics.admin.v1alpha.GetDataSharingS"
+          + "ettingsRequest\0323.google.analytics.admin."
+          + "v1alpha.DataSharingSettings\"=\202\323\344\223\0020\022./v1"
+          + "alpha/{name=accounts/*/dataSharingSettin"
+          + "gs}\332A\004name\022\241\003\n\034GetMeasurementProtocolSec"
+          + "ret\022C.google.analytics.admin.v1alpha.Get"
+          + "MeasurementProtocolSecretRequest\0329.googl"
+          + "e.analytics.admin.v1alpha.MeasurementPro"
+          + "tocolSecret\"\200\002\202\323\344\223\002\362\001\022J/v1alpha/{name=pr"
+          + "operties/*/webDataStreams/*/measurementP"
+          + "rotocolSecrets/*}ZO\022M/v1alpha/{name=prop"
           + "erties/*/iosAppDataStreams/*/measurement"
-          + "ProtocolSecrets/*}:\033measurement_protocol"
-          + "_secretZ\214\0012m/v1alpha/{measurement_protoc"
-          + "ol_secret.name=properties/*/androidAppDa"
-          + "taStreams/*/measurementProtocolSecrets/*"
-          + "}:\033measurement_protocol_secret\332A\'measure"
-          + "ment_protocol_secret,update_mask\022\344\001\n\031Sea"
-          + "rchChangeHistoryEvents\022@.google.analytic"
-          + "s.admin.v1alpha.SearchChangeHistoryEvent"
-          + "sRequest\032A.google.analytics.admin.v1alph"
-          + "a.SearchChangeHistoryEventsResponse\"B\202\323\344"
-          + "\223\002<\"7/v1alpha/{account=accounts/*}:searc"
-          + "hChangeHistoryEvents:\001*\022\325\001\n\030GetGoogleSig"
-          + "nalsSettings\022?.google.analytics.admin.v1"
-          + "alpha.GetGoogleSignalsSettingsRequest\0325."
-          + "google.analytics.admin.v1alpha.GoogleSig"
-          + "nalsSettings\"A\202\323\344\223\0024\0222/v1alpha/{name=pro"
-          + "perties/*/googleSignalsSettings}\332A\004name\022"
-          + "\254\002\n\033UpdateGoogleSignalsSettings\022B.google"
-          + ".analytics.admin.v1alpha.UpdateGoogleSig"
-          + "nalsSettingsRequest\0325.google.analytics.a"
-          + "dmin.v1alpha.GoogleSignalsSettings\"\221\001\202\323\344"
-          + "\223\002e2J/v1alpha/{google_signals_settings.n"
-          + "ame=properties/*/googleSignalsSettings}:"
-          + "\027google_signals_settings\332A#google_signal"
-          + "s_settings,update_mask\022\353\001\n\025CreateConvers"
-          + "ionEvent\022<.google.analytics.admin.v1alph"
-          + "a.CreateConversionEventRequest\032/.google."
-          + "analytics.admin.v1alpha.ConversionEvent\""
-          + "c\202\323\344\223\002C\"//v1alpha/{parent=properties/*}/"
-          + "conversionEvents:\020conversion_event\332A\027par"
-          + "ent,conversion_event\022\300\001\n\022GetConversionEv"
-          + "ent\0229.google.analytics.admin.v1alpha.Get"
-          + "ConversionEventRequest\032/.google.analytic"
-          + "s.admin.v1alpha.ConversionEvent\">\202\323\344\223\0021\022"
-          + "//v1alpha/{name=properties/*/conversionE"
-          + "vents/*}\332A\004name\022\255\001\n\025DeleteConversionEven"
-          + "t\022<.google.analytics.admin.v1alpha.Delet"
-          + "eConversionEventRequest\032\026.google.protobu"
-          + "f.Empty\">\202\323\344\223\0021*//v1alpha/{name=properti"
-          + "es/*/conversionEvents/*}\332A\004name\022\323\001\n\024List"
-          + "ConversionEvents\022;.google.analytics.admi"
-          + "n.v1alpha.ListConversionEventsRequest\032<."
-          + "google.analytics.admin.v1alpha.ListConve"
-          + "rsionEventsResponse\"@\202\323\344\223\0021\022//v1alpha/{p"
-          + "arent=properties/*}/conversionEvents\332A\006p"
-          + "arent\022\353\001\n\025CreateCustomDimension\022<.google"
-          + ".analytics.admin.v1alpha.CreateCustomDim"
-          + "ensionRequest\032/.google.analytics.admin.v"
-          + "1alpha.CustomDimension\"c\202\323\344\223\002C\"//v1alpha"
-          + "/{parent=properties/*}/customDimensions:"
-          + "\020custom_dimension\332A\027parent,custom_dimens"
-          + "ion\022\201\002\n\025UpdateCustomDimension\022<.google.a"
-          + "nalytics.admin.v1alpha.UpdateCustomDimen"
-          + "sionRequest\032/.google.analytics.admin.v1a"
-          + "lpha.CustomDimension\"y\202\323\344\223\002T2@/v1alpha/{"
-          + "custom_dimension.name=properties/*/custo"
-          + "mDimensions/*}:\020custom_dimension\332A\034custo"
-          + "m_dimension,update_mask\022\323\001\n\024ListCustomDi"
-          + "mensions\022;.google.analytics.admin.v1alph"
-          + "a.ListCustomDimensionsRequest\032<.google.a"
-          + "nalytics.admin.v1alpha.ListCustomDimensi"
-          + "onsResponse\"@\202\323\344\223\0021\022//v1alpha/{parent=pr"
-          + "operties/*}/customDimensions\332A\006parent\022\272\001"
-          + "\n\026ArchiveCustomDimension\022=.google.analyt"
-          + "ics.admin.v1alpha.ArchiveCustomDimension"
-          + "Request\032\026.google.protobuf.Empty\"I\202\323\344\223\002<\""
-          + "7/v1alpha/{name=properties/*/customDimen"
-          + "sions/*}:archive:\001*\332A\004name\022\300\001\n\022GetCustom"
-          + "Dimension\0229.google.analytics.admin.v1alp"
-          + "ha.GetCustomDimensionRequest\032/.google.an"
-          + "alytics.admin.v1alpha.CustomDimension\">\202"
-          + "\323\344\223\0021\022//v1alpha/{name=properties/*/custo"
-          + "mDimensions/*}\332A\004name\022\331\001\n\022CreateCustomMe"
-          + "tric\0229.google.analytics.admin.v1alpha.Cr"
-          + "eateCustomMetricRequest\032,.google.analyti"
-          + "cs.admin.v1alpha.CustomMetric\"Z\202\323\344\223\002=\",/"
+          + "ProtocolSecrets/*}ZS\022Q/v1alpha/{name=pro"
+          + "perties/*/androidAppDataStreams/*/measur"
+          + "ementProtocolSecrets/*}\332A\004name\022\264\003\n\036ListM"
+          + "easurementProtocolSecrets\022E.google.analy"
+          + "tics.admin.v1alpha.ListMeasurementProtoc"
+          + "olSecretsRequest\032F.google.analytics.admi"
+          + "n.v1alpha.ListMeasurementProtocolSecrets"
+          + "Response\"\202\002\202\323\344\223\002\362\001\022J/v1alpha/{parent=pro"
+          + "perties/*/webDataStreams/*}/measurementP"
+          + "rotocolSecretsZO\022M/v1alpha/{parent=prope"
+          + "rties/*/iosAppDataStreams/*}/measurement"
+          + "ProtocolSecretsZS\022Q/v1alpha/{parent=prop"
+          + "erties/*/androidAppDataStreams/*}/measur"
+          + "ementProtocolSecrets\332A\006parent\022\234\004\n\037Create"
+          + "MeasurementProtocolSecret\022F.google.analy"
+          + "tics.admin.v1alpha.CreateMeasurementProt"
+          + "ocolSecretRequest\0329.google.analytics.adm"
+          + "in.v1alpha.MeasurementProtocolSecret\"\365\002\202"
+          + "\323\344\223\002\311\002\"J/v1alpha/{parent=properties/*/we"
+          + "bDataStreams/*}/measurementProtocolSecre"
+          + "ts:\033measurement_protocol_secretZl\"M/v1al"
+          + "pha/{parent=properties/*/iosAppDataStrea"
+          + "ms/*}/measurementProtocolSecrets:\033measur"
+          + "ement_protocol_secretZp\"Q/v1alpha/{paren"
+          + "t=properties/*/androidAppDataStreams/*}/"
+          + "measurementProtocolSecrets:\033measurement_"
+          + "protocol_secret\332A\"parent,measurement_pro"
+          + "tocol_secret\022\204\003\n\037DeleteMeasurementProtoc"
+          + "olSecret\022F.google.analytics.admin.v1alph"
+          + "a.DeleteMeasurementProtocolSecretRequest"
+          + "\032\026.google.protobuf.Empty\"\200\002\202\323\344\223\002\362\001*J/v1a"
+          + "lpha/{name=properties/*/webDataStreams/*"
+          + "/measurementProtocolSecrets/*}ZO*M/v1alp"
+          + "ha/{name=properties/*/iosAppDataStreams/"
+          + "*/measurementProtocolSecrets/*}ZS*Q/v1al"
+          + "pha/{name=properties/*/androidAppDataStr"
+          + "eams/*/measurementProtocolSecrets/*}\332A\004n"
+          + "ame\022\367\004\n\037UpdateMeasurementProtocolSecret\022"
+          + "F.google.analytics.admin.v1alpha.UpdateM"
+          + "easurementProtocolSecretRequest\0329.google"
+          + ".analytics.admin.v1alpha.MeasurementProt"
+          + "ocolSecret\"\320\003\202\323\344\223\002\237\0032f/v1alpha/{measurem"
+          + "ent_protocol_secret.name=properties/*/we"
+          + "bDataStreams/*/measurementProtocolSecret"
+          + "s/*}:\033measurement_protocol_secretZ\210\0012i/v"
+          + "1alpha/{measurement_protocol_secret.name"
+          + "=properties/*/iosAppDataStreams/*/measur"
+          + "ementProtocolSecrets/*}:\033measurement_pro"
+          + "tocol_secretZ\214\0012m/v1alpha/{measurement_p"
+          + "rotocol_secret.name=properties/*/android"
+          + "AppDataStreams/*/measurementProtocolSecr"
+          + "ets/*}:\033measurement_protocol_secret\332A\'me"
+          + "asurement_protocol_secret,update_mask\022\344\001"
+          + "\n\031SearchChangeHistoryEvents\022@.google.ana"
+          + "lytics.admin.v1alpha.SearchChangeHistory"
+          + "EventsRequest\032A.google.analytics.admin.v"
+          + "1alpha.SearchChangeHistoryEventsResponse"
+          + "\"B\202\323\344\223\002<\"7/v1alpha/{account=accounts/*}:"
+          + "searchChangeHistoryEvents:\001*\022\325\001\n\030GetGoog"
+          + "leSignalsSettings\022?.google.analytics.adm"
+          + "in.v1alpha.GetGoogleSignalsSettingsReque"
+          + "st\0325.google.analytics.admin.v1alpha.Goog"
+          + "leSignalsSettings\"A\202\323\344\223\0024\0222/v1alpha/{nam"
+          + "e=properties/*/googleSignalsSettings}\332A\004"
+          + "name\022\254\002\n\033UpdateGoogleSignalsSettings\022B.g"
+          + "oogle.analytics.admin.v1alpha.UpdateGoog"
+          + "leSignalsSettingsRequest\0325.google.analyt"
+          + "ics.admin.v1alpha.GoogleSignalsSettings\""
+          + "\221\001\202\323\344\223\002e2J/v1alpha/{google_signals_setti"
+          + "ngs.name=properties/*/googleSignalsSetti"
+          + "ngs}:\027google_signals_settings\332A#google_s"
+          + "ignals_settings,update_mask\022\353\001\n\025CreateCo"
+          + "nversionEvent\022<.google.analytics.admin.v"
+          + "1alpha.CreateConversionEventRequest\032/.go"
+          + "ogle.analytics.admin.v1alpha.ConversionE"
+          + "vent\"c\202\323\344\223\002C\"//v1alpha/{parent=propertie"
+          + "s/*}/conversionEvents:\020conversion_event\332"
+          + "A\027parent,conversion_event\022\300\001\n\022GetConvers"
+          + "ionEvent\0229.google.analytics.admin.v1alph"
+          + "a.GetConversionEventRequest\032/.google.ana"
+          + "lytics.admin.v1alpha.ConversionEvent\">\202\323"
+          + "\344\223\0021\022//v1alpha/{name=properties/*/conver"
+          + "sionEvents/*}\332A\004name\022\255\001\n\025DeleteConversio"
+          + "nEvent\022<.google.analytics.admin.v1alpha."
+          + "DeleteConversionEventRequest\032\026.google.pr"
+          + "otobuf.Empty\">\202\323\344\223\0021*//v1alpha/{name=pro"
+          + "perties/*/conversionEvents/*}\332A\004name\022\323\001\n"
+          + "\024ListConversionEvents\022;.google.analytics"
+          + ".admin.v1alpha.ListConversionEventsReque"
+          + "st\032<.google.analytics.admin.v1alpha.List"
+          + "ConversionEventsResponse\"@\202\323\344\223\0021\022//v1alp"
+          + "ha/{parent=properties/*}/conversionEvent"
+          + "s\332A\006parent\022\370\001\n GetDisplayVideo360Adverti"
+          + "serLink\022G.google.analytics.admin.v1alpha"
+          + ".GetDisplayVideo360AdvertiserLinkRequest"
+          + "\032=.google.analytics.admin.v1alpha.Displa"
+          + "yVideo360AdvertiserLink\"L\202\323\344\223\002?\022=/v1alph"
+          + "a/{name=properties/*/displayVideo360Adve"
+          + "rtiserLinks/*}\332A\004name\022\213\002\n\"ListDisplayVid"
+          + "eo360AdvertiserLinks\022I.google.analytics."
+          + "admin.v1alpha.ListDisplayVideo360Adverti"
+          + "serLinksRequest\032J.google.analytics.admin"
+          + ".v1alpha.ListDisplayVideo360AdvertiserLi"
+          + "nksResponse\"N\202\323\344\223\002?\022=/v1alpha/{parent=pr"
+          + "operties/*}/displayVideo360AdvertiserLin"
+          + "ks\332A\006parent\022\306\002\n#CreateDisplayVideo360Adv"
+          + "ertiserLink\022J.google.analytics.admin.v1a"
+          + "lpha.CreateDisplayVideo360AdvertiserLink"
+          + "Request\032=.google.analytics.admin.v1alpha"
+          + ".DisplayVideo360AdvertiserLink\"\223\001\202\323\344\223\002b\""
+          + "=/v1alpha/{parent=properties/*}/displayV"
+          + "ideo360AdvertiserLinks:!display_video_36"
+          + "0_advertiser_link\332A(parent,display_video"
+          + "_360_advertiser_link\022\327\001\n#DeleteDisplayVi"
+          + "deo360AdvertiserLink\022J.google.analytics."
+          + "admin.v1alpha.DeleteDisplayVideo360Adver"
+          + "tiserLinkRequest\032\026.google.protobuf.Empty"
+          + "\"L\202\323\344\223\002?*=/v1alpha/{name=properties/*/di"
+          + "splayVideo360AdvertiserLinks/*}\332A\004name\022\356"
+          + "\002\n#UpdateDisplayVideo360AdvertiserLink\022J"
+          + ".google.analytics.admin.v1alpha.UpdateDi"
+          + "splayVideo360AdvertiserLinkRequest\032=.goo"
+          + "gle.analytics.admin.v1alpha.DisplayVideo"
+          + "360AdvertiserLink\"\273\001\202\323\344\223\002\204\0012_/v1alpha/{d"
+          + "isplay_video_360_advertiser_link.name=pr"
+          + "operties/*/displayVideo360AdvertiserLink"
+          + "s/*}:!display_video_360_advertiser_link\332"
+          + "A-display_video_360_advertiser_link,upda"
+          + "te_mask\022\230\002\n(GetDisplayVideo360Advertiser"
+          + "LinkProposal\022O.google.analytics.admin.v1"
+          + "alpha.GetDisplayVideo360AdvertiserLinkPr"
+          + "oposalRequest\032E.google.analytics.admin.v"
+          + "1alpha.DisplayVideo360AdvertiserLinkProp"
+          + "osal\"T\202\323\344\223\002G\022E/v1alpha/{name=properties/"
+          + "*/displayVideo360AdvertiserLinkProposals"
+          + "/*}\332A\004name\022\253\002\n*ListDisplayVideo360Advert"
+          + "iserLinkProposals\022Q.google.analytics.adm"
+          + "in.v1alpha.ListDisplayVideo360Advertiser"
+          + "LinkProposalsRequest\032R.google.analytics."
+          + "admin.v1alpha.ListDisplayVideo360Adverti"
+          + "serLinkProposalsResponse\"V\202\323\344\223\002G\022E/v1alp"
+          + "ha/{parent=properties/*}/displayVideo360"
+          + "AdvertiserLinkProposals\332A\006parent\022\370\002\n+Cre"
+          + "ateDisplayVideo360AdvertiserLinkProposal"
+          + "\022R.google.analytics.admin.v1alpha.Create"
+          + "DisplayVideo360AdvertiserLinkProposalReq"
+          + "uest\032E.google.analytics.admin.v1alpha.Di"
+          + "splayVideo360AdvertiserLinkProposal\"\255\001\202\323"
+          + "\344\223\002s\"E/v1alpha/{parent=properties/*}/dis"
+          + "playVideo360AdvertiserLinkProposals:*dis"
+          + "play_video_360_advertiser_link_proposal\332"
+          + "A1parent,display_video_360_advertiser_li"
+          + "nk_proposal\022\357\001\n+DeleteDisplayVideo360Adv"
+          + "ertiserLinkProposal\022R.google.analytics.a"
+          + "dmin.v1alpha.DeleteDisplayVideo360Advert"
+          + "iserLinkProposalRequest\032\026.google.protobu"
+          + "f.Empty\"T\202\323\344\223\002G*E/v1alpha/{name=properti"
+          + "es/*/displayVideo360AdvertiserLinkPropos"
+          + "als/*}\332A\004name\022\263\002\n,ApproveDisplayVideo360"
+          + "AdvertiserLinkProposal\022S.google.analytic"
+          + "s.admin.v1alpha.ApproveDisplayVideo360Ad"
+          + "vertiserLinkProposalRequest\032T.google.ana"
+          + "lytics.admin.v1alpha.ApproveDisplayVideo"
+          + "360AdvertiserLinkProposalResponse\"X\202\323\344\223\002"
+          + "R\"M/v1alpha/{name=properties/*/displayVi"
+          + "deo360AdvertiserLinkProposals/*}:approve"
+          + ":\001*\022\241\002\n+CancelDisplayVideo360AdvertiserL"
+          + "inkProposal\022R.google.analytics.admin.v1a"
+          + "lpha.CancelDisplayVideo360AdvertiserLink"
+          + "ProposalRequest\032E.google.analytics.admin"
+          + ".v1alpha.DisplayVideo360AdvertiserLinkPr"
+          + "oposal\"W\202\323\344\223\002Q\"L/v1alpha/{name=propertie"
+          + "s/*/displayVideo360AdvertiserLinkProposa"
+          + "ls/*}:cancel:\001*\022\353\001\n\025CreateCustomDimensio"
+          + "n\022<.google.analytics.admin.v1alpha.Creat"
+          + "eCustomDimensionRequest\032/.google.analyti"
+          + "cs.admin.v1alpha.CustomDimension\"c\202\323\344\223\002C"
+          + "\"//v1alpha/{parent=properties/*}/customD"
+          + "imensions:\020custom_dimension\332A\027parent,cus"
+          + "tom_dimension\022\201\002\n\025UpdateCustomDimension\022"
+          + "<.google.analytics.admin.v1alpha.UpdateC"
+          + "ustomDimensionRequest\032/.google.analytics"
+          + ".admin.v1alpha.CustomDimension\"y\202\323\344\223\002T2@"
+          + "/v1alpha/{custom_dimension.name=properti"
+          + "es/*/customDimensions/*}:\020custom_dimensi"
+          + "on\332A\034custom_dimension,update_mask\022\323\001\n\024Li",
+      "stCustomDimensions\022;.google.analytics.ad"
+          + "min.v1alpha.ListCustomDimensionsRequest\032"
+          + "<.google.analytics.admin.v1alpha.ListCus"
+          + "tomDimensionsResponse\"@\202\323\344\223\0021\022//v1alpha/"
+          + "{parent=properties/*}/customDimensions\332A"
+          + "\006parent\022\272\001\n\026ArchiveCustomDimension\022=.goo"
+          + "gle.analytics.admin.v1alpha.ArchiveCusto"
+          + "mDimensionRequest\032\026.google.protobuf.Empt"
+          + "y\"I\202\323\344\223\002<\"7/v1alpha/{name=properties/*/c"
+          + "ustomDimensions/*}:archive:\001*\332A\004name\022\300\001\n"
+          + "\022GetCustomDimension\0229.google.analytics.a"
+          + "dmin.v1alpha.GetCustomDimensionRequest\032/"
+          + ".google.analytics.admin.v1alpha.CustomDi"
+          + "mension\">\202\323\344\223\0021\022//v1alpha/{name=properti"
+          + "es/*/customDimensions/*}\332A\004name\022\331\001\n\022Crea"
+          + "teCustomMetric\0229.google.analytics.admin."
+          + "v1alpha.CreateCustomMetricRequest\032,.goog"
+          + "le.analytics.admin.v1alpha.CustomMetric\""
+          + "Z\202\323\344\223\002=\",/v1alpha/{parent=properties/*}/"
+          + "customMetrics:\rcustom_metric\332A\024parent,cu"
+          + "stom_metric\022\354\001\n\022UpdateCustomMetric\0229.goo"
+          + "gle.analytics.admin.v1alpha.UpdateCustom"
+          + "MetricRequest\032,.google.analytics.admin.v"
+          + "1alpha.CustomMetric\"m\202\323\344\223\002K2:/v1alpha/{c"
+          + "ustom_metric.name=properties/*/customMet"
+          + "rics/*}:\rcustom_metric\332A\031custom_metric,u"
+          + "pdate_mask\022\307\001\n\021ListCustomMetrics\0228.googl"
+          + "e.analytics.admin.v1alpha.ListCustomMetr"
+          + "icsRequest\0329.google.analytics.admin.v1al"
+          + "pha.ListCustomMetricsResponse\"=\202\323\344\223\002.\022,/"
           + "v1alpha/{parent=properties/*}/customMetr"
-          + "ics:\rcustom_metric\332A\024parent,custom_metri"
-          + "c\022\354\001\n\022UpdateCustomMetric\0229.google.analyt"
-          + "ics.admin.v1alpha.UpdateCustomMetricRequ"
-          + "est\032,.google.analytics.admin.v1alpha.Cus"
-          + "tomMetric\"m\202\323\344\223\002K2:/v1alpha/{custom_metr"
-          + "ic.name=properties/*/customMetrics/*}:\rc"
-          + "ustom_metric\332A\031custom_metric,update_mask"
-          + "\022\307\001\n\021ListCustomMetrics\0228.google.analytic"
-          + "s.admin.v1alpha.ListCustomMetricsRequest"
-          + "\0329.google.analytics.admin.v1alpha.ListCu"
-          + "stomMetricsResponse\"=\202\323\344\223\002.\022,/v1alpha/{p"
-          + "arent=properties/*}/customMetrics\332A\006pare"
-          + "nt\022\261\001\n\023ArchiveCustomMetric\022:.google.anal"
-          + "ytics.admin.v1alpha.ArchiveCustomMetricR"
-          + "equest\032\026.google.protobuf.Empty\"F\202\323\344\223\0029\"4"
-          + "/v1alpha/{name=properties/*/customMetric"
-          + "s/*}:archive:\001*\332A\004name\022\264\001\n\017GetCustomMetr"
-          + "ic\0226.google.analytics.admin.v1alpha.GetC"
-          + "ustomMetricRequest\032,.google.analytics.ad"
-          + "min.v1alpha.CustomMetric\";\202\323\344\223\002.\022,/v1alp"
-          + "ha/{name=properties/*/customMetrics/*}\332A"
-          + "\004name\032\374\001\312A\035analyticsadmin.googleapis.com"
-          + "\322A\330\001https://www.googleapis.com/auth/anal"
-          + "ytics.edit,https://www.googleapis.com/au"
-          + "th/analytics.manage.users,https://www.go"
-          + "ogleapis.com/auth/analytics.manage.users"
-          + ".readonly,https://www.googleapis.com/aut"
-          + "h/analytics.readonlyB\200\001\n\"com.google.anal"
-          + "ytics.admin.v1alphaB\023AnalyticsAdminProto"
-          + "P\001ZCgoogle.golang.org/genproto/googleapi"
-          + "s/analytics/admin/v1alpha;adminb\006proto3"
+          + "ics\332A\006parent\022\261\001\n\023ArchiveCustomMetric\022:.g"
+          + "oogle.analytics.admin.v1alpha.ArchiveCus"
+          + "tomMetricRequest\032\026.google.protobuf.Empty"
+          + "\"F\202\323\344\223\0029\"4/v1alpha/{name=properties/*/cu"
+          + "stomMetrics/*}:archive:\001*\332A\004name\022\264\001\n\017Get"
+          + "CustomMetric\0226.google.analytics.admin.v1"
+          + "alpha.GetCustomMetricRequest\032,.google.an"
+          + "alytics.admin.v1alpha.CustomMetric\";\202\323\344\223"
+          + "\002.\022,/v1alpha/{name=properties/*/customMe"
+          + "trics/*}\332A\004name\022\325\001\n\030GetDataRetentionSett"
+          + "ings\022?.google.analytics.admin.v1alpha.Ge"
+          + "tDataRetentionSettingsRequest\0325.google.a"
+          + "nalytics.admin.v1alpha.DataRetentionSett"
+          + "ings\"A\202\323\344\223\0024\0222/v1alpha/{name=properties/"
+          + "*/dataRetentionSettings}\332A\004name\022\254\002\n\033Upda"
+          + "teDataRetentionSettings\022B.google.analyti"
+          + "cs.admin.v1alpha.UpdateDataRetentionSett"
+          + "ingsRequest\0325.google.analytics.admin.v1a"
+          + "lpha.DataRetentionSettings\"\221\001\202\323\344\223\002e2J/v1"
+          + "alpha/{data_retention_settings.name=prop"
+          + "erties/*/dataRetentionSettings}:\027data_re"
+          + "tention_settings\332A#data_retention_settin"
+          + "gs,update_mask\032\374\001\312A\035analyticsadmin.googl"
+          + "eapis.com\322A\330\001https://www.googleapis.com/"
+          + "auth/analytics.edit,https://www.googleap"
+          + "is.com/auth/analytics.manage.users,https"
+          + "://www.googleapis.com/auth/analytics.man"
+          + "age.users.readonly,https://www.googleapi"
+          + "s.com/auth/analytics.readonlyB\200\001\n\"com.go"
+          + "ogle.analytics.admin.v1alphaB\023AnalyticsA"
+          + "dminProtoP\001ZCgoogle.golang.org/genproto/"
+          + "googleapis/analytics/admin/v1alpha;admin"
+          + "b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -1484,16 +1698,8 @@ public final class AnalyticsAdminProto {
             new java.lang.String[] {
               "Parent", "FirebaseLink",
             });
-    internal_static_google_analytics_admin_v1alpha_UpdateFirebaseLinkRequest_descriptor =
-        getDescriptor().getMessageTypes().get(47);
-    internal_static_google_analytics_admin_v1alpha_UpdateFirebaseLinkRequest_fieldAccessorTable =
-        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-            internal_static_google_analytics_admin_v1alpha_UpdateFirebaseLinkRequest_descriptor,
-            new java.lang.String[] {
-              "FirebaseLink", "UpdateMask",
-            });
     internal_static_google_analytics_admin_v1alpha_DeleteFirebaseLinkRequest_descriptor =
-        getDescriptor().getMessageTypes().get(48);
+        getDescriptor().getMessageTypes().get(47);
     internal_static_google_analytics_admin_v1alpha_DeleteFirebaseLinkRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_analytics_admin_v1alpha_DeleteFirebaseLinkRequest_descriptor,
@@ -1501,7 +1707,7 @@ public final class AnalyticsAdminProto {
               "Name",
             });
     internal_static_google_analytics_admin_v1alpha_ListFirebaseLinksRequest_descriptor =
-        getDescriptor().getMessageTypes().get(49);
+        getDescriptor().getMessageTypes().get(48);
     internal_static_google_analytics_admin_v1alpha_ListFirebaseLinksRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_analytics_admin_v1alpha_ListFirebaseLinksRequest_descriptor,
@@ -1509,7 +1715,7 @@ public final class AnalyticsAdminProto {
               "Parent", "PageSize", "PageToken",
             });
     internal_static_google_analytics_admin_v1alpha_ListFirebaseLinksResponse_descriptor =
-        getDescriptor().getMessageTypes().get(50);
+        getDescriptor().getMessageTypes().get(49);
     internal_static_google_analytics_admin_v1alpha_ListFirebaseLinksResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_analytics_admin_v1alpha_ListFirebaseLinksResponse_descriptor,
@@ -1517,7 +1723,7 @@ public final class AnalyticsAdminProto {
               "FirebaseLinks", "NextPageToken",
             });
     internal_static_google_analytics_admin_v1alpha_GetGlobalSiteTagRequest_descriptor =
-        getDescriptor().getMessageTypes().get(51);
+        getDescriptor().getMessageTypes().get(50);
     internal_static_google_analytics_admin_v1alpha_GetGlobalSiteTagRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_analytics_admin_v1alpha_GetGlobalSiteTagRequest_descriptor,
@@ -1525,7 +1731,7 @@ public final class AnalyticsAdminProto {
               "Name",
             });
     internal_static_google_analytics_admin_v1alpha_CreateGoogleAdsLinkRequest_descriptor =
-        getDescriptor().getMessageTypes().get(52);
+        getDescriptor().getMessageTypes().get(51);
     internal_static_google_analytics_admin_v1alpha_CreateGoogleAdsLinkRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_analytics_admin_v1alpha_CreateGoogleAdsLinkRequest_descriptor,
@@ -1533,7 +1739,7 @@ public final class AnalyticsAdminProto {
               "Parent", "GoogleAdsLink",
             });
     internal_static_google_analytics_admin_v1alpha_UpdateGoogleAdsLinkRequest_descriptor =
-        getDescriptor().getMessageTypes().get(53);
+        getDescriptor().getMessageTypes().get(52);
     internal_static_google_analytics_admin_v1alpha_UpdateGoogleAdsLinkRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_analytics_admin_v1alpha_UpdateGoogleAdsLinkRequest_descriptor,
@@ -1541,7 +1747,7 @@ public final class AnalyticsAdminProto {
               "GoogleAdsLink", "UpdateMask",
             });
     internal_static_google_analytics_admin_v1alpha_DeleteGoogleAdsLinkRequest_descriptor =
-        getDescriptor().getMessageTypes().get(54);
+        getDescriptor().getMessageTypes().get(53);
     internal_static_google_analytics_admin_v1alpha_DeleteGoogleAdsLinkRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_analytics_admin_v1alpha_DeleteGoogleAdsLinkRequest_descriptor,
@@ -1549,7 +1755,7 @@ public final class AnalyticsAdminProto {
               "Name",
             });
     internal_static_google_analytics_admin_v1alpha_ListGoogleAdsLinksRequest_descriptor =
-        getDescriptor().getMessageTypes().get(55);
+        getDescriptor().getMessageTypes().get(54);
     internal_static_google_analytics_admin_v1alpha_ListGoogleAdsLinksRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_analytics_admin_v1alpha_ListGoogleAdsLinksRequest_descriptor,
@@ -1557,7 +1763,7 @@ public final class AnalyticsAdminProto {
               "Parent", "PageSize", "PageToken",
             });
     internal_static_google_analytics_admin_v1alpha_ListGoogleAdsLinksResponse_descriptor =
-        getDescriptor().getMessageTypes().get(56);
+        getDescriptor().getMessageTypes().get(55);
     internal_static_google_analytics_admin_v1alpha_ListGoogleAdsLinksResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_analytics_admin_v1alpha_ListGoogleAdsLinksResponse_descriptor,
@@ -1565,7 +1771,7 @@ public final class AnalyticsAdminProto {
               "GoogleAdsLinks", "NextPageToken",
             });
     internal_static_google_analytics_admin_v1alpha_GetDataSharingSettingsRequest_descriptor =
-        getDescriptor().getMessageTypes().get(57);
+        getDescriptor().getMessageTypes().get(56);
     internal_static_google_analytics_admin_v1alpha_GetDataSharingSettingsRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_analytics_admin_v1alpha_GetDataSharingSettingsRequest_descriptor,
@@ -1573,7 +1779,7 @@ public final class AnalyticsAdminProto {
               "Name",
             });
     internal_static_google_analytics_admin_v1alpha_ListAccountSummariesRequest_descriptor =
-        getDescriptor().getMessageTypes().get(58);
+        getDescriptor().getMessageTypes().get(57);
     internal_static_google_analytics_admin_v1alpha_ListAccountSummariesRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_analytics_admin_v1alpha_ListAccountSummariesRequest_descriptor,
@@ -1581,7 +1787,7 @@ public final class AnalyticsAdminProto {
               "PageSize", "PageToken",
             });
     internal_static_google_analytics_admin_v1alpha_ListAccountSummariesResponse_descriptor =
-        getDescriptor().getMessageTypes().get(59);
+        getDescriptor().getMessageTypes().get(58);
     internal_static_google_analytics_admin_v1alpha_ListAccountSummariesResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_analytics_admin_v1alpha_ListAccountSummariesResponse_descriptor,
@@ -1589,7 +1795,7 @@ public final class AnalyticsAdminProto {
               "AccountSummaries", "NextPageToken",
             });
     internal_static_google_analytics_admin_v1alpha_SearchChangeHistoryEventsRequest_descriptor =
-        getDescriptor().getMessageTypes().get(60);
+        getDescriptor().getMessageTypes().get(59);
     internal_static_google_analytics_admin_v1alpha_SearchChangeHistoryEventsRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_analytics_admin_v1alpha_SearchChangeHistoryEventsRequest_descriptor,
@@ -1605,7 +1811,7 @@ public final class AnalyticsAdminProto {
               "PageToken",
             });
     internal_static_google_analytics_admin_v1alpha_SearchChangeHistoryEventsResponse_descriptor =
-        getDescriptor().getMessageTypes().get(61);
+        getDescriptor().getMessageTypes().get(60);
     internal_static_google_analytics_admin_v1alpha_SearchChangeHistoryEventsResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_analytics_admin_v1alpha_SearchChangeHistoryEventsResponse_descriptor,
@@ -1613,7 +1819,7 @@ public final class AnalyticsAdminProto {
               "ChangeHistoryEvents", "NextPageToken",
             });
     internal_static_google_analytics_admin_v1alpha_GetMeasurementProtocolSecretRequest_descriptor =
-        getDescriptor().getMessageTypes().get(62);
+        getDescriptor().getMessageTypes().get(61);
     internal_static_google_analytics_admin_v1alpha_GetMeasurementProtocolSecretRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_analytics_admin_v1alpha_GetMeasurementProtocolSecretRequest_descriptor,
@@ -1621,7 +1827,7 @@ public final class AnalyticsAdminProto {
               "Name",
             });
     internal_static_google_analytics_admin_v1alpha_CreateMeasurementProtocolSecretRequest_descriptor =
-        getDescriptor().getMessageTypes().get(63);
+        getDescriptor().getMessageTypes().get(62);
     internal_static_google_analytics_admin_v1alpha_CreateMeasurementProtocolSecretRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_analytics_admin_v1alpha_CreateMeasurementProtocolSecretRequest_descriptor,
@@ -1629,7 +1835,7 @@ public final class AnalyticsAdminProto {
               "Parent", "MeasurementProtocolSecret",
             });
     internal_static_google_analytics_admin_v1alpha_DeleteMeasurementProtocolSecretRequest_descriptor =
-        getDescriptor().getMessageTypes().get(64);
+        getDescriptor().getMessageTypes().get(63);
     internal_static_google_analytics_admin_v1alpha_DeleteMeasurementProtocolSecretRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_analytics_admin_v1alpha_DeleteMeasurementProtocolSecretRequest_descriptor,
@@ -1637,7 +1843,7 @@ public final class AnalyticsAdminProto {
               "Name",
             });
     internal_static_google_analytics_admin_v1alpha_UpdateMeasurementProtocolSecretRequest_descriptor =
-        getDescriptor().getMessageTypes().get(65);
+        getDescriptor().getMessageTypes().get(64);
     internal_static_google_analytics_admin_v1alpha_UpdateMeasurementProtocolSecretRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_analytics_admin_v1alpha_UpdateMeasurementProtocolSecretRequest_descriptor,
@@ -1645,7 +1851,7 @@ public final class AnalyticsAdminProto {
               "MeasurementProtocolSecret", "UpdateMask",
             });
     internal_static_google_analytics_admin_v1alpha_ListMeasurementProtocolSecretsRequest_descriptor =
-        getDescriptor().getMessageTypes().get(66);
+        getDescriptor().getMessageTypes().get(65);
     internal_static_google_analytics_admin_v1alpha_ListMeasurementProtocolSecretsRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_analytics_admin_v1alpha_ListMeasurementProtocolSecretsRequest_descriptor,
@@ -1653,7 +1859,7 @@ public final class AnalyticsAdminProto {
               "Parent", "PageSize", "PageToken",
             });
     internal_static_google_analytics_admin_v1alpha_ListMeasurementProtocolSecretsResponse_descriptor =
-        getDescriptor().getMessageTypes().get(67);
+        getDescriptor().getMessageTypes().get(66);
     internal_static_google_analytics_admin_v1alpha_ListMeasurementProtocolSecretsResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_analytics_admin_v1alpha_ListMeasurementProtocolSecretsResponse_descriptor,
@@ -1661,7 +1867,7 @@ public final class AnalyticsAdminProto {
               "MeasurementProtocolSecrets", "NextPageToken",
             });
     internal_static_google_analytics_admin_v1alpha_GetGoogleSignalsSettingsRequest_descriptor =
-        getDescriptor().getMessageTypes().get(68);
+        getDescriptor().getMessageTypes().get(67);
     internal_static_google_analytics_admin_v1alpha_GetGoogleSignalsSettingsRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_analytics_admin_v1alpha_GetGoogleSignalsSettingsRequest_descriptor,
@@ -1669,7 +1875,7 @@ public final class AnalyticsAdminProto {
               "Name",
             });
     internal_static_google_analytics_admin_v1alpha_UpdateGoogleSignalsSettingsRequest_descriptor =
-        getDescriptor().getMessageTypes().get(69);
+        getDescriptor().getMessageTypes().get(68);
     internal_static_google_analytics_admin_v1alpha_UpdateGoogleSignalsSettingsRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_analytics_admin_v1alpha_UpdateGoogleSignalsSettingsRequest_descriptor,
@@ -1677,7 +1883,7 @@ public final class AnalyticsAdminProto {
               "GoogleSignalsSettings", "UpdateMask",
             });
     internal_static_google_analytics_admin_v1alpha_CreateConversionEventRequest_descriptor =
-        getDescriptor().getMessageTypes().get(70);
+        getDescriptor().getMessageTypes().get(69);
     internal_static_google_analytics_admin_v1alpha_CreateConversionEventRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_analytics_admin_v1alpha_CreateConversionEventRequest_descriptor,
@@ -1685,7 +1891,7 @@ public final class AnalyticsAdminProto {
               "ConversionEvent", "Parent",
             });
     internal_static_google_analytics_admin_v1alpha_GetConversionEventRequest_descriptor =
-        getDescriptor().getMessageTypes().get(71);
+        getDescriptor().getMessageTypes().get(70);
     internal_static_google_analytics_admin_v1alpha_GetConversionEventRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_analytics_admin_v1alpha_GetConversionEventRequest_descriptor,
@@ -1693,7 +1899,7 @@ public final class AnalyticsAdminProto {
               "Name",
             });
     internal_static_google_analytics_admin_v1alpha_DeleteConversionEventRequest_descriptor =
-        getDescriptor().getMessageTypes().get(72);
+        getDescriptor().getMessageTypes().get(71);
     internal_static_google_analytics_admin_v1alpha_DeleteConversionEventRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_analytics_admin_v1alpha_DeleteConversionEventRequest_descriptor,
@@ -1701,7 +1907,7 @@ public final class AnalyticsAdminProto {
               "Name",
             });
     internal_static_google_analytics_admin_v1alpha_ListConversionEventsRequest_descriptor =
-        getDescriptor().getMessageTypes().get(73);
+        getDescriptor().getMessageTypes().get(72);
     internal_static_google_analytics_admin_v1alpha_ListConversionEventsRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_analytics_admin_v1alpha_ListConversionEventsRequest_descriptor,
@@ -1709,15 +1915,127 @@ public final class AnalyticsAdminProto {
               "Parent", "PageSize", "PageToken",
             });
     internal_static_google_analytics_admin_v1alpha_ListConversionEventsResponse_descriptor =
-        getDescriptor().getMessageTypes().get(74);
+        getDescriptor().getMessageTypes().get(73);
     internal_static_google_analytics_admin_v1alpha_ListConversionEventsResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_analytics_admin_v1alpha_ListConversionEventsResponse_descriptor,
             new java.lang.String[] {
               "ConversionEvents", "NextPageToken",
             });
-    internal_static_google_analytics_admin_v1alpha_CreateCustomDimensionRequest_descriptor =
+    internal_static_google_analytics_admin_v1alpha_GetDisplayVideo360AdvertiserLinkRequest_descriptor =
+        getDescriptor().getMessageTypes().get(74);
+    internal_static_google_analytics_admin_v1alpha_GetDisplayVideo360AdvertiserLinkRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_analytics_admin_v1alpha_GetDisplayVideo360AdvertiserLinkRequest_descriptor,
+            new java.lang.String[] {
+              "Name",
+            });
+    internal_static_google_analytics_admin_v1alpha_ListDisplayVideo360AdvertiserLinksRequest_descriptor =
         getDescriptor().getMessageTypes().get(75);
+    internal_static_google_analytics_admin_v1alpha_ListDisplayVideo360AdvertiserLinksRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_analytics_admin_v1alpha_ListDisplayVideo360AdvertiserLinksRequest_descriptor,
+            new java.lang.String[] {
+              "Parent", "PageSize", "PageToken",
+            });
+    internal_static_google_analytics_admin_v1alpha_ListDisplayVideo360AdvertiserLinksResponse_descriptor =
+        getDescriptor().getMessageTypes().get(76);
+    internal_static_google_analytics_admin_v1alpha_ListDisplayVideo360AdvertiserLinksResponse_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_analytics_admin_v1alpha_ListDisplayVideo360AdvertiserLinksResponse_descriptor,
+            new java.lang.String[] {
+              "DisplayVideo360AdvertiserLinks", "NextPageToken",
+            });
+    internal_static_google_analytics_admin_v1alpha_CreateDisplayVideo360AdvertiserLinkRequest_descriptor =
+        getDescriptor().getMessageTypes().get(77);
+    internal_static_google_analytics_admin_v1alpha_CreateDisplayVideo360AdvertiserLinkRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_analytics_admin_v1alpha_CreateDisplayVideo360AdvertiserLinkRequest_descriptor,
+            new java.lang.String[] {
+              "Parent", "DisplayVideo360AdvertiserLink",
+            });
+    internal_static_google_analytics_admin_v1alpha_DeleteDisplayVideo360AdvertiserLinkRequest_descriptor =
+        getDescriptor().getMessageTypes().get(78);
+    internal_static_google_analytics_admin_v1alpha_DeleteDisplayVideo360AdvertiserLinkRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_analytics_admin_v1alpha_DeleteDisplayVideo360AdvertiserLinkRequest_descriptor,
+            new java.lang.String[] {
+              "Name",
+            });
+    internal_static_google_analytics_admin_v1alpha_UpdateDisplayVideo360AdvertiserLinkRequest_descriptor =
+        getDescriptor().getMessageTypes().get(79);
+    internal_static_google_analytics_admin_v1alpha_UpdateDisplayVideo360AdvertiserLinkRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_analytics_admin_v1alpha_UpdateDisplayVideo360AdvertiserLinkRequest_descriptor,
+            new java.lang.String[] {
+              "DisplayVideo360AdvertiserLink", "UpdateMask",
+            });
+    internal_static_google_analytics_admin_v1alpha_GetDisplayVideo360AdvertiserLinkProposalRequest_descriptor =
+        getDescriptor().getMessageTypes().get(80);
+    internal_static_google_analytics_admin_v1alpha_GetDisplayVideo360AdvertiserLinkProposalRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_analytics_admin_v1alpha_GetDisplayVideo360AdvertiserLinkProposalRequest_descriptor,
+            new java.lang.String[] {
+              "Name",
+            });
+    internal_static_google_analytics_admin_v1alpha_ListDisplayVideo360AdvertiserLinkProposalsRequest_descriptor =
+        getDescriptor().getMessageTypes().get(81);
+    internal_static_google_analytics_admin_v1alpha_ListDisplayVideo360AdvertiserLinkProposalsRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_analytics_admin_v1alpha_ListDisplayVideo360AdvertiserLinkProposalsRequest_descriptor,
+            new java.lang.String[] {
+              "Parent", "PageSize", "PageToken",
+            });
+    internal_static_google_analytics_admin_v1alpha_ListDisplayVideo360AdvertiserLinkProposalsResponse_descriptor =
+        getDescriptor().getMessageTypes().get(82);
+    internal_static_google_analytics_admin_v1alpha_ListDisplayVideo360AdvertiserLinkProposalsResponse_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_analytics_admin_v1alpha_ListDisplayVideo360AdvertiserLinkProposalsResponse_descriptor,
+            new java.lang.String[] {
+              "DisplayVideo360AdvertiserLinkProposals", "NextPageToken",
+            });
+    internal_static_google_analytics_admin_v1alpha_CreateDisplayVideo360AdvertiserLinkProposalRequest_descriptor =
+        getDescriptor().getMessageTypes().get(83);
+    internal_static_google_analytics_admin_v1alpha_CreateDisplayVideo360AdvertiserLinkProposalRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_analytics_admin_v1alpha_CreateDisplayVideo360AdvertiserLinkProposalRequest_descriptor,
+            new java.lang.String[] {
+              "Parent", "DisplayVideo360AdvertiserLinkProposal",
+            });
+    internal_static_google_analytics_admin_v1alpha_DeleteDisplayVideo360AdvertiserLinkProposalRequest_descriptor =
+        getDescriptor().getMessageTypes().get(84);
+    internal_static_google_analytics_admin_v1alpha_DeleteDisplayVideo360AdvertiserLinkProposalRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_analytics_admin_v1alpha_DeleteDisplayVideo360AdvertiserLinkProposalRequest_descriptor,
+            new java.lang.String[] {
+              "Name",
+            });
+    internal_static_google_analytics_admin_v1alpha_ApproveDisplayVideo360AdvertiserLinkProposalRequest_descriptor =
+        getDescriptor().getMessageTypes().get(85);
+    internal_static_google_analytics_admin_v1alpha_ApproveDisplayVideo360AdvertiserLinkProposalRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_analytics_admin_v1alpha_ApproveDisplayVideo360AdvertiserLinkProposalRequest_descriptor,
+            new java.lang.String[] {
+              "Name",
+            });
+    internal_static_google_analytics_admin_v1alpha_ApproveDisplayVideo360AdvertiserLinkProposalResponse_descriptor =
+        getDescriptor().getMessageTypes().get(86);
+    internal_static_google_analytics_admin_v1alpha_ApproveDisplayVideo360AdvertiserLinkProposalResponse_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_analytics_admin_v1alpha_ApproveDisplayVideo360AdvertiserLinkProposalResponse_descriptor,
+            new java.lang.String[] {
+              "DisplayVideo360AdvertiserLink",
+            });
+    internal_static_google_analytics_admin_v1alpha_CancelDisplayVideo360AdvertiserLinkProposalRequest_descriptor =
+        getDescriptor().getMessageTypes().get(87);
+    internal_static_google_analytics_admin_v1alpha_CancelDisplayVideo360AdvertiserLinkProposalRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_analytics_admin_v1alpha_CancelDisplayVideo360AdvertiserLinkProposalRequest_descriptor,
+            new java.lang.String[] {
+              "Name",
+            });
+    internal_static_google_analytics_admin_v1alpha_CreateCustomDimensionRequest_descriptor =
+        getDescriptor().getMessageTypes().get(88);
     internal_static_google_analytics_admin_v1alpha_CreateCustomDimensionRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_analytics_admin_v1alpha_CreateCustomDimensionRequest_descriptor,
@@ -1725,7 +2043,7 @@ public final class AnalyticsAdminProto {
               "Parent", "CustomDimension",
             });
     internal_static_google_analytics_admin_v1alpha_UpdateCustomDimensionRequest_descriptor =
-        getDescriptor().getMessageTypes().get(76);
+        getDescriptor().getMessageTypes().get(89);
     internal_static_google_analytics_admin_v1alpha_UpdateCustomDimensionRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_analytics_admin_v1alpha_UpdateCustomDimensionRequest_descriptor,
@@ -1733,7 +2051,7 @@ public final class AnalyticsAdminProto {
               "CustomDimension", "UpdateMask",
             });
     internal_static_google_analytics_admin_v1alpha_ListCustomDimensionsRequest_descriptor =
-        getDescriptor().getMessageTypes().get(77);
+        getDescriptor().getMessageTypes().get(90);
     internal_static_google_analytics_admin_v1alpha_ListCustomDimensionsRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_analytics_admin_v1alpha_ListCustomDimensionsRequest_descriptor,
@@ -1741,7 +2059,7 @@ public final class AnalyticsAdminProto {
               "Parent", "PageSize", "PageToken",
             });
     internal_static_google_analytics_admin_v1alpha_ListCustomDimensionsResponse_descriptor =
-        getDescriptor().getMessageTypes().get(78);
+        getDescriptor().getMessageTypes().get(91);
     internal_static_google_analytics_admin_v1alpha_ListCustomDimensionsResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_analytics_admin_v1alpha_ListCustomDimensionsResponse_descriptor,
@@ -1749,7 +2067,7 @@ public final class AnalyticsAdminProto {
               "CustomDimensions", "NextPageToken",
             });
     internal_static_google_analytics_admin_v1alpha_ArchiveCustomDimensionRequest_descriptor =
-        getDescriptor().getMessageTypes().get(79);
+        getDescriptor().getMessageTypes().get(92);
     internal_static_google_analytics_admin_v1alpha_ArchiveCustomDimensionRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_analytics_admin_v1alpha_ArchiveCustomDimensionRequest_descriptor,
@@ -1757,7 +2075,7 @@ public final class AnalyticsAdminProto {
               "Name",
             });
     internal_static_google_analytics_admin_v1alpha_GetCustomDimensionRequest_descriptor =
-        getDescriptor().getMessageTypes().get(80);
+        getDescriptor().getMessageTypes().get(93);
     internal_static_google_analytics_admin_v1alpha_GetCustomDimensionRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_analytics_admin_v1alpha_GetCustomDimensionRequest_descriptor,
@@ -1765,7 +2083,7 @@ public final class AnalyticsAdminProto {
               "Name",
             });
     internal_static_google_analytics_admin_v1alpha_CreateCustomMetricRequest_descriptor =
-        getDescriptor().getMessageTypes().get(81);
+        getDescriptor().getMessageTypes().get(94);
     internal_static_google_analytics_admin_v1alpha_CreateCustomMetricRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_analytics_admin_v1alpha_CreateCustomMetricRequest_descriptor,
@@ -1773,7 +2091,7 @@ public final class AnalyticsAdminProto {
               "Parent", "CustomMetric",
             });
     internal_static_google_analytics_admin_v1alpha_UpdateCustomMetricRequest_descriptor =
-        getDescriptor().getMessageTypes().get(82);
+        getDescriptor().getMessageTypes().get(95);
     internal_static_google_analytics_admin_v1alpha_UpdateCustomMetricRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_analytics_admin_v1alpha_UpdateCustomMetricRequest_descriptor,
@@ -1781,7 +2099,7 @@ public final class AnalyticsAdminProto {
               "CustomMetric", "UpdateMask",
             });
     internal_static_google_analytics_admin_v1alpha_ListCustomMetricsRequest_descriptor =
-        getDescriptor().getMessageTypes().get(83);
+        getDescriptor().getMessageTypes().get(96);
     internal_static_google_analytics_admin_v1alpha_ListCustomMetricsRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_analytics_admin_v1alpha_ListCustomMetricsRequest_descriptor,
@@ -1789,7 +2107,7 @@ public final class AnalyticsAdminProto {
               "Parent", "PageSize", "PageToken",
             });
     internal_static_google_analytics_admin_v1alpha_ListCustomMetricsResponse_descriptor =
-        getDescriptor().getMessageTypes().get(84);
+        getDescriptor().getMessageTypes().get(97);
     internal_static_google_analytics_admin_v1alpha_ListCustomMetricsResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_analytics_admin_v1alpha_ListCustomMetricsResponse_descriptor,
@@ -1797,7 +2115,7 @@ public final class AnalyticsAdminProto {
               "CustomMetrics", "NextPageToken",
             });
     internal_static_google_analytics_admin_v1alpha_ArchiveCustomMetricRequest_descriptor =
-        getDescriptor().getMessageTypes().get(85);
+        getDescriptor().getMessageTypes().get(98);
     internal_static_google_analytics_admin_v1alpha_ArchiveCustomMetricRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_analytics_admin_v1alpha_ArchiveCustomMetricRequest_descriptor,
@@ -1805,12 +2123,28 @@ public final class AnalyticsAdminProto {
               "Name",
             });
     internal_static_google_analytics_admin_v1alpha_GetCustomMetricRequest_descriptor =
-        getDescriptor().getMessageTypes().get(86);
+        getDescriptor().getMessageTypes().get(99);
     internal_static_google_analytics_admin_v1alpha_GetCustomMetricRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_analytics_admin_v1alpha_GetCustomMetricRequest_descriptor,
             new java.lang.String[] {
               "Name",
+            });
+    internal_static_google_analytics_admin_v1alpha_GetDataRetentionSettingsRequest_descriptor =
+        getDescriptor().getMessageTypes().get(100);
+    internal_static_google_analytics_admin_v1alpha_GetDataRetentionSettingsRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_analytics_admin_v1alpha_GetDataRetentionSettingsRequest_descriptor,
+            new java.lang.String[] {
+              "Name",
+            });
+    internal_static_google_analytics_admin_v1alpha_UpdateDataRetentionSettingsRequest_descriptor =
+        getDescriptor().getMessageTypes().get(101);
+    internal_static_google_analytics_admin_v1alpha_UpdateDataRetentionSettingsRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_analytics_admin_v1alpha_UpdateDataRetentionSettingsRequest_descriptor,
+            new java.lang.String[] {
+              "DataRetentionSettings", "UpdateMask",
             });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();

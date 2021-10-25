@@ -10,6 +10,9 @@
         "grpc": {
           "libraryClient": "AnalyticsAdminServiceClient",
           "rpcs": {
+            "ApproveDisplayVideo360AdvertiserLinkProposal": {
+              "methods": ["approveDisplayVideo360AdvertiserLinkProposal", "approveDisplayVideo360AdvertiserLinkProposalCallable"]
+            },
             "ArchiveCustomDimension": {
               "methods": ["archiveCustomDimension", "archiveCustomDimension", "archiveCustomDimension", "archiveCustomDimensionCallable"]
             },
@@ -31,6 +34,9 @@
             "BatchUpdateUserLinks": {
               "methods": ["batchUpdateUserLinks", "batchUpdateUserLinksCallable"]
             },
+            "CancelDisplayVideo360AdvertiserLinkProposal": {
+              "methods": ["cancelDisplayVideo360AdvertiserLinkProposal", "cancelDisplayVideo360AdvertiserLinkProposalCallable"]
+            },
             "CreateConversionEvent": {
               "methods": ["createConversionEvent", "createConversionEvent", "createConversionEvent", "createConversionEventCallable"]
             },
@@ -39,6 +45,12 @@
             },
             "CreateCustomMetric": {
               "methods": ["createCustomMetric", "createCustomMetric", "createCustomMetric", "createCustomMetricCallable"]
+            },
+            "CreateDisplayVideo360AdvertiserLink": {
+              "methods": ["createDisplayVideo360AdvertiserLink", "createDisplayVideo360AdvertiserLink", "createDisplayVideo360AdvertiserLink", "createDisplayVideo360AdvertiserLinkCallable"]
+            },
+            "CreateDisplayVideo360AdvertiserLinkProposal": {
+              "methods": ["createDisplayVideo360AdvertiserLinkProposal", "createDisplayVideo360AdvertiserLinkProposal", "createDisplayVideo360AdvertiserLinkProposal", "createDisplayVideo360AdvertiserLinkProposalCallable"]
             },
             "CreateFirebaseLink": {
               "methods": ["createFirebaseLink", "createFirebaseLink", "createFirebaseLink", "createFirebaseLinkCallable"]
@@ -66,6 +78,12 @@
             },
             "DeleteConversionEvent": {
               "methods": ["deleteConversionEvent", "deleteConversionEvent", "deleteConversionEvent", "deleteConversionEventCallable"]
+            },
+            "DeleteDisplayVideo360AdvertiserLink": {
+              "methods": ["deleteDisplayVideo360AdvertiserLink", "deleteDisplayVideo360AdvertiserLink", "deleteDisplayVideo360AdvertiserLink", "deleteDisplayVideo360AdvertiserLinkCallable"]
+            },
+            "DeleteDisplayVideo360AdvertiserLinkProposal": {
+              "methods": ["deleteDisplayVideo360AdvertiserLinkProposal", "deleteDisplayVideo360AdvertiserLinkProposal", "deleteDisplayVideo360AdvertiserLinkProposal", "deleteDisplayVideo360AdvertiserLinkProposalCallable"]
             },
             "DeleteFirebaseLink": {
               "methods": ["deleteFirebaseLink", "deleteFirebaseLink", "deleteFirebaseLink", "deleteFirebaseLinkCallable"]
@@ -103,8 +121,17 @@
             "GetCustomMetric": {
               "methods": ["getCustomMetric", "getCustomMetric", "getCustomMetric", "getCustomMetricCallable"]
             },
+            "GetDataRetentionSettings": {
+              "methods": ["getDataRetentionSettings", "getDataRetentionSettings", "getDataRetentionSettings", "getDataRetentionSettingsCallable"]
+            },
             "GetDataSharingSettings": {
               "methods": ["getDataSharingSettings", "getDataSharingSettings", "getDataSharingSettings", "getDataSharingSettingsCallable"]
+            },
+            "GetDisplayVideo360AdvertiserLink": {
+              "methods": ["getDisplayVideo360AdvertiserLink", "getDisplayVideo360AdvertiserLink", "getDisplayVideo360AdvertiserLink", "getDisplayVideo360AdvertiserLinkCallable"]
+            },
+            "GetDisplayVideo360AdvertiserLinkProposal": {
+              "methods": ["getDisplayVideo360AdvertiserLinkProposal", "getDisplayVideo360AdvertiserLinkProposal", "getDisplayVideo360AdvertiserLinkProposal", "getDisplayVideo360AdvertiserLinkProposalCallable"]
             },
             "GetEnhancedMeasurementSettings": {
               "methods": ["getEnhancedMeasurementSettings", "getEnhancedMeasurementSettings", "getEnhancedMeasurementSettings", "getEnhancedMeasurementSettingsCallable"]
@@ -148,6 +175,12 @@
             "ListCustomMetrics": {
               "methods": ["listCustomMetrics", "listCustomMetrics", "listCustomMetrics", "listCustomMetricsPagedCallable", "listCustomMetricsCallable"]
             },
+            "ListDisplayVideo360AdvertiserLinkProposals": {
+              "methods": ["listDisplayVideo360AdvertiserLinkProposals", "listDisplayVideo360AdvertiserLinkProposals", "listDisplayVideo360AdvertiserLinkProposals", "listDisplayVideo360AdvertiserLinkProposalsPagedCallable", "listDisplayVideo360AdvertiserLinkProposalsCallable"]
+            },
+            "ListDisplayVideo360AdvertiserLinks": {
+              "methods": ["listDisplayVideo360AdvertiserLinks", "listDisplayVideo360AdvertiserLinks", "listDisplayVideo360AdvertiserLinks", "listDisplayVideo360AdvertiserLinksPagedCallable", "listDisplayVideo360AdvertiserLinksCallable"]
+            },
             "ListFirebaseLinks": {
               "methods": ["listFirebaseLinks", "listFirebaseLinks", "listFirebaseLinks", "listFirebaseLinksPagedCallable", "listFirebaseLinksCallable"]
             },
@@ -187,11 +220,14 @@
             "UpdateCustomMetric": {
               "methods": ["updateCustomMetric", "updateCustomMetric", "updateCustomMetricCallable"]
             },
+            "UpdateDataRetentionSettings": {
+              "methods": ["updateDataRetentionSettings", "updateDataRetentionSettings", "updateDataRetentionSettingsCallable"]
+            },
+            "UpdateDisplayVideo360AdvertiserLink": {
+              "methods": ["updateDisplayVideo360AdvertiserLink", "updateDisplayVideo360AdvertiserLink", "updateDisplayVideo360AdvertiserLinkCallable"]
+            },
             "UpdateEnhancedMeasurementSettings": {
               "methods": ["updateEnhancedMeasurementSettings", "updateEnhancedMeasurementSettings", "updateEnhancedMeasurementSettingsCallable"]
-            },
-            "UpdateFirebaseLink": {
-              "methods": ["updateFirebaseLink", "updateFirebaseLink", "updateFirebaseLinkCallable"]
             },
             "UpdateGoogleAdsLink": {
               "methods": ["updateGoogleAdsLink", "updateGoogleAdsLink", "updateGoogleAdsLinkCallable"]

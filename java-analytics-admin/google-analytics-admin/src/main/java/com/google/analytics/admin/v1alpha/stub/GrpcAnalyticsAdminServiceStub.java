@@ -23,6 +23,8 @@ import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.Lis
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListConversionEventsPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListCustomDimensionsPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListCustomMetricsPagedResponse;
+import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListDisplayVideo360AdvertiserLinkProposalsPagedResponse;
+import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListDisplayVideo360AdvertiserLinksPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListFirebaseLinksPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListGoogleAdsLinksPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListIosAppDataStreamsPagedResponse;
@@ -34,6 +36,8 @@ import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.Sea
 
 import com.google.analytics.admin.v1alpha.Account;
 import com.google.analytics.admin.v1alpha.AndroidAppDataStream;
+import com.google.analytics.admin.v1alpha.ApproveDisplayVideo360AdvertiserLinkProposalRequest;
+import com.google.analytics.admin.v1alpha.ApproveDisplayVideo360AdvertiserLinkProposalResponse;
 import com.google.analytics.admin.v1alpha.ArchiveCustomDimensionRequest;
 import com.google.analytics.admin.v1alpha.ArchiveCustomMetricRequest;
 import com.google.analytics.admin.v1alpha.AuditUserLinksRequest;
@@ -45,10 +49,13 @@ import com.google.analytics.admin.v1alpha.BatchGetUserLinksRequest;
 import com.google.analytics.admin.v1alpha.BatchGetUserLinksResponse;
 import com.google.analytics.admin.v1alpha.BatchUpdateUserLinksRequest;
 import com.google.analytics.admin.v1alpha.BatchUpdateUserLinksResponse;
+import com.google.analytics.admin.v1alpha.CancelDisplayVideo360AdvertiserLinkProposalRequest;
 import com.google.analytics.admin.v1alpha.ConversionEvent;
 import com.google.analytics.admin.v1alpha.CreateConversionEventRequest;
 import com.google.analytics.admin.v1alpha.CreateCustomDimensionRequest;
 import com.google.analytics.admin.v1alpha.CreateCustomMetricRequest;
+import com.google.analytics.admin.v1alpha.CreateDisplayVideo360AdvertiserLinkProposalRequest;
+import com.google.analytics.admin.v1alpha.CreateDisplayVideo360AdvertiserLinkRequest;
 import com.google.analytics.admin.v1alpha.CreateFirebaseLinkRequest;
 import com.google.analytics.admin.v1alpha.CreateGoogleAdsLinkRequest;
 import com.google.analytics.admin.v1alpha.CreateMeasurementProtocolSecretRequest;
@@ -57,10 +64,13 @@ import com.google.analytics.admin.v1alpha.CreateUserLinkRequest;
 import com.google.analytics.admin.v1alpha.CreateWebDataStreamRequest;
 import com.google.analytics.admin.v1alpha.CustomDimension;
 import com.google.analytics.admin.v1alpha.CustomMetric;
+import com.google.analytics.admin.v1alpha.DataRetentionSettings;
 import com.google.analytics.admin.v1alpha.DataSharingSettings;
 import com.google.analytics.admin.v1alpha.DeleteAccountRequest;
 import com.google.analytics.admin.v1alpha.DeleteAndroidAppDataStreamRequest;
 import com.google.analytics.admin.v1alpha.DeleteConversionEventRequest;
+import com.google.analytics.admin.v1alpha.DeleteDisplayVideo360AdvertiserLinkProposalRequest;
+import com.google.analytics.admin.v1alpha.DeleteDisplayVideo360AdvertiserLinkRequest;
 import com.google.analytics.admin.v1alpha.DeleteFirebaseLinkRequest;
 import com.google.analytics.admin.v1alpha.DeleteGoogleAdsLinkRequest;
 import com.google.analytics.admin.v1alpha.DeleteIosAppDataStreamRequest;
@@ -68,6 +78,8 @@ import com.google.analytics.admin.v1alpha.DeleteMeasurementProtocolSecretRequest
 import com.google.analytics.admin.v1alpha.DeletePropertyRequest;
 import com.google.analytics.admin.v1alpha.DeleteUserLinkRequest;
 import com.google.analytics.admin.v1alpha.DeleteWebDataStreamRequest;
+import com.google.analytics.admin.v1alpha.DisplayVideo360AdvertiserLink;
+import com.google.analytics.admin.v1alpha.DisplayVideo360AdvertiserLinkProposal;
 import com.google.analytics.admin.v1alpha.EnhancedMeasurementSettings;
 import com.google.analytics.admin.v1alpha.FirebaseLink;
 import com.google.analytics.admin.v1alpha.GetAccountRequest;
@@ -75,7 +87,10 @@ import com.google.analytics.admin.v1alpha.GetAndroidAppDataStreamRequest;
 import com.google.analytics.admin.v1alpha.GetConversionEventRequest;
 import com.google.analytics.admin.v1alpha.GetCustomDimensionRequest;
 import com.google.analytics.admin.v1alpha.GetCustomMetricRequest;
+import com.google.analytics.admin.v1alpha.GetDataRetentionSettingsRequest;
 import com.google.analytics.admin.v1alpha.GetDataSharingSettingsRequest;
+import com.google.analytics.admin.v1alpha.GetDisplayVideo360AdvertiserLinkProposalRequest;
+import com.google.analytics.admin.v1alpha.GetDisplayVideo360AdvertiserLinkRequest;
 import com.google.analytics.admin.v1alpha.GetEnhancedMeasurementSettingsRequest;
 import com.google.analytics.admin.v1alpha.GetGlobalSiteTagRequest;
 import com.google.analytics.admin.v1alpha.GetGoogleSignalsSettingsRequest;
@@ -100,6 +115,10 @@ import com.google.analytics.admin.v1alpha.ListCustomDimensionsRequest;
 import com.google.analytics.admin.v1alpha.ListCustomDimensionsResponse;
 import com.google.analytics.admin.v1alpha.ListCustomMetricsRequest;
 import com.google.analytics.admin.v1alpha.ListCustomMetricsResponse;
+import com.google.analytics.admin.v1alpha.ListDisplayVideo360AdvertiserLinkProposalsRequest;
+import com.google.analytics.admin.v1alpha.ListDisplayVideo360AdvertiserLinkProposalsResponse;
+import com.google.analytics.admin.v1alpha.ListDisplayVideo360AdvertiserLinksRequest;
+import com.google.analytics.admin.v1alpha.ListDisplayVideo360AdvertiserLinksResponse;
 import com.google.analytics.admin.v1alpha.ListFirebaseLinksRequest;
 import com.google.analytics.admin.v1alpha.ListFirebaseLinksResponse;
 import com.google.analytics.admin.v1alpha.ListGoogleAdsLinksRequest;
@@ -124,8 +143,9 @@ import com.google.analytics.admin.v1alpha.UpdateAccountRequest;
 import com.google.analytics.admin.v1alpha.UpdateAndroidAppDataStreamRequest;
 import com.google.analytics.admin.v1alpha.UpdateCustomDimensionRequest;
 import com.google.analytics.admin.v1alpha.UpdateCustomMetricRequest;
+import com.google.analytics.admin.v1alpha.UpdateDataRetentionSettingsRequest;
+import com.google.analytics.admin.v1alpha.UpdateDisplayVideo360AdvertiserLinkRequest;
 import com.google.analytics.admin.v1alpha.UpdateEnhancedMeasurementSettingsRequest;
-import com.google.analytics.admin.v1alpha.UpdateFirebaseLinkRequest;
 import com.google.analytics.admin.v1alpha.UpdateGoogleAdsLinkRequest;
 import com.google.analytics.admin.v1alpha.UpdateGoogleSignalsSettingsRequest;
 import com.google.analytics.admin.v1alpha.UpdateIosAppDataStreamRequest;
@@ -579,17 +599,6 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
               .setResponseMarshaller(ProtoUtils.marshaller(FirebaseLink.getDefaultInstance()))
               .build();
 
-  private static final MethodDescriptor<UpdateFirebaseLinkRequest, FirebaseLink>
-      updateFirebaseLinkMethodDescriptor =
-          MethodDescriptor.<UpdateFirebaseLinkRequest, FirebaseLink>newBuilder()
-              .setType(MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(
-                  "google.analytics.admin.v1alpha.AnalyticsAdminService/UpdateFirebaseLink")
-              .setRequestMarshaller(
-                  ProtoUtils.marshaller(UpdateFirebaseLinkRequest.getDefaultInstance()))
-              .setResponseMarshaller(ProtoUtils.marshaller(FirebaseLink.getDefaultInstance()))
-              .build();
-
   private static final MethodDescriptor<DeleteFirebaseLinkRequest, Empty>
       deleteFirebaseLinkMethodDescriptor =
           MethodDescriptor.<DeleteFirebaseLinkRequest, Empty>newBuilder()
@@ -836,6 +845,184 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
                   ProtoUtils.marshaller(ListConversionEventsResponse.getDefaultInstance()))
               .build();
 
+  private static final MethodDescriptor<
+          GetDisplayVideo360AdvertiserLinkRequest, DisplayVideo360AdvertiserLink>
+      getDisplayVideo360AdvertiserLinkMethodDescriptor =
+          MethodDescriptor
+              .<GetDisplayVideo360AdvertiserLinkRequest, DisplayVideo360AdvertiserLink>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.analytics.admin.v1alpha.AnalyticsAdminService/GetDisplayVideo360AdvertiserLink")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(
+                      GetDisplayVideo360AdvertiserLinkRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(DisplayVideo360AdvertiserLink.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<
+          ListDisplayVideo360AdvertiserLinksRequest, ListDisplayVideo360AdvertiserLinksResponse>
+      listDisplayVideo360AdvertiserLinksMethodDescriptor =
+          MethodDescriptor
+              .<ListDisplayVideo360AdvertiserLinksRequest,
+                  ListDisplayVideo360AdvertiserLinksResponse>
+                  newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.analytics.admin.v1alpha.AnalyticsAdminService/ListDisplayVideo360AdvertiserLinks")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(
+                      ListDisplayVideo360AdvertiserLinksRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(
+                      ListDisplayVideo360AdvertiserLinksResponse.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<
+          CreateDisplayVideo360AdvertiserLinkRequest, DisplayVideo360AdvertiserLink>
+      createDisplayVideo360AdvertiserLinkMethodDescriptor =
+          MethodDescriptor
+              .<CreateDisplayVideo360AdvertiserLinkRequest, DisplayVideo360AdvertiserLink>
+                  newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.analytics.admin.v1alpha.AnalyticsAdminService/CreateDisplayVideo360AdvertiserLink")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(
+                      CreateDisplayVideo360AdvertiserLinkRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(DisplayVideo360AdvertiserLink.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<DeleteDisplayVideo360AdvertiserLinkRequest, Empty>
+      deleteDisplayVideo360AdvertiserLinkMethodDescriptor =
+          MethodDescriptor.<DeleteDisplayVideo360AdvertiserLinkRequest, Empty>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.analytics.admin.v1alpha.AnalyticsAdminService/DeleteDisplayVideo360AdvertiserLink")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(
+                      DeleteDisplayVideo360AdvertiserLinkRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<
+          UpdateDisplayVideo360AdvertiserLinkRequest, DisplayVideo360AdvertiserLink>
+      updateDisplayVideo360AdvertiserLinkMethodDescriptor =
+          MethodDescriptor
+              .<UpdateDisplayVideo360AdvertiserLinkRequest, DisplayVideo360AdvertiserLink>
+                  newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.analytics.admin.v1alpha.AnalyticsAdminService/UpdateDisplayVideo360AdvertiserLink")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(
+                      UpdateDisplayVideo360AdvertiserLinkRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(DisplayVideo360AdvertiserLink.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<
+          GetDisplayVideo360AdvertiserLinkProposalRequest, DisplayVideo360AdvertiserLinkProposal>
+      getDisplayVideo360AdvertiserLinkProposalMethodDescriptor =
+          MethodDescriptor
+              .<GetDisplayVideo360AdvertiserLinkProposalRequest,
+                  DisplayVideo360AdvertiserLinkProposal>
+                  newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.analytics.admin.v1alpha.AnalyticsAdminService/GetDisplayVideo360AdvertiserLinkProposal")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(
+                      GetDisplayVideo360AdvertiserLinkProposalRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(DisplayVideo360AdvertiserLinkProposal.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<
+          ListDisplayVideo360AdvertiserLinkProposalsRequest,
+          ListDisplayVideo360AdvertiserLinkProposalsResponse>
+      listDisplayVideo360AdvertiserLinkProposalsMethodDescriptor =
+          MethodDescriptor
+              .<ListDisplayVideo360AdvertiserLinkProposalsRequest,
+                  ListDisplayVideo360AdvertiserLinkProposalsResponse>
+                  newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.analytics.admin.v1alpha.AnalyticsAdminService/ListDisplayVideo360AdvertiserLinkProposals")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(
+                      ListDisplayVideo360AdvertiserLinkProposalsRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(
+                      ListDisplayVideo360AdvertiserLinkProposalsResponse.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<
+          CreateDisplayVideo360AdvertiserLinkProposalRequest, DisplayVideo360AdvertiserLinkProposal>
+      createDisplayVideo360AdvertiserLinkProposalMethodDescriptor =
+          MethodDescriptor
+              .<CreateDisplayVideo360AdvertiserLinkProposalRequest,
+                  DisplayVideo360AdvertiserLinkProposal>
+                  newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.analytics.admin.v1alpha.AnalyticsAdminService/CreateDisplayVideo360AdvertiserLinkProposal")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(
+                      CreateDisplayVideo360AdvertiserLinkProposalRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(DisplayVideo360AdvertiserLinkProposal.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<DeleteDisplayVideo360AdvertiserLinkProposalRequest, Empty>
+      deleteDisplayVideo360AdvertiserLinkProposalMethodDescriptor =
+          MethodDescriptor.<DeleteDisplayVideo360AdvertiserLinkProposalRequest, Empty>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.analytics.admin.v1alpha.AnalyticsAdminService/DeleteDisplayVideo360AdvertiserLinkProposal")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(
+                      DeleteDisplayVideo360AdvertiserLinkProposalRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<
+          ApproveDisplayVideo360AdvertiserLinkProposalRequest,
+          ApproveDisplayVideo360AdvertiserLinkProposalResponse>
+      approveDisplayVideo360AdvertiserLinkProposalMethodDescriptor =
+          MethodDescriptor
+              .<ApproveDisplayVideo360AdvertiserLinkProposalRequest,
+                  ApproveDisplayVideo360AdvertiserLinkProposalResponse>
+                  newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.analytics.admin.v1alpha.AnalyticsAdminService/ApproveDisplayVideo360AdvertiserLinkProposal")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(
+                      ApproveDisplayVideo360AdvertiserLinkProposalRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(
+                      ApproveDisplayVideo360AdvertiserLinkProposalResponse.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<
+          CancelDisplayVideo360AdvertiserLinkProposalRequest, DisplayVideo360AdvertiserLinkProposal>
+      cancelDisplayVideo360AdvertiserLinkProposalMethodDescriptor =
+          MethodDescriptor
+              .<CancelDisplayVideo360AdvertiserLinkProposalRequest,
+                  DisplayVideo360AdvertiserLinkProposal>
+                  newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.analytics.admin.v1alpha.AnalyticsAdminService/CancelDisplayVideo360AdvertiserLinkProposal")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(
+                      CancelDisplayVideo360AdvertiserLinkProposalRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(DisplayVideo360AdvertiserLinkProposal.getDefaultInstance()))
+              .build();
+
   private static final MethodDescriptor<CreateCustomDimensionRequest, CustomDimension>
       createCustomDimensionMethodDescriptor =
           MethodDescriptor.<CreateCustomDimensionRequest, CustomDimension>newBuilder()
@@ -948,6 +1135,30 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
               .setResponseMarshaller(ProtoUtils.marshaller(CustomMetric.getDefaultInstance()))
               .build();
 
+  private static final MethodDescriptor<GetDataRetentionSettingsRequest, DataRetentionSettings>
+      getDataRetentionSettingsMethodDescriptor =
+          MethodDescriptor.<GetDataRetentionSettingsRequest, DataRetentionSettings>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.analytics.admin.v1alpha.AnalyticsAdminService/GetDataRetentionSettings")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(GetDataRetentionSettingsRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(DataRetentionSettings.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<UpdateDataRetentionSettingsRequest, DataRetentionSettings>
+      updateDataRetentionSettingsMethodDescriptor =
+          MethodDescriptor.<UpdateDataRetentionSettingsRequest, DataRetentionSettings>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.analytics.admin.v1alpha.AnalyticsAdminService/UpdateDataRetentionSettings")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(UpdateDataRetentionSettingsRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(DataRetentionSettings.getDefaultInstance()))
+              .build();
+
   private final UnaryCallable<GetAccountRequest, Account> getAccountCallable;
   private final UnaryCallable<ListAccountsRequest, ListAccountsResponse> listAccountsCallable;
   private final UnaryCallable<ListAccountsRequest, ListAccountsPagedResponse>
@@ -1019,7 +1230,6 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
   private final UnaryCallable<UpdateEnhancedMeasurementSettingsRequest, EnhancedMeasurementSettings>
       updateEnhancedMeasurementSettingsCallable;
   private final UnaryCallable<CreateFirebaseLinkRequest, FirebaseLink> createFirebaseLinkCallable;
-  private final UnaryCallable<UpdateFirebaseLinkRequest, FirebaseLink> updateFirebaseLinkCallable;
   private final UnaryCallable<DeleteFirebaseLinkRequest, Empty> deleteFirebaseLinkCallable;
   private final UnaryCallable<ListFirebaseLinksRequest, ListFirebaseLinksResponse>
       listFirebaseLinksCallable;
@@ -1069,6 +1279,47 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
       listConversionEventsCallable;
   private final UnaryCallable<ListConversionEventsRequest, ListConversionEventsPagedResponse>
       listConversionEventsPagedCallable;
+  private final UnaryCallable<
+          GetDisplayVideo360AdvertiserLinkRequest, DisplayVideo360AdvertiserLink>
+      getDisplayVideo360AdvertiserLinkCallable;
+  private final UnaryCallable<
+          ListDisplayVideo360AdvertiserLinksRequest, ListDisplayVideo360AdvertiserLinksResponse>
+      listDisplayVideo360AdvertiserLinksCallable;
+  private final UnaryCallable<
+          ListDisplayVideo360AdvertiserLinksRequest,
+          ListDisplayVideo360AdvertiserLinksPagedResponse>
+      listDisplayVideo360AdvertiserLinksPagedCallable;
+  private final UnaryCallable<
+          CreateDisplayVideo360AdvertiserLinkRequest, DisplayVideo360AdvertiserLink>
+      createDisplayVideo360AdvertiserLinkCallable;
+  private final UnaryCallable<DeleteDisplayVideo360AdvertiserLinkRequest, Empty>
+      deleteDisplayVideo360AdvertiserLinkCallable;
+  private final UnaryCallable<
+          UpdateDisplayVideo360AdvertiserLinkRequest, DisplayVideo360AdvertiserLink>
+      updateDisplayVideo360AdvertiserLinkCallable;
+  private final UnaryCallable<
+          GetDisplayVideo360AdvertiserLinkProposalRequest, DisplayVideo360AdvertiserLinkProposal>
+      getDisplayVideo360AdvertiserLinkProposalCallable;
+  private final UnaryCallable<
+          ListDisplayVideo360AdvertiserLinkProposalsRequest,
+          ListDisplayVideo360AdvertiserLinkProposalsResponse>
+      listDisplayVideo360AdvertiserLinkProposalsCallable;
+  private final UnaryCallable<
+          ListDisplayVideo360AdvertiserLinkProposalsRequest,
+          ListDisplayVideo360AdvertiserLinkProposalsPagedResponse>
+      listDisplayVideo360AdvertiserLinkProposalsPagedCallable;
+  private final UnaryCallable<
+          CreateDisplayVideo360AdvertiserLinkProposalRequest, DisplayVideo360AdvertiserLinkProposal>
+      createDisplayVideo360AdvertiserLinkProposalCallable;
+  private final UnaryCallable<DeleteDisplayVideo360AdvertiserLinkProposalRequest, Empty>
+      deleteDisplayVideo360AdvertiserLinkProposalCallable;
+  private final UnaryCallable<
+          ApproveDisplayVideo360AdvertiserLinkProposalRequest,
+          ApproveDisplayVideo360AdvertiserLinkProposalResponse>
+      approveDisplayVideo360AdvertiserLinkProposalCallable;
+  private final UnaryCallable<
+          CancelDisplayVideo360AdvertiserLinkProposalRequest, DisplayVideo360AdvertiserLinkProposal>
+      cancelDisplayVideo360AdvertiserLinkProposalCallable;
   private final UnaryCallable<CreateCustomDimensionRequest, CustomDimension>
       createCustomDimensionCallable;
   private final UnaryCallable<UpdateCustomDimensionRequest, CustomDimension>
@@ -1088,6 +1339,10 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
       listCustomMetricsPagedCallable;
   private final UnaryCallable<ArchiveCustomMetricRequest, Empty> archiveCustomMetricCallable;
   private final UnaryCallable<GetCustomMetricRequest, CustomMetric> getCustomMetricCallable;
+  private final UnaryCallable<GetDataRetentionSettingsRequest, DataRetentionSettings>
+      getDataRetentionSettingsCallable;
+  private final UnaryCallable<UpdateDataRetentionSettingsRequest, DataRetentionSettings>
+      updateDataRetentionSettingsCallable;
 
   private final BackgroundResource backgroundResources;
   private final GrpcOperationsStub operationsStub;
@@ -1505,17 +1760,6 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
                   return params.build();
                 })
             .build();
-    GrpcCallSettings<UpdateFirebaseLinkRequest, FirebaseLink> updateFirebaseLinkTransportSettings =
-        GrpcCallSettings.<UpdateFirebaseLinkRequest, FirebaseLink>newBuilder()
-            .setMethodDescriptor(updateFirebaseLinkMethodDescriptor)
-            .setParamsExtractor(
-                request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put(
-                      "firebase_link.name", String.valueOf(request.getFirebaseLink().getName()));
-                  return params.build();
-                })
-            .build();
     GrpcCallSettings<DeleteFirebaseLinkRequest, Empty> deleteFirebaseLinkTransportSettings =
         GrpcCallSettings.<DeleteFirebaseLinkRequest, Empty>newBuilder()
             .setMethodDescriptor(deleteFirebaseLinkMethodDescriptor)
@@ -1744,6 +1988,163 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
                       return params.build();
                     })
                 .build();
+    GrpcCallSettings<GetDisplayVideo360AdvertiserLinkRequest, DisplayVideo360AdvertiserLink>
+        getDisplayVideo360AdvertiserLinkTransportSettings =
+            GrpcCallSettings
+                .<GetDisplayVideo360AdvertiserLinkRequest, DisplayVideo360AdvertiserLink>
+                    newBuilder()
+                .setMethodDescriptor(getDisplayVideo360AdvertiserLinkMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("name", String.valueOf(request.getName()));
+                      return params.build();
+                    })
+                .build();
+    GrpcCallSettings<
+            ListDisplayVideo360AdvertiserLinksRequest, ListDisplayVideo360AdvertiserLinksResponse>
+        listDisplayVideo360AdvertiserLinksTransportSettings =
+            GrpcCallSettings
+                .<ListDisplayVideo360AdvertiserLinksRequest,
+                    ListDisplayVideo360AdvertiserLinksResponse>
+                    newBuilder()
+                .setMethodDescriptor(listDisplayVideo360AdvertiserLinksMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("parent", String.valueOf(request.getParent()));
+                      return params.build();
+                    })
+                .build();
+    GrpcCallSettings<CreateDisplayVideo360AdvertiserLinkRequest, DisplayVideo360AdvertiserLink>
+        createDisplayVideo360AdvertiserLinkTransportSettings =
+            GrpcCallSettings
+                .<CreateDisplayVideo360AdvertiserLinkRequest, DisplayVideo360AdvertiserLink>
+                    newBuilder()
+                .setMethodDescriptor(createDisplayVideo360AdvertiserLinkMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("parent", String.valueOf(request.getParent()));
+                      return params.build();
+                    })
+                .build();
+    GrpcCallSettings<DeleteDisplayVideo360AdvertiserLinkRequest, Empty>
+        deleteDisplayVideo360AdvertiserLinkTransportSettings =
+            GrpcCallSettings.<DeleteDisplayVideo360AdvertiserLinkRequest, Empty>newBuilder()
+                .setMethodDescriptor(deleteDisplayVideo360AdvertiserLinkMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("name", String.valueOf(request.getName()));
+                      return params.build();
+                    })
+                .build();
+    GrpcCallSettings<UpdateDisplayVideo360AdvertiserLinkRequest, DisplayVideo360AdvertiserLink>
+        updateDisplayVideo360AdvertiserLinkTransportSettings =
+            GrpcCallSettings
+                .<UpdateDisplayVideo360AdvertiserLinkRequest, DisplayVideo360AdvertiserLink>
+                    newBuilder()
+                .setMethodDescriptor(updateDisplayVideo360AdvertiserLinkMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put(
+                          "display_video_360_advertiser_link.name",
+                          String.valueOf(request.getDisplayVideo360AdvertiserLink().getName()));
+                      return params.build();
+                    })
+                .build();
+    GrpcCallSettings<
+            GetDisplayVideo360AdvertiserLinkProposalRequest, DisplayVideo360AdvertiserLinkProposal>
+        getDisplayVideo360AdvertiserLinkProposalTransportSettings =
+            GrpcCallSettings
+                .<GetDisplayVideo360AdvertiserLinkProposalRequest,
+                    DisplayVideo360AdvertiserLinkProposal>
+                    newBuilder()
+                .setMethodDescriptor(getDisplayVideo360AdvertiserLinkProposalMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("name", String.valueOf(request.getName()));
+                      return params.build();
+                    })
+                .build();
+    GrpcCallSettings<
+            ListDisplayVideo360AdvertiserLinkProposalsRequest,
+            ListDisplayVideo360AdvertiserLinkProposalsResponse>
+        listDisplayVideo360AdvertiserLinkProposalsTransportSettings =
+            GrpcCallSettings
+                .<ListDisplayVideo360AdvertiserLinkProposalsRequest,
+                    ListDisplayVideo360AdvertiserLinkProposalsResponse>
+                    newBuilder()
+                .setMethodDescriptor(listDisplayVideo360AdvertiserLinkProposalsMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("parent", String.valueOf(request.getParent()));
+                      return params.build();
+                    })
+                .build();
+    GrpcCallSettings<
+            CreateDisplayVideo360AdvertiserLinkProposalRequest,
+            DisplayVideo360AdvertiserLinkProposal>
+        createDisplayVideo360AdvertiserLinkProposalTransportSettings =
+            GrpcCallSettings
+                .<CreateDisplayVideo360AdvertiserLinkProposalRequest,
+                    DisplayVideo360AdvertiserLinkProposal>
+                    newBuilder()
+                .setMethodDescriptor(createDisplayVideo360AdvertiserLinkProposalMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("parent", String.valueOf(request.getParent()));
+                      return params.build();
+                    })
+                .build();
+    GrpcCallSettings<DeleteDisplayVideo360AdvertiserLinkProposalRequest, Empty>
+        deleteDisplayVideo360AdvertiserLinkProposalTransportSettings =
+            GrpcCallSettings.<DeleteDisplayVideo360AdvertiserLinkProposalRequest, Empty>newBuilder()
+                .setMethodDescriptor(deleteDisplayVideo360AdvertiserLinkProposalMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("name", String.valueOf(request.getName()));
+                      return params.build();
+                    })
+                .build();
+    GrpcCallSettings<
+            ApproveDisplayVideo360AdvertiserLinkProposalRequest,
+            ApproveDisplayVideo360AdvertiserLinkProposalResponse>
+        approveDisplayVideo360AdvertiserLinkProposalTransportSettings =
+            GrpcCallSettings
+                .<ApproveDisplayVideo360AdvertiserLinkProposalRequest,
+                    ApproveDisplayVideo360AdvertiserLinkProposalResponse>
+                    newBuilder()
+                .setMethodDescriptor(approveDisplayVideo360AdvertiserLinkProposalMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("name", String.valueOf(request.getName()));
+                      return params.build();
+                    })
+                .build();
+    GrpcCallSettings<
+            CancelDisplayVideo360AdvertiserLinkProposalRequest,
+            DisplayVideo360AdvertiserLinkProposal>
+        cancelDisplayVideo360AdvertiserLinkProposalTransportSettings =
+            GrpcCallSettings
+                .<CancelDisplayVideo360AdvertiserLinkProposalRequest,
+                    DisplayVideo360AdvertiserLinkProposal>
+                    newBuilder()
+                .setMethodDescriptor(cancelDisplayVideo360AdvertiserLinkProposalMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("name", String.valueOf(request.getName()));
+                      return params.build();
+                    })
+                .build();
     GrpcCallSettings<CreateCustomDimensionRequest, CustomDimension>
         createCustomDimensionTransportSettings =
             GrpcCallSettings.<CreateCustomDimensionRequest, CustomDimension>newBuilder()
@@ -1852,6 +2253,30 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
                   return params.build();
                 })
             .build();
+    GrpcCallSettings<GetDataRetentionSettingsRequest, DataRetentionSettings>
+        getDataRetentionSettingsTransportSettings =
+            GrpcCallSettings.<GetDataRetentionSettingsRequest, DataRetentionSettings>newBuilder()
+                .setMethodDescriptor(getDataRetentionSettingsMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("name", String.valueOf(request.getName()));
+                      return params.build();
+                    })
+                .build();
+    GrpcCallSettings<UpdateDataRetentionSettingsRequest, DataRetentionSettings>
+        updateDataRetentionSettingsTransportSettings =
+            GrpcCallSettings.<UpdateDataRetentionSettingsRequest, DataRetentionSettings>newBuilder()
+                .setMethodDescriptor(updateDataRetentionSettingsMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put(
+                          "data_retention_settings.name",
+                          String.valueOf(request.getDataRetentionSettings().getName()));
+                      return params.build();
+                    })
+                .build();
 
     this.getAccountCallable =
         callableFactory.createUnaryCallable(
@@ -2038,11 +2463,6 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
             createFirebaseLinkTransportSettings,
             settings.createFirebaseLinkSettings(),
             clientContext);
-    this.updateFirebaseLinkCallable =
-        callableFactory.createUnaryCallable(
-            updateFirebaseLinkTransportSettings,
-            settings.updateFirebaseLinkSettings(),
-            clientContext);
     this.deleteFirebaseLinkCallable =
         callableFactory.createUnaryCallable(
             deleteFirebaseLinkTransportSettings,
@@ -2166,6 +2586,71 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
             listConversionEventsTransportSettings,
             settings.listConversionEventsSettings(),
             clientContext);
+    this.getDisplayVideo360AdvertiserLinkCallable =
+        callableFactory.createUnaryCallable(
+            getDisplayVideo360AdvertiserLinkTransportSettings,
+            settings.getDisplayVideo360AdvertiserLinkSettings(),
+            clientContext);
+    this.listDisplayVideo360AdvertiserLinksCallable =
+        callableFactory.createUnaryCallable(
+            listDisplayVideo360AdvertiserLinksTransportSettings,
+            settings.listDisplayVideo360AdvertiserLinksSettings(),
+            clientContext);
+    this.listDisplayVideo360AdvertiserLinksPagedCallable =
+        callableFactory.createPagedCallable(
+            listDisplayVideo360AdvertiserLinksTransportSettings,
+            settings.listDisplayVideo360AdvertiserLinksSettings(),
+            clientContext);
+    this.createDisplayVideo360AdvertiserLinkCallable =
+        callableFactory.createUnaryCallable(
+            createDisplayVideo360AdvertiserLinkTransportSettings,
+            settings.createDisplayVideo360AdvertiserLinkSettings(),
+            clientContext);
+    this.deleteDisplayVideo360AdvertiserLinkCallable =
+        callableFactory.createUnaryCallable(
+            deleteDisplayVideo360AdvertiserLinkTransportSettings,
+            settings.deleteDisplayVideo360AdvertiserLinkSettings(),
+            clientContext);
+    this.updateDisplayVideo360AdvertiserLinkCallable =
+        callableFactory.createUnaryCallable(
+            updateDisplayVideo360AdvertiserLinkTransportSettings,
+            settings.updateDisplayVideo360AdvertiserLinkSettings(),
+            clientContext);
+    this.getDisplayVideo360AdvertiserLinkProposalCallable =
+        callableFactory.createUnaryCallable(
+            getDisplayVideo360AdvertiserLinkProposalTransportSettings,
+            settings.getDisplayVideo360AdvertiserLinkProposalSettings(),
+            clientContext);
+    this.listDisplayVideo360AdvertiserLinkProposalsCallable =
+        callableFactory.createUnaryCallable(
+            listDisplayVideo360AdvertiserLinkProposalsTransportSettings,
+            settings.listDisplayVideo360AdvertiserLinkProposalsSettings(),
+            clientContext);
+    this.listDisplayVideo360AdvertiserLinkProposalsPagedCallable =
+        callableFactory.createPagedCallable(
+            listDisplayVideo360AdvertiserLinkProposalsTransportSettings,
+            settings.listDisplayVideo360AdvertiserLinkProposalsSettings(),
+            clientContext);
+    this.createDisplayVideo360AdvertiserLinkProposalCallable =
+        callableFactory.createUnaryCallable(
+            createDisplayVideo360AdvertiserLinkProposalTransportSettings,
+            settings.createDisplayVideo360AdvertiserLinkProposalSettings(),
+            clientContext);
+    this.deleteDisplayVideo360AdvertiserLinkProposalCallable =
+        callableFactory.createUnaryCallable(
+            deleteDisplayVideo360AdvertiserLinkProposalTransportSettings,
+            settings.deleteDisplayVideo360AdvertiserLinkProposalSettings(),
+            clientContext);
+    this.approveDisplayVideo360AdvertiserLinkProposalCallable =
+        callableFactory.createUnaryCallable(
+            approveDisplayVideo360AdvertiserLinkProposalTransportSettings,
+            settings.approveDisplayVideo360AdvertiserLinkProposalSettings(),
+            clientContext);
+    this.cancelDisplayVideo360AdvertiserLinkProposalCallable =
+        callableFactory.createUnaryCallable(
+            cancelDisplayVideo360AdvertiserLinkProposalTransportSettings,
+            settings.cancelDisplayVideo360AdvertiserLinkProposalSettings(),
+            clientContext);
     this.createCustomDimensionCallable =
         callableFactory.createUnaryCallable(
             createCustomDimensionTransportSettings,
@@ -2224,6 +2709,16 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
     this.getCustomMetricCallable =
         callableFactory.createUnaryCallable(
             getCustomMetricTransportSettings, settings.getCustomMetricSettings(), clientContext);
+    this.getDataRetentionSettingsCallable =
+        callableFactory.createUnaryCallable(
+            getDataRetentionSettingsTransportSettings,
+            settings.getDataRetentionSettingsSettings(),
+            clientContext);
+    this.updateDataRetentionSettingsCallable =
+        callableFactory.createUnaryCallable(
+            updateDataRetentionSettingsTransportSettings,
+            settings.updateDataRetentionSettingsSettings(),
+            clientContext);
 
     this.backgroundResources =
         new BackgroundResourceAggregation(clientContext.getBackgroundResources());
@@ -2480,11 +2975,6 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
   }
 
   @Override
-  public UnaryCallable<UpdateFirebaseLinkRequest, FirebaseLink> updateFirebaseLinkCallable() {
-    return updateFirebaseLinkCallable;
-  }
-
-  @Override
   public UnaryCallable<DeleteFirebaseLinkRequest, Empty> deleteFirebaseLinkCallable() {
     return deleteFirebaseLinkCallable;
   }
@@ -2630,6 +3120,96 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
   }
 
   @Override
+  public UnaryCallable<GetDisplayVideo360AdvertiserLinkRequest, DisplayVideo360AdvertiserLink>
+      getDisplayVideo360AdvertiserLinkCallable() {
+    return getDisplayVideo360AdvertiserLinkCallable;
+  }
+
+  @Override
+  public UnaryCallable<
+          ListDisplayVideo360AdvertiserLinksRequest, ListDisplayVideo360AdvertiserLinksResponse>
+      listDisplayVideo360AdvertiserLinksCallable() {
+    return listDisplayVideo360AdvertiserLinksCallable;
+  }
+
+  @Override
+  public UnaryCallable<
+          ListDisplayVideo360AdvertiserLinksRequest,
+          ListDisplayVideo360AdvertiserLinksPagedResponse>
+      listDisplayVideo360AdvertiserLinksPagedCallable() {
+    return listDisplayVideo360AdvertiserLinksPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<CreateDisplayVideo360AdvertiserLinkRequest, DisplayVideo360AdvertiserLink>
+      createDisplayVideo360AdvertiserLinkCallable() {
+    return createDisplayVideo360AdvertiserLinkCallable;
+  }
+
+  @Override
+  public UnaryCallable<DeleteDisplayVideo360AdvertiserLinkRequest, Empty>
+      deleteDisplayVideo360AdvertiserLinkCallable() {
+    return deleteDisplayVideo360AdvertiserLinkCallable;
+  }
+
+  @Override
+  public UnaryCallable<UpdateDisplayVideo360AdvertiserLinkRequest, DisplayVideo360AdvertiserLink>
+      updateDisplayVideo360AdvertiserLinkCallable() {
+    return updateDisplayVideo360AdvertiserLinkCallable;
+  }
+
+  @Override
+  public UnaryCallable<
+          GetDisplayVideo360AdvertiserLinkProposalRequest, DisplayVideo360AdvertiserLinkProposal>
+      getDisplayVideo360AdvertiserLinkProposalCallable() {
+    return getDisplayVideo360AdvertiserLinkProposalCallable;
+  }
+
+  @Override
+  public UnaryCallable<
+          ListDisplayVideo360AdvertiserLinkProposalsRequest,
+          ListDisplayVideo360AdvertiserLinkProposalsResponse>
+      listDisplayVideo360AdvertiserLinkProposalsCallable() {
+    return listDisplayVideo360AdvertiserLinkProposalsCallable;
+  }
+
+  @Override
+  public UnaryCallable<
+          ListDisplayVideo360AdvertiserLinkProposalsRequest,
+          ListDisplayVideo360AdvertiserLinkProposalsPagedResponse>
+      listDisplayVideo360AdvertiserLinkProposalsPagedCallable() {
+    return listDisplayVideo360AdvertiserLinkProposalsPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<
+          CreateDisplayVideo360AdvertiserLinkProposalRequest, DisplayVideo360AdvertiserLinkProposal>
+      createDisplayVideo360AdvertiserLinkProposalCallable() {
+    return createDisplayVideo360AdvertiserLinkProposalCallable;
+  }
+
+  @Override
+  public UnaryCallable<DeleteDisplayVideo360AdvertiserLinkProposalRequest, Empty>
+      deleteDisplayVideo360AdvertiserLinkProposalCallable() {
+    return deleteDisplayVideo360AdvertiserLinkProposalCallable;
+  }
+
+  @Override
+  public UnaryCallable<
+          ApproveDisplayVideo360AdvertiserLinkProposalRequest,
+          ApproveDisplayVideo360AdvertiserLinkProposalResponse>
+      approveDisplayVideo360AdvertiserLinkProposalCallable() {
+    return approveDisplayVideo360AdvertiserLinkProposalCallable;
+  }
+
+  @Override
+  public UnaryCallable<
+          CancelDisplayVideo360AdvertiserLinkProposalRequest, DisplayVideo360AdvertiserLinkProposal>
+      cancelDisplayVideo360AdvertiserLinkProposalCallable() {
+    return cancelDisplayVideo360AdvertiserLinkProposalCallable;
+  }
+
+  @Override
   public UnaryCallable<CreateCustomDimensionRequest, CustomDimension>
       createCustomDimensionCallable() {
     return createCustomDimensionCallable;
@@ -2693,6 +3273,18 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
   @Override
   public UnaryCallable<GetCustomMetricRequest, CustomMetric> getCustomMetricCallable() {
     return getCustomMetricCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetDataRetentionSettingsRequest, DataRetentionSettings>
+      getDataRetentionSettingsCallable() {
+    return getDataRetentionSettingsCallable;
+  }
+
+  @Override
+  public UnaryCallable<UpdateDataRetentionSettingsRequest, DataRetentionSettings>
+      updateDataRetentionSettingsCallable() {
+    return updateDataRetentionSettingsCallable;
   }
 
   @Override

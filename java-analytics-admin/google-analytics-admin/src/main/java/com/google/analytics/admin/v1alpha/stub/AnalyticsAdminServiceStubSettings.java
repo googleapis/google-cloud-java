@@ -23,6 +23,8 @@ import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.Lis
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListConversionEventsPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListCustomDimensionsPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListCustomMetricsPagedResponse;
+import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListDisplayVideo360AdvertiserLinkProposalsPagedResponse;
+import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListDisplayVideo360AdvertiserLinksPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListFirebaseLinksPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListGoogleAdsLinksPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListIosAppDataStreamsPagedResponse;
@@ -35,6 +37,8 @@ import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.Sea
 import com.google.analytics.admin.v1alpha.Account;
 import com.google.analytics.admin.v1alpha.AccountSummary;
 import com.google.analytics.admin.v1alpha.AndroidAppDataStream;
+import com.google.analytics.admin.v1alpha.ApproveDisplayVideo360AdvertiserLinkProposalRequest;
+import com.google.analytics.admin.v1alpha.ApproveDisplayVideo360AdvertiserLinkProposalResponse;
 import com.google.analytics.admin.v1alpha.ArchiveCustomDimensionRequest;
 import com.google.analytics.admin.v1alpha.ArchiveCustomMetricRequest;
 import com.google.analytics.admin.v1alpha.AuditUserLink;
@@ -47,11 +51,14 @@ import com.google.analytics.admin.v1alpha.BatchGetUserLinksRequest;
 import com.google.analytics.admin.v1alpha.BatchGetUserLinksResponse;
 import com.google.analytics.admin.v1alpha.BatchUpdateUserLinksRequest;
 import com.google.analytics.admin.v1alpha.BatchUpdateUserLinksResponse;
+import com.google.analytics.admin.v1alpha.CancelDisplayVideo360AdvertiserLinkProposalRequest;
 import com.google.analytics.admin.v1alpha.ChangeHistoryEvent;
 import com.google.analytics.admin.v1alpha.ConversionEvent;
 import com.google.analytics.admin.v1alpha.CreateConversionEventRequest;
 import com.google.analytics.admin.v1alpha.CreateCustomDimensionRequest;
 import com.google.analytics.admin.v1alpha.CreateCustomMetricRequest;
+import com.google.analytics.admin.v1alpha.CreateDisplayVideo360AdvertiserLinkProposalRequest;
+import com.google.analytics.admin.v1alpha.CreateDisplayVideo360AdvertiserLinkRequest;
 import com.google.analytics.admin.v1alpha.CreateFirebaseLinkRequest;
 import com.google.analytics.admin.v1alpha.CreateGoogleAdsLinkRequest;
 import com.google.analytics.admin.v1alpha.CreateMeasurementProtocolSecretRequest;
@@ -60,10 +67,13 @@ import com.google.analytics.admin.v1alpha.CreateUserLinkRequest;
 import com.google.analytics.admin.v1alpha.CreateWebDataStreamRequest;
 import com.google.analytics.admin.v1alpha.CustomDimension;
 import com.google.analytics.admin.v1alpha.CustomMetric;
+import com.google.analytics.admin.v1alpha.DataRetentionSettings;
 import com.google.analytics.admin.v1alpha.DataSharingSettings;
 import com.google.analytics.admin.v1alpha.DeleteAccountRequest;
 import com.google.analytics.admin.v1alpha.DeleteAndroidAppDataStreamRequest;
 import com.google.analytics.admin.v1alpha.DeleteConversionEventRequest;
+import com.google.analytics.admin.v1alpha.DeleteDisplayVideo360AdvertiserLinkProposalRequest;
+import com.google.analytics.admin.v1alpha.DeleteDisplayVideo360AdvertiserLinkRequest;
 import com.google.analytics.admin.v1alpha.DeleteFirebaseLinkRequest;
 import com.google.analytics.admin.v1alpha.DeleteGoogleAdsLinkRequest;
 import com.google.analytics.admin.v1alpha.DeleteIosAppDataStreamRequest;
@@ -71,6 +81,8 @@ import com.google.analytics.admin.v1alpha.DeleteMeasurementProtocolSecretRequest
 import com.google.analytics.admin.v1alpha.DeletePropertyRequest;
 import com.google.analytics.admin.v1alpha.DeleteUserLinkRequest;
 import com.google.analytics.admin.v1alpha.DeleteWebDataStreamRequest;
+import com.google.analytics.admin.v1alpha.DisplayVideo360AdvertiserLink;
+import com.google.analytics.admin.v1alpha.DisplayVideo360AdvertiserLinkProposal;
 import com.google.analytics.admin.v1alpha.EnhancedMeasurementSettings;
 import com.google.analytics.admin.v1alpha.FirebaseLink;
 import com.google.analytics.admin.v1alpha.GetAccountRequest;
@@ -78,7 +90,10 @@ import com.google.analytics.admin.v1alpha.GetAndroidAppDataStreamRequest;
 import com.google.analytics.admin.v1alpha.GetConversionEventRequest;
 import com.google.analytics.admin.v1alpha.GetCustomDimensionRequest;
 import com.google.analytics.admin.v1alpha.GetCustomMetricRequest;
+import com.google.analytics.admin.v1alpha.GetDataRetentionSettingsRequest;
 import com.google.analytics.admin.v1alpha.GetDataSharingSettingsRequest;
+import com.google.analytics.admin.v1alpha.GetDisplayVideo360AdvertiserLinkProposalRequest;
+import com.google.analytics.admin.v1alpha.GetDisplayVideo360AdvertiserLinkRequest;
 import com.google.analytics.admin.v1alpha.GetEnhancedMeasurementSettingsRequest;
 import com.google.analytics.admin.v1alpha.GetGlobalSiteTagRequest;
 import com.google.analytics.admin.v1alpha.GetGoogleSignalsSettingsRequest;
@@ -103,6 +118,10 @@ import com.google.analytics.admin.v1alpha.ListCustomDimensionsRequest;
 import com.google.analytics.admin.v1alpha.ListCustomDimensionsResponse;
 import com.google.analytics.admin.v1alpha.ListCustomMetricsRequest;
 import com.google.analytics.admin.v1alpha.ListCustomMetricsResponse;
+import com.google.analytics.admin.v1alpha.ListDisplayVideo360AdvertiserLinkProposalsRequest;
+import com.google.analytics.admin.v1alpha.ListDisplayVideo360AdvertiserLinkProposalsResponse;
+import com.google.analytics.admin.v1alpha.ListDisplayVideo360AdvertiserLinksRequest;
+import com.google.analytics.admin.v1alpha.ListDisplayVideo360AdvertiserLinksResponse;
 import com.google.analytics.admin.v1alpha.ListFirebaseLinksRequest;
 import com.google.analytics.admin.v1alpha.ListFirebaseLinksResponse;
 import com.google.analytics.admin.v1alpha.ListGoogleAdsLinksRequest;
@@ -127,8 +146,9 @@ import com.google.analytics.admin.v1alpha.UpdateAccountRequest;
 import com.google.analytics.admin.v1alpha.UpdateAndroidAppDataStreamRequest;
 import com.google.analytics.admin.v1alpha.UpdateCustomDimensionRequest;
 import com.google.analytics.admin.v1alpha.UpdateCustomMetricRequest;
+import com.google.analytics.admin.v1alpha.UpdateDataRetentionSettingsRequest;
+import com.google.analytics.admin.v1alpha.UpdateDisplayVideo360AdvertiserLinkRequest;
 import com.google.analytics.admin.v1alpha.UpdateEnhancedMeasurementSettingsRequest;
-import com.google.analytics.admin.v1alpha.UpdateFirebaseLinkRequest;
 import com.google.analytics.admin.v1alpha.UpdateGoogleAdsLinkRequest;
 import com.google.analytics.admin.v1alpha.UpdateGoogleSignalsSettingsRequest;
 import com.google.analytics.admin.v1alpha.UpdateIosAppDataStreamRequest;
@@ -293,8 +313,6 @@ public class AnalyticsAdminServiceStubSettings
       updateEnhancedMeasurementSettingsSettings;
   private final UnaryCallSettings<CreateFirebaseLinkRequest, FirebaseLink>
       createFirebaseLinkSettings;
-  private final UnaryCallSettings<UpdateFirebaseLinkRequest, FirebaseLink>
-      updateFirebaseLinkSettings;
   private final UnaryCallSettings<DeleteFirebaseLinkRequest, Empty> deleteFirebaseLinkSettings;
   private final PagedCallSettings<
           ListFirebaseLinksRequest, ListFirebaseLinksResponse, ListFirebaseLinksPagedResponse>
@@ -343,6 +361,42 @@ public class AnalyticsAdminServiceStubSettings
           ListConversionEventsResponse,
           ListConversionEventsPagedResponse>
       listConversionEventsSettings;
+  private final UnaryCallSettings<
+          GetDisplayVideo360AdvertiserLinkRequest, DisplayVideo360AdvertiserLink>
+      getDisplayVideo360AdvertiserLinkSettings;
+  private final PagedCallSettings<
+          ListDisplayVideo360AdvertiserLinksRequest,
+          ListDisplayVideo360AdvertiserLinksResponse,
+          ListDisplayVideo360AdvertiserLinksPagedResponse>
+      listDisplayVideo360AdvertiserLinksSettings;
+  private final UnaryCallSettings<
+          CreateDisplayVideo360AdvertiserLinkRequest, DisplayVideo360AdvertiserLink>
+      createDisplayVideo360AdvertiserLinkSettings;
+  private final UnaryCallSettings<DeleteDisplayVideo360AdvertiserLinkRequest, Empty>
+      deleteDisplayVideo360AdvertiserLinkSettings;
+  private final UnaryCallSettings<
+          UpdateDisplayVideo360AdvertiserLinkRequest, DisplayVideo360AdvertiserLink>
+      updateDisplayVideo360AdvertiserLinkSettings;
+  private final UnaryCallSettings<
+          GetDisplayVideo360AdvertiserLinkProposalRequest, DisplayVideo360AdvertiserLinkProposal>
+      getDisplayVideo360AdvertiserLinkProposalSettings;
+  private final PagedCallSettings<
+          ListDisplayVideo360AdvertiserLinkProposalsRequest,
+          ListDisplayVideo360AdvertiserLinkProposalsResponse,
+          ListDisplayVideo360AdvertiserLinkProposalsPagedResponse>
+      listDisplayVideo360AdvertiserLinkProposalsSettings;
+  private final UnaryCallSettings<
+          CreateDisplayVideo360AdvertiserLinkProposalRequest, DisplayVideo360AdvertiserLinkProposal>
+      createDisplayVideo360AdvertiserLinkProposalSettings;
+  private final UnaryCallSettings<DeleteDisplayVideo360AdvertiserLinkProposalRequest, Empty>
+      deleteDisplayVideo360AdvertiserLinkProposalSettings;
+  private final UnaryCallSettings<
+          ApproveDisplayVideo360AdvertiserLinkProposalRequest,
+          ApproveDisplayVideo360AdvertiserLinkProposalResponse>
+      approveDisplayVideo360AdvertiserLinkProposalSettings;
+  private final UnaryCallSettings<
+          CancelDisplayVideo360AdvertiserLinkProposalRequest, DisplayVideo360AdvertiserLinkProposal>
+      cancelDisplayVideo360AdvertiserLinkProposalSettings;
   private final UnaryCallSettings<CreateCustomDimensionRequest, CustomDimension>
       createCustomDimensionSettings;
   private final UnaryCallSettings<UpdateCustomDimensionRequest, CustomDimension>
@@ -365,6 +419,10 @@ public class AnalyticsAdminServiceStubSettings
       listCustomMetricsSettings;
   private final UnaryCallSettings<ArchiveCustomMetricRequest, Empty> archiveCustomMetricSettings;
   private final UnaryCallSettings<GetCustomMetricRequest, CustomMetric> getCustomMetricSettings;
+  private final UnaryCallSettings<GetDataRetentionSettingsRequest, DataRetentionSettings>
+      getDataRetentionSettingsSettings;
+  private final UnaryCallSettings<UpdateDataRetentionSettingsRequest, DataRetentionSettings>
+      updateDataRetentionSettingsSettings;
 
   private static final PagedListDescriptor<ListAccountsRequest, ListAccountsResponse, Account>
       LIST_ACCOUNTS_PAGE_STR_DESC =
@@ -899,6 +957,106 @@ public class AnalyticsAdminServiceStubSettings
           };
 
   private static final PagedListDescriptor<
+          ListDisplayVideo360AdvertiserLinksRequest,
+          ListDisplayVideo360AdvertiserLinksResponse,
+          DisplayVideo360AdvertiserLink>
+      LIST_DISPLAY_VIDEO360_ADVERTISER_LINKS_PAGE_STR_DESC =
+          new PagedListDescriptor<
+              ListDisplayVideo360AdvertiserLinksRequest,
+              ListDisplayVideo360AdvertiserLinksResponse,
+              DisplayVideo360AdvertiserLink>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListDisplayVideo360AdvertiserLinksRequest injectToken(
+                ListDisplayVideo360AdvertiserLinksRequest payload, String token) {
+              return ListDisplayVideo360AdvertiserLinksRequest.newBuilder(payload)
+                  .setPageToken(token)
+                  .build();
+            }
+
+            @Override
+            public ListDisplayVideo360AdvertiserLinksRequest injectPageSize(
+                ListDisplayVideo360AdvertiserLinksRequest payload, int pageSize) {
+              return ListDisplayVideo360AdvertiserLinksRequest.newBuilder(payload)
+                  .setPageSize(pageSize)
+                  .build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListDisplayVideo360AdvertiserLinksRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListDisplayVideo360AdvertiserLinksResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<DisplayVideo360AdvertiserLink> extractResources(
+                ListDisplayVideo360AdvertiserLinksResponse payload) {
+              return payload.getDisplayVideo360AdvertiserLinksList() == null
+                  ? ImmutableList.<DisplayVideo360AdvertiserLink>of()
+                  : payload.getDisplayVideo360AdvertiserLinksList();
+            }
+          };
+
+  private static final PagedListDescriptor<
+          ListDisplayVideo360AdvertiserLinkProposalsRequest,
+          ListDisplayVideo360AdvertiserLinkProposalsResponse,
+          DisplayVideo360AdvertiserLinkProposal>
+      LIST_DISPLAY_VIDEO360_ADVERTISER_LINK_PROPOSALS_PAGE_STR_DESC =
+          new PagedListDescriptor<
+              ListDisplayVideo360AdvertiserLinkProposalsRequest,
+              ListDisplayVideo360AdvertiserLinkProposalsResponse,
+              DisplayVideo360AdvertiserLinkProposal>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListDisplayVideo360AdvertiserLinkProposalsRequest injectToken(
+                ListDisplayVideo360AdvertiserLinkProposalsRequest payload, String token) {
+              return ListDisplayVideo360AdvertiserLinkProposalsRequest.newBuilder(payload)
+                  .setPageToken(token)
+                  .build();
+            }
+
+            @Override
+            public ListDisplayVideo360AdvertiserLinkProposalsRequest injectPageSize(
+                ListDisplayVideo360AdvertiserLinkProposalsRequest payload, int pageSize) {
+              return ListDisplayVideo360AdvertiserLinkProposalsRequest.newBuilder(payload)
+                  .setPageSize(pageSize)
+                  .build();
+            }
+
+            @Override
+            public Integer extractPageSize(
+                ListDisplayVideo360AdvertiserLinkProposalsRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(
+                ListDisplayVideo360AdvertiserLinkProposalsResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<DisplayVideo360AdvertiserLinkProposal> extractResources(
+                ListDisplayVideo360AdvertiserLinkProposalsResponse payload) {
+              return payload.getDisplayVideo360AdvertiserLinkProposalsList() == null
+                  ? ImmutableList.<DisplayVideo360AdvertiserLinkProposal>of()
+                  : payload.getDisplayVideo360AdvertiserLinkProposalsList();
+            }
+          };
+
+  private static final PagedListDescriptor<
           ListCustomDimensionsRequest, ListCustomDimensionsResponse, CustomDimension>
       LIST_CUSTOM_DIMENSIONS_PAGE_STR_DESC =
           new PagedListDescriptor<
@@ -1273,6 +1431,74 @@ public class AnalyticsAdminServiceStubSettings
           };
 
   private static final PagedListResponseFactory<
+          ListDisplayVideo360AdvertiserLinksRequest,
+          ListDisplayVideo360AdvertiserLinksResponse,
+          ListDisplayVideo360AdvertiserLinksPagedResponse>
+      LIST_DISPLAY_VIDEO360_ADVERTISER_LINKS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListDisplayVideo360AdvertiserLinksRequest,
+              ListDisplayVideo360AdvertiserLinksResponse,
+              ListDisplayVideo360AdvertiserLinksPagedResponse>() {
+            @Override
+            public ApiFuture<ListDisplayVideo360AdvertiserLinksPagedResponse>
+                getFuturePagedResponse(
+                    UnaryCallable<
+                            ListDisplayVideo360AdvertiserLinksRequest,
+                            ListDisplayVideo360AdvertiserLinksResponse>
+                        callable,
+                    ListDisplayVideo360AdvertiserLinksRequest request,
+                    ApiCallContext context,
+                    ApiFuture<ListDisplayVideo360AdvertiserLinksResponse> futureResponse) {
+              PageContext<
+                      ListDisplayVideo360AdvertiserLinksRequest,
+                      ListDisplayVideo360AdvertiserLinksResponse,
+                      DisplayVideo360AdvertiserLink>
+                  pageContext =
+                      PageContext.create(
+                          callable,
+                          LIST_DISPLAY_VIDEO360_ADVERTISER_LINKS_PAGE_STR_DESC,
+                          request,
+                          context);
+              return ListDisplayVideo360AdvertiserLinksPagedResponse.createAsync(
+                  pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListDisplayVideo360AdvertiserLinkProposalsRequest,
+          ListDisplayVideo360AdvertiserLinkProposalsResponse,
+          ListDisplayVideo360AdvertiserLinkProposalsPagedResponse>
+      LIST_DISPLAY_VIDEO360_ADVERTISER_LINK_PROPOSALS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListDisplayVideo360AdvertiserLinkProposalsRequest,
+              ListDisplayVideo360AdvertiserLinkProposalsResponse,
+              ListDisplayVideo360AdvertiserLinkProposalsPagedResponse>() {
+            @Override
+            public ApiFuture<ListDisplayVideo360AdvertiserLinkProposalsPagedResponse>
+                getFuturePagedResponse(
+                    UnaryCallable<
+                            ListDisplayVideo360AdvertiserLinkProposalsRequest,
+                            ListDisplayVideo360AdvertiserLinkProposalsResponse>
+                        callable,
+                    ListDisplayVideo360AdvertiserLinkProposalsRequest request,
+                    ApiCallContext context,
+                    ApiFuture<ListDisplayVideo360AdvertiserLinkProposalsResponse> futureResponse) {
+              PageContext<
+                      ListDisplayVideo360AdvertiserLinkProposalsRequest,
+                      ListDisplayVideo360AdvertiserLinkProposalsResponse,
+                      DisplayVideo360AdvertiserLinkProposal>
+                  pageContext =
+                      PageContext.create(
+                          callable,
+                          LIST_DISPLAY_VIDEO360_ADVERTISER_LINK_PROPOSALS_PAGE_STR_DESC,
+                          request,
+                          context);
+              return ListDisplayVideo360AdvertiserLinkProposalsPagedResponse.createAsync(
+                  pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
           ListCustomDimensionsRequest,
           ListCustomDimensionsResponse,
           ListCustomDimensionsPagedResponse>
@@ -1535,11 +1761,6 @@ public class AnalyticsAdminServiceStubSettings
     return createFirebaseLinkSettings;
   }
 
-  /** Returns the object with the settings used for calls to updateFirebaseLink. */
-  public UnaryCallSettings<UpdateFirebaseLinkRequest, FirebaseLink> updateFirebaseLinkSettings() {
-    return updateFirebaseLinkSettings;
-  }
-
   /** Returns the object with the settings used for calls to deleteFirebaseLink. */
   public UnaryCallSettings<DeleteFirebaseLinkRequest, Empty> deleteFirebaseLinkSettings() {
     return deleteFirebaseLinkSettings;
@@ -1667,6 +1888,103 @@ public class AnalyticsAdminServiceStubSettings
     return listConversionEventsSettings;
   }
 
+  /** Returns the object with the settings used for calls to getDisplayVideo360AdvertiserLink. */
+  public UnaryCallSettings<GetDisplayVideo360AdvertiserLinkRequest, DisplayVideo360AdvertiserLink>
+      getDisplayVideo360AdvertiserLinkSettings() {
+    return getDisplayVideo360AdvertiserLinkSettings;
+  }
+
+  /** Returns the object with the settings used for calls to listDisplayVideo360AdvertiserLinks. */
+  public PagedCallSettings<
+          ListDisplayVideo360AdvertiserLinksRequest,
+          ListDisplayVideo360AdvertiserLinksResponse,
+          ListDisplayVideo360AdvertiserLinksPagedResponse>
+      listDisplayVideo360AdvertiserLinksSettings() {
+    return listDisplayVideo360AdvertiserLinksSettings;
+  }
+
+  /** Returns the object with the settings used for calls to createDisplayVideo360AdvertiserLink. */
+  public UnaryCallSettings<
+          CreateDisplayVideo360AdvertiserLinkRequest, DisplayVideo360AdvertiserLink>
+      createDisplayVideo360AdvertiserLinkSettings() {
+    return createDisplayVideo360AdvertiserLinkSettings;
+  }
+
+  /** Returns the object with the settings used for calls to deleteDisplayVideo360AdvertiserLink. */
+  public UnaryCallSettings<DeleteDisplayVideo360AdvertiserLinkRequest, Empty>
+      deleteDisplayVideo360AdvertiserLinkSettings() {
+    return deleteDisplayVideo360AdvertiserLinkSettings;
+  }
+
+  /** Returns the object with the settings used for calls to updateDisplayVideo360AdvertiserLink. */
+  public UnaryCallSettings<
+          UpdateDisplayVideo360AdvertiserLinkRequest, DisplayVideo360AdvertiserLink>
+      updateDisplayVideo360AdvertiserLinkSettings() {
+    return updateDisplayVideo360AdvertiserLinkSettings;
+  }
+
+  /**
+   * Returns the object with the settings used for calls to
+   * getDisplayVideo360AdvertiserLinkProposal.
+   */
+  public UnaryCallSettings<
+          GetDisplayVideo360AdvertiserLinkProposalRequest, DisplayVideo360AdvertiserLinkProposal>
+      getDisplayVideo360AdvertiserLinkProposalSettings() {
+    return getDisplayVideo360AdvertiserLinkProposalSettings;
+  }
+
+  /**
+   * Returns the object with the settings used for calls to
+   * listDisplayVideo360AdvertiserLinkProposals.
+   */
+  public PagedCallSettings<
+          ListDisplayVideo360AdvertiserLinkProposalsRequest,
+          ListDisplayVideo360AdvertiserLinkProposalsResponse,
+          ListDisplayVideo360AdvertiserLinkProposalsPagedResponse>
+      listDisplayVideo360AdvertiserLinkProposalsSettings() {
+    return listDisplayVideo360AdvertiserLinkProposalsSettings;
+  }
+
+  /**
+   * Returns the object with the settings used for calls to
+   * createDisplayVideo360AdvertiserLinkProposal.
+   */
+  public UnaryCallSettings<
+          CreateDisplayVideo360AdvertiserLinkProposalRequest, DisplayVideo360AdvertiserLinkProposal>
+      createDisplayVideo360AdvertiserLinkProposalSettings() {
+    return createDisplayVideo360AdvertiserLinkProposalSettings;
+  }
+
+  /**
+   * Returns the object with the settings used for calls to
+   * deleteDisplayVideo360AdvertiserLinkProposal.
+   */
+  public UnaryCallSettings<DeleteDisplayVideo360AdvertiserLinkProposalRequest, Empty>
+      deleteDisplayVideo360AdvertiserLinkProposalSettings() {
+    return deleteDisplayVideo360AdvertiserLinkProposalSettings;
+  }
+
+  /**
+   * Returns the object with the settings used for calls to
+   * approveDisplayVideo360AdvertiserLinkProposal.
+   */
+  public UnaryCallSettings<
+          ApproveDisplayVideo360AdvertiserLinkProposalRequest,
+          ApproveDisplayVideo360AdvertiserLinkProposalResponse>
+      approveDisplayVideo360AdvertiserLinkProposalSettings() {
+    return approveDisplayVideo360AdvertiserLinkProposalSettings;
+  }
+
+  /**
+   * Returns the object with the settings used for calls to
+   * cancelDisplayVideo360AdvertiserLinkProposal.
+   */
+  public UnaryCallSettings<
+          CancelDisplayVideo360AdvertiserLinkProposalRequest, DisplayVideo360AdvertiserLinkProposal>
+      cancelDisplayVideo360AdvertiserLinkProposalSettings() {
+    return cancelDisplayVideo360AdvertiserLinkProposalSettings;
+  }
+
   /** Returns the object with the settings used for calls to createCustomDimension. */
   public UnaryCallSettings<CreateCustomDimensionRequest, CustomDimension>
       createCustomDimensionSettings() {
@@ -1726,6 +2044,18 @@ public class AnalyticsAdminServiceStubSettings
     return getCustomMetricSettings;
   }
 
+  /** Returns the object with the settings used for calls to getDataRetentionSettings. */
+  public UnaryCallSettings<GetDataRetentionSettingsRequest, DataRetentionSettings>
+      getDataRetentionSettingsSettings() {
+    return getDataRetentionSettingsSettings;
+  }
+
+  /** Returns the object with the settings used for calls to updateDataRetentionSettings. */
+  public UnaryCallSettings<UpdateDataRetentionSettingsRequest, DataRetentionSettings>
+      updateDataRetentionSettingsSettings() {
+    return updateDataRetentionSettingsSettings;
+  }
+
   @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public AnalyticsAdminServiceStub createStub() throws IOException {
     if (getTransportChannelProvider()
@@ -1760,7 +2090,9 @@ public class AnalyticsAdminServiceStubSettings
 
   /** Returns a builder for the default credentials for this service. */
   public static GoogleCredentialsProvider.Builder defaultCredentialsProviderBuilder() {
-    return GoogleCredentialsProvider.newBuilder().setScopesToApply(DEFAULT_SERVICE_SCOPES);
+    return GoogleCredentialsProvider.newBuilder()
+        .setScopesToApply(DEFAULT_SERVICE_SCOPES)
+        .setUseJwtAccessWithScope(true);
   }
 
   /** Returns a builder for the default ChannelProvider for this service. */
@@ -1841,7 +2173,6 @@ public class AnalyticsAdminServiceStubSettings
     updateEnhancedMeasurementSettingsSettings =
         settingsBuilder.updateEnhancedMeasurementSettingsSettings().build();
     createFirebaseLinkSettings = settingsBuilder.createFirebaseLinkSettings().build();
-    updateFirebaseLinkSettings = settingsBuilder.updateFirebaseLinkSettings().build();
     deleteFirebaseLinkSettings = settingsBuilder.deleteFirebaseLinkSettings().build();
     listFirebaseLinksSettings = settingsBuilder.listFirebaseLinksSettings().build();
     getGlobalSiteTagSettings = settingsBuilder.getGlobalSiteTagSettings().build();
@@ -1868,6 +2199,28 @@ public class AnalyticsAdminServiceStubSettings
     getConversionEventSettings = settingsBuilder.getConversionEventSettings().build();
     deleteConversionEventSettings = settingsBuilder.deleteConversionEventSettings().build();
     listConversionEventsSettings = settingsBuilder.listConversionEventsSettings().build();
+    getDisplayVideo360AdvertiserLinkSettings =
+        settingsBuilder.getDisplayVideo360AdvertiserLinkSettings().build();
+    listDisplayVideo360AdvertiserLinksSettings =
+        settingsBuilder.listDisplayVideo360AdvertiserLinksSettings().build();
+    createDisplayVideo360AdvertiserLinkSettings =
+        settingsBuilder.createDisplayVideo360AdvertiserLinkSettings().build();
+    deleteDisplayVideo360AdvertiserLinkSettings =
+        settingsBuilder.deleteDisplayVideo360AdvertiserLinkSettings().build();
+    updateDisplayVideo360AdvertiserLinkSettings =
+        settingsBuilder.updateDisplayVideo360AdvertiserLinkSettings().build();
+    getDisplayVideo360AdvertiserLinkProposalSettings =
+        settingsBuilder.getDisplayVideo360AdvertiserLinkProposalSettings().build();
+    listDisplayVideo360AdvertiserLinkProposalsSettings =
+        settingsBuilder.listDisplayVideo360AdvertiserLinkProposalsSettings().build();
+    createDisplayVideo360AdvertiserLinkProposalSettings =
+        settingsBuilder.createDisplayVideo360AdvertiserLinkProposalSettings().build();
+    deleteDisplayVideo360AdvertiserLinkProposalSettings =
+        settingsBuilder.deleteDisplayVideo360AdvertiserLinkProposalSettings().build();
+    approveDisplayVideo360AdvertiserLinkProposalSettings =
+        settingsBuilder.approveDisplayVideo360AdvertiserLinkProposalSettings().build();
+    cancelDisplayVideo360AdvertiserLinkProposalSettings =
+        settingsBuilder.cancelDisplayVideo360AdvertiserLinkProposalSettings().build();
     createCustomDimensionSettings = settingsBuilder.createCustomDimensionSettings().build();
     updateCustomDimensionSettings = settingsBuilder.updateCustomDimensionSettings().build();
     listCustomDimensionsSettings = settingsBuilder.listCustomDimensionsSettings().build();
@@ -1878,6 +2231,9 @@ public class AnalyticsAdminServiceStubSettings
     listCustomMetricsSettings = settingsBuilder.listCustomMetricsSettings().build();
     archiveCustomMetricSettings = settingsBuilder.archiveCustomMetricSettings().build();
     getCustomMetricSettings = settingsBuilder.getCustomMetricSettings().build();
+    getDataRetentionSettingsSettings = settingsBuilder.getDataRetentionSettingsSettings().build();
+    updateDataRetentionSettingsSettings =
+        settingsBuilder.updateDataRetentionSettingsSettings().build();
   }
 
   /** Builder for AnalyticsAdminServiceStubSettings. */
@@ -1966,8 +2322,6 @@ public class AnalyticsAdminServiceStubSettings
         updateEnhancedMeasurementSettingsSettings;
     private final UnaryCallSettings.Builder<CreateFirebaseLinkRequest, FirebaseLink>
         createFirebaseLinkSettings;
-    private final UnaryCallSettings.Builder<UpdateFirebaseLinkRequest, FirebaseLink>
-        updateFirebaseLinkSettings;
     private final UnaryCallSettings.Builder<DeleteFirebaseLinkRequest, Empty>
         deleteFirebaseLinkSettings;
     private final PagedCallSettings.Builder<
@@ -2023,6 +2377,45 @@ public class AnalyticsAdminServiceStubSettings
             ListConversionEventsResponse,
             ListConversionEventsPagedResponse>
         listConversionEventsSettings;
+    private final UnaryCallSettings.Builder<
+            GetDisplayVideo360AdvertiserLinkRequest, DisplayVideo360AdvertiserLink>
+        getDisplayVideo360AdvertiserLinkSettings;
+    private final PagedCallSettings.Builder<
+            ListDisplayVideo360AdvertiserLinksRequest,
+            ListDisplayVideo360AdvertiserLinksResponse,
+            ListDisplayVideo360AdvertiserLinksPagedResponse>
+        listDisplayVideo360AdvertiserLinksSettings;
+    private final UnaryCallSettings.Builder<
+            CreateDisplayVideo360AdvertiserLinkRequest, DisplayVideo360AdvertiserLink>
+        createDisplayVideo360AdvertiserLinkSettings;
+    private final UnaryCallSettings.Builder<DeleteDisplayVideo360AdvertiserLinkRequest, Empty>
+        deleteDisplayVideo360AdvertiserLinkSettings;
+    private final UnaryCallSettings.Builder<
+            UpdateDisplayVideo360AdvertiserLinkRequest, DisplayVideo360AdvertiserLink>
+        updateDisplayVideo360AdvertiserLinkSettings;
+    private final UnaryCallSettings.Builder<
+            GetDisplayVideo360AdvertiserLinkProposalRequest, DisplayVideo360AdvertiserLinkProposal>
+        getDisplayVideo360AdvertiserLinkProposalSettings;
+    private final PagedCallSettings.Builder<
+            ListDisplayVideo360AdvertiserLinkProposalsRequest,
+            ListDisplayVideo360AdvertiserLinkProposalsResponse,
+            ListDisplayVideo360AdvertiserLinkProposalsPagedResponse>
+        listDisplayVideo360AdvertiserLinkProposalsSettings;
+    private final UnaryCallSettings.Builder<
+            CreateDisplayVideo360AdvertiserLinkProposalRequest,
+            DisplayVideo360AdvertiserLinkProposal>
+        createDisplayVideo360AdvertiserLinkProposalSettings;
+    private final UnaryCallSettings.Builder<
+            DeleteDisplayVideo360AdvertiserLinkProposalRequest, Empty>
+        deleteDisplayVideo360AdvertiserLinkProposalSettings;
+    private final UnaryCallSettings.Builder<
+            ApproveDisplayVideo360AdvertiserLinkProposalRequest,
+            ApproveDisplayVideo360AdvertiserLinkProposalResponse>
+        approveDisplayVideo360AdvertiserLinkProposalSettings;
+    private final UnaryCallSettings.Builder<
+            CancelDisplayVideo360AdvertiserLinkProposalRequest,
+            DisplayVideo360AdvertiserLinkProposal>
+        cancelDisplayVideo360AdvertiserLinkProposalSettings;
     private final UnaryCallSettings.Builder<CreateCustomDimensionRequest, CustomDimension>
         createCustomDimensionSettings;
     private final UnaryCallSettings.Builder<UpdateCustomDimensionRequest, CustomDimension>
@@ -2047,6 +2440,11 @@ public class AnalyticsAdminServiceStubSettings
         archiveCustomMetricSettings;
     private final UnaryCallSettings.Builder<GetCustomMetricRequest, CustomMetric>
         getCustomMetricSettings;
+    private final UnaryCallSettings.Builder<GetDataRetentionSettingsRequest, DataRetentionSettings>
+        getDataRetentionSettingsSettings;
+    private final UnaryCallSettings.Builder<
+            UpdateDataRetentionSettingsRequest, DataRetentionSettings>
+        updateDataRetentionSettingsSettings;
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
 
@@ -2138,7 +2536,6 @@ public class AnalyticsAdminServiceStubSettings
       getEnhancedMeasurementSettingsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       updateEnhancedMeasurementSettingsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       createFirebaseLinkSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-      updateFirebaseLinkSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       deleteFirebaseLinkSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       listFirebaseLinksSettings = PagedCallSettings.newBuilder(LIST_FIREBASE_LINKS_PAGE_STR_FACT);
       getGlobalSiteTagSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
@@ -2163,6 +2560,25 @@ public class AnalyticsAdminServiceStubSettings
       deleteConversionEventSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       listConversionEventsSettings =
           PagedCallSettings.newBuilder(LIST_CONVERSION_EVENTS_PAGE_STR_FACT);
+      getDisplayVideo360AdvertiserLinkSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      listDisplayVideo360AdvertiserLinksSettings =
+          PagedCallSettings.newBuilder(LIST_DISPLAY_VIDEO360_ADVERTISER_LINKS_PAGE_STR_FACT);
+      createDisplayVideo360AdvertiserLinkSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      deleteDisplayVideo360AdvertiserLinkSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      updateDisplayVideo360AdvertiserLinkSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      getDisplayVideo360AdvertiserLinkProposalSettings =
+          UnaryCallSettings.newUnaryCallSettingsBuilder();
+      listDisplayVideo360AdvertiserLinkProposalsSettings =
+          PagedCallSettings.newBuilder(
+              LIST_DISPLAY_VIDEO360_ADVERTISER_LINK_PROPOSALS_PAGE_STR_FACT);
+      createDisplayVideo360AdvertiserLinkProposalSettings =
+          UnaryCallSettings.newUnaryCallSettingsBuilder();
+      deleteDisplayVideo360AdvertiserLinkProposalSettings =
+          UnaryCallSettings.newUnaryCallSettingsBuilder();
+      approveDisplayVideo360AdvertiserLinkProposalSettings =
+          UnaryCallSettings.newUnaryCallSettingsBuilder();
+      cancelDisplayVideo360AdvertiserLinkProposalSettings =
+          UnaryCallSettings.newUnaryCallSettingsBuilder();
       createCustomDimensionSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       updateCustomDimensionSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       listCustomDimensionsSettings =
@@ -2174,6 +2590,8 @@ public class AnalyticsAdminServiceStubSettings
       listCustomMetricsSettings = PagedCallSettings.newBuilder(LIST_CUSTOM_METRICS_PAGE_STR_FACT);
       archiveCustomMetricSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       getCustomMetricSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      getDataRetentionSettingsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      updateDataRetentionSettingsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -2214,7 +2632,6 @@ public class AnalyticsAdminServiceStubSettings
               getEnhancedMeasurementSettingsSettings,
               updateEnhancedMeasurementSettingsSettings,
               createFirebaseLinkSettings,
-              updateFirebaseLinkSettings,
               deleteFirebaseLinkSettings,
               listFirebaseLinksSettings,
               getGlobalSiteTagSettings,
@@ -2235,6 +2652,17 @@ public class AnalyticsAdminServiceStubSettings
               getConversionEventSettings,
               deleteConversionEventSettings,
               listConversionEventsSettings,
+              getDisplayVideo360AdvertiserLinkSettings,
+              listDisplayVideo360AdvertiserLinksSettings,
+              createDisplayVideo360AdvertiserLinkSettings,
+              deleteDisplayVideo360AdvertiserLinkSettings,
+              updateDisplayVideo360AdvertiserLinkSettings,
+              getDisplayVideo360AdvertiserLinkProposalSettings,
+              listDisplayVideo360AdvertiserLinkProposalsSettings,
+              createDisplayVideo360AdvertiserLinkProposalSettings,
+              deleteDisplayVideo360AdvertiserLinkProposalSettings,
+              approveDisplayVideo360AdvertiserLinkProposalSettings,
+              cancelDisplayVideo360AdvertiserLinkProposalSettings,
               createCustomDimensionSettings,
               updateCustomDimensionSettings,
               listCustomDimensionsSettings,
@@ -2244,7 +2672,9 @@ public class AnalyticsAdminServiceStubSettings
               updateCustomMetricSettings,
               listCustomMetricsSettings,
               archiveCustomMetricSettings,
-              getCustomMetricSettings);
+              getCustomMetricSettings,
+              getDataRetentionSettingsSettings,
+              updateDataRetentionSettingsSettings);
       initDefaults(this);
     }
 
@@ -2290,7 +2720,6 @@ public class AnalyticsAdminServiceStubSettings
       updateEnhancedMeasurementSettingsSettings =
           settings.updateEnhancedMeasurementSettingsSettings.toBuilder();
       createFirebaseLinkSettings = settings.createFirebaseLinkSettings.toBuilder();
-      updateFirebaseLinkSettings = settings.updateFirebaseLinkSettings.toBuilder();
       deleteFirebaseLinkSettings = settings.deleteFirebaseLinkSettings.toBuilder();
       listFirebaseLinksSettings = settings.listFirebaseLinksSettings.toBuilder();
       getGlobalSiteTagSettings = settings.getGlobalSiteTagSettings.toBuilder();
@@ -2317,6 +2746,28 @@ public class AnalyticsAdminServiceStubSettings
       getConversionEventSettings = settings.getConversionEventSettings.toBuilder();
       deleteConversionEventSettings = settings.deleteConversionEventSettings.toBuilder();
       listConversionEventsSettings = settings.listConversionEventsSettings.toBuilder();
+      getDisplayVideo360AdvertiserLinkSettings =
+          settings.getDisplayVideo360AdvertiserLinkSettings.toBuilder();
+      listDisplayVideo360AdvertiserLinksSettings =
+          settings.listDisplayVideo360AdvertiserLinksSettings.toBuilder();
+      createDisplayVideo360AdvertiserLinkSettings =
+          settings.createDisplayVideo360AdvertiserLinkSettings.toBuilder();
+      deleteDisplayVideo360AdvertiserLinkSettings =
+          settings.deleteDisplayVideo360AdvertiserLinkSettings.toBuilder();
+      updateDisplayVideo360AdvertiserLinkSettings =
+          settings.updateDisplayVideo360AdvertiserLinkSettings.toBuilder();
+      getDisplayVideo360AdvertiserLinkProposalSettings =
+          settings.getDisplayVideo360AdvertiserLinkProposalSettings.toBuilder();
+      listDisplayVideo360AdvertiserLinkProposalsSettings =
+          settings.listDisplayVideo360AdvertiserLinkProposalsSettings.toBuilder();
+      createDisplayVideo360AdvertiserLinkProposalSettings =
+          settings.createDisplayVideo360AdvertiserLinkProposalSettings.toBuilder();
+      deleteDisplayVideo360AdvertiserLinkProposalSettings =
+          settings.deleteDisplayVideo360AdvertiserLinkProposalSettings.toBuilder();
+      approveDisplayVideo360AdvertiserLinkProposalSettings =
+          settings.approveDisplayVideo360AdvertiserLinkProposalSettings.toBuilder();
+      cancelDisplayVideo360AdvertiserLinkProposalSettings =
+          settings.cancelDisplayVideo360AdvertiserLinkProposalSettings.toBuilder();
       createCustomDimensionSettings = settings.createCustomDimensionSettings.toBuilder();
       updateCustomDimensionSettings = settings.updateCustomDimensionSettings.toBuilder();
       listCustomDimensionsSettings = settings.listCustomDimensionsSettings.toBuilder();
@@ -2327,6 +2778,9 @@ public class AnalyticsAdminServiceStubSettings
       listCustomMetricsSettings = settings.listCustomMetricsSettings.toBuilder();
       archiveCustomMetricSettings = settings.archiveCustomMetricSettings.toBuilder();
       getCustomMetricSettings = settings.getCustomMetricSettings.toBuilder();
+      getDataRetentionSettingsSettings = settings.getDataRetentionSettingsSettings.toBuilder();
+      updateDataRetentionSettingsSettings =
+          settings.updateDataRetentionSettingsSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -2367,7 +2821,6 @@ public class AnalyticsAdminServiceStubSettings
               getEnhancedMeasurementSettingsSettings,
               updateEnhancedMeasurementSettingsSettings,
               createFirebaseLinkSettings,
-              updateFirebaseLinkSettings,
               deleteFirebaseLinkSettings,
               listFirebaseLinksSettings,
               getGlobalSiteTagSettings,
@@ -2388,6 +2841,17 @@ public class AnalyticsAdminServiceStubSettings
               getConversionEventSettings,
               deleteConversionEventSettings,
               listConversionEventsSettings,
+              getDisplayVideo360AdvertiserLinkSettings,
+              listDisplayVideo360AdvertiserLinksSettings,
+              createDisplayVideo360AdvertiserLinkSettings,
+              deleteDisplayVideo360AdvertiserLinkSettings,
+              updateDisplayVideo360AdvertiserLinkSettings,
+              getDisplayVideo360AdvertiserLinkProposalSettings,
+              listDisplayVideo360AdvertiserLinkProposalsSettings,
+              createDisplayVideo360AdvertiserLinkProposalSettings,
+              deleteDisplayVideo360AdvertiserLinkProposalSettings,
+              approveDisplayVideo360AdvertiserLinkProposalSettings,
+              cancelDisplayVideo360AdvertiserLinkProposalSettings,
               createCustomDimensionSettings,
               updateCustomDimensionSettings,
               listCustomDimensionsSettings,
@@ -2397,7 +2861,9 @@ public class AnalyticsAdminServiceStubSettings
               updateCustomMetricSettings,
               listCustomMetricsSettings,
               archiveCustomMetricSettings,
-              getCustomMetricSettings);
+              getCustomMetricSettings,
+              getDataRetentionSettingsSettings,
+              updateDataRetentionSettingsSettings);
     }
 
     private static Builder createDefault() {
@@ -2600,11 +3066,6 @@ public class AnalyticsAdminServiceStubSettings
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
 
       builder
-          .updateFirebaseLinkSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
-
-      builder
           .deleteFirebaseLinkSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
@@ -2705,6 +3166,61 @@ public class AnalyticsAdminServiceStubSettings
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
 
       builder
+          .getDisplayVideo360AdvertiserLinkSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .listDisplayVideo360AdvertiserLinksSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .createDisplayVideo360AdvertiserLinkSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .deleteDisplayVideo360AdvertiserLinkSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .updateDisplayVideo360AdvertiserLinkSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .getDisplayVideo360AdvertiserLinkProposalSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .listDisplayVideo360AdvertiserLinkProposalsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .createDisplayVideo360AdvertiserLinkProposalSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .deleteDisplayVideo360AdvertiserLinkProposalSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .approveDisplayVideo360AdvertiserLinkProposalSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .cancelDisplayVideo360AdvertiserLinkProposalSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
           .createCustomDimensionSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
@@ -2751,6 +3267,16 @@ public class AnalyticsAdminServiceStubSettings
 
       builder
           .getCustomMetricSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .getDataRetentionSettingsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .updateDataRetentionSettingsSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
 
@@ -2999,12 +3525,6 @@ public class AnalyticsAdminServiceStubSettings
       return createFirebaseLinkSettings;
     }
 
-    /** Returns the builder for the settings used for calls to updateFirebaseLink. */
-    public UnaryCallSettings.Builder<UpdateFirebaseLinkRequest, FirebaseLink>
-        updateFirebaseLinkSettings() {
-      return updateFirebaseLinkSettings;
-    }
-
     /** Returns the builder for the settings used for calls to deleteFirebaseLink. */
     public UnaryCallSettings.Builder<DeleteFirebaseLinkRequest, Empty>
         deleteFirebaseLinkSettings() {
@@ -3138,6 +3658,114 @@ public class AnalyticsAdminServiceStubSettings
       return listConversionEventsSettings;
     }
 
+    /** Returns the builder for the settings used for calls to getDisplayVideo360AdvertiserLink. */
+    public UnaryCallSettings.Builder<
+            GetDisplayVideo360AdvertiserLinkRequest, DisplayVideo360AdvertiserLink>
+        getDisplayVideo360AdvertiserLinkSettings() {
+      return getDisplayVideo360AdvertiserLinkSettings;
+    }
+
+    /**
+     * Returns the builder for the settings used for calls to listDisplayVideo360AdvertiserLinks.
+     */
+    public PagedCallSettings.Builder<
+            ListDisplayVideo360AdvertiserLinksRequest,
+            ListDisplayVideo360AdvertiserLinksResponse,
+            ListDisplayVideo360AdvertiserLinksPagedResponse>
+        listDisplayVideo360AdvertiserLinksSettings() {
+      return listDisplayVideo360AdvertiserLinksSettings;
+    }
+
+    /**
+     * Returns the builder for the settings used for calls to createDisplayVideo360AdvertiserLink.
+     */
+    public UnaryCallSettings.Builder<
+            CreateDisplayVideo360AdvertiserLinkRequest, DisplayVideo360AdvertiserLink>
+        createDisplayVideo360AdvertiserLinkSettings() {
+      return createDisplayVideo360AdvertiserLinkSettings;
+    }
+
+    /**
+     * Returns the builder for the settings used for calls to deleteDisplayVideo360AdvertiserLink.
+     */
+    public UnaryCallSettings.Builder<DeleteDisplayVideo360AdvertiserLinkRequest, Empty>
+        deleteDisplayVideo360AdvertiserLinkSettings() {
+      return deleteDisplayVideo360AdvertiserLinkSettings;
+    }
+
+    /**
+     * Returns the builder for the settings used for calls to updateDisplayVideo360AdvertiserLink.
+     */
+    public UnaryCallSettings.Builder<
+            UpdateDisplayVideo360AdvertiserLinkRequest, DisplayVideo360AdvertiserLink>
+        updateDisplayVideo360AdvertiserLinkSettings() {
+      return updateDisplayVideo360AdvertiserLinkSettings;
+    }
+
+    /**
+     * Returns the builder for the settings used for calls to
+     * getDisplayVideo360AdvertiserLinkProposal.
+     */
+    public UnaryCallSettings.Builder<
+            GetDisplayVideo360AdvertiserLinkProposalRequest, DisplayVideo360AdvertiserLinkProposal>
+        getDisplayVideo360AdvertiserLinkProposalSettings() {
+      return getDisplayVideo360AdvertiserLinkProposalSettings;
+    }
+
+    /**
+     * Returns the builder for the settings used for calls to
+     * listDisplayVideo360AdvertiserLinkProposals.
+     */
+    public PagedCallSettings.Builder<
+            ListDisplayVideo360AdvertiserLinkProposalsRequest,
+            ListDisplayVideo360AdvertiserLinkProposalsResponse,
+            ListDisplayVideo360AdvertiserLinkProposalsPagedResponse>
+        listDisplayVideo360AdvertiserLinkProposalsSettings() {
+      return listDisplayVideo360AdvertiserLinkProposalsSettings;
+    }
+
+    /**
+     * Returns the builder for the settings used for calls to
+     * createDisplayVideo360AdvertiserLinkProposal.
+     */
+    public UnaryCallSettings.Builder<
+            CreateDisplayVideo360AdvertiserLinkProposalRequest,
+            DisplayVideo360AdvertiserLinkProposal>
+        createDisplayVideo360AdvertiserLinkProposalSettings() {
+      return createDisplayVideo360AdvertiserLinkProposalSettings;
+    }
+
+    /**
+     * Returns the builder for the settings used for calls to
+     * deleteDisplayVideo360AdvertiserLinkProposal.
+     */
+    public UnaryCallSettings.Builder<DeleteDisplayVideo360AdvertiserLinkProposalRequest, Empty>
+        deleteDisplayVideo360AdvertiserLinkProposalSettings() {
+      return deleteDisplayVideo360AdvertiserLinkProposalSettings;
+    }
+
+    /**
+     * Returns the builder for the settings used for calls to
+     * approveDisplayVideo360AdvertiserLinkProposal.
+     */
+    public UnaryCallSettings.Builder<
+            ApproveDisplayVideo360AdvertiserLinkProposalRequest,
+            ApproveDisplayVideo360AdvertiserLinkProposalResponse>
+        approveDisplayVideo360AdvertiserLinkProposalSettings() {
+      return approveDisplayVideo360AdvertiserLinkProposalSettings;
+    }
+
+    /**
+     * Returns the builder for the settings used for calls to
+     * cancelDisplayVideo360AdvertiserLinkProposal.
+     */
+    public UnaryCallSettings.Builder<
+            CancelDisplayVideo360AdvertiserLinkProposalRequest,
+            DisplayVideo360AdvertiserLinkProposal>
+        cancelDisplayVideo360AdvertiserLinkProposalSettings() {
+      return cancelDisplayVideo360AdvertiserLinkProposalSettings;
+    }
+
     /** Returns the builder for the settings used for calls to createCustomDimension. */
     public UnaryCallSettings.Builder<CreateCustomDimensionRequest, CustomDimension>
         createCustomDimensionSettings() {
@@ -3200,6 +3828,18 @@ public class AnalyticsAdminServiceStubSettings
     public UnaryCallSettings.Builder<GetCustomMetricRequest, CustomMetric>
         getCustomMetricSettings() {
       return getCustomMetricSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getDataRetentionSettings. */
+    public UnaryCallSettings.Builder<GetDataRetentionSettingsRequest, DataRetentionSettings>
+        getDataRetentionSettingsSettings() {
+      return getDataRetentionSettingsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to updateDataRetentionSettings. */
+    public UnaryCallSettings.Builder<UpdateDataRetentionSettingsRequest, DataRetentionSettings>
+        updateDataRetentionSettingsSettings() {
+      return updateDataRetentionSettingsSettings;
     }
 
     @Override

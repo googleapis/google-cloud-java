@@ -18,51 +18,55 @@
 
 package com.google.analytics.admin.v1alpha;
 
-public interface UpdateFirebaseLinkRequestOrBuilder
+public interface UpdateDataRetentionSettingsRequestOrBuilder
     extends
-    // @@protoc_insertion_point(interface_extends:google.analytics.admin.v1alpha.UpdateFirebaseLinkRequest)
+    // @@protoc_insertion_point(interface_extends:google.analytics.admin.v1alpha.UpdateDataRetentionSettingsRequest)
     com.google.protobuf.MessageOrBuilder {
 
   /**
    *
    *
    * <pre>
-   * Required. The Firebase link to update.
+   * Required. The settings to update.
+   * The `name` field is used to identify the settings to be updated.
    * </pre>
    *
    * <code>
-   * .google.analytics.admin.v1alpha.FirebaseLink firebase_link = 1 [(.google.api.field_behavior) = REQUIRED];
+   * .google.analytics.admin.v1alpha.DataRetentionSettings data_retention_settings = 1 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
-   * @return Whether the firebaseLink field is set.
+   * @return Whether the dataRetentionSettings field is set.
    */
-  boolean hasFirebaseLink();
+  boolean hasDataRetentionSettings();
   /**
    *
    *
    * <pre>
-   * Required. The Firebase link to update.
+   * Required. The settings to update.
+   * The `name` field is used to identify the settings to be updated.
    * </pre>
    *
    * <code>
-   * .google.analytics.admin.v1alpha.FirebaseLink firebase_link = 1 [(.google.api.field_behavior) = REQUIRED];
+   * .google.analytics.admin.v1alpha.DataRetentionSettings data_retention_settings = 1 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
-   * @return The firebaseLink.
+   * @return The dataRetentionSettings.
    */
-  com.google.analytics.admin.v1alpha.FirebaseLink getFirebaseLink();
+  com.google.analytics.admin.v1alpha.DataRetentionSettings getDataRetentionSettings();
   /**
    *
    *
    * <pre>
-   * Required. The Firebase link to update.
+   * Required. The settings to update.
+   * The `name` field is used to identify the settings to be updated.
    * </pre>
    *
    * <code>
-   * .google.analytics.admin.v1alpha.FirebaseLink firebase_link = 1 [(.google.api.field_behavior) = REQUIRED];
+   * .google.analytics.admin.v1alpha.DataRetentionSettings data_retention_settings = 1 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
-  com.google.analytics.admin.v1alpha.FirebaseLinkOrBuilder getFirebaseLinkOrBuilder();
+  com.google.analytics.admin.v1alpha.DataRetentionSettingsOrBuilder
+      getDataRetentionSettingsOrBuilder();
 
   /**
    *
