@@ -326,10 +326,10 @@ public final class ReserveIdsRequest extends com.google.protobuf.GeneratedMessag
     for (int i = 0; i < keys_.size(); i++) {
       output.writeMessage(1, keys_.get(i));
     }
-    if (!getProjectIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(projectId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 8, projectId_);
     }
-    if (!getDatabaseIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(databaseId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 9, databaseId_);
     }
     unknownFields.writeTo(output);
@@ -344,10 +344,10 @@ public final class ReserveIdsRequest extends com.google.protobuf.GeneratedMessag
     for (int i = 0; i < keys_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, keys_.get(i));
     }
-    if (!getProjectIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(projectId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, projectId_);
     }
-    if (!getDatabaseIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(databaseId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(9, databaseId_);
     }
     size += unknownFields.getSerializedSize();

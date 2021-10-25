@@ -202,7 +202,7 @@ public final class RollbackRequest extends com.google.protobuf.GeneratedMessageV
     if (!transaction_.isEmpty()) {
       output.writeBytes(1, transaction_);
     }
-    if (!getProjectIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(projectId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 8, projectId_);
     }
     unknownFields.writeTo(output);
@@ -217,7 +217,7 @@ public final class RollbackRequest extends com.google.protobuf.GeneratedMessageV
     if (!transaction_.isEmpty()) {
       size += com.google.protobuf.CodedOutputStream.computeBytesSize(1, transaction_);
     }
-    if (!getProjectIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(projectId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, projectId_);
     }
     size += unknownFields.getSerializedSize();

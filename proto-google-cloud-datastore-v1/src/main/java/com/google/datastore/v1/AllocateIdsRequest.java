@@ -269,7 +269,7 @@ public final class AllocateIdsRequest extends com.google.protobuf.GeneratedMessa
     for (int i = 0; i < keys_.size(); i++) {
       output.writeMessage(1, keys_.get(i));
     }
-    if (!getProjectIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(projectId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 8, projectId_);
     }
     unknownFields.writeTo(output);
@@ -284,7 +284,7 @@ public final class AllocateIdsRequest extends com.google.protobuf.GeneratedMessa
     for (int i = 0; i < keys_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, keys_.get(i));
     }
-    if (!getProjectIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(projectId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, projectId_);
     }
     size += unknownFields.getSerializedSize();
