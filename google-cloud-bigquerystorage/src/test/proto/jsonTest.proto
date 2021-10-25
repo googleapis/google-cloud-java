@@ -156,3 +156,7 @@ message TestNumeric {
 message TestBignumeric {
   repeated bytes bignumeric = 1;
 }
+
+message TestMixedCaseFieldNames {
+  required string foobar = 1;
+}
