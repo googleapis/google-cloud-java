@@ -1,5 +1,17 @@
 # Changelog
 
+### [2.3.3](https://www.github.com/googleapis/java-bigquery/compare/v2.3.2...v2.3.3) (2021-10-25)
+
+
+### Bug Fixes
+
+* allow retry on connection establishing exceptions ([#1666](https://www.github.com/googleapis/java-bigquery/issues/1666)) ([fd06ad2](https://www.github.com/googleapis/java-bigquery/commit/fd06ad2728e52eac2e8570b0ba15830ad79470ad))
+
+
+### Dependencies
+
+* update dependency com.google.apis:google-api-services-bigquery to v2-rev20211017-1.32.1 ([#1679](https://www.github.com/googleapis/java-bigquery/issues/1679)) ([5e46e5c](https://www.github.com/googleapis/java-bigquery/commit/5e46e5c59f58efb996364edb394b149f4ead8428))
+
 ### [2.3.2](https://www.github.com/googleapis/java-bigquery/compare/v2.3.1...v2.3.2) (2021-10-20)
 
 
