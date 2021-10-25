@@ -805,19 +805,19 @@ public final class LintResult extends com.google.protobuf.GeneratedMessageV3
     if (level_ != com.google.iam.admin.v1.LintResult.Level.LEVEL_UNSPECIFIED.getNumber()) {
       output.writeEnum(1, level_);
     }
-    if (!getValidationUnitNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(validationUnitName_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, validationUnitName_);
     }
     if (severity_ != com.google.iam.admin.v1.LintResult.Severity.SEVERITY_UNSPECIFIED.getNumber()) {
       output.writeEnum(3, severity_);
     }
-    if (!getFieldNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(fieldName_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 5, fieldName_);
     }
     if (locationOffset_ != 0) {
       output.writeInt32(6, locationOffset_);
     }
-    if (!getDebugMessageBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(debugMessage_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 7, debugMessage_);
     }
     unknownFields.writeTo(output);
@@ -832,19 +832,19 @@ public final class LintResult extends com.google.protobuf.GeneratedMessageV3
     if (level_ != com.google.iam.admin.v1.LintResult.Level.LEVEL_UNSPECIFIED.getNumber()) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(1, level_);
     }
-    if (!getValidationUnitNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(validationUnitName_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, validationUnitName_);
     }
     if (severity_ != com.google.iam.admin.v1.LintResult.Severity.SEVERITY_UNSPECIFIED.getNumber()) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(3, severity_);
     }
-    if (!getFieldNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(fieldName_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, fieldName_);
     }
     if (locationOffset_ != 0) {
       size += com.google.protobuf.CodedOutputStream.computeInt32Size(6, locationOffset_);
     }
-    if (!getDebugMessageBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(debugMessage_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, debugMessage_);
     }
     size += unknownFields.getSerializedSize();

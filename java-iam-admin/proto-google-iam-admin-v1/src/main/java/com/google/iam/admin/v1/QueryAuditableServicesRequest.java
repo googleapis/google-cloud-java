@@ -182,7 +182,7 @@ public final class QueryAuditableServicesRequest extends com.google.protobuf.Gen
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getFullResourceNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(fullResourceName_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, fullResourceName_);
     }
     unknownFields.writeTo(output);
@@ -194,7 +194,7 @@ public final class QueryAuditableServicesRequest extends com.google.protobuf.Gen
     if (size != -1) return size;
 
     size = 0;
-    if (!getFullResourceNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(fullResourceName_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, fullResourceName_);
     }
     size += unknownFields.getSerializedSize();
