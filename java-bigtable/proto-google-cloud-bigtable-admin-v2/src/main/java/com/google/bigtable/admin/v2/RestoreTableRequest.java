@@ -370,10 +370,10 @@ public final class RestoreTableRequest extends com.google.protobuf.GeneratedMess
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getParentBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(parent_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, parent_);
     }
-    if (!getTableIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(tableId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, tableId_);
     }
     if (sourceCase_ == 3) {
@@ -388,10 +388,10 @@ public final class RestoreTableRequest extends com.google.protobuf.GeneratedMess
     if (size != -1) return size;
 
     size = 0;
-    if (!getParentBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(parent_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, parent_);
     }
-    if (!getTableIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(tableId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, tableId_);
     }
     if (sourceCase_ == 3) {

@@ -67,6 +67,7 @@ import com.google.protobuf.Any;
 import com.google.protobuf.ByteString;
 import com.google.protobuf.Empty;
 import com.google.protobuf.FieldMask;
+import com.google.protobuf.Timestamp;
 import io.grpc.StatusRuntimeException;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -130,6 +131,7 @@ public class BaseBigtableInstanceAdminClientTest {
             .setName(InstanceName.of("[PROJECT]", "[INSTANCE]").toString())
             .setDisplayName("displayName1714148973")
             .putAllLabels(new HashMap<String, String>())
+            .setCreateTime(Timestamp.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -188,6 +190,7 @@ public class BaseBigtableInstanceAdminClientTest {
             .setName(InstanceName.of("[PROJECT]", "[INSTANCE]").toString())
             .setDisplayName("displayName1714148973")
             .putAllLabels(new HashMap<String, String>())
+            .setCreateTime(Timestamp.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -246,6 +249,7 @@ public class BaseBigtableInstanceAdminClientTest {
             .setName(InstanceName.of("[PROJECT]", "[INSTANCE]").toString())
             .setDisplayName("displayName1714148973")
             .putAllLabels(new HashMap<String, String>())
+            .setCreateTime(Timestamp.newBuilder().build())
             .build();
     mockBigtableInstanceAdmin.addResponse(expectedResponse);
 
@@ -286,6 +290,7 @@ public class BaseBigtableInstanceAdminClientTest {
             .setName(InstanceName.of("[PROJECT]", "[INSTANCE]").toString())
             .setDisplayName("displayName1714148973")
             .putAllLabels(new HashMap<String, String>())
+            .setCreateTime(Timestamp.newBuilder().build())
             .build();
     mockBigtableInstanceAdmin.addResponse(expectedResponse);
 
@@ -406,6 +411,7 @@ public class BaseBigtableInstanceAdminClientTest {
             .setName(InstanceName.of("[PROJECT]", "[INSTANCE]").toString())
             .setDisplayName("displayName1714148973")
             .putAllLabels(new HashMap<String, String>())
+            .setCreateTime(Timestamp.newBuilder().build())
             .build();
     mockBigtableInstanceAdmin.addResponse(expectedResponse);
 
@@ -414,6 +420,7 @@ public class BaseBigtableInstanceAdminClientTest {
             .setName(InstanceName.of("[PROJECT]", "[INSTANCE]").toString())
             .setDisplayName("displayName1714148973")
             .putAllLabels(new HashMap<String, String>())
+            .setCreateTime(Timestamp.newBuilder().build())
             .build();
 
     Instance actualResponse = client.updateInstance(request);
@@ -428,6 +435,7 @@ public class BaseBigtableInstanceAdminClientTest {
     Assert.assertEquals(request.getState(), actualRequest.getState());
     Assert.assertEquals(request.getType(), actualRequest.getType());
     Assert.assertEquals(request.getLabelsMap(), actualRequest.getLabelsMap());
+    Assert.assertEquals(request.getCreateTime(), actualRequest.getCreateTime());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -445,6 +453,7 @@ public class BaseBigtableInstanceAdminClientTest {
               .setName(InstanceName.of("[PROJECT]", "[INSTANCE]").toString())
               .setDisplayName("displayName1714148973")
               .putAllLabels(new HashMap<String, String>())
+              .setCreateTime(Timestamp.newBuilder().build())
               .build();
       client.updateInstance(request);
       Assert.fail("No exception raised");
@@ -460,6 +469,7 @@ public class BaseBigtableInstanceAdminClientTest {
             .setName(InstanceName.of("[PROJECT]", "[INSTANCE]").toString())
             .setDisplayName("displayName1714148973")
             .putAllLabels(new HashMap<String, String>())
+            .setCreateTime(Timestamp.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()

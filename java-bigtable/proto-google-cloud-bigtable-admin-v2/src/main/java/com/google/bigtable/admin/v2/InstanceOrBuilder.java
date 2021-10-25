@@ -229,4 +229,48 @@ public interface InstanceOrBuilder
    * <code>map&lt;string, string&gt; labels = 5;</code>
    */
   java.lang.String getLabelsOrThrow(java.lang.String key);
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. A server-assigned timestamp representing when this Instance was created.
+   * For instances created before this field was added (August 2021), this value
+   * is `seconds: 0, nanos: 1`.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp create_time = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the createTime field is set.
+   */
+  boolean hasCreateTime();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. A server-assigned timestamp representing when this Instance was created.
+   * For instances created before this field was added (August 2021), this value
+   * is `seconds: 0, nanos: 1`.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp create_time = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The createTime.
+   */
+  com.google.protobuf.Timestamp getCreateTime();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. A server-assigned timestamp representing when this Instance was created.
+   * For instances created before this field was added (August 2021), this value
+   * is `seconds: 0, nanos: 1`.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp create_time = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder();
 }

@@ -1588,13 +1588,13 @@ public final class MutateRowsRequest extends com.google.protobuf.GeneratedMessag
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getTableNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(tableName_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, tableName_);
     }
     for (int i = 0; i < entries_.size(); i++) {
       output.writeMessage(2, entries_.get(i));
     }
-    if (!getAppProfileIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(appProfileId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, appProfileId_);
     }
     unknownFields.writeTo(output);
@@ -1606,13 +1606,13 @@ public final class MutateRowsRequest extends com.google.protobuf.GeneratedMessag
     if (size != -1) return size;
 
     size = 0;
-    if (!getTableNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(tableName_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, tableName_);
     }
     for (int i = 0; i < entries_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, entries_.get(i));
     }
-    if (!getAppProfileIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(appProfileId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, appProfileId_);
     }
     size += unknownFields.getSerializedSize();

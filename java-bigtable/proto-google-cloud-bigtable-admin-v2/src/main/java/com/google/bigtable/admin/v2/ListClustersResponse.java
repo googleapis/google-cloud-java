@@ -356,7 +356,7 @@ public final class ListClustersResponse extends com.google.protobuf.GeneratedMes
     for (int i = 0; i < failedLocations_.size(); i++) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, failedLocations_.getRaw(i));
     }
-    if (!getNextPageTokenBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(nextPageToken_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, nextPageToken_);
     }
     unknownFields.writeTo(output);
@@ -379,7 +379,7 @@ public final class ListClustersResponse extends com.google.protobuf.GeneratedMes
       size += dataSize;
       size += 1 * getFailedLocationsList().size();
     }
-    if (!getNextPageTokenBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(nextPageToken_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, nextPageToken_);
     }
     size += unknownFields.getSerializedSize();

@@ -241,10 +241,10 @@ public final class SampleRowKeysRequest extends com.google.protobuf.GeneratedMes
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getTableNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(tableName_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, tableName_);
     }
-    if (!getAppProfileIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(appProfileId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, appProfileId_);
     }
     unknownFields.writeTo(output);
@@ -256,10 +256,10 @@ public final class SampleRowKeysRequest extends com.google.protobuf.GeneratedMes
     if (size != -1) return size;
 
     size = 0;
-    if (!getTableNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(tableName_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, tableName_);
     }
-    if (!getAppProfileIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(appProfileId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, appProfileId_);
     }
     size += unknownFields.getSerializedSize();

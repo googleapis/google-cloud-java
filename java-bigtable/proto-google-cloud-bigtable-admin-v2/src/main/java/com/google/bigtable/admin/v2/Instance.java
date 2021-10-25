@@ -118,6 +118,21 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
               labels_.getMutableMap().put(labels__.getKey(), labels__.getValue());
               break;
             }
+          case 58:
+            {
+              com.google.protobuf.Timestamp.Builder subBuilder = null;
+              if (createTime_ != null) {
+                subBuilder = createTime_.toBuilder();
+              }
+              createTime_ =
+                  input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(createTime_);
+                createTime_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -811,6 +826,61 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     return map.get(key);
   }
 
+  public static final int CREATE_TIME_FIELD_NUMBER = 7;
+  private com.google.protobuf.Timestamp createTime_;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. A server-assigned timestamp representing when this Instance was created.
+   * For instances created before this field was added (August 2021), this value
+   * is `seconds: 0, nanos: 1`.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp create_time = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the createTime field is set.
+   */
+  @java.lang.Override
+  public boolean hasCreateTime() {
+    return createTime_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. A server-assigned timestamp representing when this Instance was created.
+   * For instances created before this field was added (August 2021), this value
+   * is `seconds: 0, nanos: 1`.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp create_time = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The createTime.
+   */
+  @java.lang.Override
+  public com.google.protobuf.Timestamp getCreateTime() {
+    return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. A server-assigned timestamp representing when this Instance was created.
+   * For instances created before this field was added (August 2021), this value
+   * is `seconds: 0, nanos: 1`.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp create_time = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder() {
+    return getCreateTime();
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -825,10 +895,10 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name_);
     }
-    if (!getDisplayNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(displayName_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, displayName_);
     }
     if (state_ != com.google.bigtable.admin.v2.Instance.State.STATE_NOT_KNOWN.getNumber()) {
@@ -839,6 +909,9 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     }
     com.google.protobuf.GeneratedMessageV3.serializeStringMapTo(
         output, internalGetLabels(), LabelsDefaultEntryHolder.defaultEntry, 5);
+    if (createTime_ != null) {
+      output.writeMessage(7, getCreateTime());
+    }
     unknownFields.writeTo(output);
   }
 
@@ -848,10 +921,10 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     if (size != -1) return size;
 
     size = 0;
-    if (!getNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, name_);
     }
-    if (!getDisplayNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(displayName_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, displayName_);
     }
     if (state_ != com.google.bigtable.admin.v2.Instance.State.STATE_NOT_KNOWN.getNumber()) {
@@ -869,6 +942,9 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
               .setValue(entry.getValue())
               .build();
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(5, labels__);
+    }
+    if (createTime_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(7, getCreateTime());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -890,6 +966,10 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     if (state_ != other.state_) return false;
     if (type_ != other.type_) return false;
     if (!internalGetLabels().equals(other.internalGetLabels())) return false;
+    if (hasCreateTime() != other.hasCreateTime()) return false;
+    if (hasCreateTime()) {
+      if (!getCreateTime().equals(other.getCreateTime())) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -912,6 +992,10 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     if (!internalGetLabels().getMap().isEmpty()) {
       hash = (37 * hash) + LABELS_FIELD_NUMBER;
       hash = (53 * hash) + internalGetLabels().hashCode();
+    }
+    if (hasCreateTime()) {
+      hash = (37 * hash) + CREATE_TIME_FIELD_NUMBER;
+      hash = (53 * hash) + getCreateTime().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -1089,6 +1173,12 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       type_ = 0;
 
       internalGetMutableLabels().clear();
+      if (createTimeBuilder_ == null) {
+        createTime_ = null;
+      } else {
+        createTime_ = null;
+        createTimeBuilder_ = null;
+      }
       return this;
     }
 
@@ -1123,6 +1213,11 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       result.type_ = type_;
       result.labels_ = internalGetLabels();
       result.labels_.makeImmutable();
+      if (createTimeBuilder_ == null) {
+        result.createTime_ = createTime_;
+      } else {
+        result.createTime_ = createTimeBuilder_.build();
+      }
       onBuilt();
       return result;
     }
@@ -1187,6 +1282,9 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
         setTypeValue(other.getTypeValue());
       }
       internalGetMutableLabels().mergeFrom(other.internalGetLabels());
+      if (other.hasCreateTime()) {
+        mergeCreateTime(other.getCreateTime());
+      }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
@@ -1850,6 +1948,225 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     public Builder putAllLabels(java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableLabels().getMutableMap().putAll(values);
       return this;
+    }
+
+    private com.google.protobuf.Timestamp createTime_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
+        createTimeBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Output only. A server-assigned timestamp representing when this Instance was created.
+     * For instances created before this field was added (August 2021), this value
+     * is `seconds: 0, nanos: 1`.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp create_time = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the createTime field is set.
+     */
+    public boolean hasCreateTime() {
+      return createTimeBuilder_ != null || createTime_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. A server-assigned timestamp representing when this Instance was created.
+     * For instances created before this field was added (August 2021), this value
+     * is `seconds: 0, nanos: 1`.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp create_time = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The createTime.
+     */
+    public com.google.protobuf.Timestamp getCreateTime() {
+      if (createTimeBuilder_ == null) {
+        return createTime_ == null
+            ? com.google.protobuf.Timestamp.getDefaultInstance()
+            : createTime_;
+      } else {
+        return createTimeBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. A server-assigned timestamp representing when this Instance was created.
+     * For instances created before this field was added (August 2021), this value
+     * is `seconds: 0, nanos: 1`.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp create_time = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setCreateTime(com.google.protobuf.Timestamp value) {
+      if (createTimeBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        createTime_ = value;
+        onChanged();
+      } else {
+        createTimeBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. A server-assigned timestamp representing when this Instance was created.
+     * For instances created before this field was added (August 2021), this value
+     * is `seconds: 0, nanos: 1`.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp create_time = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setCreateTime(com.google.protobuf.Timestamp.Builder builderForValue) {
+      if (createTimeBuilder_ == null) {
+        createTime_ = builderForValue.build();
+        onChanged();
+      } else {
+        createTimeBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. A server-assigned timestamp representing when this Instance was created.
+     * For instances created before this field was added (August 2021), this value
+     * is `seconds: 0, nanos: 1`.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp create_time = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder mergeCreateTime(com.google.protobuf.Timestamp value) {
+      if (createTimeBuilder_ == null) {
+        if (createTime_ != null) {
+          createTime_ =
+              com.google.protobuf.Timestamp.newBuilder(createTime_).mergeFrom(value).buildPartial();
+        } else {
+          createTime_ = value;
+        }
+        onChanged();
+      } else {
+        createTimeBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. A server-assigned timestamp representing when this Instance was created.
+     * For instances created before this field was added (August 2021), this value
+     * is `seconds: 0, nanos: 1`.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp create_time = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder clearCreateTime() {
+      if (createTimeBuilder_ == null) {
+        createTime_ = null;
+        onChanged();
+      } else {
+        createTime_ = null;
+        createTimeBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. A server-assigned timestamp representing when this Instance was created.
+     * For instances created before this field was added (August 2021), this value
+     * is `seconds: 0, nanos: 1`.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp create_time = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.protobuf.Timestamp.Builder getCreateTimeBuilder() {
+
+      onChanged();
+      return getCreateTimeFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. A server-assigned timestamp representing when this Instance was created.
+     * For instances created before this field was added (August 2021), this value
+     * is `seconds: 0, nanos: 1`.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp create_time = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder() {
+      if (createTimeBuilder_ != null) {
+        return createTimeBuilder_.getMessageOrBuilder();
+      } else {
+        return createTime_ == null
+            ? com.google.protobuf.Timestamp.getDefaultInstance()
+            : createTime_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. A server-assigned timestamp representing when this Instance was created.
+     * For instances created before this field was added (August 2021), this value
+     * is `seconds: 0, nanos: 1`.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp create_time = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
+        getCreateTimeFieldBuilder() {
+      if (createTimeBuilder_ == null) {
+        createTimeBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.protobuf.Timestamp,
+                com.google.protobuf.Timestamp.Builder,
+                com.google.protobuf.TimestampOrBuilder>(
+                getCreateTime(), getParentForChildren(), isClean());
+        createTime_ = null;
+      }
+      return createTimeBuilder_;
     }
 
     @java.lang.Override
