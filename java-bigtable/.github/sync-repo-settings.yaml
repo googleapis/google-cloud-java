@@ -44,6 +44,20 @@ branchProtectionRules:
       - units (11)
       - 'Kokoro - Test: Integration'
       - cla/google
+  - pattern: 2.2.x
+    isAdminEnforced: true
+    requiredApprovingReviewCount: 1
+    requiresCodeOwnerReviews: true
+    requiresStrictStatusChecks: false
+    requiredStatusCheckContexts:
+      - dependencies (8)
+      - dependencies (11)
+      - lint
+      - clirr
+      - units (8)
+      - units (11)
+      - 'Kokoro - Test: Integration'
+      - cla/google
 permissionRules:
   - team: yoshi-admins
     permission: admin
