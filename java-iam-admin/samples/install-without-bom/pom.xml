@@ -29,7 +29,7 @@
     <dependency>
       <groupId>com.google.cloud</groupId>
       <artifactId>google-iam-admin</artifactId>
-      <version>0.1.2</version>
+      <version>1.0.0</version>
     </dependency>
     <!-- [END iam-admin_install_without_bom] -->
 
