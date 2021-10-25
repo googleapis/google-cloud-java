@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.0](https://www.github.com/googleapis/java-iam-admin/compare/v0.1.2...v1.0.0) (2021-10-25)
+
+
+### Features
+
+* promote to GA ([#26](https://www.github.com/googleapis/java-iam-admin/issues/26)) ([1a3cf11](https://www.github.com/googleapis/java-iam-admin/commit/1a3cf11111a3398f94399f72d5969f159b6bf9b4))
+
 ### [0.1.2](https://www.github.com/googleapis/java-iam-admin/compare/v0.1.1...v0.1.2) (2021-10-25)
 
 
