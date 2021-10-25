@@ -381,7 +381,7 @@ public final class ErrorEvent extends com.google.protobuf.GeneratedMessageV3
     if (serviceContext_ != null) {
       output.writeMessage(2, getServiceContext());
     }
-    if (!getMessageBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(message_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, message_);
     }
     if (context_ != null) {
@@ -402,7 +402,7 @@ public final class ErrorEvent extends com.google.protobuf.GeneratedMessageV3
     if (serviceContext_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, getServiceContext());
     }
-    if (!getMessageBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(message_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, message_);
     }
     if (context_ != null) {

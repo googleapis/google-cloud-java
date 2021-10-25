@@ -186,7 +186,7 @@ public final class GetGroupRequest extends com.google.protobuf.GeneratedMessageV
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getGroupNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(groupName_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, groupName_);
     }
     unknownFields.writeTo(output);
@@ -198,7 +198,7 @@ public final class GetGroupRequest extends com.google.protobuf.GeneratedMessageV
     if (size != -1) return size;
 
     size = 0;
-    if (!getGroupNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(groupName_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, groupName_);
     }
     size += unknownFields.getSerializedSize();

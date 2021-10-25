@@ -297,13 +297,13 @@ public final class ServiceContextFilter extends com.google.protobuf.GeneratedMes
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getServiceBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(service_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, service_);
     }
-    if (!getVersionBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(version_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, version_);
     }
-    if (!getResourceTypeBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(resourceType_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 4, resourceType_);
     }
     unknownFields.writeTo(output);
@@ -315,13 +315,13 @@ public final class ServiceContextFilter extends com.google.protobuf.GeneratedMes
     if (size != -1) return size;
 
     size = 0;
-    if (!getServiceBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(service_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, service_);
     }
-    if (!getVersionBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(version_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, version_);
     }
-    if (!getResourceTypeBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(resourceType_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, resourceType_);
     }
     size += unknownFields.getSerializedSize();

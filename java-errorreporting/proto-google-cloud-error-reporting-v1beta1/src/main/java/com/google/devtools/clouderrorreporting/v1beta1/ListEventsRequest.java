@@ -481,10 +481,10 @@ public final class ListEventsRequest extends com.google.protobuf.GeneratedMessag
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getProjectNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(projectName_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, projectName_);
     }
-    if (!getGroupIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(groupId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, groupId_);
     }
     if (serviceFilter_ != null) {
@@ -496,7 +496,7 @@ public final class ListEventsRequest extends com.google.protobuf.GeneratedMessag
     if (pageSize_ != 0) {
       output.writeInt32(6, pageSize_);
     }
-    if (!getPageTokenBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(pageToken_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 7, pageToken_);
     }
     unknownFields.writeTo(output);
@@ -508,10 +508,10 @@ public final class ListEventsRequest extends com.google.protobuf.GeneratedMessag
     if (size != -1) return size;
 
     size = 0;
-    if (!getProjectNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(projectName_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, projectName_);
     }
-    if (!getGroupIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(groupId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, groupId_);
     }
     if (serviceFilter_ != null) {
@@ -523,7 +523,7 @@ public final class ListEventsRequest extends com.google.protobuf.GeneratedMessag
     if (pageSize_ != 0) {
       size += com.google.protobuf.CodedOutputStream.computeInt32Size(6, pageSize_);
     }
-    if (!getPageTokenBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(pageToken_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, pageToken_);
     }
     size += unknownFields.getSerializedSize();
