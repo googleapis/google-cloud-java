@@ -461,7 +461,7 @@ public final class ChangeHistoryEvent extends com.google.protobuf.GeneratedMessa
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(id_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, id_);
     }
     if (changeTime_ != null) {
@@ -471,7 +471,7 @@ public final class ChangeHistoryEvent extends com.google.protobuf.GeneratedMessa
         != com.google.analytics.admin.v1alpha.ActorType.ACTOR_TYPE_UNSPECIFIED.getNumber()) {
       output.writeEnum(3, actorType_);
     }
-    if (!getUserActorEmailBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(userActorEmail_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 4, userActorEmail_);
     }
     if (changesFiltered_ != false) {
@@ -489,7 +489,7 @@ public final class ChangeHistoryEvent extends com.google.protobuf.GeneratedMessa
     if (size != -1) return size;
 
     size = 0;
-    if (!getIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(id_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, id_);
     }
     if (changeTime_ != null) {
@@ -499,7 +499,7 @@ public final class ChangeHistoryEvent extends com.google.protobuf.GeneratedMessa
         != com.google.analytics.admin.v1alpha.ActorType.ACTOR_TYPE_UNSPECIFIED.getNumber()) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(3, actorType_);
     }
-    if (!getUserActorEmailBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(userActorEmail_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, userActorEmail_);
     }
     if (changesFiltered_ != false) {

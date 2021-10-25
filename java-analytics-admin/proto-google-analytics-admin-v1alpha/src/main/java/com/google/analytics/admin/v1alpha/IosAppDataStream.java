@@ -487,10 +487,10 @@ public final class IosAppDataStream extends com.google.protobuf.GeneratedMessage
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name_);
     }
-    if (!getFirebaseAppIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(firebaseAppId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, firebaseAppId_);
     }
     if (createTime_ != null) {
@@ -499,10 +499,10 @@ public final class IosAppDataStream extends com.google.protobuf.GeneratedMessage
     if (updateTime_ != null) {
       output.writeMessage(4, getUpdateTime());
     }
-    if (!getBundleIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(bundleId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 5, bundleId_);
     }
-    if (!getDisplayNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(displayName_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 6, displayName_);
     }
     unknownFields.writeTo(output);
@@ -514,10 +514,10 @@ public final class IosAppDataStream extends com.google.protobuf.GeneratedMessage
     if (size != -1) return size;
 
     size = 0;
-    if (!getNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, name_);
     }
-    if (!getFirebaseAppIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(firebaseAppId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, firebaseAppId_);
     }
     if (createTime_ != null) {
@@ -526,10 +526,10 @@ public final class IosAppDataStream extends com.google.protobuf.GeneratedMessage
     if (updateTime_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(4, getUpdateTime());
     }
-    if (!getBundleIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(bundleId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, bundleId_);
     }
-    if (!getDisplayNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(displayName_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, displayName_);
     }
     size += unknownFields.getSerializedSize();

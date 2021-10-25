@@ -515,10 +515,10 @@ public final class GoogleAdsLink extends com.google.protobuf.GeneratedMessageV3
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name_);
     }
-    if (!getCustomerIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(customerId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, customerId_);
     }
     if (canManageClients_ != false) {
@@ -533,7 +533,7 @@ public final class GoogleAdsLink extends com.google.protobuf.GeneratedMessageV3
     if (updateTime_ != null) {
       output.writeMessage(8, getUpdateTime());
     }
-    if (!getCreatorEmailAddressBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(creatorEmailAddress_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 9, creatorEmailAddress_);
     }
     unknownFields.writeTo(output);
@@ -545,10 +545,10 @@ public final class GoogleAdsLink extends com.google.protobuf.GeneratedMessageV3
     if (size != -1) return size;
 
     size = 0;
-    if (!getNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, name_);
     }
-    if (!getCustomerIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(customerId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, customerId_);
     }
     if (canManageClients_ != false) {
@@ -565,7 +565,7 @@ public final class GoogleAdsLink extends com.google.protobuf.GeneratedMessageV3
     if (updateTime_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(8, getUpdateTime());
     }
-    if (!getCreatorEmailAddressBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(creatorEmailAddress_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(9, creatorEmailAddress_);
     }
     size += unknownFields.getSerializedSize();

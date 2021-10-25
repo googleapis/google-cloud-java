@@ -253,7 +253,7 @@ public final class CreateWebDataStreamRequest extends com.google.protobuf.Genera
     if (webDataStream_ != null) {
       output.writeMessage(1, getWebDataStream());
     }
-    if (!getParentBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(parent_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, parent_);
     }
     unknownFields.writeTo(output);
@@ -268,7 +268,7 @@ public final class CreateWebDataStreamRequest extends com.google.protobuf.Genera
     if (webDataStream_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, getWebDataStream());
     }
-    if (!getParentBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(parent_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, parent_);
     }
     size += unknownFields.getSerializedSize();

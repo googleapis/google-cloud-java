@@ -282,7 +282,7 @@ public final class LinkProposalStatusDetails extends com.google.protobuf.Generat
             .getNumber()) {
       output.writeEnum(1, linkProposalInitiatingProduct_);
     }
-    if (!getRequestorEmailBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(requestorEmail_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, requestorEmail_);
     }
     if (linkProposalState_
@@ -306,7 +306,7 @@ public final class LinkProposalStatusDetails extends com.google.protobuf.Generat
       size +=
           com.google.protobuf.CodedOutputStream.computeEnumSize(1, linkProposalInitiatingProduct_);
     }
-    if (!getRequestorEmailBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(requestorEmail_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, requestorEmail_);
     }
     if (linkProposalState_

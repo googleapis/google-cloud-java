@@ -254,7 +254,7 @@ public final class CreateConversionEventRequest extends com.google.protobuf.Gene
     if (conversionEvent_ != null) {
       output.writeMessage(1, getConversionEvent());
     }
-    if (!getParentBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(parent_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, parent_);
     }
     unknownFields.writeTo(output);
@@ -269,7 +269,7 @@ public final class CreateConversionEventRequest extends com.google.protobuf.Gene
     if (conversionEvent_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, getConversionEvent());
     }
-    if (!getParentBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(parent_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, parent_);
     }
     size += unknownFields.getSerializedSize();

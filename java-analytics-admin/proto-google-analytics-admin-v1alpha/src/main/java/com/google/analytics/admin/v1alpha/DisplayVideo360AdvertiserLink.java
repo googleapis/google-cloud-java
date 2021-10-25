@@ -517,13 +517,13 @@ public final class DisplayVideo360AdvertiserLink extends com.google.protobuf.Gen
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name_);
     }
-    if (!getAdvertiserIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(advertiserId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, advertiserId_);
     }
-    if (!getAdvertiserDisplayNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(advertiserDisplayName_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, advertiserDisplayName_);
     }
     if (adsPersonalizationEnabled_ != null) {
@@ -544,13 +544,13 @@ public final class DisplayVideo360AdvertiserLink extends com.google.protobuf.Gen
     if (size != -1) return size;
 
     size = 0;
-    if (!getNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, name_);
     }
-    if (!getAdvertiserIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(advertiserId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, advertiserId_);
     }
-    if (!getAdvertiserDisplayNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(advertiserDisplayName_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, advertiserDisplayName_);
     }
     if (adsPersonalizationEnabled_ != null) {
