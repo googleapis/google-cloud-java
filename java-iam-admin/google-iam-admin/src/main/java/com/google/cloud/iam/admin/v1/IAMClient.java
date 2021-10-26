@@ -919,8 +919,8 @@ public class IAMClient implements BackgroundResource {
    *
    * <p>If the service account is already enabled, then this method has no effect.
    *
-   * <p>If the service account was disabled by other means?for example, if Google disabled the
-   * service account because it was compromised?you cannot use this method to enable the service
+   * <p>If the service account was disabled by other means—for example, if Google disabled the
+   * service account because it was compromised—you cannot use this method to enable the service
    * account.
    *
    * <p>Sample code:
@@ -947,8 +947,8 @@ public class IAMClient implements BackgroundResource {
    *
    * <p>If the service account is already enabled, then this method has no effect.
    *
-   * <p>If the service account was disabled by other means?for example, if Google disabled the
-   * service account because it was compromised?you cannot use this method to enable the service
+   * <p>If the service account was disabled by other means—for example, if Google disabled the
+   * service account because it was compromised—you cannot use this method to enable the service
    * account.
    *
    * <p>Sample code:
