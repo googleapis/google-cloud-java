@@ -1,5 +1,24 @@
 # Changelog
 
+## [2.5.0](https://www.github.com/googleapis/java-bigquerystorage/compare/v2.4.2...v2.5.0) (2021-10-26)
+
+
+### Features
+
+* next release from main branch is 2.4.1 ([#1376](https://www.github.com/googleapis/java-bigquerystorage/issues/1376)) ([ca21447](https://www.github.com/googleapis/java-bigquerystorage/commit/ca21447e56dacbe2cec4722f037d441479ec2a8f))
+
+
+### Bug Fixes
+
+* BQ/proto schema names should be compared lowercase ([#1369](https://www.github.com/googleapis/java-bigquerystorage/issues/1369)) ([a0da90e](https://www.github.com/googleapis/java-bigquerystorage/commit/a0da90e8de89c5b9ef77183fee86e1e1a7389e00))
+
+
+### Dependencies
+
+* update arrow.version to v6 ([#1383](https://www.github.com/googleapis/java-bigquerystorage/issues/1383)) ([f2e3562](https://www.github.com/googleapis/java-bigquerystorage/commit/f2e3562fc1ed0a1a1e71c077dc6d37ae3fe6b3be))
+* update dependency com.google.cloud:google-cloud-bigquery to v2.3.2 ([#1378](https://www.github.com/googleapis/java-bigquerystorage/issues/1378)) ([5983419](https://www.github.com/googleapis/java-bigquerystorage/commit/5983419a0d71849787876ecb5715c919f6ce04f9))
+* update dependency com.google.cloud:google-cloud-bigquery to v2.3.3 ([#1382](https://www.github.com/googleapis/java-bigquerystorage/issues/1382)) ([8705af7](https://www.github.com/googleapis/java-bigquerystorage/commit/8705af7a11aa6a8f8182193011fc8bc7c4a28a4f))
+
 ### [2.4.2](https://www.github.com/googleapis/java-bigquerystorage/compare/v2.4.1...v2.4.2) (2021-10-20)
 
 
