@@ -17,6 +17,8 @@
 package com.example.translate;
 
 // [START translate_v3_translate_text]
+// [START translate_v3_translate_text_0]
+// Imports the Google Cloud Translation library.
 import com.google.cloud.translate.v3.LocationName;
 import com.google.cloud.translate.v3.TranslateTextRequest;
 import com.google.cloud.translate.v3.TranslateTextResponse;
@@ -24,8 +26,12 @@ import com.google.cloud.translate.v3.Translation;
 import com.google.cloud.translate.v3.TranslationServiceClient;
 import java.io.IOException;
 
+// [END translate_v3_translate_text_0]
+
 public class TranslateText {
 
+  // [START translate_v3_translate_text_1]
+  // Set and pass variables to overloaded translateText() method for translation.
   public static void translateText() throws IOException {
     // TODO(developer): Replace these variables before running the sample.
     String projectId = "YOUR-PROJECT-ID";
@@ -34,8 +40,10 @@ public class TranslateText {
     String text = "your-text";
     translateText(projectId, targetLanguage, text);
   }
+  // [END translate_v3_translate_text_1]
 
-  // Translating Text
+  // [START translate_v3_translate_text_2]
+  // Translate text to target language.
   public static void translateText(String projectId, String targetLanguage, String text)
       throws IOException {
 
@@ -65,5 +73,6 @@ public class TranslateText {
       }
     }
   }
+  // [END translate_v3_translate_text_2]
 }
 // [END translate_v3_translate_text]
