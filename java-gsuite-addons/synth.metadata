@@ -4,7 +4,7 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/java-gsuite-addons.git",
-        "sha": "42017004ded7208095a9cd5fbd84a991f335431f"
+        "sha": "71a00376765c7db80add2671366984ec33ed9c0f"
       }
     },
     {
