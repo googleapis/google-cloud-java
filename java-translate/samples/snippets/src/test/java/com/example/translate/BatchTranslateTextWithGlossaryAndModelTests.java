@@ -49,8 +49,6 @@ public class BatchTranslateTextWithGlossaryAndModelTests {
   private static final String GLOSSARY_ID = "DO_NOT_DELETE_TEST_GLOSSARY";
   private static final String MODEL_ID = "TRL3645318651705294848";
   private static final String PREFIX = "BATCH_TRANSLATION_MODEL_GLOS_OUTPUT_";
-  private static final String OUTPUT_URI =
-      String.format("gs://%s/%s%s/", PROJECT_ID, PREFIX, UUID.randomUUID());
 
   private ByteArrayOutputStream bout;
   private PrintStream out;
@@ -121,8 +119,9 @@ public class BatchTranslateTextWithGlossaryAndModelTests {
   @Test
   public void testBatchTranslateTextWithGlossaryAndModel()
       throws InterruptedException, ExecutionException, IOException, TimeoutException {
+    String outputUri = String.format("gs://%s/%s%s/", PROJECT_ID, PREFIX, UUID.randomUUID());
     BatchTranslateTextWithGlossaryAndModel.batchTranslateTextWithGlossaryAndModel(
-        PROJECT_ID, "en", "ja", INPUT_URI, OUTPUT_URI, GLOSSARY_ID, MODEL_ID);
+        PROJECT_ID, "en", "ja", INPUT_URI, outputUri, GLOSSARY_ID, MODEL_ID);
     String got = bout.toString();
     assertThat(got).contains("Total Characters: 25");
   }

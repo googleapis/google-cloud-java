@@ -45,8 +45,6 @@ public class BatchTranslateDocumentTests {
   private static final String INPUT_URI =
       "gs://java-docs-samples-testing/translation/invoice2.docx";
   private static final String PREFIX = "BATCH_DOC_TRANSLATION_OUTPUT_";
-  private static final String OUTPUT_URI =
-      String.format("gs://%s/%s%s/", PROJECT_ID, PREFIX, UUID.randomUUID());
 
   private ByteArrayOutputStream bout;
   private PrintStream out;
@@ -109,8 +107,9 @@ public class BatchTranslateDocumentTests {
   @Test
   public void testBatchTranslateDocument()
       throws InterruptedException, ExecutionException, IOException, TimeoutException {
+    String outputUri = String.format("gs://%s/%s%s/", PROJECT_ID, PREFIX, UUID.randomUUID());
     BatchTranslateDocument.batchTranslateDocument(
-        PROJECT_ID, "en-US", "fr-FR", INPUT_URI, OUTPUT_URI, 1000);
+        PROJECT_ID, "en-US", "fr-FR", INPUT_URI, outputUri, 1000);
 
     String got = bout.toString();
     assertThat(got).contains("Total Pages:");

@@ -48,8 +48,6 @@ public class BatchTranslateTextWithModelTests {
       "gs://cloud-samples-data/translation/custom_model_text.txt";
   private static final String MODEL_ID = "TRL3645318651705294848";
   private static final String PREFIX = "BATCH_TRANSLATION_WITH_MODEL_OUTPUT_";
-  private static final String OUTPUT_URI =
-      String.format("gs://%s/%s%s/", PROJECT_ID, PREFIX, UUID.randomUUID());
 
   private ByteArrayOutputStream bout;
   private PrintStream out;
@@ -116,8 +114,9 @@ public class BatchTranslateTextWithModelTests {
   @Test
   public void testBatchTranslateTextWithModel()
       throws InterruptedException, ExecutionException, IOException, TimeoutException {
+    String outputUri = String.format("gs://%s/%s%s/", PROJECT_ID, PREFIX, UUID.randomUUID());
     BatchTranslateTextWithModel.batchTranslateTextWithModel(
-        PROJECT_ID, "en", "ja", INPUT_URI, OUTPUT_URI, MODEL_ID);
+        PROJECT_ID, "en", "ja", INPUT_URI, outputUri, MODEL_ID);
     String got = bout.toString();
     assertThat(got).contains("Total Characters: 15");
   }

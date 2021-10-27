@@ -48,8 +48,6 @@ public class BatchTranslateTextWithGlossaryTests {
       "gs://cloud-samples-data/translation/text_with_glossary.txt";
   private static final String GLOSSARY_ID = "DO_NOT_DELETE_TEST_GLOSSARY";
   private static final String PREFIX = "BATCH_TRANSLATION_GLOSSARY_OUTPUT_";
-  private static final String OUTPUT_URI =
-      String.format("gs://%s/%s%s/", PROJECT_ID, PREFIX, UUID.randomUUID());
 
   private ByteArrayOutputStream bout;
   private PrintStream out;
@@ -120,8 +118,9 @@ public class BatchTranslateTextWithGlossaryTests {
   @Test
   public void testBatchTranslateTextWithGlossary()
       throws InterruptedException, ExecutionException, IOException, TimeoutException {
+    String outputUri = String.format("gs://%s/%s%s/", PROJECT_ID, PREFIX, UUID.randomUUID());
     BatchTranslateTextWithGlossary.batchTranslateTextWithGlossary(
-        PROJECT_ID, "en", "ja", INPUT_URI, OUTPUT_URI, GLOSSARY_ID);
+        PROJECT_ID, "en", "ja", INPUT_URI, outputUri, GLOSSARY_ID);
     String got = bout.toString();
     assertThat(got).contains("Total Characters: 9");
   }
