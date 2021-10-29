@@ -1,5 +1,12 @@
 # Changelog
 
+### [2.1.4](https://www.github.com/googleapis/java-shell/compare/v2.1.3...v2.1.4) (2021-10-26)
+
+
+### Bug Fixes
+
+* **java:** java 17 dependency arguments ([#1266](https://www.github.com/googleapis/java-shell/issues/1266)) ([#110](https://www.github.com/googleapis/java-shell/issues/110)) ([3815f56](https://www.github.com/googleapis/java-shell/commit/3815f56ee7c41cc37055945f78d4caed47d3a82d))
+
 ### [2.1.3](https://www.github.com/googleapis/java-shell/compare/v2.1.2...v2.1.3) (2021-10-19)
 
 
