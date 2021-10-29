@@ -1,5 +1,17 @@
 # Changelog
 
+## [2.2.0](https://www.github.com/googleapis/java-containeranalysis/compare/v2.1.9...v2.2.0) (2021-10-27)
+
+
+### Features
+
+* Introduce Native Image testing build script changes ([#733](https://www.github.com/googleapis/java-containeranalysis/issues/733)) ([2b2e65f](https://www.github.com/googleapis/java-containeranalysis/commit/2b2e65ffbe3da4a27070a0e6e15af9f1f42ef8fb))
+
+
+### Bug Fixes
+
+* **java:** java 17 dependency arguments ([#740](https://www.github.com/googleapis/java-containeranalysis/issues/740)) ([e9261d2](https://www.github.com/googleapis/java-containeranalysis/commit/e9261d203ee7b5f577e5d5843845a3a033e4dac3))
+
 ### [2.1.9](https://www.github.com/googleapis/java-containeranalysis/compare/v2.1.8...v2.1.9) (2021-10-19)
 
 
