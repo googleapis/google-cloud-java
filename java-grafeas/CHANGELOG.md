@@ -1,5 +1,22 @@
 # Changelog
 
+## [2.1.0](https://www.github.com/googleapis/java-grafeas/compare/v2.0.6...v2.1.0) (2021-10-29)
+
+
+### Features
+
+* Introduce Native Image testing build script changes ([#402](https://www.github.com/googleapis/java-grafeas/issues/402)) ([b44ed2e](https://www.github.com/googleapis/java-grafeas/commit/b44ed2e4ea17d92d49d08984fd07f1d1e8d07de8))
+
+
+### Bug Fixes
+
+* **java:** java 17 dependency arguments ([#406](https://www.github.com/googleapis/java-grafeas/issues/406)) ([2d8fb41](https://www.github.com/googleapis/java-grafeas/commit/2d8fb418737ae84648024884205a80173df596bd))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.4.0 ([#404](https://www.github.com/googleapis/java-grafeas/issues/404)) ([1233d5c](https://www.github.com/googleapis/java-grafeas/commit/1233d5c4a4299d6fdafd1dc5bfe925f06c43e4f2))
+
 ### [2.0.6](https://www.github.com/googleapis/java-grafeas/compare/v2.0.5...v2.0.6) (2021-10-05)
 
 
