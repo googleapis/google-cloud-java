@@ -1004,10 +1004,10 @@ public final class BuildProvenance extends com.google.protobuf.GeneratedMessageV
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(id_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, id_);
     }
-    if (!getProjectIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(projectId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, projectId_);
     }
     for (int i = 0; i < commands_.size(); i++) {
@@ -1025,21 +1025,21 @@ public final class BuildProvenance extends com.google.protobuf.GeneratedMessageV
     if (endTime_ != null) {
       output.writeMessage(7, getEndTime());
     }
-    if (!getCreatorBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(creator_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 8, creator_);
     }
-    if (!getLogsUriBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(logsUri_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 9, logsUri_);
     }
     if (sourceProvenance_ != null) {
       output.writeMessage(10, getSourceProvenance());
     }
-    if (!getTriggerIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(triggerId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 11, triggerId_);
     }
     com.google.protobuf.GeneratedMessageV3.serializeStringMapTo(
         output, internalGetBuildOptions(), BuildOptionsDefaultEntryHolder.defaultEntry, 12);
-    if (!getBuilderVersionBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(builderVersion_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 13, builderVersion_);
     }
     unknownFields.writeTo(output);
@@ -1051,10 +1051,10 @@ public final class BuildProvenance extends com.google.protobuf.GeneratedMessageV
     if (size != -1) return size;
 
     size = 0;
-    if (!getIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(id_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, id_);
     }
-    if (!getProjectIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(projectId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, projectId_);
     }
     for (int i = 0; i < commands_.size(); i++) {
@@ -1072,16 +1072,16 @@ public final class BuildProvenance extends com.google.protobuf.GeneratedMessageV
     if (endTime_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(7, getEndTime());
     }
-    if (!getCreatorBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(creator_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, creator_);
     }
-    if (!getLogsUriBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(logsUri_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(9, logsUri_);
     }
     if (sourceProvenance_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(10, getSourceProvenance());
     }
-    if (!getTriggerIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(triggerId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(11, triggerId_);
     }
     for (java.util.Map.Entry<java.lang.String, java.lang.String> entry :
@@ -1094,7 +1094,7 @@ public final class BuildProvenance extends com.google.protobuf.GeneratedMessageV
               .build();
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(12, buildOptions__);
     }
-    if (!getBuilderVersionBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(builderVersion_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(13, builderVersion_);
     }
     size += unknownFields.getSerializedSize();

@@ -317,7 +317,7 @@ public final class AttestationNote extends com.google.protobuf.GeneratedMessageV
 
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-      if (!getHumanReadableNameBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(humanReadableName_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, humanReadableName_);
       }
       unknownFields.writeTo(output);
@@ -329,7 +329,7 @@ public final class AttestationNote extends com.google.protobuf.GeneratedMessageV
       if (size != -1) return size;
 
       size = 0;
-      if (!getHumanReadableNameBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(humanReadableName_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, humanReadableName_);
       }
       size += unknownFields.getSerializedSize();

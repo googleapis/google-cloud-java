@@ -794,7 +794,7 @@ public final class DiscoveryOccurrence extends com.google.protobuf.GeneratedMess
     if (analysisStatusError_ != null) {
       output.writeMessage(3, getAnalysisStatusError());
     }
-    if (!getCpeBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(cpe_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 4, cpe_);
     }
     if (lastScanTime_ != null) {
@@ -822,7 +822,7 @@ public final class DiscoveryOccurrence extends com.google.protobuf.GeneratedMess
     if (analysisStatusError_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(3, getAnalysisStatusError());
     }
-    if (!getCpeBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(cpe_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, cpe_);
     }
     if (lastScanTime_ != null) {

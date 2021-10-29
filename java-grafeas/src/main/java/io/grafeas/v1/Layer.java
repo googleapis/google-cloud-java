@@ -231,10 +231,10 @@ public final class Layer extends com.google.protobuf.GeneratedMessageV3
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getDirectiveBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(directive_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, directive_);
     }
-    if (!getArgumentsBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(arguments_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, arguments_);
     }
     unknownFields.writeTo(output);
@@ -246,10 +246,10 @@ public final class Layer extends com.google.protobuf.GeneratedMessageV3
     if (size != -1) return size;
 
     size = 0;
-    if (!getDirectiveBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(directive_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, directive_);
     }
-    if (!getArgumentsBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(arguments_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, arguments_);
     }
     size += unknownFields.getSerializedSize();

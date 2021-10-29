@@ -424,10 +424,10 @@ public final class GerritSourceContext extends com.google.protobuf.GeneratedMess
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getHostUriBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(hostUri_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, hostUri_);
     }
-    if (!getGerritProjectBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(gerritProject_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, gerritProject_);
     }
     if (revisionCase_ == 3) {
@@ -445,10 +445,10 @@ public final class GerritSourceContext extends com.google.protobuf.GeneratedMess
     if (size != -1) return size;
 
     size = 0;
-    if (!getHostUriBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(hostUri_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, hostUri_);
     }
-    if (!getGerritProjectBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(gerritProject_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, gerritProject_);
     }
     if (revisionCase_ == 3) {

@@ -292,13 +292,13 @@ public final class Location extends com.google.protobuf.GeneratedMessageV3
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getCpeUriBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(cpeUri_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, cpeUri_);
     }
     if (version_ != null) {
       output.writeMessage(2, getVersion());
     }
-    if (!getPathBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(path_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, path_);
     }
     unknownFields.writeTo(output);
@@ -310,13 +310,13 @@ public final class Location extends com.google.protobuf.GeneratedMessageV3
     if (size != -1) return size;
 
     size = 0;
-    if (!getCpeUriBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(cpeUri_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, cpeUri_);
     }
     if (version_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, getVersion());
     }
-    if (!getPathBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(path_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, path_);
     }
     size += unknownFields.getSerializedSize();

@@ -249,7 +249,7 @@ public final class Signature extends com.google.protobuf.GeneratedMessageV3
     if (!signature_.isEmpty()) {
       output.writeBytes(1, signature_);
     }
-    if (!getPublicKeyIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(publicKeyId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, publicKeyId_);
     }
     unknownFields.writeTo(output);
@@ -264,7 +264,7 @@ public final class Signature extends com.google.protobuf.GeneratedMessageV3
     if (!signature_.isEmpty()) {
       size += com.google.protobuf.CodedOutputStream.computeBytesSize(1, signature_);
     }
-    if (!getPublicKeyIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(publicKeyId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, publicKeyId_);
     }
     size += unknownFields.getSerializedSize();
