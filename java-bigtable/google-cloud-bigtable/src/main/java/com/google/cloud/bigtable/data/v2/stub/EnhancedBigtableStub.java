@@ -70,11 +70,13 @@ import com.google.cloud.bigtable.data.v2.models.Row;
 import com.google.cloud.bigtable.data.v2.models.RowAdapter;
 import com.google.cloud.bigtable.data.v2.models.RowMutation;
 import com.google.cloud.bigtable.data.v2.models.RowMutationEntry;
-import com.google.cloud.bigtable.data.v2.stub.metrics.CompositeTracerFactory;
+import com.google.cloud.bigtable.data.v2.stub.metrics.BigtableTracerFactory;
 import com.google.cloud.bigtable.data.v2.stub.metrics.HeaderTracerStreamingCallable;
 import com.google.cloud.bigtable.data.v2.stub.metrics.HeaderTracerUnaryCallable;
 import com.google.cloud.bigtable.data.v2.stub.metrics.MetricsTracerFactory;
 import com.google.cloud.bigtable.data.v2.stub.metrics.RpcMeasureConstants;
+import com.google.cloud.bigtable.data.v2.stub.metrics.StatsHeadersServerStreamingCallable;
+import com.google.cloud.bigtable.data.v2.stub.metrics.StatsHeadersUnaryCallable;
 import com.google.cloud.bigtable.data.v2.stub.mutaterows.BulkMutateRowsUserFacingCallable;
 import com.google.cloud.bigtable.data.v2.stub.mutaterows.MutateRowsBatchingDescriptor;
 import com.google.cloud.bigtable.data.v2.stub.mutaterows.MutateRowsRetryingCallable;
@@ -191,7 +193,7 @@ public class EnhancedBigtableStub implements AutoCloseable {
             .build();
     // Inject Opencensus instrumentation
     builder.setTracerFactory(
-        new CompositeTracerFactory(
+        new BigtableTracerFactory(
             ImmutableList.of(
                 // Add OpenCensus Tracing
                 new OpencensusTracerFactory(
@@ -397,11 +399,14 @@ public class EnhancedBigtableStub implements AutoCloseable {
                 .build(),
             readRowsSettings.getRetryableCodes());
 
+    ServerStreamingCallable<ReadRowsRequest, ReadRowsResponse> withStatsHeaders =
+        new StatsHeadersServerStreamingCallable<>(base);
+
     // Sometimes ReadRows connections are disconnected via an RST frame. This error is transient and
     // should be treated similar to UNAVAILABLE. However, this exception has an INTERNAL error code
     // which by default is not retryable. Convert the exception so it can be retried in the client.
     ServerStreamingCallable<ReadRowsRequest, ReadRowsResponse> convertException =
-        new ReadRowsConvertExceptionCallable<>(base);
+        new ReadRowsConvertExceptionCallable<>(withStatsHeaders);
 
     ServerStreamingCallable<ReadRowsRequest, RowT> merging =
         new RowMergingCallable<>(convertException, rowAdapter);
@@ -468,9 +473,12 @@ public class EnhancedBigtableStub implements AutoCloseable {
 
     UnaryCallable<SampleRowKeysRequest, List<SampleRowKeysResponse>> spoolable = base.all();
 
+    UnaryCallable<SampleRowKeysRequest, List<SampleRowKeysResponse>> withStatsHeaders =
+        new StatsHeadersUnaryCallable<>(spoolable);
+
     UnaryCallable<SampleRowKeysRequest, List<SampleRowKeysResponse>> withHeaderTracer =
         new HeaderTracerUnaryCallable<>(
-            spoolable, settings.getHeaderTracer(), getSpanName(methodName).toString());
+            withStatsHeaders, settings.getHeaderTracer(), getSpanName(methodName).toString());
 
     UnaryCallable<SampleRowKeysRequest, List<SampleRowKeysResponse>> retryable =
         Callables.retrying(withHeaderTracer, settings.sampleRowKeysSettings(), clientContext);
@@ -505,9 +513,12 @@ public class EnhancedBigtableStub implements AutoCloseable {
                 .build(),
             settings.mutateRowSettings().getRetryableCodes());
 
+    UnaryCallable<MutateRowRequest, MutateRowResponse> withStatsHeaders =
+        new StatsHeadersUnaryCallable<>(base);
+
     UnaryCallable<MutateRowRequest, MutateRowResponse> withHeaderTracer =
         new HeaderTracerUnaryCallable<>(
-            base, settings.getHeaderTracer(), getSpanName(methodName).toString());
+            withStatsHeaders, settings.getHeaderTracer(), getSpanName(methodName).toString());
 
     UnaryCallable<MutateRowRequest, MutateRowResponse> retrying =
         Callables.retrying(withHeaderTracer, settings.mutateRowSettings(), clientContext);
@@ -646,6 +657,9 @@ public class EnhancedBigtableStub implements AutoCloseable {
                 .build(),
             settings.bulkMutateRowsSettings().getRetryableCodes());
 
+    ServerStreamingCallable<MutateRowsRequest, MutateRowsResponse> withStatsHeaders =
+        new StatsHeadersServerStreamingCallable<>(base);
+
     RetryAlgorithm<Void> retryAlgorithm =
         new RetryAlgorithm<>(
             new ApiResultRetryAlgorithm<Void>(),
@@ -656,7 +670,7 @@ public class EnhancedBigtableStub implements AutoCloseable {
 
     return new MutateRowsRetryingCallable(
         clientContext.getDefaultCallContext(),
-        base,
+        withStatsHeaders,
         retryingExecutor,
         settings.bulkMutateRowsSettings().getRetryableCodes());
   }
@@ -689,9 +703,12 @@ public class EnhancedBigtableStub implements AutoCloseable {
                 .build(),
             settings.checkAndMutateRowSettings().getRetryableCodes());
 
+    UnaryCallable<CheckAndMutateRowRequest, CheckAndMutateRowResponse> withStatsHeaders =
+        new StatsHeadersUnaryCallable<>(base);
+
     UnaryCallable<CheckAndMutateRowRequest, CheckAndMutateRowResponse> withHeaderTracer =
         new HeaderTracerUnaryCallable<>(
-            base, settings.getHeaderTracer(), getSpanName(methodName).toString());
+            withStatsHeaders, settings.getHeaderTracer(), getSpanName(methodName).toString());
 
     UnaryCallable<CheckAndMutateRowRequest, CheckAndMutateRowResponse> retrying =
         Callables.retrying(withHeaderTracer, settings.checkAndMutateRowSettings(), clientContext);
@@ -726,10 +743,14 @@ public class EnhancedBigtableStub implements AutoCloseable {
                     })
                 .build(),
             settings.readModifyWriteRowSettings().getRetryableCodes());
+
+    UnaryCallable<ReadModifyWriteRowRequest, ReadModifyWriteRowResponse> withStatsHeaders =
+        new StatsHeadersUnaryCallable<>(base);
+
     String methodName = "ReadModifyWriteRow";
     UnaryCallable<ReadModifyWriteRowRequest, ReadModifyWriteRowResponse> withHeaderTracer =
         new HeaderTracerUnaryCallable<>(
-            base, settings.getHeaderTracer(), getSpanName(methodName).toString());
+            withStatsHeaders, settings.getHeaderTracer(), getSpanName(methodName).toString());
 
     UnaryCallable<ReadModifyWriteRowRequest, ReadModifyWriteRowResponse> retrying =
         Callables.retrying(withHeaderTracer, settings.readModifyWriteRowSettings(), clientContext);

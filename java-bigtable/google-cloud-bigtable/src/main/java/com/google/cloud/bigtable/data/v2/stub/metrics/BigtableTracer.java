@@ -15,6 +15,7 @@
  */
 package com.google.cloud.bigtable.data.v2.stub.metrics;
 
+import com.google.api.gax.rpc.ApiCallContext;
 import com.google.api.gax.tracing.ApiTracer;
 import com.google.api.gax.tracing.BaseApiTracer;
 import com.google.common.collect.ImmutableList;
@@ -22,11 +23,17 @@ import java.util.ArrayList;
 import java.util.List;
 import org.threeten.bp.Duration;
 
-/** Combines multiple {@link ApiTracer}s into a single {@link ApiTracer}. */
-class CompositeTracer extends BaseApiTracer {
+/**
+ * A Bigtable specific {@link ApiTracer} that will be used to plumb additional context through the
+ * call chains as well as combines multiple user defined {@link ApiTracer}s into a single one. This
+ * will ensure that operation lifecycle events are plumbed through while maintaining user configured
+ * functionalities.
+ */
+class BigtableTracer extends BaseApiTracer {
   private final List<ApiTracer> children;
+  private volatile int attempt = 0;
 
-  CompositeTracer(List<ApiTracer> children) {
+  BigtableTracer(List<ApiTracer> children) {
     this.children = ImmutableList.copyOf(children);
   }
 
@@ -78,6 +85,7 @@ class CompositeTracer extends BaseApiTracer {
 
   @Override
   public void attemptStarted(int attemptNumber) {
+    this.attempt = attemptNumber;
     for (ApiTracer child : children) {
       child.attemptStarted(attemptNumber);
     }
@@ -151,5 +159,14 @@ class CompositeTracer extends BaseApiTracer {
     for (ApiTracer child : children) {
       child.batchRequestSent(elementCount, requestSize);
     }
+  }
+
+  /**
+   * Get the attempt number of the current call. Attempt number for the current call is passed in
+   * and recorded in {@link #attemptStarted(int)}. With the getter we can access it from {@link
+   * ApiCallContext}. Attempt number starts from 0.
+   */
+  public int getAttempt() {
+    return attempt;
   }
 }

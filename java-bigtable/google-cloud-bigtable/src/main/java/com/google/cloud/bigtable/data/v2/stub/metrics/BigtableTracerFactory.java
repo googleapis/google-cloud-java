@@ -24,12 +24,15 @@ import com.google.common.collect.ImmutableList;
 import java.util.ArrayList;
 import java.util.List;
 
-/** Combines multiple {@link ApiTracerFactory} into a single {@link ApiTracerFactory}. */
+/**
+ * A Bigtable specific {@link ApiTracerFactory} that combines multiple {@link ApiTracerFactory} into
+ * a single one.
+ */
 @InternalApi("For internal use only")
-public class CompositeTracerFactory extends BaseApiTracerFactory {
+public class BigtableTracerFactory extends BaseApiTracerFactory {
   private final List<ApiTracerFactory> apiTracerFactories;
 
-  public CompositeTracerFactory(List<ApiTracerFactory> apiTracerFactories) {
+  public BigtableTracerFactory(List<ApiTracerFactory> apiTracerFactories) {
     this.apiTracerFactories = ImmutableList.copyOf(apiTracerFactories);
   }
 
@@ -40,6 +43,6 @@ public class CompositeTracerFactory extends BaseApiTracerFactory {
     for (ApiTracerFactory factory : apiTracerFactories) {
       children.add(factory.newTracer(parent, spanName, operationType));
     }
-    return new CompositeTracer(children);
+    return new BigtableTracer(children);
   }
 }

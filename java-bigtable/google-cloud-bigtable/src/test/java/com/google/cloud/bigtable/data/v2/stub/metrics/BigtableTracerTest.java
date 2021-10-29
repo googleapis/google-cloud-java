@@ -34,17 +34,17 @@ import org.mockito.junit.MockitoRule;
 import org.threeten.bp.Duration;
 
 @RunWith(JUnit4.class)
-public class CompositeTracerTest {
+public class BigtableTracerTest {
   @Rule public final MockitoRule mockitoRule = MockitoJUnit.rule();
 
   @Mock private ApiTracer child1;
   @Mock private ApiTracer child2;
 
-  private CompositeTracer compositeTracer;
+  private BigtableTracer bigtableTracer;
 
   @Before
   public void setup() {
-    compositeTracer = new CompositeTracer(ImmutableList.of(child1, child2));
+    bigtableTracer = new BigtableTracer(ImmutableList.of(child1, child2));
   }
 
   @Test
@@ -55,7 +55,7 @@ public class CompositeTracerTest {
     Scope scope2 = mock(Scope.class);
     when(child2.inScope()).thenReturn(scope2);
 
-    Scope parentScope = compositeTracer.inScope();
+    Scope parentScope = bigtableTracer.inScope();
 
     parentScope.close();
     verify(scope1, times(1)).close();
@@ -63,14 +63,14 @@ public class CompositeTracerTest {
 
   @Test
   public void testOperationSucceeded() {
-    compositeTracer.operationSucceeded();
+    bigtableTracer.operationSucceeded();
     verify(child1, times(1)).operationSucceeded();
     verify(child2, times(1)).operationSucceeded();
   }
 
   @Test
   public void testOperationCancelled() {
-    compositeTracer.operationCancelled();
+    bigtableTracer.operationCancelled();
     verify(child1, times(1)).operationCancelled();
     verify(child2, times(1)).operationCancelled();
   }
@@ -78,35 +78,35 @@ public class CompositeTracerTest {
   @Test
   public void testOperationFailed() {
     RuntimeException error = new RuntimeException();
-    compositeTracer.operationFailed(error);
+    bigtableTracer.operationFailed(error);
     verify(child1, times(1)).operationFailed(error);
     verify(child2, times(1)).operationFailed(error);
   }
 
   @Test
   public void testConnectionSelected() {
-    compositeTracer.connectionSelected("connection-one");
+    bigtableTracer.connectionSelected("connection-one");
     verify(child1, times(1)).connectionSelected("connection-one");
     verify(child2, times(1)).connectionSelected("connection-one");
   }
 
   @Test
   public void testAttemptStarted() {
-    compositeTracer.attemptStarted(3);
+    bigtableTracer.attemptStarted(3);
     verify(child1, times(1)).attemptStarted(3);
     verify(child2, times(1)).attemptStarted(3);
   }
 
   @Test
   public void testAttemptSucceeded() {
-    compositeTracer.attemptSucceeded();
+    bigtableTracer.attemptSucceeded();
     verify(child1, times(1)).attemptSucceeded();
     verify(child2, times(1)).attemptSucceeded();
   }
 
   @Test
   public void testAttemptCancelled() {
-    compositeTracer.attemptCancelled();
+    bigtableTracer.attemptCancelled();
     verify(child1, times(1)).attemptCancelled();
     verify(child2, times(1)).attemptCancelled();
   }
@@ -115,7 +115,7 @@ public class CompositeTracerTest {
   public void testAttemptFailed() {
     RuntimeException error = new RuntimeException();
     Duration delay = Duration.ofMillis(10);
-    compositeTracer.attemptFailed(error, delay);
+    bigtableTracer.attemptFailed(error, delay);
     verify(child1, times(1)).attemptFailed(error, delay);
     verify(child2, times(1)).attemptFailed(error, delay);
   }
@@ -123,7 +123,7 @@ public class CompositeTracerTest {
   @Test
   public void testAttemptFailedRetriesExhausted() {
     RuntimeException error = new RuntimeException();
-    compositeTracer.attemptFailedRetriesExhausted(error);
+    bigtableTracer.attemptFailedRetriesExhausted(error);
     verify(child1, times(1)).attemptFailedRetriesExhausted(error);
     verify(child2, times(1)).attemptFailedRetriesExhausted(error);
   }
@@ -131,7 +131,7 @@ public class CompositeTracerTest {
   @Test
   public void testAttemptPermanentFailure() {
     RuntimeException error = new RuntimeException();
-    compositeTracer.attemptPermanentFailure(error);
+    bigtableTracer.attemptPermanentFailure(error);
     verify(child1, times(1)).attemptPermanentFailure(error);
     verify(child2, times(1)).attemptPermanentFailure(error);
   }
@@ -139,35 +139,35 @@ public class CompositeTracerTest {
   @Test
   public void testLroStartFailed() {
     RuntimeException error = new RuntimeException();
-    compositeTracer.lroStartFailed(error);
+    bigtableTracer.lroStartFailed(error);
     verify(child1, times(1)).lroStartFailed(error);
     verify(child2, times(1)).lroStartFailed(error);
   }
 
   @Test
   public void testLroStartSucceeded() {
-    compositeTracer.lroStartSucceeded();
+    bigtableTracer.lroStartSucceeded();
     verify(child1, times(1)).lroStartSucceeded();
     verify(child2, times(1)).lroStartSucceeded();
   }
 
   @Test
   public void testResponseReceived() {
-    compositeTracer.responseReceived();
+    bigtableTracer.responseReceived();
     verify(child1, times(1)).responseReceived();
     verify(child2, times(1)).responseReceived();
   }
 
   @Test
   public void testRequestSent() {
-    compositeTracer.requestSent();
+    bigtableTracer.requestSent();
     verify(child1, times(1)).requestSent();
     verify(child2, times(1)).requestSent();
   }
 
   @Test
   public void testBatchRequestSent() {
-    compositeTracer.batchRequestSent(2, 20);
+    bigtableTracer.batchRequestSent(2, 20);
     verify(child1, times(1)).batchRequestSent(2, 20);
     verify(child2, times(1)).batchRequestSent(2, 20);
   }

@@ -34,4 +34,9 @@
         <className>com/google/cloud/bigtable/data/v2/stub/EnhancedBigtableStub</className>
         <method>*</method>
     </difference>
+    <!-- InternalApi that was renamed -->
+    <difference>
+        <differenceType>8001</differenceType>
+        <className>com/google/cloud/bigtable/data/v2/stub/metrics/CompositeTracerFactory</className>
+    </difference>
 </differences>
