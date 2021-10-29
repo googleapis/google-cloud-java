@@ -1,5 +1,12 @@
 # Changelog
 
+### [3.3.4](https://www.github.com/googleapis/java-cloudbuild/compare/v3.3.3...v3.3.4) (2021-10-27)
+
+
+### Bug Fixes
+
+* **java:** java 17 dependency arguments ([#1266](https://www.github.com/googleapis/java-cloudbuild/issues/1266)) ([#635](https://www.github.com/googleapis/java-cloudbuild/issues/635)) ([9587b4f](https://www.github.com/googleapis/java-cloudbuild/commit/9587b4fad467acf050bd085c42a0babb3bf05a92))
+
 ### [3.3.3](https://www.github.com/googleapis/java-cloudbuild/compare/v3.3.2...v3.3.3) (2021-10-19)
 
 
