@@ -319,6 +319,54 @@ public final class BetaAnalyticsDataGrpc {
     return getRunRealtimeReportMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.analytics.data.v1beta.CheckCompatibilityRequest,
+          com.google.analytics.data.v1beta.CheckCompatibilityResponse>
+      getCheckCompatibilityMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "CheckCompatibility",
+      requestType = com.google.analytics.data.v1beta.CheckCompatibilityRequest.class,
+      responseType = com.google.analytics.data.v1beta.CheckCompatibilityResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.analytics.data.v1beta.CheckCompatibilityRequest,
+          com.google.analytics.data.v1beta.CheckCompatibilityResponse>
+      getCheckCompatibilityMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.analytics.data.v1beta.CheckCompatibilityRequest,
+            com.google.analytics.data.v1beta.CheckCompatibilityResponse>
+        getCheckCompatibilityMethod;
+    if ((getCheckCompatibilityMethod = BetaAnalyticsDataGrpc.getCheckCompatibilityMethod) == null) {
+      synchronized (BetaAnalyticsDataGrpc.class) {
+        if ((getCheckCompatibilityMethod = BetaAnalyticsDataGrpc.getCheckCompatibilityMethod)
+            == null) {
+          BetaAnalyticsDataGrpc.getCheckCompatibilityMethod =
+              getCheckCompatibilityMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.analytics.data.v1beta.CheckCompatibilityRequest,
+                          com.google.analytics.data.v1beta.CheckCompatibilityResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "CheckCompatibility"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.analytics.data.v1beta.CheckCompatibilityRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.analytics.data.v1beta.CheckCompatibilityResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new BetaAnalyticsDataMethodDescriptorSupplier("CheckCompatibility"))
+                      .build();
+        }
+      }
+    }
+    return getCheckCompatibilityMethod;
+  }
+
   /** Creates a new async stub that supports all call types for the service */
   public static BetaAnalyticsDataStub newStub(io.grpc.Channel channel) {
     io.grpc.stub.AbstractStub.StubFactory<BetaAnalyticsDataStub> factory =
@@ -479,6 +527,28 @@ public final class BetaAnalyticsDataGrpc {
           getRunRealtimeReportMethod(), responseObserver);
     }
 
+    /**
+     *
+     *
+     * <pre>
+     * This compatibility method lists dimensions and metrics that can be added to
+     * a report request and maintain compatibility. This method fails if the
+     * request's dimensions and metrics are incompatible.
+     * In Google Analytics, reports fail if they request incompatible dimensions
+     * and/or metrics; in that case, you will need to remove dimensions and/or
+     * metrics from the incompatible report until the report is compatible.
+     * The Realtime and Core reports have different compatibility rules. This
+     * method checks compatibility for Core reports.
+     * </pre>
+     */
+    public void checkCompatibility(
+        com.google.analytics.data.v1beta.CheckCompatibilityRequest request,
+        io.grpc.stub.StreamObserver<com.google.analytics.data.v1beta.CheckCompatibilityResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getCheckCompatibilityMethod(), responseObserver);
+    }
+
     @java.lang.Override
     public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
@@ -523,6 +593,13 @@ public final class BetaAnalyticsDataGrpc {
                       com.google.analytics.data.v1beta.RunRealtimeReportRequest,
                       com.google.analytics.data.v1beta.RunRealtimeReportResponse>(
                       this, METHODID_RUN_REALTIME_REPORT)))
+          .addMethod(
+              getCheckCompatibilityMethod(),
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.analytics.data.v1beta.CheckCompatibilityRequest,
+                      com.google.analytics.data.v1beta.CheckCompatibilityResponse>(
+                      this, METHODID_CHECK_COMPATIBILITY)))
           .build();
     }
   }
@@ -666,6 +743,30 @@ public final class BetaAnalyticsDataGrpc {
           request,
           responseObserver);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * This compatibility method lists dimensions and metrics that can be added to
+     * a report request and maintain compatibility. This method fails if the
+     * request's dimensions and metrics are incompatible.
+     * In Google Analytics, reports fail if they request incompatible dimensions
+     * and/or metrics; in that case, you will need to remove dimensions and/or
+     * metrics from the incompatible report until the report is compatible.
+     * The Realtime and Core reports have different compatibility rules. This
+     * method checks compatibility for Core reports.
+     * </pre>
+     */
+    public void checkCompatibility(
+        com.google.analytics.data.v1beta.CheckCompatibilityRequest request,
+        io.grpc.stub.StreamObserver<com.google.analytics.data.v1beta.CheckCompatibilityResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getCheckCompatibilityMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
   }
 
   /**
@@ -786,6 +887,26 @@ public final class BetaAnalyticsDataGrpc {
         com.google.analytics.data.v1beta.RunRealtimeReportRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getRunRealtimeReportMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * This compatibility method lists dimensions and metrics that can be added to
+     * a report request and maintain compatibility. This method fails if the
+     * request's dimensions and metrics are incompatible.
+     * In Google Analytics, reports fail if they request incompatible dimensions
+     * and/or metrics; in that case, you will need to remove dimensions and/or
+     * metrics from the incompatible report until the report is compatible.
+     * The Realtime and Core reports have different compatibility rules. This
+     * method checks compatibility for Core reports.
+     * </pre>
+     */
+    public com.google.analytics.data.v1beta.CheckCompatibilityResponse checkCompatibility(
+        com.google.analytics.data.v1beta.CheckCompatibilityRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCheckCompatibilityMethod(), getCallOptions(), request);
     }
   }
 
@@ -913,6 +1034,27 @@ public final class BetaAnalyticsDataGrpc {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getRunRealtimeReportMethod(), getCallOptions()), request);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * This compatibility method lists dimensions and metrics that can be added to
+     * a report request and maintain compatibility. This method fails if the
+     * request's dimensions and metrics are incompatible.
+     * In Google Analytics, reports fail if they request incompatible dimensions
+     * and/or metrics; in that case, you will need to remove dimensions and/or
+     * metrics from the incompatible report until the report is compatible.
+     * The Realtime and Core reports have different compatibility rules. This
+     * method checks compatibility for Core reports.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.analytics.data.v1beta.CheckCompatibilityResponse>
+        checkCompatibility(com.google.analytics.data.v1beta.CheckCompatibilityRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getCheckCompatibilityMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_RUN_REPORT = 0;
@@ -921,6 +1063,7 @@ public final class BetaAnalyticsDataGrpc {
   private static final int METHODID_BATCH_RUN_PIVOT_REPORTS = 3;
   private static final int METHODID_GET_METADATA = 4;
   private static final int METHODID_RUN_REALTIME_REPORT = 5;
+  private static final int METHODID_CHECK_COMPATIBILITY = 6;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -976,6 +1119,13 @@ public final class BetaAnalyticsDataGrpc {
               (com.google.analytics.data.v1beta.RunRealtimeReportRequest) request,
               (io.grpc.stub.StreamObserver<
                       com.google.analytics.data.v1beta.RunRealtimeReportResponse>)
+                  responseObserver);
+          break;
+        case METHODID_CHECK_COMPATIBILITY:
+          serviceImpl.checkCompatibility(
+              (com.google.analytics.data.v1beta.CheckCompatibilityRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.analytics.data.v1beta.CheckCompatibilityResponse>)
                   responseObserver);
           break;
         default:
@@ -1048,6 +1198,7 @@ public final class BetaAnalyticsDataGrpc {
                       .addMethod(getBatchRunPivotReportsMethod())
                       .addMethod(getGetMetadataMethod())
                       .addMethod(getRunRealtimeReportMethod())
+                      .addMethod(getCheckCompatibilityMethod())
                       .build();
         }
       }

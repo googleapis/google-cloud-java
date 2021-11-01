@@ -20,6 +20,8 @@ import com.google.analytics.data.v1beta.BatchRunPivotReportsRequest;
 import com.google.analytics.data.v1beta.BatchRunPivotReportsResponse;
 import com.google.analytics.data.v1beta.BatchRunReportsRequest;
 import com.google.analytics.data.v1beta.BatchRunReportsResponse;
+import com.google.analytics.data.v1beta.CheckCompatibilityRequest;
+import com.google.analytics.data.v1beta.CheckCompatibilityResponse;
 import com.google.analytics.data.v1beta.GetMetadataRequest;
 import com.google.analytics.data.v1beta.Metadata;
 import com.google.analytics.data.v1beta.RunPivotReportRequest;
@@ -67,6 +69,11 @@ public abstract class BetaAnalyticsDataStub implements BackgroundResource {
   public UnaryCallable<RunRealtimeReportRequest, RunRealtimeReportResponse>
       runRealtimeReportCallable() {
     throw new UnsupportedOperationException("Not implemented: runRealtimeReportCallable()");
+  }
+
+  public UnaryCallable<CheckCompatibilityRequest, CheckCompatibilityResponse>
+      checkCompatibilityCallable() {
+    throw new UnsupportedOperationException("Not implemented: checkCompatibilityCallable()");
   }
 
   @Override

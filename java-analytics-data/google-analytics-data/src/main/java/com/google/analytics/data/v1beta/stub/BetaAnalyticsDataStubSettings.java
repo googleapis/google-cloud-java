@@ -20,6 +20,8 @@ import com.google.analytics.data.v1beta.BatchRunPivotReportsRequest;
 import com.google.analytics.data.v1beta.BatchRunPivotReportsResponse;
 import com.google.analytics.data.v1beta.BatchRunReportsRequest;
 import com.google.analytics.data.v1beta.BatchRunReportsResponse;
+import com.google.analytics.data.v1beta.CheckCompatibilityRequest;
+import com.google.analytics.data.v1beta.CheckCompatibilityResponse;
 import com.google.analytics.data.v1beta.GetMetadataRequest;
 import com.google.analytics.data.v1beta.Metadata;
 import com.google.analytics.data.v1beta.RunPivotReportRequest;
@@ -105,6 +107,8 @@ public class BetaAnalyticsDataStubSettings extends StubSettings<BetaAnalyticsDat
   private final UnaryCallSettings<GetMetadataRequest, Metadata> getMetadataSettings;
   private final UnaryCallSettings<RunRealtimeReportRequest, RunRealtimeReportResponse>
       runRealtimeReportSettings;
+  private final UnaryCallSettings<CheckCompatibilityRequest, CheckCompatibilityResponse>
+      checkCompatibilitySettings;
 
   /** Returns the object with the settings used for calls to runReport. */
   public UnaryCallSettings<RunReportRequest, RunReportResponse> runReportSettings() {
@@ -137,6 +141,12 @@ public class BetaAnalyticsDataStubSettings extends StubSettings<BetaAnalyticsDat
   public UnaryCallSettings<RunRealtimeReportRequest, RunRealtimeReportResponse>
       runRealtimeReportSettings() {
     return runRealtimeReportSettings;
+  }
+
+  /** Returns the object with the settings used for calls to checkCompatibility. */
+  public UnaryCallSettings<CheckCompatibilityRequest, CheckCompatibilityResponse>
+      checkCompatibilitySettings() {
+    return checkCompatibilitySettings;
   }
 
   @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
@@ -173,7 +183,9 @@ public class BetaAnalyticsDataStubSettings extends StubSettings<BetaAnalyticsDat
 
   /** Returns a builder for the default credentials for this service. */
   public static GoogleCredentialsProvider.Builder defaultCredentialsProviderBuilder() {
-    return GoogleCredentialsProvider.newBuilder().setScopesToApply(DEFAULT_SERVICE_SCOPES);
+    return GoogleCredentialsProvider.newBuilder()
+        .setScopesToApply(DEFAULT_SERVICE_SCOPES)
+        .setUseJwtAccessWithScope(true);
   }
 
   /** Returns a builder for the default ChannelProvider for this service. */
@@ -219,6 +231,7 @@ public class BetaAnalyticsDataStubSettings extends StubSettings<BetaAnalyticsDat
     batchRunPivotReportsSettings = settingsBuilder.batchRunPivotReportsSettings().build();
     getMetadataSettings = settingsBuilder.getMetadataSettings().build();
     runRealtimeReportSettings = settingsBuilder.runRealtimeReportSettings().build();
+    checkCompatibilitySettings = settingsBuilder.checkCompatibilitySettings().build();
   }
 
   /** Builder for BetaAnalyticsDataStubSettings. */
@@ -235,6 +248,8 @@ public class BetaAnalyticsDataStubSettings extends StubSettings<BetaAnalyticsDat
     private final UnaryCallSettings.Builder<GetMetadataRequest, Metadata> getMetadataSettings;
     private final UnaryCallSettings.Builder<RunRealtimeReportRequest, RunRealtimeReportResponse>
         runRealtimeReportSettings;
+    private final UnaryCallSettings.Builder<CheckCompatibilityRequest, CheckCompatibilityResponse>
+        checkCompatibilitySettings;
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
 
@@ -289,6 +304,7 @@ public class BetaAnalyticsDataStubSettings extends StubSettings<BetaAnalyticsDat
       batchRunPivotReportsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       getMetadataSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       runRealtimeReportSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      checkCompatibilitySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -297,7 +313,8 @@ public class BetaAnalyticsDataStubSettings extends StubSettings<BetaAnalyticsDat
               batchRunReportsSettings,
               batchRunPivotReportsSettings,
               getMetadataSettings,
-              runRealtimeReportSettings);
+              runRealtimeReportSettings,
+              checkCompatibilitySettings);
       initDefaults(this);
     }
 
@@ -310,6 +327,7 @@ public class BetaAnalyticsDataStubSettings extends StubSettings<BetaAnalyticsDat
       batchRunPivotReportsSettings = settings.batchRunPivotReportsSettings.toBuilder();
       getMetadataSettings = settings.getMetadataSettings.toBuilder();
       runRealtimeReportSettings = settings.runRealtimeReportSettings.toBuilder();
+      checkCompatibilitySettings = settings.checkCompatibilitySettings.toBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -318,7 +336,8 @@ public class BetaAnalyticsDataStubSettings extends StubSettings<BetaAnalyticsDat
               batchRunReportsSettings,
               batchRunPivotReportsSettings,
               getMetadataSettings,
-              runRealtimeReportSettings);
+              runRealtimeReportSettings,
+              checkCompatibilitySettings);
     }
 
     private static Builder createDefault() {
@@ -364,6 +383,11 @@ public class BetaAnalyticsDataStubSettings extends StubSettings<BetaAnalyticsDat
           .runRealtimeReportSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .checkCompatibilitySettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
 
       return builder;
     }
@@ -415,6 +439,12 @@ public class BetaAnalyticsDataStubSettings extends StubSettings<BetaAnalyticsDat
     public UnaryCallSettings.Builder<RunRealtimeReportRequest, RunRealtimeReportResponse>
         runRealtimeReportSettings() {
       return runRealtimeReportSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to checkCompatibility. */
+    public UnaryCallSettings.Builder<CheckCompatibilityRequest, CheckCompatibilityResponse>
+        checkCompatibilitySettings() {
+      return checkCompatibilitySettings;
     }
 
     @Override

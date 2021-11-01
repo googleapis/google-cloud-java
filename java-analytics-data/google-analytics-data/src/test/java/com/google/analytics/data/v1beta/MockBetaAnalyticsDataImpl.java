@@ -184,4 +184,26 @@ public class MockBetaAnalyticsDataImpl extends BetaAnalyticsDataImplBase {
                   Exception.class.getName())));
     }
   }
+
+  @Override
+  public void checkCompatibility(
+      CheckCompatibilityRequest request,
+      StreamObserver<CheckCompatibilityResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof CheckCompatibilityResponse) {
+      requests.add(request);
+      responseObserver.onNext(((CheckCompatibilityResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method CheckCompatibility, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  CheckCompatibilityResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
 }

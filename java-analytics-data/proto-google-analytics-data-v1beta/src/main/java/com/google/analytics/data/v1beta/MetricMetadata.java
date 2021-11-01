@@ -44,6 +44,7 @@ public final class MetricMetadata extends com.google.protobuf.GeneratedMessageV3
     deprecatedApiNames_ = com.google.protobuf.LazyStringArrayList.EMPTY;
     type_ = 0;
     expression_ = "";
+    category_ = "";
   }
 
   @java.lang.Override
@@ -124,6 +125,13 @@ public final class MetricMetadata extends com.google.protobuf.GeneratedMessageV3
           case 56:
             {
               customDefinition_ = input.readBool();
+              break;
+            }
+          case 82:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              category_ = s;
               break;
             }
           default:
@@ -494,6 +502,57 @@ public final class MetricMetadata extends com.google.protobuf.GeneratedMessageV3
     return customDefinition_;
   }
 
+  public static final int CATEGORY_FIELD_NUMBER = 10;
+  private volatile java.lang.Object category_;
+  /**
+   *
+   *
+   * <pre>
+   * The display name of the category that this metrics belongs to. Similar
+   * dimensions and metrics are categorized together.
+   * </pre>
+   *
+   * <code>string category = 10;</code>
+   *
+   * @return The category.
+   */
+  @java.lang.Override
+  public java.lang.String getCategory() {
+    java.lang.Object ref = category_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      category_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The display name of the category that this metrics belongs to. Similar
+   * dimensions and metrics are categorized together.
+   * </pre>
+   *
+   * <code>string category = 10;</code>
+   *
+   * @return The bytes for category.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getCategoryBytes() {
+    java.lang.Object ref = category_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      category_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -528,6 +587,9 @@ public final class MetricMetadata extends com.google.protobuf.GeneratedMessageV3
     }
     if (customDefinition_ != false) {
       output.writeBool(7, customDefinition_);
+    }
+    if (!getCategoryBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 10, category_);
     }
     unknownFields.writeTo(output);
   }
@@ -564,6 +626,9 @@ public final class MetricMetadata extends com.google.protobuf.GeneratedMessageV3
     if (customDefinition_ != false) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(7, customDefinition_);
     }
+    if (!getCategoryBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(10, category_);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -587,6 +652,7 @@ public final class MetricMetadata extends com.google.protobuf.GeneratedMessageV3
     if (type_ != other.type_) return false;
     if (!getExpression().equals(other.getExpression())) return false;
     if (getCustomDefinition() != other.getCustomDefinition()) return false;
+    if (!getCategory().equals(other.getCategory())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -614,6 +680,8 @@ public final class MetricMetadata extends com.google.protobuf.GeneratedMessageV3
     hash = (53 * hash) + getExpression().hashCode();
     hash = (37 * hash) + CUSTOM_DEFINITION_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getCustomDefinition());
+    hash = (37 * hash) + CATEGORY_FIELD_NUMBER;
+    hash = (53 * hash) + getCategory().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -773,6 +841,8 @@ public final class MetricMetadata extends com.google.protobuf.GeneratedMessageV3
 
       customDefinition_ = false;
 
+      category_ = "";
+
       return this;
     }
 
@@ -812,6 +882,7 @@ public final class MetricMetadata extends com.google.protobuf.GeneratedMessageV3
       result.type_ = type_;
       result.expression_ = expression_;
       result.customDefinition_ = customDefinition_;
+      result.category_ = category_;
       onBuilt();
       return result;
     }
@@ -893,6 +964,10 @@ public final class MetricMetadata extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.getCustomDefinition() != false) {
         setCustomDefinition(other.getCustomDefinition());
+      }
+      if (!other.getCategory().isEmpty()) {
+        category_ = other.category_;
+        onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -1703,6 +1778,117 @@ public final class MetricMetadata extends com.google.protobuf.GeneratedMessageV3
     public Builder clearCustomDefinition() {
 
       customDefinition_ = false;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object category_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * The display name of the category that this metrics belongs to. Similar
+     * dimensions and metrics are categorized together.
+     * </pre>
+     *
+     * <code>string category = 10;</code>
+     *
+     * @return The category.
+     */
+    public java.lang.String getCategory() {
+      java.lang.Object ref = category_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        category_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The display name of the category that this metrics belongs to. Similar
+     * dimensions and metrics are categorized together.
+     * </pre>
+     *
+     * <code>string category = 10;</code>
+     *
+     * @return The bytes for category.
+     */
+    public com.google.protobuf.ByteString getCategoryBytes() {
+      java.lang.Object ref = category_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        category_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The display name of the category that this metrics belongs to. Similar
+     * dimensions and metrics are categorized together.
+     * </pre>
+     *
+     * <code>string category = 10;</code>
+     *
+     * @param value The category to set.
+     * @return This builder for chaining.
+     */
+    public Builder setCategory(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+
+      category_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The display name of the category that this metrics belongs to. Similar
+     * dimensions and metrics are categorized together.
+     * </pre>
+     *
+     * <code>string category = 10;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearCategory() {
+
+      category_ = getDefaultInstance().getCategory();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The display name of the category that this metrics belongs to. Similar
+     * dimensions and metrics are categorized together.
+     * </pre>
+     *
+     * <code>string category = 10;</code>
+     *
+     * @param value The bytes for category to set.
+     * @return This builder for chaining.
+     */
+    public Builder setCategoryBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
+      category_ = value;
       onChanged();
       return this;
     }

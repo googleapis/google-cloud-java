@@ -16,6 +16,9 @@
             "BatchRunReports": {
               "methods": ["batchRunReports", "batchRunReportsCallable"]
             },
+            "CheckCompatibility": {
+              "methods": ["checkCompatibility", "checkCompatibilityCallable"]
+            },
             "GetMetadata": {
               "methods": ["getMetadata", "getMetadata", "getMetadata", "getMetadataCallable"]
             },

@@ -20,6 +20,8 @@ import com.google.analytics.data.v1beta.BatchRunPivotReportsRequest;
 import com.google.analytics.data.v1beta.BatchRunPivotReportsResponse;
 import com.google.analytics.data.v1beta.BatchRunReportsRequest;
 import com.google.analytics.data.v1beta.BatchRunReportsResponse;
+import com.google.analytics.data.v1beta.CheckCompatibilityRequest;
+import com.google.analytics.data.v1beta.CheckCompatibilityResponse;
 import com.google.analytics.data.v1beta.GetMetadataRequest;
 import com.google.analytics.data.v1beta.Metadata;
 import com.google.analytics.data.v1beta.RunPivotReportRequest;
@@ -114,6 +116,18 @@ public class GrpcBetaAnalyticsDataStub extends BetaAnalyticsDataStub {
                   ProtoUtils.marshaller(RunRealtimeReportResponse.getDefaultInstance()))
               .build();
 
+  private static final MethodDescriptor<CheckCompatibilityRequest, CheckCompatibilityResponse>
+      checkCompatibilityMethodDescriptor =
+          MethodDescriptor.<CheckCompatibilityRequest, CheckCompatibilityResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.analytics.data.v1beta.BetaAnalyticsData/CheckCompatibility")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(CheckCompatibilityRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(CheckCompatibilityResponse.getDefaultInstance()))
+              .build();
+
   private final UnaryCallable<RunReportRequest, RunReportResponse> runReportCallable;
   private final UnaryCallable<RunPivotReportRequest, RunPivotReportResponse> runPivotReportCallable;
   private final UnaryCallable<BatchRunReportsRequest, BatchRunReportsResponse>
@@ -123,6 +137,8 @@ public class GrpcBetaAnalyticsDataStub extends BetaAnalyticsDataStub {
   private final UnaryCallable<GetMetadataRequest, Metadata> getMetadataCallable;
   private final UnaryCallable<RunRealtimeReportRequest, RunRealtimeReportResponse>
       runRealtimeReportCallable;
+  private final UnaryCallable<CheckCompatibilityRequest, CheckCompatibilityResponse>
+      checkCompatibilityCallable;
 
   private final BackgroundResource backgroundResources;
   private final GrpcOperationsStub operationsStub;
@@ -232,6 +248,17 @@ public class GrpcBetaAnalyticsDataStub extends BetaAnalyticsDataStub {
                       return params.build();
                     })
                 .build();
+    GrpcCallSettings<CheckCompatibilityRequest, CheckCompatibilityResponse>
+        checkCompatibilityTransportSettings =
+            GrpcCallSettings.<CheckCompatibilityRequest, CheckCompatibilityResponse>newBuilder()
+                .setMethodDescriptor(checkCompatibilityMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("property", String.valueOf(request.getProperty()));
+                      return params.build();
+                    })
+                .build();
 
     this.runReportCallable =
         callableFactory.createUnaryCallable(
@@ -254,6 +281,11 @@ public class GrpcBetaAnalyticsDataStub extends BetaAnalyticsDataStub {
         callableFactory.createUnaryCallable(
             runRealtimeReportTransportSettings,
             settings.runRealtimeReportSettings(),
+            clientContext);
+    this.checkCompatibilityCallable =
+        callableFactory.createUnaryCallable(
+            checkCompatibilityTransportSettings,
+            settings.checkCompatibilitySettings(),
             clientContext);
 
     this.backgroundResources =
@@ -294,6 +326,12 @@ public class GrpcBetaAnalyticsDataStub extends BetaAnalyticsDataStub {
   public UnaryCallable<RunRealtimeReportRequest, RunRealtimeReportResponse>
       runRealtimeReportCallable() {
     return runRealtimeReportCallable;
+  }
+
+  @Override
+  public UnaryCallable<CheckCompatibilityRequest, CheckCompatibilityResponse>
+      checkCompatibilityCallable() {
+    return checkCompatibilityCallable;
   }
 
   @Override

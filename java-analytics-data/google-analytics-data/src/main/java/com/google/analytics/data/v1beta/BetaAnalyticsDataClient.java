@@ -602,6 +602,81 @@ public class BetaAnalyticsDataClient implements BackgroundResource {
     return stub.runRealtimeReportCallable();
   }
 
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * This compatibility method lists dimensions and metrics that can be added to a report request
+   * and maintain compatibility. This method fails if the request's dimensions and metrics are
+   * incompatible.
+   *
+   * <p>In Google Analytics, reports fail if they request incompatible dimensions and/or metrics; in
+   * that case, you will need to remove dimensions and/or metrics from the incompatible report until
+   * the report is compatible.
+   *
+   * <p>The Realtime and Core reports have different compatibility rules. This method checks
+   * compatibility for Core reports.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (BetaAnalyticsDataClient betaAnalyticsDataClient = BetaAnalyticsDataClient.create()) {
+   *   CheckCompatibilityRequest request =
+   *       CheckCompatibilityRequest.newBuilder()
+   *           .setProperty("property-993141291")
+   *           .addAllDimensions(new ArrayList<Dimension>())
+   *           .addAllMetrics(new ArrayList<Metric>())
+   *           .setDimensionFilter(FilterExpression.newBuilder().build())
+   *           .setMetricFilter(FilterExpression.newBuilder().build())
+   *           .setCompatibilityFilter(Compatibility.forNumber(0))
+   *           .build();
+   *   CheckCompatibilityResponse response = betaAnalyticsDataClient.checkCompatibility(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final CheckCompatibilityResponse checkCompatibility(CheckCompatibilityRequest request) {
+    return checkCompatibilityCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * This compatibility method lists dimensions and metrics that can be added to a report request
+   * and maintain compatibility. This method fails if the request's dimensions and metrics are
+   * incompatible.
+   *
+   * <p>In Google Analytics, reports fail if they request incompatible dimensions and/or metrics; in
+   * that case, you will need to remove dimensions and/or metrics from the incompatible report until
+   * the report is compatible.
+   *
+   * <p>The Realtime and Core reports have different compatibility rules. This method checks
+   * compatibility for Core reports.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (BetaAnalyticsDataClient betaAnalyticsDataClient = BetaAnalyticsDataClient.create()) {
+   *   CheckCompatibilityRequest request =
+   *       CheckCompatibilityRequest.newBuilder()
+   *           .setProperty("property-993141291")
+   *           .addAllDimensions(new ArrayList<Dimension>())
+   *           .addAllMetrics(new ArrayList<Metric>())
+   *           .setDimensionFilter(FilterExpression.newBuilder().build())
+   *           .setMetricFilter(FilterExpression.newBuilder().build())
+   *           .setCompatibilityFilter(Compatibility.forNumber(0))
+   *           .build();
+   *   ApiFuture<CheckCompatibilityResponse> future =
+   *       betaAnalyticsDataClient.checkCompatibilityCallable().futureCall(request);
+   *   // Do something.
+   *   CheckCompatibilityResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<CheckCompatibilityRequest, CheckCompatibilityResponse>
+      checkCompatibilityCallable() {
+    return stub.checkCompatibilityCallable();
+  }
+
   @Override
   public final void close() {
     stub.close();

@@ -100,6 +100,12 @@ public class BetaAnalyticsDataSettings extends ClientSettings<BetaAnalyticsDataS
     return ((BetaAnalyticsDataStubSettings) getStubSettings()).runRealtimeReportSettings();
   }
 
+  /** Returns the object with the settings used for calls to checkCompatibility. */
+  public UnaryCallSettings<CheckCompatibilityRequest, CheckCompatibilityResponse>
+      checkCompatibilitySettings() {
+    return ((BetaAnalyticsDataStubSettings) getStubSettings()).checkCompatibilitySettings();
+  }
+
   public static final BetaAnalyticsDataSettings create(BetaAnalyticsDataStubSettings stub)
       throws IOException {
     return new BetaAnalyticsDataSettings.Builder(stub.toBuilder()).build();
@@ -229,6 +235,12 @@ public class BetaAnalyticsDataSettings extends ClientSettings<BetaAnalyticsDataS
     public UnaryCallSettings.Builder<RunRealtimeReportRequest, RunRealtimeReportResponse>
         runRealtimeReportSettings() {
       return getStubSettingsBuilder().runRealtimeReportSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to checkCompatibility. */
+    public UnaryCallSettings.Builder<CheckCompatibilityRequest, CheckCompatibilityResponse>
+        checkCompatibilitySettings() {
+      return getStubSettingsBuilder().checkCompatibilitySettings();
     }
 
     @Override

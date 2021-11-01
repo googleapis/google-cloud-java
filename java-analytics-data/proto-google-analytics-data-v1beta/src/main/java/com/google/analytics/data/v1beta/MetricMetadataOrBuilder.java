@@ -231,4 +231,31 @@ public interface MetricMetadataOrBuilder
    * @return The customDefinition.
    */
   boolean getCustomDefinition();
+
+  /**
+   *
+   *
+   * <pre>
+   * The display name of the category that this metrics belongs to. Similar
+   * dimensions and metrics are categorized together.
+   * </pre>
+   *
+   * <code>string category = 10;</code>
+   *
+   * @return The category.
+   */
+  java.lang.String getCategory();
+  /**
+   *
+   *
+   * <pre>
+   * The display name of the category that this metrics belongs to. Similar
+   * dimensions and metrics are categorized together.
+   * </pre>
+   *
+   * <code>string category = 10;</code>
+   *
+   * @return The bytes for category.
+   */
+  com.google.protobuf.ByteString getCategoryBytes();
 }

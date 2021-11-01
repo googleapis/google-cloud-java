@@ -506,4 +506,64 @@ public class BetaAnalyticsDataClientTest {
       // Expected exception.
     }
   }
+
+  @Test
+  public void checkCompatibilityTest() throws Exception {
+    CheckCompatibilityResponse expectedResponse =
+        CheckCompatibilityResponse.newBuilder()
+            .addAllDimensionCompatibilities(new ArrayList<DimensionCompatibility>())
+            .addAllMetricCompatibilities(new ArrayList<MetricCompatibility>())
+            .build();
+    mockBetaAnalyticsData.addResponse(expectedResponse);
+
+    CheckCompatibilityRequest request =
+        CheckCompatibilityRequest.newBuilder()
+            .setProperty("property-993141291")
+            .addAllDimensions(new ArrayList<Dimension>())
+            .addAllMetrics(new ArrayList<Metric>())
+            .setDimensionFilter(FilterExpression.newBuilder().build())
+            .setMetricFilter(FilterExpression.newBuilder().build())
+            .setCompatibilityFilter(Compatibility.forNumber(0))
+            .build();
+
+    CheckCompatibilityResponse actualResponse = client.checkCompatibility(request);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockBetaAnalyticsData.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    CheckCompatibilityRequest actualRequest = ((CheckCompatibilityRequest) actualRequests.get(0));
+
+    Assert.assertEquals(request.getProperty(), actualRequest.getProperty());
+    Assert.assertEquals(request.getDimensionsList(), actualRequest.getDimensionsList());
+    Assert.assertEquals(request.getMetricsList(), actualRequest.getMetricsList());
+    Assert.assertEquals(request.getDimensionFilter(), actualRequest.getDimensionFilter());
+    Assert.assertEquals(request.getMetricFilter(), actualRequest.getMetricFilter());
+    Assert.assertEquals(request.getCompatibilityFilter(), actualRequest.getCompatibilityFilter());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void checkCompatibilityExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockBetaAnalyticsData.addException(exception);
+
+    try {
+      CheckCompatibilityRequest request =
+          CheckCompatibilityRequest.newBuilder()
+              .setProperty("property-993141291")
+              .addAllDimensions(new ArrayList<Dimension>())
+              .addAllMetrics(new ArrayList<Metric>())
+              .setDimensionFilter(FilterExpression.newBuilder().build())
+              .setMetricFilter(FilterExpression.newBuilder().build())
+              .setCompatibilityFilter(Compatibility.forNumber(0))
+              .build();
+      client.checkCompatibility(request);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
 }
