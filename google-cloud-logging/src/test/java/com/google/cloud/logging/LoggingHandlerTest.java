@@ -311,6 +311,28 @@ public class LoggingHandlerTest {
   }
 
   @Test
+  public void testPublishCustomResourceWithFolder() {
+    testPublishCustomResourceWithDestination(FINEST_ENTRY, LogDestinationName.folder("folder"));
+  }
+
+  @Test
+  public void testPublishCustomResourceWithBilling() {
+    testPublishCustomResourceWithDestination(
+        FINEST_ENTRY, LogDestinationName.billingAccount("billing"));
+  }
+
+  @Test
+  public void testPublishCustomResourceWithOrganization() {
+    testPublishCustomResourceWithDestination(
+        FINEST_ENTRY, LogDestinationName.organization("organization"));
+  }
+
+  @Test
+  public void testPublishCustomResourceWithProject() {
+    testPublishCustomResourceWithDestination(FINEST_ENTRY, LogDestinationName.project(PROJECT));
+  }
+
+  @Test
   public void testPublishKubernetesContainerResource() {
     expect(options.getProjectId()).andReturn(PROJECT).anyTimes();
     expect(options.getService()).andReturn(logging);
@@ -581,5 +603,28 @@ public class LoggingHandlerTest {
     handler.publish(newLogRecord(Level.FINEST, MESSAGE));
     handler.close();
     handler.close();
+  }
+
+  private void testPublishCustomResourceWithDestination(
+      LogEntry entry, LogDestinationName destination) {
+    expect(options.getProjectId()).andReturn(PROJECT).anyTimes();
+    expect(options.getService()).andReturn(logging);
+    logging.setFlushSeverity(Severity.ERROR);
+    expectLastCall().once();
+    logging.setWriteSynchronicity(Synchronicity.ASYNC);
+    expectLastCall().once();
+    MonitoredResource resource = MonitoredResource.of("custom", ImmutableMap.<String, String>of());
+    logging.write(
+        ImmutableList.of(entry),
+        WriteOption.logName(LOG_NAME),
+        WriteOption.resource(resource),
+        WriteOption.labels(BASE_SEVERITY_MAP),
+        WriteOption.destination(destination));
+    expectLastCall().once();
+    replay(options, logging);
+    Handler handler = new LoggingHandler(LOG_NAME, options, resource, null, destination);
+    handler.setLevel(Level.ALL);
+    handler.setFormatter(new TestFormatter());
+    handler.publish(newLogRecord(Level.FINEST, MESSAGE));
   }
 }

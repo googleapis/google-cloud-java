@@ -39,6 +39,10 @@ public class LoggingTest {
   private static final String LOG_NAME = "logName";
   private static final MonitoredResource RESOURCE =
       MonitoredResource.of("global", ImmutableMap.of("project_id", "p"));
+  private static final String PROJECT_NAME = "project";
+  private static final String FOLDER_NAME = "folder";
+  private static final String ORGANIZATION_NAME = "organization";
+  private static final String BILLING_NAME = "billing";
 
   @Test
   public void testListOption() {
@@ -97,11 +101,40 @@ public class LoggingTest {
     WriteOption writeOption = WriteOption.labels(LABELS);
     assertEquals(LABELS, writeOption.getValue());
     assertEquals(WriteOption.OptionType.LABELS, writeOption.getOptionType());
+
     writeOption = WriteOption.logName(LOG_NAME);
     assertEquals(LOG_NAME, writeOption.getValue());
     assertEquals(WriteOption.OptionType.LOG_NAME, writeOption.getOptionType());
+
     writeOption = WriteOption.resource(RESOURCE);
     assertEquals(RESOURCE, writeOption.getValue());
     assertEquals(WriteOption.OptionType.RESOURCE, writeOption.getOptionType());
+  }
+
+  @Test
+  public void testWriteOptionWithDestination() {
+    WriteOption writeOption = WriteOption.destination(LogDestinationName.project(PROJECT_NAME));
+    LogDestinationName resource = (LogDestinationName) writeOption.getValue();
+    assertEquals(WriteOption.OptionType.LOG_DESTINATION, writeOption.getOptionType());
+    assertEquals(LogDestinationName.DestinationType.PROJECT, resource.getOptionType());
+    assertEquals(PROJECT_NAME, resource.getValue());
+
+    writeOption = WriteOption.destination(LogDestinationName.billingAccount(BILLING_NAME));
+    resource = (LogDestinationName) writeOption.getValue();
+    assertEquals(WriteOption.OptionType.LOG_DESTINATION, writeOption.getOptionType());
+    assertEquals(LogDestinationName.DestinationType.BILLINGACCOUNT, resource.getOptionType());
+    assertEquals(BILLING_NAME, resource.getValue());
+
+    writeOption = WriteOption.destination(LogDestinationName.folder(FOLDER_NAME));
+    resource = (LogDestinationName) writeOption.getValue();
+    assertEquals(WriteOption.OptionType.LOG_DESTINATION, writeOption.getOptionType());
+    assertEquals(LogDestinationName.DestinationType.FOLDER, resource.getOptionType());
+    assertEquals(FOLDER_NAME, resource.getValue());
+
+    writeOption = WriteOption.destination(LogDestinationName.organization(ORGANIZATION_NAME));
+    resource = (LogDestinationName) writeOption.getValue();
+    assertEquals(WriteOption.OptionType.LOG_DESTINATION, writeOption.getOptionType());
+    assertEquals(LogDestinationName.DestinationType.ORGANIZATION, resource.getOptionType());
+    assertEquals(ORGANIZATION_NAME, resource.getValue());
   }
 }

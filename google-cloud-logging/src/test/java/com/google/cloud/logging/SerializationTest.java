@@ -72,6 +72,8 @@ public class SerializationTest extends BaseSerializationTest {
   private static final WriteOption LABELS_OPTION =
       WriteOption.labels(ImmutableMap.of("key", "val"));
   private static final WriteOption LOG_OPTION = WriteOption.labels(ImmutableMap.of("key", "val"));
+  private static final WriteOption DESTINATION_OPTION =
+      WriteOption.destination(LogDestinationName.project("project"));
   private static final WriteOption RESOURCE_OPTION =
       WriteOption.resource(MonitoredResource.of("global", ImmutableMap.of("project_id", "p")));
   private static final EntryListOption ENTRY_PAGE_TOKEN_OPTION = EntryListOption.pageToken("token");
@@ -108,6 +110,7 @@ public class SerializationTest extends BaseSerializationTest {
       LABELS_OPTION,
       LOG_OPTION,
       RESOURCE_OPTION,
+      DESTINATION_OPTION,
       ENTRY_PAGE_TOKEN_OPTION,
       ENTRY_PAGE_SIZE_OPTION,
       ENTRY_FILTER_OPTION,

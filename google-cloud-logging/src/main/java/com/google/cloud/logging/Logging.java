@@ -69,7 +69,8 @@ public interface Logging extends AutoCloseable, Service<LoggingOptions> {
     enum OptionType implements Option.OptionType {
       LOG_NAME,
       RESOURCE,
-      LABELS;
+      LABELS,
+      LOG_DESTINATION;
 
       @SuppressWarnings("unchecked")
       <T> T get(Map<Option.OptionType, ?> options) {
@@ -104,6 +105,14 @@ public interface Logging extends AutoCloseable, Service<LoggingOptions> {
      */
     public static WriteOption labels(Map<String, String> labels) {
       return new WriteOption(OptionType.LABELS, ImmutableMap.copyOf(labels));
+    }
+
+    /**
+     * Returns an option to specify a log destination resource path (see {@link LogDestinationName}
+     * for details)
+     */
+    public static WriteOption destination(LogDestinationName destination) {
+      return new WriteOption(OptionType.LOG_DESTINATION, destination);
     }
   }
 

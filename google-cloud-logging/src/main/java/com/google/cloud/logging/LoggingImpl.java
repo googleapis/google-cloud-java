@@ -21,6 +21,7 @@ import static com.google.cloud.logging.Logging.EntryListOption.OptionType.ORDER_
 import static com.google.cloud.logging.Logging.ListOption.OptionType.PAGE_SIZE;
 import static com.google.cloud.logging.Logging.ListOption.OptionType.PAGE_TOKEN;
 import static com.google.cloud.logging.Logging.WriteOption.OptionType.LABELS;
+import static com.google.cloud.logging.Logging.WriteOption.OptionType.LOG_DESTINATION;
 import static com.google.cloud.logging.Logging.WriteOption.OptionType.LOG_NAME;
 import static com.google.cloud.logging.Logging.WriteOption.OptionType.RESOURCE;
 
@@ -738,11 +739,13 @@ class LoggingImpl extends BaseService<LoggingOptions> implements Logging {
       LoggingOptions serviceOptions,
       Iterable<LogEntry> logEntries,
       Map<Option.OptionType, ?> options) {
-    String projectId = serviceOptions.getProjectId();
     WriteLogEntriesRequest.Builder builder = WriteLogEntriesRequest.newBuilder();
-    String logName = LOG_NAME.get(options);
+    String projectId = serviceOptions.getProjectId();
+
+    LogName logName = getLogName(projectId, LOG_NAME.get(options), LOG_DESTINATION.get(options));
+
     if (logName != null) {
-      builder.setLogName(LogName.ofProjectLogName(projectId, logName).toString());
+      builder.setLogName(logName.toString());
     }
     MonitoredResource resource = RESOURCE.get(options);
     if (resource != null) {
@@ -752,8 +755,23 @@ class LoggingImpl extends BaseService<LoggingOptions> implements Logging {
     if (labels != null) {
       builder.putAllLabels(labels);
     }
+
     builder.addAllEntries(Iterables.transform(logEntries, LogEntry.toPbFunction(projectId)));
     return builder.build();
+  }
+
+  private static LogName getLogName(
+      String projectId, String logName, LogDestinationName destination) {
+    if (logName == null) {
+      return null;
+    }
+
+    // If no destination specified, fallback to project based log name
+    if (destination == null) {
+      return LogName.ofProjectLogName(projectId, logName);
+    }
+
+    return destination.toLogName(logName);
   }
 
   public void write(Iterable<LogEntry> logEntries, WriteOption... options) {

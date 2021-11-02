@@ -22,7 +22,9 @@ import com.google.cloud.MonitoredResource;
 import com.google.cloud.logging.Logging.WriteOption;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
+import com.google.common.collect.Iterables;
 import java.time.Instant;
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
@@ -172,7 +174,7 @@ public class LoggingHandler extends Handler {
    *     a default resource is created based on the project ID and deployment environment.
    */
   public LoggingHandler(String log, LoggingOptions options, MonitoredResource monitoredResource) {
-    this(log, options, monitoredResource, null);
+    this(log, options, monitoredResource, null, null);
   }
 
   /**
@@ -190,6 +192,27 @@ public class LoggingHandler extends Handler {
       LoggingOptions options,
       MonitoredResource monitoredResource,
       List<LoggingEnhancer> enhancers) {
+    this(log, options, monitoredResource, enhancers, null);
+  }
+
+  /**
+   * Creates a handler that publishes messages to Cloud Logging.
+   *
+   * @param log the name of the log to which log entries are written
+   * @param options options for the Cloud Logging service
+   * @param monitoredResource the monitored resource to which log entries refer. If it is null then
+   *     a default resource is created based on the project ID and deployment environment.
+   * @param enhancers List of {@link LoggingEnhancer} instances used to enhance any{@link LogEntry}
+   *     instances built by this handler.
+   * @param destination the log destination {@link LogDestinationName} (see 'logName' parameter in
+   *     https://cloud.google.com/logging/docs/reference/v2/rest/v2/LogEntry)
+   */
+  public LoggingHandler(
+      String log,
+      LoggingOptions options,
+      MonitoredResource monitoredResource,
+      List<LoggingEnhancer> enhancers,
+      LogDestinationName destination) {
     try {
       loggingOptions = options != null ? options : LoggingOptions.getDefaultInstance();
       LoggingConfig config = new LoggingConfig(getClass().getName());
@@ -204,17 +227,20 @@ public class LoggingHandler extends Handler {
       MonitoredResource resource =
           firstNonNull(
               monitoredResource, config.getMonitoredResource(loggingOptions.getProjectId()));
-      defaultWriteOptions =
-          new WriteOption[] {
-            WriteOption.logName(logName),
-            WriteOption.resource(resource),
-            WriteOption.labels(
-                ImmutableMap.of(
-                    LEVEL_NAME_KEY,
-                    baseLevel.getName(),
-                    LEVEL_VALUE_KEY,
-                    String.valueOf(baseLevel.intValue())))
-          };
+      List<WriteOption> writeOptions = new ArrayList<WriteOption>();
+      writeOptions.add(WriteOption.logName(logName));
+      writeOptions.add(WriteOption.resource(resource));
+      writeOptions.add(
+          WriteOption.labels(
+              ImmutableMap.of(
+                  LEVEL_NAME_KEY,
+                  baseLevel.getName(),
+                  LEVEL_VALUE_KEY,
+                  String.valueOf(baseLevel.intValue()))));
+      if (destination != null) {
+        writeOptions.add(WriteOption.destination(destination));
+      }
+      defaultWriteOptions = Iterables.toArray(writeOptions, WriteOption.class);
 
       getLogging().setFlushSeverity(severityFor(flushLevel));
       getLogging().setWriteSynchronicity(config.getSynchronicity());
