@@ -140,7 +140,7 @@ public final class MetricCompatibility extends com.google.protobuf.GeneratedMess
    * like the UI name and description.
    * </pre>
    *
-   * <code>.google.analytics.data.v1beta.MetricMetadata metric_metadata = 1;</code>
+   * <code>optional .google.analytics.data.v1beta.MetricMetadata metric_metadata = 1;</code>
    *
    * @return Whether the metricMetadata field is set.
    */
@@ -157,7 +157,7 @@ public final class MetricCompatibility extends com.google.protobuf.GeneratedMess
    * like the UI name and description.
    * </pre>
    *
-   * <code>.google.analytics.data.v1beta.MetricMetadata metric_metadata = 1;</code>
+   * <code>optional .google.analytics.data.v1beta.MetricMetadata metric_metadata = 1;</code>
    *
    * @return The metricMetadata.
    */
@@ -176,7 +176,7 @@ public final class MetricCompatibility extends com.google.protobuf.GeneratedMess
    * like the UI name and description.
    * </pre>
    *
-   * <code>.google.analytics.data.v1beta.MetricMetadata metric_metadata = 1;</code>
+   * <code>optional .google.analytics.data.v1beta.MetricMetadata metric_metadata = 1;</code>
    */
   @java.lang.Override
   public com.google.analytics.data.v1beta.MetricMetadataOrBuilder getMetricMetadataOrBuilder() {
@@ -195,7 +195,7 @@ public final class MetricCompatibility extends com.google.protobuf.GeneratedMess
    * this metric can be successfully added to the report.
    * </pre>
    *
-   * <code>.google.analytics.data.v1beta.Compatibility compatibility = 2;</code>
+   * <code>optional .google.analytics.data.v1beta.Compatibility compatibility = 2;</code>
    *
    * @return Whether the compatibility field is set.
    */
@@ -211,7 +211,7 @@ public final class MetricCompatibility extends com.google.protobuf.GeneratedMess
    * this metric can be successfully added to the report.
    * </pre>
    *
-   * <code>.google.analytics.data.v1beta.Compatibility compatibility = 2;</code>
+   * <code>optional .google.analytics.data.v1beta.Compatibility compatibility = 2;</code>
    *
    * @return The enum numeric value on the wire for compatibility.
    */
@@ -227,7 +227,7 @@ public final class MetricCompatibility extends com.google.protobuf.GeneratedMess
    * this metric can be successfully added to the report.
    * </pre>
    *
-   * <code>.google.analytics.data.v1beta.Compatibility compatibility = 2;</code>
+   * <code>optional .google.analytics.data.v1beta.Compatibility compatibility = 2;</code>
    *
    * @return The compatibility.
    */
@@ -617,7 +617,7 @@ public final class MetricCompatibility extends com.google.protobuf.GeneratedMess
      * like the UI name and description.
      * </pre>
      *
-     * <code>.google.analytics.data.v1beta.MetricMetadata metric_metadata = 1;</code>
+     * <code>optional .google.analytics.data.v1beta.MetricMetadata metric_metadata = 1;</code>
      *
      * @return Whether the metricMetadata field is set.
      */
@@ -633,7 +633,7 @@ public final class MetricCompatibility extends com.google.protobuf.GeneratedMess
      * like the UI name and description.
      * </pre>
      *
-     * <code>.google.analytics.data.v1beta.MetricMetadata metric_metadata = 1;</code>
+     * <code>optional .google.analytics.data.v1beta.MetricMetadata metric_metadata = 1;</code>
      *
      * @return The metricMetadata.
      */
@@ -655,7 +655,7 @@ public final class MetricCompatibility extends com.google.protobuf.GeneratedMess
      * like the UI name and description.
      * </pre>
      *
-     * <code>.google.analytics.data.v1beta.MetricMetadata metric_metadata = 1;</code>
+     * <code>optional .google.analytics.data.v1beta.MetricMetadata metric_metadata = 1;</code>
      */
     public Builder setMetricMetadata(com.google.analytics.data.v1beta.MetricMetadata value) {
       if (metricMetadataBuilder_ == null) {
@@ -679,7 +679,7 @@ public final class MetricCompatibility extends com.google.protobuf.GeneratedMess
      * like the UI name and description.
      * </pre>
      *
-     * <code>.google.analytics.data.v1beta.MetricMetadata metric_metadata = 1;</code>
+     * <code>optional .google.analytics.data.v1beta.MetricMetadata metric_metadata = 1;</code>
      */
     public Builder setMetricMetadata(
         com.google.analytics.data.v1beta.MetricMetadata.Builder builderForValue) {
@@ -701,7 +701,7 @@ public final class MetricCompatibility extends com.google.protobuf.GeneratedMess
      * like the UI name and description.
      * </pre>
      *
-     * <code>.google.analytics.data.v1beta.MetricMetadata metric_metadata = 1;</code>
+     * <code>optional .google.analytics.data.v1beta.MetricMetadata metric_metadata = 1;</code>
      */
     public Builder mergeMetricMetadata(com.google.analytics.data.v1beta.MetricMetadata value) {
       if (metricMetadataBuilder_ == null) {
@@ -732,7 +732,7 @@ public final class MetricCompatibility extends com.google.protobuf.GeneratedMess
      * like the UI name and description.
      * </pre>
      *
-     * <code>.google.analytics.data.v1beta.MetricMetadata metric_metadata = 1;</code>
+     * <code>optional .google.analytics.data.v1beta.MetricMetadata metric_metadata = 1;</code>
      */
     public Builder clearMetricMetadata() {
       if (metricMetadataBuilder_ == null) {
@@ -753,7 +753,7 @@ public final class MetricCompatibility extends com.google.protobuf.GeneratedMess
      * like the UI name and description.
      * </pre>
      *
-     * <code>.google.analytics.data.v1beta.MetricMetadata metric_metadata = 1;</code>
+     * <code>optional .google.analytics.data.v1beta.MetricMetadata metric_metadata = 1;</code>
      */
     public com.google.analytics.data.v1beta.MetricMetadata.Builder getMetricMetadataBuilder() {
       bitField0_ |= 0x00000001;
@@ -769,7 +769,7 @@ public final class MetricCompatibility extends com.google.protobuf.GeneratedMess
      * like the UI name and description.
      * </pre>
      *
-     * <code>.google.analytics.data.v1beta.MetricMetadata metric_metadata = 1;</code>
+     * <code>optional .google.analytics.data.v1beta.MetricMetadata metric_metadata = 1;</code>
      */
     public com.google.analytics.data.v1beta.MetricMetadataOrBuilder getMetricMetadataOrBuilder() {
       if (metricMetadataBuilder_ != null) {
@@ -789,7 +789,7 @@ public final class MetricCompatibility extends com.google.protobuf.GeneratedMess
      * like the UI name and description.
      * </pre>
      *
-     * <code>.google.analytics.data.v1beta.MetricMetadata metric_metadata = 1;</code>
+     * <code>optional .google.analytics.data.v1beta.MetricMetadata metric_metadata = 1;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.analytics.data.v1beta.MetricMetadata,
@@ -817,7 +817,7 @@ public final class MetricCompatibility extends com.google.protobuf.GeneratedMess
      * this metric can be successfully added to the report.
      * </pre>
      *
-     * <code>.google.analytics.data.v1beta.Compatibility compatibility = 2;</code>
+     * <code>optional .google.analytics.data.v1beta.Compatibility compatibility = 2;</code>
      *
      * @return Whether the compatibility field is set.
      */
@@ -833,7 +833,7 @@ public final class MetricCompatibility extends com.google.protobuf.GeneratedMess
      * this metric can be successfully added to the report.
      * </pre>
      *
-     * <code>.google.analytics.data.v1beta.Compatibility compatibility = 2;</code>
+     * <code>optional .google.analytics.data.v1beta.Compatibility compatibility = 2;</code>
      *
      * @return The enum numeric value on the wire for compatibility.
      */
@@ -849,7 +849,7 @@ public final class MetricCompatibility extends com.google.protobuf.GeneratedMess
      * this metric can be successfully added to the report.
      * </pre>
      *
-     * <code>.google.analytics.data.v1beta.Compatibility compatibility = 2;</code>
+     * <code>optional .google.analytics.data.v1beta.Compatibility compatibility = 2;</code>
      *
      * @param value The enum numeric value on the wire for compatibility to set.
      * @return This builder for chaining.
@@ -868,7 +868,7 @@ public final class MetricCompatibility extends com.google.protobuf.GeneratedMess
      * this metric can be successfully added to the report.
      * </pre>
      *
-     * <code>.google.analytics.data.v1beta.Compatibility compatibility = 2;</code>
+     * <code>optional .google.analytics.data.v1beta.Compatibility compatibility = 2;</code>
      *
      * @return The compatibility.
      */
@@ -887,7 +887,7 @@ public final class MetricCompatibility extends com.google.protobuf.GeneratedMess
      * this metric can be successfully added to the report.
      * </pre>
      *
-     * <code>.google.analytics.data.v1beta.Compatibility compatibility = 2;</code>
+     * <code>optional .google.analytics.data.v1beta.Compatibility compatibility = 2;</code>
      *
      * @param value The compatibility to set.
      * @return This builder for chaining.
@@ -909,7 +909,7 @@ public final class MetricCompatibility extends com.google.protobuf.GeneratedMess
      * this metric can be successfully added to the report.
      * </pre>
      *
-     * <code>.google.analytics.data.v1beta.Compatibility compatibility = 2;</code>
+     * <code>optional .google.analytics.data.v1beta.Compatibility compatibility = 2;</code>
      *
      * @return This builder for chaining.
      */

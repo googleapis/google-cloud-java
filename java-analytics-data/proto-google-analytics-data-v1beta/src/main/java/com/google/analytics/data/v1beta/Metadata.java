@@ -353,7 +353,7 @@ public final class Metadata extends com.google.protobuf.GeneratedMessageV3
     for (int i = 0; i < metrics_.size(); i++) {
       output.writeMessage(2, metrics_.get(i));
     }
-    if (!getNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, name_);
     }
     unknownFields.writeTo(output);
@@ -371,7 +371,7 @@ public final class Metadata extends com.google.protobuf.GeneratedMessageV3
     for (int i = 0; i < metrics_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, metrics_.get(i));
     }
-    if (!getNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, name_);
     }
     size += unknownFields.getSerializedSize();

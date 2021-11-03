@@ -271,7 +271,7 @@ public final class BatchRunPivotReportsResponse extends com.google.protobuf.Gene
     for (int i = 0; i < pivotReports_.size(); i++) {
       output.writeMessage(1, pivotReports_.get(i));
     }
-    if (!getKindBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(kind_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, kind_);
     }
     unknownFields.writeTo(output);
@@ -286,7 +286,7 @@ public final class BatchRunPivotReportsResponse extends com.google.protobuf.Gene
     for (int i = 0; i < pivotReports_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, pivotReports_.get(i));
     }
-    if (!getKindBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(kind_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, kind_);
     }
     size += unknownFields.getSerializedSize();

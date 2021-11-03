@@ -567,13 +567,13 @@ public final class MetricMetadata extends com.google.protobuf.GeneratedMessageV3
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getApiNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(apiName_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, apiName_);
     }
-    if (!getUiNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(uiName_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, uiName_);
     }
-    if (!getDescriptionBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(description_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, description_);
     }
     for (int i = 0; i < deprecatedApiNames_.size(); i++) {
@@ -582,13 +582,13 @@ public final class MetricMetadata extends com.google.protobuf.GeneratedMessageV3
     if (type_ != com.google.analytics.data.v1beta.MetricType.METRIC_TYPE_UNSPECIFIED.getNumber()) {
       output.writeEnum(5, type_);
     }
-    if (!getExpressionBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(expression_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 6, expression_);
     }
     if (customDefinition_ != false) {
       output.writeBool(7, customDefinition_);
     }
-    if (!getCategoryBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(category_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 10, category_);
     }
     unknownFields.writeTo(output);
@@ -600,13 +600,13 @@ public final class MetricMetadata extends com.google.protobuf.GeneratedMessageV3
     if (size != -1) return size;
 
     size = 0;
-    if (!getApiNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(apiName_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, apiName_);
     }
-    if (!getUiNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(uiName_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, uiName_);
     }
-    if (!getDescriptionBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(description_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, description_);
     }
     {
@@ -620,13 +620,13 @@ public final class MetricMetadata extends com.google.protobuf.GeneratedMessageV3
     if (type_ != com.google.analytics.data.v1beta.MetricType.METRIC_TYPE_UNSPECIFIED.getNumber()) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(5, type_);
     }
-    if (!getExpressionBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(expression_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, expression_);
     }
     if (customDefinition_ != false) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(7, customDefinition_);
     }
-    if (!getCategoryBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(category_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(10, category_);
     }
     size += unknownFields.getSerializedSize();

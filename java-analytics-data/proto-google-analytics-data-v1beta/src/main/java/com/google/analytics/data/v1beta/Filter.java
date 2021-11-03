@@ -734,7 +734,7 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
               .getNumber()) {
         output.writeEnum(1, matchType_);
       }
-      if (!getValueBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(value_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, value_);
       }
       if (caseSensitive_ != false) {
@@ -754,7 +754,7 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
               .getNumber()) {
         size += com.google.protobuf.CodedOutputStream.computeEnumSize(1, matchType_);
       }
-      if (!getValueBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(value_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, value_);
       }
       if (caseSensitive_ != false) {
@@ -4845,7 +4845,7 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getFieldNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(fieldName_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, fieldName_);
     }
     if (oneFilterCase_ == 3) {
@@ -4869,7 +4869,7 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
     if (size != -1) return size;
 
     size = 0;
-    if (!getFieldNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(fieldName_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, fieldName_);
     }
     if (oneFilterCase_ == 3) {

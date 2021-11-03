@@ -141,7 +141,7 @@ public final class MinuteRange extends com.google.protobuf.GeneratedMessageV3
    * the last 60 minutes of event data (`startMinutesAgo &lt;= 59`).
    * </pre>
    *
-   * <code>int32 start_minutes_ago = 1;</code>
+   * <code>optional int32 start_minutes_ago = 1;</code>
    *
    * @return Whether the startMinutesAgo field is set.
    */
@@ -162,7 +162,7 @@ public final class MinuteRange extends com.google.protobuf.GeneratedMessageV3
    * the last 60 minutes of event data (`startMinutesAgo &lt;= 59`).
    * </pre>
    *
-   * <code>int32 start_minutes_ago = 1;</code>
+   * <code>optional int32 start_minutes_ago = 1;</code>
    *
    * @return The startMinutesAgo.
    */
@@ -187,7 +187,7 @@ public final class MinuteRange extends com.google.protobuf.GeneratedMessageV3
    * minute in the last 60 minutes of event data (`endMinutesAgo &lt;= 59`).
    * </pre>
    *
-   * <code>int32 end_minutes_ago = 2;</code>
+   * <code>optional int32 end_minutes_ago = 2;</code>
    *
    * @return Whether the endMinutesAgo field is set.
    */
@@ -209,7 +209,7 @@ public final class MinuteRange extends com.google.protobuf.GeneratedMessageV3
    * minute in the last 60 minutes of event data (`endMinutesAgo &lt;= 59`).
    * </pre>
    *
-   * <code>int32 end_minutes_ago = 2;</code>
+   * <code>optional int32 end_minutes_ago = 2;</code>
    *
    * @return The endMinutesAgo.
    */
@@ -293,7 +293,7 @@ public final class MinuteRange extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00000002) != 0)) {
       output.writeInt32(2, endMinutesAgo_);
     }
-    if (!getNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, name_);
     }
     unknownFields.writeTo(output);
@@ -311,7 +311,7 @@ public final class MinuteRange extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00000002) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeInt32Size(2, endMinutesAgo_);
     }
-    if (!getNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, name_);
     }
     size += unknownFields.getSerializedSize();
@@ -655,7 +655,7 @@ public final class MinuteRange extends com.google.protobuf.GeneratedMessageV3
      * the last 60 minutes of event data (`startMinutesAgo &lt;= 59`).
      * </pre>
      *
-     * <code>int32 start_minutes_ago = 1;</code>
+     * <code>optional int32 start_minutes_ago = 1;</code>
      *
      * @return Whether the startMinutesAgo field is set.
      */
@@ -676,7 +676,7 @@ public final class MinuteRange extends com.google.protobuf.GeneratedMessageV3
      * the last 60 minutes of event data (`startMinutesAgo &lt;= 59`).
      * </pre>
      *
-     * <code>int32 start_minutes_ago = 1;</code>
+     * <code>optional int32 start_minutes_ago = 1;</code>
      *
      * @return The startMinutesAgo.
      */
@@ -697,7 +697,7 @@ public final class MinuteRange extends com.google.protobuf.GeneratedMessageV3
      * the last 60 minutes of event data (`startMinutesAgo &lt;= 59`).
      * </pre>
      *
-     * <code>int32 start_minutes_ago = 1;</code>
+     * <code>optional int32 start_minutes_ago = 1;</code>
      *
      * @param value The startMinutesAgo to set.
      * @return This builder for chaining.
@@ -721,7 +721,7 @@ public final class MinuteRange extends com.google.protobuf.GeneratedMessageV3
      * the last 60 minutes of event data (`startMinutesAgo &lt;= 59`).
      * </pre>
      *
-     * <code>int32 start_minutes_ago = 1;</code>
+     * <code>optional int32 start_minutes_ago = 1;</code>
      *
      * @return This builder for chaining.
      */
@@ -747,7 +747,7 @@ public final class MinuteRange extends com.google.protobuf.GeneratedMessageV3
      * minute in the last 60 minutes of event data (`endMinutesAgo &lt;= 59`).
      * </pre>
      *
-     * <code>int32 end_minutes_ago = 2;</code>
+     * <code>optional int32 end_minutes_ago = 2;</code>
      *
      * @return Whether the endMinutesAgo field is set.
      */
@@ -769,7 +769,7 @@ public final class MinuteRange extends com.google.protobuf.GeneratedMessageV3
      * minute in the last 60 minutes of event data (`endMinutesAgo &lt;= 59`).
      * </pre>
      *
-     * <code>int32 end_minutes_ago = 2;</code>
+     * <code>optional int32 end_minutes_ago = 2;</code>
      *
      * @return The endMinutesAgo.
      */
@@ -791,7 +791,7 @@ public final class MinuteRange extends com.google.protobuf.GeneratedMessageV3
      * minute in the last 60 minutes of event data (`endMinutesAgo &lt;= 59`).
      * </pre>
      *
-     * <code>int32 end_minutes_ago = 2;</code>
+     * <code>optional int32 end_minutes_ago = 2;</code>
      *
      * @param value The endMinutesAgo to set.
      * @return This builder for chaining.
@@ -816,7 +816,7 @@ public final class MinuteRange extends com.google.protobuf.GeneratedMessageV3
      * minute in the last 60 minutes of event data (`endMinutesAgo &lt;= 59`).
      * </pre>
      *
-     * <code>int32 end_minutes_ago = 2;</code>
+     * <code>optional int32 end_minutes_ago = 2;</code>
      *
      * @return This builder for chaining.
      */

@@ -868,7 +868,7 @@ public final class RunRealtimeReportRequest extends com.google.protobuf.Generate
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
     getSerializedSize();
-    if (!getPropertyBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(property_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, property_);
     }
     for (int i = 0; i < dimensions_.size(); i++) {
@@ -911,7 +911,7 @@ public final class RunRealtimeReportRequest extends com.google.protobuf.Generate
     if (size != -1) return size;
 
     size = 0;
-    if (!getPropertyBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(property_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, property_);
     }
     for (int i = 0; i < dimensions_.size(); i++) {

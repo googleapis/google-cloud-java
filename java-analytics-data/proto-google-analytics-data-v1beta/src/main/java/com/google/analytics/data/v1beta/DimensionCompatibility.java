@@ -141,7 +141,7 @@ public final class DimensionCompatibility extends com.google.protobuf.GeneratedM
    * like the UI name and description.
    * </pre>
    *
-   * <code>.google.analytics.data.v1beta.DimensionMetadata dimension_metadata = 1;</code>
+   * <code>optional .google.analytics.data.v1beta.DimensionMetadata dimension_metadata = 1;</code>
    *
    * @return Whether the dimensionMetadata field is set.
    */
@@ -158,7 +158,7 @@ public final class DimensionCompatibility extends com.google.protobuf.GeneratedM
    * like the UI name and description.
    * </pre>
    *
-   * <code>.google.analytics.data.v1beta.DimensionMetadata dimension_metadata = 1;</code>
+   * <code>optional .google.analytics.data.v1beta.DimensionMetadata dimension_metadata = 1;</code>
    *
    * @return The dimensionMetadata.
    */
@@ -177,7 +177,7 @@ public final class DimensionCompatibility extends com.google.protobuf.GeneratedM
    * like the UI name and description.
    * </pre>
    *
-   * <code>.google.analytics.data.v1beta.DimensionMetadata dimension_metadata = 1;</code>
+   * <code>optional .google.analytics.data.v1beta.DimensionMetadata dimension_metadata = 1;</code>
    */
   @java.lang.Override
   public com.google.analytics.data.v1beta.DimensionMetadataOrBuilder
@@ -197,7 +197,7 @@ public final class DimensionCompatibility extends com.google.protobuf.GeneratedM
    * this dimension can be successfully added to the report.
    * </pre>
    *
-   * <code>.google.analytics.data.v1beta.Compatibility compatibility = 2;</code>
+   * <code>optional .google.analytics.data.v1beta.Compatibility compatibility = 2;</code>
    *
    * @return Whether the compatibility field is set.
    */
@@ -213,7 +213,7 @@ public final class DimensionCompatibility extends com.google.protobuf.GeneratedM
    * this dimension can be successfully added to the report.
    * </pre>
    *
-   * <code>.google.analytics.data.v1beta.Compatibility compatibility = 2;</code>
+   * <code>optional .google.analytics.data.v1beta.Compatibility compatibility = 2;</code>
    *
    * @return The enum numeric value on the wire for compatibility.
    */
@@ -229,7 +229,7 @@ public final class DimensionCompatibility extends com.google.protobuf.GeneratedM
    * this dimension can be successfully added to the report.
    * </pre>
    *
-   * <code>.google.analytics.data.v1beta.Compatibility compatibility = 2;</code>
+   * <code>optional .google.analytics.data.v1beta.Compatibility compatibility = 2;</code>
    *
    * @return The compatibility.
    */
@@ -620,7 +620,7 @@ public final class DimensionCompatibility extends com.google.protobuf.GeneratedM
      * like the UI name and description.
      * </pre>
      *
-     * <code>.google.analytics.data.v1beta.DimensionMetadata dimension_metadata = 1;</code>
+     * <code>optional .google.analytics.data.v1beta.DimensionMetadata dimension_metadata = 1;</code>
      *
      * @return Whether the dimensionMetadata field is set.
      */
@@ -636,7 +636,7 @@ public final class DimensionCompatibility extends com.google.protobuf.GeneratedM
      * like the UI name and description.
      * </pre>
      *
-     * <code>.google.analytics.data.v1beta.DimensionMetadata dimension_metadata = 1;</code>
+     * <code>optional .google.analytics.data.v1beta.DimensionMetadata dimension_metadata = 1;</code>
      *
      * @return The dimensionMetadata.
      */
@@ -658,7 +658,7 @@ public final class DimensionCompatibility extends com.google.protobuf.GeneratedM
      * like the UI name and description.
      * </pre>
      *
-     * <code>.google.analytics.data.v1beta.DimensionMetadata dimension_metadata = 1;</code>
+     * <code>optional .google.analytics.data.v1beta.DimensionMetadata dimension_metadata = 1;</code>
      */
     public Builder setDimensionMetadata(com.google.analytics.data.v1beta.DimensionMetadata value) {
       if (dimensionMetadataBuilder_ == null) {
@@ -682,7 +682,7 @@ public final class DimensionCompatibility extends com.google.protobuf.GeneratedM
      * like the UI name and description.
      * </pre>
      *
-     * <code>.google.analytics.data.v1beta.DimensionMetadata dimension_metadata = 1;</code>
+     * <code>optional .google.analytics.data.v1beta.DimensionMetadata dimension_metadata = 1;</code>
      */
     public Builder setDimensionMetadata(
         com.google.analytics.data.v1beta.DimensionMetadata.Builder builderForValue) {
@@ -704,7 +704,7 @@ public final class DimensionCompatibility extends com.google.protobuf.GeneratedM
      * like the UI name and description.
      * </pre>
      *
-     * <code>.google.analytics.data.v1beta.DimensionMetadata dimension_metadata = 1;</code>
+     * <code>optional .google.analytics.data.v1beta.DimensionMetadata dimension_metadata = 1;</code>
      */
     public Builder mergeDimensionMetadata(
         com.google.analytics.data.v1beta.DimensionMetadata value) {
@@ -736,7 +736,7 @@ public final class DimensionCompatibility extends com.google.protobuf.GeneratedM
      * like the UI name and description.
      * </pre>
      *
-     * <code>.google.analytics.data.v1beta.DimensionMetadata dimension_metadata = 1;</code>
+     * <code>optional .google.analytics.data.v1beta.DimensionMetadata dimension_metadata = 1;</code>
      */
     public Builder clearDimensionMetadata() {
       if (dimensionMetadataBuilder_ == null) {
@@ -757,7 +757,7 @@ public final class DimensionCompatibility extends com.google.protobuf.GeneratedM
      * like the UI name and description.
      * </pre>
      *
-     * <code>.google.analytics.data.v1beta.DimensionMetadata dimension_metadata = 1;</code>
+     * <code>optional .google.analytics.data.v1beta.DimensionMetadata dimension_metadata = 1;</code>
      */
     public com.google.analytics.data.v1beta.DimensionMetadata.Builder
         getDimensionMetadataBuilder() {
@@ -774,7 +774,7 @@ public final class DimensionCompatibility extends com.google.protobuf.GeneratedM
      * like the UI name and description.
      * </pre>
      *
-     * <code>.google.analytics.data.v1beta.DimensionMetadata dimension_metadata = 1;</code>
+     * <code>optional .google.analytics.data.v1beta.DimensionMetadata dimension_metadata = 1;</code>
      */
     public com.google.analytics.data.v1beta.DimensionMetadataOrBuilder
         getDimensionMetadataOrBuilder() {
@@ -795,7 +795,7 @@ public final class DimensionCompatibility extends com.google.protobuf.GeneratedM
      * like the UI name and description.
      * </pre>
      *
-     * <code>.google.analytics.data.v1beta.DimensionMetadata dimension_metadata = 1;</code>
+     * <code>optional .google.analytics.data.v1beta.DimensionMetadata dimension_metadata = 1;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.analytics.data.v1beta.DimensionMetadata,
@@ -823,7 +823,7 @@ public final class DimensionCompatibility extends com.google.protobuf.GeneratedM
      * this dimension can be successfully added to the report.
      * </pre>
      *
-     * <code>.google.analytics.data.v1beta.Compatibility compatibility = 2;</code>
+     * <code>optional .google.analytics.data.v1beta.Compatibility compatibility = 2;</code>
      *
      * @return Whether the compatibility field is set.
      */
@@ -839,7 +839,7 @@ public final class DimensionCompatibility extends com.google.protobuf.GeneratedM
      * this dimension can be successfully added to the report.
      * </pre>
      *
-     * <code>.google.analytics.data.v1beta.Compatibility compatibility = 2;</code>
+     * <code>optional .google.analytics.data.v1beta.Compatibility compatibility = 2;</code>
      *
      * @return The enum numeric value on the wire for compatibility.
      */
@@ -855,7 +855,7 @@ public final class DimensionCompatibility extends com.google.protobuf.GeneratedM
      * this dimension can be successfully added to the report.
      * </pre>
      *
-     * <code>.google.analytics.data.v1beta.Compatibility compatibility = 2;</code>
+     * <code>optional .google.analytics.data.v1beta.Compatibility compatibility = 2;</code>
      *
      * @param value The enum numeric value on the wire for compatibility to set.
      * @return This builder for chaining.
@@ -874,7 +874,7 @@ public final class DimensionCompatibility extends com.google.protobuf.GeneratedM
      * this dimension can be successfully added to the report.
      * </pre>
      *
-     * <code>.google.analytics.data.v1beta.Compatibility compatibility = 2;</code>
+     * <code>optional .google.analytics.data.v1beta.Compatibility compatibility = 2;</code>
      *
      * @return The compatibility.
      */
@@ -893,7 +893,7 @@ public final class DimensionCompatibility extends com.google.protobuf.GeneratedM
      * this dimension can be successfully added to the report.
      * </pre>
      *
-     * <code>.google.analytics.data.v1beta.Compatibility compatibility = 2;</code>
+     * <code>optional .google.analytics.data.v1beta.Compatibility compatibility = 2;</code>
      *
      * @param value The compatibility to set.
      * @return This builder for chaining.
@@ -915,7 +915,7 @@ public final class DimensionCompatibility extends com.google.protobuf.GeneratedM
      * this dimension can be successfully added to the report.
      * </pre>
      *
-     * <code>.google.analytics.data.v1beta.Compatibility compatibility = 2;</code>
+     * <code>optional .google.analytics.data.v1beta.Compatibility compatibility = 2;</code>
      *
      * @return This builder for chaining.
      */

@@ -36,7 +36,7 @@ public interface MinuteRangeOrBuilder
    * the last 60 minutes of event data (`startMinutesAgo &lt;= 59`).
    * </pre>
    *
-   * <code>int32 start_minutes_ago = 1;</code>
+   * <code>optional int32 start_minutes_ago = 1;</code>
    *
    * @return Whether the startMinutesAgo field is set.
    */
@@ -54,7 +54,7 @@ public interface MinuteRangeOrBuilder
    * the last 60 minutes of event data (`startMinutesAgo &lt;= 59`).
    * </pre>
    *
-   * <code>int32 start_minutes_ago = 1;</code>
+   * <code>optional int32 start_minutes_ago = 1;</code>
    *
    * @return The startMinutesAgo.
    */
@@ -74,7 +74,7 @@ public interface MinuteRangeOrBuilder
    * minute in the last 60 minutes of event data (`endMinutesAgo &lt;= 59`).
    * </pre>
    *
-   * <code>int32 end_minutes_ago = 2;</code>
+   * <code>optional int32 end_minutes_ago = 2;</code>
    *
    * @return Whether the endMinutesAgo field is set.
    */
@@ -93,7 +93,7 @@ public interface MinuteRangeOrBuilder
    * minute in the last 60 minutes of event data (`endMinutesAgo &lt;= 59`).
    * </pre>
    *
-   * <code>int32 end_minutes_ago = 2;</code>
+   * <code>optional int32 end_minutes_ago = 2;</code>
    *
    * @return The endMinutesAgo.
    */

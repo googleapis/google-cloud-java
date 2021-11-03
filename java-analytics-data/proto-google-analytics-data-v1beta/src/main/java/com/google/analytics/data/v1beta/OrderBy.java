@@ -353,7 +353,7 @@ public final class OrderBy extends com.google.protobuf.GeneratedMessageV3
 
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-      if (!getMetricNameBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(metricName_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, metricName_);
       }
       unknownFields.writeTo(output);
@@ -365,7 +365,7 @@ public final class OrderBy extends com.google.protobuf.GeneratedMessageV3
       if (size != -1) return size;
 
       size = 0;
-      if (!getMetricNameBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(metricName_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, metricName_);
       }
       size += unknownFields.getSerializedSize();
@@ -1268,7 +1268,7 @@ public final class OrderBy extends com.google.protobuf.GeneratedMessageV3
 
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-      if (!getDimensionNameBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(dimensionName_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, dimensionName_);
       }
       if (orderType_
@@ -1286,7 +1286,7 @@ public final class OrderBy extends com.google.protobuf.GeneratedMessageV3
       if (size != -1) return size;
 
       size = 0;
-      if (!getDimensionNameBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(dimensionName_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, dimensionName_);
       }
       if (orderType_
@@ -2363,10 +2363,10 @@ public final class OrderBy extends com.google.protobuf.GeneratedMessageV3
 
       @java.lang.Override
       public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-        if (!getDimensionNameBytes().isEmpty()) {
+        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(dimensionName_)) {
           com.google.protobuf.GeneratedMessageV3.writeString(output, 1, dimensionName_);
         }
-        if (!getDimensionValueBytes().isEmpty()) {
+        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(dimensionValue_)) {
           com.google.protobuf.GeneratedMessageV3.writeString(output, 2, dimensionValue_);
         }
         unknownFields.writeTo(output);
@@ -2378,10 +2378,10 @@ public final class OrderBy extends com.google.protobuf.GeneratedMessageV3
         if (size != -1) return size;
 
         size = 0;
-        if (!getDimensionNameBytes().isEmpty()) {
+        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(dimensionName_)) {
           size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, dimensionName_);
         }
-        if (!getDimensionValueBytes().isEmpty()) {
+        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(dimensionValue_)) {
           size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, dimensionValue_);
         }
         size += unknownFields.getSerializedSize();
@@ -3146,7 +3146,7 @@ public final class OrderBy extends com.google.protobuf.GeneratedMessageV3
 
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-      if (!getMetricNameBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(metricName_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, metricName_);
       }
       for (int i = 0; i < pivotSelections_.size(); i++) {
@@ -3161,7 +3161,7 @@ public final class OrderBy extends com.google.protobuf.GeneratedMessageV3
       if (size != -1) return size;
 
       size = 0;
-      if (!getMetricNameBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(metricName_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, metricName_);
       }
       for (int i = 0; i < pivotSelections_.size(); i++) {
